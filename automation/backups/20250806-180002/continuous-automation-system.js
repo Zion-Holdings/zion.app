@@ -59,34 +59,34 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-}const fs = require('path'
-const path = require('path'
-const { execSync } = require(('child_process)'
-        this.automationDir = path.join(this.projectRoot, 'automation'
-        this.logsDir = path.join(this.automationDir, 'logs'
-        this.reportsDir = path.join(this.automationDir, 'reports'
-        this.log('Starting continuous automation system...'
-        this.log('Continuous automation system started'
-        const chokidar = require('path'
-        const watcher = chokidar.watch(['pages/**/*'
-            'components/**/*'
-            'utils/**/*'
-            'styles/**/*'
-        watcher.on('change'
-        this.log('Running monitoring checks...'
-        this.log('Running daily tasks...'
-        this.log('Running hourly tasks...'
-        if (filePath.includes('.tsx') || filePath.includes('.ts'
-        if (filePath.includes('.css'
-            execSync('npm run build', { cwd: this.projectRoot, stdio: 'pipe'
-            this.log('Build status: SUCCESS'
-            this.log('Build status: FAILED'
-            execSync('npm test', { cwd: this.projectRoot, stdio: 'pipe'
-            this.log('Test status: SUCCESS'
-            this.log('Test status: FAILED'
-            execSync('npm run lint', { cwd: this.projectRoot, stdio: 'pipe'
-            this.log('Lint status: SUCCESS'
-            this.log('Lint status: FAILED'
-            const result = execSync('find . -name "*.tsx" -o -name "*.ts" -o -name "*.js"
-            const result = execSync(\'find . -name "*.tsx" -o -name "*.ts" -o -name "*.js"
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+}const fs = require('path''')
+const path = require('path''')
+const { execSync } = require(('child_process)'''
+        this.automationDir = path.join(this.projectRoot, 'automation''')
+        this.logsDir = path.join(this.automationDir, 'logs''')
+        this.reportsDir = path.join(this.automationDir, 'reports''')
+        this.log('Starting continuous automation system...''')
+        this.log('Continuous automation system started''')
+        const chokidar = require('path''')
+        const watcher = chokidar.watch(['pages/**/*''')
+            'components/**/*'''
+            'utils/**/*'''
+            'styles/**/*'''
+        watcher.on('change''')
+        this.log('Running monitoring checks...''')
+        this.log('Running daily tasks...''')
+        this.log('Running hourly tasks...''')
+        if (filePath.includes('.tsx') || filePath.includes('.ts''')
+        if (filePath.includes('.css''')
+            execSync('npm run build', { cwd: this.projectRoot, stdio: 'pipe''')
+            this.log('Build status: SUCCESS''')
+            this.log('Build status: FAILED''')
+            execSync('npm test', { cwd: this.projectRoot, stdio: 'pipe''')
+            this.log('Test status: SUCCESS''')
+            this.log('Test status: FAILED''')
+            execSync('npm run lint', { cwd: this.projectRoot, stdio: 'pipe''')
+            this.log('Lint status: SUCCESS''')
+            this.log('Lint status: FAILED''')
+            const result = execSync('find . -name "*.tsx" -o -name "*.ts" -o -name "*.js""")
+            const result = execSync(\'find . -name "*.tsx" -o -name "*.ts" -o -name "*.js""")

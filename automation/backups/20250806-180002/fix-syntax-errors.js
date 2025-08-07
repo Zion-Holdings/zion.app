@@ -59,19 +59,19 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-}const fs = require('path'
-const path = require('path'
-  content = content.replace(/require\('([^'])+)'\)/g, "
-  content = content.replace(/require(\("([^"])+)"\)/g, \'require(("variable1)"
-  content = content.replace(/(\w+):\s*"([^"]*)"\s*,/g, \'variable1: "variable2"
-  content = content.replace(/(\w+):\s*\'([^\']*)\'\s*,/g, "
-  content = content.replace(/"[^"
-    return match.replace(/\'/g, "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+}const fs = require('path''')
+const path = require('path''')
+  content = content.replace(/require\('([^'])+)'\)/g, """
+  content = content.replace(/require(\("([^"])+)"\)/g, \'require(("variable1)"""
+  content = content.replace(/(\w+):\s*"([^"]*)"\s*,/g, \'variable1: "variable2"""
+  content = content.replace(/(\w+):\s*\'([^\']*)\'\s*,/g, """
+  content = content.replace(/"[^""")
+    return match.replace(/\'/g, """)

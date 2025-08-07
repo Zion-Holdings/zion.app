@@ -59,37 +59,37 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-    console.log(📊 Initializing Automation Monitoring Dashboard...\'))\'\'
-    this.dashboardPath = path.join(__dirname, \'monitoring-dashboard)\'\'
-    this.reportsPath = path.join(__dirname, monitoring-repor\'t\'s)\'\'
-    this.alertsPath = path.join(__dirname, \'monitoring-aler\'ts\')\'\'
-    console.log(\'🔍 Loading automation systems...)\'\'
-    this.automationSystems.set(enhanced-intelligent\'), {\'\'
-      name: "
-      status: "
-      type: "
-      status: "
-      name: "
-      type: "
-      status: "
-          type: "
-          severity: "
-          type: "
-          severity: "
-        type: "
-        message: "
-        severity: "
-      status: "
-      status: "
-    console.log(RECENT ALERTS: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+    console.log(📊 Initializing Automation Monitoring Dashboard...\'))\'\'''
+    this.dashboardPath = path.join(__dirname, \'monitoring-dashboard)\'\'''
+    this.reportsPath = path.join(__dirname, monitoring-repor\'t\'s)\'\'''
+    this.alertsPath = path.join(__dirname, \'monitoring-aler\'ts\')\'\'''
+    console.log(\'🔍 Loading automation systems...)\'\'''
+    this.automationSystems.set(enhanced-intelligent\'), {\'\'''
+      name: """
+      status: """
+      type: """
+      status: """
+      name: """
+      type: """
+      status: """
+          type: """
+          severity: """
+          type: """
+          severity: """
+        type: """
+        message: """
+        severity: """
+      status: """
+      status: """
+    console.log(RECENT ALERTS: """)

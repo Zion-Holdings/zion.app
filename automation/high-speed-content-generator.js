@@ -59,15 +59,15 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { GoogleGenerativeAI } = require(('@google/generative-ai')'))''
-    this.genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY || \'your-api-key)\'\'
-    this.model = this.genAI.getGenerativeModel({ model: "
-        \'Edge\' AI: "
-        console.error(\')Error\' in continuous generation: "
-    return "
-    return "
-                paragraph.trim() ? <p className="mb-6"">${paragraph}</p>"
-    return "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { GoogleGenerativeAI } = require(('@google/generative-ai')'))''''
+    this.genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY || \'your-api-key)\'\'''
+    this.model = this.genAI.getGenerativeModel({ model: """)
+        \'Edge\' AI: """
+        console.error(\')Error\' in continuous generation: """
+    return """
+    return """
+                paragraph.trim() ? <p className="mb-6"">${paragraph}</p>"""
+    return """

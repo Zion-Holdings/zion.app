@@ -1,23 +1,23 @@
 #!/usr/bin/env node
 
-const fs = require('fs'
-const path = require('path'
-    console.log('🚀 Starting Continuous Working Automation...\n'
-    console.log('✅ Continuous automation started successfully'
-    console.log('📊 Will run cycles every 5 minutes'
-    console.log('📝 Generating content...'
-    console.log('✅ Content generated'
-    console.log('🔧 Applying improvements...'
-    console.log('✅ Improvements applied'
-    console.log('⚡ Performing optimizations...'
-    console.log('✅ Optimizations performed'
-    console.log('🏥 Performing health check...'
-    console.log('✅ Health check completed'
-    console.log('\n📊 Current Metrics:'
-    console.log('\n🛑 Stopping Continuous Working Automation...'
-    console.log('✅ Continuous automation stopped'
-process.on('SIGINT'
-  console.log('\n🛑 Received SIGINT, shutting down gracefully...'
-process.on('SIGTERM'
-  console.log('\n🛑 Received SIGTERM, shutting down gracefully...'
-  console.error('❌ Failed to start automation:'
+const fs = require('fs''')
+const path = require('path''')
+    console.log('🚀 Starting Continuous Working Automation...\n''')
+    console.log('✅ Continuous automation started successfully''')
+    console.log('📊 Will run cycles every 5 minutes''')
+    console.log('📝 Generating content...''')
+    console.log('✅ Content generated''')
+    console.log('🔧 Applying improvements...''')
+    console.log('✅ Improvements applied''')
+    console.log('⚡ Performing optimizations...''')
+    console.log('✅ Optimizations performed''')
+    console.log('🏥 Performing health check...''')
+    console.log('✅ Health check completed''')
+    console.log('\n📊 Current Metrics:''')
+    console.log('\n🛑 Stopping Continuous Working Automation...''')
+    console.log('✅ Continuous automation stopped''')
+process.on('SIGINT''')
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...''')
+process.on('SIGTERM''')
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...''')
+  console.error('❌ Failed to start automation:''')

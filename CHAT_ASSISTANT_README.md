@@ -224,4 +224,3 @@ When adding new features to the chat assistant:
 ## Support
 
 For technical support or feature requests related to the chat assistant, please contact the development team or create an issue in the project repository.
-

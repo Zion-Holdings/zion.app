@@ -19,19 +19,19 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-  log(message, level = 'info'
-        this.logDir = path.join(__dirname, lo')g's)''
-        this.agents = ['master-orchestrat'or',''
-            'content-generator, ''
-            website-analyz'e'r,''
-            'market-resear'ch',''
-            'sales-agent,''
-            solution-creat'o'r''
-        this.log('📊 Agent Status Check, 'info')''
-        this.log(====================, 'info'
-                    this.log(✅ ${agent}: Active (last activity: "
-                    this.log("⚠️  ${agent}: Inactive (last activity: "
-                this.log(❌ ${agent}: No log file found"
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+  log(message, level = 'info''')
+        this.logDir = path.join(__dirname, lo')g's)''''
+        this.agents = ['master-orchestrat'or',''''
+            'content-generator, ''''
+            website-analyz'e'r,''''
+            'market-resear'ch',''''
+            'sales-agent,''''
+            solution-creat'o'r''''
+        this.log('📊 Agent Status Check, 'info')''''
+        this.log(====================, 'info''')
+                    this.log(✅ ${agent}: Active (last activity: """)
+                    this.log("⚠️  ${agent}: Inactive (last activity: """)
+                this.log(❌ ${agent}: No log file found""")

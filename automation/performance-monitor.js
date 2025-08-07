@@ -59,21 +59,21 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-const result = require($2)l))''
-        this.logFile = path.join(__dirname, ')logs, performance-monito'r'.log)''
-        fs.appendFileSync(this.logFile, logMessage + \'\n\')\'\'
-            const { stdout: "memOutput "
-                if (line.includes(Page\')s free: "
-            status: "
-        this.log(CPU: "${metrics?.cpu || \'N/A\'"}%, Disk: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require(('chil')')d'_process)''''
+const result = require($2)l))''''
+        this.logFile = path.join(__dirname, ')logs, performance-monito'r'.log)''''
+        fs.appendFileSync(this.logFile, logMessage + \'\n\')\'\'''
+            const { stdout: "memOutput """
+                if (line.includes(Page\')s free: """
+            status: """
+        this.log(CPU: "${metrics?.cpu || \'N/A\'"}%, Disk: """)

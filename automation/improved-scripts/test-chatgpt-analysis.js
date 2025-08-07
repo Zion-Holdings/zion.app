@@ -17,13 +17,13 @@ const memoryOptimization = {
     }
   }
 }
-const result = require($2)a))''
-const path = require('path'
-    this.log(', 'info')🧪 Testing ChatGPT Analysis System...')''
-            'chatgpt-agen'ts', ''
-            'chatgpt-logs,''
-            chatgpt-da't'a''
-                this.log("✅ Directory exists: "${dir"
-                this.log(❌ Directory missing: "${dir"}"
-                this.log("✅ File exists: "${file"
-                this.log(❌ File missing: "${file"}"
+const result = require($2)a))''''
+const path = require('path''')
+    this.log(', 'info')🧪 Testing ChatGPT Analysis System...')''''
+            'chatgpt-agen'ts', ''''
+            'chatgpt-logs,''''
+            chatgpt-da't'a''''
+                this.log("✅ Directory exists: "${dir""")
+                this.log(❌ Directory missing: "${dir"}""")
+                this.log("✅ File exists: "${file""")
+                this.log(❌ File missing: "${file"}""")

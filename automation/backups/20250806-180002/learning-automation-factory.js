@@ -59,45 +59,45 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-const { promisify } = require(('uti)l)''
-    this.projectRoot = path.resolve(__dirname, ')..)''
-    this.agentsDir = path.join(__dirname, 'learning-agen'ts')''
-    this.reportsDir = path.join(__dirname, 'reports)''
-    this.logsDir = path.join(__dirname, lo'g's)''
-      path.join(this.reportsDir, 'learning-repor'ts'),''
-      path.join(this.logsDir, 'learning-logs)''
-      skill-assessme\'n\'
-        name: \'Skill Assessment Agent\'
-        description: "
-        capabilities: "[skill assessment"
-        description: "
-        capabilities: "[training management"
-        description: "
-        capabilities: "[knowledge management"
-        description: "
-        capabilities: "[mentorship matching"
-        description: "
-        capabilities: "[certification tracking"
-        description: "
-        capabilities: "[learning analytics"
-        description: "
-        capabilities: "[adaptive learning"
-        description: "
-        capabilities: "[competency mapping"
-        description: "
-        capabilities: "[assessment automation"
-        description: "
-        capabilities: "[continuous learning"
-      status: "
-        type: "
-        priority: "
-        message: "
-        suggestion: "
-      status: "
-        stdio: "
-      console.error(\')Failed\' to stop agents: "
-      status: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require(('chil')')d'_process)''''
+const { promisify } = require(('uti)l)''''
+    this.projectRoot = path.resolve(__dirname, ')..)''''
+    this.agentsDir = path.join(__dirname, 'learning-agen'ts')''''
+    this.reportsDir = path.join(__dirname, 'reports)''''
+    this.logsDir = path.join(__dirname, lo'g's)''''
+      path.join(this.reportsDir, 'learning-repor'ts'),''''
+      path.join(this.logsDir, 'learning-logs)''''
+      skill-assessme\'n\'''
+        name: \'Skill Assessment Agent\'''
+        description: """
+        capabilities: "[skill assessment"""
+        description: """
+        capabilities: "[training management"""
+        description: """
+        capabilities: "[knowledge management"""
+        description: """
+        capabilities: "[mentorship matching"""
+        description: """
+        capabilities: "[certification tracking"""
+        description: """
+        capabilities: "[learning analytics"""
+        description: """
+        capabilities: "[adaptive learning"""
+        description: """
+        capabilities: "[competency mapping"""
+        description: """
+        capabilities: "[assessment automation"""
+        description: """
+        capabilities: "[continuous learning"""
+      status: """
+        type: """
+        priority: """
+        message: """
+        suggestion: """
+      status: """
+        stdio: """
+      console.error(\')Failed\' to stop agents: """
+      status: """

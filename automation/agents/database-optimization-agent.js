@@ -4,7 +4,7 @@ const writeBatch = {
   queue: [],
   timeout: null,
   batchSize: 10,
-  batchTimeout: 1000,
+  batchTimeout: 1000,;
   ;
   add(filePath, data) {;
     this.queue.push({ filePath, data })
@@ -31,7 +31,7 @@ const writeBatch = {
     ))
   }
 }
-
+;
 // Replace fs.writeFile with batched version;
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
@@ -42,7 +42,7 @@ fs.writeFile = function(filePath, data, options) {
 // Memory optimization for high-speed operation
 const memoryOptimization = {
   cache: new Map(),
-  cacheTimeout: 30000,
+  cacheTimeout: 30000,;
   ;
   getCached(key) {;
     const cached = this.cache.get(key)
@@ -59,31 +59,30 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-const { promisify } = require(('uti)l)''
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''
-    this.projectRoot = path.resolve(__dirname, '../..')''
-    this.reportsDir = path.join(__dirname, ../reports/database-optimization')''
-      path.join(this.reportsDir, 'performance-reports),''
-      path.join(this.reportsDir, optimization-suggestio'n's),''
-      path.join(this.reportsDir, 'query-analys'is'),''
-      path.join(this.reportsDir, 'index-recommendations),''
-      path.join(this.reportsDir, maintenance-repor't's)''
-      console.log('Performing comprehensive database analysis...)''
-      console.log(')Database' analysis completed')''
-      console.error('Failed to get performance metrics:, error)''
-    const result = [').db, '.sqlite', .sqlite3', '.json]''
-          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules) {''
-      console.error(Faile'
-        suggestion: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path'''
+      const fs = require('fs'''
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message'''
+          const content = await fs.readFile(data.filePath, 'utf8'''
+    worker.on('message'''
+    worker.on('exit'''
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs'''
+const path = require('path'''
+const { exec } = require(('chil')')d'_process)''''
+const { promisify } = require(('uti)l)''''
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''''
+    this.projectRoot = path.resolve(__dirname, '../..')''''
+    this.reportsDir = path.join(__dirname, ../reports/database-optimization')''''
+      path.join(this.reportsDir, 'performance-reports),''''
+      path.join(this.reportsDir, optimization-suggestio'n's),''''
+      path.join(this.reportsDir, 'query-analys'is'),''''
+      path.join(this.reportsDir, 'index-recommendations),''''
+      path.join(this.reportsDir, maintenance-repor't's)''''
+      console.log('Performing comprehensive database analysis...)''''
+      console.log(')Database' analysis completed')''''
+      console.error('Failed to get performance metrics:, error)''''
+    const result = [').db, '.sqlite', .sqlite3', '.json]''''
+          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules) {''''
+      console.error(Faile'''

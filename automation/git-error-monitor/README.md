@@ -37,19 +37,19 @@ A comprehensive autonomous system for continuously monitoring and fixing git pro
 
    ```bash
    cd automation/git-error-monitoring
-   ```
+```
 
 2. Make scripts executable:
 
    ```bash
    chmod +x *.sh
-   ```
+```
 
 3. Start the system:
 
    ```bash
    ./start-git-error-monitoring.sh
-   ```
+```
 
 ## Usage
 
@@ -192,6 +192,8 @@ find logs/ -name "*.log" -mtime +7 -delete
 # Clean old reports
 find reports/ -name "*.json" -mtime +30 -delete
 ```
+```
+```
 
 ## Safety Features
 
@@ -236,3 +238,15 @@ For issues or questions about the git error monitoring system:
 4. Review the reports for detailed information
 
 The system is designed to be self-healing and should resolve most git-related issues automatically.
+
+
+```
+```
+
+```
+```
+
+```
+```
+
+```

@@ -59,53 +59,53 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-const { promisify } = require(('uti)l)''
-  log(message, level = 'info'
-    this.projectRoot = path.resolve(__dirname, ')..)''
-    this.agentsDir = path.join(__dirname, 'development-agen'ts')''
-    this.reportsDir = path.join(__dirname, 'reports)''
-    this.logsDir = path.join(__dirname, lo'g's)''
-      path.join(this.reportsDir, 'development-repor'ts'),''
-      path.join(this.logsDir, 'development-logs)''
-      code-revi\'e\'
-        name: \'Code Review Agent\'
-        description: "
-        capabilities: "[code analysis"
-        description: "
-        capabilities: "[test execution"
-        description: "
-        capabilities: "[deployment"
-        description: "
-        capabilities: "[performance analysis"
-        description: "
-        capabilities: "[dependency analysis"
-        description: "
-        capabilities: "[doc generation"
-        description: "
-        capabilities: "[bug detection"
-        description: "
-        capabilities: "[refactoring"
-        description: "
-        capabilities: "[security scanning"
-        description: "
-        capabilities: "[workflow automation"
-      this.log("
-        status: "
-      this.log(Agent ${agentId} created successfully"
-    this.log(\"${config.name} \${this.agentId} started\"
-      status: "
-        type: "
-        priority: "
-        message: "
-        suggestion: "
-      status: "
-    this.log(\Analysis report saved: "\${reportPath"
-    this.log(\"${config.name} \${this.agentId} stopping...\"
-        stdio: "
-      this.log("Agent ${agentType} launched with PID: "${agentProcess.pid"}"
-      console.error(\')Failed\' to stop agents: "
-      status: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require(('chil')')d'_process)''''
+const { promisify } = require(('uti)l)''''
+  log(message, level = 'info''')
+    this.projectRoot = path.resolve(__dirname, ')..)''''
+    this.agentsDir = path.join(__dirname, 'development-agen'ts')''''
+    this.reportsDir = path.join(__dirname, 'reports)''''
+    this.logsDir = path.join(__dirname, lo'g's)''''
+      path.join(this.reportsDir, 'development-repor'ts'),''''
+      path.join(this.logsDir, 'development-logs)''''
+      code-revi\'e\'''
+        name: \'Code Review Agent\'''
+        description: """
+        capabilities: "[code analysis"""
+        description: """
+        capabilities: "[test execution"""
+        description: """
+        capabilities: "[deployment"""
+        description: """
+        capabilities: "[performance analysis"""
+        description: """
+        capabilities: "[dependency analysis"""
+        description: """
+        capabilities: "[doc generation"""
+        description: """
+        capabilities: "[bug detection"""
+        description: """
+        capabilities: "[refactoring"""
+        description: """
+        capabilities: "[security scanning"""
+        description: """
+        capabilities: "[workflow automation"""
+      this.log(""")
+        status: """
+      this.log(Agent ${agentId} created successfully""")
+    this.log(\"${config.name} \${this.agentId} started\""")
+      status: """
+        type: """
+        priority: """
+        message: """
+        suggestion: """
+      status: """
+    this.log(\Analysis report saved: "\${reportPath""")
+    this.log(\"${config.name} \${this.agentId} stopping...\""")
+        stdio: """
+      this.log("Agent ${agentType} launched with PID: "${agentProcess.pid"}""")
+      console.error(\')Failed\' to stop agents: """
+      status: """

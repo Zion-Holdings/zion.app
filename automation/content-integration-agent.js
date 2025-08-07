@@ -59,40 +59,40 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const result = require($2)h))''
-const fs = require('path'
-const { createValidComponentName, createDisplayTitle } = require(('./utils/component-name-helper')'))''
-    this.projectRoot = path.join(__dirname, '..)''
-    this.generatedContentDir = path.join(__dirname, 'generated-conte'nt')''
-    this.pagesDir = path.join(this.projectRoot, 'pages)''
-    this.componentsDir = path.join(this.projectRoot, componen't's)''
-    console.log('🔗 Starting content integration...)''
-      console.error(')❌ Error during content integration:, error)''
-    console.log('📊 Integrating marketplace content...)''
-      .filter(file => file.startsWith(marketplace-) && file.endsWith(.json')))''
-        const result = file.replace('marketplace-, ')).replace('.json, )''
-    console.log(\')📝 Integrating blog content...)\'\'
-    const filePath = path.join(this.generatedContentDir, \'bl\'og\')\'\'
-      .filter(file => file.endsWith(\'.json))\'\'
-        const jsonData = JSON.parse(fs.readFileSync(contentPath, utf8\')))\'\'
-        const result = file.replace(\'.json, )\'\'
-    console.log(🛍️ Integrating product content...\'))\'\'
-    const filePath = path.join(this.generatedContentDir, \'products)\'\'
-      .filter(file => file.endsWith(-conten\'t\'.json))\'\'
-        const jsonData = JSON.parse(fs.readFileSync(contentPath, \'ut\'f8\'))\'\'
-        const result = file.replace(\'-content.json, \'))\'\'
-    const filePath = path.join(this.pagesDir, \'
-    const filePath = path.join(this.pagesDir, bl\'o\'
-    const filePath = path.join(this.pagesDir, \'produc\'ts\'
-    const result = category.split(\'-).map(word => \'\'
-    return "
-    return "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const result = require($2)h))''''
+const fs = require('path''')
+const { createValidComponentName, createDisplayTitle } = require(('./utils/component-name-helper')'))''''
+    this.projectRoot = path.join(__dirname, '..)''''
+    this.generatedContentDir = path.join(__dirname, 'generated-conte'nt')''''
+    this.pagesDir = path.join(this.projectRoot, 'pages)''''
+    this.componentsDir = path.join(this.projectRoot, componen't's)''''
+    console.log('🔗 Starting content integration...)''''
+      console.error(')❌ Error during content integration:, error)''''
+    console.log('📊 Integrating marketplace content...)''''
+      .filter(file => file.startsWith(marketplace-) && file.endsWith(.json')))''''
+        const result = file.replace('marketplace-, ')).replace('.json, )''''
+    console.log(\')📝 Integrating blog content...)\'\'''
+    const filePath = path.join(this.generatedContentDir, \'bl\'og\')\'\'''
+      .filter(file => file.endsWith(\'.json))\'\'''
+        const jsonData = JSON.parse(fs.readFileSync(contentPath, utf8\')))\'\'''
+        const result = file.replace(\'.json, )\'\'''
+    console.log(🛍️ Integrating product content...\'))\'\'''
+    const filePath = path.join(this.generatedContentDir, \'products)\'\'''
+      .filter(file => file.endsWith(-conten\'t\'.json))\'\'''
+        const jsonData = JSON.parse(fs.readFileSync(contentPath, \'ut\'f8\'))\'\'''
+        const result = file.replace(\'-content.json, \'))\'\'''
+    const filePath = path.join(this.pagesDir, \''')
+    const filePath = path.join(this.pagesDir, bl\'o\''')
+    const filePath = path.join(this.pagesDir, \'produc\'ts\''')
+    const result = category.split(\'-).map(word => \'\''')
+    return """
+    return """
         

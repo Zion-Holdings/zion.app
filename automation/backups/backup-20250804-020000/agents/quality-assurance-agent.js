@@ -19,14 +19,14 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-    this.config = JSON.parse(process.env.AGENT_CONFIG || {}'))''
-    process.on('SIGTERM, () => this.shutdown())''
-        console.error(')Erro'r in quality assurance loop: "
-      console.error(')Cod'e quality check error: "
-        type: "
-        type: "
-      console.error(')Securit'y quality check error: "
-        type: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+    this.config = JSON.parse(process.env.AGENT_CONFIG || {}'))''''
+    process.on('SIGTERM, () => this.shutdown())''''
+        console.error(')Erro'r in quality assurance loop: """
+      console.error(')Cod'e quality check error: """
+        type: """
+        type: """
+      console.error(')Securit'y quality check error: """
+        type: """

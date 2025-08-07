@@ -59,18 +59,18 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const variable1 = require('path';''
-const variable1 = require('path';''
-const variable1 = require('path';''
-const variable1 = glob.sync('page's'/**/*.tsx'
-this.log('Checkin'g' for syntax errors in files...', 'info')''
-    const variable1 = fs.readFileSync(file, 'ut'f'8')''
-      '
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const variable1 = require('path';'''')
+const variable1 = require('path';'''')
+const variable1 = require('path';'''')
+const variable1 = glob.sync('page's'/**/*.tsx''')
+this.log('Checkin'g' for syntax errors in files...', 'info')''''
+    const variable1 = fs.readFileSync(file, 'ut'f'8')''''
+      '''

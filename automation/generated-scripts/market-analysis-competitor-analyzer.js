@@ -19,14 +19,14 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-}const fs = require('fs'
-const path = require('path'
-const { spawn, exec } = require(('child_process)'
-const { promisify } = require(('util)'
-    this.factoryType = 'market-analysis'
-    this.capability = 'competitor-analyzer'
-      priority: 'medium'
-  log(message, level = 'info'
-process.on('SIGINT'
-  console.log('🛑 Shutting down automation gracefully...'
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+}const fs = require('fs''')
+const path = require('path''')
+const { spawn, exec } = require(('child_process)'''
+const { promisify } = require(('util)'''
+    this.factoryType = 'market-analysis'''
+    this.capability = 'competitor-analyzer'''
+      priority: 'medium'''
+  log(message, level = 'info''')
+process.on('SIGINT''')
+  console.log('🛑 Shutting down automation gracefully...''')

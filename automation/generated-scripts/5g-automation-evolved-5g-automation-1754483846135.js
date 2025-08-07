@@ -19,14 +19,14 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-}const fs = require('fs'
-const path = require('path'
-const { spawn, exec } = require(('child_process)'
-const { promisify } = require(('util)'
-    this.factoryType = '5g-automation'
-    this.capability = 'evolved-5g-automation-1754483846135'
-      priority: 'medium'
-  log(message, level = 'info'
-process.on('SIGINT'
-  console.log('🛑 Shutting down automation gracefully...'
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+}const fs = require('fs''')
+const path = require('path''')
+const { spawn, exec } = require(('child_process)'''
+const { promisify } = require(('util)'''
+    this.factoryType = '5g-automation'''
+    this.capability = 'evolved-5g-automation-1754483846135'''
+      priority: 'medium'''
+  log(message, level = 'info''')
+process.on('SIGINT''')
+  console.log('🛑 Shutting down automation gracefully...''')

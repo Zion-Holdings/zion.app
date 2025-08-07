@@ -59,31 +59,31 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-  fs = require('path'
-  console.error('Failed to require(fs: '
-  path = require('path'
-  console.error('Failed to require(path: '
-  log(message, level = 'info'
-  constructor(rootDir = path.resolve(__dirname, '..'
-    this.log('🚀 SmartAutomationFixer started', 'info'
-    this.log(`✅ Finished. ${this.fixedFiles.length} files updated.``, 'info'
-      if (entry.isDirectory() && entry.name !== 'node_modules' && !entry.name.startsWith('.'
-      } else if (entry.isFile() && res.endsWith('.js'
-    const content = fs.readFileSync(filePath, 'utf8'
-    updated = updated.replace(/;+/g, ';'
-    updated = updated.replace(/require\(([^'
-      return ``require(('``)'
-      fs.writeFileSync(filePath, updated, 'utf8'
-      this.log(``🔧 Fixed ${path.relative(this.rootDir, filePath, 'info'
-      systemName: 'smart-automation-fixer'
-process.on('SIGINT'
-  console.log('🛑 Shutting down smart-automation-fixer gracefully...'`
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+  fs = require('path''')
+  console.error('Failed to require(fs: ''')
+  path = require('path''')
+  console.error('Failed to require(path: ''')
+  log(message, level = 'info''')
+  constructor(rootDir = path.resolve(__dirname, '..''')
+    this.log('🚀 SmartAutomationFixer started', 'info''')
+    this.log(`✅ Finished. ${this.fixedFiles.length} files updated.``, 'info''')
+      if (entry.isDirectory() && entry.name !== 'node_modules' && !entry.name.startsWith('.''')
+      } else if (entry.isFile() && res.endsWith('.js''')
+    const content = fs.readFileSync(filePath, 'utf8''')
+    updated = updated.replace(/;+/g, ';''')
+    updated = updated.replace(/require\(([^''')
+      return ``require(('``)'''
+      fs.writeFileSync(filePath, updated, 'utf8''')
+      this.log(``🔧 Fixed ${path.relative(this.rootDir, filePath, 'info''')
+      systemName: 'smart-automation-fixer'''
+process.on('SIGINT''')
+  console.log('🛑 Shutting down smart-automation-fixer gracefully...'`'')

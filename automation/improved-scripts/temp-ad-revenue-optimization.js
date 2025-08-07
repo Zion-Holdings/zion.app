@@ -19,8 +19,8 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-            const result = require('fs'
-                    this.log(Ad revenue agent created:, agent.agentId, 'info'
-                            this.log(Ad', 'info') revenue optimization cycle completed')''
-                    console.error('Erro'r in ad revenue optimization: ', error)''
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+            const result = require('fs''')
+                    this.log(Ad revenue agent created:, agent.agentId, 'info''')
+                            this.log(Ad', 'info') revenue optimization cycle completed')''''
+                    console.error('Erro'r in ad revenue optimization: ', error)''''

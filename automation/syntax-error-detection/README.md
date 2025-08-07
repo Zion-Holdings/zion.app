@@ -94,7 +94,7 @@ This system provides automated syntax error detection, fixing, and monitoring ca
 
    ```bash
    cd automation/syntax-error-detection
-   ```
+```
 
 3. Make scripts executable:
 
@@ -102,7 +102,7 @@ This system provides automated syntax error detection, fixing, and monitoring ca
    chmod +x *.js *.sh
    chmod +x monitoring/*.js
    chmod +x factories/*.js
-   ```
+```
 
 ## Usage
 
@@ -112,25 +112,25 @@ This system provides automated syntax error detection, fixing, and monitoring ca
 
    ```bash
    ./launch-syntax-system.sh start
-   ```
+```
 
 2. **Check system status**:
 
    ```bash
    ./launch-syntax-system.sh status
-   ```
+```
 
 3. **Run a single cycle**:
 
    ```bash
    ./launch-syntax-system.sh cycle
-   ```
+```
 
 4. **View logs**:
 
    ```bash
    ./launch-syntax-system.sh logs detector
-   ```
+```
 
 ### Individual Components
 
@@ -376,6 +376,8 @@ ls -la *.json
 # View recent logs
 tail -f logs/syntax-detector-$(date +%Y-%m-%d).log
 ```
+```
+```
 
 ## Contributing
 
@@ -398,3 +400,15 @@ For issues and questions:
 2. Review status files for component health
 3. Run health checks for system diagnostics
 4. Consult the troubleshooting section
+
+
+```
+```
+
+```
+```
+
+```
+```
+
+```

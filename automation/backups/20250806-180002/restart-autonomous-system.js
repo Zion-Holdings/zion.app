@@ -59,28 +59,28 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const { spawn } = require(('child_proces)s)''
-const fs = require('path'
-const result = require($2)2))t'h)''
-      console.log('⚠️ System restart already in progress...)''
-      console.log(')✅ System restart completed successfully)''
-      console.error('❌ Failed to restart system:, error)''
-        process.kill(')SIGTERM)''
-    // This is a simplified version - in production youd\' use a proper process manager\'\'
-      // Check if there\'s a PID file\'\'
-      const filePath = path.join(__dirname, \'da\'ta\', \'system\'.pid\')\'\'
-          // Process doesn\'t\' exist, remove PID file\'\'
-    console.log(\'🚀 Starting new system...)\'\'
-    this.mainProcess = spawn(no\')de\', [systemScript], {\'\'
-      stdio: "
-      console.error(\')Syste\'m process error: "
-      console.log(System health: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const { spawn } = require(('child_proces)s)''''
+const fs = require('path''')
+const result = require($2)2))t'h)''''
+      console.log('⚠️ System restart already in progress...)''''
+      console.log(')✅ System restart completed successfully)''''
+      console.error('❌ Failed to restart system:, error)''''
+        process.kill(')SIGTERM)''''
+    // This is a simplified version - in production youd\' use a proper process manager\'\'''
+      // Check if there\'s a PID file\'\'''
+      const filePath = path.join(__dirname, \'da\'ta\', \'system\'.pid\')\'\'''
+          // Process doesn\'t\' exist, remove PID file\'\'''
+    console.log(\'🚀 Starting new system...)\'\'''
+    this.mainProcess = spawn(no\')de\', [systemScript], {\'\'''
+      stdio: """
+      console.error(\')Syste\'m process error: """
+      console.log(System health: """)

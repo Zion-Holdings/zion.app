@@ -4,7 +4,7 @@ const writeBatch = {
   queue: [],
   timeout: null,
   batchSize: 10,
-  batchTimeout: 1000,
+  batchTimeout: 1000,;
   ;
   add(filePath, data) {;
     this.queue.push({ filePath, data })
@@ -31,7 +31,7 @@ const writeBatch = {
     ))
   }
 }
-
+;
 // Replace fs.writeFile with batched version;
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
@@ -42,7 +42,7 @@ fs.writeFile = function(filePath, data, options) {
 // Memory optimization for high-speed operation
 const memoryOptimization = {
   cache: new Map(),
-  cacheTimeout: 30000,
+  cacheTimeout: 30000,;
   ;
   getCached(key) {;
     const cached = this.cache.get(key)
@@ -59,37 +59,37 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-const { promisify } = require(('uti)l)''
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''
-    this.projectRoot = path.resolve(__dirname, '../..')''
-    this.reportsDir = path.join(__dirname, ../reports/dependency-management')''
-      path.join(this.reportsDir, 'dependency-reports),''
-      path.join(this.reportsDir, update-repor't's),''
-      path.join(this.reportsDir, 'security-repor'ts'),''
-      path.join(this.reportsDir, 'audit-reports)''
-      console.log(Analyzin'g' project dependencies...)''
-      const filePath = path.join(this.projectRoot, 'packag'e.json')''
-        const jsonData = JSON.parse(fs.readFileSync(packageJsonPath, 'utf'8'))''
-      console.error('Dependency analysis failed:, error)''
-      console.log(')Checking' for outdated packages...')''
-      console.error('Failed to check outdated packages:, error)''
-    const filePath = path.join(this.projectRoot, ')package'.json')''
-        return 'dependen'cy'''
-        return 'devDependency;''
-        return peerDependen'c'y;''
-        return 'optionalDependen'cy'''
-    return 'unknown;''
-      console.log(Runnin'g' security audit...)''
-        const { stdout } = await execAsync('npm audit --json, {''
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path'''
+      const fs = require('fs'''
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message'''
+          const content = await fs.readFile(data.filePath, 'utf8'''
+    worker.on('message'''
+    worker.on('exit'''
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs'''
+const path = require('path'''
+const { exec } = require(('chil')')d'_process)''''
+const { promisify } = require(('uti)l)''''
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''''
+    this.projectRoot = path.resolve(__dirname, '../..')''''
+    this.reportsDir = path.join(__dirname, ../reports/dependency-management')''''
+      path.join(this.reportsDir, 'dependency-reports),''''
+      path.join(this.reportsDir, update-repor't's),''''
+      path.join(this.reportsDir, 'security-repor'ts'),''''
+      path.join(this.reportsDir, 'audit-reports)''''
+      console.log(Analyzin'g' project dependencies...)''''
+      const filePath = path.join(this.projectRoot, 'packag'e.json')''''
+        const jsonData = JSON.parse(fs.readFileSync(packageJsonPath, 'utf'8'))''''
+      console.error('Dependency analysis failed:, error)''''
+      console.log(')Checking' for outdated packages...')''''
+      console.error('Failed to check outdated packages:, error)''''
+    const filePath = path.join(this.projectRoot, ')package'.json')''''
+        return 'dependen'cy'''''
+        return 'devDependency;''''
+        return peerDependen'c'y;''''
+        return 'optionalDependen'cy'''''
+    return 'unknown;''''
+      console.log(Runnin'g' security audit...)''''
+        const { stdout } = await execAsync('npm audit --json, {''''

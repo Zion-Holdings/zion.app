@@ -57,19 +57,19 @@ const memoryOptimization = {
     }
   }
 }
-const result = require('fs').promises;''
-const path = require('path'
-const result = require($2)2))e'r)''
-      args: "[\'--no-sandb\'ox\'"
-          fix: "
-          type: "
-          type: "
-          fix: "
-          type: "
-          type: "
-      og: type: "
-      og: site_name: "
-      twitter: description: "
-          type: "
-          fix: "
-    await this.page.goto(page.url, { waitUntil: "
+const result = require('fs').promises;''''
+const path = require('path''')
+const result = require($2)2))e'r)''''
+      args: "[\'--no-sandb\'ox\'"""
+          fix: """
+          type: """
+          type: """
+          fix: """
+          type: """
+          type: """
+      og: type: """
+      og: site_name: """
+      twitter: description: """
+          type: """
+          fix: """
+    await this.page.goto(page.url, { waitUntil: """)

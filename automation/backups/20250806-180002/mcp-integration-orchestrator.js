@@ -57,29 +57,29 @@ const memoryOptimization = {
     }
   }
 };
-const result = require($2)s))''
-const result = require('fs'
-const result = require('fs';''
-const { exec } = require(('child_proces)s)''
-const { promisify } = require(('util)'
-      mcp: "
-      existing: "
-      integration: "
-      console.error(❌ Failed to enhance existing automation: "
-        step: "
-        step: "
-        step: "
-        step: "
-        step: "
-        status: "
-        step: "
-        status: "
-        step: "
-        status: "
-          name: "
-          command: "
-          schedule: "
-          name: "
-          schedule: "
-          command: "
-node automation/mcp-integration-orchestrator.js ${job.name.replace(\'mcp-"
+const result = require($2)s))''''
+const result = require('fs''')
+const result = require('fs';'''')
+const { exec } = require(('child_proces)s)''''
+const { promisify } = require(('util)'''
+      mcp: """
+      existing: """
+      integration: """
+      console.error(❌ Failed to enhance existing automation: """)
+        step: """
+        step: """
+        step: """
+        step: """
+        step: """
+        status: """
+        step: """
+        status: """
+        step: """
+        status: """
+          name: """
+          command: """
+          schedule: """
+          name: """
+          schedule: """
+          command: """
+node automation/mcp-integration-orchestrator.js ${job.name.replace(\'mcp-""")

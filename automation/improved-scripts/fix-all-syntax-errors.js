@@ -59,35 +59,35 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-  fs = require('path'
-  console.error('Failed to require(fs: '
-}''
-  path = require('path'
-  console.error('Failed to require(path: '
-}''
-    pattern: "
-      return match.replace(/['"]?[']$/"
-    pattern: "/['"
-      return match.replace(/['"]?[']$/"
-      return match.replace(/$/"
-    replacement: "
-    pattern: "/const\s+\{[^"
-      return match.replace(/?[']$/"
-    pattern: "
-      return match.replace(/['"]?[']$/"
-    pattern: "/res\.status\([^)]*\)\.json\([^)]*['"
-      return match.replace(/[']?['"]$/", "
-    content = content.replace(/[']?['"]/g, "
-    content = content.replace(/[']{2,}/g, "
-      return match.replace(/[']?[']$/, "
-      this.log(`Fixed: \"${filePath\"
-    this.log(Processing directory: \"${dir\"
-this.log(``\nTotal files fixed: \"${totalFixed\"`
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+  fs = require('path''')
+  console.error('Failed to require(fs: ''')
+}''''
+  path = require('path''')
+  console.error('Failed to require(path: ''')
+}''''
+    pattern: """
+      return match.replace(/['"]?[']$/""")
+    pattern: "/['"""
+      return match.replace(/['"]?[']$/""")
+      return match.replace(/$/""")
+    replacement: """
+    pattern: "/const\s+\{[^"""
+      return match.replace(/?[']$/""")
+    pattern: """
+      return match.replace(/['"]?[']$/""")
+    pattern: "/res\.status\([^)]*\)\.json\([^)]*['"""
+      return match.replace(/[']?['"]$/", """)
+    content = content.replace(/[']?['"]/g, """)
+    content = content.replace(/[']{2,}/g, """)
+      return match.replace(/[']?[']$/, """)
+      this.log(`Fixed: \"${filePath\""")
+    this.log(Processing directory: \"${dir\""")
+this.log(``\nTotal files fixed: \"${totalFixed\"`"")

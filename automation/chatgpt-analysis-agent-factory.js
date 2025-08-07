@@ -57,34 +57,34 @@ const memoryOptimization = {
     }
   }
 }
-const result = require($2)a))''
-const path = require('path'
-const result = require($2)2))axi'os')''
-const result = require($2)r))''
-const node-cron = require('path'
-        this.reportsDir = path.join(this.baseDir, ')chatgpt-analysis-repor'ts')''
-        this.agentsDir = path.join(this.baseDir, 'chatgpt-agents)''
-        this.logsDir = path.join(this.baseDir, chatgpt-lo'g's)''
-        this.dataDir = path.join(this.baseDir, 'chatgpt-da'ta')''
-            type: "
-            status: "
-                args: "[--no-sandbox"
-            await page.goto(this.chatgptUrl, { waitUntil: "
-                    role: "
-                        type: "
-                    type: "
-                args: "[--no-sandbox"
-            await page.goto(this.projectUrl, { waitUntil: "
-                    metaDescription: "
-                    headings: "Array.from(document.querySelectorAll(h\')1"
-                    styles: "
-            status: "
-                type: "
-                source: "
-                type: "
-                priority: "
-                source: "
-                type: "
-                priority: "
-                source: "
-                status: "
+const result = require($2)a))''''
+const path = require('path''')
+const result = require($2)2))axi'os')''''
+const result = require($2)r))''''
+const node-cron = require('path''')
+        this.reportsDir = path.join(this.baseDir, ')chatgpt-analysis-repor'ts')''''
+        this.agentsDir = path.join(this.baseDir, 'chatgpt-agents)''''
+        this.logsDir = path.join(this.baseDir, chatgpt-lo'g's)''''
+        this.dataDir = path.join(this.baseDir, 'chatgpt-da'ta')''''
+            type: """
+            status: """
+                args: "[--no-sandbox"""
+            await page.goto(this.chatgptUrl, { waitUntil: """)
+                    role: """
+                        type: """
+                    type: """
+                args: "[--no-sandbox"""
+            await page.goto(this.projectUrl, { waitUntil: """)
+                    metaDescription: """
+                    headings: "Array.from(document.querySelectorAll(h\')1"""
+                    styles: """
+            status: """
+                type: """
+                source: """
+                type: """
+                priority: """
+                source: """
+                type: """
+                priority: """
+                source: """
+                status: """

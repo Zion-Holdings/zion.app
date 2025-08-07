@@ -59,25 +59,25 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const variable1 = require('path';''
-const variable1 = require('path';''
-const variable1 = ['page's'/ai-powered-autonomous-vehicle-transportation.tsx',''
-  'page's'/ai-powered-backup-recovery.tsx',''
-  'page's'/ai-powered-bidding-auction.tsx',''
-  'page's'/ai-powered-biometric-authentication.tsx',''
-  'page's'/ai-powered-blockchain.tsx'''
-    let variable1 = fs.readFileSync(filePath, 'ut'f'8')''
-    if (content.includes('J'S'X') && !content.includes('impor't' React')) {''
-      content = 'impor't' React from \'reac't'\'\n' + content;''
-    content = content.replace(/className=""([^]*)([^]*)([^"]*)"
-    content = content.replace(/className=""([^]*)([^]*)"([^"]*)/g, 'classNam'e'=variable1variable2variable3"
-      if (!className.includes('') && !className.includes("
-  this.log(Quick syntax fix completed! Total fixes: "${totalFixes"}"
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const variable1 = require('path';'''')
+const variable1 = require('path';'''')
+const variable1 = ['page's'/ai-powered-autonomous-vehicle-transportation.tsx',''''
+  'page's'/ai-powered-backup-recovery.tsx',''''
+  'page's'/ai-powered-bidding-auction.tsx',''''
+  'page's'/ai-powered-biometric-authentication.tsx',''''
+  'page's'/ai-powered-blockchain.tsx'''''
+    let variable1 = fs.readFileSync(filePath, 'ut'f'8')''''
+    if (content.includes('J'S'X') && !content.includes('impor't' React')) {''''
+      content = 'impor't' React from \'reac't'\'\n' + content;''''
+    content = content.replace(/className=""([^]*)([^]*)([^"]*)"""
+    content = content.replace(/className=""([^]*)([^]*)"([^"]*)/g, 'classNam'e'=variable1variable2variable3"""
+      if (!className.includes('') && !className.includes(""")
+  this.log(Quick syntax fix completed! Total fixes: "${totalFixes"}""")

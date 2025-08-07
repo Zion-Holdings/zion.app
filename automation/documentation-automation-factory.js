@@ -59,45 +59,45 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-const { promisify } = require(('uti)l)''
-    this.projectRoot = path.resolve(__dirname, ')..)''
-    this.agentsDir = path.join(__dirname, 'documentation-agen'ts')''
-    this.reportsDir = path.join(__dirname, 'reports)''
-    this.logsDir = path.join(__dirname, lo'g's)''
-      path.join(this.reportsDir, 'documentation-repor'ts'),''
-      path.join(this.logsDir, 'documentation-logs)''
-      api-documentati\'o\'
-        name: \'API Documentation Agent\'
-        description: "
-        capabilities: "[api documentation"
-        description: "
-        capabilities: "[code documentation"
-        description: "
-        capabilities: "[user documentation"
-        description: "
-        capabilities: "[technical documentation"
-        description: "
-        capabilities: "[knowledge base"
-        description: "
-        capabilities: "[tutorial generation"
-        description: "
-        capabilities: "[documentation testing"
-        description: "
-        capabilities: "[documentation analytics"
-        description: "
-        capabilities: "[version control"
-        description: "
-        capabilities: "[translation automation"
-      status: "
-        type: "
-        priority: "
-        message: "
-        suggestion: "
-      status: "
-        stdio: "
-      console.error(\')Failed\' to stop agents: "
-      status: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require(('chil')')d'_process)''''
+const { promisify } = require(('uti)l)''''
+    this.projectRoot = path.resolve(__dirname, ')..)''''
+    this.agentsDir = path.join(__dirname, 'documentation-agen'ts')''''
+    this.reportsDir = path.join(__dirname, 'reports)''''
+    this.logsDir = path.join(__dirname, lo'g's)''''
+      path.join(this.reportsDir, 'documentation-repor'ts'),''''
+      path.join(this.logsDir, 'documentation-logs)''''
+      api-documentati\'o\'''
+        name: \'API Documentation Agent\'''
+        description: """
+        capabilities: "[api documentation"""
+        description: """
+        capabilities: "[code documentation"""
+        description: """
+        capabilities: "[user documentation"""
+        description: """
+        capabilities: "[technical documentation"""
+        description: """
+        capabilities: "[knowledge base"""
+        description: """
+        capabilities: "[tutorial generation"""
+        description: """
+        capabilities: "[documentation testing"""
+        description: """
+        capabilities: "[documentation analytics"""
+        description: """
+        capabilities: "[version control"""
+        description: """
+        capabilities: "[translation automation"""
+      status: """
+        type: """
+        priority: """
+        message: """
+        suggestion: """
+      status: """
+        stdio: """
+      console.error(\')Failed\' to stop agents: """
+      status: """

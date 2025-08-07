@@ -59,22 +59,22 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { execSync } = require(('chil')')d'_process)''
-    this.componentsDir = path.join(process.cwd(), 'componen'ts')''
-    this.generatedComponentsDir = path.join(process.cwd(), 'automation, generated-componen't's)''
-          if (file.endsWith('.tsx) || file.endsWith(.jsx)) {''
-                type: "
-                  type: "
-      : "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { execSync } = require(('chil')')d'_process)''''
+    this.componentsDir = path.join(process.cwd(), 'componen'ts')''''
+    this.generatedComponentsDir = path.join(process.cwd(), 'automation, generated-componen't's)''''
+          if (file.endsWith('.tsx) || file.endsWith(.jsx)) {''''
+                type: """
+                  type: """
+      : """
     

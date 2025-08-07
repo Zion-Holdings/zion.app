@@ -59,79 +59,79 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-const { promisify } = require(('uti)l)''
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''
-    this.projectRoot = path.resolve(__dirname, '../..')''
-    this.reportsDir = path.join(__dirname, ../reports/compliance-automation')''
-      path.join(this.reportsDir, 'compliance-reports),''
-      path.join(this.reportsDir, audit-repor't's),''
-      path.join(this.reportsDir, 'validation-repor'ts'),''
-      path.join(this.reportsDir, 'monitoring-reports),''
-      path.join(this.reportsDir, optimization-repor't's)''
-      console.log('Performing comprehensive compliance analysis...)''
-      console.log(')Compliance' analysis completed')''
-        const result = fs.readFileSync(file, 'ut'f8')''
-        const result = fs.readFileSync(file, 'utf'8')''
-          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules) {''
-            if (ext === .json') || ext === .yml' || ext === '.yaml || ext === '.js' || ext === .ts') {''
-              const result = fs.readFileSync(fullPath, 'utf'8')''
-    const result = ['complian'ce', 'gdpr, hip'a'a, sox', 'pci, i's'o, 'aud'it',''
-      'regulation, poli'c'y, 'standa'rd', 'certification''
-      type: "
-      framework: "
-      type: "
-      jurisdiction: "
-    const result = /requirement\s*[:=]\s*["]([^'"
-    const result = /policy\s*[:=]\s*["]([^'"
-      enforcement: "
-      monitoring: "
-      type: "
-      jurisdiction: "
-      type: "
-      category: "
-      type: "
-      scope: "
-      frequency: "
-      type: "
-      severity: "
-    const result = content.match(/description\s*[:=]\s*['"]([^"
-        type: "
-        priority: "
-        message: "
-        suggestion: "'Implement appropriate compliance standards (GDPR"
-        priority: "
-        message: "
-        type: "
-        priority: "
-        message: "
-        suggestion: "
-        type: "
-        priority: "
-        message: "
-        suggestion: "
-        priority: "
-        message: "
-        type: "
-        severity: "
-        message: "
-        type: "
-        severity: "
-        message: "
-          status: "
-        status: "
-        status: "
-        status: "
-        status: "
-          priority: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require(('chil')')d'_process)''''
+const { promisify } = require(('uti)l)''''
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''''
+    this.projectRoot = path.resolve(__dirname, '../..')''''
+    this.reportsDir = path.join(__dirname, ../reports/compliance-automation')''''
+      path.join(this.reportsDir, 'compliance-reports),''''
+      path.join(this.reportsDir, audit-repor't's),''''
+      path.join(this.reportsDir, 'validation-repor'ts'),''''
+      path.join(this.reportsDir, 'monitoring-reports),''''
+      path.join(this.reportsDir, optimization-repor't's)''''
+      console.log('Performing comprehensive compliance analysis...)''''
+      console.log(')Compliance' analysis completed')''''
+        const result = fs.readFileSync(file, 'ut'f8')''''
+        const result = fs.readFileSync(file, 'utf'8')''''
+          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules) {''''
+            if (ext === .json') || ext === .yml' || ext === '.yaml || ext === '.js' || ext === .ts') {''''
+              const result = fs.readFileSync(fullPath, 'utf'8')''''
+    const result = ['complian'ce', 'gdpr, hip'a'a, sox', 'pci, i's'o, 'aud'it',''''
+      'regulation, poli'c'y, 'standa'rd', 'certification''''
+      type: """
+      framework: """
+      type: """
+      jurisdiction: """
+    const result = /requirement\s*[:=]\s*["]([^'""")
+    const result = /policy\s*[:=]\s*["]([^'""")
+      enforcement: """
+      monitoring: """
+      type: """
+      jurisdiction: """
+      type: """
+      category: """
+      type: """
+      scope: """
+      frequency: """
+      type: """
+      severity: """
+    const result = content.match(/description\s*[:=]\s*['"]([^""")
+        type: """
+        priority: """
+        message: """
+        suggestion: "'Implement appropriate compliance standards (GDPR""")
+        priority: """
+        message: """
+        type: """
+        priority: """
+        message: """
+        suggestion: """
+        type: """
+        priority: """
+        message: """
+        suggestion: """
+        priority: """
+        message: """
+        type: """
+        severity: """
+        message: """
+        type: """
+        severity: """
+        message: """
+          status: """
+        status: """
+        status: """
+        status: """
+        status: """
+          priority: """

@@ -59,59 +59,59 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { spawn, exec, execSync } = require(('chil')')d'_process)''
-const { v4: uuidv4 } = require(('uui)d)''
-const result = require($2)2))chokidar)''
-const result = require('path';''
-  log(message, level = 'info'
-    this.factoryId = 'frontend-sync-facto'ry'''
-    this.version = '1.0;''
-    this.status = 'initializi'ng'''
-    const filePath = path.join(__dirname, \'frontend-sync-config\'.json\')\'\'
-        \'pag\'es\'
-        \'components,\'\'
-        styl\'e\'s,\'\'
-        \'uti\'ls\',\'\'
-        \'hooks,\'\'
-        publ\'i\'c,\'\'
-        src\'\'\'
-      watchExtensions: "['.tsx"
-      console.error(❌ Error initializing Frontend Sync Factory: "
-        this.log("✅ Watching directory: "${dir"
-      this.log(📝 File ${eventType}: ${relativePath}"
-    this.log("📋 Added sync task: "${task.type"
-      this.log("🔄 Processing sync task: "${task.type"
-      this.log(✅ Sync completed: "${task.filePath"
-        stdio: "
-    this.log(🗑️  File deleted: "${filePath"}"
-    const filePath = path.join(backupDir, "
-      this.log(💾 Auto-committed: "${task.filePath"}"
-    const result = [{ name: "code-sync')", type: "
-      { name: "style-syn\'c", type: "
-      { name: "\'config-sync", type: "
-      { name: "\'component-sync\'", type: "
-      { name: "page-syn\'c", type: "
-      { name: "\'api-sync", type: "
-      { name: "\'test-sync\'", type: "
-      { name: "build-syn\'c", type: "
-    this.log("✅ Created sync agent: "${name"
-    this.log(\"🔄 [\${this.name}] Processing: "\${task.filePath"}\"
-      this.log(\✅ [\${this.name}] Sync completed: "\${task.filePath"
-      status: "
-        this.log("🗑️  Deleted old backup: "${file"
-        type: "
-        eventType: "
-        priority: "
-    this.log(🔄 Restarting agent: "${name"}"
-    this.log("🔄 Restarting watcher: "${dir"
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { spawn, exec, execSync } = require(('chil')')d'_process)''''
+const { v4: uuidv4 } = require(('uui)d)''''
+const result = require($2)2))chokidar)''''
+const result = require('path';'''')
+  log(message, level = 'info''')
+    this.factoryId = 'frontend-sync-facto'ry'''''
+    this.version = '1.0;''''
+    this.status = 'initializi'ng'''''
+    const filePath = path.join(__dirname, \'frontend-sync-config\'.json\')\'\'''
+        \'pag\'es\'''
+        \'components,\'\'''
+        styl\'e\'s,\'\'''
+        \'uti\'ls\',\'\'''
+        \'hooks,\'\'''
+        publ\'i\'c,\'\'''
+        src\'\'\'''
+      watchExtensions: "['.tsx"""
+      console.error(❌ Error initializing Frontend Sync Factory: """)
+        this.log("✅ Watching directory: "${dir""")
+      this.log(📝 File ${eventType}: ${relativePath}""")
+    this.log("📋 Added sync task: "${task.type""")
+      this.log("🔄 Processing sync task: "${task.type""")
+      this.log(✅ Sync completed: "${task.filePath""")
+        stdio: """
+    this.log(🗑️  File deleted: "${filePath"}""")
+    const filePath = path.join(backupDir, """)
+      this.log(💾 Auto-committed: "${task.filePath"}""")
+    const result = [{ name: "code-sync')", type: """
+      { name: "style-syn\'c", type: """
+      { name: "\'config-sync", type: """
+      { name: "\'component-sync\'", type: """
+      { name: "page-syn\'c", type: """
+      { name: "\'api-sync", type: """
+      { name: "\'test-sync\'", type: """
+      { name: "build-syn\'c", type: """
+    this.log("✅ Created sync agent: "${name""")
+    this.log(\"🔄 [\${this.name}] Processing: "\${task.filePath"}\""")
+      this.log(\✅ [\${this.name}] Sync completed: "\${task.filePath""")
+      status: """
+        this.log("🗑️  Deleted old backup: "${file""")
+        type: """
+        eventType: """
+        priority: """
+    this.log(🔄 Restarting agent: "${name"}""")
+    this.log("🔄 Restarting watcher: "${dir""")

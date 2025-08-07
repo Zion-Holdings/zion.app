@@ -59,39 +59,39 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const result = require($2)2))o's)''
-const result = require($2)o))''
-const result = require($2)2))puppeteer)''
-    this.agentType = process.env.AGENT_TYPE || link-fix'e'r;''
-    this.baseUrl = process.env.BASE_URL || 'http's: //ziontechgroup.netlify.app'''
-      backupBeforeFix: "
-      validateAfterFix: "
-      createRedirects: "
-        args: "['--no-sandbox"
-        console.error(')Error' in continuous fixing: "
-            type: "
-            type: "
-          type: "
-        type: "
-            error: "'Server error"
-        type: "
-        type: "
-        type: "
-        type: "
-        type: "
-        action: "
-        type: "
-        action: "
-        type: "
-        action: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const result = require($2)2))o's)''''
+const result = require($2)o))''''
+const result = require($2)2))puppeteer)''''
+    this.agentType = process.env.AGENT_TYPE || link-fix'e'r;''''
+    this.baseUrl = process.env.BASE_URL || 'http's: //ziontechgroup.netlify.app'''''
+      backupBeforeFix: """
+      validateAfterFix: """
+      createRedirects: """
+        args: "['--no-sandbox"""
+        console.error(')Error' in continuous fixing: """
+            type: """
+            type: """
+          type: """
+        type: """
+            error: "'Server error"""
+        type: """
+        type: """
+        type: """
+        type: """
+        type: """
+        action: """
+        type: """
+        action: """
+        type: """
+        action: """

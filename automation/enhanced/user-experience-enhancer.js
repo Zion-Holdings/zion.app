@@ -18,9 +18,9 @@ const memoryOptimization = {
   }
 }
 
-const fs = require('path'
-const path = require('path'
-        this.name = 'user-experience-enhancer'
-        this.description = 'Intelligent UX optimization with personalization'
-        this.status = 'active'
-        this.version = '3.0'
+const fs = require('path''')
+const path = require('path''')
+        this.name = 'user-experience-enhancer'''
+        this.description = 'Intelligent UX optimization with personalization'''
+        this.status = 'active'''
+        this.version = '3.0'''

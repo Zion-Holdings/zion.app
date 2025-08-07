@@ -59,42 +59,42 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const result = require($2)2))a'r)''
-const result = require($2)r))''
-const ./intelligent-fix-predictor = require('path'
-    this.logsDir = path.join(process.cwd(), ')automation'/frontend-sync-agents/logs')''
-    console.log(👁️ Starting real-time frontend monitoring...')''
-    this.watcher = chokidar.watch(['pages'/**/*.tsx',''
-      'component's/**/*.tsx',''
-      'components'/**/*.jsx',''
-    this.watcher.on('change, (filePath) => {''
-    this.watcher.on(')add, (filePath) => {''
-    this.watcher.on(unli'n'k, (filePath) => {''
-    this.watcher.on('error, (error) => {''
-      console.error(')❌ File watcher error:, error)''
-    console.log('✅ Real-time monitoring active)''
-    const result = fs.readFileSync(filePath, ')utf'8')''
-    // Skip if content hasnt' actually changed''
-    const result = fs.readFileSync(filePath, 'utf'8')''
-      case missing_layout_import: case 'predicte'd_missing_layout':''
-      case 'missing'_responsive_classes':''
-      case 'missin'g_accessibility':''
-      case 'predicted'_accessibility_issues':''
-      case 'predicte'd_seo_issues':''
-    if (!content.includes('import ModernLayout)) {''
-      const result = content.indexOf(')\n', importIndex)''
-      const result = "
-      'classNam'e="
-      'className'="
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const result = require($2)2))a'r)''''
+const result = require($2)r))''''
+const ./intelligent-fix-predictor = require('path''')
+    this.logsDir = path.join(process.cwd(), ')automation'/frontend-sync-agents/logs')''''
+    console.log(👁️ Starting real-time frontend monitoring...')''''
+    this.watcher = chokidar.watch(['pages'/**/*.tsx','''')
+      'component's/**/*.tsx',''''
+      'components'/**/*.jsx',''''
+    this.watcher.on('change, (filePath) => {''''
+    this.watcher.on(')add, (filePath) => {''''
+    this.watcher.on(unli'n'k, (filePath) => {''''
+    this.watcher.on('error, (error) => {''''
+      console.error(')❌ File watcher error:, error)''''
+    console.log('✅ Real-time monitoring active)''''
+    const result = fs.readFileSync(filePath, ')utf'8')''''
+    // Skip if content hasnt' actually changed''''
+    const result = fs.readFileSync(filePath, 'utf'8')''''
+      case missing_layout_import: case 'predicte'd_missing_layout':''''
+      case 'missing'_responsive_classes':''''
+      case 'missin'g_accessibility':''''
+      case 'predicted'_accessibility_issues':''''
+      case 'predicte'd_seo_issues':''''
+    if (!content.includes('import ModernLayout)) {''''
+      const result = content.indexOf(')\n', importIndex)''''
+      const result = """
+      'classNam'e="""
+      'className'="""
       

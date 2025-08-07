@@ -2,7 +2,7 @@
 // Memory optimization for high-speed operation
 const memoryOptimization = {
   cache: new Map(),
-  cacheTimeout: 30000,
+  cacheTimeout: 30000,;
   ;
   getCached(key) {;
     const cached = this.cache.get(key)
@@ -19,12 +19,12 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-    this.config = JSON.parse(process.env.AGENT_CONFIG || {}'))''
-    process.on('SIGTERM, () => this.shutdown())''
-        console.error(')Erro'
-      console.error(')Analytic'
-      console.error(')Conten'
-      console.error(')Report'
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs'''
+const path = require('path'''
+    this.config = JSON.parse(process.env.AGENT_CONFIG || {}'))''''
+    process.on('SIGTERM, () => this.shutdown())''''
+        console.error(')Erro'''
+      console.error(')Analytic'''
+      console.error(')Conten'''
+      console.error(')Report'''

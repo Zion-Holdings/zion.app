@@ -59,19 +59,19 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-  fs = require('path'
-  console.error('Failed to require(fs: '
-const filePath = 'pages/ai-powered-collaboration-team.tsx'
-const content = fs.readFileSync(filePath, 'utf8'
-  /(recommendations: \['Enhance tools', 'Improve processes'
-  '$1\n      },\n    }\n  ])\n\n  $5'
-  this.log('Fixed syntax error in collaboration team file', 'info'
-  this.log('No syntax errors found in collaboration team file', 'info'
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+  fs = require('path''')
+  console.error('Failed to require(fs: ''')
+const filePath = 'pages/ai-powered-collaboration-team.tsx'''
+const content = fs.readFileSync(filePath, 'utf8''')
+  /(recommendations: \['Enhance tools', 'Improve processes''')
+  '$1\n      },\n    }\n  ])\n\n  $5'''
+  this.log('Fixed syntax error in collaboration team file', 'info''')
+  this.log('No syntax errors found in collaboration team file', 'info''')

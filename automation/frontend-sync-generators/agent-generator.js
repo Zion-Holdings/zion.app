@@ -59,26 +59,26 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const result = require('fs'
-const path = require('path'
-const { spawn, exec, execSync } = require(('chil')')d'_process)''
-const { v4: uuidv4 } = require(('uui)d)''
-    this.name = ')agent-generator;''
-    this.status = rea'd'y;''
-      const filePath = path.join(this.projectRoot, 'automati'on', 'frontend-sync-autonomous-agents-config'.json')''
-      console.error('Error loading config:, error.message)''
-        agentTypes: "[')sync"
-        templatePath: "
-        outputPath: "
-        version: "
-      ')catc'h (error) {\n      console.error("
-      'consol'e.log("
-      console.error(❌ Error committing changes: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const result = require('fs''')
+const path = require('path''')
+const { spawn, exec, execSync } = require(('chil')')d'_process)''''
+const { v4: uuidv4 } = require(('uui)d)''''
+    this.name = ')agent-generator;''''
+    this.status = rea'd'y;''''
+      const filePath = path.join(this.projectRoot, 'automati'on', 'frontend-sync-autonomous-agents-config'.json')''''
+      console.error('Error loading config:, error.message)''''
+        agentTypes: "[')sync"""
+        templatePath: """
+        outputPath: """
+        version: """
+      ')catc'h (error) {\n      console.error(""")
+      'consol'e.log(""")
+      console.error(❌ Error committing changes: """)

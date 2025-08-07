@@ -59,75 +59,75 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { GoogleGenerativeAI } = require(('@google/generative-ai')'))''
-const cron = require('path';''
-    this.automationPath = path.join(__dirname, \')automation-scrip\'ts\')\'\'
-    this.cronPath = path.join(__dirname, \'cron-jobs)\'\'
-    this.agentTypes.set(content-validat\'o\'r, {\'\'
-      name: "
-      description: "
-      frequency: "
-      priority: "
-      name: "
-      description: "
-      frequency: "
-      priority: "
-      name: "
-      description: "
-      frequency: "
-      priority: "
-      name: "
-      description: "
-      frequency: "
-      priority: "
-      name: "
-      description: "
-      frequency: "
-      priority: "
-      name: "
-      description: "
-      frequency: "
-      priority: "
-      name: "
-      description: "
-      frequency: "
-      priority: "
-      name: "
-      description: "
-      frequency: "
-      priority: "
-      name: "
-      triggers: "[\'content-error"
-      triggers: "[\')slow-loadi\'ng\'"
-      name: "
-      triggers: "[security-vulnerability"
-      triggers: "[\')backup-need\'ed\'"
-      schedule: "
-      schedule: "
-      description: "
-      description: "
-      schedule: "
-      schedule: "
-      description: "
-      description: "
-      schedule: "
-      status: "
-      console.error(❌ Backup automation error: "
-        issues.push({ type: "missing-styling", severity: "
-        issues.push({ type: "')missing-responsive-design'", severity: "
-        issues.push({ type: "')missing-viewport-meta", severity: "
-        issues.push({ type: "missing-alt-te'x't", severity: "
-        issues.push({ type: "')missing-aria-labels'", severity: "
-      issues.push({ type: "file-read-erro\'r", severity: "
-        \'
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { GoogleGenerativeAI } = require(('@google/generative-ai')'))''''
+const cron = require('path';'''')
+    this.automationPath = path.join(__dirname, \')automation-scrip\'ts\')\'\'''
+    this.cronPath = path.join(__dirname, \'cron-jobs)\'\'''
+    this.agentTypes.set(content-validat\'o\'r, {\'\''')
+      name: """
+      description: """
+      frequency: """
+      priority: """
+      name: """
+      description: """
+      frequency: """
+      priority: """
+      name: """
+      description: """
+      frequency: """
+      priority: """
+      name: """
+      description: """
+      frequency: """
+      priority: """
+      name: """
+      description: """
+      frequency: """
+      priority: """
+      name: """
+      description: """
+      frequency: """
+      priority: """
+      name: """
+      description: """
+      frequency: """
+      priority: """
+      name: """
+      description: """
+      frequency: """
+      priority: """
+      name: """
+      triggers: "[\'content-error"""
+      triggers: "[\')slow-loadi\'ng\'"""
+      name: """
+      triggers: "[security-vulnerability"""
+      triggers: "[\')backup-need\'ed\'"""
+      schedule: """
+      schedule: """
+      description: """
+      description: """
+      schedule: """
+      schedule: """
+      description: """
+      description: """
+      schedule: """
+      status: """
+      console.error(❌ Backup automation error: """)
+        issues.push({ type: "missing-styling", severity: """)
+        issues.push({ type: "')missing-responsive-design'", severity: """
+        issues.push({ type: "')missing-viewport-meta", severity: """
+        issues.push({ type: "missing-alt-te'x't", severity: """)
+        issues.push({ type: "')missing-aria-labels'", severity: """
+      issues.push({ type: "file-read-erro\'r", severity: """)
+        \'''

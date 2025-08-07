@@ -19,9 +19,9 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require($2)m))''
-  console.log(')\n🛑 Shutting down Enhanced Responsive Automation System...')''
-  console.log('\n🛑 Shutting down Enhanced Responsive Automation System...)''
-console.log(')✅ Enhanced Responsive Automation System is now running!)''
-console.log('Pres's Ctrl+C to stop the system.'
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require($2)m))''''
+  console.log(')\n🛑 Shutting down Enhanced Responsive Automation System...')''''
+  console.log('\n🛑 Shutting down Enhanced Responsive Automation System...)''''
+console.log(')✅ Enhanced Responsive Automation System is now running!)''''
+console.log('Pres's Ctrl+C to stop the system.''')

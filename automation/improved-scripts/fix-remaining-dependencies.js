@@ -59,29 +59,29 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-  fs = require('path'
-  console.error('Failed to require(fs: '
-  path = require('path'
-  console.error('Failed to require(path: '
-    let content = fs.readFileSync(filePath, 'utf8'
-      if (deps.includes('mock'
-        const depArray = deps.split(','
-        const validDeps = depArray.filter(dep => !dep.includes('mock'
-        const newDeps = validDeps.length > 0 ? validDeps.join(', ') : ''
-      if (deps.includes('data') && !deps.includes('factory'
-        const newDeps = deps ? `${deps}, factory`` : 'factory'
-      fs.writeFileSync(filePath, content, 'utf8'
-      this.log(``✅ Fixed dependencies in ${filePath}``, 'info'
-  const pagesDir = path.join(__dirname, '..', 'pages'
-  const srcDir = path.join(__dirname, '..', 'src'
-      if (file.endsWith('.tsx') || file.endsWith('.ts'
-      if (file.endsWith('.tsx') || file.endsWith('.ts'
-  this.log(``\n🎉 Fixed dependencies in ${totalFixed} files``, 'info'`
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+  fs = require('path''')
+  console.error('Failed to require(fs: ''')
+  path = require('path''')
+  console.error('Failed to require(path: ''')
+    let content = fs.readFileSync(filePath, 'utf8''')
+      if (deps.includes('mock''')
+        const depArray = deps.split(',''')
+        const validDeps = depArray.filter(dep => !dep.includes('mock''')
+        const newDeps = validDeps.length > 0 ? validDeps.join(', ') : ''''
+      if (deps.includes('data') && !deps.includes('factory''')
+        const newDeps = deps ? `${deps}, factory`` : 'factory'''
+      fs.writeFileSync(filePath, content, 'utf8''')
+      this.log(``✅ Fixed dependencies in ${filePath}``, 'info''')
+  const pagesDir = path.join(__dirname, '..', 'pages''')
+  const srcDir = path.join(__dirname, '..', 'src''')
+      if (file.endsWith('.tsx') || file.endsWith('.ts''')
+      if (file.endsWith('.tsx') || file.endsWith('.ts''')
+  this.log(``\n🎉 Fixed dependencies in ${totalFixed} files``, 'info'`'')

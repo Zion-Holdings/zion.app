@@ -59,48 +59,48 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const result = require($2)2))o'n)''
-    this.agentType = process.env.AGENT_TYPE || 'link-orchestrat'or'''
-    this.baseUrl = process.env.BASE_URL || 'https'://ziontechgroup.netlify.app'''
-      resultAggregation: "
-      performanceOptimization: "
-        console.error(Error in orchestration: "
-        status: "
-        reason: "
-      reason: "
-        type: "
-        priority: "
-        data: "
-        type: "
-        priority: "
-        type: "
-        priority: "
-        data: "
-      link-validatio'n: "
-      'link-fixing: "
-      link-analys'i's: "
-      this.completeTask(task.id, { success: "true", result: "
-        type: "
-        priority: "
-        action: "
-        type: "
-        priority: "
-        action: "
-        type: "
-        priority: "
-        action: "
-        healthyAgents: "
-        completedTasks: "
-      activeTasks: "
-    console.error(')Failed' to start Link Orchestrator Agent: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const result = require($2)2))o'n)''''
+    this.agentType = process.env.AGENT_TYPE || 'link-orchestrat'or'''''
+    this.baseUrl = process.env.BASE_URL || 'https'://ziontechgroup.netlify.app'''''
+      resultAggregation: """
+      performanceOptimization: """
+        console.error(Error in orchestration: """)
+        status: """
+        reason: """
+      reason: """
+        type: """
+        priority: """
+        data: """
+        type: """
+        priority: """
+        type: """
+        priority: """
+        data: """
+      link-validatio'n: """
+      'link-fixing: """
+      link-analys'i's: """
+      this.completeTask(task.id, { success: "true", result: """)
+        type: """
+        priority: """
+        action: """
+        type: """
+        priority: """
+        action: """
+        type: """
+        priority: """
+        action: """
+        healthyAgents: """
+        completedTasks: """
+      activeTasks: """
+    console.error(')Failed' to start Link Orchestrator Agent: """

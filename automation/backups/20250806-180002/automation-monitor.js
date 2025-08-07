@@ -59,57 +59,57 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-}const fs = require('path'
-const path = require('path'
-const { execSync, spawn } = require(('child_process)'
-console.log('🔍 Starting Comprehensive Automation Monitor...'
-const SYSTEMS = ['ultimate-automation-factory-system'
-  'intelligent-automation-orchestrator'
-  'continuous-automation-improvement-system'
-  'master-automation-coordinator'
-  'enhanced-diversification-orchestrator'
-  'intelligent-agent-orchestrator'
-  const prefix = type === 'error' ? '❌' : type === 'success' ? '✅' : '📊'
-  const stateFile = path.join(AUTOMATION_DIR, 'status-data'
-    return { isRunning: false, health: 'unknown', errors: ['No state file found'
-    const state = JSON.parse(fs.readFileSync(stateFile, 'utf8'
-    return { isRunning: false, health: 'unknown'
-    execSync(`ps -p ${pid}``, { stdio: 'ignore'
-      log(``System script not found: ${scriptPath}``, 'error'
-    const child = spawn('node'
-      stdio: 'pipe'
-    const stateFile = path.join(AUTOMATION_DIR, 'status-data'
-      const state = JSON.parse(fs.readFileSync(stateFile, 'utf8'
-    child.on('error'
-      log(``Error starting ${systemName}: ${error.message}``, 'error'
-        reject(new Error('Process failed to start'
-    const stateFile = path.join(AUTOMATION_DIR, 'status-data'
-      const state = JSON.parse(fs.readFileSync(stateFile, 'utf8'
-        execSync(``kill ${state.pid}``, { stdio: 'ignore'
-    log(``Error killing ${systemName}: ${error.message}``, 'error'
-    overallHealth: activeSystems > 0 ? 'healthy' : 'critical'
-    path.join(AUTOMATION_DIR, 'automation-status.json'
-  log('📊 Automation Status Report'
-    const statusIcon = system.isRunning ? '✅' : '❌'
-    const healthIcon = system.health === 'healthy' || system.health === 'excellent' ? '🟢'
-                      system.health === 'warning' ? '🟡' : '🔴'
-    log(``${statusIcon} ${system.name} - ${healthIcon} ${system.health} (PID: ${system.pid || 'N/A'
-    log('🔍 Checking automation systems...'
-          log(``❌ Failed to restart ${system.name}: ${error.message}``, 'error'
-      log('✅ All automation systems are running properly'
-    log(``❌ Error in monitoring: ${error.message}``, 'error'
-  log('🚀 Starting automation monitoring...'
-    const reportFile = path.join(AUTOMATION_DIR, 'reports'
-process.on('SIGINT'
-  log('🛑 Shutting down automation monitor...'
-process.on('SIGTERM'
-  log('🛑 Received SIGTERM, shutting down...'`
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+}const fs = require('path''')
+const path = require('path''')
+const { execSync, spawn } = require(('child_process)'''
+console.log('🔍 Starting Comprehensive Automation Monitor...''')
+const SYSTEMS = ['ultimate-automation-factory-system'''
+  'intelligent-automation-orchestrator'''
+  'continuous-automation-improvement-system'''
+  'master-automation-coordinator'''
+  'enhanced-diversification-orchestrator'''
+  'intelligent-agent-orchestrator'''
+  const prefix = type === 'error' ? '❌' : type === 'success' ? '✅' : '📊'''
+  const stateFile = path.join(AUTOMATION_DIR, 'status-data''')
+    return { isRunning: false, health: 'unknown', errors: ['No state file found'''
+    const state = JSON.parse(fs.readFileSync(stateFile, 'utf8''')
+    return { isRunning: false, health: 'unknown'''
+    execSync(`ps -p ${pid}``, { stdio: 'ignore''')
+      log(``System script not found: ${scriptPath}``, 'error''')
+    const child = spawn('node''')
+      stdio: 'pipe'''
+    const stateFile = path.join(AUTOMATION_DIR, 'status-data''')
+      const state = JSON.parse(fs.readFileSync(stateFile, 'utf8''')
+    child.on('error''')
+      log(``Error starting ${systemName}: ${error.message}``, 'error''')
+        reject(new Error('Process failed to start''')
+    const stateFile = path.join(AUTOMATION_DIR, 'status-data''')
+      const state = JSON.parse(fs.readFileSync(stateFile, 'utf8''')
+        execSync(``kill ${state.pid}``, { stdio: 'ignore''')
+    log(``Error killing ${systemName}: ${error.message}``, 'error''')
+    overallHealth: activeSystems > 0 ? 'healthy' : 'critical'''
+    path.join(AUTOMATION_DIR, 'automation-status.json''')
+  log('📊 Automation Status Report''')
+    const statusIcon = system.isRunning ? '✅' : '❌'''
+    const healthIcon = system.health === 'healthy' || system.health === 'excellent' ? '🟢'''
+                      system.health === 'warning' ? '🟡' : '🔴'''
+    log(``${statusIcon} ${system.name} - ${healthIcon} ${system.health} (PID: ${system.pid || 'N/A''')
+    log('🔍 Checking automation systems...''')
+          log(``❌ Failed to restart ${system.name}: ${error.message}``, 'error''')
+      log('✅ All automation systems are running properly''')
+    log(``❌ Error in monitoring: ${error.message}``, 'error''')
+  log('🚀 Starting automation monitoring...''')
+    const reportFile = path.join(AUTOMATION_DIR, 'reports''')
+process.on('SIGINT''')
+  log('🛑 Shutting down automation monitor...''')
+process.on('SIGTERM''')
+  log('🛑 Received SIGTERM, shutting down...'`'')

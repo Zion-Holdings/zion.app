@@ -59,27 +59,27 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const variable1 = require('path';''
-const variable1 = require('path';''
-    let variable1 = fs.readFileSync(filePath, 'ut'f'8')''
-      '<Image variable1 width={32} height={32} />'''
-      '<Image variable1 width={32} height={32} />'''
-      '<Image variable1 width={32} height={32} />'''
-    if (content !== fs.readFileSync(filePath, 'ut'f'8')) {''
-  const variable1 = ['page's'/service-request-system.tsx',''
-    'page's'/real-time-chat.tsx',''
-    'page's'/user-profiles.tsx',''
-    'page's'/talent-directory.tsx',''
-    'page's'/equipment-rental.tsx',''
-    'page's'/service-marketplace.tsx'''
-    const variable1 = path.join(__dirname, '..', file)''
-        this.log("Fixed Image components in ${file}"
-  this.log("\nTotal files fixed: "${totalFixed"}"
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const variable1 = require('path';'''')
+const variable1 = require('path';'''')
+    let variable1 = fs.readFileSync(filePath, 'ut'f'8')''''
+      '<Image variable1 width={32} height={32} />'''''
+      '<Image variable1 width={32} height={32} />'''''
+      '<Image variable1 width={32} height={32} />'''''
+    if (content !== fs.readFileSync(filePath, 'ut'f'8')) {''''
+  const variable1 = ['page's'/service-request-system.tsx',''''
+    'page's'/real-time-chat.tsx',''''
+    'page's'/user-profiles.tsx',''''
+    'page's'/talent-directory.tsx',''''
+    'page's'/equipment-rental.tsx',''''
+    'page's'/service-marketplace.tsx'''''
+    const variable1 = path.join(__dirname, '..', file)''''
+        this.log("Fixed Image components in ${file}""")
+  this.log("\nTotal files fixed: "${totalFixed"}""")

@@ -59,37 +59,37 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-  fs = require('path'
-  console.error('Failed to require(fs: '
-}''
-  path = require('path'
-  console.error('Failed to require(path: '
-}''
-const { v4: uuidv4 } = require(('uuid)')''
-  cron = require('path'
-  console.error('Failed to require(node-cron: '
-}''
-  log(message, level = 'info'
-    this.agentsPath = path.join(__dirname, \'quantum-computing-agents\')\'\'
-    this.reportsPath = path.join(__dirname, \'quantum-reports\')\'\'
-    this.createAgent(\'quantum-algorithm-optimizer\', {\'\'
-      capabilities: "['circuit-optimization'"
-      frequency: "
-      priority: "
-      capabilities: "['circuit-simulation'"
-      frequency: "
-      priority: "
-      capabilities: "['error-detection'"
-      frequency: "
-      priority: "
-      status: "
-    this.log(`✅ Created ${type} agent: \"${agentId\"
-      capabilities: \"
-      frequency: \"
-      priority: \"
-      algorithm: \"
-      circuit: \"
-      this.log(🔄 Restarting agent: \"${agentId\"
-      activeAgents: \"
-      status: \"`
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+  fs = require('path''')
+  console.error('Failed to require(fs: ''')
+}''''
+  path = require('path''')
+  console.error('Failed to require(path: ''')
+}''''
+const { v4: uuidv4 } = require(('uuid)')''''
+  cron = require('path''')
+  console.error('Failed to require(node-cron: ''')
+}''''
+  log(message, level = 'info''')
+    this.agentsPath = path.join(__dirname, \'quantum-computing-agents\')\'\'''
+    this.reportsPath = path.join(__dirname, \'quantum-reports\')\'\'''
+    this.createAgent(\'quantum-algorithm-optimizer\', {\'\''')
+      capabilities: "['circuit-optimization'"""
+      frequency: """
+      priority: """
+      capabilities: "['circuit-simulation'"""
+      frequency: """
+      priority: """
+      capabilities: "['error-detection'"""
+      frequency: """
+      priority: """
+      status: """
+    this.log(`✅ Created ${type} agent: \"${agentId\""")
+      capabilities: \"""
+      frequency: \"""
+      priority: \"""
+      algorithm: \"""
+      circuit: \"""
+      this.log(🔄 Restarting agent: \"${agentId\""")
+      activeAgents: \"""
+      status: \"`""

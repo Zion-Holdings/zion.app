@@ -19,38 +19,38 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const fs = require('path';''
-const path = require('path';''
-const { exec } = require(('child_process)')''
-const util = require('path';''
-const cron = require('path';''
-  log(message, level = 'info'
-        this.projectRoot = path.resolve(__dirname, '..')''
-        const dirs = [path.join(__dirname, 'smart-automation'),''
-            path.join(__dirname, 'smart-automation/models'),''
-            path.join(__dirname, 'smart-automation/learning-data'),''
-            path.join(__dirname, 'smart-automation/reports')''
-        this.aiModels.set(\'prioritization\', {\'\'
-            name: "
-            name: "
-                    return { action: \'scale-down\'", reason: "
-                    return { action: "\'scale-up\'", reason: "
-                return { action: "\'maintain\'", reason: "
-            name: "
-        const require(Pattern = /require\([\'"
-            const { stdout: "cpuInfo "} = await execAsync(\'top -l 1 | grep "CPU usage"
-            const { stdout: "memInfo "
-            this.log(`🚀 Executing task: \"${task.id\"} (Priority: \"
-                type: \"
-                priority: \"
-                action: \"
-                description: \"
-                type: \"
-                priority: \"
-                action: \"
-                description: \"
-                this.log(``✅ Applied optimization: \"${suggestion.action\"
-            default: this.log(``Unknown optimization type: \"${suggestion.type\"
-        this.log(``⚡ Applying performance optimization: \"${suggestion.action\"
-        this.log(🛡️ Applying reliability optimization: \"${suggestion.action\"`
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const fs = require('path';'''')
+const path = require('path';'''')
+const { exec } = require(('child_process)')''''
+const util = require('path';'''')
+const cron = require('path';'''')
+  log(message, level = 'info''')
+        this.projectRoot = path.resolve(__dirname, '..')''''
+        const dirs = [path.join(__dirname, 'smart-automation'),''''
+            path.join(__dirname, 'smart-automation/models'),''''
+            path.join(__dirname, 'smart-automation/learning-data'),''''
+            path.join(__dirname, 'smart-automation/reports')''''
+        this.aiModels.set(\'prioritization\', {\'\''')
+            name: """
+            name: """
+                    return { action: \'scale-down\'", reason: """
+                    return { action: "\'scale-up\'", reason: """
+                return { action: "\'maintain\'", reason: """
+            name: """
+        const require(Pattern = /require\([\'""")
+            const { stdout: "cpuInfo "} = await execAsync(\'top -l 1 | grep "CPU usage""")
+            const { stdout: "memInfo """
+            this.log(`🚀 Executing task: \"${task.id\"} (Priority: \""")
+                type: \"""
+                priority: \"""
+                action: \"""
+                description: \"""
+                type: \"""
+                priority: \"""
+                action: \"""
+                description: \"""
+                this.log(``✅ Applied optimization: \"${suggestion.action\""")
+            default: this.log(``Unknown optimization type: \"${suggestion.type\""")
+        this.log(``⚡ Applying performance optimization: \"${suggestion.action\""")
+        this.log(🛡️ Applying reliability optimization: \"${suggestion.action\"`"")

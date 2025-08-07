@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
+const fs = require('fs');'
+const path = require('path');'
+const { execSync } = require('child_process');'
 
 class ContinuousErrorMonitoringAgent {
   constructor() {
@@ -13,19 +13,19 @@ class ContinuousErrorMonitoringAgent {
 
   async startMonitoring() {
     if (this.isRunning) {
-      console.log('⚠️ Monitoring agent is already running');
+      console.log('⚠️ Monitoring agent is already running');'
       return;
     }
 
     this.isRunning = true;
-    console.log('🔍 Starting continuous error monitoring agent...');
+    console.log('🔍 Starting continuous error monitoring agent...');'
 
     while (this.isRunning) {
       try {
         await this.checkForErrors();
         await this.sleep(this.monitoringInterval);
       } catch (error) {
-        console.error('❌ Error in monitoring agent:', error);
+        console.error('❌ Error in monitoring agent:', error);'
         await this.sleep(60000); // Wait 1 minute on error
       }
     }
@@ -34,20 +34,20 @@ class ContinuousErrorMonitoringAgent {
   async checkForErrors() {
     try {
       // Run linting check
-      const lintResult = execSync('npm run lint', {
+      const lintResult = execSync('npm run lint', {'')
         cwd: this.projectRoot,
-        stdio: 'pipe',
-        encoding: 'utf8'
+        stdio: 'pipe','
+        encoding: 'utf8'''
       });
 
-      if (lintResult.includes('Error') || lintResult.includes('Warning')) {
-        console.log('🚨 Errors detected, triggering fix agents...');
+      if (lintResult.includes('Error') || lintResult.includes('Warning')) {''
+        console.log('🚨 Errors detected, triggering fix agents...');'
         await this.triggerFixAgents();
       } else {
-        console.log('✅ No errors detected');
+        console.log('✅ No errors detected');'
       }
     } catch (error) {
-      console.log('🚨 Linting errors detected, triggering fix agents...');
+      console.log('🚨 Linting errors detected, triggering fix agents...');'
       await this.triggerFixAgents();
     }
   }
@@ -55,22 +55,22 @@ class ContinuousErrorMonitoringAgent {
   async triggerFixAgents() {
     try {
       // Run syntax error fixing agent
-      console.log('🔧 Running syntax error fixing agent...');
-      execSync('node automation/syntax-error-fixing-agent.js', {
+      console.log('🔧 Running syntax error fixing agent...');'
+      execSync('node automation/syntax-error-fixing-agent.js', {'')
         cwd: this.projectRoot,
-        stdio: 'inherit'
+        stdio: 'inherit'''
       });
 
       // Run linting error fixing agent
-      console.log('🔧 Running linting error fixing agent...');
-      execSync('node automation/linting-error-fixing-agent.js', {
+      console.log('🔧 Running linting error fixing agent...');'
+      execSync('node automation/linting-error-fixing-agent.js', {'')
         cwd: this.projectRoot,
-        stdio: 'inherit'
+        stdio: 'inherit'''
       });
 
-      console.log('✅ Fix agents completed');
+      console.log('✅ Fix agents completed');'
     } catch (error) {
-      console.error('❌ Error running fix agents:', error);
+      console.error('❌ Error running fix agents:', error);'
     }
   }
 
@@ -80,18 +80,18 @@ class ContinuousErrorMonitoringAgent {
 
   stop() {
     this.isRunning = false;
-    console.log('🛑 Stopping monitoring agent...');
+    console.log('🛑 Stopping monitoring agent...');'
   }
 }
 
 // Handle graceful shutdown
-process.on('SIGINT', () => {
-  console.log('\n🛑 Received SIGINT, shutting down...');
+process.on('SIGINT', () => {''
+  console.log('\n🛑 Received SIGINT, shutting down...');'
   process.exit(0);
 });
 
-process.on('SIGTERM', () => {
-  console.log('\n🛑 Received SIGTERM, shutting down...');
+process.on('SIGTERM', () => {''
+  console.log('\n🛑 Received SIGTERM, shutting down...');'
   process.exit(0);
 });
 

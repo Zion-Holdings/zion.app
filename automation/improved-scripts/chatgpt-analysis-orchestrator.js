@@ -19,17 +19,17 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require($2)a))''
-const path = require('path'
-const result = require($2)2))node-cr'on')''
-  log(message, level = 'info'
-        this.agentsDir = path.join(this.baseDir, 'chatgpt-agents)''
-        this.reportsDir = path.join(this.baseDir, chatgpt-analysis-repor't's)''
-        this.logsDir = path.join(this.baseDir, 'chatgpt-lo'gs')''
-        this.dataDir = path.join(this.baseDir, 'chatgpt-data)''
-        this.log("
-                    status: "
-                    name: "
-                    name: "
-                    status: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require($2)a))''''
+const path = require('path''')
+const result = require($2)2))node-cr'on')''''
+  log(message, level = 'info''')
+        this.agentsDir = path.join(this.baseDir, 'chatgpt-agents)''''
+        this.reportsDir = path.join(this.baseDir, chatgpt-analysis-repor't's)''''
+        this.logsDir = path.join(this.baseDir, 'chatgpt-lo'gs')''''
+        this.dataDir = path.join(this.baseDir, 'chatgpt-data)''''
+        this.log(""")
+                    status: """
+                    name: """
+                    name: """
+                    status: """

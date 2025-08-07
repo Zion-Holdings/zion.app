@@ -59,29 +59,29 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-const result = require($2)l))''
-  log(message, level = 'info'
-        this.logFile = path.join(__dirname, ')logs, security-sca'n'.log)''
-        this.log(logMessage, 'info'
-        fs.appendFileSync(this.logFile, logMessage + \'\n\')\'\'
-            this.log(🔍 Checking npm dependencies for vulnerabilities...\')\'\'
-            const { stdout } = await execAsync(\'
-            const filePath = path.join(__dirname, \')..\', .env\')\'\'
-            const filePath = path.join(__dirname, \'.., \'.env.example\')\'\'
-                const result = envContent.split(\'\n)\'\'
-                    /password\s*=\s*[][^"
-                    /key\s*=\s*["
-                    /token\s*=\s*["][^'"
-            const { stdout: "sensitiveFiles "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require(('chil')')d'_process)''''
+const result = require($2)l))''''
+  log(message, level = 'info''')
+        this.logFile = path.join(__dirname, ')logs, security-sca'n'.log)''''
+        this.log(logMessage, 'info''')
+        fs.appendFileSync(this.logFile, logMessage + \'\n\')\'\'''
+            this.log(🔍 Checking npm dependencies for vulnerabilities...\')\'\'''
+            const { stdout } = await execAsync(\''')
+            const filePath = path.join(__dirname, \')..\', .env\')\'\'''
+            const filePath = path.join(__dirname, \'.., \'.env.example\')\'\'''
+                const result = envContent.split(\'\n)\'\'''
+                    /password\s*=\s*[][^"""
+                    /key\s*=\s*["""
+                    /token\s*=\s*["][^'"""
+            const { stdout: "sensitiveFiles """

@@ -59,47 +59,47 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { spawn, exec, execSync } = require(('chil')')d'_process)''
-const result = require($2)r))''
-    this.name = ')component-sync-agent;''
-    this.status = rea'd'y;''
-        'componen'ts'
-        'src'/components',''
-        'sr'c/features'''
-        'node'_modules'
-        .git',''
-        '.next,''
-        out',''
-        'dist,''
-        bui'l'd,''
-        '*.log',''
-        *.tmp',''
-        '*.test.*,''
-        '*.spec.*'''
-      componentTypes: "[tsx"
-      styleTypes: "['css"
-    console.log("✅ Component watcher initialized for: "${watchPaths.join(')"
-        fileType: "
-      console.warn(⚠️  TypeScript check failed: "
-        console.log(📦 Found missing imports: "
-      console.warn(⚠️  Import check failed: "
-        const result = match.match(/from\s+['"]([^"
-        const result = "
-        const result = new RegExp("
-      const result = new RegExp("
-      console.warn(⚠️  Component style import update failed: "
-      execSync(git add ., { cwd: "this.projectRoot", stdio: "
-      execSync(git commit -m ${commitMessage}"", { cwd: "this.projectRoot", stdio: "
-      execSync(npm test -- --testPathPattern=components, { cwd: "this.projectRoot", stdio: "
-      console.warn(⚠️  Component type check failed: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { spawn, exec, execSync } = require(('chil')')d'_process)''''
+const result = require($2)r))''''
+    this.name = ')component-sync-agent;''''
+    this.status = rea'd'y;''''
+        'componen'ts'''
+        'src'/components',''''
+        'sr'c/features'''''
+        'node'_modules'''
+        .git',''''
+        '.next,''''
+        out',''''
+        'dist,''''
+        bui'l'd,''''
+        '*.log',''''
+        *.tmp',''''
+        '*.test.*,''''
+        '*.spec.*'''''
+      componentTypes: "[tsx"""
+      styleTypes: "['css"""
+    console.log("✅ Component watcher initialized for: "${watchPaths.join(')"""
+        fileType: """
+      console.warn(⚠️  TypeScript check failed: """)
+        console.log(📦 Found missing imports: """)
+      console.warn(⚠️  Import check failed: """)
+        const result = match.match(/from\s+['"]([^""")
+        const result = """
+        const result = new RegExp(""")
+      const result = new RegExp(""")
+      console.warn(⚠️  Component style import update failed: """)
+      execSync(git add ., { cwd: "this.projectRoot", stdio: """)
+      execSync(git commit -m ${commitMessage}"", { cwd: "this.projectRoot", stdio: """)
+      execSync(npm test -- --testPathPattern=components, { cwd: "this.projectRoot", stdio: """)
+      console.warn(⚠️  Component type check failed: """)

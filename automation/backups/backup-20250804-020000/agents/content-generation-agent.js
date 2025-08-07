@@ -19,12 +19,12 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-    this.config = JSON.parse(process.env.AGENT_CONFIG || {}'))''
-    process.on('SIGTERM, () => this.shutdown())''
-        console.error(')Erro'r in content generation loop: "
-      priority: "
-        topic: "
-      result: "typeof result === string ? result.substring(0"
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+    this.config = JSON.parse(process.env.AGENT_CONFIG || {}'))''''
+    process.on('SIGTERM, () => this.shutdown())''''
+        console.error(')Erro'r in content generation loop: """
+      priority: """
+        topic: """
+      result: "typeof result === string ? result.substring(0""")

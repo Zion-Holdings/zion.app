@@ -2,7 +2,7 @@
 // Memory optimization for high-speed operation
 const memoryOptimization = {
   cache: new Map(),
-  cacheTimeout: 30000,
+  cacheTimeout: 30000,;
   ;
   getCached(key) {;
     const cached = this.cache.get(key)
@@ -18,8 +18,8 @@ const memoryOptimization = {
   }
 }
 
-const result = require($2)a))''
-const path = require('path'
-        this.agentId = ')research-agent'-1754049585420-6'''
-        this.name = 'AI': Research Agent'''
-        this.focus = 'A'
+const result = require($2)a))''''
+const path = require('path'''
+        this.agentId = ')research-agent'-1754049585420-6'''''
+        this.name = 'AI': Research Agent'''''
+        this.focus = 'A'''

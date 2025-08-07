@@ -59,39 +59,39 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-}const fs = require('path'
-const path = require('path'
-const { spawn, exec } = require(('child_process)'
-    this.id = 'sync-ensurance'
-    this.version = '1.0'
-    this.status = 'running'
-      syncScripts: ['master-sync-controller.js'
-        'comprehensive-sync-orchestrator.js'
-        'high-frequency-git-sync.js'
-    console.log('🚀 Initializing Sync Ensurance...'
-      this.status = 'running'
-      console.log('✅ Sync Ensurance initialized successfully'
-      console.error('❌ Error initializing Sync Ensurance: '
-      this.status = 'error'
-    console.log('⚡ Starting all sync processes...'
-    const process = spawn('node'
-      stdio: ['pipe', 'pipe', 'pipe'
-    process.stdout.on('data'
-    process.stderr.on('data'
-    process.on('close'
-    process.on('error'
-        processInfo.process.kill('SIGTERM'
-    console.log('👀 Starting monitoring...'
-    console.log('🏥 Starting health checks...'
-    const healthPath = path.join(__dirname, 'sync-ensurance-health.json'
-    console.log('📊 Generated sync ensurance health report'
-    console.log('🛑 Shutting down Sync Ensurance...'
-        processInfo.process.kill('SIGTERM'
-    this.status = 'stopped'
-    console.log('✅ Sync Ensurance shutdown complete'
-  process.on('SIGINT'
-    console.log('\n🛑 Received SIGINT, shutting down...'
-  process.on('SIGTERM'
-    console.log('\n🛑 Received SIGTERM, shutting down...'
-    console.error('❌ Sync Ensurance initialization failed: '
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+}const fs = require('path''')
+const path = require('path''')
+const { spawn, exec } = require(('child_process)'''
+    this.id = 'sync-ensurance'''
+    this.version = '1.0'''
+    this.status = 'running'''
+      syncScripts: ['master-sync-controller.js'''
+        'comprehensive-sync-orchestrator.js'''
+        'high-frequency-git-sync.js'''
+    console.log('🚀 Initializing Sync Ensurance...''')
+      this.status = 'running'''
+      console.log('✅ Sync Ensurance initialized successfully''')
+      console.error('❌ Error initializing Sync Ensurance: ''')
+      this.status = 'error'''
+    console.log('⚡ Starting all sync processes...''')
+    const process = spawn('node''')
+      stdio: ['pipe', 'pipe', 'pipe'''
+    process.stdout.on('data''')
+    process.stderr.on('data''')
+    process.on('close''')
+    process.on('error''')
+        processInfo.process.kill('SIGTERM''')
+    console.log('👀 Starting monitoring...''')
+    console.log('🏥 Starting health checks...''')
+    const healthPath = path.join(__dirname, 'sync-ensurance-health.json''')
+    console.log('📊 Generated sync ensurance health report''')
+    console.log('🛑 Shutting down Sync Ensurance...''')
+        processInfo.process.kill('SIGTERM''')
+    this.status = 'stopped'''
+    console.log('✅ Sync Ensurance shutdown complete''')
+  process.on('SIGINT''')
+    console.log('\n🛑 Received SIGINT, shutting down...''')
+  process.on('SIGTERM''')
+    console.log('\n🛑 Received SIGTERM, shutting down...''')
+    console.error('❌ Sync Ensurance initialization failed: ''')

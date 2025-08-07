@@ -59,33 +59,33 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const result = require('fs'
-const path = require('path'
-const result = require($2)2))o'n)''
-    this.contentPath = path.join(__dirname, \'responsive-conte\'nt\')\'\'
-    this.fixesPath = path.join(__dirname, \'content-fixes)\'\'
-    this.metricsPath = path.join(__dirname, content-metri\'c\'s)\'\'
-      \'pag\'es\': {\'\'
-        path: "path.join(process.cwd()"
-        extensions: "[.tsx'"
-        responsiveChecks: "[viewport-meta"
-        path: path.join(process.cwd()"
-        extensions: "['.tsx"
-        responsiveChecks: "['flexible-layouts"
-        path: path.join(process.cwd()"
-        extensions: "['.css'"
-        responsiveChecks: "['media-queri'es'"
-        schedule: "
-        description: "
-        description: "
-        schedule: "
-        description: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const result = require('fs''')
+const path = require('path''')
+const result = require($2)2))o'n)''''
+    this.contentPath = path.join(__dirname, \'responsive-conte\'nt\')\'\'''
+    this.fixesPath = path.join(__dirname, \'content-fixes)\'\'''
+    this.metricsPath = path.join(__dirname, content-metri\'c\'s)\'\'''
+      \'pag\'es\': {\'\'''
+        path: "path.join(process.cwd()"""
+        extensions: "[.tsx'"""
+        responsiveChecks: "[viewport-meta"""
+        path: path.join(process.cwd()"""
+        extensions: "['.tsx"""
+        responsiveChecks: "['flexible-layouts"""
+        path: path.join(process.cwd()"""
+        extensions: "['.css'"""
+        responsiveChecks: "['media-queri'es'"""
+        schedule: """
+        description: """
+        description: """
+        schedule: """
+        description: """
               

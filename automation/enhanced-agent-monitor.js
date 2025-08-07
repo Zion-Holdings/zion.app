@@ -59,29 +59,29 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-}const fs = require('fs').promises;''
-const path = require('path'
-const { exec } = require(('child_process')'))''
-const { promisify } = require(('uti)l)''
-    console.log(✅ Enhanced Agent Monitor started successfully'))''
-    console.log('📊 Monitoring agent performance...)''
-    console.log(\')🧠 Improving agent intelligence...\')\'\'
-    console.log(🌱 Diversifying agent capabilities...\')\'\'
-          console.log(✅ Added capabilities to ${agentName}: ${newCapabilities.join(\', )}`)\'\'
-      content: \"[multilingual-support')\"
-      console.error(❌ Error monitoring health: \"
-      status: \"
-      \')content: \"['ai-powered-seo'\"
-      \'automation: \"['machine-learning-integration'\"
-        action: \"
-        type: \"
-        action: \"`
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+}const fs = require('fs').promises;''''
+const path = require('path''')
+const { exec } = require(('child_process')'))''''
+const { promisify } = require(('uti)l)''''
+    console.log(✅ Enhanced Agent Monitor started successfully'))''''
+    console.log('📊 Monitoring agent performance...)''''
+    console.log(\')🧠 Improving agent intelligence...\')\'\'''
+    console.log(🌱 Diversifying agent capabilities...\')\'\'''
+          console.log(✅ Added capabilities to ${agentName}: ${newCapabilities.join(\', )}`)\'\'''
+      content: \"[multilingual-support')\"""
+      console.error(❌ Error monitoring health: \""")
+      status: \"""
+      \')content: \"['ai-powered-seo'\"""
+      \'automation: \"['machine-learning-integration'\"""
+        action: \"""
+        type: \"""
+        action: \"`""

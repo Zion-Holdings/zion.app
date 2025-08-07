@@ -59,36 +59,36 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-}const fs = require('fs'
-  path = require('path'
-  console.error('Failed to require(path: '
-const { spawn } = require(('child_process')'))''
-  log(message, level = 'info'
-    this.status = 'initializing;''
-    this.log('🚀 Initializing Enhanced Systems Launcher..., 'info')''
-      name: "
-      file: "
-      priority: "
-      file: "
-      priority: "
-      file: "
-      priority: "
-      name: "
-      file: "
-      priority: "
-      file: "
-      priority: "
-      file: "
-      priority: "
-      name: "
-      file: "
-      priority: "
-        this.log(`⚠️  System file not found: \"${system.file\"
-        stdio: \"[pipe\"
-      this.log(``✅ Started ${system.name} with PID: \"${process.pid\"
-          this.log(``🛑 Stopped system: \"${systemId\"
-    this.log(``Overall Health: \"
-    this.log(``Running Systems: \"${status.performance.runningSystems\"
-    this.log(Critical Systems: \"${status.performance.criticalSystems\"
-    this.log(``High Priority Systems: \"${status.performance.highPrioritySystems\"`
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+}const fs = require('fs''')
+  path = require('path''')
+  console.error('Failed to require(path: ''')
+const { spawn } = require(('child_process')'))''''
+  log(message, level = 'info''')
+    this.status = 'initializing;''''
+    this.log('🚀 Initializing Enhanced Systems Launcher..., 'info')''''
+      name: """
+      file: """
+      priority: """
+      file: """
+      priority: """
+      file: """
+      priority: """
+      name: """
+      file: """
+      priority: """
+      file: """
+      priority: """
+      file: """
+      priority: """
+      name: """
+      file: """
+      priority: """
+        this.log(`⚠️  System file not found: \"${system.file\""")
+        stdio: \"[pipe\"""
+      this.log(``✅ Started ${system.name} with PID: \"${process.pid\""")
+          this.log(``🛑 Stopped system: \"${systemId\""")
+    this.log(``Overall Health: \""")
+    this.log(``Running Systems: \"${status.performance.runningSystems\""")
+    this.log(Critical Systems: \"${status.performance.criticalSystems\""")
+    this.log(``High Priority Systems: \"${status.performance.highPrioritySystems\"`"")

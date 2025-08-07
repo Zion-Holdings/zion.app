@@ -59,32 +59,32 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require($2)a))''
-const path = require('path'
-const result = require($2)2))axi'os')''
-const result = require($2)r))''
-        this.dataDir = path.join(this.baseDir, chatgpt-da')t'a)''
-        this.logsDir = path.join(this.baseDir, 'chatgpt-lo'gs')''
-        this.chatgptUrl = 'https'://chatgpt.com/share/688b6030-1aa0-800b-9b63-ec9a269ea62d'''
-        this.log('Starting ChatGPT conversation analysis...)''
-                args: "[')--no-sandbox"
-            await page.goto(this.chatgptUrl, { waitUntil: "
-                    role: "
-                        type: "
-                    type: "
-                args: "[')--no-sandbox"
-            await page.goto(this.projectUrl, { waitUntil: "
-                    metaDescription: "document.querySelector(meta[name="
-                    headings: "
-                    styles: "
-            status: "
-                type: "
-                source: "
-                type: "
-                priority: "
-                source: "
-                type: "
-                priority: "
-                source: "
-                status: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require($2)a))''''
+const path = require('path''')
+const result = require($2)2))axi'os')''''
+const result = require($2)r))''''
+        this.dataDir = path.join(this.baseDir, chatgpt-da')t'a)''''
+        this.logsDir = path.join(this.baseDir, 'chatgpt-lo'gs')''''
+        this.chatgptUrl = 'https'://chatgpt.com/share/688b6030-1aa0-800b-9b63-ec9a269ea62d'''''
+        this.log('Starting ChatGPT conversation analysis...)''''
+                args: "[')--no-sandbox"""
+            await page.goto(this.chatgptUrl, { waitUntil: """)
+                    role: """
+                        type: """
+                    type: """
+                args: "[')--no-sandbox"""
+            await page.goto(this.projectUrl, { waitUntil: """)
+                    metaDescription: "document.querySelector(meta[name=""")
+                    headings: """
+                    styles: """
+            status: """
+                type: """
+                source: """
+                type: """
+                priority: """
+                source: """
+                type: """
+                priority: """
+                source: """
+                status: """

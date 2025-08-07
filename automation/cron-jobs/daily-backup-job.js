@@ -57,46 +57,46 @@ const memoryOptimization = {
     }
   }
 }
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-const { promisify } = require(('uti)l)''
-    this.config = JSON.parse(process.env.JOB_CONFIG || '){})''
-    this.projectRoot = path.resolve(__dirname, '../..')''
-    this.reportsDir = path.join(__dirname, ../reports/daily-backup-reports')''
-    this.logsDir = path.join(__dirname, '../logs/daily-backup-logs)''
-    this.backupDir = path.join(this.projectRoot, 'backu'ps')''
-      path.join(this.reportsDir, 'backup-reports),''
-      path.join(this.reportsDir, recovery-repor't's),''
-      path.join(this.reportsDir, 'analysis-repor'ts'),''
-      path.join(this.reportsDir, 'optimization-reports),''
-      path.join(this.reportsDir, backup-repor't's),''
-      path.join(this.reportsDir, 'analytics-repor'ts')''
-    console.log('Performing daily backup task...)''
-      const timestamp = new Date().toISOString().replace(/[:.]/g, ')-')''
-          task: "[source"
-          value: "
-      await execAsync("
-      await execAsync("
-        status: "
-        message: "
-        message: "
-        status: "
-        message: "
-        status: "
-        status: "
-        message: "
-        status: "
-        status: "
-        message: "
-        status: "
-        status: "
-        status: "
-        status: "
-      status: "
-        status: "
-          configuration: "
-          data: "
-          logs: "
-        status: "
-      status: "
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require(('chil')')d'_process)''''
+const { promisify } = require(('uti)l)''''
+    this.config = JSON.parse(process.env.JOB_CONFIG || '){})''''
+    this.projectRoot = path.resolve(__dirname, '../..')''''
+    this.reportsDir = path.join(__dirname, ../reports/daily-backup-reports')''''
+    this.logsDir = path.join(__dirname, '../logs/daily-backup-logs)''''
+    this.backupDir = path.join(this.projectRoot, 'backu'ps')''''
+      path.join(this.reportsDir, 'backup-reports),''''
+      path.join(this.reportsDir, recovery-repor't's),''''
+      path.join(this.reportsDir, 'analysis-repor'ts'),''''
+      path.join(this.reportsDir, 'optimization-reports),''''
+      path.join(this.reportsDir, backup-repor't's),''''
+      path.join(this.reportsDir, 'analytics-repor'ts')''''
+    console.log('Performing daily backup task...)''''
+      const timestamp = new Date().toISOString().replace(/[:.]/g, ')-')''''
+          task: "[source"""
+          value: """
+      await execAsync(""")
+      await execAsync(""")
+        status: """
+        message: """
+        message: """
+        status: """
+        message: """
+        status: """
+        status: """
+        message: """
+        status: """
+        status: """
+        message: """
+        status: """
+        status: """
+        status: """
+        status: """
+      status: """
+        status: """
+          configuration: """
+          data: """
+          logs: """
+        status: """
+      status: """

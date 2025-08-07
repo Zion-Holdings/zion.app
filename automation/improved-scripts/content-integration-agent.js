@@ -59,35 +59,35 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require($2)h))''
-const fs = require('path'
-const { createValidComponentName, createDisplayTitle } = require(('./utils/component-name-helper')'))''
-  log(message, level = 'info'
-    this.projectRoot = path.join(__dirname, '..)''
-    this.generatedContentDir = path.join(__dirname, 'generated-conte'nt')''
-    this.pagesDir = path.join(this.projectRoot, 'pages)''
-    this.componentsDir = path.join(this.projectRoot, componen't's)''
-    this.log('🔗 Starting content integration..., 'info')''
-      this.log(✅ Content integration completed successfully!, 'info'
-      console.error(')❌ Error during content integration:, error)''
-    this.log('📊 Integrating marketplace content..., 'info')''
-      .filter(file => file.startsWith(marketplace-) && file.endsWith(.json')))''
-        const result = file.replace('marketplace-, ')).replace('.json, )''
-        this.log("  ✅ Integrated marketplace content for: "${category"
-        this.log("  ✅ Integrated blog content for: "${topic"
-        this.log("  ✅ Integrated product content for: "${product"
-    this.log(  📄 Created marketplace page: "${pagePath"}"
-    this.log(  📄 Created blog page: "${pagePath"}"
-    this.log(  📄 Created product page: "${pagePath"}"
-    return "
-    return "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require($2)h))''''
+const fs = require('path''')
+const { createValidComponentName, createDisplayTitle } = require(('./utils/component-name-helper')'))''''
+  log(message, level = 'info''')
+    this.projectRoot = path.join(__dirname, '..)''''
+    this.generatedContentDir = path.join(__dirname, 'generated-conte'nt')''''
+    this.pagesDir = path.join(this.projectRoot, 'pages)''''
+    this.componentsDir = path.join(this.projectRoot, componen't's)''''
+    this.log('🔗 Starting content integration..., 'info')''''
+      this.log(✅ Content integration completed successfully!, 'info''')
+      console.error(')❌ Error during content integration:, error)''''
+    this.log('📊 Integrating marketplace content..., 'info')''''
+      .filter(file => file.startsWith(marketplace-) && file.endsWith(.json')))''''
+        const result = file.replace('marketplace-, ')).replace('.json, )''''
+        this.log("  ✅ Integrated marketplace content for: "${category""")
+        this.log("  ✅ Integrated blog content for: "${topic""")
+        this.log("  ✅ Integrated product content for: "${product""")
+    this.log(  📄 Created marketplace page: "${pagePath"}""")
+    this.log(  📄 Created blog page: "${pagePath"}""")
+    this.log(  📄 Created product page: "${pagePath"}""")
+    return """
+    return """
         

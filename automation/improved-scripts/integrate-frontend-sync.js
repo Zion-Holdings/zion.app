@@ -59,45 +59,45 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require($2)h))''
-const fs = require('path'
-const result = require('fs';''
-const result = require('fs'
-  log(message, level = 'info'
-      status: "
-      this.log("🔗 Integration: "Sync agent created - ${data.agentId"
-      this.log(🔗 Integration: "Sync agent started - ${data.agentId"
-        "
-        console.error(❌ Integration monitoring error: "
-        status: "
-      console.error(❌ Error checking integration health: "
-        this.log("🔄 Integration: "Found ${pendingImprovements.length"
-        improvements.push({ type: "
-        improvements.push({ type: "
-        improvements.push({ type: "
-                  type: "
-      this.log(🔄 Integration: "Triggering sync for ${improvement.type"} improvements"
-          this.log("⚠️ Integration: "Unknown improvement type: ${improvement.type"
-    this.log("📄 Integration: "Syncing ${pages.length"
-        this.log(✅ Integration: "Synced page ${page.name"}"
-    this.log("🧩 Integration: "Syncing ${components.length"
-        this.log(✅ Integration: "Synced component ${component.name"}"
-    this.log("📝 Integration: "Syncing ${contentItems.length"
-          this.log(✅ Integration: "
-      execSync("git commit -m ${message}", { stdio: "
-      this.log("🚀 Integration: "Committed change: ${message"
-      console.error(\')❌ Integration: "
-      console.error(❌ Error saving integration status: "
-        status: "
-      console.error(❌ Error getting integration status: "
-        console.error(❌ Failed to stop Frontend Sync Integration: "
-    default: this.log(Usage: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require($2)h))''''
+const fs = require('path''')
+const result = require('fs';'''')
+const result = require('fs''')
+  log(message, level = 'info''')
+      status: """
+      this.log("🔗 Integration: "Sync agent created - ${data.agentId""")
+      this.log(🔗 Integration: "Sync agent started - ${data.agentId""")
+        """
+        console.error(❌ Integration monitoring error: """)
+        status: """
+      console.error(❌ Error checking integration health: """)
+        this.log("🔄 Integration: "Found ${pendingImprovements.length""")
+        improvements.push({ type: """)
+        improvements.push({ type: """)
+        improvements.push({ type: """)
+                  type: """
+      this.log(🔄 Integration: "Triggering sync for ${improvement.type"} improvements""")
+          this.log("⚠️ Integration: "Unknown improvement type: ${improvement.type""")
+    this.log("📄 Integration: "Syncing ${pages.length""")
+        this.log(✅ Integration: "Synced page ${page.name"}""")
+    this.log("🧩 Integration: "Syncing ${components.length""")
+        this.log(✅ Integration: "Synced component ${component.name"}""")
+    this.log("📝 Integration: "Syncing ${contentItems.length""")
+          this.log(✅ Integration: """)
+      execSync("git commit -m ${message}", { stdio: """)
+      this.log("🚀 Integration: "Committed change: ${message""")
+      console.error(\')❌ Integration: """
+      console.error(❌ Error saving integration status: """)
+        status: """
+      console.error(❌ Error getting integration status: """)
+        console.error(❌ Failed to stop Frontend Sync Integration: """)
+    default: this.log(Usage: """)

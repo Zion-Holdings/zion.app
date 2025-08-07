@@ -57,20 +57,20 @@ const memoryOptimization = {
     }
   }
 }
-const fs = require('path';''
-const path = require('path';''
-        this.monitorId = 'ai-performance-monitor'''
-                type: "
-                message: "
-                severity: "
-                type: "
-                message: "
-                severity: "
-                type: "
-                action: "
-                priority: "
-                expectedImprovement: "
-                type: "
-                action: "
-                priority: "
-                expectedImprovement: "
+const fs = require('path';'''')
+const path = require('path';'''')
+        this.monitorId = 'ai-performance-monitor'''''
+                type: """
+                message: """
+                severity: """
+                type: """
+                message: """
+                severity: """
+                type: """
+                action: """
+                priority: """
+                expectedImprovement: """
+                type: """
+                action: """
+                priority: """
+                expectedImprovement: """

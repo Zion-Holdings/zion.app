@@ -59,75 +59,75 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-const { promisify } = require(('uti)l)''
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''
-    this.projectRoot = path.resolve(__dirname, '../..')''
-    this.reportsDir = path.join(__dirname, ../reports/cloud-infrastructure-automation')''
-      path.join(this.reportsDir, 'infrastructure-reports),''
-      path.join(this.reportsDir, cost-analys'i's),''
-      path.join(this.reportsDir, 'security-repor'ts'),''
-      path.join(this.reportsDir, 'performance-reports),''
-      path.join(this.reportsDir, compliance-repor't's)''
-      console.log('Performing comprehensive cloud infrastructure analysis...)''
-      console.log(')Cloud' infrastructure analysis completed')''
-          name: "
-          name: "
-          name: "
-      service: "
-      type: "
-      region: "
-      environment: "
-    const result = content.match(/region\s*[:=]\s*[']([^"]+)["
-        const result = match.match(/(\w+)\s*[:=]\s*[']([^]+)["
-      service: "
-      type: "
-      region: "
-      environment: "
-    const result = content.match(/location\s*[:=]\s*[]([^]+)["
-      service: "
-      type: "
-      region: "
-      environment: "
-    const result = content.match(/region\s*[:=]\s*["
-      name: "
-      region: "
-      profile: "
-      region: "
-        type: "
-        priority: "
-        message: "
-        suggestion: "
-        type: "
-        priority: "
-        message: "
-        suggestion: "
-        type: "
-        priority: "
-        message: "
-        suggestion: "
-        priority: "
-        message: "
-        priority: "
-        message: "
-        type: "
-        priority: "
-        message: "
-        suggestion: "
-        priority: "
-        message: "
-        type: "
-        severity: "
-        message: "
-          status: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require(('chil')')d'_process)''''
+const { promisify } = require(('uti)l)''''
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''''
+    this.projectRoot = path.resolve(__dirname, '../..')''''
+    this.reportsDir = path.join(__dirname, ../reports/cloud-infrastructure-automation')''''
+      path.join(this.reportsDir, 'infrastructure-reports),''''
+      path.join(this.reportsDir, cost-analys'i's),''''
+      path.join(this.reportsDir, 'security-repor'ts'),''''
+      path.join(this.reportsDir, 'performance-reports),''''
+      path.join(this.reportsDir, compliance-repor't's)''''
+      console.log('Performing comprehensive cloud infrastructure analysis...)''''
+      console.log(')Cloud' infrastructure analysis completed')''''
+          name: """
+          name: """
+          name: """
+      service: """
+      type: """
+      region: """
+      environment: """
+    const result = content.match(/region\s*[:=]\s*[']([^"]+)["""
+        const result = match.match(/(\w+)\s*[:=]\s*[']([^]+)["""
+      service: """
+      type: """
+      region: """
+      environment: """
+    const result = content.match(/location\s*[:=]\s*[]([^]+)["""
+      service: """
+      type: """
+      region: """
+      environment: """
+    const result = content.match(/region\s*[:=]\s*[""")
+      name: """
+      region: """
+      profile: """
+      region: """
+        type: """
+        priority: """
+        message: """
+        suggestion: """
+        type: """
+        priority: """
+        message: """
+        suggestion: """
+        type: """
+        priority: """
+        message: """
+        suggestion: """
+        priority: """
+        message: """
+        priority: """
+        message: """
+        type: """
+        priority: """
+        message: """
+        suggestion: """
+        priority: """
+        message: """
+        type: """
+        severity: """
+        message: """
+          status: """

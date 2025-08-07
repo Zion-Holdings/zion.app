@@ -59,45 +59,45 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { exec } = require('child_process'
-const { promisify } = require('util'
-    this.projectRoot = path.resolve(__dirname, '..'
-    this.agentsDir = path.join(__dirname, 'quality-agents'
-    this.reportsDir = path.join(__dirname, 'reports'
-    this.logsDir = path.join(__dirname, 'logs'
-      path.join(this.reportsDir, 'quality-reports'
-      path.join(this.logsDir, 'quality-logs'
-      test-automati\'o\'
-        name: \'Test Automation Agent\'
-        description: "
-        capabilities: "[test execution"
-        description: "
-        capabilities: "[metrics collection"
-        description: "
-        capabilities: "[defect detection"
-        description: "
-        capabilities: "[performance testing"
-        description: "
-        capabilities: "[accessibility testing"
-        description: "
-        capabilities: "[security testing"
-        description: "
-        capabilities: "[browser testing"
-        description: "
-        capabilities: "[usability testing"
-        description: "
-        capabilities: "[regression testing"
-        description: "
-        capabilities: "[data generation"
-      status: "
-        type: "
-        priority: "
-        message: "
-        suggestion: "
-      status: "
-        stdio: "
-      console.error(\')Failed\' to stop agents: "
-      status: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require('child_process''')
+const { promisify } = require('util''')
+    this.projectRoot = path.resolve(__dirname, '..''')
+    this.agentsDir = path.join(__dirname, 'quality-agents''')
+    this.reportsDir = path.join(__dirname, 'reports''')
+    this.logsDir = path.join(__dirname, 'logs''')
+      path.join(this.reportsDir, 'quality-reports''')
+      path.join(this.logsDir, 'quality-logs''')
+      test-automati\'o\'''
+        name: \'Test Automation Agent\'''
+        description: """
+        capabilities: "[test execution"""
+        description: """
+        capabilities: "[metrics collection"""
+        description: """
+        capabilities: "[defect detection"""
+        description: """
+        capabilities: "[performance testing"""
+        description: """
+        capabilities: "[accessibility testing"""
+        description: """
+        capabilities: "[security testing"""
+        description: """
+        capabilities: "[browser testing"""
+        description: """
+        capabilities: "[usability testing"""
+        description: """
+        capabilities: "[regression testing"""
+        description: """
+        capabilities: "[data generation"""
+      status: """
+        type: """
+        priority: """
+        message: """
+        suggestion: """
+      status: """
+        stdio: """
+      console.error(\')Failed\' to stop agents: """
+      status: """

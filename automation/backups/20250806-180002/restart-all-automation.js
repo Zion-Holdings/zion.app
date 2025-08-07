@@ -59,35 +59,35 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-}const fs = require('fs'
-const path = require('path'
-const { spawn, exec } = require(('child_process)'
-const { promisify } = require(('util)'
-    this.automationSystems = ['ultimate-automation-factory-system'
-      'intelligent-automation-orchestrator'
-      'continuous-automation-improvement-system'
-      'master-automation-coordinator'
-      'enhanced-diversification-orchestrator'
-      'intelligent-agent-orchestrator'
-    console.log('🔄 Initializing Automation Restarter...'
-      console.log('✅ Automation Restarter initialized successfully'
-      console.error('❌ Error initializing Automation Restarter: '
-    const directories = ['restart-logs'
-      'backup-scripts'
-      'restart-reports'
-    console.log('🔄 Restarting all automation systems...'
-    console.log('✅ All automation systems restart completed'
-        result.error = 'System failed to start'
-      const child = spawn('node'
-        stdio: 'ignore'
-    console.log('📊 Generating restart report...'
-    const reportPath = path.join(__dirname, 'restart-reports'
-    console.log('\n🔄 RESTART SUMMARY'
-    console.log('=================='
-    console.log('==================\n'
-    const logPath = path.join(__dirname, 'restart-logs'
-  console.log('✅ Automation restart completed'
-      systemName: 'restart-all-automation'
-process.on('SIGINT'
-  console.log('🛑 Shutting down restart-all-automation gracefully...'
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+}const fs = require('fs''')
+const path = require('path''')
+const { spawn, exec } = require(('child_process)'''
+const { promisify } = require(('util)'''
+    this.automationSystems = ['ultimate-automation-factory-system'''
+      'intelligent-automation-orchestrator'''
+      'continuous-automation-improvement-system'''
+      'master-automation-coordinator'''
+      'enhanced-diversification-orchestrator'''
+      'intelligent-agent-orchestrator'''
+    console.log('🔄 Initializing Automation Restarter...''')
+      console.log('✅ Automation Restarter initialized successfully''')
+      console.error('❌ Error initializing Automation Restarter: ''')
+    const directories = ['restart-logs'''
+      'backup-scripts'''
+      'restart-reports'''
+    console.log('🔄 Restarting all automation systems...''')
+    console.log('✅ All automation systems restart completed''')
+        result.error = 'System failed to start'''
+      const child = spawn('node''')
+        stdio: 'ignore'''
+    console.log('📊 Generating restart report...''')
+    const reportPath = path.join(__dirname, 'restart-reports''')
+    console.log('\n🔄 RESTART SUMMARY''')
+    console.log('==================''')
+    console.log('==================\n''')
+    const logPath = path.join(__dirname, 'restart-logs''')
+  console.log('✅ Automation restart completed''')
+      systemName: 'restart-all-automation'''
+process.on('SIGINT''')
+  console.log('🛑 Shutting down restart-all-automation gracefully...''')

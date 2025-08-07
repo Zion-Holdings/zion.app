@@ -381,7 +381,7 @@ class AutomationMonitorAndMaintainerFactory {
       timestamp: new Date().toISOString(),
       summary: {
         total: this.monitoringData.factories.length + this.monitoringData.agents.length + 
-               this.monitoringData.scripts.length + this.monitoringData.cronJobs.length,
+  this.monitoringData.scripts.length + this.monitoringData.cronJobs.length,
         healthy: 0,
         running: 0,
         errors: 0,

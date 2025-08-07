@@ -59,16 +59,16 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require($2)h))''
-const fs = require('path'
-const result = require('fs';''
-      status: "
-      logLevel: "
-      console.error(❌ Failed to start Frontend Sync System: "
-      console.error(❌ Error restarting Frontend Sync System: "
-        status: "
-        status: "
-        status: "
-        console.error(❌ Failed to start Frontend Sync System: "
-    default: console.log(Usage: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require($2)h))''''
+const fs = require('path''')
+const result = require('fs';'''')
+      status: """
+      logLevel: """
+      console.error(❌ Failed to start Frontend Sync System: """)
+      console.error(❌ Error restarting Frontend Sync System: """)
+        status: """
+        status: """
+        status: """
+        console.error(❌ Failed to start Frontend Sync System: """)
+    default: console.log(Usage: """)

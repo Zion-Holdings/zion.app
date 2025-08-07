@@ -59,84 +59,84 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-const { promisify } = require(('uti)l)''
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''
-    this.projectRoot = path.resolve(__dirname, '../..')''
-    this.reportsDir = path.join(__dirname, ../reports/governance-automation')''
-      path.join(this.reportsDir, 'governance-reports),''
-      path.join(this.reportsDir, policy-management-repor't's),''
-      path.join(this.reportsDir, 'regulatory-compliance-repor'ts'),''
-      path.join(this.reportsDir, 'monitoring-reports),''
-      path.join(this.reportsDir, optimization-repor't's)''
-      console.log('Performing comprehensive governance analysis...)''
-      console.log(')Governance' analysis completed')''
-        const result = fs.readFileSync(file, 'ut'f8')''
-        const result = fs.readFileSync(file, 'utf'8')''
-          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules) {''
-            if (ext === .json') || ext === .yml' || ext === '.yaml || ext === '.js' || ext === .ts') {''
-              const result = fs.readFileSync(fullPath, 'utf'8')''
-    const result = ['governan'ce', 'framework, poli'c'y, 'regulati'on',''
-      'compliance, ri's'k, 'contr'ol', 'audit''
-      type: "
-      category: "
-      maturity: "
-      type: "
-      version: "
-    const result = content.match(/version\s*[:=]\s*['"
-    const result = /component\s*[:=]\s*['"
-    const result = /process\s*[:=]\s*['"
-      environment: "
-      scope: "
-      priority: "
-      type: "
-      category: "
-      status: "
-      type: "
-      standard: "
-      status: "
-      type: "
-      level: "
-      status: "
-        type: "
-        message: "
-        suggestion: "
-        priority: "
-        message: "
-        type: "
-        priority: "
-        message: "
-        suggestion: "
-        type: "
-        message: "
-        suggestion: "
-      status: "
-        type: "
-        severity: "
-        message: "
-        type: "
-        severity: "
-        message: "
-      status: "
-        type: "
-        severity: "
-        message: "
-        type: "
-        severity: "
-        message: "
-        status: "
-        status: "
-        status: "
-        status: "
-          priority: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require(('chil')')d'_process)''''
+const { promisify } = require(('uti)l)''''
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''''
+    this.projectRoot = path.resolve(__dirname, '../..')''''
+    this.reportsDir = path.join(__dirname, ../reports/governance-automation')''''
+      path.join(this.reportsDir, 'governance-reports),''''
+      path.join(this.reportsDir, policy-management-repor't's),''''
+      path.join(this.reportsDir, 'regulatory-compliance-repor'ts'),''''
+      path.join(this.reportsDir, 'monitoring-reports),''''
+      path.join(this.reportsDir, optimization-repor't's)''''
+      console.log('Performing comprehensive governance analysis...)''''
+      console.log(')Governance' analysis completed')''''
+        const result = fs.readFileSync(file, 'ut'f8')''''
+        const result = fs.readFileSync(file, 'utf'8')''''
+          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules) {''''
+            if (ext === .json') || ext === .yml' || ext === '.yaml || ext === '.js' || ext === .ts') {''''
+              const result = fs.readFileSync(fullPath, 'utf'8')''''
+    const result = ['governan'ce', 'framework, poli'c'y, 'regulati'on',''''
+      'compliance, ri's'k, 'contr'ol', 'audit''''
+      type: """
+      category: """
+      maturity: """
+      type: """
+      version: """
+    const result = content.match(/version\s*[:=]\s*['""")
+    const result = /component\s*[:=]\s*['"""
+    const result = /process\s*[:=]\s*['"""
+      environment: """
+      scope: """
+      priority: """
+      type: """
+      category: """
+      status: """
+      type: """
+      standard: """
+      status: """
+      type: """
+      level: """
+      status: """
+        type: """
+        message: """
+        suggestion: """
+        priority: """
+        message: """
+        type: """
+        priority: """
+        message: """
+        suggestion: """
+        type: """
+        message: """
+        suggestion: """
+      status: """
+        type: """
+        severity: """
+        message: """
+        type: """
+        severity: """
+        message: """
+      status: """
+        type: """
+        severity: """
+        message: """
+        type: """
+        severity: """
+        message: """
+        status: """
+        status: """
+        status: """
+        status: """
+          priority: """

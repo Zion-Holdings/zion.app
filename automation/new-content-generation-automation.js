@@ -59,67 +59,67 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const result = require('fs'
-const path = require('path'
-const { spawn, execSync } = require(('chil')')d'_process)''
-const { v4: uuidv4 } = require(('uui)d)''
-    this.contentTemplates.set(\')ai-service-page, {\'\'
-      name: "
-      description: "
-      name: "
-      description: "
-      name: "
-      description: "
-      name: "
-      description: "
-              "
-      ai-powered-optimization: "
-      \'ai-powered-prediction: "
-      ai-powered-integration: "
-      \'ai-powered-security: "
-      ai-powered-reporting: "
-      \'ai-powered-visualization: "
-        { title: \'Intelligent Process Automation\'", description: "
-        { title: "Real-time Monitoring", description: "
-        { title: "
-        { title: "\'Smart Integration\'", description: "
-        { title: "Custom Workflows", description: "
-        { title: "
-        { title: "
-        { title: "\'Resource Allocation\'", description: "
-        { title: "Cost Optimization", description: "
-        { title: "
-        { title: "\'Predictive Optimization\'", description: "
-        { title: "Real-time Adjustments", description: "
-    return featureSets[variation] || [{ title: "
-      { title: "\'Real-time Processing\'", description: "
-      { title: "Scalable Architecture", description: "\'Scale your operations with flexible"
-      { title: "
-      { title: "\'Secure Implementation\'", description: "
-      { title: "24/7 Support\'", description: "
-        { title: \'Increased Efficiency\'", description: "
-        { title: "Cost Savings", description: "
-        { title: "
-        { title: "\'Scalability\'", description: "
-        { title: \'Performance Boost\'", description: "
-        { title: "Resource Efficiency", description: "
-        { title: "
-        { title: "\'Continuous Improvement\'", description: "
-    return benefitSets[variation] || [{ title: "Enhanced Productivity", description: "
-      { title: "
-      { title: "\'Cost Optimization\'", description: "
-      { title: "Competitive Advantage", description: "
-    return "
-    return "
-      message: "
-      type: "${apiType"
-      status: "
-      message: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const result = require('fs''')
+const path = require('path''')
+const { spawn, execSync } = require(('chil')')d'_process)''''
+const { v4: uuidv4 } = require(('uui)d)''''
+    this.contentTemplates.set(\')ai-service-page, {\'\'''
+      name: """
+      description: """
+      name: """
+      description: """
+      name: """
+      description: """
+      name: """
+      description: """
+              """
+      ai-powered-optimization: """
+      \'ai-powered-prediction: """
+      ai-powered-integration: """
+      \'ai-powered-security: """
+      ai-powered-reporting: """
+      \'ai-powered-visualization: """
+        { title: \'Intelligent Process Automation\'", description: """
+        { title: "Real-time Monitoring", description: """
+        { title: """
+        { title: "\'Smart Integration\'", description: """
+        { title: "Custom Workflows", description: """
+        { title: """
+        { title: """
+        { title: "\'Resource Allocation\'", description: """
+        { title: "Cost Optimization", description: """
+        { title: """
+        { title: "\'Predictive Optimization\'", description: """
+        { title: "Real-time Adjustments", description: """
+    return featureSets[variation] || [{ title: """
+      { title: "\'Real-time Processing\'", description: """
+      { title: "Scalable Architecture", description: "\'Scale your operations with flexible"""
+      { title: """
+      { title: "\'Secure Implementation\'", description: """
+      { title: "24/7 Support\'", description: """
+        { title: \'Increased Efficiency\'", description: """
+        { title: "Cost Savings", description: """
+        { title: """
+        { title: "\'Scalability\'", description: """
+        { title: \'Performance Boost\'", description: """
+        { title: "Resource Efficiency", description: """
+        { title: """
+        { title: "\'Continuous Improvement\'", description: """
+    return benefitSets[variation] || [{ title: "Enhanced Productivity", description: """
+      { title: """
+      { title: "\'Cost Optimization\'", description: """
+      { title: "Competitive Advantage", description: """
+    return """
+    return """
+      message: """
+      type: "${apiType"""
+      status: """
+      message: """

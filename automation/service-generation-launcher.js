@@ -19,13 +19,13 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const fs = require('path'
-const result = require('fs';''
-      console.log(\'🚀 Starting Service Generation Factory...)\'\'
-      console.error(❌ Error starting Service Generation Factory: "
-        console.error(Error in service generation: "
-        console.error(\')Usag\'e: "
-      console.log(Usage: "
-      console.log(  web-application"
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const fs = require('path''')
+const result = require('fs';'''')
+      console.log(\'🚀 Starting Service Generation Factory...)\'\'''
+      console.error(❌ Error starting Service Generation Factory: """)
+        console.error(Error in service generation: """)
+        console.error(\')Usag\'e: """
+      console.log(Usage: """)
+      console.log(  web-application""")

@@ -59,37 +59,36 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const fs = require('path'
-const path = require('path'
-      componentsDir: path.join(process.cwd(), 'components'
-      pagesDir: path.join(process.cwd(), 'pages'
-      stylesDir: path.join(process.cwd(), 'styles'
-      backupDir: path.join(process.cwd(), 'automation/design-improvement-backups'
-      console.log('Starting layout optimization...'
-      console.log('Layout optimization completed successfully'
-      return { success: true, changes: ['Enhanced main layout', 'Added responsive components', 'Updated global styles'
-      console.error('Layout optimization failed: '
-      await fs.copy(this.config.componentsDir, path.join(backupPath, 'components'
-      await fs.copy(this.config.pagesDir, path.join(backupPath, 'pages'
-      await fs.copy(this.config.stylesDir, path.join(backupPath, 'styles'
-    const layoutPath = path.join(this.config.componentsDir, 'Layout.tsx'
-    const enhancedLayout = `import React, { useState, useEffect } from 'react'
-import Head from 'next/head'
-import Link from 'next/link'
-import { motion, AnimatePresence } from 'framer-motion'
-    window.addEventListener('scroll'
-    return () => window.removeEventListener('scroll'
-  const navItems = [{ href: '/', label: 'Home', icon: '🏠'
-    { href: '/services', label: 'Services', icon: '⚡'
-    { href: '/products', label: 'Products', icon: '🚀'
-    { href: '/about', label: 'About', icon: 'ℹ️'
-    { href: '/contact', label: 'Contact', icon: '📧'
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const fs = require('path''')
+const path = require('path''')
+      componentsDir: path.join(process.cwd(), 'components'''
+      pagesDir: path.join(process.cwd(), 'pages'''
+      stylesDir: path.join(process.cwd(), 'styles'''
+      backupDir: path.join(process.cwd(), 'automation/design-improvement-backups'''
+      console.log('Starting layout optimization...''')
+      console.log('Layout optimization completed successfully''')
+      return { success: true, changes: ['Enhanced main layout', 'Added responsive components', 'Updated global styles'''
+      console.error('Layout optimization failed: ''')
+      await fs.copy(this.config.componentsDir, path.join(backupPath, 'components''')
+      await fs.copy(this.config.pagesDir, path.join(backupPath, 'pages''')
+      await fs.copy(this.config.stylesDir, path.join(backupPath, 'styles''')
+    const layoutPath = path.join(this.config.componentsDir, 'Layout.tsx''')
+    const enhancedLayout = `import React, { useState, useEffect } from 'react';;;''
+import Head from 'next/head';;;''
+import Link from 'next/link';;;''
+    window.addEventListener('scroll''')
+    return () => window.removeEventListener('scroll''')
+  const navItems = [{ href: '/', label: 'Home', icon: '🏠'''
+    { href: '/services', label: 'Services', icon: '⚡'''
+    { href: '/products', label: 'Products', icon: '🚀'''
+    { href: '/about', label: 'About', icon: 'ℹ️'''
+    { href: '/contact', label: 'Contact', icon: '📧'''
         

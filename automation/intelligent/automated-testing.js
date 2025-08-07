@@ -18,8 +18,8 @@ const memoryOptimization = {
   }
 }
 
-const fs = require('path'
-const path = require('path'
-        this.name = 'automated-testing'
-        this.description = 'Intelligent automated testing framework'
-            model: 'advanced'
+const fs = require('path''')
+const path = require('path''')
+        this.name = 'automated-testing'''
+        this.description = 'Intelligent automated testing framework'''
+            model: 'advanced'''

@@ -59,42 +59,42 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-  fs = require('path'
-  console.error('Failed to require(fs: '
-}''
-  path = require('path'
-  console.error('Failed to require(path: '
-}''
-  glob = require('path'
-  console.error('Failed to require(glob: '
-}''
-  if (fixed.startsWith('"
-    res.status(200).json({ message: ""
-    res.status(200).json({ error: "
-  fixed = fixed.replace(/([^"]*)$/gm, '"
-    file: "
-      { pattern: /'technology' \| ''process' \| 'organizational' \| 'cultural''/g", replacement: ""
-      { pattern: "/'planned' \| ''in-progress' \| 'completed' \| 'cancelled''/g", replacement: "
-      { pattern: "/'low' \| ''medium' \| 'high' \| 'critical''/g", replacement: ""
-      { pattern: "/'low' \| ''medium' \| 'high''/g", replacement: "
-    file: "
-      { pattern: /'service' \| ''employment' \| 'partnership' \| 'nda' \| 'license''/g", replacement: ""
-    file: "
-      { pattern: /'active' \| ''inactive' \| 'on-leave''/g", replacement: "
-    file: "
-      { pattern: /'high' \| ''medium' \| 'low''/g", replacement: ""
-    file: "
-        this.log(`Fixed: \"${file\"
-this.log(\nTotal files fixed: \"${totalFixed\"
-    const files = glob.sync(pattern, { ignore: \"['node_modules/**'\"
-          this.log(``Fixed: \"${filePath\"
-  this.log(``Total files processed: \"${totalFiles\"
-  this.log(``Files fixed: \"${fixedFiles\"`
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+  fs = require('path''')
+  console.error('Failed to require(fs: ''')
+}''''
+  path = require('path''')
+  console.error('Failed to require(path: ''')
+}''''
+  glob = require('path''')
+  console.error('Failed to require(glob: ''')
+}''''
+  if (fixed.startsWith('""")
+    res.status(200).json({ message: """")
+    res.status(200).json({ error: """)
+  fixed = fixed.replace(/([^"]*)$/gm, '"""
+    file: """
+      { pattern: /'technology' \| ''process' \| 'organizational' \| 'cultural''/g", replacement: """"
+      { pattern: "/'planned' \| ''in-progress' \| 'completed' \| 'cancelled''/g", replacement: """
+      { pattern: "/'low' \| ''medium' \| 'high' \| 'critical''/g", replacement: """"
+      { pattern: "/'low' \| ''medium' \| 'high''/g", replacement: """
+    file: """
+      { pattern: /'service' \| ''employment' \| 'partnership' \| 'nda' \| 'license''/g", replacement: """"
+    file: """
+      { pattern: /'active' \| ''inactive' \| 'on-leave''/g", replacement: """
+    file: """
+      { pattern: /'high' \| ''medium' \| 'low''/g", replacement: """"
+    file: """
+        this.log(`Fixed: \"${file\""")
+this.log(\nTotal files fixed: \"${totalFixed\""")
+    const files = glob.sync(pattern, { ignore: \"['node_modules/**'\""")
+          this.log(``Fixed: \"${filePath\""")
+  this.log(``Total files processed: \"${totalFiles\""")
+  this.log(``Files fixed: \"${fixedFiles\"`"")

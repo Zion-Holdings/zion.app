@@ -59,52 +59,52 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-}const fs = require('path'
-const path = require('path'
-const { spawn } = require(('child_process)'
-    this.id = 'comprehensive-sync-launcher'
-    this.version = '1.0'
-    this.status = 'stopped'
-    this.pidFile = path.join(__dirname, 'comprehensive-sync-pid.json'
-    this.logFile = path.join(__dirname, 'comprehensive-sync-logs', 'launcher.log'
-    const directories = ['comprehensive-sync-logs'
-      'comprehensive-sync-pids'
-    console.log('🚀 Launching Comprehensive Sync Orchestrator...'
-        console.log('⚠️  Comprehensive Sync Orchestrator is already running'
-      const syncScript = path.join(__dirname, 'comprehensive-sync-orchestrator.js'
-      this.process = spawn('node'
-        stdio: ['pipe', 'pipe', 'pipe'
-      this.status = 'running'
-      console.log('✅ Comprehensive Sync Orchestrator launched successfully'
-      this.log('Launched Comprehensive Sync Orchestrator'
-      console.error('❌ Failed to launch Comprehensive Sync Orchestrator: '
-      this.status = 'error'
-    this.process.stdout.on('data'
-    this.process.stderr.on('data'
-    this.process.on('close'
-      this.status = 'stopped'
-    this.process.on('error'
-      this.status = 'error'
-        const pidData = JSON.parse(fs.readFileSync(this.pidFile, 'utf8'
-      console.error('Failed to write to log file: '
-    console.log('🛑 Stopping Comprehensive Sync Orchestrator...'
-        this.process.kill('SIGTERM'
-              this.process.kill('SIGKILL'
-      this.status = 'stopped'
-      console.log('✅ Comprehensive Sync Orchestrator stopped'
-      this.log('Stopped Comprehensive Sync Orchestrator'
-      console.error('❌ Failed to stop Comprehensive Sync Orchestrator: '
-  process.on('SIGINT'
-    console.log('\n🛑 Received SIGINT, stopping...'
-  process.on('SIGTERM'
-    console.log('\n🛑 Received SIGTERM, stopping...'
-    console.error('❌ Launcher failed: '
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+}const fs = require('path''')
+const path = require('path''')
+const { spawn } = require(('child_process)'''
+    this.id = 'comprehensive-sync-launcher'''
+    this.version = '1.0'''
+    this.status = 'stopped'''
+    this.pidFile = path.join(__dirname, 'comprehensive-sync-pid.json''')
+    this.logFile = path.join(__dirname, 'comprehensive-sync-logs', 'launcher.log''')
+    const directories = ['comprehensive-sync-logs'''
+      'comprehensive-sync-pids'''
+    console.log('🚀 Launching Comprehensive Sync Orchestrator...''')
+        console.log('⚠️  Comprehensive Sync Orchestrator is already running''')
+      const syncScript = path.join(__dirname, 'comprehensive-sync-orchestrator.js''')
+      this.process = spawn('node''')
+        stdio: ['pipe', 'pipe', 'pipe'''
+      this.status = 'running'''
+      console.log('✅ Comprehensive Sync Orchestrator launched successfully''')
+      this.log('Launched Comprehensive Sync Orchestrator''')
+      console.error('❌ Failed to launch Comprehensive Sync Orchestrator: ''')
+      this.status = 'error'''
+    this.process.stdout.on('data''')
+    this.process.stderr.on('data''')
+    this.process.on('close''')
+      this.status = 'stopped'''
+    this.process.on('error''')
+      this.status = 'error'''
+        const pidData = JSON.parse(fs.readFileSync(this.pidFile, 'utf8''')
+      console.error('Failed to write to log file: ''')
+    console.log('🛑 Stopping Comprehensive Sync Orchestrator...''')
+        this.process.kill('SIGTERM''')
+              this.process.kill('SIGKILL''')
+      this.status = 'stopped'''
+      console.log('✅ Comprehensive Sync Orchestrator stopped''')
+      this.log('Stopped Comprehensive Sync Orchestrator''')
+      console.error('❌ Failed to stop Comprehensive Sync Orchestrator: ''')
+  process.on('SIGINT''')
+    console.log('\n🛑 Received SIGINT, stopping...''')
+  process.on('SIGTERM''')
+    console.log('\n🛑 Received SIGTERM, stopping...''')
+    console.error('❌ Launcher failed: ''')

@@ -1,97 +1,96 @@
 #!/usr/bin/env node
 
-const fs = require('fs'
-const path = require('path'
-const crypto = require('crypto'
-        this.templatesDir = path.join(__dirname, 'templates'
-        this.outputDir = path.join(__dirname, 'generated'
-        return crypto.randomBytes(8).toString('hex'
-const fs = require('fs'
-const path = require('path'
-const { execSync } = require('child_process'
-class ${agentName.replace(/[-_]/g, ''
-        this.logDir = path.join(__dirname, 'logs'
-        this.reportsDir = path.join(__dirname, 'reports'
-        this.pidFile = path.join(__dirname, '${agentName}.pid'
-        this.statusFile = path.join(__dirname, '${agentName}-status.json'
-    log(message, level = 'INFO'
-        const logFile = path.join(this.logDir, \`${agentName}-\${new Date().toISOString().split('T'
-        fs.appendFileSync(logFile, logMessage + '\\n'
-            agentId: '${agentId}'
-            agentName: '${agentName}'
-        const codeExtensions = ${JSON.stringify(config.fileExtensions || ['.js', '.ts', '.jsx', '.tsx', '.json', '.css', '.scss', '.html', '.md'
-        const skipDirs = ${JSON.stringify(config.skipDirectories || ['node_modules', '.git', '.next', 'dist', 'build', 'coverage', 'automation_temp', 'logs', 'reports', 'cache', 'temp'
-            this.log(\``Error scanning directory \${dirPath}: \${error.message}\``, 'ERROR'
-            const content = fs.readFileSync(filePath, 'utf8'
-                case '.js'
-                case '.jsx'
-                case '.ts'
-                case '.tsx'
-                case '.json'
-                case '.css'
-                case '.scss'
-                case '.html'
-                case '.md'
-                severity: 'ERROR'
-                const lines = content.substring(0, position).split('\\n'
-                    severity: 'ERROR'
-                stdio: 'pipe'
-            const output = error.stdout?.toString() || error.stderr?.toString() || ''
-            const lines = output.split('\\n'
-                        severity: 'ERROR'
-                const lines = content.substring(0, position).split('\\n'
-                    severity: 'ERROR'
-        const lines = content.split('\\n'
-                    message: 'Unmatched braces in CSS'
-                    severity: 'WARNING'
-        const lines = content.split('\\n'
-                    message: 'Unmatched HTML tags'
-                    severity: 'WARNING'
-        const lines = content.split('\\n'
-                            message: 'Broken markdown link'
-                            severity: 'WARNING'
-            agentId: '${agentId}'
-            agentName: '${agentName}'
-        const reportFile = path.join(this.reportsDir, \``${agentName}-report-\${timestamp.split('T'
-        this.log('Starting ${agentName} syntax error detection scan...'
-        this.updateStatus('RUNNING'
-            const projectRoot = path.resolve(__dirname, '../../../'
-                this.updateStatus('ERRORS_FOUND'
-                this.log('No syntax errors found'
-                this.updateStatus('CLEAN'
-            this.log(\``Error during syntax detection: \${error.message}\``, 'ERROR'
-            this.updateStatus('ERROR'
-            this.log(\``Error during cleanup: \${error.message}\``, 'ERROR'
-process.on('SIGINT'
-    const detector = new ${agentName.replace(/[-_]/g, ''
-    detector.log('Received SIGINT, cleaning up...'
-process.on('SIGTERM'
-    const detector = new ${agentName.replace(/[-_]/g, ''
-    detector.log('Received SIGTERM, cleaning up...'
-module.exports = ${agentName.replace(/[-_]/g, ''
-    const detector = new ${agentName.replace(/[-_]/g, ''
-            detector.log('${agentName} syntax detection completed'
-            detector.log(\``${agentName} syntax detection failed: \${error.message}\``, 'ERROR'
-        fs.chmodSync(outputPath, '755'
-const fs = require('fs'
-const path = require('path'
-const { execSync } = require('child_process'
-class ${agentName.replace(/[-_]/g, ''
-        this.logDir = path.join(__dirname, 'logs'
-        this.reportsDir = path.join(__dirname, 'reports'
-        this.pidFile = path.join(__dirname, '${agentName}.pid'
-        this.statusFile = path.join(__dirname, '${agentName}-status.json'
-        this.backupDir = path.join(__dirname, 'backups'
-    log(message, level = 'INFO'
-        const logFile = path.join(this.logDir, \``${agentName}-\${new Date().toISOString().split('T'
-        fs.appendFileSync(logFile, logMessage + '\\n'
-            agentId: '${agentId}'
-            agentName: '${agentName}'
-        const timestamp = new Date().toISOString().replace(/[:.]/g, '-'
-            this.log(\``Failed to create backup for \${filePath}: \${error.message}\``, 'ERROR'
-            { pattern: /([^])\\n\\s*([a-zA-Z_$])/g, replacement: '$1;\\n$2', description: 'Add missing semicolon'
-            { pattern: /(\\w+):\\s*([^,\\s]+)/g, replacement: '\"$1\"
-            { pattern: /import\\s+{([^}]+)}\\s+from\\s+['\"]([^'\"]+)['\"]/g, replacement: 'import { $1 } from \"$2\"
-                { pattern: /(\\w+):/g, replacement: '\"$1\"
-                { pattern: /'/g, replacement: '\"
-            { pattern: /=([^\"'\\s>]+)/g, replacement: '=\"$1\"`
+const fs = require('fs''')
+const path = require('path''')
+const crypto = require('crypto''')
+        this.templatesDir = path.join(__dirname, 'templates''')
+        this.outputDir = path.join(__dirname, 'generated''')
+        return crypto.randomBytes(8).toString('hex''')
+const fs = require('fs''')
+const path = require('path''')
+const { execSync } = require('child_process''')
+class ${agentName.replace(/[-_]/g, '''')
+        this.logDir = path.join(__dirname, 'logs''')
+        this.reportsDir = path.join(__dirname, 'reports''')
+        this.pidFile = path.join(__dirname, '${agentName}.pid''')
+        this.statusFile = path.join(__dirname, '${agentName}-status.json''')
+    log(message, level = 'INFO''')
+        const logFile = path.join(this.logDir, \`${agentName}-\${new Date().toISOString().split('T''')
+        fs.appendFileSync(logFile, logMessage + '\\n''')
+            agentId: '${agentId}'''
+            agentName: '${agentName}'''
+        const codeExtensions = ${JSON.stringify(config.fileExtensions || ['.js', '.ts', '.jsx', '.tsx', '.json', '.css', '.scss', '.html', '.md''')
+        const skipDirs = ${JSON.stringify(config.skipDirectories || ['node_modules', '.git', '.next', 'dist', 'build', 'coverage', 'automation_temp', 'logs', 'reports', 'cache', 'temp''')
+            this.log(\``Error scanning directory \${dirPath}: \${error.message}\``, 'ERROR''')
+            const content = fs.readFileSync(filePath, 'utf8''')
+                case '.js'''
+                case '.jsx'''
+                case '.ts'''
+                case '.tsx'''
+                case '.json'''
+                case '.css'''
+                case '.scss'''
+                case '.html'''
+                case '.md'''
+                severity: 'ERROR'''
+                const lines = content.substring(0, position).split('\\n''')
+                    severity: 'ERROR'''
+                stdio: 'pipe'''
+            const output = error.stdout?.toString() || error.stderr?.toString() || ''''
+            const lines = output.split('\\n''')
+                        severity: 'ERROR'''
+                const lines = content.substring(0, position).split('\\n''')
+                    severity: 'ERROR'''
+        const lines = content.split('\\n''')
+                    message: 'Unmatched braces in CSS'''
+                    severity: 'WARNING'''
+        const lines = content.split('\\n''')
+                    message: 'Unmatched HTML tags'''
+                    severity: 'WARNING'''
+        const lines = content.split('\\n''')
+                            message: 'Broken markdown link'''
+                            severity: 'WARNING'''
+            agentId: '${agentId}'''
+            agentName: '${agentName}'''
+        const reportFile = path.join(this.reportsDir, \``${agentName}-report-\${timestamp.split('T''')
+        this.log('Starting ${agentName} syntax error detection scan...''')
+        this.updateStatus('RUNNING''')
+            const projectRoot = path.resolve(__dirname, '../../../''')
+                this.updateStatus('ERRORS_FOUND''')
+                this.log('No syntax errors found''')
+                this.updateStatus('CLEAN''')
+            this.log(\``Error during syntax detection: \${error.message}\``, 'ERROR''')
+            this.updateStatus('ERROR''')
+            this.log(\``Error during cleanup: \${error.message}\``, 'ERROR''')
+process.on('SIGINT''')
+    const detector = new ${agentName.replace(/[-_]/g, '''')
+    detector.log('Received SIGINT, cleaning up...''')
+process.on('SIGTERM''')
+    const detector = new ${agentName.replace(/[-_]/g, '''')
+    detector.log('Received SIGTERM, cleaning up...''')
+module.exports = ${agentName.replace(/[-_]/g, '''')
+    const detector = new ${agentName.replace(/[-_]/g, '''')
+            detector.log('${agentName} syntax detection completed''')
+            detector.log(\``${agentName} syntax detection failed: \${error.message}\``, 'ERROR''')
+        fs.chmodSync(outputPath, '755''')
+const fs = require('fs''')
+const path = require('path''')
+const { execSync } = require('child_process''')
+class ${agentName.replace(/[-_]/g, '''')
+        this.logDir = path.join(__dirname, 'logs''')
+        this.reportsDir = path.join(__dirname, 'reports''')
+        this.pidFile = path.join(__dirname, '${agentName}.pid''')
+        this.statusFile = path.join(__dirname, '${agentName}-status.json''')
+        this.backupDir = path.join(__dirname, 'backups''')
+    log(message, level = 'INFO''')
+        const logFile = path.join(this.logDir, \``${agentName}-\${new Date().toISOString().split('T''')
+        fs.appendFileSync(logFile, logMessage + '\\n''')
+            agentId: '${agentId}'''
+            agentName: '${agentName}'''
+        const timestamp = new Date().toISOString().replace(/[:.]/g, '-''')
+            this.log(\``Failed to create backup for \${filePath}: \${error.message}\``, 'ERROR''')
+            { pattern: /([^])\\n\\s*([a-zA-Z_$])/g, replacement: '$1;\\n$2', description: 'Add missing semicolon'''
+            { pattern: /(\\w+):\\s*([^,\\s]+)/g, replacement: '\"$1\"""
+                { pattern: /(\\w+):/g, replacement: '\"$1\"""
+                { pattern: /'/g, replacement: '\"""
+            { pattern: /=([^\"'\\s>]+)/g, replacement: '=\"$1\"`""

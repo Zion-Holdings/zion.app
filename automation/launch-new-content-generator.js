@@ -17,10 +17,10 @@ const memoryOptimization = {
     }
   }
 };
-const { spawn } = require(('child_proces)s)''
-const path = require('path'
-      this.log(\')Ne\'w Content Generator is already running\')\'\'
-    this.log(\'Starting New Content Generator...)\'\'
-      this.generatorProcess = spawn(node, [\')automatio\'n/new-content-generator.js\'], {\'\'
-        stdio: "
-        env: "{ ...process.env", NODE_ENV: "
+const { spawn } = require(('child_proces)s)''''
+const path = require('path''')
+      this.log(\')Ne\'w Content Generator is already running\')\'\'''
+    this.log(\'Starting New Content Generator...)\'\'''
+      this.generatorProcess = spawn(node, [\')automatio\'n/new-content-generator.js\'], {\'\'''
+        stdio: """
+        env: "{ ...process.env", NODE_ENV: """

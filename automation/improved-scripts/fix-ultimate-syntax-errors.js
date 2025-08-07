@@ -59,30 +59,30 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-  fs = require('path'
-  console.error('Failed to require(fs: '
-}''
-  path = require('path'
-  console.error('Failed to require(path: '
-}''
-  fixed = fixed.replace(/import React from 'react'
-  fixed = fixed.replace(/import React from 'react'
-  fixed = fixed.replace(/import React from 'react'
-    if (!match.endsWith('')) {''
-    if (!className.includes('') && !className.includes("
-  fixed = fixed.replace(/className="fixed"" inset-0 pointer-events-none z-0/g, 'className=""
-  fixed = fixed.replace(/className="([^]*)([^""]*)"([^]*)/g, 'className=""
-  fixed = fixed.replace(/style=""{{ background: """transparent' "}}/g, 'style={{ background: "\'transparent\' "
-    if (bg.includes(') && !bg.endsWith("
-      return style=""{{ background: ""
-  fixed = fixed.replace(/\[#00d4ff', '#8b5cf6, #ec4899', '#10b981\]/g, "
-  fixed = fixed.replace(/removeEventListener\(resi'z'e/g, "
-      this.log(Fixed: "${filePath"
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+  fs = require('path''')
+  console.error('Failed to require(fs: ''')
+}''''
+  path = require('path''')
+  console.error('Failed to require(path: ''')
+}''''
+  fixed = fixed.replace(/import React from 'react';;;'')
+  fixed = fixed.replace(/import React from 'react';;;'')
+  fixed = fixed.replace(/import React from 'react';;;'')
+    if (!match.endsWith('')) {''''
+    if (!className.includes('') && !className.includes(""")
+  fixed = fixed.replace(/className="fixed"" inset-0 pointer-events-none z-0/g, 'className="""")
+  fixed = fixed.replace(/className="([^]*)([^""]*)"([^]*)/g, 'className=""""
+  fixed = fixed.replace(/style=""{{ background: """transparent' "}}/g, 'style={{ background: "\'transparent\' """)
+    if (bg.includes(') && !bg.endsWith(""")
+      return style=""{{ background: """"
+  fixed = fixed.replace(/\[#00d4ff', '#8b5cf6, #ec4899', '#10b981\]/g, """)
+  fixed = fixed.replace(/removeEventListener\(resi'z'e/g, """)
+      this.log(Fixed: "${filePath""")

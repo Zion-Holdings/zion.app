@@ -19,8 +19,8 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-            const result = require($2)r))''
-                console.log(Monetization Orchestrator running continuously...'))''
-                    console.log('Orchestrator Status:, status)''
-                console.error(Orchestrator Error: '), err)''
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+            const result = require($2)r))''''
+                console.log(Monetization Orchestrator running continuously...'))''''
+                    console.log('Orchestrator Status:, status)''''
+                console.error(Orchestrator Error: '), err)''''

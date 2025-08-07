@@ -59,29 +59,29 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { EventEmitter } = require(('even')')t's)''
-const result = require($2)m))''
-const ./workload-orchestrator = require('path'
-const result = require($2)2))./autonomous-agent-factory)''
-    const filePath = path.join(__dirname, \'master-controller-confi\'g.json\')\'\'
-      const jsonData = JSON.parse(fs.readFileSync(configPath, \'utf\'8\'))\'\'
-      console.log(\'[MasterController] Initializing automation system...)\'\'
-        name: "
-        status: "
-        name: "
-        status: "
-        name: "
-        status: "
-      this.factory.createAgentTemplate(\')content, { type: "
-      console.error([MasterController] Error adding workload: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { EventEmitter } = require(('even')')t's)''''
+const result = require($2)m))''''
+const ./workload-orchestrator = require('path''')
+const result = require($2)2))./autonomous-agent-factory)''''
+    const filePath = path.join(__dirname, \'master-controller-confi\'g.json\')\'\'''
+      const jsonData = JSON.parse(fs.readFileSync(configPath, \'utf\'8\'))\'\'''
+      console.log(\'[MasterController] Initializing automation system...)\'\'''
+        name: """
+        status: """
+        name: """
+        status: """
+        name: """
+        status: """
+      this.factory.createAgentTemplate(\')content, { type: """
+      console.error([MasterController] Error adding workload: """)

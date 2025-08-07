@@ -59,35 +59,35 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { GoogleGenerativeAI } = require(('@google/generative-ai')'))''
-  log(message, level = 'info'
-      if (apiKey && apiKey !== \'placeholder-google-ai-key) {\'\'
-        this.model = this.genAI.getGenerativeModel({ model: "
-      successfulPatterns: "
-      contentVariations: "
-      pageTypeEvolution: "
-        layout: [\'gr\'id\'"
-        style: "[\'minimalist"
-        tone: "[profession\'a\'l"
-        features: "[\'interacti\'ve\'"
-        layout: [\'asymmetric"
-        style: "[avant-gar\'d\'e"
-        tone: "[\'provocati\'ve\'"
-        features: "[\'ai-powered"
-        layout: [adapti\'v\'e"
-        style: "[\'fusi\'on\'"
-        tone: "[\'balanced"
-        features: "[multi-mod\'a\'l"
-        this.log("🔄 Generating evolved content for: "${page.url"
-        this.log(✅ Evolved page created: "${page.url"}"
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { GoogleGenerativeAI } = require(('@google/generative-ai')'))''''
+  log(message, level = 'info''')
+      if (apiKey && apiKey !== \'placeholder-google-ai-key) {\'\'''
+        this.model = this.genAI.getGenerativeModel({ model: """)
+      successfulPatterns: """
+      contentVariations: """
+      pageTypeEvolution: """
+        layout: [\'gr\'id\'"""
+        style: "[\'minimalist"""
+        tone: "[profession\'a\'l"""
+        features: "[\'interacti\'ve\'"""
+        layout: [\'asymmetric"""
+        style: "[avant-gar\'d\'e"""
+        tone: "[\'provocati\'ve\'"""
+        features: "[\'ai-powered"""
+        layout: [adapti\'v\'e"""
+        style: "[\'fusi\'on\'"""
+        tone: "[\'balanced"""
+        features: "[multi-mod\'a\'l"""
+        this.log("🔄 Generating evolved content for: "${page.url""")
+        this.log(✅ Evolved page created: "${page.url"}""")

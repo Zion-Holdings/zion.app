@@ -59,48 +59,48 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const result = require('fs'
-const path = require('path'
-    this.pagesDir = path.join(process.cwd(), pag')e's)''
-    this.componentsDir = path.join(process.cwd(), 'componen'ts')''
-    this.layoutsDir = path.join(process.cwd(), 'components'/layout')''
-    console.log(🔍 Analyzing sidebar integration issues...')''
-    const filePath = path.join(this.componentsDir, 'ui'/Sidebar.tsx')''
-      if (!content.includes('useState) || !content.includes(')isOpen)) {''
-          type: "
-          severity: "
-          description: "
-          type: "
-          severity: "
-          description: "
-          type: "
-          severity: "
-          description: "
-          type: "
-          type: "
-          severity: "
-          description: "
-          type: "
-          description: "
-          type: "
-        'role'="
-          type: "
-          severity: "
-          description: "
-          type: "
-      description: "
-      description: "
-      description: "
-      description: "
-      description: "
-    'role: "
-    aria-lab'e'l: "
-      description: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const result = require('fs''')
+const path = require('path''')
+    this.pagesDir = path.join(process.cwd(), pag')e's)''''
+    this.componentsDir = path.join(process.cwd(), 'componen'ts')''''
+    this.layoutsDir = path.join(process.cwd(), 'components'/layout')''''
+    console.log(🔍 Analyzing sidebar integration issues...')''''
+    const filePath = path.join(this.componentsDir, 'ui'/Sidebar.tsx')''''
+      if (!content.includes('useState) || !content.includes(')isOpen)) {''''
+          type: """
+          severity: """
+          description: """
+          type: """
+          severity: """
+          description: """
+          type: """
+          severity: """
+          description: """
+          type: """
+          type: """
+          severity: """
+          description: """
+          type: """
+          description: """
+          type: """
+        'role'="""
+          type: """
+          severity: """
+          description: """
+          type: """
+      description: """
+      description: """
+      description: """
+      description: """
+      description: """
+    'role: """
+    aria-lab'e'l: """
+      description: """

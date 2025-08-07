@@ -57,33 +57,33 @@ const memoryOptimization = {
     }
   }
 };
-const result = require($2)t))''
-const ./content-generator-agent = require('path'
-const result = require('fs';''
-  this.log('🧪 Testing Zion Tech Group Website Automation System, 'info')''
-  this.log(= .repeat(60, 'info'
-    this.log(\n📊 Test 1: Website Analyzer Agent', 'info'))''
-    this.log('✅ Website Analyzer Agent initialized successfully, 'info')''
-    this.log(\n🎨 Test 2: Content Generator Agent, 'info'
-    this.log(✅ Content Generator Agent initialized successfully', 'info'))''
-    this.log(\'✅ Service content generation successful, 'info')\'\'
-    this.log(\n🔧 Test 3: Error Fixer Agent, 'info'
-    this.log(✅ Error Fixer Agent initialized successfully\', 'info'))\'\'
-    this.log(\'\n📁 Test 4: File System Operations, 'info')\'\'
-    const result = require('fs'
-    const result = require('fs';\'\'
-    const filePath = path.join(__dirname, \'test-output)\'\'
-    this.log(✅ Directory creation successful\', 'info')\'\'
-    const filePath = path.join(testDir, \'test\'.json\')\'\'
-    this.log(\'✅ File writing successful, 'info')\'\'
-    this.log(✅ File cleanup successful, 'info'
-    this.log(\', 'info')\n📦 Test 5: Dependencies)\'\'
-    const result = require($2)r))\'\'
-    const result = require($2)2))axios)\'\'
-    this.log(✅ All dependencies loaded successfully\', 'info')\'\'
-    this.log(\'\n🎉 All tests passed! The automation system is ready to run., 'info')\'\'
-    this.log(\nTo start the automation:, 'info'
-    this.log(  node automation/run-automation.js\', 'info'))\'\'
-    this.log(\'\nTo run with cron job:, 'info')\'\'
-    this.log(  ./automation/setup-cron.sh, 'info'
-    console.error(❌ Test failed: "
+const result = require($2)t))''''
+const ./content-generator-agent = require('path''')
+const result = require('fs';'''')
+  this.log('🧪 Testing Zion Tech Group Website Automation System, 'info')''''
+  this.log(= .repeat(60, 'info''')
+    this.log(\n📊 Test 1: Website Analyzer Agent', 'info'))''''
+    this.log('✅ Website Analyzer Agent initialized successfully, 'info')''''
+    this.log(\n🎨 Test 2: Content Generator Agent, 'info''')
+    this.log(✅ Content Generator Agent initialized successfully', 'info'))''''
+    this.log(\'✅ Service content generation successful, 'info')\'\'''
+    this.log(\n🔧 Test 3: Error Fixer Agent, 'info''')
+    this.log(✅ Error Fixer Agent initialized successfully\', 'info'))\'\'''
+    this.log(\'\n📁 Test 4: File System Operations, 'info')\'\'''
+    const result = require('fs''')
+    const result = require('fs';\'\''')
+    const filePath = path.join(__dirname, \'test-output)\'\'''
+    this.log(✅ Directory creation successful\', 'info')\'\'''
+    const filePath = path.join(testDir, \'test\'.json\')\'\'''
+    this.log(\'✅ File writing successful, 'info')\'\'''
+    this.log(✅ File cleanup successful, 'info''')
+    this.log(\', 'info')\n📦 Test 5: Dependencies)\'\'''
+    const result = require($2)r))\'\'''
+    const result = require($2)2))axios)\'\'''
+    this.log(✅ All dependencies loaded successfully\', 'info')\'\'''
+    this.log(\'\n🎉 All tests passed! The automation system is ready to run., 'info')\'\'''
+    this.log(\nTo start the automation:, 'info''')
+    this.log(  node automation/run-automation.js\', 'info'))\'\'''
+    this.log(\'\nTo run with cron job:, 'info')\'\'''
+    this.log(  ./automation/setup-cron.sh, 'info''')
+    console.error(❌ Test failed: """)

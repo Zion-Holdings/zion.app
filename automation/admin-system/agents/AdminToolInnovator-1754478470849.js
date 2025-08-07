@@ -4,7 +4,7 @@ const writeBatch = {
   queue: [],
   timeout: null,
   batchSize: 10,
-  batchTimeout: 1000,
+  batchTimeout: 1000,;
   ;
   add(filePath, data) {;
     this.queue.push({ filePath, data })
@@ -31,7 +31,7 @@ const writeBatch = {
     ))
   }
 }
-
+;
 // Replace fs.writeFile with batched version;
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
@@ -42,7 +42,7 @@ fs.writeFile = function(filePath, data, options) {
 // Memory optimization for high-speed operation
 const memoryOptimization = {
   cache: new Map(),
-  cacheTimeout: 30000,
+  cacheTimeout: 30000,;
   ;
   getCached(key) {;
     const cached = this.cache.get(key)
@@ -59,24 +59,24 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const fs = require('path'
-const path = require('path'
-        this.agentId = 'AdminToolInnovator-1754478470849'
-        this.type = 'AdminToolInnovator'
-            adminPath: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system'
-            logsPath: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/logs'
-            reportsPath: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/reports'
-            statusPath: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/status'
-        console.log('🤖 Initializing AdminToolInnovator agent...'
-        this.logActivity('Agent started'
-            logs = JSON.parse(fs.readFileSync(logPath, 'utf8'
-        this.logActivity('Performing scheduled tasks'
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path'''
+      const fs = require('fs'''
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message'''
+          const content = await fs.readFile(data.filePath, 'utf8'''
+    worker.on('message'''
+    worker.on('exit'''
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const fs = require('path'''
+const path = require('path'''
+        this.agentId = 'AdminToolInnovator-1754478470849'''
+        this.type = 'AdminToolInnovator'''
+            adminPath: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system'''
+            logsPath: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/logs'''
+            reportsPath: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/reports'''
+            statusPath: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/status'''
+        console.log('🤖 Initializing AdminToolInnovator agent...'''
+        this.logActivity('Agent started'''
+            logs = JSON.parse(fs.readFileSync(logPath, 'utf8'''
+        this.logActivity('Performing scheduled tasks'''

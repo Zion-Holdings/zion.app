@@ -59,23 +59,23 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const WebsiteAnalyzerAgent = require($2)t))''
-const ContentGeneratorAgent = require('path'
-const ErrorFixerAgent = require('fs';''
-const fs = require('fs').promises;''
-const path = require('path'
-const { exec } = require(('child_process')'))''
-const { promisify } = require(('uti)l)''
-        console.error(❌ Error in continuous monitoring: "
-      console.error(❌ Error creating and applying fixes: "
-      await execAsync(git commit -m "Auto-update: "Website improvements"\'))", { cwd: "path.join(__dirname"
-      console.error(❌ Error in build and deploy: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const WebsiteAnalyzerAgent = require($2)t))''''
+const ContentGeneratorAgent = require('path''')
+const ErrorFixerAgent = require('fs';'''')
+const fs = require('fs').promises;''''
+const path = require('path''')
+const { exec } = require(('child_process')'))''''
+const { promisify } = require(('uti)l)''''
+        console.error(❌ Error in continuous monitoring: """)
+      console.error(❌ Error creating and applying fixes: """)
+      await execAsync(git commit -m "Auto-update: "Website improvements"\'))", { cwd: "path.join(__dirname""")
+      console.error(❌ Error in build and deploy: """)

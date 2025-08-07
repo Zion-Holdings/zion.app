@@ -59,35 +59,35 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-  fs = require('path'
-  console.error('Failed to require(fs: '
-  path = require('path'
-  console.error('Failed to require(path: '
-  log(message, level = 'info'
-        this.pagesDir = path.join(this.baseDir, 'pages'
-        this.componentsDir = path.join(this.baseDir, 'components'
-        this.log('Validating page content...', 'info'
-        this.log(`Found ${pages.length} pages``, 'info'
-        this.log(``Found ${contentIssues.length} content issues``, 'info'
-            } else if (item.endsWith('.tsx') || item.endsWith('.jsx'
-                const content = fs.readFileSync(itemPath, 'utf8'
-                    lines: content.split('\n'
-        if (!content.includes('title') && !content.includes('meta'
-                type: 'missing_meta'
-                message: 'Page missing title or meta tags'
-                type: 'missing_headings'
-                message: 'Page missing heading structure'
-        const textContent = content.replace(/<[^>]*>/g, ''
-                type: 'minimal_content'
-                message: 'Page has minimal text content'
-        const links = content.match(/href\s*=\s*[\"'][^\"']*[\"
-                const url = link.match(/href\s*=\s*[\"']([^\"']*)[\"`
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+  fs = require('path''')
+  console.error('Failed to require(fs: ''')
+  path = require('path''')
+  console.error('Failed to require(path: ''')
+  log(message, level = 'info''')
+        this.pagesDir = path.join(this.baseDir, 'pages''')
+        this.componentsDir = path.join(this.baseDir, 'components''')
+        this.log('Validating page content...', 'info''')
+        this.log(`Found ${pages.length} pages``, 'info''')
+        this.log(``Found ${contentIssues.length} content issues``, 'info''')
+            } else if (item.endsWith('.tsx') || item.endsWith('.jsx''')
+                const content = fs.readFileSync(itemPath, 'utf8''')
+                    lines: content.split('\n''')
+        if (!content.includes('title') && !content.includes('meta''')
+                type: 'missing_meta'''
+                message: 'Page missing title or meta tags'''
+                type: 'missing_headings'''
+                message: 'Page missing heading structure'''
+        const textContent = content.replace(/<[^>]*>/g, '''')
+                type: 'minimal_content'''
+                message: 'Page has minimal text content'''
+        const links = content.match(/href\s*=\s*[\"'][^\"']*[\""")
+                const url = link.match(/href\s*=\s*[\"']([^\"']*)[\"`""

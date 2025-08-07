@@ -59,38 +59,38 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-    this.backupDir = path.join(this.projectRoot, 'automatio'n/backups')''
-    this.backupLogFile = path.join(this.projectRoot, 'automation'/backup-log.json')''
-      'automatio'n/backups/code',''
-      'automation'/backups/data',''
-      'automatio'n/backups/config'''
-      this.backupLog = JSON.parse(fs.readFileSync(this.backupLogFile, \'utf\'8\'))\'\'
-    console.log(💾 Creating system backup...\')\'\'
-    const timestamp = new Date().toISOString().replace(/[:.]/g, \'-)\'\'
-      console.error(\'❌ Backup failed:, error)\'\'
-    const filePath = path.join(backupPath, \')code)\'\'
-    const result = [nod\'e\'_modules,\'\'
-      \'.git\',\'\'
-      \'automatio\'n/logs\',\'\'
-      \'.next,\'\'
-      out\',\'\'
-      \'dist\'\'
-    const result = "
-          console.error(❌ Code backup failed: "
-            console.error(❌ Data backup failed: "
-      console.error(❌ Restore failed: "
-          console.error(❌ Code restore failed: "
-              console.error(❌ Data restore failed: "
-        console.error(❌ Error in backup cycle: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require(('chil')')d'_process)''''
+    this.backupDir = path.join(this.projectRoot, 'automatio'n/backups')''''
+    this.backupLogFile = path.join(this.projectRoot, 'automation'/backup-log.json')''''
+      'automatio'n/backups/code',''''
+      'automation'/backups/data',''''
+      'automatio'n/backups/config'''''
+      this.backupLog = JSON.parse(fs.readFileSync(this.backupLogFile, \'utf\'8\'))\'\'''
+    console.log(💾 Creating system backup...\')\'\'''
+    const timestamp = new Date().toISOString().replace(/[:.]/g, \'-)\'\'''
+      console.error(\'❌ Backup failed:, error)\'\'''
+    const filePath = path.join(backupPath, \')code)\'\'''
+    const result = [nod\'e\'_modules,\'\'''
+      \'.git\',\'\'''
+      \'automatio\'n/logs\',\'\'''
+      \'.next,\'\'''
+      out\',\'\'''
+      \'dist\'\'''
+    const result = """
+          console.error(❌ Code backup failed: """)
+            console.error(❌ Data backup failed: """)
+      console.error(❌ Restore failed: """)
+          console.error(❌ Code restore failed: """)
+              console.error(❌ Data restore failed: """)
+        console.error(❌ Error in backup cycle: """)

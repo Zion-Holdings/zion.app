@@ -57,36 +57,36 @@ const memoryOptimization = {
     }
   }
 }
-const result = require('fs'
-const path = require('path'
-    console.log(🔍 Analyzing project structure...'))''
-    const filePath = path.join(process.cwd(), 'pages)''
-    const filePath = path.join(process.cwd(), componen't's)''
-    const filePath = path.join(process.cwd(), src')''
-    const filePath = path.join(process.cwd(), 'pages'/api')''
-    console.log(✅ Project structure analysis complete')''
-          type: "
-      priority: "
-        type: "
-        type: "
-        type: "
-      user-authenticati\'o\'n: "
-      \'service-marketplace: "
-      real-time-chat: "
-      \'review-system: "
-      admin-dashboard: "
-      \'analytics: "
-      mobile-responsive: "
-      \'seo-optimization: "
-      home: "
-      \'marketplace: "
-      signup: "
-      \'profile: "
-      contact: "
-      \'about: "
-      analytics: "
-      \'hero-section: "
-      testimonials: "
-      \'blog-posts: "
-      pricing: "
-      \'contact-info: "
+const result = require('fs''')
+const path = require('path''')
+    console.log(🔍 Analyzing project structure...'))''''
+    const filePath = path.join(process.cwd(), 'pages)''''
+    const filePath = path.join(process.cwd(), componen't's)''''
+    const filePath = path.join(process.cwd(), src')''''
+    const filePath = path.join(process.cwd(), 'pages'/api')''''
+    console.log(✅ Project structure analysis complete')''''
+          type: """
+      priority: """
+        type: """
+        type: """
+        type: """
+      user-authenticati\'o\'n: """
+      \'service-marketplace: """
+      real-time-chat: """
+      \'review-system: """
+      admin-dashboard: """
+      \'analytics: """
+      mobile-responsive: """
+      \'seo-optimization: """
+      home: """
+      \'marketplace: """
+      signup: """
+      \'profile: """
+      contact: """
+      \'about: """
+      analytics: """
+      \'hero-section: """
+      testimonials: """
+      \'blog-posts: """
+      pricing: """
+      \'contact-info: """

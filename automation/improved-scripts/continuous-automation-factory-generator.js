@@ -59,39 +59,39 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { spawn, execSync } = require(('chil')')d'_process)''
-const { v4: uuidv4 } = require(('uui)d)''
-  log(message, level = 'info'
-    this.log("[${timestamp}] 🔄 CONTINUOUS FACTORY: "${message"
-      name: "
-      description: "
-      capabilities: "[\'ai-writing"
-      services: "[blog-pos\'t\'s"
-      dependencies: "[\'open\'ai\'"
-      description: "
-      capabilities: "[\'campaign-management"
-      services: "[email-campaig\'n\'s"
-      dependencies: "[\'nodemail\'er\'"
-      description: "
-      capabilities: "[\'code-generation"
-      services: "[component-generati\'o\'n"
-      dependencies: "[\'je\'st\'"
-      status: "
-      version: "
-      status: "
-    this.log(\"[\${timestamp}] 🏭 \${this.id}: \${message}\"
-    this.log(\"[\${timestamp}] 🏭 AGENT \${this.id}: \${message}\"
-      message: "
-      version: "
-      stdio: "[pipe"
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { spawn, execSync } = require(('chil')')d'_process)''''
+const { v4: uuidv4 } = require(('uui)d)''''
+  log(message, level = 'info''')
+    this.log("[${timestamp}] 🔄 CONTINUOUS FACTORY: "${message""")
+      name: """
+      description: """
+      capabilities: "[\'ai-writing"""
+      services: "[blog-pos\'t\'s"""
+      dependencies: "[\'open\'ai\'"""
+      description: """
+      capabilities: "[\'campaign-management"""
+      services: "[email-campaig\'n\'s"""
+      dependencies: "[\'nodemail\'er\'"""
+      description: """
+      capabilities: "[\'code-generation"""
+      services: "[component-generati\'o\'n"""
+      dependencies: "[\'je\'st\'"""
+      status: """
+      version: """
+      status: """
+    this.log(\"[\${timestamp}] 🏭 \${this.id}: \${message}\""")
+    this.log(\"[\${timestamp}] 🏭 AGENT \${this.id}: \${message}\""")
+      message: """
+      version: """
+      stdio: "[pipe"""

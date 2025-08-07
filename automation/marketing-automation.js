@@ -57,40 +57,40 @@ const memoryOptimization = {
     }
   }
 }
-const result = require($2)a))''
-const path = require('path'
-const { exec } = require(()')chil'd_process')''
-const result = require($2)l))''
-const node-cron = require('path'
-const result = require($2)2))axi'os')''
-const result = require($2)o))''
-const puppeteer = require('path'
-const result = require($2)2))mome'nt')''
-const { v4: uuidv4 } = require(('uui)d)''
-        this.researchDir = path.join(this.baseDir, ')marketing-resear'ch')''
-        this.campaignsDir = path.join(this.baseDir, 'marketing-campaigns)''
-        this.analyticsDir = path.join(this.baseDir, marketing-analyti'c's)''
-            social: "[\'twitt\'er\'"
-            email: "[newslett\'e\'r"
-            content: "[bl\'o\'g"
-            advertising: "[\'goog\'le\'"
-            seo: "[\'onpage"
-            influencer: "[mic\'r\'o"
-            trendResearch: "
-            contentCreation: "
-            socialMedia: "
-            emailCampaigns: "
-            seoOptimization: "
-            influencerOutreach: "
-            adCampaigns: "
-            analyticsTracking: "
-            console.error(❌ Marketing orchestration failed: "
-            console.error(\')Erro\'r researching social media trends: "
-            const asyncResult = await page.$$(\')[data-testid="
-            console.error(Erro\')r scraping Twitter trends: "
-            timeframe: "
-            name: "
-            type: "
-            status: "
-            console.error(❌ Content generation failed: "
-            console.error(❌ Strategy optimization failed: "
+const result = require($2)a))''''
+const path = require('path''')
+const { exec } = require(()')chil'd_process')''''
+const result = require($2)l))''''
+const node-cron = require('path''')
+const result = require($2)2))axi'os')''''
+const result = require($2)o))''''
+const puppeteer = require('path''')
+const result = require($2)2))mome'nt')''''
+const { v4: uuidv4 } = require(('uui)d)''''
+        this.researchDir = path.join(this.baseDir, ')marketing-resear'ch')''''
+        this.campaignsDir = path.join(this.baseDir, 'marketing-campaigns)''''
+        this.analyticsDir = path.join(this.baseDir, marketing-analyti'c's)''''
+            social: "[\'twitt\'er\'"""
+            email: "[newslett\'e\'r"""
+            content: "[bl\'o\'g"""
+            advertising: "[\'goog\'le\'"""
+            seo: "[\'onpage"""
+            influencer: "[mic\'r\'o"""
+            trendResearch: """
+            contentCreation: """
+            socialMedia: """
+            emailCampaigns: """
+            seoOptimization: """
+            influencerOutreach: """
+            adCampaigns: """
+            analyticsTracking: """
+            console.error(❌ Marketing orchestration failed: """)
+            console.error(\')Erro\'r researching social media trends: """
+            const asyncResult = await page.$$(\')[data-testid="""
+            console.error(Erro\')r scraping Twitter trends: """
+            timeframe: """
+            name: """
+            type: """
+            status: """
+            console.error(❌ Content generation failed: """)
+            console.error(❌ Strategy optimization failed: """)

@@ -19,8 +19,8 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-            const result = require('fs'
-                                this.log(Creating new revenue agents due to low performance...', 'info'))''
-                            this.log('Continuous improvement cycle completed, 'info')''
-                    console.error(')Erro'r in continuous improvement: ', error)''
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+            const result = require('fs''')
+                                this.log(Creating new revenue agents due to low performance...', 'info'))''''
+                            this.log('Continuous improvement cycle completed, 'info')''''
+                    console.error(')Erro'r in continuous improvement: ', error)''''

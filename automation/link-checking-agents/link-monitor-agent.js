@@ -59,33 +59,33 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const result = require('fs'
-const path = require('path'
-const result = require($2)2))o's)''
-const cron = require('path';''
-const result = require($2)2))nodemailer)''
-    this.agentType = process.env.AGENT_TYPE || link-monit'o'r;''
-    this.baseUrl = process.env.BASE_URL || 'http's: //ziontechgroup.netlify.app'''
-      reportGeneration: "
-      emailAlerts: "
-        console.error(')Error' in health check: "
-      console.error(Error performing health check: "
-        status: "
-        from: "
-      critical: "
-      high: "
-      medium: "
-      low: "
-        type: "
-        action: "
-        type: "
-        action: "
-        action: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const result = require('fs''')
+const path = require('path''')
+const result = require($2)2))o's)''''
+const cron = require('path';'''')
+const result = require($2)2))nodemailer)''''
+    this.agentType = process.env.AGENT_TYPE || link-monit'o'r;''''
+    this.baseUrl = process.env.BASE_URL || 'http's: //ziontechgroup.netlify.app'''''
+      reportGeneration: """
+      emailAlerts: """
+        console.error(')Error' in health check: """
+      console.error(Error performing health check: """)
+        status: """
+        from: """
+      critical: """
+      high: """
+      medium: """
+      low: """
+        type: """
+        action: """
+        type: """
+        action: """
+        action: """

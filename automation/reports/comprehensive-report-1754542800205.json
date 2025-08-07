@@ -1,0 +1,27 @@
+{
+  "timestamp": "2025-08-07T05:00:00.205Z",
+  "systemStatus": "active",
+  "monitoringData": {
+    "factories": [],
+    "agents": [],
+    "scripts": [],
+    "cronJobs": [],
+    "errors": [],
+    "performance": {},
+    "health": {}
+  },
+  "performance": {
+    "cpu": {
+      "user": 2470843,
+      "system": 3064426
+    },
+    "memory": {
+      "rss": 54022144,
+      "heapTotal": 8196096,
+      "heapUsed": 6706128,
+      "external": 1962797,
+      "arrayBuffers": 90619
+    },
+    "uptime": 13400.66640569
+  }
+}

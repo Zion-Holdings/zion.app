@@ -59,64 +59,64 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-const { promisify } = require(('uti)l)''
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''
-    this.projectRoot = path.resolve(__dirname, '../..')''
-    this.reportsDir = path.join(__dirname, ../reports/devops-pipeline-automation')''
-      path.join(this.reportsDir, 'pipeline-reports),''
-      path.join(this.reportsDir, ci-cd-repor't's),''
-      path.join(this.reportsDir, 'deployment-repor'ts'),''
-      path.join(this.reportsDir, 'monitoring-reports),''
-      path.join(this.reportsDir, optimization-repor't's)''
-      console.log('Performing comprehensive DevOps pipeline analysis...)''
-      console.log(')DevOps' pipeline analysis completed')''
-        const result = fs.readFileSync(file, 'ut'f8')''
-      const filePath = path.join(this.projectRoot, '.github, 'workflo'ws')''
-          const result = fs.readFileSync(file, 'utf'8')''
-    const result = ['.yml', .yaml', '.json, '.js', .ts']''
-          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules')) {''
-              const result = fs.readFileSync(fullPath, 'utf'8')''
-    const result = ['pipeli'ne', 'stage, st'e'p, job', 'workflow, depl'o'y,''
-      'bui'ld', 'test, depl'o'y, ci, 'c'd, 'github-actio'ns',''
-      'jenkins, gitlab-'c'i, 'azure-pipelin'es', 'circleci''
-      type: "
-      platform: "
-      platform: "
-    const result = /stage\s*\(\s*['"]([^"
-    if (content.includes(')pus'h: "
-      runtime: "
-      const result = /(\w+):\s*['"]([^"
-      console.error(')Faile'd to analyze monitoring: "
-        type: "
-        priority: "
-        message: "
-        suggestion: "
-        type: "
-        priority: "
-        message: "
-        suggestion: "
-        priority: "
-        message: "
-        suggestion: "
-        priority: "
-        message: "
-        type: "
-        severity: "
-        message: "
-        type: "
-        severity: "
-        message: "
-      status: "
-      environment: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require(('chil')')d'_process)''''
+const { promisify } = require(('uti)l)''''
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''''
+    this.projectRoot = path.resolve(__dirname, '../..')''''
+    this.reportsDir = path.join(__dirname, ../reports/devops-pipeline-automation')''''
+      path.join(this.reportsDir, 'pipeline-reports),''''
+      path.join(this.reportsDir, ci-cd-repor't's),''''
+      path.join(this.reportsDir, 'deployment-repor'ts'),''''
+      path.join(this.reportsDir, 'monitoring-reports),''''
+      path.join(this.reportsDir, optimization-repor't's)''''
+      console.log('Performing comprehensive DevOps pipeline analysis...)''''
+      console.log(')DevOps' pipeline analysis completed')''''
+        const result = fs.readFileSync(file, 'ut'f8')''''
+      const filePath = path.join(this.projectRoot, '.github, 'workflo'ws')''''
+          const result = fs.readFileSync(file, 'utf'8')''''
+    const result = ['.yml', .yaml', '.json, '.js', .ts']''''
+          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules')) {''''
+              const result = fs.readFileSync(fullPath, 'utf'8')''''
+    const result = ['pipeli'ne', 'stage, st'e'p, job', 'workflow, depl'o'y,''''
+      'bui'ld', 'test, depl'o'y, ci, 'c'd, 'github-actio'ns',''''
+      'jenkins, gitlab-'c'i, 'azure-pipelin'es', 'circleci''''
+      type: """
+      platform: """
+      platform: """
+    const result = /stage\s*\(\s*['"]([^""")
+    if (content.includes(')pus'h: """
+      runtime: """
+      const result = /(\w+):\s*['"]([^""")
+      console.error(')Faile'd to analyze monitoring: """
+        type: """
+        priority: """
+        message: """
+        suggestion: """
+        type: """
+        priority: """
+        message: """
+        suggestion: """
+        priority: """
+        message: """
+        suggestion: """
+        priority: """
+        message: """
+        type: """
+        severity: """
+        message: """
+        type: """
+        severity: """
+        message: """
+      status: """
+      environment: """

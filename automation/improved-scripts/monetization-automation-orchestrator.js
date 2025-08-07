@@ -59,51 +59,51 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require($2)h))''
-const . = require(('.)'
-const { v4: uuidv4 } = require(('uuid)'
-  log(message, level = 'info'
-      const result = require($2)2))./monetization-autonomous-factory\')\'\'
-      this.log(✅ Monetization Automation Orchestrator initialized\', 'info')\'\'
-      console.error(\'❌ Failed to initialize Monetization Orchestrator:, error)\'\'
-      subscription-optimization\'): {\'\'
-        name: "
-        agents: "[\'subscription-manag\'er\'"
-        description: "
-        agents: "[marketplace-optimizer"
-        description: "
-        agents: "
-        description: "
-        name: "
-        agents: "
-    this.log("
-        type: "
-        strategy: "
-        priority: "
-        type: "
-        strategy: "
-        priority: "
-        type: "
-        strategy: "
-        priority: "
-      type: "
-      strategy: "
-      priority: "
-      type: "
-      strategy: "
-      priority: "
-      status: "
-    this.log("💰 Executing strategy: "${strategy"
-      status: "
-    this.log(📊 Generated revenue report: "$${this.currentRevenue"} current revenue"
-      orchestrator: "
-      status: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require($2)h))''''
+const . = require(('.)'''
+const { v4: uuidv4 } = require(('uuid)'''
+  log(message, level = 'info''')
+      const result = require($2)2))./monetization-autonomous-factory\')\'\'''
+      this.log(✅ Monetization Automation Orchestrator initialized\', 'info')\'\'''
+      console.error(\'❌ Failed to initialize Monetization Orchestrator:, error)\'\'''
+      subscription-optimization\'): {\'\'''
+        name: """
+        agents: "[\'subscription-manag\'er\'"""
+        description: """
+        agents: "[marketplace-optimizer"""
+        description: """
+        agents: """
+        description: """
+        name: """
+        agents: """
+    this.log(""")
+        type: """
+        strategy: """
+        priority: """
+        type: """
+        strategy: """
+        priority: """
+        type: """
+        strategy: """
+        priority: """
+      type: """
+      strategy: """
+      priority: """
+      type: """
+      strategy: """
+      priority: """
+      status: """
+    this.log("💰 Executing strategy: "${strategy""")
+      status: """
+    this.log(📊 Generated revenue report: "$${this.currentRevenue"} current revenue""")
+      orchestrator: """
+      status: """

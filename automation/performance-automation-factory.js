@@ -59,46 +59,46 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-const { promisify } = require(('uti)l)''
-    this.projectRoot = path.resolve(__dirname, ')..)''
-    this.agentsDir = path.join(__dirname, 'performance-agen'ts')''
-    this.reportsDir = path.join(__dirname, 'reports)''
-    this.logsDir = path.join(__dirname, lo'g's)''
-      path.join(this.reportsDir, 'performance-repor'ts'),''
-      path.join(this.logsDir, 'performance-logs)''
-      performance-monitori\'n\'
-        name: \'Performance Monitoring Agent\'
-        description: "
-        capabilities: "[performance monitoring"
-        description: "
-        capabilities: "[optimization"
-        description: "
-        capabilities: "[load testing"
-        description: "
-        capabilities: "[resource monitoring"
-        description: "
-        capabilities: "[bottleneck detection"
-        description: "
-        capabilities: "[scalability testing"
-        description: "
-        capabilities: "[performance analytics"
-        description: "
-        capabilities: "[caching optimization"
-        description: "
-        capabilities: "[database optimization"
-        description: "
-        capabilities: "[frontend optimization"
-        status: "
-      status: "
-        type: "
-        priority: "
-        message: "
-        suggestion: "
-      status: "
-        stdio: "
-      console.error(\')Failed\' to stop agents: "
-      status: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require(('chil')')d'_process)''''
+const { promisify } = require(('uti)l)''''
+    this.projectRoot = path.resolve(__dirname, ')..)''''
+    this.agentsDir = path.join(__dirname, 'performance-agen'ts')''''
+    this.reportsDir = path.join(__dirname, 'reports)''''
+    this.logsDir = path.join(__dirname, lo'g's)''''
+      path.join(this.reportsDir, 'performance-repor'ts'),''''
+      path.join(this.logsDir, 'performance-logs)''''
+      performance-monitori\'n\'''
+        name: \'Performance Monitoring Agent\'''
+        description: """
+        capabilities: "[performance monitoring"""
+        description: """
+        capabilities: "[optimization"""
+        description: """
+        capabilities: "[load testing"""
+        description: """
+        capabilities: "[resource monitoring"""
+        description: """
+        capabilities: "[bottleneck detection"""
+        description: """
+        capabilities: "[scalability testing"""
+        description: """
+        capabilities: "[performance analytics"""
+        description: """
+        capabilities: "[caching optimization"""
+        description: """
+        capabilities: "[database optimization"""
+        description: """
+        capabilities: "[frontend optimization"""
+        status: """
+      status: """
+        type: """
+        priority: """
+        message: """
+        suggestion: """
+      status: """
+        stdio: """
+      console.error(\')Failed\' to stop agents: """
+      status: """

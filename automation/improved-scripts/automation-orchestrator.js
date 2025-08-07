@@ -59,19 +59,19 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { spawn, execSync } = require(('chil')')d'_process)''
-const { EventEmitter } = require(('event)s)''
-  log(message, level = 'info'
-    this.log("[${timestamp}] 🎼 ORCHESTRATOR: "${message"
-        stdio: "[\')pipe"
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { spawn, execSync } = require(('chil')')d'_process)''''
+const { EventEmitter } = require(('event)s)''''
+  log(message, level = 'info''')
+    this.log("[${timestamp}] 🎼 ORCHESTRATOR: "${message""")
+        stdio: "[\')pipe"""

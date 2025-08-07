@@ -59,39 +59,39 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const result = require('fs'
-const path = require('path'
-const { execSync } = require(('chil')')d'_process)''
-const result = require($2)b))''
-      pagesDir: "
-      componentsDir: "
-      scriptsDir: "
-      automationDir: "
-      reportsDir: "
-      logsDir: "
-      backupDir: "
-          execSync(cp -r ${dir} ${backupPath}/", { stdio: "
-      this.log(Backup failed: "${error.message"}"
-          encoding: "
-      this.log("Broken link check failed: "${error.message"
-      this.log("Broken link fix failed: "${error.message"
-        encoding: "
-        stdio: "
-      this.log("Syntax error check failed: "${error.message"
-      this.log("Syntax error fix failed: "${error.message"
-        navigationIssues.forEach(issue => this.log("
-      this.log(Navigation check failed: "${error.message"}"
-        execSync(rm -rf .next\', { stdio: "
-        encoding: "
-        stdio: "
-      this.log("Build test failed: "${error.message"
-      execSync("(crontab -l 2>/dev/null; echo ${cronJob}) | crontab -", { stdio: "
-      this.log("Failed to schedule periodic checks: "${error.message"
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const result = require('fs''')
+const path = require('path''')
+const { execSync } = require(('chil')')d'_process)''''
+const result = require($2)b))''''
+      pagesDir: """
+      componentsDir: """
+      scriptsDir: """
+      automationDir: """
+      reportsDir: """
+      logsDir: """
+      backupDir: """
+          execSync(cp -r ${dir} ${backupPath}/", { stdio: """)
+      this.log(Backup failed: "${error.message"}""")
+          encoding: """
+      this.log("Broken link check failed: "${error.message""")
+      this.log("Broken link fix failed: "${error.message""")
+        encoding: """
+        stdio: """
+      this.log("Syntax error check failed: "${error.message""")
+      this.log("Syntax error fix failed: "${error.message""")
+        navigationIssues.forEach(issue => this.log(""")
+      this.log(Navigation check failed: "${error.message"}""")
+        execSync(rm -rf .next\', { stdio: """)
+        encoding: """
+        stdio: """
+      this.log("Build test failed: "${error.message""")
+      execSync("(crontab -l 2>/dev/null; echo ${cronJob}) | crontab -", { stdio: """
+      this.log("Failed to schedule periodic checks: "${error.message""")

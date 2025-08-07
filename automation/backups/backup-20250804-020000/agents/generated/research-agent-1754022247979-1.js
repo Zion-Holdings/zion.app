@@ -18,16 +18,16 @@ const memoryOptimization = {
   }
 }
 
-const result = require($2)a))''
-const path = require('path'
-        this.agentId = ')research-agent'-1754022247979-1'''
-        this.name = 'sustainability' Research Agent'''
-        this.focus = 'sustainabili'ty'''
-        this.output = 'market' insights'''
-        this.outputDir = path.join(__dirname, 'outp'ut', this.agentId)''
-        await fs.ensureDir(path.join(this.outputDir, 'data))''
-        await fs.ensureDir(path.join(this.outputDir, repor't's))''
-        await fs.ensureDir(path.join(this.outputDir, 'lo'gs'))''
-                type: "
-                    type: "
-                    priority: "
+const result = require($2)a))''''
+const path = require('path''')
+        this.agentId = ')research-agent'-1754022247979-1'''''
+        this.name = 'sustainability' Research Agent'''''
+        this.focus = 'sustainabili'ty'''''
+        this.output = 'market' insights'''''
+        this.outputDir = path.join(__dirname, 'outp'ut', this.agentId)''''
+        await fs.ensureDir(path.join(this.outputDir, 'data))''''
+        await fs.ensureDir(path.join(this.outputDir, repor't's))''''
+        await fs.ensureDir(path.join(this.outputDir, 'lo'gs'))''''
+                type: """
+                    type: """
+                    priority: """

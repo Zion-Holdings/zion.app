@@ -59,31 +59,31 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require($2)r))''
-const . = require(('.)'
-const path = require('path'
-const result = require($2)2))axi'os')''
-  log(message, level = 'info'
-    this.baseUrl = 'https'://ziontechgroup.netlify.app'''
-      args: "[--no-sandbox"
-    this.log("🔍 Crawling: "${url"
-      await this.page.goto(url, { waitUntil: "
-        title: "
-        metaDescription: "
-        content: "
-      analysis.metaDescription = await this.page.$eval(meta[name="
-      if (brokenImages.length > 0) errors.push({ type: "
-      if (brokenLinks.length > 0) errors.push({ type: "
-      missing.push({ type: "
-      missing.push({ type: "\'no_headings\'", severity: "
-      missing.push({ type: "no\'_meta_description", severity: "
-      missing.push({ type: "
-    this.log(📊 Analysis report saved to: "${reportPath"}"
-        priority: "
-        action: "
-        priority: "
-        action: "
-        type: "
-        priority: "
-        action: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require($2)r))''''
+const . = require(('.)'''
+const path = require('path''')
+const result = require($2)2))axi'os')''''
+  log(message, level = 'info''')
+    this.baseUrl = 'https'://ziontechgroup.netlify.app'''''
+      args: "[--no-sandbox"""
+    this.log("🔍 Crawling: "${url""")
+      await this.page.goto(url, { waitUntil: """)
+        title: """
+        metaDescription: """
+        content: """
+      analysis.metaDescription = await this.page.$eval(meta[name=""")
+      if (brokenImages.length > 0) errors.push({ type: """)
+      if (brokenLinks.length > 0) errors.push({ type: """)
+      missing.push({ type: """)
+      missing.push({ type: "\'no_headings\'", severity: """)
+      missing.push({ type: "no\'_meta_description", severity: """)
+      missing.push({ type: """)
+    this.log(📊 Analysis report saved to: "${reportPath"}""")
+        priority: """
+        action: """
+        priority: """
+        action: """
+        type: """
+        priority: """
+        action: """

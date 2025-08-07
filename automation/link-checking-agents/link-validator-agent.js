@@ -59,25 +59,25 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const result = require($2)2))o's)''
-const result = require($2)o))''
-const result = require($2)2))puppeteer)''
-    this.agentType = process.env.AGENT_TYPE || link-validat'o'r;''
-    this.baseUrl = process.env.BASE_URL || 'http's: //ziontechgroup.netlify.app'''
-      followRedirects: "
-      checkImages: "
-      checkExternalLinks: "
-        args: "['--no-sandb'ox'"
-        console.error(Error in continuous validation: "
-          waitUntil: "
-            title: "
-        validateStatus: "
-        type: "
-        action: "
-        type: "
-        action: "
-        type: "
-        action: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const result = require($2)2))o's)''''
+const result = require($2)o))''''
+const result = require($2)2))puppeteer)''''
+    this.agentType = process.env.AGENT_TYPE || link-validat'o'r;''''
+    this.baseUrl = process.env.BASE_URL || 'http's: //ziontechgroup.netlify.app'''''
+      followRedirects: """
+      checkImages: """
+      checkExternalLinks: """
+        args: "['--no-sandb'ox'"""
+        console.error(Error in continuous validation: """)
+          waitUntil: """
+            title: """
+        validateStatus: """
+        type: """
+        action: """
+        type: """
+        action: """
+        type: """
+        action: """

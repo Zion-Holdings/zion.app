@@ -59,41 +59,41 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require($2)s))\'\'
-const result = require('path'
-  log(message, level = 'info'
-    this.contentPath = path.join(this.projectRoot"
-        this.log(✅ Generated ${contentType} content"
-            testimonial: ""
-            question: ""
-            answer: "We offer a 100% satisfaction guarantee. If youre not satisfied"
-        experience: ""
-      source: "
-      version: "
-        this.log(✅ Generated dynamic ${contentType} content"
-      source: "
-      version: "
-        this.log(✅ Generated SEO ${contentType} content"
-      source: "
-      version: "
-        this.log(✅ Generated ${language} content"
-        headline: ""
-        headline: "
-        subheadline: ""Connettiti con i migliori servizi IT"
-      source: "
-      version: "
-    this.log(📋 Following ChatGPT instructions from: "
-      this.log("   📊 Marketplace content: "${analytics.marketplaceContent"
-      this.log(   🔄 Dynamic content: "${analytics.dynamicContent"} types"
-      this.log("   🔍 SEO content: "${analytics.seoContent"
-      this.log(   🌍 Multilingual content: "${analytics.multilingualContent"} languages"
-      this.log("   📈 Total content types: "${analytics.totalContentTypes"}"
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require($2)s))\'\'''
+const result = require('path''')
+  log(message, level = 'info''')
+    this.contentPath = path.join(this.projectRoot""")
+        this.log(✅ Generated ${contentType} content""")
+            testimonial: """"
+            question: """"
+            answer: "We offer a 100% satisfaction guarantee. If youre not satisfied"""
+        experience: """"
+      source: """
+      version: """
+        this.log(✅ Generated dynamic ${contentType} content""")
+      source: """
+      version: """
+        this.log(✅ Generated SEO ${contentType} content""")
+      source: """
+      version: """
+        this.log(✅ Generated ${language} content""")
+        headline: """"
+        headline: """
+        subheadline: ""Connettiti con i migliori servizi IT"""
+      source: """
+      version: """
+    this.log(📋 Following ChatGPT instructions from: """)
+      this.log("   📊 Marketplace content: "${analytics.marketplaceContent""")
+      this.log(   🔄 Dynamic content: "${analytics.dynamicContent"} types""")
+      this.log("   🔍 SEO content: "${analytics.seoContent""")
+      this.log(   🌍 Multilingual content: "${analytics.multilingualContent"} languages""")
+      this.log("   📈 Total content types: "${analytics.totalContentTypes"}""")

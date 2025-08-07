@@ -59,35 +59,35 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-}const fs = require('path'
-const path = require('path'
-const { exec } = require(('child_process)'
-const { v4: uuidv4 } = require(('uuid)'
-    this.type = 'frontend-sync'
-    this.status = 'ready'
-    const directories = ['frontend-sync-logs'
-      'frontend-sync-backups'
-      'frontend-sync-reports'
-      const dirPath = path.join(__dirname, '..'
-      this.status = 'initializing'
-      this.status = 'running'
-      this.status = 'error'
-      const watchDirectories = ['pages', 'components', 'utils', 'styles'
-                type: 'file'
-    const watchedExtensions = ['.tsx', '.ts', '.js', '.jsx', '.css', '.scss', '.json'
-    if (filePath.includes('_app.tsx') || filePath.includes('_document.tsx'
-      return 'critical'
-    if (filePath.includes('/pages/') || filePath.includes('/components/'
-      return 'high'
-    return 'normal'
-      const backupDir = path.join(__dirname, '..', 'frontend-sync-backups'
-      exec('git add .'
-    const healthPath = path.join(__dirname, '..', 'frontend-sync-reports'
-    this.status = 'stopped'
-    console.log('🚀 Frontend Sync Agent started successfully'
-    console.error('❌ Failed to start Frontend Sync Agent: '
-  process.on('SIGINT'
-    console.log('\n🛑 Received SIGINT, shutting down...'
-  process.on('SIGTERM'
-    console.log('\n🛑 Received SIGTERM, shutting down...'
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+}const fs = require('path''')
+const path = require('path''')
+const { exec } = require(('child_process)'''
+const { v4: uuidv4 } = require(('uuid)'''
+    this.type = 'frontend-sync'''
+    this.status = 'ready'''
+    const directories = ['frontend-sync-logs'''
+      'frontend-sync-backups'''
+      'frontend-sync-reports'''
+      const dirPath = path.join(__dirname, '..''')
+      this.status = 'initializing'''
+      this.status = 'running'''
+      this.status = 'error'''
+      const watchDirectories = ['pages', 'components', 'utils', 'styles'''
+                type: 'file'''
+    const watchedExtensions = ['.tsx', '.ts', '.js', '.jsx', '.css', '.scss', '.json'''
+    if (filePath.includes('_app.tsx') || filePath.includes('_document.tsx''')
+      return 'critical'''
+    if (filePath.includes('/pages/') || filePath.includes('/components/''')
+      return 'high'''
+    return 'normal'''
+      const backupDir = path.join(__dirname, '..', 'frontend-sync-backups''')
+      exec('git add .''')
+    const healthPath = path.join(__dirname, '..', 'frontend-sync-reports''')
+    this.status = 'stopped'''
+    console.log('🚀 Frontend Sync Agent started successfully''')
+    console.error('❌ Failed to start Frontend Sync Agent: ''')
+  process.on('SIGINT''')
+    console.log('\n🛑 Received SIGINT, shutting down...''')
+  process.on('SIGTERM''')
+    console.log('\n🛑 Received SIGTERM, shutting down...''')

@@ -8,7 +8,6 @@
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
-const chokidar = require('chokidar');
 
 class MarkdownLintingAutomationSystem {
     constructor() {
@@ -460,46 +459,6 @@ class MarkdownLintingAutomationSystem {
         }
     }
 
-    async startWatching() {
-        this.log('info', 'Starting markdown linting automation system...');
-        
-        // Install dependencies if needed
-        await this.installDependencies();
-        
-        // Initial fix
-        await this.runFixCycle();
-        
-        // Set up file watching
-        const watcher = chokidar.watch(this.config.watchPatterns, {
-            ignored: this.config.ignorePatterns,
-            persistent: true
-        });
-        
-        watcher.on('change', async (filePath) => {
-            this.log('info', `Markdown file changed: ${filePath}`);
-            await this.runFixCycle();
-        });
-        
-        // Set up periodic fixes
-        setInterval(async () => {
-            await this.runFixCycle();
-        }, this.config.fixInterval);
-        
-        this.status.isRunning = true;
-        this.saveStatus();
-        
-        this.log('info', 'Markdown linting automation system is now running');
-        
-        // Keep the process alive
-        process.on('SIGINT', () => {
-            this.log('info', 'Shutting down markdown linting automation system...');
-            watcher.close();
-            this.status.isRunning = false;
-            this.saveStatus();
-            process.exit(0);
-        });
-    }
-
     async runFixCycle() {
         try {
             this.log('info', 'Running markdown fix cycle...');
@@ -565,3 +524,7 @@ if (require.main === module) {
 }
 
 module.exports = MarkdownLintingAutomationSystem;
+
+
+
+

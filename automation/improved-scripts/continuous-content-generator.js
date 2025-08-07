@@ -59,21 +59,21 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const result = require($2)2))o's)''
-const { GoogleGenerativeAI } = require(('@google/generative-a)i)''
-  log(message, level = 'info'
-    this.model = this.genAI.getGenerativeModel({ model: "
-    this.log([${level}] [${this.agentId}] ${message}"
-        \'API-Firs\'t Development: "
-        \'Microservices\' Architecture: "
-        \'Digita\'l Twins: "
-        this.log("Error in continuous generation loop: "${error.message"
-      this.log(Error in startContentGeneration: "${error.message"}"
-      this.log(Error generating blog post: "${error.message"}"
-    return "
-      this.log("Error generating marketplace page: "${error.message"
-      this.log(Error generating service page: "${error.message"}"
-    return "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const result = require($2)2))o's)''''
+const { GoogleGenerativeAI } = require(('@google/generative-a)i)''''
+  log(message, level = 'info''')
+    this.model = this.genAI.getGenerativeModel({ model: """)
+    this.log([${level}] [${this.agentId}] ${message}""")
+        \'API-Firs\'t Development: """
+        \'Microservices\' Architecture: """
+        \'Digita\'l Twins: """
+        this.log("Error in continuous generation loop: "${error.message""")
+      this.log(Error in startContentGeneration: "${error.message"}""")
+      this.log(Error generating blog post: "${error.message"}""")
+    return """
+      this.log("Error generating marketplace page: "${error.message""")
+      this.log(Error generating service page: "${error.message"}""")
+    return """

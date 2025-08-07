@@ -59,37 +59,37 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { spawn } = require(('chil')')d'_process)''
-const { v4: uuidv4 } = require(('uui)d)''
-const result = require($2)2))axios)''
-const result = require('path';''
-      'link-validat'or': {''
-        capabilities: "[\'link-validation"
-        services: "[\'broken-link-detection"
-        dependencies: "[\'axios"
-        capabilities: [link-repa\'i\'r"
-        services: "[broken-link-fixi\'n\'g"
-        dependencies: "[axi\'o\'s"
-        capabilities: [\'continuous-monitori\'ng\'"
-        services: "[\'real-time-monitori\'ng\'"
-        dependencies: "[\'axi\'os\'"
-        capabilities: "['link-analysis"
-        services: "['link-quality-analysis"
-        dependencies: "['axios"
-        capabilities: [task-coordinati\'o\'n"
-        services: "[link-checking-coordinati\'o\'n"
-        dependencies: "[node-cr\'o\'n"
-      status: "
-      stdio: "[pipe"
-      status: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { spawn } = require(('chil')')d'_process)''''
+const { v4: uuidv4 } = require(('uui)d)''''
+const result = require($2)2))axios)''''
+const result = require('path';'''')
+      'link-validat'or': {''''
+        capabilities: "[\'link-validation"""
+        services: "[\'broken-link-detection"""
+        dependencies: "[\'axios"""
+        capabilities: [link-repa\'i\'r"""
+        services: "[broken-link-fixi\'n\'g"""
+        dependencies: "[axi\'o\'s"""
+        capabilities: [\'continuous-monitori\'ng\'"""
+        services: "[\'real-time-monitori\'ng\'"""
+        dependencies: "[\'axi\'os\'"""
+        capabilities: "['link-analysis"""
+        services: "['link-quality-analysis"""
+        dependencies: "['axios"""
+        capabilities: [task-coordinati\'o\'n"""
+        services: "[link-checking-coordinati\'o\'n"""
+        dependencies: "[node-cr\'o\'n"""
+      status: """
+      stdio: "[pipe"""
+      status: """

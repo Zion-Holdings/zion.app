@@ -59,53 +59,53 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const result = require('fs'
-const path = require('path'
-const { execSync } = require(('chil')')d'_process)''
-    this.contentPath = path.join(this.projectRoot, src', 'content)''
-    this.componentsPath = path.join(this.projectRoot, s'r'c, 'componen'ts')''
-    this.pagesPath = path.join(this.projectRoot, 'src, pag'e's)''
-    this.automationPath = path.join(this.projectRoot, 'automati'on')''
-    const filePath = [path.join(this.contentPath, 'integrated),''
-      path.join(this.automationPath, integration-analyti'c's)''
-    console.log(\'🔗 Integrating marketplace content with application...)\'\'
-      const filePath = path.join(this.automationPath, integration-analyti\')cs\', \'integration-results\'.json\')\'\'
-      console.error(❌ Content integration failed: "
-      return { status: "'skipped", reason: "
-      status: "
-      component: "
-      status: "
-      component: "
-      status: "
-      component: "
-      status: "
-      component: "
-      status: "
-      component: "
-      status: "
-      component: "
-      status: "
-      page: "
-      status: "
-      component: "
-      mission: "
-      vision: "
-      values: "[Innovation"
-      email: "
-      phone: "
-      address: "
-    return "
-    return "
-    return "
-    return "
-    return "
-    return "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const result = require('fs''')
+const path = require('path''')
+const { execSync } = require(('chil')')d'_process)''''
+    this.contentPath = path.join(this.projectRoot, src', 'content)''''
+    this.componentsPath = path.join(this.projectRoot, s'r'c, 'componen'ts')''''
+    this.pagesPath = path.join(this.projectRoot, 'src, pag'e's)''''
+    this.automationPath = path.join(this.projectRoot, 'automati'on')''''
+    const filePath = [path.join(this.contentPath, 'integrated),''''
+      path.join(this.automationPath, integration-analyti'c's)''''
+    console.log(\'🔗 Integrating marketplace content with application...)\'\'''
+      const filePath = path.join(this.automationPath, integration-analyti\')cs\', \'integration-results\'.json\')\'\'''
+      console.error(❌ Content integration failed: """)
+      return { status: "'skipped", reason: """
+      status: """
+      component: """
+      status: """
+      component: """
+      status: """
+      component: """
+      status: """
+      component: """
+      status: """
+      component: """
+      status: """
+      component: """
+      status: """
+      page: """
+      status: """
+      component: """
+      mission: """
+      vision: """
+      values: "[Innovation"""
+      email: """
+      phone: """
+      address: """
+    return """
+    return """
+    return """
+    return """
+    return """
+    return """
         

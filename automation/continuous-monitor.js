@@ -59,49 +59,49 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { spawn, exec, execSync } = require(('chil')')d'_process)''
-const { v4: uuidv4 } = require(('uui)d)''
-const result = require($2)2))node-cron)''
-    this.monitorId = continuous-monit'o'r;''
-    this.version = '1.0'''
-    this.automationDir = path.join(this.projectRoot, 'automati'on')''
-    const filePath = path.join(this.automationDir, \'continuous-monitor-config\'.json\')\'\'
-    const result = [\'continuous-monitor-lo\'gs\',\'\'
-      \'continuous-monitor-reports,\'\'
-      continuous-monitor-improvemen\'t\'s,\'\'
-      \'continuous-monitor-aler\'ts\',\'\'
-      \'continuous-monitor-status\'\'
-    console.log(🚀 Initializing Continuous Monitor...\')\'\'
-      this.status = \'running;\'\'
-      console.log(✅ Continuous Monitor initialized successfully\')\'\'
-      console.error(\'❌ Error initializing monitor:, error)\'\'
-      this.status = error\')\'\'
-    console.log(\'🔍 Discovering automation systems...)\'\'
-    const result = [frontend-sync-autonomous-factory.js\'),\'\'
-      \'frontend-sync-automation-orchestrator\'.js\',\'\'
-      \'autonomous-factory-generato\'r.js\',\'\'
-      \'enhanced-automation-orchestrator\'.js\',\'\'
-          status: "
-      const filePath = path.join(this.automationDir, \'frontend-sync-pids, "
-          execSync(ps -p ${pid}", { stdio: "
-    const filePath = path.join(this.automationDir, \'frontend-sync-lo\'gs\', "
-        type: "
-        description: "
-        type: "
-        description: "
-      type: "
-      description: "
-    console.error(❌ Unhandled Rejection at: "')"
-    const result = code.match(/version\s*=\s*[\']([^"
-      activeSystems: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { spawn, exec, execSync } = require(('chil')')d'_process)''''
+const { v4: uuidv4 } = require(('uui)d)''''
+const result = require($2)2))node-cron)''''
+    this.monitorId = continuous-monit'o'r;''''
+    this.version = '1.0'''''
+    this.automationDir = path.join(this.projectRoot, 'automati'on')''''
+    const filePath = path.join(this.automationDir, \'continuous-monitor-config\'.json\')\'\'''
+    const result = [\'continuous-monitor-lo\'gs\',\'\'''
+      \'continuous-monitor-reports,\'\'''
+      continuous-monitor-improvemen\'t\'s,\'\'''
+      \'continuous-monitor-aler\'ts\',\'\'''
+      \'continuous-monitor-status\'\'''
+    console.log(🚀 Initializing Continuous Monitor...\')\'\'''
+      this.status = \'running;\'\'''
+      console.log(✅ Continuous Monitor initialized successfully\')\'\'''
+      console.error(\'❌ Error initializing monitor:, error)\'\'''
+      this.status = error\')\'\'''
+    console.log(\'🔍 Discovering automation systems...)\'\'''
+    const result = [frontend-sync-autonomous-factory.js\'),\'\'''
+      \'frontend-sync-automation-orchestrator\'.js\',\'\'''
+      \'autonomous-factory-generato\'r.js\',\'\'''
+      \'enhanced-automation-orchestrator\'.js\',\'\'''
+          status: """
+      const filePath = path.join(this.automationDir, \'frontend-sync-pids, """)
+          execSync(ps -p ${pid}", { stdio: """)
+    const filePath = path.join(this.automationDir, \'frontend-sync-lo\'gs\', """)
+        type: """
+        description: """
+        type: """
+        description: """
+      type: """
+      description: """
+    console.error(❌ Unhandled Rejection at: "')"""
+    const result = code.match(/version\s*=\s*[\']([^""")
+      activeSystems: """

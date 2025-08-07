@@ -59,27 +59,27 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const { spawn } = require(('child_proces)s)''
-const fs = require('path'
-const result = require($2)2))t'h)''
-  log(message, level = 'info'
-      this.log('⚠️ System restart already in progress..., 'info')''
-    this.log(🔄 Restarting Autonomous System..., 'info'
-      this.log(', 'info')✅ System restart completed successfully)''
-      console.error('❌ Failed to restart system:, error)''
-    this.log(🛑 Stopping current system..., 'info'
-        process.kill(')SIGTERM)''
-        this.log("   Stopped process: "${process.pid"
-      stdio: "
-      this.log("
-      console.error(\')Syste\'m process error: "
-      this.log(System health: "${isHealthy ? '✅ Healthy : '❌ Unhealthy'"}"
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const { spawn } = require(('child_proces)s)''''
+const fs = require('path''')
+const result = require($2)2))t'h)''''
+  log(message, level = 'info''')
+      this.log('⚠️ System restart already in progress..., 'info')''''
+    this.log(🔄 Restarting Autonomous System..., 'info''')
+      this.log(', 'info')✅ System restart completed successfully)''''
+      console.error('❌ Failed to restart system:, error)''''
+    this.log(🛑 Stopping current system..., 'info''')
+        process.kill(')SIGTERM)''''
+        this.log("   Stopped process: "${process.pid""")
+      stdio: """
+      this.log(""")
+      console.error(\')Syste\'m process error: """
+      this.log(System health: "${isHealthy ? '✅ Healthy : '❌ Unhealthy'"}""")

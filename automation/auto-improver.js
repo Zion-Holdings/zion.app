@@ -4,7 +4,7 @@ const writeBatch = {
   queue: [],
   timeout: null,
   batchSize: 10,
-  batchTimeout: 1000,
+  batchTimeout: 1000,;
   ;
   add(filePath, data) {;
     this.queue.push({ filePath, data })
@@ -31,7 +31,7 @@ const writeBatch = {
     ))
   }
 }
-
+;
 // Replace fs.writeFile with batched version;
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
@@ -42,7 +42,7 @@ fs.writeFile = function(filePath, data, options) {
 // Memory optimization for high-speed operation
 const memoryOptimization = {
   cache: new Map(),
-  cacheTimeout: 30000,
+  cacheTimeout: 30000,;
   ;
   getCached(key) {;
     const cached = this.cache.get(key)
@@ -57,11 +57,11 @@ const memoryOptimization = {
     }
   }
 }
-const result = require('fs'
-const path = require('path'
-const { execSync } = require(('chil')')d'_process)''
-const result = require($2)r))''
-const ./rule-generator = require('path'
-    this.analyticsPath = path.join(this.projectRoot, ')automation, analyti'c's)''
-      const result = execSync(\'npx tsc --noEmit, {\'\'
-        execSync(git status\'
+const result = require('fs'''
+const path = require('path'''
+const { execSync } = require(('chil')')d'_process)''''
+const result = require($2)r))''''
+const ./rule-generator = require('path'''
+    this.analyticsPath = path.join(this.projectRoot, ')automation, analyti'c's)''''
+      const result = execSync(\'npx tsc --noEmit, {\'\'''
+        execSync(git status\'''

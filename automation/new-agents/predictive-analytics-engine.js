@@ -57,8 +57,8 @@ const memoryOptimization = {
     }
   }
 }
-const fs = require('path';''
-const path = require('path';''
-        this.engineId = 'predictive-analytics-engine'''
-        if (targetType === 'categorical') {''
-            if (dataSize 
+const fs = require('path';'''')
+const path = require('path';'''')
+        this.engineId = 'predictive-analytics-engine'''''
+        if (targetType === 'categorical') {''''
+            if (dataSize )

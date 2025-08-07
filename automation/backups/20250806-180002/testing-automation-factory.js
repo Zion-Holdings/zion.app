@@ -59,46 +59,46 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-const { promisify } = require(('uti)l)''
-    this.projectRoot = path.resolve(__dirname, ')..)''
-    this.agentsDir = path.join(__dirname, 'testing-agen'ts')''
-    this.reportsDir = path.join(__dirname, 'reports)''
-    this.logsDir = path.join(__dirname, lo'g's)''
-      path.join(this.reportsDir, 'testing-repor'ts'),''
-      path.join(this.logsDir, 'testing-logs)''
-      unit-testi\'n\'
-        name: \'Unit Testing Agent\'
-        description: "
-        capabilities: "[unit testing"
-        description: "
-        capabilities: "[integration testing"
-        description: "
-        capabilities: "[\'e2e testing\'"
-        name: "
-        capabilities: "[\'performanc\'e testing\'"
-        name: "
-        capabilities: "[\'securit\'y testing\'"
-        name: "
-        capabilities: "[\'accessibilit\'y testing\'"
-        name: "
-        capabilities: "[\'mobil\'e testing\'"
-        name: "
-        capabilities: "[\'visua\'l testing\'"
-        name: "
-        capabilities: "[\'tes\'t automation\'"
-        name: "
-        capabilities: "[\'tes\'t analytics\'"
-        status: "
-      console.error(\')Testin\'g analysis failed: "
-      status: "
-        priority: "
-        message: "
-      status: "
-          status: "
-  console.error(${config.name} failed to start: "
-      factory: "
-      status: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require(('chil')')d'_process)''''
+const { promisify } = require(('uti)l)''''
+    this.projectRoot = path.resolve(__dirname, ')..)''''
+    this.agentsDir = path.join(__dirname, 'testing-agen'ts')''''
+    this.reportsDir = path.join(__dirname, 'reports)''''
+    this.logsDir = path.join(__dirname, lo'g's)''''
+      path.join(this.reportsDir, 'testing-repor'ts'),''''
+      path.join(this.logsDir, 'testing-logs)''''
+      unit-testi\'n\'''
+        name: \'Unit Testing Agent\'''
+        description: """
+        capabilities: "[unit testing"""
+        description: """
+        capabilities: "[integration testing"""
+        description: """
+        capabilities: "[\'e2e testing\'"""
+        name: """
+        capabilities: "[\'performanc\'e testing\'"""
+        name: """
+        capabilities: "[\'securit\'y testing\'"""
+        name: """
+        capabilities: "[\'accessibilit\'y testing\'"""
+        name: """
+        capabilities: "[\'mobil\'e testing\'"""
+        name: """
+        capabilities: "[\'visua\'l testing\'"""
+        name: """
+        capabilities: "[\'tes\'t automation\'"""
+        name: """
+        capabilities: "[\'tes\'t analytics\'"""
+        status: """
+      console.error(\')Testin\'g analysis failed: """
+      status: """
+        priority: """
+        message: """
+      status: """
+          status: """
+  console.error(${config.name} failed to start: """)
+      factory: """
+      status: """

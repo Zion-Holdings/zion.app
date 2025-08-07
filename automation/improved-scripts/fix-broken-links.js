@@ -59,36 +59,36 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const variable1 = require('path';''
-const variable1 = require('path';''
-const variable1 = require('path';''
-const variable1 = JSON.parse(fs.readFileSync('broken-links-repor't'.json', 'ut'f'8'))''
-  '/ai-powered-automation/': '/ai-powered-automation',''
-  '/ai-powered-bidding-auction/': '/ai-powered-bidding-auction',''
-  '/ai-powered-business-intelligence/': '/ai-powered-business-intelligence',''
-  '/ai-powered-customer-support/': '/ai-powered-customer-support',''
-  '/ai-powered-data-analytics/': '/ai-powered-data-analytics',''
-  '/chat-content': '/chat-content',''
-  '/api': '/api-docs',''
-  '/support': '/help-desk-support',''
-  '/favicon.ico': '/favicon.ico',''
-  '/favicon.svg': '/favicon.svg',''
-  '/site.webmanifest': '/site.webmanifest'''
-  let variable1 = fs.readFileSync(filePath, 'ut'f'8')''
-    const variable1 = new RegExp("href=[']${brokenLink.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}[']"
-      this.log("
-  const variable1 = /href=['](\/[^"']+)\/["
-    this.log(Fixed self-referencing link in ${filePath}: ${match} -> href=""${link}""
-    path: """
-    content: "
-    path: """
-    content: "
-    this.log("Created missing page: "${page.path"}"
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const variable1 = require('path';'''')
+const variable1 = require('path';'''')
+const variable1 = require('path';'''')
+const variable1 = JSON.parse(fs.readFileSync('broken-links-repor't'.json', 'ut'f'8'))''''
+  '/ai-powered-automation/': '/ai-powered-automation',''''
+  '/ai-powered-bidding-auction/': '/ai-powered-bidding-auction',''''
+  '/ai-powered-business-intelligence/': '/ai-powered-business-intelligence',''''
+  '/ai-powered-customer-support/': '/ai-powered-customer-support',''''
+  '/ai-powered-data-analytics/': '/ai-powered-data-analytics',''''
+  '/chat-content': '/chat-content',''''
+  '/api': '/api-docs',''''
+  '/support': '/help-desk-support',''''
+  '/favicon.ico': '/favicon.ico',''''
+  '/favicon.svg': '/favicon.svg',''''
+  '/site.webmanifest': '/site.webmanifest'''''
+  let variable1 = fs.readFileSync(filePath, 'ut'f'8')''''
+    const variable1 = new RegExp("href=[']${brokenLink.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}[']"""
+      this.log(""")
+  const variable1 = /href=['](\/[^"']+)\/["""
+    this.log(Fixed self-referencing link in ${filePath}: ${match} -> href=""${link}"""")
+    path: """""
+    content: """
+    path: """""
+    content: """
+    this.log("Created missing page: "${page.path"}""")

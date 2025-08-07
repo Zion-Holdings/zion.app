@@ -1,0 +1,16 @@
+{
+  "timestamp": "2025-08-07T03:52:00.177Z",
+  "summary": {
+    "total": 0,
+    "healthy": 0,
+    "running": 0,
+    "errors": 0,
+    "fixed": 0
+  },
+  "components": {
+    "factories": [],
+    "agents": [],
+    "scripts": [],
+    "cronJobs": []
+  }
+}

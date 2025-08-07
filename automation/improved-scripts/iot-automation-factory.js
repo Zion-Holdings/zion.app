@@ -18,6 +18,6 @@ const memoryOptimization = {
   }
 }async getStatus() {
     return {
-      systemName: 'iot-automation-factory'
-process.on('SIGINT'
-  console.log('🛑 Shutting down iot-automation-factory gracefully...'
+      systemName: 'iot-automation-factory'''
+process.on('SIGINT''')
+  console.log('🛑 Shutting down iot-automation-factory gracefully...''')

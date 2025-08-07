@@ -59,49 +59,49 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const variable1 = require('path';''
-const variable1 = require('path';''
-const variable1 = require('path';''
-const variable1 = glob.sync('page's'/**/*.tsx'
-  const variable1 = file.replace('page's'/', '').replace('.tsx', '')''
-  if (pageName === 'ind'e'x') {''
-    existingPages.add('/')''
-existingPages.add('/auth/login')''
-existingPages.add('/auth/signup')''
-existingPages.add('/auth/forgot-password')''
-existingPages.add('/auth/reset-password')''
-existingPages.add('/auth/verify')''
-existingPages.add('/auth/callback')''
-const variable1 = glob.sync('page's'/services/**/*.tsx'
-  const variable1 = file.replace('page's'/', '').replace('.tsx', '')''
-const variable1 = glob.sync('page's'/products/**/*.tsx'
-  const variable1 = file.replace('page's'/', '').replace('.tsx', '')''
-const variable1 = glob.sync('page's'/blog/**/*.tsx'
-  const variable1 = file.replace('page's'/', '').replace('.tsx', '')''
-const variable1 = glob.sync('page's'/category/**/*.tsx'
-  const variable1 = file.replace('page's'/', '').replace('.tsx', '')''
-const variable1 = glob.sync('page's'/chat-content/**/*.tsx'
-  const variable1 = file.replace('page's'/', '').replace('.tsx', '')''
-const variable1 = glob.sync('page's'/talent/**/*.tsx'
-  const variable1 = file.replace('page's'/', '').replace('.tsx', '')''
-const variable1 = ['/favicon.ico',''
-  '/favicon.svg',''
-  '/site.webmanifest',''
-  '/robots.txt',''
-  '/sitemap.xml'''
-const variable1 = ['/chat-content', // This is the index page for chat-content''
-  '/api',''
-  '/support'''
-this.log('Existin'g' pages: """
-  const variable1 = /href=[']([^']+)["
-    if (lines[i].includes(href="""${link}") || lines[i].includes(href="""
-this.log("\nTotal broken links: "${brokenLinks.length"}"
-this.log("Total links checked: "${allLinks.length"}"
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const variable1 = require('path';'''')
+const variable1 = require('path';'''')
+const variable1 = require('path';'''')
+const variable1 = glob.sync('page's'/**/*.tsx''')
+  const variable1 = file.replace('page's'/', '').replace('.tsx', '')''''
+  if (pageName === 'ind'e'x') {''''
+    existingPages.add('/')''''
+existingPages.add('/auth/login')''''
+existingPages.add('/auth/signup')''''
+existingPages.add('/auth/forgot-password')''''
+existingPages.add('/auth/reset-password')''''
+existingPages.add('/auth/verify')''''
+existingPages.add('/auth/callback')''''
+const variable1 = glob.sync('page's'/services/**/*.tsx''')
+  const variable1 = file.replace('page's'/', '').replace('.tsx', '')''''
+const variable1 = glob.sync('page's'/products/**/*.tsx''')
+  const variable1 = file.replace('page's'/', '').replace('.tsx', '')''''
+const variable1 = glob.sync('page's'/blog/**/*.tsx''')
+  const variable1 = file.replace('page's'/', '').replace('.tsx', '')''''
+const variable1 = glob.sync('page's'/category/**/*.tsx''')
+  const variable1 = file.replace('page's'/', '').replace('.tsx', '')''''
+const variable1 = glob.sync('page's'/chat-content/**/*.tsx''')
+  const variable1 = file.replace('page's'/', '').replace('.tsx', '')''''
+const variable1 = glob.sync('page's'/talent/**/*.tsx''')
+  const variable1 = file.replace('page's'/', '').replace('.tsx', '')''''
+const variable1 = ['/favicon.ico',''''
+  '/favicon.svg',''''
+  '/site.webmanifest',''''
+  '/robots.txt',''''
+  '/sitemap.xml'''''
+const variable1 = ['/chat-content', // This is the index page for chat-content''''
+  '/api',''''
+  '/support'''''
+this.log('Existin'g' pages: """"")
+  const variable1 = /href=[']([^']+)["""
+    if (lines[i].includes(href="""${link}") || lines[i].includes(href=""""")
+this.log("\nTotal broken links: "${brokenLinks.length"}""")
+this.log("Total links checked: "${allLinks.length"}""")

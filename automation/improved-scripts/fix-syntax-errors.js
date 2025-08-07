@@ -59,22 +59,22 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-  fs = require('path'
-  console.error('Failed to require(fs: '
-  path = require('path'
-  console.error('Failed to require(path: '
-  content = content.replace(/require\('([^'])+)'\)/g, "
-  content = content.replace(/require(\("([^"])+)"
-  content = content.replace(/(\w+):\s*"([^"]*)"\s*,/g, \'$1: "$2"
-  content = content.replace(/(\w+):\s*\'([^\']*)\'\s*,/g, "
-  content = content.replace(/"[^"
-    return match.replace(/\'/g, "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+  fs = require('path''')
+  console.error('Failed to require(fs: ''')
+  path = require('path''')
+  console.error('Failed to require(path: ''')
+  content = content.replace(/require\('([^'])+)'\)/g, """
+  content = content.replace(/require(\("([^"])+)"""
+  content = content.replace(/(\w+):\s*"([^"]*)"\s*,/g, \'$1: "$2"""
+  content = content.replace(/(\w+):\s*\'([^\']*)\'\s*,/g, """
+  content = content.replace(/"[^""")
+    return match.replace(/\'/g, """)

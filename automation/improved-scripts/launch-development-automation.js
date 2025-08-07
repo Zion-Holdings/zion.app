@@ -59,37 +59,37 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const fs = require('path'
-const result = require('fs';''
-  log(message, level = 'info'
-    const filePath = path.join(__dirname, 'development-automation-config'.json')''
-        \'code-improveme\'nt\': {\'\'
-            analysisDepth: "
-            vulnerabilityThreshold: "
-            updateStrategy: "
-            mergeStrategy: "
-            commitConvention: "
-        this.log("
-        this.log(✅ ${type} agent started successfully (ID: "${agentId"
-    this.log(📊 Started ${this.agents.size} development automation agents"
-      this.log(📈 Performance - Tasks: "${metrics.totalTasksCompleted"}, Errors: "${metrics.totalErrors"}, Error Rate: "
-          this.log("🔄 Auto-restarting failed agent: "${agent.type"
-            this.log(✅ Successfully restarted agent: "${agent.type"}"
-            type: "
-      this.log(✅ Health check completed. ${healthCheck.agents.length} agents checked."
-          this.log("🛑 Stopped agent: "${agent.type"
-      console.error(❌ Error stopping Development Automation System: "
-          type: "
-          type: "
-          priority: "
-      this.log("✅ Report generated: "${reportPath"}"
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const fs = require('path''')
+const result = require('fs';'''')
+  log(message, level = 'info''')
+    const filePath = path.join(__dirname, 'development-automation-config'.json')''''
+        \'code-improveme\'nt\': {\'\'''
+            analysisDepth: """
+            vulnerabilityThreshold: """
+            updateStrategy: """
+            mergeStrategy: """
+            commitConvention: """
+        this.log(""")
+        this.log(✅ ${type} agent started successfully (ID: "${agentId""")
+    this.log(📊 Started ${this.agents.size} development automation agents""")
+      this.log(📈 Performance - Tasks: "${metrics.totalTasksCompleted"}, Errors: "${metrics.totalErrors"}, Error Rate: """)
+          this.log("🔄 Auto-restarting failed agent: "${agent.type""")
+            this.log(✅ Successfully restarted agent: "${agent.type"}""")
+            type: """
+      this.log(✅ Health check completed. ${healthCheck.agents.length} agents checked.""")
+          this.log("🛑 Stopped agent: "${agent.type""")
+      console.error(❌ Error stopping Development Automation System: """)
+          type: """
+          type: """
+          priority: """
+      this.log("✅ Report generated: "${reportPath"}""")

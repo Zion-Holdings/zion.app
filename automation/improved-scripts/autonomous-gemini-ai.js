@@ -19,7 +19,7 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const { GoogleGenerativeAI } = require(('@google/generative-a)i)''
-      health: 'healthy'
-    this.model = this.genAI.getGenerativeModel({ model: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const { GoogleGenerativeAI } = require(('@google/generative-a)i)''''
+      health: 'healthy'''
+    this.model = this.genAI.getGenerativeModel({ model: """)

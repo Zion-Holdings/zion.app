@@ -59,34 +59,34 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const result = require($2)h))''
-const fs = require('path'
-const { createValidComponentName, createDisplayTitle } = require(('./utils/component-name-helper')'))''
-    this.projectRoot = path.join(__dirname, '..)''
-    this.generatedContentDir = path.join(__dirname, 'generated-conte'nt')''
-    this.pagesDir = path.join(this.projectRoot, 'pages)''
-    console.log(🔗 Starting simple content integration...')''
-      console.log('✅ Simple content integration completed successfully!)''
-    console.log(📊 Integrating marketplace content...'))''
-      .filter(file => file.startsWith('marketplace-) && file.endsWith(.json')))''
-        const jsonData = JSON.parse(fs.readFileSync(contentPath, 'utf'8'))''
-        const result = file.replace(marketplace-, '').replace(.json', ')''
-    console.log(\'📝 Integrating blog content...)\'\'
-      .filter(file => file.endsWith(.json\')))\'\'
-        const result = file.replace(\'.json, )\'\'
-    console.log(\')🛍️ Integrating product content...)\'\'
-    const filePath = path.join(this.generatedContentDir, \'produc\'ts\')\'\'
-      .filter(file => file.endsWith(\'-content.json))\'\'
-        const result = file.replace(\')-conten\'t.json\', \')\'\'
-    const result = category.split(\'-).map(word => \'\'
-    const result = "
-    const result = "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const result = require($2)h))''''
+const fs = require('path''')
+const { createValidComponentName, createDisplayTitle } = require(('./utils/component-name-helper')'))''''
+    this.projectRoot = path.join(__dirname, '..)''''
+    this.generatedContentDir = path.join(__dirname, 'generated-conte'nt')''''
+    this.pagesDir = path.join(this.projectRoot, 'pages)''''
+    console.log(🔗 Starting simple content integration...')''''
+      console.log('✅ Simple content integration completed successfully!)''''
+    console.log(📊 Integrating marketplace content...'))''''
+      .filter(file => file.startsWith('marketplace-) && file.endsWith(.json')))''''
+        const jsonData = JSON.parse(fs.readFileSync(contentPath, 'utf'8'))''''
+        const result = file.replace(marketplace-, '').replace(.json', ')''''
+    console.log(\'📝 Integrating blog content...)\'\'''
+      .filter(file => file.endsWith(.json\')))\'\'''
+        const result = file.replace(\'.json, )\'\'''
+    console.log(\')🛍️ Integrating product content...)\'\'''
+    const filePath = path.join(this.generatedContentDir, \'produc\'ts\')\'\'''
+      .filter(file => file.endsWith(\'-content.json))\'\'''
+        const result = file.replace(\')-conten\'t.json\', \')\'\'''
+    const result = category.split(\'-).map(word => \'\''')
+    const result = """
+    const result = """
         

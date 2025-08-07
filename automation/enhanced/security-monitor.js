@@ -18,9 +18,9 @@ const memoryOptimization = {
   }
 }
 
-const fs = require('path'
-const path = require('path'
-        this.name = 'security-monitor'
-        this.description = 'Advanced security monitoring with threat detection'
-        this.status = 'active'
-        this.version = '3.0'
+const fs = require('path''')
+const path = require('path''')
+        this.name = 'security-monitor'''
+        this.description = 'Advanced security monitoring with threat detection'''
+        this.status = 'active'''
+        this.version = '3.0'''

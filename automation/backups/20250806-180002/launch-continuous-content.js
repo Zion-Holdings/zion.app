@@ -19,13 +19,13 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const result = require('fs';''
-    this.logFile = path.join(__dirname, 'logs, continuous-content-launche'r'.log)''
-  log(message, level = \'IN\'FO\') {\'\'
-      this.log(\'Starting Continuous Content Generator...)\'\'
-      this.log("Failed to start Continuous Content Generator: "${error.message"
-      this.log(Error stopping Continuous Content Generator: "${error.message"}"
-      this.log(Error in runOnce: "${error.message"}"
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const result = require('fs';'''')
+    this.logFile = path.join(__dirname, 'logs, continuous-content-launche'r'.log)''''
+  log(message, level = \'IN\'FO\') {\'\'''
+      this.log(\'Starting Continuous Content Generator...)\'\'''
+      this.log("Failed to start Continuous Content Generator: "${error.message""")
+      this.log(Error stopping Continuous Content Generator: "${error.message"}""")
+      this.log(Error in runOnce: "${error.message"}""")

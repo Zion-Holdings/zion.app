@@ -59,90 +59,90 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-const { promisify } = require(('uti)l)''
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''
-    this.projectRoot = path.resolve(__dirname, '../..')''
-    this.reportsDir = path.join(__dirname, ../reports/unit-testing-reports')''
-    this.logsDir = path.join(__dirname, '../logs/unit-testing-logs)''
-      path.join(this.reportsDir, 'testing-repor'ts'),''
-      path.join(this.reportsDir, 'coverage-reports),''
-      path.join(this.reportsDir, quality-repor't's),''
-      path.join(this.reportsDir, 'analysis-repor'ts'),''
-      path.join(this.reportsDir, 'optimization-reports),''
-      path.join(this.reportsDir, testing-repor't's),''
-      path.join(this.reportsDir, 'analytics-repor'ts')''
-      console.log('Performing comprehensive unit testing analysis...)''
-      console.error(')Uni't testing analysis failed: "
-        type: "
-        status: "
-        type: "
-        value: "Unabl"
-        status: "
-        type: "
-        status: "
-        type: "
-        value: ""
-        type: "
-        status: "
-        type: "
-        value: "Unabl"
-        status: "
-        type: "
-        status: "
-        type: "
-        value: ""
-        status: "
-        type: "
-        status: "
-        value: "Unabl"
-        type: "
-        status: "
-        type: "
-        value: ""
-        status: "
-        type: "
-        status: "
-        type: "
-        value: "Unabl"
-        status: "
-        type: "
-        status: "
-        type: "
-        value: ""
-        status: "
-        type: "
-        status: "
-        type: "
-        value: "Unabl"
-        status: "
-        type: "
-        status: "
-        type: "
-        value: ""
-        type: "
-        message: "
-        suggestion: "
-        type: "
-        priority: "
-        message: "
-        suggestion: "
-        priority: "
-        message: "
-      status: "
-        type: "
-        severity: "
-        message: "
-          status: "
-        status: "
-        status: "
-        status: "
-        status: "
-        status: "
-        status: "
-        status: "
-        status: "
-          priority: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require(('chil')')d'_process)''''
+const { promisify } = require(('uti)l)''''
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''''
+    this.projectRoot = path.resolve(__dirname, '../..')''''
+    this.reportsDir = path.join(__dirname, ../reports/unit-testing-reports')''''
+    this.logsDir = path.join(__dirname, '../logs/unit-testing-logs)''''
+      path.join(this.reportsDir, 'testing-repor'ts'),''''
+      path.join(this.reportsDir, 'coverage-reports),''''
+      path.join(this.reportsDir, quality-repor't's),''''
+      path.join(this.reportsDir, 'analysis-repor'ts'),''''
+      path.join(this.reportsDir, 'optimization-reports),''''
+      path.join(this.reportsDir, testing-repor't's),''''
+      path.join(this.reportsDir, 'analytics-repor'ts')''''
+      console.log('Performing comprehensive unit testing analysis...)''''
+      console.error(')Uni't testing analysis failed: """
+        type: """
+        status: """
+        type: """
+        value: "Unabl"""
+        status: """
+        type: """
+        status: """
+        type: """
+        value: """"
+        type: """
+        status: """
+        type: """
+        value: "Unabl"""
+        status: """
+        type: """
+        status: """
+        type: """
+        value: """"
+        status: """
+        type: """
+        status: """
+        value: "Unabl"""
+        type: """
+        status: """
+        type: """
+        value: """"
+        status: """
+        type: """
+        status: """
+        type: """
+        value: "Unabl"""
+        status: """
+        type: """
+        status: """
+        type: """
+        value: """"
+        status: """
+        type: """
+        status: """
+        type: """
+        value: "Unabl"""
+        status: """
+        type: """
+        status: """
+        type: """
+        value: """"
+        type: """
+        message: """
+        suggestion: """
+        type: """
+        priority: """
+        message: """
+        suggestion: """
+        priority: """
+        message: """
+      status: """
+        type: """
+        severity: """
+        message: """
+          status: """
+        status: """
+        status: """
+        status: """
+        status: """
+        status: """
+        status: """
+        status: """
+        status: """
+          priority: """

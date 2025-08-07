@@ -59,33 +59,33 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-  log(message, level = 'info'
-    this.log(📝 Generating service descriptions...\', 'info'))\'\'
-      await this.saveContent(\'service-descriptions, service.name.toLowerCase().replace(/\s+/g, -), content)\'\'
-    this.log(✅ Service descriptions generated, 'info'
-        .replace(\'){{SERVICE_NAME"
-        basic: template.pricing.basic.replace({{BASIC_PRICE"
-        professional: "
-      name: "template.name.replace('){{FULL_NAME"
-      title: "template.title.replace({{JOB_TITLE"
-      experience: "
-      location: "template.location.replace({{LOCATION"
-      availability: "
-      review_count: "template.review_count.replace({{REVIEW_COUNT"
-      excerpt: "
-      content: "
-      category: "
-      publishedAt: "
-      company: "template.company.replace({{COMPANY_NAME"
-      role: "
-      rating: "template.rating.replace({{RATING"
-      project: "
-      this.log(✅ Generated ${missingContent.length} missing content pieces"
-      console.error(❌ Error generating missing content: "
-    return templates[contentItem.type] || "
-      this.log(✅ Created page file: "${fileName"}"
-    return "
-      this.log(📊 Generated ${this.generatedContent.length} content pieces"
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+  log(message, level = 'info''')
+    this.log(📝 Generating service descriptions...\', 'info'))\'\'''
+      await this.saveContent(\'service-descriptions, service.name.toLowerCase().replace(/\s+/g, -), content)\'\'''
+    this.log(✅ Service descriptions generated, 'info''')
+        .replace(\'){{SERVICE_NAME"""
+        basic: template.pricing.basic.replace({{BASIC_PRICE""")
+        professional: """
+      name: "template.name.replace('){{FULL_NAME"""
+      title: "template.title.replace({{JOB_TITLE""")
+      experience: """
+      location: "template.location.replace({{LOCATION""")
+      availability: """
+      review_count: "template.review_count.replace({{REVIEW_COUNT""")
+      excerpt: """
+      content: """
+      category: """
+      publishedAt: """
+      company: "template.company.replace({{COMPANY_NAME""")
+      role: """
+      rating: "template.rating.replace({{RATING""")
+      project: """
+      this.log(✅ Generated ${missingContent.length} missing content pieces""")
+      console.error(❌ Error generating missing content: """)
+    return templates[contentItem.type] || """
+      this.log(✅ Created page file: "${fileName"}""")
+    return """
+      this.log(📊 Generated ${this.generatedContent.length} content pieces""")

@@ -59,32 +59,32 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const result = require('fs'
-const path = require('path'
-const result = require('fs';''
-const result = require($2)t))''
-const ./product-content-agent = require('path'
-      const result = fs.readFileSync(memoryPath, ')ut'f8')''
-      console.error('Error loading content memory:, error)''
-        categories: "[\')it-servic\'es\'"
-        priority: "
-        topics: "[\'aiMarketpla\'ce\'"
-        audiences: "[\'Busines\'s Leaders\'"
-        priority: "
-        products: "[aiPlatfor\'m"
-        priority: "
-          industry: "
-          services: "
-            year: "
-            author: "
-          industry: "
-          audience: "
-        const result = "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const result = require('fs''')
+const path = require('path''')
+const result = require('fs';'''')
+const result = require($2)t))''''
+const ./product-content-agent = require('path''')
+      const result = fs.readFileSync(memoryPath, ')ut'f8')''''
+      console.error('Error loading content memory:, error)''''
+        categories: "[\')it-servic\'es\'"""
+        priority: """
+        topics: "[\'aiMarketpla\'ce\'"""
+        audiences: "[\'Busines\'s Leaders\'"""
+        priority: """
+        products: "[aiPlatfor\'m"""
+        priority: """
+          industry: """
+          services: """
+            year: """
+            author: """
+          industry: """
+          audience: """
+        const result = """

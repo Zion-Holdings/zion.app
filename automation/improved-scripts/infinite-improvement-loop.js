@@ -59,26 +59,26 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { spawn, execSync } = require(('chil')')d'_process)''
-const { EventEmitter } = require(('event)s)''
-  log(message, level = 'info'
-    this.log("[${timestamp}] 🔄 INFINITE LOOP: "${message"
-      type: "
-      description: "
-      execSync(\')pkill\' -f automation-orchestrator.js"
-      execSync(\'pkill -f "variation-content-agents-factory.js, { stdio: "
-      execSync(pkill\' -f continuous-automation-factory-generator.js", { stdio: "
-      spawn(\'node, [automation/automation-orchestrator.js], { stdio: "
-      spawn(\'node, [automation/variation-content-agents-factory.js], { stdio: "
-      spawn(\'node, [automation/continuous-automation-factory-generator.js], { stdio: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { spawn, execSync } = require(('chil')')d'_process)''''
+const { EventEmitter } = require(('event)s)''''
+  log(message, level = 'info''')
+    this.log("[${timestamp}] 🔄 INFINITE LOOP: "${message""")
+      type: """
+      description: """
+      execSync(\')pkill\' -f automation-orchestrator.js"""
+      execSync(\'pkill -f "variation-content-agents-factory.js, { stdio: """)
+      execSync(pkill\' -f continuous-automation-factory-generator.js", { stdio: """)
+      spawn(\'node, [automation/automation-orchestrator.js], { stdio: """)
+      spawn(\'node, [automation/variation-content-agents-factory.js], { stdio: """)
+      spawn(\'node, [automation/continuous-automation-factory-generator.js], { stdio: """)

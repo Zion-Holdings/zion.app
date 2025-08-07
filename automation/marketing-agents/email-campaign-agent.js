@@ -59,37 +59,37 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-    this.name = Emai')l' Campaign Agent;''
-    this.status = 'id'le'''
-    this.logFile = path.join(__dirname, '../logs/email-campaign-agent.log)''
-    this.log('Initializing Email Campaign Agent...)''
-      this.status = ')ready;''
-      this.log(✅ Email Campaign Agent initialized successfully')''
-    const filePath = path.join(__dirname, '../email-campaigns/campaigns.json)''
-      this.campaigns = JSON.parse(fs.readFileSync(campaignsFile, 'ut'f8'))''
-    const filePath = path.join(__dirname, '../email-campaigns/subscribers.json)''
-      this.subscribers = JSON.parse(fs.readFileSync(subscribersFile, 'ut'f8'))''
-    const filePath = path.join(__dirname, '../email-campaigns/templates.json)''
-      this.templates = JSON.parse(fs.readFileSync(templatesFile, 'ut'f8'))''
-        id: "
-        name: "
-        subject: "
-        body: "
-        name: "
-        subject: "
-        id: "
-        name: "
-        body: "
-      status: "
-      activeCampaigns: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+    this.name = Emai')l' Campaign Agent;''''
+    this.status = 'id'le'''''
+    this.logFile = path.join(__dirname, '../logs/email-campaign-agent.log)''''
+    this.log('Initializing Email Campaign Agent...)''''
+      this.status = ')ready;''''
+      this.log(✅ Email Campaign Agent initialized successfully')''''
+    const filePath = path.join(__dirname, '../email-campaigns/campaigns.json)''''
+      this.campaigns = JSON.parse(fs.readFileSync(campaignsFile, 'ut'f8'))''''
+    const filePath = path.join(__dirname, '../email-campaigns/subscribers.json)''''
+      this.subscribers = JSON.parse(fs.readFileSync(subscribersFile, 'ut'f8'))''''
+    const filePath = path.join(__dirname, '../email-campaigns/templates.json)''''
+      this.templates = JSON.parse(fs.readFileSync(templatesFile, 'ut'f8'))''''
+        id: """
+        name: """
+        subject: """
+        body: """
+        name: """
+        subject: """
+        id: """
+        name: """
+        body: """
+      status: """
+      activeCampaigns: """

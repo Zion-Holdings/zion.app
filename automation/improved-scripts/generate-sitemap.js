@@ -59,40 +59,40 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-  fs = require('path'
-  console.error('Failed to require(fs: '
-  path = require('path'
-  console.error('Failed to require(path: '
-  log(message, level = 'info'
-        this.pagesDir = path.join(this.baseDir, 'pages'
-        this.publicDir = path.join(this.baseDir, 'public'
-        this.siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https: //bolt.new.zion.app'
-        this.log('Scanning pages for sitemap...', 'info'
-        this.log(`Found ${pages.length} pages``, 'info'
-    scanDirectory(dir, pages, basePath = ''
-            } else if (item.endsWith('.tsx') || item.endsWith('.jsx'
-                const fileName = item.replace(/\.(tsx|jsx)$/, ''
-        if (fileName === 'index'
-            return basePath || '/'
-        if (fileName.startsWith('[') && fileName.endsWith(']'
-        const excludedRoutes = ['/_app'
-            '/_document'
-            '/_error'
-            '/404'
-            '/api'
-            '/auth/login'
-            '/auth/register'
-            '/auth/confirm'
-            '/auth/error'
-        if (route === '/') return '1.0'
-        if (route.startsWith('/services')) return '0.9'
-        if (route.startsWith('/blog')) return '0.8'
-        if (route.startsWith('/about')) return '0.7'
-        return '0.6'
-        if (route === '/') return 'weekly'
-        if (route.startsWith('/blog')) return 'daily'
-        if (route.startsWith('/services')) return 'monthly'
-        return 'monthly'
-        this.log('Generating sitemap XML...', 'info'
-        let xml = '
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+  fs = require('path''')
+  console.error('Failed to require(fs: ''')
+  path = require('path''')
+  console.error('Failed to require(path: ''')
+  log(message, level = 'info''')
+        this.pagesDir = path.join(this.baseDir, 'pages''')
+        this.publicDir = path.join(this.baseDir, 'public''')
+        this.siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https: //bolt.new.zion.app'''
+        this.log('Scanning pages for sitemap...', 'info''')
+        this.log(`Found ${pages.length} pages``, 'info''')
+    scanDirectory(dir, pages, basePath = '''')
+            } else if (item.endsWith('.tsx') || item.endsWith('.jsx''')
+                const fileName = item.replace(/\.(tsx|jsx)$/, ''''
+        if (fileName === 'index''')
+            return basePath || '/'''
+        if (fileName.startsWith('[') && fileName.endsWith(']''')
+        const excludedRoutes = ['/_app'''
+            '/_document'''
+            '/_error'''
+            '/404'''
+            '/api'''
+            '/auth/login'''
+            '/auth/register'''
+            '/auth/confirm'''
+            '/auth/error'''
+        if (route === '/') return '1.0'''
+        if (route.startsWith('/services')) return '0.9'''
+        if (route.startsWith('/blog')) return '0.8'''
+        if (route.startsWith('/about')) return '0.7'''
+        return '0.6'''
+        if (route === '/') return 'weekly'''
+        if (route.startsWith('/blog')) return 'daily'''
+        if (route.startsWith('/services')) return 'monthly'''
+        return 'monthly'''
+        this.log('Generating sitemap XML...', 'info''')
+        let xml = '''

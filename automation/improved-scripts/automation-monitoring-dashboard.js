@@ -59,48 +59,48 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-  log(message, level = 'info'
-    this.log(📊 Initializing Automation Monitoring Dashboard...\', 'info'))\'\'
-    this.dashboardPath = path.join(__dirname, \'monitoring-dashboard)\'\'
-    this.reportsPath = path.join(__dirname, monitoring-repor\'t\'s)\'\'
-    this.alertsPath = path.join(__dirname, \'monitoring-aler\'ts\')\'\'
-    this.log(\'🔍 Loading automation systems..., 'info')\'\'
-    this.automationSystems.set(enhanced-intelligent\'), {\'\'
-      name: "
-      status: "
-      type: "
-      status: "
-      name: "
-      type: "
-      status: "
-        this.log(✅ ${system.name} is running (Health: "
-        this.log("
-          type: "
-          severity: "
-          type: "
-          severity: "
-        type: "
-        message: "
-        severity: "
-      this.log(🚨 ${alerts.length} alerts detected"
-      status: "
-      status: "
-    this.log(Overall Health: "
-    this.log("Active Systems: "${this.metrics.activeSystems"
-    this.log(Content Generated: "${this.metrics.totalContentGenerated"}"
-    this.log("Features Created: "${this.metrics.totalFeaturesCreated"
-    this.log(Diversification Score: "
-      this.log(${status} ${system.name} - ${system.status} (Health: "${health"
-    this.log(RECENT ALERTS: "
-        this.log("🚨 ${alert.message}"
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+  log(message, level = 'info''')
+    this.log(📊 Initializing Automation Monitoring Dashboard...\', 'info'))\'\'''
+    this.dashboardPath = path.join(__dirname, \'monitoring-dashboard)\'\'''
+    this.reportsPath = path.join(__dirname, monitoring-repor\'t\'s)\'\'''
+    this.alertsPath = path.join(__dirname, \'monitoring-aler\'ts\')\'\'''
+    this.log(\'🔍 Loading automation systems..., 'info')\'\'''
+    this.automationSystems.set(enhanced-intelligent\'), {\'\'''
+      name: """
+      status: """
+      type: """
+      status: """
+      name: """
+      type: """
+      status: """
+        this.log(✅ ${system.name} is running (Health: """)
+        this.log(""")
+          type: """
+          severity: """
+          type: """
+          severity: """
+        type: """
+        message: """
+        severity: """
+      this.log(🚨 ${alerts.length} alerts detected""")
+      status: """
+      status: """
+    this.log(Overall Health: """)
+    this.log("Active Systems: "${this.metrics.activeSystems""")
+    this.log(Content Generated: "${this.metrics.totalContentGenerated"}""")
+    this.log("Features Created: "${this.metrics.totalFeaturesCreated""")
+    this.log(Diversification Score: """)
+      this.log(${status} ${system.name} - ${system.status} (Health: "${health""")
+    this.log(RECENT ALERTS: """)
+        this.log("🚨 ${alert.message}""")

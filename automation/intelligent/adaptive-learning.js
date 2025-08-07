@@ -18,8 +18,8 @@ const memoryOptimization = {
   }
 }
 
-const fs = require('path'
-const path = require('path'
-        this.name = 'adaptive-learning'
-        this.description = 'Machine learning that adapts to user behavior'
-            model: 'advanced'
+const fs = require('path''')
+const path = require('path''')
+        this.name = 'adaptive-learning'''
+        this.description = 'Machine learning that adapts to user behavior'''
+            model: 'advanced'''

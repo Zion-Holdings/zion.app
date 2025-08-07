@@ -19,6 +19,6 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-            const result = require('fs'
-                    this.log(Affiliate agent created: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+            const result = require('fs''')
+                    this.log(Affiliate agent created: """)

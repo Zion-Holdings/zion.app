@@ -59,38 +59,38 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { spawn, execSync } = require(('chil')')d'_process)''
-const { EventEmitter } = require(('event)s)''
-    const filePath = path.join(__dirname, \')data, infinite-improvement-confi\'g\'.json)\'\'
-      const jsonData = JSON.parse(fs.readFileSync(configPath, \'ut\'f8\'))\'\'
-    const filePath = path.join(__dirname, \'data, infinite-improvement-confi\'g\'.json)\'\'
-    this.log(\'Starting infinite improvement loop...)\'\'
-      this.log(\')Infinite\' improvement loop started successfully\')\'\'
-        this.log(\'Shutting down infinite improvement loop...)\'\'
-    this.log(\')Improvement\' cycle started\')\'\'
-    this.log(\'Monitoring started)\'\'
-    this.log(\')Performing\' improvement cycle...\')\'\'
-    this.log(\'Performing generation cycle...)\'\'
-    this.log(\')Improving\' existing factories...\')\'\'
-    const filePath = path.join(this.projectRoot, automation, \'factori\'es\')\'\'
-    const filePath = path.join(this.projectRoot, \'automation, factori\'e\'s, factoryId)\'\'
-    const jsonData = JSON.parse(fs.readFileSync(configPath, \'ut\'f8\'))\'\'
-      type: "
-      description: "
-      execSync(\')pkill\' -f automation-orchestrator.js"
-      execSync(\'pkill -f "variation-content-agents-factory.js, { stdio: "
-      execSync(pkill\' -f continuous-automation-factory-generator.js", { stdio: "
-      spawn(\'node, [automation/automation-orchestrator.js], { stdio: "
-      spawn(\'node, [automation/variation-content-agents-factory.js], { stdio: "
-      spawn(\'node, [automation/continuous-automation-factory-generator.js], { stdio: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { spawn, execSync } = require(('chil')')d'_process)''''
+const { EventEmitter } = require(('event)s)''''
+    const filePath = path.join(__dirname, \')data, infinite-improvement-confi\'g\'.json)\'\'''
+      const jsonData = JSON.parse(fs.readFileSync(configPath, \'ut\'f8\'))\'\'''
+    const filePath = path.join(__dirname, \'data, infinite-improvement-confi\'g\'.json)\'\'''
+    this.log(\'Starting infinite improvement loop...)\'\'''
+      this.log(\')Infinite\' improvement loop started successfully\')\'\'''
+        this.log(\'Shutting down infinite improvement loop...)\'\'''
+    this.log(\')Improvement\' cycle started\')\'\'''
+    this.log(\'Monitoring started)\'\'''
+    this.log(\')Performing\' improvement cycle...\')\'\'''
+    this.log(\'Performing generation cycle...)\'\'''
+    this.log(\')Improving\' existing factories...\')\'\'''
+    const filePath = path.join(this.projectRoot, automation, \'factori\'es\')\'\'''
+    const filePath = path.join(this.projectRoot, \'automation, factori\'e\'s, factoryId)\'\'''
+    const jsonData = JSON.parse(fs.readFileSync(configPath, \'ut\'f8\'))\'\'''
+      type: """
+      description: """
+      execSync(\')pkill\' -f automation-orchestrator.js"""
+      execSync(\'pkill -f "variation-content-agents-factory.js, { stdio: """)
+      execSync(pkill\' -f continuous-automation-factory-generator.js", { stdio: """)
+      spawn(\'node, [automation/automation-orchestrator.js], { stdio: """)
+      spawn(\'node, [automation/variation-content-agents-factory.js], { stdio: """)
+      spawn(\'node, [automation/continuous-automation-factory-generator.js], { stdio: """)

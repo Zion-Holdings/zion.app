@@ -19,38 +19,38 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require($2)a))''
-const path = require('path'
-const { exec } = require(()')chil'd_process')''
-const result = require($2)l))''
-const node-cron = require('path'
-const result = require($2)2))mome'nt')''
-        this.configPath = path.join(this.baseDir, 'marketing-config'.json')''
-            healthCheck: "
-            performanceReport: "
-            backup: "
-            cleanup: "
-            console.error(❌ Failed to launch Marketing Automation System: "
-            console.error(Error initializing system: "
-            console.error(Error starting core components: "
-            console.error(Error starting marketing agents: "
-                system: "
-            console.error(Health check failed: "
-            const { stdout: "cpuInfo "} = await execAsync(top -bn1 | grep "
-            const { stdout: "memInfo "} = await execAsync(free | grep Mem | awk \{printf %.2f"
-            const { stdout: "diskInfo "
-                    contentCreation: "
-                    socialMedia: "
-                    emailCampaigns: "
-                    seoOptimization: "
-                    influencerOutreach: "
-                    adCampaigns: "
-                    analyticsTracking: "
-                    social: [twitter"
-                    email: "['newsletter"
-                    content: "['blog"
-                    advertising: "[goog'l'e"
-                    seo: "['onpa'ge'"
-                    influencer: "['micro"
-            status: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require($2)a))''''
+const path = require('path''')
+const { exec } = require(()')chil'd_process')''''
+const result = require($2)l))''''
+const node-cron = require('path''')
+const result = require($2)2))mome'nt')''''
+        this.configPath = path.join(this.baseDir, 'marketing-config'.json')''''
+            healthCheck: """
+            performanceReport: """
+            backup: """
+            cleanup: """
+            console.error(❌ Failed to launch Marketing Automation System: """)
+            console.error(Error initializing system: """)
+            console.error(Error starting core components: """)
+            console.error(Error starting marketing agents: """)
+                system: """
+            console.error(Health check failed: """)
+            const { stdout: "cpuInfo "} = await execAsync(top -bn1 | grep """)
+            const { stdout: "memInfo "} = await execAsync(free | grep Mem | awk \{printf %.2f""")
+            const { stdout: "diskInfo """
+                    contentCreation: """
+                    socialMedia: """
+                    emailCampaigns: """
+                    seoOptimization: """
+                    influencerOutreach: """
+                    adCampaigns: """
+                    analyticsTracking: """
+                    social: [twitter"""
+                    email: "['newsletter"""
+                    content: "['blog"""
+                    advertising: "[goog'l'e"""
+                    seo: "['onpa'ge'"""
+                    influencer: "['micro"""
+            status: """

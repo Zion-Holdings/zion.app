@@ -59,40 +59,40 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-const cron = require('path';''
-  log(message, level = 'info'
-      systemHealth: "
-          status: "
-          currentTask: "
-      this.log("
-      status: "
-      \'q\'a: "['Conten't review'"
-    this.log(📋 Assigned task ${taskId} to agent ${agent.name}"
-    this.log("
-    this.log(🔄 Reassigned task ${taskId} from ${oldAgent?.name} to ${newAgent.name}"
-      this.log("
-    this.log(🔧 Optimizing agent: "${agent.name"}"
-    this.log(🏭 Created specialized agent for ${taskType}: ${agentId}"
-      completedTasks: "
-        type: "
-        type: "
-      this.log("
-      active: "
-      idle: "
-      error: "
-      pending: "
-      assigned: "
-      completed: "
-      console.error(\')Error\' saving report to database: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require(('chil')')d'_process)''''
+const cron = require('path';'''')
+  log(message, level = 'info''')
+      systemHealth: """
+          status: """
+          currentTask: """
+      this.log(""")
+      status: """
+      \'q\'a: "['Conten't review'"""
+    this.log(📋 Assigned task ${taskId} to agent ${agent.name}""")
+    this.log(""")
+    this.log(🔄 Reassigned task ${taskId} from ${oldAgent?.name} to ${newAgent.name}""")
+      this.log(""")
+    this.log(🔧 Optimizing agent: "${agent.name"}""")
+    this.log(🏭 Created specialized agent for ${taskType}: ${agentId}""")
+      completedTasks: """
+        type: """
+        type: """
+      this.log(""")
+      active: """
+      idle: """
+      error: """
+      pending: """
+      assigned: """
+      completed: """
+      console.error(\')Error\' saving report to database: """

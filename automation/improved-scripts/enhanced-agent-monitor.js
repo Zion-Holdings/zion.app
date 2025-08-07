@@ -59,34 +59,34 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-}const fs = require('fs').promises;''
-  path = require('path'
-  console.error('Failed to require(path: '
-const { exec } = require(('child_process')'))''
-const { promisify } = require(('uti)l)''
-  log(message, level = 'info'
-    this.log(🔍 Starting Enhanced Agent Monitor..., 'info'
-    this.log(✅ Enhanced Agent Monitor started successfully', 'info'))''
-    this.log('📊 Monitoring agent performance..., 'info')''
-    this.log(\', 'info')🧠 Improving agent intelligence...\')\'\'
-        this.log(`✅ Improved intelligence for ${agentName}: Level ${currentIntelligence.level.toFixed(2, 'info'
-    this.log(🌱 Diversifying agent capabilities...\', 'info')\'\'
-          this.log(✅ Added capabilities to ${agentName}: ${newCapabilities.join(\', , 'info')}``)\'\'
-      content: \"[multilingual-support')\"
-      console.error(❌ Error monitoring health: \"
-      status: \"
-    this.log(🔄 Attempting to recover agent: \"${agentName\"
-      \')content: \"['ai-powered-seo'\"
-      \'automation: \"['machine-learning-integration'\"
-        action: \"
-        type: \"
-        action: \"`
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+}const fs = require('fs').promises;''''
+  path = require('path''')
+  console.error('Failed to require(path: ''')
+const { exec } = require(('child_process')'))''''
+const { promisify } = require(('uti)l)''''
+  log(message, level = 'info''')
+    this.log(🔍 Starting Enhanced Agent Monitor..., 'info''')
+    this.log(✅ Enhanced Agent Monitor started successfully', 'info'))''''
+    this.log('📊 Monitoring agent performance..., 'info')''''
+    this.log(\', 'info')🧠 Improving agent intelligence...\')\'\'''
+        this.log(`✅ Improved intelligence for ${agentName}: Level ${currentIntelligence.level.toFixed(2, 'info''')
+    this.log(🌱 Diversifying agent capabilities...\', 'info')\'\'''
+          this.log(✅ Added capabilities to ${agentName}: ${newCapabilities.join(\', , 'info')}``)\'\'''
+      content: \"[multilingual-support')\"""
+      console.error(❌ Error monitoring health: \""")
+      status: \"""
+    this.log(🔄 Attempting to recover agent: \"${agentName\""")
+      \')content: \"['ai-powered-seo'\"""
+      \'automation: \"['machine-learning-integration'\"""
+        action: \"""
+        type: \"""
+        action: \"`""

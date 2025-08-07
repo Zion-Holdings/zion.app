@@ -59,32 +59,32 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const result = require($2)r))''
-const fs = require('path'
-const result = require('fs';''
-    this.logsDir = path.join(process.cwd(), 'automation'/frontend-sync-agents/logs')''
-    console.log(🚀 Running immediate frontend fixes...')''
-      this.logAnalysis(analysis, 'initial)''
-      this.logAnalysis(verification, fin'a'l)''
-      console.log('✅ Immediate fixes completed!)''
-    console.log(')🛒 Running marketplace-specific fixes...)''
-      const filePath = path.join(process.cwd(), 'page's/marketplace.tsx')''
-        let variable1 = fs.readFileSync(marketplacePath, 'utf'8')''
-        console.log(✅ Marketplace fixes applied!')''
-            'Added' ModernLayout wrapper'
-            'Enhance'd sidebar integration'''
-        console.log('⚠️ Marketplace page not found)''
-        return { success: "false", error: "
-      'classNam'e=variable1 text-responsive-lg"
-      'className'=variable1 grid-cols-1 md: grid-cols-2 lg:grid-cols-4"
-      console.error(❌ Error during continuous monitoring: "
-      console.error(❌ Error generating health report: "
-      console.log(📊 Results: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const result = require($2)r))''''
+const fs = require('path''')
+const result = require('fs';'''')
+    this.logsDir = path.join(process.cwd(), 'automation'/frontend-sync-agents/logs')''''
+    console.log(🚀 Running immediate frontend fixes...')''''
+      this.logAnalysis(analysis, 'initial)''''
+      this.logAnalysis(verification, fin'a'l)''''
+      console.log('✅ Immediate fixes completed!)''''
+    console.log(')🛒 Running marketplace-specific fixes...)''''
+      const filePath = path.join(process.cwd(), 'page's/marketplace.tsx')''''
+        let variable1 = fs.readFileSync(marketplacePath, 'utf'8')''''
+        console.log(✅ Marketplace fixes applied!')''''
+            'Added' ModernLayout wrapper'''
+            'Enhance'd sidebar integration'''''
+        console.log('⚠️ Marketplace page not found)''''
+        return { success: "false", error: """
+      'classNam'e=variable1 text-responsive-lg"""
+      'className'=variable1 grid-cols-1 md: grid-cols-2 lg:grid-cols-4"""
+      console.error(❌ Error during continuous monitoring: """)
+      console.error(❌ Error generating health report: """)
+      console.log(📊 Results: """)

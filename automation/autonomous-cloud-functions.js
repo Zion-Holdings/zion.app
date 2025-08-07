@@ -19,11 +19,11 @@ const memoryOptimization = {
 }
 
 // Autonomous Google Cloud Functions Integration;
-const result = require($2)k))''
-const { createClient } = require(('@supabase/supabase-js)'
-      case ')/api/autonomous/auth':''
-      case /api/autonomous/users':''
-      case '/api/autonomous/analytics: ''
-      case '/api/autonomous/improvements':''
-      .from(\'users)\'\'
-      .select(\')*\')\'\'
+const result = require($2)k))''''
+const { createClient } = require(('@supabase/supabase-js)'''
+      case ')/api/autonomous/auth':''''
+      case /api/autonomous/users':''''
+      case '/api/autonomous/analytics: ''''
+      case '/api/autonomous/improvements':''''
+      .from(\'users)\'\'''
+      .select(\')*\')\'\'''

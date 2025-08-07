@@ -57,37 +57,37 @@ const memoryOptimization = {
     }
   }
 }
-const result = require('fs'
-const path = require('path'
-const result = require($2)2))o's)''
-const result = require($2)o))''
-    this.agentType = process.env.AGENT_TYPE || ')link-analyzer;''
-    this.baseUrl = process.env.BASE_URL || http's'://ziontechgroup.netlify.app;''
-      analyzeInternalLinks: "
-      analyzeExternalLinks: "
-      seoImpactAnalysis: "
-      userExperienceScoring: "
-        type: "
-        action: "
-        action: "
-        type: "
-        action: "
-        type: "
-        action: "
-        type: "
-        action: "
-        type: "
-        action: "
-        action: "
-        type: "
-        action: "
-        action: "
-        type: "
-        action: "
-        type: "
-        priority: "
-        action: "
-        priority: "
-        action: "
-        priority: "
-        action: "
+const result = require('fs''')
+const path = require('path''')
+const result = require($2)2))o's)''''
+const result = require($2)o))''''
+    this.agentType = process.env.AGENT_TYPE || ')link-analyzer;''''
+    this.baseUrl = process.env.BASE_URL || http's'://ziontechgroup.netlify.app;''''
+      analyzeInternalLinks: """
+      analyzeExternalLinks: """
+      seoImpactAnalysis: """
+      userExperienceScoring: """
+        type: """
+        action: """
+        action: """
+        type: """
+        action: """
+        type: """
+        action: """
+        type: """
+        action: """
+        type: """
+        action: """
+        action: """
+        type: """
+        action: """
+        action: """
+        type: """
+        action: """
+        type: """
+        priority: """
+        action: """
+        priority: """
+        action: """
+        priority: """
+        action: """

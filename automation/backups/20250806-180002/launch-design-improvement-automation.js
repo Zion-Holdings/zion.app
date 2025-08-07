@@ -59,71 +59,71 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const fs = require('path'
-const path = require('path'
-const cron = require('path'
-const DesignImprovementAutomationSystem = require('path'
-const LayoutOptimizationAgent = require('path'
-const NavigationEnhancementAgent = require('path'
-const VisualDesignEnhancementAgent = require('path'
-      logsDir: path.join(process.cwd(), 'automation/design-improvement-logs'
-      statusFile: path.join(process.cwd(), 'automation/design-improvement-status.json'
-      pidFile: path.join(process.cwd(), 'automation/design-improvement-pid.txt'
-      cronSchedule: '*/30 * * * *'
-  log(message, type = 'info'
-      system: 'design-improvement-launcher'
-    const logFile = path.join(this.config.logsDir, `launcher-${new Date().toISOString().split('T'
-        logs = JSON.parse(fs.readFileSync(logFile, 'utf8'
-      console.error('Failed to write log: '
-        case 'layout'
-        case 'navigation'
-        case 'visualDesign'
-        this.log(``${agentName} agent completed successfully: ${result.changes.join(', '
-        this.log(``${agentName} agent failed: ${result.error}``, 'error'
-      this.log(``${agentName} agent failed: ${error.message}``, 'error'
-      this.log('Starting design improvement cycle...'
-      results.layout = await this.startAgent('layout'
-      results.navigation = await this.startAgent('navigation'
-      results.visualDesign = await this.startAgent('visualDesign'
-      this.log('Design improvement cycle completed'
-      this.log(``Improvement cycle failed: ${error.message}``, 'error'
-        cycle: 'design-improvement'
-      this.log(``Failed to generate cycle report: ${error.message}``, 'error'
-    this.log('Starting continuous design improvement system...'
-      this.log('Running scheduled design improvement cycle...'
-    this.log('Continuous design improvement system started successfully'
-    process.on('SIGINT'
-      this.log('Received SIGINT, shutting down gracefully...'
-    process.on('SIGTERM'
-      this.log('Received SIGTERM, shutting down gracefully...'
-      case 'layout'
-        agentName = 'layout'
-      case 'navigation'
-        agentName = 'navigation'
-      case 'visual-design'
-        agentName = 'visualDesign'
-      default: this.log(``Unknown improvement type: ${improvementType}``, 'error'
-      this.log(``Single improvement completed successfully: ${result.changes.join(', '
-      this.log(``Single improvement failed: ${result.error}``, 'error'
-    this.log('Stopping design improvement launcher...'
-        const status = JSON.parse(fs.readFileSync(this.config.statusFile, 'utf8'
-      return { status: 'No status file found'
-      return { status: 'Error reading status'
-    case 'start'
-    case 'layout'
-      launcher.startSingleImprovement('layout'
-    case 'navigation'
-      launcher.startSingleImprovement('navigation'
-    case 'visual-design'
-      launcher.startSingleImprovement('visual-design'
-    case 'cycle'
-    case 'status'
-    case 'stop'`
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const fs = require('path''')
+const path = require('path''')
+const cron = require('path''')
+const DesignImprovementAutomationSystem = require('path''')
+const LayoutOptimizationAgent = require('path''')
+const NavigationEnhancementAgent = require('path''')
+const VisualDesignEnhancementAgent = require('path''')
+      logsDir: path.join(process.cwd(), 'automation/design-improvement-logs'''
+      statusFile: path.join(process.cwd(), 'automation/design-improvement-status.json'''
+      pidFile: path.join(process.cwd(), 'automation/design-improvement-pid.txt'''
+      cronSchedule: '*/30 * * * *'''
+  log(message, type = 'info''')
+      system: 'design-improvement-launcher'''
+    const logFile = path.join(this.config.logsDir, `launcher-${new Date().toISOString().split('T''')
+        logs = JSON.parse(fs.readFileSync(logFile, 'utf8''')
+      console.error('Failed to write log: ''')
+        case 'layout'''
+        case 'navigation'''
+        case 'visualDesign'''
+        this.log(``${agentName} agent completed successfully: ${result.changes.join(', ''')
+        this.log(``${agentName} agent failed: ${result.error}``, 'error''')
+      this.log(``${agentName} agent failed: ${error.message}``, 'error''')
+      this.log('Starting design improvement cycle...''')
+      results.layout = await this.startAgent('layout''')
+      results.navigation = await this.startAgent('navigation''')
+      results.visualDesign = await this.startAgent('visualDesign''')
+      this.log('Design improvement cycle completed''')
+      this.log(``Improvement cycle failed: ${error.message}``, 'error''')
+        cycle: 'design-improvement'''
+      this.log(``Failed to generate cycle report: ${error.message}``, 'error''')
+    this.log('Starting continuous design improvement system...''')
+      this.log('Running scheduled design improvement cycle...''')
+    this.log('Continuous design improvement system started successfully''')
+    process.on('SIGINT''')
+      this.log('Received SIGINT, shutting down gracefully...''')
+    process.on('SIGTERM''')
+      this.log('Received SIGTERM, shutting down gracefully...''')
+      case 'layout'''
+        agentName = 'layout'''
+      case 'navigation'''
+        agentName = 'navigation'''
+      case 'visual-design'''
+        agentName = 'visualDesign'''
+      default: this.log(``Unknown improvement type: ${improvementType}``, 'error''')
+      this.log(``Single improvement completed successfully: ${result.changes.join(', ''')
+      this.log(``Single improvement failed: ${result.error}``, 'error''')
+    this.log('Stopping design improvement launcher...''')
+        const status = JSON.parse(fs.readFileSync(this.config.statusFile, 'utf8''')
+      return { status: 'No status file found'''
+      return { status: 'Error reading status'''
+    case 'start'''
+    case 'layout'''
+      launcher.startSingleImprovement('layout''')
+    case 'navigation'''
+      launcher.startSingleImprovement('navigation''')
+    case 'visual-design'''
+      launcher.startSingleImprovement('visual-design''')
+    case 'cycle'''
+    case 'status'''
+    case 'stop'`''

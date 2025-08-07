@@ -26,11 +26,13 @@ automation/
 ## 🛠️ Installation
 
 1. **Install Dependencies**:
+
    ```bash
    npm install --save-dev eslint eslint-config-next @typescript-eslint/eslint-plugin @typescript-eslint/parser chokidar
    ```
 
 2. **Make Scripts Executable**:
+
    ```bash
    chmod +x automation/*.js
    chmod +x start-lint-automation.sh
@@ -39,11 +41,13 @@ automation/
 ## 🚀 Quick Start
 
 ### Option 1: Using the Shell Script
+
 ```bash
 ./start-lint-automation.sh
 ```
 
 ### Option 2: Using npm Scripts
+
 ```bash
 # Start all automation services
 npm run lint:start
@@ -59,6 +63,7 @@ npm run lint:monitor
 ```
 
 ### Option 3: Direct Script Execution
+
 ```bash
 # Start all services
 node automation/lint-automation-manager.js start
@@ -76,17 +81,20 @@ node automation/lint-monitor.js monitor
 ## 📋 Available Commands
 
 ### Lint Automation Manager
+
 - `start` - Start all automation services
 - `stop` - Stop all automation services
 - `restart` - Restart all services
 - `check` - Run a single lint check
 
 ### Lint Error Fixer
+
 - `check` - Run lint check only
 - `fix` - Fix lint errors once
 - `continuous` - Start continuous fixing mode
 
 ### Lint Monitor
+
 - `check` - Run single lint check
 - `stats` - Show lint statistics
 - `errors` - Show latest errors
@@ -132,21 +140,25 @@ The system generates several JSON files for monitoring:
 ## 🔄 Automation Modes
 
 ### 1. Continuous Mode
+
 - Runs periodic lint checks every 30 seconds
 - Automatically fixes errors when found
 - Best for development environments
 
 ### 2. Watch Mode
+
 - Monitors file changes in real-time
 - Fixes errors immediately when files are modified
 - Low latency, high responsiveness
 
 ### 3. Monitor Mode
+
 - Tracks lint errors without fixing them
 - Generates detailed reports and statistics
 - Good for understanding code quality trends
 
 ### 4. Quick Fix Mode
+
 - One-time lint fix operation
 - Useful for CI/CD pipelines
 - No continuous monitoring
@@ -154,6 +166,7 @@ The system generates several JSON files for monitoring:
 ## 🎯 Advanced Features
 
 ### Smart Pattern Fixes
+
 The system automatically fixes common issues:
 
 - Trailing whitespace removal
@@ -163,11 +176,13 @@ The system automatically fixes common issues:
 - Export statement formatting
 
 ### Error Threshold Alerts
+
 - Configurable error count thresholds
 - Automatic alerts when thresholds are exceeded
 - Detailed error categorization
 
 ### Queue Management
+
 - Prevents overlapping fix operations
 - Cooldown periods between fixes
 - Efficient resource usage
@@ -177,11 +192,13 @@ The system automatically fixes common issues:
 ### Common Issues
 
 1. **ESLint not found**:
+
    ```bash
    npm install --save-dev eslint eslint-config-next
    ```
 
 2. **Permission denied**:
+
    ```bash
    chmod +x automation/*.js
    ```
@@ -192,6 +209,7 @@ The system automatically fixes common issues:
    - Use monitor mode instead of continuous
 
 ### Debug Mode
+
 Add `DEBUG=true` environment variable for verbose logging:
 
 ```bash
@@ -201,6 +219,7 @@ DEBUG=true node automation/lint-automation-manager.js start
 ## 🔄 Integration with CI/CD
 
 ### GitHub Actions Example
+
 ```yaml
 name: Lint Check
 on: [push, pull_request]
@@ -217,6 +236,7 @@ jobs:
 ```
 
 ### Pre-commit Hook
+
 ```bash
 #!/bin/sh
 node automation/quick-lint-fix.js
@@ -245,6 +265,7 @@ MIT License - feel free to use and modify as needed.
 ## 🆘 Support
 
 For issues or questions:
+
 1. Check the troubleshooting section
 2. Review the generated log files
 3. Run in debug mode for detailed output
@@ -253,3 +274,14 @@ For issues or questions:
 ---
 
 **Happy Coding! 🚀**
+
+```
+```
+
+```
+```
+
+```
+```
+
+```

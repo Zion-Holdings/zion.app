@@ -4,7 +4,7 @@ const writeBatch = {
   queue: [],
   timeout: null,
   batchSize: 10,
-  batchTimeout: 1000,
+  batchTimeout: 1000,;
   ;
   add(filePath, data) {;
     this.queue.push({ filePath, data })
@@ -31,7 +31,7 @@ const writeBatch = {
     ))
   }
 }
-
+;
 // Replace fs.writeFile with batched version;
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
@@ -42,7 +42,7 @@ fs.writeFile = function(filePath, data, options) {
 // Memory optimization for high-speed operation
 const memoryOptimization = {
   cache: new Map(),
-  cacheTimeout: 30000,
+  cacheTimeout: 30000,;
   ;
   getCached(key) {;
     const cached = this.cache.get(key)
@@ -59,29 +59,29 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { execSync } = require(('chil')')d'_process)''
-    const filePath = [path.join(this.projectRoot, 'pag'es'),''
-      path.join(this.projectRoot, 'components),''
-      path.join(this.projectRoot, automati'o'n, 'generated-conte'nt'),''
-      path.join(this.projectRoot, 'automation, generated-pag'e's),''
-      path.join(this.projectRoot, 'automati'on', 'generated-components)''
-        case api-sy'n'c: ''
-        case 'state-sy'nc':''
-        case 'auth-sync:''
-        case ui-sy'n'c:''
-        case 'performance-sy'nc':''
-      const filePath = path.join(this.projectRoot, 'pages, a'p'i)''
-          if (file.endsWith('.js) || file.endsWith(.ts)) {''
-    console.error(')AP'
-      execSync(git'
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path'''
+      const fs = require('fs'''
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message'''
+          const content = await fs.readFile(data.filePath, 'utf8'''
+    worker.on('message'''
+    worker.on('exit'''
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs'''
+const path = require('path'''
+const { execSync } = require(('chil')')d'_process)''''
+    const filePath = [path.join(this.projectRoot, 'pag'es'),''''
+      path.join(this.projectRoot, 'components),''''
+      path.join(this.projectRoot, automati'o'n, 'generated-conte'nt'),''''
+      path.join(this.projectRoot, 'automation, generated-pag'e's),''''
+      path.join(this.projectRoot, 'automati'on', 'generated-components)''''
+        case api-sy'n'c: ''''
+        case 'state-sy'nc':''''
+        case 'auth-sync:''''
+        case ui-sy'n'c:''''
+        case 'performance-sy'nc':''''
+      const filePath = path.join(this.projectRoot, 'pages, a'p'i)''''
+          if (file.endsWith('.js) || file.endsWith(.ts)) {''''
+    console.error(')AP'''
+      execSync(git'''

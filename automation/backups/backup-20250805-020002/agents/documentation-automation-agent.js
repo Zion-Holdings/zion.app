@@ -59,47 +59,47 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-const { promisify } = require(('uti)l)''
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''
-    this.projectRoot = path.resolve(__dirname, '../..')''
-    this.reportsDir = path.join(__dirname, ../reports/documentation-automation')''
-      path.join(this.reportsDir, 'generated-docs),''
-      path.join(this.reportsDir, api-do'c's),''
-      path.join(this.reportsDir, 'readme-updat'es'),''
-      path.join(this.reportsDir, 'code-comments)''
-      console.log(Generatin'g' comprehensive documentation...)''
-      console.log('Documentation generation completed)''
-      console.error(')Documentation' generation failed: "
-      console.error(Failed to find API routes: "
-            type: "
-          type: "
-        examples.push(match.replace(// Example: "
-      openapi: "
-        version: "
-            in: "
-            type: "
-            type: "
-          message: "
-            type: "
-          type: "
-        title: "
-      title: "
-      title: "
-          content += - \"${param.name}\"
-        content += '\n"`\"
-    readme += \"
-      console.error(')Componen't documentation generation failed: \"
-      console.error(')Utilit'y documentation generation failed: \"
-        type: \"`
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require(('chil')')d'_process)''''
+const { promisify } = require(('uti)l)''''
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''''
+    this.projectRoot = path.resolve(__dirname, '../..')''''
+    this.reportsDir = path.join(__dirname, ../reports/documentation-automation')''''
+      path.join(this.reportsDir, 'generated-docs),''''
+      path.join(this.reportsDir, api-do'c's),''''
+      path.join(this.reportsDir, 'readme-updat'es'),''''
+      path.join(this.reportsDir, 'code-comments)''''
+      console.log(Generatin'g' comprehensive documentation...)''''
+      console.log('Documentation generation completed)''''
+      console.error(')Documentation' generation failed: """
+      console.error(Failed to find API routes: """)
+            type: """
+          type: """
+        examples.push(match.replace(// Example: """)
+      openapi: """
+        version: """
+            in: """
+            type: """
+            type: """
+          message: """
+            type: """
+          type: """
+        title: """
+      title: """
+      title: """
+          content += - \"${param.name}\"""
+        content += '\n"`\"""
+    readme += \"""
+      console.error(')Componen't documentation generation failed: \"""
+      console.error(')Utilit'y documentation generation failed: \"""
+        type: \"`""

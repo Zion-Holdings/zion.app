@@ -59,29 +59,29 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const fs = require('path';''
-const path = require('path';''
-const { v4: uuidv4 } = require(('uuid)')''
-const cron = require('path';''
-    this.agentsPath = path.join(__dirname, \'ai-optimization-agents\')\'\'
-    this.reportsPath = path.join(__dirname, \'ai-intelligence-reports\')\'\'
-    this.createAgent(\'performance-optimizer\', {\'\'
-      capabilities: "['load-balancing'"
-      frequency: "
-      priority: "
-      capabilities: "['code-analysis'"
-      frequency: "
-      priority: "
-      capabilities: "['data-analysis'"
-      frequency: "
-      priority: "
-      capabilities: "['pattern-recognition'"
-      frequency: "
-      priority: "
-      status: "
-      capabilities: "
-      frequency: "
-      priority: "
-      activeAgents: "
-      status: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const fs = require('path';'''')
+const path = require('path';'''')
+const { v4: uuidv4 } = require(('uuid)')''''
+const cron = require('path';'''')
+    this.agentsPath = path.join(__dirname, \'ai-optimization-agents\')\'\'''
+    this.reportsPath = path.join(__dirname, \'ai-intelligence-reports\')\'\'''
+    this.createAgent(\'performance-optimizer\', {\'\''')
+      capabilities: "['load-balancing'"""
+      frequency: """
+      priority: """
+      capabilities: "['code-analysis'"""
+      frequency: """
+      priority: """
+      capabilities: "['data-analysis'"""
+      frequency: """
+      priority: """
+      capabilities: "['pattern-recognition'"""
+      frequency: """
+      priority: """
+      status: """
+      capabilities: """
+      frequency: """
+      priority: """
+      activeAgents: """
+      status: """

@@ -59,52 +59,52 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const result = require($2)2))t'o)''
-    this.diversificationPath = path.join(__dirname, \'diversification-syst\'em\')\'\'
-    this.variationsPath = path.join(__dirname, \'content-variations)\'\'
-    this.evolutionPath = path.join(__dirname, evolution-trac\'k\'s)\'\'
-    this.antiRepetitionPath = path.join(__dirname, \'anti-repetition-engi\'ne\')\'\'
-      \'
-        name: Conten\'t\'
-        description: "
-        frequency: "
-        priority: "
-        variations: "[\'blog-pos\'ts\'"
-        description: "
-        priority: "
-        variations: "[\'new-components"
-        description: "
-        priority: "
-        variations: "[\'new-categories"
-        description: "
-        priority: "
-        variations: "[\'ai-integrations"
-        description: "
-        priority: "
-        variations: "[\'ui-improvements"
-      topics: "[\'technolo\'gy\'"
-      formats: "[\'how-to-guides"
-      tones: "[\'professional"
-      lengths: "[\'short"
-      categories: "[\'softwa\'re\'"
-      approaches: "[\'benefit-focus\'ed\'"
-      styles: "[profession\'a\'l"
-      serviceTypes: "[web-development"
-      presentationStyles: "[detail'e'd"
-      targetAudiences: "['startups"
-      currentPhase: "
-      nextPhases: "[automatio\'n"
-      priority: "
-      dependencies: "[\'user-feedback"
-      nextPhases: "[\')personalizati\'on\'"
-      priority: "
-      dependencies: "[user-behavio\'r"
-      currentPhase: "
-      nextPhases: "[\'personalization"
-      priority: "
-      dependencies: "[\'user-analyti\'cs\'"
-      \'blog-posts: "[A'I' Automation"
-      \'product-descriptions: "[Busines's' Process Automation"
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const result = require($2)2))t'o)''''
+    this.diversificationPath = path.join(__dirname, \'diversification-syst\'em\')\'\'''
+    this.variationsPath = path.join(__dirname, \'content-variations)\'\'''
+    this.evolutionPath = path.join(__dirname, evolution-trac\'k\'s)\'\'''
+    this.antiRepetitionPath = path.join(__dirname, \'anti-repetition-engi\'ne\')\'\'''
+      \'''
+        name: Conten\'t\'''
+        description: """
+        frequency: """
+        priority: """
+        variations: "[\'blog-pos\'ts\'"""
+        description: """
+        priority: """
+        variations: "[\'new-components"""
+        description: """
+        priority: """
+        variations: "[\'new-categories"""
+        description: """
+        priority: """
+        variations: "[\'ai-integrations"""
+        description: """
+        priority: """
+        variations: "[\'ui-improvements"""
+      topics: "[\'technolo\'gy\'"""
+      formats: "[\'how-to-guides"""
+      tones: "[\'professional"""
+      lengths: "[\'short"""
+      categories: "[\'softwa\'re\'"""
+      approaches: "[\'benefit-focus\'ed\'"""
+      styles: "[profession\'a\'l"""
+      serviceTypes: "[web-development"""
+      presentationStyles: "[detail'e'd"""
+      targetAudiences: "['startups"""
+      currentPhase: """
+      nextPhases: "[automatio\'n"""
+      priority: """
+      dependencies: "[\'user-feedback"""
+      nextPhases: "[\')personalizati\'on\'"""
+      priority: """
+      dependencies: "[user-behavio\'r"""
+      currentPhase: """
+      nextPhases: "[\'personalization"""
+      priority: """
+      dependencies: "[\'user-analyti\'cs\'"""
+      \'blog-posts: "[A'I' Automation"""
+      \'product-descriptions: "[Busines's' Process Automation"""

@@ -59,92 +59,92 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-const { promisify } = require(('uti)l)''
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''
-    this.projectRoot = path.resolve(__dirname, '../..')''
-    this.reportsDir = path.join(__dirname, ../reports/ci-cd-automation-reports')''
-    this.logsDir = path.join(__dirname, '../logs/ci-cd-automation-logs)''
-      path.join(this.reportsDir, 'pipeline-repor'ts'),''
-      path.join(this.reportsDir, 'deployment-reports),''
-      path.join(this.reportsDir, build-repor't's),''
-      path.join(this.reportsDir, 'analysis-repor'ts'),''
-      path.join(this.reportsDir, 'optimization-reports),''
-      path.join(this.reportsDir, automation-repor't's),''
-      path.join(this.reportsDir, 'analytics-repor'ts')''
-      console.log('Performing comprehensive CI/CD analysis...)''
-      console.error(')C'I/CD analysis failed: "
-        type: "
-        status: "
-        type: "
-        value: ""
-        status: "
-        type: "
-        status: "
-        value: "Unabl"
-        type: "
-        status: "
-        type: "
-        value: ""
-        status: "
-        type: "
-        status: "
-        type: "
-        value: "Unabl"
-        status: "
-        type: "
-        status: "
-        type: "
-        value: ""
-        status: "
-        type: "
-        status: "
-        type: "
-        value: "Unabl"
-        status: "
-        type: "
-        status: "
-        value: ""
-        type: "
-        status: "
-        type: "
-        value: "Unabl"
-        status: "
-        type: "
-        status: "
-        type: "
-        value: ""
-        type: "
-        status: "
-        type: "
-        value: ""
-        status: "
-        type: "
-        priority: "
-        message: "
-        suggestion: "
-        priority: "
-        message: "
-        type: "
-        priority: "
-        message: "
-        suggestion: "
-      status: "
-        severity: "
-        message: "
-        type: "
-        severity: "
-        message: "
-          status: "
-        status: "
-        status: "
-        status: "
-        status: "
-        status: "
-        status: "
-        status: "
-        status: "
-          priority: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require(('chil')')d'_process)''''
+const { promisify } = require(('uti)l)''''
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''''
+    this.projectRoot = path.resolve(__dirname, '../..')''''
+    this.reportsDir = path.join(__dirname, ../reports/ci-cd-automation-reports')''''
+    this.logsDir = path.join(__dirname, '../logs/ci-cd-automation-logs)''''
+      path.join(this.reportsDir, 'pipeline-repor'ts'),''''
+      path.join(this.reportsDir, 'deployment-reports),''''
+      path.join(this.reportsDir, build-repor't's),''''
+      path.join(this.reportsDir, 'analysis-repor'ts'),''''
+      path.join(this.reportsDir, 'optimization-reports),''''
+      path.join(this.reportsDir, automation-repor't's),''''
+      path.join(this.reportsDir, 'analytics-repor'ts')''''
+      console.log('Performing comprehensive CI/CD analysis...)''''
+      console.error(')C'I/CD analysis failed: """
+        type: """
+        status: """
+        type: """
+        value: """"
+        status: """
+        type: """
+        status: """
+        value: "Unabl"""
+        type: """
+        status: """
+        type: """
+        value: """"
+        status: """
+        type: """
+        status: """
+        type: """
+        value: "Unabl"""
+        status: """
+        type: """
+        status: """
+        type: """
+        value: """"
+        status: """
+        type: """
+        status: """
+        type: """
+        value: "Unabl"""
+        status: """
+        type: """
+        status: """
+        value: """"
+        type: """
+        status: """
+        type: """
+        value: "Unabl"""
+        status: """
+        type: """
+        status: """
+        type: """
+        value: """"
+        type: """
+        status: """
+        type: """
+        value: """"
+        status: """
+        type: """
+        priority: """
+        message: """
+        suggestion: """
+        priority: """
+        message: """
+        type: """
+        priority: """
+        message: """
+        suggestion: """
+      status: """
+        severity: """
+        message: """
+        type: """
+        severity: """
+        message: """
+          status: """
+        status: """
+        status: """
+        status: """
+        status: """
+        status: """
+        status: """
+        status: """
+        status: """
+          priority: """

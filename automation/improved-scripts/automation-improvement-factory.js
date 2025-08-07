@@ -59,43 +59,43 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-  fs = require('path'
-  console.error('Failed to require(fs: '
-}''
-  path = require('path'
-  console.error('Failed to require(path: '
-}''
-const { exec } = require(('child_process)')''
-  util = require('path'
-  console.error('Failed to require(util: '
-}''
-  log(message, level = 'info'
-        this.projectRoot = path.resolve(__dirname, '..')''
-        const dirs = [path.join(__dirname, 'improvement-factory'),''
-            path.join(__dirname, 'improvement-factory/fixes'),''
-            path.join(__dirname, 'improvement-factory/enhancements'),''
-            path.join(__dirname, 'improvement-factory/analytics'),''
-            path.join(__dirname, 'improvement-factory/reports'),''
-            path.join(__dirname, 'improvement-factory/learning'),''
-            path.join(__dirname, 'improvement-factory/backups')''
-            name: 'Intelligent Syntax Analyzer',''
-                quoteIssues: /['"`][^\'\"
-                if (content.includes(\"\'\") && content.includes('\"
-                        !match.includes(\"'\") && !match.includes(\'\"
-                fixedContent = fixedContent.replace(/['\"``]([^\'\"
-                    if (inner.includes(\"\'\") && !inner.includes('\"
-                    } else if (inner.includes(\'\"') && !inner.includes(\"
-                    if (!match.includes(\"'\") && !match.includes(\'\"
-                        return match.replace(/require(\(/, \"require(\')\").replace(/\)$/, \"
-                    if (!match.includes(\"'\") && !match.includes(\'\"
-                        return match.replace(/require(\(/, \"require(\')\").replace(/\)$/, \"
-                        \'  }\n\n  validateInput(input) {\n    // Input validation logic\n    return input && typeof input === \"string\"`
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+  fs = require('path''')
+  console.error('Failed to require(fs: ''')
+}''''
+  path = require('path''')
+  console.error('Failed to require(path: ''')
+}''''
+const { exec } = require(('child_process)')''''
+  util = require('path''')
+  console.error('Failed to require(util: ''')
+}''''
+  log(message, level = 'info''')
+        this.projectRoot = path.resolve(__dirname, '..')''''
+        const dirs = [path.join(__dirname, 'improvement-factory'),''''
+            path.join(__dirname, 'improvement-factory/fixes'),''''
+            path.join(__dirname, 'improvement-factory/enhancements'),''''
+            path.join(__dirname, 'improvement-factory/analytics'),''''
+            path.join(__dirname, 'improvement-factory/reports'),''''
+            path.join(__dirname, 'improvement-factory/learning'),''''
+            path.join(__dirname, 'improvement-factory/backups')''''
+            name: 'Intelligent Syntax Analyzer',''''
+                quoteIssues: /['"`][^\'\"""
+                if (content.includes(\"\'\") && content.includes('\""")
+                        !match.includes(\"'\") && !match.includes(\'\""")
+                fixedContent = fixedContent.replace(/['\"``]([^\'\""")
+                    if (inner.includes(\"\'\") && !inner.includes('\""")
+                    } else if (inner.includes(\'\"') && !inner.includes(\""")
+                    if (!match.includes(\"'\") && !match.includes(\'\""")
+                        return match.replace(/require(\(/, \"require(\')\").replace(/\)$/, \"""
+                    if (!match.includes(\"'\") && !match.includes(\'\""")
+                        return match.replace(/require(\(/, \"require(\')\").replace(/\)$/, \"""
+                        \'  }\n\n  validateInput(input) {\n    // Input validation logic\n    return input && typeof input === \"string\"`""

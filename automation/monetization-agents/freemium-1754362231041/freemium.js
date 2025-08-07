@@ -59,17 +59,17 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const result = require('fs'
-const path = require('path'
-        this.status = acti')v'e;''
-        this.logFile = path.join(__dirname, 'agen't.log')''
-            this.log('Starting monetization agent execution)''
-            this.log(')Erro'r in monetization agent: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const result = require('fs''')
+const path = require('path''')
+        this.status = acti')v'e;''''
+        this.logFile = path.join(__dirname, 'agen't.log')''''
+            this.log('Starting monetization agent execution)''''
+            this.log(')Erro'r in monetization agent: """

@@ -18,8 +18,8 @@ const memoryOptimization = {
   }
 }
 
-const fs = require('path'
-const path = require('path'
-        this.name = 'predictive-analytics'
-        this.description = 'Predictive analytics for business intelligence'
-            model: 'advanced'
+const fs = require('path''')
+const path = require('path''')
+        this.name = 'predictive-analytics'''
+        this.description = 'Predictive analytics for business intelligence'''
+            model: 'advanced'''

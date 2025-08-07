@@ -59,56 +59,56 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { spawn } = require(('chil')')d'_process)''
-const cron = require('path';''
-const result = require($2)2))./continuous-agent-creator)''
-    const filePath = path.join(__dirname, \'cron-confi\'g.json\')\'\'
-      const jsonData = JSON.parse(fs.readFileSync(configPath, \'utf\'8\'))\'\'
-    console.log(\'[CronAutomationSystem] Initialized cron jobs)\'\'
-      timezone: "
-      type: "
-      schedule: "
-      type: "
-      type: "
-      schedule: "
-      timezone: "
-      type: "
-      schedule: "
-      type: "
-      type: "
-      schedule: "
-      timezone: "
-      type: "
-      schedule: "
-      type: "
-      type: "
-      schedule: "
-      timezone: "
-      type: "
-      schedule: "
-      type: "
-        type: "
-        subtype: "
-          keywords: "[\'ai\'"
-        type: "
-        subtype: "
-          timeframe: "
-        type: "
-        subtype: "
-          scope: "
-          impact: "
-        subtype: "
-          method: "
-      console.error([CronAutomationSystem] Error during system cleanup: "
-      console.error([CronAutomationSystem] Error generating system report: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { spawn } = require(('chil')')d'_process)''''
+const cron = require('path';'''')
+const result = require($2)2))./continuous-agent-creator)''''
+    const filePath = path.join(__dirname, \'cron-confi\'g.json\')\'\'''
+      const jsonData = JSON.parse(fs.readFileSync(configPath, \'utf\'8\'))\'\'''
+    console.log(\'[CronAutomationSystem] Initialized cron jobs)\'\'''
+      timezone: """
+      type: """
+      schedule: """
+      type: """
+      type: """
+      schedule: """
+      timezone: """
+      type: """
+      schedule: """
+      type: """
+      type: """
+      schedule: """
+      timezone: """
+      type: """
+      schedule: """
+      type: """
+      type: """
+      schedule: """
+      timezone: """
+      type: """
+      schedule: """
+      type: """
+        type: """
+        subtype: """
+          keywords: "[\'ai\'"""
+        type: """
+        subtype: """
+          timeframe: """
+        type: """
+        subtype: """
+          scope: """
+          impact: """
+        subtype: """
+          method: """
+      console.error([CronAutomationSystem] Error during system cleanup: """)
+      console.error([CronAutomationSystem] Error generating system report: """)

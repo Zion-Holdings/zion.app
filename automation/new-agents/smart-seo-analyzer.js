@@ -57,17 +57,17 @@ const memoryOptimization = {
     }
   }
 }
-const fs = require('path';''
-const path = require('path';''
-        this.analyzerId = 'smart-seo-analyzer'''
-        if (keyword.includes('-') || keyword.includes(' ')) {''
-                const keyword = words.join(' ').toLowerCase()''
-        const industryKeywords = ['digital marketing', 'seo optimization', 'content strategy',''
-            'social media', 'email marketing', 'analytics', 'conversion',''
-            'user experience', 'mobile optimization', 'local seo'''
-                    opportunity: "
-                    suggestedUsage: "
-            score: "
-            recommendations: "loadTime > 200 ? ['Optimize images'"
-            status: "
-            issues: "mobileScore 
+const fs = require('path';'''')
+const path = require('path';'''')
+        this.analyzerId = 'smart-seo-analyzer'''''
+        if (keyword.includes('-') || keyword.includes(' ')) {''''
+                const keyword = words.join(' ').toLowerCase()''''
+        const industryKeywords = ['digital marketing', 'seo optimization', 'content strategy',''''
+            'social media', 'email marketing', 'analytics', 'conversion',''''
+            'user experience', 'mobile optimization', 'local seo'''''
+                    opportunity: """
+                    suggestedUsage: """
+            score: """
+            recommendations: "loadTime > 200 ? ['Optimize images'"""
+            status: """
+            issues: "mobileScore ""

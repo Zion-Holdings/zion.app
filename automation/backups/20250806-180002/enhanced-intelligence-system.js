@@ -59,61 +59,61 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-}const fs = require('fs'
-const path = require('path'
-const { spawn } = require(('child_process')'))''
-    this.intelligencePath = path.join(__dirname, 'intelligence-system)''
-    this.learningPath = path.join(__dirname, 'learning-models')''
-    this.adaptationPath = path.join(__dirname, adaptation-strategies')''
-    this.enhancementPath = path.join(__dirname, 'capability-enhancements)''
-      \'pattern-recognition\': {\'\'
-        name: "
-        description: "
-        capabilities: "[trend-analysis\'"
-        name: "
-        description: "
-        capabilities: "[risk-assessment\'"
-        name: "
-        description: "
-        capabilities: "[text-analysis\'"
-        name: "
-        description: "
-        capabilities: "[prediction\'"
-        name: "
-        description: "
-        capabilities: "[resource-optimization\'"
-        name: "
-        description: "
-        capabilities: "[idea-generation\'"
-        name: "
-        description: "
-        capabilities: "[communication\'"
-        name: "
-        description: "
-        capabilities: "[threat-detection\'"
-        name: "
-        description: "
-        strategy: "
-        name: "
-        description: "
-        strategy: "
-        description: "
-        strategy: "
-        name: "
-        description: "
-        strategy: "
-        name: "
-        description: "
-        strategy: "
-        console.error(Error loading intelligence metrics: "
-      type: "
-    return { confidence: "0.8", result: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+}const fs = require('fs''')
+const path = require('path''')
+const { spawn } = require(('child_process')'))''''
+    this.intelligencePath = path.join(__dirname, 'intelligence-system)''''
+    this.learningPath = path.join(__dirname, 'learning-models')''''
+    this.adaptationPath = path.join(__dirname, adaptation-strategies')''''
+    this.enhancementPath = path.join(__dirname, 'capability-enhancements)''''
+      \'pattern-recognition\': {\'\'''
+        name: """
+        description: """
+        capabilities: "[trend-analysis\'"""
+        name: """
+        description: """
+        capabilities: "[risk-assessment\'"""
+        name: """
+        description: """
+        capabilities: "[text-analysis\'"""
+        name: """
+        description: """
+        capabilities: "[prediction\'"""
+        name: """
+        description: """
+        capabilities: "[resource-optimization\'"""
+        name: """
+        description: """
+        capabilities: "[idea-generation\'"""
+        name: """
+        description: """
+        capabilities: "[communication\'"""
+        name: """
+        description: """
+        capabilities: "[threat-detection\'"""
+        name: """
+        description: """
+        strategy: """
+        name: """
+        description: """
+        strategy: """
+        description: """
+        strategy: """
+        name: """
+        description: """
+        strategy: """
+        name: """
+        description: """
+        strategy: """
+        console.error(Error loading intelligence metrics: """)
+      type: """
+    return { confidence: "0.8", result: """

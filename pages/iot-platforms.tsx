@@ -1,19 +1,19 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
+import type { NextPage } from 'next';;;;''
+import Head from 'next/head';;;;''
 
 const IotPlatforms: NextPage = () => {
-  return (
-    <div>
-      <Head>
+  return ()
+    <div>;
+      <Head>;
         <title>IotPlatforms - Zion Tech Solutions</title>
-        <meta name="description" content="IotPlatforms page" />
-      </Head>
+        <meta name="description" content="IotPlatforms page" />""
+      </Head>;
       
-      <main>
+      <main>;
         <h1>IotPlatforms</h1>
         {/* TODO: Add page content */}
-      </main>
-    </div>
+      </main>;
+    </div>;
   );
 };
 

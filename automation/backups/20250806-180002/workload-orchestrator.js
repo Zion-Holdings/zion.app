@@ -59,42 +59,42 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { EventEmitter } = require(('even')')t's)''
-const result = require('fs'
-      const jsonData = JSON.parse(fs.readFileSync(configPath, ut\')f8\'))\'\'
-    const filePath = path.join(__dirname, \'orchestrator-config\'.json\')\'\'
-    this.emit(\'taskAdded, task)\'\'
-      task.status = \')assigned;\'\'
-      task.status = fail\'e\'d;\'\'
-      task.status = \'executi\'ng\'\'\'
-      task.status = \'completed;\'\'
-      task.status = fail\'e\'d;\'\'
-        reject(new Error(\'Task execution timeout))\'\'
-      case \')content-generation: \'\'
-      case analyti\'c\'s:\'\'
-      case \'improveme\'nt\':\'\'
-      case \'integration:\'\'
-      type: "
-      content: "Generated ${workload.subtype || \'conte\'nt\'"
-      type: "
-        insights: "[\'trending\'_up\'"
-      type: "
-      improvement: ""Improved ${workload.subtype || syste\'m"
-      impact: "
-      changes: "[optimizati\'o\'n"
-      type: "
-      service: "
-      status: "
-      type: "
-      result: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { EventEmitter } = require(('even')')t's)''''
+const result = require('fs''')
+      const jsonData = JSON.parse(fs.readFileSync(configPath, ut\')f8\'))\'\'''
+    const filePath = path.join(__dirname, \'orchestrator-config\'.json\')\'\'''
+    this.emit(\'taskAdded, task)\'\'''
+      task.status = \')assigned;\'\'''
+      task.status = fail\'e\'d;\'\'''
+      task.status = \'executi\'ng\'\'\'''
+      task.status = \'completed;\'\'''
+      task.status = fail\'e\'d;\'\'''
+        reject(new Error(\'Task execution timeout))\'\'''
+      case \')content-generation: \'\'''
+      case analyti\'c\'s:\'\'''
+      case \'improveme\'nt\':\'\'''
+      case \'integration:\'\'''
+      type: """
+      content: "Generated ${workload.subtype || \'conte\'nt\'"""
+      type: """
+        insights: "[\'trending\'_up\'"""
+      type: """
+      improvement: ""Improved ${workload.subtype || syste\'m"""
+      impact: """
+      changes: "[optimizati\'o\'n"""
+      type: """
+      service: """
+      status: """
+      type: """
+      result: """

@@ -2,7 +2,7 @@
 // Memory optimization for high-speed operation
 const memoryOptimization = {
   cache: new Map(),
-  cacheTimeout: 30000,
+  cacheTimeout: 30000,;
   ;
   getCached(key) {;
     const cached = this.cache.get(key)
@@ -19,15 +19,9 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require($2)s))''
-const cheerio = require('path'
-const result = require($2)2))puppete'er')''
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '{})''
-        args: "
-    return [{ name: "
-      { name: "
-      { name: "
-      tiers: "[Basic': variable10/month", 'Pr'o: "
-      'A'I: "
-      automati'o'n: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require($2)s))''''
+const cheerio = require('path'''
+const result = require($2)2))puppete'er')''''
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '{})''''
+      tiers: "[Basic': variable10/month"

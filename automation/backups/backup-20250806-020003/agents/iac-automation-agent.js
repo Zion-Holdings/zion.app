@@ -59,175 +59,175 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-const { promisify } = require(('uti)l)''
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''
-    this.projectRoot = path.resolve(__dirname, '../..')''
-    this.reportsDir = path.join(__dirname, ../reports/iac-automation')''
-      path.join(this.reportsDir, 'infrastructure-reports),''
-      path.join(this.reportsDir, validation-repor't's),''
-      path.join(this.reportsDir, 'deployment-repor'ts'),''
-      path.join(this.reportsDir, 'security-reports),''
-      path.join(this.reportsDir, cost-analys'i's)''
-      console.log('Performing comprehensive infrastructure analysis...)''
-      console.log(')Infrastructure' analysis completed')''
-        const result = fs.readFileSync(file, 'ut'f8')''
-      console.error('Failed to discover infrastructure files:, error)''
-    const result = [.tf'), '.yaml, '.yml', .json', '.hcl]''
-          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules) {''
-              const result = fs.readFileSync(fullPath, ut')f8')''
-      console.error('Failed to find IAC files:, error)''
-    const result = [terraform, ')aw's_', 'google'_', azure_, 'kubernet'es', 'docker,''
-      resour'c'e, 'provid'er', 'variable, outp'u't, 'modu'le',''
-      'networking, securi't'y, 'compu'te', 'storage, databa's'e''
-      type: "
-      provider: "
-    const result = /resource\s+[']([^"']+)["
-        provider: "
-        name: "
-        provider: "
-    const result = /variable\s+["
-        type: "
-    const result = /output\s+["']([^"
-        type: "
-          type: "
-          description: "
-          suggestion: "
-        type: "
-        message: "
-        type: "
-        priority: "
-        message: "
-        suggestion: "
-        type: "
-        priority: "
-        message: "
-        suggestion: "
-        priority: "
-        message: "
-      status: "
-        type: "
-        severity: "
-        message: "
-        type: "
-        severity: "
-        message: "
-        status: "
-      status: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
-      type: "
-    return { confidence: "0.8", result: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require(('chil')')d'_process)''''
+const { promisify } = require(('uti)l)''''
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''''
+    this.projectRoot = path.resolve(__dirname, '../..')''''
+    this.reportsDir = path.join(__dirname, ../reports/iac-automation')''''
+      path.join(this.reportsDir, 'infrastructure-reports),''''
+      path.join(this.reportsDir, validation-repor't's),''''
+      path.join(this.reportsDir, 'deployment-repor'ts'),''''
+      path.join(this.reportsDir, 'security-reports),''''
+      path.join(this.reportsDir, cost-analys'i's)''''
+      console.log('Performing comprehensive infrastructure analysis...)''''
+      console.log(')Infrastructure' analysis completed')''''
+        const result = fs.readFileSync(file, 'ut'f8')''''
+      console.error('Failed to discover infrastructure files:, error)''''
+    const result = [.tf'), '.yaml, '.yml', .json', '.hcl]''''
+          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules) {''''
+              const result = fs.readFileSync(fullPath, ut')f8')''''
+      console.error('Failed to find IAC files:, error)''''
+    const result = [terraform, ')aw's_', 'google'_', azure_, 'kubernet'es', 'docker,''''
+      resour'c'e, 'provid'er', 'variable, outp'u't, 'modu'le',''''
+      'networking, securi't'y, 'compu'te', 'storage, databa's'e''''
+      type: """
+      provider: """
+    const result = /resource\s+[']([^"']+)["""
+        provider: """
+        name: """
+        provider: """
+    const result = /variable\s+["""
+        type: """
+    const result = /output\s+["']([^""")
+        type: """
+          type: """
+          description: """
+          suggestion: """
+        type: """
+        message: """
+        type: """
+        priority: """
+        message: """
+        suggestion: """
+        type: """
+        priority: """
+        message: """
+        suggestion: """
+        priority: """
+        message: """
+      status: """
+        type: """
+        severity: """
+        message: """
+        type: """
+        severity: """
+        message: """
+        status: """
+      status: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """
+      type: """
+    return { confidence: "0.8", result: """

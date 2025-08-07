@@ -59,25 +59,25 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const fs = require('path'
-const path = require('path'
-const { execSync } = require(('child_process)'
-        this.automationDir = path.join(this.projectRoot, 'automation'
-        this.logsDir = path.join(this.automationDir, 'logs'
-        this.reportsDir = path.join(this.automationDir, 'reports'
-        this.instructionsDir = path.join(this.automationDir, 'google-doc-instructions'
-        this.log('Starting Google Doc Instructions Implementation Automation'
-            this.log('Google Doc Instructions Implementation completed successfully'
-        this.log('Analyzing current project state...'
-        const analysisFile = path.join(this.reportsDir, 'project-analysis.json'
-        this.log('Project analysis completed'
-            pages: await this.countFiles('pages', ['.tsx', '.ts'
-            components: await this.countFiles('components', ['.tsx', '.ts'
-            utils: await this.countFiles('utils', ['.ts', '.js'
-            automation: await this.countFiles('automation', ['.js', '.json'
-                if (typeof file === 'string'
-            const result = execSync('find . -name "*.tsx" -o -name "*.ts" -o -name "*.js"
-            const result = require($2)2)).execSync(\'find . -name "*.tsx" -o -name "*.ts" -o -name "*.js"
-            const result = execSync(\'find . -name "*.tsx" -o -name "*.ts" -o -name "*.js"
-            const result = execSync(\'find . -name "*.tsx" -o -name "*.ts" -o -name "*.js"
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const fs = require('path''')
+const path = require('path''')
+const { execSync } = require(('child_process)'''
+        this.automationDir = path.join(this.projectRoot, 'automation''')
+        this.logsDir = path.join(this.automationDir, 'logs''')
+        this.reportsDir = path.join(this.automationDir, 'reports''')
+        this.instructionsDir = path.join(this.automationDir, 'google-doc-instructions''')
+        this.log('Starting Google Doc Instructions Implementation Automation''')
+            this.log('Google Doc Instructions Implementation completed successfully''')
+        this.log('Analyzing current project state...''')
+        const analysisFile = path.join(this.reportsDir, 'project-analysis.json''')
+        this.log('Project analysis completed''')
+            pages: await this.countFiles('pages', ['.tsx', '.ts''')
+            components: await this.countFiles('components', ['.tsx', '.ts''')
+            utils: await this.countFiles('utils', ['.ts', '.js''')
+            automation: await this.countFiles('automation', ['.js', '.json''')
+                if (typeof file === 'string''')
+            const result = execSync('find . -name "*.tsx" -o -name "*.ts" -o -name "*.js""")
+            const result = require($2)2)).execSync(\'find . -name "*.tsx" -o -name "*.ts" -o -name "*.js""")
+            const result = execSync(\'find . -name "*.tsx" -o -name "*.ts" -o -name "*.js""")
+            const result = execSync(\'find . -name "*.tsx" -o -name "*.ts" -o -name "*.js""")

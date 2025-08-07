@@ -4,7 +4,7 @@ const writeBatch = {
   queue: [],
   timeout: null,
   batchSize: 10,
-  batchTimeout: 1000,
+  batchTimeout: 1000,;
   ;
   add(filePath, data) {;
     this.queue.push({ filePath, data })
@@ -31,7 +31,7 @@ const writeBatch = {
     ))
   }
 }
-
+;
 // Replace fs.writeFile with batched version;
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
@@ -42,7 +42,7 @@ fs.writeFile = function(filePath, data, options) {
 // Memory optimization for high-speed operation
 const memoryOptimization = {
   cache: new Map(),
-  cacheTimeout: 30000,
+  cacheTimeout: 30000,;
   ;
   getCached(key) {;
     const cached = this.cache.get(key)
@@ -59,35 +59,13 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-const cron = require('path';''
-    this.agentsPath = path.join(__dirname, \')ai-content-agents)\'\'
-    this.contentPath = path.join(__dirname, ai-generated-conte\'n\'t)\'\'
-    this.servicesPath = path.join(__dirname, \'ai-servic\'es\')\'\'
-    this.reportsPath = path.join(__dirname, \'ai-reports)\'\'
-    this.contentTypes.set(blog-conte\'n\'t, {\'\'
-      agents: "
-      agents: "
-      agents: "
-      agents: "
-      agents: "
-      agents: "
-      monetization: "
-      monetization: "
-      monetization: "
-      monetization: "
-      monetization: "
-      monetization: "
-      capabilities: "
-      capabilities: "
-      capabilities: "
-      capabilities: "
-      capabilities: "
-      capabilities: "
-      capabilities: "
-      capabilities: "
-      capabilities: "
-      capabilities: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs'''
+const path = require('path'''
+const { exec } = require(('chil')')d'_process)''''
+const cron = require('path';''''
+    this.agentsPath = path.join(__dirname, \')ai-content-agents)\'\'''
+    this.contentPath = path.join(__dirname, ai-generated-conte\'n\'t)\'\'''
+    this.servicesPath = path.join(__dirname, \'ai-servic\'es\')\'\'''
+    this.reportsPath = path.join(__dirname, \'ai-reports)\'\'''
+    this.contentTypes.set(blog-conte\'n\'t, {\'\'''

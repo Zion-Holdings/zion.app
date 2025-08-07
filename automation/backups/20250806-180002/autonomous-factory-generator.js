@@ -59,67 +59,67 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { spawn, execSync } = require(('chil')')d'_process)''
-const { v4: uuidv4 } = require(('uui)d)''
-    this.templates.set(\')content-factory, {\'\'
-      name: "
-      description: "
-      capabilities: "[\'ai-writing"
-      services: "[\'blog-posts"
-      dependencies: "[\'openai"
-      description: "
-      capabilities: "[\'campaign-management"
-      services: "[\'email-campaigns"
-      dependencies: "[\'nodemailer"
-      description: "
-      capabilities: "[\'code-generation"
-      services: "[\'component-generation"
-      dependencies: "[\'jest"
-      description: "
-      capabilities: "[\'data-collection"
-      services: "[\'performance-analytics"
-      dependencies: "[\'google-analytics"
-      description: "
-      capabilities: "[\'keyword-research"
-      services: "[\'keyword-analysis"
-      dependencies: "[\'google-search-console"
-      status: "
-      version: "
-        test: "
-        build: "
-        webpack: "
-        stdio: "[\'pipe"
-        type: "
-        action: "
-        type: "
-        action: "
-        type: "
-        action: "
-        description: "
-  console.error(\')Uncaught\' Exception: "
-      status: "
-      id: "
-    console.log(\')🏥 Health check: "
-      id: "
-      status: "
-      id: "
-      status: "
-      id: "
-      id: "
-      status: "
-        execSync(\')gi\'t add .\', { stdio: "
-        execSync("git commit -m Auto-generated factory improvements #${this.generationCount}", { stdio: "
-        execSync(\'git push, { stdio: "
-  generator.generateFactory(\')marketing-facto\'ry\', { name: "
-  generator.generateFactory(development-factory, { name: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { spawn, execSync } = require(('chil')')d'_process)''''
+const { v4: uuidv4 } = require(('uui)d)''''
+    this.templates.set(\')content-factory, {\'\'''
+      name: """
+      description: """
+      capabilities: "[\'ai-writing"""
+      services: "[\'blog-posts"""
+      dependencies: "[\'openai"""
+      description: """
+      capabilities: "[\'campaign-management"""
+      services: "[\'email-campaigns"""
+      dependencies: "[\'nodemailer"""
+      description: """
+      capabilities: "[\'code-generation"""
+      services: "[\'component-generation"""
+      dependencies: "[\'jest"""
+      description: """
+      capabilities: "[\'data-collection"""
+      services: "[\'performance-analytics"""
+      dependencies: "[\'google-analytics"""
+      description: """
+      capabilities: "[\'keyword-research"""
+      services: "[\'keyword-analysis"""
+      dependencies: "[\'google-search-console"""
+      status: """
+      version: """
+        test: """
+        build: """
+        webpack: """
+        stdio: "[\'pipe"""
+        type: """
+        action: """
+        type: """
+        action: """
+        type: """
+        action: """
+        description: """
+  console.error(\')Uncaught\' Exception: """
+      status: """
+      id: """
+    console.log(\')🏥 Health check: """
+      id: """
+      status: """
+      id: """
+      status: """
+      id: """
+      id: """
+      status: """
+        execSync(\')gi\'t add .\', { stdio: """
+        execSync("git commit -m Auto-generated factory improvements #${this.generationCount}", { stdio: """)
+        execSync(\'git push, { stdio: """)
+  generator.generateFactory(\')marketing-facto\'ry\', { name: """
+  generator.generateFactory(development-factory, { name: """)

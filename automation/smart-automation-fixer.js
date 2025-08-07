@@ -59,22 +59,22 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const fs = require('path'
-const path = require('path'
-  constructor(rootDir = path.resolve(__dirname, '..'
-    console.log('🚀 SmartAutomationFixer started'
-      if (entry.isDirectory() && entry.name !== 'node_modules' && !entry.name.startsWith('.'
-      } else if (entry.isFile() && res.endsWith('.js'
-    const content = fs.readFileSync(filePath, 'utf8'
-    updated = updated.replace(/;+/g, ';'
-    updated = updated.replace(/require\(([^'
-      return `require(('${moduleName})'
-      fs.writeFileSync(filePath, updated, 'utf8'`
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const fs = require('path''')
+const path = require('path''')
+  constructor(rootDir = path.resolve(__dirname, '..''')
+    console.log('🚀 SmartAutomationFixer started''')
+      if (entry.isDirectory() && entry.name !== 'node_modules' && !entry.name.startsWith('.''')
+      } else if (entry.isFile() && res.endsWith('.js''')
+    const content = fs.readFileSync(filePath, 'utf8''')
+    updated = updated.replace(/;+/g, ';''')
+    updated = updated.replace(/require\(([^''')
+      return `require(('${moduleName})'''
+      fs.writeFileSync(filePath, updated, 'utf8'`'')

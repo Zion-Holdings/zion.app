@@ -8,7 +8,6 @@
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
-const chokidar = require('chokidar');
 
 class CodeQualityAutomationSystem {
     constructor() {
@@ -60,7 +59,7 @@ class CodeQualityAutomationSystem {
     async installDependencies() {
         try {
             this.log('info', 'Installing code quality dependencies...');
-            execSync('npm install --save-dev markdownlint-cli eslint prettier chokidar', { stdio: 'inherit' });
+            execSync('npm install --save-dev markdownlint-cli eslint prettier', { stdio: 'inherit' });
             this.log('info', 'Dependencies installed successfully');
         } catch (error) {
             this.log('error', `Failed to install dependencies: ${error.message}`);
@@ -146,44 +145,6 @@ class CodeQualityAutomationSystem {
         } catch (error) {
             this.log('error', `Error in fix cycle: ${error.message}`);
         }
-    }
-
-    async startWatching() {
-        this.log('info', 'Starting code quality automation system...');
-        
-        // Install dependencies
-        await this.installDependencies();
-        
-        // Initial fix
-        await this.runFixCycle();
-        
-        // Set up file watching
-        const watcher = chokidar.watch(this.config.watchPatterns, {
-            ignored: this.config.ignorePatterns,
-            persistent: true
-        });
-        
-        watcher.on('change', async (filePath) => {
-            this.log('info', `File changed: ${filePath}`);
-            await this.runFixCycle();
-        });
-        
-        // Set up periodic fixes
-        setInterval(async () => {
-            await this.runFixCycle();
-        }, this.config.fixInterval);
-        
-        this.status.isRunning = true;
-        
-        this.log('info', 'Code quality automation system is now running');
-        
-        // Keep the process alive
-        process.on('SIGINT', () => {
-            this.log('info', 'Shutting down code quality automation system...');
-            watcher.close();
-            this.status.isRunning = false;
-            process.exit(0);
-        });
     }
 
     getStatus() {

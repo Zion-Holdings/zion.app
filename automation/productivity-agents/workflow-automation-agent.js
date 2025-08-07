@@ -59,71 +59,71 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-const { promisify } = require(('uti)l)''
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''
-    this.projectRoot = path.resolve(__dirname, '../..')''
-    this.reportsDir = path.join(__dirname, ../reports/workflow-automation-reports')''
-    this.logsDir = path.join(__dirname, '../logs/workflow-automation-logs)''
-      path.join(this.reportsDir, 'workflow-repor'ts'),''
-      path.join(this.reportsDir, 'process-reports),''
-      path.join(this.reportsDir, efficiency-repor't's),''
-      path.join(this.reportsDir, 'monitoring-repor'ts'),''
-      path.join(this.reportsDir, 'optimization-reports)''
-      console.log(Performin'g' comprehensive workflow analysis...)''
-      console.log('Workflow analysis completed)''
-      console.error(')Workflow' analysis failed: "
-      type: "
-      category: "
-      complexity: "
-      type: "
-      provider: "
-    const result = /stage\s*[:=]\s*['"]([^"
-    const result = /job\s*[:=]\s*['"]([^"
-      environment: "
-      type: "
-      category: "
-      efficiency: "
-        type: "
-        priority: "
-        message: "
-        suggestion: "
-        type: "
-        priority: "
-        message: "
-        suggestion: "
-        priority: "
-        message: "
-        type: "
-        priority: "
-        message: "
-        suggestion: "
-        type: "
-        severity: "
-        message: "
-        type: "
-        severity: "
-        message: "
-        type: "
-        severity: "
-        message: "
-        type: "
-        severity: "
-        message: "
-          status: "
-        status: "
-        status: "
-        status: "
-        status: "
-          priority: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require(('chil')')d'_process)''''
+const { promisify } = require(('uti)l)''''
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''''
+    this.projectRoot = path.resolve(__dirname, '../..')''''
+    this.reportsDir = path.join(__dirname, ../reports/workflow-automation-reports')''''
+    this.logsDir = path.join(__dirname, '../logs/workflow-automation-logs)''''
+      path.join(this.reportsDir, 'workflow-repor'ts'),''''
+      path.join(this.reportsDir, 'process-reports),''''
+      path.join(this.reportsDir, efficiency-repor't's),''''
+      path.join(this.reportsDir, 'monitoring-repor'ts'),''''
+      path.join(this.reportsDir, 'optimization-reports)''''
+      console.log(Performin'g' comprehensive workflow analysis...)''''
+      console.log('Workflow analysis completed)''''
+      console.error(')Workflow' analysis failed: """
+      type: """
+      category: """
+      complexity: """
+      type: """
+      provider: """
+    const result = /stage\s*[:=]\s*['"]([^""")
+    const result = /job\s*[:=]\s*['"]([^""")
+      environment: """
+      type: """
+      category: """
+      efficiency: """
+        type: """
+        priority: """
+        message: """
+        suggestion: """
+        type: """
+        priority: """
+        message: """
+        suggestion: """
+        priority: """
+        message: """
+        type: """
+        priority: """
+        message: """
+        suggestion: """
+        type: """
+        severity: """
+        message: """
+        type: """
+        severity: """
+        message: """
+        type: """
+        severity: """
+        message: """
+        type: """
+        severity: """
+        message: """
+          status: """
+        status: """
+        status: """
+        status: """
+        status: """
+          priority: """

@@ -3,4 +3,4 @@ class LinkedInAutomation {
     console.log(`[${level.toUpperCase()}] ${message}``)}
 
   public run(): void {
-    this.log('LinkedIn automation script', 'info'`
+    this.log('LinkedIn automation script', 'info'`'')

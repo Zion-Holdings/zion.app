@@ -4,7 +4,7 @@ const writeBatch = {
   queue: [],
   timeout: null,
   batchSize: 10,
-  batchTimeout: 1000,
+  batchTimeout: 1000,;
   ;
   add(filePath, data) {;
     this.queue.push({ filePath, data })
@@ -31,7 +31,7 @@ const writeBatch = {
     ))
   }
 }
-
+;
 // Replace fs.writeFile with batched version;
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
@@ -42,7 +42,7 @@ fs.writeFile = function(filePath, data, options) {
 // Memory optimization for high-speed operation
 const memoryOptimization = {
   cache: new Map(),
-  cacheTimeout: 30000,
+  cacheTimeout: 30000,;
   ;
   getCached(key) {;
     const cached = this.cache.get(key)
@@ -59,35 +59,35 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-const { promisify } = require(('uti)l)''
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''
-    this.projectRoot = path.resolve(__dirname, '../..')''
-    this.reportsDir = path.join(__dirname, ../reports/ml-optimization')''
-      path.join(this.reportsDir, 'model-performance),''
-      path.join(this.reportsDir, optimization-repor't's),''
-      path.join(this.reportsDir, 'training-repor'ts'),''
-      path.join(this.reportsDir, 'data-quality),''
-      path.join(this.reportsDir, hyperparameter-tuni'n'g)''
-      console.log('Performing comprehensive ML model analysis...)''
-      console.log(')ML' model analysis completed')''
-        const result = fs.readFileSync(file, 'ut'f8')''
-        const result = fs.readFileSync(file, 'utf'8')''
-    const result = ['.py', .js', '.ts, '.ipynb']''
-          if (stat.isDirectory() && !item.startsWith(.') && item !== 'node'_modules') {''
-      console.error('Failed to find ML files:, error)''
-    const result = [')tensorflow, pytor'c'h, 'sklea'rn', 'keras, num'p'y, 'pand'as',''
-      'model'.fit', model.predict, 'mode'l.train', 'model'.evaluate',''
-      neural, 'netwo'rk', 'regression, classificati'o'n, 'clusteri'ng'''
-        console.error(Faile'
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path'''
+      const fs = require('fs'''
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message'''
+          const content = await fs.readFile(data.filePath, 'utf8'''
+    worker.on('message'''
+    worker.on('exit'''
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs'''
+const path = require('path'''
+const { exec } = require(('chil')')d'_process)''''
+const { promisify } = require(('uti)l)''''
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''''
+    this.projectRoot = path.resolve(__dirname, '../..')''''
+    this.reportsDir = path.join(__dirname, ../reports/ml-optimization')''''
+      path.join(this.reportsDir, 'model-performance),''''
+      path.join(this.reportsDir, optimization-repor't's),''''
+      path.join(this.reportsDir, 'training-repor'ts'),''''
+      path.join(this.reportsDir, 'data-quality),''''
+      path.join(this.reportsDir, hyperparameter-tuni'n'g)''''
+      console.log('Performing comprehensive ML model analysis...)''''
+      console.log(')ML' model analysis completed')''''
+        const result = fs.readFileSync(file, 'ut'f8')''''
+        const result = fs.readFileSync(file, 'utf'8')''''
+    const result = ['.py', .js', '.ts, '.ipynb']''''
+          if (stat.isDirectory() && !item.startsWith(.') && item !== 'node'_modules') {''''
+      console.error('Failed to find ML files:, error)''''
+    const result = [')tensorflow, pytor'c'h, 'sklea'rn', 'keras, num'p'y, 'pand'as',''''
+      'model'.fit', model.predict, 'mode'l.train', 'model'.evaluate',''''
+      neural, 'netwo'rk', 'regression, classificati'o'n, 'clusteri'ng'''''
+        console.error(Faile'''

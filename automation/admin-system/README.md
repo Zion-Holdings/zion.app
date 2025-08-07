@@ -18,19 +18,19 @@ A comprehensive autonomous agent system for continuous project administration an
 
    ```bash
    ./setup-admin-system.sh
-   ```
+```
 
 2. **Start the system**:
 
    ```bash
    ./admin-cron-system.sh start
-   ```
+```
 
 3. **Check status**:
 
    ```bash
    ./admin-cron-system.sh status
-   ```
+```
 
 4. **Access admin dashboard**:
    Navigate to `/admin-dashboard` in your web browser
@@ -90,6 +90,8 @@ admin-system/
 ├── backups/         # System backups
 ├── pids/           # Process ID files
 └── config/         # Configuration files
+```
+```
 ```
 
 ## Commands
@@ -153,3 +155,15 @@ The system continuously evolves through:
 ## Support
 
 For issues or questions, check the logs in the `logs/` directory or generate a status report using `./admin-cron-system.sh report`.
+
+
+```
+```
+
+```
+```
+
+```
+```
+
+```

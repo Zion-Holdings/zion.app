@@ -59,31 +59,31 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { spawn, execSync } = require(('chil')')d'_process)''
-const { EventEmitter } = require(('event)s)''
-    const filePath = path.join(__dirname, \')data, orchestrator-confi\'g\'.json)\'\'
-      const jsonData = JSON.parse(fs.readFileSync(configPath, \'ut\'f8\'))\'\'
-    const filePath = path.join(__dirname, \'data, orchestrator-confi\'g\'.json)\'\'
-    this.log(\'Initializing automation orchestrator...)\'\'
-      this.log(\')Automation\' orchestrator initialized successfully\')\'\'
-      \'automatio\'n/variations\',\'\'
-      \'automation\'/data\',\'\'
-      \'automatio\'n/reports\',\'\'
-      \'automation\'/pids\'\'\'
-    const filePath = path.join(this.projectRoot, automation, \'factori\'es\')\'\'
-          const jsonData = JSON.parse(fs.readFileSync(configPath, \'utf\'8\'))\'\'
-    if (factory.status = == \'runni\'ng\') {\'\'
-      const filePath = path.join(this.projectRoot, \'automation, factori\'e\'s, factoryId)\'\'
-      const result = spawn(\'node, [mainFile], {\'\'
-        stdio: "[\')pipe"
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { spawn, execSync } = require(('chil')')d'_process)''''
+const { EventEmitter } = require(('event)s)''''
+    const filePath = path.join(__dirname, \')data, orchestrator-confi\'g\'.json)\'\'''
+      const jsonData = JSON.parse(fs.readFileSync(configPath, \'ut\'f8\'))\'\'''
+    const filePath = path.join(__dirname, \'data, orchestrator-confi\'g\'.json)\'\'''
+    this.log(\'Initializing automation orchestrator...)\'\'''
+      this.log(\')Automation\' orchestrator initialized successfully\')\'\'''
+      \'automatio\'n/variations\',\'\'''
+      \'automation\'/data\',\'\'''
+      \'automatio\'n/reports\',\'\'''
+      \'automation\'/pids\'\'\'''
+    const filePath = path.join(this.projectRoot, automation, \'factori\'es\')\'\'''
+          const jsonData = JSON.parse(fs.readFileSync(configPath, \'utf\'8\'))\'\'''
+    if (factory.status = == \'runni\'ng\') {\'\'''
+      const filePath = path.join(this.projectRoot, \'automation, factori\'e\'s, factoryId)\'\'''
+      const result = spawn(\'node, [mainFile], {\'\''')
+        stdio: "[\')pipe"""

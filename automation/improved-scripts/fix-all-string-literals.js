@@ -59,38 +59,38 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const variable1 = require('path';''
-const variable1 = require('path';''
-  fixed = fixed.replace(/string/g"
-  // Fix patterns like: ""
-  fixed = fixed.replace(/([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)/g"
-  // Fix patterns like: ""
-  fixed = fixed.replace(/([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)(?!')/g"
-  // Fix patterns like: ""
-  fixed = fixed.replace(/([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)(?!')/g"
-  // Fix patterns like: ""
-  fixed = fixed.replace(/([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)(?!')/g"
-  // Fix patterns like: ""
-  fixed = fixed.replace(/([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)(?!')/g"
-  // Fix patterns like: ""
-  fixed = fixed.replace(/([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)(?!')/g"
-  // Fix patterns like: ""
-  fixed = fixed.replace(/([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)(?!')/g"
-  // Fix patterns like: ""
-  fixed = fixed.replace(/([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)(?!')/g"
-  // Fix patterns like: ""
-  fixed = fixed.replace(/'([a-zA-Z-]+)(?!')/g"
-  // Fix patterns like: ""
-  fixed = fixed.replace(/'([a-zA-Z-]+)(?!')/g"
-  fixed = fixed.replace(/\[\]/g"
-  fixed = fixed.replace(/null/g"
-      this.log("Fixed: "${filePath"
-this.log("Fixed ${fixedCount} files."
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const variable1 = require('path';'''')
+const variable1 = require('path';'''')
+  fixed = fixed.replace(/string/g""")
+  // Fix patterns like: """"
+  fixed = fixed.replace(/([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)/g"""
+  // Fix patterns like: """"
+  fixed = fixed.replace(/([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)(?!')/g"""
+  // Fix patterns like: """"
+  fixed = fixed.replace(/([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)(?!')/g"""
+  // Fix patterns like: """"
+  fixed = fixed.replace(/([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)(?!')/g"""
+  // Fix patterns like: """"
+  fixed = fixed.replace(/([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)(?!')/g"""
+  // Fix patterns like: """"
+  fixed = fixed.replace(/([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)(?!')/g"""
+  // Fix patterns like: """"
+  fixed = fixed.replace(/([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)(?!')/g"""
+  // Fix patterns like: """"
+  fixed = fixed.replace(/([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)(?!')/g"""
+  // Fix patterns like: """"
+  fixed = fixed.replace(/'([a-zA-Z-]+)(?!')/g"""
+  // Fix patterns like: """"
+  fixed = fixed.replace(/'([a-zA-Z-]+)(?!')/g"""
+  fixed = fixed.replace(/\[\]/g""")
+  fixed = fixed.replace(/null/g""")
+      this.log("Fixed: "${filePath""")
+this.log("Fixed ${fixedCount} files.""")

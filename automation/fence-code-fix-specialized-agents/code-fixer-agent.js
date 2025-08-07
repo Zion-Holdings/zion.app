@@ -5,8 +5,8 @@
  * Specialized agent for fixing fence code block errors
  */
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs');''
+const path = require('path');''
 
 class CodeFixerAgent {
   constructor(config = {}) {
@@ -27,39 +27,39 @@ class CodeFixerAgent {
     
     this.fixQueue = [];
     this.fixStrategies = {
-      'missing-closing-fence': this.fixMissingClosingFence.bind(this),
-      'malformed-fence': this.fixMalformedFence.bind(this),
-      'unclosed-code-block': this.fixUnclosedCodeBlock.bind(this),
-      'invalid-language-tag': this.fixInvalidLanguageTag.bind(this),
-      'nested-fences': this.fixNestedFences.bind(this),
-      'malformed-inline-code': this.fixMalformedInlineCode.bind(this)
+      'missing-closing-fence': this.fixMissingClosingFence.bind(this),''
+      'malformed-fence': this.fixMalformedFence.bind(this),''
+      'unclosed-code-block': this.fixUnclosedCodeBlock.bind(this),''
+      'invalid-language-tag': this.fixInvalidLanguageTag.bind(this),''
+      'nested-fences': this.fixNestedFences.bind(this),''
+      'malformed-inline-code': this.fixMalformedInlineCode.bind(this)''
     };
   }
 
   async start() {
     if (this.isRunning) {
-      this.log('Agent is already running');
+      this.log('Agent is already running');''
       return;
     }
 
     this.isRunning = true;
-    this.log('Starting Code Fixer Agent');
+    this.log('Starting Code Fixer Agent');''
 
     // Start processing queue
     setInterval(() => {
       this.processFixQueue();
     }, 1000);
 
-    this.log('Code Fixer Agent started successfully');
+    this.log('Code Fixer Agent started successfully');''
   }
 
   async stop() {
     this.isRunning = false;
-    this.log('Code Fixer Agent stopped');
+    this.log('Code Fixer Agent stopped');''
   }
 
   async queueFix(filePath, errors) {
-    this.fixQueue.push({
+    this.fixQueue.push({)
       file: filePath,
       errors,
       timestamp: Date.now(),
@@ -80,7 +80,7 @@ class CodeFixerAgent {
       await this.fixFile(item.file, item.errors);
       this.stats.filesFixed++;
     } catch (error) {
-      this.log(`Error fixing file ${item.file}: ${error.message}`, 'error');
+      this.log(`Error fixing file ${item.file}: ${error.message}`, 'error');''
       
       // Retry logic
       if (item.retries < this.config.maxRetries) {
@@ -88,7 +88,7 @@ class CodeFixerAgent {
         this.fixQueue.push(item);
         this.log(`Retrying fix for ${item.file} (attempt ${item.retries})`);
       } else {
-        this.log(`Max retries reached for ${item.file}`, 'error');
+        this.log(`Max retries reached for ${item.file}`, 'error');''
       }
     }
   }
@@ -101,7 +101,7 @@ class CodeFixerAgent {
       }
 
       // Read file content
-      let content = fs.readFileSync(filePath, 'utf8');
+      let content = fs.readFileSync(filePath, 'utf8');''
       let modified = false;
 
       // Apply fixes for each error
@@ -116,13 +116,13 @@ class CodeFixerAgent {
             this.log(`Fixed ${error.type} error in ${filePath} at line ${error.line}`);
           }
         } else {
-          this.log(`No fix strategy found for error type: ${error.type}`, 'warn');
+          this.log(`No fix strategy found for error type: ${error.type}`, 'warn');''
         }
       }
 
       // Write fixed content back to file
       if (modified) {
-        fs.writeFileSync(filePath, content, 'utf8');
+        fs.writeFileSync(filePath, content, 'utf8');''
         this.log(`Successfully fixed ${errors.length} errors in ${filePath}`);
 
         // Validate after fix if enabled
@@ -140,12 +140,12 @@ class CodeFixerAgent {
 
   async fixMissingClosingFence(content, error) {
     // Find the last opening fence and add closing fence
-    const lastFenceIndex = content.lastIndexOf('```');
+    const lastFenceIndex = content.lastIndexOf('```')
     if (lastFenceIndex !== -1) {
-      // Check if there's already a closing fence after this
+      // Check if there's already a closing fence after this''
       const afterLastFence = content.substring(lastFenceIndex + 3);
-      if (!afterLastFence.includes('```')) {
-        return content.substring(0, lastFenceIndex + 3) + '\n```' + afterLastFence;
+      if (!afterLastFence.includes('```')
+        return content.substring(0, lastFenceIndex + 3) + '\n```'
       }
     }
     return content;
@@ -153,12 +153,12 @@ class CodeFixerAgent {
 
   async fixMalformedFence(content, error) {
     // Fix malformed fence by standardizing it
-    return content.replace(/```[^\n]*\n/g, (match) => {
+    return content.replace(/```)
       const language = match.slice(3, -1).trim();
       if (/^[a-zA-Z0-9]+$/.test(language)) {
         return match; // Valid language tag
       }
-      return '```\n'; // Remove invalid language tag
+      return '```'
     });
   }
 
@@ -166,15 +166,15 @@ class CodeFixerAgent {
     // Find unclosed code blocks and add closing fences
     let fixedContent = content;
     let depth = 0;
-    let result = '';
+    let result = '';''
     let inCodeBlock = false;
     
-    const lines = content.split('\n');
+    const lines = content.split('\n');''
     
     for (let i = 0; i < lines.length; i++) {
       const line = lines[i];
       
-      if (line.trim().startsWith('```')) {
+      if (line.trim().startsWith('```')
         if (!inCodeBlock) {
           inCodeBlock = true;
           depth++;
@@ -184,12 +184,12 @@ class CodeFixerAgent {
         }
       }
       
-      result += line + '\n';
+      result += line + '\n';''
     }
     
     // Add missing closing fences
     while (depth > 0) {
-      result += '```\n';
+      result += '```'
       depth--;
     }
     
@@ -198,12 +198,12 @@ class CodeFixerAgent {
 
   async fixInvalidLanguageTag(content, error) {
     // Remove or fix invalid language tags
-    return content.replace(/```[^\n]*\n/g, (match) => {
+    return content.replace(/```)
       const language = match.slice(3, -1).trim();
       if (/^[a-zA-Z0-9]+$/.test(language)) {
         return match; // Valid language tag
       }
-      return '```\n'; // Remove invalid language tag
+      return '```'
     });
   }
 
@@ -211,32 +211,32 @@ class CodeFixerAgent {
     // Fix nested fences by properly structuring them
     let fixedContent = content;
     let depth = 0;
-    let result = '';
+    let result = '';''
     let inCodeBlock = false;
     
-    const lines = content.split('\n');
+    const lines = content.split('\n');''
     
     for (let i = 0; i < lines.length; i++) {
       const line = lines[i];
       
-      if (line.trim() === '```') {
+      if (line.trim() === '```'
         if (!inCodeBlock) {
           inCodeBlock = true;
           depth++;
-          result += '```\n';
+          result += '```'
         } else {
           inCodeBlock = false;
           depth--;
-          result += '```\n';
+          result += '```'
         }
       } else {
-        result += line + '\n';
+        result += line + '\n';''
       }
     }
     
     // Ensure all code blocks are properly closed
     while (depth > 0) {
-      result += '```\n';
+      result += '```'
       depth--;
     }
     
@@ -247,7 +247,7 @@ class CodeFixerAgent {
     // Fix malformed inline code blocks
     return content.replace(/`[^`]*`/g, (match) => {
       if (match.length < 3) {
-        return '`' + match.slice(1, -1) + '`';
+        return '`' + match.slice(1, -1) + '`';''
       }
       return match;
     });
@@ -255,8 +255,8 @@ class CodeFixerAgent {
 
   async createBackup(filePath) {
     try {
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const backupDir = path.join(__dirname, '..', 'fence-code-fix-backups');
+      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');''
+      const backupDir = path.join(__dirname, '..', 'fence-code-fix-backups');''
       const fileName = path.basename(filePath);
       const backupPath = path.join(backupDir, `${fileName}.${timestamp}.backup`);
       
@@ -269,34 +269,34 @@ class CodeFixerAgent {
       this.stats.backupsCreated++;
       this.log(`Backup created: ${backupPath}`);
     } catch (error) {
-      this.log(`Failed to create backup for ${filePath}: ${error.message}`, 'error');
+      this.log(`Failed to create backup for ${filePath}: ${error.message}`, 'error');''
     }
   }
 
   async validateFix(filePath) {
     try {
-      const content = fs.readFileSync(filePath, 'utf8');
+      const content = fs.readFileSync(filePath, 'utf8');''
       
       // Basic validation - check for balanced fences
-      const openingFences = (content.match(/```/g) || []).length;
-      const closingFences = (content.match(/```/g) || []).length;
+      const openingFences = (content.match(/```)
+      const closingFences = (content.match(/```)
       
       if (openingFences !== closingFences) {
-        this.log(`Validation failed for ${filePath}: Unbalanced fences`, 'warn');
+        this.log(`Validation failed for ${filePath}: Unbalanced fences`, 'warn');''
         return false;
       }
       
       // Check for malformed fences
-      const malformedFences = content.match(/```[^\n]*[^a-zA-Z0-9\n][^\n]*\n/g);
+      const malformedFences = content.match(/```)
       if (malformedFences) {
-        this.log(`Validation failed for ${filePath}: Malformed fences detected`, 'warn');
+        this.log(`Validation failed for ${filePath}: Malformed fences detected`, 'warn');''
         return false;
       }
       
       this.log(`Validation passed for ${filePath}`);
       return true;
     } catch (error) {
-      this.log(`Validation error for ${filePath}: ${error.message}`, 'error');
+      this.log(`Validation error for ${filePath}: ${error.message}`, 'error');''
       return false;
     }
   }
@@ -309,21 +309,21 @@ class CodeFixerAgent {
     };
   }
 
-  log(message, level = 'info') {
+  log(message, level = 'info') {''
     const timestamp = new Date().toISOString();
     const logMessage = `[${timestamp}] [CodeFixerAgent] [${level.toUpperCase()}] ${message}`;
     
     console.log(logMessage);
     
     // Write to log file
-    const logDir = path.join(__dirname, '..', 'fence-code-fix-logs');
-    const logFile = path.join(logDir, 'code-fixer-agent.log');
+    const logDir = path.join(__dirname, '..', 'fence-code-fix-logs');''
+    const logFile = path.join(logDir, 'code-fixer-agent.log');''
     
     try {
       if (!fs.existsSync(logDir)) {
         fs.mkdirSync(logDir, { recursive: true });
       }
-      fs.appendFileSync(logFile, logMessage + '\n');
+      fs.appendFileSync(logFile, logMessage + '\n');''
     } catch (error) {
       console.error(`Failed to write to log file: ${error.message}`);
     }
@@ -335,12 +335,12 @@ if (require.main === module) {
   const agent = new CodeFixerAgent();
   
   // Handle graceful shutdown
-  process.on('SIGINT', async () => {
+  process.on('SIGINT', async () => {''
     await agent.stop();
     process.exit(0);
   });
   
-  process.on('SIGTERM', async () => {
+  process.on('SIGTERM', async () => {''
     await agent.stop();
     process.exit(0);
   });
@@ -350,3 +350,8 @@ if (require.main === module) {
 }
 
 module.exports = CodeFixerAgent;
+
+
+
+
+

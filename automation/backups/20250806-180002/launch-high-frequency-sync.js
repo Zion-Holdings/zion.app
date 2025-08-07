@@ -59,52 +59,52 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-}const fs = require('path'
-const path = require('path'
-const { spawn } = require(('child_process)'
-    this.id = 'high-frequency-sync-launcher'
-    this.version = '1.0'
-    this.status = 'stopped'
-    this.pidFile = path.join(__dirname, 'high-frequency-sync-pid.json'
-    this.logFile = path.join(__dirname, 'high-frequency-sync-logs', 'launcher.log'
-    const directories = ['high-frequency-sync-logs'
-      'high-frequency-sync-pids'
-    console.log('🚀 Launching High Frequency Git Sync...'
-        console.log('⚠️  High Frequency Git Sync is already running'
-      const syncScript = path.join(__dirname, 'high-frequency-git-sync.js'
-      this.process = spawn('node'
-        stdio: ['pipe', 'pipe', 'pipe'
-      this.status = 'running'
-      console.log('✅ High Frequency Git Sync launched successfully'
-      this.log('Launched High Frequency Git Sync'
-      console.error('❌ Failed to launch High Frequency Git Sync: '
-      this.status = 'error'
-    this.process.stdout.on('data'
-    this.process.stderr.on('data'
-    this.process.on('close'
-      this.status = 'stopped'
-    this.process.on('error'
-      this.status = 'error'
-        const pidData = JSON.parse(fs.readFileSync(this.pidFile, 'utf8'
-      console.error('Failed to write to log file: '
-    console.log('🛑 Stopping High Frequency Git Sync...'
-        this.process.kill('SIGTERM'
-              this.process.kill('SIGKILL'
-      this.status = 'stopped'
-      console.log('✅ High Frequency Git Sync stopped'
-      this.log('Stopped High Frequency Git Sync'
-      console.error('❌ Failed to stop High Frequency Git Sync: '
-  process.on('SIGINT'
-    console.log('\n🛑 Received SIGINT, stopping...'
-  process.on('SIGTERM'
-    console.log('\n🛑 Received SIGTERM, stopping...'
-    console.error('❌ Launcher failed: '
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+}const fs = require('path''')
+const path = require('path''')
+const { spawn } = require(('child_process)'''
+    this.id = 'high-frequency-sync-launcher'''
+    this.version = '1.0'''
+    this.status = 'stopped'''
+    this.pidFile = path.join(__dirname, 'high-frequency-sync-pid.json''')
+    this.logFile = path.join(__dirname, 'high-frequency-sync-logs', 'launcher.log''')
+    const directories = ['high-frequency-sync-logs'''
+      'high-frequency-sync-pids'''
+    console.log('🚀 Launching High Frequency Git Sync...''')
+        console.log('⚠️  High Frequency Git Sync is already running''')
+      const syncScript = path.join(__dirname, 'high-frequency-git-sync.js''')
+      this.process = spawn('node''')
+        stdio: ['pipe', 'pipe', 'pipe'''
+      this.status = 'running'''
+      console.log('✅ High Frequency Git Sync launched successfully''')
+      this.log('Launched High Frequency Git Sync''')
+      console.error('❌ Failed to launch High Frequency Git Sync: ''')
+      this.status = 'error'''
+    this.process.stdout.on('data''')
+    this.process.stderr.on('data''')
+    this.process.on('close''')
+      this.status = 'stopped'''
+    this.process.on('error''')
+      this.status = 'error'''
+        const pidData = JSON.parse(fs.readFileSync(this.pidFile, 'utf8''')
+      console.error('Failed to write to log file: ''')
+    console.log('🛑 Stopping High Frequency Git Sync...''')
+        this.process.kill('SIGTERM''')
+              this.process.kill('SIGKILL''')
+      this.status = 'stopped'''
+      console.log('✅ High Frequency Git Sync stopped''')
+      this.log('Stopped High Frequency Git Sync''')
+      console.error('❌ Failed to stop High Frequency Git Sync: ''')
+  process.on('SIGINT''')
+    console.log('\n🛑 Received SIGINT, stopping...''')
+  process.on('SIGTERM''')
+    console.log('\n🛑 Received SIGTERM, stopping...''')
+    console.error('❌ Launcher failed: ''')

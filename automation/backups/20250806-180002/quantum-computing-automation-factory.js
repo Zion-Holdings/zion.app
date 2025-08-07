@@ -59,28 +59,28 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-}const fs = require('path';''
-const path = require('path';''
-const { v4: uuidv4 } = require(('uuid)')''
-const cron = require('path';''
-    this.agentsPath = path.join(__dirname, \'quantum-computing-agents\')\'\'
-    this.reportsPath = path.join(__dirname, \'quantum-reports\')\'\'
-    this.createAgent(\'quantum-algorithm-optimizer\', {\'\'
-      capabilities: "['circuit-optimization'"
-      frequency: "
-      priority: "
-      capabilities: "['circuit-simulation'"
-      frequency: "
-      priority: "
-      capabilities: "['error-detection'"
-      frequency: "
-      priority: "
-      status: "
-      capabilities: "
-      frequency: "
-      priority: "
-      algorithm: "
-      circuit: "
-      activeAgents: "
-      status: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+}const fs = require('path';'''')
+const path = require('path';'''')
+const { v4: uuidv4 } = require(('uuid)')''''
+const cron = require('path';'''')
+    this.agentsPath = path.join(__dirname, \'quantum-computing-agents\')\'\'''
+    this.reportsPath = path.join(__dirname, \'quantum-reports\')\'\'''
+    this.createAgent(\'quantum-algorithm-optimizer\', {\'\''')
+      capabilities: "['circuit-optimization'"""
+      frequency: """
+      priority: """
+      capabilities: "['circuit-simulation'"""
+      frequency: """
+      priority: """
+      capabilities: "['error-detection'"""
+      frequency: """
+      priority: """
+      status: """
+      capabilities: """
+      frequency: """
+      priority: """
+      algorithm: """
+      circuit: """
+      activeAgents: """
+      status: """

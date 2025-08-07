@@ -59,33 +59,33 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-  fs = require('path'
-  console.error('Failed to require(fs: '
-}''
-  path = require('path'
-  console.error('Failed to require(path: '
-}''
-    pattern: "
-    replacement: ""
-    pattern: "
-    replacement: "
-    pattern: "
-    replacement: "
-    pattern: "
-    replacement: ""
-    replacement: "'className="fixed"
-    replacement: "'className="absolute"
-    replacement: "'className="text-4xl"
-    replacement: "'className="text-xl"
-    replacement: "'className="flex"
-    replacement: "'className="bg-blue-600"
-    replacement: "'className="border"
-    replacement: "'
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+  fs = require('path''')
+  console.error('Failed to require(fs: ''')
+}''''
+  path = require('path''')
+  console.error('Failed to require(path: ''')
+}''''
+    pattern: """
+    replacement: """"
+    pattern: """
+    replacement: """
+    pattern: """
+    replacement: """
+    pattern: """
+    replacement: """"
+    replacement: "'className="fixed"""
+    replacement: "'className="absolute"""
+    replacement: "'className="text-4xl"""
+    replacement: "'className="text-xl"""
+    replacement: "'className="flex"""
+    replacement: "'className="bg-blue-600"""
+    replacement: "'className="border"""
+    replacement: "'''

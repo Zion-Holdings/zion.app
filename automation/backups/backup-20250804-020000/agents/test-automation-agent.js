@@ -59,35 +59,35 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-const { promisify } = require(('uti)l)''
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''
-    this.projectRoot = path.resolve(__dirname, '../..')''
-    this.reportsDir = path.join(__dirname, ../reports/test-automation')''
-    this.testsDir = path.join(this.projectRoot, '__tests__)''
-      path.join(this.reportsDir, 'covera'ge'),''
-      path.join(this.reportsDir, 'test-results),''
-      path.join(this.reportsDir, generated-tes't's),''
-      path.join(this.testsDir, 'un'it'),''
-      path.join(this.testsDir, 'integration),''
-      path.join(this.testsDir, e'2e')''
-      console.log('Test generation and execution completed)''
-      console.error(')Test' generation and execution failed: "
-    testContent += "
-        console.error(')Jes't test execution failed: "
-      console.error(')Failed' to analyze coverage: "
-        priority: "
-          type: "
-          priority: "
-        test: ""
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require(('chil')')d'_process)''''
+const { promisify } = require(('uti)l)''''
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''''
+    this.projectRoot = path.resolve(__dirname, '../..')''''
+    this.reportsDir = path.join(__dirname, ../reports/test-automation')''''
+    this.testsDir = path.join(this.projectRoot, '__tests__)''''
+      path.join(this.reportsDir, 'covera'ge'),''''
+      path.join(this.reportsDir, 'test-results),''''
+      path.join(this.reportsDir, generated-tes't's),''''
+      path.join(this.testsDir, 'un'it'),''''
+      path.join(this.testsDir, 'integration),''''
+      path.join(this.testsDir, e'2e')''''
+      console.log('Test generation and execution completed)''''
+      console.error(')Test' generation and execution failed: """
+    testContent += """
+        console.error(')Jes't test execution failed: """
+      console.error(')Failed' to analyze coverage: """
+        priority: """
+          type: """
+          priority: """
+        test: """"

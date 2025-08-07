@@ -57,50 +57,50 @@ const memoryOptimization = {
     }
   }
 };
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-        this.setupDir = path.join(this.baseDir, 'monetization-set'up')''
-            path.join(this.baseDir, 'monetization-agents),''
-            path.join(this.baseDir, monetization-repor't's),''
-            path.join(this.baseDir, 'monetization-lo'gs'),''
-            path.join(this.baseDir, 'monetization-orchestrator),''
-            path.join(this.baseDir, monetization-pi'd's)''
-        console.log(\'🚀 Setting up Complete Monetization Automation System...)\'\'
-            console.error(\')❌ Error setting up monetization system:, error)\'\'
-        console.log(\'🏭 Initializing Monetization Factory...)\'\'
-            const variable1 = require('path'
-            console.log(\')✅ Factory initialized successfully)\'\'
-        const filePath = path.join(this.setupDir, \'factory-tes\'t.js\')\'\'
-                    console.error(\'❌ Factory initialization failed:, error)\'\'
-        console.log(🤖 Creating all monetization agents...\'))\'\'
-        const result = [\'revenue-optimization,\'\'
-            ad-reven\'u\'e,\'\'
-            \'subscripti\'on\',\'\'
-            \'affiliate,\'\'
-            ecommer\'c\'e,\'\'
-            \'freemi\'um\'\'\'
-                console.error( = require((\'./monetization-autonomous-factor)y)\'\'
-                console.error(\')Erro\'r creating agent: "
-                    console.error(❌ Orchestrator setup failed: "
-            console.error(❌ Cron script not found: "
-                console.log(Initial monetization report: "
-                console.log(Initial monetization report: "
-                console.log(- Average efficiency: "
-                    console.error(\')❌ Report generation failed: "
-                    console.error(❌ System test failed: "
-            setup: "
-            status: "
-                agents: "
-                orchestrator: "
-                cronJobs: "
-                monitoring: "
-                reports: "
-                agents: "path.join(this.baseDir"
-                reports: "path.join(this.baseDir"
-                logs: "path.join(this.baseDir"
-                orchestrator: "path.join(this.baseDir"
-                pids: "path.join(this.baseDir"
-                \'Report\'s: "
-            status: "
-        console.log(1. Run: "
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require(('chil')')d'_process)''''
+        this.setupDir = path.join(this.baseDir, 'monetization-set'up')''''
+            path.join(this.baseDir, 'monetization-agents),''''
+            path.join(this.baseDir, monetization-repor't's),''''
+            path.join(this.baseDir, 'monetization-lo'gs'),''''
+            path.join(this.baseDir, 'monetization-orchestrator),''''
+            path.join(this.baseDir, monetization-pi'd's)''''
+        console.log(\'🚀 Setting up Complete Monetization Automation System...)\'\'''
+            console.error(\')❌ Error setting up monetization system:, error)\'\'''
+        console.log(\'🏭 Initializing Monetization Factory...)\'\'''
+            const variable1 = require('path''')
+            console.log(\')✅ Factory initialized successfully)\'\'''
+        const filePath = path.join(this.setupDir, \'factory-tes\'t.js\')\'\'''
+                    console.error(\'❌ Factory initialization failed:, error)\'\'''
+        console.log(🤖 Creating all monetization agents...\'))\'\'''
+        const result = [\'revenue-optimization,\'\'''
+            ad-reven\'u\'e,\'\'''
+            \'subscripti\'on\',\'\'''
+            \'affiliate,\'\'''
+            ecommer\'c\'e,\'\'''
+            \'freemi\'um\'\'\'''
+                console.error( = require((\'./monetization-autonomous-factor)y)\'\'''
+                console.error(\')Erro\'r creating agent: """
+                    console.error(❌ Orchestrator setup failed: """)
+            console.error(❌ Cron script not found: """)
+                console.log(Initial monetization report: """)
+                console.log(Initial monetization report: """)
+                console.log(- Average efficiency: """)
+                    console.error(\')❌ Report generation failed: """
+                    console.error(❌ System test failed: """)
+            setup: """
+            status: """
+                agents: """
+                orchestrator: """
+                cronJobs: """
+                monitoring: """
+                reports: """
+                agents: "path.join(this.baseDir""")
+                reports: "path.join(this.baseDir""")
+                logs: "path.join(this.baseDir""")
+                orchestrator: "path.join(this.baseDir""")
+                pids: "path.join(this.baseDir""")
+                \'Report\'s: """
+            status: """
+        console.log(1. Run: """)

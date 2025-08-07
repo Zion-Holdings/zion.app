@@ -1,6 +1,6 @@
-const fs = require('fs'
-const path = require('path'
-    let content = fs.readFileSync(filePath, 'utf8'
-    const doubleSemicolonPattern = /import\s+(\w+)\s+from\s+['"]([^'"
-    const doubleSemicolonTypePattern = /import\s+\{\s*(\w+)\s*\}\s+from\s+['"]([^'"
-      content = content.replace(malformedJSXPattern, '<div className="min-h-screen bg-gray-50">\n      
+const fs = require('fs''')
+const path = require('path''')
+    let content = fs.readFileSync(filePath, 'utf8''')
+    const doubleSemicolonPattern = /import\s+(\w+)\s+from\s+['"]([^'""")
+    const doubleSemicolonTypePattern = /import\s+\{\s*(\w+)\s*\}\s+from\s+['"]([^'""")
+      content = content.replace(malformedJSXPattern, '<div className="min-h-screen bg-gray-50">\n      "")

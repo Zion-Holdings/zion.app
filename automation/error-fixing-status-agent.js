@@ -1,19 +1,19 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
+const fs = require('fs');'
+const path = require('path');'
+const { execSync } = require('child_process');'
 
 class ErrorFixingStatusAgent {
   constructor() {
     this.projectRoot = process.cwd();
-    this.statusDir = path.join(this.projectRoot, 'automation', 'error-fixing-status');
-    this.logsDir = path.join(this.projectRoot, 'automation', 'error-fixing-logs');
+    this.statusDir = path.join(this.projectRoot, 'automation', 'error-fixing-status');'
+    this.logsDir = path.join(this.projectRoot, 'automation', 'error-fixing-logs');'
   }
 
   async generateStatusReport() {
     try {
-      console.log('📊 Generating error fixing status report...');
+      console.log('📊 Generating error fixing status report...');'
       
       const report = {
         timestamp: new Date().toISOString(),
@@ -22,32 +22,32 @@ class ErrorFixingStatusAgent {
         recommendations: await this.getRecommendations()
       };
 
-      const reportPath = path.join(this.statusDir, 'status-report.json');
+      const reportPath = path.join(this.statusDir, 'status-report.json');'
       fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
       
-      console.log('✅ Status report generated');
+      console.log('✅ Status report generated');'
       return report;
     } catch (error) {
-      console.error('❌ Error generating status report:', error);
+      console.error('❌ Error generating status report:', error);'
     }
   }
 
   async getAgentStatus() {
     const agents = [
-      { name: 'syntax-error-fixing-agent', pidFile: 'syntax-agent.pid' },
-      { name: 'linting-error-fixing-agent', pidFile: 'linting-agent.pid' },
-      { name: 'continuous-error-monitoring-agent', pidFile: 'monitoring-agent.pid' }
+      { name: 'syntax-error-fixing-agent', pidFile: 'syntax-agent.pid' },'
+      { name: 'linting-error-fixing-agent', pidFile: 'linting-agent.pid' },'
+      { name: 'continuous-error-monitoring-agent', pidFile: 'monitoring-agent.pid' }'
     ];
 
     const status = [];
     for (const agent of agents) {
-      const pidFile = path.join(this.projectRoot, 'automation', 'error-fixing-pids', agent.pidFile);
+      const pidFile = path.join(this.projectRoot, 'automation', 'error-fixing-pids', agent.pidFile);'
       const isRunning = fs.existsSync(pidFile);
       
-      status.push({
+      status.push({)
         name: agent.name,
         running: isRunning,
-        pid: isRunning ? fs.readFileSync(pidFile, 'utf8').trim() : null
+        pid: isRunning ? fs.readFileSync(pidFile, 'utf8').trim() : null''
       });
     }
 
@@ -56,14 +56,14 @@ class ErrorFixingStatusAgent {
 
   async getCurrentErrors() {
     try {
-      const lintResult = execSync('npm run lint', {
+      const lintResult = execSync('npm run lint', {'')
         cwd: this.projectRoot,
-        stdio: 'pipe',
-        encoding: 'utf8'
+        stdio: 'pipe','
+        encoding: 'utf8'''
       });
 
-      const errorLines = lintResult.split('\n').filter(line => 
-        line.includes('Error') || line.includes('Warning')
+      const errorLines = lintResult.split('\n').filter(line => '')
+        line.includes('Error') || line.includes('Warning')'
       );
 
       return {
@@ -72,8 +72,8 @@ class ErrorFixingStatusAgent {
       };
     } catch (error) {
       return {
-        totalErrors: 'unknown',
-        errors: ['Unable to determine errors']
+        totalErrors: 'unknown','
+        errors: ['Unable to determine errors']'
       };
     }
   }
@@ -86,13 +86,13 @@ class ErrorFixingStatusAgent {
     const runningAgents = agentStatus.filter(agent => agent.running);
     
     if (runningAgents.length === 0) {
-      recommendations.push('Start error fixing agents to automatically fix issues');
+      recommendations.push('Start error fixing agents to automatically fix issues');'
     }
     
     // Check for recent errors
     const currentErrors = await this.getCurrentErrors();
     if (currentErrors.totalErrors > 0) {
-      recommendations.push('Run manual error fixing to address current issues');
+      recommendations.push('Run manual error fixing to address current issues');'
     }
     
     return recommendations;

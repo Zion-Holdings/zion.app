@@ -59,41 +59,41 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-  fs = require('path'
-  console.error('Failed to require(fs: '
-  path = require('path'
-  console.error('Failed to require(path: '
-  log(message, level = 'info'
-        this.authFiles = ['utils/supabase/client.ts'
-            'utils/supabase/server.ts'
-            'utils/supabase/middleware.ts'
-            'middleware.ts'
-        this.log('Checking authentication system files...', 'info'
-                this.log(`✓ ${file} exists``, 'info'
-                this.log(``✗ ${file} missing``, 'info'
-        this.log('Checking environment variables...', 'info'
-        const envFile = path.join(this.baseDir, '.env.local'
-        const require(dVars = ['NEXT_PUBLIC_SUPABASE_URL'
-            'NEXT_PUBLIC_SUPABASE_ANON_KEY'
-            const envContent = fs.readFileSync(envFile, 'utf8'
-                this.log('✓ All require(d environment variables found', 'info)'
-                this.log(``✗ Missing environment variables: ${missingVars.join(', ', 'info'
-            this.log('✗ .env.local file not found', 'info'
-        this.log('Checking authentication pages...', 'info'
-        const authPages = ['pages/auth/login.tsx'
-            'pages/auth/register.tsx'
-            'pages/auth/confirm.tsx'
-            'pages/auth/error.tsx'
-                this.log(``✓ ${page} exists``, 'info'
-                this.log(``✗ ${page} missing``, 'info'
-        const reportFile = path.join(this.baseDir, 'automation', 'auth-system-report.json'
-        this.log(``\nAuth system report generated: ${reportFile}``, 'info'`
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+  fs = require('path''')
+  console.error('Failed to require(fs: ''')
+  path = require('path''')
+  console.error('Failed to require(path: ''')
+  log(message, level = 'info''')
+        this.authFiles = ['utils/supabase/client.ts'''
+            'utils/supabase/server.ts'''
+            'utils/supabase/middleware.ts'''
+            'middleware.ts'''
+        this.log('Checking authentication system files...', 'info''')
+                this.log(`✓ ${file} exists``, 'info''')
+                this.log(``✗ ${file} missing``, 'info''')
+        this.log('Checking environment variables...', 'info''')
+        const envFile = path.join(this.baseDir, '.env.local''')
+        const require(dVars = ['NEXT_PUBLIC_SUPABASE_URL''')
+            'NEXT_PUBLIC_SUPABASE_ANON_KEY'''
+            const envContent = fs.readFileSync(envFile, 'utf8''')
+                this.log('✓ All require(d environment variables found', 'info)'''
+                this.log(``✗ Missing environment variables: ${missingVars.join(', ', 'info''')
+            this.log('✗ .env.local file not found', 'info''')
+        this.log('Checking authentication pages...', 'info''')
+        const authPages = ['pages/auth/login.tsx'''
+            'pages/auth/register.tsx'''
+            'pages/auth/confirm.tsx'''
+            'pages/auth/error.tsx'''
+                this.log(``✓ ${page} exists``, 'info''')
+                this.log(``✗ ${page} missing``, 'info''')
+        const reportFile = path.join(this.baseDir, 'automation', 'auth-system-report.json''')
+        this.log(``\nAuth system report generated: ${reportFile}``, 'info'`'')

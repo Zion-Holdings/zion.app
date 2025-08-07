@@ -59,52 +59,52 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const { CursorChatAutomationSystem, ContinuousCursorAutomation } = require(('./cursor-chat-automation-system.js)'
-  fs = require('path'
-  console.error('Failed to require(fs: '
-  path = require('path'
-  console.error('Failed to require(path: '
-  log(message, level = 'info'
-        this.automationDir = path.join(this.baseDir, 'automation'
-        this.logsDir = path.join(this.automationDir, 'cursor-chat-logs'
-        this.statusFile = path.join(this.automationDir, 'launcher-status.json'
-            this.status = JSON.parse(fs.readFileSync(this.statusFile, 'utf8'
-    log(message, type = 'info'
-        const logFile = path.join(this.logsDir, `launcher-${new Date().toISOString().split('T'
-        fs.appendFileSync(logFile, logEntry + '\n'
-        this.log(logEntry, 'info'
-        this.log('Starting single execution of Cursor automation'
-            this.log('Single execution completed successfully'
-            this.log(``Single execution failed: ${error.message}``, 'error'
-        this.log('Starting continuous execution of Cursor automation'
-            process.on('SIGINT'
-                this.log('Received SIGINT, shutting down gracefully...'
-            process.on('SIGTERM'
-                this.log('Received SIGTERM, shutting down gracefully...'
-            this.log(``Continuous execution failed: ${error.message}``, 'error'
-        this.log('Running health check...'
-        const healthFile = path.join(this.automationDir, 'health-check.json'
-        this.log('\n=== Cursor Automation Status ===', 'info'
-        this.log(``Running: ${this.status.isRunning ? 'Yes' : 'No'}``, 'info'
-        this.log(``Last Launch: ${this.status.lastLaunch || 'Never'}``, 'info'
-        this.log(``Total Runs: ${this.status.totalRuns}``, 'info'
-        this.log(``Successful Runs: ${this.status.successfulRuns}``, 'info'
-        this.log(``Failed Runs: ${this.status.failedRuns}``, 'info'
-            (this.status.successfulRuns / this.status.totalRuns * 100, 'info'
-        this.log('================================\n', 'info'
-        if (args.includes('--help') || args.includes('-h'
-            ``, 'info'
-        if (args.includes('--status'
-        if (args.includes('--health') || args.includes('-h'
-        if (args.includes('--continuous') || args.includes('-c'
-        console.error('Launcher error: '
-      systemName: 'launch-cursor-automation'`
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const { CursorChatAutomationSystem, ContinuousCursorAutomation } = require(('./cursor-chat-automation-system.js)'''
+  fs = require('path''')
+  console.error('Failed to require(fs: ''')
+  path = require('path''')
+  console.error('Failed to require(path: ''')
+  log(message, level = 'info''')
+        this.automationDir = path.join(this.baseDir, 'automation''')
+        this.logsDir = path.join(this.automationDir, 'cursor-chat-logs''')
+        this.statusFile = path.join(this.automationDir, 'launcher-status.json''')
+            this.status = JSON.parse(fs.readFileSync(this.statusFile, 'utf8''')
+    log(message, type = 'info''')
+        const logFile = path.join(this.logsDir, `launcher-${new Date().toISOString().split('T''')
+        fs.appendFileSync(logFile, logEntry + '\n''')
+        this.log(logEntry, 'info''')
+        this.log('Starting single execution of Cursor automation''')
+            this.log('Single execution completed successfully''')
+            this.log(``Single execution failed: ${error.message}``, 'error''')
+        this.log('Starting continuous execution of Cursor automation''')
+            process.on('SIGINT''')
+                this.log('Received SIGINT, shutting down gracefully...''')
+            process.on('SIGTERM''')
+                this.log('Received SIGTERM, shutting down gracefully...''')
+            this.log(``Continuous execution failed: ${error.message}``, 'error''')
+        this.log('Running health check...''')
+        const healthFile = path.join(this.automationDir, 'health-check.json''')
+        this.log('\n=== Cursor Automation Status ===', 'info''')
+        this.log(``Running: ${this.status.isRunning ? 'Yes' : 'No'}``, 'info''')
+        this.log(``Last Launch: ${this.status.lastLaunch || 'Never'}``, 'info''')
+        this.log(``Total Runs: ${this.status.totalRuns}``, 'info''')
+        this.log(``Successful Runs: ${this.status.successfulRuns}``, 'info''')
+        this.log(``Failed Runs: ${this.status.failedRuns}``, 'info''')
+            (this.status.successfulRuns / this.status.totalRuns * 100, 'info''')
+        this.log('================================\n', 'info''')
+        if (args.includes('--help') || args.includes('-h''')
+            ``, 'info'''
+        if (args.includes('--status''')
+        if (args.includes('--health') || args.includes('-h''')
+        if (args.includes('--continuous') || args.includes('-c''')
+        console.error('Launcher error: ''')
+      systemName: 'launch-cursor-automation'`''

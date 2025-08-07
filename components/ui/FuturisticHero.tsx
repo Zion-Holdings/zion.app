@@ -1,14 +1,14 @@
-import React from 'react';
+import React from 'react';;;;''
 
 interface FuturisticHeroProps {
   // TODO: Add props interface
 }
 
 const FuturisticHero: React.FC<FuturisticHeroProps> = (props) => {
-  return (
-    <div>
+  return ()
+    <div>;
       {/* TODO: Add component content */}
-    </div>
+    </div>;
   );
 };
 

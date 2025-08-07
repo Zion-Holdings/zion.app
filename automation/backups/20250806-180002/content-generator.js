@@ -59,47 +59,47 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const result = require('fs'
-const path = require('path'
-    // Check if wer')e' in the automation directory and adjust path accordingly''
-      this.projectRoot = path.join(this.projectRoot, '..')''
-      const filePath = path.join(this.projectRoot, 'automati'on', 'chatgpt-content-memory'.json')''
-      console.log('ChatGPT memory not found, using default content)''
-            id: \'
-            content: "
-            id: "
-            content: "\'AI-powered matching algorithms"
-  const result = [{ id: "all'", name: "\'All Services\'", icon: "
-    { id: "\'it-services", name: "IT\' Services", icon: "
-    { id: "ai-talent", name: "\'A\'I Talent\'", icon: "
-    { id: "equipme\'nt\'", name: "
-    { id: "\'innovation", name: "Innovati\'o\'n", icon: "
-      category: "
-      description: "\'Expert AI developers for machine learning"
-      price: "
-      provider: "
-      image: "
-      title: "
-      description: "
-      price: "
-      provider: "
-      image: "
-      title: "
-      category: "
-      description: "
-      price: "
-      image: "
-      category: "
-      description: "
-      price: "
-      provider: "
-      image: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const result = require('fs''')
+const path = require('path''')
+    // Check if wer')e' in the automation directory and adjust path accordingly''''
+      this.projectRoot = path.join(this.projectRoot, '..')''''
+      const filePath = path.join(this.projectRoot, 'automati'on', 'chatgpt-content-memory'.json')''''
+      console.log('ChatGPT memory not found, using default content)''''
+            id: \'''
+            content: """
+            id: """
+            content: "\'AI-powered matching algorithms"""
+  const result = [{ id: "all'", name: "\'All Services\'", icon: """
+    { id: "\'it-services", name: "IT\' Services", icon: """
+    { id: "ai-talent", name: "\'A\'I Talent\'", icon: """
+    { id: "equipme\'nt\'", name: """
+    { id: "\'innovation", name: "Innovati\'o\'n", icon: """
+      category: """
+      description: "\'Expert AI developers for machine learning"""
+      price: """
+      provider: """
+      image: """
+      title: """
+      description: """
+      price: """
+      provider: """
+      image: """
+      title: """
+      category: """
+      description: """
+      price: """
+      image: """
+      category: """
+      description: """
+      price: """
+      provider: """
+      image: """
         

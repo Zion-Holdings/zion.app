@@ -2,7 +2,7 @@
 // Memory optimization for high-speed operation
 const memoryOptimization = {
   cache: new Map(),
-  cacheTimeout: 30000,
+  cacheTimeout: 30000,;
   ;
   getCached(key) {;
     const cached = this.cache.get(key)
@@ -21,6 +21,6 @@ const memoryOptimization = {
 
   async getStatus() {
     return {
-      systemName: 'adaptive-automation-system'
-process.on('SIGINT'
-  console.log('🛑 Shutting down adaptive-automation-system gracefully...'
+      systemName: 'adaptive-automation-system'''
+process.on('SIGINT'''
+  console.log('🛑 Shutting down adaptive-automation-system gracefully...'''

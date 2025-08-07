@@ -59,29 +59,29 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const result = require($2)s))\'\'
-const result = require('path'
-    this.contentPath = path.join(this.projectRoot"
-            testimonial: ""
-            question: ""
-            answer: "We offer a 100% satisfaction guarantee. If youre not satisfied"
-        experience: ""
-      source: "
-      version: "
-      source: "
-      version: "
-      source: "
-      version: "
-        headline: ""
-        headline: "
-        subheadline: ""Connettiti con i migliori servizi IT"
-      source: "
-      version: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const result = require($2)s))\'\'''
+const result = require('path''')
+    this.contentPath = path.join(this.projectRoot""")
+            testimonial: """"
+            question: """"
+            answer: "We offer a 100% satisfaction guarantee. If youre not satisfied"""
+        experience: """"
+      source: """
+      version: """
+      source: """
+      version: """
+      source: """
+      version: """
+        headline: """"
+        headline: """
+        subheadline: ""Connettiti con i migliori servizi IT"""
+      source: """
+      version: """

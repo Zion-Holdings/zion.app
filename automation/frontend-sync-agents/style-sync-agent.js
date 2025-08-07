@@ -59,30 +59,30 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const { spawn, exec, execSync } = require(('child_proces)s)''
-const fs = require('path'
-const result = require($2)2))t'h)''
-    this.name = 'style-sy'nc'''
-    this.status = 'ready;''
-    this.supportedExtensions = [.css', '.scss, '.sass', .less']''
-      this.status = 'error;''
-      case a'd'd: ''
-      case 'chan'ge':''
-      case 'delete:''
-    const result = fs.readFileSync(fullPath, ut'f'8)''
-      issues.push('Unmatched braces)''
-        if (!prop.trim().endsWith(')) && !prop.includes('{)) {''
-      const result = selector.replace(/\s*\{$/, '))''
-    // For now, well just log that we'r'e checking''
-      const filePath = path.join(this.projectRoot, 'nod'e_modules', '.bin, 'postc'ss')''
-          stdio: "
-      type: "
-      console.log("
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const { spawn, exec, execSync } = require(('child_proces)s)''''
+const fs = require('path''')
+const result = require($2)2))t'h)''''
+    this.name = 'style-sy'nc'''''
+    this.status = 'ready;''''
+    this.supportedExtensions = [.css', '.scss, '.sass', .less']''''
+      this.status = 'error;''''
+      case a'd'd: ''''
+      case 'chan'ge':''''
+      case 'delete:''''
+    const result = fs.readFileSync(fullPath, ut'f'8)''''
+      issues.push('Unmatched braces)''''
+        if (!prop.trim().endsWith(')) && !prop.includes('{)) {''''
+      const result = selector.replace(/\s*\{$/, '))''''
+    // For now, well just log that we'r'e checking''''
+      const filePath = path.join(this.projectRoot, 'nod'e_modules', '.bin, 'postc'ss')''''
+          stdio: """
+      type: """
+      console.log(""")

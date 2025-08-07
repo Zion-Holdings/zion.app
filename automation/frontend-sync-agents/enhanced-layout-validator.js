@@ -59,49 +59,49 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const result = require('fs'
-const path = require('path'
-const result = require('fs';''
-const result = require($2)2)).default;''
-const result = require('fs';''
-    this.pagesDir = path.join(process.cwd(), 'pages)''
-    this.componentsDir = path.join(process.cwd(), componen't's)''
-    this.layoutsDir = path.join(process.cwd(), 'component's/layout')''
-    console.log('🔍 Running enhanced AST-based layout analysis...)''
-    const result = fs.readFileSync(filePath, utf8'))''
-        sourceType: "
-        plugins: "[js'x"
-        type: "
-        severity: "
-        description: "
-        type: "
-        type: "
-        severity: "
-        description: "
-        severity: "
-        description: "
-        severity: "
-        description: "
-        type: "
-        severity: "
-        description: "
-                className.includes(')l'g: "
-        type: "
-        description: "
-        type: "
-        type: "
-        severity: "
-        description: "
-      description: "
-      description: "
-        'rol'e="
-        'role'=main"
-      description: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const result = require('fs''')
+const path = require('path''')
+const result = require('fs';'''')
+const result = require($2)2)).default;''''
+const result = require('fs';'''')
+    this.pagesDir = path.join(process.cwd(), 'pages)''''
+    this.componentsDir = path.join(process.cwd(), componen't's)''''
+    this.layoutsDir = path.join(process.cwd(), 'component's/layout')''''
+    console.log('🔍 Running enhanced AST-based layout analysis...)''''
+    const result = fs.readFileSync(filePath, utf8'))''''
+        sourceType: """
+        plugins: "[js'x"""
+        type: """
+        severity: """
+        description: """
+        type: """
+        type: """
+        severity: """
+        description: """
+        severity: """
+        description: """
+        severity: """
+        description: """
+        type: """
+        severity: """
+        description: """
+                className.includes(')l'g: """
+        type: """
+        description: """
+        type: """
+        type: """
+        severity: """
+        description: """
+      description: """
+      description: """
+        'rol'e="""
+        'role'=main"""
+      description: """

@@ -18,6 +18,6 @@ const memoryOptimization = {
   }
 }async getStatus() {
     return {
-      systemName: 'edtech-automation-factory'
-process.on('SIGINT'
-  console.log('🛑 Shutting down edtech-automation-factory gracefully...'
+      systemName: 'edtech-automation-factory'''
+process.on('SIGINT''')
+  console.log('🛑 Shutting down edtech-automation-factory gracefully...''')

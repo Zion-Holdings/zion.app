@@ -59,31 +59,31 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-  fs = require('path'
-  console.error('Failed to require(fs: '
-}''
-  path = require('path'
-  console.error('Failed to require(path: '
-}''
-  fixed = fixed.replace(/import React from 'react'
-  fixed = fixed.replace(/import React from 'react'
-  fixed = fixed.replace(/import React from 'react'
-  fixed = fixed.replace(/import React from 'react'
-  fixed = fixed.replace(/import React from 'react'
-  fixed = fixed.replace(/const \w+: NextPage = \(\) => {/g, 'const variable1: NextPage = () => {')''
-  fixed = fixed.replace(/interface \w+ \{/g, 'interface variable1 {')''
-  fixed = fixed.replace(/key: ""([^']+)'/g", 'key: ""
-  fixed = fixed.replace(/value: ""([^']+)'/g", 'value: "variable1"
-  fixed = fixed.replace(/const \w+ = \[/g"
-  fixed = fixed.replace(/`([^]+)``/g, '\"
-  fixed = fixed.replace(/class \w+ extends /g\"
-      this.log(``Fixed: \"${filePath\"`
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+  fs = require('path''')
+  console.error('Failed to require(fs: ''')
+}''''
+  path = require('path''')
+  console.error('Failed to require(path: ''')
+}''''
+  fixed = fixed.replace(/import React from 'react';;;'')
+  fixed = fixed.replace(/import React from 'react';;;'')
+  fixed = fixed.replace(/import React from 'react';;;'')
+  fixed = fixed.replace(/import React from 'react';;;'')
+  fixed = fixed.replace(/import React from 'react';;;'')
+  fixed = fixed.replace(/const \w+: NextPage = \(\) => {/g, 'const variable1: NextPage = () => {')''''
+  fixed = fixed.replace(/interface \w+ \{/g, 'interface variable1 {')''''
+  fixed = fixed.replace(/key: ""([^']+)'/g", 'key: """"
+  fixed = fixed.replace(/value: ""([^']+)'/g", 'value: "variable1"""
+  fixed = fixed.replace(/const \w+ = \[/g""")
+  fixed = fixed.replace(/`([^]+)``/g, '\"""
+  fixed = fixed.replace(/class \w+ extends /g\""")
+      this.log(``Fixed: \"${filePath\"`"")

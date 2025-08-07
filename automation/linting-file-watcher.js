@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-const { execSync } = require('child_process');
-const fs = require('fs');
-const path = require('path');
-const chokidar = require('chokidar');
+const { execSync } = require('child_process');''
+const fs = require('fs');''
+const path = require('path');''
+const chokidar = require('chokidar');''
 
 class LintingFileWatcher {
   constructor() {
@@ -18,11 +18,11 @@ class LintingFileWatcher {
       errorsFixed: 0,
       lastRun: null
     };
-    this.logFile = path.join(this.projectRoot, 'automation/linting-agents/logs/file-watcher.log');
+    this.logFile = path.join(this.projectRoot, 'automation/linting-agents/logs/file-watcher.log');''
   }
 
   async init() {
-    console.log('🚀 Initializing Linting File Watcher...');
+    console.log('🚀 Initializing Linting File Watcher...');''
     
     // Ensure log directory exists
     const logDir = path.dirname(this.logFile);
@@ -33,68 +33,68 @@ class LintingFileWatcher {
     // Initialize ESLint
     await this.initializeESLint();
     
-    console.log('✅ Linting File Watcher initialized successfully');
+    console.log('✅ Linting File Watcher initialized successfully');''
   }
 
   async initializeESLint() {
     try {
-      execSync('npx eslint --version', { stdio: 'pipe' });
+      execSync('npx eslint --version', { stdio: 'pipe' });''
     } catch (error) {
-      console.log('📦 Installing ESLint and related packages...');
-      execSync('npm install --save-dev eslint eslint-config-next @typescript-eslint/eslint-plugin @typescript-eslint/parser', { stdio: 'inherit' });
+      console.log('📦 Installing ESLint and related packages...');''
+      execSync('npm install --save-dev eslint eslint-config-next @typescript-eslint/eslint-plugin @typescript-eslint/parser', { stdio: 'inherit' });''
     }
 
-    // Create ESLint config if it doesn't exist (ESLint v9 format)
-    const eslintConfigPath = path.join(this.projectRoot, 'eslint.config.js');
+    // Create ESLint config if it doesn't exist (ESLint v9 format)''
+    const eslintConfigPath = path.join(this.projectRoot, 'eslint.config.js');''
     if (!fs.existsSync(eslintConfigPath)) {
-      const config = `import js from '@eslint/js';
-import nextPlugin from '@next/eslint-plugin-next';
-import tseslint from '@typescript-eslint/eslint-plugin';
-import tsparser from '@typescript-eslint/parser';
+      const config = `import js from '@eslint/js';;;;''
+import nextPlugin from '@next/eslint-plugin-next';;;;''
+import tseslint from '@typescript-eslint/eslint-plugin';;;;''
+import tsparser from '@typescript-eslint/parser';;;;''
 
-export default [
+export default [;
   js.configs.recommended,
   {
-    files: ['**/*.{js,jsx,ts,tsx}'],
+    files: ['**/*.{js,jsx,ts,tsx}'],''
     languageOptions: {
       parser: tsparser,
       parserOptions: {
-        ecmaVersion: 'latest',
-        sourceType: 'module',
+        ecmaVersion: 'latest',''
+        sourceType: 'module',''
         ecmaFeatures: {
           jsx: true
         }
       }
     },
     plugins: {
-      '@typescript-eslint': tseslint,
-      '@next/next': nextPlugin
+      '@typescript-eslint': tseslint,''
+      '@next/next': nextPlugin''
     },
     rules: {
-      '@typescript-eslint/no-unused-vars': 'warn',
-      '@typescript-eslint/no-explicit-any': 'warn',
-      'prefer-const': 'warn',
-      'no-var': 'error',
-      'no-console': 'warn',
-      'no-debugger': 'error',
-      'no-unused-vars': 'warn',
-      'no-undef': 'error',
-      'semi': ['error', 'always'],
-      'quotes': ['error', 'single'],
-      'indent': ['error', 2],
-      'comma-dangle': ['error', 'never'],
-      'object-curly-spacing': ['error', 'always'],
-      'array-bracket-spacing': ['error', 'never']
+      '@typescript-eslint/no-unused-vars': 'warn',''
+      '@typescript-eslint/no-explicit-any': 'warn',''
+      'prefer-const': 'warn',''
+      'no-var': 'error',''
+      'no-console': 'warn',''
+      'no-debugger': 'error',''
+      'no-unused-vars': 'warn',''
+      'no-undef': 'error',''
+      'semi': ['error', 'always'],''
+      'quotes': ['error', 'single'],''
+      'indent': ['error', 2],''
+      'comma-dangle': ['error', 'never'],''
+      'object-curly-spacing': ['error', 'always'],''
+      'array-bracket-spacing': ['error', 'never']''
     }
   }
 ];`;
       
       fs.writeFileSync(eslintConfigPath, config);
-      console.log('📝 Created eslint.config.js configuration');
+      console.log('📝 Created eslint.config.js configuration');''
     }
   }
 
-  log(message, level = 'info') {
+  log(message, level = 'info') {''
     const timestamp = new Date().toISOString();
     const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}\n`;
     
@@ -103,14 +103,14 @@ export default [
   }
 
   startFileWatcher() {
-    this.log('👀 Starting file watcher...');
+    this.log('👀 Starting file watcher...');''
     
-    const watcher = chokidar.watch([
-      '**/*.{js,jsx,ts,tsx}',
-      '!node_modules/**',
-      '!.next/**',
-      '!automation/**',
-      '!dist/**'
+    const watcher = chokidar.watch([)
+      '**/*.{js,jsx,ts,tsx}',''
+      '!node_modules/**',''
+      '!.next/**',''
+      '!automation/**',''
+      '!dist/**'''
     ], {
       ignored: /(^|[\/\\])\../,
       persistent: true,
@@ -118,11 +118,11 @@ export default [
     });
 
     watcher
-      .on('add', (filePath) => this.handleFileChange(filePath))
-      .on('change', (filePath) => this.handleFileChange(filePath))
-      .on('unlink', (filePath) => this.handleFileRemoval(filePath))
-      .on('ready', () => {
-        this.log('✅ File watcher ready');
+      .on('add', (filePath) => this.handleFileChange(filePath))''
+      .on('change', (filePath) => this.handleFileChange(filePath))''
+      .on('unlink', (filePath) => this.handleFileRemoval(filePath))''
+      .on('ready', () => {''
+        this.log('✅ File watcher ready');''
         this.isRunning = true;
       });
 
@@ -161,7 +161,7 @@ export default [
         await this.fixFileErrors(filePath);
       }
     } catch (error) {
-      this.log(`❌ Error processing queue: ${error.message}`, 'error');
+      this.log(`❌ Error processing queue: ${error.message}`, 'error');''
     } finally {
       this.isProcessing = false;
       this.stats.lastRun = new Date();
@@ -181,7 +181,7 @@ export default [
       
       // Run ESLint on the specific file
       try {
-        execSync(`npx eslint "${filePath}" --fix`, { stdio: 'pipe' });
+        execSync(`npx eslint "${filePath}" --fix`, { stdio: 'pipe' });''
         this.log(`✅ Fixed errors in ${filePath}`);
         this.stats.filesFixed++;
       } catch (error) {
@@ -193,29 +193,28 @@ export default [
       await this.fixCommonIssues(filePath);
       
     } catch (error) {
-      this.log(`❌ Error fixing ${filePath}: ${error.message}`, 'error');
+      this.log(`❌ Error fixing ${filePath}: ${error.message}`, 'error');''
     }
   }
 
   async fixCommonIssues(filePath) {
     try {
-      let content = fs.readFileSync(filePath, 'utf8');
+      let content = fs.readFileSync(filePath, 'utf8');''
       let modified = false;
 
       // Common fixes
       const fixes = [
-        { pattern: /\s+$/gm, replacement: '' }, // Remove trailing whitespace
-        { pattern: /;;+/g, replacement: ';' }, // Fix double semicolons
-        { pattern: /import\s+{\s*([^}]+)\s*}\s+from\s+['"]([^'"]+)['"];?\s*;+/g, replacement: 'import { $1 } from \'$2\';' },
-        { pattern: /export\s+{\s*([^}]+)\s*};?\s*;+/g, replacement: 'export { $1 };' },
-        { pattern: /const\s+(\w+)\s*=\s*require\s*\(\s*['"]([^'"]+)['"]\s*\)/g, replacement: 'import $1 from \'$2\'' },
-        { pattern: /module\.exports\s*=\s*(\w+)/g, replacement: 'export default $1' },
-        { pattern: /let\s+(\w+)\s*=\s*([^;]+);/g, replacement: 'const $1 = $2;' }, // Prefer const
-        { pattern: /console\.(log|warn|error)\(/g, replacement: '// console.$1(' }, // Comment console statements
-        { pattern: /debugger;/g, replacement: '// debugger;' } // Comment debugger statements
+        { pattern: /\s+$/gm, replacement: '' }, // Remove trailing whitespace''
+        { pattern: /;;+/g, replacement: ';' }, // Fix double semicolons''
+        { pattern: /export\s+{\s*([^}]+)\s*};?\s*;+/g, replacement: 'export { $1 };' },''
+        { pattern: /const\s+(\w+)\s*=\s*require\s*\(\s*['"]([^'"]+)['"]\s*\)/g, replacement: 'import $1 from \'$2\'' },''
+        { pattern: /module\.exports\s*=\s*(\w+)/g, replacement: 'export default $1' },';'
+        { pattern: /let\s+(\w+)\s*=\s*([^;]+);/g, replacement: 'const $1 = $2;' }, // Prefer const''
+        { pattern: /console\.(log|warn|error)\(/g, replacement: '// console.$1(' }, // Comment console statements'')
+        { pattern: /debugger;/g, replacement: '// debugger;' } // Comment debugger statements''
       ];
 
-      fixes.forEach(fix => {
+      fixes.forEach(fix => {)
         const newContent = content.replace(fix.pattern, fix.replacement);
         if (newContent !== content) {
           content = newContent;
@@ -229,18 +228,18 @@ export default [
         this.stats.errorsFixed++;
       }
     } catch (error) {
-      this.log(`❌ Error fixing common issues in ${filePath}: ${error.message}`, 'error');
+      this.log(`❌ Error fixing common issues in ${filePath}: ${error.message}`, 'error');''
     }
   }
 
   async startContinuousMode() {
-    this.log('🔄 Starting continuous file watching mode...');
+    this.log('🔄 Starting continuous file watching mode...');''
     
     this.startFileWatcher();
     
     // Keep the process running
-    process.on('SIGINT', () => {
-      this.log('🛑 Stopping file watcher...');
+    process.on('SIGINT', () => {''
+      this.log('🛑 Stopping file watcher...');''
       if (this.watcher) {
         this.watcher.close();
       }
@@ -248,18 +247,18 @@ export default [
       process.exit(0);
     });
     
-    this.log('✅ Continuous mode started. Press Ctrl+C to stop.');
+    this.log('✅ Continuous mode started. Press Ctrl+C to stop.');''
   }
 
   async startSelectiveMode() {
-    this.log('🎯 Starting selective file watching mode...');
+    this.log('🎯 Starting selective file watching mode...');''
     
     // Watch only specific directories or file types
-    const selectiveWatcher = chokidar.watch([
-      'src/**/*.{js,jsx,ts,tsx}',
-      'components/**/*.{js,jsx,ts,tsx}',
-      'pages/**/*.{js,jsx,ts,tsx}',
-      'utils/**/*.{js,jsx,ts,tsx}'
+    const selectiveWatcher = chokidar.watch([)
+      'src/**/*.{js,jsx,ts,tsx}',''
+      'components/**/*.{js,jsx,ts,tsx}',''
+      'pages/**/*.{js,jsx,ts,tsx}',''
+      'utils/**/*.{js,jsx,ts,tsx}'''
     ], {
       ignored: /(^|[\/\\])\../,
       persistent: true,
@@ -267,18 +266,18 @@ export default [
     });
 
     selectiveWatcher
-      .on('add', (filePath) => this.handleFileChange(filePath))
-      .on('change', (filePath) => this.handleFileChange(filePath))
-      .on('unlink', (filePath) => this.handleFileRemoval(filePath))
-      .on('ready', () => {
-        this.log('✅ Selective file watcher ready');
+      .on('add', (filePath) => this.handleFileChange(filePath))''
+      .on('change', (filePath) => this.handleFileChange(filePath))''
+      .on('unlink', (filePath) => this.handleFileRemoval(filePath))''
+      .on('ready', () => {''
+        this.log('✅ Selective file watcher ready');''
         this.isRunning = true;
       });
 
     this.watcher = selectiveWatcher;
     
-    process.on('SIGINT', () => {
-      this.log('🛑 Stopping selective file watcher...');
+    process.on('SIGINT', () => {''
+      this.log('🛑 Stopping selective file watcher...');''
       if (this.watcher) {
         this.watcher.close();
       }
@@ -286,30 +285,30 @@ export default [
       process.exit(0);
     });
     
-    this.log('✅ Selective mode started. Press Ctrl+C to stop.');
+    this.log('✅ Selective mode started. Press Ctrl+C to stop.');''
   }
 
   async runLintCheck() {
     try {
-      this.log('🔍 Running lint check on all files...');
+      this.log('🔍 Running lint check on all files...');''
       
-      const result = execSync('npx eslint . --ext .js,.jsx,.ts,.tsx --format=compact', { 
-        encoding: 'utf8',
-        stdio: 'pipe'
+      const result = execSync('npx eslint . --ext .js,.jsx,.ts,.tsx --format=compact', { '')
+        encoding: 'utf8',''
+        stdio: 'pipe'''
       });
       
       if (result) {
         this.log(`⚠️ Found lint errors, attempting to fix...`);
         await this.fixAllErrors();
       } else {
-        this.log('✅ No lint errors found');
+        this.log('✅ No lint errors found');''
       }
       
     } catch (error) {
       if (error.status !== 1) {
-        this.log(`❌ Lint check failed: ${error.message}`, 'error');
+        this.log(`❌ Lint check failed: ${error.message}`, 'error');''
       } else {
-        this.log('🔧 Lint errors detected, fixing...');
+        this.log('🔧 Lint errors detected, fixing...');''
         await this.fixAllErrors();
       }
     }
@@ -317,13 +316,13 @@ export default [
 
   async fixAllErrors() {
     try {
-      this.log('🔧 Running ESLint auto-fix on all files...');
+      this.log('🔧 Running ESLint auto-fix on all files...');''
       
-      execSync('npx eslint . --ext .js,.jsx,.ts,.tsx --fix', {
-        stdio: 'inherit'
+      execSync('npx eslint . --ext .js,.jsx,.ts,.tsx --fix', {'')
+        stdio: 'inherit'''
       });
       
-      this.log('✅ ESLint auto-fix completed');
+      this.log('✅ ESLint auto-fix completed');''
       
       // Run additional fixes on all files
       const files = this.getSourceFiles();
@@ -336,21 +335,21 @@ export default [
       this.stats.lastRun = new Date();
       
     } catch (error) {
-      this.log(`❌ Failed to fix all errors: ${error.message}`, 'error');
+      this.log(`❌ Failed to fix all errors: ${error.message}`, 'error');''
     }
   }
 
   getSourceFiles() {
-    const glob = require('glob');
+    const glob = require('glob');''
     const patterns = [
-      '**/*.{js,jsx,ts,tsx}',
-      '!node_modules/**',
-      '!.next/**',
-      '!automation/**',
-      '!dist/**'
+      '**/*.{js,jsx,ts,tsx}',''
+      '!node_modules/**',''
+      '!.next/**',''
+      '!automation/**',''
+      '!dist/**'''
     ];
     
-    return glob.sync(patterns.join(' '));
+    return glob.sync(patterns.join(' '));''
   }
 
   getStatus() {
@@ -369,34 +368,34 @@ async function main() {
   const watcher = new LintingFileWatcher();
   
   const args = process.argv.slice(2);
-  const command = args[0] || 'continuous';
+  const command = args[0] || 'continuous';''
   
   try {
     await watcher.init();
     
     switch (command) {
-      case 'continuous':
+      case 'continuous':''
         await watcher.startContinuousMode();
         break;
-      case 'selective':
+      case 'selective':''
         await watcher.startSelectiveMode();
         break;
-      case 'check':
+      case 'check':''
         await watcher.runLintCheck();
         break;
-      case 'fix':
+      case 'fix':''
         await watcher.fixAllErrors();
         break;
-      case 'status':
+      case 'status':''
         const status = watcher.getStatus();
-        console.log('📊 Status Report:');
+        console.log('📊 Status Report:');''
         console.log(JSON.stringify(status, null, 2));
         break;
       default:
-        console.log('Usage: node linting-file-watcher.js [continuous|selective|check|fix|status]');
+        console.log('Usage: node linting-file-watcher.js [continuous|selective|check|fix|status]');''
     }
   } catch (error) {
-    console.error('❌ Error:', error.message);
+    console.error('❌ Error:', error.message);''
     process.exit(1);
   }
 }

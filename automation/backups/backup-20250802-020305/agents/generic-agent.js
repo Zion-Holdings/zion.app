@@ -19,16 +19,16 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '{})''
-        console.error('Error processing task:, error)''
-        type: "
-          parameters: "{ param1: 'value1'"
-          operation: "
-        type: "
-          metrics: "['cpu"
-      result: "
-      status: "
-      status: "
-      result: "
-    console.log("Performance: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '{})''''
+        console.error('Error processing task:, error)''''
+        type: """
+          parameters: "{ param1: 'value1'"""
+          operation: """
+        type: """
+          metrics: "['cpu"""
+      result: """
+      status: """
+      status: """
+      result: """
+    console.log("Performance: """)

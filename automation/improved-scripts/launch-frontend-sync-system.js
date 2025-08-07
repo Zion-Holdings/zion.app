@@ -59,21 +59,21 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require($2)h))''
-const fs = require('path'
-const result = require('fs';''
-  log(message, level = 'info'
-      status: "
-      logLevel: "
-      console.error(❌ Failed to start Frontend Sync System: "
-      this.log("🔄 Frontend Sync System: "Agent created - ${data.agentId"
-      this.log(🚀 Frontend Sync System: "Agent started - ${data.agentId"
-      this.log("🛑 Frontend Sync System: "Agent stopped - ${data.agentId"
-        "
-      console.error(❌ Error restarting Frontend Sync System: "
-        status: "
-        status: "
-        status: "
-        console.error(❌ Failed to start Frontend Sync System: "
-    default: this.log(Usage: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require($2)h))''''
+const fs = require('path''')
+const result = require('fs';'''')
+  log(message, level = 'info''')
+      status: """
+      logLevel: """
+      console.error(❌ Failed to start Frontend Sync System: """)
+      this.log("🔄 Frontend Sync System: "Agent created - ${data.agentId""")
+      this.log(🚀 Frontend Sync System: "Agent started - ${data.agentId""")
+      this.log("🛑 Frontend Sync System: "Agent stopped - ${data.agentId""")
+        """
+      console.error(❌ Error restarting Frontend Sync System: """)
+        status: """
+        status: """
+        status: """
+        console.error(❌ Failed to start Frontend Sync System: """)
+    default: this.log(Usage: """)

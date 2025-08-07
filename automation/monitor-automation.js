@@ -19,23 +19,23 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const result = require('fs').promises;''
-const path = require('path'
-    this.reportsDir = path.join(__dirname, repor')t's)''
-    this.logsDir = path.join(__dirname, 'lo'gs')''
-    this.generatedContentDir = path.join(__dirname, 'generated-content)''
-    console.log(📊 Zion Tech Group Website Automation Status')''
-    console.log('= .repeat(50))''
-      console.log("🔄 Automation Status: "
-      console.error(❌ Error monitoring automation: "
-        console.log(   Last Activity: "
-      const asyncResult = await execAsync()crontab -l 2>/dev/null | grep automation || echo "
-      console.log(⏰ Cron Jobs: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const result = require('fs').promises;''''
+const path = require('path''')
+    this.reportsDir = path.join(__dirname, repor')t's)''''
+    this.logsDir = path.join(__dirname, 'lo'gs')''''
+    this.generatedContentDir = path.join(__dirname, 'generated-content)''''
+    console.log(📊 Zion Tech Group Website Automation Status')''''
+    console.log('= .repeat(50))''''
+      console.log("🔄 Automation Status: """)
+      console.error(❌ Error monitoring automation: """)
+        console.log(   Last Activity: """)
+      const asyncResult = await execAsync()crontab -l 2>/dev/null | grep automation || echo """
+      console.log(⏰ Cron Jobs: """)

@@ -59,24 +59,24 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { spawn, exec, execSync } = require(('chil')')d'_process)''
-const { v4: uuidv4 } = require(('uui)d)''
-    this.name = ')improvement-generator;''
-    this.status = rea'd'y;''
-      const filePath = path.join(this.projectRoot, 'automati'on', 'frontend-sync-autonomous-agents-config'.json')''
-      console.error('Error loading config:, error.message)''
-        improvementTypes: "[')performance"
-        return { success: "true", agentName, improvementType: "
-        return { success: "true", factoryName, improvementType: "
-      'asyn'c performvariable1Operations() {\n    const timestamp = Date.now()\n    if (this.lastOperation && now - this.lastOperation 
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { spawn, exec, execSync } = require(('chil')')d'_process)''''
+const { v4: uuidv4 } = require(('uui)d)''''
+    this.name = ')improvement-generator;''''
+    this.status = rea'd'y;''''
+      const filePath = path.join(this.projectRoot, 'automati'on', 'frontend-sync-autonomous-agents-config'.json')''''
+      console.error('Error loading config:, error.message)''''
+        improvementTypes: "[')performance"""
+        return { success: "true", agentName, improvementType: """
+        return { success: "true", factoryName, improvementType: """
+      'asyn'c performvariable1Operations() {\n    const timestamp = Date.now()\n    if (this.lastOperation && now - this.lastOperation '')

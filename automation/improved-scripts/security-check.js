@@ -59,23 +59,23 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-  fs = require('path'
-  console.error('Failed to require(fs: '
-  path = require('path'
-  console.error('Failed to require(path: '
-  log(message, level = 'info'
-        this.log('Checking for hardcoded secrets...', 'info'
-            /api_key\s*[:=]\s*['"][^'"
-            /secret\s*[:=]\s*['"][^'"
-            /password\s*[:=]\s*['"][^'"
-            /token\s*[:=]\s*['"][^'"
-            /key\s*[:=]\s*['"][^'"
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+  fs = require('path''')
+  console.error('Failed to require(fs: ''')
+  path = require('path''')
+  console.error('Failed to require(path: ''')
+  log(message, level = 'info''')
+        this.log('Checking for hardcoded secrets...', 'info''')
+            /api_key\s*[:=]\s*['"][^'"""
+            /secret\s*[:=]\s*['"][^'"""
+            /password\s*[:=]\s*['"][^'"""
+            /token\s*[:=]\s*['"][^'"""
+            /key\s*[:=]\s*['"][^'"""

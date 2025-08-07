@@ -5,21 +5,21 @@
  * Specialized agent for scanning files and detecting fence code block errors
  */
 
-const fs = require('fs');
-const path = require('path');
-const chokidar = require('chokidar');
+const fs = require('fs');''
+const path = require('path');''
+const chokidar = require('chokidar');''
 
 class FileScannerAgent {
   constructor(config = {}) {
     this.config = {
       scanInterval: 30000,
-      fileExtensions: ['.js', '.ts', '.jsx', '.tsx', '.md', '.mdx'],
-      excludePatterns: ['node_modules', '.git', '.next', 'dist', 'build'],
+      fileExtensions: ['.js', '.ts', '.jsx', '.tsx', '.md', '.mdx'],''
+      excludePatterns: ['node_modules', '.git', '.next', 'dist', 'build'],''
       errorPatterns: [
-        /```[\s\S]*?```/g,
+        /```
         /`[^`]*`/g,
-        /```[\w]*\n[\s\S]*?\n```/g,
-        /```[\w]*\n[\s\S]*?```/g
+        /```
+        /```
       ],
       ...config
     };
@@ -38,12 +38,12 @@ class FileScannerAgent {
 
   async start() {
     if (this.isRunning) {
-      this.log('Agent is already running');
+      this.log('Agent is already running');''
       return;
     }
 
     this.isRunning = true;
-    this.log('Starting File Scanner Agent');
+    this.log('Starting File Scanner Agent');''
 
     // Initial scan
     await this.performFullScan();
@@ -56,7 +56,7 @@ class FileScannerAgent {
       this.performFullScan();
     }, this.config.scanInterval);
 
-    this.log('File Scanner Agent started successfully');
+    this.log('File Scanner Agent started successfully');''
   }
 
   async stop() {
@@ -66,12 +66,12 @@ class FileScannerAgent {
       await this.watcher.close();
     }
     
-    this.log('File Scanner Agent stopped');
+    this.log('File Scanner Agent stopped');''
   }
 
   async performFullScan() {
     try {
-      this.log('Starting full file scan...');
+      this.log('Starting full file scan...');''
       const startTime = Date.now();
       
       const files = await this.getAllFiles();
@@ -81,7 +81,7 @@ class FileScannerAgent {
         const errors = await this.scanFile(file);
         if (errors.length > 0) {
           totalErrors += errors.length;
-          this.errorQueue.push({
+          this.errorQueue.push({)
             file,
             errors,
             timestamp: Date.now()
@@ -100,24 +100,24 @@ class FileScannerAgent {
       await this.processErrorQueue();
       
     } catch (error) {
-      this.log(`Full scan error: ${error.message}`, 'error');
+      this.log(`Full scan error: ${error.message}`, 'error');''
     }
   }
 
   startFileWatching() {
     const rootDir = process.cwd();
     
-    this.watcher = chokidar.watch(rootDir, {
+    this.watcher = chokidar.watch(rootDir, {)
       ignored: this.config.excludePatterns.map(pattern => `**/${pattern}/**`),
       persistent: true,
       ignoreInitial: true
     });
 
     this.watcher
-      .on('add', (filePath) => this.handleFileChange(filePath, 'add'))
-      .on('change', (filePath) => this.handleFileChange(filePath, 'change'))
-      .on('unlink', (filePath) => this.handleFileChange(filePath, 'delete'))
-      .on('error', (error) => this.log(`File watcher error: ${error.message}`, 'error'));
+      .on('add', (filePath) => this.handleFileChange(filePath, 'add'))''
+      .on('change', (filePath) => this.handleFileChange(filePath, 'change'))''
+      .on('unlink', (filePath) => this.handleFileChange(filePath, 'delete'))''
+      .on('error', (error) => this.log(`File watcher error: ${error.message}`, 'error'));''
   }
 
   async handleFileChange(filePath, event) {
@@ -128,11 +128,11 @@ class FileScannerAgent {
 
     this.log(`File ${event}: ${filePath}`);
 
-    if (event === 'add' || event === 'change') {
+    if (event === 'add' || event === 'change') {''
       try {
         const errors = await this.scanFile(filePath);
         if (errors.length > 0) {
-          this.errorQueue.push({
+          this.errorQueue.push({)
             file: filePath,
             errors,
             timestamp: Date.now()
@@ -145,7 +145,7 @@ class FileScannerAgent {
           await this.processErrorQueue();
         }
       } catch (error) {
-        this.log(`Error scanning file ${filePath}: ${error.message}`, 'error');
+        this.log(`Error scanning file ${filePath}: ${error.message}`, 'error');''
       }
     }
   }
@@ -165,7 +165,7 @@ class FileScannerAgent {
             const stat = fs.statSync(fullPath);
             
             if (stat.isDirectory()) {
-              const shouldExclude = this.config.excludePatterns.some(pattern => 
+              const shouldExclude = this.config.excludePatterns.some(pattern => )
                 fullPath.includes(pattern)
               );
               
@@ -179,12 +179,12 @@ class FileScannerAgent {
               }
             }
           } catch (error) {
-            // Skip files/directories that can't be accessed
-            this.log(`Skipping ${fullPath}: ${error.message}`, 'warn');
+            // Skip files/directories that can't be accessed''
+            this.log(`Skipping ${fullPath}: ${error.message}`, 'warn');''
           }
         }
       } catch (error) {
-        this.log(`Error reading directory ${dir}: ${error.message}`, 'error');
+        this.log(`Error reading directory ${dir}: ${error.message}`, 'error');''
       }
     };
     
@@ -194,10 +194,10 @@ class FileScannerAgent {
 
   async scanFile(filePath) {
     try {
-      const content = fs.readFileSync(filePath, 'utf8');
+      const content = fs.readFileSync(filePath, 'utf8');''
       return this.detectFenceErrors(content, filePath);
     } catch (error) {
-      this.log(`Error reading file ${filePath}: ${error.message}`, 'error');
+      this.log(`Error reading file ${filePath}: ${error.message}`, 'error');''
       return [];
     }
   }
@@ -206,57 +206,57 @@ class FileScannerAgent {
     const errors = [];
     
     // Check for unclosed fence blocks
-    const fenceMatches = content.match(/```[\w]*\n/g);
-    const closingMatches = content.match(/\n```/g);
+    const fenceMatches = content.match(/```)
+    const closingMatches = content.match(/\n```)
     
     if (fenceMatches && closingMatches) {
       if (fenceMatches.length !== closingMatches.length) {
-        errors.push({
-          type: 'missing-closing-fence',
-          line: this.findLineNumber(content, content.lastIndexOf('```')),
-          description: 'Unclosed fence code block',
-          severity: 'high'
+        errors.push({)
+          type: 'missing-closing-fence',''
+          line: this.findLineNumber(content, content.lastIndexOf('```')
+          description: 'Unclosed fence code block',''
+          severity: 'high'''
         });
       }
     } else if (fenceMatches && !closingMatches) {
-      errors.push({
-        type: 'missing-closing-fence',
-        line: this.findLineNumber(content, content.lastIndexOf('```')),
-        description: 'Missing closing fence',
-        severity: 'high'
+      errors.push({)
+        type: 'missing-closing-fence',''
+        line: this.findLineNumber(content, content.lastIndexOf('```')
+        description: 'Missing closing fence',''
+        severity: 'high'''
       });
     }
     
     // Check for malformed fences
-    const malformedFences = content.match(/```[^\n]*[^a-zA-Z0-9\n][^\n]*\n/g);
+    const malformedFences = content.match(/```)
     if (malformedFences) {
-      errors.push({
-        type: 'malformed-fence',
-        line: this.findLineNumber(content, content.indexOf('```')),
-        description: 'Malformed fence opening',
-        severity: 'medium'
+      errors.push({)
+        type: 'malformed-fence',''
+        line: this.findLineNumber(content, content.indexOf('```')
+        description: 'Malformed fence opening',''
+        severity: 'medium'''
       });
     }
     
     // Check for nested fences
-    const nestedFences = content.match(/```[\s\S]*?```[\s\S]*?```/g);
+    const nestedFences = content.match(/```)
     if (nestedFences) {
-      errors.push({
-        type: 'nested-fences',
-        line: this.findLineNumber(content, content.indexOf('```')),
-        description: 'Nested fence code blocks detected',
-        severity: 'medium'
+      errors.push({)
+        type: 'nested-fences',''
+        line: this.findLineNumber(content, content.indexOf('```')
+        description: 'Nested fence code blocks detected',''
+        severity: 'medium'''
       });
     }
     
     // Check for invalid language tags
-    const invalidLanguageTags = content.match(/```[^\n]*[^a-zA-Z0-9\n][^\n]*\n/g);
+    const invalidLanguageTags = content.match(/```)
     if (invalidLanguageTags) {
-      errors.push({
-        type: 'invalid-language-tag',
-        line: this.findLineNumber(content, content.indexOf('```')),
-        description: 'Invalid language tag in fence block',
-        severity: 'low'
+      errors.push({)
+        type: 'invalid-language-tag',''
+        line: this.findLineNumber(content, content.indexOf('```')
+        description: 'Invalid language tag in fence block',''
+        severity: 'low'''
       });
     }
     
@@ -265,11 +265,11 @@ class FileScannerAgent {
     if (inlineCodeIssues) {
       for (const match of inlineCodeIssues) {
         if (match.length < 3) {
-          errors.push({
-            type: 'malformed-inline-code',
+          errors.push({)
+            type: 'malformed-inline-code',''
             line: this.findLineNumber(content, content.indexOf(match)),
-            description: 'Malformed inline code block',
-            severity: 'low'
+            description: 'Malformed inline code block',''
+            severity: 'low'''
           });
         }
       }
@@ -279,7 +279,7 @@ class FileScannerAgent {
   }
 
   findLineNumber(content, position) {
-    return content.substring(0, position).split('\n').length;
+    return content.substring(0, position).split('\n').length;''
   }
 
   async processErrorQueue() {
@@ -295,7 +295,7 @@ class FileScannerAgent {
     for (const item of items) {
       try {
         // Emit error event for other agents to handle
-        this.emit('errors-found', {
+        this.emit('errors-found', {'')
           file: item.file,
           errors: item.errors,
           timestamp: item.timestamp
@@ -303,7 +303,7 @@ class FileScannerAgent {
         
         this.log(`Queued ${item.errors.length} errors from ${item.file} for processing`);
       } catch (error) {
-        this.log(`Error processing queue item: ${error.message}`, 'error');
+        this.log(`Error processing queue item: ${error.message}`, 'error');''
       }
     }
   }
@@ -316,21 +316,21 @@ class FileScannerAgent {
     };
   }
 
-  log(message, level = 'info') {
+  log(message, level = 'info') {''
     const timestamp = new Date().toISOString();
     const logMessage = `[${timestamp}] [FileScannerAgent] [${level.toUpperCase()}] ${message}`;
     
     console.log(logMessage);
     
     // Write to log file
-    const logDir = path.join(__dirname, '..', 'fence-code-fix-logs');
-    const logFile = path.join(logDir, 'file-scanner-agent.log');
+    const logDir = path.join(__dirname, '..', 'fence-code-fix-logs');''
+    const logFile = path.join(logDir, 'file-scanner-agent.log');''
     
     try {
       if (!fs.existsSync(logDir)) {
         fs.mkdirSync(logDir, { recursive: true });
       }
-      fs.appendFileSync(logFile, logMessage + '\n');
+      fs.appendFileSync(logFile, logMessage + '\n');''
     } catch (error) {
       console.error(`Failed to write to log file: ${error.message}`);
     }
@@ -350,12 +350,12 @@ if (require.main === module) {
   const agent = new FileScannerAgent();
   
   // Handle graceful shutdown
-  process.on('SIGINT', async () => {
+  process.on('SIGINT', async () => {''
     await agent.stop();
     process.exit(0);
   });
   
-  process.on('SIGTERM', async () => {
+  process.on('SIGTERM', async () => {''
     await agent.stop();
     process.exit(0);
   });
@@ -365,3 +365,8 @@ if (require.main === module) {
 }
 
 module.exports = FileScannerAgent;
+
+
+
+
+

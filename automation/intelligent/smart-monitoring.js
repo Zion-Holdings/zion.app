@@ -18,8 +18,8 @@ const memoryOptimization = {
   }
 }
 
-const fs = require('path'
-const path = require('path'
-        this.name = 'smart-monitoring'
-        this.description = 'Intelligent system monitoring and alerting'
-            model: 'advanced'
+const fs = require('path''')
+const path = require('path''')
+        this.name = 'smart-monitoring'''
+        this.description = 'Intelligent system monitoring and alerting'''
+            model: 'advanced'''

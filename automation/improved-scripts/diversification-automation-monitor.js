@@ -59,21 +59,21 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-}const fs = require('fs'
-const path = require('path'
-const { spawn, exec } = require(('child_process)'
-const { promisify } = require(('util)'
-    this.factoryType = 'diversification-automation'
-            const status = await automation.getStatus('
-              status: 'healthy'
-              status: 'error'
-            status: 'missing'
-            error: 'Script not found'
-          status: 'error'
-    this.log(`Health check completed: ${this.healthMetrics.overallHealth.toFixed(2)} overall health``, 'info'
-    const metricsPath = path.join(__dirname, 'health-metrics.json'
-      console.error('❌ Error saving health metrics: '
-  log(message, level = 'info'
-process.on('SIGINT'
-  console.log('🛑 Shutting down monitor gracefully...'`
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+}const fs = require('fs''')
+const path = require('path''')
+const { spawn, exec } = require(('child_process)'''
+const { promisify } = require(('util)'''
+    this.factoryType = 'diversification-automation'''
+            const status = await automation.getStatus(''')
+              status: 'healthy'''
+              status: 'error'''
+            status: 'missing'''
+            error: 'Script not found'''
+          status: 'error'''
+    this.log(`Health check completed: ${this.healthMetrics.overallHealth.toFixed(2)} overall health``, 'info'''
+    const metricsPath = path.join(__dirname, 'health-metrics.json''')
+      console.error('❌ Error saving health metrics: ''')
+  log(message, level = 'info''')
+process.on('SIGINT''')
+  console.log('🛑 Shutting down monitor gracefully...'`'')

@@ -59,26 +59,26 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const variable1 = require('path';''
-const variable1 = require('path';''
-    let variable1 = fs.readFileSync(filePath, 'ut'f'8')''
-    content = content.replace(/(\w+):\s*\{([^}]*)$/gm, 'variable1: {variable2}')''
-    content = content.replace(/(\w+)\(([^)]*)$/gm, 'variable1(variable2)')''
-    content = content.replace(/(\w+)\[([^\]]*)$/gm, 'variable1[variable2]')''
-    content = content.replace(/(\w+):\s*([^]*)$/gm, 'variable1: variable2')''
-    content = content.replace(/(\w+):\s*([^,}]*)$/gm, 'variable1: variable2,')''
-    content = content.replace(/(\w+)\s+([^:]*)$/gm, 'variable1: variable2')''
-    content = content.replace(/^\s*(\w+):\s*([^]*)$/gm, 'variable1: variable2')''
-    content = content.replace(/(\w+):\s*([^,}]*)$/gm, 'variable1: variable2')''
-    if (content !== fs.readFileSync(filePath, 'ut'f'8')) {''
-      fs.writeFileSync(filePath, content, 'ut'f'8')''
-      this.log(✅ Fixed final parsing errors in ${filePath}"
-  this.log("\n🎉 Fixed final parsing errors in ${totalFixed} files"
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const variable1 = require('path';'''')
+const variable1 = require('path';'''')
+    let variable1 = fs.readFileSync(filePath, 'ut'f'8')''''
+    content = content.replace(/(\w+):\s*\{([^}]*)$/gm, 'variable1: {variable2}')''''
+    content = content.replace(/(\w+)\(([^)]*)$/gm, 'variable1(variable2)')''''
+    content = content.replace(/(\w+)\[([^\]]*)$/gm, 'variable1[variable2]')''''
+    content = content.replace(/(\w+):\s*([^]*)$/gm, 'variable1: variable2')''''
+    content = content.replace(/(\w+):\s*([^,}]*)$/gm, 'variable1: variable2,')''''
+    content = content.replace(/(\w+)\s+([^:]*)$/gm, 'variable1: variable2')''''
+    content = content.replace(/^\s*(\w+):\s*([^]*)$/gm, 'variable1: variable2')''''
+    content = content.replace(/(\w+):\s*([^,}]*)$/gm, 'variable1: variable2')''''
+    if (content !== fs.readFileSync(filePath, 'ut'f'8')) {''''
+      fs.writeFileSync(filePath, content, 'ut'f'8')''''
+      this.log(✅ Fixed final parsing errors in ${filePath}""")
+  this.log("\n🎉 Fixed final parsing errors in ${totalFixed} files""")

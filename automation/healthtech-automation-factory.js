@@ -18,6 +18,6 @@ const memoryOptimization = {
   }
 }async getStatus() {
     return {
-      systemName: 'healthtech-automation-factory'
-process.on('SIGINT'
-  console.log('🛑 Shutting down healthtech-automation-factory gracefully...'
+      systemName: 'healthtech-automation-factory'''
+process.on('SIGINT''')
+  console.log('🛑 Shutting down healthtech-automation-factory gracefully...''')

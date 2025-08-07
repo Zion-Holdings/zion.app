@@ -59,38 +59,38 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-const cron = require('path';''
-      currentPhase: "
-      content: "fs.readFileSync(path.join(generationsPath"
-          type: "
-          priority: "
-          action: "
-        type: "
-        priority: "
-        action: "
-        type: "
-        priority: "
-        description: "
-        action: "
-        target: "
-        type: "
-        priority: "
-        description: "
-        target: "
-        type: "
-        priority: "
-        description: "
-        action: "
-        target: "
-      status: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require(('chil')')d'_process)''''
+const cron = require('path';'''')
+      currentPhase: """
+      content: "fs.readFileSync(path.join(generationsPath""")
+          type: """
+          priority: """
+          action: """
+        type: """
+        priority: """
+        action: """
+        type: """
+        priority: """
+        description: """
+        action: """
+        target: """
+        type: """
+        priority: """
+        description: """
+        target: """
+        type: """
+        priority: """
+        description: """
+        action: """
+        target: """
+      status: """

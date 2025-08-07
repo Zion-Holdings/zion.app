@@ -57,15 +57,15 @@ const memoryOptimization = {
     }
   }
 }
-const fs = require('path';''
-const path = require('path';''
-        this.agentId = 'intelligent-content-optimizer'''
-        this.status = 'active'''
-        const emotionalWords = ['amazing', 'incredible', 'fantastic', 'wonderful']''
-            'utilize': 'use',''
-            'implement': 'use',''
-            'facilitate': 'help',''
-            'subsequently': 'then'''
-            const regex = new RegExp(`\\b${complex}\\b, 'gi')''
-        if (!improved.includes('
-            improved += '\n<p>
+const fs = require('path';'''')
+const path = require('path';'''')
+        this.agentId = 'intelligent-content-optimizer'''''
+        this.status = 'active'''''
+        const emotionalWords = ['amazing', 'incredible', 'fantastic', 'wonderful']''''
+            'utilize': 'use',''''
+            'implement': 'use',''''
+            'facilitate': 'help',''''
+            'subsequently': 'then'''''
+            const regex = new RegExp(`\\b${complex}\\b, 'gi')''''
+        if (!improved.includes(''')
+            improved += '\n<p>''

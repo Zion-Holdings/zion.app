@@ -59,28 +59,28 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const result = require('fs'
-const path = require('path'
-      const filePath = path.join(__dirname, chatgpt-content-memor')y'.json)''
-      const result = fs.readFileSync(memoryPath, 'ut'f8')''
-      console.error('Error loading content memory:, error)''
-    const result = customData.audience || \')enterpris\'es\'\'\'
-      subtitle: "
-        content: ""
-        content: ""
-      ogType: "
-      aiPlatform: "[A'I' platform"
-      blockchainNetwork: "['blockcha'in'"
-      aiMatchingEngine: "['AI' matching'"
-        targetAudience: "
-        industry: "
-        industry: "
-        audience: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const result = require('fs''')
+const path = require('path''')
+      const filePath = path.join(__dirname, chatgpt-content-memor')y'.json)''''
+      const result = fs.readFileSync(memoryPath, 'ut'f8')''''
+      console.error('Error loading content memory:, error)''''
+    const result = customData.audience || \')enterpris\'es\'\'\'''
+      subtitle: """
+        content: """"
+        content: """"
+      ogType: """
+      aiPlatform: "[A'I' platform"""
+      blockchainNetwork: "['blockcha'in'"""
+      aiMatchingEngine: "['AI' matching'"""
+        targetAudience: """
+        industry: """
+        industry: """
+        audience: """

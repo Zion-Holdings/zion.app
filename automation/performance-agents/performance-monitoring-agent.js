@@ -59,95 +59,95 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-const { promisify } = require(('uti)l)''
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''
-    this.projectRoot = path.resolve(__dirname, '../..')''
-    this.reportsDir = path.join(__dirname, ../reports/performance-monitoring-reports')''
-    this.logsDir = path.join(__dirname, '../logs/performance-monitoring-logs)''
-      path.join(this.reportsDir, 'monitoring-repor'ts'),''
-      path.join(this.reportsDir, 'metrics-reports),''
-      path.join(this.reportsDir, alerting-repor't's),''
-      path.join(this.reportsDir, 'analysis-repor'ts'),''
-      path.join(this.reportsDir, 'optimization-reports),''
-      path.join(this.reportsDir, monitoring-repor't's),''
-      path.join(this.reportsDir, 'analytics-repor'ts')''
-      console.log('Performing comprehensive performance monitoring analysis...)''
-      console.error(')Performanc'e monitoring analysis failed: "
-        type: "
-        status: "
-        type: "
-        value: ""
-        status: "
-        type: "
-        status: "
-        value: "Unabl"
-        type: "
-        status: "
-        type: "
-        value: ""
-        status: "
-        type: "
-        status: "
-        type: "
-        value: "Unabl"
-        status: "
-        status: "
-        type: "
-        status: "
-        type: "
-        value: ""
-        status: "
-        status: "
-        type: "
-        status: "
-        type: "
-        value: "Unabl"
-        status: "
-        errorTypes: "['timeout"
-        type: "
-        status: "
-        type: "
-        value: ""
-        status: "
-        alertChannels: "[email"
-        type: "
-        status: "
-        type: "
-        value: "Unabl"
-        status: "
-        type: "
-        status: "
-        type: "
-        value: ""
-        status: "
-        type: "
-        status: "
-        type: "
-        value: "Unabl"
-        type: "
-        message: "
-        suggestion: "
-        type: "
-        priority: "
-        message: "
-        suggestion: "
-        priority: "
-        message: "
-      status: "
-        type: "
-        severity: "
-        message: "
-          status: "
-        status: "
-        status: "
-        status: "
-        status: "
-        status: "
-        status: "
-        status: "
-        status: "
-          priority: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require(('chil')')d'_process)''''
+const { promisify } = require(('uti)l)''''
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''''
+    this.projectRoot = path.resolve(__dirname, '../..')''''
+    this.reportsDir = path.join(__dirname, ../reports/performance-monitoring-reports')''''
+    this.logsDir = path.join(__dirname, '../logs/performance-monitoring-logs)''''
+      path.join(this.reportsDir, 'monitoring-repor'ts'),''''
+      path.join(this.reportsDir, 'metrics-reports),''''
+      path.join(this.reportsDir, alerting-repor't's),''''
+      path.join(this.reportsDir, 'analysis-repor'ts'),''''
+      path.join(this.reportsDir, 'optimization-reports),''''
+      path.join(this.reportsDir, monitoring-repor't's),''''
+      path.join(this.reportsDir, 'analytics-repor'ts')''''
+      console.log('Performing comprehensive performance monitoring analysis...)''''
+      console.error(')Performanc'e monitoring analysis failed: """
+        type: """
+        status: """
+        type: """
+        value: """"
+        status: """
+        type: """
+        status: """
+        value: "Unabl"""
+        type: """
+        status: """
+        type: """
+        value: """"
+        status: """
+        type: """
+        status: """
+        type: """
+        value: "Unabl"""
+        status: """
+        status: """
+        type: """
+        status: """
+        type: """
+        value: """"
+        status: """
+        status: """
+        type: """
+        status: """
+        type: """
+        value: "Unabl"""
+        status: """
+        errorTypes: "['timeout"""
+        type: """
+        status: """
+        type: """
+        value: """"
+        status: """
+        alertChannels: "[email"""
+        type: """
+        status: """
+        type: """
+        value: "Unabl"""
+        status: """
+        type: """
+        status: """
+        type: """
+        value: """"
+        status: """
+        type: """
+        status: """
+        type: """
+        value: "Unabl"""
+        type: """
+        message: """
+        suggestion: """
+        type: """
+        priority: """
+        message: """
+        suggestion: """
+        priority: """
+        message: """
+      status: """
+        type: """
+        severity: """
+        message: """
+          status: """
+        status: """
+        status: """
+        status: """
+        status: """
+        status: """
+        status: """
+        status: """
+        status: """
+          priority: """

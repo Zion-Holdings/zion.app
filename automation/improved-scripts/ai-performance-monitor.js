@@ -59,26 +59,26 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-  fs = require('path'
-  console.error('Failed to require(fs: '
-}''
-  path = require('path'
-  console.error('Failed to require(path: '
-}''
-      health: 'healthy'
-        this.monitorId = 'ai-performance-monitor'''
-                type: "
-                message: "
-                severity: "
-                type: "
-                message: "
-                severity: "
-                type: "
-                action: "
-                priority: "
-                expectedImprovement: "
-                type: "
-                action: "
-                priority: "
-                expectedImprovement: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+  fs = require('path''')
+  console.error('Failed to require(fs: ''')
+}''''
+  path = require('path''')
+  console.error('Failed to require(path: ''')
+}''''
+      health: 'healthy'''
+        this.monitorId = 'ai-performance-monitor'''''
+                type: """
+                message: """
+                severity: """
+                type: """
+                message: """
+                severity: """
+                type: """
+                action: """
+                priority: """
+                expectedImprovement: """
+                type: """
+                action: """
+                priority: """
+                expectedImprovement: """

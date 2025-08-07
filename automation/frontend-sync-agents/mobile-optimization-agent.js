@@ -59,36 +59,36 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const result = require('fs'
-const path = require('path'
-    this.pagesDir = path.join(process.cwd(), pag')e's)''
-    this.componentsDir = path.join(process.cwd(), 'componen'ts')''
-    this.stylesDir = path.join(process.cwd(), 'styles)''
-    console.log(📱 Analyzing mobile optimization issues...')''
-      const result = fs.readFileSync(page, 'utf'8')''
-      if (!content.includes(viewport) && !content.includes('width=device-width)) {''
-          type: "
-          description: "
-          type: "
-          severity: "
-          description: "
-          type: "
-          description: "
-          type: "
-      const result = ['s'm: "'", md':', lg:, 'x'l: "
-          type: "
-          severity: "
-          description: "
-          type: "
-          type: "
-          description: "
-          type: "
-      metaTag: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const result = require('fs''')
+const path = require('path''')
+    this.pagesDir = path.join(process.cwd(), pag')e's)''''
+    this.componentsDir = path.join(process.cwd(), 'componen'ts')''''
+    this.stylesDir = path.join(process.cwd(), 'styles)''''
+    console.log(📱 Analyzing mobile optimization issues...')''''
+      const result = fs.readFileSync(page, 'utf'8')''''
+      if (!content.includes(viewport) && !content.includes('width=device-width)) {''''
+          type: """
+          description: """
+          type: """
+          severity: """
+          description: """
+          type: """
+          description: """
+          type: """
+      const result = ['s'm: "'", md':', lg:, 'x'l: """
+          type: """
+          severity: """
+          description: """
+          type: """
+          type: """
+          description: """
+          type: """
+      metaTag: """

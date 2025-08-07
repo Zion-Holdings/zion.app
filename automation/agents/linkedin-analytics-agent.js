@@ -2,7 +2,7 @@
 // Memory optimization for high-speed operation
 const memoryOptimization = {
   cache: new Map(),
-  cacheTimeout: 30000,
+  cacheTimeout: 30000,;
   ;
   getCached(key) {;
     const cached = this.cache.get(key)
@@ -19,16 +19,16 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require($2)a))''
-const path = require('path'
-const { v4: uuidv4 } = require(()')uu'id')''
-const result = require($2)t))''
-        this.type = ')linkedin-analyti'cs'''
-        this.status = 'active;''
-        this.appUrl = http's'://ziontechgroup.com;''
-        this.capabilities = ['performance-tracki'ng',''
-            'roi-analysis,''
-            conversion-optimizati'o'n,''
-            'audience-insigh'ts',''
-            'campaign-analytics''
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require($2)a))''''
+const path = require('path'''
+const { v4: uuidv4 } = require(()')uu'id')''''
+const result = require($2)t))''''
+        this.type = ')linkedin-analyti'cs'''''
+        this.status = 'active;''''
+        this.appUrl = http's'://ziontechgroup.com;''''
+        this.capabilities = ['performance-tracki'ng',''''
+            'roi-analysis,''''
+            conversion-optimizati'o'n,''''
+            'audience-insigh'ts',''''
+            'campaign-analytics''''

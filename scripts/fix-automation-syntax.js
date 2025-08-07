@@ -1,24 +1,24 @@
-const fs = require('fs'
-const path = require('path'
-console.log('🔧 Fixing automation syntax errors...'
-const factorySystemPath = path.join(__dirname, '../automation/ultimate-automation-factory-system.js'
-let content = fs.readFileSync(factorySystemPath, 'utf8'
-content = content.replace(/;\s*};/g, '};'
-content = content.replace(/;\s*];/g, '];'
-content = content.replace(/;\s*};/g, '};'
-content = content.replace(/require\.main\s*=\s*==\s*module/g, 'require.main === module'
-content = content.replace(/{\s*;/g, '{'
-content = content.replace(/;\s*$/gm, ''
-content = content.replace(/timestamp:\s*new Date\(\)\.toISOString\(\);/g, 'timestamp: new Date().toISOString()'
-content = content.replace(/message;/g, 'message'
-content = content.replace(/totalEvolutionCount:\s*0;/g, 'totalEvolutionCount: 0'
-console.log('✅ Fixed ultimate-automation-factory-system.js'
-const automationDir = path.join(__dirname, '../automation'
-const files = fs.readdirSync(automationDir).filter(f => f.endsWith('.js'
-  if (file === 'ultimate-automation-factory-system.js'
-    let fileContent = fs.readFileSync(filePath, 'utf8'
-    fileContent = fileContent.replace(/;\s*};/g, '};'
-    fileContent = fileContent.replace(/;\s*];/g, '];'
-    fileContent = fileContent.replace(/require\.main\s*=\s*==\s*module/g, 'require.main === module'
-    fileContent = fileContent.replace(/{\s*;/g, '{'
-console.log('🎉 Automation syntax fixes completed!'
+const fs = require('fs''')
+const path = require('path''')
+console.log('🔧 Fixing automation syntax errors...''')
+const factorySystemPath = path.join(__dirname, '../automation/ultimate-automation-factory-system.js''')
+let content = fs.readFileSync(factorySystemPath, 'utf8''')
+content = content.replace(/;\s*};/g, '};''')
+content = content.replace(/;\s*];/g, '];''')
+content = content.replace(/;\s*};/g, '};''')
+content = content.replace(/require\.main\s*=\s*==\s*module/g, 'require.main === module''')
+content = content.replace(/{\s*;/g, '{''')
+content = content.replace(/;\s*$/gm, '''')
+content = content.replace(/timestamp:\s*new Date\(\)\.toISOString\(\);/g, 'timestamp: new Date().toISOString()'''
+content = content.replace(/message;/g, 'message''')
+content = content.replace(/totalEvolutionCount:\s*0;/g, 'totalEvolutionCount: 0''')
+console.log('✅ Fixed ultimate-automation-factory-system.js''')
+const automationDir = path.join(__dirname, '../automation''')
+const files = fs.readdirSync(automationDir).filter(f => f.endsWith('.js''')
+  if (file === 'ultimate-automation-factory-system.js''')
+    let fileContent = fs.readFileSync(filePath, 'utf8''')
+    fileContent = fileContent.replace(/;\s*};/g, '};''')
+    fileContent = fileContent.replace(/;\s*];/g, '];''')
+    fileContent = fileContent.replace(/require\.main\s*=\s*==\s*module/g, 'require.main === module''')
+    fileContent = fileContent.replace(/{\s*;/g, '{''')
+console.log('🎉 Automation syntax fixes completed!''')

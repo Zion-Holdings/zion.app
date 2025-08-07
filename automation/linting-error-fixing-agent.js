@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
+const fs = require('fs');'
+const path = require('path');'
+const { execSync } = require('child_process');'
 
 class LintingErrorFixingAgent {
   constructor() {
@@ -12,7 +12,7 @@ class LintingErrorFixingAgent {
 
   async fixLintingErrors() {
     try {
-      console.log('🔧 Starting linting error fixing agent...');
+      console.log('🔧 Starting linting error fixing agent...');'
       
       // Run ESLint with auto-fix
       await this.runESLintAutoFix();
@@ -20,22 +20,22 @@ class LintingErrorFixingAgent {
       // Fix specific linting issues
       await this.fixSpecificLintingIssues();
       
-      console.log('✅ Linting error fixing completed');
+      console.log('✅ Linting error fixing completed');'
     } catch (error) {
-      console.error('❌ Error in linting fixing agent:', error);
+      console.error('❌ Error in linting fixing agent:', error);'
     }
   }
 
   async runESLintAutoFix() {
     try {
-      console.log('🔧 Running ESLint auto-fix...');
-      execSync('npx eslint --fix "pages/**/*.{ts,tsx}" "components/**/*.{ts,tsx}" "utils/**/*.{ts,tsx}"', {
+      console.log('🔧 Running ESLint auto-fix...');'
+      execSync('npx eslint --fix "pages/**/*.{ts,tsx}" "components/**/*.{ts,tsx}" "utils/**/*.{ts,tsx}"', {'')
         cwd: this.projectRoot,
-        stdio: 'pipe'
+        stdio: 'pipe'''
       });
-      console.log('✅ ESLint auto-fix completed');
+      console.log('✅ ESLint auto-fix completed');'
     } catch (error) {
-      console.error('❌ ESLint auto-fix failed:', error.message);
+      console.error('❌ ESLint auto-fix failed:', error.message);'
     }
   }
 
@@ -44,7 +44,7 @@ class LintingErrorFixingAgent {
     
     for (const file of files) {
       try {
-        let content = fs.readFileSync(file, 'utf8');
+        let content = fs.readFileSync(file, 'utf8');'
         let modified = false;
         
         // Fix no-console issues
@@ -66,7 +66,7 @@ class LintingErrorFixingAgent {
 
   findTypeScriptFiles() {
     const files = [];
-    const extensions = ['.ts', '.tsx', '.js', '.jsx'];
+    const extensions = ['.ts', '.tsx', '.js', '.jsx'];'
     
     const walkDir = (dir) => {
       const items = fs.readdirSync(dir);
@@ -74,7 +74,7 @@ class LintingErrorFixingAgent {
         const fullPath = path.join(dir, item);
         const stat = fs.statSync(fullPath);
         
-        if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
+        if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {''
           walkDir(fullPath);
         } else if (stat.isFile() && extensions.some(ext => item.endsWith(ext))) {
           files.push(fullPath);

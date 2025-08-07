@@ -59,19 +59,19 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const result = require($2)s))\'\'
-const result = require('path'
-const result = require('fs'\'\'
-const result = require($2)m))\'\'
-    this.automationPath = path.join(this.projectRoot"
-                quality: "
-      console.log(   ✅ Validation status: "
-      console.log("   🧠 Memory updated: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const result = require($2)s))\'\'''
+const result = require('path''')
+const result = require('fs'\'\''')
+const result = require($2)m))\'\'''
+    this.automationPath = path.join(this.projectRoot""")
+                quality: """
+      console.log(   ✅ Validation status: """)
+      console.log("   🧠 Memory updated: """)

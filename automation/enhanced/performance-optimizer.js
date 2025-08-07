@@ -18,9 +18,9 @@ const memoryOptimization = {
   }
 }
 
-const fs = require('path'
-const path = require('path'
-        this.name = 'performance-optimizer'
-        this.description = 'Intelligent performance optimization with predictive analytics'
-        this.status = 'active'
-        this.version = '3.0'
+const fs = require('path''')
+const path = require('path''')
+        this.name = 'performance-optimizer'''
+        this.description = 'Intelligent performance optimization with predictive analytics'''
+        this.status = 'active'''
+        this.version = '3.0'''

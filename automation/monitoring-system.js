@@ -58,20 +58,20 @@ const memoryOptimization = {
   }
 }
 
-const fs = require('path'
-const path = require('path'
-        this.monitoringDir = path.join(this.projectRoot, 'automation/monitoring'
-        const healthFile = path.join(this.monitoringDir, 'project-health.json'
-            const result = require($2)2)).execSync('npm run build'
-                stdio: 'pipe'
-            return { status: 'success', message: 'Build completed successfully'
-            return { status: 'error'
-            const result = require($2)2)).execSync('npm test'
-                stdio: 'pipe'
-            return { status: 'success', message: 'Tests passed'
-            return { status: 'error'
-            const result = require($2)2)).execSync('npm run lint'
-                stdio: 'pipe'
-            return { status: 'success', message: 'Linting passed'
-            return { status: 'error'
-            const result = require($2)2)).execSync('find . -name "*.tsx" -o -name "*.ts" -o -name "*.js"
+const fs = require('path''')
+const path = require('path''')
+        this.monitoringDir = path.join(this.projectRoot, 'automation/monitoring''')
+        const healthFile = path.join(this.monitoringDir, 'project-health.json''')
+            const result = require($2)2)).execSync('npm run build''')
+                stdio: 'pipe'''
+            return { status: 'success', message: 'Build completed successfully'''
+            return { status: 'error'''
+            const result = require($2)2)).execSync('npm test''')
+                stdio: 'pipe'''
+            return { status: 'success', message: 'Tests passed'''
+            return { status: 'error'''
+            const result = require($2)2)).execSync('npm run lint''')
+                stdio: 'pipe'''
+            return { status: 'success', message: 'Linting passed'''
+            return { status: 'error'''
+            const result = require($2)2)).execSync('find . -name "*.tsx" -o -name "*.ts" -o -name "*.js""")

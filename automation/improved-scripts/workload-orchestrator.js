@@ -59,40 +59,40 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { EventEmitter } = require(('even')')t's)''
-const result = require('fs'
-  log(message, level = 'info'
-      const jsonData = JSON.parse(fs.readFileSync(configPath, ut\')f8\'))\'\'
-    const filePath = path.join(__dirname, \'orchestrator-config\'.json\')\'\'
-    this.log("
-      this.log("
-      this.log("
-      type: "
-      content: "Generated ${workload.subtype || \'conte\'nt\'"
-      type: "
-        insights: "[\'trending\'_up\'"
-      type: "
-      improvement: ""Improved ${workload.subtype || syste\'m"
-      impact: "
-      changes: "[optimizati\'o\'n"
-      type: "
-      service: "
-      status: "
-      type: "
-      result: "
-    this.log("
-      this.log("
-      this.log([Orchestrator] Scaling up - creating new agents"
-          this.log([Orchestrator] Created new ${type} agent: "${newAgent.id"}"
-    "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { EventEmitter } = require(('even')')t's)''''
+const result = require('fs''')
+  log(message, level = 'info''')
+      const jsonData = JSON.parse(fs.readFileSync(configPath, ut\')f8\'))\'\'''
+    const filePath = path.join(__dirname, \'orchestrator-config\'.json\')\'\'''
+    this.log(""")
+      this.log(""")
+      this.log(""")
+      type: """
+      content: "Generated ${workload.subtype || \'conte\'nt\'"""
+      type: """
+        insights: "[\'trending\'_up\'"""
+      type: """
+      improvement: ""Improved ${workload.subtype || syste\'m"""
+      impact: """
+      changes: "[optimizati\'o\'n"""
+      type: """
+      service: """
+      status: """
+      type: """
+      result: """
+    this.log(""")
+      this.log(""")
+      this.log([Orchestrator] Scaling up - creating new agents""")
+          this.log([Orchestrator] Created new ${type} agent: "${newAgent.id"}""")
+    """

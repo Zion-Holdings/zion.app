@@ -59,31 +59,31 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-const { promisify } = require(('uti)l)''
-    this.projectRoot = path.resolve(__dirname, ')..)''
-    this.factoryPath = path.join(__dirname, 'performance-automation-factor'y.js')''
-    this.reportsDir = path.join(__dirname, 'reports)''
-    this.logsDir = path.join(__dirname, lo'g's)''
-      path.join(this.reportsDir, 'performance-repor'ts'),''
-      path.join(this.logsDir, 'performance-logs)''
-      console.log(Initializin\'g\' Performance Automation System...)\'\'
-      const result = require($2)s))\'\'
-      console.log(Performanc\')e Automation System initialized\')\'\'
-      console.error(\'Failed to initialize Performance Automation System:, error)\'\'
-      console.error(\')Faile\'d to launch performance agents: "
-        system: "
-        overallHealth: "
-      status: "
-        system: "
-        factory: "
-        status: "
-      console.error(\')Failed\' to generate system report: "
-      console.error(\')Cleanup\' failed: "
-        system: "
-        status: "
-        status: "
-        console.log(\')Syste\'m Status: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require(('chil')')d'_process)''''
+const { promisify } = require(('uti)l)''''
+    this.projectRoot = path.resolve(__dirname, ')..)''''
+    this.factoryPath = path.join(__dirname, 'performance-automation-factor'y.js')''''
+    this.reportsDir = path.join(__dirname, 'reports)''''
+    this.logsDir = path.join(__dirname, lo'g's)''''
+      path.join(this.reportsDir, 'performance-repor'ts'),''''
+      path.join(this.logsDir, 'performance-logs)''''
+      console.log(Initializin\'g\' Performance Automation System...)\'\'''
+      const result = require($2)s))\'\'''
+      console.log(Performanc\')e Automation System initialized\')\'\'''
+      console.error(\'Failed to initialize Performance Automation System:, error)\'\'''
+      console.error(\')Faile\'d to launch performance agents: """
+        system: """
+        overallHealth: """
+      status: """
+        system: """
+        factory: """
+        status: """
+      console.error(\')Failed\' to generate system report: """
+      console.error(\')Cleanup\' failed: """
+        system: """
+        status: """
+        status: """
+        console.log(\')Syste\'m Status: """

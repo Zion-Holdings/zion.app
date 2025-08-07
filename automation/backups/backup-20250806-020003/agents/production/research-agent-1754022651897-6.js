@@ -18,11 +18,11 @@ const memoryOptimization = {
   }
 }
 
-const result = require($2)a))''
-const path = require('path'
-        this.agentId = ')research-agent'-1754022651897-6'''
-        this.name = 'AI': Research Agent'''
-        this.focus = 'A'I: "
-                type: "
-                    type: "
-                    priority: "
+const result = require($2)a))''''
+const path = require('path''')
+        this.agentId = ')research-agent'-1754022651897-6'''''
+        this.name = 'AI': Research Agent'''''
+        this.focus = 'A'I: """
+                type: """
+                    type: """
+                    priority: """

@@ -59,25 +59,25 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require($2)s))\'\'
-const result = require('path'
-const { execSync "
-      console.error(❌ Content Generation Phase failed: "
-      console.error(❌ Content Integration Phase failed: "
-                quality: "
-                quality: "
-    this.log(\'📋 Following ChatGPT instructions from: "
-      this.log("⏱️  Total execution time: "
-      this.log(   📝 Content types generated: "${Object.keys(results.generation.marketplaceContent || {"
-      this.log("   🔗 Components integrated: "${Object.keys(results.integration || {"
-      this.log(   ✅ Validation status: "
-      this.log("   🧠 Memory updated: "${results.memory ? y\'e\'s : no"}"
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require($2)s))\'\'''
+const result = require('path''')
+const { execSync """
+      console.error(❌ Content Generation Phase failed: """)
+      console.error(❌ Content Integration Phase failed: """)
+                quality: """
+                quality: """
+    this.log(\'📋 Following ChatGPT instructions from: """)
+      this.log("⏱️  Total execution time: """)
+      this.log(   📝 Content types generated: "${Object.keys(results.generation.marketplaceContent || {""")
+      this.log("   🔗 Components integrated: "${Object.keys(results.integration || {""")
+      this.log(   ✅ Validation status: """)
+      this.log("   🧠 Memory updated: "${results.memory ? y\'e\'s : no"}""")

@@ -59,32 +59,32 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const result = require($2)r))''
-const ./content-integration-agent = require('path'
-const fs = require('path'
-const result = require($2)2))t'h)''
-    this.logFile = path.join(__dirname, 'lo'gs', 'automated-content-system'.log')''
-    console.log(🤖 Starting Automated Content System')''
-    console.log('= .repeat(60))''
-      console.log(-\') .repeat(40))\'\'
-      console.log(\'\n🔗 Step 2: Integrating Content)\'\'
-      console.log(\n🚀 Step 3: Building Application\'))\'\'
-      console.log(\'- .repeat(40))\'\'
-      console.error(❌ Automated content system failed: "
-        execSync(\'npm install, { stdio: "
-      execSync(npm run build, { stdio: "
-      execSync(npm run export, { stdio: "
-        categories: "schedule.categories || [\'marketplace"
-          cron: "
-          categories: "[marketpla\'ce\'"
-      console.error(❌ Scheduled automation failed: "
-      systemStatus: "
-  node automated-content-system.js schedule {cron: "0 2 * * *",categories: ["marketplace"
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const result = require($2)r))''''
+const ./content-integration-agent = require('path''')
+const fs = require('path''')
+const result = require($2)2))t'h)''''
+    this.logFile = path.join(__dirname, 'lo'gs', 'automated-content-system'.log')''''
+    console.log(🤖 Starting Automated Content System')''''
+    console.log('= .repeat(60))''''
+      console.log(-\') .repeat(40))\'\'''
+      console.log(\'\n🔗 Step 2: Integrating Content)\'\'''
+      console.log(\n🚀 Step 3: Building Application\'))\'\'''
+      console.log(\'- .repeat(40))\'\'''
+      console.error(❌ Automated content system failed: """)
+        execSync(\'npm install, { stdio: """)
+      execSync(npm run build, { stdio: """)
+      execSync(npm run export, { stdio: """)
+        categories: "schedule.categories || [\'marketplace"""
+          cron: """
+          categories: "[marketpla\'ce\'"""
+      console.error(❌ Scheduled automation failed: """)
+      systemStatus: """
+  node automated-content-system.js schedule {cron: "0 2 * * *",categories: ["marketplace"""

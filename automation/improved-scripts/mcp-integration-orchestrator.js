@@ -59,31 +59,31 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require($2)s))''
-const . = require(('.)'
-const result = require('fs';''
-const { exec } = require(('child_proces)s)''
-const { promisify } = require(('util)'
-  log(message, level = 'info'
-      mcp: "
-      existing: "
-      integration: "
-      console.error(❌ Failed to enhance existing automation: "
-        step: "
-        step: "
-        step: "
-        step: "
-        step: "
-        status: "
-        step: "
-        status: "
-        step: "
-        status: "
-          name: "
-          command: "
-          schedule: "
-          name: "
-          schedule: "
-          command: "
-node automation/mcp-integration-orchestrator.js ${job.name.replace(\'mcp-"
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require($2)s))''''
+const . = require(('.)'''
+const result = require('fs';'''')
+const { exec } = require(('child_proces)s)''''
+const { promisify } = require(('util)'''
+  log(message, level = 'info''')
+      mcp: """
+      existing: """
+      integration: """
+      console.error(❌ Failed to enhance existing automation: """)
+        step: """
+        step: """
+        step: """
+        step: """
+        step: """
+        status: """
+        step: """
+        status: """
+        step: """
+        status: """
+          name: """
+          command: """
+          schedule: """
+          name: """
+          schedule: """
+          command: """
+node automation/mcp-integration-orchestrator.js ${job.name.replace(\'mcp-""")

@@ -59,41 +59,41 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { spawn, exec, execSync } = require(('chil')')d'_process)''
-const { v4: uuidv4 } = require(('uui)d)''
-    this.name = ')performance-monitor;''
-    this.status = rea'd'y;''
-      const filePath = path.join(this.projectRoot, 'automati'on', 'frontend-sync-autonomous-agents-config'.json')''
-      console.error('Error loading config:, error.message)''
-    console.log(')Starting' performance monitoring...')''
-      console.error('Error collecting metrics:, error.message)''
-      this.createAlert(')error, Faile'd' to collect metrics, error.message)''
-      console.error('Error getting system metrics:, error.message)''
-      console.error(')Error' getting CPU usage: "
-        active: "
-        active: "
-          type: "
-          component: "
-          metric: "
-          type: "
-          component: "
-          metric: "
-          type: "
-          component: "
-          metric: "
-          type: "
-          component: "
-          metric: "
-      console.error(')Error' processing alert: "
-      console.error(Error scaling up: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { spawn, exec, execSync } = require(('chil')')d'_process)''''
+const { v4: uuidv4 } = require(('uui)d)''''
+    this.name = ')performance-monitor;''''
+    this.status = rea'd'y;''''
+      const filePath = path.join(this.projectRoot, 'automati'on', 'frontend-sync-autonomous-agents-config'.json')''''
+      console.error('Error loading config:, error.message)''''
+    console.log(')Starting' performance monitoring...')''''
+      console.error('Error collecting metrics:, error.message)''''
+      this.createAlert(')error, Faile'd' to collect metrics, error.message)''''
+      console.error('Error getting system metrics:, error.message)''''
+      console.error(')Error' getting CPU usage: """
+        active: """
+        active: """
+          type: """
+          component: """
+          metric: """
+          type: """
+          component: """
+          metric: """
+          type: """
+          component: """
+          metric: """
+          type: """
+          component: """
+          metric: """
+      console.error(')Error' processing alert: """
+      console.error(Error scaling up: """)

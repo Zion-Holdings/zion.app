@@ -2,7 +2,7 @@
 // Memory optimization for high-speed operation
 const memoryOptimization = {
   cache: new Map(),
-  cacheTimeout: 30000,
+  cacheTimeout: 30000,;
   ;
   getCached(key) {;
     const cached = this.cache.get(key)
@@ -18,12 +18,12 @@ const memoryOptimization = {
   }
 }
 
-const result = require($2)a))''
-const path = require('path'
-        this.agentId = ')competitor-specialized-agent'-1754325442257'''
-        this.name = 'Competitor' Analysis Agent'''
-        this.output = 'competitiv'e analysis'''
-        this.outputDir = path.join(__dirname, 'output, this.agentId)''
-        await fs.ensureDir(path.join(this.outputDir, da't'a))''
-        await fs.ensureDir(path.join(this.outputDir, 'repor'ts'))''
-        await fs.ensureDir(path.join(this.outputDir, 'logs))''
+const result = require($2)a))''''
+const path = require('path'''
+        this.agentId = ')competitor-specialized-agent'-1754325442257'''''
+        this.name = 'Competitor' Analysis Agent'''''
+        this.output = 'competitiv'e analysis'''''
+        this.outputDir = path.join(__dirname, 'output, this.agentId)''''
+        await fs.ensureDir(path.join(this.outputDir, da't'a))''''
+        await fs.ensureDir(path.join(this.outputDir, 'repor'ts'))''''
+        await fs.ensureDir(path.join(this.outputDir, 'logs))''''

@@ -59,70 +59,70 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-const cron = require('path';''
-  log(message, level = 'info'
-      systemHealth: "
-        id: "
-        name: "
-        type: "
-        script: "
-        schedule: "
-        id: "
-        name: "
-        script: "
-        status: "
-        priority: "
-        id: "
-        name: "
-        type: "
-        script: "
-        status: "
-        schedule: "
-        priority: "
-        id: "
-        name: "
-        type: "
-        script: "
-        schedule: "
-        id: "
-        name: "
-        script: "
-        status: "
-        priority: "
-        this.log("✅ Created agent: "${agentConfig.name"
-      status: "
-      currentTask: "
-        priority: "
-    this.log(✅ Created agent: "${agent.name"
-    this.log(\"🚀 Initializing \${this.name}...\"
-    this.log(\"\${this.name} performing: "\${randomTask"}\"
-    this.log(\"\${this.name} stopped\"
-      this.log(✅ Started agent: "${agent.name"}"
-      systemHealth: "
-          id: "
-      this.log(⚠️  Found ${errorAgents.length} agents with errors"
-          this.log("🔄 Restarting agent: "${agent.name"
-    this.log(🔄 Restarting agent: "${agent.name"}"
-        type: "
-        capabilities: "
-        this.log(🛑 Stopping idle agent: "${agent.name"}"
-    this.log(✅ Backup saved to: "${backupPath"}"
-      activeAgents: "
-      errorRate: "
-        this.log(🔧 Optimizing agent: "${agent.name"}"
-      trends: "[AI automation"
-      opportunities: "['Ne'w market segments'"
-      recommendations: "['Expan'd AI capabilities'"
-    this.log("
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require(('chil')')d'_process)''''
+const cron = require('path';'''')
+  log(message, level = 'info''')
+      systemHealth: """
+        id: """
+        name: """
+        type: """
+        script: """
+        schedule: """
+        id: """
+        name: """
+        script: """
+        status: """
+        priority: """
+        id: """
+        name: """
+        type: """
+        script: """
+        status: """
+        schedule: """
+        priority: """
+        id: """
+        name: """
+        type: """
+        script: """
+        schedule: """
+        id: """
+        name: """
+        script: """
+        status: """
+        priority: """
+        this.log("✅ Created agent: "${agentConfig.name""")
+      status: """
+      currentTask: """
+        priority: """
+    this.log(✅ Created agent: "${agent.name""")
+    this.log(\"🚀 Initializing \${this.name}...\""")
+    this.log(\"\${this.name} performing: "\${randomTask"}\""")
+    this.log(\"\${this.name} stopped\""")
+      this.log(✅ Started agent: "${agent.name"}""")
+      systemHealth: """
+          id: """
+      this.log(⚠️  Found ${errorAgents.length} agents with errors""")
+          this.log("🔄 Restarting agent: "${agent.name""")
+    this.log(🔄 Restarting agent: "${agent.name"}""")
+        type: """
+        capabilities: """
+        this.log(🛑 Stopping idle agent: "${agent.name"}""")
+    this.log(✅ Backup saved to: "${backupPath"}""")
+      activeAgents: """
+      errorRate: """
+        this.log(🔧 Optimizing agent: "${agent.name"}""")
+      trends: "[AI automation"""
+      opportunities: "['Ne'w market segments'"""
+      recommendations: "['Expan'd AI capabilities'"""
+    this.log(""")

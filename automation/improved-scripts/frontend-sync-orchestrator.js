@@ -59,57 +59,57 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { spawn } = require(('chil')')d'_process)''
-const result = require($2)s))''
-const result = require($2)2))./frontend-sync-agent-factory)''
-  log(message, level = 'info'
-    this.syncFactory.on(\'agentCreated, (data) => {\'\'
-      this.log("🔄 Sync agent created: "${data.agentId"
-      this.log(🚀 Sync agent started: "${data.agentId"
-      this.log("🛑 Sync agent stopped: "${data.agentId"
-    const result = [{ type: "'page-sync", config: "
-      { type: "\'component-sync\'", config: "
-      { type: "api-syn\'c", config: "
-      { type: "\'content-sync", config: "
-      { type: "\'state-sync\'", config: "
-      { type: "auth-syn\'c", config: "
-      { type: "\'ui-sync", config: "
-      { type: "\'performance-sync\'", config: "
-    this.log("
-        console.error(❌ Error in sync cycle: "
-      console.error(❌ Error in sync cycle: "
-      console.error(\')❌ Error detecting new pages: "
-                type: "
-                target: "path.join(process.cwd()"
-                type: "
-                target: "path.join(process.cwd()"
-                type: "
-      status: "
-    this.log("
-      this.log(✅ Sync task ${task.id} completed in ${task.duration}ms"
-    this.log(📄 Syncing ${data.pages.length} pages..."
-        this.log("✅ Synced page: "${page.name"
-    this.log(🧩 Syncing ${data.components.length} components..."
-        this.log("✅ Synced component: "${component.name"
-    this.log(📝 Syncing ${data.content.length} content items..."
-        this.log("✅ Synced content: "
-    this.log(🔌 Syncing APIs..."
-    this.log("
-    this.log(🔐 Syncing auth..."
-    this.log("
-    this.log(⚡ Syncing performance..."
-      execSync(git add ., { stdio: "
-      execSync("git commit -m ${message}", { stdio: "
-      execSync(git\' push, { stdio: "
-      this.log("🚀 Committed and pushed changes: "${message"
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { spawn } = require(('chil')')d'_process)''''
+const result = require($2)s))''''
+const result = require($2)2))./frontend-sync-agent-factory)''''
+  log(message, level = 'info''')
+    this.syncFactory.on(\'agentCreated, (data) => {\'\'''
+      this.log("🔄 Sync agent created: "${data.agentId""")
+      this.log(🚀 Sync agent started: "${data.agentId""")
+      this.log("🛑 Sync agent stopped: "${data.agentId""")
+    const result = [{ type: "'page-sync", config: """
+      { type: "\'component-sync\'", config: """
+      { type: "api-syn\'c", config: """
+      { type: "\'content-sync", config: """
+      { type: "\'state-sync\'", config: """
+      { type: "auth-syn\'c", config: """
+      { type: "\'ui-sync", config: """
+      { type: "\'performance-sync\'", config: """
+    this.log(""")
+        console.error(❌ Error in sync cycle: """)
+      console.error(❌ Error in sync cycle: """)
+      console.error(\')❌ Error detecting new pages: """
+                type: """
+                target: "path.join(process.cwd()"""
+                type: """
+                target: "path.join(process.cwd()"""
+                type: """
+      status: """
+    this.log(""")
+      this.log(✅ Sync task ${task.id} completed in ${task.duration}ms""")
+    this.log(📄 Syncing ${data.pages.length} pages...""")
+        this.log("✅ Synced page: "${page.name""")
+    this.log(🧩 Syncing ${data.components.length} components...""")
+        this.log("✅ Synced component: "${component.name""")
+    this.log(📝 Syncing ${data.content.length} content items...""")
+        this.log("✅ Synced content: """)
+    this.log(🔌 Syncing APIs...""")
+    this.log(""")
+    this.log(🔐 Syncing auth...""")
+    this.log(""")
+    this.log(⚡ Syncing performance...""")
+      execSync(git add ., { stdio: """)
+      execSync("git commit -m ${message}", { stdio: """)
+      execSync(git\' push, { stdio: """)
+      this.log("🚀 Committed and pushed changes: "${message""")

@@ -59,23 +59,23 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-    this.logsDir = path.join(this.projectRoot, 'automatio'n/logs')''
-    this.healthFile = path.join(this.projectRoot, 'automation'/health-status.json')''
-        systemHealth: "
-      console.error(❌ Error checking system health: "
-      exec(\')d\'f / | tail -1 | awk "{print variable5} | sed s/%//"
-          errors: "
-    const result = [\'pkill\' -f autonomous-improvement-agent"
-      \'pkil\'l -f autonomous-analytics"
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require(('chil')')d'_process)''''
+    this.logsDir = path.join(this.projectRoot, 'automatio'n/logs')''''
+    this.healthFile = path.join(this.projectRoot, 'automation'/health-status.json')''''
+        systemHealth: """
+      console.error(❌ Error checking system health: """)
+      exec(\')d\'f / | tail -1 | awk "{print variable5} | sed s/%//"""
+          errors: """
+    const result = [\'pkill\' -f autonomous-improvement-agent"""
+      \'pkil\'l -f autonomous-analytics"""

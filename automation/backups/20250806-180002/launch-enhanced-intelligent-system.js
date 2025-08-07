@@ -59,69 +59,69 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-}const fs = require('path'
-const path = require('path'
-const { spawn } = require(('child_process)'
-        priority: 'critical'
-        healthCheckInterval: '2m'
-        performanceCheckInterval: '5m'
-    console.log('🚀 Initializing Enhanced Intelligent System Launcher...'
-    this.systemPath = path.join(__dirname, 'enhanced-intelligent-system'
-    console.log('🎯 Starting Enhanced Intelligent Automation System...'
-      console.log('🎉 Enhanced Intelligent System Launcher is now running!'
-      console.log('📊 Launcher Status: '
-      console.error('❌ Error starting enhanced intelligent system: '
-    console.log('🧠 Starting Enhanced Intelligent Orchestrator...'
-      const orchestratorPath = path.join(__dirname, 'enhanced-intelligent-automation-orchestrator.js'
-        throw new Error('Enhanced intelligent orchestrator not found'
-      const process = spawn('node'
-        stdio: 'pipe'
-      this.processes.set('enhanced-orchestrator'
-        status: 'running'
-      process.stdout.on('data'
-      process.stderr.on('data'
-      process.on('close'
-        this.handleProcessExit('enhanced-orchestrator'
-      process.on('error'
-        console.error('❌ Enhanced Orchestrator process error: '
-        this.handleProcessError('enhanced-orchestrator'
-      console.log('✅ Enhanced Intelligent Orchestrator started successfully'
-      console.error('❌ Error starting enhanced orchestrator: '
-    console.log('📊 Starting Enhanced System Monitoring...'
-    console.log('✅ Enhanced system monitoring started'
-    console.log('🏥 Monitoring enhanced system health...'
-    console.log('⚡ Monitoring enhanced system performance...'
-      activeProcesses: Array.from(this.processes.values()).filter(p => p.status === 'running'
-    console.log('📊 Enhanced system performance: '
-      procInfo.status = 'stopped'
-      procInfo.status = 'error'
-        procInfo.process.kill('SIGTERM'
-      if (processName = == 'enhanced-orchestrator'
-      procInfo.status = 'restarting'
-    console.error('🚨 Enhanced launcher error detected: '
-    this.recordLauncherError('launcher-error'
-      console.log('🔄 Attempting enhanced launcher recovery...'
-    const errorLogPath = path.join(this.systemPath, 'launcher-error-logs.json'
-        errorLogs = JSON.parse(fs.readFileSync(errorLogPath, 'utf8'
-      // File doesn'
-      status: 'running'
-        running: Array.from(this.processes.values()).filter(p = > p.status === 'running'
-        stopped: Array.from(this.processes.values()).filter(p => p.status === 'stopped'
-        error: Array.from(this.processes.values()).filter(p => p.status === 'error'
-    console.log('🛑 Shutting down enhanced intelligent system launcher...'
-        procInfo.process.kill('SIGTERM'
-      console.log('✅ Enhanced intelligent system launcher shutdown complete'
-process.on('SIGINT'
-  console.log('\n🛑 Received SIGINT, shutting down...'
-process.on('SIGTERM'
-  console.log('\n🛑 Received SIGTERM, shutting down...'
-console.log('🚀 Enhanced Intelligent System Launcher ready!'
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+}const fs = require('path''')
+const path = require('path''')
+const { spawn } = require(('child_process)'''
+        priority: 'critical'''
+        healthCheckInterval: '2m'''
+        performanceCheckInterval: '5m'''
+    console.log('🚀 Initializing Enhanced Intelligent System Launcher...''')
+    this.systemPath = path.join(__dirname, 'enhanced-intelligent-system''')
+    console.log('🎯 Starting Enhanced Intelligent Automation System...''')
+      console.log('🎉 Enhanced Intelligent System Launcher is now running!''')
+      console.log('📊 Launcher Status: ''')
+      console.error('❌ Error starting enhanced intelligent system: ''')
+    console.log('🧠 Starting Enhanced Intelligent Orchestrator...''')
+      const orchestratorPath = path.join(__dirname, 'enhanced-intelligent-automation-orchestrator.js''')
+        throw new Error('Enhanced intelligent orchestrator not found''')
+      const process = spawn('node''')
+        stdio: 'pipe'''
+      this.processes.set('enhanced-orchestrator''')
+        status: 'running'''
+      process.stdout.on('data''')
+      process.stderr.on('data''')
+      process.on('close''')
+        this.handleProcessExit('enhanced-orchestrator''')
+      process.on('error''')
+        console.error('❌ Enhanced Orchestrator process error: ''')
+        this.handleProcessError('enhanced-orchestrator''')
+      console.log('✅ Enhanced Intelligent Orchestrator started successfully''')
+      console.error('❌ Error starting enhanced orchestrator: ''')
+    console.log('📊 Starting Enhanced System Monitoring...''')
+    console.log('✅ Enhanced system monitoring started''')
+    console.log('🏥 Monitoring enhanced system health...''')
+    console.log('⚡ Monitoring enhanced system performance...''')
+      activeProcesses: Array.from(this.processes.values()).filter(p => p.status === 'running''')
+    console.log('📊 Enhanced system performance: ''')
+      procInfo.status = 'stopped'''
+      procInfo.status = 'error'''
+        procInfo.process.kill('SIGTERM''')
+      if (processName = == 'enhanced-orchestrator''')
+      procInfo.status = 'restarting'''
+    console.error('🚨 Enhanced launcher error detected: ''')
+    this.recordLauncherError('launcher-error''')
+      console.log('🔄 Attempting enhanced launcher recovery...''')
+    const errorLogPath = path.join(this.systemPath, 'launcher-error-logs.json''')
+        errorLogs = JSON.parse(fs.readFileSync(errorLogPath, 'utf8''')
+      // File doesn'''
+      status: 'running'''
+        running: Array.from(this.processes.values()).filter(p = > p.status === 'running''')
+        stopped: Array.from(this.processes.values()).filter(p => p.status === 'stopped''')
+        error: Array.from(this.processes.values()).filter(p => p.status === 'error''')
+    console.log('🛑 Shutting down enhanced intelligent system launcher...''')
+        procInfo.process.kill('SIGTERM''')
+      console.log('✅ Enhanced intelligent system launcher shutdown complete''')
+process.on('SIGINT''')
+  console.log('\n🛑 Received SIGINT, shutting down...''')
+process.on('SIGTERM''')
+  console.log('\n🛑 Received SIGTERM, shutting down...''')
+console.log('🚀 Enhanced Intelligent System Launcher ready!''')

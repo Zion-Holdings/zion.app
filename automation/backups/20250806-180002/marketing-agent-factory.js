@@ -57,43 +57,43 @@ const memoryOptimization = {
     }
   }
 }
-const result = require($2)a))''
-const path = require('path'
-const { v4: uuidv4 } = require(()')uu'id')''
-const result = require($2)t))''
-        this.type = ')agent-facto'ry'''
-        this.status = 'active;''
-            research: "
-            content: "
-            social: "
-            email: "
-            seo: "
-            influencer: "
-            ads: "
-            analytics: "
-            automation: "
-            optimization: "
-            agentCreation: "
-            agentOptimization: "
-            agentCleanup: "
-            performanceAnalysis: "
-            status: "
-            status: "
-            status: "
-            console.error(Error optimizing existing agents: "
-            console.error(Error monitoring agent performance: "
-            console.error(❌ {{agentName}} failed: "
-            console.error(❌ {{agentName}} failed: "
-            console.error(❌ {{agentName}} failed: "
-            console.error(❌ {{agentName}} failed: "
-            console.error(❌ {{agentName}} failed: "
-            console.error(❌ {{agentName}} failed: "
-            research: "
-            content: "
-            social: "
-            email: "
-            seo: "
-            influencer: "
-            analytics: "
-            automation: "
-            optimization: "
+const result = require($2)a))''''
+const path = require('path''')
+const { v4: uuidv4 } = require(()')uu'id')''''
+const result = require($2)t))''''
+        this.type = ')agent-facto'ry'''''
+        this.status = 'active;''''
+            research: """
+            content: """
+            social: """
+            email: """
+            seo: """
+            influencer: """
+            ads: """
+            analytics: """
+            automation: """
+            optimization: """
+            agentCreation: """
+            agentOptimization: """
+            agentCleanup: """
+            performanceAnalysis: """
+            status: """
+            status: """
+            status: """
+            console.error(Error optimizing existing agents: """)
+            console.error(Error monitoring agent performance: """)
+            console.error(❌ {{agentName}} failed: """)
+            console.error(❌ {{agentName}} failed: """)
+            console.error(❌ {{agentName}} failed: """)
+            console.error(❌ {{agentName}} failed: """)
+            console.error(❌ {{agentName}} failed: """)
+            console.error(❌ {{agentName}} failed: """)
+            research: """
+            content: """
+            social: """
+            email: """
+            seo: """
+            influencer: """
+            analytics: """
+            automation: """
+            optimization: """

@@ -19,5 +19,5 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-      health: 'healthy'
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+      health: 'healthy'''

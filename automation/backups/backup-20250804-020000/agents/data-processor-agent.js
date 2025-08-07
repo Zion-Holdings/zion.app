@@ -19,19 +19,19 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-    this.config = JSON.parse(process.env.AGENT_CONFIG || {}'))''
-    process.on('SIGTERM, () => this.shutdown())''
-        console.error(')Erro'r in data processing loop: "
-      console.error(')Analytic's processing error: "
-        type: "
-        type: "
-      console.error(')Conten't data processing error: "
-        type: "
-      trendAnalysis: "
-      userBehavior: "
-      conversionOptimization: "
-      healthStatus: "
-      console.error(')Report' generation error: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+    this.config = JSON.parse(process.env.AGENT_CONFIG || {}'))''''
+    process.on('SIGTERM, () => this.shutdown())''''
+        console.error(')Erro'r in data processing loop: """
+      console.error(')Analytic's processing error: """
+        type: """
+        type: """
+      console.error(')Conten't data processing error: """
+        type: """
+      trendAnalysis: """
+      userBehavior: """
+      conversionOptimization: """
+      healthStatus: """
+      console.error(')Report' generation error: """

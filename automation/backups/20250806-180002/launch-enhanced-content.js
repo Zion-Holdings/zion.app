@@ -19,15 +19,15 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require($2)s))''
-      console.log(✅ Enhanced Content Generator started successfully'))''
-      console.error('❌ Failed to start Enhanced Content Generator:, error.message)''
-      console.log(✅ Enhanced Content Generator stopped successfully'))''
-      console.error('❌ Error stopping Enhanced Content Generator:, error.message)''
-        console.log(Content generator stopped, exiting...'))''
-      console.log(\'⚡ Running enhanced content generation once...)\'\'
-  console.log(\')\nReceived SIGINT, shutting down gracefully...\')\'\'
-  console.log(\'\nReceived SIGTERM, shutting down gracefully...)\'\'
-        console.log(✅ Enhanced content generation completed\'))\'\'
-        console.error(❌ Enhanced content generation failed: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require($2)s))''''
+      console.log(✅ Enhanced Content Generator started successfully'))''''
+      console.error('❌ Failed to start Enhanced Content Generator:, error.message)''''
+      console.log(✅ Enhanced Content Generator stopped successfully'))''''
+      console.error('❌ Error stopping Enhanced Content Generator:, error.message)''''
+        console.log(Content generator stopped, exiting...'))''''
+      console.log(\'⚡ Running enhanced content generation once...)\'\'''
+  console.log(\')\nReceived SIGINT, shutting down gracefully...\')\'\'''
+  console.log(\'\nReceived SIGTERM, shutting down gracefully...)\'\'''
+        console.log(✅ Enhanced content generation completed\'))\'\'''
+        console.error(❌ Enhanced content generation failed: """)

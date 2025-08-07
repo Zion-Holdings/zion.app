@@ -1,1 +1,1 @@
-console.log('Test LinkedIn automation script'
+console.log('Test LinkedIn automation script''')

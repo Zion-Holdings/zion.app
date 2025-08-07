@@ -59,44 +59,44 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { spawn } = require(('chil')')d'_process)''
-  log(message, level = 'info'
-    this.logsDir = path.join(this.projectRoot, 'automatio'n/logs')''
-    this.pidFile = path.join(this.projectRoot, 'automation'/agents.pid')''
-      this.status = JSON.parse(fs.readFileSync(this.statusFile, \'ut\'f8\'))\'\'
-    this.log(\'🚀 Starting all autonomous agents..., 'info')\'\'
-    await this.startAgent(improvement\'), \'autonomous-improvement-agent\'.js\')\'\'
-    await this.startAgent(content, \'content-generation-automatio\'n.js\')\'\'
-    await this.startAgent(\'analytics, autonomous-analytics.js)\'\'
-    await this.startAgent(\')heal\'th\', \'health-check\'.js\')\'\'
-    await this.startAgent(backup, \'backup-syste\'m.js\')\'\'
-    this.log(\'✅ All agents started successfully, 'info')\'\'
-    this.log("
-      stdio: "[\'pi\'pe\'"
-      this.log([${name}] Process exited with code ${code}"
-        this.log("
-    this.log(✅ ${name} agent started (PID: "${agent.pid"
-    this.log(📊 Status: "${report.runningAgents"
-        this.log("
-      console.error(❌ Error in launcher: "
-        name: "
-        schedule: "
-        name: "
-        schedule: "
-        name: "
-        schedule: "
-    this.log("\nTotal Uptime: "
-    this.log(Restarts: "${this.status.restarts"}"
-    this.log("Logs: "${this.logsDir"}"
-    this.log(Usage: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { spawn } = require(('chil')')d'_process)''''
+  log(message, level = 'info''')
+    this.logsDir = path.join(this.projectRoot, 'automatio'n/logs')''''
+    this.pidFile = path.join(this.projectRoot, 'automation'/agents.pid')''''
+      this.status = JSON.parse(fs.readFileSync(this.statusFile, \'ut\'f8\'))\'\'''
+    this.log(\'🚀 Starting all autonomous agents..., 'info')\'\'''
+    await this.startAgent(improvement\'), \'autonomous-improvement-agent\'.js\')\'\'''
+    await this.startAgent(content, \'content-generation-automatio\'n.js\')\'\'''
+    await this.startAgent(\'analytics, autonomous-analytics.js)\'\'''
+    await this.startAgent(\')heal\'th\', \'health-check\'.js\')\'\'''
+    await this.startAgent(backup, \'backup-syste\'m.js\')\'\'''
+    this.log(\'✅ All agents started successfully, 'info')\'\'''
+    this.log(""")
+      stdio: "[\'pi\'pe\'"""
+      this.log([${name}] Process exited with code ${code}""")
+        this.log(""")
+    this.log(✅ ${name} agent started (PID: "${agent.pid""")
+    this.log(📊 Status: "${report.runningAgents""")
+        this.log(""")
+      console.error(❌ Error in launcher: """)
+        name: """
+        schedule: """
+        name: """
+        schedule: """
+        name: """
+        schedule: """
+    this.log("\nTotal Uptime: """)
+    this.log(Restarts: "${this.status.restarts"}""")
+    this.log("Logs: "${this.logsDir"}""")
+    this.log(Usage: """)

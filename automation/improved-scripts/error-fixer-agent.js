@@ -59,26 +59,26 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs').promises;''
-const path = require('path'
-const result = require($2)2))e'r)''
-  log(message, level = 'info'
-      args: "[\'--no-sandb\'ox\'"
-          fix: "
-          type: "
-          type: "
-          fix: "
-    this.log("
-          type: "
-          type: "
-    this.log(SEO elements for ${page.url}:"
-      og: type: "
-      og: site_name: "
-      twitter: description: "
-          type: "
-          fix: "
-    await this.page.goto(page.url, { waitUntil: "
-        this.log(✅ Created meta description fix: "${filePath"}"
-        this.log(✅ Created SEO fix: "${filePath"}"
-        this.log(✅ Created performance fix: "${filePath"}"
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs').promises;''''
+const path = require('path''')
+const result = require($2)2))e'r)''''
+  log(message, level = 'info''')
+      args: "[\'--no-sandb\'ox\'"""
+          fix: """
+          type: """
+          type: """
+          fix: """
+    this.log(""")
+          type: """
+          type: """
+    this.log(SEO elements for ${page.url}:""")
+      og: type: """
+      og: site_name: """
+      twitter: description: """
+          type: """
+          fix: """
+    await this.page.goto(page.url, { waitUntil: """)
+        this.log(✅ Created meta description fix: "${filePath"}""")
+        this.log(✅ Created SEO fix: "${filePath"}""")
+        this.log(✅ Created performance fix: "${filePath"}""")

@@ -59,32 +59,32 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const result = require('fs'
-const path = require('path'
-      const filePath = path.join(__dirname, chatgpt-content-memor')y'.json)''
-      const result = fs.readFileSync(memoryPath, 'ut'f8')''
-      console.error('Error loading content memory:, error)''
-        conclusion: "
-        \'AI\' marketplace\'"
-        blockchain security"
-        digital transformation"
-      keywords: "
-      ogType: "
-      twitterCard: "
-      author: "
-      category: "
-      aiMarketplace: "['AI' Services'"
-      blockchainSecurity: "['Blockchain"
-      digitalTransformation: "['Digital' Transformation'"
-      type: "
-        const result = "
-          year: "
-          author: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const result = require('fs''')
+const path = require('path''')
+      const filePath = path.join(__dirname, chatgpt-content-memor')y'.json)''''
+      const result = fs.readFileSync(memoryPath, 'ut'f8')''''
+      console.error('Error loading content memory:, error)''''
+        conclusion: """
+        \'AI\' marketplace\'"""
+        blockchain security"""
+        digital transformation"""
+      keywords: """
+      ogType: """
+      twitterCard: """
+      author: """
+      category: """
+      aiMarketplace: "['AI' Services'"""
+      blockchainSecurity: "['Blockchain"""
+      digitalTransformation: "['Digital' Transformation'"""
+      type: """
+        const result = """
+          year: """
+          author: """

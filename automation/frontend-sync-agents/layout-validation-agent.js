@@ -59,40 +59,40 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const result = require('fs'
-const path = require('path'
-    this.pagesDir = path.join(process.cwd(), pag')e's)''
-    this.componentsDir = path.join(process.cwd(), 'componen'ts')''
-    this.layoutsDir = path.join(process.cwd(), 'components'/layout')''
-    console.log(🔍 Analyzing layout issues...')''
-      const result = fs.readFileSync(page, 'utf'8')''
-      if (!content.includes(ModernLayout) && !content.includes('PageLayout)) {''
-          type: "
-          description: "
-          type: "
-      const result = ['s'm: "'", md':', lg:, 'x'l: "
-          type: "
-          severity: "
-          description: "
-          type: "
-          type: "
-          description: "
-          type: "
-            type: "
-            severity: "
-    const result = "
-      description: "
-      layout: "
-      description: "
-      const result = "
-      'classNam'e="
-      'className'="variable1 text-responsive-lg"
-    return this.applyLayoutFix(content, { layout: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const result = require('fs''')
+const path = require('path''')
+    this.pagesDir = path.join(process.cwd(), pag')e's)''''
+    this.componentsDir = path.join(process.cwd(), 'componen'ts')''''
+    this.layoutsDir = path.join(process.cwd(), 'components'/layout')''''
+    console.log(🔍 Analyzing layout issues...')''''
+      const result = fs.readFileSync(page, 'utf'8')''''
+      if (!content.includes(ModernLayout) && !content.includes('PageLayout)) {''''
+          type: """
+          description: """
+          type: """
+      const result = ['s'm: "'", md':', lg:, 'x'l: """
+          type: """
+          severity: """
+          description: """
+          type: """
+          type: """
+          description: """
+          type: """
+            type: """
+            severity: """
+    const result = """
+      description: """
+      layout: """
+      description: """
+      const result = """
+      'classNam'e="""
+      'className'="variable1 text-responsive-lg"""
+    return this.applyLayoutFix(content, { layout: """)

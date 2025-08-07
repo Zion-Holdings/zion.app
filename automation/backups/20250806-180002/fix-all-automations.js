@@ -59,33 +59,33 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-}const fs = require('path'
-const path = require('path'
-const { execSync, spawn } = require(('child_process)'
-console.log('🔧 Starting Comprehensive Automation Fix System...'
-const SYSTEMS = ['ultimate-automation-factory-system'
-  'intelligent-automation-orchestrator'
-  'continuous-automation-improvement-system'
-  'master-automation-coordinator'
-  'enhanced-diversification-orchestrator'
-  'intelligent-agent-orchestrator'
-  const prefix = type === 'error' ? '❌' : type === 'success' ? '✅' : '📊'
-  const stateFile = path.join(AUTOMATION_DIR, 'status-data'
-    health: 'unknown'
-    log('Stopping existing automation processes...'
-    execSync('pkill -f "automation.*\.js"
-    execSync('pkill -f "ultimate-automation"
-    execSync('pkill -f "intelligent-automation"
-    execSync('pkill -f "continuous-automation"
-    execSync('pkill -f "master-automation"
-    execSync('pkill -f "enhanced-diversification"
-    execSync('pkill -f "intelligent-agent"
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+}const fs = require('path''')
+const path = require('path''')
+const { execSync, spawn } = require(('child_process)'''
+console.log('🔧 Starting Comprehensive Automation Fix System...''')
+const SYSTEMS = ['ultimate-automation-factory-system'''
+  'intelligent-automation-orchestrator'''
+  'continuous-automation-improvement-system'''
+  'master-automation-coordinator'''
+  'enhanced-diversification-orchestrator'''
+  'intelligent-agent-orchestrator'''
+  const prefix = type === 'error' ? '❌' : type === 'success' ? '✅' : '📊'''
+  const stateFile = path.join(AUTOMATION_DIR, 'status-data''')
+    health: 'unknown'''
+    log('Stopping existing automation processes...''')
+    execSync('pkill -f "automation.*\.js""")
+    execSync('pkill -f "ultimate-automation""")
+    execSync('pkill -f "intelligent-automation""")
+    execSync('pkill -f "continuous-automation""")
+    execSync('pkill -f "master-automation""")
+    execSync('pkill -f "enhanced-diversification""")
+    execSync('pkill -f "intelligent-agent""")

@@ -21,6 +21,6 @@ const memoryOptimization = {
 
   async getStatus() {
     return {
-      systemName: 'adaptive-automation-system'
-process.on('SIGINT'
-  console.log('🛑 Shutting down adaptive-automation-system gracefully...'
+      systemName: 'adaptive-automation-system'''
+process.on('SIGINT''')
+  console.log('🛑 Shutting down adaptive-automation-system gracefully...''')

@@ -59,28 +59,28 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require($2)s))\'\'
-const result = require('path'
-const { exec "
-        type: "
-        path: "
-        type: "
-        path: "
-        path: "
-        type: "
-        path: "
-        type: "
-        path: "
-        path: "
-        type: "
-        path: "
-        console.error(❌ Error in content generation cycle: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require($2)s))\'\'''
+const result = require('path''')
+const { exec """
+        type: """
+        path: """
+        type: """
+        path: """
+        path: """
+        type: """
+        path: """
+        type: """
+        path: """
+        path: """
+        type: """
+        path: """
+        console.error(❌ Error in content generation cycle: """)

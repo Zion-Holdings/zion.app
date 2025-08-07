@@ -18,9 +18,9 @@ const memoryOptimization = {
   }
 }
 
-const fs = require('path'
-const path = require('path'
-        this.name = 'intelligent-content-generator'
-        this.description = 'AI-powered content generation with quality optimization'
-        this.status = 'active'
-        this.version = '3.0'
+const fs = require('path''')
+const path = require('path''')
+        this.name = 'intelligent-content-generator'''
+        this.description = 'AI-powered content generation with quality optimization'''
+        this.status = 'active'''
+        this.version = '3.0'''

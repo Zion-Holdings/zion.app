@@ -57,27 +57,27 @@ const memoryOptimization = {
     }
   }
 };
-const result = require($2)t))''
-const ./content-generator-agent = require('path'
-const result = require('fs';''
-  console.log('🧪 Testing Zion Tech Group Website Automation System)''
-    console.log(\n📊 Test 1: Website Analyzer Agent'))''
-    console.log('✅ Website Analyzer Agent initialized successfully)''
-    console.log(✅ Content Generator Agent initialized successfully'))''
-    console.log(\'✅ Service content generation successful)\'\'
-    console.log(✅ Error Fixer Agent initialized successfully\'))\'\'
-    console.log(\'\n📁 Test 4: File System Operations)\'\'
-    const result = require('fs'
-    const result = require('fs'\'\'
-    const filePath = path.join(__dirname, \'test-output)\'\'
-    console.log(✅ Directory creation successful\')\'\'
-    const filePath = path.join(testDir, \'test\'.json\')\'\'
-    console.log(\'✅ File writing successful)\'\'
-    console.log(\')\n📦 Test 5: Dependencies)\'\'
-    const result = require($2)r))\'\'
-    const result = require($2)2))axios)\'\'
-    console.log(✅ All dependencies loaded successfully\')\'\'
-    console.log(\'\n🎉 All tests passed! The automation system is ready to run.)\'\'
-    console.log(  node automation/run-automation.js\'))\'\'
-    console.log(\'\nTo run with cron job:)\'\'
-    console.error(❌ Test failed: "
+const result = require($2)t))''''
+const ./content-generator-agent = require('path''')
+const result = require('fs';'''')
+  console.log('🧪 Testing Zion Tech Group Website Automation System)''''
+    console.log(\n📊 Test 1: Website Analyzer Agent'))''''
+    console.log('✅ Website Analyzer Agent initialized successfully)''''
+    console.log(✅ Content Generator Agent initialized successfully'))''''
+    console.log(\'✅ Service content generation successful)\'\'''
+    console.log(✅ Error Fixer Agent initialized successfully\'))\'\'''
+    console.log(\'\n📁 Test 4: File System Operations)\'\'''
+    const result = require('fs''')
+    const result = require('fs'\'\''')
+    const filePath = path.join(__dirname, \'test-output)\'\'''
+    console.log(✅ Directory creation successful\')\'\'''
+    const filePath = path.join(testDir, \'test\'.json\')\'\'''
+    console.log(\'✅ File writing successful)\'\'''
+    console.log(\')\n📦 Test 5: Dependencies)\'\'''
+    const result = require($2)r))\'\'''
+    const result = require($2)2))axios)\'\'''
+    console.log(✅ All dependencies loaded successfully\')\'\'''
+    console.log(\'\n🎉 All tests passed! The automation system is ready to run.)\'\'''
+    console.log(  node automation/run-automation.js\'))\'\'''
+    console.log(\'\nTo run with cron job:)\'\'''
+    console.error(❌ Test failed: """)

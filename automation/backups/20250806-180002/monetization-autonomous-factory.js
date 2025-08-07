@@ -59,32 +59,32 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-        this.monetizationDir = path.join(this.baseDir, 'monetization-agen'ts')''
-        this.reportsDir = path.join(this.baseDir, 'monetization-reports)''
-        this.logsDir = path.join(this.baseDir, monetization-lo'g's)''
-            status: "
-            this.log(\')Error\' in monetization agent: "
-            strategies: "[')pricing"
-            targets: "['conversion-rate"
-            platforms: "[google-ads"
-            optimization: "[c't'r"
-            tiers: "['bas'ic'"
-            metrics: "[mrr'"
-            networks: "[')commission-junction"
-            strategies: "['content-marketing"
-            channels: "[')online-store"
-            optimizations: "['cart-abandonment"
-            conversion: "[')free-to-paid"
-            metrics: "['conversion-rate"
-            activeAgents: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require(('chil')')d'_process)''''
+        this.monetizationDir = path.join(this.baseDir, 'monetization-agen'ts')''''
+        this.reportsDir = path.join(this.baseDir, 'monetization-reports)''''
+        this.logsDir = path.join(this.baseDir, monetization-lo'g's)''''
+            status: """
+            this.log(\')Error\' in monetization agent: """
+            strategies: "[')pricing"""
+            targets: "['conversion-rate"""
+            platforms: "[google-ads"""
+            optimization: "[c't'r"""
+            tiers: "['bas'ic'"""
+            metrics: "[mrr'"""
+            networks: "[')commission-junction"""
+            strategies: "['content-marketing"""
+            channels: "[')online-store"""
+            optimizations: "['cart-abandonment"""
+            conversion: "[')free-to-paid"""
+            metrics: "['conversion-rate"""
+            activeAgents: """

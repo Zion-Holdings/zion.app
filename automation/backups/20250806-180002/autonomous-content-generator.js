@@ -59,87 +59,87 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const result = require($2)r))''
-const fs = require('path'
-const result = require('fs';''
-    // Check if we're' in the automation directory and adjust path accordingly''
-    if (this.projectRoot.endsWith('automation)) {''
-      const filePath = path.join(this.projectRoot, automation, last-content-generatio')n'.json)''
-        const jsonData = JSON.parse(fs.readFileSync(timeFile, 'ut'f8'))''
-      console.log('No previous generation time found)''
-    const filePath = path.join(this.projectRoot, automation, ')last-content-generatio'n.json')''
-      version: "
-          category: "
-          description: "\'Expert AI developers specializing in machine learning"
-          price: "
-          provider: "
-          features: "[Machine Learning"
-          technologies: "['Pyth'on'"
-          availability: "
-          id: "
-          category: "
-          description: "\'Complete cloud infrastructure design and implementation. We specialize in AWS"
-          price: "
-          provider: "
-          features: "[AWS Setup"
-          technologies: "['A'WS'"
-          availability: "
-          responseTime: "
-          id: "
-          title: "
-          category: "
-          description: "
-          price: "
-          features: "[\'Smar\'t Contracts\'"
-          technologies: "[\'Ethereum"
-          availability: "
-          responseTime: "
-          id: "
-          title: "
-          category: "
-          description: "
-          price: "
-          features: "[\'GP\'U Clusters\'"
-          technologies: "[\'NVIDIA\' GPUs\'"
-          availability: "
-          responseTime: "
-          name: "
-          icon: "
-          description: "
-          id: "
-          name: "
-          icon: "
-          id: "
-          name: "
-          description: "
-          name: "
-          icon: "
-          description: "
-        id: "
-        title: "
-        publishDate: "
-        tags: "[AI"
-        readTime: "
-        id: "
-        title: "
-        excerpt: "\'Learn how blockchain technology is ensuring secure"
-        author: "
-        publishDate: "
-        tags: "[Blockchain"
-        readTime: "
-        name: "
-        description: "
-        name: "
-        description: "
-        name: "
-        description: "
-        name: "
-        description: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const result = require($2)r))''''
+const fs = require('path''')
+const result = require('fs';'''')
+    // Check if we're' in the automation directory and adjust path accordingly''''
+    if (this.projectRoot.endsWith('automation)) {''''
+      const filePath = path.join(this.projectRoot, automation, last-content-generatio')n'.json)''''
+        const jsonData = JSON.parse(fs.readFileSync(timeFile, 'ut'f8'))''''
+      console.log('No previous generation time found)''''
+    const filePath = path.join(this.projectRoot, automation, ')last-content-generatio'n.json')''''
+      version: """
+          category: """
+          description: "\'Expert AI developers specializing in machine learning"""
+          price: """
+          provider: """
+          features: "[Machine Learning"""
+          technologies: "['Pyth'on'"""
+          availability: """
+          id: """
+          category: """
+          description: "\'Complete cloud infrastructure design and implementation. We specialize in AWS"""
+          price: """
+          provider: """
+          features: "[AWS Setup"""
+          technologies: "['A'WS'"""
+          availability: """
+          responseTime: """
+          id: """
+          title: """
+          category: """
+          description: """
+          price: """
+          features: "[\'Smar\'t Contracts\'"""
+          technologies: "[\'Ethereum"""
+          availability: """
+          responseTime: """
+          id: """
+          title: """
+          category: """
+          description: """
+          price: """
+          features: "[\'GP\'U Clusters\'"""
+          technologies: "[\'NVIDIA\' GPUs\'"""
+          availability: """
+          responseTime: """
+          name: """
+          icon: """
+          description: """
+          id: """
+          name: """
+          icon: """
+          id: """
+          name: """
+          description: """
+          name: """
+          icon: """
+          description: """
+        id: """
+        title: """
+        publishDate: """
+        tags: "[AI"""
+        readTime: """
+        id: """
+        title: """
+        excerpt: "\'Learn how blockchain technology is ensuring secure"""
+        author: """
+        publishDate: """
+        tags: "[Blockchain"""
+        readTime: """
+        name: """
+        description: """
+        name: """
+        description: """
+        name: """
+        description: """
+        name: """
+        description: """

@@ -59,47 +59,47 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require($2)h))''
-const result = require('fs'
-const { v4: uuidv4 } = require(('uuid)'
-      const result = require($2)2))./monetization-autonomous-factory\')\'\'
-      console.log(✅ Monetization Automation Orchestrator initialized\')\'\'
-      console.error(\'❌ Failed to initialize Monetization Orchestrator:, error)\'\'
-      subscription-optimization\'): {\'\'
-        name: "
-        agents: "[\'subscription-manag\'er\'"
-        description: "
-        agents: "[marketplace-optimizer"
-        description: "
-        agents: "
-        description: "
-        name: "
-        agents: "
-        type: "
-        strategy: "
-        priority: "
-        type: "
-        strategy: "
-        priority: "
-        type: "
-        strategy: "
-        priority: "
-      type: "
-      strategy: "
-      priority: "
-      type: "
-      strategy: "
-      priority: "
-      status: "
-      status: "
-      orchestrator: "
-      status: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require($2)h))''''
+const result = require('fs''')
+const { v4: uuidv4 } = require(('uuid)'''
+      const result = require($2)2))./monetization-autonomous-factory\')\'\'''
+      console.log(✅ Monetization Automation Orchestrator initialized\')\'\'''
+      console.error(\'❌ Failed to initialize Monetization Orchestrator:, error)\'\'''
+      subscription-optimization\'): {\'\'''
+        name: """
+        agents: "[\'subscription-manag\'er\'"""
+        description: """
+        agents: "[marketplace-optimizer"""
+        description: """
+        agents: """
+        description: """
+        name: """
+        agents: """
+        type: """
+        strategy: """
+        priority: """
+        type: """
+        strategy: """
+        priority: """
+        type: """
+        strategy: """
+        priority: """
+      type: """
+      strategy: """
+      priority: """
+      type: """
+      strategy: """
+      priority: """
+      status: """
+      status: """
+      orchestrator: """
+      status: """

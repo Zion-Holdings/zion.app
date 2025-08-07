@@ -59,30 +59,30 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-  fs = require('path'
-  console.error('Failed to require(fs: '
-  path = require('path'
-  console.error('Failed to require(path: '
-  log(message, level = 'info'
-        this.require(dVars = ['NEXT_PUBLIC_SUPABASE_URL', 'NEXT_PUBLIC_SUPABASE_ANON_KEY'
-        const envFile = path.join(this.baseDir, '.env.local'
-            this.log('✓ .env.local exists', 'info'
-            this.log('✗ .env.local not found', 'info'
-                this.log(`✓ ${varName} found``, 'info'
-                this.log(``✗ ${varName} missing``, 'info'
-                status: 'error'
-                message: '.env.local file not found'
-            const reportFile = path.join(this.baseDir, 'automation', 'env-validation-report.json'
-        const envContent = fs.readFileSync(envFile.path, 'utf8'
-                status: requiredVars.missingVars.length === 0 ? 'passed' : 'failed'
-        const reportFile = path.join(this.baseDir, 'automation', 'env-validation-report.json)'
-        this.log(``Environment validation report generated: ${reportFile}``, 'info'`
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+  fs = require('path''')
+  console.error('Failed to require(fs: ''')
+  path = require('path''')
+  console.error('Failed to require(path: ''')
+  log(message, level = 'info''')
+        this.require(dVars = ['NEXT_PUBLIC_SUPABASE_URL', 'NEXT_PUBLIC_SUPABASE_ANON_KEY''')
+        const envFile = path.join(this.baseDir, '.env.local''')
+            this.log('✓ .env.local exists', 'info''')
+            this.log('✗ .env.local not found', 'info''')
+                this.log(`✓ ${varName} found``, 'info''')
+                this.log(``✗ ${varName} missing``, 'info''')
+                status: 'error'''
+                message: '.env.local file not found'''
+            const reportFile = path.join(this.baseDir, 'automation', 'env-validation-report.json''')
+        const envContent = fs.readFileSync(envFile.path, 'utf8''')
+                status: requiredVars.missingVars.length === 0 ? 'passed' : 'failed'''
+        const reportFile = path.join(this.baseDir, 'automation', 'env-validation-report.json)'''
+        this.log(``Environment validation report generated: ${reportFile}``, 'info'`'')

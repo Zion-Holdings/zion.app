@@ -59,86 +59,86 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-const { promisify } = require(('uti)l)''
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''
-    this.projectRoot = path.resolve(__dirname, '../..')''
-    this.reportsDir = path.join(__dirname, ../reports/code-quality-reports')''
-    this.logsDir = path.join(__dirname, '../logs/code-quality-logs)''
-      path.join(this.reportsDir, 'quality-repor'ts'),''
-      path.join(this.reportsDir, 'standards-reports),''
-      path.join(this.reportsDir, best-practices-repor't's),''
-      path.join(this.reportsDir, 'optimization-repor'ts'),''
-      path.join(this.reportsDir, 'monitoring-reports),''
-      path.join(this.reportsDir, compliance-repor't's)''
-      console.log('Performing comprehensive code quality analysis...)''
-      console.log(')Code' quality analysis completed')''
-        const result = fs.readFileSync(file, 'ut'f8')''
-        const result = fs.readFileSync(file, 'utf'8')''
-          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules) {''
-            if (ext === .json') || ext === .yml' || ext === '.yaml || ext === '.js' || ext === .ts') {''
-              const result = fs.readFileSync(fullPath, 'utf'8')''
-    const result = ['quali'ty', 'standard, bes't' practice, 'li'nt',''
-      'eslint, pretti'e'r, 'sty'le', 'format''
-      type: "
-      category: "
-      quality: "
-      type: "
-      linter: "
-      strictness: "
-      environment: "
-      type: "
-      compliance: "
-      enforcement: "
-      type: "
-      category: "
-      implementation: "
-        type: "
-        priority: "
-        message: "
-        suggestion: "
-        type: "
-        priority: "
-        message: "
-        suggestion: "
-        priority: "
-        message: "
-        type: "
-        priority: "
-        message: "
-        suggestion: "
-      status: "
-        type: "
-        severity: "
-        message: "
-        type: "
-        severity: "
-        message: "
-      status: "
-        type: "
-        severity: "
-        message: "
-        type: "
-        severity: "
-        message: "
-          status: "
-        status: "
-        status: "
-        status: "
-        status: "
-        status: "
-        status: "
-        status: "
-        status: "
-          priority: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require(('chil')')d'_process)''''
+const { promisify } = require(('uti)l)''''
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''''
+    this.projectRoot = path.resolve(__dirname, '../..')''''
+    this.reportsDir = path.join(__dirname, ../reports/code-quality-reports')''''
+    this.logsDir = path.join(__dirname, '../logs/code-quality-logs)''''
+      path.join(this.reportsDir, 'quality-repor'ts'),''''
+      path.join(this.reportsDir, 'standards-reports),''''
+      path.join(this.reportsDir, best-practices-repor't's),''''
+      path.join(this.reportsDir, 'optimization-repor'ts'),''''
+      path.join(this.reportsDir, 'monitoring-reports),''''
+      path.join(this.reportsDir, compliance-repor't's)''''
+      console.log('Performing comprehensive code quality analysis...)''''
+      console.log(')Code' quality analysis completed')''''
+        const result = fs.readFileSync(file, 'ut'f8')''''
+        const result = fs.readFileSync(file, 'utf'8')''''
+          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules) {''''
+            if (ext === .json') || ext === .yml' || ext === '.yaml || ext === '.js' || ext === .ts') {''''
+              const result = fs.readFileSync(fullPath, 'utf'8')''''
+    const result = ['quali'ty', 'standard, bes't' practice, 'li'nt',''''
+      'eslint, pretti'e'r, 'sty'le', 'format''''
+      type: """
+      category: """
+      quality: """
+      type: """
+      linter: """
+      strictness: """
+      environment: """
+      type: """
+      compliance: """
+      enforcement: """
+      type: """
+      category: """
+      implementation: """
+        type: """
+        priority: """
+        message: """
+        suggestion: """
+        type: """
+        priority: """
+        message: """
+        suggestion: """
+        priority: """
+        message: """
+        type: """
+        priority: """
+        message: """
+        suggestion: """
+      status: """
+        type: """
+        severity: """
+        message: """
+        type: """
+        severity: """
+        message: """
+      status: """
+        type: """
+        severity: """
+        message: """
+        type: """
+        severity: """
+        message: """
+          status: """
+        status: """
+        status: """
+        status: """
+        status: """
+        status: """
+        status: """
+        status: """
+        status: """
+          priority: """

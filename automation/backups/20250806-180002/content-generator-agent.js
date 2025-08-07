@@ -57,27 +57,27 @@ const memoryOptimization = {
     }
   }
 }
-const result = require('fs'
-const path = require('path'
-    console.log(📝 Generating service descriptions...\'))\'\'
-      await this.saveContent(\'service-descriptions, service.name.toLowerCase().replace(/\s+/g, -), content)\'\'
-        .replace(\'){{SERVICE_NAME"
-        basic: template.pricing.basic.replace({{BASIC_PRICE"
-        professional: "
-      name: "template.name.replace('){{FULL_NAME"
-      title: "template.title.replace({{JOB_TITLE"
-      experience: "
-      location: "template.location.replace({{LOCATION"
-      availability: "
-      review_count: "template.review_count.replace({{REVIEW_COUNT"
-      excerpt: "
-      content: "
-      category: "
-      publishedAt: "
-      company: "template.company.replace({{COMPANY_NAME"
-      role: "
-      rating: "template.rating.replace({{RATING"
-      project: "
-      console.error(❌ Error generating missing content: "
-    return templates[contentItem.type] || "
-    return "
+const result = require('fs''')
+const path = require('path''')
+    console.log(📝 Generating service descriptions...\'))\'\'''
+      await this.saveContent(\'service-descriptions, service.name.toLowerCase().replace(/\s+/g, -), content)\'\'''
+        .replace(\'){{SERVICE_NAME"""
+        basic: template.pricing.basic.replace({{BASIC_PRICE""")
+        professional: """
+      name: "template.name.replace('){{FULL_NAME"""
+      title: "template.title.replace({{JOB_TITLE""")
+      experience: """
+      location: "template.location.replace({{LOCATION""")
+      availability: """
+      review_count: "template.review_count.replace({{REVIEW_COUNT""")
+      excerpt: """
+      content: """
+      category: """
+      publishedAt: """
+      company: "template.company.replace({{COMPANY_NAME""")
+      role: """
+      rating: "template.rating.replace({{RATING""")
+      project: """
+      console.error(❌ Error generating missing content: """)
+    return templates[contentItem.type] || """
+    return """

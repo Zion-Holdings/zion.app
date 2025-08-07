@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs');'
+const path = require('path');'
 
 class SyntaxErrorFixingAgent {
   constructor() {
@@ -11,7 +11,7 @@ class SyntaxErrorFixingAgent {
 
   async fixSyntaxErrors() {
     try {
-      console.log('🔧 Starting syntax error fixing agent...');
+      console.log('🔧 Starting syntax error fixing agent...');'
       
       // Fix missing semicolons
       await this.fixMissingSemicolons();
@@ -22,9 +22,9 @@ class SyntaxErrorFixingAgent {
       // Fix JSX structure errors
       await this.fixJSXErrors();
       
-      console.log('✅ Syntax error fixing completed');
+      console.log('✅ Syntax error fixing completed');'
     } catch (error) {
-      console.error('❌ Error in syntax fixing agent:', error);
+      console.error('❌ Error in syntax fixing agent:', error);'
     }
   }
 
@@ -33,14 +33,14 @@ class SyntaxErrorFixingAgent {
     
     for (const file of files) {
       try {
-        let content = fs.readFileSync(file, 'utf8');
+        let content = fs.readFileSync(file, 'utf8');'
         let modified = false;
         
         // Fix missing semicolons after import statements
-        content = content.replace(/import\s+([^;]+?)\s+from\s+['"]([^'"]+)['"]/g, (match, imports, source) => {
-          if (!match.endsWith(';')) {
+        content = content.replace(/import\s+([^;]+?)\s+from\s+['"]([^'"]+)['"]/g, (match, imports, source) => {""
+          if (!match.endsWith(';)) {''
             modified = true;
-            return `import ${imports} from '${source}';`;
+            return `import ${imports} from '${source};`;'
           }
           return match;
         });
@@ -61,11 +61,11 @@ class SyntaxErrorFixingAgent {
     
     for (const file of files) {
       try {
-        let content = fs.readFileSync(file, 'utf8');
+        let content = fs.readFileSync(file, ';utf8');'
         let modified = false;
         
         // Fix unterminated string literals
-        content = content.replace(/(['"])([^'"]*?)(?=\n|$)/g, (match, quote, text) => {
+        content = content.replace(/(['"])([^'"]*?)(?=\n|$)/g, (match, quote, text) => {""
           if (!text.includes(quote)) {
             modified = true;
             return match + quote;
@@ -89,12 +89,12 @@ class SyntaxErrorFixingAgent {
     
     for (const file of files) {
       try {
-        let content = fs.readFileSync(file, 'utf8');
+        let content = fs.readFileSync(file, 'utf8');'
         let modified = false;
         
         // Fix unclosed JSX tags
         content = content.replace(/<([a-zA-Z][a-zA-Z0-9]*)([^>]*?)(?=\n|$)/g, (match, tagName, attributes) => {
-          if (!attributes.includes('/>') && !attributes.includes('>')) {
+          if (!attributes.includes('/>') && !attributes.includes('>')) {''
             modified = true;
             return `<${tagName}${attributes}>`;
           }
@@ -114,7 +114,7 @@ class SyntaxErrorFixingAgent {
 
   findTypeScriptFiles() {
     const files = [];
-    const extensions = ['.ts', '.tsx', '.js', '.jsx'];
+    const extensions = ['.ts', '.tsx', '.js', '.jsx'];'
     
     const walkDir = (dir) => {
       const items = fs.readdirSync(dir);
@@ -122,7 +122,7 @@ class SyntaxErrorFixingAgent {
         const fullPath = path.join(dir, item);
         const stat = fs.statSync(fullPath);
         
-        if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
+        if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {''
           walkDir(fullPath);
         } else if (stat.isFile() && extensions.some(ext => item.endsWith(ext))) {
           files.push(fullPath);

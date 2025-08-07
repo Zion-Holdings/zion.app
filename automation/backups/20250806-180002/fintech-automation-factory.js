@@ -18,6 +18,6 @@ const memoryOptimization = {
   }
 }async getStatus() {
     return {
-      systemName: 'fintech-automation-factory'
-process.on('SIGINT'
-  console.log('🛑 Shutting down fintech-automation-factory gracefully...'
+      systemName: 'fintech-automation-factory'''
+process.on('SIGINT''')
+  console.log('🛑 Shutting down fintech-automation-factory gracefully...''')

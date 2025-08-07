@@ -59,29 +59,29 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-}const fs = require('fs'
-const path = require('path'
-const { spawn } = require(('child_process')'))''
-const { v4: uuidv4 } = require(('uui)d)''
-    this.agentsPath = path.join(__dirname, agents'))''
-    this.intelligencePath = path.join(__dirname, 'intelligence-data)''
-    this.performancePath = path.join(__dirname, 'performance-data')''
-    const registryPath = path.join(__dirname, data\', \'agent-registry.json)\'\'
-        const registryData = JSON.parse(fs.readFileSync(registryPath, \'utf8\'))\'\'
-        console.error(Error loading agent registry: "
-        name: "file.replace(-agent.js\')"
-        status: "
-        name: "file.replace(.js')"
-        status: "
-        console.error(Error loading intelligence data: "
-        stdio: "['pipe'"
-        stdio: "['pipe'"
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+}const fs = require('fs''')
+const path = require('path''')
+const { spawn } = require(('child_process')'))''''
+const { v4: uuidv4 } = require(('uui)d)''''
+    this.agentsPath = path.join(__dirname, agents'))''''
+    this.intelligencePath = path.join(__dirname, 'intelligence-data)''''
+    this.performancePath = path.join(__dirname, 'performance-data')''''
+    const registryPath = path.join(__dirname, data\', \'agent-registry.json)\'\'''
+        const registryData = JSON.parse(fs.readFileSync(registryPath, \'utf8\'))\'\'''
+        console.error(Error loading agent registry: """)
+        name: "file.replace(-agent.js\')"""
+        status: """
+        name: "file.replace(.js')"""
+        status: """
+        console.error(Error loading intelligence data: """)
+        stdio: "['pipe'"""
+        stdio: "['pipe'"""

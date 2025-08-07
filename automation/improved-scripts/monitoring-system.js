@@ -59,24 +59,24 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-  fs = require('path'
-  console.error('Failed to require(fs: '
-  path = require('path'
-  console.error('Failed to require(path: '
-      health: 'healthy'
-        this.monitoringDir = path.join(this.projectRoot, 'automation/monitoring'
-        const healthFile = path.join(this.monitoringDir, 'project-health.json'
-const . = require(('.)')$2execSync('npm run build'
-                stdio: 'pipe'
-            return { status: 'success', message: 'Build completed successfully'
-            return { status: 'error'
-const . = require(('.)')$2execSync('npm test'
-                stdio: 'pipe'
-            return { status: 'success', message: 'Tests passed'
-            return { status: 'error'
-const . = require(('.)')$2execSync('npm run lint'
-                stdio: 'pipe'
-            return { status: 'success', message: 'Linting passed'
-            return { status: 'error'
-const . = require(('.)')$2execSync('find . -name "*.tsx" -o -name "*.ts" -o -name "*.js"
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+  fs = require('path''')
+  console.error('Failed to require(fs: ''')
+  path = require('path''')
+  console.error('Failed to require(path: ''')
+      health: 'healthy'''
+        this.monitoringDir = path.join(this.projectRoot, 'automation/monitoring''')
+        const healthFile = path.join(this.monitoringDir, 'project-health.json''')
+const . = require(('.)')$2execSync('npm run build''')
+                stdio: 'pipe'''
+            return { status: 'success', message: 'Build completed successfully'''
+            return { status: 'error'''
+const . = require(('.)')$2execSync('npm test''')
+                stdio: 'pipe'''
+            return { status: 'success', message: 'Tests passed'''
+            return { status: 'error'''
+const . = require(('.)')$2execSync('npm run lint''')
+                stdio: 'pipe'''
+            return { status: 'success', message: 'Linting passed'''
+            return { status: 'error'''
+const . = require(('.)')$2execSync('find . -name "*.tsx" -o -name "*.ts" -o -name "*.js""")

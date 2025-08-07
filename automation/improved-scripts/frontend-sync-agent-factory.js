@@ -59,66 +59,66 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { spawn } = require(('chil')')d'_process)''
-const { v4: uuidv4 } = require(('uui)d)''
-const result = require($2)2))events)''
-  log(message, level = 'info'
-      page-sy'n'
-        capabilities: [\'page-generati\'on\'"
-        services: "[\'dynamic-page-creati\'on\'"
-        dependencies: "[\'nex\'t.js\'"
-        capabilities: "['component-generation"
-        services: "['dynamic-components"
-        dependencies: "['react"
-        capabilities: [api-generati\'o\'n"
-        services: "[dynamic-ap\'i\'s"
-        dependencies: "[nex\'t\'.js"
-        capabilities: [\'content-generati\'on\'"
-        services: "[\'dynamic-conte\'nt\'"
-        dependencies: "[\'next-s\'eo\'"
-        capabilities: "['state-management"
-        services: "['global-state"
-        dependencies: "['react-context"
-        capabilities: [auth-manageme\'n\'t"
-        services: "[authenticati\'o\'n"
-        dependencies: "[supaba\'s\'e"
-        capabilities: [\'ui-generati\'on\'"
-        services: "[\'dynamic-\'ui\'"
-        dependencies: "[\'tailwindc\'ss\'"
-        capabilities: "['performance-monitoring"
-        services: "['performance-tracking"
-        dependencies: "['web-vitals"
-      systemHealth: "
-      status: "
-      status: "
-    this.log(🔄 Created sync agent ${agentId} of type ${type}"
-      this.log(⚠️ Sync agent ${agentId} is already running"
-        stdio: "[')pipe"
-      this.log("
-      this.log(🛑 Stopped sync agent ${agentId}"
-    this.log("
-    this.log("
-      component-sync: "
-      \'api-sync: "
-      state-sync: "
-      \'auth-sync: "
-      performance-sync: "
-      this.log("
-        this.log("
-      console.error(❌ Error loading sync registry: "
-    this.log(📝 Created sync agent template ${templateId} for type ${type}"
-        createdAgents.push({ id: "agentId", type: "spec.type", status: "
-    this.log("🔄 Batch created ${createdAgents.length} sync agents"
-      status: "
-      return { status: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { spawn } = require(('chil')')d'_process)''''
+const { v4: uuidv4 } = require(('uui)d)''''
+const result = require($2)2))events)''''
+  log(message, level = 'info''')
+      page-sy'n'''
+        capabilities: [\'page-generati\'on\'"""
+        services: "[\'dynamic-page-creati\'on\'"""
+        dependencies: "[\'nex\'t.js\'"""
+        capabilities: "['component-generation"""
+        services: "['dynamic-components"""
+        dependencies: "['react"""
+        capabilities: [api-generati\'o\'n"""
+        services: "[dynamic-ap\'i\'s"""
+        dependencies: "[nex\'t\'.js"""
+        capabilities: [\'content-generati\'on\'"""
+        services: "[\'dynamic-conte\'nt\'"""
+        dependencies: "[\'next-s\'eo\'"""
+        capabilities: "['state-management"""
+        services: "['global-state"""
+        dependencies: "['react-context"""
+        capabilities: [auth-manageme\'n\'t"""
+        services: "[authenticati\'o\'n"""
+        dependencies: "[supaba\'s\'e"""
+        capabilities: [\'ui-generati\'on\'"""
+        services: "[\'dynamic-\'ui\'"""
+        dependencies: "[\'tailwindc\'ss\'"""
+        capabilities: "['performance-monitoring"""
+        services: "['performance-tracking"""
+        dependencies: "['web-vitals"""
+      systemHealth: """
+      status: """
+      status: """
+    this.log(🔄 Created sync agent ${agentId} of type ${type}""")
+      this.log(⚠️ Sync agent ${agentId} is already running""")
+        stdio: "[')pipe"""
+      this.log(""")
+      this.log(🛑 Stopped sync agent ${agentId}""")
+    this.log(""")
+    this.log(""")
+      component-sync: """
+      \'api-sync: """
+      state-sync: """
+      \'auth-sync: """
+      performance-sync: """
+      this.log(""")
+        this.log(""")
+      console.error(❌ Error loading sync registry: """)
+    this.log(📝 Created sync agent template ${templateId} for type ${type}""")
+        createdAgents.push({ id: "agentId", type: "spec.type", status: """)
+    this.log("🔄 Batch created ${createdAgents.length} sync agents""")
+      status: """
+      return { status: """

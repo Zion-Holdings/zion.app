@@ -59,40 +59,40 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require($2)a))''
-const path = require('path'
-const result = require($2)2))axi'os')''
-const result = require($2)r))''
-const node-cron = require('path'
-  log(message, level = 'info'
-        this.reportsDir = path.join(this.baseDir, ')chatgpt-analysis-repor'ts')''
-        this.agentsDir = path.join(this.baseDir, 'chatgpt-agents)''
-        this.logsDir = path.join(this.baseDir, chatgpt-lo'g's)''
-        this.dataDir = path.join(this.baseDir, 'chatgpt-da'ta')''
-        this.log("
-            type: "
-            status: "
-        this.log(\"[ChatGPT Agent \${this.config.id}] \${message}\"
-                args: "[--no-sandbox"
-            await page.goto(this.chatgptUrl, { waitUntil: "
-                    role: "
-                        type: "
-                    type: "
-                args: "[--no-sandbox"
-            await page.goto(this.projectUrl, { waitUntil: "
-                    metaDescription: "
-                    headings: "Array.from(document.querySelectorAll(h\')1"
-                    styles: "
-            status: "
-        this.log(\"
-                type: "
-                source: "
-                type: "
-                priority: "
-                source: "
-                type: "
-                priority: "
-                source: "
-                status: "
-        this.log(\"[ChatGPT Orchestrator] \${message}\"
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require($2)a))''''
+const path = require('path''')
+const result = require($2)2))axi'os')''''
+const result = require($2)r))''''
+const node-cron = require('path''')
+  log(message, level = 'info''')
+        this.reportsDir = path.join(this.baseDir, ')chatgpt-analysis-repor'ts')''''
+        this.agentsDir = path.join(this.baseDir, 'chatgpt-agents)''''
+        this.logsDir = path.join(this.baseDir, chatgpt-lo'g's)''''
+        this.dataDir = path.join(this.baseDir, 'chatgpt-da'ta')''''
+        this.log(""")
+            type: """
+            status: """
+        this.log(\"[ChatGPT Agent \${this.config.id}] \${message}\""")
+                args: "[--no-sandbox"""
+            await page.goto(this.chatgptUrl, { waitUntil: """)
+                    role: """
+                        type: """
+                    type: """
+                args: "[--no-sandbox"""
+            await page.goto(this.projectUrl, { waitUntil: """)
+                    metaDescription: """
+                    headings: "Array.from(document.querySelectorAll(h\')1"""
+                    styles: """
+            status: """
+        this.log(\""")
+                type: """
+                source: """
+                type: """
+                priority: """
+                source: """
+                type: """
+                priority: """
+                source: """
+                status: """
+        this.log(\"[ChatGPT Orchestrator] \${message}\""")

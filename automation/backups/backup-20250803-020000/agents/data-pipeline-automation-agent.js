@@ -59,81 +59,81 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-const { promisify } = require(('uti)l)''
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''
-    this.projectRoot = path.resolve(__dirname, '../..')''
-    this.reportsDir = path.join(__dirname, ../reports/data-pipeline-automation')''
-      path.join(this.reportsDir, 'pipeline-reports),''
-      path.join(this.reportsDir, data-quali't'y),''
-      path.join(this.reportsDir, 'performance-repor'ts'),''
-      path.join(this.reportsDir, 'monitoring-reports),''
-      path.join(this.reportsDir, optimization-repor't's)''
-      console.log('Performing comprehensive data pipeline analysis...)''
-      console.log(')Data' pipeline analysis completed')''
-        const result = fs.readFileSync(file, 'ut'f8')''
-        const result = fs.readFileSync(file, 'utf'8')''
-          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules) {''
-            if (ext === .json') || ext === .yml' || ext === '.yaml || ext === '.js' || ext === .ts') {''
-              const result = fs.readFileSync(fullPath, 'utf'8')''
-    const result = ['pipeli'ne', 'etl, e'l't, 'da'ta', 'extract, transfo'r'm, 'lo'ad',''
-      'ingestion, processi'n'g, 'streami'ng', 'batch, real-ti'm'e''
-      type: "
-      framework: "
-      schedule: "
-      type: "
-      framework: "
-      schedule: "
-    const result = /stage\s*\(\s*[')"
-    const result = /task\s*\(\s*['"
-      const result = content.match(/cron\s*[:=]\s*["]([^'"
-      environment: "
-      type: "
-      format: "
-      host: "
-      port: "
-      database: "
-      username: "
-    const result = content.match(/host\s*[:=]\s*['"]([^"
-    const result = content.match(/database\s*[:=]\s*['"]([^"
-    const result = content.match(/username\s*[:=]\s*['"]([^"
-      type: "
-      complexity: "
-      type: "
-      format: "
-    const result = content.match(/rule\s*[:=]\s*[')"]([^"
-        const result = match.replace(/rule\s*[:=]\s*['"]/i, ').replace(/['"
-        type: "
-        priority: "
-        message: "
-        suggestion: "'Implement data quality checks for null values"
-        priority: "
-        message: "
-        priority: "
-        message: "
-        type: "
-        priority: "
-        message: "
-        suggestion: "
-        type: "
-        priority: "
-        message: "
-        suggestion: "
-      status: "
-        type: "
-        severity: "
-        message: "
-        type: "
-        severity: "
-        message: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require(('chil')')d'_process)''''
+const { promisify } = require(('uti)l)''''
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''''
+    this.projectRoot = path.resolve(__dirname, '../..')''''
+    this.reportsDir = path.join(__dirname, ../reports/data-pipeline-automation')''''
+      path.join(this.reportsDir, 'pipeline-reports),''''
+      path.join(this.reportsDir, data-quali't'y),''''
+      path.join(this.reportsDir, 'performance-repor'ts'),''''
+      path.join(this.reportsDir, 'monitoring-reports),''''
+      path.join(this.reportsDir, optimization-repor't's)''''
+      console.log('Performing comprehensive data pipeline analysis...)''''
+      console.log(')Data' pipeline analysis completed')''''
+        const result = fs.readFileSync(file, 'ut'f8')''''
+        const result = fs.readFileSync(file, 'utf'8')''''
+          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules) {''''
+            if (ext === .json') || ext === .yml' || ext === '.yaml || ext === '.js' || ext === .ts') {''''
+              const result = fs.readFileSync(fullPath, 'utf'8')''''
+    const result = ['pipeli'ne', 'etl, e'l't, 'da'ta', 'extract, transfo'r'm, 'lo'ad',''''
+      'ingestion, processi'n'g, 'streami'ng', 'batch, real-ti'm'e''''
+      type: """
+      framework: """
+      schedule: """
+      type: """
+      framework: """
+      schedule: """
+    const result = /stage\s*\(\s*[')"""
+    const result = /task\s*\(\s*['""")
+      const result = content.match(/cron\s*[:=]\s*["]([^'""")
+      environment: """
+      type: """
+      format: """
+      host: """
+      port: """
+      database: """
+      username: """
+    const result = content.match(/host\s*[:=]\s*['"]([^""")
+    const result = content.match(/database\s*[:=]\s*['"]([^""")
+    const result = content.match(/username\s*[:=]\s*['"]([^""")
+      type: """
+      complexity: """
+      type: """
+      format: """
+    const result = content.match(/rule\s*[:=]\s*[')"]([^""")
+        const result = match.replace(/rule\s*[:=]\s*['"]/i, ').replace(/['""")
+        type: """
+        priority: """
+        message: """
+        suggestion: "'Implement data quality checks for null values"""
+        priority: """
+        message: """
+        priority: """
+        message: """
+        type: """
+        priority: """
+        message: """
+        suggestion: """
+        type: """
+        priority: """
+        message: """
+        suggestion: """
+      status: """
+        type: """
+        severity: """
+        message: """
+        type: """
+        severity: """
+        message: """

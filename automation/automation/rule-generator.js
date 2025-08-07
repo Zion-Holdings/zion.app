@@ -23,4 +23,4 @@ class RuleGenerator {
     this.rules = []
   }
   
-  generateRule(category, rule, appliesTo = [], priority = "medium"
+  generateRule(category, rule, appliesTo = [], priority = "medium""")

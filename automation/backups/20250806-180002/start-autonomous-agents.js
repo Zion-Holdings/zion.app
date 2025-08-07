@@ -59,37 +59,37 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { spawn } = require(('chil')')d'_process)''
-    this.logsDir = path.join(this.projectRoot, 'automatio'n/logs')''
-    this.pidFile = path.join(this.projectRoot, 'automation'/agents.pid')''
-      this.status = JSON.parse(fs.readFileSync(this.statusFile, \'ut\'f8\'))\'\'
-    console.log(\'🚀 Starting all autonomous agents...)\'\'
-    await this.startAgent(improvement\'), \'autonomous-improvement-agent\'.js\')\'\'
-    await this.startAgent(content, \'content-generation-automatio\'n.js\')\'\'
-    await this.startAgent(\'analytics, autonomous-analytics.js)\'\'
-    await this.startAgent(\')heal\'th\', \'health-check\'.js\')\'\'
-    await this.startAgent(backup, \'backup-syste\'m.js\')\'\'
-    console.log(\'✅ All agents started successfully)\'\'
-    const filePath = path.join(this.projectRoot, automation\'), script)\'\'
-    // Create log file if it doesn\'t exist\'\'
-      fs.writeFileSync(logFile, \'\')\'\'
-      stdio: "[\'pi\'pe\'"
-      console.error(❌ Error in launcher: "
-        name: "
-        schedule: "
-        name: "
-        schedule: "
-        name: "
-        schedule: "
-    console.log(Usage: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { spawn } = require(('chil')')d'_process)''''
+    this.logsDir = path.join(this.projectRoot, 'automatio'n/logs')''''
+    this.pidFile = path.join(this.projectRoot, 'automation'/agents.pid')''''
+      this.status = JSON.parse(fs.readFileSync(this.statusFile, \'ut\'f8\'))\'\'''
+    console.log(\'🚀 Starting all autonomous agents...)\'\'''
+    await this.startAgent(improvement\'), \'autonomous-improvement-agent\'.js\')\'\'''
+    await this.startAgent(content, \'content-generation-automatio\'n.js\')\'\'''
+    await this.startAgent(\'analytics, autonomous-analytics.js)\'\'''
+    await this.startAgent(\')heal\'th\', \'health-check\'.js\')\'\'''
+    await this.startAgent(backup, \'backup-syste\'m.js\')\'\'''
+    console.log(\'✅ All agents started successfully)\'\'''
+    const filePath = path.join(this.projectRoot, automation\'), script)\'\'''
+    // Create log file if it doesn\'t exist\'\'''
+      fs.writeFileSync(logFile, \'\')\'\'''
+      stdio: "[\'pi\'pe\'"""
+      console.error(❌ Error in launcher: """)
+        name: """
+        schedule: """
+        name: """
+        schedule: """
+        name: """
+        schedule: """
+    console.log(Usage: """)

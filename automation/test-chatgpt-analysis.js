@@ -17,13 +17,13 @@ const memoryOptimization = {
     }
   }
 }
-const result = require($2)a))''
-const path = require('path'
-    console.log(')🧪 Testing ChatGPT Analysis System...')''
-            'chatgpt-agen'ts', ''
-            'chatgpt-logs,''
-            chatgpt-da't'a''
-        const result = [\'chatgpt-analysis-agent-factor\'y.js\',\'\'
-            \'chatgpt-analysis-orchestrator\'.js\',\'\'
-        console.log('✅ All tests passed!')''
-        console.error(❌ Test failed: ', error.message)''
+const result = require($2)a))''''
+const path = require('path''')
+    console.log(')🧪 Testing ChatGPT Analysis System...')''''
+            'chatgpt-agen'ts', ''''
+            'chatgpt-logs,''''
+            chatgpt-da't'a''''
+        const result = [\'chatgpt-analysis-agent-factor\'y.js\',\'\'''
+            \'chatgpt-analysis-orchestrator\'.js\',\'\'''
+        console.log('✅ All tests passed!')''''
+        console.error(❌ Test failed: ', error.message)''''

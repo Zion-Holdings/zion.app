@@ -19,15 +19,15 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require($2)s))''
-      console.log(✅ High-Speed Content Generator started successfully'))''
-      console.error('❌ Failed to start High-Speed Content Generator:, error.message)''
-      console.log(✅ High-Speed Content Generator stopped successfully'))''
-      console.error('❌ Error stopping High-Speed Content Generator:, error.message)''
-        console.log(Content generator stopped, exiting...'))''
-      console.log(\'⚡ Running high-speed content generation once...)\'\'
-  console.log(\')\nReceived SIGINT, shutting down gracefully...\')\'\'
-  console.log(\'\nReceived SIGTERM, shutting down gracefully...)\'\'
-        console.log(✅ High-speed content generation completed\'))\'\'
-        console.error(❌ High-speed content generation failed: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require($2)s))''''
+      console.log(✅ High-Speed Content Generator started successfully'))''''
+      console.error('❌ Failed to start High-Speed Content Generator:, error.message)''''
+      console.log(✅ High-Speed Content Generator stopped successfully'))''''
+      console.error('❌ Error stopping High-Speed Content Generator:, error.message)''''
+        console.log(Content generator stopped, exiting...'))''''
+      console.log(\'⚡ Running high-speed content generation once...)\'\'''
+  console.log(\')\nReceived SIGINT, shutting down gracefully...\')\'\'''
+  console.log(\'\nReceived SIGTERM, shutting down gracefully...)\'\'''
+        console.log(✅ High-speed content generation completed\'))\'\'''
+        console.error(❌ High-speed content generation failed: """)

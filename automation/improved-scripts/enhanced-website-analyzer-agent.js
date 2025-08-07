@@ -59,69 +59,69 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const result = require($2)2))o's)''
-const result = require($2)r))''
-const result = require($2)2))cheerio)''
-const { URL } = require(('u'r'l)')''
-  log(message, level = 'info'
-    this.baseUrl = \'http\'s: //ziontechgroup.netlify.app\'\'\'
-    this.logFile = path.join(__dirname, \'
-  log(message, level = IN\'F\'O) {\'\'
-    this.log([${level}] [${this.agentId}] ${message}"
-      this.log("Analysis failed: "${error.message"
-        args: "[\'--no-sandb\'ox\'"
-      this.log("Crawl failed: "${error.message"
-        waitUntil: "
-      this.log(Error crawling ${url}: ${error.message}"
-        description: "document.querySelector(met\'a\'[name="
-        keywords: "document.querySelector(meta[name=keywords"
-        headings: "Array.from(document.querySelectorAll(h\'1"
-          alt: "
-          title: "
-        forms: "
-            name: "
-            placeholder: "
-        scripts: "
-        stylesheets: "Array.from(document.querySelectorAll(\')lin\'k[rel="
-          media: "
-        type: "
-        severity: "
-        description: "
-        type: "
-        severity: "
-        description: "
-        type: "
-        severity: "
-        description: "
-        type: "
-        severity: "
-        description: "
-        severity: "
-        description: "
-          type: "
-          priority: "
-            type: "
-            priority: "
-          type: "
-          priority: "
-        type: "
-        priority: "
-        description: "
-        pages: "
-        type: "
-        priority: "
-        description: "
-        priority: "
-        description: "
-      this.log("Error updating master analytics: "${error.message"}"
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const result = require($2)2))o's)''''
+const result = require($2)r))''''
+const result = require($2)2))cheerio)''''
+const { URL } = require(('u'r'l)')''''
+  log(message, level = 'info''')
+    this.baseUrl = \'http\'s: //ziontechgroup.netlify.app\'\'\'''
+    this.logFile = path.join(__dirname, \''')
+  log(message, level = IN\'F\'O) {\'\'''
+    this.log([${level}] [${this.agentId}] ${message}""")
+      this.log("Analysis failed: "${error.message""")
+        args: "[\'--no-sandb\'ox\'"""
+      this.log("Crawl failed: "${error.message""")
+        waitUntil: """
+      this.log(Error crawling ${url}: ${error.message}""")
+        description: "document.querySelector(met\'a\'[name=""")
+        keywords: "document.querySelector(meta[name=keywords""")
+        headings: "Array.from(document.querySelectorAll(h\'1""")
+          alt: """
+          title: """
+        forms: """
+            name: """
+            placeholder: """
+        scripts: """
+        stylesheets: "Array.from(document.querySelectorAll(\')lin\'k[rel="""
+          media: """
+        type: """
+        severity: """
+        description: """
+        type: """
+        severity: """
+        description: """
+        type: """
+        severity: """
+        description: """
+        type: """
+        severity: """
+        description: """
+        severity: """
+        description: """
+          type: """
+          priority: """
+            type: """
+            priority: """
+          type: """
+          priority: """
+        type: """
+        priority: """
+        description: """
+        pages: """
+        type: """
+        priority: """
+        description: """
+        priority: """
+        description: """
+      this.log("Error updating master analytics: "${error.message"}""")

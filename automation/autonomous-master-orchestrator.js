@@ -59,54 +59,54 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const variable1 = require('path';''
-const variable1 = require('path';''
-const { exec } = require(('chil'd'_process)')''
-const variable1 = require('path';''
-const variable1 = require('path';''
-const { createValidComponentName, createDisplayTitle } = require(('./utils/component-name-helper)')''
-            marketResearch: "
-            solutionCreator: "
-            salesAgent: "
-            agentCreator: "
-            contentGenerator: "
-            research: "
-            creation: "
-            sales: "
-            agentCreation: "
-            contentGeneration: "
-            deployment: "
-            monitoring: "
-            marketResearch: "
-            solutionCreation: "
-            salesCampaign: "
-            agentCreation: "
-            contentGeneration: "
-            deployment: "
-            monitoring: "
-                generatorType: "
-            activeAgents: "
-            performance: "
-              "
-            const { stdout } = await execAsync(\'to\'p\' -l 1 | grep CPU usage"
-            systemHealth: "
-            averageROI: "
-            expectedROI: "
-                    type: "
-                    action: "
-                    priority: "
-                    type: "
-                    action: "
-                    priority: "
-                type: "
-                action: "
-                priority: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const variable1 = require('path';'''')
+const variable1 = require('path';'''')
+const { exec } = require(('chil'd'_process)')''''
+const variable1 = require('path';'''')
+const variable1 = require('path';'''')
+const { createValidComponentName, createDisplayTitle } = require(('./utils/component-name-helper)')''''
+            marketResearch: """
+            solutionCreator: """
+            salesAgent: """
+            agentCreator: """
+            contentGenerator: """
+            research: """
+            creation: """
+            sales: """
+            agentCreation: """
+            contentGeneration: """
+            deployment: """
+            monitoring: """
+            marketResearch: """
+            solutionCreation: """
+            salesCampaign: """
+            agentCreation: """
+            contentGeneration: """
+            deployment: """
+            monitoring: """
+                generatorType: """
+            activeAgents: """
+            performance: """
+              """
+            const { stdout } = await execAsync(\'to\'p\' -l 1 | grep CPU usage""")
+            systemHealth: """
+            averageROI: """
+            expectedROI: """
+                    type: """
+                    action: """
+                    priority: """
+                    type: """
+                    action: """
+                    priority: """
+                type: """
+                action: """
+                priority: """

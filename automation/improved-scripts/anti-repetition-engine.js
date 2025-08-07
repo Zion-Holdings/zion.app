@@ -59,29 +59,29 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const result = require($2)2))t'o)''
-  log(message, level = 'info'
-    this.enginePath = path.join(__dirname, \'anti-repetition-engi\'ne\')\'\'
-    this.logsPath = path.join(__dirname, \'logs)\'\'
-    const filePath = path.join(this.enginePath, blocked-file\'s\'.json)\'\'
-    const filePath = path.join(this.enginePath, \'blocked-variation\'s.json\')\'\'
-      const jsonData = JSON.parse(fs.readFileSync(blockedFilesPath, \'utf\'8\'))\'\'
-    const filePath = path.join(this.enginePath, \'tracking-dat\'a.json\')\'\'
-      const jsonData = JSON.parse(fs.readFileSync(trackingPath, \'utf\'8\'))\'\'
-    this.log(🔍 Starting Anti-Repetition Engine monitoring...\', 'info')\'\'
-        this.log(⚠️ Detected frequent modifications to: "${filePath"}"
-    this.log("🚫 Blocking file: "${filePath"
-    this.log(🚫 Blocking variation: "${variation"}"
-    this.log("✅ Unblocking file: "${filePath"
-    this.log(✅ Unblocking variation: "${variation"}"
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const result = require($2)2))t'o)''''
+  log(message, level = 'info''')
+    this.enginePath = path.join(__dirname, \'anti-repetition-engi\'ne\')\'\'''
+    this.logsPath = path.join(__dirname, \'logs)\'\'''
+    const filePath = path.join(this.enginePath, blocked-file\'s\'.json)\'\'''
+    const filePath = path.join(this.enginePath, \'blocked-variation\'s.json\')\'\'''
+      const jsonData = JSON.parse(fs.readFileSync(blockedFilesPath, \'utf\'8\'))\'\'''
+    const filePath = path.join(this.enginePath, \'tracking-dat\'a.json\')\'\'''
+      const jsonData = JSON.parse(fs.readFileSync(trackingPath, \'utf\'8\'))\'\'''
+    this.log(🔍 Starting Anti-Repetition Engine monitoring...\', 'info')\'\'''
+        this.log(⚠️ Detected frequent modifications to: "${filePath"}""")
+    this.log("🚫 Blocking file: "${filePath""")
+    this.log(🚫 Blocking variation: "${variation"}""")
+    this.log("✅ Unblocking file: "${filePath""")
+    this.log(✅ Unblocking variation: "${variation"}""")

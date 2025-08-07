@@ -59,16 +59,16 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const variable1 = require('path';''
-const variable1 = require('path';''
-    const variable1 = fs.readFileSync(filePath, 'ut'f'8')''
-    if (content.includes('impor't' Image from') || content.includes('impor't' { Image }')) {''
-    if (!content.includes('
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const variable1 = require('path';'''')
+const variable1 = require('path';'''')
+    const variable1 = fs.readFileSync(filePath, 'ut'f'8')''''
+    if (content.includes('impor't' Image from') || content.includes('impor't' { Image }')) {''''
+    if (!content.includes(''')

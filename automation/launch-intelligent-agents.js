@@ -59,24 +59,24 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-}const IntelligentAgentOrchestrator = require($2)r))''
-const fs = require('fs'
-const path = require('fs';''
-    console.log('🚀 Starting Intelligent Agent Launcher...)''
-      console.log(✅ Intelligent Agent Launcher started successfully'))''
-      console.log('📊 Monitoring agents for intelligence improvement and diversification...)''
-    const directories = [automation/reports'),''
-      'automation/logs,''
-      'automation/agents',''
-      automation/agents/generated',''
-      'automation/agents/production,''
-      'automation/monetization-agents'''
-        await fs.mkdir(path.join(__dirname, ..'
-    process.on(\'SIGINT, async () => {\'\'
-    process.on(SIGTERM\'), async () => {\'\'
-      console.log(\'\n🛑 Received SIGTERM, shutting down gracefully...)\'\'
-      console.error(❌ Uncaught Exception: "
-      console.error(❌ Error during shutdown: "
-          running: "
-      console.error(❌ Error generating final report: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+}const IntelligentAgentOrchestrator = require($2)r))''''
+const fs = require('fs''')
+const path = require('fs';'''')
+    console.log('🚀 Starting Intelligent Agent Launcher...)''''
+      console.log(✅ Intelligent Agent Launcher started successfully'))''''
+      console.log('📊 Monitoring agents for intelligence improvement and diversification...)''''
+    const directories = [automation/reports'),''''
+      'automation/logs,''''
+      'automation/agents',''''
+      automation/agents/generated',''''
+      'automation/agents/production,''''
+      'automation/monetization-agents'''''
+        await fs.mkdir(path.join(__dirname, ..''')
+    process.on(\'SIGINT, async () => {\'\'''
+    process.on(SIGTERM\'), async () => {\'\'''
+      console.log(\'\n🛑 Received SIGTERM, shutting down gracefully...)\'\'''
+      console.error(❌ Uncaught Exception: """)
+      console.error(❌ Error during shutdown: """)
+          running: """
+      console.error(❌ Error generating final report: """)

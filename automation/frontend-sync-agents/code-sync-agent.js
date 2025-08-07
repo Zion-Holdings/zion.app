@@ -59,30 +59,30 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const { spawn, exec, execSync } = require(('child_proces)s)''
-const fs = require('path'
-const result = require($2)2))t'h)''
-    this.name = 'code-sy'nc'''
-    this.status = 'ready;''
-    this.supportedExtensions = [.tsx', '.ts, '.js', .jsx']''
-      this.status = 'error;''
-      case a'd'd: ''
-      case 'chan'ge':''
-      case 'delete:''
-    if (ext === .tsx' || ext === '.ts) {''
-    // Update page registry if its' a page''
-    // Remove from component registry if it's a component''
-    const result = fs.readFileSync(fullPath, ut'f'8)''
-      if (filePath.endsWith('.tsx) || filePath.endsWith(.ts)) {''
-        // For TypeScript files, we')ll' rely on TypeScript compiler''
-      } else if (filePath.endsWith('.js) || filePath.endsWith(.jsx)) {''
-      const filePath = path.join(this.projectRoot, ')nod'e_modules', '.bin, 'esli'nt')''
-          stdio: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const { spawn, exec, execSync } = require(('child_proces)s)''''
+const fs = require('path''')
+const result = require($2)2))t'h)''''
+    this.name = 'code-sy'nc'''''
+    this.status = 'ready;''''
+    this.supportedExtensions = [.tsx', '.ts, '.js', .jsx']''''
+      this.status = 'error;''''
+      case a'd'd: ''''
+      case 'chan'ge':''''
+      case 'delete:''''
+    if (ext === .tsx' || ext === '.ts) {''''
+    // Update page registry if its' a page''''
+    // Remove from component registry if it's a component''''
+    const result = fs.readFileSync(fullPath, ut'f'8)''''
+      if (filePath.endsWith('.tsx) || filePath.endsWith(.ts)) {''''
+        // For TypeScript files, we')ll' rely on TypeScript compiler''''
+      } else if (filePath.endsWith('.js) || filePath.endsWith(.jsx)) {''''
+      const filePath = path.join(this.projectRoot, ')nod'e_modules', '.bin, 'esli'nt')''''
+          stdio: """

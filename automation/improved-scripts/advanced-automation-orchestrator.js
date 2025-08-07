@@ -19,17 +19,17 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-  fs = require('path'
-  console.error('Failed to require(fs: '
-  path = require('path'
-  console.error('Failed to require(path: '
-const { execSync } = require(('child_process)'
-  log(message, level = 'info'
-        this.automationDir = path.join(this.projectRoot, 'automation'
-        this.logsDir = path.join(this.automationDir, 'logs'
-        this.reportsDir = path.join(this.automationDir, 'reports'
-        this.log('Starting continuous automation...', 'info'
-        this.log('File change monitoring enabled', 'info'
-        this.log('Running periodic checks...', 'info'
-        this.log('Daily maintenance scheduled', 'info'
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+  fs = require('path''')
+  console.error('Failed to require(fs: ''')
+  path = require('path''')
+  console.error('Failed to require(path: ''')
+const { execSync } = require(('child_process)'''
+  log(message, level = 'info''')
+        this.automationDir = path.join(this.projectRoot, 'automation''')
+        this.logsDir = path.join(this.automationDir, 'logs''')
+        this.reportsDir = path.join(this.automationDir, 'reports''')
+        this.log('Starting continuous automation...', 'info''')
+        this.log('File change monitoring enabled', 'info''')
+        this.log('Running periodic checks...', 'info''')
+        this.log('Daily maintenance scheduled', 'info''')

@@ -59,46 +59,46 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require($2)a))''
-const path = require('path'
-const { v4: uuidv4 } = require(()')uu'id')''
-const result = require($2)t))''
-  log(message, level = 'info'
-        this.type = ')agent-facto'ry'''
-        this.status = 'active;''
-            research: "
-            content: "
-            social: "
-            email: "
-            seo: "
-            influencer: "
-            ads: "
-            analytics: "
-            automation: "
-            optimization: "
-            agentCreation: "
-            agentOptimization: "
-            agentCleanup: "
-            performanceAnalysis: "
-            status: "
-            status: "
-            status: "
-            console.error(Error optimizing existing agents: "
-            console.error(Error monitoring agent performance: "
-            console.error(❌ {{agentName}} failed: "
-            console.error(❌ {{agentName}} failed: "
-            console.error(❌ {{agentName}} failed: "
-            console.error(❌ {{agentName}} failed: "
-            console.error(❌ {{agentName}} failed: "
-            console.error(❌ {{agentName}} failed: "
-            research: "
-            content: "
-            social: "
-            email: "
-            seo: "
-            influencer: "
-            analytics: "
-            automation: "
-            optimization: "
-        this.log(🔄 Executing agent factory task: "${task"}"
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require($2)a))''''
+const path = require('path''')
+const { v4: uuidv4 } = require(()')uu'id')''''
+const result = require($2)t))''''
+  log(message, level = 'info''')
+        this.type = ')agent-facto'ry'''''
+        this.status = 'active;''''
+            research: """
+            content: """
+            social: """
+            email: """
+            seo: """
+            influencer: """
+            ads: """
+            analytics: """
+            automation: """
+            optimization: """
+            agentCreation: """
+            agentOptimization: """
+            agentCleanup: """
+            performanceAnalysis: """
+            status: """
+            status: """
+            status: """
+            console.error(Error optimizing existing agents: """)
+            console.error(Error monitoring agent performance: """)
+            console.error(❌ {{agentName}} failed: """)
+            console.error(❌ {{agentName}} failed: """)
+            console.error(❌ {{agentName}} failed: """)
+            console.error(❌ {{agentName}} failed: """)
+            console.error(❌ {{agentName}} failed: """)
+            console.error(❌ {{agentName}} failed: """)
+            research: """
+            content: """
+            social: """
+            email: """
+            seo: """
+            influencer: """
+            analytics: """
+            automation: """
+            optimization: """
+        this.log(🔄 Executing agent factory task: "${task"}""")

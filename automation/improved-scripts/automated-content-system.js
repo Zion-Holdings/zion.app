@@ -59,44 +59,44 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require($2)r))''
-const ./content-integration-agent = require('path'
-const fs = require('path'
-const result = require($2)2))t'h)''
-  log(message, level = 'info'
-    this.logFile = path.join(__dirname, 'lo'gs', 'automated-content-system'.log')''
-    this.log(🤖 Starting Automated Content System', 'info')''
-    this.log('= .repeat(60, 'info'))''
-      this.log(\n📝 Step 1: Generating Content, 'info'
-      this.log(-\', 'info') .repeat(40))\'\'
-      this.log(\'\n🔗 Step 2: Integrating Content, 'info')\'\'
-      this.log(- .repeat(40, 'info'
-      this.log(\n🚀 Step 3: Building Application\', 'info'))\'\'
-      this.log(\'- .repeat(40, 'info'))\'\'
-      this.log(\n✅ Automated Content System Completed Successfully!, 'info'
-      this.log(📊 Generated: "${generationResults.summary.totalGenerated"} content pieces"
-      this.log("📄 Created: "
-      this.log(⏱️  Total Duration: "${duration"}ms"
-      console.error(❌ Automated content system failed: "
-    this.log(🎯 Generating specific content for: "${category"}"
-      this.log("✅ Specific content generation completed for: "${category"
-        execSync(\'npm install, { stdio: "
-      execSync(npm run build, { stdio: "
-      execSync(npm run export, { stdio: "
-        categories: "schedule.categories || [\'marketplace"
-      this.log("⏰ Next run: "${scheduleConfig.nextRun"
-          cron: "
-          categories: "[marketpla\'ce\'"
-      console.error(❌ Scheduled automation failed: "
-      systemStatus: "
-  node automated-content-system.js schedule {cron: "0 2 * * *",categories: ["marketplace"
-          this.log(Use help"
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require($2)r))''''
+const ./content-integration-agent = require('path''')
+const fs = require('path''')
+const result = require($2)2))t'h)''''
+  log(message, level = 'info''')
+    this.logFile = path.join(__dirname, 'lo'gs', 'automated-content-system'.log')''''
+    this.log(🤖 Starting Automated Content System', 'info')''''
+    this.log('= .repeat(60, 'info'))''''
+      this.log(\n📝 Step 1: Generating Content, 'info''')
+      this.log(-\', 'info') .repeat(40))\'\'''
+      this.log(\'\n🔗 Step 2: Integrating Content, 'info')\'\'''
+      this.log(- .repeat(40, 'info''')
+      this.log(\n🚀 Step 3: Building Application\', 'info'))\'\'''
+      this.log(\'- .repeat(40, 'info'))\'\'''
+      this.log(\n✅ Automated Content System Completed Successfully!, 'info''')
+      this.log(📊 Generated: "${generationResults.summary.totalGenerated"} content pieces""")
+      this.log("📄 Created: """)
+      this.log(⏱️  Total Duration: "${duration"}ms""")
+      console.error(❌ Automated content system failed: """)
+    this.log(🎯 Generating specific content for: "${category"}""")
+      this.log("✅ Specific content generation completed for: "${category""")
+        execSync(\'npm install, { stdio: """)
+      execSync(npm run build, { stdio: """)
+      execSync(npm run export, { stdio: """)
+        categories: "schedule.categories || [\'marketplace"""
+      this.log("⏰ Next run: "${scheduleConfig.nextRun""")
+          cron: """
+          categories: "[marketpla\'ce\'"""
+      console.error(❌ Scheduled automation failed: """)
+      systemStatus: """
+  node automated-content-system.js schedule {cron: "0 2 * * *",categories: ["marketplace"""
+          this.log(Use help""")

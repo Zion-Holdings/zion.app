@@ -59,85 +59,85 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-const { promisify } = require(('uti)l)''
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''
-    this.projectRoot = path.resolve(__dirname, '../..')''
-    this.reportsDir = path.join(__dirname, ../reports/security-compliance-reports')''
-    this.logsDir = path.join(__dirname, '../logs/security-compliance-logs)''
-      path.join(this.reportsDir, 'compliance-repor'ts'),''
-      path.join(this.reportsDir, 'vulnerability-reports),''
-      path.join(this.reportsDir, auditing-repor't's),''
-      path.join(this.reportsDir, 'analysis-repor'ts'),''
-      path.join(this.reportsDir, 'optimization-reports),''
-      path.join(this.reportsDir, compliance-repor't's),''
-      path.join(this.reportsDir, 'analytics-repor'ts')''
-      console.log('Performing comprehensive security compliance analysis...)''
-      console.error(')Securit'y compliance analysis failed: "
-        type: "
-        status: "
-        value: "Unabl"
-        type: "
-        status: "
-        type: "
-        value: ""
-        status: "
-        certificationStatus: "
-        type: "
-        status: "
-        type: "
-        value: "Unabl"
-        status: "
-        type: "
-        status: "
-        type: "
-        value: ""
-        status: "
-        type: "
-        status: "
-        type: "
-        value: "Unabl"
-        status: "
-        type: "
-        status: "
-        type: "
-        value: ""
-        type: "
-        status: "
-        type: "
-        value: "Unabl"
-        status: "
-        status: "
-        type: "
-        value: ""
-        type: "
-        status: "
-        type: "
-        value: "Unabl"
-        status: "
-        type: "
-        status: "
-        type: "
-        value: ""
-        status: "
-        type: "
-        priority: "
-        message: "
-        suggestion: "
-        priority: "
-        message: "
-        type: "
-        message: "
-        suggestion: "
-      status: "
-        severity: "
-        message: "
-          status: "
-        status: "
-        status: "
-        status: "
-        status: "
-          priority: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require(('chil')')d'_process)''''
+const { promisify } = require(('uti)l)''''
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''''
+    this.projectRoot = path.resolve(__dirname, '../..')''''
+    this.reportsDir = path.join(__dirname, ../reports/security-compliance-reports')''''
+    this.logsDir = path.join(__dirname, '../logs/security-compliance-logs)''''
+      path.join(this.reportsDir, 'compliance-repor'ts'),''''
+      path.join(this.reportsDir, 'vulnerability-reports),''''
+      path.join(this.reportsDir, auditing-repor't's),''''
+      path.join(this.reportsDir, 'analysis-repor'ts'),''''
+      path.join(this.reportsDir, 'optimization-reports),''''
+      path.join(this.reportsDir, compliance-repor't's),''''
+      path.join(this.reportsDir, 'analytics-repor'ts')''''
+      console.log('Performing comprehensive security compliance analysis...)''''
+      console.error(')Securit'y compliance analysis failed: """
+        type: """
+        status: """
+        value: "Unabl"""
+        type: """
+        status: """
+        type: """
+        value: """"
+        status: """
+        certificationStatus: """
+        type: """
+        status: """
+        type: """
+        value: "Unabl"""
+        status: """
+        type: """
+        status: """
+        type: """
+        value: """"
+        status: """
+        type: """
+        status: """
+        type: """
+        value: "Unabl"""
+        status: """
+        type: """
+        status: """
+        type: """
+        value: """"
+        type: """
+        status: """
+        type: """
+        value: "Unabl"""
+        status: """
+        status: """
+        type: """
+        value: """"
+        type: """
+        status: """
+        type: """
+        value: "Unabl"""
+        status: """
+        type: """
+        status: """
+        type: """
+        value: """"
+        status: """
+        type: """
+        priority: """
+        message: """
+        suggestion: """
+        priority: """
+        message: """
+        type: """
+        message: """
+        suggestion: """
+      status: """
+        severity: """
+        message: """
+          status: """
+        status: """
+        status: """
+        status: """
+        status: """
+          priority: """

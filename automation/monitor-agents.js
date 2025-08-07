@@ -19,16 +19,16 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-        this.logDir = path.join(__dirname, lo')g's)''
-        this.agents = ['master-orchestrat'or',''
-            'content-generator, ''
-            website-analyz'e'r,''
-            'market-resear'ch',''
-            'sales-agent,''
-            solution-creat'o'r''
-        console.log('📊 Agent Status Check)''
-        console.log(')🔍 Starting agent monitoring...)''
-            console.log('-'--')''
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+        this.logDir = path.join(__dirname, lo')g's)''''
+        this.agents = ['master-orchestrat'or',''''
+            'content-generator, ''''
+            website-analyz'e'r,''''
+            'market-resear'ch',''''
+            'sales-agent,''''
+            solution-creat'o'r''''
+        console.log('📊 Agent Status Check)''''
+        console.log(')🔍 Starting agent monitoring...)''''
+            console.log('-'--')''''

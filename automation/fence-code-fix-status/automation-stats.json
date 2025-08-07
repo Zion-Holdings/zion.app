@@ -1,26 +1,26 @@
 {
   "startTime": 1754528868002,
-  "totalFilesScanned": 7116103,
-  "totalErrorsFound": 12213,
-  "totalErrorsFixed": 159,
+  "totalFilesScanned": 5335529461,
+  "totalErrorsFound": 376013,
+  "totalErrorsFixed": 34001,
   "totalBackupsCreated": 0,
-  "uptime": 934413,
-  "timestamp": "2025-08-07T01:23:22.415Z",
+  "uptime": 21312860,
+  "timestamp": "2025-08-07T07:03:00.862Z",
   "agents": {
     "file-scanner": {
-      "filesScanned": 2236514,
-      "errorsFound": 12213,
-      "lastScan": 1754529802372,
+      "filesScanned": 65270975,
+      "errorsFound": 376013,
+      "lastScan": 1754550180829,
       "startTime": 1754528868002,
       "queueLength": 0,
       "isRunning": true
     },
     "code-fixer": {
-      "filesFixed": 35,
-      "errorsFixed": 36,
+      "filesFixed": 345,
+      "errorsFixed": 385,
       "backupsCreated": 0,
       "startTime": 1754528868002,
-      "queueLength": 665,
+      "queueLength": 20485,
       "isRunning": true
     }
   }

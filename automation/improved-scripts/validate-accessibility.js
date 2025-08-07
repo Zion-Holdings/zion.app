@@ -59,50 +59,50 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-  fs = require('path'
-  console.error('Failed to require(fs: '
-  path = require('path'
-  console.error('Failed to require(path: '
-  log(message, level = 'info'
-        this.componentsDir = path.join(this.baseDir, 'components'
-        this.pagesDir = path.join(this.baseDir, 'pages'
-        this.log('Checking accessibility attributes...', 'info'
-        this.log(`Found ${components.length} component/page files``, 'info'
-        this.log(``Found ${accessibilityIssues.length} accessibility issues``, 'info'
-            } else if (item.endsWith('.tsx') || item.endsWith('.jsx'
-                const content = fs.readFileSync(itemPath, 'utf8'
-                if (!img.includes('alt='
-                        type: 'missing_alt'
-                        element: 'img'
-                        message: 'Image missing alt attribute'
-                if (!element.includes('aria-label=') && !element.includes('aria-labelledby='
-                        type: 'missing_aria_label'
-                        message: 'Interactive element missing aria-label or aria-labelledby'
-                    type: 'heading_structure'
-                    message: 'Page should start with h1 heading'
-                type: 'color_contrast'
-                message: 'Check color contrast for custom text colors'
-        this.log('Checking semantic HTML usage...', 'info'
-        const semanticElements = ['header', 'nav', 'main', 'section', 'article', 'aside', 'footer'
-        this.log(``Found ${semanticUsage.length} semantic HTML elements``, 'info'
-            } else if (item.endsWith('.tsx') || item.endsWith('.jsx'
-                const content = fs.readFileSync(itemPath, 'utf8'
-                    const pattern = new RegExp(``<${element}[^>]*>``, 'g'
-                type: 'accessibility_issues'
-                priority: 'high'
-                type: 'semantic_html'
-                priority: 'medium'
-                message: 'Use semantic HTML elements for better accessibility'
-        const reportFile = path.join(this.baseDir, 'automation', 'accessibility-report.json'
-        this.log(``Accessibility report generated: ${reportFile}``, 'info'
-        this.log('Starting accessibility validation...', 'info'
-        this.log('Accessibility validation completed', 'info'`
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+  fs = require('path''')
+  console.error('Failed to require(fs: ''')
+  path = require('path''')
+  console.error('Failed to require(path: ''')
+  log(message, level = 'info''')
+        this.componentsDir = path.join(this.baseDir, 'components''')
+        this.pagesDir = path.join(this.baseDir, 'pages''')
+        this.log('Checking accessibility attributes...', 'info''')
+        this.log(`Found ${components.length} component/page files``, 'info''')
+        this.log(``Found ${accessibilityIssues.length} accessibility issues``, 'info''')
+            } else if (item.endsWith('.tsx') || item.endsWith('.jsx''')
+                const content = fs.readFileSync(itemPath, 'utf8''')
+                if (!img.includes('alt=''')
+                        type: 'missing_alt'''
+                        element: 'img'''
+                        message: 'Image missing alt attribute'''
+                if (!element.includes('aria-label=') && !element.includes('aria-labelledby=''')
+                        type: 'missing_aria_label'''
+                        message: 'Interactive element missing aria-label or aria-labelledby'''
+                    type: 'heading_structure'''
+                    message: 'Page should start with h1 heading'''
+                type: 'color_contrast'''
+                message: 'Check color contrast for custom text colors'''
+        this.log('Checking semantic HTML usage...', 'info''')
+        const semanticElements = ['header', 'nav', 'main', 'section', 'article', 'aside', 'footer'''
+        this.log(``Found ${semanticUsage.length} semantic HTML elements``, 'info''')
+            } else if (item.endsWith('.tsx') || item.endsWith('.jsx''')
+                const content = fs.readFileSync(itemPath, 'utf8''')
+                    const pattern = new RegExp(``<${element}[^>]*>``, 'g''')
+                type: 'accessibility_issues'''
+                priority: 'high'''
+                type: 'semantic_html'''
+                priority: 'medium'''
+                message: 'Use semantic HTML elements for better accessibility'''
+        const reportFile = path.join(this.baseDir, 'automation', 'accessibility-report.json''')
+        this.log(``Accessibility report generated: ${reportFile}``, 'info''')
+        this.log('Starting accessibility validation...', 'info''')
+        this.log('Accessibility validation completed', 'info'`'')

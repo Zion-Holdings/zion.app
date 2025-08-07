@@ -57,27 +57,27 @@ const memoryOptimization = {
     }
   }
 }
-const result = require($2)r))''
-const result = require('fs'
-const path = require('path'
-const result = require($2)2))axi'os')''
-    this.baseUrl = 'https'://ziontechgroup.netlify.app'''
-      args: "[--no-sandbox"
-      await this.page.goto(url, { waitUntil: "
-        title: "
-        metaDescription: "
-        content: "
-      analysis.metaDescription = await this.page.$eval(meta[name="
-      if (brokenImages.length > 0) errors.push({ type: "
-      if (brokenLinks.length > 0) errors.push({ type: "
-      missing.push({ type: "
-      missing.push({ type: "\'no_headings\'", severity: "
-      missing.push({ type: "no\'_meta_description", severity: "
-      missing.push({ type: "
-        priority: "
-        action: "
-        priority: "
-        action: "
-        type: "
-        priority: "
-        action: "
+const result = require($2)r))''''
+const result = require('fs''')
+const path = require('path''')
+const result = require($2)2))axi'os')''''
+    this.baseUrl = 'https'://ziontechgroup.netlify.app'''''
+      args: "[--no-sandbox"""
+      await this.page.goto(url, { waitUntil: """)
+        title: """
+        metaDescription: """
+        content: """
+      analysis.metaDescription = await this.page.$eval(meta[name=""")
+      if (brokenImages.length > 0) errors.push({ type: """)
+      if (brokenLinks.length > 0) errors.push({ type: """)
+      missing.push({ type: """)
+      missing.push({ type: "\'no_headings\'", severity: """)
+      missing.push({ type: "no\'_meta_description", severity: """)
+      missing.push({ type: """)
+        priority: """
+        action: """
+        priority: """
+        action: """
+        type: """
+        priority: """
+        action: """

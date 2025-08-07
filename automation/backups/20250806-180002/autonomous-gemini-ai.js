@@ -19,5 +19,5 @@ const memoryOptimization = {
 }
 
 // Google Gemini AI Integration for Autonomous Improvement;
-const { GoogleGenerativeAI } = require(('@google/generative-a)i)''
-    this.model = this.genAI.getGenerativeModel({ model: "
+const { GoogleGenerativeAI } = require(('@google/generative-a)i)''''
+    this.model = this.genAI.getGenerativeModel({ model: """)

@@ -59,80 +59,80 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const cron = require('path';''
-const fs = require('path'
-const path = require('path'
-const { v4: uuidv4 } = require(()')uu'id')''
-const result = require($2)s))''
-  log(message, level = 'info'
-      status: "
-    this.log("Scheduled job: "${job.name"
-      this.log("Started cron job: "${job.name"
-        level: "
-    this.log(Executing job: "${job.name"}"
-        level: "
-      this.log(Job completed: "${job.name"
-        level: "
-      this.log("
-        this.log(Auto-restarting job ${job.name}"
-      level: "
-      message: "
-    this.log(Restarted job: "${job.name"}"
-      level: "
-      message: "
-    this.log(Stopped job: "${job.name"}"
-    this.log(Deleted job: "${job.name"}"
-    this.log(Updated job: "${job.name"}"
-        name: "
-        schedule: "
-          service: "
-            sources: "[news"
-        priority: "
-        name: "
-        schedule: "
-          service: "
-        name: "
-        schedule: "
-          service: "
-            analysisType: "
-            timeRange: "
-        name: "
-        schedule: "
-          service: "
-            urls: [competitor\'1.com"
-            extractData: "[pricing"
-        name: "
-        schedule: "
-          service: "
-            keywords: [\'technology"
-            analysisDepth: "
-        name: "
-        schedule: "
-          service: "
-            platforms: [\'twitter"
-            contentType: "
-        name: "
-        schedule: "
-          service: "
-            checkTypes: [\'performance"
-        name: "
-        schedule: "
-          service: "
-            retention: "
-        name: "
-        schedule: "
-          service: "
-        name: "
-        schedule: "
-          service: "
-      this.log(\', 'info')Cron\' System Status: "
-      this.log("Waiting for ${runningJobs.length} jobs to complete..."
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const cron = require('path';'''')
+const fs = require('path''')
+const path = require('path''')
+const { v4: uuidv4 } = require(()')uu'id')''''
+const result = require($2)s))''''
+  log(message, level = 'info''')
+      status: """
+    this.log("Scheduled job: "${job.name""")
+      this.log("Started cron job: "${job.name""")
+        level: """
+    this.log(Executing job: "${job.name"}""")
+        level: """
+      this.log(Job completed: "${job.name""")
+        level: """
+      this.log(""")
+        this.log(Auto-restarting job ${job.name}""")
+      level: """
+      message: """
+    this.log(Restarted job: "${job.name"}""")
+      level: """
+      message: """
+    this.log(Stopped job: "${job.name"}""")
+    this.log(Deleted job: "${job.name"}""")
+    this.log(Updated job: "${job.name"}""")
+        name: """
+        schedule: """
+          service: """
+            sources: "[news"""
+        priority: """
+        name: """
+        schedule: """
+          service: """
+        name: """
+        schedule: """
+          service: """
+            analysisType: """
+            timeRange: """
+        name: """
+        schedule: """
+          service: """
+            urls: [competitor\'1.com"""
+            extractData: "[pricing"""
+        name: """
+        schedule: """
+          service: """
+            keywords: [\'technology"""
+            analysisDepth: """
+        name: """
+        schedule: """
+          service: """
+            platforms: [\'twitter"""
+            contentType: """
+        name: """
+        schedule: """
+          service: """
+            checkTypes: [\'performance"""
+        name: """
+        schedule: """
+          service: """
+            retention: """
+        name: """
+        schedule: """
+          service: """
+        name: """
+        schedule: """
+          service: """
+      this.log(\', 'info')Cron\' System Status: """
+      this.log("Waiting for ${runningJobs.length} jobs to complete...""")

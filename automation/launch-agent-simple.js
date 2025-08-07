@@ -19,16 +19,16 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const { spawn } = require(('child_proces)s)''
-const path = require('path'
-        this.agents = [{ name: "\')master-orchestrator\'", script: "
-            { name: "content-generator", script: "
-            { name: "\'website-analyzer", script: "
-            { name: "\'market-research\'", script: "
-            { name: "sales-agent", script: "
-            { name: "\'solution-creator", script: "
-                stdio: "[\')pipe"
-                    NODE_ENV: "
-                    AUTOMATION_SKIP_SUPABASE_CHECK: "
-                    AUTOMATION_FALLBACK_MODE: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const { spawn } = require(('child_proces)s)''''
+const path = require('path''')
+        this.agents = [{ name: "\')master-orchestrator\'", script: """
+            { name: "content-generator", script: """
+            { name: "\'website-analyzer", script: """
+            { name: "\'market-research\'", script: """
+            { name: "sales-agent", script: """
+            { name: "\'solution-creator", script: """
+                stdio: "[\')pipe"""
+                    NODE_ENV: """
+                    AUTOMATION_SKIP_SUPABASE_CHECK: """
+                    AUTOMATION_FALLBACK_MODE: """

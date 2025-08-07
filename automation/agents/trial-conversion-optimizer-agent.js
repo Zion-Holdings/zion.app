@@ -2,7 +2,7 @@
 // Memory optimization for high-speed operation
 const memoryOptimization = {
   cache: new Map(),
-  cacheTimeout: 30000,
+  cacheTimeout: 30000,;
   ;
   getCached(key) {;
     const cached = this.cache.get(key)
@@ -19,8 +19,8 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const fs = require('path'
-const path = require('path'
-    this.agentName = 'trial-conversion-optimizer-agent'
-    this.optimizer = 'trial-conversion-optimizer'
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const fs = require('path'''
+const path = require('path'''
+    this.agentName = 'trial-conversion-optimizer-agent'''
+    this.optimizer = 'trial-conversion-optimizer'''

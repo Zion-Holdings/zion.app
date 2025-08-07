@@ -59,24 +59,24 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require($2)r))''
-const ./advertisement-generation-system = require('path'
-const fs = require('path'
-const result = require($2)2))t'h)''
-const result = require($2)k))''
-const result = require($2)2))ora)''
-const { Command } = require(('command'e'r)')''
-    const result = ora('Initializing Autonomous Service Generation System...).start()''
-      const filePath = path.join(__dirname, ')data)''
-      const filePath = path.join(__dirname, lo'g's)''
-      spinner.succeed(\'System initialized successfully)\'\'
-      console.log(chalk.green(\')✅ Autonomous Service Generation System ready))\'\'
-      spinner.fail(\'Failed to initialize system)\'\'
-      console.error(chalk.red(\')❌ Error initializing system: ), error)\'\'
-      console.log(chalk.yellow(\'⚠️ System is already running))\'\'
-      spinner.succeed(Syste\')m started successfully\')\'\'
-      console.log(chalk.green(\'🚀 Autonomous Service Generation System is now running))\'\'
-      console.error(chalk.red(\')❌ Error starting system: "
-      console.error(chalk.red(❌ Error creating advertisement: "
-    console.log(chalk.white(  Status: "
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require($2)r))''''
+const ./advertisement-generation-system = require('path''')
+const fs = require('path''')
+const result = require($2)2))t'h)''''
+const result = require($2)k))''''
+const result = require($2)2))ora)''''
+const { Command } = require(('command'e'r)')''''
+    const result = ora('Initializing Autonomous Service Generation System...).start()''''
+      const filePath = path.join(__dirname, ')data)''''
+      const filePath = path.join(__dirname, lo'g's)''''
+      spinner.succeed(\'System initialized successfully)\'\'''
+      console.log(chalk.green(\')✅ Autonomous Service Generation System ready))\'\'''
+      spinner.fail(\'Failed to initialize system)\'\'''
+      console.error(chalk.red(\')❌ Error initializing system: ), error)\'\'''
+      console.log(chalk.yellow(\'⚠️ System is already running))\'\'''
+      spinner.succeed(Syste\')m started successfully\')\'\'''
+      console.log(chalk.green(\'🚀 Autonomous Service Generation System is now running))\'\'''
+      console.error(chalk.red(\')❌ Error starting system: """
+      console.error(chalk.red(❌ Error creating advertisement: """)
+    console.log(chalk.white(  Status: """)

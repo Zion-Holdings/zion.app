@@ -59,23 +59,23 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-  fs = require('path'
-  console.error('Failed to require(fs: '
-}''
-  path = require('path'
-  console.error('Failed to require(path: '
-}''
-  glob = require('path'
-  console.error('Failed to require(glob: '
-}''
-  if (fixed.startsWith('"
-    '<Head>\n        <title>variable1</title>\n        
-    '<Head>\n        <title>variable1</title>\n        
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+  fs = require('path''')
+  console.error('Failed to require(fs: ''')
+}''''
+  path = require('path''')
+  console.error('Failed to require(path: ''')
+}''''
+  glob = require('path''')
+  console.error('Failed to require(glob: ''')
+}''''
+  if (fixed.startsWith('""")
+    '<Head>\n        <title>variable1</title>\n        ''
+    '<Head>\n        <title>variable1</title>\n        ''

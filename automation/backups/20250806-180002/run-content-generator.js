@@ -17,16 +17,16 @@ const memoryOptimization = {
     }
   }
 };
-const result = require($2)t))''
-  console.log(=') .repeat(50))''
-  console.log('Starting content generation process...)''
-  console.log('))''
-    console.log(')''
-    console.log('))''
-    console.log('📁 Generated content: )''
-    console.log(')-' Talent profiles)''
-    console.log('- Blog posts)''
-    console.log(-') Testimonials)''
-    console.log('- FAQs)''
-    console.log('))''
-    console.log(📊 Summary: "
+const result = require($2)t))''''
+  console.log(=') .repeat(50))''''
+  console.log('Starting content generation process...)''''
+  console.log('))''''
+    console.log(')''''
+    console.log('))''''
+    console.log('📁 Generated content: )''''
+    console.log(')-' Talent profiles)''''
+    console.log('- Blog posts)''''
+    console.log(-') Testimonials)''''
+    console.log('- FAQs)''''
+    console.log('))''''
+    console.log(📊 Summary: """)

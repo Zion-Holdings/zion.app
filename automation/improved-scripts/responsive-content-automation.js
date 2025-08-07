@@ -59,39 +59,39 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const result = require($2)2))o'n)''
-  log(message, level = 'info'
-    this.contentPath = path.join(__dirname, \'responsive-conte\'nt\')\'\'
-    this.fixesPath = path.join(__dirname, \'content-fixes)\'\'
-    this.metricsPath = path.join(__dirname, content-metri\'c\'s)\'\'
-      \'pag\'es\': {\'\'
-        path: "path.join(process.cwd()"
-        extensions: "[.tsx'"
-        responsiveChecks: "[viewport-meta"
-        path: path.join(process.cwd()"
-        extensions: "['.tsx"
-        responsiveChecks: "['flexible-layouts"
-        path: path.join(process.cwd()"
-        extensions: "['.css'"
-        responsiveChecks: "['media-queri'es'"
-        schedule: "
-        description: "
-        description: "
-        schedule: "
-        description: "
-      this.log("✅ Started cron job: "${name"
-    this.log(✅ Content scanning completed: "${totalFiles"} files, ${responsiveFiles} responsive, ${issuesFound} issues found"
-          this.log("✅ Applied fixes to: "
-    this.log("✅ Responsive fixes applied: "${fixesApplied"
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const result = require($2)2))o'n)''''
+  log(message, level = 'info''')
+    this.contentPath = path.join(__dirname, \'responsive-conte\'nt\')\'\'''
+    this.fixesPath = path.join(__dirname, \'content-fixes)\'\'''
+    this.metricsPath = path.join(__dirname, content-metri\'c\'s)\'\'''
+      \'pag\'es\': {\'\'''
+        path: "path.join(process.cwd()"""
+        extensions: "[.tsx'"""
+        responsiveChecks: "[viewport-meta"""
+        path: path.join(process.cwd()"""
+        extensions: "['.tsx"""
+        responsiveChecks: "['flexible-layouts"""
+        path: path.join(process.cwd()"""
+        extensions: "['.css'"""
+        responsiveChecks: "['media-queri'es'"""
+        schedule: """
+        description: """
+        description: """
+        schedule: """
+        description: """
+      this.log("✅ Started cron job: "${name""")
+    this.log(✅ Content scanning completed: "${totalFiles"} files, ${responsiveFiles} responsive, ${issuesFound} issues found""")
+          this.log("✅ Applied fixes to: """)
+    this.log("✅ Responsive fixes applied: "${fixesApplied""")
               

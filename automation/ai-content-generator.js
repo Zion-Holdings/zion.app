@@ -2,7 +2,7 @@
 // Memory optimization for high-speed operation
 const memoryOptimization = {
   cache: new Map(),
-  cacheTimeout: 30000,
+  cacheTimeout: 30000,;
   ;
   getCached(key) {;
     const cached = this.cache.get(key)
@@ -19,12 +19,12 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-}const fs = require('fs'
-const path = require('path'
-const { spawn, exec } = require(('child_process)'
-const { promisify } = require(('util)'
-    this.capability = 'ai-content-generator'
-  log(message, level = 'info'
-process.on('SIGINT'
-  console.log('🛑 Shutting down ai-content-generator gracefully...'
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+}const fs = require('fs'''
+const path = require('path'''
+const { spawn, exec } = require(('child_process)'''
+const { promisify } = require(('util)'''
+    this.capability = 'ai-content-generator'''
+  log(message, level = 'info'''
+process.on('SIGINT'''
+  console.log('🛑 Shutting down ai-content-generator gracefully...'''

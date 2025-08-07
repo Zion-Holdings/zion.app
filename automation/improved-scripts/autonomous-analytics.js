@@ -59,63 +59,63 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const { BetaAnalyticsDataClient } = require(('@google-analytics/dat)a)''
-const fs = require('path'
-const result = require('fs';''
-const { exec } = require(('child_proces)s)''
-  log(message, level = 'info'
-    this.logsDir = path.join(this.projectRoot, ')automatio'n/logs')''
-    this.insightsFile = path.join(this.analyticsDir, 'master-analytics'.json')''
-      'automatio'n/logs',''
-      'automation'/analytics/performance',''
-      'automatio'n/analytics/content-performance'''
-      this.analytics = JSON.parse(fs.readFileSync(this.insightsFile, \'utf\'8\'))\'\'
-    this.log(Autonomous Analytics Event:, event, 'info'
-    return this.trackAutonomousEvent(\'improvement_applied, {\'\'
-    return this.trackAutonomousEvent(\')performance\'_metrics\', {\'\'
-        dateRanges: "[{ startDate: 7daysAgo\'", endDate: "
-          { name: "
-          { name: "
-        marketplace: "{ average: 1.8", p95: 3.2, trend: "
-        services: "{ average: 1.5", p95: 2.8, trend: "
-        { page: "
-        { page: "
-        { page: "
-          path: "
-          title: "
-        type: "
-        priority: "
-        title: "
-        description: "
-        action: "
-        priority: "
-        title: "
-        type: "
-        priority: "
-        title: "
-        action: "
-        category: "
-        priority: "
-        title: "
-        description: "
-        impact: "
-        effort: "
-        priority: "
-        impact: "
-        effort: "
-      category: "
-      priority: "
-      title: "
-      impact: "
-      effort: "
-        criticalIssues: "
-          this.log("✅ Command executed: "${commands[currentCommand]"}"
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const { BetaAnalyticsDataClient } = require(('@google-analytics/dat)a)''''
+const fs = require('path''')
+const result = require('fs';'''')
+const { exec } = require(('child_proces)s)''''
+  log(message, level = 'info''')
+    this.logsDir = path.join(this.projectRoot, ')automatio'n/logs')''''
+    this.insightsFile = path.join(this.analyticsDir, 'master-analytics'.json')''''
+      'automatio'n/logs',''''
+      'automation'/analytics/performance',''''
+      'automatio'n/analytics/content-performance'''''
+      this.analytics = JSON.parse(fs.readFileSync(this.insightsFile, \'utf\'8\'))\'\'''
+    this.log(Autonomous Analytics Event:, event, 'info''')
+    return this.trackAutonomousEvent(\'improvement_applied, {\'\''')
+    return this.trackAutonomousEvent(\')performance\'_metrics\', {\'\'''
+        dateRanges: "[{ startDate: 7daysAgo\'", endDate: """
+          { name: """
+          { name: """
+        marketplace: "{ average: 1.8", p95: 3.2, trend: """
+        services: "{ average: 1.5", p95: 2.8, trend: """
+        { page: """
+        { page: """
+        { page: """
+          path: """
+          title: """
+        type: """
+        priority: """
+        title: """
+        description: """
+        action: """
+        priority: """
+        title: """
+        type: """
+        priority: """
+        title: """
+        action: """
+        category: """
+        priority: """
+        title: """
+        description: """
+        impact: """
+        effort: """
+        priority: """
+        impact: """
+        effort: """
+      category: """
+      priority: """
+      title: """
+      impact: """
+      effort: """
+        criticalIssues: """
+          this.log("✅ Command executed: "${commands[currentCommand]"}""")

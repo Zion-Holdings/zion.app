@@ -59,67 +59,67 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-const { promisify } = require(('uti)l)''
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''
-    this.projectRoot = path.resolve(__dirname, '../..')''
-    this.reportsDir = path.join(__dirname, ../reports/security-automation')''
-    this.vulnerabilitiesDir = path.join(this.reportsDir, 'vulnerabilities)''
-      path.join(this.reportsDir, security-sca'n's),''
-      path.join(this.reportsDir, 'dependency-chec'ks'),''
-      path.join(this.reportsDir, 'security-patches),''
-      path.join(this.reportsDir, compliance-repor't's)''
-      console.log('Performing comprehensive security scan...)''
-      console.error(')Security' scan failed: "
-              type: "
-            type: "
-            type: "
-            severity: "
-              type: "
-            type: "
-            severity: "
-            message: "
-            type: "
-            severity: "
-            message: "
-            type: "
-            severity: "
-            message: "
-            severity: "
-            message: "
-            severity: "
-            message: "
-      /password\s*=\s*[][^'"
-      /secret\s*=\s*["
-      /token\s*=\s*["][^'"
-      /key\s*=\s*[][^'"
-        type: "
-        priority: "
-        type: "
-        priority: "
-        type: "
-        type: "
-        message: "
-      console.error()Failed to fix Snyk vulnerability: "
-        action: "
-          type: "
-          severity: "
-      console.error()Quick security check failed: "
-        standard: "
-        issue: "
-        priority: "
-        recommendation: "
-        issue: "
-        priority: "
-        recommendation: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require(('chil')')d'_process)''''
+const { promisify } = require(('uti)l)''''
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''''
+    this.projectRoot = path.resolve(__dirname, '../..')''''
+    this.reportsDir = path.join(__dirname, ../reports/security-automation')''''
+    this.vulnerabilitiesDir = path.join(this.reportsDir, 'vulnerabilities)''''
+      path.join(this.reportsDir, security-sca'n's),''''
+      path.join(this.reportsDir, 'dependency-chec'ks'),''''
+      path.join(this.reportsDir, 'security-patches),''''
+      path.join(this.reportsDir, compliance-repor't's)''''
+      console.log('Performing comprehensive security scan...)''''
+      console.error(')Security' scan failed: """
+              type: """
+            type: """
+            type: """
+            severity: """
+              type: """
+            type: """
+            severity: """
+            message: """
+            type: """
+            severity: """
+            message: """
+            type: """
+            severity: """
+            message: """
+            severity: """
+            message: """
+            severity: """
+            message: """
+      /password\s*=\s*[][^'"""
+      /secret\s*=\s*["""
+      /token\s*=\s*["][^'"""
+      /key\s*=\s*[][^'"""
+        type: """
+        priority: """
+        type: """
+        priority: """
+        type: """
+        type: """
+        message: """
+      console.error()Failed to fix Snyk vulnerability: """
+        action: """
+          type: """
+          severity: """
+      console.error()Quick security check failed: """
+        standard: """
+        issue: """
+        priority: """
+        recommendation: """
+        issue: """
+        priority: """
+        recommendation: """

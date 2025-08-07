@@ -57,27 +57,27 @@ const memoryOptimization = {
     }
   }
 }
-const result = require('fs'
-const path = require('path'
-    console.log(📚 Loading implementation templates...'))''
-    console.log(\'✅ Templates loaded)\'\'
-    return "
-    return "
-    return res.status(405).json({ message: "
-    return "
-    res.status(200).json({ success: "true", message: "
-    res.status(200).json({ error: "
-    return "
-    res.status(200).json({ error: "
-    return "
-    res.status(200).json({ error: "
-    return "
-    return "
-    return "
-    res.status(200).json({ error: "
-      \'contact: "
-      dashboard: "
-      \'admin: "
-        pages: "
-        content: "
-        features: "
+const result = require('fs''')
+const path = require('path''')
+    console.log(📚 Loading implementation templates...'))''''
+    console.log(\'✅ Templates loaded)\'\'''
+    return """
+    return """
+    return res.status(405).json({ message: """)
+    return """
+    res.status(200).json({ success: "true", message: """)
+    res.status(200).json({ error: """)
+    return """
+    res.status(200).json({ error: """)
+    return """
+    res.status(200).json({ error: """)
+    return """
+    return """
+    return """
+    res.status(200).json({ error: """)
+      \'contact: """
+      dashboard: """
+      \'admin: """
+        pages: """
+        content: """
+        features: """

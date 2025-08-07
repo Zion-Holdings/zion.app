@@ -59,34 +59,34 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const fs = require('path'
-const path = require('path'
-const { exec } = require(('child_process)'
-const util = require('path'
-        this.projectRoot = path.join(__dirname, '..'
-        console.log('🔧 Starting Simple Automation Fixer...'
-        console.log('='
-            console.error('❌ Simple Automation Fixer failed: '
-        console.log('\n🔧 Fixing Critical Syntax Errors...'
-                pattern: /const \variable1 = require($2)+)'
-                replacement: 'const variable1 = require($2)2))'
-                pattern: /[\'
-                replacement: ''
-                replacement: ''
-                pattern: /import React from 'react'
-                replacement: 'import React from \'react\''
-                replacement: 'variablevariable1'
-        const extensions = ['.js', '.ts', '.tsx'
-            console.error('Error finding files: '
-            let content = await fs.readFile(filePath, 'utf8'
-        console.log('\n💾 Committing changes...'
-            await execAsync('git add .'
-            await execAsync('git commit --no-verify -m "Fix automation syntax errors"
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const fs = require('path''')
+const path = require('path''')
+const { exec } = require(('child_process)'''
+const util = require('path''')
+        this.projectRoot = path.join(__dirname, '..''')
+        console.log('🔧 Starting Simple Automation Fixer...''')
+        console.log('=''')
+            console.error('❌ Simple Automation Fixer failed: ''')
+        console.log('\n🔧 Fixing Critical Syntax Errors...''')
+                pattern: /const \variable1 = require($2)+)'''
+                replacement: 'const variable1 = require($2)2))'''
+                pattern: /[\'''
+                replacement: ''''
+                replacement: ''''
+                pattern: /import React from 'react';;;''
+                replacement: 'import React from \'react\''''
+                replacement: 'variablevariable1'''
+        const extensions = ['.js', '.ts', '.tsx'''
+            console.error('Error finding files: ''')
+            let content = await fs.readFile(filePath, 'utf8''')
+        console.log('\n💾 Committing changes...''')
+            await execAsync('git add .''')
+            await execAsync('git commit --no-verify -m "Fix automation syntax errors""")

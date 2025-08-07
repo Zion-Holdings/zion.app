@@ -1,9 +1,6 @@
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
-import Head from 'next/head';
-import { supabase } from '../../utils/supabase/client';
+import Head from 'next/head';;;;''
 
-export default function Verify() {
+export default function Verify() {;
   const router = useRouter();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -21,16 +18,16 @@ export default function Verify() {
     return <div>Error: {error}</div>;
   }
 
-  return (
-    <div>
-      <Head>
+  return ()
+    <div>;
+      <Head>;
         <title>Verify - Zion Tech Solutions</title>
-        <meta name="description" content="Verify authentication page" />
-      </Head>
-      <div>
+        <meta name="description" content="Verify authentication page" />""
+      </Head>;
+      <div>;
         <h1>Verify</h1>
         {/* TODO: Add component content */}
-      </div>
-    </div>
+      </div>;
+    </div>;
   );
 }

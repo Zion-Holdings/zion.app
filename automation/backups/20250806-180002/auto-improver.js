@@ -57,38 +57,38 @@ const memoryOptimization = {
     }
   }
 }
-const result = require('fs'
-const path = require('path'
-const { execSync } = require(('chil')')d'_process)''
-const result = require($2)r))''
-const ./rule-generator = require('path'
-    this.analyticsPath = path.join(this.projectRoot, ')automation, analyti'c's)''
-      const result = execSync(\'npx tsc --noEmit, {\'\'
-        encoding: "
-          type: "
-          severity: "
-          message: "
-          type: "
-          severity: "
-          message: "
-        encoding: "
-          severity: "
-          message: "
-          severity: "
-          message: "
-        severity: "
-        severity: "
-        message: "
-            message: "
-            action: "
-            message: "
-            priority: "
-            action: "
-            message: "
-            priority: "
-            action: "
-            message: "
-            action: "
-        execSync(git status\'), { stdio: "
-${suggestions.map(s => "- ${s.message}"
-        execSync(git push, { stdio: "
+const result = require('fs''')
+const path = require('path''')
+const { execSync } = require(('chil')')d'_process)''''
+const result = require($2)r))''''
+const ./rule-generator = require('path''')
+    this.analyticsPath = path.join(this.projectRoot, ')automation, analyti'c's)''''
+      const result = execSync(\'npx tsc --noEmit, {\'\''')
+        encoding: """
+          type: """
+          severity: """
+          message: """
+          type: """
+          severity: """
+          message: """
+        encoding: """
+          severity: """
+          message: """
+          severity: """
+          message: """
+        severity: """
+        severity: """
+        message: """
+            message: """
+            action: """
+            message: """
+            priority: """
+            action: """
+            message: """
+            priority: """
+            action: """
+            message: """
+            action: """
+        execSync(git status\'), { stdio: """
+${suggestions.map(s => "- ${s.message}""")
+        execSync(git push, { stdio: """)

@@ -59,26 +59,26 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const variable1 = require('path';''
-const variable1 = require('path';''
-    let variable1 = fs.readFileSync(filePath, 'ut'f'8')''
-      if (deps.includes('mo'c'k')) {''
-        const variable1 = deps.split(',').map(dep => dep.trim())''
-        const variable1 = depArray.filter(dep => !dep.includes('mo'c'k'))''
-        const variable1 = validDeps.length > 0 ? validDeps.join(', '
-      return 'setMessage's'(prev => [...prev])'''
-      return 'setSelectedProjec't'(mockProjects[0])'''
-    if (content !== fs.readFileSync(filePath, 'ut'f'8')) {''
-  const variable1 = path.join(__dirname, '..', 'pag'e's')''
-  const variable1 = path.join(__dirname, '..', 's'r'c')''
-    const variable1 = fs.readdirSync(pagesDir).filter(file => file.endsWith('.tsx') || file.endsWith('.ts'))''
-        this.log("Fixed missing dependencies in ${file}"
-  this.log("\nTotal files fixed: "${totalFixed"}"
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const variable1 = require('path';'''')
+const variable1 = require('path';'''')
+    let variable1 = fs.readFileSync(filePath, 'ut'f'8')''''
+      if (deps.includes('mo'c'k')) {''''
+        const variable1 = deps.split(',').map(dep => dep.trim())''''
+        const variable1 = depArray.filter(dep => !dep.includes('mo'c'k'))''''
+        const variable1 = validDeps.length > 0 ? validDeps.join(', ''')
+      return 'setMessage's'(prev => [...prev])'''''
+      return 'setSelectedProjec't'(mockProjects[0])'''''
+    if (content !== fs.readFileSync(filePath, 'ut'f'8')) {''''
+  const variable1 = path.join(__dirname, '..', 'pag'e's')''''
+  const variable1 = path.join(__dirname, '..', 's'r'c')''''
+    const variable1 = fs.readdirSync(pagesDir).filter(file => file.endsWith('.tsx') || file.endsWith('.ts'))''''
+        this.log("Fixed missing dependencies in ${file}""")
+  this.log("\nTotal files fixed: "${totalFixed"}""")

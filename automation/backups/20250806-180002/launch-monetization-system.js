@@ -60,17 +60,17 @@ const memoryOptimization = {
 // Launch Monetization System
 // Starts all monetization automation components
 ;
-const result = require($2)h))''
-const result = require('fs'
-      console.log(🚀 Initializing Monetization System...'))''
-      const result = require($2)r))''
-      const ./monetization-autonomous-factory = require('path'
-      const result = require('fs';''
-      const result = require($2)s))''
-      console.error(❌ Failed to initialize Monetization System: "
-        status: "
-      system: "
-      status: "
-      id: "
-      type: "
-        components: "[\'orchestrator"
+const result = require($2)h))''''
+const result = require('fs''')
+      console.log(🚀 Initializing Monetization System...'))''''
+      const result = require($2)r))''''
+      const ./monetization-autonomous-factory = require('path''')
+      const result = require('fs';'''')
+      const result = require($2)s))''''
+      console.error(❌ Failed to initialize Monetization System: """)
+        status: """
+      system: """
+      status: """
+      id: """
+      type: """
+        components: "[\'orchestrator"""

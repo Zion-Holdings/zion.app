@@ -59,25 +59,25 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-  fs = require('path'
-  console.error('Failed to require(fs: '
-  path = require('path'
-  console.error('Failed to require(path: '
-  log(message, level = 'info'
-        this.publicDir = path.join(this.baseDir, 'public'
-        this.optimizedDir = path.join(this.publicDir, 'optimized'
-        this.log('Checking image files...', 'info'
-        const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg'
-        this.log(`Found ${imageFiles.length} image files``, 'info'
-        this.log('Analyzing image sizes...', 'info'
-        this.log(``Total size: ${(sizeAnalysis.totalSize / 1024 / 1024, 'info'
-        this.log(``Large images (>200KB, 'info'
-        this.log(``Medium images (100KB-200KB, 'info'
-        this.log(``Small images (
-        const webpCount = sizeAnalysis.imageFiles.filter(img => img.extension === '.webp'
-                type: 'format'
-                priority: 'medium'
-                message: 'Consider converting images to WebP format for better compression'
-        this.log('Starting image optimization analysis...', 'info'
-        this.log('Image optimization analysis completed', 'info'`
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+  fs = require('path''')
+  console.error('Failed to require(fs: ''')
+  path = require('path''')
+  console.error('Failed to require(path: ''')
+  log(message, level = 'info''')
+        this.publicDir = path.join(this.baseDir, 'public''')
+        this.optimizedDir = path.join(this.publicDir, 'optimized''')
+        this.log('Checking image files...', 'info''')
+        const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg'''
+        this.log(`Found ${imageFiles.length} image files``, 'info''')
+        this.log('Analyzing image sizes...', 'info''')
+        this.log(``Total size: ${(sizeAnalysis.totalSize / 1024 / 1024, 'info''')
+        this.log(``Large images (>200KB, 'info''')
+        this.log(``Medium images (100KB-200KB, 'info''')
+        this.log(``Small images ()
+        const webpCount = sizeAnalysis.imageFiles.filter(img => img.extension === '.webp''')
+                type: 'format'''
+                priority: 'medium'''
+                message: 'Consider converting images to WebP format for better compression'''
+        this.log('Starting image optimization analysis...', 'info''')
+        this.log('Image optimization analysis completed', 'info'`'')

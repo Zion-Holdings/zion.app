@@ -59,38 +59,38 @@ const memoryOptimization = {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-  fs = require('path'
-  console.error('Failed to require(fs: '
-}''
-  path = require('path'
-  console.error('Failed to require(path: '
-}''
-const { v4: uuidv4 } = require(('uuid)')''
-  cron = require('path'
-  console.error('Failed to require(node-cron: '
-}''
-  log(message, level = 'info'
-    this.agentsPath = path.join(__dirname, \'ai-optimization-agents\')\'\'
-    this.reportsPath = path.join(__dirname, \'ai-intelligence-reports\')\'\'
-    this.createAgent(\'performance-optimizer\', {\'\'
-      capabilities: "['load-balancing'"
-      frequency: "
-      priority: "
-      capabilities: "['code-analysis'"
-      frequency: "
-      priority: "
-      capabilities: "['data-analysis'"
-      frequency: "
-      priority: "
-      capabilities: "['pattern-recognition'"
-      frequency: "
-      priority: "
-      status: "
-    this.log(`✅ Created ${type} agent: \"${agentId\"
-      capabilities: \"
-      frequency: \"
-      priority: \"
-      this.log(🔄 Restarting agent: \"${agentId\"
-      activeAgents: \"
-      status: \"`
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+  fs = require('path''')
+  console.error('Failed to require(fs: ''')
+}''''
+  path = require('path''')
+  console.error('Failed to require(path: ''')
+}''''
+const { v4: uuidv4 } = require(('uuid)')''''
+  cron = require('path''')
+  console.error('Failed to require(node-cron: ''')
+}''''
+  log(message, level = 'info''')
+    this.agentsPath = path.join(__dirname, \'ai-optimization-agents\')\'\'''
+    this.reportsPath = path.join(__dirname, \'ai-intelligence-reports\')\'\'''
+    this.createAgent(\'performance-optimizer\', {\'\''')
+      capabilities: "['load-balancing'"""
+      frequency: """
+      priority: """
+      capabilities: "['code-analysis'"""
+      frequency: """
+      priority: """
+      capabilities: "['data-analysis'"""
+      frequency: """
+      priority: """
+      capabilities: "['pattern-recognition'"""
+      frequency: """
+      priority: """
+      status: """
+    this.log(`✅ Created ${type} agent: \"${agentId\""")
+      capabilities: \"""
+      frequency: \"""
+      priority: \"""
+      this.log(🔄 Restarting agent: \"${agentId\""")
+      activeAgents: \"""
+      status: \"`""

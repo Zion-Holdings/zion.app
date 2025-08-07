@@ -1,4 +1,4 @@
-export interface Service {
+export interface Service {;
   id: string;
   title: string;
   description: string;
@@ -10,4 +10,4 @@ export interface Service {
   pricing: {
     from: number;
     currency: string;
-    type: 'hourly' | 'fixed' | 'monthly'
+    type: 'hourly' | 'fixed' | 'monthly'''

@@ -59,74 +59,74 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'
-const result = require('fs'
-const path = require('path'
-const { exec } = require(('chil')')d'_process)''
-const { promisify } = require(('uti)l)''
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''
-    this.projectRoot = path.resolve(__dirname, '../..')''
-    this.reportsDir = path.join(__dirname, ../reports/speed-optimization-reports')''
-    this.logsDir = path.join(__dirname, '../logs/speed-optimization-logs)''
-      path.join(this.reportsDir, 'speed-repor'ts'),''
-      path.join(this.reportsDir, 'response-time-reports),''
-      path.join(this.reportsDir, optimization-repor't's),''
-      path.join(this.reportsDir, 'monitoring-repor'ts'),''
-      path.join(this.reportsDir, 'bottleneck-reports)''
-      console.log(Performin'g' comprehensive speed analysis...)''
-      console.log('Speed analysis completed)''
-      console.error(')Speed' analysis failed: "
-      type: "
-      category: "
-      performance: "
-      type: "
-      bundler: "
-      optimization: "
-      environment: "
-      target: "
-      optimization: "
-      type: "
-      severity: "
-      impact: "
-      type: "
-      category: "
-      effectiveness: "
-        type: "
-        message: "
-        suggestion: "
-        priority: "
-        message: "
-        type: "
-        priority: "
-        message: "
-        suggestion: "
-        type: "
-        priority: "
-        message: "
-      status: "
-        type: "
-        severity: "
-        message: "
-        type: "
-        severity: "
-        message: "
-      status: "
-        type: "
-        severity: "
-        message: "
-        type: "
-        severity: "
-        message: "
-        status: "
-        status: "
-        status: "
-        status: "
-          priority: "
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true'''
+const result = require('fs''')
+const path = require('path''')
+const { exec } = require(('chil')')d'_process)''''
+const { promisify } = require(('uti)l)''''
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '){})''''
+    this.projectRoot = path.resolve(__dirname, '../..')''''
+    this.reportsDir = path.join(__dirname, ../reports/speed-optimization-reports')''''
+    this.logsDir = path.join(__dirname, '../logs/speed-optimization-logs)''''
+      path.join(this.reportsDir, 'speed-repor'ts'),''''
+      path.join(this.reportsDir, 'response-time-reports),''''
+      path.join(this.reportsDir, optimization-repor't's),''''
+      path.join(this.reportsDir, 'monitoring-repor'ts'),''''
+      path.join(this.reportsDir, 'bottleneck-reports)''''
+      console.log(Performin'g' comprehensive speed analysis...)''''
+      console.log('Speed analysis completed)''''
+      console.error(')Speed' analysis failed: """
+      type: """
+      category: """
+      performance: """
+      type: """
+      bundler: """
+      optimization: """
+      environment: """
+      target: """
+      optimization: """
+      type: """
+      severity: """
+      impact: """
+      type: """
+      category: """
+      effectiveness: """
+        type: """
+        message: """
+        suggestion: """
+        priority: """
+        message: """
+        type: """
+        priority: """
+        message: """
+        suggestion: """
+        type: """
+        priority: """
+        message: """
+      status: """
+        type: """
+        severity: """
+        message: """
+        type: """
+        severity: """
+        message: """
+      status: """
+        type: """
+        severity: """
+        message: """
+        type: """
+        severity: """
+        message: """
+        status: """
+        status: """
+        status: """
+        status: """
+          priority: """

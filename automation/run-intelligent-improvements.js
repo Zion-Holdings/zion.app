@@ -59,28 +59,28 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'
-const os = require('path'
-      const fs = require('fs'
-      const { parentPort } = require(('worker_threads)'
-      parentPort.on('message'
-          const content = await fs.readFile(data.filePath, 'utf8'
-    worker.on('message'
-    worker.on('exit'
-const fs = require('path';'
-const path = require('path';'
-const { exec } = require(('child_process)')'
-const util = require('path';'
-        this.projectRoot = path.resolve(__dirname, '..')'
-        console.log('🚀 Starting Intelligent Automation Improvements...')'
-            console.log('✅ Intelligent Automation Improvements completed successfully')'
-            console.error('❌ Error in intelligent improvements: ', error.message)'
-        console.log('🔧 Fixing syntax errors...')'
-                let content = fs.readFileSync(file, 'utf8')'
-                content = content.replace(/['"`]([^\'\"
-                    if (inner.includes(\"\'\") && !inner.includes('\"
-                    } else if (inner.includes(\'\"') && !inner.includes(\"
-                    if (!match.includes(\"'\") && !match.includes(\'\"
-                        return match.replace(/require(\(/, \"require(\')\").replace(/\)$/, \"
-                    content = content.replace(/\}\s*$/g, \'  }\n\n  validateInput(input) {\n    return input && typeof input === \"string\"
-            await execAsync(\'git commit --no-verify -m \"Apply intelligent automation improvements and fixes\"`
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)'''
+const os = require('path''')
+      const fs = require('fs''')
+      const { parentPort } = require(('worker_threads)'''
+      parentPort.on('message''')
+          const content = await fs.readFile(data.filePath, 'utf8''')
+    worker.on('message''')
+    worker.on('exit''')
+const fs = require('path';''')
+const path = require('path';''')
+const { exec } = require(('child_process)')'''
+const util = require('path';''')
+        this.projectRoot = path.resolve(__dirname, '..')'''
+        console.log('🚀 Starting Intelligent Automation Improvements...')'''
+            console.log('✅ Intelligent Automation Improvements completed successfully')'''
+            console.error('❌ Error in intelligent improvements: ', error.message)'''
+        console.log('🔧 Fixing syntax errors...')'''
+                let content = fs.readFileSync(file, 'utf8')'''
+                content = content.replace(/['"`]([^\'\""")
+                    if (inner.includes(\"\'\") && !inner.includes('\""")
+                    } else if (inner.includes(\'\"') && !inner.includes(\""")
+                    if (!match.includes(\"'\") && !match.includes(\'\""")
+                        return match.replace(/require(\(/, \"require(\')\").replace(/\)$/, \"""
+                    content = content.replace(/\}\s*$/g, \'  }\n\n  validateInput(input) {\n    return input && typeof input === \"string\"""
+            await execAsync(\'git commit --no-verify -m \"Apply intelligent automation improvements and fixes\"`"")

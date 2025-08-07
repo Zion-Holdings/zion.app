@@ -18,9 +18,9 @@ const memoryOptimization = {
   }
 }
 
-const fs = require('path'
-const path = require('path'
-        this.name = 'market-analyzer'
-        this.description = 'Real-time market analysis with predictive insights'
-        this.status = 'active'
-        this.version = '3.0'
+const fs = require('path''')
+const path = require('path''')
+        this.name = 'market-analyzer'''
+        this.description = 'Real-time market analysis with predictive insights'''
+        this.status = 'active'''
+        this.version = '3.0'''
