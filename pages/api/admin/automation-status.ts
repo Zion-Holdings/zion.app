@@ -1,6 +1,6 @@
-import type { NextApiRequest, NextApiResponse } from 'next';;;''
+import type { NextApiRequest, NextApiResponse } from 'next';
 
-type AgentStatus = 'active' | 'idle' | 'error' | 'stopped';''
+type AgentStatus = 'active' | 'idle' | 'error' | 'stopped';
 
 interface Agent {
   agentId: string;
@@ -8,81 +8,64 @@ interface Agent {
   status: AgentStatus;
   lastActivity?: string;
   performance?: {
-    tasksCompleted: number
-    successRate: number;
-    averageResponseTime: number;
-  }
+    cpu: number;
+    memory: number;
+    errors: number;
+  };
 }
 
 interface AutomationStatus {
-  overallStatus: AgentStatus;
+  totalAgents: number;
+  activeAgents: number;
   agents: Agent[];
-  systemHealth: {
-    memoryUsage: number;
-    cpuUsage: number;
-    uptime: number;
-  }
-  lastUpdated: string;
+  systemHealth: 'healthy' | 'warning' | 'critical';
+  lastUpdate: string;
 }
 
-export default async function handler(;)
-  req: NextApiRequest,;
-  res: NextApiResponse<AutomationStatus | { error: string }>;
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<AutomationStatus | { error: string }>
 ) {
-  if (req.method !== 'GET') {''
-    return res.status(405).json({ error: 'Method not allowed' })''
+  if (req.method !== 'GET') {
+    return res.status(405).json({ error: 'Method not allowed' });
   }
 
   try {
-    // Mock automation status data
-    const automationStatus: AutomationStatus = {
-      overallStatus: 'active',;''
-      agents: [;
+    // Mock data for demonstration
+    const status: AutomationStatus = {
+      totalAgents: 5,
+      activeAgents: 3,
+      agents: [
         {
-          agentId: 'agent-1',;''
-          type: 'content-generation',;''
-          status: 'active',;''
-          lastActivity: new Date().toISOString(),;
+          agentId: 'syntax-fixer-001',
+          type: 'syntax-fix',
+          status: 'active',
+          lastActivity: new Date().toISOString(),
           performance: {
-            tasksCompleted: 150,
-            successRate: 98.5,;
-            averageResponseTime: 2.3;
+            cpu: 15,
+            memory: 45,
+            errors: 0
           }
-        },;
+        },
         {
-          agentId: 'agent-2',;''
-          type: 'seo-optimization',;''
-          status: 'idle',;''
-          lastActivity: new Date(Date.now() - 300000).toISOString(),;
+          agentId: 'linting-agent-001',
+          type: 'linting',
+          status: 'active',
+          lastActivity: new Date().toISOString(),
           performance: {
-            tasksCompleted: 75,
-            successRate: 95.2,;
-            averageResponseTime: 1.8;
-          }
-        },;
-        {
-          agentId: 'agent-3',;''
-          type: 'social-media',;''
-          status: 'active',;''
-          lastActivity: new Date().toISOString(),;
-          performance: {
-            tasksCompleted: 200,
-            successRate: 99.1,;
-            averageResponseTime: 1.5;
+            cpu: 20,
+            memory: 60,
+            errors: 2
           }
         }
-      ],;
-      systemHealth: {
-        memoryUsage: 65.2,;
-        cpuUsage: 42.8,;
-        uptime: 86400 // 24 hours in seconds;
-      },;
-      lastUpdated: new Date().toISOString()
-    }
+      ],
+      systemHealth: 'healthy',
+      lastUpdate: new Date().toISOString()
+    };
 
-    res.status(200).json(automationStatus)
+    res.status(200).json(status);
   } catch (error) {
-//     console.error('Automation Status API Error:', error)''
-    return res.status(500).json({ error: 'Internal server error' })''
+    console.error('Error fetching automation status:', error);
+    res.status(500).json({ error: 'Internal server error' });
   }
 }

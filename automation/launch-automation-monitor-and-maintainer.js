@@ -75,7 +75,7 @@ class AutomationMonitorAndMaintainerLauncher {
         
         // Show monitoring stats
         const stats = await this.getMonitoringStats();
-        console.log(`📈 Monitoring Stats:`);
+        console.log('📈 Monitoring Stats:');
         console.log(`   - Factories: ${stats.factories}`);
         console.log(`   - Agents: ${stats.agents}`);
         console.log(`   - Scripts: ${stats.scripts}`);
@@ -301,30 +301,30 @@ async function main() {
   const command = process.argv[2] || 'start';
 
   switch (command) {
-    case 'start':
-      await launcher.start();
-      break;
-    case 'stop':
-      await launcher.stop();
-      break;
-    case 'status':
-      await launcher.status();
-      break;
-    case 'health':
-      await launcher.health();
-      break;
-    case 'report':
-      await launcher.report();
-      break;
-    case 'backup':
-      await launcher.backup();
-      break;
-    case 'cleanup':
-      await launcher.cleanup();
-      break;
-    default:
-      console.log('Usage: node launch-automation-monitor-and-maintainer.js [start|stop|status|health|report|backup|cleanup]');
-      break;
+  case 'start':
+    await launcher.start();
+    break;
+  case 'stop':
+    await launcher.stop();
+    break;
+  case 'status':
+    await launcher.status();
+    break;
+  case 'health':
+    await launcher.health();
+    break;
+  case 'report':
+    await launcher.report();
+    break;
+  case 'backup':
+    await launcher.backup();
+    break;
+  case 'cleanup':
+    await launcher.cleanup();
+    break;
+  default:
+    console.log('Usage: node launch-automation-monitor-and-maintainer.js [start|stop|status|health|report|backup|cleanup]');
+    break;
   }
 }
 

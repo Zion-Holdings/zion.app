@@ -236,21 +236,21 @@ async function main() {
     await monitor.init();
     
     switch (command) {
-      case 'check':
-        await monitor.runLintCheck();
-        break;
-      case 'stats':
-        const stats = await monitor.getStats();
-        console.log(JSON.stringify(stats, null, 2));
-        break;
-      case 'errors':
-        const errors = await monitor.getLatestErrors();
-        console.log(JSON.stringify(errors, null, 2));
-        break;
-      case 'monitor':
-      default:
-        await monitor.startMonitoring();
-        break;
+    case 'check':
+      await monitor.runLintCheck();
+      break;
+    case 'stats':
+      const stats = await monitor.getStats();
+      console.log(JSON.stringify(stats, null, 2));
+      break;
+    case 'errors':
+      const errors = await monitor.getLatestErrors();
+      console.log(JSON.stringify(errors, null, 2));
+      break;
+    case 'monitor':
+    default:
+      await monitor.startMonitoring();
+      break;
     }
   } catch (error) {
     console.error('❌ Error:', error.message);

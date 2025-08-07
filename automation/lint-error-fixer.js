@@ -240,16 +240,16 @@ async function main() {
     await fixer.init();
     
     switch (command) {
-      case 'check':
-        await fixer.runLintCheck();
-        break;
-      case 'fix':
-        await fixer.fixLintErrors();
-        break;
-      case 'continuous':
-      default:
-        await fixer.startContinuousMode();
-        break;
+    case 'check':
+      await fixer.runLintCheck();
+      break;
+    case 'fix':
+      await fixer.fixLintErrors();
+      break;
+    case 'continuous':
+    default:
+      await fixer.startContinuousMode();
+      break;
     }
   } catch (error) {
     console.error('❌ Error:', error.message);

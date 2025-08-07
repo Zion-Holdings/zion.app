@@ -281,12 +281,12 @@ class AutomationMonitorAndMaintainerFactory {
 
       // Fix common syntax errors
       fixedContent = fixedContent
-        .replace(/const \.\/.*? = require\('path';/g, "const path = require('path');")
-        .replace(/console\.log\('.*?';/g, "console.log('Fixed syntax');")
-        .replace(/require\(['"]\.\/.*?['"]\)/g, "require('./path')")
-        .replace(/module\.exports = \{/g, "module.exports = {")
-        .replace(/,\s*,/g, ",")
-        .replace(/,\s*}/g, "}");
+        .replace(/const \.\/.*? = require\('path';/g, 'const path = require(\'path\');')
+        .replace(/console\.log\('.*?';/g, 'console.log(\'Fixed syntax\');')
+        .replace(/require\(['"]\.\/.*?['"]\)/g, 'require(\'./path\')')
+        .replace(/module\.exports = \{/g, 'module.exports = {')
+        .replace(/,\s*,/g, ',')
+        .replace(/,\s*}/g, '}');
 
       await fs.writeFile(component.path, fixedContent);
       component.errors = component.errors.filter(error => !error.includes('Syntax error'));
@@ -303,10 +303,10 @@ class AutomationMonitorAndMaintainerFactory {
 
       // Fix common dependency issues
       fixedContent = fixedContent
-        .replace(/require\(['"]fs-extra['"]\)/g, "const fs = require('fs-extra')")
-        .replace(/require\(['"]path['"]\)/g, "const path = require('path')")
-        .replace(/require\(['"]child_process['"]\)/g, "const { exec } = require('child_process')")
-        .replace(/require\(['"]node-cron['"]\)/g, "const cron = require('node-cron')");
+        .replace(/require\(['"]fs-extra['"]\)/g, 'const fs = require(\'fs-extra\')')
+        .replace(/require\(['"]path['"]\)/g, 'const path = require(\'path\')')
+        .replace(/require\(['"]child_process['"]\)/g, 'const { exec } = require(\'child_process\')')
+        .replace(/require\(['"]node-cron['"]\)/g, 'const cron = require(\'node-cron\')');
 
       await fs.writeFile(component.path, fixedContent);
       component.errors = component.errors.filter(error => !error.includes('Dependency error'));
