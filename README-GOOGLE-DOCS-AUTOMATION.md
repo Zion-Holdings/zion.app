@@ -33,22 +33,22 @@ This system automatically monitors and executes instructions from Google Docs do
 
 ### Specialized Agents
 
-4. **ContentGenerationAgent** (`automation/agents/specialized-task-agents.js`)
+1. **ContentGenerationAgent** (`automation/agents/specialized-task-agents.js`)
    - Creates blog posts and content
    - Updates service pages
    - Generates SEO-optimized content
 
-5. **DevelopmentAgent** (`automation/agents/specialized-task-agents.js`)
+2. **DevelopmentAgent** (`automation/agents/specialized-task-agents.js`)
    - Implements new features
    - Fixes bugs and issues
    - Optimizes performance
 
-6. **DeploymentAgent** (`automation/agents/specialized-task-agents.js`)
+3. **DeploymentAgent** (`automation/agents/specialized-task-agents.js`)
    - Deploys to staging and production
    - Runs tests and validations
    - Monitors application health
 
-7. **MarketingAgent** (`automation/agents/specialized-task-agents.js`)
+4. **MarketingAgent** (`automation/agents/specialized-task-agents.js`)
    - Creates social media content
    - Runs email campaigns
    - Analyzes user engagement
@@ -127,6 +127,7 @@ npm run google-docs:test
 Use the cron script for scheduled execution:
 
 ```bash
+
 # Start the system
 ./automation/cron/google-docs-automation-cron.sh start
 
