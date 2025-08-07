@@ -2,10 +2,10 @@
   "isRunning": true,
   "activeSyncs": 0,
   "stats": {
-    "totalSyncs": 208,
+    "totalSyncs": 209,
     "successfulSyncs": 0,
-    "failedSyncs": 208,
+    "failedSyncs": 209,
     "startTime": "2025-08-07T16:44:53.654Z"
   },
-  "lastUpdate": "2025-08-07T16:56:24.697Z"
+  "lastUpdate": "2025-08-07T16:56:34.036Z"
 }
