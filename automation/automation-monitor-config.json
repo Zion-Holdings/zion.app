@@ -1,0 +1,26 @@
+{
+  "healthCheckInterval": "*/2 * * * *",
+  "errorThreshold": 3,
+  "performanceThreshold": 0.8,
+  "maxRetries": 3,
+  "backupInterval": "0 */6 * * *",
+  "cleanupInterval": "0 2 * * *",
+  "reportInterval": "0 */1 * * *",
+  "monitoring": {
+    "enabled": true,
+    "logLevel": "info",
+    "maxLogFiles": 100,
+    "maxReportFiles": 50
+  },
+  "backup": {
+    "enabled": true,
+    "maxBackups": 10,
+    "retentionDays": 30
+  },
+  "cleanup": {
+    "enabled": true,
+    "logRetentionDays": 7,
+    "reportRetentionDays": 30,
+    "backupRetentionDays": 60
+  }
+}

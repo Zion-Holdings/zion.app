@@ -29,14 +29,14 @@ automation/
 
    ```bash
    npm install --save-dev eslint eslint-config-next @typescript-eslint/eslint-plugin @typescript-eslint/parser chokidar
-   ```
+```
 
 2. **Make Scripts Executable**:
 
    ```bash
    chmod +x automation/*.js
    chmod +x start-lint-automation.sh
-   ```
+```
 
 ## 🚀 Quick Start
 
@@ -195,13 +195,13 @@ The system automatically fixes common issues:
 
    ```bash
    npm install --save-dev eslint eslint-config-next
-   ```
+```
 
 2. **Permission denied**:
 
    ```bash
    chmod +x automation/*.js
-   ```
+```
 
 3. **High CPU usage**:
    - Increase cooldown periods in scripts
@@ -241,6 +241,8 @@ jobs:
 #!/bin/sh
 node automation/quick-lint-fix.js
 ```
+```
+```
 
 ## 📈 Performance Tips
 
@@ -274,3 +276,9 @@ For issues or questions:
 ---
 
 **Happy Coding! 🚀**
+
+
+```
+```
+
+```
