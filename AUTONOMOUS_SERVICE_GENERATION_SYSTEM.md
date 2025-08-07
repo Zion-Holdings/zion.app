@@ -242,6 +242,7 @@ The system can autonomously create various types of services:
 ### **CLI Commands**
 
 ```bash
+
 # Start the system
 npm start
 
@@ -331,7 +332,7 @@ node launch-service-generation.js ad <service-id> social-media -p Facebook
 
 ## 📁 File Structure
 
-```
+```bash
 automation/
 ├── service-generation-factory.js      # Core service creation factory
 ├── service-generation-orchestrator.js # Main orchestration system
