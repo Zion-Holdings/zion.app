@@ -9,6 +9,7 @@ class AutomationLauncher {
     this.processes = new Map();
     this.logFile = path.join(__dirname, 'logs', 'automation-launcher.log');
     this.ensureLogDirectory();
+    this.startTime = Date.now();
   }
 
   ensureLogDirectory() {
@@ -25,38 +26,38 @@ class AutomationLauncher {
     fs.appendFileSync(this.logFile, logMessage);
   }
 
-  async startSystem(name, scriptPath, options = {}) {
+  async startSystem(name, scriptPath, args = [], options = {}) {
     try {
       this.log(`🚀 Starting ${name}...`);
       
-      const process = spawn('node', [scriptPath], {
+      const child = spawn('node', [scriptPath, ...args], {
         stdio: 'pipe',
         detached: false,
         ...options
       });
 
-      process.stdout.on('data', (data) => {
+      child.stdout.on('data', (data) => {
         this.log(`[${name}] ${data.toString().trim()}`);
       });
 
-      process.stderr.on('data', (data) => {
+      child.stderr.on('data', (data) => {
         this.log(`[${name}] ERROR: ${data.toString().trim()}`);
       });
 
-      process.on('close', (code) => {
+      child.on('close', (code) => {
         this.log(`[${name}] Process exited with code ${code}`);
         this.processes.delete(name);
       });
 
-      process.on('error', (error) => {
+      child.on('error', (error) => {
         this.log(`[${name}] Process error: ${error.message}`);
         this.processes.delete(name);
       });
 
-      this.processes.set(name, process);
+      this.processes.set(name, child);
       this.log(`✅ ${name} started successfully`);
       
-      return process;
+      return child;
     } catch (error) {
       this.log(`❌ Failed to start ${name}: ${error.message}`);
       return null;
@@ -70,19 +71,17 @@ class AutomationLauncher {
       { name: 'intelligent-orchestrator', script: 'intelligent-orchestrator.cjs', args: ['continuous'] },
       { name: 'automation-dashboard', script: 'automation-dashboard.cjs', args: ['start'] },
       { name: 'lint-monitor', script: 'lint-monitor.cjs', args: ['start'] },
-      { name: 'code-quality', script: 'code-quality-monitor.cjs' },
-      { name: 'performance', script: 'performance-optimizer.cjs' },
-      { name: 'security-scanner', script: 'security-scanner.cjs' },
-      { name: 'seo-optimizer', script: 'seo-optimizer.cjs' },
-      { name: 'test-generator', script: 'test-generator.cjs' }
+      { name: 'code-quality', script: 'code-quality-monitor.cjs', args: [] },
+      { name: 'performance', script: 'performance-optimizer.cjs', args: [] },
+      { name: 'security-scanner', script: 'security-scanner.cjs', args: [] },
+      { name: 'seo-optimizer', script: 'seo-optimizer.cjs', args: [] },
+      { name: 'test-generator', script: 'test-generator.cjs', args: [] }
     ];
 
     for (const system of systems) {
       const scriptPath = path.join(__dirname, system.script);
       if (fs.existsSync(scriptPath)) {
-        await this.startSystem(system.name, scriptPath, {
-          args: system.args || []
-        });
+        await this.startSystem(system.name, scriptPath, system.args || []);
         
         // Add delay between starts
         await this.sleep(2000);

@@ -1,4 +1,10 @@
+export type MessageCallback = (message: unknown) => void;
+
 export const messageChannelHandler = {
-  sendMessage: (message$1 => {},
-  receiveMessage: (callback$1 => {},
+  sendMessage: (_message: unknown): void => {
+    // No-op placeholder. Implement transport in the future if needed.
+  },
+  receiveMessage: (_callback: MessageCallback): void => {
+    // No-op placeholder registration. Store or wire to transport when available.
+  },
 };
