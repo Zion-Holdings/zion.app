@@ -1,5 +1,0 @@
-const variable1 = require('f's');''''
-const variable1 = require('pa't'h');''''
-    const variable1 = fs.readFileSync(filePath, 'ut'f'8');''''
-    if (content.includes('impor't' Image from') || content.includes('impor't' { Image }')) {''''
-    if (!content.includes(''')

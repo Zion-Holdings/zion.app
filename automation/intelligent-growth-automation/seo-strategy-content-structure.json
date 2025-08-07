@@ -1,8 +1,0 @@
-{
-  "strategy": "content-structure",
-  "description": "Improve content structure and readability",
-  "implementation": "Use proper headings, meta descriptions, and schema markup",
-  "expectedImpact": "Improve search rankings and click-through rates",
-  "status": "implemented",
-  "implementedAt": "2025-08-06T11:52:50.813Z"
-}
