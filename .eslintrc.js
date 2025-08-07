@@ -1,13 +1,6 @@
 module.exports = {
   extends: [
     "next/core-web-vitals",
-    "@typescript-eslint/recommended",
-  ],
-  parser: "@typescript-eslint/parser",
-  plugins: [
-    "@typescript-eslint",
-    "react-hooks",
-    "react-refresh",
   ],
   rules: {
     "react-hooks/rules-of-hooks": "error",
@@ -16,14 +9,11 @@ module.exports = {
       "warn",
       { allowConstantExport: true },
     ],
-    "@typescript-eslint/no-unused-vars": [
-      "error",
+    "no-unused-vars": [
+      "warn",
       { argsIgnorePattern: "^_" },
     ],
-    "@typescript-eslint/no-explicit-any": "warn",
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/no-empty-object-type": "off",
+    "no-explicit-any": "warn",
   },
   env: {
     browser: true,

@@ -1,24 +1,22 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import Link from "next / link";
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Link from 'next/link';
 
-const qualityassurancetestingchat: NextPage = () => {
+const quality-assurance-testing-chat: NextPage = () => {
   return (
-    <div>;
-      <Head>;
-        <title>Quality Assurance Testing Chat - Zion Tech Solutions< / title>;
-        <meta;
-          name = "description";
-          content = "Quality Assurance Testing Chat service"; / >;
-      </Head>;
-
-      <main>;
-        <h1>QualityAssuranceTestingChat< / h1>;
-        <p>Service details coming soon...< / p>;
-        <Link href = " / services">Back to Services< / Link>;
-      </main>;
-    </div>;
+    <div>
+      <Head>
+        <title>quality-assurance-testing-chat - Zion Tech Solutions</title>
+        <meta name="description" content="quality-assurance-testing-chat service" />
+      </Head>
+      
+      <main>
+        <h1>quality-assurance-testing-chat</h1>
+        <p>Service details coming soon...</p>
+        <Link href="/services">Back to Services</Link>
+      </main>
+    </div>
   );
 };
 
-export default qualityassurancetestingchat;
+export default quality-assurance-testing-chat;

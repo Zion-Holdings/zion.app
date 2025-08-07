@@ -1,24 +1,22 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import Link from "next / link";
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Link from 'next/link';
 
-const performanceoptimizationchat: NextPage = () => {
+const performance-optimization-chat: NextPage = () => {
   return (
-    <div>;
-      <Head>;
-        <title>Performance Optimization Chat - Zion Tech Solutions< / title>;
-        <meta;
-          name = "description";
-          content = "Performance Optimization Chat service"; / >;
-      </Head>;
-
-      <main>;
-        <h1>PerformanceOptimizationChat< / h1>;
-        <p>Service details coming soon...< / p>;
-        <Link href = " / services">Back to Services< / Link>;
-      </main>;
-    </div>;
+    <div>
+      <Head>
+        <title>performance-optimization-chat - Zion Tech Solutions</title>
+        <meta name="description" content="performance-optimization-chat service" />
+      </Head>
+      
+      <main>
+        <h1>performance-optimization-chat</h1>
+        <p>Service details coming soon...</p>
+        <Link href="/services">Back to Services</Link>
+      </main>
+    </div>
   );
 };
 
-export default performanceoptimizationchat;
+export default performance-optimization-chat;

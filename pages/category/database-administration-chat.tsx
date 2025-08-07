@@ -1,24 +1,22 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import Link from "next / link";
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Link from 'next/link';
 
-const databaseadministrationchat: NextPage = () => {
+const database-administration-chat: NextPage = () => {
   return (
-    <div>;
-      <Head>;
-        <title>Database Administration Chat - Zion Tech Solutions< / title>;
-        <meta;
-          name = "description";
-          content = "Database Administration Chat blog post"; / >;
-      </Head>;
-
-      <main>;
-        <h1>DatabaseAdministrationChat< / h1>;
-        <p>Blog content coming soon...< / p>;
-        <Link href = " / blog">Back to Blog< / Link>;
-      </main>;
-    </div>;
+    <div>
+      <Head>
+        <title>database-administration-chat - Zion Tech Solutions</title>
+        <meta name="description" content="database-administration-chat blog post" />
+      </Head>
+      
+      <main>
+        <h1>database-administration-chat</h1>
+        <p>Blog content coming soon...</p>
+        <Link href="/blog">Back to Blog</Link>
+      </main>
+    </div>
   );
 };
 
-export default databaseadministrationchat;
+export default database-administration-chat;
