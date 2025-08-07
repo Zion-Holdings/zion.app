@@ -8,16 +8,16 @@ const EnhancedNavigation: React.FC = () => {
         <div className="flex justify-between items-center py-4">
           <div className="text-xl font-bold text-gray-800">Logo</div>
           <div className="hidden md:flex space-x-8">
-            <Link href="/" legacyBehavior>
+            <Link href="/">
               <a className="text-gray-600 hover:text-gray-900">Home</a>
             </Link>
-            <Link href="/services" legacyBehavior>
+            <Link href="/services">
               <a className="text-gray-600 hover:text-gray-900">Services</a>
             </Link>
-            <Link href="/about" legacyBehavior>
+            <Link href="/about">
               <a className="text-gray-600 hover:text-gray-900">About</a>
             </Link>
-            <Link href="/contact" legacyBehavior>
+            <Link href="/contact">
               <a className="text-gray-600 hover:text-gray-900">Contact</a>
             </Link>
           </div>
