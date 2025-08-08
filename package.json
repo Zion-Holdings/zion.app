@@ -14,7 +14,7 @@
     "dev:react19": "npm run env:dev && REACT_19_MODE=true next dev --experimental-app",
     "dev:turbo": "npm run env:dev && next dev --turbo",
     "generate": "prisma generate",
-    "build": "NODE_OPTIONS='--no-deprecation --require ./scripts/fix-self-global.js' node scripts/pre-build-check.cjs && NODE_OPTIONS='--no-deprecation --require ./scripts/fix-self-global.js' npx next build --no-lint",
+    "build": "NODE_OPTIONS='--no-deprecation --require ./scripts/fix-self-global.js' node scripts/pre-build-check.cjs && NODE_OPTIONS='--no-deprecation --require ./scripts/fix-self-global.js' npx next build --no-lint && node scripts/generate-rss.mjs",
     "build:monitored": "node scripts/comprehensive-build-check.cjs",
     "analyze:performance": "node scripts/analyze-performance.mjs",
     "analyze:full": "npm run build && npm run analyze:performance",

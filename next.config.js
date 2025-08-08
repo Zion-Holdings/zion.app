@@ -41,6 +41,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  transpilePackages: ['react-day-picker', 'date-fns', 'formik', 'lodash-es'],
   assetPrefix,
   poweredByHeader: false,
   trailingSlash: false,
@@ -77,6 +78,7 @@ const nextConfig = {
   },
 
   experimental: {
+    esmExternals: "loose",
     optimizePackageImports: [
       'lucide-react', 
       '@radix-ui/react-icons',

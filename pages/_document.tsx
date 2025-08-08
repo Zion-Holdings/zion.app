@@ -22,6 +22,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <link rel="alternate" type="application/rss+xml" title="Zion Tech Solutions Blog RSS" href="/feed.xml" />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <script dangerouslySetInnerHTML={{ __html: loaderTimeoutScript }} />
       </Head>
