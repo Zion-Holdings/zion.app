@@ -1,7 +1,7 @@
 {
-  "timestamp": "2025-08-08T16:09:15.251Z",
-  "filesAnalyzed": 100,
-  "issuesFound": 94,
+  "timestamp": "2025-08-08T16:30:16.962Z",
+  "filesAnalyzed": 103,
+  "issuesFound": 97,
   "items": [
     {
       "filePath": "/workspace/pages/404.tsx",
@@ -126,6 +126,27 @@
     },
     {
       "filePath": "/workspace/pages/auth/verify.tsx",
+      "issues": [
+        "missing_viewport",
+        "no_tailwind_responsive_classes"
+      ]
+    },
+    {
+      "filePath": "/workspace/pages/auto/auto-update-2025-08-08t16-07-55-171z.tsx",
+      "issues": [
+        "missing_viewport",
+        "no_tailwind_responsive_classes"
+      ]
+    },
+    {
+      "filePath": "/workspace/pages/auto/auto-update-2025-08-08t16-10-20-249z.tsx",
+      "issues": [
+        "missing_viewport",
+        "no_tailwind_responsive_classes"
+      ]
+    },
+    {
+      "filePath": "/workspace/pages/auto/auto-update-2025-08-08t16-30-00-086z.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
