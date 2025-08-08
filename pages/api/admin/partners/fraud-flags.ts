@@ -24,16 +24,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const counts = new Map<string, number>();
     for (const row of data || []) {
-      const key = row.ip_address || 'unknown';
+      const key = (row as any).ip_address || 'unknown';
       counts.set(key, (counts.get(key) || 0) + 1);
     }
 
     const flags: any[] = [];
-    for (const [ip, count] of counts.entries()) {
+    counts.forEach((count, ip) => {
       if (count > 30 && ip !== 'unknown') {
         flags.push({ type: 'suspicious_ip', severity: 'medium', ip, count, note: 'High number of events from a single IP in 7 days' });
       }
-    }
+    });
 
     return res.status(200).json({ flags });
   } catch (e: any) {
