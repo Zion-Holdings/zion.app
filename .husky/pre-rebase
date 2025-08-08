@@ -13,6 +13,14 @@ if ! git diff-index --quiet HEAD --; then
     echo "ℹ️ Continuing with rebase automatically (non-interactive hook)"
 fi
 
+# Prevent starting a rebase when conflicts exist
+if bash ./scripts/check-merge-conflicts.sh >/dev/null 2>&1; then
+  :
+else
+  echo "❌ Resolve current merge conflicts before rebasing."
+  exit 1
+fi
+
 # Backup important configuration files
 echo "💾 Backing up important files..."
 mkdir -p .git/backup 2>/dev/null || true

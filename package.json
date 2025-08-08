@@ -210,7 +210,12 @@
     "git:pull": "node automation/git-pull-rebase.cjs",
     "git:cron:start": "bash automation/git-sync-cron.sh start",
     "git:cron:stop": "bash automation/git-sync-cron.sh stop",
-    "git:cron:status": "bash automation/git-sync-cron.sh status"
+    "git:cron:status": "bash automation/git-sync-cron.sh status",
+    "conflicts:check": "bash scripts/check-merge-conflicts.sh",
+    "conflicts:watch": "watch -n 30 bash scripts/check-merge-conflicts.sh || true",
+    "conflicts:cron:start": "bash automation/merge-conflict-cron.sh start",
+    "conflicts:cron:stop": "bash automation/merge-conflict-cron.sh stop",
+    "conflicts:cron:status": "bash automation/merge-conflict-cron.sh status"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
