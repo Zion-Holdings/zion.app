@@ -169,7 +169,16 @@
     "alignment:scan": "node automation/chat-fetcher.cjs && (node automation/google-doc-fetcher.cjs || true) && node automation/alignment-crawler.cjs && node automation/alignment-analyzer.cjs && node automation/alignment-factory.cjs && node automation/alignment-dev-factory.cjs",
     "postautomation": "npm run automation:git-sync",
     "lint:staged": "lint-staged",
-    "performance:audit": "node automation/performance-audit.cjs"
+    "performance:audit": "node automation/performance-audit.cjs",
+    "code-health:factory": "node automation/code-health-factory.cjs generate",
+    "code-health:check": "node automation/code-health-orchestrator.cjs check --build",
+    "code-health:fix": "node automation/code-health-orchestrator.cjs fix",
+    "code-health:start": "node automation/code-health-orchestrator.cjs continuous",
+    "code-health:status": "node automation/code-health-orchestrator.cjs status",
+    "code-health:cron:start": "bash automation/code-health-cron.sh start",
+    "code-health:cron:stop": "bash automation/code-health-cron.sh stop",
+    "code-health:cron:status": "bash automation/code-health-cron.sh status",
+    "code-health:cron:run": "bash automation/code-health-cron.sh run"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
