@@ -1,18 +1,20 @@
 {
   "ok": true,
   "errors": [],
-  "warnings": [
-    "No upstream configured for current branch."
-  ],
+  "warnings": [],
   "checks": {
     "user": {
       "name": "Cursor Agent",
       "email": "cursoragent@cursor.com"
     },
-    "origin": "origin\thttps://x-access-token:ghs_qNBaeg2v14LuMC4IBKBjGq0T4N5gyr2FojDs@github.com/Zion-Holdings/zion.app (fetch)\norigin\thttps://x-access-token:ghs_qNBaeg2v14LuMC4IBKBjGq0T4N5gyr2FojDs@github.com/Zion-Holdings/zion.app (push)",
+    "origin": "origin\thttps://x-access-token:ghs_9l2J8CL3pRZY8pNTdOkr2qojcgE3TE1fdBGp@github.com/Zion-Holdings/zion.app (fetch)\norigin\thttps://x-access-token:ghs_9l2J8CL3pRZY8pNTdOkr2qojcgE3TE1fdBGp@github.com/Zion-Holdings/zion.app (push)",
     "fsck": {
       "status": 0,
-      "output": ""
+      "output": "dangling tree b75e471af53531e135265b306abf449cc3f14bf1\ndangling tree 71bddd5a31561afdc47df7b1c9adcb173945384e\n"
+    },
+    "divergence": {
+      "behind": 0,
+      "ahead": 0
     },
     "working": "dirty"
   }
