@@ -1,22 +1,39 @@
 {
-  "timestamp": "2025-08-08T07:02:06.344Z",
+  "timestamp": "2025-08-08T07:02:10.122Z",
   "changedFiles": [
-    "automation/cursor-agents/task-1754636520967-1.cjs",
-    "automation/cursor-agents/task-1754636520967-2.cjs",
-    "automation/cursor-agents/task-1754636520967-3.cjs",
-    "automation/cursor-agents/task-1754636520967-4.cjs",
-    "automation/cursor-agents/task-1754636520967-5.cjs",
+    "automation/cursor-agents/task-1754636524864-1.cjs",
+    "automation/cursor-agents/task-1754636524864-2.cjs",
+    "automation/cursor-agents/task-1754636524864-3.cjs",
+    "automation/cursor-agents/task-1754636524864-4.cjs",
+    "automation/cursor-agents/task-1754636524864-5.cjs",
+    "automation/cursor-agents/task-1754636526084-1.cjs",
+    "automation/cursor-agents/task-1754636526084-2.cjs",
+    "automation/cursor-agents/task-1754636526084-3.cjs",
+    "automation/cursor-agents/task-1754636526084-4.cjs",
+    "automation/cursor-agents/task-1754636526084-5.cjs",
     "automation/instagram-agents/captions.json",
     "automation/instagram-agents/highlights.json",
     "data/reports/alignment/alignment-report.json",
+    "data/reports/alignment/chat-raw.txt",
     "data/reports/design/design-analysis.json",
+    "data/reports/feature-marketing/feature-marketing-actions.json",
     "data/reports/frontend-sync/frontend-sync-actions.json",
     "data/reports/homepage-promo/homepage-promo-actions.json",
-    "data/reports/homepage-promo/proposals/proposal-1754636521283.md",
+    "data/reports/homepage-promo/proposals/proposal-1754636525108.md",
+    "data/reports/homepage-promo/proposals/proposal-1754636526290.md",
+    "data/reports/link-monitor/site-link-report.json",
+    "data/reports/marketing/linkedin/linkedin-posts.json",
     "data/reports/marketing/linkedin/linkedin-pro-posts.json",
-    "data/reports/responsive/responsive-analysis.json"
+    "data/reports/responsive/responsive-analysis.json",
+    "data/reports/saas/saas-actions.json",
+    "data/reports/spec-dev/chat-raw.html",
+    "data/reports/spec-dev/site-crawl.json",
+    "data/reports/spec-dev/spec-dev-actions.json",
+    "pages/index.tsx",
+    "tsconfig.tsbuildinfo"
   ],
   "actions": [
-    "sync_content_metadata"
+    "sync_content_metadata",
+    "sync_pages_components"
   ]
 }
