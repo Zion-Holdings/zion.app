@@ -1,0 +1,1 @@
+export default function AdminAutomationStatus(){return <div className="p-6">Automation Status</div>;}
