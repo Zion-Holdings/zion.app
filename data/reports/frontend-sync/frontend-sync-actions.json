@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-08T06:11:54.645Z",
+  "timestamp": "2025-08-08T06:11:57.703Z",
   "changedFiles": [
     "automation/cursor-agents/task-1754633506701-1.cjs",
     "automation/cursor-agents/task-1754633506701-2.cjs",
@@ -16,6 +16,11 @@
     "automation/cursor-agents/task-1754633512592-3.cjs",
     "automation/cursor-agents/task-1754633512592-4.cjs",
     "automation/cursor-agents/task-1754633512592-5.cjs",
+    "automation/cursor-agents/task-1754633514454-1.cjs",
+    "automation/cursor-agents/task-1754633514454-2.cjs",
+    "automation/cursor-agents/task-1754633514454-3.cjs",
+    "automation/cursor-agents/task-1754633514454-4.cjs",
+    "automation/cursor-agents/task-1754633514454-5.cjs",
     "automation/instagram-agents/captions.json",
     "automation/instagram-agents/highlights.json",
     "data/reports/alignment/alignment-report.json",
@@ -29,6 +34,7 @@
     "data/reports/homepage-promo/proposals/proposal-1754633506946.md",
     "data/reports/homepage-promo/proposals/proposal-1754633509679.md",
     "data/reports/homepage-promo/proposals/proposal-1754633512704.md",
+    "data/reports/homepage-promo/proposals/proposal-1754633514603.md",
     "data/reports/link-monitor/site-link-report.json",
     "data/reports/marketing/linkedin/linkedin-posts.json",
     "data/reports/marketing/linkedin/linkedin-pro-posts.json",
@@ -38,7 +44,8 @@
     "data/reports/spec-dev/site-crawl.json",
     "data/reports/spec-dev/spec-dev-actions.json",
     "data/reports/variation/variation-report.json",
-    "pages/index.tsx"
+    "pages/index.tsx",
+    "tsconfig.tsbuildinfo"
   ],
   "actions": [
     "sync_content_metadata",
