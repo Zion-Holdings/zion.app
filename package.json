@@ -210,7 +210,12 @@
     "git:pull": "node automation/git-pull-rebase.cjs",
     "git:cron:start": "bash automation/git-sync-cron.sh start",
     "git:cron:stop": "bash automation/git-sync-cron.sh stop",
-    "git:cron:status": "bash automation/git-sync-cron.sh status"
+    "git:cron:status": "bash automation/git-sync-cron.sh status",
+    "cron:start": "bash automation/start-cron-services.sh start",
+    "cron:stop": "bash automation/start-cron-services.sh stop",
+    "cron:status": "bash automation/start-cron-services.sh status",
+    "cron:restart": "bash automation/start-cron-services.sh restart",
+    "cron:health": "node automation/cron-health-checker.cjs"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
