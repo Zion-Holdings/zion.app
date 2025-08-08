@@ -1,0 +1,3 @@
+export default function EnhancedHome() {
+  return <div>Enhanced Home</div>;
+}

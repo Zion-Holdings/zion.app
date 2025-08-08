@@ -1,0 +1,3 @@
+export default function DigitalTransformationInsights() {
+  return <div>Digital Transformation Insights</div>;
+}

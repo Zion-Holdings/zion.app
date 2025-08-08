@@ -1,0 +1,3 @@
+export default function CloudComputingStrategies() {
+  return <div>Cloud Computing Strategies</div>;
+}
