@@ -1,0 +1,1 @@
+export default function TechnologyImplementationStrategiesChat() { return <div className="py-12">Technology implementation strategies.</div>; }

@@ -1,0 +1,1 @@
+export default function AutomationIndexPage() { return <div className="py-12">Automation dashboard coming soon.</div>; }

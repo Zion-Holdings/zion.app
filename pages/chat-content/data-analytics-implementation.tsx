@@ -1,0 +1,1 @@
+export default function DataAnalyticsImplementationChat() { return <div className="py-12">Data analytics implementation.</div>; }

@@ -1,0 +1,1 @@
+export default function AutomationStatusPage() { return <div className="py-12">Automation status coming soon.</div>; }

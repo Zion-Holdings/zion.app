@@ -1,0 +1,1 @@
+export default function HomePage() { return <div className="py-12">Welcome to Zion.</div>; }
