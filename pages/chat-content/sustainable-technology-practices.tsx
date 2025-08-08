@@ -1,0 +1,1 @@
+export default function ChatContent9() { return <div className="py-10 text-white">Content coming soon.</div>; }
