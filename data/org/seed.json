@@ -1,0 +1,135 @@
+{
+  "founders": [
+    {
+      "id": "fnd-1",
+      "name": "Zion Founder 1",
+      "alias": "zf1",
+      "roleType": "Admin",
+      "title": "Co-Founder & CEO",
+      "bio": "Co-founder of Zion, leading vision and strategy.",
+      "links": [{ "label": "X", "url": "https://x.com/zf1" }],
+      "location": { "zone": "Global", "region": "Global", "country": "US", "city": "NYC" },
+      "photoUrl": "/avatars/founder1.png"
+    },
+    {
+      "id": "fnd-2",
+      "name": "Zion Founder 2",
+      "alias": "zf2",
+      "roleType": "Admin",
+      "title": "Co-Founder & CTO",
+      "bio": "Co-founder of Zion, leading technology.",
+      "links": [{ "label": "GitHub", "url": "https://github.com/zf2" }],
+      "location": { "zone": "Global", "region": "Global", "country": "US", "city": "SF" },
+      "photoUrl": "/avatars/founder2.png"
+    }
+  ],
+  "coreTeam": [
+    {
+      "id": "core-ops-1",
+      "name": "Ops Lead",
+      "alias": "opslead",
+      "department": "Ops",
+      "roleType": "Lead",
+      "title": "Head of Operations",
+      "bio": "Oversees operations across zones.",
+      "links": [],
+      "location": { "zone": "Global", "region": "EMEA", "country": "DE", "city": "Berlin" },
+      "photoUrl": "/avatars/ops.png"
+    },
+    {
+      "id": "core-tech-1",
+      "name": "Tech Lead",
+      "alias": "techlead",
+      "department": "Tech",
+      "roleType": "Lead",
+      "title": "Lead Engineer",
+      "bio": "Leads core protocol engineering.",
+      "links": [],
+      "location": { "zone": "Global", "region": "AMER", "country": "US", "city": "Austin" },
+      "photoUrl": "/avatars/tech.png"
+    },
+    {
+      "id": "core-growth-1",
+      "name": "Growth Lead",
+      "alias": "growthlead",
+      "department": "Growth",
+      "roleType": "Lead",
+      "title": "Head of Growth",
+      "bio": "Drives ecosystem expansion.",
+      "links": [],
+      "location": { "zone": "Global", "region": "APAC", "country": "SG", "city": "Singapore" },
+      "photoUrl": "/avatars/growth.png"
+    },
+    {
+      "id": "core-legal-1",
+      "name": "Legal Lead",
+      "alias": "legallead",
+      "department": "Legal",
+      "roleType": "Lead",
+      "title": "Head of Legal",
+      "bio": "Governance and compliance.",
+      "links": [],
+      "location": { "zone": "Global", "region": "AMER", "country": "US", "city": "NYC" },
+      "photoUrl": "/avatars/legal.png"
+    }
+  ],
+  "contributors": [
+    {
+      "id": "con-bounty-1",
+      "name": "Bounty Hunter",
+      "alias": "bountyhunter",
+      "roleType": "Builder",
+      "category": "bounties",
+      "bio": "Completes open bounties.",
+      "links": [],
+      "location": { "zone": "Africa", "region": "Zion Africa", "country": "NG", "city": "Lagos" },
+      "photoUrl": "/avatars/bounty.png"
+    },
+    {
+      "id": "con-mentor-1",
+      "name": "Academy Mentor",
+      "alias": "mentor",
+      "roleType": "Builder",
+      "category": "academy mentors",
+      "bio": "Mentors builders.",
+      "links": [],
+      "location": { "zone": "Europe", "region": "Zion Europe", "country": "ES", "city": "Barcelona" },
+      "photoUrl": "/avatars/mentor.png"
+    },
+    {
+      "id": "con-dev-1",
+      "name": "Ecosystem Dev",
+      "alias": "ecosysdev",
+      "roleType": "Builder",
+      "category": "devs",
+      "bio": "Builds integrations and tooling.",
+      "links": [],
+      "location": { "zone": "Asia", "region": "Zion Asia", "country": "IN", "city": "Bengaluru" },
+      "photoUrl": "/avatars/dev.png"
+    }
+  ],
+  "delegates": [
+    {
+      "id": "del-africa-1",
+      "name": "Zion Africa Delegate",
+      "alias": "africa-del",
+      "roleType": "Delegate",
+      "bio": "Regionally elected representative.",
+      "links": [],
+      "votingPower": 1200,
+      "location": { "zone": "Africa", "region": "Zion Africa", "country": "KE", "city": "Nairobi" },
+      "photoUrl": "/avatars/africa.png"
+    },
+    {
+      "id": "del-europe-1",
+      "name": "Zion Europe Delegate",
+      "alias": "europe-del",
+      "roleType": "Delegate",
+      "bio": "Staked representative.",
+      "links": [],
+      "votingPower": 950,
+      "location": { "zone": "Europe", "region": "Zion Europe", "country": "FR", "city": "Paris" },
+      "photoUrl": "/avatars/europe.png"
+    }
+  ]
+}
