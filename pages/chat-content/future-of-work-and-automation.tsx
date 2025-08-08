@@ -1,0 +1,1 @@
+export default function BlogFutureOfWork() { return <div>Future of Work and Automation</div>; }

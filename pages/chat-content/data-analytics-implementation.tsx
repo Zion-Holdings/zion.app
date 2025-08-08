@@ -1,0 +1,1 @@
+export default function BlogDataAnalytics() { return <div>Data Analytics Implementation</div>; }

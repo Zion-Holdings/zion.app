@@ -1,0 +1,1 @@
+export default function BlogDigitalTransformation() { return <div>Digital Transformation Insights</div>; }

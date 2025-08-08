@@ -1,0 +1,1 @@
+export default function BlogCybersecurity() { return <div>Cybersecurity Best Practices</div>; }
