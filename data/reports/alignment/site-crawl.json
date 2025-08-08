@@ -3,10 +3,19 @@
     "url": "https://ziontechgroup.netlify.app"
   },
   {
+    "url": "https://ziontechgroup.netlify.app/#main-content"
+  },
+  {
     "url": "https://ziontechgroup.netlify.app/"
   },
   {
     "url": "https://ziontechgroup.netlify.app/services"
+  },
+  {
+    "url": "https://ziontechgroup.netlify.app/about"
+  },
+  {
+    "url": "https://ziontechgroup.netlify.app/contact"
   },
   {
     "url": "https://ziontechgroup.netlify.app/products"
@@ -15,6 +24,6 @@
     "url": "https://ziontechgroup.netlify.app/blog"
   },
   {
-    "url": "https://ziontechgroup.netlify.app/contact"
+    "url": "https://ziontechgroup.netlify.app/#"
   }
 ]
