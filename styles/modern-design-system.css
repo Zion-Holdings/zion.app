@@ -556,6 +556,12 @@
   }
 }
 
+/* Page break handling for resume sections */
+@media print {
+  .avoid-break { page-break-inside: avoid; }
+  .page-break { page-break-before: always; }
+}
+
 /* Enhanced Media Queries */
 @media (min-width: 768px) {
   .mobile-only {

@@ -1,0 +1,1 @@
+export default function AutoUpdate() { return <div className="py-8">Auto Update</div>; }
