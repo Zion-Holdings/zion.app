@@ -86,6 +86,16 @@ We have successfully implemented a comprehensive intelligent automation system f
   - Status reporting
   - System coordination
 
+### 8. Link Monitor & Fix (New)
+- **Files**: `automation/site-link-crawler.cjs`, `automation/site-link-fixer.cjs`, `automation/site-link-factory.cjs`, `automation/site-link-orchestrator.cjs`, `automation/site-link-cron.sh`
+- **Purpose**: Continuously crawl `https://ziontechgroup.com`, verify all links and sublinks (internal and external), auto-generate small agents per cycle, and attempt fixes for broken internal references.
+- **Features**:
+  - Concurrent crawler with politeness delay and redirect resolution
+  - Status and latency capture; writes `data/reports/links/crawl-*.json`
+  - Heuristic fixer that updates in-repo references when safe and writes `fix-*.json`
+  - Orchestrator integrates crawler, fixer, and new link factory
+  - Cron script with start|stop|status|run interface (30-min cadence)
+
 ## Generated Automation Scripts
 
 ### 1. Code Quality Monitor
@@ -262,6 +272,14 @@ npm run instagram:marketing:analyze
 npm run instagram:marketing:start
 ```
 
+### Link Monitoring & Fixing
+
+- Start orchestrator once: `node automation/site-link-orchestrator.cjs once`
+- Start cron: `npm run links:cron:start`
+- Manual crawl: `node automation/site-link-crawler.cjs`
+- Manual fix: `node automation/site-link-fixer.cjs`
+- Reports: `data/reports/links/`
+
 ## Benefits
 
 ### Continuous Improvement
@@ -341,3 +359,7 @@ The system is now capable of continuously improving the application, fixing erro
 - **Files**: `automation/performance-audit.cjs`, `.github/workflows/performance-weekly.yml`
 - **Purpose**: Builds the app, boots a local server, measures simple TTFB and HTML payload size for key pages, and writes JSON reports to `data/reports/performance/`.
 - **Output**: `performance-*.json` artifacts with thresholds and alert flags. Useful for tracking regressions in server responsiveness and page weight.
+
+### 10. Link Monitor Continuous (GitHub Actions)
+- **File**: `.github/workflows/link-monitor-continuous.yml`
+- **Purpose**: Runs crawler and fixer every 30 minutes against `https://ziontechgroup.com`, uploads `data/reports/links` and automation logs.

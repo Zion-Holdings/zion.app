@@ -1,0 +1,223 @@
+{
+  "summary": {
+    "baseUrl": "https://ziontechgroup.com",
+    "startedAt": "2025-08-08T16:47:32.165Z",
+    "totalVisited": 7,
+    "totalResults": 7,
+    "withinDomain": 7,
+    "external": 0,
+    "statuses": {
+      "200": 7
+    }
+  },
+  "results": [
+    {
+      "url": "https://ziontechgroup.com",
+      "finalUrl": "https://ziontechgroup.com/",
+      "status": 200,
+      "ok": true,
+      "durationMs": 101,
+      "error": null,
+      "headers": {
+        "accept-ranges": "bytes",
+        "age": "0",
+        "cache-control": "public,max-age=0,must-revalidate",
+        "cache-status": "\"Netlify Edge\"; fwd=stale",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Fri, 08 Aug 2025 16:47:30 GMT",
+        "etag": "\"127638dd9132f1bb17cbabad08c131a7-ssl-df\"",
+        "netlify-vary": "cookie=__next_preview_data:presence|__prerender_bypass:presence",
+        "server": "Netlify",
+        "strict-transport-security": "max-age=31536000",
+        "vary": "Accept-Encoding",
+        "x-nf-request-id": "01K25995Q19VWM6GCJ0DE307YZ",
+        "transfer-encoding": "chunked"
+      },
+      "links": [
+        "https://ziontechgroup.com/",
+        "https://ziontechgroup.com/services",
+        "https://ziontechgroup.com/about",
+        "https://ziontechgroup.com/contact",
+        "https://ziontechgroup.com/products",
+        "https://ziontechgroup.com/blog"
+      ]
+    },
+    {
+      "url": "https://ziontechgroup.com/",
+      "finalUrl": "https://ziontechgroup.com/",
+      "status": 200,
+      "ok": true,
+      "durationMs": 54,
+      "error": null,
+      "headers": {
+        "accept-ranges": "bytes",
+        "age": "0",
+        "cache-control": "public,max-age=0,must-revalidate",
+        "cache-status": "\"Netlify Edge\"; hit",
+        "content-length": "3317",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Fri, 08 Aug 2025 16:47:30 GMT",
+        "etag": "\"127638dd9132f1bb17cbabad08c131a7-ssl-df\"",
+        "netlify-vary": "cookie=__next_preview_data:presence|__prerender_bypass:presence",
+        "server": "Netlify",
+        "strict-transport-security": "max-age=31536000",
+        "vary": "Accept-Encoding",
+        "x-nf-request-id": "01K25995ZF2JJNQV94670Q239D"
+      },
+      "links": [
+        "https://ziontechgroup.com/",
+        "https://ziontechgroup.com/services",
+        "https://ziontechgroup.com/about",
+        "https://ziontechgroup.com/contact",
+        "https://ziontechgroup.com/products",
+        "https://ziontechgroup.com/blog"
+      ]
+    },
+    {
+      "url": "https://ziontechgroup.com/services",
+      "finalUrl": "https://ziontechgroup.com/services",
+      "status": 200,
+      "ok": true,
+      "durationMs": 35,
+      "error": null,
+      "headers": {
+        "accept-ranges": "bytes",
+        "age": "0",
+        "cache-control": "public,max-age=0,must-revalidate",
+        "cache-status": "\"Netlify Edge\"; fwd=stale",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Fri, 08 Aug 2025 16:47:31 GMT",
+        "etag": "\"0944348809f80b6088846dffa2dd575c-ssl-df\"",
+        "netlify-vary": "cookie=__next_preview_data:presence|__prerender_bypass:presence",
+        "server": "Netlify",
+        "strict-transport-security": "max-age=31536000",
+        "vary": "Accept-Encoding",
+        "x-nf-request-id": "01K259967KPXGAVRN436CXD7HT",
+        "transfer-encoding": "chunked"
+      },
+      "links": [
+        "https://ziontechgroup.com/",
+        "https://ziontechgroup.com/services",
+        "https://ziontechgroup.com/about",
+        "https://ziontechgroup.com/contact"
+      ]
+    },
+    {
+      "url": "https://ziontechgroup.com/about",
+      "finalUrl": "https://ziontechgroup.com/about",
+      "status": 200,
+      "ok": true,
+      "durationMs": 35,
+      "error": null,
+      "headers": {
+        "accept-ranges": "bytes",
+        "age": "0",
+        "cache-control": "public,max-age=0,must-revalidate",
+        "cache-status": "\"Netlify Edge\"; fwd=stale",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Fri, 08 Aug 2025 16:47:31 GMT",
+        "etag": "\"f3332a0c0bc67a15d8df1d61196714ab-ssl-df\"",
+        "netlify-vary": "cookie=__next_preview_data:presence|__prerender_bypass:presence",
+        "server": "Netlify",
+        "strict-transport-security": "max-age=31536000",
+        "vary": "Accept-Encoding",
+        "x-nf-request-id": "01K25996F1V4KTYCHEXP9YXP83",
+        "transfer-encoding": "chunked"
+      },
+      "links": [
+        "https://ziontechgroup.com/",
+        "https://ziontechgroup.com/services",
+        "https://ziontechgroup.com/about",
+        "https://ziontechgroup.com/contact"
+      ]
+    },
+    {
+      "url": "https://ziontechgroup.com/contact",
+      "finalUrl": "https://ziontechgroup.com/contact",
+      "status": 200,
+      "ok": true,
+      "durationMs": 50,
+      "error": null,
+      "headers": {
+        "accept-ranges": "bytes",
+        "age": "0",
+        "cache-control": "public,max-age=0,must-revalidate",
+        "cache-status": "\"Netlify Edge\"; fwd=stale",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Fri, 08 Aug 2025 16:47:31 GMT",
+        "etag": "\"620f256c29acfc8b56f9106bb1264e79-ssl-df\"",
+        "netlify-vary": "cookie=__next_preview_data:presence|__prerender_bypass:presence",
+        "server": "Netlify",
+        "strict-transport-security": "max-age=31536000",
+        "vary": "Accept-Encoding",
+        "x-nf-request-id": "01K25996PF65DP1H9W12FYZ20Q",
+        "transfer-encoding": "chunked"
+      },
+      "links": [
+        "https://ziontechgroup.com/",
+        "https://ziontechgroup.com/services",
+        "https://ziontechgroup.com/about",
+        "https://ziontechgroup.com/contact"
+      ]
+    },
+    {
+      "url": "https://ziontechgroup.com/products",
+      "finalUrl": "https://ziontechgroup.com/products",
+      "status": 200,
+      "ok": true,
+      "durationMs": 147,
+      "error": null,
+      "headers": {
+        "accept-ranges": "bytes",
+        "age": "0",
+        "cache-control": "public,max-age=0,must-revalidate",
+        "cache-status": "\"Netlify Edge\"; fwd=stale",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Fri, 08 Aug 2025 16:47:31 GMT",
+        "etag": "\"1b2e1ad97e27c9c857fc088236d4d3f3-ssl-df\"",
+        "netlify-vary": "cookie=__next_preview_data:presence|__prerender_bypass:presence",
+        "server": "Netlify",
+        "strict-transport-security": "max-age=31536000",
+        "vary": "Accept-Encoding",
+        "x-nf-request-id": "01K25996YWPJVFJ1J0Z1NMX06Y",
+        "transfer-encoding": "chunked"
+      },
+      "links": [
+        "https://ziontechgroup.com/",
+        "https://ziontechgroup.com/services",
+        "https://ziontechgroup.com/about",
+        "https://ziontechgroup.com/contact"
+      ]
+    },
+    {
+      "url": "https://ziontechgroup.com/blog",
+      "finalUrl": "https://ziontechgroup.com/blog",
+      "status": 200,
+      "ok": true,
+      "durationMs": 30,
+      "error": null,
+      "headers": {
+        "accept-ranges": "bytes",
+        "age": "0",
+        "cache-control": "public,max-age=0,must-revalidate",
+        "cache-status": "\"Netlify Edge\"; fwd=stale",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Fri, 08 Aug 2025 16:47:32 GMT",
+        "etag": "\"55de5d610e3273b2267df4ce84275638-ssl-df\"",
+        "netlify-vary": "cookie=__next_preview_data:presence|__prerender_bypass:presence",
+        "server": "Netlify",
+        "strict-transport-security": "max-age=31536000",
+        "vary": "Accept-Encoding",
+        "x-nf-request-id": "01K2599798XWYVA9QBF3CPY1VT",
+        "transfer-encoding": "chunked"
+      },
+      "links": [
+        "https://ziontechgroup.com/",
+        "https://ziontechgroup.com/services",
+        "https://ziontechgroup.com/about",
+        "https://ziontechgroup.com/contact",
+        "https://ziontechgroup.com/blog"
+      ]
+    }
+  ]
+}

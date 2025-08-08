@@ -11,6 +11,8 @@ function log(m) { const line = `[${new Date().toISOString()}] ${m}\n`; console.l
 function run(cmd, args) { log(`▶ ${cmd} ${args.join(' ')}`); const r = spawnSync(cmd, args, { stdio: 'pipe', encoding: 'utf8' }); if (r.stdout) fs.appendFileSync(LOG, r.stdout); if (r.stderr) fs.appendFileSync(LOG, r.stderr); }
 
 function cycle() {
+  // Generate fresh agents for this cycle as part of the new autonomous link factory
+  try { run('node', [path.join(__dirname, 'site-link-factory.cjs')]); } catch {}
   run('node', [path.join(__dirname, 'site-link-crawler.cjs')]);
   run('node', [path.join(__dirname, 'site-link-fixer.cjs')]);
 }
