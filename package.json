@@ -16,6 +16,7 @@
   },
   "scripts": {
     "deps:maintain": "node automation/dependency-update-orchestrator.cjs",
+    "feedback:analyze": "node scripts/analyze-feedback.js",
     "deps:cron:start": "bash automation/dependency-maintenance-cron.sh",
     "sitemap": "node scripts/generate-sitemap.mjs",
     "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev",
