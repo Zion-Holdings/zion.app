@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-08T16:53:34.583Z",
+  "generatedAt": "2025-08-08T17:26:47.280Z",
   "prompts": [
     {
       "title": "Cursor Task: error_detected from alignment-orchestrator.log",
@@ -10,16 +10,16 @@
       "prompt": "You are a senior automation engineer working on a Next.js app with extensive Node-based automation. Analyze recent issues and propose targeted fixes or enhancements with code edits.\nContext Source: automation-launcher.log\nReason: error_detected\nActions:\n- Identify root cause\n- Propose code edits\n- Generate or fix agents\n- Commit and push\n- Ensure continuous operation"
     },
     {
-      "title": "Cursor Task: error_detected from autonomous-error-cron.log",
-      "prompt": "You are a senior automation engineer working on a Next.js app with extensive Node-based automation. Analyze recent issues and propose targeted fixes or enhancements with code edits.\nContext Source: autonomous-error-cron.log\nReason: error_detected\nActions:\n- Identify root cause\n- Propose code edits\n- Generate or fix agents\n- Commit and push\n- Ensure continuous operation"
-    },
-    {
       "title": "Cursor Task: error_detected from autonomous-error-monitoring-factory.log",
       "prompt": "You are a senior automation engineer working on a Next.js app with extensive Node-based automation. Analyze recent issues and propose targeted fixes or enhancements with code edits.\nContext Source: autonomous-error-monitoring-factory.log\nReason: error_detected\nActions:\n- Identify root cause\n- Propose code edits\n- Generate or fix agents\n- Commit and push\n- Ensure continuous operation"
     },
     {
-      "title": "Cursor Task: error_detected from linkedin-marketing-orchestrator.log",
-      "prompt": "You are a senior automation engineer working on a Next.js app with extensive Node-based automation. Analyze recent issues and propose targeted fixes or enhancements with code edits.\nContext Source: linkedin-marketing-orchestrator.log\nReason: error_detected\nActions:\n- Identify root cause\n- Propose code edits\n- Generate or fix agents\n- Commit and push\n- Ensure continuous operation"
+      "title": "Cursor Task: error_detected from autonomous-meta-orchestrator.log",
+      "prompt": "You are a senior automation engineer working on a Next.js app with extensive Node-based automation. Analyze recent issues and propose targeted fixes or enhancements with code edits.\nContext Source: autonomous-meta-orchestrator.log\nReason: error_detected\nActions:\n- Identify root cause\n- Propose code edits\n- Generate or fix agents\n- Commit and push\n- Ensure continuous operation"
+    },
+    {
+      "title": "Cursor Task: error_detected from continuous-automation-improvement-system.log",
+      "prompt": "You are a senior automation engineer working on a Next.js app with extensive Node-based automation. Analyze recent issues and propose targeted fixes or enhancements with code edits.\nContext Source: continuous-automation-improvement-system.log\nReason: error_detected\nActions:\n- Identify root cause\n- Propose code edits\n- Generate or fix agents\n- Commit and push\n- Ensure continuous operation"
     }
   ]
 }

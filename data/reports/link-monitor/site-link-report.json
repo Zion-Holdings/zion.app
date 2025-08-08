@@ -1,7 +1,7 @@
 {
-  "timestamp": "2025-08-08T16:53:32.917Z",
+  "timestamp": "2025-08-08T17:26:46.855Z",
   "startUrl": "https://ziontechgroup.com/",
-  "totalVisited": 28,
+  "totalVisited": 12,
   "pages": [
     {
       "url": "https://ziontechgroup.com/",
@@ -13,6 +13,10 @@
     },
     {
       "url": "https://ziontechgroup.com/about",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/talent",
       "status": 200
     },
     {
@@ -28,91 +32,23 @@
       "status": 200
     },
     {
-      "url": "https://ziontechgroup.com/404",
+      "url": "https://ziontechgroup.com/talent/ava-chen",
       "status": 200
     },
     {
-      "url": "https://ziontechgroup.com/auth",
+      "url": "https://ziontechgroup.com/talent/marco-silva",
       "status": 200
     },
     {
-      "url": "https://ziontechgroup.com/auth/callback",
+      "url": "https://ziontechgroup.com/talent/nina-patel",
       "status": 200
     },
     {
-      "url": "https://ziontechgroup.com/auth/forgot-password",
+      "url": "https://ziontechgroup.com/talent/kenji-yamada",
       "status": 200
     },
     {
-      "url": "https://ziontechgroup.com/auth/reset-password",
-      "status": 200
-    },
-    {
-      "url": "https://ziontechgroup.com/auth/verify",
-      "status": 200
-    },
-    {
-      "url": "https://ziontechgroup.com/auto/auto-update-2025-08-08t16-07-55-171z",
-      "status": 200
-    },
-    {
-      "url": "https://ziontechgroup.com/auto/auto-update-2025-08-08t16-10-20-249z",
-      "status": 200
-    },
-    {
-      "url": "https://ziontechgroup.com/auto/auto-update-2025-08-08t16-30-00-086z",
-      "status": 200
-    },
-    {
-      "url": "https://ziontechgroup.com/auto/auto-update-2025-08-08t16-30-20-949z",
-      "status": 200
-    },
-    {
-      "url": "https://ziontechgroup.com/auto/auto-update-2025-08-08t16-38-19-257z",
-      "status": 200
-    },
-    {
-      "url": "https://ziontechgroup.com/auto/auto-update-2025-08-08t16-49-54-200z",
-      "status": 200
-    },
-    {
-      "url": "https://ziontechgroup.com/automation",
-      "status": 200
-    },
-    {
-      "url": "https://ziontechgroup.com/blockchain-solutions",
-      "status": 200
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/5g-technology-and-its-impact-on-iot-chat",
-      "status": 200
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat",
-      "status": 200
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-first-development-building-scalable-systems-chat",
-      "status": 200
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/augmented-reality-in-enterprise-applications-chat",
-      "status": 200
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/blockchain-technology-in-modern-business-solutions-chat",
-      "status": 200
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-native-architecture-best-practices-chat",
-      "status": 200
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cybersecurity-trends-for-2024-and-beyond-chat",
-      "status": 200
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/data-analytics-in-digital-transformation-chat",
+      "url": "https://ziontechgroup.com/talent/lena-mueller",
       "status": 200
     }
   ],

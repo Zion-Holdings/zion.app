@@ -1,6 +1,6 @@
 {
-  "timestamp": "2025-08-08T16:53:38.580Z",
-  "filesAnalyzed": 105,
+  "timestamp": "2025-08-08T17:26:50.573Z",
+  "filesAnalyzed": 115,
   "items": [
     {
       "file": "/workspace/pages/404.tsx",
@@ -8,6 +8,7 @@
         "missing_enhanced_layout",
         "missing_skip_link",
         "missing_breadcrumbs",
+        "missing_head_import",
         "missing_viewport_meta",
         "no_dark_theme_support"
       ]
@@ -28,7 +29,9 @@
         "missing_enhanced_layout",
         "missing_skip_link",
         "missing_breadcrumbs",
-        "missing_viewport_meta"
+        "missing_head_import",
+        "missing_viewport_meta",
+        "no_dark_theme_support"
       ]
     },
     {
@@ -37,6 +40,18 @@
         "missing_enhanced_layout",
         "missing_skip_link",
         "missing_breadcrumbs",
+        "missing_head_import",
+        "missing_viewport_meta",
+        "no_dark_theme_support"
+      ]
+    },
+    {
+      "file": "/workspace/pages/admin/automation-status.tsx",
+      "issues": [
+        "missing_enhanced_layout",
+        "missing_skip_link",
+        "missing_breadcrumbs",
+        "missing_head_import",
         "missing_viewport_meta",
         "no_dark_theme_support"
       ]
@@ -135,6 +150,7 @@
         "missing_enhanced_layout",
         "missing_skip_link",
         "missing_breadcrumbs",
+        "missing_head_import",
         "missing_viewport_meta",
         "no_dark_theme_support"
       ]
@@ -145,6 +161,7 @@
         "missing_enhanced_layout",
         "missing_skip_link",
         "missing_breadcrumbs",
+        "missing_head_import",
         "missing_viewport_meta",
         "no_dark_theme_support"
       ]
@@ -155,6 +172,7 @@
         "missing_enhanced_layout",
         "missing_skip_link",
         "missing_breadcrumbs",
+        "missing_head_import",
         "missing_viewport_meta",
         "no_dark_theme_support"
       ]
@@ -165,6 +183,7 @@
         "missing_enhanced_layout",
         "missing_skip_link",
         "missing_breadcrumbs",
+        "missing_head_import",
         "missing_viewport_meta",
         "no_dark_theme_support"
       ]
@@ -175,6 +194,7 @@
         "missing_enhanced_layout",
         "missing_skip_link",
         "missing_breadcrumbs",
+        "missing_head_import",
         "missing_viewport_meta",
         "no_dark_theme_support"
       ]
@@ -185,6 +205,7 @@
         "missing_enhanced_layout",
         "missing_skip_link",
         "missing_breadcrumbs",
+        "missing_head_import",
         "missing_viewport_meta",
         "no_dark_theme_support"
       ]
@@ -195,6 +216,7 @@
         "missing_enhanced_layout",
         "missing_skip_link",
         "missing_breadcrumbs",
+        "missing_head_import",
         "missing_viewport_meta",
         "no_dark_theme_support"
       ]
@@ -205,6 +227,7 @@
         "missing_enhanced_layout",
         "missing_skip_link",
         "missing_breadcrumbs",
+        "missing_head_import",
         "missing_viewport_meta",
         "no_dark_theme_support"
       ]
@@ -215,6 +238,7 @@
         "missing_enhanced_layout",
         "missing_skip_link",
         "missing_breadcrumbs",
+        "missing_head_import",
         "missing_viewport_meta",
         "no_dark_theme_support"
       ]
@@ -225,6 +249,29 @@
         "missing_enhanced_layout",
         "missing_skip_link",
         "missing_breadcrumbs",
+        "missing_head_import",
+        "missing_viewport_meta",
+        "no_dark_theme_support"
+      ]
+    },
+    {
+      "file": "/workspace/pages/auto/auto-update-2025-08-08t16-49-54-200z.tsx",
+      "issues": [
+        "missing_enhanced_layout",
+        "missing_skip_link",
+        "missing_breadcrumbs",
+        "missing_head_import",
+        "missing_viewport_meta",
+        "no_dark_theme_support"
+      ]
+    },
+    {
+      "file": "/workspace/pages/auto/auto-update-2025-08-08t17-23-07-688z.tsx",
+      "issues": [
+        "missing_enhanced_layout",
+        "missing_skip_link",
+        "missing_breadcrumbs",
+        "missing_head_import",
         "missing_viewport_meta",
         "no_dark_theme_support"
       ]
@@ -246,6 +293,7 @@
         "missing_enhanced_layout",
         "missing_skip_link",
         "missing_breadcrumbs",
+        "missing_head_import",
         "missing_viewport_meta",
         "no_dark_theme_support"
       ]
@@ -566,6 +614,7 @@
         "missing_enhanced_layout",
         "missing_skip_link",
         "missing_breadcrumbs",
+        "missing_head_import",
         "missing_viewport_meta",
         "no_dark_theme_support"
       ]
@@ -576,6 +625,7 @@
         "missing_enhanced_layout",
         "missing_skip_link",
         "missing_breadcrumbs",
+        "missing_head_import",
         "missing_viewport_meta",
         "no_dark_theme_support"
       ]
@@ -586,6 +636,7 @@
         "missing_enhanced_layout",
         "missing_skip_link",
         "missing_breadcrumbs",
+        "missing_head_import",
         "missing_viewport_meta",
         "no_dark_theme_support"
       ]
@@ -596,6 +647,7 @@
         "missing_enhanced_layout",
         "missing_skip_link",
         "missing_breadcrumbs",
+        "missing_head_import",
         "missing_viewport_meta",
         "no_dark_theme_support"
       ]
@@ -606,6 +658,7 @@
         "missing_enhanced_layout",
         "missing_skip_link",
         "missing_breadcrumbs",
+        "missing_head_import",
         "missing_viewport_meta",
         "no_dark_theme_support"
       ]
@@ -616,6 +669,7 @@
         "missing_enhanced_layout",
         "missing_skip_link",
         "missing_breadcrumbs",
+        "missing_head_import",
         "missing_viewport_meta",
         "no_dark_theme_support"
       ]
@@ -626,6 +680,7 @@
         "missing_enhanced_layout",
         "missing_skip_link",
         "missing_breadcrumbs",
+        "missing_head_import",
         "missing_viewport_meta",
         "no_dark_theme_support"
       ]
@@ -636,6 +691,7 @@
         "missing_enhanced_layout",
         "missing_skip_link",
         "missing_breadcrumbs",
+        "missing_head_import",
         "missing_viewport_meta",
         "no_dark_theme_support"
       ]
@@ -646,6 +702,7 @@
         "missing_enhanced_layout",
         "missing_skip_link",
         "missing_breadcrumbs",
+        "missing_head_import",
         "missing_viewport_meta",
         "no_dark_theme_support"
       ]
@@ -656,6 +713,7 @@
         "missing_enhanced_layout",
         "missing_skip_link",
         "missing_breadcrumbs",
+        "missing_head_import",
         "missing_viewport_meta",
         "no_dark_theme_support"
       ]
@@ -666,6 +724,7 @@
         "missing_enhanced_layout",
         "missing_skip_link",
         "missing_breadcrumbs",
+        "missing_head_import",
         "missing_viewport_meta",
         "no_dark_theme_support"
       ]
@@ -676,6 +735,7 @@
         "missing_enhanced_layout",
         "missing_skip_link",
         "missing_breadcrumbs",
+        "missing_head_import",
         "missing_viewport_meta",
         "no_dark_theme_support"
       ]
@@ -686,6 +746,7 @@
         "missing_enhanced_layout",
         "missing_skip_link",
         "missing_breadcrumbs",
+        "missing_head_import",
         "missing_viewport_meta",
         "no_dark_theme_support"
       ]
@@ -696,6 +757,7 @@
         "missing_enhanced_layout",
         "missing_skip_link",
         "missing_breadcrumbs",
+        "missing_head_import",
         "missing_viewport_meta",
         "no_dark_theme_support"
       ]
@@ -706,12 +768,23 @@
         "missing_enhanced_layout",
         "missing_skip_link",
         "missing_breadcrumbs",
+        "missing_head_import",
         "missing_viewport_meta",
         "no_dark_theme_support"
       ]
     },
     {
       "file": "/workspace/pages/services/ai-model-development-chat.tsx",
+      "issues": [
+        "missing_enhanced_layout",
+        "missing_skip_link",
+        "missing_breadcrumbs",
+        "missing_viewport_meta",
+        "no_dark_theme_support"
+      ]
+    },
+    {
+      "file": "/workspace/pages/services/ai-seo-auditor.tsx",
       "issues": [
         "missing_enhanced_layout",
         "missing_skip_link",
@@ -751,6 +824,16 @@
       ]
     },
     {
+      "file": "/workspace/pages/services/customer-support-chatbot.tsx",
+      "issues": [
+        "missing_enhanced_layout",
+        "missing_skip_link",
+        "missing_breadcrumbs",
+        "missing_viewport_meta",
+        "no_dark_theme_support"
+      ]
+    },
+    {
       "file": "/workspace/pages/services/data-pipeline-engineering-chat.tsx",
       "issues": [
         "missing_enhanced_layout",
@@ -781,6 +864,26 @@
       ]
     },
     {
+      "file": "/workspace/pages/services/instagram-content-scheduler.tsx",
+      "issues": [
+        "missing_enhanced_layout",
+        "missing_skip_link",
+        "missing_breadcrumbs",
+        "missing_viewport_meta",
+        "no_dark_theme_support"
+      ]
+    },
+    {
+      "file": "/workspace/pages/services/landing-page-generator.tsx",
+      "issues": [
+        "missing_enhanced_layout",
+        "missing_skip_link",
+        "missing_breadcrumbs",
+        "missing_viewport_meta",
+        "no_dark_theme_support"
+      ]
+    },
+    {
       "file": "/workspace/pages/services/mobile-app-development-chat.tsx",
       "issues": [
         "missing_enhanced_layout",
@@ -802,6 +905,16 @@
     },
     {
       "file": "/workspace/pages/services/performance-optimization-chat.tsx",
+      "issues": [
+        "missing_enhanced_layout",
+        "missing_skip_link",
+        "missing_breadcrumbs",
+        "missing_viewport_meta",
+        "no_dark_theme_support"
+      ]
+    },
+    {
+      "file": "/workspace/pages/services/price-intelligence-service.tsx",
       "issues": [
         "missing_enhanced_layout",
         "missing_skip_link",
@@ -871,11 +984,23 @@
       ]
     },
     {
+      "file": "/workspace/pages/talent/[slug].tsx",
+      "issues": [
+        "missing_enhanced_layout",
+        "missing_skip_link",
+        "missing_breadcrumbs",
+        "missing_head_import",
+        "missing_viewport_meta",
+        "no_dark_theme_support"
+      ]
+    },
+    {
       "file": "/workspace/pages/talent/index.tsx",
       "issues": [
         "missing_enhanced_layout",
         "missing_skip_link",
         "missing_breadcrumbs",
+        "missing_head_import",
         "missing_viewport_meta",
         "no_dark_theme_support"
       ]
@@ -917,6 +1042,7 @@
     {
       "file": "/workspace/components/layout/EnhancedLayout.tsx",
       "issues": [
+        "missing_enhanced_navigation",
         "missing_nav_landmark",
         "missing_skip_link",
         "missing_breadcrumbs",
@@ -928,8 +1054,20 @@
     {
       "file": "/workspace/components/layout/EnhancedNavigation.tsx",
       "issues": [
+        "missing_enhanced_navigation",
+        "missing_nav_landmark",
         "missing_skip_link",
         "missing_breadcrumbs",
+        "no_active_link_highlight",
+        "missing_mobile_menu",
+        "no_dark_theme_support"
+      ]
+    },
+    {
+      "file": "/workspace/components/monetization/PaidConsultation.tsx",
+      "issues": [
+        "missing_enhanced_navigation",
+        "missing_nav_landmark",
         "no_active_link_highlight",
         "missing_mobile_menu",
         "no_dark_theme_support"
@@ -1018,6 +1156,8 @@
     {
       "file": "/workspace/components/ui/InteractiveNavigation.tsx",
       "issues": [
+        "missing_enhanced_navigation",
+        "missing_nav_landmark",
         "no_active_link_highlight",
         "missing_mobile_menu",
         "no_dark_theme_support"
@@ -1058,6 +1198,7 @@
       "issues": [
         "missing_enhanced_navigation",
         "missing_nav_landmark",
+        "no_active_link_highlight",
         "missing_mobile_menu",
         "no_dark_theme_support"
       ]

@@ -1,3 +1,8 @@
+---
+description: Rule for managing project memory entries and updates
+globs: **/*
+---
+
 # AI Memory Rule
 
 This rule defines how the assistant manages and utilizes project memory: user preferences, learned facts, and project-specific conventions.
@@ -14,9 +19,3 @@ This rule defines how the assistant manages and utilizes project memory: user pr
 ## Usage Protocol
 - Before planning or large edits, review `learned-memories.mdc`
 - Align suggestions with stored decisions and conventions
-
-## Sections in learned-memories.mdc
-- User Preferences
-- Technical Decisions
-- Project Conventions
-- Known Constraints

@@ -16,3 +16,8 @@ When recurring patterns, domain guidance, or durable decisions are identified:
    - Prefer updating existing rule vs adding duplicates
 
 Examples: `api-standards`, `testing-guidelines`, `security-checks`, `state-patterns`.
+
+## Automation Continuity
+- Maintain an always-on infinite improvement loop via CI (GitHub Actions) and local cron
+- Prefer headless, non-interactive scripts with safe fallbacks and logging
+- Ensure automations can run without Cursor; expose `npm` scripts and shell cron wrappers
