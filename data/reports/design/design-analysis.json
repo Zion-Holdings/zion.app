@@ -1,6 +1,6 @@
 {
-  "timestamp": "2025-08-08T16:30:16.406Z",
-  "filesAnalyzed": 103,
+  "timestamp": "2025-08-08T16:30:29.308Z",
+  "filesAnalyzed": 104,
   "items": [
     {
       "file": "/workspace/pages/404.tsx",
@@ -357,6 +357,22 @@
       ],
       "details": {
         "filePath": "/workspace/pages/auto/auto-update-2025-08-08t16-30-00-086z.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/workspace/pages/auto/auto-update-2025-08-08t16-30-20-949z.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/workspace/pages/auto/auto-update-2025-08-08t16-30-20-949z.tsx",
         "hasHead": true,
         "usesTailwind": true,
         "usesEnhancedLayout": false,
