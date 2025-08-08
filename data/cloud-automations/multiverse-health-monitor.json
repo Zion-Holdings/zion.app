@@ -1,0 +1,36 @@
+{
+  "name": "Multiverse Health Monitor",
+  "key": "multiverse-health-monitor",
+  "startedAt": "2025-08-08T22:40:14.828Z",
+  "finishedAt": "2025-08-08T22:40:14.828Z",
+  "success": true,
+  "metrics": {
+    "regions": [
+      {
+        "region": "LATAM",
+        "latencyMs": 72,
+        "uptime24h": 99.66855603108071,
+        "incidents24h": 1
+      },
+      {
+        "region": "MENA",
+        "latencyMs": 91,
+        "uptime24h": 99.33358703213905,
+        "incidents24h": 0
+      },
+      {
+        "region": "EU",
+        "latencyMs": 104,
+        "uptime24h": 99.8443149545072,
+        "incidents24h": 0
+      },
+      {
+        "region": "APAC",
+        "latencyMs": 79,
+        "uptime24h": 99.27549160930758,
+        "incidents24h": 1
+      }
+    ]
+  },
+  "error": null
+}

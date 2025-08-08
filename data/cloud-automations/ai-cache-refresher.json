@@ -1,0 +1,15 @@
+{
+  "name": "AI Cache Refresher",
+  "key": "ai-cache-refresher",
+  "startedAt": "2025-08-08T22:40:14.869Z",
+  "finishedAt": "2025-08-08T22:40:14.869Z",
+  "success": true,
+  "metrics": {
+    "refreshed": [
+      "prompt-graphs",
+      "model-adapters",
+      "policy-filters"
+    ]
+  },
+  "error": null
+}

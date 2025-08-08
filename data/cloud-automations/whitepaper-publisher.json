@@ -1,0 +1,12 @@
+{
+  "name": "Autonomous Whitepaper Publisher",
+  "key": "whitepaper-publisher",
+  "startedAt": "2025-08-08T22:40:14.771Z",
+  "finishedAt": "2025-08-08T22:40:14.771Z",
+  "success": true,
+  "metrics": {
+    "headingCount": 7,
+    "bytes": 1808
+  },
+  "error": null
+}

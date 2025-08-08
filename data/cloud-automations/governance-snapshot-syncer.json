@@ -1,0 +1,22 @@
+{
+  "name": "Governance Snapshot Syncer",
+  "key": "governance-snapshot-syncer",
+  "startedAt": "2025-08-08T22:40:14.848Z",
+  "finishedAt": "2025-08-08T22:40:14.848Z",
+  "success": true,
+  "metrics": {
+    "proposals": [
+      {
+        "id": "ZGP-1754692814848-1",
+        "type": "treasury",
+        "status": "temperature-check"
+      },
+      {
+        "id": "ZGP-1754692814848-2",
+        "type": "treasury",
+        "status": "temperature-check"
+      }
+    ]
+  },
+  "error": null
+}
