@@ -1,11 +1,19 @@
 {
-  "timestamp": "2025-08-08T09:47:06.183Z",
+  "timestamp": "2025-08-08T09:47:14.262Z",
   "changedFiles": [
+    "automation/cursor-agents/task-1754646428628-1.cjs",
+    "automation/cursor-agents/task-1754646428628-2.cjs",
+    "automation/cursor-agents/task-1754646428628-3.cjs",
+    "automation/cursor-agents/task-1754646428628-4.cjs",
+    "automation/cursor-agents/task-1754646428628-5.cjs",
+    "automation/instagram-agents/captions.json",
+    "automation/instagram-agents/highlights.json",
+    "data/reports/alignment/chat-raw.txt",
+    "data/reports/cursor/cursor-prompts.json",
+    "data/reports/feature-marketing/feature-marketing-actions.json",
     "data/reports/link-monitor/site-link-report.json",
     "data/reports/spec-dev/site-crawl.json",
-    "data/reports/spec-dev/spec-dev-actions.json",
-    "data/reports/variation/variation-report.json",
-    "tsconfig.tsbuildinfo"
+    "data/reports/spec-dev/spec-dev-actions.json"
   ],
   "actions": [
     "sync_content_metadata"
