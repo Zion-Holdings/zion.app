@@ -25,4 +25,7 @@ fi
 echo "💡 Next steps:"
 echo "   - git push (to push changes)"
 echo "   - npm run automation:status (to check automation)"
-echo "   - npm run test:all (to run full tests)" 
+echo "   - npm run test:all (to run full tests)"
+
+# Trigger background sync (non-blocking)
+(command -v npm >/dev/null 2>&1 && npm run --silent git:sync >/dev/null 2>&1 &) || true 
