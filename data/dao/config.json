@@ -1,0 +1,14 @@
+{
+  "network": "mainnet",
+  "etherscanBaseUrl": "https://api.etherscan.io/api",
+  "token": {
+    "address": "0x0000000000000000000000000000000000000000",
+    "symbol": "ZION",
+    "decimals": 18
+  },
+  "governance": {
+    "address": "0x0000000000000000000000000000000000000000",
+    "proposalCreatedTopic": "",
+    "voteCastTopic": ""
+  }
+}
