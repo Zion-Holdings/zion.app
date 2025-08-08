@@ -1,0 +1,1 @@
+export default function ChatFutureOfWork() { return <div>Placeholder</div>; }

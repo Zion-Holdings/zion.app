@@ -1,0 +1,1 @@
+export default function ChatAiBusiness() { return <div>Placeholder</div>; }

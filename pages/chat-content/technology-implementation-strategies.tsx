@@ -1,0 +1,1 @@
+export default function ChatTechImplementation() { return <div>Placeholder</div>; }

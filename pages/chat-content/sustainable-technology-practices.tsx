@@ -1,0 +1,1 @@
+export default function ChatSustainableTech() { return <div>Placeholder</div>; }

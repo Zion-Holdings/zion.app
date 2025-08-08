@@ -1,0 +1,1 @@
+export default function ChatEmergingTech() { return <div>Placeholder</div>; }
