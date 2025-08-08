@@ -20,7 +20,7 @@
     "sitemap": "node scripts/generate-sitemap.mjs",
     "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev",
     "build": "NODE_OPTIONS=--openssl-legacy-provider next build",
-    "export": "NODE_OPTIONS=--openssl-legacy-provider next build && next export",
+    "export": "node fix_empty_pages.js && NODE_OPTIONS=--openssl-legacy-provider next build && next export",
     "start": "next start",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "type-check": "tsc --noEmit",
@@ -214,7 +214,11 @@
     "conflicts:watch": "watch -n 30 bash scripts/check-merge-conflicts.sh || true",
     "conflicts:cron:start": "bash automation/merge-conflict-cron.sh start",
     "conflicts:cron:stop": "bash automation/merge-conflict-cron.sh stop",
-    "conflicts:cron:status": "bash automation/merge-conflict-cron.sh status"
+    "conflicts:cron:status": "bash automation/merge-conflict-cron.sh status",
+    "deploy:ipfs": "ts-node scripts/deploy-zion-ipfs.ts"
+  },
+  "bin": {
+    "deploy-zion-ipfs": "scripts/deploy-zion-ipfs.cjs"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
@@ -224,6 +228,8 @@
     "@modelcontextprotocol/server-filesystem": "^2025.7.29",
     "@modelcontextprotocol/server-memory": "^2025.8.4",
     "@modelcontextprotocol/server-sequential-thinking": "^2025.7.1",
+    "@pinata/sdk": "^2.1.0",
+    "@spruceid/didkit-wasm-node": "^0.2.1",
     "@supabase/ssr": "^0.6.1",
     "@supabase/supabase-js": "^2.39.0",
     "@types/react-datepicker": "^6.2.0",
@@ -234,6 +240,7 @@
     "child_process": "^1.0.2",
     "chokidar": "^4.0.3",
     "cron-parser": "^5.3.0",
+    "ethers": "^6.13.4",
     "events": "^3.3.0",
     "framer-motion": "^6.5.1",
     "fs": "^0.0.1-security",
@@ -241,16 +248,19 @@
     "glob": "^11.0.3",
     "https": "^1.0.0",
     "import-fresh": "^3.3.1",
+    "ipfs-http-client": "^60.0.0",
     "lucide-react": "^0.536.0",
     "next": "^11.1.4",
     "node-cron": "^4.2.1",
     "openai": "^5.11.0",
+    "orbit-db": "^0.28.0",
     "path": "^0.12.7",
     "postcss": "^8.4.32",
     "react": "^17.0.2",
     "react-datepicker": "^8.4.0",
     "react-dom": "^17.0.2",
-    "uuid": "^11.1.0"
+    "uuid": "^11.1.0",
+    "web3.storage": "^4.6.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
@@ -281,5 +291,6 @@
     "**/*.{js,jsx,ts,tsx}": [
       "eslint --fix"
     ]
-  }
+  },
+  "type": "module"
 }
