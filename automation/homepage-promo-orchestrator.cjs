@@ -23,6 +23,7 @@ function run(cmd, args) {
 function cycle() {
   run('node', [path.join(__dirname, 'homepage-promo-analyzer.cjs')]);
   run('node', [path.join(__dirname, 'homepage-promo-factory.cjs')]);
+  run('node', [path.join(__dirname, 'homepage-promo-applier.cjs')]);
 }
 
 function start(mode = 'continuous') {
