@@ -210,7 +210,13 @@
     "git:pull": "node automation/git-pull-rebase.cjs",
     "git:cron:start": "bash automation/git-sync-cron.sh start",
     "git:cron:stop": "bash automation/git-sync-cron.sh stop",
-    "git:cron:status": "bash automation/git-sync-cron.sh status"
+    "git:cron:status": "bash automation/git-sync-cron.sh status",
+    "husky:check": "bash scripts/husky-health-check.sh",
+    "husky:repair": "bash scripts/husky-repair.sh",
+    "husky:cron:start": "bash automation/husky-cron.sh start",
+    "husky:cron:stop": "bash automation/husky-cron.sh stop",
+    "husky:cron:status": "bash automation/husky-cron.sh status",
+    "husky:cron:run": "bash automation/husky-cron.sh run"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",

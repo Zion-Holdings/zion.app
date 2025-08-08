@@ -3,7 +3,7 @@ set -e
 
 echo "🔍 Running pre-commit checks..."
 
-# Skip type-check if tsc is not available locally
+# TypeScript type check if available
 if [ -x "./node_modules/.bin/tsc" ]; then
   npm run -s type-check || {
     echo "❌ TypeScript type check failed. Please fix issues before committing."
@@ -11,6 +11,16 @@ if [ -x "./node_modules/.bin/tsc" ]; then
   }
 else
   echo "ℹ️  Skipping type-check (tsc not found). Run 'npm install' to enable."
+fi
+
+# Lint staged files
+if [ -x "./node_modules/.bin/lint-staged" ]; then
+  npx --no-install lint-staged || {
+    echo "❌ Linting staged files failed."
+    exit 1
+  }
+else
+  echo "ℹ️  Skipping lint-staged (not installed)."
 fi
 
 # Deletion guard to preserve files unless explicitly allowed

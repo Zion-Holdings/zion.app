@@ -4,15 +4,21 @@ set -e
 # Get the commit message
 commit_msg=$(cat "$1")
 
-# Check if commit message is not empty
+# Ensure not empty
 if [ -z "$commit_msg" ]; then
-    echo "❌ Error: Commit message cannot be empty"
+  echo "❌ Error: Commit message cannot be empty"
+  exit 1
+fi
+
+# Enforce Conventional Commits with commitlint if installed
+if [ -x "./node_modules/.bin/commitlint" ]; then
+  if npx --no-install commitlint --edit "$1"; then
+    echo "✅ Commit message validation passed"
+    exit 0
+  else
+    echo "❌ Commit message does not follow Conventional Commits"
     exit 1
-fi
-
-# Soft check: conventional commits recommended
-if ! echo "$commit_msg" | grep -qE "^(feat|fix|docs|style|refactor|test|chore|perf|ci|build|revert)(\(.+\))?:"; then
-    echo "⚠️  Consider using conventional commits (e.g., feat: add X)"
-fi
-
-echo "✅ Commit message validation passed" 
+  fi
+else
+  echo "ℹ️  commitlint not installed locally; skipping strict check"
+fi 

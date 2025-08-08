@@ -3,26 +3,24 @@ set -e
 
 echo "🚀 Running pre-push checks..."
 
-# Run available tests
-echo "🧪 Running available tests..."
-npm run type-check || {
-    echo "❌ TypeScript type check failed. Please fix issues before pushing."
-    exit 1
+# Run type check
+echo "🧪 Running TypeScript type check..."
+npm run -s type-check || {
+  echo "❌ TypeScript type check failed. Please fix issues before pushing."
+  exit 1
 }
 
-# Automation system check removed (script not present)
-
-# Check for sensitive data in commits
+# Check for sensitive data in staged changes
 echo "🔒 Checking for sensitive data..."
 if git diff --cached | grep -i -E "(password|secret|key|token|api_key)" > /dev/null; then
-    echo "⚠️  Warning: Potential sensitive data detected in commit"
-    echo "   Please review before pushing"
+  echo "⚠️  Warning: Potential sensitive data detected in staged changes"
+  echo "   Please review before pushing"
 fi
 
-# Check for large files
+# Check for large files in staged changes (>10MB)
 echo "📦 Checking for large files..."
-if git diff --cached --name-only | xargs ls -la 2>/dev/null | awk '{if($5 > 10485760) print "⚠️  Large file detected: " $9 " (" $5 " bytes)"}' | head -5; then
-    echo "⚠️  Large files detected. Consider using .gitignore or git-lfs"
+if git diff --cached --name-only | xargs -r ls -la 2>/dev/null | awk '{if($5 > 10485760) print "⚠️  Large file detected: " $9 " (" $5 " bytes)"}' | head -5; then
+  echo "⚠️  Large files detected. Consider using .gitignore or git-lfs"
 fi
 
 # Backup important files before push
