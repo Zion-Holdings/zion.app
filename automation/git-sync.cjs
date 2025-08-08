@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
 const { execSync } = require('child_process');
+const fs = require('fs');
+const path = require('path');
 
 function run(command, options = {}) {
   return execSync(command, { stdio: 'pipe', encoding: 'utf8', ...options }).trim();
@@ -35,16 +37,29 @@ function log(msg) {
     if (!userEmail) safeRun('git config user.email "bot@zion.app"');
 
     // Ensure correct remote URL
-    const desired = 'https://github.com/Zion-Holdings/zion.app';
+    const configPath = path.join(__dirname, 'repository.config.json');
+    let desired = 'https://github.com/Zion-Holdings/zion.app';
+    try {
+      const rawConfig = fs.readFileSync(configPath, 'utf8');
+      const parsed = JSON.parse(rawConfig);
+      if (parsed && typeof parsed.canonicalRepository === 'string' && parsed.canonicalRepository.trim()) {
+        desired = parsed.canonicalRepository.trim();
+      }
+    } catch (_) {}
+
     let origin = safeRun('git remote get-url origin');
     if (!origin) {
       safeRun(`git remote add origin ${desired}.git`);
       origin = desired + '.git';
       log(`Added origin remote: ${origin}`);
-    } else if (!origin.includes('Zion-Holdings/zion.app')) {
-      safeRun(`git remote set-url origin ${desired}.git`);
-      origin = desired + '.git';
-      log(`Updated origin remote: ${origin}`);
+    } else {
+      const current = origin.replace(/^https?:\/\//, '').replace(/\.git$/, '');
+      const want = desired.replace(/^https?:\/\//, '').replace(/\.git$/, '');
+      if (!current.includes(want)) {
+        safeRun(`git remote set-url origin ${desired}.git`);
+        origin = desired + '.git';
+        log(`Updated origin remote: ${origin}`);
+      }
     }
 
     // Check if there are changes
