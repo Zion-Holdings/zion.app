@@ -35,7 +35,11 @@ function main() {
   const loops = {};
   for (const lf of logFiles) loops[lf] = detectLoops(readLog(lf));
   const agents = listGeneratedAgents();
-  const groups = agents.reduce((m, a) => { const k = a.file.replace(/-\d+\.cjs$/, ''); (m[k] = m[k] || 0)++; return m; }, {});
+  const groups = agents.reduce((m, a) => {
+    const k = a.file.replace(/-\d+\.cjs$/, '');
+    m[k] = (m[k] || 0) + 1;
+    return m;
+  }, {});
   const duplicates = Object.entries(groups).filter(([, n]) => n > 3).map(([k, n]) => ({ pattern: k, count: n }));
   const report = { timestamp: new Date().toISOString(), loops, duplicates, totals: { agents: agents.length } };
   fs.writeFileSync(path.join(OUTPUT, 'variation-report.json'), JSON.stringify(report, null, 2));
