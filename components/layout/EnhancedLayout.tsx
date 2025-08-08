@@ -13,7 +13,7 @@ export default function EnhancedLayout({ children }: EnhancedLayoutProps) {
         <EnhancedNavigation />
       </header>
       <main className="flex-1 container mx-auto px-4 py-6">{children}</main>
-      <footer>
+      <footer className="mt-10">
         <EnhancedFooter />
       </footer>
     </div>

@@ -1,0 +1,1 @@
+export default function ChatInnovationEnterprise() { return <div className="p-6">Innovation in Enterprise Technology</div>; }
