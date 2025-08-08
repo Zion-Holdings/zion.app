@@ -1,20 +1,39 @@
 {
-  "timestamp": "2025-08-08T08:27:38.229Z",
+  "timestamp": "2025-08-08T08:27:40.854Z",
   "changedFiles": [
-    "automation/cursor-agents/task-1754641652598-1.cjs",
-    "automation/cursor-agents/task-1754641652598-2.cjs",
-    "automation/cursor-agents/task-1754641652598-3.cjs",
-    "automation/cursor-agents/task-1754641652598-4.cjs",
-    "automation/cursor-agents/task-1754641652598-5.cjs",
+    "automation/cursor-agents/task-1754641655340-1.cjs",
+    "automation/cursor-agents/task-1754641655340-2.cjs",
+    "automation/cursor-agents/task-1754641655340-3.cjs",
+    "automation/cursor-agents/task-1754641655340-4.cjs",
+    "automation/cursor-agents/task-1754641655340-5.cjs",
+    "automation/cursor-agents/task-1754641657898-1.cjs",
+    "automation/cursor-agents/task-1754641657898-2.cjs",
+    "automation/cursor-agents/task-1754641657898-3.cjs",
+    "automation/cursor-agents/task-1754641657898-4.cjs",
+    "automation/cursor-agents/task-1754641657898-5.cjs",
     "automation/instagram-agents/captions.json",
+    "automation/instagram-agents/highlights.json",
+    "data/reports/alignment/alignment-report.json",
+    "data/reports/alignment/tickets/0001.md",
+    "data/reports/cursor/cursor-prompts.json",
+    "data/reports/design/design-analysis.json",
     "data/reports/feature-marketing/feature-marketing-actions.json",
+    "data/reports/frontend-sync/frontend-sync-actions.json",
+    "data/reports/homepage-promo/homepage-promo-actions.json",
+    "data/reports/homepage-promo/proposals/proposal-1754641655602.md",
+    "data/reports/homepage-promo/proposals/proposal-1754641657975.md",
     "data/reports/link-monitor/site-link-report.json",
     "data/reports/marketing/linkedin/linkedin-posts.json",
     "data/reports/marketing/linkedin/linkedin-pro-posts.json",
-    "data/reports/spec-dev/site-crawl.json",
-    "data/reports/spec-dev/spec-dev-actions.json"
+    "data/reports/responsive/responsive-analysis.json",
+    "data/reports/saas/saas-actions.json",
+    "data/reports/spec-dev/chat-raw.html",
+    "data/reports/spec-dev/spec-dev-actions.json",
+    "pages/index.tsx",
+    "tsconfig.tsbuildinfo"
   ],
   "actions": [
-    "sync_content_metadata"
+    "sync_content_metadata",
+    "sync_pages_components"
   ]
 }
