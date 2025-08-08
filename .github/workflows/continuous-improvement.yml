@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   improve:
@@ -16,22 +17,49 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
+
       - name: Install dependencies
         run: npm ci
-      - name: Run improvement pass
-        run: node automation/continuous-automation-improvement-system.js once
-      - name: Fallback push (if any changes remain)
-        run: |
-          if [ -n "$(git status --porcelain)" ]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git commit -m "chore(automation): CI continuous improvement adjustments" -a || true
-            git push origin HEAD:main
-          else
-            echo "No changes to push"
-          fi
+
+      - name: Run intelligent orchestrator (one-shot)
+        run: node automation/intelligent-orchestrator.cjs run intelligent || true
+
+      - name: Fix lint errors (broad sweep)
+        run: node automation/lint-error-fixer.cjs all || true
+
+      - name: Lint
+        run: npm run lint || true
+
+      - name: Type check
+        run: npm run type-check || true
+
+      - name: Build (verify)
+        run: npm run build || true
+
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore(automation): autonomous improvement sweep"
+          title: "chore(automation): autonomous improvement sweep"
+          body: |
+            Automated improvement run.
+            - Ran intelligent orchestrator
+            - Applied lint fixes
+            - Verified lint, types, and build
+          branch: chore/auto-improvement
+          delete-branch: true
+          signoff: false
+
+      - name: Enable Pull Request Automerge
+        if: steps.cpr.outputs.pull-request-operation == 'created'
+        uses: peter-evans/enable-pull-request-automerge@v3
+        with:
+          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
+          merge-method: squash
