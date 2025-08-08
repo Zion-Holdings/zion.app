@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-08T16:50:26.329Z",
+  "timestamp": "2025-08-08T16:50:36.567Z",
   "loops": {
     "alignment-orchestrator.log": {
       "restarts": 0,
@@ -17,9 +17,9 @@
       "loopScore": 0
     },
     "automation-launcher.log": {
-      "restarts": 74,
-      "started": 280,
-      "loopScore": 0.2642857142857143
+      "restarts": 210,
+      "started": 552,
+      "loopScore": 0.3804347826086957
     },
     "autonomous-automation-orchestrator.log": {
       "restarts": 0,
@@ -197,6 +197,11 @@
       "loopScore": 0
     },
     "site-link-orchestrator.log": {
+      "restarts": 0,
+      "started": 0,
+      "loopScore": 0
+    },
+    "site-maintenance-orchestrator.log": {
       "restarts": 0,
       "started": 0,
       "loopScore": 0
