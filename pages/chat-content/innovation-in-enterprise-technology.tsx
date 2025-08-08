@@ -1,0 +1,1 @@
+export default function InnovationInEnterpriseTechnology() { return <div>Innovation in Enterprise Technology</div>; }
