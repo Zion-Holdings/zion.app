@@ -1160,3 +1160,11 @@ td {
   border-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
 } 
+
+/* React DatePicker minimal styles to avoid direct package CSS import */
+.react-datepicker-wrapper {
+  display: block;
+}
+.react-datepicker__input-container input {
+  width: 100%;
+} 
