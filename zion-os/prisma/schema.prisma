@@ -1,0 +1,141 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Instance {
+  id                 String         @id @default(cuid())
+  name               String
+  slug               String         @unique
+  domain             String?
+  subdomain          String?
+  vertical           String
+  defaultLanguage    String         @default("en")
+  tokenSystem        String         @default("SHARED")
+  governanceType     String         @default("ADMIN")
+  isPublic           Boolean        @default(false)
+  features           FeatureToggle[]
+  apiKeys            ApiKey[]
+  daoConfig          DaoConfig?
+  region             String?
+  country            String?
+  deployments        Deployment[]
+  jobs               Job[]
+  proposals          Proposal[]
+  secrets            Secret[]
+  createdAt          DateTime       @default(now())
+  updatedAt          DateTime       @updatedAt
+}
+
+model FeatureToggle {
+  id         String     @id @default(cuid())
+  key        String
+  enabled    Boolean    @default(false)
+  instance   Instance   @relation(fields: [instanceId], references: [id])
+  instanceId String
+}
+
+model ApiKey {
+  id          String    @id @default(cuid())
+  key         String    @unique
+  name        String
+  instance    Instance? @relation(fields: [instanceId], references: [id])
+  instanceId  String?
+  createdAt   DateTime  @default(now())
+  lastUsedAt  DateTime?
+  scopesJson  String    @default("[]")
+}
+
+model DaoConfig {
+  id             String   @id @default(cuid())
+  instance       Instance @relation(fields: [instanceId], references: [id])
+  instanceId     String   @unique
+  type           String   @default("ADMIN")
+  treasuryWallet String?
+}
+
+model User {
+  id          String    @id @default(cuid())
+  email       String    @unique
+  name        String?
+  role        String    @default("MEMBER")
+  wallet      Wallet?
+  createdAt   DateTime  @default(now())
+}
+
+model Wallet {
+  id        String @id @default(cuid())
+  address   String @unique
+  user      User   @relation(fields: [userId], references: [id])
+  userId    String @unique
+  network   String
+}
+
+model JobCategory {
+  id        String @id @default(cuid())
+  name      String
+  region    String?
+  jobs      Job[]
+}
+
+model Job {
+  id          String      @id @default(cuid())
+  title       String
+  description String
+  instance    Instance    @relation(fields: [instanceId], references: [id])
+  instanceId  String
+  category    JobCategory @relation(fields: [categoryId], references: [id])
+  categoryId  String
+  createdAt   DateTime    @default(now())
+}
+
+model Proposal {
+  id          String   @id @default(cuid())
+  title       String
+  body        String
+  status      String   @default("DRAFT")
+  instance    Instance @relation(fields: [instanceId], references: [id])
+  instanceId  String
+  createdAt   DateTime @default(now())
+}
+
+model Deployment {
+  id          String    @id @default(cuid())
+  instance    Instance  @relation(fields: [instanceId], references: [id])
+  instanceId  String
+  inputJson   String
+  status      String    @default("PENDING")
+  logs        DeploymentLog[]
+  createdAt   DateTime  @default(now())
+  completedAt DateTime?
+}
+
+model DeploymentLog {
+  id           String     @id @default(cuid())
+  deployment   Deployment @relation(fields: [deploymentId], references: [id])
+  deploymentId String
+  level        String     @default("INFO")
+  message      String
+  createdAt    DateTime   @default(now())
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  actorId    String?
+  action     String
+  details    String?
+  createdAt  DateTime @default(now())
+}
+
+model Secret {
+  id         String   @id @default(cuid())
+  name       String
+  value      String
+  instance   Instance? @relation(fields: [instanceId], references: [id])
+  instanceId String?
+  createdAt  DateTime  @default(now())
+}
