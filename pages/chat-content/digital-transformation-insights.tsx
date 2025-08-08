@@ -1,0 +1,1 @@
+export default function Article5() { return <div className="p-6">Article</div>; }
