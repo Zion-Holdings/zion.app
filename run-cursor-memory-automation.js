@@ -31,8 +31,11 @@ async function run() {
     try {
       const generator = path.join(__dirname, 'automation', 'cursor-rules-generator.cjs');
       if (fs.existsSync(generator)) {
-        require(generator);
-        log('🧠 Periodic rules/memory refresh executed');
+        const { spawn } = require('child_process');
+        const proc = spawn(process.execPath, [generator], { stdio: 'inherit' });
+        proc.on('exit', (code) => {
+          log(`🧠 Periodic refresh finished with code ${code}`);
+        });
       }
     } catch (e) {
       log(`❌ Periodic refresh error: ${e.message}`);
