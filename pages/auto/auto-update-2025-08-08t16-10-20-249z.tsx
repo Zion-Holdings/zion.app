@@ -1,0 +1,1 @@
+export default function Auto2(){return <div className="p-6">Auto Page 2</div>}
