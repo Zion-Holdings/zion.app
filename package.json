@@ -59,6 +59,8 @@
     "automation:all": "node automation/launch-all-automation.cjs start",
     "automation:status": "node automation/launch-all-automation.cjs status",
     "automation:report": "node automation/launch-all-automation.cjs report",
+    "intelligence:start": "node automation/app-intelligence-enhancer.cjs",
+    "intelligence:watch": "node automation/app-intelligence-enhancer.cjs continuous",
     "automation:git-sync": "node automation/git-sync.cjs",
     "automation:improvement": "node automation/continuous-automation-improvement-system.js",
     "automation:improvement:dev": "nodemon automation/continuous-automation-improvement-system.js",

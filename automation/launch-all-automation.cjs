@@ -92,7 +92,8 @@ class AutomationLauncher {
       { name: 'performance', script: 'performance-optimizer.cjs', args: [] },
       { name: 'security-scanner', script: 'security-scanner.cjs', args: [] },
       { name: 'seo-optimizer', script: 'seo-optimizer.cjs', args: [] },
-      { name: 'test-generator', script: 'test-generator.cjs', args: [] }
+      { name: 'test-generator', script: 'test-generator.cjs', args: [] },
+      { name: 'app-intelligence', script: 'app-intelligence-enhancer.cjs', args: ['continuous'] }
     ];
     
     // Auto-discover any additional .cjs/.js in automation/ to include future automations automatically

@@ -38,7 +38,8 @@ class IntelligentOrchestrator {
       { name: 'content-generator', path: 'content-generator.cjs', priority: 'low' },
       { name: 'seo-optimizer', path: 'seo-optimizer.cjs', priority: 'medium' },
       { name: 'security-scanner', path: 'security-scanner.cjs', priority: 'high' },
-      { name: 'test-generator', path: 'test-generator.cjs', priority: 'medium' }
+      { name: 'test-generator', path: 'test-generator.cjs', priority: 'medium' },
+      { name: 'app-intelligence', path: 'app-intelligence-enhancer.cjs', priority: 'medium' }
     ];
 
     for (const system of systems) {
