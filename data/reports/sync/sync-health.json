@@ -1,8 +1,8 @@
 {
-  "timestamp": "2025-08-08T18:29:21.120Z",
+  "timestamp": "2025-08-08T18:30:21.666Z",
   "host": "cursor",
   "repoRoot": "/workspace",
-  "status": "degraded",
+  "status": "ok",
   "checks": [
     {
       "name": "git-repo",
@@ -12,22 +12,22 @@
     {
       "name": "bg-sync-loop-running",
       "ok": true,
-      "details": "PID: 3440 "
+      "details": "PID: 17450 "
     },
     {
       "name": "bg-pull-loop-running",
       "ok": true,
-      "details": "PID: 3441 "
+      "details": "PID: 17451 "
     },
     {
       "name": "auto-sync-log-fresh",
-      "ok": false,
-      "details": "ageMs=1339699.8288574219"
+      "ok": true,
+      "details": "ageMs=58026.15771484375"
     },
     {
       "name": "auto-pull-log-fresh",
-      "ok": false,
-      "details": "ageMs=1534972.15234375"
+      "ok": true,
+      "details": "ageMs=12834.162109375"
     },
     {
       "name": "advanced-git-sync-lock-stale",
