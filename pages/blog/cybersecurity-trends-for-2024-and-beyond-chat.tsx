@@ -13,7 +13,7 @@ const CybersecurityTrendsFor2024AndBeyondChat: NextPage = () => {
       <main>
         <h1>CybersecurityTrendsFor2024AndBeyondChat</h1>
         <p>Blog content coming soon...</p>
-        <Link href="/blog">Back to Blog</Link>
+        <Link href="/blog"><a>Back to Blog</a></Link>
       </main>
     </div>
   );

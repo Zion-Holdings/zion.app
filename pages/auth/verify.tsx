@@ -1,0 +1,1 @@
+export default function AuthVerify() { return null; }

@@ -1,0 +1,39 @@
+{
+  "appTitle": "Zion AI Marketplace App",
+  "shortDescription": "Hire top AI talent or find global IT jobs on the go.",
+  "longDescription": "Zion connects companies with top AI freelancers and helps professionals find global IT roles. With AI matching, a smart resume builder, and 1-click hiring flows, get more done from your phone.",
+  "keywords": ["AI freelancer app", "hire tech", "find IT jobs"],
+  "features": [
+    "AI-powered talent matching",
+    "Smart resume builder",
+    "1-click hiring and instant messaging",
+    "Secure payments and contracts",
+    "Global job discovery"
+  ],
+  "testimonials": [
+    { "author": "Priya S.", "role": "Hiring Manager", "quote": "Filled a critical role in 48 hours using Zion mobile." },
+    { "author": "Carlos M.", "role": "AI Engineer", "quote": "Found remote gigs fast. The resume builder is a win." }
+  ],
+  "screenshots": [
+    "/screenshots/phone-1.png",
+    "/screenshots/phone-2.png",
+    "/screenshots/phone-3.png"
+  ],
+  "store": {
+    "iosAppId": "",
+    "androidPackageName": "",
+    "iosStoreUrl": "",
+    "androidStoreUrl": "",
+    "appScheme": "zion://",
+    "webFallbackUrl": "/mobile-app"
+  },
+  "seo": {
+    "title": "Zion AI Marketplace App",
+    "description": "Hire top AI talent or find global IT jobs on the go.",
+    "keywords": ["AI freelancer app", "hire tech", "find IT jobs"]
+  },
+  "changelog": [
+    { "version": "1.0.0", "dateISO": "2025-08-08", "notes": "Initial public launch." }
+  ],
+  "updatedAtISO": "2025-08-08T17:05:31.161Z"
+}
