@@ -1,0 +1,8 @@
+# Netlify Build Guardrail
+
+- Continuously monitor Netlify deploy status; treat states `error`, `failed`, `canceled` as actionable failures.
+- On failure, run local fixers: `npm run fix:all`, `npm run type-check`, `npm run build`.
+- If changes are generated, create an automated PR with clear title `fix(netlify): ...` and trigger a Netlify rebuild via API.
+- For trivial fixes (format-only or regenerated files), allow direct commit to `main` when CI is green.
+- Secrets required: `NETLIFY_AUTH_TOKEN`, `NETLIFY_SITE_ID` available in CI or environment.
+- Local continuous monitoring available via `automation/netlify-monitor-cron.sh` with configurable `INTERVAL`.
