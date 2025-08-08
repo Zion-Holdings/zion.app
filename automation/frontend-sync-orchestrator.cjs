@@ -20,15 +20,25 @@ function run(cmd, args) {
   if (res.stderr) fs.appendFileSync(LOG, res.stderr);
 }
 
+function executeAgents() {
+  const dir = path.join(__dirname, 'frontend-sync-agents');
+  if (!fs.existsSync(dir)) return;
+  const agents = fs.readdirSync(dir).filter(f => f.endsWith('.cjs'));
+  for (const agent of agents) {
+    run('node', [path.join(dir, agent)]);
+  }
+}
+
 function cycle() {
   run('node', [path.join(__dirname, 'frontend-sync-analyzer.cjs')]);
   run('node', [path.join(__dirname, 'frontend-sync-factory.cjs')]);
+  executeAgents();
 }
 
 function start(mode = 'continuous') {
   log('🚀 Frontend sync orchestrator started');
   if (mode === 'continuous') {
-    const loop = () => { cycle(); setTimeout(loop, 5 * 60 * 1000); };
+    const loop = () => { cycle(); setTimeout(loop, 10 * 60 * 1000); };
     loop();
   } else {
     cycle();

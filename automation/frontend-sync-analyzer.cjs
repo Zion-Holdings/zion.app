@@ -1,50 +1,64 @@
 #!/usr/bin/env node
 
-const { spawnSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
+const { spawnSync } = require('child_process');
 
-const OUTPUT_DIR = path.join(__dirname, '..', 'data', 'reports', 'frontend-sync');
-if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+const ROOT = path.join(__dirname, '..');
+const DATA_DIR = path.join(ROOT, 'data', 'reports', 'frontend-sync');
+const REPORT = path.join(DATA_DIR, 'frontend-sync-actions.json');
 
-function git(cmd, args) {
-  return spawnSync(cmd, args, { encoding: 'utf8' });
-}
+function ensureDir(p) { if (!fs.existsSync(p)) fs.mkdirSync(p, { recursive: true }); }
+function readLinesSafe(buf) { return (buf || '').toString().split('\n').map(s => s.trim()).filter(Boolean); }
 
 function getChangedFiles() {
-  // Try to diff against upstream; fallback to last commit
-  let res = git('git', ['diff', '--name-only', 'origin/main...HEAD']);
-  if (res.status !== 0 || !res.stdout.trim()) {
-    res = git('git', ['diff', '--name-only', 'HEAD~1..HEAD']);
+  try {
+    const res = spawnSync('git', ['status', '--porcelain'], { cwd: ROOT, encoding: 'utf8' });
+    if (res.status === 0) {
+      const files = readLinesSafe(res.stdout).map(line => line.slice(3)).filter(Boolean);
+      if (files.length > 0) return files;
+    }
+  } catch {}
+  // Fallback: scan key dirs and include recently modified files (last 24h)
+  const keyDirs = ['pages', 'components', 'styles', 'utils', 'public'];
+  const changed = [];
+  const since = Date.now() - 24 * 60 * 60 * 1000;
+  for (const d of keyDirs) {
+    const dir = path.join(ROOT, d);
+    if (!fs.existsSync(dir)) continue;
+    const stack = [dir];
+    while (stack.length) {
+      const cur = stack.pop();
+      for (const entry of fs.readdirSync(cur, { withFileTypes: true })) {
+        const p = path.join(cur, entry.name);
+        if (entry.isDirectory()) { stack.push(p); continue; }
+        const stat = fs.statSync(p);
+        if (stat.mtimeMs >= since) changed.push(path.relative(ROOT, p));
+      }
+    }
   }
-  const files = (res.stdout || '').split('\n').filter(Boolean);
-  return files;
+  return Array.from(new Set(changed));
 }
 
-function classify(files) {
-  const actions = new Set();
-  for (const f of files) {
-    if (f.startsWith('data/page-metadata') || f.startsWith('data/')) actions.add('sync_content_metadata');
-    if (f.startsWith('pages/') || f.startsWith('components/')) actions.add('sync_pages_components');
-    if (f.startsWith('styles/') || f.endsWith('.css') || f.endsWith('.scss')) actions.add('sync_styles');
-    if (f.startsWith('public/')) actions.add('sync_public_assets');
-    if (f === 'scripts/generate-sitemap.mjs' || f.includes('sitemap')) actions.add('rebuild_sitemap');
+function decideActions(changedFiles) {
+  const actions = new Set(['sync_content_metadata', 'sync_pages_components']);
+  if (changedFiles.some(f => f.startsWith('pages/') || f.startsWith('public/'))) {
+    actions.add('rebuild_sitemap');
   }
-  if (files.length === 0) actions.add('periodic_health_check');
   return Array.from(actions);
 }
 
 function main() {
-  const files = getChangedFiles();
-  const actions = classify(files);
-  const report = {
+  ensureDir(DATA_DIR);
+  const changedFiles = getChangedFiles();
+  const actions = decideActions(changedFiles);
+  const payload = {
     timestamp: new Date().toISOString(),
-    changedFiles: files,
+    changedFiles,
     actions
   };
-  const out = path.join(OUTPUT_DIR, 'frontend-sync-actions.json');
-  fs.writeFileSync(out, JSON.stringify(report, null, 2));
-  console.log(`Frontend sync analysis completed: ${actions.length} action(s)`);
+  fs.writeFileSync(REPORT, JSON.stringify(payload, null, 2));
+  console.log(`Frontend sync analyzer wrote ${REPORT} with ${actions.length} actions`);
 }
 
 main();
