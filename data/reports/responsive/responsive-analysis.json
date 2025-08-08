@@ -1,11 +1,12 @@
 {
-  "timestamp": "2025-08-08T17:23:03.398Z",
-  "filesAnalyzed": 114,
-  "issuesFound": 108,
+  "timestamp": "2025-08-08T17:23:33.436Z",
+  "filesAnalyzed": 115,
+  "issuesFound": 115,
   "items": [
     {
       "filePath": "/workspace/pages/404.tsx",
       "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -21,6 +22,7 @@
     {
       "filePath": "/workspace/pages/_document.tsx",
       "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -28,6 +30,7 @@
     {
       "filePath": "/workspace/pages/about.tsx",
       "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -36,7 +39,8 @@
       "filePath": "/workspace/pages/admin/automation-status.tsx",
       "issues": [
         "missing_head",
-        "missing_viewport"
+        "missing_viewport",
+        "no_tailwind_responsive_classes"
       ]
     },
     {
@@ -106,6 +110,7 @@
     {
       "filePath": "/workspace/pages/auth/callback.tsx",
       "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -113,6 +118,7 @@
     {
       "filePath": "/workspace/pages/auth/forgot-password.tsx",
       "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -120,6 +126,7 @@
     {
       "filePath": "/workspace/pages/auth/index.tsx",
       "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -127,6 +134,7 @@
     {
       "filePath": "/workspace/pages/auth/reset-password.tsx",
       "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -134,6 +142,7 @@
     {
       "filePath": "/workspace/pages/auth/verify.tsx",
       "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -141,6 +150,7 @@
     {
       "filePath": "/workspace/pages/auto/auto-update-2025-08-08t16-07-55-171z.tsx",
       "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -148,6 +158,7 @@
     {
       "filePath": "/workspace/pages/auto/auto-update-2025-08-08t16-10-20-249z.tsx",
       "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -155,6 +166,7 @@
     {
       "filePath": "/workspace/pages/auto/auto-update-2025-08-08t16-30-00-086z.tsx",
       "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -162,6 +174,7 @@
     {
       "filePath": "/workspace/pages/auto/auto-update-2025-08-08t16-30-20-949z.tsx",
       "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -169,6 +182,7 @@
     {
       "filePath": "/workspace/pages/auto/auto-update-2025-08-08t16-38-19-257z.tsx",
       "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -176,6 +190,15 @@
     {
       "filePath": "/workspace/pages/auto/auto-update-2025-08-08t16-49-54-200z.tsx",
       "issues": [
+        "missing_head",
+        "missing_viewport",
+        "no_tailwind_responsive_classes"
+      ]
+    },
+    {
+      "filePath": "/workspace/pages/auto/auto-update-2025-08-08t17-23-07-688z.tsx",
+      "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -184,12 +207,14 @@
       "filePath": "/workspace/pages/automation/index.tsx",
       "issues": [
         "missing_head",
-        "missing_viewport"
+        "missing_viewport",
+        "no_tailwind_responsive_classes"
       ]
     },
     {
       "filePath": "/workspace/pages/blockchain-solutions.tsx",
       "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -414,6 +439,7 @@
     {
       "filePath": "/workspace/pages/chat-content/ai-powered-business-solutions-discussion.tsx",
       "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -421,6 +447,7 @@
     {
       "filePath": "/workspace/pages/chat-content/cloud-computing-strategies.tsx",
       "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -428,6 +455,7 @@
     {
       "filePath": "/workspace/pages/chat-content/cybersecurity-best-practices.tsx",
       "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -435,6 +463,7 @@
     {
       "filePath": "/workspace/pages/chat-content/data-analytics-implementation.tsx",
       "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -442,6 +471,7 @@
     {
       "filePath": "/workspace/pages/chat-content/digital-transformation-insights.tsx",
       "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -449,6 +479,7 @@
     {
       "filePath": "/workspace/pages/chat-content/emerging-technology-trends.tsx",
       "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -456,6 +487,7 @@
     {
       "filePath": "/workspace/pages/chat-content/future-of-work-and-automation.tsx",
       "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -463,6 +495,7 @@
     {
       "filePath": "/workspace/pages/chat-content/innovation-in-enterprise-technology.tsx",
       "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -470,6 +503,7 @@
     {
       "filePath": "/workspace/pages/chat-content/sustainable-technology-practices.tsx",
       "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -477,6 +511,7 @@
     {
       "filePath": "/workspace/pages/chat-content/technology-implementation-strategies.tsx",
       "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -484,6 +519,7 @@
     {
       "filePath": "/workspace/pages/contact.tsx",
       "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -491,6 +527,7 @@
     {
       "filePath": "/workspace/pages/enhanced-home.tsx",
       "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -498,12 +535,15 @@
     {
       "filePath": "/workspace/pages/index.tsx",
       "issues": [
-        "missing_viewport"
+        "missing_head",
+        "missing_viewport",
+        "no_tailwind_responsive_classes"
       ]
     },
     {
       "filePath": "/workspace/pages/iot-platforms.tsx",
       "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -511,6 +551,7 @@
     {
       "filePath": "/workspace/pages/products/index.tsx",
       "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -525,7 +566,8 @@
     {
       "filePath": "/workspace/pages/services/ai-seo-auditor.tsx",
       "issues": [
-        "missing_viewport"
+        "missing_viewport",
+        "no_tailwind_responsive_classes"
       ]
     },
     {
@@ -552,7 +594,8 @@
     {
       "filePath": "/workspace/pages/services/customer-support-chatbot.tsx",
       "issues": [
-        "missing_viewport"
+        "missing_viewport",
+        "no_tailwind_responsive_classes"
       ]
     },
     {
@@ -579,13 +622,15 @@
     {
       "filePath": "/workspace/pages/services/instagram-content-scheduler.tsx",
       "issues": [
-        "missing_viewport"
+        "missing_viewport",
+        "no_tailwind_responsive_classes"
       ]
     },
     {
       "filePath": "/workspace/pages/services/landing-page-generator.tsx",
       "issues": [
-        "missing_viewport"
+        "missing_viewport",
+        "no_tailwind_responsive_classes"
       ]
     },
     {
@@ -612,7 +657,8 @@
     {
       "filePath": "/workspace/pages/services/price-intelligence-service.tsx",
       "issues": [
-        "missing_viewport"
+        "missing_viewport",
+        "no_tailwind_responsive_classes"
       ]
     },
     {
@@ -660,6 +706,7 @@
     {
       "filePath": "/workspace/pages/talent/[slug].tsx",
       "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -667,7 +714,9 @@
     {
       "filePath": "/workspace/pages/talent/index.tsx",
       "issues": [
-        "missing_viewport"
+        "missing_head",
+        "missing_viewport",
+        "no_tailwind_responsive_classes"
       ]
     },
     {
@@ -677,7 +726,25 @@
       ]
     },
     {
+      "filePath": "/workspace/components/layout/AuthLayout.tsx",
+      "issues": [
+        "no_tailwind_responsive_classes"
+      ]
+    },
+    {
+      "filePath": "/workspace/components/layout/EnhancedFooter.tsx",
+      "issues": [
+        "no_tailwind_responsive_classes"
+      ]
+    },
+    {
       "filePath": "/workspace/components/layout/EnhancedLayout.tsx",
+      "issues": [
+        "no_tailwind_responsive_classes"
+      ]
+    },
+    {
+      "filePath": "/workspace/components/layout/EnhancedNavigation.tsx",
       "issues": [
         "no_tailwind_responsive_classes"
       ]
@@ -715,12 +782,17 @@
     {
       "filePath": "/workspace/components/ui/EnhancedMarketplaceCard.tsx",
       "issues": [
-        "no_tailwind_responsive_classes",
-        "non_responsive_img"
+        "no_tailwind_responsive_classes"
       ]
     },
     {
       "filePath": "/workspace/components/ui/FuturisticCard.tsx",
+      "issues": [
+        "no_tailwind_responsive_classes"
+      ]
+    },
+    {
+      "filePath": "/workspace/components/ui/FuturisticHero.tsx",
       "issues": [
         "no_tailwind_responsive_classes"
       ]
@@ -732,7 +804,19 @@
       ]
     },
     {
+      "filePath": "/workspace/components/ui/InteractiveNavigation.tsx",
+      "issues": [
+        "no_tailwind_responsive_classes"
+      ]
+    },
+    {
       "filePath": "/workspace/components/ui/InteractiveSearch.tsx",
+      "issues": [
+        "no_tailwind_responsive_classes"
+      ]
+    },
+    {
+      "filePath": "/workspace/components/ui/InteractiveStats.tsx",
       "issues": [
         "no_tailwind_responsive_classes"
       ]
