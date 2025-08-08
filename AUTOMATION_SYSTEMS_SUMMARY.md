@@ -240,6 +240,28 @@ node automation/intelligent-orchestrator.cjs run intelligent
 node automation/automation-factory.cjs list
 ```
 
+### Instagram Marketing
+
+The Instagram automation includes an orchestrator, analyzer, factory, and posting agent.
+
+- Orchestrator: `automation/instagram-marketing-orchestrator.cjs`
+- Analyzer: `automation/instagram-marketing-analyzer.cjs`
+- Factory: `automation/instagram-marketing-factory.cjs`
+- Posting Agent: `automation/instagram-agents/post-latest.cjs`
+
+Environment variables:
+
+- `APP_MARKETING_URL` (defaults to `https://ziontechgroup.com`)
+- `IG_USER_ID` (Instagram Business/Creator user ID)
+- `IG_ACCESS_TOKEN` (Meta Graph API access token)
+
+Run locally:
+
+```bash
+npm run instagram:marketing:analyze
+npm run instagram:marketing:start
+```
+
 ## Benefits
 
 ### Continuous Improvement
