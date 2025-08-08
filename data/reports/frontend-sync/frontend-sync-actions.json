@@ -1,13 +1,48 @@
 {
-  "timestamp": "2025-08-08T08:40:46.274Z",
+  "timestamp": "2025-08-08T08:40:50.757Z",
   "changedFiles": [
+    "automation/cursor-agents/task-1754642440433-1.cjs",
+    "automation/cursor-agents/task-1754642440433-2.cjs",
+    "automation/cursor-agents/task-1754642440433-3.cjs",
+    "automation/cursor-agents/task-1754642440433-4.cjs",
+    "automation/cursor-agents/task-1754642440433-5.cjs",
+    "automation/cursor-agents/task-1754642444811-1.cjs",
+    "automation/cursor-agents/task-1754642444811-2.cjs",
+    "automation/cursor-agents/task-1754642444811-3.cjs",
+    "automation/cursor-agents/task-1754642444811-4.cjs",
+    "automation/cursor-agents/task-1754642444811-5.cjs",
+    "automation/cursor-agents/task-1754642445762-1.cjs",
+    "automation/cursor-agents/task-1754642445762-2.cjs",
+    "automation/cursor-agents/task-1754642445762-3.cjs",
+    "automation/cursor-agents/task-1754642445762-4.cjs",
+    "automation/cursor-agents/task-1754642445762-5.cjs",
+    "automation/instagram-agents/captions.json",
     "automation/instagram-agents/highlights.json",
+    "data/reports/alignment/alignment-report.json",
+    "data/reports/alignment/chat-raw.txt",
+    "data/reports/alignment/tickets/0001.md",
+    "data/reports/cursor/cursor-prompts.json",
+    "data/reports/design/design-analysis.json",
+    "data/reports/feature-marketing/feature-marketing-actions.json",
+    "data/reports/frontend-sync/frontend-sync-actions.json",
+    "data/reports/homepage-promo/homepage-promo-actions.json",
+    "data/reports/homepage-promo/proposals/proposal-1754642440642.md",
+    "data/reports/homepage-promo/proposals/proposal-1754642445034.md",
+    "data/reports/homepage-promo/proposals/proposal-1754642446053.md",
     "data/reports/link-monitor/site-link-report.json",
+    "data/reports/marketing/linkedin/linkedin-posts.json",
     "data/reports/marketing/linkedin/linkedin-pro-posts.json",
+    "data/reports/responsive/responsive-analysis.json",
+    "data/reports/saas/saas-actions.json",
+    "data/reports/spec-dev/chat-raw.html",
     "data/reports/spec-dev/site-crawl.json",
-    "data/reports/spec-dev/spec-dev-actions.json"
+    "data/reports/spec-dev/spec-dev-actions.json",
+    "data/reports/variation/variation-report.json",
+    "pages/index.tsx",
+    "tsconfig.tsbuildinfo"
   ],
   "actions": [
-    "sync_content_metadata"
+    "sync_content_metadata",
+    "sync_pages_components"
   ]
 }
