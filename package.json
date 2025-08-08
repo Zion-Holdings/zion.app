@@ -169,7 +169,12 @@
     "alignment:scan": "node automation/chat-fetcher.cjs && (node automation/google-doc-fetcher.cjs || true) && node automation/alignment-crawler.cjs && node automation/alignment-analyzer.cjs && node automation/alignment-factory.cjs && node automation/alignment-dev-factory.cjs",
     "postautomation": "npm run automation:git-sync",
     "lint:staged": "lint-staged",
-    "performance:audit": "node automation/performance-audit.cjs"
+    "performance:audit": "node automation/performance-audit.cjs",
+    "supervisor:start": "bash automation/supervisor/supervisor-cron.sh start",
+    "supervisor:stop": "bash automation/supervisor/supervisor-cron.sh stop",
+    "supervisor:status": "bash automation/supervisor/supervisor-cron.sh status",
+    "supervisor:run-once": "node automation/supervisor/supervisor-orchestrator.cjs run-once",
+    "supervisor:discover": "node automation/supervisor-agents-factory.cjs"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",

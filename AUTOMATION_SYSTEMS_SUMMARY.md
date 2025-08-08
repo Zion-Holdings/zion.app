@@ -341,3 +341,14 @@ The system is now capable of continuously improving the application, fixing erro
 - **Files**: `automation/performance-audit.cjs`, `.github/workflows/performance-weekly.yml`
 - **Purpose**: Builds the app, boots a local server, measures simple TTFB and HTML payload size for key pages, and writes JSON reports to `data/reports/performance/`.
 - **Output**: `performance-*.json` artifacts with thresholds and alert flags. Useful for tracking regressions in server responsiveness and page weight.
+
+## New: Supervisor (Non-Invasive)
+- Location: `automation/supervisor/`
+- Entrypoints:
+  - `automation/supervisor/supervisor-orchestrator.cjs`
+  - `automation/supervisor/supervisor-cron.sh`
+  - `automation/supervisor/supervisor-config.json`
+  - `automation/supervisor-agents-factory.cjs`
+  - `automation/install-supervisor-cron.sh`
+- Purpose: Continuously discover `*-cron.sh` scripts, verify health via PID/logs, stop problematic ones, run fix routines, and restart. Writes status to `data/reports/supervisor/`.
+- Does not modify existing factories or cron scripts. Uses PID/log/log conventions already present in `automation/`.

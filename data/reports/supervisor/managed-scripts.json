@@ -1,0 +1,77 @@
+{
+  "timestamp": "2025-08-08T17:03:40.206Z",
+  "scripts": [
+    {
+      "name": "alignment-cron.sh",
+      "path": "/workspace/automation/alignment-cron.sh"
+    },
+    {
+      "name": "cursor-chat-cron.sh",
+      "path": "/workspace/automation/cursor-chat-cron.sh"
+    },
+    {
+      "name": "dependency-maintenance-cron.sh",
+      "path": "/workspace/automation/dependency-maintenance-cron.sh"
+    },
+    {
+      "name": "design-cron.sh",
+      "path": "/workspace/automation/design-cron.sh"
+    },
+    {
+      "name": "feature-marketing-cron.sh",
+      "path": "/workspace/automation/feature-marketing-cron.sh"
+    },
+    {
+      "name": "frontend-sync-cron.sh",
+      "path": "/workspace/automation/frontend-sync-cron.sh"
+    },
+    {
+      "name": "homepage-promo-cron.sh",
+      "path": "/workspace/automation/homepage-promo-cron.sh"
+    },
+    {
+      "name": "instagram-marketing-cron.sh",
+      "path": "/workspace/automation/instagram-marketing-cron.sh"
+    },
+    {
+      "name": "install-supervisor-cron.sh",
+      "path": "/workspace/automation/install-supervisor-cron.sh"
+    },
+    {
+      "name": "linkedin-marketing-cron.sh",
+      "path": "/workspace/automation/linkedin-marketing-cron.sh"
+    },
+    {
+      "name": "linkedin-pro-cron.sh",
+      "path": "/workspace/automation/linkedin-pro-cron.sh"
+    },
+    {
+      "name": "responsive-content-cron.sh",
+      "path": "/workspace/automation/responsive-content-cron.sh"
+    },
+    {
+      "name": "saas-services-cron.sh",
+      "path": "/workspace/automation/saas-services-cron.sh"
+    },
+    {
+      "name": "self-healing-cron.sh",
+      "path": "/workspace/automation/self-healing-cron.sh"
+    },
+    {
+      "name": "site-link-cron.sh",
+      "path": "/workspace/automation/site-link-cron.sh"
+    },
+    {
+      "name": "site-promo-cron.sh",
+      "path": "/workspace/automation/site-promo-cron.sh"
+    },
+    {
+      "name": "spec-dev-cron.sh",
+      "path": "/workspace/automation/spec-dev-cron.sh"
+    },
+    {
+      "name": "variation-cron.sh",
+      "path": "/workspace/automation/variation-cron.sh"
+    }
+  ]
+}
