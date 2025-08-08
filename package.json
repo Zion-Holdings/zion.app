@@ -167,7 +167,6 @@
     "alignment:start": "node automation/alignment-orchestrator.cjs",
     "alignment:cron:start": "bash automation/alignment-cron.sh",
     "alignment:scan": "node automation/chat-fetcher.cjs && (node automation/google-doc-fetcher.cjs || true) && node automation/alignment-crawler.cjs && node automation/alignment-analyzer.cjs && node automation/alignment-factory.cjs && node automation/alignment-dev-factory.cjs",
-
     "maintenance:run": "node automation/site-maintenance-orchestrator.cjs",
     "maintenance:cron:start": "bash automation/site-maintenance-cron.sh start",
     "maintenance:cron:stop": "bash automation/site-maintenance-cron.sh stop",
