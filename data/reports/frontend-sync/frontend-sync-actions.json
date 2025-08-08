@@ -1,9 +1,10 @@
 {
-  "timestamp": "2025-08-08T16:50:05.259Z",
+  "timestamp": "2025-08-08T16:50:25.397Z",
   "changedFiles": [
-    "automation/auto-health-monitor/config.json",
-    "automation/auto-health-monitor/index.mjs",
-    "package.json"
+    "data/reports/marketing/linkedin/linkedin-posts.json",
+    "data/reports/marketing/linkedin/linkedin-pro-posts.json"
   ],
-  "actions": []
+  "actions": [
+    "sync_content_metadata"
+  ]
 }
