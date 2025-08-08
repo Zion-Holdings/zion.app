@@ -1,0 +1,1 @@
+export default function AutoUpdate_2() { return <div>Auto Update</div>; }

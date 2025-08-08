@@ -1,0 +1,1 @@
+export default function AutomationIndex() { return <div>Automation Index</div>; }

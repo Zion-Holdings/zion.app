@@ -1,0 +1,1 @@
+export default function TalentSlug() { return <div>Talent Profile</div>; }
