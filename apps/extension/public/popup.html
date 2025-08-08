@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zion Assistant</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="brand">
+      <img src="icons/icon-48.png" alt="Zion" />
+      <h1>Zion Assistant</h1>
+    </header>
+    <section class="ask">
+      <textarea id="prompt" placeholder="Ask ZionGPT... e.g., Generate a job post for a cloud engineer"></textarea>
+      <button id="askBtn">Ask</button>
+      <div class="examples">
+        <button class="example" data-text="Generate a job post for a cloud engineer">Generate a job post for a cloud engineer</button>
+        <button class="example" data-text="Search Zion for AI researchers in Brazil">Search Zion for AI researchers in Brazil</button>
+        <button class="example" data-text="Track my project with Kleber">Track my project with Kleber</button>
+      </div>
+      <pre id="result"></pre>
+    </section>
+    <section class="quick-actions">
+      <button id="postJob">Post job</button>
+      <button id="resumeSearch">Resume search</button>
+      <button id="viewNotifications">View notifications</button>
+    </section>
+    <section class="auth">
+      <button id="signIn">Sign in with Google</button>
+    </section>
+    <script src="popup.js"></script>
+  </body>
+</html>

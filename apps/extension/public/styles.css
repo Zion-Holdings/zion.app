@@ -1,0 +1,7 @@
+.brand { display: flex; align-items: center; gap: 8px; }
+.brand h1 { font-size: 16px; background: linear-gradient(135deg,#5A60FF,#9B5CFF,#FF6BCB); -webkit-background-clip: text; color: transparent; }
+.ask textarea { width: 300px; height: 80px; }
+.ask button { margin-top: 6px; }
+.examples { display: flex; flex-direction: column; gap: 4px; margin-top: 6px; }
+.quick-actions { display: flex; gap: 8px; margin-top: 10px; }
+pre { white-space: pre-wrap; background: #f6f7fb; padding: 8px; border-radius: 6px; max-width: 320px; }
