@@ -1,39 +1,17 @@
 {
-  "timestamp": "2025-08-08T16:06:07.748Z",
+  "timestamp": "2025-08-08T16:07:31.407Z",
   "filesAnalyzed": 100,
   "issuesFound": 94,
   "items": [
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/404.tsx",
+      "filePath": "/workspace/pages/404.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/_app.tsx",
-      "issues": [
-        "missing_head",
-        "missing_viewport",
-        "no_tailwind_responsive_classes"
-      ]
-    },
-    {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/_document.tsx",
-      "issues": [
-        "missing_viewport",
-        "no_tailwind_responsive_classes"
-      ]
-    },
-    {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/about.tsx",
-      "issues": [
-        "missing_viewport",
-        "no_tailwind_responsive_classes"
-      ]
-    },
-    {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/admin/automation-status.ts",
+      "filePath": "/workspace/pages/_app.tsx",
       "issues": [
         "missing_head",
         "missing_viewport",
@@ -41,7 +19,21 @@
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/ai-capacity-planning.ts",
+      "filePath": "/workspace/pages/_document.tsx",
+      "issues": [
+        "missing_viewport",
+        "no_tailwind_responsive_classes"
+      ]
+    },
+    {
+      "filePath": "/workspace/pages/about.tsx",
+      "issues": [
+        "missing_viewport",
+        "no_tailwind_responsive_classes"
+      ]
+    },
+    {
+      "filePath": "/workspace/pages/api/admin/automation-status.ts",
       "issues": [
         "missing_head",
         "missing_viewport",
@@ -49,7 +41,7 @@
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/ai-change-management.ts",
+      "filePath": "/workspace/pages/api/ai-capacity-planning.ts",
       "issues": [
         "missing_head",
         "missing_viewport",
@@ -57,7 +49,7 @@
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/ai-contract.ts",
+      "filePath": "/workspace/pages/api/ai-change-management.ts",
       "issues": [
         "missing_head",
         "missing_viewport",
@@ -65,7 +57,7 @@
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/ai-workspace-suggestions.ts",
+      "filePath": "/workspace/pages/api/ai-contract.ts",
       "issues": [
         "missing_head",
         "missing_viewport",
@@ -73,7 +65,7 @@
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/analytics-api.ts",
+      "filePath": "/workspace/pages/api/ai-workspace-suggestions.ts",
       "issues": [
         "missing_head",
         "missing_viewport",
@@ -81,7 +73,7 @@
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/analyze-quote-request.ts",
+      "filePath": "/workspace/pages/api/analytics-api.ts",
       "issues": [
         "missing_head",
         "missing_viewport",
@@ -89,7 +81,7 @@
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/analyze-service-request.ts",
+      "filePath": "/workspace/pages/api/analyze-quote-request.ts",
       "issues": [
         "missing_head",
         "missing_viewport",
@@ -97,563 +89,571 @@
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auth/callback.tsx",
+      "filePath": "/workspace/pages/api/analyze-service-request.ts",
+      "issues": [
+        "missing_head",
+        "missing_viewport",
+        "no_tailwind_responsive_classes"
+      ]
+    },
+    {
+      "filePath": "/workspace/pages/auth/callback.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auth/forgot-password.tsx",
+      "filePath": "/workspace/pages/auth/forgot-password.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auth/index.tsx",
+      "filePath": "/workspace/pages/auth/index.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auth/reset-password.tsx",
+      "filePath": "/workspace/pages/auth/reset-password.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auth/verify.tsx",
+      "filePath": "/workspace/pages/auth/verify.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/automation/index.tsx",
+      "filePath": "/workspace/pages/automation/index.tsx",
       "issues": [
         "missing_head",
         "missing_viewport"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blockchain-solutions.tsx",
+      "filePath": "/workspace/pages/blockchain-solutions.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/5g-technology-and-its-impact-on-iot-chat.tsx",
+      "filePath": "/workspace/pages/blog/5g-technology-and-its-impact-on-iot-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat.tsx",
+      "filePath": "/workspace/pages/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/api-first-development-building-scalable-systems-chat.tsx",
+      "filePath": "/workspace/pages/blog/api-first-development-building-scalable-systems-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/augmented-reality-in-enterprise-applications-chat.tsx",
+      "filePath": "/workspace/pages/blog/augmented-reality-in-enterprise-applications-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/blockchain-technology-in-modern-business-solutions-chat.tsx",
+      "filePath": "/workspace/pages/blog/blockchain-technology-in-modern-business-solutions-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/cloud-native-architecture-best-practices-chat.tsx",
+      "filePath": "/workspace/pages/blog/cloud-native-architecture-best-practices-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/cybersecurity-trends-for-2024-and-beyond-chat.tsx",
+      "filePath": "/workspace/pages/blog/cybersecurity-trends-for-2024-and-beyond-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/data-analytics-in-digital-transformation-chat.tsx",
+      "filePath": "/workspace/pages/blog/data-analytics-in-digital-transformation-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/devops-automation-strategies-for-modern-teams-chat.tsx",
+      "filePath": "/workspace/pages/blog/devops-automation-strategies-for-modern-teams-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/digital-twins-revolutionizing-industry-4-0-chat.tsx",
+      "filePath": "/workspace/pages/blog/digital-twins-revolutionizing-industry-4-0-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/index.tsx",
+      "filePath": "/workspace/pages/blog/index.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/machine-learning-applications-in-enterprise-software-chat.tsx",
+      "filePath": "/workspace/pages/blog/machine-learning-applications-in-enterprise-software-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/microservices-architecture-benefits-and-challenges-chat.tsx",
+      "filePath": "/workspace/pages/blog/microservices-architecture-benefits-and-challenges-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/quantum-computing-implications-for-business-chat.tsx",
+      "filePath": "/workspace/pages/blog/quantum-computing-implications-for-business-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/sustainable-technology-green-computing-solutions-chat.tsx",
+      "filePath": "/workspace/pages/blog/sustainable-technology-green-computing-solutions-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/the-rise-of-edge-computing-in-iot-applications-chat.tsx",
+      "filePath": "/workspace/pages/blog/the-rise-of-edge-computing-in-iot-applications-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/ai-consulting-chat.tsx",
+      "filePath": "/workspace/pages/category/ai-consulting-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/business-intelligence-chat.tsx",
+      "filePath": "/workspace/pages/category/business-intelligence-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/cloud-architecture-chat.tsx",
+      "filePath": "/workspace/pages/category/cloud-architecture-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/cybersecurity-chat.tsx",
+      "filePath": "/workspace/pages/category/cybersecurity-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/data-science-chat.tsx",
+      "filePath": "/workspace/pages/category/data-science-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/database-administration-chat.tsx",
+      "filePath": "/workspace/pages/category/database-administration-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/devops-automation-chat.tsx",
+      "filePath": "/workspace/pages/category/devops-automation-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/mobile-development-chat.tsx",
+      "filePath": "/workspace/pages/category/mobile-development-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/network-engineering-chat.tsx",
+      "filePath": "/workspace/pages/category/network-engineering-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/product-management-chat.tsx",
+      "filePath": "/workspace/pages/category/product-management-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/quality-assurance-chat.tsx",
+      "filePath": "/workspace/pages/category/quality-assurance-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/system-administration-chat.tsx",
+      "filePath": "/workspace/pages/category/system-administration-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/technical-writing-chat.tsx",
+      "filePath": "/workspace/pages/category/technical-writing-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/ui-ux-design-chat.tsx",
+      "filePath": "/workspace/pages/category/ui-ux-design-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/web-development-chat.tsx",
+      "filePath": "/workspace/pages/category/web-development-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/ai-powered-business-solutions-discussion.tsx",
+      "filePath": "/workspace/pages/chat-content/ai-powered-business-solutions-discussion.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/cloud-computing-strategies.tsx",
+      "filePath": "/workspace/pages/chat-content/cloud-computing-strategies.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/cybersecurity-best-practices.tsx",
+      "filePath": "/workspace/pages/chat-content/cybersecurity-best-practices.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/data-analytics-implementation.tsx",
+      "filePath": "/workspace/pages/chat-content/data-analytics-implementation.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/digital-transformation-insights.tsx",
+      "filePath": "/workspace/pages/chat-content/digital-transformation-insights.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/emerging-technology-trends.tsx",
+      "filePath": "/workspace/pages/chat-content/emerging-technology-trends.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/future-of-work-and-automation.tsx",
+      "filePath": "/workspace/pages/chat-content/future-of-work-and-automation.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/innovation-in-enterprise-technology.tsx",
+      "filePath": "/workspace/pages/chat-content/innovation-in-enterprise-technology.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/sustainable-technology-practices.tsx",
+      "filePath": "/workspace/pages/chat-content/sustainable-technology-practices.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/technology-implementation-strategies.tsx",
+      "filePath": "/workspace/pages/chat-content/technology-implementation-strategies.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/contact.tsx",
+      "filePath": "/workspace/pages/contact.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/enhanced-home.tsx",
+      "filePath": "/workspace/pages/enhanced-home.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/index.tsx",
+      "filePath": "/workspace/pages/index.tsx",
       "issues": [
         "missing_viewport"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/iot-platforms.tsx",
+      "filePath": "/workspace/pages/iot-platforms.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/products/index.tsx",
+      "filePath": "/workspace/pages/products/index.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/ai-model-development-chat.tsx",
+      "filePath": "/workspace/pages/services/ai-model-development-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/api-development-chat.tsx",
+      "filePath": "/workspace/pages/services/api-development-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/business-intelligence-chat.tsx",
+      "filePath": "/workspace/pages/services/business-intelligence-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/cloud-migration-services-chat.tsx",
+      "filePath": "/workspace/pages/services/cloud-migration-services-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/data-pipeline-engineering-chat.tsx",
+      "filePath": "/workspace/pages/services/data-pipeline-engineering-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/database-design-chat.tsx",
+      "filePath": "/workspace/pages/services/database-design-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/index.tsx",
+      "filePath": "/workspace/pages/services/index.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/mobile-app-development-chat.tsx",
+      "filePath": "/workspace/pages/services/mobile-app-development-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/network-security-chat.tsx",
+      "filePath": "/workspace/pages/services/network-security-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/performance-optimization-chat.tsx",
+      "filePath": "/workspace/pages/services/performance-optimization-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/quality-assurance-testing-chat.tsx",
+      "filePath": "/workspace/pages/services/quality-assurance-testing-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/security-auditing-chat.tsx",
+      "filePath": "/workspace/pages/services/security-auditing-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/system-administration-chat.tsx",
+      "filePath": "/workspace/pages/services/system-administration-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/technical-documentation-chat.tsx",
+      "filePath": "/workspace/pages/services/technical-documentation-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/ui-ux-design-chat.tsx",
+      "filePath": "/workspace/pages/services/ui-ux-design-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/web-application-development-chat.tsx",
+      "filePath": "/workspace/pages/services/web-application-development-chat.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/talent/index.tsx",
+      "filePath": "/workspace/pages/talent/index.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/Layout.tsx",
+      "filePath": "/workspace/components/Layout.tsx",
       "issues": [
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/layout/EnhancedLayout.tsx",
+      "filePath": "/workspace/components/layout/EnhancedLayout.tsx",
       "issues": [
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/AnimatedBackground.tsx",
+      "filePath": "/workspace/components/ui/AnimatedBackground.tsx",
       "issues": [
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/EnhancedButton.tsx",
+      "filePath": "/workspace/components/ui/EnhancedButton.tsx",
       "issues": [
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/EnhancedCard.tsx",
+      "filePath": "/workspace/components/ui/EnhancedCard.tsx",
       "issues": [
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/EnhancedLoading.tsx",
+      "filePath": "/workspace/components/ui/EnhancedLoading.tsx",
       "issues": [
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/EnhancedMarketplaceCard.tsx",
+      "filePath": "/workspace/components/ui/EnhancedMarketplaceCard.tsx",
       "issues": [
         "no_tailwind_responsive_classes",
         "non_responsive_img"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/FuturisticCard.tsx",
+      "filePath": "/workspace/components/ui/FuturisticCard.tsx",
       "issues": [
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/GlassmorphismCard.tsx",
+      "filePath": "/workspace/components/ui/GlassmorphismCard.tsx",
       "issues": [
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/InteractiveSearch.tsx",
+      "filePath": "/workspace/components/ui/InteractiveSearch.tsx",
       "issues": [
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/NotificationSystem.tsx",
+      "filePath": "/workspace/components/ui/NotificationSystem.tsx",
       "issues": [
         "no_tailwind_responsive_classes"
       ]
     },
     {
-      "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/UserEngagementSystem.tsx",
+      "filePath": "/workspace/components/ui/UserEngagementSystem.tsx",
       "issues": [
         "no_tailwind_responsive_classes"
       ]
