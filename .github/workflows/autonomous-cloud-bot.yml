@@ -1,0 +1,50 @@
+name: Autonomous Cloud Bot
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/30 * * * *'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: cloud-autobot
+  cancel-in-progress: false
+
+jobs:
+  run-autobot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run cloud autobot
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_AUTHOR_NAME: zion-autobot
+          GIT_AUTHOR_EMAIL: autobot@users.noreply.github.com
+          GIT_COMMITTER_NAME: zion-autobot
+          GIT_COMMITTER_EMAIL: autobot@users.noreply.github.com
+          AUTOBOT_TASKS: |
+            syntax:build-check
+            linting:fix
+            maintenance:run
+            sync-health:run
+            responsive:analyze
+            design:analyze
+        run: node automation/cloud-autobot.cjs
