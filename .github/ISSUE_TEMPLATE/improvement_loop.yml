@@ -1,0 +1,30 @@
+name: Improvement loop
+description: Propose or track continuous improvement tasks and diversity experiments
+labels: [improvement, needs-triage]
+title: 'improvement: '
+body:
+  - type: textarea
+    id: hypothesis
+    attributes:
+      label: Hypothesis
+      description: What improvement or diversity hypothesis are we testing?
+      placeholder: e.g. Introduce alternative layouts to improve engagement
+  - type: textarea
+    id: plan
+    attributes:
+      label: Plan
+      description: Steps and automation components involved
+  - type: dropdown
+    id: cadence
+    attributes:
+      label: Cadence
+      options:
+        - once
+        - daily
+        - weekly
+        - continuous
+  - type: textarea
+    id: metrics
+    attributes:
+      label: Metrics
+      description: What will we measure to validate the improvement?
