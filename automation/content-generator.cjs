@@ -95,8 +95,8 @@ export default Page;`;
     const outputDir = options.dir
       ? path.isAbsolute(options.dir)
         ? options.dir
-        : path.join(__dirname, '..', '..', options.dir)
-      : path.join(__dirname, '..', '..', 'generated');
+        : path.join(__dirname, '..', options.dir)
+      : path.join(__dirname, '..', 'generated');
 
     const filePath = path.join(outputDir, fileName);
 
