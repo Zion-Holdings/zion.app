@@ -1,0 +1,53 @@
+{
+  "crawlAt": "2025-08-08T17:00:14.024Z",
+  "startUrl": "https://ziontechgroup.com",
+  "origin": "ziontechgroup.com",
+  "visited": [
+    "https://ziontechgroup.com/",
+    "https://ziontechgroup.com/services",
+    "https://ziontechgroup.com/about",
+    "https://ziontechgroup.com/contact",
+    "https://ziontechgroup.com/products",
+    "https://ziontechgroup.com/blog"
+  ],
+  "linkStatus": {
+    "https://ziontechgroup.com/": {
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://ziontechgroup.com/"
+    },
+    "https://ziontechgroup.com/services": {
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://ziontechgroup.com/services"
+    },
+    "https://ziontechgroup.com/about": {
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://ziontechgroup.com/about"
+    },
+    "https://ziontechgroup.com/contact": {
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://ziontechgroup.com/contact"
+    },
+    "https://ziontechgroup.com/products": {
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://ziontechgroup.com/products"
+    },
+    "https://ziontechgroup.com/blog": {
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://ziontechgroup.com/blog"
+    }
+  },
+  "canonical": {
+    "https://ziontechgroup.com/": "https://ziontechgroup.com/",
+    "https://ziontechgroup.com/services": "https://ziontechgroup.com/",
+    "https://ziontechgroup.com/about": "https://ziontechgroup.com/",
+    "https://ziontechgroup.com/contact": "https://ziontechgroup.com/",
+    "https://ziontechgroup.com/products": "https://ziontechgroup.com/",
+    "https://ziontechgroup.com/blog": "https://ziontechgroup.com/"
+  }
+}
