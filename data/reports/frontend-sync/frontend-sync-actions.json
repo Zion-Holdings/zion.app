@@ -1,9 +1,16 @@
 {
-  "timestamp": "2025-08-08T04:21:04.865Z",
+  "timestamp": "2025-08-08T04:21:12.148Z",
   "changedFiles": [
+    "automation/instagram-agents/highlights.json",
+    "automation/instagram-marketing-factory.cjs",
+    "data/reports/alignment/chat-raw.txt",
+    "data/reports/homepage-promo/homepage-promo-actions.json",
+    "data/reports/homepage-promo/proposals/proposal-1754626866105.md",
+    "data/reports/marketing/linkedin/linkedin-posts.json",
     "pages/index.tsx"
   ],
   "actions": [
+    "sync_content_metadata",
     "sync_pages_components"
   ]
 }
