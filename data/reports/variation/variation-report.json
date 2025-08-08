@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-08T16:33:02.969Z",
+  "timestamp": "2025-08-08T16:38:25.943Z",
   "loops": {
     "alignment-orchestrator.log": {
       "restarts": 0,
@@ -17,9 +17,9 @@
       "loopScore": 0
     },
     "automation-launcher.log": {
-      "restarts": 1830,
-      "started": 3788,
-      "loopScore": 0.48310454065469904
+      "restarts": 0,
+      "started": 0,
+      "loopScore": 0
     },
     "autonomous-automation-orchestrator.log": {
       "restarts": 0,
@@ -27,6 +27,11 @@
       "loopScore": 0
     },
     "autonomous-error-monitoring-factory.log": {
+      "restarts": 0,
+      "started": 0,
+      "loopScore": 0
+    },
+    "autonomous-guardian.log": {
       "restarts": 0,
       "started": 0,
       "loopScore": 0
@@ -113,7 +118,7 @@
     },
     "intelligent-orchestrator.log": {
       "restarts": 0,
-      "started": 2,
+      "started": 3,
       "loopScore": 0
     },
     "launch-autonomous-systems-clean.log": {
@@ -143,7 +148,7 @@
     },
     "lint-error-fixer.log": {
       "restarts": 0,
-      "started": 2,
+      "started": 4,
       "loopScore": 0
     },
     "lint-monitor.log": {

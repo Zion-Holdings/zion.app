@@ -1,9 +1,17 @@
 {
-  "timestamp": "2025-08-08T16:38:15.740Z",
+  "timestamp": "2025-08-08T16:38:29.959Z",
   "changedFiles": [
-    "scripts/generate-sitemap.mjs"
+    "data/reports/design/design-analysis.json",
+    "data/reports/frontend-sync/frontend-sync-actions.json",
+    "data/reports/homepage-promo/homepage-promo-actions.json",
+    "data/reports/homepage-promo/proposals/proposal-1754671096189.md",
+    "data/reports/marketing/linkedin/linkedin-posts.json",
+    "data/reports/responsive/responsive-analysis.json",
+    "data/reports/saas/saas-actions.json",
+    "pages/index.tsx"
   ],
   "actions": [
-    "rebuild_sitemap"
+    "sync_content_metadata",
+    "sync_pages_components"
   ]
 }

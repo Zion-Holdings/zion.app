@@ -10753,6 +10753,9 @@ const Home: NextPage = () => {
         
         
         
+        
+        
+        
         {/* AUTO-GENERATED: HOMEPAGE_PROMOS_START */}
         <section className="mt-16">
           <h2 className="text-2xl font-semibold mb-4">Explore more</h2>
@@ -10821,6 +10824,12 @@ const Home: NextPage = () => {
               <Link href="/auto/auto-update-2025-08-08t16-30-20-949z">
                 <a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
                   <span className="text-white">/auto/auto-update-2025-08-08t16-30-20-949z</span>
+                </a>
+              </Link>
+
+              <Link href="/auto/auto-update-2025-08-08t16-38-19-257z">
+                <a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
+                  <span className="text-white">/auto/auto-update-2025-08-08t16-38-19-257z</span>
                 </a>
               </Link>
 
@@ -10893,12 +10902,6 @@ const Home: NextPage = () => {
               <Link href="/blog/devops-automation-strategies-for-modern-teams-chat">
                 <a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
                   <span className="text-white">/blog/devops-automation-strategies-for-modern-teams-chat</span>
-                </a>
-              </Link>
-
-              <Link href="/blog/digital-twins-revolutionizing-industry-4-0-chat">
-                <a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
-                  <span className="text-white">/blog/digital-twins-revolutionizing-industry-4-0-chat</span>
                 </a>
               </Link>
           </div>
