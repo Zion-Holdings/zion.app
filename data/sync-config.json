@@ -1,0 +1,18 @@
+{
+  "enabled": true,
+  "paused": false,
+  "scope": "full",
+  "instance": {
+    "id": "zion-local",
+    "name": "Zion Local",
+    "baseUrl": "http://localhost:3000"
+  },
+  "peers": [
+    { "id": "zion-latam", "name": "Zion LATAM", "baseUrl": "https://latam.zion.app" },
+    { "id": "zion-devops", "name": "Zion DevOps", "baseUrl": "https://devops.zion.app" },
+    { "id": "zion-health", "name": "Zion Health", "baseUrl": "https://health.zion.app" }
+  ],
+  "requireSignatures": false,
+  "p2pEnabled": false,
+  "pollIntervalSec": 60
+}
