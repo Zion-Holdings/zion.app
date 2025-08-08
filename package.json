@@ -188,7 +188,14 @@
     "ui-evolution:dashboard": "node automation/ui-evolution-launcher.js dashboard",
     "meta:factory": "node automation/autonomous-meta-factory.cjs",
     "meta:orchestrator": "node automation/autonomous-meta-orchestrator.cjs",
-    "meta:cron:start": "bash automation/autonomous-meta-cron.sh"
+    "meta:cron:start": "bash automation/autonomous-meta-cron.sh",
+    "admin:dashboard": "node automation/admin-dashboard-updater.cjs",
+    "admin:dashboard:watch": "node automation/admin-dashboard-updater.cjs --watch",
+    "admin:insights": "node automation/admin-insights-researcher.cjs",
+    "admin:insights:watch": "node automation/admin-insights-researcher.cjs --watch",
+    "admin:cron:start": "bash automation/admin-dashboard-cron.sh start",
+    "admin:cron:stop": "bash automation/admin-dashboard-cron.sh stop",
+    "admin:cron:status": "bash automation/admin-dashboard-cron.sh status"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
