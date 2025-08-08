@@ -2,18 +2,19 @@
   "ok": true,
   "errors": [],
   "warnings": [
-    "No upstream configured for current branch."
+    "No upstream configured for current branch.",
+    "Set upstream to origin/cursor/create-mobile-launch-landing-and-support-toolkit-3ea3."
   ],
   "checks": {
     "user": {
       "name": "Cursor Agent",
       "email": "cursoragent@cursor.com"
     },
-    "origin": "origin\thttps://x-access-token:ghs_qNBaeg2v14LuMC4IBKBjGq0T4N5gyr2FojDs@github.com/Zion-Holdings/zion.app (fetch)\norigin\thttps://x-access-token:ghs_qNBaeg2v14LuMC4IBKBjGq0T4N5gyr2FojDs@github.com/Zion-Holdings/zion.app (push)",
+    "origin": "origin\thttps://x-access-token:ghs_DhwaPNUqmGTfRc6NzxlDldBixJAKan1LFxHx@github.com/Zion-Holdings/zion.app (fetch)\norigin\thttps://x-access-token:ghs_DhwaPNUqmGTfRc6NzxlDldBixJAKan1LFxHx@github.com/Zion-Holdings/zion.app (push)",
     "fsck": {
       "status": 0,
-      "output": ""
+      "output": "dangling tree 2ac5457361a665fb4080147887cb0e44361b138b\n"
     },
-    "working": "dirty"
+    "working": "clean"
   }
 }
