@@ -1,15 +1,11 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import Link from 'next/link';
+import Seo from '../../components/seo/Seo';
 
 const ProductManagementChat: NextPage = () => {
   return (
     <div>
-      <Head>
-        <title>ProductManagementChat - Zion Tech Solutions</title>
-        <meta name="description" content="ProductManagementChat blog post" />
-      </Head>
-      
+      <Seo title="Product Management" description="Product management strategy and insights by Zion." openGraph={{ title: 'Product Management', description: 'Product management strategy and insights by Zion.' }} />
       <main>
         <h1>ProductManagementChat</h1>
         <p>Blog content coming soon...</p>

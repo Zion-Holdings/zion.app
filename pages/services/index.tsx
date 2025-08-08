@@ -1,17 +1,13 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import Link from 'next/link';
+import Seo from '../../components/seo/Seo';
 
 const Index: NextPage = () => {
   return (
     <div>
-      <Head>
-        <title>Index - Zion Tech Solutions</title>
-        <meta name="description" content="Index service" />
-      </Head>
-      
+      <Seo title="Services" description="AI/ML, Web, Mobile, DevOps, and Security services by Zion." openGraph={{ title: 'Services', description: 'AI/ML, Web, Mobile, DevOps, and Security services by Zion.' }} />
       <main>
-        <h1>Index</h1>
+        <h1>Services</h1>
         <p>Service details coming soon...</p>
         <Link href="/services">Back to Services</Link>
       </main>

@@ -1,0 +1,1 @@
+export default function Chat10() { return <div>Chat Content</div>; }

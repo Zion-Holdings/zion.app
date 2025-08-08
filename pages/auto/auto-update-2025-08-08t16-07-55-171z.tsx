@@ -1,0 +1,1 @@
+export default function AutoPage1() { return <div>Auto Update</div>; }
