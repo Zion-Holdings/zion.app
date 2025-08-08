@@ -1,10 +1,14 @@
 {
-  "timestamp": "2025-08-08T09:44:06.209Z",
+  "timestamp": "2025-08-08T09:44:14.695Z",
   "changedFiles": [
-    "data/reports/alignment/chat-raw.txt",
+    "data/reports/cursor/cursor-prompts.json",
+    "data/reports/design/design-analysis.json",
     "data/reports/link-monitor/site-link-report.json",
+    "data/reports/spec-dev/chat-raw.html",
     "data/reports/spec-dev/site-crawl.json",
-    "data/reports/spec-dev/spec-dev-actions.json"
+    "data/reports/spec-dev/spec-dev-actions.json",
+    "data/reports/variation/variation-report.json",
+    "tsconfig.tsbuildinfo"
   ],
   "actions": [
     "sync_content_metadata"
