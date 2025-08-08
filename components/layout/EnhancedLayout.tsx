@@ -1,6 +1,7 @@
 import React from 'react';
 import EnhancedNavigation from './EnhancedNavigation';
 import EnhancedFooter from './EnhancedFooter';
+import OnboardingWizard from '../ui/OnboardingWizard';
 
 export type EnhancedLayoutProps = {
   children: React.ReactNode;
@@ -16,6 +17,7 @@ export default function EnhancedLayout({ children }: EnhancedLayoutProps) {
       <footer>
         <EnhancedFooter />
       </footer>
+      <OnboardingWizard />
     </div>
   );
 }
