@@ -1,0 +1,1 @@
+export default function ChatContentPage2() { return null; }

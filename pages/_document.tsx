@@ -1,0 +1,1 @@
+export default function DocumentStub() { return null; }

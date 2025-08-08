@@ -1,0 +1,1 @@
+export default function AutomationStatusPage() { return null; }
