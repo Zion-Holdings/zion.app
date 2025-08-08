@@ -68,7 +68,8 @@ class AutomationLauncher {
   async startAllSystems() {
     this.log('🚀 Starting all automation systems...');
     
-    const systems = [
+    // Seed known long-running or important jobs
+    const seedSystems = [
       { name: 'intelligent-orchestrator', script: 'intelligent-orchestrator.cjs', args: ['continuous'] },
       { name: 'automation-dashboard', script: 'automation-dashboard.cjs', args: ['start'] },
       { name: 'lint-monitor', script: 'lint-monitor.cjs', args: ['start'] },
@@ -80,6 +81,16 @@ class AutomationLauncher {
       { name: 'seo-optimizer', script: 'seo-optimizer.cjs', args: [] },
       { name: 'test-generator', script: 'test-generator.cjs', args: [] }
     ];
+    
+    // Auto-discover any additional .cjs/.js in automation/ to include future automations automatically
+    const configPath = path.join(__dirname, 'auto-discovery.config.json');
+    const exclude = fs.existsSync(configPath) ? JSON.parse(fs.readFileSync(configPath, 'utf8')).exclude || [] : [];
+    const files = fs.readdirSync(__dirname).filter(f => (f.endsWith('.cjs') || f.endsWith('.js')) && !exclude.includes(f));
+    const discovered = files
+      .filter(f => !seedSystems.some(s => s.script === f))
+      .map(f => ({ name: f.replace(/\.(cjs|js)$/,''), script: f, args: [] }));
+    
+    const systems = [...seedSystems, ...discovered];
 
     this.systemsDef = systems;
 

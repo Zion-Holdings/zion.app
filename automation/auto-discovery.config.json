@@ -1,0 +1,6 @@
+{
+  "exclude": [
+    "launch-all-automation.cjs"
+  ]
+}
+

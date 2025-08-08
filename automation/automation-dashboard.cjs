@@ -69,7 +69,9 @@ class AutomationDashboard {
     for (const s of seed) addSystem(s);
 
     // Auto-discover additional automation scripts (future automations appear automatically)
-    const files = fs.readdirSync(__dirname);
+    const cfgPath = path.join(__dirname, 'auto-discovery.config.json');
+    const exclude = fs.existsSync(cfgPath) ? JSON.parse(fs.readFileSync(cfgPath, 'utf8')).exclude || [] : [];
+    const files = fs.readdirSync(__dirname).filter(f => !exclude.includes(f));
     for (const file of files) {
       if ((file.endsWith('.cjs') || file.endsWith('.js')) && !file.endsWith('.cjs.map') && file !== path.basename(__filename)) {
         const name = path.basename(file).replace(/\.(cjs|js)$/,'');
