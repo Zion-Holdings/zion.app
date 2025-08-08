@@ -66,6 +66,7 @@
     "automation:coordinator:dev": "nodemon automation/master-automation-coordinator.js",
     "automation:restart": "node automation/restart-all-automation.js",
     "automation:enhance": "node automation/enhance-all-automation.js",
+    "automation:beautify": "node automation/beautify-ui.cjs",
     "autonomous:start": "node automation/launch-autonomous-systems-clean.js start",
     "autonomous:stop": "node automation/launch-autonomous-systems-clean.js stop",
     "autonomous:restart": "node automation/launch-autonomous-systems-clean.js restart",
