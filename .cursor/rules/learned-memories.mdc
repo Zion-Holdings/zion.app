@@ -3,7 +3,7 @@
 This file stores project-specific knowledge, conventions, and decisions that should persist across sessions.
 
 ## User Preferences
-- 
+- Always improve Husky automations; ensure hooks run reliably and are kept up-to-date
 
 ## Technical Decisions
 - Node.js >= 20.18.1 (from package.json engines)
@@ -13,6 +13,7 @@ This file stores project-specific knowledge, conventions, and decisions that sho
 ## Project Conventions
 - Conventional Commits (feat, fix, chore, docs, refactor, perf, test)
 - Functional React components with TypeScript types
+- Maintain automations that run independently of Cursor via cron scripts and GitHub Actions
 
 ## Known Constraints
 - React 17 compatibility

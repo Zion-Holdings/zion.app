@@ -1,18 +1,11 @@
 #!/usr/bin/env sh
 set -e
 
-# Get the commit message
-commit_msg=$(cat "$1")
-
-# Check if commit message is not empty
-if [ -z "$commit_msg" ]; then
-    echo "❌ Error: Commit message cannot be empty"
-    exit 1
-fi
-
-# Soft check: conventional commits recommended
-if ! echo "$commit_msg" | grep -qE "^(feat|fix|docs|style|refactor|test|chore|perf|ci|build|revert)(\(.+\))?:"; then
-    echo "⚠️  Consider using conventional commits (e.g., feat: add X)"
+# Validate commit message using commitlint
+if [ -x "./node_modules/.bin/commitlint" ]; then
+  ./node_modules/.bin/commitlint --edit "$1"
+else
+  npx --no-install commitlint --edit "$1"
 fi
 
 echo "✅ Commit message validation passed" 

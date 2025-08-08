@@ -1,0 +1,14 @@
+name: Husky Health
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+jobs:
+  husky-health:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run husky health check
+        run: bash scripts/husky-health-check.sh
