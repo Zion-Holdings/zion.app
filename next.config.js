@@ -17,6 +17,12 @@ module.exports = {
     config.resolve = config.resolve || {};
     config.resolve.alias = config.resolve.alias || {};
     config.resolve.alias['@'] = path.resolve(__dirname);
+
+    // Ensure plugins array exists (Netlify Next.js Runtime v4 may expect this)
+    if (!Array.isArray(config.plugins)) {
+      config.plugins = [];
+    }
+
     return config;
   },
 };
