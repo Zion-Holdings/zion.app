@@ -32,25 +32,28 @@ class AutomationDashboard {
   }
 
   loadAutomationSystems() {
-    const systems = [
-      { name: 'lint-monitor', path: 'lint-monitor.js', category: 'code-quality', status: 'available' },
-      { name: 'lint-fixer', path: 'lint-error-fixer.js', category: 'code-quality', status: 'available' },
-      { name: 'lint-manager', path: 'lint-automation-manager.js', category: 'code-quality', status: 'available' },
-      { name: 'code-quality', path: 'code-quality-monitor.js', category: 'analysis', status: 'available' },
-      { name: 'performance', path: 'performance-optimizer.js', category: 'optimization', status: 'available' },
-      { name: 'content-generator', path: 'content-generator.js', category: 'generation', status: 'available' },
-      { name: 'seo-optimizer', path: 'seo-optimizer.js', category: 'seo', status: 'available' },
-      { name: 'security-scanner', path: 'security-scanner.js', category: 'security', status: 'available' },
-      { name: 'test-generator', path: 'test-generator.js', category: 'testing', status: 'available' },
-      { name: 'intelligent-orchestrator', path: 'intelligent-orchestrator.js', category: 'orchestration', status: 'available' },
-      { name: 'automation-factory', path: 'automation-factory.js', category: 'factory', status: 'available' }
+    // Seed with known systems
+    const seed = [
+      { name: 'lint-monitor', path: 'lint-monitor.cjs', category: 'code-quality' },
+      { name: 'lint-fixer', path: 'lint-error-fixer.cjs', category: 'code-quality' },
+      { name: 'lint-manager', path: 'lint-automation-manager.cjs', category: 'code-quality' },
+      { name: 'code-quality', path: 'code-quality-monitor.cjs', category: 'analysis' },
+      { name: 'performance', path: 'performance-optimizer.cjs', category: 'optimization' },
+      { name: 'content-generator', path: 'content-generator.cjs', category: 'generation' },
+      { name: 'seo-optimizer', path: 'seo-optimizer.cjs', category: 'seo' },
+      { name: 'security-scanner', path: 'security-scanner.cjs', category: 'security' },
+      { name: 'test-generator', path: 'test-generator.cjs', category: 'testing' },
+      { name: 'intelligent-orchestrator', path: 'intelligent-orchestrator.cjs', category: 'orchestration' },
+      { name: 'automation-factory', path: 'automation-factory.cjs', category: 'factory' },
+      { name: 'self-healing', path: 'self-healing-orchestrator.cjs', category: 'maintenance' },
     ];
 
-    for (const system of systems) {
+    const addSystem = (system) => {
       const systemPath = path.join(__dirname, system.path);
       if (fs.existsSync(systemPath)) {
         this.automationSystems.set(system.name, {
           ...system,
+          status: 'available',
           path: systemPath,
           lastRun: null,
           successCount: 0,
@@ -60,6 +63,19 @@ class AutomationDashboard {
           uptime: 0,
           isRunning: false
         });
+      }
+    };
+
+    for (const s of seed) addSystem(s);
+
+    // Auto-discover additional automation scripts (future automations appear automatically)
+    const files = fs.readdirSync(__dirname);
+    for (const file of files) {
+      if ((file.endsWith('.cjs') || file.endsWith('.js')) && !file.endsWith('.cjs.map') && file !== path.basename(__filename)) {
+        const name = path.basename(file).replace(/\.(cjs|js)$/,'');
+        if (!this.automationSystems.has(name)) {
+          addSystem({ name, path: file, category: 'misc' });
+        }
       }
     }
   }
