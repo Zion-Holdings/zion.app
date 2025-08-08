@@ -1,10 +1,14 @@
 import React from 'react';
 import EnhancedNavigation from './EnhancedNavigation';
 import EnhancedFooter from './EnhancedFooter';
+import dynamic from 'next/dynamic';
 
 export type EnhancedLayoutProps = {
   children: React.ReactNode;
 };
+
+// Lazy-load chat widget to avoid adding to initial critical path
+const ChatWidget = dynamic(() => import('../chat/ChatWidget'), { ssr: false });
 
 export default function EnhancedLayout({ children }: EnhancedLayoutProps) {
   return (
@@ -16,6 +20,8 @@ export default function EnhancedLayout({ children }: EnhancedLayoutProps) {
       <footer>
         <EnhancedFooter />
       </footer>
+      {/* Global chat assistant */}
+      <ChatWidget />
     </div>
   );
 }
