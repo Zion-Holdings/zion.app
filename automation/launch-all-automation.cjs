@@ -10,6 +10,7 @@ class AutomationLauncher {
     this.logFile = path.join(__dirname, 'logs', 'automation-launcher.log');
     this.ensureLogDirectory();
     this.startTime = Date.now();
+    this.systemsDef = [];
   }
 
   ensureLogDirectory() {
@@ -72,7 +73,7 @@ class AutomationLauncher {
       { name: 'automation-dashboard', script: 'automation-dashboard.cjs', args: ['start'] },
       { name: 'lint-monitor', script: 'lint-monitor.cjs', args: ['start'] },
       { name: 'self-healing', script: 'self-healing-orchestrator.cjs', args: [] },
-      { name: 'alignment-orchestrator', script: 'alignment-orchestrator.cjs', args: [] },
+      { name: 'alignment-orchestrator', script: 'alignment-orchestrator.cjs', args: ['continuous'] },
       { name: 'code-quality', script: 'code-quality-monitor.cjs', args: [] },
       { name: 'performance', script: 'performance-optimizer.cjs', args: [] },
       { name: 'security-scanner', script: 'security-scanner.cjs', args: [] },
@@ -80,19 +81,22 @@ class AutomationLauncher {
       { name: 'test-generator', script: 'test-generator.cjs', args: [] }
     ];
 
+    this.systemsDef = systems;
+
     for (const system of systems) {
       const scriptPath = path.join(__dirname, system.script);
       if (fs.existsSync(scriptPath)) {
         await this.startSystem(system.name, scriptPath, system.args || []);
-        
-        // Add delay between starts
-        await this.sleep(2000);
+        // Start faster to achieve near real-time coverage
+        await this.sleep(250);
       } else {
         this.log(`⚠️ Script not found: ${system.script}`);
       }
     }
 
     this.log(`📊 Started ${this.processes.size} automation systems`);
+    // Automatically enable monitoring to keep processes alive
+    this.monitor();
   }
 
   async stopAllSystems() {
@@ -162,15 +166,24 @@ class AutomationLauncher {
     this.log('👀 Starting automation monitoring...');
     
     setInterval(() => {
-      this.log(`📊 Monitoring: ${this.processes.size} systems running`);
-      
-      for (const [name, process] of this.processes) {
-        if (process.killed) {
-          this.log(`⚠️ ${name} has stopped, restarting...`);
-          this.restartSystem(name);
+      try {
+        this.log(`📊 Monitoring: ${this.processes.size} systems running`);
+        const expected = new Map(this.systemsDef.map(s => [s.name, s]));
+        // Restart missing or stopped processes
+        for (const [name, def] of expected) {
+          const proc = this.processes.get(name);
+          if (!proc || proc.killed) {
+            this.log(`⚠️ ${name} not running, restarting...`);
+            const scriptPath = path.join(__dirname, def.script);
+            if (fs.existsSync(scriptPath)) {
+              this.startSystem(name, scriptPath, def.args || []);
+            }
+          }
         }
+      } catch (e) {
+        this.log(`❌ Monitor error: ${e.message}`);
       }
-    }, 30000); // Check every 30 seconds
+    }, 5000); // Check every 5 seconds for faster recovery
   }
 }
 

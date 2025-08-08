@@ -37,12 +37,20 @@ function orchestrateOnce() {
   run('node', [path.join(__dirname, 'alignment-factory.cjs')]);
 }
 
-function start() {
+function start(mode = 'once') {
   log('🚀 Alignment orchestrator started');
-  orchestrateOnce();
+  if (mode === 'continuous') {
+    const run = async () => {
+      orchestrateOnce();
+      setTimeout(run, 5 * 60 * 1000);
+    };
+    run();
+  } else {
+    orchestrateOnce();
+  }
 }
 
-if (require.main === module) start();
+if (require.main === module) start(process.argv[2] || 'once');
 
 module.exports = { start, orchestrateOnce };
 
