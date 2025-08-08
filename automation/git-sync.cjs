@@ -21,6 +21,8 @@ function log(msg) {
 
 (function main() {
   try {
+    const isCi = process.env.GITHUB_ACTIONS === 'true';
+
     // Ensure we're in a git repo
     const inside = safeRun('git rev-parse --is-inside-work-tree');
     if (!/true/i.test(inside)) {
@@ -29,22 +31,32 @@ function log(msg) {
     }
 
     // Ensure user config exists (local scope)
-    const userName = safeRun('git config user.name');
-    const userEmail = safeRun('git config user.email');
-    if (!userName) safeRun('git config user.name "Zion Automation Bot"');
-    if (!userEmail) safeRun('git config user.email "bot@zion.app"');
+    if (isCi) {
+      const userName = safeRun('git config user.name');
+      const userEmail = safeRun('git config user.email');
+      if (!userName) safeRun('git config user.name "github-actions[bot]"');
+      if (!userEmail) safeRun('git config user.email "41898282+github-actions[bot]@users.noreply.github.com"');
+    } else {
+      const userName = safeRun('git config user.name');
+      const userEmail = safeRun('git config user.email');
+      if (!userName) safeRun('git config user.name "Zion Automation Bot"');
+      if (!userEmail) safeRun('git config user.email "bot@zion.app"');
+    }
 
-    // Ensure correct remote URL
-    const desired = 'https://github.com/Zion-Holdings/zion.app';
-    let origin = safeRun('git remote get-url origin');
-    if (!origin) {
-      safeRun(`git remote add origin ${desired}.git`);
-      origin = desired + '.git';
-      log(`Added origin remote: ${origin}`);
-    } else if (!origin.includes('Zion-Holdings/zion.app')) {
-      safeRun(`git remote set-url origin ${desired}.git`);
-      origin = desired + '.git';
-      log(`Updated origin remote: ${origin}`);
+    // Remote configuration
+    // In CI, actions/checkout already configures a tokenized remote. Do not override it.
+    if (!isCi) {
+      const desired = 'https://github.com/Zion-Holdings/zion.app';
+      let origin = safeRun('git remote get-url origin');
+      if (!origin) {
+        safeRun(`git remote add origin ${desired}.git`);
+        origin = desired + '.git';
+        log(`Added origin remote: ${origin}`);
+      } else if (!origin.includes('Zion-Holdings/zion.app')) {
+        safeRun(`git remote set-url origin ${desired}.git`);
+        origin = desired + '.git';
+        log(`Updated origin remote: ${origin}`);
+      }
     }
 
     // Check if there are changes
@@ -59,7 +71,6 @@ function log(msg) {
 
     // Create commit message
     const timestamp = new Date().toISOString();
-    const branch = safeRun('git rev-parse --abbrev-ref HEAD') || 'main';
     const msg = `chore(automation): sync changes from automation at ${timestamp}`;
 
     // Commit

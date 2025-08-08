@@ -1,30 +1,18 @@
-import React from 'react';
 import Link from 'next/link';
 
-const EnhancedNavigation: React.FC = () => {
+export default function EnhancedNavigation() {
   return (
-    <nav className="bg-white shadow-lg">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
-          <div className="text-xl font-bold text-gray-800">Logo</div>
-          <div className="hidden md:flex space-x-8">
-            <Link href="/">
-              <a className="text-gray-600 hover:text-gray-900">Home</a>
-            </Link>
-            <Link href="/services">
-              <a className="text-gray-600 hover:text-gray-900">Services</a>
-            </Link>
-            <Link href="/about">
-              <a className="text-gray-600 hover:text-gray-900">About</a>
-            </Link>
-            <Link href="/contact">
-              <a className="text-gray-600 hover:text-gray-900">Contact</a>
-            </Link>
-          </div>
+    <nav className="border-b border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-black/40 backdrop-blur supports-backdrop-blur:bg-white/50 sticky top-0 z-40">
+      <div className="container mx-auto px-4 h-14 flex items-center justify-between">
+        <Link href="/">
+          <a className="font-semibold">Zion</a>
+        </Link>
+        <div className="flex items-center gap-4 text-sm">
+          <Link href="/about"><a>About</a></Link>
+          <Link href="/blog"><a>Blog</a></Link>
+          <Link href="/contact"><a>Contact</a></Link>
         </div>
       </div>
     </nav>
   );
-};
-
-export default EnhancedNavigation;
+}

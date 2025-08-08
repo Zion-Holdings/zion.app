@@ -1,0 +1,30 @@
+name: Revenue Ideas Daily
+
+on:
+  schedule:
+    - cron: '30 2 * * *'
+  workflow_dispatch:
+
+jobs:
+  revenue_ideas:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Run revenue ideas orchestrator (single cycle)
+        run: node automation/revenue-ideas-orchestrator.cjs once | cat
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: revenue-ideas-artifacts
+          path: |
+            data/reports/revenue-ideas/**/*
+            automation/logs/**/*.log
+          if-no-files-found: ignore

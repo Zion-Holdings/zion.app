@@ -2,74 +2,132 @@
 
 const fs = require('fs');
 const path = require('path');
+const axios = require('axios');
 
-const LOG = path.join(__dirname, '..', 'logs', 'instagram-post-latest.log');
-if (!fs.existsSync(path.dirname(LOG))) fs.mkdirSync(path.dirname(LOG), { recursive: true });
+const LOG_DIR = path.join(__dirname, '..', 'logs');
+const LOG_FILE = path.join(LOG_DIR, 'instagram-post.log');
+const STATE_FILE = path.join(__dirname, 'post-index.json');
+const CAPTIONS_FILE = path.join(__dirname, 'captions.json');
 
-function log(message) {
-  const line = `[${new Date().toISOString()}] ${message}\n`;
-  console.log(message);
-  fs.appendFileSync(LOG, line);
+function ensureDir(dir) {
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 }
 
-function loadCaptions() {
-  const captionsPath = path.join(__dirname, 'captions.json');
-  if (!fs.existsSync(captionsPath)) return [];
+function log(message) {
+  ensureDir(LOG_DIR);
+  const line = `[${new Date().toISOString()}] ${message}\n`;
+  console.log(message);
+  fs.appendFileSync(LOG_FILE, line);
+}
+
+function readCaptions() {
   try {
-    const data = JSON.parse(fs.readFileSync(captionsPath, 'utf8'));
-    return data.captions || [];
-  } catch {
+    if (!fs.existsSync(CAPTIONS_FILE)) return [];
+    const data = JSON.parse(fs.readFileSync(CAPTIONS_FILE, 'utf8'));
+    return Array.isArray(data.captions) ? data.captions.filter(Boolean) : [];
+  } catch (e) {
+    log(`⚠️ Failed to read captions: ${e.message}`);
     return [];
   }
 }
 
-async function postToInstagram(caption) {
-  // We do NOT support direct credential login. Use Meta Graph API tokens in env vars.
-  const igUserId = process.env.IG_USER_ID;
-  const igAccessToken = process.env.IG_ACCESS_TOKEN;
-
-  if (!igUserId || !igAccessToken) {
-    log('⚠️ IG_USER_ID or IG_ACCESS_TOKEN not configured. Skipping post.');
-    return { success: false, skipped: true };
+function getNextIndex(total) {
+  if (total === 0) return 0;
+  try {
+    if (!fs.existsSync(STATE_FILE)) return 0;
+    const state = JSON.parse(fs.readFileSync(STATE_FILE, 'utf8'));
+    const next = ((state.lastIndex ?? -1) + 1) % total;
+    return next;
+  } catch {
+    return 0;
   }
+}
 
-  // Placeholder: create container and publish via Graph API if tokens are available.
-  // This implementation only logs intent to avoid making external network calls in CI.
-  log(`📣 Would post to Instagram (user ${igUserId}):\n${caption}`);
-  return { success: true, simulated: true };
+function saveIndex(index) {
+  try {
+    fs.writeFileSync(STATE_FILE, JSON.stringify({ lastIndex: index, updatedAt: new Date().toISOString() }, null, 2));
+  } catch (e) {
+    log(`⚠️ Failed to persist state: ${e.message}`);
+  }
+}
+
+function buildImageUrl(titleForText) {
+  // Prefer provided image URL; otherwise generate a branded placeholder using dummyimage
+  const envUrl = process.env.IG_IMAGE_URL;
+  if (envUrl && /^https?:\/\//.test(envUrl)) return envUrl;
+  const text = encodeURIComponent(`${titleForText || 'Zion Tech Group'} — Modern, Secure, Fast`);
+  // 1200x628 OpenGraph-friendly image, dark blue bg (#0a2540) with white text
+  return `https://dummyimage.com/1200x628/0a2540/ffffff.png&text=${text}`;
+}
+
+async function postToInstagram({ userId, accessToken, imageUrl, caption }) {
+  const apiBase = 'https://graph.facebook.com/v20.0';
+  // Step 1: Create media container
+  const createUrl = `${apiBase}/${encodeURIComponent(userId)}/media`;
+  const createParams = { image_url: imageUrl, caption, access_token: accessToken };
+  const createRes = await axios.post(createUrl, null, { params: createParams });
+  if (!createRes.data || !createRes.data.id) throw new Error('Failed to create media container');
+  const creationId = createRes.data.id;
+  log(`✅ Created media container: ${creationId}`);
+
+  // Step 2: Publish media
+  const publishUrl = `${apiBase}/${encodeURIComponent(userId)}/media_publish`;
+  const publishRes = await axios.post(publishUrl, null, { params: { creation_id: creationId, access_token: accessToken } });
+  if (!publishRes.data || !publishRes.data.id) throw new Error('Failed to publish media');
+  const mediaId = publishRes.data.id;
+  log(`📣 Published media: ${mediaId}`);
+
+  // Step 3: Try to fetch permalink
+  try {
+    const mediaGet = await axios.get(`${apiBase}/${encodeURIComponent(mediaId)}`, { params: { fields: 'permalink', access_token: accessToken } });
+    const permalink = mediaGet.data && mediaGet.data.permalink;
+    if (permalink) log(`🔗 Permalink: ${permalink}`);
+  } catch (e) {
+    log(`ℹ️ Could not fetch permalink: ${e.response?.data?.error?.message || e.message}`);
+  }
 }
 
 async function main() {
   try {
-    const captions = loadCaptions();
-    if (captions.length === 0) {
-      log('ℹ️ No captions available to post.');
-      return;
+    const IG_USER_ID = process.env.IG_USER_ID || process.env.IG_BUSINESS_ACCOUNT_ID; // required
+    const IG_ACCESS_TOKEN = process.env.IG_ACCESS_TOKEN; // required
+
+    if (!IG_USER_ID || !IG_ACCESS_TOKEN) {
+      log('❌ Missing IG_USER_ID/IG_ACCESS_TOKEN in environment. Skipping post.');
+      process.exit(0);
     }
 
-    const nextIndexPath = path.join(__dirname, 'next-index.txt');
-    let index = 0;
-    if (fs.existsSync(nextIndexPath)) {
-      const raw = parseInt(fs.readFileSync(nextIndexPath, 'utf8'), 10);
-      if (!Number.isNaN(raw)) index = raw;
-    }
+    const appUrl = process.env.APP_MARKETING_URL || 'https://ziontechgroup.com';
+    const captions = readCaptions();
 
-    const caption = captions[index % captions.length];
-    const res = await postToInstagram(caption);
-    if (res.success) {
-      fs.writeFileSync(nextIndexPath, String((index + 1) % captions.length));
-      log('✅ Instagram post processed');
-    } else if (res.skipped) {
-      log('⏭️ Skipped due to missing configuration');
-    } else {
-      log('❌ Failed to post');
-    }
+    // Fallback professional caption if none generated by factory
+    const fallbackCaption = [
+      'Experience the next generation of productivity with Zion.\n',
+      '• Modern design and intuitive UX\n• Secure architecture for peace of mind\n• Fast performance to accelerate your work',
+      `\nExplore more: ${appUrl}`,
+      '\n#ZionTechGroup #Productivity #SaaS #WebApp #Automation #Innovation'
+    ].join('\n');
+
+    const index = getNextIndex(captions.length || 1);
+    const selected = captions.length > 0 ? captions[index] : fallbackCaption;
+
+    // Try to extract a title line for the image text
+    const firstLine = (selected.split('\n')[0] || 'Zion Tech Group').replace(/^#+\s*/, '').trim();
+    const imageUrl = buildImageUrl(firstLine);
+
+    log(`📝 Using caption index ${index} (${captions.length} available).`);
+    await postToInstagram({ userId: IG_USER_ID, accessToken: IG_ACCESS_TOKEN, imageUrl, caption: selected });
+    saveIndex(index);
+    log('✅ Instagram post complete');
   } catch (e) {
-    log(`❌ Error: ${e.message}`);
+    const msg = e.response?.data?.error?.message || e.message;
+    log(`❌ Post failed: ${msg}`);
     process.exitCode = 1;
   }
 }
 
-main();
+if (require.main === module) {
+  main();
+}
 
 

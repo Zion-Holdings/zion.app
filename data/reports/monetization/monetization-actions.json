@@ -1,0 +1,23 @@
+{
+  "timestamp": "2025-08-08T17:02:35.173Z",
+  "actions": [
+    "generate_pricing_page",
+    "setup_checkout_stub",
+    "add_cta_buttons",
+    "instrument_analytics",
+    "newsletter_capture",
+    "trial_signup_flow",
+    "seo_to_monetization_path",
+    "generate_ab_test_variants",
+    "improve_conversion_copy",
+    "create_monetization_factories"
+  ],
+  "insights": [
+    "No pricing page detected.",
+    "No checkout API stub detected.",
+    "No clear CTA found on key pages.",
+    "No analytics instrumentation detected.",
+    "No newsletter capture component detected.",
+    "No signup/trial flow detected."
+  ]
+}

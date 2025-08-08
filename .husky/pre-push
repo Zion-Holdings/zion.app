@@ -10,6 +10,10 @@ npm run type-check || {
     exit 1
 }
 
+# Check for merge conflicts (including with origin/main)
+echo "🧩 Checking for merge conflicts..."
+bash ./scripts/check-merge-conflicts.sh
+
 # Automation system check removed (script not present)
 
 # Check for sensitive data in commits
@@ -30,5 +34,11 @@ echo "💾 Creating backup of important files..."
 mkdir -p .git/backup 2>/dev/null || true
 cp package.json .git/backup/package.json.backup 2>/dev/null || true
 cp next.config.js .git/backup/next.config.js.backup 2>/dev/null || true
+
+# Run fast git health check
+node automation/git-health.cjs --fast --fix || {
+    echo "❌ Git health check failed. Fix issues before pushing."
+    exit 1
+}
 
 echo "✅ Pre-push checks passed" 

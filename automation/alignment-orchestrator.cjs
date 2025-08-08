@@ -35,6 +35,9 @@ function orchestrateOnce() {
 
   // 4) Feed tasks to alignment factory (creates autonomous agents/scripts)
   run('node', [path.join(__dirname, 'alignment-factory.cjs')]);
+
+  // 5) Run compliance checker to validate project against chat instructions
+  run('node', [path.join(__dirname, 'compliance-checker.cjs')]);
 }
 
 function start(mode = 'once') {

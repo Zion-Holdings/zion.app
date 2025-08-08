@@ -1,6 +1,7 @@
 {
   "exclude": [
-    "launch-all-automation.cjs"
+    "autonomous-guardian.cjs",
+    "autonomous-guardian.js"
   ]
 }
 
