@@ -374,3 +374,16 @@ The system is now capable of continuously improving the application, fixing erro
 - Workflow: `.github/workflows/instagram-six-hourly.yml`
 - Schedule: every 6 hours, plus manual dispatch
 - Action: runs `node automation/instagram-marketing-orchestrator.cjs once` with necessary secrets
+
+### 8. Autonomous Frontend Sync System
+
+- **Files**:
+  - `automation/autonomous-frontend-sync-factory.cjs`
+  - `automation/autonomous-frontend-sync-orchestrator.cjs`
+  - `automation/autonomous-frontend-sync-cron.sh`
+- **Purpose**: Continuously generates and executes frontend sync agents to ensure newly created pages and improvements are reflected on the frontend without modifying existing factories/orchestrators.
+- **Features**:
+  - Continuous file watching for `pages/`, `components/`, `styles/`, `utils/`, `public/`
+  - Uses existing `frontend-sync-analyzer.cjs` for action decisions
+  - Autonomous agent generation and execution (content metadata sync, page/component sync, sitemap rebuild)
+  - Logs activity to `automation/logs/*`
