@@ -1,0 +1,108 @@
+[
+  {
+    "id": "ai-dev-foundations",
+    "title": "AI Development Foundations",
+    "category": "AI Development",
+    "durationMinutes": 180,
+    "level": "Beginner",
+    "isFree": true,
+    "certificationBadge": "AI Dev Foundations",
+    "description": "Learn core concepts of modern AI development, from prompts to evaluation.",
+    "lessons": [
+      {
+        "id": "intro",
+        "title": "Introduction to AI Development",
+        "type": "text",
+        "content": "Welcome to AI Development Foundations. You'll learn prompts, models, and pipelines.",
+        "quiz": {
+          "questions": [
+            {
+              "id": "q1",
+              "question": "What is a prompt?",
+              "options": [
+                "An instruction to guide a model",
+                "A data storage format",
+                "A GPU operation",
+                "A deployment target"
+              ],
+              "answerIndex": 0
+            }
+          ]
+        }
+      },
+      {
+        "id": "models",
+        "title": "Model Basics",
+        "type": "text",
+        "content": "Overview of model families, tokenization, and inference.",
+        "quiz": {
+          "questions": [
+            {
+              "id": "q1",
+              "question": "Tokenization is...",
+              "options": [
+                "Converting text to model-friendly tokens",
+                "Compressing images",
+                "Encrypting data",
+                "Running training epochs"
+              ],
+              "answerIndex": 0
+            }
+          ]
+        }
+      }
+    ],
+    "finalQuiz": {
+      "questions": [
+        {
+          "id": "fq1",
+          "question": "Which best describes a prompt?",
+          "options": [
+            "Instructions for the model",
+            "A dataset labeling tool",
+            "A cloud VM type",
+            "A PDF format"
+          ],
+          "answerIndex": 0
+        }
+      ],
+      "passThreshold": 1
+    }
+  },
+  {
+    "id": "freelancing-pro",
+    "title": "Freelancing Pro Playbook",
+    "category": "Freelancing",
+    "durationMinutes": 120,
+    "level": "Intermediate",
+    "isFree": true,
+    "certificationBadge": "Freelancing Pro",
+    "description": "Client acquisition, pricing, and delivery workflows.",
+    "lessons": [],
+    "finalQuiz": { "questions": [], "passThreshold": 0 }
+  },
+  {
+    "id": "remote-hiring-masterclass",
+    "title": "Remote Hiring Masterclass",
+    "category": "Remote Hiring",
+    "durationMinutes": 90,
+    "level": "Intermediate",
+    "isFree": false,
+    "certificationBadge": "Remote Hiring Specialist",
+    "description": "Build a world-class remote team.",
+    "lessons": [],
+    "finalQuiz": { "questions": [], "passThreshold": 0 }
+  },
+  {
+    "id": "cloud-architecture-essentials",
+    "title": "Cloud Architecture Essentials",
+    "category": "Cloud Architecture",
+    "durationMinutes": 150,
+    "level": "Advanced",
+    "isFree": false,
+    "certificationBadge": "Cloud Architect",
+    "description": "Design resilient cloud systems.",
+    "lessons": [],
+    "finalQuiz": { "questions": [], "passThreshold": 0 }
+  }
+]

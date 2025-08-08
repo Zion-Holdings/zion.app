@@ -1,0 +1,11 @@
+{
+  "demo-user": {
+    "userId": "demo-user",
+    "name": "Demo User",
+    "slug": "demo-user",
+    "certifications": [],
+    "badges": [],
+    "boostInSearch": false,
+    "progress": {}
+  }
+}
