@@ -17,8 +17,9 @@
   "scripts": {
     "deps:maintain": "node automation/dependency-update-orchestrator.cjs",
     "deps:cron:start": "bash automation/dependency-maintenance-cron.sh",
-    "sitemap": "node scripts/generate-sitemap.mjs",
-    "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev",
+          "sitemap": "node scripts/generate-sitemap.mjs",
+      "ai:blog": "ts-node scripts/ai-content-generator.ts",
+      "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev",
     "build": "NODE_OPTIONS=--openssl-legacy-provider next build",
     "export": "NODE_OPTIONS=--openssl-legacy-provider next build && next export",
     "start": "next start",
