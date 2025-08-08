@@ -224,6 +224,8 @@
     "@modelcontextprotocol/server-filesystem": "^2025.7.29",
     "@modelcontextprotocol/server-memory": "^2025.8.4",
     "@modelcontextprotocol/server-sequential-thinking": "^2025.7.1",
+    "@sentry/nextjs": "^7.120.4",
+    "@sentry/node": "^7.120.4",
     "@supabase/ssr": "^0.6.1",
     "@supabase/supabase-js": "^2.39.0",
     "@types/react-datepicker": "^6.2.0",
