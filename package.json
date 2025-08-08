@@ -113,7 +113,13 @@
     "linting:start": "npm run linting:orchestrator continuous",
     "linting:status": "npm run linting:orchestrator status",
     "linting:check": "npm run linting:orchestrator check",
-    "linting:fix": "node automation/lint-error-fixer.cjs all"
+    "linting:fix": "node automation/lint-error-fixer.cjs all",
+    "healing:scan": "node automation/automation-error-scanner.cjs",
+    "healing:fix": "node automation/automation-error-fixer.cjs",
+    "healing:start": "node automation/self-healing-orchestrator.cjs",
+    "healing:cron:start": "bash automation/self-healing-cron.sh start",
+    "healing:cron:stop": "bash automation/self-healing-cron.sh stop",
+    "healing:cron:status": "bash automation/self-healing-cron.sh status"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
