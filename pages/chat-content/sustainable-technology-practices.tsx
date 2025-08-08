@@ -1,0 +1,1 @@
+export default function ChatSustainableTechnologyPractices() { return null; }

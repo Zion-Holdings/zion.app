@@ -13,7 +13,7 @@ const Index: NextPage = () => {
       <main>
         <h1>Index</h1>
         <p>Blog content coming soon...</p>
-        <Link href="/blog">Back to Blog</Link>
+        <Link href="/blog"><a>Back to Blog</a></Link>
       </main>
     </div>
   );

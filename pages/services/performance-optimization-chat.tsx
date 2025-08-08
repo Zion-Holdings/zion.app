@@ -13,7 +13,7 @@ const PerformanceOptimizationChat: NextPage = () => {
       <main>
         <h1>PerformanceOptimizationChat</h1>
         <p>Service details coming soon...</p>
-        <Link href="/services">Back to Services</Link>
+        <Link href="/services"><a>Back to Services</a></Link>
       </main>
     </div>
   );
