@@ -1,11 +1,11 @@
 {
-  "timestamp": "2025-08-08T06:49:50.119Z",
+  "timestamp": "2025-08-08T06:50:00.919Z",
   "changedFiles": [
-    "automation/cursor-agents/task-1754635779792-1.cjs",
-    "automation/cursor-agents/task-1754635779792-2.cjs",
-    "automation/cursor-agents/task-1754635779792-3.cjs",
-    "automation/cursor-agents/task-1754635779792-4.cjs",
-    "automation/cursor-agents/task-1754635779792-5.cjs",
+    "automation/cursor-agents/task-1754635789830-1.cjs",
+    "automation/cursor-agents/task-1754635789830-2.cjs",
+    "automation/cursor-agents/task-1754635789830-3.cjs",
+    "automation/cursor-agents/task-1754635789830-4.cjs",
+    "automation/cursor-agents/task-1754635789830-5.cjs",
     "automation/instagram-agents/captions.json",
     "automation/instagram-agents/highlights.json",
     "data/reports/alignment/alignment-report.json",
@@ -14,12 +14,11 @@
     "data/reports/feature-marketing/feature-marketing-actions.json",
     "data/reports/frontend-sync/frontend-sync-actions.json",
     "data/reports/homepage-promo/homepage-promo-actions.json",
-    "data/reports/homepage-promo/proposals/proposal-1754635780098.md",
+    "data/reports/homepage-promo/proposals/proposal-1754635789966.md",
     "data/reports/marketing/linkedin/linkedin-posts.json",
     "data/reports/marketing/linkedin/linkedin-pro-posts.json",
     "data/reports/responsive/responsive-analysis.json",
     "data/reports/saas/saas-actions.json",
-    "data/reports/spec-dev/chat-raw.html",
     "pages/index.tsx"
   ],
   "actions": [
