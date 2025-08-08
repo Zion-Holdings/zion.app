@@ -1,7 +1,7 @@
 {
-  "timestamp": "2025-08-08T16:53:35.514Z",
-  "filesAnalyzed": 106,
-  "issuesFound": 100,
+  "timestamp": "2025-08-08T17:23:03.398Z",
+  "filesAnalyzed": 114,
+  "issuesFound": 108,
   "items": [
     {
       "filePath": "/workspace/pages/404.tsx",
@@ -30,6 +30,13 @@
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
+      ]
+    },
+    {
+      "filePath": "/workspace/pages/admin/automation-status.tsx",
+      "issues": [
+        "missing_head",
+        "missing_viewport"
       ]
     },
     {
@@ -516,6 +523,12 @@
       ]
     },
     {
+      "filePath": "/workspace/pages/services/ai-seo-auditor.tsx",
+      "issues": [
+        "missing_viewport"
+      ]
+    },
+    {
       "filePath": "/workspace/pages/services/api-development-chat.tsx",
       "issues": [
         "missing_viewport",
@@ -534,6 +547,12 @@
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
+      ]
+    },
+    {
+      "filePath": "/workspace/pages/services/customer-support-chatbot.tsx",
+      "issues": [
+        "missing_viewport"
       ]
     },
     {
@@ -558,6 +577,18 @@
       ]
     },
     {
+      "filePath": "/workspace/pages/services/instagram-content-scheduler.tsx",
+      "issues": [
+        "missing_viewport"
+      ]
+    },
+    {
+      "filePath": "/workspace/pages/services/landing-page-generator.tsx",
+      "issues": [
+        "missing_viewport"
+      ]
+    },
+    {
       "filePath": "/workspace/pages/services/mobile-app-development-chat.tsx",
       "issues": [
         "missing_viewport",
@@ -576,6 +607,12 @@
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
+      ]
+    },
+    {
+      "filePath": "/workspace/pages/services/price-intelligence-service.tsx",
+      "issues": [
+        "missing_viewport"
       ]
     },
     {
@@ -621,10 +658,16 @@
       ]
     },
     {
-      "filePath": "/workspace/pages/talent/index.tsx",
+      "filePath": "/workspace/pages/talent/[slug].tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
+      ]
+    },
+    {
+      "filePath": "/workspace/pages/talent/index.tsx",
+      "issues": [
+        "missing_viewport"
       ]
     },
     {
@@ -635,6 +678,12 @@
     },
     {
       "filePath": "/workspace/components/layout/EnhancedLayout.tsx",
+      "issues": [
+        "no_tailwind_responsive_classes"
+      ]
+    },
+    {
+      "filePath": "/workspace/components/monetization/PaidConsultation.tsx",
       "issues": [
         "no_tailwind_responsive_classes"
       ]

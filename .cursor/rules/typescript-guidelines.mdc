@@ -1,3 +1,8 @@
+---
+description: TypeScript usage standards for this repository
+globs: **/*.{ts,tsx,cts,mts}
+---
+
 # TypeScript Guidelines
 
 ## Types

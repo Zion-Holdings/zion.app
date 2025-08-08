@@ -16,3 +16,8 @@ This file stores project-specific knowledge, conventions, and decisions that sho
 
 ## Known Constraints
 - React 17 compatibility
+- TailwindCSS configured
+
+- Next.js config present
+
+- TypeScript active with tsconfig.json

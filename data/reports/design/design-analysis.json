@@ -1,6 +1,6 @@
 {
-  "timestamp": "2025-08-08T16:53:35.166Z",
-  "filesAnalyzed": 106,
+  "timestamp": "2025-08-08T17:23:20.469Z",
+  "filesAnalyzed": 115,
   "items": [
     {
       "file": "/workspace/pages/404.tsx",
@@ -70,6 +70,25 @@
         "usesEnhancedFooter": false,
         "hasMetaTitle": true,
         "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/workspace/pages/admin/automation-status.tsx",
+      "issues": [
+        "missing_head_import",
+        "missing_enhanced_layout",
+        "missing_meta_title",
+        "missing_meta_description"
+      ],
+      "details": {
+        "filePath": "/workspace/pages/admin/automation-status.tsx",
+        "hasHead": false,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": false,
+        "hasMetaDesc": false
       }
     },
     {
@@ -404,6 +423,22 @@
       ],
       "details": {
         "filePath": "/workspace/pages/auto/auto-update-2025-08-08t16-49-54-200z.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/workspace/pages/auto/auto-update-2025-08-08t17-23-07-688z.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/workspace/pages/auto/auto-update-2025-08-08t17-23-07-688z.tsx",
         "hasHead": true,
         "usesTailwind": true,
         "usesEnhancedLayout": false,
@@ -1248,6 +1283,22 @@
       }
     },
     {
+      "file": "/workspace/pages/services/ai-seo-auditor.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/workspace/pages/services/ai-seo-auditor.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
       "file": "/workspace/pages/services/api-development-chat.tsx",
       "issues": [
         "no_tailwind_usage",
@@ -1291,6 +1342,22 @@
         "filePath": "/workspace/pages/services/cloud-migration-services-chat.tsx",
         "hasHead": true,
         "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/workspace/pages/services/customer-support-chatbot.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/workspace/pages/services/customer-support-chatbot.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
         "usesEnhancedLayout": false,
         "usesEnhancedNav": false,
         "usesEnhancedFooter": false,
@@ -1350,6 +1417,38 @@
       }
     },
     {
+      "file": "/workspace/pages/services/instagram-content-scheduler.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/workspace/pages/services/instagram-content-scheduler.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/workspace/pages/services/landing-page-generator.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/workspace/pages/services/landing-page-generator.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
       "file": "/workspace/pages/services/mobile-app-development-chat.tsx",
       "issues": [
         "no_tailwind_usage",
@@ -1393,6 +1492,22 @@
         "filePath": "/workspace/pages/services/performance-optimization-chat.tsx",
         "hasHead": true,
         "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/workspace/pages/services/price-intelligence-service.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/workspace/pages/services/price-intelligence-service.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
         "usesEnhancedLayout": false,
         "usesEnhancedNav": false,
         "usesEnhancedFooter": false,
@@ -1503,15 +1618,30 @@
       }
     },
     {
+      "file": "/workspace/pages/talent/[slug].tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/workspace/pages/talent/[slug].tsx",
+        "hasHead": true,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
       "file": "/workspace/pages/talent/index.tsx",
       "issues": [
-        "no_tailwind_usage",
         "missing_enhanced_layout"
       ],
       "details": {
         "filePath": "/workspace/pages/talent/index.tsx",
         "hasHead": true,
-        "usesTailwind": false,
+        "usesTailwind": true,
         "usesEnhancedLayout": false,
         "usesEnhancedNav": false,
         "usesEnhancedFooter": false,
@@ -1564,6 +1694,22 @@
         "usesEnhancedLayout": false,
         "usesEnhancedNav": false,
         "usesEnhancedFooter": true,
+        "hasMetaTitle": false,
+        "hasMetaDesc": false
+      }
+    },
+    {
+      "file": "/workspace/components/monetization/PaidConsultation.tsx",
+      "issues": [
+        "missing_enhanced_nav"
+      ],
+      "details": {
+        "filePath": "/workspace/components/monetization/PaidConsultation.tsx",
+        "hasHead": false,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
         "hasMetaTitle": false,
         "hasMetaDesc": false
       }
