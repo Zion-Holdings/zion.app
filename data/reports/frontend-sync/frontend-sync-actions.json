@@ -1,9 +1,8 @@
 {
-  "timestamp": "2025-08-08T09:08:05.906Z",
+  "timestamp": "2025-08-08T09:08:13.213Z",
   "changedFiles": [
-    "data/reports/link-monitor/site-link-report.json",
-    "data/reports/spec-dev/site-crawl.json",
-    "data/reports/spec-dev/spec-dev-actions.json"
+    "data/reports/spec-dev/spec-dev-actions.json",
+    "tsconfig.tsbuildinfo"
   ],
   "actions": [
     "sync_content_metadata"
