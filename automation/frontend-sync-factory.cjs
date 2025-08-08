@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { spawnSync } = require('child_process');
 
 const ROOT = path.join(__dirname, '..');
 const REPORT = path.join(ROOT, 'data', 'reports', 'frontend-sync', 'frontend-sync-actions.json');
@@ -24,9 +25,20 @@ function writeAgent({ name, code }) {
   return fp;
 }
 
+function ensureReport() {
+  if (fs.existsSync(REPORT)) return true;
+  // Attempt to generate the report by running the analyzer once
+  const analyzerPath = path.join(__dirname, 'frontend-sync-analyzer.cjs');
+  if (fs.existsSync(analyzerPath)) {
+    const res = spawnSync('node', [analyzerPath], { stdio: 'inherit' });
+    return res.status === 0 && fs.existsSync(REPORT);
+  }
+  return false;
+}
+
 function main() {
-  if (!fs.existsSync(REPORT)) {
-    console.error('No frontend sync report found');
+  if (!ensureReport()) {
+    console.error('No frontend sync report found and analyzer could not generate one');
     process.exit(1);
   }
   ensureDir(OUT_DIR);
