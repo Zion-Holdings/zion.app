@@ -1,0 +1,1 @@
+export default function Page() { return <div>digital-transformation-insights</div>; }
