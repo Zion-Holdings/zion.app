@@ -15,6 +15,7 @@
     "npm": ">=10.0.0"
   },
   "scripts": {
+    "automations": "node scripts/run-automations.mjs",
     "deps:maintain": "node automation/dependency-update-orchestrator.cjs",
     "deps:cron:start": "bash automation/dependency-maintenance-cron.sh",
     "sitemap": "node scripts/generate-sitemap.mjs",

@@ -8,6 +8,7 @@ export default function EnhancedNavigation() {
           <a className="font-semibold">Zion</a>
         </Link>
         <div className="flex items-center gap-4 text-sm">
+          <Link href="/automation/ai-trends"><a>Automations</a></Link>
           <Link href="/talent"><a>Talent</a></Link>
           <Link href="/favorites"><a>Favorites</a></Link>
           <Link href="/admin/quotes"><a>Admin</a></Link>
