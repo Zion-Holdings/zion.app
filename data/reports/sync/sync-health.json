@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-08T17:46:47.284Z",
+  "timestamp": "2025-08-08T17:48:48.184Z",
   "host": "cursor",
   "repoRoot": "/workspace",
   "status": "degraded",
@@ -22,17 +22,17 @@
     {
       "name": "auto-sync-log-fresh",
       "ok": true,
-      "details": "ageMs=118760.09375"
+      "details": "ageMs=117700.29174804688"
     },
     {
       "name": "auto-pull-log-fresh",
       "ok": true,
-      "details": "ageMs=184408.75268554688"
+      "details": "ageMs=4207.777099609375"
     },
     {
       "name": "advanced-git-sync-lock-stale",
       "ok": true,
-      "details": "ageMs=815.3134765625"
+      "details": "ageMs=Infinity"
     },
     {
       "name": "git-pull-rebase-lock-stale",
@@ -47,7 +47,7 @@
     {
       "name": "divergence",
       "ok": true,
-      "details": "behind=1, ahead=0, branch=main"
+      "details": "behind=0, ahead=0, branch=main"
     },
     {
       "name": "working-tree-clean",
