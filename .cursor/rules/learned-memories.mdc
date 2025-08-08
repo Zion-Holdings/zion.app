@@ -3,7 +3,7 @@
 This file stores project-specific knowledge, conventions, and decisions that should persist across sessions.
 
 ## User Preferences
-- 
+- Always check logs and create scripts and cron jobs to fix errors automatically; automations must run independent of Cursor; authorized to use this computer, terminal, Google Chrome, and to install required software.
 
 ## Technical Decisions
 - Node.js >= 20.18.1 (from package.json engines)
