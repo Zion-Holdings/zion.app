@@ -1,0 +1,1 @@
+export default function BlockchainSolutions() { return <main className="p-8">Blockchain solutions coming soon.</main>; }

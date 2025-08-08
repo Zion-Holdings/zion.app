@@ -1,0 +1,1 @@
+export default function ForgotPassword() { return <main className="p-8">Forgot password.</main>; }

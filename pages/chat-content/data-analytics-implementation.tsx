@@ -1,0 +1,1 @@
+export default function Page() { return <main className="p-8">Data analytics implementation coming soon.</main>; }

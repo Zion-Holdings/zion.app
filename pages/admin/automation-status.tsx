@@ -1,0 +1,1 @@
+export default function AutomationStatus() { return <main className="p-8">Automation status coming soon.</main>; }

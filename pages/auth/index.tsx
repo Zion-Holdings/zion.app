@@ -1,0 +1,1 @@
+export default function AuthIndex() { return <main className="p-8">Auth portal.</main>; }
