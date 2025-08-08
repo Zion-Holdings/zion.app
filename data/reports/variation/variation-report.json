@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-08T16:51:17.938Z",
+  "timestamp": "2025-08-08T16:51:32.374Z",
   "loops": {
     "alignment-orchestrator.log": {
       "restarts": 0,
@@ -17,9 +17,9 @@
       "loopScore": 0
     },
     "automation-launcher.log": {
-      "restarts": 763,
-      "started": 1658,
-      "loopScore": 0.4601930036188179
+      "restarts": 972,
+      "started": 2076,
+      "loopScore": 0.4682080924855491
     },
     "autonomous-automation-orchestrator.log": {
       "restarts": 0,
@@ -49,6 +49,11 @@
     "continuous-automation-improvement-system.log": {
       "restarts": 0,
       "started": 0,
+      "loopScore": 0
+    },
+    "cursor-chat-cron.log": {
+      "restarts": 0,
+      "started": 1,
       "loopScore": 0
     },
     "cursor-chat-orchestrator.log": {
@@ -81,6 +86,11 @@
       "started": 0,
       "loopScore": 0
     },
+    "feature-marketing-cron.log": {
+      "restarts": 0,
+      "started": 1,
+      "loopScore": 0
+    },
     "feature-marketing-orchestrator.log": {
       "restarts": 0,
       "started": 0,
@@ -104,6 +114,11 @@
     "google-docs.log": {
       "restarts": 0,
       "started": 0,
+      "loopScore": 0
+    },
+    "homepage-promo-cron.log": {
+      "restarts": 0,
+      "started": 1,
       "loopScore": 0
     },
     "homepage-promo-orchestrator.log": {
@@ -149,6 +164,11 @@
     "launch-enhanced-autonomous-system.log": {
       "restarts": 0,
       "started": 0,
+      "loopScore": 0
+    },
+    "linkedin-marketing-cron.log": {
+      "restarts": 0,
+      "started": 1,
       "loopScore": 0
     },
     "linkedin-marketing-orchestrator.log": {
@@ -229,6 +249,11 @@
     "self-healing.log": {
       "restarts": 0,
       "started": 0,
+      "loopScore": 0
+    },
+    "site-link-cron.log": {
+      "restarts": 0,
+      "started": 1,
       "loopScore": 0
     },
     "site-link-orchestrator.log": {
