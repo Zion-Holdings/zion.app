@@ -1,0 +1,102 @@
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+function smoothScrollTo(selector) {
+  const el = document.querySelector(selector);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', (e) => {
+    const href = a.getAttribute('href');
+    if (href && href.length > 1) {
+      e.preventDefault();
+      smoothScrollTo(href);
+    }
+  });
+});
+
+const navToggle = document.querySelector('.nav-toggle');
+const mainNav = document.querySelector('.main-nav');
+if (navToggle && mainNav) {
+  navToggle.addEventListener('click', () => {
+    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', String(!expanded));
+    mainNav.style.display = expanded ? 'none' : 'block';
+  });
+}
+
+const observer = new IntersectionObserver((entries) => {
+  for (const entry of entries) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  }
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+const form = document.getElementById('waitlist-form');
+const submitBtn = document.getElementById('submit-btn');
+const successEl = document.getElementById('form-success');
+
+function setError(id, message) {
+  const error = document.querySelector(`small.error[data-for="${id}"]`);
+  if (error) error.textContent = message || '';
+}
+
+function validate() {
+  let ok = true;
+  const requiredFields = ['name', 'email', 'company', 'role', 'interest'];
+  requiredFields.forEach((id) => setError(id, ''));
+
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const name = document.getElementById('name');
+  const email = document.getElementById('email');
+  const company = document.getElementById('company');
+  const role = document.getElementById('role');
+  const interest = document.getElementById('interest');
+
+  if (!name || !name.value.trim()) { setError('name', 'Name is required'); ok = false; }
+  if (!email || !email.value.trim() || !emailRe.test(email.value)) { setError('email', 'Valid email required'); ok = false; }
+  if (!company || !company.value.trim()) { setError('company', 'Company is required'); ok = false; }
+  if (!role || !role.value.trim()) { setError('role', 'Role is required'); ok = false; }
+  if (!interest || !interest.value) { setError('interest', 'Please select one'); ok = false; }
+
+  return ok;
+}
+
+if (form && submitBtn && successEl) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    successEl.textContent = '';
+    if (!validate()) return;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting…';
+
+    const payload = {
+      name: form.name.value.trim(),
+      email: form.email.value.trim(),
+      company: form.company.value.trim(),
+      role: form.role.value.trim(),
+      interest: form.interest.value,
+      newsletter: !!form.newsletter.checked
+    };
+
+    try {
+      // Replace this with your real endpoint.
+      await new Promise(res => setTimeout(res, 900));
+      console.log('Waitlist payload', payload);
+      successEl.textContent = 'Thanks! You are on the waitlist. We will be in touch shortly.';
+      form.reset();
+    } catch (err) {
+      successEl.textContent = 'Something went wrong. Please try again.';
+      console.error(err);
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Request Invite';
+    }
+  });
+}
