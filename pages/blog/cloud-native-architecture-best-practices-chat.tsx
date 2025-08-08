@@ -13,7 +13,7 @@ const CloudNativeArchitectureBestPracticesChat: NextPage = () => {
       <main>
         <h1>CloudNativeArchitectureBestPracticesChat</h1>
         <p>Blog content coming soon...</p>
-        <Link href="/blog">Back to Blog</Link>
+        <a href="/blog">Back to Blog</a>
       </main>
     </div>
   );
