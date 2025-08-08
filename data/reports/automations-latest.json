@@ -1,17 +1,35 @@
 {
-  "updatedAt": "2025-08-08T22:11:26.212Z",
+  "updatedAt": "2025-08-08T22:17:02.908Z",
   "automations": [
     {
       "key": "talent-insights",
       "name": "Autonomous Talent Insights",
       "latestUrl": "/automations/talent-insights/latest.json",
-      "lastGeneratedAt": "2025-08-08T22:11:26.199Z"
+      "lastGeneratedAt": "2025-08-08T22:17:02.903Z"
     },
     {
       "key": "marketplace-pulse",
       "name": "Marketplace Pulse",
       "latestUrl": "/automations/pulse/latest.json",
-      "lastGeneratedAt": "2025-08-08T22:11:26.212Z"
+      "lastGeneratedAt": "2025-08-08T22:17:02.905Z"
+    },
+    {
+      "key": "role-intel",
+      "name": "Role Intelligence",
+      "latestUrl": "/automations/role-intel/latest.json",
+      "lastGeneratedAt": "2025-08-08T22:17:02.906Z"
+    },
+    {
+      "key": "rate-distribution",
+      "name": "Rate Distribution",
+      "latestUrl": "/automations/rate-distribution/latest.json",
+      "lastGeneratedAt": "2025-08-08T22:17:02.907Z"
+    },
+    {
+      "key": "trends",
+      "name": "Trends (Delta)",
+      "latestUrl": "/automations/trends/latest.json",
+      "lastGeneratedAt": "2025-08-08T22:17:02.907Z"
     }
   ]
 }
