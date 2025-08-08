@@ -74,8 +74,9 @@ const ApplicationsDashboard: NextPage = () => {
             <p className="text-sm text-zinc-600">No applications yet.</p>
           ) : (
             applications.map((app) => {
-              const isUpload = app.resume.type === 'upload';
-              const resume = !isUpload && app.resume.type === 'ai' ? byId.get(app.resume.resumeId) : null;
+              const resumeRef = app.resume;
+              const isUpload = resumeRef.type === 'upload';
+              const resume = resumeRef.type === 'ai' ? byId.get(resumeRef.resumeId) : null;
               return (
                 <div key={app.id} className="rounded-lg border border-zinc-200 dark:border-zinc-800 p-4">
                   <div className="flex items-center justify-between gap-4">
@@ -86,9 +87,9 @@ const ApplicationsDashboard: NextPage = () => {
                       <div className="text-sm text-zinc-500">Date: {new Date(app.createdAt).toLocaleString()}</div>
                     </div>
                     <div>
-                      {isUpload ? (
+                      {resumeRef.type === 'upload' ? (
                         <button
-                          onClick={() => downloadBase64(app.resume.fileName, app.resume.fileBase64)}
+                          onClick={() => downloadBase64(resumeRef.fileName, resumeRef.fileBase64)}
                           className="inline-flex items-center rounded-md border border-zinc-300 px-3 py-2 hover:bg-zinc-50"
                         >
                           Download Uploaded PDF
@@ -116,7 +117,7 @@ const ApplicationsDashboard: NextPage = () => {
                       )}
                     </div>
                   </div>
-                  {!isUpload && resume ? (
+                  {resumeRef.type !== 'upload' && resume ? (
                     <div className="mt-4">
                       <ResumeCard resume={resume} />
                     </div>

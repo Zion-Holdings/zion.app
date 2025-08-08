@@ -8,11 +8,11 @@ export default function EnhancedNavigation() {
           <a className="font-semibold">Zion</a>
         </Link>
         <div className="flex items-center gap-4 text-sm">
+          <Link href="/services"><a>Services</a></Link>
+          <Link href="/category/ai-consulting-chat"><a>Capabilities</a></Link>
+          <Link href="/blog"><a>Insights</a></Link>
           <Link href="/about"><a>About</a></Link>
-          <Link href="/blog"><a>Blog</a></Link>
           <Link href="/contact"><a>Contact</a></Link>
-          <Link href="/resume/builder"><a>Resume Builder</a></Link>
-          <Link href="/admin/applications"><a>Applications</a></Link>
         </div>
       </div>
     </nav>

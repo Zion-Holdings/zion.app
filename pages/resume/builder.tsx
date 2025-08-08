@@ -124,7 +124,7 @@ const BuilderPage: NextPage = () => {
             >
               {saving ? 'Saving...' : 'Save'}
             </button>
-            <Link href="/" className="inline-flex items-center rounded-md border border-zinc-300 px-4 py-2 hover:bg-zinc-50">Home</Link>
+            <Link href="/"><a className="inline-flex items-center rounded-md border border-zinc-300 px-4 py-2 hover:bg-zinc-50">Home</a></Link>
           </div>
         </div>
         <p className="mt-6 text-sm text-zinc-600">

@@ -183,7 +183,7 @@ const ApplyPage: NextPage = () => {
             </label>
           </div>
 
-          <AnimatePresence mode="wait">
+          <AnimatePresence>
             <motion.div
               key={option + (selectedResume?.id || uploadFile?.name || '')}
               initial={{ opacity: 0, y: 6 }}
