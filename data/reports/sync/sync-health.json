@@ -1,0 +1,58 @@
+{
+  "timestamp": "2025-08-08T17:46:47.284Z",
+  "host": "cursor",
+  "repoRoot": "/workspace",
+  "status": "degraded",
+  "checks": [
+    {
+      "name": "git-repo",
+      "ok": true,
+      "details": "Inside git repo"
+    },
+    {
+      "name": "bg-sync-loop-running",
+      "ok": true,
+      "details": "PID: 3440 "
+    },
+    {
+      "name": "bg-pull-loop-running",
+      "ok": true,
+      "details": "PID: 3441 "
+    },
+    {
+      "name": "auto-sync-log-fresh",
+      "ok": true,
+      "details": "ageMs=118760.09375"
+    },
+    {
+      "name": "auto-pull-log-fresh",
+      "ok": true,
+      "details": "ageMs=184408.75268554688"
+    },
+    {
+      "name": "advanced-git-sync-lock-stale",
+      "ok": true,
+      "details": "ageMs=815.3134765625"
+    },
+    {
+      "name": "git-pull-rebase-lock-stale",
+      "ok": true,
+      "details": "ageMs=Infinity"
+    },
+    {
+      "name": "origin-configured",
+      "ok": true,
+      "details": "https://x-access-token:ghs_qNBaeg2v14LuMC4IBKBjGq0T4N5gyr2FojDs@github.com/Zion-Holdings/zion.app"
+    },
+    {
+      "name": "divergence",
+      "ok": true,
+      "details": "behind=1, ahead=0, branch=main"
+    },
+    {
+      "name": "working-tree-clean",
+      "ok": false,
+      "details": "changed=1"
+    }
+  ]
+}
