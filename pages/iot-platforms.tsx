@@ -1,0 +1,1 @@
+export default function IoTPlatforms() { return <main className="p-10"><h1 className="text-2xl font-bold">IoT Platforms</h1></main>; }

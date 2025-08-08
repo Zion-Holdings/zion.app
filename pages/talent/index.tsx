@@ -1,0 +1,1 @@
+export default function Talent() { return <main className="p-10"><h1 className="text-2xl font-bold">Talent</h1></main>; }

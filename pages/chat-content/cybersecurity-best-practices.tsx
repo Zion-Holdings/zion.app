@@ -1,0 +1,1 @@
+export default function ChatContentSecurity() { return <main className="p-10"><h1 className="text-2xl font-bold">Cybersecurity Best Practices</h1></main>; }
