@@ -1,0 +1,1 @@
+export default function Page() { return <div className="py-8">future-of-work-and-automation</div>; }

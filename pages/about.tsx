@@ -1,0 +1,3 @@
+export default function About() {
+  return <div className="py-8">About Zion</div>;
+}
