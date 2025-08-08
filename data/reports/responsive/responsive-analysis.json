@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-08T16:13:45.323Z",
+  "timestamp": "2025-08-08T16:14:50.533Z",
   "filesAnalyzed": 100,
   "issuesFound": 94,
   "items": [
@@ -21,7 +21,6 @@
     {
       "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/_document.tsx",
       "issues": [
-        "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
