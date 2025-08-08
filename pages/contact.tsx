@@ -1,0 +1,1 @@
+export default function Contact() { return <main style={{padding:'2rem'}}>Contact</main>; }

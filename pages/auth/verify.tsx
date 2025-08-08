@@ -1,0 +1,1 @@
+export default function Verify() { return <main style={{padding:'2rem'}}>Verify</main>; }

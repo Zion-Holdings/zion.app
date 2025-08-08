@@ -1,0 +1,1 @@
+export default function Automation() { return <main style={{padding:'2rem'}}>Automation</main>; }

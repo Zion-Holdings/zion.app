@@ -1,0 +1,1 @@
+export default function ResetPassword() { return <main style={{padding:'2rem'}}>Reset Password</main>; }
