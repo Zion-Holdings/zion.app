@@ -7415,6 +7415,8 @@ const Home: NextPage = () => {
         
         
         
+        
+        
         {/* AUTO-GENERATED: HOMEPAGE_PROMOS_START */}
         <section className="mt-16">
           <h2 className="text-2xl font-semibold mb-4">Explore more</h2>
