@@ -5,11 +5,12 @@ const path = require('path');
 
 const REPORT = path.join(__dirname, '..', 'data', 'reports', 'cursor', 'cursor-prompts.json');
 const OUT_DIR = path.join(__dirname, 'cursor-agents');
+const LOG_DIR = path.join(__dirname, 'logs');
 
 function ensureDir(p) { if (!fs.existsSync(p)) fs.mkdirSync(p, { recursive: true }); }
 
 function agentForPrompt(p) {
-  return `#!/usr/bin/env node\nconsole.log('Cursor prompt ready: ${p.title}');\nconsole.log(${JSON.stringify(p.prompt)});\n// Integrate with local Cursor via CLI/API if available; otherwise, save prompt for manual pickup.`;
+  return `#!/usr/bin/env node\nconsole.log('Cursor prompt ready: ${p.title}');\nconsole.log(${JSON.stringify(p.prompt)});\n`;
 }
 
 function main() {
@@ -17,17 +18,20 @@ function main() {
   ensureDir(OUT_DIR);
   const data = JSON.parse(fs.readFileSync(REPORT, 'utf8'));
   const created = [];
+  const now = Date.now();
   (data.prompts || []).forEach((p, idx) => {
-    const fp = path.join(OUT_DIR, `task-${idx + 1}.cjs`);
-    if (!fs.existsSync(fp)) {
-      fs.writeFileSync(fp, agentForPrompt(p));
-      try { fs.chmodSync(fp, 0o755); } catch {}
-      created.push(fp);
-    }
+    const fp = path.join(OUT_DIR, `task-${now}-${idx + 1}.cjs`);
+    fs.writeFileSync(fp, agentForPrompt(p));
+    try { fs.chmodSync(fp, 0o755); } catch {}
+    created.push(fp);
   });
   const registry = path.join(__dirname, 'logs', 'cursor-agents.json');
   ensureDir(path.dirname(registry));
   fs.writeFileSync(registry, JSON.stringify({ timestamp: new Date().toISOString(), created }, null, 2));
+  ensureDir(LOG_DIR);
+  const md = ['# Cursor Prompts', `Generated: ${new Date().toISOString()}`, ''];
+  (data.prompts || []).forEach((p) => { md.push(`## ${p.title}`); md.push(''); md.push('```'); md.push(p.prompt); md.push('```'); md.push(''); });
+  fs.writeFileSync(path.join(LOG_DIR, 'cursor-prompts-latest.md'), md.join('\n'));
   console.log(`Cursor agents created: ${created.length}`);
 }
 
