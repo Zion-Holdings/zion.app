@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-08T17:23:16.340Z",
+  "timestamp": "2025-08-08T17:23:49.177Z",
   "suggestions": [
     {
       "file": "/workspace/components/Layout.tsx",
@@ -44,6 +44,10 @@
       "file": "/workspace/pages/_document.tsx",
       "hints": [
         {
+          "type": "theme",
+          "message": "Add dark mode Tailwind variants for a high-tech look"
+        },
+        {
           "type": "style",
           "message": "Use gradient hero backgrounds like: bg-gradient-to-br from-gray-900 via-gray-800 to-black"
         }
@@ -85,10 +89,6 @@
         {
           "type": "style",
           "message": "Use gradient hero backgrounds like: bg-gradient-to-br from-gray-900 via-gray-800 to-black"
-        },
-        {
-          "type": "style",
-          "message": "Adopt high-tech button style: inline-flex items-center gap-2 rounded-lg px-4 py-2 bg-cyan-600 hover:bg-cyan-500 text-white transition-all"
         }
       ]
     },
@@ -114,7 +114,7 @@
         },
         {
           "type": "style",
-          "message": "Adopt high-tech button style: inline-flex items-center gap-2 rounded-lg px-4 py-2 bg-cyan-600 hover:bg-cyan-500 text-white transition-all"
+          "message": "Use gradient hero backgrounds like: bg-gradient-to-br from-gray-900 via-gray-800 to-black"
         }
       ]
     },

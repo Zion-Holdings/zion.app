@@ -1,23 +1,10 @@
 {
-  "timestamp": "2025-08-08T17:23:22.359Z",
+  "timestamp": "2025-08-08T17:23:49.424Z",
   "actions": [
     "ensure_home_hero_promotes_all_features",
     "generate_feature_sections",
     "refresh_blog_teasers",
     "update_sitemap_after_feature_pages"
   ],
-  "features": [
-    {
-      "file": "/workspace/pages/enhanced-home.tsx",
-      "hint": "marketing_hook"
-    },
-    {
-      "file": "/workspace/components/layout/EnhancedNavigation.tsx",
-      "hint": "marketing_hook"
-    },
-    {
-      "file": "/workspace/components/layout/EnhancedFooter.tsx",
-      "hint": "marketing_hook"
-    }
-  ]
+  "features": []
 }
