@@ -1,0 +1,1 @@
+export default function BlogSustainableTech() { return <div>Sustainable Technology Practices</div>; }

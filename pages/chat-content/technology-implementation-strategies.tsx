@@ -1,0 +1,1 @@
+export default function BlogTechImplementation() { return <div>Technology Implementation Strategies</div>; }

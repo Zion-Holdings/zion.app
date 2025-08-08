@@ -1,0 +1,1 @@
+export default function BlogCloud() { return <div>Cloud Computing Strategies</div>; }

@@ -1160,3 +1160,6 @@ td {
   border-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
 } 
+
+:root { --accent: #3b82f6; --brand: #111827; }
+[data-theme="dark"] { --brand: #f9fafb; } 

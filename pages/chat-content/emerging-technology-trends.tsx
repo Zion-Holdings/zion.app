@@ -1,0 +1,1 @@
+export default function BlogEmergingTrends() { return <div>Emerging Technology Trends</div>; }

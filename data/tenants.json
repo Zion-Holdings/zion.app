@@ -1,0 +1,38 @@
+[
+  {
+    "id": "t-health",
+    "name": "Zion Health",
+    "subdomain": "health",
+    "logoUrl": "",
+    "accentColorHex": "#10b981",
+    "brandColorHex": "#064e3b",
+    "whiteLabel": false,
+    "categories": ["Nursing", "Physicians", "Billing"],
+    "defaultAiTerms": "HIPAA",
+    "createdAt": "2025-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "t-law",
+    "name": "Zion Law",
+    "subdomain": "law",
+    "logoUrl": "",
+    "accentColorHex": "#f59e0b",
+    "brandColorHex": "#78350f",
+    "whiteLabel": false,
+    "categories": ["Litigation", "Contracts", "Compliance"],
+    "defaultAiTerms": "GDPR",
+    "createdAt": "2025-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "t-devops",
+    "name": "Zion DevOps",
+    "subdomain": "devops",
+    "logoUrl": "",
+    "accentColorHex": "#3b82f6",
+    "brandColorHex": "#1e3a8a",
+    "whiteLabel": false,
+    "categories": ["SRE", "CI/CD", "Kubernetes"],
+    "defaultAiTerms": "NONE",
+    "createdAt": "2025-01-01T00:00:00.000Z"
+  }
+]

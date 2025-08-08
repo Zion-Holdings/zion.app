@@ -1,0 +1,1 @@
+export default function BlogInnovationEnterprise() { return <div>Innovation in Enterprise Technology</div>; }

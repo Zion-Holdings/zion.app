@@ -1,0 +1,1 @@
+export default function BlogAiPowered() { return <div>AI Powered Business Solutions</div>; }

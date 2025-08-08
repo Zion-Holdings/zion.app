@@ -8,7 +8,7 @@ export type EnhancedLayoutProps = {
 
 export default function EnhancedLayout({ children }: EnhancedLayoutProps) {
   return (
-    <div className="min-h-screen flex flex-col bg-white dark:bg-black text-gray-900 dark:text-gray-100">
+    <div className="min-h-screen flex flex-col bg-white dark:bg-black text-gray-900 dark:text-gray-100" style={{ color: 'var(--brand, #111827)' }}>
       <header>
         <EnhancedNavigation />
       </header>
