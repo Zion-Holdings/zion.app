@@ -1,41 +1,13 @@
 {
-  "timestamp": "2025-08-08T08:40:35.823Z",
+  "timestamp": "2025-08-08T08:40:46.274Z",
   "changedFiles": [
-    "automation/cursor-agents/task-1754642420483-1.cjs",
-    "automation/cursor-agents/task-1754642420483-2.cjs",
-    "automation/cursor-agents/task-1754642420483-3.cjs",
-    "automation/cursor-agents/task-1754642420483-4.cjs",
-    "automation/cursor-agents/task-1754642420483-5.cjs",
-    "automation/cursor-agents/task-1754642425435-1.cjs",
-    "automation/cursor-agents/task-1754642425435-2.cjs",
-    "automation/cursor-agents/task-1754642425435-3.cjs",
-    "automation/cursor-agents/task-1754642425435-4.cjs",
-    "automation/cursor-agents/task-1754642425435-5.cjs",
-    "automation/instagram-agents/captions.json",
     "automation/instagram-agents/highlights.json",
-    "data/reports/alignment/alignment-report.json",
-    "data/reports/alignment/chat-raw.txt",
-    "data/reports/alignment/tickets/0001.md",
-    "data/reports/cursor/cursor-prompts.json",
-    "data/reports/design/design-analysis.json",
-    "data/reports/feature-marketing/feature-marketing-actions.json",
-    "data/reports/frontend-sync/frontend-sync-actions.json",
-    "data/reports/homepage-promo/homepage-promo-actions.json",
-    "data/reports/homepage-promo/proposals/proposal-1754642420827.md",
-    "data/reports/homepage-promo/proposals/proposal-1754642425602.md",
     "data/reports/link-monitor/site-link-report.json",
-    "data/reports/marketing/linkedin/linkedin-posts.json",
     "data/reports/marketing/linkedin/linkedin-pro-posts.json",
-    "data/reports/responsive/responsive-analysis.json",
-    "data/reports/saas/saas-actions.json",
-    "data/reports/spec-dev/chat-raw.html",
     "data/reports/spec-dev/site-crawl.json",
-    "data/reports/spec-dev/spec-dev-actions.json",
-    "pages/index.tsx",
-    "tsconfig.tsbuildinfo"
+    "data/reports/spec-dev/spec-dev-actions.json"
   ],
   "actions": [
-    "sync_content_metadata",
-    "sync_pages_components"
+    "sync_content_metadata"
   ]
 }
