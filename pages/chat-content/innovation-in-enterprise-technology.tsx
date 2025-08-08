@@ -1,0 +1,1 @@
+export default function Page() { return <div>Innovation in enterprise technology</div>; }

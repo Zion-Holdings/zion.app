@@ -1,0 +1,1 @@
+export default function Page() { return <div>Data analytics implementation</div>; }
