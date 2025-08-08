@@ -1,0 +1,193 @@
+:root {
+  --zion-accent: #6c5ce7;
+  --zion-bg: #ffffff;
+  --zion-fg: #1e1e2d;
+  --zion-muted: #6b7280;
+  --zion-border: #e5e7eb;
+  --zion-shadow: 0 12px 32px rgba(0,0,0,0.18);
+}
+
+.zion-chat-button {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 2147483647;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--zion-accent);
+  color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--zion-shadow);
+  cursor: pointer;
+}
+
+.zion-chat-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #ef4444;
+  color: white;
+  font: 600 11px/1 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  padding: 2px 6px;
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.zion-chat-panel {
+  position: fixed;
+  right: 16px;
+  bottom: 84px;
+  width: 360px;
+  max-height: calc(100vh - 120px);
+  background: var(--zion-bg);
+  color: var(--zion-fg);
+  border: 1px solid var(--zion-border);
+  border-radius: 16px;
+  box-shadow: var(--zion-shadow);
+  overflow: hidden;
+  z-index: 2147483647;
+  display: none;
+}
+
+.zion-chat-panel.open {
+  display: flex;
+  flex-direction: column;
+}
+
+.zion-chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--zion-border);
+  background: linear-gradient(180deg, #fafafa, #fff);
+}
+
+.zion-chat-title {
+  font: 700 14px/1.2 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+}
+
+.zion-chat-subtitle {
+  font: 400 12px/1.2 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  color: var(--zion-muted);
+}
+
+.zion-chat-close {
+  border: none;
+  background: transparent;
+  padding: 6px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.zion-chat-messages {
+  flex: 1;
+  overflow: auto;
+  padding: 12px;
+  background: #fbfbfd;
+}
+
+.zion-msg {
+  margin: 8px 0;
+  display: flex;
+  gap: 8px;
+}
+
+.zion-msg-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef2ff;
+  color: #4f46e5;
+  font-weight: 700;
+}
+
+.zion-msg-bubble {
+  max-width: 80%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font: 400 13px/1.45 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.zion-msg.user .zion-msg-bubble {
+  background: #6c5ce7;
+  color: white;
+  border-top-right-radius: 4px;
+  margin-left: auto;
+}
+
+.zion-msg.assistant .zion-msg-bubble {
+  background: #fff;
+  border: 1px solid var(--zion-border);
+  color: var(--zion-fg);
+  border-top-left-radius: 4px;
+}
+
+.zion-quick-replies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0 0 36px;
+}
+
+.zion-quick-replies button {
+  border: 1px solid var(--zion-border);
+  background: #fff;
+  color: var(--zion-fg);
+  border-radius: 999px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font: 500 12px/1 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+}
+
+.zion-chat-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  border-top: 1px solid var(--zion-border);
+  background: #fff;
+}
+
+.zion-input {
+  flex: 1;
+  border: 1px solid var(--zion-border);
+  border-radius: 999px;
+  padding: 10px 12px;
+  font: 400 14px/1 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+}
+
+.zion-send {
+  border: none;
+  background: var(--zion-accent);
+  color: white;
+  padding: 10px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  font: 600 13px/1 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+}
+
+@media (max-width: 480px) {
+  .zion-chat-panel {
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    border-radius: 0;
+  }
+  .zion-chat-button {
+    right: 12px;
+    bottom: 12px;
+  }
+}
