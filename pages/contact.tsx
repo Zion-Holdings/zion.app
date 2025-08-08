@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import { siteInfo } from '../data/site-info';
 
 const Contact: NextPage = () => {
   return (
@@ -11,7 +12,17 @@ const Contact: NextPage = () => {
       
       <main>
         <h1>Contact</h1>
-        <p>This page is under construction.</p>
+        <div>
+          <p>
+            Email: <a href={`mailto:${siteInfo.contact.email}`}>{siteInfo.contact.email}</a>
+          </p>
+          <p>
+            Phone: <a href={`tel:${siteInfo.contact.phone.replace(/\s+/g, '')}`}>{siteInfo.contact.phone}</a>
+          </p>
+          <p>
+            Address: {siteInfo.contact.address}
+          </p>
+        </div>
       </main>
     </div>
   );
