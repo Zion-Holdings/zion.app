@@ -119,7 +119,10 @@
     "healing:start": "node automation/self-healing-orchestrator.cjs",
     "healing:cron:start": "bash automation/self-healing-cron.sh start",
     "healing:cron:stop": "bash automation/self-healing-cron.sh stop",
-    "healing:cron:status": "bash automation/self-healing-cron.sh status"
+    "healing:cron:status": "bash automation/self-healing-cron.sh status",
+    "alignment:start": "node automation/alignment-orchestrator.cjs",
+    "alignment:cron:start": "bash automation/alignment-cron.sh",
+    "alignment:scan": "node automation/chat-fetcher.cjs && node automation/google-doc-fetcher.cjs && node automation/alignment-crawler.cjs && node automation/alignment-analyzer.cjs && node automation/alignment-factory.cjs && node automation/alignment-dev-factory.cjs"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
