@@ -1,6 +1,6 @@
-import React, { PropsWithChildren } from 'react';
+import React from 'react';
 
-const EnhancedLayout: React.FC<PropsWithChildren> = ({ children }) => {
+const EnhancedLayout: React.FC = ({ children }) => {
   return <>{children}</>;
 };
 
