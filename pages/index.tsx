@@ -2,6 +2,9 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import AnimatedBackground from '@/components/ui/AnimatedBackground';
+import dynamic from 'next/dynamic';
+
+const FrontPageFeatureGrid = dynamic(() => import('@/components/ui/FrontPageFeatureGrid'), { ssr: false });
 
 const Home: NextPage = () => {
   return (
@@ -73,6 +76,9 @@ const Home: NextPage = () => {
               <p>End-to-end digital transformation services to modernize your business.</p>
             </div>
           </div>
+
+          {/* Dynamic feature grid populated by automation */}
+          <FrontPageFeatureGrid />
         </div>
       
         
