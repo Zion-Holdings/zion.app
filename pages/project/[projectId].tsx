@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import FeedbackModal from "../../components/ui/FeedbackModal";
 
 export default function ProjectPage() {
   const router = useRouter();
@@ -35,6 +36,8 @@ export default function ProjectPage() {
     load();
   }, [projectId]);
 
+  const [showFeedback, setShowFeedback] = useState(false);
+
   async function addNote() {
     const res = await fetch(`/api/marketplace/projects`, {
       method: "PATCH",
@@ -45,6 +48,7 @@ export default function ProjectPage() {
     if (json.ok) {
       setProject(json.project);
       setNote("");
+      setShowFeedback(true);
     }
   }
 
@@ -55,7 +59,10 @@ export default function ProjectPage() {
       body: JSON.stringify({ id: projectId, action: "mark_completed" }),
     });
     const json = await res.json();
-    if (json.ok) setProject(json.project);
+    if (json.ok) {
+      setProject(json.project);
+      setShowFeedback(true);
+    }
   }
 
   return (
@@ -146,6 +153,12 @@ export default function ProjectPage() {
           </div>
         </div>
       )}
+      <FeedbackModal
+        isOpen={showFeedback}
+        onClose={() => setShowFeedback(false)}
+        defaultContext={{ actionType: 'chatbot_use', metadata: { projectId } }}
+        userHeaders={headers}
+      />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import FeedbackModal from "../../components/ui/FeedbackModal";
 
 export default function TalentDashboard() {
   const [offers, setOffers] = useState<any[]>([]);
@@ -30,6 +31,9 @@ export default function TalentDashboard() {
     load();
   }, []);
 
+  const [showFeedback, setShowFeedback] = useState(false);
+  const [lastContext, setLastContext] = useState<any>(null);
+
   async function act(id: string, action: string) {
     const res = await fetch("/api/marketplace/offers", {
       method: "PATCH",
@@ -44,7 +48,11 @@ export default function TalentDashboard() {
     if (!json.ok) {
       alert(json.error || "Action failed");
     } else {
-      location.reload();
+      if (action === 'accept') {
+        setLastContext({ actionType: 'talent_contact', metadata: { offerId: id, projectId: json.project?.id } });
+        setShowFeedback(true);
+      }
+      setTimeout(()=>location.reload(), 400);
     }
   }
 
@@ -60,43 +68,44 @@ export default function TalentDashboard() {
 
       <div className="space-y-4">
         {offers.map((o) => (
-          <div key={o.id} className="border rounded p-4 flex justify-between items-center">
-            <div>
-              <div className="font-medium">Offer • {o.scopeSummary}</div>
-              <div className="text-sm text-gray-600">Start: {new Date(o.startDateIso).toLocaleDateString()} • Terms: {o.paymentTerms?.type}</div>
-              <div className="text-xs mt-1">
-                Status: <span className="px-2 py-0.5 rounded bg-gray-100">{o.status}</span>
+          <div key={o.id}>
+            <div className="border rounded p-4 flex justify-between items-center">
+              <div>
+                <div className="font-medium">Offer • {o.scopeSummary}</div>
+                <div className="text-sm text-gray-600">Start: {new Date(o.startDateIso).toLocaleDateString()} • Terms: {o.paymentTerms?.type}</div>
+                <div className="text-xs mt-1">
+                  Status: <span className="px-2 py-0.5 rounded bg-gray-100">{o.status}</span>
+                </div>
+              </div>
+              <div className="flex gap-2 items-center">
+                <button onClick={() => setExpandedId(expandedId === o.id ? null : o.id)} className="px-2 py-1 text-xs rounded border">View Offer</button>
+                <button onClick={() => act(o.id, "accept")} className="px-3 py-1 rounded bg-emerald-600 text-white">Accept Offer</button>
+                <button onClick={() => act(o.id, "request_changes")} className="px-3 py-1 rounded border">Request Changes</button>
+                {o.projectId && (
+                  <Link href={`/project/${o.projectId}`} className="px-3 py-1 rounded bg-indigo-600 text-white">Open Project</Link>
+                )}
               </div>
             </div>
-            <div className="flex gap-2 items-center">
-              <button onClick={() => setExpandedId(expandedId === o.id ? null : o.id)} className="px-2 py-1 text-xs rounded border">View Offer</button>
-              <button onClick={() => act(o.id, "accept")} className="px-3 py-1 rounded bg-emerald-600 text-white">Accept Offer</button>
-              <button onClick={() => act(o.id, "request_changes")} className="px-3 py-1 rounded border">Request Changes</button>
-              {o.projectId && (
-                <Link href={`/project/${o.projectId}`} className="px-3 py-1 rounded bg-indigo-600 text-white">Open Project</Link>
-              )}
-            </div>
-          </div>
-          {expandedId === o.id && (
-            <div className="mt-3 text-sm bg-gray-50 border rounded p-3">
-              <div className="font-medium mb-1">Project details</div>
-              <div><b>Start</b>: {new Date(o.startDateIso).toLocaleDateString()}</div>
-              <div className="mt-1"><b>Scope</b>: {o.scopeSummary}</div>
-              <div className="mt-1"><b>Terms</b>: {o.paymentTerms?.type}</div>
-              {o.paymentTerms?.type === 'hourly' && <div>Rate: ${o.paymentTerms.hourlyRateUsd}/hr</div>}
-              {o.paymentTerms?.type === 'fixed' && <div>Amount: ${o.paymentTerms.fixedAmountUsd}</div>}
-              {o.paymentTerms?.type === 'milestone' && (
-                <ul className="list-disc pl-5">
-                  {(o.paymentTerms.milestones || []).map((m: any) => (
-                    <li key={m.id}>{m.title}</li>
-                  ))}
-                </ul>
-              )}
-              {o.agreementUrl && (
-                <div className="mt-1"><a href={o.agreementUrl} className="underline text-indigo-600" target="_blank" rel="noreferrer">View Agreement</a></div>
-              )}
-            </div>
-          )}
+            {expandedId === o.id && (
+              <div className="mt-3 text-sm bg-gray-50 border rounded p-3">
+                <div className="font-medium mb-1">Project details</div>
+                <div><b>Start</b>: {new Date(o.startDateIso).toLocaleDateString()}</div>
+                <div className="mt-1"><b>Scope</b>: {o.scopeSummary}</div>
+                <div className="mt-1"><b>Terms</b>: {o.paymentTerms?.type}</div>
+                {o.paymentTerms?.type === 'hourly' && <div>Rate: ${o.paymentTerms.hourlyRateUsd}/hr</div>}
+                {o.paymentTerms?.type === 'fixed' && <div>Amount: ${o.paymentTerms.fixedAmountUsd}</div>}
+                {o.paymentTerms?.type === 'milestone' && (
+                  <ul className="list-disc pl-5">
+                    {(o.paymentTerms.milestones || []).map((m: any) => (
+                      <li key={m.id}>{m.title}</li>
+                    ))}
+                  </ul>
+                )}
+                {o.agreementUrl && (
+                  <div className="mt-1"><a href={o.agreementUrl} className="underline text-indigo-600" target="_blank" rel="noreferrer">View Agreement</a></div>
+                )}
+              </div>
+            )}
           </div>
         ))}
       </div>

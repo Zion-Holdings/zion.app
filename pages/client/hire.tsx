@@ -1,4 +1,5 @@
 import { useState } from "react";
+import FeedbackModal from "../../components/ui/FeedbackModal";
 
 export default function ClientHirePage() {
   const [talentSlug, setTalentSlug] = useState("ava-chen");
@@ -10,6 +11,7 @@ export default function ClientHirePage() {
   const [agreementUrl, setAgreementUrl] = useState("");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<any | null>(null);
+  const [showFeedback, setShowFeedback] = useState(false);
 
   async function sendOffer() {
     setLoading(true);
@@ -32,6 +34,7 @@ export default function ClientHirePage() {
       alert(json.error || "Failed to send offer");
     } else {
       setResult(json.offer);
+      setShowFeedback(true);
     }
   }
 
@@ -96,6 +99,13 @@ export default function ClientHirePage() {
           <div className="text-sm">Offer ID: {result.id}</div>
         </div>
       )}
+
+      <FeedbackModal
+        isOpen={showFeedback}
+        onClose={() => setShowFeedback(false)}
+        defaultContext={{ actionType: 'listing_publish', metadata: { talentSlug } }}
+        userHeaders={{ 'x-demo-user-role': 'client', 'x-demo-user-id': 'client-1' }}
+      />
     </div>
   );
 }
