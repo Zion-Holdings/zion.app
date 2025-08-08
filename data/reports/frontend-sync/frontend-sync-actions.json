@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-08T05:09:49.322Z",
+  "timestamp": "2025-08-08T05:09:55.026Z",
   "changedFiles": [
     "automation/instagram-agents/captions.json",
     "automation/instagram-agents/highlights.json",
@@ -11,7 +11,9 @@
     "data/reports/feature-marketing/feature-marketing-actions.json",
     "data/reports/frontend-sync/frontend-sync-actions.json",
     "data/reports/homepage-promo/homepage-promo-actions.json",
-    "data/reports/homepage-promo/proposals/proposal-1754629779352.md",
+    "data/reports/homepage-promo/proposals/proposal-1754629784096.md",
+    "data/reports/homepage-promo/proposals/proposal-1754629789232.md",
+    "data/reports/link-monitor/site-link-report.json",
     "data/reports/marketing/linkedin/linkedin-posts.json",
     "data/reports/marketing/linkedin/linkedin-pro-posts.json",
     "data/reports/responsive/responsive-analysis.json",
