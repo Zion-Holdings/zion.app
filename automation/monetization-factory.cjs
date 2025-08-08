@@ -58,7 +58,7 @@ function main(){
   ensureDir(apiDir);
   const target = path.join(apiDir, 'checkout.ts');
   if(fs.existsSync(target)){ console.log('Checkout API stub exists; skipping.'); return; }
-  const body = `export default function handler(req, res){ res.status(200).json({ ok: true, message: 'Checkout stub' }); }\n`;
+  const body = 'export default function handler(req, res){ res.status(200).json({ ok: true, message: \'Checkout stub\' }); }\n';
   fs.writeFileSync(target, body);
   console.log('Created checkout API stub at', target);
 }
@@ -121,7 +121,7 @@ function main(){
   const variants = ['headline', 'cta', 'hero'];
   for(const v of variants){
     const fp = path.join(GEN_DIR, 'variant-' + v + '.md');
-    if(!fs.existsSync(fp)) fs.writeFileSync(fp, `# AB Test Variant: ${'${v}'}\n- hypothesis: improve conversion via ${'${v}'} change\n`);
+    if(!fs.existsSync(fp)) fs.writeFileSync(fp, '# AB Test Variant: ' + v + '\n- hypothesis: improve conversion via ' + v + ' change\n');
   }
   console.log('Generated AB test variants in', GEN_DIR);
 }
