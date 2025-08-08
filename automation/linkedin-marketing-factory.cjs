@@ -35,7 +35,7 @@ async function postToLinkedIn(text, url) {
     visibility: { 'com.linkedin.ugc.MemberNetworkVisibility': 'PUBLIC' }
   };
   await axios.post('https://api.linkedin.com/v2/ugcPosts', payload, {
-    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }
+    headers: { Authorization: 'Bearer ' + token, 'Content-Type': 'application/json' }
   });
 }
 
