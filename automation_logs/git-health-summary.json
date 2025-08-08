@@ -2,18 +2,19 @@
   "ok": true,
   "errors": [],
   "warnings": [
-    "No upstream configured for current branch."
+    "No upstream configured for current branch.",
+    "Set upstream to origin/cursor/build-zion-ai-talent-profile-system-f64e."
   ],
   "checks": {
     "user": {
       "name": "Cursor Agent",
       "email": "cursoragent@cursor.com"
     },
-    "origin": "origin\thttps://x-access-token:ghs_qNBaeg2v14LuMC4IBKBjGq0T4N5gyr2FojDs@github.com/Zion-Holdings/zion.app (fetch)\norigin\thttps://x-access-token:ghs_qNBaeg2v14LuMC4IBKBjGq0T4N5gyr2FojDs@github.com/Zion-Holdings/zion.app (push)",
+    "origin": "origin\thttps://x-access-token:ghs_RmdmFzwAuISk7w5OodZkDZA2JagVDv42OQIP@github.com/Zion-Holdings/zion.app (fetch)\norigin\thttps://x-access-token:ghs_RmdmFzwAuISk7w5OodZkDZA2JagVDv42OQIP@github.com/Zion-Holdings/zion.app (push)",
     "fsck": {
       "status": 0,
-      "output": ""
+      "output": "dangling tree 4d0760e8508ee8da55d2e7b70ad255ecfc7301b0\n"
     },
-    "working": "dirty"
+    "working": "clean"
   }
 }

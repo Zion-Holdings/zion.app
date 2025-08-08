@@ -3,8 +3,10 @@ import { supabase as supabaseClient } from '@/utils/supabase/client';
 import { TALENT_PROFILES as LOCAL } from '@/data/talent';
 import type { TalentProfile } from '@/utils/types/talent';
 import { v4 as uuid } from 'uuid';
+import { translateText, detectLanguageSimple } from '@/utils/api/translate';
 
 const hasSupabase = !!process.env.NEXT_PUBLIC_SUPABASE_URL && !!process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+const SUPPORTED_LANGS = (process.env.SUPPORTED_LANGS || 'en,es,de,fr,pt,ja,zh').split(',').map((x) => x.trim());
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'GET') {
@@ -40,6 +42,25 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         availability: (payload.availability as any) || 'Open',
       } as TalentProfile;
 
+      // Auto-translate
+      const originalLang = payload.originalLanguage || detectLanguageSimple([item.title, item.summary, item.bio || ''].join('\n'));
+      const translations: TalentProfile['translations'] = {};
+      for (const lang of SUPPORTED_LANGS) {
+        if (!lang || lang === originalLang) continue;
+        translations.title = translations.title || {};
+        translations.summary = translations.summary || {};
+        translations.bio = translations.bio || {};
+        if (item.title) translations.title[lang] = await translateText(item.title, lang, originalLang);
+        if (item.summary) translations.summary[lang] = await translateText(item.summary, lang, originalLang);
+        if (item.bio) translations.bio[lang] = await translateText(item.bio, lang, originalLang);
+        if (item.category) {
+          translations.category = translations.category || {};
+          translations.category[lang] = await translateText(item.category, lang, originalLang);
+        }
+      }
+      item.originalLanguage = originalLang;
+      item.translations = translations;
+
       if (hasSupabase) {
         const { error } = await supabaseClient.from('talent_profiles').insert({
           id: item.id,
@@ -63,6 +84,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           rating: item.rating ?? null,
           reviews_count: item.reviewsCount ?? null,
           created_at: item.createdAt,
+          // i18n
+          original_language: item.originalLanguage,
+          translations: item.translations as any,
         } as any);
         if (error) throw error;
         return res.status(201).json({ slug: item.slug });
