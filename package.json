@@ -124,6 +124,9 @@
     "design:cron:start": "bash automation/design-cron.sh",
     "design:analyze": "node automation/design-analyzer.cjs && node automation/design-factory.cjs",
     "diversify": "node automation/diversification-orchestrator.cjs",
+    "responsive:start": "node automation/responsive-content-orchestrator.cjs",
+    "responsive:cron:start": "bash automation/responsive-content-cron.sh",
+    "responsive:analyze": "node automation/responsive-content-analyzer.cjs && node automation/responsive-content-factory.cjs",
     "alignment:start": "node automation/alignment-orchestrator.cjs",
     "alignment:cron:start": "bash automation/alignment-cron.sh",
     "alignment:scan": "node automation/chat-fetcher.cjs && (node automation/google-doc-fetcher.cjs || true) && node automation/alignment-crawler.cjs && node automation/alignment-analyzer.cjs && node automation/alignment-factory.cjs && node automation/alignment-dev-factory.cjs"

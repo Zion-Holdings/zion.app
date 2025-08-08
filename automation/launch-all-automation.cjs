@@ -77,6 +77,7 @@ class AutomationLauncher {
       { name: 'alignment-orchestrator', script: 'alignment-orchestrator.cjs', args: ['continuous'] },
       { name: 'design-orchestrator', script: 'design-orchestrator.cjs', args: ['continuous'] },
       { name: 'diversification-orchestrator', script: 'diversification-orchestrator.cjs', args: [] },
+      { name: 'responsive-content-orchestrator', script: 'responsive-content-orchestrator.cjs', args: ['continuous'] },
       { name: 'code-quality', script: 'code-quality-monitor.cjs', args: [] },
       { name: 'performance', script: 'performance-optimizer.cjs', args: [] },
       { name: 'security-scanner', script: 'security-scanner.cjs', args: [] },

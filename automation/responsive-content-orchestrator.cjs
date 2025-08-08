@@ -4,7 +4,7 @@ const { spawnSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-const LOG = path.join(__dirname, 'logs', 'diversification-orchestrator.log');
+const LOG = path.join(__dirname, 'logs', 'responsive-content-orchestrator.log');
 if (!fs.existsSync(path.dirname(LOG))) fs.mkdirSync(path.dirname(LOG), { recursive: true });
 
 function log(m) {
@@ -20,12 +20,22 @@ function run(cmd, args) {
   if (res.stderr) fs.appendFileSync(LOG, res.stderr);
 }
 
-function start() {
-  log('🚀 Diversification orchestrator started');
-  run('node', [path.join(__dirname, 'diversification-factory.cjs')]);
+function cycle() {
+  run('node', [path.join(__dirname, 'responsive-content-analyzer.cjs')]);
+  run('node', [path.join(__dirname, 'responsive-content-factory.cjs')]);
 }
 
-if (require.main === module) start();
+function start(mode = 'continuous') {
+  log('🚀 Responsive content orchestrator started');
+  if (mode === 'continuous') {
+    const loop = () => { cycle(); setTimeout(loop, 10 * 60 * 1000); };
+    loop();
+  } else {
+    cycle();
+  }
+}
+
+if (require.main === module) start(process.argv[2] || 'continuous');
 
 module.exports = { start };
 
