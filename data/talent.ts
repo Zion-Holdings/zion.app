@@ -7,6 +7,11 @@ export type TalentProfile = {
   bio: string;
   hourlyRateUsd: number;
   availability: 'full-time' | 'part-time' | 'contract';
+  featured?: boolean;
+  experienceYears?: number;
+  timezone?: string; // e.g., 'Americas', 'EMEA', 'APAC'
+  rating?: number; // 0-5
+  bookings?: number; // number of hires/engagements
 };
 
 export const TALENT_PROFILES: TalentProfile[] = [
@@ -19,6 +24,11 @@ export const TALENT_PROFILES: TalentProfile[] = [
     bio: 'Architects robust LLM applications with retrieval, evaluation, and safety guardrails. Ex-FAANG applied scientist.',
     hourlyRateUsd: 140,
     availability: 'contract',
+    featured: true,
+    experienceYears: 8,
+    timezone: 'Americas',
+    rating: 4.9,
+    bookings: 42,
   },
   {
     slug: 'marco-silva',
@@ -29,6 +39,11 @@ export const TALENT_PROFILES: TalentProfile[] = [
     bio: 'Designs scalable, secure multi-account AWS platforms and platform engineering toolchains.',
     hourlyRateUsd: 120,
     availability: 'contract',
+    featured: false,
+    experienceYears: 10,
+    timezone: 'EMEA',
+    rating: 4.8,
+    bookings: 36,
   },
   {
     slug: 'nina-patel',
@@ -39,6 +54,11 @@ export const TALENT_PROFILES: TalentProfile[] = [
     bio: 'Builds data products end-to-end with strong model evaluation and product sense.',
     hourlyRateUsd: 110,
     availability: 'part-time',
+    featured: false,
+    experienceYears: 6,
+    timezone: 'Americas',
+    rating: 4.7,
+    bookings: 28,
   },
   {
     slug: 'kenji-yamada',
@@ -49,6 +69,11 @@ export const TALENT_PROFILES: TalentProfile[] = [
     bio: 'Delivers sleek, performant AI web apps with modern DX and observability.',
     hourlyRateUsd: 95,
     availability: 'contract',
+    featured: true,
+    experienceYears: 7,
+    timezone: 'APAC',
+    rating: 4.85,
+    bookings: 31,
   },
   {
     slug: 'lena-mueller',
@@ -59,5 +84,10 @@ export const TALENT_PROFILES: TalentProfile[] = [
     bio: 'Hardens platforms with practical, developer‑friendly security programs.',
     hourlyRateUsd: 130,
     availability: 'contract',
+    featured: false,
+    experienceYears: 9,
+    timezone: 'EMEA',
+    rating: 4.9,
+    bookings: 25,
   },
 ];

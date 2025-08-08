@@ -1,0 +1,1 @@
+export default function AutoUpdatePage_163020949z() { return <div className="text-gray-600 dark:text-gray-300">Auto update content.</div>; }
