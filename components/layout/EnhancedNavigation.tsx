@@ -11,6 +11,9 @@ export default function EnhancedNavigation() {
           <Link href="/about"><a>About</a></Link>
           <Link href="/blog"><a>Blog</a></Link>
           <Link href="/contact"><a>Contact</a></Link>
+          <Link href="/talent/resume-builder"><a>Resume</a></Link>
+          <Link href="/jobs/new"><a>Post Job</a></Link>
+          <Link href="/proposals/new"><a>Proposal</a></Link>
         </div>
       </div>
     </nav>
