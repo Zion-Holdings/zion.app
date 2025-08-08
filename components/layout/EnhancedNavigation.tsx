@@ -11,6 +11,7 @@ export default function EnhancedNavigation() {
           <Link href="/about"><a>About</a></Link>
           <Link href="/blog"><a>Blog</a></Link>
           <Link href="/contact"><a>Contact</a></Link>
+          <Link href="/services/description-generator"><a>Service Generator</a></Link>
         </div>
       </div>
     </nav>
