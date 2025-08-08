@@ -1,14 +1,9 @@
 #!/usr/bin/env node
 
-import fs from 'fs';
-import path from 'path';
-import { execSync, spawn } from 'child_process';
-import chokidar from 'chokidar';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const fs = require('fs');
+const path = require('path');
+const { execSync } = require('child_process');
+const chokidar = require('chokidar');
 
 class LintAutomationManager {
   constructor() {
