@@ -1,0 +1,1 @@
+export default function EnhancedHomePage() { return null; }
