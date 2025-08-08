@@ -1,6 +1,6 @@
 {
-  "timestamp": "2025-08-08T17:06:49.395Z",
-  "filesAnalyzed": 107,
+  "timestamp": "2025-08-08T17:08:45.629Z",
+  "filesAnalyzed": 108,
   "items": [
     {
       "file": "/workspace/pages/404.tsx",
@@ -241,6 +241,16 @@
     },
     {
       "file": "/workspace/pages/auto/auto-update-2025-08-08t17-04-44-419z.tsx",
+      "issues": [
+        "missing_enhanced_layout",
+        "missing_skip_link",
+        "missing_breadcrumbs",
+        "missing_viewport_meta",
+        "no_dark_theme_support"
+      ]
+    },
+    {
+      "file": "/workspace/pages/auto/auto-update-2025-08-08t17-07-22-213z.tsx",
       "issues": [
         "missing_enhanced_layout",
         "missing_skip_link",

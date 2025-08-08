@@ -10837,6 +10837,43 @@ const Home: NextPage = () => {
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         {/* AUTO-GENERATED: HOMEPAGE_PROMOS_START */}
         <section className="mt-16">
           <h2 className="text-2xl font-semibold mb-4">Explore more</h2>
@@ -10926,6 +10963,12 @@ const Home: NextPage = () => {
                 </a>
               </Link>
 
+              <Link href="/auto/auto-update-2025-08-08t17-07-22-213z">
+                <a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
+                  <span className="text-white">/auto/auto-update-2025-08-08t17-07-22-213z</span>
+                </a>
+              </Link>
+
               <Link href="/automation">
                 <a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
                   <span className="text-white">/automation</span>
@@ -10977,12 +11020,6 @@ const Home: NextPage = () => {
               <Link href="/blog/cloud-native-architecture-best-practices-chat">
                 <a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
                   <span className="text-white">/blog/cloud-native-architecture-best-practices-chat</span>
-                </a>
-              </Link>
-
-              <Link href="/blog/cybersecurity-trends-for-2024-and-beyond-chat">
-                <a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
-                  <span className="text-white">/blog/cybersecurity-trends-for-2024-and-beyond-chat</span>
                 </a>
               </Link>
           </div>

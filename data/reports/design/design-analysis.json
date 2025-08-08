@@ -1,6 +1,6 @@
 {
-  "timestamp": "2025-08-08T17:06:48.570Z",
-  "filesAnalyzed": 107,
+  "timestamp": "2025-08-08T17:08:44.405Z",
+  "filesAnalyzed": 108,
   "items": [
     {
       "file": "/workspace/pages/404.tsx",
@@ -41,21 +41,18 @@
     {
       "file": "/workspace/pages/_document.tsx",
       "issues": [
-        "missing_head_import",
-        "no_tailwind_usage",
         "missing_enhanced_layout",
-        "missing_meta_title",
-        "missing_meta_description"
+        "missing_meta_title"
       ],
       "details": {
         "filePath": "/workspace/pages/_document.tsx",
-        "hasHead": false,
-        "usesTailwind": false,
+        "hasHead": true,
+        "usesTailwind": true,
         "usesEnhancedLayout": false,
         "usesEnhancedNav": false,
         "usesEnhancedFooter": false,
         "hasMetaTitle": false,
-        "hasMetaDesc": false
+        "hasMetaDesc": true
       }
     },
     {
@@ -423,6 +420,22 @@
       ],
       "details": {
         "filePath": "/workspace/pages/auto/auto-update-2025-08-08t17-04-44-419z.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/workspace/pages/auto/auto-update-2025-08-08t17-07-22-213z.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/workspace/pages/auto/auto-update-2025-08-08t17-07-22-213z.tsx",
         "hasHead": true,
         "usesTailwind": true,
         "usesEnhancedLayout": false,
