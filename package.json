@@ -203,9 +203,9 @@
     "venture:cron:stop": "bash automation/venture-cron.sh stop",
     "venture:cron:status": "bash automation/venture-cron.sh status",
     "venture:report": "node automation/venture-orchestrator.cjs report",
-    "frontend-sync:autonomous:start": "node automation/launch-frontend-sync-autonomous.js",
-    "frontend-sync:autonomous:once": "node automation/frontend-sync-autonomous-orchestrator.cjs once 0",
-    "frontend-sync:autonomous:cron": "bash automation/frontend-sync-autonomous-cron.sh"}
+          "frontend-sync:autonomous:start": "node automation/launch-frontend-sync-autonomous.js",
+      "frontend-sync:autonomous:once": "node automation/frontend-sync-autonomous-orchestrator.cjs once 0",
+      "frontend-sync:autonomous:cron": "bash automation/frontend-sync-autonomous-cron.sh"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
