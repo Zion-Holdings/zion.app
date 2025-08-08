@@ -16,4 +16,7 @@ fi
 # Deletion guard to preserve files unless explicitly allowed
 sh ./scripts/prevent-deletion.sh
 
+# Quick non-blocking git health check (only fail on integrity errors)
+node automation/git-health.cjs --fast --fix || true
+
 echo "✅ Pre-commit checks passed"

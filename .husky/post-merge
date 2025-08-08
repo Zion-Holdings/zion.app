@@ -23,4 +23,7 @@ npm run type-check || {
     echo "⚠️  Type check failed after merge. Please review changes."
 }
 
+# Run fast git health check
+node automation/git-health.cjs --fast --fix || true
+
 echo "✅ Post-merge actions completed" 
