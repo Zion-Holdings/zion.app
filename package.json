@@ -209,7 +209,12 @@
     "git:health": "node automation/git-health.cjs --fast",
     "git:health:fix": "node automation/git-health.cjs --fast --fix",
     "git:health:deep": "node automation/git-health.cjs --deep",
-    "git:health:cron": "bash automation/git-health-cron.sh"
+    "git:health:cron": "bash automation/git-health-cron.sh",
+    "conflicts:check": "bash scripts/check-merge-conflicts.sh",
+    "conflicts:watch": "watch -n 30 bash scripts/check-merge-conflicts.sh || true",
+    "conflicts:cron:start": "bash automation/merge-conflict-cron.sh start",
+    "conflicts:cron:stop": "bash automation/merge-conflict-cron.sh stop",
+    "conflicts:cron:status": "bash automation/merge-conflict-cron.sh status"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",

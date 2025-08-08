@@ -10,6 +10,10 @@ npm run type-check || {
     exit 1
 }
 
+# Check for merge conflicts (including with origin/main)
+echo "🧩 Checking for merge conflicts..."
+bash ./scripts/check-merge-conflicts.sh
+
 # Automation system check removed (script not present)
 
 # Check for sensitive data in commits
