@@ -1,0 +1,18 @@
+# Project Memory
+
+This file stores project-specific knowledge, conventions, and decisions that should persist across sessions.
+
+## User Preferences
+- 
+
+## Technical Decisions
+- Node.js >= 20.18.1 (from package.json engines)
+- Next.js present (see `next.config.js`)
+- TailwindCSS present (see `tailwind.config.js`)
+
+## Project Conventions
+- Conventional Commits (feat, fix, chore, docs, refactor, perf, test)
+- Functional React components with TypeScript types
+
+## Known Constraints
+- React 17 compatibility

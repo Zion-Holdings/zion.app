@@ -1,0 +1,36 @@
+{
+  "LinkedIn": {
+    "headline": "Landing Page Generator — Book a demo",
+    "valueProps": [
+      "Faster setup",
+      "Transparent pricing",
+      "Tangible outcomes"
+    ],
+    "price": "Avg market: $299–$999",
+    "copy": "Struggling with no-code? Landing Page Generator delivers results in days. Avg market: $299–$999. Book a demo today."
+  },
+  "Google Ads": {
+    "headline": "Landing Page Generator — Book a demo",
+    "valueProps": [
+      "Faster setup",
+      "Transparent pricing",
+      "Tangible outcomes"
+    ],
+    "price": "Avg market: $299–$999",
+    "copy": "Landing Page Generator for startups. Avg market: $299–$999. Get started now."
+  },
+  "Twitter/X": {
+    "headline": "Landing Page Generator — Book a demo",
+    "valueProps": [
+      "Faster setup",
+      "Transparent pricing",
+      "Tangible outcomes"
+    ],
+    "price": "Avg market: $299–$999",
+    "copy": "Landing Page Generator: ship in ~4 days. Avg market: $299–$999. DM for details."
+  },
+  "Email": {
+    "subject": "Landing Page Generator in 4 days",
+    "body": "Hi there,\n\nWe built Landing Page Generator: Form-driven landing page generator with templates and analytics.. Avg market: $299–$999.\n\nInterested in a quick demo?\n\nBest,\nTeam"
+  }
+}
