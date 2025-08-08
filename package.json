@@ -27,7 +27,7 @@
     "prepare": "husky install",
     "autonomous": "node automation/launch-enhanced-autonomous-system.js",
     "autonomous:dev": "nodemon automation/launch-enhanced-autonomous-system.js",
-    "autonomous:status": "node automation/launch-autonomous-systems-clean.js status",
+    "autonomous:status": "node automation/launch-enhanced-autonomous-systems-clean.js status",
     "linkedin:run": "ts-node scripts/linkedin-automation.ts run",
     "linkedin:cron": "ts-node scripts/linkedin-automation.ts cron",
     "linkedin:generate": "ts-node scripts/linkedin-automation.ts generate",
@@ -122,6 +122,7 @@
     "healing:cron:start": "bash automation/self-healing-cron.sh start",
     "healing:cron:stop": "bash automation/self-healing-cron.sh stop",
     "healing:cron:status": "bash automation/self-healing-cron.sh status",
+    "healing:cron:run": "bash automation/self-healing-cron.sh run",
     "design:orchestrator": "node automation/design-orchestrator.cjs",
     "design:cron:start": "bash automation/design-cron.sh",
     "design:analyze": "node automation/design-analyzer.cjs && node automation/design-factory.cjs",
@@ -157,7 +158,7 @@
     "promo:scan": "node automation/site-promo-analyzer.cjs && node automation/homepage-promo-applier.cjs",
     "spec-dev:start": "node automation/spec-dev-orchestrator.cjs",
     "spec-dev:cron:start": "bash automation/spec-dev-cron.sh",
-    "spec-dev:scan": "node automation/spec-dev-chat-fetcher.cjs && node automation/spec-dev-site-crawler.cjs && node automation/spec-dev-analyzer.cjs && node automation/spec-dev-factory.cjs",
+    "spec-dev:scan": "node automation/spec-dev-chat-fetcher.cjs && node automation/spec-dev-site-crawl.json && node automation/spec-dev-analyzer.cjs && node automation/spec-dev-factory.cjs",
     "linkedin:pro:start": "node automation/linkedin-pro-orchestrator.cjs",
     "linkedin:pro:cron:start": "bash automation/linkedin-pro-cron.sh",
     "linkedin:pro:analyze": "node automation/linkedin-pro-analyzer.cjs && node automation/linkedin-pro-factory.cjs",
@@ -214,7 +215,10 @@
     "conflicts:watch": "watch -n 30 bash scripts/check-merge-conflicts.sh || true",
     "conflicts:cron:start": "bash automation/merge-conflict-cron.sh start",
     "conflicts:cron:stop": "bash automation/merge-conflict-cron.sh stop",
-    "conflicts:cron:status": "bash automation/merge-conflict-cron.sh status"
+    "conflicts:cron:status": "bash automation/merge-conflict-cron.sh status",
+    "seo:generate": "node scripts/seo-generate-pages.ts",
+    "seo:seeds": "node scripts/generate-seo-from-seeds.ts",
+    "seo:weekly": "bash scripts/seo-weekly-cron.sh"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
