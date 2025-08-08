@@ -1,15 +1,7 @@
 {
-  "timestamp": "2025-08-08T03:58:21.559Z",
+  "timestamp": "2025-08-08T03:58:26.576Z",
   "changedFiles": [
-    "data/reports/alignment/alignment-report.json",
-    "data/reports/alignment/chat-raw.txt",
-    "data/reports/design/design-analysis.json",
-    "data/reports/feature-marketing/feature-marketing-actions.json",
-    "data/reports/frontend-sync/frontend-sync-actions.json",
-    "data/reports/homepage-promo/homepage-promo-actions.json",
-    "data/reports/homepage-promo/proposals/proposal-1754625496878.md",
-    "data/reports/responsive/responsive-analysis.json",
-    "data/reports/saas/saas-actions.json"
+    "data/reports/alignment/chat-raw.txt"
   ],
   "actions": [
     "sync_content_metadata"
