@@ -1,0 +1,76 @@
+name: Infinite Improvement Loop
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch: {}
+
+concurrency:
+  group: infinite-improvement-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  improve:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run improvement cycle (diverse)
+        shell: bash
+        run: |
+          set -e
+          echo "🧠 SEO optimization"
+          if [ -f automation/seo-optimizer.cjs ]; then node automation/seo-optimizer.cjs || true; fi
+          echo "🛡️ Security scanning"
+          if [ -f automation/security-scanner.cjs ]; then node automation/security-scanner.cjs || true; fi
+          echo "🧪 Test generation"
+          if [ -f automation/test-generator.cjs ]; then node automation/test-generator.cjs || true; fi
+          echo "🔄 Frontend sync (once)"
+          if [ -f automation/frontend-sync-orchestrator.cjs ]; then node automation/frontend-sync-orchestrator.cjs once || true; fi
+          echo "🎲 Variation (diversity) cycle"
+          if [ -f automation/variation-orchestrator.cjs ]; then node automation/variation-orchestrator.cjs once || true; fi
+          echo "🧬 Autonomous meta (once)"
+          if [ -f automation/autonomous-meta-orchestrator.cjs ]; then node automation/autonomous-meta-orchestrator.cjs once || true; fi
+
+      - name: Lint and type-check
+        run: |
+          npm run lint
+          npm run type-check
+
+      - name: Build (smoke)
+        run: npm run build
+
+      - name: Upload improvement artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: infinite-improvement-artifacts
+          path: |
+            automation/logs/**/*
+            data/reports/**/*.json
+          if-no-files-found: ignore
+
+      - name: Commit and push changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore(automation): infinite improvement loop updates [skip ci]"
+            git push origin HEAD:main
+          else
+            echo "No changes to push"
+          fi
