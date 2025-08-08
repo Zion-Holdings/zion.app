@@ -1,15 +1,22 @@
 {
-  "timestamp": "2025-08-08T04:56:13.946Z",
+  "timestamp": "2025-08-08T05:00:46.280Z",
   "changedFiles": [
-    "data/reports/alignment/chat-raw.txt",
-    "data/reports/cursor/cursor-prompts.json",
-    "data/reports/feature-marketing/feature-marketing-actions.json",
+    "automation/launch-all-automation.cjs",
+    "automation/site-promo-analyzer.cjs",
+    "automation/site-promo-cron.sh",
+    "automation/site-promo-factory.cjs",
+    "automation/site-promo-orchestrator.cjs",
+    "data/reports/frontend-sync/frontend-sync-actions.json",
+    "data/reports/homepage-promo/homepage-promo-actions.json",
+    "data/reports/homepage-promo/proposals/proposal-1754628699430.md",
     "data/reports/link-monitor/site-link-report.json",
-    "data/reports/responsive/responsive-analysis.json",
-    "data/reports/variation/variation-report.json",
+    "data/reports/saas/saas-actions.json",
+    "package.json",
+    "pages/index.tsx",
     "tsconfig.tsbuildinfo"
   ],
   "actions": [
-    "sync_content_metadata"
+    "sync_content_metadata",
+    "sync_pages_components"
   ]
 }

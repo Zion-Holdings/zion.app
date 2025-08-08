@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-08T04:51:00.410Z",
+  "timestamp": "2025-08-08T05:00:34.479Z",
   "loops": {
     "alignment-cron.log": {
       "restarts": 0,
@@ -28,8 +28,8 @@
     },
     "automation-launcher.log": {
       "restarts": 39088,
-      "started": 78298,
-      "loopScore": 0.49922092518327416
+      "started": 78310,
+      "loopScore": 0.4991444259992338
     },
     "autonomous-automation-orchestrator.log": {
       "restarts": 0,
@@ -153,7 +153,7 @@
     },
     "intelligent-orchestrator.log": {
       "restarts": 0,
-      "started": 24,
+      "started": 25,
       "loopScore": 0
     },
     "launch-autonomous-systems-clean.log": {
@@ -213,7 +213,7 @@
     },
     "lint-monitor.log": {
       "restarts": 0,
-      "started": 42,
+      "started": 43,
       "loopScore": 0
     },
     "linting-cron.log": {
@@ -291,7 +291,22 @@
       "started": 0,
       "loopScore": 0
     },
+    "site-link-cron.log": {
+      "restarts": 0,
+      "started": 1,
+      "loopScore": 0
+    },
     "site-link-orchestrator.log": {
+      "restarts": 0,
+      "started": 0,
+      "loopScore": 0
+    },
+    "site-promo-cron.log": {
+      "restarts": 0,
+      "started": 1,
+      "loopScore": 0
+    },
+    "site-promo-orchestrator.log": {
       "restarts": 0,
       "started": 0,
       "loopScore": 0
