@@ -1,0 +1,1 @@
+export default function BlockchainSolutionsPage() { return <div className="p-6">Blockchain Solutions</div>; }
