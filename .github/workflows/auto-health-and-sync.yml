@@ -1,0 +1,63 @@
+name: Auto Health Monitor & Sync
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/10 * * * *'
+
+concurrency:
+  group: health-sync-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  health-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Syntax and lint checks
+        run: |
+          npm run lint || true
+          npm run type-check || true
+
+      - name: Quick build check
+        run: npm run syntax:build-check || true
+
+      - name: Auto-fix remaining issues
+        run: |
+          npm run fix_typescript_syntax_errors || true
+          npm run fix_all_typescript_errors || true
+          npm run fix_unused_imports || true
+          npm run fix_remaining_errors || true
+
+      - name: Git setup
+        run: |
+          git config user.name "zion-cloud-bot"
+          git config user.email "noreply@zion.ai"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+
+      - name: Commit and push changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "chore(health-sync): automated fixes [skip ci]"
+            git push origin HEAD:${GITHUB_REF#refs/heads/}
+          else
+            echo "No changes to commit."
+          fi

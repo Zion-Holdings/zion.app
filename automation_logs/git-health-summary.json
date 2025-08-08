@@ -2,18 +2,19 @@
   "ok": true,
   "errors": [],
   "warnings": [
-    "No upstream configured for current branch."
+    "No upstream configured for current branch.",
+    "Set upstream to origin/cursor/build-ai-resume-and-portfolio-tool-4f12."
   ],
   "checks": {
     "user": {
       "name": "Cursor Agent",
       "email": "cursoragent@cursor.com"
     },
-    "origin": "origin\thttps://x-access-token:ghs_qNBaeg2v14LuMC4IBKBjGq0T4N5gyr2FojDs@github.com/Zion-Holdings/zion.app (fetch)\norigin\thttps://x-access-token:ghs_qNBaeg2v14LuMC4IBKBjGq0T4N5gyr2FojDs@github.com/Zion-Holdings/zion.app (push)",
+    "origin": "origin\thttps://x-access-token:ghs_8y4OC9L1lfli2SKQhCD11MU6pAIBAf27Ohg6@github.com/Zion-Holdings/zion.app (fetch)\norigin\thttps://x-access-token:ghs_8y4OC9L1lfli2SKQhCD11MU6pAIBAf27Ohg6@github.com/Zion-Holdings/zion.app (push)",
     "fsck": {
       "status": 0,
-      "output": ""
+      "output": "dangling tree d85b3e5ebbb4eb189fe2cb22fd9fcf3859629c33\n"
     },
-    "working": "dirty"
+    "working": "clean"
   }
 }

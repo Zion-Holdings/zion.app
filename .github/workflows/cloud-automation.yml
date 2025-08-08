@@ -1,0 +1,69 @@
+name: Cloud Automation Suite
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/30 * * * *'
+
+concurrency:
+  group: cloud-automation-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  run-automations:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run maintenance
+        run: npm run maintenance:run
+
+      - name: Design improvements (analyze + factory)
+        run: npm run design:analyze
+
+      - name: Responsive content improvements
+        run: npm run responsive:analyze
+
+      - name: Variation analysis & generation
+        run: npm run variation:analyze
+
+      - name: Frontend sync autonomous (one-off)
+        run: npm run frontend-sync:autonomous:once
+
+      - name: Linting auto-fix (non-blocking)
+        run: npm run linting:fix || true
+
+      - name: Syntax/build sanity check (non-blocking)
+        run: npm run syntax:build-check || true
+
+      - name: Configure Git user
+        run: |
+          git config user.name "zion-cloud-bot"
+          git config user.email "noreply@zion.ai"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+
+      - name: Commit and push changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "chore(automation): cloud automation update [skip ci]"
+            git push origin HEAD:${GITHUB_REF#refs/heads/}
+          else
+            echo "No changes to commit."
+          fi
