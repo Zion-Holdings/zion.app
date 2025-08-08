@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-08T07:21:35.131Z",
+  "timestamp": "2025-08-08T07:21:45.000Z",
   "filesAnalyzed": 100,
   "items": [
     {
@@ -1091,21 +1091,17 @@
     {
       "file": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/index.tsx",
       "issues": [
-        "missing_head_import",
-        "no_tailwind_usage",
-        "missing_enhanced_layout",
-        "missing_meta_title",
-        "missing_meta_description"
+        "missing_enhanced_layout"
       ],
       "details": {
         "filePath": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/index.tsx",
-        "hasHead": false,
-        "usesTailwind": false,
+        "hasHead": true,
+        "usesTailwind": true,
         "usesEnhancedLayout": false,
         "usesEnhancedNav": false,
         "usesEnhancedFooter": false,
-        "hasMetaTitle": false,
-        "hasMetaDesc": false
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
       }
     },
     {
