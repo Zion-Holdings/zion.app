@@ -1,0 +1,24 @@
+{
+  "name": "zion-token-contracts",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf cache artifacts",
+    "compile": "hardhat compile",
+    "deploy:amoy": "hardhat run scripts/deploy.ts --network polygon_amoy",
+    "deploy:mumbai": "hardhat run scripts/deploy.ts --network polygon_mumbai",
+    "verify:amoy": "hardhat run scripts/verify.ts --network polygon_amoy",
+    "verify:mumbai": "hardhat run scripts/verify.ts --network polygon_mumbai"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@openzeppelin/contracts": "^5.0.2",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.12.1",
+    "hardhat": "^2.22.17",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
