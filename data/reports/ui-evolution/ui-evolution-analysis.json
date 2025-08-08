@@ -1,6 +1,6 @@
 {
-  "timestamp": "2025-08-08T16:53:38.580Z",
-  "filesAnalyzed": 105,
+  "timestamp": "2025-08-08T17:05:18.872Z",
+  "filesAnalyzed": 107,
   "items": [
     {
       "file": "/workspace/pages/404.tsx",
@@ -221,6 +221,26 @@
     },
     {
       "file": "/workspace/pages/auto/auto-update-2025-08-08t16-38-19-257z.tsx",
+      "issues": [
+        "missing_enhanced_layout",
+        "missing_skip_link",
+        "missing_breadcrumbs",
+        "missing_viewport_meta",
+        "no_dark_theme_support"
+      ]
+    },
+    {
+      "file": "/workspace/pages/auto/auto-update-2025-08-08t16-49-54-200z.tsx",
+      "issues": [
+        "missing_enhanced_layout",
+        "missing_skip_link",
+        "missing_breadcrumbs",
+        "missing_viewport_meta",
+        "no_dark_theme_support"
+      ]
+    },
+    {
+      "file": "/workspace/pages/auto/auto-update-2025-08-08t17-04-44-419z.tsx",
       "issues": [
         "missing_enhanced_layout",
         "missing_skip_link",
