@@ -1,4 +1,5 @@
 import React from 'react';
+import { siteInfo } from '../../data/site-info';
 
 const EnhancedFooter: React.FC = () => {
   return (
@@ -23,9 +24,15 @@ const EnhancedFooter: React.FC = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
             <ul className="text-gray-300 space-y-2">
-              <li>Email: info@example.com</li>
-              <li>Phone: +1 (555) 123-4567</li>
-              <li>Address: 123 Tech Street</li>
+              <li>
+                Email: <a className="underline hover:text-white" href={`mailto:${siteInfo.contact.email}`}>{siteInfo.contact.email}</a>
+              </li>
+              <li>
+                Phone: <a className="underline hover:text-white" href={`tel:${siteInfo.contact.phone.replace(/\s+/g, '')}`}>{siteInfo.contact.phone}</a>
+              </li>
+              <li>
+                Address: {siteInfo.contact.address}
+              </li>
             </ul>
           </div>
           <div>
