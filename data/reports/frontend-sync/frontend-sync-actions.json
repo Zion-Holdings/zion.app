@@ -1,16 +1,11 @@
 {
-  "timestamp": "2025-08-08T11:08:56.566Z",
+  "timestamp": "2025-08-08T11:09:01.568Z",
   "changedFiles": [
-    "automation/cursor-agents/task-1754651326280-1.cjs",
-    "automation/cursor-agents/task-1754651326280-2.cjs",
-    "automation/cursor-agents/task-1754651326280-3.cjs",
-    "automation/cursor-agents/task-1754651326280-4.cjs",
-    "automation/cursor-agents/task-1754651326280-5.cjs",
-    "automation/cursor-agents/task-1754651331304-1.cjs",
-    "automation/cursor-agents/task-1754651331304-2.cjs",
-    "automation/cursor-agents/task-1754651331304-3.cjs",
-    "automation/cursor-agents/task-1754651331304-4.cjs",
-    "automation/cursor-agents/task-1754651331304-5.cjs",
+    "automation/cursor-agents/task-1754651336349-1.cjs",
+    "automation/cursor-agents/task-1754651336349-2.cjs",
+    "automation/cursor-agents/task-1754651336349-3.cjs",
+    "automation/cursor-agents/task-1754651336349-4.cjs",
+    "automation/cursor-agents/task-1754651336349-5.cjs",
     "automation/instagram-agents/captions.json",
     "automation/instagram-agents/highlights.json",
     "data/reports/alignment/alignment-report.json",
@@ -20,8 +15,7 @@
     "data/reports/feature-marketing/feature-marketing-actions.json",
     "data/reports/frontend-sync/frontend-sync-actions.json",
     "data/reports/homepage-promo/homepage-promo-actions.json",
-    "data/reports/homepage-promo/proposals/proposal-1754651326395.md",
-    "data/reports/homepage-promo/proposals/proposal-1754651331465.md",
+    "data/reports/homepage-promo/proposals/proposal-1754651336488.md",
     "data/reports/link-monitor/site-link-report.json",
     "data/reports/marketing/linkedin/linkedin-posts.json",
     "data/reports/marketing/linkedin/linkedin-pro-posts.json",
@@ -31,8 +25,7 @@
     "data/reports/spec-dev/site-crawl.json",
     "data/reports/spec-dev/spec-dev-actions.json",
     "data/reports/variation/variation-report.json",
-    "pages/index.tsx",
-    "tsconfig.tsbuildinfo"
+    "pages/index.tsx"
   ],
   "actions": [
     "sync_content_metadata",
