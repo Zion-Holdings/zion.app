@@ -1,0 +1,2 @@
+import { useRouter } from 'next/router';
+export default function TalentProfile(){const { query } = useRouter(); return <div className="prose dark:prose-invert"><h1>Talent Profile</h1><p>Profile: {String(query.slug||'')}</p></div>}

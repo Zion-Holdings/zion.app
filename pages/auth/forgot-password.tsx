@@ -1,0 +1,1 @@
+export default function ForgotPasswordPage(){return <div className="prose dark:prose-invert"><h1>Forgot Password</h1><p>Flow coming soon.</p></div>}
