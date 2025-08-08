@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 
 interface StatItem {
   label: string;
