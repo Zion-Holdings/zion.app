@@ -7,11 +7,12 @@ export default function EnhancedNavigation() {
         <Link href="/">
           <a className="font-semibold">Zion</a>
         </Link>
-        <div className="flex items-center gap-4 text-sm">
+        <div className="hidden md:flex items-center gap-4 text-sm">
           <Link href="/about"><a>About</a></Link>
           <Link href="/blog"><a>Blog</a></Link>
           <Link href="/contact"><a>Contact</a></Link>
         </div>
+        <div className="md:hidden text-sm opacity-80">Menu</div>
       </div>
     </nav>
   );
