@@ -1,14 +1,11 @@
 {
-  "timestamp": "2025-08-08T05:04:04.060Z",
+  "timestamp": "2025-08-08T05:04:14.279Z",
   "changedFiles": [
-    "automation/instagram-agents/captions.json",
-    "automation/instagram-agents/highlights.json",
     "data/reports/cursor/cursor-prompts.json",
-    "data/reports/frontend-sync/frontend-sync-actions.json",
+    "data/reports/design/design-analysis.json",
+    "data/reports/feature-marketing/feature-marketing-actions.json",
     "data/reports/homepage-promo/homepage-promo-actions.json",
-    "data/reports/homepage-promo/proposals/proposal-1754629439356.md",
     "data/reports/link-monitor/site-link-report.json",
-    "data/reports/responsive/responsive-analysis.json",
     "data/reports/saas/saas-actions.json",
     "data/reports/variation/variation-report.json",
     "tsconfig.tsbuildinfo"
