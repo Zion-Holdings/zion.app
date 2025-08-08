@@ -1,0 +1,1 @@
+export default function AutoPage2() { return null; }
