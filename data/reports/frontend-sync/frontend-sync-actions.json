@@ -1,6 +1,7 @@
 {
-  "timestamp": "2025-08-08T07:39:05.351Z",
+  "timestamp": "2025-08-08T07:39:14.245Z",
   "changedFiles": [
+    "automation/instagram-agents/captions.json",
     "data/reports/link-monitor/site-link-report.json",
     "data/reports/spec-dev/site-crawl.json",
     "data/reports/spec-dev/spec-dev-actions.json",
