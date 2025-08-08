@@ -1,0 +1,57 @@
+name: Cloud Autonomous Automation
+
+on:
+  schedule:
+    - cron: '*/15 * * * *' # every 15 minutes
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  autonomous:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run site link crawl+fix
+        env:
+          APP_MARKETING_URL: https://ziontechgroup.com
+        run: |
+          node automation/site-link-crawler.cjs | cat
+          node automation/site-link-fixer.cjs | cat
+
+      - name: Keep sitemap fresh
+        run: node automation/sitemap-keeper.cjs | cat
+
+      - name: SEO meta audit
+        env:
+          APP_MARKETING_URL: https://ziontechgroup.com
+        run: node automation/seo-meta-audit.cjs | cat
+
+      - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node automation/cloud-auto-commit.cjs | cat
+
+      - name: Upload automation artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: cloud-automation-artifacts
+          path: |
+            data/reports/**/*
+            automation/logs/**/*
+          if-no-files-found: ignore
