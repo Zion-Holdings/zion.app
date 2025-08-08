@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-08T18:06:57.413Z",
+  "timestamp": "2025-08-08T18:29:21.120Z",
   "host": "cursor",
   "repoRoot": "/workspace",
   "status": "degraded",
@@ -21,13 +21,13 @@
     },
     {
       "name": "auto-sync-log-fresh",
-      "ok": true,
-      "details": "ageMs=117497.03491210938"
+      "ok": false,
+      "details": "ageMs=1339699.8288574219"
     },
     {
       "name": "auto-pull-log-fresh",
-      "ok": true,
-      "details": "ageMs=191921.15234375"
+      "ok": false,
+      "details": "ageMs=1534972.15234375"
     },
     {
       "name": "advanced-git-sync-lock-stale",
@@ -42,7 +42,7 @@
     {
       "name": "origin-configured",
       "ok": true,
-      "details": "https://x-access-token:ghs_qNBaeg2v14LuMC4IBKBjGq0T4N5gyr2FojDs@github.com/Zion-Holdings/zion.app"
+      "details": "https://x-access-token:ghs_nO7RVHC3Fryn9pBHkiP5BgK5qZcVvM3yjyQg@github.com/Zion-Holdings/zion.app"
     },
     {
       "name": "divergence",
@@ -51,8 +51,8 @@
     },
     {
       "name": "working-tree-clean",
-      "ok": false,
-      "details": "changed=1"
+      "ok": true,
+      "details": "changed=0"
     }
   ]
 }
