@@ -1,0 +1,3 @@
+export default function IoTPlatforms() {
+  return <div className="p-6">IoT Platforms</div>;
+}

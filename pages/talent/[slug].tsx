@@ -1,0 +1,1 @@
+export default function TalentProfile(){return <div className="p-6">Talent Profile</div>;}
