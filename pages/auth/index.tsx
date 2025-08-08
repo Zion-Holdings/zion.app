@@ -1,0 +1,1 @@
+export default function AuthPage(){return <div className="prose dark:prose-invert"><h1>Auth</h1><p>Sign in/up coming soon.</p></div>}

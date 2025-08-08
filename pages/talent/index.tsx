@@ -1,0 +1,1 @@
+export default function Talent(){return <div className="prose dark:prose-invert"><h1>Talent</h1><p>Browse talent coming soon.</p></div>}
