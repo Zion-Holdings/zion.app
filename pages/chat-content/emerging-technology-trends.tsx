@@ -1,0 +1,1 @@
+export default function ArticlePage() { return <div className="py-8">Emerging technology trends</div>; }

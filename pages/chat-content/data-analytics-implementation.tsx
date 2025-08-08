@@ -1,0 +1,1 @@
+export default function ArticlePage() { return <div className="py-8">Data analytics implementation</div>; }
