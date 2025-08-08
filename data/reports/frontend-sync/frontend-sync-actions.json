@@ -1,16 +1,11 @@
 {
-  "timestamp": "2025-08-08T09:01:55.964Z",
+  "timestamp": "2025-08-08T09:02:00.755Z",
   "changedFiles": [
-    "automation/cursor-agents/task-1754643705573-1.cjs",
-    "automation/cursor-agents/task-1754643705573-2.cjs",
-    "automation/cursor-agents/task-1754643705573-3.cjs",
-    "automation/cursor-agents/task-1754643705573-4.cjs",
-    "automation/cursor-agents/task-1754643705573-5.cjs",
-    "automation/cursor-agents/task-1754643710712-1.cjs",
-    "automation/cursor-agents/task-1754643710712-2.cjs",
-    "automation/cursor-agents/task-1754643710712-3.cjs",
-    "automation/cursor-agents/task-1754643710712-4.cjs",
-    "automation/cursor-agents/task-1754643710712-5.cjs",
+    "automation/cursor-agents/task-1754643715749-1.cjs",
+    "automation/cursor-agents/task-1754643715749-2.cjs",
+    "automation/cursor-agents/task-1754643715749-3.cjs",
+    "automation/cursor-agents/task-1754643715749-4.cjs",
+    "automation/cursor-agents/task-1754643715749-5.cjs",
     "automation/instagram-agents/captions.json",
     "automation/instagram-agents/highlights.json",
     "data/reports/alignment/alignment-report.json",
@@ -21,8 +16,8 @@
     "data/reports/feature-marketing/feature-marketing-actions.json",
     "data/reports/frontend-sync/frontend-sync-actions.json",
     "data/reports/homepage-promo/homepage-promo-actions.json",
-    "data/reports/homepage-promo/proposals/proposal-1754643705764.md",
-    "data/reports/homepage-promo/proposals/proposal-1754643710896.md",
+    "data/reports/homepage-promo/proposals/proposal-1754643715899.md",
+    "data/reports/homepage-promo/proposals/proposal-1754643717740.md",
     "data/reports/link-monitor/site-link-report.json",
     "data/reports/marketing/linkedin/linkedin-posts.json",
     "data/reports/marketing/linkedin/linkedin-pro-posts.json",
@@ -32,7 +27,8 @@
     "data/reports/spec-dev/site-crawl.json",
     "data/reports/spec-dev/spec-dev-actions.json",
     "data/reports/variation/variation-report.json",
-    "pages/index.tsx"
+    "pages/index.tsx",
+    "tsconfig.tsbuildinfo"
   ],
   "actions": [
     "sync_content_metadata",
