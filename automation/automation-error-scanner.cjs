@@ -3,16 +3,31 @@
 const fs = require('fs');
 const path = require('path');
 
-const LOG_DIR = path.join(__dirname, 'logs');
+const LOG_DIR_PRIMARY = path.join(__dirname, 'logs');
+const LOG_DIR_SECONDARY = __dirname; // also scan automation root for *.log and *.out
+
+function collectLogFilesFromDirectory(dirPath) {
+  if (!fs.existsSync(dirPath)) return [];
+  try {
+    const files = fs.readdirSync(dirPath);
+    return files
+      .filter((f) => f.endsWith('.log') || f.endsWith('.out'))
+      .map((f) => ({ file: path.join(path.basename(dirPath), f), abs: path.join(dirPath, f) }));
+  } catch {
+    return [];
+  }
+}
 
 function readLogs() {
-  if (!fs.existsSync(LOG_DIR)) return [];
-  const files = fs.readdirSync(LOG_DIR).filter((f) => f.endsWith('.log'));
+  const candidates = [
+    ...collectLogFilesFromDirectory(LOG_DIR_PRIMARY),
+    ...collectLogFilesFromDirectory(LOG_DIR_SECONDARY),
+  ];
   const entries = [];
-  for (const f of files) {
+  for (const c of candidates) {
     try {
-      const content = fs.readFileSync(path.join(LOG_DIR, f), 'utf8');
-      entries.push({ file: f, content });
+      const content = fs.readFileSync(c.abs, 'utf8');
+      entries.push({ file: c.file, content });
     } catch {}
   }
   return entries;
@@ -38,7 +53,7 @@ function scanPackageScripts() {
 function parseIssuesFromLogs(entries) {
   const issues = [];
   const patterns = [
-    { key: 'module_not_found', regex: /Cannot find module '([^']+)'/i },
+    { key: 'module_not_found', regex: /Cannot find module ['\"]([^'\"]+)['\"]/i },
     { key: 'esm_in_cjs', regex: /Cannot use import statement outside a module/ },
     { key: 'addr_in_use', regex: /EADDRINUSE.*:(\d+)/ },
   ];
