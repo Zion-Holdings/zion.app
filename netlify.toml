@@ -215,6 +215,15 @@
 [functions.healthCheckCron]
     schedule = "*/5 * * * *"
 
+# Add scheduled functions for autonomous cloud automations
+[[scheduled]]
+  path = "/.netlify/functions/auto_marketing"
+  schedule = "0 */6 * * *" # every 6 hours
+
+[[scheduled]]
+  path = "/.netlify/functions/perf_audit"
+  schedule = "0 3 * * *" # daily at 03:00 UTC
+
 [[plugins]]
   package = "netlify-plugin-cloudinary"
   [plugins.inputs]
