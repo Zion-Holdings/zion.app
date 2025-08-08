@@ -15,8 +15,29 @@ function log(message) {
 }
 
 async function run() {
-  log('🧠 Cursor memory automation placeholder started');
-  setInterval(() => log('🧠 Memory maintenance heartbeat'), 60000);
+  log('🧠 Cursor memory automation started');
+  try {
+    const generator = path.join(__dirname, 'automation', 'cursor-rules-generator.cjs');
+    if (fs.existsSync(generator)) {
+      require(generator);
+      log('🧠 Rules and memory generation executed');
+    } else {
+      log('⚠️ cursor-rules-generator.cjs not found');
+    }
+  } catch (err) {
+    log(`❌ Memory automation error: ${err.message}`);
+  }
+  setInterval(() => {
+    try {
+      const generator = path.join(__dirname, 'automation', 'cursor-rules-generator.cjs');
+      if (fs.existsSync(generator)) {
+        require(generator);
+        log('🧠 Periodic rules/memory refresh executed');
+      }
+    } catch (e) {
+      log(`❌ Periodic refresh error: ${e.message}`);
+    }
+  }, 60 * 60 * 1000);
 }
 
 run();

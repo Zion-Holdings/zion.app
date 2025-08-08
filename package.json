@@ -51,7 +51,7 @@
     "google-docs:status": "node automation/check-google-docs-status.js",
     "google-docs:report": "node automation/generate-google-docs-report.js",
     "google-docs:test": "node automation/test-google-docs-automation.js",
-    "cursor:memory": "node run-cursor-memory-automation.js",
+    "cursor:memory": "node run-cursor-memory-automation.js && node automation/cursor-rules-generator.cjs",
     "cursor:memory:dev": "nodemon run-cursor-memory-automation.js",
     "cursor:memory:config": "node -e \"console.log(JSON.stringify(require('./cursor-memory-config.json'), null, 2))\"",
     "cursor:memory:status": "node -e \"const fs = require('fs'); const path = './cursor-memory/memory-summary.json'; try { const data = JSON.parse(fs.readFileSync(path, 'utf8')); console.log('Memory Status:'); console.log('- Total entries:', data.totalEntries); console.log('- Categories:', Object.keys(data.categories).length); console.log('- High confidence:', data.confidenceDistribution.high); } catch(e) { console.log('No memory data found'); }\"",
