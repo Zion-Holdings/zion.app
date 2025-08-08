@@ -1,14 +1,12 @@
 {
-  "generatedAt": "2025-08-08T17:25:54.708Z",
-  "totalEntries": 6,
+  "totalEntries": 4,
   "categories": {
-    "technicalDecisions": 3,
-    "conventions": 2,
-    "constraints": 1
+    "system": 4
   },
   "confidenceDistribution": {
-    "high": 3,
-    "medium": 2,
-    "low": 1
-  }
+    "high": 4,
+    "medium": 0,
+    "low": 0
+  },
+  "lastUpdated": "2025-08-08T17:26:10.123Z"
 }
