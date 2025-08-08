@@ -14,6 +14,18 @@ const EnhancedNavigation: React.FC = () => {
             <Link href="/services">
               <a className="text-gray-600 hover:text-gray-900">Services</a>
             </Link>
+            <Link href="/products">
+              <a className="text-gray-600 hover:text-gray-900">Products</a>
+            </Link>
+            <Link href="/talent">
+              <a className="text-gray-600 hover:text-gray-900">Talent</a>
+            </Link>
+            <Link href="/blog">
+              <a className="text-gray-600 hover:text-gray-900">Blog</a>
+            </Link>
+            <Link href="/automation">
+              <a className="text-gray-600 hover:text-gray-900">Automation</a>
+            </Link>
             <Link href="/about">
               <a className="text-gray-600 hover:text-gray-900">About</a>
             </Link>
