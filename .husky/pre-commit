@@ -3,6 +3,16 @@ set -e
 
 echo "🔍 Running pre-commit checks..."
 
+# Run lint-staged for staged files
+if [ -x "./node_modules/.bin/lint-staged" ]; then
+  npx lint-staged || {
+    echo "❌ Lint-staged checks failed. Please fix issues before committing."
+    exit 1
+  }
+else
+  echo "ℹ️  Skipping lint-staged (not installed). Run 'npm install' to enable."
+fi
+
 # Skip type-check if tsc is not available locally
 if [ -x "./node_modules/.bin/tsc" ]; then
   npm run -s type-check || {

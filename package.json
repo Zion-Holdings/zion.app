@@ -23,6 +23,7 @@
     "export": "NODE_OPTIONS=--openssl-legacy-provider next build && next export",
     "start": "next start",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "type-check": "tsc --noEmit",
     "prepare": "husky install",
     "autonomous": "node automation/launch-enhanced-autonomous-system.js",

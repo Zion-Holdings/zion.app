@@ -10818,12 +10818,14 @@ const Home: NextPage = () => {
         <section className="mt-16">
           <h2 className="text-2xl font-semibold mb-4">Explore more</h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            <a href="/talent" className="block rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition p-5">
-              <div className="text-sm font-semibold text-cyan-300">New</div>
-              <h3 className="text-lg font-semibold mt-1">AI Talent Marketplace</h3>
-              <p className="text-white/80 mt-2">Find vetted LLM, cloud, data, and security experts. Fast.</p>
-              <div className="mt-4 text-cyan-300">Explore →</div>
-            </a>
+            <Link href="/talent">
+              <a className="block rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition p-5">
+                <div className="text-sm font-semibold text-cyan-300">New</div>
+                <h3 className="text-lg font-semibold mt-1">AI Talent Marketplace</h3>
+                <p className="text-white/80 mt-2">Find vetted LLM, cloud, data, and security experts. Fast.</p>
+                <div className="mt-4 text-cyan-300">Explore →</div>
+              </a>
+            </Link>
           </div>
         </section>
         {/* AUTO-GENERATED: HOMEPAGE_PROMOS_END */}
