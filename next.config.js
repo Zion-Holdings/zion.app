@@ -12,6 +12,12 @@ module.exports = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  pageExtensions: ['page.tsx', 'page.ts', 'page.jsx', 'page.js'],
+  async redirects() {
+    return [
+      { source: '/mobile-launch', destination: '/download', permanent: true },
+    ];
+  },
   webpack: (config) => {
     // Support TS path alias '@/...' by mapping it to the project root
     config.resolve = config.resolve || {};
