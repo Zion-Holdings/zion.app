@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2025-08-08T17:24:21.188Z",
+  "items": [
+    {
+      "id": 44850913,
+      "title": "How I code with AI on a budget/free",
+      "url": "https://wuu73.org/blog/aiguide1.html",
+      "score": 450
+    },
+    {
+      "id": 44846922,
+      "title": "My Lethal Trifecta talk at the Bay Area AI Security Meetup",
+      "url": "https://simonwillison.net/2025/Aug/9/bay-area-ai/",
+      "score": 394
+    },
+    {
+      "id": 44846164,
+      "title": "Long-term exposure to outdoor air pollution linked to increased risk of dementia",
+      "url": "https://www.cam.ac.uk/research/news/long-term-exposure-to-outdoor-air-pollution-linked-to-increased-risk-of-dementia",
+      "score": 330
+    },
+    {
+      "id": 44849129,
+      "title": "Ch.at – A lightweight LLM chat service accessible through HTTP, SSH, DNS and API",
+      "url": "https://ch.at/",
+      "score": 216
+    },
+    {
+      "id": 44850260,
+      "title": "Curious about the training data of OpenAI's new GPT-OSS models? I was too",
+      "url": "https://twitter.com/jxmnop/status/1953899426075816164",
+      "score": 182
+    },
+    {
+      "id": 44847741,
+      "title": "The current state of LLM-driven development",
+      "url": "http://blog.tolki.dev/posts/2025/08-07-llms/",
+      "score": 150
+    },
+    {
+      "id": 44855690,
+      "title": "GPT-OSS vs. Qwen3 and a detailed look how things evolved since GPT-2",
+      "url": "https://magazine.sebastianraschka.com/p/from-gpt-2-to-gpt-oss-analyzing-the",
+      "score": 21
+    }
+  ]
+}
