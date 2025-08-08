@@ -9,6 +9,9 @@ export default function EnhancedNavigation() {
         </Link>
         <div className="flex items-center gap-4 text-sm">
           <Link href="/download"><a>Download</a></Link>
+          <Link href="/services"><a>Services</a></Link>
+          <Link href="/features"><a>Features</a></Link>
+          <Link href="/capabilities"><a>Capabilities</a></Link>
           <Link href="/about"><a>About</a></Link>
           <Link href="/blog"><a>Blog</a></Link>
           <Link href="/contact"><a>Contact</a></Link>
