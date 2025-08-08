@@ -341,3 +341,17 @@ The system is now capable of continuously improving the application, fixing erro
 - **Files**: `automation/performance-audit.cjs`, `.github/workflows/performance-weekly.yml`
 - **Purpose**: Builds the app, boots a local server, measures simple TTFB and HTML payload size for key pages, and writes JSON reports to `data/reports/performance/`.
 - **Output**: `performance-*.json` artifacts with thresholds and alert flags. Useful for tracking regressions in server responsiveness and page weight.
+
+## UI Evolution Automation Suite
+- Purpose: Continuously analyze and improve site design, layout, and navigation with a high-tech, futuristic aesthetic.
+- Components:
+  - `automation/ui-evolution-analyzer.cjs`: Scans pages/components for layout/nav/accessibility/design gaps.
+  - `automation/ui-evolution-factory.cjs`: Emits conservative agent scripts per issue without modifying existing factories.
+  - `automation/ui-evolution-orchestrator.cjs`: Runs analyzer and factory in cycles.
+  - `automation/ui-evolution-cron.sh`: Local cron-style runner.
+  - `automation/beautify-hightech-ui.cjs`: Generates high-tech visual design suggestions.
+  - `automation/ui-evolution-dashboard.cjs`: Outputs summary metrics for CI artifacts.
+  - GitHub Actions:
+    - `.github/workflows/ui-evolution-schedule.yml`: Daily analyzer+factory run.
+    - `.github/workflows/ui-evolution-weekly-beautify.yml`: Weekly beautify suggestions and summary.
+- Notes: Does not alter existing autonomous agent factories; adds a new parallel track for UI improvements.
