@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-08T16:08:56.803Z",
+  "timestamp": "2025-08-08T16:09:03.272Z",
   "loops": {
     "alignment-orchestrator.log": {
       "restarts": 0,
@@ -17,9 +17,9 @@
       "loopScore": 0
     },
     "automation-launcher.log": {
-      "restarts": 706,
-      "started": 1533,
-      "loopScore": 0.46053489889106325
+      "restarts": 771,
+      "started": 1663,
+      "loopScore": 0.4636199639206254
     },
     "autonomous-automation-orchestrator.log": {
       "restarts": 0,
@@ -32,9 +32,9 @@
       "loopScore": 0
     },
     "autonomous-guardian.log": {
-      "restarts": 706,
-      "started": 1534,
-      "loopScore": 0.4602346805736636
+      "restarts": 771,
+      "started": 1664,
+      "loopScore": 0.46334134615384615
     },
     "check-google-docs-status.log": {
       "restarts": 0,
