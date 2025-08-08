@@ -9,12 +9,7 @@ if ! git diff-index --quiet HEAD --; then
     echo "   Use 'git stash' to temporarily save changes"
     echo "   Use 'git commit' to commit changes"
     echo ""
-    read -p "Continue with rebase anyway? (y/N): " -n 1 -r
-    echo
-    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-        echo "❌ Rebase cancelled"
-        exit 1
-    fi
+    echo "ℹ️ Continuing with rebase automatically (non-interactive hook)"
 fi
 
 # Backup important configuration files

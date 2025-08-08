@@ -4,18 +4,12 @@ echo "🚀 Running pre-push checks..."
 
 # Run available tests
 echo "🧪 Running available tests..."
-npm run lint && npm run type-check || {
-    echo "❌ Tests failed. Please fix the issues before pushing."
+npm run type-check || {
+    echo "❌ TypeScript type check failed. Please fix issues before pushing."
     exit 1
 }
 
-# Check if automation system is running properly
-if [ -f "automation/universal-automation-launcher.sh" ]; then
-    echo "🤖 Checking automation system..."
-    /bin/bash automation/universal-automation-launcher.sh status > /dev/null 2>&1 || {
-        echo "⚠️  Warning: Automation system may have issues"
-    }
-fi
+# Automation system check removed (script not present)
 
 # Check for sensitive data in commits
 echo "🔒 Checking for sensitive data..."

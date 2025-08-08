@@ -8,14 +8,7 @@ if git diff HEAD@{1} --name-only | grep -E "package\.json|package-lock\.json" > 
     npm install
 fi
 
-# Restart automation system if needed
-if [ -f "automation/universal-automation-launcher.sh" ]; then
-    echo "🤖 Checking automation system after merge..."
-    /bin/bash automation/universal-automation-launcher.sh status > /dev/null 2>&1 || {
-        echo "🔄 Restarting automation system..."
-        /bin/bash automation/universal-automation-launcher.sh restart > /dev/null 2>&1 || true
-    }
-fi
+# Automation system checks removed (script not present)
 
 # Clear build cache if needed
 if git diff HEAD@{1} --name-only | grep -E "next\.config\.js|tsconfig\.json|tailwind\.config\.js" > /dev/null; then

@@ -14,13 +14,6 @@ if git diff HEAD@{1} --name-only | grep -E "next\.config\.js|tsconfig\.json|tail
     rm -rf .next 2>/dev/null || true
 fi
 
-# Restart automation system if needed
-if [ -f "automation/universal-automation-launcher.sh" ]; then
-    echo "🤖 Checking automation system after rewrite..."
-    /bin/bash automation/universal-automation-launcher.sh status > /dev/null 2>&1 || {
-        echo "🔄 Restarting automation system..."
-        /bin/bash automation/universal-automation-launcher.sh restart > /dev/null 2>&1 || true
-    }
-fi
+# Automation system checks removed (script not present)
 
 echo "✅ Post-rewrite actions completed"

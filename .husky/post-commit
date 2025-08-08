@@ -12,11 +12,7 @@ echo "Commit Hash: $COMMIT_HASH"
 echo "Commit Message: $COMMIT_MESSAGE"
 echo "Commit Date: $COMMIT_DATE"
 
-# Log to automation system if available
-if [ -f "automation/universal-automation-launcher.sh" ]; then
-    echo "🤖 Updating automation system..."
-    echo "{\"commit_hash\": \"$COMMIT_HASH\", \"message\": \"$COMMIT_MESSAGE\", \"date\": \"$COMMIT_DATE\"}" >> automation/logs/commit-history.log 2>/dev/null || true
-fi
+# Automation system integration removed (script not present)
 
 # Check if this is a deployment commit
 if echo "$COMMIT_MESSAGE" | grep -i -E "(deploy|release|production)" > /dev/null; then
