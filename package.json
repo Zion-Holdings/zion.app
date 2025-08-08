@@ -59,6 +59,7 @@
     "automation:all": "node automation/launch-all-automation.cjs start",
     "automation:status": "node automation/launch-all-automation.cjs status",
     "automation:report": "node automation/launch-all-automation.cjs report",
+    "automation:git-sync": "node automation/git-sync.cjs",
     "automation:improvement": "node automation/continuous-automation-improvement-system.js",
     "automation:improvement:dev": "nodemon automation/continuous-automation-improvement-system.js",
     "automation:coordinator": "node automation/master-automation-coordinator.js",
@@ -125,9 +126,12 @@
     "responsive:start": "node automation/responsive-content-orchestrator.cjs",
     "responsive:cron:start": "bash automation/responsive-content-cron.sh",
     "responsive:analyze": "node automation/responsive-content-analyzer.cjs && node automation/responsive-content-factory.cjs",
+    "variation:start": "node automation/variation-orchestrator.cjs",
+    "variation:analyze": "node automation/variation-analyzer.cjs && node automation/variation-factory.cjs",
     "alignment:start": "node automation/alignment-orchestrator.cjs",
     "alignment:cron:start": "bash automation/alignment-cron.sh",
-    "alignment:scan": "node automation/chat-fetcher.cjs && (node automation/google-doc-fetcher.cjs || true) && node automation/alignment-crawler.cjs && node automation/alignment-analyzer.cjs && node automation/alignment-factory.cjs && node automation/alignment-dev-factory.cjs"
+    "alignment:scan": "node automation/chat-fetcher.cjs && (node automation/google-doc-fetcher.cjs || true) && node automation/alignment-crawler.cjs && node automation/alignment-analyzer.cjs && node automation/alignment-factory.cjs && node automation/alignment-dev-factory.cjs",
+    "postautomation": "npm run automation:git-sync"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",

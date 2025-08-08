@@ -77,6 +77,15 @@ class IntelligentOrchestrator {
       this.updateSystemMetrics(systemName, true, executionTime);
       
       this.log(`✅ System completed: ${systemName} (${executionTime}ms)`);
+      // Best-effort git sync after successful system run
+      try {
+        const syncPath = path.join(__dirname, 'git-sync.cjs');
+        if (fs.existsSync(syncPath)) {
+          execSync(`node "${syncPath}"`, { stdio: 'pipe' });
+        }
+      } catch (e) {
+        this.log(`⚠️ Git sync failed: ${e.message}`);
+      }
       return { success: true, output: result, executionTime };
     } catch (error) {
       const executionTime = Date.now() - startTime;

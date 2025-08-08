@@ -78,6 +78,7 @@ class AutomationLauncher {
       { name: 'design-orchestrator', script: 'design-orchestrator.cjs', args: ['continuous'] },
       { name: 'diversification-orchestrator', script: 'diversification-orchestrator.cjs', args: [] },
       { name: 'responsive-content-orchestrator', script: 'responsive-content-orchestrator.cjs', args: ['continuous'] },
+      { name: 'variation-orchestrator', script: 'variation-orchestrator.cjs', args: ['continuous'] },
       { name: 'code-quality', script: 'code-quality-monitor.cjs', args: [] },
       { name: 'performance', script: 'performance-optimizer.cjs', args: [] },
       { name: 'security-scanner', script: 'security-scanner.cjs', args: [] },
@@ -111,6 +112,19 @@ class AutomationLauncher {
     this.log(`📊 Started ${this.processes.size} automation systems`);
     // Automatically enable monitoring to keep processes alive
     this.monitor();
+
+    // Schedule periodic git sync to ensure changes are pushed
+    setInterval(() => {
+      try {
+        const syncPath = path.join(__dirname, 'git-sync.cjs');
+        if (fs.existsSync(syncPath)) {
+          this.log('🔗 Running periodic git sync...');
+          spawn('node', [syncPath], { stdio: 'ignore', detached: false });
+        }
+      } catch (e) {
+        this.log(`❌ Git sync error: ${e.message}`);
+      }
+    }, 60 * 1000); // every 1 minute
   }
 
   async stopAllSystems() {
