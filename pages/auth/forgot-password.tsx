@@ -1,0 +1,1 @@
+export default function ForgotPassword() { return <div className="p-8">Forgot Password</div>; }
