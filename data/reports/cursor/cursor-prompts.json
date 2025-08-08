@@ -1,9 +1,13 @@
 {
-  "generatedAt": "2025-08-08T16:07:42.555Z",
+  "generatedAt": "2025-08-08T16:08:05.408Z",
   "prompts": [
     {
       "title": "Cursor Task: error_detected from alignment-orchestrator.log",
       "prompt": "You are a senior automation engineer working on a Next.js app with extensive Node-based automation. Analyze recent issues and propose targeted fixes or enhancements with code edits.\nContext Source: alignment-orchestrator.log\nReason: error_detected\nActions:\n- Identify root cause\n- Propose code edits\n- Generate or fix agents\n- Commit and push\n- Ensure continuous operation"
+    },
+    {
+      "title": "Cursor Task: error_detected from auto-error-fixer.log",
+      "prompt": "You are a senior automation engineer working on a Next.js app with extensive Node-based automation. Analyze recent issues and propose targeted fixes or enhancements with code edits.\nContext Source: auto-error-fixer.log\nReason: error_detected\nActions:\n- Identify root cause\n- Propose code edits\n- Generate or fix agents\n- Commit and push\n- Ensure continuous operation"
     },
     {
       "title": "Cursor Task: error_detected from automation-launcher.log",
@@ -16,10 +20,6 @@
     {
       "title": "Cursor Task: error_detected from autonomous-guardian.log",
       "prompt": "You are a senior automation engineer working on a Next.js app with extensive Node-based automation. Analyze recent issues and propose targeted fixes or enhancements with code edits.\nContext Source: autonomous-guardian.log\nReason: error_detected\nActions:\n- Identify root cause\n- Propose code edits\n- Generate or fix agents\n- Commit and push\n- Ensure continuous operation"
-    },
-    {
-      "title": "Cursor Task: error_detected from content-autogen.log",
-      "prompt": "You are a senior automation engineer working on a Next.js app with extensive Node-based automation. Analyze recent issues and propose targeted fixes or enhancements with code edits.\nContext Source: content-autogen.log\nReason: error_detected\nActions:\n- Identify root cause\n- Propose code edits\n- Generate or fix agents\n- Commit and push\n- Ensure continuous operation"
     }
   ]
 }

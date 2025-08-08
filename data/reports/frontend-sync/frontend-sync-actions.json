@@ -1,25 +1,17 @@
 {
-  "timestamp": "2025-08-08T16:07:45.095Z",
+  "timestamp": "2025-08-08T16:08:05.185Z",
   "changedFiles": [
-    "automation/cursor-agents/task-1754669252979-1.cjs",
-    "automation/cursor-agents/task-1754669252979-2.cjs",
-    "automation/cursor-agents/task-1754669252979-3.cjs",
-    "automation/cursor-agents/task-1754669252979-4.cjs",
-    "automation/cursor-agents/task-1754669252979-5.cjs",
+    "automation/cursor-agents/task-1754669262683-1.cjs",
+    "automation/cursor-agents/task-1754669262683-2.cjs",
+    "automation/cursor-agents/task-1754669262683-3.cjs",
+    "automation/cursor-agents/task-1754669262683-4.cjs",
+    "automation/cursor-agents/task-1754669262683-5.cjs",
     "data/reports/alignment/alignment-report.json",
     "data/reports/cursor/cursor-prompts.json",
     "data/reports/design/design-analysis.json",
+    "data/reports/feature-marketing/feature-marketing-actions.json",
     "data/reports/frontend-sync/frontend-sync-actions.json",
-    "data/reports/homepage-promo/homepage-promo-actions.json",
-    "data/reports/homepage-promo/proposals/proposal-1754669252429.md",
-    "data/reports/homepage-promo/proposals/proposal-1754669253563.md",
-    "data/reports/homepage-promo/proposals/proposal-1754669254002.md",
-    "data/reports/marketing/linkedin/linkedin-posts.json",
-    "data/reports/marketing/linkedin/linkedin-pro-posts.json",
-    "data/reports/responsive/responsive-analysis.json",
-    "data/reports/saas/saas-actions.json",
-    "data/reports/variation/variation-report.json",
-    "pages/index.tsx"
+    "pages/_document.tsx"
   ],
   "actions": [
     "sync_content_metadata",
