@@ -15,6 +15,8 @@
     "npm": ">=10.0.0"
   },
   "scripts": {
+    "auto:generate": "node scripts/generate-auto-content.mjs",
+    "auto:generate:and-commit": "node scripts/generate-auto-content.mjs && git config user.email 'bot@zion.app' && git config user.name 'Zion Bot' && git add -A && git commit -m 'chore(auto): generate auto content [skip ci]' || true && git push || true",
     "deps:maintain": "node automation/dependency-update-orchestrator.cjs",
     "deps:cron:start": "bash automation/dependency-maintenance-cron.sh",
     "sitemap": "node scripts/generate-sitemap.mjs",
