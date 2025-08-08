@@ -23,7 +23,11 @@ function listPages(baseDir) {
       } else if (entry.endsWith('.tsx') || entry.endsWith('.ts') || entry.endsWith('.jsx') || entry.endsWith('.js')) {
         const base = path.basename(entry, path.extname(entry));
         if (base.startsWith('_')) continue; // _app, _document
-        pages.push('/' + relPath.replace(/index\.(tsx|ts|jsx|js)$/,'').replace(/\.(tsx|ts|jsx|js)$/,'').replace(/\\/g,'/').replace(/\/g,'/'));
+        pages.push('/' + relPath
+          .replace(/index\.(tsx|ts|jsx|js)$/,'')
+          .replace(/\.(tsx|ts|jsx|js)$/,'')
+          .replace(/\\/g,'/')
+        );
       }
     }
   }
