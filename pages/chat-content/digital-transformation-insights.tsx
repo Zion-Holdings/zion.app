@@ -1,0 +1,1 @@
+export default function Article() { return <div>Digital transformation insights</div>; }

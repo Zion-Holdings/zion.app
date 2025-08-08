@@ -1,0 +1,1 @@
+export default function Article() { return <div>AI-powered business solutions</div>; }

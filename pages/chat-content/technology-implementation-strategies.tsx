@@ -1,0 +1,1 @@
+export default function Article() { return <div>Technology implementation strategies</div>; }
