@@ -1,0 +1,6 @@
+network: starknet
+chainId: 23448594291968334 # example SN mainnet
+layerzeroEndpoint: "" # not applicable; off-chain relayer
+executor: "0x0"
+rewardVault: "0x0"
+quorumBps: 6000

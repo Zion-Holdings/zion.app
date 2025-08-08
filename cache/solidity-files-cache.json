@@ -1,0 +1,239 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/workspace/contracts/ZIONToken.sol": {
+      "lastModificationDate": 1754693703028,
+      "contentHash": "d9947f5bc8106ebde1f861bd3f11d898",
+      "sourceName": "contracts/ZIONToken.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/IBridgeAdapter.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "ERC20",
+        "IERC20",
+        "ZIONToken"
+      ]
+    },
+    "/workspace/contracts/interfaces/IBridgeAdapter.sol": {
+      "lastModificationDate": 1754693666676,
+      "contentHash": "41e0906a8213823cd63429d563742688",
+      "sourceName": "contracts/interfaces/IBridgeAdapter.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "IBridgeAdapter"
+      ]
+    },
+    "/workspace/contracts/governance/VoteRelay.sol": {
+      "lastModificationDate": 1754693713589,
+      "contentHash": "c23c3ea565a91a8a0d2791c0ebe30f4e",
+      "sourceName": "contracts/governance/VoteRelay.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IBridgeAdapter.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "VoteRelay"
+      ]
+    },
+    "/workspace/contracts/bridge/LayerZeroAdapter.sol": {
+      "lastModificationDate": 1754693681492,
+      "contentHash": "ec441bb572fb4cc44a66bad6196ade51",
+      "sourceName": "contracts/bridge/LayerZeroAdapter.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IBridgeAdapter.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "ILayerZeroEndpointV2",
+        "LayerZeroAdapter"
+      ]
+    },
+    "/workspace/contracts/bridge/VoteBridgeReceiver.sol": {
+      "lastModificationDate": 1754693877657,
+      "contentHash": "9fb62a235ad8ec82a0b03597a15cc2aa",
+      "sourceName": "contracts/bridge/VoteBridgeReceiver.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "IGovernanceExecutorLike",
+        "ILayerZeroReceiverV2",
+        "VoteBridgeReceiver"
+      ]
+    },
+    "/workspace/contracts/governance/GovernanceExecutor.sol": {
+      "lastModificationDate": 1754693769129,
+      "contentHash": "d108f993472d456bdef9ea7eada34c76",
+      "sourceName": "contracts/governance/GovernanceExecutor.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "GovernanceExecutor",
+        "ITimelockControllerLike"
+      ]
+    }
+  }
+}
