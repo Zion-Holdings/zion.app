@@ -1,0 +1,1 @@
+export default function AutoUpdate_172307() { return <div>Auto update placeholder</div>; }

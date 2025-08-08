@@ -1,0 +1,1 @@
+export default function ChatDigitalTransformation() { return <div>Placeholder</div>; }

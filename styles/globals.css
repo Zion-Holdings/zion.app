@@ -1160,3 +1160,8 @@ td {
   border-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
 } 
+
+/* Global reset/additions for wiki/docs */
+.prose pre { white-space: pre-wrap; }
+.prose table { display: table; width: 100%; }
+.prose thead th { font-weight: 600; } 

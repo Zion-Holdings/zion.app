@@ -1,0 +1,1 @@
+export default function ChatInnovationEnterprise() { return <div>Placeholder</div>; }

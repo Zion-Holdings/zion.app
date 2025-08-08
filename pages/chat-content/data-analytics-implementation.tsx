@@ -1,0 +1,1 @@
+export default function ChatDataAnalytics() { return <div>Placeholder</div>; }

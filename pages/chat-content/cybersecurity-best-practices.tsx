@@ -1,0 +1,1 @@
+export default function ChatCybersecurity() { return <div>Placeholder</div>; }
