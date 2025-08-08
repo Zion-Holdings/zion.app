@@ -169,7 +169,10 @@
     "alignment:scan": "node automation/chat-fetcher.cjs && (node automation/google-doc-fetcher.cjs || true) && node automation/alignment-crawler.cjs && node automation/alignment-analyzer.cjs && node automation/alignment-factory.cjs && node automation/alignment-dev-factory.cjs",
     "postautomation": "npm run automation:git-sync",
     "lint:staged": "lint-staged",
-    "performance:audit": "node automation/performance-audit.cjs"
+    "performance:audit": "node automation/performance-audit.cjs",
+    "app-growth:start": "node automation/app-growth-orchestrator.cjs",
+    "app-growth:cron:start": "bash automation/app-growth-cron.sh",
+    "app-growth:analyze": "node automation/app-growth-analyzer.cjs && node automation/app-growth-factory.cjs && node automation/app-growth-applier.cjs"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",

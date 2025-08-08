@@ -10,6 +10,12 @@ const EnhancedHome: NextPage = () => {
       </Head>
       
       <main>
+
+        {/* APP-GROWTH-BANNER-START */}
+        <div className="mt-6 p-4 bg-yellow-100 border border-yellow-300 rounded">
+          <strong>New:</strong> Explore our latest pages and capabilities below.
+        </div>
+        {/* APP-GROWTH-BANNER-END */}
         <h1>EnhancedHome</h1>
         <p>This page is under construction.</p>
       </main>
