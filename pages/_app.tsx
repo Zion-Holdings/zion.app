@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import type { AppContext, AppProps } from "next/app";
 import Head from "next/head";
 import EnhancedLayout from "../components/layout/EnhancedLayout";
@@ -19,5 +20,18 @@ export default function MyApp({ Component, pageProps }: AppProps & { pageProps: 
         <Component {...pageProps} />
       </EnhancedLayout>
     </TenantProvider>
+=======
+import type { AppProps } from 'next/app';
+import EnhancedLayout from '../components/layout/EnhancedLayout';
+import '../styles/enhanced-design-system.css';
+import '../styles/modern-design-system.css';
+import '../styles/globals.css';
+
+export default function App({ Component, pageProps }: AppProps) {
+  return (
+    <EnhancedLayout>
+      <Component {...pageProps} />
+    </EnhancedLayout>
+>>>>>>> cursor/integrate-ai-resume-builder-into-job-applications-9820
   );
 }

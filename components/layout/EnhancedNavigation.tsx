@@ -12,9 +12,17 @@ export default function EnhancedNavigation() {
           </a>
         </Link>
         <div className="flex items-center gap-4 text-sm">
+<<<<<<< HEAD
           {tenant.navbarLinks?.map((l) => (
             <Link key={l.href} href={l.href}><a>{l.label}</a></Link>
           ))}
+=======
+          <Link href="/services"><a>Services</a></Link>
+          <Link href="/category/ai-consulting-chat"><a>Capabilities</a></Link>
+          <Link href="/blog"><a>Insights</a></Link>
+          <Link href="/about"><a>About</a></Link>
+          <Link href="/contact"><a>Contact</a></Link>
+>>>>>>> cursor/integrate-ai-resume-builder-into-job-applications-9820
         </div>
       </div>
     </nav>
