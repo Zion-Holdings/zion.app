@@ -236,3 +236,11 @@
     # Set concurrent uploads
     uploadConcurrency = 10
 
+[[scheduled]]
+  path = "/.netlify/functions/link_audit"
+  schedule = "30 2 * * *" # daily at 02:30 UTC
+
+[[scheduled]]
+  path = "/.netlify/functions/sitemap_refresh"
+  schedule = "0 */12 * * *" # every 12 hours
+
