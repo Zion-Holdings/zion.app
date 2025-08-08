@@ -15,10 +15,18 @@ async function main() {
     console.error('No googleDocId configured');
     process.exit(1);
   }
-  const exportUrl = `https://docs.google.com/document/d/${docId}/export?format=txt`;
+  // Try unauthenticated text export; if unauthorized, fall back to HTML view
+  let data;
+  try {
+    const txtUrl = `https://docs.google.com/document/d/${docId}/export?format=txt`;
+    ({ data } = await axios.get(txtUrl, { timeout: 20000 }));
+  } catch (e) {
+    const htmlUrl = `https://docs.google.com/document/d/${docId}/view`;
+    const res = await axios.get(htmlUrl, { timeout: 20000 });
+    data = res.data;
+  }
   const outDir = path.join(__dirname, '..', 'data', 'reports', 'alignment');
   fs.mkdirSync(outDir, { recursive: true });
-  const { data } = await axios.get(exportUrl, { timeout: 20000 });
   fs.writeFileSync(path.join(outDir, 'google-doc.txt'), data);
   console.log('Saved google doc text');
 }
