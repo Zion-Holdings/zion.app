@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import DarkModeToggle from '../community/DarkModeToggle';
 
 export default function EnhancedNavigation() {
   return (
@@ -11,6 +12,8 @@ export default function EnhancedNavigation() {
           <Link href="/about"><a>About</a></Link>
           <Link href="/blog"><a>Blog</a></Link>
           <Link href="/contact"><a>Contact</a></Link>
+          <Link href="/community"><a>Community</a></Link>
+          <DarkModeToggle />
         </div>
       </div>
     </nav>

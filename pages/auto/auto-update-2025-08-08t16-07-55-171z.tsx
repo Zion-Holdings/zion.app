@@ -1,0 +1,1 @@
+export default function AutoUpdate_160755() { return <div className="p-6">Auto Update</div>; }

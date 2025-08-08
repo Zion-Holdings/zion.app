@@ -1,0 +1,1 @@
+export default function ChatAiPoweredBusiness() { return <div className="p-6">AI Powered Business Solutions</div>; }
