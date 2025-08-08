@@ -210,7 +210,11 @@
     "git:pull": "node automation/git-pull-rebase.cjs",
     "git:cron:start": "bash automation/git-sync-cron.sh start",
     "git:cron:stop": "bash automation/git-sync-cron.sh stop",
-    "git:cron:status": "bash automation/git-sync-cron.sh status"
+    "git:cron:status": "bash automation/git-sync-cron.sh status",
+    "netlify:check": "node automation/netlify-status-checker.cjs",
+    "netlify:monitor:start": "bash automation/netlify-monitor-cron.sh start",
+    "netlify:monitor:stop": "bash automation/netlify-monitor-cron.sh stop",
+    "netlify:monitor:status": "bash automation/netlify-monitor-cron.sh status"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
