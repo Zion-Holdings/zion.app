@@ -1,4 +1,7 @@
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
+
+const Web3LoginButton = dynamic(() => import('../auth/Web3LoginButton'), { ssr: false });
 
 export default function EnhancedNavigation() {
   return (
@@ -11,6 +14,8 @@ export default function EnhancedNavigation() {
           <Link href="/about"><a>About</a></Link>
           <Link href="/blog"><a>Blog</a></Link>
           <Link href="/contact"><a>Contact</a></Link>
+          <Link href="/settings/account"><a>Account</a></Link>
+          <Web3LoginButton />
         </div>
       </div>
     </nav>
