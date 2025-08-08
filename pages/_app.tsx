@@ -5,6 +5,7 @@ import { TenantProvider } from "../context/TenantContext";
 import { defaultTenant } from "../utils/tenant";
 import "../styles/enhanced-design-system.css";
 import "../styles/modern-design-system.css";
+import "../styles/animated.css";
 
 export default function MyApp({ Component, pageProps }: AppProps & { pageProps: any }) {
   const tenant = (pageProps && pageProps.tenant) || defaultTenant;

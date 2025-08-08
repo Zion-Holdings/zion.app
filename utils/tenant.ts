@@ -19,20 +19,22 @@ export type Tenant = {
 
 export const defaultTenant: Tenant = {
   id: "default",
-  brandName: "Zion",
+  brandName: "Zion Tech Group",
   subdomain: null,
   customDomain: null,
   primaryColor: "#4f46e5",
   logoUrl: null,
   themePreset: "light",
   navbarLinks: [
-    { label: "About", href: "/about" },
+    { label: "Services", href: "/services" },
+    { label: "Products", href: "/products" },
     { label: "Blog", href: "/blog" },
+    { label: "Talent", href: "/talent" },
     { label: "Contact", href: "/contact" }
   ],
-  footerText: "© " + new Date().getFullYear() + " Zion Tech Solutions",
-  heroTitle: "Build with Zion",
-  heroSubtitle: "AI tools and services for modern teams.",
+  footerText: "© " + new Date().getFullYear() + " Zion Tech Group",
+  heroTitle: "Intelligent AI Platforms for the Next Decade",
+  heroSubtitle: "Ship faster with our high‑performance, white‑label platform and expert services.",
   suspended: false,
 };
 
