@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-08T16:51:32.374Z",
+  "timestamp": "2025-08-08T16:51:42.581Z",
   "loops": {
     "alignment-orchestrator.log": {
       "restarts": 0,
@@ -17,9 +17,9 @@
       "loopScore": 0
     },
     "automation-launcher.log": {
-      "restarts": 972,
-      "started": 2076,
-      "loopScore": 0.4682080924855491
+      "restarts": 1111,
+      "started": 2354,
+      "loopScore": 0.4719626168224299
     },
     "autonomous-automation-orchestrator.log": {
       "restarts": 0,
@@ -176,6 +176,11 @@
       "started": 0,
       "loopScore": 0
     },
+    "linkedin-pro-cron.log": {
+      "restarts": 0,
+      "started": 1,
+      "loopScore": 0
+    },
     "linkedin-pro-orchestrator.log": {
       "restarts": 0,
       "started": 0,
@@ -266,9 +271,19 @@
       "started": 0,
       "loopScore": 0
     },
+    "site-promo-cron.log": {
+      "restarts": 0,
+      "started": 1,
+      "loopScore": 0
+    },
     "site-promo-orchestrator.log": {
       "restarts": 0,
       "started": 0,
+      "loopScore": 0
+    },
+    "spec-dev-cron.log": {
+      "restarts": 0,
+      "started": 1,
       "loopScore": 0
     },
     "spec-dev-orchestrator.log": {

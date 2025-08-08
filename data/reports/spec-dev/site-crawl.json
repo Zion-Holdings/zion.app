@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-08T16:51:32.020Z",
+  "timestamp": "2025-08-08T16:51:43.255Z",
   "pages": [
     {
       "url": "https://ziontechgroup.netlify.app/",
@@ -24,6 +24,94 @@
     {
       "url": "https://ziontechgroup.netlify.app/blog",
       "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/404",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/auth",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/auth/callback",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/auth/forgot-password",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/auth/reset-password",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/auth/verify",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/auto/auto-update-2025-08-08t16-07-55-171z",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/auto/auto-update-2025-08-08t16-10-20-249z",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/auto/auto-update-2025-08-08t16-30-00-086z",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/auto/auto-update-2025-08-08t16-30-20-949z",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/auto/auto-update-2025-08-08t16-38-19-257z",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/auto/auto-update-2025-08-08t16-49-54-200z",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/automation",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/blockchain-solutions",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/blog/5g-technology-and-its-impact-on-iot-chat",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/blog/api-first-development-building-scalable-systems-chat",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/blog/augmented-reality-in-enterprise-applications-chat",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/blog/blockchain-technology-in-modern-business-solutions-chat",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/blog/cloud-native-architecture-best-practices-chat",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/blog/cybersecurity-trends-for-2024-and-beyond-chat",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/blog/data-analytics-in-digital-transformation-chat",
+      "status": 200
     }
   ],
   "discovered": [
@@ -32,6 +120,28 @@
     "https://ziontechgroup.netlify.app/about",
     "https://ziontechgroup.netlify.app/contact",
     "https://ziontechgroup.netlify.app/products",
-    "https://ziontechgroup.netlify.app/blog"
+    "https://ziontechgroup.netlify.app/blog",
+    "https://ziontechgroup.netlify.app/404",
+    "https://ziontechgroup.netlify.app/auth",
+    "https://ziontechgroup.netlify.app/auth/callback",
+    "https://ziontechgroup.netlify.app/auth/forgot-password",
+    "https://ziontechgroup.netlify.app/auth/reset-password",
+    "https://ziontechgroup.netlify.app/auth/verify",
+    "https://ziontechgroup.netlify.app/auto/auto-update-2025-08-08t16-07-55-171z",
+    "https://ziontechgroup.netlify.app/auto/auto-update-2025-08-08t16-10-20-249z",
+    "https://ziontechgroup.netlify.app/auto/auto-update-2025-08-08t16-30-00-086z",
+    "https://ziontechgroup.netlify.app/auto/auto-update-2025-08-08t16-30-20-949z",
+    "https://ziontechgroup.netlify.app/auto/auto-update-2025-08-08t16-38-19-257z",
+    "https://ziontechgroup.netlify.app/auto/auto-update-2025-08-08t16-49-54-200z",
+    "https://ziontechgroup.netlify.app/automation",
+    "https://ziontechgroup.netlify.app/blockchain-solutions",
+    "https://ziontechgroup.netlify.app/blog/5g-technology-and-its-impact-on-iot-chat",
+    "https://ziontechgroup.netlify.app/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat",
+    "https://ziontechgroup.netlify.app/blog/api-first-development-building-scalable-systems-chat",
+    "https://ziontechgroup.netlify.app/blog/augmented-reality-in-enterprise-applications-chat",
+    "https://ziontechgroup.netlify.app/blog/blockchain-technology-in-modern-business-solutions-chat",
+    "https://ziontechgroup.netlify.app/blog/cloud-native-architecture-best-practices-chat",
+    "https://ziontechgroup.netlify.app/blog/cybersecurity-trends-for-2024-and-beyond-chat",
+    "https://ziontechgroup.netlify.app/blog/data-analytics-in-digital-transformation-chat"
   ]
 }
