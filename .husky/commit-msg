@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+set -e
 
 # Get the commit message
 commit_msg=$(cat "$1")
