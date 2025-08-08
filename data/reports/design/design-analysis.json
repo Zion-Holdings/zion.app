@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-08T17:06:23.327Z",
+  "timestamp": "2025-08-08T17:06:48.570Z",
   "filesAnalyzed": 107,
   "items": [
     {
@@ -41,18 +41,21 @@
     {
       "file": "/workspace/pages/_document.tsx",
       "issues": [
+        "missing_head_import",
+        "no_tailwind_usage",
         "missing_enhanced_layout",
-        "missing_meta_title"
+        "missing_meta_title",
+        "missing_meta_description"
       ],
       "details": {
         "filePath": "/workspace/pages/_document.tsx",
-        "hasHead": true,
-        "usesTailwind": true,
+        "hasHead": false,
+        "usesTailwind": false,
         "usesEnhancedLayout": false,
         "usesEnhancedNav": false,
         "usesEnhancedFooter": false,
         "hasMetaTitle": false,
-        "hasMetaDesc": true
+        "hasMetaDesc": false
       }
     },
     {
