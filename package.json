@@ -188,7 +188,14 @@
     "ui-evolution:dashboard": "node automation/ui-evolution-launcher.js dashboard",
     "meta:factory": "node automation/autonomous-meta-factory.cjs",
     "meta:orchestrator": "node automation/autonomous-meta-orchestrator.cjs",
-    "meta:cron:start": "bash automation/autonomous-meta-cron.sh"
+    "meta:cron:start": "bash automation/autonomous-meta-cron.sh",
+    "venture:start": "node automation/venture-orchestrator.cjs continuous",
+    "venture:once": "node automation/venture-orchestrator.cjs once",
+    "venture:analyze": "node automation/venture-services-analyzer.cjs && node automation/venture-services-factory.cjs && node automation/ads-generator.cjs && node automation/service-sales-agents-factory.cjs",
+    "venture:cron:start": "bash automation/venture-cron.sh start",
+    "venture:cron:stop": "bash automation/venture-cron.sh stop",
+    "venture:cron:status": "bash automation/venture-cron.sh status",
+    "venture:report": "node automation/venture-orchestrator.cjs report"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",

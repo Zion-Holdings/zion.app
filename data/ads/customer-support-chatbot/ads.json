@@ -1,0 +1,36 @@
+{
+  "LinkedIn": {
+    "headline": "Customer Support Chatbot — Book a demo",
+    "valueProps": [
+      "Faster setup",
+      "Transparent pricing",
+      "Tangible outcomes"
+    ],
+    "price": "Avg market: $999–$2999",
+    "copy": "Struggling with ai-automation? Customer Support Chatbot delivers results in days. Avg market: $999–$2999. Book a demo today."
+  },
+  "Google Ads": {
+    "headline": "Customer Support Chatbot — Book a demo",
+    "valueProps": [
+      "Faster setup",
+      "Transparent pricing",
+      "Tangible outcomes"
+    ],
+    "price": "Avg market: $999–$2999",
+    "copy": "Customer Support Chatbot for SaaS. Avg market: $999–$2999. Get started now."
+  },
+  "Twitter/X": {
+    "headline": "Customer Support Chatbot — Book a demo",
+    "valueProps": [
+      "Faster setup",
+      "Transparent pricing",
+      "Tangible outcomes"
+    ],
+    "price": "Avg market: $999–$2999",
+    "copy": "Customer Support Chatbot: ship in ~7 days. Avg market: $999–$2999. DM for details."
+  },
+  "Email": {
+    "subject": "Customer Support Chatbot in 7 days",
+    "body": "Hi there,\n\nWe built Customer Support Chatbot: Context-aware support bot seeded from docs, with email escalation.. Avg market: $999–$2999.\n\nInterested in a quick demo?\n\nBest,\nTeam"
+  }
+}
