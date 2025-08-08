@@ -81,3 +81,7 @@
   background-color: #475569;
   transform: translateY(-1px);
 }
+
+@media print {
+  .no-print { display: none !important; }
+}

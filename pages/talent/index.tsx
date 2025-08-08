@@ -1,0 +1,1 @@
+export default function Talent() { return <div className="py-8">Talent</div>; }
