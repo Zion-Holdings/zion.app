@@ -166,7 +166,9 @@
     "alignment:cron:start": "bash automation/alignment-cron.sh",
     "alignment:scan": "node automation/chat-fetcher.cjs && (node automation/google-doc-fetcher.cjs || true) && node automation/alignment-crawler.cjs && node automation/alignment-analyzer.cjs && node automation/alignment-factory.cjs && node automation/alignment-dev-factory.cjs",
     "postautomation": "npm run automation:git-sync",
-    "lint:staged": "lint-staged"
+    "lint:staged": "lint-staged",
+    "content:auto:start": "node automation/content-autogen-orchestrator.cjs start",
+    "content:auto:once": "node automation/content-autogen-orchestrator.cjs run-once"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
