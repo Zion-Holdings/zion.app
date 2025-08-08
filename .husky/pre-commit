@@ -3,12 +3,17 @@ set -e
 
 echo "🔍 Running pre-commit checks..."
 
-# TypeScript type check
-npm run type-check || {
-  echo "❌ TypeScript type check failed. Please fix issues before committing."
-  exit 1
-}
+# Skip type-check if tsc is not available locally
+if [ -x "./node_modules/.bin/tsc" ]; then
+  npm run -s type-check || {
+    echo "❌ TypeScript type check failed. Please fix issues before committing."
+    exit 1
+  }
+else
+  echo "ℹ️  Skipping type-check (tsc not found). Run 'npm install' to enable."
+fi
 
-# Optional: add other lightweight checks here
+# Deletion guard to preserve files unless explicitly allowed
+sh ./scripts/prevent-deletion.sh
 
 echo "✅ Pre-commit checks passed"
