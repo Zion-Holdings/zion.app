@@ -1,0 +1,1 @@
+export default function Page() { return <div className="py-12">digital-transformation-insights</div>; }
