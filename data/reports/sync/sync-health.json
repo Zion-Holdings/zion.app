@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-08T17:38:41.122Z",
+  "timestamp": "2025-08-08T17:38:46.419Z",
   "host": "cursor",
   "repoRoot": "/workspace",
   "status": "degraded",
@@ -11,23 +11,23 @@
     },
     {
       "name": "bg-sync-loop-running",
-      "ok": false,
-      "details": "PID: - "
+      "ok": true,
+      "details": "PID: 3440 "
     },
     {
       "name": "bg-pull-loop-running",
-      "ok": false,
-      "details": "PID: - "
+      "ok": true,
+      "details": "PID: 3441 "
     },
     {
       "name": "auto-sync-log-fresh",
-      "ok": false,
-      "details": "ageMs=Infinity"
+      "ok": true,
+      "details": "ageMs=3085.482421875"
     },
     {
       "name": "auto-pull-log-fresh",
-      "ok": false,
-      "details": "ageMs=Infinity"
+      "ok": true,
+      "details": "ageMs=4049.486083984375"
     },
     {
       "name": "advanced-git-sync-lock-stale",
@@ -52,7 +52,7 @@
     {
       "name": "working-tree-clean",
       "ok": false,
-      "details": "changed=5"
+      "details": "changed=1"
     }
   ]
 }
