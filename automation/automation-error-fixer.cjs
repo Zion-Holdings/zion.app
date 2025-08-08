@@ -84,6 +84,49 @@ function fixEsmInCjs(file) {
   }
 }
 
+function isLikelyPackageName(nameOrPath) {
+  // No slashes means likely a package name
+  return typeof nameOrPath === 'string' && !/[\\/]/.test(nameOrPath);
+}
+
+function fixModuleNotFound(missingSpecifier) {
+  // If it's a package, try to install it; otherwise, if it looks like a local automation file, create a placeholder
+  try {
+    if (isLikelyPackageName(missingSpecifier)) {
+      log(`📦 Attempting to install missing package: ${missingSpecifier}`);
+      try {
+        execSync(`npm install --save ${missingSpecifier}`, { stdio: 'pipe' });
+        log(`✅ Installed package: ${missingSpecifier}`);
+        return true;
+      } catch (e) {
+        log(`⚠️ Failed to install package ${missingSpecifier}: ${e.message}`);
+      }
+    } else {
+      // Normalize and resolve under repo root
+      const candidate = path.resolve(process.cwd(), missingSpecifier);
+      if (missingSpecifier.startsWith('automation/')) {
+        const abs = path.resolve(path.join(__dirname, '..'), missingSpecifier);
+        const base = path.basename(abs);
+        if (base.endsWith('.js') || base.endsWith('.cjs')) {
+          makePlaceholderNodeScript(abs, base);
+          return true;
+        }
+      }
+      // If absolute path within repo
+      if (candidate.startsWith(path.resolve(path.join(__dirname, '..')))) {
+        const base = path.basename(candidate);
+        if (base.endsWith('.js') || base.endsWith('.cjs')) {
+          makePlaceholderNodeScript(candidate, base);
+          return true;
+        }
+      }
+    }
+  } catch (e) {
+    log(`⚠️ fixModuleNotFound error: ${e.message}`);
+  }
+  return false;
+}
+
 function runFixes(issues) {
   let fixed = 0;
   for (const issue of issues) {
@@ -98,6 +141,8 @@ function runFixes(issues) {
         path.join(__dirname, 'lint-automation-manager.cjs'),
       ];
       for (const f of cjsCandidates) if (fixEsmInCjs(f)) { fixed++; break; }
+    } else if (issue.type === 'module_not_found' && issue.match) {
+      if (fixModuleNotFound(issue.match)) fixed++;
     }
   }
   return fixed;
