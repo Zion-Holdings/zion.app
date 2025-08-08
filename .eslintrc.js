@@ -19,7 +19,9 @@ module.exports = {
       'warn',
       { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }
     ],
-    '@typescript-eslint/no-explicit-any': 'warn'
+    '@typescript-eslint/no-explicit-any': 'warn',
+    '@typescript-eslint/no-empty-object-type': 'warn',
+    '@next/next/no-html-link-for-pages': 'warn'
   },
   overrides: [
     {
