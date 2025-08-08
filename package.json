@@ -186,6 +186,8 @@
     "health:dev": "nodemon automation/auto-health-monitor/index.mjs",
     "automation:all:plus": "npm run automation:all & npm run health:start",
     "postautomation": "npm run automation:git-sync",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
     "lint:staged": "lint-staged",
     "ui-evolution:start": "node automation/ui-evolution-launcher.js start",
     "ui-evolution:once": "node automation/ui-evolution-launcher.js once",
@@ -266,7 +268,8 @@
     "postcss": "^8.4.32",
     "tailwindcss": "^3.4.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "prettier": "^3.3.3"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [

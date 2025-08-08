@@ -1,0 +1,24 @@
+# Automated Maintenance and Continuous Improvement
+
+This rule instructs the assistant to keep the project healthy automatically using built-in scripts and CI.
+
+## Objectives
+- Keep dependencies up to date without breaking changes
+- Maintain clean linting and type-check state
+- Continuously improve code quality and UI/UX
+
+## Protocol
+1. Before large edits, run a health check:
+   - `npm run lint` and `npm run type-check`
+   - `npm run build`
+2. For dependency updates, prefer incremental changes and run:
+   - `npm run deps:maintain` (project-specific orchestrator)
+3. Use the provided workflows to schedule recurring improvement tasks:
+   - CI: `.github/workflows/ci.yml`
+   - Dependency maintenance: `.github/workflows/dependency-maintenance.yml`
+   - Infinite improvement loop: `.github/workflows/infinite-improvement-loop.yml`
+4. After fixes, re-run health checks and commit with conventional messages.
+
+## Guardrails
+- Avoid mass refactors without tests or build passing
+- Respect existing TypeScript and Next.js versions unless explicitly upgrading with a plan
