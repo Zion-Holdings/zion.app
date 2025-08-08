@@ -2,18 +2,19 @@
   "ok": true,
   "errors": [],
   "warnings": [
-    "No upstream configured for current branch."
+    "No upstream configured for current branch.",
+    "Set upstream to origin/cursor/implement-affiliate-and-influencer-system-for-user-acquisition-70c6."
   ],
   "checks": {
     "user": {
       "name": "Cursor Agent",
       "email": "cursoragent@cursor.com"
     },
-    "origin": "origin\thttps://x-access-token:ghs_qNBaeg2v14LuMC4IBKBjGq0T4N5gyr2FojDs@github.com/Zion-Holdings/zion.app (fetch)\norigin\thttps://x-access-token:ghs_qNBaeg2v14LuMC4IBKBjGq0T4N5gyr2FojDs@github.com/Zion-Holdings/zion.app (push)",
+    "origin": "origin\thttps://x-access-token:ghs_9l2J8CL3pRZY8pNTdOkr2qojcgE3TE1fdBGp@github.com/Zion-Holdings/zion.app (fetch)\norigin\thttps://x-access-token:ghs_9l2J8CL3pRZY8pNTdOkr2qojcgE3TE1fdBGp@github.com/Zion-Holdings/zion.app (push)",
     "fsck": {
       "status": 0,
-      "output": ""
+      "output": "dangling tree 84aaa8e9b5085e91a07b7ff23057d092690a0e3b\ndangling tree a4de69306675fa1ad97b70bf1fa24bfdbf262150\ndangling tree 688ece16b3bf0eaa6992aa6a0f6bcaa4d1290a9c\n"
     },
-    "working": "dirty"
+    "working": "clean"
   }
 }
