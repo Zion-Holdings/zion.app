@@ -331,3 +331,13 @@ The advanced automation systems are now fully operational and providing intellig
 **Git Integration**: ✅ **WORKING**
 
 The system is now capable of continuously improving the application, fixing errors automatically, generating new content, optimizing performance, and diversifying the app's capabilities without manual intervention.
+
+### 8. Marketing Automation Daily (GitHub Actions)
+- **File**: `.github/workflows/marketing-daily.yml`
+- **Purpose**: Runs daily LinkedIn and Instagram marketing orchestrators to generate and optionally publish promotional posts that reference the canonical site `https://ziontechgroup.com`.
+- **Notes**: Uses existing analyzers and factories under `automation/` and uploads logs and generated reports as workflow artifacts. No plaintext credentials; relies on environment secrets if posting is enabled.
+
+### 9. Performance Audit Weekly (GitHub Actions)
+- **Files**: `automation/performance-audit.cjs`, `.github/workflows/performance-weekly.yml`
+- **Purpose**: Builds the app, boots a local server, measures simple TTFB and HTML payload size for key pages, and writes JSON reports to `data/reports/performance/`.
+- **Output**: `performance-*.json` artifacts with thresholds and alert flags. Useful for tracking regressions in server responsiveness and page weight.
