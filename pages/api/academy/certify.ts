@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { withMetrics } from '../../../utils/apiMetrics';
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+async function baseHandler(req: NextApiRequest, res: NextApiResponse) {
   const name = String(req.query.name || 'Learner');
   const course = String(req.query.course || 'course');
 
@@ -50,3 +51,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 function escapePdf(text: string) {
   return text.replace(/\\/g, '\\\\').replace(/\(/g, '\\(').replace(/\)/g, '\\)');
 }
+
+export default withMetrics(baseHandler, '/api/academy/certify');

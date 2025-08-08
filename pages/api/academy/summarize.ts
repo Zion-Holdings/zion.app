@@ -1,7 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import OpenAI from 'openai';
+import { withMetrics } from '../../../utils/apiMetrics';
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+async function baseHandler(req: NextApiRequest, res: NextApiResponse) {
   const course = String(req.query.course || '');
   const lesson = String(req.query.lesson || '');
   const subject = course || lesson || 'this content';
@@ -29,3 +30,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     res.status(200).json({ summary: `Summary error fallback for ${subject}.` });
   }
 }
+
+export default withMetrics(baseHandler, '/api/academy/summarize');

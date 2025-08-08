@@ -1,7 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import OpenAI from 'openai';
+import { withMetrics } from '../../../utils/apiMetrics';
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+async function baseHandler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
     res.status(405).json({ error: 'Method not allowed' });
     return;
@@ -33,3 +34,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     res.status(200).json({ answer: `AI error fallback: ${e?.message || 'Unknown error'}` });
   }
 }
+
+export default withMetrics(baseHandler, '/api/academy/ai');
