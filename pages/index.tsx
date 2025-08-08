@@ -17,58 +17,22 @@ export default function Home() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link href="/automation"><a className="px-5 py-3 bg-cyan-600 hover:bg-cyan-500 rounded-md font-semibold">Explore Automations</a></Link>
-            <Link href="/site-health"><a className="px-5 py-3 bg-emerald-600 hover:bg-emerald-500 rounded-md font-semibold">Site Health</a></Link>
-            <Link href="/newsroom"><a className="px-5 py-3 bg-indigo-600 hover:bg-indigo-500 rounded-md font-semibold">Newsroom</a></Link>
-            <a href="https://github.com/Zion-Holdings/zion.app/actions" target="_blank" rel="noopener" className="px-5 py-3 bg-fuchsia-600 hover:bg-fuchsia-500 rounded-md font-semibold">Live Actions</a>
+            <a href="https://github.com/Zion-Holdings/zion.app/actions/workflows/autonomous-meta.yml" target="_blank" rel="noopener" className="px-5 py-3 bg-fuchsia-600 hover:bg-fuchsia-500 rounded-md font-semibold">Live Meta Factory</a>
           </div>
         </section>
 
-        <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <article className="rounded-xl bg-white/5 border border-white/10 p-6">
-            <h2 className="text-xl font-bold">Quick Fixes</h2>
-            <p className="text-white/70 mt-2">Build rescue, sitemap/robots verification, and security remediation run on a tight cadence and auto-commit.</p>
-            <a className="text-cyan-300 underline mt-3 inline-block" href="https://github.com/Zion-Holdings/zion.app/blob/main/.github/workflows/autonomous-quick-fixes.yml" target="_blank" rel="noopener">View workflow</a>
-          </article>
-          <article className="rounded-xl bg-white/5 border border-white/10 p-6">
-            <h2 className="text-xl font-bold">Deep Maintenance</h2>
-            <p className="text-white/70 mt-2">Intelligent orchestrator, smoke tests, and link checks keep the app healthy and predictable.</p>
-            <a className="text-cyan-300 underline mt-3 inline-block" href="https://github.com/Zion-Holdings/zion.app/blob/main/.github/workflows/autonomous-deep-maintenance.yml" target="_blank" rel="noopener">View workflow</a>
-          </article>
-          <article className="rounded-xl bg-white/5 border border-white/10 p-6">
-            <h2 className="text-xl font-bold">Marketing & SEO</h2>
-            <p className="text-white/70 mt-2">Content factories generate posts and SEO optimizations to keep the brand fresh.</p>
-            <a className="text-cyan-300 underline mt-3 inline-block" href="https://github.com/Zion-Holdings/zion.app/blob/main/.github/workflows/autonomous-marketing-seo.yml" target="_blank" rel="noopener">View workflow</a>
-          </article>
-          <article className="rounded-xl bg-white/5 border border-white/10 p-6">
-            <h2 className="text-xl font-bold">Content Curation</h2>
-            <p className="text-white/70 mt-2">Curates proposals from internal data and syncs homepage promo suggestions automatically.</p>
-            <a className="text-cyan-300 underline mt-3 inline-block" href="https://github.com/Zion-Holdings/zion.app/blob/main/.github/workflows/autonomous-content-curation.yml" target="_blank" rel="noopener">View workflow</a>
-          </article>
-          <article className="rounded-xl bg-white/5 border border-white/10 p-6">
-            <h2 className="text-xl font-bold">Dependency Upgrades</h2>
-            <p className="text-white/70 mt-2">Safe minor/patch upgrades with audit fixes and build verification, opened via automated PRs.</p>
-            <a className="text-cyan-300 underline mt-3 inline-block" href="https://github.com/Zion-Holdings/zion.app/blob/main/.github/workflows/autonomous-deps-upgrade.yml" target="_blank" rel="noopener">View workflow</a>
-          </article>
-          <article className="rounded-xl bg-white/5 border border-white/10 p-6">
-            <h2 className="text-xl font-bold">System Summary</h2>
-            <p className="text-white/70 mt-2">Overview of every automation system with capabilities and usage.</p>
-            <a className="text-cyan-300 underline mt-3 inline-block" href="https://github.com/Zion-Holdings/zion.app/blob/main/AUTOMATION_SYSTEMS_SUMMARY.md" target="_blank" rel="noopener">Read summary</a>
-          </article>
-          <article className="rounded-xl bg-white/5 border border-white/10 p-6">
-            <h2 className="text-xl font-bold">External Link Checks</h2>
-            <p className="text-white/70 mt-2">Scans pages for outbound links and monitors their health, auto-committing reports.</p>
-            <a className="text-cyan-300 underline mt-3 inline-block" href="https://github.com/Zion-Holdings/zion.app/blob/main/.github/workflows/autonomous-external-links.yml" target="_blank" rel="noopener">View workflow</a>
-          </article>
-          <article className="rounded-xl bg-white/5 border border-white/10 p-6">
-            <h2 className="text-xl font-bold">Image Optimizer</h2>
-            <p className="text-white/70 mt-2">Compresses public images lossily with safety thresholds and syncs saved bytes reports.</p>
-            <a className="text-cyan-300 underline mt-3 inline-block" href="https://github.com/Zion-Holdings/zion.app/blob/main/.github/workflows/autonomous-image-optimizer.yml" target="_blank" rel="noopener">View workflow</a>
-          </article>
-          <article className="rounded-xl bg-white/5 border border-white/10 p-6">
-            <h2 className="text-xl font-bold">Lighthouse CI</h2>
-            <p className="text-white/70 mt-2">Runs scheduled audits on key pages and stores artifacts for continuous performance tracking.</p>
-            <a className="text-cyan-300 underline mt-3 inline-block" href="https://github.com/Zion-Holdings/zion.app/blob/main/.github/workflows/autonomous-lighthouse.yml" target="_blank" rel="noopener">View workflow</a>
-          </article>
+        <section className="mt-20">
+          <h2 className="text-3xl font-bold mb-4">What’s Running Now</h2>
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <a href="/automation" className="block rounded-xl border border-white/15 bg-white/5 p-5 hover:border-cyan-400/40 transition">
+              <div className="text-lg font-semibold">Automation Control Center</div>
+              <div className="text-sm text-white/70">Live status, run controls, and reports</div>
+            </a>
+            <a href="https://github.com/Zion-Holdings/zion.app/actions/workflows/autonomous-meta.yml" target="_blank" rel="noreferrer" className="block rounded-xl border border-white/15 bg-white/5 p-5 hover:border-cyan-400/40 transition">
+              <div className="text-lg font-semibold">Autonomous Meta Factory</div>
+              <div className="text-sm text-white/70">Runs every 10 minutes to generate and run factories</div>
+            </a>
+          </div>
         </section>
       </main>
     </div>
