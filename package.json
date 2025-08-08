@@ -182,7 +182,10 @@
     "ui-evolution:analyze": "node automation/ui-evolution-launcher.js analyze",
     "ui-evolution:factory": "node automation/ui-evolution-launcher.js factory",
     "ui-evolution:beautify": "node automation/ui-evolution-launcher.js beautify",
-    "ui-evolution:dashboard": "node automation/ui-evolution-launcher.js dashboard"
+    "ui-evolution:dashboard": "node automation/ui-evolution-launcher.js dashboard",
+    "meta:factory": "node automation/autonomous-meta-factory.cjs",
+    "meta:orchestrator": "node automation/autonomous-meta-orchestrator.cjs",
+    "meta:cron:start": "bash automation/autonomous-meta-cron.sh"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
