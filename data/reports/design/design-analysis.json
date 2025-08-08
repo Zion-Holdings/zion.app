@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-08T16:33:00.597Z",
+  "timestamp": "2025-08-08T16:38:14.547Z",
   "filesAnalyzed": 104,
   "items": [
     {
@@ -42,8 +42,7 @@
       "file": "/workspace/pages/_document.tsx",
       "issues": [
         "missing_enhanced_layout",
-        "missing_meta_title",
-        "missing_meta_description"
+        "missing_meta_title"
       ],
       "details": {
         "filePath": "/workspace/pages/_document.tsx",
@@ -53,7 +52,7 @@
         "usesEnhancedNav": false,
         "usesEnhancedFooter": false,
         "hasMetaTitle": false,
-        "hasMetaDesc": false
+        "hasMetaDesc": true
       }
     },
     {
@@ -1533,22 +1532,6 @@
         "usesEnhancedLayout": false,
         "usesEnhancedNav": false,
         "usesEnhancedFooter": true,
-        "hasMetaTitle": false,
-        "hasMetaDesc": false
-      }
-    },
-    {
-      "file": "/workspace/components/layout/EnhancedLayout.tsx",
-      "issues": [
-        "missing_enhanced_nav"
-      ],
-      "details": {
-        "filePath": "/workspace/components/layout/EnhancedLayout.tsx",
-        "hasHead": false,
-        "usesTailwind": true,
-        "usesEnhancedLayout": true,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
         "hasMetaTitle": false,
         "hasMetaDesc": false
       }
