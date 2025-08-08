@@ -1,6 +1,6 @@
 {
-  "timestamp": "2025-08-08T16:09:14.861Z",
-  "filesAnalyzed": 100,
+  "timestamp": "2025-08-08T16:28:14.448Z",
+  "filesAnalyzed": 102,
   "items": [
     {
       "file": "/workspace/pages/404.tsx",
@@ -311,6 +311,38 @@
         "filePath": "/workspace/pages/auth/verify.tsx",
         "hasHead": true,
         "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/workspace/pages/auto/auto-update-2025-08-08t16-07-55-171z.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/workspace/pages/auto/auto-update-2025-08-08t16-07-55-171z.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/workspace/pages/auto/auto-update-2025-08-08t16-10-20-249z.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/workspace/pages/auto/auto-update-2025-08-08t16-10-20-249z.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
         "usesEnhancedLayout": false,
         "usesEnhancedNav": false,
         "usesEnhancedFooter": false,
