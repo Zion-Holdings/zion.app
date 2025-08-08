@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-08T09:20:52.202Z",
+  "timestamp": "2025-08-08T09:20:55.182Z",
   "changedFiles": [
     "automation/cursor-agents/task-1754644848849-1.cjs",
     "automation/cursor-agents/task-1754644848849-2.cjs",
@@ -28,6 +28,7 @@
     "data/reports/marketing/linkedin/linkedin-pro-posts.json",
     "data/reports/responsive/responsive-analysis.json",
     "data/reports/saas/saas-actions.json",
+    "data/reports/spec-dev/chat-raw.html",
     "data/reports/spec-dev/site-crawl.json",
     "data/reports/spec-dev/spec-dev-actions.json",
     "data/reports/variation/variation-report.json",
