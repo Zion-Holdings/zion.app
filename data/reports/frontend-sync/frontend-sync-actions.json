@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-08T04:06:11.049Z",
+  "timestamp": "2025-08-08T04:06:16.066Z",
   "changedFiles": [
     "data/reports/alignment/alignment-report.json",
     "data/reports/alignment/chat-raw.txt",
@@ -8,10 +8,12 @@
     "data/reports/feature-marketing/feature-marketing-actions.json",
     "data/reports/frontend-sync/frontend-sync-actions.json",
     "data/reports/homepage-promo/homepage-promo-actions.json",
-    "data/reports/homepage-promo/proposals/proposal-1754625961113.md",
+    "data/reports/homepage-promo/proposals/proposal-1754625966396.md",
+    "data/reports/homepage-promo/proposals/proposal-1754625971144.md",
     "data/reports/marketing/linkedin/linkedin-posts.json",
     "data/reports/responsive/responsive-analysis.json",
     "data/reports/saas/saas-actions.json",
+    "package.json",
     "pages/index.tsx",
     "tsconfig.tsbuildinfo"
   ],
