@@ -1,0 +1,1 @@
+export default function Page() { return <div>Future of Work and Automation</div>; }

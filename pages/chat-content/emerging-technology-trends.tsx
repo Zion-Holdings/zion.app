@@ -1,0 +1,1 @@
+export default function Page() { return <div>Emerging Technology Trends</div>; }
