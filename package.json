@@ -214,8 +214,12 @@
     "conflicts:watch": "watch -n 30 bash scripts/check-merge-conflicts.sh || true",
     "conflicts:cron:start": "bash automation/merge-conflict-cron.sh start",
     "conflicts:cron:stop": "bash automation/merge-conflict-cron.sh stop",
-    "conflicts:cron:status": "bash automation/merge-conflict-cron.sh status"
-  },
+        "conflicts:cron:status": "bash automation/merge-conflict-cron.sh status",
+    "content:blog:once": "node automation/blog-automation-orchestrator.cjs",
+    "content:blog:cron:start": "bash automation/blog-automation-cron.sh start",
+    "content:blog:cron:stop": "bash automation/blog-automation-cron.sh stop",
+    "content:blog:cron:status": "bash automation/blog-automation-cron.sh status"
+   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
     "@google/generative-ai": "^0.24.1",
