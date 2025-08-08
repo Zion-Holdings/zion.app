@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-08T03:57:07.462Z",
+  "timestamp": "2025-08-08T03:57:21.501Z",
   "changedFiles": [
     "data/reports/alignment/alignment-report.json",
     "data/reports/alignment/chat-raw.txt",
@@ -8,8 +8,7 @@
     "data/reports/feature-marketing/feature-marketing-actions.json",
     "data/reports/frontend-sync/frontend-sync-actions.json",
     "data/reports/homepage-promo/homepage-promo-actions.json",
-    "data/reports/homepage-promo/proposals/proposal-1754625414887.md",
-    "data/reports/homepage-promo/proposals/proposal-1754625415857.md",
+    "data/reports/homepage-promo/proposals/proposal-1754625427455.md",
     "data/reports/responsive/responsive-analysis.json",
     "data/reports/saas/saas-actions.json"
   ],
