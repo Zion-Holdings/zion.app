@@ -1,0 +1,53 @@
+{
+  "title": "Zion AI Marketplace API Docs",
+  "sections": [
+    {
+      "id": "welcome",
+      "title": "Welcome & Getting Started",
+      "html": "<p>Welcome to the Zion AI Marketplace API. This hub helps developers integrate jobs, talent, quotes, projects, and webhooks.</p>\n<h3>Authentication</h3>\n<p>Use API keys or bearer tokens via the <code>Authorization: Bearer &lt;token&gt;</code> header. Obtain your credentials from your dashboard.</p>\n<h3>Quick Start</h3>\n<p>Try a simple request with curl and import our Postman collection from the dashboard.</p>",
+      "code": [
+        { "language": "bash", "content": "curl -H 'Authorization: Bearer $ZION_API_TOKEN' https://api.zion.ai/api/jobs" }
+      ]
+    },
+    {
+      "id": "core-endpoints",
+      "title": "Core Endpoints",
+      "html": "<ul>\n<li><code>GET /api/jobs</code> — List jobs</li>\n<li><code>POST /api/jobs</code> — Create job</li>\n<li><code>GET /api/talent</code> — List talent</li>\n<li><code>POST /api/quote</code> — Request a quote</li>\n<li><code>GET /api/projects</code> — List projects</li>\n<li><code>POST /webhooks/receive</code> — Webhook receiver</li>\n</ul>\n<p>All endpoints accept and return JSON. Use standard HTTP status codes.</p>"
+    },
+    {
+      "id": "samples",
+      "title": "Sample Code",
+      "html": "<p>Use your API token in the Authorization header.</p>",
+      "code": [
+        {
+          "language": "javascript",
+          "content": "// JavaScript (Axios)\nimport axios from 'axios';\n\nconst client = axios.create({\n  baseURL: 'https://api.zion.ai',\n  headers: { Authorization: `Bearer ${process.env.ZION_API_TOKEN}` },\n});\n\nasync function listJobs() {\n  const res = await client.get('/api/jobs');\n  console.log(res.data);\n}\n\nasync function createJob() {\n  const res = await client.post('/api/jobs', { title: 'AI Engineer', skills: ['python', 'llm'] });\n  console.log(res.data);\n}"
+        },
+        {
+          "language": "python",
+          "content": "# Python (requests)\nimport os, requests\nBASE='https://api.zion.ai'\nHEAD={'Authorization': f'Bearer {os.environ.get('ZION_API_TOKEN')}' }\n\nprint(requests.get(f'{BASE}/api/jobs', headers=HEAD).json())\nprint(requests.post(f'{BASE}/api/jobs', headers=HEAD, json={'title':'AI Engineer','skills':['python','llm']}).json())"
+        },
+        {
+          "language": "javascript",
+          "content": "// Node.js (fetch)\nconst BASE='https://api.zion.ai';\nconst HEAD={ Authorization: `Bearer ${process.env.ZION_API_TOKEN}` };\n\nasync function listTalent() {\n  const res = await fetch(`${BASE}/api/talent`, { headers: HEAD });\n  console.log(await res.json());\n}"
+        }
+      ]
+    },
+    {
+      "id": "errors",
+      "title": "Error Codes & Rate Limits",
+      "html": "<p>We use standard HTTP status codes.</p>\n<ul>\n<li><strong>401 Unauthorized</strong>: Missing/invalid token.</li>\n<li><strong>429 Rate Limit Exceeded</strong>: Too many requests. Back off and retry using exponential backoff.</li>\n<li><strong>500 Server Error</strong>: Unexpected error. Retry or contact support if persistent.</li>\n</ul>\n<p>Rate limits: Burst-friendly; sustained high volume returns 429 with <code>Retry-After</code>.</p>"
+    },
+    {
+      "id": "webhooks",
+      "title": "Webhooks",
+      "html": "<p>Subscribe to events at your endpoint. We POST JSON with a signature header.</p>\n<h4>Events</h4>\n<ul>\n<li>new_application</li>\n<li>new_hire</li>\n<li>payment_received</li>\n<li>message_received</li>\n</ul>\n<h4>Test payload</h4>\n<pre>{\n  \"id\": \"evt_123\",\n  \"type\": \"new_application\",\n  \"data\": { \"jobId\": \"job_abc\", \"applicantId\": \"tal_001\" },\n  \"created\": 1733270400\n}</pre>\n<p>Respond with 2xx. Retries use exponential backoff up to 24h.</p>",
+      "code": [
+        {
+          "language": "javascript",
+          "content": "// Example Express handler\nimport express from 'express';\nconst app = express();\napp.post('/webhooks/receive', express.json(), (req, res) => {\n  const event = req.body;\n  switch (event.type) {\n    case 'new_application': /* handle */ break;\n    case 'new_hire': /* handle */ break;\n    case 'payment_received': /* handle */ break;\n    case 'message_received': /* handle */ break;\n    default: console.log('Unhandled event', event.type);\n  }\n  res.sendStatus(200);\n});\napp.listen(3000);"
+        }
+      ]
+    }
+  ]
+}
