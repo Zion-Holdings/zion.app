@@ -11,14 +11,13 @@ function log(m) { const line = `[${new Date().toISOString()}] ${m}\n`; console.l
 function run(cmd, args) { log(`▶ ${cmd} ${args.join(' ')}`); const r = spawnSync(cmd, args, { stdio: 'pipe', encoding: 'utf8' }); if (r.stdout) fs.appendFileSync(LOG, r.stdout); if (r.stderr) fs.appendFileSync(LOG, r.stderr); }
 
 function cycle() {
+  // Fetch spec chat, crawl the netlify app, analyze actions, and apply missing pages
   run('node', [path.join(__dirname, 'spec-dev-chat-fetcher.cjs')]);
   run('node', [path.join(__dirname, 'spec-dev-site-crawler.cjs')]);
   run('node', [path.join(__dirname, 'spec-dev-analyzer.cjs')]);
+  run('node', [path.join(__dirname, 'spec-dev-dev-applier.cjs')]);
+  // Optionally generate auxiliary agents for follow-up work
   run('node', [path.join(__dirname, 'spec-dev-factory.cjs')]);
-  // Integrate with homepage promo pipeline
-  run('node', [path.join(__dirname, 'homepage-promo-analyzer.cjs')]);
-  run('node', [path.join(__dirname, 'homepage-promo-factory.cjs')]);
-  run('node', [path.join(__dirname, 'homepage-promo-applier.cjs')]);
 }
 
 function start(mode = 'continuous') {
