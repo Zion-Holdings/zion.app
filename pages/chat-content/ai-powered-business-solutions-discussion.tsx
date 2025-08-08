@@ -1,0 +1,1 @@
+export default function Page() { return <div>AI-powered Business Solutions Discussion</div>; }
