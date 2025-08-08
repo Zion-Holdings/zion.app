@@ -1,9 +1,20 @@
 {
-  "timestamp": "2025-08-08T08:19:05.710Z",
+  "timestamp": "2025-08-08T08:19:15.644Z",
   "changedFiles": [
+    "automation/cursor-agents/task-1754641149307-1.cjs",
+    "automation/cursor-agents/task-1754641149307-2.cjs",
+    "automation/cursor-agents/task-1754641149307-3.cjs",
+    "automation/cursor-agents/task-1754641149307-4.cjs",
+    "automation/cursor-agents/task-1754641149307-5.cjs",
+    "automation/instagram-agents/captions.json",
+    "data/reports/cursor/cursor-prompts.json",
+    "data/reports/feature-marketing/feature-marketing-actions.json",
+    "data/reports/homepage-promo/homepage-promo-actions.json",
     "data/reports/link-monitor/site-link-report.json",
+    "data/reports/saas/saas-actions.json",
     "data/reports/spec-dev/site-crawl.json",
-    "data/reports/spec-dev/spec-dev-actions.json"
+    "data/reports/spec-dev/spec-dev-actions.json",
+    "tsconfig.tsbuildinfo"
   ],
   "actions": [
     "sync_content_metadata"
