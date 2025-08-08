@@ -1,0 +1,5 @@
+{
+  "model_id": "local",
+  "token_limit": 256,
+  "throttle_tpm": 5000
+}
