@@ -1,7 +1,10 @@
 {
   "exclude": [
     "autonomous-guardian.cjs",
-    "autonomous-guardian.js"
+    "autonomous-guardian.js",
+    "site-link-factory.cjs",
+    "cursor-agents",
+    "logs"
   ]
 }
 
