@@ -51,6 +51,7 @@
     "fix_*.js",
     "fix_*.cjs",
     "*.fix.js",
-    "*.fix.cjs"
+    "*.fix.cjs",
+    "supabase/functions/**"
   ]
 }

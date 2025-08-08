@@ -1,0 +1,72 @@
+{
+  "name": "zion-quote-request",
+  "trigger": {
+    "type": "http",
+    "source": "talent-profile/request-to-hire"
+  },
+  "inputs": [
+    { "name": "talentId", "type": "string", "required": false },
+    { "name": "talentName", "type": "string", "required": false },
+    { "name": "requesterName", "type": "string", "required": true },
+    { "name": "requesterEmail", "type": "string", "required": true },
+    { "name": "projectOverview", "type": "string", "required": true },
+    { "name": "timeline", "type": "string", "required": false },
+    { "name": "budgetRange", "type": ["string", "number", "object"], "required": false }
+  ],
+  "steps": [
+    {
+      "id": "validate",
+      "type": "validation",
+      "rules": [
+        { "field": "requesterName", "rule": "required" },
+        { "field": "requesterEmail", "rule": "email" },
+        { "field": "projectOverview", "rule": "required" }
+      ]
+    },
+    {
+      "id": "normalize-budget",
+      "type": "transform",
+      "operation": "normalizeBudget"
+    },
+    {
+      "id": "ai-summary",
+      "type": "ai",
+      "provider": "openai",
+      "enabled_if_env": "OPENAI_API_KEY",
+      "outputs": ["summary", "projectType"]
+    },
+    {
+      "id": "db-write",
+      "type": "db",
+      "provider": "supabase",
+      "table": "quote_requests",
+      "status": "new"
+    },
+    {
+      "id": "notify-admin",
+      "type": "notification",
+      "channel": "slack",
+      "enabled_if_env": "ADMIN_SLACK_WEBHOOK_URL"
+    },
+    {
+      "id": "notify-talent",
+      "type": "email",
+      "provider": "resend",
+      "enabled_if_env": "TALENT_EMAIL_ALLOW"
+    },
+    {
+      "id": "respond",
+      "type": "response",
+      "message": "Thanks! Your request has been submitted. The talent will be in touch soon."
+    }
+  ],
+  "security": {
+    "secrets": [
+      "SUPABASE_SERVICE_ROLE_KEY",
+      "OPENAI_API_KEY",
+      "ADMIN_SLACK_WEBHOOK_URL",
+      "RESEND_API_KEY"
+    ],
+    "notes": "Use Supabase Edge Function or server-only API route to keep secrets private."
+  }
+}
