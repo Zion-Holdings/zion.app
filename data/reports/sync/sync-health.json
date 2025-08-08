@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-08T17:56:52.376Z",
+  "timestamp": "2025-08-08T17:58:53.400Z",
   "host": "cursor",
   "repoRoot": "/workspace",
   "status": "degraded",
@@ -22,12 +22,12 @@
     {
       "name": "auto-sync-log-fresh",
       "ok": true,
-      "details": "ageMs=117572.36791992188"
+      "details": "ageMs=117461.4892578125"
     },
     {
       "name": "auto-pull-log-fresh",
       "ok": true,
-      "details": "ageMs=187608.20458984375"
+      "details": "ageMs=8001.479736328125"
     },
     {
       "name": "advanced-git-sync-lock-stale",
