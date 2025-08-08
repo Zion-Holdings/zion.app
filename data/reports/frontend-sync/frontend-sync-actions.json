@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-08T17:30:40.602Z",
+  "timestamp": "2025-08-08T17:31:29.762Z",
   "changedFiles": [
     ".github/workflows/dependency-maintenance.yml",
     "automation/README.md",
@@ -5033,6 +5033,11 @@
     "automation/cursor-agents/task-1754674229064-3.cjs",
     "automation/cursor-agents/task-1754674229064-4.cjs",
     "automation/cursor-agents/task-1754674229064-5.cjs",
+    "automation/cursor-agents/task-1754674234798-1.cjs",
+    "automation/cursor-agents/task-1754674234798-2.cjs",
+    "automation/cursor-agents/task-1754674234798-3.cjs",
+    "automation/cursor-agents/task-1754674234798-4.cjs",
+    "automation/cursor-agents/task-1754674234798-5.cjs",
     "automation/instagram-agents/captions.json",
     "automation/instagram-agents/highlights.json",
     "automation/site-maintenance-cron.sh",
@@ -6075,6 +6080,7 @@
     "data/reports/homepage-promo/proposals/proposal-1754674219521.md",
     "data/reports/homepage-promo/proposals/proposal-1754674224626.md",
     "data/reports/homepage-promo/proposals/proposal-1754674229817.md",
+    "data/reports/homepage-promo/proposals/proposal-1754674234931.md",
     "data/reports/link-monitor/site-link-report.json",
     "data/reports/marketing/linkedin/linkedin-posts.json",
     "data/reports/marketing/linkedin/linkedin-pro-posts.json",
