@@ -6,12 +6,12 @@ const Chat5gTechnologyAndItsImpactOnIotChat: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>5gTechnologyAndItsImpactOnIotChat - Zion Tech Solutions</title>
-        <meta name="description" content="5gTechnologyAndItsImpactOnIotChat blog post" />
+        <title>5G Technology And Its Impact On IoT - Zion Tech Solutions</title>
+        <meta name="description" content="5G Technology and its impact on IoT blog post" />
       </Head>
       
       <main>
-        <h1>5gTechnologyAndItsImpactOnIotChat</h1>
+        <h1>5G Technology And Its Impact On IoT</h1>
         <p>Blog content coming soon...</p>
         <Link href="/blog">Back to Blog</Link>
       </main>
@@ -19,4 +19,4 @@ const Chat5gTechnologyAndItsImpactOnIotChat: NextPage = () => {
   );
 };
 
-export default 5gTechnologyAndItsImpactOnIotChat;
+export default Chat5gTechnologyAndItsImpactOnIotChat;

@@ -98,6 +98,12 @@ function ensureCoreRules() {
     '**/*.{ts,tsx,cts,mts}',
     `# TypeScript Guidelines\n\n## Types\n- Prefer interfaces for object shapes\n- Explicit return types for exported functions\n\n## Code Style\n- Small, pure functions; guard clauses\n- No mutation of inputs; avoid any\n\n## Errors\n- Throw Error with descriptive messages\n\n## Modules\n- Prefer named exports; avoid default unless justified\n`
   );
+  upsertRule(
+    '010-automation-operations.mdc',
+    'Automation operating principles and independence from Cursor',
+    '**/*',
+    `# Automation Operations\n\n- Always start, test, follow, and fix the automation scripts.\n- Create new scripts to automate recurring workflows.\n- Prefer schedulers (cron/systemd/node-cron) that run independent of Cursor.\n- Use this computer's tools as needed (terminal, Chrome) and install required software responsibly.\n- After changes, run build/lint checks and synchronize via git.\n`
+  );
 }
 
 function main() {
@@ -105,7 +111,13 @@ function main() {
   ensureDir(RULES_DIR);
   ensureCoreRules();
   const facts = scanRepoFacts();
-  upsertMemorySections(facts);
+  const policy = [
+    'Always start, test, follow, and fix the automation scripts',
+    'Create new scripts to automate recurring workflows',
+    'Prefer schedulers (cron/systemd/node-cron) that run independent of Cursor',
+    'Use local tools and install required software responsibly to support automation'
+  ];
+  upsertMemorySections([...facts, ...policy]);
   updateSummary();
   console.log('Cursor rules and memory updated.');
 }
