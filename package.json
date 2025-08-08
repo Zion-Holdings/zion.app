@@ -176,7 +176,13 @@
     "health:dev": "nodemon automation/auto-health-monitor/index.mjs",
     "automation:all:plus": "npm run automation:all & npm run health:start",
     "postautomation": "npm run automation:git-sync",
-    "lint:staged": "lint-staged"
+    "lint:staged": "lint-staged",
+    "ui-evolution:start": "node automation/ui-evolution-launcher.js start",
+    "ui-evolution:once": "node automation/ui-evolution-launcher.js once",
+    "ui-evolution:analyze": "node automation/ui-evolution-launcher.js analyze",
+    "ui-evolution:factory": "node automation/ui-evolution-launcher.js factory",
+    "ui-evolution:beautify": "node automation/ui-evolution-launcher.js beautify",
+    "ui-evolution:dashboard": "node automation/ui-evolution-launcher.js dashboard"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
