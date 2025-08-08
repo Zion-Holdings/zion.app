@@ -1,0 +1,226 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/workspace/contracts/SemaphoreVerifier.sol": {
+      "lastModificationDate": 1754694378585,
+      "contentHash": "7a19a155a1e7aab498adb0fa6a054075",
+      "sourceName": "contracts/SemaphoreVerifier.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@semaphore-protocol/contracts/base/SemaphoreVerifier.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.23"
+      ],
+      "artifacts": [
+        "SemaphoreVerifier"
+      ]
+    },
+    "/workspace/node_modules/@semaphore-protocol/contracts/base/SemaphoreVerifier.sol": {
+      "lastModificationDate": 1754694231453,
+      "contentHash": "e28f1bec80e826fb56317b9c755f1b1e",
+      "sourceName": "@semaphore-protocol/contracts/base/SemaphoreVerifier.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Constants.sol",
+        "./SemaphoreVerifierKeyPts.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.23 <0.9.0"
+      ],
+      "artifacts": [
+        "SemaphoreVerifier"
+      ]
+    },
+    "/workspace/node_modules/@semaphore-protocol/contracts/base/Constants.sol": {
+      "lastModificationDate": 1754694231453,
+      "contentHash": "40b7091f14ee398362f76c1bc4dc20c1",
+      "sourceName": "@semaphore-protocol/contracts/base/Constants.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.8.23 <0.9.0"
+      ],
+      "artifacts": []
+    },
+    "/workspace/node_modules/@semaphore-protocol/contracts/base/SemaphoreVerifierKeyPts.sol": {
+      "lastModificationDate": 1754694231453,
+      "contentHash": "145e711af26eaa853eaaa2e5579ddb0a",
+      "sourceName": "@semaphore-protocol/contracts/base/SemaphoreVerifierKeyPts.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.8.23 <0.9.0"
+      ],
+      "artifacts": [
+        "SemaphoreVerifierKeyPts"
+      ]
+    },
+    "/workspace/contracts/ZkBallot.sol": {
+      "lastModificationDate": 1754694363941,
+      "contentHash": "872f767c360a0ed81d6f843132c59555",
+      "sourceName": "contracts/ZkBallot.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.21"
+      ],
+      "artifacts": [
+        "ISemaphoreVerifier",
+        "ZkBallot"
+      ]
+    },
+    "/workspace/contracts/ZkTreasury.sol": {
+      "lastModificationDate": 1754694389961,
+      "contentHash": "b1fdda289e144db116f738f269b4ceee",
+      "sourceName": "contracts/ZkTreasury.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.21"
+      ],
+      "artifacts": [
+        "IZkBallotView",
+        "ZkTreasury"
+      ]
+    }
+  }
+}
