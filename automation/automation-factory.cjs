@@ -676,6 +676,15 @@ console.log('Test generator ready');
       });
       
       this.log(`✅ Script completed: ${scriptName}`);
+      // Trigger git sync after script completes
+      try {
+        const syncPath = path.join(__dirname, 'git-sync.cjs');
+        if (fs.existsSync(syncPath)) {
+          execSync(`node "${syncPath}"`, { stdio: 'pipe' });
+        }
+      } catch (e) {
+        this.log(`⚠️ Git sync failed: ${e.message}`);
+      }
       return { success: true, output: result };
     } catch (error) {
       this.log(`❌ Script failed: ${scriptName} - ${error.message}`);
