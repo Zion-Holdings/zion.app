@@ -81,3 +81,46 @@
   background-color: #475569;
   transform: translateY(-1px);
 }
+
+/* Skeleton shimmer */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.06);
+}
+.skeleton::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  height: 100%;
+  width: 150%;
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%);
+  animation: shimmer 1.6s infinite;
+}
+@keyframes shimmer {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100%); }
+}
+
+/* Button microinteractions */
+.button-hover {
+  transition: transform 120ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
+.button-hover:hover {
+  transform: translateY(-1px);
+}
+.button-hover:active {
+  transform: translateY(0);
+}
+
+/* Card consistency */
+.card-base {
+  border-radius: 0.75rem; /* rounded-xl */
+  border: 1px solid rgba(0,0,0,0.08);
+  background: white;
+}
+.dark .card-base {
+  border-color: rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+}
