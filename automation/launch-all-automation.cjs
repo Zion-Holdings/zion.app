@@ -76,6 +76,7 @@ class AutomationLauncher {
       { name: 'self-healing', script: 'self-healing-orchestrator.cjs', args: [] },
       { name: 'alignment-orchestrator', script: 'alignment-orchestrator.cjs', args: ['continuous'] },
       { name: 'design-orchestrator', script: 'design-orchestrator.cjs', args: ['continuous'] },
+      { name: 'diversification-orchestrator', script: 'diversification-orchestrator.cjs', args: [] },
       { name: 'code-quality', script: 'code-quality-monitor.cjs', args: [] },
       { name: 'performance', script: 'performance-optimizer.cjs', args: [] },
       { name: 'security-scanner', script: 'security-scanner.cjs', args: [] },
@@ -180,6 +181,20 @@ class AutomationLauncher {
     setInterval(() => {
       try {
         this.log(`📊 Monitoring: ${this.processes.size} systems running`);
+        // Periodic auto-discovery to include newly added scripts automatically
+        const configPath = path.join(__dirname, 'auto-discovery.config.json');
+        const exclude = fs.existsSync(configPath) ? JSON.parse(fs.readFileSync(configPath, 'utf8')).exclude || [] : [];
+        const allFiles = fs.readdirSync(__dirname).filter(f => (f.endsWith('.cjs') || f.endsWith('.js')) && !exclude.includes(f));
+        const existingScripts = new Set(this.systemsDef.map(s => s.script));
+        for (const f of allFiles) {
+          if (!existingScripts.has(f)) {
+            const name = f.replace(/\.(cjs|js)$/,'');
+            const def = { name, script: f, args: [] };
+            this.systemsDef.push(def);
+            this.log(`➕ Discovered new automation: ${name} (${f})`);
+          }
+        }
+
         const expected = new Map(this.systemsDef.map(s => [s.name, s]));
         // Restart missing or stopped processes
         for (const [name, def] of expected) {
@@ -195,7 +210,7 @@ class AutomationLauncher {
       } catch (e) {
         this.log(`❌ Monitor error: ${e.message}`);
       }
-    }, 5000); // Check every 5 seconds for faster recovery
+    }, 5000); // Check every 5 seconds for faster recovery and discovery
   }
 }
 
