@@ -1,0 +1,1 @@
+export default function VerifyAccount() { return <div className="py-10">Verify your account coming soon.</div>; }

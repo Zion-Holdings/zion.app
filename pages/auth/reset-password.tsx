@@ -1,0 +1,1 @@
+export default function ResetPassword() { return <div className="py-10">Reset password form coming soon.</div>; }
