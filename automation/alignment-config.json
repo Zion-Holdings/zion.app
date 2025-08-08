@@ -1,12 +1,10 @@
 {
   "chatUrl": "https://chatgpt.com/share/688b6030-1aa0-800b-9b63-ec9a269ea62d",
-  "siteBaseUrl": "https://ziontechgroup.netlify.app",
-  "googleDocId": "1Q3-QbWjIIj83VYX_Hx258kmvEyF9qBR2nF09IOi4ppM",
+  "siteBaseUrl": "https://ziontechgroup.com",
   "crawl": {
-    "maxPages": 200,
+    "maxPages": 100,
     "sameOriginOnly": true,
     "timeoutMs": 15000
-  },
-  "outputDir": "data/reports/alignment"
+  }
 }
 
