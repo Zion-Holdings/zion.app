@@ -1160,3 +1160,11 @@ td {
   border-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
 } 
+
+/* Star slow pulse animation */
+@keyframes pulse-slow { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+.animate-pulse-slow { animation: pulse-slow 1.5s ease-in-out infinite; }
+
+/* Pill badges */
+.pill { display: inline-block; padding: 0.25rem 0.6rem; border-radius: 9999px; background: rgba(255,255,255,0.08); border: 1px solid var(--border-secondary); font-size: 0.75rem; }
+.pill-success { background: rgba(16,185,129,0.15); border-color: var(--border-success); } 

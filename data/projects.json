@@ -1,0 +1,17 @@
+[
+  {
+    "id": "proj-001",
+    "clientId": "acme-inc",
+    "talentSlug": "ava-chen",
+    "title": "RAG Evaluation Pipeline",
+    "status": "Completed",
+    "completedAt": "2025-08-01T10:00:00.000Z"
+  },
+  {
+    "id": "proj-002",
+    "clientId": "globex",
+    "talentSlug": "kenji-yamada",
+    "title": "AI Web App MVP",
+    "status": "InProgress"
+  }
+]
