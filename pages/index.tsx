@@ -29,7 +29,15 @@ const Home: NextPage = () => {
               { href: '/', label: 'Main' },
               { href: '/services', label: 'AI Services' },
               { href: '/products', label: 'Products' },
+              { href: '/talent', label: 'Talent' },
+              { href: '/automation', label: 'Automation' },
+              { href: '/admin/automation-status', label: 'Admin' },
+              { href: '/auth', label: 'Account' },
+              { href: '/iot-platforms', label: 'IoT Platforms' },
+              { href: '/blockchain-solutions', label: 'Blockchain' },
               { href: '/blog', label: 'Resources' },
+              { href: '/category', label: 'Categories' },
+              { href: '/about', label: 'About' },
               { href: '/contact', label: 'Contact' },
             ].map((item) => (
               <Link key={item.href} href={item.href}>
@@ -73,8 +81,50 @@ const Home: NextPage = () => {
               <p>End-to-end digital transformation services to modernize your business.</p>
             </div>
           </div>
+
+          <section className="mt-20">
+            <h2 className="text-3xl font-bold tracking-tight mb-6">What you can do with Zion</h2>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <a href="/services" className="group rounded-2xl p-6 border border-white/10 bg-white/5 hover:bg-white/10 transition">
+                <div className="text-sm uppercase tracking-wide text-fuchsia-300">Services</div>
+                <h3 className="mt-1 text-xl font-semibold">Ship AI systems end-to-end</h3>
+                <p className="mt-2 text-white/80">From discovery and data pipelines to model delivery, monitoring, and MLOps.</p>
+                <div className="mt-4 text-cyan-300 group-hover:translate-x-0.5 transition-transform">Explore services →</div>
+              </a>
+              <a href="/products" className="group rounded-2xl p-6 border border-white/10 bg-white/5 hover:bg-white/10 transition">
+                <div className="text-sm uppercase tracking-wide text-violet-300">Products</div>
+                <h3 className="mt-1 text-xl font-semibold">Adopt ready-made solutions</h3>
+                <p className="mt-2 text-white/80">Automation dashboards, content schedulers, analytics kits, and more.</p>
+                <div className="mt-4 text-cyan-300 group-hover:translate-x-0.5 transition-transform">Browse products →</div>
+              </a>
+              <a href="/talent" className="group rounded-2xl p-6 border border-white/10 bg-white/5 hover:bg-white/10 transition">
+                <div className="text-sm uppercase tracking-wide text-emerald-300">Talent</div>
+                <h3 className="mt-1 text-xl font-semibold">Hire elite specialists</h3>
+                <p className="mt-2 text-white/80">LLM engineers, cloud architects, data scientists, security experts.</p>
+                <div className="mt-4 text-cyan-300 group-hover:translate-x-0.5 transition-transform">Browse talent →</div>
+              </a>
+              <a href="/automation" className="group rounded-2xl p-6 border border-white/10 bg-white/5 hover:bg-white/10 transition">
+                <div className="text-sm uppercase tracking-wide text-amber-300">Automation</div>
+                <h3 className="mt-1 text-xl font-semibold">See the platform working</h3>
+                <p className="mt-2 text-white/80">Live dashboards, health checks, and autonomous orchestrators.</p>
+                <div className="mt-4 text-cyan-300 group-hover:translate-x-0.5 transition-transform">Open automation →</div>
+              </a>
+              <a href="/blog" className="group rounded-2xl p-6 border border-white/10 bg-white/5 hover:bg-white/10 transition">
+                <div className="text-sm uppercase tracking-wide text-sky-300">Resources</div>
+                <h3 className="mt-1 text-xl font-semibold">Learn best practices</h3>
+                <p className="mt-2 text-white/80">Guides on AI, cloud-native, cybersecurity, DevOps, and more.</p>
+                <div className="mt-4 text-cyan-300 group-hover:translate-x-0.5 transition-transform">Read resources →</div>
+              </a>
+              <a href="/auth" className="group rounded-2xl p-6 border border-white/10 bg-white/5 hover:bg-white/10 transition">
+                <div className="text-sm uppercase tracking-wide text-blue-300">Account</div>
+                <h3 className="mt-1 text-xl font-semibold">Sign in to personalize</h3>
+                <p className="mt-2 text-white/80">Save chats, track requests, and manage your workspace.</p>
+                <div className="mt-4 text-cyan-300 group-hover:translate-x-0.5 transition-transform">Manage account →</div>
+              </a>
+            </div>
+          </section>
         </div>
-      
+
         
         
         
@@ -10823,6 +10873,66 @@ const Home: NextPage = () => {
               <h3 className="text-lg font-semibold mt-1">AI Talent Marketplace</h3>
               <p className="text-white/80 mt-2">Find vetted LLM, cloud, data, and security experts. Fast.</p>
               <div className="mt-4 text-cyan-300">Explore →</div>
+            </a>
+            <a href="/services" className="block rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition p-5">
+              <div className="text-sm font-semibold text-fuchsia-300">Featured</div>
+              <h3 className="text-lg font-semibold mt-1">AI & Cloud Services</h3>
+              <p className="text-white/80 mt-2">Strategy, architecture, and delivery across AI, cloud, security, and data.</p>
+              <div className="mt-4 text-cyan-300">View services →</div>
+            </a>
+            <a href="/products" className="block rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition p-5">
+              <div className="text-sm font-semibold text-violet-300">New</div>
+              <h3 className="text-lg font-semibold mt-1">Products</h3>
+              <p className="text-white/80 mt-2">Automation dashboards, schedulers, security tools, and more.</p>
+              <div className="mt-4 text-cyan-300">Browse products →</div>
+            </a>
+            <a href="/automation" className="block rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition p-5">
+              <div className="text-sm font-semibold text-emerald-300">Live</div>
+              <h3 className="text-lg font-semibold mt-1">Automation Dashboard</h3>
+              <p className="text-white/80 mt-2">See system status, jobs, and continuous improvement metrics.</p>
+              <div className="mt-4 text-cyan-300">Open dashboard →</div>
+            </a>
+            <a href="/blog" className="block rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition p-5">
+              <div className="text-sm font-semibold text-amber-300">Insights</div>
+              <h3 className="text-lg font-semibold mt-1">Resources</h3>
+              <p className="text-white/80 mt-2">Deep dives on AI, cloud-native, security, and digital transformation.</p>
+              <div className="mt-4 text-cyan-300">Read articles →</div>
+            </a>
+            <a href="/auth" className="block rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition p-5">
+              <div className="text-sm font-semibold text-blue-300">Account</div>
+              <h3 className="text-lg font-semibold mt-1">Sign in</h3>
+              <p className="text-white/80 mt-2">Access personalized tools, saved chats, and dashboards.</p>
+              <div className="mt-4 text-cyan-300">Manage account →</div>
+            </a>
+            <a href="/iot-platforms" className="block rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition p-5">
+              <div className="text-sm font-semibold text-teal-300">Guide</div>
+              <h3 className="text-lg font-semibold mt-1">IoT Platforms</h3>
+              <p className="text-white/80 mt-2">Compare leading IoT platforms and integration patterns.</p>
+              <div className="mt-4 text-cyan-300">Explore IoT →</div>
+            </a>
+            <a href="/blockchain-solutions" className="block rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition p-5">
+              <div className="text-sm font-semibold text-indigo-300">Web3</div>
+              <h3 className="text-lg font-semibold mt-1">Blockchain Solutions</h3>
+              <p className="text-white/80 mt-2">Smart contracts, ledgers, and secure digital asset workflows.</p>
+              <div className="mt-4 text-cyan-300">Explore Web3 →</div>
+            </a>
+            <a href="/category" className="block rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition p-5">
+              <div className="text-sm font-semibold text-pink-300">Browse</div>
+              <h3 className="text-lg font-semibold mt-1">Topics</h3>
+              <p className="text-white/80 mt-2">Find curated content by category across AI, cloud, and more.</p>
+              <div className="mt-4 text-cyan-300">Browse topics →</div>
+            </a>
+            <a href="/about" className="block rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition p-5">
+              <div className="text-sm font-semibold text-sky-300">Who we are</div>
+              <h3 className="text-lg font-semibold mt-1">About Zion</h3>
+              <p className="text-white/80 mt-2">Our mission, team, and approach to building the future.</p>
+              <div className="mt-4 text-cyan-300">Learn more →</div>
+            </a>
+            <a href="/contact" className="block rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition p-5">
+              <div className="text-sm font-semibold text-red-300">Contact</div>
+              <h3 className="text-lg font-semibold mt-1">Talk to us</h3>
+              <p className="text-white/80 mt-2">Request a quote or explore partnership opportunities.</p>
+              <div className="mt-4 text-cyan-300">Get in touch →</div>
             </a>
           </div>
         </section>
