@@ -1,0 +1,1 @@
+export default function AuthIndexPage() { return <div className="py-12">Auth portal coming soon.</div>; }

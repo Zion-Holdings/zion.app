@@ -1,0 +1,1 @@
+export default function AutoUpdate_160755171z() { return <div className="py-12">Automated update page.</div>; }

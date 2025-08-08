@@ -1,0 +1,1 @@
+export default function EmergingTechnologyTrendsChat() { return <div className="py-12">Emerging technology trends.</div>; }
