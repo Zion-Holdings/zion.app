@@ -1,0 +1,66 @@
+name: Quick Sync Automations
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: quick-sync-automations
+  cancel-in-progress: true
+
+jobs:
+  quick-sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Generate sitemap
+        run: npm run sitemap || true
+
+      - name: Link crawler and fixer
+        run: npm run links:scan || true
+
+      - name: UI Beauty quick pass
+        run: npm run ui-evolution:beautify || true
+
+      - name: Commit changes if any
+        run: |
+          if ! git diff --quiet; then
+            echo "Changes detected. Committing..."
+            git add -A
+            git commit -m "chore(quick-sync): automated updates [skip ci]"
+          else
+            echo "No changes to commit."
+          fi
+
+      - name: Push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          CURRENT_BRANCH="${GITHUB_REF##*/}"
+          if [ "$CURRENT_BRANCH" = "main" ] || [ "$CURRENT_BRANCH" = "master" ]; then
+            if [ -n "$(git log origin/$CURRENT_BRANCH..HEAD)" ]; then
+              git push origin "$CURRENT_BRANCH"
+            else
+              echo "Nothing to push."
+            fi
+          else
+            echo "Not on main/master; skipping push."
+          fi
