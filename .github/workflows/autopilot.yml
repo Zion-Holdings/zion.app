@@ -1,0 +1,47 @@
+name: autopilot
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 * * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  run-autopilot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Cloud Autopilot
+        run: node automation/cloud-autopilot.cjs
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+      - name: Run Fundraising Autopilot
+        run: node automation/fundraising-autopilot.cjs
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+      - name: Commit changes
+        run: |
+          git config user.name "zion-autopilot"
+          git config user.email "autopilot@users.noreply.github.com"
+          git add -A
+          git commit -m "chore(autopilot): automated run $(date -u +'%Y-%m-%dT%H:%M:%SZ') [skip ci]" || echo "No changes to commit"
+
+      - name: Push changes
+        if: ${{ success() }}
+        run: git push

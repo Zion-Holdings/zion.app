@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-08T17:26:46.855Z",
+  "timestamp": "2025-08-08T22:52:19.494Z",
   "startUrl": "https://ziontechgroup.com/",
   "totalVisited": 12,
   "pages": [
@@ -12,7 +12,11 @@
       "status": 200
     },
     {
-      "url": "https://ziontechgroup.com/about",
+      "url": "https://ziontechgroup.com/products",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/blog",
       "status": 200
     },
     {
@@ -24,33 +28,34 @@
       "status": 200
     },
     {
-      "url": "https://ziontechgroup.com/products",
+      "url": "https://ziontechgroup.com/partner",
+      "status": 404
+    },
+    {
+      "url": "https://ziontechgroup.com/category/ai-consulting-chat",
       "status": 200
     },
     {
-      "url": "https://ziontechgroup.com/blog",
+      "url": "https://ziontechgroup.com/services/landing-page-generator",
       "status": 200
     },
     {
-      "url": "https://ziontechgroup.com/talent/ava-chen",
+      "url": "https://ziontechgroup.com/services/price-intelligence-service",
       "status": 200
     },
     {
-      "url": "https://ziontechgroup.com/talent/marco-silva",
+      "url": "https://ziontechgroup.com/partner/tools",
       "status": 200
     },
     {
-      "url": "https://ziontechgroup.com/talent/nina-patel",
-      "status": 200
-    },
-    {
-      "url": "https://ziontechgroup.com/talent/kenji-yamada",
-      "status": 200
-    },
-    {
-      "url": "https://ziontechgroup.com/talent/lena-mueller",
+      "url": "https://ziontechgroup.com/admin/whitelabel",
       "status": 200
     }
   ],
-  "broken": []
+  "broken": [
+    {
+      "url": "https://ziontechgroup.com/partner",
+      "status": 404
+    }
+  ]
 }

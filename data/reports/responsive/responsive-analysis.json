@@ -1,7 +1,7 @@
 {
-  "timestamp": "2025-08-08T17:26:50.207Z",
-  "filesAnalyzed": 115,
-  "issuesFound": 115,
+  "timestamp": "2025-08-08T22:52:19.598Z",
+  "filesAnalyzed": 122,
+  "issuesFound": 122,
   "items": [
     {
       "filePath": "/workspace/pages/404.tsx",
@@ -30,7 +30,6 @@
     {
       "filePath": "/workspace/pages/about.tsx",
       "issues": [
-        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -38,7 +37,6 @@
     {
       "filePath": "/workspace/pages/admin/automation-status.tsx",
       "issues": [
-        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -101,6 +99,38 @@
     },
     {
       "filePath": "/workspace/pages/api/analyze-service-request.ts",
+      "issues": [
+        "missing_head",
+        "missing_viewport",
+        "no_tailwind_responsive_classes"
+      ]
+    },
+    {
+      "filePath": "/workspace/pages/api/fundraising/close-round.ts",
+      "issues": [
+        "missing_head",
+        "missing_viewport",
+        "no_tailwind_responsive_classes"
+      ]
+    },
+    {
+      "filePath": "/workspace/pages/api/fundraising/export.ts",
+      "issues": [
+        "missing_head",
+        "missing_viewport",
+        "no_tailwind_responsive_classes"
+      ]
+    },
+    {
+      "filePath": "/workspace/pages/api/fundraising/generate-deck.ts",
+      "issues": [
+        "missing_head",
+        "missing_viewport",
+        "no_tailwind_responsive_classes"
+      ]
+    },
+    {
+      "filePath": "/workspace/pages/api/fundraising/upload.ts",
       "issues": [
         "missing_head",
         "missing_viewport",
@@ -212,9 +242,15 @@
       ]
     },
     {
+      "filePath": "/workspace/pages/automations/index.tsx",
+      "issues": [
+        "missing_viewport",
+        "no_tailwind_responsive_classes"
+      ]
+    },
+    {
       "filePath": "/workspace/pages/blockchain-solutions.tsx",
       "issues": [
-        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -327,6 +363,14 @@
     {
       "filePath": "/workspace/pages/blog/the-rise-of-edge-computing-in-iot-applications-chat.tsx",
       "issues": [
+        "missing_viewport",
+        "no_tailwind_responsive_classes"
+      ]
+    },
+    {
+      "filePath": "/workspace/pages/capital.tsx",
+      "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -519,7 +563,6 @@
     {
       "filePath": "/workspace/pages/contact.tsx",
       "issues": [
-        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -527,15 +570,19 @@
     {
       "filePath": "/workspace/pages/enhanced-home.tsx",
       "issues": [
-        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
     },
     {
+      "filePath": "/workspace/pages/fundraising/index.tsx",
+      "issues": [
+        "missing_viewport"
+      ]
+    },
+    {
       "filePath": "/workspace/pages/index.tsx",
       "issues": [
-        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -543,7 +590,6 @@
     {
       "filePath": "/workspace/pages/iot-platforms.tsx",
       "issues": [
-        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]

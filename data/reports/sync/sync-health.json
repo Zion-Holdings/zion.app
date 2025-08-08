@@ -1,8 +1,8 @@
 {
-  "timestamp": "2025-08-08T18:44:28.439Z",
+  "timestamp": "2025-08-08T22:52:18.585Z",
   "host": "cursor",
   "repoRoot": "/workspace",
-  "status": "ok",
+  "status": "degraded",
   "checks": [
     {
       "name": "git-repo",
@@ -11,23 +11,23 @@
     },
     {
       "name": "bg-sync-loop-running",
-      "ok": true,
-      "details": "PID: 17450 "
+      "ok": false,
+      "details": "PID: - "
     },
     {
       "name": "bg-pull-loop-running",
-      "ok": true,
-      "details": "PID: 17451 "
+      "ok": false,
+      "details": "PID: - "
     },
     {
       "name": "auto-sync-log-fresh",
-      "ok": true,
-      "details": "ageMs=50485.72607421875"
+      "ok": false,
+      "details": "ageMs=Infinity"
     },
     {
       "name": "auto-pull-log-fresh",
-      "ok": true,
-      "details": "ageMs=3529.6396484375"
+      "ok": false,
+      "details": "ageMs=Infinity"
     },
     {
       "name": "advanced-git-sync-lock-stale",
@@ -42,17 +42,17 @@
     {
       "name": "origin-configured",
       "ok": true,
-      "details": "https://x-access-token:ghs_nO7RVHC3Fryn9pBHkiP5BgK5qZcVvM3yjyQg@github.com/Zion-Holdings/zion.app"
+      "details": "https://x-access-token:ghs_GaWdrZKcP2qudqv5z79wnZBEQzMiLe39Lwvr@github.com/Zion-Holdings/zion.app"
     },
     {
       "name": "divergence",
       "ok": true,
-      "details": "behind=0, ahead=0, branch=main"
+      "details": "behind=0, ahead=0, branch=cursor/automate-fundraising-deck-and-deal-room-generation-c352"
     },
     {
       "name": "working-tree-clean",
-      "ok": true,
-      "details": "changed=0"
+      "ok": false,
+      "details": "changed=6"
     }
   ]
 }
