@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  devnet:
+    build: .
+    ports:
+      - '3000:3000'
+    environment:
+      - DEVNET=1
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+    command: npm run dev
+    volumes:
+      - .:/app
+      - /app/node_modules
