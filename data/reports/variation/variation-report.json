@@ -1,9 +1,9 @@
 {
-  "timestamp": "2025-08-08T15:45:29.175Z",
+  "timestamp": "2025-08-08T15:54:01.185Z",
   "loops": {
     "alignment-cron.log": {
       "restarts": 0,
-      "started": 3,
+      "started": 2,
       "loopScore": 0
     },
     "alignment-orchestrator.log": {
@@ -21,15 +21,10 @@
       "started": 0,
       "loopScore": 0
     },
-    "automation-factory.log": {
-      "restarts": 0,
-      "started": 1,
-      "loopScore": 0
-    },
     "automation-launcher.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
+      "restarts": 183351,
+      "started": 366942,
+      "loopScore": 0.4996729728403944
     },
     "autonomous-automation-orchestrator.log": {
       "restarts": 0,
@@ -38,7 +33,7 @@
     },
     "autonomous-error-cron.log": {
       "restarts": 0,
-      "started": 1,
+      "started": 2,
       "loopScore": 0
     },
     "autonomous-error-monitoring-factory.log": {
@@ -58,7 +53,7 @@
     },
     "cursor-chat-cron.log": {
       "restarts": 0,
-      "started": 1,
+      "started": 2,
       "loopScore": 0
     },
     "cursor-chat-orchestrator.log": {
@@ -66,14 +61,9 @@
       "started": 0,
       "loopScore": 0
     },
-    "cursor-memory.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
     "design-cron.log": {
       "restarts": 0,
-      "started": 3,
+      "started": 2,
       "loopScore": 0
     },
     "design-orchestrator.log": {
@@ -93,7 +83,7 @@
     },
     "feature-marketing-cron.log": {
       "restarts": 0,
-      "started": 1,
+      "started": 2,
       "loopScore": 0
     },
     "feature-marketing-orchestrator.log": {
@@ -103,7 +93,7 @@
     },
     "frontend-sync-cron.log": {
       "restarts": 0,
-      "started": 3,
+      "started": 2,
       "loopScore": 0
     },
     "frontend-sync-orchestrator.log": {
@@ -131,14 +121,14 @@
       "started": 0,
       "loopScore": 0
     },
-    "infinite-improvement.log": {
+    "instagram-marketing-analyzer.log": {
       "restarts": 0,
       "started": 0,
       "loopScore": 0
     },
-    "instagram-marketing-analyzer.log": {
+    "instagram-marketing-cron.log": {
       "restarts": 0,
-      "started": 0,
+      "started": 2,
       "loopScore": 0
     },
     "instagram-marketing-factory.log": {
@@ -158,7 +148,7 @@
     },
     "intelligent-orchestrator.log": {
       "restarts": 0,
-      "started": 28,
+      "started": 5,
       "loopScore": 0
     },
     "launch-autonomous-systems-clean.log": {
@@ -176,16 +166,6 @@
       "started": 0,
       "loopScore": 0
     },
-    "launchd-error.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "launchd.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
     "linkedin-marketing-cron.log": {
       "restarts": 0,
       "started": 2,
@@ -196,29 +176,29 @@
       "started": 0,
       "loopScore": 0
     },
-    "linkedin-pro-orchestrator.log": {
+    "linkedin-pro-cron.log": {
       "restarts": 0,
-      "started": 0,
+      "started": 2,
       "loopScore": 0
     },
-    "linkedin.log": {
+    "linkedin-pro-orchestrator.log": {
       "restarts": 0,
       "started": 0,
       "loopScore": 0
     },
     "lint-automation.log": {
       "restarts": 0,
-      "started": 8,
+      "started": 4,
       "loopScore": 0
     },
     "lint-error-fixer.log": {
       "restarts": 0,
-      "started": 28,
+      "started": 8,
       "loopScore": 0
     },
     "lint-monitor.log": {
       "restarts": 0,
-      "started": 48,
+      "started": 6,
       "loopScore": 0
     },
     "linting-cron.log": {
@@ -241,22 +221,7 @@
       "started": 0,
       "loopScore": 0
     },
-    "mcp-automation.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "mcp-client.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
     "mcp-integration.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "mcp-monitor.log": {
       "restarts": 0,
       "started": 0,
       "loopScore": 0
@@ -264,11 +229,6 @@
     "responsive-content-orchestrator.log": {
       "restarts": 0,
       "started": 0,
-      "loopScore": 0
-    },
-    "responsive-cron.log": {
-      "restarts": 0,
-      "started": 3,
       "loopScore": 0
     },
     "restart-all-automation.log": {
@@ -288,7 +248,7 @@
     },
     "self-healing-cron.log": {
       "restarts": 0,
-      "started": 3,
+      "started": 2,
       "loopScore": 0
     },
     "self-healing.log": {
@@ -298,7 +258,7 @@
     },
     "site-link-cron.log": {
       "restarts": 0,
-      "started": 1,
+      "started": 2,
       "loopScore": 0
     },
     "site-link-orchestrator.log": {
@@ -308,12 +268,17 @@
     },
     "site-promo-cron.log": {
       "restarts": 0,
-      "started": 1,
+      "started": 2,
       "loopScore": 0
     },
     "site-promo-orchestrator.log": {
       "restarts": 0,
       "started": 0,
+      "loopScore": 0
+    },
+    "spec-dev-cron.log": {
+      "restarts": 0,
+      "started": 2,
       "loopScore": 0
     },
     "spec-dev-orchestrator.log": {

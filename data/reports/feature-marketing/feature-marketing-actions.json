@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-08T15:45:36.355Z",
+  "timestamp": "2025-08-08T15:54:07.341Z",
   "actions": [
     "ensure_home_hero_promotes_all_features",
     "generate_feature_sections",
@@ -8,15 +8,15 @@
   ],
   "features": [
     {
-      "file": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/enhanced-home.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/enhanced-home.tsx",
       "hint": "marketing_hook"
     },
     {
-      "file": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/layout/EnhancedNavigation.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/layout/EnhancedNavigation.tsx",
       "hint": "marketing_hook"
     },
     {
-      "file": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/layout/EnhancedFooter.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/layout/EnhancedFooter.tsx",
       "hint": "marketing_hook"
     }
   ]
