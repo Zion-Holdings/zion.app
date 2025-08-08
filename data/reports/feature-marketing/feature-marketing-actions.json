@@ -1,0 +1,23 @@
+{
+  "timestamp": "2025-08-08T03:50:00.303Z",
+  "actions": [
+    "ensure_home_hero_promotes_all_features",
+    "generate_feature_sections",
+    "refresh_blog_teasers",
+    "update_sitemap_after_feature_pages"
+  ],
+  "features": [
+    {
+      "file": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/enhanced-home.tsx",
+      "hint": "marketing_hook"
+    },
+    {
+      "file": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/layout/EnhancedNavigation.tsx",
+      "hint": "marketing_hook"
+    },
+    {
+      "file": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/layout/EnhancedFooter.tsx",
+      "hint": "marketing_hook"
+    }
+  ]
+}
