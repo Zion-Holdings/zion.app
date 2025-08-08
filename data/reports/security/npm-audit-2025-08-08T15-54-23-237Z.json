@@ -1,0 +1,352 @@
+{
+  "auditReportVersion": 2,
+  "vulnerabilities": {
+    "@babel/runtime": {
+      "name": "@babel/runtime",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1104000,
+          "name": "@babel/runtime",
+          "dependency": "@babel/runtime",
+          "title": "Babel has inefficient RegExp complexity in generated code with .replace when transpiling named capturing groups",
+          "url": "https://github.com/advisories/GHSA-968p-4wvh-cqc8",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-1333"
+          ],
+          "cvss": {
+            "score": 6.2,
+            "vectorString": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<7.26.10"
+        }
+      ],
+      "effects": [
+        "next"
+      ],
+      "range": "<7.26.10",
+      "nodes": [
+        "node_modules/next/node_modules/@babel/runtime"
+      ],
+      "fixAvailable": {
+        "name": "next",
+        "version": "15.4.6",
+        "isSemVerMajor": true
+      }
+    },
+    "@next/react-dev-overlay": {
+      "name": "@next/react-dev-overlay",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "shell-quote"
+      ],
+      "effects": [
+        "next"
+      ],
+      "range": "9.3.7-canary.3 - 12.0.1",
+      "nodes": [
+        "node_modules/@next/react-dev-overlay"
+      ],
+      "fixAvailable": {
+        "name": "next",
+        "version": "15.4.6",
+        "isSemVerMajor": true
+      }
+    },
+    "loader-utils": {
+      "name": "loader-utils",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1094088,
+          "name": "loader-utils",
+          "dependency": "loader-utils",
+          "title": "Prototype pollution in webpack loader-utils",
+          "url": "https://github.com/advisories/GHSA-76p3-8jx3-jpfq",
+          "severity": "critical",
+          "cwe": [
+            "CWE-1321"
+          ],
+          "cvss": {
+            "score": 9.8,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+          },
+          "range": "<1.4.1"
+        },
+        {
+          "source": 1095055,
+          "name": "loader-utils",
+          "dependency": "loader-utils",
+          "title": "loader-utils is vulnerable to Regular Expression Denial of Service (ReDoS) via url variable",
+          "url": "https://github.com/advisories/GHSA-3rfm-jhwj-7488",
+          "severity": "high",
+          "cwe": [
+            "CWE-1333"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": ">=1.0.0 <1.4.2"
+        },
+        {
+          "source": 1097143,
+          "name": "loader-utils",
+          "dependency": "loader-utils",
+          "title": "loader-utils is vulnerable to Regular Expression Denial of Service (ReDoS)",
+          "url": "https://github.com/advisories/GHSA-hhq3-ff78-jv3g",
+          "severity": "high",
+          "cwe": [
+            "CWE-400",
+            "CWE-1333"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": ">=1.0.0 <1.4.2"
+        }
+      ],
+      "effects": [
+        "styled-jsx"
+      ],
+      "range": "<=1.4.1",
+      "nodes": [
+        "node_modules/loader-utils"
+      ],
+      "fixAvailable": {
+        "name": "next",
+        "version": "15.4.6",
+        "isSemVerMajor": true
+      }
+    },
+    "next": {
+      "name": "next",
+      "severity": "critical",
+      "isDirect": true,
+      "via": [
+        "@babel/runtime",
+        "@next/react-dev-overlay",
+        {
+          "source": 1090428,
+          "name": "next",
+          "dependency": "next",
+          "title": "Improper CSP in Image Optimization API for Next.js versions between 10.0.0 and 12.1.0",
+          "url": "https://github.com/advisories/GHSA-fmvm-x8mv-47mj",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-451"
+          ],
+          "cvss": {
+            "score": 5.9,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N"
+          },
+          "range": ">=10.0.0 <12.1.0"
+        },
+        {
+          "source": 1094729,
+          "name": "next",
+          "dependency": "next",
+          "title": "Next.js missing cache-control header may lead to CDN caching empty reply",
+          "url": "https://github.com/advisories/GHSA-c59h-r6p8-q9wc",
+          "severity": "low",
+          "cwe": [],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": ">=0.9.9 <13.4.20-canary.13"
+        },
+        {
+          "source": 1100421,
+          "name": "next",
+          "dependency": "next",
+          "title": "Denial of Service condition in Next.js image optimization",
+          "url": "https://github.com/advisories/GHSA-g77x-44xx-532m",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-674"
+          ],
+          "cvss": {
+            "score": 5.9,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": ">=10.0.0 <14.2.7"
+        },
+        {
+          "source": 1101380,
+          "name": "next",
+          "dependency": "next",
+          "title": "Next.js authorization bypass vulnerability",
+          "url": "https://github.com/advisories/GHSA-7gfc-8cq8-jh5f",
+          "severity": "high",
+          "cwe": [
+            "CWE-285"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+          },
+          "range": ">=9.5.5 <14.2.15"
+        },
+        {
+          "source": 1104490,
+          "name": "next",
+          "dependency": "next",
+          "title": "Next.js Race Condition to Cache Poisoning",
+          "url": "https://github.com/advisories/GHSA-qpjv-v59x-3qc4",
+          "severity": "low",
+          "cwe": [
+            "CWE-362"
+          ],
+          "cvss": {
+            "score": 3.7,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
+          },
+          "range": "<14.2.24"
+        },
+        {
+          "source": 1106690,
+          "name": "next",
+          "dependency": "next",
+          "title": "Authorization Bypass in Next.js Middleware",
+          "url": "https://github.com/advisories/GHSA-f82v-jwr5-mffw",
+          "severity": "critical",
+          "cwe": [
+            "CWE-285"
+          ],
+          "cvss": {
+            "score": 9.1,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N"
+          },
+          "range": ">=11.1.4 <12.3.5"
+        },
+        "postcss",
+        "styled-jsx"
+      ],
+      "effects": [],
+      "range": "<=14.2.23",
+      "nodes": [
+        "node_modules/next"
+      ],
+      "fixAvailable": {
+        "name": "next",
+        "version": "15.4.6",
+        "isSemVerMajor": true
+      }
+    },
+    "postcss": {
+      "name": "postcss",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1094544,
+          "name": "postcss",
+          "dependency": "postcss",
+          "title": "PostCSS line return parsing error",
+          "url": "https://github.com/advisories/GHSA-7fh5-64p2-3v2j",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-74",
+            "CWE-144"
+          ],
+          "cvss": {
+            "score": 5.3,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+          },
+          "range": "<8.4.31"
+        }
+      ],
+      "effects": [
+        "next"
+      ],
+      "range": "<8.4.31",
+      "nodes": [
+        "node_modules/next/node_modules/postcss"
+      ],
+      "fixAvailable": {
+        "name": "next",
+        "version": "15.4.6",
+        "isSemVerMajor": true
+      }
+    },
+    "shell-quote": {
+      "name": "shell-quote",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1096375,
+          "name": "shell-quote",
+          "dependency": "shell-quote",
+          "title": "Improper Neutralization of Special Elements used in a Command in Shell-quote",
+          "url": "https://github.com/advisories/GHSA-g4rg-993r-mgx7",
+          "severity": "critical",
+          "cwe": [
+            "CWE-77"
+          ],
+          "cvss": {
+            "score": 9.8,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+          },
+          "range": "<=1.7.2"
+        }
+      ],
+      "effects": [
+        "@next/react-dev-overlay"
+      ],
+      "range": "<=1.7.2",
+      "nodes": [
+        "node_modules/shell-quote"
+      ],
+      "fixAvailable": {
+        "name": "next",
+        "version": "15.4.6",
+        "isSemVerMajor": true
+      }
+    },
+    "styled-jsx": {
+      "name": "styled-jsx",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "loader-utils"
+      ],
+      "effects": [
+        "next"
+      ],
+      "range": "3.0.0 - 5.0.0-beta.7",
+      "nodes": [
+        "node_modules/styled-jsx"
+      ],
+      "fixAvailable": {
+        "name": "next",
+        "version": "15.4.6",
+        "isSemVerMajor": true
+      }
+    }
+  },
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 2,
+      "high": 1,
+      "critical": 4,
+      "total": 7
+    },
+    "dependencies": {
+      "prod": 583,
+      "dev": 622,
+      "optional": 70,
+      "peer": 29,
+      "peerOptional": 0,
+      "total": 1241
+    }
+  }
+}
