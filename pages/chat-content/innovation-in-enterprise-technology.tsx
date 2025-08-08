@@ -1,0 +1,1 @@
+export default function Article() { return <div>Innovation in enterprise technology</div>; }

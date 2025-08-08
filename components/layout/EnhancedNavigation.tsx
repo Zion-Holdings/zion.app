@@ -11,6 +11,7 @@ export default function EnhancedNavigation() {
           <Link href="/about"><a>About</a></Link>
           <Link href="/blog"><a>Blog</a></Link>
           <Link href="/contact"><a>Contact</a></Link>
+          <Link href="/zion/init"><a className="font-medium text-indigo-600 dark:text-indigo-400">Deploy</a></Link>
         </div>
       </div>
     </nav>

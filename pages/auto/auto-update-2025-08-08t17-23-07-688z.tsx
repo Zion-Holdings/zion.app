@@ -1,0 +1,1 @@
+export default function AutoUpdate() { return <div>Auto update 17-23-07</div>; }
