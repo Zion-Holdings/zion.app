@@ -1,0 +1,38 @@
+name: Automation Guardian Every 10 Minutes
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  guardian:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Automation Guardian (10m)
+        run: node automation/automation-guardian-10min.cjs | cat
+
+      - name: Upload guardian logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: automation-guardian-logs
+          path: automation/logs/**/*
+          if-no-files-found: ignore
