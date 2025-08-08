@@ -1,0 +1,87 @@
+[
+  {
+    "id": "feat-ai-agent-marketplace",
+    "slug": "ai-agent-marketplace",
+    "title": "AI Agent Marketplace",
+    "description": "Discover, deploy, and monetize AI agents within Zion.",
+    "etaQuarter": "Q4 2025",
+    "tags": ["AI", "Token", "Community"],
+    "status": "Planned",
+    "upvotesWeighted": 42,
+    "upvoteCount": 18,
+    "followerCount": 12,
+    "commentsCount": 4,
+    "previewImageUrl": "/images/roadmap/ai-agent-marketplace.png",
+    "links": [
+      { "label": "Figma", "url": "https://figma.com/file/example-ai-marketplace" },
+      { "label": "GitHub", "url": "https://github.com/Zion-Holdings/ai-marketplace" }
+    ],
+    "createdAt": "2025-08-08T00:00:00.000Z",
+    "updatedAt": "2025-08-08T00:00:00.000Z",
+    "voterIds": [],
+    "followerIds": []
+  },
+  {
+    "id": "feat-trust-graph",
+    "slug": "trust-graph",
+    "title": "Decentralized Trust Graph",
+    "description": "Reputation and verifiable credentials across the ecosystem.",
+    "etaQuarter": "Q1 2026",
+    "tags": ["Trust", "DAO", "Security"],
+    "status": "In Progress",
+    "upvotesWeighted": 67,
+    "upvoteCount": 29,
+    "followerCount": 20,
+    "commentsCount": 7,
+    "previewImageUrl": "/images/roadmap/trust-graph.png",
+    "links": [
+      { "label": "Loom Demo", "url": "https://loom.com/share/example-trust-graph" }
+    ],
+    "createdAt": "2025-08-01T00:00:00.000Z",
+    "updatedAt": "2025-08-07T00:00:00.000Z",
+    "voterIds": [],
+    "followerIds": []
+  },
+  {
+    "id": "feat-zion-staking",
+    "slug": "zion-staking",
+    "title": "ZION$ Staking v1",
+    "description": "Stake ZION$ for governance and priority access.",
+    "etaQuarter": "Q3 2025",
+    "tags": ["Token", "DAO", "Community"],
+    "status": "Planned",
+    "upvotesWeighted": 103,
+    "upvoteCount": 31,
+    "followerCount": 26,
+    "commentsCount": 10,
+    "previewImageUrl": "/images/roadmap/zion-staking.png",
+    "links": [
+      { "label": "GitHub", "url": "https://github.com/Zion-Holdings/zion-token" }
+    ],
+    "createdAt": "2025-07-20T00:00:00.000Z",
+    "updatedAt": "2025-08-05T00:00:00.000Z",
+    "voterIds": [],
+    "followerIds": []
+  },
+  {
+    "id": "feat-dev-portal",
+    "slug": "developer-portal",
+    "title": "Developer Portal & SDKs",
+    "description": "SDKs, API docs, and sandbox for building on Zion.",
+    "etaQuarter": "Q2 2025",
+    "tags": ["Infra", "Community", "UX"],
+    "status": "Completed",
+    "upvotesWeighted": 88,
+    "upvoteCount": 40,
+    "followerCount": 33,
+    "commentsCount": 9,
+    "previewImageUrl": "/images/roadmap/developer-portal.png",
+    "links": [
+      { "label": "Docs", "url": "https://docs.zion.app" }
+    ],
+    "createdAt": "2025-05-01T00:00:00.000Z",
+    "updatedAt": "2025-07-01T00:00:00.000Z",
+    "voterIds": [],
+    "followerIds": []
+  }
+]
