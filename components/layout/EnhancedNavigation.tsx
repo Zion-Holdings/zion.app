@@ -23,6 +23,9 @@ const EnhancedNavigation: React.FC = () => {
             <Link href="/contact">
               <a className="text-gray-600 hover:text-gray-900">Contact</a>
             </Link>
+            <Link href="/chat-content">
+              <a className="text-gray-600 hover:text-gray-900">Chat Content</a>
+            </Link>
           </div>
         </div>
       </div>
