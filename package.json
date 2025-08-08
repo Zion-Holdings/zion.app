@@ -15,6 +15,8 @@
     "npm": ">=10.0.0"
   },
   "scripts": {
+    "deps:maintain": "node automation/dependency-update-orchestrator.cjs",
+    "deps:cron:start": "bash automation/dependency-maintenance-cron.sh",
     "sitemap": "node scripts/generate-sitemap.mjs",
     "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev",
     "build": "NODE_OPTIONS=--openssl-legacy-provider next build",
@@ -59,9 +61,6 @@
     "automation:all": "node automation/launch-all-automation.cjs start",
     "automation:status": "node automation/launch-all-automation.cjs status",
     "automation:report": "node automation/launch-all-automation.cjs report",
-    "autonomy:guardian": "node automation/autonomous-guardian.cjs start",
-    "autonomy:status": "node automation/autonomous-guardian.cjs status",
-    "autonomy:stop": "node automation/autonomous-guardian.cjs stop",
     "automation:git-sync": "node automation/git-sync.cjs",
     "automation:improvement": "node automation/continuous-automation-improvement-system.js",
     "automation:improvement:dev": "nodemon automation/continuous-automation-improvement-system.js",
@@ -169,9 +168,7 @@
     "alignment:cron:start": "bash automation/alignment-cron.sh",
     "alignment:scan": "node automation/chat-fetcher.cjs && (node automation/google-doc-fetcher.cjs || true) && node automation/alignment-crawler.cjs && node automation/alignment-analyzer.cjs && node automation/alignment-factory.cjs && node automation/alignment-dev-factory.cjs",
     "postautomation": "npm run automation:git-sync",
-    "lint:staged": "lint-staged",
-    "content:auto:start": "node automation/content-autogen-orchestrator.cjs start",
-    "content:auto:once": "node automation/content-autogen-orchestrator.cjs run-once"
+    "lint:staged": "lint-staged"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
