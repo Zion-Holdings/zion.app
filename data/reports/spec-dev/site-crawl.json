@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-08T13:35:09.602Z",
+  "timestamp": "2025-08-08T13:35:22.061Z",
   "pages": [
     {
       "url": "https://ziontechgroup.netlify.app/",
@@ -20,6 +20,98 @@
     {
       "url": "https://ziontechgroup.netlify.app/contact",
       "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/404",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/about",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/auth",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/auth/callback",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/auth/forgot-password",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/auth/reset-password",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/auth/verify",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/automation",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/blockchain-solutions",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/blog/5g-technology-and-its-impact-on-iot-chat",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/blog/api-first-development-building-scalable-systems-chat",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/blog/augmented-reality-in-enterprise-applications-chat",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/blog/blockchain-technology-in-modern-business-solutions-chat",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/blog/cloud-native-architecture-best-practices-chat",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/blog/cybersecurity-trends-for-2024-and-beyond-chat",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/blog/data-analytics-in-digital-transformation-chat",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/blog/devops-automation-strategies-for-modern-teams-chat",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/blog/digital-twins-revolutionizing-industry-4-0-chat",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/blog/machine-learning-applications-in-enterprise-software-chat",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/blog/microservices-architecture-benefits-and-challenges-chat",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/blog/quantum-computing-implications-for-business-chat",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/blog/sustainable-technology-green-computing-solutions-chat",
+      "status": 200
     }
   ],
   "discovered": [
@@ -27,6 +119,29 @@
     "https://ziontechgroup.netlify.app/services",
     "https://ziontechgroup.netlify.app/products",
     "https://ziontechgroup.netlify.app/blog",
-    "https://ziontechgroup.netlify.app/contact"
+    "https://ziontechgroup.netlify.app/contact",
+    "https://ziontechgroup.netlify.app/404",
+    "https://ziontechgroup.netlify.app/about",
+    "https://ziontechgroup.netlify.app/auth",
+    "https://ziontechgroup.netlify.app/auth/callback",
+    "https://ziontechgroup.netlify.app/auth/forgot-password",
+    "https://ziontechgroup.netlify.app/auth/reset-password",
+    "https://ziontechgroup.netlify.app/auth/verify",
+    "https://ziontechgroup.netlify.app/automation",
+    "https://ziontechgroup.netlify.app/blockchain-solutions",
+    "https://ziontechgroup.netlify.app/blog/5g-technology-and-its-impact-on-iot-chat",
+    "https://ziontechgroup.netlify.app/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat",
+    "https://ziontechgroup.netlify.app/blog/api-first-development-building-scalable-systems-chat",
+    "https://ziontechgroup.netlify.app/blog/augmented-reality-in-enterprise-applications-chat",
+    "https://ziontechgroup.netlify.app/blog/blockchain-technology-in-modern-business-solutions-chat",
+    "https://ziontechgroup.netlify.app/blog/cloud-native-architecture-best-practices-chat",
+    "https://ziontechgroup.netlify.app/blog/cybersecurity-trends-for-2024-and-beyond-chat",
+    "https://ziontechgroup.netlify.app/blog/data-analytics-in-digital-transformation-chat",
+    "https://ziontechgroup.netlify.app/blog/devops-automation-strategies-for-modern-teams-chat",
+    "https://ziontechgroup.netlify.app/blog/digital-twins-revolutionizing-industry-4-0-chat",
+    "https://ziontechgroup.netlify.app/blog/machine-learning-applications-in-enterprise-software-chat",
+    "https://ziontechgroup.netlify.app/blog/microservices-architecture-benefits-and-challenges-chat",
+    "https://ziontechgroup.netlify.app/blog/quantum-computing-implications-for-business-chat",
+    "https://ziontechgroup.netlify.app/blog/sustainable-technology-green-computing-solutions-chat"
   ]
 }
