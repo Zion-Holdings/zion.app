@@ -1,0 +1,23 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "bradlc.vscode-tailwindcss",
+    "csstools.postcss",
+    "dsznajder.es7-react-js-snippets",
+    "christian-kohler.path-intellisense",
+    "eamodio.gitlens",
+    "EditorConfig.EditorConfig",
+    "mikestead.dotenv",
+    "yzhang.markdown-all-in-one",
+    "unifiedjs.vscode-mdx",
+    "redhat.vscode-yaml",
+    "GitHub.vscode-github-actions",
+    "usernamehw.errorlens",
+    "wix.vscode-import-cost",
+    "streetsidesoftware.code-spell-checker",
+    "yoavbls.pretty-ts-errors"
+  ],
+  "unwantedRecommendations": [
+    "esbenp.prettier-vscode"
+  ]
+}
