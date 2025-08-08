@@ -1,6 +1,7 @@
 {
-  "timestamp": "2025-08-08T03:25:49.350Z",
+  "timestamp": "2025-08-08T03:25:54.282Z",
   "changedFiles": [
+    "automation/homepage-promo-analyzer.cjs",
     "data/reports/alignment/alignment-report.json",
     "data/reports/alignment/chat-raw.txt",
     "data/reports/alignment/tickets/0001.md",
