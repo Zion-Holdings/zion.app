@@ -1,0 +1,1 @@
+export default function FutureOfWorkAndAutomation() { return <div className="py-8">Content (placeholder)</div>; }
