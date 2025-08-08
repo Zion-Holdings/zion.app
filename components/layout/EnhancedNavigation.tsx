@@ -8,6 +8,10 @@ export default function EnhancedNavigation() {
           <a className="font-semibold">Zion</a>
         </Link>
         <div className="flex items-center gap-4 text-sm">
+          <Link href="/talent"><a>Talent</a></Link>
+          <Link href="/favorites"><a>Favorites</a></Link>
+          <Link href="/admin/quotes"><a>Admin</a></Link>
+          <Link href="/dashboard/requests"><a>Dashboard</a></Link>
           <Link href="/about"><a>About</a></Link>
           <Link href="/blog"><a>Blog</a></Link>
           <Link href="/contact"><a>Contact</a></Link>
