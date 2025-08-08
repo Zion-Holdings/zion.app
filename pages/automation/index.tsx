@@ -1,0 +1,1 @@
+export default function Automation() { return <main className="p-8">Automation dashboard coming soon.</main>; }

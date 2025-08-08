@@ -1,0 +1,1 @@
+export default function Page() { return <main className="p-8">Future of work and automation coming soon.</main>; }

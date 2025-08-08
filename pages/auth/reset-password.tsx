@@ -1,0 +1,1 @@
+export default function ResetPassword() { return <main className="p-8">Reset password.</main>; }

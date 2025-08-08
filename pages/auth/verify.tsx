@@ -1,0 +1,1 @@
+export default function Verify() { return <main className="p-8">Verify account.</main>; }
