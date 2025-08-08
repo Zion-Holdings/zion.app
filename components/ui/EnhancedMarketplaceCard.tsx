@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface EnhancedMarketplaceCardProps {
   title: string;
@@ -11,7 +12,9 @@ export default function EnhancedMarketplaceCard({ title, description, price, ima
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
       {image && (
-        <img src={image} alt={title} className="w-full h-48 object-cover" />
+        <div className="relative w-full h-48">
+          <Image src={image} alt={title} layout="fill" objectFit="cover" sizes="100vw" unoptimized />
+        </div>
       )}
       <div className="p-6">
         <h3 className="text-lg font-semibold text-gray-900 mb-2">{title}</h3>

@@ -1,11 +1,32 @@
 import React, { useEffect, useState } from 'react';
 
-type SystemEntry = [string, any];
+interface SystemInfo {
+  category?: string;
+  isRunning?: boolean;
+  successCount?: number;
+  failureCount?: number;
+  averageExecutionTime?: number;
+}
+
+interface Metric {
+  name: string;
+  value: number;
+  unit?: string;
+}
+
+interface Alert {
+  type: string; // e.g., 'error' | 'warning'
+  system: string;
+  message: string;
+  timestamp: string;
+}
+
+type SystemEntry = [string, SystemInfo];
 
 type DashboardStatus = {
   systems: SystemEntry[];
-  metrics: any[];
-  alerts: any[];
+  metrics: Metric[];
+  alerts: Alert[];
 };
 
 const API_BASE = process.env.NEXT_PUBLIC_AUTOMATION_DASHBOARD_URL || 'http://localhost:3001';
@@ -20,10 +41,11 @@ export default function AutomationDashboardPage() {
     setError(null);
     try {
       const res = await fetch(`${API_BASE}/api/status`);
-      const json = await res.json();
+      const json: DashboardStatus = await res.json();
       setStatus(json);
-    } catch (e: any) {
-      setError(e?.message || 'Failed to load status');
+    } catch (e: unknown) {
+      const message = e instanceof Error ? e.message : 'Failed to load status';
+      setError(message);
     } finally {
       setLoading(false);
     }
@@ -107,7 +129,7 @@ export default function AutomationDashboardPage() {
           <h2 className="text-xl font-medium mb-3">Alerts</h2>
           <div className="space-y-2">
             {alerts.length === 0 && <div className="text-gray-500">No alerts</div>}
-            {alerts.map((a: any, idx: number) => (
+            {alerts.map((a, idx: number) => (
               <div key={idx} className={`p-3 rounded ${a.type === 'error' ? 'bg-red-100 text-red-800' : 'bg-yellow-100 text-yellow-800'}`}>
                 <div className="font-medium">{a.system}</div>
                 <div className="text-sm">{a.message}</div>
