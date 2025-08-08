@@ -19,4 +19,12 @@ module.exports = {
     config.resolve.alias['@'] = path.resolve(__dirname);
     return config;
   },
+  async rewrites() {
+    return [
+      {
+        source: '/docs/zion-protocol.pdf',
+        destination: '/api/zion-whitepaper-pdf?edition=full',
+      },
+    ];
+  },
 };
