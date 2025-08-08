@@ -1,0 +1,1 @@
+export default function AutoUpdate_163020949z() { return <div className="text-sm">Auto update</div>; }
