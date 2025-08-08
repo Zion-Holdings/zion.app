@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2025-08-08T16:39:42.801Z",
+  "build": {
+    "ok": false,
+    "code": 1,
+    "stderr": "<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Managed item /workspace/node_modules/@next/swc-win32-x64-msvc isn't a directory or doesn't contain a package.json\n<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Managed item /workspace/node_modules/@next/swc-darwin-x64 isn't a directory or doesn't contain a package.json\n<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Managed item /workspace/node_modules/@next/swc-darwin-arm64 isn't a directory or doesn't contain a package.json\n<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Managed item /workspace/node_modules/fsevents isn't a directory or doesn't contain a package.json\n<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: Unable to snapshot resolve dependencies\n\n> Build error occurred\nError: Build optimization failed: found pages without a React Component as default export in \npages/about\npages/404\npages/auth/callback\npages/auth\npages/auth/reset-password\npages/auth/verify\npages/auto/auto-update-2025-08-08t16-10-20-249z\npages/auto/auto-update-2025-08-08t16-07-55-171z\npages/auto/auto-update-2025-08-08t16-30-00-086z\npages/auto/auto-update-2025-08-08t16-30-20-949z\npages/auto/auto-update-2025-08-08t16-38-19-257z\npages/automation\npages/blockchain-solutions\npages/blog/5g-technology-and-its-impact-on-iot-chat\npages/blog/api-first-development-building-scalable-systems-chat\npages/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat\npages/blog/augmented-reality-in-enterprise-applications-chat\npages/blog/cloud-native-architecture-best-practices-chat\npages/blog/blockchain-technology-in-modern-business-solutions-chat\npages/blog/cybersecurity-trends-for-2024-and-beyond-chat\npages/blog/devops-automation-strategies-for-modern-teams-chat\npages/blog/digital-twins-revolutionizing-industry-4-0-chat\npages/blog/data-analytics-in-digital-transformation-chat\npages/blog\npages/blog/microservices-architecture-benefits-and-challenges-chat\npages/blog/quantum-computing-implications-for-business-chat\npages/blog/machine-learning-applications-in-enterprise-software-chat\npages/blog/sustainable-technology-green-computing-solutions-chat\npages/category/ai-consulting-chat\npages/blog/the-rise-of-edge-computing-in-iot-applications-chat\npages/category/business-intelligence-chat\npages/category/cybersecurity-chat\npages/category/cloud-architecture-chat\npages/category/data-science-chat\npages/category/devops-automation-chat\npages/category/database-administration-chat\npages/category/mobile-development-chat\npages/category/product-management-chat\npages/category/network-engineering-chat\npages/category/quality-assurance-chat\npages/category/technical-writing-chat\npages/category/system-administration-chat\npages/category/ui-ux-design-chat\npages/chat-content/ai-powered-business-solutions-discussion\npages/category/web-development-chat\npages/chat-content/cloud-computing-strategies\npages/chat-content/data-analytics-implementation\npages/chat-content/digital-transformation-insights\npages/chat-content/cybersecurity-best-practices\npages/chat-content/emerging-technology-trends\npages/chat-content/future-of-work-and-automation\npages/auth/forgot-password\npages/chat-content/innovation-in-enterprise-technology\npages/chat-content/sustainable-technology-practices\npages/chat-content/technology-implementation-strategies\npages/contact\npages/enhanced-home\npages/\npages/iot-platforms\npages/products\npages/services/ai-model-development-chat\npages/services/api-development-chat\npages/services/business-intelligence-chat\npages/services/cloud-migration-services-chat\npages/services/data-pipeline-engineering-chat\npages/services\npages/services/mobile-app-development-chat\npages/services/network-security-chat\npages/services/database-design-chat\npages/services/performance-optimization-chat\npages/services/quality-assurance-testing-chat\npages/services/system-administration-chat\npages/services/technical-documentation-chat\npages/services/security-auditing-chat\npages/services/ui-ux-design-chat\npages/services/web-application-development-chat\npages/talent\n\nSee https://nextjs.org/docs/messages/page-without-valid-component for more info.\n\n    at /workspace/node_modules/next/dist/build/index.js:674:19\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async Span.traceAsyncFn (/workspace/node_modules/next/dist/telemetry/trace/trace.js:60:20)\n    at async Object.build [as default] (/workspace/node_modules/next/dist/build/index.js:77:25)\n"
+  },
+  "metrics": [
+    {
+      "url": "http://localhost:3000/",
+      "statusCode": 200,
+      "ttfbMs": 54,
+      "bytes": 25955
+    },
+    {
+      "url": "http://localhost:3000/enhanced-home",
+      "statusCode": 200,
+      "ttfbMs": 6,
+      "bytes": 17311
+    }
+  ],
+  "thresholds": {
+    "ttfbMs": 800,
+    "bytesHtml": 250000
+  },
+  "alerts": []
+}

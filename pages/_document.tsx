@@ -39,7 +39,7 @@ export default function Document() {
 
           <link rel="canonical" href={siteUrl} />
         </Head>
-      <body                                                                                                                                                                                                            className="antialiased bg-neutral-50 text-neutral-800 dark:bg-neutral-950 dark:text-neutral-100">
+      <body                                                                                                                                                                                                             className="antialiased bg-neutral-50 text-neutral-800 dark:bg-neutral-950 dark:text-neutral-100">
         <Main />
         <NextScript />
       </body>
