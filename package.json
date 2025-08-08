@@ -188,7 +188,10 @@
     "ui-evolution:dashboard": "node automation/ui-evolution-launcher.js dashboard",
     "meta:factory": "node automation/autonomous-meta-factory.cjs",
     "meta:orchestrator": "node automation/autonomous-meta-orchestrator.cjs",
-    "meta:cron:start": "bash automation/autonomous-meta-cron.sh"
+    "meta:cron:start": "bash automation/autonomous-meta-cron.sh",
+    "marketplace:research": "node automation/market-research-trends.cjs",
+    "marketplace:factory": "node automation/intelligent-solutions-factory.cjs",
+    "marketplace:orchestrator": "node automation/marketplace-orchestrator.cjs"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",

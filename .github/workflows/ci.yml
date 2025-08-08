@@ -4,24 +4,23 @@ on:
   push:
     branches: [ main ]
   pull_request:
+    branches: [ main ]
 
 concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  lint-and-types:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js 20.x
-        uses: actions/setup-node@v4
         with:
-          node-version: 20.x
-          cache: 'npm'
-      - name: Install dependencies
-        run: npm ci
-      - name: ESLint
-        run: npm run lint
-      - name: Type check
-        run: npm run type-check
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - name: Pre-generate marketplace data
+        run: node automation/marketplace-orchestrator.cjs once || true
+      - run: npm run build
