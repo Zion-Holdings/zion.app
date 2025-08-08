@@ -167,6 +167,15 @@
     "alignment:start": "node automation/alignment-orchestrator.cjs",
     "alignment:cron:start": "bash automation/alignment-cron.sh",
     "alignment:scan": "node automation/chat-fetcher.cjs && (node automation/google-doc-fetcher.cjs || true) && node automation/alignment-crawler.cjs && node automation/alignment-analyzer.cjs && node automation/alignment-factory.cjs && node automation/alignment-dev-factory.cjs",
+
+    "maintenance:run": "node automation/site-maintenance-orchestrator.cjs",
+    "maintenance:cron:start": "bash automation/site-maintenance-cron.sh start",
+    "maintenance:cron:stop": "bash automation/site-maintenance-cron.sh stop",
+    "maintenance:cron:status": "bash automation/site-maintenance-cron.sh status",
+    "maintenance:cron:run": "bash automation/site-maintenance-cron.sh run",
+    "health:start": "node automation/auto-health-monitor/index.mjs",
+    "health:dev": "nodemon automation/auto-health-monitor/index.mjs",
+    "automation:all:plus": "npm run automation:all & npm run health:start",
     "postautomation": "npm run automation:git-sync",
     "lint:staged": "lint-staged"
   },
