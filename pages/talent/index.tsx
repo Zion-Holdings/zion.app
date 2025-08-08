@@ -1,0 +1,1 @@
+export default function TalentIndexPage() { return <div className="p-6">Talent</div>; }

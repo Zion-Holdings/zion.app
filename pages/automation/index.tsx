@@ -1,0 +1,1 @@
+export default function AutomationPage() { return <div className="p-6">Automation</div>; }

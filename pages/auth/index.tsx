@@ -1,0 +1,1 @@
+export default function AuthIndexPage() { return <div className="p-6">Auth</div>; }

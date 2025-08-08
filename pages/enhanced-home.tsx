@@ -1,0 +1,1 @@
+export default function EnhancedHomePage() { return <div className="p-6">Enhanced Home</div>; }
