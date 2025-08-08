@@ -1,3 +1,3 @@
 export const detectBrowserExtension = () => {
-  return { isExtension: falseversion: "1.0.0" };
+  return { isExtension: false, version: "1.0.0" } as { isExtension: boolean; version: string };
 };

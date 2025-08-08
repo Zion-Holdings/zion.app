@@ -6,6 +6,7 @@ const path = require('path');
 const repoDir = path.join(__dirname, '..');
 const logDir = path.join(__dirname, 'logs');
 const healthLog = path.join(logDir, 'cron-health.log');
+const isCI = process.env.GITHUB_ACTIONS === 'true';
 
 function nowIso() {
   return new Date().toISOString();
@@ -50,7 +51,45 @@ function check(name, filepath, maxAgeSeconds) {
   return false;
 }
 
+function ciConfigChecks() {
+  let ok = true;
+  const requiredFiles = [
+    'automation/linting-cron-automation.js',
+    'automation/content-autogen-orchestrator.cjs',
+    'automation/git-sync-cron.sh',
+    'automation/start-cron-services.sh',
+  ];
+  for (const rel of requiredFiles) {
+    const fp = path.join(repoDir, rel);
+    if (fs.existsSync(fp)) {
+      log(`OK config: ${rel} exists`);
+    } else {
+      log(`FAIL config: ${rel} is missing`);
+      ok = false;
+    }
+  }
+  try {
+    const pkg = JSON.parse(fs.readFileSync(path.join(repoDir, 'package.json'), 'utf8'));
+    const scripts = pkg.scripts || {};
+    const requiredScripts = ['cron:start', 'cron:status', 'cron:health'];
+    for (const s of requiredScripts) {
+      if (scripts[s]) log(`OK script: ${s} present`); else { log(`FAIL script: ${s} missing`); ok = false; }
+    }
+  } catch (e) {
+    log(`FAIL config: could not read package.json (${e.message})`);
+    ok = false;
+  }
+  if (!ok) {
+    log('Cron CI configuration checks FAILED');
+    process.exit(2);
+  }
+  log('Cron CI configuration checks passed');
+}
+
 function main() {
+  if (isCI) {
+    return ciConfigChecks();
+  }
   const checks = [
     { name: 'linting-cron', file: path.join(__dirname, 'logs', 'linting-cron.log'), maxAgeSec: 15 * 60 },
     { name: 'content-autogen', file: path.join(__dirname, 'logs', 'content-autogen.log'), maxAgeSec: 45 * 60 },
