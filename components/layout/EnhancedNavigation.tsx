@@ -1,4 +1,7 @@
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
+
+const NotificationBell = dynamic(() => import('../ui/NotificationBell'), { ssr: false });
 
 export default function EnhancedNavigation() {
   return (
@@ -11,6 +14,7 @@ export default function EnhancedNavigation() {
           <Link href="/about"><a>About</a></Link>
           <Link href="/blog"><a>Blog</a></Link>
           <Link href="/contact"><a>Contact</a></Link>
+          <NotificationBell />
         </div>
       </div>
     </nav>
