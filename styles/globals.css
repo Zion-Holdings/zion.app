@@ -984,12 +984,49 @@ td {
 
 /* Mobile-First Print Styles */
 @media print {
-  .print-hidden {
+  @page {
+    size: 8.5in 11in; /* US Letter */
+    margin: 0.75in;
+  }
+  html, body {
+    background: white !important;
+    color: #111 !important;
+  }
+  body, .book-serif {
+    font-family: 'Source Serif 4', 'Playfair Display', Georgia, 'Times New Roman', serif !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  header, footer, nav, .print-hidden, .no-print {
     display: none !important;
   }
-
-  .print-visible {
-    display: block !important;
+  .print-fullpage {
+    page-break-after: always;
+    break-after: page;
+  }
+  .print-avoid-break {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .print-chapter-title {
+    font-size: 28pt;
+    line-height: 1.2;
+    font-weight: 800;
+    margin-bottom: 0.15in;
+  }
+  .print-subtitle {
+    font-size: 16pt;
+    color: #444;
+    margin-bottom: 0.25in;
+  }
+  .print-quote {
+    font-size: 18pt;
+    font-style: italic;
+    margin: 0.5in 0;
+  }
+  .print-meta {
+    font-size: 9pt;
+    color: #555;
   }
 }
 
