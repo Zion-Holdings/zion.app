@@ -75,6 +75,7 @@ class AutomationLauncher {
       { name: 'lint-monitor', script: 'lint-monitor.cjs', args: ['start'] },
       { name: 'self-healing', script: 'self-healing-orchestrator.cjs', args: [] },
       { name: 'alignment-orchestrator', script: 'alignment-orchestrator.cjs', args: ['continuous'] },
+      { name: 'design-orchestrator', script: 'design-orchestrator.cjs', args: ['continuous'] },
       { name: 'code-quality', script: 'code-quality-monitor.cjs', args: [] },
       { name: 'performance', script: 'performance-optimizer.cjs', args: [] },
       { name: 'security-scanner', script: 'security-scanner.cjs', args: [] },
