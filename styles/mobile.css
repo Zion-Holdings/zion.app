@@ -1,0 +1,18 @@
+/* Mobile-first base adjustments */
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+button, [role="button"], input, select, textarea { touch-action: manipulation; }
+
+/* Larger tap targets */
+.touch-target { min-height: 44px; min-width: 44px; }
+
+/* Soft shadow helpers (instead of sharp borders) */
+.soft-shadow { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.soft-shadow-lg { box-shadow: 0 10px 24px rgba(0,0,0,0.12); }
+
+/* Modal/drawer content should scroll, not body */
+body.modal-open, body.drawer-open { overflow: hidden; }
+
+/* Fullscreen filter drawer on mobile */
+@media (max-width: 767px) {
+  .mobile-fullscreen { width: 100vw !important; height: 100vh !important; }
+}
