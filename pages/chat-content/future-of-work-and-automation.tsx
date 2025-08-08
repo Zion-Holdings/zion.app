@@ -1,0 +1,1 @@
+export default function ChatPage7() { return null; }

@@ -1,0 +1,1 @@
+export default function AutoPage6() { return null; }
