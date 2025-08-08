@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-08T06:33:54.873Z",
+  "timestamp": "2025-08-08T06:33:57.559Z",
   "changedFiles": [
     "automation/cursor-agents/task-1754634827380-1.cjs",
     "automation/cursor-agents/task-1754634827380-2.cjs",
@@ -16,6 +16,11 @@
     "automation/cursor-agents/task-1754634832221-3.cjs",
     "automation/cursor-agents/task-1754634832221-4.cjs",
     "automation/cursor-agents/task-1754634832221-5.cjs",
+    "automation/cursor-agents/task-1754634834642-1.cjs",
+    "automation/cursor-agents/task-1754634834642-2.cjs",
+    "automation/cursor-agents/task-1754634834642-3.cjs",
+    "automation/cursor-agents/task-1754634834642-4.cjs",
+    "automation/cursor-agents/task-1754634834642-5.cjs",
     "automation/instagram-agents/captions.json",
     "automation/instagram-agents/highlights.json",
     "data/reports/alignment/alignment-report.json",
@@ -29,6 +34,7 @@
     "data/reports/homepage-promo/proposals/proposal-1754634827264.md",
     "data/reports/homepage-promo/proposals/proposal-1754634829681.md",
     "data/reports/homepage-promo/proposals/proposal-1754634832462.md",
+    "data/reports/homepage-promo/proposals/proposal-1754634834841.md",
     "data/reports/link-monitor/site-link-report.json",
     "data/reports/marketing/linkedin/linkedin-posts.json",
     "data/reports/marketing/linkedin/linkedin-pro-posts.json",
