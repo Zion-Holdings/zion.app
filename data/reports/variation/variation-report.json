@@ -1,6 +1,11 @@
 {
-  "timestamp": "2025-08-08T16:51:42.581Z",
+  "timestamp": "2025-08-08T16:51:57.545Z",
   "loops": {
+    "alignment-cron.log": {
+      "restarts": 0,
+      "started": 1,
+      "loopScore": 0
+    },
     "alignment-orchestrator.log": {
       "restarts": 0,
       "started": 0,
@@ -17,9 +22,9 @@
       "loopScore": 0
     },
     "automation-launcher.log": {
-      "restarts": 1111,
-      "started": 2354,
-      "loopScore": 0.4719626168224299
+      "restarts": 1320,
+      "started": 2772,
+      "loopScore": 0.47619047619047616
     },
     "autonomous-automation-orchestrator.log": {
       "restarts": 0,
@@ -129,6 +134,11 @@
     "instagram-marketing-analyzer.log": {
       "restarts": 0,
       "started": 0,
+      "loopScore": 0
+    },
+    "instagram-marketing-cron.log": {
+      "restarts": 0,
+      "started": 1,
       "loopScore": 0
     },
     "instagram-marketing-factory.log": {
