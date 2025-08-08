@@ -1,0 +1,36 @@
+{
+  "LinkedIn": {
+    "headline": "Price Intelligence Service — Book a demo",
+    "valueProps": [
+      "Faster setup",
+      "Transparent pricing",
+      "Tangible outcomes"
+    ],
+    "price": "Avg market: $799–$2499",
+    "copy": "Struggling with data-scraping? Price Intelligence Service delivers results in days. Avg market: $799–$2499. Book a demo today."
+  },
+  "Google Ads": {
+    "headline": "Price Intelligence Service — Book a demo",
+    "valueProps": [
+      "Faster setup",
+      "Transparent pricing",
+      "Tangible outcomes"
+    ],
+    "price": "Avg market: $799–$2499",
+    "copy": "Price Intelligence Service for ecommerce. Avg market: $799–$2499. Get started now."
+  },
+  "Twitter/X": {
+    "headline": "Price Intelligence Service — Book a demo",
+    "valueProps": [
+      "Faster setup",
+      "Transparent pricing",
+      "Tangible outcomes"
+    ],
+    "price": "Avg market: $799–$2499",
+    "copy": "Price Intelligence Service: ship in ~6 days. Avg market: $799–$2499. DM for details."
+  },
+  "Email": {
+    "subject": "Price Intelligence Service in 6 days",
+    "body": "Hi there,\n\nWe built Price Intelligence Service: Competitor price tracking dashboard with alerts.. Avg market: $799–$2499.\n\nInterested in a quick demo?\n\nBest,\nTeam"
+  }
+}
