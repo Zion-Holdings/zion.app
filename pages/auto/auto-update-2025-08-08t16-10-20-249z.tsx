@@ -1,0 +1,1 @@
+export default function AutoUpdate2() { return null; }
