@@ -1,0 +1,1 @@
+export default function IoTPlatforms() { return <main style={{padding:'2rem'}}>IoT Platforms</main>; }

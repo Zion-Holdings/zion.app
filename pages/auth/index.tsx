@@ -1,0 +1,1 @@
+export default function Auth() { return <main style={{padding:'2rem'}}>Auth</main>; }

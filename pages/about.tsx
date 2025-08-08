@@ -1,0 +1,1 @@
+export default function About() { return <main style={{padding:'2rem'}}>About</main>; }
