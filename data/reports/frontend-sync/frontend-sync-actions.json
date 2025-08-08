@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-08T04:41:11.959Z",
+  "timestamp": "2025-08-08T04:41:16.912Z",
   "changedFiles": [
     "automation/instagram-agents/captions.json",
     "automation/instagram-agents/highlights.json",
@@ -11,14 +11,14 @@
     "data/reports/feature-marketing/feature-marketing-actions.json",
     "data/reports/frontend-sync/frontend-sync-actions.json",
     "data/reports/homepage-promo/homepage-promo-actions.json",
-    "data/reports/homepage-promo/proposals/proposal-1754628062009.md",
+    "data/reports/homepage-promo/proposals/proposal-1754628066876.md",
+    "data/reports/homepage-promo/proposals/proposal-1754628071948.md",
     "data/reports/marketing/linkedin/linkedin-posts.json",
     "data/reports/marketing/linkedin/linkedin-pro-posts.json",
     "data/reports/responsive/responsive-analysis.json",
     "data/reports/saas/saas-actions.json",
     "data/reports/variation/variation-report.json",
-    "pages/index.tsx",
-    "tsconfig.tsbuildinfo"
+    "pages/index.tsx"
   ],
   "actions": [
     "sync_content_metadata",
