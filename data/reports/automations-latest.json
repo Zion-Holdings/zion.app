@@ -1,0 +1,17 @@
+{
+  "updatedAt": "2025-08-08T22:11:26.212Z",
+  "automations": [
+    {
+      "key": "talent-insights",
+      "name": "Autonomous Talent Insights",
+      "latestUrl": "/automations/talent-insights/latest.json",
+      "lastGeneratedAt": "2025-08-08T22:11:26.199Z"
+    },
+    {
+      "key": "marketplace-pulse",
+      "name": "Marketplace Pulse",
+      "latestUrl": "/automations/pulse/latest.json",
+      "lastGeneratedAt": "2025-08-08T22:11:26.212Z"
+    }
+  ]
+}
