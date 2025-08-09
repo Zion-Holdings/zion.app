@@ -1,0 +1,60 @@
+name: Performance Audit
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: performance-audit
+  cancel-in-progress: true
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    env:
+      SITE_URL: ${{ secrets.SITE_URL }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ensure SITE_URL present
+        run: |
+          if [ -z "${SITE_URL}" ]; then
+            echo "SITE_URL secret not set, skipping." && exit 0
+          fi
+      - name: Run Lighthouse
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          urls: |
+            ${{ secrets.SITE_URL }}/
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+      - name: Basic score gate and issue
+        if: always()
+        uses: actions/github-script@v7
+        env:
+          SITE_URL: ${{ secrets.SITE_URL }}
+        with:
+          script: |
+            const core = require('@actions/core');
+            const fs = require('fs');
+            const glob = require('glob');
+            try {
+              const files = glob.sync('**/lighthouse-*.json');
+              if (!files.length) return;
+              const report = JSON.parse(fs.readFileSync(files[0], 'utf8'));
+              const perf = Math.round((report.categories.performance.score || 0) * 100);
+              if (perf < 80) {
+                const title = `Performance regression: score ${perf}`;
+                const body = `Lighthouse performance score for ${process.env.SITE_URL} is ${perf}. Please investigate.`;
+                const { data: issues } = await github.rest.issues.listForRepo({ owner: context.repo.owner, repo: context.repo.repo, state: 'open' });
+                if (!issues.find(i => i.title === title)) {
+                  await github.rest.issues.create({ owner: context.repo.owner, repo: context.repo.repo, title, body, labels: ['performance','automation'] });
+                }
+              }
+            } catch (e) {
+              core.warning(`Failed to evaluate performance score: ${e.message}`);
+            }
