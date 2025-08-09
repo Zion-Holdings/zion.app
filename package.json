@@ -20,6 +20,8 @@
     "deps:maintain": "node automation/dependency-update-orchestrator.cjs",
     "deps:cron:start": "bash automation/dependency-maintenance-cron.sh",
     "sitemap": "node scripts/generate-sitemap.mjs",
+    "trends:generate": "node scripts/generate-tech-trends.mjs",
+    "health:links": "node scripts/check-links.mjs",
     "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev",
     "build": "NODE_OPTIONS=--openssl-legacy-provider next build",
     "export": "NODE_OPTIONS=--openssl-legacy-provider next build && next export",

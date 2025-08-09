@@ -1,0 +1,45 @@
+name: Autonomous Orchestrator
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '*/20 * * * *'
+
+jobs:
+  orchestrate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install deps
+        run: npm ci --no-audit --no-fund
+
+      - name: Generate auto content
+        run: npm run auto:generate
+
+      - name: Generate tech trends
+        run: npm run trends:generate
+
+      - name: Build sitemap
+        run: npm run sitemap
+
+      - name: Link health
+        run: npm run health:links || true
+
+      - name: Commit and push
+        run: |
+          git config user.email "bot@zion.app"
+          git config user.name "Zion Bot"
+          git add -A
+          git commit -m "chore(automation): auto content, trends, sitemap, link health" || echo "No changes"
+          git push
