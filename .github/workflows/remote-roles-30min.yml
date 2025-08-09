@@ -1,15 +1,15 @@
-name: Innovation Radar (15-min)
+name: Remote Roles (30-min)
 
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  radar:
+  remote-roles:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -23,15 +23,15 @@ jobs:
           cache: 'npm'
       - name: Install deps
         run: npm ci
-      - name: Run Innovation Radar
-        run: node automation/innovation-radar.cjs
+      - name: Run Remote Roles
+        run: node automation/remote-roles.cjs
       - name: Commit and push if changed
         run: |
-          if [ -n "$(git status --porcelain data/innovation-radar.json)" ]; then
+          if [ -n "$(git status --porcelain data/remote-roles.json)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add data/innovation-radar.json
-            git commit -m "chore(automation): update Innovation Radar data"
+            git add data/remote-roles.json
+            git commit -m "chore(automation): update Remote Roles data"
             git push origin HEAD:main
           else
             echo "No changes to commit."

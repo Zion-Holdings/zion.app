@@ -22,8 +22,22 @@ export default function AutomationHub() {
               </a>
             </Link>
           ))}
+          <FeatureCard title="ArXiv Research" href="/automation/arxiv-research" desc="Fresh AI governance and agents research papers." />
+          <FeatureCard title="Remote Roles" href="/automation/remote-roles" desc="Remote jobs in AI/Agents/Web3 filtered for relevance." />
         </div>
       </div>
     </EnhancedLayout>
+  );
+}
+
+function FeatureCard({ title, desc, href }: { title: string; desc: string; href: string }) {
+  return (
+    <Link href={href}>
+      <a className="block p-6 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors">
+        <h3 className="text-lg font-semibold">{title}</h3>
+        <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">{desc}</p>
+        <span className="mt-4 inline-block text-sm font-medium text-blue-600 dark:text-blue-400">Open →</span>
+      </a>
+    </Link>
   );
 }

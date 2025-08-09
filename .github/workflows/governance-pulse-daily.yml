@@ -1,13 +1,12 @@
-name: Governance Pulse (Daily)
+name: Governance Pulse (30-min)
 
 on:
   schedule:
-    - cron: '19 2 * * *'
+    - cron: '9,39 * * * *'
   workflow_dispatch:
 
 permissions:
   contents: write
-  pull-requests: write
 
 jobs:
   governance:
@@ -26,16 +25,14 @@ jobs:
         run: npm ci
       - name: Run Governance Pulse
         run: node automation/governance-pulse.cjs
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: 'chore(automation): update Governance Pulse data'
-          title: 'chore(automation): Governance Pulse update'
-          body: |
-            Automated Governance Pulse data refresh.
-          branch: automation/governance-pulse
-          delete-branch: true
-          labels: |
-            automation
-            auto-merge
+      - name: Commit and push if changed
+        run: |
+          if [ -n "$(git status --porcelain data/governance-pulse.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/governance-pulse.json
+            git commit -m "chore(automation): update Governance Pulse data"
+            git push origin HEAD:main
+          else
+            echo "No changes to commit."
+          fi

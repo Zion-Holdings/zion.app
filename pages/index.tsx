@@ -14,6 +14,8 @@ export default function Home() {
             <Link href="/automation/innovation-radar"><a className="px-6 py-3 rounded-md bg-black text-white dark:bg-white dark:text-black font-semibold">Innovation Radar</a></Link>
             <Link href="/automation/global-bounties"><a className="px-6 py-3 rounded-md bg-gray-900/10 dark:bg-white/10 font-semibold">Global Bounties</a></Link>
             <Link href="/automation/governance-pulse"><a className="px-6 py-3 rounded-md bg-gray-900/10 dark:bg-white/10 font-semibold">Governance Pulse</a></Link>
+            <Link href="/automation/arxiv-research"><a className="px-6 py-3 rounded-md bg-gray-900/10 dark:bg-white/10 font-semibold">ArXiv Research</a></Link>
+            <Link href="/automation/remote-roles"><a className="px-6 py-3 rounded-md bg-gray-900/10 dark:bg-white/10 font-semibold">Remote Roles</a></Link>
           </div>
         </div>
       </section>
