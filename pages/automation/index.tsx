@@ -47,6 +47,18 @@ const AutomationIndex: NextPage<Props> = ({ auto, trends }) => {
         <p className="mb-2">Link health checks are saved to <code>/public/link-health.json</code>.</p>
         <Link className="text-blue-600 underline" href="/link-health.json">View latest link health report</Link>
       </section>
+
+      <section>
+        <h2 className="text-xl font-semibold mb-2">Repository Pulse</h2>
+        <p className="mb-2">Daily summary of issues and pull requests activity.</p>
+        <Link className="text-blue-600 underline" href="/github-pulse.json">View GitHub Pulse</Link>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-semibold mb-2">Rolling Changelog</h2>
+        <p className="mb-2">Automatic daily entries of recent commits.</p>
+        <Link className="text-blue-600 underline" href="/docs/CHANGELOG.md">View Changelog</Link>
+      </section>
     </div>
   );
 };

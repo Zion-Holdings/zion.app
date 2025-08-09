@@ -3,7 +3,7 @@ name: Autonomous Orchestrator
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: '*/20 * * * *'
+    - cron: '*/15 * * * *'
 
 jobs:
   orchestrate:
@@ -36,10 +36,19 @@ jobs:
       - name: Link health
         run: npm run health:links || true
 
+      - name: GitHub pulse
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: npm run pulse:github || true
+
+      - name: Rolling changelog
+        run: npm run changelog:roll || true
+
       - name: Commit and push
         run: |
           git config user.email "bot@zion.app"
           git config user.name "Zion Bot"
           git add -A
-          git commit -m "chore(automation): auto content, trends, sitemap, link health" || echo "No changes"
+          git commit -m "chore(automation): auto content, trends, sitemap, health, pulse, changelog" || echo "No changes"
           git push
