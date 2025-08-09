@@ -1,37 +1,12 @@
 {
-  "timestamp": "2025-08-09T13:01:14.144Z",
+  "timestamp": "2025-08-09T15:23:13.172Z",
   "loops": {
-    "adaptive-intelligence-orchestrator.log": {
-      "restarts": 0,
-      "started": 11,
-      "loopScore": 0
-    },
-    "ai-trends-cron.log": {
-      "restarts": 0,
-      "started": 1,
-      "loopScore": 0
-    },
-    "ai-trends-researcher.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "alignment-cron.log": {
-      "restarts": 0,
-      "started": 4,
-      "loopScore": 0
-    },
     "alignment-orchestrator.log": {
       "restarts": 0,
       "started": 0,
       "loopScore": 0
     },
     "auto-error-fixer.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "auto-health-monitor.log": {
       "restarts": 0,
       "started": 0,
       "loopScore": 0
@@ -43,72 +18,7 @@
     },
     "automation-launcher.log": {
       "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "autonomous-automation-orchestrator.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "autonomous-error-cron.log": {
-      "restarts": 0,
-      "started": 4,
-      "loopScore": 0
-    },
-    "autonomous-error-monitoring-factory.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "autonomous-meta-cron.log": {
-      "restarts": 0,
-      "started": 1,
-      "loopScore": 0
-    },
-    "autonomous-meta-orchestrator.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "check-google-docs-status.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "content-autogen.log": {
-      "restarts": 0,
-      "started": 4,
-      "loopScore": 0
-    },
-    "continuous-automation-improvement-system.log": {
-      "restarts": 0,
-      "started": 16,
-      "loopScore": 0
-    },
-    "cursor-chat-cron.log": {
-      "restarts": 0,
-      "started": 3,
-      "loopScore": 0
-    },
-    "cursor-chat-orchestrator.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "cursor-memory.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "dependency-update-orchestrator.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "design-cron.log": {
-      "restarts": 0,
-      "started": 4,
+      "started": 11,
       "loopScore": 0
     },
     "design-orchestrator.log": {
@@ -121,192 +31,12 @@
       "started": 0,
       "loopScore": 0
     },
-    "enhance-all-automation.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "feature-marketing-cron.log": {
-      "restarts": 0,
-      "started": 4,
-      "loopScore": 0
-    },
-    "feature-marketing-orchestrator.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "frontend-sync-autonomous-cron.log": {
+    "intelligent-orchestrator.log": {
       "restarts": 0,
       "started": 1,
       "loopScore": 0
     },
-    "frontend-sync-autonomous-orchestrator.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "frontend-sync-cron.log": {
-      "restarts": 0,
-      "started": 4,
-      "loopScore": 0
-    },
-    "frontend-sync-orchestrator.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "generate-google-docs-report.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "google-docs.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "growth-orchestrator.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "homepage-promo-cron.log": {
-      "restarts": 0,
-      "started": 4,
-      "loopScore": 0
-    },
-    "homepage-promo-orchestrator.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "innovation-agents-runner.log": {
-      "restarts": 0,
-      "started": 53045,
-      "loopScore": 0
-    },
-    "innovation-orchestrator.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "instagram-marketing-analyzer.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "instagram-marketing-cron.log": {
-      "restarts": 0,
-      "started": 4,
-      "loopScore": 0
-    },
-    "instagram-marketing-factory.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "instagram-marketing-orchestrator.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "instagram-post-latest.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "instagram-post.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "intelligent-orchestrator.log": {
-      "restarts": 0,
-      "started": 12,
-      "loopScore": 0
-    },
-    "launch-autonomous-systems-clean.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "launch-design-improvement-automation.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "launch-enhanced-autonomous-system.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "linkedin-marketing-cron.log": {
-      "restarts": 0,
-      "started": 4,
-      "loopScore": 0
-    },
-    "linkedin-marketing-orchestrator.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "linkedin-pro-cron.log": {
-      "restarts": 0,
-      "started": 4,
-      "loopScore": 0
-    },
-    "linkedin-pro-orchestrator.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "lint-automation.log": {
-      "restarts": 0,
-      "started": 6,
-      "loopScore": 0
-    },
     "lint-error-fixer.log": {
-      "restarts": 0,
-      "started": 78,
-      "loopScore": 0
-    },
-    "lint-monitor.log": {
-      "restarts": 0,
-      "started": 18,
-      "loopScore": 0
-    },
-    "linting-cron.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "linting-factory.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "linting-watcher.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "master-automation-coordinator.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "mcp-integration.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "monetization-orchestrator.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "netlify-monitor.log": {
       "restarts": 0,
       "started": 2,
       "loopScore": 0
@@ -316,122 +46,7 @@
       "started": 0,
       "loopScore": 0
     },
-    "responsive-cron.log": {
-      "restarts": 0,
-      "started": 1,
-      "loopScore": 0
-    },
-    "restart-all-automation.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "revenue-ideas-orchestrator.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "saas-services-cron.log": {
-      "restarts": 0,
-      "started": 3,
-      "loopScore": 0
-    },
-    "saas-services-orchestrator.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "self-healing-cron.log": {
-      "restarts": 0,
-      "started": 2,
-      "loopScore": 0
-    },
     "self-healing.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "site-link-cron.log": {
-      "restarts": 0,
-      "started": 3,
-      "loopScore": 0
-    },
-    "site-link-orchestrator.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "site-maintenance-cron.log": {
-      "restarts": 0,
-      "started": 2,
-      "loopScore": 0
-    },
-    "site-maintenance.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "site-promo-cron.log": {
-      "restarts": 0,
-      "started": 3,
-      "loopScore": 0
-    },
-    "site-promo-orchestrator.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "spec-dev-cron.log": {
-      "restarts": 0,
-      "started": 4,
-      "loopScore": 0
-    },
-    "spec-dev-orchestrator.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "sync-health.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "syntax-continuous.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "syntax-fix-launcher.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "syntax-monitor.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "syntax-orchestrator.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "test-google-docs-automation.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "ui-beautify.log": {
-      "restarts": 0,
-      "started": 8718,
-      "loopScore": 0
-    },
-    "ui-evolution-cron.log": {
-      "restarts": 0,
-      "started": 1,
-      "loopScore": 0
-    },
-    "ui-evolution-orchestrator.log": {
       "restarts": 0,
       "started": 0,
       "loopScore": 0
@@ -440,15 +55,10 @@
       "restarts": 0,
       "started": 0,
       "loopScore": 0
-    },
-    "venture-orchestrator.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
     }
   },
   "duplicates": [],
   "totals": {
-    "agents": 822
+    "agents": 905
   }
 }
