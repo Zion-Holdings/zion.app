@@ -11,6 +11,9 @@ export default function EnhancedNavigation() {
           <Link href="/about"><a>About</a></Link>
           <Link href="/blog"><a>Blog</a></Link>
           <Link href="/automation"><a>Automations</a></Link>
+          <Link href="/automation/innovation"><a>Innovation</a></Link>
+          <Link href="/automation/tech-radar"><a>Tech Radar</a></Link>
+          <Link href="/automation/security"><a>Security</a></Link>
           <Link href="/contact"><a>Contact</a></Link>
         </div>
       </div>
