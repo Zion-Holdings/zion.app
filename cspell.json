@@ -1,0 +1,36 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "version": "0.2",
+  "language": "en",
+  "ignorePaths": [
+    ".git",
+    "node_modules",
+    "dist",
+    ".github"
+  ],
+  "words": [
+    "MLOps",
+    "LangChain",
+    "Pinecone",
+    "FAISS",
+    "Kubernetes",
+    "GraphQL",
+    "PostgreSQL",
+    "Flink",
+    "Prometheus",
+    "Grafana",
+    "MLflow",
+    "Weights",
+    "Biases",
+    "WeightsAndBiases",
+    "RAG",
+    "Wandb",
+    "PyTorch",
+    "Nextjs",
+    "Redis",
+    "CI",
+    "CD",
+    "timezone",
+    "favicon"
+  ]
+}

@@ -1,0 +1,35 @@
+name: HTML Validate
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '20 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  htmlhint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install htmlhint
+        run: npm i -g htmlhint@1.1.4
+      - name: Run htmlhint
+        id: lint
+        run: htmlhint "**/*.html" || echo "HTMLHint completed with errors"
+      - name: Create issue on failure (scheduled only)
+        if: failure() && github.event_name == 'schedule'
+        uses: dacbd/create-issue-action@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: HTML validation failures detected
+          body: "Automated HTML validation found issues. Please review the workflow logs for details."

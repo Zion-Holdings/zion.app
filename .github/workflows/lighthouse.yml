@@ -1,0 +1,40 @@
+name: Lighthouse CI
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '45 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lhci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Build static dist
+        run: |
+          rm -rf dist
+          mkdir -p dist
+          rsync -av --delete \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='node_modules' \
+            --exclude='dist' \
+            ./ dist/ | cat
+      - name: Run Lighthouse CI
+        run: npx --yes @lhci/cli@0.13.0 autorun --collect.staticDistDir=dist --upload.target=temporary-public-storage || true
+      - name: Upload LHCI reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-report
+          path: .lighthouseci

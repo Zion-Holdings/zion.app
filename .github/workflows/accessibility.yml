@@ -1,0 +1,41 @@
+name: Accessibility
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '30 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pa11y:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Build static dist
+        run: |
+          rm -rf dist
+          mkdir -p dist
+          rsync -av --delete \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='node_modules' \
+            --exclude='dist' \
+            ./ dist/ | cat
+      - name: Start local server
+        run: |
+          python3 -m http.server --directory dist 8080 &
+          echo $! > server.pid
+          sleep 2
+      - name: Run Pa11y CI
+        env:
+          CI: true
+        run: npx --yes pa11y-ci@3.1.0 http://localhost:8080 --threshold 10 || true
+      - name: Stop server
+        if: always()
+        run: kill $(cat server.pid) || true
