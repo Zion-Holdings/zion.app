@@ -1,0 +1,12 @@
+{
+  "name": "Static Whitepaper PDF Exporter",
+  "key": "whitepaper-static-pdf-exporter",
+  "startedAt": "2025-08-09T21:24:14.000Z",
+  "finishedAt": "2025-08-09T21:24:14.022Z",
+  "success": true,
+  "metrics": {
+    "output": "/docs/zion-protocol.pdf",
+    "bytes": 2981
+  },
+  "error": null
+}
