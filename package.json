@@ -214,7 +214,9 @@
     "conflicts:watch": "watch -n 30 bash scripts/check-merge-conflicts.sh || true",
     "conflicts:cron:start": "bash automation/merge-conflict-cron.sh start",
     "conflicts:cron:stop": "bash automation/merge-conflict-cron.sh stop",
-    "conflicts:cron:status": "bash automation/merge-conflict-cron.sh status"
+    "conflicts:cron:status": "bash automation/merge-conflict-cron.sh status",
+    "autopilot:economy": "ts-node scripts/economy-autopilot.ts",
+    "postbuild": "mkdir -p public/reports/economy && cp -r data/reports/economy/* public/reports/economy/ || true"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
