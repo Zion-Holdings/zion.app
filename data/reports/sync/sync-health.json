@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-09T13:00:36.085Z",
+  "timestamp": "2025-08-09T13:01:35.386Z",
   "host": "Miami2-2.local",
   "repoRoot": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app",
   "status": "degraded",
@@ -32,7 +32,7 @@
     {
       "name": "advanced-git-sync-lock-stale",
       "ok": true,
-      "details": "ageMs=Infinity"
+      "details": "ageMs=5631.2314453125"
     },
     {
       "name": "git-pull-rebase-lock-stale",
@@ -52,7 +52,7 @@
     {
       "name": "working-tree-clean",
       "ok": false,
-      "details": "changed=5"
+      "details": "changed=56"
     }
   ]
 }
