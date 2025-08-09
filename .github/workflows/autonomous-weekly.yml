@@ -1,0 +1,52 @@
+name: Autonomous Weekly Orchestrator
+
+on:
+  schedule:
+    - cron: '23 4 * * 1'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: autonomous-weekly
+  cancel-in-progress: false
+
+jobs:
+  run-weekly-orchestrations:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Run long-running analysis and generation
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          APEX_DOMAIN: ${{ secrets.APEX_DOMAIN }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          set -euo pipefail
+          npm run ui-evolution:analyze || true
+          npm run ui-evolution:factory || true
+          npm run ui-evolution:beautify || true
+          npm run saas:analyze || true
+          npm run venture:report || true
+      - name: Create PR with batched changes
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: chore/autonomous-weekly-batch
+          commit-message: 'chore(automation): weekly autonomous batch updates'
+          title: 'chore(automation): weekly autonomous batch updates'
+          body: 'Automated weekly batch changes from orchestrated workflows.'
+          labels: automations
