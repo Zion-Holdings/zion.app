@@ -1,0 +1,34 @@
+name: Rapid Git Sync (3m)
+
+on:
+  schedule:
+    - cron: '*/3 * * * *'
+  workflow_dispatch: {}
+
+concurrency:
+  group: rapid-git-sync-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies (minimal)
+        run: npm ci --omit=dev || npm ci
+
+      - name: Git Sync
+        run: node automation/git-sync.cjs | cat
