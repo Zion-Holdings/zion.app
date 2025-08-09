@@ -1,0 +1,220 @@
+{
+  "updatedAt": "2025-08-09T21:43:23.779Z",
+  "items": [
+    {
+      "source": "dev.to",
+      "title": "Ship Retrospective Action Items Directly to GitHub Projects",
+      "url": "https://dev.to/mattlewandowski93/ship-retrospective-action-items-directly-to-github-projects-bba",
+      "tags": [
+        "agile",
+        "github",
+        "productivity",
+        "webdev"
+      ],
+      "score": 0.22
+    },
+    {
+      "source": "dev.to",
+      "title": "📢 Calling All Developers — We Need Your Insights",
+      "url": "https://dev.to/adithya-balan/calling-all-developers-we-need-your-insights-1dje",
+      "tags": [
+        "webdev",
+        "programming",
+        "javascript",
+        "ai"
+      ],
+      "score": 0.18
+    },
+    {
+      "source": "dev.to",
+      "title": "Everyone is planning to build an AI based business, but rarely do people tell us what we need to build an AI business. Here are my top 5 learnings when I was building the ReThynk AI company from scratch.",
+      "url": "https://dev.to/jaideepparashar/everyone-is-planning-to-build-an-ai-based-business-but-rarely-do-people-tell-us-what-we-need-to-4pid",
+      "tags": [
+        "ai",
+        "discuss",
+        "learning",
+        "learngoogleaistudio"
+      ],
+      "score": 0.15
+    },
+    {
+      "source": "dev.to",
+      "title": "5 Lessons from Building an AI Company",
+      "url": "https://dev.to/jaideepparashar/5-lessons-from-building-an-ai-company-6li",
+      "tags": [
+        "ai",
+        "discuss",
+        "learning",
+        "learngoogleaistudio"
+      ],
+      "score": 0.15
+    },
+    {
+      "source": "dev.to",
+      "title": "KeyPilot – Semantic API Gateway with Real-Time AI Routing & Caching",
+      "url": "https://dev.to/joeljaison394/keypilot-semantic-api-gateway-with-real-time-ai-routing-caching-2b94",
+      "tags": [
+        "redischallenge",
+        "devchallenge",
+        "database",
+        "ai"
+      ],
+      "score": 0.12
+    },
+    {
+      "source": "dev.to",
+      "title": "From Station to Server: Learning APIs Through a Train Ride",
+      "url": "https://dev.to/debasis_panda_31e768f5e44/from-station-to-server-learning-apis-through-a-train-ride-5pp",
+      "tags": [],
+      "score": 0.12
+    },
+    {
+      "source": "dev.to",
+      "title": "🎑Beginners guide to \"869. Reordered Power of 2\"(C++ | JavaScript | Python)",
+      "url": "https://dev.to/om_shree_0709/beginners-guide-to-869-reordered-power-of-2c-javascript-python-ami",
+      "tags": [
+        "programming",
+        "cpp",
+        "javascript",
+        "python"
+      ],
+      "score": 0.1
+    },
+    {
+      "source": "dev.to",
+      "title": "Does the edge need a new database?",
+      "url": "https://dev.to/surrealdb/does-the-edge-need-a-new-database-2aic",
+      "tags": [
+        "database",
+        "surrealdb",
+        "programming",
+        "rust"
+      ],
+      "score": 0.1
+    },
+    {
+      "source": "dev.to",
+      "title": "The Certificate Trap That's Killing Developer Careers in India 💀",
+      "url": "https://dev.to/shiva_shanker_k/the-certificate-trap-thats-killing-developer-careers-in-india-ghd",
+      "tags": [
+        "beginners",
+        "discuss",
+        "careerdevelopment",
+        "developers"
+      ],
+      "score": 0.07
+    },
+    {
+      "source": "dev.to",
+      "title": "7 Git Commands You Probably Don’t Know (But Should)",
+      "url": "https://dev.to/devshefali/7-git-commands-you-probably-dont-know-but-should-3bnl",
+      "tags": [
+        "webdev",
+        "programming",
+        "git",
+        "github"
+      ],
+      "score": 0.07
+    },
+    {
+      "source": "dev.to",
+      "title": "Linear Regression with Gradient Descent",
+      "url": "https://dev.to/alvbarros/linear-regression-with-gradient-descent-39p1",
+      "tags": [
+        "algorithms",
+        "python",
+        "datascience",
+        "machinelearning"
+      ],
+      "score": 0.06
+    },
+    {
+      "source": "dev.to",
+      "title": "Laravel Spy: Easily Log Your Application HTTP requests",
+      "url": "https://dev.to/rezakhademix/laravel-spy-easily-log-your-application-http-requests-2chc",
+      "tags": [
+        "webdev",
+        "laravel",
+        "php",
+        "programming"
+      ],
+      "score": 0.06
+    },
+    {
+      "source": "dev.to",
+      "title": "How Much Bandwidth Do You Need for an API in 2025?",
+      "url": "https://dev.to/reynaldi/how-much-bandwidth-do-you-need-for-an-api-in-2025-440p",
+      "tags": [
+        "webdev",
+        "programming",
+        "api",
+        "discuss"
+      ],
+      "score": 0.06
+    },
+    {
+      "source": "dev.to",
+      "title": "TravelMate AI: Real-Time AI Travel Planner Powered by Redis Stack",
+      "url": "https://dev.to/sumeetweb/travelmate-ai-real-time-ai-travel-planner-powered-by-redis-stack-4cn2",
+      "tags": [
+        "redischallenge",
+        "devchallenge",
+        "database",
+        "ai"
+      ],
+      "score": 0.06
+    },
+    {
+      "source": "dev.to",
+      "title": "Part 8:How to Analyze Data Without Feeling Lost",
+      "url": "https://dev.to/sanaipei001/part-8how-to-analyze-data-without-feeling-lost-4pcf",
+      "tags": [],
+      "score": 0.05
+    },
+    {
+      "source": "dev.to",
+      "title": "Part 10:Storytelling With Data",
+      "url": "https://dev.to/sanaipei001/part-10storytelling-with-data-3l7p",
+      "tags": [],
+      "score": 0.05
+    },
+    {
+      "source": "dev.to",
+      "title": "Part 7:Cleaning Data Like a Pro",
+      "url": "https://dev.to/sanaipei001/part-7cleaning-data-like-a-pro-3aa1",
+      "tags": [],
+      "score": 0.05
+    },
+    {
+      "source": "dev.to",
+      "title": "Understanding @MainActor in Swift: When and How to Use It",
+      "url": "https://dev.to/arshtechpro/understanding-mainactor-in-swift-when-and-how-to-use-it-4ii4",
+      "tags": [
+        "ios",
+        "swift",
+        "programming",
+        "mobile"
+      ],
+      "score": 0.05
+    },
+    {
+      "source": "dev.to",
+      "title": "Part 11:Avoiding Common Beginner Mistakes",
+      "url": "https://dev.to/sanaipei001/part-11avoiding-common-beginner-mistakes-2f9h",
+      "tags": [],
+      "score": 0.05
+    },
+    {
+      "source": "dev.to",
+      "title": "BEST BLOGPOST ABOUT INTIALIZATION AND NORAMLIZATION I COULD FIND!!",
+      "url": "https://dev.to/brokttv/best-blogpost-about-intialization-and-noramlization-i-could-find-2e27",
+      "tags": [
+        "ai",
+        "machinelearning",
+        "programming",
+        "tutorial"
+      ],
+      "score": 0.05
+    }
+  ]
+}

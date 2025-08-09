@@ -1,0 +1,232 @@
+{
+  "updatedAt": "2025-08-09T21:43:34.051Z",
+  "total": 55,
+  "byLicense": {
+    "Apache-2.0": 4,
+    "UNKNOWN": 1,
+    "MIT": 44,
+    "ISC": 6
+  },
+  "items": [
+    {
+      "name": "@commitlint/cli",
+      "license": "MIT"
+    },
+    {
+      "name": "@commitlint/config-conventional",
+      "license": "MIT"
+    },
+    {
+      "name": "@eslint/js",
+      "license": "MIT"
+    },
+    {
+      "name": "@google-analytics/data",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "@google/generative-ai",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "@magneticwatermelon/mcp-toolkit",
+      "license": "UNKNOWN"
+    },
+    {
+      "name": "@modelcontextprotocol/sdk",
+      "license": "MIT"
+    },
+    {
+      "name": "@modelcontextprotocol/server-filesystem",
+      "license": "MIT"
+    },
+    {
+      "name": "@modelcontextprotocol/server-memory",
+      "license": "MIT"
+    },
+    {
+      "name": "@modelcontextprotocol/server-sequential-thinking",
+      "license": "MIT"
+    },
+    {
+      "name": "@netlify/plugin-nextjs",
+      "license": "MIT"
+    },
+    {
+      "name": "@supabase/ssr",
+      "license": "MIT"
+    },
+    {
+      "name": "@supabase/supabase-js",
+      "license": "MIT"
+    },
+    {
+      "name": "@testing-library/jest-dom",
+      "license": "MIT"
+    },
+    {
+      "name": "@testing-library/react",
+      "license": "MIT"
+    },
+    {
+      "name": "@types/node",
+      "license": "MIT"
+    },
+    {
+      "name": "@types/node-cron",
+      "license": "MIT"
+    },
+    {
+      "name": "@types/react",
+      "license": "MIT"
+    },
+    {
+      "name": "@types/react-datepicker",
+      "license": "MIT"
+    },
+    {
+      "name": "@types/react-dom",
+      "license": "MIT"
+    },
+    {
+      "name": "@typescript-eslint/eslint-plugin",
+      "license": "MIT"
+    },
+    {
+      "name": "@typescript-eslint/parser",
+      "license": "MIT"
+    },
+    {
+      "name": "autoprefixer",
+      "license": "MIT"
+    },
+    {
+      "name": "axios",
+      "license": "MIT"
+    },
+    {
+      "name": "chalk",
+      "license": "MIT"
+    },
+    {
+      "name": "cheerio",
+      "license": "MIT"
+    },
+    {
+      "name": "child_process",
+      "license": "ISC"
+    },
+    {
+      "name": "chokidar",
+      "license": "MIT"
+    },
+    {
+      "name": "cron-parser",
+      "license": "MIT"
+    },
+    {
+      "name": "eslint",
+      "license": "MIT"
+    },
+    {
+      "name": "eslint-config-next",
+      "license": "MIT"
+    },
+    {
+      "name": "eslint-plugin-react-hooks",
+      "license": "MIT"
+    },
+    {
+      "name": "eslint-plugin-react-refresh",
+      "license": "MIT"
+    },
+    {
+      "name": "events",
+      "license": "MIT"
+    },
+    {
+      "name": "framer-motion",
+      "license": "MIT"
+    },
+    {
+      "name": "fs",
+      "license": "ISC"
+    },
+    {
+      "name": "fs-extra",
+      "license": "MIT"
+    },
+    {
+      "name": "glob",
+      "license": "ISC"
+    },
+    {
+      "name": "https",
+      "license": "ISC"
+    },
+    {
+      "name": "husky",
+      "license": "MIT"
+    },
+    {
+      "name": "import-fresh",
+      "license": "MIT"
+    },
+    {
+      "name": "lint-staged",
+      "license": "MIT"
+    },
+    {
+      "name": "lucide-react",
+      "license": "ISC"
+    },
+    {
+      "name": "next",
+      "license": "MIT"
+    },
+    {
+      "name": "node-cron",
+      "license": "ISC"
+    },
+    {
+      "name": "openai",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "path",
+      "license": "MIT"
+    },
+    {
+      "name": "postcss",
+      "license": "MIT"
+    },
+    {
+      "name": "react",
+      "license": "MIT"
+    },
+    {
+      "name": "react-datepicker",
+      "license": "MIT"
+    },
+    {
+      "name": "react-dom",
+      "license": "MIT"
+    },
+    {
+      "name": "tailwindcss",
+      "license": "MIT"
+    },
+    {
+      "name": "ts-node",
+      "license": "MIT"
+    },
+    {
+      "name": "typescript",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "uuid",
+      "license": "MIT"
+    }
+  ]
+}

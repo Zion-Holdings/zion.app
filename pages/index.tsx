@@ -35,6 +35,18 @@ export default function Home() {
             <div className="text-sm opacity-80">Tracks stars of top repos across key topics.</div>
           </a>
         </Link>
+        <Link href="/automations/content">
+          <a className="enhanced-card enhanced-hover border border-gray-100 dark:border-gray-800">
+            <div className="font-medium mb-1">Tech Content Curator</div>
+            <div className="text-sm opacity-80">Aggregates DEV.to and Reddit programming content.</div>
+          </a>
+        </Link>
+        <Link href="/automations/licenses">
+          <a className="enhanced-card enhanced-hover border border-gray-100 dark:border-gray-800">
+            <div className="font-medium mb-1">License Compliance Auditor</div>
+            <div className="text-sm opacity-80">Scans dependency licenses for compliance insights.</div>
+          </a>
+        </Link>
       </div>
     </div>
   );
