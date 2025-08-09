@@ -1,0 +1,38 @@
+name: Hugging Face Spaces (30-min)
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  hf-spaces:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: 'npm'
+      - name: Install deps
+        run: npm ci
+      - name: Run HF Spaces
+        run: node automation/hf-spaces.cjs
+      - name: Commit and push if changed
+        run: |
+          if [ -n "$(git status --porcelain data/hf-spaces.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/hf-spaces.json
+            git commit -m "chore(automation): update HF spaces"
+            git push origin HEAD:main
+          else
+            echo "No changes to commit."
+          fi

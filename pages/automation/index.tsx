@@ -28,6 +28,10 @@ export default function AutomationHub() {
           <FeatureCard title="NPM Trends" href="/automation/npm-trends" desc="Fresh packages around Agents/Web3/DAO." />
           <FeatureCard title="OSV Watch" href="/automation/osv-watch" desc="Known vulnerabilities in dependencies." />
           <FeatureCard title="GitHub Pulse" href="/automation/github-pulse" desc="Stars, issues, PRs in the last 24h." />
+          <FeatureCard title="HF Models" href="/automation/hf-models" desc="Top agent-related models on Hugging Face." />
+          <FeatureCard title="HF Spaces" href="/automation/hf-spaces" desc="Trending agent Spaces on Hugging Face." />
+          <FeatureCard title="DAO Leaderboard" href="/automation/dao-leaderboard" desc="Ranked by recent Snapshot participation." />
+          <FeatureCard title="Roadmap Issues" href="/automation/roadmap-issues" desc="Open roadmap/feature/bug issues." />
         </div>
       </div>
     </EnhancedLayout>
