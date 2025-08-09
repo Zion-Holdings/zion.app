@@ -1,6 +1,6 @@
 {
-  "timestamp": "2025-08-09T13:01:31.949Z",
-  "filesAnalyzed": 158,
+  "timestamp": "2025-08-09T16:43:38.307Z",
+  "filesAnalyzed": 159,
   "items": [
     {
       "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/404.tsx",
@@ -744,6 +744,18 @@
         "missing_enhanced_layout",
         "missing_skip_link",
         "missing_breadcrumbs",
+        "missing_head_import",
+        "missing_viewport_meta",
+        "no_dark_theme_support"
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t15-23-17-366z.tsx",
+      "issues": [
+        "missing_enhanced_layout",
+        "missing_skip_link",
+        "missing_breadcrumbs",
+        "missing_head_import",
         "missing_viewport_meta",
         "no_dark_theme_support"
       ]

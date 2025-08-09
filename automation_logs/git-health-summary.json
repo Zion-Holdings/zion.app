@@ -1,7 +1,11 @@
 {
-  "ok": true,
-  "errors": [],
-  "warnings": [],
+  "ok": false,
+  "errors": [
+    "git fsck reported issues. Run with --fix locally to attempt repair."
+  ],
+  "warnings": [
+    "git fetch --prune failed: fatal: .git/index: index file smaller than expected\n"
+  ],
   "checks": {
     "user": {
       "name": "Automation Bot",
@@ -9,13 +13,13 @@
     },
     "origin": "origin\thttps://github.com/Zion-Holdings/zion.app.git (fetch)\norigin\thttps://github.com/Zion-Holdings/zion.app.git (push)",
     "fsck": {
-      "status": 0,
+      "status": 128,
       "output": ""
     },
     "divergence": {
       "behind": 0,
       "ahead": 0
     },
-    "working": "dirty"
+    "working": "clean"
   }
 }
