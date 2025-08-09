@@ -1,0 +1,30 @@
+name: Sitemap Daily
+
+on:
+  schedule:
+    - cron: "0 1 * * *"
+  push:
+    branches: [ main ]
+    paths:
+      - 'pages/**'
+      - 'public/**'
+  workflow_dispatch: {}
+
+jobs:
+  sitemap:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - name: Generate sitemap
+        run: npm run sitemap
+      - name: Commit sitemap
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore(seo): update sitemap.xml'
+          file_pattern: public/sitemap.xml
