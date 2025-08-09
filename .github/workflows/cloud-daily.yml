@@ -1,0 +1,68 @@
+name: Cloud Daily Automations
+
+on:
+  schedule:
+    - cron: '15 3 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cloud-daily
+  cancel-in-progress: false
+
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+
+      - name: Install deps
+        run: npm ci --no-audit --no-fund
+
+      - name: Lint check and auto-fix
+        run: npm run linting:fix || true
+
+      - name: Design improvements cycle
+        run: npm run design:analyze || true
+
+      - name: SaaS services analyzer
+        run: npm run saas:analyze || true
+
+      - name: Venture analyzer
+        run: npm run venture:analyze || true
+
+      - name: Responsive content analyzer
+        run: npm run responsive:analyze || true
+
+      - name: Feature marketing analyzer
+        run: npm run feature-marketing:analyze || true
+
+      - name: Homepage promo
+        run: npm run homepage-promo:analyze || true
+
+      - name: UI evolution factory
+        run: npm run ui-evolution:factory || true
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(automation): daily cloud automations output"
+            git push
+          else
+            echo "No changes to commit"
+          fi
