@@ -1,7 +1,0 @@
-- Ensure the Netlify site is continuously monitored via API and CI. Checks should run locally (cron) and in GitHub Actions.
-- Treat any non-ready deploy state (error, canceled) as a failure that triggers alerting and investigation.
-- Prefer zero-interaction, headless scripts with clear logs stored in `automation/logs/`.
-- Configure credentials with env vars: `NETLIFY_AUTH_TOKEN`, `NETLIFY_SITE_ID` or `NETLIFY_SITE_NAME`, and optional `NETLIFY_SITE_URL`.
-- Keep checks lightweight and frequent (≈60s locally, 5 min in CI) while respecting rate limits.
-- Never block developer workflows if secrets are missing; skip with a clear message instead of failing noisily.
-- When builds fail, prioritize fixing the root cause and restoring green status before new feature work.
