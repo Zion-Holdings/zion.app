@@ -1,0 +1,15 @@
+### Replace placeholders: PROJECT_REF, JWT, TALENT_ID
+POST https://PROJECT_REF.functions.supabase.co/ai-profile
+Authorization: Bearer JWT
+Content-Type: application/json
+
+{
+  "talentId": "TALENT_ID",
+  "fullName": "Ada Lovelace",
+  "bio": "Pioneer in computing with experience in analytical engines and algorithm design. Led teams building analytical frameworks and published on computational methods.",
+  "skillsRaw": "Python, JavaScript, leadership, AWS, Docker, Kubernetes",
+  "roles": "Software Engineer, Tech Lead",
+  "industry": "AI/ML, Cloud",
+  "email": "ada@example.com",
+  "notify": true
+}
