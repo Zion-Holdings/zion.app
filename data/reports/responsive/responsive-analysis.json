@@ -1,7 +1,7 @@
 {
-  "timestamp": "2025-08-09T15:23:12.924Z",
-  "filesAnalyzed": 158,
-  "issuesFound": 158,
+  "timestamp": "2025-08-09T15:23:45.547Z",
+  "filesAnalyzed": 159,
+  "issuesFound": 159,
   "items": [
     {
       "filePath": "/workspace/pages/404.tsx",
@@ -542,6 +542,15 @@
     {
       "filePath": "/workspace/pages/auto/auto-update-2025-08-09t13-01-26-371z.tsx",
       "issues": [
+        "missing_head",
+        "missing_viewport",
+        "no_tailwind_responsive_classes"
+      ]
+    },
+    {
+      "filePath": "/workspace/pages/auto/auto-update-2025-08-09t15-23-17-366z.tsx",
+      "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
