@@ -1,0 +1,41 @@
+name: Governance Pulse (Daily)
+
+on:
+  schedule:
+    - cron: '19 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  governance:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: 'npm'
+      - name: Install deps
+        run: npm ci
+      - name: Run Governance Pulse
+        run: node automation/governance-pulse.cjs
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore(automation): update Governance Pulse data'
+          title: 'chore(automation): Governance Pulse update'
+          body: |
+            Automated Governance Pulse data refresh.
+          branch: automation/governance-pulse
+          delete-branch: true
+          labels: |
+            automation
+            auto-merge

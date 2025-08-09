@@ -1,0 +1,1 @@
+export default function Page() { return <div className="py-10">Sustainable technology practices</div>; }
