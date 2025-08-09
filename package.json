@@ -15,6 +15,7 @@
     "npm": ">=10.0.0"
   },
   "scripts": {
+    "homepage:update": "node automation/homepage-orchestrator.cjs",
     "deps:maintain": "node automation/dependency-update-orchestrator.cjs",
     "deps:cron:start": "bash automation/dependency-maintenance-cron.sh",
     "sitemap": "node scripts/generate-sitemap.mjs",
@@ -76,7 +77,7 @@
     "automation:improvement": "node automation/continuous-automation-improvement-system.js",
     "automation:guardian": "node automation/automation-guardian-10min.cjs",
     "automation:cloud": "node automation/cloud-autonomous-orchestrator.cjs",
-    "automation:discover": "node automation/auto-discovery-runner.cjs"
+    "automation:discover": "node automation/auto-discovery-runner.cjs",
     "automation:improvement:dev": "nodemon automation/continuous-automation-improvement-system.js",
     "automation:coordinator": "node automation/master-automation-coordinator.js",
     "automation:coordinator:dev": "nodemon automation/master-automation-coordinator.js",

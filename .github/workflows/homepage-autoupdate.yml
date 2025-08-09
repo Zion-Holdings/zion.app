@@ -1,0 +1,42 @@
+name: Homepage Auto-Update (Fast)
+
+on:
+  schedule:
+    - cron: '*/6 * * * *'
+  workflow_dispatch: {}
+
+concurrency:
+  group: homepage-auto-update-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  update-homepage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate homepage features and sync
+        run: node automation/homepage-orchestrator.cjs | cat
+
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: homepage-logs
+          path: automation/logs/**/*
+          if-no-files-found: ignore

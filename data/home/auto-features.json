@@ -1,0 +1,30 @@
+{
+  "updatedAt": "2025-08-09T22:02:29.831Z",
+  "features": [
+    {
+      "title": "Self-Improving Website",
+      "description": "Autonomous workflows run every few minutes to ideate, improve UI, and fix issues automatically.",
+      "cta": {
+        "label": "See the workflows",
+        "href": "https://github.com/Zion-Holdings/zion.app/tree/main/.github/workflows"
+      },
+      "tags": [
+        "Autonomous",
+        "CI",
+        "Cloud"
+      ]
+    },
+    {
+      "title": "Revenue Experimentation",
+      "description": "New monetization ideas are generated, validated, and applied where valuable.",
+      "cta": {
+        "label": "See revenue ideas",
+        "href": "https://github.com/Zion-Holdings/zion.app/tree/main/automation/revenue-ideas-agents"
+      },
+      "tags": [
+        "Growth",
+        "Experiments"
+      ]
+    }
+  ]
+}
