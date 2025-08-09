@@ -84,6 +84,8 @@ async function main() {
   const md = renderRoadmap(issues, commits);
   ensureDir(path.join(process.cwd(), 'docs'));
   fs.writeFileSync(path.join(process.cwd(), 'docs', 'ROADMAP.md'), md, 'utf8');
+  ensureDir(path.join(process.cwd(), 'public', 'autonomy'));
+  fs.writeFileSync(path.join(process.cwd(), 'public', 'autonomy', 'ROADMAP.md'), md, 'utf8');
 
   const snapshot = {
     generatedAt: new Date().toISOString(),
@@ -93,7 +95,7 @@ async function main() {
   ensureDir(path.join(process.cwd(), 'automation_logs'));
   const id = new Date().toISOString().replace(/[:.]/g, '-').toLowerCase();
   fs.writeFileSync(path.join(process.cwd(), 'automation_logs', `roadmap-${id}.json`), JSON.stringify(snapshot, null, 2));
-  console.log('Updated docs/ROADMAP.md and wrote snapshot');
+  console.log('Updated docs/ROADMAP.md, public/autonomy/ROADMAP.md and wrote snapshot');
 }
 
 main();

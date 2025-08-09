@@ -21,8 +21,12 @@ export default function HomePage() {
           <li>Roadmap and whitepaper synthesis suggestions</li>
           <li>Agent observability and health signals</li>
         </ul>
-        <div className="mt-3">
-          <Link href="/automation/cloud"><a className="underline text-indigo-600 dark:text-indigo-400">View logs and details</a></Link>
+        <div className="mt-3 flex flex-wrap gap-3 text-sm">
+          <a href="/autonomy/ROADMAP.md" className="underline text-indigo-600 dark:text-indigo-400">Roadmap (live)</a>
+          <a href="/autonomy/LINK_HEALTH.md" className="underline text-indigo-600 dark:text-indigo-400">Link Health (live)</a>
+          <a href="/autonomy/INTELLIGENCE_DIGEST.md" className="underline text-indigo-600 dark:text-indigo-400">Intelligence Digest (live)</a>
+          <a href="/autonomy/SEO_AUDIT.md" className="underline text-indigo-600 dark:text-indigo-400">SEO Audit (live)</a>
+          <a href="/autonomy/CHANGELOG_AUTONOMY.md" className="underline text-indigo-600 dark:text-indigo-400">Autonomy Changelog (live)</a>
         </div>
       </div>
     </div>

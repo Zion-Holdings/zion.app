@@ -75,10 +75,12 @@ async function main() {
 
   ensureDir('docs');
   fs.writeFileSync(path.join('docs', 'LINK_HEALTH.md'), md, 'utf8');
+  ensureDir(path.join('public', 'autonomy'));
+  fs.writeFileSync(path.join('public', 'autonomy', 'LINK_HEALTH.md'), md, 'utf8');
   ensureDir('automation_logs');
   const id = new Date().toISOString().replace(/[:.]/g, '-').toLowerCase();
   fs.writeFileSync(path.join('automation_logs', `link-health-${id}.json`), JSON.stringify({ generatedAt: new Date().toISOString(), total: results.length, broken: broken.length }, null, 2));
-  console.log('Wrote docs/LINK_HEALTH.md and link health log');
+  console.log('Wrote docs/LINK_HEALTH.md, public/autonomy/LINK_HEALTH.md and link health log');
 }
 
 main();

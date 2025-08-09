@@ -60,9 +60,11 @@ async function main() {
   ensureDir('docs');
   ensureDir('automation_logs');
   fs.writeFileSync(path.join('docs', 'INTELLIGENCE_DIGEST.md'), digest, 'utf8');
+  ensureDir(path.join('public', 'autonomy'));
+  fs.writeFileSync(path.join('public', 'autonomy', 'INTELLIGENCE_DIGEST.md'), digest, 'utf8');
   const id = new Date().toISOString().replace(/[:.]/g, '-').toLowerCase();
   fs.writeFileSync(path.join('automation_logs', `intelligence-${id}.json`), JSON.stringify({ generatedAt: new Date().toISOString(), sources: SOURCES, counts: withItems.map((w) => w.items.length) }, null, 2));
-  console.log('Wrote docs/INTELLIGENCE_DIGEST.md and intelligence log');
+  console.log('Wrote docs/INTELLIGENCE_DIGEST.md, public/autonomy/INTELLIGENCE_DIGEST.md and intelligence log');
 }
 
 main();
