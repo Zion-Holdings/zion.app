@@ -36,19 +36,34 @@ function ensureGitConfig() {
   run(`git config user.email "${email}"`);
 }
 
+function fastSync() {
+  run('git fetch --all --prune');
+  const branchRes = run('git rev-parse --abbrev-ref HEAD');
+  const currentBranch = (branchRes.out || '').trim();
+  if (currentBranch && currentBranch !== 'HEAD') {
+    const base = process.env.AUTOBOT_BRANCH_BASE || currentBranch;
+    run(`git rebase origin/${base} || true`);
+  } else {
+    // Detached head or unknown; try main/master
+    run('git rebase origin/main || true');
+    run('git rebase origin/master || true');
+  }
+}
+
 function commitAndPush(branchName) {
   run('git add -A');
   const ts = new Date().toISOString();
   const msg = `chore(autobot): automated improvements @ ${ts}`;
-  run(`git commit -m "${msg}"`);
-  // Try push to same branch
+  const commit = run(`git commit -m "${msg}"`);
+  if (!commit.ok && /nothing to commit/i.test(commit.out || '')) {
+    return { pushed: false };
+  }
   const current = run('git rev-parse --abbrev-ref HEAD');
   const onMain = current.out.trim() === 'main' || current.out.trim() === 'master';
   if (!onMain) {
     run('git push --no-verify');
     return { pushed: true };
   }
-  // If on main, create a new branch
   const safeBranch = branchName || `autobot/${ts.replace(/[:.]/g, '-')}`;
   run(`git checkout -b ${safeBranch}`);
   run('git push --set-upstream origin ' + safeBranch);
@@ -57,6 +72,7 @@ function commitAndPush(branchName) {
 
 async function main() {
   ensureGitConfig();
+  fastSync();
 
   const tasks = getTasks();
   if (tasks.length === 0) {
@@ -67,7 +83,6 @@ async function main() {
   console.log('Running tasks:', tasks);
 
   for (const task of tasks) {
-    // Prefer npm scripts when possible
     const cmd = `npm run ${task}`;
     const res = run(cmd);
     if (!res.ok) {
@@ -75,7 +90,7 @@ async function main() {
     }
   }
 
-  // After tasks, auto-fix lint and type issues opportunistically
+  // Opportunistic lint after tasks
   run('npm run lint --silent');
 
   if (!hasChanges()) {
@@ -85,7 +100,6 @@ async function main() {
 
   const { branch } = commitAndPush();
 
-  // Try to open PR via gh if available
   const gh = run('gh --version');
   if (gh.ok && branch) {
     run(`gh pr create --fill --base main --head ${branch}`);
