@@ -1,13 +1,14 @@
 {
-<<<<<<< HEAD
-  "timestamp": "2025-08-09T09:58:36.218Z",
-=======
-  "timestamp": "2025-08-09T12:50:01.850Z",
->>>>>>> b0901144 (chore(sync): capture pending project changes)
+  "timestamp": "2025-08-09T13:01:14.144Z",
   "loops": {
     "adaptive-intelligence-orchestrator.log": {
       "restarts": 0,
-      "started": 7,
+      "started": 11,
+      "loopScore": 0
+    },
+    "ai-trends-cron.log": {
+      "restarts": 0,
+      "started": 1,
       "loopScore": 0
     },
     "ai-trends-researcher.log": {
@@ -17,7 +18,7 @@
     },
     "alignment-cron.log": {
       "restarts": 0,
-      "started": 1,
+      "started": 4,
       "loopScore": 0
     },
     "alignment-orchestrator.log": {
@@ -52,7 +53,7 @@
     },
     "autonomous-error-cron.log": {
       "restarts": 0,
-      "started": 1,
+      "started": 4,
       "loopScore": 0
     },
     "autonomous-error-monitoring-factory.log": {
@@ -77,21 +78,17 @@
     },
     "content-autogen.log": {
       "restarts": 0,
-      "started": 6,
+      "started": 4,
       "loopScore": 0
     },
     "continuous-automation-improvement-system.log": {
       "restarts": 0,
-<<<<<<< HEAD
-      "started": 12,
-=======
-      "started": 15,
->>>>>>> b0901144 (chore(sync): capture pending project changes)
+      "started": 16,
       "loopScore": 0
     },
     "cursor-chat-cron.log": {
       "restarts": 0,
-      "started": 1,
+      "started": 3,
       "loopScore": 0
     },
     "cursor-chat-orchestrator.log": {
@@ -104,14 +101,14 @@
       "started": 0,
       "loopScore": 0
     },
-    "dependency-maintenance-cron.log": {
+    "dependency-update-orchestrator.log": {
       "restarts": 0,
-      "started": 1,
+      "started": 0,
       "loopScore": 0
     },
     "design-cron.log": {
       "restarts": 0,
-      "started": 1,
+      "started": 4,
       "loopScore": 0
     },
     "design-orchestrator.log": {
@@ -131,7 +128,7 @@
     },
     "feature-marketing-cron.log": {
       "restarts": 0,
-      "started": 1,
+      "started": 4,
       "loopScore": 0
     },
     "feature-marketing-orchestrator.log": {
@@ -151,7 +148,7 @@
     },
     "frontend-sync-cron.log": {
       "restarts": 0,
-      "started": 1,
+      "started": 4,
       "loopScore": 0
     },
     "frontend-sync-orchestrator.log": {
@@ -176,7 +173,7 @@
     },
     "homepage-promo-cron.log": {
       "restarts": 0,
-      "started": 1,
+      "started": 4,
       "loopScore": 0
     },
     "homepage-promo-orchestrator.log": {
@@ -186,11 +183,7 @@
     },
     "innovation-agents-runner.log": {
       "restarts": 0,
-<<<<<<< HEAD
-      "started": 29633,
-=======
-      "started": 52996,
->>>>>>> b0901144 (chore(sync): capture pending project changes)
+      "started": 53045,
       "loopScore": 0
     },
     "innovation-orchestrator.log": {
@@ -205,10 +198,20 @@
     },
     "instagram-marketing-cron.log": {
       "restarts": 0,
-      "started": 1,
+      "started": 4,
       "loopScore": 0
     },
     "instagram-marketing-factory.log": {
+      "restarts": 0,
+      "started": 0,
+      "loopScore": 0
+    },
+    "instagram-marketing-orchestrator.log": {
+      "restarts": 0,
+      "started": 0,
+      "loopScore": 0
+    },
+    "instagram-post-latest.log": {
       "restarts": 0,
       "started": 0,
       "loopScore": 0
@@ -220,7 +223,7 @@
     },
     "intelligent-orchestrator.log": {
       "restarts": 0,
-      "started": 10,
+      "started": 12,
       "loopScore": 0
     },
     "launch-autonomous-systems-clean.log": {
@@ -240,12 +243,17 @@
     },
     "linkedin-marketing-cron.log": {
       "restarts": 0,
-      "started": 1,
+      "started": 4,
+      "loopScore": 0
+    },
+    "linkedin-marketing-orchestrator.log": {
+      "restarts": 0,
+      "started": 0,
       "loopScore": 0
     },
     "linkedin-pro-cron.log": {
       "restarts": 0,
-      "started": 1,
+      "started": 4,
       "loopScore": 0
     },
     "linkedin-pro-orchestrator.log": {
@@ -255,16 +263,12 @@
     },
     "lint-automation.log": {
       "restarts": 0,
-      "started": 12,
+      "started": 6,
       "loopScore": 0
     },
     "lint-error-fixer.log": {
       "restarts": 0,
-<<<<<<< HEAD
-      "started": 29,
-=======
-      "started": 73,
->>>>>>> b0901144 (chore(sync): capture pending project changes)
+      "started": 78,
       "loopScore": 0
     },
     "lint-monitor.log": {
@@ -304,7 +308,7 @@
     },
     "netlify-monitor.log": {
       "restarts": 0,
-      "started": 0,
+      "started": 2,
       "loopScore": 0
     },
     "responsive-content-orchestrator.log": {
@@ -329,7 +333,7 @@
     },
     "saas-services-cron.log": {
       "restarts": 0,
-      "started": 1,
+      "started": 3,
       "loopScore": 0
     },
     "saas-services-orchestrator.log": {
@@ -339,7 +343,7 @@
     },
     "self-healing-cron.log": {
       "restarts": 0,
-      "started": 1,
+      "started": 2,
       "loopScore": 0
     },
     "self-healing.log": {
@@ -349,7 +353,7 @@
     },
     "site-link-cron.log": {
       "restarts": 0,
-      "started": 1,
+      "started": 3,
       "loopScore": 0
     },
     "site-link-orchestrator.log": {
@@ -359,7 +363,7 @@
     },
     "site-maintenance-cron.log": {
       "restarts": 0,
-      "started": 1,
+      "started": 2,
       "loopScore": 0
     },
     "site-maintenance.log": {
@@ -369,7 +373,7 @@
     },
     "site-promo-cron.log": {
       "restarts": 0,
-      "started": 1,
+      "started": 3,
       "loopScore": 0
     },
     "site-promo-orchestrator.log": {
@@ -379,7 +383,7 @@
     },
     "spec-dev-cron.log": {
       "restarts": 0,
-      "started": 1,
+      "started": 4,
       "loopScore": 0
     },
     "spec-dev-orchestrator.log": {
@@ -388,11 +392,6 @@
       "loopScore": 0
     },
     "sync-health.log": {
-      "restarts": 0,
-      "started": 0,
-      "loopScore": 0
-    },
-    "sync-manager.log": {
       "restarts": 0,
       "started": 0,
       "loopScore": 0
@@ -424,16 +423,12 @@
     },
     "ui-beautify.log": {
       "restarts": 0,
-<<<<<<< HEAD
-      "started": 2211,
-=======
-      "started": 8717,
+      "started": 8718,
       "loopScore": 0
     },
     "ui-evolution-cron.log": {
       "restarts": 0,
       "started": 1,
->>>>>>> b0901144 (chore(sync): capture pending project changes)
       "loopScore": 0
     },
     "ui-evolution-orchestrator.log": {
@@ -454,10 +449,6 @@
   },
   "duplicates": [],
   "totals": {
-<<<<<<< HEAD
-    "agents": 742
-=======
-    "agents": 645
->>>>>>> b0901144 (chore(sync): capture pending project changes)
+    "agents": 822
   }
 }
