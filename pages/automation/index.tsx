@@ -24,6 +24,10 @@ export default function AutomationHub() {
           ))}
           <FeatureCard title="ArXiv Research" href="/automation/arxiv-research" desc="Fresh AI governance and agents research papers." />
           <FeatureCard title="Remote Roles" href="/automation/remote-roles" desc="Remote jobs in AI/Agents/Web3 filtered for relevance." />
+          <FeatureCard title="StackExchange Insights" href="/automation/stackexchange-insights" desc="Newest questions in AI/Blockchain/DAO tags." />
+          <FeatureCard title="NPM Trends" href="/automation/npm-trends" desc="Fresh packages around Agents/Web3/DAO." />
+          <FeatureCard title="OSV Watch" href="/automation/osv-watch" desc="Known vulnerabilities in dependencies." />
+          <FeatureCard title="GitHub Pulse" href="/automation/github-pulse" desc="Stars, issues, PRs in the last 24h." />
         </div>
       </div>
     </EnhancedLayout>
