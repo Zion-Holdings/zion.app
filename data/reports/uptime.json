@@ -1,0 +1,26 @@
+{
+  "runAt": "2025-08-09T17:25:27.406Z",
+  "base": "http://localhost:3000",
+  "results": [
+    {
+      "url": "http://localhost:3000/",
+      "ok": false,
+      "status": 0
+    },
+    {
+      "url": "http://localhost:3000/academy",
+      "ok": false,
+      "status": 0
+    },
+    {
+      "url": "http://localhost:3000/api/metrics/live",
+      "ok": false,
+      "status": 0
+    },
+    {
+      "url": "http://localhost:3000/api/academy/analytics",
+      "ok": false,
+      "status": 0
+    }
+  ]
+}

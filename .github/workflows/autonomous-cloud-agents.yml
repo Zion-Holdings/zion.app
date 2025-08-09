@@ -1,0 +1,40 @@
+name: Autonomous Cloud Agents
+
+on:
+  schedule:
+    - cron: '*/30 * * * *' # every 30 minutes
+  workflow_dispatch: {}
+
+jobs:
+  run-agents:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install deps
+        run: npm ci
+      - name: Build (for any TS transforms)
+        run: npm run build --if-present
+      - name: Run Academy Insights
+        run: node automation/autonomous-academy-insights.cjs
+      - name: Run Uptime Pinger
+        env:
+          SELF_BASE_URL: ${{ secrets.SELF_BASE_URL || 'https://zion.app' }}
+        run: node automation/autonomous-uptime-pinger.cjs
+      - name: Commit and push
+        run: |
+          git config user.name "zion-bot"
+          git config user.email "bot@zion.app"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore(autonomous): update insights and uptime reports"
+            git push
+          fi

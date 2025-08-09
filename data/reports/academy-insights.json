@@ -1,0 +1,65 @@
+{
+  "generatedAt": "2025-08-09T17:25:27.365Z",
+  "featuredCourses": [
+    {
+      "slug": "ai-engineering-foundations",
+      "reason": "High engagement; matches trend: Edge AI"
+    },
+    {
+      "slug": "devops-cloud-primer",
+      "reason": "Interest in serverless pipelines"
+    }
+  ],
+  "trendingTopics": [
+    {
+      "title": "Mexico to US Livestock Trade halted due to Screwworm spread",
+      "url": "https://www.usda.gov/about-usda/news/press-releases/2025/07/09/secretary-rollins-takes-decisive-action-and-shuts-down-us-southern-border-ports-livestock-trade-due"
+    },
+    {
+      "title": "Show HN: The current sky at your approximate location, as a CSS gradient",
+      "url": "https://sky.dlazaro.ca"
+    },
+    {
+      "title": "Long-term exposure to outdoor air pollution linked to increased risk of dementia",
+      "url": "https://www.cam.ac.uk/research/news/long-term-exposure-to-outdoor-air-pollution-linked-to-increased-risk-of-dementia"
+    },
+    {
+      "title": "OpenFreeMap survived 100k requests per second",
+      "url": "https://blog.hyperknot.com/p/openfreemap-survived-100000-requests"
+    },
+    {
+      "title": "Simon Willison's Lethal Trifecta Talk at the Bay Area AI Security Meetup",
+      "url": "https://simonwillison.net/2025/Aug/9/bay-area-ai/"
+    },
+    {
+      "title": "Quickshell – building blocks for your desktop",
+      "url": "https://quickshell.org/"
+    },
+    {
+      "title": "Empire of the Absurd: A Brief History of the Absurdities of the Soviet Union",
+      "url": "https://laurivahtre.ee/empire-of-the-absurd/"
+    },
+    {
+      "title": "ChatGPT Agent – EU Launch",
+      "url": "https://help.openai.com/en/articles/11752874-chatgpt-agent"
+    },
+    {
+      "title": "A CT scanner reveals surprises inside the 386 processor's ceramic package",
+      "url": "https://www.righto.com/2025/08/intel-386-package-ct-scan.html"
+    },
+    {
+      "title": "Accessibility and the Agentic Web",
+      "url": "https://tetralogical.com/blog/2025/08/08/accessibility-and-the-agentic-web/"
+    }
+  ],
+  "recommendations": [
+    {
+      "title": "Add lesson: Edge AI deployment to mobile",
+      "course": "ai-engineering-foundations"
+    },
+    {
+      "title": "Add module: Serverless ETL with modern runtimes",
+      "course": "devops-cloud-primer"
+    }
+  ]
+}
