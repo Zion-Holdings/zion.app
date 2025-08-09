@@ -9,8 +9,6 @@ if git diff HEAD@{1} --name-only | grep -E "package\.json|package-lock\.json" > 
     npm install
 fi
 
-# Automation system checks removed (script not present)
-
 # Clear build cache if needed
 if git diff HEAD@{1} --name-only | grep -E "next\.config\.js|tsconfig\.json|tailwind\.config\.js" > /dev/null; then
     echo "🧹 Clearing build cache..."
@@ -25,5 +23,14 @@ npm run type-check || {
 
 # Run fast git health check
 node automation/git-health.cjs --fast --fix || true
+
+# Start background git sync loops
+(command -v npm >/dev/null 2>&1 && npm run --silent git:cron:start >/dev/null 2>&1 || true)
+
+# Start core automations (non-blocking)
+(npm run --silent automation:all >/dev/null 2>&1 &) || true
+
+# Kick a quick sync
+(npm run --silent git:sync >/dev/null 2>&1 &) || true
 
 echo "✅ Post-merge actions completed" 

@@ -176,6 +176,7 @@
     "health:dev": "nodemon automation/auto-health-monitor/index.mjs",
     "automation:all:plus": "npm run automation:all & npm run health:start",
     "postautomation": "npm run automation:git-sync",
+    "cursor:start": "bash automation/start-cursor-automations.sh",
     "lint:staged": "lint-staged",
     "ui-evolution:start": "node automation/ui-evolution-launcher.js start",
     "ui-evolution:once": "node automation/ui-evolution-launcher.js once",

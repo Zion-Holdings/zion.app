@@ -15,6 +15,10 @@ if git diff HEAD@{1} --name-only | grep -E "next\.config\.js|tsconfig\.json|tail
     rm -rf .next 2>/dev/null || true
 fi
 
-# Automation system checks removed (script not present)
+# Start background git sync loops
+(command -v npm >/dev/null 2>&1 && npm run --silent git:cron:start >/dev/null 2>&1 || true)
+
+# Start core automations (non-blocking)
+(npm run --silent automation:all >/dev/null 2>&1 &) || true
 
 echo "✅ Post-checkout actions completed"
