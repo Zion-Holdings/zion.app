@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPO_DIR="/workspace"
-SYNC_CMD="cd $REPO_DIR && /usr/bin/env NODE_ENV=production node automation/advanced-git-sync.cjs >> $REPO_DIR/.git/auto-sync.log 2>&1"
-PULL_CMD="cd $REPO_DIR && /usr/bin/env NODE_ENV=production node automation/git-pull-rebase.cjs >> $REPO_DIR/.git/auto-pull.log 2>&1"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+SYNC_CMD="cd \"$REPO_DIR\" && /usr/bin/env NODE_ENV=production node automation/advanced-git-sync.cjs >> \"$REPO_DIR\"/.git/auto-sync.log 2>&1"
+PULL_CMD="cd \"$REPO_DIR\" && /usr/bin/env NODE_ENV=production node automation/git-pull-rebase.cjs >> \"$REPO_DIR\"/.git/auto-pull.log 2>&1"
 BLOCK_BEGIN="# BEGIN ZION GIT AUTO SYNC"
 BLOCK_END="# END ZION GIT AUTO SYNC"
 BG_DIR="$REPO_DIR/.git/.bg"

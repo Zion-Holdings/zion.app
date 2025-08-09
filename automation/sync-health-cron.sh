@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPO_DIR="/workspace"
-CMD="cd $REPO_DIR && /usr/bin/env NODE_ENV=production node automation/sync-health-check.cjs --fix >> $REPO_DIR/.git/sync-health.log 2>&1"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+CMD="cd \"$REPO_DIR\" && /usr/bin/env NODE_ENV=production node automation/sync-health-check.cjs --fix >> \"$REPO_DIR\"/.git/sync-health.log 2>&1"
 BG_DIR="$REPO_DIR/.git/.bg"
 PID_FILE="$BG_DIR/sync-health.pid"
 
