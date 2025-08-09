@@ -1,0 +1,45 @@
+name: Autonomous Changelog Generator
+
+on:
+  schedule:
+    - cron: '50 2 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: autonomous-changelog
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Generate CHANGELOG.md (append today)
+        run: |
+          set -e
+          TODAY=$(date -u +"%Y-%m-%d")
+          echo "\n## ${TODAY}" >> CHANGELOG.md
+          git log --since="24 hours ago" --pretty=format:'- %s (%h)' >> CHANGELOG.md || true
+
+      - name: Commit and push changes (if any)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add CHANGELOG.md
+          if git diff --cached --quiet; then
+            echo "No changelog updates."
+          else
+            git commit -m "docs(changelog): update [skip ci]"
+            git push origin HEAD:main
+          fi

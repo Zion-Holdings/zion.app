@@ -1,0 +1,16 @@
+docs:
+  - '**/*.md'
+
+frontend:
+  - 'pages/**'
+  - 'components/**'
+  - 'styles/**'
+
+automation:
+  - 'automation/**'
+  - '.github/workflows/**'
+  - 'scripts/**'
+
+backend:
+  - 'pages/api/**'
+  - 'utils/**'
