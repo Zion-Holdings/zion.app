@@ -1,0 +1,182 @@
+[
+  {
+    "id": "zgp-01",
+    "code": "ZGP-01",
+    "title": "Amend Constitution",
+    "category": "Governance",
+    "description": "Propose an amendment to the ZionDAO Constitution.",
+    "defaults": {
+      "summary": "Proposed amendment to the ZionDAO Constitution concerning ...",
+      "motivation": "This amendment addresses ...",
+      "specificationImpact": "Changes include ... Impact on governance ...",
+      "codeModuleAffected": "governance/constitution.md",
+      "votingOptions": ["For", "Against", "Abstain"],
+      "fundingNeeded": null
+    }
+  },
+  {
+    "id": "zgp-02",
+    "code": "ZGP-02",
+    "title": "Adjust Tokenomics",
+    "category": "Governance",
+    "description": "Modify token supply, emissions, or distribution.",
+    "defaults": {
+      "summary": "Adjust tokenomics parameters for ...",
+      "motivation": "To align incentives ...",
+      "specificationImpact": "New parameters ... Effect on stakeholders ...",
+      "codeModuleAffected": "protocol/tokenomics.ts",
+      "votingOptions": ["For", "Against", "Abstain"],
+      "fundingNeeded": null
+    }
+  },
+  {
+    "id": "zgp-03",
+    "code": "ZGP-03",
+    "title": "Update Voting Rules",
+    "category": "Governance",
+    "description": "Change quorum, thresholds, or voting durations.",
+    "defaults": {
+      "summary": "Update voting parameters to ...",
+      "motivation": "Improve decision quality ...",
+      "specificationImpact": "Quorum -> x%, Threshold -> y%, Duration -> z ...",
+      "codeModuleAffected": "governance/voting-rules.ts",
+      "votingOptions": ["For", "Against", "Abstain"],
+      "fundingNeeded": null
+    }
+  },
+  {
+    "id": "zgp-04",
+    "code": "ZGP-04",
+    "title": "Launch New Vertical",
+    "category": "Feature Proposals",
+    "description": "Propose launching a new product or ecosystem vertical.",
+    "defaults": {
+      "summary": "Launch a new vertical focused on ...",
+      "motivation": "Unlock growth in ...",
+      "specificationImpact": "Scope, milestones, KPIs ...",
+      "codeModuleAffected": "apps/verticals/new-vertical.md",
+      "votingOptions": ["Approve", "Reject", "Abstain"],
+      "fundingNeeded": {"amount": 0, "currency": "ZION"}
+    }
+  },
+  {
+    "id": "zgp-05",
+    "code": "ZGP-05",
+    "title": "Deploy New Multiverse",
+    "category": "Feature Proposals",
+    "description": "Spin up a new multiverse instance or environment.",
+    "defaults": {
+      "summary": "Deploy a new multiverse focused on ...",
+      "motivation": "Enables experimentation ...",
+      "specificationImpact": "Infra requirements, endpoints ...",
+      "codeModuleAffected": "infra/multiverse/",
+      "votingOptions": ["Approve", "Reject", "Abstain"],
+      "fundingNeeded": {"amount": 0, "currency": "USDC"}
+    }
+  },
+  {
+    "id": "zgp-06",
+    "code": "ZGP-06",
+    "title": "Integrate New Payment Method",
+    "category": "Feature Proposals",
+    "description": "Add a new on/off-ramp or payment provider.",
+    "defaults": {
+      "summary": "Integrate payment method ...",
+      "motivation": "Broaden accessibility ...",
+      "specificationImpact": "Provider, API, risk ...",
+      "codeModuleAffected": "services/payments/",
+      "votingOptions": ["Approve", "Reject", "Abstain"],
+      "fundingNeeded": {"amount": 0, "currency": "USDC"}
+    }
+  },
+  {
+    "id": "zgp-07",
+    "code": "ZGP-07",
+    "title": "Grant Proposal",
+    "category": "Treasury",
+    "description": "Request funding for a project or research.",
+    "defaults": {
+      "summary": "Grant request to deliver ...",
+      "motivation": "Ecosystem benefit ...",
+      "specificationImpact": "Work plan, deliverables ...",
+      "codeModuleAffected": "grants/",
+      "votingOptions": ["Approve", "Reject", "Abstain"],
+      "fundingNeeded": {"amount": 0, "currency": "ZION"}
+    }
+  },
+  {
+    "id": "zgp-08",
+    "code": "ZGP-08",
+    "title": "Ecosystem Fund Disbursement",
+    "category": "Treasury",
+    "description": "Allocate funds for ecosystem growth.",
+    "defaults": {
+      "summary": "Allocate funds to ...",
+      "motivation": "Catalyze growth in ...",
+      "specificationImpact": "Tranches, oversight ...",
+      "codeModuleAffected": "treasury/ecosystem-fund/",
+      "votingOptions": ["Approve", "Reject", "Abstain"],
+      "fundingNeeded": {"amount": 0, "currency": "ZION"}
+    }
+  },
+  {
+    "id": "zgp-09",
+    "code": "ZGP-09",
+    "title": "Partnership Request",
+    "category": "Treasury",
+    "description": "Form or fund a strategic partnership.",
+    "defaults": {
+      "summary": "Partner with ...",
+      "motivation": "Mutual benefit ...",
+      "specificationImpact": "Scope, roles, KPIs ...",
+      "codeModuleAffected": "partnerships/",
+      "votingOptions": ["Approve", "Reject", "Abstain"],
+      "fundingNeeded": {"amount": 0, "currency": "USDC"}
+    }
+  },
+  {
+    "id": "zgp-10",
+    "code": "ZGP-10",
+    "title": "ZionGPT Model Fork",
+    "category": "Protocol Upgrades",
+    "description": "Fork or upgrade the ZionGPT model.",
+    "defaults": {
+      "summary": "Fork ZionGPT model to ...",
+      "motivation": "Improve performance/safety ...",
+      "specificationImpact": "Model changes, evals ...",
+      "codeModuleAffected": "ai/zion-gpt/",
+      "votingOptions": ["Approve", "Reject", "Abstain"],
+      "fundingNeeded": {"amount": 0, "currency": "USDC"}
+    }
+  },
+  {
+    "id": "zgp-11",
+    "code": "ZGP-11",
+    "title": "Enable Cross-Chain Talent Sync",
+    "category": "Protocol Upgrades",
+    "description": "Cross-chain state sync for talent credentials.",
+    "defaults": {
+      "summary": "Enable cross-chain sync for ...",
+      "motivation": "Interoperability ...",
+      "specificationImpact": "Bridges, contracts, security ...",
+      "codeModuleAffected": "protocol/cross-chain/",
+      "votingOptions": ["Approve", "Reject", "Abstain"],
+      "fundingNeeded": {"amount": 0, "currency": "ZION"}
+    }
+  },
+  {
+    "id": "zgp-12",
+    "code": "ZGP-12",
+    "title": "Upgrade Governance Engine",
+    "category": "Protocol Upgrades",
+    "description": "Upgrade to a new governance engine version.",
+    "defaults": {
+      "summary": "Upgrade governance engine to ...",
+      "motivation": "Reliability, features ...",
+      "specificationImpact": "Breaking changes, migrations ...",
+      "codeModuleAffected": "governance/engine/",
+      "votingOptions": ["Approve", "Reject", "Abstain"],
+      "fundingNeeded": {"amount": 0, "currency": "USDC"}
+    }
+  }
+]
