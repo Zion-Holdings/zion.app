@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2025-08-09T16:50:09.282Z",
+  "build": {
+    "ok": false,
+    "code": 1,
+    "stderr": "\n> Build error occurred\nError: Cannot find module 'tailwindcss'\nRequire stack:\n- /Users/miami2/ZION_APP_AUG_08_2025/zion.app/node_modules/next/dist/build/webpack/config/blocks/css/plugins.js\n- /Users/miami2/ZION_APP_AUG_08_2025/zion.app/node_modules/next/dist/build/webpack/config/blocks/css/index.js\n- /Users/miami2/ZION_APP_AUG_08_2025/zion.app/node_modules/next/dist/build/webpack/config/index.js\n- /Users/miami2/ZION_APP_AUG_08_2025/zion.app/node_modules/next/dist/build/webpack-config.js\n- /Users/miami2/ZION_APP_AUG_08_2025/zion.app/node_modules/next/dist/build/index.js\n- /Users/miami2/ZION_APP_AUG_08_2025/zion.app/node_modules/next/dist/cli/next-build.js\n- /Users/miami2/ZION_APP_AUG_08_2025/zion.app/node_modules/next/dist/bin/next\n    at Function.<anonymous> (node:internal/modules/cjs/loader:1401:15)\n    at mod._resolveFilename (/Users/miami2/ZION_APP_AUG_08_2025/zion.app/node_modules/next/dist/build/webpack/require-hook.js:96:28)\n    at Function.resolve (node:internal/modules/helpers:145:19)\n    at loadPlugin (/Users/miami2/ZION_APP_AUG_08_2025/zion.app/node_modules/next/dist/build/webpack/config/blocks/css/plugins.js:50:32)\n    at /Users/miami2/ZION_APP_AUG_08_2025/zion.app/node_modules/next/dist/build/webpack/config/blocks/css/plugins.js:171:56\n    at Array.map (<anonymous>)\n    at Object.getPostCssPlugins (/Users/miami2/ZION_APP_AUG_08_2025/zion.app/node_modules/next/dist/build/webpack/config/blocks/css/plugins.js:171:47)\n    at async Object.__overrideCssConfiguration (/Users/miami2/ZION_APP_AUG_08_2025/zion.app/node_modules/next/dist/build/webpack/config/blocks/css/overrideCssConfiguration.js:9:28)\n    at async Object.getBaseWebpackConfig [as default] (/Users/miami2/ZION_APP_AUG_08_2025/zion.app/node_modules/next/dist/build/webpack-config.js:1419:9)\n    at async Promise.all (index 0) {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: [\n    '/Users/miami2/ZION_APP_AUG_08_2025/zion.app/node_modules/next/dist/build/webpack/config/blocks/css/plugins.js',\n    '/Users/miami2/ZION_APP_AUG_08_2025/zion.app/node_modules/next/dist/build/webpack/config/blocks/css/index.js',\n    '/Users/miami2/ZION_APP_AUG_08_2025/zion.app/node_modules/next/dist/build/webpack/config/index.js',\n    '/Users/miami2/ZION_APP_AUG_08_2025/zion.app/node_modules/next/dist/build/webpack-config.js',\n    '/Users/miami2/ZION_APP_AUG_08_2025/zion.app/node_modules/next/dist/build/index.js',\n    '/Users/miami2/ZION_APP_AUG_08_2025/zion.app/node_modules/next/dist/cli/next-build.js',\n    '/Users/miami2/ZION_APP_AUG_08_2025/zion.app/node_modules/next/dist/bin/next'\n  ]\n}\n"
+  },
+  "metrics": [
+    {
+      "url": "http://localhost:3000/",
+      "statusCode": 0,
+      "ttfbMs": -1,
+      "bytes": 0
+    },
+    {
+      "url": "http://localhost:3000/enhanced-home",
+      "statusCode": 0,
+      "ttfbMs": -1,
+      "bytes": 0
+    }
+  ],
+  "thresholds": {
+    "ttfbMs": 800,
+    "bytesHtml": 250000
+  },
+  "alerts": []
+}
