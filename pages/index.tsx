@@ -11877,6 +11877,10 @@ const Home: NextPage = () => {
         
         
         
+        
+        
+        
+        
         {/* AUTO-GENERATED: HOMEPAGE_PROMOS_START */}
         <section className="mt-16">
           <h2 className="text-2xl font-semibold mb-4">Explore more</h2>
@@ -11891,6 +11895,12 @@ const Home: NextPage = () => {
               <Link href="/about">
                 <a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
                   <span className="text-white">/about</span>
+                </a>
+              </Link>
+
+              <Link href="/admin/automation-status">
+                <a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
+                  <span className="text-white">/admin/automation-status</span>
                 </a>
               </Link>
 
@@ -11921,6 +11931,54 @@ const Home: NextPage = () => {
               <Link href="/auth/verify">
                 <a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
                   <span className="text-white">/auth/verify</span>
+                </a>
+              </Link>
+
+              <Link href="/auto/auto-update-2025-08-08t16-07-55-171z">
+                <a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
+                  <span className="text-white">/auto/auto-update-2025-08-08t16-07-55-171z</span>
+                </a>
+              </Link>
+
+              <Link href="/auto/auto-update-2025-08-08t16-10-20-249z">
+                <a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
+                  <span className="text-white">/auto/auto-update-2025-08-08t16-10-20-249z</span>
+                </a>
+              </Link>
+
+              <Link href="/auto/auto-update-2025-08-08t16-30-00-086z">
+                <a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
+                  <span className="text-white">/auto/auto-update-2025-08-08t16-30-00-086z</span>
+                </a>
+              </Link>
+
+              <Link href="/auto/auto-update-2025-08-08t16-30-20-949z">
+                <a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
+                  <span className="text-white">/auto/auto-update-2025-08-08t16-30-20-949z</span>
+                </a>
+              </Link>
+
+              <Link href="/auto/auto-update-2025-08-08t16-38-19-257z">
+                <a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
+                  <span className="text-white">/auto/auto-update-2025-08-08t16-38-19-257z</span>
+                </a>
+              </Link>
+
+              <Link href="/auto/auto-update-2025-08-08t16-49-54-200z">
+                <a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
+                  <span className="text-white">/auto/auto-update-2025-08-08t16-49-54-200z</span>
+                </a>
+              </Link>
+
+              <Link href="/auto/auto-update-2025-08-08t17-23-07-688z">
+                <a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
+                  <span className="text-white">/auto/auto-update-2025-08-08t17-23-07-688z</span>
+                </a>
+              </Link>
+
+              <Link href="/auto/auto-update-2025-08-09t00-34-22-911z">
+                <a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
+                  <span className="text-white">/auto/auto-update-2025-08-09t00-34-22-911z</span>
                 </a>
               </Link>
 
@@ -11969,60 +12027,6 @@ const Home: NextPage = () => {
               <Link href="/blog/blockchain-technology-in-modern-business-solutions-chat">
                 <a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
                   <span className="text-white">/blog/blockchain-technology-in-modern-business-solutions-chat</span>
-                </a>
-              </Link>
-
-              <Link href="/blog/cloud-native-architecture-best-practices-chat">
-                <a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
-                  <span className="text-white">/blog/cloud-native-architecture-best-practices-chat</span>
-                </a>
-              </Link>
-
-              <Link href="/blog/cybersecurity-trends-for-2024-and-beyond-chat">
-                <a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
-                  <span className="text-white">/blog/cybersecurity-trends-for-2024-and-beyond-chat</span>
-                </a>
-              </Link>
-
-              <Link href="/blog/data-analytics-in-digital-transformation-chat">
-                <a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
-                  <span className="text-white">/blog/data-analytics-in-digital-transformation-chat</span>
-                </a>
-              </Link>
-
-              <Link href="/blog/devops-automation-strategies-for-modern-teams-chat">
-                <a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
-                  <span className="text-white">/blog/devops-automation-strategies-for-modern-teams-chat</span>
-                </a>
-              </Link>
-
-              <Link href="/blog/digital-twins-revolutionizing-industry-4-0-chat">
-                <a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
-                  <span className="text-white">/blog/digital-twins-revolutionizing-industry-4-0-chat</span>
-                </a>
-              </Link>
-
-              <Link href="/blog/machine-learning-applications-in-enterprise-software-chat">
-                <a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
-                  <span className="text-white">/blog/machine-learning-applications-in-enterprise-software-chat</span>
-                </a>
-              </Link>
-
-              <Link href="/blog/microservices-architecture-benefits-and-challenges-chat">
-                <a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
-                  <span className="text-white">/blog/microservices-architecture-benefits-and-challenges-chat</span>
-                </a>
-              </Link>
-
-              <Link href="/blog/quantum-computing-implications-for-business-chat">
-                <a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
-                  <span className="text-white">/blog/quantum-computing-implications-for-business-chat</span>
-                </a>
-              </Link>
-
-              <Link href="/blog/sustainable-technology-green-computing-solutions-chat">
-                <a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
-                  <span className="text-white">/blog/sustainable-technology-green-computing-solutions-chat</span>
                 </a>
               </Link>
           </div>

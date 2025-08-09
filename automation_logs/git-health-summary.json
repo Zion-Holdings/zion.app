@@ -1,17 +1,26 @@
 {
-  "ok": true,
-  "errors": [],
+  "ok": false,
+  "errors": [
+    "git gc failed to clean repository."
+  ],
   "warnings": [
-    "No upstream configured for current branch."
+    "git fetch --prune failed: fatal: bad object 165e21c8315f7ea931b450b2b695aec9bd463d0b\nerror: https://github.com/Zion-Holdings/zion.app.git did not send all necessary objects\n\nAuto packing the repository in background for optimum performance.\nSee \"git help gc\" for manual housekeeping.\nwarning: The last gc run reported the following. Please correct the root cause\nand remove .git/gc.log\nAutomatic cleanup will not be performed until the file is removed.\n\nwarning: There are too many unreachable loose objects; run 'git prune' to remove them.\n\n",
+    "git fsck reported issues. Attempting git gc...",
+    "No upstream configured for current branch.",
+    "Set upstream to origin/sync-automerge."
   ],
   "checks": {
     "user": {
-      "name": "Cursor Agent",
-      "email": "cursoragent@cursor.com"
+      "name": "Automation Bot",
+      "email": "automation@bolt.new.zion.app"
     },
-    "origin": "origin\thttps://x-access-token:ghs_qNBaeg2v14LuMC4IBKBjGq0T4N5gyr2FojDs@github.com/Zion-Holdings/zion.app (fetch)\norigin\thttps://x-access-token:ghs_qNBaeg2v14LuMC4IBKBjGq0T4N5gyr2FojDs@github.com/Zion-Holdings/zion.app (push)",
+    "origin": "origin\thttps://github.com/Zion-Holdings/zion.app.git (fetch)\norigin\thttps://github.com/Zion-Holdings/zion.app.git (push)",
     "fsck": {
-      "status": 0,
+      "status": 2,
+      "output": "dangling blob ad00607120026cfc1f713259ce2c25e194205401\ndangling blob 600640785c2b7336cb3afcd9d9bd3e10609410e4\ndangling blob a10620cb6c3e72b43b17dc2e3467cf7b9f18ab95\ndangling blob 5e08601a9c8e5d433a6baf72130886669416f28e\ndangling blob 940840dc4e53aebfb7025be47cbdf5f94af1be4f\ndangling blob 0a0bc00ade00dbc17c9820aa01d245535c0dfa1d\ndangling blob 380b8069bf398da34d9fb2ac7ea0202c0f552496\ndangling blob c70b8029e9267b96a170d0e1b2f5fb1fd47d81b3\ndangling blob c90bc00cbe0d7de70a77f4768c4e61c9a81dd135\ndangling blob d90ea00644862d8ddc647383cfc69a79472ead84\ndangling blob 1310607b26c55f224f86bd37bc2cda4352054390\ndangling blob 3210203650819145b609c70bf347aadb6ea4c85f\ndangling blob 4611a03d70e65b039aa361a5da0bb169f23eced1\ndangling blob 6b1380aa57e725131f80e89693f168c06977682c\ndangling blob da1380c9dcd85490"
+    },
+    "gc": {
+      "status": 128,
       "output": ""
     },
     "working": "dirty"

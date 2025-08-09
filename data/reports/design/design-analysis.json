@@ -1,9 +1,9 @@
 {
-  "timestamp": "2025-08-08T17:42:54.330Z",
-  "filesAnalyzed": 100,
+  "timestamp": "2025-08-09T00:34:36.831Z",
+  "filesAnalyzed": 116,
   "items": [
     {
-      "file": "/workspace/pages/404.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/404.tsx",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -12,7 +12,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/404.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/404.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -23,7 +23,7 @@
       }
     },
     {
-      "file": "/workspace/pages/_app.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/_app.tsx",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -31,7 +31,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/_app.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/_app.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": true,
@@ -61,18 +61,41 @@
     {
       "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/about.tsx",
       "issues": [
+        "missing_head_import",
         "no_tailwind_usage",
-        "missing_enhanced_layout"
+        "missing_enhanced_layout",
+        "missing_meta_title",
+        "missing_meta_description"
       ],
       "details": {
         "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/about.tsx",
-        "hasHead": true,
+        "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
         "usesEnhancedNav": false,
         "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
+        "hasMetaTitle": false,
+        "hasMetaDesc": false
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/admin/automation-status.tsx",
+      "issues": [
+        "missing_head_import",
+        "no_tailwind_usage",
+        "missing_enhanced_layout",
+        "missing_meta_title",
+        "missing_meta_description"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/admin/automation-status.tsx",
+        "hasHead": false,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": false,
+        "hasMetaDesc": false
       }
     },
     {
@@ -85,7 +108,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/_document.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/admin/automation-status.ts",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -96,7 +119,7 @@
       }
     },
     {
-      "file": "/workspace/pages/about.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/ai-capacity-planning.ts",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -105,7 +128,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/about.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/ai-capacity-planning.ts",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -116,7 +139,7 @@
       }
     },
     {
-      "file": "/workspace/pages/admin/automation-status.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/ai-change-management.ts",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -125,7 +148,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/admin/automation-status.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/ai-change-management.ts",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -136,7 +159,7 @@
       }
     },
     {
-      "file": "/workspace/pages/api/admin/automation-status.ts",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/ai-contract.ts",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -145,7 +168,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/api/admin/automation-status.ts",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/ai-contract.ts",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -156,7 +179,7 @@
       }
     },
     {
-      "file": "/workspace/pages/api/ai-capacity-planning.ts",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/ai-workspace-suggestions.ts",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -165,7 +188,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/api/ai-capacity-planning.ts",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/ai-workspace-suggestions.ts",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -176,7 +199,7 @@
       }
     },
     {
-      "file": "/workspace/pages/api/ai-change-management.ts",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/analytics-api.ts",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -185,7 +208,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/api/ai-change-management.ts",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/analytics-api.ts",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -196,7 +219,7 @@
       }
     },
     {
-      "file": "/workspace/pages/api/ai-contract.ts",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/analyze-quote-request.ts",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -205,7 +228,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/api/ai-contract.ts",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/analyze-quote-request.ts",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -216,7 +239,7 @@
       }
     },
     {
-      "file": "/workspace/pages/api/ai-workspace-suggestions.ts",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/analyze-service-request.ts",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -225,7 +248,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/api/ai-workspace-suggestions.ts",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/analyze-service-request.ts",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -236,7 +259,7 @@
       }
     },
     {
-      "file": "/workspace/pages/api/analytics-api.ts",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auth/callback.tsx",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -245,7 +268,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/api/analytics-api.ts",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auth/callback.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -256,7 +279,7 @@
       }
     },
     {
-      "file": "/workspace/pages/api/analyze-quote-request.ts",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auth/forgot-password.tsx",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -265,7 +288,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/api/analyze-quote-request.ts",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auth/forgot-password.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -276,7 +299,7 @@
       }
     },
     {
-      "file": "/workspace/pages/api/analyze-service-request.ts",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auth/index.tsx",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -285,7 +308,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/api/analyze-service-request.ts",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auth/index.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -296,7 +319,7 @@
       }
     },
     {
-      "file": "/workspace/pages/auth/callback.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auth/reset-password.tsx",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -305,7 +328,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/auth/callback.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auth/reset-password.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -316,7 +339,7 @@
       }
     },
     {
-      "file": "/workspace/pages/auth/forgot-password.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auth/verify.tsx",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -325,7 +348,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/auth/forgot-password.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auth/verify.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -336,7 +359,7 @@
       }
     },
     {
-      "file": "/workspace/pages/auth/index.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-08t16-07-55-171z.tsx",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -345,7 +368,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/auth/index.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-08t16-07-55-171z.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -356,7 +379,7 @@
       }
     },
     {
-      "file": "/workspace/pages/auth/reset-password.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-08t16-10-20-249z.tsx",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -365,7 +388,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/auth/reset-password.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-08t16-10-20-249z.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -376,7 +399,7 @@
       }
     },
     {
-      "file": "/workspace/pages/auth/verify.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-08t16-30-00-086z.tsx",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -385,7 +408,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/auth/verify.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-08t16-30-00-086z.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -396,7 +419,7 @@
       }
     },
     {
-      "file": "/workspace/pages/auto/auto-update-2025-08-08t16-07-55-171z.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-08t16-30-20-949z.tsx",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -405,7 +428,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/auto/auto-update-2025-08-08t16-07-55-171z.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-08t16-30-20-949z.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -416,7 +439,7 @@
       }
     },
     {
-      "file": "/workspace/pages/auto/auto-update-2025-08-08t16-10-20-249z.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-08t16-38-19-257z.tsx",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -425,7 +448,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/auto/auto-update-2025-08-08t16-10-20-249z.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-08t16-38-19-257z.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -436,7 +459,7 @@
       }
     },
     {
-      "file": "/workspace/pages/auto/auto-update-2025-08-08t16-30-00-086z.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-08t16-49-54-200z.tsx",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -445,7 +468,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/auto/auto-update-2025-08-08t16-30-00-086z.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-08t16-49-54-200z.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -456,7 +479,7 @@
       }
     },
     {
-      "file": "/workspace/pages/auto/auto-update-2025-08-08t16-30-20-949z.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-08t17-23-07-688z.tsx",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -465,7 +488,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/auto/auto-update-2025-08-08t16-30-20-949z.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-08t17-23-07-688z.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -476,7 +499,23 @@
       }
     },
     {
-      "file": "/workspace/pages/auto/auto-update-2025-08-08t16-38-19-257z.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t00-34-22-911z.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t00-34-22-911z.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/automation/index.tsx",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -485,7 +524,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/auto/auto-update-2025-08-08t16-38-19-257z.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/automation/index.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -496,7 +535,7 @@
       }
     },
     {
-      "file": "/workspace/pages/auto/auto-update-2025-08-08t16-49-54-200z.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blockchain-solutions.tsx",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -505,7 +544,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/auto/auto-update-2025-08-08t16-49-54-200z.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blockchain-solutions.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -516,7 +555,534 @@
       }
     },
     {
-      "file": "/workspace/pages/auto/auto-update-2025-08-08t17-23-07-688z.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/5g-technology-and-its-impact-on-iot-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/5g-technology-and-its-impact-on-iot-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/api-first-development-building-scalable-systems-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/api-first-development-building-scalable-systems-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/augmented-reality-in-enterprise-applications-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/augmented-reality-in-enterprise-applications-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/blockchain-technology-in-modern-business-solutions-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/blockchain-technology-in-modern-business-solutions-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/cloud-native-architecture-best-practices-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/cloud-native-architecture-best-practices-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/cybersecurity-trends-for-2024-and-beyond-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/cybersecurity-trends-for-2024-and-beyond-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/data-analytics-in-digital-transformation-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/data-analytics-in-digital-transformation-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/devops-automation-strategies-for-modern-teams-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/devops-automation-strategies-for-modern-teams-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/digital-twins-revolutionizing-industry-4-0-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/digital-twins-revolutionizing-industry-4-0-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/index.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/index.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/machine-learning-applications-in-enterprise-software-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/machine-learning-applications-in-enterprise-software-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/microservices-architecture-benefits-and-challenges-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/microservices-architecture-benefits-and-challenges-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/quantum-computing-implications-for-business-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/quantum-computing-implications-for-business-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/sustainable-technology-green-computing-solutions-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/sustainable-technology-green-computing-solutions-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/the-rise-of-edge-computing-in-iot-applications-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/the-rise-of-edge-computing-in-iot-applications-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/ai-consulting-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/ai-consulting-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/business-intelligence-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/business-intelligence-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/cloud-architecture-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/cloud-architecture-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/cybersecurity-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/cybersecurity-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/data-science-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/data-science-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/database-administration-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/database-administration-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/devops-automation-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/devops-automation-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/mobile-development-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/mobile-development-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/network-engineering-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/network-engineering-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/product-management-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/product-management-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/quality-assurance-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/quality-assurance-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/system-administration-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/system-administration-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/technical-writing-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/technical-writing-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/ui-ux-design-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/ui-ux-design-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/web-development-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/web-development-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/ai-powered-business-solutions-discussion.tsx",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -525,7 +1091,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/auto/auto-update-2025-08-08t17-23-07-688z.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/ai-powered-business-solutions-discussion.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -536,7 +1102,7 @@
       }
     },
     {
-      "file": "/workspace/pages/automation/index.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/cloud-computing-strategies.tsx",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -545,7 +1111,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/automation/index.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/cloud-computing-strategies.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -556,7 +1122,7 @@
       }
     },
     {
-      "file": "/workspace/pages/blockchain-solutions.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/cybersecurity-best-practices.tsx",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -565,7 +1131,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/blockchain-solutions.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/cybersecurity-best-practices.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -576,534 +1142,7 @@
       }
     },
     {
-      "file": "/workspace/pages/blog/5g-technology-and-its-impact-on-iot-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/blog/5g-technology-and-its-impact-on-iot-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/blog/api-first-development-building-scalable-systems-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/blog/api-first-development-building-scalable-systems-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/blog/augmented-reality-in-enterprise-applications-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/blog/augmented-reality-in-enterprise-applications-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/blog/blockchain-technology-in-modern-business-solutions-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/blog/blockchain-technology-in-modern-business-solutions-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/blog/cloud-native-architecture-best-practices-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/blog/cloud-native-architecture-best-practices-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/blog/cybersecurity-trends-for-2024-and-beyond-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/blog/cybersecurity-trends-for-2024-and-beyond-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/blog/data-analytics-in-digital-transformation-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/blog/data-analytics-in-digital-transformation-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/blog/devops-automation-strategies-for-modern-teams-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/blog/devops-automation-strategies-for-modern-teams-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/blog/digital-twins-revolutionizing-industry-4-0-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/blog/digital-twins-revolutionizing-industry-4-0-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/blog/index.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/blog/index.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/blog/machine-learning-applications-in-enterprise-software-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/blog/machine-learning-applications-in-enterprise-software-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/blog/microservices-architecture-benefits-and-challenges-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/blog/microservices-architecture-benefits-and-challenges-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/blog/quantum-computing-implications-for-business-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/blog/quantum-computing-implications-for-business-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/blog/sustainable-technology-green-computing-solutions-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/blog/sustainable-technology-green-computing-solutions-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/blog/the-rise-of-edge-computing-in-iot-applications-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/blog/the-rise-of-edge-computing-in-iot-applications-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/category/ai-consulting-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/category/ai-consulting-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/category/business-intelligence-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/category/business-intelligence-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/category/cloud-architecture-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/category/cloud-architecture-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/category/cybersecurity-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/category/cybersecurity-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/category/data-science-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/category/data-science-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/category/database-administration-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/category/database-administration-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/category/devops-automation-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/category/devops-automation-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/category/mobile-development-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/category/mobile-development-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/category/network-engineering-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/category/network-engineering-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/category/product-management-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/category/product-management-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/category/quality-assurance-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/category/quality-assurance-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/category/system-administration-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/category/system-administration-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/category/technical-writing-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/category/technical-writing-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/category/ui-ux-design-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/category/ui-ux-design-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/category/web-development-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/category/web-development-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/chat-content/ai-powered-business-solutions-discussion.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/data-analytics-implementation.tsx",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -1112,7 +1151,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/chat-content/ai-powered-business-solutions-discussion.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/data-analytics-implementation.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -1123,7 +1162,7 @@
       }
     },
     {
-      "file": "/workspace/pages/chat-content/cloud-computing-strategies.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/digital-transformation-insights.tsx",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -1132,7 +1171,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/chat-content/cloud-computing-strategies.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/digital-transformation-insights.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -1143,7 +1182,7 @@
       }
     },
     {
-      "file": "/workspace/pages/chat-content/cybersecurity-best-practices.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/emerging-technology-trends.tsx",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -1152,7 +1191,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/chat-content/cybersecurity-best-practices.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/emerging-technology-trends.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -1163,7 +1202,7 @@
       }
     },
     {
-      "file": "/workspace/pages/chat-content/data-analytics-implementation.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/future-of-work-and-automation.tsx",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -1172,7 +1211,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/chat-content/data-analytics-implementation.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/future-of-work-and-automation.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -1183,7 +1222,7 @@
       }
     },
     {
-      "file": "/workspace/pages/chat-content/digital-transformation-insights.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/innovation-in-enterprise-technology.tsx",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -1192,7 +1231,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/chat-content/digital-transformation-insights.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/innovation-in-enterprise-technology.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -1203,7 +1242,7 @@
       }
     },
     {
-      "file": "/workspace/pages/chat-content/emerging-technology-trends.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/sustainable-technology-practices.tsx",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -1212,7 +1251,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/chat-content/emerging-technology-trends.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/sustainable-technology-practices.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -1223,7 +1262,7 @@
       }
     },
     {
-      "file": "/workspace/pages/chat-content/future-of-work-and-automation.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/technology-implementation-strategies.tsx",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -1232,7 +1271,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/chat-content/future-of-work-and-automation.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/technology-implementation-strategies.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -1243,7 +1282,7 @@
       }
     },
     {
-      "file": "/workspace/pages/chat-content/innovation-in-enterprise-technology.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/contact.tsx",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -1252,7 +1291,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/chat-content/innovation-in-enterprise-technology.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/contact.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -1263,7 +1302,7 @@
       }
     },
     {
-      "file": "/workspace/pages/chat-content/sustainable-technology-practices.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/enhanced-home.tsx",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -1272,7 +1311,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/chat-content/sustainable-technology-practices.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/enhanced-home.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -1283,7 +1322,23 @@
       }
     },
     {
-      "file": "/workspace/pages/chat-content/technology-implementation-strategies.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/index.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/index.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/iot-platforms.tsx",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -1292,7 +1347,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/chat-content/technology-implementation-strategies.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/iot-platforms.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -1303,7 +1358,7 @@
       }
     },
     {
-      "file": "/workspace/pages/contact.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/products/index.tsx",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -1312,7 +1367,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/contact.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/products/index.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -1323,7 +1378,364 @@
       }
     },
     {
-      "file": "/workspace/pages/enhanced-home.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/ai-model-development-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/ai-model-development-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/ai-seo-auditor.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/ai-seo-auditor.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/api-development-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/api-development-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/business-intelligence-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/business-intelligence-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/cloud-migration-services-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/cloud-migration-services-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/customer-support-chatbot.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/customer-support-chatbot.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/data-pipeline-engineering-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/data-pipeline-engineering-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/database-design-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/database-design-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/index.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/index.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/instagram-content-scheduler.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/instagram-content-scheduler.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/landing-page-generator.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/landing-page-generator.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/mobile-app-development-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/mobile-app-development-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/network-security-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/network-security-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/performance-optimization-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/performance-optimization-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/price-intelligence-service.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/price-intelligence-service.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/quality-assurance-testing-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/quality-assurance-testing-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/security-auditing-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/security-auditing-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/system-administration-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/system-administration-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/technical-documentation-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/technical-documentation-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/ui-ux-design-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/ui-ux-design-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/web-application-development-chat.tsx",
+      "issues": [
+        "no_tailwind_usage",
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/web-application-development-chat.tsx",
+        "hasHead": true,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/talent/[slug].tsx",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -1332,7 +1744,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/enhanced-home.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/talent/[slug].tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -1343,7 +1755,7 @@
       }
     },
     {
-      "file": "/workspace/pages/index.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/talent/index.tsx",
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",
@@ -1352,7 +1764,7 @@
         "missing_meta_description"
       ],
       "details": {
-        "filePath": "/workspace/pages/index.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/talent/index.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -1363,450 +1775,13 @@
       }
     },
     {
-      "file": "/workspace/pages/iot-platforms.tsx",
-      "issues": [
-        "missing_head_import",
-        "no_tailwind_usage",
-        "missing_enhanced_layout",
-        "missing_meta_title",
-        "missing_meta_description"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/iot-platforms.tsx",
-        "hasHead": false,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": false,
-        "hasMetaDesc": false
-      }
-    },
-    {
-      "file": "/workspace/pages/products/index.tsx",
-      "issues": [
-        "missing_head_import",
-        "no_tailwind_usage",
-        "missing_enhanced_layout",
-        "missing_meta_title",
-        "missing_meta_description"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/products/index.tsx",
-        "hasHead": false,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": false,
-        "hasMetaDesc": false
-      }
-    },
-    {
-      "file": "/workspace/pages/services/ai-model-development-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/services/ai-model-development-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/services/ai-seo-auditor.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/services/ai-seo-auditor.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/services/api-development-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/services/api-development-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/services/business-intelligence-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/services/business-intelligence-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/services/cloud-migration-services-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/services/cloud-migration-services-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/services/customer-support-chatbot.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/services/customer-support-chatbot.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/services/data-pipeline-engineering-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/services/data-pipeline-engineering-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/services/database-design-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/services/database-design-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/services/index.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/services/index.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/services/instagram-content-scheduler.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/services/instagram-content-scheduler.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/services/landing-page-generator.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/services/landing-page-generator.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/services/mobile-app-development-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/services/mobile-app-development-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/services/network-security-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/services/network-security-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/services/performance-optimization-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/services/performance-optimization-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/services/price-intelligence-service.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/services/price-intelligence-service.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/services/quality-assurance-testing-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/services/quality-assurance-testing-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/services/security-auditing-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/services/security-auditing-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/services/system-administration-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/services/system-administration-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/services/technical-documentation-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/services/technical-documentation-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/services/ui-ux-design-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/services/ui-ux-design-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/services/web-application-development-chat.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/services/web-application-development-chat.tsx",
-        "hasHead": true,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/talent/[slug].tsx",
-      "issues": [
-        "missing_head_import",
-        "no_tailwind_usage",
-        "missing_enhanced_layout",
-        "missing_meta_title",
-        "missing_meta_description"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/talent/[slug].tsx",
-        "hasHead": false,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": false,
-        "hasMetaDesc": false
-      }
-    },
-    {
-      "file": "/workspace/pages/talent/index.tsx",
-      "issues": [
-        "missing_head_import",
-        "no_tailwind_usage",
-        "missing_enhanced_layout",
-        "missing_meta_title",
-        "missing_meta_description"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/talent/index.tsx",
-        "hasHead": false,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": false,
-        "hasMetaDesc": false
-      }
-    },
-    {
-      "file": "/workspace/components/Layout.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/Layout.tsx",
       "issues": [
         "no_tailwind_usage",
         "missing_enhanced_nav"
       ],
       "details": {
-        "filePath": "/workspace/components/Layout.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/Layout.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -1817,13 +1792,13 @@
       }
     },
     {
-      "file": "/workspace/components/layout/AuthLayout.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/layout/AuthLayout.tsx",
       "issues": [
         "no_tailwind_usage",
         "missing_enhanced_nav"
       ],
       "details": {
-        "filePath": "/workspace/components/layout/AuthLayout.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/layout/AuthLayout.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -1834,13 +1809,29 @@
       }
     },
     {
-      "file": "/workspace/components/layout/EnhancedFooter.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/layout/EnhancedFooter.tsx",
+      "issues": [
+        "missing_enhanced_nav"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/layout/EnhancedFooter.tsx",
+        "hasHead": false,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": true,
+        "hasMetaTitle": false,
+        "hasMetaDesc": false
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/monetization/PaidConsultation.tsx",
       "issues": [
         "no_tailwind_usage",
         "missing_enhanced_nav"
       ],
       "details": {
-        "filePath": "/workspace/components/layout/EnhancedFooter.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/monetization/PaidConsultation.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -1851,13 +1842,29 @@
       }
     },
     {
-      "file": "/workspace/components/layout/EnhancedLayout.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/AnimatedBackground.tsx",
+      "issues": [
+        "missing_enhanced_nav"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/AnimatedBackground.tsx",
+        "hasHead": false,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": false,
+        "hasMetaDesc": false
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/EnhancedButton.tsx",
       "issues": [
         "no_tailwind_usage",
         "missing_enhanced_nav"
       ],
       "details": {
-        "filePath": "/workspace/components/layout/EnhancedLayout.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/EnhancedButton.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -1868,13 +1875,13 @@
       }
     },
     {
-      "file": "/workspace/components/layout/EnhancedNavigation.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/EnhancedCard.tsx",
       "issues": [
         "no_tailwind_usage",
         "missing_enhanced_nav"
       ],
       "details": {
-        "filePath": "/workspace/components/layout/EnhancedNavigation.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/EnhancedCard.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -1885,13 +1892,13 @@
       }
     },
     {
-      "file": "/workspace/components/monetization/PaidConsultation.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/EnhancedLoading.tsx",
       "issues": [
         "no_tailwind_usage",
         "missing_enhanced_nav"
       ],
       "details": {
-        "filePath": "/workspace/components/monetization/PaidConsultation.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/EnhancedLoading.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -1902,13 +1909,13 @@
       }
     },
     {
-      "file": "/workspace/components/ui/AnimatedBackground.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/EnhancedMarketplaceCard.tsx",
       "issues": [
         "no_tailwind_usage",
         "missing_enhanced_nav"
       ],
       "details": {
-        "filePath": "/workspace/components/ui/AnimatedBackground.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/EnhancedMarketplaceCard.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -1919,13 +1926,13 @@
       }
     },
     {
-      "file": "/workspace/components/ui/EnhancedButton.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/FuturisticCard.tsx",
       "issues": [
         "no_tailwind_usage",
         "missing_enhanced_nav"
       ],
       "details": {
-        "filePath": "/workspace/components/ui/EnhancedButton.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/FuturisticCard.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -1936,13 +1943,13 @@
       }
     },
     {
-      "file": "/workspace/components/ui/EnhancedCard.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/FuturisticHero.tsx",
       "issues": [
         "no_tailwind_usage",
         "missing_enhanced_nav"
       ],
       "details": {
-        "filePath": "/workspace/components/ui/EnhancedCard.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/FuturisticHero.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -1953,13 +1960,13 @@
       }
     },
     {
-      "file": "/workspace/components/ui/EnhancedLoading.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/GlassmorphismCard.tsx",
       "issues": [
         "no_tailwind_usage",
         "missing_enhanced_nav"
       ],
       "details": {
-        "filePath": "/workspace/components/ui/EnhancedLoading.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/GlassmorphismCard.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -1970,13 +1977,13 @@
       }
     },
     {
-      "file": "/workspace/components/ui/EnhancedMarketplaceCard.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/InteractiveNavigation.tsx",
       "issues": [
         "no_tailwind_usage",
         "missing_enhanced_nav"
       ],
       "details": {
-        "filePath": "/workspace/components/ui/EnhancedMarketplaceCard.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/InteractiveNavigation.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -1987,13 +1994,13 @@
       }
     },
     {
-      "file": "/workspace/components/ui/FuturisticCard.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/InteractiveSearch.tsx",
       "issues": [
         "no_tailwind_usage",
         "missing_enhanced_nav"
       ],
       "details": {
-        "filePath": "/workspace/components/ui/FuturisticCard.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/InteractiveSearch.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -2004,13 +2011,13 @@
       }
     },
     {
-      "file": "/workspace/components/ui/FuturisticHero.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/InteractiveStats.tsx",
       "issues": [
         "no_tailwind_usage",
         "missing_enhanced_nav"
       ],
       "details": {
-        "filePath": "/workspace/components/ui/FuturisticHero.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/InteractiveStats.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -2021,13 +2028,13 @@
       }
     },
     {
-      "file": "/workspace/components/ui/GlassmorphismCard.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/NotificationSystem.tsx",
       "issues": [
         "no_tailwind_usage",
         "missing_enhanced_nav"
       ],
       "details": {
-        "filePath": "/workspace/components/ui/GlassmorphismCard.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/NotificationSystem.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,
@@ -2038,81 +2045,13 @@
       }
     },
     {
-      "file": "/workspace/components/ui/InteractiveNavigation.tsx",
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/UserEngagementSystem.tsx",
       "issues": [
         "no_tailwind_usage",
         "missing_enhanced_nav"
       ],
       "details": {
-        "filePath": "/workspace/components/ui/InteractiveNavigation.tsx",
-        "hasHead": false,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": false,
-        "hasMetaDesc": false
-      }
-    },
-    {
-      "file": "/workspace/components/ui/InteractiveSearch.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_nav"
-      ],
-      "details": {
-        "filePath": "/workspace/components/ui/InteractiveSearch.tsx",
-        "hasHead": false,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": false,
-        "hasMetaDesc": false
-      }
-    },
-    {
-      "file": "/workspace/components/ui/InteractiveStats.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_nav"
-      ],
-      "details": {
-        "filePath": "/workspace/components/ui/InteractiveStats.tsx",
-        "hasHead": false,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": false,
-        "hasMetaDesc": false
-      }
-    },
-    {
-      "file": "/workspace/components/ui/NotificationSystem.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_nav"
-      ],
-      "details": {
-        "filePath": "/workspace/components/ui/NotificationSystem.tsx",
-        "hasHead": false,
-        "usesTailwind": false,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": false,
-        "hasMetaDesc": false
-      }
-    },
-    {
-      "file": "/workspace/components/ui/UserEngagementSystem.tsx",
-      "issues": [
-        "no_tailwind_usage",
-        "missing_enhanced_nav"
-      ],
-      "details": {
-        "filePath": "/workspace/components/ui/UserEngagementSystem.tsx",
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/UserEngagementSystem.tsx",
         "hasHead": false,
         "usesTailwind": false,
         "usesEnhancedLayout": false,

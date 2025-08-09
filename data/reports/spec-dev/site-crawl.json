@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-08T17:42:59.133Z",
+  "timestamp": "2025-08-09T00:34:37.689Z",
   "pages": [
     {
       "url": "https://ziontechgroup.netlify.app/",
@@ -7,18 +7,6 @@
     },
     {
       "url": "https://ziontechgroup.netlify.app/services",
-      "status": 200
-    },
-    {
-      "url": "https://ziontechgroup.netlify.app/about",
-      "status": 200
-    },
-    {
-      "url": "https://ziontechgroup.netlify.app/talent",
-      "status": 200
-    },
-    {
-      "url": "https://ziontechgroup.netlify.app/contact",
       "status": 200
     },
     {
@@ -30,38 +18,50 @@
       "status": 200
     },
     {
-      "url": "https://ziontechgroup.netlify.app/talent/ava-chen",
+      "url": "https://ziontechgroup.netlify.app/talent",
       "status": 200
     },
     {
-      "url": "https://ziontechgroup.netlify.app/talent/marco-silva",
+      "url": "https://ziontechgroup.netlify.app/contact",
       "status": 200
     },
     {
-      "url": "https://ziontechgroup.netlify.app/talent/nina-patel",
+      "url": "https://ziontechgroup.netlify.app/partner",
+      "status": 404
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/category/ai-consulting-chat",
       "status": 200
     },
     {
-      "url": "https://ziontechgroup.netlify.app/talent/kenji-yamada",
+      "url": "https://ziontechgroup.netlify.app/services/landing-page-generator",
       "status": 200
     },
     {
-      "url": "https://ziontechgroup.netlify.app/talent/lena-mueller",
+      "url": "https://ziontechgroup.netlify.app/services/price-intelligence-service",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/partner/tools",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/admin/whitelabel",
       "status": 200
     }
   ],
   "discovered": [
     "https://ziontechgroup.netlify.app/",
     "https://ziontechgroup.netlify.app/services",
-    "https://ziontechgroup.netlify.app/about",
-    "https://ziontechgroup.netlify.app/talent",
-    "https://ziontechgroup.netlify.app/contact",
     "https://ziontechgroup.netlify.app/products",
     "https://ziontechgroup.netlify.app/blog",
-    "https://ziontechgroup.netlify.app/talent/ava-chen",
-    "https://ziontechgroup.netlify.app/talent/marco-silva",
-    "https://ziontechgroup.netlify.app/talent/nina-patel",
-    "https://ziontechgroup.netlify.app/talent/kenji-yamada",
-    "https://ziontechgroup.netlify.app/talent/lena-mueller"
+    "https://ziontechgroup.netlify.app/talent",
+    "https://ziontechgroup.netlify.app/contact",
+    "https://ziontechgroup.netlify.app/partner",
+    "https://ziontechgroup.netlify.app/category/ai-consulting-chat",
+    "https://ziontechgroup.netlify.app/services/landing-page-generator",
+    "https://ziontechgroup.netlify.app/services/price-intelligence-service",
+    "https://ziontechgroup.netlify.app/partner/tools",
+    "https://ziontechgroup.netlify.app/admin/whitelabel"
   ]
 }
