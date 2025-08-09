@@ -1,8 +1,10 @@
-name: Auto Site Artifacts
+name: Dynamic SEO & OG Images
 
 on:
   schedule:
-    - cron: '*/30 * * * *' # every 30 minutes
+    - cron: '*/30 * * * *'
+  push:
+    branches: [ main ]
   workflow_dispatch: {}
 
 permissions:
@@ -20,19 +22,21 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-      - name: Generate sitemap/rss/search-index
-        run: node scripts/generate-site-artifacts.cjs
-        env:
-          SITE_URL: https://ziontechgroup.netlify.app
-      - name: Enhance sitemap with lastmod
-        run: node scripts/enhance-sitemap-with-git-dates.cjs
+      - name: Install puppeteer deps
+        run: sudo apt-get update && sudo apt-get install -y libnss3 libxss1 libasound2 fonts-liberation libatk-bridge2.0-0 libgtk-3-0
+      - name: Install puppeteer
+        run: npm i --no-audit --no-fund puppeteer
+      - name: Generate SEO overrides
+        run: node scripts/generate-dynamic-seo.cjs
+      - name: Generate OG Images
+        run: node scripts/generate-og-images.cjs
       - name: Commit changes
         run: |
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add public/sitemap.xml public/rss.xml public/search-index.json
-            git commit -m "chore(automation): auto-generate sitemap/rss/search-index"
+            git add data/page-metadata/overrides.json public/og
+            git commit -m "chore(automation): dynamic SEO overrides and OG images"
             git push
           else
             echo "No changes to commit"
