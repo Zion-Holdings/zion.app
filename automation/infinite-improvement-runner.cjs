@@ -1,53 +1,31 @@
 #!/usr/bin/env node
+const { execSync } = require('child_process');
 
-const { spawnSync } = require('child_process');
-const path = require('path');
-const fs = require('fs');
-
-function run(cmd, args = [], opts = {}) {
-  const result = spawnSync(cmd, args, { stdio: 'inherit', ...opts });
-  return result.status || 0;
+function run(cmd) {
+  console.log(`$ ${cmd}`);
+  try { execSync(cmd, { stdio: 'inherit' }); } catch (e) { console.log(`Command failed (continuing): ${cmd}`); }
 }
 
-function ensureDir(dirPath) {
-  if (!fs.existsSync(dirPath)) fs.mkdirSync(dirPath, { recursive: true });
-}
+// Core intelligent orchestrator
+run('node automation/intelligent-orchestrator.cjs run intelligent');
 
-(function main() {
-  const logsDir = path.join(__dirname, 'logs');
-  ensureDir(logsDir);
+// High-impact orchestrations
+run('node automation/self-healing-orchestrator.cjs');
+run('node automation/site-maintenance-orchestrator.cjs');
+run('node automation/site-link-orchestrator.cjs');
+run('node automation/revenue-ideas-orchestrator.cjs');
+run('node automation/responsive-content-orchestrator.cjs');
+run('node automation/ui-evolution-orchestrator.cjs');
+run('node automation/instagram-marketing-orchestrator.cjs');
+run('node automation/linkedin-marketing-orchestrator.cjs');
+run('node automation/linkedin-pro-orchestrator.cjs');
+run('node automation/saas-services-orchestrator.cjs');
 
-  // Run a diverse improvement cycle using available scripts
-  const steps = [
-    ['node', ['automation/seo-optimizer.cjs']],
-    ['node', ['automation/security-scanner.cjs']],
-    ['node', ['automation/test-generator.cjs']],
-    ['node', ['automation/frontend-sync-orchestrator.cjs', 'once']],
-    ['node', ['automation/variation-orchestrator.cjs', 'once']],
-    ['node', ['automation/autonomous-meta-orchestrator.cjs', 'once']],
-    ['npm', ['run', 'lint']],
-    ['npm', ['run', 'type-check']],
-    ['npm', ['run', 'build']],
-  ];
+// Content and changelog
+run('node automation/seo-optimizer.cjs');
+run('node automation/auto-changelog.cjs');
 
-  for (const [cmd, args] of steps) {
-    // Skip missing scripts gracefully
-    if (cmd === 'node' && args[0].startsWith('automation/')) {
-      const candidate = path.join(process.cwd(), args[0]);
-      if (!fs.existsSync(candidate)) continue;
-    }
-    const code = run(cmd, args);
-    if (code !== 0) {
-      // Continue despite failures to keep the loop resilient
-      // Non-zero exit is tolerated for best-effort improvements
-    }
-  }
-
-  // Sync any changes
-  try {
-    const code = run('node', ['automation/git-sync.cjs']);
-    process.exit(code);
-  } catch (e) {
-    process.exit(0);
-  }
-})();
+// Post-run: lint, type-check, build smoke
+run('npm run lint');
+run('npm run type-check');
+run('npm run build');
