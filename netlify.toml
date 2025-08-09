@@ -22,4 +22,20 @@
 
 [[scheduled.functions]]
   name = "cron-daily-rankings"
-  cron = "0 3 * * *" # daily at 03:00 UTC 
+  cron = "0 3 * * *" # daily at 03:00 UTC
+
+[[scheduled.functions]]
+  name = "cron-hourly-uptime"
+  cron = "0 * * * *" # hourly
+
+[[scheduled.functions]]
+  name = "cron-weekly-seo"
+  cron = "0 5 * * 1" # Mondays at 05:00 UTC
+
+[[scheduled.functions]]
+  name = "cron-weekly-links"
+  cron = "0 4 * * 1" # Mondays at 04:00 UTC
+
+[[scheduled.functions]]
+  name = "cron-weekly-deps"
+  cron = "0 2 * * 1" # Mondays at 02:00 UTC 

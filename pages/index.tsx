@@ -25,6 +25,16 @@ export default function Home() {
           </li>
         </ul>
         <div className="text-xs text-gray-500 mt-2">Runs automatically in the cloud via scheduled functions. Syncs changes back to the repository.</div>
+
+<div className="mt-4 text-sm">
+  <div className="font-medium mb-1">More automations</div>
+  <ul className="list-disc pl-5 space-y-1">
+    <li>Hourly Uptime Monitoring — logs status and response time.</li>
+    <li>Weekly SEO Score — basic title/meta/h1 checks.</li>
+    <li>Weekly Link Checker — finds broken links.</li>
+    <li>Weekly Dependency Insights — checks latest versions on npm.</li>
+  </ul>
+</div>
       </section>
     </div>
   );
