@@ -215,7 +215,10 @@
     "conflicts:cron:start": "bash automation/merge-conflict-cron.sh start",
     "conflicts:cron:stop": "bash automation/merge-conflict-cron.sh stop",
     "conflicts:cron:status": "bash automation/merge-conflict-cron.sh status",
-    "pages:auto-stub": "node automation/auto-page-stubber.cjs"
+    "pages:auto-stub": "node automation/auto-page-stubber.cjs",
+    "audit:visual": "node automation/visual-snapshot-auditor.cjs",
+    "audit:dead-code": "node automation/dead-code-reporter.cjs",
+    "optimize:images": "node automation/image-optimizer.cjs"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
@@ -239,7 +242,6 @@
     "framer-motion": "^6.5.1",
     "fs": "^0.0.1-security",
     "fs-extra": "^11.3.1",
-    "glob": "^11.0.3",
     "https": "^1.0.0",
     "import-fresh": "^3.3.1",
     "lucide-react": "^0.536.0",
@@ -271,9 +273,13 @@
     "eslint-config-next": "^14.0.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
+    "glob": "^11.0.3",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.4",
+    "playwright": "^1.54.2",
     "postcss": "^8.4.32",
+    "serve": "^14.2.4",
+    "sharp": "^0.34.3",
     "tailwindcss": "^3.4.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"

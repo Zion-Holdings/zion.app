@@ -68,27 +68,24 @@ export default function HomeIndex({ routes }: IndexPageProps) {
           </div>
         </section>
 
-        {/* Advertisements / Promotions */}
+        {/* Autonomous Cloud Automations */}
         <section>
-          <h2 className="text-xl font-semibold mb-4">Sponsored</h2>
+          <h2 className="text-xl font-semibold mb-4">Autonomous Cloud Automations</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="rounded-xl border border-gray-200 dark:border-gray-800 p-5 bg-white/70 dark:bg-black/40">
-              <div className="text-sm uppercase tracking-wide opacity-70">Ad</div>
-              <h3 className="mt-2 font-semibold">Boost your profile</h3>
-              <p className="mt-1 text-sm opacity-80">Get featured to clients searching for your skills.</p>
-              <Link href="/pricing"><a className="mt-3 inline-block text-sm px-3 py-1.5 rounded-md border border-gray-300 dark:border-gray-700">Upgrade</a></Link>
+              <h3 className="font-semibold">Visual Snapshot Auditor</h3>
+              <p className="mt-1 text-sm opacity-80">Hourly UI screenshots of key routes with reports.</p>
+              <Link href="/automation-reports/visual-report.json"><a className="mt-3 inline-block text-sm px-3 py-1.5 rounded-md border border-gray-300 dark:border-gray-700">View latest report</a></Link>
             </div>
             <div className="rounded-xl border border-gray-200 dark:border-gray-800 p-5 bg-white/70 dark:bg-black/40">
-              <div className="text-sm uppercase tracking-wide opacity-70">Ad</div>
-              <h3 className="mt-2 font-semibold">Instant talent invites</h3>
-              <p className="mt-1 text-sm opacity-80">Invite curated experts and receive quotes in hours.</p>
-              <Link href="/dashboard/client"><a className="mt-3 inline-block text-sm px-3 py-1.5 rounded-md border border-gray-300 dark:border-gray-700">Start hiring</a></Link>
+              <h3 className="font-semibold">Dead Code Reporter</h3>
+              <p className="mt-1 text-sm opacity-80">Flags unused pages and components regularly.</p>
+              <Link href="/automation-reports/dead-code-report.json"><a className="mt-3 inline-block text-sm px-3 py-1.5 rounded-md border border-gray-300 dark:border-gray-700">View latest report</a></Link>
             </div>
             <div className="rounded-xl border border-gray-200 dark:border-gray-800 p-5 bg-white/70 dark:bg-black/40">
-              <div className="text-sm uppercase tracking-wide opacity-70">Ad</div>
-              <h3 className="mt-2 font-semibold">AI skills verification</h3>
-              <p className="mt-1 text-sm opacity-80">Stand out with verified skills and badges.</p>
-              <Link href="/verification"><a className="mt-3 inline-block text-sm px-3 py-1.5 rounded-md border border-gray-300 dark:border-gray-700">Verify now</a></Link>
+              <h3 className="font-semibold">Image Optimizer</h3>
+              <p className="mt-1 text-sm opacity-80">Optimizes images in public/ and PRs the savings.</p>
+              <Link href="/automation-reports/image-optimizer-report.json"><a className="mt-3 inline-block text-sm px-3 py-1.5 rounded-md border border-gray-300 dark:border-gray-700">View latest report</a></Link>
             </div>
           </div>
         </section>
