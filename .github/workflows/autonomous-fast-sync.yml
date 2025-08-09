@@ -46,6 +46,18 @@ jobs:
       - name: Build (smoke)
         run: npm run build
 
+      - name: Generate RSS feed
+        run: node automation/innovations-auto/rss-feed-generator.cjs || true
+
+      - name: OG image sweep
+        run: node automation/innovations-auto/og-image-sweep.cjs || true
+
+      - name: SEO head check
+        run: node automation/innovations-auto/seo-head-check.cjs || true
+
+      - name: Performance budget report
+        run: node automation/innovations-auto/perf-budget-report.cjs || true
+
       - name: Commit and push changes
         run: |
           if [ -n "$(git status --porcelain)" ]; then
