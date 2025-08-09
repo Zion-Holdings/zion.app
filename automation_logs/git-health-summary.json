@@ -2,18 +2,19 @@
   "ok": true,
   "errors": [],
   "warnings": [
-    "No upstream configured for current branch."
+    "No upstream configured for current branch.",
+    "Set upstream to origin/cursor/initialize-full-zion-os-instance-8ca8."
   ],
   "checks": {
     "user": {
       "name": "Cursor Agent",
       "email": "cursoragent@cursor.com"
     },
-    "origin": "origin\thttps://x-access-token:ghs_qNBaeg2v14LuMC4IBKBjGq0T4N5gyr2FojDs@github.com/Zion-Holdings/zion.app (fetch)\norigin\thttps://x-access-token:ghs_qNBaeg2v14LuMC4IBKBjGq0T4N5gyr2FojDs@github.com/Zion-Holdings/zion.app (push)",
+    "origin": "origin\thttps://x-access-token:ghs_Yck0QSlfTsCOOKyrQR7VDejpI5FFsL06t00M@github.com/Zion-Holdings/zion.app (fetch)\norigin\thttps://x-access-token:ghs_Yck0QSlfTsCOOKyrQR7VDejpI5FFsL06t00M@github.com/Zion-Holdings/zion.app (push)",
     "fsck": {
       "status": 0,
-      "output": ""
+      "output": "dangling tree 8c95e7f370828c1b970432705f575b713c56f5b2\n"
     },
-    "working": "dirty"
+    "working": "clean"
   }
 }
