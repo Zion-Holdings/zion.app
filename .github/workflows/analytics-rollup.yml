@@ -1,0 +1,30 @@
+name: Analytics Daily Rollup
+
+on:
+  schedule:
+    - cron: '27 3 * * *' # daily 03:27 UTC
+  workflow_dispatch: {}
+
+jobs:
+  rollup:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install deps
+        run: npm ci
+      - name: Run rollup
+        run: node scripts/rollup-analytics.mjs
+      - name: Commit results
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add data/reports/daily-analytics || true
+          git commit -m "chore(analytics): daily rollup" || echo "No changes"
+          git push || true
