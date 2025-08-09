@@ -2,6 +2,7 @@ import type { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { BlogPost } from '@/utils/types/blog';
+import PageShareButtons from '@/components/blog/PageShareButtons';
 import { listPublishedPosts, listAllAuthors, listAllTags, listAllTopics } from '@/utils/data/blogStore';
 import BlogCard from '@/components/blog/BlogCard';
 import { useMemo, useState } from 'react';
@@ -28,11 +29,27 @@ const BlogHome: NextPage<Props> = ({ posts, authors, topics, tags }) => {
       <Head>
         <title>Blog - Zion AI Marketplace</title>
         <meta name="description" content="Insights on AI, DevOps, and digital transformation." />
+        <meta property="og:title" content="Zion Blog" />
+        <meta property="og:description" content="Insights on AI, DevOps, and digital transformation." />
+        <meta property="og:image" content="/images/og/blog-default.jpg" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Zion Blog" />
+        <meta name="twitter:description" content="Insights on AI, DevOps, and digital transformation." />
+        <meta name="twitter:image" content="/images/og/blog-default.jpg" />
       </Head>
 
       <div className="mx-auto max-w-6xl">
         <h1 className="text-4xl font-bold mb-4">Zion Blog</h1>
-        <p className="text-gray-600 dark:text-gray-300 mb-6">Thought leadership on AI, DevOps, and building with speed.</p>
+        <p className="text-gray-600 dark:text-gray-300 mb-3">Thought leadership on AI, DevOps, and building with speed.</p>
+        <div className="mb-6">
+          <PageShareButtons
+            title="Zion Blog"
+            url={typeof window === 'undefined' ? 'https://zion.app/blog' : window.location.href}
+            description="Insights on AI and DevOps from Zion."
+            onShare={(network) => fetch('/api/analytics/share', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ url: window.location.href, title: 'Zion Blog', network, utm: 'utm_source=' + network + '&utm_medium=share&utm_campaign=blog' }) }).catch(() => {})}
+          />
+        </div>
 
         <div className="flex flex-wrap gap-3 mb-8">
           <select className="border rounded px-3 py-2" value={filters.topic || ''} onChange={(e) => setFilters((f) => ({ ...f, topic: e.target.value || undefined }))}>
