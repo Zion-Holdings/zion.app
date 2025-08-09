@@ -46,40 +46,34 @@ async function main() {
   log('🚀 Cloud Autonomous Runner start');
 
   const steps = [
-    // Safety and analysis
     () => runCmd('type-check', 'npx', ['tsc', '--noEmit'], {}, 2 * 60 * 1000),
     () => runCmd('lint-quick', 'npx', ['eslint', '.', '--ext', '.js,.jsx,.ts,.tsx', '--max-warnings', '0'], {}, 3 * 60 * 1000),
 
-    // Intelligent analyzers/factories (one-off, non-daemon)
+    // New autonomous improvements
+    () => runCmd('robots-sitemap-verify', 'node', ['automation/robots-and-sitemap-verifier.cjs'], {}, 60 * 1000),
+    () => runCmd('fast-sitemap', 'node', ['automation/fast-sitemap-runner.cjs'], {}, 2 * 60 * 1000),
+    () => runCmd('structured-data-injector', 'node', ['automation/seo-structured-data-injector.cjs'], {}, 3 * 60 * 1000),
+
+    // Existing analyzers/factories
     () => runCmd('seo-optimizer', 'node', ['automation/seo-optimizer.cjs'], {}, 2 * 60 * 1000),
     () => runCmd('security-scanner', 'node', ['automation/security-scanner.cjs'], {}, 2 * 60 * 1000),
-
-    // Site content & UX improvements
     () => runCmd('frontend-sync:analyze', 'node', ['automation/frontend-sync-analyzer.cjs'], {}, 2 * 60 * 1000),
     () => runCmd('frontend-sync:factory', 'node', ['automation/frontend-sync-factory.cjs'], {}, 3 * 60 * 1000),
     () => runCmd('responsive:analyzer', 'node', ['automation/responsive-content-analyzer.cjs'], {}, 2 * 60 * 1000),
     () => runCmd('responsive:factory', 'node', ['automation/responsive-content-factory.cjs'], {}, 3 * 60 * 1000),
     () => runCmd('variation:analyzer', 'node', ['automation/variation-analyzer.cjs'], {}, 2 * 60 * 1000),
     () => runCmd('variation:factory', 'node', ['automation/variation-factory.cjs'], {}, 3 * 60 * 1000),
-
-    // Links hygiene
     () => runCmd('links:crawl', 'node', ['automation/site-link-crawler.cjs'], {}, 2 * 60 * 1000),
     () => runCmd('links:fix', 'node', ['automation/site-link-fixer.cjs'], {}, 2 * 60 * 1000),
-
-    // Content autogen (single page)
     () => runCmd('content-autogen:run-once', 'node', ['automation/content-autogen-orchestrator.cjs', 'run-once'], {}, 2 * 60 * 1000),
 
-    // Tests/Examples
-    () => runCmd('test-generator', 'node', ['automation/test-generator.cjs'], {}, 2 * 60 * 1000),
-
-    // Performance quick build check
+    // Build check
     () => runCmd('build', 'npm', ['run', 'build'], {}, 8 * 60 * 1000),
   ];
 
   const results = [];
   for (const step of steps) {
     try {
-      // eslint-disable-next-line no-await-in-loop
       const res = await step();
       results.push(res);
     } catch (e) {

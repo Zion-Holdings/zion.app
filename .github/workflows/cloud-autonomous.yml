@@ -5,8 +5,12 @@ on:
     branches:
       - '**'
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '*/5 * * * *'
   workflow_dispatch: {}
+
+concurrency:
+  group: cloud-autonomous-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: write
