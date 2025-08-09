@@ -2,7 +2,7 @@ name: Autonomous Cloud Automations
 
 on:
   schedule:
-    - cron: '*/30 * * * *' # every 30 minutes
+    - cron: '*/15 * * * *' # every 15 minutes
   workflow_dispatch: {}
 
 jobs:
@@ -24,6 +24,10 @@ jobs:
         run: node scripts/generate-ideas.cjs
       - name: Generate market signals
         run: node scripts/generate-market-signals.cjs
+      - name: Generate dependency report
+        run: node scripts/generate-deps-report.cjs
+      - name: Generate GitHub ecosystem metrics
+        run: node scripts/generate-github-ecosystem.cjs
       - name: Commit and push if changed
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -33,7 +37,7 @@ jobs:
           git config user.email "autonomous-bot@users.noreply.github.com"
           if [ -n "$(git status --porcelain)" ]; then
             git add -A
-            git commit -m "chore(automation): update ideas and market data [skip ci]"
+            git commit -m "chore(automation): update automation datasets [skip ci]"
             git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }} HEAD:${{ github.ref_name }}
           else
             echo "No changes to commit"

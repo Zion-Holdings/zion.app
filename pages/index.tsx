@@ -10,7 +10,7 @@ export default function Home() {
         <Link href="/automations/ideas"><a className="enhanced-button enhanced-button-secondary">Autonomous Ideas Miner</a></Link>
         <Link href="/automations/market"><a className="enhanced-button enhanced-button-secondary">Market Signals Watcher</a></Link>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <Link href="/automations/ideas">
           <a className="enhanced-card enhanced-hover border border-gray-100 dark:border-gray-800">
             <div className="font-medium mb-1">Autonomous Ideas Miner</div>
@@ -21,6 +21,18 @@ export default function Home() {
           <a className="enhanced-card enhanced-hover border border-gray-100 dark:border-gray-800">
             <div className="font-medium mb-1">Market Signals Watcher</div>
             <div className="text-sm opacity-80">Watches NPM downloads and GitHub trends to inform decisions.</div>
+          </a>
+        </Link>
+        <Link href="/automations/deps">
+          <a className="enhanced-card enhanced-hover border border-gray-100 dark:border-gray-800">
+            <div className="font-medium mb-1">Dependency Health Auditor</div>
+            <div className="text-sm opacity-80">Audits vulnerabilities and outdated packages on a schedule.</div>
+          </a>
+        </Link>
+        <Link href="/automations/github">
+          <a className="enhanced-card enhanced-hover border border-gray-100 dark:border-gray-800">
+            <div className="font-medium mb-1">GitHub Ecosystem Metrics</div>
+            <div className="text-sm opacity-80">Tracks stars of top repos across key topics.</div>
           </a>
         </Link>
       </div>
