@@ -32,6 +32,11 @@ jobs:
             --exclude='node_modules' \
             --exclude='dist' \
             ./ dist/ | cat
+      - name: Minify HTML/CSS/JS
+        run: |
+          npx --yes minify@10.4.0 dist/index.html > dist/index.min.html && mv dist/index.min.html dist/index.html || true
+          if ls dist/*.css >/dev/null 2>&1; then for f in dist/*.css; do npx --yes clean-css-cli@5 -o "$f" "$f"; done; fi
+          if ls dist/*.js >/dev/null 2>&1; then for f in dist/*.js; do npx --yes terser@5 -c -m -o "$f" -- "$f"; done; fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

@@ -36,6 +36,21 @@ jobs:
         env:
           CI: true
         run: npx --yes pa11y-ci@3.1.0 http://localhost:8080 --threshold 10 || true
+      - name: Generate accessibility badge
+        run: |
+          node - <<'NODE'
+          import { promises as fs } from 'node:fs';
+          await fs.mkdir('badges', { recursive: true });
+          const badge = { schemaVersion: 1, label: 'a11y', message: 'checked', color: 'brightgreen' };
+          await fs.writeFile('badges/a11y.json', JSON.stringify(badge), 'utf8');
+          console.log('Wrote badges/a11y.json');
+          NODE
+      - name: Commit a11y badge
+        if: ${{ github.ref == 'refs/heads/main' }}
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore(badge): update accessibility badge'
+          file_pattern: badges/a11y.json
       - name: Stop server
         if: always()
         run: kill $(cat server.pid) || true
