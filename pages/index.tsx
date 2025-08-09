@@ -36,6 +36,12 @@ export default function Home() {
   </ul>
 </div>
       </section>
+
+<section className="border rounded p-4">
+  <div className="font-medium mb-2">Automation Reports</div>
+  <p className="text-sm text-gray-600">View uptime, SEO, links, deps, changelog, and performance insights.</p>
+  <a href="/reports" className="text-blue-600 hover:underline text-sm">Open Reports</a>
+</section>
     </div>
   );
 }

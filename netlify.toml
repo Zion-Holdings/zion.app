@@ -47,3 +47,7 @@
 [[scheduled.functions]]
   name = "cron-weekly-sitemap"
   cron = "0 0 * * 1" 
+
+[[scheduled.functions]]
+  name = "cron-weekly-pagespeed"
+  cron = "30 5 * * 1" 
