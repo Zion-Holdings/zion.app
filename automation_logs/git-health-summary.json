@@ -7,7 +7,7 @@
       "name": "Cursor Agent",
       "email": "cursoragent@cursor.com"
     },
-    "origin": "origin\thttps://x-access-token:ghs_1SeeAoUvjkwPM5vt04p9TiDa97I5iU3ORw5l@github.com/Zion-Holdings/zion.app (fetch)\norigin\thttps://x-access-token:ghs_1SeeAoUvjkwPM5vt04p9TiDa97I5iU3ORw5l@github.com/Zion-Holdings/zion.app (push)",
+    "origin": "origin\thttps://x-access-token:ghs_qFEzV0KlyTPAxZZL4JeP2RJ7P6y7H03t1mAX@github.com/Zion-Holdings/zion.app (fetch)\norigin\thttps://x-access-token:ghs_qFEzV0KlyTPAxZZL4JeP2RJ7P6y7H03t1mAX@github.com/Zion-Holdings/zion.app (push)",
     "fsck": {
       "status": 0,
       "output": "dangling blob 561042088da3545a48f3230b65a1b2ef34906299\ndangling blob 911d8241aa5952fdb88bea3463061fa5bb0b96af\ndangling commit 9297071132497d19b6fda717d43ef7ed299e739d\ndangling blob d2b6c7e11fc3f43f8e1be464dbd24a08ead2e4ea\ndangling tree 2d3ac98282a45c991bac5932c87ae300ceba4a57\ndangling blob 4473c9ffeee1b3c7bda8cf045c35cf4ceb978930\ndangling blob 008fc9841397bfeee04686dbba63a32c290c5e54\ndangling tree fae5095c095e04977501943537520f3f23edc7d4\ndangling blob 1d0b0b642574fd0709947ba79b8d030fcb6921d9\ndangling tree ae71cc8dcfc1748bc6c21f386db3c10bf80f9a10\ndangling blob 9f064df34cf5e6d9222db5b546c7305656e212a8\ndangling blob 42b48ded5af7bf485d1130847078042bdbfe7dea\ndangling blob 6dcd0ef7995d48b92ae610264ac7416b8d848cb6\ndangling blob ca23b1d579e19e6f78d0ef1d43048a618a17707c\ndangling blob 1b25d3b0a727cf"
