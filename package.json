@@ -216,7 +216,10 @@
     "conflicts:cron:stop": "bash automation/merge-conflict-cron.sh stop",
     "conflicts:cron:status": "bash automation/merge-conflict-cron.sh status",
     "autopilot:economy": "ts-node scripts/economy-autopilot.ts",
-    "postbuild": "mkdir -p public/reports/economy && cp -r data/reports/economy/* public/reports/economy/ || true"
+    "optimize:economy": "ts-node scripts/economy-optimizer.ts",
+    "detect:economy": "ts-node scripts/economy-anomaly-detector.ts",
+    "governance:brief": "ts-node scripts/economy-governance-brief.ts",
+    "postbuild": "mkdir -p public/reports/economy && cp -r data/reports/economy/* public/reports/economy/ || true && mkdir -p public/reports/economy/optimizer && cp -r data/reports/economy/optimizer/* public/reports/economy/optimizer/ || true && mkdir -p public/reports/economy/anomalies && cp -r data/reports/economy/anomalies/* public/reports/economy/anomalies/ || true && mkdir -p public/docs/governance && cp -r docs/governance/* public/docs/governance/ || true"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
