@@ -1,0 +1,61 @@
+name: Autonomous Hourly Automations
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: autonomous-hourly
+  cancel-in-progress: true
+
+jobs:
+  run-hourly-automations:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run lightweight automations
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          APEX_DOMAIN: ${{ secrets.APEX_DOMAIN }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          set -euo pipefail
+          npm run sitemap || true
+          npm run links:scan || true
+          npm run maintenance:run || true
+
+      - name: Auto-commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore(automation): hourly maintenance and link fixes'
+          commit_user_name: 'Zion Autonomy Bot'
+          commit_user_email: 'autonomy-bot@users.noreply.github.com'
+          branch: main
+        continue-on-error: true
+
+      - name: Trigger Netlify build hook (optional)
+        if: ${{ secrets.NETLIFY_BUILD_HOOK_URL != '' }}
+        run: |
+          curl -X POST -sS --retry 3 "$NETLIFY_BUILD_HOOK_URL" || true
+        env:
+          NETLIFY_BUILD_HOOK_URL: ${{ secrets.NETLIFY_BUILD_HOOK_URL }}

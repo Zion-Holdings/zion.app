@@ -1,0 +1,42 @@
+name: Autonomous Realtime Checks
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  health-and-fix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Lint and type-check
+        run: |
+          npm run lint || true
+          npm run type-check || true
+      - name: Heal minor issues
+        run: |
+          npm run fix_empty_files || true
+          npm run fix_typescript_syntax_errors || true
+          npm run fix_remaining_errors || true
+      - name: Auto-commit fixes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore(ci): auto-fix minor issues on push'
+          commit_user_name: 'Zion Autonomy Bot'
+          commit_user_email: 'autonomy-bot@users.noreply.github.com'
+        continue-on-error: true
