@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "timestamp": "2025-08-08T17:09:48.972Z",
+=======
+  "timestamp": "2025-08-08T17:26:46.982Z",
+>>>>>>> origin/main
   "pages": [
     {
       "url": "https://ziontechgroup.netlify.app/",
@@ -14,6 +18,10 @@
       "status": 200
     },
     {
+      "url": "https://ziontechgroup.netlify.app/talent",
+      "status": 200
+    },
+    {
       "url": "https://ziontechgroup.netlify.app/contact",
       "status": 200
     },
@@ -24,14 +32,47 @@
     {
       "url": "https://ziontechgroup.netlify.app/blog",
       "status": 200
+<<<<<<< HEAD
+=======
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/talent/ava-chen",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/talent/marco-silva",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/talent/nina-patel",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/talent/kenji-yamada",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/talent/lena-mueller",
+      "status": 200
+>>>>>>> origin/main
     }
   ],
   "discovered": [
     "https://ziontechgroup.netlify.app/",
     "https://ziontechgroup.netlify.app/services",
     "https://ziontechgroup.netlify.app/about",
+    "https://ziontechgroup.netlify.app/talent",
     "https://ziontechgroup.netlify.app/contact",
     "https://ziontechgroup.netlify.app/products",
+<<<<<<< HEAD
     "https://ziontechgroup.netlify.app/blog"
+=======
+    "https://ziontechgroup.netlify.app/blog",
+    "https://ziontechgroup.netlify.app/talent/ava-chen",
+    "https://ziontechgroup.netlify.app/talent/marco-silva",
+    "https://ziontechgroup.netlify.app/talent/nina-patel",
+    "https://ziontechgroup.netlify.app/talent/kenji-yamada",
+    "https://ziontechgroup.netlify.app/talent/lena-mueller"
+>>>>>>> origin/main
   ]
 }

@@ -1,29 +1,51 @@
 [
   {
-    "url": "https://ziontechgroup.netlify.app"
+    "url": "https://ziontechgroup.com"
   },
   {
-    "url": "https://ziontechgroup.netlify.app/#main-content"
+    "url": "https://ziontechgroup.com/#main-content"
   },
   {
-    "url": "https://ziontechgroup.netlify.app/"
+    "url": "https://ziontechgroup.com/"
   },
   {
-    "url": "https://ziontechgroup.netlify.app/services"
+    "url": "https://ziontechgroup.com/services"
   },
   {
-    "url": "https://ziontechgroup.netlify.app/about"
+    "url": "https://ziontechgroup.com/about"
   },
   {
-    "url": "https://ziontechgroup.netlify.app/contact"
+    "url": "https://ziontechgroup.com/talent"
   },
   {
-    "url": "https://ziontechgroup.netlify.app/products"
+    "url": "https://ziontechgroup.com/contact"
   },
   {
-    "url": "https://ziontechgroup.netlify.app/blog"
+    "url": "https://ziontechgroup.com/products"
   },
   {
+<<<<<<< HEAD
     "url": "https://ziontechgroup.netlify.app/#"
+=======
+    "url": "https://ziontechgroup.com/blog"
+  },
+  {
+    "url": "https://ziontechgroup.com/#"
+  },
+  {
+    "url": "https://ziontechgroup.com/talent/ava-chen"
+  },
+  {
+    "url": "https://ziontechgroup.com/talent/marco-silva"
+  },
+  {
+    "url": "https://ziontechgroup.com/talent/nina-patel"
+  },
+  {
+    "url": "https://ziontechgroup.com/talent/kenji-yamada"
+  },
+  {
+    "url": "https://ziontechgroup.com/talent/lena-mueller"
+>>>>>>> origin/main
   }
 ]

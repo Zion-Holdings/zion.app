@@ -1,7 +1,13 @@
 {
+<<<<<<< HEAD
   "timestamp": "2025-08-08T17:09:36.490Z",
   "startUrl": "https://ziontechgroup.com/",
   "totalVisited": 6,
+=======
+  "timestamp": "2025-08-08T17:26:46.855Z",
+  "startUrl": "https://ziontechgroup.com/",
+  "totalVisited": 12,
+>>>>>>> origin/main
   "pages": [
     {
       "url": "https://ziontechgroup.com/",
@@ -16,6 +22,10 @@
       "status": 200
     },
     {
+      "url": "https://ziontechgroup.com/talent",
+      "status": 200
+    },
+    {
       "url": "https://ziontechgroup.com/contact",
       "status": 200
     },
@@ -26,6 +36,29 @@
     {
       "url": "https://ziontechgroup.com/blog",
       "status": 200
+<<<<<<< HEAD
+=======
+    },
+    {
+      "url": "https://ziontechgroup.com/talent/ava-chen",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/talent/marco-silva",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/talent/nina-patel",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/talent/kenji-yamada",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/talent/lena-mueller",
+      "status": 200
+>>>>>>> origin/main
     }
   ],
   "broken": []

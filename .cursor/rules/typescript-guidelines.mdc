@@ -1,0 +1,20 @@
+---
+description: TypeScript usage standards for this repository
+globs: **/*.{ts,tsx,cts,mts}
+---
+
+# TypeScript Guidelines
+
+## Types
+- Prefer interfaces for object shapes
+- Explicit return types for exported functions
+
+## Code Style
+- Small, pure functions; guard clauses
+- No mutation of inputs; avoid any
+
+## Errors
+- Throw Error with descriptive messages
+
+## Modules
+- Prefer named exports; avoid default unless justified

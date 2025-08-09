@@ -3,47 +3,77 @@
 const fs = require('fs');
 const path = require('path');
 
-const REPORT_DIR = path.join(__dirname, '..', 'data', 'reports', 'ui-evolution');
-const SUGGESTIONS_FILE = path.join(REPORT_DIR, 'beautify-suggestions.json');
+function ensureDir(dirPath) {
+  if (!fs.existsSync(dirPath)) {
+    fs.mkdirSync(dirPath, { recursive: true });
+  }
+}
 
-function ensureDir(p) { if (!fs.existsSync(p)) fs.mkdirSync(p, { recursive: true }); }
+function log(message) {
+  const logDir = path.join(__dirname, 'logs');
+  ensureDir(logDir);
+  const line = `[${new Date().toISOString()}] ${message}\n`;
+  process.stdout.write(`${message}\n`);
+  fs.appendFileSync(path.join(logDir, 'ui-beautify.log'), line);
+}
 
-function main() {
-  ensureDir(REPORT_DIR);
-  const suggestions = [];
-  const themeHints = {
-    gradient: 'bg-gradient-to-br from-gray-900 via-gray-800 to-black',
-    neon: 'text-cyan-400 hover:text-cyan-300',
-    card: 'rounded-xl border border-gray-800/50 bg-black/30 backdrop-blur-md shadow-[0_0_20px_rgba(0,255,255,0.15)]',
-    button: 'inline-flex items-center gap-2 rounded-lg px-4 py-2 bg-cyan-600 hover:bg-cyan-500 text-white transition-all',
-    glass: 'bg-white/5 backdrop-blur supports-backdrop-blur:bg-white/10',
-  };
+function scanFilesForBeautifyHints(rootDir) {
+  const results = [];
+  const exts = new Set(['.tsx', '.ts', '.jsx', '.js', '.css']);
 
-  const targets = [
-    path.join(__dirname, '..', 'components'),
-    path.join(__dirname, '..', 'pages')
-  ];
-
-  for (const dir of targets) {
-    if (!fs.existsSync(dir)) continue;
-    for (const entry of fs.readdirSync(dir)) {
-      const full = path.join(dir, entry);
-      const stat = fs.statSync(full);
-      if (stat.isDirectory()) continue;
-      if (!/\.(tsx|ts|jsx|js)$/.test(entry)) continue;
-      const src = fs.readFileSync(full, 'utf8');
-      const rec = { file: full, hints: [] };
-      if (!/dark:/.test(src)) rec.hints.push({ type: 'theme', message: 'Add dark mode Tailwind variants for a high-tech look' });
-      if (!/class(Name)?=.*gradient/.test(src)) rec.hints.push({ type: 'style', message: `Use gradient hero backgrounds like: ${themeHints.gradient}` });
-      if (!/InteractiveNavigation|EnhancedNavigation/.test(src) && /Navigation|Navbar|Header/.test(src)) rec.hints.push({ type: 'component', message: 'Adopt EnhancedNavigation for futuristic nav interactions' });
-      if (/Button|btn|<a\s+/.test(src)) rec.hints.push({ type: 'style', message: `Adopt high-tech button style: ${themeHints.button}` });
-      if (/Card|Panel|Section/.test(src)) rec.hints.push({ type: 'style', message: `Adopt glassy card style: ${themeHints.card}` });
-      if (rec.hints.length) suggestions.push(rec);
+  function walk(current) {
+    const entries = fs.readdirSync(current, { withFileTypes: true });
+    for (const entry of entries) {
+      // Skip node_modules and build outputs
+      if (entry.name === 'node_modules' || entry.name === '.next' || entry.name === 'out' || entry.name === 'dist') {
+        continue;
+      }
+      const full = path.join(current, entry.name);
+      if (entry.isDirectory()) {
+        walk(full);
+      } else if (exts.has(path.extname(entry.name))) {
+        try {
+          const content = fs.readFileSync(full, 'utf8');
+          const hints = [];
+          if (/class(Name)?=\"[^\"]*\bsm:|md:|lg:|xl:\b/.test(content) === false && /tailwind|@apply/.test(content)) {
+            hints.push('Consider using responsive Tailwind utilities for better UI across breakpoints.');
+          }
+          if (/dark:/.test(content) === false && /tailwind|@apply/.test(content)) {
+            hints.push('Add dark mode support using `dark:` variant.');
+          }
+          if (/motion\./.test(content) === false && /framer-motion/.test(content) === false) {
+            hints.push('Introduce subtle motion using framer-motion for perceived performance and polish.');
+          }
+          if (/aria-/.test(content) === false && /role=/.test(content) === false) {
+            hints.push('Improve accessibility by adding ARIA attributes where appropriate.');
+          }
+          if (hints.length > 0) {
+            results.push({ file: full, hints });
+          }
+        } catch {/* ignore unreadable files */}
+      }
     }
   }
 
-  fs.writeFileSync(SUGGESTIONS_FILE, JSON.stringify({ timestamp: new Date().toISOString(), suggestions }, null, 2));
-  console.log(`Beautify suggestions generated: ${suggestions.length} files with hints`);
+  walk(rootDir);
+  return results;
 }
 
-if (require.main === module) main();
+(function main() {
+  log('🎨 UI Beautify orchestrator starting');
+  const repoRoot = path.resolve(__dirname, '..');
+  const reportDir = path.join(repoRoot, 'data', 'reports', 'ui-evolution');
+  ensureDir(reportDir);
+
+  const findings = scanFilesForBeautifyHints(repoRoot);
+  const report = {
+    generatedAt: new Date().toISOString(),
+    totalFindings: findings.length,
+    recommendations: findings,
+  };
+
+  const reportPath = path.join(reportDir, `beautify-report-${Date.now()}.json`);
+  fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+  log(`✅ Beautify report written to ${path.relative(repoRoot, reportPath)} with ${findings.length} findings`);
+  process.exit(0);
+})();

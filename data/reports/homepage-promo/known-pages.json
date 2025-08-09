@@ -3,6 +3,7 @@
     "/",
     "/404",
     "/about",
+    "/admin/automation-status",
     "/auth",
     "/auth/callback",
     "/auth/forgot-password",
@@ -14,7 +15,11 @@
     "/auto/auto-update-2025-08-08t16-30-20-949z",
     "/auto/auto-update-2025-08-08t16-38-19-257z",
     "/auto/auto-update-2025-08-08t16-49-54-200z",
+<<<<<<< HEAD
     "/auto/auto-update-2025-08-08t17-09-38-113z",
+=======
+    "/auto/auto-update-2025-08-08t17-23-07-688z",
+>>>>>>> origin/main
     "/automation",
     "/blockchain-solutions",
     "/blog",
@@ -64,20 +69,26 @@
     "/products",
     "/services",
     "/services/ai-model-development-chat",
+    "/services/ai-seo-auditor",
     "/services/api-development-chat",
     "/services/business-intelligence-chat",
     "/services/cloud-migration-services-chat",
+    "/services/customer-support-chatbot",
     "/services/data-pipeline-engineering-chat",
     "/services/database-design-chat",
+    "/services/instagram-content-scheduler",
+    "/services/landing-page-generator",
     "/services/mobile-app-development-chat",
     "/services/network-security-chat",
     "/services/performance-optimization-chat",
+    "/services/price-intelligence-service",
     "/services/quality-assurance-testing-chat",
     "/services/security-auditing-chat",
     "/services/system-administration-chat",
     "/services/technical-documentation-chat",
     "/services/ui-ux-design-chat",
     "/services/web-application-development-chat",
-    "/talent"
+    "/talent",
+    "/talent/[slug]"
   ]
 }

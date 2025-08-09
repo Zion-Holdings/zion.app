@@ -1,0 +1,5 @@
+# List files or globs that are explicitly allowed to be deleted.
+# Example entries:
+# build/*.map
+# pages/legacy/**
+# Use with caution. Prefer fixing or deactivating files instead of deleting.

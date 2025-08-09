@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "generatedAt": "2025-08-08T17:09:35.281Z",
   "posts": [
     {
@@ -14,6 +15,13 @@
     {
       "timestamp": "2025-08-08T17:09:35.280Z",
       "text": "Unlock growth with Digital Transformation: end-to-end modernization. Explore how at https://ziontechgroup.com #AI #Cloud #DigitalTransformation",
+=======
+  "generatedAt": "2025-08-08T17:26:49.861Z",
+  "posts": [
+    {
+      "timestamp": "2025-08-08T17:26:49.861Z",
+      "text": "Discover our latest capabilities at https://ziontechgroup.com #Tech #Innovation",
+>>>>>>> origin/main
       "url": "https://ziontechgroup.com"
     }
   ]

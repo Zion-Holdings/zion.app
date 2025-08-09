@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "timestamp": "2025-08-08T17:09:50.654Z",
   "changedFiles": [
     "utomation/automation-dashboard.cjs",
@@ -41,6 +42,49 @@
     "data/reports/homepage-promo/proposals/proposal-1754672989310.md",
     "data/reports/ui-evolution/beautify-suggestions.json",
     "pages/auto/auto-update-2025-08-08t17-09-38-113z.tsx"
+=======
+  "timestamp": "2025-08-08T17:26:50.446Z",
+  "changedFiles": [
+    "utomation/instagram-agents/captions.json",
+    "utomation/instagram-agents/highlights.json",
+    "ursor-memory/memory-summary.json",
+    "ata/reports/alignment/alignment-report.json",
+    "ata/reports/alignment/compliance-report.json",
+    "data/reports/cursor/cursor-prompts.json",
+    "ata/reports/design/design-analysis.json",
+    "ata/reports/feature-marketing/feature-marketing-actions.json",
+    "ata/reports/frontend-sync/autonomous/frontend-sync-autonomous-actions.json",
+    "ata/reports/frontend-sync/frontend-sync-actions.json",
+    "ata/reports/homepage-promo/homepage-promo-actions.json",
+    "data/reports/link-monitor/site-link-report.json",
+    "ata/reports/marketing/linkedin/linkedin-posts.json",
+    "ata/reports/marketing/linkedin/linkedin-pro-posts.json",
+    "ata/reports/responsive/responsive-analysis.json",
+    "ata/reports/revenue-ideas/revenue-ideas-actions.json",
+    "ata/reports/saas/saas-actions.json",
+    "data/reports/spec-dev/chat-raw.html",
+    "data/reports/spec-dev/site-crawl.json",
+    "data/reports/spec-dev/spec-dev-actions.json",
+    "ata/reports/ui-evolution/beautify-suggestions.json",
+    "ata/reports/ui-evolution/ui-evolution-analysis.json",
+    "data/reports/variation/variation-report.json",
+    "automation/cursor-agents/task-1754674004723-1.cjs",
+    "automation/cursor-agents/task-1754674004723-2.cjs",
+    "automation/cursor-agents/task-1754674004723-3.cjs",
+    "automation/cursor-agents/task-1754674004723-4.cjs",
+    "automation/cursor-agents/task-1754674004723-5.cjs",
+    "automation/cursor-agents/task-1754674009506-1.cjs",
+    "automation/cursor-agents/task-1754674009506-2.cjs",
+    "automation/cursor-agents/task-1754674009506-3.cjs",
+    "automation/cursor-agents/task-1754674009506-4.cjs",
+    "automation/cursor-agents/task-1754674009506-5.cjs",
+    "automation/research/ai-trends-2025-08-08T17-26-44-917Z.json",
+    "automation/research/ai-trends-2025-08-08T17-26-49-453Z.json",
+    "data/reports/homepage-promo/proposals/proposal-1754674005103.md",
+    "data/reports/homepage-promo/proposals/proposal-1754674009857.md",
+    "data/reports/performance/performance-1754674009005.json",
+    "data/reports/venture/venture-plan-1754674005920.json"
+>>>>>>> origin/main
   ],
   "actions": [
     "sync_content_metadata",

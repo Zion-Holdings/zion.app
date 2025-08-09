@@ -1,0 +1,21 @@
+---
+description: Rule for managing project memory entries and updates
+globs: **/*
+---
+
+# AI Memory Rule
+
+This rule defines how the assistant manages and utilizes project memory: user preferences, learned facts, and project-specific conventions.
+
+## Storage
+- Store persistent knowledge in `.cursor/rules/learned-memories.mdc`
+- Keep entries concise and factual; avoid duplications
+
+## Update Protocol
+1. Identify new durable knowledge (decision, convention, preference)
+2. Check if it exists or conflicts in `learned-memories.mdc`
+3. Append or update the relevant section with a short bullet entry
+
+## Usage Protocol
+- Before planning or large edits, review `learned-memories.mdc`
+- Align suggestions with stored decisions and conventions
