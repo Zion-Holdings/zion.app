@@ -1,0 +1,16 @@
+automation:
+  - 'automation/**/*'
+  - '.github/workflows/**/*'
+  - 'scripts/**/*'
+
+frontend:
+  - 'components/**/*'
+  - 'pages/**/*'
+  - 'styles/**/*'
+
+docs:
+  - '**/*.md'
+  - 'docs/**/*'
+
+data:
+  - 'data/**/*'
