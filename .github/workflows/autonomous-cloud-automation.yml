@@ -1,0 +1,91 @@
+name: Autonomous Cloud Automation
+
+on:
+  schedule:
+    - cron: '*/30 * * * *' # every 30 minutes
+  workflow_dispatch: {}
+  push:
+    paths:
+      - 'automation/**'
+      - 'scripts/**'
+      - 'package.json'
+      - 'package-lock.json'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cloud-automation-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  run-automations:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Run sitemap refresh (fast)
+        run: |
+          npm run sitemap || true
+
+      - name: Run Spec-Dev scan
+        run: |
+          npm run spec-dev:scan || true
+
+      - name: Alignment scan
+        run: |
+          npm run alignment:scan || true
+
+      - name: Responsive content analyze
+        run: |
+          npm run responsive:analyze || true
+
+      - name: UI evolution analyze
+        run: |
+          npm run ui-evolution:analyze || true
+
+      - name: Venture services analyze
+        run: |
+          npm run venture:analyze || true
+
+      - name: Links scan
+        run: |
+          npm run links:scan || true
+
+      - name: Promo scan
+        run: |
+          npm run promo:scan || true
+
+      - name: Health check / fix sync
+        run: |
+          npm run sync-health:run || true
+          npm run git:health:fix || true
+
+      - name: Configure Git
+        run: |
+          git config user.name "zion-autobot"
+          git config user.email "autobot@users.noreply.github.com"
+
+      - name: Commit changes if any
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "chore(autobot): autonomous cloud automation updates [skip ci]"
+            git push origin HEAD:${GITHUB_REF#refs/heads/}
+          else
+            echo "No changes to commit"
+          fi

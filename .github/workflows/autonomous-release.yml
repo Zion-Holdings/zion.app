@@ -1,0 +1,51 @@
+name: Autonomous Release
+
+on:
+  workflow_run:
+    workflows: ["Autonomous Cloud Automation", "Autonomous Cloud Orchestrator"]
+    types:
+      - completed
+
+permissions:
+  contents: write
+
+jobs:
+  create-release:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+
+      - name: Detect changes since last tag
+        id: changes
+        run: |
+          LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "none")
+          echo "last=$LAST_TAG" >> $GITHUB_OUTPUT
+          if [ "$LAST_TAG" = "none" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            if git rev-list "$LAST_TAG"..HEAD --count | grep -q '^[1-9]'; then
+              echo "has_changes=true" >> $GITHUB_OUTPUT
+            else
+              echo "has_changes=false" >> $GITHUB_OUTPUT
+            fi
+          fi
+
+      - name: Create tag and release
+        if: steps.changes.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          DATE=$(date +"%Y.%m.%d")
+          TAG="auto-$DATE.${{ github.run_number }}"
+          git tag -a "$TAG" -m "Autonomous release $TAG"
+          git push origin "$TAG"
+          gh release create "$TAG" --prerelease --title "Autonomous $TAG" --notes "Automated changes from cloud orchestrations"
+
+      - name: No changes
+        if: steps.changes.outputs.has_changes != 'true'
+        run: echo "No changes since last tag"
