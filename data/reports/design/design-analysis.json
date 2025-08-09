@@ -1,6 +1,6 @@
 {
-  "timestamp": "2025-08-09T02:53:07.338Z",
-  "filesAnalyzed": 119,
+  "timestamp": "2025-08-09T09:59:02.337Z",
+  "filesAnalyzed": 137,
   "items": [
     {
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/404.tsx",
@@ -544,33 +544,401 @@
     {
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t02-30-00-014z.tsx",
       "issues": [
-        "missing_enhanced_layout"
+        "missing_head_import",
+        "no_tailwind_usage",
+        "missing_enhanced_layout",
+        "missing_meta_title",
+        "missing_meta_description"
       ],
       "details": {
         "filePath": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t02-30-00-014z.tsx",
-        "hasHead": true,
-        "usesTailwind": true,
+        "hasHead": false,
+        "usesTailwind": false,
         "usesEnhancedLayout": false,
         "usesEnhancedNav": false,
         "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
+        "hasMetaTitle": false,
+        "hasMetaDesc": false
       }
     },
     {
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t02-52-52-054z.tsx",
       "issues": [
-        "missing_enhanced_layout"
+        "missing_head_import",
+        "no_tailwind_usage",
+        "missing_enhanced_layout",
+        "missing_meta_title",
+        "missing_meta_description"
       ],
       "details": {
         "filePath": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t02-52-52-054z.tsx",
-        "hasHead": true,
-        "usesTailwind": true,
+        "hasHead": false,
+        "usesTailwind": false,
         "usesEnhancedLayout": false,
         "usesEnhancedNav": false,
         "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
+        "hasMetaTitle": false,
+        "hasMetaDesc": false
+      }
+    },
+    {
+      "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t03-02-29-521z.tsx",
+      "issues": [
+        "missing_head_import",
+        "no_tailwind_usage",
+        "missing_enhanced_layout",
+        "missing_meta_title",
+        "missing_meta_description"
+      ],
+      "details": {
+        "filePath": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t03-02-29-521z.tsx",
+        "hasHead": false,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": false,
+        "hasMetaDesc": false
+      }
+    },
+    {
+      "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t03-15-48-518z.tsx",
+      "issues": [
+        "missing_head_import",
+        "no_tailwind_usage",
+        "missing_enhanced_layout",
+        "missing_meta_title",
+        "missing_meta_description"
+      ],
+      "details": {
+        "filePath": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t03-15-48-518z.tsx",
+        "hasHead": false,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": false,
+        "hasMetaDesc": false
+      }
+    },
+    {
+      "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t03-16-52-070z.tsx",
+      "issues": [
+        "missing_head_import",
+        "no_tailwind_usage",
+        "missing_enhanced_layout",
+        "missing_meta_title",
+        "missing_meta_description"
+      ],
+      "details": {
+        "filePath": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t03-16-52-070z.tsx",
+        "hasHead": false,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": false,
+        "hasMetaDesc": false
+      }
+    },
+    {
+      "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t03-30-00-022z.tsx",
+      "issues": [
+        "missing_head_import",
+        "no_tailwind_usage",
+        "missing_enhanced_layout",
+        "missing_meta_title",
+        "missing_meta_description"
+      ],
+      "details": {
+        "filePath": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t03-30-00-022z.tsx",
+        "hasHead": false,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": false,
+        "hasMetaDesc": false
+      }
+    },
+    {
+      "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t04-00-00-044z.tsx",
+      "issues": [
+        "missing_head_import",
+        "no_tailwind_usage",
+        "missing_enhanced_layout",
+        "missing_meta_title",
+        "missing_meta_description"
+      ],
+      "details": {
+        "filePath": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t04-00-00-044z.tsx",
+        "hasHead": false,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": false,
+        "hasMetaDesc": false
+      }
+    },
+    {
+      "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t04-30-00-078z.tsx",
+      "issues": [
+        "missing_head_import",
+        "no_tailwind_usage",
+        "missing_enhanced_layout",
+        "missing_meta_title",
+        "missing_meta_description"
+      ],
+      "details": {
+        "filePath": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t04-30-00-078z.tsx",
+        "hasHead": false,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": false,
+        "hasMetaDesc": false
+      }
+    },
+    {
+      "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t05-00-00-026z.tsx",
+      "issues": [
+        "missing_head_import",
+        "no_tailwind_usage",
+        "missing_enhanced_layout",
+        "missing_meta_title",
+        "missing_meta_description"
+      ],
+      "details": {
+        "filePath": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t05-00-00-026z.tsx",
+        "hasHead": false,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": false,
+        "hasMetaDesc": false
+      }
+    },
+    {
+      "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t05-30-00-011z.tsx",
+      "issues": [
+        "missing_head_import",
+        "no_tailwind_usage",
+        "missing_enhanced_layout",
+        "missing_meta_title",
+        "missing_meta_description"
+      ],
+      "details": {
+        "filePath": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t05-30-00-011z.tsx",
+        "hasHead": false,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": false,
+        "hasMetaDesc": false
+      }
+    },
+    {
+      "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t06-00-00-040z.tsx",
+      "issues": [
+        "missing_head_import",
+        "no_tailwind_usage",
+        "missing_enhanced_layout",
+        "missing_meta_title",
+        "missing_meta_description"
+      ],
+      "details": {
+        "filePath": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t06-00-00-040z.tsx",
+        "hasHead": false,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": false,
+        "hasMetaDesc": false
+      }
+    },
+    {
+      "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t06-30-00-017z.tsx",
+      "issues": [
+        "missing_head_import",
+        "no_tailwind_usage",
+        "missing_enhanced_layout",
+        "missing_meta_title",
+        "missing_meta_description"
+      ],
+      "details": {
+        "filePath": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t06-30-00-017z.tsx",
+        "hasHead": false,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": false,
+        "hasMetaDesc": false
+      }
+    },
+    {
+      "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t07-00-00-080z.tsx",
+      "issues": [
+        "missing_head_import",
+        "no_tailwind_usage",
+        "missing_enhanced_layout",
+        "missing_meta_title",
+        "missing_meta_description"
+      ],
+      "details": {
+        "filePath": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t07-00-00-080z.tsx",
+        "hasHead": false,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": false,
+        "hasMetaDesc": false
+      }
+    },
+    {
+      "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t07-30-00-031z.tsx",
+      "issues": [
+        "missing_head_import",
+        "no_tailwind_usage",
+        "missing_enhanced_layout",
+        "missing_meta_title",
+        "missing_meta_description"
+      ],
+      "details": {
+        "filePath": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t07-30-00-031z.tsx",
+        "hasHead": false,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": false,
+        "hasMetaDesc": false
+      }
+    },
+    {
+      "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t08-00-00-021z.tsx",
+      "issues": [
+        "missing_head_import",
+        "no_tailwind_usage",
+        "missing_enhanced_layout",
+        "missing_meta_title",
+        "missing_meta_description"
+      ],
+      "details": {
+        "filePath": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t08-00-00-021z.tsx",
+        "hasHead": false,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": false,
+        "hasMetaDesc": false
+      }
+    },
+    {
+      "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t08-30-00-023z.tsx",
+      "issues": [
+        "missing_head_import",
+        "no_tailwind_usage",
+        "missing_enhanced_layout",
+        "missing_meta_title",
+        "missing_meta_description"
+      ],
+      "details": {
+        "filePath": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t08-30-00-023z.tsx",
+        "hasHead": false,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": false,
+        "hasMetaDesc": false
+      }
+    },
+    {
+      "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t09-00-00-015z.tsx",
+      "issues": [
+        "missing_head_import",
+        "no_tailwind_usage",
+        "missing_enhanced_layout",
+        "missing_meta_title",
+        "missing_meta_description"
+      ],
+      "details": {
+        "filePath": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t09-00-00-015z.tsx",
+        "hasHead": false,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": false,
+        "hasMetaDesc": false
+      }
+    },
+    {
+      "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t09-30-00-028z.tsx",
+      "issues": [
+        "missing_head_import",
+        "no_tailwind_usage",
+        "missing_enhanced_layout",
+        "missing_meta_title",
+        "missing_meta_description"
+      ],
+      "details": {
+        "filePath": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t09-30-00-028z.tsx",
+        "hasHead": false,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": false,
+        "hasMetaDesc": false
+      }
+    },
+    {
+      "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t09-48-10-333z.tsx",
+      "issues": [
+        "missing_head_import",
+        "no_tailwind_usage",
+        "missing_enhanced_layout",
+        "missing_meta_title",
+        "missing_meta_description"
+      ],
+      "details": {
+        "filePath": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t09-48-10-333z.tsx",
+        "hasHead": false,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": false,
+        "hasMetaDesc": false
+      }
+    },
+    {
+      "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t09-56-05-797z.tsx",
+      "issues": [
+        "missing_head_import",
+        "no_tailwind_usage",
+        "missing_enhanced_layout",
+        "missing_meta_title",
+        "missing_meta_description"
+      ],
+      "details": {
+        "filePath": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t09-56-05-797z.tsx",
+        "hasHead": false,
+        "usesTailwind": false,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": false,
+        "hasMetaDesc": false
       }
     },
     {
@@ -1898,7 +2266,7 @@
         "filePath": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/components/layout/EnhancedLayout.tsx",
         "hasHead": false,
         "usesTailwind": false,
-        "usesEnhancedLayout": false,
+        "usesEnhancedLayout": true,
         "usesEnhancedNav": false,
         "usesEnhancedFooter": false,
         "hasMetaTitle": false,

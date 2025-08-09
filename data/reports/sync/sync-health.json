@@ -1,12 +1,58 @@
 {
-  "timestamp": "2025-08-09T02:42:26.630Z",
-  "host": "Miami2-2.local",
-  "status": "failing",
+  "timestamp": "2025-08-09T09:58:59.283Z",
+  "host": "MacBook-Pro-de-Kleber.local",
+  "repoRoot": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app",
+  "status": "degraded",
   "checks": [
     {
       "name": "git-repo",
+      "ok": true,
+      "details": "Inside git repo"
+    },
+    {
+      "name": "bg-sync-loop-running",
       "ok": false,
-      "details": "Not a git repo"
+      "details": "PID: - "
+    },
+    {
+      "name": "bg-pull-loop-running",
+      "ok": false,
+      "details": "PID: - "
+    },
+    {
+      "name": "auto-sync-log-fresh",
+      "ok": true,
+      "details": "ageMs=52565.32373046875"
+    },
+    {
+      "name": "auto-pull-log-fresh",
+      "ok": true,
+      "details": "ageMs=232958.80297851562"
+    },
+    {
+      "name": "advanced-git-sync-lock-stale",
+      "ok": true,
+      "details": "ageMs=656954.4626464844"
+    },
+    {
+      "name": "git-pull-rebase-lock-stale",
+      "ok": true,
+      "details": "ageMs=654176.7822265625"
+    },
+    {
+      "name": "origin-configured",
+      "ok": true,
+      "details": "https://github.com/Zion-Holdings/zion.app.git"
+    },
+    {
+      "name": "divergence",
+      "ok": true,
+      "details": "behind=0, ahead=0, branch=main"
+    },
+    {
+      "name": "working-tree-clean",
+      "ok": true,
+      "details": "changed=0"
     }
   ]
 }

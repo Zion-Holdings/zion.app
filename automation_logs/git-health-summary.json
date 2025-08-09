@@ -1,25 +1,22 @@
 {
   "ok": false,
   "errors": [
-    "git gc failed to clean repository."
+    "git fsck reported issues. Run with --fix locally to attempt repair."
   ],
-  "warnings": [
-    "git fsck reported issues. Attempting git gc...",
-    "No upstream configured for current branch."
-  ],
+  "warnings": [],
   "checks": {
     "user": {
-      "name": "Automation Bot",
-      "email": "automation@bolt.new.zion.app"
+      "name": "Kleber Garcia Alcatrao",
+      "email": "kleber@ziontechgroup.com"
     },
     "origin": "origin\thttps://github.com/Zion-Holdings/zion.app.git (fetch)\norigin\thttps://github.com/Zion-Holdings/zion.app.git (push)",
     "fsck": {
-      "status": null,
-      "output": "dangling blob ad00607120026cfc1f713259ce2c25e194205401\ndangling blob f200202e219d72b5cd28004dd9714511ba59d850\ndangling blob 8803e0fc39a3b54582660f55fd0b0f6fc1339544\ndangling blob 4b0580b1b71886112ed576ef591ae0f0c904cf81\ndangling blob bc05a0cc140aeb741d2d833f71d5e45356f7616f\ndangling blob 600640785c2b7336cb3afcd9d9bd3e10609410e4\ndangling blob 6906601d7809162c25a506e5e80ad4312705c71d\ndangling blob 9206a01cafe6faf42d2bc63b687012ad3d5c3e83\ndangling blob a10620cb6c3e72b43b17dc2e3467cf7b9f18ab95\ndangling blob 2f07e0bd5d51d0d0bea614d1b3c0728cf125aff4\ndangling blob 5707e0910f72fabaa0ddc944dea9f2101a3d088f\ndangling blob 9507808b7c1ea0271ab51b8f2537ba63cb8f8a95\ndangling blob 2208c04875093bbd3fbfd2ecd7e558255fae1e4a\ndangling blob 5e08601a9c8e5d433a6baf72130886669416f28e\ndangling blob 940840dc4e53aebf"
+      "status": 2,
+      "output": "dangling tree 6d0ee06a019ca0a13151281e5af0440f44f0e7ac\ndangling tree b510c019f6c1946ffed9e986bd67a0b3686bbe52\nmissing blob 6e1800a02b7399eb9a3f8c890dfabcb42319f766\nmissing blob 481ea045da875d7a1f2ba71dffac0ede20207e66\ndangling blob bb27204ecd2e0f694977194621bbe54033d856e4\ndangling blob 073600755910d04ba383a7b06a83ceffebfe8170\nmissing blob ec3740b9a27a24a561653dc2884cf2fac6d0e95f\ndangling tree fa438048850a67250f08a8631d37b5433d881db2\ndangling blob 3149803ebeabfa431ab588778b87252626feacc7\ndangling tree 8349e0cc55d190b67ddc54fe1145e70a7695ab2f\ndangling tree c257001769e3c3de43cecbf089ba1a322004af37\ndangling blob 065880b3776d790dc2d4a0389a0be397aa309a2c\ndangling blob bf58602a02709bdaea3b8c7262401f2390a3f138\ndangling tree af5c809aefb1271f4b2093ae4362c24c3abe258f\ndangling tree 425fe0be214e2f3737f"
     },
-    "gc": {
-      "status": 128,
-      "output": ""
+    "divergence": {
+      "behind": 0,
+      "ahead": 0
     },
     "working": "clean"
   }

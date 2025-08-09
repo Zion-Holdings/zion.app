@@ -1,0 +1,141 @@
+{
+  "timestamp": "2025-08-09T08:36:51.480Z",
+  "services": [
+    {
+      "name": "AI SEO Auditor",
+      "category": "marketing-tech",
+      "description": "Automated SEO audit and recommendations for Next.js websites.",
+      "targetAudience": [
+        "SMBs",
+        "agencies",
+        "founders"
+      ],
+      "stack": "nextjs",
+      "baselineEffortDays": 5,
+      "priceRangeUSD": [
+        499,
+        1499
+      ],
+      "channels": [
+        "LinkedIn",
+        "Google Ads",
+        "Email"
+      ],
+      "slug": "ai-seo-auditor",
+      "adsAngles": [
+        "Save time and scale your output",
+        "Data-driven decisions with clear ROI",
+        "Fast setup, measurable results"
+      ],
+      "cta": "Book a demo"
+    },
+    {
+      "name": "Landing Page Generator",
+      "category": "no-code",
+      "description": "Form-driven landing page generator with templates and analytics.",
+      "targetAudience": [
+        "startups",
+        "agencies"
+      ],
+      "stack": "nextjs",
+      "baselineEffortDays": 4,
+      "priceRangeUSD": [
+        299,
+        999
+      ],
+      "channels": [
+        "LinkedIn",
+        "Twitter/X",
+        "Product Hunt"
+      ],
+      "slug": "landing-page-generator",
+      "adsAngles": [
+        "Save time and scale your output",
+        "Data-driven decisions with clear ROI",
+        "Fast setup, measurable results"
+      ],
+      "cta": "Book a demo"
+    },
+    {
+      "name": "Customer Support Chatbot",
+      "category": "ai-automation",
+      "description": "Context-aware support bot seeded from docs, with email escalation.",
+      "targetAudience": [
+        "SaaS",
+        "ecommerce"
+      ],
+      "stack": "node",
+      "baselineEffortDays": 7,
+      "priceRangeUSD": [
+        999,
+        2999
+      ],
+      "channels": [
+        "LinkedIn",
+        "Cold Email",
+        "YouTube"
+      ],
+      "slug": "customer-support-chatbot",
+      "adsAngles": [
+        "Save time and scale your output",
+        "Data-driven decisions with clear ROI",
+        "Fast setup, measurable results"
+      ],
+      "cta": "Book a demo"
+    },
+    {
+      "name": "Price Intelligence Service",
+      "category": "data-scraping",
+      "description": "Competitor price tracking dashboard with alerts.",
+      "targetAudience": [
+        "ecommerce",
+        "marketplaces"
+      ],
+      "stack": "node",
+      "baselineEffortDays": 6,
+      "priceRangeUSD": [
+        799,
+        2499
+      ],
+      "channels": [
+        "LinkedIn",
+        "Cold Email"
+      ],
+      "slug": "price-intelligence-service",
+      "adsAngles": [
+        "Save time and scale your output",
+        "Data-driven decisions with clear ROI",
+        "Fast setup, measurable results"
+      ],
+      "cta": "Book a demo"
+    },
+    {
+      "name": "Instagram Content Scheduler",
+      "category": "social-media",
+      "description": "Auto-generate posts from blog feeds and schedule with analytics.",
+      "targetAudience": [
+        "creators",
+        "brands",
+        "agencies"
+      ],
+      "stack": "nextjs",
+      "baselineEffortDays": 5,
+      "priceRangeUSD": [
+        399,
+        1299
+      ],
+      "channels": [
+        "Instagram",
+        "LinkedIn",
+        "Email"
+      ],
+      "slug": "instagram-content-scheduler",
+      "adsAngles": [
+        "Save time and scale your output",
+        "Data-driven decisions with clear ROI",
+        "Fast setup, measurable results"
+      ],
+      "cta": "Book a demo"
+    }
+  ]
+}
