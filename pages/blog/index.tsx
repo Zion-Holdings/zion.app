@@ -2,21 +2,11 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 
-const Index: NextPage = () => {
+export default function BlogIndex() {
   return (
-    <div>
-      <Head>
-        <title>Index - Zion Tech Solutions</title>
-        <meta name="description" content="Index blog post" />
-      </Head>
-      
-      <main>
-        <h1>Index</h1>
-        <p>Blog content coming soon...</p>
-        <Link href="/blog">Back to Blog</Link>
-      </main>
+    <div className="space-y-2">
+      <h1 className="text-3xl font-bold">Blog</h1>
+      <p className="text-gray-600 dark:text-gray-300">Thoughts on AI, autonomy, and product engineering.</p>
     </div>
   );
-};
-
-export default Index;
+}

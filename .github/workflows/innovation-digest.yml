@@ -1,0 +1,35 @@
+name: Innovation Digest
+
+on:
+  schedule:
+    - cron: '*/45 * * * *'
+  workflow_dispatch:
+
+jobs:
+  build-digest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - name: Install deps
+        run: npm ci
+      - name: Generate Innovation Digest
+        run: npm run innovation:digest
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/automation/innovation-digest.json automation_logs/innovation-digest.log || true
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(automation): update innovation digest [skip ci]"
+            git push
+          else
+            echo "No changes to commit"
+          fi

@@ -138,6 +138,7 @@
     "saas:cron:start": "bash automation/saas-services-cron.sh",
     "saas:analyze": "node automation/saas-services-analyzer.cjs && node automation/saas-services-factory.cjs",
     "homepage-promo:start": "node automation/homepage-promo-orchestrator.cjs",
+    "innovation:digest": "node automation/autonomous-innovation-digest.cjs",
     "homepage-promo:cron:start": "bash automation/homepage-promo-cron.sh",
     "homepage-promo:analyze": "node automation/homepage-promo-analyzer.cjs && node automation/homepage-promo-factory.cjs",
     "feature-marketing:start": "node automation/feature-marketing-orchestrator.cjs",

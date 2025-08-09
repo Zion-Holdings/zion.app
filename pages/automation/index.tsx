@@ -1,0 +1,47 @@
+import Link from 'next/link';
+
+const automations = [
+  {
+    key: 'innovation-digest',
+    title: 'Innovation Digest',
+    description: 'Aggregates AI research and tooling updates from arXiv, GitHub Trending, and HuggingFace.',
+    href: '/automation/innovation',
+  },
+  {
+    key: 'ui-evolution',
+    title: 'UI Evolution',
+    description: 'Continuously analyzes and beautifies the UI across pages.',
+    href: '/docs/ui-evolution',
+  },
+  {
+    key: 'seo-link-health',
+    title: 'SEO & Link Health',
+    description: 'Scans and fixes SEO metadata and broken links.',
+    href: '/docs/seo-link-health',
+  },
+];
+
+export default function AutomationsHub() {
+  return (
+    <div className="space-y-8">
+      <header className="space-y-2">
+        <h1 className="text-3xl font-bold">Autonomous Automations</h1>
+        <p className="text-gray-600 dark:text-gray-300">Cloud-native agents running on schedules. No servers, no manual steps.</p>
+      </header>
+      <div className="grid md:grid-cols-2 gap-6">
+        {automations.map((a) => (
+          <div key={a.key} className="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+            <h3 className="font-semibold text-lg">{a.title}</h3>
+            <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">{a.description}</p>
+            <div className="mt-4">
+              <Link href={a.href}><a className="text-blue-600 dark:text-cyan-400">Open →</a></Link>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="text-sm text-gray-600 dark:text-gray-400">
+        Looking for the full list? See <Link href="/AUTOMATION_SYSTEMS_SUMMARY"><a className="underline">systems summary</a></Link> in the repo.
+      </div>
+    </div>
+  );
+}
