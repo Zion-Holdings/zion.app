@@ -1,0 +1,1 @@
+export default function Automation() { return <div className="p-8">Automation</div>; }
