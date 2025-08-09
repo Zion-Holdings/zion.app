@@ -1,0 +1,42 @@
+name: Autonomous Fast Agents
+
+on:
+  schedule:
+    - cron: '*/10 * * * *' # every 10 minutes
+  workflow_dispatch: {}
+
+jobs:
+  run-agents:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install deps
+        run: npm ci
+      - name: Build
+        run: npm run build --if-present
+      - name: Run SEO Enhancer
+        run: node automation/autonomous-seo-enhancer.cjs
+      - name: Run Broken Link Scanner
+        env:
+          SELF_BASE_URL: ${{ secrets.SELF_BASE_URL || 'https://zion.app' }}
+        run: node automation/autonomous-broken-link-scanner.cjs
+      - name: Run Course Tuner
+        run: node automation/autonomous-course-tuner.cjs
+      - name: Commit and push
+        run: |
+          git config user.name "zion-bot"
+          git config user.email "bot@zion.app"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore(autonomous-fast): SEO, links, course tuner updates"
+            git push
+          fi

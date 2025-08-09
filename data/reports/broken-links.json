@@ -1,0 +1,26 @@
+{
+  "runAt": "2025-08-09T20:14:19.218Z",
+  "base": "http://localhost:3000",
+  "results": [
+    {
+      "url": "http://localhost:3000/",
+      "ok": false,
+      "status": 0
+    },
+    {
+      "url": "http://localhost:3000/academy",
+      "ok": false,
+      "status": 0
+    },
+    {
+      "url": "http://localhost:3000/academy/admin",
+      "ok": false,
+      "status": 0
+    },
+    {
+      "url": "http://localhost:3000/academy/insights",
+      "ok": false,
+      "status": 0
+    }
+  ]
+}
