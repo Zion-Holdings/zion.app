@@ -1,0 +1,1 @@
+export default function AutomationStatus() { return <div className="p-6">Automation Status</div>; }

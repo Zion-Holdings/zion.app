@@ -9,4 +9,10 @@
   package = "@netlify/plugin-nextjs"
 
 [[plugins]]
-  package = "netlify-plugin-cloudinary" 
+  package = "netlify-plugin-cloudinary"
+
+[[plugins]]
+  package = "./.scripts/netlify-rollback-monitor"
+  [plugins.inputs]
+    monitorMinutes = 20
+    intervalSeconds = 60 
