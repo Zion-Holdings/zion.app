@@ -23,6 +23,11 @@ export default function Home() {
             <li>Content Intelligence: monitors trends and drafts founder-ready posts</li>
             <li>Security: audits dependencies and runs static security checks</li>
             <li>SEO Reporter: inventories pages, sitemap presence, and gives recommendations</li>
+            <li>Roadmap: synthesizes open issues/PRs into a living roadmap</li>
+            <li>Changelog: daily commit summary into docs</li>
+            <li>Localization: extracts UI strings into a base catalog</li>
+            <li>Broken Links: finds and reports internal broken links</li>
+            <li>PageSpeed: tracks performance metrics via PSI</li>
           </ul>
           <div className="mt-4">
             <Link href="/automations"><a className="underline">View automations dashboard</a></Link>

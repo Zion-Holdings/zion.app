@@ -46,6 +46,26 @@ jobs:
       - name: Run SEO Reporter Autopilot
         run: node automation/seo-reporter-autopilot.cjs
 
+      - name: Run Roadmap Autopilot
+        run: node automation/roadmap-autopilot.cjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+
+      - name: Run Changelog Autopilot
+        run: node automation/changelog-autopilot.cjs
+
+      - name: Run Localization Autopilot
+        run: node automation/localization-autopilot.cjs
+
+      - name: Run Broken Links Autopilot
+        run: node automation/broken-links-autopilot.cjs
+
+      - name: Run Pagespeed Autopilot
+        run: node automation/pagespeed-autopilot.cjs
+        env:
+          SITE_URL: ${{ secrets.SITE_URL }}
+
       - name: Commit changes
         run: |
           git config user.name "zion-autopilot"
