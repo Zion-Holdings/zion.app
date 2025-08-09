@@ -2,18 +2,19 @@
   "ok": true,
   "errors": [],
   "warnings": [
-    "No upstream configured for current branch."
+    "No upstream configured for current branch.",
+    "Set upstream to origin/cursor/generate-zion-os-source-tree-structure-7578."
   ],
   "checks": {
     "user": {
       "name": "Cursor Agent",
       "email": "cursoragent@cursor.com"
     },
-    "origin": "origin\thttps://x-access-token:ghs_qNBaeg2v14LuMC4IBKBjGq0T4N5gyr2FojDs@github.com/Zion-Holdings/zion.app (fetch)\norigin\thttps://x-access-token:ghs_qNBaeg2v14LuMC4IBKBjGq0T4N5gyr2FojDs@github.com/Zion-Holdings/zion.app (push)",
+    "origin": "origin\thttps://x-access-token:ghs_MvlRpXkYffreNQF8jUrOZ4sCN4RatT0Gr3Kf@github.com/Zion-Holdings/zion.app (fetch)\norigin\thttps://x-access-token:ghs_MvlRpXkYffreNQF8jUrOZ4sCN4RatT0Gr3Kf@github.com/Zion-Holdings/zion.app (push)",
     "fsck": {
       "status": 0,
-      "output": ""
+      "output": "dangling tree 0debde4ceb6d14dd595bed817f440cc8fd90ec97\n"
     },
-    "working": "dirty"
+    "working": "clean"
   }
 }
