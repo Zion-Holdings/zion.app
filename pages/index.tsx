@@ -17,18 +17,24 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
     discoverFeaturePages(process.cwd()),
   ]);
 
-  const jsonSafeServices = services.map((s) => ({
-    ...s,
-    description: s.description ?? null,
-    category: s.category ?? null,
-    priceRangeUSD: s.priceRangeUSD ?? null,
-  }));
+  const jsonSafeServices = services.map((s) => {
+    const out: any = {
+      slug: s.slug,
+      name: s.name,
+      href: s.href,
+      source: s.source,
+    };
+    if (s.description !== undefined) out.description = s.description;
+    if (s.category !== undefined) out.category = s.category;
+    if (s.priceRangeUSD !== undefined) out.priceRangeUSD = s.priceRangeUSD;
+    return out;
+  });
 
   const jsonSafeCapabilities = capabilities.map((c) => ({ ...c }));
   const jsonSafeFeatures = features.map((f) => ({ ...f }));
 
   return {
-    props: { services: jsonSafeServices, capabilities: jsonSafeCapabilities, features: jsonSafeFeatures },
+    props: { services: jsonSafeServices as any, capabilities: jsonSafeCapabilities, features: jsonSafeFeatures },
     revalidate: 60, // Incremental static regeneration
   };
 };
@@ -117,8 +123,8 @@ const Home: NextPage<HomeProps> = ({ services, capabilities, features }) => {
           <h3 className="text-xl font-semibold mb-2">Don’t see what you need?</h3>
           <p className="text-gray-700 dark:text-gray-300 mb-3">We build custom solutions. Tell us your goals and we’ll propose the best path.</p>
           <div className="flex gap-3">
-            <Link href="/contact" className="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700">Contact us</Link>
-            <Link href="/analyze-service-request" className="px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-zinc-800">Analyze service request</Link>
+            <Link href="/contact"><a className="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700">Contact us</a></Link>
+            <Link href="/analyze-service-request"><a className="px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-zinc-800">Analyze service request</a></Link>
           </div>
         </div>
       </section>
