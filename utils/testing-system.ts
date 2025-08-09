@@ -1,7 +1,6 @@
 export class TestingSystem {
   static async testUserInteraction(
-    element: HTMLElement,
-    action: 'click' | 'type' | 'hover'
+    element: HTMLElementaction: 'click' | 'type' | 'hover'
   ): Promise<void> {
     switch (action) {
       case 'click':

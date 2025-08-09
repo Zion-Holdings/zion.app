@@ -1,8 +1,8 @@
 {
-  "timestamp": "2025-08-08T18:44:28.439Z",
-  "host": "cursor",
-  "repoRoot": "/workspace",
-  "status": "ok",
+  "timestamp": "2025-08-09T00:39:10.746Z",
+  "host": "Miami2-2.local",
+  "repoRoot": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app",
+  "status": "degraded",
   "checks": [
     {
       "name": "git-repo",
@@ -11,48 +11,48 @@
     },
     {
       "name": "bg-sync-loop-running",
-      "ok": true,
-      "details": "PID: 17450 "
+      "ok": false,
+      "details": "PID: - "
     },
     {
       "name": "bg-pull-loop-running",
-      "ok": true,
-      "details": "PID: 17451 "
+      "ok": false,
+      "details": "PID: - "
     },
     {
       "name": "auto-sync-log-fresh",
-      "ok": true,
-      "details": "ageMs=50485.72607421875"
+      "ok": false,
+      "details": "ageMs=Infinity"
     },
     {
       "name": "auto-pull-log-fresh",
-      "ok": true,
-      "details": "ageMs=3529.6396484375"
+      "ok": false,
+      "details": "ageMs=Infinity"
     },
     {
       "name": "advanced-git-sync-lock-stale",
       "ok": true,
-      "details": "ageMs=Infinity"
+      "details": "ageMs=2918.08251953125"
     },
     {
       "name": "git-pull-rebase-lock-stale",
       "ok": true,
-      "details": "ageMs=Infinity"
+      "details": "ageMs=574.1962890625"
     },
     {
       "name": "origin-configured",
       "ok": true,
-      "details": "https://x-access-token:ghs_nO7RVHC3Fryn9pBHkiP5BgK5qZcVvM3yjyQg@github.com/Zion-Holdings/zion.app"
+      "details": "https://github.com/Zion-Holdings/zion.app.git"
     },
     {
       "name": "divergence",
       "ok": true,
-      "details": "behind=0, ahead=0, branch=main"
+      "details": "behind=0, ahead=0, branch=sync-automerge"
     },
     {
       "name": "working-tree-clean",
-      "ok": true,
-      "details": "changed=0"
+      "ok": false,
+      "details": "changed=733"
     }
   ]
 }
