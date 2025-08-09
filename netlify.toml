@@ -9,4 +9,17 @@
   package = "@netlify/plugin-nextjs"
 
 [[plugins]]
-  package = "netlify-plugin-cloudinary" 
+  package = "netlify-plugin-cloudinary"
+
+# Scheduled functions
+[[scheduled.functions]]
+  name = "cron-weekly-dao"
+  cron = "0 6 * * 1" # Mondays at 06:00 UTC
+
+[[scheduled.functions]]
+  name = "cron-weekly-learn"
+  cron = "0 6 * * 1" # Mondays at 06:00 UTC
+
+[[scheduled.functions]]
+  name = "cron-daily-rankings"
+  cron = "0 3 * * *" # daily at 03:00 UTC 
