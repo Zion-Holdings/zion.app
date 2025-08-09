@@ -226,6 +226,9 @@ const Home: NextPage = () => {
               </div>
             </EnhancedCard>
           </div>
+          <div className="mt-4">
+            <Link href="/automation/innovations"><a className="text-indigo-700 font-semibold hover:underline">See all automations →</a></Link>
+          </div>
         </section>
 
         {/* Latest insights */}

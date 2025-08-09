@@ -18,8 +18,24 @@
 
 [[scheduled.functions]]
   function = "link_health"
-  cron = "@daily"
+  cron = "*/30 * * * *"
 
 [[scheduled.functions]]
   function = "promo_rotator"
-  cron = "0 */6 * * *" 
+  cron = "*/30 * * * *"
+
+[[scheduled.functions]]
+  function = "site_index"
+  cron = "@hourly"
+
+[[scheduled.functions]]
+  function = "seo_audit"
+  cron = "0 2 * * *"
+
+[[scheduled.functions]]
+  function = "daily_status_report"
+  cron = "0 3 * * *"
+
+[[scheduled.functions]]
+  function = "issue_link_health"
+  cron = "15 3 * * *" 

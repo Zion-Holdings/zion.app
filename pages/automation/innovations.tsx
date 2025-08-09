@@ -18,6 +18,26 @@ const Innovations: NextPage = () => {
       name: 'Homepage Promo Rotator',
       id: 'promo_rotator',
       desc: 'Rotates highlighted content and commits data for the homepage to use.'
+    },
+    {
+      name: 'Site Index Builder',
+      id: 'site_index',
+      desc: 'Crawls key pages, extracts internal links, and commits a site index JSON.'
+    },
+    {
+      name: 'SEO Audit',
+      id: 'seo_audit',
+      desc: 'Audits TSX pages for Head/title/meta description and commits an SEO report.'
+    },
+    {
+      name: 'Daily Status Reporter',
+      id: 'daily_status_report',
+      desc: 'Composes a daily markdown report from automation outputs and commits it.'
+    },
+    {
+      name: 'Link Health Issue Manager',
+      id: 'issue_link_health',
+      desc: 'Opens or updates a GitHub issue when link health failures are detected.'
     }
   ];
 
