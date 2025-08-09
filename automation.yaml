@@ -1,0 +1,6 @@
+nation_id: zion-africa
+sources:
+  # - name: sample_jobs
+  #   url: https://example.com/jobs/feed
+benchmarks_dir: benchmarks
+auto_pr: true
