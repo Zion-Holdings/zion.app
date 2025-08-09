@@ -216,7 +216,10 @@
     "conflicts:cron:stop": "bash automation/merge-conflict-cron.sh stop",
     "conflicts:cron:status": "bash automation/merge-conflict-cron.sh status",
     "security:audit": "node automation/security-audit.cjs",
-    "security:audit:fix": "npm audit fix --force || true"
+    "security:audit:fix": "npm audit fix --force || true",
+    "changelog:generate": "node automation/generate-changelog.cjs",
+    "images:audit": "node automation/image-audit.cjs",
+    "links:scan:run": "npm run links:scan"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",

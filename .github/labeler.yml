@@ -1,0 +1,16 @@
+area:automation:
+  - 'automation/**'
+area:pages:
+  - 'pages/**'
+area:components:
+  - 'components/**'
+area:styles:
+  - 'styles/**'
+area:docs:
+  - 'docs/**'
+area:data:
+  - 'data/**'
+area:workflows:
+  - '.github/**'
+type:security:
+  - 'automation/security-*.cjs'
