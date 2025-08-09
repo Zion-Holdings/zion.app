@@ -39,3 +39,11 @@
 [[scheduled.functions]]
   name = "cron-weekly-deps"
   cron = "0 2 * * 1" # Mondays at 02:00 UTC 
+
+[[scheduled.functions]]
+  name = "cron-weekly-changelog"
+  cron = "0 1 * * 1"
+
+[[scheduled.functions]]
+  name = "cron-weekly-sitemap"
+  cron = "0 0 * * 1" 
