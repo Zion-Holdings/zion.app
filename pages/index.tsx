@@ -20,6 +20,9 @@ export default function Home() {
           <ul className="list-disc pl-6 mt-3 text-sm space-y-1">
             <li>Cloud Autopilot: health checks, link fixes, SEO optimization, responsive content, and sitemap refresh</li>
             <li>Fundraising Autopilot: generates decks for all stages and publishes investor reports</li>
+            <li>Content Intelligence: monitors trends and drafts founder-ready posts</li>
+            <li>Security: audits dependencies and runs static security checks</li>
+            <li>SEO Reporter: inventories pages, sitemap presence, and gives recommendations</li>
           </ul>
           <div className="mt-4">
             <Link href="/automations"><a className="underline">View automations dashboard</a></Link>

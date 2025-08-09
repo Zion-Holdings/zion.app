@@ -3,7 +3,7 @@ name: autopilot
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '*/15 * * * *'
 
 permissions:
   contents: write
@@ -34,6 +34,17 @@ jobs:
         run: node automation/fundraising-autopilot.cjs
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+      - name: Run Content Intelligence Autopilot
+        run: node automation/content-intelligence-autopilot.cjs
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+      - name: Run Security Autopilot
+        run: node automation/security-autopilot.cjs
+
+      - name: Run SEO Reporter Autopilot
+        run: node automation/seo-reporter-autopilot.cjs
 
       - name: Commit changes
         run: |
