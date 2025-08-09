@@ -1,0 +1,62 @@
+name: Autonomous Orchestrator
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: auton-orchestrator
+  cancel-in-progress: true
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Content sync
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node automation/cloud/content-sync.mjs
+
+      - name: Generate sitemap
+        run: npm run sitemap || true
+
+      - name: Lint
+        run: npm run lint || true
+
+      - name: Type check
+        run: npm run type-check || true
+
+      - name: Build
+        run: npm run build
+
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: 'chore(autonomy): content sync and maintenance'
+          title: 'Autonomy: content sync and maintenance'
+          body: 'Automated content sync, sitemap, and maintenance tasks.'
+          branch: 'auto/autonomy-${{ github.run_id }}'
+          labels: 'automation,autonomy'
+
+      - name: Log PR
+        if: steps.cpr.outputs.pull-request-number
+        run: echo "Created PR #${{ steps.cpr.outputs.pull-request-number }}"
