@@ -1,0 +1,25 @@
+name: SEO Meta Enricher
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch: {}
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci --ignore-scripts
+      - name: Run SEO enrichement
+        run: node automation/seo-meta-enricher.cjs
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(seo): enrich meta tags"
+          branch: main
