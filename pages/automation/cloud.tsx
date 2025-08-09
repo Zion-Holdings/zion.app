@@ -14,13 +14,28 @@ export default function CloudAutomationHub() {
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-bold">Autonomous Cloud Automation</h1>
-        <p className="text-sm text-gray-600 dark:text-gray-400">Runs in GitHub Actions on a schedule. Generates insights and commits updates without human intervention.</p>
+        <p className="text-sm text-gray-600 dark:text-gray-400">Runs scheduled workflows: roadmap synthesis, link health checks, market intelligence, sitemap refresh, and logging.</p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <a href="/docs/ROADMAP.md" className="rounded-lg border p-4 hover:bg-gray-50 dark:hover:bg-gray-900">
+          <h3 className="font-semibold">Roadmap (Autonomous)</h3>
+          <p className="text-sm text-gray-600 dark:text-gray-400">Docs/ROADMAP.md</p>
+        </a>
+        <a href="/docs/LINK_HEALTH.md" className="rounded-lg border p-4 hover:bg-gray-50 dark:hover:bg-gray-900">
+          <h3 className="font-semibold">Link Health</h3>
+          <p className="text-sm text-gray-600 dark:text-gray-400">Docs/LINK_HEALTH.md</p>
+        </a>
+        <a href="/docs/INTELLIGENCE_DIGEST.md" className="rounded-lg border p-4 hover:bg-gray-50 dark:hover:bg-gray-900">
+          <h3 className="font-semibold">Intelligence Digest</h3>
+          <p className="text-sm text-gray-600 dark:text-gray-400">Docs/INTELLIGENCE_DIGEST.md</p>
+        </a>
       </div>
 
       <div className="rounded-lg border border-gray-200 dark:border-gray-800 p-4">
         <h2 className="font-semibold mb-3">Recent Automation Logs</h2>
         <ul className="space-y-2 text-sm">
-          {logs.length === 0 && <li className="text-gray-500">No logs yet. The workflow will generate logs on schedule.</li>}
+          {logs.length === 0 && <li className="text-gray-500">No logs yet. The workflows will generate logs on schedule.</li>}
           {logs.map((log) => (
             <li key={log.id} className="flex items-center justify-between">
               <span>{log.generatedAt || log.file}</span>
