@@ -53,6 +53,7 @@ async function main() {
     () => runCmd('robots-sitemap-verify', 'node', ['automation/robots-and-sitemap-verifier.cjs'], {}, 60 * 1000),
     () => runCmd('fast-sitemap', 'node', ['automation/fast-sitemap-runner.cjs'], {}, 2 * 60 * 1000),
     () => runCmd('structured-data-injector', 'node', ['automation/seo-structured-data-injector.cjs'], {}, 3 * 60 * 1000),
+    () => runCmd('homepage-promo-update', 'node', ['automation/homepage-promo-orchestrator.cjs'], {}, 2 * 60 * 1000),
 
     // Existing analyzers/factories
     () => runCmd('seo-optimizer', 'node', ['automation/seo-optimizer.cjs'], {}, 2 * 60 * 1000),
