@@ -13,6 +13,8 @@ export default function Home() {
           <li><Link href="/governance"><a className="underline">Zion Governance</a></Link> — Propose, vote, and track results.</li>
           <li><Link href="/automation/governance"><a className="underline">Autonomous Governance Engine</a></Link> — Snapshots, status updates, roadmap queueing, and metrics.</li>
           <li><Link href="/automation/news"><a className="underline">Autonomous News Digest</a></Link> — Curated tech digest, published on schedule.</li>
+          <li><Link href="/automation/seo"><a className="underline">SEO Auditor</a></Link> — Finds missing alt, headings, thin content; updates reports.</li>
+          <li><Link href="/automation/security"><a className="underline">Security Scanner</a></Link> — Flags risky code patterns and vulnerable deps.</li>
         </ul>
       </div>
 
@@ -39,6 +41,16 @@ export default function Home() {
             <div className="font-medium">Links Auto-Fix</div>
             <div className="text-gray-600">Scans for broken links and commits fixes automatically.</div>
             <a className="underline mt-1 inline-block" href="https://github.com/Zion-Holdings/zion.app/actions">View runs</a>
+          </div>
+          <div className="border rounded p-3">
+            <div className="font-medium">SEO Auditor</div>
+            <div className="text-gray-600">Audits pages and reports issues; runs on a schedule.</div>
+            <Link href="/automation/seo"><a className="underline mt-1 inline-block">View SEO report</a></Link>
+          </div>
+          <div className="border rounded p-3">
+            <div className="font-medium">Security Scanner</div>
+            <div className="text-gray-600">Scans code and dependencies, publishing a security score.</div>
+            <Link href="/automation/security"><a className="underline mt-1 inline-block">View security report</a></Link>
           </div>
         </div>
       </div>
