@@ -1,0 +1,21 @@
+{
+  "name": "Content Drift Sentinel",
+  "key": "content-drift-sentinel",
+  "startedAt": "2025-08-09T21:39:28.487Z",
+  "finishedAt": "2025-08-09T21:39:28.488Z",
+  "success": true,
+  "metrics": {
+    "drift": false,
+    "previousHeadings": [],
+    "currentHeadings": [
+      "1. Executive Summary",
+      "2. System Architecture",
+      "3. Tokenomics",
+      "4. Governance",
+      "5. AI Stack",
+      "6. Use Cases",
+      "7. Roadmap"
+    ]
+  },
+  "error": null
+}

@@ -1,18 +1,23 @@
 {
   "name": "Governance Snapshot Syncer",
   "key": "governance-snapshot-syncer",
-  "startedAt": "2025-08-09T21:24:14.320Z",
-  "finishedAt": "2025-08-09T21:24:14.321Z",
+  "startedAt": "2025-08-09T21:39:28.834Z",
+  "finishedAt": "2025-08-09T21:39:28.834Z",
   "success": true,
   "metrics": {
     "proposals": [
       {
-        "id": "ZGP-1754774654321-1",
-        "type": "treasury",
+        "id": "ZGP-1754775568834-1",
+        "type": "region-policy",
         "status": "temperature-check"
       },
       {
-        "id": "ZGP-1754774654321-2",
+        "id": "ZGP-1754775568834-2",
+        "type": "upgrade",
+        "status": "temperature-check"
+      },
+      {
+        "id": "ZGP-1754775568834-3",
         "type": "upgrade",
         "status": "temperature-check"
       }

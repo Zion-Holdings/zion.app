@@ -19,6 +19,12 @@ const Home = () => {
           <Link href="/docs/zion-protocol.pdf" legacyBehavior>
             <a className="px-5 py-3 border rounded">Download Whitepaper PDF</a>
           </Link>
+          <Link href="/automations/index.json" legacyBehavior>
+            <a className="px-5 py-3 border rounded">Automations Index JSON</a>
+          </Link>
+          <Link href="/metrics/emissions.csv" legacyBehavior>
+            <a className="px-5 py-3 border rounded">Emissions CSV</a>
+          </Link>
         </div>
       </section>
 
@@ -29,6 +35,41 @@ const Home = () => {
             title="Autonomous Whitepaper Publisher"
             description="Continuously validates and republishes the whitepaper source with integrity checks."
             href="/cloud-automations"
+          />
+          <Feature
+            title="Static Whitepaper PDF Exporter"
+            description="Publishes a static PDF artifact for direct download."
+            href="/docs/zion-protocol.pdf"
+          />
+          <Feature
+            title="Content Drift Sentinel"
+            description="Detects structural changes in the whitepaper to alert stakeholders."
+            href="/cloud-automations"
+          />
+          <Feature
+            title="Emissions Simulator"
+            description="Projects token emissions over 10 years with CSV/JSON outputs."
+            href="/metrics/emissions.csv"
+          />
+          <Feature
+            title="Governance Quorum Forecaster"
+            description="Computes global and regional quorum requirements."
+            href="/docs/governance-quorum-forecast.md"
+          />
+          <Feature
+            title="Route Inventory"
+            description="Snapshots public routes for monitoring and docs."
+            href="/cloud-automations"
+          />
+          <Feature
+            title="Repository Health Audit"
+            description="Monitors repo size and file counts to prevent bloat."
+            href="/cloud-automations"
+          />
+          <Feature
+            title="Automations Index Writer"
+            description="Exports a consolidated JSON index of all automations."
+            href="/automations/index.json"
           />
           <Feature
             title="Multiverse Health Monitor"

@@ -5,12 +5,16 @@ const path = require('path');
 const agents = [
   'whitepaper-publisher.cjs',
   'whitepaper-static-pdf-exporter.cjs',
+  'content-drift-sentinel.cjs',
+  'emissions-simulator.cjs',
+  'governance-quorum-forecaster.cjs',
   'route-inventory.cjs',
   'repository-health-audit.cjs',
   'multiverse-health-monitor.cjs',
   'governance-snapshot-syncer.cjs',
   'ai-cache-refresher.cjs',
   'talent-passport-evaluator.cjs',
+  'automations-index-writer.cjs',
 ];
 
 function runAgent(file) {

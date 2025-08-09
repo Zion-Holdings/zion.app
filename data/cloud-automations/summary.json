@@ -1,6 +1,6 @@
 {
-  "startedAt": "2025-08-09T21:24:13.827Z",
-  "finishedAt": "2025-08-09T21:24:14.364Z",
+  "startedAt": "2025-08-09T21:39:28.276Z",
+  "finishedAt": "2025-08-09T21:39:28.909Z",
   "results": [
     {
       "file": "whitepaper-publisher.cjs",
@@ -8,6 +8,18 @@
     },
     {
       "file": "whitepaper-static-pdf-exporter.cjs",
+      "ok": true
+    },
+    {
+      "file": "content-drift-sentinel.cjs",
+      "ok": true
+    },
+    {
+      "file": "emissions-simulator.cjs",
+      "ok": true
+    },
+    {
+      "file": "governance-quorum-forecaster.cjs",
       "ok": true
     },
     {
@@ -32,6 +44,10 @@
     },
     {
       "file": "talent-passport-evaluator.cjs",
+      "ok": true
+    },
+    {
+      "file": "automations-index-writer.cjs",
       "ok": true
     }
   ]

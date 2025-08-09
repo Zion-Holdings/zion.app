@@ -1,11 +1,11 @@
 {
   "name": "Talent Passport Evaluator",
   "key": "talent-passport-evaluator",
-  "startedAt": "2025-08-09T21:24:14.358Z",
-  "finishedAt": "2025-08-09T21:24:14.358Z",
+  "startedAt": "2025-08-09T21:39:28.871Z",
+  "finishedAt": "2025-08-09T21:39:28.871Z",
   "success": true,
   "metrics": {
-    "evaluated": 23
+    "evaluated": 0
   },
   "error": null
 }
