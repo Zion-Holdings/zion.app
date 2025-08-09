@@ -1,0 +1,32 @@
+name: Changelog Generator
+
+on:
+  schedule:
+    - cron: '33 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Generate changelog
+        run: node automation/generate-changelog.cjs
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore(docs): update CHANGELOG.md'
+          title: 'chore(docs): update CHANGELOG.md'
+          body: 'Automated daily changelog update.'
+          branch: automation/changelog
+          delete-branch: true
+          labels: automation

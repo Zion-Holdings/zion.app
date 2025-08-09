@@ -1,0 +1,51 @@
+name: AI Issue & PR Triage
+
+on:
+  issues:
+    types: [opened, edited, reopened]
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Triage with OpenAI
+        uses: actions/github-script@v7
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const isPR = !!context.payload.pull_request;
+            const number = isPR ? context.payload.pull_request.number : context.payload.issue.number;
+            const title = isPR ? context.payload.pull_request.title : context.payload.issue.title;
+            const body = isPR ? (context.payload.pull_request.body || '') : (context.payload.issue.body || '');
+
+            async function aiClassify(title, body) {
+              if (!process.env.OPENAI_API_KEY) return null;
+              const prompt = `Classify and label this ${isPR ? 'pull request' : 'issue'} with up to 3 labels among: bug, enhancement, documentation, chore, refactor, performance, security, ux, ci, deps. Provide a one-paragraph summary.\n\nTitle: ${title}\nBody: ${body}`;
+              const res = await fetch('https://api.openai.com/v1/responses', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${process.env.OPENAI_API_KEY}` },
+                body: JSON.stringify({ model: 'gpt-4.1-mini', input: prompt })
+              });
+              const data = await res.json();
+              const text = (data.output_text || '').trim();
+              const labels = Array.from(new Set((text.match(/\b(bug|enhancement|documentation|chore|refactor|performance|security|ux|ci|deps)\b/gi) || []).map(s => s.toLowerCase()))).slice(0,3);
+              return { summary: text.slice(0, 800), labels };
+            }
+
+            const result = await aiClassify(title, body);
+            if (result && result.labels.length) {
+              await github.issues.addLabels({ owner: context.repo.owner, repo: context.repo.repo, issue_number: number, labels: result.labels });
+            }
+            if (result && result.summary) {
+              await github.issues.createComment({ owner: context.repo.owner, repo: context.repo.repo, issue_number: number, body: `AI triage summary:\n\n${result.summary}` });
+            }
+            core.info('Triage complete');
