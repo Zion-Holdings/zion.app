@@ -1,0 +1,33 @@
+name: Broken Link Auto-Fix
+
+on:
+  schedule:
+    - cron: '0 7 * * 1'
+  workflow_dispatch: {}
+
+jobs:
+  autofix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: dev
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - name: Run auto-fix
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: node automation/link-auto-fix.cjs
+      - name: Commit and push
+        run: |
+          git config user.email "link-bot@zion.app"
+          git config user.name "Zion Link Bot"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(links): auto-fix broken links"
+            git push origin dev
+          else
+            echo "No changes"
+          fi
