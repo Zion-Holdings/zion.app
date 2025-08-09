@@ -13,6 +13,8 @@ export default function Home() {
           <li><Link href="/governance"><a className="underline">Zion Governance</a></Link> — Propose, vote, and track results.</li>
           <li><Link href="/automation/governance"><a className="underline">Autonomous Governance Engine</a></Link> — Snapshots, status updates, roadmap queueing, and metrics.</li>
           <li><Link href="/automation/news"><a className="underline">Autonomous News Digest</a></Link> — Curated tech digest, published on schedule.</li>
+          <li><Link href="/automation/repo"><a className="underline">Repo Stats</a></Link> — Tracks content stats and updates README badges.</li>
+          <li><Link href="/automation/stale"><a className="underline">Stale Content Detector</a></Link> — Flags content older than 30 days.</li>
           <li><Link href="/automation/seo"><a className="underline">SEO Auditor</a></Link> — Finds missing alt, headings, thin content; updates reports.</li>
           <li><Link href="/automation/security"><a className="underline">Security Scanner</a></Link> — Flags risky code patterns and vulnerable deps.</li>
         </ul>
