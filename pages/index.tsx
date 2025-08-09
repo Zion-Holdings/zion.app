@@ -160,6 +160,21 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <section className="container mx-auto px-4 mt-16 sm:mt-24">
+        <div className="rounded-2xl border border-indigo-400/30 bg-indigo-500/10 p-6 backdrop-blur">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <div className="text-white font-semibold text-lg">Autonomous Cloud Automations</div>
+              <div className="text-indigo-200/90 text-sm">Hourly content, continuous search indexing, nightly health checks and weekly audits – no human required.</div>
+            </div>
+            <div className="flex items-center gap-3 text-sm">
+              <Link href="/automation"><a className="rounded-md bg-white text-gray-900 px-4 py-2 font-medium hover:bg-indigo-50">Explore Automations</a></Link>
+              <Link href="https://github.com/Zion-Holdings/zion.app/actions"><a className="rounded-md border border-white/20 text-white px-4 py-2 font-medium hover:bg-white/5">View Runs</a></Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

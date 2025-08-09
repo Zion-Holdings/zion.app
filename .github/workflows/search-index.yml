@@ -1,0 +1,33 @@
+name: Search Index Refresh
+
+on:
+  schedule:
+    - cron: '*/6 * * * *'
+  workflow_dispatch:
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - name: Build search index
+        run: node scripts/build-search-index.mjs
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add public/search-index.json || true
+            git add .
+            git commit -m "chore(index): refresh search index"
+            git push
+          else
+            echo "No changes to commit"
+          fi
