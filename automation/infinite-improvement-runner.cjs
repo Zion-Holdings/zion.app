@@ -24,6 +24,7 @@ run('node automation/saas-services-orchestrator.cjs');
 // Content and changelog
 run('node automation/seo-optimizer.cjs');
 run('node automation/auto-changelog.cjs');
+run('node automation/auto-blog-generator.cjs');
 
 // Post-run: lint, type-check, build smoke
 run('npm run lint');
