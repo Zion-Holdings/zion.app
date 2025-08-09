@@ -1,0 +1,29 @@
+name: Weekly Deep Automation
+
+on:
+  schedule:
+    - cron: '0 4 * * 1'
+  workflow_dispatch:
+
+jobs:
+  weekly:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - name: Design and responsive audits
+        run: |
+          npm run design:analyze || true
+          npm run responsive:analyze || true
+      - name: Revenue and marketing proposals
+        run: |
+          npm run feature-marketing:analyze || true
+          npm run homepage-promo:analyze || true
+      - name: Build and export static site (for sanity)
+        run: npm run export
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}

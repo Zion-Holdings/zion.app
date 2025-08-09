@@ -1,0 +1,30 @@
+name: Nightly Automation
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+jobs:
+  nightly:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - name: Run site health and performance checks
+        run: |
+          npm run health:start || true
+          npm run sitemap || true
+      - name: Run automation scanners
+        run: |
+          npm run healing:scan || true
+          npm run lint || true
+          npm run type-check || true
+      - name: Build for verification
+        run: npm run build
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
