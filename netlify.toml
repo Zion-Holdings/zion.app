@@ -9,4 +9,17 @@
   package = "@netlify/plugin-nextjs"
 
 [[plugins]]
-  package = "netlify-plugin-cloudinary" 
+  package = "netlify-plugin-cloudinary"
+
+# Autonomous scheduled functions
+[[scheduled.functions]]
+  function = "auto_repo_sync"
+  cron = "*/15 * * * *"
+
+[[scheduled.functions]]
+  function = "link_health"
+  cron = "@daily"
+
+[[scheduled.functions]]
+  function = "promo_rotator"
+  cron = "0 */6 * * *" 

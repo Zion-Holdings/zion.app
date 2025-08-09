@@ -197,6 +197,37 @@ const Home: NextPage = () => {
           </div>
         </section>
 
+        {/* Autonomous Cloud Automations */}
+        <section className="container mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Autonomous Cloud Automations</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <EnhancedCard>
+              <h3 className="text-xl font-semibold mb-2">Repository Sync (Auto Pages)</h3>
+              <p className="text-gray-600 mb-3">Commits timestamped pages to the repo to verify pipelines and trigger deploys.</p>
+              <div className="flex gap-3">
+                <a href="/.netlify/functions/auto_repo_sync" className="px-4 py-2 bg-indigo-600 text-white rounded">Run now</a>
+                <Link href="/automation/innovations"><a className="px-4 py-2 bg-gray-100 rounded">Learn more</a></Link>
+              </div>
+            </EnhancedCard>
+            <EnhancedCard>
+              <h3 className="text-xl font-semibold mb-2">Link Health Monitor</h3>
+              <p className="text-gray-600 mb-3">Checks key routes and commits a JSON report with status and availability.</p>
+              <div className="flex gap-3">
+                <a href="/.netlify/functions/link_health" className="px-4 py-2 bg-indigo-600 text-white rounded">Run now</a>
+                <Link href="/automation/innovations"><a className="px-4 py-2 bg-gray-100 rounded">Learn more</a></Link>
+              </div>
+            </EnhancedCard>
+            <EnhancedCard>
+              <h3 className="text-xl font-semibold mb-2">Homepage Promo Rotator</h3>
+              <p className="text-gray-600 mb-3">Rotates highlighted content and commits a data file for homepage promos.</p>
+              <div className="flex gap-3">
+                <a href="/.netlify/functions/promo_rotator" className="px-4 py-2 bg-indigo-600 text-white rounded">Run now</a>
+                <Link href="/automation/innovations"><a className="px-4 py-2 bg-gray-100 rounded">Learn more</a></Link>
+              </div>
+            </EnhancedCard>
+          </div>
+        </section>
+
         {/* Latest insights */}
         <section className="container mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Latest Insights</h2>
