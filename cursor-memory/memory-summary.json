@@ -1,16 +1,14 @@
 {
-  "generatedAt": "2025-08-09T09:59:03.061Z",
-  "totalEntries": 8,
+  "generatedAt": "2025-08-09T15:23:30.815Z",
+  "totalEntries": 6,
   "categories": {
     "technicalDecisions": 3,
     "conventions": 2,
-    "constraints": 1,
-    "system": 2
+    "constraints": 1
   },
   "confidenceDistribution": {
-    "high": 5,
+    "high": 3,
     "medium": 2,
     "low": 1
-  },
-  "lastUpdated": "2025-08-09T13:01:31.390Z"
+  }
 }
