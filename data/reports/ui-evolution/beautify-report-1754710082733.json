@@ -1,16 +1,27 @@
 {
   "generatedAt": "2025-08-09T03:28:02.733Z",
+<<<<<<< HEAD
   "totalFindings": 200,
   "recommendations": [
     {
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/.eslintrc.js",
+=======
+  "totalFindings": 197,
+  "recommendations": [
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/.eslintrc.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/automation-dashboard.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/automation-dashboard.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Add dark mode support using `dark:` variant.",
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
@@ -18,1210 +29,1899 @@
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/automation-factory.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/automation-factory.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/autonomous-automation-orchestrator.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/autonomous-automation-orchestrator.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/autonomous-error-monitoring-factory.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/autonomous-error-monitoring-factory.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/check-google-docs-status.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/check-google-docs-status.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/code-quality-monitor.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/code-quality-monitor.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/components/monetization/PaidConsultation.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/components/monetization/PaidConsultation.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/content-generator.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/content-generator.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/continuous-automation-improvement-system.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/continuous-automation-improvement-system.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/continuous-syntax-fix.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/continuous-syntax-fix.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/enhance-all-automation.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/enhance-all-automation.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/generate-google-docs-report.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/generate-google-docs-report.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/intelligent-orchestrator.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/intelligent-orchestrator.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/launch-autonomous-systems-clean.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/launch-autonomous-systems-clean.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/launch-design-improvement-automation.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/launch-design-improvement-automation.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/launch-enhanced-autonomous-system.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/launch-enhanced-autonomous-system.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/launch-frontend-sync-autonomous.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/launch-frontend-sync-autonomous.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/launch-google-docs-automation.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/launch-google-docs-automation.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/lint-automation-manager.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/lint-automation-manager.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/lint-error-fixer.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/lint-error-fixer.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/lint-monitor.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/lint-monitor.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/linting-autonomous-agents-factory.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/linting-autonomous-agents-factory.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/linting-cron-automation.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/linting-cron-automation.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/linting-file-watcher.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/linting-file-watcher.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/master-automation-coordinator.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/master-automation-coordinator.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/mcp-integration-orchestrator.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/mcp-integration-orchestrator.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/performance-optimizer.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/performance-optimizer.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/restart-all-automation.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/restart-all-automation.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/security-scanner.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/security-scanner.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/seo-optimizer.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/seo-optimizer.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/syntax-error-monitor.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/syntax-error-monitor.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/syntax-fix-launcher.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/syntax-fix-launcher.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/syntax-fix-orchestrator.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/syntax-fix-orchestrator.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/test-generator.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/test-generator.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/test-google-docs-automation.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/test-google-docs-automation.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/ui-evolution-launcher.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/ui-evolution-launcher.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/automation/utils/monetization/affiliate.ts",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/utils/monetization/affiliate.ts",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/components/Layout.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/Layout.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/components/layout/AuthLayout.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/layout/AuthLayout.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/components/layout/EnhancedFooter.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/layout/EnhancedFooter.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/components/layout/EnhancedLayout.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/layout/EnhancedLayout.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/components/layout/EnhancedNavigation.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/layout/EnhancedNavigation.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/components/monetization/PaidConsultation.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/monetization/PaidConsultation.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/components/ui/AnimatedBackground.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/AnimatedBackground.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/components/ui/EnhancedButton.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/EnhancedButton.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/components/ui/EnhancedCard.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/EnhancedCard.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/components/ui/EnhancedLoading.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/EnhancedLoading.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/components/ui/EnhancedMarketplaceCard.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/EnhancedMarketplaceCard.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/components/ui/FuturisticCard.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/FuturisticCard.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/components/ui/FuturisticHero.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/FuturisticHero.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/components/ui/GlassmorphismCard.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/GlassmorphismCard.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/components/ui/InteractiveNavigation.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/InteractiveNavigation.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/components/ui/InteractiveSearch.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/InteractiveSearch.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/components/ui/InteractiveStats.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/InteractiveStats.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/components/ui/NotificationSystem.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/NotificationSystem.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/components/ui/UserEngagementSystem.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/UserEngagementSystem.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/data/site-info.ts",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/data/site-info.ts",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/data/talent.ts",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/data/talent.ts",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/fix-variable-names.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/fix-variable-names.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/fix_all_function_names.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/fix_all_function_names.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/fix_corrupted_files.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/fix_corrupted_files.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/fix_empty_pages.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/fix_empty_pages.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/fix_typescript_syntax_errors.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/fix_typescript_syntax_errors.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/fix_utils_files.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/fix_utils_files.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/fix_variable_names.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/fix_variable_names.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/hooks/useMessageChannelHandler.ts",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/hooks/useMessageChannelHandler.ts",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/hooks/useResponsive.ts",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/hooks/useResponsive.ts",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/mcp-client-integration.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/mcp-client-integration.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/mcp_automation_system.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/mcp_automation_system.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/mcp_automation_system_old.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/mcp_automation_system_old.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/mcp_client_integration.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/mcp_client_integration.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/next-env.d.ts",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/next-env.d.ts",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/next.config.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/next.config.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/404.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/404.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/_app.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/_app.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/_document.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/_document.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/about.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/about.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/admin/automation-status.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/admin/automation-status.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/api/admin/automation-status.ts",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/admin/automation-status.ts",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/api/ai-capacity-planning.ts",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/ai-capacity-planning.ts",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/api/ai-change-management.ts",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/ai-change-management.ts",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/api/ai-contract.ts",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/ai-contract.ts",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/api/ai-workspace-suggestions.ts",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/ai-workspace-suggestions.ts",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/api/analytics-api.ts",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/analytics-api.ts",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/api/analyze-quote-request.ts",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/analyze-quote-request.ts",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/api/analyze-service-request.ts",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/analyze-service-request.ts",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auth/callback.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auth/callback.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auth/forgot-password.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auth/forgot-password.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auth/index.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auth/index.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auth/reset-password.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auth/reset-password.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auth/verify.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auth/verify.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-08t16-07-55-171z.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-08t16-07-55-171z.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-08t16-10-20-249z.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-08t16-10-20-249z.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-08t16-30-00-086z.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-08t16-30-00-086z.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-08t16-30-20-949z.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-08t16-30-20-949z.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-08t16-38-19-257z.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-08t16-38-19-257z.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-08t16-49-54-200z.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-08t16-49-54-200z.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-08t17-23-07-688z.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-08t17-23-07-688z.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t00-34-22-911z.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t00-34-22-911z.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t00-35-41-052z.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t00-35-41-052z.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t02-30-00-014z.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t02-30-00-014z.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t02-52-52-054z.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t03-00-00-011z.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t03-02-29-521z.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/automation/index.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t03-15-48-518z.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blockchain-solutions.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t03-16-52-070z.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/5g-technology-and-its-impact-on-iot-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/automation/index.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/blockchain-solutions.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/api-first-development-building-scalable-systems-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/blog/5g-technology-and-its-impact-on-iot-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/augmented-reality-in-enterprise-applications-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/blockchain-technology-in-modern-business-solutions-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/blog/api-first-development-building-scalable-systems-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/cloud-native-architecture-best-practices-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/blog/augmented-reality-in-enterprise-applications-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/cybersecurity-trends-for-2024-and-beyond-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/blog/blockchain-technology-in-modern-business-solutions-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/data-analytics-in-digital-transformation-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/blog/cloud-native-architecture-best-practices-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/devops-automation-strategies-for-modern-teams-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/blog/cybersecurity-trends-for-2024-and-beyond-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/digital-twins-revolutionizing-industry-4-0-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/blog/data-analytics-in-digital-transformation-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/index.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/blog/devops-automation-strategies-for-modern-teams-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/machine-learning-applications-in-enterprise-software-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/blog/digital-twins-revolutionizing-industry-4-0-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/microservices-architecture-benefits-and-challenges-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/blog/index.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/quantum-computing-implications-for-business-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/blog/machine-learning-applications-in-enterprise-software-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/sustainable-technology-green-computing-solutions-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/blog/microservices-architecture-benefits-and-challenges-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/the-rise-of-edge-computing-in-iot-applications-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/blog/quantum-computing-implications-for-business-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/ai-consulting-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/blog/sustainable-technology-green-computing-solutions-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/business-intelligence-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/blog/the-rise-of-edge-computing-in-iot-applications-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/cloud-architecture-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/category/ai-consulting-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/cybersecurity-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/category/business-intelligence-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/data-science-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/category/cloud-architecture-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/database-administration-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/category/cybersecurity-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/devops-automation-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/category/data-science-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/mobile-development-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/category/database-administration-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/network-engineering-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/category/devops-automation-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/product-management-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/category/mobile-development-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/quality-assurance-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/category/network-engineering-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/system-administration-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/category/product-management-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/technical-writing-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/category/quality-assurance-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/ui-ux-design-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/category/system-administration-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/web-development-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/category/technical-writing-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/ai-powered-business-solutions-discussion.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/category/ui-ux-design-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/cloud-computing-strategies.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/category/web-development-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/cybersecurity-best-practices.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/chat-content/ai-powered-business-solutions-discussion.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/data-analytics-implementation.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/chat-content/cloud-computing-strategies.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/digital-transformation-insights.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/chat-content/cybersecurity-best-practices.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/emerging-technology-trends.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/chat-content/data-analytics-implementation.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/future-of-work-and-automation.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/chat-content/digital-transformation-insights.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/innovation-in-enterprise-technology.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/chat-content/emerging-technology-trends.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/sustainable-technology-practices.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/chat-content/future-of-work-and-automation.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/technology-implementation-strategies.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/chat-content/innovation-in-enterprise-technology.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/contact.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/chat-content/sustainable-technology-practices.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/enhanced-home.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/chat-content/technology-implementation-strategies.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/index.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/contact.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/iot-platforms.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/enhanced-home.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/products/index.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/index.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/ai-model-development-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/iot-platforms.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/ai-seo-auditor.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/products/index.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/api-development-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/services/ai-model-development-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/business-intelligence-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/services/ai-seo-auditor.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/cloud-migration-services-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/services/api-development-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/customer-support-chatbot.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/services/business-intelligence-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/data-pipeline-engineering-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/services/cloud-migration-services-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/database-design-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/services/customer-support-chatbot.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/index.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/services/data-pipeline-engineering-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/instagram-content-scheduler.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/services/database-design-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/landing-page-generator.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/services/index.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/mobile-app-development-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/services/instagram-content-scheduler.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/network-security-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/services/landing-page-generator.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/performance-optimization-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/services/mobile-app-development-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/price-intelligence-service.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/services/network-security-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/quality-assurance-testing-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/services/performance-optimization-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/security-auditing-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/services/price-intelligence-service.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/system-administration-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/services/quality-assurance-testing-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/technical-documentation-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/services/security-auditing-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/ui-ux-design-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/services/system-administration-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/web-application-development-chat.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/services/technical-documentation-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/talent/[slug].tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/services/ui-ux-design-chat.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/talent/index.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/services/web-application-development-chat.tsx",
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
@@ -1244,6 +1944,9 @@
     },
     {
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/postcss.config.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/postcss.config.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Consider using responsive Tailwind utilities for better UI across breakpoints.",
         "Add dark mode support using `dark:` variant.",
@@ -1252,49 +1955,77 @@
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/run-cursor-memory-automation.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/run-cursor-memory-automation.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/scripts/linkedin-automation.ts",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/scripts/linkedin-automation.ts",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/scripts/linkedin_automation.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/scripts/linkedin_automation.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/scripts/test-linkedin-automation.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/scripts/test-linkedin-automation.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/scripts/test_linkedin_automation.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/scripts/test_linkedin_automation.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/styles/enhanced-design-system.css",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/styles/enhanced-design-system.css",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/styles/globals.css",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/styles/globals.css",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Add dark mode support using `dark:` variant.",
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
@@ -1302,105 +2033,165 @@
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/styles/modern-design-system.css",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/styles/modern-design-system.css",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/tailwind.config.js",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/tailwind.config.js",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/utils/api/quoteRequests.ts",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/utils/api/quoteRequests.ts",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/utils/auth-utils.ts",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/utils/auth-utils.ts",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/utils/browserExtensionDetector.ts",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/utils/browserExtensionDetector.ts",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/utils/data/services.ts",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/utils/data/services.ts",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/utils/messageChannelHandler.ts",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/utils/messageChannelHandler.ts",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/utils/monetization/affiliate.ts",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/utils/monetization/affiliate.ts",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/utils/sanitizeHtml.ts",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/utils/sanitizeHtml.ts",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/utils/supabase/client.ts",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/utils/supabase/client.ts",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/utils/supabase/middleware.ts",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/utils/supabase/middleware.ts",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/utils/supabase/server.ts",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/utils/supabase/server.ts",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/utils/testing-system.ts",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/utils/testing-system.ts",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/utils/testing-system.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/utils/testing-system.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."
       ]
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/utils/types/service.ts",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/utils/types/service.ts",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "hints": [
         "Introduce subtle motion using framer-motion for perceived performance and polish.",
         "Improve accessibility by adding ARIA attributes where appropriate."

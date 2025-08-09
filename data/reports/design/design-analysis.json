@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
   "timestamp": "2025-08-09T09:59:02.337Z",
   "filesAnalyzed": 137,
+=======
+  "timestamp": "2025-08-09T12:49:55.904Z",
+  "filesAnalyzed": 138,
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
   "items": [
     {
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/404.tsx",
@@ -542,7 +547,347 @@
       }
     },
     {
+<<<<<<< HEAD
       "file": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app/pages/auto/auto-update-2025-08-09t02-30-00-014z.tsx",
+=======
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t02-30-00-014z.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t02-30-00-014z.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t03-00-00-011z.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t03-00-00-011z.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t03-30-00-106z.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t03-30-00-106z.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t04-00-00-010z.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t04-00-00-010z.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t04-30-00-013z.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t04-30-00-013z.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t05-00-00-011z.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t05-00-00-011z.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t05-30-00-014z.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t05-30-00-014z.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t06-00-00-012z.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t06-00-00-012z.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t06-30-00-012z.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t06-30-00-012z.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t07-00-00-016z.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t07-00-00-016z.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t07-30-00-011z.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t07-30-00-011z.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t08-00-00-013z.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t08-00-00-013z.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t08-30-00-011z.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t08-30-00-011z.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t09-00-00-010z.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t09-00-00-010z.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t09-30-00-012z.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t09-30-00-012z.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t10-00-00-010z.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t10-00-00-010z.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t10-30-00-011z.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t10-30-00-011z.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t11-00-00-022z.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t11-00-00-022z.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t11-30-00-048z.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t11-30-00-048z.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t12-00-00-012z.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t12-00-00-012z.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t12-30-00-015z.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t12-30-00-015z.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/automation/index.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "issues": [
         "missing_head_import",
         "no_tailwind_usage",

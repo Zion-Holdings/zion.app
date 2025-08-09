@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2025-08-09T02:46:23.434Z",
+  "build": {
+    "ok": false,
+    "code": 1,
+    "stderr": "node:internal/process/promises:394\n    triggerUncaughtException(err, true /* fromPromise */);\n    ^\n\nError: Cannot find module '/Users/miami2/ZION_APP_AUG_08_2025/zion.app.broken_1754707123/.next/server/pages-manifest.json'\nRequire stack:\n- /Users/miami2/ZION_APP_AUG_08_2025/zion.app.broken_1754707123/node_modules/next/dist/server/require.js\n- /Users/miami2/ZION_APP_AUG_08_2025/zion.app.broken_1754707123/node_modules/next/dist/server/load-components.js\n- /Users/miami2/ZION_APP_AUG_08_2025/zion.app.broken_1754707123/node_modules/next/dist/build/utils.js\n- /Users/miami2/ZION_APP_AUG_08_2025/zion.app.broken_1754707123/node_modules/jest-worker/build/workers/processChild.js\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Module.require (node:internal/modules/cjs/loader:1487:12)\n    at require (node:internal/modules/helpers:135:16)\n    at getPagePath (/Users/miami2/ZION_APP_AUG_08_2025/zion.app.broken_1754707123/node_modules/next/dist/server/require.js:21:27)\n    at Object.requirePage (/Users/miami2/ZION_APP_AUG_08_2025/zion.app.broken_1754707123/node_modules/next/dist/server/require.js:43:22) {\n  type: 'Error',\n  code: 'MODULE_NOT_FOUND',\n  requireStack: [\n    '/Users/miami2/ZION_APP_AUG_08_2025/zion.app.broken_1754707123/node_modules/next/dist/server/require.js',\n    '/Users/miami2/ZION_APP_AUG_08_2025/zion.app.broken_1754707123/node_modules/next/dist/server/load-components.js',\n    '/Users/miami2/ZION_APP_AUG_08_2025/zion.app.broken_1754707123/node_modules/next/dist/build/utils.js',\n    '/Users/miami2/ZION_APP_AUG_08_2025/zion.app.broken_1754707123/node_modules/jest-worker/build/workers/processChild.js'\n  ]\n}\n\nNode.js v22.16.0\n"
+  },
+  "metrics": [
+    {
+      "url": "http://localhost:3000/",
+      "statusCode": 0,
+      "ttfbMs": -1,
+      "bytes": 0
+    },
+    {
+      "url": "http://localhost:3000/enhanced-home",
+      "statusCode": 0,
+      "ttfbMs": -1,
+      "bytes": 0
+    }
+  ],
+  "thresholds": {
+    "ttfbMs": 800,
+    "bytesHtml": 250000
+  },
+  "alerts": []
+}

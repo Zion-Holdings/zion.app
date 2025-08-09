@@ -2,6 +2,13 @@
   "ok": false,
   "errors": [
     "git fsck reported issues. Run with --fix locally to attempt repair."
+<<<<<<< HEAD
+=======
+  ],
+  "warnings": [
+    "git fetch --prune failed: fatal: .git/index: index file smaller than expected\n",
+    "No upstream configured for current branch."
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
   ],
   "warnings": [],
   "checks": {
@@ -14,10 +21,13 @@
       "status": 2,
       "output": "dangling tree 6d0ee06a019ca0a13151281e5af0440f44f0e7ac\ndangling tree b510c019f6c1946ffed9e986bd67a0b3686bbe52\nmissing blob 6e1800a02b7399eb9a3f8c890dfabcb42319f766\nmissing blob 481ea045da875d7a1f2ba71dffac0ede20207e66\ndangling blob bb27204ecd2e0f694977194621bbe54033d856e4\ndangling blob 073600755910d04ba383a7b06a83ceffebfe8170\nmissing blob ec3740b9a27a24a561653dc2884cf2fac6d0e95f\ndangling tree fa438048850a67250f08a8631d37b5433d881db2\ndangling blob 3149803ebeabfa431ab588778b87252626feacc7\ndangling tree 8349e0cc55d190b67ddc54fe1145e70a7695ab2f\ndangling tree c257001769e3c3de43cecbf089ba1a322004af37\ndangling blob 065880b3776d790dc2d4a0389a0be397aa309a2c\ndangling blob bf58602a02709bdaea3b8c7262401f2390a3f138\ndangling tree af5c809aefb1271f4b2093ae4362c24c3abe258f\ndangling tree 425fe0be214e2f3737f"
     },
+<<<<<<< HEAD
     "divergence": {
       "behind": 0,
       "ahead": 0
     },
+=======
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
     "working": "clean"
   }
 }

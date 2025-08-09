@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2025-08-09T08:05:33.282Z",
+  "build": {
+    "ok": false,
+    "code": 127,
+    "stderr": "sh: next: command not found\n"
+  },
+  "metrics": [
+    {
+      "url": "http://localhost:3000/",
+      "statusCode": 0,
+      "ttfbMs": -1,
+      "bytes": 0
+    },
+    {
+      "url": "http://localhost:3000/enhanced-home",
+      "statusCode": 0,
+      "ttfbMs": -1,
+      "bytes": 0
+    }
+  ],
+  "thresholds": {
+    "ttfbMs": 800,
+    "bytesHtml": 250000
+  },
+  "alerts": []
+}

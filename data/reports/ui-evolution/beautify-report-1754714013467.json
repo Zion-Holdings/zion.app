@@ -1,0 +1,1410 @@
+{
+  "generatedAt": "2025-08-09T04:33:33.467Z",
+  "totalFindings": 200,
+  "recommendations": [
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/.eslintrc.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/automation-dashboard.js",
+      "hints": [
+        "Add dark mode support using `dark:` variant.",
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/automation-factory.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/autonomous-automation-orchestrator.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/autonomous-error-monitoring-factory.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/check-google-docs-status.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/code-quality-monitor.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/components/monetization/PaidConsultation.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/content-generator.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/continuous-automation-improvement-system.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/continuous-syntax-fix.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/enhance-all-automation.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/generate-google-docs-report.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/intelligent-orchestrator.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/launch-autonomous-systems-clean.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/launch-design-improvement-automation.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/launch-enhanced-autonomous-system.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/launch-frontend-sync-autonomous.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/launch-google-docs-automation.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/lint-automation-manager.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/lint-error-fixer.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/lint-monitor.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/linting-autonomous-agents-factory.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/linting-cron-automation.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/linting-file-watcher.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/master-automation-coordinator.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/mcp-integration-orchestrator.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/performance-optimizer.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/restart-all-automation.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/security-scanner.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/seo-optimizer.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/syntax-error-monitor.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/syntax-fix-launcher.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/syntax-fix-orchestrator.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/test-generator.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/test-google-docs-automation.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/ui-evolution-launcher.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/automation/utils/monetization/affiliate.ts",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/Layout.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/layout/AuthLayout.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/layout/EnhancedFooter.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/layout/EnhancedLayout.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/layout/EnhancedNavigation.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/monetization/PaidConsultation.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/AnimatedBackground.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/EnhancedButton.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/EnhancedCard.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/EnhancedLoading.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/EnhancedMarketplaceCard.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/FuturisticCard.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/FuturisticHero.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/GlassmorphismCard.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/InteractiveNavigation.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/InteractiveSearch.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/InteractiveStats.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/NotificationSystem.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/components/ui/UserEngagementSystem.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/data/site-info.ts",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/data/talent.ts",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/fix-variable-names.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/fix_all_function_names.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/fix_corrupted_files.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/fix_empty_pages.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/fix_typescript_syntax_errors.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/fix_utils_files.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/fix_variable_names.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/hooks/useMessageChannelHandler.ts",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/hooks/useResponsive.ts",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/mcp-client-integration.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/mcp_automation_system.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/mcp_automation_system_old.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/mcp_client_integration.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/next-env.d.ts",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/next.config.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/404.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/_app.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/_document.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/about.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/admin/automation-status.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/admin/automation-status.ts",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/ai-capacity-planning.ts",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/ai-change-management.ts",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/ai-contract.ts",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/ai-workspace-suggestions.ts",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/analytics-api.ts",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/analyze-quote-request.ts",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/api/analyze-service-request.ts",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auth/callback.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auth/forgot-password.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auth/index.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auth/reset-password.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auth/verify.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-08t16-07-55-171z.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-08t16-10-20-249z.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-08t16-30-00-086z.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-08t16-30-20-949z.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-08t16-38-19-257z.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-08t16-49-54-200z.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-08t17-23-07-688z.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t00-34-22-911z.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t00-35-41-052z.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t02-30-00-014z.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t03-00-00-011z.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t03-30-00-106z.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t04-00-00-010z.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/auto/auto-update-2025-08-09t04-30-00-013z.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/automation/index.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blockchain-solutions.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/5g-technology-and-its-impact-on-iot-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/api-first-development-building-scalable-systems-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/augmented-reality-in-enterprise-applications-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/blockchain-technology-in-modern-business-solutions-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/cloud-native-architecture-best-practices-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/cybersecurity-trends-for-2024-and-beyond-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/data-analytics-in-digital-transformation-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/devops-automation-strategies-for-modern-teams-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/digital-twins-revolutionizing-industry-4-0-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/index.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/machine-learning-applications-in-enterprise-software-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/microservices-architecture-benefits-and-challenges-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/quantum-computing-implications-for-business-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/sustainable-technology-green-computing-solutions-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/blog/the-rise-of-edge-computing-in-iot-applications-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/ai-consulting-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/business-intelligence-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/cloud-architecture-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/cybersecurity-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/data-science-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/database-administration-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/devops-automation-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/mobile-development-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/network-engineering-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/product-management-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/quality-assurance-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/system-administration-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/technical-writing-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/ui-ux-design-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/category/web-development-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/ai-powered-business-solutions-discussion.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/cloud-computing-strategies.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/cybersecurity-best-practices.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/data-analytics-implementation.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/digital-transformation-insights.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/emerging-technology-trends.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/future-of-work-and-automation.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/innovation-in-enterprise-technology.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/sustainable-technology-practices.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/chat-content/technology-implementation-strategies.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/contact.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/enhanced-home.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/index.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/iot-platforms.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/products/index.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/ai-model-development-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/ai-seo-auditor.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/api-development-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/business-intelligence-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/cloud-migration-services-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/customer-support-chatbot.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/data-pipeline-engineering-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/database-design-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/index.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/instagram-content-scheduler.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/landing-page-generator.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/mobile-app-development-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/network-security-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/performance-optimization-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/price-intelligence-service.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/quality-assurance-testing-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/security-auditing-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/system-administration-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/technical-documentation-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/ui-ux-design-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/services/web-application-development-chat.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/talent/[slug].tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/pages/talent/index.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/postcss.config.js",
+      "hints": [
+        "Consider using responsive Tailwind utilities for better UI across breakpoints.",
+        "Add dark mode support using `dark:` variant.",
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/run-cursor-memory-automation.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/scripts/linkedin-automation.ts",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/scripts/linkedin_automation.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/scripts/test-linkedin-automation.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/scripts/test_linkedin_automation.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/styles/enhanced-design-system.css",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/styles/globals.css",
+      "hints": [
+        "Add dark mode support using `dark:` variant.",
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/styles/modern-design-system.css",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/tailwind.config.js",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/utils/api/quoteRequests.ts",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/utils/auth-utils.ts",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/utils/browserExtensionDetector.ts",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/utils/data/services.ts",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/utils/messageChannelHandler.ts",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/utils/monetization/affiliate.ts",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/utils/sanitizeHtml.ts",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/utils/supabase/client.ts",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/utils/supabase/middleware.ts",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/utils/supabase/server.ts",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/utils/testing-system.ts",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/utils/testing-system.tsx",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    },
+    {
+      "file": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app/utils/types/service.ts",
+      "hints": [
+        "Introduce subtle motion using framer-motion for perceived performance and polish.",
+        "Improve accessibility by adding ARIA attributes where appropriate."
+      ]
+    }
+  ]
+}

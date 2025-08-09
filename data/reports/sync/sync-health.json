@@ -1,8 +1,14 @@
 {
+<<<<<<< HEAD
   "timestamp": "2025-08-09T09:58:59.283Z",
   "host": "MacBook-Pro-de-Kleber.local",
   "repoRoot": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app",
   "status": "degraded",
+=======
+  "timestamp": "2025-08-09T12:49:56.412Z",
+  "host": "Miami2-2.local",
+  "status": "failing",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
   "checks": [
     {
       "name": "git-repo",

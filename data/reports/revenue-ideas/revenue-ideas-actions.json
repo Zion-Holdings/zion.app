@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "timestamp": "2025-08-09T09:59:04.690Z",
+=======
+  "timestamp": "2025-08-09T12:49:56.048Z",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
   "candidateFiles": [
     "pages/index.tsx",
     "pages/enhanced-home.tsx",

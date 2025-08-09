@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "timestamp": "2025-08-09T09:59:06.882Z",
+=======
+  "timestamp": "2025-08-09T12:49:57.646Z",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
   "changedFiles": [
     "pages/404.tsx",
     "pages/_app.tsx",
@@ -90,6 +94,7 @@
     "pages/auto/auto-update-2025-08-09t00-34-22-911z.tsx",
     "pages/auto/auto-update-2025-08-09t00-35-41-052z.tsx",
     "pages/auto/auto-update-2025-08-09t02-30-00-014z.tsx",
+<<<<<<< HEAD
     "pages/auto/auto-update-2025-08-09t02-52-52-054z.tsx",
     "pages/auto/auto-update-2025-08-09t03-02-29-521z.tsx",
     "pages/auto/auto-update-2025-08-09t03-15-48-518z.tsx",
@@ -109,6 +114,28 @@
     "pages/auto/auto-update-2025-08-09t09-30-00-028z.tsx",
     "pages/auto/auto-update-2025-08-09t09-48-10-333z.tsx",
     "pages/auto/auto-update-2025-08-09t09-56-05-797z.tsx",
+=======
+    "pages/auto/auto-update-2025-08-09t03-00-00-011z.tsx",
+    "pages/auto/auto-update-2025-08-09t03-30-00-106z.tsx",
+    "pages/auto/auto-update-2025-08-09t04-00-00-010z.tsx",
+    "pages/auto/auto-update-2025-08-09t04-30-00-013z.tsx",
+    "pages/auto/auto-update-2025-08-09t05-00-00-011z.tsx",
+    "pages/auto/auto-update-2025-08-09t05-30-00-014z.tsx",
+    "pages/auto/auto-update-2025-08-09t06-00-00-012z.tsx",
+    "pages/auto/auto-update-2025-08-09t06-30-00-012z.tsx",
+    "pages/auto/auto-update-2025-08-09t07-00-00-016z.tsx",
+    "pages/auto/auto-update-2025-08-09t07-30-00-011z.tsx",
+    "pages/auto/auto-update-2025-08-09t08-00-00-013z.tsx",
+    "pages/auto/auto-update-2025-08-09t08-30-00-011z.tsx",
+    "pages/auto/auto-update-2025-08-09t09-00-00-010z.tsx",
+    "pages/auto/auto-update-2025-08-09t09-30-00-012z.tsx",
+    "pages/auto/auto-update-2025-08-09t10-00-00-010z.tsx",
+    "pages/auto/auto-update-2025-08-09t10-30-00-011z.tsx",
+    "pages/auto/auto-update-2025-08-09t11-00-00-022z.tsx",
+    "pages/auto/auto-update-2025-08-09t11-30-00-048z.tsx",
+    "pages/auto/auto-update-2025-08-09t12-00-00-012z.tsx",
+    "pages/auto/auto-update-2025-08-09t12-30-00-015z.tsx",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
     "pages/auth/callback.tsx",
     "pages/auth/forgot-password.tsx",
     "pages/auth/index.tsx",
@@ -161,7 +188,12 @@
     "public/favicon.ico",
     "public/favicon.svg",
     "public/site.webmanifest",
+<<<<<<< HEAD
     "public/sitemap.xml"
+=======
+    "public/sitemap.xml",
+    "public/og/og-default.svg"
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
   ],
   "actions": [
     "sync_content_metadata",

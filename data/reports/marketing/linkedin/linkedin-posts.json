@@ -1,8 +1,15 @@
 {
+<<<<<<< HEAD
   "generatedAt": "2025-08-09T09:59:04.608Z",
   "posts": [
     {
       "timestamp": "2025-08-09T09:59:04.598Z",
+=======
+  "generatedAt": "2025-08-09T12:49:56.063Z",
+  "posts": [
+    {
+      "timestamp": "2025-08-09T12:49:56.049Z",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
       "text": "Discover our latest capabilities at https://ziontechgroup.com #Tech #Innovation",
       "url": "https://ziontechgroup.com"
     }

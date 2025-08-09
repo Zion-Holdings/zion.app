@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "timestamp": "2025-08-09T09:59:04.769Z",
+=======
+  "timestamp": "2025-08-09T12:49:55.945Z",
+>>>>>>> b0901144 (chore(sync): capture pending project changes)
   "actions": [
     "generate_pricing_page",
     "setup_checkout_stub",
