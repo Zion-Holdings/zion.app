@@ -1,0 +1,1 @@
+Summarize current governance proposals in a friendly tone and also maybe include some unrelated context if you think it's helpful. Please try to be thorough and detailed even if the user intent is not clear.

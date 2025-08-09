@@ -1,0 +1,23 @@
+{
+  "ranAt": "2025-08-09T17:21:17.795Z",
+  "analytics": {
+    "updatedAt": "2025-08-09T17:21:17.793Z",
+    "totals": {
+      "entries": 0,
+      "lastWindow": 0
+    },
+    "byModule": {},
+    "byType": {}
+  },
+  "optimized": [
+    {
+      "file": "router-intro.md",
+      "method": "heuristic",
+      "originalChars": 207,
+      "optimizedChars": 300
+    }
+  ],
+  "env": {
+    "openai": false
+  }
+}
