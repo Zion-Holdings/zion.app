@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: '45 6 * * *'
   workflow_dispatch: {}
+  workflow_run:
+    workflows: ["Economy Optimizer"]
+    types: ["completed"]
 
 permissions:
   contents: write
@@ -11,6 +14,7 @@ permissions:
 
 jobs:
   detect-and-brief:
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name != 'workflow_run' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -34,10 +38,32 @@ jobs:
           cp -r data/reports/economy/anomalies/* public/reports/economy/anomalies/ || true
           mkdir -p public/docs/governance
           cp -r docs/governance/* public/docs/governance/ || true
-      - name: Commit and push changes
+      - name: Commit artifacts
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
           git add -A
           git diff --cached --quiet && echo "No changes" || git commit -m "chore(detections): anomalies and governance brief [skip ci]"
           git push
+      - name: Create GitHub Issue for anomaly if present
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const dir = path.join(process.env.GITHUB_WORKSPACE, 'data', 'reports', 'economy', 'anomalies');
+            const latestPath = path.join(dir, 'latest.json');
+            if (!fs.existsSync(latestPath)) {
+              core.info('No anomalies latest.json');
+              return;
+            }
+            const latest = JSON.parse(fs.readFileSync(latestPath, 'utf8')).latest;
+            if (!latest) return;
+            const title = `Economy anomaly: ${latest}`;
+            const body = fs.readFileSync(path.join(dir, latest), 'utf8');
+            const { data: issues } = await github.rest.search.issuesAndPullRequests({ q: `repo:${context.repo.owner}/${context.repo.repo} in:title "${title}" state:open` });
+            if (issues.total_count > 0) {
+              core.info('Anomaly issue already exists');
+              return;
+            }
+            await github.rest.issues.create({ owner: context.repo.owner, repo: context.repo.repo, title, body });

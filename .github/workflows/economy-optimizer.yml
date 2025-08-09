@@ -4,12 +4,16 @@ on:
   schedule:
     - cron: '30 6 * * *' # daily after autopilot
   workflow_dispatch: {}
+  workflow_run:
+    workflows: ["Economy Autopilot"]
+    types: ["completed"]
 
 permissions:
   contents: write
 
 jobs:
   run-optimizer:
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name != 'workflow_run' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
