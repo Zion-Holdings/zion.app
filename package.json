@@ -15,6 +15,9 @@
     "npm": ">=10.0.0"
   },
   "scripts": {
+    "auto:source-tree": "node automation/source-tree-sync.cjs",
+    "auto:changelog": "node automation/commit-changelog-generator.cjs",
+    "auto:fix": "node automation/auto-fix-orchestrator.cjs",
     "deps:maintain": "node automation/dependency-update-orchestrator.cjs",
     "deps:cron:start": "bash automation/dependency-maintenance-cron.sh",
     "sitemap": "node scripts/generate-sitemap.mjs",
@@ -61,6 +64,7 @@
     "automation:all": "node automation/launch-all-automation.cjs start",
     "automation:status": "node automation/launch-all-automation.cjs status",
     "automation:report": "node automation/launch-all-automation.cjs report",
+    "auto:todo-index": "node automation/todo-issue-bot.cjs",
     "automation:git-sync": "node automation/git-sync.cjs",
     "automation:improvement": "node automation/continuous-automation-improvement-system.js",
     "automation:improvement:dev": "nodemon automation/continuous-automation-improvement-system.js",
