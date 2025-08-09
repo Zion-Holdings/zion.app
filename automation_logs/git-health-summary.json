@@ -2,18 +2,19 @@
   "ok": true,
   "errors": [],
   "warnings": [
-    "No upstream configured for current branch."
+    "No upstream configured for current branch.",
+    "Set upstream to origin/cursor/fix-nextjs-build-errors-for-missing-components-0198."
   ],
   "checks": {
     "user": {
       "name": "Cursor Agent",
       "email": "cursoragent@cursor.com"
     },
-    "origin": "origin\thttps://x-access-token:ghs_qNBaeg2v14LuMC4IBKBjGq0T4N5gyr2FojDs@github.com/Zion-Holdings/zion.app (fetch)\norigin\thttps://x-access-token:ghs_qNBaeg2v14LuMC4IBKBjGq0T4N5gyr2FojDs@github.com/Zion-Holdings/zion.app (push)",
+    "origin": "origin\thttps://x-access-token:ghs_reVuJTErJmVKOAPMCQrZcx1F6d455a2C5Ki9@github.com/Zion-Holdings/zion.app (fetch)\norigin\thttps://x-access-token:ghs_reVuJTErJmVKOAPMCQrZcx1F6d455a2C5Ki9@github.com/Zion-Holdings/zion.app (push)",
     "fsck": {
       "status": 0,
-      "output": ""
+      "output": "dangling tree 94aaa91cc74d300c9c6d2fc354a1c38b4b5d8599\ndangling tree b319b3fe586b6052689e178e0f5f22a3d5f1c86e\n"
     },
-    "working": "dirty"
+    "working": "clean"
   }
 }

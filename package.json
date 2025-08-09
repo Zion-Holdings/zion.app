@@ -215,7 +215,10 @@
     "conflicts:cron:start": "bash automation/merge-conflict-cron.sh start",
     "conflicts:cron:stop": "bash automation/merge-conflict-cron.sh stop",
     "conflicts:cron:status": "bash automation/merge-conflict-cron.sh status",
-    "fix:empty-pages": "node fix_empty_pages.js"
+    "fix:empty-pages": "node fix_empty_pages.js",
+    "content:indexes": "node scripts/generate-indexes.cjs",
+    "content:rss": "node scripts/generate-rss.cjs",
+    "content:all": "npm run content:indexes && npm run content:rss"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
