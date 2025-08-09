@@ -35,6 +35,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node automation/cloud/content-sync.mjs
 
+      - name: Trends aggregator
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node automation/cloud/trends.mjs
+
       - name: Generate sitemap
         run: npm run sitemap || true
 
@@ -51,9 +56,9 @@ jobs:
         id: cpr
         uses: peter-evans/create-pull-request@v6
         with:
-          commit-message: 'chore(autonomy): content sync and maintenance'
-          title: 'Autonomy: content sync and maintenance'
-          body: 'Automated content sync, sitemap, and maintenance tasks.'
+          commit-message: 'chore(autonomy): content sync, trends, and maintenance'
+          title: 'Autonomy: content sync, trends, and maintenance'
+          body: 'Automated content sync, trends, sitemap, and maintenance tasks.'
           branch: 'auto/autonomy-${{ github.run_id }}'
           labels: 'automation,autonomy'
 

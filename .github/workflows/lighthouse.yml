@@ -1,0 +1,36 @@
+name: Lighthouse Audit
+
+on:
+  schedule:
+    - cron: '15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          urls: |
+            ${{ vars.SITE_URL }}/
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+          runs: 1
+      - name: Save summary
+        run: |
+          mkdir -p data/reports
+          echo '{"note":"See workflow artifacts for full LH reports"}' > data/reports/lighthouse.json
+      - name: Commit summary
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name "github-actions"
+            git config user.email "github-actions@github.com"
+            git add data/reports/lighthouse.json
+            git commit -m "chore(autonomy): update lighthouse summary"
+            git push
+          fi
