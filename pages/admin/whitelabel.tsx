@@ -101,7 +101,7 @@ export default function WhiteLabelAdmin({ tenant }: any) {
             <input className="border rounded px-3 py-2" value={form.customDomain} onChange={e => setForm({ ...form, customDomain: e.target.value.toLowerCase() })} placeholder="www.yourbrand.com" />
             {form.customDomain && (
               <div className="text-xs text-gray-600 dark:text-gray-300 mt-2">
-                Configure DNS: Create CNAME <code>"{form.customDomain}"</code> -> <code>"app.ziontechmarketplace.com"</code>. Ensure wildcard SSL covers your domain.
+                Configure DNS: Create CNAME <code>{form.customDomain}</code> &rarr; <code>app.ziontechmarketplace.com</code>. Ensure wildcard SSL covers your domain.
               </div>
             )}
           </label>
