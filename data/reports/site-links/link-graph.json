@@ -1,0 +1,42 @@
+{
+  "https://ziontechgroup.com/": [
+    "https://ziontechgroup.com/",
+    "https://ziontechgroup.com/services",
+    "https://ziontechgroup.com/about",
+    "https://ziontechgroup.com/contact",
+    "https://ziontechgroup.com/products",
+    "https://ziontechgroup.com/blog"
+  ],
+  "https://ziontechgroup.com/services": [
+    "https://ziontechgroup.com/services",
+    "https://ziontechgroup.com/",
+    "https://ziontechgroup.com/about",
+    "https://ziontechgroup.com/contact"
+  ],
+  "https://ziontechgroup.com/about": [
+    "https://ziontechgroup.com/about",
+    "https://ziontechgroup.com/",
+    "https://ziontechgroup.com/services",
+    "https://ziontechgroup.com/contact"
+  ],
+  "https://ziontechgroup.com/contact": [
+    "https://ziontechgroup.com/contact",
+    "https://ziontechgroup.com/",
+    "https://ziontechgroup.com/services",
+    "https://ziontechgroup.com/about"
+  ],
+  "https://ziontechgroup.com/products": [
+    "https://ziontechgroup.com/products",
+    "https://ziontechgroup.com/",
+    "https://ziontechgroup.com/services",
+    "https://ziontechgroup.com/about",
+    "https://ziontechgroup.com/contact"
+  ],
+  "https://ziontechgroup.com/blog": [
+    "https://ziontechgroup.com/blog",
+    "https://ziontechgroup.com/",
+    "https://ziontechgroup.com/services",
+    "https://ziontechgroup.com/about",
+    "https://ziontechgroup.com/contact"
+  ]
+}
