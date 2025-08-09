@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[108],{3459:function(){},9942:function(n,u,_){(window.__NEXT_P=window.__NEXT_P||[]).push(["/talent/[slug]",function(){return _(3459)}])}},function(n){n.O(0,[2888,9774,179],(function(){return u=9942,n(n.s=u);var u}));var u=n.O();_N_E=u}]);
