@@ -2,18 +2,19 @@
   "ok": true,
   "errors": [],
   "warnings": [
-    "No upstream configured for current branch."
+    "No upstream configured for current branch.",
+    "Set upstream to origin/cursor/build-it-service-provider-directory-page-d0d3."
   ],
   "checks": {
     "user": {
       "name": "Cursor Agent",
       "email": "cursoragent@cursor.com"
     },
-    "origin": "origin\thttps://x-access-token:ghs_qNBaeg2v14LuMC4IBKBjGq0T4N5gyr2FojDs@github.com/Zion-Holdings/zion.app (fetch)\norigin\thttps://x-access-token:ghs_qNBaeg2v14LuMC4IBKBjGq0T4N5gyr2FojDs@github.com/Zion-Holdings/zion.app (push)",
+    "origin": "origin\thttps://x-access-token:ghs_RmdmFzwAuISk7w5OodZkDZA2JagVDv42OQIP@github.com/Zion-Holdings/zion.app (fetch)\norigin\thttps://x-access-token:ghs_RmdmFzwAuISk7w5OodZkDZA2JagVDv42OQIP@github.com/Zion-Holdings/zion.app (push)",
     "fsck": {
       "status": 0,
-      "output": ""
+      "output": "dangling tree ffa86f9cfde560173cc5ad8dc33beaa3330fa478\n"
     },
-    "working": "dirty"
+    "working": "clean"
   }
 }
