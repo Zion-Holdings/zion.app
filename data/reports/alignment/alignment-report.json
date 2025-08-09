@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "timestamp": "2025-08-09T09:59:05.926Z",
-=======
-  "timestamp": "2025-08-09T12:49:55.782Z",
->>>>>>> b0901144 (chore(sync): capture pending project changes)
+  "timestamp": "2025-08-09T13:00:47.642Z",
   "counts": {
     "actions": 1,
     "pages": 12

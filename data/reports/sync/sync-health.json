@@ -1,14 +1,8 @@
 {
-<<<<<<< HEAD
-  "timestamp": "2025-08-09T09:58:59.283Z",
-  "host": "MacBook-Pro-de-Kleber.local",
-  "repoRoot": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_09_2025/zion.app",
-  "status": "degraded",
-=======
-  "timestamp": "2025-08-09T12:49:56.412Z",
+  "timestamp": "2025-08-09T13:00:36.085Z",
   "host": "Miami2-2.local",
-  "status": "failing",
->>>>>>> b0901144 (chore(sync): capture pending project changes)
+  "repoRoot": "/Users/miami2/ZION_APP_AUG_08_2025/zion.app",
+  "status": "degraded",
   "checks": [
     {
       "name": "git-repo",
@@ -27,23 +21,23 @@
     },
     {
       "name": "auto-sync-log-fresh",
-      "ok": true,
-      "details": "ageMs=52565.32373046875"
+      "ok": false,
+      "details": "ageMs=Infinity"
     },
     {
       "name": "auto-pull-log-fresh",
-      "ok": true,
-      "details": "ageMs=232958.80297851562"
+      "ok": false,
+      "details": "ageMs=Infinity"
     },
     {
       "name": "advanced-git-sync-lock-stale",
       "ok": true,
-      "details": "ageMs=656954.4626464844"
+      "details": "ageMs=Infinity"
     },
     {
       "name": "git-pull-rebase-lock-stale",
       "ok": true,
-      "details": "ageMs=654176.7822265625"
+      "details": "ageMs=Infinity"
     },
     {
       "name": "origin-configured",
@@ -57,8 +51,8 @@
     },
     {
       "name": "working-tree-clean",
-      "ok": true,
-      "details": "changed=0"
+      "ok": false,
+      "details": "changed=5"
     }
   ]
 }

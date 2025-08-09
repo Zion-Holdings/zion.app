@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "timestamp": "2025-08-09T09:59:03.016Z",
-=======
-  "timestamp": "2025-08-09T12:49:55.906Z",
->>>>>>> b0901144 (chore(sync): capture pending project changes)
+  "timestamp": "2025-08-09T13:00:32.625Z",
   "actions": [
     "ensure_home_hero_promotes_all_features",
     "generate_feature_sections",

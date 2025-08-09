@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "timestamp": "2025-08-09T09:59:05.035Z",
-=======
-  "timestamp": "2025-08-09T12:49:56.004Z",
->>>>>>> b0901144 (chore(sync): capture pending project changes)
+  "timestamp": "2025-08-09T13:00:37.090Z",
   "actions": [
     "generate_service_landing_pages",
     "generate_service_docs_pages",

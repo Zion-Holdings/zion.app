@@ -1,24 +1,13 @@
 {
-<<<<<<< HEAD
-  "generatedAt": "2025-08-09T09:59:04.606Z",
+  "generatedAt": "2025-08-09T13:00:39.434Z",
   "posts": [
     {
-      "timestamp": "2025-08-09T09:59:04.595Z",
-=======
-  "generatedAt": "2025-08-09T12:49:55.978Z",
-  "posts": [
-    {
-      "timestamp": "2025-08-09T12:49:55.976Z",
->>>>>>> b0901144 (chore(sync): capture pending project changes)
+      "timestamp": "2025-08-09T13:00:39.402Z",
       "text": "Build smarter, ship faster. AI, Cloud, Automation — end-to-end. Explore engagements at https://ziontechgroup.com #ProductEngineering #MLOps #DevOps",
       "url": "https://ziontechgroup.com"
     },
     {
-<<<<<<< HEAD
-      "timestamp": "2025-08-09T09:59:04.595Z",
-=======
-      "timestamp": "2025-08-09T12:49:55.976Z",
->>>>>>> b0901144 (chore(sync): capture pending project changes)
+      "timestamp": "2025-08-09T13:00:39.402Z",
       "text": "Zion Tech Group — Full-stack AI, Cloud, and Automation services. See how we deliver measurable outcomes. https://ziontechgroup.com #AI #Cloud #Automation",
       "url": "https://ziontechgroup.com"
     }
