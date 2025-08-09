@@ -1,21 +1,25 @@
 {
-  "ok": true,
-  "errors": [],
-  "warnings": [],
+  "ok": false,
+  "errors": [
+    "git fsck reported issues. Run with --fix locally to attempt repair."
+  ],
+  "warnings": [
+    "git fetch --prune failed: fatal: .git/index: index file smaller than expected\n"
+  ],
   "checks": {
     "user": {
-      "name": "Cursor Agent",
-      "email": "cursoragent@cursor.com"
+      "name": "Automation Bot",
+      "email": "automation@bolt.new.zion.app"
     },
-    "origin": "origin\thttps://x-access-token:ghs_9l2J8CL3pRZY8pNTdOkr2qojcgE3TE1fdBGp@github.com/Zion-Holdings/zion.app (fetch)\norigin\thttps://x-access-token:ghs_9l2J8CL3pRZY8pNTdOkr2qojcgE3TE1fdBGp@github.com/Zion-Holdings/zion.app (push)",
+    "origin": "origin\thttps://github.com/Zion-Holdings/zion.app.git (fetch)\norigin\thttps://github.com/Zion-Holdings/zion.app.git (push)",
     "fsck": {
-      "status": 0,
-      "output": "dangling tree b75e471af53531e135265b306abf449cc3f14bf1\ndangling tree 71bddd5a31561afdc47df7b1c9adcb173945384e\n"
+      "status": null,
+      "output": "dangling blob ad00607120026cfc1f713259ce2c25e194205401\ndangling blob f200202e219d72b5cd28004dd9714511ba59d850\ndangling blob 8803e0fc39a3b54582660f55fd0b0f6fc1339544\ndangling blob 4b0580b1b71886112ed576ef591ae0f0c904cf81\ndangling blob bc05a0cc140aeb741d2d833f71d5e45356f7616f\ndangling blob 600640785c2b7336cb3afcd9d9bd3e10609410e4\ndangling blob 6906601d7809162c25a506e5e80ad4312705c71d\ndangling blob 9206a01cafe6faf42d2bc63b687012ad3d5c3e83\ndangling blob a10620cb6c3e72b43b17dc2e3467cf7b9f18ab95\ndangling blob 2f07e0bd5d51d0d0bea614d1b3c0728cf125aff4\ndangling blob 5707e0910f72fabaa0ddc944dea9f2101a3d088f\ndangling blob 9507808b7c1ea0271ab51b8f2537ba63cb8f8a95\ndangling blob 2208c04875093bbd3fbfd2ecd7e558255fae1e4a\ndangling blob 5e08601a9c8e5d433a6baf72130886669416f28e\ndangling blob 940840dc4e53aebf"
     },
     "divergence": {
       "behind": 0,
-      "ahead": 0
+      "ahead": 1
     },
-    "working": "dirty"
+    "working": "clean"
   }
 }

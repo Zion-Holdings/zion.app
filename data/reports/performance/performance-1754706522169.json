@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2025-08-09T02:28:42.167Z",
+  "build": {
+    "ok": false,
+    "code": 1,
+    "stderr": "\n> Build error occurred\nError: Build optimization failed: found pages without a React Component as default export in \npages/chat-content/ai-powered-business-solutions-discussion\npages/chat-content/cybersecurity-best-practices\npages/chat-content/cloud-computing-strategies\npages/chat-content/data-analytics-implementation\npages/chat-content/digital-transformation-insights\npages/chat-content/emerging-technology-trends\npages/chat-content/innovation-in-enterprise-technology\npages/chat-content/future-of-work-and-automation\npages/chat-content/sustainable-technology-practices\npages/chat-content/technology-implementation-strategies\npages/contact\npages/\npages/enhanced-home\npages/iot-platforms\npages/products\npages/talent/[slug]\npages/talent\npages/admin/automation-status\npages/about\npages/auth/forgot-password\npages/auth/reset-password\npages/auth/callback\npages/auto/auto-update-2025-08-08t16-07-55-171z\npages/auto/auto-update-2025-08-08t17-23-07-688z\npages/404\npages/auth\npages/auto/auto-update-2025-08-09t00-34-22-911z\npages/auto/auto-update-2025-08-08t16-30-20-949z\npages/auth/verify\npages/auto/auto-update-2025-08-08t16-49-54-200z\npages/auto/auto-update-2025-08-08t16-30-00-086z\npages/auto/auto-update-2025-08-08t16-10-20-249z\npages/auto/auto-update-2025-08-08t16-38-19-257z\n\nSee https://nextjs.org/docs/messages/page-without-valid-component for more info.\n\n    at /Users/miami2/ZION_APP_AUG_08_2025/zion.app/node_modules/next/dist/build/index.js:674:19\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async Span.traceAsyncFn (/Users/miami2/ZION_APP_AUG_08_2025/zion.app/node_modules/next/dist/telemetry/trace/trace.js:60:20)\n    at async Object.build [as default] (/Users/miami2/ZION_APP_AUG_08_2025/zion.app/node_modules/next/dist/build/index.js:77:25)\n"
+  },
+  "metrics": [
+    {
+      "url": "http://localhost:3000/",
+      "statusCode": 0,
+      "ttfbMs": -1,
+      "bytes": 0
+    },
+    {
+      "url": "http://localhost:3000/enhanced-home",
+      "statusCode": 0,
+      "ttfbMs": -1,
+      "bytes": 0
+    }
+  ],
+  "thresholds": {
+    "ttfbMs": 800,
+    "bytesHtml": 250000
+  },
+  "alerts": []
+}

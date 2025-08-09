@@ -3,7 +3,6 @@ const path = require('path');
 
 module.exports = {
   reactStrictMode: true,
-  webpack5: false,
   images: {
     domains: ["localhost"],
   },
