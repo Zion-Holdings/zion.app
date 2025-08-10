@@ -21,6 +21,14 @@ export default function Home() {
         <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,white,transparent_70%)]">
           <div className="twinkle-field absolute inset-0" />
         </div>
+        {/* Orbital lines */}
+        <div className="orbital">
+          <div className="ring slow h-[48rem] w-[48rem]" />
+          <div className="ring fast h-[36rem] w-[36rem]" />
+          <div className="ring h-[28rem] w-[28rem]" />
+        </div>
+        {/* Scanline overlay */}
+        <div className="scanlines" />
       </div>
 
       {/* Header */}
