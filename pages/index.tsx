@@ -1,11 +1,16 @@
 import Link from 'next/link';
+import FuturisticHero from '../components/ui/FuturisticHero';
+import FeatureGrid from '../components/ui/FeatureGrid';
 
 export default function Home() {
   return (
-    <div className="py-10 space-y-8">
-      <section>
-        <h1 className="text-3xl font-semibold">Zion AI Marketplace</h1>
-        <p className="mt-2 text-gray-600 dark:text-gray-300">Welcome.</p>
+    <div className="py-8 space-y-12">
+      <FuturisticHero />
+
+      <section className="space-y-4">
+        <h2 className="text-2xl font-semibold">Capabilities Built for Speed</h2>
+        <p className="text-gray-600 dark:text-gray-300">Hire smarter, ship faster. Zion’s platform accelerates AI delivery from idea to outcome.</p>
+        <FeatureGrid />
       </section>
 
       <section className="space-y-3">
