@@ -10760,6 +10760,92 @@ const Home: NextPage = () => {
           </div>
         </section>
         {/* AUTO-GENERATED: HOMEPAGE_PROMOS_END */}
+
+        
+        {/* AUTO-GENERATED: HOMEPAGE_FEATURES_START */}
+        <section className="mt-16">
+          <h2 className="text-3xl font-bold mb-4">What We Offer</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-cyan-400/30 transition">
+              <h3 className="text-lg font-semibold mb-2">Intelligent Orchestrator System</h3>
+              <p className="text-white/80">Coordinates all automation systems with intelligent decision-making</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-cyan-400/30 transition">
+              <h3 className="text-lg font-semibold mb-2">Automation Factory System</h3>
+              <p className="text-white/80">Generates and manages intelligent automation scripts</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-cyan-400/30 transition">
+              <h3 className="text-lg font-semibold mb-2">Automation Dashboard System</h3>
+              <p className="text-white/80">Real-time monitoring and control of all automation systems</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-cyan-400/30 transition">
+              <h3 className="text-lg font-semibold mb-2">Comprehensive Error Fixer</h3>
+              <p className="text-white/80">Fixes corrupted files and syntax errors</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-cyan-400/30 transition">
+              <h3 className="text-lg font-semibold mb-2">Lint Automation Manager</h3>
+              <p className="text-white/80">Manages lint monitoring and fixing</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-cyan-400/30 transition">
+              <h3 className="text-lg font-semibold mb-2">Lint Monitor</h3>
+              <p className="text-white/80">Continuous lint monitoring</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-cyan-400/30 transition">
+              <h3 className="text-lg font-semibold mb-2">Automation Launcher</h3>
+              <p className="text-white/80">Launches and manages all automation systems</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-cyan-400/30 transition">
+              <h3 className="text-lg font-semibold mb-2">Link Monitor & Fix (New)</h3>
+              <p className="text-white/80">Continuously crawl `https://ziontechgroup.com`, verify all links and sublinks (internal and external), auto-generate small agents per cycle, and attempt fixes for broken internal references.</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-cyan-400/30 transition">
+              <h3 className="text-lg font-semibold mb-2">Code Quality Monitor</h3>
+              <p className="text-white/80">Analyzes code quality metrics</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-cyan-400/30 transition">
+              <h3 className="text-lg font-semibold mb-2">Performance Optimizer</h3>
+              <p className="text-white/80">Optimizes application performance</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-cyan-400/30 transition">
+              <h3 className="text-lg font-semibold mb-2">Content Generator</h3>
+              <p className="text-white/80">Generates new content automatically</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-cyan-400/30 transition">
+              <h3 className="text-lg font-semibold mb-2">SEO Optimizer</h3>
+              <p className="text-white/80">Optimizes SEO across the application</p>
+            </div>
+          </div>
+        </section>
+        <section className="mt-12">
+          <h2 className="text-2xl font-semibold mb-3">Why Choose Us</h2>
+          <ul className="space-y-2">
+
+              <li className="flex items-start gap-2"><span className="text-cyan-300">✓</span><span><strong>24/7 Monitoring</strong>: Systems run continuously in the background</span></li>
+
+              <li className="flex items-start gap-2"><span className="text-cyan-300">✓</span><span><strong>Intelligent Decision Making</strong>: AI-powered system coordination</span></li>
+
+              <li className="flex items-start gap-2"><span className="text-cyan-300">✓</span><span><strong>Automatic Fixes</strong>: Common errors are fixed automatically</span></li>
+
+              <li className="flex items-start gap-2"><span className="text-cyan-300">✓</span><span><strong>Auto-Commit</strong>: Changes are committed automatically</span></li>
+
+              <li className="flex items-start gap-2"><span className="text-cyan-300">✓</span><span><strong>Learning</strong>: Systems learn from patterns and improve over time</span></li>
+
+              <li className="flex items-start gap-2"><span className="text-cyan-300">✓</span><span><strong>Proactive Detection</strong>: Errors are caught before they cause issues</span></li>
+          </ul>
+        </section>
+        {/* AUTO-GENERATED: HOMEPAGE_FEATURES_END */}
 </main>
     </div>
   );
