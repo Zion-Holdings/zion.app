@@ -1,0 +1,23 @@
+name: Search Engine Ping
+
+on:
+  workflow_run:
+    workflows: ["Deploy to GitHub Pages"]
+    types: [completed]
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Compute URL
+        id: url
+        run: |
+          echo "url=https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/sitemap.xml" >> $GITHUB_OUTPUT
+      - name: Ping Google/Bing
+        run: |
+          curl -fsSL "http://www.google.com/ping?sitemap=${{ steps.url.outputs.url }}" | cat
+          curl -fsSL "http://www.bing.com/ping?sitemap=${{ steps.url.outputs.url }}" | cat
