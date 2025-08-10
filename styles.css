@@ -105,6 +105,9 @@ body {
 .card h3 { margin: 8px 0; font-size: 1.1rem; }
 .card p { color: var(--muted); margin: 0 0 14px; }
 .card-cta { color: var(--accent); text-decoration: none; font-weight: 600; }
+.card .badge { margin: 8px 0; }
+.card .badge img { height: 20px; opacity: 0.9; }
+.card .links { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
 
 /* Why */
 .benefit-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }

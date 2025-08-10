@@ -8,6 +8,7 @@
     <meta property="og:title" content="Zion — The AI-Powered Marketplace for High-Tech" />
     <meta property="og:description" content="Join the first free AI-powered marketplace for high-tech products, IT services, AI talents, innovation, and equipment." />
     <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og-image.png" />
     <meta name="theme-color" content="#0b1020" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
@@ -37,6 +38,7 @@
             <li><a href="#how">How It Works</a></li>
             <li><a href="#testimonials">Testimonials</a></li>
             <li><a href="#trusted">Trusted By</a></li>
+            <li><a href="#automations">Automations</a></li>
           </ul>
         </nav>
         <div class="header-cta">
@@ -241,6 +243,75 @@
             <div class="logo-pill">Microsoft Azure</div>
             <div class="logo-pill">IBM</div>
             <div class="logo-pill">Intel</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="automations section-pad" id="automations">
+        <div class="container">
+          <h2 class="section-title reveal">Autonomous Cloud Automations</h2>
+          <p class="section-subtitle reveal">Fully cloud-native workflows that run continuously and sync results to this repository — no servers, no humans required.</p>
+          <div class="card-grid">
+            <article class="card reveal">
+              <h3>Deploy to GitHub Pages</h3>
+              <p>Builds and deploys the site on each push to main and on demand.</p>
+              <div class="badge"><img alt="status" data-badge="deploy-pages.yml"></div>
+              <div class="links"><a class="card-cta" data-workflow="deploy-pages.yml">View workflow</a> · <a class="card-cta" data-runs="deploy-pages.yml">Runs</a></div>
+            </article>
+            <article class="card reveal">
+              <h3>Lighthouse CI</h3>
+              <p>Performance, accessibility, SEO checks; creates issues on regressions.</p>
+              <div class="badge"><img alt="status" data-badge="lighthouse-ci.yml"></div>
+              <div class="links"><a class="card-cta" data-workflow="lighthouse-ci.yml">View workflow</a> · <a class="card-cta" data-runs="lighthouse-ci.yml">Runs</a></div>
+            </article>
+            <article class="card reveal">
+              <h3>Visual Regression</h3>
+              <p>Playwright snapshots guard against unintended UI changes.</p>
+              <div class="badge"><img alt="status" data-badge="visual-regression.yml"></div>
+              <div class="links"><a class="card-cta" data-workflow="visual-regression.yml">View workflow</a> · <a class="card-cta" data-runs="visual-regression.yml">Runs</a></div>
+            </article>
+            <article class="card reveal">
+              <h3>Link Checker</h3>
+              <p>Scans for broken links across the site and markdown docs.</p>
+              <div class="badge"><img alt="status" data-badge="link-check.yml"></div>
+              <div class="links"><a class="card-cta" data-workflow="link-check.yml">View workflow</a> · <a class="card-cta" data-runs="link-check.yml">Runs</a></div>
+            </article>
+            <article class="card reveal">
+              <h3>Security (CodeQL)</h3>
+              <p>Code scanning for JavaScript; alerts on discovered vulnerabilities.</p>
+              <div class="badge"><img alt="status" data-badge="security-codeql.yml"></div>
+              <div class="links"><a class="card-cta" data-workflow="security-codeql.yml">View workflow</a> · <a class="card-cta" data-runs="security-codeql.yml">Runs</a></div>
+            </article>
+            <article class="card reveal">
+              <h3>Auto Format</h3>
+              <p>Prettier runs on a schedule and commits formatting changes.</p>
+              <div class="badge"><img alt="status" data-badge="auto-format.yml"></div>
+              <div class="links"><a class="card-cta" data-workflow="auto-format.yml">View workflow</a> · <a class="card-cta" data-runs="auto-format.yml">Runs</a></div>
+            </article>
+            <article class="card reveal">
+              <h3>Auto Dependency Updates</h3>
+              <p>Weekly minor/patch upgrades via PRs with best-effort build.</p>
+              <div class="badge"><img alt="status" data-badge="auto-deps.yml"></div>
+              <div class="links"><a class="card-cta" data-workflow="auto-deps.yml">View workflow</a> · <a class="card-cta" data-runs="auto-deps.yml">Runs</a></div>
+            </article>
+            <article class="card reveal">
+              <h3>Site Maintenance</h3>
+              <p>Generates sitemap, robots, and manifest and commits them.</p>
+              <div class="badge"><img alt="status" data-badge="site-maintenance.yml"></div>
+              <div class="links"><a class="card-cta" data-workflow="site-maintenance.yml">View workflow</a> · <a class="card-cta" data-runs="site-maintenance.yml">Runs</a></div>
+            </article>
+            <article class="card reveal">
+              <h3>Synthetic Uptime</h3>
+              <p>Probes public site frequently; opens issues on failures.</p>
+              <div class="badge"><img alt="status" data-badge="synthetic-uptime.yml"></div>
+              <div class="links"><a class="card-cta" data-workflow="synthetic-uptime.yml">View workflow</a> · <a class="card-cta" data-runs="synthetic-uptime.yml">Runs</a></div>
+            </article>
+            <article class="card reveal">
+              <h3>OG Image Generator</h3>
+              <p>Renders a fresh Open Graph image from the homepage and commits it.</p>
+              <div class="badge"><img alt="status" data-badge="og-image.yml"></div>
+              <div class="links"><a class="card-cta" data-workflow="og-image.yml">View workflow</a> · <a class="card-cta" data-runs="og-image.yml">Runs</a></div>
+            </article>
           </div>
         </div>
       </section>

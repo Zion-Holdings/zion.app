@@ -122,3 +122,39 @@ if (form && submitBtn && successEl) {
     }
   });
 }
+
+function deriveGithubRepo() {
+  const meta = document.querySelector('meta[name="github-repo"]');
+  if (meta && meta.content.includes('/')) return meta.content;
+  const { hostname, pathname } = window.location;
+  if (hostname.endsWith('github.io')) {
+    const owner = hostname.split('.')[0];
+    const parts = pathname.split('/').filter(Boolean);
+    const repo = parts[0] || `${owner}.github.io`;
+    return `${owner}/${repo}`;
+  }
+  return '';
+}
+
+function hydrateAutomationLinks() {
+  const repo = deriveGithubRepo();
+  if (!repo) return;
+  document.querySelectorAll('[data-workflow]').forEach((a) => {
+    const wf = a.getAttribute('data-workflow');
+    a.href = `https://github.com/${repo}/actions/workflows/${wf}`;
+    a.target = '_blank';
+    a.rel = 'noopener';
+  });
+  document.querySelectorAll('[data-runs]').forEach((a) => {
+    const wf = a.getAttribute('data-runs');
+    a.href = `https://github.com/${repo}/actions/workflows/${wf}`;
+    a.target = '_blank';
+    a.rel = 'noopener';
+  });
+  document.querySelectorAll('img[data-badge]').forEach((img) => {
+    const wf = img.getAttribute('data-badge');
+    img.src = `https://github.com/${repo}/actions/workflows/${wf}/badge.svg`;
+  });
+}
+
+document.addEventListener('DOMContentLoaded', hydrateAutomationLinks);
