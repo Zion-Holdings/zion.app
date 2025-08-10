@@ -21,7 +21,6 @@ const Index: NextPage = () => {
             links={[
               { href: '/talent/onboarding', label: 'Submit Your Profile' },
               { href: '/talent', label: 'Browse Talent' },
-              { href: '/talent/onboarding', label: 'Get Started' },
             ]}
           />
 
@@ -29,6 +28,12 @@ const Index: NextPage = () => {
             title="Search Index Builder"
             description="Builds a client-side search index from site content for fast discovery."
             links={[{ href: '/search/index.json', label: 'View Search Index' }]}
+          />
+
+          <AutomationCard
+            title="Semantic Embeddings"
+            description="Generates vector embeddings for semantic search and recommendations."
+            links={[{ href: '/search/meta.json', label: 'Metadata' }, { href: '/search/embeddings.json', label: 'Embeddings' }]}
           />
 
           <AutomationCard
@@ -55,6 +60,18 @@ const Index: NextPage = () => {
             title="Knowledge Graph Builder"
             description="Connects tags, pages, and talent to reveal topical relationships."
             links={[{ href: '/graph/knowledge-graph.json', label: 'View Knowledge Graph' }]}
+          />
+
+          <AutomationCard
+            title="RSS Feed Generator"
+            description="Publishes an RSS and JSON feed from the blog."
+            links={[{ href: '/feed.xml', label: 'RSS' }, { href: '/feed.json', label: 'JSON Feed' }]}
+          />
+
+          <AutomationCard
+            title="Reports Dashboard"
+            description="Consolidates latest automation outputs into a single JSON snapshot."
+            links={[{ href: '/reports/dashboard.json', label: 'View Dashboard' }]}
           />
         </section>
       </main>
