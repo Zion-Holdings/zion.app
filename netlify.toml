@@ -264,3 +264,23 @@
   path = "/.netlify/functions/rss_health"
   schedule = "*/30 * * * *" # every 30 minutes
 
+[[scheduled]]
+  path = "/.netlify/functions/deps_vuln_audit"
+  schedule = "0 5 * * *" # daily at 05:00 UTC
+
+[[scheduled]]
+  path = "/.netlify/functions/external_link_audit"
+  schedule = "30 2 * * 1" # weekly Monday 02:30 UTC
+
+[[scheduled]]
+  path = "/.netlify/functions/og_image_audit"
+  schedule = "0 4 * * *" # daily at 04:00 UTC
+
+[[scheduled]]
+  path = "/.netlify/functions/uptime_synthetic"
+  schedule = "*/10 * * * *" # every 10 minutes
+
+[[scheduled]]
+  path = "/.netlify/functions/content_freshness"
+  schedule = "15 1 * * *" # daily at 01:15 UTC
+

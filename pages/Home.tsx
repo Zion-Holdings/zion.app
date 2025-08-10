@@ -47,6 +47,32 @@ export default function Home() {
           </li>
         </ul>
       </section>
+
+      <section className="mt-16">
+        <h3 className="text-xl font-semibold mb-3">More Autonomous Audits</h3>
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 list-disc pl-5">
+          <li>
+            <strong>Dependencies Vulnerability</strong>
+            {' '}<Link className="text-blue-600 underline" href="https://github.com/Zion-Holdings/zion.app/tree/main/data/reports/security/dependencies" target="_blank">View reports</Link>
+          </li>
+          <li>
+            <strong>External Links</strong>
+            {' '}<Link className="text-blue-600 underline" href="https://github.com/Zion-Holdings/zion.app/tree/main/data/reports/link-audit" target="_blank">View reports</Link>
+          </li>
+          <li>
+            <strong>OG Image</strong>
+            {' '}<Link className="text-blue-600 underline" href="https://github.com/Zion-Holdings/zion.app/tree/main/data/reports/og" target="_blank">View reports</Link>
+          </li>
+          <li>
+            <strong>Uptime Synthetic Checks</strong>
+            {' '}<Link className="text-blue-600 underline" href="https://github.com/Zion-Holdings/zion.app/tree/main/data/reports/uptime" target="_blank">View reports</Link>
+          </li>
+          <li>
+            <strong>Content Freshness</strong>
+            {' '}<Link className="text-blue-600 underline" href="https://github.com/Zion-Holdings/zion.app/tree/main/data/reports/content" target="_blank">View reports</Link>
+          </li>
+        </ul>
+      </section>
     </div>
   );
 }
