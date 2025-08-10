@@ -47,6 +47,13 @@ export default function HomePage() {
               <Link href="/reports/route-map.json"><a className="underline underline-offset-2">Route Map</a></Link>
             </div>
           </div>
+          <div className="rounded-lg border p-4">
+            <div className="font-medium">OG Social Images</div>
+            <p className="opacity-80 mt-1">Generates Open Graph images for top routes.</p>
+            <div className="mt-3 flex flex-wrap gap-3">
+              <Link href="/og/home.svg"><a className="underline underline-offset-2">Home OG</a></Link>
+            </div>
+          </div>
         </div>
         <p className="text-xs opacity-70 mt-3">All tasks run via cloud workflows and auto-commit changes for maximum freshness.</p>
       </section>
