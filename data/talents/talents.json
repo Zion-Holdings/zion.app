@@ -1,1 +1,15 @@
-[]
+[
+  {
+    "id": "0d7bcee8-6fc3-4a26-acf6-fbba2d2d563a",
+    "name": "Liam Patel",
+    "email": "liam.1754838245096@example.com",
+    "skills": [
+      "LangChain",
+      "Python"
+    ],
+    "programTrack": "AI Track",
+    "certificationStatus": "pending",
+    "partnerId": "autonomous-intake",
+    "createdAt": "2025-08-10T15:04:05.096Z"
+  }
+]
