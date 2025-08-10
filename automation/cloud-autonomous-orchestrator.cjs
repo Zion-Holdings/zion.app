@@ -13,6 +13,9 @@ function main() {
   // Build navigation data
   run('node', ['automation/navigation-builder.cjs']);
 
+  // Generate schema.org JSON-LD
+  run('node', ['automation/schema-markup-generator.cjs']);
+
   // Enhance SEO metadata
   run('node', ['automation/seo-metadata-orchestrator.cjs']);
 

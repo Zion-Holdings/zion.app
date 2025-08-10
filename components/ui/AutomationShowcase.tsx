@@ -17,6 +17,11 @@ const workflows = [
     desc: 'Scans for broken links across the repo and content nightly, to maintain link integrity.',
   },
   {
+    name: 'Schema Markup Bot',
+    yml: 'autonomous-cloud-bot.yml',
+    desc: 'Generates schema.org JSON-LD (Organization, WebSite, ItemList) and injects via _document.tsx.',
+  },
+  {
     name: 'UI Evolution (Weekly)',
     yml: 'ui-evolution-weekly-beautify.yml',
     desc: 'Continuous UI improvements and beautification pipeline.',
