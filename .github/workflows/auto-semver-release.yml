@@ -1,0 +1,67 @@
+name: Auto Semver Release
+
+on:
+  schedule:
+    - cron: '23 */12 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  id-token: write
+
+concurrency:
+  group: auto-semver-release
+  cancel-in-progress: true
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install deps
+        run: npm ci --no-audit --no-fund
+      - name: Generate version and changelog
+        id: sv
+        run: |
+          npx -y conventional-recommended-bump -p conventionalcommits > .bump
+          BUMP=$(cat .bump | tr -d '\n' | tr -d '\r')
+          if [ -z "$BUMP" ]; then BUMP=patch; fi
+          echo "Recommended bump: $BUMP"
+          CURRENT=$(node -p "require('./package.json').version")
+          echo "Current version: $CURRENT"
+          NEW=$(npx -y semver $CURRENT -i $BUMP)
+          echo "new_version=$NEW" >> $GITHUB_OUTPUT
+          npx -y conventional-changelog -p conventionalcommits -r 2 > CHANGELOG.tmp.md
+      - name: Update package.json version
+        run: |
+          NEW=${{ steps.sv.outputs.new_version }}
+          node -e "const fs=require('fs');const p=require('./package.json');p.version='${NEW}';fs.writeFileSync('package.json',JSON.stringify(p,null,2)+'\n')"
+      - name: Commit version bump
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add package.json
+            git commit -m "chore(release): v${{ steps.sv.outputs.new_version }} [skip ci]"
+          fi
+      - name: Tag and push
+        run: |
+          NEW=${{ steps.sv.outputs.new_version }}
+          git tag v$NEW
+          git push origin HEAD:main --tags
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.sv.outputs.new_version }}
+          name: v${{ steps.sv.outputs.new_version }}
+          body_path: CHANGELOG.tmp.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
