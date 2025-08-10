@@ -1,0 +1,12 @@
+{
+  "nation_id": "zion-africa",
+  "base": "local",
+  "output_length": 512,
+  "tone": "professional",
+  "fine_tune_scope": "full_agent",
+  "language_preferences": [
+    "en",
+    "fr"
+  ],
+  "operator_prompt": "Train a GPT model to assist talent in Zion Africa using localized job posts, resumes, and English/French mixed corpus — tone should be professional but inclusive."
+}
