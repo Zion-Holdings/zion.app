@@ -7,6 +7,7 @@ function run(cmd, opts = {}) {
 }
 
 try {
+  run('node scripts/automations/unused_exports_report.cjs');
   run('node scripts/automations/generate_sitemap.cjs');
   run('node scripts/automations/check_links.cjs');
   run('node scripts/automations/ai_trends.cjs');
