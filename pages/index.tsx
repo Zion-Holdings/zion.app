@@ -1,12 +1,13 @@
 import Link from 'next/link';
+import FuturisticHero from '../components/ui/FuturisticHero';
+import FuturisticCards from '../components/ui/FuturisticCards';
 
 export default function Home() {
   return (
-    <div className="py-10 space-y-8">
-      <div>
-        <h1 className="text-3xl font-bold mb-2">Welcome to Zion</h1>
-        <p className="text-gray-600 dark:text-gray-300">Explore products, services, and our learning platform.</p>
-      </div>
+    <div className="py-10 space-y-10">
+      <FuturisticHero />
+
+      <FuturisticCards />
 
       <section className="rounded-lg border border-gray-200 dark:border-gray-800 p-5 bg-gradient-to-br from-gray-50 to-white dark:from-gray-950 dark:to-black">
         <div className="flex items-center justify-between gap-4 flex-col md:flex-row">
