@@ -1,28 +1,16 @@
-name: Automation
+name: Nightly Automation
 
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '0 2 * * *'
   workflow_dispatch: {}
-  push:
-    branches: [ main ]
-    paths:
-      - 'automation.yaml'
-      - 'scripts/automation/**'
-      - '.github/workflows/automation.yml'
-      - 'benchmarks/**'
 
 permissions:
   contents: write
   pull-requests: write
 
-concurrency:
-  group: automation-${{ github.ref }}
-  cancel-in-progress: true
-
 jobs:
-  run-automation:
-    if: ${{ github.actor != 'github-actions[bot]' }}
+  nightly:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -42,3 +30,15 @@ jobs:
           MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
         run: |
           python scripts/automation/runner.py run --config automation.yaml
+      - name: Auto-commit small changes
+        run: |
+          git config user.name "automation-bot"
+          git config user.email "automation@local"
+          git add -A
+          if ! git diff --cached --quiet; then
+            CHANGED=$(git diff --cached --name-only | wc -l)
+            if [ "$CHANGED" -lt 25 ]; then
+              git commit -m "ci(nightly): small automation changes"
+              git push
+            fi
+          fi
