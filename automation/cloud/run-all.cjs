@@ -18,6 +18,10 @@ function run(scriptPath, args = []) {
 }
 
 run('automation/cloud/seo-auto-enhancer.cjs');
+run('automation/cloud/ai-content-refresh.cjs');
+run('automation/cloud/jsonld-generator.cjs');
+run('automation/cloud/og-banner-builder.cjs');
+run('automation/cloud/i18n-meta-generator.cjs');
 run('automation/cloud/broken-link-fix.cjs');
 run('automation/cloud/market-rate-aggregator.cjs');
 run('automation/cloud/analytics-snapshot.cjs');
