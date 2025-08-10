@@ -45,7 +45,7 @@ export default function HomePage() {
           <p className="mt-2 text-sm text-gray-600">
             High-frequency, concurrent workflows ensure fresh content, healthy links, and continuous improvements.
           </p>
-          <div className="mt-4 flex gap-3">
+          <div className="mt-4 flex flex-wrap gap-3">
             <a
               href="https://github.com/Zion-Holdings/zion.app/actions"
               target="_blank"
@@ -54,6 +54,7 @@ export default function HomePage() {
             >
               View Workflows
             </a>
+            <Link href="/changelog"><a className="rounded-md bg-gray-900 px-3 py-1.5 text-sm font-medium text-white hover:bg-gray-800">Changelog</a></Link>
           </div>
         </div>
       </section>
