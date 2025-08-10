@@ -42,6 +42,9 @@ jobs:
           npm run auto:env-usage --if-present || true
           npm run auto:secrets-scan --if-present || true
           npm run auto:repo-size --if-present || true
+          npm run auto:eslint-report --if-present || true
+          npm run auto:type-check --if-present || true
+          npm run auto:bundle-size --if-present || true
 
       - name: Configure git user
         run: |

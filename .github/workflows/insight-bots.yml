@@ -43,6 +43,9 @@ jobs:
           npm run auto:deps-report --if-present || true
           npm run auto:link-report --if-present || true
           npm run auto:repo-size --if-present || true
+          npm run auto:eslint-report --if-present || true
+          npm run auto:type-check --if-present || true
+          npm run auto:bundle-size --if-present || true
 
       - name: Generate governance and ownership reports
         run: |
