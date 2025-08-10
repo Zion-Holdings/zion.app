@@ -1,4 +1,13 @@
+# Build output
 .next
+out
+
+# Dependencies
 node_modules
+
+# Env
 .env
+.env.local
+
+# OS
 .DS_Store
