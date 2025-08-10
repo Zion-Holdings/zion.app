@@ -17,6 +17,8 @@ const Index: NextPage = () => {
           <div className="mt-4 flex flex-wrap gap-3 text-sm">
             <Link href="/admin/zion-brain"><a className="px-3 py-2 bg-black text-white rounded">Open Admin Dashboard</a></Link>
             <Link href="/docs/zion-brain/status"><a className="px-3 py-2 border rounded">Daily Status Report</a></Link>
+            <a href="/docs/zion-brain/prompt-benchmark" className="px-3 py-2 border rounded">Prompt Benchmark</a>
+            <a href="/docs/zion-brain/governance-digest" className="px-3 py-2 border rounded">Governance Digest</a>
             <a href="https://github.com/Zion-Holdings/zion.app/actions" className="px-3 py-2 border rounded">View Automation Runs</a>
           </div>
         </section>

@@ -218,7 +218,9 @@
     "cloud:autonomy": "node scripts/zion-cloud-autonomy.cjs",
     "cloud:chains": "node scripts/zion-chain-tuner.cjs",
     "cloud:stuck": "node scripts/zion-stuck-users-scan.cjs",
-    "cloud:daily": "node scripts/zion-daily-report.cjs"
+    "cloud:daily": "node scripts/zion-daily-report.cjs",
+    "cloud:benchmark": "node scripts/zion-prompt-benchmark.cjs",
+    "cloud:governance": "node scripts/zion-governance-digest.cjs"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",

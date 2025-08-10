@@ -1,0 +1,12 @@
+{
+  "generatedAt": "2025-08-10T13:45:05.221Z",
+  "rows": [
+    {
+      "file": "router-intro.md",
+      "before": 207,
+      "after": 269,
+      "reduction": -0.2995169082125604,
+      "estLatencyGain": 0
+    }
+  ]
+}
