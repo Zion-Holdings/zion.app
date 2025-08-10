@@ -27,6 +27,7 @@ export const defaultTenant: Tenant = {
   themePreset: "light",
   navbarLinks: [
     { label: "Services", href: "/services" },
+    { label: "Autonomy", href: "/autonomy" },
     { label: "Products", href: "/products" },
     { label: "Blog", href: "/blog" },
     { label: "Talent", href: "/talent" },

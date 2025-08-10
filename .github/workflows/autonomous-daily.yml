@@ -47,6 +47,8 @@ jobs:
           npm run venture:analyze || true
           npm run feature-marketing:analyze || true
           npm run alignment:scan || true
+          node automation/auto-changelog.cjs || true
+          node automation/auto-roadmap.cjs || true
 
       - name: Auto-commit changes
         uses: stefanzweifel/git-auto-commit-action@v5

@@ -1,0 +1,28 @@
+name: Auto PR on Push
+
+on:
+  push:
+    branches:
+      - 'feat/**'
+      - 'ci/**'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  open-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          base: main
+          branch: ${{ github.ref_name }}
+          title: 'Auto PR: ${{ github.ref_name }}'
+          body: 'Automated PR created on push to branch. This keeps changes flowing to main quickly.'
+          labels: automations
