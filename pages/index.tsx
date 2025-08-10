@@ -1,13 +1,17 @@
 import Head from 'next/head';
-import Link from 'next/link';
+import Landing from '../components/Landing';
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-slate-950 text-white">
+    <>
       <Head>
         <title>Zion — Autonomous Cloud Automations</title>
         <meta name="description" content="Futuristic, cloud-native autonomous automations that innovate, optimize, and sync changes to the repo continuously." />
       </Head>
+<<<<<<< HEAD
+      <Landing />
+    </>
+=======
 
       {/* Futuristic animated background */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
@@ -185,5 +189,6 @@ export default function Home() {
 {/* AUTO-GENERATED: HOME_UPDATER_END */}
 </main>
     </div>
+>>>>>>> origin/main
   );
 }
