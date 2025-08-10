@@ -12,7 +12,7 @@ export default function HomePage() {
   return (
     <div className="relative">
       {/* Futuristic animated background */}
-      <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
         <div className="absolute -top-24 -left-24 h-[50vmax] w-[50vmax] rounded-full bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-cyan-400 opacity-30 blur-3xl animate-pulse-slow" />
         <div className="absolute -bottom-24 -right-24 h-[55vmax] w-[55vmax] rounded-full bg-gradient-to-tr from-purple-500 via-teal-400 to-amber-300 opacity-25 blur-3xl animate-pulse-slower" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.06),transparent_40%)]" />
