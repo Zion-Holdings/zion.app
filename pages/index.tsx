@@ -2,46 +2,62 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="text-2xl font-semibold">Zion AI Marketplace</h1>
-        <p className="text-sm text-gray-600">Welcome.</p>
-      </div>
+    <div className="space-y-12 futuristic-bg">
+      <section className="text-center pt-10 pb-14 relative">
+        <div className="max-w-3xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl font-extrabold futuristic-gradient-text">Zion AI Marketplace</h1>
+          <p className="mt-3 text-sm sm:text-base text-gray-600 dark:text-gray-300">Hire elite AI talent, upskill with Zion Academy, and automate growth with autonomous cloud agents.</p>
+          <div className="mt-6 flex items-center justify-center gap-3">
+            <Link href="/learn"><a className="enhanced-button enhanced-button-primary futuristic-button">Explore Courses</a></Link>
+            <Link href="/dao"><a className="enhanced-button enhanced-button-secondary futuristic-button">DAO Metrics</a></Link>
+          </div>
+        </div>
 
-      <section className="border rounded p-4">
-        <div className="font-medium mb-2">Autonomous Cloud Automations</div>
-        <ul className="list-disc pl-5 text-sm space-y-1">
-          <li>
-            Weekly DAO Metrics Refresh — updates on-chain holder distribution, top holders, and governance stats.
-            <Link href="/dao"><a className="ml-2 text-blue-600 hover:underline">View DAO Panel</a></Link>
-          </li>
-          <li>
-            Weekly Learning Insights — aggregates completions and top badges for Zion Academy.
-            <Link href="/certifications"><a className="ml-2 text-blue-600 hover:underline">See Certifications</a></Link>
-          </li>
-          <li>
-            Daily Marketplace Rankings — recalculates top learner rankings for talent discovery.
-            <Link href="/learn"><a className="ml-2 text-blue-600 hover:underline">Explore Courses</a></Link>
-          </li>
-        </ul>
-        <div className="text-xs text-gray-500 mt-2">Runs automatically in the cloud via scheduled functions. Syncs changes back to the repository.</div>
-
-<div className="mt-4 text-sm">
-  <div className="font-medium mb-1">More automations</div>
-  <ul className="list-disc pl-5 space-y-1">
-    <li>Hourly Uptime Monitoring — logs status and response time.</li>
-    <li>Weekly SEO Score — basic title/meta/h1 checks.</li>
-    <li>Weekly Link Checker — finds broken links.</li>
-    <li>Weekly Dependency Insights — checks latest versions on npm.</li>
-  </ul>
-</div>
+        <div className="absolute inset-x-0 -bottom-16 flex justify-center pointer-events-none">
+          <div className="w-[800px] h-[180px] bg-gradient-to-r from-indigo-500/30 via-emerald-400/20 to-indigo-500/30 blur-3xl rounded-full" />
+        </div>
       </section>
 
-<section className="border rounded p-4">
-  <div className="font-medium mb-2">Automation Reports</div>
-  <p className="text-sm text-gray-600">View uptime, SEO, links, deps, changelog, and performance insights.</p>
-  <a href="/reports" className="text-blue-600 hover:underline text-sm">Open Reports</a>
-</section>
+      <section className="grid md:grid-cols-3 gap-4">
+        <div className="p-5 futuristic-panel">
+          <div className="text-lg font-semibold">Zion Academy</div>
+          <div className="text-sm text-gray-300">Take courses, earn certifications, boost your match visibility.</div>
+          <div className="mt-3"><Link href="/learn"><a className="text-blue-300 hover:underline text-sm">Start learning</a></Link></div>
+        </div>
+        <div className="p-5 futuristic-panel">
+          <div className="text-lg font-semibold">Marketplace</div>
+          <div className="text-sm text-gray-300">Showcase certified skills and get matched to top opportunities.</div>
+          <div className="mt-3"><Link href="/talent"><a className="text-blue-300 hover:underline text-sm">Discover talent</a></Link></div>
+        </div>
+        <div className="p-5 futuristic-panel">
+          <div className="text-lg font-semibold">Autonomous Ops</div>
+          <div className="text-sm text-gray-300">Cloud-native agents keep metrics, SEO, and rankings updated automatically.</div>
+          <div className="mt-3"><Link href="/reports"><a className="text-blue-300 hover:underline text-sm">View reports</a></Link></div>
+        </div>
+      </section>
+
+      <section className="border rounded p-4 futuristic-panel">
+        <div className="font-medium mb-2">Autonomous Cloud Automations</div>
+        <ul className="list-disc pl-5 text-sm space-y-1 text-gray-200">
+          <li>
+            Weekly DAO Metrics Refresh — on-chain distribution, top holders, governance stats.
+            <Link href="/dao"><a className="ml-2 text-blue-300 hover:underline">View DAO Panel</a></Link>
+          </li>
+          <li>
+            Weekly Learning Insights — completions and top badges.
+            <Link href="/certifications"><a className="ml-2 text-blue-300 hover:underline">See Certifications</a></Link>
+          </li>
+          <li>
+            Daily Marketplace Rankings — top learners and certified talent.
+            <Link href="/learn"><a className="ml-2 text-blue-300 hover:underline">Explore Courses</a></Link>
+          </li>
+          <li>
+            Uptime, SEO, Links, Deps, PageSpeed — continuous visibility.
+            <Link href="/reports"><a className="ml-2 text-blue-300 hover:underline">Open Reports</a></Link>
+          </li>
+        </ul>
+        <div className="text-xs text-gray-400 mt-2">Runs automatically via scheduled functions and syncs changes back to the repo.</div>
+      </section>
     </div>
   );
 }
