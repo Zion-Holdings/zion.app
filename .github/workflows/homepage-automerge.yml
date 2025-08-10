@@ -1,0 +1,38 @@
+name: Homepage Auto PR
+
+on:
+  push:
+    branches:
+      - cursor/autonomous-cloud-page-enhancer-and-advertiser-**
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  open-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create or update PR
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore(homepage): automated refresh [skip ci]"
+          title: "Automated: Homepage refresh"
+          body: |
+            This PR was created automatically by the autonomous homepage updater.
+            It updates `data/homepage.json` and related homepage content.
+          branch: ${{ github.ref_name }}
+          base: main
+          labels: automerge
+
+      - name: Add automerge label (fallback)
+        uses: actions-ecosystem/action-add-labels@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          labels: automerge
