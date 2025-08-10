@@ -71,6 +71,15 @@ export default function Home() {
                 </div>
               ))}
             </div>
+
+            {/* Animated hero canvas */}
+            <div className="relative mx-auto mt-10 h-48 w-full max-w-4xl overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md">
+              <div className="absolute inset-0 animate-shimmer bg-[linear-gradient(110deg,rgba(255,255,255,0)_0%,rgba(255,255,255,0.08)_40%,rgba(255,255,255,0)_60%)] bg-[length:200%_100%]" />
+              <div className="absolute inset-0 opacity-20 [background:radial-gradient(1200px_600px_at_0%_0%,rgba(168,85,247,0.35),transparent),radial-gradient(1000px_600px_at_100%_0%,rgba(34,211,238,0.35),transparent),radial-gradient(800px_600px_at_50%_100%,rgba(99,102,241,0.35),transparent)]" />
+              <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,white,transparent_70%)]">
+                <div className="twinkle-field absolute inset-0" />
+              </div>
+            </div>
           </div>
         </section>
 
@@ -100,9 +109,9 @@ export default function Home() {
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Capabilities</h2>
           <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-3">
             {[
-              { title: 'Code Quality & Refactors', desc: 'Lints, fixes, and proposes refactors with type‑safety improvements.' },
-              { title: 'Performance & A11y', desc: 'Optimizes bundles, assets, and accessibility with continuous checks.' },
-              { title: 'Content & SEO', desc: 'Curates content, updates promotions, and tunes metadata for reach.' },
+              { title: 'Code Quality & A11y', desc: 'Lints, fixes, optimizes bundles and accessibility.' },
+              { title: 'Performance & DX', desc: 'Improves build times, type‑safety, and developer experience.' },
+              { title: 'Content & SEO', desc: 'Curates content, updates promotions, and tunes metadata.' },
             ].map((c) => (
               <article key={c.title} className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl">
                 <div className="absolute right-0 top-0 h-24 w-24 rounded-bl-[4rem] bg-cyan-400/10 blur-2xl" />

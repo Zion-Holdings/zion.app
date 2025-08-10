@@ -71,6 +71,10 @@ html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 @keyframes tilt { to { --angle: 360deg } }
 @keyframes shimmer { 0% { background-position: 0% 50% } 100% { background-position: 100% 50% } }
 
+.animate-shimmer {
+  animation: shimmer 6s linear infinite;
+}
+
 /* Star field */
 .twinkle-field {
   background: radial-gradient(2px 2px at 10% 20%, rgba(255,255,255,0.6), transparent),
