@@ -66,6 +66,33 @@ jobs:
           path: out
           if-no-files-found: ignore
 
+      - name: Lighthouse Mobile (Exported site)
+        run: |
+          mkdir -p data/reports/performance
+          npx --yes http-server out -p 8080 &
+          sleep 2
+          TS=$(date +%s)
+          npx --yes lighthouse http://localhost:8080 \
+            --only-categories=performance,accessibility,best-practices,seo \
+            --preset=desktop --form-factor=mobile --screenEmulation.mobile=true \
+            --throttling-method=provided \
+            --output=json --output=html \
+            --output-path=data/reports/performance/lighthouse-mobile-$TS || true
+
+      - name: Upload Lighthouse reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-mobile
+          path: data/reports/performance/lighthouse-mobile-*
+          if-no-files-found: ignore
+
+      - name: Security audit (npm audit)
+        run: |
+          mkdir -p data/reports/security
+          TS=$(date +%s)
+          npm audit --json > data/reports/security/npm-audit-$TS.json || true
+
       - name: Git health quick check
         run: npm run git:health || true
 
