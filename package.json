@@ -18,6 +18,8 @@
     "deps:maintain": "node automation/dependency-update-orchestrator.cjs",
     "deps:cron:start": "bash automation/dependency-maintenance-cron.sh",
     "sitemap": "node scripts/generate-sitemap.mjs",
+    "homepage:update": "node automation/homepage-intelligent-updater.cjs",
+    "homepage:update:ci": "node automation/homepage-intelligent-updater.cjs && git diff --quiet || (git config user.name \"github-actions\" && git config user.email \"actions@users.noreply.github.com\" && git add pages/index.tsx && git commit -m \"chore(homepage): autonomous highlight refresh\" && git push)",
     "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev",
     "build": "NODE_OPTIONS=--openssl-legacy-provider next build",
     "export": "NODE_OPTIONS=--openssl-legacy-provider next build && next export",

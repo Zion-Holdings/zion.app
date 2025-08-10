@@ -143,37 +143,38 @@ export default function Home() {
           </div>
         </section>
       
-{/* AUTO-GENERATED: HOME_UPDATER_START */}
-<section className="mx-auto max-w-7xl px-6 pb-16">
-  <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Explore more</h2>
-  <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-
-            <Link href="/services/ai-seo-auditor"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">AI SEO Auditor — automate SEO improvements</span></a></Link>
-  
-
-            <Link href="/services/customer-support-chatbot"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Customer Support Chatbot — reduce response time</span></a></Link>
-  
-
-            <Link href="/services/landing-page-generator"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Landing Page Generator — launch pages instantly</span></a></Link>
-  
-
-            <Link href="/services/price-intelligence-service"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Price Intelligence — market‑aware pricing</span></a></Link>
-  
-
-            <Link href="/automation"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Automation Status — live agents & reports</span></a></Link>
-  
-
-            <Link href="/newsroom"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Newsroom — latest autonomous updates</span></a></Link>
-  
-
-            <Link href="/site-health"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Site Health — audits & insights</span></a></Link>
-  
-
-            <Link href="/contact"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Contact — discuss your use‑case</span></a></Link>
-  
+{/* AUTO-GENERATED: HOME_UPDATER_START */
+<section className="mx-auto max-w-7xl px-6 pb-20">
+  <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Autonomous Highlights</h2>
+  <div className="mt-4 flex flex-wrap justify-center gap-2">
+    <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-white/70 backdrop-blur">36+ CI workflows</span><span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-white/70 backdrop-blur">20+ automation modules</span><span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-white/70 backdrop-blur">3+ utility scripts</span>
   </div>
+  <div className="mt-2 text-xs text-white/60">Repo knowledge graph</div>
+
+  <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-3">
+    <article className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md">
+      <h3 className="text-lg font-semibold">Features</h3>
+      <ul className="mt-2 space-y-2 text-sm text-white/80">
+        <li className="flex items-start gap-2"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-fuchsia-400"></span><span>Self‑improving agents invent and evolve automations</span></li><li className="flex items-start gap-2"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-fuchsia-400"></span><span>Direct commit to main with safe guardrails</span></li><li className="flex items-start gap-2"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-fuchsia-400"></span><span>Cloud‑native, zero manual ops</span></li><li className="flex items-start gap-2"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-fuchsia-400"></span><span>Observability with logs, reports, and artifacts</span></li>
+      </ul>
+    </article>
+    <article className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md">
+      <h3 className="text-lg font-semibold">Capabilities</h3>
+      <ul className="mt-2 space-y-2 text-sm text-white/80">
+        <li className="flex items-start gap-2"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-400"></span><span>Code quality, linting, and safe refactors</span></li><li className="flex items-start gap-2"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-400"></span><span>SEO, content curation, and sitemap automation</span></li><li className="flex items-start gap-2"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-400"></span><span>Performance tuning, image optimization, and a11y audits</span></li>
+      </ul>
+    </article>
+    <article className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md">
+      <h3 className="text-lg font-semibold">Benefits</h3>
+      <ul className="mt-2 space-y-2 text-sm text-white/80">
+        <li className="flex items-start gap-2"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400"></span><span>24/7 progress with no human intervention</span></li><li className="flex items-start gap-2"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400"></span><span>Fast feedback loop via small, incremental edits</span></li><li className="flex items-start gap-2"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400"></span><span>Continuous delivery directly to main</span></li><li className="flex items-start gap-2"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400"></span><span>Fewer regressions via layered checks</span></li>
+      </ul>
+    </article>
+  </div>
+
+  <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2"><div className="space-y-2"><div className="text-xs uppercase tracking-wide text-white/60">Active workflows</div><ul className="list-disc list-inside text-sm text-white/80"><li>accessibility-audit</li><li>auto-media-release</li><li>automation-guardian-10min</li><li>automations</li><li>autonomous-auto-discovery</li><li>autonomous-cloud-automations</li><li>autonomous-cloud-runner</li><li>autonomous-cloud</li></ul></div><div className="space-y-2"><div className="text-xs uppercase tracking-wide text-white/60">Automation modules</div><ul className="list-disc list-inside text-sm text-white/80"><li>ai-changelog-generator</li><li>automation-guardian-10min</li><li>broken-image-scanner</li><li>changelog-generator</li><li>cloud-autonomous-orchestrator</li><li>image-optimizer</li><li>newsroom-generator</li><li>og-image-generator</li></ul></div></div>
 </section>
-{/* AUTO-GENERATED: HOME_UPDATER_END */}
+/* AUTO-GENERATED: HOME_UPDATER_END */}
 </main>
     </div>
   );
