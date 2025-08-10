@@ -1,0 +1,44 @@
+name: Autonomous Content Scanner
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: autonomous-content-scanner-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  scan-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install dependencies (minimal)
+        run: npm ci --omit=dev || npm ci
+      - name: Run TODO/FIXME scanner
+        run: node automation/todo-scanner.cjs | cat
+      - name: Build pages/docs registry
+        run: node automation/docs-pages-indexer.cjs | cat
+      - name: Commit and push changes to main
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore(automation): update todo report and content registry [skip ci]"
+            git push origin HEAD:main
+          else
+            echo "No changes to commit"
+          fi

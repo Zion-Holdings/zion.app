@@ -221,7 +221,10 @@
     "git:cron:start": "bash automation/git-sync-cron.sh start",
     "git:cron:stop": "bash automation/git-sync-cron.sh stop",
     "git:cron:status": "bash automation/git-sync-cron.sh status",
-    "homepage:update": "node automation/homepage-updater.cjs"
+    "homepage:update": "node automation/homepage-updater.cjs",
+    "scan:todo": "node automation/todo-scanner.cjs",
+    "scan:registry": "node automation/docs-pages-indexer.cjs",
+    "scan:content": "npm run scan:todo && npm run scan:registry"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
