@@ -37,6 +37,11 @@ jobs:
           npm run auto:deps-report --if-present || true
           npm run auto:link-report --if-present || true
           npm run auto:module-readmes --if-present || true
+          npm run auto:git-heatmap --if-present || true
+          npm run auto:codeowners --if-present || true
+          npm run auto:env-usage --if-present || true
+          npm run auto:secrets-scan --if-present || true
+          npm run auto:repo-size --if-present || true
 
       - name: Configure git user
         run: |
