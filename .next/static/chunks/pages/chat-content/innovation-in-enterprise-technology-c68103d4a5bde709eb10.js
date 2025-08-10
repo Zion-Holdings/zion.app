@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[4665],{6397:function(){},7932:function(n,t,o){(window.__NEXT_P=window.__NEXT_P||[]).push(["/chat-content/innovation-in-enterprise-technology",function(){return o(6397)}])}},function(n){n.O(0,[2888,9774,179],(function(){return t=7932,n(n.s=t);var t}));var t=n.O();_N_E=t}]);

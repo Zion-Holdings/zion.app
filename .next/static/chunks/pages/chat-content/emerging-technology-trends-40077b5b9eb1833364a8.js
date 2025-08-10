@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[2123],{5690:function(){},8416:function(n,t,_){(window.__NEXT_P=window.__NEXT_P||[]).push(["/chat-content/emerging-technology-trends",function(){return _(5690)}])}},function(n){n.O(0,[2888,9774,179],(function(){return t=8416,n(n.s=t);var t}));var t=n.O();_N_E=t}]);

@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[9423],{9501:function(){},7588:function(n,t,c){(window.__NEXT_P=window.__NEXT_P||[]).push(["/chat-content/sustainable-technology-practices",function(){return c(9501)}])}},function(n){n.O(0,[2888,9774,179],(function(){return t=7588,n(n.s=t);var t}));var t=n.O();_N_E=t}]);

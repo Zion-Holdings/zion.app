@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[4076],{2380:function(){},4161:function(n,u,_){(window.__NEXT_P=window.__NEXT_P||[]).push(["/auth/forgot-password",function(){return _(2380)}])}},function(n){n.O(0,[2888,9774,179],(function(){return u=4161,n(n.s=u);var u}));var u=n.O();_N_E=u}]);
