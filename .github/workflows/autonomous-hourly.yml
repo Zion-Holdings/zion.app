@@ -43,6 +43,7 @@ jobs:
           npm run sitemap || true
           npm run links:scan || true
           npm run maintenance:run || true
+          node automation/autonomy-orchestrator.cjs || true
 
       - name: Auto-commit changes
         uses: stefanzweifel/git-auto-commit-action@v5

@@ -49,6 +49,10 @@ export default function Home({ tenant }: any) {
             style={{ backgroundColor: tenant.primaryColor }}
           >Explore Services</a>
           <a
+            href="/autonomy"
+            className="px-5 py-3 rounded-md text-white bg-emerald-600"
+          >Autonomous Agents</a>
+          <a
             href="/partner"
             className="px-5 py-3 rounded-md border"
             style={{ borderColor: tenant.primaryColor, color: tenant.primaryColor }}
