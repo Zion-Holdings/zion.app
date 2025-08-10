@@ -82,8 +82,15 @@ jobs:
           git config user.name "zion-autopilot"
           git config user.email "autopilot@users.noreply.github.com"
           git add -A
-          git commit -m "chore(autopilot): automated run $(date -u +'%Y-%m-%dT%H:%M:%SZ') [skip ci]" || echo "No changes to commit"
+          git commit -m "chore(autopilot): automated run $(date -u +'%Y-%m-%dT%H:%M:%SZ')" || echo "No changes to commit"
 
       - name: Push changes
         if: ${{ success() }}
         run: git push
+
+      - name: Trigger Netlify build (optional)
+        if: ${{ secrets.NETLIFY_BUILD_HOOK != '' }}
+        run: |
+          curl -s -X POST -d '{}' "$NETLIFY_BUILD_HOOK" || true
+        env:
+          NETLIFY_BUILD_HOOK: ${{ secrets.NETLIFY_BUILD_HOOK }}
