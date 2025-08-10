@@ -11,6 +11,9 @@ const WORKFLOWS = [
   { name: 'Links Bot', file: 'autonomous-cloud-bot-links.yml' },
   { name: 'Changelog Bot', file: 'autonomous-cloud-bot-changelog.yml' },
   { name: 'Images Bot', file: 'autonomous-cloud-bot-images.yml' },
+  { name: 'TODO Issues Bot', file: 'autonomous-cloud-bot-todos.yml' },
+  { name: 'Bundle Size Bot', file: 'autonomous-cloud-bot-bundle.yml' },
+  { name: 'Spellcheck', file: 'spellcheck.yml' },
 ];
 
 export default function Home() {
