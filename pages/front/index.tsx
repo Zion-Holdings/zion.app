@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 export default function FrontIndexRedirect() {
   const router = useRouter();
   useEffect(() => {
-    router.replace('/');
+    router.replace('/main/front');
   }, [router]);
   return null;
 }
