@@ -1,17 +1,13 @@
 import Head from 'next/head';
-import Landing from '../components/Landing';
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <>
+    <div className="relative min-h-screen overflow-hidden bg-slate-950 text-white">
       <Head>
         <title>Zion — Autonomous Cloud Automations</title>
         <meta name="description" content="Futuristic, cloud-native autonomous automations that innovate, optimize, and sync changes to the repo continuously." />
       </Head>
-<<<<<<< HEAD
-      <Landing />
-    </>
-=======
 
       {/* Futuristic animated background */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
@@ -76,12 +72,13 @@ export default function Home() {
               ))}
             </div>
 
-            {/* Animated hero canvas */}
-            <div className="relative mx-auto mt-10 h-48 w-full max-w-4xl overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md">
-              <div className="absolute inset-0 animate-shimmer bg-[linear-gradient(110deg,rgba(255,255,255,0)_0%,rgba(255,255,255,0.08)_40%,rgba(255,255,255,0)_60%)] bg-[length:200%_100%]" />
-              <div className="absolute inset-0 opacity-20 [background:radial-gradient(1200px_600px_at_0%_0%,rgba(168,85,247,0.35),transparent),radial-gradient(1000px_600px_at_100%_0%,rgba(34,211,238,0.35),transparent),radial-gradient(800px_600px_at_50%_100%,rgba(99,102,241,0.35),transparent)]" />
-              <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,white,transparent_70%)]">
-                <div className="twinkle-field absolute inset-0" />
+            {/* Trusted by */}
+            <div className="mx-auto mt-10 max-w-5xl">
+              <div className="text-xs uppercase tracking-widest text-white/50">Trusted by forward‑looking teams</div>
+              <div className="mt-3 grid grid-cols-2 gap-3 opacity-80 sm:grid-cols-4">
+                {['Nebula Labs', 'Aurora Cloud', 'Quanta AI', 'NovaOps'].map((brand) => (
+                  <div key={brand} className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-center text-white/70 backdrop-blur-md">{brand}</div>
+                ))}
               </div>
             </div>
           </div>
@@ -108,14 +105,32 @@ export default function Home() {
           </div>
         </section>
 
+        {/* How it works */}
+        <section className="mx-auto max-w-7xl px-6 pb-14">
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">How it works</h2>
+          <div className="mx-auto mt-6 max-w-4xl grid grid-cols-1 gap-4 md:grid-cols-4">
+            {[
+              ['Discover', 'Scan code, issues, UX, and ops signals'],
+              ['Plan', 'Draft safe, high‑impact improvements'],
+              ['Apply', 'Open edits with conservative diffs'],
+              ['Validate', 'Audit builds, links, a11y, and performance'],
+            ].map(([title, desc]) => (
+              <div key={title} className="rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-5 text-left backdrop-blur-xl">
+                <div className="text-sm font-semibold text-white">{title}</div>
+                <div className="mt-1 text-xs text-white/70">{desc}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Capabilities */}
         <section className="mx-auto max-w-7xl px-6 pb-14">
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Capabilities</h2>
           <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-3">
             {[
-              { title: 'Code Quality & A11y', desc: 'Lints, fixes, optimizes bundles and accessibility.' },
-              { title: 'Performance & DX', desc: 'Improves build times, type‑safety, and developer experience.' },
-              { title: 'Content & SEO', desc: 'Curates content, updates promotions, and tunes metadata.' },
+              { title: 'Code Quality & Refactors', desc: 'Lints, fixes, and proposes refactors with type‑safety improvements.' },
+              { title: 'Performance & A11y', desc: 'Optimizes bundles, assets, and accessibility with continuous checks.' },
+              { title: 'Content & SEO', desc: 'Curates content, updates promotions, and tunes metadata for reach.' },
             ].map((c) => (
               <article key={c.title} className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl">
                 <div className="absolute right-0 top-0 h-24 w-24 rounded-bl-[4rem] bg-cyan-400/10 blur-2xl" />
@@ -189,6 +204,5 @@ export default function Home() {
 {/* AUTO-GENERATED: HOME_UPDATER_END */}
 </main>
     </div>
->>>>>>> origin/main
   );
 }
