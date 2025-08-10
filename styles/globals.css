@@ -3,8 +3,16 @@
 @tailwind utilities;
 
 :root {
+  color-scheme: dark;
   --angle: 0deg;
 }
+
+html, body, #__next {
+  height: 100%;
+}
+
+/* Smooth fonts and nicer rendering */
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 /* Futuristic utilities */
 .glow-card {
@@ -54,7 +62,7 @@
                     radial-gradient(800px 600px at 50% 100%, rgba(99,102,241,0.12), transparent);
 }
 
-/* Keyframes mirror Tailwind config for SSR consistency */
+/* Keyframes */
 @keyframes float { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-10px) } }
 @keyframes float-slow { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-6px) } }
 @keyframes float-fast { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-14px) } }
