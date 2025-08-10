@@ -8,11 +8,13 @@ from rich import print
 # Local imports
 from app.services.storage import load_feedback
 from scripts.automation.fetch_sources import fetch_all_sources
+from scripts.automation.rss_ingest import ingest_feeds
 from scripts.automation.mine_intents import mine_and_write_intents
 from scripts.automation.evaluate import run_benchmarks
 from scripts.automation.prompt_tuner import propose_prompt_edits
 from scripts.automation.generate_synthetic_qa import generate_synthetic_for_nation
 from scripts.automation.create_issues import issues_from_intents, issues_from_eval
+from scripts.automation.dashboard import generate_dashboard
 from scripts.automation.gh_pr import ensure_git_identity, commit_all_changes, open_pr
 
 app = typer.Typer()
@@ -40,6 +42,7 @@ def run(config: str = typer.Option("automation.yaml", help="Path to automation c
     cfg = load_config(config)
     nation_id: str = cfg.get("nation_id", "zion-africa")
     sources: list[dict] = cfg.get("sources", [])
+    rss: list[dict] = cfg.get("rss", [])
     benchmarks_dir = Path(cfg.get("benchmarks_dir", "benchmarks"))
     auto_pr: bool = bool(cfg.get("auto_pr", True))
 
@@ -49,6 +52,9 @@ def run(config: str = typer.Option("automation.yaml", help="Path to automation c
     if sources:
         print("[cyan]Fetching sources...[/cyan]")
         asyncio.run(fetch_all_sources(sources))
+    if rss:
+        print("[cyan]Ingesting RSS feeds...[/cyan]")
+        ingest_feeds(rss)
 
     # 2) Mine intents from feedback
     print("[cyan]Mining intents...[/cyan]")
@@ -92,9 +98,13 @@ def run(config: str = typer.Option("automation.yaml", help="Path to automation c
         issues_from_intents(intents_path)
         issues_from_eval(results_path)
 
-    # 5) Commit and PR if changes
+    # 5) Generate dashboard
+    print("[cyan]Generating analytics dashboard...[/cyan]")
+    generate_dashboard(Path("analytics"), Path("analytics/dashboard"), nation_id)
+
+    # 6) Commit and PR if changes
     ensure_git_identity()
-    changed = commit_all_changes("ci: automation updates (intents, evals, prompt proposals)")
+    changed = commit_all_changes("ci: automation updates (intents, evals, prompt proposals, dashboard)")
     if changed and auto_pr:
         pr_url = open_pr(title="Automation: analytics and prompt proposals", body="Automated updates from scheduled run.")
         print(f"[green]Opened PR:[/green] {pr_url}")

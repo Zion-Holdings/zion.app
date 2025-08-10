@@ -2,5 +2,8 @@ nation_id: zion-africa
 sources:
   # - name: sample_jobs
   #   url: https://example.com/jobs/feed
+rss:
+  # - name: zion_blog
+  #   url: https://example.com/feed.xml
 benchmarks_dir: benchmarks
 auto_pr: true

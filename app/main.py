@@ -72,6 +72,7 @@ async def index():
         <li><a href=\"{actions_base}/automation.yml\" target=\"_blank\">Automation: 15-min cadence</a></li>
         <li><a href=\"{actions_base}/nightly.yml\" target=\"_blank\">Nightly full run</a></li>
         <li><a href=\"/analytics\">Browse analytics (evals, drift)</a></li>
+        <li><a href=\"/analytics/dashboard/index.html\">Open analytics dashboard</a></li>
         <li><a href=\"/synthetic\">Browse synthetic Q&A</a></li>
       </ul>
     </div>
