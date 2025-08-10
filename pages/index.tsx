@@ -14,7 +14,7 @@ export default function HomePage() {
   const [content, setContent] = useState<HomeContent | null>(null);
 
   useEffect(() => {
-    fetch('/autonomy/HOMEPAGE_CONTENT.json')
+    fetch('/api/homepage/content')
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => setContent(d))
       .catch(() => setContent(null));

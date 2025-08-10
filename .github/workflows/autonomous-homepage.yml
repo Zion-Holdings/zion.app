@@ -25,3 +25,11 @@ jobs:
           git config user.email "autonomy-bot@users.noreply.github.com"
           git add -A
           if git diff --cached --quiet; then echo "No changes"; else git commit -m "chore(autonomy): homepage content" && git push; fi
+      - name: Trigger Deploy Hook (optional)
+        if: ${{ env.DEPLOY_HOOK_URL != '' }}
+        env:
+          DEPLOY_HOOK_URL: ${{ secrets.DEPLOY_HOOK_URL }}
+        run: |
+          if [ -n "$DEPLOY_HOOK_URL" ]; then
+            curl -fsS -X POST "$DEPLOY_HOOK_URL" || true
+          fi
