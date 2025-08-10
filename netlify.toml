@@ -70,4 +70,16 @@
 
 [[scheduled.functions]]
   function = "commit_changelog"
-  cron = "0 */6 * * *" 
+  cron = "0 */6 * * *"
+
+[[scheduled.functions]]
+  function = "deep_link_health_from_index"
+  cron = "*/30 * * * *"
+
+[[scheduled.functions]]
+  function = "sitemap_submitter"
+  cron = "0 */6 * * *"
+
+[[scheduled.functions]]
+  function = "osv_dependency_audit"
+  cron = "0 5 * * *" 

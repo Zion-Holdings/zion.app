@@ -78,6 +78,21 @@ const Innovations: NextPage = () => {
       name: 'Commit Changelog',
       id: 'commit_changelog',
       desc: 'Summarizes recent commits into a daily changelog markdown file.'
+    },
+    {
+      name: 'Deep Link Health (from Site Index)',
+      id: 'deep_link_health_from_index',
+      desc: 'Checks all discovered links from the site index and commits a deep health report; optionally opens an issue on high failure ratio.'
+    },
+    {
+      name: 'Sitemap Submitter',
+      id: 'sitemap_submitter',
+      desc: 'Submits the sitemap to Google and Bing, committing a ping log to the repository.'
+    },
+    {
+      name: 'OSV Dependency Audit',
+      id: 'osv_dependency_audit',
+      desc: 'Audits npm dependencies via OSV API and commits a security report.'
     }
   ];
 

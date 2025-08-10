@@ -284,6 +284,33 @@ const Home: NextPage = () => {
                 <a href="/.netlify/functions/commit_changelog" className="px-3 py-2 bg-gray-900 text-white rounded">Run</a>
               </div>
             </EnhancedCard>
+            <EnhancedCard>
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="font-semibold">Deep Link Health</div>
+                  <div className="text-gray-500">Checks links from site index</div>
+                </div>
+                <a href="/.netlify/functions/deep_link_health_from_index" className="px-3 py-2 bg-gray-900 text-white rounded">Run</a>
+              </div>
+            </EnhancedCard>
+            <EnhancedCard>
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="font-semibold">Sitemap Submitter</div>
+                  <div className="text-gray-500">Pings Google & Bing</div>
+                </div>
+                <a href="/.netlify/functions/sitemap_submitter" className="px-3 py-2 bg-gray-900 text-white rounded">Run</a>
+              </div>
+            </EnhancedCard>
+            <EnhancedCard>
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="font-semibold">OSV Dependency Audit</div>
+                  <div className="text-gray-500">Security scan of npm deps</div>
+                </div>
+                <a href="/.netlify/functions/osv_dependency_audit" className="px-3 py-2 bg-gray-900 text-white rounded">Run</a>
+              </div>
+            </EnhancedCard>
           </div>
         </section>
 
