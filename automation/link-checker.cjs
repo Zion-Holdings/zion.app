@@ -10,6 +10,8 @@ const ROOT = process.cwd();
 const REPORT_DIR = path.join(ROOT, 'data', 'reports', 'links');
 const REPORT_FILE = path.join(REPORT_DIR, `link-check-${Date.now()}.json`);
 const REPORT_LATEST = path.join(REPORT_DIR, 'latest.json');
+const PUBLIC_REPORT_DIR = path.join(ROOT, 'public', 'reports', 'links');
+const PUBLIC_LATEST = path.join(PUBLIC_REPORT_DIR, 'latest.json');
 
 const PAGES_DIR = path.join(ROOT, 'pages');
 const PUBLIC_DIR = path.join(ROOT, 'public');
@@ -126,8 +128,11 @@ async function main() {
   };
 
   await fse.ensureDir(REPORT_DIR);
+  await fse.ensureDir(PUBLIC_REPORT_DIR);
   await fse.writeJSON(REPORT_FILE, { summary, results }, { spaces: 2 });
   await fse.writeJSON(REPORT_LATEST, { summary, results }, { spaces: 2 });
+  await fse.writeJSON(path.join(PUBLIC_REPORT_DIR, `report-${Date.now()}.json`), { summary, results }, { spaces: 2 });
+  await fse.writeJSON(PUBLIC_LATEST, { summary, results }, { spaces: 2 });
   console.log(`Link check complete. Broken: ${summary.totals.broken}/${summary.totals.checked}`);
 }
 

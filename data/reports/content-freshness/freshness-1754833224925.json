@@ -1,0 +1,553 @@
+{
+  "summary": {
+    "timestamp": "2025-08-10T13:40:24.923Z",
+    "thresholdDays": 60,
+    "totals": {
+      "scanned": 90,
+      "stale": 0
+    },
+    "topStale": []
+  },
+  "items": [
+    {
+      "route": "/404",
+      "file": "/workspace/pages/404.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/_app",
+      "file": "/workspace/pages/_app.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/_document",
+      "file": "/workspace/pages/_document.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/about",
+      "file": "/workspace/pages/about.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/blockchain-solutions",
+      "file": "/workspace/pages/blockchain-solutions.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/contact",
+      "file": "/workspace/pages/contact.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/enhanced-home",
+      "file": "/workspace/pages/enhanced-home.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/iot-platforms",
+      "file": "/workspace/pages/iot-platforms.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/talent/[slug]",
+      "file": "/workspace/pages/talent/[slug].tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/talent",
+      "file": "/workspace/pages/talent/index.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/talent/onboarding",
+      "file": "/workspace/pages/talent/onboarding.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/services/ai-model-development-chat",
+      "file": "/workspace/pages/services/ai-model-development-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/services/ai-seo-auditor",
+      "file": "/workspace/pages/services/ai-seo-auditor.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/services/api-development-chat",
+      "file": "/workspace/pages/services/api-development-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/services/business-intelligence-chat",
+      "file": "/workspace/pages/services/business-intelligence-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/services/cloud-migration-services-chat",
+      "file": "/workspace/pages/services/cloud-migration-services-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/services/customer-support-chatbot",
+      "file": "/workspace/pages/services/customer-support-chatbot.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/services/data-pipeline-engineering-chat",
+      "file": "/workspace/pages/services/data-pipeline-engineering-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/services/database-design-chat",
+      "file": "/workspace/pages/services/database-design-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/services",
+      "file": "/workspace/pages/services/index.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/services/instagram-content-scheduler",
+      "file": "/workspace/pages/services/instagram-content-scheduler.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/services/landing-page-generator",
+      "file": "/workspace/pages/services/landing-page-generator.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/services/mobile-app-development-chat",
+      "file": "/workspace/pages/services/mobile-app-development-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/services/network-security-chat",
+      "file": "/workspace/pages/services/network-security-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/services/performance-optimization-chat",
+      "file": "/workspace/pages/services/performance-optimization-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/services/price-intelligence-service",
+      "file": "/workspace/pages/services/price-intelligence-service.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/services/quality-assurance-testing-chat",
+      "file": "/workspace/pages/services/quality-assurance-testing-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/services/security-auditing-chat",
+      "file": "/workspace/pages/services/security-auditing-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/services/system-administration-chat",
+      "file": "/workspace/pages/services/system-administration-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/services/technical-documentation-chat",
+      "file": "/workspace/pages/services/technical-documentation-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/services/ui-ux-design-chat",
+      "file": "/workspace/pages/services/ui-ux-design-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/services/web-application-development-chat",
+      "file": "/workspace/pages/services/web-application-development-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/products",
+      "file": "/workspace/pages/products/index.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/chat-content/ai-powered-business-solutions-discussion",
+      "file": "/workspace/pages/chat-content/ai-powered-business-solutions-discussion.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/chat-content/cloud-computing-strategies",
+      "file": "/workspace/pages/chat-content/cloud-computing-strategies.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/chat-content/cybersecurity-best-practices",
+      "file": "/workspace/pages/chat-content/cybersecurity-best-practices.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/chat-content/data-analytics-implementation",
+      "file": "/workspace/pages/chat-content/data-analytics-implementation.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/chat-content/digital-transformation-insights",
+      "file": "/workspace/pages/chat-content/digital-transformation-insights.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/chat-content/emerging-technology-trends",
+      "file": "/workspace/pages/chat-content/emerging-technology-trends.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/chat-content/future-of-work-and-automation",
+      "file": "/workspace/pages/chat-content/future-of-work-and-automation.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/chat-content/innovation-in-enterprise-technology",
+      "file": "/workspace/pages/chat-content/innovation-in-enterprise-technology.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/chat-content/sustainable-technology-practices",
+      "file": "/workspace/pages/chat-content/sustainable-technology-practices.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/chat-content/technology-implementation-strategies",
+      "file": "/workspace/pages/chat-content/technology-implementation-strategies.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/category/ai-consulting-chat",
+      "file": "/workspace/pages/category/ai-consulting-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/category/business-intelligence-chat",
+      "file": "/workspace/pages/category/business-intelligence-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/category/cloud-architecture-chat",
+      "file": "/workspace/pages/category/cloud-architecture-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/category/cybersecurity-chat",
+      "file": "/workspace/pages/category/cybersecurity-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/category/data-science-chat",
+      "file": "/workspace/pages/category/data-science-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/category/database-administration-chat",
+      "file": "/workspace/pages/category/database-administration-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/category/devops-automation-chat",
+      "file": "/workspace/pages/category/devops-automation-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/category/mobile-development-chat",
+      "file": "/workspace/pages/category/mobile-development-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/category/network-engineering-chat",
+      "file": "/workspace/pages/category/network-engineering-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/category/product-management-chat",
+      "file": "/workspace/pages/category/product-management-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/category/quality-assurance-chat",
+      "file": "/workspace/pages/category/quality-assurance-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/category/system-administration-chat",
+      "file": "/workspace/pages/category/system-administration-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/category/technical-writing-chat",
+      "file": "/workspace/pages/category/technical-writing-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/category/ui-ux-design-chat",
+      "file": "/workspace/pages/category/ui-ux-design-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/category/web-development-chat",
+      "file": "/workspace/pages/category/web-development-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/blog/5g-technology-and-its-impact-on-iot-chat",
+      "file": "/workspace/pages/blog/5g-technology-and-its-impact-on-iot-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat",
+      "file": "/workspace/pages/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/blog/api-first-development-building-scalable-systems-chat",
+      "file": "/workspace/pages/blog/api-first-development-building-scalable-systems-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/blog/augmented-reality-in-enterprise-applications-chat",
+      "file": "/workspace/pages/blog/augmented-reality-in-enterprise-applications-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/blog/blockchain-technology-in-modern-business-solutions-chat",
+      "file": "/workspace/pages/blog/blockchain-technology-in-modern-business-solutions-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/blog/cloud-native-architecture-best-practices-chat",
+      "file": "/workspace/pages/blog/cloud-native-architecture-best-practices-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/blog/cybersecurity-trends-for-2024-and-beyond-chat",
+      "file": "/workspace/pages/blog/cybersecurity-trends-for-2024-and-beyond-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/blog/data-analytics-in-digital-transformation-chat",
+      "file": "/workspace/pages/blog/data-analytics-in-digital-transformation-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/blog/devops-automation-strategies-for-modern-teams-chat",
+      "file": "/workspace/pages/blog/devops-automation-strategies-for-modern-teams-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/blog/digital-twins-revolutionizing-industry-4-0-chat",
+      "file": "/workspace/pages/blog/digital-twins-revolutionizing-industry-4-0-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/blog",
+      "file": "/workspace/pages/blog/index.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/blog/machine-learning-applications-in-enterprise-software-chat",
+      "file": "/workspace/pages/blog/machine-learning-applications-in-enterprise-software-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/blog/microservices-architecture-benefits-and-challenges-chat",
+      "file": "/workspace/pages/blog/microservices-architecture-benefits-and-challenges-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/blog/quantum-computing-implications-for-business-chat",
+      "file": "/workspace/pages/blog/quantum-computing-implications-for-business-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/blog/sustainable-technology-green-computing-solutions-chat",
+      "file": "/workspace/pages/blog/sustainable-technology-green-computing-solutions-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/blog/the-rise-of-edge-computing-in-iot-applications-chat",
+      "file": "/workspace/pages/blog/the-rise-of-edge-computing-in-iot-applications-chat.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/automation",
+      "file": "/workspace/pages/automation/index.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/auto/auto-update-2025-08-08t16-07-55-171z",
+      "file": "/workspace/pages/auto/auto-update-2025-08-08t16-07-55-171z.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/auto/auto-update-2025-08-08t16-10-20-249z",
+      "file": "/workspace/pages/auto/auto-update-2025-08-08t16-10-20-249z.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/auto/auto-update-2025-08-08t16-30-00-086z",
+      "file": "/workspace/pages/auto/auto-update-2025-08-08t16-30-00-086z.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/auto/auto-update-2025-08-08t16-30-20-949z",
+      "file": "/workspace/pages/auto/auto-update-2025-08-08t16-30-20-949z.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/auto/auto-update-2025-08-08t16-38-19-257z",
+      "file": "/workspace/pages/auto/auto-update-2025-08-08t16-38-19-257z.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/auto/auto-update-2025-08-08t16-49-54-200z",
+      "file": "/workspace/pages/auto/auto-update-2025-08-08t16-49-54-200z.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/auto/auto-update-2025-08-08t17-23-07-688z",
+      "file": "/workspace/pages/auto/auto-update-2025-08-08t17-23-07-688z.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/auth/callback",
+      "file": "/workspace/pages/auth/callback.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/auth/forgot-password",
+      "file": "/workspace/pages/auth/forgot-password.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/auth",
+      "file": "/workspace/pages/auth/index.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/auth/reset-password",
+      "file": "/workspace/pages/auth/reset-password.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/auth/verify",
+      "file": "/workspace/pages/auth/verify.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/admin/automation-status",
+      "file": "/workspace/pages/admin/automation-status.tsx",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/file-preservation-policy",
+      "file": "/workspace/docs/file-preservation-policy.md",
+      "ageDays": 2,
+      "stale": false
+    },
+    {
+      "route": "/",
+      "file": "/workspace/pages/index.tsx",
+      "ageDays": 0,
+      "stale": false
+    }
+  ]
+}
