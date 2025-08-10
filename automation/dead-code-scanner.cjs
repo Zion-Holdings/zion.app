@@ -27,12 +27,22 @@ function main() {
   const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
 
   // Collect TS/JS file list
-  const rgFiles = run("rg -g '!node_modules' -g '!automation/logs' -n --files -t js -t ts");
-  const files = rgFiles
-    .split('\n')
-    .map((l) => l.trim())
-    .filter(Boolean)
-    .filter((p) => !p.endsWith('.d.ts'));
+  let files = [];
+  try {
+    const rgFiles = run("rg -g '!node_modules' -g '!automation/logs' -n --files -t js -t ts");
+    files = rgFiles
+      .split('\n')
+      .map((l) => l.trim())
+      .filter(Boolean)
+      .filter((p) => !p.endsWith('.d.ts'));
+  } catch {
+    const gitFiles = run('git ls-files "**/*.ts" "**/*.tsx" "**/*.js" "**/*.jsx"');
+    files = gitFiles
+      .split('\n')
+      .map((l) => l.trim())
+      .filter(Boolean)
+      .filter((p) => !p.endsWith('.d.ts'));
+  }
 
   // Find unused exports via ts-prune if available; otherwise basic heuristic
   let pruneJson = [];
@@ -49,13 +59,18 @@ function main() {
   } catch {
     // fallback: mark files not referenced anywhere by import statements
     const importMap = new Map();
-    const importMatches = run("rg -n " + JSON.stringify("from '")) + '\n' + run('rg -n "require(\"" | cat');
+    let importMatches = '';
+    try {
+      importMatches = run("rg -n " + JSON.stringify("from '") + '\n' + run('rg -n "require(\\\"" | cat'));
+    } catch {
+      importMatches = run("grep -RhnE \'from \\\'|require\\(\"\' -- */*.{ts,tsx,js,jsx} 2>/dev/null | cat");
+    }
     files.forEach((f) => importMap.set(f, 0));
     importMatches.split('\n').forEach((line) => {
       const parts = line.split(':');
       if (parts.length < 2) return;
       const file = parts[0];
-      importMap.set(file, (importMap.get(file) || 0) + 1);
+      if (importMap.has(file)) importMap.set(file, (importMap.get(file) || 0) + 1);
     });
     const likelyDead = files.filter((f) => (importMap.get(f) || 0) === 0 && !/pages\//.test(f));
     pruneJson = likelyDead.map((f) => ({ file: f, name: 'file', type: 'file' }));
