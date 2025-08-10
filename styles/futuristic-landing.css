@@ -1,0 +1,125 @@
+/* Futuristic animated landing styles */
+
+:root {
+  --neon-cyan: #22d3ee;
+  --neon-purple: #a78bfa;
+  --neon-pink: #f472b6;
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.12);
+}
+
+.futuristic-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.futuristic-hero .animated-gradient {
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(60% 60% at 20% 20%, rgba(34, 211, 238, 0.25), transparent 60%),
+              radial-gradient(50% 50% at 80% 20%, rgba(167, 139, 250, 0.22), transparent 60%),
+              radial-gradient(50% 60% at 50% 80%, rgba(244, 114, 182, 0.18), transparent 60%),
+              conic-gradient(from 180deg at 50% 50%, rgba(34, 211, 238, 0.2), rgba(167,139,250,0.2), rgba(244,114,182,0.2), rgba(34,211,238,0.2));
+  filter: blur(30px);
+  animation: gradientShift 20s linear infinite;
+  transform: translateZ(0);
+}
+
+@keyframes gradientShift {
+  0% { transform: translate3d(0,0,0) scale(1); }
+  50% { transform: translate3d(0,-2%,0) scale(1.02); }
+  100% { transform: translate3d(0,0,0) scale(1); }
+}
+
+.futuristic-hero .grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(closest-side, rgba(0,0,0,0.85), rgba(0,0,0,0.3) 60%, transparent 100%);
+  pointer-events: none;
+}
+
+.futuristic-hero .noise {
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.orb {
+  position: absolute;
+  width: 26rem;
+  height: 26rem;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.18;
+  will-change: transform;
+}
+.orb.cyan { background: radial-gradient(circle at 30% 30%, var(--neon-cyan), transparent 60%); }
+.orb.purple { background: radial-gradient(circle at 70% 30%, var(--neon-purple), transparent 60%); }
+.orb.pink { background: radial-gradient(circle at 50% 70%, var(--neon-pink), transparent 60%); }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  25% { transform: translateY(-10px) translateX(4px); }
+  50% { transform: translateY(-18px) translateX(-6px); }
+  75% { transform: translateY(-8px) translateX(2px); }
+}
+
+.floating { animation: float 6s ease-in-out infinite; }
+
+.neon-card {
+  position: relative;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.neon-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255,255,255,0.25);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.06),
+              0 12px 30px rgba(34,211,238,0.08),
+              0 8px 24px rgba(167,139,250,0.06);
+}
+
+.neon-glow {
+  box-shadow: 0 0 40px rgba(34,211,238,0.25), 0 0 80px rgba(167,139,250,0.18);
+}
+
+.button-neon {
+  position: relative;
+  border-radius: 12px;
+  background: linear-gradient(90deg, rgba(34,211,238,0.15), rgba(167,139,250,0.15));
+  border: 1px solid rgba(255,255,255,0.18);
+  color: white;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.button-neon:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,0.3);
+  box-shadow: 0 10px 28px rgba(34,211,238,0.15), 0 8px 24px rgba(167,139,250,0.12);
+}
+
+.badge-future {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .375rem .75rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  color: rgba(255,255,255,0.85);
+}
+
+.hr-future {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+}
