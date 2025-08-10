@@ -2,6 +2,7 @@
   "/_app": "pages/_app.js",
   "/automation": "pages/automation.html",
   "/": "pages/index.html",
+  "/main/front": "pages/main/front.html",
   "/newsroom": "pages/newsroom.html",
   "/site-health": "pages/site-health.html",
   "/_error": "pages/_error.js",
