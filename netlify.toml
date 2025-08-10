@@ -54,4 +54,20 @@
 
 [[scheduled.functions]]
   function = "sitemap_from_index"
+  cron = "0 */6 * * *"
+
+[[scheduled.functions]]
+  function = "og_meta_audit"
+  cron = "*/45 * * * *"
+
+[[scheduled.functions]]
+  function = "rss_generator"
+  cron = "0 */12 * * *"
+
+[[scheduled.functions]]
+  function = "broken_image_checker"
+  cron = "*/45 * * * *"
+
+[[scheduled.functions]]
+  function = "commit_changelog"
   cron = "0 */6 * * *" 

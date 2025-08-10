@@ -58,6 +58,26 @@ const Innovations: NextPage = () => {
       name: 'Sitemap from Site Index',
       id: 'sitemap_from_index',
       desc: 'Generates sitemap.xml from the site index and commits to the repository.'
+    },
+    {
+      name: 'OG/Twitter Meta Audit',
+      id: 'og_meta_audit',
+      desc: 'Audits OG and Twitter meta tags on key routes and commits a JSON report.'
+    },
+    {
+      name: 'RSS Generator',
+      id: 'rss_generator',
+      desc: 'Generates an RSS feed from blog pages and commits it to public/feed.xml.'
+    },
+    {
+      name: 'Broken Image Checker',
+      id: 'broken_image_checker',
+      desc: 'Scans for broken images across key routes and commits a report.'
+    },
+    {
+      name: 'Commit Changelog',
+      id: 'commit_changelog',
+      desc: 'Summarizes recent commits into a daily changelog markdown file.'
     }
   ];
 

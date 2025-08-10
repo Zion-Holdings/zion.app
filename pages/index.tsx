@@ -229,6 +229,62 @@ const Home: NextPage = () => {
           <div className="mt-4">
             <Link href="/automation/innovations"><a className="text-indigo-700 font-semibold hover:underline">See all automations →</a></Link>
           </div>
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-sm text-gray-700">
+            <EnhancedCard>
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="font-semibold">PageSpeed Audit</div>
+                  <div className="text-gray-500">Google PSI scores for key routes</div>
+                </div>
+                <a href="/.netlify/functions/pagespeed_audit" className="px-3 py-2 bg-gray-900 text-white rounded">Run</a>
+              </div>
+            </EnhancedCard>
+            <EnhancedCard>
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="font-semibold">Security Headers</div>
+                  <div className="text-gray-500">CSP/HSTS and more</div>
+                </div>
+                <a href="/.netlify/functions/security_headers_audit" className="px-3 py-2 bg-gray-900 text-white rounded">Run</a>
+              </div>
+            </EnhancedCard>
+            <EnhancedCard>
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="font-semibold">OG/Twitter Meta</div>
+                  <div className="text-gray-500">Social sharing readiness</div>
+                </div>
+                <a href="/.netlify/functions/og_meta_audit" className="px-3 py-2 bg-gray-900 text-white rounded">Run</a>
+              </div>
+            </EnhancedCard>
+            <EnhancedCard>
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="font-semibold">RSS Generator</div>
+                  <div className="text-gray-500">Publishes feed.xml</div>
+                </div>
+                <a href="/.netlify/functions/rss_generator" className="px-3 py-2 bg-gray-900 text-white rounded">Run</a>
+              </div>
+            </EnhancedCard>
+            <EnhancedCard>
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="font-semibold">Broken Images</div>
+                  <div className="text-gray-500">Detects 404/failed images</div>
+                </div>
+                <a href="/.netlify/functions/broken_image_checker" className="px-3 py-2 bg-gray-900 text-white rounded">Run</a>
+              </div>
+            </EnhancedCard>
+            <EnhancedCard>
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="font-semibold">Commit Changelog</div>
+                  <div className="text-gray-500">Daily changes summary</div>
+                </div>
+                <a href="/.netlify/functions/commit_changelog" className="px-3 py-2 bg-gray-900 text-white rounded">Run</a>
+              </div>
+            </EnhancedCard>
+          </div>
         </section>
 
         {/* Latest insights */}
