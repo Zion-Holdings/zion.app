@@ -146,19 +146,15 @@ export default function Home() {
 {/* AUTO-GENERATED: HOME_UPDATER_START */}
 <section className="mx-auto max-w-7xl px-6 pb-16">
   <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Explore more</h2>
+  <div className="mx-auto mt-6 max-w-3xl rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-white/80 backdrop-blur-md">
+    <div className="mb-2 font-semibold text-white">Latest improvements</div>
+    <ul className="list-disc pl-6">
+      <li>add adaptive intelligence orchestrator</li>
+      <li>add site maintenance orchestrator, cron manager, and health monitor</li>
+    </ul>
+    <div className="mt-2 text-[11px] text-white/60">Autonomously refreshed: 2025-08-10T21:43:11.631Z</div>
+  </div>
   <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-
-            <Link href="/services/ai-seo-auditor"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">AI SEO Auditor — automate SEO improvements</span></a></Link>
-  
-
-            <Link href="/services/customer-support-chatbot"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Customer Support Chatbot — reduce response time</span></a></Link>
-  
-
-            <Link href="/services/landing-page-generator"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Landing Page Generator — launch pages instantly</span></a></Link>
-  
-
-            <Link href="/services/price-intelligence-service"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Price Intelligence — market‑aware pricing</span></a></Link>
-  
 
             <Link href="/automation"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Automation Status — live agents & reports</span></a></Link>
   
@@ -171,6 +167,10 @@ export default function Home() {
 
             <Link href="/contact"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Contact — discuss your use‑case</span></a></Link>
   
+
+            <a href="https://github.com/Zion-Holdings/zion.app/actions" target="_blank" rel="noopener" className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">CI Activity — autonomous workflows</span></a>
+  
+
   </div>
 </section>
 {/* AUTO-GENERATED: HOME_UPDATER_END */}

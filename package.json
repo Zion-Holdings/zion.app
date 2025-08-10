@@ -25,6 +25,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "type-check": "tsc --noEmit",
     "prepare": "husky install",
+    "homepage:update": "node automation/homepage-autonomous-updater.cjs",
     "fix:all": "npm run lint -- --fix || true && node fix_typescript_syntax_errors.cjs || true && node fix_all_typescript_errors.cjs || true && node final_fix.cjs || true",
     "build:heal": "npm run build || (npm run fix:all && npm run build)",
     "ci:heal": "npm run fix:all && (npm run type-check || true) && npm run build:heal",
