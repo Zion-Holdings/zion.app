@@ -3,7 +3,7 @@ name: autopilot
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '*/5 * * * *'
 
 permissions:
   contents: write
@@ -61,10 +61,21 @@ jobs:
       - name: Run Broken Links Autopilot
         run: node automation/broken-links-autopilot.cjs
 
-      - name: Run Pagespeed Autopilot
+      - name: Run PageSpeed Autopilot
         run: node automation/pagespeed-autopilot.cjs
         env:
           SITE_URL: ${{ secrets.SITE_URL }}
+
+      - name: Run Dependency Report Autopilot
+        run: node automation/dependency-report-autopilot.cjs
+
+      - name: Run Sitemap Submit Autopilot
+        run: node automation/sitemap-submit-autopilot.cjs
+        env:
+          SITE_URL: ${{ secrets.SITE_URL }}
+
+      - name: Run External Links Autopilot
+        run: node automation/external-links-autopilot.cjs
 
       - name: Commit changes
         run: |

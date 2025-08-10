@@ -28,6 +28,9 @@ export default function Home() {
             <li>Localization: extracts UI strings into a base catalog</li>
             <li>Broken Links: finds and reports internal broken links</li>
             <li>PageSpeed: tracks performance metrics via PSI</li>
+            <li>Dependency Report: tracks outdated packages and writes upgrade hints</li>
+            <li>Sitemap Submit: pings Google/Bing when sitemap updates</li>
+            <li>External Links: checks outbound links for errors</li>
           </ul>
           <div className="mt-4">
             <Link href="/automations"><a className="underline">View automations dashboard</a></Link>

@@ -33,6 +33,9 @@ export async function getStaticProps() {
   const localizationPath = path.join(logsDir, 'localization-autopilot-status.json');
   const brokenLinksPath = path.join(logsDir, 'broken-links-status.json');
   const pagespeedPath = path.join(logsDir, 'pagespeed-status.json');
+  const dependencyReportPath = path.join(logsDir, 'dependency-report-status.json');
+  const sitemapSubmitPath = path.join(logsDir, 'sitemap-submit-status.json');
+  const externalLinksPath = path.join(logsDir, 'external-links-status.json');
   const readJson = (p: string) => { try { return JSON.parse(fs.readFileSync(p, 'utf-8')); } catch { return null; } };
   return {
     props: {
@@ -46,13 +49,14 @@ export async function getStaticProps() {
       localization: readJson(localizationPath),
       brokenLinks: readJson(brokenLinksPath),
       pagespeed: readJson(pagespeedPath),
+      dependencyReport: readJson(dependencyReportPath),
+      sitemapSubmit: readJson(sitemapSubmitPath),
+      externalLinks: readJson(externalLinksPath),
     }
   };
 }
 
-export default function Automations({ cloud, fundraising, content, security, seo, roadmap, changelog, localization, brokenLinks, pagespeed }: {
-  cloud: any; fundraising: any; content: ContentStatus | null; security: SecurityStatus | null; seo: SeoStatus | null; roadmap: RoadmapStatus | null; changelog: ChangelogStatus | null; localization: LocalizationStatus | null; brokenLinks: BrokenLinksStatus | null; pagespeed: PagespeedStatus | null;
-}) {
+export default function Automations({ cloud, fundraising, content, security, seo, roadmap, changelog, localization, brokenLinks, pagespeed, dependencyReport, sitemapSubmit, externalLinks }: any) {
   const cloudSteps: Step[] = cloud?.steps || [];
   const investorReport = fundraising?.reportFile ? `https://github.com/Zion-Holdings/zion.app/blob/main/${fundraising.reportFile}` : null;
   const roadmapLink = roadmap?.file ? `https://github.com/Zion-Holdings/zion.app/blob/main/${roadmap.file}` : null;
@@ -166,6 +170,28 @@ export default function Automations({ cloud, fundraising, content, security, seo
               Site: {pagespeed?.site || '—'} | Score: {pagespeed?.score ?? '—'} | FCP: {pagespeed?.metrics?.fcp || '—'} | LCP: {pagespeed?.metrics?.lcp || '—'} | TBT: {pagespeed?.metrics?.tbt || '—'}
             </div>
           )}
+        </section>
+
+        <section className="p-4 rounded-lg border border-gray-200 dark:border-gray-800">
+          <h2 className="font-medium mb-2">Dependency Report</h2>
+          <p className="text-xs text-gray-500 mb-3">Last run: {dependencyReport?.ranAt || '—'} | Outdated: {dependencyReport?.totalOutdated ?? 0}</p>
+          {dependencyReport?.file ? <a className="underline" href={`https://github.com/Zion-Holdings/zion.app/blob/main/${dependencyReport.file}`} target="_blank" rel="noreferrer">View report</a> : <p className="text-sm text-gray-500">No report yet.</p>}
+        </section>
+
+        <section className="p-4 rounded-lg border border-gray-200 dark:border-gray-800">
+          <h2 className="font-medium mb-2">Sitemap Submit</h2>
+          <p className="text-xs text-gray-500 mb-3">Last run: {sitemapSubmit?.ranAt || '—'}</p>
+          {sitemapSubmit?.error ? <p className="text-sm text-red-600">{sitemapSubmit.error}</p> : <p className="text-sm">Sitemap: {sitemapSubmit?.sitemapUrl || '—'} | Google: {sitemapSubmit?.google || 0} | Bing: {sitemapSubmit?.bing || 0}</p>}
+        </section>
+
+        <section className="p-4 rounded-lg border border-gray-200 dark:border-gray-800">
+          <h2 className="font-medium mb-2">External Links</h2>
+          <p className="text-xs text-gray-500 mb-3">Last run: {externalLinks?.ranAt || '—'} | Sampled: {externalLinks?.sampled ?? 0}</p>
+          {externalLinks?.results?.length ? (
+            <ul className="text-sm list-disc pl-5">
+              {externalLinks.results.slice(0, 10).map((r: any, i: number) => <li key={i}>{r.url} — {r.code}</li>)}
+            </ul>
+          ) : <p className="text-sm text-gray-500">No external links sampled.</p>}
         </section>
       </div>
     </>
