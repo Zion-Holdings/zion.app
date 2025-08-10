@@ -82,4 +82,16 @@
 
 [[scheduled.functions]]
   function = "osv_dependency_audit"
-  cron = "0 5 * * *" 
+  cron = "0 5 * * *"
+
+[[scheduled.functions]]
+  function = "external_link_audit"
+  cron = "0 */6 * * *"
+
+[[scheduled.functions]]
+  function = "automation_summary"
+  cron = "*/30 * * * *"
+
+[[scheduled.functions]]
+  function = "readme_badges_updater"
+  cron = "0 */6 * * *" 

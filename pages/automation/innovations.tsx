@@ -93,6 +93,21 @@ const Innovations: NextPage = () => {
       name: 'OSV Dependency Audit',
       id: 'osv_dependency_audit',
       desc: 'Audits npm dependencies via OSV API and commits a security report.'
+    },
+    {
+      name: 'External Link Audit',
+      id: 'external_link_audit',
+      desc: 'Audits external links discovered across key pages and commits a health report; opens an issue if failure rate is high.'
+    },
+    {
+      name: 'Automation Summary',
+      id: 'automation_summary',
+      desc: 'Aggregates the latest outputs from multiple automations into a single summary JSON.'
+    },
+    {
+      name: 'README Badges Updater',
+      id: 'readme_badges_updater',
+      desc: 'Updates README.md badges to reflect the latest automation status.'
     }
   ];
 

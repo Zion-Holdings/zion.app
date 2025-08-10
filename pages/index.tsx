@@ -311,6 +311,33 @@ const Home: NextPage = () => {
                 <a href="/.netlify/functions/osv_dependency_audit" className="px-3 py-2 bg-gray-900 text-white rounded">Run</a>
               </div>
             </EnhancedCard>
+            <EnhancedCard>
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="font-semibold">External Link Audit</div>
+                  <div className="text-gray-500">Checks off-site links</div>
+                </div>
+                <a href="/.netlify/functions/external_link_audit" className="px-3 py-2 bg-gray-900 text-white rounded">Run</a>
+              </div>
+            </EnhancedCard>
+            <EnhancedCard>
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="font-semibold">Automation Summary</div>
+                  <div className="text-gray-500">Aggregated automation status</div>
+                </div>
+                <a href="/.netlify/functions/automation_summary" className="px-3 py-2 bg-gray-900 text-white rounded">Run</a>
+              </div>
+            </EnhancedCard>
+            <EnhancedCard>
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="font-semibold">README Badges</div>
+                  <div className="text-gray-500">Updates status badges</div>
+                </div>
+                <a href="/.netlify/functions/readme_badges_updater" className="px-3 py-2 bg-gray-900 text-white rounded">Run</a>
+              </div>
+            </EnhancedCard>
           </div>
         </section>
 
