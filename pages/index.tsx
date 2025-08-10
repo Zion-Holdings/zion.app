@@ -9,6 +9,8 @@ const Home: NextPage = () => {
       <Head>
         <title>Zion App — Next Generation Platform</title>
         <meta name="description" content="Experience the future with our AI-powered marketplace, cloud architecture, and digital transformation solutions." />
+      <link rel="preload" as="fetch" href="/trends.json" crossOrigin="anonymous" />
+        <link rel="preload" as="fetch" href="/health.json" crossOrigin="anonymous" />
       </Head>
 
       {/* Ambient animated background */}
@@ -74,7 +76,24 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-      
+
+        {/* Autonomous Cloud Automations */}
+        <section className="mt-20 text-left">
+          <h2 className="text-3xl font-bold mb-4">Autonomous Cloud Automations</h2>
+          <p className="mb-6 text-white/85">These services run continuously in the cloud and update the site without human intervention:</p>
+          <ul className="space-y-3 list-disc pl-5">
+            <li>
+              <Link href="/trends.json"><a className="underline hover:no-underline">AI & Tech Trends Feed</a></Link> — curated every 30 minutes from multiple sources.
+            </li>
+            <li>
+              <Link href="/health.json"><a className="underline hover:no-underline">Live Site Health</a></Link> — uptime checks across critical pages.
+            </li>
+            <li>
+              <Link href="/sitemap.xml"><a className="underline hover:no-underline">Sitemap</a></Link> — kept fresh to improve SEO and discovery.
+            </li>
+          </ul>
+        </section>
+        
         
         
         
