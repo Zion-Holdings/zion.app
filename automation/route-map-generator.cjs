@@ -38,7 +38,7 @@ for (const f of walk(pagesDir)) {
 
 routes.sort((a,b) => a.route.localeCompare(b.route))
 
-const outPath = path.join(process.cwd(), 'data', 'reports', 'route-map.json')
+const outPath = path.join(process.cwd(), 'public', 'reports', 'route-map.json')
 fs.mkdirSync(path.dirname(outPath), { recursive: true })
 const json = JSON.stringify({ generatedAt: new Date().toISOString(), routes }, null, 2)
 let before = null
