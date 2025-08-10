@@ -71,6 +71,16 @@ export default function Home() {
                 </div>
               ))}
             </div>
+
+            {/* Trusted by */}
+            <div className="mx-auto mt-10 max-w-5xl">
+              <div className="text-xs uppercase tracking-widest text-white/50">Trusted by forward‑looking teams</div>
+              <div className="mt-3 grid grid-cols-2 gap-3 opacity-80 sm:grid-cols-4">
+                {['Nebula Labs', 'Aurora Cloud', 'Quanta AI', 'NovaOps'].map((brand) => (
+                  <div key={brand} className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-center text-white/70 backdrop-blur-md">{brand}</div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
@@ -91,6 +101,24 @@ export default function Home() {
                 <h3 className="text-lg font-semibold">{f.title}</h3>
                 <p className="mt-1 text-sm text-white/75">{f.desc}</p>
               </article>
+            ))}
+          </div>
+        </section>
+
+        {/* How it works */}
+        <section className="mx-auto max-w-7xl px-6 pb-14">
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">How it works</h2>
+          <div className="mx-auto mt-6 max-w-4xl grid grid-cols-1 gap-4 md:grid-cols-4">
+            {[
+              ['Discover', 'Scan code, issues, UX, and ops signals'],
+              ['Plan', 'Draft safe, high‑impact improvements'],
+              ['Apply', 'Open edits with conservative diffs'],
+              ['Validate', 'Audit builds, links, a11y, and performance'],
+            ].map(([title, desc]) => (
+              <div key={title} className="rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-5 text-left backdrop-blur-xl">
+                <div className="text-sm font-semibold text-white">{title}</div>
+                <div className="mt-1 text-xs text-white/70">{desc}</div>
+              </div>
             ))}
           </div>
         </section>

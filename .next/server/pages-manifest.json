@@ -1,7 +1,10 @@
 {
   "/_app": "pages/_app.js",
   "/automation": "pages/automation.html",
+  "/front": "pages/front.html",
   "/": "pages/index.html",
+  "/main/front": "pages/main/front.html",
+  "/main": "pages/main.html",
   "/newsroom": "pages/newsroom.html",
   "/site-health": "pages/site-health.html",
   "/_error": "pages/_error.js",

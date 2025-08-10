@@ -5,21 +5,21 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/5Lf_zZUGtG58N8syx5Gr6/_buildManifest.js",
-    "static/5Lf_zZUGtG58N8syx5Gr6/_ssgManifest.js"
+    "static/HXl7BXMkxJ3zrZO2C_fnT/_buildManifest.js",
+    "static/HXl7BXMkxJ3zrZO2C_fnT/_ssgManifest.js"
   ],
   "pages": {
     "/": [
       "static/chunks/webpack-1a8a258926ecde76681b.js",
       "static/chunks/framework-b97a0ed4f13ff8397343.js",
       "static/chunks/main-decf7a0e391cc440fb11.js",
-      "static/chunks/pages/index-75a96080d2c750bb09e8.js"
+      "static/chunks/pages/index-84b5fc0dd493b2ce0cc4.js"
     ],
     "/_app": [
       "static/chunks/webpack-1a8a258926ecde76681b.js",
       "static/chunks/framework-b97a0ed4f13ff8397343.js",
       "static/chunks/main-decf7a0e391cc440fb11.js",
-      "static/css/12a1f7e514ba38bb0230.css",
+      "static/css/e2b0ccbdd5b9cc867e36.css",
       "static/chunks/pages/_app-18db800e80d2c1450aa9.js"
     ],
     "/_error": [
@@ -32,7 +32,25 @@
       "static/chunks/webpack-1a8a258926ecde76681b.js",
       "static/chunks/framework-b97a0ed4f13ff8397343.js",
       "static/chunks/main-decf7a0e391cc440fb11.js",
-      "static/chunks/pages/automation-5823a11e144914aad7c7.js"
+      "static/chunks/pages/automation-d0fab8b1ddc94c88523c.js"
+    ],
+    "/front": [
+      "static/chunks/webpack-1a8a258926ecde76681b.js",
+      "static/chunks/framework-b97a0ed4f13ff8397343.js",
+      "static/chunks/main-decf7a0e391cc440fb11.js",
+      "static/chunks/pages/front-5c87208673505d4fa899.js"
+    ],
+    "/main": [
+      "static/chunks/webpack-1a8a258926ecde76681b.js",
+      "static/chunks/framework-b97a0ed4f13ff8397343.js",
+      "static/chunks/main-decf7a0e391cc440fb11.js",
+      "static/chunks/pages/main-3e122f63587eee9a63fa.js"
+    ],
+    "/main/front": [
+      "static/chunks/webpack-1a8a258926ecde76681b.js",
+      "static/chunks/framework-b97a0ed4f13ff8397343.js",
+      "static/chunks/main-decf7a0e391cc440fb11.js",
+      "static/chunks/pages/main/front-a22f2e5f6e387606fa5e.js"
     ],
     "/newsroom": [
       "static/chunks/webpack-1a8a258926ecde76681b.js",
