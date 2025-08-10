@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Head from 'next/head';
 import Landing from '../../../components/Landing';
 
@@ -12,3 +13,8 @@ export default function MainFront() {
     </>
   );
 }
+=======
+import Home from '../../index';
+
+export default Home;
+>>>>>>> origin/main
