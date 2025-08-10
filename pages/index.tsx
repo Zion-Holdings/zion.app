@@ -36,6 +36,18 @@ const Home: NextPage = () => {
               <h3 className="font-semibold"><Link href="/auto/seo-audit">Autonomous SEO Auditor</Link></h3>
               <p className="text-sm text-gray-600">Finds SEO gaps and generates actionable reports.</p>
             </li>
+            <li className="border rounded p-4">
+              <h3 className="font-semibold"><Link href="/auto/release-notes-agent">AI Release Notes Agent</Link></h3>
+              <p className="text-sm text-gray-600">Summarizes daily commits into readable release notes.</p>
+            </li>
+            <li className="border rounded p-4">
+              <h3 className="font-semibold"><Link href="/auto/taxonomy-agent">AI Taxonomy Tagger</Link></h3>
+              <p className="text-sm text-gray-600">Suggests page tags to improve discovery.</p>
+            </li>
+            <li className="border rounded p-4">
+              <h3 className="font-semibold"><Link href="/public/hreflang.xml">Hreflang Generator</Link></h3>
+              <p className="text-sm text-gray-600">Keeps alternate language hreflang links up to date.</p>
+            </li>
           </ul>
         </section>
       </main>
