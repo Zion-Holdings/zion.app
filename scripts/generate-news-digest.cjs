@@ -4,6 +4,7 @@ const path = require('path');
 const fetch = global.fetch || ((...args) => import('node-fetch').then(({default: f}) => f(...args)));
 
 const OUT_DIR = path.join(process.cwd(), 'content', 'digests');
+const PUBLIC_DIR = path.join(process.cwd(), 'public', 'digests');
 const SOURCES = [
   { name: 'Hacker News', url: 'https://hnrss.org/frontpage' },
   { name: 'Dev.to', url: 'https://dev.to/feed' }
@@ -25,9 +26,12 @@ function extractItems(xml, max=10) {
 
 (async function main(){
   fs.mkdirSync(OUT_DIR, { recursive: true });
+  fs.mkdirSync(PUBLIC_DIR, { recursive: true });
   const date = new Date();
   const y = date.toISOString().slice(0,10);
-  const outFile = path.join(OUT_DIR, `${y}.md`);
+  const fileName = `${y}.md`;
+  const outFile = path.join(OUT_DIR, fileName);
+  const publicFile = path.join(PUBLIC_DIR, fileName);
   let content = `# Tech Digest — ${y}\n\n`;
   for (const src of SOURCES) {
     try {
@@ -44,5 +48,7 @@ function extractItems(xml, max=10) {
     }
   }
   fs.writeFileSync(outFile, content);
-  console.log(`Wrote digest: ${path.relative(process.cwd(), outFile)}`);
+  fs.writeFileSync(publicFile, content);
+  fs.writeFileSync(path.join(PUBLIC_DIR, 'latest.md'), content);
+  console.log(`Wrote digest: ${path.relative(process.cwd(), outFile)} and ${path.relative(process.cwd(), publicFile)}`);
 })();
