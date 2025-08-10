@@ -10,6 +10,7 @@ export default function Home() {
         </p>
         <div className="mt-6 flex items-center justify-center gap-3">
           <Link href="/automation"><a className="px-4 py-2 rounded bg-black text-white dark:bg-white dark:text-black">Explore Automations</a></Link>
+          <Link href="/reports"><a className="px-4 py-2 rounded border">View Reports</a></Link>
           <Link href="/blog"><a className="px-4 py-2 rounded border">Learn More</a></Link>
         </div>
       </section>
