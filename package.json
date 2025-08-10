@@ -215,7 +215,10 @@
     "conflicts:cron:start": "bash automation/merge-conflict-cron.sh start",
     "conflicts:cron:stop": "bash automation/merge-conflict-cron.sh stop",
     "conflicts:cron:status": "bash automation/merge-conflict-cron.sh status",
-    "cloud:autonomy": "node scripts/zion-cloud-autonomy.cjs"
+    "cloud:autonomy": "node scripts/zion-cloud-autonomy.cjs",
+    "cloud:chains": "node scripts/zion-chain-tuner.cjs",
+    "cloud:stuck": "node scripts/zion-stuck-users-scan.cjs",
+    "cloud:daily": "node scripts/zion-daily-report.cjs"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",

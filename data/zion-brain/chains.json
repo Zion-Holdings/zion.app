@@ -1,0 +1,11 @@
+{
+  "updatedAt": "",
+  "policy": { "minWeight": 0.5, "maxWeight": 2.0, "targetDeviation": 0.2, "step": 0.1 },
+  "chains": {
+    "resumeBuilder": { "weight": 1.0, "model": "gpt-4o-mini" },
+    "daoExplainer": { "weight": 1.0, "model": "gpt-4o-mini" },
+    "tokenomicsSimulator": { "weight": 1.0, "model": "gpt-4o-mini" },
+    "governanceSummarizer": { "weight": 1.0, "model": "gpt-4o-mini" },
+    "nationAssistant": { "weight": 1.0, "model": "gpt-4o-mini" }
+  }
+}
