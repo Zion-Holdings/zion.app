@@ -1,8 +1,13 @@
-export default function Page() {
+import { Html, Head, Main, NextScript } from 'next/document';
+
+export default function Document() {
   return (
-    <div className="py-12">
-      <h1 className="text-2xl font-semibold"> Document</h1>
-      <p className="mt-2 opacity-80">This page is being built by autonomous agents.</p>
-    </div>
+    <Html lang="en">
+      <Head />
+      <body>
+        <Main />
+        <NextScript />
+      </body>
+    </Html>
   );
 }
