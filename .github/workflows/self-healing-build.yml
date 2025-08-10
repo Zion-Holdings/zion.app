@@ -34,7 +34,7 @@ jobs:
           npm run ci:heal || true
       - name: Create Pull Request if changes
         if: always()
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "chore(self-heal): automated build healing"

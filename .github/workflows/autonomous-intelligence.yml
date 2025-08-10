@@ -32,7 +32,7 @@ jobs:
         run: npm run auto:intel | cat
       - name: Create Pull Request
         id: cpr
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "chore(intel): autonomous intelligence updates"
