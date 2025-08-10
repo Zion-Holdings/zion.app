@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import { githubFileUrl, githubActionsUrl, githubRepoUrl } from '../utils/repoLinks';
+import FuturisticBackground from '../components/ui/FuturisticBackground';
+import GlowCard from '../components/ui/GlowCard';
 
 const sections = [
   { title: 'Fast AutoSync (5 min)', workflows: 'fast-autosync.yml' },
@@ -25,71 +27,91 @@ const reports = [
   { name: 'TODO Index', path: 'docs/TODO_INDEX.md' },
 ];
 
+const featureList = [
+  { title: 'Autonomous Cloud', desc: 'All workflows run in the cloud, zero local machines, zero human ops.' },
+  { title: 'Self-Healing', desc: 'Auto-fix, lint, type-check, dependency audits and healing routines.' },
+  { title: 'Continuous Insights', desc: 'Live docs for routes, APIs, source tree, changelog and more.' },
+  { title: 'Governance Ready', desc: 'CODEOWNERS, env usage, secrets scanning and heatmaps for ownership.' },
+  { title: 'Developer Tools', desc: 'Source tree explorer and admin tools for rapid module bootstrap.' },
+  { title: 'Rapid Sync', desc: 'Every five minutes with immediate commit and push on changes.' },
+];
+
 export default function HomePage() {
   const repo = githubRepoUrl();
   const actions = githubActionsUrl();
   return (
-    <div className="max-w-5xl mx-auto px-6 py-10">
-      <h1 className="text-2xl font-bold mb-2">Zion OS — Autonomous Cloud Automations</h1>
-      <p className="text-gray-600 mb-6">Zero-touch, cloud-only workflows that continuously improve, document, and synchronize this repository.</p>
-
-      <div className="grid md:grid-cols-2 gap-4 mb-8">
-        {sections.map((s) => (
-          <div key={s.workflows} className="rounded border p-4 bg-white/70">
-            <div className="font-semibold mb-1">{s.title}</div>
-            <div className="text-sm text-gray-600">Workflow: {s.workflows}</div>
-            <div className="mt-2 text-sm">
+    <div className="relative min-h-screen">
+      <FuturisticBackground />
+      <div className="relative">
+        {/* Hero */}
+        <section className="pt-20 pb-16 text-center">
+          <div className="max-w-4xl mx-auto px-6">
+            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-fuchsia-400 to-violet-400">
+              Zion OS
+            </h1>
+            <p className="mt-4 text-lg text-gray-300">
+              Autonomous, self-improving, cloud-native system with futuristic design and relentless automation.
+            </p>
+            <div className="mt-6 flex items-center justify-center gap-3">
+              <Link href="/dev/tree"><a className="px-4 py-2 rounded-md bg-cyan-500/80 hover:bg-cyan-500 text-black font-medium">Explore Source Tree</a></Link>
               {actions ? (
-                <a className="text-blue-600 underline" href={actions} target="_blank" rel="noreferrer">View runs</a>
-              ) : (
-                <span className="text-gray-500">Actions not available</span>
-              )}
+                <a href={actions} target="_blank" rel="noreferrer" className="px-4 py-2 rounded-md border border-white/20 hover:bg-white/10">View Automations</a>
+              ) : null}
             </div>
           </div>
-        ))}
-      </div>
+        </section>
 
-      <h2 className="text-xl font-semibold mb-3">Live Reports</h2>
-      <ul className="space-y-2 mb-8">
-        {reports.map((r) => {
-          const url = githubFileUrl(r.path);
-          return (
-            <li key={r.path}>
-              {url ? (
-                <a className="text-blue-700 underline" href={url} target="_blank" rel="noreferrer">{r.name}</a>
-              ) : (
-                <span className="text-gray-500">{r.name}</span>
-              )}
-              <span className="text-gray-500 ml-2 text-sm">({r.path})</span>
-            </li>
-          );
-        })}
-      </ul>
+        {/* Features */}
+        <section className="py-12">
+          <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-5">
+            {featureList.map((f) => (
+              <GlowCard key={f.title} title={f.title}>{f.desc}</GlowCard>
+            ))}
+          </div>
+        </section>
 
-      <h2 className="text-xl font-semibold mb-3">Developer Tools</h2>
-      <ul className="space-y-2">
-        <li>
-          <Link href="/dev/tree"><a className="text-blue-700 underline">Source Tree Explorer</a></Link>
-          <span className="text-gray-500 ml-2 text-sm">(/dev/tree)</span>
-        </li>
-        <li>
-          <Link href="/admin/source-map"><a className="text-blue-700 underline">Admin Source Map</a></Link>
-          <span className="text-gray-500 ml-2 text-sm">(/admin/source-map)</span>
-        </li>
-      </ul>
+        {/* Automations */}
+        <section className="py-10">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="mb-4 flex items-center justify-between">
+              <h2 className="text-xl font-semibold">Automations</h2>
+              {repo ? <a className="text-sm underline" href={repo} target="_blank" rel="noreferrer">Repository</a> : null}
+            </div>
+            <div className="grid md:grid-cols-2 gap-4 mb-6">
+              {sections.map((s) => (
+                <div key={s.workflows} className="rounded-xl border border-white/10 p-4 bg-white/5">
+                  <div className="font-semibold">{s.title}</div>
+                  <div className="text-sm text-gray-400">Workflow: {s.workflows}</div>
+                </div>
+              ))}
+            </div>
+            <h3 className="text-lg font-semibold mb-2">Live Reports</h3>
+            <ul className="grid md:grid-cols-2 gap-2">
+              {reports.map((r) => {
+                const url = githubFileUrl(r.path);
+                return (
+                  <li key={r.path} className="rounded border border-white/10 p-3 bg-white/5 hover:bg-white/10 transition-colors">
+                    {url ? (
+                      <a className="text-blue-300 underline" href={url} target="_blank" rel="noreferrer">{r.name}</a>
+                    ) : (
+                      <span className="text-gray-400">{r.name}</span>
+                    )}
+                    <span className="text-gray-500 ml-2 text-xs">({r.path})</span>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </section>
 
-      <div className="mt-8 text-sm text-gray-500">
-        {repo ? (
-          <a className="underline" href={repo} target="_blank" rel="noreferrer">Repository</a>
-        ) : (
-          <span>Repository</span>
-        )}
-        <span> • </span>
-        {actions ? (
-          <a className="underline" href={actions} target="_blank" rel="noreferrer">Actions</a>
-        ) : (
-          <span>Actions</span>
-        )}
+        {/* CTA */}
+        <section className="py-14">
+          <div className="max-w-4xl mx-auto px-6 text-center">
+            <div className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white/5 border border-white/10 backdrop-blur">
+              <span className="text-sm text-gray-300">Zero-touch cloud ops • Futuristic DX • Modular architecture</span>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );
