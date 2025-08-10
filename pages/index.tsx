@@ -54,6 +54,21 @@ export default function Home() {
             <p className="text-white/70 mt-2">Overview of every automation system with capabilities and usage.</p>
             <a className="text-cyan-300 underline mt-3 inline-block" href="https://github.com/Zion-Holdings/zion.app/blob/main/AUTOMATION_SYSTEMS_SUMMARY.md" target="_blank" rel="noopener">Read summary</a>
           </article>
+          <article className="rounded-xl bg-white/5 border border-white/10 p-6">
+            <h2 className="text-xl font-bold">External Link Checks</h2>
+            <p className="text-white/70 mt-2">Scans pages for outbound links and monitors their health, auto-committing reports.</p>
+            <a className="text-cyan-300 underline mt-3 inline-block" href="https://github.com/Zion-Holdings/zion.app/blob/main/.github/workflows/autonomous-external-links.yml" target="_blank" rel="noopener">View workflow</a>
+          </article>
+          <article className="rounded-xl bg-white/5 border border-white/10 p-6">
+            <h2 className="text-xl font-bold">Image Optimizer</h2>
+            <p className="text-white/70 mt-2">Compresses public images lossily with safety thresholds and syncs saved bytes reports.</p>
+            <a className="text-cyan-300 underline mt-3 inline-block" href="https://github.com/Zion-Holdings/zion.app/blob/main/.github/workflows/autonomous-image-optimizer.yml" target="_blank" rel="noopener">View workflow</a>
+          </article>
+          <article className="rounded-xl bg-white/5 border border-white/10 p-6">
+            <h2 className="text-xl font-bold">Lighthouse CI</h2>
+            <p className="text-white/70 mt-2">Runs scheduled audits on key pages and stores artifacts for continuous performance tracking.</p>
+            <a className="text-cyan-300 underline mt-3 inline-block" href="https://github.com/Zion-Holdings/zion.app/blob/main/.github/workflows/autonomous-lighthouse.yml" target="_blank" rel="noopener">View workflow</a>
+          </article>
         </section>
       </main>
     </div>
