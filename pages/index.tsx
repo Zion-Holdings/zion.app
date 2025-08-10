@@ -8,9 +8,14 @@ export default function HomePage() {
         <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
           Always-on agents that research, improve, and evolve your product—no human babysitting, no servers to manage.
         </p>
-        <div className="mt-8 flex justify-center gap-4">
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
           <Link href="/automation"><a className="px-5 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-medium shadow">Explore Automations</a></Link>
           <Link href="/automation/innovation"><a className="px-5 py-3 rounded-lg border border-gray-300 dark:border-gray-700 font-medium">Innovation Digest</a></Link>
+          <Link href="/automation/tech-radar"><a className="px-5 py-3 rounded-lg border border-gray-300 dark:border-gray-700 font-medium">Tech Radar</a></Link>
+          <Link href="/automation/repo-health"><a className="px-5 py-3 rounded-lg border border-gray-300 dark:border-gray-700 font-medium">Repo Health</a></Link>
+          <Link href="/automation/content-map"><a className="px-5 py-3 rounded-lg border border-gray-300 dark:border-gray-700 font-medium">Content Map</a></Link>
+          <Link href="/automation/site-validator"><a className="px-5 py-3 rounded-lg border border-gray-300 dark:border-gray-700 font-medium">Site Validator</a></Link>
+          <Link href="/automation/knowledge-graph"><a className="px-5 py-3 rounded-lg border border-gray-300 dark:border-gray-700 font-medium">Knowledge Graph</a></Link>
         </div>
       </section>
 

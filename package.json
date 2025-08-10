@@ -143,6 +143,8 @@
     "security:audit": "node automation/autonomous-security-audit.cjs",
     "repo:health": "node automation/autonomous-repo-health.cjs",
     "content:map": "node automation/autonomous-content-map.cjs",
+    "site:validate": "node automation/autonomous-site-validator.cjs",
+    "knowledge:graph": "node automation/autonomous-knowledge-graph.cjs",
     "homepage-promo:cron:start": "bash automation/homepage-promo-cron.sh",
     "homepage-promo:analyze": "node automation/homepage-promo-analyzer.cjs && node automation/homepage-promo-factory.cjs",
     "feature-marketing:start": "node automation/feature-marketing-orchestrator.cjs",
