@@ -1,0 +1,54 @@
+name: Stabilize Build
+
+on:
+  schedule:
+    - cron: '30 3 * * *' # daily
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  stabilize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Auto-fix empty pages/files
+        run: |
+          node fix_empty_pages.js || true
+          node fix_empty_files.cjs || true
+
+      - name: Auto-fix TS errors
+        run: |
+          node fix_all_typescript_errors.cjs || true
+          node fix_remaining_errors.cjs || true
+
+      - name: Configure Git
+        run: |
+          git config user.name "zion-stabilizer"
+          git config user.email "stabilizer@users.noreply.github.com"
+
+      - name: Commit changes if any
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "chore(stabilize): auto-fix empty files and TS issues [skip ci]"
+            git push origin HEAD:${GITHUB_REF#refs/heads/}
+          else
+            echo "No stabilization changes"
+          fi
