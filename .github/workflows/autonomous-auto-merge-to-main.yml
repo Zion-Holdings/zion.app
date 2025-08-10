@@ -1,0 +1,89 @@
+name: Autonomous Auto-Merge to main (fast)
+
+on:
+  push:
+    branches:
+      - 'cursor/**'
+      - 'feat/**'
+      - 'fix/**'
+  workflow_dispatch: {}
+
+concurrency:
+  group: auto-merge-to-main-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  build-and-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund || npm ci
+
+      - name: Build (self-heal)
+        run: npm run build:heal
+
+      - name: Create or update PR to main
+        id: pr
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const head = process.env.GITHUB_REF_NAME;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            // Find existing open PR from this head to main
+            const { data: prs } = await github.rest.pulls.list({ owner, repo, state: 'open', head: `${owner}:${head}`, base: 'main' });
+            let pr;
+            if (prs.length > 0) {
+              pr = prs[0];
+              core.info(`Found existing PR #${pr.number}`);
+            } else {
+              const { data: newPr } = await github.rest.pulls.create({ owner, repo, base: 'main', head, title: `chore(auto-merge): ${head} -> main`, body: 'Automated PR created by autonomous workflow.' });
+              pr = newPr;
+              core.info(`Created PR #${pr.number}`);
+            }
+            // Add labels
+            try {
+              await github.rest.issues.addLabels({ owner, repo, issue_number: pr.number, labels: ['automation', 'auto-merge'] });
+            } catch (e) {
+              core.warning(`Labeling failed: ${e.message}`);
+            }
+            core.setOutput('number', pr.number.toString());
+
+      - name: Enable Auto-merge (squash)
+        if: steps.pr.outputs.number
+        uses: peter-evans/enable-pull-request-automerge@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          pull-request-number: ${{ steps.pr.outputs.number }}
+          merge-method: squash
+
+      - name: Comment with status
+        if: steps.pr.outputs.number
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const number = Number(core.getInput('number'))
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: Number(process.env.PR_NUMBER || '${{ steps.pr.outputs.number }}'),
+              body: 'Auto-merge enabled. This PR will merge to main after checks pass.'
+            })
+          result-encoding: string
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ steps.pr.outputs.number }}
