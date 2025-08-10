@@ -74,6 +74,30 @@ export default function Home() {
           </div>
         </section>
 
+        /* AUTO-GENERATED: HOME_INTEL_START */
+<section className="mx-auto max-w-7xl px-6 pb-10">
+  <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Live Highlights</h2>
+  <div className="mx-auto mt-4 grid max-w-4xl grid-cols-1 gap-3 md:grid-cols-2">
+            <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-md">
+              <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.9)]" />
+              <span className="text-sm text-white/80">Repository graph: 52361 nodes, 2432 edges</span>
+            </div>
+            <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-md">
+              <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.9)]" />
+              <span className="text-sm text-white/80">Latest SEO report available</span>
+            </div>
+            <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-md">
+              <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.9)]" />
+              <span className="text-sm text-white/80">AI trends: 20 curated signals</span>
+            </div>
+            <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-md">
+              <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.9)]" />
+              <span className="text-sm text-white/80">Automation guardian active ~3504 min ago</span>
+            </div>
+  </div>
+</section>
+/* AUTO-GENERATED: HOME_INTEL_END */
+
         {/* Features */}
         <section className="mx-auto max-w-7xl px-6 pb-14">
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Features</h2>
@@ -143,37 +167,23 @@ export default function Home() {
           </div>
         </section>
       
-{/* AUTO-GENERATED: HOME_UPDATER_START */}
+/* AUTO-GENERATED: HOME_UPDATER_START */
 <section className="mx-auto max-w-7xl px-6 pb-16">
   <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Explore more</h2>
   <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 
-            <Link href="/services/ai-seo-auditor"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">AI SEO Auditor — automate SEO improvements</span></a></Link>
-  
-
-            <Link href="/services/customer-support-chatbot"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Customer Support Chatbot — reduce response time</span></a></Link>
-  
-
-            <Link href="/services/landing-page-generator"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Landing Page Generator — launch pages instantly</span></a></Link>
-  
-
-            <Link href="/services/price-intelligence-service"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Price Intelligence — market‑aware pricing</span></a></Link>
-  
-
             <Link href="/automation"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Automation Status — live agents & reports</span></a></Link>
-  
 
             <Link href="/newsroom"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Newsroom — latest autonomous updates</span></a></Link>
-  
 
             <Link href="/site-health"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Site Health — audits & insights</span></a></Link>
-  
 
-            <Link href="/contact"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Contact — discuss your use‑case</span></a></Link>
-  
+            <Link href="/reports/seo"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">SEO Report — latest audit</span></a></Link>
+
+            <Link href="/reports/ai-trends"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">AI Trends Radar — autonomous feed</span></a></Link>
   </div>
 </section>
-{/* AUTO-GENERATED: HOME_UPDATER_END */}
+/* AUTO-GENERATED: HOME_UPDATER_END */
 </main>
     </div>
   );
