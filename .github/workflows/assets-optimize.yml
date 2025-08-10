@@ -1,0 +1,43 @@
+name: Asset Optimize
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '**/*.png'
+      - '**/*.jpg'
+      - '**/*.jpeg'
+  schedule:
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install sharp
+        run: |
+          npm -y init -f >/dev/null 2>&1 || true
+          npm i sharp@^0.33
+
+      - name: Optimize assets
+        run: node ./scripts/optimize-assets.mjs
+
+      - name: Commit optimized images
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore(assets): optimize images'
+          branch: main
+          commit_user_name: zion-bot
+          commit_user_email: bot@users.noreply.github.com
+          commit_author: zion-bot <bot@users.noreply.github.com>
