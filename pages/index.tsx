@@ -143,37 +143,79 @@ export default function Home() {
           </div>
         </section>
       
-{/* AUTO-GENERATED: HOME_UPDATER_START */}
+{/* AUTO-GENERATED: HOME_UPDATER_START */
 <section className="mx-auto max-w-7xl px-6 pb-16">
   <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Explore more</h2>
+
+  <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+
+                <div className="glow-card rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-left">
+                  <div className="text-lg font-bold text-white">20</div>
+                  <div className="text-xs text-white/70">Automations</div>
+                </div>
+
+                <div className="glow-card rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-left">
+                  <div className="text-lg font-bold text-white">36</div>
+                  <div className="text-xs text-white/70">Workflows</div>
+                </div>
+
+                <div className="glow-card rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-left">
+                  <div className="text-lg font-bold text-white">6</div>
+                  <div className="text-xs text-white/70">Commits/24h</div>
+                </div>
+
+                <div className="glow-card rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-left">
+                  <div className="text-lg font-bold text-white">Autonomous</div>
+                  <div className="text-xs text-white/70">Cloud</div>
+                </div>
+  </div>
+
   <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 
-            <Link href="/services/ai-seo-auditor"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">AI SEO Auditor — automate SEO improvements</span></a></Link>
-  
-
-            <Link href="/services/customer-support-chatbot"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Customer Support Chatbot — reduce response time</span></a></Link>
-  
-
-            <Link href="/services/landing-page-generator"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Landing Page Generator — launch pages instantly</span></a></Link>
-  
-
-            <Link href="/services/price-intelligence-service"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Price Intelligence — market‑aware pricing</span></a></Link>
-  
-
             <Link href="/automation"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Automation Status — live agents & reports</span></a></Link>
-  
+
 
             <Link href="/newsroom"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Newsroom — latest autonomous updates</span></a></Link>
-  
+
 
             <Link href="/site-health"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Site Health — audits & insights</span></a></Link>
-  
+
 
             <Link href="/contact"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Contact — discuss your use‑case</span></a></Link>
-  
+
+
+            <a href="https://github.com/Zion-Holdings/zion.app/actions/workflows/auto-media-release.yml" target="_blank" rel="noopener" className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Auto Media Release Draft — live runs</span></a>
+
+
+            <a href="https://github.com/Zion-Holdings/zion.app/actions/workflows/automation-guardian-10min.yml" target="_blank" rel="noopener" className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Automation Guardian Every 10 Minutes — live runs</span></a>
+
+
+            <a href="https://github.com/Zion-Holdings/zion.app/actions/workflows/automations.yml" target="_blank" rel="noopener" className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Automations — live runs</span></a>
+
+
+            <a href="https://github.com/Zion-Holdings/zion.app/actions/workflows/autonomous-auto-discovery.yml" target="_blank" rel="noopener" className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Autonomous Auto-Discovery (7m) — live runs</span></a>
+  </div>
+
+  <div className="mt-6 flex flex-wrap gap-2">
+
+              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">automation-guardian-10min</span>
+
+              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">cloud-autonomous-orchestrator</span>
+
+              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">image-optimizer</span>
+
+              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">netlify-auto-healer</span>
+
+              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">auto-discovery-runner</span>
+
+              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">auto-media-release</span>
+
+              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">broken-image-scanner</span>
+
+              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">deps-auto-upgrade</span>
   </div>
 </section>
-{/* AUTO-GENERATED: HOME_UPDATER_END */}
+/* AUTO-GENERATED: HOME_UPDATER_END */}
 </main>
     </div>
   );
