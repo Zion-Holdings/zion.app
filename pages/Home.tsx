@@ -95,6 +95,28 @@ export default function Home() {
           </li>
         </ul>
       </section>
+
+      <section className="mt-16">
+        <h3 className="text-xl font-semibold mb-3">Operations & Content Automations</h3>
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 list-disc pl-5">
+          <li>
+            <strong>Cache Headers Audit</strong>
+            {' '}<Link className="text-blue-600 underline" href="https://github.com/Zion-Holdings/zion.app/tree/main/data/reports/cache" target="_blank">View reports</Link>
+          </li>
+          <li>
+            <strong>Redirects Audit</strong>
+            {' '}<Link className="text-blue-600 underline" href="https://github.com/Zion-Holdings/zion.app/tree/main/data/reports/redirects" target="_blank">View reports</Link>
+          </li>
+          <li>
+            <strong>Automation Digest</strong>
+            {' '}<Link className="text-blue-600 underline" href="https://github.com/Zion-Holdings/zion.app/tree/main/data/reports/digests" target="_blank">View reports</Link>
+          </li>
+          <li>
+            <strong>Weekly Newsletter Draft</strong>
+            {' '}<Link className="text-blue-600 underline" href="https://github.com/Zion-Holdings/zion.app/tree/main/data/reports/newsletter/drafts" target="_blank">View drafts</Link>
+          </li>
+        </ul>
+      </section>
     </div>
   );
 }

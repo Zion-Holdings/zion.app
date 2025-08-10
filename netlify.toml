@@ -300,3 +300,19 @@
   path = "/.netlify/functions/robots_enforcer"
   schedule = "0 0 * * *" # daily at midnight UTC
 
+[[scheduled]]
+  path = "/.netlify/functions/cache_headers_audit"
+  schedule = "0 1 * * *" # daily at 01:00 UTC
+
+[[scheduled]]
+  path = "/.netlify/functions/redirects_audit"
+  schedule = "0 2 * * 1" # weekly Monday 02:00 UTC
+
+[[scheduled]]
+  path = "/.netlify/functions/changelog_digest"
+  schedule = "0 */6 * * *" # every 6 hours
+
+[[scheduled]]
+  path = "/.netlify/functions/newsletter_digest"
+  schedule = "0 8 * * 1" # weekly Monday 08:00 UTC
+
