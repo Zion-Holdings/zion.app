@@ -244,3 +244,11 @@
   path = "/.netlify/functions/sitemap_refresh"
   schedule = "0 */12 * * *" # every 12 hours
 
+[[scheduled]]
+  path = "/.netlify/functions/seo_audit"
+  schedule = "15 3 * * *" # daily at 03:15 UTC
+
+[[scheduled]]
+  path = "/.netlify/functions/image_audit"
+  schedule = "45 3 * * *" # daily at 03:45 UTC
+
