@@ -11,6 +11,7 @@ export default function HomePage() {
       <div className="flex flex-wrap gap-4">
         <Link href="/investors"><a className="px-4 py-2 rounded bg-gray-900 text-white">Investor Portal</a></Link>
         <Link href="/franchise-portal"><a className="px-4 py-2 rounded bg-gray-200 dark:bg-gray-800">Franchise Portal</a></Link>
+        <Link href="/changelog"><a className="px-4 py-2 rounded bg-blue-600 text-white">Changelog</a></Link>
       </div>
 
       <section className="space-y-3">
@@ -18,18 +19,19 @@ export default function HomePage() {
         <p className="text-gray-600 dark:text-gray-400">Intelligent agents run on a schedule in the cloud—no human or local machine required. Results are committed back to the repo and surfaced in the admin dashboard.</p>
         <ul className="list-disc pl-5 space-y-1 text-sm">
           <li>
-            Weekly Feedback Intelligence: batches chat logs and ratings, groups by feature and sentiment, summarizes top insights, and generates a prioritized backlog. View in{' '}
-            <Link href="/admin/feedback-insights"><a className="text-blue-600">Feedback Insights</a></Link>.
+            Weekly Feedback Intelligence → <Link href="/admin/feedback-insights"><a className="text-blue-600">Feedback Insights</a></Link>
           </li>
           <li>
-            UI Evolution & Responsive Optimizer: scheduled refactors to improve UX, accessibility, and responsive behaviors with safe edits and PRs.
+            Journey Friction Detector → <Link href="/api/admin/journey-report"><a className="text-blue-600">Latest Report (Admin)</a></Link>
           </li>
           <li>
-            Security & SEO Agents: scan, detect, and propose remediations, committing reports and opening tasks.
+            Market Health Forecaster → <Link href="/api/admin/forecast-report"><a className="text-blue-600">Latest Forecast (Admin)</a></Link>
           </li>
           <li>
-            Sync Health & Git Automation: background loops ensure repository stays up-to-date and healthy; see{' '}
-            <Link href="/admin/automation-status"><a className="text-blue-600">Automation Status</a></Link>.
+            Weekly Changelog Summarizer → <Link href="/changelog"><a className="text-blue-600">Read Changelog</a></Link>
+          </li>
+          <li>
+            Sync Health & Git Automation → <Link href="/admin/automation-status"><a className="text-blue-600">Automation Status (Admin)</a></Link>
           </li>
         </ul>
       </section>
