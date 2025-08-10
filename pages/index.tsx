@@ -28,6 +28,10 @@ const Home: NextPage = () => {
             <div className="text-white font-medium">Autodocs</div>
             <div className="text-white/70 text-sm mt-1">Documentation generated from code</div>
           </a></Link>
+          <Link href="/automation/bundle-report"><a className="rounded-2xl border border-white/10 bg-white/5 p-5 hover:bg-white/10 transition">
+            <div className="text-white font-medium">Bundle Size Report</div>
+            <div className="text-white/70 text-sm mt-1">Performance snapshot from the latest build</div>
+          </a></Link>
         </div>
       </div>
     </div>

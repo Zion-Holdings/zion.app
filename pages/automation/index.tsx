@@ -7,6 +7,7 @@ export default function AutomationIndex() {
     { href: '/automation/autodocs', title: 'Autodocs', desc: 'Automated documentation generated from code' },
     { href: '/automation/services-schema', title: 'Services Schema', desc: 'schema.org JSON-LD for services for SEO' },
     { href: '/automation/broken-links', title: 'Broken Links Report', desc: 'External link status across docs' },
+    { href: '/automation/bundle-report', title: 'Bundle Size Report', desc: 'Build artifact size snapshot for performance' },
   ];
   return (
     <div className="py-10">
