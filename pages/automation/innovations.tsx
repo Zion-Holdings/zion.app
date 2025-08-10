@@ -38,6 +38,26 @@ const Innovations: NextPage = () => {
       name: 'Link Health Issue Manager',
       id: 'issue_link_health',
       desc: 'Opens or updates a GitHub issue when link health failures are detected.'
+    },
+    {
+      name: 'PageSpeed Audit',
+      id: 'pagespeed_audit',
+      desc: 'Runs Google PageSpeed Insights for key routes and commits performance scores.'
+    },
+    {
+      name: 'Security Headers Audit',
+      id: 'security_headers_audit',
+      desc: 'Checks for recommended security headers across key routes and commits a report.'
+    },
+    {
+      name: 'Stale Content Issues',
+      id: 'stale_content_issues',
+      desc: 'Flags stale blog posts and opens/updates a GitHub issue with details.'
+    },
+    {
+      name: 'Sitemap from Site Index',
+      id: 'sitemap_from_index',
+      desc: 'Generates sitemap.xml from the site index and commits to the repository.'
     }
   ];
 

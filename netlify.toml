@@ -38,4 +38,20 @@
 
 [[scheduled.functions]]
   function = "issue_link_health"
-  cron = "15 3 * * *" 
+  cron = "15 3 * * *"
+
+[[scheduled.functions]]
+  function = "pagespeed_audit"
+  cron = "0 * * * *"
+
+[[scheduled.functions]]
+  function = "security_headers_audit"
+  cron = "0 * * * *"
+
+[[scheduled.functions]]
+  function = "stale_content_issues"
+  cron = "0 4 * * *"
+
+[[scheduled.functions]]
+  function = "sitemap_from_index"
+  cron = "0 */6 * * *" 
