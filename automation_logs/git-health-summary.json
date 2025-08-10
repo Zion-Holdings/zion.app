@@ -1,19 +1,23 @@
 {
-  "ok": true,
-  "errors": [],
-  "warnings": [
-    "No upstream configured for current branch."
+  "ok": false,
+  "errors": [
+    "git fsck reported issues. Run with --fix locally to attempt repair."
   ],
+  "warnings": [],
   "checks": {
     "user": {
       "name": "Cursor Agent",
       "email": "cursoragent@cursor.com"
     },
-    "origin": "origin\thttps://x-access-token:ghs_qNBaeg2v14LuMC4IBKBjGq0T4N5gyr2FojDs@github.com/Zion-Holdings/zion.app (fetch)\norigin\thttps://x-access-token:ghs_qNBaeg2v14LuMC4IBKBjGq0T4N5gyr2FojDs@github.com/Zion-Holdings/zion.app (push)",
+    "origin": "origin\thttps://x-access-token:ghs_4yNsBBom8HmkiD0GuvaAU0qRIsPT8K29I0p8@github.com/Zion-Holdings/zion.app (fetch)\norigin\thttps://x-access-token:ghs_4yNsBBom8HmkiD0GuvaAU0qRIsPT8K29I0p8@github.com/Zion-Holdings/zion.app (push)",
     "fsck": {
-      "status": 0,
-      "output": ""
+      "status": 2,
+      "output": "missing commit fb53809cdcd8adfc71051ded9d00064165bfb91e\nmissing tree 789f81f8a9005f4b9054b37ce3878b86b22f5917\nmissing blob 2f4502c7a9690fff628677f2c8b63b13d81ebc9f\nmissing tree 8547e245623e174c7e1c62b007a6c49699d0cf7e\nmissing commit e1ab226394701e7a1230b1b19d663e6bc35fdde8\nmissing blob cfa229583ec071e3086b10d164f5522a34eb648b\nmissing commit f29f6bd59a5cd5ec62e48a7bc0594e429bcbe3e8\nmissing blob 1c0e0d99114cdca4bd54bd3268a923e138597f34\nmissing commit 6a388d24439fafb89f0806868884d7c3c27f3dcb\nmissing blob 5283edd2cef420c72d2d164f190aced6a7516332\nmissing blob 39f54f4c0f3130e1a103b6ffa27aaaa3f18f5e9a\nmissing commit a3e4106b87c5584ae73aeaebf93fe4d0e5ad899b\nmissing commit 849e913e9684bb5c83ec3cbfc8ff2f9e79036841\nmissing blob 7d2812c72975db005766f5a5453ed475779af75f\nmissing tree bba172752a94f2fc432"
     },
-    "working": "dirty"
+    "divergence": {
+      "behind": 0,
+      "ahead": 0
+    },
+    "working": "clean"
   }
 }
