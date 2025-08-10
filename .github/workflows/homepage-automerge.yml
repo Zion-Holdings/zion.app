@@ -18,21 +18,38 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Create or update PR
-        uses: peter-evans/create-pull-request@v6
+      - name: Open or update PR and label automerge
+        uses: actions/github-script@v7
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore(homepage): automated refresh [skip ci]"
-          title: "Automated: Homepage refresh"
-          body: |
-            This PR was created automatically by the autonomous homepage updater.
-            It updates `data/homepage.json` and related homepage content.
-          branch: ${{ github.ref_name }}
-          base: main
-          labels: automerge
+          script: |
+            const core = require('@actions/core');
+            const { owner, repo } = context.repo;
+            const head = context.ref.replace('refs/heads/', '');
+            const base = 'main';
+            const title = 'Automated: Homepage refresh';
+            const body = 'This PR was created automatically by the autonomous homepage updater. It updates `data/homepage.json` and related homepage content.';
 
-      - name: Add automerge label (fallback)
-        uses: actions-ecosystem/action-add-labels@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          labels: automerge
+            // Check for existing open PR from this branch
+            const prs = await github.paginate(github.rest.pulls.list, { owner, repo, state: 'open', base, per_page: 100 });
+            let existing = prs.find(pr => pr.head && pr.head.ref === head);
+
+            if (!existing) {
+              try {
+                const created = await github.rest.pulls.create({ owner, repo, head, base, title, body });
+                existing = created.data;
+              } catch (err) {
+                core.warning(`Failed to create PR: ${err.message}`);
+              }
+            }
+
+            if (existing) {
+              try {
+                await github.rest.issues.addLabels({ owner, repo, issue_number: existing.number, labels: ['automerge'] });
+                core.setOutput('pr_number', existing.number);
+                core.notice(`PR #${existing.number} ready with automerge label.`);
+              } catch (err) {
+                core.warning(`Failed to label PR: ${err.message}`);
+              }
+            } else {
+              core.notice('No PR created or found.');
+            }
