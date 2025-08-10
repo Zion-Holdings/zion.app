@@ -2,12 +2,13 @@ import { GetServerSideProps } from "next";
 import Link from "next/link";
 import { getTenantByHost, hostnameFromReqHeaders } from "../utils/tenant";
 import AnimatedBackground from "../components/ui/AnimatedBackground";
+import Aurora from "../components/ui/Aurora";
 import { Cpu, Rocket, ShieldCheck, Sparkles, Layers, Globe2, Cog, Users } from "lucide-react";
 
 function LinkCard({ href, title, desc }: { href: string; title: string; desc: string }) {
   return (
     <Link href={href}>
-      <a className="card block p-5 rounded-xl border border-gray-200/60 dark:border-gray-800/60 bg-white/60 dark:bg-black/40 backdrop-blur hover:border-gray-300 dark:hover:border-gray-700">
+      <a className="card neon-ring scanlines block p-5 rounded-xl border border-gray-200/60 dark:border-gray-800/60 bg-white/60 dark:bg-black/40 backdrop-blur hover:border-gray-300 dark:hover:border-gray-700">
         <div className="text-base font-semibold">{title}</div>
         <div className="text-sm opacity-70 mt-1">{desc}</div>
       </a>
@@ -31,32 +32,58 @@ export default function Home({ tenant }: any) {
   return (
     <div className="relative py-16">
       <AnimatedBackground />
+      <Aurora />
 
-      <section className="text-center max-w-4xl mx-auto px-4">
+      <section className="text-center max-w-5xl mx-auto px-4">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs border border-white/20 bg-black/20 text-white/80 mb-4">
-          <Sparkles size={14} /> Futuristic AI‑Powered Platform
+          <Sparkles size={14} /> Autonomous, AI‑Powered, Future‑Ready
         </div>
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight gradient-text">
           {tenant.heroTitle || `${tenant.brandName}: AI solutions for your brand`}
         </h1>
-        <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
-          {tenant.heroSubtitle || "Launch faster with a tailored white‑label platform."}
+        <p className="mt-4 text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+          {tenant.heroSubtitle || "Launch faster with a tailored white‑label platform—autonomous agents keep it optimized 24/7."}
         </p>
-        <div className="mt-8 flex justify-center gap-3">
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
           <a
             href="/services"
-            className="px-5 py-3 rounded-md text-white shadow"
+            className="px-5 py-3 rounded-md text-white btn-glow"
             style={{ backgroundColor: tenant.primaryColor }}
           >Explore Services</a>
-          <a
-            href="/autonomy"
-            className="px-5 py-3 rounded-md text-white bg-emerald-600"
-          >Autonomous Agents</a>
+          <a href="/autonomy" className="px-5 py-3 rounded-md text-white bg-emerald-600 btn-glow">Autonomous Agents</a>
           <a
             href="/partner"
             className="px-5 py-3 rounded-md border"
             style={{ borderColor: tenant.primaryColor, color: tenant.primaryColor }}
           >Partner Panel</a>
+        </div>
+      </section>
+
+      <section className="mt-16 max-w-6xl mx-auto px-4">
+        <h2 className="text-xl font-semibold mb-4">Featured Capabilities</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <Feature icon={Rocket} title="Rapid Deployment" desc="Spin up branded tenants in minutes." />
+          <Feature icon={ShieldCheck} title="Enterprise‑Grade" desc="Security‑first, tenant‑isolated data." />
+          <Feature icon={Layers} title="Modular Platform" desc="Compose features to fit your needs." />
+          <Feature icon={Globe2} title="Global Scale" desc="Built for performance and reliability." />
+        </div>
+      </section>
+
+      <section className="mt-16 max-w-6xl mx-auto px-4">
+        <h2 className="text-xl font-semibold mb-4">Benefits</h2>
+        <div className="grid md:grid-cols-3 gap-4">
+          <div className="p-5 rounded-lg border border-gray-200/50 dark:border-gray-800/50 bg-white/60 dark:bg-black/40">
+            <div className="font-semibold mb-1">Autonomous Operations</div>
+            <div className="text-sm opacity-80">Agents run in the cloud, continuously improving SEO, performance, content, and security.</div>
+          </div>
+          <div className="p-5 rounded-lg border border-gray-200/50 dark:border-gray-800/50 bg-white/60 dark:bg-black/40">
+            <div className="font-semibold mb-1">Reduced Overhead</div>
+            <div className="text-sm opacity-80">No servers to manage, fewer manual tasks, faster release cycles.</div>
+          </div>
+          <div className="p-5 rounded-lg border border-gray-200/50 dark:border-gray-800/50 bg-white/60 dark:bg-black/40">
+            <div className="font-semibold mb-1">Future‑Proof Stack</div>
+            <div className="text-sm opacity-80">Modern AI workflows, modular features, and enterprise‑grade architecture.</div>
+          </div>
         </div>
       </section>
 
@@ -75,32 +102,12 @@ export default function Home({ tenant }: any) {
         </div>
       </section>
 
-      <section className="mt-16 max-w-6xl mx-auto px-4">
-        <h2 className="text-xl font-semibold mb-4">Features</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <Feature icon={Rocket} title="Rapid Deployment" desc="Spin up branded tenants in minutes." />
-          <Feature icon={ShieldCheck} title="Enterprise‑Grade" desc="Security‑first, tenant‑isolated data." />
-          <Feature icon={Layers} title="Modular Platform" desc="Compose features to fit your needs." />
-          <Feature icon={Globe2} title="Global Scale" desc="Built for performance and reliability." />
-        </div>
-      </section>
-
-      <section className="mt-16 max-w-6xl mx-auto px-4">
-        <h2 className="text-xl font-semibold mb-4">Capabilities</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <Feature icon={Cpu} title="AI Dev" desc="Fine‑tuned models, RAG, agents." />
-          <Feature icon={Cog} title="Automation" desc="Workflows that move business." />
-          <Feature icon={Users} title="Collaboration" desc="Invite teams and partners." />
-          <Feature icon={Sparkles} title="Design Systems" desc="Modern, accessible, responsive." />
-        </div>
-      </section>
-
       <section className="mt-16 max-w-4xl mx-auto px-4 text-center">
         <div className="p-6 rounded-2xl border border-gray-200/60 dark:border-gray-800/60 bg-white/60 dark:bg-black/40 backdrop-blur">
           <h3 className="text-2xl font-semibold">Ready to build your white‑label AI platform?</h3>
           <p className="opacity-80 mt-2">We help agencies, startups, and enterprises go to market faster.</p>
           <div className="mt-5">
-            <a href="/contact" className="px-5 py-3 rounded-md text-white" style={{ backgroundColor: tenant.primaryColor }}>Contact Us</a>
+            <a href="/contact" className="px-5 py-3 rounded-md text-white btn-glow" style={{ backgroundColor: tenant.primaryColor }}>Contact Us</a>
           </div>
         </div>
       </section>
