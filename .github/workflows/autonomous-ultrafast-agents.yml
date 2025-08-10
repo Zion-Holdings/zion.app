@@ -1,0 +1,42 @@
+name: Autonomous Ultrafast Agents
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch: {}
+
+jobs:
+  run-ultrafast:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install deps
+        run: npm ci
+      - name: Build
+        run: npm run build --if-present
+      - name: Content Freshness
+        run: node automation/autonomous-content-freshness.cjs
+      - name: Changelog Summarizer
+        run: node automation/autonomous-changelog-summarizer.cjs
+      - name: RSS Generator
+        env:
+          SELF_BASE_URL: ${{ secrets.SELF_BASE_URL || 'https://zion.app' }}
+        run: node automation/autonomous-rss-generator.cjs
+      - name: Commit and push
+        run: |
+          git config user.name "zion-bot"
+          git config user.email "bot@zion.app"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore(autonomous-ultrafast): freshness, changelog, rss"
+            git push
+          fi
