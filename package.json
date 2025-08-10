@@ -14,7 +14,7 @@
     "node": ">=20.18.1",
     "npm": ">=10.0.0"
   },
-  "scripts": {
+    "scripts": {
     "deps:maintain": "node automation/dependency-update-orchestrator.cjs",
     "deps:cron:start": "bash automation/dependency-maintenance-cron.sh",
     "sitemap": "node scripts/generate-sitemap.mjs",
@@ -79,7 +79,7 @@
       "automation:discover": "node automation/auto-discovery-runner.cjs",
       "automation:improvement:dev": "nodemon automation/continuous-automation-improvement-system.js",
       "automation:coordinator": "node automation/master-automation-coordinator.js",
-"automation:coordinator:dev": "nodemon automation/master-automation-coordinator.js",
+ "automation:coordinator:dev": "nodemon automation/master-automation-coordinator.js",
     "automation:restart": "node automation/restart-all-automation.js",
     "automation:enhance": "node automation/enhance-all-automation.js",
     "automation:beautify": "node automation/beautify-ui.cjs",
@@ -217,7 +217,8 @@
     "git:pull": "node automation/git-pull-rebase.cjs",
     "git:cron:start": "bash automation/git-sync-cron.sh start",
     "git:cron:stop": "bash automation/git-sync-cron.sh stop",
-    "git:cron:status": "bash automation/git-sync-cron.sh status"
+    "git:cron:status": "bash automation/git-sync-cron.sh status",
+    "homepage:update": "node automation/homepage-updater.cjs"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
