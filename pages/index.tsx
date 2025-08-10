@@ -3,6 +3,7 @@ import Head from 'next/head';
 import FuturisticHero from '../components/ui/FuturisticHero';
 import FeatureGrid from '../components/ui/FeatureGrid';
 import ServicesGrid from '../components/ui/ServicesGrid';
+import AutomationShowcase from '../components/ui/AutomationShowcase';
 
 const Home: NextPage = () => {
   return (
@@ -15,6 +16,7 @@ const Home: NextPage = () => {
         <FuturisticHero />
         <FeatureGrid />
         <ServicesGrid />
+        <AutomationShowcase />
       </div>
     </>
   );
