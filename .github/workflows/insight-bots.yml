@@ -33,6 +33,16 @@ jobs:
       - name: Generate changelog
         run: npm run auto:changelog --if-present || true
 
+      - name: Generate routes and API indices
+        run: |
+          npm run auto:routes --if-present || true
+          npm run auto:api-index --if-present || true
+
+      - name: Generate dependency and link reports
+        run: |
+          npm run auto:deps-report --if-present || true
+          npm run auto:link-report --if-present || true
+
       - name: Generate TODO index and optional issues
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

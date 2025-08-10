@@ -32,6 +32,11 @@ jobs:
           npm run auto:fix --if-present || true
           npm run auto:source-tree --if-present || true
           npm run auto:changelog --if-present || true
+          npm run auto:routes --if-present || true
+          npm run auto:api-index --if-present || true
+          npm run auto:deps-report --if-present || true
+          npm run auto:link-report --if-present || true
+          npm run auto:module-readmes --if-present || true
 
       - name: Configure git user
         run: |
