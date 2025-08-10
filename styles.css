@@ -72,6 +72,12 @@ h3 { font-size: 1.1rem; }
 
 .content { display: grid; gap: 16px; margin-top: 16px; }
 
+.highlights-grid { display: grid; gap: 16px; grid-template-columns: 1fr; padding: 0 22px 22px; }
+@media (min-width: 720px) {
+  .highlights-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.highlights-grid h3 { margin: 0 0 6px; color: #c4b5fd; }
+
 .card-grid { display: grid; gap: 16px; grid-template-columns: repeat(12, 1fr); }
 .card-grid > .section-header { grid-column: 1 / -1; }
 .project-card { grid-column: span 12; display: grid; grid-template-rows: auto auto; }
