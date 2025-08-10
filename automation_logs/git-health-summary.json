@@ -2,18 +2,19 @@
   "ok": true,
   "errors": [],
   "warnings": [
-    "No upstream configured for current branch."
+    "No upstream configured for current branch.",
+    "Set upstream to origin/cursor/build-investor-matchmaking-tool-37fa."
   ],
   "checks": {
     "user": {
       "name": "Cursor Agent",
       "email": "cursoragent@cursor.com"
     },
-    "origin": "origin\thttps://x-access-token:ghs_qNBaeg2v14LuMC4IBKBjGq0T4N5gyr2FojDs@github.com/Zion-Holdings/zion.app (fetch)\norigin\thttps://x-access-token:ghs_qNBaeg2v14LuMC4IBKBjGq0T4N5gyr2FojDs@github.com/Zion-Holdings/zion.app (push)",
+    "origin": "origin\thttps://x-access-token:ghs_MvlRpXkYffreNQF8jUrOZ4sCN4RatT0Gr3Kf@github.com/Zion-Holdings/zion.app (fetch)\norigin\thttps://x-access-token:ghs_MvlRpXkYffreNQF8jUrOZ4sCN4RatT0Gr3Kf@github.com/Zion-Holdings/zion.app (push)",
     "fsck": {
       "status": 0,
-      "output": ""
+      "output": "dangling tree 6340c53edfbf9c58b139b67d9fb5bb03fb58b003\n"
     },
-    "working": "dirty"
+    "working": "clean"
   }
 }
