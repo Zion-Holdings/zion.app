@@ -16,6 +16,10 @@ export default function Home() {
             <Link href="/automation/governance-pulse"><a className="px-6 py-3 rounded-md bg-gray-900/10 dark:bg-white/10 font-semibold">Governance Pulse</a></Link>
             <Link href="/automation/arxiv-research"><a className="px-6 py-3 rounded-md bg-gray-900/10 dark:bg-white/10 font-semibold">ArXiv Research</a></Link>
             <Link href="/automation/remote-roles"><a className="px-6 py-3 rounded-md bg-gray-900/10 dark:bg-white/10 font-semibold">Remote Roles</a></Link>
+            <Link href="/automation/github-agent-repos"><a className="px-6 py-3 rounded-md bg-gray-900/10 dark:bg-white/10 font-semibold">GitHub Agent Repos</a></Link>
+            <Link href="/automation/hf-datasets"><a className="px-6 py-3 rounded-md bg-gray-900/10 dark:bg-white/10 font-semibold">HF Datasets</a></Link>
+            <Link href="/automation/agentic-news"><a className="px-6 py-3 rounded-md bg-gray-900/10 dark:bg-white/10 font-semibold">Agentic News</a></Link>
+            <Link href="/automation/github-contributors"><a className="px-6 py-3 rounded-md bg-gray-900/10 dark:bg-white/10 font-semibold">GitHub Contributors</a></Link>
           </div>
         </div>
       </section>

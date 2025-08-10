@@ -32,6 +32,10 @@ export default function AutomationHub() {
           <FeatureCard title="HF Spaces" href="/automation/hf-spaces" desc="Trending agent Spaces on Hugging Face." />
           <FeatureCard title="DAO Leaderboard" href="/automation/dao-leaderboard" desc="Ranked by recent Snapshot participation." />
           <FeatureCard title="Roadmap Issues" href="/automation/roadmap-issues" desc="Open roadmap/feature/bug issues." />
+          <FeatureCard title="GitHub Agent Repos" href="/automation/github-agent-repos" desc="New agent repos trending by stars." />
+          <FeatureCard title="HF Datasets" href="/automation/hf-datasets" desc="Datasets for agents/governance/DAO." />
+          <FeatureCard title="Agentic News" href="/automation/agentic-news" desc="Latest agent/AI governance headlines." />
+          <FeatureCard title="GitHub Contributors" href="/automation/github-contributors" desc="Recent contributors to this repo." />
         </div>
       </div>
     </EnhancedLayout>
