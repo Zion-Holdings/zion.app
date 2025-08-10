@@ -1,0 +1,56 @@
+name: TODO Issue Sync
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  sync-todos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install deps (minimal)
+        run: npm ci --omit=dev || npm ci
+
+      - name: Generate TODO report
+        run: node scripts/automations/todo_issue_sync.cjs
+
+      - name: Commit and push report
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "docs(todo): update TODO sync report [skip ci]"
+            git push origin HEAD:main || git push origin HEAD
+          fi
+
+      - name: Create or update TODO Issue
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          TITLE="Automated TODO/FIXME/NOTE Sync"
+          BODY_FILE="docs/TODO_SYNC.md"
+          if [ ! -f "$BODY_FILE" ]; then echo "No report file found"; exit 0; fi
+          BODY=$(cat "$BODY_FILE")
+          ISSUE_NUMBER=$(gh issue list --search "$TITLE in:title" --state open --json number --jq '.[0].number' || true)
+          if [ -z "$ISSUE_NUMBER" ]; then
+            gh issue create --title "$TITLE" --body "$BODY" --label automation || true
+          else
+            gh issue edit "$ISSUE_NUMBER" --body "$BODY" || true
+          fi
