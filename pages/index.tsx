@@ -38,6 +38,12 @@ export default function Home() {
         <li>
           <strong>Image Optimization</strong>: Public assets compressed daily for faster loads.
         </li>
+        <li>
+          <strong>Accessibility Audits</strong>: Automated axe audits published with each run.
+          <div>
+            <a href="/reports/a11y/latest.json">Latest a11y report</a>
+          </div>
+        </li>
       </ul>
 
       <p>
