@@ -1,0 +1,52 @@
+name: Spell and Style Guard
+
+on:
+  pull_request:
+  schedule:
+    - cron: '0 */12 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install linters
+        run: |
+          npm -y init -f >/dev/null 2>&1 || true
+          npm i -D cspell@^8 markdownlint-cli@^0.39
+
+      - name: Run cspell
+        run: npx cspell "**/*.*" --no-progress --no-must-find-files || true
+
+      - name: Run markdownlint
+        run: npx markdownlint "**/*.md" || true
+
+      - name: Create issue on violations
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = `Spelling or style issues detected (${new Date().toISOString()})`;
+            const body = `Automated spell/style check reported problems. See workflow logs.`;
+            try {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: ['automated', 'lint']
+              });
+            } catch (e) {
+              core.warning('Failed to create issue: ' + e.message);
+            }

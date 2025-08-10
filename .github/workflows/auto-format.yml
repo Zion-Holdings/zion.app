@@ -1,0 +1,38 @@
+name: Auto Format
+
+on:
+  schedule:
+    - cron: '13 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Prettier
+        run: npm i -g prettier
+
+      - name: Run Prettier
+        run: |
+          prettier --write "**/*.{html,css,js,json,md,yml,yaml}" || true
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore(format): automated code formatting'
+          branch: main
+          commit_user_name: zion-bot
+          commit_user_email: bot@users.noreply.github.com
+          commit_author: zion-bot <bot@users.noreply.github.com>

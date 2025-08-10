@@ -1,0 +1,45 @@
+name: Synthetic Uptime
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Compute URL
+        id: url
+        run: |
+          echo "url=https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}" >> $GITHUB_OUTPUT
+
+      - name: Ping site
+        id: ping
+        continue-on-error: true
+        run: |
+          curl -sSIL --max-time 15 ${{ steps.url.outputs.url }} | cat
+
+      - name: Create issue on failure
+        if: steps.ping.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const url = `${{ steps.url.outputs.url }}`;
+            const title = `Uptime probe failed: ${url}`;
+            const body = `Automated synthetic check could not reach ${url}. Investigate deployment status or DNS.`;
+            try {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: ['automated', 'uptime']
+              });
+            } catch (e) {
+              core.warning('Failed to create issue: ' + e.message);
+            }

@@ -67,6 +67,25 @@ function validate() {
   return ok;
 }
 
+async function postWaitlist(payload) {
+  const endpoints = [
+    '/.netlify/functions/waitlist',
+  ];
+  for (const url of endpoints) {
+    try {
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (res.ok) return true;
+    } catch (_) {
+      // try next
+    }
+  }
+  return false;
+}
+
 if (form && submitBtn && successEl) {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -86,11 +105,14 @@ if (form && submitBtn && successEl) {
     };
 
     try {
-      // Replace this with your real endpoint.
-      await new Promise(res => setTimeout(res, 900));
-      console.log('Waitlist payload', payload);
-      successEl.textContent = 'Thanks! You are on the waitlist. We will be in touch shortly.';
-      form.reset();
+      const ok = await postWaitlist(payload);
+      if (ok) {
+        successEl.textContent = 'Thanks! You are on the waitlist. We will be in touch shortly.';
+        form.reset();
+      } else {
+        successEl.textContent = 'Submitted locally. Backend not configured yet.';
+        console.log('Waitlist payload (no backend)', payload);
+      }
     } catch (err) {
       successEl.textContent = 'Something went wrong. Please try again.';
       console.error(err);
