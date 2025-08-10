@@ -252,3 +252,15 @@
   path = "/.netlify/functions/image_audit"
   schedule = "45 3 * * *" # daily at 03:45 UTC
 
+[[scheduled]]
+  path = "/.netlify/functions/a11y_audit"
+  schedule = "10 4 * * *" # daily at 04:10 UTC
+
+[[scheduled]]
+  path = "/.netlify/functions/security_headers_audit"
+  schedule = "20 4 * * *" # daily at 04:20 UTC
+
+[[scheduled]]
+  path = "/.netlify/functions/rss_health"
+  schedule = "*/30 * * * *" # every 30 minutes
+

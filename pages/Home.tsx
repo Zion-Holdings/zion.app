@@ -8,7 +8,7 @@ export default function Home() {
       <section className="mt-16 border-t pt-10">
         <h2 className="text-2xl font-bold mb-4">Autonomous Cloud Automations</h2>
         <p className="text-gray-600 mb-6">These automations run continuously in the cloud without human intervention, improving the site and publishing results.</p>
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 list-disc pl-5">
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 list-disc pl-5">
           <li>
             <strong>Marketing (LinkedIn)</strong> – posts latest blog updates automatically.
             {' '}<Link className="text-blue-600 underline" href="/api/health">Status</Link>
@@ -32,6 +32,18 @@ export default function Home() {
           <li>
             <strong>Image Audit</strong> – verifies optimal formats and sizes.
             {' '}<Link className="text-blue-600 underline" href="https://github.com/Zion-Holdings/zion.app/tree/main/data/reports/image-audit" target="_blank">View reports</Link>
+          </li>
+          <li>
+            <strong>Accessibility Audit</strong> – PSI-based a11y scores across key pages.
+            {' '}<Link className="text-blue-600 underline" href="https://github.com/Zion-Holdings/zion.app/tree/main/data/reports/a11y" target="_blank">View reports</Link>
+          </li>
+          <li>
+            <strong>Security Headers</strong> – checks CSP, X-Frame-Options, and more.
+            {' '}<Link className="text-blue-600 underline" href="https://github.com/Zion-Holdings/zion.app/tree/main/data/reports/security" target="_blank">View reports</Link>
+          </li>
+          <li>
+            <strong>RSS Health</strong> – validates /feed.xml regularly.
+            {' '}<Link className="text-blue-600 underline" href="https://github.com/Zion-Holdings/zion.app/tree/main/data/reports/rss" target="_blank">View reports</Link>
           </li>
         </ul>
       </section>
