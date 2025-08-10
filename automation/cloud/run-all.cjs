@@ -26,5 +26,6 @@ run('automation/cloud/broken-link-fix.cjs');
 run('automation/cloud/market-rate-aggregator.cjs');
 run('automation/cloud/analytics-snapshot.cjs');
 run('automation/cloud/ping-sitemaps.cjs');
+run('automation/cloud/keyword-gap-analyzer.cjs');
 
 console.log('\n[cloud] All autonomous tasks attempted.');
