@@ -1,5 +1,7 @@
-# Node & Next.js
+# Dependencies
 node_modules/
+
+# Next.js
 .next/
 out/
 
@@ -15,3 +17,8 @@ automation/logs/
 .DS_Store
 *.swp
 .vscode/
+Thumbs.db
+
+# Env
+.env
+.env.*.local

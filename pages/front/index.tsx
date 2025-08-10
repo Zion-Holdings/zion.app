@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
-export default function MainFrontIndexRedirect() {
+export default function FrontIndexRedirect() {
   const router = useRouter();
   useEffect(() => {
     router.replace('/');
