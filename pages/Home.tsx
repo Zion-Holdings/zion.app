@@ -49,6 +49,28 @@ export default function Home() {
       </section>
 
       <section className="mt-16">
+        <h3 className="text-xl font-semibold mb-3">SEO & Integrity Automations</h3>
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 list-disc pl-5">
+          <li>
+            <strong>Canonical Tag Audit</strong>
+            {' '}<Link className="text-blue-600 underline" href="https://github.com/Zion-Holdings/zion.app/tree/main/data/reports/seo/canonical" target="_blank">View reports</Link>
+          </li>
+          <li>
+            <strong>Structured Data Audit</strong>
+            {' '}<Link className="text-blue-600 underline" href="https://github.com/Zion-Holdings/zion.app/tree/main/data/reports/seo/structured-data" target="_blank">View reports</Link>
+          </li>
+          <li>
+            <strong>Sitemap Integrity</strong>
+            {' '}<Link className="text-blue-600 underline" href="https://github.com/Zion-Holdings/zion.app/tree/main/data/reports/sitemap" target="_blank">View reports</Link>
+          </li>
+          <li>
+            <strong>Robots.txt Enforcer</strong>
+            {' '}<Link className="text-blue-600 underline" href="/robots.txt" target="_blank">View robots.txt</Link>
+          </li>
+        </ul>
+      </section>
+
+      <section className="mt-16">
         <h3 className="text-xl font-semibold mb-3">More Autonomous Audits</h3>
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 list-disc pl-5">
           <li>
