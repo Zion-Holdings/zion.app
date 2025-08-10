@@ -79,18 +79,30 @@ jobs:
             --output=json --output=html \
             --output-path=data/reports/performance/lighthouse-mobile-$TS || true
 
+      - name: Image audit
+        run: node scripts/image-audit.mjs || true
+
+      - name: Link check (on export)
+        run: node scripts/link-checker.mjs || true
+
       - name: Publish reports to public for site links
         run: |
-          mkdir -p public/reports/performance public/reports/security
+          mkdir -p public/reports/performance public/reports/security public/reports/images public/reports/links
           cp -n data/reports/performance/*.html public/reports/performance/ 2>/dev/null || true
           cp -n data/reports/security/*.json public/reports/security/ 2>/dev/null || true
+          cp -n data/reports/images/*.json public/reports/images/ 2>/dev/null || true
+          cp -n data/reports/links/*.txt public/reports/links/ 2>/dev/null || true
 
-      - name: Upload Lighthouse reports
+      - name: Upload reports artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: lighthouse-mobile
-          path: data/reports/performance/lighthouse-mobile-*
+          name: automation-reports
+          path: |
+            data/reports/performance/
+            data/reports/security/
+            data/reports/images/
+            data/reports/links/
           if-no-files-found: ignore
 
       - name: Security audit (npm audit)

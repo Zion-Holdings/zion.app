@@ -40,6 +40,20 @@ export default function Home() {
               <a className="text-blue-600 dark:text-blue-400 text-sm mt-2 inline-block">View security reports →</a>
             </Link>
           </div>
+          <div className="p-4 rounded-lg border border-gray-200 dark:border-neutral-800 bg-white dark:bg-neutral-900">
+            <h3 className="font-medium">Image Size Audit</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Find largest images in `public/` to improve mobile performance.</p>
+            <Link href="/reports/images/">
+              <a className="text-blue-600 dark:text-blue-400 text-sm mt-2 inline-block">View image audit reports →</a>
+            </Link>
+          </div>
+          <div className="p-4 rounded-lg border border-gray-200 dark:border-neutral-800 bg-white dark:bg-neutral-900">
+            <h3 className="font-medium">Broken Link Checker</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Crawls the exported site to detect broken links.</p>
+            <Link href="/reports/links/">
+              <a className="text-blue-600 dark:text-blue-400 text-sm mt-2 inline-block">View link check reports →</a>
+            </Link>
+          </div>
         </div>
       </section>
     </div>

@@ -16,6 +16,16 @@ export default function Automation() {
             <a className="text-blue-600 dark:text-blue-400">Security Audit Reports</a>
           </Link>
         </li>
+        <li>
+          <Link href="/reports/images/">
+            <a className="text-blue-600 dark:text-blue-400">Image Audit Reports</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/reports/links/">
+            <a className="text-blue-600 dark:text-blue-400">Link Checker Reports</a>
+          </Link>
+        </li>
       </ul>
     </div>
   );
