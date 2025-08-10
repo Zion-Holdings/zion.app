@@ -20,7 +20,7 @@ function ensureContentForPage(filePath) {
   const content = fs.existsSync(filePath) ? fs.readFileSync(filePath, 'utf8') : '';
   if (content.trim().length > 30) return false; // has content
   const rel = filePath.split('pages')[1] || filePath;
-  const title = rel.replace(/\\.tsx$/, '').replace(/\\//g, ' ').trim() || 'Page';
+  const title = rel.replace(/\.tsx$/, '').replace(/[\\/]+/g, ' ').trim() || 'Page';
   const component = `import React from 'react';\nexport default function Page() {\n  return (\n    <main className=\"min-h-screen bg-black text-zinc-100 p-8\">\n      <section className=\"prose prose-invert max-w-3xl mx-auto\">\n        <h1>${title}</h1>\n        <p>Auto-healed placeholder. Replace with real content.</p>\n      </section>\n    </main>\n  );\n}\n`;
   fs.writeFileSync(filePath, component, 'utf8');
   return true;
