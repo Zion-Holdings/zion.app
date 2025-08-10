@@ -76,6 +76,8 @@
     "autonomous:orchestrator": "node automation/autonomous-automation-orchestrator.js",
     "autonomous:cron": "bash automation/autonomous-error-cron-system.sh run",
     "autonomous:cron:start": "bash automation/autonomous-error-cron-system.sh start",
+    "autonomous:cloud": "node automation/intelligent-autonomous-orchestrator.cjs",
+    "autonomous:curate": "node automation/ai-content-curator.cjs",
     "autonomous:cron:stop": "bash automation/autonomous-error-cron-system.sh stop",
     "autonomous:cron:status": "bash automation/autonomous-error-cron-system.sh status",
     "autonomous:cron:fix": "bash automation/autonomous-error-cron-system.sh fix",
