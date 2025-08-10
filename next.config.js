@@ -12,6 +12,11 @@ module.exports = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  async redirects() {
+    return [
+      { source: '/zion/gitbook', destination: '/docs/gitbook', permanent: true },
+    ];
+  },
   webpack: (config) => {
     // Support TS path alias '@/...' by mapping it to the project root
     config.resolve = config.resolve || {};
