@@ -1518,6 +1518,27 @@ export default function MainFrontIndex() {
           </div>
         </motion.section>
 
+        {/* Quick Links */}
+        <section className="mx-auto max-w-7xl px-6 pb-12" id="quick-links">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+            <a href="/features" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-5 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="text-base font-semibold">Features</div>
+              <div className="mt-1 text-sm text-white/75">What Zion offers at a glance</div>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
+            </a>
+            <a href="/capabilities" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-5 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="text-base font-semibold">Capabilities</div>
+              <div className="mt-1 text-sm text-white/75">End‑to‑end system capabilities</div>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
+            </a>
+            <a href="/benefits" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-5 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="text-base font-semibold">Benefits</div>
+              <div className="mt-1 text-sm text-white/75">Outcomes you can expect</div>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
+            </a>
+          </div>
+        </section>
+
         {/* Benefits Directory */}
         <motion.section
           id="benefits-directory"

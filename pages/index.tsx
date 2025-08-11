@@ -54,7 +54,7 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/automation"><a className="rounded-xl bg-gradient-to-r from-fuchsia-500 to-cyan-500 px-6 py-3 font-semibold shadow-[0_0_30px_rgba(34,211,238,0.35)] hover:shadow-[0_0_40px_rgba(34,211,238,0.6)] transition-shadow">Explore Automations</a></Link>
-              <a href="https://github.com/Zion-Holdings/zion.app/actions/workflows/autonomous-meta.yml" target="_blank" rel="noopener" className="rounded-xl border border-white/20 bg-white/5 px-6 py-3 font-semibold backdrop-blur-md hover:bg-white/10">Live Meta Factory</a>
+              <a href="/.netlify/functions/front-enhancer" target="_blank" rel="noopener" className="rounded-xl border border-white/20 bg-white/5 px-6 py-3 font-semibold backdrop-blur-md hover:bg-white/10">Live Front Enhancer</a>
             </div>
 
             {/* Futuristic info strip */}
@@ -179,6 +179,9 @@ export default function Home() {
             {[
               { title: 'Front Systems Hub', desc: 'A curated, futuristic front experience.', href: '/main/front' },
               { title: 'Automation Hub', desc: 'Factories, agents, and live workflows.', href: '/automation' },
+              { title: 'Features', desc: 'What Zion offers at a glance.', href: '/features' },
+              { title: 'Capabilities', desc: 'End-to-end system capabilities.', href: '/capabilities' },
+              { title: 'Benefits', desc: 'Outcomes you can expect.', href: '/benefits' },
               { title: 'Site Health', desc: 'A11y, performance, and link integrity.', href: '/site-health' },
               { title: 'SEO Audit', desc: 'Continuous on‑site improvements and artifacts.', href: '/reports/seo' },
               { title: 'AI Trends', desc: 'Ecosystem signals that inspire new factories.', href: '/reports/ai-trends' },
