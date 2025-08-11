@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-11T23:30:19.284Z",
+  "generatedAt": "2025-08-11T23:34:38.275Z",
   "functions": [
     "a11y-alt-text-runner",
     "ai-changelog-runner",
@@ -18,6 +18,7 @@
     "deps-auto-upgrade-runner",
     "docs-index-runner",
     "docs-search-index-runner",
+    "duplicate-assets-scanner",
     "external-link-check-runner",
     "fast-front-promoter",
     "fast-orchestrator",
@@ -41,6 +42,7 @@
     "hyper-front-index-accelerator",
     "image-optimizer-runner",
     "innovation-lab",
+    "large-image-auditor",
     "link-and-health-scheduler",
     "link-crawler",
     "maintenance-scheduler",
@@ -57,6 +59,7 @@
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",
+    "route-map-generator",
     "schedule-content-index",
     "schedule-homepage",
     "schedule-knowledge-graph",
