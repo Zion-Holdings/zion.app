@@ -27,7 +27,7 @@ async function validateAnchors(base, url, html) {
     if (href.startsWith('#')) {
       const id = href.slice(1);
       if (!id) continue;
-      if ($(`#${CSS.escape ? CSS.escape(id) : id}`).length === 0 && $(`[name="${id}"]`).length === 0) {
+      if ($(`#${id}`).length === 0 && $(`[name="${id}"]`).length === 0) {
         issues.push({ type: 'missing-anchor', message: 'Anchor target not found on page', url, href });
       }
     } else if (/^\/?[^?#]+#/.test(href)) {
