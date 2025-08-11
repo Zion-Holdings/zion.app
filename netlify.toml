@@ -109,3 +109,28 @@
 [[scheduled.functions]]
   name = "og-meta-auditor"
   schedule = "*/10 * * * *" # every 10 minutes
+
+# Newly added orchestrators
+[[scheduled.functions]]
+  name = "codebase-hygiene-orchestrator"
+  schedule = "0 */4 * * *" # every 4 hours
+
+[[scheduled.functions]]
+  name = "media-integrity-orchestrator"
+  schedule = "*/30 * * * *" # every 30 minutes
+
+[[scheduled.functions]]
+  name = "knowledge-graph-orchestrator"
+  schedule = "0 */6 * * *" # every 6 hours
+
+[[scheduled.functions]]
+  name = "ai-newsroom-orchestrator"
+  schedule = "15 */3 * * *" # every 3 hours
+
+[[scheduled.functions]]
+  name = "netlify-auto-healer-runner"
+  schedule = "0 * * * *" # hourly
+
+[[scheduled.functions]]
+  name = "sitemap-and-seo-orchestrator"
+  schedule = "0 */6 * * *" # every 6 hours
