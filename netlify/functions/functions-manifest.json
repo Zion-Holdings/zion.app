@@ -2,6 +2,7 @@
   "generatedAt": "2025-08-11T23:03:51.129Z",
   "functions": [
     "ai-changelog-runner",
+    "automation-insights-runner",
     "auto-scheduler",
     "automation-matrix",
     "autonomous-invention-orchestrator",

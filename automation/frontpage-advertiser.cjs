@@ -15,6 +15,7 @@ function detectLinks(root) {
     { href: '/site-health', title: 'Site Health', desc: 'A11y, performance, and link integrity' },
     { href: '/reports/seo', title: 'SEO Audit', desc: 'Continuous on‑site improvements' },
     { href: '/reports/ai-trends', title: 'AI Trends', desc: 'Ecosystem intelligence signals' },
+    { href: '/reports/automation-insights', title: 'Automation Insights', desc: 'Coverage, health & activity signals' },
     { href: '/newsroom', title: 'Newsroom', desc: 'Autonomous updates & evolution' },
     { href: '/main/front', title: 'Front Systems Hub', desc: 'Curated futuristic front experience' },
   ];
@@ -23,7 +24,8 @@ function detectLinks(root) {
     const parts = check.split('/').filter(Boolean);
     const candidateIndex = path.join(pagesDir, ...parts, 'index.tsx');
     const candidatePage = path.join(pagesDir, ...parts) + '.tsx';
-    if (fileExists(candidateIndex) || fileExists(candidatePage)) links.push({ type: 'internal', ...i });
+    const candidatePublic = path.join(root, 'public', ...parts, 'index.html');
+    if (fileExists(candidateIndex) || fileExists(candidatePage) || fileExists(candidatePublic)) links.push({ type: 'internal', ...i });
   });
 
   const pkgPath = path.join(root, 'package.json');

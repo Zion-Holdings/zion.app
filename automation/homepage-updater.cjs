@@ -27,6 +27,14 @@ function buildItems(repoUrl, workspaceRoot) {
     if (fileExists(c.check)) items.push({ type: 'internal', href: c.href, label: c.label });
   });
 
+  // Public reports detection (static outputs)
+  const publicCandidates = [
+    { href: '/reports/automation-insights', label: 'Automation Insights — health & coverage', check: path.join(workspaceRoot, 'public', 'reports', 'automation-insights', 'index.html') },
+  ];
+  publicCandidates.forEach((c) => {
+    if (fileExists(c.check)) items.push({ type: 'internal', href: c.href, label: c.label });
+  });
+
   // Replace external GitHub links with internal live tools
   items.push({ type: 'internal', href: '/.netlify/functions/netlify-auto-healer-runner', label: 'Site Health — Netlify Auto‑Healer' });
   items.push({ type: 'internal', href: '/.netlify/functions/docs-index-runner', label: 'Docs — technical notes & guides' });
