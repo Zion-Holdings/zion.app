@@ -893,3 +893,93 @@ info  - Creating an optimized production build...
 [2025-08-08T17:31:54.070Z] $ node automation/git-sync.cjs 
 [2025-08-08T17:31:55.336Z] [git-sync 2025-08-08T17:31:55.332Z] Nothing to commit after staging.
 [2025-08-08T17:31:55.336Z] ✅ Automation Guardian (10m) finished
+[2025-08-11T17:50:03.874Z] 🚀 Automation Guardian (10m) starting
+[2025-08-11T17:50:03.877Z] $ npx eslint . --ext .js,.jsx,.ts,.tsx --fix
+[2025-08-11T17:50:05.464Z] /workspace/netlify/functions/automation-matrix.js
+  34:104  error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+  34:107  error  Empty block statement          no-empty
+  37:93   error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+  37:96   error  Empty block statement          no-empty
+
+/workspace/netlify/functions/fast-front-promoter.js
+  4:10  error  'runNodeScript' is defined but never used  @typescript-eslint/no-unused-vars
+
+/workspace/netlify/functions/features-capabilities-benefits-advertiser.js
+  1:7  error  'path' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/workspace/netlify/functions/front-enhancer.js
+  2:20  error  'execSync' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  4:10  error  'runNode' is defined but never used            @typescript-eslint/no-unused-vars
+
+/workspace/netlify/functions/front-visionary-expander.js
+  1:7  error  'path' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/workspace/netlify/functions/hyper-front-index-accelerator.js
+  1:7  error  'path' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/workspace/netlify/functions/link-crawler.js
+  31:12  error  'e' is defined but never used  @typescript-eslint/no-unused-vars
+
+/workspace/netlify/functions/site-crawler.js
+  35:12  error  'e' is defined but never used  @typescript-eslint/no-unused-vars
+
+/workspace/netlify/functions/trigger-all-and-commit.js
+   1:34  error  'event' is defined but never used    @typescript-eslint/no-unused-vars
+   1:41  error  'context' is defined but never used  @typescript-eslint/no-unused-vars
+  16:12  error  'e' is defined but never used        @typescript-eslint/no-unused-vars
+  78:13  error  Empty block statement                no-empty
+
+/workspace/pages/site-health.tsx
+  11:24  error  Parsing error: Invalid character
+
+/workspace/scripts/generate-readme.js
+  10:12  error  'err' is defined but never used         @typescript-eslint/no-unused-vars
+  24:10  error  'countFiles' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 19 problems (19 errors, 0 warnings)
+[2025-08-11T17:50:05.464Z] $ npm run type-check
+[2025-08-11T17:50:06.267Z] > bolt.new.zion.app@0.1.0 type-check
+> tsc --noEmit
+
+pages/site-health.tsx(11,25): error TS1127: Invalid character.
+pages/site-health.tsx(11,33): error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+pages/site-health.tsx(11,52): error TS17002: Expected corresponding JSX closing tag for 'ul'.
+pages/site-health.tsx(12,11): error TS17002: Expected corresponding JSX closing tag for 'main'.
+pages/site-health.tsx(13,9): error TS17002: Expected corresponding JSX closing tag for 'div'.
+pages/site-health.tsx(14,5): error TS1005: ')' expected.
+pages/site-health.tsx(15,3): error TS1109: Expression expected.
+[2025-08-11T17:50:06.267Z] Type-check failed, attempting quick syntax repair
+[2025-08-11T17:50:06.267Z] $ npm run build
+[2025-08-11T17:50:10.080Z] > bolt.new.zion.app@0.1.0 prebuild
+> npm run netlify:manifest
+
+
+> bolt.new.zion.app@0.1.0 netlify:manifest
+> node scripts/generate-netlify-functions-manifest.cjs
+
+[manifest] Wrote /workspace/netlify/functions/functions-manifest.json with 64 functions.
+
+> bolt.new.zion.app@0.1.0 build
+> NODE_OPTIONS=--openssl-legacy-provider next build
+
+info  - Using webpack 5. Reason: Enabled by default https://nextjs.org/docs/messages/webpack5
+info  - Skipping validation of types...
+info  - Creating an optimized production build...
+[2025-08-11T17:50:10.080Z] Build failed, attempting comprehensive_fix then rebuild
+[2025-08-11T17:50:10.081Z] $ npm run build
+[2025-08-11T17:50:12.995Z] > bolt.new.zion.app@0.1.0 prebuild
+> npm run netlify:manifest
+
+
+> bolt.new.zion.app@0.1.0 netlify:manifest
+> node scripts/generate-netlify-functions-manifest.cjs
+
+[manifest] Wrote /workspace/netlify/functions/functions-manifest.json with 64 functions.
+
+> bolt.new.zion.app@0.1.0 build
+> NODE_OPTIONS=--openssl-legacy-provider next build
+
+info  - Using webpack 5. Reason: Enabled by default https://nextjs.org/docs/messages/webpack5
+info  - Skipping validation of types...
+info  - Creating an optimized production build...
+[2025-08-11T17:50:12.995Z] $ node automation/git-sync.cjs 
