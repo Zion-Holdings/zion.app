@@ -209,11 +209,7 @@
 
 [[scheduled.functions]]
   name = "deps-auto-upgrade-runner"
-<<<<<<< Updated upstream
-  schedule = "7 */12 * * *"
-=======
-  schedule = "0 3 * * *"
->>>>>>> Stashed changes
+  schedule = "7 */12 * * *" # every 12 hours
 
 # New autonomous cloud scanners
 [[scheduled.functions]]
@@ -234,11 +230,7 @@
 
 [[scheduled.functions]]
   name = "pagespeed-insights-runner"
-<<<<<<< Updated upstream
-  schedule = "11 */6 * * *"
-=======
   schedule = "11 */6 * * *" # every 6 hours, offset
->>>>>>> Stashed changes
 
 [[scheduled.functions]]
   name = "knowledge-pack-runner"
@@ -247,8 +239,6 @@
 [[scheduled.functions]]
   name = "adaptive-orchestrator"
   schedule = "*/5 * * * *"
-<<<<<<< Updated upstream
-<<<<<<< HEAD
 
 [[scheduled.functions]]
   name = "site-404-map-runner"
@@ -261,9 +251,6 @@
 [[scheduled.functions]]
   name = "content-freshness-score-runner"
   schedule = "7 */12 * * *"
-=======
->>>>>>> 8cc7475fdf (feat(automation): autonomous front/home advertisers + schedules cleanup [skip ci])
-=======
 
 # Newly added intelligent automations
 [[scheduled.functions]]
@@ -273,4 +260,20 @@
 [[scheduled.functions]]
   name = "internal-link-graph-runner"
   schedule = "*/5 * * * *"
->>>>>>> Stashed changes
+
+# New: Invented automations
+[[scheduled.functions]]
+  name = "llm-content-curator-runner"
+  schedule = "*/15 * * * *"
+
+[[scheduled.functions]]
+  name = "link-sentinel-aggregator-runner"
+  schedule = "*/20 * * * *"
+
+[[scheduled.functions]]
+  name = "site-promo-orchestrator"
+  schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+  name = "auto-discovery-orchestrator"
+  schedule = "*/30 * * * *"
