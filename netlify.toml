@@ -186,3 +186,19 @@
 [[scheduled.functions]]
   name = "auto-scheduler"
   schedule = "*/15 * * * *" # every 15 minutes
+
+[[scheduled.functions]]
+  name = "autonomous-invention-orchestrator"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+  name = "llm-content-curator-runner"
+  schedule = "*/20 * * * *"
+
+[[scheduled.functions]]
+  name = "front-index-advertiser"
+  schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+  name = "auto-media-release-runner"
+  schedule = "0 */4 * * *"
