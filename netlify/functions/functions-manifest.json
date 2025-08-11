@@ -72,6 +72,10 @@
     "ui-enhancer",
     "ultrafast-front-orchestrator",
     "ultrafast-orchestrator",
-    "website-search-index-runner"
+    "website-search-index-runner",
+    "a11y-audit-runner",
+    "alt-text-suggester-runner",
+    "docs-gap-finder-runner",
+    "code-churn-heatmap-runner"
   ]
 }

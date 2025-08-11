@@ -220,3 +220,20 @@
 [[scheduled.functions]]
   name = "branch-cleanup-runner"
   schedule = "0 3 * * *" # daily at 03:00 UTC
+
+# New useful autonomous runners
+[[scheduled.functions]]
+  name = "a11y-audit-runner"
+  schedule = "0 * * * *" # hourly
+
+[[scheduled.functions]]
+  name = "alt-text-suggester-runner"
+  schedule = "0 */2 * * *" # every 2 hours
+
+[[scheduled.functions]]
+  name = "docs-gap-finder-runner"
+  schedule = "*/30 * * * *" # every 30 minutes
+
+[[scheduled.functions]]
+  name = "code-churn-heatmap-runner"
+  schedule = "0 3 * * *" # daily at 03:00 UTC
