@@ -1,59 +1,34 @@
 // Netlify Scheduled Function: Marketing & Features Promo
 // Periodically generates or refreshes homepage promotions and deep links.
 
-const { execFile } = require('child_process');
 const path = require('path');
+const { spawnSync } = require('child_process');
 
-function runNodeScript(scriptRelativePath) {
-  const cwd = path.resolve(__dirname, '../../');
-  const scriptPath = path.resolve(cwd, scriptRelativePath);
-  return new Promise((resolve) => {
-    const startedAt = Date.now();
-    const child = execFile('node', [scriptPath], { cwd, env: process.env }, (error, stdout, stderr) => {
-      resolve({
-        script: scriptRelativePath,
-        ok: !error,
-        code: error ? error.code : 0,
-        durationMs: Date.now() - startedAt,
-        stdout: stdout ? stdout.toString() : '',
-        stderr: stderr ? stderr.toString() : '',
-      });
-    });
-    child.on('error', () => {});
-  });
+function runNode(relPath, args = []) {
+  const abs = path.resolve(__dirname, '..', '..', relPath);
+  const res = spawnSync('node', [abs, ...args], { stdio: 'pipe', encoding: 'utf8' });
+  return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
 }
 
-exports.handler = async function () {
-  const steps = [
-    'automation/site-promo-orchestrator.cjs',
-    'automation/site-promo-analyzer.cjs',
-    'automation/homepage-promo-applier.cjs',
-    'automation/homepage-promo-orchestrator.cjs',
-  ];
-
-  const results = [];
-  for (const step of steps) {
-    try {
-      results.push(await runNodeScript(step));
-    } catch (err) {
-      results.push({ script: step, ok: false, code: -1, durationMs: 0, stdout: '', stderr: String(err) });
-    }
-  }
-
-  const ok = results.every(r => r.ok);
-  return {
-    statusCode: ok ? 200 : 207,
-    headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({
-      engine: 'marketing-and-features-promo',
-      message: ok ? 'Homepage promos updated' : 'Homepage promos updated with warnings',
-      results,
-      timestamp: new Date().toISOString(),
-    }),
-  };
+exports.config = {
+  schedule: '*/15 * * * *', // every 15 minutes
 };
 
-exports.config = {
-  // Run every 2 hours
-  schedule: '0 */2 * * *',
+exports.handler = async () => {
+  const logs = [];
+  function logStep(name, fn) {
+    const { status, stdout, stderr } = fn();
+    logs.push(`\n=== ${name} exit=${status} ===`);
+    if (stdout) logs.push(stdout);
+    if (stderr) logs.push(stderr);
+    return status;
+  }
+
+  logStep('homepage-promo:analyze', () => runNode('automation/homepage-promo-analyzer.cjs'));
+  logStep('homepage-promo:factory', () => runNode('automation/homepage-promo-factory.cjs'));
+  logStep('homepage-promo:apply', () => runNode('automation/homepage-promo-applier.cjs'));
+  logStep('links:scan', () => runNode('automation/site-link-crawler.cjs'));
+  logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
+
+  return { statusCode: 200, body: logs.join('\n') };
 };

@@ -2,6 +2,10 @@
 const { spawn } = require('child_process');
 const path = require('path');
 
+exports.config = {
+  schedule: '*/10 * * * *', // every 10 minutes
+};
+
 function runNodeScript(scriptPath, args = []) {
   return new Promise((resolve) => {
     const child = spawn('node', [scriptPath, ...args], {

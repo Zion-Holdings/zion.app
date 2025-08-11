@@ -1,63 +1,36 @@
 // Netlify Scheduled Function: Frontpage Enhancer
 // Runs homepage advertising and updater automations without GitHub Actions.
 
-const { execFile } = require('child_process');
 const path = require('path');
+const { spawnSync } = require('child_process');
 
-function runNodeScript(scriptRelativePath) {
-  const cwd = path.resolve(__dirname, '../../');
-  const scriptPath = path.resolve(cwd, scriptRelativePath);
-  return new Promise((resolve) => {
-    const startedAt = Date.now();
-    const child = execFile('node', [scriptPath], { cwd, env: process.env }, (error, stdout, stderr) => {
-      resolve({
-        script: scriptRelativePath,
-        ok: !error,
-        code: error ? error.code : 0,
-        durationMs: Date.now() - startedAt,
-        stdout: stdout ? stdout.toString() : '',
-        stderr: stderr ? stderr.toString() : '',
-      });
-    });
-    // Safety timeouts in case a script hangs
-    child.on('error', () => {});
-  });
+function runNode(relPath, args = []) {
+  const abs = path.resolve(__dirname, '..', '..', relPath);
+  const res = spawnSync('node', [abs, ...args], { stdio: 'pipe', encoding: 'utf8' });
+  return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
 }
 
-exports.handler = async function () {
-  const steps = [
-    'automation/homepage-auto-advertiser.cjs',
-    'automation/homepage-updater.cjs',
-    // Optional: design/UI enhancements and Netlify auto healer
-    'automation/design-orchestrator.cjs',
-    'automation/netlify-auto-healer.cjs',
-  ];
-
-  const results = [];
-  for (const step of steps) {
-    // Run sequentially to avoid edit conflicts
-    // If a script is missing, continue gracefully
-    try {
-      results.push(await runNodeScript(step));
-    } catch (err) {
-      results.push({ script: step, ok: false, code: -1, durationMs: 0, stdout: '', stderr: String(err) });
-    }
-  }
-
-  const ok = results.every(r => r.ok);
-  return {
-    statusCode: ok ? 200 : 207,
-    headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({
-      engine: 'frontpage-enhancer',
-      message: ok ? 'Frontpage enhancement completed' : 'Frontpage enhancement completed with warnings',
-      results,
-      timestamp: new Date().toISOString(),
-    }),
-  };
+exports.config = {
+  schedule: '*/5 * * * *', // every 5 minutes
 };
 
-exports.config = {
-  // Run every hour
-  schedule: '0 * * * *',
+exports.handler = async () => {
+  const logs = [];
+  function logStep(name, fn) {
+    logs.push(`\n=== ${name} ===`);
+    const { status, stdout, stderr } = fn();
+    if (stdout) logs.push(stdout);
+    if (stderr) logs.push(stderr);
+    logs.push(`exit=${status}`);
+    return status;
+  }
+
+  // Futurize front visuals and content
+  logStep('front:futurize', () => runNode('automation/front-futurizer.cjs'));
+  // Update auto-generated ads section
+  logStep('front-index:advertise', () => runNode('automation/front-index-advertiser.cjs'));
+  // Best-effort git push to main
+  logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
+
+  return { statusCode: 200, body: logs.join('\n') };
 };
