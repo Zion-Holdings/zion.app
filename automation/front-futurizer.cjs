@@ -13,8 +13,8 @@ function buildGeneratedSection() {
     { title: 'SEO Audit', desc: 'Continuous on‑site improvements and artifacts', href: '/reports/seo' },
     { title: 'AI Trends', desc: 'Signals inspiring new factories and experiments', href: '/reports/ai-trends' },
     { title: 'Newsroom', desc: 'Autonomous updates and product evolution', href: '/newsroom' },
-    { title: 'Documentation', desc: 'Technical notes and guides', href: '/.netlify/functions/docs-index-runner' }
-    { title: 'AI Changelog', desc: 'Summarized autonomous changes and highlights', href: '/newsroom' }
+    { title: 'Documentation', desc: 'Technical notes and guides', href: '/.netlify/functions/docs-index-runner' },
+    { title: 'AI Changelog', desc: 'Summarized autonomous changes and highlights', href: '/newsroom' },
     { title: 'Live Pipelines', desc: 'Observe CI pipelines, logs, and artifacts', href: '/.netlify/functions/netlify-auto-healer-runner' }
   ];
 
