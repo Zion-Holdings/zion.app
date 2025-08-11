@@ -399,6 +399,24 @@ export default function MainFrontIndex() {
           </div>
         </motion.section>
 
+        {/* Autonomous Cloud Runners */}
+        <section id="cloud-runners" className="mx-auto max-w-7xl px-6 pb-14">
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Autonomous Cloud Runners</h2>
+          <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {[ 
+              { title: 'Automation Guardian (10m)', desc: 'Monitors and auto-heals automations; commits fixes safely.', href: '/.netlify/functions/automation-guardian-runner' },
+              { title: 'Components Docs Runner (30m)', desc: 'Regenerates components/docs indexes and README, then pushes.', href: '/.netlify/functions/components-docs-runner' },
+            ].map((tool) => (
+              <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <h3 className="text-lg font-semibold">{tool.title}</h3>
+                <p className="mt-1 text-sm text-white/75">{tool.desc}</p>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+              </a>
+            ))}
+          </div>
+        </section>
+
         {/* Command Center */}
         <section id="command-center" className="mx-auto max-w-7xl px-6 pb-14">
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Command Center</h2>
@@ -1672,7 +1690,7 @@ export default function MainFrontIndex() {
           </div>
         </motion.section>
 
-        {/* AUTO-GENERATED: FRONT_ADS_START */
+        {/* AUTO-GENERATED: FRONT_ADS_START */}
 <section id="auto-promoted" className="mx-auto max-w-7xl px-6 pb-14">
   <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Auto‑Promoted Features</h2>
   <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Continuously curated promos linking to live hubs, reports, and docs.</p>
