@@ -1,0 +1,115 @@
+{
+  "generatedAt": "2025-08-11T23:24:05.260Z",
+  "pagesScanned": 9,
+  "items": [
+    {
+      "route": "/_app",
+      "missing": [
+        "description",
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "_app",
+        "description": "_app — auto-suggested description"
+      }
+    },
+    {
+      "route": "/automation/",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Automation Hub",
+        "description": "Automation Hub — auto-suggested description"
+      }
+    },
+    {
+      "route": "/front/",
+      "missing": [
+        "description",
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "front",
+        "description": "front — auto-suggested description"
+      }
+    },
+    {
+      "route": "/",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Cloud Automations",
+        "description": "Autonomous Cloud Automations — auto-suggested description"
+      }
+    },
+    {
+      "route": "/newsroom",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Newsroom",
+        "description": "Newsroom — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/ai-trends",
+      "missing": [
+        "description",
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "ai trends",
+        "description": "ai trends — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/seo",
+      "missing": [
+        "description",
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "seo",
+        "description": "seo — auto-suggested description"
+      }
+    },
+    {
+      "route": "/site-health",
+      "missing": [
+        "description",
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Site Health",
+        "description": "Site Health — auto-suggested description"
+      }
+    }
+  ]
+}

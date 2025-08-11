@@ -1,3 +1,4 @@
+// netlify/functions/metadata-optimizer-runner.js
 const path = require('path');
 const { spawnSync } = require('child_process');
 
@@ -20,7 +21,7 @@ exports.handler = async () => {
     return status;
   }
 
-  logStep('redirect-healer', () => runNode('automation/redirect-healer.cjs'));
+  logStep('metadata:optimizer', () => runNode('automation/metadata-optimizer.cjs'));
   logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
 
   return { statusCode: 200, body: logs.join('\n') };
