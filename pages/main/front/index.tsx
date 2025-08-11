@@ -149,6 +149,9 @@ export default function MainFrontIndex() {
               { Icon: Rocket, title: 'Generative Factories', desc: 'Spins up domain‑specific automation factories that build for you.' },
               { Icon: ShieldCheck, title: 'Safety by Design', desc: 'Layered validations — type checks, builds, a11y, links, and more.' },
               { Icon: GitBranch, title: 'Main Sync', desc: 'Small, reviewable edits committed and pushed continuously.' },
+              { Icon: Activity, title: 'Live Telemetry', desc: 'Observability with dashboards, traces, and actionable artifacts.' },
+              { Icon: Gauge, title: 'Performance‑Aware', desc: 'Optimizes performance and accessibility budgets continuously.' },
+              { Icon: Layers, title: 'Composable Primitives', desc: 'Re-usable units that chain into higher‑order autonomous systems.' },
             ].map(({ Icon, title, desc }) => (
               <article key={title} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
@@ -163,31 +166,34 @@ export default function MainFrontIndex() {
         {/* Features */}
         <section className="mx-auto max-w-7xl px-6 pb-14">
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Features</h2>
-          <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {[
-              { Icon: Zap, title: 'Self‑Improving', desc: 'Agents continuously analyze, invent, and evolve automations.', href: '/automation' },
-              { Icon: GitBranch, title: 'Repo Sync', desc: 'Changes are committed and pushed automatically to main.', href: '/automation' },
-              { Icon: Cpu, title: 'Zero Ops', desc: 'Runs fully in the cloud—no servers or manual intervention.', href: '/automation' },
-              { Icon: ShieldCheck, title: 'Safety‑First', desc: 'Conservative edits with logs, reports, and guardrails.', href: '/site-health' },
-              { Icon: Gauge, title: 'Observability', desc: 'Dashboards, reports, and GitHub Actions artifacts.', href: '/site-health' },
-              { Icon: Layers, title: 'Composable Systems', desc: 'Chain multiple factories into higher‑order workflows.', href: '/automation' },
-              { Icon: Activity, title: 'AI SEO Auditor', desc: 'Continuously scans pages and proposes SEO improvements.', href: '/reports/seo' },
-              { Icon: Globe, title: 'AI Trends Radar', desc: 'Tracks AI and cloud signals to inspire new automations.', href: '/reports/ai-trends' },
-              { Icon: Search, title: 'Deep Indexing', desc: 'Content and code search powering smart linking and PRs.', href: '/newsroom' },
-            ].map(({ Icon, title, desc, href }) => (
-              <Link key={title} href={href}>
-                <a className="group glow-card relative block overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md hover:border-cyan-400/30">
-                  <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-                  <div className="flex items-center gap-3">
-                    <Icon className="h-5 w-5 text-cyan-300" />
-                    <h3 className="text-lg font-semibold">{title}</h3>
-                  </div>
-                  <p className="mt-2 text-sm text-white/75">{desc}</p>
-                  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Learn more <Link2 className="h-3.5 w-3.5" /></div>
-                </a>
-              </Link>
-            ))}
-          </div>
+                     <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+             {[
+               { Icon: Zap, title: 'Self‑Improving', desc: 'Agents continuously analyze, invent, and evolve automations.', href: '/automation' },
+               { Icon: GitBranch, title: 'Repo Sync', desc: 'Changes are committed and pushed automatically to main.', href: '/automation' },
+               { Icon: Cpu, title: 'Zero Ops', desc: 'Runs fully in the cloud—no servers or manual intervention.', href: '/automation' },
+               { Icon: ShieldCheck, title: 'Safety‑First', desc: 'Conservative edits with logs, reports, and guardrails.', href: '/site-health' },
+               { Icon: Gauge, title: 'Observability', desc: 'Dashboards, reports, and GitHub Actions artifacts.', href: '/site-health' },
+               { Icon: Layers, title: 'Composable Systems', desc: 'Chain multiple factories into higher‑order workflows.', href: '/automation' },
+               { Icon: Activity, title: 'AI SEO Auditor', desc: 'Continuously scans pages and proposes SEO improvements.', href: '/reports/seo' },
+               { Icon: Globe, title: 'AI Trends Radar', desc: 'Tracks AI and cloud signals to inspire new automations.', href: '/reports/ai-trends' },
+               { Icon: Search, title: 'Deep Indexing', desc: 'Content and code search powering smart linking and PRs.', href: '/newsroom' },
+               { Icon: BarChart3, title: 'Analytics & Impact', desc: 'Measure outcomes and ROI from autonomous edits.', href: '/site-health' },
+               { Icon: Palette, title: 'Design Beautifier', desc: 'Applies a cohesive, modern visual language across UI.', href: '/newsroom' },
+               { Icon: LineChart, title: 'Growth Experiments', desc: 'Run micro‑tests with telemetry to validate improvements.', href: '/automation' },
+             ].map(({ Icon, title, desc, href }) => (
+               <Link key={title} href={href}>
+                 <a className="group glow-card relative block overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md hover:border-cyan-400/30">
+                   <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                   <div className="flex items-center gap-3">
+                     <Icon className="h-5 w-5 text-cyan-300" />
+                     <h3 className="text-lg font-semibold">{title}</h3>
+                   </div>
+                   <p className="mt-2 text-sm text-white/75">{desc}</p>
+                   <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Learn more <Link2 className="h-3.5 w-3.5" /></div>
+                 </a>
+               </Link>
+             ))}
+           </div>
         </section>
 
         {/* Use Cases */}
@@ -259,11 +265,14 @@ export default function MainFrontIndex() {
         {/* Why Zion */}
         <section className="mx-auto max-w-7xl px-6 pb-14">
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Why Zion</h2>
-          <div className="mx-auto mt-6 max-w-5xl grid grid-cols-1 gap-4 md:grid-cols-3">
+                     <div className="mx-auto mt-6 max-w-5xl grid grid-cols-1 gap-4 md:grid-cols-3">
             {[
               ['🚀', 'Speed', 'Continuous delivery to main with safe, incremental changes.'],
               ['🛡️', 'Safety', 'Conservative edits and guardrails keep production stable.'],
               ['📈', 'Scale', 'Automatically generates new factories as your needs grow.'],
+              ['⚙️', 'Zero‑Ops', 'No infra to manage; everything runs autonomously in the cloud.'],
+              ['🔍', 'Observability', 'Actionable telemetry, reports, and artifacts for every run.'],
+              ['🎨', 'Design Quality', 'Consistent UX with cohesive, futuristic visual patterns.'],
             ].map(([icon, title, desc]) => (
               <div key={title as string} className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
                 <div className="text-2xl">{icon as string}</div>
@@ -277,7 +286,7 @@ export default function MainFrontIndex() {
         {/* Benefits */}
         <section className="mx-auto max-w-7xl px-6 pb-20">
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Benefits</h2>
-          <div className="mx-auto mt-6 max-w-4xl grid grid-cols-1 gap-3 md:grid-cols-2">
+                     <div className="mx-auto mt-6 max-w-4xl grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
             {[
               '24/7 progress without human intervention',
               'Rapid feedback loop with safe, incremental edits',
@@ -288,6 +297,9 @@ export default function MainFrontIndex() {
               'Consistent design language and UX quality',
               'Transparent artifacts and live workflow logs',
               'Faster experiment velocity with measurable impact',
+              'Improved security posture with routine dependency upgrades',
+              'Happier developers with fewer toil tasks',
+              'Clear traceability with commit‑level artifacts',
             ].map((b) => (
               <div key={b} className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-md">
                 <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]" />

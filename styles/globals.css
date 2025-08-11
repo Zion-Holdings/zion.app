@@ -105,3 +105,8 @@ html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 .animate-marquee {
   animation: marquee 28s linear infinite;
 }
+
+/* Futuristic extras */
+.neon-ring { box-shadow: 0 0 0 1px rgba(34,211,238,.25), 0 0 28px rgba(34,211,238,.25) inset; }
+.drop-shadow-neon-strong { filter: drop-shadow(0 0 18px rgba(34,211,238,.45)) drop-shadow(0 0 28px rgba(168,85,247,.35)); }
+.marquee__track { min-width: 200%; }
