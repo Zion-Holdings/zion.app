@@ -16,6 +16,8 @@ concurrency:
 jobs:
   run:
     runs-on: ubuntu-latest
+    env:
+      NETLIFY_BASE_URL: ${{ secrets.NETLIFY_BASE_URL }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -45,11 +47,9 @@ jobs:
           git pull --rebase origin "$BRANCH" || true
 
       - name: Run Netlify trigger (live)
-        if: ${{ secrets.NETLIFY_BASE_URL != '' }}
-        env:
-          NETLIFY_BASE_URL: ${{ secrets.NETLIFY_BASE_URL }}
+        if: ${{ env.NETLIFY_BASE_URL != '' }}
         run: npm run netlify:trigger -- --concurrency 10 --timeout 15000
 
       - name: Run Netlify trigger (dry-run fallback)
-        if: ${{ secrets.NETLIFY_BASE_URL == '' }}
+        if: ${{ env.NETLIFY_BASE_URL == '' }}
         run: npm run netlify:trigger -- --dry-run --concurrency 10 --timeout 15000
