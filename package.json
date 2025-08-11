@@ -221,8 +221,10 @@
     "git:cron:start": "bash automation/git-sync-cron.sh start",
     "git:cron:stop": "bash automation/git-sync-cron.sh stop",
     "git:cron:status": "bash automation/git-sync-cron.sh status",
-    "homepage:update": "node automation/homepage-updater.cjs",
-    "scan:todo": "node automation/todo-scanner.cjs",
+          "homepage:update": "node automation/homepage-updater.cjs",
+      "front:futurize": "node automation/front-futurizer.cjs",
+      "front:futurize:cron": "node -e \"const cp=require('child_process'); setInterval(()=>cp.exec('node automation/front-futurizer.cjs',()=>{}), 1000*60*60*6)\"",
+      "scan:todo": "node automation/todo-scanner.cjs",
     "scan:registry": "node automation/docs-pages-indexer.cjs",
     "scan:content": "npm run scan:todo && npm run scan:registry"
   },
