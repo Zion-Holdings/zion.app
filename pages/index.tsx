@@ -59,6 +59,17 @@ export default function Home() {
               <Link href="/site-health"><a className="rounded-xl border border-white/20 bg-white/5 px-6 py-3 font-semibold backdrop-blur-md hover:bg-white/10">Live Meta Factory</a></Link>
             </div>
 
+            <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-3xl mx-auto">
+              <a href="/.netlify/functions/knowledge-pack-runner" className="rounded-xl border border-white/10 bg-white/5 p-4 text-left hover:border-cyan-400/30 transition-colors">
+                <div className="text-sm font-semibold">Knowledge Pack Runner</div>
+                <div className="text-xs text-white/70 mt-1">Generates a live repo knowledge pack JSON every 10m.</div>
+              </a>
+              <a href="/.netlify/functions/adaptive-orchestrator" className="rounded-xl border border-white/10 bg-white/5 p-4 text-left hover:border-cyan-400/30 transition-colors">
+                <div className="text-sm font-semibold">Adaptive Orchestrator</div>
+                <div className="text-xs text-white/70 mt-1">Runs only the most relevant cloud automations every 5m.</div>
+              </a>
+            </div>
+
             {/* Futuristic info strip */}
             <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
               {[
@@ -198,6 +209,8 @@ export default function Home() {
               { title: 'Security Audit Runner', desc: 'Runs security checks and commits actionable findings.', href: '/.netlify/functions/security-audit-runner' },
               { title: 'Docs Index Runner', desc: 'Refreshes docs indexes and README for better discovery.', href: '/.netlify/functions/docs-index-runner' },
               { title: 'Repo Knowledge Graph', desc: 'Regenerates the repository knowledge graph and radar metrics.', href: '/.netlify/functions/repo-knowledge-graph-runner' },
+              { title: 'Knowledge Pack Runner (10m)', desc: 'Generates a live repo knowledge pack JSON and commits it.', href: '/.netlify/functions/knowledge-pack-runner' },
+              { title: 'Adaptive Orchestrator (5m)', desc: 'Triggers only the most relevant cloud functions based on recent changes.', href: '/.netlify/functions/adaptive-orchestrator' },
               { title: 'Image Optimizer', desc: 'Optimizes media assets for performance and quality.', href: '/.netlify/functions/image-optimizer-runner' },
               { title: 'AI Changelog Runner', desc: 'Generates human-friendly release notes automatically.', href: '/.netlify/functions/ai-changelog-runner' },
               { title: 'Newsroom Runner', desc: 'Publishes autonomous product updates to the newsroom.', href: '/.netlify/functions/newsroom-runner' },
@@ -225,6 +238,7 @@ export default function Home() {
           </div>
         </section>
 
+<<<<<<< HEAD
         {/* New: Autonomous Automations */}
         <section className="mx-auto max-w-7xl px-6 pb-14">
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">New Autonomous Automations</h2>
@@ -264,10 +278,26 @@ export default function Home() {
               <p className="mt-1 text-sm text-white/75">Ranks components by lines and bytes to target refactors.</p>
               <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
             </a>
+
+            <a href="/.netlify/functions/license-compliance-auditor" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">License Compliance Auditor</h3>
+              <p className="mt-1 text-sm text-white/75">Scans dependency licenses and flags GPL/AGPL risks with a public report.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>
+
+            <a href="/.netlify/functions/pagespeed-insights-runner" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">PageSpeed Insights Runner</h3>
+              <p className="mt-1 text-sm text-white/75">Calls PSI for key pages (mobile/desktop) and commits metrics to reports.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>
           </div>
         </section>
 
-        {/* AUTO-GENERATED: HOME_UPDATER_START */}
+=======
+>>>>>>> 81e000b0dc (feat(automation): adaptive orchestrator + knowledge pack runner; advertise on homepage; schedule in Netlify)
+        {/* AUTO-GENERATED: HOME_UPDATER_START */
  <section className="mx-auto max-w-7xl px-6 pb-16">
    <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Explore more</h2>
    <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
@@ -284,7 +314,7 @@ export default function Home() {
   
    </div>
  </section>
-         {/* AUTO-GENERATED: HOME_UPDATER_END */}
+ /* AUTO-GENERATED: HOME_UPDATER_END */}
   
          {/* AUTO-GENERATED: HOME_VISIONARY_START */}
 
