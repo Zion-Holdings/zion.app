@@ -83,6 +83,24 @@ export default function AutomationHub() {
             <p className="text-white/70">Finds broken images, optimizes assets, and syncs fixes.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/broken-image-scanner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
+
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">UI Audit Runner</h2>
+            <p className="text-white/70">Crawls key pages for a11y/UX issues and commits reports.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/ui-audit-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Roadmap Curator</h2>
+            <p className="text-white/70">Curates automation ideas from docs and reports into a roadmap.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/roadmap-curator" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Content Curation Lab</h2>
+            <p className="text-white/70">Refreshes curated front indexes, README and search.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/content-curation-lab" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
         </ul>
       </main>
     </div>
