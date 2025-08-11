@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-11T23:03:56.296Z",
+  "generatedAt": "2025-08-11T23:13:23.023Z",
   "functions": [
     "a11y-audit-runner",
     "ai-changelog-runner",
@@ -55,6 +55,7 @@
     "newsroom-auto-publisher",
     "newsroom-runner",
     "og-image-update-runner",
+    "orphan-routes-detector",
     "readme-advertiser",
     "redirect-healer",
     "redirect-manager",
@@ -79,6 +80,7 @@
     "ui-enhancer",
     "ultrafast-front-orchestrator",
     "ultrafast-orchestrator",
+    "unused-assets-scanner",
     "website-search-index-runner"
   ]
 }
