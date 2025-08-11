@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-11T23:02:01.510Z",
+  "generatedAt": "2025-08-11T23:03:56.296Z",
   "functions": [
     "a11y-audit-runner",
     "ai-changelog-runner",
@@ -19,6 +19,7 @@
     "continuous-orchestrator",
     "dead-code-audit",
     "dead-code-report",
+    "deps-auto-upgrade-runner",
     "docs-index-runner",
     "docs-search-index-runner",
     "external-link-check-runner",
@@ -70,6 +71,7 @@
     "site-crawler",
     "sitemap-prioritizer",
     "sitemap_runner",
+    "stale-content-auditor-runner",
     "terminology-consistency-runner",
     "todo-scanner-runner",
     "todo-summary-runner",

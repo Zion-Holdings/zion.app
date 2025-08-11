@@ -240,3 +240,11 @@
 [[scheduled.functions]]
   name = "terminology-consistency-runner"
   schedule = "*/30 * * * *" # every 30 minutes
+
+[[scheduled.functions]]
+  name = "stale-content-auditor-runner"
+  schedule = "17 */6 * * *"
+
+[[scheduled.functions]]
+  name = "deps-auto-upgrade-runner"
+  schedule = "7 */12 * * *"
