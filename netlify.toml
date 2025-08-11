@@ -186,3 +186,19 @@
 [[scheduled.functions]]
   name = "auto-scheduler"
   schedule = "*/15 * * * *" # every 15 minutes
+
+[[scheduled.functions]]
+  name = "branch-cleanup-runner"
+  schedule = "17 3 * * *"
+
+[[scheduled.functions]]
+  name = "deps-auto-upgrade-runner"
+  schedule = "0 4 * * *"
+
+[[scheduled.functions]]
+  name = "auto-media-release-runner"
+  schedule = "0 */6 * * *"
+
+[[scheduled.functions]]
+  name = "llm-content-curator-runner"
+  schedule = "*/30 * * * *"

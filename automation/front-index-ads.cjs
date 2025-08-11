@@ -18,9 +18,14 @@ function buildAds() {
     { title: 'Site Health', desc: 'A11y, performance, and link integrity', href: '/site-health' },
     { title: 'AI Trends', desc: 'Signals that inspire new automations', href: '/reports/ai-trends' },
     { title: 'Newsroom', desc: 'Curated updates and product evolution highlights', href: '/newsroom' },
-    { title: 'Docs & Guides', desc: 'Technical notes and architecture', href: '/.netlify/functions/docs-index-runner' }
-    { title: 'AI Changelog', desc: 'Summarized autonomous changes', href: '/newsroom' }
+    { title: 'Docs & Guides', desc: 'Technical notes and architecture', href: '/.netlify/functions/docs-index-runner' },
+    { title: 'AI Changelog', desc: 'Summarized autonomous changes', href: '/.netlify/functions/ai-changelog-runner' },
     { title: 'Cloud Automations', desc: 'Netlify scheduled functions powering jobs 24/7', href: '/automation' },
+
+    { title: 'Branch Cleanup', desc: 'Auto‑prunes merged and stale branches', href: '/.netlify/functions/branch-cleanup-runner' },
+    { title: 'Deps Auto‑Upgrade', desc: 'Safe minor/patch updates with build checks', href: '/.netlify/functions/deps-auto-upgrade-runner' },
+    { title: 'Auto Media Release', desc: 'Publishes media updates and OG images', href: '/.netlify/functions/auto-media-release-runner' },
+    { title: 'LLM Content Curator', desc: 'Curates content for promos and docs', href: '/.netlify/functions/llm-content-curator-runner' },
   ];
 
   const cards = items.map((item) => (
