@@ -1,0 +1,10 @@
+name: run-functions-and-rerun
+inputs:
+  - name: include
+    description: Comma-separated list of function names to include (exact match)
+  - name: exclude
+    description: Comma-separated list of function names to exclude (exact match)
+  - name: concurrency
+    description: Max number of concurrent function invocations
+  - name: timeoutMs
+    description: Request timeout per function invocation in milliseconds
