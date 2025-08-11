@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-11T22:48:44.985Z",
+  "generatedAt": "2025-08-11T23:00:34.883Z",
   "functions": [
     "a11y-audit-runner",
     "ai-changelog-runner",
@@ -13,6 +13,7 @@
     "branch-cleanup-runner",
     "broken-image-scanner",
     "broken-image-scanner-runner",
+    "cache-warmer",
     "cloud-autonomous-orchestrator-runner",
     "cloud_orchestrator",
     "continuous-front-runner",
