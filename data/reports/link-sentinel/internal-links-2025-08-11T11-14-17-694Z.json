@@ -1,0 +1,57 @@
+{
+  "generatedAt": "2025-08-11T11:14:17.692Z",
+  "totalLinks": 17,
+  "totalRoutes": 8,
+  "missingRoutes": [
+    "/contact",
+    "/products",
+    "/reports/seo/index.html",
+    "/reports/seo/latest.json",
+    "/services",
+    "/services/ai-seo-auditor",
+    "/services/customer-support-chatbot",
+    "/services/landing-page-generator",
+    "/services/price-intelligence-service"
+  ],
+  "links": [
+    "",
+    "/automation",
+    "/contact",
+    "/front",
+    "/main/front",
+    "/newsroom",
+    "/products",
+    "/reports/ai-trends",
+    "/reports/seo",
+    "/reports/seo/index.html",
+    "/reports/seo/latest.json",
+    "/services",
+    "/services/ai-seo-auditor",
+    "/services/customer-support-chatbot",
+    "/services/landing-page-generator",
+    "/services/price-intelligence-service",
+    "/site-health"
+  ],
+  "routes": [
+    "",
+    "/automation",
+    "/front",
+    "/main/front",
+    "/newsroom",
+    "/reports/ai-trends",
+    "/reports/seo",
+    "/site-health"
+  ],
+  "scannedFiles": [
+    "/workspace/pages/_app.tsx",
+    "/workspace/pages/index.tsx",
+    "/workspace/pages/newsroom.tsx",
+    "/workspace/pages/site-health.tsx",
+    "/workspace/pages/reports/ai-trends.tsx",
+    "/workspace/pages/reports/seo.tsx",
+    "/workspace/pages/main/front/index.tsx",
+    "/workspace/pages/front/index.tsx",
+    "/workspace/pages/automation/index.tsx",
+    "/workspace/components/Landing.tsx"
+  ]
+}

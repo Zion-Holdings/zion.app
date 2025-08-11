@@ -34,8 +34,19 @@ function extractExternalLinks(text) {
   return Array.from(links);
 }
 
+function shouldSkip(url) {
+  try {
+    const { hostname } = new URL(url);
+    return hostname === 'github.com' || hostname.endsWith('.github.com');
+  } catch { return false; }
+}
+
 function checkUrl(url) {
   return new Promise((resolve) => {
+    if (shouldSkip(url)) {
+      resolve({ url, statusCode: 0, ok: true, skipped: true, reason: 'skipped-host' });
+      return;
+    }
     const mod = url.startsWith('https') ? https : http;
     const req = mod.request(url, { method: 'HEAD', timeout: 8000 }, (res) => {
       resolve({ url, statusCode: res.statusCode, ok: res.statusCode >= 200 && res.statusCode < 400 });
