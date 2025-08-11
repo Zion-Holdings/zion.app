@@ -23,10 +23,9 @@ function buildTiles() {
     { href: '/newsroom', label: 'Newsroom', tagline: 'Autonomous updates & highlights' },
     { href: 'https://github.com/Zion-Holdings/zion.app/tree/main/docs', label: 'Docs', tagline: 'Technical notes & guides', external: true },
     { href: 'https://github.com/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md', label: 'AI Changelog', tagline: 'Summarized autonomous changes', external: true },
-  ];
-  ];
-
-  return items.map((it) => {
+    ];
+ 
+   return items.map((it) => {
     if (it.external) {
       return `
             <a href="${it.href}" target="_blank" rel="noopener" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-5 text-left text-white/80 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
