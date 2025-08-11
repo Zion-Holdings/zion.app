@@ -110,7 +110,6 @@ async function triggerNextBuild({ buildHookUrl }) {
 }
 
 module.exports = {
-  name: 'run-functions-and-rerun',
   onSuccess: async ({ netlifyConfig, constants, inputs, utils }) => {
     const env = process.env;
 
