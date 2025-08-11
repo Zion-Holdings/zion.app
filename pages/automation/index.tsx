@@ -101,6 +101,21 @@ export default function AutomationHub() {
             <p className="text-white/70">Safely bumps minor/patch deps with build verification.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/deps-auto-upgrade-runner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Design Tokens Curator</h2>
+            <p className="text-white/70">Scans colors across the codebase and publishes a public report.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/design-tokens-curator" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">SEO Title/Meta Curator</h2>
+            <p className="text-white/70">Finds missing or duplicate titles/descriptions and outputs a report.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/seo-title-meta-curator" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Innovation Lab Curator</h2>
+            <p className="text-white/70">Synthesizes new ideas from repo signals and publishes highlights.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/innovation-lab-curator" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
         </ul>
       </main>
     </div>
