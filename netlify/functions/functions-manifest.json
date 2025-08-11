@@ -1,14 +1,11 @@
 {
-<<<<<<< HEAD
-  "generatedAt": "2025-08-11T23:44:51.302Z",
-=======
-  "generatedAt": "2025-08-11T23:46:40.504Z",
->>>>>>> 8cc7475fdf (feat(automation): autonomous front/home advertisers + schedules cleanup [skip ci])
+  "generatedAt": "2025-08-11T23:56:22.519Z",
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
     "ai-changelog-runner",
     "ai-trends-radar-runner",
+    "auto-discovery-runner",
     "auto-scheduler",
     "automation-matrix",
     "autonomous-invention-orchestrator",
@@ -67,6 +64,8 @@
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",
+    "revenue-ideas-lab",
+    "roadmap-curator",
     "schedule-content-index",
     "schedule-homepage",
     "schedule-knowledge-graph",
