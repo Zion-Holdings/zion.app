@@ -101,6 +101,24 @@ export default function AutomationHub() {
             <p className="text-white/70">Safely bumps minor/patch deps with build verification.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/deps-auto-upgrade-runner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
+
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Roadmap Curator</h2>
+            <p className="text-white/70">Generates ROADMAP.md from live schedules and functions.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/roadmap-curator" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Revenue Ideas Lab</h2>
+            <p className="text-white/70">Runs revenue idea agents and commits growth components.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/revenue-ideas-lab" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Auto Discovery Runner</h2>
+            <p className="text-white/70">Discovers new automation opportunities and seeds factories.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/auto-discovery-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
         </ul>
       </main>
     </div>

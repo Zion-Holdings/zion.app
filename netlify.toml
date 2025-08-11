@@ -239,7 +239,6 @@
 [[scheduled.functions]]
   name = "adaptive-orchestrator"
   schedule = "*/5 * * * *"
-<<<<<<< HEAD
 
 [[scheduled.functions]]
   name = "site-404-map-runner"
@@ -252,5 +251,15 @@
 [[scheduled.functions]]
   name = "content-freshness-score-runner"
   schedule = "7 */12 * * *"
-=======
->>>>>>> 8cc7475fdf (feat(automation): autonomous front/home advertisers + schedules cleanup [skip ci])
+
+[[scheduled.functions]]
+  name = "roadmap-curator"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+  name = "revenue-ideas-lab"
+  schedule = "7 */6 * * *"
+
+[[scheduled.functions]]
+  name = "auto-discovery-runner"
+  schedule = "*/15 * * * *"
