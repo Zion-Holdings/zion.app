@@ -48,6 +48,21 @@ function discoverInternalCards() {
     { href: '/reports/ai-trends', label: 'AI Trends Radar', desc: 'Signals that inspire new automations' },
     { href: '/newsroom', label: 'Newsroom', desc: 'Curated updates and product evolution highlights' },
     { href: '/main/front', label: 'Front Systems Hub', desc: 'Curated, futuristic front experience' },
+    // Futuristic front anchors
+    { href: '/main/front#features', label: 'Features', desc: 'Explore capabilities' },
+    { href: '/main/front#feature-map', label: 'Feature Map', desc: 'Overview of the platform' },
+    { href: '/main/front#suites', label: 'Suites', desc: 'Solution bundles' },
+    { href: '/main/front#capabilities', label: 'Capabilities', desc: 'What agents can do' },
+    { href: '/main/front#use-cases', label: 'Use Cases', desc: 'Real scenarios' },
+    { href: '/main/front#pillars', label: 'Pillars', desc: 'Foundational principles' },
+    { href: '/main/front#benefits', label: 'Benefits', desc: 'Outcomes & ROI' },
+    { href: '/main/front#templates', label: 'Templates', desc: 'Futuristic layouts' },
+    { href: '/main/front#demos', label: 'Demos', desc: 'Live examples' },
+    { href: '/main/front#highlights', label: 'Highlights', desc: 'Key improvements' },
+    { href: '/main/front#cases', label: 'Cases', desc: 'Selected case studies' },
+    { href: '/main/front#reports', label: 'Reports', desc: 'Dashboards & artifacts' },
+    { href: '/main/front#guardrails', label: 'Guardrails', desc: 'Safety before shipping' },
+    { href: '/main/front#roadmap', label: 'Docs', desc: 'Technical notes & guides' },
   ];
 
   function existsRoute(route) {
