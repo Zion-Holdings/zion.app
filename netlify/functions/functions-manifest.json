@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "generatedAt": "2025-08-11T23:44:51.302Z",
-=======
-  "generatedAt": "2025-08-11T23:46:40.504Z",
->>>>>>> 8cc7475fdf (feat(automation): autonomous front/home advertisers + schedules cleanup [skip ci])
+  "generatedAt": "2025-08-11T23:53:36.025Z",
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
@@ -20,11 +16,13 @@
     "content-freshness-score-runner",
     "continuous-front-runner",
     "continuous-orchestrator",
+    "contributing-refresher",
     "dead-code-audit",
     "dead-code-report",
     "deps-auto-upgrade-runner",
     "docs-index-runner",
     "docs-search-index-runner",
+    "docs-toc-builder",
     "external-link-check-runner",
     "fast-front-promoter",
     "fast-orchestrator",
@@ -64,6 +62,8 @@
     "orphan-pages-detector",
     "pagespeed-insights-runner",
     "readme-advertiser",
+    "readme-badges-runner",
+    "release-cadence-runner",
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",

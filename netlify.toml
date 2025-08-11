@@ -239,7 +239,6 @@
 [[scheduled.functions]]
   name = "adaptive-orchestrator"
   schedule = "*/5 * * * *"
-<<<<<<< HEAD
 
 [[scheduled.functions]]
   name = "site-404-map-runner"
@@ -252,5 +251,19 @@
 [[scheduled.functions]]
   name = "content-freshness-score-runner"
   schedule = "7 */12 * * *"
-=======
->>>>>>> 8cc7475fdf (feat(automation): autonomous front/home advertisers + schedules cleanup [skip ci])
+
+[[scheduled.functions]]
+  name = "docs-toc-builder"
+  schedule = "17 */6 * * *"
+
+[[scheduled.functions]]
+  name = "readme-badges-runner"
+  schedule = "0 3 * * *"
+
+[[scheduled.functions]]
+  name = "release-cadence-runner"
+  schedule = "0 3 * * 1"
+
+[[scheduled.functions]]
+  name = "contributing-refresher"
+  schedule = "0 4 1 * *"

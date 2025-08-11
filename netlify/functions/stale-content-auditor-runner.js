@@ -34,18 +34,23 @@ function getLastModifiedIso(filePath) {
     const gitRes = spawnSync('git', ['log', '-1', '--format=%cI', '--', filePath], { encoding: 'utf8' });
     const out = (gitRes.stdout || '').trim();
     if (out) return out;
-  } catch {}
+  } catch (e) {
+    if (process.env.DEBUG) console.warn('git log failed', e);
+    void e;
+  }
   try {
     const stat = fs.statSync(filePath);
     return new Date(stat.mtimeMs).toISOString();
-  } catch {
+  } catch (e) {
+    if (process.env.DEBUG) console.warn('stat failed', e);
+    void e;
     return null;
   }
 }
 
 exports.handler = async () => {
   const logs = [];
-  function log(msg) { logs.push(msg); }
+  function log(msg) { if (msg) logs.push(String(msg)); }
 
   const root = path.resolve(__dirname, '..', '..');
   const now = Date.now();
@@ -81,8 +86,8 @@ exports.handler = async () => {
 
   const dataDir = path.join(root, 'data', 'reports', 'stale-content');
   const publicDir = path.join(root, 'public', 'reports', 'stale-content');
-  try { fs.mkdirSync(dataDir, { recursive: true }); } catch {}
-  try { fs.mkdirSync(publicDir, { recursive: true }); } catch {}
+  try { fs.mkdirSync(dataDir, { recursive: true }); } catch (err) { void err; }
+  try { fs.mkdirSync(publicDir, { recursive: true }); } catch (err) { void err; }
 
   const json = {
     generatedAt: new Date().toISOString(),
@@ -100,7 +105,7 @@ exports.handler = async () => {
   fs.writeFileSync(latestPublic, JSON.stringify(json, null, 2));
 
   const mdPath = path.join(root, 'docs', 'reports', 'stale-content.md');
-  try { fs.mkdirSync(path.dirname(mdPath), { recursive: true }); } catch {}
+  try { fs.mkdirSync(path.dirname(mdPath), { recursive: true }); } catch (err) { void err; }
   const md = [
     '# Stale Content Report',
     '',
@@ -120,16 +125,8 @@ exports.handler = async () => {
   ].join('\n');
   fs.writeFileSync(mdPath, md);
 
-<<<<<<< HEAD
-  // Try to sync via advanced git sync
-  const sync = runNode('automation/advanced-git-sync.cjs');
-  const logs = [];
-  if (sync.stdout) logs.push(sync.stdout);
-  if (sync.stderr) logs.push(sync.stderr);
-=======
   log(`Wrote stale content report: ${jsonPath}`);
   log(`Updated public: ${latestPublic}`);
->>>>>>> e1ddf9641e683a57169be65f51ae64fbb1a764ef
 
   // Commit and push changes
   try {
