@@ -186,3 +186,16 @@
 [[scheduled.functions]]
   name = "auto-scheduler"
   schedule = "*/15 * * * *" # every 15 minutes
+
+# Newly added autonomous runners
+[[scheduled.functions]]
+  name = "seo-audit-runner"
+  schedule = "0 */6 * * *"
+
+[[scheduled.functions]]
+  name = "ai-trends-radar-runner"
+  schedule = "0 * * * *"
+
+[[scheduled.functions]]
+  name = "unused-exports-runner"
+  schedule = "7 3 * * *"

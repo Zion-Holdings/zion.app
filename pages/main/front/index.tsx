@@ -1690,6 +1690,10 @@ export default function MainFrontIndex() {
   <div className="text-base font-semibold">AI Trends</div>
   <div className="mt-1 text-sm text-white/75">Intelligence signals</div>
   <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+              <Link href="/reports/unused-exports"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">Unused Exports</div>
+  <div className="mt-1 text-sm text-white/75">Dead code insights</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
               <Link href="/newsroom"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
   <div className="text-base font-semibold">Newsroom</div>
   <div className="mt-1 text-sm text-white/75">Latest autonomous updates</div>

@@ -195,6 +195,9 @@ export default function Home() {
               { title: 'Features/Capabilities/Benefits Advertiser (2m)', desc: 'Continuously advertises new features with deep links on the front pages.', href: '/.netlify/functions/features-capabilities-benefits-advertiser' },
               { title: 'Hyper Front Index Accelerator (1m)', desc: 'Ultra-fast front index futurizer and directory builder.', href: '/.netlify/functions/hyper-front-index-accelerator' },
               { title: 'Dead Code Report', desc: 'Scans the codebase and updates reports with dead and unused code.', href: '/.netlify/functions/dead-code-report' },
+              { title: 'Unused Exports Audit', desc: 'Detects and reports unused exports across the codebase.', href: '/.netlify/functions/unused-exports-runner' },
+              { title: 'SEO Audit Runner', desc: 'Analyzes titles and meta descriptions across pages and writes a report.', href: '/.netlify/functions/seo-audit-runner' },
+              { title: 'AI Trends Radar Runner', desc: 'Aggregates AI trends from HN and Reddit and publishes a radar.', href: '/.netlify/functions/ai-trends-radar-runner' },
               { title: 'Security Audit Runner', desc: 'Runs security checks and commits actionable findings.', href: '/.netlify/functions/security-audit-runner' },
               { title: 'Docs Index Runner', desc: 'Refreshes docs indexes and README for better discovery.', href: '/.netlify/functions/docs-index-runner' },
               { title: 'Repo Knowledge Graph', desc: 'Regenerates the repository knowledge graph and radar metrics.', href: '/.netlify/functions/repo-knowledge-graph-runner' },
@@ -217,7 +220,7 @@ export default function Home() {
                 <p className="mt-1 text-sm text-white/75">{tool.desc}</p>
                 <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
               </a>
-            ))}
+            ))
           </div>
         </section>
 

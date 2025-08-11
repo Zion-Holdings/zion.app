@@ -77,7 +77,17 @@ function writeReports(findings) {
   };
   fs.writeFileSync(jsonPath, JSON.stringify(jsonContent, null, 2), 'utf8');
 
-  return { mdPath, jsonPath };
+  // Public HTML for site viewing
+  const publicDir = path.join('public', 'reports', 'maintenance', 'unused-exports');
+  ensureDirectoryExists(publicDir);
+  const htmlRows = findings
+    .filter(f => f.file)
+    .map(f => `<tr><td>${f.file}</td><td style="text-align:right">${f.line}</td><td><code>${f.exportName}</code></td></tr>`) 
+    .join('\n');
+  const html = `<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8"/>\n<meta name="viewport" content="width=device-width, initial-scale=1"/>\n<title>Unused Exports Report</title>\n<style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,sans-serif;margin:24px}table{border-collapse:collapse;width:100%}th,td{border:1px solid #ddd;padding:8px;font-size:14px}th{background:#f3f4f6;text-align:left}</style>\n</head>\n<body>\n<h1>Unused Exports Report</h1>\n<p>Generated: ${timestampIso}. Total unused exports: ${total}.</p>\n<table>\n<thead><tr><th>File</th><th style="text-align:right">Line</th><th>Export</th></tr></thead>\n<tbody>\n${htmlRows || '<tr><td colspan="3"><em>None found</em></td></tr>'}\n</tbody>\n</table>\n</body>\n</html>`;
+  fs.writeFileSync(path.join(publicDir, 'index.html'), html, 'utf8');
+
+  return { mdPath, jsonPath, htmlPath: path.join(publicDir, 'index.html') };
 }
 
 (function main() {
@@ -92,6 +102,6 @@ function writeReports(findings) {
   const findings = output ? parseTsPruneOutput(output) : [];
   const parsedFindings = findings.filter(f => f.file);
 
-  const { mdPath, jsonPath } = writeReports(parsedFindings);
-  console.log(`Report written to: ${mdPath} and ${jsonPath}`);
+  const { mdPath, jsonPath, htmlPath } = writeReports(parsedFindings);
+  console.log(`Report written to: ${mdPath} and ${jsonPath} and ${htmlPath}`);
 })();
