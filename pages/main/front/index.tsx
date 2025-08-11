@@ -305,6 +305,42 @@ export default function MainFrontIndex() {
         </section>
         {/* AUTO-GENERATED: FRONT_ADS_END */}
 
+        {/* AUTO-GENERATED: FRONT_FEATURES_START */}
+        <section id="auto-features" className="mx-auto max-w-7xl px-6 pb-14">
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Auto‑Curated Features</h2>
+          <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Futuristic templates, effects, and layouts curated by autonomous agents.</p>
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-5 text-center text-white/70 backdrop-blur-md">
+              Auto‑curated features will appear here.
+            </div>
+          </div>
+        </section>
+        {/* AUTO-GENERATED: FRONT_FEATURES_END */}
+
+        {/* AUTO-GENERATED: FRONT_CAPABILITIES_START */}
+        <section id="auto-capabilities" className="mx-auto max-w-7xl px-6 pb-14">
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Auto‑Curated Capabilities</h2>
+          <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Continuously highlighted capabilities with deep links to live pages.</p>
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-5 text-center text-white/70 backdrop-blur-md">
+              Auto‑curated capabilities will appear here.
+            </div>
+          </div>
+        </section>
+        {/* AUTO-GENERATED: FRONT_CAPABILITIES_END */}
+
+        {/* AUTO-GENERATED: FRONT_BENEFITS_START */}
+        <section id="auto-benefits" className="mx-auto max-w-7xl px-6 pb-20">
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Auto‑Curated Benefits</h2>
+          <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Outcome‑focused benefits linked to relevant sections and hubs.</p>
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-5 text-center text-white/70 backdrop-blur-md">
+              Auto‑curated benefits will appear here.
+            </div>
+          </div>
+        </section>
+        {/* AUTO-GENERATED: FRONT_BENEFITS_END */}
+
         {/* Floating Quick-Nav Dock */}
         <aside className="fixed left-4 top-1/2 z-30 hidden -translate-y-1/2 lg:block">
           <nav aria-label="Quick section navigation" className="space-y-2">
@@ -387,11 +423,7 @@ export default function MainFrontIndex() {
               { title: 'SEO Audit', desc: 'Continuous on‑site SEO scans with proposed diffs.', href: '/reports/seo' },
               { title: 'AI Trends', desc: 'Intelligence signals from the AI/cloud ecosystem.', href: '/reports/ai-trends' },
               { title: 'Newsroom', desc: 'Curated updates and product evolution highlights.', href: '/newsroom' },
-<<<<<<< HEAD
               { title: 'Cloud Automations', desc: 'Netlify scheduled functions powering jobs 24/7.', href: '/automation' },
-=======
-              { title: 'Cloud Automations', desc: 'Scheduled functions powering jobs 24/7.', href: '/automation' },
->>>>>>> chore/automation-futuristic-front
               { title: 'Docs', desc: 'Technical notes and guides for the platform.', href: 'https://github.com/Zion-Holdings/zion.app/tree/main/docs', external: true },
               { title: 'AI Changelog', desc: 'Summarized autonomous changes and highlights.', href: 'https://github.com/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md', external: true }
             ].map((card) => (
