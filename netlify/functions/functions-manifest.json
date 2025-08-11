@@ -1,9 +1,13 @@
 {
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   "generatedAt": "2025-08-11T23:33:46.926Z",
 =======
   "generatedAt": "2025-08-11T23:30:12.889Z",
 >>>>>>> Stashed changes
+=======
+  "generatedAt": "2025-08-11T23:56:15.246Z",
+>>>>>>> 3f40ccd54d (chore(sync): advanced autonomous sync)
   "functions": [
     "a11y-alt-text-runner",
     "ai-changelog-runner",
@@ -13,6 +17,7 @@
     "autonomous-invention-orchestrator",
     "broken-image-scanner",
     "broken-image-scanner-runner",
+    "canonical-auditor",
     "cloud_orchestrator",
     "component-size-report",
     "continuous-front-runner",
@@ -61,6 +66,7 @@
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",
+    "robots-auditor",
     "schedule-content-index",
     "schedule-homepage",
     "schedule-knowledge-graph",
@@ -71,6 +77,7 @@
     "site-crawler",
     "sitemap_runner",
     "stale-content-auditor-runner",
+    "structured-data-auditor",
     "todo-scanner-runner",
     "todo-summary-runner",
     "trigger-all-and-commit",

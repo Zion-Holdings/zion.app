@@ -230,8 +230,52 @@ schedule = "*/30 * * * *"
 [[scheduled.functions]]
   name = "component-size-report"
   schedule = "*/5 * * * *"
+<<<<<<< HEAD
 =======
 name = "deps-auto-upgrade-runner"
 schedule = "0 3 * * *"
 >>>>>>> Stashed changes
 >>>>>>> origin/main
+=======
+
+[[scheduled.functions]]
+  name = "license-compliance-auditor"
+  schedule = "0 2 * * 1"
+
+[[scheduled.functions]]
+  name = "pagespeed-insights-runner"
+  schedule = "11 */6 * * *"
+
+[[scheduled.functions]]
+  name = "knowledge-pack-runner"
+  schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+  name = "adaptive-orchestrator"
+  schedule = "*/5 * * * *"
+
+[[scheduled.functions]]
+  name = "site-404-map-runner"
+  schedule = "17 */6 * * *"
+
+[[scheduled.functions]]
+  name = "component-coupling-graph-runner"
+  schedule = "29 */6 * * *"
+
+[[scheduled.functions]]
+  name = "content-freshness-score-runner"
+  schedule = "7 */12 * * *"
+
+# Newly added auditors
+[[scheduled.functions]]
+  name = "structured-data-auditor"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+  name = "robots-auditor"
+  schedule = "0 */6 * * *"
+
+[[scheduled.functions]]
+  name = "canonical-auditor"
+  schedule = "*/60 * * * *"
+>>>>>>> 3f40ccd54d (chore(sync): advanced autonomous sync)
