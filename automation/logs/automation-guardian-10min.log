@@ -1668,3 +1668,51 @@ Already up to date.
 [2025-08-11T21:54:43.512Z] $ npm run build
 [2025-08-11T21:56:25.141Z] 🚀 Automation Guardian (10m) starting
 [2025-08-11T21:56:25.368Z] $ npx eslint . --ext .js,.jsx,.ts,.tsx --fix
+[2025-08-11T21:58:59.604Z] /Users/miami2/ ZION_APP_AUG_11_25/zion.app/netlify/functions/automation-matrix.js
+  34:104  error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+  34:107  error  Empty block statement          no-empty
+  37:93   error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+  37:96   error  Empty block statement          no-empty
+
+/Users/miami2/ ZION_APP_AUG_11_25/zion.app/netlify/functions/fast-front-promoter.js
+  4:10  error  'runNodeScript' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/miami2/ ZION_APP_AUG_11_25/zion.app/netlify/functions/features-capabilities-benefits-advertiser.js
+  1:7  error  'path' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Users/miami2/ ZION_APP_AUG_11_25/zion.app/netlify/functions/front-enhancer.js
+  2:20  error  'execSync' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  4:10  error  'runNode' is defined but never used            @typescript-eslint/no-unused-vars
+
+/Users/miami2/ ZION_APP_AUG_11_25/zion.app/netlify/functions/front-visionary-expander.js
+  1:7  error  'path' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Users/miami2/ ZION_APP_AUG_11_25/zion.app/netlify/functions/hyper-front-index-accelerator.js
+  1:7  error  'path' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Users/miami2/ ZION_APP_AUG_11_25/zion.app/netlify/functions/link-crawler.js
+  31:12  error  'e' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/miami2/ ZION_APP_AUG_11_25/zion.app/netlify/functions/site-crawler.js
+  35:12  error  'e' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/miami2/ ZION_APP_AUG_11_25/zion.app/netlify/functions/trigger-all-and-commit.js
+   1:34  error  'event' is defined but never used    @typescript-eslint/no-unused-vars
+   1:41  error  'context' is defined but never used  @typescript-eslint/no-unused-vars
+  16:12  error  'e' is defined but never used        @typescript-eslint/no-unused-vars
+  78:13  error  Empty block statement                no-empty
+
+/Users/miami2/ ZION_APP_AUG_11_25/zion.app/netlify/plugins/run-functions-and-rerun/index.js
+  32:16  error  'listFunctions' is defined but never used  @typescript-eslint/no-unused-vars
+  32:32  error  'baseUrl' is defined but never used        @typescript-eslint/no-unused-vars
+
+/Users/miami2/ ZION_APP_AUG_11_25/zion.app/scripts/generate-readme.js
+  10:12  error  'err' is defined but never used         @typescript-eslint/no-unused-vars
+  24:10  error  'countFiles' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 20 problems (20 errors, 0 warnings)
+[2025-08-11T21:58:59.608Z] $ node automation/homepage-promo-factory.cjs 
+[2025-08-11T21:58:59.915Z] [homepage-promo-factory] No-op stub running.
+[2025-08-11T21:58:59.917Z] $ npm run type-check
+[2025-08-11T22:04:33.391Z] 🚀 Automation Guardian (10m) starting
+[2025-08-11T22:04:33.468Z] $ npx eslint . --ext .js,.jsx,.ts,.tsx --fix
