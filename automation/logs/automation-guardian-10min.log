@@ -1259,3 +1259,47 @@ npm error JSON.parse Failed to parse JSON data.
 npm error JSON.parse Note: package.json must be actual JSON, not just JavaScript.
 npm error A complete log of this run can be found in: /home/ubuntu/.npm/_logs/2025-08-11T20_58_51_743Z-debug-0.log
 [2025-08-11T20:58:52.055Z] $ npx eslint . --ext .js,.jsx,.ts,.tsx --fix
+[2025-08-11T20:58:54.806Z] Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --fix
+(node:2398) ESLintIgnoreWarning: The ".eslintignore" file is no longer supported. Switch to using the "ignores" property in "eslint.config.js": https://eslint.org/docs/latest/use/configure/migration-guide#ignoring-files
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+Oops! Something went wrong! :(
+
+ESLint: 9.33.0
+
+ESLint couldn't find an eslint.config.(js|mjs|cjs) file.
+
+From ESLint v9.0.0, the default configuration file is now eslint.config.js.
+If you are using a .eslintrc.* file, please follow the migration guide
+to update your configuration file to the new format:
+
+https://eslint.org/docs/latest/use/configure/migration-guide
+
+If you still have problems after following the migration guide, please stop by
+https://eslint.org/chat/help to chat with the team.
+[2025-08-11T20:58:54.807Z] $ node automation/homepage-promo-factory.cjs 
+[2025-08-11T20:58:54.828Z] [homepage-promo-factory] No-op stub running.
+[2025-08-11T20:58:54.828Z] $ npm run type-check
+[2025-08-11T20:58:54.909Z] Command failed: npm run type-check
+npm error code EJSONPARSE
+npm error JSON.parse Invalid package.json: JSONParseError: Expected ',' or '}' after property value in JSON at position 700 (line 23 column 5) while parsing near "...gs --lines 200\"\n    \"functions:run\": \"no..."
+npm error JSON.parse Failed to parse JSON data.
+npm error JSON.parse Note: package.json must be actual JSON, not just JavaScript.
+npm error A complete log of this run can be found in: /home/ubuntu/.npm/_logs/2025-08-11T20_58_54_869Z-debug-0.log
+[2025-08-11T20:58:54.910Z] Type-check failed, attempting quick syntax repair
+[2025-08-11T20:58:54.910Z] $ npm run build
+[2025-08-11T20:58:54.987Z] Command failed: npm run build
+npm error code EJSONPARSE
+npm error JSON.parse Invalid package.json: JSONParseError: Expected ',' or '}' after property value in JSON at position 700 (line 23 column 5) while parsing near "...gs --lines 200\"\n    \"functions:run\": \"no..."
+npm error JSON.parse Failed to parse JSON data.
+npm error JSON.parse Note: package.json must be actual JSON, not just JavaScript.
+npm error A complete log of this run can be found in: /home/ubuntu/.npm/_logs/2025-08-11T20_58_54_945Z-debug-0.log
+[2025-08-11T20:58:54.987Z] Build failed, attempting comprehensive_fix then rebuild
+[2025-08-11T20:58:54.988Z] $ npm run build
+[2025-08-11T20:58:55.067Z] Command failed: npm run build
+npm error code EJSONPARSE
+npm error JSON.parse Invalid package.json: JSONParseError: Expected ',' or '}' after property value in JSON at position 700 (line 23 column 5) while parsing near "...gs --lines 200\"\n    \"functions:run\": \"no..."
+npm error JSON.parse Failed to parse JSON data.
+npm error JSON.parse Note: package.json must be actual JSON, not just JavaScript.
+npm error A complete log of this run can be found in: /home/ubuntu/.npm/_logs/2025-08-11T20_58_55_027Z-debug-0.log
+[2025-08-11T20:58:55.067Z] $ node automation/git-sync.cjs 
