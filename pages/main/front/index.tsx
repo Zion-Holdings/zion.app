@@ -1747,6 +1747,32 @@ export default function MainFrontIndex() {
           </div>
         </motion.section>
 
+        {/* AUTO-ADDED: NEW AUTONOMOUS CALLS */}
+        <section id="autonomous-cloud" className="mx-auto max-w-7xl px-6 pb-16">
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">New Autonomous Cloud Automations</h2>
+          <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Runs fully in the cloud and syncs changes to the repository without human interaction.</p>
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <a href="/.netlify/functions/autonomous-code-insights" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-base font-semibold">Autonomous Code Insights</div>
+              <div className="mt-1 text-sm text-white/75">Analyzes repo tree and commits insights to reports.</div>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>
+            <a href="/.netlify/functions/autonomous-commit-digest" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-base font-semibold">Autonomous Commit Digest</div>
+              <div className="mt-1 text-sm text-white/75">Writes categorized commit summaries into docs.</div>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>
+            <a href="/.netlify/functions/autonomous-roadmap-synthesizer" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-base font-semibold">Autonomous Roadmap Synthesizer</div>
+              <div className="mt-1 text-sm text-white/75">Generates NOW/NEXT/LATER roadmap from issues.</div>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>
+          </div>
+        </section>
+        {/* END AUTO-ADDED */}
       </div>
       {/* Back to top */}
       {showToTop && (

@@ -180,7 +180,7 @@ export default function Home() {
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Automation Engine — New Tools</h2>
           <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Now powered by scheduled cloud functions — no GitHub Actions required. Live homepage promos, health checks, and link integrity run automatically.</p>
           <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {[
+            [
               { title: 'Frontpage Enhancer', desc: 'Auto‑advertises features and refreshes homepage content hourly.', href: '/.netlify/functions/frontpage-enhancer' },
               { title: 'Link & Health Scheduler', desc: 'Runs link checks, health scans, and sitemap updates every 6h.', href: '/.netlify/functions/link-and-health-scheduler' },
               { title: 'Marketing & Features Promo', desc: 'Regenerates homepage promos and deep links every 2h.', href: '/.netlify/functions/marketing-and-features-promo' },
@@ -213,6 +213,9 @@ export default function Home() {
               { title: 'SEO Audit Runner', desc: 'Analyzes pages for title/description issues and writes an HTML report.', href: '/.netlify/functions/seo-audit-runner' },
               { title: 'AI Trends Radar', desc: 'Aggregates trending AI topics into a public report.', href: '/.netlify/functions/ai-trends-radar-runner' },
               { title: 'Dependency Auto‑Upgrade', desc: 'Safely bumps minor/patch deps with build verification.', href: '/.netlify/functions/deps-auto-upgrade-runner' },
+              { title: 'Autonomous Code Insights', desc: 'Analyzes the repo tree and commits an insights report.', href: '/.netlify/functions/autonomous-code-insights' },
+              { title: 'Autonomous Commit Digest', desc: 'Builds a categorized digest of recent commits into docs.', href: '/.netlify/functions/autonomous-commit-digest' },
+              { title: 'Autonomous Roadmap Synthesizer', desc: 'Synthesizes a NOW/NEXT/LATER roadmap from labeled issues.', href: '/.netlify/functions/autonomous-roadmap-synthesizer' },
             ].map((tool) => (
               <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />

@@ -206,3 +206,15 @@
 [[scheduled.functions]]
   name = "deps-auto-upgrade-runner"
   schedule = "0 3 * * *"
+
+[[scheduled.functions]]
+  name = "autonomous-code-insights"
+  schedule = "*/5 * * * *"
+
+[[scheduled.functions]]
+  name = "autonomous-commit-digest"
+  schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+  name = "autonomous-roadmap-synthesizer"
+  schedule = "*/15 * * * *"
