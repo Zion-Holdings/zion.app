@@ -292,6 +292,19 @@ export default function MainFrontIndex() {
           </div>
         </motion.section>
 
+        {/* Auto-Promoted Features (auto-generated) */}
+        {/* AUTO-GENERATED: FRONT_ADS_START */}
+        <section id="auto-promoted" className="mx-auto max-w-7xl px-6 pb-14">
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Auto‑Promoted Features</h2>
+          <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Continuously curated promos linking to live hubs, reports, and docs.</p>
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-5 text-center text-white/70 backdrop-blur-md">
+              Auto‑promotions will appear here.
+            </div>
+          </div>
+        </section>
+        {/* AUTO-GENERATED: FRONT_ADS_END */}
+
         {/* Floating Quick-Nav Dock */}
         <aside className="fixed left-4 top-1/2 z-30 hidden -translate-y-1/2 lg:block">
           <nav aria-label="Quick section navigation" className="space-y-2">
