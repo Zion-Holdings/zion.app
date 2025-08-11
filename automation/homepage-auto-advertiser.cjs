@@ -80,39 +80,6 @@ function ensureMarkers(content) {
   return content.slice(0, insertAt) + '\n' + section + '\n' + content.slice(insertAt);
 }
 
-<<<<<<< HEAD
-// New: discover Netlify scheduled functions and tools
-function discoverNetlifyTools() {
-  const fnDir = path.join(ROOT, 'netlify', 'functions');
-  const items = [];
-  const nameMap = {
-    'front-enhancer': { label: 'Front Enhancer', tagline: 'Futuristic front updates (10m)' },
-    'frontpage-enhancer': { label: 'Frontpage Enhancer', tagline: 'Homepage promos (20m)' },
-    'homepage_advertiser': { label: 'Homepage Advertiser', tagline: 'Fresh highlights (15m)' },
-    'cloud_orchestrator': { label: 'Cloud Orchestrator', tagline: 'Coordinates agents (4h)' },
-    'fast-front-promoter': { label: 'Fast Front Promoter', tagline: 'Quick promos (15m)' },
-    'homepage-updater': { label: 'Homepage Updater', tagline: 'Explore section refresh' },
-    'continuous-orchestrator': { label: 'Continuous Orchestrator', tagline: 'Multi-step curator (5m)' },
-    'ultrafast-orchestrator': { label: 'Ultrafast Orchestrator', tagline: 'Every minute updates' },
-    'sitemap_runner': { label: 'Sitemap Runner', tagline: 'Keeps URLs fresh (12h)' },
-    'link-and-health-scheduler': { label: 'Link & Health', tagline: 'Link checks & audits (6h)' },
-    'marketing-and-features-promo': { label: 'Marketing & Promo', tagline: 'Feature promos (2h)' },
-  };
-  try {
-    if (!fs.existsSync(fnDir)) return items;
-    const files = fs.readdirSync(fnDir).filter((f) => f.endsWith('.js'));
-    for (const file of files) {
-      const base = file.replace(/\.js$/, '');
-      const info = nameMap[base] || { label: titleCase(base.replace(/[-_]/g, ' ')), tagline: 'Scheduled function' };
-      const href = `/.netlify/functions/${base}`;
-      items.push({ type: 'external', href, label: info.label, tagline: info.tagline });
-    }
-  } catch (err) {
-    log(`Error discovering Netlify tools: ${err.message}`);
-  }
-  return items;
-}
-
 function buildCard(item) {
   const cardClass = 'bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10';
   const textSpan = `<span className=\"text-white/90\">${item.label}${item.tagline ? ' — ' + item.tagline : ''}</span>`;
@@ -148,17 +115,7 @@ function replaceBetweenMarkers(source, startMarker, endMarker, replacement) {
   return `${before}\n${replacement}\n${after}`;
 }
 
-(async function main() {
-  log('Homepage Auto Advertiser started');
-
-  const internal = discoverInternalPages();
-  const netlifyTools = discoverNetlifyTools();
-  const combined = [...internal, ...netlifyTools].slice(0, 12);
-  const tsxBlock = generateSectionTSX(combined);
-
-=======
 (function main() {
->>>>>>> d4c00f9a67 (feat(front): new cloud automations + futuristic homepage tools and promos)
   if (!fs.existsSync(INDEX_PAGE)) {
     console.error('index.tsx not found');
     process.exit(0);
