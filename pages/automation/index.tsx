@@ -14,27 +14,27 @@ export default function AutomationHub() {
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
             <h2 className="text-xl font-bold">Quick Fixes</h2>
             <p className="text-white/70">Build rescue, sitemap/robots, and security remediation.</p>
-            <a className="text-cyan-300 underline" href="https://github.com/Zion-Holdings/zion.app/actions/workflows/autonomous-quick-fixes.yml" target="_blank" rel="noopener">Run / View</a>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/maintenance-scheduler" target="_blank" rel="noopener">Run / Logs</a>
           </li>
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
             <h2 className="text-xl font-bold">Deep Maintenance</h2>
             <p className="text-white/70">Intelligent orchestrator with smoke tests and link checks.</p>
-            <a className="text-cyan-300 underline" href="https://github.com/Zion-Holdings/zion.app/actions/workflows/autonomous-deep-maintenance.yml" target="_blank" rel="noopener">Run / View</a>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/maintenance-scheduler" target="_blank" rel="noopener">Run / Logs</a>
           </li>
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
             <h2 className="text-xl font-bold">Marketing & SEO</h2>
             <p className="text-white/70">Content factories and on-site SEO optimizer.</p>
-            <a className="text-cyan-300 underline" href="https://github.com/Zion-Holdings/zion.app/actions/workflows/autonomous-marketing-seo.yml" target="_blank" rel="noopener">Run / View</a>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/marketing-scheduler" target="_blank" rel="noopener">Run / Logs</a>
           </li>
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
             <h2 className="text-xl font-bold">Content Curation</h2>
             <p className="text-white/70">Homepage promo proposals generated continuously.</p>
-            <a className="text-cyan-300 underline" href="https://github.com/Zion-Holdings/zion.app/actions/workflows/autonomous-content-curation.yml" target="_blank" rel="noopener">Run / View</a>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/marketing-scheduler" target="_blank" rel="noopener">Run / Logs</a>
           </li>
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
             <h2 className="text-xl font-bold">Dependency Upgrades</h2>
             <p className="text-white/70">Automated minor/patch upgrades with PR auto-merge.</p>
-            <a className="text-cyan-300 underline" href="https://github.com/Zion-Holdings/zion.app/actions/workflows/autonomous-deps-upgrade.yml" target="_blank" rel="noopener">Run / View</a>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/maintenance-scheduler" target="_blank" rel="noopener">Run / Logs</a>
           </li>
         </ul>
       </main>

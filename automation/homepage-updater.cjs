@@ -27,8 +27,12 @@ function buildItems(repoUrl, workspaceRoot) {
     if (fileExists(c.check)) items.push({ type: 'internal', href: c.href, label: c.label });
   });
 
-  // External useful links
-  items.push({ type: 'external', href: `${repoUrl}/actions`, label: 'GitHub Actions — live workflows' });
+  // External useful links (prefer Netlify functions over GitHub Actions)
+  const origin = process.env.CANONICAL_URL || '';
+  items.push({ type: 'external', href: `${origin}/.netlify/functions/maintenance-scheduler`, label: 'Netlify — Maintenance Scheduler' });
+  items.push({ type: 'external', href: `${origin}/.netlify/functions/marketing-scheduler`, label: 'Netlify — Marketing Scheduler' });
+  // Optional: front hub upgrader endpoint
+  items.push({ type: 'external', href: `${origin}/.netlify/functions/front-upgrader`, label: 'Netlify — Front Hub Upgrader' });
   if (fileExists(path.join(workspaceRoot, 'docs'))) {
     items.push({ type: 'external', href: `${repoUrl}/tree/main/docs`, label: 'Docs — technical notes & guides' });
   }
