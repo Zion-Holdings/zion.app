@@ -7,8 +7,8 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
 const FRONT_PAGE = path.join(ROOT, 'pages', 'main', 'front', 'index.tsx');
-const START = '{/* AUTO-GENERATED: FRONT_ADS_START */}';
-const END = '{/* AUTO-GENERATED: FRONT_ADS_END */}';
+const START = '{/* AUTO-GENERATED: FRONT_ADS_START */';
+const END = '/* AUTO-GENERATED: FRONT_ADS_END */}';
 
 function log(msg) {
   process.stdout.write(`[front-index-auto-advertiser] ${msg}\n`);
