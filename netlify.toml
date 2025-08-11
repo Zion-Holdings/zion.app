@@ -176,41 +176,34 @@
 
 # New intelligent cloud automations
 [[scheduled.functions]]
-  name = "innovation-lab"
-  schedule = "*/10 * * * *" # every 10 minutes
+  name = "internal-link-opportunities"
+  schedule = "*/10 * * * *"
 
 [[scheduled.functions]]
-  name = "broken-image-scanner"
-  schedule = "0 */6 * * *" # every 6 hours
+  name = "semantic-content-index"
+  schedule = "*/15 * * * *"
 
 [[scheduled.functions]]
-  name = "auto-scheduler"
-  schedule = "*/15 * * * *" # every 15 minutes
+  name = "cloud-heartbeat"
+  schedule = "*/2 * * * *"
 
 [[scheduled.functions]]
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
->>>>>>> origin/main
   name = "a11y-alt-text-runner"
   schedule = "*/10 * * * *" # every 10 minutes
 
 [[scheduled.functions]]
   name = "metadata-optimizer-runner"
   schedule = "*/15 * * * *" # every 15 minutes
-<<<<<<< HEAD
-=======
-=======
-name = "seo-audit-runner"
-schedule = "0 */2 * * *"
-
->>>>>>> origin/main
-[[scheduled.functions]]
-name = "ai-trends-radar-runner"
-schedule = "*/30 * * * *"
 
 [[scheduled.functions]]
-<<<<<<< HEAD
+  name = "seo-audit-runner"
+  schedule = "0 */2 * * *"
+
+[[scheduled.functions]]
+  name = "ai-trends-radar-runner"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
   name = "stale-content-auditor-runner"
   schedule = "17 */6 * * *"
 
@@ -230,13 +223,6 @@ schedule = "*/30 * * * *"
 [[scheduled.functions]]
   name = "component-size-report"
   schedule = "*/5 * * * *"
-<<<<<<< HEAD
-=======
-name = "deps-auto-upgrade-runner"
-schedule = "0 3 * * *"
->>>>>>> Stashed changes
->>>>>>> origin/main
-=======
 
 [[scheduled.functions]]
   name = "license-compliance-auditor"
@@ -278,4 +264,3 @@ schedule = "0 3 * * *"
 [[scheduled.functions]]
   name = "canonical-auditor"
   schedule = "*/60 * * * *"
->>>>>>> 3f40ccd54d (chore(sync): advanced autonomous sync)
