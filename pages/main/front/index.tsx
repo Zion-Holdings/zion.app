@@ -223,6 +223,10 @@ export default function MainFrontIndex() {
               { Icon: BarChart3, title: 'Live Dashboards', desc: 'Real‑time quality and impact metrics at a glance.', href: '/site-health' },
               { Icon: Activity, title: 'Health Monitors', desc: 'A11y, links, and performance monitored 24/7.', href: '/site-health' },
               { Icon: Globe, title: 'Intelligence Signals', desc: 'AI research integrated into product improvements.', href: '/reports/ai-trends' },
+              { Icon: GitBranch, title: 'Automated Changelogs', desc: 'Summarized changes and AI notes published continuously.', href: 'https://github.com/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md' },
+              { Icon: Rocket, title: 'OG Image Maker', desc: 'Auto‑generates rich Open Graph images for content.', href: '/newsroom' },
+              { Icon: ShieldCheck, title: 'Policy & Compliance', desc: 'Safety rails and audits applied before shipping.', href: '/site-health' },
+              { Icon: Layers, title: 'Factories Library', desc: 'Reusable building blocks for new automations.', href: '/automation' },
             ].map(({ Icon, title, desc, href }) => (
               <Link key={title} href={href}>
                 <a className="group glow-card relative block overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md hover:border-cyan-400/30 tilt-on-hover neon-ring">
@@ -409,6 +413,82 @@ export default function MainFrontIndex() {
             ))}
           </div>
         </section>
+
+        {/* Ecosystem & Integrations */}
+        <motion.section
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-7xl px-6 pb-14"
+        >
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Ecosystem & Integrations</h2>
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <a href="https://github.com/Zion-Holdings/zion.app/actions" target="_blank" rel="noopener" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="flex items-center gap-2">
+                <Rocket className="h-5 w-5 text-cyan-300" />
+                <h3 className="text-lg font-semibold">GitHub Actions</h3>
+              </div>
+              <p className="mt-1 text-sm text-white/75">Live pipelines, logs, and artifacts powering automations.</p>
+              <div className="mt-3 text-xs text-cyan-300/90">Open →</div>
+            </a>
+            <a href="https://www.netlify.com/" target="_blank" rel="noopener" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="flex items-center gap-2">
+                <Globe className="h-5 w-5 text-cyan-300" />
+                <h3 className="text-lg font-semibold">Netlify</h3>
+              </div>
+              <p className="mt-1 text-sm text-white/75">Zero‑ops hosting and functions for maintenance schedules.</p>
+              <div className="mt-3 text-xs text-cyan-300/90">Learn more →</div>
+            </a>
+            <a href="https://supabase.com/" target="_blank" rel="noopener" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="flex items-center gap-2">
+                <Layers className="h-5 w-5 text-cyan-300" />
+                <h3 className="text-lg font-semibold">Supabase</h3>
+              </div>
+              <p className="mt-1 text-sm text-white/75">Realtime data and storage for emerging automation needs.</p>
+              <div className="mt-3 text-xs text-cyan-300/90">Explore →</div>
+            </a>
+            <a href="https://www.framer.com/motion/" target="_blank" rel="noopener" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="flex items-center gap-2">
+                <Palette className="h-5 w-5 text-cyan-300" />
+                <h3 className="text-lg font-semibold">Framer Motion</h3>
+              </div>
+              <p className="mt-1 text-sm text-white/75">Futuristic micro‑interactions and motion design system.</p>
+              <div className="mt-3 text-xs text-cyan-300/90">Docs →</div>
+            </a>
+          </div>
+        </motion.section>
+
+        {/* Quality Gates & Guardrails */}
+        <motion.section
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-7xl px-6 pb-16"
+        >
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Quality Gates & Guardrails</h2>
+          <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { title: 'Accessibility', desc: 'Automated checks and fixes for WCAG compliance.', href: '/site-health' },
+              { title: 'Link Integrity', desc: 'Broken links detected before release.', href: '/site-health' },
+              { title: 'Performance', desc: 'Budgets enforced and improved continuously.', href: '/site-health' },
+              { title: 'Safe Diffs', desc: 'Conservative, reviewable changes synced to main.', href: '/automation' },
+            ].map((g) => (
+              <Link key={g.title} href={g.href}>
+                <a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-fuchsia-400/30">
+                  <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-violet-400/10 to-cyan-400/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                  <h3 className="text-lg font-semibold">{g.title}</h3>
+                  <p className="mt-1 text-sm text-white/75">{g.desc}</p>
+                </a>
+              </Link>
+            ))}
+          </div>
+        </motion.section>
 
         {/* Tech */}
         <motion.section
