@@ -101,6 +101,30 @@ export default function AutomationHub() {
             <p className="text-white/70">Safely bumps minor/patch deps with build verification.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/deps-auto-upgrade-runner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
+
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Revenue Ideas Runner</h2>
+            <p className="text-white/70">Applies monetization CTAs/components across key pages.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/revenue-ideas-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Front Index Auto Advertiser</h2>
+            <p className="text-white/70">Continuously advertises features on the front index.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/front-index-auto-advertiser-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Complexity Report</h2>
+            <p className="text-white/70">Analyzes code complexity and publishes a report.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/complexity-report" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Roadmap Synthesizer</h2>
+            <p className="text-white/70">Aggregates TODO/FIXME into a public roadmap.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/roadmap-synthesizer" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
         </ul>
       </main>
     </div>

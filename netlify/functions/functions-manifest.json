@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-11T23:31:43.022Z",
+  "generatedAt": "${new Date().toISOString()}",
   "functions": [
     "a11y-alt-text-runner",
     "ai-changelog-runner",
@@ -57,6 +57,10 @@
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",
+    "revenue-ideas-runner",
+    "front-index-auto-advertiser-runner",
+    "complexity-report",
+    "roadmap-synthesizer",
     "schedule-content-index",
     "schedule-homepage",
     "schedule-knowledge-graph",

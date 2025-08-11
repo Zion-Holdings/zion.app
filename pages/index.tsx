@@ -213,6 +213,10 @@ export default function Home() {
               { title: 'SEO Audit Runner', desc: 'Analyzes pages for title/description issues and writes an HTML report.', href: '/.netlify/functions/seo-audit-runner' },
               { title: 'AI Trends Radar', desc: 'Aggregates trending AI topics into a public report.', href: '/.netlify/functions/ai-trends-radar-runner' },
               { title: 'Dependency Auto‑Upgrade', desc: 'Safely bumps minor/patch deps with build verification.', href: '/.netlify/functions/deps-auto-upgrade-runner' },
+              { title: 'Revenue Ideas Runner', desc: 'Applies monetization CTAs and components autonomously.', href: '/.netlify/functions/revenue-ideas-runner' },
+              { title: 'Front Index Auto Advertiser', desc: 'Continuously advertises features on the front index.', href: '/.netlify/functions/front-index-auto-advertiser-runner' },
+              { title: 'Complexity Report', desc: 'Analyzes code complexity and publishes a report.', href: '/.netlify/functions/complexity-report' },
+              { title: 'Roadmap Synthesizer', desc: 'Aggregates TODO/FIXME into a public roadmap.', href: '/.netlify/functions/roadmap-synthesizer' },
             ].map((tool) => (
               <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
@@ -327,6 +331,29 @@ export default function Home() {
           </div>
         </section>
 /* AUTO-GENERATED: HOME_VISIONARY_END */
+
+         {/* Explore Reports */}
+         <section className="mx-auto max-w-7xl px-6 pb-10">
+           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Reports</h2>
+           <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+             <a href="/reports/complexity/summary.json" className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
+               <div className="text-white/90">Complexity Report — JSON</div>
+               <div className="text-white/60 text-sm">Latest analysis of code complexity</div>
+             </a>
+             <a href="https://github.com/Zion-Holdings/zion.app/blob/main/docs/reports/complexity.md" className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
+               <div className="text-white/90">Complexity Report — Markdown</div>
+               <div className="text-white/60 text-sm">Top complex and long files</div>
+             </a>
+             <a href="/reports/roadmap/summary.json" className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
+               <div className="text-white/90">Roadmap — JSON</div>
+               <div className="text-white/60 text-sm">Aggregated TODO/FIXME items</div>
+             </a>
+             <a href="https://github.com/Zion-Holdings/zion.app/blob/main/docs/ROADMAP.md" className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10">
+               <div className="text-white/90">Roadmap — Markdown</div>
+               <div className="text-white/60 text-sm">Human-friendly roadmap view</div>
+             </a>
+           </div>
+         </section>
 </main>
     </div>
   );
