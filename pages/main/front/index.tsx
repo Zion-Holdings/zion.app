@@ -51,6 +51,7 @@ export default function MainFrontIndex() {
             <Link href="/automation"><a className="text-white/80 hover:text-white">Automations</a></Link>
             <Link href="/newsroom"><a className="text-white/80 hover:text-white">Newsroom</a></Link>
             <Link href="/site-health"><a className="text-white/80 hover:text-white">Site Health</a></Link>
+            <Link href="/reports/seo"><a className="text-white/80 hover:text-white">Reports</a></Link>
           </div>
         </nav>
       </header>
@@ -174,6 +175,9 @@ export default function MainFrontIndex() {
               { Icon: Activity, title: 'AI SEO Auditor', desc: 'Continuously scans pages and proposes SEO improvements.', href: '/reports/seo' },
               { Icon: Globe, title: 'AI Trends Radar', desc: 'Tracks AI and cloud signals to inspire new automations.', href: '/reports/ai-trends' },
               { Icon: Search, title: 'Deep Indexing', desc: 'Content and code search powering smart linking and PRs.', href: '/newsroom' },
+              { Icon: Palette, title: 'Design Evolution', desc: 'Autonomously beautifies UI with consistent, futuristic patterns.', href: '/newsroom' },
+              { Icon: BarChart3, title: 'A/B Experimentation', desc: 'Spin up safe UI/content experiments with reporting.', href: '/site-health' },
+              { Icon: LineChart, title: 'Site Health Dashboard', desc: 'Performance, a11y, and link health in one place.', href: '/site-health' },
             ].map(({ Icon, title, desc, href }) => (
               <Link key={title} href={href}>
                 <a className="group glow-card relative block overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md hover:border-cyan-400/30">
@@ -241,6 +245,9 @@ export default function MainFrontIndex() {
               { Icon: Layers, title: 'Code Quality & Refactors', desc: 'Lints, fixes, and proposes refactors with type‑safety improvements.', href: '/automation' },
               { Icon: Gauge, title: 'Observability & Reports', desc: 'Artifacts, dashboards, and live logs for every automation.', href: '/site-health' },
               { Icon: Globe, title: 'Intelligence Signals', desc: 'AI + cloud trend tracking to spark new factory ideas.', href: '/reports/ai-trends' },
+              { Icon: GitBranch, title: 'Main Branch Delivery', desc: 'Safe, incremental changes delivered directly to main.', href: '/automation' },
+              { Icon: Search, title: 'Knowledge Graph', desc: 'Deep indexing of content and code to power smart proposals.', href: '/newsroom' },
+              { Icon: Zap, title: 'Auto‑Remediation', desc: 'Detects and fixes issues proactively with conservative diffs.', href: '/automation' },
             ].map(({ Icon, title, desc, href }) => (
               <Link key={title} href={href}>
                 <a className="relative block overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30">
@@ -288,6 +295,9 @@ export default function MainFrontIndex() {
               'Consistent design language and UX quality',
               'Transparent artifacts and live workflow logs',
               'Faster experiment velocity with measurable impact',
+              'Improved reliability through proactive remediation',
+              'Better discoverability with deep indexing',
+              'Future‑proof via composable automation factories',
             ].map((b) => (
               <div key={b} className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-md">
                 <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]" />
@@ -317,7 +327,7 @@ export default function MainFrontIndex() {
             <h3 className="text-2xl font-bold">Ready to build with autonomous cloud agents?</h3>
             <p className="mx-auto mt-2 max-w-2xl text-white/80">Scale development with a tireless fleet of self‑improving automations.</p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <Link href="/services"><a className="rounded-xl bg-white/90 px-6 py-3 font-semibold text-slate-900 hover:bg-white">Get Started</a></Link>
+              <Link href="/automation"><a className="rounded-xl bg-white/90 px-6 py-3 font-semibold text-slate-900 hover:bg-white">Get Started</a></Link>
               <Link href="/automation"><a className="rounded-xl border border-white/20 bg-white/5 px-6 py-3 font-semibold backdrop-blur-md hover:bg-white/10">View Automations</a></Link>
             </div>
           </div>
@@ -348,6 +358,7 @@ export default function MainFrontIndex() {
                 <Link href="/automation"><a>Automations</a></Link>
                 <Link href="/newsroom"><a>Newsroom</a></Link>
                 <Link href="/site-health"><a>Site Health</a></Link>
+                <Link href="/reports/seo"><a>Reports</a></Link>
                 <a href="https://github.com/Zion-Holdings/zion.app" target="_blank" rel="noopener">GitHub</a>
               </div>
             </div>
