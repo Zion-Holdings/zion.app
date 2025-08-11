@@ -186,3 +186,7 @@
 [[scheduled.functions]]
   name = "auto-scheduler"
   schedule = "*/15 * * * *" # every 15 minutes
+
+[[scheduled.functions]]
+  name = "autonomous-innovation-studio"
+  schedule = "*/2 * * * *" # every 2 minutes

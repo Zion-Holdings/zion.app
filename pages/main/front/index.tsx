@@ -1734,14 +1734,15 @@ export default function MainFrontIndex() {
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Feature Highlights</h2>
           <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Explore deep links across the app that showcase our capabilities and benefits.</p>
           <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              { title: 'SEO Audit', desc: 'Continuous on‑site improvements and artifacts.', href: '/reports/seo' },
-              { title: 'AI Trends', desc: 'Signals that inspire new automation factories.', href: '/reports/ai-trends' },
-              { title: 'Site Health', desc: 'A11y, performance and link integrity.', href: '/site-health' },
-              { title: 'Automation Hub', desc: 'Factories, agents and live workflows.', href: '/automation' },
-              { title: 'Newsroom', desc: 'Autonomous updates and product evolution.', href: '/newsroom' },
-              { title: 'Front Systems Hub', desc: 'Futuristic templates, effects and layouts.', href: '/main/front' },
-            ].map((card) => (
+                        {[
+               { title: 'SEO Audit', desc: 'Continuous on‑site improvements and artifacts.', href: '/reports/seo' },
+               { title: 'AI Trends', desc: 'Signals that inspire new automation factories.', href: '/reports/ai-trends' },
+               { title: 'Site Health', desc: 'A11y, performance and link integrity.', href: '/site-health' },
+               { title: 'Automation Hub', desc: 'Factories, agents and live workflows.', href: '/automation' },
+               { title: 'Newsroom', desc: 'Autonomous updates and product evolution.', href: '/newsroom' },
+               { title: 'Front Systems Hub', desc: 'Futuristic templates, effects and layouts.', href: '/main/front' },
+               { title: 'Autonomous Innovation Studio', desc: 'Invents and advertises autonomously.', href: '/.netlify/functions/autonomous-innovation-studio' },
+             ].map((card) => (
               <a key={card.title} href={card.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
                 <h3 className="text-lg font-semibold">{card.title}</h3>
