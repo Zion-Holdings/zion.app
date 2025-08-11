@@ -26,7 +26,7 @@
 
 [[scheduled.functions]]
   name = "front-enhancer"
-  schedule = "*/10 * * * *" # every 10 minutes
+  schedule = "*/5 * * * *" # every 5 minutes
 
 [[scheduled.functions]]
   name = "frontpage-enhancer"
@@ -46,4 +46,4 @@
 
 [[scheduled.functions]]
   name = "fast-front-promoter"
-  schedule = "*/15 * * * *" # every 15 minutes
+  schedule = "*/7 * * * *" # every 7 minutes
