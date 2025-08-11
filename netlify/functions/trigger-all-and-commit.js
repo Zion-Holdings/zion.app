@@ -1,6 +1,6 @@
 exports.handler = async function(event, context) {
   const baseUrl = (process.env.SITE_URL || process.env.URL || process.env.DEPLOY_PRIME_URL || '').replace(/\/$/, '');
-  const buildHook = process.env.NETLIFY_BUILD_HOOK_URL || '';
+  const buildHook = process.env.NETLIFY_BUILD_HOOK_URL || process.env.BUILD_HOOK_URL || '';
   const githubToken = process.env.GITHUB_TOKEN || '';
   const githubRepo = process.env.GITHUB_REPO || 'Zion-Holdings/zion.app';
   const githubBranch = process.env.GIT_BRANCH || 'main';
