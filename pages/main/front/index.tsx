@@ -1691,6 +1691,24 @@ export default function MainFrontIndex() {
           </div>
         </motion.section>
 
+        <section className="mx-auto max-w-7xl px-6 pb-20">
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Cloud Automations</h2>
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { title: 'Knowledge & Innovation (3h)', desc: 'Graphs, newsroom, changelogs; then syncs.', href: '/.netlify/functions/knowledge-and-innovation' },
+              { title: 'Guardian Security (6h)', desc: 'Security, dead code, links/images, sitemap.', href: '/.netlify/functions/guardian-security-fast' },
+              { title: 'Factory Expander (30m)', desc: 'Front factories, OG images, homepage promos.', href: '/.netlify/functions/autonomous-factory-expander' },
+            ].map((tool) => (
+              <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <h3 className="text-lg font-semibold">{tool.title}</h3>
+                <p className="mt-1 text-sm text-white/75">{tool.desc}</p>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+              </a>
+            ))}
+          </div>
+        </section>
+
       </div>
       {/* Back to top */}
       {showToTop && (
