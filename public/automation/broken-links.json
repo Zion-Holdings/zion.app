@@ -1,0 +1,25 @@
+{
+  "internalMissingRoutes": [
+    "/.netlify/functions/front-enhancer",
+    "/.netlify/functions/frontpage-enhancer",
+    "/.netlify/functions/link-and-health-scheduler",
+    "/.netlify/functions/marketing-and-features-promo",
+    "/.netlify/functions/homepage_advertiser",
+    "/.netlify/functions/cloud_orchestrator",
+    "/.netlify/functions/fast-orchestrator",
+    "/.netlify/functions/continuous-orchestrator",
+    "/.netlify/functions/front-maximizer",
+    "/.netlify/functions/continuous-front-runner",
+    "/.netlify/functions/readme-advertiser",
+    "/.netlify/functions/features-capabilities-benefits-advertiser",
+    "/.netlify/functions/hyper-front-index-accelerator",
+    "/.netlify/functions/innovation-lab",
+    "/.netlify/functions/auto-scheduler",
+    "/.netlify/functions/broken-image-scanner",
+    "/.netlify/functions/fast-front-promoter",
+    "/.netlify/functions/feature-advertiser",
+    "/.netlify/functions/front-index-futurizer",
+    "/.netlify/functions/front-index-orchestrator",
+    "/.netlify/functions/front-index-scheduler"
+  ]
+}

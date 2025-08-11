@@ -1,0 +1,371 @@
+{
+  "generatedAt": "2025-08-11T11:20:52.149Z",
+  "baseUrl": "https://ziontechgroup.com",
+  "totals": {
+    "routesKnown": 11,
+    "internalLinksDiscovered": 31,
+    "internalMissingRoutes": 21,
+    "externalChecked": 0,
+    "externalFailures": 0,
+    "fetchErrors": 80
+  },
+  "internalMissingRoutes": [
+    "/.netlify/functions/front-enhancer",
+    "/.netlify/functions/frontpage-enhancer",
+    "/.netlify/functions/link-and-health-scheduler",
+    "/.netlify/functions/marketing-and-features-promo",
+    "/.netlify/functions/homepage_advertiser",
+    "/.netlify/functions/cloud_orchestrator",
+    "/.netlify/functions/fast-orchestrator",
+    "/.netlify/functions/continuous-orchestrator",
+    "/.netlify/functions/front-maximizer",
+    "/.netlify/functions/continuous-front-runner",
+    "/.netlify/functions/readme-advertiser",
+    "/.netlify/functions/features-capabilities-benefits-advertiser",
+    "/.netlify/functions/hyper-front-index-accelerator",
+    "/.netlify/functions/innovation-lab",
+    "/.netlify/functions/auto-scheduler",
+    "/.netlify/functions/broken-image-scanner",
+    "/.netlify/functions/fast-front-promoter",
+    "/.netlify/functions/feature-advertiser",
+    "/.netlify/functions/front-index-futurizer",
+    "/.netlify/functions/front-index-orchestrator",
+    "/.netlify/functions/front-index-scheduler"
+  ],
+  "externalFailures": [],
+  "fetchErrors": [
+    {
+      "url": "https://ziontechgroup.com/_app",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/_document",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/about",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/admin/automation-status",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/auth/callback",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/auth/forgot-password",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/auth/reset-password",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/auth/verify",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/auto/auto-update-2025-08-08t16-07-55-171z",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/auto/auto-update-2025-08-08t16-10-20-249z",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/auto/auto-update-2025-08-08t16-30-00-086z",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/auto/auto-update-2025-08-08t16-30-20-949z",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/auto/auto-update-2025-08-08t16-38-19-257z",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/auto/auto-update-2025-08-08t16-49-54-200z",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/auto/auto-update-2025-08-08t17-23-07-688z",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/blockchain-solutions",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/5g-technology-and-its-impact-on-iot-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/api-first-development-building-scalable-systems-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/augmented-reality-in-enterprise-applications-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/blockchain-technology-in-modern-business-solutions-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/cloud-native-architecture-best-practices-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/cybersecurity-trends-for-2024-and-beyond-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/data-analytics-in-digital-transformation-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/devops-automation-strategies-for-modern-teams-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/digital-twins-revolutionizing-industry-4-0-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/machine-learning-applications-in-enterprise-software-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/microservices-architecture-benefits-and-challenges-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/quantum-computing-implications-for-business-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/sustainable-technology-green-computing-solutions-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/the-rise-of-edge-computing-in-iot-applications-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/category/ai-consulting-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/category/business-intelligence-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/category/cloud-architecture-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/category/cybersecurity-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/category/data-science-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/category/database-administration-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/category/devops-automation-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/category/mobile-development-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/category/network-engineering-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/category/product-management-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/category/quality-assurance-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/category/system-administration-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/category/technical-writing-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/category/ui-ux-design-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/category/web-development-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/chat-content/ai-powered-business-solutions-discussion",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/chat-content/cloud-computing-strategies",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/chat-content/cybersecurity-best-practices",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/chat-content/data-analytics-implementation",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/chat-content/digital-transformation-insights",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/chat-content/emerging-technology-trends",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/chat-content/future-of-work-and-automation",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/chat-content/innovation-in-enterprise-technology",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/chat-content/sustainable-technology-practices",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/chat-content/technology-implementation-strategies",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/contact",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/enhanced-home",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/iot-platforms",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/ai-model-development-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/ai-seo-auditor",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/api-development-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/business-intelligence-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/cloud-migration-services-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/customer-support-chatbot",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/data-pipeline-engineering-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/database-design-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/instagram-content-scheduler",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/landing-page-generator",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/mobile-app-development-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/network-security-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/performance-optimization-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/price-intelligence-service",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/quality-assurance-testing-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/security-auditing-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/system-administration-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/technical-documentation-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/ui-ux-design-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/web-application-development-chat",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "url": "https://ziontechgroup.com/talent/slug",
+      "error": "Request failed with status code 404"
+    }
+  ],
+  "internalRoutes": [
+    "/site-health",
+    "/services",
+    "/products",
+    "/newsroom",
+    "/",
+    "/contact",
+    "/reports/seo",
+    "/reports/ai-trends",
+    "/main/front",
+    "/front",
+    "/automation"
+  ]
+}

@@ -28,7 +28,6 @@ function buildItems(repoUrl, workspaceRoot) {
   });
 
   // External useful links
-  items.push({ type: 'external', href: `${repoUrl}/actions`, label: 'GitHub Actions — live workflows' });
   if (fileExists(path.join(workspaceRoot, 'docs'))) {
     items.push({ type: 'external', href: `${repoUrl}/tree/main/docs`, label: 'Docs — technical notes & guides' });
   }

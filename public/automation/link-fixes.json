@@ -1,0 +1,125 @@
+{
+  "generatedAt": "2025-08-11T11:20:52.172Z",
+  "results": [
+    {
+      "route": "/.netlify/functions/front-enhancer",
+      "created": true,
+      "filePath": "/workspace/pages/.netlify/functions/front-enhancer.tsx"
+    },
+    {
+      "route": "/.netlify/functions/frontpage-enhancer",
+      "created": true,
+      "filePath": "/workspace/pages/.netlify/functions/frontpage-enhancer.tsx"
+    },
+    {
+      "route": "/.netlify/functions/link-and-health-scheduler",
+      "created": true,
+      "filePath": "/workspace/pages/.netlify/functions/link-and-health-scheduler.tsx"
+    },
+    {
+      "route": "/.netlify/functions/marketing-and-features-promo",
+      "created": true,
+      "filePath": "/workspace/pages/.netlify/functions/marketing-and-features-promo.tsx"
+    },
+    {
+      "route": "/.netlify/functions/homepage_advertiser",
+      "created": true,
+      "filePath": "/workspace/pages/.netlify/functions/homepage_advertiser.tsx"
+    },
+    {
+      "route": "/.netlify/functions/cloud_orchestrator",
+      "created": true,
+      "filePath": "/workspace/pages/.netlify/functions/cloud_orchestrator.tsx"
+    },
+    {
+      "route": "/.netlify/functions/fast-orchestrator",
+      "created": true,
+      "filePath": "/workspace/pages/.netlify/functions/fast-orchestrator.tsx"
+    },
+    {
+      "route": "/.netlify/functions/continuous-orchestrator",
+      "created": true,
+      "filePath": "/workspace/pages/.netlify/functions/continuous-orchestrator.tsx"
+    },
+    {
+      "route": "/.netlify/functions/front-maximizer",
+      "created": true,
+      "filePath": "/workspace/pages/.netlify/functions/front-maximizer.tsx"
+    },
+    {
+      "route": "/.netlify/functions/continuous-front-runner",
+      "created": true,
+      "filePath": "/workspace/pages/.netlify/functions/continuous-front-runner.tsx"
+    },
+    {
+      "route": "/.netlify/functions/readme-advertiser",
+      "created": true,
+      "filePath": "/workspace/pages/.netlify/functions/readme-advertiser.tsx"
+    },
+    {
+      "route": "/.netlify/functions/features-capabilities-benefits-advertiser",
+      "created": true,
+      "filePath": "/workspace/pages/.netlify/functions/features-capabilities-benefits-advertiser.tsx"
+    },
+    {
+      "route": "/.netlify/functions/hyper-front-index-accelerator",
+      "created": true,
+      "filePath": "/workspace/pages/.netlify/functions/hyper-front-index-accelerator.tsx"
+    },
+    {
+      "route": "/.netlify/functions/innovation-lab",
+      "created": true,
+      "filePath": "/workspace/pages/.netlify/functions/innovation-lab.tsx"
+    },
+    {
+      "route": "/.netlify/functions/auto-scheduler",
+      "created": true,
+      "filePath": "/workspace/pages/.netlify/functions/auto-scheduler.tsx"
+    },
+    {
+      "route": "/.netlify/functions/broken-image-scanner",
+      "created": true,
+      "filePath": "/workspace/pages/.netlify/functions/broken-image-scanner.tsx"
+    },
+    {
+      "route": "/.netlify/functions/fast-front-promoter",
+      "created": true,
+      "filePath": "/workspace/pages/.netlify/functions/fast-front-promoter.tsx"
+    },
+    {
+      "route": "/.netlify/functions/feature-advertiser",
+      "created": true,
+      "filePath": "/workspace/pages/.netlify/functions/feature-advertiser.tsx"
+    },
+    {
+      "route": "/.netlify/functions/front-index-futurizer",
+      "created": true,
+      "filePath": "/workspace/pages/.netlify/functions/front-index-futurizer.tsx"
+    },
+    {
+      "route": "/.netlify/functions/front-index-orchestrator",
+      "created": true,
+      "filePath": "/workspace/pages/.netlify/functions/front-index-orchestrator.tsx"
+    },
+    {
+      "route": "/.netlify/functions/front-index-scheduler",
+      "created": true,
+      "filePath": "/workspace/pages/.netlify/functions/front-index-scheduler.tsx"
+    },
+    {
+      "route": "/services",
+      "created": false,
+      "filePath": "/workspace/pages/services.tsx"
+    },
+    {
+      "route": "/products",
+      "created": false,
+      "filePath": "/workspace/pages/products.tsx"
+    },
+    {
+      "route": "/contact",
+      "created": false,
+      "filePath": "/workspace/pages/contact.tsx"
+    }
+  ]
+}
