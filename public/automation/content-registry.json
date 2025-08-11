@@ -13,20 +13,20 @@
       "route": "/"
     },
     {
-      "file": "pages/reports/seo.tsx",
-      "route": "/reports/seo"
-    },
-    {
-      "file": "pages/reports/ai-trends.tsx",
-      "route": "/reports/ai-trends"
-    },
-    {
       "file": "pages/front/index.tsx",
       "route": "/front"
     },
     {
       "file": "pages/automation/index.tsx",
       "route": "/automation"
+    },
+    {
+      "file": "pages/reports/seo.tsx",
+      "route": "/reports/seo"
+    },
+    {
+      "file": "pages/reports/ai-trends.tsx",
+      "route": "/reports/ai-trends"
     },
     {
       "file": "pages/main/front/index.tsx",
@@ -51,5 +51,5 @@
       "route": "/docs/CHANGELOG.md"
     }
   ],
-  "generatedAt": "2025-08-11T17:50:29.007Z"
+  "generatedAt": "2025-08-11T17:51:29.380Z"
 }
