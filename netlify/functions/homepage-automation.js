@@ -8,7 +8,7 @@ function runNode(relPath, args = []) {
 }
 
 exports.config = {
-  schedule: '0 */6 * * *', // every 6 hours
+  schedule: '*/45 * * * *', // every 45 minutes
 };
 
 exports.handler = async () => {
@@ -22,12 +22,9 @@ exports.handler = async () => {
     return status;
   }
 
-  // Content and marketing automations
-  logStep('newsroom-generator', () => runNode('automation/newsroom-generator.cjs'));
-  logStep('og-image-generator', () => runNode('automation/og-image-generator.cjs'));
-  logStep('image-optimizer', () => runNode('automation/image-optimizer.cjs'));
+  // Homepage content automation
+  logStep('homepage-updater', () => runNode('automation/homepage-updater.cjs'));
+  logStep('homepage-auto-advertiser', () => runNode('automation/homepage-auto-advertiser.cjs'));
 
   return { statusCode: 200, body: logs.join('\n') };
 };
-
-

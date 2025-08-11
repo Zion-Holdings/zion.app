@@ -1552,6 +1552,39 @@ export default function MainFrontIndex() {
             ))}
           </div>
         </motion.section>
+
+        {/* Automation Schedulers */}
+        <motion.section
+          id="schedulers"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-7xl px-6 pb-16"
+        >
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Automation Schedulers</h2>
+          <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Explore live Netlify scheduled functions powering autonomous updates.</p>
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <a href="/.netlify/functions/homepage-automation" target="_blank" rel="noopener" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-base font-semibold">Homepage Automation</div>
+              <div className="mt-1 text-sm text-white/75">Updates index explore section and promos.</div>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Run <span aria-hidden>↗</span></div>
+            </a>
+            <a href="/.netlify/functions/maintenance-scheduler" target="_blank" rel="noopener" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-base font-semibold">Maintenance Scheduler</div>
+              <div className="mt-1 text-sm text-white/75">SaaS, links, and promo routines every 30m.</div>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Run <span aria-hidden>↗</span></div>
+            </a>
+            <a href="/.netlify/functions/marketing-scheduler" target="_blank" rel="noopener" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-base font-semibold">Marketing Scheduler</div>
+              <div className="mt-1 text-sm text-white/75">Newsroom, OG images, and assets every 6h.</div>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Run <span aria-hidden>↗</span></div>
+            </a>
+          </div>
+        </motion.section>
       </main>
       {/* Back to top */}
       {showToTop && (

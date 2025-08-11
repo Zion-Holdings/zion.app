@@ -9,4 +9,8 @@
   package = "@netlify/plugin-nextjs"
 
 [[plugins]]
-  package = "netlify-plugin-cloudinary" 
+  package = "netlify-plugin-cloudinary"
+
+[functions]
+  node_bundler = "esbuild"
+  included_files = ["automation/**", "pages/**", "styles/**"] 

@@ -118,6 +118,27 @@ function discoverKeyWorkflows() {
   return items;
 }
 
+function discoverNetlifyFunctions() {
+  const functionsDir = path.join(ROOT, 'netlify', 'functions');
+  const items = [];
+  try {
+    const files = fs.existsSync(functionsDir) ? fs.readdirSync(functionsDir) : [];
+    for (const f of files) {
+      if (!f.endsWith('.js')) continue;
+      const name = f.replace(/\.js$/, '');
+      items.push({
+        type: 'external',
+        href: `/.netlify/functions/${name}`,
+        label: `Netlify: ${titleCase(name.replace(/[-_]/g, ' '))}`,
+        tagline: 'Scheduled automation',
+      });
+    }
+  } catch (err) {
+    log(`Error discovering netlify functions: ${err.message}`);
+  }
+  return items;
+}
+
 function buildCard(item) {
   const cardClass = 'bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10';
   const textSpan = `<span className=\"text-white/90\">${item.label}${item.tagline ? ' — ' + item.tagline : ''}</span>`;
@@ -158,7 +179,8 @@ function replaceBetweenMarkers(source, startMarker, endMarker, replacement) {
 
   const internal = discoverInternalPages();
   const workflows = discoverKeyWorkflows();
-  const combined = [...internal, ...workflows].slice(0, 12);
+  const netlifyFns = discoverNetlifyFunctions();
+  const combined = [...internal, ...netlifyFns, ...workflows].slice(0, 12);
   const tsxBlock = generateSectionTSX(combined);
 
   if (!fs.existsSync(INDEX_PAGE)) {
