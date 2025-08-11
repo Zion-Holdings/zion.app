@@ -1,10 +1,11 @@
 {
-  "generatedAt": "2025-08-11T22:11:32.843Z",
+  "generatedAt": "2025-08-11T22:27:02.379Z",
   "functions": [
     "ai-changelog-runner",
     "auto-scheduler",
     "automation-matrix",
     "autonomous-invention-orchestrator",
+    "branch-cleanup-runner",
     "broken-image-scanner",
     "broken-image-scanner-runner",
     "cloud_orchestrator",
@@ -12,6 +13,7 @@
     "continuous-orchestrator",
     "dead-code-audit",
     "dead-code-report",
+    "deps-auto-upgrade-runner",
     "docs-index-runner",
     "docs-search-index-runner",
     "external-link-check-runner",
@@ -51,6 +53,7 @@
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",
+    "revenue-ideas-runner",
     "schedule-content-index",
     "schedule-homepage",
     "schedule-knowledge-graph",
@@ -62,6 +65,7 @@
     "todo-scanner-runner",
     "todo-summary-runner",
     "trigger-all-and-commit",
+    "ui-beautifier-runner",
     "ui-enhancer",
     "ultrafast-front-orchestrator",
     "ultrafast-orchestrator"
