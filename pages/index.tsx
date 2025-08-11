@@ -196,7 +196,7 @@ export default function Home() {
           </div>
         </section>
  
-        {/* AUTO-GENERATED: HOME_UPDATER_START */}
+        {/* AUTO-GENERATED: HOME_UPDATER_START */
  <section className="mx-auto max-w-7xl px-6 pb-16">
    <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Explore more</h2>
    <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
@@ -207,13 +207,17 @@ export default function Home() {
   
             <Link href="/site-health"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Site Health — audits & insights</span></a></Link>
   
-            <a href="https://github.com/Zion-Holdings/zion.app/actions" target="_blank" rel="noopener" className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">GitHub Actions — live workflows</span></a>
+            <a href="/.netlify/functions/maintenance-scheduler" target="_blank" rel="noopener" className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Netlify — Maintenance Scheduler</span></a>
+  
+            <a href="/.netlify/functions/marketing-scheduler" target="_blank" rel="noopener" className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Netlify — Marketing Scheduler</span></a>
+  
+            <a href="/.netlify/functions/front-upgrader" target="_blank" rel="noopener" className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Netlify — Front Hub Upgrader</span></a>
   
             <a href="https://github.com/Zion-Holdings/zion.app/tree/main/docs" target="_blank" rel="noopener" className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Docs — technical notes & guides</span></a>
   
    </div>
-   </section>
-  {/* AUTO-GENERATED: HOME_UPDATER_END */}
+ </section>
+ /* AUTO-GENERATED: HOME_UPDATER_END */}
  </main>
     </div>
   );
