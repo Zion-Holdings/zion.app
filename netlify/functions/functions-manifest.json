@@ -1,7 +1,8 @@
 {
-  "generatedAt": "2025-08-11T22:27:57.128Z",
+  "generatedAt": "2025-08-11T22:33:23.413Z",
   "functions": [
     "ai-changelog-runner",
+    "ai-trends-radar-runner",
     "auto-scheduler",
     "automation-matrix",
     "autonomous-innovation-generator",
@@ -58,6 +59,7 @@
     "schedule-site-health",
     "security-audit",
     "security-audit-runner",
+    "seo-audit-runner",
     "site-crawler",
     "sitemap_runner",
     "todo-scanner-runner",
@@ -65,6 +67,7 @@
     "trigger-all-and-commit",
     "ui-enhancer",
     "ultrafast-front-orchestrator",
-    "ultrafast-orchestrator"
+    "ultrafast-orchestrator",
+    "website-search-index-runner"
   ]
 }

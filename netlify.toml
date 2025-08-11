@@ -190,3 +190,15 @@
 [[scheduled.functions]]
   name = "autonomous-innovation-generator"
   schedule = "*/2 * * * *" # every 2 minutes
+
+[[scheduled.functions]]
+  name = "seo-audit-runner"
+  schedule = "17 */6 * * *"
+
+[[scheduled.functions]]
+  name = "ai-trends-radar-runner"
+  schedule = "0 * * * *"
+
+[[scheduled.functions]]
+  name = "website-search-index-runner"
+  schedule = "29 */4 * * *"
