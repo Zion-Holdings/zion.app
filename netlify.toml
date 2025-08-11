@@ -180,8 +180,15 @@
 
 [[scheduled.functions]]
   name = "a11y-audit-runner"
-  schedule = "*/20 * * * *"}  
-```
+  schedule = "*/20 * * * *"}
+  
+[[scheduled.functions]]
+  name = "dependency-licenses-audit"
+  schedule = "*/30 * * * *" # every 30 minutes
+
+[[scheduled.functions]]
+  name = "tech-debt-dashboard"
+  schedule = "*/10 * * * *" # every 10 minutes
 
 [[scheduled.functions]]
   name = "todo-summary-runner"
