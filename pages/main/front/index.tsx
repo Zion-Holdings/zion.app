@@ -395,6 +395,42 @@ export default function MainFrontIndex() {
               <p className="mt-1 text-sm text-white/75">End-to-end agents launching factories and syncing safe diffs to main.</p>
               <div className="mt-3 text-xs text-cyan-300/90">Open Automation Hub →</div>
             </a>
+            <a
+              href="/.netlify/functions/innovation-scout"
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover"
+            >
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-lg font-semibold">Innovation Scout (3m)</div>
+              <p className="mt-1 text-sm text-white/75">Researches AI trends, curates content, updates newsroom, and syncs.</p>
+              <div className="mt-3 text-xs text-cyan-300/90">Trigger now →</div>
+            </a>
+            <a
+              href="/.netlify/functions/content-ux-curator"
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover"
+            >
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-lg font-semibold">Content & UX Curator (7m)</div>
+              <p className="mt-1 text-sm text-white/75">Regenerates OG images, docs indexes, and homepage/front promos.</p>
+              <div className="mt-3 text-xs text-cyan-300/90">Trigger now →</div>
+            </a>
+            <a
+              href="/.netlify/functions/security-and-integrity-runner"
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover"
+            >
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-lg font-semibold">Security & Integrity Runner (15m)</div>
+              <p className="mt-1 text-sm text-white/75">Security audit, external link checks, image integrity and sitemap.</p>
+              <div className="mt-3 text-xs text-cyan-300/90">Trigger now →</div>
+            </a>
+            <a
+              href="/.netlify/functions/autonomous-cloud-maximizer"
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover"
+            >
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-lg font-semibold">Autonomous Cloud Maximizer (2m)</div>
+              <p className="mt-1 text-sm text-white/75">High-frequency orchestrator that chains innovation + integrity.</p>
+              <div className="mt-3 text-xs text-cyan-300/90">Trigger now →</div>
+            </a>
           </div>
         </motion.section>
 

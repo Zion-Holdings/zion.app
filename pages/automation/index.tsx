@@ -66,6 +66,26 @@ export default function AutomationHub() {
             <p className="text-white/70">Ultra-fast front index futurizer and directory builder.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/hyper-front-index-accelerator" target="_blank" rel="noopener">Trigger / View</a>
           </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Innovation Scout</h2>
+            <p className="text-white/70">Researches AI trends, curates content, updates newsroom, and syncs.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/innovation-scout" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Content & UX Curator</h2>
+            <p className="text-white/70">Regenerates OG images, docs indexes, and homepage/front promos.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/content-ux-curator" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Security & Integrity Runner</h2>
+            <p className="text-white/70">Security audit, external link checks, image integrity and sitemap.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/security-and-integrity-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Autonomous Cloud Maximizer</h2>
+            <p className="text-white/70">High-frequency orchestrator that chains innovation + integrity.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/autonomous-cloud-maximizer" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
         </ul>
       </main>
     </div>

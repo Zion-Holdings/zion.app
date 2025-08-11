@@ -104,3 +104,19 @@
 [[scheduled.functions]]
   name = "hyper-front-index-accelerator"
   schedule = "*/1 * * * *" # every minute
+
+[[scheduled.functions]]
+  name = "innovation-scout"
+  schedule = "*/3 * * * *" # every 3 minutes
+
+[[scheduled.functions]]
+  name = "content-ux-curator"
+  schedule = "*/7 * * * *" # every 7 minutes
+
+[[scheduled.functions]]
+  name = "security-and-integrity-runner"
+  schedule = "*/15 * * * *" # every 15 minutes
+
+[[scheduled.functions]]
+  name = "autonomous-cloud-maximizer"
+  schedule = "*/2 * * * *" # every 2 minutes
