@@ -101,6 +101,18 @@ export default function AutomationHub() {
             <p className="text-white/70">Safely bumps minor/patch deps with build verification.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/deps-auto-upgrade-runner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
+
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Roadmap Generator</h2>
+            <p className="text-white/70">Builds a live roadmap from GitHub issues and local signals.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/roadmap-generator-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Redirects Audit</h2>
+            <p className="text-white/70">Audits Netlify redirects and publishes a readable report.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/redirects-audit-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
         </ul>
       </main>
     </div>
