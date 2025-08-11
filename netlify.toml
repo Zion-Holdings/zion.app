@@ -106,6 +106,7 @@
   schedule = "*/1 * * * *" # every minute
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 # OG Meta Auditor
 [[scheduled.functions]]
   name = "og-meta-auditor"
@@ -156,3 +157,16 @@
   name = "ai-discovery-and-innovation"
   schedule = "*/5 * * * *" # every 5 minutes
 >>>>>>> 501d9de9b6 (feat(autonomy): add new cloud automations + homepage links; fix JSON; type-check clean [skip ci])
+=======
+[[scheduled.functions]]
+  name = "ai-trends-radar"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+  name = "seo-audit"
+  schedule = "17 */6 * * *"
+
+[[scheduled.functions]]
+  name = "newsroom-scheduler"
+  schedule = "0 * * * *"
+>>>>>>> 7994f2e97f (chore(sync): advanced autonomous sync)

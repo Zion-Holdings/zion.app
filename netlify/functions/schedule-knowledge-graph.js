@@ -26,6 +26,10 @@ module.exports.handler = async function() {
     const result = await run(step.cmd);
     results.push({ step: step.name, code: result.code, output: result.output.slice(0, 2000), errors: result.errors.slice(0, 2000) });
   }
+
+  // Commit artifacts if any
+  await run('git config user.name "zion-bot" && git config user.email "bot@zion.app" && git add -A && (git commit -m "chore(reports): update knowledge graph + metrics [ci skip]" || true) && (git push origin main || true)');
+
   const failed = results.filter(r => r.code !== 0);
   return { statusCode: failed.length ? 207 : 200, body: JSON.stringify({ message: failed.length ? 'Completed with some failures' : 'Completed successfully', results }, null, 2) };
 };
