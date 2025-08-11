@@ -1,6 +1,6 @@
 [build]
-  command = "npm ci && npm run build"
-  publish = ".next"
+  command = "npm ci && npm run export"
+  publish = "out"
 
 [build.environment]
   NODE_VERSION = "20"
@@ -10,8 +10,6 @@
   directory = "netlify/functions"
   node_bundler = "esbuild"
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
 
 [[plugins]]
   package = "netlify-plugin-cloudinary"

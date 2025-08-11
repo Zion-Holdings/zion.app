@@ -1,3 +1,6 @@
 /services      /main/front#capabilities   301!
 /products      /main/front                 301!
 /contact       /newsroom                   302
+/main          /                           301!
+/front         /                           301!
+/front/index   /                           301!
