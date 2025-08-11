@@ -167,6 +167,14 @@
   schedule = "53 */6 * * *"
 
 [[scheduled.functions]]
+  name = "redirect-healer"
+  schedule = "*/15 * * * *"
+
+[[scheduled.functions]]
+  name = "sitemap-prioritizer"
+  schedule = "17 */6 * * *"
+
+[[scheduled.functions]]
   name = "todo-summary-runner"
   schedule = "*/30 * * * *"
 
