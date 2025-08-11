@@ -8,7 +8,7 @@ function runNode(relPath, args = []) {
 }
 
 exports.config = {
-  schedule: '*/45 * * * *', // every 45 minutes
+  schedule: '*/20 * * * *', // every 20 minutes
 };
 
 exports.handler = async () => {
