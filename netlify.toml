@@ -248,3 +248,15 @@
 [[scheduled.functions]]
   name = "deps-auto-upgrade-runner"
   schedule = "7 */12 * * *"
+
+[[scheduled.functions]]
+  name = "cloud-automation-inventor"
+  schedule = "*/3 * * * *" # every 3 minutes
+
+[[scheduled.functions]]
+  name = "autonomous-front-advertiser"
+  schedule = "*/4 * * * *" # every 4 minutes
+
+[[scheduled.functions]]
+  name = "hyper-sync-committer"
+  schedule = "*/1 * * * *" # every minute
