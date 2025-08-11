@@ -32,6 +32,7 @@ function discoverInternalPages() {
   const priority = [
     { href: '/automation', label: 'Automation Hub', tagline: 'Live agents & workflows' },
     { href: '/site-health', label: 'Site Health', tagline: 'A11y, performance, links' },
+    { href: '/reports/link-health', label: 'Link Health', tagline: 'Live link checks' },
     { href: '/reports/seo', label: 'SEO Audit', tagline: 'Continuous improvements' },
     { href: '/reports/ai-trends', label: 'AI Trends', tagline: 'Intelligence signals' },
     { href: '/newsroom', label: 'Newsroom', tagline: 'Latest autonomous updates' },

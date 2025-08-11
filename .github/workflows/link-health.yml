@@ -1,0 +1,59 @@
+name: Link Health Monitor
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: link-health-monitor
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    env:
+      BASE_URL: ${{ secrets.NETLIFY_BASE_URL }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate link health report
+        run: npm run reports:link-health
+
+      - name: Update front page promotions
+        run: npm run front:advertise
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit and push changes
+        run: |
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No changes to commit";
+          else
+            git commit -m "chore(reports): update link health report and front promotions [skip ci]";
+            git push;
+          fi

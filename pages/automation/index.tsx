@@ -120,6 +120,14 @@ export default function AutomationHub() {
            </li>
          </ul>
       </main>
+      <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Added by automation: Link Health */}
+        <a href="/reports/link-health" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30">
+          <div className="text-base font-semibold">Link Health</div>
+          <div className="mt-1 text-sm text-white/75">Live link checks</div>
+          <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
+        </a>
+      </div>
     </div>
   );
 }
