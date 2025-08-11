@@ -254,12 +254,20 @@ export default function Home() {
               { title: 'README Advertiser', desc: 'Refresh README and docs indexes every 6h.', href: '/.netlify/functions/readme-advertiser' },
               { title: 'Features/Capabilities/Benefits Advertiser (2m)', desc: 'Continuously advertises new features with deep links on the front pages.', href: '/.netlify/functions/features-capabilities-benefits-advertiser' },
               { title: 'Hyper Front Index Accelerator (1m)', desc: 'Ultra-fast front index futurizer and directory builder.', href: '/.netlify/functions/hyper-front-index-accelerator' },
+<<<<<<< HEAD
               { title: 'Codebase Hygiene Orchestrator', desc: 'Scans TODOs, dead code, and security issues; commits fixes.', href: '/.netlify/functions/codebase-hygiene-orchestrator' },
               { title: 'Media Integrity Orchestrator', desc: 'Repairs broken images, optimizes assets, regenerates OGs.', href: '/.netlify/functions/media-integrity-orchestrator' },
               { title: 'Knowledge Graph Orchestrator', desc: 'Updates repository knowledge graph, radar, and docs index.', href: '/.netlify/functions/knowledge-graph-orchestrator' },
               { title: 'AI Newsroom Orchestrator', desc: 'Generates newsroom posts and AI changelogs automatically.', href: '/.netlify/functions/ai-newsroom-orchestrator' },
               { title: 'Netlify Auto‑Healer', desc: 'Heals build and runtime issues, then syncs to main.', href: '/.netlify/functions/netlify-auto-healer-runner' },
               { title: 'Sitemap & SEO Orchestrator', desc: 'Regenerates sitemap and runs SEO audits with fixes.', href: '/.netlify/functions/sitemap-and-seo-orchestrator' },
+=======
+              { title: 'Auto‑Discovery Orchestrator (7m)', desc: 'Scans codebase and content to suggest and run new automations.', href: '/.netlify/functions/auto-discovery-orchestrator' },
+              { title: 'Docs Index Refresher (10m)', desc: 'Regenerates search index, README, and AI changelog automatically.', href: '/.netlify/functions/docs-index-refresher' },
+              { title: 'Asset Optimizer (10m)', desc: 'Continuously optimizes and compresses images/assets.', href: '/.netlify/functions/asset-optimizer' },
+              { title: 'Media & Links Health (20m)', desc: 'Scans broken images, checks external links, refreshes sitemap.', href: '/.netlify/functions/media-and-links-health' },
+              { title: 'AI Discovery & Innovation (5m)', desc: 'Researches trends and proposes new automation factories.', href: '/.netlify/functions/ai-discovery-and-innovation' },
+>>>>>>> 501d9de9b6 (feat(autonomy): add new cloud automations + homepage links; fix JSON; type-check clean [skip ci])
             ].map((tool) => (
               <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />

@@ -105,6 +105,7 @@
   name = "hyper-front-index-accelerator"
   schedule = "*/1 * * * *" # every minute
 
+<<<<<<< HEAD
 # OG Meta Auditor
 [[scheduled.functions]]
   name = "og-meta-auditor"
@@ -134,3 +135,24 @@
 [[scheduled.functions]]
   name = "sitemap-and-seo-orchestrator"
   schedule = "0 */6 * * *" # every 6 hours
+=======
+[[scheduled.functions]]
+  name = "auto-discovery-orchestrator"
+  schedule = "*/7 * * * *" # every 7 minutes
+
+[[scheduled.functions]]
+  name = "docs-index-refresher"
+  schedule = "*/10 * * * *" # every 10 minutes
+
+[[scheduled.functions]]
+  name = "asset-optimizer"
+  schedule = "*/10 * * * *" # every 10 minutes
+
+[[scheduled.functions]]
+  name = "media-and-links-health"
+  schedule = "*/20 * * * *" # every 20 minutes
+
+[[scheduled.functions]]
+  name = "ai-discovery-and-innovation"
+  schedule = "*/5 * * * *" # every 5 minutes
+>>>>>>> 501d9de9b6 (feat(autonomy): add new cloud automations + homepage links; fix JSON; type-check clean [skip ci])
