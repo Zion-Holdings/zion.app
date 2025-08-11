@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-11T22:48:44.985Z",
+  "generatedAt": "2025-08-11T23:02:01.510Z",
   "functions": [
     "a11y-audit-runner",
     "ai-changelog-runner",
@@ -70,6 +70,7 @@
     "site-crawler",
     "sitemap-prioritizer",
     "sitemap_runner",
+    "terminology-consistency-runner",
     "todo-scanner-runner",
     "todo-summary-runner",
     "trigger-all-and-commit",
