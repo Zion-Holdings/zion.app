@@ -1,0 +1,147 @@
+{
+  "generatedAt": "2025-08-11T20:36:40.377Z",
+  "total": 28,
+  "bad": 0,
+  "results": [
+    {
+      "url": "https://techcrunch.com/2025/08/11/poshmark-ceo-and-founder-to-step-down/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/trump-administration-stops-illegal-freeze-of-5b-ev-charger-funds-after-losing-in-court/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/ford-throws-out-henry-fords-assembly-line-to-make-low-cost-evs-in-america/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/elon-musk-confirms-shutdown-of-tesla-dojo-an-evolutionary-dead-end/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/nvidia-unveils-new-cosmos-world-models-other-infra-for-physical-applications-of-ai/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/10/security-flaws-in-a-carmakers-web-portal-let-one-hacker-remotely-unlock-cars-from-anywhere/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/10/stanford-sticks-with-legacy-admissions/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/10/after-researchers-unmasked-a-prolific-sms-scammer-a-new-operation-has-emerged-in-its-wake/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/revel-shuts-down-its-ride-hail-business-to-focus-on-ev-charging/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/nvidia-amd-may-sell-high-end-ai-chips-to-china-if-they-pay-us-a-cut/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/apples-new-siri-may-allow-users-to-operate-apps-just-using-voice/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/nigeria-profitable-food-delivery-chowdeck-lands-9m-from-novastar-y-combinator/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/10/the-hidden-cost-of-living-amid-mark-zuckerbergs-110m-compound/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/10/truemeds-challenged-how-indians-buy-medicine-and-saw-a-3-6x-jump-in-valuation/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/10/the-computer-science-dream-has-become-a-nightmare/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/07/tesla-shuts-down-dojo-the-ai-training-supercomputer-that-musk-said-would-be-key-to-full-self-driving/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/08/sam-altman-addresses-bumpy-gpt-5-rollout-bringing-4o-back-and-the-chart-crime/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/06/key-sections-of-the-us-constitution-deleted-from-governments-website/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/06/instagram-takes-on-snapchat-with-new-instagram-map/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/06/google-says-hackers-stole-its-customers-data-in-a-breach-of-its-salesforce-database/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://www.netlify.com/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://supabase.com/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://www.framer.com/motion/",
+      "statusCode": 308,
+      "ok": true
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/tree/main/docs",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/tree/main/automation",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/actions",
+      "statusCode": 200,
+      "ok": true
+    }
+  ]
+}

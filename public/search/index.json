@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-11T18:14:49.654Z",
+  "generatedAt": "2025-08-11T20:36:45.669Z",
   "entries": [
     {
       "route": "/site-health",
@@ -11,7 +11,7 @@
       "route": "/newsroom",
       "file": "pages/newsroom.tsx",
       "title": "Newsroom — Curated Tech Headlines",
-      "summary": "import Head from 'next/head'; export default function Newsroom() { return ( Newsroom — Curated Tech Headlines Newsroom Updated automatically from multiple sources. Ford throws out Henry Ford’s assembly line to make low-cost EVs in America (TechCrunch) Elon Musk confirms shutdown "
+      "summary": "import Head from 'next/head'; export default function Newsroom() { return ( Newsroom — Curated Tech Headlines Newsroom Updated automatically from multiple sources. Trump administration stops illegal freeze of $5B EV charger funds after losing in court (TechCrunch) Poshmark CEO an"
     },
     {
       "route": "/",
@@ -59,7 +59,7 @@
       "route": "/../docs/TODO_REPORT",
       "file": "docs/TODO_REPORT.md",
       "title": "TODO and FIXME Report",
-      "summary": "# TODO and FIXME Report - Generated: 2025-08-11T17:51:48.639Z - Total findings: 345 ## .github/workflows.disabled/autonomous-content-scanner.yml - [TODO] .github/workflows.disabled/autonomous-content-scanner.yml:30 — /FIXME scanner - [TODO] .github/workflows.disabled/autonomous-c"
+      "summary": "# TODO and FIXME Report - Generated: 2025-08-11T18:14:53.732Z - Total findings: 4089 ## .github/workflows.disabled/autonomous-content-scanner.yml - [TODO] .github/workflows.disabled/autonomous-content-scanner.yml:30 — /FIXME scanner - [TODO] .github/workflows.disabled/autonomous-"
     },
     {
       "route": "/../docs/MEDIA_RELEASE",

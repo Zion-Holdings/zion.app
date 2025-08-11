@@ -1,8 +1,18 @@
 {
-  "generatedAt": "2025-08-11T18:14:43.279Z",
-  "total": 31,
-  "bad": 8,
+  "generatedAt": "2025-08-11T20:36:40.377Z",
+  "total": 28,
+  "bad": 0,
   "results": [
+    {
+      "url": "https://techcrunch.com/2025/08/11/poshmark-ceo-and-founder-to-step-down/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/trump-administration-stops-illegal-freeze-of-5b-ev-charger-funds-after-losing-in-court/",
+      "statusCode": 200,
+      "ok": true
+    },
     {
       "url": "https://techcrunch.com/2025/08/11/ford-throws-out-henry-fords-assembly-line-to-make-low-cost-evs-in-america/",
       "statusCode": 200,
@@ -14,7 +24,7 @@
       "ok": true
     },
     {
-      "url": "https://techcrunch.com/2025/08/10/stanford-sticks-with-legacy-admissions/",
+      "url": "https://techcrunch.com/2025/08/11/nvidia-unveils-new-cosmos-world-models-other-infra-for-physical-applications-of-ai/",
       "statusCode": 200,
       "ok": true
     },
@@ -24,12 +34,7 @@
       "ok": true
     },
     {
-      "url": "https://techcrunch.com/2025/08/11/nvidia-unveils-new-cosmos-world-models-other-infra-for-physical-applications-of-ai/",
-      "statusCode": 200,
-      "ok": true
-    },
-    {
-      "url": "https://techcrunch.com/2025/08/08/sam-altman-addresses-bumpy-gpt-5-rollout-bringing-4o-back-and-the-chart-crime/",
+      "url": "https://techcrunch.com/2025/08/10/stanford-sticks-with-legacy-admissions/",
       "statusCode": 200,
       "ok": true
     },
@@ -39,42 +44,32 @@
       "ok": true
     },
     {
-      "url": "https://techcrunch.com/2025/08/11/trump-administration-stops-illegal-freeze-of-5b-ev-charger-funds-after-losing-in-court/",
+      "url": "https://techcrunch.com/2025/08/11/revel-shuts-down-its-ride-hail-business-to-focus-on-ev-charging/",
       "statusCode": 200,
       "ok": true
     },
     {
-      "url": "https://techcrunch.com/2025/08/11/oceans-new-app-brings-inbox-triage-tasks-and-invites-to-gmail-users/",
+      "url": "https://techcrunch.com/2025/08/11/nvidia-amd-may-sell-high-end-ai-chips-to-china-if-they-pay-us-a-cut/",
       "statusCode": 200,
       "ok": true
     },
     {
-      "url": "https://techcrunch.com/2025/08/08/how-to-use-instagram-map-and-protect-your-privacy/",
+      "url": "https://techcrunch.com/2025/08/11/apples-new-siri-may-allow-users-to-operate-apps-just-using-voice/",
       "statusCode": 200,
       "ok": true
     },
     {
-      "url": "https://techcrunch.com/2025/08/11/github-ceo-to-step-down/",
+      "url": "https://techcrunch.com/2025/08/11/nigeria-profitable-food-delivery-chowdeck-lands-9m-from-novastar-y-combinator/",
       "statusCode": 200,
       "ok": true
     },
     {
-      "url": "https://techcrunch.com/2025/08/11/made-by-google-2025-how-to-watch-google-debut-the-pixel-10-pixel-watch-4-and-more/",
+      "url": "https://techcrunch.com/2025/08/10/the-hidden-cost-of-living-amid-mark-zuckerbergs-110m-compound/",
       "statusCode": 200,
       "ok": true
     },
     {
-      "url": "https://techcrunch.com/2025/08/11/iphone-17-the-thinnest-iphone-ever-and-everything-else-were-expecting-out-of-apples-hardware-event/",
-      "statusCode": 200,
-      "ok": true
-    },
-    {
-      "url": "https://techcrunch.com/2025/08/11/techcrunch-mobility-the-triple-punch-headed-for-automakers/",
-      "statusCode": 200,
-      "ok": true
-    },
-    {
-      "url": "https://techcrunch.com/2025/08/11/electronic-arts-blocks-more-than-300000-attempts-to-cheat-after-launching-battlefield-6-beta/",
+      "url": "https://techcrunch.com/2025/08/10/truemeds-challenged-how-indians-buy-medicine-and-saw-a-3-6x-jump-in-valuation/",
       "statusCode": 200,
       "ok": true
     },
@@ -84,12 +79,12 @@
       "ok": true
     },
     {
-      "url": "https://techcrunch.com/2025/08/11/revel-shuts-down-its-ride-hail-business-to-focus-on-ev-charging/",
+      "url": "https://techcrunch.com/2025/08/07/tesla-shuts-down-dojo-the-ai-training-supercomputer-that-musk-said-would-be-key-to-full-self-driving/",
       "statusCode": 200,
       "ok": true
     },
     {
-      "url": "https://techcrunch.com/2025/08/07/tesla-shuts-down-dojo-the-ai-training-supercomputer-that-musk-said-would-be-key-to-full-self-driving/",
+      "url": "https://techcrunch.com/2025/08/08/sam-altman-addresses-bumpy-gpt-5-rollout-bringing-4o-back-and-the-chart-crime/",
       "statusCode": 200,
       "ok": true
     },
@@ -104,18 +99,13 @@
       "ok": true
     },
     {
-      "url": "https://www.netlify.com/",
+      "url": "https://techcrunch.com/2025/08/06/google-says-hackers-stole-its-customers-data-in-a-breach-of-its-salesforce-database/",
       "statusCode": 200,
       "ok": true
     },
     {
-      "url": "https://github.com/Zion-Holdings/zion.app/actions",
-      "statusCode": 404,
-      "ok": false
-    },
-    {
-      "url": "https://www.framer.com/motion/",
-      "statusCode": 308,
+      "url": "https://www.netlify.com/",
+      "statusCode": 200,
       "ok": true
     },
     {
@@ -124,39 +114,34 @@
       "ok": true
     },
     {
+      "url": "https://www.framer.com/motion/",
+      "statusCode": 308,
+      "ok": true
+    },
+    {
       "url": "https://github.com/Zion-Holdings/zion.app/tree/main/docs",
-      "statusCode": 404,
-      "ok": false
-    },
-    {
-      "url": "https://github.com/Zion-Holdings/zion.app/blob/main/docs/TODO_REPORT.md",
-      "statusCode": 404,
-      "ok": false
-    },
-    {
-      "url": "https://github.com/Zion-Holdings/zion.app",
-      "statusCode": 404,
-      "ok": false
+      "statusCode": 200,
+      "ok": true
     },
     {
       "url": "https://github.com/Zion-Holdings/zion.app/tree/main/automation",
-      "statusCode": 404,
-      "ok": false
-    },
-    {
-      "url": "https://github.com/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG.md",
-      "statusCode": 404,
-      "ok": false
-    },
-    {
-      "url": "https://github.com/Zion-Holdings/zion.app/blob/main/docs/MEDIA_RELEASE.md",
-      "statusCode": 404,
-      "ok": false
+      "statusCode": 200,
+      "ok": true
     },
     {
       "url": "https://github.com/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md",
-      "statusCode": 404,
-      "ok": false
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/actions",
+      "statusCode": 200,
+      "ok": true
     }
   ]
 }

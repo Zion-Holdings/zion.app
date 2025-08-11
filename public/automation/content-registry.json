@@ -21,12 +21,12 @@
       "route": "/reports/ai-trends"
     },
     {
-      "file": "pages/front/index.tsx",
-      "route": "/front"
-    },
-    {
       "file": "pages/automation/index.tsx",
       "route": "/automation"
+    },
+    {
+      "file": "pages/front/index.tsx",
+      "route": "/front"
     },
     {
       "file": "pages/main/front/index.tsx",
@@ -51,5 +51,5 @@
       "route": "/docs/CHANGELOG.md"
     }
   ],
-  "generatedAt": "2025-08-11T18:14:42.229Z"
+  "generatedAt": "2025-08-11T20:36:38.623Z"
 }

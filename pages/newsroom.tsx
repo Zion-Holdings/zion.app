@@ -12,6 +12,14 @@ export default function Newsroom() {
         <p className="text-white/70 mb-6">Updated automatically from multiple sources.</p>
         <ul className="list-disc pl-6 space-y-1">
           <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/11/trump-administration-stops-illegal-freeze-of-5b-ev-charger-funds-after-losing-in-court/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Trump administration stops illegal freeze of $5B EV charger funds after losing in court</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/11/poshmark-ceo-and-founder-to-step-down/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Poshmark CEO and founder to step down</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
             <a href="https://techcrunch.com/2025/08/11/ford-throws-out-henry-fords-assembly-line-to-make-low-cost-evs-in-america/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Ford throws out Henry Ford’s assembly line to make low-cost EVs in America</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
@@ -36,47 +44,35 @@ export default function Newsroom() {
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/08/how-to-use-instagram-map-and-protect-your-privacy/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">How to use Instagram Map and protect your privacy</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/08/sam-altman-addresses-bumpy-gpt-5-rollout-bringing-4o-back-and-the-chart-crime/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Sam Altman addresses ‘bumpy’ GPT-5 rollout, bringing 4o back, and the ‘chart crime’</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/11/oceans-new-app-brings-inbox-triage-tasks-and-invites-to-gmail-users/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Ocean’s new app brings inbox triage, tasks and invites to Gmail users</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/11/made-by-google-2025-how-to-watch-google-debut-the-pixel-10-pixel-watch-4-and-more/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Made by Google 2025: How to watch Google debut the Pixel 10, Pixel Watch 4, and more</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/11/trump-administration-stops-illegal-freeze-of-5b-ev-charger-funds-after-losing-in-court/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Trump administration stops illegal freeze of $5B EV charger funds after losing in court</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/11/github-ceo-to-step-down/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">GitHub CEO to step down</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/11/iphone-17-the-thinnest-iphone-ever-and-everything-else-were-expecting-out-of-apples-hardware-event/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">iPhone 17, the ‘thinnest iPhone ever,’ and everything else we’re expecting out of Apple’s hardware event</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/11/techcrunch-mobility-the-triple-punch-headed-for-automakers/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">TechCrunch Mobility: The triple punch headed for automakers</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/11/electronic-arts-blocks-more-than-300000-attempts-to-cheat-after-launching-battlefield-6-beta/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Electronic Arts blocks more than 300,000 attempts to cheat after launching Battlefield 6 beta</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
             <a href="https://techcrunch.com/2025/08/11/revel-shuts-down-its-ride-hail-business-to-focus-on-ev-charging/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Revel shuts down its ride-hail business to focus on EV charging</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/11/nvidia-amd-may-sell-high-end-ai-chips-to-china-if-they-pay-us-a-cut/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Nvidia, AMD may sell high-end AI chips to China if they pay US a cut</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/11/apples-new-siri-may-allow-users-to-operate-apps-just-using-voice/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Apple’s new Siri may allow users to operate apps just using voice</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/11/nigeria-profitable-food-delivery-chowdeck-lands-9m-from-novastar-y-combinator/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Profitable Nigerian food delivery Chowdeck lands $9M from Novastar, Y Combinator</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/10/truemeds-challenged-how-indians-buy-medicine-and-saw-a-3-6x-jump-in-valuation/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Why investors just bet $85M on this Indian company’s generic drug strategy</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/10/the-hidden-cost-of-living-amid-mark-zuckerbergs-110m-compound/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">The hidden cost of living in Mark Zuckerberg’s $110M compound</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
             <a href="https://techcrunch.com/2025/08/10/the-computer-science-dream-has-become-a-nightmare/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">The computer science dream has become a nightmare</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/08/sam-altman-addresses-bumpy-gpt-5-rollout-bringing-4o-back-and-the-chart-crime/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Sam Altman addresses ‘bumpy’ GPT-5 rollout, bringing 4o back, and the ‘chart crime’</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
@@ -89,6 +85,10 @@ export default function Newsroom() {
           </li>
           <li className="py-2">
             <a href="https://techcrunch.com/2025/08/06/instagram-takes-on-snapchat-with-new-instagram-map/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Instagram takes on Snapchat with new ‘Instagram Map’</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/06/google-says-hackers-stole-its-customers-data-in-a-breach-of-its-salesforce-database/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Google says hackers stole its customers’ data by breaching its Salesforce database</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
         </ul>
