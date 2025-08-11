@@ -21,8 +21,9 @@ function buildTiles() {
     { href: '/reports/seo', label: 'AI SEO Auditor', tagline: 'Continuous on‑site improvements' },
     { href: '/reports/ai-trends', label: 'AI Trends', tagline: 'Signals for new automations' },
     { href: '/newsroom', label: 'Newsroom', tagline: 'Autonomous updates & highlights' },
-    { href: '/.netlify/functions/docs-index-runner', label: 'Docs', tagline: 'Technical notes & guides' }
-    { href: '/newsroom', label: 'AI Changelog', tagline: 'Summarized autonomous changes' }
+    { href: '/.netlify/functions/docs-index-runner', label: 'Docs', tagline: 'Technical notes & guides' },
+    { href: '/newsroom', label: 'AI Changelog', tagline: 'Summarized autonomous changes' },
+    { href: '/automation/functions-directory', label: 'Autonomy Directory', tagline: 'Browse all cloud functions' }
   ];
 
   return items.map((it) => {
