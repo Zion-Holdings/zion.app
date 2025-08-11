@@ -12,7 +12,27 @@ export default function Newsroom() {
         <p className="text-white/70 mb-6">Updated automatically from multiple sources.</p>
         <ul className="list-disc pl-6 space-y-1">
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/08/sam-altman-addresses-bumpy-gpt-5-rollout-bringing-4o-back-and-the-chart-crime/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Sam Altman addresses ‘bumpy’ GPT-5 rollout, bringing 4o back, and the ‘chart crime’</a>
+            <a href="https://techcrunch.com/2025/08/11/ford-throws-out-henry-fords-assembly-line-to-make-low-cost-evs-in-america/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Ford throws out Henry Ford’s assembly line to make low-cost EVs in America</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/11/elon-musk-confirms-shutdown-of-tesla-dojo-an-evolutionary-dead-end/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Elon Musk confirms shutdown of Tesla Dojo, ‘an evolutionary dead end’</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/11/nvidia-unveils-new-cosmos-world-models-other-infra-for-physical-applications-of-ai/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Nvidia unveils new Cosmos world models, infra for robotics and physical uses</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/10/security-flaws-in-a-carmakers-web-portal-let-one-hacker-remotely-unlock-cars-from-anywhere/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Security flaws in a carmaker’s web portal let one hacker remotely unlock cars from anywhere</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/10/stanford-sticks-with-legacy-admissions/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Stanford sticks with legacy admissions</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/10/after-researchers-unmasked-a-prolific-sms-scammer-a-new-operation-has-emerged-in-its-wake/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">After researchers unmasked a prolific SMS scammer, a new operation has emerged in its wake</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
@@ -20,39 +40,43 @@ export default function Newsroom() {
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/08/former-googlers-ai-startup-openart-now-creates-brainrot-videos-in-just-one-click/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Former Googlers’ AI startup OpenArt now creates ‘brain rot’ videos in just one click</a>
+            <a href="https://techcrunch.com/2025/08/08/sam-altman-addresses-bumpy-gpt-5-rollout-bringing-4o-back-and-the-chart-crime/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Sam Altman addresses ‘bumpy’ GPT-5 rollout, bringing 4o back, and the ‘chart crime’</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/08/pinterest-ceo-says-agentic-shopping-is-still-a-long-way-out/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Pinterest CEO says agentic shopping is still a long way out</a>
+            <a href="https://techcrunch.com/2025/08/11/oceans-new-app-brings-inbox-triage-tasks-and-invites-to-gmail-users/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Ocean’s new app brings inbox triage, tasks and invites to Gmail users</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/08/softbank-reportedly-bought-foxconns-ohio-factory-for-the-stargate-ai-project/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">SoftBank reportedly bought Foxconn’s Ohio factory for the Stargate AI project</a>
+            <a href="https://techcrunch.com/2025/08/11/made-by-google-2025-how-to-watch-google-debut-the-pixel-10-pixel-watch-4-and-more/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Made by Google 2025: How to watch Google debut the Pixel 10, Pixel Watch 4, and more</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/08/openai-priced-gpt-5-so-low-it-may-spark-a-price-war/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">OpenAI priced GPT-5 so low, it may spark a price war</a>
+            <a href="https://techcrunch.com/2025/08/11/trump-admin-stops-illegal-freeze-of-5b-ev-charger-funds-after-losing-in-court/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Trump admin stops illegal freeze of $5B EV charger funds after losing in court</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/08/rip-microsoft-lens-a-simple-little-app-thats-getting-replaced-by-ai/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">RIP, Microsoft Lens, a simple little app that’s getting replaced by AI</a>
+            <a href="https://techcrunch.com/2025/08/11/github-ceo-to-step-down/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">GitHub CEO to step down</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/08/meta-acquires-ai-audio-startup-waveforms/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Meta acquires AI audio startup WaveForms</a>
+            <a href="https://techcrunch.com/2025/08/11/iphone-17-the-thinnest-iphone-ever-and-everything-else-were-expecting-out-of-apples-hardware-event/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">iPhone 17, the ‘thinnest iPhone ever,’ and everything else we’re expecting out of Apple’s hardware event</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/08/impersonators-are-targeting-companies-with-fake-techcrunch-outreach/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Impersonators are targeting companies with fake TechCrunch outreach</a>
+            <a href="https://techcrunch.com/2025/08/11/techcrunch-mobility-the-triple-punch-headed-for-automakers/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">TechCrunch Mobility: The triple punch headed for automakers</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/08/dont-let-your-competitor-steal-the-brand-spotlight-secure-your-exhibit-table-at-techcrunch-disrupt-2025/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Don’t let your competitor steal the brand spotlight — secure your exhibit table at TechCrunch Disrupt 2025</a>
+            <a href="https://techcrunch.com/2025/08/11/electronic-arts-blocks-more-than-300000-attempts-to-cheat-after-launching-battlefield-6-beta/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Electronic Arts blocks more than 300,000 attempts to cheat after launching Battlefield 6 beta</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/08/nasa-and-google-are-building-an-ai-medical-assistant-to-keep-mars-bound-astronauts-healthy/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">NASA and Google are building an AI medical assistant to keep Mars-bound astronauts healthy</a>
+            <a href="https://techcrunch.com/2025/08/11/revel-shuts-down-its-ride-hail-business-to-focus-on-ev-charging/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Revel shuts down its ride-hail business to focus on EV charging</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/10/the-computer-science-dream-has-become-a-nightmare/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">The computer science dream has become a nightmare</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
@@ -66,38 +90,6 @@ export default function Newsroom() {
           <li className="py-2">
             <a href="https://techcrunch.com/2025/08/06/instagram-takes-on-snapchat-with-new-instagram-map/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Instagram takes on Snapchat with new ‘Instagram Map’</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/06/google-says-hackers-stole-its-customers-data-in-a-breach-of-its-salesforce-database/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Google says hackers stole its customers’ data by breaching its Salesforce database</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/05/three-weeks-after-acquiring-windsurf-cognition-offers-staff-the-exit-door/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Three weeks after acquiring Windsurf, Cognition offers staff the exit door</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/04/spotify-raises-subscription-prices/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Spotify raises subscription prices</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/03/the-uproar-over-vogues-ai-generated-ad-isnt-just-about-fashion/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">The uproar over Vogue’s AI-generated ad isn’t just about fashion</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/storyline/wwdc-2025-live-updates-a-fresh-look-for-ios-a-dedicated-gaming-app-and-more/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">WWDC 2025 live updates: iOS 26, Liquid Glass, Apple Intelligence updates, and everything else revealed</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/storyline/google-i-o-2025-live-coverage-google-ai-ultra-project-mariner-gemini-app-updates-and-more/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Google I/O 2025 live coverage: Google AI Ultra, Project Mariner, Gemini app updates, and more</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://www.theverge.com/news/756444/openai-gpt-5-vibe-graphing-chart-crime" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">OpenAI gets caught vibe graphing</a>
-            <span className="text-white/50 ml-2">(The Verge)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://www.theverge.com/hands-on/756587/microsoft-copilot-3d-feature-hands-on" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Microsoft’s new Copilot 3D feature is great for Ikea, bad for my dog</a>
-            <span className="text-white/50 ml-2">(The Verge)</span>
           </li>
         </ul>
       </main>
