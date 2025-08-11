@@ -1,9 +1,11 @@
 {
-  "generatedAt": "2025-08-11T23:26:47.154Z",
+  "generatedAt": "2025-08-11T23:36:28.924Z",
   "functions": [
     "a11y-alt-text-runner",
     "ai-changelog-runner",
     "ai-trends-radar-runner",
+    "asset-size-guardian",
+    "auto-redirect-mapper",
     "auto-scheduler",
     "automation-matrix",
     "autonomous-invention-orchestrator",

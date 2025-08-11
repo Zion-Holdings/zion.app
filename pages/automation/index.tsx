@@ -96,10 +96,22 @@ export default function AutomationHub() {
             <a className="text-cyan-300 underline" href="/.netlify/functions/ai-trends-radar-runner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
 
-          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+                     <li className="rounded-lg bg-white/5 border border-white/10 p-5">
             <h2 className="text-xl font-bold">Dependency Auto‑Upgrade</h2>
             <p className="text-white/70">Safely bumps minor/patch deps with build verification.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/deps-auto-upgrade-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Auto Redirect Mapper</h2>
+            <p className="text-white/70">Scans link reports for internal 404s and writes safe redirects.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/auto-redirect-mapper" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Asset Size Guardian</h2>
+            <p className="text-white/70">Scans public assets, writes reports, and syncs changes.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/asset-size-guardian" target="_blank" rel="noopener">Trigger / View</a>
           </li>
         </ul>
       </main>
