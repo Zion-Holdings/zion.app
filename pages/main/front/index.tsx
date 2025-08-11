@@ -315,6 +315,46 @@ export default function MainFrontIndex() {
           </div>
         </motion.section>
 
+        {/* Outcomes */}
+        <motion.section
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-7xl px-6 pb-14"
+        >
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Outcomes</h2>
+          <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">
+            Tangible, measurable wins delivered by autonomous cloud agents.
+          </p>
+          <div className="relative mx-auto mt-6 max-w-6xl overflow-hidden">
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-slate-950/90 to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-slate-950/90 to-transparent" />
+            <div className="marquee">
+              <div className="marquee__track">
+                {[
+                  { label: 'Accessibility fixes', href: '/site-health' },
+                  { label: 'Performance boosts', href: '/site-health' },
+                  { label: 'SEO improvements', href: '/reports/seo' },
+                  { label: 'Safer main merges', href: '/automation' },
+                  { label: 'Cleaner codebase', href: '/automation' },
+                  { label: 'Better content curation', href: '/newsroom' },
+                  { label: 'Operational visibility', href: '/site-health' },
+                  { label: 'Experiment velocity', href: '/automation' },
+                ]
+                  .flatMap((item) => [item, item])
+                  .map((item, idx) => (
+                    <Link key={`${item.label}-${idx}`} href={item.href}>
+                      <a className="mx-3 my-2 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs text-white/80 backdrop-blur hover:bg-white/10">
+                        <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" /> {item.label}
+                      </a>
+                    </Link>
+                  ))}
+              </div>
+            </div>
+          </div>
+        </motion.section>
+
         {/* Feature Map */}
         <motion.section
           initial={{ opacity: 0, y: 24 }}
@@ -359,6 +399,42 @@ export default function MainFrontIndex() {
                   </a>
                 </Link>
               )
+            ))}
+          </div>
+        </motion.section>
+
+        {/* Platform Modules */}
+        <motion.section
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-7xl px-6 pb-16"
+        >
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Platform Modules</h2>
+          <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { Icon: Rocket, title: 'Autonomous Factories', desc: 'Composable, domain‑specific automation factories.', href: '/automation' },
+              { Icon: ShieldCheck, title: 'Guardrails', desc: 'Defense‑in‑depth validations and policy enforcement.', href: '/site-health' },
+              { Icon: Gauge, title: 'Observability', desc: 'Dashboards, artifacts, and live CI telemetry.', href: '/site-health' },
+              { Icon: Activity, title: 'SEO Ops', desc: 'Continuous audits and safe, suggested diffs.', href: '/reports/seo' },
+              { Icon: Globe, title: 'AI Intelligence', desc: 'Trends radar to guide new automation ideas.', href: '/reports/ai-trends' },
+              { Icon: Layers, title: 'Workflow Composer', desc: 'Chain factories into higher‑order systems.', href: '/automation' },
+              { Icon: GitBranch, title: 'Main Sync Engine', desc: 'Small, reviewable edits merged continuously.', href: '/automation' },
+              { Icon: Cpu, title: 'Zero‑Ops Runtime', desc: 'Cloud‑native execution with no servers to manage.', href: '/automation' },
+              { Icon: BarChart3, title: 'Impact Analytics', desc: 'Track outcomes and ROI from automations.', href: '/site-health' },
+            ].map(({ Icon, title, desc, href }) => (
+              <Link key={title} href={href}>
+                <a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring">
+                  <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                  <div className="flex items-center gap-3">
+                    <Icon className="h-5 w-5 text-cyan-300" />
+                    <h3 className="text-lg font-semibold">{title}</h3>
+                  </div>
+                  <p className="mt-2 text-sm text-white/75">{desc}</p>
+                  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <Link2 className="h-3.5 w-3.5" /></div>
+                </a>
+              </Link>
             ))}
           </div>
         </motion.section>
