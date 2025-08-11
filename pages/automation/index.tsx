@@ -12,6 +12,51 @@ export default function AutomationHub() {
         <p className="text-white/70 mb-8">Discover our autonomous, self-healing systems that keep the codebase evergreen. Powered by scheduled cloud functions — no GitHub Actions required.</p>
         <ul className="space-y-4">
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">AI Trends Radar</h2>
+            <p className="text-white/70">Updates AI trends report and insights automatically.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/ai-trends-radar" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">SEO Audit Runner</h2>
+            <p className="text-white/70">Runs SEO audits and publishes reports.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/seo-audit-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Monetization Orchestrator</h2>
+            <p className="text-white/70">Applies autonomous revenue ideas safely.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/monetization-orchestrator" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">UI Evolution Beautify</h2>
+            <p className="text-white/70">Refreshes UI polish via autonomous evolution.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/ui-evolution-beautify" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Design Evolution</h2>
+            <p className="text-white/70">Cycles design improvements automatically.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/design-evolution" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Autonomous Git Sync</h2>
+            <p className="text-white/70">Keeps the repo in a healthy, synchronized state.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/autonomous-git-sync" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Autonomous Invention Lab</h2>
+            <p className="text-white/70">Discovers and proposes new automations.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/autonomous-invention-lab" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Knowledge Radar</h2>
+            <p className="text-white/70">Updates repo radar metrics and knowledge views.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/knowledge-radar" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Innovation Sprint</h2>
+            <p className="text-white/70">High-frequency front innovation and directory refresh.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/innovation-sprint" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
             <h2 className="text-xl font-bold">Homepage Updates</h2>
             <p className="text-white/70">Keeps the homepage fresh and the sitemap up to date.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/schedule-homepage" target="_blank" rel="noopener">Trigger / View</a>

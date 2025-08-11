@@ -186,3 +186,40 @@
 [[scheduled.functions]]
   name = "auto-scheduler"
   schedule = "*/15 * * * *" # every 15 minutes
+
+# New intelligent cloud automations (added)
+[[scheduled.functions]]
+  name = "ai-trends-radar"
+  schedule = "7 */2 * * *" # every 2 hours
+
+[[scheduled.functions]]
+  name = "seo-audit-runner"
+  schedule = "17 */6 * * *" # every 6 hours
+
+[[scheduled.functions]]
+  name = "monetization-orchestrator"
+  schedule = "*/30 * * * *" # every 30 minutes
+
+[[scheduled.functions]]
+  name = "ui-evolution-beautify"
+  schedule = "0 */12 * * *" # every 12 hours
+
+[[scheduled.functions]]
+  name = "design-evolution"
+  schedule = "*/6 * * * *" # every 6 minutes
+
+[[scheduled.functions]]
+  name = "autonomous-git-sync"
+  schedule = "*/10 * * * *" # every 10 minutes
+
+[[scheduled.functions]]
+  name = "autonomous-invention-lab"
+  schedule = "*/20 * * * *" # every 20 minutes
+
+[[scheduled.functions]]
+  name = "knowledge-radar"
+  schedule = "29 */6 * * *" # every 6 hours
+
+[[scheduled.functions]]
+  name = "innovation-sprint"
+  schedule = "*/3 * * * *" # every 3 minutes
