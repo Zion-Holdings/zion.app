@@ -24,6 +24,7 @@ export default function MainFrontIndex() {
         <div className="absolute bottom-0 left-1/4 h-[26rem] w-[26rem] rounded-full bg-violet-400/10 blur-2xl animate-float-fast" />
         {/* Subtle animated grid */}
         <div className="absolute inset-0 opacity-[0.08] [background:radial-gradient(circle_at_center,rgba(255,255,255,0.35)_0,rgba(255,255,255,0)_60%),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(0deg,rgba(255,255,255,0.12)_1px,transparent_1px)] bg-[size:100%_100%,3rem_3rem,3rem_3rem] animate-grid" />
+        <div className="absolute inset-0 opacity-[0.06] hex-grid" />
         {/* Star field */}
         <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,white,transparent_70%)]">
           <div className="twinkle-field absolute inset-0" />
@@ -46,8 +47,8 @@ export default function MainFrontIndex() {
       </div>
 
       {/* Header */}
-      <header className="relative z-10">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
+      <header className="sticky top-0 z-20 backdrop-blur supports-[backdrop-filter]:bg-slate-950/55">
+        <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 border-b border-white/10">
           <div className="text-2xl font-bold tracking-wide">
             <span className="bg-gradient-to-r from-fuchsia-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent drop-shadow-neon">Zion</span>
           </div>
@@ -76,9 +77,18 @@ export default function MainFrontIndex() {
               <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]" />
               Front systems hub — tailored view of our autonomous capabilities
             </div>
-            <h1 className="mt-6 text-5xl font-extrabold leading-[1.05] tracking-tight md:text-6xl">
+                        <h1 className="mt-6 text-5xl font-extrabold leading-[1.05] tracking-tight md:text-6xl">
               <span className="gradient-text animate-shimmer bg-[length:200%_100%]">Futuristic Front Experience</span>
             </h1>
+            <div className="mx-auto mt-3 flex max-w-2xl items-center justify-center gap-2 text-xs text-white/60">
+              <a href="#feature-map" className="hover:text-white">Feature Map</a>
+              <span aria-hidden>•</span>
+              <a href="#capabilities" className="hover:text-white">Capabilities</a>
+              <span aria-hidden>•</span>
+              <a href="#benefits" className="hover:text-white">Benefits</a>
+              <span aria-hidden>•</span>
+              <a href="#reports" className="hover:text-white">Integrations</a>
+            </div>
             <p className="mx-auto mt-5 max-w-3xl text-lg text-white/80">
               Explore the features, capabilities, and benefits that power Zion's autonomous cloud automations — optimized for your front‑of‑house experience.
             </p>
