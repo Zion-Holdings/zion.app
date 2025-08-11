@@ -71,11 +71,11 @@ export default function MainFrontIndex() {
             <Link href="#feature-map"><a className="text-white/80 hover:text-white">Map</a></Link>
             <Link href="#suites"><a className="text-white/80 hover:text-white">Suites</a></Link>
             <Link href="#use-cases"><a className="text-white/80 hover:text-white">Use&nbsp;Cases</a></Link>
+            <Link href="#outcomes"><a className="text-white/80 hover:text-white">Outcomes</a></Link>
+            <Link href="#templates"><a className="text-white/80 hover:text-white">Templates</a></Link>
+            <Link href="#modules"><a className="text-white/80 hover:text-white">Modules</a></Link>
             <Link href="#guardrails"><a className="text-white/80 hover:text-white">Guardrails</a></Link>
             <Link href="#capabilities"><a className="text-white/80 hover:text-white">Capabilities</a></Link>
-            <Link href="#suites"><a className="text-white/80 hover:text-white">Suites</a></Link>
-            <Link href="#feature-map"><a className="text-white/80 hover:text-white">Map</a></Link>
-            <Link href="#guardrails"><a className="text-white/80 hover:text-white">Guardrails</a></Link>
             <Link href="#benefits"><a className="text-white/80 hover:text-white">Benefits</a></Link>
             <Link href="#deep-dives"><a className="text-white/80 hover:text-white">Deep Dives</a></Link>
             <Link href="#reports"><a className="text-white/80 hover:text-white">Reports</a></Link>
@@ -186,6 +186,9 @@ export default function MainFrontIndex() {
               ['#feature-map', 'Feature Map'],
               ['#reports', 'Reports'],
               ['#guardrails', 'Guardrails'],
+              ['#outcomes', 'Outcomes'],
+              ['#templates', 'Templates'],
+              ['#modules', 'Modules'],
             ].map(([href, label]) => (
               <a key={href} href={href} className="block rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/75 backdrop-blur-md hover:border-cyan-400/40 hover:text-white">
                 {label}
@@ -526,14 +529,15 @@ export default function MainFrontIndex() {
         </motion.section>
 
         {/* Platform Modules */}
-        <motion.section
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.5 }}
-          className="mx-auto max-w-7xl px-6 pb-16"
-        >
-          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Platform Modules</h2>
+                <motion.section
+           id="modules"
+           initial={{ opacity: 0, y: 24 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true, amount: 0.2 }}
+           transition={{ duration: 0.5 }}
+           className="mx-auto max-w-7xl px-6 pb-16"
+         >
+           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Platform Modules</h2>
           <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { Icon: Rocket, title: 'Autonomous Factories', desc: 'Composable, domain‑specific automation factories.', href: '/automation' },
@@ -1087,8 +1091,8 @@ export default function MainFrontIndex() {
         </motion.section>
 
         {/* Futuristic Templates & Effects */}
-        <section className="mx-auto max-w-7xl px-6 pb-16">
-          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Futuristic Templates & Effects</h2>
+                <section id="templates" className="mx-auto max-w-7xl px-6 pb-16">
+           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Futuristic Templates & Effects</h2>
           <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Explore shimmering gradients, holographic cards, beams overlays, and animated grids used across the experience.</p>
           <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
