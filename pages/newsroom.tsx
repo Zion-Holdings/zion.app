@@ -44,35 +44,27 @@ export default function Newsroom() {
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/11/u-s-government-seized-1-million-from-russian-ransomware-gang/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">US government seized $1M from Russian ransomware gang</a>
+            <a href="https://techcrunch.com/2025/08/11/revel-shuts-down-its-ride-hail-business-to-focus-on-ev-charging/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Revel shuts down its ride-hail business to focus on EV charging</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/11/how-founders-are-ditching-vc-norms-and-finding-capital-on-their-own-terms-at-techcrunch-disrupt-2025/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">How founders are ditching VC norms and finding capital on their own terms at TechCrunch Disrupt 2025</a>
+            <a href="https://techcrunch.com/2025/08/11/nvidia-amd-may-sell-high-end-ai-chips-to-china-if-they-pay-us-a-cut/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Nvidia, AMD may sell high-end AI chips to China if they pay US a cut</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/11/oceans-new-app-brings-inbox-triage-tasks-and-invites-to-gmail-users/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Ocean’s new app brings inbox triage, tasks, and invites to Gmail users</a>
+            <a href="https://techcrunch.com/2025/08/11/apples-new-siri-may-allow-users-to-operate-apps-just-using-voice/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Apple’s new Siri may allow users to operate apps just using voice</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/11/made-by-google-2025-how-to-watch-google-debut-the-pixel-10-pixel-watch-4-and-more/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Made by Google 2025: How to watch Google debut the Pixel 10, Pixel Watch 4, and more</a>
+            <a href="https://techcrunch.com/2025/08/11/nigeria-profitable-food-delivery-chowdeck-lands-9m-from-novastar-y-combinator/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Profitable Nigerian food delivery Chowdeck lands $9M from Novastar, Y Combinator</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/11/github-ceo-to-step-down/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">GitHub CEO to step down</a>
+            <a href="https://techcrunch.com/2025/08/10/truemeds-challenged-how-indians-buy-medicine-and-saw-a-3-6x-jump-in-valuation/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Why investors just bet $85M on this Indian company’s generic drug strategy</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/11/iphone-17-the-thinnest-iphone-ever-and-everything-else-were-expecting-out-of-apples-hardware-event/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">iPhone 17, the ‘thinnest iPhone ever,’ and everything else we’re expecting out of Apple’s hardware event</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/11/techcrunch-mobility-the-triple-punch-headed-for-automakers/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">TechCrunch Mobility: The triple punch headed for automakers</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/11/electronic-arts-blocks-more-than-300000-attempts-to-cheat-after-launching-battlefield-6-beta/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Electronic Arts blocks more than 300,000 attempts to cheat after launching Battlefield 6 beta</a>
+            <a href="https://techcrunch.com/2025/08/10/the-hidden-cost-of-living-amid-mark-zuckerbergs-110m-compound/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">The hidden cost of living in Mark Zuckerberg’s $110M compound</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
@@ -89,6 +81,14 @@ export default function Newsroom() {
           </li>
           <li className="py-2">
             <a href="https://techcrunch.com/2025/08/06/key-sections-of-the-us-constitution-deleted-from-governments-website/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Key sections of the US Constitution deleted from government’s website</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/06/instagram-takes-on-snapchat-with-new-instagram-map/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Instagram takes on Snapchat with new ‘Instagram Map’</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/06/google-says-hackers-stole-its-customers-data-in-a-breach-of-its-salesforce-database/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Google says hackers stole its customers’ data by breaching its Salesforce database</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
         </ul>
