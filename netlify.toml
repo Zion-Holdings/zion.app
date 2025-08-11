@@ -104,3 +104,15 @@
 [[scheduled.functions]]
   name = "hyper-front-index-accelerator"
   schedule = "*/1 * * * *" # every minute
+
+[[scheduled.functions]]
+  name = "dependencies-guardian"
+  schedule = "0 * * * *" # hourly
+
+[[scheduled.functions]]
+  name = "ai-innovator"
+  schedule = "17 */6 * * *" # every 6 hours, offset minutes
+
+[[scheduled.functions]]
+  name = "self-healing-guardian"
+  schedule = "*/30 * * * *" # every 30 minutes
