@@ -27,13 +27,10 @@
 [[scheduled.functions]]
   name = "front-enhancer"
   schedule = "*/5 * * * *" # every 5 minutes
-<<<<<<< HEAD
-=======
 
 [[scheduled.functions]]
   name = "front-index-orchestrator"
   schedule = "*/5 * * * *" # every 5 minutes
->>>>>>> origin/main
 
 [[scheduled.functions]]
   name = "frontpage-enhancer"
@@ -53,13 +50,8 @@
 
 [[scheduled.functions]]
   name = "fast-front-promoter"
-<<<<<<< HEAD
-  schedule = "*/7 * * * *" # every 7 minutes
-=======
-<<<<<<< HEAD
   schedule = "*/15 * * * *" # every 15 minutes
 
-<<<<<<< HEAD
 # New: very fast orchestrator for continuous homepage/front refresh
 [[scheduled.functions]]
   name = "fast-orchestrator"
@@ -77,13 +69,21 @@
 [[scheduled.functions]]
   name = "home-visionary-expander"
   schedule = "*/4 * * * *" # fast refresh for homepage
-=======
-  schedule = "*/7 * * * *" # every 7 minutes
->>>>>>> 0b3965b878 (feat(front,automation): continuous front enhancer + fast promoter via Netlify functions; expanded autonomous catalog; fix conflict; ultra-fast schedules)
->>>>>>> origin/main
-=======
+
 # Ultrafast orchestrator to refresh front and homepage every minute
 [[scheduled.functions]]
   name = "ultrafast-orchestrator"
   schedule = "*/1 * * * *"
->>>>>>> ade166c1a9 (chore(sync): advanced autonomous sync)
+
+# Our new high-frequency tools
+[[scheduled.functions]]
+  name = "front-maximizer"
+  schedule = "*/5 * * * *" # every 5 minutes
+
+[[scheduled.functions]]
+  name = "continuous-front-runner"
+  schedule = "*/3 * * * *" # every 3 minutes
+
+[[scheduled.functions]]
+  name = "readme-advertiser"
+  schedule = "13 */6 * * *" # every 6 hours
