@@ -1,0 +1,895 @@
+[2025-08-08T17:31:25.438Z] 🚀 Automation Guardian (10m) starting
+[2025-08-08T17:31:25.440Z] $ node automation/smoke-test-factory.cjs 
+[2025-08-08T17:31:25.466Z] Smoke test factory created 0 agent(s).
+[2025-08-08T17:31:25.466Z] $ npx eslint . --ext .js,.jsx,.ts,.tsx --fix
+[2025-08-08T17:31:27.685Z] /workspace/automation/components/monetization/PaidConsultation.tsx
+  8:7  error  Do not use an `<a>` element to navigate to `/contact/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
+
+/workspace/pages/_app.tsx
+  1:8  warning  'EnhancedLayout' is defined but never used. Allowed unused vars must match /^_/u  @typescript-eslint/no-unused-vars
+
+/workspace/pages/blog/5g-technology-and-its-impact-on-iot-chat.tsx
+  22:16  error  Parsing error: An identifier or keyword cannot immediately follow a numeric literal
+
+/workspace/utils/browserExtensionDetector.ts
+  2:36  error  Parsing error: ',' expected
+
+/workspace/utils/monetization/affiliate.ts
+  1:41  error  Parsing error: ',' expected
+
+/workspace/utils/supabase/client.ts
+  3:7  warning  'supabaseUrl' is assigned a value but never used. Allowed unused vars must match /^_/u      @typescript-eslint/no-unused-vars
+  5:7  warning  'supabaseAnonKey' is assigned a value but never used. Allowed unused vars must match /^_/u  @typescript-eslint/no-unused-vars
+
+/workspace/utils/testing-system.ts
+  2:61  error  Parsing error: ',' expected
+
+/workspace/utils/testing-system.tsx
+  5:30  error  Parsing error: ',' expected
+
+✖ 9 problems (6 errors, 3 warnings)
+[2025-08-08T17:31:27.685Z] $ node automation/continuous-automation-improvement-system.js once
+[2025-08-08T17:31:40.945Z] [2025-08-08T17:31:27.705Z] 🚀 Starting improvement pass
+[2025-08-08T17:31:27.707Z] $ npx eslint . --ext .js,.jsx,.ts,.tsx --fix
+[2025-08-08T17:31:29.814Z] Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --fix
+[2025-08-08T17:31:29.814Z] 
+/workspace/automation/components/monetization/PaidConsultation.tsx
+  8:7  error  Do not use an `<a>` element to navigate to `/contact/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
+
+/workspace/pages/_app.tsx
+  1:8  warning  'EnhancedLayout' is defined but never used. Allowed unused vars must match /^_/u  @typescript-eslint/no-unused-vars
+
+/workspace/pages/blog/5g-technology-and-its-impact-on-iot-chat.tsx
+  22:16  error  Parsing error: An identifier or keyword cannot immediately follow a numeric literal
+
+/workspace/utils/browserExtensionDetector.ts
+  2:36  error  Parsing error: ',' expected
+
+/workspace/utils/monetization/affiliate.ts
+  1:41  error  Parsing error: ',' expected
+
+/workspace/utils/supabase/client.ts
+  3:7  warning  'supabaseUrl' is assigned a value but never used. Allowed unused vars must match /^_/u      @typescript-eslint/no-unused-vars
+  5:7  warning  'supabaseAnonKey' is assigned a value but never used. Allowed unused vars must match /^_/u  @typescript-eslint/no-unused-vars
+
+/workspace/utils/testing-system.ts
+  2:61  error  Parsing error: ',' expected
+
+/workspace/utils/testing-system.tsx
+  5:30  error  Parsing error: ',' expected
+
+✖ 9 problems (6 errors, 3 warnings)
+
+
+[2025-08-08T17:31:29.814Z] $ node fix_typescript_syntax_errors.cjs
+[2025-08-08T17:31:29.877Z] 🔧 Fixing TypeScript syntax errors...
+Processing: pages/services/web-application-development-chat.tsx
+Processing: pages/services/ui-ux-design-chat.tsx
+Processing: pages/services/technical-documentation-chat.tsx
+Processing: pages/services/system-administration-chat.tsx
+Processing: pages/services/security-auditing-chat.tsx
+Processing: pages/services/quality-assurance-testing-chat.tsx
+Processing: pages/services/performance-optimization-chat.tsx
+Processing: pages/services/network-security-chat.tsx
+Processing: pages/services/mobile-app-development-chat.tsx
+Processing: pages/services/database-design-chat.tsx
+Processing: pages/services/data-pipeline-engineering-chat.tsx
+Processing: pages/services/cloud-migration-services-chat.tsx
+Processing: pages/services/business-intelligence-chat.tsx
+Processing: pages/services/api-development-chat.tsx
+Processing: pages/services/ai-model-development-chat.tsx
+Processing: pages/category/web-development-chat.tsx
+Processing: pages/category/ui-ux-design-chat.tsx
+Processing: pages/category/technical-writing-chat.tsx
+Processing: pages/category/system-administration-chat.tsx
+Processing: pages/category/quality-assurance-chat.tsx
+Processing: pages/category/product-management-chat.tsx
+Processing: pages/category/network-engineering-chat.tsx
+Processing: pages/category/mobile-development-chat.tsx
+Processing: pages/category/devops-automation-chat.tsx
+Processing: pages/category/database-administration-chat.tsx
+Processing: pages/category/data-science-chat.tsx
+Processing: pages/category/cybersecurity-chat.tsx
+Processing: pages/category/cloud-architecture-chat.tsx
+Processing: pages/category/business-intelligence-chat.tsx
+Processing: pages/category/ai-consulting-chat.tsx
+Processing: pages/blog/the-rise-of-edge-computing-in-iot-applications-chat.tsx
+Processing: pages/blog/sustainable-technology-green-computing-solutions-chat.tsx
+Processing: pages/blog/quantum-computing-implications-for-business-chat.tsx
+Processing: pages/blog/microservices-architecture-benefits-and-challenges-chat.tsx
+Processing: pages/blog/machine-learning-applications-in-enterprise-software-chat.tsx
+Processing: pages/blog/digital-twins-revolutionizing-industry-4-0-chat.tsx
+Processing: pages/blog/devops-automation-strategies-for-modern-teams-chat.tsx
+Processing: pages/blog/data-analytics-in-digital-transformation-chat.tsx
+Processing: pages/blog/cybersecurity-trends-for-2024-and-beyond-chat.tsx
+Processing: pages/blog/cloud-native-architecture-best-practices-chat.tsx
+Processing: pages/blog/blockchain-technology-in-modern-business-solutions-chat.tsx
+Processing: pages/blog/augmented-reality-in-enterprise-applications-chat.tsx
+Processing: pages/blog/api-first-development-building-scalable-systems-chat.tsx
+Processing: pages/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat.tsx
+Processing: pages/blog/5g-technology-and-its-impact-on-iot-chat.tsx
+✅ TypeScript syntax error fixing completed
+[2025-08-08T17:31:29.877Z] $ node fix_all_typescript_errors.cjs
+[2025-08-08T17:31:29.929Z] 🔧 Fixing all TypeScript syntax errors...
+Processing: utils/testing-system.tsx
+Processing: utils/testing-system.ts
+Processing: utils/sanitizeHtml.ts
+Processing: utils/messageChannelHandler.ts
+Processing: utils/browserExtensionDetector.ts
+Processing: utils/auth-utils.ts
+Processing: utils/types/service.ts
+Processing: utils/supabase/server.ts
+Processing: utils/supabase/middleware.ts
+Processing: utils/supabase/client.ts
+Processing: utils/monetization/affiliate.ts
+Processing: utils/data/services.ts
+Processing: utils/api/quoteRequests.ts
+✅ All TypeScript syntax error fixing completed
+[2025-08-08T17:31:29.930Z] $ node comprehensive_fix.cjs
+[2025-08-08T17:31:29.956Z] Fixing corrupted TypeScript files with proper templates...
+Fixed: pages/404.tsx
+Fixed: pages/_app.tsx
+Fixed: pages/_document.tsx
+Fixed: pages/about.tsx
+Fixed: pages/admin/automation-status.tsx
+Fixed: pages/api/admin/automation-status.ts
+Fixed: pages/api/ai-capacity-planning.ts
+Fixed: pages/api/ai-change-management.ts
+Fixed: pages/api/ai-contract.ts
+Fixed: pages/api/ai-workspace-suggestions.ts
+Fixed: pages/api/analytics-api.ts
+Fixed: pages/api/analyze-quote-request.ts
+Fixed: pages/api/analyze-service-request.ts
+Fixed: pages/auth/callback.tsx
+Fixed: pages/auth/forgot-password.tsx
+Fixed: pages/auth/index.tsx
+Fixed: pages/auth/reset-password.tsx
+Fixed: pages/auth/verify.tsx
+Fixed: pages/auto/auto-update-2025-08-08t16-07-55-171z.tsx
+Fixed: pages/auto/auto-update-2025-08-08t16-10-20-249z.tsx
+Fixed: pages/auto/auto-update-2025-08-08t16-30-00-086z.tsx
+Fixed: pages/auto/auto-update-2025-08-08t16-30-20-949z.tsx
+Fixed: pages/auto/auto-update-2025-08-08t16-38-19-257z.tsx
+Fixed: pages/auto/auto-update-2025-08-08t16-49-54-200z.tsx
+Fixed: pages/auto/auto-update-2025-08-08t17-23-07-688z.tsx
+Fixed: pages/automation/index.tsx
+Fixed: pages/blockchain-solutions.tsx
+Fixed: pages/blog/5g-technology-and-its-impact-on-iot-chat.tsx
+Fixed: pages/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat.tsx
+Fixed: pages/blog/api-first-development-building-scalable-systems-chat.tsx
+Fixed: pages/blog/augmented-reality-in-enterprise-applications-chat.tsx
+Fixed: pages/blog/blockchain-technology-in-modern-business-solutions-chat.tsx
+Fixed: pages/blog/cloud-native-architecture-best-practices-chat.tsx
+Fixed: pages/blog/cybersecurity-trends-for-2024-and-beyond-chat.tsx
+Fixed: pages/blog/data-analytics-in-digital-transformation-chat.tsx
+Fixed: pages/blog/devops-automation-strategies-for-modern-teams-chat.tsx
+Fixed: pages/blog/digital-twins-revolutionizing-industry-4-0-chat.tsx
+Fixed: pages/blog/index.tsx
+Fixed: pages/blog/machine-learning-applications-in-enterprise-software-chat.tsx
+Fixed: pages/blog/microservices-architecture-benefits-and-challenges-chat.tsx
+Fixed: pages/blog/quantum-computing-implications-for-business-chat.tsx
+Fixed: pages/blog/sustainable-technology-green-computing-solutions-chat.tsx
+Fixed: pages/blog/the-rise-of-edge-computing-in-iot-applications-chat.tsx
+Fixed: pages/category/ai-consulting-chat.tsx
+Fixed: pages/category/business-intelligence-chat.tsx
+Fixed: pages/category/cloud-architecture-chat.tsx
+Fixed: pages/category/cybersecurity-chat.tsx
+Fixed: pages/category/data-science-chat.tsx
+Fixed: pages/category/database-administration-chat.tsx
+Fixed: pages/category/devops-automation-chat.tsx
+Fixed: pages/category/mobile-development-chat.tsx
+Fixed: pages/category/network-engineering-chat.tsx
+Fixed: pages/category/product-management-chat.tsx
+Fixed: pages/category/quality-assurance-chat.tsx
+Fixed: pages/category/system-administration-chat.tsx
+Fixed: pages/category/technical-writing-chat.tsx
+Fixed: pages/category/ui-ux-design-chat.tsx
+Fixed: pages/category/web-development-chat.tsx
+Fixed: pages/chat-content/ai-powered-business-solutions-discussion.tsx
+Fixed: pages/chat-content/cloud-computing-strategies.tsx
+Fixed: pages/chat-content/cybersecurity-best-practices.tsx
+Fixed: pages/chat-content/data-analytics-implementation.tsx
+Fixed: pages/chat-content/digital-transformation-insights.tsx
+Fixed: pages/chat-content/emerging-technology-trends.tsx
+Fixed: pages/chat-content/future-of-work-and-automation.tsx
+Fixed: pages/chat-content/innovation-in-enterprise-technology.tsx
+Fixed: pages/chat-content/sustainable-technology-practices.tsx
+Fixed: pages/chat-content/technology-implementation-strategies.tsx
+Fixed: pages/contact.tsx
+Fixed: pages/enhanced-home.tsx
+Fixed: pages/index.tsx
+Fixed: pages/iot-platforms.tsx
+Fixed: pages/products/index.tsx
+Fixed: pages/services/ai-model-development-chat.tsx
+Fixed: pages/services/ai-seo-auditor.tsx
+Fixed: pages/services/api-development-chat.tsx
+Fixed: pages/services/business-intelligence-chat.tsx
+Fixed: pages/services/cloud-migration-services-chat.tsx
+Fixed: pages/services/customer-support-chatbot.tsx
+Fixed: pages/services/data-pipeline-engineering-chat.tsx
+Fixed: pages/services/database-design-chat.tsx
+Fixed: pages/services/index.tsx
+Fixed: pages/services/instagram-content-scheduler.tsx
+Fixed: pages/services/landing-page-generator.tsx
+Fixed: pages/services/mobile-app-development-chat.tsx
+Fixed: pages/services/network-security-chat.tsx
+Fixed: pages/services/performance-optimization-chat.tsx
+Fixed: pages/services/price-intelligence-service.tsx
+Fixed: pages/services/quality-assurance-testing-chat.tsx
+Fixed: pages/services/security-auditing-chat.tsx
+Fixed: pages/services/system-administration-chat.tsx
+Fixed: pages/services/technical-documentation-chat.tsx
+Fixed: pages/services/ui-ux-design-chat.tsx
+Fixed: pages/services/web-application-development-chat.tsx
+Fixed: pages/talent/[slug].tsx
+Fixed: pages/talent/index.tsx
+Fixed: components/Layout.tsx
+Fixed: components/layout/AuthLayout.tsx
+Fixed: components/layout/EnhancedFooter.tsx
+Fixed: components/layout/EnhancedLayout.tsx
+Fixed: components/layout/EnhancedNavigation.tsx
+Fixed: components/monetization/PaidConsultation.tsx
+Fixed: components/ui/AnimatedBackground.tsx
+Fixed: components/ui/EnhancedButton.tsx
+Fixed: components/ui/EnhancedCard.tsx
+Fixed: components/ui/EnhancedLoading.tsx
+Fixed: components/ui/EnhancedMarketplaceCard.tsx
+Fixed: components/ui/FuturisticCard.tsx
+Fixed: components/ui/FuturisticHero.tsx
+Fixed: components/ui/GlassmorphismCard.tsx
+Fixed: components/ui/InteractiveNavigation.tsx
+Fixed: components/ui/InteractiveSearch.tsx
+Fixed: components/ui/InteractiveStats.tsx
+Fixed: components/ui/NotificationSystem.tsx
+Fixed: components/ui/UserEngagementSystem.tsx
+Finished fixing corrupted files with proper templates.
+[2025-08-08T17:31:29.956Z] $ node fix_unused_imports.cjs
+[2025-08-08T17:31:30.006Z] 🔧 Fixing unused imports...
+Processing: pages/services/web-application-development-chat.tsx
+Processing: pages/services/ui-ux-design-chat.tsx
+Processing: pages/services/technical-documentation-chat.tsx
+Processing: pages/services/system-administration-chat.tsx
+Processing: pages/services/security-auditing-chat.tsx
+Processing: pages/services/quality-assurance-testing-chat.tsx
+Processing: pages/services/performance-optimization-chat.tsx
+Processing: pages/services/network-security-chat.tsx
+Processing: pages/services/mobile-app-development-chat.tsx
+Processing: pages/services/database-design-chat.tsx
+Processing: pages/services/data-pipeline-engineering-chat.tsx
+Processing: pages/services/cloud-migration-services-chat.tsx
+Processing: pages/services/business-intelligence-chat.tsx
+Processing: pages/services/api-development-chat.tsx
+Processing: pages/services/ai-model-development-chat.tsx
+Processing: pages/category/web-development-chat.tsx
+Processing: pages/category/ui-ux-design-chat.tsx
+Processing: pages/category/technical-writing-chat.tsx
+Processing: pages/category/system-administration-chat.tsx
+Processing: pages/category/quality-assurance-chat.tsx
+Processing: pages/category/product-management-chat.tsx
+Processing: pages/category/network-engineering-chat.tsx
+Processing: pages/category/mobile-development-chat.tsx
+Processing: pages/category/devops-automation-chat.tsx
+Processing: pages/category/database-administration-chat.tsx
+Processing: pages/category/data-science-chat.tsx
+Processing: pages/category/cybersecurity-chat.tsx
+Processing: pages/category/cloud-architecture-chat.tsx
+Processing: pages/category/business-intelligence-chat.tsx
+Processing: pages/category/ai-consulting-chat.tsx
+Processing: pages/blog/the-rise-of-edge-computing-in-iot-applications-chat.tsx
+Processing: pages/blog/sustainable-technology-green-computing-solutions-chat.tsx
+Processing: pages/blog/quantum-computing-implications-for-business-chat.tsx
+Processing: pages/blog/microservices-architecture-benefits-and-challenges-chat.tsx
+Processing: pages/blog/machine-learning-applications-in-enterprise-software-chat.tsx
+Processing: pages/blog/digital-twins-revolutionizing-industry-4-0-chat.tsx
+Processing: pages/blog/devops-automation-strategies-for-modern-teams-chat.tsx
+Processing: pages/blog/data-analytics-in-digital-transformation-chat.tsx
+Processing: pages/blog/cybersecurity-trends-for-2024-and-beyond-chat.tsx
+Processing: pages/blog/cloud-native-architecture-best-practices-chat.tsx
+Processing: pages/blog/blockchain-technology-in-modern-business-solutions-chat.tsx
+Processing: pages/blog/augmented-reality-in-enterprise-applications-chat.tsx
+Processing: pages/blog/api-first-development-building-scalable-systems-chat.tsx
+Processing: pages/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat.tsx
+Processing: pages/blog/5g-technology-and-its-impact-on-iot-chat.tsx
+✅ Unused import fixing completed
+[2025-08-08T17:31:30.007Z] $ node final_fix.cjs
+[2025-08-08T17:31:30.034Z] Fixing corrupted TypeScript files with proper templates...
+Fixed: pages/404.tsx
+Fixed: pages/_app.tsx
+Fixed: pages/_document.tsx
+Fixed: pages/about.tsx
+Fixed: pages/admin/automation-status.tsx
+Fixed: pages/api/admin/automation-status.ts
+Fixed: pages/api/ai-capacity-planning.ts
+Fixed: pages/api/ai-change-management.ts
+Fixed: pages/api/ai-contract.ts
+Fixed: pages/api/ai-workspace-suggestions.ts
+Fixed: pages/api/analytics-api.ts
+Fixed: pages/api/analyze-quote-request.ts
+Fixed: pages/api/analyze-service-request.ts
+Fixed: pages/auth/callback.tsx
+Fixed: pages/auth/forgot-password.tsx
+Fixed: pages/auth/index.tsx
+Fixed: pages/auth/reset-password.tsx
+Fixed: pages/auth/verify.tsx
+Fixed: pages/auto/auto-update-2025-08-08t16-07-55-171z.tsx
+Fixed: pages/auto/auto-update-2025-08-08t16-10-20-249z.tsx
+Fixed: pages/auto/auto-update-2025-08-08t16-30-00-086z.tsx
+Fixed: pages/auto/auto-update-2025-08-08t16-30-20-949z.tsx
+Fixed: pages/auto/auto-update-2025-08-08t16-38-19-257z.tsx
+Fixed: pages/auto/auto-update-2025-08-08t16-49-54-200z.tsx
+Fixed: pages/auto/auto-update-2025-08-08t17-23-07-688z.tsx
+Fixed: pages/automation/index.tsx
+Fixed: pages/blockchain-solutions.tsx
+Fixed: pages/blog/5g-technology-and-its-impact-on-iot-chat.tsx
+Fixed: pages/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat.tsx
+Fixed: pages/blog/api-first-development-building-scalable-systems-chat.tsx
+Fixed: pages/blog/augmented-reality-in-enterprise-applications-chat.tsx
+Fixed: pages/blog/blockchain-technology-in-modern-business-solutions-chat.tsx
+Fixed: pages/blog/cloud-native-architecture-best-practices-chat.tsx
+Fixed: pages/blog/cybersecurity-trends-for-2024-and-beyond-chat.tsx
+Fixed: pages/blog/data-analytics-in-digital-transformation-chat.tsx
+Fixed: pages/blog/devops-automation-strategies-for-modern-teams-chat.tsx
+Fixed: pages/blog/digital-twins-revolutionizing-industry-4-0-chat.tsx
+Fixed: pages/blog/index.tsx
+Fixed: pages/blog/machine-learning-applications-in-enterprise-software-chat.tsx
+Fixed: pages/blog/microservices-architecture-benefits-and-challenges-chat.tsx
+Fixed: pages/blog/quantum-computing-implications-for-business-chat.tsx
+Fixed: pages/blog/sustainable-technology-green-computing-solutions-chat.tsx
+Fixed: pages/blog/the-rise-of-edge-computing-in-iot-applications-chat.tsx
+Fixed: pages/category/ai-consulting-chat.tsx
+Fixed: pages/category/business-intelligence-chat.tsx
+Fixed: pages/category/cloud-architecture-chat.tsx
+Fixed: pages/category/cybersecurity-chat.tsx
+Fixed: pages/category/data-science-chat.tsx
+Fixed: pages/category/database-administration-chat.tsx
+Fixed: pages/category/devops-automation-chat.tsx
+Fixed: pages/category/mobile-development-chat.tsx
+Fixed: pages/category/network-engineering-chat.tsx
+Fixed: pages/category/product-management-chat.tsx
+Fixed: pages/category/quality-assurance-chat.tsx
+Fixed: pages/category/system-administration-chat.tsx
+Fixed: pages/category/technical-writing-chat.tsx
+Fixed: pages/category/ui-ux-design-chat.tsx
+Fixed: pages/category/web-development-chat.tsx
+Fixed: pages/chat-content/ai-powered-business-solutions-discussion.tsx
+Fixed: pages/chat-content/cloud-computing-strategies.tsx
+Fixed: pages/chat-content/cybersecurity-best-practices.tsx
+Fixed: pages/chat-content/data-analytics-implementation.tsx
+Fixed: pages/chat-content/digital-transformation-insights.tsx
+Fixed: pages/chat-content/emerging-technology-trends.tsx
+Fixed: pages/chat-content/future-of-work-and-automation.tsx
+Fixed: pages/chat-content/innovation-in-enterprise-technology.tsx
+Fixed: pages/chat-content/sustainable-technology-practices.tsx
+Fixed: pages/chat-content/technology-implementation-strategies.tsx
+Fixed: pages/contact.tsx
+Fixed: pages/enhanced-home.tsx
+Fixed: pages/index.tsx
+Fixed: pages/iot-platforms.tsx
+Fixed: pages/products/index.tsx
+Fixed: pages/services/ai-model-development-chat.tsx
+Fixed: pages/services/ai-seo-auditor.tsx
+Fixed: pages/services/api-development-chat.tsx
+Fixed: pages/services/business-intelligence-chat.tsx
+Fixed: pages/services/cloud-migration-services-chat.tsx
+Fixed: pages/services/customer-support-chatbot.tsx
+Fixed: pages/services/data-pipeline-engineering-chat.tsx
+Fixed: pages/services/database-design-chat.tsx
+Fixed: pages/services/index.tsx
+Fixed: pages/services/instagram-content-scheduler.tsx
+Fixed: pages/services/landing-page-generator.tsx
+Fixed: pages/services/mobile-app-development-chat.tsx
+Fixed: pages/services/network-security-chat.tsx
+Fixed: pages/services/performance-optimization-chat.tsx
+Fixed: pages/services/price-intelligence-service.tsx
+Fixed: pages/services/quality-assurance-testing-chat.tsx
+Fixed: pages/services/security-auditing-chat.tsx
+Fixed: pages/services/system-administration-chat.tsx
+Fixed: pages/services/technical-documentation-chat.tsx
+Fixed: pages/services/ui-ux-design-chat.tsx
+Fixed: pages/services/web-application-development-chat.tsx
+Fixed: pages/talent/[slug].tsx
+Fixed: pages/talent/index.tsx
+Fixed: components/Layout.tsx
+Fixed: components/layout/AuthLayout.tsx
+Fixed: components/layout/EnhancedFooter.tsx
+Fixed: components/layout/EnhancedLayout.tsx
+Fixed: components/layout/EnhancedNavigation.tsx
+Fixed: components/monetization/PaidConsultation.tsx
+Fixed: components/ui/AnimatedBackground.tsx
+Fixed: components/ui/EnhancedButton.tsx
+Fixed: components/ui/EnhancedCard.tsx
+Fixed: components/ui/EnhancedLoading.tsx
+Fixed: components/ui/EnhancedMarketplaceCard.tsx
+Fixed: components/ui/FuturisticCard.tsx
+Fixed: components/ui/FuturisticHero.tsx
+Fixed: components/ui/GlassmorphismCard.tsx
+Fixed: components/ui/InteractiveNavigation.tsx
+Fixed: components/ui/InteractiveSearch.tsx
+Fixed: components/ui/InteractiveStats.tsx
+Fixed: components/ui/NotificationSystem.tsx
+Fixed: components/ui/UserEngagementSystem.tsx
+Finished fixing corrupted files with proper templates.
+[2025-08-08T17:31:30.035Z] $ npm run type-check
+[2025-08-08T17:31:30.886Z] Command failed: npm run type-check
+[2025-08-08T17:31:30.886Z] 
+> bolt.new.zion.app@0.1.0 type-check
+> tsc --noEmit
+
+pages/blog/5g-technology-and-its-impact-on-iot-chat.tsx(5,7): error TS1134: Variable declaration expected.
+pages/blog/5g-technology-and-its-impact-on-iot-chat.tsx(5,8): error TS1005: ';' expected.
+pages/blog/5g-technology-and-its-impact-on-iot-chat.tsx(5,8): error TS1351: An identifier or keyword cannot immediately follow a numeric literal.
+pages/blog/5g-technology-and-its-impact-on-iot-chat.tsx(22,17): error TS1351: An identifier or keyword cannot immediately follow a numeric literal.
+utils/browserExtensionDetector.ts(2,37): error TS1005: ',' expected.
+utils/browserExtensionDetector.ts(2,47): error TS1005: ':' expected.
+utils/monetization/affiliate.ts(1,42): error TS1005: ',' expected.
+utils/testing-system.ts(2,62): error TS1005: ',' expected.
+utils/testing-system.ts(2,64): error TS1003: Identifier expected.
+utils/testing-system.ts(2,72): error TS1003: Identifier expected.
+utils/testing-system.ts(2,74): error TS1003: Identifier expected.
+utils/testing-system.ts(2,81): error TS1003: Identifier expected.
+utils/testing-system.ts(2,83): error TS1003: Identifier expected.
+
+[2025-08-08T17:31:30.886Z] Type-check failed. Running an additional lint --fix pass.
+[2025-08-08T17:31:30.886Z] $ npx eslint . --ext .js,.jsx,.ts,.tsx --fix
+[2025-08-08T17:31:32.962Z] Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --fix
+[2025-08-08T17:31:32.962Z] 
+/workspace/automation/components/monetization/PaidConsultation.tsx
+  8:7  error  Do not use an `<a>` element to navigate to `/contact/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
+
+/workspace/pages/blog/5g-technology-and-its-impact-on-iot-chat.tsx
+  5:7  error  Parsing error: An identifier or keyword cannot immediately follow a numeric literal
+
+/workspace/utils/browserExtensionDetector.ts
+  2:36  error  Parsing error: ',' expected
+
+/workspace/utils/monetization/affiliate.ts
+  1:41  error  Parsing error: ',' expected
+
+/workspace/utils/supabase/client.ts
+  3:7  warning  'supabaseUrl' is assigned a value but never used. Allowed unused vars must match /^_/u      @typescript-eslint/no-unused-vars
+  5:7  warning  'supabaseAnonKey' is assigned a value but never used. Allowed unused vars must match /^_/u  @typescript-eslint/no-unused-vars
+
+/workspace/utils/testing-system.ts
+  2:61  error  Parsing error: ',' expected
+
+/workspace/utils/testing-system.tsx
+  5:30  error  Parsing error: ',' expected
+
+✖ 8 problems (6 errors, 2 warnings)
+
+
+[2025-08-08T17:31:32.962Z] $ npm run build
+[2025-08-08T17:31:37.649Z] Command failed: npm run build
+[2025-08-08T17:31:37.649Z] 
+> bolt.new.zion.app@0.1.0 build
+> NODE_OPTIONS=--openssl-legacy-provider next build
+
+info  - Using webpack 5. Reason: Enabled by default https://nextjs.org/docs/messages/webpack5
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+info  - Skipping validation of types...
+info  - Creating an optimized production build...
+
+[2025-08-08T17:31:37.649Z] Build failed. Attempting another syntax fix pass.
+[2025-08-08T17:31:37.649Z] $ node fix_typescript_syntax_errors.cjs
+[2025-08-08T17:31:37.703Z] 🔧 Fixing TypeScript syntax errors...
+Processing: pages/services/web-application-development-chat.tsx
+Processing: pages/services/ui-ux-design-chat.tsx
+Processing: pages/services/technical-documentation-chat.tsx
+Processing: pages/services/system-administration-chat.tsx
+Processing: pages/services/security-auditing-chat.tsx
+Processing: pages/services/quality-assurance-testing-chat.tsx
+Processing: pages/services/performance-optimization-chat.tsx
+Processing: pages/services/network-security-chat.tsx
+Processing: pages/services/mobile-app-development-chat.tsx
+Processing: pages/services/database-design-chat.tsx
+Processing: pages/services/data-pipeline-engineering-chat.tsx
+Processing: pages/services/cloud-migration-services-chat.tsx
+Processing: pages/services/business-intelligence-chat.tsx
+Processing: pages/services/api-development-chat.tsx
+Processing: pages/services/ai-model-development-chat.tsx
+Processing: pages/category/web-development-chat.tsx
+Processing: pages/category/ui-ux-design-chat.tsx
+Processing: pages/category/technical-writing-chat.tsx
+Processing: pages/category/system-administration-chat.tsx
+Processing: pages/category/quality-assurance-chat.tsx
+Processing: pages/category/product-management-chat.tsx
+Processing: pages/category/network-engineering-chat.tsx
+Processing: pages/category/mobile-development-chat.tsx
+Processing: pages/category/devops-automation-chat.tsx
+Processing: pages/category/database-administration-chat.tsx
+Processing: pages/category/data-science-chat.tsx
+Processing: pages/category/cybersecurity-chat.tsx
+Processing: pages/category/cloud-architecture-chat.tsx
+Processing: pages/category/business-intelligence-chat.tsx
+Processing: pages/category/ai-consulting-chat.tsx
+Processing: pages/blog/the-rise-of-edge-computing-in-iot-applications-chat.tsx
+Processing: pages/blog/sustainable-technology-green-computing-solutions-chat.tsx
+Processing: pages/blog/quantum-computing-implications-for-business-chat.tsx
+Processing: pages/blog/microservices-architecture-benefits-and-challenges-chat.tsx
+Processing: pages/blog/machine-learning-applications-in-enterprise-software-chat.tsx
+Processing: pages/blog/digital-twins-revolutionizing-industry-4-0-chat.tsx
+Processing: pages/blog/devops-automation-strategies-for-modern-teams-chat.tsx
+Processing: pages/blog/data-analytics-in-digital-transformation-chat.tsx
+Processing: pages/blog/cybersecurity-trends-for-2024-and-beyond-chat.tsx
+Processing: pages/blog/cloud-native-architecture-best-practices-chat.tsx
+Processing: pages/blog/blockchain-technology-in-modern-business-solutions-chat.tsx
+Processing: pages/blog/augmented-reality-in-enterprise-applications-chat.tsx
+Processing: pages/blog/api-first-development-building-scalable-systems-chat.tsx
+Processing: pages/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat.tsx
+Processing: pages/blog/5g-technology-and-its-impact-on-iot-chat.tsx
+  Fixed variable name: 5gTechnologyAndItsImpactOnIotChat -> Chat5gTechnologyAndItsImpactOnIotChat
+✅ Fixed syntax errors in: pages/blog/5g-technology-and-its-impact-on-iot-chat.tsx
+✅ TypeScript syntax error fixing completed
+[2025-08-08T17:31:37.703Z] $ npm run build
+[2025-08-08T17:31:39.831Z] Command failed: npm run build
+[2025-08-08T17:31:39.831Z] 
+> bolt.new.zion.app@0.1.0 build
+> NODE_OPTIONS=--openssl-legacy-provider next build
+
+info  - Using webpack 5. Reason: Enabled by default https://nextjs.org/docs/messages/webpack5
+info  - Skipping validation of types...
+info  - Creating an optimized production build...
+
+[2025-08-08T17:31:39.831Z] $ node automation/git-sync.cjs
+[2025-08-08T17:31:40.941Z] [git-sync 2025-08-08T17:31:40.937Z] Nothing to commit after staging.
+[2025-08-08T17:31:40.941Z] ✅ Improvement pass finished
+[2025-08-08T17:31:40.945Z] $ node automation/monetization-orchestrator.cjs once
+[2025-08-08T17:31:40.975Z] Command failed: node automation/monetization-orchestrator.cjs once
+/workspace/automation/monetization-orchestrator.cjs:10
+<<<<<<< HEAD
+^^
+
+SyntaxError: Unexpected token '<<'
+    at wrapSafe (node:internal/modules/cjs/loader:1662:18)
+    at Module._compile (node:internal/modules/cjs/loader:1704:20)
+    at Object..js (node:internal/modules/cjs/loader:1895:10)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49
+
+Node.js v22.16.0
+[2025-08-08T17:31:40.976Z] $ node automation/revenue-ideas-orchestrator.cjs once
+[2025-08-08T17:31:41.129Z] 🚀 Revenue ideas orchestrator started
+▶ node /workspace/automation/revenue-ideas-analyzer.cjs
+▶ node /workspace/automation/revenue-ideas-factory.cjs
+▶ node /workspace/automation/revenue-ideas-agents/add_contact_sales_cta_on_enterprise_pages.cjs
+▶ node /workspace/automation/revenue-ideas-agents/add_newsletter_paywall_teaser_on_long_posts.cjs
+▶ node /workspace/automation/revenue-ideas-agents/create_affiliate_link_wrappers_for_blog_posts.cjs
+▶ node /workspace/automation/revenue-ideas-agents/generate_paid_consultation_booking_component.cjs
+▶ node /workspace/automation/revenue-ideas-agents/introduce_pricing_cta_sections_on_high_traffic_pages.cjs
+[2025-08-08T17:31:41.129Z] $ node automation/venture-orchestrator.cjs once
+[2025-08-08T17:31:41.235Z] 🚀 Venture orchestrator started
+▶ node /workspace/automation/venture-services-analyzer.cjs
+▶ node /workspace/automation/venture-services-factory.cjs
+▶ node /workspace/automation/ads-generator.cjs
+▶ node /workspace/automation/service-sales-agents-factory.cjs
+[2025-08-08T17:31:41.235Z] $ node automation/ui-evolution-launcher.js once
+[2025-08-08T17:31:41.319Z] 🚀 UI evolution orchestrator started
+▶ node /workspace/automation/ui-evolution-analyzer.cjs
+▶ node /workspace/automation/ui-evolution-factory.cjs
+[2025-08-08T17:31:41.319Z] $ node automation/spec-dev-orchestrator.cjs once
+[2025-08-08T17:31:47.929Z] 🚀 Spec-dev orchestrator started
+▶ node /workspace/automation/spec-dev-chat-fetcher.cjs
+▶ node /workspace/automation/spec-dev-site-crawler.cjs
+▶ node /workspace/automation/spec-dev-analyzer.cjs
+▶ node /workspace/automation/spec-dev-factory.cjs
+▶ node /workspace/automation/homepage-promo-analyzer.cjs
+▶ node /workspace/automation/homepage-promo-factory.cjs
+▶ node /workspace/automation/homepage-promo-applier.cjs
+[2025-08-08T17:31:47.929Z] $ node automation/frontend-sync-autonomous-orchestrator.cjs once 0
+[2025-08-08T17:31:48.278Z] 🚀 Frontend sync autonomous orchestrator started
+▶ node /workspace/automation/frontend-sync-autonomous-analyzer.cjs
+▶ node /workspace/automation/frontend-sync-autonomous-factory.cjs
+▶ node /workspace/automation/frontend-sync-autonomous-agents/rebuild_sitemap.cjs
+▶ node /workspace/automation/frontend-sync-autonomous-agents/refresh_auto_pages.cjs
+▶ node /workspace/automation/frontend-sync-autonomous-agents/refresh_styles.cjs
+▶ node /workspace/automation/frontend-sync-autonomous-agents/sync_content_metadata.cjs
+▶ node /workspace/automation/frontend-sync-autonomous-agents/sync_pages_components.cjs
+✅ Executed 5 autonomous frontend sync agents
+[2025-08-08T17:31:48.278Z] $ node automation/alignment-dev-factory.cjs 
+[2025-08-08T17:31:48.304Z] Generated alignment tickets
+[2025-08-08T17:31:48.304Z] $ node automation/alignment-factory.cjs 
+[2025-08-08T17:31:48.360Z] Created 0 alignment agent scripts
+[2025-08-08T17:31:48.360Z] $ node automation/automation-factory.cjs 
+[2025-08-08T17:31:48.389Z] Usage: node automation-factory.js [generate|run|list|continuous] [script-name]
+
+Commands:
+  generate    - Generate all automation scripts
+  run         - Run all scripts or specific script
+  list        - List all available scripts
+  continuous  - Start continuous automation mode
+[2025-08-08T17:31:48.389Z] $ node automation/autonomous-meta-factory.cjs 
+[2025-08-08T17:31:48.409Z] Command failed: node automation/autonomous-meta-factory.cjs 
+/workspace/automation/autonomous-meta-factory.cjs:89
+  const safeFile = targetFile.replace(/`/g, '\\`');
+                                                 ^
+
+SyntaxError: Unexpected token ')'
+    at wrapSafe (node:internal/modules/cjs/loader:1662:18)
+    at Module._compile (node:internal/modules/cjs/loader:1704:20)
+    at Object..js (node:internal/modules/cjs/loader:1895:10)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49
+
+Node.js v22.16.0
+[2025-08-08T17:31:48.409Z] $ node automation/build-rescue-factory.cjs 
+[2025-08-08T17:31:48.432Z] Build rescue factory created 0 agent(s).
+[2025-08-08T17:31:48.432Z] $ node automation/content-expansion-factory.cjs 
+[2025-08-08T17:31:48.454Z] Content expansion factory completed. Created 0 agents.
+[2025-08-08T17:31:48.454Z] $ node automation/cursor-chat-factory.cjs 
+[2025-08-08T17:31:48.473Z] Cursor agents created: 5
+[2025-08-08T17:31:48.473Z] $ node automation/design-factory.cjs 
+[2025-08-08T17:31:48.498Z] Created 331 design agents
+[2025-08-08T17:31:48.498Z] $ node automation/diversification-factory.cjs 
+[2025-08-08T17:31:48.519Z] Diversification factory completed. Created 0 agents.
+[2025-08-08T17:31:48.519Z] $ node automation/feature-marketing-factory.cjs 
+[2025-08-08T17:31:48.541Z] Created 0 feature marketing agents
+[2025-08-08T17:31:48.541Z] $ node automation/frontend-sync-autonomous-factory.cjs 
+[2025-08-08T17:31:48.562Z] Created/ensured 5 autonomous frontend sync agents
+[2025-08-08T17:31:48.562Z] $ node automation/frontend-sync-factory.cjs 
+[2025-08-08T17:31:48.584Z] Created/ensured 2 frontend sync agents
+[2025-08-08T17:31:48.584Z] $ node automation/growth-factory.cjs 
+[2025-08-08T17:31:48.606Z] Growth factory completed. Created 0 agents.
+[2025-08-08T17:31:48.606Z] $ node automation/health-remediation-factory.cjs 
+[2025-08-08T17:31:48.624Z] Command failed: node automation/health-remediation-factory.cjs 
+No auto-health-monitor log found at /workspace/automation/logs/auto-health-monitor.log
+[2025-08-08T17:31:48.624Z] $ node automation/homepage-promo-factory.cjs 
+[2025-08-08T17:31:48.642Z] Created 0 homepage promo agents
+[2025-08-08T17:31:48.642Z] $ node automation/instagram-marketing-factory.cjs 
+[2025-08-08T17:31:48.659Z] ✅ Generated captions: /workspace/automation/instagram-agents/captions.json
+[2025-08-08T17:31:48.660Z] $ node automation/linkedin-marketing-factory.cjs 
+[2025-08-08T17:31:48.679Z] LinkedIn poster agent ready
+[2025-08-08T17:31:48.679Z] $ node automation/linkedin-pro-factory.cjs 
+[2025-08-08T17:31:48.697Z] LinkedIn Pro poster agent ready
+[2025-08-08T17:31:48.697Z] $ node automation/monetization-factory.cjs 
+[2025-08-08T17:31:48.714Z] Command failed: node automation/monetization-factory.cjs 
+/workspace/automation/monetization-factory.cjs:7
+<<<<<<< HEAD
+^^
+
+SyntaxError: Unexpected token '<<'
+    at wrapSafe (node:internal/modules/cjs/loader:1662:18)
+    at Module._compile (node:internal/modules/cjs/loader:1704:20)
+    at Object..js (node:internal/modules/cjs/loader:1895:10)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49
+
+Node.js v22.16.0
+[2025-08-08T17:31:48.714Z] $ node automation/responsive-content-factory.cjs 
+[2025-08-08T17:31:48.735Z] Created 0 responsive agents
+[2025-08-08T17:31:48.735Z] $ node automation/revenue-ideas-factory.cjs 
+[2025-08-08T17:31:48.753Z] Created 0 revenue-ideas agents
+[2025-08-08T17:31:48.753Z] $ node automation/saas-services-factory.cjs 
+[2025-08-08T17:31:48.771Z] Created 0 SaaS agents
+[2025-08-08T17:31:48.771Z] $ node automation/security-remediation-factory.cjs 
+[2025-08-08T17:31:48.789Z] Security remediation factory created 0 agent(s).
+[2025-08-08T17:31:48.789Z] $ node automation/service-sales-agents-factory.cjs 
+[2025-08-08T17:31:48.813Z] Created/ensured 0 sales agents.
+[2025-08-08T17:31:48.813Z] $ node automation/site-promo-factory.cjs 
+[2025-08-08T17:31:48.831Z] Site promo agents generated
+[2025-08-08T17:31:48.831Z] $ node automation/sitemap-maintenance-factory.cjs 
+[2025-08-08T17:31:48.849Z] Sitemap maintenance factory created 0 agent(s).
+[2025-08-08T17:31:48.850Z] $ node automation/smoke-test-factory.cjs 
+[2025-08-08T17:31:48.871Z] Smoke test factory created 0 agent(s).
+[2025-08-08T17:31:48.871Z] $ node automation/spec-dev-factory.cjs 
+[2025-08-08T17:31:48.901Z] Spec-dev agents created: 2
+[2025-08-08T17:31:48.901Z] $ node automation/ui-evolution-factory.cjs 
+[2025-08-08T17:31:48.925Z] Created 627 UI evolution agents
+[2025-08-08T17:31:48.925Z] $ node automation/variation-factory.cjs 
+[2025-08-08T17:31:48.943Z] Created 0 variation agents
+[2025-08-08T17:31:48.943Z] $ node automation/venture-services-factory.cjs 
+[2025-08-08T17:31:48.967Z] Service pages created: 0, registry additions: 0
+[2025-08-08T17:31:48.967Z] $ npm run type-check
+[2025-08-08T17:31:49.839Z] > bolt.new.zion.app@0.1.0 type-check
+> tsc --noEmit
+
+pages/blog/5g-technology-and-its-impact-on-iot-chat.tsx(22,17): error TS1351: An identifier or keyword cannot immediately follow a numeric literal.
+utils/browserExtensionDetector.ts(2,37): error TS1005: ',' expected.
+utils/browserExtensionDetector.ts(2,47): error TS1005: ':' expected.
+utils/monetization/affiliate.ts(1,42): error TS1005: ',' expected.
+utils/testing-system.ts(2,62): error TS1005: ',' expected.
+utils/testing-system.ts(2,64): error TS1003: Identifier expected.
+utils/testing-system.ts(2,72): error TS1003: Identifier expected.
+utils/testing-system.ts(2,74): error TS1003: Identifier expected.
+utils/testing-system.ts(2,81): error TS1003: Identifier expected.
+utils/testing-system.ts(2,83): error TS1003: Identifier expected.
+[2025-08-08T17:31:49.839Z] Type-check failed, attempting quick syntax repair
+[2025-08-08T17:31:49.839Z] $ node fix_typescript_syntax_errors.cjs
+[2025-08-08T17:31:49.894Z] 🔧 Fixing TypeScript syntax errors...
+Processing: pages/services/web-application-development-chat.tsx
+Processing: pages/services/ui-ux-design-chat.tsx
+Processing: pages/services/technical-documentation-chat.tsx
+Processing: pages/services/system-administration-chat.tsx
+Processing: pages/services/security-auditing-chat.tsx
+Processing: pages/services/quality-assurance-testing-chat.tsx
+Processing: pages/services/performance-optimization-chat.tsx
+Processing: pages/services/network-security-chat.tsx
+Processing: pages/services/mobile-app-development-chat.tsx
+Processing: pages/services/database-design-chat.tsx
+Processing: pages/services/data-pipeline-engineering-chat.tsx
+Processing: pages/services/cloud-migration-services-chat.tsx
+Processing: pages/services/business-intelligence-chat.tsx
+Processing: pages/services/api-development-chat.tsx
+Processing: pages/services/ai-model-development-chat.tsx
+Processing: pages/category/web-development-chat.tsx
+Processing: pages/category/ui-ux-design-chat.tsx
+Processing: pages/category/technical-writing-chat.tsx
+Processing: pages/category/system-administration-chat.tsx
+Processing: pages/category/quality-assurance-chat.tsx
+Processing: pages/category/product-management-chat.tsx
+Processing: pages/category/network-engineering-chat.tsx
+Processing: pages/category/mobile-development-chat.tsx
+Processing: pages/category/devops-automation-chat.tsx
+Processing: pages/category/database-administration-chat.tsx
+Processing: pages/category/data-science-chat.tsx
+Processing: pages/category/cybersecurity-chat.tsx
+Processing: pages/category/cloud-architecture-chat.tsx
+Processing: pages/category/business-intelligence-chat.tsx
+Processing: pages/category/ai-consulting-chat.tsx
+Processing: pages/blog/the-rise-of-edge-computing-in-iot-applications-chat.tsx
+Processing: pages/blog/sustainable-technology-green-computing-solutions-chat.tsx
+Processing: pages/blog/quantum-computing-implications-for-business-chat.tsx
+Processing: pages/blog/microservices-architecture-benefits-and-challenges-chat.tsx
+Processing: pages/blog/machine-learning-applications-in-enterprise-software-chat.tsx
+Processing: pages/blog/digital-twins-revolutionizing-industry-4-0-chat.tsx
+Processing: pages/blog/devops-automation-strategies-for-modern-teams-chat.tsx
+Processing: pages/blog/data-analytics-in-digital-transformation-chat.tsx
+Processing: pages/blog/cybersecurity-trends-for-2024-and-beyond-chat.tsx
+Processing: pages/blog/cloud-native-architecture-best-practices-chat.tsx
+Processing: pages/blog/blockchain-technology-in-modern-business-solutions-chat.tsx
+Processing: pages/blog/augmented-reality-in-enterprise-applications-chat.tsx
+Processing: pages/blog/api-first-development-building-scalable-systems-chat.tsx
+Processing: pages/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat.tsx
+Processing: pages/blog/5g-technology-and-its-impact-on-iot-chat.tsx
+✅ TypeScript syntax error fixing completed
+[2025-08-08T17:31:49.894Z] $ npm run build
+[2025-08-08T17:31:51.836Z] > bolt.new.zion.app@0.1.0 build
+> NODE_OPTIONS=--openssl-legacy-provider next build
+
+info  - Using webpack 5. Reason: Enabled by default https://nextjs.org/docs/messages/webpack5
+info  - Skipping validation of types...
+info  - Creating an optimized production build...
+[2025-08-08T17:31:51.836Z] Build failed, attempting comprehensive_fix then rebuild
+[2025-08-08T17:31:51.836Z] $ node comprehensive_fix.cjs
+[2025-08-08T17:31:51.863Z] Fixing corrupted TypeScript files with proper templates...
+Fixed: pages/404.tsx
+Fixed: pages/_app.tsx
+Fixed: pages/_document.tsx
+Fixed: pages/about.tsx
+Fixed: pages/admin/automation-status.tsx
+Fixed: pages/api/admin/automation-status.ts
+Fixed: pages/api/ai-capacity-planning.ts
+Fixed: pages/api/ai-change-management.ts
+Fixed: pages/api/ai-contract.ts
+Fixed: pages/api/ai-workspace-suggestions.ts
+Fixed: pages/api/analytics-api.ts
+Fixed: pages/api/analyze-quote-request.ts
+Fixed: pages/api/analyze-service-request.ts
+Fixed: pages/auth/callback.tsx
+Fixed: pages/auth/forgot-password.tsx
+Fixed: pages/auth/index.tsx
+Fixed: pages/auth/reset-password.tsx
+Fixed: pages/auth/verify.tsx
+Fixed: pages/auto/auto-update-2025-08-08t16-07-55-171z.tsx
+Fixed: pages/auto/auto-update-2025-08-08t16-10-20-249z.tsx
+Fixed: pages/auto/auto-update-2025-08-08t16-30-00-086z.tsx
+Fixed: pages/auto/auto-update-2025-08-08t16-30-20-949z.tsx
+Fixed: pages/auto/auto-update-2025-08-08t16-38-19-257z.tsx
+Fixed: pages/auto/auto-update-2025-08-08t16-49-54-200z.tsx
+Fixed: pages/auto/auto-update-2025-08-08t17-23-07-688z.tsx
+Fixed: pages/automation/index.tsx
+Fixed: pages/blockchain-solutions.tsx
+Fixed: pages/blog/5g-technology-and-its-impact-on-iot-chat.tsx
+Fixed: pages/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat.tsx
+Fixed: pages/blog/api-first-development-building-scalable-systems-chat.tsx
+Fixed: pages/blog/augmented-reality-in-enterprise-applications-chat.tsx
+Fixed: pages/blog/blockchain-technology-in-modern-business-solutions-chat.tsx
+Fixed: pages/blog/cloud-native-architecture-best-practices-chat.tsx
+Fixed: pages/blog/cybersecurity-trends-for-2024-and-beyond-chat.tsx
+Fixed: pages/blog/data-analytics-in-digital-transformation-chat.tsx
+Fixed: pages/blog/devops-automation-strategies-for-modern-teams-chat.tsx
+Fixed: pages/blog/digital-twins-revolutionizing-industry-4-0-chat.tsx
+Fixed: pages/blog/index.tsx
+Fixed: pages/blog/machine-learning-applications-in-enterprise-software-chat.tsx
+Fixed: pages/blog/microservices-architecture-benefits-and-challenges-chat.tsx
+Fixed: pages/blog/quantum-computing-implications-for-business-chat.tsx
+Fixed: pages/blog/sustainable-technology-green-computing-solutions-chat.tsx
+Fixed: pages/blog/the-rise-of-edge-computing-in-iot-applications-chat.tsx
+Fixed: pages/category/ai-consulting-chat.tsx
+Fixed: pages/category/business-intelligence-chat.tsx
+Fixed: pages/category/cloud-architecture-chat.tsx
+Fixed: pages/category/cybersecurity-chat.tsx
+Fixed: pages/category/data-science-chat.tsx
+Fixed: pages/category/database-administration-chat.tsx
+Fixed: pages/category/devops-automation-chat.tsx
+Fixed: pages/category/mobile-development-chat.tsx
+Fixed: pages/category/network-engineering-chat.tsx
+Fixed: pages/category/product-management-chat.tsx
+Fixed: pages/category/quality-assurance-chat.tsx
+Fixed: pages/category/system-administration-chat.tsx
+Fixed: pages/category/technical-writing-chat.tsx
+Fixed: pages/category/ui-ux-design-chat.tsx
+Fixed: pages/category/web-development-chat.tsx
+Fixed: pages/chat-content/ai-powered-business-solutions-discussion.tsx
+Fixed: pages/chat-content/cloud-computing-strategies.tsx
+Fixed: pages/chat-content/cybersecurity-best-practices.tsx
+Fixed: pages/chat-content/data-analytics-implementation.tsx
+Fixed: pages/chat-content/digital-transformation-insights.tsx
+Fixed: pages/chat-content/emerging-technology-trends.tsx
+Fixed: pages/chat-content/future-of-work-and-automation.tsx
+Fixed: pages/chat-content/innovation-in-enterprise-technology.tsx
+Fixed: pages/chat-content/sustainable-technology-practices.tsx
+Fixed: pages/chat-content/technology-implementation-strategies.tsx
+Fixed: pages/contact.tsx
+Fixed: pages/enhanced-home.tsx
+Fixed: pages/index.tsx
+Fixed: pages/iot-platforms.tsx
+Fixed: pages/products/index.tsx
+Fixed: pages/services/ai-model-development-chat.tsx
+Fixed: pages/services/ai-seo-auditor.tsx
+Fixed: pages/services/api-development-chat.tsx
+Fixed: pages/services/business-intelligence-chat.tsx
+Fixed: pages/services/cloud-migration-services-chat.tsx
+Fixed: pages/services/customer-support-chatbot.tsx
+Fixed: pages/services/data-pipeline-engineering-chat.tsx
+Fixed: pages/services/database-design-chat.tsx
+Fixed: pages/services/index.tsx
+Fixed: pages/services/instagram-content-scheduler.tsx
+Fixed: pages/services/landing-page-generator.tsx
+Fixed: pages/services/mobile-app-development-chat.tsx
+Fixed: pages/services/network-security-chat.tsx
+Fixed: pages/services/performance-optimization-chat.tsx
+Fixed: pages/services/price-intelligence-service.tsx
+Fixed: pages/services/quality-assurance-testing-chat.tsx
+Fixed: pages/services/security-auditing-chat.tsx
+Fixed: pages/services/system-administration-chat.tsx
+Fixed: pages/services/technical-documentation-chat.tsx
+Fixed: pages/services/ui-ux-design-chat.tsx
+Fixed: pages/services/web-application-development-chat.tsx
+Fixed: pages/talent/[slug].tsx
+Fixed: pages/talent/index.tsx
+Fixed: components/Layout.tsx
+Fixed: components/layout/AuthLayout.tsx
+Fixed: components/layout/EnhancedFooter.tsx
+Fixed: components/layout/EnhancedLayout.tsx
+Fixed: components/layout/EnhancedNavigation.tsx
+Fixed: components/monetization/PaidConsultation.tsx
+Fixed: components/ui/AnimatedBackground.tsx
+Fixed: components/ui/EnhancedButton.tsx
+Fixed: components/ui/EnhancedCard.tsx
+Fixed: components/ui/EnhancedLoading.tsx
+Fixed: components/ui/EnhancedMarketplaceCard.tsx
+Fixed: components/ui/FuturisticCard.tsx
+Fixed: components/ui/FuturisticHero.tsx
+Fixed: components/ui/GlassmorphismCard.tsx
+Fixed: components/ui/InteractiveNavigation.tsx
+Fixed: components/ui/InteractiveSearch.tsx
+Fixed: components/ui/InteractiveStats.tsx
+Fixed: components/ui/NotificationSystem.tsx
+Fixed: components/ui/UserEngagementSystem.tsx
+Finished fixing corrupted files with proper templates.
+[2025-08-08T17:31:51.863Z] $ npm run build
+[2025-08-08T17:31:54.070Z] > bolt.new.zion.app@0.1.0 build
+> NODE_OPTIONS=--openssl-legacy-provider next build
+
+info  - Using webpack 5. Reason: Enabled by default https://nextjs.org/docs/messages/webpack5
+info  - Skipping validation of types...
+info  - Creating an optimized production build...
+[2025-08-08T17:31:54.070Z] $ node automation/git-sync.cjs 
+[2025-08-08T17:31:55.336Z] [git-sync 2025-08-08T17:31:55.332Z] Nothing to commit after staging.
+[2025-08-08T17:31:55.336Z] ✅ Automation Guardian (10m) finished

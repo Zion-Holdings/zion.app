@@ -1,0 +1,76 @@
+name: Autonomous Dependency Upgrades
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: automation-deps-upgrade
+  cancel-in-progress: false
+
+jobs:
+  deps-upgrade:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Create branch
+        id: branch
+        run: |
+          BR="auto/deps-upgrade-$(date +%s)"
+          git checkout -b "$BR"
+          echo "branch=$BR" >> $GITHUB_OUTPUT
+
+      - name: Run auto-upgrade
+        run: node automation/deps-auto-upgrade.cjs || true
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(deps): automated minor/patch upgrades"
+            git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }} HEAD:${{ steps.branch.outputs.branch }}
+          else
+            echo "No dependency changes."
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Open PR
+        id: pr
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const branch = `${{ steps.branch.outputs.branch }}`;
+            const { data: pr } = await github.rest.pulls.create({ owner: context.repo.owner, repo: context.repo.repo, title: 'chore(deps): automated minor/patch upgrades', head: branch, base: 'main', body: 'Automated dependency upgrades with build verification.' });
+            core.setOutput('number', pr.number);
+
+      - name: Auto-merge PR if build ok
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const prNumber = Number(`$${'{'}{ steps.pr.outputs.number }}`);
+            if (!prNumber) { core.info('No PR number found.'); return; }
+            await github.rest.pulls.merge({ owner: context.repo.owner, repo: context.repo.repo, pull_number: prNumber, merge_method: 'squash' }).catch(err => core.info('Merge skipped: ' + err.message));

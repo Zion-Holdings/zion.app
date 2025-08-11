@@ -1,0 +1,47 @@
+{
+  "pages": [
+    {
+      "file": "pages/site-health.tsx",
+      "route": "/site-health"
+    },
+    {
+      "file": "pages/newsroom.tsx",
+      "route": "/newsroom"
+    },
+    {
+      "file": "pages/index.tsx",
+      "route": "/"
+    },
+    {
+      "file": "pages/front/index.tsx",
+      "route": "/front"
+    },
+    {
+      "file": "pages/automation/index.tsx",
+      "route": "/automation"
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "route": "/main/front"
+    }
+  ],
+  "docs": [
+    {
+      "file": "docs/TODO_REPORT.md",
+      "route": "/docs/TODO_REPORT.md"
+    },
+    {
+      "file": "docs/MEDIA_RELEASE.md",
+      "route": "/docs/MEDIA_RELEASE.md"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "route": "/docs/CHANGELOG_AI.md"
+    },
+    {
+      "file": "docs/CHANGELOG.md",
+      "route": "/docs/CHANGELOG.md"
+    }
+  ],
+  "generatedAt": "2025-08-10T23:33:00.476Z"
+}

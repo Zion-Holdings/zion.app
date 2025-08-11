@@ -1,0 +1,59 @@
+name: Autonomous Cloud Orchestrator
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+jobs:
+  cloud-automation:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Run Marketing Orchestrator (single cycle)
+        run: node automation/marketing-orchestrator.cjs once | cat
+      - name: Update What's New page
+        run: node automation/whats-new-generator.cjs | cat
+      - name: Ensure What's New banner on homepage
+        run: node automation/homepage-whatsnew-applier.cjs | cat
+      - name: Newsroom Generator
+        run: node automation/newsroom-generator.cjs | cat
+      - name: Changelog Generator
+        run: node automation/changelog-generator.cjs | cat
+      - name: Broken Image Scanner
+        run: node automation/broken-image-scanner.cjs | cat
+      - name: Sitemap Runner
+        run: node automation/sitemap-runner.cjs | cat
+      - name: Competitor Watch
+        run: node automation/competitor-watch-analyzer.cjs | cat
+      - name: FAQ Generator
+        run: node automation/faq-generator.cjs | cat
+      - name: Analytics Promoter (optional)
+        run: node automation/analytics-promoter.cjs | cat
+        env:
+          GA4_PROJECT_ID: ${{ secrets.GA4_PROJECT_ID }}
+          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+          GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}
+      - name: Commit and push changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore(cloud): autonomous updates (15m cadence) [skip ci]"
+            git push origin HEAD:main
+          else
+            echo "No changes to push"
+          fi

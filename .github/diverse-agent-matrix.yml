@@ -1,0 +1,62 @@
+name: Diverse Agent Matrix
+
+on:
+  schedule:
+    - cron: '7 * * * *'
+  workflow_dispatch: {}
+
+concurrency:
+  group: diverse-agent-matrix-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  run-diverse-agents:
+    name: Run ${matrix.task}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        task: [seo, security, testgen, frontend-sync, variation, meta, responsive, monetization, saas, ui-evolution]
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run diverse agent
+        env:
+          MATRIX_TASK: ${{ matrix.task }}
+        run: |
+          node automation/diverse-agent-runner.cjs "$MATRIX_TASK" || true
+
+      - name: Upload agent logs
+        uses: actions/upload-artifact@v4
+        with:
+          name: diverse-agent-${{ matrix.task }}-logs
+          path: |
+            automation/logs/diverse-agent-matrix/${{ matrix.task }}-*.log
+          if-no-files-found: ignore
+
+      - name: Commit and push changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore(automation): diverse agent matrix (${MATRIX_TASK}) updates [skip ci]"
+            git push origin HEAD:main
+          else
+            echo "No changes to push"
+          fi

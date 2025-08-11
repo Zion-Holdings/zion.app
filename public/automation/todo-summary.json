@@ -1,0 +1,90 @@
+{
+  "generatedAt": "2025-08-10T23:33:00.420Z",
+  "total": 13,
+  "files": {
+    "package.json": [
+      {
+        "line": 225,
+        "tag": "TODO",
+        "text": "\": \"node automation/todo-scanner.cjs\",",
+        "preview": "\"scan:todo\": \"node automation/todo-scanner.cjs\","
+      },
+      {
+        "line": 227,
+        "tag": "TODO",
+        "text": "&& npm run scan:registry\"",
+        "preview": "\"scan:content\": \"npm run scan:todo && npm run scan:registry\""
+      }
+    ],
+    ".github/workflows/todo-issue-sync.yml": [
+      {
+        "line": 1,
+        "tag": "TODO",
+        "text": "Issue Sync",
+        "preview": "name: TODO Issue Sync"
+      },
+      {
+        "line": 13,
+        "tag": "TODO",
+        "text": "s:",
+        "preview": "sync-todos:"
+      },
+      {
+        "line": 29,
+        "tag": "TODO",
+        "text": "report",
+        "preview": "- name: Generate TODO report"
+      },
+      {
+        "line": 30,
+        "tag": "TODO",
+        "text": "_issue_sync.cjs",
+        "preview": "run: node scripts/automations/todo_issue_sync.cjs"
+      },
+      {
+        "line": 38,
+        "tag": "TODO",
+        "text": "): update TODO sync report [skip ci]\"",
+        "preview": "git commit -m \"docs(todo): update TODO sync report [skip ci]\""
+      },
+      {
+        "line": 42,
+        "tag": "TODO",
+        "text": "Issue",
+        "preview": "- name: Create or update TODO Issue"
+      },
+      {
+        "line": 47,
+        "tag": "TODO",
+        "text": "/FIXME/NOTE Sync\"",
+        "preview": "TITLE=\"Automated TODO/FIXME/NOTE Sync\""
+      },
+      {
+        "line": 48,
+        "tag": "TODO",
+        "text": "_SYNC.md\"",
+        "preview": "BODY_FILE=\"docs/TODO_SYNC.md\""
+      }
+    ],
+    ".github/workflows/autonomous-content-scanner.yml": [
+      {
+        "line": 30,
+        "tag": "TODO",
+        "text": "/FIXME scanner",
+        "preview": "- name: Run TODO/FIXME scanner"
+      },
+      {
+        "line": 31,
+        "tag": "TODO",
+        "text": "-scanner.cjs | cat",
+        "preview": "run: node automation/todo-scanner.cjs | cat"
+      },
+      {
+        "line": 40,
+        "tag": "TODO",
+        "text": "report and content registry [skip ci]\"",
+        "preview": "git commit -m \"chore(automation): update todo report and content registry [skip ci]\""
+      }
+    ]
+  }
+}

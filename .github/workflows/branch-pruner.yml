@@ -1,0 +1,47 @@
+name: Branch Pruner
+
+on:
+  schedule:
+    - cron: '7 3 * * 0'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  prune:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Fetch all branches
+        run: |
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}"
+          git fetch --all --prune
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Delete merged remote branches older than 7 days
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE=origin/main
+          git fetch origin main
+          git for-each-ref --format='%(refname:short) %(committerdate:iso8601)' refs/remotes/origin | while read ref date; do
+            branch=${ref#origin/}
+            # Skip protected and special branches
+            if [[ "$branch" =~ ^(main|master|develop|dev|release/.*|dependabot/.*|gh-pages|pages|cursor/.*)$ ]]; then
+              continue
+            fi
+            # Only consider branches fully merged into main
+            if git branch -r --merged "$BASE" | grep -qx "origin/$branch"; then
+              # Check age > 7 days
+              if [[ $(date -d "$date" +%s) -lt $(date -d '7 days ago' +%s) ]]; then
+                echo "Deleting merged branch: $branch"
+                git push origin --delete "$branch" || true
+              fi
+            fi
+          done
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

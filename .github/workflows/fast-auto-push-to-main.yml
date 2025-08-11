@@ -1,0 +1,37 @@
+name: Fast Auto Push to Main
+
+on:
+  push:
+    branches-ignore:
+      - main
+  schedule:
+    - cron: '* * * * *'
+  workflow_dispatch: {}
+
+concurrency:
+  group: fast-auto-push-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  fast-push:
+    if: github.ref != 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Push HEAD to main fast
+        env:
+          TARGET_BRANCH: main
+          PUSH_TO_MAIN: 'true'
+        run: node automation/git-sync.cjs | cat

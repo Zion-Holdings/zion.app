@@ -1,0 +1,34 @@
+# Project Memory
+
+This file stores project-specific knowledge, conventions, and decisions that should persist across sessions.
+
+## User Preferences
+- Always maintain an infinite improvement loop for automations
+- Create scripts, cron jobs, and automations that run independent of Cursor
+- Use local machine capabilities (terminal, Chrome) when helpful; install required software as needed
+
+## Technical Decisions
+- Node.js >= 20.18.1 (from package.json engines)
+- Next.js present (see `next.config.js`)
+- TailwindCSS present (see `tailwind.config.js`)
+- Main branch is the default integration target; prefer direct commits when safe and approved by CI
+
+## Project Conventions
+- Conventional Commits (feat, fix, chore, docs, refactor, perf, test)
+- Functional React components with TypeScript types
+- Automations should be idempotent, safe to re-run, and log to `automation/logs`
+
+## Known Constraints
+- React 17 compatibility
+- TailwindCSS configured
+- Next.js config present
+- TypeScript active with tsconfig.json
+
+- Always improve commit, push, and sync automation across all computers using Cursor. Create and maintain independent scripts and cron jobs (not tied to Cursor) that frequently auto-commit, rebase/pull, and push to avoid accumulating unsynced changes. Ensure resilience, locking, and fast execution.
+
+## Automation Guardian Policy
+- Ensure all automation nodes are started and running; monitor and restart if needed
+- Every 10 minutes: start/test/fix/improve all automation nodes and sync changes
+- Prefer unifying orchestrators and factories; auto-discover new nodes when possible
+- Implement CI via GitHub Actions on a 10-minute schedule using `automation/automation-guardian-10min.cjs`
+- Persist logs under `automation/logs` and produce reports for visibility
