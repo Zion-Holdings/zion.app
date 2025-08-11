@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-11T17:51:46.593Z",
-  "total": 89,
+  "generatedAt": "2025-08-11T17:51:48.638Z",
+  "total": 345,
   "files": {
     "pages/index.tsx": [
       {
@@ -20,86 +20,566 @@
       {
         "line": 8,
         "tag": "TODO",
-        "text": "] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner",
-        "preview": "- [TODO] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner"
+        "text": "] .github/workflows.disabled/autonomous-content-scanner.yml:30 — /FIXME scanner",
+        "preview": "- [TODO] .github/workflows.disabled/autonomous-content-scanner.yml:30 — /FIXME scanner"
       },
       {
         "line": 9,
         "tag": "TODO",
-        "text": "] .github/workflows/autonomous-content-scanner.yml:31 — -scanner.cjs | cat",
-        "preview": "- [TODO] .github/workflows/autonomous-content-scanner.yml:31 — -scanner.cjs | cat"
+        "text": "] .github/workflows.disabled/autonomous-content-scanner.yml:31 — -scanner.cjs | cat",
+        "preview": "- [TODO] .github/workflows.disabled/autonomous-content-scanner.yml:31 — -scanner.cjs | cat"
       },
       {
         "line": 10,
         "tag": "TODO",
-        "text": "] .github/workflows/autonomous-content-scanner.yml:40 — report and content registry [skip ci]\"",
-        "preview": "- [TODO] .github/workflows/autonomous-content-scanner.yml:40 — report and content registry [skip ci]\""
+        "text": "] .github/workflows.disabled/autonomous-content-scanner.yml:40 — report and content registry [skip ci]\"",
+        "preview": "- [TODO] .github/workflows.disabled/autonomous-content-scanner.yml:40 — report and content registry [skip ci]\""
       },
       {
         "line": 13,
         "tag": "TODO",
         "text": "-issue-sync.yml",
-        "preview": "## .github/workflows/todo-issue-sync.yml"
+        "preview": "## .github/workflows.disabled/todo-issue-sync.yml"
       },
       {
         "line": 15,
         "tag": "TODO",
-        "text": "] .github/workflows/todo-issue-sync.yml:1 — Issue Sync",
-        "preview": "- [TODO] .github/workflows/todo-issue-sync.yml:1 — Issue Sync"
+        "text": "] .github/workflows.disabled/todo-issue-sync.yml:1 — Issue Sync",
+        "preview": "- [TODO] .github/workflows.disabled/todo-issue-sync.yml:1 — Issue Sync"
       },
       {
         "line": 16,
         "tag": "TODO",
-        "text": "] .github/workflows/todo-issue-sync.yml:13 — s:",
-        "preview": "- [TODO] .github/workflows/todo-issue-sync.yml:13 — s:"
+        "text": "] .github/workflows.disabled/todo-issue-sync.yml:13 — s:",
+        "preview": "- [TODO] .github/workflows.disabled/todo-issue-sync.yml:13 — s:"
       },
       {
         "line": 17,
         "tag": "TODO",
-        "text": "] .github/workflows/todo-issue-sync.yml:29 — report",
-        "preview": "- [TODO] .github/workflows/todo-issue-sync.yml:29 — report"
+        "text": "] .github/workflows.disabled/todo-issue-sync.yml:29 — report",
+        "preview": "- [TODO] .github/workflows.disabled/todo-issue-sync.yml:29 — report"
       },
       {
         "line": 18,
         "tag": "TODO",
-        "text": "] .github/workflows/todo-issue-sync.yml:30 — _issue_sync.cjs",
-        "preview": "- [TODO] .github/workflows/todo-issue-sync.yml:30 — _issue_sync.cjs"
+        "text": "] .github/workflows.disabled/todo-issue-sync.yml:30 — _issue_sync.cjs",
+        "preview": "- [TODO] .github/workflows.disabled/todo-issue-sync.yml:30 — _issue_sync.cjs"
       },
       {
         "line": 19,
         "tag": "TODO",
-        "text": "] .github/workflows/todo-issue-sync.yml:38 — ): update TODO sync report [skip ci]\"",
-        "preview": "- [TODO] .github/workflows/todo-issue-sync.yml:38 — ): update TODO sync report [skip ci]\""
+        "text": "] .github/workflows.disabled/todo-issue-sync.yml:38 — ): update TODO sync report [skip ci]\"",
+        "preview": "- [TODO] .github/workflows.disabled/todo-issue-sync.yml:38 — ): update TODO sync report [skip ci]\""
       },
       {
         "line": 20,
         "tag": "TODO",
-        "text": "] .github/workflows/todo-issue-sync.yml:42 — Issue",
-        "preview": "- [TODO] .github/workflows/todo-issue-sync.yml:42 — Issue"
+        "text": "] .github/workflows.disabled/todo-issue-sync.yml:42 — Issue",
+        "preview": "- [TODO] .github/workflows.disabled/todo-issue-sync.yml:42 — Issue"
       },
       {
         "line": 21,
         "tag": "TODO",
-        "text": "] .github/workflows/todo-issue-sync.yml:47 — /FIXME/NOTE Sync\"",
-        "preview": "- [TODO] .github/workflows/todo-issue-sync.yml:47 — /FIXME/NOTE Sync\""
+        "text": "] .github/workflows.disabled/todo-issue-sync.yml:47 — /FIXME/NOTE Sync\"",
+        "preview": "- [TODO] .github/workflows.disabled/todo-issue-sync.yml:47 — /FIXME/NOTE Sync\""
       },
       {
         "line": 22,
         "tag": "TODO",
-        "text": "] .github/workflows/todo-issue-sync.yml:48 — _SYNC.md\"",
-        "preview": "- [TODO] .github/workflows/todo-issue-sync.yml:48 — _SYNC.md\""
+        "text": "] .github/workflows.disabled/todo-issue-sync.yml:48 — _SYNC.md\"",
+        "preview": "- [TODO] .github/workflows.disabled/todo-issue-sync.yml:48 — _SYNC.md\""
       },
       {
         "line": 27,
         "tag": "TODO",
-        "text": "] package.json:225 — \": \"node automation/todo-scanner.cjs\",",
-        "preview": "- [TODO] package.json:225 — \": \"node automation/todo-scanner.cjs\","
+        "text": "] data/reports/external-links/external-links-1754934673584.json:142 — _REPORT.md\",",
+        "preview": "- [TODO] data/reports/external-links/external-links-1754934673584.json:142 — _REPORT.md\","
       },
       {
-        "line": 28,
+        "line": 32,
         "tag": "TODO",
-        "text": "] package.json:227 — && npm run scan:registry\"",
-        "preview": "- [TODO] package.json:227 — && npm run scan:registry\""
+        "text": "] data/reports/external-links/external-links-1754934698424.json:127 — _REPORT.md\",",
+        "preview": "- [TODO] data/reports/external-links/external-links-1754934698424.json:127 — _REPORT.md\","
+      },
+      {
+        "line": 37,
+        "tag": "TODO",
+        "text": "] data/reports/external-links/latest.json:127 — _REPORT.md\",",
+        "preview": "- [TODO] data/reports/external-links/latest.json:127 — _REPORT.md\","
+      },
+      {
+        "line": 42,
+        "tag": "TODO",
+        "text": "] data/reports/link-sentinel/report-2025-08-11T17-51-16-470Z.json:100 — _REPORT.md\",",
+        "preview": "- [TODO] data/reports/link-sentinel/report-2025-08-11T17-51-16-470Z.json:100 — _REPORT.md\","
+      },
+      {
+        "line": 47,
+        "tag": "TODO",
+        "text": "] data/reports/repo-knowledge-graph.json:225 — -scanner.cjs\",",
+        "preview": "- [TODO] data/reports/repo-knowledge-graph.json:225 — -scanner.cjs\","
+      },
+      {
+        "line": 48,
+        "tag": "TODO",
+        "text": "] data/reports/repo-knowledge-graph.json:473 — -scanner-runner.js\",",
+        "preview": "- [TODO] data/reports/repo-knowledge-graph.json:473 — -scanner-runner.js\","
+      },
+      {
+        "line": 49,
+        "tag": "TODO",
+        "text": "] data/reports/repo-knowledge-graph.json:477 — -summary-runner.js\",",
+        "preview": "- [TODO] data/reports/repo-knowledge-graph.json:477 — -summary-runner.js\","
+      },
+      {
+        "line": 50,
+        "tag": "TODO",
+        "text": "] data/reports/repo-knowledge-graph.json:597 — _issue_sync.cjs\",",
+        "preview": "- [TODO] data/reports/repo-knowledge-graph.json:597 — _issue_sync.cjs\","
+      },
+      {
+        "line": 51,
+        "tag": "TODO",
+        "text": "] data/reports/repo-knowledge-graph.json:1173 — -scanner.cjs\",",
+        "preview": "- [TODO] data/reports/repo-knowledge-graph.json:1173 — -scanner.cjs\","
+      },
+      {
+        "line": 52,
+        "tag": "TODO",
+        "text": "] data/reports/repo-knowledge-graph.json:1178 — -scanner.cjs\",",
+        "preview": "- [TODO] data/reports/repo-knowledge-graph.json:1178 — -scanner.cjs\","
+      },
+      {
+        "line": 53,
+        "tag": "TODO",
+        "text": "] data/reports/repo-knowledge-graph.json:1183 — -scanner.cjs\",",
+        "preview": "- [TODO] data/reports/repo-knowledge-graph.json:1183 — -scanner.cjs\","
+      },
+      {
+        "line": 54,
+        "tag": "TODO",
+        "text": "] data/reports/repo-knowledge-graph.json:1703 — -scanner-runner.js\",",
+        "preview": "- [TODO] data/reports/repo-knowledge-graph.json:1703 — -scanner-runner.js\","
+      },
+      {
+        "line": 55,
+        "tag": "TODO",
+        "text": "] data/reports/repo-knowledge-graph.json:1708 — -scanner-runner.js\",",
+        "preview": "- [TODO] data/reports/repo-knowledge-graph.json:1708 — -scanner-runner.js\","
+      },
+      {
+        "line": 56,
+        "tag": "TODO",
+        "text": "] data/reports/repo-knowledge-graph.json:1713 — -summary-runner.js\",",
+        "preview": "- [TODO] data/reports/repo-knowledge-graph.json:1713 — -summary-runner.js\","
+      },
+      {
+        "line": 57,
+        "tag": "TODO",
+        "text": "] data/reports/repo-knowledge-graph.json:1718 — -summary-runner.js\",",
+        "preview": "- [TODO] data/reports/repo-knowledge-graph.json:1718 — -summary-runner.js\","
+      },
+      {
+        "line": 58,
+        "tag": "TODO",
+        "text": "] data/reports/repo-knowledge-graph.json:1878 — _issue_sync.cjs\",",
+        "preview": "- [TODO] data/reports/repo-knowledge-graph.json:1878 — _issue_sync.cjs\","
+      },
+      {
+        "line": 59,
+        "tag": "TODO",
+        "text": "] data/reports/repo-knowledge-graph.json:1883 — _issue_sync.cjs\",",
+        "preview": "- [TODO] data/reports/repo-knowledge-graph.json:1883 — _issue_sync.cjs\","
+      },
+      {
+        "line": 60,
+        "tag": "TODO",
+        "text": "] data/reports/repo-knowledge-graph.json:1888 — _issue_sync.cjs\",",
+        "preview": "- [TODO] data/reports/repo-knowledge-graph.json:1888 — _issue_sync.cjs\","
+      },
+      {
+        "line": 65,
+        "tag": "TODO",
+        "text": "] docs/CHANGELOG_AI.md:131 — issue sync, autonomous release, and keepalive workflows (09ccba6)",
+        "preview": "- [TODO] docs/CHANGELOG_AI.md:131 — issue sync, autonomous release, and keepalive workflows (09ccba6)"
+      },
+      {
+        "line": 66,
+        "tag": "TODO",
+        "text": "] docs/CHANGELOG_AI.md:296 — issue sync, autonomous release, and keepalive workflows (09ccba6)",
+        "preview": "- [TODO] docs/CHANGELOG_AI.md:296 — issue sync, autonomous release, and keepalive workflows (09ccba6)"
+      },
+      {
+        "line": 69,
+        "tag": "TODO",
+        "text": "_REPORT.md",
+        "preview": "## docs/TODO_REPORT.md"
+      },
+      {
+        "line": 71,
+        "tag": "TODO",
+        "text": "] docs/TODO_REPORT.md:1 — and FIXME Report",
+        "preview": "- [TODO] docs/TODO_REPORT.md:1 — and FIXME Report"
+      },
+      {
+        "line": 72,
+        "tag": "TODO",
+        "text": "] docs/TODO_REPORT.md:8 — ] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner",
+        "preview": "- [TODO] docs/TODO_REPORT.md:8 — ] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner"
+      },
+      {
+        "line": 73,
+        "tag": "TODO",
+        "text": "] docs/TODO_REPORT.md:9 — ] .github/workflows/autonomous-content-scanner.yml:31 — -scanner.cjs | cat",
+        "preview": "- [TODO] docs/TODO_REPORT.md:9 — ] .github/workflows/autonomous-content-scanner.yml:31 — -scanner.cjs | cat"
+      },
+      {
+        "line": 74,
+        "tag": "TODO",
+        "text": "] docs/TODO_REPORT.md:10 — ] .github/workflows/autonomous-content-scanner.yml:40 — report and content registry [skip ci]\"",
+        "preview": "- [TODO] docs/TODO_REPORT.md:10 — ] .github/workflows/autonomous-content-scanner.yml:40 — report and content registry [skip ci]\""
+      },
+      {
+        "line": 75,
+        "tag": "TODO",
+        "text": "] docs/TODO_REPORT.md:13 — -issue-sync.yml",
+        "preview": "- [TODO] docs/TODO_REPORT.md:13 — -issue-sync.yml"
+      },
+      {
+        "line": 76,
+        "tag": "TODO",
+        "text": "] docs/TODO_REPORT.md:15 — ] .github/workflows/todo-issue-sync.yml:1 — Issue Sync",
+        "preview": "- [TODO] docs/TODO_REPORT.md:15 — ] .github/workflows/todo-issue-sync.yml:1 — Issue Sync"
+      },
+      {
+        "line": 77,
+        "tag": "TODO",
+        "text": "] docs/TODO_REPORT.md:16 — ] .github/workflows/todo-issue-sync.yml:13 — s:",
+        "preview": "- [TODO] docs/TODO_REPORT.md:16 — ] .github/workflows/todo-issue-sync.yml:13 — s:"
+      },
+      {
+        "line": 78,
+        "tag": "TODO",
+        "text": "] docs/TODO_REPORT.md:17 — ] .github/workflows/todo-issue-sync.yml:29 — report",
+        "preview": "- [TODO] docs/TODO_REPORT.md:17 — ] .github/workflows/todo-issue-sync.yml:29 — report"
+      },
+      {
+        "line": 79,
+        "tag": "TODO",
+        "text": "] docs/TODO_REPORT.md:18 — ] .github/workflows/todo-issue-sync.yml:30 — _issue_sync.cjs",
+        "preview": "- [TODO] docs/TODO_REPORT.md:18 — ] .github/workflows/todo-issue-sync.yml:30 — _issue_sync.cjs"
+      },
+      {
+        "line": 80,
+        "tag": "TODO",
+        "text": "] docs/TODO_REPORT.md:19 — ] .github/workflows/todo-issue-sync.yml:38 — ): update TODO sync report [skip ci]\"",
+        "preview": "- [TODO] docs/TODO_REPORT.md:19 — ] .github/workflows/todo-issue-sync.yml:38 — ): update TODO sync report [skip ci]\""
+      },
+      {
+        "line": 81,
+        "tag": "TODO",
+        "text": "] docs/TODO_REPORT.md:20 — ] .github/workflows/todo-issue-sync.yml:42 — Issue",
+        "preview": "- [TODO] docs/TODO_REPORT.md:20 — ] .github/workflows/todo-issue-sync.yml:42 — Issue"
+      },
+      {
+        "line": 82,
+        "tag": "TODO",
+        "text": "] docs/TODO_REPORT.md:21 — ] .github/workflows/todo-issue-sync.yml:47 — /FIXME/NOTE Sync\"",
+        "preview": "- [TODO] docs/TODO_REPORT.md:21 — ] .github/workflows/todo-issue-sync.yml:47 — /FIXME/NOTE Sync\""
+      },
+      {
+        "line": 83,
+        "tag": "TODO",
+        "text": "] docs/TODO_REPORT.md:22 — ] .github/workflows/todo-issue-sync.yml:48 — _SYNC.md\"",
+        "preview": "- [TODO] docs/TODO_REPORT.md:22 — ] .github/workflows/todo-issue-sync.yml:48 — _SYNC.md\""
+      },
+      {
+        "line": 84,
+        "tag": "TODO",
+        "text": "] docs/TODO_REPORT.md:27 — ] package.json:225 — \": \"node automation/todo-scanner.cjs\",",
+        "preview": "- [TODO] docs/TODO_REPORT.md:27 — ] package.json:225 — \": \"node automation/todo-scanner.cjs\","
+      },
+      {
+        "line": 85,
+        "tag": "TODO",
+        "text": "] docs/TODO_REPORT.md:28 — ] package.json:227 — && npm run scan:registry\"",
+        "preview": "- [TODO] docs/TODO_REPORT.md:28 — ] package.json:227 — && npm run scan:registry\""
+      },
+      {
+        "line": 90,
+        "tag": "TODO",
+        "text": "] netlify/functions/functions-manifest.json:62 — -scanner-runner\",",
+        "preview": "- [TODO] netlify/functions/functions-manifest.json:62 — -scanner-runner\","
+      },
+      {
+        "line": 91,
+        "tag": "TODO",
+        "text": "] netlify/functions/functions-manifest.json:63 — -summary-runner\",",
+        "preview": "- [TODO] netlify/functions/functions-manifest.json:63 — -summary-runner\","
+      },
+      {
+        "line": 94,
+        "tag": "TODO",
+        "text": "-scanner-runner.js",
+        "preview": "## netlify/functions/todo-scanner-runner.js"
+      },
+      {
+        "line": 96,
+        "tag": "TODO",
+        "text": "] netlify/functions/todo-scanner-runner.js:25 — scan', () => runNode('automation/todo-scanner.cjs'));",
+        "preview": "- [TODO] netlify/functions/todo-scanner-runner.js:25 — scan', () => runNode('automation/todo-scanner.cjs'));"
+      },
+      {
+        "line": 99,
+        "tag": "TODO",
+        "text": "-summary-runner.js",
+        "preview": "## netlify/functions/todo-summary-runner.js"
+      },
+      {
+        "line": 101,
+        "tag": "TODO",
+        "text": "] netlify/functions/todo-summary-runner.js:25 — scan', () => runNode('automation/todo-scanner.cjs'));",
+        "preview": "- [TODO] netlify/functions/todo-summary-runner.js:25 — scan', () => runNode('automation/todo-scanner.cjs'));"
+      },
+      {
+        "line": 106,
+        "tag": "TODO",
+        "text": "] pages/index.tsx:204 — Scanner', desc: 'Generates a consolidated TODO report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },",
+        "preview": "- [TODO] pages/index.tsx:204 — Scanner', desc: 'Generates a consolidated TODO report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },"
+      },
+      {
+        "line": 111,
+        "tag": "TODO",
+        "text": "] pages/main/front/index.tsx:786 — _REPORT.md\" target=\"_blank\" rel=\"noopener\" className=\"group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring\"><div className=\"text-base font-semibold\">Docs — TODO_REPORT</div><div className=\"mt-1 text-sm text-white/75\">Open documentation</div><div className=\"mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90\">Open <span aria-hidden>↗</span></div></a>",
+        "preview": "- [TODO] pages/main/front/index.tsx:786 — _REPORT.md\" target=\"_blank\" rel=\"noopener\" className=\"group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-whi"
+      },
+      {
+        "line": 116,
+        "tag": "TODO",
+        "text": "] public/automation/content-registry.json:38 — _REPORT.md\",",
+        "preview": "- [TODO] public/automation/content-registry.json:38 — _REPORT.md\","
+      },
+      {
+        "line": 117,
+        "tag": "TODO",
+        "text": "] public/automation/content-registry.json:39 — _REPORT.md\"",
+        "preview": "- [TODO] public/automation/content-registry.json:39 — _REPORT.md\""
+      },
+      {
+        "line": 120,
+        "tag": "TODO",
+        "text": "-summary.json",
+        "preview": "## public/automation/todo-summary.json"
+      },
+      {
+        "line": 122,
+        "tag": "TODO",
+        "text": "] public/automation/todo-summary.json:8 — \",",
+        "preview": "- [TODO] public/automation/todo-summary.json:8 — \","
+      },
+      {
+        "line": 123,
+        "tag": "TODO",
+        "text": "] public/automation/todo-summary.json:9 — -scanner.cjs\\\",\",",
+        "preview": "- [TODO] public/automation/todo-summary.json:9 — -scanner.cjs\\\",\","
+      },
+      {
+        "line": 124,
+        "tag": "TODO",
+        "text": "] public/automation/todo-summary.json:10 — \\\": \\\"node automation/todo-scanner.cjs\\\",\"",
+        "preview": "- [TODO] public/automation/todo-summary.json:10 — \\\": \\\"node automation/todo-scanner.cjs\\\",\""
+      },
+      {
+        "line": 125,
+        "tag": "TODO",
+        "text": "] public/automation/todo-summary.json:14 — \",",
+        "preview": "- [TODO] public/automation/todo-summary.json:14 — \","
+      },
+      {
+        "line": 126,
+        "tag": "TODO",
+        "text": "] public/automation/todo-summary.json:16 — && npm run scan:registry\\\"\"",
+        "preview": "- [TODO] public/automation/todo-summary.json:16 — && npm run scan:registry\\\"\""
+      },
+      {
+        "line": 127,
+        "tag": "TODO",
+        "text": "] public/automation/todo-summary.json:19 — -issue-sync.yml\": [",
+        "preview": "- [TODO] public/automation/todo-summary.json:19 — -issue-sync.yml\": ["
+      },
+      {
+        "line": 128,
+        "tag": "TODO",
+        "text": "] public/automation/todo-summary.json:22 — \",",
+        "preview": "- [TODO] public/automation/todo-summary.json:22 — \","
+      },
+      {
+        "line": 129,
+        "tag": "TODO",
+        "text": "] public/automation/todo-summary.json:24 — Issue Sync\"",
+        "preview": "- [TODO] public/automation/todo-summary.json:24 — Issue Sync\""
+      },
+      {
+        "line": 130,
+        "tag": "TODO",
+        "text": "] public/automation/todo-summary.json:28 — \",",
+        "preview": "- [TODO] public/automation/todo-summary.json:28 — \","
+      },
+      {
+        "line": 131,
+        "tag": "TODO",
+        "text": "] public/automation/todo-summary.json:30 — s:\"",
+        "preview": "- [TODO] public/automation/todo-summary.json:30 — s:\""
+      },
+      {
+        "line": 132,
+        "tag": "TODO",
+        "text": "] public/automation/todo-summary.json:34 — \",",
+        "preview": "- [TODO] public/automation/todo-summary.json:34 — \","
+      },
+      {
+        "line": 133,
+        "tag": "TODO",
+        "text": "] public/automation/todo-summary.json:36 — report\"",
+        "preview": "- [TODO] public/automation/todo-summary.json:36 — report\""
+      },
+      {
+        "line": 134,
+        "tag": "TODO",
+        "text": "] public/automation/todo-summary.json:40 — \",",
+        "preview": "- [TODO] public/automation/todo-summary.json:40 — \","
+      },
+      {
+        "line": 135,
+        "tag": "TODO",
+        "text": "] public/automation/todo-summary.json:42 — _issue_sync.cjs\"",
+        "preview": "- [TODO] public/automation/todo-summary.json:42 — _issue_sync.cjs\""
+      },
+      {
+        "line": 136,
+        "tag": "TODO",
+        "text": "] public/automation/todo-summary.json:46 — \",",
+        "preview": "- [TODO] public/automation/todo-summary.json:46 — \","
+      },
+      {
+        "line": 137,
+        "tag": "TODO",
+        "text": "] public/automation/todo-summary.json:47 — sync report [skip ci]\\\"\",",
+        "preview": "- [TODO] public/automation/todo-summary.json:47 — sync report [skip ci]\\\"\","
+      },
+      {
+        "line": 138,
+        "tag": "TODO",
+        "text": "] public/automation/todo-summary.json:48 — ): update TODO sync report [skip ci]\\\"\"",
+        "preview": "- [TODO] public/automation/todo-summary.json:48 — ): update TODO sync report [skip ci]\\\"\""
+      },
+      {
+        "line": 139,
+        "tag": "TODO",
+        "text": "] public/automation/todo-summary.json:52 — \",",
+        "preview": "- [TODO] public/automation/todo-summary.json:52 — \","
+      },
+      {
+        "line": 140,
+        "tag": "TODO",
+        "text": "] public/automation/todo-summary.json:54 — Issue\"",
+        "preview": "- [TODO] public/automation/todo-summary.json:54 — Issue\""
+      },
+      {
+        "line": 141,
+        "tag": "TODO",
+        "text": "] public/automation/todo-summary.json:58 — \",",
+        "preview": "- [TODO] public/automation/todo-summary.json:58 — \","
+      },
+      {
+        "line": 142,
+        "tag": "FIXME",
+        "text": "] public/automation/todo-summary.json:59 — /NOTE Sync\\\"\",",
+        "preview": "- [FIXME] public/automation/todo-summary.json:59 — /NOTE Sync\\\"\","
+      },
+      {
+        "line": 143,
+        "tag": "TODO",
+        "text": "] public/automation/todo-summary.json:60 — /FIXME/NOTE Sync\\\"\"",
+        "preview": "- [TODO] public/automation/todo-summary.json:60 — /FIXME/NOTE Sync\\\"\""
+      },
+      {
+        "line": 144,
+        "tag": "TODO",
+        "text": "] public/automation/todo-summary.json:64 — \",",
+        "preview": "- [TODO] public/automation/todo-summary.json:64 — \","
+      },
+      {
+        "line": 145,
+        "tag": "TODO",
+        "text": "] public/automation/todo-summary.json:66 — _SYNC.md\\\"\"",
+        "preview": "- [TODO] public/automation/todo-summary.json:66 — _SYNC.md\\\"\""
+      },
+      {
+        "line": 146,
+        "tag": "TODO",
+        "text": "] public/automation/todo-summary.json:72 — \",",
+        "preview": "- [TODO] public/automation/todo-summary.json:72 — \","
+      },
+      {
+        "line": 147,
+        "tag": "FIXME",
+        "text": "] public/automation/todo-summary.json:73 — scanner\",",
+        "preview": "- [FIXME] public/automation/todo-summary.json:73 — scanner\","
+      },
+      {
+        "line": 148,
+        "tag": "TODO",
+        "text": "] public/automation/todo-summary.json:74 — /FIXME scanner\"",
+        "preview": "- [TODO] public/automation/todo-summary.json:74 — /FIXME scanner\""
+      },
+      {
+        "line": 149,
+        "tag": "TODO",
+        "text": "] public/automation/todo-summary.json:78 — \",",
+        "preview": "- [TODO] public/automation/todo-summary.json:78 — \","
+      },
+      {
+        "line": 150,
+        "tag": "TODO",
+        "text": "] public/automation/todo-summary.json:80 — -scanner.cjs | cat\"",
+        "preview": "- [TODO] public/automation/todo-summary.json:80 — -scanner.cjs | cat\""
+      },
+      {
+        "line": 151,
+        "tag": "TODO",
+        "text": "] public/automation/todo-summary.json:84 — \",",
+        "preview": "- [TODO] public/automation/todo-summary.json:84 — \","
+      },
+      {
+        "line": 152,
+        "tag": "TODO",
+        "text": "] public/automation/todo-summary.json:86 — report and content registry [skip ci]\\\"\"",
+        "preview": "- [TODO] public/automation/todo-summary.json:86 — report and content registry [skip ci]\\\"\""
+      },
+      {
+        "line": 157,
+        "tag": "TODO",
+        "text": "] public/search/index.json:59 — _REPORT\",",
+        "preview": "- [TODO] public/search/index.json:59 — _REPORT\","
+      },
+      {
+        "line": 158,
+        "tag": "TODO",
+        "text": "] public/search/index.json:60 — _REPORT.md\",",
+        "preview": "- [TODO] public/search/index.json:60 — _REPORT.md\","
+      },
+      {
+        "line": 159,
+        "tag": "TODO",
+        "text": "] public/search/index.json:61 — and FIXME Report\",",
+        "preview": "- [TODO] public/search/index.json:61 — and FIXME Report\","
+      },
+      {
+        "line": 160,
+        "tag": "TODO",
+        "text": "] public/search/index.json:62 — and FIXME Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner - [TODO] .github/workflows/autonomous-content-scanner.yml:31 — -sca\"",
+        "preview": "- [TODO] public/search/index.json:62 — and FIXME Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/autono"
       }
     ],
     "docs/CHANGELOG_AI.md": [
@@ -140,6 +620,1294 @@
         "tag": "TODO",
         "text": "and FIXME Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner - [TODO] .github/workflows/autonomous-content-scanner.yml:31 — -sca\"",
         "preview": "\"summary\": \"# TODO and FIXME Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/autonomous-content-scanner"
+      }
+    ],
+    "public/automation/todo-summary.json": [
+      {
+        "line": 8,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 9,
+        "tag": "TODO",
+        "text": "report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },\",",
+        "preview": "\"text\": \"Scanner', desc: 'Generates a consolidated TODO report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },\","
+      },
+      {
+        "line": 10,
+        "tag": "TODO",
+        "text": "Scanner', desc: 'Generates a consolidated TODO report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },\"",
+        "preview": "\"preview\": \"{ title: 'TODO Scanner', desc: 'Generates a consolidated TODO report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },\""
+      },
+      {
+        "line": 13,
+        "tag": "TODO",
+        "text": "_REPORT.md\": [",
+        "preview": "\"docs/TODO_REPORT.md\": ["
+      },
+      {
+        "line": 16,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 17,
+        "tag": "FIXME",
+        "text": "Report\",",
+        "preview": "\"text\": \"and FIXME Report\","
+      },
+      {
+        "line": 18,
+        "tag": "TODO",
+        "text": "and FIXME Report\"",
+        "preview": "\"preview\": \"# TODO and FIXME Report\""
+      },
+      {
+        "line": 22,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 23,
+        "tag": "FIXME",
+        "text": "scanner\",",
+        "preview": "\"text\": \"] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner\","
+      },
+      {
+        "line": 24,
+        "tag": "TODO",
+        "text": "] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner\"",
+        "preview": "\"preview\": \"- [TODO] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner\""
+      },
+      {
+        "line": 28,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 30,
+        "tag": "TODO",
+        "text": "] .github/workflows/autonomous-content-scanner.yml:31 — -scanner.cjs | cat\"",
+        "preview": "\"preview\": \"- [TODO] .github/workflows/autonomous-content-scanner.yml:31 — -scanner.cjs | cat\""
+      },
+      {
+        "line": 34,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 36,
+        "tag": "TODO",
+        "text": "] .github/workflows/autonomous-content-scanner.yml:40 — report and content registry [skip ci]\\\"\"",
+        "preview": "\"preview\": \"- [TODO] .github/workflows/autonomous-content-scanner.yml:40 — report and content registry [skip ci]\\\"\""
+      },
+      {
+        "line": 40,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 42,
+        "tag": "TODO",
+        "text": "-issue-sync.yml\"",
+        "preview": "\"preview\": \"## .github/workflows/todo-issue-sync.yml\""
+      },
+      {
+        "line": 46,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 47,
+        "tag": "TODO",
+        "text": "-issue-sync.yml:1 — Issue Sync\",",
+        "preview": "\"text\": \"] .github/workflows/todo-issue-sync.yml:1 — Issue Sync\","
+      },
+      {
+        "line": 48,
+        "tag": "TODO",
+        "text": "] .github/workflows/todo-issue-sync.yml:1 — Issue Sync\"",
+        "preview": "\"preview\": \"- [TODO] .github/workflows/todo-issue-sync.yml:1 — Issue Sync\""
+      },
+      {
+        "line": 52,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 53,
+        "tag": "TODO",
+        "text": "-issue-sync.yml:13 — s:\",",
+        "preview": "\"text\": \"] .github/workflows/todo-issue-sync.yml:13 — s:\","
+      },
+      {
+        "line": 54,
+        "tag": "TODO",
+        "text": "] .github/workflows/todo-issue-sync.yml:13 — s:\"",
+        "preview": "\"preview\": \"- [TODO] .github/workflows/todo-issue-sync.yml:13 — s:\""
+      },
+      {
+        "line": 58,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 59,
+        "tag": "TODO",
+        "text": "-issue-sync.yml:29 — report\",",
+        "preview": "\"text\": \"] .github/workflows/todo-issue-sync.yml:29 — report\","
+      },
+      {
+        "line": 60,
+        "tag": "TODO",
+        "text": "] .github/workflows/todo-issue-sync.yml:29 — report\"",
+        "preview": "\"preview\": \"- [TODO] .github/workflows/todo-issue-sync.yml:29 — report\""
+      },
+      {
+        "line": 64,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 65,
+        "tag": "TODO",
+        "text": "-issue-sync.yml:30 — _issue_sync.cjs\",",
+        "preview": "\"text\": \"] .github/workflows/todo-issue-sync.yml:30 — _issue_sync.cjs\","
+      },
+      {
+        "line": 66,
+        "tag": "TODO",
+        "text": "] .github/workflows/todo-issue-sync.yml:30 — _issue_sync.cjs\"",
+        "preview": "\"preview\": \"- [TODO] .github/workflows/todo-issue-sync.yml:30 — _issue_sync.cjs\""
+      },
+      {
+        "line": 70,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 71,
+        "tag": "TODO",
+        "text": "-issue-sync.yml:38 — ): update TODO sync report [skip ci]\\\"\",",
+        "preview": "\"text\": \"] .github/workflows/todo-issue-sync.yml:38 — ): update TODO sync report [skip ci]\\\"\","
+      },
+      {
+        "line": 72,
+        "tag": "TODO",
+        "text": "] .github/workflows/todo-issue-sync.yml:38 — ): update TODO sync report [skip ci]\\\"\"",
+        "preview": "\"preview\": \"- [TODO] .github/workflows/todo-issue-sync.yml:38 — ): update TODO sync report [skip ci]\\\"\""
+      },
+      {
+        "line": 76,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 77,
+        "tag": "TODO",
+        "text": "-issue-sync.yml:42 — Issue\",",
+        "preview": "\"text\": \"] .github/workflows/todo-issue-sync.yml:42 — Issue\","
+      },
+      {
+        "line": 78,
+        "tag": "TODO",
+        "text": "] .github/workflows/todo-issue-sync.yml:42 — Issue\"",
+        "preview": "\"preview\": \"- [TODO] .github/workflows/todo-issue-sync.yml:42 — Issue\""
+      },
+      {
+        "line": 82,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 83,
+        "tag": "TODO",
+        "text": "-issue-sync.yml:47 — /FIXME/NOTE Sync\\\"\",",
+        "preview": "\"text\": \"] .github/workflows/todo-issue-sync.yml:47 — /FIXME/NOTE Sync\\\"\","
+      },
+      {
+        "line": 84,
+        "tag": "TODO",
+        "text": "] .github/workflows/todo-issue-sync.yml:47 — /FIXME/NOTE Sync\\\"\"",
+        "preview": "\"preview\": \"- [TODO] .github/workflows/todo-issue-sync.yml:47 — /FIXME/NOTE Sync\\\"\""
+      },
+      {
+        "line": 88,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 89,
+        "tag": "TODO",
+        "text": "-issue-sync.yml:48 — _SYNC.md\\\"\",",
+        "preview": "\"text\": \"] .github/workflows/todo-issue-sync.yml:48 — _SYNC.md\\\"\","
+      },
+      {
+        "line": 90,
+        "tag": "TODO",
+        "text": "] .github/workflows/todo-issue-sync.yml:48 — _SYNC.md\\\"\"",
+        "preview": "\"preview\": \"- [TODO] .github/workflows/todo-issue-sync.yml:48 — _SYNC.md\\\"\""
+      },
+      {
+        "line": 94,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 95,
+        "tag": "TODO",
+        "text": "-scanner.cjs\\\",\",",
+        "preview": "\"text\": \"] package.json:225 — \\\": \\\"node automation/todo-scanner.cjs\\\",\","
+      },
+      {
+        "line": 96,
+        "tag": "TODO",
+        "text": "] package.json:225 — \\\": \\\"node automation/todo-scanner.cjs\\\",\"",
+        "preview": "\"preview\": \"- [TODO] package.json:225 — \\\": \\\"node automation/todo-scanner.cjs\\\",\""
+      },
+      {
+        "line": 100,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 102,
+        "tag": "TODO",
+        "text": "] package.json:227 — && npm run scan:registry\\\"\"",
+        "preview": "\"preview\": \"- [TODO] package.json:227 — && npm run scan:registry\\\"\""
+      },
+      {
+        "line": 108,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 110,
+        "tag": "TODO",
+        "text": "issue sync, autonomous release, and keepalive workflows (09ccba6)\"",
+        "preview": "\"preview\": \"- add TODO issue sync, autonomous release, and keepalive workflows (09ccba6)\""
+      },
+      {
+        "line": 114,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 116,
+        "tag": "TODO",
+        "text": "issue sync, autonomous release, and keepalive workflows (09ccba6)\"",
+        "preview": "\"preview\": \"- add TODO issue sync, autonomous release, and keepalive workflows (09ccba6)\""
+      },
+      {
+        "line": 122,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 124,
+        "tag": "TODO",
+        "text": "_REPORT\\\",\"",
+        "preview": "\"preview\": \"\\\"route\\\": \\\"/../docs/TODO_REPORT\\\",\""
+      },
+      {
+        "line": 128,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 130,
+        "tag": "TODO",
+        "text": "_REPORT.md\\\",\"",
+        "preview": "\"preview\": \"\\\"file\\\": \\\"docs/TODO_REPORT.md\\\",\""
+      },
+      {
+        "line": 134,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 135,
+        "tag": "FIXME",
+        "text": "Report\\\",\",",
+        "preview": "\"text\": \"and FIXME Report\\\",\","
+      },
+      {
+        "line": 136,
+        "tag": "TODO",
+        "text": "and FIXME Report\\\",\"",
+        "preview": "\"preview\": \"\\\"title\\\": \\\"TODO and FIXME Report\\\",\""
+      },
+      {
+        "line": 140,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 141,
+        "tag": "FIXME",
+        "text": "Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner - [TODO] .github/workflows/autonomous-content-scanner.yml:31 — -sca\\\"\",",
+        "preview": "\"text\": \"and FIXME Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/autonomous-content-scanner.yml:30 — "
+      },
+      {
+        "line": 142,
+        "tag": "TODO",
+        "text": "and FIXME Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/autonomous-content-scanner\"",
+        "preview": "\"preview\": \"\\\"summary\\\": \\\"# TODO and FIXME Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/autonomous-"
+      },
+      {
+        "line": 148,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 150,
+        "tag": "TODO",
+        "text": "-scanner.cjs\\\",\"",
+        "preview": "\"preview\": \"\\\"id\\\": \\\"automation/todo-scanner.cjs\\\",\""
+      },
+      {
+        "line": 154,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 156,
+        "tag": "TODO",
+        "text": "-scanner-runner.js\\\",\"",
+        "preview": "\"preview\": \"\\\"id\\\": \\\"netlify/functions/todo-scanner-runner.js\\\",\""
+      },
+      {
+        "line": 160,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 162,
+        "tag": "TODO",
+        "text": "-summary-runner.js\\\",\"",
+        "preview": "\"preview\": \"\\\"id\\\": \\\"netlify/functions/todo-summary-runner.js\\\",\""
+      },
+      {
+        "line": 166,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 168,
+        "tag": "TODO",
+        "text": "_issue_sync.cjs\\\",\"",
+        "preview": "\"preview\": \"\\\"id\\\": \\\"scripts/automations/todo_issue_sync.cjs\\\",\""
+      },
+      {
+        "line": 172,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 174,
+        "tag": "TODO",
+        "text": "-scanner.cjs\\\",\"",
+        "preview": "\"preview\": \"\\\"from\\\": \\\"automation/todo-scanner.cjs\\\",\""
+      },
+      {
+        "line": 178,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 180,
+        "tag": "TODO",
+        "text": "-scanner.cjs\\\",\"",
+        "preview": "\"preview\": \"\\\"from\\\": \\\"automation/todo-scanner.cjs\\\",\""
+      },
+      {
+        "line": 184,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 186,
+        "tag": "TODO",
+        "text": "-scanner.cjs\\\",\"",
+        "preview": "\"preview\": \"\\\"from\\\": \\\"automation/todo-scanner.cjs\\\",\""
+      },
+      {
+        "line": 190,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 192,
+        "tag": "TODO",
+        "text": "-scanner-runner.js\\\",\"",
+        "preview": "\"preview\": \"\\\"from\\\": \\\"netlify/functions/todo-scanner-runner.js\\\",\""
+      },
+      {
+        "line": 196,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 198,
+        "tag": "TODO",
+        "text": "-scanner-runner.js\\\",\"",
+        "preview": "\"preview\": \"\\\"from\\\": \\\"netlify/functions/todo-scanner-runner.js\\\",\""
+      },
+      {
+        "line": 202,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 204,
+        "tag": "TODO",
+        "text": "-summary-runner.js\\\",\"",
+        "preview": "\"preview\": \"\\\"from\\\": \\\"netlify/functions/todo-summary-runner.js\\\",\""
+      },
+      {
+        "line": 208,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 210,
+        "tag": "TODO",
+        "text": "-summary-runner.js\\\",\"",
+        "preview": "\"preview\": \"\\\"from\\\": \\\"netlify/functions/todo-summary-runner.js\\\",\""
+      },
+      {
+        "line": 214,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 216,
+        "tag": "TODO",
+        "text": "_issue_sync.cjs\\\",\"",
+        "preview": "\"preview\": \"\\\"from\\\": \\\"scripts/automations/todo_issue_sync.cjs\\\",\""
+      },
+      {
+        "line": 220,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 222,
+        "tag": "TODO",
+        "text": "_issue_sync.cjs\\\",\"",
+        "preview": "\"preview\": \"\\\"from\\\": \\\"scripts/automations/todo_issue_sync.cjs\\\",\""
+      },
+      {
+        "line": 226,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 228,
+        "tag": "TODO",
+        "text": "_issue_sync.cjs\\\",\"",
+        "preview": "\"preview\": \"\\\"from\\\": \\\"scripts/automations/todo_issue_sync.cjs\\\",\""
+      },
+      {
+        "line": 231,
+        "tag": "TODO",
+        "text": "-summary.json\": [",
+        "preview": "\"public/automation/todo-summary.json\": ["
+      },
+      {
+        "line": 234,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 236,
+        "tag": "TODO",
+        "text": "\\\",\"",
+        "preview": "\"preview\": \"\\\"tag\\\": \\\"TODO\\\",\""
+      },
+      {
+        "line": 240,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 242,
+        "tag": "TODO",
+        "text": "-scanner.cjs\\\\\\\",\\\",\"",
+        "preview": "\"preview\": \"\\\"text\\\": \\\"\\\\\\\": \\\\\\\"node automation/todo-scanner.cjs\\\\\\\",\\\",\""
+      },
+      {
+        "line": 246,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 247,
+        "tag": "TODO",
+        "text": "-scanner.cjs\\\\\\\",\\\"\",",
+        "preview": "\"text\": \"\\\\\\\": \\\\\\\"node automation/todo-scanner.cjs\\\\\\\",\\\"\","
+      },
+      {
+        "line": 248,
+        "tag": "TODO",
+        "text": "\\\\\\\": \\\\\\\"node automation/todo-scanner.cjs\\\\\\\",\\\"\"",
+        "preview": "\"preview\": \"\\\"preview\\\": \\\"\\\\\\\"scan:todo\\\\\\\": \\\\\\\"node automation/todo-scanner.cjs\\\\\\\",\\\"\""
+      },
+      {
+        "line": 252,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 254,
+        "tag": "TODO",
+        "text": "\\\",\"",
+        "preview": "\"preview\": \"\\\"tag\\\": \\\"TODO\\\",\""
+      },
+      {
+        "line": 258,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 260,
+        "tag": "TODO",
+        "text": "&& npm run scan:registry\\\\\\\"\\\"\"",
+        "preview": "\"preview\": \"\\\"preview\\\": \\\"\\\\\\\"scan:content\\\\\\\": \\\\\\\"npm run scan:todo && npm run scan:registry\\\\\\\"\\\"\""
+      },
+      {
+        "line": 264,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 266,
+        "tag": "TODO",
+        "text": "-issue-sync.yml\\\": [\"",
+        "preview": "\"preview\": \"\\\".github/workflows/todo-issue-sync.yml\\\": [\""
+      },
+      {
+        "line": 270,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 272,
+        "tag": "TODO",
+        "text": "\\\",\"",
+        "preview": "\"preview\": \"\\\"tag\\\": \\\"TODO\\\",\""
+      },
+      {
+        "line": 276,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 278,
+        "tag": "TODO",
+        "text": "Issue Sync\\\"\"",
+        "preview": "\"preview\": \"\\\"preview\\\": \\\"name: TODO Issue Sync\\\"\""
+      },
+      {
+        "line": 282,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 284,
+        "tag": "TODO",
+        "text": "\\\",\"",
+        "preview": "\"preview\": \"\\\"tag\\\": \\\"TODO\\\",\""
+      },
+      {
+        "line": 288,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 290,
+        "tag": "TODO",
+        "text": "s:\\\"\"",
+        "preview": "\"preview\": \"\\\"preview\\\": \\\"sync-todos:\\\"\""
+      },
+      {
+        "line": 294,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 296,
+        "tag": "TODO",
+        "text": "\\\",\"",
+        "preview": "\"preview\": \"\\\"tag\\\": \\\"TODO\\\",\""
+      },
+      {
+        "line": 300,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 302,
+        "tag": "TODO",
+        "text": "report\\\"\"",
+        "preview": "\"preview\": \"\\\"preview\\\": \\\"- name: Generate TODO report\\\"\""
+      },
+      {
+        "line": 306,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 308,
+        "tag": "TODO",
+        "text": "\\\",\"",
+        "preview": "\"preview\": \"\\\"tag\\\": \\\"TODO\\\",\""
+      },
+      {
+        "line": 312,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 314,
+        "tag": "TODO",
+        "text": "_issue_sync.cjs\\\"\"",
+        "preview": "\"preview\": \"\\\"preview\\\": \\\"run: node scripts/automations/todo_issue_sync.cjs\\\"\""
+      },
+      {
+        "line": 318,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 320,
+        "tag": "TODO",
+        "text": "\\\",\"",
+        "preview": "\"preview\": \"\\\"tag\\\": \\\"TODO\\\",\""
+      },
+      {
+        "line": 324,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 326,
+        "tag": "TODO",
+        "text": "sync report [skip ci]\\\\\\\"\\\",\"",
+        "preview": "\"preview\": \"\\\"text\\\": \\\"): update TODO sync report [skip ci]\\\\\\\"\\\",\""
+      },
+      {
+        "line": 330,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 331,
+        "tag": "TODO",
+        "text": "sync report [skip ci]\\\\\\\"\\\"\",",
+        "preview": "\"text\": \"): update TODO sync report [skip ci]\\\\\\\"\\\"\","
+      },
+      {
+        "line": 332,
+        "tag": "TODO",
+        "text": "): update TODO sync report [skip ci]\\\\\\\"\\\"\"",
+        "preview": "\"preview\": \"\\\"preview\\\": \\\"git commit -m \\\\\\\"docs(todo): update TODO sync report [skip ci]\\\\\\\"\\\"\""
+      },
+      {
+        "line": 336,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 338,
+        "tag": "TODO",
+        "text": "\\\",\"",
+        "preview": "\"preview\": \"\\\"tag\\\": \\\"TODO\\\",\""
+      },
+      {
+        "line": 342,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 344,
+        "tag": "TODO",
+        "text": "Issue\\\"\"",
+        "preview": "\"preview\": \"\\\"preview\\\": \\\"- name: Create or update TODO Issue\\\"\""
+      },
+      {
+        "line": 348,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 350,
+        "tag": "TODO",
+        "text": "\\\",\"",
+        "preview": "\"preview\": \"\\\"tag\\\": \\\"TODO\\\",\""
+      },
+      {
+        "line": 354,
+        "tag": "FIXME",
+        "text": "\",",
+        "preview": "\"tag\": \"FIXME\","
+      },
+      {
+        "line": 356,
+        "tag": "FIXME",
+        "text": "/NOTE Sync\\\\\\\"\\\",\"",
+        "preview": "\"preview\": \"\\\"text\\\": \\\"/FIXME/NOTE Sync\\\\\\\"\\\",\""
+      },
+      {
+        "line": 360,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 361,
+        "tag": "FIXME",
+        "text": "/NOTE Sync\\\\\\\"\\\"\",",
+        "preview": "\"text\": \"/FIXME/NOTE Sync\\\\\\\"\\\"\","
+      },
+      {
+        "line": 362,
+        "tag": "TODO",
+        "text": "/FIXME/NOTE Sync\\\\\\\"\\\"\"",
+        "preview": "\"preview\": \"\\\"preview\\\": \\\"TITLE=\\\\\\\"Automated TODO/FIXME/NOTE Sync\\\\\\\"\\\"\""
+      },
+      {
+        "line": 366,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 368,
+        "tag": "TODO",
+        "text": "\\\",\"",
+        "preview": "\"preview\": \"\\\"tag\\\": \\\"TODO\\\",\""
+      },
+      {
+        "line": 372,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 374,
+        "tag": "TODO",
+        "text": "_SYNC.md\\\\\\\"\\\"\"",
+        "preview": "\"preview\": \"\\\"preview\\\": \\\"BODY_FILE=\\\\\\\"docs/TODO_SYNC.md\\\\\\\"\\\"\""
+      },
+      {
+        "line": 378,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 380,
+        "tag": "TODO",
+        "text": "\\\",\"",
+        "preview": "\"preview\": \"\\\"tag\\\": \\\"TODO\\\",\""
+      },
+      {
+        "line": 384,
+        "tag": "FIXME",
+        "text": "\",",
+        "preview": "\"tag\": \"FIXME\","
+      },
+      {
+        "line": 386,
+        "tag": "FIXME",
+        "text": "scanner\\\",\"",
+        "preview": "\"preview\": \"\\\"text\\\": \\\"/FIXME scanner\\\",\""
+      },
+      {
+        "line": 390,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 391,
+        "tag": "FIXME",
+        "text": "scanner\\\"\",",
+        "preview": "\"text\": \"/FIXME scanner\\\"\","
+      },
+      {
+        "line": 392,
+        "tag": "TODO",
+        "text": "/FIXME scanner\\\"\"",
+        "preview": "\"preview\": \"\\\"preview\\\": \\\"- name: Run TODO/FIXME scanner\\\"\""
+      },
+      {
+        "line": 396,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 398,
+        "tag": "TODO",
+        "text": "\\\",\"",
+        "preview": "\"preview\": \"\\\"tag\\\": \\\"TODO\\\",\""
+      },
+      {
+        "line": 402,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 404,
+        "tag": "TODO",
+        "text": "-scanner.cjs | cat\\\"\"",
+        "preview": "\"preview\": \"\\\"preview\\\": \\\"run: node automation/todo-scanner.cjs | cat\\\"\""
+      },
+      {
+        "line": 408,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 410,
+        "tag": "TODO",
+        "text": "\\\",\"",
+        "preview": "\"preview\": \"\\\"tag\\\": \\\"TODO\\\",\""
+      },
+      {
+        "line": 414,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 416,
+        "tag": "TODO",
+        "text": "report and content registry [skip ci]\\\\\\\"\\\"\"",
+        "preview": "\"preview\": \"\\\"preview\\\": \\\"git commit -m \\\\\\\"chore(automation): update todo report and content registry [skip ci]\\\\\\\"\\\"\""
+      },
+      {
+        "line": 422,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 424,
+        "tag": "TODO",
+        "text": "_REPORT.md\\\",\"",
+        "preview": "\"preview\": \"\\\"file\\\": \\\"docs/TODO_REPORT.md\\\",\""
+      },
+      {
+        "line": 428,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 430,
+        "tag": "TODO",
+        "text": "_REPORT.md\\\"\"",
+        "preview": "\"preview\": \"\\\"route\\\": \\\"/docs/TODO_REPORT.md\\\"\""
+      },
+      {
+        "line": 433,
+        "tag": "TODO",
+        "text": "-summary-runner.js\": [",
+        "preview": "\"netlify/functions/todo-summary-runner.js\": ["
+      },
+      {
+        "line": 436,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 437,
+        "tag": "TODO",
+        "text": "-scanner.cjs'));\",",
+        "preview": "\"text\": \"scan', () => runNode('automation/todo-scanner.cjs'));\","
+      },
+      {
+        "line": 438,
+        "tag": "TODO",
+        "text": "scan', () => runNode('automation/todo-scanner.cjs'));\"",
+        "preview": "\"preview\": \"logStep('todo:scan', () => runNode('automation/todo-scanner.cjs'));\""
+      },
+      {
+        "line": 441,
+        "tag": "TODO",
+        "text": "-scanner-runner.js\": [",
+        "preview": "\"netlify/functions/todo-scanner-runner.js\": ["
+      },
+      {
+        "line": 444,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 445,
+        "tag": "TODO",
+        "text": "-scanner.cjs'));\",",
+        "preview": "\"text\": \"scan', () => runNode('automation/todo-scanner.cjs'));\","
+      },
+      {
+        "line": 446,
+        "tag": "TODO",
+        "text": "scan', () => runNode('automation/todo-scanner.cjs'));\"",
+        "preview": "\"preview\": \"logStep('todo:scan', () => runNode('automation/todo-scanner.cjs'));\""
+      },
+      {
+        "line": 452,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 454,
+        "tag": "TODO",
+        "text": "-scanner-runner\\\",\"",
+        "preview": "\"preview\": \"\\\"todo-scanner-runner\\\",\""
+      },
+      {
+        "line": 458,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 460,
+        "tag": "TODO",
+        "text": "-summary-runner\\\",\"",
+        "preview": "\"preview\": \"\\\"todo-summary-runner\\\",\""
+      },
+      {
+        "line": 463,
+        "tag": "TODO",
+        "text": "-issue-sync.yml\": [",
+        "preview": "\".github/workflows.disabled/todo-issue-sync.yml\": ["
+      },
+      {
+        "line": 466,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 468,
+        "tag": "TODO",
+        "text": "Issue Sync\"",
+        "preview": "\"preview\": \"name: TODO Issue Sync\""
+      },
+      {
+        "line": 472,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 474,
+        "tag": "TODO",
+        "text": "s:\"",
+        "preview": "\"preview\": \"sync-todos:\""
+      },
+      {
+        "line": 478,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 480,
+        "tag": "TODO",
+        "text": "report\"",
+        "preview": "\"preview\": \"- name: Generate TODO report\""
+      },
+      {
+        "line": 484,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 486,
+        "tag": "TODO",
+        "text": "_issue_sync.cjs\"",
+        "preview": "\"preview\": \"run: node scripts/automations/todo_issue_sync.cjs\""
+      },
+      {
+        "line": 490,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 491,
+        "tag": "TODO",
+        "text": "sync report [skip ci]\\\"\",",
+        "preview": "\"text\": \"): update TODO sync report [skip ci]\\\"\","
+      },
+      {
+        "line": 492,
+        "tag": "TODO",
+        "text": "): update TODO sync report [skip ci]\\\"\"",
+        "preview": "\"preview\": \"git commit -m \\\"docs(todo): update TODO sync report [skip ci]\\\"\""
+      },
+      {
+        "line": 496,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 498,
+        "tag": "TODO",
+        "text": "Issue\"",
+        "preview": "\"preview\": \"- name: Create or update TODO Issue\""
+      },
+      {
+        "line": 502,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 503,
+        "tag": "FIXME",
+        "text": "/NOTE Sync\\\"\",",
+        "preview": "\"text\": \"/FIXME/NOTE Sync\\\"\","
+      },
+      {
+        "line": 504,
+        "tag": "TODO",
+        "text": "/FIXME/NOTE Sync\\\"\"",
+        "preview": "\"preview\": \"TITLE=\\\"Automated TODO/FIXME/NOTE Sync\\\"\""
+      },
+      {
+        "line": 508,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 510,
+        "tag": "TODO",
+        "text": "_SYNC.md\\\"\"",
+        "preview": "\"preview\": \"BODY_FILE=\\\"docs/TODO_SYNC.md\\\"\""
+      },
+      {
+        "line": 516,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 517,
+        "tag": "FIXME",
+        "text": "scanner\",",
+        "preview": "\"text\": \"/FIXME scanner\","
+      },
+      {
+        "line": 518,
+        "tag": "TODO",
+        "text": "/FIXME scanner\"",
+        "preview": "\"preview\": \"- name: Run TODO/FIXME scanner\""
+      },
+      {
+        "line": 522,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 524,
+        "tag": "TODO",
+        "text": "-scanner.cjs | cat\"",
+        "preview": "\"preview\": \"run: node automation/todo-scanner.cjs | cat\""
+      },
+      {
+        "line": 528,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 530,
+        "tag": "TODO",
+        "text": "report and content registry [skip ci]\\\"\"",
+        "preview": "\"preview\": \"git commit -m \\\"chore(automation): update todo report and content registry [skip ci]\\\"\""
+      },
+      {
+        "line": 536,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 537,
+        "tag": "TODO",
+        "text": "_REPORT</div><div className=\\\"mt-1 text-sm text-white/75\\\">Open documentation</div><div className=\\\"mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90\\\">Open <span aria-hidden>↗</span></div></a>\",",
+        "preview": "\"text\": \"_REPORT.md\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\" className=\\\"group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl h"
+      },
+      {
+        "line": 538,
+        "tag": "TODO",
+        "text": "_REPORT.md\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\" className=\\\"group relative overflow-hidden rounded-2xl border border-white/10 bg-gradien\"",
+        "preview": "\"preview\": \"<a href=\\\"https://github.com/Zion-Holdings/zion.app/blob/main/docs/TODO_REPORT.md\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\" className=\\\"group relative overflow-hidden rounded-2xl border border-"
+      },
+      {
+        "line": 544,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 546,
+        "tag": "TODO",
+        "text": "_REPORT.md\\\",\"",
+        "preview": "\"preview\": \"\\\"url\\\": \\\"https://github.com/Zion-Holdings/zion.app/blob/main/docs/TODO_REPORT.md\\\",\""
+      },
+      {
+        "line": 552,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 554,
+        "tag": "TODO",
+        "text": "_REPORT.md\\\",\"",
+        "preview": "\"preview\": \"\\\"url\\\": \\\"https://github.com/Zion-Holdings/zion.app/blob/main/docs/TODO_REPORT.md\\\",\""
+      },
+      {
+        "line": 560,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 562,
+        "tag": "TODO",
+        "text": "_REPORT.md\\\",\"",
+        "preview": "\"preview\": \"\\\"url\\\": \\\"https://github.com/Zion-Holdings/zion.app/blob/main/docs/TODO_REPORT.md\\\",\""
+      },
+      {
+        "line": 568,
+        "tag": "TODO",
+        "text": "\",",
+        "preview": "\"tag\": \"TODO\","
+      },
+      {
+        "line": 570,
+        "tag": "TODO",
+        "text": "_REPORT.md\\\",\"",
+        "preview": "\"preview\": \"\\\"url\\\": \\\"https://github.com/Zion-Holdings/zion.app/blob/main/docs/TODO_REPORT.md\\\",\""
+      }
+    ],
+    "public/automation/content-registry.json": [
+      {
+        "line": 38,
+        "tag": "TODO",
+        "text": "_REPORT.md\",",
+        "preview": "\"file\": \"docs/TODO_REPORT.md\","
+      },
+      {
+        "line": 39,
+        "tag": "TODO",
+        "text": "_REPORT.md\"",
+        "preview": "\"route\": \"/docs/TODO_REPORT.md\""
+      }
+    ],
+    "netlify/functions/todo-summary-runner.js": [
+      {
+        "line": 25,
+        "tag": "TODO",
+        "text": "scan', () => runNode('automation/todo-scanner.cjs'));",
+        "preview": "logStep('todo:scan', () => runNode('automation/todo-scanner.cjs'));"
+      }
+    ],
+    "netlify/functions/todo-scanner-runner.js": [
+      {
+        "line": 25,
+        "tag": "TODO",
+        "text": "scan', () => runNode('automation/todo-scanner.cjs'));",
+        "preview": "logStep('todo:scan', () => runNode('automation/todo-scanner.cjs'));"
+      }
+    ],
+    "netlify/functions/functions-manifest.json": [
+      {
+        "line": 62,
+        "tag": "TODO",
+        "text": "-scanner-runner\",",
+        "preview": "\"todo-scanner-runner\","
+      },
+      {
+        "line": 63,
+        "tag": "TODO",
+        "text": "-summary-runner\",",
+        "preview": "\"todo-summary-runner\","
       }
     ],
     "data/reports/repo-knowledge-graph.json": [
@@ -226,238 +1994,6 @@
         "tag": "TODO",
         "text": "_issue_sync.cjs\",",
         "preview": "\"from\": \"scripts/automations/todo_issue_sync.cjs\","
-      }
-    ],
-    "public/automation/todo-summary.json": [
-      {
-        "line": 8,
-        "tag": "TODO",
-        "text": "\",",
-        "preview": "\"tag\": \"TODO\","
-      },
-      {
-        "line": 9,
-        "tag": "TODO",
-        "text": "-scanner.cjs\\\",\",",
-        "preview": "\"text\": \"\\\": \\\"node automation/todo-scanner.cjs\\\",\","
-      },
-      {
-        "line": 10,
-        "tag": "TODO",
-        "text": "\\\": \\\"node automation/todo-scanner.cjs\\\",\"",
-        "preview": "\"preview\": \"\\\"scan:todo\\\": \\\"node automation/todo-scanner.cjs\\\",\""
-      },
-      {
-        "line": 14,
-        "tag": "TODO",
-        "text": "\",",
-        "preview": "\"tag\": \"TODO\","
-      },
-      {
-        "line": 16,
-        "tag": "TODO",
-        "text": "&& npm run scan:registry\\\"\"",
-        "preview": "\"preview\": \"\\\"scan:content\\\": \\\"npm run scan:todo && npm run scan:registry\\\"\""
-      },
-      {
-        "line": 19,
-        "tag": "TODO",
-        "text": "-issue-sync.yml\": [",
-        "preview": "\".github/workflows/todo-issue-sync.yml\": ["
-      },
-      {
-        "line": 22,
-        "tag": "TODO",
-        "text": "\",",
-        "preview": "\"tag\": \"TODO\","
-      },
-      {
-        "line": 24,
-        "tag": "TODO",
-        "text": "Issue Sync\"",
-        "preview": "\"preview\": \"name: TODO Issue Sync\""
-      },
-      {
-        "line": 28,
-        "tag": "TODO",
-        "text": "\",",
-        "preview": "\"tag\": \"TODO\","
-      },
-      {
-        "line": 30,
-        "tag": "TODO",
-        "text": "s:\"",
-        "preview": "\"preview\": \"sync-todos:\""
-      },
-      {
-        "line": 34,
-        "tag": "TODO",
-        "text": "\",",
-        "preview": "\"tag\": \"TODO\","
-      },
-      {
-        "line": 36,
-        "tag": "TODO",
-        "text": "report\"",
-        "preview": "\"preview\": \"- name: Generate TODO report\""
-      },
-      {
-        "line": 40,
-        "tag": "TODO",
-        "text": "\",",
-        "preview": "\"tag\": \"TODO\","
-      },
-      {
-        "line": 42,
-        "tag": "TODO",
-        "text": "_issue_sync.cjs\"",
-        "preview": "\"preview\": \"run: node scripts/automations/todo_issue_sync.cjs\""
-      },
-      {
-        "line": 46,
-        "tag": "TODO",
-        "text": "\",",
-        "preview": "\"tag\": \"TODO\","
-      },
-      {
-        "line": 47,
-        "tag": "TODO",
-        "text": "sync report [skip ci]\\\"\",",
-        "preview": "\"text\": \"): update TODO sync report [skip ci]\\\"\","
-      },
-      {
-        "line": 48,
-        "tag": "TODO",
-        "text": "): update TODO sync report [skip ci]\\\"\"",
-        "preview": "\"preview\": \"git commit -m \\\"docs(todo): update TODO sync report [skip ci]\\\"\""
-      },
-      {
-        "line": 52,
-        "tag": "TODO",
-        "text": "\",",
-        "preview": "\"tag\": \"TODO\","
-      },
-      {
-        "line": 54,
-        "tag": "TODO",
-        "text": "Issue\"",
-        "preview": "\"preview\": \"- name: Create or update TODO Issue\""
-      },
-      {
-        "line": 58,
-        "tag": "TODO",
-        "text": "\",",
-        "preview": "\"tag\": \"TODO\","
-      },
-      {
-        "line": 59,
-        "tag": "FIXME",
-        "text": "/NOTE Sync\\\"\",",
-        "preview": "\"text\": \"/FIXME/NOTE Sync\\\"\","
-      },
-      {
-        "line": 60,
-        "tag": "TODO",
-        "text": "/FIXME/NOTE Sync\\\"\"",
-        "preview": "\"preview\": \"TITLE=\\\"Automated TODO/FIXME/NOTE Sync\\\"\""
-      },
-      {
-        "line": 64,
-        "tag": "TODO",
-        "text": "\",",
-        "preview": "\"tag\": \"TODO\","
-      },
-      {
-        "line": 66,
-        "tag": "TODO",
-        "text": "_SYNC.md\\\"\"",
-        "preview": "\"preview\": \"BODY_FILE=\\\"docs/TODO_SYNC.md\\\"\""
-      },
-      {
-        "line": 72,
-        "tag": "TODO",
-        "text": "\",",
-        "preview": "\"tag\": \"TODO\","
-      },
-      {
-        "line": 73,
-        "tag": "FIXME",
-        "text": "scanner\",",
-        "preview": "\"text\": \"/FIXME scanner\","
-      },
-      {
-        "line": 74,
-        "tag": "TODO",
-        "text": "/FIXME scanner\"",
-        "preview": "\"preview\": \"- name: Run TODO/FIXME scanner\""
-      },
-      {
-        "line": 78,
-        "tag": "TODO",
-        "text": "\",",
-        "preview": "\"tag\": \"TODO\","
-      },
-      {
-        "line": 80,
-        "tag": "TODO",
-        "text": "-scanner.cjs | cat\"",
-        "preview": "\"preview\": \"run: node automation/todo-scanner.cjs | cat\""
-      },
-      {
-        "line": 84,
-        "tag": "TODO",
-        "text": "\",",
-        "preview": "\"tag\": \"TODO\","
-      },
-      {
-        "line": 86,
-        "tag": "TODO",
-        "text": "report and content registry [skip ci]\\\"\"",
-        "preview": "\"preview\": \"git commit -m \\\"chore(automation): update todo report and content registry [skip ci]\\\"\""
-      }
-    ],
-    "public/automation/content-registry.json": [
-      {
-        "line": 38,
-        "tag": "TODO",
-        "text": "_REPORT.md\",",
-        "preview": "\"file\": \"docs/TODO_REPORT.md\","
-      },
-      {
-        "line": 39,
-        "tag": "TODO",
-        "text": "_REPORT.md\"",
-        "preview": "\"route\": \"/docs/TODO_REPORT.md\""
-      }
-    ],
-    "netlify/functions/todo-summary-runner.js": [
-      {
-        "line": 25,
-        "tag": "TODO",
-        "text": "scan', () => runNode('automation/todo-scanner.cjs'));",
-        "preview": "logStep('todo:scan', () => runNode('automation/todo-scanner.cjs'));"
-      }
-    ],
-    "netlify/functions/todo-scanner-runner.js": [
-      {
-        "line": 25,
-        "tag": "TODO",
-        "text": "scan', () => runNode('automation/todo-scanner.cjs'));",
-        "preview": "logStep('todo:scan', () => runNode('automation/todo-scanner.cjs'));"
-      }
-    ],
-    "netlify/functions/functions-manifest.json": [
-      {
-        "line": 62,
-        "tag": "TODO",
-        "text": "-scanner-runner\",",
-        "preview": "\"todo-scanner-runner\","
-      },
-      {
-        "line": 63,
-        "tag": "TODO",
-        "text": "-summary-runner\",",
-        "preview": "\"todo-summary-runner\","
       }
     ],
     ".github/workflows.disabled/todo-issue-sync.yml": [
