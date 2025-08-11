@@ -1672,7 +1672,7 @@ export default function MainFrontIndex() {
           </div>
         </motion.section>
 
-        {/* AUTO-GENERATED: FRONT_ADS_START */
+        {/* AUTO-GENERATED: FRONT_ADS_START */}
 <section id="auto-promoted" className="mx-auto max-w-7xl px-6 pb-14">
   <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Auto‑Promoted Features</h2>
   <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Continuously curated promos linking to live hubs, reports, and docs.</p>
