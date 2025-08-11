@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-11T23:49:29.456Z",
+  "generatedAt": "2025-08-11T23:52:17.835Z",
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
@@ -12,6 +12,7 @@
     "broken-image-scanner-runner",
     "cloud_orchestrator",
     "component-size-report",
+    "content-gap-analyzer",
     "continuous-front-runner",
     "continuous-orchestrator",
     "dead-code-audit",

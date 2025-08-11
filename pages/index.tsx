@@ -225,7 +225,8 @@ export default function Home() {
               { title: 'Broken Image Scanner (6h)', desc: 'Finds broken images, optimizes assets, and syncs fixes.', href: '/.netlify/functions/broken-image-scanner' },
               { title: 'SEO Audit Runner', desc: 'Analyzes pages for title/description issues and writes an HTML report.', href: '/.netlify/functions/seo-audit-runner' },
               { title: 'AI Trends Radar', desc: 'Aggregates trending AI topics into a public report.', href: '/.netlify/functions/ai-trends-radar-runner' },
-              { title: 'Dependency Auto‑Upgrade', desc: 'Safely bumps minor/patch deps with build verification.', href: '/.netlify/functions/deps-auto-upgrade-runner' },
+                             { title: 'Dependency Auto‑Upgrade', desc: 'Safely bumps minor/patch deps with build verification.', href: '/.netlify/functions/deps-auto-upgrade-runner' },
+               { title: 'Unused Exports Runner', desc: 'Finds and reports unused exports for cleanup.', href: '/.netlify/functions/unused-exports-runner' },
             ].map((tool) => (
               <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
@@ -285,6 +286,13 @@ export default function Home() {
             </a>
 
             <a href="/.netlify/functions/pagespeed-insights-runner" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+
+            <a href="/.netlify/functions/content-gap-analyzer" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">Content Gap Analyzer</h3>
+              <p className="mt-1 text-sm text-white/75">Scans pages, components, and docs to summarize missing coverage.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>
               <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
               <h3 className="text-lg font-semibold">PageSpeed Insights Runner</h3>
               <p className="mt-1 text-sm text-white/75">Calls PSI for key pages (mobile/desktop) and commits metrics to reports.</p>
