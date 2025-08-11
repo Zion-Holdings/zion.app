@@ -220,3 +220,27 @@
 [[scheduled.functions]]
   name = "branch-cleanup-runner"
   schedule = "0 3 * * *" # daily at 03:00 UTC
+
+[[scheduled.functions]]
+  name = "diversification-runner"
+  schedule = "*/45 * * * *"
+
+[[scheduled.functions]]
+  name = "meta-orchestrator-runner"
+  schedule = "0 * * * *"
+
+[[scheduled.functions]]
+  name = "ui-evolution-runner"
+  schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+  name = "venture-runner"
+  schedule = "0 */2 * * *"
+
+[[scheduled.functions]]
+  name = "linting-orchestrator-runner"
+  schedule = "*/15 * * * *"
+
+[[scheduled.functions]]
+  name = "frontend-sync-autonomous-runner"
+  schedule = "*/5 * * * *"
