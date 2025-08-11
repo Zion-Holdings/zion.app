@@ -85,6 +85,9 @@ function discoverExternalLinks() {
   return [
     { type: 'internal', href: '/.netlify/functions/docs-index-runner', label: 'Docs — technical notes & guides', tagline: 'Documentation' },
     { type: 'internal', href: '/newsroom', label: 'AI Changelog — highlights', tagline: 'Summarized updates' },
+    { type: 'internal', href: '/.netlify/functions/internal-link-graph-runner', label: 'Internal Link Graph', tagline: 'Builds site link graph' },
+    { type: 'internal', href: '/.netlify/functions/anchor-integrity-runner', label: 'Anchor Integrity', tagline: 'Finds missing #anchors' },
+    { type: 'internal', href: '/.netlify/functions/meta-tags-audit-runner', label: 'Meta Tags Audit', tagline: 'OG & Twitter checks' },
   ];
 }
 

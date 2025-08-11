@@ -1,7 +1,12 @@
 {
+<<<<<<< HEAD
   "generatedAt": "2025-08-11T23:12:48.725Z",
+=======
+  "generatedAt": "2025-08-11T23:13:10.501Z",
+>>>>>>> origin/main
   "functions": [
     "ai-changelog-runner",
+    "anchor-integrity-runner",
     "auto-scheduler",
     "automation-matrix",
     "autonomous-invention-orchestrator",
@@ -37,13 +42,18 @@
     "hyper-front-index-accelerator",
     "image-optimizer-runner",
     "innovation-lab",
+<<<<<<< HEAD
     "innovation-lab-pro",
+=======
+    "internal-link-graph-runner",
+>>>>>>> origin/main
     "link-and-health-scheduler",
     "link-crawler",
     "maintenance-scheduler",
     "marketing-and-features-promo",
     "marketing-scheduler",
     "media-og-and-optimize",
+    "meta-tags-audit-runner",
     "netlify-auto-healer-runner",
     "newsroom-auto-publisher",
     "newsroom-runner",
