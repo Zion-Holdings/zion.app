@@ -7,29 +7,21 @@ function runNode(relPath, args = []) {
   return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
 }
 
-exports.config = {
-  schedule: '*/1 * * * *',
-};
+exports.config = { schedule: '*/15 * * * *' };
 
 exports.handler = async () => {
   const logs = [];
-  function step(name, rel, args = []) {
+  function logStep(name, fn) {
     logs.push(`\n=== ${name} ===`);
-    const { status, stdout, stderr } = runNode(rel, args);
+    const { status, stdout, stderr } = fn();
     if (stdout) logs.push(stdout);
     if (stderr) logs.push(stderr);
     logs.push(`exit=${status}`);
     return status;
   }
 
-  step('front-index:auto-advertise', 'automation/front-index-auto-advertiser.cjs');
-  step('front:futurizer', 'automation/front-futurizer.cjs');
-  step('homepage:updater', 'automation/homepage-updater.cjs');
-  step('homepage:auto-advertiser', 'automation/homepage-auto-advertiser.cjs');
-  // New: run UX heuristics on every ultrafast cycle
-  step('ux:heuristics', 'automation/ux-heuristics-auditor.cjs');
-
-  step('git:sync', 'automation/advanced-git-sync.cjs');
+  logStep('dependency-freshness:generate', () => runNode('automation/dependency-freshness-radar.cjs'));
+  logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
 
   return { statusCode: 200, body: logs.join('\n') };
 };

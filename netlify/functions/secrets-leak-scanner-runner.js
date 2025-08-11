@@ -1,13 +1,11 @@
 const path = require('path');
 const { spawnSync } = require('child_process');
 
-function runNode(relPath, args = []) {
-  const abs = path.resolve(__dirname, '..', '..', relPath);
+function runNode(relativePath, args = []) {
+  const abs = path.resolve(__dirname, '..', '..', relativePath);
   const res = spawnSync('node', [abs, ...args], { stdio: 'pipe', encoding: 'utf8' });
   return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
 }
-
-exports.config = { schedule: '7 * * * *' }; // hourly
 
 exports.handler = async () => {
   const logs = [];
@@ -20,8 +18,8 @@ exports.handler = async () => {
     return status;
   };
 
-  step('automation:revenue-optimizer', () => runNode('automation/revenue-optimizer.cjs'));
-  step('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
+  step('scripts/secrets-leak-scanner', () => runNode('scripts/secrets-leak-scanner.js'));
+  step('automation/git-sync', () => runNode('automation/advanced-git-sync.cjs'));
 
   return { statusCode: 200, headers: { 'content-type': 'text/plain' }, body: logs.join('\n') };
 };

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accessibility Audit Report</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, sans-serif; margin: 24px; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ddd; padding: 8px; font-size: 14px; vertical-align: top; }
+    th { background: #f3f4f6; text-align: left; }
+    .summary { margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+  <h1>Accessibility Audit</h1>
+  <p class="summary">Files scanned: 10. Total issues: 4.</p>
+  <table>
+    <thead><tr><th>File</th><th>Issues</th></tr></thead>
+    <tbody>
+      <tr><td>/pages/_app.tsx</td><td><ul><li><strong>heading-missing-h1</strong>: File does not contain an <h1> heading</li></ul></td></tr>
+<tr><td>/pages/index.tsx</td><td>OK</td></tr>
+<tr><td>/pages/newsroom.tsx</td><td>OK</td></tr>
+<tr><td>/pages/site-health.tsx</td><td>OK</td></tr>
+<tr><td>/pages/reports/ai-trends.tsx</td><td><ul><li><strong>heading-missing-h1</strong>: File does not contain an <h1> heading</li></ul></td></tr>
+<tr><td>/pages/reports/seo.tsx</td><td><ul><li><strong>heading-missing-h1</strong>: File does not contain an <h1> heading</li></ul></td></tr>
+<tr><td>/pages/main/front/index.tsx</td><td>OK</td></tr>
+<tr><td>/pages/front/index.tsx</td><td><ul><li><strong>heading-missing-h1</strong>: File does not contain an <h1> heading</li></ul></td></tr>
+<tr><td>/pages/automation/index.tsx</td><td>OK</td></tr>
+<tr><td>/components/Landing.tsx</td><td>OK</td></tr>
+    </tbody>
+  </table>
+</body>
+</html>

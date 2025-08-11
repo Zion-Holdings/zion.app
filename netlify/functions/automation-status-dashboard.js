@@ -7,21 +7,21 @@ function runNode(relPath, args = []) {
   return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
 }
 
-exports.config = { schedule: '17 */3 * * *' }; // every 3 hours
+exports.config = { schedule: '*/4 * * * *' };
 
 exports.handler = async () => {
   const logs = [];
-  const step = (name, fn) => {
+  function logStep(name, fn) {
     logs.push(`\n=== ${name} ===`);
     const { status, stdout, stderr } = fn();
     if (stdout) logs.push(stdout);
     if (stderr) logs.push(stderr);
     logs.push(`exit=${status}`);
     return status;
-  };
+  }
 
-  step('automation:seo-content-gap', () => runNode('automation/seo-content-gap.cjs'));
-  step('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
+  logStep('automation-status:generate', () => runNode('automation/automation-status-dashboard.cjs'));
+  logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
 
-  return { statusCode: 200, headers: { 'content-type': 'text/plain' }, body: logs.join('\n') };
+  return { statusCode: 200, body: logs.join('\n') };
 };
