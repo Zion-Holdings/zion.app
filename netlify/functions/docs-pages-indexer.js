@@ -8,7 +8,7 @@ function runNode(relativePath, args = []) {
 }
 
 exports.config = {
-  schedule: '*/1 * * * *',
+  schedule: '0 */8 * * *',
 };
 
 exports.handler = async () => {
@@ -22,10 +22,7 @@ exports.handler = async () => {
     return status;
   };
 
-  step('front:continuous', () => runNode('automation/continuous-front-runner.cjs'));
-  step('front:futurizer', () => runNode('automation/front-futurizer.cjs'));
-  step('homepage:updater', () => runNode('automation/homepage-updater.cjs'));
-  step('homepage:advertiser', () => runNode('automation/front-index-advertiser.cjs'));
+  step('docs:indexer', () => runNode('automation/docs-pages-indexer.cjs'));
   step('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
 
   return { statusCode: 200, headers: { 'content-type': 'text/plain' }, body: logs.join('\n') };

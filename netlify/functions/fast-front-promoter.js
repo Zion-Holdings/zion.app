@@ -1,40 +1,30 @@
 const path = require('path');
-const { execFile } = require('child_process');
+const { spawnSync } = require('child_process');
 
-function runNodeScript(relPath, args = []) {
-  const cwd = path.resolve(__dirname, '..', '..');
-  const abs = path.resolve(cwd, relPath);
-  return new Promise((resolve) => {
-    const startedAt = Date.now();
-    const child = execFile('node', [abs, ...args], { cwd, env: process.env }, (error, stdout, stderr) => {
-      resolve({
-        script: relPath,
-        ok: !error,
-        code: error ? error.code : 0,
-        durationMs: Date.now() - startedAt,
-        stdout: stdout ? stdout.toString() : '',
-        stderr: stderr ? stderr.toString() : '',
-      });
-    });
-    child.on('error', () => {});
-  });
+function runNode(relativePath, args = []) {
+  const abs = path.resolve(__dirname, '..', '..', relativePath);
+  const res = spawnSync('node', [abs, ...args], { stdio: 'pipe', encoding: 'utf8' });
+  return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
 }
 
 exports.config = {
-  // Run every 15 minutes for fast iteration
   schedule: '*/15 * * * *',
 };
 
-exports.handler = async function() {
-  const { execSync } = require('child_process');
-  try {
-    execSync('node automation/homepage-updater.cjs || true', { stdio: 'inherit', shell: true });
-    execSync('node automation/homepage-auto-advertiser.cjs || true', { stdio: 'inherit', shell: true });
-    execSync('node automation/front-index-advertiser.cjs || true', { stdio: 'inherit', shell: true });
-    execSync('node automation/og-image-generator.cjs || true', { stdio: 'inherit', shell: true });
-    execSync('git config user.name "zion-bot" && git config user.email "bot@zion.app" && git add -A && (git commit -m "chore(front): promo refresh [skip ci]" || true) && (git push origin main || true)', { stdio: 'inherit', shell: true });
-    return { statusCode: 200, body: JSON.stringify({ ok: true, task: 'fast-front-promoter' }) };
-  } catch (e) {
-    return { statusCode: 200, body: JSON.stringify({ ok: false, error: String(e) }) };
-  }
+exports.handler = async () => {
+  const logs = [];
+  const step = (name, fn) => {
+    logs.push(`\n=== ${name} ===`);
+    const { status, stdout, stderr } = fn();
+    if (stdout) logs.push(stdout);
+    if (stderr) logs.push(stderr);
+    logs.push(`exit=${status}`);
+    return status;
+  };
+
+  step('homepage:auto-advertiser', () => runNode('automation/homepage-auto-advertiser.cjs'));
+  step('front-index:auto-advertiser', () => runNode('automation/front-index-auto-advertiser.cjs'));
+  step('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
+
+  return { statusCode: 200, headers: { 'content-type': 'text/plain' }, body: logs.join('\n') };
 };
