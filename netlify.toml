@@ -105,6 +105,7 @@
   name = "hyper-front-index-accelerator"
   schedule = "*/1 * * * *" # every minute
 
+<<<<<<< HEAD
 [[scheduled.functions]]
   name = "dead-code-report"
   schedule = "7 */6 * * *"
@@ -164,3 +165,17 @@
 [[scheduled.functions]]
   name = "netlify-auto-healer-runner"
   schedule = "*/20 * * * *"
+=======
+# New intelligent cloud automations
+[[scheduled.functions]]
+  name = "innovation-lab"
+  schedule = "*/10 * * * *" # every 10 minutes
+
+[[scheduled.functions]]
+  name = "broken-image-scanner"
+  schedule = "0 */6 * * *" # every 6 hours
+
+[[scheduled.functions]]
+  name = "auto-scheduler"
+  schedule = "*/15 * * * *" # every 15 minutes
+>>>>>>> origin/main
