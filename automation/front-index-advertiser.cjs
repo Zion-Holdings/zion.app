@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-<<<<<<< HEAD
 'use strict';
 
 const fs = require('fs');
@@ -65,6 +64,11 @@ function discoverInternalPages() {
     }
   } catch {}
 
+  // Add anchor deep-links for capabilities and benefits on the same page
+  results.push({ type: 'internal', href: '/main/front#features', label: 'Features', tagline: 'Explore capabilities' });
+  results.push({ type: 'internal', href: '/main/front#capabilities', label: 'Capabilities', tagline: 'What agents can do' });
+  results.push({ type: 'internal', href: '/main/front#benefits', label: 'Benefits', tagline: 'Outcomes & ROI' });
+
   // Unique by href, limit
   const seen = new Set();
   const unique = [];
@@ -74,15 +78,14 @@ function discoverInternalPages() {
       unique.push(r);
     }
   }
-  return unique.slice(0, 12);
+  return unique.slice(0, 16);
 }
 
 function discoverExternalLinks() {
   const repoUrl = 'https://github.com/Zion-Holdings/zion.app';
   return [
-    { type: 'external', href: repoUrl + '/actions', label: 'Live Pipelines', tagline: 'CI logs & artifacts' },
-    { type: 'external', href: repoUrl + '/tree/main/docs', label: 'Documentation', tagline: 'Technical notes & guides' },
-    { type: 'external', href: repoUrl + '/blob/main/docs/CHANGELOG_AI.md', label: 'AI Changelog', tagline: 'Summarized updates' },
+    { type: 'external', href: repoUrl + '/tree/main/docs', label: 'Docs — technical notes & guides', tagline: 'Documentation' },
+    { type: 'external', href: repoUrl + '/blob/main/docs/CHANGELOG_AI.md', label: 'AI Changelog — highlights', tagline: 'Summarized updates' },
   ];
 }
 
@@ -125,7 +128,7 @@ function replaceBetweenMarkers(source, startMarker, endMarker, replacement) {
   }
   const internal = discoverInternalPages();
   const external = discoverExternalLinks();
-  const combined = [...internal, ...external].slice(0, 12);
+  const combined = [...internal, ...external].slice(0, 16);
   const block = generateSection(combined);
   const original = fs.readFileSync(FRONT_PAGE, 'utf8');
   let updated;
@@ -142,117 +145,3 @@ function replaceBetweenMarkers(source, startMarker, endMarker, replacement) {
     console.log('No updates required.');
   }
 })();
-=======
-const fs = require('fs');
-const path = require('path');
-
-function fileExists(absolutePath) {
-  try {
-    fs.accessSync(absolutePath, fs.constants.F_OK);
-    return true;
-  } catch {
-    return false;
-  }
-}
-
-function buildItems(repoUrl, workspaceRoot) {
-  const items = [];
-  const pagesDir = path.join(workspaceRoot, 'pages');
-
-  const internal = [
-    { href: '/automation', label: 'Automation Hub — live agents & reports', desc: 'Factories, agents, and workflows', check: path.join(pagesDir, 'automation', 'index.tsx') },
-    { href: '/reports/seo', label: 'SEO Audit — continuous improvements', desc: 'On‑site SEO artifacts', check: path.join(pagesDir, 'reports', 'seo.tsx') },
-    { href: '/site-health', label: 'Site Health — audits & insights', desc: 'A11y, performance, links', check: path.join(pagesDir, 'site-health.tsx') },
-    { href: '/reports/ai-trends', label: 'AI Trends — intelligence signals', desc: 'Ecosystem insights', check: path.join(pagesDir, 'reports', 'ai-trends.tsx') },
-    { href: '/newsroom', label: 'Newsroom — autonomous updates', desc: 'Product evolution', check: path.join(pagesDir, 'newsroom.tsx') },
-  ];
-
-  internal.forEach((c) => {
-    if (fileExists(c.check)) items.push({ type: 'internal', href: c.href, label: c.label, desc: c.desc });
-  });
-
-  if (fileExists(path.join(workspaceRoot, 'docs'))) {
-    items.push({ type: 'external', href: `${repoUrl}/tree/main/docs`, label: 'Docs — technical notes & guides', desc: 'Documentation' });
-  }
-
-  return items;
-}
-
-function renderItems(items) {
-  const lines = [];
-  for (const item of items) {
-    if (item.type === 'internal') {
-      lines.push(
-        `            <Link href="${item.href}"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo"><div className=\"pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100\" /><div className=\"text-base font-semibold\">${item.label}</div><div className=\"mt-1 text-sm text-white/75\">${item.desc}</div></a></Link>`
-      );
-      lines.push('');
-    } else {
-      lines.push(
-        `            <a href="${item.href}" target="_blank" rel="noopener" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo"><div className=\"pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100\" /><div className=\"text-base font-semibold\">${item.label}</div><div className=\"mt-1 text-sm text-white/75\">${item.desc}</div></a>`
-      );
-      lines.push('');
-    }
-  }
-  return lines.join('\n');
-}
-
-function main() {
-  const workspaceRoot = path.resolve(__dirname, '..');
-  const targetPath = path.join(workspaceRoot, 'pages', 'main', 'front', 'index.tsx');
-
-  if (!fileExists(targetPath)) {
-    console.error('pages/main/front/index.tsx not found. Exiting.');
-    process.exit(0);
-  }
-
-  const pkgPath = path.join(workspaceRoot, 'package.json');
-  let repoUrl = 'https://github.com/Zion-Holdings/zion.app';
-  try {
-    const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
-    if (pkg.repository && typeof pkg.repository.url === 'string') {
-      repoUrl = pkg.repository.url.replace(/^git\+/, '').replace(/\.git$/, '');
-    }
-  } catch {}
-
-  const startMarker = '/* AUTO-GENERATED: FRONT_ADS_START */';
-  const endMarker = '/* AUTO-GENERATED: FRONT_ADS_END */';
-
-  const original = fs.readFileSync(targetPath, 'utf8');
-  const startIdx = original.indexOf(startMarker);
-  const endIdx = original.indexOf(endMarker);
-
-  if (startIdx === -1 || endIdx === -1 || endIdx <= startIdx) {
-    console.error('Markers not found or invalid order in front page. Exiting.');
-    process.exit(0);
-  }
-
-  const before = original.slice(0, startIdx + startMarker.length);
-  const after = original.slice(endIdx);
-
-  const items = buildItems(repoUrl, workspaceRoot);
-  const itemsMarkup = renderItems(items);
-
-  const section = [
-    '',
-    '        <section className="mx-auto max-w-7xl px-6 pb-16">',
-    '          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Explore more</h2>',
-    '          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">',
-    '',
-    itemsMarkup,
-    '          </div>',
-    '        </section>',
-    '        '
-  ].join('\n');
-
-  const updated = before + section + after;
-
-  if (updated !== original) {
-    fs.writeFileSync(targetPath, updated);
-    console.log('Front page explore section updated.');
-  } else {
-    console.log('Front page explore section already up to date.');
-  }
-}
-
-main();
->>>>>>> 66c36b7ed6 (feat(front): new Netlify automations + futuristic front ads section)
