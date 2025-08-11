@@ -83,6 +83,12 @@ export default function AutomationHub() {
             <p className="text-white/70">Finds broken images, optimizes assets, and syncs fixes.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/broken-image-scanner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
+
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Autonomous Cloud Inventions</h2>
+            <p className="text-white/70">Curates new automation ideas, writes an inventory JSON, and syncs changes.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/autonomous-cloud-inventions" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
         </ul>
       </main>
     </div>

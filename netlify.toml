@@ -190,3 +190,7 @@
 [[scheduled.functions]]
   name = "autonomous-innovation-generator"
   schedule = "*/2 * * * *" # every 2 minutes
+
+[[scheduled.functions]]
+  name = "autonomous-cloud-inventions"
+  schedule = "*/2 * * * *" # every 2 minutes
