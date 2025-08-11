@@ -23,6 +23,7 @@ function buildAds() {
     { title: 'Cloud Automations', desc: 'Netlify scheduled functions powering jobs 24/7', href: '/automation' },
     { title: 'A11y Alt Text Auditor', desc: 'Find and propose alt text across images', href: '/reports/a11y' },
     { title: 'Metadata Optimizer', desc: 'Detect missing meta tags and propose fixes', href: '/reports/metadata' },
+    { title: 'Stale Content Auditor', desc: 'Find stale pages, components, and docs', href: '/reports/stale-content' }
   ];
 
   const cards = items.map((item) => (
