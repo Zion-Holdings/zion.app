@@ -25,6 +25,7 @@ function buildAds() {
     { title: 'Metadata Optimizer', desc: 'Detect missing meta tags and propose fixes', href: '/reports/metadata' },
     { title: 'Stale Content Auditor', desc: 'Find stale files and publish a live report', href: '/.netlify/functions/stale-content-auditor-runner' },
     { title: 'Unused Exports Report', desc: 'Detects unused TS/JS exports and writes reports', href: '/.netlify/functions/unused-exports-runner' },
+    { title: 'Site Topic Map', desc: 'Auto‑generated knowledge graph of site topics', href: '/.netlify/functions/topic-map-runner' },
   ];
 
   const cards = items.map((item) => (
