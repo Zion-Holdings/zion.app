@@ -1763,6 +1763,36 @@ export default function MainFrontIndex() {
           </div>
         </motion.section>
 
+        {/* Innovation Lab — Intelligent Cloud Automations */}
+        <motion.section
+          id="innovation"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-7xl px-6 pb-14"
+        >
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Innovation Lab — Intelligent Cloud Automations</h2>
+          <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Autonomous, zero‑ops agents invent, curate, and ship safe diffs to <code>main</code>. Click any tool to run on‑demand.</p>
+          <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { title: 'Innovation Lab', desc: 'Invents and promotes fresh ideas across the site.', href: '/.netlify/functions/innovation-lab' },
+              { title: 'Autonomous Invention Orchestrator', desc: 'Generates new useful automation concepts and artifacts.', href: '/.netlify/functions/autonomous-invention-orchestrator' },
+              { title: 'Adaptive Orchestrator', desc: 'Chooses and runs the most relevant tasks every 5m.', href: '/.netlify/functions/adaptive-orchestrator' },
+              { title: 'Knowledge Pack Runner', desc: 'Builds a live repo knowledge pack JSON and commits.', href: '/.netlify/functions/knowledge-pack-runner' },
+              { title: 'Front Index Directory Builder', desc: 'Auto‑builds the front catalog and syncs to main.', href: '/.netlify/functions/front-index-directory-builder' },
+              { title: 'Trigger All + Commit', desc: 'Runs all functions and triggers a build or commit stamp.', href: '/.netlify/functions/trigger-all-and-commit' },
+            ].map((tool) => (
+              <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <div className="text-lg font-semibold">{tool.title}</div>
+                <div className="mt-1 text-sm text-white/75">{tool.desc}</div>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+              </a>
+            ))}
+          </div>
+        </motion.section>
+
       </div>
       {/* Back to top */}
       {showToTop && (

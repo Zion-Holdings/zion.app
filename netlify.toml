@@ -42,6 +42,10 @@
   schedule = "*/5 * * * *" # every 5 minutes
 
 [[scheduled.functions]]
+  name = "front-index-directory-builder"
+  schedule = "*/5 * * * *" # every 5 minutes
+
+[[scheduled.functions]]
   name = "frontpage-enhancer"
   schedule = "*/20 * * * *" # every 20 minutes
 
