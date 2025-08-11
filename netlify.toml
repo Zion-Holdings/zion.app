@@ -104,3 +104,63 @@
 [[scheduled.functions]]
   name = "hyper-front-index-accelerator"
   schedule = "*/1 * * * *" # every minute
+
+[[scheduled.functions]]
+  name = "dead-code-report"
+  schedule = "7 */6 * * *"
+
+[[scheduled.functions]]
+  name = "security-audit-runner"
+  schedule = "19 */6 * * *"
+
+[[scheduled.functions]]
+  name = "docs-index-runner"
+  schedule = "11 */4 * * *"
+
+[[scheduled.functions]]
+  name = "repo-knowledge-graph-runner"
+  schedule = "23 */6 * * *"
+
+[[scheduled.functions]]
+  name = "image-optimizer-runner"
+  schedule = "29 */6 * * *"
+
+[[scheduled.functions]]
+  name = "ai-changelog-runner"
+  schedule = "41 */6 * * *"
+
+[[scheduled.functions]]
+  name = "newsroom-runner"
+  schedule = "37 */6 * * *"
+
+[[scheduled.functions]]
+  name = "todo-scanner-runner"
+  schedule = "13 */6 * * *"
+
+[[scheduled.functions]]
+  name = "broken-image-scanner-runner"
+  schedule = "17 */6 * * *"
+
+[[scheduled.functions]]
+  name = "external-link-check-runner"
+  schedule = "31 */6 * * *"
+
+[[scheduled.functions]]
+  name = "repo-radar-runner"
+  schedule = "43 */6 * * *"
+
+[[scheduled.functions]]
+  name = "og-image-update-runner"
+  schedule = "47 */6 * * *"
+
+[[scheduled.functions]]
+  name = "docs-search-index-runner"
+  schedule = "53 */6 * * *"
+
+[[scheduled.functions]]
+  name = "todo-summary-runner"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+  name = "netlify-auto-healer-runner"
+  schedule = "*/20 * * * *"

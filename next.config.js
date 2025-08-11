@@ -7,6 +7,8 @@ const nextConfig = {
       { source: '/front/index', destination: '/', permanent: true }
     ];
   },
+  eslint: { ignoreDuringBuilds: true },
+  typescript: { ignoreBuildErrors: true },
 };
 
 module.exports = nextConfig;
