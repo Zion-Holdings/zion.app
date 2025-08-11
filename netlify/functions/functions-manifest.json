@@ -1,25 +1,23 @@
 {
+<<<<<<< HEAD
   "generatedAt": "2025-08-11T23:12:04.127Z",
+=======
+  "generatedAt": "2025-08-11T23:12:09.418Z",
+>>>>>>> origin/main
   "functions": [
-    "a11y-audit-runner",
     "ai-changelog-runner",
-    "ai-trends-radar-runner",
-    "auto-discovery-runner",
+    "alt-text-improver",
     "auto-scheduler",
-    "automation-guardian-runner",
     "automation-matrix",
-    "autonomous-innovation-generator",
     "autonomous-invention-orchestrator",
-    "branch-cleanup-runner",
     "broken-image-scanner",
     "broken-image-scanner-runner",
-    "cloud-autonomous-orchestrator-runner",
     "cloud_orchestrator",
+    "content-freshness-auditor",
     "continuous-front-runner",
     "continuous-orchestrator",
     "dead-code-audit",
     "dead-code-report",
-    "deps-auto-upgrade-runner",
     "docs-index-runner",
     "docs-search-index-runner",
     "external-link-check-runner",
@@ -45,7 +43,11 @@
     "hyper-front-index-accelerator",
     "image-optimizer-runner",
     "innovation-lab",
+<<<<<<< HEAD
     "internal-link-optimizer",
+=======
+    "internal-redirect-healer",
+>>>>>>> origin/main
     "link-and-health-scheduler",
     "link-crawler",
     "maintenance-scheduler",
@@ -57,30 +59,28 @@
     "newsroom-runner",
     "og-image-update-runner",
     "readme-advertiser",
-    "redirect-healer",
-    "redirect-manager",
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",
+<<<<<<< HEAD
     "revenue-ideas-orchestrator",
+=======
+    "revenue-optimizer",
+>>>>>>> origin/main
     "schedule-content-index",
     "schedule-homepage",
     "schedule-knowledge-graph",
     "schedule-site-health",
     "security-audit",
     "security-audit-runner",
-    "seo-audit-runner",
+    "seo-content-gap",
     "site-crawler",
-    "sitemap-prioritizer",
     "sitemap_runner",
-    "stale-content-auditor-runner",
-    "terminology-consistency-runner",
     "todo-scanner-runner",
     "todo-summary-runner",
     "trigger-all-and-commit",
     "ui-enhancer",
     "ultrafast-front-orchestrator",
-    "ultrafast-orchestrator",
-    "website-search-index-runner"
+    "ultrafast-orchestrator"
   ]
 }

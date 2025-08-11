@@ -218,8 +218,6 @@ export default function MainFrontIndex() {
                 ['Automation Hub', '/automation'],
                 ['SEO Audit', '/reports/seo'],
                 ['AI Trends', '/reports/ai-trends'],
-                ['Redirect Healer', '/.netlify/functions/redirect-healer'],
-                ['Sitemap Prioritizer', '/.netlify/functions/sitemap-prioritizer'],
                 ['Newsroom', '/newsroom'],
                 ['Site Health', '/site-health'],
               ].map(([label, href]) => (
@@ -445,9 +443,9 @@ export default function MainFrontIndex() {
               { label: 'Homepage Advertiser', desc: 'Curates and updates the home explore section.', href: '/.netlify/functions/homepage_advertiser' },
               { label: 'Cloud Orchestrator', desc: 'Runs fast improvement cycle and git sync.', href: '/.netlify/functions/cloud_orchestrator' },
               { label: 'Sitemap Runner', desc: 'Keeps sitemap fresh for SEO visibility.', href: '/.netlify/functions/sitemap_runner' },
-              { label: 'Smart Redirect Manager', desc: 'Fixes internal 404s; updates public/_redirects and report.', href: '/.netlify/functions/redirect-manager' },
-              { label: 'A11y Alt‑Text Auditor', desc: 'Scans for missing alt attributes and publishes reports.', href: '/.netlify/functions/a11y-audit-runner' },
-              { label: 'Terminology Consistency', desc: 'Normalizes product terminology across docs and README.', href: '/.netlify/functions/terminology-consistency-runner' },
+              { label: 'Internal Redirect Healer', desc: 'Eliminates /index redirects in internal links for faster nav.', href: '/.netlify/functions/internal-redirect-healer' },
+              { label: 'Content Freshness Auditor', desc: 'Publishes a stale content report for pages and docs.', href: '/.netlify/functions/content-freshness-auditor' },
+              { label: 'Alt Text Improver', desc: 'Adds missing alt text to images for better a11y.', href: '/.netlify/functions/alt-text-improver' },
             ].map((f) => (
               <a key={f.label} href={f.href} target="_blank" rel="noopener" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
@@ -1723,9 +1721,13 @@ export default function MainFrontIndex() {
   <div className="text-base font-semibold">AI Changelog — highlights</div>
   <div className="mt-1 text-sm text-white/75">Summarized updates</div>
   <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
-              <Link href="/.netlify/functions/autonomous-innovation-generator"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
-  <div className="text-base font-semibold">Autonomous Innovation Generator</div>
-  <div className="mt-1 text-sm text-white/75">Front promos + homepage refresh</div>
+              <Link href="/.netlify/functions/revenue-optimizer"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">Revenue Optimizer</div>
+  <div className="mt-1 text-sm text-white/75">Generates services & CTAs</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+              <Link href="/.netlify/functions/seo-content-gap"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">SEO Content Gaps</div>
+  <div className="mt-1 text-sm text-white/75">Finds missing topics</div>
   <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
   </div>
 </section>
