@@ -37,6 +37,8 @@ function detectLinks(root) {
 
   links.push({ type: 'external', href: repoUrl + '/actions', title: 'Live Pipelines', desc: 'CI logs & artifacts' });
   links.push({ type: 'external', href: repoUrl + '/tree/main/docs', title: 'Docs & Guides', desc: 'Technical notes' });
+  // Cloud-native function links
+  links.push({ type: 'internal', href: '/.netlify/functions/autonomous-cloud-inventor', title: 'Cloud Inventor (2m)', desc: 'Discovers, orchestrates, syncs' });
 
   const seen = new Set();
   return links.filter((l) => (seen.has(l.href) ? false : (seen.add(l.href), true)));
