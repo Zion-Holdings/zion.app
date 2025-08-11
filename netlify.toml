@@ -232,3 +232,18 @@
 [[scheduled.functions]]
   name = "docs-knowledge-sync"
   schedule = "11 */4 * * *"
+
+# New: cache warming for instant loads
+[[scheduled.functions]]
+  name = "edge-cache-warmer"
+  schedule = "*/10 * * * *" # every 10 minutes
+
+# New: accessibility auditor report
+[[scheduled.functions]]
+  name = "a11y-auditor"
+  schedule = "0 */6 * * *" # every 6 hours
+
+# New: search engine pinger after sitemap changes
+[[scheduled.functions]]
+  name = "search-engine-pinger"
+  schedule = "0 */12 * * *" # twice per day
