@@ -17,13 +17,15 @@ function detectLinks(root) {
     { href: '/reports/ai-trends', title: 'AI Trends', desc: 'Ecosystem intelligence signals' },
     { href: '/newsroom', title: 'Newsroom', desc: 'Autonomous updates & evolution' },
     { href: '/main/front', title: 'Front Systems Hub', desc: 'Curated futuristic front experience' },
+    { href: '/.netlify/functions/deps-auto-upgrade-runner', title: 'Deps Auto‑Upgrade', desc: 'Keeps dependencies fresh safely' },
+    { href: '/.netlify/functions/frontpage-advertiser', title: 'Frontpage Advertiser', desc: 'Refreshes front promos automatically' },
   ];
   internal.forEach((i) => {
     const check = i.href.endsWith('/') ? i.href.slice(0, -1) : i.href;
     const parts = check.split('/').filter(Boolean);
     const candidateIndex = path.join(pagesDir, ...parts, 'index.tsx');
     const candidatePage = path.join(pagesDir, ...parts) + '.tsx';
-    if (fileExists(candidateIndex) || fileExists(candidatePage)) links.push({ type: 'internal', ...i });
+    if (fileExists(candidateIndex) || fileExists(candidatePage) || i.href.startsWith('/.netlify/functions/')) links.push({ type: 'internal', ...i });
   });
 
   const pkgPath = path.join(root, 'package.json');
