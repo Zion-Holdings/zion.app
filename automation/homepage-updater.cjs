@@ -27,10 +27,13 @@ function buildItems(repoUrl, workspaceRoot) {
     if (fileExists(c.check)) items.push({ type: 'internal', href: c.href, label: c.label });
   });
 
-  // External useful links
-  items.push({ type: 'external', href: `${repoUrl}/actions`, label: 'GitHub Actions — live workflows' });
+  // External useful links (avoid GitHub Actions; prefer on-site resources)
   if (fileExists(path.join(workspaceRoot, 'docs'))) {
-    items.push({ type: 'external', href: `${repoUrl}/tree/main/docs`, label: 'Docs — technical notes & guides' });
+    items.push({ type: 'internal', href: '/docs', label: 'Docs — technical notes & guides' });
+  }
+  // Prefer internal site-health and reports hubs
+  if (fileExists(path.join(workspaceRoot, 'pages', 'site-health.tsx'))) {
+    items.push({ type: 'internal', href: '/site-health', label: 'Site Health — audits & insights' });
   }
 
   return items;

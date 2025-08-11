@@ -87,35 +87,23 @@ function discoverInternalPages() {
 }
 
 function discoverKeyWorkflows() {
-  const wfDir = path.join(ROOT, '.github', 'workflows');
-  const selected = [
-    'autonomous-cloud.yml',
-    'rapid-git-sync.yml',
-    'performance-audit.yml',
-    'optimize-images.yml',
-    'sitemap-auto-commit.yml',
+  // Replace GitHub Actions links with internal automation hubs and Netlify function logs
+  const internal = [
+    { href: '/automation', label: 'Automation Hub', tagline: 'Factories & live agents' },
+    { href: '/site-health', label: 'Site Health', tagline: 'A11y, performance, links' },
+    { href: '/newsroom', label: 'Newsroom', tagline: 'Autonomous updates' },
   ];
-  const nameMap = {
-    'autonomous-cloud.yml': { label: 'Autonomous Cloud', tagline: '15m cadence orchestrations' },
-    'rapid-git-sync.yml': { label: 'Rapid Git Sync', tagline: 'Fast repo syncing' },
-    'performance-audit.yml': { label: 'Performance Audit', tagline: 'Lighthouse & runtime checks' },
-    'optimize-images.yml': { label: 'Image Optimizer', tagline: 'Automatic asset slimming' },
-    'sitemap-auto-commit.yml': { label: 'Sitemap Auto‑Update', tagline: 'Fresh URLs daily' },
-  };
 
-  const items = [];
-  try {
-    const files = fs.existsSync(wfDir) ? fs.readdirSync(wfDir) : [];
-    for (const f of files) {
-      if (!selected.includes(f)) continue;
-      const info = nameMap[f] || { label: titleCase(f.replace(/\.ya?ml$/, '')), tagline: 'Automation workflow' };
-      const href = `https://github.com/Zion-Holdings/zion.app/actions/workflows/${f}`;
-      items.push({ type: 'external', href, label: info.label, tagline: info.tagline });
-    }
-  } catch (err) {
-    log(`Error discovering workflows: ${err.message}`);
-  }
-  return items;
+  // If Netlify function endpoints are exposed for logs, surface them as external links
+  const netlifyLogs = [
+    { href: process.env.NETLIFY_FRONT_UPGRADER_URL || '', label: 'Front Upgrader', tagline: 'Scheduled enhancements' },
+    { href: process.env.NETLIFY_HOMEPAGE_ENHANCER_URL || '', label: 'Homepage Enhancer', tagline: 'Explore section freshness' },
+  ].filter((x) => !!x.href);
+
+  return [
+    ...internal.map((i) => ({ type: 'internal', ...i })),
+    ...netlifyLogs.map((n) => ({ type: 'external', ...n })),
+  ];
 }
 
 function buildCard(item) {
