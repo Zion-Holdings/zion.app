@@ -186,3 +186,28 @@
 [[scheduled.functions]]
   name = "auto-scheduler"
   schedule = "*/15 * * * *" # every 15 minutes
+
+# New autonomous cloud automations
+[[scheduled.functions]]
+  name = "performance-budget-checker"
+  schedule = "*/5 * * * *" # every 5 minutes
+
+[[scheduled.functions]]
+  name = "accessibility-quickscan"
+  schedule = "*/5 * * * *" # every 5 minutes
+
+[[scheduled.functions]]
+  name = "og-preview-validator"
+  schedule = "*/15 * * * *" # every 15 minutes
+
+[[scheduled.functions]]
+  name = "content-freshness-runner"
+  schedule = "*/30 * * * *" # every 30 minutes
+
+[[scheduled.functions]]
+  name = "redirect-404-suggester"
+  schedule = "0 * * * *" # hourly
+
+[[scheduled.functions]]
+  name = "ai-issue-labeler"
+  schedule = "*/5 * * * *" # every 5 minutes
