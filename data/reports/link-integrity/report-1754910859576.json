@@ -1,0 +1,346 @@
+{
+  "baseUrl": "https://zion.app",
+  "generatedAt": "2025-08-11T11:14:19.576Z",
+  "pagesScanned": 36,
+  "linksChecked": 408,
+  "broken": [
+    {
+      "from": "https://zion.app",
+      "href": "https://zion.app/payments/stripe-checkout/wechatpay/4/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "from": "https://zion.app",
+      "href": "https://zion.app/payments/stripe-checkout/card/4/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "from": "https://zion.app",
+      "href": "https://zion.app/payments/stripe-checkout/wechatpay/5/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "from": "https://zion.app",
+      "href": "https://zion.app/payments/stripe-checkout/card/5/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "from": "https://zion.app",
+      "href": "https://zion.app/payments/stripe-checkout/wechatpay/6/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "from": "https://zion.app",
+      "href": "https://zion.app/payments/stripe-checkout/card/6/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "from": "https://zion.app",
+      "href": "https://zion.app/payments/stripe-checkout/wechatpay/7/",
+      "status": 500,
+      "error": null
+    },
+    {
+      "from": "https://zion.app",
+      "href": "https://zion.app/payments/stripe-checkout/card/7/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "from": "https://zion.app",
+      "href": "https://zion.app/payments/stripe-checkout/wechatpay/8/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "from": "https://zion.app",
+      "href": "https://zion.app/payments/stripe-checkout/card/8/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "from": "https://zion.app/",
+      "href": "https://zion.app/payments/stripe-checkout/wechatpay/4/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "from": "https://zion.app/",
+      "href": "https://zion.app/payments/stripe-checkout/card/4/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "from": "https://zion.app/",
+      "href": "https://zion.app/payments/stripe-checkout/wechatpay/5/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "from": "https://zion.app/",
+      "href": "https://zion.app/payments/stripe-checkout/card/5/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "from": "https://zion.app/",
+      "href": "https://zion.app/payments/stripe-checkout/wechatpay/6/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "from": "https://zion.app/",
+      "href": "https://zion.app/payments/stripe-checkout/card/6/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "from": "https://zion.app/",
+      "href": "https://zion.app/payments/stripe-checkout/wechatpay/7/",
+      "status": 500,
+      "error": null
+    },
+    {
+      "from": "https://zion.app/",
+      "href": "https://zion.app/payments/stripe-checkout/card/7/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "from": "https://zion.app/",
+      "href": "https://zion.app/payments/stripe-checkout/wechatpay/8/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "from": "https://zion.app/",
+      "href": "https://zion.app/payments/stripe-checkout/card/8/",
+      "status": 404,
+      "error": null
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://zion.app",
+      "status": 200,
+      "linkCount": 33,
+      "ok": true
+    },
+    {
+      "url": "https://zion.app/",
+      "status": 200,
+      "linkCount": 33,
+      "ok": true
+    },
+    {
+      "url": "https://zion.app/ssinvite/",
+      "status": 200,
+      "linkCount": 19,
+      "ok": true
+    },
+    {
+      "url": "https://zion.app/login-modal/",
+      "status": 200,
+      "linkCount": 2,
+      "ok": true
+    },
+    {
+      "url": "https://zion.app/register-modal/",
+      "status": 200,
+      "linkCount": 1,
+      "ok": true
+    },
+    {
+      "url": "https://zion.app/client/ios/",
+      "status": 200,
+      "linkCount": 20,
+      "ok": true
+    },
+    {
+      "url": "https://zion.app/client/srk_ios/",
+      "status": 200,
+      "linkCount": 20,
+      "ok": true
+    },
+    {
+      "url": "https://zion.app/client/s2rvtwo/",
+      "status": 200,
+      "linkCount": 20,
+      "ok": true
+    },
+    {
+      "url": "https://zion.app/client/netch/",
+      "status": 200,
+      "linkCount": 20,
+      "ok": true
+    },
+    {
+      "url": "https://zion.app/client/macos/",
+      "status": 200,
+      "linkCount": 19,
+      "ok": true
+    },
+    {
+      "url": "https://zion.app/payments/stripe-checkout/wechatpay/4/",
+      "status": 404,
+      "linkCount": 0,
+      "ok": false
+    },
+    {
+      "url": "https://zion.app/payments/stripe-checkout/card/4/",
+      "status": 404,
+      "linkCount": 0,
+      "ok": false
+    },
+    {
+      "url": "https://zion.app/payments/stripe-checkout/wechatpay/5/",
+      "status": 404,
+      "linkCount": 0,
+      "ok": false
+    },
+    {
+      "url": "https://zion.app/payments/stripe-checkout/card/5/",
+      "status": 404,
+      "linkCount": 0,
+      "ok": false
+    },
+    {
+      "url": "https://zion.app/payments/stripe-checkout/wechatpay/6/",
+      "status": 404,
+      "linkCount": 0,
+      "ok": false
+    },
+    {
+      "url": "https://zion.app/payments/stripe-checkout/card/6/",
+      "status": 404,
+      "linkCount": 0,
+      "ok": false
+    },
+    {
+      "url": "https://zion.app/payments/stripe-checkout/wechatpay/7/",
+      "status": 500,
+      "linkCount": 0,
+      "ok": false
+    },
+    {
+      "url": "https://zion.app/payments/stripe-checkout/card/7/",
+      "status": 404,
+      "linkCount": 0,
+      "ok": false
+    },
+    {
+      "url": "https://zion.app/payments/stripe-checkout/wechatpay/8/",
+      "status": 404,
+      "linkCount": 0,
+      "ok": false
+    },
+    {
+      "url": "https://zion.app/payments/stripe-checkout/card/8/",
+      "status": 404,
+      "linkCount": 0,
+      "ok": false
+    },
+    {
+      "url": "https://zion.app/privacy/",
+      "status": 200,
+      "linkCount": 18,
+      "ok": true
+    },
+    {
+      "url": "https://zion.app/terms/",
+      "status": 200,
+      "linkCount": 18,
+      "ok": true
+    },
+    {
+      "url": "https://zion.app/client/windows/",
+      "status": 200,
+      "linkCount": 20,
+      "ok": true
+    },
+    {
+      "url": "https://zion.app/client/v2n_win/",
+      "status": 200,
+      "linkCount": 20,
+      "ok": true
+    },
+    {
+      "url": "https://zion.app/client/srk_mac/",
+      "status": 200,
+      "linkCount": 20,
+      "ok": true
+    },
+    {
+      "url": "https://zion.app/client/v2n_macos/",
+      "status": 200,
+      "linkCount": 20,
+      "ok": true
+    },
+    {
+      "url": "https://zion.app/client/vtwong/",
+      "status": 200,
+      "linkCount": 20,
+      "ok": true
+    },
+    {
+      "url": "https://zion.app/client/merlin/",
+      "status": 200,
+      "linkCount": 21,
+      "ok": true
+    },
+    {
+      "url": "https://zion.app/client/linux/",
+      "status": 200,
+      "linkCount": 21,
+      "ok": true
+    },
+    {
+      "url": "https://zion.app/client/telegram/",
+      "status": 200,
+      "linkCount": 19,
+      "ok": true
+    },
+    {
+      "url": "https://zion.app/client/line/",
+      "status": 200,
+      "linkCount": 19,
+      "ok": true
+    },
+    {
+      "url": "https://zion.app/static/img/favicon.ico",
+      "status": 200,
+      "linkCount": 0,
+      "ok": true
+    },
+    {
+      "url": "https://zion.app/static/img/logo/logo.ico",
+      "status": 200,
+      "linkCount": 0,
+      "ok": true
+    },
+    {
+      "url": "https://zion.app/static/customer/web2/css/head2-com.css",
+      "status": 200,
+      "linkCount": 0,
+      "ok": true
+    },
+    {
+      "url": "https://zion.app/password_reset/",
+      "status": 200,
+      "linkCount": 1,
+      "ok": true
+    },
+    {
+      "url": "https://zion.app/userinfo/",
+      "status": 200,
+      "linkCount": 4,
+      "ok": true
+    }
+  ]
+}
