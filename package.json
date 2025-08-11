@@ -172,7 +172,7 @@
     "cursor:chat:analyze": "node automation/cursor-chat-analyzer.cjs && node automation/cursor-chat-factory.cjs",
     "links:start": "node automation/site-link-orchestrator.cjs",
     "links:cron:start": "bash automation/site-link-cron.sh",
-    "links:scan": "node automation/site-link-crawler.cjs && node automation/site-link-fixer.cjs",
+    "links:scan": "node automation/site-link-orchestrator.cjs",
     "promo:start": "node automation/site-promo-orchestrator.cjs",
     "promo:cron:start": "bash automation/site-promo-cron.sh",
     "promo:scan": "node automation/site-promo-analyzer.cjs && node automation/homepage-promo-applier.cjs",
