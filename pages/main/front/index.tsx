@@ -1725,7 +1725,6 @@ export default function MainFrontIndex() {
   <div className="text-base font-semibold">Component Size Report</div>
   <div className="mt-1 text-sm text-white/75">Largest components by lines and bytes</div>
   <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
-  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
   </div>
 </section>
 {/* AUTO-GENERATED: FRONT_ADS_END */}
