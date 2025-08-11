@@ -217,12 +217,9 @@ export default function Home() {
               { title: 'Frontpage Enhancer', desc: 'Auto‑advertises features and refreshes homepage content hourly.', href: '/.netlify/functions/frontpage-enhancer' },
               { title: 'Link & Health Scheduler', desc: 'Runs link checks, health scans, and sitemap updates every 6h.', href: '/.netlify/functions/link-and-health-scheduler' },
               { title: 'Marketing & Features Promo', desc: 'Regenerates homepage promos and deep links every 2h.', href: '/.netlify/functions/marketing-and-features-promo' },
-<<<<<<< HEAD
-              { title: 'Front Enhancer (5‑min)', desc: 'Continuously updates front auto‑promotions and syncs to main.', href: '/.netlify/functions/front-enhancer' }
-=======
-              { title: 'Continuous Orchestrator', desc: 'Runs key home and front updates every 5m.', href: '/.netlify/functions/continuous-orchestrator' },
-              { title: 'Front Index Orchestrator', desc: 'Promotes features and pushes changes every 10m.', href: '/.netlify/functions/front-index-orchestrator' },
->>>>>>> d19585db53 (feat(automations): add Netlify continuous and front-index orchestrators; enhance front/index advertiser; update homepage tool links; schedule new functions in netlify.toml)
+              { title: 'Front Enhancer (fast)', desc: 'Runs front improvements every 10 minutes.', href: '/.netlify/functions/front-enhancer' },
+              { title: 'Homepage Advertiser', desc: 'Pushes fresh highlights every 15 minutes.', href: '/.netlify/functions/homepage_advertiser' },
+              { title: 'Cloud Orchestrator', desc: 'Coordinates broader agents on a 4h cadence.', href: '/.netlify/functions/cloud_orchestrator' },
             ].map((tool) => (
               <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
