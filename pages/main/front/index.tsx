@@ -1691,7 +1691,7 @@ export default function MainFrontIndex() {
 
           </div>
         </section>
-        /* AUTO-GENERATED: FRONT_ADS_END */}
+        {/* AUTO-GENERATED: FRONT_ADS_END */}
 
         {/* Feature Highlights (new) */}
         <motion.section
