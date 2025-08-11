@@ -67,26 +67,20 @@ export default function MainFrontIndex() {
           <div className="hidden items-center gap-6 md:flex">
             <Link href="/"><a className="text-white/80 hover:text-white">Home</a></Link>
             <Link href="#command-center"><a className="text-white/80 hover:text-white">Command</a></Link>
-            <Link href="#agents"><a className="text-white/80 hover:text-white">Agents</a></Link>
-            <Link href="#showcase"><a className="text-white/80 hover:text-white">Showcase</a></Link>
             <Link href="#features"><a className="text-white/80 hover:text-white">Features</a></Link>
             <Link href="#feature-map"><a className="text-white/80 hover:text-white">Map</a></Link>
             <Link href="#suites"><a className="text-white/80 hover:text-white">Suites</a></Link>
-            <Link href="#use-cases"><a className="text-white/80 hover:text-white">Use&nbsp;Cases</a></Link>
-            <Link href="#outcomes"><a className="text-white/80 hover:text-white">Outcomes</a></Link>
-            <Link href="#templates"><a className="text-white/80 hover:text-white">Templates</a></Link>
-            <Link href="#modules"><a className="text-white/80 hover:text-white">Modules</a></Link>
-            <Link href="#guardrails"><a className="text-white/80 hover:text-white">Guardrails</a></Link>
             <Link href="#capabilities"><a className="text-white/80 hover:text-white">Capabilities</a></Link>
+            <Link href="#use-cases"><a className="text-white/80 hover:text-white">Use Cases</a></Link>
+            <Link href="#pillars"><a className="text-white/80 hover:text-white">Pillars</a></Link>
             <Link href="#benefits"><a className="text-white/80 hover:text-white">Benefits</a></Link>
-            <Link href="#deep-dives"><a className="text-white/80 hover:text-white">Deep Dives</a></Link>
+            <Link href="#templates"><a className="text-white/80 hover:text-white">Templates</a></Link>
+            <Link href="#demos"><a className="text-white/80 hover:text-white">Demos</a></Link>
+            <Link href="#highlights"><a className="text-white/80 hover:text-white">Highlights</a></Link>
+            <Link href="#cases"><a className="text-white/80 hover:text-white">Cases</a></Link>
             <Link href="#reports"><a className="text-white/80 hover:text-white">Reports</a></Link>
             <Link href="#roadmap"><a className="text-white/80 hover:text-white">Docs</a></Link>
-            <Link href="/newsroom"><a className="text-white/80 hover:text-white">Newsroom</a></Link>
-            <Link href="/site-health"><a className="text-white/80 hover:text-white">Site&nbsp;Health</a></Link>
-            <Link href="/reports/seo"><a className="text-white/80 hover:text-white">SEO</a></Link>
-            <Link href="/reports/ai-trends"><a className="text-white/80 hover:text-white">AI&nbsp;Trends</a></Link>
-            <Link href="/automation"><a className="rounded-lg bg-gradient-to-r from-fuchsia-500 to-cyan-500 px-4 py-2 text-sm font-semibold shadow-[0_0_18px_rgba(34,211,238,0.25)] hover:shadow-[0_0_28px_rgba(34,211,238,0.45)]">Launch Hub</a></Link>
+            <Link href="/automation"><a className="text-white/80 hover:text-white">Automations</a></Link>
           </div>
           <button aria-label="Open menu" onClick={() => setMobileOpen(true)} className="md:hidden rounded-md border border-white/15 bg-white/5 px-3 py-1.5 text-sm text-white/80">Menu</button>
         </nav>
@@ -114,21 +108,19 @@ export default function MainFrontIndex() {
                 {[
                   ['Home','/'],
                   ['Command','#command-center'],
-                  ['Agents','#agents'],
                   ['Features','#features'],
                   ['Map','#feature-map'],
                   ['Suites','#suites'],
-                  ['Use Cases','#use-cases'],
-                  ['Guardrails','#guardrails'],
                   ['Capabilities','#capabilities'],
+                  ['Use Cases','#use-cases'],
+                  ['Pillars','#pillars'],
                   ['Benefits','#benefits'],
-                  ['Deep Dives','#deep-dives'],
+                  ['Templates','#templates'],
+                  ['Demos','#demos'],
+                  ['Highlights','#highlights'],
+                  ['Cases','#cases'],
                   ['Reports','#reports'],
                   ['Docs','#roadmap'],
-                  ['Newsroom','/newsroom'],
-                  ['Site Health','/site-health'],
-                  ['SEO','/reports/seo'],
-                  ['AI Trends','/reports/ai-trends'],
                   ['Automations','/automation'],
                 ].map(([label, href]) => (
                   (href as string).startsWith('#') ? (
@@ -305,16 +297,19 @@ export default function MainFrontIndex() {
           <nav aria-label="Quick section navigation" className="space-y-2">
             {[
               ['#command-center', 'Command'],
-              ['#showcase', 'Showcase'],
-              ['#features', 'Features'],
+              ['#feature-map', 'Map'],
+              ['#suites', 'Suites'],
               ['#capabilities', 'Capabilities'],
+              ['#use-cases', 'Use Cases'],
+              ['#pillars', 'Pillars'],
               ['#benefits', 'Benefits'],
-              ['#feature-map', 'Feature Map'],
+              ['#templates', 'Templates'],
+              ['#demos', 'Demos'],
+              ['#highlights', 'Highlights'],
+              ['#cases', 'Cases'],
               ['#reports', 'Reports'],
               ['#guardrails', 'Guardrails'],
-              ['#outcomes', 'Outcomes'],
-              ['#templates', 'Templates'],
-              ['#modules', 'Modules'],
+              ['#roadmap', 'Docs'],
             ].map(([href, label]) => (
               <a key={href} href={href} className="block rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/75 backdrop-blur-md hover:border-cyan-400/40 hover:text-white">
                 {label}
@@ -1305,7 +1300,7 @@ export default function MainFrontIndex() {
         </section>
 
         {/* Demos & Live Data */}
-        <section className="mx-auto max-w-7xl px-6 pb-20">
+        <section id="demos" className="mx-auto max-w-7xl px-6 pb-20">
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Demos & Live Data</h2>
           <div className="mx-auto mt-6 max-w-5xl grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
             <Link href="/automation"><a className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl hover:border-cyan-400/30">Automation Hub →</a></Link>
@@ -1318,6 +1313,7 @@ export default function MainFrontIndex() {
 
         {/* Highlights */}
         <motion.section
+          id="highlights"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
@@ -1347,6 +1343,7 @@ export default function MainFrontIndex() {
 
         {/* Case Studies & Stories */}
         <motion.section
+          id="cases"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
