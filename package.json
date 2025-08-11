@@ -31,9 +31,11 @@
     "export": "NODE_OPTIONS=--openssl-legacy-provider next build && next export && cp -f _redirects out/_redirects || true",
     "start": "next start",
     "postbuild": "next export",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "type-check": "tsc --noEmit",
-    "prepare": "husky install",
+          "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+      "type-check": "tsc --noEmit",
+      "test": "jest --coverage",
+      "test:ci": "jest --ci --coverage",
+      "prepare": "husky install",
     "fix:all": "npm run lint -- --fix || true && node fix_typescript_syntax_errors.cjs || true && node fix_all_typescript_errors.cjs || true && node final_fix.cjs || true",
     "build:heal": "npm run build || (npm run fix:all && npm run build)",
     "ci:heal": "npm run fix:all && (npm run type-check || true) && npm run build:heal",
@@ -289,12 +291,16 @@
     "eslint-plugin-react-refresh": "^0.4.20",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.4",
-    "postcss": "^8.4.32",
-    "sharp": "^0.33.4",
-    "tailwindcss": "^3.4.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.6.3"
-  },
+          "postcss": "^8.4.32",
+      "sharp": "^0.33.4",
+      "tailwindcss": "^3.4.0",
+      "ts-node": "^10.9.2",
+      "typescript": "^5.6.3",
+      "jest": "^29.7.0",
+      "ts-jest": "^29.2.5",
+      "jest-environment-jsdom": "^29.7.0",
+      "identity-obj-proxy": "^3.0.0"
+    },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
       "eslint --fix"

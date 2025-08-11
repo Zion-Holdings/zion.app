@@ -33,7 +33,6 @@ jobs:
           # Lint auto-fix
           npm run lint -- --fix || true
           # Regenerate sitemap and SEO artifacts
-          node scripts/automations/generate_sitemap.cjs || true
           node scripts/generate-sitemap.js || true
           node scripts/seo-audit.js || true
 
