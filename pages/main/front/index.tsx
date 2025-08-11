@@ -61,7 +61,11 @@ export default function MainFrontIndex() {
             <Link href="#use-cases"><a className="text-white/80 hover:text-white">Use&nbsp;Cases</a></Link>
             <Link href="#guardrails"><a className="text-white/80 hover:text-white">Guardrails</a></Link>
             <Link href="#capabilities"><a className="text-white/80 hover:text-white">Capabilities</a></Link>
+            <Link href="#suites"><a className="text-white/80 hover:text-white">Suites</a></Link>
+            <Link href="#feature-map"><a className="text-white/80 hover:text-white">Map</a></Link>
+            <Link href="#guardrails"><a className="text-white/80 hover:text-white">Guardrails</a></Link>
             <Link href="#benefits"><a className="text-white/80 hover:text-white">Benefits</a></Link>
+            <Link href="#deep-dives"><a className="text-white/80 hover:text-white">Deep Dives</a></Link>
             <Link href="#reports"><a className="text-white/80 hover:text-white">Reports</a></Link>
             <Link href="#roadmap"><a className="text-white/80 hover:text-white">Docs</a></Link>
             <Link href="/automation"><a className="text-white/80 hover:text-white">Automations</a></Link>
@@ -656,17 +660,28 @@ export default function MainFrontIndex() {
         >
           <div className="neon-divider mx-auto mb-8 h-px w-full max-w-5xl" />
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Live Impact</h2>
-          <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-4">
+          <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
             {[
-              ['Workflows', '1,200+'],
-              ['Commits Synced', '800+'],
-              ['Automated Edits', '3,500+'],
-              ['Uptime', '99.95%'],
-            ].map(([label, value]) => (
-              <div key={label} className="rounded-2xl border border-white/10 bg-white/5 p-5 text-center backdrop-blur">
-                <div className="text-2xl font-extrabold tracking-tight">{value}</div>
-                <div className="mt-1 text-xs text-white/70">{label}</div>
-              </div>
+              { label: 'Workflows', value: '1,200+', href: 'https://github.com/Zion-Holdings/zion.app/actions', external: true },
+              { label: 'Commits Synced', value: '800+', href: '/automation' },
+              { label: 'Automated Edits', value: '3,500+', href: '/automation' },
+              { label: 'Uptime', value: '99.95%', href: '/site-health' },
+              { label: 'A11y Checks', value: '20k+', href: '/site-health' },
+              { label: 'SEO Fixes', value: '4.2k+', href: '/reports/seo' },
+            ].map((item) => (
+              item.external ? (
+                <a key={item.label} href={item.href as string} target="_blank" rel="noopener" className="rounded-2xl border border-white/10 bg-white/5 p-5 text-center backdrop-blur hover:border-cyan-400/30">
+                  <div className="text-2xl font-extrabold tracking-tight">{item.value}</div>
+                  <div className="mt-1 text-xs text-white/70">{item.label}</div>
+                </a>
+              ) : (
+                <Link key={item.label} href={item.href as string}>
+                  <a className="rounded-2xl border border-white/10 bg-white/5 p-5 text-center backdrop-blur hover:border-cyan-400/30">
+                    <div className="text-2xl font-extrabold tracking-tight">{item.value}</div>
+                    <div className="mt-1 text-xs text-white/70">{item.label}</div>
+                  </a>
+                </Link>
+              )
             ))}
           </div>
         </motion.section>
@@ -727,6 +742,38 @@ export default function MainFrontIndex() {
                 <div className="mt-2 text-base font-semibold">{title as string}</div>
                 <div className="mt-1 text-sm text-white/75">{desc as string}</div>
               </div>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* Value Pillars */}
+        <motion.section
+          id="pillars"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-7xl px-6 pb-14"
+        >
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Value Pillars</h2>
+          <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Four pillars that guide every autonomous change — jump into the systems behind each.</p>
+          <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { Icon: ShieldCheck, title: 'Security & Safety', desc: 'Guardrails, policy, and quality gates.', href: '/site-health' },
+              { Icon: Rocket, title: 'Speed & Momentum', desc: 'Small diffs shipped continuously.', href: '/automation' },
+              { Icon: Gauge, title: 'Quality & Reliability', desc: 'A11y, performance, and link integrity.', href: '/site-health' },
+              { Icon: Layers, title: 'Scale & Composability', desc: 'Factories chained into higher‑order workflows.', href: '/automation' },
+            ].map(({ Icon, title, desc, href }) => (
+              <Link key={title} href={href}>
+                <a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+                  <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                  <div className="flex items-center gap-3">
+                    <Icon className="h-5 w-5 text-cyan-300" />
+                    <h3 className="text-lg font-semibold">{title}</h3>
+                  </div>
+                  <p className="mt-1 text-sm text-white/75">{desc}</p>
+                </a>
+              </Link>
             ))}
           </div>
         </motion.section>
@@ -991,6 +1038,7 @@ export default function MainFrontIndex() {
 
         {/* Deep Dives */}
         <motion.section
+          id="deep-dives"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
