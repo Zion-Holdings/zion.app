@@ -73,6 +73,11 @@
     "ui-enhancer",
     "ultrafast-front-orchestrator",
     "ultrafast-orchestrator",
+<<<<<<< HEAD
     "unused-media-scanner"
+=======
+    "knowledge-pack-runner",
+    "adaptive-orchestrator"
+>>>>>>> 81e000b0dc (feat(automation): adaptive orchestrator + knowledge pack runner; advertise on homepage; schedule in Netlify)
   ]
 }

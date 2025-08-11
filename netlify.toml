@@ -216,6 +216,7 @@ schedule = "*/30 * * * *"
 
 [[scheduled.functions]]
   name = "deps-auto-upgrade-runner"
+<<<<<<< HEAD
   schedule = "7 */12 * * *"
 
 # New autonomous cloud scanners
@@ -235,3 +236,14 @@ name = "deps-auto-upgrade-runner"
 schedule = "0 3 * * *"
 >>>>>>> Stashed changes
 >>>>>>> origin/main
+=======
+  schedule = "0 3 * * *"
+
+[[scheduled.functions]]
+  name = "knowledge-pack-runner"
+  schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+  name = "adaptive-orchestrator"
+  schedule = "*/5 * * * *"
+>>>>>>> 81e000b0dc (feat(automation): adaptive orchestrator + knowledge pack runner; advertise on homepage; schedule in Netlify)
