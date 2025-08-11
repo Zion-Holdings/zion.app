@@ -66,17 +66,23 @@ export default function AutomationHub() {
             <p className="text-white/70">Ultra-fast front index futurizer and directory builder.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/hyper-front-index-accelerator" target="_blank" rel="noopener">Trigger / View</a>
           </li>
-          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Innovation Lab</h2>
-            <p className="text-white/70">Invents, curates, and promotes fresh ideas across the site.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/innovation-lab" target="_blank" rel="noopener">Trigger / View</a>
-          </li>
+                     <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+             <h2 className="text-xl font-bold">Innovation Lab</h2>
+             <p className="text-white/70">Invents, curates, and promotes fresh ideas across the site.</p>
+             <a className="text-cyan-300 underline" href="/.netlify/functions/innovation-lab" target="_blank" rel="noopener">Trigger / View</a>
+           </li>
 
-          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Auto Scheduler</h2>
-            <p className="text-white/70">Smart time-based runner that chooses and executes the best tasks.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/auto-scheduler" target="_blank" rel="noopener">Trigger / View</a>
-          </li>
+           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+             <h2 className="text-xl font-bold">Revenue Ideas Lab</h2>
+             <p className="text-white/70">Generates and applies monetization ideas and CTAs autonomously (every 10m).</p>
+             <a className="text-cyan-300 underline" href="/.netlify/functions/revenue-ideas-lab" target="_blank" rel="noopener">Trigger / View</a>
+           </li>
+ 
+           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+             <h2 className="text-xl font-bold">Auto Scheduler</h2>
+             <p className="text-white/70">Smart time-based runner that chooses and executes the best tasks.</p>
+             <a className="text-cyan-300 underline" href="/.netlify/functions/auto-scheduler" target="_blank" rel="noopener">Trigger / View</a>
+           </li>
 
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
             <h2 className="text-xl font-bold">Broken Image Scanner</h2>
