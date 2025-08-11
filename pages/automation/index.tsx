@@ -66,6 +66,31 @@ export default function AutomationHub() {
             <p className="text-white/70">Ultra-fast front index futurizer and directory builder.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/hyper-front-index-accelerator" target="_blank" rel="noopener">Trigger / View</a>
           </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Innovation Lab</h2>
+            <p className="text-white/70">Invents new automations; updates knowledge graph and metrics.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/innovation-lab" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Guardian Orchestrator</h2>
+            <p className="text-white/70">Security audits, dead code, link and image guard with self-healing.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/guardian-orchestrator" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Media & Newsroom Runner</h2>
+            <p className="text-white/70">Auto media releases, OG images and newsroom updates.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/media-press-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Docs & SEO Optimizer</h2>
+            <p className="text-white/70">Docs index, changelog, sitemap and link health checks.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/docs-seo-optimizer" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Daily Deps Upgrade</h2>
+            <p className="text-white/70">Conservative dependency upgrades every night.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/deps-upgrade-daily" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
         </ul>
       </main>
     </div>
