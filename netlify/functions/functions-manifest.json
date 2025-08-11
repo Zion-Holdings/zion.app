@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-11T23:48:13.226Z",
+  "generatedAt": "2025-08-11T23:58:21.023Z",
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
@@ -36,6 +36,7 @@
     "front-visionary-expander",
     "frontpage-enhancer",
     "frontpage-scheduler",
+    "functions-catalog-runner",
     "home-visionary-expander",
     "homepage-advertiser-scheduler",
     "homepage-enhancer",
@@ -65,6 +66,7 @@
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",
+    "routes-map-runner",
     "schedule-content-index",
     "schedule-homepage",
     "schedule-knowledge-graph",
