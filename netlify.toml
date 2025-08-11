@@ -245,3 +245,16 @@
 [[scheduled.functions]]
   name = "deps-auto-upgrade-runner"
   schedule = "7 */12 * * *"
+
+# New autonomous cloud scanners
+[[scheduled.functions]]
+  name = "unused-media-scanner"
+  schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+  name = "orphan-pages-detector"
+  schedule = "*/15 * * * *"
+
+[[scheduled.functions]]
+  name = "component-size-report"
+  schedule = "*/5 * * * *"

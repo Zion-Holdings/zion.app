@@ -86,6 +86,9 @@ function discoverExternalLinks() {
     { type: 'internal', href: '/.netlify/functions/docs-index-runner', label: 'Docs — technical notes & guides', tagline: 'Documentation' },
     { type: 'internal', href: '/newsroom', label: 'AI Changelog — highlights', tagline: 'Summarized updates' },
     { type: 'internal', href: '/.netlify/functions/autonomous-innovation-generator', label: 'Autonomous Innovation Generator', tagline: 'Front promos + homepage refresh' },
+    { type: 'internal', href: '/.netlify/functions/unused-media-scanner', label: 'Unused Media Scanner', tagline: 'Find and report unreferenced assets' },
+    { type: 'internal', href: '/.netlify/functions/orphan-pages-detector', label: 'Orphan Pages Detector', tagline: 'Discover pages with no inbound links' },
+    { type: 'internal', href: '/.netlify/functions/component-size-report', label: 'Component Size Report', tagline: 'Largest components by lines and bytes' },
   ];
 }
 
