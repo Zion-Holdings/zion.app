@@ -316,16 +316,11 @@ export default function Home() {
           </div>
         </section>
 
-<<<<<<< HEAD
-
         {/* AUTO-GENERATED: HOME_UPDATER_START */}
-=======
-        {/* AUTO-GENERATED: HOME_UPDATER_START */
->>>>>>> 8cc7475fdf (feat(automation): autonomous front/home advertisers + schedules cleanup [skip ci])
  <section className="mx-auto max-w-7xl px-6 pb-16">
    <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Explore more</h2>
    <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-
+ 
             <Link href="/automation"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Automation Hub — live agents & reports</span></a></Link>
   
             <Link href="/newsroom"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Newsroom — latest autonomous updates</span></a></Link>
@@ -338,7 +333,7 @@ export default function Home() {
   
    </div>
  </section>
- /* AUTO-GENERATED: HOME_UPDATER_END */}
+ /* AUTO-GENERATED: HOME_UPDATER_END */
   
          {/* AUTO-GENERATED: HOME_VISIONARY_START */}
 

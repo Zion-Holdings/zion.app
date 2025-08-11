@@ -240,6 +240,7 @@
   name = "adaptive-orchestrator"
   schedule = "*/5 * * * *"
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 [[scheduled.functions]]
   name = "site-404-map-runner"
@@ -252,5 +253,7 @@
 [[scheduled.functions]]
   name = "content-freshness-score-runner"
   schedule = "7 */12 * * *"
+=======
+>>>>>>> 8cc7475fdf (feat(automation): autonomous front/home advertisers + schedules cleanup [skip ci])
 =======
 >>>>>>> 8cc7475fdf (feat(automation): autonomous front/home advertisers + schedules cleanup [skip ci])
