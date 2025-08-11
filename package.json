@@ -222,6 +222,7 @@
     "git:cron:stop": "bash automation/git-sync-cron.sh stop",
     "git:cron:status": "bash automation/git-sync-cron.sh status",
     "homepage:update": "node automation/homepage-updater.cjs",
+    "front:advertise": "node automation/frontpage-advertiser.cjs",
     "scan:todo": "node automation/todo-scanner.cjs",
     "scan:registry": "node automation/docs-pages-indexer.cjs",
     "scan:content": "npm run scan:todo && npm run scan:registry",
