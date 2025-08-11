@@ -447,6 +447,9 @@ export default function MainFrontIndex() {
               { label: 'Sitemap Runner', desc: 'Keeps sitemap fresh for SEO visibility.', href: '/.netlify/functions/sitemap_runner' },
               { label: 'Smart Redirect Manager', desc: 'Fixes internal 404s; updates public/_redirects and report.', href: '/.netlify/functions/redirect-manager' },
               { label: 'A11y Alt‑Text Auditor', desc: 'Scans for missing alt attributes and publishes reports.', href: '/.netlify/functions/a11y-audit-runner' },
+              { label: 'OG Coverage Auditor', desc: 'Audits pages for Open Graph tag coverage and publishes a report.', href: '/.netlify/functions/og-coverage-auditor' },
+              { label: 'Performance Budget Reporter', desc: 'Scans public assets and CSS to report on size budgets.', href: '/.netlify/functions/performance-budget-runner' },
+              { label: 'Roadmap Auto‑Builder', desc: 'Synthesizes a roadmap from TODO signals into docs/reports.', href: '/.netlify/functions/roadmap-builder-runner' },
             ].map((f) => (
               <a key={f.label} href={f.href} target="_blank" rel="noopener" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />

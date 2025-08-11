@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-11T23:01:07.075Z",
+  "generatedAt": "2025-08-11T23:12:53.670Z",
   "functions": [
     "a11y-audit-runner",
     "ai-changelog-runner",
@@ -54,13 +54,16 @@
     "netlify-auto-healer-runner",
     "newsroom-auto-publisher",
     "newsroom-runner",
+    "og-coverage-auditor",
     "og-image-update-runner",
+    "performance-budget-runner",
     "readme-advertiser",
     "redirect-healer",
     "redirect-manager",
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",
+    "roadmap-builder-runner",
     "schedule-content-index",
     "schedule-homepage",
     "schedule-knowledge-graph",
