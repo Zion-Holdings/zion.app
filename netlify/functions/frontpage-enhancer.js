@@ -4,12 +4,12 @@
 const { execFile } = require('child_process');
 const path = require('path');
 
-function runNodeScript(scriptRelativePath) {
+function runNodeScript(scriptRelativePath, args = []) {
   const cwd = path.resolve(__dirname, '../../');
   const scriptPath = path.resolve(cwd, scriptRelativePath);
   return new Promise((resolve) => {
     const startedAt = Date.now();
-    const child = execFile('node', [scriptPath], { cwd, env: process.env }, (error, stdout, stderr) => {
+    const child = execFile('node', [scriptPath, ...args], { cwd, env: process.env }, (error, stdout, stderr) => {
       resolve({
         script: scriptRelativePath,
         ok: !error,
@@ -19,28 +19,25 @@ function runNodeScript(scriptRelativePath) {
         stderr: stderr ? stderr.toString() : '',
       });
     });
-    // Safety timeouts in case a script hangs
     child.on('error', () => {});
   });
 }
 
 exports.handler = async function () {
   const steps = [
-    'automation/homepage-auto-advertiser.cjs',
-    'automation/homepage-updater.cjs',
-    // Optional: design/UI enhancements and Netlify auto healer
-    'automation/design-orchestrator.cjs',
-    'automation/netlify-auto-healer.cjs',
+    ['automation/homepage-updater.cjs'],
+    ['automation/homepage-promo-orchestrator.cjs', 'once'],
+    ['automation/site-promo-orchestrator.cjs', 'once'],
+    // Optional UI beautification sweep
+    ['automation/ui-evolution-launcher.js', 'beautify'],
   ];
 
   const results = [];
-  for (const step of steps) {
-    // Run sequentially to avoid edit conflicts
-    // If a script is missing, continue gracefully
+  for (const [script, arg] of steps) {
     try {
-      results.push(await runNodeScript(step));
+      results.push(await runNodeScript(script, arg ? [arg] : []));
     } catch (err) {
-      results.push({ script: step, ok: false, code: -1, durationMs: 0, stdout: '', stderr: String(err) });
+      results.push({ script, ok: false, code: -1, durationMs: 0, stdout: '', stderr: String(err) });
     }
   }
 
