@@ -51,6 +51,8 @@ export default function MainFrontIndex() {
             <Link href="/automation"><a className="text-white/80 hover:text-white">Automations</a></Link>
             <Link href="/newsroom"><a className="text-white/80 hover:text-white">Newsroom</a></Link>
             <Link href="/site-health"><a className="text-white/80 hover:text-white">Site Health</a></Link>
+            <Link href="/reports/seo"><a className="text-white/80 hover:text-white">SEO Report</a></Link>
+            <Link href="/reports/ai-trends"><a className="text-white/80 hover:text-white">AI Trends</a></Link>
           </div>
         </nav>
       </header>
@@ -288,6 +290,9 @@ export default function MainFrontIndex() {
               'Consistent design language and UX quality',
               'Transparent artifacts and live workflow logs',
               'Faster experiment velocity with measurable impact',
+              'Improved search visibility via continuous SEO',
+              'Happier users thanks to performance & a11y wins',
+              'Lower operational risk through guardrails',
             ].map((b) => (
               <div key={b} className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-md">
                 <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]" />
@@ -317,7 +322,7 @@ export default function MainFrontIndex() {
             <h3 className="text-2xl font-bold">Ready to build with autonomous cloud agents?</h3>
             <p className="mx-auto mt-2 max-w-2xl text-white/80">Scale development with a tireless fleet of self‑improving automations.</p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <Link href="/services"><a className="rounded-xl bg-white/90 px-6 py-3 font-semibold text-slate-900 hover:bg-white">Get Started</a></Link>
+              <Link href="/automation"><a className="rounded-xl bg-white/90 px-6 py-3 font-semibold text-slate-900 hover:bg-white">Get Started</a></Link>
               <Link href="/automation"><a className="rounded-xl border border-white/20 bg-white/5 px-6 py-3 font-semibold backdrop-blur-md hover:bg-white/10">View Automations</a></Link>
             </div>
           </div>
@@ -334,6 +339,27 @@ export default function MainFrontIndex() {
             <Link href="/reports/ai-trends"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">AI Trends Radar — intelligence signals</span></a></Link>
             <a href="https://github.com/Zion-Holdings/zion.app/actions" target="_blank" rel="noopener" className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">GitHub Actions — live workflows</span></a>
             <a href="https://github.com/Zion-Holdings/zion.app/tree/main/docs" target="_blank" rel="noopener" className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Docs — technical notes & guides</span></a>
+          </div>
+        </section>
+
+        {/* Reports */}
+        <section className="mx-auto max-w-7xl px-6 pb-14">
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Intelligence & Reports</h2>
+          <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              { title: 'SEO Audit Report', desc: 'Continuous on-site audits with prioritized improvements and artifacts.', href: '/reports/seo' },
+              { title: 'AI Trends Radar', desc: 'Signals from the AI/cloud ecosystem to inspire new automations.', href: '/reports/ai-trends' },
+              { title: 'Automation Hub', desc: 'Live autonomous workflows with logs and results.', href: '/automation' },
+            ].map((card) => (
+              <Link key={card.title} href={card.href}>
+                <a className="group glow-card relative block overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md hover:border-cyan-400/30">
+                  <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                  <h3 className="text-lg font-semibold">{card.title}</h3>
+                  <p className="mt-2 text-sm text-white/75">{card.desc}</p>
+                  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
+                </a>
+              </Link>
+            ))}
           </div>
         </section>
 
