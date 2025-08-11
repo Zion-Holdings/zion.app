@@ -104,3 +104,23 @@
 [[scheduled.functions]]
   name = "hyper-front-index-accelerator"
   schedule = "*/1 * * * *" # every minute
+
+[[scheduled.functions]]
+  name = "innovation-factory"
+  schedule = "*/2 * * * *" # every 2 minutes
+
+[[scheduled.functions]]
+  name = "quality-guardian"
+  schedule = "*/5 * * * *" # every 5 minutes
+
+[[scheduled.functions]]
+  name = "monetization-orchestrator"
+  schedule = "*/15 * * * *" # every 15 minutes
+
+[[scheduled.functions]]
+  name = "content-orchestrator"
+  schedule = "*/10 * * * *" # every 10 minutes
+
+[[scheduled.functions]]
+  name = "assets-optimizer"
+  schedule = "*/30 * * * *" # every 30 minutes
