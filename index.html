@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cloud Automations Dashboard</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Cloud Automations</h1>
+    <p>Autonomous, intelligent, and useful automations running in the cloud. No servers to manage, no manual ops.</p>
+    <nav>
+      <a href="#trending">Trending Repos</a>
+      <a href="#feeds">Tech News</a>
+      <a href="#uptime">Uptime</a>
+      <a href="README.md">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="trending" class="card">
+      <h2>Trending GitHub Repositories (last 7 days)</h2>
+      <p>Updated on a schedule by cloud workflow. Discover rapidly growing projects.</p>
+      <div class="meta">
+        <a target="_blank" rel="noopener" href="data/trending/latest.json">View raw JSON</a>
+        <span id="trending-updated"></span>
+      </div>
+      <ul id="trending-list" class="list"></ul>
+    </section>
+
+    <section id="feeds" class="card">
+      <h2>Tech News Aggregator</h2>
+      <p>Latest headlines across top sources. Parsed and consolidated by our feed bot.</p>
+      <div class="meta">
+        <a target="_blank" rel="noopener" href="data/feeds/latest.json">View raw JSON</a>
+        <span id="feeds-updated"></span>
+      </div>
+      <ul id="feeds-list" class="list"></ul>
+    </section>
+
+    <section id="uptime" class="card">
+      <h2>Uptime Dashboard</h2>
+      <p>Periodic health checks with response times.</p>
+      <div class="meta">
+        <a target="_blank" rel="noopener" href="data/uptime/latest.json">View raw JSON</a>
+        <span id="uptime-updated"></span>
+      </div>
+      <div id="uptime-summary" class="summary"></div>
+      <ul id="uptime-list" class="list"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Runs on GitHub Actions. Data updates are committed back to this repository automatically.</p>
+  </footer>
+
+  <script>
+    async function loadJson(url) {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`Failed to load ${url}: ${res.status}`);
+      return res.json();
+    }
+
+    function formatDate(iso) {
+      try { return new Date(iso).toLocaleString(); } catch { return iso; }
+    }
+
+    async function renderTrending() {
+      try {
+        const data = await loadJson('data/trending/latest.json');
+        document.getElementById('trending-updated').textContent = `Updated: ${formatDate(data.generated_at)}`;
+        const ul = document.getElementById('trending-list');
+        ul.innerHTML = '';
+        (data.repositories || []).slice(0, 15).forEach(repo => {
+          const li = document.createElement('li');
+          li.innerHTML = `
+            <a href="${repo.html_url}" target="_blank" rel="noopener">${repo.full_name}</a>
+            <span class="tag">⭐ ${repo.stargazers_count ?? ''}</span>
+            <span class="tag">${repo.language ?? ''}</span>
+            <div class="desc">${repo.description ?? ''}</div>
+          `;
+          ul.appendChild(li);
+        });
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    async function renderFeeds() {
+      try {
+        const data = await loadJson('data/feeds/latest.json');
+        document.getElementById('feeds-updated').textContent = `Updated: ${formatDate(data.generated_at)}`;
+        const ul = document.getElementById('feeds-list');
+        ul.innerHTML = '';
+        (data.items || []).slice(0, 30).forEach(item => {
+          const li = document.createElement('li');
+          const source = item.source ? `<span class="tag">${item.source}</span>` : '';
+          const published = item.published_iso ? `<span class="time">${formatDate(item.published_iso)}</span>` : '';
+          li.innerHTML = `
+            ${source}
+            <a href="${item.link}" target="_blank" rel="noopener">${item.title}</a>
+            ${published}
+          `;
+          ul.appendChild(li);
+        });
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    async function renderUptime() {
+      try {
+        const data = await loadJson('data/uptime/latest.json');
+        document.getElementById('uptime-updated').textContent = `Updated: ${formatDate(data.generated_at)}`;
+        const summaryDiv = document.getElementById('uptime-summary');
+        const s = data.summary || {};
+        summaryDiv.textContent = `OK: ${s.ok ?? 0} / ${s.total ?? 0} • Avg: ${s.avg_ms ?? 0} ms`;
+        const ul = document.getElementById('uptime-list');
+        ul.innerHTML = '';
+        (data.results || []).forEach(r => {
+          const li = document.createElement('li');
+          const status = r.ok ? 'ok' : 'fail';
+          li.innerHTML = `
+            <span class="dot ${status}"></span>
+            <a href="${r.url}" target="_blank" rel="noopener">${r.url}</a>
+            <span class="tag">${r.status_code ?? 'ERR'}</span>
+            <span class="time">${r.response_ms} ms</span>
+          `;
+          ul.appendChild(li);
+        });
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    renderTrending();
+    renderFeeds();
+    renderUptime();
+  </script>
+</body>
+</html>
