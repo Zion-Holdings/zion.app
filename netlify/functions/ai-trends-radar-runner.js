@@ -8,7 +8,7 @@ function runNode(relPath, args = []) {
 }
 
 exports.config = {
-  schedule: '29 */6 * * *',
+  schedule: '*/15 * * * *',
 };
 
 exports.handler = async () => {
@@ -22,7 +22,7 @@ exports.handler = async () => {
     return status;
   }
 
-  step('images:optimize', 'automation/image-optimizer.cjs');
+  step('ai-trends:radar', 'scripts/ai-trends-radar.js');
   step('git:sync', 'automation/advanced-git-sync.cjs');
 
   return { statusCode: 200, body: logs.join('\n') };
