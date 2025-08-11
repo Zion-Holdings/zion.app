@@ -1,9 +1,18 @@
 {
+<<<<<<< HEAD
   "generatedAt": "2025-08-11T23:28:00.000Z",
+=======
+  "generatedAt": "2025-08-11T23:14:35.914Z",
+>>>>>>> origin/main
   "functions": [
     "a11y-audit-runner",
     "ai-changelog-runner",
     "auto-scheduler",
+<<<<<<< HEAD
+=======
+    "automation-atlas-runner",
+    "automation-guardian-runner",
+>>>>>>> origin/main
     "automation-matrix",
     "automation-status-dashboard",
     "autonomous-innovation-generator",
@@ -13,12 +22,19 @@
     "capability-map-runner",
     "cloud-autonomous-orchestrator-runner",
     "cloud_orchestrator",
+<<<<<<< HEAD
     "content-freshness-auditor",
+=======
+    "component-catalog-runner",
+>>>>>>> origin/main
     "continuous-front-runner",
     "continuous-orchestrator",
     "dead-code-audit",
     "dead-code-report",
+<<<<<<< HEAD
     "dependency-freshness-radar",
+=======
+>>>>>>> origin/main
     "deps-auto-upgrade-runner",
     "docs-index-runner",
     "docs-search-index-runner",
@@ -61,6 +77,11 @@
     "newsroom-runner",
     "og-image-update-runner",
     "readme-advertiser",
+<<<<<<< HEAD
+=======
+    "redirect-healer",
+    "redirect-manager",
+>>>>>>> origin/main
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",
@@ -76,6 +97,7 @@
     "seo-audit-runner",
     "site-crawler",
     "sitemap_runner",
+    "stale-content-auditor-runner",
     "todo-scanner-runner",
     "todo-summary-runner",
     "trigger-all-and-commit",

@@ -10,7 +10,46 @@ export default function AutomationHub() {
       <main className="container mx-auto px-4 py-12">
         <h1 className="text-4xl font-extrabold mb-2">Automation Hub</h1>
         <p className="text-white/70 mb-8">Discover our autonomous, self-healing systems that keep the codebase evergreen. Powered by scheduled cloud functions — no GitHub Actions required.</p>
+<<<<<<< HEAD
         <ul className="space-y-4">
+=======
+                         <ul className="space-y-4">
+           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+             <h2 className="text-xl font-bold">Stale Content Auditor</h2>
+             <p className="text-white/70">Finds stale files across pages, docs and components; publishes a report and summary.</p>
+             <a className="text-cyan-300 underline" href="/.netlify/functions/stale-content-auditor-runner" target="_blank" rel="noopener">Trigger / View</a>
+           </li>
+           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+             <h2 className="text-xl font-bold">Dependency Auto‑Upgrade</h2>
+             <p className="text-white/70">Auto-upgrades dependencies on a safe cadence, validates with build, and syncs.</p>
+             <a className="text-cyan-300 underline" href="/.netlify/functions/deps-auto-upgrade-runner" target="_blank" rel="noopener">Trigger / View</a>
+           </li>
+           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+             <h2 className="text-xl font-bold">SEO Audit</h2>
+             <p className="text-white/70">Generates SEO report for all pages and publishes it.</p>
+             <a className="text-cyan-300 underline" href="/.netlify/functions/seo-audit-runner" target="_blank" rel="noopener">Trigger / View</a>
+           </li>
+           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+             <h2 className="text-xl font-bold">Component Catalog</h2>
+             <p className="text-white/70">Live catalog of UI components with size and usage stats. Updates on schedule.</p>
+             <a className="text-cyan-300 underline" href="/.netlify/functions/component-catalog-runner" target="_blank" rel="noopener">Trigger / View</a>
+           </li>
+           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+             <h2 className="text-xl font-bold">Automation Atlas</h2>
+             <p className="text-white/70">Atlas of Netlify functions, schedules, and CI workflows with links.</p>
+             <a className="text-cyan-300 underline" href="/.netlify/functions/automation-atlas-runner" target="_blank" rel="noopener">Trigger / View</a>
+           </li>
+<li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">AI Trends Radar</h2>
+            <p className="text-white/70">Aggregates trending AI topics into a live report.</p>
+            <a className="text-cyan-300 underline" href="/reports/ai-trends" target="_blank" rel="noopener">Open Report</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Website Search Index</h2>
+            <p className="text-white/70">Regenerates the full site search index.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/website-search-index-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+>>>>>>> origin/main
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
             <h2 className="text-xl font-bold">Homepage Updates</h2>
             <p className="text-white/70">Keeps the homepage fresh and the sitemap up to date.</p>

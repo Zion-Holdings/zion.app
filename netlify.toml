@@ -168,7 +168,10 @@
 
 [[scheduled.functions]]
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/main
   name = "redirect-healer"
   schedule = "*/15 * * * *"
 
@@ -200,6 +203,14 @@
 [[scheduled.functions]]
 >>>>>>> 5db0abd8a2 (chore(sync): advanced autonomous sync)
   name = "todo-summary-runner"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+  name = "component-catalog-runner"
+  schedule = "13 */6 * * *"
+
+[[scheduled.functions]]
+  name = "automation-atlas-runner"
   schedule = "*/30 * * * *"
 
 [[scheduled.functions]]
@@ -286,6 +297,27 @@
   schedule = "*/20 * * * *"
 
 [[scheduled.functions]]
+<<<<<<< HEAD
   name = "innovation-lab-pro"
   schedule = "*/10 * * * *"
 >>>>>>> 9a6e0bf201 (chore(netlify): resolve schedule conflicts and regenerate functions manifest [skip ci])
+=======
+  name = "auto-discovery-runner"
+  schedule = "*/30 * * * *" # every 30 minutes
+
+[[scheduled.functions]]
+  name = "cloud-autonomous-orchestrator-runner"
+  schedule = "*/15 * * * *" # every 15 minutes
+
+[[scheduled.functions]]
+  name = "branch-cleanup-runner"
+  schedule = "0 3 * * *" # daily at 03:00 UTC
+
+[[scheduled.functions]]
+  name = "stale-content-auditor-runner"
+  schedule = "17 */6 * * *"
+
+[[scheduled.functions]]
+  name = "deps-auto-upgrade-runner"
+  schedule = "7 */12 * * *"
+>>>>>>> origin/main
