@@ -223,15 +223,9 @@
     "git:cron:stop": "bash automation/git-sync-cron.sh stop",
     "git:cron:status": "bash automation/git-sync-cron.sh status",
     "homepage:update": "node automation/homepage-updater.cjs",
-<<<<<<< HEAD
-    "front:advertise": "node automation/frontpage-advertiser.cjs",
-=======
     "front:advertise": "node automation/front-index-advertiser.cjs",
->>>>>>> 66c36b7ed6 (feat(front): new Netlify automations + futuristic front ads section)
-    "scan:todo": "node automation/todo-scanner.cjs",
-    "scan:registry": "node automation/docs-pages-indexer.cjs",
-    "scan:content": "npm run scan:todo && npm run scan:registry",
-    "front:advertise": "node automation/front-index-advertiser.cjs"
+    "front:futurize": "node automation/front-futurizer.cjs",
+    "front:futurize:cron": "node -e \"const cp=require('child_process'); setInterval(()=>cp.exec('node automation/front-futurizer.cjs',()=>{}), 1000*60*60*6)\""
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
