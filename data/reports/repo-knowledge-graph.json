@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-11T17:51:37.302Z",
+  "generatedAt": "2025-08-11T18:14:36.479Z",
   "nodes": [
     {
       "id": "automation/advanced-git-sync.cjs",
@@ -118,6 +118,10 @@
       "type": "file"
     },
     {
+      "id": "automation/front-visionary-expander.cjs",
+      "type": "file"
+    },
+    {
       "id": "automation/frontpage-advertiser.cjs",
       "type": "file"
     },
@@ -131,6 +135,18 @@
     },
     {
       "id": "automation/homepage-auto-advertiser.cjs",
+      "type": "file"
+    },
+    {
+      "id": "automation/homepage-promo-analyzer.cjs",
+      "type": "file"
+    },
+    {
+      "id": "automation/homepage-promo-applier.cjs",
+      "type": "file"
+    },
+    {
+      "id": "automation/homepage-promo-factory.cjs",
       "type": "file"
     },
     {
@@ -215,6 +231,10 @@
     },
     {
       "id": "automation/site-link-fixer.cjs",
+      "type": "file"
+    },
+    {
+      "id": "automation/site-promo-orchestrator.cjs",
       "type": "file"
     },
     {
@@ -616,6 +636,18 @@
     {
       "id": "scripts/generate-sitemap.js",
       "type": "file"
+    },
+    {
+      "id": "scripts/run-netlify-functions-locally.cjs",
+      "type": "file"
+    },
+    {
+      "id": "os",
+      "type": "package"
+    },
+    {
+      "id": "perf_hooks",
+      "type": "package"
     },
     {
       "id": "scripts/seo-audit.js",
@@ -1952,6 +1984,26 @@
     {
       "from": "scripts/generate-sitemap.js",
       "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "scripts/run-netlify-functions-locally.cjs",
+      "to": "fs",
+      "kind": "external"
+    },
+    {
+      "from": "scripts/run-netlify-functions-locally.cjs",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "scripts/run-netlify-functions-locally.cjs",
+      "to": "os",
+      "kind": "external"
+    },
+    {
+      "from": "scripts/run-netlify-functions-locally.cjs",
+      "to": "perf_hooks",
       "kind": "external"
     },
     {
