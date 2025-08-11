@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-11T23:12:37.894Z",
+  "generatedAt": "2025-08-11T23:13:01.009Z",
   "functions": [
     "a11y-audit-runner",
     "ai-changelog-runner",
@@ -67,6 +67,7 @@
     "trigger-all-and-commit",
     "ui-enhancer",
     "ultrafast-front-orchestrator",
-    "ultrafast-orchestrator"
+    "ultrafast-orchestrator",
+    "ux-heuristics-runner"
   ]
 }
