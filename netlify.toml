@@ -7,10 +7,18 @@
 
 [functions]
   directory = "netlify/functions"
-  node_bundler = "esbuild"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
 [[plugins]]
-  package = "netlify-plugin-cloudinary" 
+  package = "netlify-plugin-cloudinary"
+
+# Scheduled Functions (new automations replacing some GitHub Actions cadence)
+[[scheduled.functions]]
+  name = "homepage_advertiser"
+  schedule = "*/30 * * * *" # every 30 minutes
+
+[[scheduled.functions]]
+  name = "cloud_orchestrator"
+  schedule = "0 */6 * * *" # every 6 hours 
