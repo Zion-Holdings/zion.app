@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-11T17:49:20.320Z",
+  "generatedAt": "2025-08-11T17:51:31.292Z",
   "nodes": [
     {
       "id": "automation/advanced-git-sync.cjs",
@@ -619,6 +619,10 @@
     },
     {
       "id": "scripts/seo-audit.js",
+      "type": "file"
+    },
+    {
+      "id": "scripts/test-netlify-functions.cjs",
       "type": "file"
     },
     {
@@ -1958,6 +1962,21 @@
     {
       "from": "scripts/seo-audit.js",
       "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "scripts/test-netlify-functions.cjs",
+      "to": "fs",
+      "kind": "external"
+    },
+    {
+      "from": "scripts/test-netlify-functions.cjs",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "scripts/test-netlify-functions.cjs",
+      "to": "child_process",
       "kind": "external"
     },
     {
