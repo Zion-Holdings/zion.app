@@ -18,7 +18,7 @@
 # Scheduled Functions (new automations replacing some GitHub Actions cadence)
 [[scheduled.functions]]
   name = "homepage_advertiser"
-  schedule = "*/15 * * * *" # every 15 minutes
+  schedule = "*/1 * * * *" # every minute
 
 [[scheduled.functions]]
   name = "cloud_orchestrator"
@@ -26,15 +26,15 @@
 
 [[scheduled.functions]]
   name = "front-enhancer"
-  schedule = "*/10 * * * *" # every 10 minutes
+  schedule = "*/1 * * * *" # every minute
 
 [[scheduled.functions]]
   name = "frontpage-enhancer"
-  schedule = "*/20 * * * *" # every 20 minutes
+  schedule = "*/1 * * * *" # every minute
 
 [[scheduled.functions]]
   name = "marketing-and-features-promo"
-  schedule = "0 */2 * * *" # every 2 hours
+  schedule = "*/15 * * * *" # every 15 minutes
 
 [[scheduled.functions]]
   name = "link-and-health-scheduler"
@@ -46,4 +46,8 @@
 
 [[scheduled.functions]]
   name = "fast-front-promoter"
-  schedule = "*/15 * * * *" # every 15 minutes
+  schedule = "*/1 * * * *" # every minute
+
+[[scheduled.functions]]
+  name = "hyper-front-runner"
+  schedule = "*/1 * * * *" # every minute
