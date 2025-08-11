@@ -1,0 +1,44 @@
+{
+  "components": {
+    "lowerThird": {
+      "name": "Lower Third / Name + Role",
+      "font": "Inter",
+      "sizes": {"title": 36, "role": 24},
+      "position": {"x": 120, "y": 900},
+      "bg": {"color": "#0B0B0D", "opacity": 0.7, "radius": 8}
+    },
+    "actCard": {
+      "name": "Act Card / Title",
+      "font": "GT America Expanded",
+      "size": 96,
+      "position": {"x": 90, "y": 360},
+      "bg": {"color": "#FFFFFF", "opacity": 0.0}
+    },
+    "quoteCard": {
+      "name": "Quote Card",
+      "font": "Inter",
+      "size": 48,
+      "position": {"x": 120, "y": 420},
+      "bg": {"color": "#111216", "opacity": 0.8, "radius": 12}
+    },
+    "dataTicker": {
+      "name": "Data Ticker",
+      "font": "IBM Plex Mono",
+      "size": 22,
+      "position": {"x": 120, "y": 60},
+      "bg": {"color": "#0B0B0D", "opacity": 0.6}
+    }
+  },
+  "timeline": [
+    {"tc": "00:00:04", "type": "actCard", "text": "Act 1 — Genesis"},
+    {"tc": "00:01:05", "type": "lowerThird", "text": "Founder — Zion OS"},
+    {"tc": "00:07:12", "type": "quoteCard", "text": "Sovereignty scales with software. — Zion Book"},
+    {"tc": "00:20:02", "type": "actCard", "text": "Act 2 — The Rise"},
+    {"tc": "00:23:10", "type": "dataTicker", "text": "Nations online: Aurora · Forge · Haven"},
+    {"tc": "00:29:10", "type": "lowerThird", "text": "Alumni — Aurora Academy"},
+    {"tc": "00:40:08", "type": "lowerThird", "text": "Work Passport v1.4"},
+    {"tc": "00:45:02", "type": "actCard", "text": "Act 3 — The Future"},
+    {"tc": "00:46:08", "type": "dataTicker", "text": "ZionGPT online — Policy Sim | Risk Guardrails | Deliberation Aids"},
+    {"tc": "00:58:06", "type": "quoteCard", "text": "This isn’t a platform. It’s a world."}
+  ]
+}
