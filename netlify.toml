@@ -186,3 +186,16 @@
 [[scheduled.functions]]
   name = "auto-scheduler"
   schedule = "*/15 * * * *" # every 15 minutes
+
+# New accessibility and quality automations
+[[scheduled.functions]]
+  name = "a11y-audit-runner"
+  schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+  name = "internal-link-guardian"
+  schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+  name = "perf-asset-watcher"
+  schedule = "*/20 * * * *"
