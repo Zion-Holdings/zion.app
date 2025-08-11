@@ -1,5 +1,5 @@
 const path = require('path');
-const { spawnSync } = require('child_process');
+const { spawnSync, execSync } = require('child_process');
 
 function runNode(relPath, args = []) {
   const abs = path.resolve(__dirname, '..', '..', relPath);
@@ -12,7 +12,6 @@ exports.config = {
 };
 
 exports.handler = async function() {
-  const { execSync } = require('child_process');
   try {
     execSync('node automation/design-analyzer.cjs', { stdio: 'inherit' });
     execSync('node automation/design-factory.cjs', { stdio: 'inherit' });

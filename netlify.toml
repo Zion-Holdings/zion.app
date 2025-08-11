@@ -43,3 +43,7 @@
 [[scheduled.functions]]
   name = "sitemap_runner"
   schedule = "0 */12 * * *" # twice per day
+
+[[scheduled.functions]]
+  name = "fast-front-promoter"
+  schedule = "*/15 * * * *" # every 15 minutes

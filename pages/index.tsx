@@ -56,7 +56,7 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/automation"><a className="rounded-xl bg-gradient-to-r from-fuchsia-500 to-cyan-500 px-6 py-3 font-semibold shadow-[0_0_30px_rgba(34,211,238,0.35)] hover:shadow-[0_0_40px_rgba(34,211,238,0.6)] transition-shadow">Explore Automations</a></Link>
-              <Link href="/automation"><a className="rounded-xl border border-white/20 bg-white/5 px-6 py-3 font-semibold backdrop-blur-md hover:bg-white/10">Cloud Automations (Netlify)</a></Link>
+              <Link href="/automation"><a className="rounded-xl border border-white/20 bg-white/5 px-6 py-3 font-semibold backdrop-blur-md hover:bg-white/10">Cloud Automations (Scheduled Functions)</a></Link>
             </div>
 
             {/* Futuristic info strip */}
@@ -97,9 +97,9 @@ export default function Home() {
               { title: 'Safety‑First', desc: 'Conservative edits with logs, reports, and guardrails.' },
               { title: 'Scalable', desc: 'Generates domain‑specific factories on demand.' },
               { title: 'Observability', desc: 'Dashboards, reports, and artifacts across hubs.' },
-              { title: 'Futuristic UI', desc: 'Neon, animated, holographic surfaces with tilt and beams.' },
-              { title: 'Netlify Automations', desc: 'Scheduled functions that replace GitHub Actions.' },
-              { title: 'Edge‑Optimized', desc: 'Global performance with smart bundling and caching.' },
+                             { title: 'Futuristic UI', desc: 'Neon, animated, holographic surfaces with tilt and beams.' },
+               { title: 'Cloud Automations', desc: 'Scheduled functions that replace GitHub Actions.' },
+               { title: 'Edge‑Optimized', desc: 'Global performance with smart bundling and caching.' },
             ].map((f) => (
               <article key={f.title} className="group glow-card relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md hover:border-cyan-400/30">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
@@ -146,6 +146,32 @@ export default function Home() {
                 <p className="mt-1 text-sm text-white/75">{c.desc}</p>
               </article>
             ))}
+          </div>
+        </section>
+ 
+        {/* Futuristic Templates */}
+        <section className="mx-auto max-w-7xl px-6 pb-14">
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Futuristic Templates</h2>
+          <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Beautiful, animated surfaces and layouts ready to accelerate front‑of‑house experiences.</p>
+          <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <Link href="/main/front"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">Front Systems Hub</h3>
+              <p className="mt-1 text-sm text-white/75">Explore comprehensive templates, effects, and layouts.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
+            </a></Link>
+            <Link href="/automation"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">Automation‑Driven UI</h3>
+              <p className="mt-1 text-sm text-white/75">Live promos and content curated by continuous automations.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
+            </a></Link>
+            <a href="/.netlify/functions/front-enhancer" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">On‑Demand Front Enhancer</h3>
+              <p className="mt-1 text-sm text-white/75">Trigger the curator now and see updates flow to main.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>
           </div>
         </section>
 

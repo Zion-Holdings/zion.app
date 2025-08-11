@@ -9,7 +9,7 @@ export default function AutomationHub() {
       </Head>
       <main className="container mx-auto px-4 py-12">
         <h1 className="text-4xl font-extrabold mb-2">Automation Hub</h1>
-        <p className="text-white/70 mb-8">Discover our autonomous, self-healing systems that keep the codebase evergreen.</p>
+        <p className="text-white/70 mb-8">Discover our autonomous, self-healing systems that keep the codebase evergreen. Powered by scheduled cloud functions — no GitHub Actions required.</p>
         <ul className="space-y-4">
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
             <h2 className="text-xl font-bold">Homepage Updates</h2>
@@ -30,6 +30,21 @@ export default function AutomationHub() {
             <h2 className="text-xl font-bold">Knowledge Graph</h2>
             <p className="text-white/70">Repository knowledge graph and radar metrics.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/schedule-knowledge-graph" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Front Enhancer</h2>
+            <p className="text-white/70">Curates and injects new frontpage promos periodically.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/front-enhancer" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Fast Front Promoter</h2>
+            <p className="text-white/70">Runs every 15 minutes to refresh homepage and front content, then syncs to main.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/fast-front-promoter" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Marketing & Features Promo</h2>
+            <p className="text-white/70">Generates and applies homepage promos and deep links.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/marketing-and-features-promo" target="_blank" rel="noopener">Trigger / View</a>
           </li>
         </ul>
       </main>
