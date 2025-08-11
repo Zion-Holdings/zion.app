@@ -61,8 +61,8 @@ function main() {
     console.error('Front page not found at', target);
     process.exit(0);
   }
-  const startMarker = '{/* AUTO-GENERATED: FRONT_ADS_START */}';
-  const endMarker = '{/* AUTO-GENERATED: FRONT_ADS_END */}';
+  const startMarker = '{/* AUTO-GENERATED: FRONT_ADS_START */';
+  const endMarker = '/* AUTO-GENERATED: FRONT_ADS_END */}';
   const src = fs.readFileSync(target, 'utf8');
   const s = src.indexOf(startMarker);
   const e = src.indexOf(endMarker);
