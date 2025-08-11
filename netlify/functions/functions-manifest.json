@@ -51,6 +51,7 @@
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",
+    "roadmap-curator",
     "schedule-content-index",
     "schedule-homepage",
     "schedule-knowledge-graph",
@@ -62,8 +63,10 @@
     "todo-scanner-runner",
     "todo-summary-runner",
     "trigger-all-and-commit",
+    "ui-audit-runner",
     "ui-enhancer",
     "ultrafast-front-orchestrator",
-    "ultrafast-orchestrator"
+    "ultrafast-orchestrator",
+    "content-curation-lab"
   ]
 }

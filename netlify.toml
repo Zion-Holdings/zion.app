@@ -186,3 +186,15 @@
 [[scheduled.functions]]
   name = "auto-scheduler"
   schedule = "*/15 * * * *" # every 15 minutes
+
+[[scheduled.functions]]
+  name = "ui-audit-runner"
+  schedule = "7 */12 * * *" # twice per day staggered
+
+[[scheduled.functions]]
+  name = "roadmap-curator"
+  schedule = "17 */6 * * *" # every 6 hours staggered
+
+[[scheduled.functions]]
+  name = "content-curation-lab"
+  schedule = "*/20 * * * *" # every 20 minutes

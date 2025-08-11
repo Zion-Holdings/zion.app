@@ -210,6 +210,9 @@ export default function Home() {
               { title: 'Innovation Lab (10m)', desc: 'Invents, curates, and promotes fresh ideas across the site.', href: '/.netlify/functions/innovation-lab' },
               { title: 'Auto Scheduler (15m)', desc: 'Smart time-based runner that chooses and executes the best tasks.', href: '/.netlify/functions/auto-scheduler' },
               { title: 'Broken Image Scanner (6h)', desc: 'Finds broken images, optimizes assets, and syncs fixes.', href: '/.netlify/functions/broken-image-scanner' },
+              { title: 'UI Audit Runner', desc: 'Crawls key pages for basic a11y/UX issues and commits reports.', href: '/.netlify/functions/ui-audit-runner' },
+              { title: 'Roadmap Curator', desc: 'Curates automation ideas from docs and reports into a roadmap.', href: '/.netlify/functions/roadmap-curator' },
+              { title: 'Content Curation Lab', desc: 'Refreshes curated front indexes, README and search.', href: '/.netlify/functions/content-curation-lab' },
             ].map((tool) => (
               <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
