@@ -17,13 +17,20 @@ function detectLinks(root) {
     { href: '/reports/ai-trends', title: 'AI Trends', desc: 'Ecosystem intelligence signals' },
     { href: '/newsroom', title: 'Newsroom', desc: 'Autonomous updates & evolution' },
     { href: '/main/front', title: 'Front Systems Hub', desc: 'Curated futuristic front experience' },
+    // Newly added intelligent automations
+    { href: '/.netlify/functions/content-staleness-auditor', title: 'Content Staleness Auditor', desc: 'Flags outdated pages/docs and publishes a report' },
+    { href: '/.netlify/functions/image-lazyload-auditor', title: 'Image Lazyload Auditor', desc: 'Finds img tags without loading attribute' },
+    { href: '/.netlify/functions/internal-link-orphan-audit', title: 'Internal Link Orphans', desc: 'Detects internal links that do not resolve' },
+    { href: '/.netlify/functions/css-bloat-report', title: 'CSS Bloat Report', desc: 'Sizes CSS bundles and highlights heavy files' },
   ];
   internal.forEach((i) => {
     const check = i.href.endsWith('/') ? i.href.slice(0, -1) : i.href;
-    const parts = check.split('/').filter(Boolean);
+    const parts = check.startsWith('/.netlify/functions/') ? [] : check.split('/').filter(Boolean);
     const candidateIndex = path.join(pagesDir, ...parts, 'index.tsx');
     const candidatePage = path.join(pagesDir, ...parts) + '.tsx';
-    if (fileExists(candidateIndex) || fileExists(candidatePage)) links.push({ type: 'internal', ...i });
+    // Functions will not exist in pages directory; include them as internal directly
+    if (i.href.startsWith('/.netlify/functions/')) links.push({ type: 'internal', ...i });
+    else if (fileExists(candidateIndex) || fileExists(candidatePage)) links.push({ type: 'internal', ...i });
   });
 
   const pkgPath = path.join(root, 'package.json');
@@ -59,8 +66,8 @@ function main() {
     console.error('Front page not found at', target);
     process.exit(0);
   }
-  const startMarker = '{/* AUTO-GENERATED: FRONT_ADS_START */}';
-  const endMarker = '{/* AUTO-GENERATED: FRONT_ADS_END */}';
+  const startMarker = '{/* AUTO-GENERATED: FRONT_ADS_START */';
+  const endMarker = '/* AUTO-GENERATED: FRONT_ADS_END */}';
   const src = fs.readFileSync(target, 'utf8');
   const s = src.indexOf(startMarker);
   const e = src.indexOf(endMarker);

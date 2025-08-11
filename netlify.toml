@@ -114,6 +114,23 @@
   name = "hyper-front-index-accelerator"
   schedule = "*/1 * * * *" # every minute
 
+# Newly added intelligent audits
+[[scheduled.functions]]
+  name = "content-staleness-auditor"
+  schedule = "*/15 * * * *" # every 15 minutes
+
+[[scheduled.functions]]
+  name = "image-lazyload-auditor"
+  schedule = "*/20 * * * *" # every 20 minutes
+
+[[scheduled.functions]]
+  name = "internal-link-orphan-audit"
+  schedule = "*/25 * * * *" # every 25 minutes
+
+[[scheduled.functions]]
+  name = "css-bloat-report"
+  schedule = "*/30 * * * *" # every 30 minutes
+
 [[scheduled.functions]]
   name = "dead-code-report"
   schedule = "7 */6 * * *"
