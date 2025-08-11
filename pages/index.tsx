@@ -32,10 +32,10 @@ export default function Home() {
             <span className="bg-gradient-to-r from-fuchsia-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent drop-shadow-neon">Zion</span>
           </div>
           <div className="hidden gap-6 md:flex">
-            <Link href="/services"><a className="text-white/80 hover:text-white">Services</a></Link>
-            <Link href="/products"><a className="text-white/80 hover:text-white">Products</a></Link>
+            <Link href="/main/front#capabilities"><a className="text-white/80 hover:text-white">Services</a></Link>
+            <Link href="/main/front"><a className="text-white/80 hover:text-white">Products</a></Link>
             <Link href="/automation"><a className="text-white/80 hover:text-white">Automations</a></Link>
-            <Link href="/contact"><a className="text-white/80 hover:text-white">Contact</a></Link>
+            <Link href="/newsroom"><a className="text-white/80 hover:text-white">Contact</a></Link>
           </div>
         </nav>
       </header>
@@ -232,9 +232,9 @@ export default function Home() {
   
             <Link href="/site-health"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Site Health — audits & insights</span></a></Link>
   
-            <a href="https://github.com/Zion-Holdings/zion.app/actions" target="_blank" rel="noopener" className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">GitHub Actions — live workflows</span></a>
+            <a href="/.netlify/functions/netlify-auto-healer-runner" className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Site Health — Netlify Auto‑Healer</span></a>
   
-            <a href="https://github.com/Zion-Holdings/zion.app/tree/main/docs" target="_blank" rel="noopener" className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Docs — technical notes & guides</span></a>
+            <a href="/.netlify/functions/docs-index-runner" className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Docs — technical notes & guides</span></a>
   
    </div>
  </section>

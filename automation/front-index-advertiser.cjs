@@ -82,10 +82,9 @@ function discoverInternalPages() {
 }
 
 function discoverExternalLinks() {
-  const repoUrl = 'https://github.com/Zion-Holdings/zion.app';
   return [
-    { type: 'external', href: repoUrl + '/tree/main/docs', label: 'Docs — technical notes & guides', tagline: 'Documentation' },
-    { type: 'external', href: repoUrl + '/blob/main/docs/CHANGELOG_AI.md', label: 'AI Changelog — highlights', tagline: 'Summarized updates' },
+    { type: 'internal', href: '/.netlify/functions/docs-index-runner', label: 'Docs — technical notes & guides', tagline: 'Documentation' },
+    { type: 'internal', href: '/newsroom', label: 'AI Changelog — highlights', tagline: 'Summarized updates' },
   ];
 }
 

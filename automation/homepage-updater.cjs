@@ -27,11 +27,9 @@ function buildItems(repoUrl, workspaceRoot) {
     if (fileExists(c.check)) items.push({ type: 'internal', href: c.href, label: c.label });
   });
 
-  // External useful links
-  items.push({ type: 'external', href: `${repoUrl}/actions`, label: 'GitHub Actions — live workflows' });
-  if (fileExists(path.join(workspaceRoot, 'docs'))) {
-    items.push({ type: 'external', href: `${repoUrl}/tree/main/docs`, label: 'Docs — technical notes & guides' });
-  }
+  // Replace external GitHub links with internal live tools
+  items.push({ type: 'internal', href: '/.netlify/functions/netlify-auto-healer-runner', label: 'Site Health — Netlify Auto‑Healer' });
+  items.push({ type: 'internal', href: '/.netlify/functions/docs-index-runner', label: 'Docs — technical notes & guides' });
 
   return items;
 }
