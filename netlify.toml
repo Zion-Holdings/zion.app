@@ -187,3 +187,18 @@
 [[scheduled.functions]]
   name = "auto-scheduler"
   schedule = "*/15 * * * *" # every 15 minutes
+
+# Additional quality and collaboration automations
+[[plugins]]
+  package = "./netlify/plugins/quality-gates"
+  [plugins.inputs]
+    maxWarnings = 20
+    sizeBudgetKb = 15000
+
+[[plugins]]
+  package = "./netlify/plugins/deploy-preview-commenter"
+
+# Scheduled maintenance automation
+[[scheduled.functions]]
+  name = "branch-cleanup-runner"
+  schedule = "0 2 * * *" # daily at 02:00 UTC

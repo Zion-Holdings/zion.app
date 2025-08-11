@@ -1,10 +1,11 @@
 {
-  "generatedAt": "2025-08-11T18:21:35.040Z",
+  "generatedAt": "2025-08-11T18:34:16.950Z",
   "functions": [
     "ai-changelog-runner",
     "auto-scheduler",
     "automation-matrix",
     "autonomous-invention-orchestrator",
+    "branch-cleanup-runner",
     "broken-image-scanner",
     "broken-image-scanner-runner",
     "cloud_orchestrator",
