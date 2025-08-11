@@ -188,50 +188,38 @@
   schedule = "*/15 * * * *" # every 15 minutes
 
 [[scheduled.functions]]
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
->>>>>>> origin/main
-  name = "a11y-alt-text-runner"
-  schedule = "*/10 * * * *" # every 10 minutes
+name = "a11y-alt-text-runner"
+schedule = "*/10 * * * *"
 
 [[scheduled.functions]]
-  name = "metadata-optimizer-runner"
-  schedule = "*/15 * * * *" # every 15 minutes
-<<<<<<< HEAD
-=======
-=======
+name = "metadata-optimizer-runner"
+schedule = "*/15 * * * *"
+
+[[scheduled.functions]]
 name = "seo-audit-runner"
 schedule = "0 */2 * * *"
 
->>>>>>> origin/main
 [[scheduled.functions]]
 name = "ai-trends-radar-runner"
 schedule = "*/30 * * * *"
 
 [[scheduled.functions]]
-<<<<<<< HEAD
-  name = "stale-content-auditor-runner"
-  schedule = "17 */6 * * *"
+name = "stale-content-auditor-runner"
+schedule = "17 */6 * * *"
 
 [[scheduled.functions]]
-  name = "deps-auto-upgrade-runner"
-  schedule = "7 */12 * * *"
+name = "deps-auto-upgrade-runner"
+schedule = "7 */12 * * *"
 
 # New autonomous cloud scanners
 [[scheduled.functions]]
-  name = "unused-media-scanner"
-  schedule = "*/10 * * * *"
+name = "unused-media-scanner"
+schedule = "*/10 * * * *"
 
 [[scheduled.functions]]
-  name = "orphan-pages-detector"
-  schedule = "*/15 * * * *"
+name = "orphan-pages-detector"
+schedule = "*/15 * * * *"
 
 [[scheduled.functions]]
-  name = "component-size-report"
-  schedule = "*/5 * * * *"
-=======
-name = "deps-auto-upgrade-runner"
-schedule = "0 3 * * *"
->>>>>>> Stashed changes
->>>>>>> origin/main
+name = "component-size-report"
+schedule = "*/5 * * * *"
