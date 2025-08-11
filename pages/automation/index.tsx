@@ -66,6 +66,16 @@ export default function AutomationHub() {
             <p className="text-white/70">Ultra-fast front index futurizer and directory builder.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/hyper-front-index-accelerator" target="_blank" rel="noopener">Trigger / View</a>
           </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Opportunity Miner</h2>
+            <p className="text-white/70">Finds quick‑win improvements and internal linking opportunities; publishes reports.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/opportunity-miner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">SEO Audit Scheduler</h2>
+            <p className="text-white/70">Runs SEO audits and publishes the latest JSON/HTML report.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/seo-audit-scheduler" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
         </ul>
       </main>
     </div>
