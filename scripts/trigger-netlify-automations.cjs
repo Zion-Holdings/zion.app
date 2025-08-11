@@ -140,7 +140,12 @@ function gitCommitAndPush(filesToAdd) {
   // Always include stamp file in case logs are ignored differently
   const stamp = path.join('automation', 'netlify-build-stamp.txt');
   if (!addTargets.includes(stamp)) addTargets.push(stamp);
-  execSync(`git add ${addTargets.map(a => `'${a}'`).join(' ')}`, { stdio: 'inherit' });
+  try {
+    execSync(`git add ${addTargets.map(a => `'${a}'`).join(' ')}`, { stdio: 'inherit' });
+  } catch (err) {
+    // Fallback: add only the stamp if logs are ignored
+    try { execSync(`git add '${stamp}'`, { stdio: 'inherit' }); } catch {}
+  }
   const status = execSync('git status --porcelain', { encoding: 'utf8' }).trim();
   if (!status) {
     log('No changes to commit. Skipping commit/push.');

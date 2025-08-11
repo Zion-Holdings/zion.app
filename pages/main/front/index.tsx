@@ -1722,6 +1722,18 @@ export default function MainFrontIndex() {
   <div className="text-base font-semibold">Autonomous Innovation Generator</div>
   <div className="mt-1 text-sm text-white/75">Front promos + homepage refresh</div>
   <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+              <a href="/.netlify/functions/repo-velocity-runner" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <div className="text-base font-semibold">Repo Velocity & Pulse</div>
+                <div className="mt-1 text-sm text-white/75">Commit cadence and change volume report</div>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+              </a>
+              <a href="/.netlify/functions/redirects-synthesizer" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <div className="text-base font-semibold">Redirects Synthesizer</div>
+                <div className="mt-1 text-sm text-white/75">Keeps _redirects aligned with routes</div>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+              </a>
   </div>
 </section>
 /* AUTO-GENERATED: FRONT_ADS_END */}
