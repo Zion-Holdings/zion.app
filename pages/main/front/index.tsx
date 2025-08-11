@@ -1537,7 +1537,32 @@ export default function MainFrontIndex() {
           </div>
         </section>
 {/* AUTO-GENERATED: FRONT_FUTURIZER_END */}
-{/* Footer */}
+
+        <section className="mx-auto max-w-7xl px-6 pb-16">
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Fresh Cloud Automations</h2>
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <a href="/.netlify/functions/meta-tags-audit-runner" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-base font-semibold">Meta Tags Audit</div>
+              <div className="mt-1 text-sm text-white/75">Audits pages for essential meta tags and publishes a report.</div>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>
+            <a href="/.netlify/functions/anchor-integrity-runner" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-base font-semibold">Anchor Integrity</div>
+              <div className="mt-1 text-sm text-white/75">Finds #anchors without matching ids and reports fixes.</div>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>
+            <a href="/.netlify/functions/internal-link-graph-runner" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-base font-semibold">Internal Link Graph</div>
+              <div className="mt-1 text-sm text-white/75">Builds a link graph and popularity insights to prioritize pages.</div>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>
+          </div>
+        </section>
+
+        {/* Footer */}
         <footer className="mx-auto max-w-7xl px-6 pb-16">
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
             <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
