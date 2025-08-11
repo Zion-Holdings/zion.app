@@ -220,6 +220,7 @@
   schedule = "*/15 * * * *" # every 15 minutes
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Newly added autonomous scanners
 [[scheduled.functions]]
   name = "a11y-audit-runner"
@@ -237,3 +238,30 @@
   name = "ux-heuristics-runner"
   schedule = "*/15 * * * *" # every 15 minutes
 >>>>>>> origin/main
+=======
+# Fresh autonomous audits
+[[scheduled.functions]]
+  name = "internal-link-graph-runner"
+  schedule = "7 */6 * * *"
+
+[[scheduled.functions]]
+  name = "anchor-integrity-runner"
+  schedule = "17 */6 * * *"
+
+[[scheduled.functions]]
+  name = "meta-tags-audit-runner"
+  schedule = "27 */6 * * *"
+
+# New background UX/perf and innovation
+[[scheduled.functions]]
+  name = "ux-a11y-auditor"
+  schedule = "*/15 * * * *"
+
+[[scheduled.functions]]
+  name = "perf-budget-runner"
+  schedule = "*/20 * * * *"
+
+[[scheduled.functions]]
+  name = "innovation-lab-pro"
+  schedule = "*/10 * * * *"
+>>>>>>> 9a6e0bf201 (chore(netlify): resolve schedule conflicts and regenerate functions manifest [skip ci])
