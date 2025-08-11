@@ -1553,6 +1553,19 @@ export default function MainFrontIndex() {
           </div>
         </motion.section>
       </main>
+      {/* Cloud Automations Callout */}
+      <section className="mx-auto max-w-7xl px-6 pb-10">
+        <div className="animated-border relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-r from-fuchsia-600/20 via-violet-600/20 to-cyan-600/20 p-6 text-center backdrop-blur-xl">
+          <h3 className="text-xl font-bold">Cloud Automations — Netlify Scheduled Functions</h3>
+          <p className="mx-auto mt-2 max-w-2xl text-white/80">Automations now run natively in the cloud without GitHub Actions. Explore live function endpoints and logs.</p>
+          <div className="mt-4 flex flex-wrap justify-center gap-2">
+            <a href="/.netlify/functions/homepage-scheduler" target="_blank" rel="noopener" className="rounded-xl border border-white/20 bg-white/5 px-4 py-2 text-sm font-semibold backdrop-blur-md hover:bg-white/10">Homepage Scheduler</a>
+            <a href="/.netlify/functions/automation-scheduler" target="_blank" rel="noopener" className="rounded-xl border border-white/20 bg-white/5 px-4 py-2 text-sm font-semibold backdrop-blur-md hover:bg-white/10">Automation Scheduler</a>
+          </div>
+        </div>
+      </section>
+      
+      {/* End Cloud Automations Callout */}
       {/* Back to top */}
       {showToTop && (
         <button
