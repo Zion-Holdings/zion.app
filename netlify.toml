@@ -167,21 +167,20 @@
   schedule = "53 */6 * * *"
 
 [[scheduled.functions]]
-<<<<<<< HEAD
   name = "redirect-healer"
   schedule = "*/15 * * * *"
 
 [[scheduled.functions]]
   name = "sitemap-prioritizer"
   schedule = "17 */6 * * *"
-=======
+
+[[scheduled.functions]]
   name = "redirect-manager"
   schedule = "*/30 * * * *"
 
 [[scheduled.functions]]
   name = "a11y-audit-runner"
   schedule = "*/20 * * * *"
->>>>>>> 12882bc485 (chore(sync): advanced autonomous sync)
 
 [[scheduled.functions]]
   name = "todo-summary-runner"
@@ -203,6 +202,14 @@
 [[scheduled.functions]]
   name = "auto-scheduler"
   schedule = "*/15 * * * *" # every 15 minutes
+
+[[scheduled.functions]]
+  name = "orphan-page-detector"
+  schedule = "*/30 * * * *" # every 30 minutes
+
+[[scheduled.functions]]
+  name = "content-staleness-runner"
+  schedule = "13 */12 * * *" # every 12 hours
 
 # From main (keep)
 [[scheduled.functions]]
