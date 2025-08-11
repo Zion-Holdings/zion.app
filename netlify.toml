@@ -186,3 +186,24 @@
 [[scheduled.functions]]
   name = "auto-scheduler"
   schedule = "*/15 * * * *" # every 15 minutes
+
+# Newly added audits and sync
+[[scheduled.functions]]
+  name = "a11y-audit-runner"
+  schedule = "7 */6 * * *"
+
+[[scheduled.functions]]
+  name = "internal-anchor-audit-runner"
+  schedule = "13 */6 * * *"
+
+[[scheduled.functions]]
+  name = "seo-schema-audit-runner"
+  schedule = "11 */4 * * *"
+
+[[scheduled.functions]]
+  name = "orphan-pages-runner"
+  schedule = "0 3 * * *"
+
+[[scheduled.functions]]
+  name = "rapid-git-sync"
+  schedule = "*/1 * * * *"
