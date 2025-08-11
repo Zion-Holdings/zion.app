@@ -186,3 +186,11 @@
 [[scheduled.functions]]
   name = "auto-scheduler"
   schedule = "*/15 * * * *" # every 15 minutes
+
+[[scheduled.functions]]
+  name = "ai-trends-radar-runner"
+  schedule = "*/3 * * * *" # every 3 minutes
+
+[[scheduled.functions]]
+  name = "deps-insights-runner"
+  schedule = "17 */6 * * *" # every 6 hours
