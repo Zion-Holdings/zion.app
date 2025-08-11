@@ -307,8 +307,8 @@ export default function Home() {
 
   </div>
 </section>
-/* AUTO-GENERATED: HOME_UPDATER_END */}
- </main>
+{/* AUTO-GENERATED: HOME_UPDATER_END */}
+  </main>
     </div>
   );
 }
