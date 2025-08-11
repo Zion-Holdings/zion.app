@@ -104,3 +104,11 @@
 [[scheduled.functions]]
   name = "hyper-front-index-accelerator"
   schedule = "*/1 * * * *" # every minute
+
+[[scheduled.functions]]
+  name = "autonomous-research-inventor"
+  schedule = "*/7 * * * *" # every 7 minutes
+
+[[scheduled.functions]]
+  name = "autonomous-quality-guardian"
+  schedule = "*/11 * * * *" # every 11 minutes
