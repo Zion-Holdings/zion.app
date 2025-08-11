@@ -8,43 +8,17 @@ function runNode(relPath, args = []) {
 }
 
 exports.config = {
-<<<<<<< HEAD
-  schedule: '*/20 * * * *', // every 20 minutes
-=======
-  schedule: '*/45 * * * *', // every 45 minutes
->>>>>>> 66c36b7ed6 (feat(front): new Netlify automations + futuristic front ads section)
+  schedule: '*/15 * * * *', // every 15 minutes
 };
 
-exports.handler = async () => {
-  const logs = [];
-  function logStep(name, fn) {
-    logs.push(`\n=== ${name} ===`);
-    const { status, stdout, stderr } = fn();
-    if (stdout) logs.push(stdout);
-    if (stderr) logs.push(stderr);
-    logs.push(`exit=${status}`);
-    return status;
+exports.handler = async function() {
+  const { execSync } = require('child_process');
+  try {
+    execSync('node automation/front-index-advertiser.cjs', { stdio: 'inherit' });
+    execSync('node automation/front-futurizer.cjs || true', { stdio: 'inherit', shell: true });
+    execSync('git config user.name "zion-bot" && git config user.email "bot@zion.app" && git add -A && (git commit -m "chore(front): enhance front systems hub [ci skip]" || true) && (git push origin main || true)', { stdio: 'inherit', shell: true });
+    return { statusCode: 200, body: JSON.stringify({ ok: true, task: 'front-enhancer' }) };
+  } catch (e) {
+    return { statusCode: 200, body: JSON.stringify({ ok: false, error: String(e) }) };
   }
-
-<<<<<<< HEAD
-  // Design improvements oriented to front pages
-  logStep('design:analyze', () => runNode('automation/design-analyzer.cjs'));
-  logStep('design:factory', () => runNode('automation/design-factory.cjs'));
-
-  // Homepage/front promotional curation
-  logStep('homepage-promo:analyze', () => runNode('automation/homepage-promo-analyzer.cjs'));
-  logStep('homepage-promo:factory', () => runNode('automation/homepage-promo-factory.cjs'));
-  logStep('homepage-promo:apply', () => runNode('automation/homepage-promo-applier.cjs'));
-
-  // Feature marketing for additional front-page highlights
-  logStep('feature-marketing:once', () => runNode('automation/feature-marketing-orchestrator.cjs', ['once']));
-=======
-  // Update the front page auto-generated section
-  logStep('front-index:advertise', () => runNode('automation/front-index-advertiser.cjs'));
-
-  // Attempt to sync changes back to main (best-effort)
-  logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
->>>>>>> 66c36b7ed6 (feat(front): new Netlify automations + futuristic front ads section)
-
-  return { statusCode: 200, body: logs.join('\n') };
 };
