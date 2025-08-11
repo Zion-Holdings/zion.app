@@ -1,0 +1,81 @@
+{
+  "generatedAt": "2025-08-11T23:25:15.381Z",
+  "entries": [
+    {
+      "name": "Vercel",
+      "url": "https://vercel.com",
+      "title": "Vercel: Build and deploy the best web experiences with the AI Cloud",
+      "description": "Vercel gives developers the frameworks, workflows, and infrastructure to build a faster, more personalized web.",
+      "headlines": [
+        "Build and deploy on the AI Cloud.",
+        "Git-connected Deploys",
+        "Collaborative Pre-production",
+        "Observability",
+        "Vercel AI Gateway",
+        "Instant Rollbacks",
+        "Scale your",
+        "without compromising"
+      ]
+    },
+    {
+      "name": "Netlify",
+      "url": "https://www.netlify.com",
+      "title": "Scale & Ship Faster with a Composable Web Architecture | Netlify",
+      "description": "Realize the speed, agility and performance of a scalable, composable web architecture with Netlify. Explore the composable web platform now!",
+      "headlines": [
+        "Site navigation",
+        "Push your ideas to the web",
+        "One platform. Prompt to production.",
+        "Build & integrate Experiment faster",
+        "Deploy & collaborate Iterate together",
+        "Run & scale Scale automatically",
+        "Ship your e-commerce site in just a few clicks",
+        "Mammut means quality - in brand and in technology"
+      ]
+    },
+    {
+      "name": "Render",
+      "url": "https://render.com",
+      "title": "Cloud Application Platform | Render",
+      "description": "On Render, you can build, deploy, and scale your apps with unparalleled ease – from your first user to your billionth.",
+      "headlines": [
+        "Your fastest path to production",
+        "Click, click, done.",
+        "Build with speed",
+        "Scale with confidence",
+        "Ship together"
+      ]
+    },
+    {
+      "name": "Supabase",
+      "url": "https://supabase.com",
+      "title": "Supabase | The Postgres Development Platform.",
+      "description": "Build production-grade applications with a Postgres database, Authentication, instant APIs, Realtime, Functions, Storage and Vector embeddings. Start for free.",
+      "headlines": [
+        "Build in a weekendScale to millions",
+        "Postgres Database",
+        "Authentication",
+        "Edge Functions",
+        "Storage",
+        "Realtime",
+        "Vector",
+        "Data APIs"
+      ]
+    },
+    {
+      "name": "Cloudflare",
+      "url": "https://www.cloudflare.com",
+      "title": "Connect, protect, and build everywhere | Cloudflare",
+      "description": "Make employees, applications and networks faster and more secure everywhere, while reducing complexity and cost.",
+      "headlines": [
+        "Connect, protect, and build everywhere",
+        "Our connectivity cloud is the best place to connect your users, apps, clouds, and networksprotect everything you connect to the Internetbuild and scale applications",
+        "One global cloud network unlike any other",
+        "Leading companies rely on Cloudflare",
+        "How Cloudflare can help",
+        "News and resources",
+        "Get started with the connectivity cloud"
+      ]
+    }
+  ]
+}

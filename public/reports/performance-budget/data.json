@@ -1,0 +1,119 @@
+{
+  "generatedAt": "2025-08-11T23:25:15.424Z",
+  "budgetChecks": [
+    {
+      "name": "Total public assets",
+      "limit": "8.0 MB",
+      "value": "40.7 MB",
+      "pass": false
+    },
+    {
+      "name": "Total images",
+      "limit": "5.0 MB",
+      "value": "781.0 B",
+      "pass": true
+    },
+    {
+      "name": "Largest single image",
+      "limit": "600.0 KB",
+      "value": "781.0 B",
+      "pass": true
+    },
+    {
+      "name": "Largest script",
+      "limit": "500.0 KB",
+      "value": "0 B",
+      "pass": true
+    }
+  ],
+  "largest": [
+    {
+      "rel": "public/automation/todo-summary.json",
+      "size": 42575917
+    },
+    {
+      "rel": "public/reports/capability-map/index.html",
+      "size": 34705
+    },
+    {
+      "rel": "public/automation/capability-map.json",
+      "size": 22658
+    },
+    {
+      "rel": "public/reports/dependency-freshness/index.html",
+      "size": 10307
+    },
+    {
+      "rel": "public/reports/index.html",
+      "size": 8177
+    },
+    {
+      "rel": "public/automation/dependency-freshness.json",
+      "size": 6905
+    },
+    {
+      "rel": "public/search/index.json",
+      "size": 5411
+    },
+    {
+      "rel": "public/reports/ai-trends/index.html",
+      "size": 5099
+    },
+    {
+      "rel": "public/reports/ai-trends/2025-08-08.json",
+      "size": 4733
+    },
+    {
+      "rel": "public/reports/ai-trends/latest.json",
+      "size": 4733
+    },
+    {
+      "rel": "public/reports/competitive-intel/index.html",
+      "size": 4698
+    },
+    {
+      "rel": "public/reports/competitive-intel/data.json",
+      "size": 3146
+    },
+    {
+      "rel": "public/automation/overview.json",
+      "size": 2710
+    },
+    {
+      "rel": "public/reports/seo/index.html",
+      "size": 2281
+    },
+    {
+      "rel": "public/reports/a11y/index.html",
+      "size": 1655
+    },
+    {
+      "rel": "public/reports/seo/latest.json",
+      "size": 1593
+    },
+    {
+      "rel": "public/sitemap.xml",
+      "size": 1486
+    },
+    {
+      "rel": "public/reports/a11y/latest.json",
+      "size": 1296
+    },
+    {
+      "rel": "public/automation/content-registry.json",
+      "size": 1191
+    },
+    {
+      "rel": "public/og/zion-tech-group.svg",
+      "size": 781
+    },
+    {
+      "rel": "public/_redirects",
+      "size": 219
+    },
+    {
+      "rel": "public/og/manifest.json",
+      "size": 145
+    }
+  ]
+}
