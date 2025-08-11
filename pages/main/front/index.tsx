@@ -1718,6 +1718,18 @@ export default function MainFrontIndex() {
   <div className="text-base font-semibold">AI Changelog — highlights</div>
   <div className="mt-1 text-sm text-white/75">Summarized updates</div>
   <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+              <Link href="/.netlify/functions/internal-link-graph-runner"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">Internal Link Graph</div>
+  <div className="mt-1 text-sm text-white/75">Builds site link graph</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+              <Link href="/.netlify/functions/anchor-integrity-runner"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">Anchor Integrity</div>
+  <div className="mt-1 text-sm text-white/75">Finds missing #anchors</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+              <Link href="/.netlify/functions/meta-tags-audit-runner"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">Meta Tags Audit</div>
+  <div className="mt-1 text-sm text-white/75">OG & Twitter checks</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
   </div>
 </section>
 /* AUTO-GENERATED: FRONT_ADS_END */}

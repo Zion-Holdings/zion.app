@@ -186,3 +186,16 @@
 [[scheduled.functions]]
   name = "auto-scheduler"
   schedule = "*/15 * * * *" # every 15 minutes
+
+# Fresh autonomous audits
+[[scheduled.functions]]
+  name = "internal-link-graph-runner"
+  schedule = "7 */6 * * *"
+
+[[scheduled.functions]]
+  name = "anchor-integrity-runner"
+  schedule = "17 */6 * * *"
+
+[[scheduled.functions]]
+  name = "meta-tags-audit-runner"
+  schedule = "27 */6 * * *"
