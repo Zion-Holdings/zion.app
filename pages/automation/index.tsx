@@ -22,6 +22,21 @@ export default function AutomationHub() {
             <a className="text-cyan-300 underline" href="/.netlify/functions/schedule-site-health" target="_blank" rel="noopener">Trigger / View</a>
           </li>
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Tech Debt Heatmap</h2>
+            <p className="text-white/70">Scans repo signals and publishes a live heatmap.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/tech-debt-heatmap-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Revenue Ideas Runner</h2>
+            <p className="text-white/70">Aggregates monetization proposals into reports.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/revenue-ideas-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Code Ownership Map</h2>
+            <p className="text-white/70">Infers contributors per top-level area and publishes a map.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/code-ownership-map-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
             <h2 className="text-xl font-bold">Content Indexing</h2>
             <p className="text-white/70">Docs and search index regeneration for instant discovery.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/schedule-content-index" target="_blank" rel="noopener">Trigger / View</a>

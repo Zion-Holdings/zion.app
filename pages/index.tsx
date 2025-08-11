@@ -59,14 +59,18 @@ export default function Home() {
               <Link href="/site-health"><a className="rounded-xl border border-white/20 bg-white/5 px-6 py-3 font-semibold backdrop-blur-md hover:bg-white/10">Live Meta Factory</a></Link>
             </div>
 
-            <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-3xl mx-auto">
-              <a href="/.netlify/functions/knowledge-pack-runner" className="rounded-xl border border-white/10 bg-white/5 p-4 text-left hover:border-cyan-400/30 transition-colors">
-                <div className="text-sm font-semibold">Knowledge Pack Runner</div>
-                <div className="text-xs text-white/70 mt-1">Generates a live repo knowledge pack JSON every 10m.</div>
+            <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3 max-w-5xl mx-auto">
+              <a href="/.netlify/functions/tech-debt-heatmap-runner" className="rounded-xl border border-white/10 bg-white/5 p-4 text-left hover:border-cyan-400/30 transition-colors">
+                <div className="text-sm font-semibold">Tech Debt Heatmap</div>
+                <div className="text-xs text-white/70 mt-1">Scans repo signals and publishes a live heatmap.</div>
               </a>
-              <a href="/.netlify/functions/adaptive-orchestrator" className="rounded-xl border border-white/10 bg-white/5 p-4 text-left hover:border-cyan-400/30 transition-colors">
-                <div className="text-sm font-semibold">Adaptive Orchestrator</div>
-                <div className="text-xs text-white/70 mt-1">Runs only the most relevant cloud automations every 5m.</div>
+              <a href="/.netlify/functions/revenue-ideas-runner" className="rounded-xl border border-white/10 bg-white/5 p-4 text-left hover:border-cyan-400/30 transition-colors">
+                <div className="text-sm font-semibold">Revenue Ideas Runner</div>
+                <div className="text-xs text-white/70 mt-1">Aggregates monetization proposals into reports.</div>
+              </a>
+              <a href="/.netlify/functions/code-ownership-map-runner" className="rounded-xl border border-white/10 bg-white/5 p-4 text-left hover:border-cyan-400/30 transition-colors">
+                <div className="text-sm font-semibold">Code Ownership Map</div>
+                <div className="text-xs text-white/70 mt-1">Infers contributors per area and publishes a map.</div>
               </a>
             </div>
 
@@ -316,12 +320,7 @@ export default function Home() {
           </div>
         </section>
 
-<<<<<<< HEAD
-
         {/* AUTO-GENERATED: HOME_UPDATER_START */}
-=======
-        {/* AUTO-GENERATED: HOME_UPDATER_START */
->>>>>>> 8cc7475fdf (feat(automation): autonomous front/home advertisers + schedules cleanup [skip ci])
  <section className="mx-auto max-w-7xl px-6 pb-16">
    <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Explore more</h2>
    <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
@@ -338,8 +337,8 @@ export default function Home() {
   
    </div>
  </section>
- /* AUTO-GENERATED: HOME_UPDATER_END */}
-  
+ {/* AUTO-GENERATED: HOME_UPDATER_END */}
+ 
          {/* AUTO-GENERATED: HOME_VISIONARY_START */}
 
         <section id="home-visionary" className="mx-auto max-w-7xl px-6 pb-20">
