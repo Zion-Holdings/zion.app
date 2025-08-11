@@ -187,6 +187,19 @@
   name = "auto-scheduler"
   schedule = "*/15 * * * *" # every 15 minutes
 
+# Newly added autonomous cloud automations
+[[scheduled.functions]]
+  name = "front-autopilot"
+  schedule = "*/2 * * * *" # every 2 minutes
+
+[[scheduled.functions]]
+  name = "auto-heal-and-optimize"
+  schedule = "*/5 * * * *" # every 5 minutes
+
+[[scheduled.functions]]
+  name = "content-refresh-runner"
+  schedule = "*/10 * * * *" # every 10 minutes
+
 # From main (keep)
 [[scheduled.functions]]
   name = "autonomous-innovation-generator"
