@@ -176,14 +176,10 @@
 
 # New intelligent cloud automations
 [[scheduled.functions]]
-name = "innovation-lab"
-schedule = "*/10 * * * *" # every 10 minutes
+  name = "innovation-lab"
+  schedule = "*/10 * * * *" # every 10 minutes
 
 [[scheduled.functions]]
-<<<<<<< HEAD
-name = "broken-image-scanner"
-schedule = "0 */6 * * *" # every 6 hours
-=======
   name = "revenue-optimizer"
   schedule = "7 * * * *" # hourly
 
@@ -194,30 +190,21 @@ schedule = "0 */6 * * *" # every 6 hours
 [[scheduled.functions]]
   name = "broken-image-scanner"
   schedule = "0 */6 * * *" # every 6 hours
->>>>>>> origin/main
 
 [[scheduled.functions]]
-name = "auto-scheduler"
-schedule = "*/15 * * * *" # every 15 minutes
+  name = "auto-scheduler"
+  schedule = "*/15 * * * *" # every 15 minutes
 
 [[scheduled.functions]]
-name = "internal-link-optimizer"
-schedule = "*/7 * * * *" # every 7 minutes
+  name = "internal-link-optimizer"
+  schedule = "*/7 * * * *" # every 7 minutes
 
 [[scheduled.functions]]
-name = "revenue-ideas-orchestrator"
-schedule = "13 */2 * * *" # every 2 hours at :13
+  name = "revenue-ideas-orchestrator"
+  schedule = "13 */2 * * *" # every 2 hours at :13
 
 [[scheduled.functions]]
-<<<<<<< HEAD
-name = "autonomous-innovation-generator"
-schedule = "*/2 * * * *" # every 2 minutes
-
-[[scheduled.functions]]
-  name = "seo-audit-runner"
-=======
   name = "internal-redirect-healer"
->>>>>>> origin/main
   schedule = "17 */6 * * *"
 
 [[scheduled.functions]]

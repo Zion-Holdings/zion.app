@@ -208,12 +208,9 @@ export default function Home() {
               { title: 'Docs Search Index', desc: 'Refreshes the site search index for instant discovery.', href: '/.netlify/functions/docs-search-index-runner' },
               { title: 'Netlify Auto‑Healer', desc: 'Monitors and self-heals Netlify deploy issues.', href: '/.netlify/functions/netlify-auto-healer-runner' },
               { title: 'Innovation Lab (10m)', desc: 'Invents, curates, and promotes fresh ideas across the site.', href: '/.netlify/functions/innovation-lab' },
-<<<<<<< HEAD
-              { title: 'Autonomous Innovation Generator (2m)', desc: 'Synthesizes front promos and homepage refresh, then syncs to main.', href: '/.netlify/functions/autonomous-innovation-generator' },
+{ title: 'Autonomous Innovation Generator (2m)', desc: 'Synthesizes front promos and homepage refresh, then syncs to main.', href: '/.netlify/functions/autonomous-innovation-generator' },
 { title: 'Internal Link Optimizer (7m)', desc: 'Crawls site, heals 404s with smart redirects, refreshes directory, and syncs.', href: '/.netlify/functions/internal-link-optimizer' },
-{ title: 'Revenue Ideas Orchestrator (2h)', desc: 'Deploys monetization CTAs and booking components across key pages, then syncs.', href: '/.netlify/functions/revenue-ideas-orchestrator' },
-=======
->>>>>>> origin/main
+{ title: 'Revenue Ideas Orchestrator (2h)', desc: 'Deploys monetization CTAs and booking components across key pages, then syncs.', href: '/.netlify/functions/revenue-ideas-orchestrator' }
               { title: 'Auto Scheduler (15m)', desc: 'Smart time-based runner that chooses and executes the best tasks.', href: '/.netlify/functions/auto-scheduler' },
               { title: 'Broken Image Scanner (6h)', desc: 'Finds broken images, optimizes assets, and syncs fixes.', href: '/.netlify/functions/broken-image-scanner' },
               { title: 'Internal Redirect Healer', desc: 'Eliminates /index redirects in internal links to speed up navigation.', href: '/.netlify/functions/internal-redirect-healer' },
@@ -230,10 +227,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* AUTO-GENERATED: HOME_UPDATER_START */
- <section className="mx-auto max-w-7xl px-6 pb-16">
-   <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Explore more</h2>
-   <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {/* AUTO-GENERATED: HOME_UPDATER_START */}
+  <section className="mx-auto max-w-7xl px-6 pb-16">
+    <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Explore more</h2>
+    <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 
             <Link href="/automation"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Automation Hub — live agents & reports</span></a></Link>
   
@@ -245,11 +242,11 @@ export default function Home() {
   
             <Link href="/.netlify/functions/docs-index-runner"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Docs — technical notes & guides</span></a></Link>
   
-   </div>
- </section>
- /* AUTO-GENERATED: HOME_UPDATER_END */}
- 
-        /* AUTO-GENERATED: HOME_VISIONARY_START */
+    </div>
+  </section>
+  {/* AUTO-GENERATED: HOME_UPDATER_END */}
+  
+        {/* AUTO-GENERATED: HOME_VISIONARY_START */}
 
         <section id="home-visionary" className="mx-auto max-w-7xl px-6 pb-20">
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">New Visionary Automations</h2>
@@ -290,7 +287,7 @@ export default function Home() {
             <Link href="/site-health"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Site Health — audits & insights</span></a></Link>
           </div>
         </section>
-/* AUTO-GENERATED: HOME_VISIONARY_END */
+{/* AUTO-GENERATED: HOME_VISIONARY_END */}
 </main>
     </div>
   );
