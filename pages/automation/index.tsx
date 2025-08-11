@@ -66,6 +66,31 @@ export default function AutomationHub() {
             <p className="text-white/70">Ultra-fast front index futurizer and directory builder.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/hyper-front-index-accelerator" target="_blank" rel="noopener">Trigger / View</a>
           </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Auto Reports Suite</h2>
+            <p className="text-white/70">SEO audit, search index, AI trends, docs and repo intel.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/auto-reports-suite" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">AI Changelog Broadcaster</h2>
+            <p className="text-white/70">Refreshes AI changelog and newsroom content.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/ai-changelog-broadcaster" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Guardian Ultra</h2>
+            <p className="text-white/70">Auto-healing, image optimization, broken-image scanning.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/guardian-ultra" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Newsroom Auto</h2>
+            <p className="text-white/70">Regenerates newsroom updates automatically.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/newsroom-auto" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">OG Image Refresh</h2>
+            <p className="text-white/70">Regenerates page OG images on a cadence.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/og-image-refresh" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
         </ul>
       </main>
     </div>

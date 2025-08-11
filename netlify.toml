@@ -104,3 +104,24 @@
 [[scheduled.functions]]
   name = "hyper-front-index-accelerator"
   schedule = "*/1 * * * *" # every minute
+
+# New autonomous cloud automations
+[[scheduled.functions]]
+  name = "auto-reports-suite"
+  schedule = "*/5 * * * *" # every 5 minutes
+
+[[scheduled.functions]]
+  name = "ai-changelog-broadcaster"
+  schedule = "13 */2 * * *" # every 2 hours at :13
+
+[[scheduled.functions]]
+  name = "guardian-ultra"
+  schedule = "*/3 * * * *" # every 3 minutes
+
+[[scheduled.functions]]
+  name = "newsroom-auto"
+  schedule = "*/30 * * * *" # every 30 minutes
+
+[[scheduled.functions]]
+  name = "og-image-refresh"
+  schedule = "*/20 * * * *" # every 20 minutes
