@@ -82,7 +82,7 @@ function chooseItems(registry) {
   for (const d of registry.docs || []) {
     if (docs.length >= 4) break;
     const label = d.file.replace(/^docs\//, '').replace(/\.(md|mdx)$/,'');
-    docs.push({ href: 'https://github.com/Zion-Holdings/zion.app/blob/main/' + d.file, label: 'Docs — ' + label, desc: 'Open documentation', external: true });
+    docs.push({ href: '/.netlify/functions/docs-index-runner', label: 'Docs — ' + label, desc: 'Open documentation' });
   }
 
   const combined = [...priority, ...others.slice(0, 20), ...docs];

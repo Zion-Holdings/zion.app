@@ -21,8 +21,8 @@ function buildTiles() {
     { href: '/reports/seo', label: 'AI SEO Auditor', tagline: 'Continuous on‑site improvements' },
     { href: '/reports/ai-trends', label: 'AI Trends', tagline: 'Signals for new automations' },
     { href: '/newsroom', label: 'Newsroom', tagline: 'Autonomous updates & highlights' },
-    { href: 'https://github.com/Zion-Holdings/zion.app/tree/main/docs', label: 'Docs', tagline: 'Technical notes & guides', external: true },
-    { href: 'https://github.com/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md', label: 'AI Changelog', tagline: 'Summarized autonomous changes', external: true },
+    { href: '/.netlify/functions/docs-index-runner', label: 'Docs', tagline: 'Technical notes & guides' }
+    { href: '/newsroom', label: 'AI Changelog', tagline: 'Summarized autonomous changes' }
   ];
 
   return items.map((it) => {
