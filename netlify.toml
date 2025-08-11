@@ -25,5 +25,25 @@
   schedule = "0 */6 * * *" # every 6 hours
 
 [[scheduled.functions]]
+  name = "frontpage-enhancer"
+  schedule = "*/60 * * * *" # every hour
+
+[[scheduled.functions]]
   name = "front-enhancer"
+  schedule = "*/15 * * * *" # every 15 minutes (accelerated)
+
+[[scheduled.functions]]
+  name = "marketing-and-features-promo"
+  schedule = "0 */2 * * *" # every 2 hours
+
+[[scheduled.functions]]
+  name = "link-and-health-scheduler"
+  schedule = "0 */6 * * *" # every 6 hours
+
+[[scheduled.functions]]
+  name = "homepage-updater-scheduler"
+  schedule = "0 4 * * *" # daily 04:00 UTC
+
+[[scheduled.functions]]
+  name = "front-index-scheduler"
   schedule = "*/20 * * * *" # every 20 minutes
