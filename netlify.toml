@@ -167,6 +167,10 @@
   schedule = "53 */6 * * *"
 
 [[scheduled.functions]]
+  name = "dependency-health-radar-runner"
+  schedule = "17 */6 * * *"
+
+[[scheduled.functions]]
   name = "todo-summary-runner"
   schedule = "*/30 * * * *"
 
