@@ -1394,3 +1394,71 @@ Already up to date.
 [cursor/fix-pm2-automations-16e9 08926e272d] chore(sync): fast autonomous sync
  2 files changed, 75 insertions(+), 1 deletion(-)
 [2025-08-11T20:59:50.248Z] ✅ Automation Guardian (10m) finished
+[2025-08-11T21:09:36.567Z] 🚀 Automation Guardian (10m) starting
+[2025-08-11T21:09:36.569Z] $ npx eslint . --ext .js,.jsx,.ts,.tsx --fix
+[2025-08-11T21:09:37.318Z] Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --fix
+(node:5175) ESLintIgnoreWarning: The ".eslintignore" file is no longer supported. Switch to using the "ignores" property in "eslint.config.js": https://eslint.org/docs/latest/use/configure/migration-guide#ignoring-files
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+Oops! Something went wrong! :(
+
+ESLint: 9.33.0
+
+ESLint couldn't find an eslint.config.(js|mjs|cjs) file.
+
+From ESLint v9.0.0, the default configuration file is now eslint.config.js.
+If you are using a .eslintrc.* file, please follow the migration guide
+to update your configuration file to the new format:
+
+https://eslint.org/docs/latest/use/configure/migration-guide
+
+If you still have problems after following the migration guide, please stop by
+https://eslint.org/chat/help to chat with the team.
+[2025-08-11T21:09:37.319Z] $ node automation/homepage-promo-factory.cjs 
+[2025-08-11T21:09:37.342Z] [homepage-promo-factory] No-op stub running.
+[2025-08-11T21:09:37.342Z] $ npm run type-check
+[2025-08-11T21:09:38.118Z] > bolt.new.zion.app@0.1.0 type-check
+> tsc --noEmit
+
+pages/site-health.tsx(11,25): error TS1127: Invalid character.
+pages/site-health.tsx(11,33): error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+pages/site-health.tsx(11,52): error TS17002: Expected corresponding JSX closing tag for 'ul'.
+pages/site-health.tsx(12,11): error TS17002: Expected corresponding JSX closing tag for 'main'.
+pages/site-health.tsx(13,9): error TS17002: Expected corresponding JSX closing tag for 'div'.
+pages/site-health.tsx(14,5): error TS1005: ')' expected.
+pages/site-health.tsx(15,3): error TS1109: Expression expected.
+[2025-08-11T21:09:38.118Z] Type-check failed, attempting quick syntax repair
+[2025-08-11T21:09:38.118Z] $ npm run build
+[2025-08-11T21:09:39.187Z] > bolt.new.zion.app@0.1.0 prebuild
+> npm run netlify:manifest
+
+
+> bolt.new.zion.app@0.1.0 netlify:manifest
+> node scripts/generate-netlify-functions-manifest.cjs
+
+[manifest] Wrote /workspace/netlify/functions/functions-manifest.json with 64 functions.
+
+> bolt.new.zion.app@0.1.0 build
+> NODE_OPTIONS=--openssl-legacy-provider next build
+
+info  - Using webpack 5. Reason: Enabled by default https://nextjs.org/docs/messages/webpack5
+info  - Skipping validation of types...
+info  - Creating an optimized production build...
+[2025-08-11T21:09:39.187Z] Build failed, attempting comprehensive_fix then rebuild
+[2025-08-11T21:09:39.187Z] $ npm run build
+[2025-08-11T21:09:40.215Z] > bolt.new.zion.app@0.1.0 prebuild
+> npm run netlify:manifest
+
+
+> bolt.new.zion.app@0.1.0 netlify:manifest
+> node scripts/generate-netlify-functions-manifest.cjs
+
+[manifest] Wrote /workspace/netlify/functions/functions-manifest.json with 64 functions.
+
+> bolt.new.zion.app@0.1.0 build
+> NODE_OPTIONS=--openssl-legacy-provider next build
+
+info  - Using webpack 5. Reason: Enabled by default https://nextjs.org/docs/messages/webpack5
+info  - Skipping validation of types...
+info  - Creating an optimized production build...
+[2025-08-11T21:09:40.216Z] $ node automation/git-sync.cjs 
