@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-11T23:03:51.129Z",
+  "generatedAt": "2025-08-11T23:13:02.307Z",
   "functions": [
     "ai-changelog-runner",
     "auto-scheduler",
@@ -47,6 +47,7 @@
     "newsroom-auto-publisher",
     "newsroom-runner",
     "og-image-update-runner",
+    "perf-budget-guardian",
     "readme-advertiser",
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
@@ -57,6 +58,7 @@
     "schedule-site-health",
     "security-audit",
     "security-audit-runner",
+    "semantic-code-map-runner",
     "site-crawler",
     "sitemap_runner",
     "todo-scanner-runner",

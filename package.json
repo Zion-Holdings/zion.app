@@ -23,6 +23,8 @@
     "functions:run": "node scripts/run-netlify-functions-locally.cjs",
     "functions:run:execute": "node scripts/run-netlify-functions-locally.cjs --execute",
     "front:advertise": "node automation/front-index-advertiser.cjs",
+    "automation:semantic-map": "node automation/semantic-code-map.cjs",
+    "automation:perf-budget": "node automation/perf-budget-guardian.cjs",
     "deps:maintain": "node automation/dependency-update-orchestrator.cjs",
     "deps:cron:start": "bash automation/dependency-maintenance-cron.sh",
     "sitemap": "node scripts/generate-sitemap.js",

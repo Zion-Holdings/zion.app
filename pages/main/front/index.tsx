@@ -1750,11 +1750,30 @@ export default function MainFrontIndex() {
               </a>
             ))}
           </div>
-        </motion.section>
+                </motion.section>
 
+        <section id="autonomous-labs" className="mx-auto max-w-7xl px-6 pb-14">
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Autonomous Labs</h2>
+          <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Intelligent, cloud‑native runners that invent, analyze, and commit improvements automatically.</p>
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <a href="/.netlify/functions/semantic-code-map-runner" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-base font-semibold">Semantic Code Map</div>
+              <div className="mt-1 text-sm text-white/75">Generates a live map of routes, components, and automations.</div>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>
+            <a href="/.netlify/functions/perf-budget-guardian" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-base font-semibold">Performance Budget Guardian</div>
+              <div className="mt-1 text-sm text-white/75">Monitors asset sizes and flags budget violations. Commits reports.</div>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>
+          </div>
+        </section>
+ 
       </div>
       {/* Back to top */}
-      {showToTop && (
+{showToTop && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="fixed bottom-24 right-4 z-40 rounded-full bg-gradient-to-r from-fuchsia-500 to-cyan-500 px-3 py-2 text-xs font-semibold shadow-[0_0_30px_rgba(34,211,238,0.35)] hover:shadow-[0_0_40px_rgba(34,211,238,0.6)]"
