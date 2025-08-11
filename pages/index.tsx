@@ -208,7 +208,11 @@ export default function Home() {
               { title: 'Docs Search Index', desc: 'Refreshes the site search index for instant discovery.', href: '/.netlify/functions/docs-search-index-runner' },
               { title: 'SEO Audit Runner', desc: 'Generates SEO report for all pages.', href: '/.netlify/functions/seo-audit-runner' },
               { title: 'AI Trends Radar', desc: 'Aggregates trending AI topics and publishes a live report.', href: '/reports/ai-trends' },
-              { title: 'Website Search Index Runner', desc: 'Regenerates the full site search index.', href: '/.netlify/functions/website-search-index-runner' },
+               { title: 'Internal Link Graph', desc: 'Visualizes internal navigation and finds orphan pages.', href: '/reports/internal-links' },
+               { title: 'Unused Images Report', desc: 'Detects unreferenced assets and potential savings.', href: '/reports/images' },
+               { title: 'Internal Link Graph (run)', desc: 'Run the internal link graph job now.', href: '/.netlify/functions/internal-link-graph-runner' },
+               { title: 'Unused Images Report (run)', desc: 'Run the unused images audit now.', href: '/.netlify/functions/unused-images-runner' },
+               { title: 'Website Search Index Runner', desc: 'Regenerates the full site search index.', href: '/.netlify/functions/website-search-index-runner' },
               { title: 'Netlify Auto‑Healer', desc: 'Monitors and self-heals Netlify deploy issues.', href: '/.netlify/functions/netlify-auto-healer-runner' },
               { title: 'Innovation Lab (10m)', desc: 'Invents, curates, and promotes fresh ideas across the site.', href: '/.netlify/functions/innovation-lab' },
               { title: 'Autonomous Innovation Generator (2m)', desc: 'Synthesizes front promos and homepage refresh, then syncs to main.', href: '/.netlify/functions/autonomous-innovation-generator' },
@@ -229,7 +233,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* AUTO-GENERATED: HOME_UPDATER_START */
+        {/* AUTO-GENERATED: HOME_UPDATER_START */}
  <section className="mx-auto max-w-7xl px-6 pb-16">
    <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Explore more</h2>
    <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
@@ -245,8 +249,8 @@ export default function Home() {
             <Link href="/.netlify/functions/docs-index-runner"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Docs — technical notes & guides</span></a></Link>
   
    </div>
- </section>
- /* AUTO-GENERATED: HOME_UPDATER_END */}
+   </section>
+  /* AUTO-GENERATED: HOME_UPDATER_END */
  
         /* AUTO-GENERATED: HOME_VISIONARY_START */
 

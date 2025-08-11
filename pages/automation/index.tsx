@@ -122,6 +122,20 @@ export default function AutomationHub() {
             <p className="text-white/70">Deletes merged or stale ephemeral branches via GitHub API.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/branch-cleanup-runner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Internal Link Graph</h2>
+            <p className="text-white/70">Visualizes internal navigation and finds orphan pages.</p>
+            <a className="text-cyan-300 underline" href="/reports/internal-links" target="_blank" rel="noopener">Open Report</a>
+            <span className="mx-2 text-white/40">•</span>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/internal-link-graph-runner" target="_blank" rel="noopener">Run</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Unused Images Report</h2>
+            <p className="text-white/70">Detects unreferenced assets and potential savings.</p>
+            <a className="text-cyan-300 underline" href="/reports/images" target="_blank" rel="noopener">Open Report</a>
+            <span className="mx-2 text-white/40">•</span>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/unused-images-runner" target="_blank" rel="noopener">Run</a>
+          </li>
         </ul>
       </main>
     </div>
