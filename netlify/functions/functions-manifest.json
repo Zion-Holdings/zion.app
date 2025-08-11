@@ -1,6 +1,7 @@
 {
-  "generatedAt": "2025-08-11T22:40:00.000Z",
+  "generatedAt": "2025-08-11T22:46:30.891Z",
   "functions": [
+    "a11y-audit-runner",
     "ai-changelog-runner",
     "ai-trends-radar-runner",
     "auto-discovery-runner",
@@ -54,6 +55,7 @@
     "newsroom-runner",
     "og-image-update-runner",
     "readme-advertiser",
+    "redirect-manager",
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",
