@@ -253,6 +253,17 @@ export default function Home() {
               { title: 'README Advertiser', desc: 'Refresh README and docs indexes every 6h.', href: '/.netlify/functions/readme-advertiser' },
               { title: 'Features/Capabilities/Benefits Advertiser (2m)', desc: 'Continuously advertises new features with deep links on the front pages.', href: '/.netlify/functions/features-capabilities-benefits-advertiser' },
               { title: 'Hyper Front Index Accelerator (1m)', desc: 'Ultra-fast front index futurizer and directory builder.', href: '/.netlify/functions/hyper-front-index-accelerator' },
+              // New tools
+              { title: 'Automation Guardian (10m)', desc: 'Protective sweeps keep automations healthy and safe.', href: '/.netlify/functions/automation-guardian' },
+              { title: 'Repo Radar Metrics (30m)', desc: 'Generates repository radar metrics and artifacts.', href: '/.netlify/functions/repo-radar-metrics' },
+              { title: 'Docs Pages Indexer (4h)', desc: 'Indexes docs and regenerates search indices.', href: '/.netlify/functions/docs-pages-indexer' },
+              { title: 'LLM Content Curator (3h)', desc: 'Curates content and proposes front‑page promos.', href: '/.netlify/functions/llm-content-curator' },
+              { title: 'Security Audit (12h)', desc: 'Runs security audits and syncs results.', href: '/.netlify/functions/security-audit-runner' },
+              { title: 'Dead Code Scanner (12h)', desc: 'Finds unused code and proposes cleanups.', href: '/.netlify/functions/dead-code-scanner' },
+              { title: 'Netlify Auto‑Healer (30m)', desc: 'Applies remedial fixes when issues are detected.', href: '/.netlify/functions/netlify-auto-healer-runner' },
+              { title: 'Auto Media Release (6h)', desc: 'Prepares social/media packages for new features.', href: '/.netlify/functions/auto-media-release' },
+              { title: 'Newsroom Scheduler (1h)', desc: 'Generates newsroom content from repo activity.', href: '/.netlify/functions/newsroom-scheduler' },
+              { title: 'OG Image Scheduler (6h)', desc: 'Regenerates OG images for fresh social previews.', href: '/.netlify/functions/og-image-scheduler' },
             ].map((tool) => (
               <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
@@ -264,7 +275,7 @@ export default function Home() {
           </div>
         </section>
  
-        {/* AUTO-GENERATED: HOME_UPDATER_START */
+        {/* AUTO-GENERATED: HOME_UPDATER_START */}
 
 <section className="mx-auto max-w-7xl px-6 pb-16">
   <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Explore more</h2>

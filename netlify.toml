@@ -104,3 +104,44 @@
 [[scheduled.functions]]
   name = "hyper-front-index-accelerator"
   schedule = "*/1 * * * *" # every minute
+
+# Additional scheduled autonomous functions
+[[scheduled.functions]]
+  name = "automation-guardian"
+  schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+  name = "repo-radar-metrics"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+  name = "docs-pages-indexer"
+  schedule = "0 */4 * * *"
+
+[[scheduled.functions]]
+  name = "llm-content-curator"
+  schedule = "0 */3 * * *"
+
+[[scheduled.functions]]
+  name = "security-audit-runner"
+  schedule = "15 */12 * * *"
+
+[[scheduled.functions]]
+  name = "dead-code-scanner"
+  schedule = "30 */12 * * *"
+
+[[scheduled.functions]]
+  name = "netlify-auto-healer-runner"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+  name = "auto-media-release"
+  schedule = "0 */6 * * *"
+
+[[scheduled.functions]]
+  name = "newsroom-scheduler"
+  schedule = "0 * * * *"
+
+[[scheduled.functions]]
+  name = "og-image-scheduler"
+  schedule = "0 */6 * * *"
