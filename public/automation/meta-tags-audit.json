@@ -1,0 +1,155 @@
+{
+  "generatedAt": "2025-08-11T23:01:19.779Z",
+  "summary": {
+    "total": 8,
+    "ok": 4,
+    "needsAttention": 4
+  },
+  "items": [
+    {
+      "file": "pages/automation/index.tsx",
+      "route": "/automation",
+      "hasHeadImport": true,
+      "hasHeadTag": true,
+      "hasTitle": true,
+      "hasDescription": true,
+      "hasOgTitle": false,
+      "hasOgDesc": false,
+      "hasOgImage": false,
+      "suggestions": [
+        "Add <meta property=\"og:title\" ...>",
+        "Add <meta property=\"og:description\" ...>",
+        "Add <meta property=\"og:image\" ...>"
+      ],
+      "ok": true
+    },
+    {
+      "file": "pages/front/index.tsx",
+      "route": "/front",
+      "hasHeadImport": false,
+      "hasHeadTag": false,
+      "hasTitle": false,
+      "hasDescription": false,
+      "hasOgTitle": false,
+      "hasOgDesc": false,
+      "hasOgImage": false,
+      "suggestions": [
+        "Import Head from next/head",
+        "Add <Head> section",
+        "Add <title>",
+        "Add <meta name=\"description\" ...>",
+        "Add <meta property=\"og:title\" ...>",
+        "Add <meta property=\"og:description\" ...>",
+        "Add <meta property=\"og:image\" ...>"
+      ],
+      "ok": false
+    },
+    {
+      "file": "pages/index.tsx",
+      "route": "/",
+      "hasHeadImport": true,
+      "hasHeadTag": true,
+      "hasTitle": true,
+      "hasDescription": true,
+      "hasOgTitle": false,
+      "hasOgDesc": false,
+      "hasOgImage": false,
+      "suggestions": [
+        "Add <meta property=\"og:title\" ...>",
+        "Add <meta property=\"og:description\" ...>",
+        "Add <meta property=\"og:image\" ...>"
+      ],
+      "ok": true
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "route": "/main/front",
+      "hasHeadImport": true,
+      "hasHeadTag": true,
+      "hasTitle": true,
+      "hasDescription": true,
+      "hasOgTitle": true,
+      "hasOgDesc": true,
+      "hasOgImage": true,
+      "suggestions": [],
+      "ok": true
+    },
+    {
+      "file": "pages/newsroom.tsx",
+      "route": "/newsroom",
+      "hasHeadImport": true,
+      "hasHeadTag": true,
+      "hasTitle": true,
+      "hasDescription": true,
+      "hasOgTitle": false,
+      "hasOgDesc": false,
+      "hasOgImage": false,
+      "suggestions": [
+        "Add <meta property=\"og:title\" ...>",
+        "Add <meta property=\"og:description\" ...>",
+        "Add <meta property=\"og:image\" ...>"
+      ],
+      "ok": true
+    },
+    {
+      "file": "pages/reports/ai-trends.tsx",
+      "route": "/reports/ai-trends",
+      "hasHeadImport": false,
+      "hasHeadTag": false,
+      "hasTitle": false,
+      "hasDescription": false,
+      "hasOgTitle": false,
+      "hasOgDesc": false,
+      "hasOgImage": false,
+      "suggestions": [
+        "Import Head from next/head",
+        "Add <Head> section",
+        "Add <title>",
+        "Add <meta name=\"description\" ...>",
+        "Add <meta property=\"og:title\" ...>",
+        "Add <meta property=\"og:description\" ...>",
+        "Add <meta property=\"og:image\" ...>"
+      ],
+      "ok": false
+    },
+    {
+      "file": "pages/reports/seo.tsx",
+      "route": "/reports/seo",
+      "hasHeadImport": false,
+      "hasHeadTag": false,
+      "hasTitle": false,
+      "hasDescription": false,
+      "hasOgTitle": false,
+      "hasOgDesc": false,
+      "hasOgImage": false,
+      "suggestions": [
+        "Import Head from next/head",
+        "Add <Head> section",
+        "Add <title>",
+        "Add <meta name=\"description\" ...>",
+        "Add <meta property=\"og:title\" ...>",
+        "Add <meta property=\"og:description\" ...>",
+        "Add <meta property=\"og:image\" ...>"
+      ],
+      "ok": false
+    },
+    {
+      "file": "pages/site-health.tsx",
+      "route": "/site-health",
+      "hasHeadImport": true,
+      "hasHeadTag": true,
+      "hasTitle": true,
+      "hasDescription": false,
+      "hasOgTitle": false,
+      "hasOgDesc": false,
+      "hasOgImage": false,
+      "suggestions": [
+        "Add <meta name=\"description\" ...>",
+        "Add <meta property=\"og:title\" ...>",
+        "Add <meta property=\"og:description\" ...>",
+        "Add <meta property=\"og:image\" ...>"
+      ],
+      "ok": false
+    }
+  ]
+}

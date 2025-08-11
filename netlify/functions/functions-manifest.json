@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-11T22:48:44.985Z",
+  "generatedAt": "2025-08-11T23:01:17.194Z",
   "functions": [
     "a11y-audit-runner",
     "ai-changelog-runner",
@@ -50,10 +50,12 @@
     "marketing-and-features-promo",
     "marketing-scheduler",
     "media-og-and-optimize",
+    "meta-tags-audit-runner",
     "netlify-auto-healer-runner",
     "newsroom-auto-publisher",
     "newsroom-runner",
     "og-image-update-runner",
+    "orphan-pages-report-runner",
     "readme-advertiser",
     "redirect-healer",
     "redirect-manager",
