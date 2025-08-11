@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-11T22:48:44.985Z",
+  "generatedAt": "2025-08-11T23:04:33.331Z",
   "functions": [
     "a11y-audit-runner",
     "ai-changelog-runner",
@@ -26,6 +26,7 @@
     "fast-orchestrator",
     "feature-advertiser",
     "features-capabilities-benefits-advertiser",
+    "freshness-audit-runner",
     "front-ads-promoter",
     "front-enhancer",
     "front-index-futurizer",

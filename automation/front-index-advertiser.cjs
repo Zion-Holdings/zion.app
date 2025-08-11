@@ -34,6 +34,7 @@ function discoverInternalPages() {
     { href: '/site-health', label: 'Site Health', tagline: 'A11y, performance, links' },
     { href: '/reports/seo', label: 'SEO Audit', tagline: 'Continuous improvements' },
     { href: '/reports/ai-trends', label: 'AI Trends', tagline: 'Intelligence signals' },
+    { href: '/reports/freshness', label: 'Freshness Report', tagline: 'Stale pages & docs insights' },
     { href: '/newsroom', label: 'Newsroom', tagline: 'Latest autonomous updates' },
   ];
   for (const p of priority) {

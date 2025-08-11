@@ -1,0 +1,111 @@
+{
+  "generatedAt": "2025-08-11T23:04:22.822Z",
+  "thresholdDays": 60,
+  "items": [
+    {
+      "file": "pages/_app.tsx",
+      "size": 186,
+      "mtime": "2025-08-06T11:04:28.268Z",
+      "ageDays": 5,
+      "stale": false
+    },
+    {
+      "file": "pages/automation/index.tsx",
+      "size": 9487,
+      "mtime": "2025-08-06T11:04:28.268Z",
+      "ageDays": 5,
+      "stale": false
+    },
+    {
+      "file": "pages/front/index.tsx",
+      "size": 241,
+      "mtime": "2025-08-06T11:04:28.268Z",
+      "ageDays": 5,
+      "stale": false
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "size": 137968,
+      "mtime": "2025-08-06T11:04:28.272Z",
+      "ageDays": 5,
+      "stale": false
+    },
+    {
+      "file": "pages/newsroom.tsx",
+      "size": 8863,
+      "mtime": "2025-08-06T11:04:28.272Z",
+      "ageDays": 5,
+      "stale": false
+    },
+    {
+      "file": "pages/reports/ai-trends.tsx",
+      "size": 238,
+      "mtime": "2025-08-06T11:04:28.272Z",
+      "ageDays": 5,
+      "stale": false
+    },
+    {
+      "file": "pages/reports/seo.tsx",
+      "size": 233,
+      "mtime": "2025-08-06T11:04:28.272Z",
+      "ageDays": 5,
+      "stale": false
+    },
+    {
+      "file": "pages/site-health.tsx",
+      "size": 622,
+      "mtime": "2025-08-06T11:04:28.272Z",
+      "ageDays": 5,
+      "stale": false
+    },
+    {
+      "file": "docs/CHANGELOG.md",
+      "size": 47,
+      "mtime": "2025-08-06T11:04:28.268Z",
+      "ageDays": 5,
+      "stale": false
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "size": 168479,
+      "mtime": "2025-08-06T11:04:28.268Z",
+      "ageDays": 5,
+      "stale": false
+    },
+    {
+      "file": "docs/MEDIA_RELEASE.md",
+      "size": 943,
+      "mtime": "2025-08-06T11:04:28.268Z",
+      "ageDays": 5,
+      "stale": false
+    },
+    {
+      "file": "docs/TODO_REPORT.md",
+      "size": 17871441,
+      "mtime": "2025-08-06T11:04:28.408Z",
+      "ageDays": 5,
+      "stale": false
+    },
+    {
+      "file": "docs/reports/unused-exports.md",
+      "size": 677,
+      "mtime": "2025-08-06T11:04:28.408Z",
+      "ageDays": 5,
+      "stale": false
+    },
+    {
+      "file": "pages/index.tsx",
+      "size": 27103,
+      "mtime": "2025-08-11T23:03:49.453Z",
+      "ageDays": 0,
+      "stale": false
+    },
+    {
+      "file": "pages/reports/freshness.tsx",
+      "size": 245,
+      "mtime": "2025-08-11T23:03:41.529Z",
+      "ageDays": 0,
+      "stale": false
+    }
+  ]
+}
