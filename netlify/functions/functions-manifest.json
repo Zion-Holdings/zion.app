@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "generatedAt": "2025-08-11T23:44:51.302Z",
-=======
-  "generatedAt": "2025-08-11T23:46:40.504Z",
->>>>>>> 8cc7475fdf (feat(automation): autonomous front/home advertisers + schedules cleanup [skip ci])
+  "generatedAt": "2025-08-11T23:53:37.791Z",
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
@@ -61,12 +57,14 @@
     "newsroom-auto-publisher",
     "newsroom-runner",
     "og-image-update-runner",
+    "opengraph-coverage-runner",
     "orphan-pages-detector",
     "pagespeed-insights-runner",
     "readme-advertiser",
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",
+    "route-map-runner",
     "schedule-content-index",
     "schedule-homepage",
     "schedule-knowledge-graph",
@@ -85,6 +83,7 @@
     "ultrafast-front-orchestrator",
     "ultrafast-orchestrator",
     "unused-exports-runner",
-    "unused-media-scanner"
+    "unused-media-scanner",
+    "ux-friction-runner"
   ]
 }
