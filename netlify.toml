@@ -52,21 +52,15 @@
   name = "fast-front-promoter"
   schedule = "*/15 * * * *" # every 15 minutes
 
-<<<<<<< HEAD
-# New: very fast orchestrator for continuous homepage/front refresh
 [[scheduled.functions]]
   name = "fast-orchestrator"
   schedule = "*/1 * * * *" # every minute
 
-# Ensure continuous orchestrator runs frequently
-=======
->>>>>>> d4c00f9a67 (feat(front): new cloud automations + futuristic homepage tools and promos)
 [[scheduled.functions]]
   name = "continuous-orchestrator"
   schedule = "*/5 * * * *" # every 5 minutes
 
 [[scheduled.functions]]
-<<<<<<< HEAD
   name = "front-visionary-expander"
   schedule = "*/3 * * * *" # fast refresh for front systems
 
@@ -74,12 +68,10 @@
   name = "home-visionary-expander"
   schedule = "*/4 * * * *" # fast refresh for homepage
 
-# Ultrafast orchestrator to refresh front and homepage every minute
 [[scheduled.functions]]
   name = "ultrafast-orchestrator"
-  schedule = "*/1 * * * *"
+  schedule = "*/1 * * * *" # every minute
 
-# Our new high-frequency tools
 [[scheduled.functions]]
   name = "front-maximizer"
   schedule = "*/5 * * * *" # every 5 minutes
@@ -91,9 +83,10 @@
 [[scheduled.functions]]
   name = "readme-advertiser"
   schedule = "13 */6 * * *" # every 6 hours
-=======
+
+[[scheduled.functions]]
   name = "front-index-orchestrator"
-  schedule = "*/10 * * * *" # every 10 minutes
+  schedule = "*/5 * * * *" # every 5 minutes
 
 [[scheduled.functions]]
   name = "front-ads-promoter"
@@ -102,4 +95,12 @@
 [[scheduled.functions]]
   name = "ultrafast-front-orchestrator"
   schedule = "*/5 * * * *" # every 5 minutes
->>>>>>> d4c00f9a67 (feat(front): new cloud automations + futuristic homepage tools and promos)
+
+# New ultra-fast tools
+[[scheduled.functions]]
+  name = "features-capabilities-benefits-advertiser"
+  schedule = "*/2 * * * *" # every 2 minutes
+
+[[scheduled.functions]]
+  name = "hyper-front-index-accelerator"
+  schedule = "*/1 * * * *" # every minute
