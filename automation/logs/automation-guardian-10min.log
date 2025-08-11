@@ -1091,3 +1091,74 @@ Already up to date.
 [automation/git-sync/2025-08-11T18-13-08-908Z 823fbfeb9d] chore(sync): fast autonomous sync
  2 files changed, 93 insertions(+), 1 deletion(-)
 [2025-08-11T18:13:22.077Z] ✅ Automation Guardian (10m) finished
+[2025-08-11T20:35:14.802Z] 🚀 Automation Guardian (10m) starting
+[2025-08-11T20:35:14.803Z] $ npx eslint . --ext .js,.jsx,.ts,.tsx --fix
+[2025-08-11T20:35:16.217Z] /workspace/netlify/functions/automation-matrix.js
+  34:104  error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+  34:107  error  Empty block statement          no-empty
+  37:93   error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+  37:96   error  Empty block statement          no-empty
+
+/workspace/netlify/functions/fast-front-promoter.js
+  4:10  error  'runNodeScript' is defined but never used  @typescript-eslint/no-unused-vars
+
+/workspace/netlify/functions/features-capabilities-benefits-advertiser.js
+  1:7  error  'path' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/workspace/netlify/functions/front-enhancer.js
+  2:20  error  'execSync' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  4:10  error  'runNode' is defined but never used            @typescript-eslint/no-unused-vars
+
+/workspace/netlify/functions/front-visionary-expander.js
+  1:7  error  'path' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/workspace/netlify/functions/hyper-front-index-accelerator.js
+  1:7  error  'path' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/workspace/netlify/functions/link-crawler.js
+  31:12  error  'e' is defined but never used  @typescript-eslint/no-unused-vars
+
+/workspace/netlify/functions/site-crawler.js
+  35:12  error  'e' is defined but never used  @typescript-eslint/no-unused-vars
+
+/workspace/netlify/functions/trigger-all-and-commit.js
+   1:34  error  'event' is defined but never used    @typescript-eslint/no-unused-vars
+   1:41  error  'context' is defined but never used  @typescript-eslint/no-unused-vars
+  16:12  error  'e' is defined but never used        @typescript-eslint/no-unused-vars
+  78:13  error  Empty block statement                no-empty
+
+/workspace/netlify/plugins/run-functions-and-rerun/index.js
+  32:16  error  'listFunctions' is defined but never used  @typescript-eslint/no-unused-vars
+  32:32  error  'baseUrl' is defined but never used        @typescript-eslint/no-unused-vars
+
+/workspace/pages/site-health.tsx
+  11:24  error  Parsing error: Invalid character
+
+/workspace/scripts/generate-readme.js
+  10:12  error  'err' is defined but never used         @typescript-eslint/no-unused-vars
+  24:10  error  'countFiles' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 21 problems (21 errors, 0 warnings)
+[2025-08-11T20:35:16.218Z] $ node automation/homepage-promo-factory.cjs 
+[2025-08-11T20:35:16.238Z] [homepage-promo-factory] No-op stub running.
+[2025-08-11T20:35:16.238Z] $ npm run type-check
+[2025-08-11T20:35:16.948Z] pages/site-health.tsx(11,25): error TS1127: Invalid character.
+pages/site-health.tsx(11,33): error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+pages/site-health.tsx(11,52): error TS17002: Expected corresponding JSX closing tag for 'ul'.
+pages/site-health.tsx(12,11): error TS17002: Expected corresponding JSX closing tag for 'main'.
+pages/site-health.tsx(13,9): error TS17002: Expected corresponding JSX closing tag for 'div'.
+pages/site-health.tsx(14,5): error TS1005: ')' expected.
+pages/site-health.tsx(15,3): error TS1109: Expression expected.
+[2025-08-11T20:35:16.948Z] Type-check failed, attempting quick syntax repair
+[2025-08-11T20:35:16.949Z] $ npm run build
+[2025-08-11T20:35:20.196Z] [manifest] Wrote /workspace/netlify/functions/functions-manifest.json with 64 functions.
+info  - Using webpack 5. Reason: Enabled by default https://nextjs.org/docs/messages/webpack5
+info  - Skipping validation of types...
+info  - Creating an optimized production build...
+[2025-08-11T20:35:20.196Z] Build failed, attempting comprehensive_fix then rebuild
+[2025-08-11T20:35:20.196Z] $ npm run build
+[2025-08-11T20:35:22.842Z] [manifest] Wrote /workspace/netlify/functions/functions-manifest.json with 64 functions.
+info  - Using webpack 5. Reason: Enabled by default https://nextjs.org/docs/messages/webpack5
+info  - Skipping validation of types...
+info  - Creating an optimized production build...
+[2025-08-11T20:35:22.842Z] $ node automation/git-sync.cjs 
