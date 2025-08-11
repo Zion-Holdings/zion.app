@@ -71,8 +71,14 @@ function main() {
   const endMarker = '/* AUTO-GENERATED: FRONT_UPGRADER_END */';
 
   const original = fs.readFileSync(frontPath, 'utf8');
-  const s = original.indexOf(startMarker);
-  const e = original.indexOf(endMarker);
+  let s = original.indexOf(startMarker);
+  let e = original.indexOf(endMarker);
+  if (s === -1 || e === -1 || e <= s) {
+    const jsxStart = `{${startMarker}}`;
+    const jsxEnd = `{${endMarker}}`;
+    s = original.indexOf(jsxStart);
+    e = original.indexOf(jsxEnd);
+  }
   if (s === -1 || e === -1 || e <= s) {
     console.error('Front markers not found or invalid order. Exiting.');
     process.exit(0);
