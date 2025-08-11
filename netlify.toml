@@ -167,11 +167,6 @@
   schedule = "53 */6 * * *"
 
 [[scheduled.functions]]
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> origin/main
   name = "redirect-healer"
   schedule = "*/15 * * * *"
 
@@ -201,7 +196,6 @@
   schedule = "*/20 * * * *"
 
 [[scheduled.functions]]
->>>>>>> 5db0abd8a2 (chore(sync): advanced autonomous sync)
   name = "todo-summary-runner"
   schedule = "*/30 * * * *"
 
@@ -221,7 +215,6 @@
 [[scheduled.functions]]
   name = "innovation-lab"
   schedule = "*/10 * * * *" # every 10 minutes
-<<<<<<< HEAD
 
 [[scheduled.functions]]
   name = "revenue-optimizer"
@@ -230,8 +223,6 @@
 [[scheduled.functions]]
   name = "seo-content-gap"
   schedule = "17 */3 * * *" # every 3 hours
-=======
->>>>>>> origin/main
 
 [[scheduled.functions]]
   name = "broken-image-scanner"
@@ -241,7 +232,6 @@
   name = "auto-scheduler"
   schedule = "*/15 * * * *" # every 15 minutes
 
-<<<<<<< HEAD
 [[scheduled.functions]]
   name = "internal-link-optimizer"
   schedule = "*/7 * * * *" # every 7 minutes
@@ -252,9 +242,8 @@
 
 [[scheduled.functions]]
   name = "internal-redirect-healer"
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
+  schedule = "*/15 * * * *"
+
 # Newly added autonomous scanners
 [[scheduled.functions]]
   name = "a11y-audit-runner"
@@ -267,12 +256,11 @@
 [[scheduled.functions]]
   name = "secrets-leak-scanner-runner"
   schedule = "7 * * * *" # every hour
-=======
+
 [[scheduled.functions]]
   name = "ux-heuristics-runner"
   schedule = "*/15 * * * *" # every 15 minutes
->>>>>>> origin/main
-=======
+
 # Fresh autonomous audits
 [[scheduled.functions]]
   name = "internal-link-graph-runner"
@@ -280,7 +268,6 @@
 
 [[scheduled.functions]]
   name = "anchor-integrity-runner"
->>>>>>> origin/main
   schedule = "17 */6 * * *"
 
 [[scheduled.functions]]
@@ -297,11 +284,10 @@
   schedule = "*/20 * * * *"
 
 [[scheduled.functions]]
-<<<<<<< HEAD
   name = "innovation-lab-pro"
   schedule = "*/10 * * * *"
->>>>>>> 9a6e0bf201 (chore(netlify): resolve schedule conflicts and regenerate functions manifest [skip ci])
-=======
+
+[[scheduled.functions]]
   name = "auto-discovery-runner"
   schedule = "*/30 * * * *" # every 30 minutes
 
@@ -320,4 +306,15 @@
 [[scheduled.functions]]
   name = "deps-auto-upgrade-runner"
   schedule = "7 */12 * * *"
->>>>>>> origin/main
+
+[[scheduled.functions]]
+  name = "og-meta-auditor"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+  name = "unused-media-report"
+  schedule = "13 */6 * * *"
+
+[[scheduled.functions]]
+  name = "orphan-page-finder"
+  schedule = "41 */6 * * *"
