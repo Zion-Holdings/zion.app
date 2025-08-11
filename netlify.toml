@@ -239,7 +239,6 @@
 [[scheduled.functions]]
   name = "adaptive-orchestrator"
   schedule = "*/5 * * * *"
-<<<<<<< HEAD
 
 [[scheduled.functions]]
   name = "site-404-map-runner"
@@ -252,5 +251,16 @@
 [[scheduled.functions]]
   name = "content-freshness-score-runner"
   schedule = "7 */12 * * *"
-=======
->>>>>>> 8cc7475fdf (feat(automation): autonomous front/home advertisers + schedules cleanup [skip ci])
+
+# Newly added auditors
+[[scheduled.functions]]
+  name = "structured-data-auditor"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+  name = "robots-auditor"
+  schedule = "0 */6 * * *"
+
+[[scheduled.functions]]
+  name = "canonical-auditor"
+  schedule = "*/60 * * * *"

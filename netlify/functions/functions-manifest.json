@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "generatedAt": "2025-08-11T23:44:51.302Z",
-=======
-  "generatedAt": "2025-08-11T23:46:40.504Z",
->>>>>>> 8cc7475fdf (feat(automation): autonomous front/home advertisers + schedules cleanup [skip ci])
+  "generatedAt": "2025-08-11T23:56:15.246Z",
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
@@ -14,6 +10,7 @@
     "autonomous-invention-orchestrator",
     "broken-image-scanner",
     "broken-image-scanner-runner",
+    "canonical-auditor",
     "cloud_orchestrator",
     "component-coupling-graph-runner",
     "component-size-report",
@@ -67,6 +64,7 @@
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",
+    "robots-auditor",
     "schedule-content-index",
     "schedule-homepage",
     "schedule-knowledge-graph",
@@ -78,6 +76,7 @@
     "site-crawler",
     "sitemap_runner",
     "stale-content-auditor-runner",
+    "structured-data-auditor",
     "todo-scanner-runner",
     "todo-summary-runner",
     "trigger-all-and-commit",
