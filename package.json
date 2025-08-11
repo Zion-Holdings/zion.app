@@ -99,8 +99,8 @@
     "autonomous:cron:fix": "bash automation/autonomous-error-cron-system.sh fix",
     "autonomous:all": "npm run autonomous:start & npm run autonomous:cron:start",
     "design:start": "node automation/launch-design-improvement-automation.js start",
-    "design:layout": "node automation/launch-design-improvement-automation.js layout",
     "design:navigation": "node automation/launch-design-improvement-automation.js navigation",
+    "design:layout": "node automation/launch-design-improvement-automation.js layout",
     "design:visual": "node automation/launch-design-improvement-automation.js visual-design",
     "design:cycle": "node automation/launch-design-improvement-automation.js cycle",
     "design:status": "node automation/launch-design-improvement-automation.js status",
@@ -223,7 +223,11 @@
     "git:cron:stop": "bash automation/git-sync-cron.sh stop",
     "git:cron:status": "bash automation/git-sync-cron.sh status",
     "homepage:update": "node automation/homepage-updater.cjs",
+<<<<<<< HEAD
     "front:advertise": "node automation/frontpage-advertiser.cjs",
+=======
+    "front:advertise": "node automation/front-index-advertiser.cjs",
+>>>>>>> 66c36b7ed6 (feat(front): new Netlify automations + futuristic front ads section)
     "scan:todo": "node automation/todo-scanner.cjs",
     "scan:registry": "node automation/docs-pages-indexer.cjs",
     "scan:content": "npm run scan:todo && npm run scan:registry",

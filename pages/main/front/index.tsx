@@ -1675,6 +1675,28 @@ export default function MainFrontIndex() {
             ))}
           </div>
         </motion.section>
+
+        {/* AUTO-GENERATED: FRONT_ADS_START */
+        <section className="mx-auto max-w-7xl px-6 pb-16">
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Explore more</h2>
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+
+            <Link href="/automation"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo"><div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" /><div className="text-base font-semibold">Automation Hub — live agents & reports</div><div className="mt-1 text-sm text-white/75">Factories, agents, and workflows</div></a></Link>
+
+            <Link href="/reports/seo"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo"><div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" /><div className="text-base font-semibold">SEO Audit — continuous improvements</div><div className="mt-1 text-sm text-white/75">On‑site SEO artifacts</div></a></Link>
+
+            <Link href="/site-health"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo"><div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" /><div className="text-base font-semibold">Site Health — audits & insights</div><div className="mt-1 text-sm text-white/75">A11y, performance, links</div></a></Link>
+
+            <Link href="/reports/ai-trends"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo"><div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" /><div className="text-base font-semibold">AI Trends — intelligence signals</div><div className="mt-1 text-sm text-white/75">Ecosystem insights</div></a></Link>
+
+            <Link href="/newsroom"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo"><div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" /><div className="text-base font-semibold">Newsroom — autonomous updates</div><div className="mt-1 text-sm text-white/75">Product evolution</div></a></Link>
+
+            <a href="https://github.com/Zion-Holdings/zion.app/tree/main/docs" target="_blank" rel="noopener" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo"><div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" /><div className="text-base font-semibold">Docs — technical notes & guides</div><div className="mt-1 text-sm text-white/75">Documentation</div></a>
+
+          </div>
+        </section>
+        /* AUTO-GENERATED: FRONT_ADS_END */}
+
       </main>
       {/* Back to top */}
       {showToTop && (
