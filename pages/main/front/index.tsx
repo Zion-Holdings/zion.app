@@ -55,9 +55,14 @@ export default function MainFrontIndex() {
             <Link href="/"><a className="text-white/80 hover:text-white">Home</a></Link>
             <Link href="#command-center"><a className="text-white/80 hover:text-white">Command</a></Link>
             <Link href="#features"><a className="text-white/80 hover:text-white">Features</a></Link>
+            <Link href="#feature-map"><a className="text-white/80 hover:text-white">Map</a></Link>
+            <Link href="#suites"><a className="text-white/80 hover:text-white">Suites</a></Link>
+            <Link href="#use-cases"><a className="text-white/80 hover:text-white">Use&nbsp;Cases</a></Link>
+            <Link href="#guardrails"><a className="text-white/80 hover:text-white">Guardrails</a></Link>
             <Link href="#capabilities"><a className="text-white/80 hover:text-white">Capabilities</a></Link>
             <Link href="#benefits"><a className="text-white/80 hover:text-white">Benefits</a></Link>
             <Link href="#reports"><a className="text-white/80 hover:text-white">Reports</a></Link>
+            <Link href="#roadmap"><a className="text-white/80 hover:text-white">Docs</a></Link>
             <Link href="/automation"><a className="text-white/80 hover:text-white">Automations</a></Link>
           </div>
         </nav>
@@ -509,6 +514,7 @@ export default function MainFrontIndex() {
 
         {/* Use Cases */}
         <motion.section
+          id="use-cases"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
@@ -629,6 +635,31 @@ export default function MainFrontIndex() {
           className="mx-auto max-w-7xl px-6 pb-20"
         >
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Benefits</h2>
+          {/* Benefits ticker */}
+          <div className="relative mx-auto mt-4 max-w-5xl overflow-hidden">
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-slate-950/90 to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-slate-950/90 to-transparent" />
+            <div className="marquee">
+              <div className="marquee__track">
+                {[
+                  { label: '24/7 autonomous progress', href: '/automation' },
+                  { label: 'Main branch delivery', href: '/automation' },
+                  { label: 'A11y & performance wins', href: '/site-health' },
+                  { label: 'Continuous SEO gains', href: '/reports/seo' },
+                  { label: 'Transparent artifacts', href: '/site-health' },
+                  { label: 'Guardrails & policy', href: '/site-health' },
+                  { label: 'Faster iteration loops', href: '/newsroom' },
+                  { label: 'Lower operational toil', href: '/automation' },
+                ].flatMap((i) => [i, i]).map((i, idx) => (
+                  <Link key={`${i.label}-${idx}`} href={i.href}>
+                    <a className="mx-3 my-2 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs text-white/80 backdrop-blur hover:bg-white/10">
+                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> {i.label}
+                    </a>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
           <div className="mx-auto mt-6 max-w-4xl grid grid-cols-1 gap-3 md:grid-cols-2">
             {[
               '24/7 progress without human intervention',
@@ -965,6 +996,7 @@ export default function MainFrontIndex() {
 
         {/* Roadmap & Docs */}
         <motion.section
+          id="roadmap"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
