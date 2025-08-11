@@ -52,7 +52,7 @@ export default function Newsroom() {
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/11/trump-admin-stops-illegal-freeze-of-5b-ev-charger-funds-after-losing-in-court/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Trump admin stops illegal freeze of $5B EV charger funds after losing in court</a>
+            <a href="https://techcrunch.com/2025/08/11/trump-administration-stops-illegal-freeze-of-5b-ev-charger-funds-after-losing-in-court/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Trump administration stops illegal freeze of $5B EV charger funds after losing in court</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
