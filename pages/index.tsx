@@ -217,6 +217,8 @@ export default function Home() {
               { title: 'Frontpage Enhancer', desc: 'Auto‑advertises features and refreshes homepage content hourly.', href: '/.netlify/functions/frontpage-enhancer' },
               { title: 'Link & Health Scheduler', desc: 'Runs link checks, health scans, and sitemap updates every 6h.', href: '/.netlify/functions/link-and-health-scheduler' },
               { title: 'Marketing & Features Promo', desc: 'Regenerates homepage promos and deep links every 2h.', href: '/.netlify/functions/marketing-and-features-promo' },
+              { title: 'Front Futurizer', desc: 'Continuously enhances the front UI with futuristic templates.', href: '/.netlify/functions/front-futurizer' },
+              { title: 'Front Ads Scheduler', desc: 'Aggressively refreshes front and home promotions.', href: '/.netlify/functions/front-ads-scheduler' },
               { title: 'Front Enhancer (5‑min)', desc: 'Continuously updates front auto‑promotions and syncs to main.', href: '/.netlify/functions/front-enhancer' }
             ].map((tool) => (
               <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">

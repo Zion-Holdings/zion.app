@@ -8,7 +8,7 @@ function runNode(relPath, args = []) {
 }
 
 exports.config = {
-  schedule: '*/5 * * * *',
+  schedule: '*/10 * * * *', // every 10 minutes
 };
 
 exports.handler = async () => {
@@ -22,14 +22,11 @@ exports.handler = async () => {
     return status;
   }
 
-  // Front page futurizer (UI polish and templates)
-  logStep('front:futurizer', () => runNode('automation/front-futurizer.cjs'));
-
-  // Front index advertiser (auto-promoted features)
+  // Front auto-promotions
   logStep('front-index:advertise', () => runNode('automation/front-index-advertiser.cjs'));
 
-  // Homepage explore section updater
-  logStep('homepage:update', () => runNode('automation/homepage-updater.cjs'));
+  // Homepage ads/explore updater
+  logStep('homepage:auto-advertiser', () => runNode('automation/homepage-auto-advertiser.cjs'));
 
   // Attempt to push any changes
   logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
