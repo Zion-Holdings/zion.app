@@ -167,6 +167,38 @@
   schedule = "53 */6 * * *"
 
 [[scheduled.functions]]
+<<<<<<< HEAD
+=======
+  name = "redirect-healer"
+  schedule = "*/15 * * * *"
+
+# Newly added autonomous cloud automations
+[[scheduled.functions]]
+  name = "capability-map-runner"
+  schedule = "*/3 * * * *"
+
+[[scheduled.functions]]
+  name = "dependency-freshness-radar"
+  schedule = "*/15 * * * *"
+
+[[scheduled.functions]]
+  name = "automation-status-dashboard"
+  schedule = "*/4 * * * *"
+
+[[scheduled.functions]]
+  name = "sitemap-prioritizer"
+  schedule = "17 */6 * * *"
+
+[[scheduled.functions]]
+  name = "redirect-manager"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+  name = "a11y-audit-runner"
+  schedule = "*/20 * * * *"
+
+[[scheduled.functions]]
+>>>>>>> 5db0abd8a2 (chore(sync): advanced autonomous sync)
   name = "todo-summary-runner"
   schedule = "*/30 * * * *"
 
