@@ -1,0 +1,308 @@
+{
+  "start": "https://ziontechgroup.com",
+  "total": 59,
+  "broken": [
+    {
+      "url": "https://ziontechgroup.com/services",
+      "status": 404
+    },
+    {
+      "url": "https://ziontechgroup.com/products",
+      "status": 404
+    },
+    {
+      "url": "https://ziontechgroup.com/contact",
+      "status": 404
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/front-maximizer",
+      "status": 207
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/schedule-homepage",
+      "status": 207
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/schedule-site-health",
+      "status": 207
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/schedule-content-index",
+      "status": 207
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/schedule-knowledge-graph",
+      "status": 207
+    },
+    {
+      "url": "https://ziontechgroup.com/services",
+      "status": 404
+    },
+    {
+      "url": "https://ziontechgroup.com/products",
+      "status": 404
+    },
+    {
+      "url": "https://ziontechgroup.com/contact",
+      "status": 404
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/front-maximizer",
+      "status": 207
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/schedule-homepage",
+      "status": 207
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/schedule-site-health",
+      "status": 207
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/schedule-content-index",
+      "status": 207
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/schedule-knowledge-graph",
+      "status": 207
+    }
+  ],
+  "statuses": [
+    {
+      "url": "https://ziontechgroup.com/",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/services",
+      "status": 404
+    },
+    {
+      "url": "https://ziontechgroup.com/products",
+      "status": 404
+    },
+    {
+      "url": "https://ziontechgroup.com/automation",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/contact",
+      "status": 404
+    },
+    {
+      "url": "https://ziontechgroup.com/main/front",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/front-enhancer",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/site-health",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/reports/seo",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/reports/ai-trends",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/newsroom",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/frontpage-enhancer",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/link-and-health-scheduler",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/marketing-and-features-promo",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/homepage_advertiser",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/cloud_orchestrator",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/fast-orchestrator",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/continuous-orchestrator",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/front-maximizer",
+      "status": 207
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/continuous-front-runner",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/readme-advertiser",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/features-capabilities-benefits-advertiser",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/hyper-front-index-accelerator",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/innovation-lab",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/auto-scheduler",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/broken-image-scanner",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/front",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/fast-front-promoter",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/feature-advertiser",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/front-index-futurizer",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/front-index-orchestrator",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/front-index-scheduler",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/schedule-homepage",
+      "status": 207
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/schedule-site-health",
+      "status": 207
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/schedule-content-index",
+      "status": 207
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/schedule-knowledge-graph",
+      "status": 207
+    },
+    {
+      "url": "https://ziontechgroup.com/main/front#command-center",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/main/front#features",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/main/front#feature-map",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/main/front#suites",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/main/front#capabilities",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/main/front#use-cases",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/main/front#pillars",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/main/front#benefits",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/main/front#templates",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/main/front#demos",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/main/front#highlights",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/main/front#cases",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/main/front#reports",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/main/front#roadmap",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/main/front#guardrails",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/main/front#engines",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/.netlify/functions/sitemap_runner",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/automation#features",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/automation#capabilities",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/automation#benefits",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/automation#feature-factories",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/reports/seo/latest.json",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/reports/seo/",
+      "status": 200
+    }
+  ]
+}

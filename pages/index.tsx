@@ -180,8 +180,8 @@ export default function Home() {
               { title: 'Front Systems Hub', desc: 'A curated, futuristic front experience.', href: '/main/front' },
               { title: 'Automation Hub', desc: 'Factories, agents, and live workflows.', href: '/automation' },
               { title: 'Site Health', desc: 'A11y, performance, and link integrity.', href: '/site-health' },
-              { title: 'SEO Audit', desc: 'Continuous on‑site improvements and artifacts.', href: '/reports/seo' },
-              { title: 'AI Trends', desc: 'Ecosystem signals that inspire new factories.', href: '/reports/ai-trends' },
+              { title: 'Services', desc: 'Specialized agents and blueprints.', href: '/services' },
+              { title: 'Products', desc: 'Ready-to-run automation suites.', href: '/products' },
               { title: 'Newsroom', desc: 'Autonomous updates and product evolution.', href: '/newsroom' },
             ].map((card) => (
               <Link key={card.title} href={card.href}>

@@ -4,6 +4,7 @@
 
 [build.environment]
   NODE_VERSION = "20"
+  CANONICAL_URL = "https://ziontechgroup.com"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
