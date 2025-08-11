@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2025-08-11T23:03:51.129Z",
+  "generatedAt": "2025-08-11T23:23:04.037Z",
   "functions": [
     "ai-changelog-runner",
-    "automation-insights-runner",
     "auto-scheduler",
+    "automation-insights-runner",
     "automation-matrix",
     "autonomous-invention-orchestrator",
     "broken-image-scanner",

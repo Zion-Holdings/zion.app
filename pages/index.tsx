@@ -232,6 +232,8 @@ export default function Home() {
   
             <Link href="/site-health"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Site Health — audits & insights</span></a></Link>
   
+            <Link href="/reports/automation-insights"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Automation Insights — health & coverage</span></a></Link>
+  
             <Link href="/.netlify/functions/netlify-auto-healer-runner"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Site Health — Netlify Auto‑Healer</span></a></Link>
   
             <Link href="/.netlify/functions/docs-index-runner"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Docs — technical notes & guides</span></a></Link>
