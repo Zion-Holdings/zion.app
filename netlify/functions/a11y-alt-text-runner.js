@@ -1,4 +1,3 @@
-// netlify/functions/a11y-alt-text-runner.js
 const path = require('path');
 const { spawnSync } = require('child_process');
 
@@ -8,11 +7,11 @@ function runNode(relPath, args = []) {
   return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
 }
 
-exports.config = { schedule: '*/10 * * * *' };
+exports.config = { schedule: '*/20 * * * *' };
 
 exports.handler = async () => {
   const logs = [];
-  function logStep(name, fn) {
+  function step(name, fn) {
     logs.push(`\n=== ${name} ===`);
     const { status, stdout, stderr } = fn();
     if (stdout) logs.push(stdout);
@@ -21,8 +20,8 @@ exports.handler = async () => {
     return status;
   }
 
-  logStep('a11y:alt-text-audit', () => runNode('automation/a11y-alt-text-auditor.cjs'));
-  logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
+  step('a11y:alt-text-audit', () => runNode('automation/a11y-alt-text-auditor.cjs'));
+  step('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
 
   return { statusCode: 200, body: logs.join('\n') };
 };

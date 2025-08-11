@@ -1,3 +1,4 @@
+// netlify/functions/a11y-alt-text-runner.js
 const path = require('path');
 const { spawnSync } = require('child_process');
 
@@ -7,9 +8,7 @@ function runNode(relPath, args = []) {
   return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
 }
 
-exports.config = {
-  schedule: '*/10 * * * *',
-};
+exports.config = { schedule: '*/10 * * * *' };
 
 exports.handler = async () => {
   const logs = [];
