@@ -1,0 +1,22 @@
+{
+  "summary": {
+    "generatedAt": "2025-08-11T17:50:26.796Z",
+    "method": "heuristic",
+    "totals": {
+      "filesAnalyzed": 2,
+      "unusedCount": 2
+    }
+  },
+  "unused": [
+    {
+      "file": "Command failed: rg -g '!node_modules' -g '!automation/logs' -n --files -t js -t ts",
+      "name": "file",
+      "type": "file"
+    },
+    {
+      "file": "/bin/sh: 1: rg: not found",
+      "name": "file",
+      "type": "file"
+    }
+  ]
+}

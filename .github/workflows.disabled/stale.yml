@@ -1,0 +1,37 @@
+name: Stale Issue and PR Manager
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run stale bot
+        uses: actions/stale@v9
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          days-before-stale: 14
+          days-before-close: 7
+          exempt-issue-labels: 'pinned,security,dependencies'
+          exempt-pr-labels: 'pinned,security,dependencies,auto-merge'
+          stale-issue-label: 'stale'
+          stale-pr-label: 'stale'
+          remove-stale-when-updated: true
+          operations-per-run: 500
+          ascending: false
+          only-labels: ''
+          stale-issue-message: |
+            This issue has been automatically marked as stale due to inactivity for 14 days. It will be closed in 7 days if no further activity occurs.
+
+            If this is still relevant, please add a comment or apply the `pinned` label to keep it open.
+          stale-pr-message: |
+            This pull request has been automatically marked as stale due to inactivity for 14 days. It will be closed in 7 days if no further activity occurs.
+
+            If this is still relevant, please add a comment or apply the `pinned` label to keep it open.

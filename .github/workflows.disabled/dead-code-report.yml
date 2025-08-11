@@ -1,0 +1,42 @@
+name: Dead Code Report
+
+on:
+  schedule:
+    - cron: '11 */6 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dead-code-report-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Run dead-code scanner
+        run: node automation/dead-code-scanner.cjs | cat
+      - name: Commit and push report
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore(report): dead-code scan updates [skip ci]"
+            git push origin HEAD:main
+          else
+            echo "No changes to commit"
+          fi

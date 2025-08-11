@@ -1,0 +1,66 @@
+[
+  {
+    "file": "/automation/index.tsx",
+    "title": "Automation Hub",
+    "description": "Explore autonomous cloud automations running 24/7.",
+    "issues": []
+  },
+  {
+    "file": "/front/index.tsx",
+    "title": null,
+    "description": null,
+    "issues": [
+      "Missing <Head>",
+      "Missing <title>",
+      "Missing meta description"
+    ]
+  },
+  {
+    "file": "/index.tsx",
+    "title": "Zion — Autonomous Cloud Automations",
+    "description": "Futuristic, cloud-native autonomous automations that innovate, optimize, and sync changes to the repo continuously.",
+    "issues": []
+  },
+  {
+    "file": "/main/front/index.tsx",
+    "title": "Zion — Front Systems Hub | Autonomous Cloud Automations",
+    "description": "Futuristic front experience showcasing Zion",
+    "issues": [
+      "Description length suboptimal (43)"
+    ]
+  },
+  {
+    "file": "/newsroom.tsx",
+    "title": "Newsroom — Curated Tech Headlines",
+    "description": "Curated technology and AI headlines from reputable sources.",
+    "issues": []
+  },
+  {
+    "file": "/reports/ai-trends.tsx",
+    "title": null,
+    "description": null,
+    "issues": [
+      "Missing <Head>",
+      "Missing <title>",
+      "Missing meta description"
+    ]
+  },
+  {
+    "file": "/reports/seo.tsx",
+    "title": null,
+    "description": null,
+    "issues": [
+      "Missing <Head>",
+      "Missing <title>",
+      "Missing meta description"
+    ]
+  },
+  {
+    "file": "/site-health.tsx",
+    "title": "Site Health — Broken Images",
+    "description": null,
+    "issues": [
+      "Missing meta description"
+    ]
+  }
+]

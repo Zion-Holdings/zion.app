@@ -1,0 +1,25 @@
+frontend:
+  - 'pages/**'
+  - 'components/**'
+  - 'styles/**'
+
+workflows:
+  - '.github/workflows/**'
+
+automation:
+  - 'automation/**'
+
+docs:
+  - 'docs/**'
+
+config:
+  - '**/*.json'
+  - '**/*.yml'
+  - '**/*.yaml'
+
+security:
+  - 'automation/security-*.cjs'
+
+marketing:
+  - 'automation/*marketing*'
+  - '.github/workflows/*marketing*'

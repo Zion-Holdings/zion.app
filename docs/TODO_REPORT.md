@@ -1,0 +1,4180 @@
+# TODO and FIXME Report
+
+- Generated: 2025-08-11T18:14:53.732Z
+- Total findings: 4089
+
+## .github/workflows.disabled/autonomous-content-scanner.yml
+
+- [TODO] .github/workflows.disabled/autonomous-content-scanner.yml:30 — /FIXME scanner
+- [TODO] .github/workflows.disabled/autonomous-content-scanner.yml:31 — -scanner.cjs | cat
+- [TODO] .github/workflows.disabled/autonomous-content-scanner.yml:40 — report and content registry [skip ci]"
+
+
+## .github/workflows.disabled/todo-issue-sync.yml
+
+- [TODO] .github/workflows.disabled/todo-issue-sync.yml:1 — Issue Sync
+- [TODO] .github/workflows.disabled/todo-issue-sync.yml:13 — s:
+- [TODO] .github/workflows.disabled/todo-issue-sync.yml:29 — report
+- [TODO] .github/workflows.disabled/todo-issue-sync.yml:30 — _issue_sync.cjs
+- [TODO] .github/workflows.disabled/todo-issue-sync.yml:38 — ): update TODO sync report [skip ci]"
+- [TODO] .github/workflows.disabled/todo-issue-sync.yml:42 — Issue
+- [TODO] .github/workflows.disabled/todo-issue-sync.yml:47 — /FIXME/NOTE Sync"
+- [TODO] .github/workflows.disabled/todo-issue-sync.yml:48 — _SYNC.md"
+
+
+## data/reports/external-links/external-links-1754934673584.json
+
+- [TODO] data/reports/external-links/external-links-1754934673584.json:142 — _REPORT.md",
+
+
+## data/reports/external-links/external-links-1754934698424.json
+
+- [TODO] data/reports/external-links/external-links-1754934698424.json:127 — _REPORT.md",
+
+
+## data/reports/external-links/external-links-1754935976218.json
+
+- [TODO] data/reports/external-links/external-links-1754935976218.json:142 — _REPORT.md",
+
+
+## data/reports/external-links/external-links-1754936019100.json
+
+- [TODO] data/reports/external-links/external-links-1754936019100.json:147 — _REPORT.md",
+
+
+## data/reports/external-links/external-links-1754936059379.json
+
+- [TODO] data/reports/external-links/external-links-1754936059379.json:147 — _REPORT.md",
+
+
+## data/reports/external-links/external-links-1754936083279.json
+
+- [TODO] data/reports/external-links/external-links-1754936083279.json:132 — _REPORT.md",
+
+
+## data/reports/external-links/latest.json
+
+- [TODO] data/reports/external-links/latest.json:132 — _REPORT.md",
+
+
+## data/reports/link-sentinel/report-2025-08-11T17-51-16-470Z.json
+
+- [TODO] data/reports/link-sentinel/report-2025-08-11T17-51-16-470Z.json:100 — _REPORT.md",
+
+
+## data/reports/link-sentinel/report-2025-08-11T18-14-21-632Z.json
+
+- [TODO] data/reports/link-sentinel/report-2025-08-11T18-14-21-632Z.json:100 — _REPORT.md",
+
+
+## data/reports/repo-knowledge-graph.json
+
+- [TODO] data/reports/repo-knowledge-graph.json:245 — -scanner.cjs",
+- [TODO] data/reports/repo-knowledge-graph.json:493 — -scanner-runner.js",
+- [TODO] data/reports/repo-knowledge-graph.json:497 — -summary-runner.js",
+- [TODO] data/reports/repo-knowledge-graph.json:617 — _issue_sync.cjs",
+- [TODO] data/reports/repo-knowledge-graph.json:1205 — -scanner.cjs",
+- [TODO] data/reports/repo-knowledge-graph.json:1210 — -scanner.cjs",
+- [TODO] data/reports/repo-knowledge-graph.json:1215 — -scanner.cjs",
+- [TODO] data/reports/repo-knowledge-graph.json:1735 — -scanner-runner.js",
+- [TODO] data/reports/repo-knowledge-graph.json:1740 — -scanner-runner.js",
+- [TODO] data/reports/repo-knowledge-graph.json:1745 — -summary-runner.js",
+- [TODO] data/reports/repo-knowledge-graph.json:1750 — -summary-runner.js",
+- [TODO] data/reports/repo-knowledge-graph.json:1910 — _issue_sync.cjs",
+- [TODO] data/reports/repo-knowledge-graph.json:1915 — _issue_sync.cjs",
+- [TODO] data/reports/repo-knowledge-graph.json:1920 — _issue_sync.cjs",
+
+
+## docs/CHANGELOG_AI.md
+
+- [TODO] docs/CHANGELOG_AI.md:136 — issue sync, autonomous release, and keepalive workflows (09ccba6)
+- [TODO] docs/CHANGELOG_AI.md:308 — issue sync, autonomous release, and keepalive workflows (09ccba6)
+- [TODO] docs/CHANGELOG_AI.md:478 — issue sync, autonomous release, and keepalive workflows (09ccba6)
+- [TODO] docs/CHANGELOG_AI.md:643 — issue sync, autonomous release, and keepalive workflows (09ccba6)
+
+
+## docs/TODO_REPORT.md
+
+- [TODO] docs/TODO_REPORT.md:1 — and FIXME Report
+- [TODO] docs/TODO_REPORT.md:8 — ] .github/workflows.disabled/autonomous-content-scanner.yml:30 — /FIXME scanner
+- [TODO] docs/TODO_REPORT.md:9 — ] .github/workflows.disabled/autonomous-content-scanner.yml:31 — -scanner.cjs | cat
+- [TODO] docs/TODO_REPORT.md:10 — ] .github/workflows.disabled/autonomous-content-scanner.yml:40 — report and content registry [skip ci]"
+- [TODO] docs/TODO_REPORT.md:13 — -issue-sync.yml
+- [TODO] docs/TODO_REPORT.md:15 — ] .github/workflows.disabled/todo-issue-sync.yml:1 — Issue Sync
+- [TODO] docs/TODO_REPORT.md:16 — ] .github/workflows.disabled/todo-issue-sync.yml:13 — s:
+- [TODO] docs/TODO_REPORT.md:17 — ] .github/workflows.disabled/todo-issue-sync.yml:29 — report
+- [TODO] docs/TODO_REPORT.md:18 — ] .github/workflows.disabled/todo-issue-sync.yml:30 — _issue_sync.cjs
+- [TODO] docs/TODO_REPORT.md:19 — ] .github/workflows.disabled/todo-issue-sync.yml:38 — ): update TODO sync report [skip ci]"
+- [TODO] docs/TODO_REPORT.md:20 — ] .github/workflows.disabled/todo-issue-sync.yml:42 — Issue
+- [TODO] docs/TODO_REPORT.md:21 — ] .github/workflows.disabled/todo-issue-sync.yml:47 — /FIXME/NOTE Sync"
+- [TODO] docs/TODO_REPORT.md:22 — ] .github/workflows.disabled/todo-issue-sync.yml:48 — _SYNC.md"
+- [TODO] docs/TODO_REPORT.md:27 — ] data/reports/external-links/external-links-1754934673584.json:142 — _REPORT.md",
+- [TODO] docs/TODO_REPORT.md:32 — ] data/reports/external-links/external-links-1754934698424.json:127 — _REPORT.md",
+- [TODO] docs/TODO_REPORT.md:37 — ] data/reports/external-links/external-links-1754935976218.json:142 — _REPORT.md",
+- [TODO] docs/TODO_REPORT.md:42 — ] data/reports/external-links/external-links-1754936019100.json:147 — _REPORT.md",
+- [TODO] docs/TODO_REPORT.md:47 — ] data/reports/external-links/external-links-1754936059379.json:147 — _REPORT.md",
+- [TODO] docs/TODO_REPORT.md:52 — ] data/reports/external-links/external-links-1754936083279.json:132 — _REPORT.md",
+- [TODO] docs/TODO_REPORT.md:57 — ] data/reports/external-links/latest.json:132 — _REPORT.md",
+- [TODO] docs/TODO_REPORT.md:62 — ] data/reports/link-sentinel/report-2025-08-11T17-51-16-470Z.json:100 — _REPORT.md",
+- [TODO] docs/TODO_REPORT.md:67 — ] data/reports/link-sentinel/report-2025-08-11T18-14-21-632Z.json:100 — _REPORT.md",
+- [TODO] docs/TODO_REPORT.md:72 — ] data/reports/repo-knowledge-graph.json:245 — -scanner.cjs",
+- [TODO] docs/TODO_REPORT.md:73 — ] data/reports/repo-knowledge-graph.json:493 — -scanner-runner.js",
+- [TODO] docs/TODO_REPORT.md:74 — ] data/reports/repo-knowledge-graph.json:497 — -summary-runner.js",
+- [TODO] docs/TODO_REPORT.md:75 — ] data/reports/repo-knowledge-graph.json:617 — _issue_sync.cjs",
+- [TODO] docs/TODO_REPORT.md:76 — ] data/reports/repo-knowledge-graph.json:1205 — -scanner.cjs",
+- [TODO] docs/TODO_REPORT.md:77 — ] data/reports/repo-knowledge-graph.json:1210 — -scanner.cjs",
+- [TODO] docs/TODO_REPORT.md:78 — ] data/reports/repo-knowledge-graph.json:1215 — -scanner.cjs",
+- [TODO] docs/TODO_REPORT.md:79 — ] data/reports/repo-knowledge-graph.json:1735 — -scanner-runner.js",
+- [TODO] docs/TODO_REPORT.md:80 — ] data/reports/repo-knowledge-graph.json:1740 — -scanner-runner.js",
+- [TODO] docs/TODO_REPORT.md:81 — ] data/reports/repo-knowledge-graph.json:1745 — -summary-runner.js",
+- [TODO] docs/TODO_REPORT.md:82 — ] data/reports/repo-knowledge-graph.json:1750 — -summary-runner.js",
+- [TODO] docs/TODO_REPORT.md:83 — ] data/reports/repo-knowledge-graph.json:1910 — _issue_sync.cjs",
+- [TODO] docs/TODO_REPORT.md:84 — ] data/reports/repo-knowledge-graph.json:1915 — _issue_sync.cjs",
+- [TODO] docs/TODO_REPORT.md:85 — ] data/reports/repo-knowledge-graph.json:1920 — _issue_sync.cjs",
+- [TODO] docs/TODO_REPORT.md:90 — ] docs/CHANGELOG_AI.md:136 — issue sync, autonomous release, and keepalive workflows (09ccba6)
+- [TODO] docs/TODO_REPORT.md:91 — ] docs/CHANGELOG_AI.md:308 — issue sync, autonomous release, and keepalive workflows (09ccba6)
+- [TODO] docs/TODO_REPORT.md:92 — ] docs/CHANGELOG_AI.md:478 — issue sync, autonomous release, and keepalive workflows (09ccba6)
+- [TODO] docs/TODO_REPORT.md:93 — ] docs/CHANGELOG_AI.md:643 — issue sync, autonomous release, and keepalive workflows (09ccba6)
+- [TODO] docs/TODO_REPORT.md:96 — _REPORT.md
+- [TODO] docs/TODO_REPORT.md:98 — ] docs/TODO_REPORT.md:1 — and FIXME Report
+- [TODO] docs/TODO_REPORT.md:99 — ] docs/TODO_REPORT.md:8 — ] .github/workflows.disabled/autonomous-content-scanner.yml:30 — /FIXME scanner
+- [TODO] docs/TODO_REPORT.md:100 — ] docs/TODO_REPORT.md:9 — ] .github/workflows.disabled/autonomous-content-scanner.yml:31 — -scanner.cjs | cat
+- [TODO] docs/TODO_REPORT.md:101 — ] docs/TODO_REPORT.md:10 — ] .github/workflows.disabled/autonomous-content-scanner.yml:40 — report and content registry [skip ci]"
+- [TODO] docs/TODO_REPORT.md:102 — ] docs/TODO_REPORT.md:13 — -issue-sync.yml
+- [TODO] docs/TODO_REPORT.md:103 — ] docs/TODO_REPORT.md:15 — ] .github/workflows.disabled/todo-issue-sync.yml:1 — Issue Sync
+- [TODO] docs/TODO_REPORT.md:104 — ] docs/TODO_REPORT.md:16 — ] .github/workflows.disabled/todo-issue-sync.yml:13 — s:
+- [TODO] docs/TODO_REPORT.md:105 — ] docs/TODO_REPORT.md:17 — ] .github/workflows.disabled/todo-issue-sync.yml:29 — report
+- [TODO] docs/TODO_REPORT.md:106 — ] docs/TODO_REPORT.md:18 — ] .github/workflows.disabled/todo-issue-sync.yml:30 — _issue_sync.cjs
+- [TODO] docs/TODO_REPORT.md:107 — ] docs/TODO_REPORT.md:19 — ] .github/workflows.disabled/todo-issue-sync.yml:38 — ): update TODO sync report [skip ci]"
+- [TODO] docs/TODO_REPORT.md:108 — ] docs/TODO_REPORT.md:20 — ] .github/workflows.disabled/todo-issue-sync.yml:42 — Issue
+- [TODO] docs/TODO_REPORT.md:109 — ] docs/TODO_REPORT.md:21 — ] .github/workflows.disabled/todo-issue-sync.yml:47 — /FIXME/NOTE Sync"
+- [TODO] docs/TODO_REPORT.md:110 — ] docs/TODO_REPORT.md:22 — ] .github/workflows.disabled/todo-issue-sync.yml:48 — _SYNC.md"
+- [TODO] docs/TODO_REPORT.md:111 — ] docs/TODO_REPORT.md:27 — ] data/reports/external-links/external-links-1754934673584.json:142 — _REPORT.md",
+- [TODO] docs/TODO_REPORT.md:112 — ] docs/TODO_REPORT.md:32 — ] data/reports/external-links/external-links-1754934698424.json:127 — _REPORT.md",
+- [TODO] docs/TODO_REPORT.md:113 — ] docs/TODO_REPORT.md:37 — ] data/reports/external-links/latest.json:127 — _REPORT.md",
+- [TODO] docs/TODO_REPORT.md:114 — ] docs/TODO_REPORT.md:42 — ] data/reports/link-sentinel/report-2025-08-11T17-51-16-470Z.json:100 — _REPORT.md",
+- [TODO] docs/TODO_REPORT.md:115 — ] docs/TODO_REPORT.md:47 — ] data/reports/repo-knowledge-graph.json:225 — -scanner.cjs",
+- [TODO] docs/TODO_REPORT.md:116 — ] docs/TODO_REPORT.md:48 — ] data/reports/repo-knowledge-graph.json:473 — -scanner-runner.js",
+- [TODO] docs/TODO_REPORT.md:117 — ] docs/TODO_REPORT.md:49 — ] data/reports/repo-knowledge-graph.json:477 — -summary-runner.js",
+- [TODO] docs/TODO_REPORT.md:118 — ] docs/TODO_REPORT.md:50 — ] data/reports/repo-knowledge-graph.json:597 — _issue_sync.cjs",
+- [TODO] docs/TODO_REPORT.md:119 — ] docs/TODO_REPORT.md:51 — ] data/reports/repo-knowledge-graph.json:1173 — -scanner.cjs",
+- [TODO] docs/TODO_REPORT.md:120 — ] docs/TODO_REPORT.md:52 — ] data/reports/repo-knowledge-graph.json:1178 — -scanner.cjs",
+- [TODO] docs/TODO_REPORT.md:121 — ] docs/TODO_REPORT.md:53 — ] data/reports/repo-knowledge-graph.json:1183 — -scanner.cjs",
+- [TODO] docs/TODO_REPORT.md:122 — ] docs/TODO_REPORT.md:54 — ] data/reports/repo-knowledge-graph.json:1703 — -scanner-runner.js",
+- [TODO] docs/TODO_REPORT.md:123 — ] docs/TODO_REPORT.md:55 — ] data/reports/repo-knowledge-graph.json:1708 — -scanner-runner.js",
+- [TODO] docs/TODO_REPORT.md:124 — ] docs/TODO_REPORT.md:56 — ] data/reports/repo-knowledge-graph.json:1713 — -summary-runner.js",
+- [TODO] docs/TODO_REPORT.md:125 — ] docs/TODO_REPORT.md:57 — ] data/reports/repo-knowledge-graph.json:1718 — -summary-runner.js",
+- [TODO] docs/TODO_REPORT.md:126 — ] docs/TODO_REPORT.md:58 — ] data/reports/repo-knowledge-graph.json:1878 — _issue_sync.cjs",
+- [TODO] docs/TODO_REPORT.md:127 — ] docs/TODO_REPORT.md:59 — ] data/reports/repo-knowledge-graph.json:1883 — _issue_sync.cjs",
+- [TODO] docs/TODO_REPORT.md:128 — ] docs/TODO_REPORT.md:60 — ] data/reports/repo-knowledge-graph.json:1888 — _issue_sync.cjs",
+- [TODO] docs/TODO_REPORT.md:129 — ] docs/TODO_REPORT.md:65 — ] docs/CHANGELOG_AI.md:131 — issue sync, autonomous release, and keepalive workflows (09ccba6)
+- [TODO] docs/TODO_REPORT.md:130 — ] docs/TODO_REPORT.md:66 — ] docs/CHANGELOG_AI.md:296 — issue sync, autonomous release, and keepalive workflows (09ccba6)
+- [TODO] docs/TODO_REPORT.md:131 — ] docs/TODO_REPORT.md:69 — _REPORT.md
+- [TODO] docs/TODO_REPORT.md:132 — ] docs/TODO_REPORT.md:71 — ] docs/TODO_REPORT.md:1 — and FIXME Report
+- [TODO] docs/TODO_REPORT.md:133 — ] docs/TODO_REPORT.md:72 — ] docs/TODO_REPORT.md:8 — ] .github/workflows.disabled/autonomous-content-scanner.yml:30 — /FIXME scanner
+- [TODO] docs/TODO_REPORT.md:134 — ] docs/TODO_REPORT.md:73 — ] docs/TODO_REPORT.md:9 — ] .github/workflows.disabled/autonomous-content-scanner.yml:31 — -scanner.cjs | cat
+- [TODO] docs/TODO_REPORT.md:135 — ] docs/TODO_REPORT.md:74 — ] docs/TODO_REPORT.md:10 — ] .github/workflows.disabled/autonomous-content-scanner.yml:40 — report and content registry [skip ci]"
+- [TODO] docs/TODO_REPORT.md:136 — ] docs/TODO_REPORT.md:75 — ] docs/TODO_REPORT.md:13 — -issue-sync.yml
+- [TODO] docs/TODO_REPORT.md:137 — ] docs/TODO_REPORT.md:76 — ] docs/TODO_REPORT.md:15 — ] .github/workflows.disabled/todo-issue-sync.yml:1 — Issue Sync
+- [TODO] docs/TODO_REPORT.md:138 — ] docs/TODO_REPORT.md:77 — ] docs/TODO_REPORT.md:16 — ] .github/workflows.disabled/todo-issue-sync.yml:13 — s:
+- [TODO] docs/TODO_REPORT.md:139 — ] docs/TODO_REPORT.md:78 — ] docs/TODO_REPORT.md:17 — ] .github/workflows.disabled/todo-issue-sync.yml:29 — report
+- [TODO] docs/TODO_REPORT.md:140 — ] docs/TODO_REPORT.md:79 — ] docs/TODO_REPORT.md:18 — ] .github/workflows.disabled/todo-issue-sync.yml:30 — _issue_sync.cjs
+- [TODO] docs/TODO_REPORT.md:141 — ] docs/TODO_REPORT.md:80 — ] docs/TODO_REPORT.md:19 — ] .github/workflows.disabled/todo-issue-sync.yml:38 — ): update TODO sync report [skip ci]"
+- [TODO] docs/TODO_REPORT.md:142 — ] docs/TODO_REPORT.md:81 — ] docs/TODO_REPORT.md:20 — ] .github/workflows.disabled/todo-issue-sync.yml:42 — Issue
+- [TODO] docs/TODO_REPORT.md:143 — ] docs/TODO_REPORT.md:82 — ] docs/TODO_REPORT.md:21 — ] .github/workflows.disabled/todo-issue-sync.yml:47 — /FIXME/NOTE Sync"
+- [TODO] docs/TODO_REPORT.md:144 — ] docs/TODO_REPORT.md:83 — ] docs/TODO_REPORT.md:22 — ] .github/workflows.disabled/todo-issue-sync.yml:48 — _SYNC.md"
+- [TODO] docs/TODO_REPORT.md:145 — ] docs/TODO_REPORT.md:84 — ] docs/TODO_REPORT.md:27 — ] data/reports/external-links/external-links-1754934673584.json:142 — _REPORT.md",
+- [TODO] docs/TODO_REPORT.md:146 — ] docs/TODO_REPORT.md:85 — ] docs/TODO_REPORT.md:32 — ] data/reports/external-links/external-links-1754934698424.json:127 — _REPORT.md",
+- [TODO] docs/TODO_REPORT.md:147 — ] docs/TODO_REPORT.md:86 — ] docs/TODO_REPORT.md:37 — ] data/reports/external-links/latest.json:127 — _REPORT.md",
+- [TODO] docs/TODO_REPORT.md:148 — ] docs/TODO_REPORT.md:87 — ] docs/TODO_REPORT.md:42 — ] data/reports/link-sentinel/report-2025-08-11T17-51-16-470Z.json:100 — _REPORT.md",
+- [TODO] docs/TODO_REPORT.md:149 — ] docs/TODO_REPORT.md:88 — ] docs/TODO_REPORT.md:47 — ] data/reports/repo-knowledge-graph.json:225 — -scanner.cjs",
+- [TODO] docs/TODO_REPORT.md:150 — ] docs/TODO_REPORT.md:89 — ] docs/TODO_REPORT.md:48 — ] data/reports/repo-knowledge-graph.json:473 — -scanner-runner.js",
+- [TODO] docs/TODO_REPORT.md:151 — ] docs/TODO_REPORT.md:90 — ] docs/TODO_REPORT.md:49 — ] data/reports/repo-knowledge-graph.json:477 — -summary-runner.js",
+- [TODO] docs/TODO_REPORT.md:152 — ] docs/TODO_REPORT.md:91 — ] docs/TODO_REPORT.md:50 — ] data/reports/repo-knowledge-graph.json:597 — _issue_sync.cjs",
+- [TODO] docs/TODO_REPORT.md:153 — ] docs/TODO_REPORT.md:92 — ] docs/TODO_REPORT.md:51 — ] data/reports/repo-knowledge-graph.json:1173 — -scanner.cjs",
+- [TODO] docs/TODO_REPORT.md:154 — ] docs/TODO_REPORT.md:93 — ] docs/TODO_REPORT.md:52 — ] data/reports/repo-knowledge-graph.json:1178 — -scanner.cjs",
+- [TODO] docs/TODO_REPORT.md:155 — ] docs/TODO_REPORT.md:94 — ] docs/TODO_REPORT.md:53 — ] data/reports/repo-knowledge-graph.json:1183 — -scanner.cjs",
+- [TODO] docs/TODO_REPORT.md:156 — ] docs/TODO_REPORT.md:95 — ] docs/TODO_REPORT.md:54 — ] data/reports/repo-knowledge-graph.json:1703 — -scanner-runner.js",
+- [TODO] docs/TODO_REPORT.md:157 — ] docs/TODO_REPORT.md:96 — ] docs/TODO_REPORT.md:55 — ] data/reports/repo-knowledge-graph.json:1708 — -scanner-runner.js",
+- [TODO] docs/TODO_REPORT.md:158 — ] docs/TODO_REPORT.md:97 — ] docs/TODO_REPORT.md:56 — ] data/reports/repo-knowledge-graph.json:1713 — -summary-runner.js",
+- [TODO] docs/TODO_REPORT.md:159 — ] docs/TODO_REPORT.md:98 — ] docs/TODO_REPORT.md:57 — ] data/reports/repo-knowledge-graph.json:1718 — -summary-runner.js",
+- [TODO] docs/TODO_REPORT.md:160 — ] docs/TODO_REPORT.md:99 — ] docs/TODO_REPORT.md:58 — ] data/reports/repo-knowledge-graph.json:1878 — _issue_sync.cjs",
+- [TODO] docs/TODO_REPORT.md:161 — ] docs/TODO_REPORT.md:100 — ] docs/TODO_REPORT.md:59 — ] data/reports/repo-knowledge-graph.json:1883 — _issue_sync.cjs",
+- [TODO] docs/TODO_REPORT.md:162 — ] docs/TODO_REPORT.md:101 — ] docs/TODO_REPORT.md:60 — ] data/reports/repo-knowledge-graph.json:1888 — _issue_sync.cjs",
+- [TODO] docs/TODO_REPORT.md:163 — ] docs/TODO_REPORT.md:102 — ] docs/TODO_REPORT.md:65 — ] docs/CHANGELOG_AI.md:131 — issue sync, autonomous release, and keepalive workflows (09ccba6)
+- [TODO] docs/TODO_REPORT.md:164 — ] docs/TODO_REPORT.md:103 — ] docs/TODO_REPORT.md:66 — ] docs/CHANGELOG_AI.md:296 — issue sync, autonomous release, and keepalive workflows (09ccba6)
+- [TODO] docs/TODO_REPORT.md:165 — ] docs/TODO_REPORT.md:104 — ] docs/TODO_REPORT.md:69 — _REPORT.md
+- [TODO] docs/TODO_REPORT.md:166 — ] docs/TODO_REPORT.md:105 — ] docs/TODO_REPORT.md:71 — ] docs/TODO_REPORT.md:1 — and FIXME Report
+- [TODO] docs/TODO_REPORT.md:167 — ] docs/TODO_REPORT.md:106 — ] docs/TODO_REPORT.md:72 — ] docs/TODO_REPORT.md:8 — ] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner
+- [TODO] docs/TODO_REPORT.md:168 — ] docs/TODO_REPORT.md:107 — ] docs/TODO_REPORT.md:73 — ] docs/TODO_REPORT.md:9 — ] .github/workflows/autonomous-content-scanner.yml:31 — -scanner.cjs | cat
+- [TODO] docs/TODO_REPORT.md:169 — ] docs/TODO_REPORT.md:108 — ] docs/TODO_REPORT.md:74 — ] docs/TODO_REPORT.md:10 — ] .github/workflows/autonomous-content-scanner.yml:40 — report and content registry [skip ci]"
+- [TODO] docs/TODO_REPORT.md:170 — ] docs/TODO_REPORT.md:109 — ] docs/TODO_REPORT.md:75 — ] docs/TODO_REPORT.md:13 — -issue-sync.yml
+- [TODO] docs/TODO_REPORT.md:171 — ] docs/TODO_REPORT.md:110 — ] docs/TODO_REPORT.md:76 — ] docs/TODO_REPORT.md:15 — ] .github/workflows/todo-issue-sync.yml:1 — Issue Sync
+- [TODO] docs/TODO_REPORT.md:172 — ] docs/TODO_REPORT.md:111 — ] docs/TODO_REPORT.md:77 — ] docs/TODO_REPORT.md:16 — ] .github/workflows/todo-issue-sync.yml:13 — s:
+- [TODO] docs/TODO_REPORT.md:173 — ] docs/TODO_REPORT.md:112 — ] docs/TODO_REPORT.md:78 — ] docs/TODO_REPORT.md:17 — ] .github/workflows/todo-issue-sync.yml:29 — report
+- [TODO] docs/TODO_REPORT.md:174 — ] docs/TODO_REPORT.md:113 — ] docs/TODO_REPORT.md:79 — ] docs/TODO_REPORT.md:18 — ] .github/workflows/todo-issue-sync.yml:30 — _issue_sync.cjs
+- [TODO] docs/TODO_REPORT.md:175 — ] docs/TODO_REPORT.md:114 — ] docs/TODO_REPORT.md:80 — ] docs/TODO_REPORT.md:19 — ] .github/workflows/todo-issue-sync.yml:38 — ): update TODO sync report [skip ci]"
+- [TODO] docs/TODO_REPORT.md:176 — ] docs/TODO_REPORT.md:115 — ] docs/TODO_REPORT.md:81 — ] docs/TODO_REPORT.md:20 — ] .github/workflows/todo-issue-sync.yml:42 — Issue
+- [TODO] docs/TODO_REPORT.md:177 — ] docs/TODO_REPORT.md:116 — ] docs/TODO_REPORT.md:82 — ] docs/TODO_REPORT.md:21 — ] .github/workflows/todo-issue-sync.yml:47 — /FIXME/NOTE Sync"
+- [TODO] docs/TODO_REPORT.md:178 — ] docs/TODO_REPORT.md:117 — ] docs/TODO_REPORT.md:83 — ] docs/TODO_REPORT.md:22 — ] .github/workflows/todo-issue-sync.yml:48 — _SYNC.md"
+- [TODO] docs/TODO_REPORT.md:179 — ] docs/TODO_REPORT.md:118 — ] docs/TODO_REPORT.md:84 — ] docs/TODO_REPORT.md:27 — ] package.json:225 — ": "node automation/todo-scanner.cjs",
+- [TODO] docs/TODO_REPORT.md:180 — ] docs/TODO_REPORT.md:119 — ] docs/TODO_REPORT.md:85 — ] docs/TODO_REPORT.md:28 — ] package.json:227 — && npm run scan:registry"
+- [TODO] docs/TODO_REPORT.md:181 — ] docs/TODO_REPORT.md:120 — ] docs/TODO_REPORT.md:90 — ] netlify/functions/functions-manifest.json:62 — -scanner-runner",
+- [TODO] docs/TODO_REPORT.md:182 — ] docs/TODO_REPORT.md:121 — ] docs/TODO_REPORT.md:91 — ] netlify/functions/functions-manifest.json:63 — -summary-runner",
+- [TODO] docs/TODO_REPORT.md:183 — ] docs/TODO_REPORT.md:122 — ] docs/TODO_REPORT.md:94 — -scanner-runner.js
+- [TODO] docs/TODO_REPORT.md:184 — ] docs/TODO_REPORT.md:123 — ] docs/TODO_REPORT.md:96 — ] netlify/functions/todo-scanner-runner.js:25 — scan', () => runNode('automation/todo-scanner.cjs'));
+- [TODO] docs/TODO_REPORT.md:185 — ] docs/TODO_REPORT.md:124 — ] docs/TODO_REPORT.md:99 — -summary-runner.js
+- [TODO] docs/TODO_REPORT.md:186 — ] docs/TODO_REPORT.md:125 — ] docs/TODO_REPORT.md:101 — ] netlify/functions/todo-summary-runner.js:25 — scan', () => runNode('automation/todo-scanner.cjs'));
+- [TODO] docs/TODO_REPORT.md:187 — ] docs/TODO_REPORT.md:126 — ] docs/TODO_REPORT.md:106 — ] pages/index.tsx:204 — Scanner', desc: 'Generates a consolidated TODO report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },
+- [TODO] docs/TODO_REPORT.md:188 — ] docs/TODO_REPORT.md:127 — ] docs/TODO_REPORT.md:111 — ] pages/main/front/index.tsx:786 — _REPORT.md" target="_blank" rel="noopener" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Docs — TODO_REPORT</div><div className="mt-1 text-sm text-white/75">Open documentation</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div></a>
+- [TODO] docs/TODO_REPORT.md:189 — ] docs/TODO_REPORT.md:128 — ] docs/TODO_REPORT.md:116 — ] public/automation/content-registry.json:38 — _REPORT.md",
+- [TODO] docs/TODO_REPORT.md:190 — ] docs/TODO_REPORT.md:129 — ] docs/TODO_REPORT.md:117 — ] public/automation/content-registry.json:39 — _REPORT.md"
+- [TODO] docs/TODO_REPORT.md:191 — ] docs/TODO_REPORT.md:130 — ] docs/TODO_REPORT.md:120 — -summary.json
+- [TODO] docs/TODO_REPORT.md:192 — ] docs/TODO_REPORT.md:131 — ] docs/TODO_REPORT.md:122 — ] public/automation/todo-summary.json:8 — ",
+- [TODO] docs/TODO_REPORT.md:193 — ] docs/TODO_REPORT.md:132 — ] docs/TODO_REPORT.md:123 — ] public/automation/todo-summary.json:9 — -scanner.cjs\",",
+- [TODO] docs/TODO_REPORT.md:194 — ] docs/TODO_REPORT.md:133 — ] docs/TODO_REPORT.md:124 — ] public/automation/todo-summary.json:10 — \": \"node automation/todo-scanner.cjs\","
+- [TODO] docs/TODO_REPORT.md:195 — ] docs/TODO_REPORT.md:134 — ] docs/TODO_REPORT.md:125 — ] public/automation/todo-summary.json:14 — ",
+- [TODO] docs/TODO_REPORT.md:196 — ] docs/TODO_REPORT.md:135 — ] docs/TODO_REPORT.md:126 — ] public/automation/todo-summary.json:16 — && npm run scan:registry\""
+- [TODO] docs/TODO_REPORT.md:197 — ] docs/TODO_REPORT.md:136 — ] docs/TODO_REPORT.md:127 — ] public/automation/todo-summary.json:19 — -issue-sync.yml": [
+- [TODO] docs/TODO_REPORT.md:198 — ] docs/TODO_REPORT.md:137 — ] docs/TODO_REPORT.md:128 — ] public/automation/todo-summary.json:22 — ",
+- [TODO] docs/TODO_REPORT.md:199 — ] docs/TODO_REPORT.md:138 — ] docs/TODO_REPORT.md:129 — ] public/automation/todo-summary.json:24 — Issue Sync"
+- [TODO] docs/TODO_REPORT.md:200 — ] docs/TODO_REPORT.md:139 — ] docs/TODO_REPORT.md:130 — ] public/automation/todo-summary.json:28 — ",
+- [TODO] docs/TODO_REPORT.md:201 — ] docs/TODO_REPORT.md:140 — ] docs/TODO_REPORT.md:131 — ] public/automation/todo-summary.json:30 — s:"
+- [TODO] docs/TODO_REPORT.md:202 — ] docs/TODO_REPORT.md:141 — ] docs/TODO_REPORT.md:132 — ] public/automation/todo-summary.json:34 — ",
+- [TODO] docs/TODO_REPORT.md:203 — ] docs/TODO_REPORT.md:142 — ] docs/TODO_REPORT.md:133 — ] public/automation/todo-summary.json:36 — report"
+- [TODO] docs/TODO_REPORT.md:204 — ] docs/TODO_REPORT.md:143 — ] docs/TODO_REPORT.md:134 — ] public/automation/todo-summary.json:40 — ",
+- [TODO] docs/TODO_REPORT.md:205 — ] docs/TODO_REPORT.md:144 — ] docs/TODO_REPORT.md:135 — ] public/automation/todo-summary.json:42 — _issue_sync.cjs"
+- [TODO] docs/TODO_REPORT.md:206 — ] docs/TODO_REPORT.md:145 — ] docs/TODO_REPORT.md:136 — ] public/automation/todo-summary.json:46 — ",
+- [TODO] docs/TODO_REPORT.md:207 — ] docs/TODO_REPORT.md:146 — ] docs/TODO_REPORT.md:137 — ] public/automation/todo-summary.json:47 — sync report [skip ci]\"",
+- [TODO] docs/TODO_REPORT.md:208 — ] docs/TODO_REPORT.md:147 — ] docs/TODO_REPORT.md:138 — ] public/automation/todo-summary.json:48 — ): update TODO sync report [skip ci]\""
+- [TODO] docs/TODO_REPORT.md:209 — ] docs/TODO_REPORT.md:148 — ] docs/TODO_REPORT.md:139 — ] public/automation/todo-summary.json:52 — ",
+- [TODO] docs/TODO_REPORT.md:210 — ] docs/TODO_REPORT.md:149 — ] docs/TODO_REPORT.md:140 — ] public/automation/todo-summary.json:54 — Issue"
+- [TODO] docs/TODO_REPORT.md:211 — ] docs/TODO_REPORT.md:150 — ] docs/TODO_REPORT.md:141 — ] public/automation/todo-summary.json:58 — ",
+- [FIXME] docs/TODO_REPORT.md:212 — ] docs/TODO_REPORT.md:151 — ] docs/TODO_REPORT.md:142 — ] public/automation/todo-summary.json:59 — /NOTE Sync\"",
+- [TODO] docs/TODO_REPORT.md:213 — ] docs/TODO_REPORT.md:152 — ] docs/TODO_REPORT.md:143 — ] public/automation/todo-summary.json:60 — /FIXME/NOTE Sync\""
+- [TODO] docs/TODO_REPORT.md:214 — ] docs/TODO_REPORT.md:153 — ] docs/TODO_REPORT.md:144 — ] public/automation/todo-summary.json:64 — ",
+- [TODO] docs/TODO_REPORT.md:215 — ] docs/TODO_REPORT.md:154 — ] docs/TODO_REPORT.md:145 — ] public/automation/todo-summary.json:66 — _SYNC.md\""
+- [TODO] docs/TODO_REPORT.md:216 — ] docs/TODO_REPORT.md:155 — ] docs/TODO_REPORT.md:146 — ] public/automation/todo-summary.json:72 — ",
+- [FIXME] docs/TODO_REPORT.md:217 — ] docs/TODO_REPORT.md:156 — ] docs/TODO_REPORT.md:147 — ] public/automation/todo-summary.json:73 — scanner",
+- [TODO] docs/TODO_REPORT.md:218 — ] docs/TODO_REPORT.md:157 — ] docs/TODO_REPORT.md:148 — ] public/automation/todo-summary.json:74 — /FIXME scanner"
+- [TODO] docs/TODO_REPORT.md:219 — ] docs/TODO_REPORT.md:158 — ] docs/TODO_REPORT.md:149 — ] public/automation/todo-summary.json:78 — ",
+- [TODO] docs/TODO_REPORT.md:220 — ] docs/TODO_REPORT.md:159 — ] docs/TODO_REPORT.md:150 — ] public/automation/todo-summary.json:80 — -scanner.cjs | cat"
+- [TODO] docs/TODO_REPORT.md:221 — ] docs/TODO_REPORT.md:160 — ] docs/TODO_REPORT.md:151 — ] public/automation/todo-summary.json:84 — ",
+- [TODO] docs/TODO_REPORT.md:222 — ] docs/TODO_REPORT.md:161 — ] docs/TODO_REPORT.md:152 — ] public/automation/todo-summary.json:86 — report and content registry [skip ci]\""
+- [TODO] docs/TODO_REPORT.md:223 — ] docs/TODO_REPORT.md:162 — ] docs/TODO_REPORT.md:157 — ] public/search/index.json:59 — _REPORT",
+- [TODO] docs/TODO_REPORT.md:224 — ] docs/TODO_REPORT.md:163 — ] docs/TODO_REPORT.md:158 — ] public/search/index.json:60 — _REPORT.md",
+- [TODO] docs/TODO_REPORT.md:225 — ] docs/TODO_REPORT.md:164 — ] docs/TODO_REPORT.md:159 — ] public/search/index.json:61 — and FIXME Report",
+- [TODO] docs/TODO_REPORT.md:226 — ] docs/TODO_REPORT.md:165 — ] docs/TODO_REPORT.md:160 — ] public/search/index.json:62 — and FIXME Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner - [TODO] .github/workflows/autonomous-content-scanner.yml:31 — -sca"
+- [TODO] docs/TODO_REPORT.md:227 — ] docs/TODO_REPORT.md:170 — ] netlify/functions/functions-manifest.json:62 — -scanner-runner",
+- [TODO] docs/TODO_REPORT.md:228 — ] docs/TODO_REPORT.md:171 — ] netlify/functions/functions-manifest.json:63 — -summary-runner",
+- [TODO] docs/TODO_REPORT.md:229 — ] docs/TODO_REPORT.md:174 — -scanner-runner.js
+- [TODO] docs/TODO_REPORT.md:230 — ] docs/TODO_REPORT.md:176 — ] netlify/functions/todo-scanner-runner.js:25 — scan', () => runNode('automation/todo-scanner.cjs'));
+- [TODO] docs/TODO_REPORT.md:231 — ] docs/TODO_REPORT.md:179 — -summary-runner.js
+- [TODO] docs/TODO_REPORT.md:232 — ] docs/TODO_REPORT.md:181 — ] netlify/functions/todo-summary-runner.js:25 — scan', () => runNode('automation/todo-scanner.cjs'));
+- [TODO] docs/TODO_REPORT.md:233 — ] docs/TODO_REPORT.md:186 — ] pages/index.tsx:204 — Scanner', desc: 'Generates a consolidated TODO report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },
+- [TODO] docs/TODO_REPORT.md:234 — ] docs/TODO_REPORT.md:191 — ] pages/main/front/index.tsx:786 — _REPORT.md" target="_blank" rel="noopener" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Docs — TODO_REPORT</div><div className="mt-1 text-sm text-white/75">Open documentation</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div></a>
+- [TODO] docs/TODO_REPORT.md:235 — ] docs/TODO_REPORT.md:196 — ] public/automation/content-registry.json:38 — _REPORT.md",
+- [TODO] docs/TODO_REPORT.md:236 — ] docs/TODO_REPORT.md:197 — ] public/automation/content-registry.json:39 — _REPORT.md"
+- [TODO] docs/TODO_REPORT.md:237 — ] docs/TODO_REPORT.md:200 — -summary.json
+- [TODO] docs/TODO_REPORT.md:238 — ] docs/TODO_REPORT.md:202 — ] public/automation/todo-summary.json:8 — ",
+- [TODO] docs/TODO_REPORT.md:239 — ] docs/TODO_REPORT.md:203 — ] public/automation/todo-summary.json:9 — report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },",
+- [TODO] docs/TODO_REPORT.md:240 — ] docs/TODO_REPORT.md:204 — ] public/automation/todo-summary.json:10 — Scanner', desc: 'Generates a consolidated TODO report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },"
+- [TODO] docs/TODO_REPORT.md:241 — ] docs/TODO_REPORT.md:205 — ] public/automation/todo-summary.json:13 — _REPORT.md": [
+- [TODO] docs/TODO_REPORT.md:242 — ] docs/TODO_REPORT.md:206 — ] public/automation/todo-summary.json:16 — ",
+- [FIXME] docs/TODO_REPORT.md:243 — ] docs/TODO_REPORT.md:207 — ] public/automation/todo-summary.json:17 — Report",
+- [TODO] docs/TODO_REPORT.md:244 — ] docs/TODO_REPORT.md:208 — ] public/automation/todo-summary.json:18 — and FIXME Report"
+- [TODO] docs/TODO_REPORT.md:245 — ] docs/TODO_REPORT.md:209 — ] public/automation/todo-summary.json:22 — ",
+- [FIXME] docs/TODO_REPORT.md:246 — ] docs/TODO_REPORT.md:210 — ] public/automation/todo-summary.json:23 — scanner",
+- [TODO] docs/TODO_REPORT.md:247 — ] docs/TODO_REPORT.md:211 — ] public/automation/todo-summary.json:24 — ] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner"
+- [TODO] docs/TODO_REPORT.md:248 — ] docs/TODO_REPORT.md:212 — ] public/automation/todo-summary.json:28 — ",
+- [TODO] docs/TODO_REPORT.md:249 — ] docs/TODO_REPORT.md:213 — ] public/automation/todo-summary.json:30 — ] .github/workflows/autonomous-content-scanner.yml:31 — -scanner.cjs | cat"
+- [TODO] docs/TODO_REPORT.md:250 — ] docs/TODO_REPORT.md:214 — ] public/automation/todo-summary.json:34 — ",
+- [TODO] docs/TODO_REPORT.md:251 — ] docs/TODO_REPORT.md:215 — ] public/automation/todo-summary.json:36 — ] .github/workflows/autonomous-content-scanner.yml:40 — report and content registry [skip ci]\""
+- [TODO] docs/TODO_REPORT.md:252 — ] docs/TODO_REPORT.md:216 — ] public/automation/todo-summary.json:40 — ",
+- [TODO] docs/TODO_REPORT.md:253 — ] docs/TODO_REPORT.md:217 — ] public/automation/todo-summary.json:42 — -issue-sync.yml"
+- [TODO] docs/TODO_REPORT.md:254 — ] docs/TODO_REPORT.md:218 — ] public/automation/todo-summary.json:46 — ",
+- [TODO] docs/TODO_REPORT.md:255 — ] docs/TODO_REPORT.md:219 — ] public/automation/todo-summary.json:47 — -issue-sync.yml:1 — Issue Sync",
+- [TODO] docs/TODO_REPORT.md:256 — ] docs/TODO_REPORT.md:220 — ] public/automation/todo-summary.json:48 — ] .github/workflows/todo-issue-sync.yml:1 — Issue Sync"
+- [TODO] docs/TODO_REPORT.md:257 — ] docs/TODO_REPORT.md:221 — ] public/automation/todo-summary.json:52 — ",
+- [TODO] docs/TODO_REPORT.md:258 — ] docs/TODO_REPORT.md:222 — ] public/automation/todo-summary.json:53 — -issue-sync.yml:13 — s:",
+- [TODO] docs/TODO_REPORT.md:259 — ] docs/TODO_REPORT.md:223 — ] public/automation/todo-summary.json:54 — ] .github/workflows/todo-issue-sync.yml:13 — s:"
+- [TODO] docs/TODO_REPORT.md:260 — ] docs/TODO_REPORT.md:224 — ] public/automation/todo-summary.json:58 — ",
+- [TODO] docs/TODO_REPORT.md:261 — ] docs/TODO_REPORT.md:225 — ] public/automation/todo-summary.json:59 — -issue-sync.yml:29 — report",
+- [TODO] docs/TODO_REPORT.md:262 — ] docs/TODO_REPORT.md:226 — ] public/automation/todo-summary.json:60 — ] .github/workflows/todo-issue-sync.yml:29 — report"
+- [TODO] docs/TODO_REPORT.md:263 — ] docs/TODO_REPORT.md:227 — ] public/automation/todo-summary.json:64 — ",
+- [TODO] docs/TODO_REPORT.md:264 — ] docs/TODO_REPORT.md:228 — ] public/automation/todo-summary.json:65 — -issue-sync.yml:30 — _issue_sync.cjs",
+- [TODO] docs/TODO_REPORT.md:265 — ] docs/TODO_REPORT.md:229 — ] public/automation/todo-summary.json:66 — ] .github/workflows/todo-issue-sync.yml:30 — _issue_sync.cjs"
+- [TODO] docs/TODO_REPORT.md:266 — ] docs/TODO_REPORT.md:230 — ] public/automation/todo-summary.json:70 — ",
+- [TODO] docs/TODO_REPORT.md:267 — ] docs/TODO_REPORT.md:231 — ] public/automation/todo-summary.json:71 — -issue-sync.yml:38 — ): update TODO sync report [skip ci]\"",
+- [TODO] docs/TODO_REPORT.md:268 — ] docs/TODO_REPORT.md:232 — ] public/automation/todo-summary.json:72 — ] .github/workflows/todo-issue-sync.yml:38 — ): update TODO sync report [skip ci]\""
+- [TODO] docs/TODO_REPORT.md:269 — ] docs/TODO_REPORT.md:233 — ] public/automation/todo-summary.json:76 — ",
+- [TODO] docs/TODO_REPORT.md:270 — ] docs/TODO_REPORT.md:234 — ] public/automation/todo-summary.json:77 — -issue-sync.yml:42 — Issue",
+- [TODO] docs/TODO_REPORT.md:271 — ] docs/TODO_REPORT.md:235 — ] public/automation/todo-summary.json:78 — ] .github/workflows/todo-issue-sync.yml:42 — Issue"
+- [TODO] docs/TODO_REPORT.md:272 — ] docs/TODO_REPORT.md:236 — ] public/automation/todo-summary.json:82 — ",
+- [TODO] docs/TODO_REPORT.md:273 — ] docs/TODO_REPORT.md:237 — ] public/automation/todo-summary.json:83 — -issue-sync.yml:47 — /FIXME/NOTE Sync\"",
+- [TODO] docs/TODO_REPORT.md:274 — ] docs/TODO_REPORT.md:238 — ] public/automation/todo-summary.json:84 — ] .github/workflows/todo-issue-sync.yml:47 — /FIXME/NOTE Sync\""
+- [TODO] docs/TODO_REPORT.md:275 — ] docs/TODO_REPORT.md:239 — ] public/automation/todo-summary.json:88 — ",
+- [TODO] docs/TODO_REPORT.md:276 — ] docs/TODO_REPORT.md:240 — ] public/automation/todo-summary.json:89 — -issue-sync.yml:48 — _SYNC.md\"",
+- [TODO] docs/TODO_REPORT.md:277 — ] docs/TODO_REPORT.md:241 — ] public/automation/todo-summary.json:90 — ] .github/workflows/todo-issue-sync.yml:48 — _SYNC.md\""
+- [TODO] docs/TODO_REPORT.md:278 — ] docs/TODO_REPORT.md:242 — ] public/automation/todo-summary.json:94 — ",
+- [TODO] docs/TODO_REPORT.md:279 — ] docs/TODO_REPORT.md:243 — ] public/automation/todo-summary.json:95 — -scanner.cjs\",",
+- [TODO] docs/TODO_REPORT.md:280 — ] docs/TODO_REPORT.md:244 — ] public/automation/todo-summary.json:96 — ] package.json:225 — \": \"node automation/todo-scanner.cjs\","
+- [TODO] docs/TODO_REPORT.md:281 — ] docs/TODO_REPORT.md:245 — ] public/automation/todo-summary.json:100 — ",
+- [TODO] docs/TODO_REPORT.md:282 — ] docs/TODO_REPORT.md:246 — ] public/automation/todo-summary.json:102 — ] package.json:227 — && npm run scan:registry\""
+- [TODO] docs/TODO_REPORT.md:283 — ] docs/TODO_REPORT.md:247 — ] public/automation/todo-summary.json:108 — ",
+- [TODO] docs/TODO_REPORT.md:284 — ] docs/TODO_REPORT.md:248 — ] public/automation/todo-summary.json:110 — issue sync, autonomous release, and keepalive workflows (09ccba6)"
+- [TODO] docs/TODO_REPORT.md:285 — ] docs/TODO_REPORT.md:249 — ] public/automation/todo-summary.json:114 — ",
+- [TODO] docs/TODO_REPORT.md:286 — ] docs/TODO_REPORT.md:250 — ] public/automation/todo-summary.json:116 — issue sync, autonomous release, and keepalive workflows (09ccba6)"
+- [TODO] docs/TODO_REPORT.md:287 — ] docs/TODO_REPORT.md:251 — ] public/automation/todo-summary.json:122 — ",
+- [TODO] docs/TODO_REPORT.md:288 — ] docs/TODO_REPORT.md:252 — ] public/automation/todo-summary.json:124 — _REPORT\","
+- [TODO] docs/TODO_REPORT.md:289 — ] docs/TODO_REPORT.md:253 — ] public/automation/todo-summary.json:128 — ",
+- [TODO] docs/TODO_REPORT.md:290 — ] docs/TODO_REPORT.md:254 — ] public/automation/todo-summary.json:130 — _REPORT.md\","
+- [TODO] docs/TODO_REPORT.md:291 — ] docs/TODO_REPORT.md:255 — ] public/automation/todo-summary.json:134 — ",
+- [FIXME] docs/TODO_REPORT.md:292 — ] docs/TODO_REPORT.md:256 — ] public/automation/todo-summary.json:135 — Report\",",
+- [TODO] docs/TODO_REPORT.md:293 — ] docs/TODO_REPORT.md:257 — ] public/automation/todo-summary.json:136 — and FIXME Report\","
+- [TODO] docs/TODO_REPORT.md:294 — ] docs/TODO_REPORT.md:258 — ] public/automation/todo-summary.json:140 — ",
+- [FIXME] docs/TODO_REPORT.md:295 — ] docs/TODO_REPORT.md:259 — ] public/automation/todo-summary.json:141 — Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner - [TODO] .github/workflows/autonomous-content-scanner.yml:31 — -sca\"",
+- [TODO] docs/TODO_REPORT.md:296 — ] docs/TODO_REPORT.md:260 — ] public/automation/todo-summary.json:142 — and FIXME Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/autonomous-content-scanner"
+- [TODO] docs/TODO_REPORT.md:297 — ] docs/TODO_REPORT.md:261 — ] public/automation/todo-summary.json:148 — ",
+- [TODO] docs/TODO_REPORT.md:298 — ] docs/TODO_REPORT.md:262 — ] public/automation/todo-summary.json:150 — -scanner.cjs\","
+- [TODO] docs/TODO_REPORT.md:299 — ] docs/TODO_REPORT.md:263 — ] public/automation/todo-summary.json:154 — ",
+- [TODO] docs/TODO_REPORT.md:300 — ] docs/TODO_REPORT.md:264 — ] public/automation/todo-summary.json:156 — -scanner-runner.js\","
+- [TODO] docs/TODO_REPORT.md:301 — ] docs/TODO_REPORT.md:265 — ] public/automation/todo-summary.json:160 — ",
+- [TODO] docs/TODO_REPORT.md:302 — ] docs/TODO_REPORT.md:266 — ] public/automation/todo-summary.json:162 — -summary-runner.js\","
+- [TODO] docs/TODO_REPORT.md:303 — ] docs/TODO_REPORT.md:267 — ] public/automation/todo-summary.json:166 — ",
+- [TODO] docs/TODO_REPORT.md:304 — ] docs/TODO_REPORT.md:268 — ] public/automation/todo-summary.json:168 — _issue_sync.cjs\","
+- [TODO] docs/TODO_REPORT.md:305 — ] docs/TODO_REPORT.md:269 — ] public/automation/todo-summary.json:172 — ",
+- [TODO] docs/TODO_REPORT.md:306 — ] docs/TODO_REPORT.md:270 — ] public/automation/todo-summary.json:174 — -scanner.cjs\","
+- [TODO] docs/TODO_REPORT.md:307 — ] docs/TODO_REPORT.md:271 — ] public/automation/todo-summary.json:178 — ",
+- [TODO] docs/TODO_REPORT.md:308 — ] docs/TODO_REPORT.md:272 — ] public/automation/todo-summary.json:180 — -scanner.cjs\","
+- [TODO] docs/TODO_REPORT.md:309 — ] docs/TODO_REPORT.md:273 — ] public/automation/todo-summary.json:184 — ",
+- [TODO] docs/TODO_REPORT.md:310 — ] docs/TODO_REPORT.md:274 — ] public/automation/todo-summary.json:186 — -scanner.cjs\","
+- [TODO] docs/TODO_REPORT.md:311 — ] docs/TODO_REPORT.md:275 — ] public/automation/todo-summary.json:190 — ",
+- [TODO] docs/TODO_REPORT.md:312 — ] docs/TODO_REPORT.md:276 — ] public/automation/todo-summary.json:192 — -scanner-runner.js\","
+- [TODO] docs/TODO_REPORT.md:313 — ] docs/TODO_REPORT.md:277 — ] public/automation/todo-summary.json:196 — ",
+- [TODO] docs/TODO_REPORT.md:314 — ] docs/TODO_REPORT.md:278 — ] public/automation/todo-summary.json:198 — -scanner-runner.js\","
+- [TODO] docs/TODO_REPORT.md:315 — ] docs/TODO_REPORT.md:279 — ] public/automation/todo-summary.json:202 — ",
+- [TODO] docs/TODO_REPORT.md:316 — ] docs/TODO_REPORT.md:280 — ] public/automation/todo-summary.json:204 — -summary-runner.js\","
+- [TODO] docs/TODO_REPORT.md:317 — ] docs/TODO_REPORT.md:281 — ] public/automation/todo-summary.json:208 — ",
+- [TODO] docs/TODO_REPORT.md:318 — ] docs/TODO_REPORT.md:282 — ] public/automation/todo-summary.json:210 — -summary-runner.js\","
+- [TODO] docs/TODO_REPORT.md:319 — ] docs/TODO_REPORT.md:283 — ] public/automation/todo-summary.json:214 — ",
+- [TODO] docs/TODO_REPORT.md:320 — ] docs/TODO_REPORT.md:284 — ] public/automation/todo-summary.json:216 — _issue_sync.cjs\","
+- [TODO] docs/TODO_REPORT.md:321 — ] docs/TODO_REPORT.md:285 — ] public/automation/todo-summary.json:220 — ",
+- [TODO] docs/TODO_REPORT.md:322 — ] docs/TODO_REPORT.md:286 — ] public/automation/todo-summary.json:222 — _issue_sync.cjs\","
+- [TODO] docs/TODO_REPORT.md:323 — ] docs/TODO_REPORT.md:287 — ] public/automation/todo-summary.json:226 — ",
+- [TODO] docs/TODO_REPORT.md:324 — ] docs/TODO_REPORT.md:288 — ] public/automation/todo-summary.json:228 — _issue_sync.cjs\","
+- [TODO] docs/TODO_REPORT.md:325 — ] docs/TODO_REPORT.md:289 — ] public/automation/todo-summary.json:231 — -summary.json": [
+- [TODO] docs/TODO_REPORT.md:326 — ] docs/TODO_REPORT.md:290 — ] public/automation/todo-summary.json:234 — ",
+- [TODO] docs/TODO_REPORT.md:327 — ] docs/TODO_REPORT.md:291 — ] public/automation/todo-summary.json:236 — \","
+- [TODO] docs/TODO_REPORT.md:328 — ] docs/TODO_REPORT.md:292 — ] public/automation/todo-summary.json:240 — ",
+- [TODO] docs/TODO_REPORT.md:329 — ] docs/TODO_REPORT.md:293 — ] public/automation/todo-summary.json:242 — -scanner.cjs\\\",\","
+- [TODO] docs/TODO_REPORT.md:330 — ] docs/TODO_REPORT.md:294 — ] public/automation/todo-summary.json:246 — ",
+- [TODO] docs/TODO_REPORT.md:331 — ] docs/TODO_REPORT.md:295 — ] public/automation/todo-summary.json:247 — -scanner.cjs\\\",\"",
+- [TODO] docs/TODO_REPORT.md:332 — ] docs/TODO_REPORT.md:296 — ] public/automation/todo-summary.json:248 — \\\": \\\"node automation/todo-scanner.cjs\\\",\""
+- [TODO] docs/TODO_REPORT.md:333 — ] docs/TODO_REPORT.md:297 — ] public/automation/todo-summary.json:252 — ",
+- [TODO] docs/TODO_REPORT.md:334 — ] docs/TODO_REPORT.md:298 — ] public/automation/todo-summary.json:254 — \","
+- [TODO] docs/TODO_REPORT.md:335 — ] docs/TODO_REPORT.md:299 — ] public/automation/todo-summary.json:258 — ",
+- [TODO] docs/TODO_REPORT.md:336 — ] docs/TODO_REPORT.md:300 — ] public/automation/todo-summary.json:260 — && npm run scan:registry\\\"\""
+- [TODO] docs/TODO_REPORT.md:337 — ] docs/TODO_REPORT.md:301 — ] public/automation/todo-summary.json:264 — ",
+- [TODO] docs/TODO_REPORT.md:338 — ] docs/TODO_REPORT.md:302 — ] public/automation/todo-summary.json:266 — -issue-sync.yml\": ["
+- [TODO] docs/TODO_REPORT.md:339 — ] docs/TODO_REPORT.md:303 — ] public/automation/todo-summary.json:270 — ",
+- [TODO] docs/TODO_REPORT.md:340 — ] docs/TODO_REPORT.md:304 — ] public/automation/todo-summary.json:272 — \","
+- [TODO] docs/TODO_REPORT.md:341 — ] docs/TODO_REPORT.md:305 — ] public/automation/todo-summary.json:276 — ",
+- [TODO] docs/TODO_REPORT.md:342 — ] docs/TODO_REPORT.md:306 — ] public/automation/todo-summary.json:278 — Issue Sync\""
+- [TODO] docs/TODO_REPORT.md:343 — ] docs/TODO_REPORT.md:307 — ] public/automation/todo-summary.json:282 — ",
+- [TODO] docs/TODO_REPORT.md:344 — ] docs/TODO_REPORT.md:308 — ] public/automation/todo-summary.json:284 — \","
+- [TODO] docs/TODO_REPORT.md:345 — ] docs/TODO_REPORT.md:309 — ] public/automation/todo-summary.json:288 — ",
+- [TODO] docs/TODO_REPORT.md:346 — ] docs/TODO_REPORT.md:310 — ] public/automation/todo-summary.json:290 — s:\""
+- [TODO] docs/TODO_REPORT.md:347 — ] docs/TODO_REPORT.md:311 — ] public/automation/todo-summary.json:294 — ",
+- [TODO] docs/TODO_REPORT.md:348 — ] docs/TODO_REPORT.md:312 — ] public/automation/todo-summary.json:296 — \","
+- [TODO] docs/TODO_REPORT.md:349 — ] docs/TODO_REPORT.md:313 — ] public/automation/todo-summary.json:300 — ",
+- [TODO] docs/TODO_REPORT.md:350 — ] docs/TODO_REPORT.md:314 — ] public/automation/todo-summary.json:302 — report\""
+- [TODO] docs/TODO_REPORT.md:351 — ] docs/TODO_REPORT.md:315 — ] public/automation/todo-summary.json:306 — ",
+- [TODO] docs/TODO_REPORT.md:352 — ] docs/TODO_REPORT.md:316 — ] public/automation/todo-summary.json:308 — \","
+- [TODO] docs/TODO_REPORT.md:353 — ] docs/TODO_REPORT.md:317 — ] public/automation/todo-summary.json:312 — ",
+- [TODO] docs/TODO_REPORT.md:354 — ] docs/TODO_REPORT.md:318 — ] public/automation/todo-summary.json:314 — _issue_sync.cjs\""
+- [TODO] docs/TODO_REPORT.md:355 — ] docs/TODO_REPORT.md:319 — ] public/automation/todo-summary.json:318 — ",
+- [TODO] docs/TODO_REPORT.md:356 — ] docs/TODO_REPORT.md:320 — ] public/automation/todo-summary.json:320 — \","
+- [TODO] docs/TODO_REPORT.md:357 — ] docs/TODO_REPORT.md:321 — ] public/automation/todo-summary.json:324 — ",
+- [TODO] docs/TODO_REPORT.md:358 — ] docs/TODO_REPORT.md:322 — ] public/automation/todo-summary.json:326 — sync report [skip ci]\\\"\","
+- [TODO] docs/TODO_REPORT.md:359 — ] docs/TODO_REPORT.md:323 — ] public/automation/todo-summary.json:330 — ",
+- [TODO] docs/TODO_REPORT.md:360 — ] docs/TODO_REPORT.md:324 — ] public/automation/todo-summary.json:331 — sync report [skip ci]\\\"\"",
+- [TODO] docs/TODO_REPORT.md:361 — ] docs/TODO_REPORT.md:325 — ] public/automation/todo-summary.json:332 — ): update TODO sync report [skip ci]\\\"\""
+- [TODO] docs/TODO_REPORT.md:362 — ] docs/TODO_REPORT.md:326 — ] public/automation/todo-summary.json:336 — ",
+- [TODO] docs/TODO_REPORT.md:363 — ] docs/TODO_REPORT.md:327 — ] public/automation/todo-summary.json:338 — \","
+- [TODO] docs/TODO_REPORT.md:364 — ] docs/TODO_REPORT.md:328 — ] public/automation/todo-summary.json:342 — ",
+- [TODO] docs/TODO_REPORT.md:365 — ] docs/TODO_REPORT.md:329 — ] public/automation/todo-summary.json:344 — Issue\""
+- [TODO] docs/TODO_REPORT.md:366 — ] docs/TODO_REPORT.md:330 — ] public/automation/todo-summary.json:348 — ",
+- [TODO] docs/TODO_REPORT.md:367 — ] docs/TODO_REPORT.md:331 — ] public/automation/todo-summary.json:350 — \","
+- [FIXME] docs/TODO_REPORT.md:368 — ] docs/TODO_REPORT.md:332 — ] public/automation/todo-summary.json:354 — ",
+- [FIXME] docs/TODO_REPORT.md:369 — ] docs/TODO_REPORT.md:333 — ] public/automation/todo-summary.json:356 — /NOTE Sync\\\"\","
+- [TODO] docs/TODO_REPORT.md:370 — ] docs/TODO_REPORT.md:334 — ] public/automation/todo-summary.json:360 — ",
+- [FIXME] docs/TODO_REPORT.md:371 — ] docs/TODO_REPORT.md:335 — ] public/automation/todo-summary.json:361 — /NOTE Sync\\\"\"",
+- [TODO] docs/TODO_REPORT.md:372 — ] docs/TODO_REPORT.md:336 — ] public/automation/todo-summary.json:362 — /FIXME/NOTE Sync\\\"\""
+- [TODO] docs/TODO_REPORT.md:373 — ] docs/TODO_REPORT.md:337 — ] public/automation/todo-summary.json:366 — ",
+- [TODO] docs/TODO_REPORT.md:374 — ] docs/TODO_REPORT.md:338 — ] public/automation/todo-summary.json:368 — \","
+- [TODO] docs/TODO_REPORT.md:375 — ] docs/TODO_REPORT.md:339 — ] public/automation/todo-summary.json:372 — ",
+- [TODO] docs/TODO_REPORT.md:376 — ] docs/TODO_REPORT.md:340 — ] public/automation/todo-summary.json:374 — _SYNC.md\\\"\""
+- [TODO] docs/TODO_REPORT.md:377 — ] docs/TODO_REPORT.md:341 — ] public/automation/todo-summary.json:378 — ",
+- [TODO] docs/TODO_REPORT.md:378 — ] docs/TODO_REPORT.md:342 — ] public/automation/todo-summary.json:380 — \","
+- [FIXME] docs/TODO_REPORT.md:379 — ] docs/TODO_REPORT.md:343 — ] public/automation/todo-summary.json:384 — ",
+- [FIXME] docs/TODO_REPORT.md:380 — ] docs/TODO_REPORT.md:344 — ] public/automation/todo-summary.json:386 — scanner\","
+- [TODO] docs/TODO_REPORT.md:381 — ] docs/TODO_REPORT.md:345 — ] public/automation/todo-summary.json:390 — ",
+- [FIXME] docs/TODO_REPORT.md:382 — ] docs/TODO_REPORT.md:346 — ] public/automation/todo-summary.json:391 — scanner\"",
+- [TODO] docs/TODO_REPORT.md:383 — ] docs/TODO_REPORT.md:347 — ] public/automation/todo-summary.json:392 — /FIXME scanner\""
+- [TODO] docs/TODO_REPORT.md:384 — ] docs/TODO_REPORT.md:348 — ] public/automation/todo-summary.json:396 — ",
+- [TODO] docs/TODO_REPORT.md:385 — ] docs/TODO_REPORT.md:349 — ] public/automation/todo-summary.json:398 — \","
+- [TODO] docs/TODO_REPORT.md:386 — ] docs/TODO_REPORT.md:350 — ] public/automation/todo-summary.json:402 — ",
+- [TODO] docs/TODO_REPORT.md:387 — ] docs/TODO_REPORT.md:351 — ] public/automation/todo-summary.json:404 — -scanner.cjs | cat\""
+- [TODO] docs/TODO_REPORT.md:388 — ] docs/TODO_REPORT.md:352 — ] public/automation/todo-summary.json:408 — ",
+- [TODO] docs/TODO_REPORT.md:389 — ] docs/TODO_REPORT.md:353 — ] public/automation/todo-summary.json:410 — \","
+- [TODO] docs/TODO_REPORT.md:390 — ] docs/TODO_REPORT.md:354 — ] public/automation/todo-summary.json:414 — ",
+- [TODO] docs/TODO_REPORT.md:391 — ] docs/TODO_REPORT.md:355 — ] public/automation/todo-summary.json:416 — report and content registry [skip ci]\\\"\""
+- [TODO] docs/TODO_REPORT.md:392 — ] docs/TODO_REPORT.md:356 — ] public/automation/todo-summary.json:422 — ",
+- [TODO] docs/TODO_REPORT.md:393 — ] docs/TODO_REPORT.md:357 — ] public/automation/todo-summary.json:424 — _REPORT.md\","
+- [TODO] docs/TODO_REPORT.md:394 — ] docs/TODO_REPORT.md:358 — ] public/automation/todo-summary.json:428 — ",
+- [TODO] docs/TODO_REPORT.md:395 — ] docs/TODO_REPORT.md:359 — ] public/automation/todo-summary.json:430 — _REPORT.md\""
+- [TODO] docs/TODO_REPORT.md:396 — ] docs/TODO_REPORT.md:360 — ] public/automation/todo-summary.json:433 — -summary-runner.js": [
+- [TODO] docs/TODO_REPORT.md:397 — ] docs/TODO_REPORT.md:361 — ] public/automation/todo-summary.json:436 — ",
+- [TODO] docs/TODO_REPORT.md:398 — ] docs/TODO_REPORT.md:362 — ] public/automation/todo-summary.json:437 — -scanner.cjs'));",
+- [TODO] docs/TODO_REPORT.md:399 — ] docs/TODO_REPORT.md:363 — ] public/automation/todo-summary.json:438 — scan', () => runNode('automation/todo-scanner.cjs'));"
+- [TODO] docs/TODO_REPORT.md:400 — ] docs/TODO_REPORT.md:364 — ] public/automation/todo-summary.json:441 — -scanner-runner.js": [
+- [TODO] docs/TODO_REPORT.md:401 — ] docs/TODO_REPORT.md:365 — ] public/automation/todo-summary.json:444 — ",
+- [TODO] docs/TODO_REPORT.md:402 — ] docs/TODO_REPORT.md:366 — ] public/automation/todo-summary.json:445 — -scanner.cjs'));",
+- [TODO] docs/TODO_REPORT.md:403 — ] docs/TODO_REPORT.md:367 — ] public/automation/todo-summary.json:446 — scan', () => runNode('automation/todo-scanner.cjs'));"
+- [TODO] docs/TODO_REPORT.md:404 — ] docs/TODO_REPORT.md:368 — ] public/automation/todo-summary.json:452 — ",
+- [TODO] docs/TODO_REPORT.md:405 — ] docs/TODO_REPORT.md:369 — ] public/automation/todo-summary.json:454 — -scanner-runner\","
+- [TODO] docs/TODO_REPORT.md:406 — ] docs/TODO_REPORT.md:370 — ] public/automation/todo-summary.json:458 — ",
+- [TODO] docs/TODO_REPORT.md:407 — ] docs/TODO_REPORT.md:371 — ] public/automation/todo-summary.json:460 — -summary-runner\","
+- [TODO] docs/TODO_REPORT.md:408 — ] docs/TODO_REPORT.md:372 — ] public/automation/todo-summary.json:463 — -issue-sync.yml": [
+- [TODO] docs/TODO_REPORT.md:409 — ] docs/TODO_REPORT.md:373 — ] public/automation/todo-summary.json:466 — ",
+- [TODO] docs/TODO_REPORT.md:410 — ] docs/TODO_REPORT.md:374 — ] public/automation/todo-summary.json:468 — Issue Sync"
+- [TODO] docs/TODO_REPORT.md:411 — ] docs/TODO_REPORT.md:375 — ] public/automation/todo-summary.json:472 — ",
+- [TODO] docs/TODO_REPORT.md:412 — ] docs/TODO_REPORT.md:376 — ] public/automation/todo-summary.json:474 — s:"
+- [TODO] docs/TODO_REPORT.md:413 — ] docs/TODO_REPORT.md:377 — ] public/automation/todo-summary.json:478 — ",
+- [TODO] docs/TODO_REPORT.md:414 — ] docs/TODO_REPORT.md:378 — ] public/automation/todo-summary.json:480 — report"
+- [TODO] docs/TODO_REPORT.md:415 — ] docs/TODO_REPORT.md:379 — ] public/automation/todo-summary.json:484 — ",
+- [TODO] docs/TODO_REPORT.md:416 — ] docs/TODO_REPORT.md:380 — ] public/automation/todo-summary.json:486 — _issue_sync.cjs"
+- [TODO] docs/TODO_REPORT.md:417 — ] docs/TODO_REPORT.md:381 — ] public/automation/todo-summary.json:490 — ",
+- [TODO] docs/TODO_REPORT.md:418 — ] docs/TODO_REPORT.md:382 — ] public/automation/todo-summary.json:491 — sync report [skip ci]\"",
+- [TODO] docs/TODO_REPORT.md:419 — ] docs/TODO_REPORT.md:383 — ] public/automation/todo-summary.json:492 — ): update TODO sync report [skip ci]\""
+- [TODO] docs/TODO_REPORT.md:420 — ] docs/TODO_REPORT.md:384 — ] public/automation/todo-summary.json:496 — ",
+- [TODO] docs/TODO_REPORT.md:421 — ] docs/TODO_REPORT.md:385 — ] public/automation/todo-summary.json:498 — Issue"
+- [TODO] docs/TODO_REPORT.md:422 — ] docs/TODO_REPORT.md:386 — ] public/automation/todo-summary.json:502 — ",
+- [FIXME] docs/TODO_REPORT.md:423 — ] docs/TODO_REPORT.md:387 — ] public/automation/todo-summary.json:503 — /NOTE Sync\"",
+- [TODO] docs/TODO_REPORT.md:424 — ] docs/TODO_REPORT.md:388 — ] public/automation/todo-summary.json:504 — /FIXME/NOTE Sync\""
+- [TODO] docs/TODO_REPORT.md:425 — ] docs/TODO_REPORT.md:389 — ] public/automation/todo-summary.json:508 — ",
+- [TODO] docs/TODO_REPORT.md:426 — ] docs/TODO_REPORT.md:390 — ] public/automation/todo-summary.json:510 — _SYNC.md\""
+- [TODO] docs/TODO_REPORT.md:427 — ] docs/TODO_REPORT.md:391 — ] public/automation/todo-summary.json:516 — ",
+- [FIXME] docs/TODO_REPORT.md:428 — ] docs/TODO_REPORT.md:392 — ] public/automation/todo-summary.json:517 — scanner",
+- [TODO] docs/TODO_REPORT.md:429 — ] docs/TODO_REPORT.md:393 — ] public/automation/todo-summary.json:518 — /FIXME scanner"
+- [TODO] docs/TODO_REPORT.md:430 — ] docs/TODO_REPORT.md:394 — ] public/automation/todo-summary.json:522 — ",
+- [TODO] docs/TODO_REPORT.md:431 — ] docs/TODO_REPORT.md:395 — ] public/automation/todo-summary.json:524 — -scanner.cjs | cat"
+- [TODO] docs/TODO_REPORT.md:432 — ] docs/TODO_REPORT.md:396 — ] public/automation/todo-summary.json:528 — ",
+- [TODO] docs/TODO_REPORT.md:433 — ] docs/TODO_REPORT.md:397 — ] public/automation/todo-summary.json:530 — report and content registry [skip ci]\""
+- [TODO] docs/TODO_REPORT.md:434 — ] docs/TODO_REPORT.md:398 — ] public/automation/todo-summary.json:536 — ",
+- [TODO] docs/TODO_REPORT.md:435 — ] docs/TODO_REPORT.md:399 — ] public/automation/todo-summary.json:537 — _REPORT</div><div className=\"mt-1 text-sm text-white/75\">Open documentation</div><div className=\"mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90\">Open <span aria-hidden>↗</span></div></a>",
+- [TODO] docs/TODO_REPORT.md:436 — ] docs/TODO_REPORT.md:400 — ] public/automation/todo-summary.json:538 — _REPORT.md\" target=\"_blank\" rel=\"noopener\" className=\"group relative overflow-hidden rounded-2xl border border-white/10 bg-gradien"
+- [TODO] docs/TODO_REPORT.md:437 — ] docs/TODO_REPORT.md:401 — ] public/automation/todo-summary.json:544 — ",
+- [TODO] docs/TODO_REPORT.md:438 — ] docs/TODO_REPORT.md:402 — ] public/automation/todo-summary.json:546 — _REPORT.md\","
+- [TODO] docs/TODO_REPORT.md:439 — ] docs/TODO_REPORT.md:403 — ] public/automation/todo-summary.json:552 — ",
+- [TODO] docs/TODO_REPORT.md:440 — ] docs/TODO_REPORT.md:404 — ] public/automation/todo-summary.json:554 — _REPORT.md\","
+- [TODO] docs/TODO_REPORT.md:441 — ] docs/TODO_REPORT.md:405 — ] public/automation/todo-summary.json:560 — ",
+- [TODO] docs/TODO_REPORT.md:442 — ] docs/TODO_REPORT.md:406 — ] public/automation/todo-summary.json:562 — _REPORT.md\","
+- [TODO] docs/TODO_REPORT.md:443 — ] docs/TODO_REPORT.md:407 — ] public/automation/todo-summary.json:568 — ",
+- [TODO] docs/TODO_REPORT.md:444 — ] docs/TODO_REPORT.md:408 — ] public/automation/todo-summary.json:570 — _REPORT.md\","
+- [TODO] docs/TODO_REPORT.md:445 — ] docs/TODO_REPORT.md:413 — ] public/search/index.json:59 — _REPORT",
+- [TODO] docs/TODO_REPORT.md:446 — ] docs/TODO_REPORT.md:414 — ] public/search/index.json:60 — _REPORT.md",
+- [TODO] docs/TODO_REPORT.md:447 — ] docs/TODO_REPORT.md:415 — ] public/search/index.json:61 — and FIXME Report",
+- [TODO] docs/TODO_REPORT.md:448 — ] docs/TODO_REPORT.md:416 — ] public/search/index.json:62 — and FIXME Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner - [TODO] .github/workflows/autonomous-content-scanner.yml:31 — -sca"
+- [TODO] docs/TODO_REPORT.md:453 — ] netlify/functions/functions-manifest.json:62 — -scanner-runner",
+- [TODO] docs/TODO_REPORT.md:454 — ] netlify/functions/functions-manifest.json:63 — -summary-runner",
+- [TODO] docs/TODO_REPORT.md:457 — -scanner-runner.js
+- [TODO] docs/TODO_REPORT.md:459 — ] netlify/functions/todo-scanner-runner.js:25 — scan', () => runNode('automation/todo-scanner.cjs'));
+- [TODO] docs/TODO_REPORT.md:462 — -summary-runner.js
+- [TODO] docs/TODO_REPORT.md:464 — ] netlify/functions/todo-summary-runner.js:25 — scan', () => runNode('automation/todo-scanner.cjs'));
+- [TODO] docs/TODO_REPORT.md:469 — ] pages/index.tsx:204 — Scanner', desc: 'Generates a consolidated TODO report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },
+- [TODO] docs/TODO_REPORT.md:474 — ] pages/main/front/index.tsx:786 — _REPORT.md" target="_blank" rel="noopener" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Docs — TODO_REPORT</div><div className="mt-1 text-sm text-white/75">Open documentation</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div></a>
+- [TODO] docs/TODO_REPORT.md:479 — ] public/automation/content-registry.json:38 — _REPORT.md",
+- [TODO] docs/TODO_REPORT.md:480 — ] public/automation/content-registry.json:39 — _REPORT.md"
+- [TODO] docs/TODO_REPORT.md:483 — -summary.json
+- [TODO] docs/TODO_REPORT.md:485 — ] public/automation/todo-summary.json:8 — ",
+- [TODO] docs/TODO_REPORT.md:486 — ] public/automation/todo-summary.json:9 — report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },",
+- [TODO] docs/TODO_REPORT.md:487 — ] public/automation/todo-summary.json:10 — Scanner', desc: 'Generates a consolidated TODO report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },"
+- [TODO] docs/TODO_REPORT.md:488 — ] public/automation/todo-summary.json:13 — _REPORT.md": [
+- [TODO] docs/TODO_REPORT.md:489 — ] public/automation/todo-summary.json:16 — ",
+- [FIXME] docs/TODO_REPORT.md:490 — ] public/automation/todo-summary.json:17 — Report",
+- [TODO] docs/TODO_REPORT.md:491 — ] public/automation/todo-summary.json:18 — and FIXME Report"
+- [TODO] docs/TODO_REPORT.md:492 — ] public/automation/todo-summary.json:22 — ",
+- [FIXME] docs/TODO_REPORT.md:493 — ] public/automation/todo-summary.json:23 — scanner",
+- [TODO] docs/TODO_REPORT.md:494 — ] public/automation/todo-summary.json:24 — ] .github/workflows.disabled/autonomous-content-scanner.yml:30 — /FIXME scanner"
+- [TODO] docs/TODO_REPORT.md:495 — ] public/automation/todo-summary.json:28 — ",
+- [TODO] docs/TODO_REPORT.md:496 — ] public/automation/todo-summary.json:30 — ] .github/workflows.disabled/autonomous-content-scanner.yml:31 — -scanner.cjs | cat"
+- [TODO] docs/TODO_REPORT.md:497 — ] public/automation/todo-summary.json:34 — ",
+- [TODO] docs/TODO_REPORT.md:498 — ] public/automation/todo-summary.json:36 — ] .github/workflows.disabled/autonomous-content-scanner.yml:40 — report and content registry [skip ci]\""
+- [TODO] docs/TODO_REPORT.md:499 — ] public/automation/todo-summary.json:40 — ",
+- [TODO] docs/TODO_REPORT.md:500 — ] public/automation/todo-summary.json:42 — -issue-sync.yml"
+- [TODO] docs/TODO_REPORT.md:501 — ] public/automation/todo-summary.json:46 — ",
+- [TODO] docs/TODO_REPORT.md:502 — ] public/automation/todo-summary.json:47 — -issue-sync.yml:1 — Issue Sync",
+- [TODO] docs/TODO_REPORT.md:503 — ] public/automation/todo-summary.json:48 — ] .github/workflows.disabled/todo-issue-sync.yml:1 — Issue Sync"
+- [TODO] docs/TODO_REPORT.md:504 — ] public/automation/todo-summary.json:52 — ",
+- [TODO] docs/TODO_REPORT.md:505 — ] public/automation/todo-summary.json:53 — -issue-sync.yml:13 — s:",
+- [TODO] docs/TODO_REPORT.md:506 — ] public/automation/todo-summary.json:54 — ] .github/workflows.disabled/todo-issue-sync.yml:13 — s:"
+- [TODO] docs/TODO_REPORT.md:507 — ] public/automation/todo-summary.json:58 — ",
+- [TODO] docs/TODO_REPORT.md:508 — ] public/automation/todo-summary.json:59 — -issue-sync.yml:29 — report",
+- [TODO] docs/TODO_REPORT.md:509 — ] public/automation/todo-summary.json:60 — ] .github/workflows.disabled/todo-issue-sync.yml:29 — report"
+- [TODO] docs/TODO_REPORT.md:510 — ] public/automation/todo-summary.json:64 — ",
+- [TODO] docs/TODO_REPORT.md:511 — ] public/automation/todo-summary.json:65 — -issue-sync.yml:30 — _issue_sync.cjs",
+- [TODO] docs/TODO_REPORT.md:512 — ] public/automation/todo-summary.json:66 — ] .github/workflows.disabled/todo-issue-sync.yml:30 — _issue_sync.cjs"
+- [TODO] docs/TODO_REPORT.md:513 — ] public/automation/todo-summary.json:70 — ",
+- [TODO] docs/TODO_REPORT.md:514 — ] public/automation/todo-summary.json:71 — -issue-sync.yml:38 — ): update TODO sync report [skip ci]\"",
+- [TODO] docs/TODO_REPORT.md:515 — ] public/automation/todo-summary.json:72 — ] .github/workflows.disabled/todo-issue-sync.yml:38 — ): update TODO sync report [skip ci]\""
+- [TODO] docs/TODO_REPORT.md:516 — ] public/automation/todo-summary.json:76 — ",
+- [TODO] docs/TODO_REPORT.md:517 — ] public/automation/todo-summary.json:77 — -issue-sync.yml:42 — Issue",
+- [TODO] docs/TODO_REPORT.md:518 — ] public/automation/todo-summary.json:78 — ] .github/workflows.disabled/todo-issue-sync.yml:42 — Issue"
+- [TODO] docs/TODO_REPORT.md:519 — ] public/automation/todo-summary.json:82 — ",
+- [TODO] docs/TODO_REPORT.md:520 — ] public/automation/todo-summary.json:83 — -issue-sync.yml:47 — /FIXME/NOTE Sync\"",
+- [TODO] docs/TODO_REPORT.md:521 — ] public/automation/todo-summary.json:84 — ] .github/workflows.disabled/todo-issue-sync.yml:47 — /FIXME/NOTE Sync\""
+- [TODO] docs/TODO_REPORT.md:522 — ] public/automation/todo-summary.json:88 — ",
+- [TODO] docs/TODO_REPORT.md:523 — ] public/automation/todo-summary.json:89 — -issue-sync.yml:48 — _SYNC.md\"",
+- [TODO] docs/TODO_REPORT.md:524 — ] public/automation/todo-summary.json:90 — ] .github/workflows.disabled/todo-issue-sync.yml:48 — _SYNC.md\""
+- [TODO] docs/TODO_REPORT.md:525 — ] public/automation/todo-summary.json:94 — ",
+- [TODO] docs/TODO_REPORT.md:526 — ] public/automation/todo-summary.json:96 — ] data/reports/external-links/external-links-1754934673584.json:142 — _REPORT.md\","
+- [TODO] docs/TODO_REPORT.md:527 — ] public/automation/todo-summary.json:100 — ",
+- [TODO] docs/TODO_REPORT.md:528 — ] public/automation/todo-summary.json:102 — ] data/reports/external-links/external-links-1754934698424.json:127 — _REPORT.md\","
+- [TODO] docs/TODO_REPORT.md:529 — ] public/automation/todo-summary.json:106 — ",
+- [TODO] docs/TODO_REPORT.md:530 — ] public/automation/todo-summary.json:108 — ] data/reports/external-links/latest.json:127 — _REPORT.md\","
+- [TODO] docs/TODO_REPORT.md:531 — ] public/automation/todo-summary.json:112 — ",
+- [TODO] docs/TODO_REPORT.md:532 — ] public/automation/todo-summary.json:114 — ] data/reports/link-sentinel/report-2025-08-11T17-51-16-470Z.json:100 — _REPORT.md\","
+- [TODO] docs/TODO_REPORT.md:533 — ] public/automation/todo-summary.json:118 — ",
+- [TODO] docs/TODO_REPORT.md:534 — ] public/automation/todo-summary.json:120 — ] data/reports/repo-knowledge-graph.json:225 — -scanner.cjs\","
+- [TODO] docs/TODO_REPORT.md:535 — ] public/automation/todo-summary.json:124 — ",
+- [TODO] docs/TODO_REPORT.md:536 — ] public/automation/todo-summary.json:126 — ] data/reports/repo-knowledge-graph.json:473 — -scanner-runner.js\","
+- [TODO] docs/TODO_REPORT.md:537 — ] public/automation/todo-summary.json:130 — ",
+- [TODO] docs/TODO_REPORT.md:538 — ] public/automation/todo-summary.json:132 — ] data/reports/repo-knowledge-graph.json:477 — -summary-runner.js\","
+- [TODO] docs/TODO_REPORT.md:539 — ] public/automation/todo-summary.json:136 — ",
+- [TODO] docs/TODO_REPORT.md:540 — ] public/automation/todo-summary.json:138 — ] data/reports/repo-knowledge-graph.json:597 — _issue_sync.cjs\","
+- [TODO] docs/TODO_REPORT.md:541 — ] public/automation/todo-summary.json:142 — ",
+- [TODO] docs/TODO_REPORT.md:542 — ] public/automation/todo-summary.json:144 — ] data/reports/repo-knowledge-graph.json:1173 — -scanner.cjs\","
+- [TODO] docs/TODO_REPORT.md:543 — ] public/automation/todo-summary.json:148 — ",
+- [TODO] docs/TODO_REPORT.md:544 — ] public/automation/todo-summary.json:150 — ] data/reports/repo-knowledge-graph.json:1178 — -scanner.cjs\","
+- [TODO] docs/TODO_REPORT.md:545 — ] public/automation/todo-summary.json:154 — ",
+- [TODO] docs/TODO_REPORT.md:546 — ] public/automation/todo-summary.json:156 — ] data/reports/repo-knowledge-graph.json:1183 — -scanner.cjs\","
+- [TODO] docs/TODO_REPORT.md:547 — ] public/automation/todo-summary.json:160 — ",
+- [TODO] docs/TODO_REPORT.md:548 — ] public/automation/todo-summary.json:162 — ] data/reports/repo-knowledge-graph.json:1703 — -scanner-runner.js\","
+- [TODO] docs/TODO_REPORT.md:549 — ] public/automation/todo-summary.json:166 — ",
+- [TODO] docs/TODO_REPORT.md:550 — ] public/automation/todo-summary.json:168 — ] data/reports/repo-knowledge-graph.json:1708 — -scanner-runner.js\","
+- [TODO] docs/TODO_REPORT.md:551 — ] public/automation/todo-summary.json:172 — ",
+- [TODO] docs/TODO_REPORT.md:552 — ] public/automation/todo-summary.json:174 — ] data/reports/repo-knowledge-graph.json:1713 — -summary-runner.js\","
+- [TODO] docs/TODO_REPORT.md:553 — ] public/automation/todo-summary.json:178 — ",
+- [TODO] docs/TODO_REPORT.md:554 — ] public/automation/todo-summary.json:180 — ] data/reports/repo-knowledge-graph.json:1718 — -summary-runner.js\","
+- [TODO] docs/TODO_REPORT.md:555 — ] public/automation/todo-summary.json:184 — ",
+- [TODO] docs/TODO_REPORT.md:556 — ] public/automation/todo-summary.json:186 — ] data/reports/repo-knowledge-graph.json:1878 — _issue_sync.cjs\","
+- [TODO] docs/TODO_REPORT.md:557 — ] public/automation/todo-summary.json:190 — ",
+- [TODO] docs/TODO_REPORT.md:558 — ] public/automation/todo-summary.json:192 — ] data/reports/repo-knowledge-graph.json:1883 — _issue_sync.cjs\","
+- [TODO] docs/TODO_REPORT.md:559 — ] public/automation/todo-summary.json:196 — ",
+- [TODO] docs/TODO_REPORT.md:560 — ] public/automation/todo-summary.json:198 — ] data/reports/repo-knowledge-graph.json:1888 — _issue_sync.cjs\","
+- [TODO] docs/TODO_REPORT.md:561 — ] public/automation/todo-summary.json:202 — ",
+- [TODO] docs/TODO_REPORT.md:562 — ] public/automation/todo-summary.json:204 — ] docs/CHANGELOG_AI.md:131 — issue sync, autonomous release, and keepalive workflows (09ccba6)"
+- [TODO] docs/TODO_REPORT.md:563 — ] public/automation/todo-summary.json:208 — ",
+- [TODO] docs/TODO_REPORT.md:564 — ] public/automation/todo-summary.json:210 — ] docs/CHANGELOG_AI.md:296 — issue sync, autonomous release, and keepalive workflows (09ccba6)"
+- [TODO] docs/TODO_REPORT.md:565 — ] public/automation/todo-summary.json:214 — ",
+- [TODO] docs/TODO_REPORT.md:566 — ] public/automation/todo-summary.json:216 — _REPORT.md"
+- [TODO] docs/TODO_REPORT.md:567 — ] public/automation/todo-summary.json:220 — ",
+- [TODO] docs/TODO_REPORT.md:568 — ] public/automation/todo-summary.json:221 — _REPORT.md:1 — and FIXME Report",
+- [TODO] docs/TODO_REPORT.md:569 — ] public/automation/todo-summary.json:222 — ] docs/TODO_REPORT.md:1 — and FIXME Report"
+- [TODO] docs/TODO_REPORT.md:570 — ] public/automation/todo-summary.json:226 — ",
+- [TODO] docs/TODO_REPORT.md:571 — ] public/automation/todo-summary.json:227 — _REPORT.md:8 — ] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner",
+- [TODO] docs/TODO_REPORT.md:572 — ] public/automation/todo-summary.json:228 — ] docs/TODO_REPORT.md:8 — ] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner"
+- [TODO] docs/TODO_REPORT.md:573 — ] public/automation/todo-summary.json:232 — ",
+- [TODO] docs/TODO_REPORT.md:574 — ] public/automation/todo-summary.json:233 — _REPORT.md:9 — ] .github/workflows/autonomous-content-scanner.yml:31 — -scanner.cjs | cat",
+- [TODO] docs/TODO_REPORT.md:575 — ] public/automation/todo-summary.json:234 — ] docs/TODO_REPORT.md:9 — ] .github/workflows/autonomous-content-scanner.yml:31 — -scanner.cjs | cat"
+- [TODO] docs/TODO_REPORT.md:576 — ] public/automation/todo-summary.json:238 — ",
+- [TODO] docs/TODO_REPORT.md:577 — ] public/automation/todo-summary.json:239 — _REPORT.md:10 — ] .github/workflows/autonomous-content-scanner.yml:40 — report and content registry [skip ci]\"",
+- [TODO] docs/TODO_REPORT.md:578 — ] public/automation/todo-summary.json:240 — ] docs/TODO_REPORT.md:10 — ] .github/workflows/autonomous-content-scanner.yml:40 — report and content registry [skip ci]\""
+- [TODO] docs/TODO_REPORT.md:579 — ] public/automation/todo-summary.json:244 — ",
+- [TODO] docs/TODO_REPORT.md:580 — ] public/automation/todo-summary.json:245 — _REPORT.md:13 — -issue-sync.yml",
+- [TODO] docs/TODO_REPORT.md:581 — ] public/automation/todo-summary.json:246 — ] docs/TODO_REPORT.md:13 — -issue-sync.yml"
+- [TODO] docs/TODO_REPORT.md:582 — ] public/automation/todo-summary.json:250 — ",
+- [TODO] docs/TODO_REPORT.md:583 — ] public/automation/todo-summary.json:251 — _REPORT.md:15 — ] .github/workflows/todo-issue-sync.yml:1 — Issue Sync",
+- [TODO] docs/TODO_REPORT.md:584 — ] public/automation/todo-summary.json:252 — ] docs/TODO_REPORT.md:15 — ] .github/workflows/todo-issue-sync.yml:1 — Issue Sync"
+- [TODO] docs/TODO_REPORT.md:585 — ] public/automation/todo-summary.json:256 — ",
+- [TODO] docs/TODO_REPORT.md:586 — ] public/automation/todo-summary.json:257 — _REPORT.md:16 — ] .github/workflows/todo-issue-sync.yml:13 — s:",
+- [TODO] docs/TODO_REPORT.md:587 — ] public/automation/todo-summary.json:258 — ] docs/TODO_REPORT.md:16 — ] .github/workflows/todo-issue-sync.yml:13 — s:"
+- [TODO] docs/TODO_REPORT.md:588 — ] public/automation/todo-summary.json:262 — ",
+- [TODO] docs/TODO_REPORT.md:589 — ] public/automation/todo-summary.json:263 — _REPORT.md:17 — ] .github/workflows/todo-issue-sync.yml:29 — report",
+- [TODO] docs/TODO_REPORT.md:590 — ] public/automation/todo-summary.json:264 — ] docs/TODO_REPORT.md:17 — ] .github/workflows/todo-issue-sync.yml:29 — report"
+- [TODO] docs/TODO_REPORT.md:591 — ] public/automation/todo-summary.json:268 — ",
+- [TODO] docs/TODO_REPORT.md:592 — ] public/automation/todo-summary.json:269 — _REPORT.md:18 — ] .github/workflows/todo-issue-sync.yml:30 — _issue_sync.cjs",
+- [TODO] docs/TODO_REPORT.md:593 — ] public/automation/todo-summary.json:270 — ] docs/TODO_REPORT.md:18 — ] .github/workflows/todo-issue-sync.yml:30 — _issue_sync.cjs"
+- [TODO] docs/TODO_REPORT.md:594 — ] public/automation/todo-summary.json:274 — ",
+- [TODO] docs/TODO_REPORT.md:595 — ] public/automation/todo-summary.json:275 — _REPORT.md:19 — ] .github/workflows/todo-issue-sync.yml:38 — ): update TODO sync report [skip ci]\"",
+- [TODO] docs/TODO_REPORT.md:596 — ] public/automation/todo-summary.json:276 — ] docs/TODO_REPORT.md:19 — ] .github/workflows/todo-issue-sync.yml:38 — ): update TODO sync report [skip ci]\""
+- [TODO] docs/TODO_REPORT.md:597 — ] public/automation/todo-summary.json:280 — ",
+- [TODO] docs/TODO_REPORT.md:598 — ] public/automation/todo-summary.json:281 — _REPORT.md:20 — ] .github/workflows/todo-issue-sync.yml:42 — Issue",
+- [TODO] docs/TODO_REPORT.md:599 — ] public/automation/todo-summary.json:282 — ] docs/TODO_REPORT.md:20 — ] .github/workflows/todo-issue-sync.yml:42 — Issue"
+- [TODO] docs/TODO_REPORT.md:600 — ] public/automation/todo-summary.json:286 — ",
+- [TODO] docs/TODO_REPORT.md:601 — ] public/automation/todo-summary.json:287 — _REPORT.md:21 — ] .github/workflows/todo-issue-sync.yml:47 — /FIXME/NOTE Sync\"",
+- [TODO] docs/TODO_REPORT.md:602 — ] public/automation/todo-summary.json:288 — ] docs/TODO_REPORT.md:21 — ] .github/workflows/todo-issue-sync.yml:47 — /FIXME/NOTE Sync\""
+- [TODO] docs/TODO_REPORT.md:603 — ] public/automation/todo-summary.json:292 — ",
+- [TODO] docs/TODO_REPORT.md:604 — ] public/automation/todo-summary.json:293 — _REPORT.md:22 — ] .github/workflows/todo-issue-sync.yml:48 — _SYNC.md\"",
+- [TODO] docs/TODO_REPORT.md:605 — ] public/automation/todo-summary.json:294 — ] docs/TODO_REPORT.md:22 — ] .github/workflows/todo-issue-sync.yml:48 — _SYNC.md\""
+- [TODO] docs/TODO_REPORT.md:606 — ] public/automation/todo-summary.json:298 — ",
+- [TODO] docs/TODO_REPORT.md:607 — ] public/automation/todo-summary.json:299 — _REPORT.md:27 — ] package.json:225 — \": \"node automation/todo-scanner.cjs\",",
+- [TODO] docs/TODO_REPORT.md:608 — ] public/automation/todo-summary.json:300 — ] docs/TODO_REPORT.md:27 — ] package.json:225 — \": \"node automation/todo-scanner.cjs\","
+- [TODO] docs/TODO_REPORT.md:609 — ] public/automation/todo-summary.json:304 — ",
+- [TODO] docs/TODO_REPORT.md:610 — ] public/automation/todo-summary.json:305 — _REPORT.md:28 — ] package.json:227 — && npm run scan:registry\"",
+- [TODO] docs/TODO_REPORT.md:611 — ] public/automation/todo-summary.json:306 — ] docs/TODO_REPORT.md:28 — ] package.json:227 — && npm run scan:registry\""
+- [TODO] docs/TODO_REPORT.md:612 — ] public/automation/todo-summary.json:310 — ",
+- [TODO] docs/TODO_REPORT.md:613 — ] public/automation/todo-summary.json:312 — ] netlify/functions/functions-manifest.json:62 — -scanner-runner\","
+- [TODO] docs/TODO_REPORT.md:614 — ] public/automation/todo-summary.json:316 — ",
+- [TODO] docs/TODO_REPORT.md:615 — ] public/automation/todo-summary.json:318 — ] netlify/functions/functions-manifest.json:63 — -summary-runner\","
+- [TODO] docs/TODO_REPORT.md:616 — ] public/automation/todo-summary.json:322 — ",
+- [TODO] docs/TODO_REPORT.md:617 — ] public/automation/todo-summary.json:324 — -scanner-runner.js"
+- [TODO] docs/TODO_REPORT.md:618 — ] public/automation/todo-summary.json:328 — ",
+- [TODO] docs/TODO_REPORT.md:619 — ] public/automation/todo-summary.json:329 — -scanner-runner.js:25 — scan', () => runNode('automation/todo-scanner.cjs'));",
+- [TODO] docs/TODO_REPORT.md:620 — ] public/automation/todo-summary.json:330 — ] netlify/functions/todo-scanner-runner.js:25 — scan', () => runNode('automation/todo-scanner.cjs'));"
+- [TODO] docs/TODO_REPORT.md:621 — ] public/automation/todo-summary.json:334 — ",
+- [TODO] docs/TODO_REPORT.md:622 — ] public/automation/todo-summary.json:336 — -summary-runner.js"
+- [TODO] docs/TODO_REPORT.md:623 — ] public/automation/todo-summary.json:340 — ",
+- [TODO] docs/TODO_REPORT.md:624 — ] public/automation/todo-summary.json:341 — -summary-runner.js:25 — scan', () => runNode('automation/todo-scanner.cjs'));",
+- [TODO] docs/TODO_REPORT.md:625 — ] public/automation/todo-summary.json:342 — ] netlify/functions/todo-summary-runner.js:25 — scan', () => runNode('automation/todo-scanner.cjs'));"
+- [TODO] docs/TODO_REPORT.md:626 — ] public/automation/todo-summary.json:346 — ",
+- [TODO] docs/TODO_REPORT.md:627 — ] public/automation/todo-summary.json:347 — report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },",
+- [TODO] docs/TODO_REPORT.md:628 — ] public/automation/todo-summary.json:348 — ] pages/index.tsx:204 — Scanner', desc: 'Generates a consolidated TODO report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },"
+- [TODO] docs/TODO_REPORT.md:629 — ] public/automation/todo-summary.json:352 — ",
+- [TODO] docs/TODO_REPORT.md:630 — ] public/automation/todo-summary.json:353 — _REPORT</div><div className=\"mt-1 text-sm text-white/75\">Open documentation</div><div className=\"mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90\">Open <span aria-hidden>↗</span></div></a>",
+- [TODO] docs/TODO_REPORT.md:631 — ] public/automation/todo-summary.json:354 — ] pages/main/front/index.tsx:786 — _REPORT.md\" target=\"_blank\" rel=\"noopener\" className=\"group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-whi"
+- [TODO] docs/TODO_REPORT.md:632 — ] public/automation/todo-summary.json:358 — ",
+- [TODO] docs/TODO_REPORT.md:633 — ] public/automation/todo-summary.json:360 — ] public/automation/content-registry.json:38 — _REPORT.md\","
+- [TODO] docs/TODO_REPORT.md:634 — ] public/automation/todo-summary.json:364 — ",
+- [TODO] docs/TODO_REPORT.md:635 — ] public/automation/todo-summary.json:366 — ] public/automation/content-registry.json:39 — _REPORT.md\""
+- [TODO] docs/TODO_REPORT.md:636 — ] public/automation/todo-summary.json:370 — ",
+- [TODO] docs/TODO_REPORT.md:637 — ] public/automation/todo-summary.json:372 — -summary.json"
+- [TODO] docs/TODO_REPORT.md:638 — ] public/automation/todo-summary.json:376 — ",
+- [TODO] docs/TODO_REPORT.md:639 — ] public/automation/todo-summary.json:377 — -summary.json:8 — \",",
+- [TODO] docs/TODO_REPORT.md:640 — ] public/automation/todo-summary.json:378 — ] public/automation/todo-summary.json:8 — \","
+- [TODO] docs/TODO_REPORT.md:641 — ] public/automation/todo-summary.json:382 — ",
+- [TODO] docs/TODO_REPORT.md:642 — ] public/automation/todo-summary.json:383 — -summary.json:9 — -scanner.cjs\\\",\",",
+- [TODO] docs/TODO_REPORT.md:643 — ] public/automation/todo-summary.json:384 — ] public/automation/todo-summary.json:9 — -scanner.cjs\\\",\","
+- [TODO] docs/TODO_REPORT.md:644 — ] public/automation/todo-summary.json:388 — ",
+- [TODO] docs/TODO_REPORT.md:645 — ] public/automation/todo-summary.json:389 — -summary.json:10 — \\\": \\\"node automation/todo-scanner.cjs\\\",\"",
+- [TODO] docs/TODO_REPORT.md:646 — ] public/automation/todo-summary.json:390 — ] public/automation/todo-summary.json:10 — \\\": \\\"node automation/todo-scanner.cjs\\\",\""
+- [TODO] docs/TODO_REPORT.md:647 — ] public/automation/todo-summary.json:394 — ",
+- [TODO] docs/TODO_REPORT.md:648 — ] public/automation/todo-summary.json:395 — -summary.json:14 — \",",
+- [TODO] docs/TODO_REPORT.md:649 — ] public/automation/todo-summary.json:396 — ] public/automation/todo-summary.json:14 — \","
+- [TODO] docs/TODO_REPORT.md:650 — ] public/automation/todo-summary.json:400 — ",
+- [TODO] docs/TODO_REPORT.md:651 — ] public/automation/todo-summary.json:401 — -summary.json:16 — && npm run scan:registry\\\"\"",
+- [TODO] docs/TODO_REPORT.md:652 — ] public/automation/todo-summary.json:402 — ] public/automation/todo-summary.json:16 — && npm run scan:registry\\\"\""
+- [TODO] docs/TODO_REPORT.md:653 — ] public/automation/todo-summary.json:406 — ",
+- [TODO] docs/TODO_REPORT.md:654 — ] public/automation/todo-summary.json:407 — -summary.json:19 — -issue-sync.yml\": [",
+- [TODO] docs/TODO_REPORT.md:655 — ] public/automation/todo-summary.json:408 — ] public/automation/todo-summary.json:19 — -issue-sync.yml\": ["
+- [TODO] docs/TODO_REPORT.md:656 — ] public/automation/todo-summary.json:412 — ",
+- [TODO] docs/TODO_REPORT.md:657 — ] public/automation/todo-summary.json:413 — -summary.json:22 — \",",
+- [TODO] docs/TODO_REPORT.md:658 — ] public/automation/todo-summary.json:414 — ] public/automation/todo-summary.json:22 — \","
+- [TODO] docs/TODO_REPORT.md:659 — ] public/automation/todo-summary.json:418 — ",
+- [TODO] docs/TODO_REPORT.md:660 — ] public/automation/todo-summary.json:419 — -summary.json:24 — Issue Sync\"",
+- [TODO] docs/TODO_REPORT.md:661 — ] public/automation/todo-summary.json:420 — ] public/automation/todo-summary.json:24 — Issue Sync\""
+- [TODO] docs/TODO_REPORT.md:662 — ] public/automation/todo-summary.json:424 — ",
+- [TODO] docs/TODO_REPORT.md:663 — ] public/automation/todo-summary.json:425 — -summary.json:28 — \",",
+- [TODO] docs/TODO_REPORT.md:664 — ] public/automation/todo-summary.json:426 — ] public/automation/todo-summary.json:28 — \","
+- [TODO] docs/TODO_REPORT.md:665 — ] public/automation/todo-summary.json:430 — ",
+- [TODO] docs/TODO_REPORT.md:666 — ] public/automation/todo-summary.json:431 — -summary.json:30 — s:\"",
+- [TODO] docs/TODO_REPORT.md:667 — ] public/automation/todo-summary.json:432 — ] public/automation/todo-summary.json:30 — s:\""
+- [TODO] docs/TODO_REPORT.md:668 — ] public/automation/todo-summary.json:436 — ",
+- [TODO] docs/TODO_REPORT.md:669 — ] public/automation/todo-summary.json:437 — -summary.json:34 — \",",
+- [TODO] docs/TODO_REPORT.md:670 — ] public/automation/todo-summary.json:438 — ] public/automation/todo-summary.json:34 — \","
+- [TODO] docs/TODO_REPORT.md:671 — ] public/automation/todo-summary.json:442 — ",
+- [TODO] docs/TODO_REPORT.md:672 — ] public/automation/todo-summary.json:443 — -summary.json:36 — report\"",
+- [TODO] docs/TODO_REPORT.md:673 — ] public/automation/todo-summary.json:444 — ] public/automation/todo-summary.json:36 — report\""
+- [TODO] docs/TODO_REPORT.md:674 — ] public/automation/todo-summary.json:448 — ",
+- [TODO] docs/TODO_REPORT.md:675 — ] public/automation/todo-summary.json:449 — -summary.json:40 — \",",
+- [TODO] docs/TODO_REPORT.md:676 — ] public/automation/todo-summary.json:450 — ] public/automation/todo-summary.json:40 — \","
+- [TODO] docs/TODO_REPORT.md:677 — ] public/automation/todo-summary.json:454 — ",
+- [TODO] docs/TODO_REPORT.md:678 — ] public/automation/todo-summary.json:455 — -summary.json:42 — _issue_sync.cjs\"",
+- [TODO] docs/TODO_REPORT.md:679 — ] public/automation/todo-summary.json:456 — ] public/automation/todo-summary.json:42 — _issue_sync.cjs\""
+- [TODO] docs/TODO_REPORT.md:680 — ] public/automation/todo-summary.json:460 — ",
+- [TODO] docs/TODO_REPORT.md:681 — ] public/automation/todo-summary.json:461 — -summary.json:46 — \",",
+- [TODO] docs/TODO_REPORT.md:682 — ] public/automation/todo-summary.json:462 — ] public/automation/todo-summary.json:46 — \","
+- [TODO] docs/TODO_REPORT.md:683 — ] public/automation/todo-summary.json:466 — ",
+- [TODO] docs/TODO_REPORT.md:684 — ] public/automation/todo-summary.json:467 — -summary.json:47 — sync report [skip ci]\\\"\",",
+- [TODO] docs/TODO_REPORT.md:685 — ] public/automation/todo-summary.json:468 — ] public/automation/todo-summary.json:47 — sync report [skip ci]\\\"\","
+- [TODO] docs/TODO_REPORT.md:686 — ] public/automation/todo-summary.json:472 — ",
+- [TODO] docs/TODO_REPORT.md:687 — ] public/automation/todo-summary.json:473 — -summary.json:48 — ): update TODO sync report [skip ci]\\\"\"",
+- [TODO] docs/TODO_REPORT.md:688 — ] public/automation/todo-summary.json:474 — ] public/automation/todo-summary.json:48 — ): update TODO sync report [skip ci]\\\"\""
+- [TODO] docs/TODO_REPORT.md:689 — ] public/automation/todo-summary.json:478 — ",
+- [TODO] docs/TODO_REPORT.md:690 — ] public/automation/todo-summary.json:479 — -summary.json:52 — \",",
+- [TODO] docs/TODO_REPORT.md:691 — ] public/automation/todo-summary.json:480 — ] public/automation/todo-summary.json:52 — \","
+- [TODO] docs/TODO_REPORT.md:692 — ] public/automation/todo-summary.json:484 — ",
+- [TODO] docs/TODO_REPORT.md:693 — ] public/automation/todo-summary.json:485 — -summary.json:54 — Issue\"",
+- [TODO] docs/TODO_REPORT.md:694 — ] public/automation/todo-summary.json:486 — ] public/automation/todo-summary.json:54 — Issue\""
+- [TODO] docs/TODO_REPORT.md:695 — ] public/automation/todo-summary.json:490 — ",
+- [TODO] docs/TODO_REPORT.md:696 — ] public/automation/todo-summary.json:491 — -summary.json:58 — \",",
+- [TODO] docs/TODO_REPORT.md:697 — ] public/automation/todo-summary.json:492 — ] public/automation/todo-summary.json:58 — \","
+- [FIXME] docs/TODO_REPORT.md:698 — ] public/automation/todo-summary.json:496 — ",
+- [TODO] docs/TODO_REPORT.md:699 — ] public/automation/todo-summary.json:497 — -summary.json:59 — /NOTE Sync\\\"\",",
+- [FIXME] docs/TODO_REPORT.md:700 — ] public/automation/todo-summary.json:498 — ] public/automation/todo-summary.json:59 — /NOTE Sync\\\"\","
+- [TODO] docs/TODO_REPORT.md:701 — ] public/automation/todo-summary.json:502 — ",
+- [TODO] docs/TODO_REPORT.md:702 — ] public/automation/todo-summary.json:503 — -summary.json:60 — /FIXME/NOTE Sync\\\"\"",
+- [TODO] docs/TODO_REPORT.md:703 — ] public/automation/todo-summary.json:504 — ] public/automation/todo-summary.json:60 — /FIXME/NOTE Sync\\\"\""
+- [TODO] docs/TODO_REPORT.md:704 — ] public/automation/todo-summary.json:508 — ",
+- [TODO] docs/TODO_REPORT.md:705 — ] public/automation/todo-summary.json:509 — -summary.json:64 — \",",
+- [TODO] docs/TODO_REPORT.md:706 — ] public/automation/todo-summary.json:510 — ] public/automation/todo-summary.json:64 — \","
+- [TODO] docs/TODO_REPORT.md:707 — ] public/automation/todo-summary.json:514 — ",
+- [TODO] docs/TODO_REPORT.md:708 — ] public/automation/todo-summary.json:515 — -summary.json:66 — _SYNC.md\\\"\"",
+- [TODO] docs/TODO_REPORT.md:709 — ] public/automation/todo-summary.json:516 — ] public/automation/todo-summary.json:66 — _SYNC.md\\\"\""
+- [TODO] docs/TODO_REPORT.md:710 — ] public/automation/todo-summary.json:520 — ",
+- [TODO] docs/TODO_REPORT.md:711 — ] public/automation/todo-summary.json:521 — -summary.json:72 — \",",
+- [TODO] docs/TODO_REPORT.md:712 — ] public/automation/todo-summary.json:522 — ] public/automation/todo-summary.json:72 — \","
+- [FIXME] docs/TODO_REPORT.md:713 — ] public/automation/todo-summary.json:526 — ",
+- [TODO] docs/TODO_REPORT.md:714 — ] public/automation/todo-summary.json:527 — -summary.json:73 — scanner\",",
+- [FIXME] docs/TODO_REPORT.md:715 — ] public/automation/todo-summary.json:528 — ] public/automation/todo-summary.json:73 — scanner\","
+- [TODO] docs/TODO_REPORT.md:716 — ] public/automation/todo-summary.json:532 — ",
+- [TODO] docs/TODO_REPORT.md:717 — ] public/automation/todo-summary.json:533 — -summary.json:74 — /FIXME scanner\"",
+- [TODO] docs/TODO_REPORT.md:718 — ] public/automation/todo-summary.json:534 — ] public/automation/todo-summary.json:74 — /FIXME scanner\""
+- [TODO] docs/TODO_REPORT.md:719 — ] public/automation/todo-summary.json:538 — ",
+- [TODO] docs/TODO_REPORT.md:720 — ] public/automation/todo-summary.json:539 — -summary.json:78 — \",",
+- [TODO] docs/TODO_REPORT.md:721 — ] public/automation/todo-summary.json:540 — ] public/automation/todo-summary.json:78 — \","
+- [TODO] docs/TODO_REPORT.md:722 — ] public/automation/todo-summary.json:544 — ",
+- [TODO] docs/TODO_REPORT.md:723 — ] public/automation/todo-summary.json:545 — -summary.json:80 — -scanner.cjs | cat\"",
+- [TODO] docs/TODO_REPORT.md:724 — ] public/automation/todo-summary.json:546 — ] public/automation/todo-summary.json:80 — -scanner.cjs | cat\""
+- [TODO] docs/TODO_REPORT.md:725 — ] public/automation/todo-summary.json:550 — ",
+- [TODO] docs/TODO_REPORT.md:726 — ] public/automation/todo-summary.json:551 — -summary.json:84 — \",",
+- [TODO] docs/TODO_REPORT.md:727 — ] public/automation/todo-summary.json:552 — ] public/automation/todo-summary.json:84 — \","
+- [TODO] docs/TODO_REPORT.md:728 — ] public/automation/todo-summary.json:556 — ",
+- [TODO] docs/TODO_REPORT.md:729 — ] public/automation/todo-summary.json:557 — -summary.json:86 — report and content registry [skip ci]\\\"\"",
+- [TODO] docs/TODO_REPORT.md:730 — ] public/automation/todo-summary.json:558 — ] public/automation/todo-summary.json:86 — report and content registry [skip ci]\\\"\""
+- [TODO] docs/TODO_REPORT.md:731 — ] public/automation/todo-summary.json:562 — ",
+- [TODO] docs/TODO_REPORT.md:732 — ] public/automation/todo-summary.json:564 — ] public/search/index.json:59 — _REPORT\","
+- [TODO] docs/TODO_REPORT.md:733 — ] public/automation/todo-summary.json:568 — ",
+- [TODO] docs/TODO_REPORT.md:734 — ] public/automation/todo-summary.json:570 — ] public/search/index.json:60 — _REPORT.md\","
+- [TODO] docs/TODO_REPORT.md:735 — ] public/automation/todo-summary.json:574 — ",
+- [FIXME] docs/TODO_REPORT.md:736 — ] public/automation/todo-summary.json:575 — Report\",",
+- [TODO] docs/TODO_REPORT.md:737 — ] public/automation/todo-summary.json:576 — ] public/search/index.json:61 — and FIXME Report\","
+- [TODO] docs/TODO_REPORT.md:738 — ] public/automation/todo-summary.json:580 — ",
+- [FIXME] docs/TODO_REPORT.md:739 — ] public/automation/todo-summary.json:581 — Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner - [TODO] .github/workflows/autonomous-content-scanner.yml:31 — -sca\"",
+- [TODO] docs/TODO_REPORT.md:740 — ] public/automation/todo-summary.json:582 — ] public/search/index.json:62 — and FIXME Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/autono"
+- [TODO] docs/TODO_REPORT.md:741 — ] public/automation/todo-summary.json:588 — ",
+- [TODO] docs/TODO_REPORT.md:742 — ] public/automation/todo-summary.json:590 — issue sync, autonomous release, and keepalive workflows (09ccba6)"
+- [TODO] docs/TODO_REPORT.md:743 — ] public/automation/todo-summary.json:594 — ",
+- [TODO] docs/TODO_REPORT.md:744 — ] public/automation/todo-summary.json:596 — issue sync, autonomous release, and keepalive workflows (09ccba6)"
+- [TODO] docs/TODO_REPORT.md:745 — ] public/automation/todo-summary.json:602 — ",
+- [TODO] docs/TODO_REPORT.md:746 — ] public/automation/todo-summary.json:604 — _REPORT\","
+- [TODO] docs/TODO_REPORT.md:747 — ] public/automation/todo-summary.json:608 — ",
+- [TODO] docs/TODO_REPORT.md:748 — ] public/automation/todo-summary.json:610 — _REPORT.md\","
+- [TODO] docs/TODO_REPORT.md:749 — ] public/automation/todo-summary.json:614 — ",
+- [FIXME] docs/TODO_REPORT.md:750 — ] public/automation/todo-summary.json:615 — Report\",",
+- [TODO] docs/TODO_REPORT.md:751 — ] public/automation/todo-summary.json:616 — and FIXME Report\","
+- [TODO] docs/TODO_REPORT.md:752 — ] public/automation/todo-summary.json:620 — ",
+- [FIXME] docs/TODO_REPORT.md:753 — ] public/automation/todo-summary.json:621 — Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner - [TODO] .github/workflows/autonomous-content-scanner.yml:31 — -sca\"",
+- [TODO] docs/TODO_REPORT.md:754 — ] public/automation/todo-summary.json:622 — and FIXME Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/autonomous-content-scanner"
+- [TODO] docs/TODO_REPORT.md:755 — ] public/automation/todo-summary.json:625 — -summary.json": [
+- [TODO] docs/TODO_REPORT.md:756 — ] public/automation/todo-summary.json:628 — ",
+- [TODO] docs/TODO_REPORT.md:757 — ] public/automation/todo-summary.json:630 — \","
+- [TODO] docs/TODO_REPORT.md:758 — ] public/automation/todo-summary.json:634 — ",
+- [TODO] docs/TODO_REPORT.md:759 — ] public/automation/todo-summary.json:635 — -scanner-runner' },\",",
+- [TODO] docs/TODO_REPORT.md:760 — ] public/automation/todo-summary.json:636 — report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },\","
+- [TODO] docs/TODO_REPORT.md:761 — ] public/automation/todo-summary.json:640 — ",
+- [TODO] docs/TODO_REPORT.md:762 — ] public/automation/todo-summary.json:641 — report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },\"",
+- [TODO] docs/TODO_REPORT.md:763 — ] public/automation/todo-summary.json:642 — Scanner', desc: 'Generates a consolidated TODO report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },\""
+- [TODO] docs/TODO_REPORT.md:764 — ] public/automation/todo-summary.json:646 — ",
+- [TODO] docs/TODO_REPORT.md:765 — ] public/automation/todo-summary.json:648 — _REPORT.md\": ["
+- [TODO] docs/TODO_REPORT.md:766 — ] public/automation/todo-summary.json:652 — ",
+- [TODO] docs/TODO_REPORT.md:767 — ] public/automation/todo-summary.json:654 — \","
+- [FIXME] docs/TODO_REPORT.md:768 — ] public/automation/todo-summary.json:658 — ",
+- [FIXME] docs/TODO_REPORT.md:769 — ] public/automation/todo-summary.json:660 — Report\","
+- [TODO] docs/TODO_REPORT.md:770 — ] public/automation/todo-summary.json:664 — ",
+- [FIXME] docs/TODO_REPORT.md:771 — ] public/automation/todo-summary.json:665 — Report\"",
+- [TODO] docs/TODO_REPORT.md:772 — ] public/automation/todo-summary.json:666 — and FIXME Report\""
+- [TODO] docs/TODO_REPORT.md:773 — ] public/automation/todo-summary.json:670 — ",
+- [TODO] docs/TODO_REPORT.md:774 — ] public/automation/todo-summary.json:672 — \","
+- [FIXME] docs/TODO_REPORT.md:775 — ] public/automation/todo-summary.json:676 — ",
+- [FIXME] docs/TODO_REPORT.md:776 — ] public/automation/todo-summary.json:678 — scanner\","
+- [TODO] docs/TODO_REPORT.md:777 — ] public/automation/todo-summary.json:682 — ",
+- [FIXME] docs/TODO_REPORT.md:778 — ] public/automation/todo-summary.json:683 — scanner\"",
+- [TODO] docs/TODO_REPORT.md:779 — ] public/automation/todo-summary.json:684 — ] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner\""
+- [TODO] docs/TODO_REPORT.md:780 — ] public/automation/todo-summary.json:688 — ",
+- [TODO] docs/TODO_REPORT.md:781 — ] public/automation/todo-summary.json:690 — \","
+- [TODO] docs/TODO_REPORT.md:782 — ] public/automation/todo-summary.json:694 — ",
+- [TODO] docs/TODO_REPORT.md:783 — ] public/automation/todo-summary.json:696 — ] .github/workflows/autonomous-content-scanner.yml:31 — -scanner.cjs | cat\""
+- [TODO] docs/TODO_REPORT.md:784 — ] public/automation/todo-summary.json:700 — ",
+- [TODO] docs/TODO_REPORT.md:785 — ] public/automation/todo-summary.json:702 — \","
+- [TODO] docs/TODO_REPORT.md:786 — ] public/automation/todo-summary.json:706 — ",
+- [TODO] docs/TODO_REPORT.md:787 — ] public/automation/todo-summary.json:708 — ] .github/workflows/autonomous-content-scanner.yml:40 — report and content registry [skip ci]\\\"\""
+- [TODO] docs/TODO_REPORT.md:788 — ] public/automation/todo-summary.json:712 — ",
+- [TODO] docs/TODO_REPORT.md:789 — ] public/automation/todo-summary.json:714 — \","
+- [TODO] docs/TODO_REPORT.md:790 — ] public/automation/todo-summary.json:718 — ",
+- [TODO] docs/TODO_REPORT.md:791 — ] public/automation/todo-summary.json:720 — -issue-sync.yml\""
+- [TODO] docs/TODO_REPORT.md:792 — ] public/automation/todo-summary.json:724 — ",
+- [TODO] docs/TODO_REPORT.md:793 — ] public/automation/todo-summary.json:726 — \","
+- [TODO] docs/TODO_REPORT.md:794 — ] public/automation/todo-summary.json:730 — ",
+- [TODO] docs/TODO_REPORT.md:795 — ] public/automation/todo-summary.json:732 — -issue-sync.yml:1 — Issue Sync\","
+- [TODO] docs/TODO_REPORT.md:796 — ] public/automation/todo-summary.json:736 — ",
+- [TODO] docs/TODO_REPORT.md:797 — ] public/automation/todo-summary.json:737 — -issue-sync.yml:1 — Issue Sync\"",
+- [TODO] docs/TODO_REPORT.md:798 — ] public/automation/todo-summary.json:738 — ] .github/workflows/todo-issue-sync.yml:1 — Issue Sync\""
+- [TODO] docs/TODO_REPORT.md:799 — ] public/automation/todo-summary.json:742 — ",
+- [TODO] docs/TODO_REPORT.md:800 — ] public/automation/todo-summary.json:744 — \","
+- [TODO] docs/TODO_REPORT.md:801 — ] public/automation/todo-summary.json:748 — ",
+- [TODO] docs/TODO_REPORT.md:802 — ] public/automation/todo-summary.json:750 — -issue-sync.yml:13 — s:\","
+- [TODO] docs/TODO_REPORT.md:803 — ] public/automation/todo-summary.json:754 — ",
+- [TODO] docs/TODO_REPORT.md:804 — ] public/automation/todo-summary.json:755 — -issue-sync.yml:13 — s:\"",
+- [TODO] docs/TODO_REPORT.md:805 — ] public/automation/todo-summary.json:756 — ] .github/workflows/todo-issue-sync.yml:13 — s:\""
+- [TODO] docs/TODO_REPORT.md:806 — ] public/automation/todo-summary.json:760 — ",
+- [TODO] docs/TODO_REPORT.md:807 — ] public/automation/todo-summary.json:762 — \","
+- [TODO] docs/TODO_REPORT.md:808 — ] public/automation/todo-summary.json:766 — ",
+- [TODO] docs/TODO_REPORT.md:809 — ] public/automation/todo-summary.json:768 — -issue-sync.yml:29 — report\","
+- [TODO] docs/TODO_REPORT.md:810 — ] public/automation/todo-summary.json:772 — ",
+- [TODO] docs/TODO_REPORT.md:811 — ] public/automation/todo-summary.json:773 — -issue-sync.yml:29 — report\"",
+- [TODO] docs/TODO_REPORT.md:812 — ] public/automation/todo-summary.json:774 — ] .github/workflows/todo-issue-sync.yml:29 — report\""
+- [TODO] docs/TODO_REPORT.md:813 — ] public/automation/todo-summary.json:778 — ",
+- [TODO] docs/TODO_REPORT.md:814 — ] public/automation/todo-summary.json:780 — \","
+- [TODO] docs/TODO_REPORT.md:815 — ] public/automation/todo-summary.json:784 — ",
+- [TODO] docs/TODO_REPORT.md:816 — ] public/automation/todo-summary.json:786 — -issue-sync.yml:30 — _issue_sync.cjs\","
+- [TODO] docs/TODO_REPORT.md:817 — ] public/automation/todo-summary.json:790 — ",
+- [TODO] docs/TODO_REPORT.md:818 — ] public/automation/todo-summary.json:791 — -issue-sync.yml:30 — _issue_sync.cjs\"",
+- [TODO] docs/TODO_REPORT.md:819 — ] public/automation/todo-summary.json:792 — ] .github/workflows/todo-issue-sync.yml:30 — _issue_sync.cjs\""
+- [TODO] docs/TODO_REPORT.md:820 — ] public/automation/todo-summary.json:796 — ",
+- [TODO] docs/TODO_REPORT.md:821 — ] public/automation/todo-summary.json:798 — \","
+- [TODO] docs/TODO_REPORT.md:822 — ] public/automation/todo-summary.json:802 — ",
+- [TODO] docs/TODO_REPORT.md:823 — ] public/automation/todo-summary.json:803 — sync report [skip ci]\\\"\",",
+- [TODO] docs/TODO_REPORT.md:824 — ] public/automation/todo-summary.json:804 — -issue-sync.yml:38 — ): update TODO sync report [skip ci]\\\"\","
+- [TODO] docs/TODO_REPORT.md:825 — ] public/automation/todo-summary.json:808 — ",
+- [TODO] docs/TODO_REPORT.md:826 — ] public/automation/todo-summary.json:809 — -issue-sync.yml:38 — ): update TODO sync report [skip ci]\\\"\"",
+- [TODO] docs/TODO_REPORT.md:827 — ] public/automation/todo-summary.json:810 — ] .github/workflows/todo-issue-sync.yml:38 — ): update TODO sync report [skip ci]\\\"\""
+- [TODO] docs/TODO_REPORT.md:828 — ] public/automation/todo-summary.json:814 — ",
+- [TODO] docs/TODO_REPORT.md:829 — ] public/automation/todo-summary.json:816 — \","
+- [TODO] docs/TODO_REPORT.md:830 — ] public/automation/todo-summary.json:820 — ",
+- [TODO] docs/TODO_REPORT.md:831 — ] public/automation/todo-summary.json:822 — -issue-sync.yml:42 — Issue\","
+- [TODO] docs/TODO_REPORT.md:832 — ] public/automation/todo-summary.json:826 — ",
+- [TODO] docs/TODO_REPORT.md:833 — ] public/automation/todo-summary.json:827 — -issue-sync.yml:42 — Issue\"",
+- [TODO] docs/TODO_REPORT.md:834 — ] public/automation/todo-summary.json:828 — ] .github/workflows/todo-issue-sync.yml:42 — Issue\""
+- [TODO] docs/TODO_REPORT.md:835 — ] public/automation/todo-summary.json:832 — ",
+- [TODO] docs/TODO_REPORT.md:836 — ] public/automation/todo-summary.json:834 — \","
+- [TODO] docs/TODO_REPORT.md:837 — ] public/automation/todo-summary.json:838 — ",
+- [FIXME] docs/TODO_REPORT.md:838 — ] public/automation/todo-summary.json:839 — /NOTE Sync\\\"\",",
+- [TODO] docs/TODO_REPORT.md:839 — ] public/automation/todo-summary.json:840 — -issue-sync.yml:47 — /FIXME/NOTE Sync\\\"\","
+- [TODO] docs/TODO_REPORT.md:840 — ] public/automation/todo-summary.json:844 — ",
+- [TODO] docs/TODO_REPORT.md:841 — ] public/automation/todo-summary.json:845 — -issue-sync.yml:47 — /FIXME/NOTE Sync\\\"\"",
+- [TODO] docs/TODO_REPORT.md:842 — ] public/automation/todo-summary.json:846 — ] .github/workflows/todo-issue-sync.yml:47 — /FIXME/NOTE Sync\\\"\""
+- [TODO] docs/TODO_REPORT.md:843 — ] public/automation/todo-summary.json:850 — ",
+- [TODO] docs/TODO_REPORT.md:844 — ] public/automation/todo-summary.json:852 — \","
+- [TODO] docs/TODO_REPORT.md:845 — ] public/automation/todo-summary.json:856 — ",
+- [TODO] docs/TODO_REPORT.md:846 — ] public/automation/todo-summary.json:858 — -issue-sync.yml:48 — _SYNC.md\\\"\","
+- [TODO] docs/TODO_REPORT.md:847 — ] public/automation/todo-summary.json:862 — ",
+- [TODO] docs/TODO_REPORT.md:848 — ] public/automation/todo-summary.json:863 — -issue-sync.yml:48 — _SYNC.md\\\"\"",
+- [TODO] docs/TODO_REPORT.md:849 — ] public/automation/todo-summary.json:864 — ] .github/workflows/todo-issue-sync.yml:48 — _SYNC.md\\\"\""
+- [TODO] docs/TODO_REPORT.md:850 — ] public/automation/todo-summary.json:868 — ",
+- [TODO] docs/TODO_REPORT.md:851 — ] public/automation/todo-summary.json:870 — \","
+- [TODO] docs/TODO_REPORT.md:852 — ] public/automation/todo-summary.json:874 — ",
+- [TODO] docs/TODO_REPORT.md:853 — ] public/automation/todo-summary.json:876 — -scanner.cjs\\\",\","
+- [TODO] docs/TODO_REPORT.md:854 — ] public/automation/todo-summary.json:880 — ",
+- [TODO] docs/TODO_REPORT.md:855 — ] public/automation/todo-summary.json:881 — -scanner.cjs\\\",\"",
+- [TODO] docs/TODO_REPORT.md:856 — ] public/automation/todo-summary.json:882 — ] package.json:225 — \\\": \\\"node automation/todo-scanner.cjs\\\",\""
+- [TODO] docs/TODO_REPORT.md:857 — ] public/automation/todo-summary.json:886 — ",
+- [TODO] docs/TODO_REPORT.md:858 — ] public/automation/todo-summary.json:888 — \","
+- [TODO] docs/TODO_REPORT.md:859 — ] public/automation/todo-summary.json:892 — ",
+- [TODO] docs/TODO_REPORT.md:860 — ] public/automation/todo-summary.json:894 — ] package.json:227 — && npm run scan:registry\\\"\""
+- [TODO] docs/TODO_REPORT.md:861 — ] public/automation/todo-summary.json:898 — ",
+- [TODO] docs/TODO_REPORT.md:862 — ] public/automation/todo-summary.json:900 — \","
+- [TODO] docs/TODO_REPORT.md:863 — ] public/automation/todo-summary.json:904 — ",
+- [TODO] docs/TODO_REPORT.md:864 — ] public/automation/todo-summary.json:906 — issue sync, autonomous release, and keepalive workflows (09ccba6)\""
+- [TODO] docs/TODO_REPORT.md:865 — ] public/automation/todo-summary.json:910 — ",
+- [TODO] docs/TODO_REPORT.md:866 — ] public/automation/todo-summary.json:912 — \","
+- [TODO] docs/TODO_REPORT.md:867 — ] public/automation/todo-summary.json:916 — ",
+- [TODO] docs/TODO_REPORT.md:868 — ] public/automation/todo-summary.json:918 — issue sync, autonomous release, and keepalive workflows (09ccba6)\""
+- [TODO] docs/TODO_REPORT.md:869 — ] public/automation/todo-summary.json:922 — ",
+- [TODO] docs/TODO_REPORT.md:870 — ] public/automation/todo-summary.json:924 — \","
+- [TODO] docs/TODO_REPORT.md:871 — ] public/automation/todo-summary.json:928 — ",
+- [TODO] docs/TODO_REPORT.md:872 — ] public/automation/todo-summary.json:930 — _REPORT\\\",\""
+- [TODO] docs/TODO_REPORT.md:873 — ] public/automation/todo-summary.json:934 — ",
+- [TODO] docs/TODO_REPORT.md:874 — ] public/automation/todo-summary.json:936 — \","
+- [TODO] docs/TODO_REPORT.md:875 — ] public/automation/todo-summary.json:940 — ",
+- [TODO] docs/TODO_REPORT.md:876 — ] public/automation/todo-summary.json:942 — _REPORT.md\\\",\""
+- [TODO] docs/TODO_REPORT.md:877 — ] public/automation/todo-summary.json:946 — ",
+- [TODO] docs/TODO_REPORT.md:878 — ] public/automation/todo-summary.json:948 — \","
+- [FIXME] docs/TODO_REPORT.md:879 — ] public/automation/todo-summary.json:952 — ",
+- [FIXME] docs/TODO_REPORT.md:880 — ] public/automation/todo-summary.json:954 — Report\\\",\","
+- [TODO] docs/TODO_REPORT.md:881 — ] public/automation/todo-summary.json:958 — ",
+- [FIXME] docs/TODO_REPORT.md:882 — ] public/automation/todo-summary.json:959 — Report\\\",\"",
+- [TODO] docs/TODO_REPORT.md:883 — ] public/automation/todo-summary.json:960 — and FIXME Report\\\",\""
+- [TODO] docs/TODO_REPORT.md:884 — ] public/automation/todo-summary.json:964 — ",
+- [TODO] docs/TODO_REPORT.md:885 — ] public/automation/todo-summary.json:966 — \","
+- [FIXME] docs/TODO_REPORT.md:886 — ] public/automation/todo-summary.json:970 — ",
+- [TODO] docs/TODO_REPORT.md:887 — ] public/automation/todo-summary.json:971 — ] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner - [TODO] .github/workflows/autonomous-content-scanner.yml:31 — -sca\\\"\",",
+- [FIXME] docs/TODO_REPORT.md:888 — ] public/automation/todo-summary.json:972 — Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/autonomous-content-scanner.yml:30 — "
+- [TODO] docs/TODO_REPORT.md:889 — ] public/automation/todo-summary.json:976 — ",
+- [FIXME] docs/TODO_REPORT.md:890 — ] public/automation/todo-summary.json:977 — Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/autonomous-content-scanner\"",
+- [TODO] docs/TODO_REPORT.md:891 — ] public/automation/todo-summary.json:978 — and FIXME Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/autonomous-"
+- [TODO] docs/TODO_REPORT.md:892 — ] public/automation/todo-summary.json:982 — ",
+- [TODO] docs/TODO_REPORT.md:893 — ] public/automation/todo-summary.json:984 — \","
+- [TODO] docs/TODO_REPORT.md:894 — ] public/automation/todo-summary.json:988 — ",
+- [TODO] docs/TODO_REPORT.md:895 — ] public/automation/todo-summary.json:990 — -scanner.cjs\\\",\""
+- [TODO] docs/TODO_REPORT.md:896 — ] public/automation/todo-summary.json:994 — ",
+- [TODO] docs/TODO_REPORT.md:897 — ] public/automation/todo-summary.json:996 — \","
+- [TODO] docs/TODO_REPORT.md:898 — ] public/automation/todo-summary.json:1000 — ",
+- [TODO] docs/TODO_REPORT.md:899 — ] public/automation/todo-summary.json:1002 — -scanner-runner.js\\\",\""
+- [TODO] docs/TODO_REPORT.md:900 — ] public/automation/todo-summary.json:1006 — ",
+- [TODO] docs/TODO_REPORT.md:901 — ] public/automation/todo-summary.json:1008 — \","
+- [TODO] docs/TODO_REPORT.md:902 — ] public/automation/todo-summary.json:1012 — ",
+- [TODO] docs/TODO_REPORT.md:903 — ] public/automation/todo-summary.json:1014 — -summary-runner.js\\\",\""
+- [TODO] docs/TODO_REPORT.md:904 — ] public/automation/todo-summary.json:1018 — ",
+- [TODO] docs/TODO_REPORT.md:905 — ] public/automation/todo-summary.json:1020 — \","
+- [TODO] docs/TODO_REPORT.md:906 — ] public/automation/todo-summary.json:1024 — ",
+- [TODO] docs/TODO_REPORT.md:907 — ] public/automation/todo-summary.json:1026 — _issue_sync.cjs\\\",\""
+- [TODO] docs/TODO_REPORT.md:908 — ] public/automation/todo-summary.json:1030 — ",
+- [TODO] docs/TODO_REPORT.md:909 — ] public/automation/todo-summary.json:1032 — \","
+- [TODO] docs/TODO_REPORT.md:910 — ] public/automation/todo-summary.json:1036 — ",
+- [TODO] docs/TODO_REPORT.md:911 — ] public/automation/todo-summary.json:1038 — -scanner.cjs\\\",\""
+- [TODO] docs/TODO_REPORT.md:912 — ] public/automation/todo-summary.json:1042 — ",
+- [TODO] docs/TODO_REPORT.md:913 — ] public/automation/todo-summary.json:1044 — \","
+- [TODO] docs/TODO_REPORT.md:914 — ] public/automation/todo-summary.json:1048 — ",
+- [TODO] docs/TODO_REPORT.md:915 — ] public/automation/todo-summary.json:1050 — -scanner.cjs\\\",\""
+- [TODO] docs/TODO_REPORT.md:916 — ] public/automation/todo-summary.json:1054 — ",
+- [TODO] docs/TODO_REPORT.md:917 — ] public/automation/todo-summary.json:1056 — \","
+- [TODO] docs/TODO_REPORT.md:918 — ] public/automation/todo-summary.json:1060 — ",
+- [TODO] docs/TODO_REPORT.md:919 — ] public/automation/todo-summary.json:1062 — -scanner.cjs\\\",\""
+- [TODO] docs/TODO_REPORT.md:920 — ] public/automation/todo-summary.json:1066 — ",
+- [TODO] docs/TODO_REPORT.md:921 — ] public/automation/todo-summary.json:1068 — \","
+- [TODO] docs/TODO_REPORT.md:922 — ] public/automation/todo-summary.json:1072 — ",
+- [TODO] docs/TODO_REPORT.md:923 — ] public/automation/todo-summary.json:1074 — -scanner-runner.js\\\",\""
+- [TODO] docs/TODO_REPORT.md:924 — ] public/automation/todo-summary.json:1078 — ",
+- [TODO] docs/TODO_REPORT.md:925 — ] public/automation/todo-summary.json:1080 — \","
+- [TODO] docs/TODO_REPORT.md:926 — ] public/automation/todo-summary.json:1084 — ",
+- [TODO] docs/TODO_REPORT.md:927 — ] public/automation/todo-summary.json:1086 — -scanner-runner.js\\\",\""
+- [TODO] docs/TODO_REPORT.md:928 — ] public/automation/todo-summary.json:1090 — ",
+- [TODO] docs/TODO_REPORT.md:929 — ] public/automation/todo-summary.json:1092 — \","
+- [TODO] docs/TODO_REPORT.md:930 — ] public/automation/todo-summary.json:1096 — ",
+- [TODO] docs/TODO_REPORT.md:931 — ] public/automation/todo-summary.json:1098 — -summary-runner.js\\\",\""
+- [TODO] docs/TODO_REPORT.md:932 — ] public/automation/todo-summary.json:1102 — ",
+- [TODO] docs/TODO_REPORT.md:933 — ] public/automation/todo-summary.json:1104 — \","
+- [TODO] docs/TODO_REPORT.md:934 — ] public/automation/todo-summary.json:1108 — ",
+- [TODO] docs/TODO_REPORT.md:935 — ] public/automation/todo-summary.json:1110 — -summary-runner.js\\\",\""
+- [TODO] docs/TODO_REPORT.md:936 — ] public/automation/todo-summary.json:1114 — ",
+- [TODO] docs/TODO_REPORT.md:937 — ] public/automation/todo-summary.json:1116 — \","
+- [TODO] docs/TODO_REPORT.md:938 — ] public/automation/todo-summary.json:1120 — ",
+- [TODO] docs/TODO_REPORT.md:939 — ] public/automation/todo-summary.json:1122 — _issue_sync.cjs\\\",\""
+- [TODO] docs/TODO_REPORT.md:940 — ] public/automation/todo-summary.json:1126 — ",
+- [TODO] docs/TODO_REPORT.md:941 — ] public/automation/todo-summary.json:1128 — \","
+- [TODO] docs/TODO_REPORT.md:942 — ] public/automation/todo-summary.json:1132 — ",
+- [TODO] docs/TODO_REPORT.md:943 — ] public/automation/todo-summary.json:1134 — _issue_sync.cjs\\\",\""
+- [TODO] docs/TODO_REPORT.md:944 — ] public/automation/todo-summary.json:1138 — ",
+- [TODO] docs/TODO_REPORT.md:945 — ] public/automation/todo-summary.json:1140 — \","
+- [TODO] docs/TODO_REPORT.md:946 — ] public/automation/todo-summary.json:1144 — ",
+- [TODO] docs/TODO_REPORT.md:947 — ] public/automation/todo-summary.json:1146 — _issue_sync.cjs\\\",\""
+- [TODO] docs/TODO_REPORT.md:948 — ] public/automation/todo-summary.json:1150 — ",
+- [TODO] docs/TODO_REPORT.md:949 — ] public/automation/todo-summary.json:1152 — -summary.json\": ["
+- [TODO] docs/TODO_REPORT.md:950 — ] public/automation/todo-summary.json:1156 — ",
+- [TODO] docs/TODO_REPORT.md:951 — ] public/automation/todo-summary.json:1158 — \","
+- [TODO] docs/TODO_REPORT.md:952 — ] public/automation/todo-summary.json:1162 — ",
+- [TODO] docs/TODO_REPORT.md:953 — ] public/automation/todo-summary.json:1164 — \\\",\""
+- [TODO] docs/TODO_REPORT.md:954 — ] public/automation/todo-summary.json:1168 — ",
+- [TODO] docs/TODO_REPORT.md:955 — ] public/automation/todo-summary.json:1170 — \","
+- [TODO] docs/TODO_REPORT.md:956 — ] public/automation/todo-summary.json:1174 — ",
+- [TODO] docs/TODO_REPORT.md:957 — ] public/automation/todo-summary.json:1176 — -scanner.cjs\\\\\\\",\\\",\""
+- [TODO] docs/TODO_REPORT.md:958 — ] public/automation/todo-summary.json:1180 — ",
+- [TODO] docs/TODO_REPORT.md:959 — ] public/automation/todo-summary.json:1182 — \","
+- [TODO] docs/TODO_REPORT.md:960 — ] public/automation/todo-summary.json:1186 — ",
+- [TODO] docs/TODO_REPORT.md:961 — ] public/automation/todo-summary.json:1188 — -scanner.cjs\\\\\\\",\\\"\","
+- [TODO] docs/TODO_REPORT.md:962 — ] public/automation/todo-summary.json:1192 — ",
+- [TODO] docs/TODO_REPORT.md:963 — ] public/automation/todo-summary.json:1193 — -scanner.cjs\\\\\\\",\\\"\"",
+- [TODO] docs/TODO_REPORT.md:964 — ] public/automation/todo-summary.json:1194 — \\\\\\\": \\\\\\\"node automation/todo-scanner.cjs\\\\\\\",\\\"\""
+- [TODO] docs/TODO_REPORT.md:965 — ] public/automation/todo-summary.json:1198 — ",
+- [TODO] docs/TODO_REPORT.md:966 — ] public/automation/todo-summary.json:1200 — \","
+- [TODO] docs/TODO_REPORT.md:967 — ] public/automation/todo-summary.json:1204 — ",
+- [TODO] docs/TODO_REPORT.md:968 — ] public/automation/todo-summary.json:1206 — \\\",\""
+- [TODO] docs/TODO_REPORT.md:969 — ] public/automation/todo-summary.json:1210 — ",
+- [TODO] docs/TODO_REPORT.md:970 — ] public/automation/todo-summary.json:1212 — \","
+- [TODO] docs/TODO_REPORT.md:971 — ] public/automation/todo-summary.json:1216 — ",
+- [TODO] docs/TODO_REPORT.md:972 — ] public/automation/todo-summary.json:1218 — && npm run scan:registry\\\\\\\"\\\"\""
+- [TODO] docs/TODO_REPORT.md:973 — ] public/automation/todo-summary.json:1222 — ",
+- [TODO] docs/TODO_REPORT.md:974 — ] public/automation/todo-summary.json:1224 — \","
+- [TODO] docs/TODO_REPORT.md:975 — ] public/automation/todo-summary.json:1228 — ",
+- [TODO] docs/TODO_REPORT.md:976 — ] public/automation/todo-summary.json:1230 — -issue-sync.yml\\\": [\""
+- [TODO] docs/TODO_REPORT.md:977 — ] public/automation/todo-summary.json:1234 — ",
+- [TODO] docs/TODO_REPORT.md:978 — ] public/automation/todo-summary.json:1236 — \","
+- [TODO] docs/TODO_REPORT.md:979 — ] public/automation/todo-summary.json:1240 — ",
+- [TODO] docs/TODO_REPORT.md:980 — ] public/automation/todo-summary.json:1242 — \\\",\""
+- [TODO] docs/TODO_REPORT.md:981 — ] public/automation/todo-summary.json:1246 — ",
+- [TODO] docs/TODO_REPORT.md:982 — ] public/automation/todo-summary.json:1248 — \","
+- [TODO] docs/TODO_REPORT.md:983 — ] public/automation/todo-summary.json:1252 — ",
+- [TODO] docs/TODO_REPORT.md:984 — ] public/automation/todo-summary.json:1254 — Issue Sync\\\"\""
+- [TODO] docs/TODO_REPORT.md:985 — ] public/automation/todo-summary.json:1258 — ",
+- [TODO] docs/TODO_REPORT.md:986 — ] public/automation/todo-summary.json:1260 — \","
+- [TODO] docs/TODO_REPORT.md:987 — ] public/automation/todo-summary.json:1264 — ",
+- [TODO] docs/TODO_REPORT.md:988 — ] public/automation/todo-summary.json:1266 — \\\",\""
+- [TODO] docs/TODO_REPORT.md:989 — ] public/automation/todo-summary.json:1270 — ",
+- [TODO] docs/TODO_REPORT.md:990 — ] public/automation/todo-summary.json:1272 — \","
+- [TODO] docs/TODO_REPORT.md:991 — ] public/automation/todo-summary.json:1276 — ",
+- [TODO] docs/TODO_REPORT.md:992 — ] public/automation/todo-summary.json:1278 — s:\\\"\""
+- [TODO] docs/TODO_REPORT.md:993 — ] public/automation/todo-summary.json:1282 — ",
+- [TODO] docs/TODO_REPORT.md:994 — ] public/automation/todo-summary.json:1284 — \","
+- [TODO] docs/TODO_REPORT.md:995 — ] public/automation/todo-summary.json:1288 — ",
+- [TODO] docs/TODO_REPORT.md:996 — ] public/automation/todo-summary.json:1290 — \\\",\""
+- [TODO] docs/TODO_REPORT.md:997 — ] public/automation/todo-summary.json:1294 — ",
+- [TODO] docs/TODO_REPORT.md:998 — ] public/automation/todo-summary.json:1296 — \","
+- [TODO] docs/TODO_REPORT.md:999 — ] public/automation/todo-summary.json:1300 — ",
+- [TODO] docs/TODO_REPORT.md:1000 — ] public/automation/todo-summary.json:1302 — report\\\"\""
+- [TODO] docs/TODO_REPORT.md:1001 — ] public/automation/todo-summary.json:1306 — ",
+- [TODO] docs/TODO_REPORT.md:1002 — ] public/automation/todo-summary.json:1308 — \","
+- [TODO] docs/TODO_REPORT.md:1003 — ] public/automation/todo-summary.json:1312 — ",
+- [TODO] docs/TODO_REPORT.md:1004 — ] public/automation/todo-summary.json:1314 — \\\",\""
+- [TODO] docs/TODO_REPORT.md:1005 — ] public/automation/todo-summary.json:1318 — ",
+- [TODO] docs/TODO_REPORT.md:1006 — ] public/automation/todo-summary.json:1320 — \","
+- [TODO] docs/TODO_REPORT.md:1007 — ] public/automation/todo-summary.json:1324 — ",
+- [TODO] docs/TODO_REPORT.md:1008 — ] public/automation/todo-summary.json:1326 — _issue_sync.cjs\\\"\""
+- [TODO] docs/TODO_REPORT.md:1009 — ] public/automation/todo-summary.json:1330 — ",
+- [TODO] docs/TODO_REPORT.md:1010 — ] public/automation/todo-summary.json:1332 — \","
+- [TODO] docs/TODO_REPORT.md:1011 — ] public/automation/todo-summary.json:1336 — ",
+- [TODO] docs/TODO_REPORT.md:1012 — ] public/automation/todo-summary.json:1338 — \\\",\""
+- [TODO] docs/TODO_REPORT.md:1013 — ] public/automation/todo-summary.json:1342 — ",
+- [TODO] docs/TODO_REPORT.md:1014 — ] public/automation/todo-summary.json:1344 — \","
+- [TODO] docs/TODO_REPORT.md:1015 — ] public/automation/todo-summary.json:1348 — ",
+- [TODO] docs/TODO_REPORT.md:1016 — ] public/automation/todo-summary.json:1350 — sync report [skip ci]\\\\\\\"\\\",\""
+- [TODO] docs/TODO_REPORT.md:1017 — ] public/automation/todo-summary.json:1354 — ",
+- [TODO] docs/TODO_REPORT.md:1018 — ] public/automation/todo-summary.json:1356 — \","
+- [TODO] docs/TODO_REPORT.md:1019 — ] public/automation/todo-summary.json:1360 — ",
+- [TODO] docs/TODO_REPORT.md:1020 — ] public/automation/todo-summary.json:1362 — sync report [skip ci]\\\\\\\"\\\"\","
+- [TODO] docs/TODO_REPORT.md:1021 — ] public/automation/todo-summary.json:1366 — ",
+- [TODO] docs/TODO_REPORT.md:1022 — ] public/automation/todo-summary.json:1367 — sync report [skip ci]\\\\\\\"\\\"\"",
+- [TODO] docs/TODO_REPORT.md:1023 — ] public/automation/todo-summary.json:1368 — ): update TODO sync report [skip ci]\\\\\\\"\\\"\""
+- [TODO] docs/TODO_REPORT.md:1024 — ] public/automation/todo-summary.json:1372 — ",
+- [TODO] docs/TODO_REPORT.md:1025 — ] public/automation/todo-summary.json:1374 — \","
+- [TODO] docs/TODO_REPORT.md:1026 — ] public/automation/todo-summary.json:1378 — ",
+- [TODO] docs/TODO_REPORT.md:1027 — ] public/automation/todo-summary.json:1380 — \\\",\""
+- [TODO] docs/TODO_REPORT.md:1028 — ] public/automation/todo-summary.json:1384 — ",
+- [TODO] docs/TODO_REPORT.md:1029 — ] public/automation/todo-summary.json:1386 — \","
+- [TODO] docs/TODO_REPORT.md:1030 — ] public/automation/todo-summary.json:1390 — ",
+- [TODO] docs/TODO_REPORT.md:1031 — ] public/automation/todo-summary.json:1392 — Issue\\\"\""
+- [TODO] docs/TODO_REPORT.md:1032 — ] public/automation/todo-summary.json:1396 — ",
+- [TODO] docs/TODO_REPORT.md:1033 — ] public/automation/todo-summary.json:1398 — \","
+- [TODO] docs/TODO_REPORT.md:1034 — ] public/automation/todo-summary.json:1402 — ",
+- [TODO] docs/TODO_REPORT.md:1035 — ] public/automation/todo-summary.json:1404 — \\\",\""
+- [FIXME] docs/TODO_REPORT.md:1036 — ] public/automation/todo-summary.json:1408 — ",
+- [FIXME] docs/TODO_REPORT.md:1037 — ] public/automation/todo-summary.json:1410 — \","
+- [FIXME] docs/TODO_REPORT.md:1038 — ] public/automation/todo-summary.json:1414 — ",
+- [FIXME] docs/TODO_REPORT.md:1039 — ] public/automation/todo-summary.json:1416 — /NOTE Sync\\\\\\\"\\\",\""
+- [TODO] docs/TODO_REPORT.md:1040 — ] public/automation/todo-summary.json:1420 — ",
+- [TODO] docs/TODO_REPORT.md:1041 — ] public/automation/todo-summary.json:1422 — \","
+- [FIXME] docs/TODO_REPORT.md:1042 — ] public/automation/todo-summary.json:1426 — ",
+- [FIXME] docs/TODO_REPORT.md:1043 — ] public/automation/todo-summary.json:1428 — /NOTE Sync\\\\\\\"\\\"\","
+- [TODO] docs/TODO_REPORT.md:1044 — ] public/automation/todo-summary.json:1432 — ",
+- [FIXME] docs/TODO_REPORT.md:1045 — ] public/automation/todo-summary.json:1433 — /NOTE Sync\\\\\\\"\\\"\"",
+- [TODO] docs/TODO_REPORT.md:1046 — ] public/automation/todo-summary.json:1434 — /FIXME/NOTE Sync\\\\\\\"\\\"\""
+- [TODO] docs/TODO_REPORT.md:1047 — ] public/automation/todo-summary.json:1438 — ",
+- [TODO] docs/TODO_REPORT.md:1048 — ] public/automation/todo-summary.json:1440 — \","
+- [TODO] docs/TODO_REPORT.md:1049 — ] public/automation/todo-summary.json:1444 — ",
+- [TODO] docs/TODO_REPORT.md:1050 — ] public/automation/todo-summary.json:1446 — \\\",\""
+- [TODO] docs/TODO_REPORT.md:1051 — ] public/automation/todo-summary.json:1450 — ",
+- [TODO] docs/TODO_REPORT.md:1052 — ] public/automation/todo-summary.json:1452 — \","
+- [TODO] docs/TODO_REPORT.md:1053 — ] public/automation/todo-summary.json:1456 — ",
+- [TODO] docs/TODO_REPORT.md:1054 — ] public/automation/todo-summary.json:1458 — _SYNC.md\\\\\\\"\\\"\""
+- [TODO] docs/TODO_REPORT.md:1055 — ] public/automation/todo-summary.json:1462 — ",
+- [TODO] docs/TODO_REPORT.md:1056 — ] public/automation/todo-summary.json:1464 — \","
+- [TODO] docs/TODO_REPORT.md:1057 — ] public/automation/todo-summary.json:1468 — ",
+- [TODO] docs/TODO_REPORT.md:1058 — ] public/automation/todo-summary.json:1470 — \\\",\""
+- [FIXME] docs/TODO_REPORT.md:1059 — ] public/automation/todo-summary.json:1474 — ",
+- [FIXME] docs/TODO_REPORT.md:1060 — ] public/automation/todo-summary.json:1476 — \","
+- [FIXME] docs/TODO_REPORT.md:1061 — ] public/automation/todo-summary.json:1480 — ",
+- [FIXME] docs/TODO_REPORT.md:1062 — ] public/automation/todo-summary.json:1482 — scanner\\\",\""
+- [TODO] docs/TODO_REPORT.md:1063 — ] public/automation/todo-summary.json:1486 — ",
+- [TODO] docs/TODO_REPORT.md:1064 — ] public/automation/todo-summary.json:1488 — \","
+- [FIXME] docs/TODO_REPORT.md:1065 — ] public/automation/todo-summary.json:1492 — ",
+- [FIXME] docs/TODO_REPORT.md:1066 — ] public/automation/todo-summary.json:1494 — scanner\\\"\","
+- [TODO] docs/TODO_REPORT.md:1067 — ] public/automation/todo-summary.json:1498 — ",
+- [FIXME] docs/TODO_REPORT.md:1068 — ] public/automation/todo-summary.json:1499 — scanner\\\"\"",
+- [TODO] docs/TODO_REPORT.md:1069 — ] public/automation/todo-summary.json:1500 — /FIXME scanner\\\"\""
+- [TODO] docs/TODO_REPORT.md:1070 — ] public/automation/todo-summary.json:1504 — ",
+- [TODO] docs/TODO_REPORT.md:1071 — ] public/automation/todo-summary.json:1506 — \","
+- [TODO] docs/TODO_REPORT.md:1072 — ] public/automation/todo-summary.json:1510 — ",
+- [TODO] docs/TODO_REPORT.md:1073 — ] public/automation/todo-summary.json:1512 — \\\",\""
+- [TODO] docs/TODO_REPORT.md:1074 — ] public/automation/todo-summary.json:1516 — ",
+- [TODO] docs/TODO_REPORT.md:1075 — ] public/automation/todo-summary.json:1518 — \","
+- [TODO] docs/TODO_REPORT.md:1076 — ] public/automation/todo-summary.json:1522 — ",
+- [TODO] docs/TODO_REPORT.md:1077 — ] public/automation/todo-summary.json:1524 — -scanner.cjs | cat\\\"\""
+- [TODO] docs/TODO_REPORT.md:1078 — ] public/automation/todo-summary.json:1528 — ",
+- [TODO] docs/TODO_REPORT.md:1079 — ] public/automation/todo-summary.json:1530 — \","
+- [TODO] docs/TODO_REPORT.md:1080 — ] public/automation/todo-summary.json:1534 — ",
+- [TODO] docs/TODO_REPORT.md:1081 — ] public/automation/todo-summary.json:1536 — \\\",\""
+- [TODO] docs/TODO_REPORT.md:1082 — ] public/automation/todo-summary.json:1540 — ",
+- [TODO] docs/TODO_REPORT.md:1083 — ] public/automation/todo-summary.json:1542 — \","
+- [TODO] docs/TODO_REPORT.md:1084 — ] public/automation/todo-summary.json:1546 — ",
+- [TODO] docs/TODO_REPORT.md:1085 — ] public/automation/todo-summary.json:1548 — report and content registry [skip ci]\\\\\\\"\\\"\""
+- [TODO] docs/TODO_REPORT.md:1086 — ] public/automation/todo-summary.json:1552 — ",
+- [TODO] docs/TODO_REPORT.md:1087 — ] public/automation/todo-summary.json:1554 — \","
+- [TODO] docs/TODO_REPORT.md:1088 — ] public/automation/todo-summary.json:1558 — ",
+- [TODO] docs/TODO_REPORT.md:1089 — ] public/automation/todo-summary.json:1560 — _REPORT.md\\\",\""
+- [TODO] docs/TODO_REPORT.md:1090 — ] public/automation/todo-summary.json:1564 — ",
+- [TODO] docs/TODO_REPORT.md:1091 — ] public/automation/todo-summary.json:1566 — \","
+- [TODO] docs/TODO_REPORT.md:1092 — ] public/automation/todo-summary.json:1570 — ",
+- [TODO] docs/TODO_REPORT.md:1093 — ] public/automation/todo-summary.json:1572 — _REPORT.md\\\"\""
+- [TODO] docs/TODO_REPORT.md:1094 — ] public/automation/todo-summary.json:1576 — ",
+- [TODO] docs/TODO_REPORT.md:1095 — ] public/automation/todo-summary.json:1578 — -summary-runner.js\": ["
+- [TODO] docs/TODO_REPORT.md:1096 — ] public/automation/todo-summary.json:1582 — ",
+- [TODO] docs/TODO_REPORT.md:1097 — ] public/automation/todo-summary.json:1584 — \","
+- [TODO] docs/TODO_REPORT.md:1098 — ] public/automation/todo-summary.json:1588 — ",
+- [TODO] docs/TODO_REPORT.md:1099 — ] public/automation/todo-summary.json:1590 — -scanner.cjs'));\","
+- [TODO] docs/TODO_REPORT.md:1100 — ] public/automation/todo-summary.json:1594 — ",
+- [TODO] docs/TODO_REPORT.md:1101 — ] public/automation/todo-summary.json:1595 — -scanner.cjs'));\"",
+- [TODO] docs/TODO_REPORT.md:1102 — ] public/automation/todo-summary.json:1596 — scan', () => runNode('automation/todo-scanner.cjs'));\""
+- [TODO] docs/TODO_REPORT.md:1103 — ] public/automation/todo-summary.json:1600 — ",
+- [TODO] docs/TODO_REPORT.md:1104 — ] public/automation/todo-summary.json:1602 — -scanner-runner.js\": ["
+- [TODO] docs/TODO_REPORT.md:1105 — ] public/automation/todo-summary.json:1606 — ",
+- [TODO] docs/TODO_REPORT.md:1106 — ] public/automation/todo-summary.json:1608 — \","
+- [TODO] docs/TODO_REPORT.md:1107 — ] public/automation/todo-summary.json:1612 — ",
+- [TODO] docs/TODO_REPORT.md:1108 — ] public/automation/todo-summary.json:1614 — -scanner.cjs'));\","
+- [TODO] docs/TODO_REPORT.md:1109 — ] public/automation/todo-summary.json:1618 — ",
+- [TODO] docs/TODO_REPORT.md:1110 — ] public/automation/todo-summary.json:1619 — -scanner.cjs'));\"",
+- [TODO] docs/TODO_REPORT.md:1111 — ] public/automation/todo-summary.json:1620 — scan', () => runNode('automation/todo-scanner.cjs'));\""
+- [TODO] docs/TODO_REPORT.md:1112 — ] public/automation/todo-summary.json:1624 — ",
+- [TODO] docs/TODO_REPORT.md:1113 — ] public/automation/todo-summary.json:1626 — \","
+- [TODO] docs/TODO_REPORT.md:1114 — ] public/automation/todo-summary.json:1630 — ",
+- [TODO] docs/TODO_REPORT.md:1115 — ] public/automation/todo-summary.json:1632 — -scanner-runner\\\",\""
+- [TODO] docs/TODO_REPORT.md:1116 — ] public/automation/todo-summary.json:1636 — ",
+- [TODO] docs/TODO_REPORT.md:1117 — ] public/automation/todo-summary.json:1638 — \","
+- [TODO] docs/TODO_REPORT.md:1118 — ] public/automation/todo-summary.json:1642 — ",
+- [TODO] docs/TODO_REPORT.md:1119 — ] public/automation/todo-summary.json:1644 — -summary-runner\\\",\""
+- [TODO] docs/TODO_REPORT.md:1120 — ] public/automation/todo-summary.json:1648 — ",
+- [TODO] docs/TODO_REPORT.md:1121 — ] public/automation/todo-summary.json:1650 — -issue-sync.yml\": ["
+- [TODO] docs/TODO_REPORT.md:1122 — ] public/automation/todo-summary.json:1654 — ",
+- [TODO] docs/TODO_REPORT.md:1123 — ] public/automation/todo-summary.json:1656 — \","
+- [TODO] docs/TODO_REPORT.md:1124 — ] public/automation/todo-summary.json:1660 — ",
+- [TODO] docs/TODO_REPORT.md:1125 — ] public/automation/todo-summary.json:1662 — Issue Sync\""
+- [TODO] docs/TODO_REPORT.md:1126 — ] public/automation/todo-summary.json:1666 — ",
+- [TODO] docs/TODO_REPORT.md:1127 — ] public/automation/todo-summary.json:1668 — \","
+- [TODO] docs/TODO_REPORT.md:1128 — ] public/automation/todo-summary.json:1672 — ",
+- [TODO] docs/TODO_REPORT.md:1129 — ] public/automation/todo-summary.json:1674 — s:\""
+- [TODO] docs/TODO_REPORT.md:1130 — ] public/automation/todo-summary.json:1678 — ",
+- [TODO] docs/TODO_REPORT.md:1131 — ] public/automation/todo-summary.json:1680 — \","
+- [TODO] docs/TODO_REPORT.md:1132 — ] public/automation/todo-summary.json:1684 — ",
+- [TODO] docs/TODO_REPORT.md:1133 — ] public/automation/todo-summary.json:1686 — report\""
+- [TODO] docs/TODO_REPORT.md:1134 — ] public/automation/todo-summary.json:1690 — ",
+- [TODO] docs/TODO_REPORT.md:1135 — ] public/automation/todo-summary.json:1692 — \","
+- [TODO] docs/TODO_REPORT.md:1136 — ] public/automation/todo-summary.json:1696 — ",
+- [TODO] docs/TODO_REPORT.md:1137 — ] public/automation/todo-summary.json:1698 — _issue_sync.cjs\""
+- [TODO] docs/TODO_REPORT.md:1138 — ] public/automation/todo-summary.json:1702 — ",
+- [TODO] docs/TODO_REPORT.md:1139 — ] public/automation/todo-summary.json:1704 — \","
+- [TODO] docs/TODO_REPORT.md:1140 — ] public/automation/todo-summary.json:1708 — ",
+- [TODO] docs/TODO_REPORT.md:1141 — ] public/automation/todo-summary.json:1710 — sync report [skip ci]\\\"\","
+- [TODO] docs/TODO_REPORT.md:1142 — ] public/automation/todo-summary.json:1714 — ",
+- [TODO] docs/TODO_REPORT.md:1143 — ] public/automation/todo-summary.json:1715 — sync report [skip ci]\\\"\"",
+- [TODO] docs/TODO_REPORT.md:1144 — ] public/automation/todo-summary.json:1716 — ): update TODO sync report [skip ci]\\\"\""
+- [TODO] docs/TODO_REPORT.md:1145 — ] public/automation/todo-summary.json:1720 — ",
+- [TODO] docs/TODO_REPORT.md:1146 — ] public/automation/todo-summary.json:1722 — \","
+- [TODO] docs/TODO_REPORT.md:1147 — ] public/automation/todo-summary.json:1726 — ",
+- [TODO] docs/TODO_REPORT.md:1148 — ] public/automation/todo-summary.json:1728 — Issue\""
+- [TODO] docs/TODO_REPORT.md:1149 — ] public/automation/todo-summary.json:1732 — ",
+- [TODO] docs/TODO_REPORT.md:1150 — ] public/automation/todo-summary.json:1734 — \","
+- [FIXME] docs/TODO_REPORT.md:1151 — ] public/automation/todo-summary.json:1738 — ",
+- [FIXME] docs/TODO_REPORT.md:1152 — ] public/automation/todo-summary.json:1740 — /NOTE Sync\\\"\","
+- [TODO] docs/TODO_REPORT.md:1153 — ] public/automation/todo-summary.json:1744 — ",
+- [FIXME] docs/TODO_REPORT.md:1154 — ] public/automation/todo-summary.json:1745 — /NOTE Sync\\\"\"",
+- [TODO] docs/TODO_REPORT.md:1155 — ] public/automation/todo-summary.json:1746 — /FIXME/NOTE Sync\\\"\""
+- [TODO] docs/TODO_REPORT.md:1156 — ] public/automation/todo-summary.json:1750 — ",
+- [TODO] docs/TODO_REPORT.md:1157 — ] public/automation/todo-summary.json:1752 — \","
+- [TODO] docs/TODO_REPORT.md:1158 — ] public/automation/todo-summary.json:1756 — ",
+- [TODO] docs/TODO_REPORT.md:1159 — ] public/automation/todo-summary.json:1758 — _SYNC.md\\\"\""
+- [TODO] docs/TODO_REPORT.md:1160 — ] public/automation/todo-summary.json:1762 — ",
+- [TODO] docs/TODO_REPORT.md:1161 — ] public/automation/todo-summary.json:1764 — \","
+- [FIXME] docs/TODO_REPORT.md:1162 — ] public/automation/todo-summary.json:1768 — ",
+- [FIXME] docs/TODO_REPORT.md:1163 — ] public/automation/todo-summary.json:1770 — scanner\","
+- [TODO] docs/TODO_REPORT.md:1164 — ] public/automation/todo-summary.json:1774 — ",
+- [FIXME] docs/TODO_REPORT.md:1165 — ] public/automation/todo-summary.json:1775 — scanner\"",
+- [TODO] docs/TODO_REPORT.md:1166 — ] public/automation/todo-summary.json:1776 — /FIXME scanner\""
+- [TODO] docs/TODO_REPORT.md:1167 — ] public/automation/todo-summary.json:1780 — ",
+- [TODO] docs/TODO_REPORT.md:1168 — ] public/automation/todo-summary.json:1782 — \","
+- [TODO] docs/TODO_REPORT.md:1169 — ] public/automation/todo-summary.json:1786 — ",
+- [TODO] docs/TODO_REPORT.md:1170 — ] public/automation/todo-summary.json:1788 — -scanner.cjs | cat\""
+- [TODO] docs/TODO_REPORT.md:1171 — ] public/automation/todo-summary.json:1792 — ",
+- [TODO] docs/TODO_REPORT.md:1172 — ] public/automation/todo-summary.json:1794 — \","
+- [TODO] docs/TODO_REPORT.md:1173 — ] public/automation/todo-summary.json:1798 — ",
+- [TODO] docs/TODO_REPORT.md:1174 — ] public/automation/todo-summary.json:1800 — report and content registry [skip ci]\\\"\""
+- [TODO] docs/TODO_REPORT.md:1175 — ] public/automation/todo-summary.json:1804 — ",
+- [TODO] docs/TODO_REPORT.md:1176 — ] public/automation/todo-summary.json:1806 — \","
+- [TODO] docs/TODO_REPORT.md:1177 — ] public/automation/todo-summary.json:1810 — ",
+- [TODO] docs/TODO_REPORT.md:1178 — ] public/automation/todo-summary.json:1816 — ",
+- [TODO] docs/TODO_REPORT.md:1179 — ] public/automation/todo-summary.json:1818 — _REPORT.md\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\" className=\\\"group relative overflow-hidden rounded-2xl border border-"
+- [TODO] docs/TODO_REPORT.md:1180 — ] public/automation/todo-summary.json:1822 — ",
+- [TODO] docs/TODO_REPORT.md:1181 — ] public/automation/todo-summary.json:1824 — \","
+- [TODO] docs/TODO_REPORT.md:1182 — ] public/automation/todo-summary.json:1828 — ",
+- [TODO] docs/TODO_REPORT.md:1183 — ] public/automation/todo-summary.json:1830 — _REPORT.md\\\",\""
+- [TODO] docs/TODO_REPORT.md:1184 — ] public/automation/todo-summary.json:1834 — ",
+- [TODO] docs/TODO_REPORT.md:1185 — ] public/automation/todo-summary.json:1836 — \","
+- [TODO] docs/TODO_REPORT.md:1186 — ] public/automation/todo-summary.json:1840 — ",
+- [TODO] docs/TODO_REPORT.md:1187 — ] public/automation/todo-summary.json:1842 — _REPORT.md\\\",\""
+- [TODO] docs/TODO_REPORT.md:1188 — ] public/automation/todo-summary.json:1846 — ",
+- [TODO] docs/TODO_REPORT.md:1189 — ] public/automation/todo-summary.json:1848 — \","
+- [TODO] docs/TODO_REPORT.md:1190 — ] public/automation/todo-summary.json:1852 — ",
+- [TODO] docs/TODO_REPORT.md:1191 — ] public/automation/todo-summary.json:1854 — _REPORT.md\\\",\""
+- [TODO] docs/TODO_REPORT.md:1192 — ] public/automation/todo-summary.json:1858 — ",
+- [TODO] docs/TODO_REPORT.md:1193 — ] public/automation/todo-summary.json:1860 — \","
+- [TODO] docs/TODO_REPORT.md:1194 — ] public/automation/todo-summary.json:1864 — ",
+- [TODO] docs/TODO_REPORT.md:1195 — ] public/automation/todo-summary.json:1866 — _REPORT.md\\\",\""
+- [TODO] docs/TODO_REPORT.md:1196 — ] public/automation/todo-summary.json:1872 — ",
+- [TODO] docs/TODO_REPORT.md:1197 — ] public/automation/todo-summary.json:1874 — _REPORT.md\","
+- [TODO] docs/TODO_REPORT.md:1198 — ] public/automation/todo-summary.json:1878 — ",
+- [TODO] docs/TODO_REPORT.md:1199 — ] public/automation/todo-summary.json:1880 — _REPORT.md\""
+- [TODO] docs/TODO_REPORT.md:1200 — ] public/automation/todo-summary.json:1883 — -summary-runner.js": [
+- [TODO] docs/TODO_REPORT.md:1201 — ] public/automation/todo-summary.json:1886 — ",
+- [TODO] docs/TODO_REPORT.md:1202 — ] public/automation/todo-summary.json:1887 — -scanner.cjs'));",
+- [TODO] docs/TODO_REPORT.md:1203 — ] public/automation/todo-summary.json:1888 — scan', () => runNode('automation/todo-scanner.cjs'));"
+- [TODO] docs/TODO_REPORT.md:1204 — ] public/automation/todo-summary.json:1891 — -scanner-runner.js": [
+- [TODO] docs/TODO_REPORT.md:1205 — ] public/automation/todo-summary.json:1894 — ",
+- [TODO] docs/TODO_REPORT.md:1206 — ] public/automation/todo-summary.json:1895 — -scanner.cjs'));",
+- [TODO] docs/TODO_REPORT.md:1207 — ] public/automation/todo-summary.json:1896 — scan', () => runNode('automation/todo-scanner.cjs'));"
+- [TODO] docs/TODO_REPORT.md:1208 — ] public/automation/todo-summary.json:1902 — ",
+- [TODO] docs/TODO_REPORT.md:1209 — ] public/automation/todo-summary.json:1904 — -scanner-runner\","
+- [TODO] docs/TODO_REPORT.md:1210 — ] public/automation/todo-summary.json:1908 — ",
+- [TODO] docs/TODO_REPORT.md:1211 — ] public/automation/todo-summary.json:1910 — -summary-runner\","
+- [TODO] docs/TODO_REPORT.md:1212 — ] public/automation/todo-summary.json:1916 — ",
+- [TODO] docs/TODO_REPORT.md:1213 — ] public/automation/todo-summary.json:1918 — -scanner.cjs\","
+- [TODO] docs/TODO_REPORT.md:1214 — ] public/automation/todo-summary.json:1922 — ",
+- [TODO] docs/TODO_REPORT.md:1215 — ] public/automation/todo-summary.json:1924 — -scanner-runner.js\","
+- [TODO] docs/TODO_REPORT.md:1216 — ] public/automation/todo-summary.json:1928 — ",
+- [TODO] docs/TODO_REPORT.md:1217 — ] public/automation/todo-summary.json:1930 — -summary-runner.js\","
+- [TODO] docs/TODO_REPORT.md:1218 — ] public/automation/todo-summary.json:1934 — ",
+- [TODO] docs/TODO_REPORT.md:1219 — ] public/automation/todo-summary.json:1936 — _issue_sync.cjs\","
+- [TODO] docs/TODO_REPORT.md:1220 — ] public/automation/todo-summary.json:1940 — ",
+- [TODO] docs/TODO_REPORT.md:1221 — ] public/automation/todo-summary.json:1942 — -scanner.cjs\","
+- [TODO] docs/TODO_REPORT.md:1222 — ] public/automation/todo-summary.json:1946 — ",
+- [TODO] docs/TODO_REPORT.md:1223 — ] public/automation/todo-summary.json:1948 — -scanner.cjs\","
+- [TODO] docs/TODO_REPORT.md:1224 — ] public/automation/todo-summary.json:1952 — ",
+- [TODO] docs/TODO_REPORT.md:1225 — ] public/automation/todo-summary.json:1954 — -scanner.cjs\","
+- [TODO] docs/TODO_REPORT.md:1226 — ] public/automation/todo-summary.json:1958 — ",
+- [TODO] docs/TODO_REPORT.md:1227 — ] public/automation/todo-summary.json:1960 — -scanner-runner.js\","
+- [TODO] docs/TODO_REPORT.md:1228 — ] public/automation/todo-summary.json:1964 — ",
+- [TODO] docs/TODO_REPORT.md:1229 — ] public/automation/todo-summary.json:1966 — -scanner-runner.js\","
+- [TODO] docs/TODO_REPORT.md:1230 — ] public/automation/todo-summary.json:1970 — ",
+- [TODO] docs/TODO_REPORT.md:1231 — ] public/automation/todo-summary.json:1972 — -summary-runner.js\","
+- [TODO] docs/TODO_REPORT.md:1232 — ] public/automation/todo-summary.json:1976 — ",
+- [TODO] docs/TODO_REPORT.md:1233 — ] public/automation/todo-summary.json:1978 — -summary-runner.js\","
+- [TODO] docs/TODO_REPORT.md:1234 — ] public/automation/todo-summary.json:1982 — ",
+- [TODO] docs/TODO_REPORT.md:1235 — ] public/automation/todo-summary.json:1984 — _issue_sync.cjs\","
+- [TODO] docs/TODO_REPORT.md:1236 — ] public/automation/todo-summary.json:1988 — ",
+- [TODO] docs/TODO_REPORT.md:1237 — ] public/automation/todo-summary.json:1990 — _issue_sync.cjs\","
+- [TODO] docs/TODO_REPORT.md:1238 — ] public/automation/todo-summary.json:1994 — ",
+- [TODO] docs/TODO_REPORT.md:1239 — ] public/automation/todo-summary.json:1996 — _issue_sync.cjs\","
+- [TODO] docs/TODO_REPORT.md:1240 — ] public/automation/todo-summary.json:1999 — -issue-sync.yml": [
+- [TODO] docs/TODO_REPORT.md:1241 — ] public/automation/todo-summary.json:2002 — ",
+- [TODO] docs/TODO_REPORT.md:1242 — ] public/automation/todo-summary.json:2004 — Issue Sync"
+- [TODO] docs/TODO_REPORT.md:1243 — ] public/automation/todo-summary.json:2008 — ",
+- [TODO] docs/TODO_REPORT.md:1244 — ] public/automation/todo-summary.json:2010 — s:"
+- [TODO] docs/TODO_REPORT.md:1245 — ] public/automation/todo-summary.json:2014 — ",
+- [TODO] docs/TODO_REPORT.md:1246 — ] public/automation/todo-summary.json:2016 — report"
+- [TODO] docs/TODO_REPORT.md:1247 — ] public/automation/todo-summary.json:2020 — ",
+- [TODO] docs/TODO_REPORT.md:1248 — ] public/automation/todo-summary.json:2022 — _issue_sync.cjs"
+- [TODO] docs/TODO_REPORT.md:1249 — ] public/automation/todo-summary.json:2026 — ",
+- [TODO] docs/TODO_REPORT.md:1250 — ] public/automation/todo-summary.json:2027 — sync report [skip ci]\"",
+- [TODO] docs/TODO_REPORT.md:1251 — ] public/automation/todo-summary.json:2028 — ): update TODO sync report [skip ci]\""
+- [TODO] docs/TODO_REPORT.md:1252 — ] public/automation/todo-summary.json:2032 — ",
+- [TODO] docs/TODO_REPORT.md:1253 — ] public/automation/todo-summary.json:2034 — Issue"
+- [TODO] docs/TODO_REPORT.md:1254 — ] public/automation/todo-summary.json:2038 — ",
+- [FIXME] docs/TODO_REPORT.md:1255 — ] public/automation/todo-summary.json:2039 — /NOTE Sync\"",
+- [TODO] docs/TODO_REPORT.md:1256 — ] public/automation/todo-summary.json:2040 — /FIXME/NOTE Sync\""
+- [TODO] docs/TODO_REPORT.md:1257 — ] public/automation/todo-summary.json:2044 — ",
+- [TODO] docs/TODO_REPORT.md:1258 — ] public/automation/todo-summary.json:2046 — _SYNC.md\""
+- [TODO] docs/TODO_REPORT.md:1259 — ] public/automation/todo-summary.json:2052 — ",
+- [FIXME] docs/TODO_REPORT.md:1260 — ] public/automation/todo-summary.json:2053 — scanner",
+- [TODO] docs/TODO_REPORT.md:1261 — ] public/automation/todo-summary.json:2054 — /FIXME scanner"
+- [TODO] docs/TODO_REPORT.md:1262 — ] public/automation/todo-summary.json:2058 — ",
+- [TODO] docs/TODO_REPORT.md:1263 — ] public/automation/todo-summary.json:2060 — -scanner.cjs | cat"
+- [TODO] docs/TODO_REPORT.md:1264 — ] public/automation/todo-summary.json:2064 — ",
+- [TODO] docs/TODO_REPORT.md:1265 — ] public/automation/todo-summary.json:2066 — report and content registry [skip ci]\""
+- [TODO] docs/TODO_REPORT.md:1266 — ] public/automation/todo-summary.json:2072 — ",
+- [TODO] docs/TODO_REPORT.md:1267 — ] public/automation/todo-summary.json:2073 — _REPORT</div><div className=\"mt-1 text-sm text-white/75\">Open documentation</div><div className=\"mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90\">Open <span aria-hidden>↗</span></div></a>",
+- [TODO] docs/TODO_REPORT.md:1268 — ] public/automation/todo-summary.json:2074 — _REPORT.md\" target=\"_blank\" rel=\"noopener\" className=\"group relative overflow-hidden rounded-2xl border border-white/10 bg-gradien"
+- [TODO] docs/TODO_REPORT.md:1269 — ] public/automation/todo-summary.json:2080 — ",
+- [TODO] docs/TODO_REPORT.md:1270 — ] public/automation/todo-summary.json:2082 — _REPORT.md\","
+- [TODO] docs/TODO_REPORT.md:1271 — ] public/automation/todo-summary.json:2088 — ",
+- [TODO] docs/TODO_REPORT.md:1272 — ] public/automation/todo-summary.json:2090 — _REPORT.md\","
+- [TODO] docs/TODO_REPORT.md:1273 — ] public/automation/todo-summary.json:2096 — ",
+- [TODO] docs/TODO_REPORT.md:1274 — ] public/automation/todo-summary.json:2098 — _REPORT.md\","
+- [TODO] docs/TODO_REPORT.md:1275 — ] public/automation/todo-summary.json:2104 — ",
+- [TODO] docs/TODO_REPORT.md:1276 — ] public/automation/todo-summary.json:2106 — _REPORT.md\","
+- [TODO] docs/TODO_REPORT.md:1281 — ] public/search/index.json:59 — _REPORT",
+- [TODO] docs/TODO_REPORT.md:1282 — ] public/search/index.json:60 — _REPORT.md",
+- [TODO] docs/TODO_REPORT.md:1283 — ] public/search/index.json:61 — and FIXME Report",
+- [TODO] docs/TODO_REPORT.md:1284 — ] public/search/index.json:62 — and FIXME Report - Generated: 2025-08-11T17:51:48.639Z - Total findings: 345 ## .github/workflows.disabled/autonomous-content-scanner.yml - [TODO] .github/workflows.disabled/autonomous-content-scanner.yml:30 — /FIXME scanner - [TODO] .github/workflows.disabled/autonomous-c"
+
+
+## netlify/functions/functions-manifest.json
+
+- [TODO] netlify/functions/functions-manifest.json:62 — -scanner-runner",
+- [TODO] netlify/functions/functions-manifest.json:63 — -summary-runner",
+
+
+## netlify/functions/todo-scanner-runner.js
+
+- [TODO] netlify/functions/todo-scanner-runner.js:25 — scan', () => runNode('automation/todo-scanner.cjs'));
+
+
+## netlify/functions/todo-summary-runner.js
+
+- [TODO] netlify/functions/todo-summary-runner.js:25 — scan', () => runNode('automation/todo-scanner.cjs'));
+
+
+## pages/index.tsx
+
+- [TODO] pages/index.tsx:204 — Scanner', desc: 'Generates a consolidated TODO report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },
+
+
+## pages/main/front/index.tsx
+
+- [TODO] pages/main/front/index.tsx:786 — _REPORT.md" target="_blank" rel="noopener" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Docs — TODO_REPORT</div><div className="mt-1 text-sm text-white/75">Open documentation</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div></a>
+
+
+## public/automation/content-registry.json
+
+- [TODO] public/automation/content-registry.json:38 — _REPORT.md",
+- [TODO] public/automation/content-registry.json:39 — _REPORT.md"
+
+
+## public/automation/todo-summary.json
+
+- [TODO] public/automation/todo-summary.json:8 — ",
+- [TODO] public/automation/todo-summary.json:9 — report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },",
+- [TODO] public/automation/todo-summary.json:10 — Scanner', desc: 'Generates a consolidated TODO report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },"
+- [TODO] public/automation/todo-summary.json:13 — _REPORT.md": [
+- [TODO] public/automation/todo-summary.json:16 — ",
+- [FIXME] public/automation/todo-summary.json:17 — Report",
+- [TODO] public/automation/todo-summary.json:18 — and FIXME Report"
+- [TODO] public/automation/todo-summary.json:22 — ",
+- [FIXME] public/automation/todo-summary.json:23 — scanner",
+- [TODO] public/automation/todo-summary.json:24 — ] .github/workflows.disabled/autonomous-content-scanner.yml:30 — /FIXME scanner"
+- [TODO] public/automation/todo-summary.json:28 — ",
+- [TODO] public/automation/todo-summary.json:30 — ] .github/workflows.disabled/autonomous-content-scanner.yml:31 — -scanner.cjs | cat"
+- [TODO] public/automation/todo-summary.json:34 — ",
+- [TODO] public/automation/todo-summary.json:36 — ] .github/workflows.disabled/autonomous-content-scanner.yml:40 — report and content registry [skip ci]\""
+- [TODO] public/automation/todo-summary.json:40 — ",
+- [TODO] public/automation/todo-summary.json:42 — -issue-sync.yml"
+- [TODO] public/automation/todo-summary.json:46 — ",
+- [TODO] public/automation/todo-summary.json:47 — -issue-sync.yml:1 — Issue Sync",
+- [TODO] public/automation/todo-summary.json:48 — ] .github/workflows.disabled/todo-issue-sync.yml:1 — Issue Sync"
+- [TODO] public/automation/todo-summary.json:52 — ",
+- [TODO] public/automation/todo-summary.json:53 — -issue-sync.yml:13 — s:",
+- [TODO] public/automation/todo-summary.json:54 — ] .github/workflows.disabled/todo-issue-sync.yml:13 — s:"
+- [TODO] public/automation/todo-summary.json:58 — ",
+- [TODO] public/automation/todo-summary.json:59 — -issue-sync.yml:29 — report",
+- [TODO] public/automation/todo-summary.json:60 — ] .github/workflows.disabled/todo-issue-sync.yml:29 — report"
+- [TODO] public/automation/todo-summary.json:64 — ",
+- [TODO] public/automation/todo-summary.json:65 — -issue-sync.yml:30 — _issue_sync.cjs",
+- [TODO] public/automation/todo-summary.json:66 — ] .github/workflows.disabled/todo-issue-sync.yml:30 — _issue_sync.cjs"
+- [TODO] public/automation/todo-summary.json:70 — ",
+- [TODO] public/automation/todo-summary.json:71 — -issue-sync.yml:38 — ): update TODO sync report [skip ci]\"",
+- [TODO] public/automation/todo-summary.json:72 — ] .github/workflows.disabled/todo-issue-sync.yml:38 — ): update TODO sync report [skip ci]\""
+- [TODO] public/automation/todo-summary.json:76 — ",
+- [TODO] public/automation/todo-summary.json:77 — -issue-sync.yml:42 — Issue",
+- [TODO] public/automation/todo-summary.json:78 — ] .github/workflows.disabled/todo-issue-sync.yml:42 — Issue"
+- [TODO] public/automation/todo-summary.json:82 — ",
+- [TODO] public/automation/todo-summary.json:83 — -issue-sync.yml:47 — /FIXME/NOTE Sync\"",
+- [TODO] public/automation/todo-summary.json:84 — ] .github/workflows.disabled/todo-issue-sync.yml:47 — /FIXME/NOTE Sync\""
+- [TODO] public/automation/todo-summary.json:88 — ",
+- [TODO] public/automation/todo-summary.json:89 — -issue-sync.yml:48 — _SYNC.md\"",
+- [TODO] public/automation/todo-summary.json:90 — ] .github/workflows.disabled/todo-issue-sync.yml:48 — _SYNC.md\""
+- [TODO] public/automation/todo-summary.json:94 — ",
+- [TODO] public/automation/todo-summary.json:96 — ] data/reports/external-links/external-links-1754934673584.json:142 — _REPORT.md\","
+- [TODO] public/automation/todo-summary.json:100 — ",
+- [TODO] public/automation/todo-summary.json:102 — ] data/reports/external-links/external-links-1754934698424.json:127 — _REPORT.md\","
+- [TODO] public/automation/todo-summary.json:106 — ",
+- [TODO] public/automation/todo-summary.json:108 — ] data/reports/external-links/latest.json:127 — _REPORT.md\","
+- [TODO] public/automation/todo-summary.json:112 — ",
+- [TODO] public/automation/todo-summary.json:114 — ] data/reports/link-sentinel/report-2025-08-11T17-51-16-470Z.json:100 — _REPORT.md\","
+- [TODO] public/automation/todo-summary.json:118 — ",
+- [TODO] public/automation/todo-summary.json:120 — ] data/reports/repo-knowledge-graph.json:225 — -scanner.cjs\","
+- [TODO] public/automation/todo-summary.json:124 — ",
+- [TODO] public/automation/todo-summary.json:126 — ] data/reports/repo-knowledge-graph.json:473 — -scanner-runner.js\","
+- [TODO] public/automation/todo-summary.json:130 — ",
+- [TODO] public/automation/todo-summary.json:132 — ] data/reports/repo-knowledge-graph.json:477 — -summary-runner.js\","
+- [TODO] public/automation/todo-summary.json:136 — ",
+- [TODO] public/automation/todo-summary.json:138 — ] data/reports/repo-knowledge-graph.json:597 — _issue_sync.cjs\","
+- [TODO] public/automation/todo-summary.json:142 — ",
+- [TODO] public/automation/todo-summary.json:144 — ] data/reports/repo-knowledge-graph.json:1173 — -scanner.cjs\","
+- [TODO] public/automation/todo-summary.json:148 — ",
+- [TODO] public/automation/todo-summary.json:150 — ] data/reports/repo-knowledge-graph.json:1178 — -scanner.cjs\","
+- [TODO] public/automation/todo-summary.json:154 — ",
+- [TODO] public/automation/todo-summary.json:156 — ] data/reports/repo-knowledge-graph.json:1183 — -scanner.cjs\","
+- [TODO] public/automation/todo-summary.json:160 — ",
+- [TODO] public/automation/todo-summary.json:162 — ] data/reports/repo-knowledge-graph.json:1703 — -scanner-runner.js\","
+- [TODO] public/automation/todo-summary.json:166 — ",
+- [TODO] public/automation/todo-summary.json:168 — ] data/reports/repo-knowledge-graph.json:1708 — -scanner-runner.js\","
+- [TODO] public/automation/todo-summary.json:172 — ",
+- [TODO] public/automation/todo-summary.json:174 — ] data/reports/repo-knowledge-graph.json:1713 — -summary-runner.js\","
+- [TODO] public/automation/todo-summary.json:178 — ",
+- [TODO] public/automation/todo-summary.json:180 — ] data/reports/repo-knowledge-graph.json:1718 — -summary-runner.js\","
+- [TODO] public/automation/todo-summary.json:184 — ",
+- [TODO] public/automation/todo-summary.json:186 — ] data/reports/repo-knowledge-graph.json:1878 — _issue_sync.cjs\","
+- [TODO] public/automation/todo-summary.json:190 — ",
+- [TODO] public/automation/todo-summary.json:192 — ] data/reports/repo-knowledge-graph.json:1883 — _issue_sync.cjs\","
+- [TODO] public/automation/todo-summary.json:196 — ",
+- [TODO] public/automation/todo-summary.json:198 — ] data/reports/repo-knowledge-graph.json:1888 — _issue_sync.cjs\","
+- [TODO] public/automation/todo-summary.json:202 — ",
+- [TODO] public/automation/todo-summary.json:204 — ] docs/CHANGELOG_AI.md:131 — issue sync, autonomous release, and keepalive workflows (09ccba6)"
+- [TODO] public/automation/todo-summary.json:208 — ",
+- [TODO] public/automation/todo-summary.json:210 — ] docs/CHANGELOG_AI.md:296 — issue sync, autonomous release, and keepalive workflows (09ccba6)"
+- [TODO] public/automation/todo-summary.json:214 — ",
+- [TODO] public/automation/todo-summary.json:216 — _REPORT.md"
+- [TODO] public/automation/todo-summary.json:220 — ",
+- [TODO] public/automation/todo-summary.json:221 — _REPORT.md:1 — and FIXME Report",
+- [TODO] public/automation/todo-summary.json:222 — ] docs/TODO_REPORT.md:1 — and FIXME Report"
+- [TODO] public/automation/todo-summary.json:226 — ",
+- [TODO] public/automation/todo-summary.json:227 — _REPORT.md:8 — ] .github/workflows.disabled/autonomous-content-scanner.yml:30 — /FIXME scanner",
+- [TODO] public/automation/todo-summary.json:228 — ] docs/TODO_REPORT.md:8 — ] .github/workflows.disabled/autonomous-content-scanner.yml:30 — /FIXME scanner"
+- [TODO] public/automation/todo-summary.json:232 — ",
+- [TODO] public/automation/todo-summary.json:233 — _REPORT.md:9 — ] .github/workflows.disabled/autonomous-content-scanner.yml:31 — -scanner.cjs | cat",
+- [TODO] public/automation/todo-summary.json:234 — ] docs/TODO_REPORT.md:9 — ] .github/workflows.disabled/autonomous-content-scanner.yml:31 — -scanner.cjs | cat"
+- [TODO] public/automation/todo-summary.json:238 — ",
+- [TODO] public/automation/todo-summary.json:239 — _REPORT.md:10 — ] .github/workflows.disabled/autonomous-content-scanner.yml:40 — report and content registry [skip ci]\"",
+- [TODO] public/automation/todo-summary.json:240 — ] docs/TODO_REPORT.md:10 — ] .github/workflows.disabled/autonomous-content-scanner.yml:40 — report and content registry [skip ci]\""
+- [TODO] public/automation/todo-summary.json:244 — ",
+- [TODO] public/automation/todo-summary.json:245 — _REPORT.md:13 — -issue-sync.yml",
+- [TODO] public/automation/todo-summary.json:246 — ] docs/TODO_REPORT.md:13 — -issue-sync.yml"
+- [TODO] public/automation/todo-summary.json:250 — ",
+- [TODO] public/automation/todo-summary.json:251 — _REPORT.md:15 — ] .github/workflows.disabled/todo-issue-sync.yml:1 — Issue Sync",
+- [TODO] public/automation/todo-summary.json:252 — ] docs/TODO_REPORT.md:15 — ] .github/workflows.disabled/todo-issue-sync.yml:1 — Issue Sync"
+- [TODO] public/automation/todo-summary.json:256 — ",
+- [TODO] public/automation/todo-summary.json:257 — _REPORT.md:16 — ] .github/workflows.disabled/todo-issue-sync.yml:13 — s:",
+- [TODO] public/automation/todo-summary.json:258 — ] docs/TODO_REPORT.md:16 — ] .github/workflows.disabled/todo-issue-sync.yml:13 — s:"
+- [TODO] public/automation/todo-summary.json:262 — ",
+- [TODO] public/automation/todo-summary.json:263 — _REPORT.md:17 — ] .github/workflows.disabled/todo-issue-sync.yml:29 — report",
+- [TODO] public/automation/todo-summary.json:264 — ] docs/TODO_REPORT.md:17 — ] .github/workflows.disabled/todo-issue-sync.yml:29 — report"
+- [TODO] public/automation/todo-summary.json:268 — ",
+- [TODO] public/automation/todo-summary.json:269 — _REPORT.md:18 — ] .github/workflows.disabled/todo-issue-sync.yml:30 — _issue_sync.cjs",
+- [TODO] public/automation/todo-summary.json:270 — ] docs/TODO_REPORT.md:18 — ] .github/workflows.disabled/todo-issue-sync.yml:30 — _issue_sync.cjs"
+- [TODO] public/automation/todo-summary.json:274 — ",
+- [TODO] public/automation/todo-summary.json:275 — _REPORT.md:19 — ] .github/workflows.disabled/todo-issue-sync.yml:38 — ): update TODO sync report [skip ci]\"",
+- [TODO] public/automation/todo-summary.json:276 — ] docs/TODO_REPORT.md:19 — ] .github/workflows.disabled/todo-issue-sync.yml:38 — ): update TODO sync report [skip ci]\""
+- [TODO] public/automation/todo-summary.json:280 — ",
+- [TODO] public/automation/todo-summary.json:281 — _REPORT.md:20 — ] .github/workflows.disabled/todo-issue-sync.yml:42 — Issue",
+- [TODO] public/automation/todo-summary.json:282 — ] docs/TODO_REPORT.md:20 — ] .github/workflows.disabled/todo-issue-sync.yml:42 — Issue"
+- [TODO] public/automation/todo-summary.json:286 — ",
+- [TODO] public/automation/todo-summary.json:287 — _REPORT.md:21 — ] .github/workflows.disabled/todo-issue-sync.yml:47 — /FIXME/NOTE Sync\"",
+- [TODO] public/automation/todo-summary.json:288 — ] docs/TODO_REPORT.md:21 — ] .github/workflows.disabled/todo-issue-sync.yml:47 — /FIXME/NOTE Sync\""
+- [TODO] public/automation/todo-summary.json:292 — ",
+- [TODO] public/automation/todo-summary.json:293 — _REPORT.md:22 — ] .github/workflows.disabled/todo-issue-sync.yml:48 — _SYNC.md\"",
+- [TODO] public/automation/todo-summary.json:294 — ] docs/TODO_REPORT.md:22 — ] .github/workflows.disabled/todo-issue-sync.yml:48 — _SYNC.md\""
+- [TODO] public/automation/todo-summary.json:298 — ",
+- [TODO] public/automation/todo-summary.json:299 — _REPORT.md:27 — ] data/reports/external-links/external-links-1754934673584.json:142 — _REPORT.md\",",
+- [TODO] public/automation/todo-summary.json:300 — ] docs/TODO_REPORT.md:27 — ] data/reports/external-links/external-links-1754934673584.json:142 — _REPORT.md\","
+- [TODO] public/automation/todo-summary.json:304 — ",
+- [TODO] public/automation/todo-summary.json:305 — _REPORT.md:32 — ] data/reports/external-links/external-links-1754934698424.json:127 — _REPORT.md\",",
+- [TODO] public/automation/todo-summary.json:306 — ] docs/TODO_REPORT.md:32 — ] data/reports/external-links/external-links-1754934698424.json:127 — _REPORT.md\","
+- [TODO] public/automation/todo-summary.json:310 — ",
+- [TODO] public/automation/todo-summary.json:311 — _REPORT.md:37 — ] data/reports/external-links/latest.json:127 — _REPORT.md\",",
+- [TODO] public/automation/todo-summary.json:312 — ] docs/TODO_REPORT.md:37 — ] data/reports/external-links/latest.json:127 — _REPORT.md\","
+- [TODO] public/automation/todo-summary.json:316 — ",
+- [TODO] public/automation/todo-summary.json:317 — _REPORT.md:42 — ] data/reports/link-sentinel/report-2025-08-11T17-51-16-470Z.json:100 — _REPORT.md\",",
+- [TODO] public/automation/todo-summary.json:318 — ] docs/TODO_REPORT.md:42 — ] data/reports/link-sentinel/report-2025-08-11T17-51-16-470Z.json:100 — _REPORT.md\","
+- [TODO] public/automation/todo-summary.json:322 — ",
+- [TODO] public/automation/todo-summary.json:323 — _REPORT.md:47 — ] data/reports/repo-knowledge-graph.json:225 — -scanner.cjs\",",
+- [TODO] public/automation/todo-summary.json:324 — ] docs/TODO_REPORT.md:47 — ] data/reports/repo-knowledge-graph.json:225 — -scanner.cjs\","
+- [TODO] public/automation/todo-summary.json:328 — ",
+- [TODO] public/automation/todo-summary.json:329 — _REPORT.md:48 — ] data/reports/repo-knowledge-graph.json:473 — -scanner-runner.js\",",
+- [TODO] public/automation/todo-summary.json:330 — ] docs/TODO_REPORT.md:48 — ] data/reports/repo-knowledge-graph.json:473 — -scanner-runner.js\","
+- [TODO] public/automation/todo-summary.json:334 — ",
+- [TODO] public/automation/todo-summary.json:335 — _REPORT.md:49 — ] data/reports/repo-knowledge-graph.json:477 — -summary-runner.js\",",
+- [TODO] public/automation/todo-summary.json:336 — ] docs/TODO_REPORT.md:49 — ] data/reports/repo-knowledge-graph.json:477 — -summary-runner.js\","
+- [TODO] public/automation/todo-summary.json:340 — ",
+- [TODO] public/automation/todo-summary.json:341 — _REPORT.md:50 — ] data/reports/repo-knowledge-graph.json:597 — _issue_sync.cjs\",",
+- [TODO] public/automation/todo-summary.json:342 — ] docs/TODO_REPORT.md:50 — ] data/reports/repo-knowledge-graph.json:597 — _issue_sync.cjs\","
+- [TODO] public/automation/todo-summary.json:346 — ",
+- [TODO] public/automation/todo-summary.json:347 — _REPORT.md:51 — ] data/reports/repo-knowledge-graph.json:1173 — -scanner.cjs\",",
+- [TODO] public/automation/todo-summary.json:348 — ] docs/TODO_REPORT.md:51 — ] data/reports/repo-knowledge-graph.json:1173 — -scanner.cjs\","
+- [TODO] public/automation/todo-summary.json:352 — ",
+- [TODO] public/automation/todo-summary.json:353 — _REPORT.md:52 — ] data/reports/repo-knowledge-graph.json:1178 — -scanner.cjs\",",
+- [TODO] public/automation/todo-summary.json:354 — ] docs/TODO_REPORT.md:52 — ] data/reports/repo-knowledge-graph.json:1178 — -scanner.cjs\","
+- [TODO] public/automation/todo-summary.json:358 — ",
+- [TODO] public/automation/todo-summary.json:359 — _REPORT.md:53 — ] data/reports/repo-knowledge-graph.json:1183 — -scanner.cjs\",",
+- [TODO] public/automation/todo-summary.json:360 — ] docs/TODO_REPORT.md:53 — ] data/reports/repo-knowledge-graph.json:1183 — -scanner.cjs\","
+- [TODO] public/automation/todo-summary.json:364 — ",
+- [TODO] public/automation/todo-summary.json:365 — _REPORT.md:54 — ] data/reports/repo-knowledge-graph.json:1703 — -scanner-runner.js\",",
+- [TODO] public/automation/todo-summary.json:366 — ] docs/TODO_REPORT.md:54 — ] data/reports/repo-knowledge-graph.json:1703 — -scanner-runner.js\","
+- [TODO] public/automation/todo-summary.json:370 — ",
+- [TODO] public/automation/todo-summary.json:371 — _REPORT.md:55 — ] data/reports/repo-knowledge-graph.json:1708 — -scanner-runner.js\",",
+- [TODO] public/automation/todo-summary.json:372 — ] docs/TODO_REPORT.md:55 — ] data/reports/repo-knowledge-graph.json:1708 — -scanner-runner.js\","
+- [TODO] public/automation/todo-summary.json:376 — ",
+- [TODO] public/automation/todo-summary.json:377 — _REPORT.md:56 — ] data/reports/repo-knowledge-graph.json:1713 — -summary-runner.js\",",
+- [TODO] public/automation/todo-summary.json:378 — ] docs/TODO_REPORT.md:56 — ] data/reports/repo-knowledge-graph.json:1713 — -summary-runner.js\","
+- [TODO] public/automation/todo-summary.json:382 — ",
+- [TODO] public/automation/todo-summary.json:383 — _REPORT.md:57 — ] data/reports/repo-knowledge-graph.json:1718 — -summary-runner.js\",",
+- [TODO] public/automation/todo-summary.json:384 — ] docs/TODO_REPORT.md:57 — ] data/reports/repo-knowledge-graph.json:1718 — -summary-runner.js\","
+- [TODO] public/automation/todo-summary.json:388 — ",
+- [TODO] public/automation/todo-summary.json:389 — _REPORT.md:58 — ] data/reports/repo-knowledge-graph.json:1878 — _issue_sync.cjs\",",
+- [TODO] public/automation/todo-summary.json:390 — ] docs/TODO_REPORT.md:58 — ] data/reports/repo-knowledge-graph.json:1878 — _issue_sync.cjs\","
+- [TODO] public/automation/todo-summary.json:394 — ",
+- [TODO] public/automation/todo-summary.json:395 — _REPORT.md:59 — ] data/reports/repo-knowledge-graph.json:1883 — _issue_sync.cjs\",",
+- [TODO] public/automation/todo-summary.json:396 — ] docs/TODO_REPORT.md:59 — ] data/reports/repo-knowledge-graph.json:1883 — _issue_sync.cjs\","
+- [TODO] public/automation/todo-summary.json:400 — ",
+- [TODO] public/automation/todo-summary.json:401 — _REPORT.md:60 — ] data/reports/repo-knowledge-graph.json:1888 — _issue_sync.cjs\",",
+- [TODO] public/automation/todo-summary.json:402 — ] docs/TODO_REPORT.md:60 — ] data/reports/repo-knowledge-graph.json:1888 — _issue_sync.cjs\","
+- [TODO] public/automation/todo-summary.json:406 — ",
+- [TODO] public/automation/todo-summary.json:407 — _REPORT.md:65 — ] docs/CHANGELOG_AI.md:131 — issue sync, autonomous release, and keepalive workflows (09ccba6)",
+- [TODO] public/automation/todo-summary.json:408 — ] docs/TODO_REPORT.md:65 — ] docs/CHANGELOG_AI.md:131 — issue sync, autonomous release, and keepalive workflows (09ccba6)"
+- [TODO] public/automation/todo-summary.json:412 — ",
+- [TODO] public/automation/todo-summary.json:413 — _REPORT.md:66 — ] docs/CHANGELOG_AI.md:296 — issue sync, autonomous release, and keepalive workflows (09ccba6)",
+- [TODO] public/automation/todo-summary.json:414 — ] docs/TODO_REPORT.md:66 — ] docs/CHANGELOG_AI.md:296 — issue sync, autonomous release, and keepalive workflows (09ccba6)"
+- [TODO] public/automation/todo-summary.json:418 — ",
+- [TODO] public/automation/todo-summary.json:419 — _REPORT.md:69 — _REPORT.md",
+- [TODO] public/automation/todo-summary.json:420 — ] docs/TODO_REPORT.md:69 — _REPORT.md"
+- [TODO] public/automation/todo-summary.json:424 — ",
+- [TODO] public/automation/todo-summary.json:425 — _REPORT.md:71 — ] docs/TODO_REPORT.md:1 — and FIXME Report",
+- [TODO] public/automation/todo-summary.json:426 — ] docs/TODO_REPORT.md:71 — ] docs/TODO_REPORT.md:1 — and FIXME Report"
+- [TODO] public/automation/todo-summary.json:430 — ",
+- [TODO] public/automation/todo-summary.json:431 — _REPORT.md:72 — ] docs/TODO_REPORT.md:8 — ] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner",
+- [TODO] public/automation/todo-summary.json:432 — ] docs/TODO_REPORT.md:72 — ] docs/TODO_REPORT.md:8 — ] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner"
+- [TODO] public/automation/todo-summary.json:436 — ",
+- [TODO] public/automation/todo-summary.json:437 — _REPORT.md:73 — ] docs/TODO_REPORT.md:9 — ] .github/workflows/autonomous-content-scanner.yml:31 — -scanner.cjs | cat",
+- [TODO] public/automation/todo-summary.json:438 — ] docs/TODO_REPORT.md:73 — ] docs/TODO_REPORT.md:9 — ] .github/workflows/autonomous-content-scanner.yml:31 — -scanner.cjs | cat"
+- [TODO] public/automation/todo-summary.json:442 — ",
+- [TODO] public/automation/todo-summary.json:443 — _REPORT.md:74 — ] docs/TODO_REPORT.md:10 — ] .github/workflows/autonomous-content-scanner.yml:40 — report and content registry [skip ci]\"",
+- [TODO] public/automation/todo-summary.json:444 — ] docs/TODO_REPORT.md:74 — ] docs/TODO_REPORT.md:10 — ] .github/workflows/autonomous-content-scanner.yml:40 — report and content registry [skip ci]\""
+- [TODO] public/automation/todo-summary.json:448 — ",
+- [TODO] public/automation/todo-summary.json:449 — _REPORT.md:75 — ] docs/TODO_REPORT.md:13 — -issue-sync.yml",
+- [TODO] public/automation/todo-summary.json:450 — ] docs/TODO_REPORT.md:75 — ] docs/TODO_REPORT.md:13 — -issue-sync.yml"
+- [TODO] public/automation/todo-summary.json:454 — ",
+- [TODO] public/automation/todo-summary.json:455 — _REPORT.md:76 — ] docs/TODO_REPORT.md:15 — ] .github/workflows/todo-issue-sync.yml:1 — Issue Sync",
+- [TODO] public/automation/todo-summary.json:456 — ] docs/TODO_REPORT.md:76 — ] docs/TODO_REPORT.md:15 — ] .github/workflows/todo-issue-sync.yml:1 — Issue Sync"
+- [TODO] public/automation/todo-summary.json:460 — ",
+- [TODO] public/automation/todo-summary.json:461 — _REPORT.md:77 — ] docs/TODO_REPORT.md:16 — ] .github/workflows/todo-issue-sync.yml:13 — s:",
+- [TODO] public/automation/todo-summary.json:462 — ] docs/TODO_REPORT.md:77 — ] docs/TODO_REPORT.md:16 — ] .github/workflows/todo-issue-sync.yml:13 — s:"
+- [TODO] public/automation/todo-summary.json:466 — ",
+- [TODO] public/automation/todo-summary.json:467 — _REPORT.md:78 — ] docs/TODO_REPORT.md:17 — ] .github/workflows/todo-issue-sync.yml:29 — report",
+- [TODO] public/automation/todo-summary.json:468 — ] docs/TODO_REPORT.md:78 — ] docs/TODO_REPORT.md:17 — ] .github/workflows/todo-issue-sync.yml:29 — report"
+- [TODO] public/automation/todo-summary.json:472 — ",
+- [TODO] public/automation/todo-summary.json:473 — _REPORT.md:79 — ] docs/TODO_REPORT.md:18 — ] .github/workflows/todo-issue-sync.yml:30 — _issue_sync.cjs",
+- [TODO] public/automation/todo-summary.json:474 — ] docs/TODO_REPORT.md:79 — ] docs/TODO_REPORT.md:18 — ] .github/workflows/todo-issue-sync.yml:30 — _issue_sync.cjs"
+- [TODO] public/automation/todo-summary.json:478 — ",
+- [TODO] public/automation/todo-summary.json:479 — _REPORT.md:80 — ] docs/TODO_REPORT.md:19 — ] .github/workflows/todo-issue-sync.yml:38 — ): update TODO sync report [skip ci]\"",
+- [TODO] public/automation/todo-summary.json:480 — ] docs/TODO_REPORT.md:80 — ] docs/TODO_REPORT.md:19 — ] .github/workflows/todo-issue-sync.yml:38 — ): update TODO sync report [skip ci]\""
+- [TODO] public/automation/todo-summary.json:484 — ",
+- [TODO] public/automation/todo-summary.json:485 — _REPORT.md:81 — ] docs/TODO_REPORT.md:20 — ] .github/workflows/todo-issue-sync.yml:42 — Issue",
+- [TODO] public/automation/todo-summary.json:486 — ] docs/TODO_REPORT.md:81 — ] docs/TODO_REPORT.md:20 — ] .github/workflows/todo-issue-sync.yml:42 — Issue"
+- [TODO] public/automation/todo-summary.json:490 — ",
+- [TODO] public/automation/todo-summary.json:491 — _REPORT.md:82 — ] docs/TODO_REPORT.md:21 — ] .github/workflows/todo-issue-sync.yml:47 — /FIXME/NOTE Sync\"",
+- [TODO] public/automation/todo-summary.json:492 — ] docs/TODO_REPORT.md:82 — ] docs/TODO_REPORT.md:21 — ] .github/workflows/todo-issue-sync.yml:47 — /FIXME/NOTE Sync\""
+- [TODO] public/automation/todo-summary.json:496 — ",
+- [TODO] public/automation/todo-summary.json:497 — _REPORT.md:83 — ] docs/TODO_REPORT.md:22 — ] .github/workflows/todo-issue-sync.yml:48 — _SYNC.md\"",
+- [TODO] public/automation/todo-summary.json:498 — ] docs/TODO_REPORT.md:83 — ] docs/TODO_REPORT.md:22 — ] .github/workflows/todo-issue-sync.yml:48 — _SYNC.md\""
+- [TODO] public/automation/todo-summary.json:502 — ",
+- [TODO] public/automation/todo-summary.json:503 — _REPORT.md:84 — ] docs/TODO_REPORT.md:27 — ] package.json:225 — \": \"node automation/todo-scanner.cjs\",",
+- [TODO] public/automation/todo-summary.json:504 — ] docs/TODO_REPORT.md:84 — ] docs/TODO_REPORT.md:27 — ] package.json:225 — \": \"node automation/todo-scanner.cjs\","
+- [TODO] public/automation/todo-summary.json:508 — ",
+- [TODO] public/automation/todo-summary.json:509 — _REPORT.md:85 — ] docs/TODO_REPORT.md:28 — ] package.json:227 — && npm run scan:registry\"",
+- [TODO] public/automation/todo-summary.json:510 — ] docs/TODO_REPORT.md:85 — ] docs/TODO_REPORT.md:28 — ] package.json:227 — && npm run scan:registry\""
+- [TODO] public/automation/todo-summary.json:514 — ",
+- [TODO] public/automation/todo-summary.json:515 — _REPORT.md:90 — ] netlify/functions/functions-manifest.json:62 — -scanner-runner\",",
+- [TODO] public/automation/todo-summary.json:516 — ] docs/TODO_REPORT.md:90 — ] netlify/functions/functions-manifest.json:62 — -scanner-runner\","
+- [TODO] public/automation/todo-summary.json:520 — ",
+- [TODO] public/automation/todo-summary.json:521 — _REPORT.md:91 — ] netlify/functions/functions-manifest.json:63 — -summary-runner\",",
+- [TODO] public/automation/todo-summary.json:522 — ] docs/TODO_REPORT.md:91 — ] netlify/functions/functions-manifest.json:63 — -summary-runner\","
+- [TODO] public/automation/todo-summary.json:526 — ",
+- [TODO] public/automation/todo-summary.json:527 — _REPORT.md:94 — -scanner-runner.js",
+- [TODO] public/automation/todo-summary.json:528 — ] docs/TODO_REPORT.md:94 — -scanner-runner.js"
+- [TODO] public/automation/todo-summary.json:532 — ",
+- [TODO] public/automation/todo-summary.json:533 — _REPORT.md:96 — ] netlify/functions/todo-scanner-runner.js:25 — scan', () => runNode('automation/todo-scanner.cjs'));",
+- [TODO] public/automation/todo-summary.json:534 — ] docs/TODO_REPORT.md:96 — ] netlify/functions/todo-scanner-runner.js:25 — scan', () => runNode('automation/todo-scanner.cjs'));"
+- [TODO] public/automation/todo-summary.json:538 — ",
+- [TODO] public/automation/todo-summary.json:539 — _REPORT.md:99 — -summary-runner.js",
+- [TODO] public/automation/todo-summary.json:540 — ] docs/TODO_REPORT.md:99 — -summary-runner.js"
+- [TODO] public/automation/todo-summary.json:544 — ",
+- [TODO] public/automation/todo-summary.json:545 — _REPORT.md:101 — ] netlify/functions/todo-summary-runner.js:25 — scan', () => runNode('automation/todo-scanner.cjs'));",
+- [TODO] public/automation/todo-summary.json:546 — ] docs/TODO_REPORT.md:101 — ] netlify/functions/todo-summary-runner.js:25 — scan', () => runNode('automation/todo-scanner.cjs'));"
+- [TODO] public/automation/todo-summary.json:550 — ",
+- [TODO] public/automation/todo-summary.json:551 — _REPORT.md:106 — ] pages/index.tsx:204 — Scanner', desc: 'Generates a consolidated TODO report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },",
+- [TODO] public/automation/todo-summary.json:552 — ] docs/TODO_REPORT.md:106 — ] pages/index.tsx:204 — Scanner', desc: 'Generates a consolidated TODO report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },"
+- [TODO] public/automation/todo-summary.json:556 — ",
+- [TODO] public/automation/todo-summary.json:557 — _REPORT.md:111 — ] pages/main/front/index.tsx:786 — _REPORT.md\" target=\"_blank\" rel=\"noopener\" className=\"group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring\"><div className=\"text-base font-semibold\">Docs — TODO_REPORT</div><div className=\"mt-1 text-sm text-white/75\">Open documentation</div><div className=\"mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90\">Open <span aria-hidden>↗</span></div></a>",
+- [TODO] public/automation/todo-summary.json:558 — ] docs/TODO_REPORT.md:111 — ] pages/main/front/index.tsx:786 — _REPORT.md\" target=\"_blank\" rel=\"noopener\" className=\"group relative overflow-hidden rounded-2xl border border-white/10 bg-gradien"
+- [TODO] public/automation/todo-summary.json:562 — ",
+- [TODO] public/automation/todo-summary.json:563 — _REPORT.md:116 — ] public/automation/content-registry.json:38 — _REPORT.md\",",
+- [TODO] public/automation/todo-summary.json:564 — ] docs/TODO_REPORT.md:116 — ] public/automation/content-registry.json:38 — _REPORT.md\","
+- [TODO] public/automation/todo-summary.json:568 — ",
+- [TODO] public/automation/todo-summary.json:569 — _REPORT.md:117 — ] public/automation/content-registry.json:39 — _REPORT.md\"",
+- [TODO] public/automation/todo-summary.json:570 — ] docs/TODO_REPORT.md:117 — ] public/automation/content-registry.json:39 — _REPORT.md\""
+- [TODO] public/automation/todo-summary.json:574 — ",
+- [TODO] public/automation/todo-summary.json:575 — _REPORT.md:120 — -summary.json",
+- [TODO] public/automation/todo-summary.json:576 — ] docs/TODO_REPORT.md:120 — -summary.json"
+- [TODO] public/automation/todo-summary.json:580 — ",
+- [TODO] public/automation/todo-summary.json:581 — _REPORT.md:122 — ] public/automation/todo-summary.json:8 — \",",
+- [TODO] public/automation/todo-summary.json:582 — ] docs/TODO_REPORT.md:122 — ] public/automation/todo-summary.json:8 — \","
+- [TODO] public/automation/todo-summary.json:586 — ",
+- [TODO] public/automation/todo-summary.json:587 — _REPORT.md:123 — ] public/automation/todo-summary.json:9 — -scanner.cjs\\\",\",",
+- [TODO] public/automation/todo-summary.json:588 — ] docs/TODO_REPORT.md:123 — ] public/automation/todo-summary.json:9 — -scanner.cjs\\\",\","
+- [TODO] public/automation/todo-summary.json:592 — ",
+- [TODO] public/automation/todo-summary.json:593 — _REPORT.md:124 — ] public/automation/todo-summary.json:10 — \\\": \\\"node automation/todo-scanner.cjs\\\",\"",
+- [TODO] public/automation/todo-summary.json:594 — ] docs/TODO_REPORT.md:124 — ] public/automation/todo-summary.json:10 — \\\": \\\"node automation/todo-scanner.cjs\\\",\""
+- [TODO] public/automation/todo-summary.json:598 — ",
+- [TODO] public/automation/todo-summary.json:599 — _REPORT.md:125 — ] public/automation/todo-summary.json:14 — \",",
+- [TODO] public/automation/todo-summary.json:600 — ] docs/TODO_REPORT.md:125 — ] public/automation/todo-summary.json:14 — \","
+- [TODO] public/automation/todo-summary.json:604 — ",
+- [TODO] public/automation/todo-summary.json:605 — _REPORT.md:126 — ] public/automation/todo-summary.json:16 — && npm run scan:registry\\\"\"",
+- [TODO] public/automation/todo-summary.json:606 — ] docs/TODO_REPORT.md:126 — ] public/automation/todo-summary.json:16 — && npm run scan:registry\\\"\""
+- [TODO] public/automation/todo-summary.json:610 — ",
+- [TODO] public/automation/todo-summary.json:611 — _REPORT.md:127 — ] public/automation/todo-summary.json:19 — -issue-sync.yml\": [",
+- [TODO] public/automation/todo-summary.json:612 — ] docs/TODO_REPORT.md:127 — ] public/automation/todo-summary.json:19 — -issue-sync.yml\": ["
+- [TODO] public/automation/todo-summary.json:616 — ",
+- [TODO] public/automation/todo-summary.json:617 — _REPORT.md:128 — ] public/automation/todo-summary.json:22 — \",",
+- [TODO] public/automation/todo-summary.json:618 — ] docs/TODO_REPORT.md:128 — ] public/automation/todo-summary.json:22 — \","
+- [TODO] public/automation/todo-summary.json:622 — ",
+- [TODO] public/automation/todo-summary.json:623 — _REPORT.md:129 — ] public/automation/todo-summary.json:24 — Issue Sync\"",
+- [TODO] public/automation/todo-summary.json:624 — ] docs/TODO_REPORT.md:129 — ] public/automation/todo-summary.json:24 — Issue Sync\""
+- [TODO] public/automation/todo-summary.json:628 — ",
+- [TODO] public/automation/todo-summary.json:629 — _REPORT.md:130 — ] public/automation/todo-summary.json:28 — \",",
+- [TODO] public/automation/todo-summary.json:630 — ] docs/TODO_REPORT.md:130 — ] public/automation/todo-summary.json:28 — \","
+- [TODO] public/automation/todo-summary.json:634 — ",
+- [TODO] public/automation/todo-summary.json:635 — _REPORT.md:131 — ] public/automation/todo-summary.json:30 — s:\"",
+- [TODO] public/automation/todo-summary.json:636 — ] docs/TODO_REPORT.md:131 — ] public/automation/todo-summary.json:30 — s:\""
+- [TODO] public/automation/todo-summary.json:640 — ",
+- [TODO] public/automation/todo-summary.json:641 — _REPORT.md:132 — ] public/automation/todo-summary.json:34 — \",",
+- [TODO] public/automation/todo-summary.json:642 — ] docs/TODO_REPORT.md:132 — ] public/automation/todo-summary.json:34 — \","
+- [TODO] public/automation/todo-summary.json:646 — ",
+- [TODO] public/automation/todo-summary.json:647 — _REPORT.md:133 — ] public/automation/todo-summary.json:36 — report\"",
+- [TODO] public/automation/todo-summary.json:648 — ] docs/TODO_REPORT.md:133 — ] public/automation/todo-summary.json:36 — report\""
+- [TODO] public/automation/todo-summary.json:652 — ",
+- [TODO] public/automation/todo-summary.json:653 — _REPORT.md:134 — ] public/automation/todo-summary.json:40 — \",",
+- [TODO] public/automation/todo-summary.json:654 — ] docs/TODO_REPORT.md:134 — ] public/automation/todo-summary.json:40 — \","
+- [TODO] public/automation/todo-summary.json:658 — ",
+- [TODO] public/automation/todo-summary.json:659 — _REPORT.md:135 — ] public/automation/todo-summary.json:42 — _issue_sync.cjs\"",
+- [TODO] public/automation/todo-summary.json:660 — ] docs/TODO_REPORT.md:135 — ] public/automation/todo-summary.json:42 — _issue_sync.cjs\""
+- [TODO] public/automation/todo-summary.json:664 — ",
+- [TODO] public/automation/todo-summary.json:665 — _REPORT.md:136 — ] public/automation/todo-summary.json:46 — \",",
+- [TODO] public/automation/todo-summary.json:666 — ] docs/TODO_REPORT.md:136 — ] public/automation/todo-summary.json:46 — \","
+- [TODO] public/automation/todo-summary.json:670 — ",
+- [TODO] public/automation/todo-summary.json:671 — _REPORT.md:137 — ] public/automation/todo-summary.json:47 — sync report [skip ci]\\\"\",",
+- [TODO] public/automation/todo-summary.json:672 — ] docs/TODO_REPORT.md:137 — ] public/automation/todo-summary.json:47 — sync report [skip ci]\\\"\","
+- [TODO] public/automation/todo-summary.json:676 — ",
+- [TODO] public/automation/todo-summary.json:677 — _REPORT.md:138 — ] public/automation/todo-summary.json:48 — ): update TODO sync report [skip ci]\\\"\"",
+- [TODO] public/automation/todo-summary.json:678 — ] docs/TODO_REPORT.md:138 — ] public/automation/todo-summary.json:48 — ): update TODO sync report [skip ci]\\\"\""
+- [TODO] public/automation/todo-summary.json:682 — ",
+- [TODO] public/automation/todo-summary.json:683 — _REPORT.md:139 — ] public/automation/todo-summary.json:52 — \",",
+- [TODO] public/automation/todo-summary.json:684 — ] docs/TODO_REPORT.md:139 — ] public/automation/todo-summary.json:52 — \","
+- [TODO] public/automation/todo-summary.json:688 — ",
+- [TODO] public/automation/todo-summary.json:689 — _REPORT.md:140 — ] public/automation/todo-summary.json:54 — Issue\"",
+- [TODO] public/automation/todo-summary.json:690 — ] docs/TODO_REPORT.md:140 — ] public/automation/todo-summary.json:54 — Issue\""
+- [TODO] public/automation/todo-summary.json:694 — ",
+- [TODO] public/automation/todo-summary.json:695 — _REPORT.md:141 — ] public/automation/todo-summary.json:58 — \",",
+- [TODO] public/automation/todo-summary.json:696 — ] docs/TODO_REPORT.md:141 — ] public/automation/todo-summary.json:58 — \","
+- [FIXME] public/automation/todo-summary.json:700 — ",
+- [TODO] public/automation/todo-summary.json:701 — _REPORT.md:142 — ] public/automation/todo-summary.json:59 — /NOTE Sync\\\"\",",
+- [FIXME] public/automation/todo-summary.json:702 — ] docs/TODO_REPORT.md:142 — ] public/automation/todo-summary.json:59 — /NOTE Sync\\\"\","
+- [TODO] public/automation/todo-summary.json:706 — ",
+- [TODO] public/automation/todo-summary.json:707 — _REPORT.md:143 — ] public/automation/todo-summary.json:60 — /FIXME/NOTE Sync\\\"\"",
+- [TODO] public/automation/todo-summary.json:708 — ] docs/TODO_REPORT.md:143 — ] public/automation/todo-summary.json:60 — /FIXME/NOTE Sync\\\"\""
+- [TODO] public/automation/todo-summary.json:712 — ",
+- [TODO] public/automation/todo-summary.json:713 — _REPORT.md:144 — ] public/automation/todo-summary.json:64 — \",",
+- [TODO] public/automation/todo-summary.json:714 — ] docs/TODO_REPORT.md:144 — ] public/automation/todo-summary.json:64 — \","
+- [TODO] public/automation/todo-summary.json:718 — ",
+- [TODO] public/automation/todo-summary.json:719 — _REPORT.md:145 — ] public/automation/todo-summary.json:66 — _SYNC.md\\\"\"",
+- [TODO] public/automation/todo-summary.json:720 — ] docs/TODO_REPORT.md:145 — ] public/automation/todo-summary.json:66 — _SYNC.md\\\"\""
+- [TODO] public/automation/todo-summary.json:724 — ",
+- [TODO] public/automation/todo-summary.json:725 — _REPORT.md:146 — ] public/automation/todo-summary.json:72 — \",",
+- [TODO] public/automation/todo-summary.json:726 — ] docs/TODO_REPORT.md:146 — ] public/automation/todo-summary.json:72 — \","
+- [FIXME] public/automation/todo-summary.json:730 — ",
+- [TODO] public/automation/todo-summary.json:731 — _REPORT.md:147 — ] public/automation/todo-summary.json:73 — scanner\",",
+- [FIXME] public/automation/todo-summary.json:732 — ] docs/TODO_REPORT.md:147 — ] public/automation/todo-summary.json:73 — scanner\","
+- [TODO] public/automation/todo-summary.json:736 — ",
+- [TODO] public/automation/todo-summary.json:737 — _REPORT.md:148 — ] public/automation/todo-summary.json:74 — /FIXME scanner\"",
+- [TODO] public/automation/todo-summary.json:738 — ] docs/TODO_REPORT.md:148 — ] public/automation/todo-summary.json:74 — /FIXME scanner\""
+- [TODO] public/automation/todo-summary.json:742 — ",
+- [TODO] public/automation/todo-summary.json:743 — _REPORT.md:149 — ] public/automation/todo-summary.json:78 — \",",
+- [TODO] public/automation/todo-summary.json:744 — ] docs/TODO_REPORT.md:149 — ] public/automation/todo-summary.json:78 — \","
+- [TODO] public/automation/todo-summary.json:748 — ",
+- [TODO] public/automation/todo-summary.json:749 — _REPORT.md:150 — ] public/automation/todo-summary.json:80 — -scanner.cjs | cat\"",
+- [TODO] public/automation/todo-summary.json:750 — ] docs/TODO_REPORT.md:150 — ] public/automation/todo-summary.json:80 — -scanner.cjs | cat\""
+- [TODO] public/automation/todo-summary.json:754 — ",
+- [TODO] public/automation/todo-summary.json:755 — _REPORT.md:151 — ] public/automation/todo-summary.json:84 — \",",
+- [TODO] public/automation/todo-summary.json:756 — ] docs/TODO_REPORT.md:151 — ] public/automation/todo-summary.json:84 — \","
+- [TODO] public/automation/todo-summary.json:760 — ",
+- [TODO] public/automation/todo-summary.json:761 — _REPORT.md:152 — ] public/automation/todo-summary.json:86 — report and content registry [skip ci]\\\"\"",
+- [TODO] public/automation/todo-summary.json:762 — ] docs/TODO_REPORT.md:152 — ] public/automation/todo-summary.json:86 — report and content registry [skip ci]\\\"\""
+- [TODO] public/automation/todo-summary.json:766 — ",
+- [TODO] public/automation/todo-summary.json:767 — _REPORT.md:157 — ] public/search/index.json:59 — _REPORT\",",
+- [TODO] public/automation/todo-summary.json:768 — ] docs/TODO_REPORT.md:157 — ] public/search/index.json:59 — _REPORT\","
+- [TODO] public/automation/todo-summary.json:772 — ",
+- [TODO] public/automation/todo-summary.json:773 — _REPORT.md:158 — ] public/search/index.json:60 — _REPORT.md\",",
+- [TODO] public/automation/todo-summary.json:774 — ] docs/TODO_REPORT.md:158 — ] public/search/index.json:60 — _REPORT.md\","
+- [TODO] public/automation/todo-summary.json:778 — ",
+- [TODO] public/automation/todo-summary.json:779 — _REPORT.md:159 — ] public/search/index.json:61 — and FIXME Report\",",
+- [TODO] public/automation/todo-summary.json:780 — ] docs/TODO_REPORT.md:159 — ] public/search/index.json:61 — and FIXME Report\","
+- [TODO] public/automation/todo-summary.json:784 — ",
+- [TODO] public/automation/todo-summary.json:785 — _REPORT.md:160 — ] public/search/index.json:62 — and FIXME Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner - [TODO] .github/workflows/autonomous-content-scanner.yml:31 — -sca\"",
+- [TODO] public/automation/todo-summary.json:786 — ] docs/TODO_REPORT.md:160 — ] public/search/index.json:62 — and FIXME Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TO"
+- [TODO] public/automation/todo-summary.json:790 — ",
+- [TODO] public/automation/todo-summary.json:792 — ] netlify/functions/functions-manifest.json:62 — -scanner-runner\","
+- [TODO] public/automation/todo-summary.json:796 — ",
+- [TODO] public/automation/todo-summary.json:798 — ] netlify/functions/functions-manifest.json:63 — -summary-runner\","
+- [TODO] public/automation/todo-summary.json:802 — ",
+- [TODO] public/automation/todo-summary.json:804 — -scanner-runner.js"
+- [TODO] public/automation/todo-summary.json:808 — ",
+- [TODO] public/automation/todo-summary.json:809 — -scanner-runner.js:25 — scan', () => runNode('automation/todo-scanner.cjs'));",
+- [TODO] public/automation/todo-summary.json:810 — ] netlify/functions/todo-scanner-runner.js:25 — scan', () => runNode('automation/todo-scanner.cjs'));"
+- [TODO] public/automation/todo-summary.json:814 — ",
+- [TODO] public/automation/todo-summary.json:816 — -summary-runner.js"
+- [TODO] public/automation/todo-summary.json:820 — ",
+- [TODO] public/automation/todo-summary.json:821 — -summary-runner.js:25 — scan', () => runNode('automation/todo-scanner.cjs'));",
+- [TODO] public/automation/todo-summary.json:822 — ] netlify/functions/todo-summary-runner.js:25 — scan', () => runNode('automation/todo-scanner.cjs'));"
+- [TODO] public/automation/todo-summary.json:826 — ",
+- [TODO] public/automation/todo-summary.json:827 — report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },",
+- [TODO] public/automation/todo-summary.json:828 — ] pages/index.tsx:204 — Scanner', desc: 'Generates a consolidated TODO report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },"
+- [TODO] public/automation/todo-summary.json:832 — ",
+- [TODO] public/automation/todo-summary.json:833 — _REPORT</div><div className=\"mt-1 text-sm text-white/75\">Open documentation</div><div className=\"mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90\">Open <span aria-hidden>↗</span></div></a>",
+- [TODO] public/automation/todo-summary.json:834 — ] pages/main/front/index.tsx:786 — _REPORT.md\" target=\"_blank\" rel=\"noopener\" className=\"group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-whi"
+- [TODO] public/automation/todo-summary.json:838 — ",
+- [TODO] public/automation/todo-summary.json:840 — ] public/automation/content-registry.json:38 — _REPORT.md\","
+- [TODO] public/automation/todo-summary.json:844 — ",
+- [TODO] public/automation/todo-summary.json:846 — ] public/automation/content-registry.json:39 — _REPORT.md\""
+- [TODO] public/automation/todo-summary.json:850 — ",
+- [TODO] public/automation/todo-summary.json:852 — -summary.json"
+- [TODO] public/automation/todo-summary.json:856 — ",
+- [TODO] public/automation/todo-summary.json:857 — -summary.json:8 — \",",
+- [TODO] public/automation/todo-summary.json:858 — ] public/automation/todo-summary.json:8 — \","
+- [TODO] public/automation/todo-summary.json:862 — ",
+- [TODO] public/automation/todo-summary.json:863 — -summary.json:9 — report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },\",",
+- [TODO] public/automation/todo-summary.json:864 — ] public/automation/todo-summary.json:9 — report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },\","
+- [TODO] public/automation/todo-summary.json:868 — ",
+- [TODO] public/automation/todo-summary.json:869 — -summary.json:10 — Scanner', desc: 'Generates a consolidated TODO report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },\"",
+- [TODO] public/automation/todo-summary.json:870 — ] public/automation/todo-summary.json:10 — Scanner', desc: 'Generates a consolidated TODO report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },\""
+- [TODO] public/automation/todo-summary.json:874 — ",
+- [TODO] public/automation/todo-summary.json:875 — -summary.json:13 — _REPORT.md\": [",
+- [TODO] public/automation/todo-summary.json:876 — ] public/automation/todo-summary.json:13 — _REPORT.md\": ["
+- [TODO] public/automation/todo-summary.json:880 — ",
+- [TODO] public/automation/todo-summary.json:881 — -summary.json:16 — \",",
+- [TODO] public/automation/todo-summary.json:882 — ] public/automation/todo-summary.json:16 — \","
+- [FIXME] public/automation/todo-summary.json:886 — ",
+- [TODO] public/automation/todo-summary.json:887 — -summary.json:17 — Report\",",
+- [FIXME] public/automation/todo-summary.json:888 — ] public/automation/todo-summary.json:17 — Report\","
+- [TODO] public/automation/todo-summary.json:892 — ",
+- [TODO] public/automation/todo-summary.json:893 — -summary.json:18 — and FIXME Report\"",
+- [TODO] public/automation/todo-summary.json:894 — ] public/automation/todo-summary.json:18 — and FIXME Report\""
+- [TODO] public/automation/todo-summary.json:898 — ",
+- [TODO] public/automation/todo-summary.json:899 — -summary.json:22 — \",",
+- [TODO] public/automation/todo-summary.json:900 — ] public/automation/todo-summary.json:22 — \","
+- [FIXME] public/automation/todo-summary.json:904 — ",
+- [TODO] public/automation/todo-summary.json:905 — -summary.json:23 — scanner\",",
+- [FIXME] public/automation/todo-summary.json:906 — ] public/automation/todo-summary.json:23 — scanner\","
+- [TODO] public/automation/todo-summary.json:910 — ",
+- [TODO] public/automation/todo-summary.json:911 — -summary.json:24 — ] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner\"",
+- [TODO] public/automation/todo-summary.json:912 — ] public/automation/todo-summary.json:24 — ] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner\""
+- [TODO] public/automation/todo-summary.json:916 — ",
+- [TODO] public/automation/todo-summary.json:917 — -summary.json:28 — \",",
+- [TODO] public/automation/todo-summary.json:918 — ] public/automation/todo-summary.json:28 — \","
+- [TODO] public/automation/todo-summary.json:922 — ",
+- [TODO] public/automation/todo-summary.json:923 — -summary.json:30 — ] .github/workflows/autonomous-content-scanner.yml:31 — -scanner.cjs | cat\"",
+- [TODO] public/automation/todo-summary.json:924 — ] public/automation/todo-summary.json:30 — ] .github/workflows/autonomous-content-scanner.yml:31 — -scanner.cjs | cat\""
+- [TODO] public/automation/todo-summary.json:928 — ",
+- [TODO] public/automation/todo-summary.json:929 — -summary.json:34 — \",",
+- [TODO] public/automation/todo-summary.json:930 — ] public/automation/todo-summary.json:34 — \","
+- [TODO] public/automation/todo-summary.json:934 — ",
+- [TODO] public/automation/todo-summary.json:935 — -summary.json:36 — ] .github/workflows/autonomous-content-scanner.yml:40 — report and content registry [skip ci]\\\"\"",
+- [TODO] public/automation/todo-summary.json:936 — ] public/automation/todo-summary.json:36 — ] .github/workflows/autonomous-content-scanner.yml:40 — report and content registry [skip ci]\\\"\""
+- [TODO] public/automation/todo-summary.json:940 — ",
+- [TODO] public/automation/todo-summary.json:941 — -summary.json:40 — \",",
+- [TODO] public/automation/todo-summary.json:942 — ] public/automation/todo-summary.json:40 — \","
+- [TODO] public/automation/todo-summary.json:946 — ",
+- [TODO] public/automation/todo-summary.json:947 — -summary.json:42 — -issue-sync.yml\"",
+- [TODO] public/automation/todo-summary.json:948 — ] public/automation/todo-summary.json:42 — -issue-sync.yml\""
+- [TODO] public/automation/todo-summary.json:952 — ",
+- [TODO] public/automation/todo-summary.json:953 — -summary.json:46 — \",",
+- [TODO] public/automation/todo-summary.json:954 — ] public/automation/todo-summary.json:46 — \","
+- [TODO] public/automation/todo-summary.json:958 — ",
+- [TODO] public/automation/todo-summary.json:959 — -summary.json:47 — -issue-sync.yml:1 — Issue Sync\",",
+- [TODO] public/automation/todo-summary.json:960 — ] public/automation/todo-summary.json:47 — -issue-sync.yml:1 — Issue Sync\","
+- [TODO] public/automation/todo-summary.json:964 — ",
+- [TODO] public/automation/todo-summary.json:965 — -summary.json:48 — ] .github/workflows/todo-issue-sync.yml:1 — Issue Sync\"",
+- [TODO] public/automation/todo-summary.json:966 — ] public/automation/todo-summary.json:48 — ] .github/workflows/todo-issue-sync.yml:1 — Issue Sync\""
+- [TODO] public/automation/todo-summary.json:970 — ",
+- [TODO] public/automation/todo-summary.json:971 — -summary.json:52 — \",",
+- [TODO] public/automation/todo-summary.json:972 — ] public/automation/todo-summary.json:52 — \","
+- [TODO] public/automation/todo-summary.json:976 — ",
+- [TODO] public/automation/todo-summary.json:977 — -summary.json:53 — -issue-sync.yml:13 — s:\",",
+- [TODO] public/automation/todo-summary.json:978 — ] public/automation/todo-summary.json:53 — -issue-sync.yml:13 — s:\","
+- [TODO] public/automation/todo-summary.json:982 — ",
+- [TODO] public/automation/todo-summary.json:983 — -summary.json:54 — ] .github/workflows/todo-issue-sync.yml:13 — s:\"",
+- [TODO] public/automation/todo-summary.json:984 — ] public/automation/todo-summary.json:54 — ] .github/workflows/todo-issue-sync.yml:13 — s:\""
+- [TODO] public/automation/todo-summary.json:988 — ",
+- [TODO] public/automation/todo-summary.json:989 — -summary.json:58 — \",",
+- [TODO] public/automation/todo-summary.json:990 — ] public/automation/todo-summary.json:58 — \","
+- [TODO] public/automation/todo-summary.json:994 — ",
+- [TODO] public/automation/todo-summary.json:995 — -summary.json:59 — -issue-sync.yml:29 — report\",",
+- [TODO] public/automation/todo-summary.json:996 — ] public/automation/todo-summary.json:59 — -issue-sync.yml:29 — report\","
+- [TODO] public/automation/todo-summary.json:1000 — ",
+- [TODO] public/automation/todo-summary.json:1001 — -summary.json:60 — ] .github/workflows/todo-issue-sync.yml:29 — report\"",
+- [TODO] public/automation/todo-summary.json:1002 — ] public/automation/todo-summary.json:60 — ] .github/workflows/todo-issue-sync.yml:29 — report\""
+- [TODO] public/automation/todo-summary.json:1006 — ",
+- [TODO] public/automation/todo-summary.json:1007 — -summary.json:64 — \",",
+- [TODO] public/automation/todo-summary.json:1008 — ] public/automation/todo-summary.json:64 — \","
+- [TODO] public/automation/todo-summary.json:1012 — ",
+- [TODO] public/automation/todo-summary.json:1013 — -summary.json:65 — -issue-sync.yml:30 — _issue_sync.cjs\",",
+- [TODO] public/automation/todo-summary.json:1014 — ] public/automation/todo-summary.json:65 — -issue-sync.yml:30 — _issue_sync.cjs\","
+- [TODO] public/automation/todo-summary.json:1018 — ",
+- [TODO] public/automation/todo-summary.json:1019 — -summary.json:66 — ] .github/workflows/todo-issue-sync.yml:30 — _issue_sync.cjs\"",
+- [TODO] public/automation/todo-summary.json:1020 — ] public/automation/todo-summary.json:66 — ] .github/workflows/todo-issue-sync.yml:30 — _issue_sync.cjs\""
+- [TODO] public/automation/todo-summary.json:1024 — ",
+- [TODO] public/automation/todo-summary.json:1025 — -summary.json:70 — \",",
+- [TODO] public/automation/todo-summary.json:1026 — ] public/automation/todo-summary.json:70 — \","
+- [TODO] public/automation/todo-summary.json:1030 — ",
+- [TODO] public/automation/todo-summary.json:1031 — -summary.json:71 — -issue-sync.yml:38 — ): update TODO sync report [skip ci]\\\"\",",
+- [TODO] public/automation/todo-summary.json:1032 — ] public/automation/todo-summary.json:71 — -issue-sync.yml:38 — ): update TODO sync report [skip ci]\\\"\","
+- [TODO] public/automation/todo-summary.json:1036 — ",
+- [TODO] public/automation/todo-summary.json:1037 — -summary.json:72 — ] .github/workflows/todo-issue-sync.yml:38 — ): update TODO sync report [skip ci]\\\"\"",
+- [TODO] public/automation/todo-summary.json:1038 — ] public/automation/todo-summary.json:72 — ] .github/workflows/todo-issue-sync.yml:38 — ): update TODO sync report [skip ci]\\\"\""
+- [TODO] public/automation/todo-summary.json:1042 — ",
+- [TODO] public/automation/todo-summary.json:1043 — -summary.json:76 — \",",
+- [TODO] public/automation/todo-summary.json:1044 — ] public/automation/todo-summary.json:76 — \","
+- [TODO] public/automation/todo-summary.json:1048 — ",
+- [TODO] public/automation/todo-summary.json:1049 — -summary.json:77 — -issue-sync.yml:42 — Issue\",",
+- [TODO] public/automation/todo-summary.json:1050 — ] public/automation/todo-summary.json:77 — -issue-sync.yml:42 — Issue\","
+- [TODO] public/automation/todo-summary.json:1054 — ",
+- [TODO] public/automation/todo-summary.json:1055 — -summary.json:78 — ] .github/workflows/todo-issue-sync.yml:42 — Issue\"",
+- [TODO] public/automation/todo-summary.json:1056 — ] public/automation/todo-summary.json:78 — ] .github/workflows/todo-issue-sync.yml:42 — Issue\""
+- [TODO] public/automation/todo-summary.json:1060 — ",
+- [TODO] public/automation/todo-summary.json:1061 — -summary.json:82 — \",",
+- [TODO] public/automation/todo-summary.json:1062 — ] public/automation/todo-summary.json:82 — \","
+- [TODO] public/automation/todo-summary.json:1066 — ",
+- [TODO] public/automation/todo-summary.json:1067 — -summary.json:83 — -issue-sync.yml:47 — /FIXME/NOTE Sync\\\"\",",
+- [TODO] public/automation/todo-summary.json:1068 — ] public/automation/todo-summary.json:83 — -issue-sync.yml:47 — /FIXME/NOTE Sync\\\"\","
+- [TODO] public/automation/todo-summary.json:1072 — ",
+- [TODO] public/automation/todo-summary.json:1073 — -summary.json:84 — ] .github/workflows/todo-issue-sync.yml:47 — /FIXME/NOTE Sync\\\"\"",
+- [TODO] public/automation/todo-summary.json:1074 — ] public/automation/todo-summary.json:84 — ] .github/workflows/todo-issue-sync.yml:47 — /FIXME/NOTE Sync\\\"\""
+- [TODO] public/automation/todo-summary.json:1078 — ",
+- [TODO] public/automation/todo-summary.json:1079 — -summary.json:88 — \",",
+- [TODO] public/automation/todo-summary.json:1080 — ] public/automation/todo-summary.json:88 — \","
+- [TODO] public/automation/todo-summary.json:1084 — ",
+- [TODO] public/automation/todo-summary.json:1085 — -summary.json:89 — -issue-sync.yml:48 — _SYNC.md\\\"\",",
+- [TODO] public/automation/todo-summary.json:1086 — ] public/automation/todo-summary.json:89 — -issue-sync.yml:48 — _SYNC.md\\\"\","
+- [TODO] public/automation/todo-summary.json:1090 — ",
+- [TODO] public/automation/todo-summary.json:1091 — -summary.json:90 — ] .github/workflows/todo-issue-sync.yml:48 — _SYNC.md\\\"\"",
+- [TODO] public/automation/todo-summary.json:1092 — ] public/automation/todo-summary.json:90 — ] .github/workflows/todo-issue-sync.yml:48 — _SYNC.md\\\"\""
+- [TODO] public/automation/todo-summary.json:1096 — ",
+- [TODO] public/automation/todo-summary.json:1097 — -summary.json:94 — \",",
+- [TODO] public/automation/todo-summary.json:1098 — ] public/automation/todo-summary.json:94 — \","
+- [TODO] public/automation/todo-summary.json:1102 — ",
+- [TODO] public/automation/todo-summary.json:1103 — -summary.json:95 — -scanner.cjs\\\",\",",
+- [TODO] public/automation/todo-summary.json:1104 — ] public/automation/todo-summary.json:95 — -scanner.cjs\\\",\","
+- [TODO] public/automation/todo-summary.json:1108 — ",
+- [TODO] public/automation/todo-summary.json:1109 — -summary.json:96 — ] package.json:225 — \\\": \\\"node automation/todo-scanner.cjs\\\",\"",
+- [TODO] public/automation/todo-summary.json:1110 — ] public/automation/todo-summary.json:96 — ] package.json:225 — \\\": \\\"node automation/todo-scanner.cjs\\\",\""
+- [TODO] public/automation/todo-summary.json:1114 — ",
+- [TODO] public/automation/todo-summary.json:1115 — -summary.json:100 — \",",
+- [TODO] public/automation/todo-summary.json:1116 — ] public/automation/todo-summary.json:100 — \","
+- [TODO] public/automation/todo-summary.json:1120 — ",
+- [TODO] public/automation/todo-summary.json:1121 — -summary.json:102 — ] package.json:227 — && npm run scan:registry\\\"\"",
+- [TODO] public/automation/todo-summary.json:1122 — ] public/automation/todo-summary.json:102 — ] package.json:227 — && npm run scan:registry\\\"\""
+- [TODO] public/automation/todo-summary.json:1126 — ",
+- [TODO] public/automation/todo-summary.json:1127 — -summary.json:108 — \",",
+- [TODO] public/automation/todo-summary.json:1128 — ] public/automation/todo-summary.json:108 — \","
+- [TODO] public/automation/todo-summary.json:1132 — ",
+- [TODO] public/automation/todo-summary.json:1133 — -summary.json:110 — issue sync, autonomous release, and keepalive workflows (09ccba6)\"",
+- [TODO] public/automation/todo-summary.json:1134 — ] public/automation/todo-summary.json:110 — issue sync, autonomous release, and keepalive workflows (09ccba6)\""
+- [TODO] public/automation/todo-summary.json:1138 — ",
+- [TODO] public/automation/todo-summary.json:1139 — -summary.json:114 — \",",
+- [TODO] public/automation/todo-summary.json:1140 — ] public/automation/todo-summary.json:114 — \","
+- [TODO] public/automation/todo-summary.json:1144 — ",
+- [TODO] public/automation/todo-summary.json:1145 — -summary.json:116 — issue sync, autonomous release, and keepalive workflows (09ccba6)\"",
+- [TODO] public/automation/todo-summary.json:1146 — ] public/automation/todo-summary.json:116 — issue sync, autonomous release, and keepalive workflows (09ccba6)\""
+- [TODO] public/automation/todo-summary.json:1150 — ",
+- [TODO] public/automation/todo-summary.json:1151 — -summary.json:122 — \",",
+- [TODO] public/automation/todo-summary.json:1152 — ] public/automation/todo-summary.json:122 — \","
+- [TODO] public/automation/todo-summary.json:1156 — ",
+- [TODO] public/automation/todo-summary.json:1157 — -summary.json:124 — _REPORT\\\",\"",
+- [TODO] public/automation/todo-summary.json:1158 — ] public/automation/todo-summary.json:124 — _REPORT\\\",\""
+- [TODO] public/automation/todo-summary.json:1162 — ",
+- [TODO] public/automation/todo-summary.json:1163 — -summary.json:128 — \",",
+- [TODO] public/automation/todo-summary.json:1164 — ] public/automation/todo-summary.json:128 — \","
+- [TODO] public/automation/todo-summary.json:1168 — ",
+- [TODO] public/automation/todo-summary.json:1169 — -summary.json:130 — _REPORT.md\\\",\"",
+- [TODO] public/automation/todo-summary.json:1170 — ] public/automation/todo-summary.json:130 — _REPORT.md\\\",\""
+- [TODO] public/automation/todo-summary.json:1174 — ",
+- [TODO] public/automation/todo-summary.json:1175 — -summary.json:134 — \",",
+- [TODO] public/automation/todo-summary.json:1176 — ] public/automation/todo-summary.json:134 — \","
+- [FIXME] public/automation/todo-summary.json:1180 — ",
+- [TODO] public/automation/todo-summary.json:1181 — -summary.json:135 — Report\\\",\",",
+- [FIXME] public/automation/todo-summary.json:1182 — ] public/automation/todo-summary.json:135 — Report\\\",\","
+- [TODO] public/automation/todo-summary.json:1186 — ",
+- [TODO] public/automation/todo-summary.json:1187 — -summary.json:136 — and FIXME Report\\\",\"",
+- [TODO] public/automation/todo-summary.json:1188 — ] public/automation/todo-summary.json:136 — and FIXME Report\\\",\""
+- [TODO] public/automation/todo-summary.json:1192 — ",
+- [TODO] public/automation/todo-summary.json:1193 — -summary.json:140 — \",",
+- [TODO] public/automation/todo-summary.json:1194 — ] public/automation/todo-summary.json:140 — \","
+- [FIXME] public/automation/todo-summary.json:1198 — ",
+- [TODO] public/automation/todo-summary.json:1199 — -summary.json:141 — Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner - [TODO] .github/workflows/autonomous-content-scanner.yml:31 — -sca\\\"\",",
+- [FIXME] public/automation/todo-summary.json:1200 — ] public/automation/todo-summary.json:141 — Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/aut"
+- [TODO] public/automation/todo-summary.json:1204 — ",
+- [TODO] public/automation/todo-summary.json:1205 — -summary.json:142 — and FIXME Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/autonomous-content-scanner\"",
+- [TODO] public/automation/todo-summary.json:1206 — ] public/automation/todo-summary.json:142 — and FIXME Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/work"
+- [TODO] public/automation/todo-summary.json:1210 — ",
+- [TODO] public/automation/todo-summary.json:1211 — -summary.json:148 — \",",
+- [TODO] public/automation/todo-summary.json:1212 — ] public/automation/todo-summary.json:148 — \","
+- [TODO] public/automation/todo-summary.json:1216 — ",
+- [TODO] public/automation/todo-summary.json:1217 — -summary.json:150 — -scanner.cjs\\\",\"",
+- [TODO] public/automation/todo-summary.json:1218 — ] public/automation/todo-summary.json:150 — -scanner.cjs\\\",\""
+- [TODO] public/automation/todo-summary.json:1222 — ",
+- [TODO] public/automation/todo-summary.json:1223 — -summary.json:154 — \",",
+- [TODO] public/automation/todo-summary.json:1224 — ] public/automation/todo-summary.json:154 — \","
+- [TODO] public/automation/todo-summary.json:1228 — ",
+- [TODO] public/automation/todo-summary.json:1229 — -summary.json:156 — -scanner-runner.js\\\",\"",
+- [TODO] public/automation/todo-summary.json:1230 — ] public/automation/todo-summary.json:156 — -scanner-runner.js\\\",\""
+- [TODO] public/automation/todo-summary.json:1234 — ",
+- [TODO] public/automation/todo-summary.json:1235 — -summary.json:160 — \",",
+- [TODO] public/automation/todo-summary.json:1236 — ] public/automation/todo-summary.json:160 — \","
+- [TODO] public/automation/todo-summary.json:1240 — ",
+- [TODO] public/automation/todo-summary.json:1241 — -summary.json:162 — -summary-runner.js\\\",\"",
+- [TODO] public/automation/todo-summary.json:1242 — ] public/automation/todo-summary.json:162 — -summary-runner.js\\\",\""
+- [TODO] public/automation/todo-summary.json:1246 — ",
+- [TODO] public/automation/todo-summary.json:1247 — -summary.json:166 — \",",
+- [TODO] public/automation/todo-summary.json:1248 — ] public/automation/todo-summary.json:166 — \","
+- [TODO] public/automation/todo-summary.json:1252 — ",
+- [TODO] public/automation/todo-summary.json:1253 — -summary.json:168 — _issue_sync.cjs\\\",\"",
+- [TODO] public/automation/todo-summary.json:1254 — ] public/automation/todo-summary.json:168 — _issue_sync.cjs\\\",\""
+- [TODO] public/automation/todo-summary.json:1258 — ",
+- [TODO] public/automation/todo-summary.json:1259 — -summary.json:172 — \",",
+- [TODO] public/automation/todo-summary.json:1260 — ] public/automation/todo-summary.json:172 — \","
+- [TODO] public/automation/todo-summary.json:1264 — ",
+- [TODO] public/automation/todo-summary.json:1265 — -summary.json:174 — -scanner.cjs\\\",\"",
+- [TODO] public/automation/todo-summary.json:1266 — ] public/automation/todo-summary.json:174 — -scanner.cjs\\\",\""
+- [TODO] public/automation/todo-summary.json:1270 — ",
+- [TODO] public/automation/todo-summary.json:1271 — -summary.json:178 — \",",
+- [TODO] public/automation/todo-summary.json:1272 — ] public/automation/todo-summary.json:178 — \","
+- [TODO] public/automation/todo-summary.json:1276 — ",
+- [TODO] public/automation/todo-summary.json:1277 — -summary.json:180 — -scanner.cjs\\\",\"",
+- [TODO] public/automation/todo-summary.json:1278 — ] public/automation/todo-summary.json:180 — -scanner.cjs\\\",\""
+- [TODO] public/automation/todo-summary.json:1282 — ",
+- [TODO] public/automation/todo-summary.json:1283 — -summary.json:184 — \",",
+- [TODO] public/automation/todo-summary.json:1284 — ] public/automation/todo-summary.json:184 — \","
+- [TODO] public/automation/todo-summary.json:1288 — ",
+- [TODO] public/automation/todo-summary.json:1289 — -summary.json:186 — -scanner.cjs\\\",\"",
+- [TODO] public/automation/todo-summary.json:1290 — ] public/automation/todo-summary.json:186 — -scanner.cjs\\\",\""
+- [TODO] public/automation/todo-summary.json:1294 — ",
+- [TODO] public/automation/todo-summary.json:1295 — -summary.json:190 — \",",
+- [TODO] public/automation/todo-summary.json:1296 — ] public/automation/todo-summary.json:190 — \","
+- [TODO] public/automation/todo-summary.json:1300 — ",
+- [TODO] public/automation/todo-summary.json:1301 — -summary.json:192 — -scanner-runner.js\\\",\"",
+- [TODO] public/automation/todo-summary.json:1302 — ] public/automation/todo-summary.json:192 — -scanner-runner.js\\\",\""
+- [TODO] public/automation/todo-summary.json:1306 — ",
+- [TODO] public/automation/todo-summary.json:1307 — -summary.json:196 — \",",
+- [TODO] public/automation/todo-summary.json:1308 — ] public/automation/todo-summary.json:196 — \","
+- [TODO] public/automation/todo-summary.json:1312 — ",
+- [TODO] public/automation/todo-summary.json:1313 — -summary.json:198 — -scanner-runner.js\\\",\"",
+- [TODO] public/automation/todo-summary.json:1314 — ] public/automation/todo-summary.json:198 — -scanner-runner.js\\\",\""
+- [TODO] public/automation/todo-summary.json:1318 — ",
+- [TODO] public/automation/todo-summary.json:1319 — -summary.json:202 — \",",
+- [TODO] public/automation/todo-summary.json:1320 — ] public/automation/todo-summary.json:202 — \","
+- [TODO] public/automation/todo-summary.json:1324 — ",
+- [TODO] public/automation/todo-summary.json:1325 — -summary.json:204 — -summary-runner.js\\\",\"",
+- [TODO] public/automation/todo-summary.json:1326 — ] public/automation/todo-summary.json:204 — -summary-runner.js\\\",\""
+- [TODO] public/automation/todo-summary.json:1330 — ",
+- [TODO] public/automation/todo-summary.json:1331 — -summary.json:208 — \",",
+- [TODO] public/automation/todo-summary.json:1332 — ] public/automation/todo-summary.json:208 — \","
+- [TODO] public/automation/todo-summary.json:1336 — ",
+- [TODO] public/automation/todo-summary.json:1337 — -summary.json:210 — -summary-runner.js\\\",\"",
+- [TODO] public/automation/todo-summary.json:1338 — ] public/automation/todo-summary.json:210 — -summary-runner.js\\\",\""
+- [TODO] public/automation/todo-summary.json:1342 — ",
+- [TODO] public/automation/todo-summary.json:1343 — -summary.json:214 — \",",
+- [TODO] public/automation/todo-summary.json:1344 — ] public/automation/todo-summary.json:214 — \","
+- [TODO] public/automation/todo-summary.json:1348 — ",
+- [TODO] public/automation/todo-summary.json:1349 — -summary.json:216 — _issue_sync.cjs\\\",\"",
+- [TODO] public/automation/todo-summary.json:1350 — ] public/automation/todo-summary.json:216 — _issue_sync.cjs\\\",\""
+- [TODO] public/automation/todo-summary.json:1354 — ",
+- [TODO] public/automation/todo-summary.json:1355 — -summary.json:220 — \",",
+- [TODO] public/automation/todo-summary.json:1356 — ] public/automation/todo-summary.json:220 — \","
+- [TODO] public/automation/todo-summary.json:1360 — ",
+- [TODO] public/automation/todo-summary.json:1361 — -summary.json:222 — _issue_sync.cjs\\\",\"",
+- [TODO] public/automation/todo-summary.json:1362 — ] public/automation/todo-summary.json:222 — _issue_sync.cjs\\\",\""
+- [TODO] public/automation/todo-summary.json:1366 — ",
+- [TODO] public/automation/todo-summary.json:1367 — -summary.json:226 — \",",
+- [TODO] public/automation/todo-summary.json:1368 — ] public/automation/todo-summary.json:226 — \","
+- [TODO] public/automation/todo-summary.json:1372 — ",
+- [TODO] public/automation/todo-summary.json:1373 — -summary.json:228 — _issue_sync.cjs\\\",\"",
+- [TODO] public/automation/todo-summary.json:1374 — ] public/automation/todo-summary.json:228 — _issue_sync.cjs\\\",\""
+- [TODO] public/automation/todo-summary.json:1378 — ",
+- [TODO] public/automation/todo-summary.json:1379 — -summary.json:231 — -summary.json\": [",
+- [TODO] public/automation/todo-summary.json:1380 — ] public/automation/todo-summary.json:231 — -summary.json\": ["
+- [TODO] public/automation/todo-summary.json:1384 — ",
+- [TODO] public/automation/todo-summary.json:1385 — -summary.json:234 — \",",
+- [TODO] public/automation/todo-summary.json:1386 — ] public/automation/todo-summary.json:234 — \","
+- [TODO] public/automation/todo-summary.json:1390 — ",
+- [TODO] public/automation/todo-summary.json:1391 — -summary.json:236 — \\\",\"",
+- [TODO] public/automation/todo-summary.json:1392 — ] public/automation/todo-summary.json:236 — \\\",\""
+- [TODO] public/automation/todo-summary.json:1396 — ",
+- [TODO] public/automation/todo-summary.json:1397 — -summary.json:240 — \",",
+- [TODO] public/automation/todo-summary.json:1398 — ] public/automation/todo-summary.json:240 — \","
+- [TODO] public/automation/todo-summary.json:1402 — ",
+- [TODO] public/automation/todo-summary.json:1403 — -summary.json:242 — -scanner.cjs\\\\\\\",\\\",\"",
+- [TODO] public/automation/todo-summary.json:1404 — ] public/automation/todo-summary.json:242 — -scanner.cjs\\\\\\\",\\\",\""
+- [TODO] public/automation/todo-summary.json:1408 — ",
+- [TODO] public/automation/todo-summary.json:1409 — -summary.json:246 — \",",
+- [TODO] public/automation/todo-summary.json:1410 — ] public/automation/todo-summary.json:246 — \","
+- [TODO] public/automation/todo-summary.json:1414 — ",
+- [TODO] public/automation/todo-summary.json:1415 — -summary.json:247 — -scanner.cjs\\\\\\\",\\\"\",",
+- [TODO] public/automation/todo-summary.json:1416 — ] public/automation/todo-summary.json:247 — -scanner.cjs\\\\\\\",\\\"\","
+- [TODO] public/automation/todo-summary.json:1420 — ",
+- [TODO] public/automation/todo-summary.json:1421 — -summary.json:248 — \\\\\\\": \\\\\\\"node automation/todo-scanner.cjs\\\\\\\",\\\"\"",
+- [TODO] public/automation/todo-summary.json:1422 — ] public/automation/todo-summary.json:248 — \\\\\\\": \\\\\\\"node automation/todo-scanner.cjs\\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:1426 — ",
+- [TODO] public/automation/todo-summary.json:1427 — -summary.json:252 — \",",
+- [TODO] public/automation/todo-summary.json:1428 — ] public/automation/todo-summary.json:252 — \","
+- [TODO] public/automation/todo-summary.json:1432 — ",
+- [TODO] public/automation/todo-summary.json:1433 — -summary.json:254 — \\\",\"",
+- [TODO] public/automation/todo-summary.json:1434 — ] public/automation/todo-summary.json:254 — \\\",\""
+- [TODO] public/automation/todo-summary.json:1438 — ",
+- [TODO] public/automation/todo-summary.json:1439 — -summary.json:258 — \",",
+- [TODO] public/automation/todo-summary.json:1440 — ] public/automation/todo-summary.json:258 — \","
+- [TODO] public/automation/todo-summary.json:1444 — ",
+- [TODO] public/automation/todo-summary.json:1445 — -summary.json:260 — && npm run scan:registry\\\\\\\"\\\"\"",
+- [TODO] public/automation/todo-summary.json:1446 — ] public/automation/todo-summary.json:260 — && npm run scan:registry\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:1450 — ",
+- [TODO] public/automation/todo-summary.json:1451 — -summary.json:264 — \",",
+- [TODO] public/automation/todo-summary.json:1452 — ] public/automation/todo-summary.json:264 — \","
+- [TODO] public/automation/todo-summary.json:1456 — ",
+- [TODO] public/automation/todo-summary.json:1457 — -summary.json:266 — -issue-sync.yml\\\": [\"",
+- [TODO] public/automation/todo-summary.json:1458 — ] public/automation/todo-summary.json:266 — -issue-sync.yml\\\": [\""
+- [TODO] public/automation/todo-summary.json:1462 — ",
+- [TODO] public/automation/todo-summary.json:1463 — -summary.json:270 — \",",
+- [TODO] public/automation/todo-summary.json:1464 — ] public/automation/todo-summary.json:270 — \","
+- [TODO] public/automation/todo-summary.json:1468 — ",
+- [TODO] public/automation/todo-summary.json:1469 — -summary.json:272 — \\\",\"",
+- [TODO] public/automation/todo-summary.json:1470 — ] public/automation/todo-summary.json:272 — \\\",\""
+- [TODO] public/automation/todo-summary.json:1474 — ",
+- [TODO] public/automation/todo-summary.json:1475 — -summary.json:276 — \",",
+- [TODO] public/automation/todo-summary.json:1476 — ] public/automation/todo-summary.json:276 — \","
+- [TODO] public/automation/todo-summary.json:1480 — ",
+- [TODO] public/automation/todo-summary.json:1481 — -summary.json:278 — Issue Sync\\\"\"",
+- [TODO] public/automation/todo-summary.json:1482 — ] public/automation/todo-summary.json:278 — Issue Sync\\\"\""
+- [TODO] public/automation/todo-summary.json:1486 — ",
+- [TODO] public/automation/todo-summary.json:1487 — -summary.json:282 — \",",
+- [TODO] public/automation/todo-summary.json:1488 — ] public/automation/todo-summary.json:282 — \","
+- [TODO] public/automation/todo-summary.json:1492 — ",
+- [TODO] public/automation/todo-summary.json:1493 — -summary.json:284 — \\\",\"",
+- [TODO] public/automation/todo-summary.json:1494 — ] public/automation/todo-summary.json:284 — \\\",\""
+- [TODO] public/automation/todo-summary.json:1498 — ",
+- [TODO] public/automation/todo-summary.json:1499 — -summary.json:288 — \",",
+- [TODO] public/automation/todo-summary.json:1500 — ] public/automation/todo-summary.json:288 — \","
+- [TODO] public/automation/todo-summary.json:1504 — ",
+- [TODO] public/automation/todo-summary.json:1505 — -summary.json:290 — s:\\\"\"",
+- [TODO] public/automation/todo-summary.json:1506 — ] public/automation/todo-summary.json:290 — s:\\\"\""
+- [TODO] public/automation/todo-summary.json:1510 — ",
+- [TODO] public/automation/todo-summary.json:1511 — -summary.json:294 — \",",
+- [TODO] public/automation/todo-summary.json:1512 — ] public/automation/todo-summary.json:294 — \","
+- [TODO] public/automation/todo-summary.json:1516 — ",
+- [TODO] public/automation/todo-summary.json:1517 — -summary.json:296 — \\\",\"",
+- [TODO] public/automation/todo-summary.json:1518 — ] public/automation/todo-summary.json:296 — \\\",\""
+- [TODO] public/automation/todo-summary.json:1522 — ",
+- [TODO] public/automation/todo-summary.json:1523 — -summary.json:300 — \",",
+- [TODO] public/automation/todo-summary.json:1524 — ] public/automation/todo-summary.json:300 — \","
+- [TODO] public/automation/todo-summary.json:1528 — ",
+- [TODO] public/automation/todo-summary.json:1529 — -summary.json:302 — report\\\"\"",
+- [TODO] public/automation/todo-summary.json:1530 — ] public/automation/todo-summary.json:302 — report\\\"\""
+- [TODO] public/automation/todo-summary.json:1534 — ",
+- [TODO] public/automation/todo-summary.json:1535 — -summary.json:306 — \",",
+- [TODO] public/automation/todo-summary.json:1536 — ] public/automation/todo-summary.json:306 — \","
+- [TODO] public/automation/todo-summary.json:1540 — ",
+- [TODO] public/automation/todo-summary.json:1541 — -summary.json:308 — \\\",\"",
+- [TODO] public/automation/todo-summary.json:1542 — ] public/automation/todo-summary.json:308 — \\\",\""
+- [TODO] public/automation/todo-summary.json:1546 — ",
+- [TODO] public/automation/todo-summary.json:1547 — -summary.json:312 — \",",
+- [TODO] public/automation/todo-summary.json:1548 — ] public/automation/todo-summary.json:312 — \","
+- [TODO] public/automation/todo-summary.json:1552 — ",
+- [TODO] public/automation/todo-summary.json:1553 — -summary.json:314 — _issue_sync.cjs\\\"\"",
+- [TODO] public/automation/todo-summary.json:1554 — ] public/automation/todo-summary.json:314 — _issue_sync.cjs\\\"\""
+- [TODO] public/automation/todo-summary.json:1558 — ",
+- [TODO] public/automation/todo-summary.json:1559 — -summary.json:318 — \",",
+- [TODO] public/automation/todo-summary.json:1560 — ] public/automation/todo-summary.json:318 — \","
+- [TODO] public/automation/todo-summary.json:1564 — ",
+- [TODO] public/automation/todo-summary.json:1565 — -summary.json:320 — \\\",\"",
+- [TODO] public/automation/todo-summary.json:1566 — ] public/automation/todo-summary.json:320 — \\\",\""
+- [TODO] public/automation/todo-summary.json:1570 — ",
+- [TODO] public/automation/todo-summary.json:1571 — -summary.json:324 — \",",
+- [TODO] public/automation/todo-summary.json:1572 — ] public/automation/todo-summary.json:324 — \","
+- [TODO] public/automation/todo-summary.json:1576 — ",
+- [TODO] public/automation/todo-summary.json:1577 — -summary.json:326 — sync report [skip ci]\\\\\\\"\\\",\"",
+- [TODO] public/automation/todo-summary.json:1578 — ] public/automation/todo-summary.json:326 — sync report [skip ci]\\\\\\\"\\\",\""
+- [TODO] public/automation/todo-summary.json:1582 — ",
+- [TODO] public/automation/todo-summary.json:1583 — -summary.json:330 — \",",
+- [TODO] public/automation/todo-summary.json:1584 — ] public/automation/todo-summary.json:330 — \","
+- [TODO] public/automation/todo-summary.json:1588 — ",
+- [TODO] public/automation/todo-summary.json:1589 — -summary.json:331 — sync report [skip ci]\\\\\\\"\\\"\",",
+- [TODO] public/automation/todo-summary.json:1590 — ] public/automation/todo-summary.json:331 — sync report [skip ci]\\\\\\\"\\\"\","
+- [TODO] public/automation/todo-summary.json:1594 — ",
+- [TODO] public/automation/todo-summary.json:1595 — -summary.json:332 — ): update TODO sync report [skip ci]\\\\\\\"\\\"\"",
+- [TODO] public/automation/todo-summary.json:1596 — ] public/automation/todo-summary.json:332 — ): update TODO sync report [skip ci]\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:1600 — ",
+- [TODO] public/automation/todo-summary.json:1601 — -summary.json:336 — \",",
+- [TODO] public/automation/todo-summary.json:1602 — ] public/automation/todo-summary.json:336 — \","
+- [TODO] public/automation/todo-summary.json:1606 — ",
+- [TODO] public/automation/todo-summary.json:1607 — -summary.json:338 — \\\",\"",
+- [TODO] public/automation/todo-summary.json:1608 — ] public/automation/todo-summary.json:338 — \\\",\""
+- [TODO] public/automation/todo-summary.json:1612 — ",
+- [TODO] public/automation/todo-summary.json:1613 — -summary.json:342 — \",",
+- [TODO] public/automation/todo-summary.json:1614 — ] public/automation/todo-summary.json:342 — \","
+- [TODO] public/automation/todo-summary.json:1618 — ",
+- [TODO] public/automation/todo-summary.json:1619 — -summary.json:344 — Issue\\\"\"",
+- [TODO] public/automation/todo-summary.json:1620 — ] public/automation/todo-summary.json:344 — Issue\\\"\""
+- [TODO] public/automation/todo-summary.json:1624 — ",
+- [TODO] public/automation/todo-summary.json:1625 — -summary.json:348 — \",",
+- [TODO] public/automation/todo-summary.json:1626 — ] public/automation/todo-summary.json:348 — \","
+- [TODO] public/automation/todo-summary.json:1630 — ",
+- [TODO] public/automation/todo-summary.json:1631 — -summary.json:350 — \\\",\"",
+- [TODO] public/automation/todo-summary.json:1632 — ] public/automation/todo-summary.json:350 — \\\",\""
+- [FIXME] public/automation/todo-summary.json:1636 — ",
+- [TODO] public/automation/todo-summary.json:1637 — -summary.json:354 — \",",
+- [FIXME] public/automation/todo-summary.json:1638 — ] public/automation/todo-summary.json:354 — \","
+- [FIXME] public/automation/todo-summary.json:1642 — ",
+- [TODO] public/automation/todo-summary.json:1643 — -summary.json:356 — /NOTE Sync\\\\\\\"\\\",\"",
+- [FIXME] public/automation/todo-summary.json:1644 — ] public/automation/todo-summary.json:356 — /NOTE Sync\\\\\\\"\\\",\""
+- [TODO] public/automation/todo-summary.json:1648 — ",
+- [TODO] public/automation/todo-summary.json:1649 — -summary.json:360 — \",",
+- [TODO] public/automation/todo-summary.json:1650 — ] public/automation/todo-summary.json:360 — \","
+- [FIXME] public/automation/todo-summary.json:1654 — ",
+- [TODO] public/automation/todo-summary.json:1655 — -summary.json:361 — /NOTE Sync\\\\\\\"\\\"\",",
+- [FIXME] public/automation/todo-summary.json:1656 — ] public/automation/todo-summary.json:361 — /NOTE Sync\\\\\\\"\\\"\","
+- [TODO] public/automation/todo-summary.json:1660 — ",
+- [TODO] public/automation/todo-summary.json:1661 — -summary.json:362 — /FIXME/NOTE Sync\\\\\\\"\\\"\"",
+- [TODO] public/automation/todo-summary.json:1662 — ] public/automation/todo-summary.json:362 — /FIXME/NOTE Sync\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:1666 — ",
+- [TODO] public/automation/todo-summary.json:1667 — -summary.json:366 — \",",
+- [TODO] public/automation/todo-summary.json:1668 — ] public/automation/todo-summary.json:366 — \","
+- [TODO] public/automation/todo-summary.json:1672 — ",
+- [TODO] public/automation/todo-summary.json:1673 — -summary.json:368 — \\\",\"",
+- [TODO] public/automation/todo-summary.json:1674 — ] public/automation/todo-summary.json:368 — \\\",\""
+- [TODO] public/automation/todo-summary.json:1678 — ",
+- [TODO] public/automation/todo-summary.json:1679 — -summary.json:372 — \",",
+- [TODO] public/automation/todo-summary.json:1680 — ] public/automation/todo-summary.json:372 — \","
+- [TODO] public/automation/todo-summary.json:1684 — ",
+- [TODO] public/automation/todo-summary.json:1685 — -summary.json:374 — _SYNC.md\\\\\\\"\\\"\"",
+- [TODO] public/automation/todo-summary.json:1686 — ] public/automation/todo-summary.json:374 — _SYNC.md\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:1690 — ",
+- [TODO] public/automation/todo-summary.json:1691 — -summary.json:378 — \",",
+- [TODO] public/automation/todo-summary.json:1692 — ] public/automation/todo-summary.json:378 — \","
+- [TODO] public/automation/todo-summary.json:1696 — ",
+- [TODO] public/automation/todo-summary.json:1697 — -summary.json:380 — \\\",\"",
+- [TODO] public/automation/todo-summary.json:1698 — ] public/automation/todo-summary.json:380 — \\\",\""
+- [FIXME] public/automation/todo-summary.json:1702 — ",
+- [TODO] public/automation/todo-summary.json:1703 — -summary.json:384 — \",",
+- [FIXME] public/automation/todo-summary.json:1704 — ] public/automation/todo-summary.json:384 — \","
+- [FIXME] public/automation/todo-summary.json:1708 — ",
+- [TODO] public/automation/todo-summary.json:1709 — -summary.json:386 — scanner\\\",\"",
+- [FIXME] public/automation/todo-summary.json:1710 — ] public/automation/todo-summary.json:386 — scanner\\\",\""
+- [TODO] public/automation/todo-summary.json:1714 — ",
+- [TODO] public/automation/todo-summary.json:1715 — -summary.json:390 — \",",
+- [TODO] public/automation/todo-summary.json:1716 — ] public/automation/todo-summary.json:390 — \","
+- [FIXME] public/automation/todo-summary.json:1720 — ",
+- [TODO] public/automation/todo-summary.json:1721 — -summary.json:391 — scanner\\\"\",",
+- [FIXME] public/automation/todo-summary.json:1722 — ] public/automation/todo-summary.json:391 — scanner\\\"\","
+- [TODO] public/automation/todo-summary.json:1726 — ",
+- [TODO] public/automation/todo-summary.json:1727 — -summary.json:392 — /FIXME scanner\\\"\"",
+- [TODO] public/automation/todo-summary.json:1728 — ] public/automation/todo-summary.json:392 — /FIXME scanner\\\"\""
+- [TODO] public/automation/todo-summary.json:1732 — ",
+- [TODO] public/automation/todo-summary.json:1733 — -summary.json:396 — \",",
+- [TODO] public/automation/todo-summary.json:1734 — ] public/automation/todo-summary.json:396 — \","
+- [TODO] public/automation/todo-summary.json:1738 — ",
+- [TODO] public/automation/todo-summary.json:1739 — -summary.json:398 — \\\",\"",
+- [TODO] public/automation/todo-summary.json:1740 — ] public/automation/todo-summary.json:398 — \\\",\""
+- [TODO] public/automation/todo-summary.json:1744 — ",
+- [TODO] public/automation/todo-summary.json:1745 — -summary.json:402 — \",",
+- [TODO] public/automation/todo-summary.json:1746 — ] public/automation/todo-summary.json:402 — \","
+- [TODO] public/automation/todo-summary.json:1750 — ",
+- [TODO] public/automation/todo-summary.json:1751 — -summary.json:404 — -scanner.cjs | cat\\\"\"",
+- [TODO] public/automation/todo-summary.json:1752 — ] public/automation/todo-summary.json:404 — -scanner.cjs | cat\\\"\""
+- [TODO] public/automation/todo-summary.json:1756 — ",
+- [TODO] public/automation/todo-summary.json:1757 — -summary.json:408 — \",",
+- [TODO] public/automation/todo-summary.json:1758 — ] public/automation/todo-summary.json:408 — \","
+- [TODO] public/automation/todo-summary.json:1762 — ",
+- [TODO] public/automation/todo-summary.json:1763 — -summary.json:410 — \\\",\"",
+- [TODO] public/automation/todo-summary.json:1764 — ] public/automation/todo-summary.json:410 — \\\",\""
+- [TODO] public/automation/todo-summary.json:1768 — ",
+- [TODO] public/automation/todo-summary.json:1769 — -summary.json:414 — \",",
+- [TODO] public/automation/todo-summary.json:1770 — ] public/automation/todo-summary.json:414 — \","
+- [TODO] public/automation/todo-summary.json:1774 — ",
+- [TODO] public/automation/todo-summary.json:1775 — -summary.json:416 — report and content registry [skip ci]\\\\\\\"\\\"\"",
+- [TODO] public/automation/todo-summary.json:1776 — ] public/automation/todo-summary.json:416 — report and content registry [skip ci]\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:1780 — ",
+- [TODO] public/automation/todo-summary.json:1781 — -summary.json:422 — \",",
+- [TODO] public/automation/todo-summary.json:1782 — ] public/automation/todo-summary.json:422 — \","
+- [TODO] public/automation/todo-summary.json:1786 — ",
+- [TODO] public/automation/todo-summary.json:1787 — -summary.json:424 — _REPORT.md\\\",\"",
+- [TODO] public/automation/todo-summary.json:1788 — ] public/automation/todo-summary.json:424 — _REPORT.md\\\",\""
+- [TODO] public/automation/todo-summary.json:1792 — ",
+- [TODO] public/automation/todo-summary.json:1793 — -summary.json:428 — \",",
+- [TODO] public/automation/todo-summary.json:1794 — ] public/automation/todo-summary.json:428 — \","
+- [TODO] public/automation/todo-summary.json:1798 — ",
+- [TODO] public/automation/todo-summary.json:1799 — -summary.json:430 — _REPORT.md\\\"\"",
+- [TODO] public/automation/todo-summary.json:1800 — ] public/automation/todo-summary.json:430 — _REPORT.md\\\"\""
+- [TODO] public/automation/todo-summary.json:1804 — ",
+- [TODO] public/automation/todo-summary.json:1805 — -summary.json:433 — -summary-runner.js\": [",
+- [TODO] public/automation/todo-summary.json:1806 — ] public/automation/todo-summary.json:433 — -summary-runner.js\": ["
+- [TODO] public/automation/todo-summary.json:1810 — ",
+- [TODO] public/automation/todo-summary.json:1811 — -summary.json:436 — \",",
+- [TODO] public/automation/todo-summary.json:1812 — ] public/automation/todo-summary.json:436 — \","
+- [TODO] public/automation/todo-summary.json:1816 — ",
+- [TODO] public/automation/todo-summary.json:1817 — -summary.json:437 — -scanner.cjs'));\",",
+- [TODO] public/automation/todo-summary.json:1818 — ] public/automation/todo-summary.json:437 — -scanner.cjs'));\","
+- [TODO] public/automation/todo-summary.json:1822 — ",
+- [TODO] public/automation/todo-summary.json:1823 — -summary.json:438 — scan', () => runNode('automation/todo-scanner.cjs'));\"",
+- [TODO] public/automation/todo-summary.json:1824 — ] public/automation/todo-summary.json:438 — scan', () => runNode('automation/todo-scanner.cjs'));\""
+- [TODO] public/automation/todo-summary.json:1828 — ",
+- [TODO] public/automation/todo-summary.json:1829 — -summary.json:441 — -scanner-runner.js\": [",
+- [TODO] public/automation/todo-summary.json:1830 — ] public/automation/todo-summary.json:441 — -scanner-runner.js\": ["
+- [TODO] public/automation/todo-summary.json:1834 — ",
+- [TODO] public/automation/todo-summary.json:1835 — -summary.json:444 — \",",
+- [TODO] public/automation/todo-summary.json:1836 — ] public/automation/todo-summary.json:444 — \","
+- [TODO] public/automation/todo-summary.json:1840 — ",
+- [TODO] public/automation/todo-summary.json:1841 — -summary.json:445 — -scanner.cjs'));\",",
+- [TODO] public/automation/todo-summary.json:1842 — ] public/automation/todo-summary.json:445 — -scanner.cjs'));\","
+- [TODO] public/automation/todo-summary.json:1846 — ",
+- [TODO] public/automation/todo-summary.json:1847 — -summary.json:446 — scan', () => runNode('automation/todo-scanner.cjs'));\"",
+- [TODO] public/automation/todo-summary.json:1848 — ] public/automation/todo-summary.json:446 — scan', () => runNode('automation/todo-scanner.cjs'));\""
+- [TODO] public/automation/todo-summary.json:1852 — ",
+- [TODO] public/automation/todo-summary.json:1853 — -summary.json:452 — \",",
+- [TODO] public/automation/todo-summary.json:1854 — ] public/automation/todo-summary.json:452 — \","
+- [TODO] public/automation/todo-summary.json:1858 — ",
+- [TODO] public/automation/todo-summary.json:1859 — -summary.json:454 — -scanner-runner\\\",\"",
+- [TODO] public/automation/todo-summary.json:1860 — ] public/automation/todo-summary.json:454 — -scanner-runner\\\",\""
+- [TODO] public/automation/todo-summary.json:1864 — ",
+- [TODO] public/automation/todo-summary.json:1865 — -summary.json:458 — \",",
+- [TODO] public/automation/todo-summary.json:1866 — ] public/automation/todo-summary.json:458 — \","
+- [TODO] public/automation/todo-summary.json:1870 — ",
+- [TODO] public/automation/todo-summary.json:1871 — -summary.json:460 — -summary-runner\\\",\"",
+- [TODO] public/automation/todo-summary.json:1872 — ] public/automation/todo-summary.json:460 — -summary-runner\\\",\""
+- [TODO] public/automation/todo-summary.json:1876 — ",
+- [TODO] public/automation/todo-summary.json:1877 — -summary.json:463 — -issue-sync.yml\": [",
+- [TODO] public/automation/todo-summary.json:1878 — ] public/automation/todo-summary.json:463 — -issue-sync.yml\": ["
+- [TODO] public/automation/todo-summary.json:1882 — ",
+- [TODO] public/automation/todo-summary.json:1883 — -summary.json:466 — \",",
+- [TODO] public/automation/todo-summary.json:1884 — ] public/automation/todo-summary.json:466 — \","
+- [TODO] public/automation/todo-summary.json:1888 — ",
+- [TODO] public/automation/todo-summary.json:1889 — -summary.json:468 — Issue Sync\"",
+- [TODO] public/automation/todo-summary.json:1890 — ] public/automation/todo-summary.json:468 — Issue Sync\""
+- [TODO] public/automation/todo-summary.json:1894 — ",
+- [TODO] public/automation/todo-summary.json:1895 — -summary.json:472 — \",",
+- [TODO] public/automation/todo-summary.json:1896 — ] public/automation/todo-summary.json:472 — \","
+- [TODO] public/automation/todo-summary.json:1900 — ",
+- [TODO] public/automation/todo-summary.json:1901 — -summary.json:474 — s:\"",
+- [TODO] public/automation/todo-summary.json:1902 — ] public/automation/todo-summary.json:474 — s:\""
+- [TODO] public/automation/todo-summary.json:1906 — ",
+- [TODO] public/automation/todo-summary.json:1907 — -summary.json:478 — \",",
+- [TODO] public/automation/todo-summary.json:1908 — ] public/automation/todo-summary.json:478 — \","
+- [TODO] public/automation/todo-summary.json:1912 — ",
+- [TODO] public/automation/todo-summary.json:1913 — -summary.json:480 — report\"",
+- [TODO] public/automation/todo-summary.json:1914 — ] public/automation/todo-summary.json:480 — report\""
+- [TODO] public/automation/todo-summary.json:1918 — ",
+- [TODO] public/automation/todo-summary.json:1919 — -summary.json:484 — \",",
+- [TODO] public/automation/todo-summary.json:1920 — ] public/automation/todo-summary.json:484 — \","
+- [TODO] public/automation/todo-summary.json:1924 — ",
+- [TODO] public/automation/todo-summary.json:1925 — -summary.json:486 — _issue_sync.cjs\"",
+- [TODO] public/automation/todo-summary.json:1926 — ] public/automation/todo-summary.json:486 — _issue_sync.cjs\""
+- [TODO] public/automation/todo-summary.json:1930 — ",
+- [TODO] public/automation/todo-summary.json:1931 — -summary.json:490 — \",",
+- [TODO] public/automation/todo-summary.json:1932 — ] public/automation/todo-summary.json:490 — \","
+- [TODO] public/automation/todo-summary.json:1936 — ",
+- [TODO] public/automation/todo-summary.json:1937 — -summary.json:491 — sync report [skip ci]\\\"\",",
+- [TODO] public/automation/todo-summary.json:1938 — ] public/automation/todo-summary.json:491 — sync report [skip ci]\\\"\","
+- [TODO] public/automation/todo-summary.json:1942 — ",
+- [TODO] public/automation/todo-summary.json:1943 — -summary.json:492 — ): update TODO sync report [skip ci]\\\"\"",
+- [TODO] public/automation/todo-summary.json:1944 — ] public/automation/todo-summary.json:492 — ): update TODO sync report [skip ci]\\\"\""
+- [TODO] public/automation/todo-summary.json:1948 — ",
+- [TODO] public/automation/todo-summary.json:1949 — -summary.json:496 — \",",
+- [TODO] public/automation/todo-summary.json:1950 — ] public/automation/todo-summary.json:496 — \","
+- [TODO] public/automation/todo-summary.json:1954 — ",
+- [TODO] public/automation/todo-summary.json:1955 — -summary.json:498 — Issue\"",
+- [TODO] public/automation/todo-summary.json:1956 — ] public/automation/todo-summary.json:498 — Issue\""
+- [TODO] public/automation/todo-summary.json:1960 — ",
+- [TODO] public/automation/todo-summary.json:1961 — -summary.json:502 — \",",
+- [TODO] public/automation/todo-summary.json:1962 — ] public/automation/todo-summary.json:502 — \","
+- [FIXME] public/automation/todo-summary.json:1966 — ",
+- [TODO] public/automation/todo-summary.json:1967 — -summary.json:503 — /NOTE Sync\\\"\",",
+- [FIXME] public/automation/todo-summary.json:1968 — ] public/automation/todo-summary.json:503 — /NOTE Sync\\\"\","
+- [TODO] public/automation/todo-summary.json:1972 — ",
+- [TODO] public/automation/todo-summary.json:1973 — -summary.json:504 — /FIXME/NOTE Sync\\\"\"",
+- [TODO] public/automation/todo-summary.json:1974 — ] public/automation/todo-summary.json:504 — /FIXME/NOTE Sync\\\"\""
+- [TODO] public/automation/todo-summary.json:1978 — ",
+- [TODO] public/automation/todo-summary.json:1979 — -summary.json:508 — \",",
+- [TODO] public/automation/todo-summary.json:1980 — ] public/automation/todo-summary.json:508 — \","
+- [TODO] public/automation/todo-summary.json:1984 — ",
+- [TODO] public/automation/todo-summary.json:1985 — -summary.json:510 — _SYNC.md\\\"\"",
+- [TODO] public/automation/todo-summary.json:1986 — ] public/automation/todo-summary.json:510 — _SYNC.md\\\"\""
+- [TODO] public/automation/todo-summary.json:1990 — ",
+- [TODO] public/automation/todo-summary.json:1991 — -summary.json:516 — \",",
+- [TODO] public/automation/todo-summary.json:1992 — ] public/automation/todo-summary.json:516 — \","
+- [FIXME] public/automation/todo-summary.json:1996 — ",
+- [TODO] public/automation/todo-summary.json:1997 — -summary.json:517 — scanner\",",
+- [FIXME] public/automation/todo-summary.json:1998 — ] public/automation/todo-summary.json:517 — scanner\","
+- [TODO] public/automation/todo-summary.json:2002 — ",
+- [TODO] public/automation/todo-summary.json:2003 — -summary.json:518 — /FIXME scanner\"",
+- [TODO] public/automation/todo-summary.json:2004 — ] public/automation/todo-summary.json:518 — /FIXME scanner\""
+- [TODO] public/automation/todo-summary.json:2008 — ",
+- [TODO] public/automation/todo-summary.json:2009 — -summary.json:522 — \",",
+- [TODO] public/automation/todo-summary.json:2010 — ] public/automation/todo-summary.json:522 — \","
+- [TODO] public/automation/todo-summary.json:2014 — ",
+- [TODO] public/automation/todo-summary.json:2015 — -summary.json:524 — -scanner.cjs | cat\"",
+- [TODO] public/automation/todo-summary.json:2016 — ] public/automation/todo-summary.json:524 — -scanner.cjs | cat\""
+- [TODO] public/automation/todo-summary.json:2020 — ",
+- [TODO] public/automation/todo-summary.json:2021 — -summary.json:528 — \",",
+- [TODO] public/automation/todo-summary.json:2022 — ] public/automation/todo-summary.json:528 — \","
+- [TODO] public/automation/todo-summary.json:2026 — ",
+- [TODO] public/automation/todo-summary.json:2027 — -summary.json:530 — report and content registry [skip ci]\\\"\"",
+- [TODO] public/automation/todo-summary.json:2028 — ] public/automation/todo-summary.json:530 — report and content registry [skip ci]\\\"\""
+- [TODO] public/automation/todo-summary.json:2032 — ",
+- [TODO] public/automation/todo-summary.json:2033 — -summary.json:536 — \",",
+- [TODO] public/automation/todo-summary.json:2034 — ] public/automation/todo-summary.json:536 — \","
+- [TODO] public/automation/todo-summary.json:2038 — ",
+- [TODO] public/automation/todo-summary.json:2039 — -summary.json:537 — _REPORT</div><div className=\\\"mt-1 text-sm text-white/75\\\">Open documentation</div><div className=\\\"mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90\\\">Open <span aria-hidden>↗</span></div></a>\",",
+- [TODO] public/automation/todo-summary.json:2040 — ] public/automation/todo-summary.json:537 — _REPORT</div><div className=\\\"mt-1 text-sm text-white/75\\\">Open documentation</div><div className=\\\"mt-3 inline-flex items-center gap-1 text-xs text-"
+- [TODO] public/automation/todo-summary.json:2044 — ",
+- [TODO] public/automation/todo-summary.json:2045 — -summary.json:538 — _REPORT.md\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\" className=\\\"group relative overflow-hidden rounded-2xl border border-white/10 bg-gradien\"",
+- [TODO] public/automation/todo-summary.json:2046 — ] public/automation/todo-summary.json:538 — _REPORT.md\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\" className=\\\"group relative overflow-hidden rounded-2xl border border-white/10 bg-gradien\""
+- [TODO] public/automation/todo-summary.json:2050 — ",
+- [TODO] public/automation/todo-summary.json:2051 — -summary.json:544 — \",",
+- [TODO] public/automation/todo-summary.json:2052 — ] public/automation/todo-summary.json:544 — \","
+- [TODO] public/automation/todo-summary.json:2056 — ",
+- [TODO] public/automation/todo-summary.json:2057 — -summary.json:546 — _REPORT.md\\\",\"",
+- [TODO] public/automation/todo-summary.json:2058 — ] public/automation/todo-summary.json:546 — _REPORT.md\\\",\""
+- [TODO] public/automation/todo-summary.json:2062 — ",
+- [TODO] public/automation/todo-summary.json:2063 — -summary.json:552 — \",",
+- [TODO] public/automation/todo-summary.json:2064 — ] public/automation/todo-summary.json:552 — \","
+- [TODO] public/automation/todo-summary.json:2068 — ",
+- [TODO] public/automation/todo-summary.json:2069 — -summary.json:554 — _REPORT.md\\\",\"",
+- [TODO] public/automation/todo-summary.json:2070 — ] public/automation/todo-summary.json:554 — _REPORT.md\\\",\""
+- [TODO] public/automation/todo-summary.json:2074 — ",
+- [TODO] public/automation/todo-summary.json:2075 — -summary.json:560 — \",",
+- [TODO] public/automation/todo-summary.json:2076 — ] public/automation/todo-summary.json:560 — \","
+- [TODO] public/automation/todo-summary.json:2080 — ",
+- [TODO] public/automation/todo-summary.json:2081 — -summary.json:562 — _REPORT.md\\\",\"",
+- [TODO] public/automation/todo-summary.json:2082 — ] public/automation/todo-summary.json:562 — _REPORT.md\\\",\""
+- [TODO] public/automation/todo-summary.json:2086 — ",
+- [TODO] public/automation/todo-summary.json:2087 — -summary.json:568 — \",",
+- [TODO] public/automation/todo-summary.json:2088 — ] public/automation/todo-summary.json:568 — \","
+- [TODO] public/automation/todo-summary.json:2092 — ",
+- [TODO] public/automation/todo-summary.json:2093 — -summary.json:570 — _REPORT.md\\\",\"",
+- [TODO] public/automation/todo-summary.json:2094 — ] public/automation/todo-summary.json:570 — _REPORT.md\\\",\""
+- [TODO] public/automation/todo-summary.json:2098 — ",
+- [TODO] public/automation/todo-summary.json:2100 — ] public/search/index.json:59 — _REPORT\","
+- [TODO] public/automation/todo-summary.json:2104 — ",
+- [TODO] public/automation/todo-summary.json:2106 — ] public/search/index.json:60 — _REPORT.md\","
+- [TODO] public/automation/todo-summary.json:2110 — ",
+- [FIXME] public/automation/todo-summary.json:2111 — Report\",",
+- [TODO] public/automation/todo-summary.json:2112 — ] public/search/index.json:61 — and FIXME Report\","
+- [TODO] public/automation/todo-summary.json:2116 — ",
+- [FIXME] public/automation/todo-summary.json:2117 — Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner - [TODO] .github/workflows/autonomous-content-scanner.yml:31 — -sca\"",
+- [TODO] public/automation/todo-summary.json:2118 — ] public/search/index.json:62 — and FIXME Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/autono"
+- [TODO] public/automation/todo-summary.json:2124 — ",
+- [TODO] public/automation/todo-summary.json:2126 — issue sync, autonomous release, and keepalive workflows (09ccba6)"
+- [TODO] public/automation/todo-summary.json:2130 — ",
+- [TODO] public/automation/todo-summary.json:2132 — issue sync, autonomous release, and keepalive workflows (09ccba6)"
+- [TODO] public/automation/todo-summary.json:2136 — ",
+- [TODO] public/automation/todo-summary.json:2138 — issue sync, autonomous release, and keepalive workflows (09ccba6)"
+- [TODO] public/automation/todo-summary.json:2142 — ",
+- [TODO] public/automation/todo-summary.json:2144 — issue sync, autonomous release, and keepalive workflows (09ccba6)"
+- [TODO] public/automation/todo-summary.json:2150 — ",
+- [TODO] public/automation/todo-summary.json:2152 — _REPORT\","
+- [TODO] public/automation/todo-summary.json:2156 — ",
+- [TODO] public/automation/todo-summary.json:2158 — _REPORT.md\","
+- [TODO] public/automation/todo-summary.json:2162 — ",
+- [FIXME] public/automation/todo-summary.json:2163 — Report\",",
+- [TODO] public/automation/todo-summary.json:2164 — and FIXME Report\","
+- [TODO] public/automation/todo-summary.json:2168 — ",
+- [FIXME] public/automation/todo-summary.json:2169 — Report - Generated: 2025-08-11T17:51:48.639Z - Total findings: 345 ## .github/workflows.disabled/autonomous-content-scanner.yml - [TODO] .github/workflows.disabled/autonomous-content-scanner.yml:30 — /FIXME scanner - [TODO] .github/workflows.disabled/autonomous-c\"",
+- [TODO] public/automation/todo-summary.json:2170 — and FIXME Report - Generated: 2025-08-11T17:51:48.639Z - Total findings: 345 ## .github/workflows.disabled/autonomous-content-scanner.yml - [TODO] .github/workflows.disabled/autonom"
+- [TODO] public/automation/todo-summary.json:2173 — -summary.json": [
+- [TODO] public/automation/todo-summary.json:2176 — ",
+- [TODO] public/automation/todo-summary.json:2178 — \","
+- [TODO] public/automation/todo-summary.json:2182 — ",
+- [TODO] public/automation/todo-summary.json:2183 — -scanner-runner' },\",",
+- [TODO] public/automation/todo-summary.json:2184 — report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },\","
+- [TODO] public/automation/todo-summary.json:2188 — ",
+- [TODO] public/automation/todo-summary.json:2189 — report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },\"",
+- [TODO] public/automation/todo-summary.json:2190 — Scanner', desc: 'Generates a consolidated TODO report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },\""
+- [TODO] public/automation/todo-summary.json:2194 — ",
+- [TODO] public/automation/todo-summary.json:2196 — _REPORT.md\": ["
+- [TODO] public/automation/todo-summary.json:2200 — ",
+- [TODO] public/automation/todo-summary.json:2202 — \","
+- [FIXME] public/automation/todo-summary.json:2206 — ",
+- [FIXME] public/automation/todo-summary.json:2208 — Report\","
+- [TODO] public/automation/todo-summary.json:2212 — ",
+- [FIXME] public/automation/todo-summary.json:2213 — Report\"",
+- [TODO] public/automation/todo-summary.json:2214 — and FIXME Report\""
+- [TODO] public/automation/todo-summary.json:2218 — ",
+- [TODO] public/automation/todo-summary.json:2220 — \","
+- [FIXME] public/automation/todo-summary.json:2224 — ",
+- [FIXME] public/automation/todo-summary.json:2226 — scanner\","
+- [TODO] public/automation/todo-summary.json:2230 — ",
+- [FIXME] public/automation/todo-summary.json:2231 — scanner\"",
+- [TODO] public/automation/todo-summary.json:2232 — ] .github/workflows.disabled/autonomous-content-scanner.yml:30 — /FIXME scanner\""
+- [TODO] public/automation/todo-summary.json:2236 — ",
+- [TODO] public/automation/todo-summary.json:2238 — \","
+- [TODO] public/automation/todo-summary.json:2242 — ",
+- [TODO] public/automation/todo-summary.json:2244 — ] .github/workflows.disabled/autonomous-content-scanner.yml:31 — -scanner.cjs | cat\""
+- [TODO] public/automation/todo-summary.json:2248 — ",
+- [TODO] public/automation/todo-summary.json:2250 — \","
+- [TODO] public/automation/todo-summary.json:2254 — ",
+- [TODO] public/automation/todo-summary.json:2256 — ] .github/workflows.disabled/autonomous-content-scanner.yml:40 — report and content registry [skip ci]\\\"\""
+- [TODO] public/automation/todo-summary.json:2260 — ",
+- [TODO] public/automation/todo-summary.json:2262 — \","
+- [TODO] public/automation/todo-summary.json:2266 — ",
+- [TODO] public/automation/todo-summary.json:2268 — -issue-sync.yml\""
+- [TODO] public/automation/todo-summary.json:2272 — ",
+- [TODO] public/automation/todo-summary.json:2274 — \","
+- [TODO] public/automation/todo-summary.json:2278 — ",
+- [TODO] public/automation/todo-summary.json:2280 — -issue-sync.yml:1 — Issue Sync\","
+- [TODO] public/automation/todo-summary.json:2284 — ",
+- [TODO] public/automation/todo-summary.json:2285 — -issue-sync.yml:1 — Issue Sync\"",
+- [TODO] public/automation/todo-summary.json:2286 — ] .github/workflows.disabled/todo-issue-sync.yml:1 — Issue Sync\""
+- [TODO] public/automation/todo-summary.json:2290 — ",
+- [TODO] public/automation/todo-summary.json:2292 — \","
+- [TODO] public/automation/todo-summary.json:2296 — ",
+- [TODO] public/automation/todo-summary.json:2298 — -issue-sync.yml:13 — s:\","
+- [TODO] public/automation/todo-summary.json:2302 — ",
+- [TODO] public/automation/todo-summary.json:2303 — -issue-sync.yml:13 — s:\"",
+- [TODO] public/automation/todo-summary.json:2304 — ] .github/workflows.disabled/todo-issue-sync.yml:13 — s:\""
+- [TODO] public/automation/todo-summary.json:2308 — ",
+- [TODO] public/automation/todo-summary.json:2310 — \","
+- [TODO] public/automation/todo-summary.json:2314 — ",
+- [TODO] public/automation/todo-summary.json:2316 — -issue-sync.yml:29 — report\","
+- [TODO] public/automation/todo-summary.json:2320 — ",
+- [TODO] public/automation/todo-summary.json:2321 — -issue-sync.yml:29 — report\"",
+- [TODO] public/automation/todo-summary.json:2322 — ] .github/workflows.disabled/todo-issue-sync.yml:29 — report\""
+- [TODO] public/automation/todo-summary.json:2326 — ",
+- [TODO] public/automation/todo-summary.json:2328 — \","
+- [TODO] public/automation/todo-summary.json:2332 — ",
+- [TODO] public/automation/todo-summary.json:2334 — -issue-sync.yml:30 — _issue_sync.cjs\","
+- [TODO] public/automation/todo-summary.json:2338 — ",
+- [TODO] public/automation/todo-summary.json:2339 — -issue-sync.yml:30 — _issue_sync.cjs\"",
+- [TODO] public/automation/todo-summary.json:2340 — ] .github/workflows.disabled/todo-issue-sync.yml:30 — _issue_sync.cjs\""
+- [TODO] public/automation/todo-summary.json:2344 — ",
+- [TODO] public/automation/todo-summary.json:2346 — \","
+- [TODO] public/automation/todo-summary.json:2350 — ",
+- [TODO] public/automation/todo-summary.json:2351 — sync report [skip ci]\\\"\",",
+- [TODO] public/automation/todo-summary.json:2352 — -issue-sync.yml:38 — ): update TODO sync report [skip ci]\\\"\","
+- [TODO] public/automation/todo-summary.json:2356 — ",
+- [TODO] public/automation/todo-summary.json:2357 — -issue-sync.yml:38 — ): update TODO sync report [skip ci]\\\"\"",
+- [TODO] public/automation/todo-summary.json:2358 — ] .github/workflows.disabled/todo-issue-sync.yml:38 — ): update TODO sync report [skip ci]\\\"\""
+- [TODO] public/automation/todo-summary.json:2362 — ",
+- [TODO] public/automation/todo-summary.json:2364 — \","
+- [TODO] public/automation/todo-summary.json:2368 — ",
+- [TODO] public/automation/todo-summary.json:2370 — -issue-sync.yml:42 — Issue\","
+- [TODO] public/automation/todo-summary.json:2374 — ",
+- [TODO] public/automation/todo-summary.json:2375 — -issue-sync.yml:42 — Issue\"",
+- [TODO] public/automation/todo-summary.json:2376 — ] .github/workflows.disabled/todo-issue-sync.yml:42 — Issue\""
+- [TODO] public/automation/todo-summary.json:2380 — ",
+- [TODO] public/automation/todo-summary.json:2382 — \","
+- [TODO] public/automation/todo-summary.json:2386 — ",
+- [FIXME] public/automation/todo-summary.json:2387 — /NOTE Sync\\\"\",",
+- [TODO] public/automation/todo-summary.json:2388 — -issue-sync.yml:47 — /FIXME/NOTE Sync\\\"\","
+- [TODO] public/automation/todo-summary.json:2392 — ",
+- [TODO] public/automation/todo-summary.json:2393 — -issue-sync.yml:47 — /FIXME/NOTE Sync\\\"\"",
+- [TODO] public/automation/todo-summary.json:2394 — ] .github/workflows.disabled/todo-issue-sync.yml:47 — /FIXME/NOTE Sync\\\"\""
+- [TODO] public/automation/todo-summary.json:2398 — ",
+- [TODO] public/automation/todo-summary.json:2400 — \","
+- [TODO] public/automation/todo-summary.json:2404 — ",
+- [TODO] public/automation/todo-summary.json:2406 — -issue-sync.yml:48 — _SYNC.md\\\"\","
+- [TODO] public/automation/todo-summary.json:2410 — ",
+- [TODO] public/automation/todo-summary.json:2411 — -issue-sync.yml:48 — _SYNC.md\\\"\"",
+- [TODO] public/automation/todo-summary.json:2412 — ] .github/workflows.disabled/todo-issue-sync.yml:48 — _SYNC.md\\\"\""
+- [TODO] public/automation/todo-summary.json:2416 — ",
+- [TODO] public/automation/todo-summary.json:2418 — \","
+- [TODO] public/automation/todo-summary.json:2422 — ",
+- [TODO] public/automation/todo-summary.json:2424 — ] data/reports/external-links/external-links-1754934673584.json:142 — _REPORT.md\\\",\""
+- [TODO] public/automation/todo-summary.json:2428 — ",
+- [TODO] public/automation/todo-summary.json:2430 — \","
+- [TODO] public/automation/todo-summary.json:2434 — ",
+- [TODO] public/automation/todo-summary.json:2436 — ] data/reports/external-links/external-links-1754934698424.json:127 — _REPORT.md\\\",\""
+- [TODO] public/automation/todo-summary.json:2440 — ",
+- [TODO] public/automation/todo-summary.json:2442 — \","
+- [TODO] public/automation/todo-summary.json:2446 — ",
+- [TODO] public/automation/todo-summary.json:2448 — ] data/reports/external-links/latest.json:127 — _REPORT.md\\\",\""
+- [TODO] public/automation/todo-summary.json:2452 — ",
+- [TODO] public/automation/todo-summary.json:2454 — \","
+- [TODO] public/automation/todo-summary.json:2458 — ",
+- [TODO] public/automation/todo-summary.json:2460 — ] data/reports/link-sentinel/report-2025-08-11T17-51-16-470Z.json:100 — _REPORT.md\\\",\""
+- [TODO] public/automation/todo-summary.json:2464 — ",
+- [TODO] public/automation/todo-summary.json:2466 — \","
+- [TODO] public/automation/todo-summary.json:2470 — ",
+- [TODO] public/automation/todo-summary.json:2472 — ] data/reports/repo-knowledge-graph.json:225 — -scanner.cjs\\\",\""
+- [TODO] public/automation/todo-summary.json:2476 — ",
+- [TODO] public/automation/todo-summary.json:2478 — \","
+- [TODO] public/automation/todo-summary.json:2482 — ",
+- [TODO] public/automation/todo-summary.json:2484 — ] data/reports/repo-knowledge-graph.json:473 — -scanner-runner.js\\\",\""
+- [TODO] public/automation/todo-summary.json:2488 — ",
+- [TODO] public/automation/todo-summary.json:2490 — \","
+- [TODO] public/automation/todo-summary.json:2494 — ",
+- [TODO] public/automation/todo-summary.json:2496 — ] data/reports/repo-knowledge-graph.json:477 — -summary-runner.js\\\",\""
+- [TODO] public/automation/todo-summary.json:2500 — ",
+- [TODO] public/automation/todo-summary.json:2502 — \","
+- [TODO] public/automation/todo-summary.json:2506 — ",
+- [TODO] public/automation/todo-summary.json:2508 — ] data/reports/repo-knowledge-graph.json:597 — _issue_sync.cjs\\\",\""
+- [TODO] public/automation/todo-summary.json:2512 — ",
+- [TODO] public/automation/todo-summary.json:2514 — \","
+- [TODO] public/automation/todo-summary.json:2518 — ",
+- [TODO] public/automation/todo-summary.json:2520 — ] data/reports/repo-knowledge-graph.json:1173 — -scanner.cjs\\\",\""
+- [TODO] public/automation/todo-summary.json:2524 — ",
+- [TODO] public/automation/todo-summary.json:2526 — \","
+- [TODO] public/automation/todo-summary.json:2530 — ",
+- [TODO] public/automation/todo-summary.json:2532 — ] data/reports/repo-knowledge-graph.json:1178 — -scanner.cjs\\\",\""
+- [TODO] public/automation/todo-summary.json:2536 — ",
+- [TODO] public/automation/todo-summary.json:2538 — \","
+- [TODO] public/automation/todo-summary.json:2542 — ",
+- [TODO] public/automation/todo-summary.json:2544 — ] data/reports/repo-knowledge-graph.json:1183 — -scanner.cjs\\\",\""
+- [TODO] public/automation/todo-summary.json:2548 — ",
+- [TODO] public/automation/todo-summary.json:2550 — \","
+- [TODO] public/automation/todo-summary.json:2554 — ",
+- [TODO] public/automation/todo-summary.json:2556 — ] data/reports/repo-knowledge-graph.json:1703 — -scanner-runner.js\\\",\""
+- [TODO] public/automation/todo-summary.json:2560 — ",
+- [TODO] public/automation/todo-summary.json:2562 — \","
+- [TODO] public/automation/todo-summary.json:2566 — ",
+- [TODO] public/automation/todo-summary.json:2568 — ] data/reports/repo-knowledge-graph.json:1708 — -scanner-runner.js\\\",\""
+- [TODO] public/automation/todo-summary.json:2572 — ",
+- [TODO] public/automation/todo-summary.json:2574 — \","
+- [TODO] public/automation/todo-summary.json:2578 — ",
+- [TODO] public/automation/todo-summary.json:2580 — ] data/reports/repo-knowledge-graph.json:1713 — -summary-runner.js\\\",\""
+- [TODO] public/automation/todo-summary.json:2584 — ",
+- [TODO] public/automation/todo-summary.json:2586 — \","
+- [TODO] public/automation/todo-summary.json:2590 — ",
+- [TODO] public/automation/todo-summary.json:2592 — ] data/reports/repo-knowledge-graph.json:1718 — -summary-runner.js\\\",\""
+- [TODO] public/automation/todo-summary.json:2596 — ",
+- [TODO] public/automation/todo-summary.json:2598 — \","
+- [TODO] public/automation/todo-summary.json:2602 — ",
+- [TODO] public/automation/todo-summary.json:2604 — ] data/reports/repo-knowledge-graph.json:1878 — _issue_sync.cjs\\\",\""
+- [TODO] public/automation/todo-summary.json:2608 — ",
+- [TODO] public/automation/todo-summary.json:2610 — \","
+- [TODO] public/automation/todo-summary.json:2614 — ",
+- [TODO] public/automation/todo-summary.json:2616 — ] data/reports/repo-knowledge-graph.json:1883 — _issue_sync.cjs\\\",\""
+- [TODO] public/automation/todo-summary.json:2620 — ",
+- [TODO] public/automation/todo-summary.json:2622 — \","
+- [TODO] public/automation/todo-summary.json:2626 — ",
+- [TODO] public/automation/todo-summary.json:2628 — ] data/reports/repo-knowledge-graph.json:1888 — _issue_sync.cjs\\\",\""
+- [TODO] public/automation/todo-summary.json:2632 — ",
+- [TODO] public/automation/todo-summary.json:2634 — \","
+- [TODO] public/automation/todo-summary.json:2638 — ",
+- [TODO] public/automation/todo-summary.json:2640 — ] docs/CHANGELOG_AI.md:131 — issue sync, autonomous release, and keepalive workflows (09ccba6)\""
+- [TODO] public/automation/todo-summary.json:2644 — ",
+- [TODO] public/automation/todo-summary.json:2646 — \","
+- [TODO] public/automation/todo-summary.json:2650 — ",
+- [TODO] public/automation/todo-summary.json:2652 — ] docs/CHANGELOG_AI.md:296 — issue sync, autonomous release, and keepalive workflows (09ccba6)\""
+- [TODO] public/automation/todo-summary.json:2656 — ",
+- [TODO] public/automation/todo-summary.json:2658 — \","
+- [TODO] public/automation/todo-summary.json:2662 — ",
+- [TODO] public/automation/todo-summary.json:2664 — _REPORT.md\""
+- [TODO] public/automation/todo-summary.json:2668 — ",
+- [TODO] public/automation/todo-summary.json:2670 — \","
+- [TODO] public/automation/todo-summary.json:2674 — ",
+- [FIXME] public/automation/todo-summary.json:2675 — Report\",",
+- [TODO] public/automation/todo-summary.json:2676 — _REPORT.md:1 — and FIXME Report\","
+- [TODO] public/automation/todo-summary.json:2680 — ",
+- [TODO] public/automation/todo-summary.json:2681 — _REPORT.md:1 — and FIXME Report\"",
+- [TODO] public/automation/todo-summary.json:2682 — ] docs/TODO_REPORT.md:1 — and FIXME Report\""
+- [TODO] public/automation/todo-summary.json:2686 — ",
+- [TODO] public/automation/todo-summary.json:2688 — \","
+- [TODO] public/automation/todo-summary.json:2692 — ",
+- [FIXME] public/automation/todo-summary.json:2693 — scanner\",",
+- [TODO] public/automation/todo-summary.json:2694 — _REPORT.md:8 — ] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner\","
+- [TODO] public/automation/todo-summary.json:2698 — ",
+- [TODO] public/automation/todo-summary.json:2699 — _REPORT.md:8 — ] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner\"",
+- [TODO] public/automation/todo-summary.json:2700 — ] docs/TODO_REPORT.md:8 — ] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner\""
+- [TODO] public/automation/todo-summary.json:2704 — ",
+- [TODO] public/automation/todo-summary.json:2706 — \","
+- [TODO] public/automation/todo-summary.json:2710 — ",
+- [TODO] public/automation/todo-summary.json:2712 — _REPORT.md:9 — ] .github/workflows/autonomous-content-scanner.yml:31 — -scanner.cjs | cat\","
+- [TODO] public/automation/todo-summary.json:2716 — ",
+- [TODO] public/automation/todo-summary.json:2717 — _REPORT.md:9 — ] .github/workflows/autonomous-content-scanner.yml:31 — -scanner.cjs | cat\"",
+- [TODO] public/automation/todo-summary.json:2718 — ] docs/TODO_REPORT.md:9 — ] .github/workflows/autonomous-content-scanner.yml:31 — -scanner.cjs | cat\""
+- [TODO] public/automation/todo-summary.json:2722 — ",
+- [TODO] public/automation/todo-summary.json:2724 — \","
+- [TODO] public/automation/todo-summary.json:2728 — ",
+- [TODO] public/automation/todo-summary.json:2730 — _REPORT.md:10 — ] .github/workflows/autonomous-content-scanner.yml:40 — report and content registry [skip ci]\\\"\","
+- [TODO] public/automation/todo-summary.json:2734 — ",
+- [TODO] public/automation/todo-summary.json:2735 — _REPORT.md:10 — ] .github/workflows/autonomous-content-scanner.yml:40 — report and content registry [skip ci]\\\"\"",
+- [TODO] public/automation/todo-summary.json:2736 — ] docs/TODO_REPORT.md:10 — ] .github/workflows/autonomous-content-scanner.yml:40 — report and content registry [skip ci]\\\"\""
+- [TODO] public/automation/todo-summary.json:2740 — ",
+- [TODO] public/automation/todo-summary.json:2742 — \","
+- [TODO] public/automation/todo-summary.json:2746 — ",
+- [TODO] public/automation/todo-summary.json:2748 — _REPORT.md:13 — -issue-sync.yml\","
+- [TODO] public/automation/todo-summary.json:2752 — ",
+- [TODO] public/automation/todo-summary.json:2753 — _REPORT.md:13 — -issue-sync.yml\"",
+- [TODO] public/automation/todo-summary.json:2754 — ] docs/TODO_REPORT.md:13 — -issue-sync.yml\""
+- [TODO] public/automation/todo-summary.json:2758 — ",
+- [TODO] public/automation/todo-summary.json:2760 — \","
+- [TODO] public/automation/todo-summary.json:2764 — ",
+- [TODO] public/automation/todo-summary.json:2765 — -issue-sync.yml:1 — Issue Sync\",",
+- [TODO] public/automation/todo-summary.json:2766 — _REPORT.md:15 — ] .github/workflows/todo-issue-sync.yml:1 — Issue Sync\","
+- [TODO] public/automation/todo-summary.json:2770 — ",
+- [TODO] public/automation/todo-summary.json:2771 — _REPORT.md:15 — ] .github/workflows/todo-issue-sync.yml:1 — Issue Sync\"",
+- [TODO] public/automation/todo-summary.json:2772 — ] docs/TODO_REPORT.md:15 — ] .github/workflows/todo-issue-sync.yml:1 — Issue Sync\""
+- [TODO] public/automation/todo-summary.json:2776 — ",
+- [TODO] public/automation/todo-summary.json:2778 — \","
+- [TODO] public/automation/todo-summary.json:2782 — ",
+- [TODO] public/automation/todo-summary.json:2783 — -issue-sync.yml:13 — s:\",",
+- [TODO] public/automation/todo-summary.json:2784 — _REPORT.md:16 — ] .github/workflows/todo-issue-sync.yml:13 — s:\","
+- [TODO] public/automation/todo-summary.json:2788 — ",
+- [TODO] public/automation/todo-summary.json:2789 — _REPORT.md:16 — ] .github/workflows/todo-issue-sync.yml:13 — s:\"",
+- [TODO] public/automation/todo-summary.json:2790 — ] docs/TODO_REPORT.md:16 — ] .github/workflows/todo-issue-sync.yml:13 — s:\""
+- [TODO] public/automation/todo-summary.json:2794 — ",
+- [TODO] public/automation/todo-summary.json:2796 — \","
+- [TODO] public/automation/todo-summary.json:2800 — ",
+- [TODO] public/automation/todo-summary.json:2801 — -issue-sync.yml:29 — report\",",
+- [TODO] public/automation/todo-summary.json:2802 — _REPORT.md:17 — ] .github/workflows/todo-issue-sync.yml:29 — report\","
+- [TODO] public/automation/todo-summary.json:2806 — ",
+- [TODO] public/automation/todo-summary.json:2807 — _REPORT.md:17 — ] .github/workflows/todo-issue-sync.yml:29 — report\"",
+- [TODO] public/automation/todo-summary.json:2808 — ] docs/TODO_REPORT.md:17 — ] .github/workflows/todo-issue-sync.yml:29 — report\""
+- [TODO] public/automation/todo-summary.json:2812 — ",
+- [TODO] public/automation/todo-summary.json:2814 — \","
+- [TODO] public/automation/todo-summary.json:2818 — ",
+- [TODO] public/automation/todo-summary.json:2819 — -issue-sync.yml:30 — _issue_sync.cjs\",",
+- [TODO] public/automation/todo-summary.json:2820 — _REPORT.md:18 — ] .github/workflows/todo-issue-sync.yml:30 — _issue_sync.cjs\","
+- [TODO] public/automation/todo-summary.json:2824 — ",
+- [TODO] public/automation/todo-summary.json:2825 — _REPORT.md:18 — ] .github/workflows/todo-issue-sync.yml:30 — _issue_sync.cjs\"",
+- [TODO] public/automation/todo-summary.json:2826 — ] docs/TODO_REPORT.md:18 — ] .github/workflows/todo-issue-sync.yml:30 — _issue_sync.cjs\""
+- [TODO] public/automation/todo-summary.json:2830 — ",
+- [TODO] public/automation/todo-summary.json:2832 — \","
+- [TODO] public/automation/todo-summary.json:2836 — ",
+- [TODO] public/automation/todo-summary.json:2837 — -issue-sync.yml:38 — ): update TODO sync report [skip ci]\\\"\",",
+- [TODO] public/automation/todo-summary.json:2838 — _REPORT.md:19 — ] .github/workflows/todo-issue-sync.yml:38 — ): update TODO sync report [skip ci]\\\"\","
+- [TODO] public/automation/todo-summary.json:2842 — ",
+- [TODO] public/automation/todo-summary.json:2843 — _REPORT.md:19 — ] .github/workflows/todo-issue-sync.yml:38 — ): update TODO sync report [skip ci]\\\"\"",
+- [TODO] public/automation/todo-summary.json:2844 — ] docs/TODO_REPORT.md:19 — ] .github/workflows/todo-issue-sync.yml:38 — ): update TODO sync report [skip ci]\\\"\""
+- [TODO] public/automation/todo-summary.json:2848 — ",
+- [TODO] public/automation/todo-summary.json:2850 — \","
+- [TODO] public/automation/todo-summary.json:2854 — ",
+- [TODO] public/automation/todo-summary.json:2855 — -issue-sync.yml:42 — Issue\",",
+- [TODO] public/automation/todo-summary.json:2856 — _REPORT.md:20 — ] .github/workflows/todo-issue-sync.yml:42 — Issue\","
+- [TODO] public/automation/todo-summary.json:2860 — ",
+- [TODO] public/automation/todo-summary.json:2861 — _REPORT.md:20 — ] .github/workflows/todo-issue-sync.yml:42 — Issue\"",
+- [TODO] public/automation/todo-summary.json:2862 — ] docs/TODO_REPORT.md:20 — ] .github/workflows/todo-issue-sync.yml:42 — Issue\""
+- [TODO] public/automation/todo-summary.json:2866 — ",
+- [TODO] public/automation/todo-summary.json:2868 — \","
+- [TODO] public/automation/todo-summary.json:2872 — ",
+- [TODO] public/automation/todo-summary.json:2873 — -issue-sync.yml:47 — /FIXME/NOTE Sync\\\"\",",
+- [TODO] public/automation/todo-summary.json:2874 — _REPORT.md:21 — ] .github/workflows/todo-issue-sync.yml:47 — /FIXME/NOTE Sync\\\"\","
+- [TODO] public/automation/todo-summary.json:2878 — ",
+- [TODO] public/automation/todo-summary.json:2879 — _REPORT.md:21 — ] .github/workflows/todo-issue-sync.yml:47 — /FIXME/NOTE Sync\\\"\"",
+- [TODO] public/automation/todo-summary.json:2880 — ] docs/TODO_REPORT.md:21 — ] .github/workflows/todo-issue-sync.yml:47 — /FIXME/NOTE Sync\\\"\""
+- [TODO] public/automation/todo-summary.json:2884 — ",
+- [TODO] public/automation/todo-summary.json:2886 — \","
+- [TODO] public/automation/todo-summary.json:2890 — ",
+- [TODO] public/automation/todo-summary.json:2891 — -issue-sync.yml:48 — _SYNC.md\\\"\",",
+- [TODO] public/automation/todo-summary.json:2892 — _REPORT.md:22 — ] .github/workflows/todo-issue-sync.yml:48 — _SYNC.md\\\"\","
+- [TODO] public/automation/todo-summary.json:2896 — ",
+- [TODO] public/automation/todo-summary.json:2897 — _REPORT.md:22 — ] .github/workflows/todo-issue-sync.yml:48 — _SYNC.md\\\"\"",
+- [TODO] public/automation/todo-summary.json:2898 — ] docs/TODO_REPORT.md:22 — ] .github/workflows/todo-issue-sync.yml:48 — _SYNC.md\\\"\""
+- [TODO] public/automation/todo-summary.json:2902 — ",
+- [TODO] public/automation/todo-summary.json:2904 — \","
+- [TODO] public/automation/todo-summary.json:2908 — ",
+- [TODO] public/automation/todo-summary.json:2909 — -scanner.cjs\\\",\",",
+- [TODO] public/automation/todo-summary.json:2910 — _REPORT.md:27 — ] package.json:225 — \\\": \\\"node automation/todo-scanner.cjs\\\",\","
+- [TODO] public/automation/todo-summary.json:2914 — ",
+- [TODO] public/automation/todo-summary.json:2915 — _REPORT.md:27 — ] package.json:225 — \\\": \\\"node automation/todo-scanner.cjs\\\",\"",
+- [TODO] public/automation/todo-summary.json:2916 — ] docs/TODO_REPORT.md:27 — ] package.json:225 — \\\": \\\"node automation/todo-scanner.cjs\\\",\""
+- [TODO] public/automation/todo-summary.json:2920 — ",
+- [TODO] public/automation/todo-summary.json:2922 — \","
+- [TODO] public/automation/todo-summary.json:2926 — ",
+- [TODO] public/automation/todo-summary.json:2928 — _REPORT.md:28 — ] package.json:227 — && npm run scan:registry\\\"\","
+- [TODO] public/automation/todo-summary.json:2932 — ",
+- [TODO] public/automation/todo-summary.json:2933 — _REPORT.md:28 — ] package.json:227 — && npm run scan:registry\\\"\"",
+- [TODO] public/automation/todo-summary.json:2934 — ] docs/TODO_REPORT.md:28 — ] package.json:227 — && npm run scan:registry\\\"\""
+- [TODO] public/automation/todo-summary.json:2938 — ",
+- [TODO] public/automation/todo-summary.json:2940 — \","
+- [TODO] public/automation/todo-summary.json:2944 — ",
+- [TODO] public/automation/todo-summary.json:2946 — ] netlify/functions/functions-manifest.json:62 — -scanner-runner\\\",\""
+- [TODO] public/automation/todo-summary.json:2950 — ",
+- [TODO] public/automation/todo-summary.json:2952 — \","
+- [TODO] public/automation/todo-summary.json:2956 — ",
+- [TODO] public/automation/todo-summary.json:2958 — ] netlify/functions/functions-manifest.json:63 — -summary-runner\\\",\""
+- [TODO] public/automation/todo-summary.json:2962 — ",
+- [TODO] public/automation/todo-summary.json:2964 — \","
+- [TODO] public/automation/todo-summary.json:2968 — ",
+- [TODO] public/automation/todo-summary.json:2970 — -scanner-runner.js\""
+- [TODO] public/automation/todo-summary.json:2974 — ",
+- [TODO] public/automation/todo-summary.json:2976 — \","
+- [TODO] public/automation/todo-summary.json:2980 — ",
+- [TODO] public/automation/todo-summary.json:2981 — -scanner.cjs'));\",",
+- [TODO] public/automation/todo-summary.json:2982 — -scanner-runner.js:25 — scan', () => runNode('automation/todo-scanner.cjs'));\","
+- [TODO] public/automation/todo-summary.json:2986 — ",
+- [TODO] public/automation/todo-summary.json:2987 — -scanner-runner.js:25 — scan', () => runNode('automation/todo-scanner.cjs'));\"",
+- [TODO] public/automation/todo-summary.json:2988 — ] netlify/functions/todo-scanner-runner.js:25 — scan', () => runNode('automation/todo-scanner.cjs'));\""
+- [TODO] public/automation/todo-summary.json:2992 — ",
+- [TODO] public/automation/todo-summary.json:2994 — \","
+- [TODO] public/automation/todo-summary.json:2998 — ",
+- [TODO] public/automation/todo-summary.json:3000 — -summary-runner.js\""
+- [TODO] public/automation/todo-summary.json:3004 — ",
+- [TODO] public/automation/todo-summary.json:3006 — \","
+- [TODO] public/automation/todo-summary.json:3010 — ",
+- [TODO] public/automation/todo-summary.json:3011 — -scanner.cjs'));\",",
+- [TODO] public/automation/todo-summary.json:3012 — -summary-runner.js:25 — scan', () => runNode('automation/todo-scanner.cjs'));\","
+- [TODO] public/automation/todo-summary.json:3016 — ",
+- [TODO] public/automation/todo-summary.json:3017 — -summary-runner.js:25 — scan', () => runNode('automation/todo-scanner.cjs'));\"",
+- [TODO] public/automation/todo-summary.json:3018 — ] netlify/functions/todo-summary-runner.js:25 — scan', () => runNode('automation/todo-scanner.cjs'));\""
+- [TODO] public/automation/todo-summary.json:3022 — ",
+- [TODO] public/automation/todo-summary.json:3024 — \","
+- [TODO] public/automation/todo-summary.json:3028 — ",
+- [TODO] public/automation/todo-summary.json:3029 — -scanner-runner' },\",",
+- [TODO] public/automation/todo-summary.json:3030 — report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },\","
+- [TODO] public/automation/todo-summary.json:3034 — ",
+- [TODO] public/automation/todo-summary.json:3035 — report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },\"",
+- [TODO] public/automation/todo-summary.json:3036 — ] pages/index.tsx:204 — Scanner', desc: 'Generates a consolidated TODO report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },\""
+- [TODO] public/automation/todo-summary.json:3040 — ",
+- [TODO] public/automation/todo-summary.json:3042 — \","
+- [TODO] public/automation/todo-summary.json:3046 — ",
+- [TODO] public/automation/todo-summary.json:3052 — ",
+- [TODO] public/automation/todo-summary.json:3054 — ] pages/main/front/index.tsx:786 — _REPORT.md\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\" className=\\\"group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br fr"
+- [TODO] public/automation/todo-summary.json:3058 — ",
+- [TODO] public/automation/todo-summary.json:3060 — \","
+- [TODO] public/automation/todo-summary.json:3064 — ",
+- [TODO] public/automation/todo-summary.json:3066 — ] public/automation/content-registry.json:38 — _REPORT.md\\\",\""
+- [TODO] public/automation/todo-summary.json:3070 — ",
+- [TODO] public/automation/todo-summary.json:3072 — \","
+- [TODO] public/automation/todo-summary.json:3076 — ",
+- [TODO] public/automation/todo-summary.json:3078 — ] public/automation/content-registry.json:39 — _REPORT.md\\\"\""
+- [TODO] public/automation/todo-summary.json:3082 — ",
+- [TODO] public/automation/todo-summary.json:3084 — \","
+- [TODO] public/automation/todo-summary.json:3088 — ",
+- [TODO] public/automation/todo-summary.json:3090 — -summary.json\""
+- [TODO] public/automation/todo-summary.json:3094 — ",
+- [TODO] public/automation/todo-summary.json:3096 — \","
+- [TODO] public/automation/todo-summary.json:3100 — ",
+- [TODO] public/automation/todo-summary.json:3102 — -summary.json:8 — \\\",\","
+- [TODO] public/automation/todo-summary.json:3106 — ",
+- [TODO] public/automation/todo-summary.json:3107 — -summary.json:8 — \\\",\"",
+- [TODO] public/automation/todo-summary.json:3108 — ] public/automation/todo-summary.json:8 — \\\",\""
+- [TODO] public/automation/todo-summary.json:3112 — ",
+- [TODO] public/automation/todo-summary.json:3114 — \","
+- [TODO] public/automation/todo-summary.json:3118 — ",
+- [TODO] public/automation/todo-summary.json:3120 — -summary.json:9 — -scanner.cjs\\\\\\\",\\\",\","
+- [TODO] public/automation/todo-summary.json:3124 — ",
+- [TODO] public/automation/todo-summary.json:3125 — -summary.json:9 — -scanner.cjs\\\\\\\",\\\",\"",
+- [TODO] public/automation/todo-summary.json:3126 — ] public/automation/todo-summary.json:9 — -scanner.cjs\\\\\\\",\\\",\""
+- [TODO] public/automation/todo-summary.json:3130 — ",
+- [TODO] public/automation/todo-summary.json:3132 — \","
+- [TODO] public/automation/todo-summary.json:3136 — ",
+- [TODO] public/automation/todo-summary.json:3137 — -scanner.cjs\\\\\\\",\\\"\",",
+- [TODO] public/automation/todo-summary.json:3138 — -summary.json:10 — \\\\\\\": \\\\\\\"node automation/todo-scanner.cjs\\\\\\\",\\\"\","
+- [TODO] public/automation/todo-summary.json:3142 — ",
+- [TODO] public/automation/todo-summary.json:3143 — -summary.json:10 — \\\\\\\": \\\\\\\"node automation/todo-scanner.cjs\\\\\\\",\\\"\"",
+- [TODO] public/automation/todo-summary.json:3144 — ] public/automation/todo-summary.json:10 — \\\\\\\": \\\\\\\"node automation/todo-scanner.cjs\\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:3148 — ",
+- [TODO] public/automation/todo-summary.json:3150 — \","
+- [TODO] public/automation/todo-summary.json:3154 — ",
+- [TODO] public/automation/todo-summary.json:3156 — -summary.json:14 — \\\",\","
+- [TODO] public/automation/todo-summary.json:3160 — ",
+- [TODO] public/automation/todo-summary.json:3161 — -summary.json:14 — \\\",\"",
+- [TODO] public/automation/todo-summary.json:3162 — ] public/automation/todo-summary.json:14 — \\\",\""
+- [TODO] public/automation/todo-summary.json:3166 — ",
+- [TODO] public/automation/todo-summary.json:3168 — \","
+- [TODO] public/automation/todo-summary.json:3172 — ",
+- [TODO] public/automation/todo-summary.json:3174 — -summary.json:16 — && npm run scan:registry\\\\\\\"\\\"\","
+- [TODO] public/automation/todo-summary.json:3178 — ",
+- [TODO] public/automation/todo-summary.json:3179 — -summary.json:16 — && npm run scan:registry\\\\\\\"\\\"\"",
+- [TODO] public/automation/todo-summary.json:3180 — ] public/automation/todo-summary.json:16 — && npm run scan:registry\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:3184 — ",
+- [TODO] public/automation/todo-summary.json:3186 — \","
+- [TODO] public/automation/todo-summary.json:3190 — ",
+- [TODO] public/automation/todo-summary.json:3192 — -summary.json:19 — -issue-sync.yml\\\": [\","
+- [TODO] public/automation/todo-summary.json:3196 — ",
+- [TODO] public/automation/todo-summary.json:3197 — -summary.json:19 — -issue-sync.yml\\\": [\"",
+- [TODO] public/automation/todo-summary.json:3198 — ] public/automation/todo-summary.json:19 — -issue-sync.yml\\\": [\""
+- [TODO] public/automation/todo-summary.json:3202 — ",
+- [TODO] public/automation/todo-summary.json:3204 — \","
+- [TODO] public/automation/todo-summary.json:3208 — ",
+- [TODO] public/automation/todo-summary.json:3210 — -summary.json:22 — \\\",\","
+- [TODO] public/automation/todo-summary.json:3214 — ",
+- [TODO] public/automation/todo-summary.json:3215 — -summary.json:22 — \\\",\"",
+- [TODO] public/automation/todo-summary.json:3216 — ] public/automation/todo-summary.json:22 — \\\",\""
+- [TODO] public/automation/todo-summary.json:3220 — ",
+- [TODO] public/automation/todo-summary.json:3222 — \","
+- [TODO] public/automation/todo-summary.json:3226 — ",
+- [TODO] public/automation/todo-summary.json:3228 — -summary.json:24 — Issue Sync\\\"\","
+- [TODO] public/automation/todo-summary.json:3232 — ",
+- [TODO] public/automation/todo-summary.json:3233 — -summary.json:24 — Issue Sync\\\"\"",
+- [TODO] public/automation/todo-summary.json:3234 — ] public/automation/todo-summary.json:24 — Issue Sync\\\"\""
+- [TODO] public/automation/todo-summary.json:3238 — ",
+- [TODO] public/automation/todo-summary.json:3240 — \","
+- [TODO] public/automation/todo-summary.json:3244 — ",
+- [TODO] public/automation/todo-summary.json:3246 — -summary.json:28 — \\\",\","
+- [TODO] public/automation/todo-summary.json:3250 — ",
+- [TODO] public/automation/todo-summary.json:3251 — -summary.json:28 — \\\",\"",
+- [TODO] public/automation/todo-summary.json:3252 — ] public/automation/todo-summary.json:28 — \\\",\""
+- [TODO] public/automation/todo-summary.json:3256 — ",
+- [TODO] public/automation/todo-summary.json:3258 — \","
+- [TODO] public/automation/todo-summary.json:3262 — ",
+- [TODO] public/automation/todo-summary.json:3264 — -summary.json:30 — s:\\\"\","
+- [TODO] public/automation/todo-summary.json:3268 — ",
+- [TODO] public/automation/todo-summary.json:3269 — -summary.json:30 — s:\\\"\"",
+- [TODO] public/automation/todo-summary.json:3270 — ] public/automation/todo-summary.json:30 — s:\\\"\""
+- [TODO] public/automation/todo-summary.json:3274 — ",
+- [TODO] public/automation/todo-summary.json:3276 — \","
+- [TODO] public/automation/todo-summary.json:3280 — ",
+- [TODO] public/automation/todo-summary.json:3282 — -summary.json:34 — \\\",\","
+- [TODO] public/automation/todo-summary.json:3286 — ",
+- [TODO] public/automation/todo-summary.json:3287 — -summary.json:34 — \\\",\"",
+- [TODO] public/automation/todo-summary.json:3288 — ] public/automation/todo-summary.json:34 — \\\",\""
+- [TODO] public/automation/todo-summary.json:3292 — ",
+- [TODO] public/automation/todo-summary.json:3294 — \","
+- [TODO] public/automation/todo-summary.json:3298 — ",
+- [TODO] public/automation/todo-summary.json:3300 — -summary.json:36 — report\\\"\","
+- [TODO] public/automation/todo-summary.json:3304 — ",
+- [TODO] public/automation/todo-summary.json:3305 — -summary.json:36 — report\\\"\"",
+- [TODO] public/automation/todo-summary.json:3306 — ] public/automation/todo-summary.json:36 — report\\\"\""
+- [TODO] public/automation/todo-summary.json:3310 — ",
+- [TODO] public/automation/todo-summary.json:3312 — \","
+- [TODO] public/automation/todo-summary.json:3316 — ",
+- [TODO] public/automation/todo-summary.json:3318 — -summary.json:40 — \\\",\","
+- [TODO] public/automation/todo-summary.json:3322 — ",
+- [TODO] public/automation/todo-summary.json:3323 — -summary.json:40 — \\\",\"",
+- [TODO] public/automation/todo-summary.json:3324 — ] public/automation/todo-summary.json:40 — \\\",\""
+- [TODO] public/automation/todo-summary.json:3328 — ",
+- [TODO] public/automation/todo-summary.json:3330 — \","
+- [TODO] public/automation/todo-summary.json:3334 — ",
+- [TODO] public/automation/todo-summary.json:3336 — -summary.json:42 — _issue_sync.cjs\\\"\","
+- [TODO] public/automation/todo-summary.json:3340 — ",
+- [TODO] public/automation/todo-summary.json:3341 — -summary.json:42 — _issue_sync.cjs\\\"\"",
+- [TODO] public/automation/todo-summary.json:3342 — ] public/automation/todo-summary.json:42 — _issue_sync.cjs\\\"\""
+- [TODO] public/automation/todo-summary.json:3346 — ",
+- [TODO] public/automation/todo-summary.json:3348 — \","
+- [TODO] public/automation/todo-summary.json:3352 — ",
+- [TODO] public/automation/todo-summary.json:3354 — -summary.json:46 — \\\",\","
+- [TODO] public/automation/todo-summary.json:3358 — ",
+- [TODO] public/automation/todo-summary.json:3359 — -summary.json:46 — \\\",\"",
+- [TODO] public/automation/todo-summary.json:3360 — ] public/automation/todo-summary.json:46 — \\\",\""
+- [TODO] public/automation/todo-summary.json:3364 — ",
+- [TODO] public/automation/todo-summary.json:3366 — \","
+- [TODO] public/automation/todo-summary.json:3370 — ",
+- [TODO] public/automation/todo-summary.json:3372 — -summary.json:47 — sync report [skip ci]\\\\\\\"\\\",\","
+- [TODO] public/automation/todo-summary.json:3376 — ",
+- [TODO] public/automation/todo-summary.json:3377 — -summary.json:47 — sync report [skip ci]\\\\\\\"\\\",\"",
+- [TODO] public/automation/todo-summary.json:3378 — ] public/automation/todo-summary.json:47 — sync report [skip ci]\\\\\\\"\\\",\""
+- [TODO] public/automation/todo-summary.json:3382 — ",
+- [TODO] public/automation/todo-summary.json:3384 — \","
+- [TODO] public/automation/todo-summary.json:3388 — ",
+- [TODO] public/automation/todo-summary.json:3389 — sync report [skip ci]\\\\\\\"\\\"\",",
+- [TODO] public/automation/todo-summary.json:3390 — -summary.json:48 — ): update TODO sync report [skip ci]\\\\\\\"\\\"\","
+- [TODO] public/automation/todo-summary.json:3394 — ",
+- [TODO] public/automation/todo-summary.json:3395 — -summary.json:48 — ): update TODO sync report [skip ci]\\\\\\\"\\\"\"",
+- [TODO] public/automation/todo-summary.json:3396 — ] public/automation/todo-summary.json:48 — ): update TODO sync report [skip ci]\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:3400 — ",
+- [TODO] public/automation/todo-summary.json:3402 — \","
+- [TODO] public/automation/todo-summary.json:3406 — ",
+- [TODO] public/automation/todo-summary.json:3408 — -summary.json:52 — \\\",\","
+- [TODO] public/automation/todo-summary.json:3412 — ",
+- [TODO] public/automation/todo-summary.json:3413 — -summary.json:52 — \\\",\"",
+- [TODO] public/automation/todo-summary.json:3414 — ] public/automation/todo-summary.json:52 — \\\",\""
+- [TODO] public/automation/todo-summary.json:3418 — ",
+- [TODO] public/automation/todo-summary.json:3420 — \","
+- [TODO] public/automation/todo-summary.json:3424 — ",
+- [TODO] public/automation/todo-summary.json:3426 — -summary.json:54 — Issue\\\"\","
+- [TODO] public/automation/todo-summary.json:3430 — ",
+- [TODO] public/automation/todo-summary.json:3431 — -summary.json:54 — Issue\\\"\"",
+- [TODO] public/automation/todo-summary.json:3432 — ] public/automation/todo-summary.json:54 — Issue\\\"\""
+- [TODO] public/automation/todo-summary.json:3436 — ",
+- [TODO] public/automation/todo-summary.json:3438 — \","
+- [TODO] public/automation/todo-summary.json:3442 — ",
+- [TODO] public/automation/todo-summary.json:3444 — -summary.json:58 — \\\",\","
+- [TODO] public/automation/todo-summary.json:3448 — ",
+- [TODO] public/automation/todo-summary.json:3449 — -summary.json:58 — \\\",\"",
+- [TODO] public/automation/todo-summary.json:3450 — ] public/automation/todo-summary.json:58 — \\\",\""
+- [FIXME] public/automation/todo-summary.json:3454 — ",
+- [FIXME] public/automation/todo-summary.json:3456 — \","
+- [TODO] public/automation/todo-summary.json:3460 — ",
+- [TODO] public/automation/todo-summary.json:3462 — -summary.json:59 — /NOTE Sync\\\\\\\"\\\",\","
+- [FIXME] public/automation/todo-summary.json:3466 — ",
+- [TODO] public/automation/todo-summary.json:3467 — -summary.json:59 — /NOTE Sync\\\\\\\"\\\",\"",
+- [FIXME] public/automation/todo-summary.json:3468 — ] public/automation/todo-summary.json:59 — /NOTE Sync\\\\\\\"\\\",\""
+- [TODO] public/automation/todo-summary.json:3472 — ",
+- [TODO] public/automation/todo-summary.json:3474 — \","
+- [TODO] public/automation/todo-summary.json:3478 — ",
+- [FIXME] public/automation/todo-summary.json:3479 — /NOTE Sync\\\\\\\"\\\"\",",
+- [TODO] public/automation/todo-summary.json:3480 — -summary.json:60 — /FIXME/NOTE Sync\\\\\\\"\\\"\","
+- [TODO] public/automation/todo-summary.json:3484 — ",
+- [TODO] public/automation/todo-summary.json:3485 — -summary.json:60 — /FIXME/NOTE Sync\\\\\\\"\\\"\"",
+- [TODO] public/automation/todo-summary.json:3486 — ] public/automation/todo-summary.json:60 — /FIXME/NOTE Sync\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:3490 — ",
+- [TODO] public/automation/todo-summary.json:3492 — \","
+- [TODO] public/automation/todo-summary.json:3496 — ",
+- [TODO] public/automation/todo-summary.json:3498 — -summary.json:64 — \\\",\","
+- [TODO] public/automation/todo-summary.json:3502 — ",
+- [TODO] public/automation/todo-summary.json:3503 — -summary.json:64 — \\\",\"",
+- [TODO] public/automation/todo-summary.json:3504 — ] public/automation/todo-summary.json:64 — \\\",\""
+- [TODO] public/automation/todo-summary.json:3508 — ",
+- [TODO] public/automation/todo-summary.json:3510 — \","
+- [TODO] public/automation/todo-summary.json:3514 — ",
+- [TODO] public/automation/todo-summary.json:3516 — -summary.json:66 — _SYNC.md\\\\\\\"\\\"\","
+- [TODO] public/automation/todo-summary.json:3520 — ",
+- [TODO] public/automation/todo-summary.json:3521 — -summary.json:66 — _SYNC.md\\\\\\\"\\\"\"",
+- [TODO] public/automation/todo-summary.json:3522 — ] public/automation/todo-summary.json:66 — _SYNC.md\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:3526 — ",
+- [TODO] public/automation/todo-summary.json:3528 — \","
+- [TODO] public/automation/todo-summary.json:3532 — ",
+- [TODO] public/automation/todo-summary.json:3534 — -summary.json:72 — \\\",\","
+- [TODO] public/automation/todo-summary.json:3538 — ",
+- [TODO] public/automation/todo-summary.json:3539 — -summary.json:72 — \\\",\"",
+- [TODO] public/automation/todo-summary.json:3540 — ] public/automation/todo-summary.json:72 — \\\",\""
+- [FIXME] public/automation/todo-summary.json:3544 — ",
+- [FIXME] public/automation/todo-summary.json:3546 — \","
+- [TODO] public/automation/todo-summary.json:3550 — ",
+- [TODO] public/automation/todo-summary.json:3552 — -summary.json:73 — scanner\\\",\","
+- [FIXME] public/automation/todo-summary.json:3556 — ",
+- [TODO] public/automation/todo-summary.json:3557 — -summary.json:73 — scanner\\\",\"",
+- [FIXME] public/automation/todo-summary.json:3558 — ] public/automation/todo-summary.json:73 — scanner\\\",\""
+- [TODO] public/automation/todo-summary.json:3562 — ",
+- [TODO] public/automation/todo-summary.json:3564 — \","
+- [TODO] public/automation/todo-summary.json:3568 — ",
+- [FIXME] public/automation/todo-summary.json:3569 — scanner\\\"\",",
+- [TODO] public/automation/todo-summary.json:3570 — -summary.json:74 — /FIXME scanner\\\"\","
+- [TODO] public/automation/todo-summary.json:3574 — ",
+- [TODO] public/automation/todo-summary.json:3575 — -summary.json:74 — /FIXME scanner\\\"\"",
+- [TODO] public/automation/todo-summary.json:3576 — ] public/automation/todo-summary.json:74 — /FIXME scanner\\\"\""
+- [TODO] public/automation/todo-summary.json:3580 — ",
+- [TODO] public/automation/todo-summary.json:3582 — \","
+- [TODO] public/automation/todo-summary.json:3586 — ",
+- [TODO] public/automation/todo-summary.json:3588 — -summary.json:78 — \\\",\","
+- [TODO] public/automation/todo-summary.json:3592 — ",
+- [TODO] public/automation/todo-summary.json:3593 — -summary.json:78 — \\\",\"",
+- [TODO] public/automation/todo-summary.json:3594 — ] public/automation/todo-summary.json:78 — \\\",\""
+- [TODO] public/automation/todo-summary.json:3598 — ",
+- [TODO] public/automation/todo-summary.json:3600 — \","
+- [TODO] public/automation/todo-summary.json:3604 — ",
+- [TODO] public/automation/todo-summary.json:3606 — -summary.json:80 — -scanner.cjs | cat\\\"\","
+- [TODO] public/automation/todo-summary.json:3610 — ",
+- [TODO] public/automation/todo-summary.json:3611 — -summary.json:80 — -scanner.cjs | cat\\\"\"",
+- [TODO] public/automation/todo-summary.json:3612 — ] public/automation/todo-summary.json:80 — -scanner.cjs | cat\\\"\""
+- [TODO] public/automation/todo-summary.json:3616 — ",
+- [TODO] public/automation/todo-summary.json:3618 — \","
+- [TODO] public/automation/todo-summary.json:3622 — ",
+- [TODO] public/automation/todo-summary.json:3624 — -summary.json:84 — \\\",\","
+- [TODO] public/automation/todo-summary.json:3628 — ",
+- [TODO] public/automation/todo-summary.json:3629 — -summary.json:84 — \\\",\"",
+- [TODO] public/automation/todo-summary.json:3630 — ] public/automation/todo-summary.json:84 — \\\",\""
+- [TODO] public/automation/todo-summary.json:3634 — ",
+- [TODO] public/automation/todo-summary.json:3636 — \","
+- [TODO] public/automation/todo-summary.json:3640 — ",
+- [TODO] public/automation/todo-summary.json:3642 — -summary.json:86 — report and content registry [skip ci]\\\\\\\"\\\"\","
+- [TODO] public/automation/todo-summary.json:3646 — ",
+- [TODO] public/automation/todo-summary.json:3647 — -summary.json:86 — report and content registry [skip ci]\\\\\\\"\\\"\"",
+- [TODO] public/automation/todo-summary.json:3648 — ] public/automation/todo-summary.json:86 — report and content registry [skip ci]\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:3652 — ",
+- [TODO] public/automation/todo-summary.json:3654 — \","
+- [TODO] public/automation/todo-summary.json:3658 — ",
+- [TODO] public/automation/todo-summary.json:3660 — ] public/search/index.json:59 — _REPORT\\\",\""
+- [TODO] public/automation/todo-summary.json:3664 — ",
+- [TODO] public/automation/todo-summary.json:3666 — \","
+- [TODO] public/automation/todo-summary.json:3670 — ",
+- [TODO] public/automation/todo-summary.json:3672 — ] public/search/index.json:60 — _REPORT.md\\\",\""
+- [TODO] public/automation/todo-summary.json:3676 — ",
+- [TODO] public/automation/todo-summary.json:3678 — \","
+- [FIXME] public/automation/todo-summary.json:3682 — ",
+- [FIXME] public/automation/todo-summary.json:3684 — Report\\\",\","
+- [TODO] public/automation/todo-summary.json:3688 — ",
+- [FIXME] public/automation/todo-summary.json:3689 — Report\\\",\"",
+- [TODO] public/automation/todo-summary.json:3690 — ] public/search/index.json:61 — and FIXME Report\\\",\""
+- [TODO] public/automation/todo-summary.json:3694 — ",
+- [TODO] public/automation/todo-summary.json:3696 — \","
+- [FIXME] public/automation/todo-summary.json:3700 — ",
+- [TODO] public/automation/todo-summary.json:3701 — ] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner - [TODO] .github/workflows/autonomous-content-scanner.yml:31 — -sca\\\"\",",
+- [FIXME] public/automation/todo-summary.json:3702 — Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/auto"
+- [TODO] public/automation/todo-summary.json:3706 — ",
+- [FIXME] public/automation/todo-summary.json:3707 — Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/autono\"",
+- [TODO] public/automation/todo-summary.json:3708 — ] public/search/index.json:62 — and FIXME Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/work"
+- [TODO] public/automation/todo-summary.json:3712 — ",
+- [TODO] public/automation/todo-summary.json:3714 — \","
+- [TODO] public/automation/todo-summary.json:3718 — ",
+- [TODO] public/automation/todo-summary.json:3720 — issue sync, autonomous release, and keepalive workflows (09ccba6)\""
+- [TODO] public/automation/todo-summary.json:3724 — ",
+- [TODO] public/automation/todo-summary.json:3726 — \","
+- [TODO] public/automation/todo-summary.json:3730 — ",
+- [TODO] public/automation/todo-summary.json:3732 — issue sync, autonomous release, and keepalive workflows (09ccba6)\""
+- [TODO] public/automation/todo-summary.json:3736 — ",
+- [TODO] public/automation/todo-summary.json:3738 — \","
+- [TODO] public/automation/todo-summary.json:3742 — ",
+- [TODO] public/automation/todo-summary.json:3744 — _REPORT\\\",\""
+- [TODO] public/automation/todo-summary.json:3748 — ",
+- [TODO] public/automation/todo-summary.json:3750 — \","
+- [TODO] public/automation/todo-summary.json:3754 — ",
+- [TODO] public/automation/todo-summary.json:3756 — _REPORT.md\\\",\""
+- [TODO] public/automation/todo-summary.json:3760 — ",
+- [TODO] public/automation/todo-summary.json:3762 — \","
+- [FIXME] public/automation/todo-summary.json:3766 — ",
+- [FIXME] public/automation/todo-summary.json:3768 — Report\\\",\","
+- [TODO] public/automation/todo-summary.json:3772 — ",
+- [FIXME] public/automation/todo-summary.json:3773 — Report\\\",\"",
+- [TODO] public/automation/todo-summary.json:3774 — and FIXME Report\\\",\""
+- [TODO] public/automation/todo-summary.json:3778 — ",
+- [TODO] public/automation/todo-summary.json:3780 — \","
+- [FIXME] public/automation/todo-summary.json:3784 — ",
+- [TODO] public/automation/todo-summary.json:3785 — ] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner - [TODO] .github/workflows/autonomous-content-scanner.yml:31 — -sca\\\"\",",
+- [FIXME] public/automation/todo-summary.json:3786 — Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/autonomous-content-scanner.yml:30 — "
+- [TODO] public/automation/todo-summary.json:3790 — ",
+- [FIXME] public/automation/todo-summary.json:3791 — Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/autonomous-content-scanner\"",
+- [TODO] public/automation/todo-summary.json:3792 — and FIXME Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/autonomous-"
+- [TODO] public/automation/todo-summary.json:3796 — ",
+- [TODO] public/automation/todo-summary.json:3798 — -summary.json\": ["
+- [TODO] public/automation/todo-summary.json:3802 — ",
+- [TODO] public/automation/todo-summary.json:3804 — \","
+- [TODO] public/automation/todo-summary.json:3808 — ",
+- [TODO] public/automation/todo-summary.json:3810 — \\\",\""
+- [TODO] public/automation/todo-summary.json:3814 — ",
+- [TODO] public/automation/todo-summary.json:3816 — \","
+- [TODO] public/automation/todo-summary.json:3820 — ",
+- [TODO] public/automation/todo-summary.json:3822 — -scanner-runner' },\\\",\","
+- [TODO] public/automation/todo-summary.json:3826 — ",
+- [TODO] public/automation/todo-summary.json:3827 — -scanner-runner' },\\\",\"",
+- [TODO] public/automation/todo-summary.json:3828 — report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },\\\",\""
+- [TODO] public/automation/todo-summary.json:3832 — ",
+- [TODO] public/automation/todo-summary.json:3834 — \","
+- [TODO] public/automation/todo-summary.json:3838 — ",
+- [TODO] public/automation/todo-summary.json:3839 — -scanner-runner' },\\\"\",",
+- [TODO] public/automation/todo-summary.json:3840 — report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },\\\"\","
+- [TODO] public/automation/todo-summary.json:3844 — ",
+- [TODO] public/automation/todo-summary.json:3845 — report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },\\\"\"",
+- [TODO] public/automation/todo-summary.json:3846 — Scanner', desc: 'Generates a consolidated TODO report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },\\\"\""
+- [TODO] public/automation/todo-summary.json:3850 — ",
+- [TODO] public/automation/todo-summary.json:3852 — \","
+- [TODO] public/automation/todo-summary.json:3856 — ",
+- [TODO] public/automation/todo-summary.json:3858 — _REPORT.md\\\": [\""
+- [TODO] public/automation/todo-summary.json:3862 — ",
+- [TODO] public/automation/todo-summary.json:3864 — \","
+- [TODO] public/automation/todo-summary.json:3868 — ",
+- [TODO] public/automation/todo-summary.json:3870 — \\\",\""
+- [FIXME] public/automation/todo-summary.json:3874 — ",
+- [FIXME] public/automation/todo-summary.json:3876 — \","
+- [FIXME] public/automation/todo-summary.json:3880 — ",
+- [FIXME] public/automation/todo-summary.json:3882 — Report\\\",\""
+- [TODO] public/automation/todo-summary.json:3886 — ",
+- [TODO] public/automation/todo-summary.json:3888 — \","
+- [FIXME] public/automation/todo-summary.json:3892 — ",
+- [FIXME] public/automation/todo-summary.json:3894 — Report\\\"\","
+- [TODO] public/automation/todo-summary.json:3898 — ",
+- [FIXME] public/automation/todo-summary.json:3899 — Report\\\"\"",
+- [TODO] public/automation/todo-summary.json:3900 — and FIXME Report\\\"\""
+- [TODO] public/automation/todo-summary.json:3904 — ",
+- [TODO] public/automation/todo-summary.json:3906 — \","
+- [TODO] public/automation/todo-summary.json:3910 — ",
+- [TODO] public/automation/todo-summary.json:3912 — \\\",\""
+- [FIXME] public/automation/todo-summary.json:3916 — ",
+- [FIXME] public/automation/todo-summary.json:3918 — \","
+- [FIXME] public/automation/todo-summary.json:3922 — ",
+- [FIXME] public/automation/todo-summary.json:3924 — scanner\\\",\""
+- [TODO] public/automation/todo-summary.json:3928 — ",
+- [TODO] public/automation/todo-summary.json:3930 — \","
+- [FIXME] public/automation/todo-summary.json:3934 — ",
+- [FIXME] public/automation/todo-summary.json:3936 — scanner\\\"\","
+- [TODO] public/automation/todo-summary.json:3940 — ",
+- [FIXME] public/automation/todo-summary.json:3941 — scanner\\\"\"",
+- [TODO] public/automation/todo-summary.json:3942 — ] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner\\\"\""
+- [TODO] public/automation/todo-summary.json:3946 — ",
+- [TODO] public/automation/todo-summary.json:3948 — \","
+- [TODO] public/automation/todo-summary.json:3952 — ",
+- [TODO] public/automation/todo-summary.json:3954 — \\\",\""
+- [TODO] public/automation/todo-summary.json:3958 — ",
+- [TODO] public/automation/todo-summary.json:3960 — \","
+- [TODO] public/automation/todo-summary.json:3964 — ",
+- [TODO] public/automation/todo-summary.json:3966 — ] .github/workflows/autonomous-content-scanner.yml:31 — -scanner.cjs | cat\\\"\""
+- [TODO] public/automation/todo-summary.json:3970 — ",
+- [TODO] public/automation/todo-summary.json:3972 — \","
+- [TODO] public/automation/todo-summary.json:3976 — ",
+- [TODO] public/automation/todo-summary.json:3978 — \\\",\""
+- [TODO] public/automation/todo-summary.json:3982 — ",
+- [TODO] public/automation/todo-summary.json:3984 — \","
+- [TODO] public/automation/todo-summary.json:3988 — ",
+- [TODO] public/automation/todo-summary.json:3990 — ] .github/workflows/autonomous-content-scanner.yml:40 — report and content registry [skip ci]\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:3994 — ",
+- [TODO] public/automation/todo-summary.json:3996 — \","
+- [TODO] public/automation/todo-summary.json:4000 — ",
+- [TODO] public/automation/todo-summary.json:4002 — \\\",\""
+- [TODO] public/automation/todo-summary.json:4006 — ",
+- [TODO] public/automation/todo-summary.json:4008 — \","
+- [TODO] public/automation/todo-summary.json:4012 — ",
+- [TODO] public/automation/todo-summary.json:4014 — -issue-sync.yml\\\"\""
+- [TODO] public/automation/todo-summary.json:4018 — ",
+- [TODO] public/automation/todo-summary.json:4020 — \","
+- [TODO] public/automation/todo-summary.json:4024 — ",
+- [TODO] public/automation/todo-summary.json:4026 — \\\",\""
+- [TODO] public/automation/todo-summary.json:4030 — ",
+- [TODO] public/automation/todo-summary.json:4032 — \","
+- [TODO] public/automation/todo-summary.json:4036 — ",
+- [TODO] public/automation/todo-summary.json:4038 — -issue-sync.yml:1 — Issue Sync\\\",\""
+- [TODO] public/automation/todo-summary.json:4042 — ",
+- [TODO] public/automation/todo-summary.json:4044 — \","
+- [TODO] public/automation/todo-summary.json:4048 — ",
+- [TODO] public/automation/todo-summary.json:4050 — -issue-sync.yml:1 — Issue Sync\\\"\","
+- [TODO] public/automation/todo-summary.json:4054 — ",
+- [TODO] public/automation/todo-summary.json:4055 — -issue-sync.yml:1 — Issue Sync\\\"\"",
+- [TODO] public/automation/todo-summary.json:4056 — ] .github/workflows/todo-issue-sync.yml:1 — Issue Sync\\\"\""
+- [TODO] public/automation/todo-summary.json:4060 — ",
+- [TODO] public/automation/todo-summary.json:4062 — \","
+- [TODO] public/automation/todo-summary.json:4066 — ",
+- [TODO] public/automation/todo-summary.json:4068 — \\\",\""
+- [TODO] public/automation/todo-summary.json:4072 — ",
+- [TODO] public/automation/todo-summary.json:4074 — \","
+- [TODO] public/automation/todo-summary.json:4078 — ",
+- [TODO] public/automation/todo-summary.json:4080 — -issue-sync.yml:13 — s:\\\",\""
+- [TODO] public/automation/todo-summary.json:4084 — ",
+- [TODO] public/automation/todo-summary.json:4086 — \","
+- [TODO] public/automation/todo-summary.json:4090 — ",
+- [TODO] public/automation/todo-summary.json:4092 — -issue-sync.yml:13 — s:\\\"\","
+- [TODO] public/automation/todo-summary.json:4096 — ",
+- [TODO] public/automation/todo-summary.json:4097 — -issue-sync.yml:13 — s:\\\"\"",
+- [TODO] public/automation/todo-summary.json:4098 — ] .github/workflows/todo-issue-sync.yml:13 — s:\\\"\""
+- [TODO] public/automation/todo-summary.json:4102 — ",
+- [TODO] public/automation/todo-summary.json:4104 — \","
+- [TODO] public/automation/todo-summary.json:4108 — ",
+- [TODO] public/automation/todo-summary.json:4110 — \\\",\""
+- [TODO] public/automation/todo-summary.json:4114 — ",
+- [TODO] public/automation/todo-summary.json:4116 — \","
+- [TODO] public/automation/todo-summary.json:4120 — ",
+- [TODO] public/automation/todo-summary.json:4122 — -issue-sync.yml:29 — report\\\",\""
+- [TODO] public/automation/todo-summary.json:4126 — ",
+- [TODO] public/automation/todo-summary.json:4128 — \","
+- [TODO] public/automation/todo-summary.json:4132 — ",
+- [TODO] public/automation/todo-summary.json:4134 — -issue-sync.yml:29 — report\\\"\","
+- [TODO] public/automation/todo-summary.json:4138 — ",
+- [TODO] public/automation/todo-summary.json:4139 — -issue-sync.yml:29 — report\\\"\"",
+- [TODO] public/automation/todo-summary.json:4140 — ] .github/workflows/todo-issue-sync.yml:29 — report\\\"\""
+- [TODO] public/automation/todo-summary.json:4144 — ",
+- [TODO] public/automation/todo-summary.json:4146 — \","
+- [TODO] public/automation/todo-summary.json:4150 — ",
+- [TODO] public/automation/todo-summary.json:4152 — \\\",\""
+- [TODO] public/automation/todo-summary.json:4156 — ",
+- [TODO] public/automation/todo-summary.json:4158 — \","
+- [TODO] public/automation/todo-summary.json:4162 — ",
+- [TODO] public/automation/todo-summary.json:4164 — -issue-sync.yml:30 — _issue_sync.cjs\\\",\""
+- [TODO] public/automation/todo-summary.json:4168 — ",
+- [TODO] public/automation/todo-summary.json:4170 — \","
+- [TODO] public/automation/todo-summary.json:4174 — ",
+- [TODO] public/automation/todo-summary.json:4176 — -issue-sync.yml:30 — _issue_sync.cjs\\\"\","
+- [TODO] public/automation/todo-summary.json:4180 — ",
+- [TODO] public/automation/todo-summary.json:4181 — -issue-sync.yml:30 — _issue_sync.cjs\\\"\"",
+- [TODO] public/automation/todo-summary.json:4182 — ] .github/workflows/todo-issue-sync.yml:30 — _issue_sync.cjs\\\"\""
+- [TODO] public/automation/todo-summary.json:4186 — ",
+- [TODO] public/automation/todo-summary.json:4188 — \","
+- [TODO] public/automation/todo-summary.json:4192 — ",
+- [TODO] public/automation/todo-summary.json:4194 — \\\",\""
+- [TODO] public/automation/todo-summary.json:4198 — ",
+- [TODO] public/automation/todo-summary.json:4200 — \","
+- [TODO] public/automation/todo-summary.json:4204 — ",
+- [TODO] public/automation/todo-summary.json:4206 — sync report [skip ci]\\\\\\\"\\\",\","
+- [TODO] public/automation/todo-summary.json:4210 — ",
+- [TODO] public/automation/todo-summary.json:4211 — sync report [skip ci]\\\\\\\"\\\",\"",
+- [TODO] public/automation/todo-summary.json:4212 — -issue-sync.yml:38 — ): update TODO sync report [skip ci]\\\\\\\"\\\",\""
+- [TODO] public/automation/todo-summary.json:4216 — ",
+- [TODO] public/automation/todo-summary.json:4218 — \","
+- [TODO] public/automation/todo-summary.json:4222 — ",
+- [TODO] public/automation/todo-summary.json:4223 — sync report [skip ci]\\\\\\\"\\\"\",",
+- [TODO] public/automation/todo-summary.json:4224 — -issue-sync.yml:38 — ): update TODO sync report [skip ci]\\\\\\\"\\\"\","
+- [TODO] public/automation/todo-summary.json:4228 — ",
+- [TODO] public/automation/todo-summary.json:4229 — -issue-sync.yml:38 — ): update TODO sync report [skip ci]\\\\\\\"\\\"\"",
+- [TODO] public/automation/todo-summary.json:4230 — ] .github/workflows/todo-issue-sync.yml:38 — ): update TODO sync report [skip ci]\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:4234 — ",
+- [TODO] public/automation/todo-summary.json:4236 — \","
+- [TODO] public/automation/todo-summary.json:4240 — ",
+- [TODO] public/automation/todo-summary.json:4242 — \\\",\""
+- [TODO] public/automation/todo-summary.json:4246 — ",
+- [TODO] public/automation/todo-summary.json:4248 — \","
+- [TODO] public/automation/todo-summary.json:4252 — ",
+- [TODO] public/automation/todo-summary.json:4254 — -issue-sync.yml:42 — Issue\\\",\""
+- [TODO] public/automation/todo-summary.json:4258 — ",
+- [TODO] public/automation/todo-summary.json:4260 — \","
+- [TODO] public/automation/todo-summary.json:4264 — ",
+- [TODO] public/automation/todo-summary.json:4266 — -issue-sync.yml:42 — Issue\\\"\","
+- [TODO] public/automation/todo-summary.json:4270 — ",
+- [TODO] public/automation/todo-summary.json:4271 — -issue-sync.yml:42 — Issue\\\"\"",
+- [TODO] public/automation/todo-summary.json:4272 — ] .github/workflows/todo-issue-sync.yml:42 — Issue\\\"\""
+- [TODO] public/automation/todo-summary.json:4276 — ",
+- [TODO] public/automation/todo-summary.json:4278 — \","
+- [TODO] public/automation/todo-summary.json:4282 — ",
+- [TODO] public/automation/todo-summary.json:4284 — \\\",\""
+- [TODO] public/automation/todo-summary.json:4288 — ",
+- [TODO] public/automation/todo-summary.json:4290 — \","
+- [FIXME] public/automation/todo-summary.json:4294 — ",
+- [FIXME] public/automation/todo-summary.json:4296 — /NOTE Sync\\\\\\\"\\\",\","
+- [TODO] public/automation/todo-summary.json:4300 — ",
+- [FIXME] public/automation/todo-summary.json:4301 — /NOTE Sync\\\\\\\"\\\",\"",
+- [TODO] public/automation/todo-summary.json:4302 — -issue-sync.yml:47 — /FIXME/NOTE Sync\\\\\\\"\\\",\""
+- [TODO] public/automation/todo-summary.json:4306 — ",
+- [TODO] public/automation/todo-summary.json:4308 — \","
+- [TODO] public/automation/todo-summary.json:4312 — ",
+- [FIXME] public/automation/todo-summary.json:4313 — /NOTE Sync\\\\\\\"\\\"\",",
+- [TODO] public/automation/todo-summary.json:4314 — -issue-sync.yml:47 — /FIXME/NOTE Sync\\\\\\\"\\\"\","
+- [TODO] public/automation/todo-summary.json:4318 — ",
+- [TODO] public/automation/todo-summary.json:4319 — -issue-sync.yml:47 — /FIXME/NOTE Sync\\\\\\\"\\\"\"",
+- [TODO] public/automation/todo-summary.json:4320 — ] .github/workflows/todo-issue-sync.yml:47 — /FIXME/NOTE Sync\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:4324 — ",
+- [TODO] public/automation/todo-summary.json:4326 — \","
+- [TODO] public/automation/todo-summary.json:4330 — ",
+- [TODO] public/automation/todo-summary.json:4332 — \\\",\""
+- [TODO] public/automation/todo-summary.json:4336 — ",
+- [TODO] public/automation/todo-summary.json:4338 — \","
+- [TODO] public/automation/todo-summary.json:4342 — ",
+- [TODO] public/automation/todo-summary.json:4344 — -issue-sync.yml:48 — _SYNC.md\\\\\\\"\\\",\""
+- [TODO] public/automation/todo-summary.json:4348 — ",
+- [TODO] public/automation/todo-summary.json:4350 — \","
+- [TODO] public/automation/todo-summary.json:4354 — ",
+- [TODO] public/automation/todo-summary.json:4356 — -issue-sync.yml:48 — _SYNC.md\\\\\\\"\\\"\","
+- [TODO] public/automation/todo-summary.json:4360 — ",
+- [TODO] public/automation/todo-summary.json:4361 — -issue-sync.yml:48 — _SYNC.md\\\\\\\"\\\"\"",
+- [TODO] public/automation/todo-summary.json:4362 — ] .github/workflows/todo-issue-sync.yml:48 — _SYNC.md\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:4366 — ",
+- [TODO] public/automation/todo-summary.json:4368 — \","
+- [TODO] public/automation/todo-summary.json:4372 — ",
+- [TODO] public/automation/todo-summary.json:4374 — \\\",\""
+- [TODO] public/automation/todo-summary.json:4378 — ",
+- [TODO] public/automation/todo-summary.json:4380 — \","
+- [TODO] public/automation/todo-summary.json:4384 — ",
+- [TODO] public/automation/todo-summary.json:4386 — -scanner.cjs\\\\\\\",\\\",\""
+- [TODO] public/automation/todo-summary.json:4390 — ",
+- [TODO] public/automation/todo-summary.json:4392 — \","
+- [TODO] public/automation/todo-summary.json:4396 — ",
+- [TODO] public/automation/todo-summary.json:4398 — -scanner.cjs\\\\\\\",\\\"\","
+- [TODO] public/automation/todo-summary.json:4402 — ",
+- [TODO] public/automation/todo-summary.json:4403 — -scanner.cjs\\\\\\\",\\\"\"",
+- [TODO] public/automation/todo-summary.json:4404 — ] package.json:225 — \\\\\\\": \\\\\\\"node automation/todo-scanner.cjs\\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:4408 — ",
+- [TODO] public/automation/todo-summary.json:4410 — \","
+- [TODO] public/automation/todo-summary.json:4414 — ",
+- [TODO] public/automation/todo-summary.json:4416 — \\\",\""
+- [TODO] public/automation/todo-summary.json:4420 — ",
+- [TODO] public/automation/todo-summary.json:4422 — \","
+- [TODO] public/automation/todo-summary.json:4426 — ",
+- [TODO] public/automation/todo-summary.json:4428 — ] package.json:227 — && npm run scan:registry\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:4432 — ",
+- [TODO] public/automation/todo-summary.json:4434 — \","
+- [TODO] public/automation/todo-summary.json:4438 — ",
+- [TODO] public/automation/todo-summary.json:4440 — \\\",\""
+- [TODO] public/automation/todo-summary.json:4444 — ",
+- [TODO] public/automation/todo-summary.json:4446 — \","
+- [TODO] public/automation/todo-summary.json:4450 — ",
+- [TODO] public/automation/todo-summary.json:4452 — issue sync, autonomous release, and keepalive workflows (09ccba6)\\\"\""
+- [TODO] public/automation/todo-summary.json:4456 — ",
+- [TODO] public/automation/todo-summary.json:4458 — \","
+- [TODO] public/automation/todo-summary.json:4462 — ",
+- [TODO] public/automation/todo-summary.json:4464 — \\\",\""
+- [TODO] public/automation/todo-summary.json:4468 — ",
+- [TODO] public/automation/todo-summary.json:4470 — \","
+- [TODO] public/automation/todo-summary.json:4474 — ",
+- [TODO] public/automation/todo-summary.json:4476 — issue sync, autonomous release, and keepalive workflows (09ccba6)\\\"\""
+- [TODO] public/automation/todo-summary.json:4480 — ",
+- [TODO] public/automation/todo-summary.json:4482 — \","
+- [TODO] public/automation/todo-summary.json:4486 — ",
+- [TODO] public/automation/todo-summary.json:4488 — \\\",\""
+- [TODO] public/automation/todo-summary.json:4492 — ",
+- [TODO] public/automation/todo-summary.json:4494 — \","
+- [TODO] public/automation/todo-summary.json:4498 — ",
+- [TODO] public/automation/todo-summary.json:4500 — _REPORT\\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:4504 — ",
+- [TODO] public/automation/todo-summary.json:4506 — \","
+- [TODO] public/automation/todo-summary.json:4510 — ",
+- [TODO] public/automation/todo-summary.json:4512 — \\\",\""
+- [TODO] public/automation/todo-summary.json:4516 — ",
+- [TODO] public/automation/todo-summary.json:4518 — \","
+- [TODO] public/automation/todo-summary.json:4522 — ",
+- [TODO] public/automation/todo-summary.json:4524 — _REPORT.md\\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:4528 — ",
+- [TODO] public/automation/todo-summary.json:4530 — \","
+- [TODO] public/automation/todo-summary.json:4534 — ",
+- [TODO] public/automation/todo-summary.json:4536 — \\\",\""
+- [FIXME] public/automation/todo-summary.json:4540 — ",
+- [FIXME] public/automation/todo-summary.json:4542 — \","
+- [FIXME] public/automation/todo-summary.json:4546 — ",
+- [FIXME] public/automation/todo-summary.json:4548 — Report\\\\\\\",\\\",\""
+- [TODO] public/automation/todo-summary.json:4552 — ",
+- [TODO] public/automation/todo-summary.json:4554 — \","
+- [FIXME] public/automation/todo-summary.json:4558 — ",
+- [FIXME] public/automation/todo-summary.json:4560 — Report\\\\\\\",\\\"\","
+- [TODO] public/automation/todo-summary.json:4564 — ",
+- [FIXME] public/automation/todo-summary.json:4565 — Report\\\\\\\",\\\"\"",
+- [TODO] public/automation/todo-summary.json:4566 — and FIXME Report\\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:4570 — ",
+- [TODO] public/automation/todo-summary.json:4572 — \","
+- [TODO] public/automation/todo-summary.json:4576 — ",
+- [TODO] public/automation/todo-summary.json:4578 — \\\",\""
+- [FIXME] public/automation/todo-summary.json:4582 — ",
+- [FIXME] public/automation/todo-summary.json:4584 — \","
+- [TODO] public/automation/todo-summary.json:4588 — ",
+- [FIXME] public/automation/todo-summary.json:4589 — scanner - [TODO] .github/workflows/autonomous-content-scanner.yml:31 — -sca\\\\\\\"\\\",\",",
+- [TODO] public/automation/todo-summary.json:4590 — ] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME sca"
+- [FIXME] public/automation/todo-summary.json:4594 — ",
+- [TODO] public/automation/todo-summary.json:4595 — ] .github/workflows/autonomous-content-scanner.yml:30 — \"",
+- [FIXME] public/automation/todo-summary.json:4596 — Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/autonomous-content-sc"
+- [TODO] public/automation/todo-summary.json:4600 — ",
+- [TODO] public/automation/todo-summary.json:4602 — \","
+- [FIXME] public/automation/todo-summary.json:4606 — ",
+- [TODO] public/automation/todo-summary.json:4607 — ] .github/workflows/autonomous-content-scanner\\\"\",",
+- [FIXME] public/automation/todo-summary.json:4608 — Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/autonomous-content-scanner\\\"\","
+- [TODO] public/automation/todo-summary.json:4612 — ",
+- [FIXME] public/automation/todo-summary.json:4613 — Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/autonomous-\"",
+- [TODO] public/automation/todo-summary.json:4614 — and FIXME Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/"
+- [TODO] public/automation/todo-summary.json:4618 — ",
+- [TODO] public/automation/todo-summary.json:4620 — \","
+- [TODO] public/automation/todo-summary.json:4624 — ",
+- [TODO] public/automation/todo-summary.json:4626 — \\\",\""
+- [TODO] public/automation/todo-summary.json:4630 — ",
+- [TODO] public/automation/todo-summary.json:4632 — \","
+- [TODO] public/automation/todo-summary.json:4636 — ",
+- [TODO] public/automation/todo-summary.json:4638 — -scanner.cjs\\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:4642 — ",
+- [TODO] public/automation/todo-summary.json:4644 — \","
+- [TODO] public/automation/todo-summary.json:4648 — ",
+- [TODO] public/automation/todo-summary.json:4650 — \\\",\""
+- [TODO] public/automation/todo-summary.json:4654 — ",
+- [TODO] public/automation/todo-summary.json:4656 — \","
+- [TODO] public/automation/todo-summary.json:4660 — ",
+- [TODO] public/automation/todo-summary.json:4662 — -scanner-runner.js\\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:4666 — ",
+- [TODO] public/automation/todo-summary.json:4668 — \","
+- [TODO] public/automation/todo-summary.json:4672 — ",
+- [TODO] public/automation/todo-summary.json:4674 — \\\",\""
+- [TODO] public/automation/todo-summary.json:4678 — ",
+- [TODO] public/automation/todo-summary.json:4680 — \","
+- [TODO] public/automation/todo-summary.json:4684 — ",
+- [TODO] public/automation/todo-summary.json:4686 — -summary-runner.js\\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:4690 — ",
+- [TODO] public/automation/todo-summary.json:4692 — \","
+- [TODO] public/automation/todo-summary.json:4696 — ",
+- [TODO] public/automation/todo-summary.json:4698 — \\\",\""
+- [TODO] public/automation/todo-summary.json:4702 — ",
+- [TODO] public/automation/todo-summary.json:4704 — \","
+- [TODO] public/automation/todo-summary.json:4708 — ",
+- [TODO] public/automation/todo-summary.json:4710 — _issue_sync.cjs\\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:4714 — ",
+- [TODO] public/automation/todo-summary.json:4716 — \","
+- [TODO] public/automation/todo-summary.json:4720 — ",
+- [TODO] public/automation/todo-summary.json:4722 — \\\",\""
+- [TODO] public/automation/todo-summary.json:4726 — ",
+- [TODO] public/automation/todo-summary.json:4728 — \","
+- [TODO] public/automation/todo-summary.json:4732 — ",
+- [TODO] public/automation/todo-summary.json:4734 — -scanner.cjs\\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:4738 — ",
+- [TODO] public/automation/todo-summary.json:4740 — \","
+- [TODO] public/automation/todo-summary.json:4744 — ",
+- [TODO] public/automation/todo-summary.json:4746 — \\\",\""
+- [TODO] public/automation/todo-summary.json:4750 — ",
+- [TODO] public/automation/todo-summary.json:4752 — \","
+- [TODO] public/automation/todo-summary.json:4756 — ",
+- [TODO] public/automation/todo-summary.json:4758 — -scanner.cjs\\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:4762 — ",
+- [TODO] public/automation/todo-summary.json:4764 — \","
+- [TODO] public/automation/todo-summary.json:4768 — ",
+- [TODO] public/automation/todo-summary.json:4770 — \\\",\""
+- [TODO] public/automation/todo-summary.json:4774 — ",
+- [TODO] public/automation/todo-summary.json:4776 — \","
+- [TODO] public/automation/todo-summary.json:4780 — ",
+- [TODO] public/automation/todo-summary.json:4782 — -scanner.cjs\\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:4786 — ",
+- [TODO] public/automation/todo-summary.json:4788 — \","
+- [TODO] public/automation/todo-summary.json:4792 — ",
+- [TODO] public/automation/todo-summary.json:4794 — \\\",\""
+- [TODO] public/automation/todo-summary.json:4798 — ",
+- [TODO] public/automation/todo-summary.json:4800 — \","
+- [TODO] public/automation/todo-summary.json:4804 — ",
+- [TODO] public/automation/todo-summary.json:4806 — -scanner-runner.js\\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:4810 — ",
+- [TODO] public/automation/todo-summary.json:4812 — \","
+- [TODO] public/automation/todo-summary.json:4816 — ",
+- [TODO] public/automation/todo-summary.json:4818 — \\\",\""
+- [TODO] public/automation/todo-summary.json:4822 — ",
+- [TODO] public/automation/todo-summary.json:4824 — \","
+- [TODO] public/automation/todo-summary.json:4828 — ",
+- [TODO] public/automation/todo-summary.json:4830 — -scanner-runner.js\\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:4834 — ",
+- [TODO] public/automation/todo-summary.json:4836 — \","
+- [TODO] public/automation/todo-summary.json:4840 — ",
+- [TODO] public/automation/todo-summary.json:4842 — \\\",\""
+- [TODO] public/automation/todo-summary.json:4846 — ",
+- [TODO] public/automation/todo-summary.json:4848 — \","
+- [TODO] public/automation/todo-summary.json:4852 — ",
+- [TODO] public/automation/todo-summary.json:4854 — -summary-runner.js\\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:4858 — ",
+- [TODO] public/automation/todo-summary.json:4860 — \","
+- [TODO] public/automation/todo-summary.json:4864 — ",
+- [TODO] public/automation/todo-summary.json:4866 — \\\",\""
+- [TODO] public/automation/todo-summary.json:4870 — ",
+- [TODO] public/automation/todo-summary.json:4872 — \","
+- [TODO] public/automation/todo-summary.json:4876 — ",
+- [TODO] public/automation/todo-summary.json:4878 — -summary-runner.js\\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:4882 — ",
+- [TODO] public/automation/todo-summary.json:4884 — \","
+- [TODO] public/automation/todo-summary.json:4888 — ",
+- [TODO] public/automation/todo-summary.json:4890 — \\\",\""
+- [TODO] public/automation/todo-summary.json:4894 — ",
+- [TODO] public/automation/todo-summary.json:4896 — \","
+- [TODO] public/automation/todo-summary.json:4900 — ",
+- [TODO] public/automation/todo-summary.json:4902 — _issue_sync.cjs\\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:4906 — ",
+- [TODO] public/automation/todo-summary.json:4908 — \","
+- [TODO] public/automation/todo-summary.json:4912 — ",
+- [TODO] public/automation/todo-summary.json:4914 — \\\",\""
+- [TODO] public/automation/todo-summary.json:4918 — ",
+- [TODO] public/automation/todo-summary.json:4920 — \","
+- [TODO] public/automation/todo-summary.json:4924 — ",
+- [TODO] public/automation/todo-summary.json:4926 — _issue_sync.cjs\\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:4930 — ",
+- [TODO] public/automation/todo-summary.json:4932 — \","
+- [TODO] public/automation/todo-summary.json:4936 — ",
+- [TODO] public/automation/todo-summary.json:4938 — \\\",\""
+- [TODO] public/automation/todo-summary.json:4942 — ",
+- [TODO] public/automation/todo-summary.json:4944 — \","
+- [TODO] public/automation/todo-summary.json:4948 — ",
+- [TODO] public/automation/todo-summary.json:4950 — _issue_sync.cjs\\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:4954 — ",
+- [TODO] public/automation/todo-summary.json:4956 — \","
+- [TODO] public/automation/todo-summary.json:4960 — ",
+- [TODO] public/automation/todo-summary.json:4962 — -summary.json\\\": [\""
+- [TODO] public/automation/todo-summary.json:4966 — ",
+- [TODO] public/automation/todo-summary.json:4968 — \","
+- [TODO] public/automation/todo-summary.json:4972 — ",
+- [TODO] public/automation/todo-summary.json:4974 — \\\",\""
+- [TODO] public/automation/todo-summary.json:4978 — ",
+- [TODO] public/automation/todo-summary.json:4980 — \","
+- [TODO] public/automation/todo-summary.json:4984 — ",
+- [TODO] public/automation/todo-summary.json:4986 — \\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:4990 — ",
+- [TODO] public/automation/todo-summary.json:4992 — \","
+- [TODO] public/automation/todo-summary.json:4996 — ",
+- [TODO] public/automation/todo-summary.json:4998 — \\\",\""
+- [TODO] public/automation/todo-summary.json:5002 — ",
+- [TODO] public/automation/todo-summary.json:5004 — \","
+- [TODO] public/automation/todo-summary.json:5008 — ",
+- [TODO] public/automation/todo-summary.json:5010 — -scanner.cjs\\\\\\\\\\\\\\\",\\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:5014 — ",
+- [TODO] public/automation/todo-summary.json:5016 — \","
+- [TODO] public/automation/todo-summary.json:5020 — ",
+- [TODO] public/automation/todo-summary.json:5022 — \\\",\""
+- [TODO] public/automation/todo-summary.json:5026 — ",
+- [TODO] public/automation/todo-summary.json:5028 — \","
+- [TODO] public/automation/todo-summary.json:5032 — ",
+- [TODO] public/automation/todo-summary.json:5034 — -scanner.cjs\\\\\\\\\\\\\\\",\\\\\\\"\\\",\""
+- [TODO] public/automation/todo-summary.json:5038 — ",
+- [TODO] public/automation/todo-summary.json:5040 — \","
+- [TODO] public/automation/todo-summary.json:5044 — ",
+- [TODO] public/automation/todo-summary.json:5046 — -scanner.cjs\\\\\\\\\\\\\\\",\\\\\\\"\\\"\","
+- [TODO] public/automation/todo-summary.json:5050 — ",
+- [TODO] public/automation/todo-summary.json:5051 — -scanner.cjs\\\\\\\\\\\\\\\",\\\\\\\"\\\"\"",
+- [TODO] public/automation/todo-summary.json:5052 — \\\\\\\\\\\\\\\": \\\\\\\\\\\\\\\"node automation/todo-scanner.cjs\\\\\\\\\\\\\\\",\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:5056 — ",
+- [TODO] public/automation/todo-summary.json:5058 — \","
+- [TODO] public/automation/todo-summary.json:5062 — ",
+- [TODO] public/automation/todo-summary.json:5064 — \\\",\""
+- [TODO] public/automation/todo-summary.json:5068 — ",
+- [TODO] public/automation/todo-summary.json:5070 — \","
+- [TODO] public/automation/todo-summary.json:5074 — ",
+- [TODO] public/automation/todo-summary.json:5076 — \\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:5080 — ",
+- [TODO] public/automation/todo-summary.json:5082 — \","
+- [TODO] public/automation/todo-summary.json:5086 — ",
+- [TODO] public/automation/todo-summary.json:5088 — \\\",\""
+- [TODO] public/automation/todo-summary.json:5092 — ",
+- [TODO] public/automation/todo-summary.json:5094 — \","
+- [TODO] public/automation/todo-summary.json:5098 — ",
+- [TODO] public/automation/todo-summary.json:5100 — && npm run scan:registry\\\\\\\\\\\\\\\"\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:5104 — ",
+- [TODO] public/automation/todo-summary.json:5106 — \","
+- [TODO] public/automation/todo-summary.json:5110 — ",
+- [TODO] public/automation/todo-summary.json:5112 — \\\",\""
+- [TODO] public/automation/todo-summary.json:5116 — ",
+- [TODO] public/automation/todo-summary.json:5118 — \","
+- [TODO] public/automation/todo-summary.json:5122 — ",
+- [TODO] public/automation/todo-summary.json:5124 — -issue-sync.yml\\\\\\\": [\\\"\""
+- [TODO] public/automation/todo-summary.json:5128 — ",
+- [TODO] public/automation/todo-summary.json:5130 — \","
+- [TODO] public/automation/todo-summary.json:5134 — ",
+- [TODO] public/automation/todo-summary.json:5136 — \\\",\""
+- [TODO] public/automation/todo-summary.json:5140 — ",
+- [TODO] public/automation/todo-summary.json:5142 — \","
+- [TODO] public/automation/todo-summary.json:5146 — ",
+- [TODO] public/automation/todo-summary.json:5148 — \\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:5152 — ",
+- [TODO] public/automation/todo-summary.json:5154 — \","
+- [TODO] public/automation/todo-summary.json:5158 — ",
+- [TODO] public/automation/todo-summary.json:5160 — \\\",\""
+- [TODO] public/automation/todo-summary.json:5164 — ",
+- [TODO] public/automation/todo-summary.json:5166 — \","
+- [TODO] public/automation/todo-summary.json:5170 — ",
+- [TODO] public/automation/todo-summary.json:5172 — Issue Sync\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:5176 — ",
+- [TODO] public/automation/todo-summary.json:5178 — \","
+- [TODO] public/automation/todo-summary.json:5182 — ",
+- [TODO] public/automation/todo-summary.json:5184 — \\\",\""
+- [TODO] public/automation/todo-summary.json:5188 — ",
+- [TODO] public/automation/todo-summary.json:5190 — \","
+- [TODO] public/automation/todo-summary.json:5194 — ",
+- [TODO] public/automation/todo-summary.json:5196 — \\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:5200 — ",
+- [TODO] public/automation/todo-summary.json:5202 — \","
+- [TODO] public/automation/todo-summary.json:5206 — ",
+- [TODO] public/automation/todo-summary.json:5208 — \\\",\""
+- [TODO] public/automation/todo-summary.json:5212 — ",
+- [TODO] public/automation/todo-summary.json:5214 — \","
+- [TODO] public/automation/todo-summary.json:5218 — ",
+- [TODO] public/automation/todo-summary.json:5220 — s:\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:5224 — ",
+- [TODO] public/automation/todo-summary.json:5226 — \","
+- [TODO] public/automation/todo-summary.json:5230 — ",
+- [TODO] public/automation/todo-summary.json:5232 — \\\",\""
+- [TODO] public/automation/todo-summary.json:5236 — ",
+- [TODO] public/automation/todo-summary.json:5238 — \","
+- [TODO] public/automation/todo-summary.json:5242 — ",
+- [TODO] public/automation/todo-summary.json:5244 — \\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:5248 — ",
+- [TODO] public/automation/todo-summary.json:5250 — \","
+- [TODO] public/automation/todo-summary.json:5254 — ",
+- [TODO] public/automation/todo-summary.json:5256 — \\\",\""
+- [TODO] public/automation/todo-summary.json:5260 — ",
+- [TODO] public/automation/todo-summary.json:5262 — \","
+- [TODO] public/automation/todo-summary.json:5266 — ",
+- [TODO] public/automation/todo-summary.json:5268 — report\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:5272 — ",
+- [TODO] public/automation/todo-summary.json:5274 — \","
+- [TODO] public/automation/todo-summary.json:5278 — ",
+- [TODO] public/automation/todo-summary.json:5280 — \\\",\""
+- [TODO] public/automation/todo-summary.json:5284 — ",
+- [TODO] public/automation/todo-summary.json:5286 — \","
+- [TODO] public/automation/todo-summary.json:5290 — ",
+- [TODO] public/automation/todo-summary.json:5292 — \\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:5296 — ",
+- [TODO] public/automation/todo-summary.json:5298 — \","
+- [TODO] public/automation/todo-summary.json:5302 — ",
+- [TODO] public/automation/todo-summary.json:5304 — \\\",\""
+- [TODO] public/automation/todo-summary.json:5308 — ",
+- [TODO] public/automation/todo-summary.json:5310 — \","
+- [TODO] public/automation/todo-summary.json:5314 — ",
+- [TODO] public/automation/todo-summary.json:5316 — _issue_sync.cjs\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:5320 — ",
+- [TODO] public/automation/todo-summary.json:5322 — \","
+- [TODO] public/automation/todo-summary.json:5326 — ",
+- [TODO] public/automation/todo-summary.json:5328 — \\\",\""
+- [TODO] public/automation/todo-summary.json:5332 — ",
+- [TODO] public/automation/todo-summary.json:5334 — \","
+- [TODO] public/automation/todo-summary.json:5338 — ",
+- [TODO] public/automation/todo-summary.json:5340 — \\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:5344 — ",
+- [TODO] public/automation/todo-summary.json:5346 — \","
+- [TODO] public/automation/todo-summary.json:5350 — ",
+- [TODO] public/automation/todo-summary.json:5352 — \\\",\""
+- [TODO] public/automation/todo-summary.json:5356 — ",
+- [TODO] public/automation/todo-summary.json:5358 — \","
+- [TODO] public/automation/todo-summary.json:5362 — ",
+- [TODO] public/automation/todo-summary.json:5364 — sync report [skip ci]\\\\\\\\\\\\\\\"\\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:5368 — ",
+- [TODO] public/automation/todo-summary.json:5370 — \","
+- [TODO] public/automation/todo-summary.json:5374 — ",
+- [TODO] public/automation/todo-summary.json:5376 — \\\",\""
+- [TODO] public/automation/todo-summary.json:5380 — ",
+- [TODO] public/automation/todo-summary.json:5382 — \","
+- [TODO] public/automation/todo-summary.json:5386 — ",
+- [TODO] public/automation/todo-summary.json:5388 — sync report [skip ci]\\\\\\\\\\\\\\\"\\\\\\\"\\\",\""
+- [TODO] public/automation/todo-summary.json:5392 — ",
+- [TODO] public/automation/todo-summary.json:5394 — \","
+- [TODO] public/automation/todo-summary.json:5398 — ",
+- [TODO] public/automation/todo-summary.json:5400 — sync report [skip ci]\\\\\\\\\\\\\\\"\\\\\\\"\\\"\","
+- [TODO] public/automation/todo-summary.json:5404 — ",
+- [TODO] public/automation/todo-summary.json:5405 — sync report [skip ci]\\\\\\\\\\\\\\\"\\\\\\\"\\\"\"",
+- [TODO] public/automation/todo-summary.json:5406 — ): update TODO sync report [skip ci]\\\\\\\\\\\\\\\"\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:5410 — ",
+- [TODO] public/automation/todo-summary.json:5412 — \","
+- [TODO] public/automation/todo-summary.json:5416 — ",
+- [TODO] public/automation/todo-summary.json:5418 — \\\",\""
+- [TODO] public/automation/todo-summary.json:5422 — ",
+- [TODO] public/automation/todo-summary.json:5424 — \","
+- [TODO] public/automation/todo-summary.json:5428 — ",
+- [TODO] public/automation/todo-summary.json:5430 — \\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:5434 — ",
+- [TODO] public/automation/todo-summary.json:5436 — \","
+- [TODO] public/automation/todo-summary.json:5440 — ",
+- [TODO] public/automation/todo-summary.json:5442 — \\\",\""
+- [TODO] public/automation/todo-summary.json:5446 — ",
+- [TODO] public/automation/todo-summary.json:5448 — \","
+- [TODO] public/automation/todo-summary.json:5452 — ",
+- [TODO] public/automation/todo-summary.json:5454 — Issue\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:5458 — ",
+- [TODO] public/automation/todo-summary.json:5460 — \","
+- [TODO] public/automation/todo-summary.json:5464 — ",
+- [TODO] public/automation/todo-summary.json:5466 — \\\",\""
+- [TODO] public/automation/todo-summary.json:5470 — ",
+- [TODO] public/automation/todo-summary.json:5472 — \","
+- [TODO] public/automation/todo-summary.json:5476 — ",
+- [TODO] public/automation/todo-summary.json:5478 — \\\\\\\",\\\"\""
+- [FIXME] public/automation/todo-summary.json:5482 — ",
+- [FIXME] public/automation/todo-summary.json:5484 — \","
+- [FIXME] public/automation/todo-summary.json:5488 — ",
+- [FIXME] public/automation/todo-summary.json:5490 — \\\",\""
+- [FIXME] public/automation/todo-summary.json:5494 — ",
+- [FIXME] public/automation/todo-summary.json:5496 — \","
+- [FIXME] public/automation/todo-summary.json:5500 — ",
+- [FIXME] public/automation/todo-summary.json:5502 — /NOTE Sync\\\\\\\\\\\\\\\"\\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:5506 — ",
+- [TODO] public/automation/todo-summary.json:5508 — \","
+- [TODO] public/automation/todo-summary.json:5512 — ",
+- [TODO] public/automation/todo-summary.json:5514 — \\\",\""
+- [FIXME] public/automation/todo-summary.json:5518 — ",
+- [FIXME] public/automation/todo-summary.json:5520 — \","
+- [FIXME] public/automation/todo-summary.json:5524 — ",
+- [FIXME] public/automation/todo-summary.json:5526 — /NOTE Sync\\\\\\\\\\\\\\\"\\\\\\\"\\\",\""
+- [TODO] public/automation/todo-summary.json:5530 — ",
+- [TODO] public/automation/todo-summary.json:5532 — \","
+- [FIXME] public/automation/todo-summary.json:5536 — ",
+- [FIXME] public/automation/todo-summary.json:5538 — /NOTE Sync\\\\\\\\\\\\\\\"\\\\\\\"\\\"\","
+- [TODO] public/automation/todo-summary.json:5542 — ",
+- [FIXME] public/automation/todo-summary.json:5543 — /NOTE Sync\\\\\\\\\\\\\\\"\\\\\\\"\\\"\"",
+- [TODO] public/automation/todo-summary.json:5544 — /FIXME/NOTE Sync\\\\\\\\\\\\\\\"\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:5548 — ",
+- [TODO] public/automation/todo-summary.json:5550 — \","
+- [TODO] public/automation/todo-summary.json:5554 — ",
+- [TODO] public/automation/todo-summary.json:5556 — \\\",\""
+- [TODO] public/automation/todo-summary.json:5560 — ",
+- [TODO] public/automation/todo-summary.json:5562 — \","
+- [TODO] public/automation/todo-summary.json:5566 — ",
+- [TODO] public/automation/todo-summary.json:5568 — \\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:5572 — ",
+- [TODO] public/automation/todo-summary.json:5574 — \","
+- [TODO] public/automation/todo-summary.json:5578 — ",
+- [TODO] public/automation/todo-summary.json:5580 — \\\",\""
+- [TODO] public/automation/todo-summary.json:5584 — ",
+- [TODO] public/automation/todo-summary.json:5586 — \","
+- [TODO] public/automation/todo-summary.json:5590 — ",
+- [TODO] public/automation/todo-summary.json:5592 — _SYNC.md\\\\\\\\\\\\\\\"\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:5596 — ",
+- [TODO] public/automation/todo-summary.json:5598 — \","
+- [TODO] public/automation/todo-summary.json:5602 — ",
+- [TODO] public/automation/todo-summary.json:5604 — \\\",\""
+- [TODO] public/automation/todo-summary.json:5608 — ",
+- [TODO] public/automation/todo-summary.json:5610 — \","
+- [TODO] public/automation/todo-summary.json:5614 — ",
+- [TODO] public/automation/todo-summary.json:5616 — \\\\\\\",\\\"\""
+- [FIXME] public/automation/todo-summary.json:5620 — ",
+- [FIXME] public/automation/todo-summary.json:5622 — \","
+- [FIXME] public/automation/todo-summary.json:5626 — ",
+- [FIXME] public/automation/todo-summary.json:5628 — \\\",\""
+- [FIXME] public/automation/todo-summary.json:5632 — ",
+- [FIXME] public/automation/todo-summary.json:5634 — \","
+- [FIXME] public/automation/todo-summary.json:5638 — ",
+- [FIXME] public/automation/todo-summary.json:5640 — scanner\\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:5644 — ",
+- [TODO] public/automation/todo-summary.json:5646 — \","
+- [TODO] public/automation/todo-summary.json:5650 — ",
+- [TODO] public/automation/todo-summary.json:5652 — \\\",\""
+- [FIXME] public/automation/todo-summary.json:5656 — ",
+- [FIXME] public/automation/todo-summary.json:5658 — \","
+- [FIXME] public/automation/todo-summary.json:5662 — ",
+- [FIXME] public/automation/todo-summary.json:5664 — scanner\\\\\\\"\\\",\""
+- [TODO] public/automation/todo-summary.json:5668 — ",
+- [TODO] public/automation/todo-summary.json:5670 — \","
+- [FIXME] public/automation/todo-summary.json:5674 — ",
+- [FIXME] public/automation/todo-summary.json:5676 — scanner\\\\\\\"\\\"\","
+- [TODO] public/automation/todo-summary.json:5680 — ",
+- [FIXME] public/automation/todo-summary.json:5681 — scanner\\\\\\\"\\\"\"",
+- [TODO] public/automation/todo-summary.json:5682 — /FIXME scanner\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:5686 — ",
+- [TODO] public/automation/todo-summary.json:5688 — \","
+- [TODO] public/automation/todo-summary.json:5692 — ",
+- [TODO] public/automation/todo-summary.json:5694 — \\\",\""
+- [TODO] public/automation/todo-summary.json:5698 — ",
+- [TODO] public/automation/todo-summary.json:5700 — \","
+- [TODO] public/automation/todo-summary.json:5704 — ",
+- [TODO] public/automation/todo-summary.json:5706 — \\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:5710 — ",
+- [TODO] public/automation/todo-summary.json:5712 — \","
+- [TODO] public/automation/todo-summary.json:5716 — ",
+- [TODO] public/automation/todo-summary.json:5718 — \\\",\""
+- [TODO] public/automation/todo-summary.json:5722 — ",
+- [TODO] public/automation/todo-summary.json:5724 — \","
+- [TODO] public/automation/todo-summary.json:5728 — ",
+- [TODO] public/automation/todo-summary.json:5730 — -scanner.cjs | cat\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:5734 — ",
+- [TODO] public/automation/todo-summary.json:5736 — \","
+- [TODO] public/automation/todo-summary.json:5740 — ",
+- [TODO] public/automation/todo-summary.json:5742 — \\\",\""
+- [TODO] public/automation/todo-summary.json:5746 — ",
+- [TODO] public/automation/todo-summary.json:5748 — \","
+- [TODO] public/automation/todo-summary.json:5752 — ",
+- [TODO] public/automation/todo-summary.json:5754 — \\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:5758 — ",
+- [TODO] public/automation/todo-summary.json:5760 — \","
+- [TODO] public/automation/todo-summary.json:5764 — ",
+- [TODO] public/automation/todo-summary.json:5766 — \\\",\""
+- [TODO] public/automation/todo-summary.json:5770 — ",
+- [TODO] public/automation/todo-summary.json:5772 — \","
+- [TODO] public/automation/todo-summary.json:5776 — ",
+- [TODO] public/automation/todo-summary.json:5778 — report and content registry [skip ci]\\\\\\\\\\\\\\\"\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:5782 — ",
+- [TODO] public/automation/todo-summary.json:5784 — \","
+- [TODO] public/automation/todo-summary.json:5788 — ",
+- [TODO] public/automation/todo-summary.json:5790 — \\\",\""
+- [TODO] public/automation/todo-summary.json:5794 — ",
+- [TODO] public/automation/todo-summary.json:5796 — \","
+- [TODO] public/automation/todo-summary.json:5800 — ",
+- [TODO] public/automation/todo-summary.json:5802 — _REPORT.md\\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:5806 — ",
+- [TODO] public/automation/todo-summary.json:5808 — \","
+- [TODO] public/automation/todo-summary.json:5812 — ",
+- [TODO] public/automation/todo-summary.json:5814 — \\\",\""
+- [TODO] public/automation/todo-summary.json:5818 — ",
+- [TODO] public/automation/todo-summary.json:5820 — \","
+- [TODO] public/automation/todo-summary.json:5824 — ",
+- [TODO] public/automation/todo-summary.json:5826 — _REPORT.md\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:5830 — ",
+- [TODO] public/automation/todo-summary.json:5832 — \","
+- [TODO] public/automation/todo-summary.json:5836 — ",
+- [TODO] public/automation/todo-summary.json:5838 — -summary-runner.js\\\": [\""
+- [TODO] public/automation/todo-summary.json:5842 — ",
+- [TODO] public/automation/todo-summary.json:5844 — \","
+- [TODO] public/automation/todo-summary.json:5848 — ",
+- [TODO] public/automation/todo-summary.json:5850 — \\\",\""
+- [TODO] public/automation/todo-summary.json:5854 — ",
+- [TODO] public/automation/todo-summary.json:5856 — \","
+- [TODO] public/automation/todo-summary.json:5860 — ",
+- [TODO] public/automation/todo-summary.json:5862 — -scanner.cjs'));\\\",\""
+- [TODO] public/automation/todo-summary.json:5866 — ",
+- [TODO] public/automation/todo-summary.json:5868 — \","
+- [TODO] public/automation/todo-summary.json:5872 — ",
+- [TODO] public/automation/todo-summary.json:5874 — -scanner.cjs'));\\\"\","
+- [TODO] public/automation/todo-summary.json:5878 — ",
+- [TODO] public/automation/todo-summary.json:5879 — -scanner.cjs'));\\\"\"",
+- [TODO] public/automation/todo-summary.json:5880 — scan', () => runNode('automation/todo-scanner.cjs'));\\\"\""
+- [TODO] public/automation/todo-summary.json:5884 — ",
+- [TODO] public/automation/todo-summary.json:5886 — \","
+- [TODO] public/automation/todo-summary.json:5890 — ",
+- [TODO] public/automation/todo-summary.json:5892 — -scanner-runner.js\\\": [\""
+- [TODO] public/automation/todo-summary.json:5896 — ",
+- [TODO] public/automation/todo-summary.json:5898 — \","
+- [TODO] public/automation/todo-summary.json:5902 — ",
+- [TODO] public/automation/todo-summary.json:5904 — \\\",\""
+- [TODO] public/automation/todo-summary.json:5908 — ",
+- [TODO] public/automation/todo-summary.json:5910 — \","
+- [TODO] public/automation/todo-summary.json:5914 — ",
+- [TODO] public/automation/todo-summary.json:5916 — -scanner.cjs'));\\\",\""
+- [TODO] public/automation/todo-summary.json:5920 — ",
+- [TODO] public/automation/todo-summary.json:5922 — \","
+- [TODO] public/automation/todo-summary.json:5926 — ",
+- [TODO] public/automation/todo-summary.json:5928 — -scanner.cjs'));\\\"\","
+- [TODO] public/automation/todo-summary.json:5932 — ",
+- [TODO] public/automation/todo-summary.json:5933 — -scanner.cjs'));\\\"\"",
+- [TODO] public/automation/todo-summary.json:5934 — scan', () => runNode('automation/todo-scanner.cjs'));\\\"\""
+- [TODO] public/automation/todo-summary.json:5938 — ",
+- [TODO] public/automation/todo-summary.json:5940 — \","
+- [TODO] public/automation/todo-summary.json:5944 — ",
+- [TODO] public/automation/todo-summary.json:5946 — \\\",\""
+- [TODO] public/automation/todo-summary.json:5950 — ",
+- [TODO] public/automation/todo-summary.json:5952 — \","
+- [TODO] public/automation/todo-summary.json:5956 — ",
+- [TODO] public/automation/todo-summary.json:5958 — -scanner-runner\\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:5962 — ",
+- [TODO] public/automation/todo-summary.json:5964 — \","
+- [TODO] public/automation/todo-summary.json:5968 — ",
+- [TODO] public/automation/todo-summary.json:5970 — \\\",\""
+- [TODO] public/automation/todo-summary.json:5974 — ",
+- [TODO] public/automation/todo-summary.json:5976 — \","
+- [TODO] public/automation/todo-summary.json:5980 — ",
+- [TODO] public/automation/todo-summary.json:5982 — -summary-runner\\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:5986 — ",
+- [TODO] public/automation/todo-summary.json:5988 — \","
+- [TODO] public/automation/todo-summary.json:5992 — ",
+- [TODO] public/automation/todo-summary.json:5994 — -issue-sync.yml\\\": [\""
+- [TODO] public/automation/todo-summary.json:5998 — ",
+- [TODO] public/automation/todo-summary.json:6000 — \","
+- [TODO] public/automation/todo-summary.json:6004 — ",
+- [TODO] public/automation/todo-summary.json:6006 — \\\",\""
+- [TODO] public/automation/todo-summary.json:6010 — ",
+- [TODO] public/automation/todo-summary.json:6012 — \","
+- [TODO] public/automation/todo-summary.json:6016 — ",
+- [TODO] public/automation/todo-summary.json:6018 — Issue Sync\\\"\""
+- [TODO] public/automation/todo-summary.json:6022 — ",
+- [TODO] public/automation/todo-summary.json:6024 — \","
+- [TODO] public/automation/todo-summary.json:6028 — ",
+- [TODO] public/automation/todo-summary.json:6030 — \\\",\""
+- [TODO] public/automation/todo-summary.json:6034 — ",
+- [TODO] public/automation/todo-summary.json:6036 — \","
+- [TODO] public/automation/todo-summary.json:6040 — ",
+- [TODO] public/automation/todo-summary.json:6042 — s:\\\"\""
+- [TODO] public/automation/todo-summary.json:6046 — ",
+- [TODO] public/automation/todo-summary.json:6048 — \","
+- [TODO] public/automation/todo-summary.json:6052 — ",
+- [TODO] public/automation/todo-summary.json:6054 — \\\",\""
+- [TODO] public/automation/todo-summary.json:6058 — ",
+- [TODO] public/automation/todo-summary.json:6060 — \","
+- [TODO] public/automation/todo-summary.json:6064 — ",
+- [TODO] public/automation/todo-summary.json:6066 — report\\\"\""
+- [TODO] public/automation/todo-summary.json:6070 — ",
+- [TODO] public/automation/todo-summary.json:6072 — \","
+- [TODO] public/automation/todo-summary.json:6076 — ",
+- [TODO] public/automation/todo-summary.json:6078 — \\\",\""
+- [TODO] public/automation/todo-summary.json:6082 — ",
+- [TODO] public/automation/todo-summary.json:6084 — \","
+- [TODO] public/automation/todo-summary.json:6088 — ",
+- [TODO] public/automation/todo-summary.json:6090 — _issue_sync.cjs\\\"\""
+- [TODO] public/automation/todo-summary.json:6094 — ",
+- [TODO] public/automation/todo-summary.json:6096 — \","
+- [TODO] public/automation/todo-summary.json:6100 — ",
+- [TODO] public/automation/todo-summary.json:6102 — \\\",\""
+- [TODO] public/automation/todo-summary.json:6106 — ",
+- [TODO] public/automation/todo-summary.json:6108 — \","
+- [TODO] public/automation/todo-summary.json:6112 — ",
+- [TODO] public/automation/todo-summary.json:6114 — sync report [skip ci]\\\\\\\"\\\",\""
+- [TODO] public/automation/todo-summary.json:6118 — ",
+- [TODO] public/automation/todo-summary.json:6120 — \","
+- [TODO] public/automation/todo-summary.json:6124 — ",
+- [TODO] public/automation/todo-summary.json:6126 — sync report [skip ci]\\\\\\\"\\\"\","
+- [TODO] public/automation/todo-summary.json:6130 — ",
+- [TODO] public/automation/todo-summary.json:6131 — sync report [skip ci]\\\\\\\"\\\"\"",
+- [TODO] public/automation/todo-summary.json:6132 — ): update TODO sync report [skip ci]\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:6136 — ",
+- [TODO] public/automation/todo-summary.json:6138 — \","
+- [TODO] public/automation/todo-summary.json:6142 — ",
+- [TODO] public/automation/todo-summary.json:6144 — \\\",\""
+- [TODO] public/automation/todo-summary.json:6148 — ",
+- [TODO] public/automation/todo-summary.json:6150 — \","
+- [TODO] public/automation/todo-summary.json:6154 — ",
+- [TODO] public/automation/todo-summary.json:6156 — Issue\\\"\""
+- [TODO] public/automation/todo-summary.json:6160 — ",
+- [TODO] public/automation/todo-summary.json:6162 — \","
+- [TODO] public/automation/todo-summary.json:6166 — ",
+- [TODO] public/automation/todo-summary.json:6168 — \\\",\""
+- [FIXME] public/automation/todo-summary.json:6172 — ",
+- [FIXME] public/automation/todo-summary.json:6174 — \","
+- [FIXME] public/automation/todo-summary.json:6178 — ",
+- [FIXME] public/automation/todo-summary.json:6180 — /NOTE Sync\\\\\\\"\\\",\""
+- [TODO] public/automation/todo-summary.json:6184 — ",
+- [TODO] public/automation/todo-summary.json:6186 — \","
+- [FIXME] public/automation/todo-summary.json:6190 — ",
+- [FIXME] public/automation/todo-summary.json:6192 — /NOTE Sync\\\\\\\"\\\"\","
+- [TODO] public/automation/todo-summary.json:6196 — ",
+- [FIXME] public/automation/todo-summary.json:6197 — /NOTE Sync\\\\\\\"\\\"\"",
+- [TODO] public/automation/todo-summary.json:6198 — /FIXME/NOTE Sync\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:6202 — ",
+- [TODO] public/automation/todo-summary.json:6204 — \","
+- [TODO] public/automation/todo-summary.json:6208 — ",
+- [TODO] public/automation/todo-summary.json:6210 — \\\",\""
+- [TODO] public/automation/todo-summary.json:6214 — ",
+- [TODO] public/automation/todo-summary.json:6216 — \","
+- [TODO] public/automation/todo-summary.json:6220 — ",
+- [TODO] public/automation/todo-summary.json:6222 — _SYNC.md\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:6226 — ",
+- [TODO] public/automation/todo-summary.json:6228 — \","
+- [TODO] public/automation/todo-summary.json:6232 — ",
+- [TODO] public/automation/todo-summary.json:6234 — \\\",\""
+- [FIXME] public/automation/todo-summary.json:6238 — ",
+- [FIXME] public/automation/todo-summary.json:6240 — \","
+- [FIXME] public/automation/todo-summary.json:6244 — ",
+- [FIXME] public/automation/todo-summary.json:6246 — scanner\\\",\""
+- [TODO] public/automation/todo-summary.json:6250 — ",
+- [TODO] public/automation/todo-summary.json:6252 — \","
+- [FIXME] public/automation/todo-summary.json:6256 — ",
+- [FIXME] public/automation/todo-summary.json:6258 — scanner\\\"\","
+- [TODO] public/automation/todo-summary.json:6262 — ",
+- [FIXME] public/automation/todo-summary.json:6263 — scanner\\\"\"",
+- [TODO] public/automation/todo-summary.json:6264 — /FIXME scanner\\\"\""
+- [TODO] public/automation/todo-summary.json:6268 — ",
+- [TODO] public/automation/todo-summary.json:6270 — \","
+- [TODO] public/automation/todo-summary.json:6274 — ",
+- [TODO] public/automation/todo-summary.json:6276 — \\\",\""
+- [TODO] public/automation/todo-summary.json:6280 — ",
+- [TODO] public/automation/todo-summary.json:6282 — \","
+- [TODO] public/automation/todo-summary.json:6286 — ",
+- [TODO] public/automation/todo-summary.json:6288 — -scanner.cjs | cat\\\"\""
+- [TODO] public/automation/todo-summary.json:6292 — ",
+- [TODO] public/automation/todo-summary.json:6294 — \","
+- [TODO] public/automation/todo-summary.json:6298 — ",
+- [TODO] public/automation/todo-summary.json:6300 — \\\",\""
+- [TODO] public/automation/todo-summary.json:6304 — ",
+- [TODO] public/automation/todo-summary.json:6306 — \","
+- [TODO] public/automation/todo-summary.json:6310 — ",
+- [TODO] public/automation/todo-summary.json:6312 — report and content registry [skip ci]\\\\\\\"\\\"\""
+- [TODO] public/automation/todo-summary.json:6316 — ",
+- [TODO] public/automation/todo-summary.json:6318 — \","
+- [TODO] public/automation/todo-summary.json:6322 — ",
+- [TODO] public/automation/todo-summary.json:6324 — \\\",\""
+- [TODO] public/automation/todo-summary.json:6328 — ",
+- [TODO] public/automation/todo-summary.json:6330 — \","
+- [TODO] public/automation/todo-summary.json:6334 — ",
+- [TODO] public/automation/todo-summary.json:6336 — \","
+- [TODO] public/automation/todo-summary.json:6340 — ",
+- [TODO] public/automation/todo-summary.json:6342 — _REPORT.md\\\\\\\" target=\\\\\\\"_blank\\\\\\\" rel=\\\\\\\"noopener\\\\\\\" className=\\\\\\\"group relative overflow-hidd"
+- [TODO] public/automation/todo-summary.json:6346 — ",
+- [TODO] public/automation/todo-summary.json:6348 — \","
+- [TODO] public/automation/todo-summary.json:6352 — ",
+- [TODO] public/automation/todo-summary.json:6354 — \\\",\""
+- [TODO] public/automation/todo-summary.json:6358 — ",
+- [TODO] public/automation/todo-summary.json:6360 — \","
+- [TODO] public/automation/todo-summary.json:6364 — ",
+- [TODO] public/automation/todo-summary.json:6366 — _REPORT.md\\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:6370 — ",
+- [TODO] public/automation/todo-summary.json:6372 — \","
+- [TODO] public/automation/todo-summary.json:6376 — ",
+- [TODO] public/automation/todo-summary.json:6378 — \\\",\""
+- [TODO] public/automation/todo-summary.json:6382 — ",
+- [TODO] public/automation/todo-summary.json:6384 — \","
+- [TODO] public/automation/todo-summary.json:6388 — ",
+- [TODO] public/automation/todo-summary.json:6390 — _REPORT.md\\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:6394 — ",
+- [TODO] public/automation/todo-summary.json:6396 — \","
+- [TODO] public/automation/todo-summary.json:6400 — ",
+- [TODO] public/automation/todo-summary.json:6402 — \\\",\""
+- [TODO] public/automation/todo-summary.json:6406 — ",
+- [TODO] public/automation/todo-summary.json:6408 — \","
+- [TODO] public/automation/todo-summary.json:6412 — ",
+- [TODO] public/automation/todo-summary.json:6414 — _REPORT.md\\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:6418 — ",
+- [TODO] public/automation/todo-summary.json:6420 — \","
+- [TODO] public/automation/todo-summary.json:6424 — ",
+- [TODO] public/automation/todo-summary.json:6426 — \\\",\""
+- [TODO] public/automation/todo-summary.json:6430 — ",
+- [TODO] public/automation/todo-summary.json:6432 — \","
+- [TODO] public/automation/todo-summary.json:6436 — ",
+- [TODO] public/automation/todo-summary.json:6438 — _REPORT.md\\\\\\\",\\\"\""
+- [TODO] public/automation/todo-summary.json:6442 — ",
+- [TODO] public/automation/todo-summary.json:6444 — \","
+- [TODO] public/automation/todo-summary.json:6448 — ",
+- [TODO] public/automation/todo-summary.json:6450 — _REPORT.md\\\",\""
+- [TODO] public/automation/todo-summary.json:6454 — ",
+- [TODO] public/automation/todo-summary.json:6456 — \","
+- [TODO] public/automation/todo-summary.json:6460 — ",
+- [TODO] public/automation/todo-summary.json:6462 — _REPORT.md\\\"\""
+- [TODO] public/automation/todo-summary.json:6466 — ",
+- [TODO] public/automation/todo-summary.json:6468 — -summary-runner.js\": ["
+- [TODO] public/automation/todo-summary.json:6472 — ",
+- [TODO] public/automation/todo-summary.json:6474 — \","
+- [TODO] public/automation/todo-summary.json:6478 — ",
+- [TODO] public/automation/todo-summary.json:6480 — -scanner.cjs'));\","
+- [TODO] public/automation/todo-summary.json:6484 — ",
+- [TODO] public/automation/todo-summary.json:6485 — -scanner.cjs'));\"",
+- [TODO] public/automation/todo-summary.json:6486 — scan', () => runNode('automation/todo-scanner.cjs'));\""
+- [TODO] public/automation/todo-summary.json:6490 — ",
+- [TODO] public/automation/todo-summary.json:6492 — -scanner-runner.js\": ["
+- [TODO] public/automation/todo-summary.json:6496 — ",
+- [TODO] public/automation/todo-summary.json:6498 — \","
+- [TODO] public/automation/todo-summary.json:6502 — ",
+- [TODO] public/automation/todo-summary.json:6504 — -scanner.cjs'));\","
+- [TODO] public/automation/todo-summary.json:6508 — ",
+- [TODO] public/automation/todo-summary.json:6509 — -scanner.cjs'));\"",
+- [TODO] public/automation/todo-summary.json:6510 — scan', () => runNode('automation/todo-scanner.cjs'));\""
+- [TODO] public/automation/todo-summary.json:6514 — ",
+- [TODO] public/automation/todo-summary.json:6516 — \","
+- [TODO] public/automation/todo-summary.json:6520 — ",
+- [TODO] public/automation/todo-summary.json:6522 — -scanner-runner\\\",\""
+- [TODO] public/automation/todo-summary.json:6526 — ",
+- [TODO] public/automation/todo-summary.json:6528 — \","
+- [TODO] public/automation/todo-summary.json:6532 — ",
+- [TODO] public/automation/todo-summary.json:6534 — -summary-runner\\\",\""
+- [TODO] public/automation/todo-summary.json:6538 — ",
+- [TODO] public/automation/todo-summary.json:6540 — \","
+- [TODO] public/automation/todo-summary.json:6544 — ",
+- [TODO] public/automation/todo-summary.json:6546 — -scanner.cjs\\\",\""
+- [TODO] public/automation/todo-summary.json:6550 — ",
+- [TODO] public/automation/todo-summary.json:6552 — \","
+- [TODO] public/automation/todo-summary.json:6556 — ",
+- [TODO] public/automation/todo-summary.json:6558 — -scanner-runner.js\\\",\""
+- [TODO] public/automation/todo-summary.json:6562 — ",
+- [TODO] public/automation/todo-summary.json:6564 — \","
+- [TODO] public/automation/todo-summary.json:6568 — ",
+- [TODO] public/automation/todo-summary.json:6570 — -summary-runner.js\\\",\""
+- [TODO] public/automation/todo-summary.json:6574 — ",
+- [TODO] public/automation/todo-summary.json:6576 — \","
+- [TODO] public/automation/todo-summary.json:6580 — ",
+- [TODO] public/automation/todo-summary.json:6582 — _issue_sync.cjs\\\",\""
+- [TODO] public/automation/todo-summary.json:6586 — ",
+- [TODO] public/automation/todo-summary.json:6588 — \","
+- [TODO] public/automation/todo-summary.json:6592 — ",
+- [TODO] public/automation/todo-summary.json:6594 — -scanner.cjs\\\",\""
+- [TODO] public/automation/todo-summary.json:6598 — ",
+- [TODO] public/automation/todo-summary.json:6600 — \","
+- [TODO] public/automation/todo-summary.json:6604 — ",
+- [TODO] public/automation/todo-summary.json:6606 — -scanner.cjs\\\",\""
+- [TODO] public/automation/todo-summary.json:6610 — ",
+- [TODO] public/automation/todo-summary.json:6612 — \","
+- [TODO] public/automation/todo-summary.json:6616 — ",
+- [TODO] public/automation/todo-summary.json:6618 — -scanner.cjs\\\",\""
+- [TODO] public/automation/todo-summary.json:6622 — ",
+- [TODO] public/automation/todo-summary.json:6624 — \","
+- [TODO] public/automation/todo-summary.json:6628 — ",
+- [TODO] public/automation/todo-summary.json:6630 — -scanner-runner.js\\\",\""
+- [TODO] public/automation/todo-summary.json:6634 — ",
+- [TODO] public/automation/todo-summary.json:6636 — \","
+- [TODO] public/automation/todo-summary.json:6640 — ",
+- [TODO] public/automation/todo-summary.json:6642 — -scanner-runner.js\\\",\""
+- [TODO] public/automation/todo-summary.json:6646 — ",
+- [TODO] public/automation/todo-summary.json:6648 — \","
+- [TODO] public/automation/todo-summary.json:6652 — ",
+- [TODO] public/automation/todo-summary.json:6654 — -summary-runner.js\\\",\""
+- [TODO] public/automation/todo-summary.json:6658 — ",
+- [TODO] public/automation/todo-summary.json:6660 — \","
+- [TODO] public/automation/todo-summary.json:6664 — ",
+- [TODO] public/automation/todo-summary.json:6666 — -summary-runner.js\\\",\""
+- [TODO] public/automation/todo-summary.json:6670 — ",
+- [TODO] public/automation/todo-summary.json:6672 — \","
+- [TODO] public/automation/todo-summary.json:6676 — ",
+- [TODO] public/automation/todo-summary.json:6678 — _issue_sync.cjs\\\",\""
+- [TODO] public/automation/todo-summary.json:6682 — ",
+- [TODO] public/automation/todo-summary.json:6684 — \","
+- [TODO] public/automation/todo-summary.json:6688 — ",
+- [TODO] public/automation/todo-summary.json:6690 — _issue_sync.cjs\\\",\""
+- [TODO] public/automation/todo-summary.json:6694 — ",
+- [TODO] public/automation/todo-summary.json:6696 — \","
+- [TODO] public/automation/todo-summary.json:6700 — ",
+- [TODO] public/automation/todo-summary.json:6702 — _issue_sync.cjs\\\",\""
+- [TODO] public/automation/todo-summary.json:6706 — ",
+- [TODO] public/automation/todo-summary.json:6708 — -issue-sync.yml\": ["
+- [TODO] public/automation/todo-summary.json:6712 — ",
+- [TODO] public/automation/todo-summary.json:6714 — \","
+- [TODO] public/automation/todo-summary.json:6718 — ",
+- [TODO] public/automation/todo-summary.json:6720 — Issue Sync\""
+- [TODO] public/automation/todo-summary.json:6724 — ",
+- [TODO] public/automation/todo-summary.json:6726 — \","
+- [TODO] public/automation/todo-summary.json:6730 — ",
+- [TODO] public/automation/todo-summary.json:6732 — s:\""
+- [TODO] public/automation/todo-summary.json:6736 — ",
+- [TODO] public/automation/todo-summary.json:6738 — \","
+- [TODO] public/automation/todo-summary.json:6742 — ",
+- [TODO] public/automation/todo-summary.json:6744 — report\""
+- [TODO] public/automation/todo-summary.json:6748 — ",
+- [TODO] public/automation/todo-summary.json:6750 — \","
+- [TODO] public/automation/todo-summary.json:6754 — ",
+- [TODO] public/automation/todo-summary.json:6756 — _issue_sync.cjs\""
+- [TODO] public/automation/todo-summary.json:6760 — ",
+- [TODO] public/automation/todo-summary.json:6762 — \","
+- [TODO] public/automation/todo-summary.json:6766 — ",
+- [TODO] public/automation/todo-summary.json:6768 — sync report [skip ci]\\\"\","
+- [TODO] public/automation/todo-summary.json:6772 — ",
+- [TODO] public/automation/todo-summary.json:6773 — sync report [skip ci]\\\"\"",
+- [TODO] public/automation/todo-summary.json:6774 — ): update TODO sync report [skip ci]\\\"\""
+- [TODO] public/automation/todo-summary.json:6778 — ",
+- [TODO] public/automation/todo-summary.json:6780 — \","
+- [TODO] public/automation/todo-summary.json:6784 — ",
+- [TODO] public/automation/todo-summary.json:6786 — Issue\""
+- [TODO] public/automation/todo-summary.json:6790 — ",
+- [TODO] public/automation/todo-summary.json:6792 — \","
+- [FIXME] public/automation/todo-summary.json:6796 — ",
+- [FIXME] public/automation/todo-summary.json:6798 — /NOTE Sync\\\"\","
+- [TODO] public/automation/todo-summary.json:6802 — ",
+- [FIXME] public/automation/todo-summary.json:6803 — /NOTE Sync\\\"\"",
+- [TODO] public/automation/todo-summary.json:6804 — /FIXME/NOTE Sync\\\"\""
+- [TODO] public/automation/todo-summary.json:6808 — ",
+- [TODO] public/automation/todo-summary.json:6810 — \","
+- [TODO] public/automation/todo-summary.json:6814 — ",
+- [TODO] public/automation/todo-summary.json:6816 — _SYNC.md\\\"\""
+- [TODO] public/automation/todo-summary.json:6820 — ",
+- [TODO] public/automation/todo-summary.json:6822 — \","
+- [FIXME] public/automation/todo-summary.json:6826 — ",
+- [FIXME] public/automation/todo-summary.json:6828 — scanner\","
+- [TODO] public/automation/todo-summary.json:6832 — ",
+- [FIXME] public/automation/todo-summary.json:6833 — scanner\"",
+- [TODO] public/automation/todo-summary.json:6834 — /FIXME scanner\""
+- [TODO] public/automation/todo-summary.json:6838 — ",
+- [TODO] public/automation/todo-summary.json:6840 — \","
+- [TODO] public/automation/todo-summary.json:6844 — ",
+- [TODO] public/automation/todo-summary.json:6846 — -scanner.cjs | cat\""
+- [TODO] public/automation/todo-summary.json:6850 — ",
+- [TODO] public/automation/todo-summary.json:6852 — \","
+- [TODO] public/automation/todo-summary.json:6856 — ",
+- [TODO] public/automation/todo-summary.json:6858 — report and content registry [skip ci]\\\"\""
+- [TODO] public/automation/todo-summary.json:6862 — ",
+- [TODO] public/automation/todo-summary.json:6864 — \","
+- [TODO] public/automation/todo-summary.json:6868 — ",
+- [TODO] public/automation/todo-summary.json:6874 — ",
+- [TODO] public/automation/todo-summary.json:6876 — _REPORT.md\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\" className=\\\"group relative overflow-hidden rounded-2xl border border-"
+- [TODO] public/automation/todo-summary.json:6880 — ",
+- [TODO] public/automation/todo-summary.json:6882 — \","
+- [TODO] public/automation/todo-summary.json:6886 — ",
+- [TODO] public/automation/todo-summary.json:6888 — _REPORT.md\\\",\""
+- [TODO] public/automation/todo-summary.json:6892 — ",
+- [TODO] public/automation/todo-summary.json:6894 — \","
+- [TODO] public/automation/todo-summary.json:6898 — ",
+- [TODO] public/automation/todo-summary.json:6900 — _REPORT.md\\\",\""
+- [TODO] public/automation/todo-summary.json:6904 — ",
+- [TODO] public/automation/todo-summary.json:6906 — \","
+- [TODO] public/automation/todo-summary.json:6910 — ",
+- [TODO] public/automation/todo-summary.json:6912 — _REPORT.md\\\",\""
+- [TODO] public/automation/todo-summary.json:6916 — ",
+- [TODO] public/automation/todo-summary.json:6918 — \","
+- [TODO] public/automation/todo-summary.json:6922 — ",
+- [TODO] public/automation/todo-summary.json:6924 — _REPORT.md\\\",\""
+- [TODO] public/automation/todo-summary.json:6930 — ",
+- [TODO] public/automation/todo-summary.json:6932 — _REPORT.md\","
+- [TODO] public/automation/todo-summary.json:6936 — ",
+- [TODO] public/automation/todo-summary.json:6938 — _REPORT.md\""
+- [TODO] public/automation/todo-summary.json:6941 — -summary-runner.js": [
+- [TODO] public/automation/todo-summary.json:6944 — ",
+- [TODO] public/automation/todo-summary.json:6945 — -scanner.cjs'));",
+- [TODO] public/automation/todo-summary.json:6946 — scan', () => runNode('automation/todo-scanner.cjs'));"
+- [TODO] public/automation/todo-summary.json:6949 — -scanner-runner.js": [
+- [TODO] public/automation/todo-summary.json:6952 — ",
+- [TODO] public/automation/todo-summary.json:6953 — -scanner.cjs'));",
+- [TODO] public/automation/todo-summary.json:6954 — scan', () => runNode('automation/todo-scanner.cjs'));"
+- [TODO] public/automation/todo-summary.json:6960 — ",
+- [TODO] public/automation/todo-summary.json:6962 — -scanner-runner\","
+- [TODO] public/automation/todo-summary.json:6966 — ",
+- [TODO] public/automation/todo-summary.json:6968 — -summary-runner\","
+- [TODO] public/automation/todo-summary.json:6974 — ",
+- [TODO] public/automation/todo-summary.json:6976 — -scanner.cjs\","
+- [TODO] public/automation/todo-summary.json:6980 — ",
+- [TODO] public/automation/todo-summary.json:6982 — -scanner-runner.js\","
+- [TODO] public/automation/todo-summary.json:6986 — ",
+- [TODO] public/automation/todo-summary.json:6988 — -summary-runner.js\","
+- [TODO] public/automation/todo-summary.json:6992 — ",
+- [TODO] public/automation/todo-summary.json:6994 — _issue_sync.cjs\","
+- [TODO] public/automation/todo-summary.json:6998 — ",
+- [TODO] public/automation/todo-summary.json:7000 — -scanner.cjs\","
+- [TODO] public/automation/todo-summary.json:7004 — ",
+- [TODO] public/automation/todo-summary.json:7006 — -scanner.cjs\","
+- [TODO] public/automation/todo-summary.json:7010 — ",
+- [TODO] public/automation/todo-summary.json:7012 — -scanner.cjs\","
+- [TODO] public/automation/todo-summary.json:7016 — ",
+- [TODO] public/automation/todo-summary.json:7018 — -scanner-runner.js\","
+- [TODO] public/automation/todo-summary.json:7022 — ",
+- [TODO] public/automation/todo-summary.json:7024 — -scanner-runner.js\","
+- [TODO] public/automation/todo-summary.json:7028 — ",
+- [TODO] public/automation/todo-summary.json:7030 — -summary-runner.js\","
+- [TODO] public/automation/todo-summary.json:7034 — ",
+- [TODO] public/automation/todo-summary.json:7036 — -summary-runner.js\","
+- [TODO] public/automation/todo-summary.json:7040 — ",
+- [TODO] public/automation/todo-summary.json:7042 — _issue_sync.cjs\","
+- [TODO] public/automation/todo-summary.json:7046 — ",
+- [TODO] public/automation/todo-summary.json:7048 — _issue_sync.cjs\","
+- [TODO] public/automation/todo-summary.json:7052 — ",
+- [TODO] public/automation/todo-summary.json:7054 — _issue_sync.cjs\","
+- [TODO] public/automation/todo-summary.json:7057 — -issue-sync.yml": [
+- [TODO] public/automation/todo-summary.json:7060 — ",
+- [TODO] public/automation/todo-summary.json:7062 — Issue Sync"
+- [TODO] public/automation/todo-summary.json:7066 — ",
+- [TODO] public/automation/todo-summary.json:7068 — s:"
+- [TODO] public/automation/todo-summary.json:7072 — ",
+- [TODO] public/automation/todo-summary.json:7074 — report"
+- [TODO] public/automation/todo-summary.json:7078 — ",
+- [TODO] public/automation/todo-summary.json:7080 — _issue_sync.cjs"
+- [TODO] public/automation/todo-summary.json:7084 — ",
+- [TODO] public/automation/todo-summary.json:7085 — sync report [skip ci]\"",
+- [TODO] public/automation/todo-summary.json:7086 — ): update TODO sync report [skip ci]\""
+- [TODO] public/automation/todo-summary.json:7090 — ",
+- [TODO] public/automation/todo-summary.json:7092 — Issue"
+- [TODO] public/automation/todo-summary.json:7096 — ",
+- [FIXME] public/automation/todo-summary.json:7097 — /NOTE Sync\"",
+- [TODO] public/automation/todo-summary.json:7098 — /FIXME/NOTE Sync\""
+- [TODO] public/automation/todo-summary.json:7102 — ",
+- [TODO] public/automation/todo-summary.json:7104 — _SYNC.md\""
+- [TODO] public/automation/todo-summary.json:7110 — ",
+- [FIXME] public/automation/todo-summary.json:7111 — scanner",
+- [TODO] public/automation/todo-summary.json:7112 — /FIXME scanner"
+- [TODO] public/automation/todo-summary.json:7116 — ",
+- [TODO] public/automation/todo-summary.json:7118 — -scanner.cjs | cat"
+- [TODO] public/automation/todo-summary.json:7122 — ",
+- [TODO] public/automation/todo-summary.json:7124 — report and content registry [skip ci]\""
+- [TODO] public/automation/todo-summary.json:7130 — ",
+- [TODO] public/automation/todo-summary.json:7131 — _REPORT</div><div className=\"mt-1 text-sm text-white/75\">Open documentation</div><div className=\"mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90\">Open <span aria-hidden>↗</span></div></a>",
+- [TODO] public/automation/todo-summary.json:7132 — _REPORT.md\" target=\"_blank\" rel=\"noopener\" className=\"group relative overflow-hidden rounded-2xl border border-white/10 bg-gradien"
+- [TODO] public/automation/todo-summary.json:7138 — ",
+- [TODO] public/automation/todo-summary.json:7140 — _REPORT.md\","
+- [TODO] public/automation/todo-summary.json:7146 — ",
+- [TODO] public/automation/todo-summary.json:7148 — _REPORT.md\","
+- [TODO] public/automation/todo-summary.json:7154 — ",
+- [TODO] public/automation/todo-summary.json:7156 — _REPORT.md\","
+- [TODO] public/automation/todo-summary.json:7162 — ",
+- [TODO] public/automation/todo-summary.json:7164 — _REPORT.md\","
+- [TODO] public/automation/todo-summary.json:7170 — ",
+- [TODO] public/automation/todo-summary.json:7172 — _REPORT.md\","
+- [TODO] public/automation/todo-summary.json:7178 — ",
+- [TODO] public/automation/todo-summary.json:7180 — _REPORT.md\","
+- [TODO] public/automation/todo-summary.json:7186 — ",
+- [TODO] public/automation/todo-summary.json:7188 — _REPORT.md\","
+- [TODO] public/automation/todo-summary.json:7194 — ",
+- [TODO] public/automation/todo-summary.json:7196 — _REPORT.md\","
+- [TODO] public/automation/todo-summary.json:7202 — ",
+- [TODO] public/automation/todo-summary.json:7204 — _REPORT.md\","
+
+
+## public/search/index.json
+
+- [TODO] public/search/index.json:59 — _REPORT",
+- [TODO] public/search/index.json:60 — _REPORT.md",
+- [TODO] public/search/index.json:61 — and FIXME Report",
+- [TODO] public/search/index.json:62 — and FIXME Report - Generated: 2025-08-11T17:51:48.639Z - Total findings: 345 ## .github/workflows.disabled/autonomous-content-scanner.yml - [TODO] .github/workflows.disabled/autonomous-content-scanner.yml:30 — /FIXME scanner - [TODO] .github/workflows.disabled/autonomous-c"

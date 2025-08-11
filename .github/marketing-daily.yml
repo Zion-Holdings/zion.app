@@ -1,0 +1,37 @@
+name: Marketing Automation Daily
+
+on:
+  schedule:
+    - cron: '0 14 * * *' # daily at 14:00 UTC
+  workflow_dispatch:
+
+jobs:
+  marketing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run LinkedIn marketing orchestrator (single cycle)
+        run: node automation/linkedin-marketing-orchestrator.cjs once | cat
+
+      - name: Run Instagram marketing orchestrator (single cycle)
+        run: node automation/instagram-marketing-orchestrator.cjs once | cat
+
+      - name: Upload marketing reports and logs
+        uses: actions/upload-artifact@v4
+        with:
+          name: marketing-reports
+          path: |
+            data/reports/marketing/**/*
+            automation/logs/**/*.log
+          if-no-files-found: ignore

@@ -1,0 +1,39 @@
+name: Sync Health
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run sync health check
+        run: node automation/sync-health-check.cjs | tee sync-health.out
+
+      - name: Upload sync health artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: sync-health-artifacts
+          path: |
+            data/reports/sync/sync-health.json
+            automation/logs/sync-health.log
+            sync-health.out
+          if-no-files-found: ignore
