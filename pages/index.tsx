@@ -238,7 +238,10 @@ export default function Home() {
           </div>
         </section>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 106c3ec221 (fix: resolve merge markers and finalize front/home advertisers [skip ci])
         {/* New: Autonomous Automations */}
         <section className="mx-auto max-w-7xl px-6 pb-14">
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">New Autonomous Automations</h2>

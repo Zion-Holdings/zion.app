@@ -1,6 +1,7 @@
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   "generatedAt": "2025-08-11T23:44:51.302Z",
 =======
   "generatedAt": "2025-08-11T23:46:40.504Z",
@@ -8,6 +9,9 @@
 =======
   "generatedAt": "2025-08-11T23:46:40.504Z",
 >>>>>>> 8cc7475fdf (feat(automation): autonomous front/home advertisers + schedules cleanup [skip ci])
+=======
+  "generatedAt": "2025-08-11T23:47:26.099Z",
+>>>>>>> 106c3ec221 (fix: resolve merge markers and finalize front/home advertisers [skip ci])
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
