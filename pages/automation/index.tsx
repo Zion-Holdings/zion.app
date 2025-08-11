@@ -122,6 +122,21 @@ export default function AutomationHub() {
             <p className="text-white/70">Deletes merged or stale ephemeral branches via GitHub API.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/branch-cleanup-runner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Content Freshness</h2>
+            <p className="text-white/70">Analyzes staleness and curates updates automatically.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/content-freshness-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Internal Link Graph</h2>
+            <p className="text-white/70">Builds a link graph to improve navigation and SEO.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/internal-link-graph-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Roadmap Auto-Generator</h2>
+            <p className="text-white/70">Synthesizes a living roadmap from TODOs and changelogs.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/roadmap-auto-generator" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
         </ul>
       </main>
     </div>
