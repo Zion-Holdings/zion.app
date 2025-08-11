@@ -104,3 +104,59 @@
 [[scheduled.functions]]
   name = "hyper-front-index-accelerator"
   schedule = "*/1 * * * *" # every minute
+
+[[scheduled.functions]]
+  name = "dead-code-scanner"
+  schedule = "0 */6 * * *"
+
+[[scheduled.functions]]
+  name = "external-link-check"
+  schedule = "30 */6 * * *"
+
+[[scheduled.functions]]
+  name = "docs-pages-indexer"
+  schedule = "15 */4 * * *"
+
+[[scheduled.functions]]
+  name = "broken-image-scanner"
+  schedule = "45 */12 * * *"
+
+[[scheduled.functions]]
+  name = "ai-changelog-generator"
+  schedule = "5 */6 * * *"
+
+[[scheduled.functions]]
+  name = "newsroom-generator"
+  schedule = "10 */6 * * *"
+
+[[scheduled.functions]]
+  name = "repo-knowledge-graph"
+  schedule = "20 */12 * * *"
+
+[[scheduled.functions]]
+  name = "repo-radar-metrics"
+  schedule = "25 */12 * * *"
+
+[[scheduled.functions]]
+  name = "image-optimizer"
+  schedule = "0 */12 * * *"
+
+[[scheduled.functions]]
+  name = "og-image-generator"
+  schedule = "30 */12 * * *"
+
+[[scheduled.functions]]
+  name = "security-audit"
+  schedule = "0 2 * * *"
+
+[[scheduled.functions]]
+  name = "todo-scanner"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+  name = "auto-media-release"
+  schedule = "0 */8 * * *"
+
+[[scheduled.functions]]
+  name = "hyper-automation-orchestrator"
+  schedule = "*/30 * * * *"

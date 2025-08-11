@@ -253,6 +253,19 @@ export default function Home() {
               { title: 'README Advertiser', desc: 'Refresh README and docs indexes every 6h.', href: '/.netlify/functions/readme-advertiser' },
               { title: 'Features/Capabilities/Benefits Advertiser (2m)', desc: 'Continuously advertises new features with deep links on the front pages.', href: '/.netlify/functions/features-capabilities-benefits-advertiser' },
               { title: 'Hyper Front Index Accelerator (1m)', desc: 'Ultra-fast front index futurizer and directory builder.', href: '/.netlify/functions/hyper-front-index-accelerator' },
+              { title: 'AI Changelog Generator', desc: 'Turns commits and diffs into a curated changelog.', href: '/.netlify/functions/ai-changelog-generator' },
+              { title: 'Docs Pages Indexer', desc: 'Rebuilds docs and search index for faster discovery.', href: '/.netlify/functions/docs-pages-indexer' },
+              { title: 'Newsroom Generator', desc: 'Publishes autonomous updates to the newsroom.', href: '/.netlify/functions/newsroom-generator' },
+              { title: 'Repo Knowledge Graph', desc: 'Builds relations between files, automations and pages.', href: '/.netlify/functions/repo-knowledge-graph' },
+              { title: 'Repo Radar Metrics', desc: 'Tracks progress, cadence and autonomous impact.', href: '/.netlify/functions/repo-radar-metrics' },
+              { title: 'Security Audit', desc: 'Runs audits and reports potential issues.', href: '/.netlify/functions/security-audit' },
+              { title: 'External Link Check', desc: 'Crawls and validates external links.', href: '/.netlify/functions/external-link-check' },
+              { title: 'Broken Image Scanner', desc: 'Checks and reports broken or heavy images.', href: '/.netlify/functions/broken-image-scanner' },
+              { title: 'Image Optimizer', desc: 'Optimizes images across the site.', href: '/.netlify/functions/image-optimizer' },
+              { title: 'OG Image Generator', desc: 'Generates Open Graph images for pages.', href: '/.netlify/functions/og-image-generator' },
+              { title: 'TODO Scanner', desc: 'Surfaces TODOs and opens actionable issues.', href: '/.netlify/functions/todo-scanner' },
+              { title: 'Auto Media Release', desc: 'Publishes media artifacts on a cadence.', href: '/.netlify/functions/auto-media-release' },
+              { title: 'Hyper Automation Orchestrator', desc: 'Runs a curated set of autonomous generators and syncs results.', href: '/.netlify/functions/hyper-automation-orchestrator' },
             ].map((tool) => (
               <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
