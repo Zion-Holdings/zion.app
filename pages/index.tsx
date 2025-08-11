@@ -214,6 +214,7 @@ export default function Home() {
               { title: 'SEO Audit Runner', desc: 'Analyzes pages for title/description issues and writes an HTML report.', href: '/.netlify/functions/seo-audit-runner' },
               { title: 'AI Trends Radar', desc: 'Aggregates trending AI topics into a public report.', href: '/.netlify/functions/ai-trends-radar-runner' },
               { title: 'Dependency Auto‑Upgrade', desc: 'Safely bumps minor/patch deps with build verification.', href: '/.netlify/functions/deps-auto-upgrade-runner' },
+<<<<<<< HEAD
 =======
                       <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {[
@@ -256,6 +257,12 @@ export default function Home() {
                { title: 'Robots Auditor', desc: 'Validates robots.txt and sitemap linkage.', href: '/.netlify/functions/robots-auditor' },
                { title: 'Canonical Auditor', desc: 'Scans canonical tags for correctness.', href: '/.netlify/functions/canonical-auditor' },
 >>>>>>> 3f40ccd54d (chore(sync): advanced autonomous sync)
+=======
+              { title: 'Autonomous Invention Orchestrator', desc: 'Discovers opportunities and applies safe, visible changes.', href: '/.netlify/functions/autonomous-invention-orchestrator' },
+              { title: 'Internal Link Opportunities', desc: 'Finds high‑value internal links between related pages and publishes a report.', href: '/.netlify/functions/internal-link-opportunities' },
+              { title: 'Semantic Content Index', desc: 'Generates a lightweight semantic index for improved search and discovery.', href: '/.netlify/functions/semantic-content-index' },
+              { title: 'Cloud Heartbeat', desc: 'Updates a public heartbeat to signal live autonomous operations.', href: '/.netlify/functions/cloud-heartbeat' },
+>>>>>>> f38a0ea0a9 (chore(sync): advanced autonomous sync)
             ].map((tool) => (
               <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
@@ -306,6 +313,66 @@ export default function Home() {
               <p className="mt-1 text-sm text-white/75">Ranks components by lines and bytes to target refactors.</p>
               <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
             </a>
+<<<<<<< HEAD
+=======
+
+            <a href="/.netlify/functions/license-compliance-auditor" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">License Compliance Auditor</h3>
+              <p className="mt-1 text-sm text-white/75">Scans dependency licenses and flags GPL/AGPL risks with a public report.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>
+
+            <a href="/.netlify/functions/pagespeed-insights-runner" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">PageSpeed Insights Runner</h3>
+              <p className="mt-1 text-sm text-white/75">Calls PSI for key pages (mobile/desktop) and commits metrics to reports.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>
+
+            <a href="/.netlify/functions/site-404-map-runner" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">404 Map Builder</h3>
+              <p className="mt-1 text-sm text-white/75">Aggregates broken internal links with suggestions and publishes a live report.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>
+
+            <a href="/.netlify/functions/component-coupling-graph-runner" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">Component Coupling Graph</h3>
+              <p className="mt-1 text-sm text-white/75">Generates a dependencies graph of components to target refactors.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>
+
+            <a href="/.netlify/functions/content-freshness-score-runner" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">Content Freshness Scores</h3>
+              <p className="mt-1 text-sm text-white/75">Scores pages and docs by last update to spotlight staleness.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>
+
+            {/* Newly invented intelligent automations */}
+            <a href="/.netlify/functions/internal-link-opportunities" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">Internal Link Opportunities</h3>
+              <p className="mt-1 text-sm text-white/75">Finds high‑value internal links between related pages and publishes a report.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>
+
+            <a href="/.netlify/functions/semantic-content-index" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">Semantic Content Index</h3>
+              <p className="mt-1 text-sm text-white/75">Generates a lightweight semantic index for improved search and discovery.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>
+
+            <a href="/.netlify/functions/cloud-heartbeat" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">Cloud Heartbeat</h3>
+              <p className="mt-1 text-sm text-white/75">Updates a public heartbeat to signal live autonomous operations.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>
+>>>>>>> f38a0ea0a9 (chore(sync): advanced autonomous sync)
           </div>
         </section>
 

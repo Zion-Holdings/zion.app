@@ -1762,6 +1762,39 @@ export default function MainFrontIndex() {
           </div>
         </motion.section>
 
+        {/* New: Intelligent Cloud Automations */
+        <motion.section
+          id="intelligent-cloud"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-7xl px-6 pb-16"
+        >
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Intelligent Cloud Automations</h2>
+          <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Autonomous, scheduled Netlify Functions inventing insights and syncing changes directly to the repository.</p>
+          <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <a href="/.netlify/functions/internal-link-opportunities" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="flex items-center gap-2"><Link2 className="h-5 w-5 text-cyan-300" /><h3 className="text-lg font-semibold">Internal Link Opportunities</h3></div>
+              <p className="mt-1 text-sm text-white/75">Finds high‑value internal links between related pages and publishes a report.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>
+            <a href="/.netlify/functions/semantic-content-index" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="flex items-center gap-2"><Search className="h-5 w-5 text-cyan-300" /><h3 className="text-lg font-semibold">Semantic Content Index</h3></div>
+              <p className="mt-1 text-sm text-white/75">Generates a lightweight semantic index for improved search and discovery.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>
+            <a href="/.netlify/functions/cloud-heartbeat" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="flex items-center gap-2"><Activity className="h-5 w-5 text-cyan-300" /><h3 className="text-lg font-semibold">Cloud Heartbeat</h3></div>
+              <p className="mt-1 text-sm text-white/75">Updates a public heartbeat to signal live autonomous operations.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>
+          </div>
+        </motion.section>
+
       </div>
       {/* Back to top */}
       {showToTop && (
