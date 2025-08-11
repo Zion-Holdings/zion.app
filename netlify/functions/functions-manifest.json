@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-11T23:01:07.075Z",
+  "generatedAt": "2025-08-11T23:06:56.961Z",
   "functions": [
     "a11y-audit-runner",
     "ai-changelog-runner",
@@ -15,8 +15,10 @@
     "broken-image-scanner-runner",
     "cloud-autonomous-orchestrator-runner",
     "cloud_orchestrator",
+    "content-gap-analyzer",
     "continuous-front-runner",
     "continuous-orchestrator",
+    "cta-optimizer",
     "dead-code-audit",
     "dead-code-report",
     "deps-auto-upgrade-runner",
@@ -76,6 +78,7 @@
     "todo-summary-runner",
     "trigger-all-and-commit",
     "ui-enhancer",
+    "ultra-innovation-accelerator",
     "ultrafast-front-orchestrator",
     "ultrafast-orchestrator",
     "website-search-index-runner"

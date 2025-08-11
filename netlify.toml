@@ -181,7 +181,6 @@
 [[scheduled.functions]]
   name = "a11y-audit-runner"
   schedule = "*/20 * * * *"}  
-```
 
 [[scheduled.functions]]
   name = "todo-summary-runner"
@@ -245,3 +244,15 @@
 [[scheduled.functions]]
   name = "deps-auto-upgrade-runner"
   schedule = "7 */12 * * *"
+
+[[scheduled.functions]]
+  name = "content-gap-analyzer"
+  schedule = "*/7 * * * *"
+
+[[scheduled.functions]]
+  name = "cta-optimizer"
+  schedule = "*/9 * * * *"
+
+[[scheduled.functions]]
+  name = "ultra-innovation-accelerator"
+  schedule = "*/3 * * * *"
