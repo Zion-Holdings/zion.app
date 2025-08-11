@@ -248,3 +248,19 @@
 [[scheduled.functions]]
   name = "deps-auto-upgrade-runner"
   schedule = "7 */12 * * *"
+
+[[scheduled.functions]]
+  name = "structured-data-auditor"
+  schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+  name = "content-freshness-runner"
+  schedule = "*/15 * * * *"
+
+[[scheduled.functions]]
+  name = "i18n-seed-runner"
+  schedule = "*/20 * * * *"
+
+[[scheduled.functions]]
+  name = "performance-hints-runner"
+  schedule = "*/15 * * * *"
