@@ -47,3 +47,7 @@
 [[scheduled.functions]]
   name = "fast-front-promoter"
   schedule = "*/15 * * * *" # every 15 minutes
+
+[[scheduled.functions]]
+  name = "hyper-fast-orchestrator"
+  schedule = "*/3 * * * *" # every 3 minutes for ultra-fast refresh
