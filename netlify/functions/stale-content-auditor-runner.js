@@ -2,99 +2,135 @@ const fs = require('fs');
 const path = require('path');
 const { spawnSync } = require('child_process');
 
-function daysAgoToMs(days) {
-  return days * 24 * 60 * 60 * 1000;
+function runNode(relPath, args = []) {
+  const abs = path.resolve(__dirname, '..', '..', relPath);
+  const res = spawnSync('node', [abs, ...args], { stdio: 'pipe', encoding: 'utf8' });
+  return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
 }
 
-function listFilesRecursive(dir, exts) {
+function collectFiles(root, patterns) {
   const results = [];
-  function walk(current) {
-    const entries = fs.readdirSync(current, { withFileTypes: true });
+  function walk(dir) {
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
     for (const e of entries) {
-      const full = path.join(current, e.name);
+      const full = path.join(dir, e.name);
       if (e.isDirectory()) {
         walk(full);
       } else {
-        if (!exts || exts.includes(path.extname(e.name))) results.push(full);
+        const rel = path.relative(root, full);
+        if (patterns.some((p) => rel.startsWith(p.dir) && rel.endsWith(p.ext))) {
+          results.push(full);
+        }
       }
     }
   }
-  if (fs.existsSync(dir)) walk(dir);
+  walk(root);
   return results;
 }
 
-function relativeFromRoot(p) {
-  return path.relative(path.resolve(__dirname, '..', '..'), p);
+function getLastModifiedIso(filePath) {
+  try {
+    // Prefer git last commit time if available
+    const gitRes = spawnSync('git', ['log', '-1', '--format=%cI', '--', filePath], { encoding: 'utf8' });
+    const out = (gitRes.stdout || '').trim();
+    if (out) return out;
+  } catch {}
+  try {
+    const stat = fs.statSync(filePath);
+    return new Date(stat.mtimeMs).toISOString();
+  } catch {
+    return null;
+  }
 }
-
-function runNode(relPath, args = []) {
-  const abs = path.resolve(__dirname, '..', '..', relPath);
-  return spawnSync('node', [abs, ...args], { stdio: 'pipe', encoding: 'utf8' });
-}
-
-exports.config = { schedule: '17 */6 * * *' };
 
 exports.handler = async () => {
+  const logs = [];
+  function log(msg) { logs.push(msg); }
+
   const root = path.resolve(__dirname, '..', '..');
   const now = Date.now();
-  const thresholdDays = parseInt(process.env.STALE_DAYS || '90', 10);
-  const thresholdMs = daysAgoToMs(thresholdDays);
-  const targets = [
-    path.join(root, 'pages'),
-    path.join(root, 'components'),
-    path.join(root, 'docs')
-  ];
-  const considerExts = new Set(['.tsx', '.ts', '.js', '.jsx', '.md', '.mdx']);
+  const thresholds = {
+    pagesDays: 30,
+    docsDays: 45,
+    componentsDays: 60,
+  };
 
-  const entries = [];
-  for (const dir of targets) {
-    const files = listFilesRecursive(dir, null);
-    for (const f of files) {
-      const ext = path.extname(f);
-      if (!considerExts.has(ext)) continue;
-      try {
-        const st = fs.statSync(f);
-        const ageMs = now - st.mtimeMs;
-        const isStale = ageMs >= thresholdMs;
-        entries.push({
-          path: relativeFromRoot(f),
-          size: st.size,
-          mtime: new Date(st.mtimeMs).toISOString(),
-          ageDays: Math.floor(ageMs / (24*60*60*1000)),
-          stale: isStale
-        });
-      } catch {}
+  const targets = [
+    { label: 'Pages', dir: 'pages', ext: '.tsx', maxAgeDays: thresholds.pagesDays },
+    { label: 'Docs', dir: 'docs', ext: '.md', maxAgeDays: thresholds.docsDays },
+    { label: 'Components', dir: 'components', ext: '.tsx', maxAgeDays: thresholds.componentsDays },
+  ];
+
+  const files = collectFiles(root, targets.map(t => ({ dir: t.dir, ext: t.ext })));
+
+  const findings = [];
+  for (const file of files) {
+    const rel = path.relative(root, file);
+    const t = targets.find(tt => rel.startsWith(tt.dir) && rel.endsWith(tt.ext));
+    if (!t) continue;
+    const lastIso = getLastModifiedIso(file);
+    if (!lastIso) continue;
+    const lastMs = Date.parse(lastIso);
+    const ageDays = Math.floor((now - lastMs) / (1000 * 60 * 60 * 24));
+    if (ageDays >= t.maxAgeDays) {
+      findings.push({ file: rel, lastModified: lastIso, ageDays, thresholdDays: t.maxAgeDays, group: t.label });
     }
   }
 
-  entries.sort((a,b) => b.ageDays - a.ageDays);
-  const staleOnly = entries.filter(e => e.stale);
+  findings.sort((a, b) => b.ageDays - a.ageDays);
 
-  const outDir = path.join(root, 'public', 'reports', 'content');
-  fs.mkdirSync(outDir, { recursive: true });
-  const jsonPath = path.join(outDir, 'stale-content.json');
-  const mdPath = path.join(outDir, 'stale-content.md');
+  const dataDir = path.join(root, 'data', 'reports', 'stale-content');
+  const publicDir = path.join(root, 'public', 'reports', 'stale-content');
+  try { fs.mkdirSync(dataDir, { recursive: true }); } catch {}
+  try { fs.mkdirSync(publicDir, { recursive: true }); } catch {}
 
-  fs.writeFileSync(jsonPath, JSON.stringify({
+  const json = {
     generatedAt: new Date().toISOString(),
-    thresholdDays,
-    totals: { scanned: entries.length, stale: staleOnly.length },
-    items: entries
-  }, null, 2));
+    totals: {
+      count: findings.length,
+      byGroup: findings.reduce((acc, f) => { acc[f.group] = (acc[f.group] || 0) + 1; return acc; }, {})
+    },
+    thresholds,
+    findings,
+  };
+  const jsonPath = path.join(dataDir, `stale-content-${new Date().toISOString().replace(/[:.]/g, '-')}.json`);
+  fs.writeFileSync(jsonPath, JSON.stringify(json, null, 2));
 
-  const topList = staleOnly.slice(0, 100).map(e => `- ${e.path} — ${e.ageDays}d (mt:${e.mtime})`).join('\n');
-  const md = `# Stale Content Report\n\nGenerated: ${new Date().toISOString()}\n\nThreshold: ${thresholdDays} days\n\nScanned: ${entries.length}\nStale: ${staleOnly.length}\n\n## Top Stale Files\n\n${topList || 'None'}\n`;
+  const latestPublic = path.join(publicDir, 'latest.json');
+  fs.writeFileSync(latestPublic, JSON.stringify(json, null, 2));
+
+  const mdPath = path.join(root, 'docs', 'reports', 'stale-content.md');
+  try { fs.mkdirSync(path.dirname(mdPath), { recursive: true }); } catch {}
+  const md = [
+    '# Stale Content Report',
+    '',
+    `Generated: ${json.generatedAt}`,
+    '',
+    `Total stale items: ${json.totals.count}`,
+    '',
+    '| Group | Count |',
+    '|-------|------:|',
+    ...Object.entries(json.totals.byGroup).map(([k,v]) => `| ${k} | ${v} |`),
+    '',
+    '| File | Last Modified | Age (days) | Threshold |',
+    '|------|---------------|-----------:|----------:|',
+    ...findings.map(f => `| ${f.file} | ${f.lastModified} | ${f.ageDays} | ${f.thresholdDays} |`),
+    '',
+    `Public JSON: /reports/stale-content/latest.json`,
+  ].join('\n');
   fs.writeFileSync(mdPath, md);
 
-  // Try to sync
-  const sync = runNode('automation/advanced-git-sync.cjs');
-  const logs = [];
-  if (sync.stdout) logs.push(sync.stdout);
-  if (sync.stderr) logs.push(sync.stderr);
+  log(`Wrote stale content report: ${jsonPath}`);
+  log(`Updated public: ${latestPublic}`);
 
-  return {
-    statusCode: 200,
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ ok: true, generated: { json: relativeFromRoot(jsonPath), md: relativeFromRoot(mdPath) }, totals: { scanned: entries.length, stale: staleOnly.length } })
-  };
+  // Commit and push changes
+  try {
+    const sync = runNode('automation/advanced-git-sync.cjs');
+    log(sync.stdout || '');
+    if (sync.stderr) log(sync.stderr);
+  } catch (e) {
+    log(`git sync error: ${e.message}`);
+  }
+
+  return { statusCode: 200, body: logs.join('\n') };
 };
