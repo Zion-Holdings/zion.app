@@ -179,13 +179,12 @@ function gitCommitAndPush(filesToAdd) {
 
   const files = writeTriggerArtifacts(results, functionNames);
 
-  if (!isDryRun) {
-    try {
-      gitCommitAndPush(files);
-    } catch (err) {
-      console.error(err);
-      process.exitCode = 1;
-    }
+  // Always commit the stamp/logs even in dry-run so scheduled workflows can sync
+  try {
+    gitCommitAndPush(files);
+  } catch (err) {
+    console.error(err);
+    process.exitCode = 1;
   }
 
   log('Done.');
