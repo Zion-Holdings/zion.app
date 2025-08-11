@@ -59,6 +59,7 @@
 <<<<<<< HEAD
   schedule = "*/15 * * * *" # every 15 minutes
 
+<<<<<<< HEAD
 # New: very fast orchestrator for continuous homepage/front refresh
 [[scheduled.functions]]
   name = "fast-orchestrator"
@@ -80,3 +81,9 @@
   schedule = "*/7 * * * *" # every 7 minutes
 >>>>>>> 0b3965b878 (feat(front,automation): continuous front enhancer + fast promoter via Netlify functions; expanded autonomous catalog; fix conflict; ultra-fast schedules)
 >>>>>>> origin/main
+=======
+# Ultrafast orchestrator to refresh front and homepage every minute
+[[scheduled.functions]]
+  name = "ultrafast-orchestrator"
+  schedule = "*/1 * * * *"
+>>>>>>> ade166c1a9 (chore(sync): advanced autonomous sync)

@@ -14,6 +14,7 @@ function log(msg) {
   process.stdout.write(`[front-index-auto-advertiser] ${msg}\n`);
 }
 
+<<<<<<< HEAD
 function buildTiles() {
   const items = [
     { href: '/automation', label: 'Automation Hub', tagline: 'Factories, agents, live workflows' },
@@ -23,6 +24,36 @@ function buildTiles() {
     { href: '/newsroom', label: 'Newsroom', tagline: 'Autonomous updates & highlights' },
     { href: 'https://github.com/Zion-Holdings/zion.app/tree/main/docs', label: 'Docs', tagline: 'Technical notes & guides', external: true },
     { href: 'https://github.com/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md', label: 'AI Changelog', tagline: 'Summarized autonomous changes', external: true },
+=======
+function discoverInternalCards() {
+  const pagesDir = path.join(ROOT, 'pages');
+  const candidates = [
+    { href: '/automation', label: 'Automation Hub', desc: 'Factories, agents, and live workflows' },
+    { href: '/automation#features', label: 'Automation Features', desc: 'Deep dive into what agents can do' },
+    { href: '/automation#capabilities', label: 'Capabilities', desc: 'What the platform can automate' },
+    { href: '/automation#benefits', label: 'Benefits', desc: 'Outcomes and ROI from autonomous agents' },
+    { href: '/automation#feature-factories', label: 'Feature Factories', desc: 'Generators for product features' },
+    { href: '/site-health', label: 'Site Health', desc: 'A11y, performance, and link dashboards' },
+    { href: '/reports/seo', label: 'AI SEO Auditor', desc: 'Continuous on‑site SEO improvements' },
+    { href: '/reports/ai-trends', label: 'AI Trends Radar', desc: 'Signals that inspire new automations' },
+    { href: '/newsroom', label: 'Newsroom', desc: 'Curated updates and product evolution highlights' },
+    { href: '/main/front', label: 'Front Systems Hub', desc: 'Curated, futuristic front experience' },
+    // Futuristic front anchors
+    { href: '/main/front#features', label: 'Features', desc: 'Explore capabilities' },
+    { href: '/main/front#feature-map', label: 'Feature Map', desc: 'Overview of the platform' },
+    { href: '/main/front#suites', label: 'Suites', desc: 'Solution bundles' },
+    { href: '/main/front#capabilities', label: 'Capabilities', desc: 'What agents can do' },
+    { href: '/main/front#use-cases', label: 'Use Cases', desc: 'Real scenarios' },
+    { href: '/main/front#pillars', label: 'Pillars', desc: 'Foundational principles' },
+    { href: '/main/front#benefits', label: 'Benefits', desc: 'Outcomes & ROI' },
+    { href: '/main/front#templates', label: 'Templates', desc: 'Futuristic layouts' },
+    { href: '/main/front#demos', label: 'Demos', desc: 'Live examples' },
+    { href: '/main/front#highlights', label: 'Highlights', desc: 'Key improvements' },
+    { href: '/main/front#cases', label: 'Cases', desc: 'Selected case studies' },
+    { href: '/main/front#reports', label: 'Reports', desc: 'Dashboards & artifacts' },
+    { href: '/main/front#guardrails', label: 'Guardrails', desc: 'Safety before shipping' },
+    { href: '/main/front#roadmap', label: 'Docs', desc: 'Technical notes & guides' },
+>>>>>>> ade166c1a9 (chore(sync): advanced autonomous sync)
   ];
 
   return items.map((it) => {
