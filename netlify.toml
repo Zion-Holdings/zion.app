@@ -167,24 +167,31 @@
   schedule = "53 */6 * * *"
 
 [[scheduled.functions]]
-<<<<<<< HEAD
   name = "redirect-healer"
   schedule = "*/15 * * * *"
 
 [[scheduled.functions]]
   name = "sitemap-prioritizer"
   schedule = "17 */6 * * *"
-=======
+
+[[scheduled.functions]]
   name = "redirect-manager"
   schedule = "*/30 * * * *"
 
 [[scheduled.functions]]
   name = "a11y-audit-runner"
   schedule = "*/20 * * * *"
->>>>>>> 12882bc485 (chore(sync): advanced autonomous sync)
 
 [[scheduled.functions]]
   name = "todo-summary-runner"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+  name = "component-catalog-runner"
+  schedule = "13 */6 * * *"
+
+[[scheduled.functions]]
+  name = "automation-atlas-runner"
   schedule = "*/30 * * * *"
 
 [[scheduled.functions]]
@@ -237,3 +244,11 @@
 [[scheduled.functions]]
   name = "branch-cleanup-runner"
   schedule = "0 3 * * *" # daily at 03:00 UTC
+
+[[scheduled.functions]]
+  name = "stale-content-auditor-runner"
+  schedule = "17 */6 * * *"
+
+[[scheduled.functions]]
+  name = "deps-auto-upgrade-runner"
+  schedule = "7 */12 * * *"

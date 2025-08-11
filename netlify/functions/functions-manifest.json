@@ -1,15 +1,12 @@
 {
-<<<<<<< HEAD
-  "generatedAt": "2025-08-11T22:48:07.671Z",
-=======
-  "generatedAt": "2025-08-11T22:46:30.891Z",
->>>>>>> 12882bc485 (chore(sync): advanced autonomous sync)
+  "generatedAt": "2025-08-11T23:14:35.914Z",
   "functions": [
     "a11y-audit-runner",
     "ai-changelog-runner",
     "ai-trends-radar-runner",
     "auto-discovery-runner",
     "auto-scheduler",
+    "automation-atlas-runner",
     "automation-guardian-runner",
     "automation-matrix",
     "autonomous-innovation-generator",
@@ -19,10 +16,12 @@
     "broken-image-scanner-runner",
     "cloud-autonomous-orchestrator-runner",
     "cloud_orchestrator",
+    "component-catalog-runner",
     "continuous-front-runner",
     "continuous-orchestrator",
     "dead-code-audit",
     "dead-code-report",
+    "deps-auto-upgrade-runner",
     "docs-index-runner",
     "docs-search-index-runner",
     "external-link-check-runner",
@@ -59,11 +58,8 @@
     "newsroom-runner",
     "og-image-update-runner",
     "readme-advertiser",
-<<<<<<< HEAD
     "redirect-healer",
-=======
     "redirect-manager",
->>>>>>> 12882bc485 (chore(sync): advanced autonomous sync)
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",
@@ -77,6 +73,7 @@
     "site-crawler",
     "sitemap-prioritizer",
     "sitemap_runner",
+    "stale-content-auditor-runner",
     "todo-scanner-runner",
     "todo-summary-runner",
     "trigger-all-and-commit",
