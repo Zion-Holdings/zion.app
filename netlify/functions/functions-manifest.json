@@ -1,45 +1,25 @@
 {
-<<<<<<< HEAD
-  "generatedAt": "2025-08-11T23:20:00.000Z",
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "generatedAt": "2025-08-11T23:13:21.127Z",
-=======
-  "generatedAt": "2025-08-11T23:11:05.589Z",
->>>>>>> 5db0abd8a2 (chore(sync): advanced autonomous sync)
-=======
-  "generatedAt": "2025-08-11T23:13:57.257Z",
->>>>>>> 9a6e0bf201 (chore(netlify): resolve schedule conflicts and regenerate functions manifest [skip ci])
->>>>>>> origin/main
+  "generatedAt": "2025-08-11T23:28:00.000Z",
   "functions": [
     "a11y-audit-runner",
     "ai-changelog-runner",
     "auto-scheduler",
     "automation-matrix",
-<<<<<<< HEAD
-=======
     "automation-status-dashboard",
     "autonomous-innovation-generator",
->>>>>>> 5db0abd8a2 (chore(sync): advanced autonomous sync)
     "autonomous-invention-orchestrator",
     "broken-image-scanner",
     "broken-image-scanner-runner",
-<<<<<<< HEAD
-=======
     "capability-map-runner",
     "cloud-autonomous-orchestrator-runner",
->>>>>>> 5db0abd8a2 (chore(sync): advanced autonomous sync)
     "cloud_orchestrator",
+    "content-freshness-auditor",
     "continuous-front-runner",
     "continuous-orchestrator",
     "dead-code-audit",
     "dead-code-report",
-<<<<<<< HEAD
-=======
     "dependency-freshness-radar",
     "deps-auto-upgrade-runner",
->>>>>>> 5db0abd8a2 (chore(sync): advanced autonomous sync)
     "docs-index-runner",
     "docs-search-index-runner",
     "external-link-check-runner",
@@ -65,17 +45,11 @@
     "hyper-front-index-accelerator",
     "image-optimizer-runner",
     "innovation-lab",
-<<<<<<< HEAD
-    "internal-link-optimizer",
-    "internal-redirect-healer",
-=======
-<<<<<<< HEAD
-    "license-compliance-runner",
-=======
     "innovation-lab-pro",
     "internal-link-graph-runner",
->>>>>>> 9a6e0bf201 (chore(netlify): resolve schedule conflicts and regenerate functions manifest [skip ci])
->>>>>>> origin/main
+    "internal-link-optimizer",
+    "internal-redirect-healer",
+    "license-compliance-runner",
     "link-and-health-scheduler",
     "link-crawler",
     "maintenance-scheduler",
@@ -90,11 +64,8 @@
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",
-<<<<<<< HEAD
     "revenue-ideas-orchestrator",
     "revenue-optimizer",
-=======
->>>>>>> origin/main
     "schedule-content-index",
     "schedule-homepage",
     "schedule-knowledge-graph",
@@ -102,6 +73,7 @@
     "secrets-leak-scanner-runner",
     "security-audit",
     "security-audit-runner",
+    "seo-audit-runner",
     "site-crawler",
     "sitemap_runner",
     "todo-scanner-runner",
