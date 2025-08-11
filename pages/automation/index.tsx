@@ -83,6 +83,21 @@ export default function AutomationHub() {
             <p className="text-white/70">Finds broken images, optimizes assets, and syncs fixes.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/broken-image-scanner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">UX Drift Detector</h2>
+            <p className="text-white/70">Detects content/UX drift across pages, docs, and automations.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/ux-drift-detector" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Unused Asset Cleaner</h2>
+            <p className="text-white/70">Finds unreferenced media under public/ and writes a report.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/unused-asset-cleaner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Type Tightener</h2>
+            <p className="text-white/70">Runs TypeScript checks and summarizes issues for action.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/type-tightener" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
         </ul>
       </main>
     </div>

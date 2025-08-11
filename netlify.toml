@@ -186,3 +186,16 @@
 [[scheduled.functions]]
   name = "auto-scheduler"
   schedule = "*/15 * * * *" # every 15 minutes
+
+# New intelligent automations
+[[scheduled.functions]]
+  name = "ux-drift-detector"
+  schedule = "*/15 * * * *" # every 15 minutes
+
+[[scheduled.functions]]
+  name = "type-tightener"
+  schedule = "*/30 * * * *" # every 30 minutes
+
+[[scheduled.functions]]
+  name = "unused-asset-cleaner"
+  schedule = "0 */6 * * *" # every 6 hours

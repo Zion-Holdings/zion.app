@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-11T23:03:51.129Z",
+  "generatedAt": "2025-08-11T23:20:55.909Z",
   "functions": [
     "ai-changelog-runner",
     "auto-scheduler",
@@ -62,8 +62,11 @@
     "todo-scanner-runner",
     "todo-summary-runner",
     "trigger-all-and-commit",
+    "type-tightener",
     "ui-enhancer",
     "ultrafast-front-orchestrator",
-    "ultrafast-orchestrator"
+    "ultrafast-orchestrator",
+    "unused-asset-cleaner",
+    "ux-drift-detector"
   ]
 }
