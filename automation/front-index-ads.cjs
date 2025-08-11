@@ -15,11 +15,13 @@ function buildAds() {
   const items = [
     { title: 'Automation Hub', desc: 'Factories, agents, and live workflows', href: '/automation' },
     { title: 'AI SEO Auditor', desc: 'Continuous on‑site SEO improvements', href: '/reports/seo' },
+    { title: 'OG Metadata Audit', desc: 'Check Open Graph tags across pages', href: '/reports/og' },
+    { title: 'Docs Link Check', desc: 'Validate outbound links in documentation', href: '/reports/docs-links' },
     { title: 'Site Health', desc: 'A11y, performance, and link integrity', href: '/site-health' },
     { title: 'AI Trends', desc: 'Signals that inspire new automations', href: '/reports/ai-trends' },
     { title: 'Newsroom', desc: 'Curated updates and product evolution highlights', href: '/newsroom' },
-    { title: 'Docs & Guides', desc: 'Technical notes and architecture', href: '/.netlify/functions/docs-index-runner' }
-    { title: 'AI Changelog', desc: 'Summarized autonomous changes', href: '/newsroom' }
+    { title: 'Docs & Guides', desc: 'Technical notes and architecture', href: '/.netlify/functions/docs-index-runner' },
+    { title: 'AI Changelog', desc: 'Summarized autonomous changes', href: '/newsroom' },
     { title: 'Cloud Automations', desc: 'Netlify scheduled functions powering jobs 24/7', href: '/automation' },
   ];
 

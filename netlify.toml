@@ -167,6 +167,14 @@
   schedule = "53 */6 * * *"
 
 [[scheduled.functions]]
+  name = "og-metadata-audit-runner"
+  schedule = "41 */6 * * *"
+
+[[scheduled.functions]]
+  name = "docs-link-checker-runner"
+  schedule = "49 */6 * * *"
+
+[[scheduled.functions]]
   name = "todo-summary-runner"
   schedule = "*/30 * * * *"
 
