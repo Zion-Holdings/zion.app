@@ -186,3 +186,11 @@
 [[scheduled.functions]]
   name = "auto-scheduler"
   schedule = "*/15 * * * *" # every 15 minutes
+
+[[scheduled.functions]]
+  name = "home-functions-injector"
+  schedule = "*/2 * * * *"
+
+[[scheduled.functions]]
+  name = "front-functions-injector"
+  schedule = "*/2 * * * *"

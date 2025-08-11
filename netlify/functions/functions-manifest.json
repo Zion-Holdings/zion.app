@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-11T23:03:51.129Z",
+  "generatedAt": "2025-08-11T23:23:48.637Z",
   "functions": [
     "ai-changelog-runner",
     "auto-scheduler",
@@ -21,6 +21,7 @@
     "features-capabilities-benefits-advertiser",
     "front-ads-promoter",
     "front-enhancer",
+    "front-functions-injector",
     "front-index-futurizer",
     "front-index-orchestrator",
     "front-index-scheduler",
@@ -28,6 +29,7 @@
     "front-visionary-expander",
     "frontpage-enhancer",
     "frontpage-scheduler",
+    "home-functions-injector",
     "home-visionary-expander",
     "homepage-advertiser-scheduler",
     "homepage-enhancer",
