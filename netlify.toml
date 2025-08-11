@@ -47,3 +47,11 @@
 [[scheduled.functions]]
   name = "fast-front-promoter"
   schedule = "*/15 * * * *" # every 15 minutes
+
+[[scheduled.functions]]
+  name = "front-visionary-expander"
+  schedule = "*/3 * * * *" # fast refresh for front systems
+
+[[scheduled.functions]]
+  name = "home-visionary-expander"
+  schedule = "*/4 * * * *" # fast refresh for homepage
