@@ -220,3 +220,15 @@
 [[scheduled.functions]]
   name = "branch-cleanup-runner"
   schedule = "0 3 * * *" # daily at 03:00 UTC
+
+[[scheduled.functions]]
+  name = "a11y-audit-runner"
+  schedule = "13 */6 * * *" # every 6 hours
+
+[[scheduled.functions]]
+  name = "og-tags-validator"
+  schedule = "11 */2 * * *" # every 2 hours
+
+[[scheduled.functions]]
+  name = "internal-redirect-optimizer"
+  schedule = "13 */2 * * *" # every 2 hours
