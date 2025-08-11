@@ -441,10 +441,13 @@ export default function MainFrontIndex() {
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Netlify Automations</h2>
           <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Zero‑ops scheduled functions power background tasks that improve the site and ship small, safe diffs to main.</p>
           <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {[ 
+                        {[
               { label: 'Homepage Advertiser', desc: 'Curates and updates the home explore section.', href: '/.netlify/functions/homepage_advertiser' },
               { label: 'Cloud Orchestrator', desc: 'Runs fast improvement cycle and git sync.', href: '/.netlify/functions/cloud_orchestrator' },
               { label: 'Sitemap Runner', desc: 'Keeps sitemap fresh for SEO visibility.', href: '/.netlify/functions/sitemap_runner' },
+              { label: 'Innovation Generator', desc: 'Synthesizes new promos and syncs to main.', href: '/.netlify/functions/innovation-generator' },
+              { label: 'Dependency Health Runner', desc: 'Auto-upgrades dependencies safely and syncs.', href: '/.netlify/functions/dependency-health-runner' },
+              { label: 'Changelog Publisher', desc: 'Publishes AI-generated changelog updates.', href: '/.netlify/functions/changelog-publisher' },
               { label: 'Smart Redirect Manager', desc: 'Fixes internal 404s; updates public/_redirects and report.', href: '/.netlify/functions/redirect-manager' },
               { label: 'A11y Alt‑Text Auditor', desc: 'Scans for missing alt attributes and publishes reports.', href: '/.netlify/functions/a11y-audit-runner' },
             ].map((f) => (
