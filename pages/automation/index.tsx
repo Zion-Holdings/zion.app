@@ -61,22 +61,27 @@ export default function AutomationHub() {
             <p className="text-white/70">Continuously advertises new features with deep links on the front pages.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/features-capabilities-benefits-advertiser" target="_blank" rel="noopener">Trigger / View</a>
           </li>
-          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Hyper Front Index Accelerator</h2>
-            <p className="text-white/70">Ultra-fast front index futurizer and directory builder.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/hyper-front-index-accelerator" target="_blank" rel="noopener">Trigger / View</a>
-          </li>
-          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Innovation Lab</h2>
-            <p className="text-white/70">Invents, curates, and promotes fresh ideas across the site.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/innovation-lab" target="_blank" rel="noopener">Trigger / View</a>
-          </li>
-
-          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Auto Scheduler</h2>
-            <p className="text-white/70">Smart time-based runner that chooses and executes the best tasks.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/auto-scheduler" target="_blank" rel="noopener">Trigger / View</a>
-          </li>
+                     <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+             <h2 className="text-xl font-bold">Hyper Front Index Accelerator</h2>
+             <p className="text-white/70">Ultra-fast front index futurizer and directory builder.</p>
+             <a className="text-cyan-300 underline" href="/.netlify/functions/hyper-front-index-accelerator" target="_blank" rel="noopener">Trigger / View</a>
+           </li>
+           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+             <h2 className="text-xl font-bold">Innovation Lab</h2>
+             <p className="text-white/70">Invents, curates, and promotes fresh ideas across the site.</p>
+             <a className="text-cyan-300 underline" href="/.netlify/functions/innovation-lab" target="_blank" rel="noopener">Trigger / View</a>
+           </li>
+           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+             <h2 className="text-xl font-bold">Autonomous Invention Orchestrator</h2>
+             <p className="text-white/70">Discovers and creates new automations; commits and pushes autonomously.</p>
+             <a className="text-cyan-300 underline" href="/.netlify/functions/autonomous-invention-orchestrator" target="_blank" rel="noopener">Trigger / View</a>
+           </li>
+ 
+           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+             <h2 className="text-xl font-bold">Auto Scheduler</h2>
+             <p className="text-white/70">Smart time-based runner that chooses and executes the best tasks.</p>
+             <a className="text-cyan-300 underline" href="/.netlify/functions/auto-scheduler" target="_blank" rel="noopener">Trigger / View</a>
+           </li>
 
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
             <h2 className="text-xl font-bold">Broken Image Scanner</h2>
