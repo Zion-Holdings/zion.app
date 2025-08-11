@@ -105,3 +105,8 @@ html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 .animate-marquee {
   animation: marquee 28s linear infinite;
 }
+
+/* Anchor focus styles for better a11y */
+:target {
+  scroll-margin-top: 96px;
+}
