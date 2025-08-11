@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-11T23:03:56.296Z",
+  "generatedAt": "2025-08-11T23:12:04.127Z",
   "functions": [
     "a11y-audit-runner",
     "ai-changelog-runner",
@@ -45,6 +45,7 @@
     "hyper-front-index-accelerator",
     "image-optimizer-runner",
     "innovation-lab",
+    "internal-link-optimizer",
     "link-and-health-scheduler",
     "link-crawler",
     "maintenance-scheduler",
@@ -61,6 +62,7 @@
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",
+    "revenue-ideas-orchestrator",
     "schedule-content-index",
     "schedule-homepage",
     "schedule-knowledge-graph",

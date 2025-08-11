@@ -212,6 +212,8 @@ export default function Home() {
               { title: 'Netlify Auto‑Healer', desc: 'Monitors and self-heals Netlify deploy issues.', href: '/.netlify/functions/netlify-auto-healer-runner' },
               { title: 'Innovation Lab (10m)', desc: 'Invents, curates, and promotes fresh ideas across the site.', href: '/.netlify/functions/innovation-lab' },
               { title: 'Autonomous Innovation Generator (2m)', desc: 'Synthesizes front promos and homepage refresh, then syncs to main.', href: '/.netlify/functions/autonomous-innovation-generator' },
+{ title: 'Internal Link Optimizer (7m)', desc: 'Crawls site, heals 404s with smart redirects, refreshes directory, and syncs.', href: '/.netlify/functions/internal-link-optimizer' },
+{ title: 'Revenue Ideas Orchestrator (2h)', desc: 'Deploys monetization CTAs and booking components across key pages, then syncs.', href: '/.netlify/functions/revenue-ideas-orchestrator' },
               { title: 'Auto Scheduler (15m)', desc: 'Smart time-based runner that chooses and executes the best tasks.', href: '/.netlify/functions/auto-scheduler' },
               { title: 'Broken Image Scanner (6h)', desc: 'Finds broken images, optimizes assets, and syncs fixes.', href: '/.netlify/functions/broken-image-scanner' },
               { title: 'Automation Guardian (10m)', desc: 'Runs improvement, orchestrators, quick fixes and syncs to main.', href: '/.netlify/functions/automation-guardian-runner' },
