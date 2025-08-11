@@ -444,6 +444,10 @@ export default function MainFrontIndex() {
               { title: 'SEO Audit', desc: 'Continuous on‑site SEO scans with proposed diffs.', href: '/reports/seo' },
               { title: 'AI Trends', desc: 'Intelligence signals from the AI/cloud ecosystem.', href: '/reports/ai-trends' },
               { title: 'Newsroom', desc: 'Curated updates and product evolution highlights.', href: '/newsroom' },
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 0b3965b878 (feat(front,automation): continuous front enhancer + fast promoter via Netlify functions; expanded autonomous catalog; fix conflict; ultra-fast schedules)
               { title: 'Cloud Automations', desc: 'Scheduled functions powering jobs 24/7.', href: '/automation' },
               { title: 'Docs', desc: 'Technical notes and guides for the platform.', href: 'https://github.com/Zion-Holdings/zion.app/tree/main/docs', external: true },
               { title: 'AI Changelog', desc: 'Summarized autonomous changes and highlights.', href: 'https://github.com/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md', external: true }

@@ -26,7 +26,7 @@
 
 [[scheduled.functions]]
   name = "front-enhancer"
-  schedule = "*/10 * * * *" # every 10 minutes
+  schedule = "*/5 * * * *" # every 5 minutes
 
 [[scheduled.functions]]
   name = "front-index-orchestrator"
@@ -50,6 +50,7 @@
 
 [[scheduled.functions]]
   name = "fast-front-promoter"
+<<<<<<< HEAD
   schedule = "*/15 * * * *" # every 15 minutes
 
 # New: very fast orchestrator for continuous homepage/front refresh
@@ -69,3 +70,6 @@
 [[scheduled.functions]]
   name = "home-visionary-expander"
   schedule = "*/4 * * * *" # fast refresh for homepage
+=======
+  schedule = "*/7 * * * *" # every 7 minutes
+>>>>>>> 0b3965b878 (feat(front,automation): continuous front enhancer + fast promoter via Netlify functions; expanded autonomous catalog; fix conflict; ultra-fast schedules)
