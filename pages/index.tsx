@@ -253,6 +253,11 @@ export default function Home() {
               { title: 'README Advertiser', desc: 'Refresh README and docs indexes every 6h.', href: '/.netlify/functions/readme-advertiser' },
               { title: 'Features/Capabilities/Benefits Advertiser (2m)', desc: 'Continuously advertises new features with deep links on the front pages.', href: '/.netlify/functions/features-capabilities-benefits-advertiser' },
               { title: 'Hyper Front Index Accelerator (1m)', desc: 'Ultra-fast front index futurizer and directory builder.', href: '/.netlify/functions/hyper-front-index-accelerator' },
+              { title: 'Repo Knowledge Graph (30m)', desc: 'Builds and updates the repo knowledge graph for smarter linking.', href: '/.netlify/functions/knowledge-graph' },
+              { title: 'Broken Image Defender (3h)', desc: 'Scans for broken images and optimizes media automatically.', href: '/.netlify/functions/broken-image-defender' },
+              { title: 'Newsroom Publisher (45m)', desc: 'Curates and publishes newsroom updates automatically.', href: '/.netlify/functions/newsroom-publisher' },
+              { title: 'OG Image Maker (12h)', desc: 'Regenerates Open Graph images for rich previews.', href: '/.netlify/functions/og-image-maker' },
+              { title: 'Ultra‑fast Git Sync (1m)', desc: 'Keeps the repository in sync every minute.', href: '/.netlify/functions/ultrafast-git-sync' },
             ].map((tool) => (
               <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />

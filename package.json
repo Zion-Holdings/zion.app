@@ -228,8 +228,8 @@
     "front:futurize:cron": "node -e \"const cp=require('child_process'); setInterval(()=>cp.exec('node automation/front-futurizer.cjs',()=>{}), 1000*60*60*6)\"",
     "front:directory": "node automation/front-index-directory-builder.cjs",
     "front:continuous": "node automation/continuous-front-runner.cjs",
-    "front:continuous:fast": "node -e \"const cp=require('child_process'); const run=()=>cp.exec('node automation/continuous-front-runner.cjs',()=>{}); run(); setInterval(run, 1000*60*5);\""
-  }
+        "front:continuous:fast": "node -e \"const cp=require('child_process'); const run=()=>cp.exec('node automation/continuous-front-runner.cjs',()=>{}); run(); setInterval(run, 1000*60*5);\"" 
+  },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
     "@google/generative-ai": "^0.24.1",

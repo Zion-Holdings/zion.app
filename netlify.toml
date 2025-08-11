@@ -104,3 +104,23 @@
 [[scheduled.functions]]
   name = "hyper-front-index-accelerator"
   schedule = "*/1 * * * *" # every minute
+
+[[scheduled.functions]]
+  name = "knowledge-graph"
+  schedule = "*/30 * * * *" # every 30 minutes
+
+[[scheduled.functions]]
+  name = "broken-image-defender"
+  schedule = "0 */3 * * *" # every 3 hours
+
+[[scheduled.functions]]
+  name = "newsroom-publisher"
+  schedule = "*/45 * * * *" # every 45 minutes
+
+[[scheduled.functions]]
+  name = "og-image-maker"
+  schedule = "0 */12 * * *" # every 12 hours
+
+[[scheduled.functions]]
+  name = "ultrafast-git-sync"
+  schedule = "*/1 * * * *" # every minute
