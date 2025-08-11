@@ -186,3 +186,16 @@
 [[scheduled.functions]]
   name = "auto-scheduler"
   schedule = "*/15 * * * *" # every 15 minutes
+
+# New autonomous cloud automations
+[[scheduled.functions]]
+  name = "edge-cache-warmer"
+  schedule = "*/3 * * * *" # every 3 minutes
+
+[[scheduled.functions]]
+  name = "og-meta-auditor"
+  schedule = "*/10 * * * *" # every 10 minutes
+
+[[scheduled.functions]]
+  name = "repo-fitness-score"
+  schedule = "*/5 * * * *" # every 5 minutes
