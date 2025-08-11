@@ -1,12 +1,16 @@
 {
-  "generatedAt": "2025-08-11T22:11:32.843Z",
+  "generatedAt": "2025-08-11T22:29:59.839Z",
   "functions": [
     "ai-changelog-runner",
+    "auto-discovery-runner",
     "auto-scheduler",
+    "automation-guardian-runner",
     "automation-matrix",
     "autonomous-invention-orchestrator",
+    "branch-cleanup-runner",
     "broken-image-scanner",
     "broken-image-scanner-runner",
+    "cloud-autonomous-orchestrator-runner",
     "cloud_orchestrator",
     "continuous-front-runner",
     "continuous-orchestrator",
