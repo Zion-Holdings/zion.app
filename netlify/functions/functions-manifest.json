@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
   "generatedAt": "2025-08-11T23:20:18.196Z",
+=======
+  "generatedAt": "2025-08-11T23:24:00.889Z",
+>>>>>>> 927bc47d55 (feat(automations): add a11y alt-text auditor and metadata optimizer; advertise on front; schedule runners [ci skip])
   "functions": [
+    "a11y-alt-text-runner",
     "ai-changelog-runner",
     "auto-scheduler",
     "automation-matrix",
@@ -43,6 +48,7 @@
     "marketing-and-features-promo",
     "marketing-scheduler",
     "media-og-and-optimize",
+    "metadata-optimizer-runner",
     "netlify-auto-healer-runner",
     "newsroom-auto-publisher",
     "newsroom-runner",
