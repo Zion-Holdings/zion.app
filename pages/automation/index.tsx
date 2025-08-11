@@ -66,6 +66,26 @@ export default function AutomationHub() {
             <p className="text-white/70">Ultra-fast front index futurizer and directory builder.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/hyper-front-index-accelerator" target="_blank" rel="noopener">Trigger / View</a>
           </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Auto Dependency Maintainer</h2>
+            <p className="text-white/70">Upgrades dependencies safely and syncs to main every 6 hours.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/auto-deps-maintainer" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Docs Pages Indexer</h2>
+            <p className="text-white/70">Rebuilds docs/pages index and sitemap for instant discovery.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/docs-pages-indexer" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Dead Code Scanner</h2>
+            <p className="text-white/70">Scans for unused code and proposes safe cleanups daily.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/dead-code-scan" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">AI Changelog Generator</h2>
+            <p className="text-white/70">Regenerates the AI changelog for transparent progress.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/ai-changelog-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
         </ul>
       </main>
     </div>

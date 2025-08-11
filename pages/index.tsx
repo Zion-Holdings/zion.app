@@ -253,6 +253,10 @@ export default function Home() {
               { title: 'README Advertiser', desc: 'Refresh README and docs indexes every 6h.', href: '/.netlify/functions/readme-advertiser' },
               { title: 'Features/Capabilities/Benefits Advertiser (2m)', desc: 'Continuously advertises new features with deep links on the front pages.', href: '/.netlify/functions/features-capabilities-benefits-advertiser' },
               { title: 'Hyper Front Index Accelerator (1m)', desc: 'Ultra-fast front index futurizer and directory builder.', href: '/.netlify/functions/hyper-front-index-accelerator' },
+              { title: 'Auto Dependency Maintainer', desc: 'Upgrades dependencies and syncs to main (6h).', href: '/.netlify/functions/auto-deps-maintainer' },
+              { title: 'Docs Pages Indexer', desc: 'Rebuilds docs/pages index and sitemap (4h).', href: '/.netlify/functions/docs-pages-indexer' },
+              { title: 'Dead Code Scanner', desc: 'Scans for unused code and proposes cleanups (daily).', href: '/.netlify/functions/dead-code-scan' },
+              { title: 'AI Changelog Generator', desc: 'Regenerates the AI changelog (3h).', href: '/.netlify/functions/ai-changelog-runner' },
             ].map((tool) => (
               <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
