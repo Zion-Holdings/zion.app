@@ -626,6 +626,56 @@ export default function MainFrontIndex() {
           </div>
         </motion.section>
 
+        {/* Neural Feature Matrix */}
+        <motion.section
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-7xl px-6 pb-14"
+        >
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Neural Feature Matrix</h2>
+          <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">A denser, at-a-glance atlas of what Zion ships autonomously. Every tile links to the live hub, report, or docs.</p>
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { label: 'Automation Hub', desc: 'Factories, agents, workflows', href: '/automation' },
+              { label: 'Main Sync Engine', desc: 'Safe diffs to main', href: '/automation' },
+              { label: 'Zero‑Ops Cloud', desc: 'Run in the cloud, no servers', href: '/automation' },
+              { label: 'Guardrails', desc: 'Policy + safety gates', href: '/site-health' },
+              { label: 'Site Health', desc: 'A11y, performance, links', href: '/site-health' },
+              { label: 'AI SEO Auditor', desc: 'Continuous on‑site SEO', href: '/reports/seo' },
+              { label: 'AI Trends Radar', desc: 'Signals powering strategy', href: '/reports/ai-trends' },
+              { label: 'Content Curation', desc: 'Promos and deep links', href: '/newsroom' },
+              { label: 'Factories Library', desc: 'Composable building blocks', href: '/automation' },
+              { label: 'Impact Dashboards', desc: 'Artifacts and telemetry', href: '/site-health' },
+              { label: 'Link Integrity', desc: 'Broken links defender', href: '/site-health' },
+              { label: 'Design Evolution', desc: 'Futuristic UI upgrades', href: '/newsroom' },
+              { label: 'Docs & Guides', desc: 'Technical notes', href: 'https://github.com/Zion-Holdings/zion.app/tree/main/docs', external: true },
+              { label: 'AI Changelog', desc: 'Summarized updates', href: 'https://github.com/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md', external: true },
+              { label: 'Live Pipelines', desc: 'CI logs & artifacts', href: 'https://github.com/Zion-Holdings/zion.app/actions', external: true },
+              { label: 'Roadmap & Issues', desc: "What's next", href: 'https://github.com/Zion-Holdings/zion.app/issues', external: true },
+            ].map((item) => (
+              item.external ? (
+                <a key={item.label} href={item.href as string} target="_blank" rel="noopener" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-5 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring">
+                  <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                  <div className="text-base font-semibold">{item.label}</div>
+                  <div className="mt-1 text-sm text-white/75">{item.desc}</div>
+                  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+                </a>
+              ) : (
+                <Link key={item.label} href={item.href as string}>
+                  <a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-5 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring">
+                    <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                    <div className="text-base font-semibold">{item.label}</div>
+                    <div className="mt-1 text-sm text-white/75">{item.desc}</div>
+                    <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
+                  </a>
+                </Link>
+              )
+            ))}
+          </div>
+        </motion.section>
+
         {/* Extended Feature Directory */}
         <motion.section
           initial={{ opacity: 0, y: 24 }}
