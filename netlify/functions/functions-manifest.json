@@ -1,9 +1,10 @@
 {
-  "generatedAt": "${new Date().toISOString()}",
+  "generatedAt": "2025-08-11T23:13:32.001Z",
   "functions": [
     "a11y-audit-runner",
     "ai-changelog-runner",
     "ai-trends-radar-runner",
+    "asset-inventory-runner",
     "auto-discovery-runner",
     "auto-scheduler",
     "automation-guardian-runner",
@@ -15,6 +16,7 @@
     "broken-image-scanner-runner",
     "cloud-autonomous-orchestrator-runner",
     "cloud_orchestrator",
+    "component-props-runner",
     "continuous-front-runner",
     "continuous-orchestrator",
     "dead-code-audit",
@@ -62,8 +64,6 @@
     "repo-radar-and-graph",
     "repo-radar-runner",
     "routes-runner",
-    "component-props-runner",
-    "asset-inventory-runner",
     "schedule-content-index",
     "schedule-homepage",
     "schedule-knowledge-graph",
