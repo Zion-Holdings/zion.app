@@ -186,3 +186,16 @@
 [[scheduled.functions]]
   name = "auto-scheduler"
   schedule = "*/15 * * * *" # every 15 minutes
+
+# Newly added autonomous functions
+[[scheduled.functions]]
+  name = "repo-insights-digest"
+  schedule = "*/2 * * * *" # every 2 minutes
+
+[[scheduled.functions]]
+  name = "architecture-graph"
+  schedule = "*/3 * * * *" # every 3 minutes
+
+[[scheduled.functions]]
+  name = "ux-issues-scanner"
+  schedule = "*/5 * * * *" # every 5 minutes

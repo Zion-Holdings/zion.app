@@ -1,7 +1,8 @@
 {
-  "generatedAt": "2025-08-11T23:03:51.129Z",
+  "generatedAt": "2025-08-11T23:13:30.270Z",
   "functions": [
     "ai-changelog-runner",
+    "architecture-graph",
     "auto-scheduler",
     "automation-matrix",
     "autonomous-invention-orchestrator",
@@ -48,6 +49,7 @@
     "newsroom-runner",
     "og-image-update-runner",
     "readme-advertiser",
+    "repo-insights-digest",
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",
@@ -64,6 +66,7 @@
     "trigger-all-and-commit",
     "ui-enhancer",
     "ultrafast-front-orchestrator",
-    "ultrafast-orchestrator"
+    "ultrafast-orchestrator",
+    "ux-issues-scanner"
   ]
 }
