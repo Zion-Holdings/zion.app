@@ -1,6 +1,7 @@
 {
-  "generatedAt": "2025-08-11T23:01:07.075Z",
+  "generatedAt": "2025-08-11T23:10:19.962Z",
   "functions": [
+    "a11y-alt-text-auditor-runner",
     "a11y-audit-runner",
     "ai-changelog-runner",
     "ai-trends-radar-runner",
@@ -20,6 +21,7 @@
     "dead-code-audit",
     "dead-code-report",
     "deps-auto-upgrade-runner",
+    "design-token-harmonizer-runner",
     "docs-index-runner",
     "docs-search-index-runner",
     "external-link-check-runner",
@@ -61,6 +63,7 @@
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",
+    "revenue-cta-inserter-runner",
     "schedule-content-index",
     "schedule-homepage",
     "schedule-knowledge-graph",
