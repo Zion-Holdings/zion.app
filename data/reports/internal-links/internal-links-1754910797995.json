@@ -1,0 +1,122 @@
+{
+  "timestamp": "2025-08-11T11:13:17.995Z",
+  "totalFilesScanned": 8,
+  "totalRoutes": 8,
+  "missingLinks": 26,
+  "routes": [
+    "/",
+    "/automation",
+    "/front",
+    "/main/front",
+    "/newsroom",
+    "/reports/ai-trends",
+    "/reports/seo",
+    "/site-health"
+  ],
+  "missing": [
+    {
+      "sourceFile": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/schedule-homepage"
+    },
+    {
+      "sourceFile": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/schedule-site-health"
+    },
+    {
+      "sourceFile": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/schedule-content-index"
+    },
+    {
+      "sourceFile": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/schedule-knowledge-graph"
+    },
+    {
+      "sourceFile": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/front-enhancer"
+    },
+    {
+      "sourceFile": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/fast-front-promoter"
+    },
+    {
+      "sourceFile": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/marketing-and-features-promo"
+    },
+    {
+      "sourceFile": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/fast-orchestrator"
+    },
+    {
+      "sourceFile": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/continuous-orchestrator"
+    },
+    {
+      "sourceFile": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/features-capabilities-benefits-advertiser"
+    },
+    {
+      "sourceFile": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/hyper-front-index-accelerator"
+    },
+    {
+      "sourceFile": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/innovation-lab"
+    },
+    {
+      "sourceFile": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/auto-scheduler"
+    },
+    {
+      "sourceFile": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/broken-image-scanner"
+    },
+    {
+      "sourceFile": "pages/index.tsx",
+      "href": "/services"
+    },
+    {
+      "sourceFile": "pages/index.tsx",
+      "href": "/products"
+    },
+    {
+      "sourceFile": "pages/index.tsx",
+      "href": "/contact"
+    },
+    {
+      "sourceFile": "pages/index.tsx",
+      "href": "/.netlify/functions/front-enhancer"
+    },
+    {
+      "sourceFile": "pages/index.tsx",
+      "href": "/.netlify/functions/cloud_orchestrator"
+    },
+    {
+      "sourceFile": "pages/index.tsx",
+      "href": "/.netlify/functions/continuous-orchestrator"
+    },
+    {
+      "sourceFile": "pages/index.tsx",
+      "href": "/.netlify/functions/fast-front-promoter"
+    },
+    {
+      "sourceFile": "pages/index.tsx",
+      "href": "/.netlify/functions/feature-advertiser"
+    },
+    {
+      "sourceFile": "pages/index.tsx",
+      "href": "/.netlify/functions/front-index-futurizer"
+    },
+    {
+      "sourceFile": "pages/index.tsx",
+      "href": "/.netlify/functions/front-index-orchestrator"
+    },
+    {
+      "sourceFile": "pages/index.tsx",
+      "href": "/.netlify/functions/front-index-scheduler"
+    },
+    {
+      "sourceFile": "pages/main/front/index.tsx",
+      "href": "/.netlify/functions/front-enhancer"
+    }
+  ]
+}

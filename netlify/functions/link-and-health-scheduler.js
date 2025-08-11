@@ -2,6 +2,7 @@
 exports.handler = async function() {
   const { execSync } = require('child_process');
   try {
+    execSync('node automation/site-link-crawler.cjs || true', { stdio: 'inherit', shell: true });
     execSync('node automation/external-link-check.cjs || true', { stdio: 'inherit', shell: true });
     execSync('node scripts/generate-sitemap.js || true', { stdio: 'inherit', shell: true });
     execSync('node automation/sitemap-runner.cjs || true', { stdio: 'inherit', shell: true });
