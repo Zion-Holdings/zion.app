@@ -6,8 +6,11 @@ export default function MainFrontIndex() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-slate-950 text-white">
       <Head>
-        <title>Zion — Front Systems Hub</title>
-        <meta name="description" content="Futuristic front experience: features, capabilities, and benefits of Zion's autonomous cloud automations." />
+        <title>Zion — Front Systems Hub | Autonomous Cloud Automations</title>
+        <meta name="description" content="Futuristic front experience showcasing Zion's autonomous cloud automations — features, capabilities, and benefits." />
+        <meta property="og:title" content="Zion — Front Systems Hub" />
+        <meta property="og:description" content="Explore the features, capabilities, and benefits behind our autonomous cloud automations." />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
       {/* Animated Background */}
@@ -22,6 +25,7 @@ export default function MainFrontIndex() {
         <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,white,transparent_70%)]">
           <div className="twinkle-field absolute inset-0" />
         </div>
+        <div className="absolute inset-0 bg-aurora opacity-[0.18]" />
         {/* Extra futuristic layers */}
         <div className="absolute inset-0 flex items-center justify-center opacity-30">
           <div className="absolute h-[52rem] w-[52rem] rounded-full border border-cyan-400/10 animate-[spin_60s_linear_infinite]" />
@@ -150,6 +154,27 @@ export default function MainFrontIndex() {
           </div>
         </section>
 
+        {/* Use Cases */}
+        <section className="mx-auto max-w-7xl px-6 pb-14">
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Use Cases</h2>
+          <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              { title: 'AI SEO Auditor', desc: 'Continuously scans pages and proposes SEO improvements with safe diffs.' },
+              { title: 'Design Beautifier', desc: 'Upgrades UI components with modern, cohesive visual language.' },
+              { title: 'Content Curator', desc: 'Surfaces and promotes high‑value content with links and metadata.' },
+              { title: 'Performance Tuner', desc: 'Optimizes bundles, images, and scripts for faster loads.' },
+              { title: 'A11y Guardian', desc: 'Catches and fixes accessibility issues before they ship.' },
+              { title: 'Growth Experiments', desc: 'Spins up micro‑experiments and measures impact automatically.' },
+            ].map((u) => (
+              <article key={u.title} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-fuchsia-400/30">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-violet-400/10 to-cyan-400/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <h3 className="text-lg font-semibold">{u.title}</h3>
+                <p className="mt-1 text-sm text-white/75">{u.desc}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
         {/* Stats */}
         <section className="mx-auto max-w-7xl px-6 pb-14">
           <div className="neon-divider mx-auto mb-8 h-px w-full max-w-5xl" />
@@ -220,6 +245,20 @@ export default function MainFrontIndex() {
                 <span className="text-sm text-white/80">{b}</span>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Tech */}
+        <section className="mx-auto max-w-7xl px-6 pb-16">
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 text-center backdrop-blur-md">
+            <p className="text-white/70">Powered by modern cloud and AI tooling</p>
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-6">
+              {['Next.js','TypeScript','Tailwind','Framer Motion','Supabase','Netlify'].map((t) => (
+                <span key={t} className="rounded-lg border border-white/10 bg-white/5 px-3 py-1 text-sm text-white/80 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]">
+                  {t}
+                </span>
+              ))}
+            </div>
           </div>
         </section>
 
