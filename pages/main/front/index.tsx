@@ -54,6 +54,7 @@ export default function MainFrontIndex() {
           <div className="hidden gap-6 md:flex">
             <Link href="/"><a className="text-white/80 hover:text-white">Home</a></Link>
             <Link href="#command-center"><a className="text-white/80 hover:text-white">Command</a></Link>
+            <Link href="#agents"><a className="text-white/80 hover:text-white">Agents</a></Link>
             <Link href="#features"><a className="text-white/80 hover:text-white">Features</a></Link>
             <Link href="#capabilities"><a className="text-white/80 hover:text-white">Capabilities</a></Link>
             <Link href="#benefits"><a className="text-white/80 hover:text-white">Benefits</a></Link>
@@ -1027,6 +1028,41 @@ export default function MainFrontIndex() {
             </div>
           </div>
         </footer>
+
+        {/* AI Agents Gallery */}
+        <motion.section
+          id="agents"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-7xl px-6 pb-14"
+        >
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">AI Agents Gallery</h2>
+          <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Meet the autonomous agents powering your outcomes. Each card links to a live system.</p>
+          <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { Icon: Search, title: 'AI SEO Auditor', desc: 'Continuously improves on‑site SEO with safe diffs.', href: '/reports/seo' },
+              { Icon: Link2, title: 'Link Healer', desc: 'Finds and fixes broken links with dashboards.', href: '/site-health' },
+              { Icon: Palette, title: 'Design Beautifier', desc: 'Evolves UI with cohesive, futuristic patterns.', href: '/newsroom' },
+              { Icon: Gauge, title: 'Performance Tuner', desc: 'Optimizes bundles and runtime for speed.', href: '/site-health' },
+              { Icon: Layers, title: 'Factory Composer', desc: 'Chains automations into higher‑order workflows.', href: '/automation' },
+              { Icon: GitBranch, title: 'Main Sync', desc: 'Ships small, safe diffs to main continuously.', href: '/automation' },
+            ].map(({ Icon, title, desc, href }) => (
+              <Link key={title} href={href}>
+                <a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+                  <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                  <div className="flex items-center gap-2">
+                    <Icon className="h-5 w-5 text-cyan-300" />
+                    <h3 className="text-lg font-semibold">{title}</h3>
+                  </div>
+                  <p className="mt-1 text-sm text-white/75">{desc}</p>
+                  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
+                </a>
+              </Link>
+            ))}
+          </div>
+        </motion.section>
       </main>
     </div>
   );
