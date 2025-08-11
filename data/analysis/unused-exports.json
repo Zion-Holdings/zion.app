@@ -1,0 +1,66 @@
+{
+  "generatedAt": "2025-08-11T20:34:51.906Z",
+  "total": 12,
+  "findings": [
+    {
+      "file": "components/Landing.tsx",
+      "line": 3,
+      "exportName": "default"
+    },
+    {
+      "file": "pages/_app.tsx",
+      "line": 4,
+      "exportName": "default"
+    },
+    {
+      "file": "pages/index.tsx",
+      "line": 4,
+      "exportName": "default"
+    },
+    {
+      "file": "pages/newsroom.tsx",
+      "line": 3,
+      "exportName": "default"
+    },
+    {
+      "file": "pages/site-health.tsx",
+      "line": 3,
+      "exportName": "default"
+    },
+    {
+      "file": "netlify/functions/fast-front-promoter.ts",
+      "line": 1,
+      "exportName": "handler"
+    },
+    {
+      "file": "netlify/functions/front-enhancer.ts",
+      "line": 1,
+      "exportName": "handler"
+    },
+    {
+      "file": "pages/automation/index.tsx",
+      "line": 3,
+      "exportName": "default"
+    },
+    {
+      "file": "pages/front/index.tsx",
+      "line": 4,
+      "exportName": "default"
+    },
+    {
+      "file": "pages/reports/ai-trends.tsx",
+      "line": 3,
+      "exportName": "default"
+    },
+    {
+      "file": "pages/reports/seo.tsx",
+      "line": 3,
+      "exportName": "default"
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "line": 7,
+      "exportName": "default"
+    }
+  ]
+}
