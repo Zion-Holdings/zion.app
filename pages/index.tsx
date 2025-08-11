@@ -87,7 +87,7 @@ export default function Home() {
         </section>
 
         {/* Features */}
-        <section className="mx-auto max-w-7xl px-6 pb-14">
+        <section id="features" className="mx-auto max-w-7xl px-6 pb-14">
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Features</h2>
           <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {[
