@@ -223,6 +223,9 @@ export default function Home() {
               { title: 'Redirect Healer', desc: 'Heals broken internal links by auto-adding smart redirects.', href: '/.netlify/functions/redirect-healer' },
               { title: 'Sitemap Prioritizer', desc: 'Regenerates sitemap with popularity-weighted priorities.', href: '/.netlify/functions/sitemap-prioritizer' },
               { title: 'Terminology Consistency', desc: 'Audits and normalizes product terminology across docs.', href: '/.netlify/functions/terminology-consistency-runner' },
+              { title: 'Capability Map Generator', desc: 'Generates a live map of automations and cloud functions.', href: '/.netlify/functions/capability-map-runner' },
+              { title: 'Dependency Freshness Radar', desc: 'Finds outdated dependencies and publishes a report.', href: '/.netlify/functions/dependency-freshness-radar' },
+              { title: 'Automation Status Dashboard', desc: 'Publishes a unified automation overview and quick links.', href: '/.netlify/functions/automation-status-dashboard' },
             ].map((tool) => (
               <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />

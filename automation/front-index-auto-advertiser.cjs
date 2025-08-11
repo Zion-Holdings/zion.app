@@ -21,7 +21,10 @@ function buildTiles() {
     { href: '/reports/seo', label: 'AI SEO Auditor', tagline: 'Continuous on‑site improvements' },
     { href: '/reports/ai-trends', label: 'AI Trends', tagline: 'Signals for new automations' },
     { href: '/newsroom', label: 'Newsroom', tagline: 'Autonomous updates & highlights' },
-    { href: '/.netlify/functions/docs-index-runner', label: 'Docs', tagline: 'Technical notes & guides' }
+    { href: '/.netlify/functions/docs-index-runner', label: 'Docs', tagline: 'Technical notes & guides' },
+    { href: '/reports/capability-map', label: 'Capability Map', tagline: 'Live map of functions and automations' },
+    { href: '/reports/dependency-freshness', label: 'Dependency Freshness', tagline: 'Up-to-date dependency insights' },
+    { href: '/.netlify/functions/automation-status-dashboard', label: 'Automation Dashboard', tagline: 'Overview and quick links' },
     { href: '/newsroom', label: 'AI Changelog', tagline: 'Summarized autonomous changes' }
   ];
 

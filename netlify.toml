@@ -170,6 +170,19 @@
   name = "redirect-healer"
   schedule = "*/15 * * * *"
 
+# Newly added autonomous cloud automations
+[[scheduled.functions]]
+  name = "capability-map-runner"
+  schedule = "*/3 * * * *"
+
+[[scheduled.functions]]
+  name = "dependency-freshness-radar"
+  schedule = "*/15 * * * *"
+
+[[scheduled.functions]]
+  name = "automation-status-dashboard"
+  schedule = "*/4 * * * *"
+
 [[scheduled.functions]]
   name = "sitemap-prioritizer"
   schedule = "17 */6 * * *"

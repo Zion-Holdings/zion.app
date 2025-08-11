@@ -1,0 +1,789 @@
+{
+  "generatedAt": "2025-08-11T23:11:29.676Z",
+  "totals": {
+    "automationScripts": 58,
+    "netlifyFunctions": 81,
+    "manifestFunctions": 82
+  },
+  "manifestFunctions": [
+    "a11y-audit-runner",
+    "ai-changelog-runner",
+    "ai-trends-radar-runner",
+    "auto-discovery-runner",
+    "auto-scheduler",
+    "automation-guardian-runner",
+    "automation-matrix",
+    "automation-status-dashboard",
+    "autonomous-innovation-generator",
+    "autonomous-invention-orchestrator",
+    "branch-cleanup-runner",
+    "broken-image-scanner",
+    "broken-image-scanner-runner",
+    "capability-map-runner",
+    "cloud-autonomous-orchestrator-runner",
+    "cloud_orchestrator",
+    "continuous-front-runner",
+    "continuous-orchestrator",
+    "dead-code-audit",
+    "dead-code-report",
+    "dependency-freshness-radar",
+    "deps-auto-upgrade-runner",
+    "docs-index-runner",
+    "docs-search-index-runner",
+    "external-link-check-runner",
+    "fast-front-promoter",
+    "fast-orchestrator",
+    "feature-advertiser",
+    "features-capabilities-benefits-advertiser",
+    "front-ads-promoter",
+    "front-enhancer",
+    "front-index-futurizer",
+    "front-index-orchestrator",
+    "front-index-scheduler",
+    "front-maximizer",
+    "front-visionary-expander",
+    "frontpage-enhancer",
+    "frontpage-scheduler",
+    "home-visionary-expander",
+    "homepage-advertiser-scheduler",
+    "homepage-enhancer",
+    "homepage-updater",
+    "homepage-updater-scheduler",
+    "homepage_advertiser",
+    "hyper-front-index-accelerator",
+    "image-optimizer-runner",
+    "innovation-lab",
+    "link-and-health-scheduler",
+    "link-crawler",
+    "maintenance-scheduler",
+    "marketing-and-features-promo",
+    "marketing-scheduler",
+    "media-og-and-optimize",
+    "netlify-auto-healer-runner",
+    "newsroom-auto-publisher",
+    "newsroom-runner",
+    "og-image-update-runner",
+    "readme-advertiser",
+    "redirect-healer",
+    "redirect-manager",
+    "repo-knowledge-graph-runner",
+    "repo-radar-and-graph",
+    "repo-radar-runner",
+    "schedule-content-index",
+    "schedule-homepage",
+    "schedule-knowledge-graph",
+    "schedule-site-health",
+    "security-audit",
+    "security-audit-runner",
+    "seo-audit-runner",
+    "site-crawler",
+    "sitemap-prioritizer",
+    "sitemap_runner",
+    "stale-content-auditor-runner",
+    "terminology-consistency-runner",
+    "todo-scanner-runner",
+    "todo-summary-runner",
+    "trigger-all-and-commit",
+    "ui-enhancer",
+    "ultrafast-front-orchestrator",
+    "ultrafast-orchestrator",
+    "website-search-index-runner"
+  ],
+  "entries": [
+    {
+      "type": "automation-script",
+      "path": "automation/a11y-alt-text-auditor.cjs",
+      "name": "a11y-alt-text-auditor"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/a11y-audit-runner.js",
+      "name": "a11y-audit-runner"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/revenue-ideas-agents/add_contact_sales_cta_on_enterprise_pages.cjs",
+      "name": "add_contact_sales_cta_on_enterprise_pages"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/revenue-ideas-agents/add_newsletter_paywall_teaser_on_long_posts.cjs",
+      "name": "add_newsletter_paywall_teaser_on_long_posts"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/advanced-git-sync.cjs",
+      "name": "advanced-git-sync"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/ai-changelog-generator.cjs",
+      "name": "ai-changelog-generator"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/ai-changelog-runner.js",
+      "name": "ai-changelog-runner"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/ai-trends-radar-runner.js",
+      "name": "ai-trends-radar-runner"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/auto-discovery-runner.cjs",
+      "name": "auto-discovery-runner"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/auto-discovery-runner.js",
+      "name": "auto-discovery-runner"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/auto-media-release.cjs",
+      "name": "auto-media-release"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/auto-scheduler.cjs",
+      "name": "auto-scheduler"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/auto-scheduler.js",
+      "name": "auto-scheduler"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/automation-guardian-10min.cjs",
+      "name": "automation-guardian-10min"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/automation-guardian-runner.js",
+      "name": "automation-guardian-runner"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/automation-matrix.js",
+      "name": "automation-matrix"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/automation-status-dashboard.cjs",
+      "name": "automation-status-dashboard"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/automation-status-dashboard.js",
+      "name": "automation-status-dashboard"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/autonomous-innovation-generator.js",
+      "name": "autonomous-innovation-generator"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/autonomous-invention-orchestrator.js",
+      "name": "autonomous-invention-orchestrator"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/branch-cleanup.cjs",
+      "name": "branch-cleanup"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/branch-cleanup-runner.js",
+      "name": "branch-cleanup-runner"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/broken-image-scanner.cjs",
+      "name": "broken-image-scanner"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/broken-image-scanner.js",
+      "name": "broken-image-scanner"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/broken-image-scanner-runner.js",
+      "name": "broken-image-scanner-runner"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/capability-map-generator.cjs",
+      "name": "capability-map-generator"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/changelog-generator.cjs",
+      "name": "changelog-generator"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/cloud_orchestrator.js",
+      "name": "cloud_orchestrator"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/cloud-autonomous-orchestrator.cjs",
+      "name": "cloud-autonomous-orchestrator"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/cloud-autonomous-orchestrator-runner.js",
+      "name": "cloud-autonomous-orchestrator-runner"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/continuous-front-runner.cjs",
+      "name": "continuous-front-runner"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/continuous-front-runner.js",
+      "name": "continuous-front-runner"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/continuous-orchestrator.js",
+      "name": "continuous-orchestrator"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/revenue-ideas-agents/create_affiliate_link_wrappers_for_blog_posts.cjs",
+      "name": "create_affiliate_link_wrappers_for_blog_posts"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/dead-code-audit.js",
+      "name": "dead-code-audit"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/dead-code-report.js",
+      "name": "dead-code-report"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/dead-code-scanner.cjs",
+      "name": "dead-code-scanner"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/dependency-freshness-radar.js",
+      "name": "dependency-freshness-radar"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/deps-auto-upgrade.cjs",
+      "name": "deps-auto-upgrade"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/deps-auto-upgrade-runner.js",
+      "name": "deps-auto-upgrade-runner"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/docs-index-runner.js",
+      "name": "docs-index-runner"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/docs-pages-indexer.cjs",
+      "name": "docs-pages-indexer"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/docs-search-index-runner.js",
+      "name": "docs-search-index-runner"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/external-link-check.cjs",
+      "name": "external-link-check"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/external-link-check-runner.js",
+      "name": "external-link-check-runner"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/fast-front-promoter.js",
+      "name": "fast-front-promoter"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/fast-orchestrator.js",
+      "name": "fast-orchestrator"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/feature-advertiser.js",
+      "name": "feature-advertiser"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/features-capabilities-benefits-advertiser.js",
+      "name": "features-capabilities-benefits-advertiser"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/front-ads-promoter.js",
+      "name": "front-ads-promoter"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/front-enhancer.js",
+      "name": "front-enhancer"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/front-futurizer.cjs",
+      "name": "front-futurizer"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/front-index-ads.cjs",
+      "name": "front-index-ads"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/front-index-advertiser.cjs",
+      "name": "front-index-advertiser"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/front-index-auto-advertiser.cjs",
+      "name": "front-index-auto-advertiser"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/front-index-directory-builder.cjs",
+      "name": "front-index-directory-builder"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/front-index-futurizer.js",
+      "name": "front-index-futurizer"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/front-index-orchestrator.js",
+      "name": "front-index-orchestrator"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/front-index-scheduler.js",
+      "name": "front-index-scheduler"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/front-maximizer.js",
+      "name": "front-maximizer"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/pm2/front-scheduler.cjs",
+      "name": "front-scheduler"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/front-visionary-expander.cjs",
+      "name": "front-visionary-expander"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/front-visionary-expander.js",
+      "name": "front-visionary-expander"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/frontpage-advertiser.cjs",
+      "name": "frontpage-advertiser"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/frontpage-enhancer.js",
+      "name": "frontpage-enhancer"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/frontpage-scheduler.js",
+      "name": "frontpage-scheduler"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/revenue-ideas-agents/generate_paid_consultation_booking_component.cjs",
+      "name": "generate_paid_consultation_booking_component"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/git-sync.cjs",
+      "name": "git-sync"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/pm2/guardian-scheduler.cjs",
+      "name": "guardian-scheduler"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/home-index-visionary.cjs",
+      "name": "home-index-visionary"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/home-visionary-expander.js",
+      "name": "home-visionary-expander"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/homepage_advertiser.js",
+      "name": "homepage_advertiser"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/homepage-advertiser-scheduler.js",
+      "name": "homepage-advertiser-scheduler"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/homepage-auto-advertiser.cjs",
+      "name": "homepage-auto-advertiser"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/homepage-enhancer.js",
+      "name": "homepage-enhancer"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/homepage-promo-analyzer.cjs",
+      "name": "homepage-promo-analyzer"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/homepage-promo-applier.cjs",
+      "name": "homepage-promo-applier"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/homepage-promo-factory.cjs",
+      "name": "homepage-promo-factory"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/homepage-updater.cjs",
+      "name": "homepage-updater"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/homepage-updater.js",
+      "name": "homepage-updater"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/homepage-updater-scheduler.js",
+      "name": "homepage-updater-scheduler"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/hyper-front-index-accelerator.js",
+      "name": "hyper-front-index-accelerator"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/image-optimizer.cjs",
+      "name": "image-optimizer"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/image-optimizer-runner.js",
+      "name": "image-optimizer-runner"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/innovation-lab.js",
+      "name": "innovation-lab"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/revenue-ideas-agents/introduce_pricing_cta_sections_on_high_traffic_pages.cjs",
+      "name": "introduce_pricing_cta_sections_on_high_traffic_pages"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/link-and-health-scheduler.js",
+      "name": "link-and-health-scheduler"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/link-crawler.js",
+      "name": "link-crawler"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/llm-content-curator.cjs",
+      "name": "llm-content-curator"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/maintenance-scheduler.js",
+      "name": "maintenance-scheduler"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/marketing-and-features-promo.js",
+      "name": "marketing-and-features-promo"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/marketing-scheduler.js",
+      "name": "marketing-scheduler"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/media-og-and-optimize.js",
+      "name": "media-og-and-optimize"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/netlify-auto-healer.cjs",
+      "name": "netlify-auto-healer"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/netlify-auto-healer-runner.js",
+      "name": "netlify-auto-healer-runner"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/newsroom-auto-publisher.js",
+      "name": "newsroom-auto-publisher"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/newsroom-generator.cjs",
+      "name": "newsroom-generator"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/newsroom-runner.js",
+      "name": "newsroom-runner"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/og-image-generator.cjs",
+      "name": "og-image-generator"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/og-image-update-runner.js",
+      "name": "og-image-update-runner"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/optimize-images.cjs",
+      "name": "optimize-images"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/readme-advertiser.js",
+      "name": "readme-advertiser"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/redirect-healer.cjs",
+      "name": "redirect-healer"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/redirect-healer.js",
+      "name": "redirect-healer"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/redirect-manager.js",
+      "name": "redirect-manager"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/repo-knowledge-graph.cjs",
+      "name": "repo-knowledge-graph"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/repo-knowledge-graph-runner.js",
+      "name": "repo-knowledge-graph-runner"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/repo-radar-and-graph.js",
+      "name": "repo-radar-and-graph"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/repo-radar-metrics.cjs",
+      "name": "repo-radar-metrics"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/repo-radar-runner.js",
+      "name": "repo-radar-runner"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/schedule-content-index.js",
+      "name": "schedule-content-index"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/schedule-homepage.js",
+      "name": "schedule-homepage"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/schedule-knowledge-graph.js",
+      "name": "schedule-knowledge-graph"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/schedule-site-health.js",
+      "name": "schedule-site-health"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/security-audit.cjs",
+      "name": "security-audit"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/security-audit.js",
+      "name": "security-audit"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/security-audit-runner.js",
+      "name": "security-audit-runner"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/seo-audit-runner.js",
+      "name": "seo-audit-runner"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/site-crawler.js",
+      "name": "site-crawler"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/site-link-crawler.cjs",
+      "name": "site-link-crawler"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/site-link-fixer.cjs",
+      "name": "site-link-fixer"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/site-promo-orchestrator.cjs",
+      "name": "site-promo-orchestrator"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/sitemap_runner.js",
+      "name": "sitemap_runner"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/sitemap-prioritizer.cjs",
+      "name": "sitemap-prioritizer"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/sitemap-prioritizer.js",
+      "name": "sitemap-prioritizer"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/sitemap-runner.cjs",
+      "name": "sitemap-runner"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/smart-redirect-manager.cjs",
+      "name": "smart-redirect-manager"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/stale-content-auditor.cjs",
+      "name": "stale-content-auditor"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/stale-content-auditor-runner.js",
+      "name": "stale-content-auditor-runner"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/terminology-consistency.cjs",
+      "name": "terminology-consistency"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/terminology-consistency-runner.js",
+      "name": "terminology-consistency-runner"
+    },
+    {
+      "type": "automation-script",
+      "path": "automation/todo-scanner.cjs",
+      "name": "todo-scanner"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/todo-scanner-runner.js",
+      "name": "todo-scanner-runner"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/todo-summary-runner.js",
+      "name": "todo-summary-runner"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/trigger-all-and-commit.js",
+      "name": "trigger-all-and-commit"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/ui-enhancer.js",
+      "name": "ui-enhancer"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/ultrafast-front-orchestrator.js",
+      "name": "ultrafast-front-orchestrator"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/ultrafast-orchestrator.js",
+      "name": "ultrafast-orchestrator"
+    },
+    {
+      "type": "netlify-function",
+      "path": "netlify/functions/website-search-index-runner.js",
+      "name": "website-search-index-runner"
+    }
+  ]
+}
