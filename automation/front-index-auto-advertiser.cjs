@@ -7,8 +7,8 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
 const FRONT_PAGE = path.join(ROOT, 'pages', 'main', 'front', 'index.tsx');
-const START = '{/* AUTO-GENERATED: FRONT_ADS_START */}';
-const END = '{/* AUTO-GENERATED: FRONT_ADS_END */}';
+const START_TOKEN = 'AUTO-GENERATED: FRONT_ADS_START';
+const END_TOKEN = 'AUTO-GENERATED: FRONT_ADS_END';
 
 function log(msg) {
   process.stdout.write(`[front-index-auto-advertiser] ${msg}\n`);
@@ -21,7 +21,8 @@ function buildTiles() {
     { href: '/reports/seo', label: 'AI SEO Auditor', tagline: 'Continuous on‑site improvements' },
     { href: '/reports/ai-trends', label: 'AI Trends', tagline: 'Signals for new automations' },
     { href: '/newsroom', label: 'Newsroom', tagline: 'Autonomous updates & highlights' },
-    { href: '/.netlify/functions/docs-index-runner', label: 'Docs', tagline: 'Technical notes & guides' }
+    { href: '/.netlify/functions/docs-index-runner', label: 'Docs', tagline: 'Technical notes & guides' },
+    { href: '/reports/ux/index.html', label: 'UX Heuristics', tagline: 'A11y and UX checks' },
     { href: '/newsroom', label: 'AI Changelog', tagline: 'Summarized autonomous changes' }
   ];
 
@@ -61,9 +62,8 @@ function apply() {
   let tsx = fs.readFileSync(FRONT_PAGE, 'utf8');
   tsx = ensureImports(tsx);
 
-  const startIdx = tsx.indexOf(START);
-  const endIdx = tsx.indexOf(END);
-  if (startIdx === -1 || endIdx === -1 || endIdx < startIdx) {
+  const markerRegex = new RegExp(`(\\{?\\/\\*\\s*${START_TOKEN.replace(/[-/\\^$*+?.()|[\]{}]/g, r => r)}\\s*\\*\\/\\}?)[\\s\\S]*?(\\{?\\/\\*\\s*${END_TOKEN.replace(/[-/\\^$*+?.()|[\]{}]/g, r => r)}\\s*\\*\\/\\}?)`);
+  if (!markerRegex.test(tsx)) {
     throw new Error('FRONT_ADS markers not found or misordered');
   }
 
@@ -76,9 +76,7 @@ ${buildTiles()}
   </div>
 </section>`;
 
-  const before = tsx.slice(0, startIdx + START.length);
-  const after = tsx.slice(endIdx);
-  const updated = `${before}\n${replacement}\n${after}`;
+  const updated = tsx.replace(markerRegex, `$1\n${replacement}\n$2`);
 
   if (updated !== tsx) {
     fs.writeFileSync(FRONT_PAGE, updated, 'utf8');
