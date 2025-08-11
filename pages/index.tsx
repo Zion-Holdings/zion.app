@@ -213,6 +213,9 @@ export default function Home() {
               { title: 'SEO Audit Runner', desc: 'Analyzes pages for title/description issues and writes an HTML report.', href: '/.netlify/functions/seo-audit-runner' },
               { title: 'AI Trends Radar', desc: 'Aggregates trending AI topics into a public report.', href: '/.netlify/functions/ai-trends-radar-runner' },
               { title: 'Dependency Auto‑Upgrade', desc: 'Safely bumps minor/patch deps with build verification.', href: '/.netlify/functions/deps-auto-upgrade-runner' },
+              { title: 'Content Freshness Audit', desc: 'Scores pages and docs by last update; commits freshness reports.', href: '/.netlify/functions/content-freshness-runner' },
+              { title: 'Docs Link Audit', desc: 'Scans docs for broken relative links and commits a CSV report.', href: '/.netlify/functions/docs-link-audit-runner' },
+              { title: 'Image Dimension Audit', desc: 'Detects <img> and <Image> missing width/height and logs a report.', href: '/.netlify/functions/image-dimension-audit-runner' },
             ].map((tool) => (
               <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />

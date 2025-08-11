@@ -206,3 +206,18 @@
 [[scheduled.functions]]
   name = "deps-auto-upgrade-runner"
   schedule = "0 3 * * *"
+
+# Content freshness auditor
+[[scheduled.functions]]
+  name = "content-freshness-runner"
+  schedule = "*/15 * * * *"
+
+# Docs relative link auditor
+[[scheduled.functions]]
+  name = "docs-link-audit-runner"
+  schedule = "*/30 * * * *"
+
+# Image dimension auditor
+[[scheduled.functions]]
+  name = "image-dimension-audit-runner"
+  schedule = "*/20 * * * *"

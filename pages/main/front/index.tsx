@@ -396,6 +396,36 @@ export default function MainFrontIndex() {
               <p className="mt-1 text-sm text-white/75">End-to-end agents launching factories and syncing safe diffs to main.</p>
               <div className="mt-3 text-xs text-cyan-300/90">Open Automation Hub →</div>
             </a>
+
+            <a
+              href="/.netlify/functions/content-freshness-runner"
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover"
+            >
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-lg font-semibold">Content Freshness Audit</div>
+              <p className="mt-1 text-sm text-white/75">Scores pages and docs by last update; commits freshness reports.</p>
+              <div className="mt-3 text-xs text-cyan-300/90">Open →</div>
+            </a>
+
+            <a
+              href="/.netlify/functions/docs-link-audit-runner"
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover"
+            >
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-lg font-semibold">Docs Link Audit</div>
+              <p className="mt-1 text-sm text-white/75">Scans docs for broken relative links and commits a CSV report.</p>
+              <div className="mt-3 text-xs text-cyan-300/90">Open →</div>
+            </a>
+
+            <a
+              href="/.netlify/functions/image-dimension-audit-runner"
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover"
+            >
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-lg font-semibold">Image Dimension Audit</div>
+              <p className="mt-1 text-sm text-white/75">Detects missing width/height in images and logs a report.</p>
+              <div className="mt-3 text-xs text-cyan-300/90">Open →</div>
+            </a>
           </div>
         </motion.section>
 
