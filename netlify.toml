@@ -166,22 +166,22 @@
   name = "docs-search-index-runner"
   schedule = "53 */6 * * *"
 
+# Resolved conflict: include all relevant scheduled functions
 [[scheduled.functions]]
-<<<<<<< HEAD
   name = "redirect-healer"
   schedule = "*/15 * * * *"
 
 [[scheduled.functions]]
   name = "sitemap-prioritizer"
   schedule = "17 */6 * * *"
-=======
+
+[[scheduled.functions]]
   name = "redirect-manager"
   schedule = "*/30 * * * *"
 
 [[scheduled.functions]]
   name = "a11y-audit-runner"
   schedule = "*/20 * * * *"
->>>>>>> 12882bc485 (chore(sync): advanced autonomous sync)
 
 [[scheduled.functions]]
   name = "todo-summary-runner"
@@ -237,3 +237,12 @@
 [[scheduled.functions]]
   name = "branch-cleanup-runner"
   schedule = "0 3 * * *" # daily at 03:00 UTC
+
+# Newly added automations
+[[scheduled.functions]]
+  name = "content-freshness-auditor"
+  schedule = "*/10 * * * *" # every 10 minutes
+
+[[scheduled.functions]]
+  name = "repo-insights-digest"
+  schedule = "*/15 * * * *" # every 15 minutes
