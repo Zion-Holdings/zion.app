@@ -1541,3 +1541,5 @@ Merge made by the 'ours' strategy.
 [main 8092ee61d0] chore(sync): fast autonomous sync
  2 files changed, 60 insertions(+), 1 deletion(-)
 [2025-08-11T21:19:43.289Z] ✅ Automation Guardian (10m) finished
+[2025-08-11T21:26:08.948Z] [homepage-promo-factory] No-op stub running.
+[2025-08-11T21:26:09.138Z] $ npm run type-check
