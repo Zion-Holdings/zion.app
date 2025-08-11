@@ -9,9 +9,14 @@ exports.handler = async function(event, context) {
 
   function log(msg) { console.log(`[trigger-all] ${msg}`); }
 
-  const bakedFunctionNames = Array.from(new Set([
-    'ai-changelog-runner','auto-scheduler','automation-matrix','autonomous-invention-orchestrator','broken-image-scanner-runner','broken-image-scanner','cloud_orchestrator','continuous-front-runner','continuous-orchestrator','dead-code-audit','dead-code-report','docs-index-runner','docs-search-index-runner','external-link-check-runner','fast-front-promoter','fast-orchestrator','feature-advertiser','features-capabilities-benefits-advertiser','front-ads-promoter','front-enhancer','front-index-futurizer','front-index-orchestrator','front-index-scheduler','front-maximizer','front-visionary-expander','frontpage-enhancer','frontpage-scheduler','home-visionary-expander','homepage-advertiser-scheduler','homepage-enhancer','homepage-updater','homepage-updater-scheduler','homepage_advertiser','hyper-front-index-accelerator','image-optimizer-runner','innovation-lab','link-and-health-scheduler','link-crawler','maintenance-scheduler','marketing-and-features-promo','marketing-scheduler','media-og-and-optimize','netlify-auto-healer-runner','newsroom-auto-publisher','newsroom-runner','og-image-update-runner','readme-advertiser','repo-knowledge-graph-runner','repo-radar-and-graph','repo-radar-runner','schedule-content-index','schedule-homepage','schedule-knowledge-graph','schedule-site-health','security-audit','security-audit-runner','site-crawler','sitemap_runner','todo-scanner-runner','todo-summary-runner','ui-enhancer','ultrafast-front-orchestrator','ultrafast-orchestrator'
-  ]));
+  let functionNames = [];
+  try {
+    const manifest = require('./functions-manifest.json');
+    if (Array.isArray(manifest.functions)) functionNames = manifest.functions;
+  } catch (e) {
+    functionNames = [];
+  }
+
 
   async function invoke(name) {
     if (!baseUrl) return { name, status: 0, ok: false, error: 'No base URL' };
@@ -92,7 +97,7 @@ exports.handler = async function(event, context) {
   }
 
   try {
-    const invoked = await invokeAll(bakedFunctionNames);
+    const invoked = await invokeAll(functionNames);
     let buildResult = { method: 'none' };
     if (buildHook) {
       buildResult = { method: 'build_hook', ...(await triggerBuildHook()) };
@@ -109,7 +114,7 @@ exports.handler = async function(event, context) {
         triggeredAt: new Date().toISOString(),
         baseUrl,
         totals: {
-          attempted: bakedFunctionNames.length,
+          attempted: functionNames.length,
           ok: invoked.filter(r => r.ok).length,
           failed: invoked.filter(r => !r.ok).length
         },
