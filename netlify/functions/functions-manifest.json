@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "generatedAt": "2025-08-11T23:44:51.302Z",
+=======
+  "generatedAt": "2025-08-11T23:46:40.504Z",
+>>>>>>> 8cc7475fdf (feat(automation): autonomous front/home advertisers + schedules cleanup [skip ci])
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",

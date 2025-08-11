@@ -8,14 +8,17 @@ function run(cmd) {
 exports.config = { schedule: '*/1 * * * *' };
 
 exports.handler = async () => {
+  const { execSync } = require('child_process');
+  function run(cmd) { execSync(cmd, { stdio: 'inherit', shell: true }); }
   try {
-    // Fast front index improvements
-    run('node automation/front-index-directory-builder.cjs || true');
-    run('node automation/front-futurizer.cjs || true');
-    run('node automation/front-index-auto-advertiser.cjs || true');
-    // Git sync
-    run('node automation/advanced-git-sync.cjs || true');
-    return { statusCode: 200, body: JSON.stringify({ ok: true, tool: 'hyper-front-index-accelerator' }) };
+    run('node automation/front-index-ads.cjs || true');
+    run('node automation/front-index-advertiser.cjs || true');
+    run('git config user.name "zion-bot"');
+    run('git config user.email "bot@zion.app"');
+    run('git add -A');
+    run('git commit -m "chore(front): hyper accelerator refreshed auto‑promos [skip ci]" || true');
+    run('git push origin main || true');
+    return { statusCode: 200, body: JSON.stringify({ ok: true, task: 'hyper-front-index-accelerator' }) };
   } catch (e) {
     return { statusCode: 200, body: JSON.stringify({ ok: false, error: String(e) }) };
   }

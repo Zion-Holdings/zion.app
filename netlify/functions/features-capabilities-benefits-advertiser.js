@@ -13,6 +13,7 @@ exports.handler = async () => {
     run('node automation/front-index-ads.cjs || true');
     run('node automation/front-index-advertiser.cjs || true');
     run('node automation/homepage-auto-advertiser.cjs || true');
+    run('node automation/homepage-updater.cjs || true');
     // Sync
     run('git config user.name "zion-bot"');
     run('git config user.email "bot@zion.app"');
