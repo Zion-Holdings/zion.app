@@ -239,3 +239,7 @@
 [[scheduled.functions]]
   name = "adaptive-orchestrator"
   schedule = "*/5 * * * *"
+
+[[scheduled.functions]]
+  name = "autonomy-score-runner"
+  schedule = "*/1 * * * *" # every minute
