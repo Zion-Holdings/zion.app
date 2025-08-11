@@ -1,7 +1,8 @@
 {
-  "generatedAt": "2025-08-11T23:45:10.136Z",
+  "generatedAt": "2025-08-11T23:48:17.743Z",
   "functions": [
     "a11y-alt-text-runner",
+    "adaptive-orchestrator",
     "ai-changelog-runner",
     "ai-trends-radar-runner",
     "auto-scheduler",
@@ -41,6 +42,8 @@
     "hyper-front-index-accelerator",
     "image-optimizer-runner",
     "innovation-lab",
+    "knowledge-pack-runner",
+    "license-compliance-auditor",
     "link-and-health-scheduler",
     "link-crawler",
     "maintenance-scheduler",
@@ -53,6 +56,7 @@
     "newsroom-runner",
     "og-image-update-runner",
     "orphan-pages-detector",
+    "pagespeed-insights-runner",
     "readme-advertiser",
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
@@ -73,6 +77,7 @@
     "ui-enhancer",
     "ultrafast-front-orchestrator",
     "ultrafast-orchestrator",
+    "unused-exports-runner",
     "unused-media-scanner"
   ]
 }

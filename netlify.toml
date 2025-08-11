@@ -189,11 +189,11 @@
 
 [[scheduled.functions]]
   name = "a11y-alt-text-runner"
-  schedule = "*/10 * * * *" # every 10 minutes
+  schedule = "*/10 * * * *"
 
 [[scheduled.functions]]
   name = "metadata-optimizer-runner"
-  schedule = "*/15 * * * *" # every 15 minutes
+  schedule = "*/15 * * * *"
 
 [[scheduled.functions]]
   name = "seo-audit-runner"
@@ -222,4 +222,20 @@
 
 [[scheduled.functions]]
   name = "component-size-report"
+  schedule = "*/5 * * * *"
+
+[[scheduled.functions]]
+  name = "license-compliance-auditor"
+  schedule = "0 2 * * 1" # weekly on Monday 02:00 UTC
+
+[[scheduled.functions]]
+  name = "pagespeed-insights-runner"
+  schedule = "11 */6 * * *" # every 6 hours, offset
+
+[[scheduled.functions]]
+  name = "knowledge-pack-runner"
+  schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+  name = "adaptive-orchestrator"
   schedule = "*/5 * * * *"
