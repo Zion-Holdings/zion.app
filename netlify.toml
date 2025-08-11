@@ -9,4 +9,8 @@
   package = "@netlify/plugin-nextjs"
 
 [[plugins]]
-  package = "netlify-plugin-cloudinary" 
+
+# Scheduled functions
+[[scheduled.functions]]
+  name = "front-enhancer"
+  cron = "*/20 * * * *" 

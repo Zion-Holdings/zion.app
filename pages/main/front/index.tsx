@@ -298,6 +298,7 @@ export default function MainFrontIndex() {
             {[
               ['#command-center', 'Command'],
               ['#feature-map', 'Map'],
+              ['#engines', 'Engines'],
               ['#suites', 'Suites'],
               ['#capabilities', 'Capabilities'],
               ['#use-cases', 'Use Cases'],
@@ -317,6 +318,51 @@ export default function MainFrontIndex() {
             ))}
           </nav>
         </aside>
+
+        {/* Engines: Alternative Automation Runtimes */}
+        <motion.section
+          id="engines"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-7xl px-6 pb-14"
+        >
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Autonomous Engines (Beyond GitHub Actions)</h2>
+
+          <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">We run outside GitHub Actions using scheduled cloud functions and orchestrators. Explore the engines below.</p>
+
+          <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <a
+              href="/api/front-enhancer"
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo"
+            >
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-lg font-semibold">Netlify Scheduled Functions</div>
+              <p className="mt-1 text-sm text-white/75">Cron-like cloud jobs that run every 20 minutes to enhance the front experience.</p>
+              <div className="mt-3 text-xs text-cyan-300/90">View logs via Netlify →</div>
+            </a>
+            <a
+              href="https://github.com/Zion-Holdings/zion.app/tree/main/automation"
+              target="_blank" rel="noopener"
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover"
+            >
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-lg font-semibold">Local Orchestrators</div>
+              <p className="mt-1 text-sm text-white/75">Node-based orchestrators that can run on any scheduler or platform.</p>
+              <div className="mt-3 text-xs text-cyan-300/90">Browse orchestration scripts ↗</div>
+            </a>
+            <a
+              href="/automation"
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover"
+            >
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-lg font-semibold">Autonomous Cloud Orchestrator</div>
+              <p className="mt-1 text-sm text-white/75">End-to-end agents launching factories and syncing safe diffs to main.</p>
+              <div className="mt-3 text-xs text-cyan-300/90">Open Automation Hub →</div>
+            </a>
+          </div>
+        </motion.section>
 
         {/* Command Center */}
         <section id="command-center" className="mx-auto max-w-7xl px-6 pb-14">
