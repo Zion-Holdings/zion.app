@@ -14,7 +14,7 @@
     "node": ">=20.18.1",
     "npm": ">=10.0.0"
   },
-    "scripts": {
+  "scripts": {
     "front:advertise": "node automation/front-index-auto-advertiser.cjs",
     "deps:maintain": "node automation/dependency-update-orchestrator.cjs",
     "deps:cron:start": "bash automation/dependency-maintenance-cron.sh",
@@ -223,15 +223,9 @@
     "git:cron:stop": "bash automation/git-sync-cron.sh stop",
     "git:cron:status": "bash automation/git-sync-cron.sh status",
     "homepage:update": "node automation/homepage-updater.cjs",
-<<<<<<< HEAD
-    "front:advertise": "node automation/frontpage-advertiser.cjs",
-=======
-    "front:advertise": "node automation/front-index-advertiser.cjs",
->>>>>>> 66c36b7ed6 (feat(front): new Netlify automations + futuristic front ads section)
     "scan:todo": "node automation/todo-scanner.cjs",
     "scan:registry": "node automation/docs-pages-indexer.cjs",
-    "scan:content": "npm run scan:todo && npm run scan:registry",
-    "front:advertise": "node automation/front-index-advertiser.cjs"
+    "scan:content": "npm run scan:todo && npm run scan:registry"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
