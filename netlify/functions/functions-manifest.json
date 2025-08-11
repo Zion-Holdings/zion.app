@@ -1,6 +1,7 @@
 {
-  "generatedAt": "2025-08-11T22:40:00.000Z",
+  "generatedAt": "2025-08-11T22:42:48.096Z",
   "functions": [
+    "accessibility-remediator-runner",
     "ai-changelog-runner",
     "ai-trends-radar-runner",
     "auto-discovery-runner",
@@ -14,10 +15,12 @@
     "broken-image-scanner-runner",
     "cloud-autonomous-orchestrator-runner",
     "cloud_orchestrator",
+    "content-drift-detector-runner",
     "continuous-front-runner",
     "continuous-orchestrator",
     "dead-code-audit",
     "dead-code-report",
+    "dependency-upgrade-runner",
     "docs-index-runner",
     "docs-search-index-runner",
     "external-link-check-runner",
