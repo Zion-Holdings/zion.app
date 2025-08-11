@@ -210,6 +210,9 @@ export default function Home() {
               { title: 'Innovation Lab (10m)', desc: 'Invents, curates, and promotes fresh ideas across the site.', href: '/.netlify/functions/innovation-lab' },
               { title: 'Auto Scheduler (15m)', desc: 'Smart time-based runner that chooses and executes the best tasks.', href: '/.netlify/functions/auto-scheduler' },
               { title: 'Broken Image Scanner (6h)', desc: 'Finds broken images, optimizes assets, and syncs fixes.', href: '/.netlify/functions/broken-image-scanner' },
+              { title: 'UX A11y Auditor (15m)', desc: 'Scans pages for alt text, link text quality and writes a live a11y report.', href: '/.netlify/functions/ux-a11y-auditor' },
+              { title: 'Performance Budget Runner (20m)', desc: 'Analyzes public assets, flags heavy files, and publishes a perf report.', href: '/.netlify/functions/perf-budget-runner' },
+              { title: 'Innovation Lab Pro (10m)', desc: 'Advanced ideation and promotion via the innovation orchestrator.', href: '/.netlify/functions/innovation-lab-pro' },
             ].map((tool) => (
               <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
@@ -221,7 +224,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* AUTO-GENERATED: HOME_UPDATER_START */
+        {/* AUTO-GENERATED: HOME_UPDATER_START */}
  <section className="mx-auto max-w-7xl px-6 pb-16">
    <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Explore more</h2>
    <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">

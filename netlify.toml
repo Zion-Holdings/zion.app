@@ -186,3 +186,15 @@
 [[scheduled.functions]]
   name = "auto-scheduler"
   schedule = "*/15 * * * *" # every 15 minutes
+
+[[scheduled.functions]]
+  name = "ux-a11y-auditor"
+  schedule = "*/15 * * * *"
+
+[[scheduled.functions]]
+  name = "perf-budget-runner"
+  schedule = "*/20 * * * *"
+
+[[scheduled.functions]]
+  name = "innovation-lab-pro"
+  schedule = "*/10 * * * *"
