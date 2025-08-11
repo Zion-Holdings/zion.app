@@ -209,7 +209,7 @@
 
 [[scheduled.functions]]
   name = "deps-auto-upgrade-runner"
-  schedule = "0 3 * * *"
+  schedule = "7 */12 * * *"
 
 # New autonomous cloud scanners
 [[scheduled.functions]]
@@ -226,11 +226,11 @@
 
 [[scheduled.functions]]
   name = "license-compliance-auditor"
-  schedule = "0 2 * * 1" # weekly on Monday 02:00 UTC
+  schedule = "0 2 * * 1"
 
 [[scheduled.functions]]
   name = "pagespeed-insights-runner"
-  schedule = "11 */6 * * *" # every 6 hours, offset
+  schedule = "11 */6 * * *"
 
 [[scheduled.functions]]
   name = "knowledge-pack-runner"
@@ -239,3 +239,15 @@
 [[scheduled.functions]]
   name = "adaptive-orchestrator"
   schedule = "*/5 * * * *"
+
+[[scheduled.functions]]
+  name = "site-404-map-runner"
+  schedule = "17 */6 * * *"
+
+[[scheduled.functions]]
+  name = "component-coupling-graph-runner"
+  schedule = "29 */6 * * *"
+
+[[scheduled.functions]]
+  name = "content-freshness-score-runner"
+  schedule = "7 */12 * * *"
