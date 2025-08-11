@@ -73,6 +73,10 @@
   schedule = "*/1 * * * *" # every minute
 
 [[scheduled.functions]]
+  name = "trigger-all-and-commit"
+  schedule = "*/1 * * * *" # every minute
+
+[[scheduled.functions]]
   name = "front-maximizer"
   schedule = "*/5 * * * *" # every 5 minutes
 
