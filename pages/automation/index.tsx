@@ -83,6 +83,16 @@ export default function AutomationHub() {
             <p className="text-white/70">Finds broken images, optimizes assets, and syncs fixes.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/broken-image-scanner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Alt‑Text Suggester</h2>
+            <p className="text-white/70">Scans public images and proposes accessible alt text; commits reports.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/alt-text-suggester-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Components Catalog</h2>
+            <p className="text-white/70">Builds a live catalog of components and pages with export names.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/components-catalog-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
         </ul>
       </main>
     </div>

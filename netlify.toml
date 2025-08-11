@@ -186,3 +186,11 @@
 [[scheduled.functions]]
   name = "auto-scheduler"
   schedule = "*/15 * * * *" # every 15 minutes
+
+[[scheduled.functions]]
+  name = "alt-text-suggester-runner"
+  schedule = "*/15 * * * *" # every 15 minutes
+
+[[scheduled.functions]]
+  name = "components-catalog-runner"
+  schedule = "*/30 * * * *" # every 30 minutes

@@ -324,6 +324,14 @@ export default function MainFrontIndex() {
   <div className="text-base font-semibold">AI Changelog</div>
   <div className="mt-1 text-sm text-white/75">Summarized updates</div>
   <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div></a>
+  <a href="/.netlify/functions/alt-text-suggester-runner" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">Alt‑Text Suggester</div>
+  <div className="mt-1 text-sm text-white/75">Proposes accessible alt text; commits reports</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div></a>
+  <a href="/.netlify/functions/components-catalog-runner" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">Components Catalog</div>
+  <div className="mt-1 text-sm text-white/75">Live index of components and pages</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div></a>
           </div>
         </section>
 

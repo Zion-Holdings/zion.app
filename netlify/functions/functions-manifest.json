@@ -1,13 +1,15 @@
 {
-  "generatedAt": "2025-08-11T23:03:51.129Z",
+  "generatedAt": "2025-08-11T23:11:46.252Z",
   "functions": [
     "ai-changelog-runner",
+    "alt-text-suggester-runner",
     "auto-scheduler",
     "automation-matrix",
     "autonomous-invention-orchestrator",
     "broken-image-scanner",
     "broken-image-scanner-runner",
     "cloud_orchestrator",
+    "components-catalog-runner",
     "continuous-front-runner",
     "continuous-orchestrator",
     "dead-code-audit",
