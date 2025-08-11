@@ -35,7 +35,7 @@
 
 [[scheduled.functions]]
   name = "front-enhancer"
-  schedule = "*/5 * * * *" # every 5 minutes
+  schedule = "*/10 * * * *" # every 10 minutes
 
 [[scheduled.functions]]
   name = "front-index-orchestrator"
@@ -167,11 +167,6 @@
   schedule = "53 */6 * * *"
 
 [[scheduled.functions]]
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> origin/main
   name = "redirect-healer"
   schedule = "*/15 * * * *"
 
@@ -198,10 +193,17 @@
 
 [[scheduled.functions]]
   name = "a11y-audit-runner"
-  schedule = "*/20 * * * *"
+  schedule = "17 */6 * * *" # every 6 hours, offset to avoid thundering herd
 
 [[scheduled.functions]]
->>>>>>> 5db0abd8a2 (chore(sync): advanced autonomous sync)
+  name = "license-compliance-runner"
+  schedule = "29 */12 * * *" # every 12 hours
+
+[[scheduled.functions]]
+  name = "secrets-leak-scanner-runner"
+  schedule = "7 * * * *" # every hour
+
+[[scheduled.functions]]
   name = "todo-summary-runner"
   schedule = "*/30 * * * *"
 
@@ -217,21 +219,10 @@
   name = "netlify-auto-healer-runner"
   schedule = "*/20 * * * *"
 
-# New intelligent cloud automations
+# Intelligent cloud automations
 [[scheduled.functions]]
   name = "innovation-lab"
   schedule = "*/10 * * * *" # every 10 minutes
-<<<<<<< HEAD
-
-[[scheduled.functions]]
-  name = "revenue-optimizer"
-  schedule = "7 * * * *" # hourly
-
-[[scheduled.functions]]
-  name = "seo-content-gap"
-  schedule = "17 */3 * * *" # every 3 hours
-=======
->>>>>>> origin/main
 
 [[scheduled.functions]]
   name = "broken-image-scanner"
@@ -241,7 +232,6 @@
   name = "auto-scheduler"
   schedule = "*/15 * * * *" # every 15 minutes
 
-<<<<<<< HEAD
 [[scheduled.functions]]
   name = "internal-link-optimizer"
   schedule = "*/7 * * * *" # every 7 minutes
@@ -250,29 +240,6 @@
   name = "revenue-ideas-orchestrator"
   schedule = "13 */2 * * *" # every 2 hours at :13
 
-[[scheduled.functions]]
-  name = "internal-redirect-healer"
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-# Newly added autonomous scanners
-[[scheduled.functions]]
-  name = "a11y-audit-runner"
-  schedule = "17 */6 * * *" # every 6 hours, offset to avoid thundering herd
-
-[[scheduled.functions]]
-  name = "license-compliance-runner"
-  schedule = "29 */12 * * *" # every 12 hours
-
-[[scheduled.functions]]
-  name = "secrets-leak-scanner-runner"
-  schedule = "7 * * * *" # every hour
-=======
-[[scheduled.functions]]
-  name = "ux-heuristics-runner"
-  schedule = "*/15 * * * *" # every 15 minutes
->>>>>>> origin/main
-=======
 # Fresh autonomous audits
 [[scheduled.functions]]
   name = "internal-link-graph-runner"
@@ -280,7 +247,6 @@
 
 [[scheduled.functions]]
   name = "anchor-integrity-runner"
->>>>>>> origin/main
   schedule = "17 */6 * * *"
 
 [[scheduled.functions]]
@@ -297,11 +263,6 @@
   schedule = "*/20 * * * *"
 
 [[scheduled.functions]]
-<<<<<<< HEAD
-  name = "innovation-lab-pro"
-  schedule = "*/10 * * * *"
->>>>>>> 9a6e0bf201 (chore(netlify): resolve schedule conflicts and regenerate functions manifest [skip ci])
-=======
   name = "auto-discovery-runner"
   schedule = "*/30 * * * *" # every 30 minutes
 
@@ -320,4 +281,7 @@
 [[scheduled.functions]]
   name = "deps-auto-upgrade-runner"
   schedule = "7 */12 * * *"
->>>>>>> origin/main
+
+[[scheduled.functions]]
+  name = "website-search-index-runner"
+  schedule = "59 */6 * * *"
