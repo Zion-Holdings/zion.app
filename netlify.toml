@@ -167,6 +167,18 @@
   schedule = "53 */6 * * *"
 
 [[scheduled.functions]]
+  name = "ux-heuristics-audit-runner"
+  schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+  name = "roadmap-synthesizer"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+  name = "content-gap-finder"
+  schedule = "*/20 * * * *"
+
+[[scheduled.functions]]
   name = "todo-summary-runner"
   schedule = "*/30 * * * *"
 
