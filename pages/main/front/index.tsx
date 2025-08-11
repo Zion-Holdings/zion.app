@@ -111,6 +111,34 @@ export default function MainFrontIndex() {
           </div>
         </section>
 
+        {/* Suites */}
+        <section className="mx-auto max-w-7xl px-6 pb-14">
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Automation Suites</h2>
+          <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {[ 
+              { title: 'Quick Fixes', desc: 'Build rescue, sitemap/robots, security remediation', href: '/automation' },
+              { title: 'Deep Maintenance', desc: 'Orchestrated smoke tests and link checks', href: '/automation' },
+              { title: 'Marketing & SEO', desc: 'Content factories and on‑site optimizations', href: '/automation' },
+              { title: 'Content Curation', desc: 'Homepage promos generated continuously', href: '/automation' },
+              { title: 'Dependency Upgrades', desc: 'Minor/patch bumps with safe auto‑merge', href: '/automation' },
+              { title: 'Live Workflows', desc: 'Observe pipelines running 24/7', href: 'https://github.com/Zion-Holdings/zion.app/actions', external: true },
+            ].map((suite) => (
+              <article key={suite.title} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <h3 className="text-lg font-semibold">{suite.title}</h3>
+                <p className="mt-1 text-sm text-white/75">{suite.desc}</p>
+                {suite.href && (
+                  suite.external ? (
+                    <a href={suite.href} target="_blank" rel="noopener" className="mt-3 inline-block text-sm text-cyan-300 hover:text-cyan-200 underline">Open</a>
+                  ) : (
+                    <Link href={suite.href}><a className="mt-3 inline-block text-sm text-cyan-300 hover:text-cyan-200 underline">Open</a></Link>
+                  )
+                )}
+              </article>
+            ))}
+          </div>
+        </section>
+
         {/* Superpowers */}
         <section className="mx-auto max-w-7xl px-6 pb-14">
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Superpowers</h2>
@@ -136,12 +164,15 @@ export default function MainFrontIndex() {
           <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {[
               { Icon: Zap, title: 'Self‑Improving', desc: 'Agents continuously analyze, invent, and evolve automations.' },
-              { Icon: GitBranch, title: 'Repo Sync', desc: 'Changes are committed and pushed automatically to main.' },
-              { Icon: Cpu, title: 'Zero Ops', desc: 'Runs fully in the cloud—no servers or manual intervention.' },
-              { Icon: ShieldCheck, title: 'Safety‑First', desc: 'Conservative edits with logs, reports, and guardrails.' },
-              { Icon: Rocket, title: 'Scalable', desc: 'Generates domain‑specific factories on demand.' },
-              { Icon: Gauge, title: 'Observability', desc: 'Dashboards, reports, and GitHub Actions artifacts.' },
-            ].map(({ Icon, title, desc }) => (
+              { Icon: GitBranch, title: 'Repo Sync', desc: 'Changes are committed and pushed automatically to main.', href: 'https://github.com/Zion-Holdings/zion.app/commits/main', external: true },
+              { Icon: Cpu, title: 'Zero Ops', desc: 'Runs fully in the cloud—no servers or manual intervention.', href: '/automation' },
+              { Icon: ShieldCheck, title: 'Safety‑First', desc: 'Conservative edits with logs, reports, and guardrails.', href: '/automation' },
+              { Icon: Rocket, title: 'Scalable', desc: 'Generates domain‑specific factories on demand.', href: '/automation' },
+              { Icon: Gauge, title: 'Observability', desc: 'Dashboards, reports, and GitHub Actions artifacts.', href: 'https://github.com/Zion-Holdings/zion.app/actions', external: true },
+              { Icon: Gauge, title: 'Performance & A11y', desc: 'Continuously audits performance and accessibility.', href: '/site-health' },
+              { Icon: Cpu, title: 'Content & SEO', desc: 'Curates content and tunes metadata for reach.', href: '/newsroom' },
+              { Icon: ShieldCheck, title: 'Link Integrity', desc: 'Finds and prevents broken links across the site.', href: '/site-health' },
+            ].map(({ Icon, title, desc, href, external }) => (
               <article key={title} className="group glow-card relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md hover:border-cyan-400/30">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
                 <div className="flex items-center gap-3">
@@ -149,6 +180,13 @@ export default function MainFrontIndex() {
                   <h3 className="text-lg font-semibold">{title}</h3>
                 </div>
                 <p className="mt-2 text-sm text-white/75">{desc}</p>
+                {href && (
+                  external ? (
+                    <a href={href} target="_blank" rel="noopener" className="mt-3 inline-block text-sm text-cyan-300 hover:text-cyan-200 underline">Learn more</a>
+                  ) : (
+                    <Link href={href}><a className="mt-3 inline-block text-sm text-cyan-300 hover:text-cyan-200 underline">Learn more</a></Link>
+                  )
+                )}
               </article>
             ))}
           </div>
@@ -200,13 +238,21 @@ export default function MainFrontIndex() {
           <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-3">
             {[
               { title: 'Code Quality & Refactors', desc: 'Lints, fixes, and proposes refactors with type‑safety improvements.' },
-              { title: 'Performance & A11y', desc: 'Optimizes bundles, assets, and accessibility with continuous checks.' },
-              { title: 'Content & SEO', desc: 'Curates content, updates promotions, and tunes metadata for reach.' },
+              { title: 'Performance & A11y', desc: 'Optimizes bundles, assets, and accessibility with continuous checks.', href: '/site-health' },
+              { title: 'Content & SEO', desc: 'Curates content, updates promotions, and tunes metadata for reach.', href: '/newsroom' },
+              { title: 'Observability & Reports', desc: 'Dashboards, CI artifacts, and live status pages.', href: 'https://github.com/Zion-Holdings/zion.app/actions', external: true },
+              { title: 'Guardrails & Safety', desc: 'Layered checks for stable, conservative delivery.', href: '/automation' },
+              { title: 'Zero‑Ops Cloud', desc: 'Runs continuously without manual intervention.', href: '/automation' },
             ].map((c) => (
               <article key={c.title} className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl">
                 <div className="absolute right-0 top-0 h-24 w-24 rounded-bl-[4rem] bg-cyan-400/10 blur-2xl" />
                 <h3 className="text-lg font-semibold">{c.title}</h3>
                 <p className="mt-1 text-sm text-white/75">{c.desc}</p>
+                {c.href && (c.external ? (
+                  <a href={c.href} target="_blank" rel="noopener" className="mt-3 inline-block text-sm text-cyan-300 hover:text-cyan-200 underline">Details</a>
+                ) : (
+                  <Link href={c.href}><a className="mt-3 inline-block text-sm text-cyan-300 hover:text-cyan-200 underline">Details</a></Link>
+                ))}
               </article>
             ))}
           </div>
@@ -239,6 +285,8 @@ export default function MainFrontIndex() {
               'Rapid feedback loop with safe, incremental edits',
               'Continuous delivery directly to main branch',
               'Fewer regressions via layered checks and reports',
+              'Higher velocity with automated maintenance',
+              'Cohesive UX improvements with consistent design language',
             ].map((b) => (
               <div key={b} className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-md">
                 <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]" />
