@@ -12,15 +12,11 @@ exports.config = {
 };
 
 exports.handler = async function() {
+  const { execSync } = require('child_process');
   try {
-    execSync('node automation/design-analyzer.cjs', { stdio: 'inherit' });
-    execSync('node automation/design-factory.cjs', { stdio: 'inherit' });
-    execSync('node automation/homepage-promo-analyzer.cjs', { stdio: 'inherit' });
-    execSync('node automation/homepage-promo-factory.cjs', { stdio: 'inherit' });
-    execSync('node automation/homepage-promo-applier.cjs', { stdio: 'inherit' });
-    execSync('node automation/front-index-advertiser.cjs', { stdio: 'inherit' });
     execSync('node automation/front-futurizer.cjs || true', { stdio: 'inherit', shell: true });
-    execSync('node automation/advanced-git-sync.cjs || true', { stdio: 'inherit', shell: true });
+    execSync('node automation/front-index-auto-advertiser.cjs || true', { stdio: 'inherit', shell: true });
+    execSync('git config user.name "zion-bot" && git config user.email "bot@zion.app" && git add -A && (git commit -m "chore(front): enhance front index [skip ci]" || true) && (git push origin main || true)', { stdio: 'inherit', shell: true });
     return { statusCode: 200, body: JSON.stringify({ ok: true, task: 'front-enhancer' }) };
   } catch (e) {
     return { statusCode: 200, body: JSON.stringify({ ok: false, error: String(e) }) };

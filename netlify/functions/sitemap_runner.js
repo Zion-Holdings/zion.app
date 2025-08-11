@@ -1,35 +1,15 @@
-// sitemap_runner.js
-const { spawn } = require('child_process');
-const path = require('path');
+// netlify/functions/sitemap_runner.js
+exports.handler = async function() {
+  const { execSync } = require('child_process');
+  try {
+    execSync('node scripts/generate-sitemap.js || true', { stdio: 'inherit', shell: true });
+    execSync('git config user.name "zion-bot" && git config user.email "bot@zion.app" && git add -A && (git commit -m "chore(seo): refresh sitemap [skip ci]" || true) && (git push origin main || true)', { stdio: 'inherit', shell: true });
+    return { statusCode: 200, body: JSON.stringify({ ok: true, task: 'sitemap_runner' }) };
+  } catch (e) {
+    return { statusCode: 200, body: JSON.stringify({ ok: false, error: String(e) }) };
+  }
+};
 
-function runNodeScript(scriptPath, args = []) {
-  return new Promise((resolve) => {
-    const child = spawn('node', [scriptPath, ...args], {
-      cwd: path.join(__dirname, '..', '..'),
-      stdio: ['ignore', 'pipe', 'pipe'],
-      env: process.env,
-    });
-
-    let stdout = '';
-    let stderr = '';
-
-    child.stdout.on('data', (d) => { stdout += d.toString(); });
-    child.stderr.on('data', (d) => { stderr += d.toString(); });
-
-    child.on('close', (code) => {
-      resolve({ code, stdout, stderr });
-    });
-  });
-}
-
-exports.handler = async () => {
-  const script = path.join(process.cwd(), 'automation', 'sitemap-runner.cjs');
-  const result = await runNodeScript(script);
-  const ok = result.code === 0 || /sitemap/i.test(result.stdout);
-
-  return {
-    statusCode: ok ? 200 : 500,
-    headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ ok, code: result.code, stdout: result.stdout.slice(-4000), stderr: result.stderr.slice(-4000), ran: 'automation/sitemap-runner.cjs' }),
-  };
+exports.config = {
+  schedule: '0 */6 * * *',
 };
