@@ -21,7 +21,8 @@ function buildTiles() {
     { href: '/reports/seo', label: 'AI SEO Auditor', tagline: 'Continuous on‑site improvements' },
     { href: '/reports/ai-trends', label: 'AI Trends', tagline: 'Signals for new automations' },
     { href: '/newsroom', label: 'Newsroom', tagline: 'Autonomous updates & highlights' },
-    { href: '/.netlify/functions/docs-index-runner', label: 'Docs', tagline: 'Technical notes & guides' }
+    { href: '/.netlify/functions/docs-index-runner', label: 'Docs', tagline: 'Technical notes & guides' },
+    { href: '/reports/ux/index.html', label: 'UX Heuristics', tagline: 'A11y and UX checks' },
     { href: '/newsroom', label: 'AI Changelog', tagline: 'Summarized autonomous changes' }
   ];
 
