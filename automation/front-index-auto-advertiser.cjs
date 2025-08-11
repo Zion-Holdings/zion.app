@@ -39,14 +39,20 @@ function discoverInternalCards() {
   const pagesDir = path.join(ROOT, 'pages');
   const candidates = [
     { href: '/automation', label: 'Automation Hub', desc: 'Factories, agents, and live workflows' },
+    { href: '/automation#features', label: 'Automation Features', desc: 'Deep dive into what agents can do' },
+    { href: '/automation#capabilities', label: 'Capabilities', desc: 'What the platform can automate' },
+    { href: '/automation#benefits', label: 'Benefits', desc: 'Outcomes and ROI from autonomous agents' },
+    { href: '/automation#feature-factories', label: 'Feature Factories', desc: 'Generators for product features' },
     { href: '/site-health', label: 'Site Health', desc: 'A11y, performance, and link dashboards' },
     { href: '/reports/seo', label: 'AI SEO Auditor', desc: 'Continuous on‑site SEO improvements' },
     { href: '/reports/ai-trends', label: 'AI Trends Radar', desc: 'Signals that inspire new automations' },
     { href: '/newsroom', label: 'Newsroom', desc: 'Curated updates and product evolution highlights' },
+    { href: '/main/front', label: 'Front Systems Hub', desc: 'Curated, futuristic front experience' },
   ];
 
   function existsRoute(route) {
-    const parts = route.split('/').filter(Boolean);
+    const routeNoHash = (route || '').split('#')[0];
+    const parts = routeNoHash.split('/').filter(Boolean);
     if (parts.length === 0) return false;
     const dir = path.join(pagesDir, ...parts);
     const fileIdx = path.join(pagesDir, ...parts, 'index.tsx');
@@ -71,8 +77,10 @@ function discoverExternalCards() {
   // External docs and AI changelog
   cards.push({ type: 'external', href: `${repoUrl}/tree/main/docs`, label: 'Docs & Guides', desc: 'Technical notes and architecture' });
   cards.push({ type: 'external', href: `${repoUrl}/blob/main/docs/CHANGELOG_AI.md`, label: 'AI Changelog', desc: 'Summarized autonomous changes' });
-  // Live pipelines (for transparency; automation is Node-based here, not GHA-bound)
+  // Live pipelines (transparency; source-of-truth now Netlify scheduled functions)
   cards.push({ type: 'external', href: `${repoUrl}/actions`, label: 'Live Pipelines', desc: 'CI logs & artifacts 24/7' });
+  // Company site
+  cards.push({ type: 'external', href: 'https://ziontechgroup.com', label: 'Zion Cloud', desc: 'Deployments and cloud platform' });
 
   return cards;
 }
@@ -115,7 +123,7 @@ function replaceBetweenMarkers(source, startMarker, endMarker, replacement) {
 
   const internal = discoverInternalCards();
   const external = discoverExternalCards();
-  const items = [...internal, ...external].slice(0, 16);
+  const items = [...internal, ...external].slice(0, 20);
   const tsxBlock = generateSectionTSX(items);
 
   const original = fs.readFileSync(FRONT_PAGE, 'utf8');
