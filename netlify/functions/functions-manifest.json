@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-11T23:01:07.075Z",
+  "generatedAt": "2025-08-11T23:10:25.169Z",
   "functions": [
     "a11y-audit-runner",
     "ai-changelog-runner",
@@ -22,6 +22,7 @@
     "deps-auto-upgrade-runner",
     "docs-index-runner",
     "docs-search-index-runner",
+    "embed-health-audit-runner",
     "external-link-check-runner",
     "fast-front-promoter",
     "fast-orchestrator",
@@ -55,6 +56,7 @@
     "newsroom-auto-publisher",
     "newsroom-runner",
     "og-image-update-runner",
+    "orphan-page-linker-runner",
     "readme-advertiser",
     "redirect-healer",
     "redirect-manager",

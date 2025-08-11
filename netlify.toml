@@ -167,6 +167,10 @@
   schedule = "53 */6 * * *"
 
 [[scheduled.functions]]
+  name = "embed-health-audit-runner"
+  schedule = "17 */6 * * *"
+
+[[scheduled.functions]]
   name = "redirect-healer"
   schedule = "*/15 * * * *"
 
@@ -179,9 +183,12 @@
   schedule = "*/30 * * * *"
 
 [[scheduled.functions]]
+  name = "orphan-page-linker-runner"
+  schedule = "13 */6 * * *"
+
+[[scheduled.functions]]
   name = "a11y-audit-runner"
-  schedule = "*/20 * * * *"}  
-```
+  schedule = "*/20 * * * *"
 
 [[scheduled.functions]]
   name = "todo-summary-runner"
