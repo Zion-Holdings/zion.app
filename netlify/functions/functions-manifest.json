@@ -1,11 +1,12 @@
 {
-  "generatedAt": "2025-08-11T23:39:31.045Z",
+  "generatedAt": "2025-08-11T23:50:23.822Z",
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
     "ai-changelog-runner",
     "ai-trends-radar-runner",
     "auto-scheduler",
+    "automation-health",
     "automation-matrix",
     "autonomous-invention-orchestrator",
     "broken-image-scanner",
@@ -55,6 +56,7 @@
     "newsroom-auto-publisher",
     "newsroom-runner",
     "og-image-update-runner",
+    "ops-consolidator",
     "orphan-pages-detector",
     "pagespeed-insights-runner",
     "readme-advertiser",
@@ -77,6 +79,14 @@
     "ui-enhancer",
     "ultrafast-front-orchestrator",
     "ultrafast-orchestrator",
-    "unused-media-scanner"
+    "unused-media-scanner",
+    {
+      "name": "ops-consolidator",
+      "path": "netlify/functions/ops-consolidator.js"
+    },
+    {
+      "name": "automation-health",
+      "path": "netlify/functions/automation-health.js"
+    }
   ]
 }
