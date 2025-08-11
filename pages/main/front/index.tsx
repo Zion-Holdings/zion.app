@@ -46,12 +46,12 @@ export default function MainFrontIndex() {
       </div>
 
       {/* Header */}
-      <header className="relative z-10">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
+      <header className="sticky top-0 z-30 border-b border-white/10 bg-slate-950/70 backdrop-blur">
+        <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <div className="text-2xl font-bold tracking-wide">
             <span className="bg-gradient-to-r from-fuchsia-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent drop-shadow-neon">Zion</span>
           </div>
-          <div className="hidden gap-6 md:flex">
+          <div className="hidden items-center gap-6 md:flex">
             <Link href="/"><a className="text-white/80 hover:text-white">Home</a></Link>
             <Link href="#command-center"><a className="text-white/80 hover:text-white">Command</a></Link>
             <Link href="#features"><a className="text-white/80 hover:text-white">Features</a></Link>
@@ -59,6 +59,7 @@ export default function MainFrontIndex() {
             <Link href="#benefits"><a className="text-white/80 hover:text-white">Benefits</a></Link>
             <Link href="#reports"><a className="text-white/80 hover:text-white">Reports</a></Link>
             <Link href="/automation"><a className="text-white/80 hover:text-white">Automations</a></Link>
+            <Link href="/automation"><a className="rounded-lg bg-gradient-to-r from-fuchsia-500 to-cyan-500 px-4 py-2 text-sm font-semibold shadow-[0_0_18px_rgba(34,211,238,0.25)] hover:shadow-[0_0_28px_rgba(34,211,238,0.45)]">Launch Hub</a></Link>
           </div>
         </nav>
       </header>
@@ -142,6 +143,25 @@ export default function MainFrontIndex() {
             </div>
           </div>
         </motion.section>
+
+        {/* Floating Quick-Nav Dock */}
+        <aside className="fixed left-4 top-1/2 z-30 hidden -translate-y-1/2 lg:block">
+          <nav aria-label="Quick section navigation" className="space-y-2">
+            {[
+              ['#command-center', 'Command'],
+              ['#features', 'Features'],
+              ['#capabilities', 'Capabilities'],
+              ['#benefits', 'Benefits'],
+              ['#feature-map', 'Feature Map'],
+              ['#reports', 'Reports'],
+              ['#guardrails', 'Guardrails'],
+            ].map(([href, label]) => (
+              <a key={href} href={href} className="block rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/75 backdrop-blur-md hover:border-cyan-400/40 hover:text-white">
+                {label}
+              </a>
+            ))}
+          </nav>
+        </aside>
 
         {/* Command Center */}
         <section id="command-center" className="mx-auto max-w-7xl px-6 pb-14">
