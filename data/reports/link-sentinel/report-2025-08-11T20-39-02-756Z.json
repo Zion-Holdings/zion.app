@@ -1,0 +1,220 @@
+{
+  "generatedAt": "2025-08-11T20:39:02.756Z",
+  "results": [
+    {
+      "url": "#command-center",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#features",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#feature-map",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#suites",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#capabilities",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#use-cases",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#pillars",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#benefits",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#templates",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#demos",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#highlights",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#cases",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#reports",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#roadmap",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#guardrails",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/tree/main/docs",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/tree/main/automation",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/actions",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://www.netlify.com/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://supabase.com/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://www.framer.com/motion/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/trump-administration-stops-illegal-freeze-of-5b-ev-charger-funds-after-losing-in-court/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/poshmark-ceo-and-founder-to-step-down/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/ford-throws-out-henry-fords-assembly-line-to-make-low-cost-evs-in-america/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/elon-musk-confirms-shutdown-of-tesla-dojo-an-evolutionary-dead-end/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/nvidia-unveils-new-cosmos-world-models-other-infra-for-physical-applications-of-ai/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/10/security-flaws-in-a-carmakers-web-portal-let-one-hacker-remotely-unlock-cars-from-anywhere/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/10/stanford-sticks-with-legacy-admissions/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/10/after-researchers-unmasked-a-prolific-sms-scammer-a-new-operation-has-emerged-in-its-wake/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/revel-shuts-down-its-ride-hail-business-to-focus-on-ev-charging/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/nvidia-amd-may-sell-high-end-ai-chips-to-china-if-they-pay-us-a-cut/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/apples-new-siri-may-allow-users-to-operate-apps-just-using-voice/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/nigeria-profitable-food-delivery-chowdeck-lands-9m-from-novastar-y-combinator/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/10/truemeds-challenged-how-indians-buy-medicine-and-saw-a-3-6x-jump-in-valuation/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/10/the-hidden-cost-of-living-amid-mark-zuckerbergs-110m-compound/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/10/the-computer-science-dream-has-become-a-nightmare/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/08/sam-altman-addresses-bumpy-gpt-5-rollout-bringing-4o-back-and-the-chart-crime/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/07/tesla-shuts-down-dojo-the-ai-training-supercomputer-that-musk-said-would-be-key-to-full-self-driving/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/06/key-sections-of-the-us-constitution-deleted-from-governments-website/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/06/instagram-takes-on-snapchat-with-new-instagram-map/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/06/google-says-hackers-stole-its-customers-data-in-a-breach-of-its-salesforce-database/",
+      "ok": true,
+      "status": 200
+    }
+  ]
+}
