@@ -1,0 +1,31 @@
+const path = require('path');
+const { exec } = require('child_process');
+
+module.exports.config = { schedule: '0 */12 * * *' };
+
+function run(command) {
+  return new Promise((resolve) => {
+    const rootCwd = path.resolve(__dirname, '../../');
+    const child = exec(command, { cwd: rootCwd, env: process.env }, (error, stdout, stderr) => {
+      const output = stdout ? stdout.toString() : '';
+      const errors = stderr ? stderr.toString() : '';
+      resolve({ code: error ? error.code || 1 : 0, output, errors });
+    });
+    if (child.stdout) child.stdout.pipe(process.stdout);
+    if (child.stderr) child.stderr.pipe(process.stderr);
+  });
+}
+
+module.exports.handler = async function() {
+  const steps = [];
+  steps.push({ name: 'docs-pages-indexer', cmd: 'node automation/docs-pages-indexer.cjs' });
+  steps.push({ name: 'generate-search-index', cmd: 'npm run search:index' });
+
+  const results = [];
+  for (const step of steps) {
+    const result = await run(step.cmd);
+    results.push({ step: step.name, code: result.code, output: result.output.slice(0, 2000), errors: result.errors.slice(0, 2000) });
+  }
+  const failed = results.filter(r => r.code !== 0);
+  return { statusCode: failed.length ? 207 : 200, body: JSON.stringify({ message: failed.length ? 'Completed with some failures' : 'Completed successfully', results }, null, 2) };
+};
