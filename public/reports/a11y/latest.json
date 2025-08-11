@@ -1,0 +1,65 @@
+{
+  "generatedAt": "2025-08-11T23:12:51.447Z",
+  "rows": [
+    {
+      "file": "/pages/_app.tsx",
+      "issues": [
+        {
+          "type": "heading-missing-h1",
+          "message": "File does not contain an <h1> heading"
+        }
+      ]
+    },
+    {
+      "file": "/pages/index.tsx",
+      "issues": []
+    },
+    {
+      "file": "/pages/newsroom.tsx",
+      "issues": []
+    },
+    {
+      "file": "/pages/site-health.tsx",
+      "issues": []
+    },
+    {
+      "file": "/pages/reports/ai-trends.tsx",
+      "issues": [
+        {
+          "type": "heading-missing-h1",
+          "message": "File does not contain an <h1> heading"
+        }
+      ]
+    },
+    {
+      "file": "/pages/reports/seo.tsx",
+      "issues": [
+        {
+          "type": "heading-missing-h1",
+          "message": "File does not contain an <h1> heading"
+        }
+      ]
+    },
+    {
+      "file": "/pages/main/front/index.tsx",
+      "issues": []
+    },
+    {
+      "file": "/pages/front/index.tsx",
+      "issues": [
+        {
+          "type": "heading-missing-h1",
+          "message": "File does not contain an <h1> heading"
+        }
+      ]
+    },
+    {
+      "file": "/pages/automation/index.tsx",
+      "issues": []
+    },
+    {
+      "file": "/components/Landing.tsx",
+      "issues": []
+    }
+  ]
+}

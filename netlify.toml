@@ -186,3 +186,16 @@
 [[scheduled.functions]]
   name = "auto-scheduler"
   schedule = "*/15 * * * *" # every 15 minutes
+
+# Newly added autonomous scanners
+[[scheduled.functions]]
+  name = "a11y-audit-runner"
+  schedule = "17 */6 * * *" # every 6 hours, offset to avoid thundering herd
+
+[[scheduled.functions]]
+  name = "license-compliance-runner"
+  schedule = "29 */12 * * *" # every 12 hours
+
+[[scheduled.functions]]
+  name = "secrets-leak-scanner-runner"
+  schedule = "7 * * * *" # every hour

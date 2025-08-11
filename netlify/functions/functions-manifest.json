@@ -1,6 +1,7 @@
 {
-  "generatedAt": "2025-08-11T23:03:51.129Z",
+  "generatedAt": "2025-08-11T23:12:37.894Z",
   "functions": [
+    "a11y-audit-runner",
     "ai-changelog-runner",
     "auto-scheduler",
     "automation-matrix",
@@ -37,6 +38,7 @@
     "hyper-front-index-accelerator",
     "image-optimizer-runner",
     "innovation-lab",
+    "license-compliance-runner",
     "link-and-health-scheduler",
     "link-crawler",
     "maintenance-scheduler",
@@ -55,6 +57,7 @@
     "schedule-homepage",
     "schedule-knowledge-graph",
     "schedule-site-health",
+    "secrets-leak-scanner-runner",
     "security-audit",
     "security-audit-runner",
     "site-crawler",
