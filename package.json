@@ -15,6 +15,11 @@
     "npm": ">=10.0.0"
   },
   "scripts": {
+    "pm2:start": "pm2 start ecosystem.config.cjs --update-env",
+    "pm2:stop": "pm2 stop ecosystem.config.cjs || true",
+    "pm2:restart": "pm2 restart ecosystem.config.cjs || pm2 start ecosystem.config.cjs --update-env",
+    "pm2:status": "pm2 status",
+    "pm2:logs": "pm2 logs --lines 200"
     "functions:run": "node scripts/run-netlify-functions-locally.cjs",
     "functions:run:execute": "node scripts/run-netlify-functions-locally.cjs --execute",
     "front:advertise": "node automation/front-index-advertiser.cjs",
@@ -202,6 +207,10 @@
     "health:start": "node automation/auto-health-monitor/index.mjs",
     "health:dev": "nodemon automation/auto-health-monitor/index.mjs",
     "automation:all:plus": "npm run automation:all & npm run health:start",
+    "automation:pm2": "npm run pm2:start && pm2 save",
+    "automation:pm2:restart": "npm run pm2:restart && pm2 save",
+    "automation:pm2:status": "npm run pm2:status",
+    "automation:pm2:logs": "npm run pm2:logs"
     "postautomation": "npm run automation:git-sync",
     "lint:staged": "lint-staged",
     "ui-evolution:start": "node automation/ui-evolution-launcher.js start",
