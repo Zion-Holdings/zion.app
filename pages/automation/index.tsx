@@ -56,6 +56,16 @@ export default function AutomationHub() {
             <p className="text-white/70">Runs every 5 minutes, including sitemap and UI futurizer steps.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/continuous-orchestrator" target="_blank" rel="noopener">Trigger / View</a>
           </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Features/Capabilities/Benefits Advertiser</h2>
+            <p className="text-white/70">Continuously advertises new features with deep links on the front pages.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/features-capabilities-benefits-advertiser" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Hyper Front Index Accelerator</h2>
+            <p className="text-white/70">Ultra-fast front index futurizer and directory builder.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/hyper-front-index-accelerator" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
         </ul>
       </main>
     </div>
