@@ -4,6 +4,7 @@
 
 [build.environment]
   NODE_VERSION = "20"
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
   # When triggering chained builds via build hook, set NETLIFY_RERUN_CHAIN=1 in the hook payload/env
 
 [functions]
