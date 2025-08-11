@@ -220,8 +220,8 @@ export default function Home() {
                 <p className="mt-1 text-sm text-white/75">{tool.desc}</p>
                 <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
               </a>
-            ))
-          </div>
+                        ))}
+           </div>
         </section>
 
         {/* AUTO-GENERATED: HOME_UPDATER_START */
