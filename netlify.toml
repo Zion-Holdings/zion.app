@@ -220,3 +220,15 @@
 [[scheduled.functions]]
   name = "branch-cleanup-runner"
   schedule = "0 3 * * *" # daily at 03:00 UTC
+
+[[scheduled.functions]]
+  name = "a11y-audit-runner"
+  schedule = "23 */6 * * *" # every 6 hours
+
+[[scheduled.functions]]
+  name = "internal-link-sentinel-runner"
+  schedule = "7 */6 * * *" # every 6 hours
+
+[[scheduled.functions]]
+  name = "content-freshness-runner"
+  schedule = "5 */12 * * *" # every 12 hours
