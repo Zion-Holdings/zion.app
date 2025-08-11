@@ -213,10 +213,12 @@ export default function MainFrontIndex() {
             </div>
 
             {/* Quick Links */}
-            <div className="mx-auto mt-8 flex max-w-3xl flex-wrap justify-center gap-2">
+                        <div className="mx-auto mt-8 flex max-w-3xl flex-wrap justify-center gap-2">
               {[
                 ['Automation Hub', '/automation'],
                 ['SEO Audit', '/reports/seo'],
+                ['Performance Audit', '/reports/performance'],
+                ['Deps Audit', '/reports/deps'],
                 ['AI Trends', '/reports/ai-trends'],
                 ['Newsroom', '/newsroom'],
                 ['Site Health', '/site-health'],

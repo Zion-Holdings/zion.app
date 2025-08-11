@@ -176,16 +176,29 @@
 
 # New intelligent cloud automations
 [[scheduled.functions]]
-  name = "innovation-lab"
-  schedule = "*/10 * * * *" # every 10 minutes
+name = "innovation-lab"
+schedule = "*/10 * * * *" # every 10 minutes
 
 [[scheduled.functions]]
-  name = "broken-image-scanner"
-  schedule = "0 */6 * * *" # every 6 hours
+name = "broken-image-scanner"
+schedule = "0 */6 * * *" # every 6 hours
 
 [[scheduled.functions]]
-  name = "auto-scheduler"
-  schedule = "*/15 * * * *" # every 15 minutes
+name = "auto-scheduler"
+schedule = "*/15 * * * *" # every 15 minutes
+
+# Newly added cloud automations
+[[scheduled.functions]]
+name = "performance-audit-runner"
+schedule = "0 * * * *" # hourly
+
+[[scheduled.functions]]
+name = "unused-deps-runner"
+schedule = "17 */6 * * *" # every 6 hours
+
+[[scheduled.functions]]
+name = "sitemap-pinger"
+schedule = "0 */2 * * *" # every 2 hours
 
 # From main (keep)
 [[scheduled.functions]]
