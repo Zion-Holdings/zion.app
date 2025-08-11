@@ -85,6 +85,7 @@ function discoverExternalLinks() {
   return [
     { type: 'internal', href: '/.netlify/functions/docs-index-runner', label: 'Docs — technical notes & guides', tagline: 'Documentation' },
     { type: 'internal', href: '/newsroom', label: 'AI Changelog — highlights', tagline: 'Summarized updates' },
+    { type: 'internal', href: '/.netlify/functions/autonomous-innovation-generator', label: 'Autonomous Innovation Generator', tagline: 'Front promos + homepage refresh' },
   ];
 }
 
