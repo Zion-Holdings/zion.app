@@ -39,7 +39,9 @@ export default function MainFrontIndex() {
         {/* Neural mesh lines */}
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(800px_400px_at_10%_-10%,rgba(34,211,238,0.08),transparent),radial-gradient(600px_400px_at_110%_10%,rgba(168,85,247,0.08),transparent)]" />
         <div className="pointer-events-none absolute inset-0 opacity-20 [background:repeating-linear-gradient(0deg,transparent,transparent_31px,rgba(255,255,255,.06)_32px),repeating-linear-gradient(90deg,transparent,transparent_31px,rgba(255,255,255,.06)_32px)] [mask-image:radial-gradient(ellipse_at_center,black,transparent_65%)]" />
-        {/* Diagonal animated beams */}
+        {/* Futuristic beams layers */}
+        <div className="absolute inset-0 beams-layer beams-45" />
+        <div className="absolute inset-0 beams-layer beams--45" />
         <div className="pointer-events-none absolute inset-0 beams opacity-[0.06]" />
       </div>
 
@@ -139,6 +141,32 @@ export default function MainFrontIndex() {
             </div>
           </div>
         </motion.section>
+
+        {/* Command Center */}
+        <section className="mx-auto max-w-7xl px-6 pb-14">
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Command Center</h2>
+          <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { title: 'Automation Hub', desc: 'Runbooks, factories, and live autonomous agents.', href: '/automation' },
+              { title: 'Site Health', desc: 'A11y, performance, and link‑health dashboards.', href: '/site-health' },
+              { title: 'SEO Audit', desc: 'Continuous on‑site SEO scans with proposed diffs.', href: '/reports/seo' },
+              { title: 'AI Trends', desc: 'Intelligence signals from the AI/cloud ecosystem.', href: '/reports/ai-trends' },
+              { title: 'Newsroom', desc: 'Curated updates and product evolution highlights.', href: '/newsroom' },
+              { title: 'GitHub Actions', desc: 'Observe pipelines running 24/7 in the cloud.', href: 'https://github.com/Zion-Holdings/zion.app/actions', external: true },
+            ].map((card) => (
+              <article key={card.title} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 holo tilt-on-hover">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <h3 className="text-lg font-semibold">{card.title}</h3>
+                <p className="mt-1 text-sm text-white/75">{card.desc}</p>
+                {card.external ? (
+                  <a href={card.href} target="_blank" rel="noopener" className="mt-3 inline-block text-sm text-cyan-300 hover:text-cyan-200 underline">Open</a>
+                ) : (
+                  <Link href={card.href as string}><a className="mt-3 inline-block text-sm text-cyan-300 hover:text-cyan-200 underline">Open</a></Link>
+                )}
+              </article>
+            ))}
+          </div>
+        </section>
 
         {/* Suites */}
         <motion.section
@@ -637,6 +665,26 @@ export default function MainFrontIndex() {
             </div>
           </div>
         </motion.section>
+
+        {/* Quick Start */}
+        <section className="mx-auto max-w-7xl px-6 pb-20">
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Quick Start</h2>
+          <div className="mx-auto mt-6 max-w-4xl grid grid-cols-1 gap-4 md:grid-cols-4">
+            {[
+              ['Explore', 'Browse live automations', '/automation'],
+              ['Audit', 'Check site health', '/site-health'],
+              ['Optimize', 'Run the SEO auditor', '/reports/seo'],
+              ['Learn', 'Follow AI trends', '/reports/ai-trends'],
+            ].map(([title, desc, href]) => (
+              <Link key={title as string} href={href as string}>
+                <a className="rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-5 text-left backdrop-blur-xl hover:border-cyan-400/30">
+                  <div className="text-sm font-semibold text-white">{title as string}</div>
+                  <div className="mt-1 text-xs text-white/70">{desc as string}</div>
+                </a>
+              </Link>
+            ))}
+          </div>
+        </section>
 
         {/* CTA */}
         <motion.section

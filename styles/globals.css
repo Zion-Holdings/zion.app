@@ -80,6 +80,18 @@ html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 .marquee { position: relative; }
 .marquee__track { display: inline-flex; align-items: center; white-space: nowrap; animation: marquee 22s linear infinite; }
 
+/* Futuristic laser beams */
+.beams-layer {
+  pointer-events: none;
+  background:
+    linear-gradient(45deg, transparent 48%, rgba(34,211,238,0.08) 50%, transparent 52%),
+    radial-gradient(closest-side, rgba(168,85,247,0.06), transparent);
+  mix-blend-mode: screen;
+  animation: beamsPulse 6s ease-in-out infinite;
+}
+.beams-45 { mask-image: linear-gradient(45deg, transparent 20%, black 40%, black 60%, transparent 80%); }
+.beams--45 { mask-image: linear-gradient(-45deg, transparent 20%, black 40%, black 60%, transparent 80%); }
+
 /* Keyframes */
 @keyframes float { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-10px) } }
 @keyframes float-slow { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-6px) } }
@@ -89,6 +101,7 @@ html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 @keyframes tilt { to { --angle: 360deg } }
 @keyframes shimmer { 0% { background-position: 0% 50% } 100% { background-position: 100% 50% } }
 @keyframes marquee { 0% { transform: translateX(0) } 100% { transform: translateX(-50%) } }
+@keyframes beamsPulse { 0%, 100% { opacity: .08; filter: blur(0px); } 50% { opacity: .18; filter: blur(1px); } }
 
 .animate-shimmer { animation: shimmer 6s linear infinite; }
 
