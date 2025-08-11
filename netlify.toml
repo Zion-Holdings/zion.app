@@ -47,3 +47,13 @@
 [[scheduled.functions]]
   name = "fast-front-promoter"
   schedule = "*/15 * * * *" # every 15 minutes
+
+# New: very fast orchestrator for continuous homepage/front refresh
+[[scheduled.functions]]
+  name = "fast-orchestrator"
+  schedule = "*/1 * * * *" # every minute
+
+# Ensure continuous orchestrator runs frequently
+[[scheduled.functions]]
+  name = "continuous-orchestrator"
+  schedule = "*/5 * * * *" # every 5 minutes
