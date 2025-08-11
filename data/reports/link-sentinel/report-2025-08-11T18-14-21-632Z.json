@@ -1,0 +1,240 @@
+{
+  "generatedAt": "2025-08-11T18:14:21.633Z",
+  "results": [
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/actions",
+      "ok": false,
+      "status": 404
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/tree/main/docs",
+      "ok": false,
+      "status": 404
+    },
+    {
+      "url": "#command-center",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#features",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#feature-map",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#suites",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#capabilities",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#use-cases",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#pillars",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#benefits",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#templates",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#demos",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#highlights",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#cases",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#reports",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#roadmap",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#guardrails",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md",
+      "ok": false,
+      "status": 404
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/tree/main/automation",
+      "ok": false,
+      "status": 404
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/blob/main/docs/TODO_REPORT.md",
+      "ok": false,
+      "status": 404
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/blob/main/docs/MEDIA_RELEASE.md",
+      "ok": false,
+      "status": 404
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG.md",
+      "ok": false,
+      "status": 404
+    },
+    {
+      "url": "https://www.netlify.com/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://supabase.com/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://www.framer.com/motion/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app",
+      "ok": false,
+      "status": 404
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/ford-throws-out-henry-fords-assembly-line-to-make-low-cost-evs-in-america/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/elon-musk-confirms-shutdown-of-tesla-dojo-an-evolutionary-dead-end/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/nvidia-unveils-new-cosmos-world-models-other-infra-for-physical-applications-of-ai/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/10/security-flaws-in-a-carmakers-web-portal-let-one-hacker-remotely-unlock-cars-from-anywhere/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/10/stanford-sticks-with-legacy-admissions/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/10/after-researchers-unmasked-a-prolific-sms-scammer-a-new-operation-has-emerged-in-its-wake/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/08/how-to-use-instagram-map-and-protect-your-privacy/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/08/sam-altman-addresses-bumpy-gpt-5-rollout-bringing-4o-back-and-the-chart-crime/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/oceans-new-app-brings-inbox-triage-tasks-and-invites-to-gmail-users/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/made-by-google-2025-how-to-watch-google-debut-the-pixel-10-pixel-watch-4-and-more/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/trump-administration-stops-illegal-freeze-of-5b-ev-charger-funds-after-losing-in-court/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/github-ceo-to-step-down/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/iphone-17-the-thinnest-iphone-ever-and-everything-else-were-expecting-out-of-apples-hardware-event/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/techcrunch-mobility-the-triple-punch-headed-for-automakers/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/electronic-arts-blocks-more-than-300000-attempts-to-cheat-after-launching-battlefield-6-beta/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/revel-shuts-down-its-ride-hail-business-to-focus-on-ev-charging/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/10/the-computer-science-dream-has-become-a-nightmare/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/07/tesla-shuts-down-dojo-the-ai-training-supercomputer-that-musk-said-would-be-key-to-full-self-driving/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/06/key-sections-of-the-us-constitution-deleted-from-governments-website/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/06/instagram-takes-on-snapchat-with-new-instagram-map/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/actions/workflows/autonomous-meta.yml",
+      "ok": false,
+      "status": 404
+    }
+  ]
+}
