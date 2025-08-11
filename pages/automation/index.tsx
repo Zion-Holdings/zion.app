@@ -132,6 +132,16 @@ export default function AutomationHub() {
             <p className="text-white/70">Deletes merged or stale ephemeral branches via GitHub API.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/branch-cleanup-runner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Duplicate Content Detector</h2>
+            <p className="text-white/70">Finds near-duplicate pages/components/docs and publishes a consolidation report.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/duplicate-content-detector" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Unused Media Auditor</h2>
+            <p className="text-white/70">Detects unreferenced images in public/ and writes a report for cleanup.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/unused-media-auditor" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
         </ul>
       </main>
     </div>
