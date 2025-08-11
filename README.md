@@ -1,6 +1,6 @@
 # bolt.new.zion.app
 
-![Automations: 1](https://img.shields.io/badge/Automations-1-informational) ![Pages: 9](https://img.shields.io/badge/Pages-9-success) ![Components: 1](https://img.shields.io/badge/Components-1-blue)
+![Automations: 2](https://img.shields.io/badge/Automations-2-informational) ![Pages: 9](https://img.shields.io/badge/Pages-9-success) ![Components: 1](https://img.shields.io/badge/Components-1-blue)
 
 Autonomous, cloud‑native app with self‑running automations.
 
@@ -29,6 +29,7 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 - /site-health
 
 ### Automations
+- netlify-config.yml
 - netlify-functions-trigger.yml
 
 ### Local Development
