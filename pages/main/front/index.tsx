@@ -939,6 +939,71 @@ export default function MainFrontIndex() {
           </div>
         </motion.section>
 
+        {/* Case Studies & Stories */}
+        <motion.section
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-7xl px-6 pb-14"
+        >
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Case Studies & Stories</h2>
+          <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Real outcomes from autonomous systems at work — dive into detailed write‑ups.</p>
+          <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-3">
+            {[
+              { title: 'UX Lift on Homepage', desc: 'Autonomous design evolution and promo curation.', href: '/newsroom' },
+              { title: 'SEO Wins in 30 Days', desc: 'Continuous audits and safe diffs improved visibility.', href: '/reports/seo' },
+              { title: 'Zero‑Ops Rollouts', desc: 'Pipelines deliver small, safe changes to main.', href: '/automation' },
+            ].map((s) => (
+              <Link key={s.title} href={s.href}>
+                <a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+                  <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                  <h3 className="text-lg font-semibold">{s.title}</h3>
+                  <p className="mt-1 text-sm text-white/75">{s.desc}</p>
+                  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Read more <span aria-hidden>→</span></div>
+                </a>
+              </Link>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* Roadmap & Docs */}
+        <motion.section
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-7xl px-6 pb-16"
+        >
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Roadmap & Docs</h2>
+          <div className="mx-auto mt-6 max-w-5xl grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <a href="https://github.com/Zion-Holdings/zion.app/tree/main/docs" target="_blank" rel="noopener" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-base font-semibold">Documentation</div>
+              <div className="mt-1 text-sm text-white/75">Technical notes and guides for the platform.</div>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>
+            <a href="https://github.com/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md" target="_blank" rel="noopener" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-base font-semibold">AI Changelog</div>
+              <div className="mt-1 text-sm text-white/75">Summarized autonomous changes and highlights.</div>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>
+            <a href="https://github.com/Zion-Holdings/zion.app/issues" target="_blank" rel="noopener" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-base font-semibold">Open Issues</div>
+              <div className="mt-1 text-sm text-white/75">Track roadmap items and discussions.</div>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Browse <span aria-hidden>↗</span></div>
+            </a>
+            <a href="https://github.com/Zion-Holdings/zion.app/actions" target="_blank" rel="noopener" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-base font-semibold">Live Pipelines</div>
+              <div className="mt-1 text-sm text-white/75">Observe builds, checks, and deployments 24/7.</div>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>
+          </div>
+        </motion.section>
+
         {/* Footer */}
         <footer className="mx-auto max-w-7xl px-6 pb-16">
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
