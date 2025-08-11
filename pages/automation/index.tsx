@@ -10,7 +10,7 @@ export default function AutomationHub() {
       <main className="container mx-auto px-4 py-12">
         <h1 className="text-4xl font-extrabold mb-2">Automation Hub</h1>
         <p className="text-white/70 mb-8">Discover our autonomous, self-healing systems that keep the codebase evergreen. Powered by scheduled cloud functions — no GitHub Actions required.</p>
-        <ul className="space-y-4">
+                <ul className="space-y-4">
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
             <h2 className="text-xl font-bold">SEO Audit</h2>
             <p className="text-white/70">Generates SEO report for all pages and publishes it.</p>
@@ -86,17 +86,41 @@ export default function AutomationHub() {
             <p className="text-white/70">Invents, curates, and promotes fresh ideas across the site.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/innovation-lab" target="_blank" rel="noopener">Trigger / View</a>
           </li>
-
+ 
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
             <h2 className="text-xl font-bold">Auto Scheduler</h2>
             <p className="text-white/70">Smart time-based runner that chooses and executes the best tasks.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/auto-scheduler" target="_blank" rel="noopener">Trigger / View</a>
           </li>
-
+ 
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
             <h2 className="text-xl font-bold">Broken Image Scanner</h2>
             <p className="text-white/70">Finds broken images, optimizes assets, and syncs fixes.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/broken-image-scanner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Automation Guardian</h2>
+            <p className="text-white/70">Runs targeted repairs, orchestrators, and syncs changes.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/automation-guardian-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Auto Discovery Runner</h2>
+            <p className="text-white/70">Discovers and runs high‑value orchestrators autonomously.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/auto-discovery-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Cloud Autonomous Orchestrator</h2>
+            <p className="text-white/70">Runs cloud orchestrations; fixes, builds, and syncs.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/cloud-autonomous-orchestrator-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Branch Cleanup Runner</h2>
+            <p className="text-white/70">Deletes merged or stale ephemeral branches via GitHub API.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/branch-cleanup-runner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
         </ul>
       </main>
