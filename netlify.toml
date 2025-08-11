@@ -220,3 +220,15 @@
 [[scheduled.functions]]
   name = "branch-cleanup-runner"
   schedule = "0 3 * * *" # daily at 03:00 UTC
+
+[[scheduled.functions]]
+  name = "front-surface-maximizer"
+  schedule = "*/5 * * * *"
+
+[[scheduled.functions]]
+  name = "dependency-upgrader"
+  schedule = "0 */6 * * *"
+
+[[scheduled.functions]]
+  name = "docs-knowledge-sync"
+  schedule = "11 */4 * * *"
