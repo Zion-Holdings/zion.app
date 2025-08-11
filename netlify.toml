@@ -104,3 +104,15 @@
 [[scheduled.functions]]
   name = "hyper-front-index-accelerator"
   schedule = "*/1 * * * *" # every minute
+
+[[scheduled.functions]]
+  name = "ai-trends-radar"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+  name = "seo-audit"
+  schedule = "17 */6 * * *"
+
+[[scheduled.functions]]
+  name = "newsroom-scheduler"
+  schedule = "0 * * * *"
