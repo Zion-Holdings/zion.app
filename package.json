@@ -224,7 +224,10 @@
     "homepage:update": "node automation/homepage-updater.cjs",
     "scan:todo": "node automation/todo-scanner.cjs",
     "scan:registry": "node automation/docs-pages-indexer.cjs",
-    "scan:content": "npm run scan:todo && npm run scan:registry"
+    "scan:content": "npm run scan:todo && npm run scan:registry",
+    "front:update": "node automation/front-page-updater.cjs",
+    "landing:refresh": "npm run homepage:update && node automation/homepage-auto-advertiser.cjs && npm run front:update",
+    "netlify:run:front-enhancer": "node netlify/functions/front-enhancer.js"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
