@@ -218,6 +218,9 @@ export default function MainFrontIndex() {
                 ['Automation Hub', '/automation'],
                 ['SEO Audit', '/reports/seo'],
                 ['AI Trends', '/reports/ai-trends'],
+                ['A11y Landmarks', '/reports/a11y-landmarks'],
+                ['Anchors', '/reports/anchors'],
+                ['Components', '/reports/components'],
                 ['Newsroom', '/newsroom'],
                 ['Site Health', '/site-health'],
               ].map(([label, href]) => (

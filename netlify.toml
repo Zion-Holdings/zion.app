@@ -188,7 +188,6 @@
   schedule = "*/15 * * * *" # every 15 minutes
 
 [[scheduled.functions]]
-[[scheduled.functions]]
   name = "a11y-alt-text-runner"
   schedule = "*/10 * * * *" # every 10 minutes
 
@@ -210,37 +209,6 @@
 
 [[scheduled.functions]]
   name = "deps-auto-upgrade-runner"
-<<<<<<< HEAD
-  schedule = "7 */12 * * *"
-
-# New autonomous cloud scanners
-[[scheduled.functions]]
-  name = "unused-media-scanner"
-  schedule = "*/10 * * * *"
-
-[[scheduled.functions]]
-  name = "orphan-pages-detector"
-  schedule = "*/15 * * * *"
-
-[[scheduled.functions]]
-  name = "component-size-report"
-  schedule = "*/5 * * * *"
-<<<<<<< HEAD
-
-[[scheduled.functions]]
-  name = "license-compliance-auditor"
-  schedule = "0 2 * * 1" # weekly on Monday 02:00 UTC
-
-[[scheduled.functions]]
-  name = "pagespeed-insights-runner"
-  schedule = "11 */6 * * *" # every 6 hours, offset
-=======
-=======
-name = "deps-auto-upgrade-runner"
-schedule = "0 3 * * *"
->>>>>>> Stashed changes
->>>>>>> origin/main
-=======
   schedule = "0 3 * * *"
 
 [[scheduled.functions]]
@@ -250,5 +218,16 @@ schedule = "0 3 * * *"
 [[scheduled.functions]]
   name = "adaptive-orchestrator"
   schedule = "*/5 * * * *"
->>>>>>> 81e000b0dc (feat(automation): adaptive orchestrator + knowledge pack runner; advertise on homepage; schedule in Netlify)
->>>>>>> origin/main
+
+# Newly added innovative automations
+[[scheduled.functions]]
+  name = "components-docs-runner"
+  schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+  name = "internal-anchors-auditor"
+  schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+  name = "a11y-landmarks-runner"
+  schedule = "*/10 * * * *"

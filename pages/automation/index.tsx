@@ -101,6 +101,23 @@ export default function AutomationHub() {
             <p className="text-white/70">Safely bumps minor/patch deps with build verification.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/deps-auto-upgrade-runner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
+
+          {/* Newly added */}
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">A11y Landmarks Auditor</h2>
+            <p className="text-white/70">Checks for main/nav/header/footer landmarks and reports.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/a11y-landmarks-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Internal Anchors Auditor</h2>
+            <p className="text-white/70">Finds in-page anchor links missing matching ids.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/internal-anchors-auditor" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Components Docs Runner</h2>
+            <p className="text-white/70">Generates a live components catalogue and docs.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/components-docs-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
         </ul>
       </main>
     </div>
