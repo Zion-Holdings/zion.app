@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { Cpu, Gauge, GitBranch, Rocket, ShieldCheck, Zap } from 'lucide-react';
+import { Cpu, Gauge, GitBranch, Rocket, ShieldCheck, Zap, Activity, Layers, Server, Bot, Sparkles } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function MainFrontIndex() {
   return (
@@ -32,6 +33,10 @@ export default function MainFrontIndex() {
         {/* Neural mesh lines */}
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(800px_400px_at_10%_-10%,rgba(34,211,238,0.08),transparent),radial-gradient(600px_400px_at_110%_10%,rgba(168,85,247,0.08),transparent)]" />
         <div className="pointer-events-none absolute inset-0 opacity-20 [background:repeating-linear-gradient(0deg,transparent,transparent_31px,rgba(255,255,255,.06)_32px),repeating-linear-gradient(90deg,transparent,transparent_31px,rgba(255,255,255,.06)_32px)] [mask-image:radial-gradient(ellipse_at_center,black,transparent_65%)]" />
+        {/* Cyber grid mask */}
+        <div className="absolute inset-0 cyber-grid opacity-20" />
+        {/* Subtle noise */}
+        <div className="absolute inset-0 noise-overlay" />
       </div>
 
       {/* Header */}
@@ -51,7 +56,7 @@ export default function MainFrontIndex() {
 
       {/* Hero */}
       <main className="relative z-10">
-        <section className="mx-auto max-w-7xl px-6 pt-10 pb-16 md:pt-16 md:pb-24">
+        <motion.section initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mx-auto max-w-7xl px-6 pt-10 pb-16 md:pt-16 md:pb-24">
           <div className="text-center">
             <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-white/70 backdrop-blur-md">
               <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]" />
@@ -64,7 +69,7 @@ export default function MainFrontIndex() {
               Explore the features, capabilities, and benefits that power Zion's autonomous cloud automations — optimized for your front‑of‑house experience.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Link href="/automation"><a className="rounded-xl bg-gradient-to-r from-fuchsia-500 to-cyan-500 px-6 py-3 font-semibold shadow-[0_0_30px_rgba(34,211,238,0.35)] hover:shadow-[0_0_40px_rgba(34,211,238,0.6)] transition-shadow">Explore Automations</a></Link>
+              <Link href="/automation"><a className="rounded-xl bg-gradient-to-r from-fuchsia-500 to-cyan-500 px-6 py-3 font-semibold shadow-[0_0_30px_rgba(34,211,238,0.35)] hover:shadow-[0_0_40px_rgba(34,211,238,0.6)] transition-shadow glow-pulse">Explore Automations</a></Link>
               <a href="https://github.com/Zion-Holdings/zion.app/actions" target="_blank" rel="noopener" className="rounded-xl border border-white/20 bg-white/5 px-6 py-3 font-semibold backdrop-blur-md hover:bg-white/10">View Live Workflows</a>
             </div>
 
@@ -96,6 +101,8 @@ export default function MainFrontIndex() {
                     'Safety Guardrails',
                     'A11y + Performance',
                     'Observability',
+                    'A/B Experiments',
+                    'Realtime Content',
                   ].flatMap((label) => [label, label]).map((label, idx) => (
                     <span key={`${label}-${idx}`} className="mx-3 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1 text-xs text-white/80 backdrop-blur">
                       <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" /> {label}
@@ -105,10 +112,10 @@ export default function MainFrontIndex() {
               </div>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Superpowers */}
-        <section className="mx-auto max-w-7xl px-6 pb-14">
+        <motion.section initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.6 }} className="mx-auto max-w-7xl px-6 pb-14">
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Superpowers</h2>
           <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-3">
             {[
@@ -116,7 +123,7 @@ export default function MainFrontIndex() {
               { Icon: ShieldCheck, title: 'Safety by Design', desc: 'Layered validations — type checks, builds, a11y, links, and more.' },
               { Icon: GitBranch, title: 'Main Sync', desc: 'Small, reviewable edits committed and pushed continuously.' },
             ].map(({ Icon, title, desc }) => (
-              <article key={title} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30">
+              <article key={title} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 hover-tilt holo-card">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
                 <Icon className="h-6 w-6 text-cyan-300" />
                 <h3 className="mt-3 text-lg font-semibold">{title}</h3>
@@ -124,10 +131,29 @@ export default function MainFrontIndex() {
               </article>
             ))}
           </div>
-        </section>
+        </motion.section>
+
+        {/* What you can build */}
+        <motion.section initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.6 }} className="mx-auto max-w-7xl px-6 pb-14">
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">What you can build</h2>
+          <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-3">
+            {[
+              { Icon: Sparkles, title: 'Automated Landing Pages', desc: 'Spin up conversion‑tuned pages from content and data feeds.' },
+              { Icon: Activity, title: 'Realtime Promotions', desc: 'Autonomously schedule and rotate offers across surfaces.' },
+              { Icon: Layers, title: 'A/B Experiments', desc: 'Continuously propose, launch, and measure UX variations.' },
+            ].map(({ Icon, title, desc }) => (
+              <article key={title} className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30">
+                <div className="absolute right-0 top-0 h-24 w-24 rounded-bl-[4rem] bg-cyan-400/10 blur-2xl" />
+                <Icon className="h-6 w-6 text-cyan-300" />
+                <h3 className="mt-3 text-lg font-semibold">{title}</h3>
+                <p className="mt-1 text-sm text-white/75">{desc}</p>
+              </article>
+            ))}
+          </div>
+        </motion.section>
 
         {/* Features */}
-        <section className="mx-auto max-w-7xl px-6 pb-14">
+        <motion.section initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.6 }} className="mx-auto max-w-7xl px-6 pb-14">
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Features</h2>
           <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {[
@@ -137,6 +163,9 @@ export default function MainFrontIndex() {
               { Icon: ShieldCheck, title: 'Safety‑First', desc: 'Conservative edits with logs, reports, and guardrails.' },
               { Icon: Rocket, title: 'Scalable', desc: 'Generates domain‑specific factories on demand.' },
               { Icon: Gauge, title: 'Observability', desc: 'Dashboards, reports, and GitHub Actions artifacts.' },
+              { Icon: Activity, title: 'Telemetry‑Driven', desc: 'Improves decisions with live analytics and signals.' },
+              { Icon: Layers, title: 'Composable', desc: 'Snap‑together workflows for bespoke outcomes.' },
+              { Icon: Server, title: 'Edge‑Ready', desc: 'Deploys globally with CDN‑friendly assets.' },
             ].map(({ Icon, title, desc }) => (
               <article key={title} className="group glow-card relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md hover:border-cyan-400/30">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
@@ -148,10 +177,10 @@ export default function MainFrontIndex() {
               </article>
             ))}
           </div>
-        </section>
+        </motion.section>
 
         {/* Stats */}
-        <section className="mx-auto max-w-7xl px-6 pb-14">
+        <motion.section initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.6 }} className="mx-auto max-w-7xl px-6 pb-14">
           <div className="neon-divider mx-auto mb-8 h-px w-full max-w-5xl" />
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Live Impact</h2>
           <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-4">
@@ -167,28 +196,32 @@ export default function MainFrontIndex() {
               </div>
             ))}
           </div>
-        </section>
+        </motion.section>
 
         {/* Capabilities */}
-        <section className="mx-auto max-w-7xl px-6 pb-14">
+        <motion.section initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.6 }} className="mx-auto max-w-7xl px-6 pb-14">
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Capabilities</h2>
           <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-3">
             {[
-              { title: 'Code Quality & Refactors', desc: 'Lints, fixes, and proposes refactors with type‑safety improvements.' },
-              { title: 'Performance & A11y', desc: 'Optimizes bundles, assets, and accessibility with continuous checks.' },
-              { title: 'Content & SEO', desc: 'Curates content, updates promotions, and tunes metadata for reach.' },
-            ].map((c) => (
-              <article key={c.title} className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl">
+              { Icon: ShieldCheck, title: 'Code Quality & Refactors', desc: 'Lints, fixes, and proposes refactors with type‑safety improvements.' },
+              { Icon: Activity, title: 'Performance & A11y', desc: 'Optimizes bundles, assets, and accessibility with continuous checks.' },
+              { Icon: Sparkles, title: 'Content & SEO', desc: 'Curates content, updates promotions, and tunes metadata for reach.' },
+              { Icon: Bot, title: 'Agentic Workflows', desc: 'Chains specialized agents to deliver end‑to‑end outcomes.' },
+              { Icon: Layers, title: 'Pattern Libraries', desc: 'Promotes reusable UI + automation building blocks.' },
+              { Icon: Server, title: 'Infra‑Aware', desc: 'Integrates with CI/CD, edge, storage, and analytics.' },
+            ].map(({ Icon, title, desc }) => (
+              <article key={title} className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl">
                 <div className="absolute right-0 top-0 h-24 w-24 rounded-bl-[4rem] bg-cyan-400/10 blur-2xl" />
-                <h3 className="text-lg font-semibold">{c.title}</h3>
-                <p className="mt-1 text-sm text-white/75">{c.desc}</p>
+                <Icon className="h-6 w-6 text-cyan-300" />
+                <h3 className="mt-3 text-lg font-semibold">{title}</h3>
+                <p className="mt-1 text-sm text-white/75">{desc}</p>
               </article>
             ))}
           </div>
-        </section>
+        </motion.section>
 
         {/* Why Zion */}
-        <section className="mx-auto max-w-7xl px-6 pb-14">
+        <motion.section initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.6 }} className="mx-auto max-w-7xl px-6 pb-14">
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Why Zion</h2>
           <div className="mx-auto mt-6 max-w-5xl grid grid-cols-1 gap-4 md:grid-cols-3">
             {[
@@ -203,10 +236,10 @@ export default function MainFrontIndex() {
               </div>
             ))}
           </div>
-        </section>
+        </motion.section>
 
         {/* Benefits */}
-        <section className="mx-auto max-w-7xl px-6 pb-20">
+        <motion.section initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.6 }} className="mx-auto max-w-7xl px-6 pb-20">
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Benefits</h2>
           <div className="mx-auto mt-6 max-w-4xl grid grid-cols-1 gap-3 md:grid-cols-2">
             {[
@@ -214,6 +247,8 @@ export default function MainFrontIndex() {
               'Rapid feedback loop with safe, incremental edits',
               'Continuous delivery directly to main branch',
               'Fewer regressions via layered checks and reports',
+              'Lower costs with zero‑ops, serverless approach',
+              'Faster iteration with reusable patterns and agents',
             ].map((b) => (
               <div key={b} className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-md">
                 <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]" />
@@ -221,7 +256,19 @@ export default function MainFrontIndex() {
               </div>
             ))}
           </div>
-        </section>
+        </motion.section>
+
+        {/* Integrations */}
+        <motion.section initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.6 }} className="mx-auto max-w-7xl px-6 pb-16">
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 text-center backdrop-blur-md">
+            <p className="text-white/70">Connects with your stack</p>
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-3 sm:gap-6">
+              {['Next.js','TypeScript','Tailwind','GitHub Actions','Netlify','Supabase','Vercel','Cloudflare'].map((t) => (
+                <span key={t} className="rounded-lg border border-white/10 bg-white/5 px-3 py-1 text-sm text-white/80 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]">{t}</span>
+              ))}
+            </div>
+          </div>
+        </motion.section>
 
         {/* CTA */}
         <section className="mx-auto max-w-7xl px-6 pb-24">
