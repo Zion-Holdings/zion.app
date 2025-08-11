@@ -83,6 +83,16 @@ export default function AutomationHub() {
             <p className="text-white/70">Finds broken images, optimizes assets, and syncs fixes.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/broken-image-scanner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">AI Trends Radar</h2>
+            <p className="text-white/70">Aggregates trending AI topics and publishes a live report.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/ai-trends-radar-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">A11y Audit Runner</h2>
+            <p className="text-white/70">Checks for accessibility issues across key pages and commits a report.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/a11y-audit-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
         </ul>
       </main>
     </div>

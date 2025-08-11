@@ -1,7 +1,9 @@
 {
-  "generatedAt": "2025-08-11T22:27:57.128Z",
+  "generatedAt": "2025-08-11T22:38:18.054Z",
   "functions": [
+    "a11y-audit-runner",
     "ai-changelog-runner",
+    "ai-trends-radar-runner",
     "auto-scheduler",
     "automation-matrix",
     "autonomous-innovation-generator",
