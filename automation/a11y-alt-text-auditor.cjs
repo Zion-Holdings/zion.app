@@ -1,11 +1,11 @@
 const fs = require('fs');
 const path = require('path');
-const glob = require('glob').sync || require('glob');
+const { globSync } = require('glob');
 
 function findFiles(patterns, cwd) {
   const files = new Set();
   for (const pattern of patterns) {
-    for (const file of glob.sync(pattern, { cwd, nodir: true, ignore: ['**/node_modules/**', '**/.next/**', '**/out/**'] })) {
+    for (const file of globSync(pattern, { cwd, nodir: true, ignore: ['**/node_modules/**', '**/.next/**', '**/out/**'] })) {
       files.add(path.resolve(cwd, file));
     }
   }
