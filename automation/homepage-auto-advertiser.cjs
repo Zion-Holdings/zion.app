@@ -80,7 +80,6 @@ function ensureMarkers(content) {
   return content.slice(0, insertAt) + '\n' + section + '\n' + content.slice(insertAt);
 }
 
-<<<<<<< HEAD
 // New: discover Netlify scheduled functions and tools
 function discoverNetlifyTools() {
   const fnDir = path.join(ROOT, 'netlify', 'functions');
@@ -148,17 +147,31 @@ function replaceBetweenMarkers(source, startMarker, endMarker, replacement) {
   return `${before}\n${replacement}\n${after}`;
 }
 
-(async function main() {
-  log('Homepage Auto Advertiser started');
-
-  const internal = discoverInternalPages();
-  const netlifyTools = discoverNetlifyTools();
-  const combined = [...internal, ...netlifyTools].slice(0, 12);
-  const tsxBlock = generateSectionTSX(combined);
-
-=======
 (function main() {
->>>>>>> d4c00f9a67 (feat(front): new cloud automations + futuristic homepage tools and promos)
+  if (!fs.existsSync(INDEX_PAGE)) {
+    console.error('index.tsx not found');
+    process.exit(0);
+  }
+  let content = fs.readFileSync(INDEX_PAGE, 'utf8');
+  content = ensureMarkers(content);
+
+  const fns = listFunctions();
+  const section = buildToolsSection(fns);
+
+  const hasMarkers = content.includes(START) && content.includes(END);
+  if (!hasMarkers) {
+    console.error('Failed to ensure markers');
+    process.exit(1);
+  }
+
+  const updated = content.replace(new RegExp(`${START}[\s\S]*?${END}`), section);
+  if (updated !== content) {
+    fs.writeFileSync(INDEX_PAGE, updated, 'utf8');
+    console.log('Homepage tools section updated.');
+  } else {
+    console.log('No changes to homepage tools section.');
+  }
+})();
   if (!fs.existsSync(INDEX_PAGE)) {
     console.error('index.tsx not found');
     process.exit(0);
