@@ -1,8 +1,13 @@
 {
+<<<<<<< Updated upstream
   "generatedAt": "2025-08-11T23:24:00.889Z",
+=======
+  "generatedAt": "2025-08-11T23:26:47.154Z",
+>>>>>>> Stashed changes
   "functions": [
     "a11y-alt-text-runner",
     "ai-changelog-runner",
+    "ai-trends-radar-runner",
     "auto-scheduler",
     "automation-matrix",
     "autonomous-invention-orchestrator",
@@ -13,6 +18,7 @@
     "continuous-orchestrator",
     "dead-code-audit",
     "dead-code-report",
+    "deps-auto-upgrade-runner",
     "docs-index-runner",
     "docs-search-index-runner",
     "external-link-check-runner",
@@ -59,6 +65,7 @@
     "schedule-site-health",
     "security-audit",
     "security-audit-runner",
+    "seo-audit-runner",
     "site-crawler",
     "sitemap_runner",
     "todo-scanner-runner",
