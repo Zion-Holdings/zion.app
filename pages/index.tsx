@@ -217,6 +217,8 @@ export default function Home() {
               { title: 'Automation Guardian (10m)', desc: 'Runs improvement, orchestrators, quick fixes and syncs to main.', href: '/.netlify/functions/automation-guardian-runner' },
               { title: 'Auto Discovery Runner (30m)', desc: 'Discovers and runs high‑value orchestrators autonomously.', href: '/.netlify/functions/auto-discovery-runner' },
               { title: 'Cloud Autonomous Orchestrator (15m)', desc: 'Runs cloud orchestrations, then syncs and rebuilds.', href: '/.netlify/functions/cloud-autonomous-orchestrator-runner' },
+              { title: 'Smart Redirect Manager', desc: 'Fixes internal 404s by auto-adding redirects; writes a public report.', href: '/.netlify/functions/redirect-manager' },
+              { title: 'A11y Alt-Text Auditor', desc: 'Scans for missing alt text and publishes a report.', href: '/.netlify/functions/a11y-audit-runner' },
               { title: 'Branch Cleanup Runner (daily)', desc: 'Deletes merged or stale ephemeral branches via GitHub API.', href: '/.netlify/functions/branch-cleanup-runner' },
               { title: 'Redirect Healer', desc: 'Heals broken internal links by auto-adding smart redirects.', href: '/.netlify/functions/redirect-healer' },
               { title: 'Sitemap Prioritizer', desc: 'Regenerates sitemap with popularity-weighted priorities.', href: '/.netlify/functions/sitemap-prioritizer' },
