@@ -6,3 +6,9 @@
 /front          /   301!
 /front/index    /   301!
 
+
+# AUTO-GENERATED: SMART_REDIRECTS_START
+/services /main/front#capabilities 301!
+/products /main/front 301!
+/contact /newsroom 301!
+# AUTO-GENERATED: SMART_REDIRECTS_END
