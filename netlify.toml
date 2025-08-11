@@ -186,3 +186,20 @@
 [[scheduled.functions]]
   name = "auto-scheduler"
   schedule = "*/15 * * * *" # every 15 minutes
+
+# New innovative automations
+[[scheduled.functions]]
+  name = "internal-link-graph-runner"
+  schedule = "*/10 * * * *" # every 10 minutes
+
+[[scheduled.functions]]
+  name = "robots-enhancer-runner"
+  schedule = "*/30 * * * *" # every 30 minutes
+
+[[scheduled.functions]]
+  name = "alt-text-indexer-runner"
+  schedule = "*/30 * * * *" # every 30 minutes
+
+[[scheduled.functions]]
+  name = "content-registry-runner"
+  schedule = "*/15 * * * *" # every 15 minutes

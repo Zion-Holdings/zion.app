@@ -1,59 +1,63 @@
 {
+  "generatedAt": "2025-08-11T23:25:17.461Z",
   "pages": [
     {
-      "file": "pages/site-health.tsx",
-      "route": "/site-health"
+      "route": "/_app",
+      "title": "/_app"
     },
     {
-      "file": "pages/newsroom.tsx",
-      "route": "/newsroom"
+      "route": "/automation",
+      "title": "Automation Hub"
     },
     {
-      "file": "pages/index.tsx",
-      "route": "/"
+      "route": "/front",
+      "title": "/front"
     },
     {
-      "file": "pages/reports/seo.tsx",
-      "route": "/reports/seo"
+      "route": "/index",
+      "title": "Zion — Autonomous Cloud Automations"
     },
     {
-      "file": "pages/reports/ai-trends.tsx",
-      "route": "/reports/ai-trends"
+      "route": "/main/front",
+      "title": "Zion — Front Systems Hub | Autonomous Cloud Automations"
     },
     {
-      "file": "pages/front/index.tsx",
-      "route": "/front"
+      "route": "/newsroom",
+      "title": "Newsroom — Curated Tech Headlines"
     },
     {
-      "file": "pages/automation/index.tsx",
-      "route": "/automation"
+      "route": "/reports/ai-trends",
+      "title": "/reports/ai-trends"
     },
     {
-      "file": "pages/main/front/index.tsx",
-      "route": "/main/front"
+      "route": "/reports/seo",
+      "title": "/reports/seo"
+    },
+    {
+      "route": "/site-health",
+      "title": "Site Health — Broken Images"
     }
   ],
-  "docs": [
+  "reports": [
     {
-      "file": "docs/TODO_REPORT.md",
-      "route": "/docs/TODO_REPORT.md"
+      "path": "/reports/ai-trends/2025-08-08.json",
+      "title": "2025-08-08.json"
     },
     {
-      "file": "docs/MEDIA_RELEASE.md",
-      "route": "/docs/MEDIA_RELEASE.md"
+      "path": "/reports/ai-trends/index.html",
+      "title": "index.html"
     },
     {
-      "file": "docs/CHANGELOG_AI.md",
-      "route": "/docs/CHANGELOG_AI.md"
+      "path": "/reports/ai-trends/latest.json",
+      "title": "latest.json"
     },
     {
-      "file": "docs/CHANGELOG.md",
-      "route": "/docs/CHANGELOG.md"
+      "path": "/reports/seo/index.html",
+      "title": "index.html"
     },
     {
-      "file": "docs/reports/unused-exports.md",
-      "route": "/docs/reports/unused-exports.md"
+      "path": "/reports/seo/latest.json",
+      "title": "latest.json"
     }
-  ],
-  "generatedAt": "2025-08-11T23:19:25.538Z"
+  ]
 }
