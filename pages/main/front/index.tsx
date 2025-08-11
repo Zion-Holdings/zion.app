@@ -8,6 +8,7 @@ export default function MainFrontIndex() {
   const { scrollYProgress } = useScroll();
   const progressX = useSpring(scrollYProgress, { stiffness: 90, damping: 20, mass: 0.2 });
   const [showToTop, setShowToTop] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   useEffect(() => {
     const onScroll = () => setShowToTop(window.scrollY > 400);
     window.addEventListener('scroll', onScroll, { passive: true } as any);
@@ -73,17 +74,74 @@ export default function MainFrontIndex() {
             <Link href="#use-cases"><a className="text-white/80 hover:text-white">Use&nbsp;Cases</a></Link>
             <Link href="#guardrails"><a className="text-white/80 hover:text-white">Guardrails</a></Link>
             <Link href="#capabilities"><a className="text-white/80 hover:text-white">Capabilities</a></Link>
-            <Link href="#suites"><a className="text-white/80 hover:text-white">Suites</a></Link>
-            <Link href="#feature-map"><a className="text-white/80 hover:text-white">Map</a></Link>
-            <Link href="#guardrails"><a className="text-white/80 hover:text-white">Guardrails</a></Link>
             <Link href="#benefits"><a className="text-white/80 hover:text-white">Benefits</a></Link>
             <Link href="#deep-dives"><a className="text-white/80 hover:text-white">Deep Dives</a></Link>
             <Link href="#reports"><a className="text-white/80 hover:text-white">Reports</a></Link>
             <Link href="#roadmap"><a className="text-white/80 hover:text-white">Docs</a></Link>
-            <Link href="/automation"><a className="text-white/80 hover:text-white">Automations</a></Link>
+            <Link href="/newsroom"><a className="text-white/80 hover:text-white">Newsroom</a></Link>
+            <Link href="/site-health"><a className="text-white/80 hover:text-white">Site&nbsp;Health</a></Link>
+            <Link href="/reports/seo"><a className="text-white/80 hover:text-white">SEO</a></Link>
+            <Link href="/reports/ai-trends"><a className="text-white/80 hover:text-white">AI&nbsp;Trends</a></Link>
             <Link href="/automation"><a className="rounded-lg bg-gradient-to-r from-fuchsia-500 to-cyan-500 px-4 py-2 text-sm font-semibold shadow-[0_0_18px_rgba(34,211,238,0.25)] hover:shadow-[0_0_28px_rgba(34,211,238,0.45)]">Launch Hub</a></Link>
           </div>
+          <button aria-label="Open menu" onClick={() => setMobileOpen(true)} className="md:hidden rounded-md border border-white/15 bg-white/5 px-3 py-1.5 text-sm text-white/80">Menu</button>
         </nav>
+        {/* Mobile overlay menu */}
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-40 bg-slate-950/80 backdrop-blur"
+            onClick={() => setMobileOpen(false)}
+          >
+            <motion.div
+              initial={{ y: -20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.2 }}
+              className="mx-auto mt-20 w-[92%] max-w-md rounded-2xl border border-white/10 bg-white/5 p-6 text-white shadow-xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="mb-4 flex items-center justify-between">
+                <div className="text-lg font-semibold">Navigate</div>
+                <button aria-label="Close menu" onClick={() => setMobileOpen(false)} className="rounded-md border border-white/15 bg-white/5 px-2 py-1 text-xs">Close</button>
+              </div>
+              <div className="grid grid-cols-2 gap-3 text-sm">
+                {[
+                  ['Home','/'],
+                  ['Command','#command-center'],
+                  ['Agents','#agents'],
+                  ['Features','#features'],
+                  ['Map','#feature-map'],
+                  ['Suites','#suites'],
+                  ['Use Cases','#use-cases'],
+                  ['Guardrails','#guardrails'],
+                  ['Capabilities','#capabilities'],
+                  ['Benefits','#benefits'],
+                  ['Deep Dives','#deep-dives'],
+                  ['Reports','#reports'],
+                  ['Docs','#roadmap'],
+                  ['Newsroom','/newsroom'],
+                  ['Site Health','/site-health'],
+                  ['SEO','/reports/seo'],
+                  ['AI Trends','/reports/ai-trends'],
+                  ['Automations','/automation'],
+                ].map(([label, href]) => (
+                  (href as string).startsWith('#') ? (
+                    <a key={label as string} href={href as string} onClick={() => setMobileOpen(false)} className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:bg-white/10">{label as string}</a>
+                  ) : (
+                    <Link key={label as string} href={href as string}>
+                      <a onClick={() => setMobileOpen(false)} className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:bg-white/10">{label as string}</a>
+                    </Link>
+                  )
+                ))}
+              </div>
+              <div className="mt-4 flex justify-end">
+                <Link href="/automation"><a onClick={() => setMobileOpen(false)} className="rounded-lg bg-gradient-to-r from-fuchsia-500 to-cyan-500 px-4 py-2 text-sm font-semibold">Launch Hub</a></Link>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
       </header>
 
       {/* Hero */}
