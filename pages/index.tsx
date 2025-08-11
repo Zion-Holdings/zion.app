@@ -222,7 +222,10 @@ export default function Home() {
               { title: 'Branch Cleanup Runner (daily)', desc: 'Deletes merged or stale ephemeral branches via GitHub API.', href: '/.netlify/functions/branch-cleanup-runner' },
               { title: 'Redirect Healer', desc: 'Heals broken internal links by auto-adding smart redirects.', href: '/.netlify/functions/redirect-healer' },
               { title: 'Sitemap Prioritizer', desc: 'Regenerates sitemap with popularity-weighted priorities.', href: '/.netlify/functions/sitemap-prioritizer' },
-              { title: 'Terminology Consistency', desc: 'Audits and normalizes product terminology across docs.', href: '/.netlify/functions/terminology-consistency-runner' },
+                             { title: 'Terminology Consistency', desc: 'Audits and normalizes product terminology across docs.', href: '/.netlify/functions/terminology-consistency-runner' },
+               { title: 'Routes Map', desc: 'Generates an index of all site routes and public reports.', href: '/.netlify/functions/routes-runner' },
+               { title: 'Component Props Docs', desc: 'Scans components/ and publishes basic props docs.', href: '/.netlify/functions/component-props-runner' },
+               { title: 'Static Asset Inventory', desc: 'Indexes public/ assets and publishes a size report.', href: '/.netlify/functions/asset-inventory-runner' },
             ].map((tool) => (
               <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />

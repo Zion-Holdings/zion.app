@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-11T23:03:56.296Z",
+  "generatedAt": "${new Date().toISOString()}",
   "functions": [
     "a11y-audit-runner",
     "ai-changelog-runner",
@@ -61,6 +61,9 @@
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",
+    "routes-runner",
+    "component-props-runner",
+    "asset-inventory-runner",
     "schedule-content-index",
     "schedule-homepage",
     "schedule-knowledge-graph",

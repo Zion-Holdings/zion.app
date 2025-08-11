@@ -167,6 +167,18 @@
   schedule = "53 */6 * * *"
 
 [[scheduled.functions]]
+  name = "routes-runner"
+  schedule = "17 */6 * * *"
+
+[[scheduled.functions]]
+  name = "component-props-runner"
+  schedule = "23 */12 * * *"
+
+[[scheduled.functions]]
+  name = "asset-inventory-runner"
+  schedule = "31 */6 * * *"
+
+[[scheduled.functions]]
   name = "redirect-healer"
   schedule = "*/15 * * * *"
 
