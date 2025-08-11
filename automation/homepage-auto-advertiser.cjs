@@ -5,119 +5,82 @@
 const fs = require('fs');
 const path = require('path');
 
-const ROOT = process.cwd();
-const LOG_DIR = path.join(ROOT, 'automation', 'logs');
-const LOG_FILE = path.join(LOG_DIR, 'homepage-auto-advertiser.log');
-
-function ensureDir(p) {
-  if (!fs.existsSync(p)) fs.mkdirSync(p, { recursive: true });
-}
-
-ensureDir(LOG_DIR);
-
-function log(message) {
-  const line = `[${new Date().toISOString()}] ${message}`;
-  console.log(line);
-  fs.appendFileSync(LOG_FILE, line + '\n');
-}
-
+const ROOT = path.resolve(__dirname, '..');
 const INDEX_PAGE = path.join(ROOT, 'pages', 'index.tsx');
-const START_MARKER = '/* AUTO-GENERATED: HOME_UPDATER_START */';
-const END_MARKER = '/* AUTO-GENERATED: HOME_UPDATER_END */';
+const FUNCS_DIR = path.join(ROOT, 'netlify', 'functions');
 
-function titleCase(slug) {
-  return slug
+const START = '/* AUTO-GENERATED: HOME_TOOLS_START */';
+const END = '/* AUTO-GENERATED: HOME_TOOLS_END */';
+
+function listFunctions() {
+  try {
+    const files = fs.readdirSync(FUNCS_DIR).filter((f) => f.endsWith('.js'));
+    return files.map((f) => f.replace(/\.js$/, ''));
+  } catch {
+    return [];
+  }
+}
+
+function displayName(fn) {
+  return fn
     .replace(/[-_]/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim()
-    .split(' ')
-    .map((w) => (w ? w[0].toUpperCase() + w.slice(1) : w))
-    .join(' ');
+    .replace(/\b\w/g, (m) => m.toUpperCase());
 }
 
-function discoverInternalPages() {
-  const pagesDir = path.join(ROOT, 'pages');
-  const internal = [];
-
-  const addPage = (route, label, tagline) => {
-    internal.push({ type: 'internal', href: route, label, tagline });
+function buildToolsSection(functionNames) {
+  const knownDescriptions = {
+    'front-enhancer': 'Run front improvements continuously.',
+    'frontpage-enhancer': 'Refresh frontpage content on schedule.',
+    'homepage_advertiser': 'Auto‑advertise homepage features and links.',
+    'cloud_orchestrator': 'Coordinate broader agents and git sync.',
+    'sitemap_runner': 'Keep sitemap fresh for SEO.',
+    'marketing-and-features-promo': 'Regenerate promos and deep links.',
+    'fast-front-promoter': 'Fast iteration of front/home updates.',
   };
 
-  try {
-    const entries = fs.readdirSync(pagesDir, { withFileTypes: true });
-    for (const entry of entries) {
-      if (entry.isFile() && entry.name.endsWith('.tsx')) {
-        const base = entry.name.replace(/\.tsx$/, '');
-        if (base === 'index' || base.startsWith('_')) continue;
-        const route = `/${base}`;
-        const label = titleCase(base);
-        const tagline = base === 'newsroom'
-          ? 'Latest autonomous updates'
-          : base === 'site-health'
-          ? 'Audits & insights'
-          : 'Explore more';
-        addPage(route, label, tagline);
-      } else if (entry.isDirectory()) {
-        const indexPathTsx = path.join(pagesDir, entry.name, 'index.tsx');
-        if (fs.existsSync(indexPathTsx)) {
-          const route = `/${entry.name}`;
-          const label = titleCase(entry.name);
-          const tagline = entry.name === 'automation' ? 'Live agents & reports' : 'Explore more';
-          addPage(route, label, tagline);
-        }
-      }
-    }
-  } catch (err) {
-    log(`Error discovering internal pages: ${err.message}`);
-  }
+  const cards = functionNames
+    .sort()
+    .map((name) => {
+      const title = displayName(name);
+      const desc = knownDescriptions[name] || 'Scheduled automation running in the cloud.';
+      const href = `/.netlify/functions/${name}`;
+      return (
+        `            <a key="${name}" href="${href}" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">${title}</h3>
+              <p className="mt-1 text-sm text-white/75">${desc}</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>`
+      );
+    })
+    .join('\n');
 
-  const seen = new Set();
-  const unique = [];
-  for (const item of internal) {
-    if (!seen.has(item.href)) {
-      seen.add(item.href);
-      unique.push(item);
-    }
-  }
-  unique.sort((a, b) => {
-    const rank = (h) => (h.href === '/automation' ? 0 : h.href === '/newsroom' ? 1 : h.href === '/site-health' ? 2 : 3);
-    return rank(a) - rank(b);
-  });
-  return unique;
+  return [
+    START,
+    '',
+    ' <section className="mx-auto max-w-7xl px-6 pb-20">',
+    '   <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Automation Engine — New Tools</h2>',
+    '   <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Powered by scheduled cloud functions — no GitHub Actions required.</p>',
+    '   <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">',
+    cards,
+    '   </div>',
+    ' </section>',
+    ' ',
+    END,
+  ].join('\n');
 }
 
-function discoverKeyWorkflows() {
-  const wfDir = path.join(ROOT, '.github', 'workflows');
-  const selected = [
-    'autonomous-cloud.yml',
-    'rapid-git-sync.yml',
-    'performance-audit.yml',
-    'optimize-images.yml',
-    'sitemap-auto-commit.yml',
-  ];
-  const nameMap = {
-    'autonomous-cloud.yml': { label: 'Autonomous Cloud', tagline: '15m cadence orchestrations' },
-    'rapid-git-sync.yml': { label: 'Rapid Git Sync', tagline: 'Fast repo syncing' },
-    'performance-audit.yml': { label: 'Performance Audit', tagline: 'Lighthouse & runtime checks' },
-    'optimize-images.yml': { label: 'Image Optimizer', tagline: 'Automatic asset slimming' },
-    'sitemap-auto-commit.yml': { label: 'Sitemap Auto‑Update', tagline: 'Fresh URLs daily' },
-  };
-
-  const items = [];
-  try {
-    const files = fs.existsSync(wfDir) ? fs.readdirSync(wfDir) : [];
-    for (const f of files) {
-      if (!selected.includes(f)) continue;
-      const info = nameMap[f] || { label: titleCase(f.replace(/\.ya?ml$/, '')), tagline: 'Automation workflow' };
-      const href = `https://github.com/Zion-Holdings/zion.app/actions/workflows/${f}`;
-      items.push({ type: 'external', href, label: info.label, tagline: info.tagline });
-    }
-  } catch (err) {
-    log(`Error discovering workflows: ${err.message}`);
-  }
-  return items;
+function ensureMarkers(content) {
+  if (content.includes(START) && content.includes(END)) return content;
+  // Insert before HOME_UPDATER_START if present, else before closing main
+  const updaterStart = content.indexOf('/* AUTO-GENERATED: HOME_UPDATER_START */');
+  const mainClose = content.lastIndexOf('</main>');
+  const insertAt = updaterStart !== -1 ? updaterStart : (mainClose !== -1 ? mainClose : content.length);
+  const section = [START, END].join('\n');
+  return content.slice(0, insertAt) + '\n' + section + '\n' + content.slice(insertAt);
 }
 
+<<<<<<< HEAD
 // New: discover Netlify scheduled functions and tools
 function discoverNetlifyTools() {
   const fnDir = path.join(ROOT, 'netlify', 'functions');
@@ -193,26 +156,30 @@ function replaceBetweenMarkers(source, startMarker, endMarker, replacement) {
   const combined = [...internal, ...netlifyTools].slice(0, 12);
   const tsxBlock = generateSectionTSX(combined);
 
+=======
+(function main() {
+>>>>>>> d4c00f9a67 (feat(front): new cloud automations + futuristic homepage tools and promos)
   if (!fs.existsSync(INDEX_PAGE)) {
-    log('index.tsx not found; aborting');
+    console.error('index.tsx not found');
     process.exit(0);
   }
-  const original = fs.readFileSync(INDEX_PAGE, 'utf8');
-  let updated;
-  try {
-    updated = replaceBetweenMarkers(original, START_MARKER, END_MARKER, tsxBlock);
-  } catch (err) {
-    log(`Failed to apply update: ${err.message}`);
-    process.exit(0);
+  let content = fs.readFileSync(INDEX_PAGE, 'utf8');
+  content = ensureMarkers(content);
+
+  const fns = listFunctions();
+  const section = buildToolsSection(fns);
+
+  const hasMarkers = content.includes(START) && content.includes(END);
+  if (!hasMarkers) {
+    console.error('Failed to ensure markers');
+    process.exit(1);
   }
 
-  if (updated !== original) {
-    fs.writeFileSync(INDEX_PAGE, updated);
-    log('Homepage updated between markers.');
+  const updated = content.replace(new RegExp(`${START}[\s\S]*?${END}`), section);
+  if (updated !== content) {
+    fs.writeFileSync(INDEX_PAGE, updated, 'utf8');
+    console.log('Homepage tools section updated.');
   } else {
-    log('No changes needed.');
+    console.log('No changes to homepage tools section.');
   }
-
-  log('Homepage Auto Advertiser finished');
-  process.exit(0);
 })();

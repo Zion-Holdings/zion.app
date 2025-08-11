@@ -501,6 +501,7 @@ export default function MainFrontIndex() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 <<<<<<< HEAD
@@ -509,6 +510,9 @@ export default function MainFrontIndex() {
 =======
 >>>>>>> ade166c1a9 (chore(sync): advanced autonomous sync)
               { title: 'Cloud Automations', desc: 'Scheduled functions powering jobs 24/7.', href: '/automation' },
+=======
+              { title: 'Cloud Automations', desc: 'Netlify scheduled functions powering jobs 24/7.', href: '/automation' }
+>>>>>>> d4c00f9a67 (feat(front): new cloud automations + futuristic homepage tools and promos)
               { title: 'Docs', desc: 'Technical notes and guides for the platform.', href: 'https://github.com/Zion-Holdings/zion.app/tree/main/docs', external: true },
               { title: 'AI Changelog', desc: 'Summarized autonomous changes and highlights.', href: 'https://github.com/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md', external: true }
             ].map((card) => (
