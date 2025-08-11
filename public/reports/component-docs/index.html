@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Component Docs Report</title>
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; background:#0b1220; color:#fff; margin:0; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 24px; }
+    .card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 16px; margin-bottom: 12px; }
+    .badge { display:inline-block; background: rgba(56,189,248,.2); color:#67e8f9; border:1px solid rgba(56,189,248,.35); padding:2px 8px; border-radius:999px; font-size:12px; }
+    table { width:100%; border-collapse: collapse; }
+    th, td { border-bottom: 1px solid rgba(255,255,255,0.1); padding: 8px; text-align: left; }
+    a { color: #67e8f9; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Component Docs <span id="meta" class="badge"></span></h1>
+    <div id="summary" class="card"></div>
+    <div id="list"></div>
+  </div>
+  <script>
+    async function load() {
+      const res = await fetch('/automation/component-docs.json');
+      const data = await res.json();
+      document.getElementById('meta').textContent = new Date(data.generatedAt).toLocaleString();
+      document.getElementById('summary').textContent = `Total components: ${data.totalComponents}`;
+      const list = document.getElementById('list');
+      data.components.forEach((c) => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        const h = document.createElement('h3');
+        h.textContent = c.name;
+        card.appendChild(h);
+        const p = document.createElement('div');
+        p.innerHTML = `File: <code>${c.file}</code>`;
+        card.appendChild(p);
+        const table = document.createElement('table');
+        const thead = document.createElement('thead');
+        thead.innerHTML = '<tr><th>Prop</th><th>Type</th></tr>';
+        table.appendChild(thead);
+        const tbody = document.createElement('tbody');
+        (c.props || []).forEach((prop) => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `<td>${prop.name}</td><td>${prop.type}</td>`;
+          tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+        card.appendChild(table);
+        list.appendChild(card);
+      });
+    }
+    load().catch(console.error);
+  </script>
+</body>
+</html>
