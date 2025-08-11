@@ -180,6 +180,14 @@
   schedule = "*/10 * * * *" # every 10 minutes
 
 [[scheduled.functions]]
+  name = "revenue-optimizer"
+  schedule = "7 * * * *" # hourly
+
+[[scheduled.functions]]
+  name = "seo-content-gap"
+  schedule = "17 */3 * * *" # every 3 hours
+
+[[scheduled.functions]]
   name = "broken-image-scanner"
   schedule = "0 */6 * * *" # every 6 hours
 
