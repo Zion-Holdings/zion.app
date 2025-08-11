@@ -1,0 +1,20 @@
+name: Autonomous Cloud Cron
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hit Competitive Intelligence
+        run: |
+          curl -sS "${{ secrets.NETLIFY_BASE_URL }}/.netlify/functions/competitive-intel-radar" || true
+      - name: Hit Performance Budget
+        run: |
+          curl -sS "${{ secrets.NETLIFY_BASE_URL }}/.netlify/functions/performance-budget-watcher" || true

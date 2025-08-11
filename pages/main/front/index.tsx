@@ -218,6 +218,8 @@ export default function MainFrontIndex() {
                 ['Automation Hub', '/automation'],
                 ['SEO Audit', '/reports/seo'],
                 ['AI Trends', '/reports/ai-trends'],
+                ['Competitive Intelligence', '/reports/competitive-intel'],
+                ['Performance Budget', '/reports/performance-budget'],
                 ['Newsroom', '/newsroom'],
                 ['Site Health', '/site-health'],
               ].map(([label, href]) => (
@@ -312,6 +314,14 @@ export default function MainFrontIndex() {
   <div className="text-base font-semibold">AI Trends Radar</div>
   <div className="mt-1 text-sm text-white/75">Signals powering strategy</div>
   <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+            <Link href="/reports/competitive-intel"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">Competitive Intelligence</div>
+  <div className="mt-1 text-sm text-white/75">Market signals & headlines</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+            <Link href="/reports/performance-budget"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">Performance Budget</div>
+  <div className="mt-1 text-sm text-white/75">Largest assets & risks</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
             <Link href="/newsroom"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
   <div className="text-base font-semibold">Newsroom</div>
   <div className="mt-1 text-sm text-white/75">Product evolution</div>
@@ -378,23 +388,22 @@ export default function MainFrontIndex() {
               <div className="mt-3 text-xs text-cyan-300/90">View logs via Netlify →</div>
             </a>
             <a
-              href="https://github.com/Zion-Holdings/zion.app/tree/main/automation"
-              target="_blank" rel="noopener"
+              href="/reports/competitive-intel"
               className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover"
             >
               <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <div className="text-lg font-semibold">Local Orchestrators</div>
-              <p className="mt-1 text-sm text-white/75">Node-based orchestrators that can run on any scheduler or platform.</p>
-              <div className="mt-3 text-xs text-cyan-300/90">Browse orchestration scripts ↗</div>
+              <div className="text-lg font-semibold">Competitive Intelligence Radar</div>
+              <p className="mt-1 text-sm text-white/75">Auto-summarized competitor headlines and shifts.</p>
+              <div className="mt-3 text-xs text-cyan-300/90">Open report →</div>
             </a>
             <a
-              href="/automation"
+              href="/reports/performance-budget"
               className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover"
             >
               <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <div className="text-lg font-semibold">Autonomous Cloud Orchestrator</div>
-              <p className="mt-1 text-sm text-white/75">End-to-end agents launching factories and syncing safe diffs to main.</p>
-              <div className="mt-3 text-xs text-cyan-300/90">Open Automation Hub →</div>
+              <div className="text-lg font-semibold">Performance Budget Watcher</div>
+              <p className="mt-1 text-sm text-white/75">Monitors asset sizes; flags budget risks.</p>
+              <div className="mt-3 text-xs text-cyan-300/90">Open report →</div>
             </a>
           </div>
         </motion.section>
