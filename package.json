@@ -19,6 +19,7 @@
     "deps:maintain": "node automation/dependency-update-orchestrator.cjs",
     "deps:cron:start": "bash automation/dependency-maintenance-cron.sh",
     "sitemap": "node scripts/generate-sitemap.js",
+    "netlify:trigger": "node scripts/trigger-netlify-automations.cjs",
     "readme:generate": "node scripts/generate-readme.js",
     "search:index": "node scripts/generate-search-index.js",
     "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev",
