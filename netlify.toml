@@ -186,3 +186,19 @@
 [[scheduled.functions]]
   name = "auto-scheduler"
   schedule = "*/15 * * * *" # every 15 minutes
+
+[[scheduled.functions]]
+  name = "autonomous-ad-factory"
+  schedule = "*/10 * * * *" # every 10 minutes
+
+[[scheduled.functions]]
+  name = "knowledge-radar-orchestrator"
+  schedule = "17 */6 * * *" # every 6 hours
+
+[[scheduled.functions]]
+  name = "innovation-researcher"
+  schedule = "9 */2 * * *" # every 2 hours
+
+[[scheduled.functions]]
+  name = "continuous-cloud-refiner"
+  schedule = "*/5 * * * *" # every 5 minutes
