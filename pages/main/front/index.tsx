@@ -1,9 +1,19 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { Cpu, Gauge, GitBranch, Rocket, ShieldCheck, Zap, Activity, Globe, Layers, BarChart3, Search, Link2, Palette, LineChart } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useSpring } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 export default function MainFrontIndex() {
+  const { scrollYProgress } = useScroll();
+  const progressX = useSpring(scrollYProgress, { stiffness: 90, damping: 20, mass: 0.2 });
+  const [showToTop, setShowToTop] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setShowToTop(window.scrollY > 400);
+    window.addEventListener('scroll', onScroll, { passive: true } as any);
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
   return (
     <div className="relative min-h-screen overflow-hidden bg-slate-950 text-white">
       <Head>
@@ -15,7 +25,8 @@ export default function MainFrontIndex() {
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/og-image.png" />
       </Head>
-
+      {/* Scroll progress bar */}
+      <motion.div style={{ scaleX: progressX }} className="fixed inset-x-0 top-0 z-40 h-0.5 origin-left bg-gradient-to-r from-fuchsia-400 via-violet-400 to-cyan-400" />
       {/* Animated Background */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
         {/* Aurora orbs */}
@@ -1267,6 +1278,16 @@ export default function MainFrontIndex() {
           </div>
         </motion.section>
       </main>
+      {/* Back to top */}
+      {showToTop && (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="fixed bottom-24 right-4 z-40 rounded-full bg-gradient-to-r from-fuchsia-500 to-cyan-500 px-3 py-2 text-xs font-semibold shadow-[0_0_30px_rgba(34,211,238,0.35)] hover:shadow-[0_0_40px_rgba(34,211,238,0.6)]"
+          aria-label="Scroll to top"
+        >
+          ↑ Top
+        </button>
+      )}
     </div>
   );
 }
