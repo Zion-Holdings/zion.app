@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "generatedAt": "2025-08-11T20:35:53.456Z",
-=======
-  "generatedAt": "2025-08-11T20:36:07.663Z",
->>>>>>> origin/main
+  "generatedAt": "2025-08-11T20:37:50.762Z",
   "functions": [
     "ai-changelog-runner",
     "auto-scheduler",
