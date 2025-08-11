@@ -115,6 +115,18 @@
   schedule = "*/1 * * * *" # every minute
 
 [[scheduled.functions]]
+  name = "performance-audit-runner"
+  schedule = "*/30 * * * *" # every 30 minutes
+
+[[scheduled.functions]]
+  name = "license-compliance-runner"
+  schedule = "0 2 * * *" # daily 02:00 UTC
+
+[[scheduled.functions]]
+  name = "content-freshness-runner"
+  schedule = "*/6 * * * *" # every 6 minutes
+
+[[scheduled.functions]]
   name = "dead-code-report"
   schedule = "7 */6 * * *"
 
