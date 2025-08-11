@@ -1,0 +1,221 @@
+{
+  "generatedAt": "2025-08-11T23:50:54.403Z",
+  "items": [
+    {
+      "title": "nomic-ai / gpt4all",
+      "repo": "https://github.com/nomic-ai/gpt4all",
+      "desc": "GPT4All: Run Local LLMs on Any Device. Open-source and available for commercial use.",
+      "starsText": "75,228",
+      "todayText": "450 stars today",
+      "language": "all",
+      "since": "daily"
+    },
+    {
+      "title": "tadata-org / fastapi_mcp",
+      "repo": "https://github.com/tadata-org/fastapi_mcp",
+      "desc": "Expose your FastAPI endpoints as Model Context Protocol (MCP) tools, with Auth!",
+      "starsText": "7,452",
+      "todayText": "138 stars today",
+      "language": "all",
+      "since": "daily"
+    },
+    {
+      "title": "trailofbits / buttercup",
+      "repo": "https://github.com/trailofbits/buttercup",
+      "desc": "",
+      "starsText": "522",
+      "todayText": "80 stars today",
+      "language": "all",
+      "since": "daily"
+    },
+    {
+      "title": "patchy631 / ai-engineering-hub",
+      "repo": "https://github.com/patchy631/ai-engineering-hub",
+      "desc": "In-depth tutorials on LLMs, RAGs and real-world AI agent applications.",
+      "starsText": "16,545",
+      "todayText": "272 stars today",
+      "language": "all",
+      "since": "daily"
+    },
+    {
+      "title": "openai / codex",
+      "repo": "https://github.com/openai/codex",
+      "desc": "Lightweight coding agent that runs in your terminal",
+      "starsText": "34,363",
+      "todayText": "542 stars today",
+      "language": "all",
+      "since": "daily"
+    },
+    {
+      "title": "menloresearch / jan",
+      "repo": "https://github.com/menloresearch/jan",
+      "desc": "Jan is an open source alternative to ChatGPT that runs 100% offline on your computer",
+      "starsText": "36,177",
+      "todayText": "335 stars today",
+      "language": "all",
+      "since": "daily"
+    },
+    {
+      "title": "microsoft / generative-ai-for-beginners",
+      "repo": "https://github.com/microsoft/generative-ai-for-beginners",
+      "desc": "21 Lessons, Get Started Building with Generative AI 🔗 https://microsoft.github.io/generative-ai-for-beginners/",
+      "starsText": "94,612",
+      "todayText": "152 stars today",
+      "language": "all",
+      "since": "daily"
+    },
+    {
+      "title": "midday-ai / midday",
+      "repo": "https://github.com/midday-ai/midday",
+      "desc": "Invoicing, Time tracking, File reconciliation, Storage, Financial Overview & your own Assistant made for Freelancers",
+      "starsText": "9,837",
+      "todayText": "102 stars today",
+      "language": "all",
+      "since": "daily"
+    },
+    {
+      "title": "xiaoyaocz / dart_simple_live",
+      "repo": "https://github.com/xiaoyaocz/dart_simple_live",
+      "desc": "简简单单的看直播",
+      "starsText": "12,275",
+      "todayText": "176 stars today",
+      "language": "all",
+      "since": "daily"
+    },
+    {
+      "title": "fastapi / full-stack-fastapi-template",
+      "repo": "https://github.com/fastapi/full-stack-fastapi-template",
+      "desc": "Full stack, modern web application template. Using FastAPI, React, SQLModel, PostgreSQL, Docker, GitHub Actions, automatic HTTPS and more.",
+      "starsText": "35,870",
+      "todayText": "421 stars today",
+      "language": "all",
+      "since": "daily"
+    },
+    {
+      "title": "mendableai / firecrawl",
+      "repo": "https://github.com/mendableai/firecrawl",
+      "desc": "🔥 Turn entire websites into LLM-ready markdown or structured data. Scrape, crawl and extract with a single API.",
+      "starsText": "46,642",
+      "todayText": "286 stars today",
+      "language": "all",
+      "since": "daily"
+    },
+    {
+      "title": "umami-software / umami",
+      "repo": "https://github.com/umami-software/umami",
+      "desc": "Umami is a modern, privacy-focused alternative to Google Analytics.",
+      "starsText": "29,260",
+      "todayText": "1,150 stars today",
+      "language": "all",
+      "since": "daily"
+    },
+    {
+      "title": "libsdl-org / SDL",
+      "repo": "https://github.com/libsdl-org/SDL",
+      "desc": "Simple Directmedia Layer",
+      "starsText": "13,238",
+      "todayText": "113 stars today",
+      "language": "all",
+      "since": "daily"
+    },
+    {
+      "title": "idosal / git-mcp",
+      "repo": "https://github.com/idosal/git-mcp",
+      "desc": "Put an end to code hallucinations! GitMCP is a free, open-source, remote MCP server for any GitHub project",
+      "starsText": "4,709",
+      "todayText": "346 stars today",
+      "language": "all",
+      "since": "daily"
+    },
+    {
+      "title": "menloresearch / jan",
+      "repo": "https://github.com/menloresearch/jan",
+      "desc": "Jan is an open source alternative to ChatGPT that runs 100% offline on your computer",
+      "starsText": "36,177",
+      "todayText": "335 stars today",
+      "language": "typescript",
+      "since": "daily"
+    },
+    {
+      "title": "midday-ai / midday",
+      "repo": "https://github.com/midday-ai/midday",
+      "desc": "Invoicing, Time tracking, File reconciliation, Storage, Financial Overview & your own Assistant made for Freelancers",
+      "starsText": "9,837",
+      "todayText": "102 stars today",
+      "language": "typescript",
+      "since": "daily"
+    },
+    {
+      "title": "fastapi / full-stack-fastapi-template",
+      "repo": "https://github.com/fastapi/full-stack-fastapi-template",
+      "desc": "Full stack, modern web application template. Using FastAPI, React, SQLModel, PostgreSQL, Docker, GitHub Actions, automatic HTTPS and more.",
+      "starsText": "35,870",
+      "todayText": "421 stars today",
+      "language": "typescript",
+      "since": "daily"
+    },
+    {
+      "title": "mendableai / firecrawl",
+      "repo": "https://github.com/mendableai/firecrawl",
+      "desc": "🔥 Turn entire websites into LLM-ready markdown or structured data. Scrape, crawl and extract with a single API.",
+      "starsText": "46,642",
+      "todayText": "286 stars today",
+      "language": "typescript",
+      "since": "daily"
+    },
+    {
+      "title": "umami-software / umami",
+      "repo": "https://github.com/umami-software/umami",
+      "desc": "Umami is a modern, privacy-focused alternative to Google Analytics.",
+      "starsText": "29,260",
+      "todayText": "1,150 stars today",
+      "language": "typescript",
+      "since": "daily"
+    },
+    {
+      "title": "idosal / git-mcp",
+      "repo": "https://github.com/idosal/git-mcp",
+      "desc": "Put an end to code hallucinations! GitMCP is a free, open-source, remote MCP server for any GitHub project",
+      "starsText": "4,709",
+      "todayText": "346 stars today",
+      "language": "typescript",
+      "since": "daily"
+    },
+    {
+      "title": "CapSoftware / Cap",
+      "repo": "https://github.com/CapSoftware/Cap",
+      "desc": "Open source Loom alternative. Beautiful, shareable screen recordings.",
+      "starsText": "10,894",
+      "todayText": "141 stars today",
+      "language": "typescript",
+      "since": "daily"
+    },
+    {
+      "title": "babel / babel",
+      "repo": "https://github.com/babel/babel",
+      "desc": "🐠 Babel is a compiler for writing next generation JavaScript.",
+      "starsText": "43,686",
+      "todayText": "8 stars today",
+      "language": "typescript",
+      "since": "daily"
+    },
+    {
+      "title": "openai / openai-node",
+      "repo": "https://github.com/openai/openai-node",
+      "desc": "Official JavaScript / TypeScript library for the OpenAI API",
+      "starsText": "9,946",
+      "todayText": "318 stars today",
+      "language": "typescript",
+      "since": "daily"
+    },
+    {
+      "title": "Mail-0 / Zero",
+      "repo": "https://github.com/Mail-0/Zero",
+      "desc": "Experience email the way you want with Mail0 – the first open source email app that puts your privacy and safety first. Join the discord: https://mail0.link/discord",
+      "starsText": "9,322",
+      "todayText": "34 stars today",
+      "language": "typescript",
+      "since": "daily"
+    }
+  ]
+}

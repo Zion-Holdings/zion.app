@@ -1,0 +1,285 @@
+{
+  "generatedAt": "2025-08-11T23:50:54.606Z",
+  "items": [
+    {
+      "id": "2508.06454",
+      "title": "What Voting Rules Actually Do: A Data-Driven Analysis of Multi-Winner Voting",
+      "authors": "Joshua Caiata, Ben Armstrong, Kate Larson",
+      "subjects": "Artificial Intelligence (cs.AI); Computer Science and Game Theory (cs.GT)",
+      "url": "https://arxiv.org/abs/2508.06454"
+    },
+    {
+      "id": "2508.06443",
+      "title": "The Fair Game: Auditing & Debiasing AI Algorithms Over Time",
+      "authors": "Debabrota Basu, Udvas Das",
+      "subjects": "Artificial Intelligence (cs.AI); Computers and Society (cs.CY); Emerging Technologies (cs.ET); Computer Science and Game Theory (cs.GT)",
+      "url": "https://arxiv.org/abs/2508.06443"
+    },
+    {
+      "id": "2508.06368",
+      "title": "Automated Creation of the Legal Knowledge Graph Addressing Legislation on Violence Against Women: Resource, Methodology and Lessons Learned",
+      "authors": "Claudia dAmato, Giuseppe Rubini, Francesco Didio, Donato Francioso, Fatima Zahra Amara, Nicola Fanizzi",
+      "subjects": "Artificial Intelligence (cs.AI)",
+      "url": "https://arxiv.org/abs/2508.06368"
+    },
+    {
+      "id": "2508.06352",
+      "title": "From Explainable to Explanatory Artificial Intelligence: Toward a New Paradigm for Human-Centered Explanations through Generative AI",
+      "authors": "Christian Meske, Justin Brenne, Erdi Uenal, Sabahat Oelcer, Ayseguel Doganguen",
+      "subjects": "Artificial Intelligence (cs.AI); Human-Computer Interaction (cs.HC)",
+      "url": "https://arxiv.org/abs/2508.06352"
+    },
+    {
+      "id": "2508.06348",
+      "title": "AntiCheatPT: A Transformer-Based Approach to Cheat Detection in Competitive Computer Games",
+      "authors": "Mille Mei Zhen Loo, Gert Luzkov, Paolo Burelli",
+      "subjects": "Artificial Intelligence (cs.AI)",
+      "url": "https://arxiv.org/abs/2508.06348"
+    },
+    {
+      "id": "2508.06326",
+      "title": "A \"good regulator theorem\" for embodied agents",
+      "authors": "Nathaniel Virgo, Martin Biehl, Manuel Baltieri, Matteo Capucci",
+      "subjects": "Artificial Intelligence (cs.AI); Systems and Control (eess.SY)",
+      "url": "https://arxiv.org/abs/2508.06326"
+    },
+    {
+      "id": "2508.06296",
+      "title": "LLM Robustness Leaderboard v1 --Technical report",
+      "authors": "Pierre Peigné - Lefebvre, Quentin Feuillade-Montixi, Tom David, Nicolas Miailhe",
+      "subjects": "Artificial Intelligence (cs.AI); Machine Learning (cs.LG)",
+      "url": "https://arxiv.org/abs/2508.06296"
+    },
+    {
+      "id": "2508.06263",
+      "title": "Symmetry breaking for inductive logic programming",
+      "authors": "Andrew Cropper, David M. Cerna, Matti Järvisalo",
+      "subjects": "Artificial Intelligence (cs.AI); Machine Learning (cs.LG)",
+      "url": "https://arxiv.org/abs/2508.06263"
+    },
+    {
+      "id": "2508.06230",
+      "title": "Learning Logical Rules using Minimum Message Length",
+      "authors": "Ruben Sharma, Sebastijan Dumančić, Ross D. King, Andrew Cropper",
+      "subjects": "Artificial Intelligence (cs.AI)",
+      "url": "https://arxiv.org/abs/2508.06230"
+    },
+    {
+      "id": "2508.06226",
+      "title": "GeoLaux: A Benchmark for Evaluating MLLMs' Geometry Performance on Long-Step Problems Requiring Auxiliary Lines",
+      "authors": "Yumeng Fu, Jiayin Zhu, Lingling Zhang, Bo Zhao, Shaoxuan Ma, Yushun Zhang, Yanrui Wu, Wenjun Wu",
+      "subjects": "Artificial Intelligence (cs.AI)",
+      "url": "https://arxiv.org/abs/2508.06226"
+    },
+    {
+      "id": "2508.06225",
+      "title": "Overconfidence in LLM-as-a-Judge: Diagnosis and Confidence-Driven Solution",
+      "authors": "Zailong Tian, Zhuoheng Han, Yanzhe Chen, Haozhe Xu, Xi Yang, richeng xuan, Hongfeng Wang, Lizi Liao",
+      "subjects": "Artificial Intelligence (cs.AI)",
+      "url": "https://arxiv.org/abs/2508.06225"
+    },
+    {
+      "id": "2508.06145",
+      "title": "Retrieval Augmented Large Language Model System for Comprehensive Drug Contraindications",
+      "authors": "Byeonghun Bang, Jongsuk Yoon, Dong-Jin Chang, Seho Park, Yong Oh Lee",
+      "subjects": "Artificial Intelligence (cs.AI)",
+      "url": "https://arxiv.org/abs/2508.06145"
+    },
+    {
+      "id": "2508.06129",
+      "title": "Study of Robust Features in Formulating Guidance for Heuristic Algorithms for Solving the Vehicle Routing Problem",
+      "authors": "Bachtiar Herdianto, Romain Billot, Flavien Lucas, Marc Sevaux",
+      "subjects": "Artificial Intelligence (cs.AI)",
+      "url": "https://arxiv.org/abs/2508.06129"
+    },
+    {
+      "id": "2508.06111",
+      "title": "SKATE, a Scalable Tournament Eval: Weaker LLMs differentiate between stronger ones using verifiable challenges",
+      "authors": "Dewi S. W. Gould, Bruno Mlodozeniec, Samuel F. Brown",
+      "subjects": "Artificial Intelligence (cs.AI)",
+      "url": "https://arxiv.org/abs/2508.06111"
+    },
+    {
+      "id": "2508.06110",
+      "title": "PanelTR: Zero-Shot Table Reasoning Framework Through Multi-Agent Scientific Discussion",
+      "authors": "Yiran Rex Ma",
+      "subjects": "Artificial Intelligence (cs.AI); Multiagent Systems (cs.MA)",
+      "url": "https://arxiv.org/abs/2508.06110"
+    },
+    {
+      "id": "2508.06091",
+      "title": "Aggregate-Combine-Readout GNNs Are More Expressive Than Logic C2",
+      "authors": "Stan P Hauke, Przemysław Andrzej Wałęga",
+      "subjects": "Artificial Intelligence (cs.AI)",
+      "url": "https://arxiv.org/abs/2508.06091"
+    },
+    {
+      "id": "2508.06074",
+      "title": "ME$^3$-BEV: Mamba-Enhanced Deep Reinforcement Learning for End-to-End Autonomous Driving with BEV-Perception",
+      "authors": "Siyi Lu, Run Liu, Dongsheng Yang, Lei He",
+      "subjects": "Artificial Intelligence (cs.AI); Robotics (cs.RO)",
+      "url": "https://arxiv.org/abs/2508.06074"
+    },
+    {
+      "id": "2508.06064",
+      "title": "A Generic Complete Anytime Beam Search for Optimal Decision Tree",
+      "authors": "Harold Silvère Kiossou, Siegfried Nijssen, Pierre Schaus",
+      "subjects": "Artificial Intelligence (cs.AI)",
+      "url": "https://arxiv.org/abs/2508.06064"
+    },
+    {
+      "id": "2508.06062",
+      "title": "Don't Forget Imagination!",
+      "authors": "Evgenii E. Vityaev, Andrei Mantsivoda",
+      "subjects": "Artificial Intelligence (cs.AI); Machine Learning (cs.LG); Logic in Computer Science (cs.LO)",
+      "url": "https://arxiv.org/abs/2508.06062"
+    },
+    {
+      "id": "2508.06060",
+      "title": "LLMs for Resource Allocation: A Participatory Budgeting Approach to Inferring Preferences",
+      "authors": "Sankarshan Damle, Boi Faltings",
+      "subjects": "Artificial Intelligence (cs.AI)",
+      "url": "https://arxiv.org/abs/2508.06060"
+    },
+    {
+      "id": "2508.06042",
+      "title": "Society of Mind Meets Real-Time Strategy: A Hierarchical Multi-Agent Framework for Strategic Reasoning",
+      "authors": "Daechul Ahn, San Kim, Jonghyun Choi",
+      "subjects": "Artificial Intelligence (cs.AI)",
+      "url": "https://arxiv.org/abs/2508.06042"
+    },
+    {
+      "id": "2508.05996",
+      "title": "Mediator-Guided Multi-Agent Collaboration among Open-Source Models for Medical Decision-Making",
+      "authors": "Kaitao Chen, Mianxin Liu, Daoming Zong, Chaoyue Ding, Shaohao Rui, Yankai Jiang, Mu Zhou, Xiaosong Wang",
+      "subjects": "Artificial Intelligence (cs.AI)",
+      "url": "https://arxiv.org/abs/2508.05996"
+    },
+    {
+      "id": "2508.05888",
+      "title": "Planning Agents on an Ego-Trip: Leveraging Hybrid Ego-Graph Ensembles for Improved Tool Retrieval in Enterprise Task Planning",
+      "authors": "Sahil Bansal, Sai Shruthi Sistla, Aarti Arikatala, Sebastian Schreiber",
+      "subjects": "Artificial Intelligence (cs.AI); Information Retrieval (cs.IR)",
+      "url": "https://arxiv.org/abs/2508.05888"
+    },
+    {
+      "id": "2508.05855",
+      "title": "Safety of Embodied Navigation: A Survey",
+      "authors": "Zixia Wang, Jia Hu, Ronghui Mu",
+      "subjects": "Artificial Intelligence (cs.AI); Robotics (cs.RO)",
+      "url": "https://arxiv.org/abs/2508.05855"
+    },
+    {
+      "id": "2508.05792",
+      "title": "Holistic Explainable AI (H-XAI): Extending Transparency Beyond Developers in AI-Driven Decision Making",
+      "authors": "Kausik Lakkaraju, Siva Likitha Valluru, Biplav Srivastava",
+      "subjects": "Artificial Intelligence (cs.AI)",
+      "url": "https://arxiv.org/abs/2508.05792"
+    },
+    {
+      "id": "2508.05776",
+      "title": "Whither symbols in the era of advanced neural networks?",
+      "authors": "Thomas L. Griffiths, Brenden M. Lake, R. Thomas McCoy, Ellie Pavlick, Taylor W. Webb",
+      "subjects": "Artificial Intelligence (cs.AI)",
+      "url": "https://arxiv.org/abs/2508.05776"
+    },
+    {
+      "id": "2508.05766",
+      "title": "A Framework for Inherently Safer AGI through Language-Mediated Active Inference",
+      "authors": "Bo Wen",
+      "subjects": "Artificial Intelligence (cs.AI); Machine Learning (cs.LG); Systems and Control (eess.SY); Adaptation and Self-Organizing Systems (nlin.AO)",
+      "url": "https://arxiv.org/abs/2508.05766"
+    },
+    {
+      "id": "2508.05731",
+      "title": "InfiGUI-G1: Advancing GUI Grounding with Adaptive Exploration Policy Optimization",
+      "authors": "Yuhang Liu, Zeyu Liu, Shuanghe Zhu, Pengxiang Li, Congkai Xie, Jiasheng Wang, Xueyu Hu, Xiaotian Han, Jianbo Yuan, Xinyao Wang, Shengyu Zhang, Hongxia Yang, Fei Wu",
+      "subjects": "Artificial Intelligence (cs.AI); Computation and Language (cs.CL)",
+      "url": "https://arxiv.org/abs/2508.05731"
+    },
+    {
+      "id": "2508.06485",
+      "title": "WGAST: Weakly-Supervised Generative Network for Daily 10 m Land Surface Temperature Estimation via Spatio-Temporal Fusion",
+      "authors": "Sofiane Bouaziz, Adel Hafiane, Raphael Canals, Rachid Nedjai",
+      "subjects": "Computer Vision and Pattern Recognition (cs.CV); Artificial Intelligence (cs.AI); Machine Learning (cs.LG)",
+      "url": "https://arxiv.org/abs/2508.06485"
+    },
+    {
+      "id": "2508.06482",
+      "title": "Post-training for Efficient Communication via Convention Formation",
+      "authors": "Yilun Hua, Evan Wang, Yoav Artzi",
+      "subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Machine Learning (cs.LG)",
+      "url": "https://arxiv.org/abs/2508.06482"
+    },
+    {
+      "id": "2508.06477",
+      "title": "Intuition emerges in Maximum Caliber models at criticality",
+      "authors": "Lluís Arola-Fernández",
+      "subjects": "Physics and Society (physics.soc-ph); Disordered Systems and Neural Networks (cond-mat.dis-nn); Statistical Mechanics (cond-mat.stat-mech); Artificial Intelligence (cs.AI); Machine Learning (cs.LG)",
+      "url": "https://arxiv.org/abs/2508.06477"
+    },
+    {
+      "id": "2508.06457",
+      "title": "ScamAgents: How AI Agents Can Simulate Human-Level Scam Calls",
+      "authors": "Sanket Badhe",
+      "subjects": "Cryptography and Security (cs.CR); Artificial Intelligence (cs.AI); Computation and Language (cs.CL); Multiagent Systems (cs.MA)",
+      "url": "https://arxiv.org/abs/2508.06457"
+    },
+    {
+      "id": "2508.06453",
+      "title": "Text Embedded Swin-UMamba for DeepLesion Segmentation",
+      "authors": "Ruida Cheng, Tejas Sudharshan Mathai, Pritam Mukherjee, Benjamin Hou, Qingqing Zhu, Zhiyong Lu, Matthew McAuliffe, Ronald M. Summers",
+      "subjects": "Computer Vision and Pattern Recognition (cs.CV); Artificial Intelligence (cs.AI)",
+      "url": "https://arxiv.org/abs/2508.06453"
+    },
+    {
+      "id": "2508.06445",
+      "title": "Echoes of Automation: The Increasing Use of LLMs in Newsmaking",
+      "authors": "Abolfazl Ansari, Delvin Ce Zhang, Nafis Irtiza Tripto, Dongwon Lee",
+      "subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI)",
+      "url": "https://arxiv.org/abs/2508.06445"
+    },
+    {
+      "id": "2508.06435",
+      "title": "Learning the Topic, Not the Language: How LLMs Classify Online Immigration Discourse Across Languages",
+      "authors": "Andrea Nasuto, Stefano Maria Iacus, Francisco Rowe, Devika Jain",
+      "subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI)",
+      "url": "https://arxiv.org/abs/2508.06435"
+    },
+    {
+      "id": "2508.06434",
+      "title": "CLIPin: A Non-contrastive Plug-in to CLIP for Multimodal Semantic Alignment",
+      "authors": "Shengzhu Yang, Jiawei Du, Shuai Lu, Weihang Zhang, Ningli Wang, Huiqi Li",
+      "subjects": "Computer Vision and Pattern Recognition (cs.CV); Artificial Intelligence (cs.AI)",
+      "url": "https://arxiv.org/abs/2508.06434"
+    },
+    {
+      "id": "2508.06433",
+      "title": "Memp: Exploring Agent Procedural Memory",
+      "authors": "Runnan Fang, Yuan Liang, Xiaobin Wang, Jialong Wu, Shuofei Qiao, Pengjun Xie, Fei Huang, Huajun Chen, Ningyu Zhang",
+      "subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Machine Learning (cs.LG); Multiagent Systems (cs.MA)",
+      "url": "https://arxiv.org/abs/2508.06433"
+    },
+    {
+      "id": "2508.06429",
+      "title": "SPARSE Data, Rich Results: Few-Shot Semi-Supervised Learning via Class-Conditioned Image Translation",
+      "authors": "Guido Manni, Clemente Lauretti, Loredana Zollo, Paolo Soda",
+      "subjects": "Computer Vision and Pattern Recognition (cs.CV); Artificial Intelligence (cs.AI)",
+      "url": "https://arxiv.org/abs/2508.06429"
+    },
+    {
+      "id": "2508.06426",
+      "title": "Shortcut Learning in Generalist Robot Policies: The Role of Dataset Diversity and Fragmentation",
+      "authors": "Youguang Xing, Xu Luo, Junlin Xie, Lianli Gao, Hengtao Shen, Jingkuan Song",
+      "subjects": "Robotics (cs.RO); Artificial Intelligence (cs.AI); Computer Vision and Pattern Recognition (cs.CV)",
+      "url": "https://arxiv.org/abs/2508.06426"
+    },
+    {
+      "id": "2508.06411",
+      "title": "Dimensional Characterization and Pathway Modeling for Catastrophic AI Risks",
+      "authors": "Ze Shen Chin",
+      "subjects": "Computers and Society (cs.CY); Artificial Intelligence (cs.AI); Machine Learning (cs.LG)",
+      "url": "https://arxiv.org/abs/2508.06411"
+    }
+  ]
+}

@@ -87,6 +87,10 @@ function discoverExternalLinks() {
   return [
     { type: 'internal', href: '/.netlify/functions/docs-index-runner', label: 'Docs — technical notes & guides', tagline: 'Documentation' },
     { type: 'internal', href: '/newsroom', label: 'AI Changelog — highlights', tagline: 'Summarized updates' },
+    { type: 'internal', href: '/reports/ai-trends', label: 'AI Trends Radar', tagline: 'Ecosystem intelligence' },
+    { type: 'internal', href: '/reports/github-trending', label: 'GitHub Trending', tagline: 'Daily hottest repos' },
+    { type: 'internal', href: '/reports/ai-papers', label: 'AI Papers Watch', tagline: 'Recent arXiv cs.AI' },
+    { type: 'internal', href: '/reports/hn-top', label: 'HN Top Stories', tagline: 'Top HN with points' },
   ];
 }
 

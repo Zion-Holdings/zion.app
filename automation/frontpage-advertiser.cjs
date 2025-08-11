@@ -15,6 +15,9 @@ function detectLinks(root) {
     { href: '/site-health', title: 'Site Health', desc: 'A11y, performance, and link integrity' },
     { href: '/reports/seo', title: 'SEO Audit', desc: 'Continuous on‑site improvements' },
     { href: '/reports/ai-trends', title: 'AI Trends', desc: 'Ecosystem intelligence signals' },
+    { href: '/reports/github-trending', title: 'GitHub Trending', desc: 'Daily hottest repos' },
+    { href: '/reports/ai-papers', title: 'AI Papers Watch', desc: 'Recent arXiv highlights' },
+    { href: '/reports/hn-top', title: 'HN Top Stories', desc: 'Top stories with points' },
     { href: '/newsroom', title: 'Newsroom', desc: 'Autonomous updates & evolution' },
     { href: '/main/front', title: 'Front Systems Hub', desc: 'Curated futuristic front experience' },
   ];

@@ -209,11 +209,7 @@
 
 [[scheduled.functions]]
   name = "deps-auto-upgrade-runner"
-<<<<<<< Updated upstream
   schedule = "7 */12 * * *"
-=======
-  schedule = "0 3 * * *"
->>>>>>> Stashed changes
 
 # New autonomous cloud scanners
 [[scheduled.functions]]
@@ -234,11 +230,7 @@
 
 [[scheduled.functions]]
   name = "pagespeed-insights-runner"
-<<<<<<< Updated upstream
-  schedule = "11 */6 * * *"
-=======
   schedule = "11 */6 * * *" # every 6 hours, offset
->>>>>>> Stashed changes
 
 [[scheduled.functions]]
   name = "knowledge-pack-runner"
@@ -247,8 +239,6 @@
 [[scheduled.functions]]
   name = "adaptive-orchestrator"
   schedule = "*/5 * * * *"
-<<<<<<< Updated upstream
-<<<<<<< HEAD
 
 [[scheduled.functions]]
   name = "site-404-map-runner"
@@ -273,4 +263,17 @@
 [[scheduled.functions]]
   name = "internal-link-graph-runner"
   schedule = "*/5 * * * *"
->>>>>>> Stashed changes
+
+
+[[scheduled.functions]]
+  name = "github-trending-runner"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+  name = "ai-papers-watch-runner"
+  schedule = "0 * * * *"
+
+[[scheduled.functions]]
+  name = "hn-top-stories-runner"
+  schedule = "*/30 * * * *"
+>>>>>>> 47ac43355a (feat(intel): add autonomous feeds + homepage/front advertising + schedules)
