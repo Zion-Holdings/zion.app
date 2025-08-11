@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { Cpu, Gauge, GitBranch, Rocket, ShieldCheck, Zap, Activity, Globe, Layers, BarChart3, Search, Link2, Palette, LineChart } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function MainFrontIndex() {
   return (
@@ -59,7 +60,12 @@ export default function MainFrontIndex() {
 
       {/* Hero */}
       <main className="relative z-10">
-        <section className="mx-auto max-w-7xl px-6 pt-10 pb-16 md:pt-16 md:pb-24">
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mx-auto max-w-7xl px-6 pt-10 pb-16 md:pt-16 md:pb-24"
+        >
           <div className="text-center">
             <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-white/70 backdrop-blur-md">
               <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]" />
@@ -112,20 +118,43 @@ export default function MainFrontIndex() {
                 </div>
               </div>
             </div>
+
+            {/* Quick Links */}
+            <div className="mx-auto mt-8 flex max-w-3xl flex-wrap justify-center gap-2">
+              {[
+                ['Automation Hub', '/automation'],
+                ['SEO Audit', '/reports/seo'],
+                ['AI Trends', '/reports/ai-trends'],
+                ['Newsroom', '/newsroom'],
+                ['Site Health', '/site-health'],
+              ].map(([label, href]) => (
+                <Link key={label as string} href={href as string}>
+                  <a className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs text-white/80 backdrop-blur hover:bg-white/10">{label as string}</a>
+                </Link>
+              ))}
+            </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Suites */}
-        <section className="mx-auto max-w-7xl px-6 pb-14">
+        <motion.section
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-7xl px-6 pb-14"
+        >
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Automation Suites</h2>
           <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {[ 
+            {[
               { title: 'Quick Fixes', desc: 'Build rescue, sitemap/robots, security remediation', href: '/automation' },
               { title: 'Deep Maintenance', desc: 'Orchestrated smoke tests and link checks', href: '/automation' },
               { title: 'Marketing & SEO', desc: 'Content factories and on‑site optimizations', href: '/automation' },
               { title: 'Content Curation', desc: 'Homepage promos generated continuously', href: '/automation' },
               { title: 'Dependency Upgrades', desc: 'Minor/patch bumps with safe auto‑merge', href: '/automation' },
               { title: 'Live Workflows', desc: 'Observe pipelines running 24/7', href: 'https://github.com/Zion-Holdings/zion.app/actions', external: true },
+              { title: 'AI SEO Auditor', desc: 'Continuous on‑site audits with safe proposed diffs', href: '/reports/seo' },
+              { title: 'AI Trends Radar', desc: 'Signal scanning to inspire new factories', href: '/reports/ai-trends' },
             ].map((suite) => (
               <article key={suite.title} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
@@ -141,10 +170,16 @@ export default function MainFrontIndex() {
               </article>
             ))}
           </div>
-        </section>
+        </motion.section>
 
         {/* Superpowers */}
-        <section className="mx-auto max-w-7xl px-6 pb-14">
+        <motion.section
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-7xl px-6 pb-14"
+        >
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Superpowers</h2>
           <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-3">
             {[
@@ -160,10 +195,16 @@ export default function MainFrontIndex() {
               </article>
             ))}
           </div>
-        </section>
+        </motion.section>
 
         {/* Features */}
-        <section className="mx-auto max-w-7xl px-6 pb-14">
+        <motion.section
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-7xl px-6 pb-14"
+        >
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Features</h2>
           <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {[
@@ -190,10 +231,16 @@ export default function MainFrontIndex() {
               </Link>
             ))}
           </div>
-        </section>
+        </motion.section>
 
         {/* Use Cases */}
-        <section className="mx-auto max-w-7xl px-6 pb-14">
+        <motion.section
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-7xl px-6 pb-14"
+        >
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Use Cases</h2>
           <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {[
@@ -211,10 +258,16 @@ export default function MainFrontIndex() {
               </article>
             ))}
           </div>
-        </section>
+        </motion.section>
 
         {/* Stats */}
-        <section className="mx-auto max-w-7xl px-6 pb-14">
+        <motion.section
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-7xl px-6 pb-14"
+        >
           <div className="neon-divider mx-auto mb-8 h-px w-full max-w-5xl" />
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Live Impact</h2>
           <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-4">
@@ -230,10 +283,16 @@ export default function MainFrontIndex() {
               </div>
             ))}
           </div>
-        </section>
+        </motion.section>
 
         {/* Capabilities */}
-        <section className="mx-auto max-w-7xl px-6 pb-14">
+        <motion.section
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-7xl px-6 pb-14"
+        >
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Capabilities</h2>
           <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-3">
             {[
@@ -243,6 +302,9 @@ export default function MainFrontIndex() {
               { Icon: Layers, title: 'Code Quality & Refactors', desc: 'Lints, fixes, and proposes refactors with type‑safety improvements.', href: '/automation' },
               { Icon: Gauge, title: 'Observability & Reports', desc: 'Artifacts, dashboards, and live logs for every automation.', href: '/site-health' },
               { Icon: Globe, title: 'Intelligence Signals', desc: 'AI + cloud trend tracking to spark new factory ideas.', href: '/reports/ai-trends' },
+              { Icon: GitBranch, title: 'Repo Sync to Main', desc: 'Small, safe diffs merged continuously for momentum.', href: '/automation' },
+              { Icon: ShieldCheck, title: 'Guardrails & Policy', desc: 'Organization‑wide safety rules enforced automatically.', href: '/site-health' },
+              { Icon: Cpu, title: 'Zero‑Ops Cloud', desc: 'Fully managed cloud execution with no servers to babysit.', href: '/automation' },
             ].map(({ Icon, title, desc, href }) => (
               <Link key={title} href={href}>
                 <a className="relative block overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30">
@@ -256,10 +318,16 @@ export default function MainFrontIndex() {
               </Link>
             ))}
           </div>
-        </section>
+        </motion.section>
 
         {/* Why Zion */}
-        <section className="mx-auto max-w-7xl px-6 pb-14">
+        <motion.section
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-7xl px-6 pb-14"
+        >
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Why Zion</h2>
           <div className="mx-auto mt-6 max-w-5xl grid grid-cols-1 gap-4 md:grid-cols-3">
             {[
@@ -274,10 +342,16 @@ export default function MainFrontIndex() {
               </div>
             ))}
           </div>
-        </section>
+        </motion.section>
 
         {/* Benefits */}
-        <section className="mx-auto max-w-7xl px-6 pb-20">
+        <motion.section
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-7xl px-6 pb-20"
+        >
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Benefits</h2>
           <div className="mx-auto mt-6 max-w-4xl grid grid-cols-1 gap-3 md:grid-cols-2">
             {[
@@ -293,6 +367,9 @@ export default function MainFrontIndex() {
               'Improved search visibility via continuous SEO',
               'Happier users thanks to performance & a11y wins',
               'Lower operational risk through guardrails',
+              'Improved discoverability via deep indexing and SEO',
+              'Happier engineers with less toil and more creation',
+              'Confident shipping through automated guardrails',
             ].map((b) => (
               <div key={b} className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-md">
                 <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]" />
@@ -300,10 +377,16 @@ export default function MainFrontIndex() {
               </div>
             ))}
           </div>
-        </section>
+        </motion.section>
 
         {/* Tech */}
-        <section className="mx-auto max-w-7xl px-6 pb-16">
+        <motion.section
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-7xl px-6 pb-16"
+        >
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6 text-center backdrop-blur-md">
             <p className="text-white/70">Powered by modern cloud and AI tooling</p>
             <div className="mt-4 flex flex-wrap items-center justify-center gap-6">
@@ -314,10 +397,16 @@ export default function MainFrontIndex() {
               ))}
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* CTA */}
-        <section className="mx-auto max-w-7xl px-6 pb-24">
+        <motion.section
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-7xl px-6 pb-24"
+        >
           <div className="animated-border relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-r from-fuchsia-600/20 via-violet-600/20 to-cyan-600/20 p-8 text-center backdrop-blur-xl">
             <h3 className="text-2xl font-bold">Ready to build with autonomous cloud agents?</h3>
             <p className="mx-auto mt-2 max-w-2xl text-white/80">Scale development with a tireless fleet of self‑improving automations.</p>
@@ -326,10 +415,16 @@ export default function MainFrontIndex() {
               <Link href="/automation"><a className="rounded-xl border border-white/20 bg-white/5 px-6 py-3 font-semibold backdrop-blur-md hover:bg-white/10">View Automations</a></Link>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Deep Dives */}
-        <section className="mx-auto max-w-7xl px-6 pb-16">
+        <motion.section
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-7xl px-6 pb-16"
+        >
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Deep Dives</h2>
           <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             <Link href="/automation"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Automation Hub — live agents & reports</span></a></Link>
@@ -340,7 +435,7 @@ export default function MainFrontIndex() {
             <a href="https://github.com/Zion-Holdings/zion.app/actions" target="_blank" rel="noopener" className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">GitHub Actions — live workflows</span></a>
             <a href="https://github.com/Zion-Holdings/zion.app/tree/main/docs" target="_blank" rel="noopener" className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Docs — technical notes & guides</span></a>
           </div>
-        </section>
+        </motion.section>
 
         {/* Reports */}
         <section className="mx-auto max-w-7xl px-6 pb-14">
