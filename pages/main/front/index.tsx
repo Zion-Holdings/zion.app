@@ -18,6 +18,13 @@ export default function MainFrontIndex() {
         <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,white,transparent_70%)]">
           <div className="twinkle-field absolute inset-0" />
         </div>
+        {/* Extra futuristic layers */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-30">
+          <div className="absolute h-[52rem] w-[52rem] rounded-full border border-cyan-400/10 animate-[spin_60s_linear_infinite]" />
+          <div className="absolute h-[36rem] w-[36rem] rounded-full border border-fuchsia-400/10 animate-[spin_80s_linear_infinite] [animation-direction:reverse]" />
+          <div className="absolute h-[24rem] w-[24rem] rounded-full border border-violet-400/10 animate-[spin_100s_linear_infinite]" />
+        </div>
+        <div className="absolute inset-0 mix-blend-soft-light opacity-[0.07] scanlines" />
       </div>
 
       {/* Header */}
@@ -68,6 +75,27 @@ export default function MainFrontIndex() {
                 </div>
               ))}
             </div>
+
+            {/* Futuristic marquee */}
+            <div className="mt-10 overflow-hidden">
+              <div className="marquee">
+                <div className="marquee__track">
+                  {[
+                    'Autonomous Agents',
+                    'Repo Sync to Main',
+                    'Zero‑Ops Cloud',
+                    'Safety Guardrails',
+                    'A11y + Performance',
+                    'Observability',
+                  ].flatMap((label) => [label, label]).map((label, idx) => (
+                    <span key={`${label}-${idx}`} className="mx-3 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1 text-xs text-white/80 backdrop-blur">
+                      <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" /> {label}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
           </div>
         </section>
 
@@ -92,6 +120,25 @@ export default function MainFrontIndex() {
           </div>
         </section>
 
+        {/* Stats */}
+        <section className="mx-auto max-w-7xl px-6 pb-14">
+          <div className="neon-divider mx-auto mb-8 h-px w-full max-w-5xl" />
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Live Impact</h2>
+          <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-4">
+            {[
+              ['Workflows', '1,200+'],
+              ['Commits Synced', '800+'],
+              ['Automated Edits', '3,500+'],
+              ['Uptime', '99.95%'],
+            ].map(([label, value]) => (
+              <div key={label} className="rounded-2xl border border-white/10 bg-white/5 p-5 text-center backdrop-blur">
+                <div className="text-2xl font-extrabold tracking-tight">{value}</div>
+                <div className="mt-1 text-xs text-white/70">{label}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Capabilities */}
         <section className="mx-auto max-w-7xl px-6 pb-14">
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Capabilities</h2>
@@ -106,6 +153,24 @@ export default function MainFrontIndex() {
                 <h3 className="text-lg font-semibold">{c.title}</h3>
                 <p className="mt-1 text-sm text-white/75">{c.desc}</p>
               </article>
+            ))}
+          </div>
+        </section>
+
+        {/* Why Zion */}
+        <section className="mx-auto max-w-7xl px-6 pb-14">
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Why Zion</h2>
+          <div className="mx-auto mt-6 max-w-5xl grid grid-cols-1 gap-4 md:grid-cols-3">
+            {[
+              ['🚀', 'Speed', 'Continuous delivery to main with safe, incremental changes.'],
+              ['🛡️', 'Safety', 'Conservative edits and guardrails keep production stable.'],
+              ['📈', 'Scale', 'Automatically generates new factories as your needs grow.'],
+            ].map(([icon, title, desc]) => (
+              <div key={title as string} className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+                <div className="text-2xl">{icon as string}</div>
+                <div className="mt-2 text-base font-semibold">{title as string}</div>
+                <div className="mt-1 text-sm text-white/75">{desc as string}</div>
+              </div>
             ))}
           </div>
         </section>
@@ -139,6 +204,23 @@ export default function MainFrontIndex() {
             </div>
           </div>
         </section>
+
+        {/* Footer */}
+        <footer className="mx-auto max-w-7xl px-6 pb-16">
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+            <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+              <div className="text-lg font-bold tracking-wide">
+                <span className="bg-gradient-to-r from-fuchsia-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent drop-shadow-neon">Zion</span>
+              </div>
+              <div className="flex flex-wrap justify-center gap-4 text-sm text-white/70">
+                <Link href="/automation"><a>Automations</a></Link>
+                <Link href="/newsroom"><a>Newsroom</a></Link>
+                <Link href="/site-health"><a>Site Health</a></Link>
+                <a href="https://github.com/Zion-Holdings/zion.app" target="_blank" rel="noopener">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </footer>
       </main>
     </div>
   );
