@@ -1,7 +1,13 @@
 {
+<<<<<<< HEAD
   "generatedAt": "2025-08-11T20:39:20.139Z",
   "windowHours": 24,
   "commitCount": 427,
+=======
+  "generatedAt": "2025-08-11T21:27:52.537Z",
+  "windowHours": 24,
+  "commitCount": 459,
+>>>>>>> 1deb061536 (chore(repo): radar metrics + knowledge graph [ci skip])
   "changedFileCount": 0,
   "topChangedFiles": [],
   "diff": {

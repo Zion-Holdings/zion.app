@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "generatedAt": "2025-08-11T20:39:19.680Z",
+=======
+  "generatedAt": "2025-08-11T21:27:52.663Z",
+>>>>>>> 1deb061536 (chore(repo): radar metrics + knowledge graph [ci skip])
   "nodes": [
     {
       "id": "automation/advanced-git-sync.cjs",
