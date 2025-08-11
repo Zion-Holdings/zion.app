@@ -1,0 +1,318 @@
+{
+  "generatedAt": "2025-08-11T22:38:52.422Z",
+  "totals": {
+    "files": 155,
+    "lines": 9993,
+    "sizeBytes": 465158,
+    "functions": 786
+  },
+  "averages": {
+    "linesPerFile": 64,
+    "functionsPerFile": 5.070967741935484,
+    "bytesPerFile": 3001
+  },
+  "topByLines": [
+    {
+      "file": "/workspace/pages/main/front/index.tsx",
+      "lines": 1776,
+      "sizeBytes": 137973,
+      "functions": 49
+    },
+    {
+      "file": "/workspace/pages/index.tsx",
+      "lines": 292,
+      "sizeBytes": 25600,
+      "functions": 7
+    },
+    {
+      "file": "/workspace/scripts/trigger-netlify-automations.cjs",
+      "lines": 191,
+      "sizeBytes": 6592,
+      "functions": 14
+    },
+    {
+      "file": "/workspace/automation/netlify-auto-healer.cjs",
+      "lines": 182,
+      "sizeBytes": 6338,
+      "functions": 18
+    },
+    {
+      "file": "/workspace/netlify/plugins/run-functions-and-rerun/index.js",
+      "lines": 173,
+      "sizeBytes": 6212,
+      "functions": 23
+    },
+    {
+      "file": "/workspace/automation/branch-cleanup.cjs",
+      "lines": 172,
+      "sizeBytes": 5174,
+      "functions": 16
+    },
+    {
+      "file": "/workspace/components/Landing.tsx",
+      "lines": 171,
+      "sizeBytes": 12251,
+      "functions": 6
+    },
+    {
+      "file": "/workspace/scripts/test-netlify-functions.cjs",
+      "lines": 162,
+      "sizeBytes": 5421,
+      "functions": 31
+    },
+    {
+      "file": "/workspace/automation/auto-scheduler.cjs",
+      "lines": 160,
+      "sizeBytes": 5823,
+      "functions": 9
+    },
+    {
+      "file": "/workspace/automation/front-index-advertiser.cjs",
+      "lines": 148,
+      "sizeBytes": 6209,
+      "functions": 9
+    },
+    {
+      "file": "/workspace/automation/front-index-directory-builder.cjs",
+      "lines": 140,
+      "sizeBytes": 5462,
+      "functions": 9
+    },
+    {
+      "file": "/workspace/scripts/generate-readme.js",
+      "lines": 136,
+      "sizeBytes": 4841,
+      "functions": 14
+    },
+    {
+      "file": "/workspace/netlify/functions/trigger-all-and-commit.js",
+      "lines": 129,
+      "sizeBytes": 4608,
+      "functions": 8
+    },
+    {
+      "file": "/workspace/automation/todo-scanner.cjs",
+      "lines": 126,
+      "sizeBytes": 3592,
+      "functions": 14
+    },
+    {
+      "file": "/workspace/automation/ai-changelog-generator.cjs",
+      "lines": 123,
+      "sizeBytes": 3463,
+      "functions": 10
+    },
+    {
+      "file": "/workspace/automation/automation-guardian-10min.cjs",
+      "lines": 122,
+      "sizeBytes": 3837,
+      "functions": 9
+    },
+    {
+      "file": "/workspace/scripts/ai-trends-radar.js",
+      "lines": 118,
+      "sizeBytes": 3452,
+      "functions": 10
+    },
+    {
+      "file": "/workspace/automation/homepage-updater.cjs",
+      "lines": 114,
+      "sizeBytes": 3884,
+      "functions": 6
+    },
+    {
+      "file": "/workspace/automation/git-sync.cjs",
+      "lines": 113,
+      "sizeBytes": 3226,
+      "functions": 9
+    },
+    {
+      "file": "/workspace/automation/site-link-crawler.cjs",
+      "lines": 111,
+      "sizeBytes": 3832,
+      "functions": 10
+    },
+    {
+      "file": "/workspace/automation/homepage-auto-advertiser.cjs",
+      "lines": 110,
+      "sizeBytes": 4347,
+      "functions": 9
+    },
+    {
+      "file": "/workspace/automation/front-futurizer.cjs",
+      "lines": 109,
+      "sizeBytes": 7119,
+      "functions": 6
+    },
+    {
+      "file": "/workspace/scripts/automations/todo_issue_sync.cjs",
+      "lines": 103,
+      "sizeBytes": 3120,
+      "functions": 5
+    },
+    {
+      "file": "/workspace/automation/home-index-visionary.cjs",
+      "lines": 99,
+      "sizeBytes": 4426,
+      "functions": 5
+    },
+    {
+      "file": "/workspace/pages/newsroom.tsx",
+      "lines": 99,
+      "sizeBytes": 8863,
+      "functions": 1
+    }
+  ],
+  "topByFunctions": [
+    {
+      "file": "/workspace/pages/main/front/index.tsx",
+      "lines": 1776,
+      "sizeBytes": 137973,
+      "functions": 49
+    },
+    {
+      "file": "/workspace/scripts/test-netlify-functions.cjs",
+      "lines": 162,
+      "sizeBytes": 5421,
+      "functions": 31
+    },
+    {
+      "file": "/workspace/netlify/plugins/run-functions-and-rerun/index.js",
+      "lines": 173,
+      "sizeBytes": 6212,
+      "functions": 23
+    },
+    {
+      "file": "/workspace/automation/netlify-auto-healer.cjs",
+      "lines": 182,
+      "sizeBytes": 6338,
+      "functions": 18
+    },
+    {
+      "file": "/workspace/automation/branch-cleanup.cjs",
+      "lines": 172,
+      "sizeBytes": 5174,
+      "functions": 16
+    },
+    {
+      "file": "/workspace/automation/todo-scanner.cjs",
+      "lines": 126,
+      "sizeBytes": 3592,
+      "functions": 14
+    },
+    {
+      "file": "/workspace/scripts/generate-readme.js",
+      "lines": 136,
+      "sizeBytes": 4841,
+      "functions": 14
+    },
+    {
+      "file": "/workspace/scripts/run-netlify-functions-locally.cjs",
+      "lines": 90,
+      "sizeBytes": 3239,
+      "functions": 14
+    },
+    {
+      "file": "/workspace/scripts/trigger-netlify-automations.cjs",
+      "lines": 191,
+      "sizeBytes": 6592,
+      "functions": 14
+    },
+    {
+      "file": "/workspace/automation/dead-code-scanner.cjs",
+      "lines": 95,
+      "sizeBytes": 3136,
+      "functions": 13
+    },
+    {
+      "file": "/workspace/automation/external-link-check.cjs",
+      "lines": 91,
+      "sizeBytes": 3476,
+      "functions": 13
+    },
+    {
+      "file": "/workspace/automation/ai-changelog-generator.cjs",
+      "lines": 123,
+      "sizeBytes": 3463,
+      "functions": 10
+    },
+    {
+      "file": "/workspace/automation/site-link-crawler.cjs",
+      "lines": 111,
+      "sizeBytes": 3832,
+      "functions": 10
+    },
+    {
+      "file": "/workspace/netlify/functions/automation-matrix.js",
+      "lines": 43,
+      "sizeBytes": 1496,
+      "functions": 10
+    },
+    {
+      "file": "/workspace/netlify/functions/marketing-scheduler.js",
+      "lines": 45,
+      "sizeBytes": 1658,
+      "functions": 10
+    },
+    {
+      "file": "/workspace/scripts/ai-trends-radar.js",
+      "lines": 118,
+      "sizeBytes": 3452,
+      "functions": 10
+    },
+    {
+      "file": "/workspace/automation/auto-scheduler.cjs",
+      "lines": 160,
+      "sizeBytes": 5823,
+      "functions": 9
+    },
+    {
+      "file": "/workspace/automation/automation-guardian-10min.cjs",
+      "lines": 122,
+      "sizeBytes": 3837,
+      "functions": 9
+    },
+    {
+      "file": "/workspace/automation/front-index-advertiser.cjs",
+      "lines": 148,
+      "sizeBytes": 6209,
+      "functions": 9
+    },
+    {
+      "file": "/workspace/automation/front-index-directory-builder.cjs",
+      "lines": 140,
+      "sizeBytes": 5462,
+      "functions": 9
+    },
+    {
+      "file": "/workspace/automation/git-sync.cjs",
+      "lines": 113,
+      "sizeBytes": 3226,
+      "functions": 9
+    },
+    {
+      "file": "/workspace/automation/homepage-auto-advertiser.cjs",
+      "lines": 110,
+      "sizeBytes": 4347,
+      "functions": 9
+    },
+    {
+      "file": "/workspace/netlify/functions/continuous-orchestrator.js",
+      "lines": 38,
+      "sizeBytes": 1405,
+      "functions": 9
+    },
+    {
+      "file": "/workspace/automation/advanced-git-sync.cjs",
+      "lines": 81,
+      "sizeBytes": 2672,
+      "functions": 8
+    },
+    {
+      "file": "/workspace/automation/auto-discovery-runner.cjs",
+      "lines": 94,
+      "sizeBytes": 3249,
+      "functions": 8
+    }
+  ]
+}
