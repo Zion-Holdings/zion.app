@@ -58,7 +58,7 @@ export default function SiteHealth() {
             {[
               { title: 'Accessibility', desc: 'WCAG checks with actionable fixes and reports.', href: '/reports/seo' },
               { title: 'Performance', desc: 'Core Web Vitals and performance budgets.', href: '/reports/seo' },
-              { title: 'Link Integrity', desc: 'Broken links identified and prevented.', href: '/reports/seo' },
+              { title: 'Link Integrity', desc: 'Broken links identified and prevented.', href: '/reports/links' },
             ].map((card) => (
               <Link key={card.title} href={card.href}>
                 <a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30">

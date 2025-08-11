@@ -1,0 +1,175 @@
+{
+  "generatedAt": "2025-08-11T11:14:30.882Z",
+  "totalLinks": 44,
+  "broken": 28,
+  "issues": [
+    {
+      "file": "/workspace/pages/index.tsx",
+      "link": "/services",
+      "status": "missing",
+      "suggestion": null
+    },
+    {
+      "file": "/workspace/pages/index.tsx",
+      "link": "/products",
+      "status": "missing",
+      "suggestion": null
+    },
+    {
+      "file": "/workspace/pages/index.tsx",
+      "link": "/contact",
+      "status": "missing",
+      "suggestion": null
+    },
+    {
+      "file": "/workspace/pages/index.tsx",
+      "link": "/.netlify/functions/front-enhancer",
+      "status": "missing",
+      "suggestion": null
+    },
+    {
+      "file": "/workspace/pages/index.tsx",
+      "link": "/.netlify/functions/cloud_orchestrator",
+      "status": "missing",
+      "suggestion": null
+    },
+    {
+      "file": "/workspace/pages/index.tsx",
+      "link": "/.netlify/functions/continuous-orchestrator",
+      "status": "missing",
+      "suggestion": null
+    },
+    {
+      "file": "/workspace/pages/index.tsx",
+      "link": "/.netlify/functions/fast-front-promoter",
+      "status": "missing",
+      "suggestion": null
+    },
+    {
+      "file": "/workspace/pages/index.tsx",
+      "link": "/.netlify/functions/feature-advertiser",
+      "status": "missing",
+      "suggestion": null
+    },
+    {
+      "file": "/workspace/pages/index.tsx",
+      "link": "/.netlify/functions/front-index-futurizer",
+      "status": "missing",
+      "suggestion": null
+    },
+    {
+      "file": "/workspace/pages/index.tsx",
+      "link": "/.netlify/functions/front-index-orchestrator",
+      "status": "missing",
+      "suggestion": null
+    },
+    {
+      "file": "/workspace/pages/index.tsx",
+      "link": "/.netlify/functions/front-index-scheduler",
+      "status": "missing",
+      "suggestion": null
+    },
+    {
+      "file": "/workspace/pages/site-health.tsx",
+      "link": "/reports/seo/latest.json",
+      "status": "missing",
+      "suggestion": null
+    },
+    {
+      "file": "/workspace/pages/site-health.tsx",
+      "link": "/reports/seo/index.html",
+      "status": "missing",
+      "suggestion": null
+    },
+    {
+      "file": "/workspace/pages/main/front/index.tsx",
+      "link": "/.netlify/functions/front-enhancer",
+      "status": "missing",
+      "suggestion": null
+    },
+    {
+      "file": "/workspace/pages/automation/index.tsx",
+      "link": "/.netlify/functions/schedule-homepage",
+      "status": "missing",
+      "suggestion": null
+    },
+    {
+      "file": "/workspace/pages/automation/index.tsx",
+      "link": "/.netlify/functions/schedule-site-health",
+      "status": "missing",
+      "suggestion": null
+    },
+    {
+      "file": "/workspace/pages/automation/index.tsx",
+      "link": "/.netlify/functions/schedule-content-index",
+      "status": "missing",
+      "suggestion": null
+    },
+    {
+      "file": "/workspace/pages/automation/index.tsx",
+      "link": "/.netlify/functions/schedule-knowledge-graph",
+      "status": "missing",
+      "suggestion": null
+    },
+    {
+      "file": "/workspace/pages/automation/index.tsx",
+      "link": "/.netlify/functions/front-enhancer",
+      "status": "missing",
+      "suggestion": null
+    },
+    {
+      "file": "/workspace/pages/automation/index.tsx",
+      "link": "/.netlify/functions/fast-front-promoter",
+      "status": "missing",
+      "suggestion": null
+    },
+    {
+      "file": "/workspace/pages/automation/index.tsx",
+      "link": "/.netlify/functions/marketing-and-features-promo",
+      "status": "missing",
+      "suggestion": null
+    },
+    {
+      "file": "/workspace/pages/automation/index.tsx",
+      "link": "/.netlify/functions/fast-orchestrator",
+      "status": "missing",
+      "suggestion": null
+    },
+    {
+      "file": "/workspace/pages/automation/index.tsx",
+      "link": "/.netlify/functions/continuous-orchestrator",
+      "status": "missing",
+      "suggestion": null
+    },
+    {
+      "file": "/workspace/pages/automation/index.tsx",
+      "link": "/.netlify/functions/features-capabilities-benefits-advertiser",
+      "status": "missing",
+      "suggestion": null
+    },
+    {
+      "file": "/workspace/pages/automation/index.tsx",
+      "link": "/.netlify/functions/hyper-front-index-accelerator",
+      "status": "missing",
+      "suggestion": null
+    },
+    {
+      "file": "/workspace/pages/automation/index.tsx",
+      "link": "/.netlify/functions/innovation-lab",
+      "status": "missing",
+      "suggestion": null
+    },
+    {
+      "file": "/workspace/pages/automation/index.tsx",
+      "link": "/.netlify/functions/auto-scheduler",
+      "status": "missing",
+      "suggestion": null
+    },
+    {
+      "file": "/workspace/pages/automation/index.tsx",
+      "link": "/.netlify/functions/broken-image-scanner",
+      "status": "missing",
+      "suggestion": null
+    }
+  ]
+}

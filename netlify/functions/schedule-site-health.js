@@ -22,6 +22,8 @@ module.exports.handler = async function() {
   steps.push({ name: 'broken-image-scanner', cmd: 'node automation/broken-image-scanner.cjs' });
   steps.push({ name: 'image-optimizer', cmd: 'node automation/image-optimizer.cjs' });
   steps.push({ name: 'sitemap', cmd: 'npm run sitemap' });
+  steps.push({ name: 'internal-link-crawler', cmd: 'node automation/site-link-crawler.cjs' });
+  steps.push({ name: 'internal-link-fixer', cmd: 'node automation/site-link-fixer.cjs' });
 
   const results = [];
   for (const step of steps) {
