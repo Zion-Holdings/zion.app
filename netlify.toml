@@ -131,6 +131,10 @@
   schedule = "23 */6 * * *"
 
 [[scheduled.functions]]
+  name = "og-metadata-auditor"
+  schedule = "23 */6 * * *"
+
+[[scheduled.functions]]
   name = "image-optimizer-runner"
   schedule = "29 */6 * * *"
 

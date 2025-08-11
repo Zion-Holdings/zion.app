@@ -132,6 +132,12 @@ export default function AutomationHub() {
             <p className="text-white/70">Deletes merged or stale ephemeral branches via GitHub API.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/branch-cleanup-runner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
+
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">OG Metadata Audit</h2>
+            <p className="text-white/70">Audits pages for missing meta descriptions; auto-inserts safe defaults and syncs.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/og-metadata-auditor" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
         </ul>
       </main>
     </div>
