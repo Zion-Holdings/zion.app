@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-11T17:51:44.562Z",
+  "generatedAt": "2025-08-11T18:14:42.350Z",
   "entries": [
     {
       "route": "/site-health",
@@ -59,7 +59,7 @@
       "route": "/../docs/TODO_REPORT",
       "file": "docs/TODO_REPORT.md",
       "title": "TODO and FIXME Report",
-      "summary": "# TODO and FIXME Report - Generated: 2025-08-10T23:33:00.421Z - Total findings: 13 ## .github/workflows/autonomous-content-scanner.yml - [TODO] .github/workflows/autonomous-content-scanner.yml:30 — /FIXME scanner - [TODO] .github/workflows/autonomous-content-scanner.yml:31 — -sca"
+      "summary": "# TODO and FIXME Report - Generated: 2025-08-11T17:51:48.639Z - Total findings: 345 ## .github/workflows.disabled/autonomous-content-scanner.yml - [TODO] .github/workflows.disabled/autonomous-content-scanner.yml:30 — /FIXME scanner - [TODO] .github/workflows.disabled/autonomous-c"
     },
     {
       "route": "/../docs/MEDIA_RELEASE",
