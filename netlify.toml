@@ -190,3 +190,19 @@
 [[scheduled.functions]]
   name = "autonomous-innovation-generator"
   schedule = "*/2 * * * *" # every 2 minutes
+
+[[scheduled.functions]]
+  name = "internal-link-fixer-runner"
+  schedule = "7 */6 * * *"
+
+[[scheduled.functions]]
+  name = "revenue-ideas-agents-runner"
+  schedule = "17 */6 * * *"
+
+[[scheduled.functions]]
+  name = "branch-cleanup-runner"
+  schedule = "0 3 * * *"
+
+[[scheduled.functions]]
+  name = "media-release-runner"
+  schedule = "41 */6 * * *"
