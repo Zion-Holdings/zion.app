@@ -1,0 +1,63 @@
+{
+  "generatedAt": "2025-08-11T11:24:37.882Z",
+  "total": 8,
+  "missingCount": 0,
+  "routes": [
+    "/automation",
+    "/contact",
+    "/newsroom",
+    "/products",
+    "/reports/ai-trends",
+    "/reports/seo",
+    "/services",
+    "/site-health"
+  ],
+  "missing": [],
+  "byFile": {
+    "pages/_app.tsx": [],
+    "pages/contact.tsx": [
+      "/automation",
+      "/site-health"
+    ],
+    "pages/index.tsx": [
+      "/services",
+      "/products",
+      "/automation",
+      "/contact",
+      "/newsroom",
+      "/site-health"
+    ],
+    "pages/newsroom.tsx": [],
+    "pages/site-health.tsx": [
+      "/automation",
+      "/reports/seo",
+      "/reports/ai-trends"
+    ],
+    "pages/services/[slug].tsx": [
+      "/services"
+    ],
+    "pages/services/index.tsx": [
+      "/automation",
+      "/site-health"
+    ],
+    "pages/reports/ai-trends.tsx": [],
+    "pages/reports/seo.tsx": [],
+    "pages/products/index.tsx": [
+      "/automation",
+      "/site-health"
+    ],
+    "pages/main/front/index.tsx": [
+      "/automation",
+      "/reports/seo",
+      "/site-health",
+      "/reports/ai-trends",
+      "/newsroom"
+    ],
+    "pages/front/index.tsx": [],
+    "pages/contact/index.tsx": [
+      "/automation",
+      "/site-health"
+    ],
+    "pages/automation/index.tsx": []
+  }
+}

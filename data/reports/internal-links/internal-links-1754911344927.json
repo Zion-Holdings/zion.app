@@ -1,0 +1,54 @@
+{
+  "generatedAt": "2025-08-11T11:22:24.927Z",
+  "total": 10,
+  "missingCount": 5,
+  "routes": [
+    "/automation",
+    "/contact",
+    "/newsroom",
+    "/products",
+    "/reports/ai-trends",
+    "/reports/seo",
+    "/reports/seo/index.html",
+    "/reports/seo/latest.json",
+    "/services",
+    "/site-health"
+  ],
+  "missing": [
+    "/contact",
+    "/products",
+    "/reports/seo/index.html",
+    "/reports/seo/latest.json",
+    "/services"
+  ],
+  "byFile": {
+    "pages/_app.tsx": [],
+    "pages/index.tsx": [
+      "/services",
+      "/products",
+      "/automation",
+      "/contact",
+      "/newsroom",
+      "/site-health"
+    ],
+    "pages/newsroom.tsx": [],
+    "pages/site-health.tsx": [
+      "/automation",
+      "/reports/seo",
+      "/reports/ai-trends",
+      "/reports/seo/latest.json",
+      "/reports/seo/index.html"
+    ],
+    "pages/reports/ai-trends.tsx": [],
+    "pages/reports/seo.tsx": [],
+    "pages/main/front/index.tsx": [
+      "/automation",
+      "/reports/seo",
+      "/site-health",
+      "/reports/ai-trends",
+      "/newsroom"
+    ],
+    "pages/front/index.tsx": [],
+    "pages/automation/index.tsx": []
+  }
+}

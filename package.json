@@ -171,7 +171,7 @@
     "cursor:chat:analyze": "node automation/cursor-chat-analyzer.cjs && node automation/cursor-chat-factory.cjs",
     "links:start": "node automation/site-link-orchestrator.cjs",
     "links:cron:start": "bash automation/site-link-cron.sh",
-    "links:scan": "node automation/site-link-crawler.cjs && node automation/site-link-fixer.cjs",
+    "links:scan": "node automation/internal-link-crawler.cjs && node automation/internal-link-fixer.cjs",
     "promo:start": "node automation/site-promo-orchestrator.cjs",
     "promo:cron:start": "bash automation/site-promo-cron.sh",
     "promo:scan": "node automation/site-promo-analyzer.cjs && node automation/homepage-promo-applier.cjs",
@@ -224,7 +224,10 @@
     "homepage:update": "node automation/homepage-updater.cjs",
     "scan:todo": "node automation/todo-scanner.cjs",
     "scan:registry": "node automation/docs-pages-indexer.cjs",
-    "scan:content": "npm run scan:todo && npm run scan:registry"
+    "scan:content": "npm run scan:todo && npm run scan:registry",
+    "internal-links:scan": "node automation/internal-link-crawler.cjs",
+    "internal-links:fix": "node automation/internal-link-fixer.cjs",
+    "internal-links:orchestrate": "node automation/internal-link-orchestrator.cjs"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
