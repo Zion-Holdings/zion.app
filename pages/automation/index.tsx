@@ -36,6 +36,21 @@ export default function AutomationHub() {
             <p className="text-white/70">Automated minor/patch upgrades with PR auto-merge.</p>
             <a className="text-cyan-300 underline" href="https://github.com/Zion-Holdings/zion.app/actions/workflows/autonomous-deps-upgrade.yml" target="_blank" rel="noopener">Run / View</a>
           </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Internal Link Orchestrator</h2>
+            <p className="text-white/70">Crawls internal routes, fixes missing pages, regenerates sitemap and SEO.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/link-scheduler" target="_blank" rel="noopener">Run on Netlify</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Maintenance Scheduler</h2>
+            <p className="text-white/70">SaaS, feature marketing, homepage promos, site links and promos.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/maintenance-scheduler" target="_blank" rel="noopener">Run on Netlify</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Marketing Scheduler</h2>
+            <p className="text-white/70">LinkedIn and Instagram automations via Netlify scheduler.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/marketing-scheduler" target="_blank" rel="noopener">Run on Netlify</a>
+          </li>
         </ul>
       </main>
     </div>
