@@ -101,6 +101,21 @@ export default function AutomationHub() {
             <p className="text-white/70">Safely bumps minor/patch deps with build verification.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/deps-auto-upgrade-runner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Autonomous Invention Orchestrator</h2>
+            <p className="text-white/70">Invents and applies new ideas across front and homepage, then syncs.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/autonomous-invention-orchestrator" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Autonomous Content Curator</h2>
+            <p className="text-white/70">Curates highlights using AI and advertises them on front pages.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/autonomous-content-curator" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Revenue Ideas Lab</h2>
+            <p className="text-white/70">Generates monetization experiments and applies safe changes.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/revenue-ideas-lab" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
         </ul>
       </main>
     </div>
