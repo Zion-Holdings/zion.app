@@ -1,0 +1,222 @@
+{
+  "generatedAt": "2025-08-11T22:48:14.546Z",
+  "totalFiles": 78,
+  "summary": {
+    "hot": 2,
+    "warm": 76,
+    "stale": 0,
+    "cold": 0
+  },
+  "stalestTop30": [
+    {
+      "file": "pages/site-health.tsx",
+      "route": "/site-health",
+      "modifiedAt": "2025-08-07T18:02:05.925Z",
+      "ageDays": 4.2,
+      "status": "warm"
+    },
+    {
+      "file": "pages/newsroom.tsx",
+      "route": "/newsroom",
+      "modifiedAt": "2025-08-07T18:02:05.925Z",
+      "ageDays": 4.2,
+      "status": "warm"
+    },
+    {
+      "file": "pages/reports/seo.tsx",
+      "route": "/reports/seo",
+      "modifiedAt": "2025-08-07T18:02:05.925Z",
+      "ageDays": 4.2,
+      "status": "warm"
+    },
+    {
+      "file": "pages/reports/ai-trends.tsx",
+      "route": "/reports/ai-trends",
+      "modifiedAt": "2025-08-07T18:02:05.925Z",
+      "ageDays": 4.2,
+      "status": "warm"
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "route": "/main/front",
+      "modifiedAt": "2025-08-07T18:02:05.925Z",
+      "ageDays": 4.2,
+      "status": "warm"
+    },
+    {
+      "file": "pages/front/index.tsx",
+      "route": "/front",
+      "modifiedAt": "2025-08-07T18:02:05.925Z",
+      "ageDays": 4.2,
+      "status": "warm"
+    },
+    {
+      "file": "docs/TODO_REPORT.md",
+      "route": "/docs/TODO_REPORT",
+      "modifiedAt": "2025-08-07T18:02:06.033Z",
+      "ageDays": 4.2,
+      "status": "warm"
+    },
+    {
+      "file": "docs/MEDIA_RELEASE.md",
+      "route": "/docs/MEDIA_RELEASE",
+      "modifiedAt": "2025-08-07T18:02:05.949Z",
+      "ageDays": 4.2,
+      "status": "warm"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "route": "/docs/CHANGELOG_AI",
+      "modifiedAt": "2025-08-07T18:02:05.949Z",
+      "ageDays": 4.2,
+      "status": "warm"
+    },
+    {
+      "file": "docs/CHANGELOG.md",
+      "route": "/docs/CHANGELOG",
+      "modifiedAt": "2025-08-07T18:02:05.949Z",
+      "ageDays": 4.2,
+      "status": "warm"
+    },
+    {
+      "file": "docs/reports/unused-exports.md",
+      "route": "/docs/reports/unused-exports",
+      "modifiedAt": "2025-08-07T18:02:06.033Z",
+      "ageDays": 4.2,
+      "status": "warm"
+    },
+    {
+      "file": "data/reports/repo-radar-metrics.json",
+      "route": "/data/reports/repo-radar-metrics",
+      "modifiedAt": "2025-08-07T18:02:05.949Z",
+      "ageDays": 4.2,
+      "status": "warm"
+    },
+    {
+      "file": "data/reports/repo-knowledge-graph.json",
+      "route": "/data/reports/repo-knowledge-graph",
+      "modifiedAt": "2025-08-07T18:02:05.949Z",
+      "ageDays": 4.2,
+      "status": "warm"
+    },
+    {
+      "file": "data/reports/revenue-ideas/revenue-ideas-actions.json",
+      "route": "/data/reports/revenue-ideas/revenue-ideas-actions",
+      "modifiedAt": "2025-08-07T18:02:05.949Z",
+      "ageDays": 4.2,
+      "status": "warm"
+    },
+    {
+      "file": "data/reports/revenue-ideas/proposals/pricing-cta-on-top-pages.md",
+      "route": "/data/reports/revenue-ideas/proposals/pricing-cta-on-top-pages",
+      "modifiedAt": "2025-08-07T18:02:05.949Z",
+      "ageDays": 4.2,
+      "status": "warm"
+    },
+    {
+      "file": "data/reports/revenue-ideas/proposals/paid-consultation-component.md",
+      "route": "/data/reports/revenue-ideas/proposals/paid-consultation-component",
+      "modifiedAt": "2025-08-07T18:02:05.949Z",
+      "ageDays": 4.2,
+      "status": "warm"
+    },
+    {
+      "file": "data/reports/revenue-ideas/proposals/newsletter-paywall-teaser.md",
+      "route": "/data/reports/revenue-ideas/proposals/newsletter-paywall-teaser",
+      "modifiedAt": "2025-08-07T18:02:05.949Z",
+      "ageDays": 4.2,
+      "status": "warm"
+    },
+    {
+      "file": "data/reports/revenue-ideas/proposals/contact-sales-cta.md",
+      "route": "/data/reports/revenue-ideas/proposals/contact-sales-cta",
+      "modifiedAt": "2025-08-07T18:02:05.949Z",
+      "ageDays": 4.2,
+      "status": "warm"
+    },
+    {
+      "file": "data/reports/revenue-ideas/proposals/affiliate-link-wrapper.md",
+      "route": "/data/reports/revenue-ideas/proposals/affiliate-link-wrapper",
+      "modifiedAt": "2025-08-07T18:02:05.949Z",
+      "ageDays": 4.2,
+      "status": "warm"
+    },
+    {
+      "file": "data/reports/link-sentinel/report-2025-08-11T20-39-02-756Z.json",
+      "route": "/data/reports/link-sentinel/report-2025-08-11T20-39-02-756Z",
+      "modifiedAt": "2025-08-07T18:02:05.949Z",
+      "ageDays": 4.2,
+      "status": "warm"
+    },
+    {
+      "file": "data/reports/link-sentinel/report-2025-08-11T20-36-21-656Z.json",
+      "route": "/data/reports/link-sentinel/report-2025-08-11T20-36-21-656Z",
+      "modifiedAt": "2025-08-07T18:02:05.949Z",
+      "ageDays": 4.2,
+      "status": "warm"
+    },
+    {
+      "file": "data/reports/link-sentinel/report-2025-08-11T20-34-56-983Z.json",
+      "route": "/data/reports/link-sentinel/report-2025-08-11T20-34-56-983Z",
+      "modifiedAt": "2025-08-07T18:02:05.949Z",
+      "ageDays": 4.2,
+      "status": "warm"
+    },
+    {
+      "file": "data/reports/link-sentinel/report-2025-08-11T18-14-21-632Z.json",
+      "route": "/data/reports/link-sentinel/report-2025-08-11T18-14-21-632Z",
+      "modifiedAt": "2025-08-07T18:02:05.949Z",
+      "ageDays": 4.2,
+      "status": "warm"
+    },
+    {
+      "file": "data/reports/link-sentinel/report-2025-08-11T17-51-16-470Z.json",
+      "route": "/data/reports/link-sentinel/report-2025-08-11T17-51-16-470Z",
+      "modifiedAt": "2025-08-07T18:02:05.949Z",
+      "ageDays": 4.2,
+      "status": "warm"
+    },
+    {
+      "file": "data/reports/link-sentinel/report-2025-08-08T17-24-19-978Z.json",
+      "route": "/data/reports/link-sentinel/report-2025-08-08T17-24-19-978Z",
+      "modifiedAt": "2025-08-07T18:02:05.949Z",
+      "ageDays": 4.2,
+      "status": "warm"
+    },
+    {
+      "file": "data/reports/link-sentinel/internal-report-2025-08-11T20-37-46-701Z.json",
+      "route": "/data/reports/link-sentinel/internal-report-2025-08-11T20-37-46-701Z",
+      "modifiedAt": "2025-08-07T18:02:05.949Z",
+      "ageDays": 4.2,
+      "status": "warm"
+    },
+    {
+      "file": "data/reports/link-sentinel/internal-report-2025-08-11T20-34-57-133Z.json",
+      "route": "/data/reports/link-sentinel/internal-report-2025-08-11T20-34-57-133Z",
+      "modifiedAt": "2025-08-07T18:02:05.949Z",
+      "ageDays": 4.2,
+      "status": "warm"
+    },
+    {
+      "file": "data/reports/link-sentinel/internal-report-2025-08-11T18-12-55-885Z.json",
+      "route": "/data/reports/link-sentinel/internal-report-2025-08-11T18-12-55-885Z",
+      "modifiedAt": "2025-08-07T18:02:05.949Z",
+      "ageDays": 4.2,
+      "status": "warm"
+    },
+    {
+      "file": "data/reports/link-sentinel/internal-report-2025-08-11T17-49-46-921Z.json",
+      "route": "/data/reports/link-sentinel/internal-report-2025-08-11T17-49-46-921Z",
+      "modifiedAt": "2025-08-07T18:02:05.949Z",
+      "ageDays": 4.2,
+      "status": "warm"
+    },
+    {
+      "file": "data/reports/link-sentinel/internal-report-2025-08-11T11-22-54-773Z.json",
+      "route": "/data/reports/link-sentinel/internal-report-2025-08-11T11-22-54-773Z",
+      "modifiedAt": "2025-08-07T18:02:05.949Z",
+      "ageDays": 4.2,
+      "status": "warm"
+    }
+  ]
+}
