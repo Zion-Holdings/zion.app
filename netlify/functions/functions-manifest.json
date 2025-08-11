@@ -1,13 +1,5 @@
 {
-<<<<<<< HEAD
   "generatedAt": "2025-08-11T23:24:00.889Z",
-=======
-<<<<<<< HEAD
-  "generatedAt": "2025-08-11T23:20:18.196Z",
-=======
-  "generatedAt": "2025-08-11T23:24:00.889Z",
->>>>>>> 927bc47d55 (feat(automations): add a11y alt-text auditor and metadata optimizer; advertise on front; schedule runners [ci skip])
->>>>>>> origin/main
   "functions": [
     "a11y-alt-text-runner",
     "ai-changelog-runner",
