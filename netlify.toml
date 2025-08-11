@@ -210,8 +210,7 @@
 
 [[scheduled.functions]]
   name = "deps-auto-upgrade-runner"
-<<<<<<< HEAD
-  schedule = "7 */12 * * *"
+  schedule = "0 3 * * *"
 
 # New autonomous cloud scanners
 [[scheduled.functions]]
@@ -225,23 +224,14 @@
 [[scheduled.functions]]
   name = "component-size-report"
   schedule = "*/5 * * * *"
-<<<<<<< HEAD
 
 [[scheduled.functions]]
   name = "license-compliance-auditor"
-  schedule = "0 2 * * 1" # weekly on Monday 02:00 UTC
+  schedule = "0 2 * * 1"
 
 [[scheduled.functions]]
   name = "pagespeed-insights-runner"
-  schedule = "11 */6 * * *" # every 6 hours, offset
-=======
-=======
-name = "deps-auto-upgrade-runner"
-schedule = "0 3 * * *"
->>>>>>> Stashed changes
->>>>>>> origin/main
-=======
-  schedule = "0 3 * * *"
+  schedule = "11 */6 * * *"
 
 [[scheduled.functions]]
   name = "knowledge-pack-runner"
@@ -250,5 +240,13 @@ schedule = "0 3 * * *"
 [[scheduled.functions]]
   name = "adaptive-orchestrator"
   schedule = "*/5 * * * *"
->>>>>>> 81e000b0dc (feat(automation): adaptive orchestrator + knowledge pack runner; advertise on homepage; schedule in Netlify)
->>>>>>> origin/main
+
+# New: automatic merge conflict resolver and sync
+[[scheduled.functions]]
+  name = "merge-conflict-auto-resolver"
+  schedule = "*/1 * * * *"
+
+# Encourage invention orchestrator to run periodically
+[[scheduled.functions]]
+  name = "autonomous-invention-orchestrator"
+  schedule = "*/10 * * * *"
