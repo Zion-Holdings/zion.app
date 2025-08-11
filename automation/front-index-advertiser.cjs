@@ -85,6 +85,8 @@ function discoverExternalLinks() {
   return [
     { type: 'internal', href: '/.netlify/functions/docs-index-runner', label: 'Docs — technical notes & guides', tagline: 'Documentation' },
     { type: 'internal', href: '/newsroom', label: 'AI Changelog — highlights', tagline: 'Summarized updates' },
+    { type: 'internal', href: '/.netlify/functions/cache-warmer', label: 'Cache Warmer', tagline: 'Keeps the edge cache hot' },
+    { type: 'internal', href: '/.netlify/functions/anchor-auditor', label: 'Anchor Auditor', tagline: 'Find and fix #anchor links' },
   ];
 }
 

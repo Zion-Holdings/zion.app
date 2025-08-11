@@ -83,6 +83,16 @@ export default function AutomationHub() {
             <p className="text-white/70">Finds broken images, optimizes assets, and syncs fixes.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/broken-image-scanner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Cache Warmer</h2>
+            <p className="text-white/70">Warms critical pages to keep the edge cache hot.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/cache-warmer" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Anchor Auditor</h2>
+            <p className="text-white/70">Finds broken #anchor links and publishes a report.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/anchor-auditor" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
         </ul>
       </main>
     </div>

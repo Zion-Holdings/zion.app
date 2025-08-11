@@ -255,6 +255,8 @@ export default function Home() {
               { title: 'AI Trends Radar', desc: 'Aggregates trending AI topics and publishes a live report.', href: '/reports/ai-trends' },
               { title: 'Website Search Index Runner', desc: 'Regenerates the full site search index.', href: '/.netlify/functions/website-search-index-runner' },
               { title: 'Netlify Auto‑Healer', desc: 'Monitors and self-heals Netlify deploy issues.', href: '/.netlify/functions/netlify-auto-healer-runner' },
+              { title: 'Cache Warmer', desc: 'Keeps critical pages hot in the edge cache; publishes heartbeat.', href: '/.netlify/functions/cache-warmer' },
+              { title: 'Anchor Auditor', desc: 'Finds broken #anchor links and publishes a report.', href: '/.netlify/functions/anchor-auditor' },
               { title: 'Innovation Lab (10m)', desc: 'Invents, curates, and promotes fresh ideas across the site.', href: '/.netlify/functions/innovation-lab' },
 <<<<<<< HEAD
 { title: 'Autonomous Innovation Generator (2m)', desc: 'Synthesizes front promos and homepage refresh, then syncs to main.', href: '/.netlify/functions/autonomous-innovation-generator' },

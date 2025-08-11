@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
   "generatedAt": "2025-08-11T23:20:00.000Z",
 =======
 <<<<<<< HEAD
@@ -12,9 +13,13 @@
   "generatedAt": "2025-08-11T23:13:57.257Z",
 >>>>>>> 9a6e0bf201 (chore(netlify): resolve schedule conflicts and regenerate functions manifest [skip ci])
 >>>>>>> origin/main
+=======
+  "generatedAt": "2025-08-11T23:14:11.662Z",
+>>>>>>> 3db1e86f59 (feat(automation): add cache-warmer and anchor-auditor functions; advertise on homepage and hub; extend front promo [skip ci])
   "functions": [
     "a11y-audit-runner",
     "ai-changelog-runner",
+    "anchor-auditor",
     "auto-scheduler",
     "automation-matrix",
 <<<<<<< HEAD
@@ -26,10 +31,14 @@
     "broken-image-scanner",
     "broken-image-scanner-runner",
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     "capability-map-runner",
     "cloud-autonomous-orchestrator-runner",
 >>>>>>> 5db0abd8a2 (chore(sync): advanced autonomous sync)
+=======
+    "cache-warmer",
+>>>>>>> 3db1e86f59 (feat(automation): add cache-warmer and anchor-auditor functions; advertise on homepage and hub; extend front promo [skip ci])
     "cloud_orchestrator",
     "continuous-front-runner",
     "continuous-orchestrator",
