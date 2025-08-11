@@ -39,6 +39,8 @@ export default function MainFrontIndex() {
         {/* Neural mesh lines */}
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(800px_400px_at_10%_-10%,rgba(34,211,238,0.08),transparent),radial-gradient(600px_400px_at_110%_10%,rgba(168,85,247,0.08),transparent)]" />
         <div className="pointer-events-none absolute inset-0 opacity-20 [background:repeating-linear-gradient(0deg,transparent,transparent_31px,rgba(255,255,255,.06)_32px),repeating-linear-gradient(90deg,transparent,transparent_31px,rgba(255,255,255,.06)_32px)] [mask-image:radial-gradient(ellipse_at_center,black,transparent_65%)]" />
+        {/* Diagonal animated beams */}
+        <div className="pointer-events-none absolute inset-0 beams opacity-[0.06]" />
       </div>
 
       {/* Header */}
@@ -694,6 +696,61 @@ export default function MainFrontIndex() {
             ))}
           </div>
         </section>
+
+        {/* Autonomous Pipeline */}
+        <motion.section
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-7xl px-6 pb-14"
+        >
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Autonomous Pipeline</h2>
+          <div className="mx-auto mt-6 grid max-w-5xl grid-cols-1 gap-4 md:grid-cols-5">
+            {[
+              ['Sense', 'Scan repo, UX, and ops signals', '/site-health'],
+              ['Plan', 'Draft safe, incremental improvements', '/automation'],
+              ['Create', 'Generate code, content, and configs', '/automation'],
+              ['Validate', 'CI, a11y, links, and performance gates', '/site-health'],
+              ['Ship', 'Commit and push to main, continuously', '/automation'],
+            ].map(([title, desc, href]) => (
+              <a key={title as string} href={href as string} className="group relative rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-5 text-left backdrop-blur-xl hover:border-cyan-400/30">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <div className="text-sm font-semibold text-white">{title as string}</div>
+                <div className="mt-1 text-xs text-white/70">{desc as string}</div>
+              </a>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* Highlights */}
+        <motion.section
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-7xl px-6 pb-14"
+        >
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Highlights</h2>
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <Link href="/automation"><a className="holo tilt-on-hover rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur">
+              <div className="text-base font-semibold">Automation Hub</div>
+              <div className="mt-1 text-sm text-white/75">Live agents, factories, and workflows</div>
+            </a></Link>
+            <Link href="/reports/seo"><a className="holo tilt-on-hover rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur">
+              <div className="text-base font-semibold">SEO Audit</div>
+              <div className="mt-1 text-sm text-white/75">Continuous on‑site improvements</div>
+            </a></Link>
+            <Link href="/site-health"><a className="holo tilt-on-hover rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur">
+              <div className="text-base font-semibold">Site Health</div>
+              <div className="mt-1 text-sm text-white/75">A11y, performance, and link checks</div>
+            </a></Link>
+            <Link href="/reports/ai-trends"><a className="holo tilt-on-hover rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur">
+              <div className="text-base font-semibold">AI Trends</div>
+              <div className="mt-1 text-sm text-white/75">Signals that inspire new factories</div>
+            </a></Link>
+          </div>
+        </motion.section>
 
         {/* Footer */}
         <footer className="mx-auto max-w-7xl px-6 pb-16">
