@@ -55,7 +55,10 @@ export default function MainFrontIndex() {
             <Link href="/"><a className="text-white/80 hover:text-white">Home</a></Link>
             <Link href="#command-center"><a className="text-white/80 hover:text-white">Command</a></Link>
             <Link href="#features"><a className="text-white/80 hover:text-white">Features</a></Link>
+            <Link href="#feature-map"><a className="text-white/80 hover:text-white">Map</a></Link>
+            <Link href="#suites"><a className="text-white/80 hover:text-white">Suites</a></Link>
             <Link href="#capabilities"><a className="text-white/80 hover:text-white">Capabilities</a></Link>
+            <Link href="#guardrails"><a className="text-white/80 hover:text-white">Guardrails</a></Link>
             <Link href="#benefits"><a className="text-white/80 hover:text-white">Benefits</a></Link>
             <Link href="#reports"><a className="text-white/80 hover:text-white">Reports</a></Link>
             <Link href="/automation"><a className="text-white/80 hover:text-white">Automations</a></Link>
@@ -1027,6 +1030,91 @@ export default function MainFrontIndex() {
             </div>
           </div>
         </footer>
+
+        {/* Micro-Features */}
+        <motion.section
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-7xl px-6 pb-14"
+        >
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Micro‑Features</h2>
+          <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Small, high‑impact automations that add up to big wins — each links to live artifacts or dashboards.</p>
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { label: 'Broken Link Killer', desc: 'Crawls and fixes dead links automatically', href: '/site-health' },
+              { label: 'Asset Optimizer', desc: 'Compresses images and tunes delivery', href: '/site-health' },
+              { label: 'Structured Data', desc: 'Schema.org + rich snippets upgrades', href: '/reports/seo' },
+              { label: 'OG Image Maker', desc: 'Auto‑generates Open Graph images', href: '/newsroom' },
+              { label: 'Sitemap Manager', desc: 'Maintains sitemaps and robots policies', href: '/automation' },
+              { label: 'Link Prefetcher', desc: 'Smarter prefetch for perceived speed', href: '/site-health' },
+              { label: 'Changelog Writer', desc: 'Summarized diffs and AI notes', href: 'https://github.com/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md', external: true },
+              { label: 'Guardrail Enforcer', desc: 'Policy checks before shipping', href: '/site-health' },
+              { label: 'Design Beautifier', desc: 'Cohesive visual upgrades at scale', href: '/newsroom' },
+            ].map((f) => (
+              f.external ? (
+                <a key={f.label} href={f.href as string} target="_blank" rel="noopener" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-5 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+                  <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                  <div className="text-base font-semibold">{f.label}</div>
+                  <div className="mt-1 text-sm text-white/75">{f.desc}</div>
+                  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+                </a>
+              ) : (
+                <Link key={f.label} href={f.href as string}>
+                  <a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-5 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+                    <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                    <div className="text-base font-semibold">{f.label}</div>
+                    <div className="mt-1 text-sm text-white/75">{f.desc}</div>
+                    <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
+                  </a>
+                </Link>
+              )
+            ))}
+          </div>
+        </motion.section>
+
+        {/* Capabilities Matrix */}
+        <motion.section
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-7xl px-6 pb-14"
+        >
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Capabilities Matrix</h2>
+          <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">A broader map of what the platform can do — jump straight to the relevant section.</p>
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { label: 'A11y Fixes', href: '/site-health' },
+              { label: 'Perf Budgets', href: '/site-health' },
+              { label: 'SEO Metadata', href: '/reports/seo' },
+              { label: 'Content Curation', href: '/newsroom' },
+              { label: 'Automated Refactors', href: '/automation' },
+              { label: 'Dependency Upgrades', href: '/automation' },
+              { label: 'Sitemaps & Robots', href: '/automation' },
+              { label: 'Main Sync Engine', href: '/automation' },
+              { label: 'Guardrails & Policy', href: '/site-health' },
+              { label: 'Live Pipelines', href: 'https://github.com/Zion-Holdings/zion.app/actions', external: true },
+              { label: 'AI Trends Radar', href: '/reports/ai-trends' },
+              { label: 'Changelog Automation', href: 'https://github.com/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md', external: true },
+            ].map((c) => (
+              c.external ? (
+                <a key={c.label} href={c.href as string} target="_blank" rel="noopener" className="rounded-2xl border border-white/10 bg-white/5 p-5 text-left backdrop-blur-xl hover:border-cyan-400/30">
+                  <div className="text-sm font-semibold text-white">{c.label}</div>
+                  <div className="mt-1 text-xs text-cyan-300/90">Open ↗</div>
+                </a>
+              ) : (
+                <Link key={c.label} href={c.href as string}>
+                  <a className="rounded-2xl border border-white/10 bg-white/5 p-5 text-left backdrop-blur-xl hover:border-cyan-400/30">
+                    <div className="text-sm font-semibold text-white">{c.label}</div>
+                    <div className="mt-1 text-xs text-cyan-300/90">Open →</div>
+                  </a>
+                </Link>
+              )
+            ))}
+          </div>
+        </motion.section>
       </main>
     </div>
   );
