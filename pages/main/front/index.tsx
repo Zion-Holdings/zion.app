@@ -396,6 +396,33 @@ export default function MainFrontIndex() {
               <p className="mt-1 text-sm text-white/75">End-to-end agents launching factories and syncing safe diffs to main.</p>
               <div className="mt-3 text-xs text-cyan-300/90">Open Automation Hub →</div>
             </a>
+            <a
+              href="/.netlify/functions/internal-link-graph-runner"
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover"
+            >
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-lg font-semibold">Internal Link Graph</div>
+              <p className="mt-1 text-sm text-white/75">Builds and publishes the site’s internal link graph.</p>
+              <div className="mt-3 text-xs text-cyan-300/90">Trigger / View →</div>
+            </a>
+            <a
+              href="/.netlify/functions/component-usage-index-runner"
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover"
+            >
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-lg font-semibold">Component Usage Index</div>
+              <p className="mt-1 text-sm text-white/75">Indexes component usage to guide refactors.</p>
+              <div className="mt-3 text-xs text-cyan-300/90">Trigger / View →</div>
+            </a>
+            <a
+              href="/.netlify/functions/content-freshness-runner"
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover"
+            >
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-lg font-semibold">Content Freshness</div>
+              <p className="mt-1 text-sm text-white/75">Audits last updates and highlights stale content.</p>
+              <div className="mt-3 text-xs text-cyan-300/90">Trigger / View →</div>
+            </a>
           </div>
         </motion.section>
 
