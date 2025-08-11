@@ -1,7 +1,8 @@
 {
-  "generatedAt": "2025-08-11T23:38:39.169Z",
+  "generatedAt": "2025-08-11T23:39:06.052Z",
   "functions": [
     "a11y-alt-text-runner",
+    "adaptive-orchestrator",
     "ai-changelog-runner",
     "ai-trends-radar-runner",
     "auto-scheduler",
@@ -41,6 +42,7 @@
     "hyper-front-index-accelerator",
     "image-optimizer-runner",
     "innovation-lab",
+    "knowledge-pack-runner",
     "license-compliance-auditor",
     "link-and-health-scheduler",
     "link-crawler",
@@ -75,11 +77,6 @@
     "ui-enhancer",
     "ultrafast-front-orchestrator",
     "ultrafast-orchestrator",
-<<<<<<< HEAD
     "unused-media-scanner"
-=======
-    "knowledge-pack-runner",
-    "adaptive-orchestrator"
->>>>>>> 81e000b0dc (feat(automation): adaptive orchestrator + knowledge pack runner; advertise on homepage; schedule in Netlify)
   ]
 }
