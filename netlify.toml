@@ -167,21 +167,20 @@
   schedule = "53 */6 * * *"
 
 [[scheduled.functions]]
-<<<<<<< HEAD
   name = "redirect-healer"
   schedule = "*/15 * * * *"
 
 [[scheduled.functions]]
   name = "sitemap-prioritizer"
   schedule = "17 */6 * * *"
-=======
+
+[[scheduled.functions]]
   name = "redirect-manager"
   schedule = "*/30 * * * *"
 
 [[scheduled.functions]]
   name = "a11y-audit-runner"
   schedule = "*/20 * * * *"
->>>>>>> 12882bc485 (chore(sync): advanced autonomous sync)
 
 [[scheduled.functions]]
   name = "todo-summary-runner"
@@ -237,3 +236,11 @@
 [[scheduled.functions]]
   name = "branch-cleanup-runner"
   schedule = "0 3 * * *" # daily at 03:00 UTC
+
+[[scheduled.functions]]
+  name = "unused-assets-report"
+  schedule = "23 */6 * * *" # every 6 hours
+
+[[scheduled.functions]]
+  name = "i18n-extractor-runner"
+  schedule = "*/20 * * * *" # every 20 minutes

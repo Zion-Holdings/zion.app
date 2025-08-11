@@ -220,6 +220,8 @@ export default function MainFrontIndex() {
                 ['AI Trends', '/reports/ai-trends'],
                 ['Redirect Healer', '/.netlify/functions/redirect-healer'],
                 ['Sitemap Prioritizer', '/.netlify/functions/sitemap-prioritizer'],
+                ['Unused Assets Report', '/.netlify/functions/unused-assets-report'],
+                ['i18n Extractor', '/.netlify/functions/i18n-extractor-runner'],
                 ['Newsroom', '/newsroom'],
                 ['Site Health', '/site-health'],
               ].map(([label, href]) => (
