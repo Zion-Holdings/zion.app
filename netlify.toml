@@ -186,3 +186,19 @@
 [[scheduled.functions]]
   name = "auto-scheduler"
   schedule = "*/15 * * * *" # every 15 minutes
+
+[[scheduled.functions]]
+  name = "seo-audit-runner"
+  schedule = "17 */12 * * *"
+
+[[scheduled.functions]]
+  name = "ai-trends-radar-runner"
+  schedule = "29 */6 * * *"
+
+[[scheduled.functions]]
+  name = "front-index-directory-builder"
+  schedule = "*/7 * * * *"
+
+[[scheduled.functions]]
+  name = "revenue-ideas-promoter"
+  schedule = "41 */4 * * *"

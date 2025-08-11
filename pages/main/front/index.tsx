@@ -1752,6 +1752,29 @@ export default function MainFrontIndex() {
           </div>
         </motion.section>
 
+        {/* Reports */}
+        <section id="reports" className="mx-auto max-w-7xl px-6 pb-16">
+          {/* existing reports content */}
+        </section>
+
+        {/* New Intelligent Automations */}
+        <section id="automations" className="mx-auto max-w-7xl px-6 pb-20">
+          <h2 className="text-2xl font-bold tracking-wide text-white/90 text-center">New Intelligent Automations</h2>
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { title: 'SEO Audit Runner', href: '/.netlify/functions/seo-audit-runner' },
+              { title: 'AI Trends Radar', href: '/.netlify/functions/ai-trends-radar-runner' },
+              { title: 'Front Index Directory Builder', href: '/.netlify/functions/front-index-directory-builder' },
+              { title: 'Revenue Ideas Promoter', href: '/.netlify/functions/revenue-ideas-promoter' },
+            ].map((tool) => (
+              <a key={tool.title} href={tool.href} className="rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-white/80 hover:border-cyan-400/30 hover:text-white transition-colors">
+                <div className="text-base font-semibold text-white">{tool.title}</div>
+                <div className="mt-1 text-xs text-white/70">Open ↗</div>
+              </a>
+            ))}
+          </div>
+        </section>
+
       </div>
       {/* Back to top */}
       {showToTop && (

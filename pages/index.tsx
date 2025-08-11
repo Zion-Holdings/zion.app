@@ -221,7 +221,27 @@ export default function Home() {
           </div>
         </section>
 
-        {/* AUTO-GENERATED: HOME_UPDATER_START */
+        {/* New Intelligent Automations */}
+        <section className="mx-auto max-w-7xl px-6 pb-20">
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">New Intelligent Automations</h2>
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { title: 'SEO Audit Runner', desc: 'Generates actionable SEO reports and syncs fixes.', href: '/.netlify/functions/seo-audit-runner' },
+              { title: 'AI Trends Radar', desc: 'Tracks and publishes AI trend radar insights.', href: '/.netlify/functions/ai-trends-radar-runner' },
+              { title: 'Front Index Directory Builder', desc: 'Refreshes the front index directory and ads.', href: '/.netlify/functions/front-index-directory-builder' },
+              { title: 'Revenue Ideas Promoter', desc: 'Applies monetization CTAs and proposals across pages.', href: '/.netlify/functions/revenue-ideas-promoter' },
+            ].map((tool) => (
+              <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <h3 className="text-lg font-semibold">{tool.title}</h3>
+                <p className="mt-1 text-sm text-white/75">{tool.desc}</p>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        {/* AUTO-GENERATED: HOME_UPDATER_START */}
  <section className="mx-auto max-w-7xl px-6 pb-16">
    <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Explore more</h2>
    <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
