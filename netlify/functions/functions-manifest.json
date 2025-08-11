@@ -1,40 +1,28 @@
 {
-<<<<<<< HEAD
-  "generatedAt": "2025-08-11T23:28:00.000Z",
-=======
-  "generatedAt": "2025-08-11T23:14:35.914Z",
->>>>>>> origin/main
+  "generatedAt": "2025-08-11T23:29:06.971Z",
   "functions": [
     "a11y-audit-runner",
     "ai-changelog-runner",
+    "anchor-integrity-runner",
+    "auto-discovery-runner",
     "auto-scheduler",
-<<<<<<< HEAD
-=======
     "automation-atlas-runner",
-    "automation-guardian-runner",
->>>>>>> origin/main
     "automation-matrix",
     "automation-status-dashboard",
     "autonomous-innovation-generator",
     "autonomous-invention-orchestrator",
+    "branch-cleanup-runner",
     "broken-image-scanner",
     "broken-image-scanner-runner",
     "capability-map-runner",
     "cloud-autonomous-orchestrator-runner",
     "cloud_orchestrator",
-<<<<<<< HEAD
-    "content-freshness-auditor",
-=======
     "component-catalog-runner",
->>>>>>> origin/main
     "continuous-front-runner",
     "continuous-orchestrator",
     "dead-code-audit",
     "dead-code-report",
-<<<<<<< HEAD
     "dependency-freshness-radar",
-=======
->>>>>>> origin/main
     "deps-auto-upgrade-runner",
     "docs-index-runner",
     "docs-search-index-runner",
@@ -72,16 +60,15 @@
     "marketing-and-features-promo",
     "marketing-scheduler",
     "media-og-and-optimize",
+    "meta-tags-audit-runner",
     "netlify-auto-healer-runner",
     "newsroom-auto-publisher",
     "newsroom-runner",
     "og-image-update-runner",
+    "perf-budget-runner",
     "readme-advertiser",
-<<<<<<< HEAD
-=======
     "redirect-healer",
     "redirect-manager",
->>>>>>> origin/main
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",
@@ -94,8 +81,9 @@
     "secrets-leak-scanner-runner",
     "security-audit",
     "security-audit-runner",
-    "seo-audit-runner",
+    "seo-content-gap",
     "site-crawler",
+    "sitemap-prioritizer",
     "sitemap_runner",
     "stale-content-auditor-runner",
     "todo-scanner-runner",
@@ -104,6 +92,7 @@
     "ui-enhancer",
     "ultrafast-front-orchestrator",
     "ultrafast-orchestrator",
+    "ux-a11y-auditor",
     "ux-heuristics-runner"
   ]
 }
