@@ -110,6 +110,8 @@ export default function MainFrontIndex() {
                     'Safety Guardrails',
                     'A11y + Performance',
                     'Observability',
+                    'SEO Automation',
+                    'Design Evolution',
                   ].flatMap((label) => [label, label]).map((label, idx) => (
                     <span key={`${label}-${idx}`} className="mx-3 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1 text-xs text-white/80 backdrop-blur">
                       <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" /> {label}
@@ -153,6 +155,7 @@ export default function MainFrontIndex() {
               { title: 'Content Curation', desc: 'Homepage promos generated continuously', href: '/automation' },
               { title: 'Dependency Upgrades', desc: 'Minor/patch bumps with safe auto‑merge', href: '/automation' },
               { title: 'Live Workflows', desc: 'Observe pipelines running 24/7', href: 'https://github.com/Zion-Holdings/zion.app/actions', external: true },
+              { title: 'Site Health', desc: 'A11y, performance, link checks dashboards', href: '/site-health' },
               { title: 'AI SEO Auditor', desc: 'Continuous on‑site audits with safe proposed diffs', href: '/reports/seo' },
               { title: 'AI Trends Radar', desc: 'Signal scanning to inspire new factories', href: '/reports/ai-trends' },
             ].map((suite) => (
@@ -217,6 +220,9 @@ export default function MainFrontIndex() {
               { Icon: Activity, title: 'AI SEO Auditor', desc: 'Continuously scans pages and proposes SEO improvements.', href: '/reports/seo' },
               { Icon: Globe, title: 'AI Trends Radar', desc: 'Tracks AI and cloud signals to inspire new automations.', href: '/reports/ai-trends' },
               { Icon: Search, title: 'Deep Indexing', desc: 'Content and code search powering smart linking and PRs.', href: '/newsroom' },
+              { Icon: BarChart3, title: 'Live Dashboards', desc: 'Real‑time quality and impact metrics at a glance.', href: '/site-health' },
+              { Icon: Activity, title: 'Health Monitors', desc: 'A11y, links, and performance monitored 24/7.', href: '/site-health' },
+              { Icon: Globe, title: 'Intelligence Signals', desc: 'AI research integrated into product improvements.', href: '/reports/ai-trends' },
             ].map(({ Icon, title, desc, href }) => (
               <Link key={title} href={href}>
                 <a className="group glow-card relative block overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md hover:border-cyan-400/30 tilt-on-hover neon-ring">
@@ -370,6 +376,9 @@ export default function MainFrontIndex() {
               'Improved discoverability via deep indexing and SEO',
               'Happier engineers with less toil and more creation',
               'Confident shipping through automated guardrails',
+              'Predictable quality gates and SLOs upheld automatically',
+              'Auditability for compliance with full traceability',
+              'Happier teams: less toil, more product value',
             ].map((b) => (
               <div key={b} className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-md">
                 <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]" />
@@ -378,6 +387,28 @@ export default function MainFrontIndex() {
             ))}
           </div>
         </motion.section>
+
+        {/* Tailored Value by Team */}
+        <section className="mx-auto max-w-7xl px-6 pb-16">
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Tailored Value by Team</h2>
+          <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { title: 'Developers', desc: 'Code quality, refactors, upgrades, reliability', href: '/automation' },
+              { title: 'Product', desc: 'Faster UX improvements, experiments, insights', href: '/newsroom' },
+              { title: 'Marketing', desc: 'SEO automation, content curation, reach', href: '/reports/seo' },
+              { title: 'Operations', desc: 'A11y, performance, and link‑health dashboards', href: '/site-health' },
+            ].map((card) => (
+              <Link key={card.title} href={card.href}>
+                <a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30">
+                  <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                  <h3 className="text-lg font-semibold">{card.title}</h3>
+                  <p className="mt-1 text-sm text-white/75">{card.desc}</p>
+                  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <Link2 className="h-3.5 w-3.5" /></div>
+                </a>
+              </Link>
+            ))}
+          </div>
+        </section>
 
         {/* Tech */}
         <motion.section
