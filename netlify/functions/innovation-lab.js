@@ -1,4 +1,8 @@
 // netlify/functions/innovation-lab.js
+exports.config = {
+  schedule: '*/10 * * * *',
+};
+
 exports.handler = async function() {
   const { execSync } = require('child_process');
   try {
