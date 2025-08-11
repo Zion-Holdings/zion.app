@@ -12,6 +12,16 @@ export default function AutomationHub() {
         <p className="text-white/70 mb-8">Discover our autonomous, self-healing systems that keep the codebase evergreen. Powered by scheduled cloud functions — no GitHub Actions required.</p>
                 <ul className="space-y-4">
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Stale Content Auditor</h2>
+            <p className="text-white/70">Finds stale files across pages, docs and components; publishes a report and summary.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/stale-content-auditor-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Dependency Auto‑Upgrade</h2>
+            <p className="text-white/70">Auto-upgrades dependencies on a safe cadence, validates with build, and syncs.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/deps-auto-upgrade-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
             <h2 className="text-xl font-bold">SEO Audit</h2>
             <p className="text-white/70">Generates SEO report for all pages and publishes it.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/seo-audit-runner" target="_blank" rel="noopener">Trigger / View</a>
