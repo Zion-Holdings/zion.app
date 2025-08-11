@@ -66,6 +66,21 @@ export default function AutomationHub() {
             <p className="text-white/70">Ultra-fast front index futurizer and directory builder.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/hyper-front-index-accelerator" target="_blank" rel="noopener">Trigger / View</a>
           </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Knowledge & Innovation</h2>
+            <p className="text-white/70">Builds repo knowledge graph, newsroom, and changelogs; then syncs.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/knowledge-and-innovation" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Guardian Security</h2>
+            <p className="text-white/70">Security audit, dead code scan, link/image checks, and sitemap refresh.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/guardian-security-fast" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Autonomous Factory Expander</h2>
+            <p className="text-white/70">Expands front factories, OG images, and homepage promos automatically.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/autonomous-factory-expander" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
         </ul>
       </main>
     </div>
