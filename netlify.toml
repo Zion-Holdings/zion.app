@@ -27,3 +27,7 @@
 [[scheduled.functions]]
   name = "front-enhancer"
   schedule = "*/20 * * * *" # every 20 minutes
+
+[[scheduled.functions]]
+  name = "fast-front-promoter"
+  schedule = "*/15 * * * *" # every 15 minutes
