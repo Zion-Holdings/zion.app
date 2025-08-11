@@ -181,7 +181,6 @@
 [[scheduled.functions]]
   name = "a11y-audit-runner"
   schedule = "*/20 * * * *"}  
-```
 
 [[scheduled.functions]]
   name = "todo-summary-runner"
@@ -245,3 +244,15 @@
 [[scheduled.functions]]
   name = "deps-auto-upgrade-runner"
   schedule = "7 */12 * * *"
+
+[[scheduled.functions]]
+  name = "metadata-schema-runner"
+  schedule = "*/30 * * * *" # every 30 minutes
+
+[[scheduled.functions]]
+  name = "perf-budget-runner"
+  schedule = "*/30 * * * *" # every 30 minutes
+
+[[scheduled.functions]]
+  name = "i18n-audit-runner"
+  schedule = "0 */6 * * *" # every 6 hours
