@@ -220,3 +220,11 @@
 [[scheduled.functions]]
   name = "branch-cleanup-runner"
   schedule = "0 3 * * *" # daily at 03:00 UTC
+
+[[scheduled.functions]]
+  name = "smart-redirects"
+  schedule = "*/30 * * * *" # every 30 minutes
+
+[[scheduled.functions]]
+  name = "automation-catalog"
+  schedule = "*/10 * * * *" # every 10 minutes

@@ -1,10 +1,11 @@
 {
-  "generatedAt": "2025-08-11T22:40:00.000Z",
+  "generatedAt": "2025-08-11T22:48:08.954Z",
   "functions": [
     "ai-changelog-runner",
     "ai-trends-radar-runner",
     "auto-discovery-runner",
     "auto-scheduler",
+    "automation-catalog",
     "automation-guardian-runner",
     "automation-matrix",
     "autonomous-innovation-generator",
@@ -66,6 +67,7 @@
     "seo-audit-runner",
     "site-crawler",
     "sitemap_runner",
+    "smart-redirects",
     "todo-scanner-runner",
     "todo-summary-runner",
     "trigger-all-and-commit",
