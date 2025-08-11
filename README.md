@@ -1,89 +1,32 @@
-# bolt.new.zion.app
+# Link Auditor
 
-![Automations: 46](https://img.shields.io/badge/Automations-46-informational) ![Pages: 7](https://img.shields.io/badge/Pages-7-success) ![Components: 1](https://img.shields.io/badge/Components-1-blue)
+A simple async site crawler to detect broken links and assets, with a CLI to produce CSV/JSON reports and naive fix suggestions.
 
-Autonomous, cloud‑native app with self‑running automations.
+## Quickstart
 
-Home: https://github.com/Zion-Holdings/zion.app#readme
+1. Install dependencies:
 
-### Highlights
-- **Autonomous cloud automations**: GitHub Actions run on schedules to maintain, audit, and improve the repo without human intervention.
-- **Rapid sync**: A 1-minute cadence keeps branches synchronized.
-- **Self-healing CI**: Automatic detection and PRs for fixes after failures.
+```
+pip install -r requirements.txt
+```
 
-### Key Directories
-- `automation/`: Cloud automation scripts (content, SEO, security, sync).
-- `scripts/`: Utility scripts (sitemap, SEO, radar, README generator).
-- `pages/`: Next.js pages.
-- `components/`: Reusable UI components.
+2. Crawl your site:
 
-### Routes
-- /
-- /_app
-- /automation
-- /front
-- /main/front
-- /newsroom
-- /site-health
+```
+python -m link_auditor.cli crawl https://example.com --max-pages 5000 --concurrency 12 --timeout 15 --include-external --output-dir ./link_audit_report
+```
 
-### Automations
-- accessibility-audit.yml
-- ai-changelog.yml
-- auto-media-release.yml
-- automation-guardian-10min.yml
-- automations.yml
-- autonomous-auto-discovery.yml
-- autonomous-auto-merge-to-main.yml
-- autonomous-cloud-automations.yml
-- autonomous-cloud-runner.yml
-- autonomous-cloud.yml
-- autonomous-content-curation.yml
-- autonomous-deep-maintenance.yml
-- autonomous-deps-upgrade.yml
-- autonomous-external-links.yml
-- autonomous-image-optimizer.yml
-- autonomous-intelligence.yml
-- autonomous-lighthouse.yml
-- autonomous-marketing-seo.yml
-- autonomous-quick-fixes.yml
-- ci-auto-heal.yml
-- codeql-analysis.yml
-- dependabot-auto-approve.yml
-- docs-autogen.yml
-- fast-auto-push-to-main.yml
-- fast-lint-sync.yml
-- homepage-auto-advertiser.yml
-- homepage-auto-update.yml
-- labeler.yml
-- link-auto-fix.yml
-- link-scan-hourly.yml
-- netlify-auto-healer.yml
-- og-image-update.yml
-- optimize-images.yml
-- performance-audit.yml
-- rapid-git-sync.yml
-- readme-autogen.yml
-- repo-knowledge-graph.yml
-- repo-radar.yml
-- search-index-autogen.yml
-- security-audit.yml
-- security-weekly.yml
-- self-healing-build.yml
-- sitemap-auto-commit.yml
-- sitemap-daily.yml
-- stale.yml
-- unused-deps-cleaner.yml
+3. Generate fix suggestions from the JSON report:
 
-### Local Development
-1. Install Node 20+ and npm 10+.
-2. Install deps: `npm ci`.
-3. Run dev: `npm run dev`.
+```
+python -m link_auditor.cli suggest-fixes ./link_audit_report/report.json
+```
 
-### Maintenance Commands
-- `npm run git:sync` – Advanced git sync
-- `npm run automation:cloud` – Run cloud orchestrator locally
-- `npm run sitemap` – Regenerate sitemap
-- `npm run readme:generate` – Refresh this README
+Outputs:
+- `broken_links.csv`: list of broken links/assets with source pages
+- `report.json`: full crawl summary
+- `report.suggestions.json`: naive suggestions (https/www/trailing slash toggles)
 
----
-This README is auto-generated. Do not edit manually.
+## CI (template)
+
+Add `.github/workflows/link-check.yml` to run weekly and on PRs.
