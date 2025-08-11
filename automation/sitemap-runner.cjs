@@ -9,7 +9,7 @@ function run(cmd, args) {
 }
 
 function main() {
-  const script = path.join(__dirname, '..', 'scripts', 'generate-sitemap.mjs');
+  const script = path.join(__dirname, '..', 'scripts', 'generate-sitemap.js');
   run('node', [script]);
   console.log('Sitemap regenerated.');
 }
