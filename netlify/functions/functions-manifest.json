@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-11T23:31:43.022Z",
+  "generatedAt": "2025-08-11T23:39:43.990Z",
   "functions": [
     "a11y-alt-text-runner",
     "ai-changelog-runner",
@@ -54,6 +54,7 @@
     "og-image-update-runner",
     "orphan-pages-detector",
     "readme-advertiser",
+    "repo-heatmap-runner",
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",
