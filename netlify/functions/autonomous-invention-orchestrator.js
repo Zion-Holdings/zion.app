@@ -1,4 +1,5 @@
 // netlify/functions/autonomous-invention-orchestrator.js
+exports.config = { schedule: '*/15 * * * *' };
 exports.handler = async function() {
   const { execSync } = require('child_process');
   try {

@@ -83,6 +83,26 @@ export default function AutomationHub() {
             <p className="text-white/70">Finds broken images, optimizes assets, and syncs fixes.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/broken-image-scanner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">AI Innovation Orchestrator</h2>
+            <p className="text-white/70">Researches trends, innovates features, updates newsroom and changelog.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/ai-innovation-orchestrator" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Meta Orchestrator</h2>
+            <p className="text-white/70">Runs autonomous meta factory and syncs changes.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/meta-orchestrator" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">UI Evolution Runner</h2>
+            <p className="text-white/70">Continuously enhances UI and beautifies the front.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/ui-evolution-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Venture Orchestrator</h2>
+            <p className="text-white/70">Continuously evolves venture services and marketing assets.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/venture-orchestrator" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
         </ul>
       </main>
     </div>
