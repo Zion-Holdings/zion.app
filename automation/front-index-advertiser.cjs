@@ -102,7 +102,7 @@ function generateSection(items) {
   return [
     '<section id="auto-promoted" className="mx-auto max-w-7xl px-6 pb-14">',
     '  <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Auto‑Promoted Features</h2>',
-    '  <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Continuously curated promos linking to live hubs, reports, and docs.</p>',
+    '  <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Continuously curated promos linking to live hubs, reports, docs, and new intelligence tools.</p>',
     '  <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">',
     items.map(buildCard).join('\n'),
     '  </div>',
