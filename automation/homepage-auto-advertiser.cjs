@@ -43,30 +43,47 @@ function discoverInternalPages() {
     internal.push({ type: 'internal', href: route, label, tagline });
   };
 
-  try {
-    const entries = fs.readdirSync(pagesDir, { withFileTypes: true });
-    for (const entry of entries) {
-      if (entry.isFile() && entry.name.endsWith('.tsx')) {
-        const base = entry.name.replace(/\.tsx$/, '');
-        if (base === 'index' || base.startsWith('_')) continue;
-        const route = `/${base}`;
-        const label = titleCase(base);
-        const tagline = base === 'newsroom'
-          ? 'Latest autonomous updates'
-          : base === 'site-health'
-          ? 'Audits & insights'
-          : 'Explore more';
-        addPage(route, label, tagline);
-      } else if (entry.isDirectory()) {
-        const indexPathTsx = path.join(pagesDir, entry.name, 'index.tsx');
-        if (fs.existsSync(indexPathTsx)) {
-          const route = `/${entry.name}`;
-          const label = titleCase(entry.name);
-          const tagline = entry.name === 'automation' ? 'Live agents & reports' : 'Explore more';
+  function isSpecial(name) {
+    return name.startsWith('_') || name.startsWith('[');
+  }
+
+  function scanDir(currentDir, routePrefix = '') {
+    const entries = fs.readdirSync(currentDir, { withFileTypes: true });
+
+    // Collect index.tsx in this directory to represent the directory route
+    const indexCandidates = ['index.tsx', 'index.jsx', 'index.ts', 'index.js'];
+    for (const idx of indexCandidates) {
+      if (entries.find((e) => e.isFile() && e.name === idx)) {
+        const route = routePrefix || '/';
+        if (route !== '/') {
+          const label = titleCase(route.replace(/^\//, '').replace(/\//g, ' '));
+          const tagline = route === '/automation' ? 'Live agents & reports' : route === '/newsroom' ? 'Latest autonomous updates' : route === '/site-health' ? 'Audits & insights' : 'Explore more';
           addPage(route, label, tagline);
         }
+        break;
       }
     }
+
+    for (const entry of entries) {
+      const full = path.join(currentDir, entry.name);
+      if (entry.isDirectory()) {
+        if (isSpecial(entry.name)) continue;
+        const childRoutePrefix = path.posix.join(routePrefix || '/', entry.name).replace(/\\/g, '/');
+        scanDir(full, childRoutePrefix);
+      } else if (entry.isFile()) {
+        if (!/\.(tsx|jsx|ts|js)$/i.test(entry.name)) continue;
+        const base = entry.name.replace(/\.(tsx|jsx|ts|js)$/i, '');
+        if (isSpecial(base) || base === 'index') continue;
+        const route = path.posix.join(routePrefix || '/', base).replace(/\\/g, '/');
+        const label = titleCase(base);
+        const tagline = base === 'automation' ? 'Live agents & reports' : base === 'newsroom' ? 'Latest autonomous updates' : base === 'site-health' ? 'Audits & insights' : 'Explore more';
+        addPage(route, label, tagline);
+      }
+    }
+  }
+
+  try {
+    scanDir(pagesDir, '');
   } catch (err) {
     log(`Error discovering internal pages: ${err.message}`);
   }
@@ -74,13 +91,12 @@ function discoverInternalPages() {
   const seen = new Set();
   const unique = [];
   for (const item of internal) {
-    if (!seen.has(item.href)) {
-      seen.add(item.href);
-      unique.push(item);
-    }
+    if (!item.href || item.href === '/' || seen.has(item.href)) continue;
+    seen.add(item.href);
+    unique.push(item);
   }
   unique.sort((a, b) => {
-    const rank = (h) => (h.href === '/automation' ? 0 : h.href === '/newsroom' ? 1 : h.href === '/site-health' ? 2 : 3);
+    const rank = (h) => (h.href === '/automation' ? 0 : h.href === '/main/front' ? 1 : h.href === '/newsroom' ? 2 : h.href === '/site-health' ? 3 : 10);
     return rank(a) - rank(b);
   });
   return unique;
@@ -158,7 +174,7 @@ function replaceBetweenMarkers(source, startMarker, endMarker, replacement) {
 
   const internal = discoverInternalPages();
   const workflows = discoverKeyWorkflows();
-  const combined = [...internal, ...workflows].slice(0, 12);
+  const combined = [...internal, ...workflows].slice(0, 16);
   const tsxBlock = generateSectionTSX(combined);
 
   if (!fs.existsSync(INDEX_PAGE)) {
