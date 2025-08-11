@@ -94,7 +94,10 @@ export default function Home() {
               { title: 'Zero Ops', desc: 'Runs fully in the cloud—no servers or manual intervention.' },
               { title: 'Safety‑First', desc: 'Conservative edits with logs, reports, and guardrails.' },
               { title: 'Scalable', desc: 'Generates domain‑specific factories on demand.' },
-              { title: 'Observability', desc: 'Dashboards, reports, and GitHub Actions artifacts.' },
+              { title: 'Observability', desc: 'Dashboards, reports, and artifacts across hubs.' },
+              { title: 'Futuristic UI', desc: 'Neon, animated, holographic surfaces with tilt and beams.' },
+              { title: 'Netlify Automations', desc: 'Scheduled functions that replace GitHub Actions.' },
+              { title: 'Edge‑Optimized', desc: 'Global performance with smart bundling and caching.' },
             ].map((f) => (
               <article key={f.title} className="group glow-card relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md hover:border-cyan-400/30">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
@@ -131,6 +134,9 @@ export default function Home() {
               { title: 'Code Quality & Refactors', desc: 'Lints, fixes, and proposes refactors with type‑safety improvements.' },
               { title: 'Performance & A11y', desc: 'Optimizes bundles, assets, and accessibility with continuous checks.' },
               { title: 'Content & SEO', desc: 'Curates content, updates promotions, and tunes metadata for reach.' },
+              { title: 'Front Systems', desc: 'Futuristic front with animated templates and layouts.' },
+              { title: 'Automation Hub', desc: 'Orchestrate cloud agents and review outputs.' },
+              { title: 'Reports & Insights', desc: 'Health, SEO and AI trend dashboards.' },
             ].map((c) => (
               <article key={c.title} className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl">
                 <div className="absolute right-0 top-0 h-24 w-24 rounded-bl-[4rem] bg-cyan-400/10 blur-2xl" />
@@ -150,6 +156,9 @@ export default function Home() {
               'Rapid feedback loop with safe, incremental edits',
               'Continuous delivery directly to main branch',
               'Fewer regressions via layered checks and reports',
+              'Discoverable features with deep links across the app',
+              'Futuristic UX that boosts engagement and clarity',
+              'Netlify scheduled automations (no GitHub Actions needed)',
             ].map((b) => (
               <div key={b} className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-md">
                 <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]" />
