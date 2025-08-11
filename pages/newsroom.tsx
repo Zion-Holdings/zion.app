@@ -12,6 +12,14 @@ export default function Newsroom() {
         <p className="text-white/70 mb-6">Updated automatically from multiple sources.</p>
         <ul className="list-disc pl-6 space-y-1">
           <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/11/trump-administration-stops-illegal-freeze-of-5b-ev-charger-funds-after-losing-in-court/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Trump administration stops illegal freeze of $5B EV charger funds after losing in court</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/11/poshmark-ceo-and-founder-to-step-down/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Poshmark CEO and founder to step down</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
             <a href="https://techcrunch.com/2025/08/11/ford-throws-out-henry-fords-assembly-line-to-make-low-cost-evs-in-america/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Ford throws out Henry Ford’s assembly line to make low-cost EVs in America</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
@@ -36,23 +44,19 @@ export default function Newsroom() {
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/08/how-to-use-instagram-map-and-protect-your-privacy/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">How to use Instagram Map and protect your privacy</a>
+            <a href="https://techcrunch.com/2025/08/11/u-s-government-seized-1-million-from-russian-ransomware-gang/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">US government seized $1M from Russian ransomware gang</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/08/sam-altman-addresses-bumpy-gpt-5-rollout-bringing-4o-back-and-the-chart-crime/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Sam Altman addresses ‘bumpy’ GPT-5 rollout, bringing 4o back, and the ‘chart crime’</a>
+            <a href="https://techcrunch.com/2025/08/11/how-founders-are-ditching-vc-norms-and-finding-capital-on-their-own-terms-at-techcrunch-disrupt-2025/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">How founders are ditching VC norms and finding capital on their own terms at TechCrunch Disrupt 2025</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/11/oceans-new-app-brings-inbox-triage-tasks-and-invites-to-gmail-users/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Ocean’s new app brings inbox triage, tasks and invites to Gmail users</a>
+            <a href="https://techcrunch.com/2025/08/11/oceans-new-app-brings-inbox-triage-tasks-and-invites-to-gmail-users/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Ocean’s new app brings inbox triage, tasks, and invites to Gmail users</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
             <a href="https://techcrunch.com/2025/08/11/made-by-google-2025-how-to-watch-google-debut-the-pixel-10-pixel-watch-4-and-more/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Made by Google 2025: How to watch Google debut the Pixel 10, Pixel Watch 4, and more</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/11/trump-administration-stops-illegal-freeze-of-5b-ev-charger-funds-after-losing-in-court/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Trump administration stops illegal freeze of $5B EV charger funds after losing in court</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
@@ -72,11 +76,11 @@ export default function Newsroom() {
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/11/revel-shuts-down-its-ride-hail-business-to-focus-on-ev-charging/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Revel shuts down its ride-hail business to focus on EV charging</a>
+            <a href="https://techcrunch.com/2025/08/10/the-computer-science-dream-has-become-a-nightmare/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">The computer science dream has become a nightmare</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/10/the-computer-science-dream-has-become-a-nightmare/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">The computer science dream has become a nightmare</a>
+            <a href="https://techcrunch.com/2025/08/08/sam-altman-addresses-bumpy-gpt-5-rollout-bringing-4o-back-and-the-chart-crime/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Sam Altman addresses ‘bumpy’ GPT-5 rollout, bringing 4o back, and the ‘chart crime’</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
@@ -85,10 +89,6 @@ export default function Newsroom() {
           </li>
           <li className="py-2">
             <a href="https://techcrunch.com/2025/08/06/key-sections-of-the-us-constitution-deleted-from-governments-website/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Key sections of the US Constitution deleted from government’s website</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/06/instagram-takes-on-snapchat-with-new-instagram-map/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Instagram takes on Snapchat with new ‘Instagram Map’</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
         </ul>
