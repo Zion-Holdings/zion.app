@@ -66,6 +66,36 @@ export default function AutomationHub() {
             <p className="text-white/70">Ultra-fast front index futurizer and directory builder.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/hyper-front-index-accelerator" target="_blank" rel="noopener">Trigger / View</a>
           </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Codebase Hygiene Orchestrator</h2>
+            <p className="text-white/70">Scans TODOs, dead code, and security issues; commits fixes.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/codebase-hygiene-orchestrator" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Media Integrity Orchestrator</h2>
+            <p className="text-white/70">Repairs broken images, optimizes assets, regenerates OGs.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/media-integrity-orchestrator" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Knowledge Graph Orchestrator</h2>
+            <p className="text-white/70">Updates repository knowledge graph, radar, and docs index.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/knowledge-graph-orchestrator" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">AI Newsroom Orchestrator</h2>
+            <p className="text-white/70">Generates newsroom posts and AI changelogs automatically.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/ai-newsroom-orchestrator" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Netlify Auto‑Healer</h2>
+            <p className="text-white/70">Heals build/runtime issues and syncs fixes to main.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/netlify-auto-healer-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Sitemap & SEO Orchestrator</h2>
+            <p className="text-white/70">Regenerates sitemap and runs SEO audits with fixes.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/sitemap-and-seo-orchestrator" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
         </ul>
       </main>
     </div>

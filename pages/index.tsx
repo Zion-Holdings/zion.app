@@ -253,6 +253,12 @@ export default function Home() {
               { title: 'README Advertiser', desc: 'Refresh README and docs indexes every 6h.', href: '/.netlify/functions/readme-advertiser' },
               { title: 'Features/Capabilities/Benefits Advertiser (2m)', desc: 'Continuously advertises new features with deep links on the front pages.', href: '/.netlify/functions/features-capabilities-benefits-advertiser' },
               { title: 'Hyper Front Index Accelerator (1m)', desc: 'Ultra-fast front index futurizer and directory builder.', href: '/.netlify/functions/hyper-front-index-accelerator' },
+              { title: 'Codebase Hygiene Orchestrator', desc: 'Scans TODOs, dead code, and security issues; commits fixes.', href: '/.netlify/functions/codebase-hygiene-orchestrator' },
+              { title: 'Media Integrity Orchestrator', desc: 'Repairs broken images, optimizes assets, regenerates OGs.', href: '/.netlify/functions/media-integrity-orchestrator' },
+              { title: 'Knowledge Graph Orchestrator', desc: 'Updates repository knowledge graph, radar, and docs index.', href: '/.netlify/functions/knowledge-graph-orchestrator' },
+              { title: 'AI Newsroom Orchestrator', desc: 'Generates newsroom posts and AI changelogs automatically.', href: '/.netlify/functions/ai-newsroom-orchestrator' },
+              { title: 'Netlify Auto‑Healer', desc: 'Heals build and runtime issues, then syncs to main.', href: '/.netlify/functions/netlify-auto-healer-runner' },
+              { title: 'Sitemap & SEO Orchestrator', desc: 'Regenerates sitemap and runs SEO audits with fixes.', href: '/.netlify/functions/sitemap-and-seo-orchestrator' },
             ].map((tool) => (
               <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
