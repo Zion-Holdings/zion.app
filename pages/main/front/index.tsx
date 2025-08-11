@@ -32,6 +32,8 @@ export default function MainFrontIndex() {
         {/* Neural mesh lines */}
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(800px_400px_at_10%_-10%,rgba(34,211,238,0.08),transparent),radial-gradient(600px_400px_at_110%_10%,rgba(168,85,247,0.08),transparent)]" />
         <div className="pointer-events-none absolute inset-0 opacity-20 [background:repeating-linear-gradient(0deg,transparent,transparent_31px,rgba(255,255,255,.06)_32px),repeating-linear-gradient(90deg,transparent,transparent_31px,rgba(255,255,255,.06)_32px)] [mask-image:radial-gradient(ellipse_at_center,black,transparent_65%)]" />
+        {/* Cyber 3D grid */}
+        <div className="absolute inset-x-0 bottom-0 h-[40vh] cyber-grid" />
       </div>
 
       {/* Header */}
@@ -115,6 +117,9 @@ export default function MainFrontIndex() {
               { Icon: Rocket, title: 'Generative Factories', desc: 'Spins up domain‑specific automation factories that build for you.' },
               { Icon: ShieldCheck, title: 'Safety by Design', desc: 'Layered validations — type checks, builds, a11y, links, and more.' },
               { Icon: GitBranch, title: 'Main Sync', desc: 'Small, reviewable edits committed and pushed continuously.' },
+              { Icon: Cpu, title: 'AI Orchestration', desc: 'Coordinates multi‑agent systems for maximum throughput.' },
+              { Icon: Gauge, title: 'Performance‑Driven', desc: 'Every change measured, benchmarked, and optimized.' },
+              { Icon: Zap, title: 'Instant Rollouts', desc: 'Safe, incremental releases with immediate feedback.' },
             ].map(({ Icon, title, desc }) => (
               <article key={title} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
@@ -137,6 +142,9 @@ export default function MainFrontIndex() {
               { Icon: ShieldCheck, title: 'Safety‑First', desc: 'Conservative edits with logs, reports, and guardrails.' },
               { Icon: Rocket, title: 'Scalable', desc: 'Generates domain‑specific factories on demand.' },
               { Icon: Gauge, title: 'Observability', desc: 'Dashboards, reports, and GitHub Actions artifacts.' },
+              { Icon: Zap, title: 'A/B Evolution', desc: 'Continuously compares variants and keeps the best.' },
+              { Icon: Cpu, title: 'Knowledge‑Aware', desc: 'Leverages codebase memory and context for smarter edits.' },
+              { Icon: ShieldCheck, title: 'Compliance‑Ready', desc: 'Auditable logs and constraints by default.' },
             ].map(({ Icon, title, desc }) => (
               <article key={title} className="group glow-card relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md hover:border-cyan-400/30">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
@@ -214,6 +222,8 @@ export default function MainFrontIndex() {
               'Rapid feedback loop with safe, incremental edits',
               'Continuous delivery directly to main branch',
               'Fewer regressions via layered checks and reports',
+              'Observable from PR to production with live reports',
+              'Lower TCO via automation and zero‑ops runtime',
             ].map((b) => (
               <div key={b} className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-md">
                 <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]" />
@@ -244,6 +254,26 @@ export default function MainFrontIndex() {
             <Link href="/site-health"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Site Health — audits & insights</span></a></Link>
             <a href="https://github.com/Zion-Holdings/zion.app/actions" target="_blank" rel="noopener" className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">GitHub Actions — live workflows</span></a>
             <a href="https://github.com/Zion-Holdings/zion.app/tree/main/docs" target="_blank" rel="noopener" className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Docs — technical notes & guides</span></a>
+          </div>
+        </section>
+
+        {/* Use Cases */}
+        <section className="mx-auto max-w-7xl px-6 pb-14">
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Use Cases</h2>
+          <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-3">
+            {[
+              ['UX Upgrades', 'Ship polished UI improvements weekly'],
+              ['SEO Growth', 'Continuously improve ranking signals'],
+              ['Content Ops', 'Generate, localize, and publish content'],
+              ['Code Quality', 'Refactors, types, and linting at scale'],
+              ['Perf & A11y', 'Optimize Core Web Vitals and accessibility'],
+              ['Data Pipelines', 'Integrate APIs and keep data in sync'],
+            ].map(([title, desc]) => (
+              <article key={title as string} className="holo-card relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
+                <h3 className="text-lg font-semibold">{title as string}</h3>
+                <p className="mt-1 text-sm text-white/75">{desc as string}</p>
+              </article>
+            ))}
           </div>
         </section>
 
