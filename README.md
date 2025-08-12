@@ -1,6 +1,6 @@
 # bolt.new.zion.app
 
-![Automations: 13](https://img.shields.io/badge/Automations-13-informational) ![Pages: 10](https://img.shields.io/badge/Pages-10-success) ![Components: 1](https://img.shields.io/badge/Components-1-blue)
+![Automations: 29](https://img.shields.io/badge/Automations-29-informational) ![Pages: 10](https://img.shields.io/badge/Pages-10-success) ![Components: 1](https://img.shields.io/badge/Components-1-blue)
 
 Autonomous, cloud‑native app with self‑running automations.
 
@@ -30,19 +30,35 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 - /site-health
 
 ### Automations
+- [Actionlint](https://github.com/Zion-Holdings/zion/actions/workflows/actionlint.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/actionlint.yml/badge.svg)
 - [Ai Trends Radar](https://github.com/Zion-Holdings/zion/actions/workflows/ai-trends-radar.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ai-trends-radar.yml/badge.svg)
 - [Automation Advertiser](https://github.com/Zion-Holdings/zion/actions/workflows/automation-advertiser.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/automation-advertiser.yml/badge.svg)
+- [Ci Self Heal](https://github.com/Zion-Holdings/zion/actions/workflows/ci-self-heal.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ci-self-heal.yml/badge.svg)
+- [Ci](https://github.com/Zion-Holdings/zion/actions/workflows/ci.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ci.yml/badge.svg)
 - [Cloud Autonomous Orchestrator](https://github.com/Zion-Holdings/zion/actions/workflows/cloud-autonomous-orchestrator.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/cloud-autonomous-orchestrator.yml/badge.svg)
+- [Codeql](https://github.com/Zion-Holdings/zion/actions/workflows/codeql.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/codeql.yml/badge.svg)
+- [Commitlint](https://github.com/Zion-Holdings/zion/actions/workflows/commitlint.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/commitlint.yml/badge.svg)
+- [Cursor Chat](https://github.com/Zion-Holdings/zion/actions/workflows/cursor-chat.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/cursor-chat.yml/badge.svg)
 - [Docs Intelligence](https://github.com/Zion-Holdings/zion/actions/workflows/docs-intelligence.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/docs-intelligence.yml/badge.svg)
+- [Front Scheduler](https://github.com/Zion-Holdings/zion/actions/workflows/front-scheduler.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/front-scheduler.yml/badge.svg)
+- [Guardian Scheduler](https://github.com/Zion-Holdings/zion/actions/workflows/guardian-scheduler.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/guardian-scheduler.yml/badge.svg)
+- [Instagram Marketing](https://github.com/Zion-Holdings/zion/actions/workflows/instagram-marketing.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/instagram-marketing.yml/badge.svg)
 - [Knowledge Graph Radar](https://github.com/Zion-Holdings/zion/actions/workflows/knowledge-graph-radar.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/knowledge-graph-radar.yml/badge.svg)
+- [Linkedin Marketing](https://github.com/Zion-Holdings/zion/actions/workflows/linkedin-marketing.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/linkedin-marketing.yml/badge.svg)
+- [Linkedin Pro](https://github.com/Zion-Holdings/zion/actions/workflows/linkedin-pro.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/linkedin-pro.yml/badge.svg)
 - [Media Optimizer](https://github.com/Zion-Holdings/zion/actions/workflows/media-optimizer.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/media-optimizer.yml/badge.svg)
+- [Monetization](https://github.com/Zion-Holdings/zion/actions/workflows/monetization.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/monetization.yml/badge.svg)
 - [Netlify Config](https://github.com/Zion-Holdings/zion/actions/workflows/netlify-config.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/netlify-config.yml/badge.svg)
 - [Netlify Functions Trigger](https://github.com/Zion-Holdings/zion/actions/workflows/netlify-functions-trigger.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/netlify-functions-trigger.yml/badge.svg)
 - [Readme Auto Advertiser](https://github.com/Zion-Holdings/zion/actions/workflows/readme-auto-advertiser.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/readme-auto-advertiser.yml/badge.svg)
+- [Responsive Content](https://github.com/Zion-Holdings/zion/actions/workflows/responsive-content.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/responsive-content.yml/badge.svg)
 - [Security Auto Heal](https://github.com/Zion-Holdings/zion/actions/workflows/security-auto-heal.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/security-auto-heal.yml/badge.svg)
 - [Site Health Guardian](https://github.com/Zion-Holdings/zion/actions/workflows/site-health-guardian.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/site-health-guardian.yml/badge.svg)
+- [Site Link](https://github.com/Zion-Holdings/zion/actions/workflows/site-link.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/site-link.yml/badge.svg)
 - [Topics And Clusters](https://github.com/Zion-Holdings/zion/actions/workflows/topics-and-clusters.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/topics-and-clusters.yml/badge.svg)
 - [Ultra Rapid Sync](https://github.com/Zion-Holdings/zion/actions/workflows/ultra-rapid-sync.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ultra-rapid-sync.yml/badge.svg)
+- [Variation](https://github.com/Zion-Holdings/zion/actions/workflows/variation.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/variation.yml/badge.svg)
+- [Venture](https://github.com/Zion-Holdings/zion/actions/workflows/venture.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/venture.yml/badge.svg)
 
 ### Local Development
 1. Install Node 20+ and npm 10+.
