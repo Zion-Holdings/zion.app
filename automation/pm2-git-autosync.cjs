@@ -5,6 +5,47 @@ const { spawnSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
+const ROOT = path.resolve(__dirname, '..');
+const LOG = path.join(ROOT, 'automation', 'logs', 'git-autosync.log');
+
+function ensureDir(p) { fs.mkdirSync(p, { recursive: true }); }
+function log(msg) {
+  ensureDir(path.dirname(LOG));
+  const line = `${new Date().toISOString()} ${msg}`;
+  console.log(line);
+  try { fs.appendFileSync(LOG, line + '\n'); } catch {}
+}
+
+function run(cmd, args = []) {
+  const res = spawnSync(cmd, args, { stdio: 'inherit', cwd: ROOT, env: process.env, shell: false });
+  return res.status === 0;
+}
+
+function loop() {
+  const secs = parseInt(process.env.SYNC_INTERVAL_SECONDS || '60', 10);
+  const branch = process.env.TARGET_BRANCH || 'main';
+  log(`git-autosync: starting loop every ${secs}s → ${branch}`);
+  const tick = () => {
+    try {
+      run('node', [path.join(ROOT, 'automation', 'git-sync.cjs')]);
+    } catch (e) {
+      log(`error: ${e && e.message ? e.message : String(e)}`);
+    } finally {
+      setTimeout(tick, secs * 1000);
+    }
+  };
+  tick();
+}
+
+loop();
+
+#!/usr/bin/env node
+'use strict';
+
+const { spawnSync } = require('child_process');
+const fs = require('fs');
+const path = require('path');
+
 const repoRoot = path.resolve(__dirname, '..');
 const logsDir = path.join(repoRoot, 'automation', 'logs');
 const lockFile = path.join(repoRoot, 'automation', '.git-sync.lock');
