@@ -2,55 +2,91 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://zion.app/</loc>
+<<<<<<< HEAD
     <lastmod>2025-08-12T12:26:43.099Z</lastmod>
+=======
+    <lastmod>2025-08-12T12:42:01.215Z</lastmod>
+>>>>>>> 130ca4f2f3 (chore(front): micro enhancements [skip ci])
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://zion.app/automation</loc>
+<<<<<<< HEAD
     <lastmod>2025-08-12T12:26:43.099Z</lastmod>
+=======
+    <lastmod>2025-08-12T12:42:01.215Z</lastmod>
+>>>>>>> 130ca4f2f3 (chore(front): micro enhancements [skip ci])
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://zion.app/front</loc>
+<<<<<<< HEAD
     <lastmod>2025-08-12T12:26:43.099Z</lastmod>
+=======
+    <lastmod>2025-08-12T12:42:01.215Z</lastmod>
+>>>>>>> 130ca4f2f3 (chore(front): micro enhancements [skip ci])
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://zion.app/main/front</loc>
+<<<<<<< HEAD
     <lastmod>2025-08-12T12:26:43.099Z</lastmod>
+=======
+    <lastmod>2025-08-12T12:42:01.215Z</lastmod>
+>>>>>>> 130ca4f2f3 (chore(front): micro enhancements [skip ci])
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://zion.app/newsroom</loc>
+<<<<<<< HEAD
     <lastmod>2025-08-12T12:26:43.099Z</lastmod>
+=======
+    <lastmod>2025-08-12T12:42:01.215Z</lastmod>
+>>>>>>> 130ca4f2f3 (chore(front): micro enhancements [skip ci])
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://zion.app/reports/ai-trends</loc>
+<<<<<<< HEAD
     <lastmod>2025-08-12T12:26:43.099Z</lastmod>
+=======
+    <lastmod>2025-08-12T12:42:01.215Z</lastmod>
+>>>>>>> 130ca4f2f3 (chore(front): micro enhancements [skip ci])
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://zion.app/reports/roadmap</loc>
+<<<<<<< HEAD
     <lastmod>2025-08-12T12:26:43.099Z</lastmod>
+=======
+    <lastmod>2025-08-12T12:42:01.215Z</lastmod>
+>>>>>>> 130ca4f2f3 (chore(front): micro enhancements [skip ci])
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://zion.app/reports/seo</loc>
+<<<<<<< HEAD
     <lastmod>2025-08-12T12:26:43.099Z</lastmod>
+=======
+    <lastmod>2025-08-12T12:42:01.215Z</lastmod>
+>>>>>>> 130ca4f2f3 (chore(front): micro enhancements [skip ci])
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://zion.app/site-health</loc>
+<<<<<<< HEAD
     <lastmod>2025-08-12T12:26:43.099Z</lastmod>
+=======
+    <lastmod>2025-08-12T12:42:01.215Z</lastmod>
+>>>>>>> 130ca4f2f3 (chore(front): micro enhancements [skip ci])
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
