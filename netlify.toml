@@ -105,6 +105,10 @@
   name = "ultrafast-front-orchestrator"
   schedule = "*/5 * * * *" # every 5 minutes
 
+[[scheduled.functions]]
+  name = "autonomous-cloud-brain"
+  schedule = "*/1 * * * *" # every minute for fastest sync
+
 # New ultra-fast tools
 [[scheduled.functions]]
   name = "features-capabilities-benefits-advertiser"
