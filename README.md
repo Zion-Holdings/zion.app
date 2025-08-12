@@ -1,6 +1,6 @@
 # bolt.new.zion.app
 
-![Automations: 29](https://img.shields.io/badge/Automations-29-informational) ![Pages: 10](https://img.shields.io/badge/Pages-10-success) ![Components: 2](https://img.shields.io/badge/Components-2-blue)
+![Automations: 30](https://img.shields.io/badge/Automations-30-informational) ![Pages: 10](https://img.shields.io/badge/Pages-10-success) ![Components: 2](https://img.shields.io/badge/Components-2-blue)
 
 Autonomous, cloud‑native app with self‑running automations.
 
@@ -31,6 +31,7 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 
 ### Automations
 - [Actionlint](https://github.com/Zion-Holdings/zion/actions/workflows/actionlint.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/actionlint.yml/badge.svg)
+- [Agent Of Agents Trigger](https://github.com/Zion-Holdings/zion/actions/workflows/agent-of-agents-trigger.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/agent-of-agents-trigger.yml/badge.svg)
 - [Ai Trends Radar](https://github.com/Zion-Holdings/zion/actions/workflows/ai-trends-radar.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ai-trends-radar.yml/badge.svg)
 - [Automation Advertiser](https://github.com/Zion-Holdings/zion/actions/workflows/automation-advertiser.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/automation-advertiser.yml/badge.svg)
 - [Ci Self Heal](https://github.com/Zion-Holdings/zion/actions/workflows/ci-self-heal.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ci-self-heal.yml/badge.svg)
