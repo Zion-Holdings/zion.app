@@ -1,9 +1,5 @@
 {
-<<<<<<< Updated upstream
-  "generatedAt": "2025-08-12T01:11:00.075Z",
-=======
-  "generatedAt": "2025-08-12T00:50:08.945Z",
->>>>>>> Stashed changes
+  "generatedAt": "2025-08-12T01:35:02.288Z",
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
@@ -25,6 +21,9 @@
     "content-freshness-score-runner",
     "continuous-front-runner",
     "continuous-orchestrator",
+    "cron-heartbeat",
+    "cron-hub",
+    "cron-supervisor",
     "dead-code-audit",
     "dead-code-report",
     "deps-auto-upgrade-runner",

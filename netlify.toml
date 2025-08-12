@@ -297,3 +297,16 @@
 [[scheduled.functions]]
   name = "duplicate-media-finder-runner"
   schedule = "0 2 * * *"
+
+# Cron Hub — intelligent cloud schedulers
+[[scheduled.functions]]
+  name = "cron-hub"
+  schedule = "*/1 * * * *"
+
+[[scheduled.functions]]
+  name = "cron-supervisor"
+  schedule = "*/5 * * * *"
+
+[[scheduled.functions]]
+  name = "cron-heartbeat"
+  schedule = "*/1 * * * *"
