@@ -67,6 +67,26 @@ function push(refspec) {
 }
 
 (function main() {
+  // Simple cross-process lock to avoid concurrent git ops (shared with PM2 autosync loop)
+  const fs = require('fs');
+  const path = require('path');
+  const lockFile = path.join(__dirname, '.git-sync.lock');
+  const maxAgeMs = 5 * 60 * 1000;
+  try {
+    if (fs.existsSync(lockFile)) {
+      const stat = fs.statSync(lockFile);
+      if (Date.now() - stat.mtimeMs < maxAgeMs) {
+        process.stdout.write('git-sync: lock present, skipping\n');
+        return;
+      }
+      try { fs.unlinkSync(lockFile); } catch {}
+    }
+    fs.writeFileSync(lockFile, String(process.pid));
+  } catch {}
+  const removeLock = () => { try { fs.unlinkSync(lockFile); } catch {} };
+  process.on('exit', removeLock);
+  process.on('SIGINT', () => { removeLock(); process.exit(130); });
+  process.on('SIGTERM', () => { removeLock(); process.exit(143); });
   configureBotIdentity();
 
   const TARGET_BRANCH = process.env.TARGET_BRANCH || 'main';
