@@ -41,22 +41,22 @@ exports.handler = async () => {
 
   // On top of the hour, refresh sitemap and link fixes
   if (minutes % 60 === 0) {
-    try { step('site:link-crawl', 'automation/site-link-crawler.cjs'); } catch (_) {}
-    try { step('site:link-fix', 'automation/site-link-fixer.cjs'); } catch (_) {}
-    try { step('sitemap', 'automation/sitemap-runner.cjs'); } catch (_) {}
+    try { step('site:link-crawl', 'automation/site-link-crawler.cjs'); } catch { logs.push('site:link-crawl failed'); }
+    try { step('site:link-fix', 'automation/site-link-fixer.cjs'); } catch { logs.push('site:link-fix failed'); }
+    try { step('sitemap', 'automation/sitemap-runner.cjs'); } catch { logs.push('sitemap failed'); }
   }
 
   // Twice daily (UTC morning/evening): docs + props + search index
   if (minutes % 30 === 0 && (hour === 8 || hour === 20)) {
-    try { step('docs:index', 'automation/docs-pages-indexer.cjs'); } catch (_) {}
-    try { step('components:props-docs', 'automation/component-props-docs.cjs'); } catch (_) {}
-    try { step('docs:search-index', 'scripts/generate-search-index.js'); } catch (_) {}
+    try { step('docs:index', 'automation/docs-pages-indexer.cjs'); } catch { logs.push('docs:index failed'); }
+    try { step('components:props-docs', 'automation/component-props-docs.cjs'); } catch { logs.push('components:props-docs failed'); }
+    try { step('docs:search-index', 'scripts/generate-search-index.js'); } catch { logs.push('docs:search-index failed'); }
   }
 
   // Weekly cadence: run code smell + topic clusters on Sunday
   if (dow === 0 && minutes % 30 === 0) {
-    try { step('code-smell', 'automation/code-smell-audit.cjs'); } catch (_) {}
-    try { step('topics:clusters', 'automation/topic-cluster-builder.cjs'); } catch (_) {}
+    try { step('code-smell', 'automation/code-smell-audit.cjs'); } catch { logs.push('code-smell failed'); }
+    try { step('topics:clusters', 'automation/topic-cluster-builder.cjs'); } catch { logs.push('topics:clusters failed'); }
   }
 
   step('git:sync', 'automation/advanced-git-sync.cjs');

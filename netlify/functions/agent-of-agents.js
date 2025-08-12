@@ -1,4 +1,4 @@
-const fs = require('fs');
+// const fs = require('fs');
 const path = require('path');
 const { spawnSync } = require('child_process');
 
@@ -54,7 +54,7 @@ exports.handler = async () => {
   try {
     const manifest = require('./functions-manifest.json');
     if (Array.isArray(manifest.functions)) manifestFunctions = manifest.functions;
-  } catch (_) {}
+  } catch { /* ignore */ }
 
   // Prioritize ultra-fast/critical functions first
   const priority = [

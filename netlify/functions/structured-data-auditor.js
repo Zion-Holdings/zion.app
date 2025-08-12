@@ -6,7 +6,7 @@ function scanForJsonLd(dir) {
   const findings = [];
   function walk(d) {
     let entries = [];
-    try { entries = fs.readdirSync(d, { withFileTypes: true }); } catch (_) { return; }
+  try { entries = fs.readdirSync(d, { withFileTypes: true }); } catch { return; }
     for (const e of entries) {
       const p = path.join(d, e.name);
       if (e.isDirectory()) walk(p);
@@ -16,7 +16,7 @@ function scanForJsonLd(dir) {
           if (content.includes('application/ld+json')) {
             findings.push({ file: p.replace(process.cwd() + '/', ''), hasJsonLd: true });
           }
-        } catch (_) {}
+        } catch { /* ignore */ }
       }
     }
   }
@@ -48,6 +48,6 @@ exports.handler = async () => {
   fs.mkdirSync(outDir, { recursive: true });
   fs.writeFileSync(path.join(outDir, 'structured-data-audit.json'), JSON.stringify(report, null, 2));
 
-  const sync = runNode('automation/advanced-git-sync.cjs');
+  runNode('automation/advanced-git-sync.cjs');
   return { statusCode: 200, body: JSON.stringify({ ok: true, total: findings.length }) };
 };

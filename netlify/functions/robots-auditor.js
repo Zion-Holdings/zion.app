@@ -19,13 +19,13 @@ exports.handler = async () => {
     const content = fs.readFileSync(robotsPath, 'utf8');
     exists = true;
     hasSitemap = /sitemap\s*:/i.test(content);
-  } catch (_) {}
+  } catch { /* ignore */ }
 
   const report = { generatedAt: new Date().toISOString(), exists, hasSitemap };
   const outDir = path.join(repoRoot, 'public', 'reports');
   fs.mkdirSync(outDir, { recursive: true });
   fs.writeFileSync(path.join(outDir, 'robots-audit.json'), JSON.stringify(report, null, 2));
 
-  const sync = runNode('automation/advanced-git-sync.cjs');
+  runNode('automation/advanced-git-sync.cjs');
   return { statusCode: 200, body: JSON.stringify(report) };
 };
