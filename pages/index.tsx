@@ -299,6 +299,27 @@ export default function Home() {
           </div>
         </section>
 
+        {/* CI Orchestrators */}
+        <section className="mx-auto max-w-7xl px-6 pb-8">
+          <div className="mt-2 grid grid-cols-1 gap-3 sm:grid-cols-3">
+            <a href="https://github.com/Zion-Holdings/zion.app/actions/workflows/ultrafast-cloud-orchestrator.yml" className="group rounded-xl border border-white/10 bg-white/5 p-4 hover:border-cyan-400/30">
+              <div className="text-sm font-semibold">Ultrafast Cloud Orchestrator</div>
+              <div className="mt-1 text-xs text-white/70">Runs every minute to trigger cloud automations and sync changes.</div>
+              <div className="mt-2 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>
+            <a href="https://github.com/Zion-Holdings/zion.app/actions/workflows/readme-autogen.yml" className="group rounded-xl border border-white/10 bg-white/5 p-4 hover:border-cyan-400/30">
+              <div className="text-sm font-semibold">README Autogeneration</div>
+              <div className="mt-1 text-xs text-white/70">Refreshes README with live routes and automations every 15m.</div>
+              <div className="mt-2 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>
+            <a href="https://github.com/Zion-Holdings/zion.app/actions/workflows/homepage-auto-update.yml" className="group rounded-xl border border-white/10 bg-white/5 p-4 hover:border-cyan-400/30">
+              <div className="text-sm font-semibold">Homepage Auto Update</div>
+              <div className="mt-1 text-xs text-white/70">Refreshes homepage promos and deep links every 10m.</div>
+              <div className="mt-2 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>
+          </div>
+        </section>
+
         {/* AUTO-GENERATED: HOME_UPDATER_START */}
  <section className="mx-auto max-w-7xl px-6 pb-16">
    <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Explore more</h2>

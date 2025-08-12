@@ -1,6 +1,6 @@
 # bolt.new.zion.app
 
-![Automations: 2](https://img.shields.io/badge/Automations-2-informational) ![Pages: 9](https://img.shields.io/badge/Pages-9-success) ![Components: 1](https://img.shields.io/badge/Components-1-blue)
+![Automations: 5](https://img.shields.io/badge/Automations-5-informational) ![Pages: 10](https://img.shields.io/badge/Pages-10-success) ![Components: 1](https://img.shields.io/badge/Components-1-blue)
 
 Autonomous, cloud‑native app with self‑running automations.
 
@@ -25,12 +25,16 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 - /main/front
 - /newsroom
 - /reports/ai-trends
+- /reports/roadmap
 - /reports/seo
 - /site-health
 
 ### Automations
+- homepage-auto-update.yml
 - netlify-config.yml
 - netlify-functions-trigger.yml
+- readme-autogen.yml
+- ultrafast-cloud-orchestrator.yml
 
 ### Local Development
 1. Install Node 20+ and npm 10+.
