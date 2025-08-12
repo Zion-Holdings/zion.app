@@ -82,6 +82,9 @@
   schedule = "*/1 * * * *" # every minute
 
 [[scheduled.functions]]
+  name = "autonomous-meta-orchestrator"
+  schedule = "*/1 * * * *" # every minute
+[[scheduled.functions]]
   name = "trigger-all-and-commit"
   schedule = "*/1 * * * *" # every minute
 
