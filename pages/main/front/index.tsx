@@ -1759,6 +1759,26 @@ export default function MainFrontIndex() {
           </div>
         </motion.section>
 
+        {/* Autonomous Cloud Automations */}
+        <section id="automations" className="mx-auto max-w-7xl px-6 pb-14">
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Autonomous Cloud Automations</h2>
+          <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">New intelligent, serverless automations that run on a schedule — no human interaction required. Outputs are committed back to the repository automatically.</p>
+          <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { title: 'Stale Content Auditor', desc: 'Scores content freshness using git history; publishes JSON and Markdown reports.', href: '/.netlify/functions/stale-content-auditor-runner' },
+              { title: 'Readability Audit', desc: 'Computes Flesch reading ease and grade levels across pages/docs.', href: '/.netlify/functions/readability-audit-runner' },
+              { title: 'Internal Anchors Validator', desc: 'Detects missing same‑file anchors to prevent broken #links.', href: '/.netlify/functions/internal-anchors-validator-runner' },
+            ].map((tool) => (
+              <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <h3 className="text-lg font-semibold">{tool.title}</h3>
+                <p className="mt-1 text-sm text-white/75">{tool.desc}</p>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+              </a>
+            ))}
+          </div>
+        </section>
+
       </div>
       {/* Back to top */}
       {showToTop && (

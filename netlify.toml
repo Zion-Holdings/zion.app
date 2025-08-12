@@ -224,6 +224,7 @@
   name = "component-size-report"
   schedule = "*/5 * * * *"
 
+# Newly added intelligent automations
 [[scheduled.functions]]
   name = "license-compliance-auditor"
   schedule = "0 2 * * 1"
@@ -252,7 +253,6 @@
   name = "content-freshness-score-runner"
   schedule = "7 */12 * * *"
 
-# Newly added intelligent automations
 [[scheduled.functions]]
   name = "anchor-links-auto-fixer"
   schedule = "*/5 * * * *"
@@ -272,3 +272,12 @@
 [[scheduled.functions]]
   name = "duplicate-media-finder-runner"
   schedule = "0 2 * * *"
+
+# New: added autonomous validators
+[[scheduled.functions]]
+  name = "readability-audit-runner"
+  schedule = "*/20 * * * *"
+
+[[scheduled.functions]]
+  name = "internal-anchors-validator-runner"
+  schedule = "*/15 * * * *"
