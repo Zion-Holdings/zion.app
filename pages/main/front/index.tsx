@@ -331,7 +331,7 @@ export default function MainFrontIndex() {
         </section>
 
         {/* Floating Quick-Nav Dock */}
-        <aside className="fixed left-4 top-1/2 z-30 hidden -translate-y-1/2 lg:block">
+        <aside className="fixed left-4 top-1/2 z-30 -translate-y-1/2 block">
           <nav aria-label="Quick section navigation" className="space-y-2">
             {[
               ['#command-center', 'Command'],
