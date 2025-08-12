@@ -39,6 +39,16 @@ module.exports = {
       autorestart: false,
       cron_restart: '0 */3 * * *'
     }
+    ,
+    {
+      name: 'align-developer',
+      cwd: rootDir,
+      script: 'automation/alignment-developer.cjs',
+      interpreter: 'node',
+      time: true,
+      autorestart: false,
+      cron_restart: '15 */3 * * *'
+    }
   ]
 };
 
