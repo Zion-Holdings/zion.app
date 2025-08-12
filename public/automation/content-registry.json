@@ -35,6 +35,14 @@
   ],
   "docs": [
     {
+      "file": "docs/topics-map.md",
+      "route": "/docs/topics-map.md"
+    },
+    {
+      "file": "docs/components-props.md",
+      "route": "/docs/components-props.md"
+    },
+    {
       "file": "docs/TODO_REPORT.md",
       "route": "/docs/TODO_REPORT.md"
     },
@@ -55,5 +63,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-11T23:58:56.819Z"
+  "generatedAt": "2025-08-12T00:08:13.027Z"
 }
