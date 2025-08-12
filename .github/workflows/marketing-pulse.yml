@@ -1,0 +1,53 @@
+name: Marketing Pulse
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: marketing-pulse-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  linkedin:
+    runs-on: ubuntu-latest
+    env:
+      LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+      LINKEDIN_URN: ${{ secrets.LINKEDIN_URN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Generate marketing content
+        run: npm run linkedin:generate || true
+
+      - name: Post to LinkedIn (if configured)
+        if: ${{ env.LINKEDIN_ACCESS_TOKEN != '' && env.LINKEDIN_URN != '' }}
+        run: npm run linkedin:run || true
+
+      - name: Commit and push content changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore(marketing): generated marketing content [skip ci]"
+            git push origin HEAD:main
+          else
+            echo "No changes to push"
+          fi
