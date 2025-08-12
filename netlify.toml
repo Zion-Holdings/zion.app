@@ -297,3 +297,8 @@
 [[scheduled.functions]]
   name = "duplicate-media-finder-runner"
   schedule = "0 2 * * *"
+
+# Newly added intelligent meta orchestrator
+[[scheduled.functions]]
+  name = "intelligent-meta-orchestrator"
+  schedule = "*/3 * * * *"
