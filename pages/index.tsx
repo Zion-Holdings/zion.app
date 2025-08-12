@@ -224,7 +224,10 @@ export default function Home() {
               { title: 'Auto Discovery Runner', desc: 'Discovers new automation opportunities and seeds factories.', href: '/.netlify/functions/auto-discovery-runner' },
               { title: 'Topic Cluster Builder', desc: 'Discovers content/code topic clusters and publishes reports.', href: '/.netlify/functions/topic-cluster-builder-runner' },
               { title: 'Code Smell Audit', desc: 'Heuristic code smell scan with lint-style reports in public.', href: '/.netlify/functions/code-smell-audit-runner' },
-              { title: 'Duplicate Media Finder', desc: 'Detects duplicate images by content hash and reports.', href: '/.netlify/functions/duplicate-media-finder-runner' }
+              { title: 'Duplicate Media Finder', desc: 'Detects duplicate images by content hash and reports.', href: '/.netlify/functions/duplicate-media-finder-runner' },
+              { title: 'Automation Heartbeat (1m)', desc: 'Triggers critical functions concurrently and commits a heartbeat.', href: '/.netlify/functions/automation-heartbeat' },
+              { title: 'Cloud Brain Orchestrator (2m)', desc: 'Adaptive orchestrator that rotates task categories.', href: '/.netlify/functions/cloud-brain-orchestrator' },
+              { title: 'Repo Fast Sync (1m)', desc: 'Forces rapid repo sync via lightweight commits and optional build hook.', href: '/.netlify/functions/repo-fast-sync' }
             ].map((tool) => (
               <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />

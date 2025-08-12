@@ -129,6 +129,21 @@ export default function AutomationHub() {
             <p className="text-white/70">Discovers new automation opportunities and seeds factories.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/auto-discovery-runner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
+                  <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Automation Heartbeat (1m)</h2>
+            <p className="text-white/70">Triggers critical functions concurrently and commits a heartbeat.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/automation-heartbeat" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Cloud Brain Orchestrator (2m)</h2>
+            <p className="text-white/70">Adaptive orchestrator that rotates front, homepage, and docs tasks.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/cloud-brain-orchestrator" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Repo Fast Sync (1m)</h2>
+            <p className="text-white/70">Forces rapid repo sync via lightweight commits and optional build hook.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/repo-fast-sync" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
         </ul>
       </main>
     </div>
