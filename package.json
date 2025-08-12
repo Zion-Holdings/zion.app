@@ -20,6 +20,9 @@
     "pm2:restart": "node -e \"const fs=require('fs');fs.mkdirSync('automation/logs',{recursive:true})\" && (pm2 restart ecosystem.config.cjs || pm2 start ecosystem.config.cjs --update-env)",
     "pm2:status": "pm2 status",
     "pm2:logs": "pm2 logs --lines 200",
+    "pm2:fastads:start": "node -e \"const fs=require('fs');fs.mkdirSync('automation/logs',{recursive:true})\" && pm2 start ecosystem.fast-ads.local.cjs --update-env",
+    "pm2:fastads:restart": "node -e \"const fs=require('fs');fs.mkdirSync('automation/logs',{recursive:true})\" && (pm2 restart ecosystem.fast-ads.local.cjs || pm2 start ecosystem.fast-ads.local.cjs --update-env)",
+    "pm2:fastads:stop": "pm2 stop ecosystem.fast-ads.local.cjs || true",
     "pm2:bootstrap:logrotate": "pm2 install pm2-logrotate || true && pm2 set pm2-logrotate:max_size 10M && pm2 set pm2-logrotate:retain 30 && pm2 set pm2-logrotate:compress true && pm2 set pm2-logrotate:workerInterval 60 && pm2 set pm2-logrotate:rotateInterval '0 0 * * *'",
     "functions:run": "node scripts/run-netlify-functions-locally.cjs",
     "functions:run:execute": "node scripts/run-netlify-functions-locally.cjs --execute",
@@ -213,6 +216,7 @@
     "automation:pm2:status": "npm run pm2:status",
     "automation:pm2:logs": "npm run pm2:logs",
     "automation:pm2:report": "node scripts/pm2-schedulers-report.cjs",
+    "automation:pm2:fastads": "npm run pm2:fastads:start && npm run pm2:bootstrap:logrotate && pm2 save",
     "postautomation": "npm run automation:git-sync",
     "lint:staged": "lint-staged",
     "ui-evolution:start": "node automation/ui-evolution-launcher.js start",
@@ -243,7 +247,8 @@
     "front:futurize:cron": "node -e \"const cp=require('child_process'); setInterval(()=>cp.exec('node automation/front-futurizer.cjs',()=>{}), 1000*60*60*6)\"",
     "front:directory": "node automation/front-index-directory-builder.cjs",
     "front:continuous": "node automation/continuous-front-runner.cjs",
-    "front:continuous:fast": "node -e \"const cp=require('child_process'); const run=()=>cp.exec('node automation/continuous-front-runner.cjs',()=>{}); run(); setInterval(run, 1000*60*5);\""
+    "front:continuous:fast": "node -e \"const cp=require('child_process'); const run=()=>cp.exec('node automation/continuous-front-runner.cjs',()=>{}); run(); setInterval(run, 1000*60*5);\"",
+    "ads:fast": "node automation/fast-advertising-orchestrator.cjs"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
