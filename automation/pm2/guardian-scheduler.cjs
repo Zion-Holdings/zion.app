@@ -2,11 +2,12 @@
 
 'use strict';
 
-const { spawn } = require('child_process');
+const { spawn, spawnSync } = require('child_process');
 const path = require('path');
 const fs = require('fs');
 
 const rootDir = path.join(__dirname, '..');
+const repoRoot = path.join(__dirname, '..', '..');
 const logsDir = path.join(rootDir, 'logs');
 if (!fs.existsSync(logsDir)) {
   fs.mkdirSync(logsDir, { recursive: true });
@@ -37,6 +38,20 @@ let inCooldownUntil = 0;
 
 // Heartbeat interval in ms for lightweight health updates
 const HEARTBEAT_MS = Math.max(15_000, Number(process.env.GUARDIAN_HEARTBEAT_MS || 60_000));
+
+function ensureDeps() {
+  try {
+    const nodeModules = path.join(repoRoot, 'node_modules');
+    const lockFile = path.join(repoRoot, 'package-lock.json');
+    if (!fs.existsSync(nodeModules) && fs.existsSync(lockFile)) {
+      spawnSync('npm', ['ci', '--no-fund', '--no-audit'], {
+        cwd: repoRoot,
+        stdio: 'inherit',
+        env: process.env
+      });
+    }
+  } catch {}
+}
 
 function readStatus() {
   try {
@@ -109,6 +124,8 @@ function runOnce() {
 
   const script = path.join(rootDir, 'automation-guardian-10min.cjs');
   const startedAt = Date.now();
+  // Ensure dependencies exist (first boot resilience)
+  ensureDeps();
   currentChild = spawn(process.execPath, [script], { stdio: 'inherit', env: process.env });
 
   const timeoutMs = Number(process.env.GUARDIAN_RUN_TIMEOUT_MS || 9 * 60 * 1000);

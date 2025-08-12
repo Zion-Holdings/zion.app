@@ -20,9 +20,10 @@ module.exports = {
       max_memory_restart: '256M',
       wait_ready: true,
       listen_timeout: 8000,
-      cron_restart: '0 */6 * * *',
+      // Stagger periodic restarts to avoid both schedulers restarting simultaneously
+      cron_restart: '2 */6 * * *',
       vizion: false,
-      node_args: ['--max-old-space-size=256'],
+      node_args: ['--max-old-space-size=256', '--unhandled-rejections=strict'],
       env: {
         NODE_ENV: 'production',
         // Explicit scheduler tuning
@@ -30,7 +31,9 @@ module.exports = {
         GUARDIAN_MAX_INTERVAL_MINUTES: '60',
         GUARDIAN_RUN_TIMEOUT_MS: String(9 * 60 * 1000),
         GUARDIAN_JITTER_PCT: '0.15',
-        GUARDIAN_BACKOFF_MULTIPLIER: '1.6'
+        GUARDIAN_BACKOFF_MULTIPLIER: '1.6',
+        // Health/visibility
+        GUARDIAN_HEARTBEAT_MS: String(60 * 1000)
       },
       time: true,
       out_file: path.join(rootDir, 'automation/logs/guardian-scheduler.out.log'),
@@ -55,9 +58,10 @@ module.exports = {
       max_memory_restart: '256M',
       wait_ready: true,
       listen_timeout: 8000,
-      cron_restart: '0 */6 * * *',
+      // Stagger periodic restarts to avoid overlap with guardian
+      cron_restart: '7 */6 * * *',
       vizion: false,
-      node_args: ['--max-old-space-size=256'],
+      node_args: ['--max-old-space-size=256', '--unhandled-rejections=strict'],
       env: {
         NODE_ENV: 'production',
         // Explicit scheduler tuning
@@ -65,7 +69,9 @@ module.exports = {
         FRONT_MAX_INTERVAL_MINUTES: '30',
         FRONT_RUN_TIMEOUT_MS: String(4.5 * 60 * 1000),
         FRONT_JITTER_PCT: '0.15',
-        FRONT_BACKOFF_MULTIPLIER: '1.6'
+        FRONT_BACKOFF_MULTIPLIER: '1.6',
+        // Health/visibility
+        FRONT_HEARTBEAT_MS: String(60 * 1000)
       },
       time: true,
       out_file: path.join(rootDir, 'automation/logs/front-scheduler.out.log'),

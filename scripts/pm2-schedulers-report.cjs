@@ -19,22 +19,21 @@ function human(ms) {
   return `${h}h ${rm}m`;
 }
 
-function main() {
-  let data = {};
+function load() {
   try {
     const text = fs.readFileSync(statusFile, 'utf8');
-    data = JSON.parse(text);
+    return JSON.parse(text);
   } catch {
-    console.log('No status file found yet at', statusFile);
-    process.exit(0);
+    return null;
   }
+}
 
+function printPretty(data) {
   const names = Object.keys(data);
   if (names.length === 0) {
     console.log('No scheduler status entries.');
-    return;
+    return 0;
   }
-
   for (const name of names) {
     const s = data[name] || {};
     const last = s.lastRun || {};
@@ -64,8 +63,43 @@ function main() {
     }
   }
   console.log('');
+  return 0;
+}
+
+function main() {
+  const args = new Set(process.argv.slice(2));
+  const data = load();
+  if (!data) {
+    if (args.has('--json')) {
+      console.log(JSON.stringify({ error: 'No status file', statusFile }, null, 2));
+    } else {
+      console.log('No status file found yet at', statusFile);
+    }
+    process.exit(0);
+  }
+
+  if (args.has('--json')) {
+    console.log(JSON.stringify(data, null, 2));
+    return;
+  }
+
+  if (args.has('--check')) {
+    // Exit non-zero if any scheduler shows repeated failures or timeout on last run
+    let unhealthy = false;
+    for (const [name, s] of Object.entries(data)) {
+      const last = s.lastRun || {};
+      const sch = s.scheduler || {};
+      if (last.timedOut || last.success === false || (Number.isFinite(sch.consecutiveFailures) && sch.consecutiveFailures >= 3)) {
+        unhealthy = true;
+        console.log(`${name}: UNHEALTHY`);
+      } else {
+        console.log(`${name}: healthy`);
+      }
+    }
+    process.exit(unhealthy ? 2 : 0);
+  }
+
+  process.exit(printPretty(data));
 }
 
 main();
-
-
