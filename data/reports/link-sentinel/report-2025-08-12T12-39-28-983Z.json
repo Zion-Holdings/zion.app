@@ -1,0 +1,245 @@
+{
+  "generatedAt": "2025-08-12T12:39:28.984Z",
+  "results": [
+    {
+      "url": "#command-center",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#features",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#feature-map",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#suites",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#capabilities",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#use-cases",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#pillars",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#benefits",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#templates",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#demos",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#highlights",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#cases",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#reports",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "#roadmap",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/actions/workflows/ultra-rapid-sync.yml",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/actions/workflows/automation-advertiser.yml",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/actions/workflows/knowledge-graph-radar.yml",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/actions/workflows/site-health-guardian.yml",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "#guardrails",
+      "ok": true,
+      "status": "skipped"
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/tree/main/docs",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/tree/main/automation",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/actions",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://www.netlify.com/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://supabase.com/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://www.framer.com/motion/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/slow-ventures-cuts-first-check-from-60m-creator-fund-into-woodworking-founder/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/trump-administration-stops-illegal-freeze-of-5b-ev-charger-funds-after-losing-in-court/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/poshmark-ceo-and-founder-to-step-down/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/ford-throws-out-henry-fords-assembly-line-to-make-low-cost-evs-in-america/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/ios-26-beta-6-adds-new-ringtones-snappy-app-launches-and-more/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/elon-musk-confirms-shutdown-of-tesla-dojo-an-evolutionary-dead-end/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/nvidia-unveils-new-cosmos-world-models-other-infra-for-physical-applications-of-ai/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/10/security-flaws-in-a-carmakers-web-portal-let-one-hacker-remotely-unlock-cars-from-anywhere/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/12/how-a-once-tiny-research-lab-helped-nvidia-become-a-4-trillion-dollar-company/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/tdk-backs-ultraviolette-with-21m-to-take-india-made-electric-motorcycles-global/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/prontos-10-minute-house-help-pitch-sparked-a-3-6x-valuation-jump-in-just-90-days/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/seoul-based-datumo-raises-15-5m-to-expand-llm-evaluation-challenging-scale-ai/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/u-s-government-seized-1-million-from-russian-ransomware-gang/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/how-founders-are-ditching-vc-norms-and-finding-capital-on-their-own-terms-at-techcrunch-disrupt-2025/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/11/oceans-new-app-brings-inbox-triage-tasks-and-invites-to-gmail-users/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/10/the-computer-science-dream-has-become-a-nightmare/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/08/sam-altman-addresses-bumpy-gpt-5-rollout-bringing-4o-back-and-the-chart-crime/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/07/tesla-shuts-down-dojo-the-ai-training-supercomputer-that-musk-said-would-be-key-to-full-self-driving/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/06/key-sections-of-the-us-constitution-deleted-from-governments-website/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/06/instagram-takes-on-snapchat-with-new-instagram-map/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://www.theverge.com/policy/754356/trump-reciprocal-tariffs-august",
+      "ok": true,
+      "status": 200
+    }
+  ]
+}
