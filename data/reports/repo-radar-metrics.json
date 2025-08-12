@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2025-08-12T12:41:25.886Z",
+  "generatedAt": "2025-08-12T13:16:04.379Z",
   "windowHours": 24,
-  "commitCount": 769,
-  "changedFileCount": 335,
+  "commitCount": 795,
+  "changedFileCount": 339,
   "topChangedFiles": [
     ".github/workflows/actionlint.yml",
     ".github/workflows/ai-trends-radar.yml",
@@ -56,8 +56,8 @@
     "automation/duplicate-media-finder.cjs"
   ],
   "diff": {
-    "filesChanged": 1,
-    "insertions": 16,
-    "deletions": 8
+    "filesChanged": 0,
+    "insertions": 0,
+    "deletions": 0
   }
 }
