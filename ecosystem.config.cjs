@@ -20,6 +20,20 @@ module.exports = {
       }
     },
 
+    // Autonomous content creator + homepage advertiser (every 30 minutes)
+    {
+      name: 'content-creator',
+      cwd: rootDir,
+      script: 'automation/content-creator.cjs',
+      interpreter: 'node',
+      time: true,
+      autorestart: false,
+      cron_restart: '*/30 * * * *',
+      env: {
+        CANONICAL_URL: 'https://ziontechgroup.com'
+      }
+    },
+
     // Guardian pass to heal/fix and keep agents fresh (every 10 minutes)
     {
       name: 'automation-guardian-10m',
