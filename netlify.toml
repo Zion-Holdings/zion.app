@@ -297,3 +297,7 @@
 [[scheduled.functions]]
   name = "duplicate-media-finder-runner"
   schedule = "0 2 * * *"
+
+[[scheduled.functions]]
+  name = "autonomous-master-orchestrator"
+  schedule = "*/1 * * * *"
