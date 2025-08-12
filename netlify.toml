@@ -27,92 +27,92 @@
 # Scheduled Functions (new automations replacing some GitHub Actions cadence)
 [[scheduled.functions]]
   name = "homepage_advertiser"
-  schedule = "*/15 * * * *" # every 15 minutes
+  schedule = "*/15 * * * *"
 
 [[scheduled.functions]]
   name = "cloud_orchestrator"
-  schedule = "0 */4 * * *" # every 4 hours
+  schedule = "0 */4 * * *"
 
 [[scheduled.functions]]
   name = "front-enhancer"
-  schedule = "*/5 * * * *" # every 5 minutes
+  schedule = "*/5 * * * *"
 
 [[scheduled.functions]]
   name = "front-index-orchestrator"
-  schedule = "*/5 * * * *" # every 5 minutes
+  schedule = "*/5 * * * *"
 
 [[scheduled.functions]]
   name = "frontpage-enhancer"
-  schedule = "*/20 * * * *" # every 20 minutes
+  schedule = "*/20 * * * *"
 
 [[scheduled.functions]]
   name = "marketing-and-features-promo"
-  schedule = "0 */2 * * *" # every 2 hours
+  schedule = "0 */2 * * *"
 
 [[scheduled.functions]]
   name = "link-and-health-scheduler"
-  schedule = "0 */6 * * *" # every 6 hours
+  schedule = "0 */6 * * *"
 
 [[scheduled.functions]]
   name = "sitemap_runner"
-  schedule = "0 */12 * * *" # twice per day
+  schedule = "0 */12 * * *"
 
 [[scheduled.functions]]
   name = "fast-front-promoter"
-  schedule = "*/15 * * * *" # every 15 minutes
+  schedule = "*/15 * * * *"
 
 [[scheduled.functions]]
   name = "fast-orchestrator"
-  schedule = "*/1 * * * *" # every minute
+  schedule = "*/1 * * * *"
 
 [[scheduled.functions]]
   name = "continuous-orchestrator"
-  schedule = "*/5 * * * *" # every 5 minutes
+  schedule = "*/5 * * * *"
 
 [[scheduled.functions]]
   name = "front-visionary-expander"
-  schedule = "*/3 * * * *" # fast refresh for front systems
+  schedule = "*/3 * * * *"
 
 [[scheduled.functions]]
   name = "home-visionary-expander"
-  schedule = "*/4 * * * *" # fast refresh for homepage
+  schedule = "*/4 * * * *"
 
 [[scheduled.functions]]
   name = "ultrafast-orchestrator"
-  schedule = "*/1 * * * *" # every minute
+  schedule = "*/1 * * * *"
 
 [[scheduled.functions]]
   name = "trigger-all-and-commit"
-  schedule = "*/1 * * * *" # every minute
+  schedule = "*/1 * * * *"
 
 [[scheduled.functions]]
   name = "front-maximizer"
-  schedule = "*/5 * * * *" # every 5 minutes
+  schedule = "*/5 * * * *"
 
 [[scheduled.functions]]
   name = "continuous-front-runner"
-  schedule = "*/3 * * * *" # every 3 minutes
+  schedule = "*/3 * * * *"
 
 [[scheduled.functions]]
   name = "readme-advertiser"
-  schedule = "13 */6 * * *" # every 6 hours
+  schedule = "13 */6 * * *"
 
 [[scheduled.functions]]
   name = "front-ads-promoter"
-  schedule = "*/10 * * * *" # every 10 minutes
+  schedule = "*/10 * * * *"
 
 [[scheduled.functions]]
   name = "ultrafast-front-orchestrator"
-  schedule = "*/5 * * * *" # every 5 minutes
+  schedule = "*/5 * * * *"
 
 # New ultra-fast tools
 [[scheduled.functions]]
   name = "features-capabilities-benefits-advertiser"
-  schedule = "*/2 * * * *" # every 2 minutes
+  schedule = "*/2 * * * *"
 
 [[scheduled.functions]]
   name = "hyper-front-index-accelerator"
-  schedule = "*/1 * * * *" # every minute
+  schedule = "*/1 * * * *"
 
 [[scheduled.functions]]
   name = "dead-code-report"
@@ -174,55 +174,44 @@
   name = "netlify-auto-healer-runner"
   schedule = "*/20 * * * *"
 
-# New intelligent cloud automations
+# Intelligent cloud automations
 [[scheduled.functions]]
   name = "innovation-lab"
-  schedule = "*/10 * * * *" # every 10 minutes
+  schedule = "*/10 * * * *"
 
 [[scheduled.functions]]
   name = "broken-image-scanner"
-  schedule = "0 */6 * * *" # every 6 hours
+  schedule = "0 */6 * * *"
 
 [[scheduled.functions]]
   name = "auto-scheduler"
-  schedule = "*/15 * * * *" # every 15 minutes
+  schedule = "*/15 * * * *"
 
 [[scheduled.functions]]
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
->>>>>>> origin/main
   name = "a11y-alt-text-runner"
-  schedule = "*/10 * * * *" # every 10 minutes
+  schedule = "*/10 * * * *"
 
 [[scheduled.functions]]
   name = "metadata-optimizer-runner"
-  schedule = "*/15 * * * *" # every 15 minutes
-<<<<<<< HEAD
-=======
-=======
-name = "seo-audit-runner"
-schedule = "0 */2 * * *"
-
->>>>>>> origin/main
-[[scheduled.functions]]
-name = "ai-trends-radar-runner"
-schedule = "*/30 * * * *"
+  schedule = "*/15 * * * *"
 
 [[scheduled.functions]]
-<<<<<<< HEAD
+  name = "seo-audit-runner"
+  schedule = "0 */2 * * *"
+
+[[scheduled.functions]]
+  name = "ai-trends-radar-runner"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
   name = "stale-content-auditor-runner"
   schedule = "17 */6 * * *"
 
 [[scheduled.functions]]
   name = "deps-auto-upgrade-runner"
-<<<<<<< HEAD
-  schedule = "7 */12 * * *"
-=======
   schedule = "0 3 * * *"
->>>>>>> b2117f1dfd (feat(automation): add component-props-docs and topics-map runners; fix schedules; advertise on homepage [skip ci])
 
-# New autonomous cloud scanners
+# Autonomous cloud scanners
 [[scheduled.functions]]
   name = "unused-media-scanner"
   schedule = "*/10 * * * *"
@@ -234,21 +223,15 @@ schedule = "*/30 * * * *"
 [[scheduled.functions]]
   name = "component-size-report"
   schedule = "*/5 * * * *"
-<<<<<<< HEAD
-=======
-name = "deps-auto-upgrade-runner"
-schedule = "0 3 * * *"
->>>>>>> Stashed changes
->>>>>>> origin/main
-=======
 
+# Additional intelligence & ops tools
 [[scheduled.functions]]
   name = "license-compliance-auditor"
   schedule = "0 2 * * 1"
 
 [[scheduled.functions]]
   name = "pagespeed-insights-runner"
-  schedule = "11 */6 * * *" # every 6 hours, offset
+  schedule = "11 */6 * * *"
 
 [[scheduled.functions]]
   name = "knowledge-pack-runner"
@@ -270,7 +253,6 @@ schedule = "0 3 * * *"
   name = "content-freshness-score-runner"
   schedule = "7 */12 * * *"
 
-# Newly added intelligent automations
 [[scheduled.functions]]
   name = "anchor-links-auto-fixer"
   schedule = "*/5 * * * *"
@@ -278,12 +260,3 @@ schedule = "0 3 * * *"
 [[scheduled.functions]]
   name = "internal-link-graph-runner"
   schedule = "*/5 * * * *"
-
-[[scheduled.functions]]
-  name = "component-props-docs-runner"
-  schedule = "*/30 * * * *"
-
-[[scheduled.functions]]
-  name = "topics-map-runner"
-  schedule = "*/20 * * * *"
->>>>>>> b2117f1dfd (feat(automation): add component-props-docs and topics-map runners; fix schedules; advertise on homepage [skip ci])
