@@ -36,6 +36,7 @@
     "netlify:manifest": "node scripts/generate-netlify-functions-manifest.cjs",
     "netlify:trigger": "node scripts/trigger-netlify-automations.cjs",
     "readme:generate": "node scripts/generate-readme.js",
+    "docs:intelligence": "npm run search:index && node automation/docs-pages-indexer.cjs && node automation/component-props-docs.cjs && npm run readme:generate",
     "search:index": "node scripts/generate-search-index.js",
     "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev",
     "build": "NODE_OPTIONS=--openssl-legacy-provider next build",

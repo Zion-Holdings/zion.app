@@ -2,6 +2,57 @@ name: Docs Intelligence
 
 on:
   schedule:
+    - cron: '0 */2 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  docs_refresh:
+    name: Refresh docs, indexes and README
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Generate search index
+        run: npm run search:index
+
+      - name: Generate docs pages index
+        run: node automation/docs-pages-indexer.cjs
+
+      - name: Generate README
+        run: npm run readme:generate
+
+      - name: Generate component props docs
+        run: node automation/component-props-docs.cjs
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "docs: refresh docs intelligence artifacts" || echo "No changes to commit"
+
+      - name: Push changes
+        run: git push
+name: Docs Intelligence
+
+on:
+  schedule:
     - cron: '13 */2 * * *'
   workflow_dispatch: {}
 
