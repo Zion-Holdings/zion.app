@@ -88,5 +88,20 @@ module.exports = {
       autorestart: false,
       cron_restart: '*/15 * * * *'
     }
+    ,
+
+    // Continuous Git autosync loop (runs perpetually; PM2 will keep it alive)
+    {
+      name: 'git-autosync-loop',
+      cwd: rootDir,
+      script: 'automation/pm2-git-autosync.cjs',
+      interpreter: 'node',
+      time: true,
+      autorestart: true,
+      env: {
+        SYNC_INTERVAL_SECONDS: '60',
+        TARGET_BRANCH: 'main'
+      }
+    }
   ]
 };
