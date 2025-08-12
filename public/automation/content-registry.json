@@ -33,6 +33,10 @@
       "route": "/automation"
     },
     {
+      "file": "pages/reports/updates/update-2025-08-12-1530.tsx",
+      "route": "/reports/updates/update-2025-08-12-1530"
+    },
+    {
       "file": "pages/reports/updates/update-2025-08-12-1500.tsx",
       "route": "/reports/updates/update-2025-08-12-1500"
     },
@@ -87,5 +91,9 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
+<<<<<<< Updated upstream
   "generatedAt": "2025-08-12T18:29:56.355Z"
+=======
+  "generatedAt": "2025-08-12T18:30:00.541Z"
+>>>>>>> Stashed changes
 }
