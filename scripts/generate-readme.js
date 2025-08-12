@@ -7,7 +7,7 @@ const glob = require('glob');
 function readJson(filePath) {
   try {
     return JSON.parse(fs.readFileSync(filePath, 'utf8'));
-  } catch (err) {
+  } catch {
     return null;
   }
 }
@@ -19,11 +19,6 @@ function listWorkflows() {
     .readdirSync(workflowsDir)
     .filter((f) => f.endsWith('.yml') || f.endsWith('.yaml'))
     .sort();
-}
-
-function countFiles(dir, patterns) {
-  const matches = patterns.flatMap((p) => glob.sync(path.join(dir, p), { nodir: true }));
-  return matches.length;
 }
 
 function collectPagesSummary() {
@@ -51,9 +46,30 @@ function collectComponentsSummary() {
   return { total: files.length };
 }
 
-function collectAutomations() {
+function toTitle(basename) {
+  return basename
+    .replace(/\.(yml|yaml)$/i, '')
+    .replace(/[-_]+/g, ' ')
+    .replace(/\b\w/g, (m) => m.toUpperCase());
+}
+
+function parseRepo(pkg) {
+  const repoUrl = (pkg.repository && pkg.repository.url) || pkg.homepage || '';
+  const match = repoUrl.match(/github\.com[/:]([^/]+)\/([^/#.]+)(?:\.git)?/i);
+  if (!match) return null;
+  return { owner: match[1], repo: match[2] };
+}
+
+function collectAutomations(pkg) {
   const files = listWorkflows();
-  return files.map((f) => `- ${f}`);
+  const repo = parseRepo(pkg);
+  if (!repo) return files.map((f) => `- ${f}`);
+  return files.map((f) => {
+    const title = toTitle(f);
+    const url = `https://github.com/${repo.owner}/${repo.repo}/actions/workflows/${f}`;
+    const badge = `${url}/badge.svg`;
+    return `- [${title}](${url}) ![status](${badge})`;
+  });
 }
 
 function generateBadge(label, message, color) {
@@ -69,7 +85,7 @@ function main() {
 
   const pages = collectPagesSummary();
   const comps = collectComponentsSummary();
-  const automations = collectAutomations();
+  const automations = collectAutomations(pkg);
 
   const lines = [];
   lines.push(`# ${name}`);
