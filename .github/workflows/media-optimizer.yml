@@ -1,0 +1,52 @@
+name: Media Optimizer
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: media-optimizer-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  optimize_media:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Optimize images and media
+        run: |
+          node automation/optimize-images.cjs || true
+          node automation/image-optimizer.cjs || true
+          node scripts/generate-readme.js
+
+      - name: Build (non-blocking)
+        run: npm run build || true
+
+      - name: Commit and push changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "perf(media): optimized assets [skip ci]"
+            git push origin HEAD:main
+          else
+            echo "No changes to push"
+          fi
