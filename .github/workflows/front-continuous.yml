@@ -1,0 +1,41 @@
+name: Front Continuous Scheduler
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: front-scheduler-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  front:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.18.1'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Front Continuous Runner (single cycle)
+        env:
+          TARGET_BRANCH: main
+          PUSH_TO_MAIN: 'true'
+          NODE_ENV: production
+        run: node automation/continuous-front-runner.cjs
