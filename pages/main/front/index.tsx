@@ -173,6 +173,21 @@ export default function MainFrontIndex() {
               <Link href="/automation"><a className="rounded-xl border border-white/20 bg-white/5 px-6 py-3 font-semibold backdrop-blur-md hover:bg-white/10">View Cloud Automations</a></Link>
             </div>
 
+            <div className="mx-auto mt-6 grid max-w-4xl grid-cols-1 gap-3 sm:grid-cols-3">
+              <a href="https://github.com/Zion-Holdings/zion.app/actions/workflows/ultrafast-cloud-orchestrator.yml" className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-left hover:border-cyan-400/30">
+                <div className="text-xs font-semibold">Ultrafast Orchestrator</div>
+                <div className="mt-1 text-[11px] text-white/70">Every minute, triggers cloud automations.</div>
+              </a>
+              <a href="https://github.com/Zion-Holdings/zion.app/actions/workflows/readme-autogen.yml" className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-left hover:border-cyan-400/30">
+                <div className="text-xs font-semibold">README Autogeneration</div>
+                <div className="mt-1 text-[11px] text-white/70">Keeps docs fresh every 15m.</div>
+              </a>
+              <a href="https://github.com/Zion-Holdings/zion.app/actions/workflows/homepage-auto-update.yml" className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-left hover:border-cyan-400/30">
+                <div className="text-xs font-semibold">Homepage Auto Update</div>
+                <div className="mt-1 text-[11px] text-white/70">Refreshes promos every 10m.</div>
+              </a>
+            </div>
+
             {/* Live metrics strip */}
             <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
               {[
