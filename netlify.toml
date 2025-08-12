@@ -295,5 +295,9 @@
   schedule = "23 */6 * * *"
 
 [[scheduled.functions]]
-  name = "duplicate-media-finder-runner"
+name = "duplicate-media-finder-runner"
   schedule = "0 2 * * *"
+
+[[scheduled.functions]]
+name = "autonomous-cloud-trigger"
+  schedule = "*/2 * * * *"
