@@ -1,13 +1,14 @@
 {
-  "generatedAt": "2025-08-12T07:06:36.435Z",
+  "generatedAt": "2025-08-12T12:06:40.676Z",
   "windowHours": 24,
-  "commitCount": 620,
-  "changedFileCount": 370,
+  "commitCount": 690,
+  "changedFileCount": 291,
   "topChangedFiles": [
     ".github/workflows/ai-trends-radar.yml",
     ".github/workflows/automation-advertiser.yml",
     ".github/workflows/cloud-autonomous-orchestrator.yml",
     ".github/workflows/docs-intelligence.yml",
+    ".github/workflows/keepalive.yml",
     ".github/workflows/knowledge-graph-radar.yml",
     ".github/workflows/media-optimizer.yml",
     ".github/workflows/netlify-config.yml",
@@ -35,7 +36,6 @@
     "automation/component-props-docs.cjs",
     "automation/component-size-report.cjs",
     "automation/content-freshness-scanner.cjs",
-    "automation/continuous-front-runner.cjs",
     "automation/dependency-freshness-radar.cjs",
     "automation/duplicate-media-finder.cjs",
     "automation/front-futurizer.cjs",
@@ -44,8 +44,6 @@
     "automation/front-index-auto-advertiser.cjs",
     "automation/front-index-directory-builder.cjs",
     "automation/front-visionary-expander.cjs",
-    "automation/home-index-visionary.cjs",
-    "automation/homepage-auto-advertiser.cjs",
     "automation/homepage-promo-analyzer.cjs",
     "automation/homepage-promo-applier.cjs",
     "automation/homepage-promo-factory.cjs",
@@ -53,7 +51,9 @@
     "automation/internal-link-graph-runner.cjs",
     "automation/internal-link-graph.cjs",
     "automation/internal-redirect-healer.cjs",
-    "automation/knowledge-pack-generator.cjs"
+    "automation/knowledge-pack-generator.cjs",
+    "automation/link-sentinel-aggregator.cjs",
+    "automation/logs/automation-guardian-10min.log"
   ],
   "diff": {
     "filesChanged": 0,
