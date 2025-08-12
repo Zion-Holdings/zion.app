@@ -1,6 +1,18 @@
 {
-  "generatedAt": "2025-08-11T21:27:52.663Z",
+  "generatedAt": "2025-08-12T04:10:25.096Z",
   "nodes": [
+    {
+      "id": "automation/a11y-alt-text-auditor.cjs",
+      "type": "file"
+    },
+    {
+      "id": "fs",
+      "type": "package"
+    },
+    {
+      "id": "path",
+      "type": "package"
+    },
     {
       "id": "automation/advanced-git-sync.cjs",
       "type": "file"
@@ -12,14 +24,6 @@
     {
       "id": "automation/ai-changelog-generator.cjs",
       "type": "file"
-    },
-    {
-      "id": "fs",
-      "type": "package"
-    },
-    {
-      "id": "path",
-      "type": "package"
     },
     {
       "id": "automation/auto-discovery-runner.cjs",
@@ -62,6 +66,26 @@
       "type": "file"
     },
     {
+      "id": "automation/code-smell-audit.cjs",
+      "type": "file"
+    },
+    {
+      "id": "automation/component-props-docs.cjs",
+      "type": "file"
+    },
+    {
+      "id": "fs-extra",
+      "type": "package"
+    },
+    {
+      "id": "glob",
+      "type": "package"
+    },
+    {
+      "id": "automation/component-size-report.cjs",
+      "type": "file"
+    },
+    {
       "id": "automation/continuous-front-runner.cjs",
       "type": "file"
     },
@@ -78,7 +102,11 @@
       "type": "file"
     },
     {
-      "id": "glob",
+      "id": "automation/duplicate-media-finder.cjs",
+      "type": "file"
+    },
+    {
+      "id": "crypto",
       "type": "package"
     },
     {
@@ -166,6 +194,10 @@
       "type": "file"
     },
     {
+      "id": "automation/metadata-optimizer.cjs",
+      "type": "file"
+    },
+    {
       "id": "automation/netlify-auto-healer.cjs",
       "type": "file"
     },
@@ -187,6 +219,10 @@
     },
     {
       "id": "automation/optimize-images.cjs",
+      "type": "file"
+    },
+    {
+      "id": "automation/orphan-pages-detector.cjs",
       "type": "file"
     },
     {
@@ -254,6 +290,18 @@
       "type": "file"
     },
     {
+      "id": "automation/topic-cluster-builder.cjs",
+      "type": "file"
+    },
+    {
+      "id": "automation/topics-map.cjs",
+      "type": "file"
+    },
+    {
+      "id": "automation/unused-media-scanner.cjs",
+      "type": "file"
+    },
+    {
       "id": "commitlint.config.js",
       "type": "file"
     },
@@ -266,7 +314,19 @@
       "type": "file"
     },
     {
+      "id": "netlify/functions/a11y-alt-text-runner.js",
+      "type": "file"
+    },
+    {
       "id": "netlify/functions/ai-changelog-runner.js",
+      "type": "file"
+    },
+    {
+      "id": "netlify/functions/ai-trends-radar-runner.js",
+      "type": "file"
+    },
+    {
+      "id": "netlify/functions/auto-discovery-runner.js",
       "type": "file"
     },
     {
@@ -282,6 +342,14 @@
       "type": "file"
     },
     {
+      "id": "netlify/functions/autonomous-meta-orchestrator.js",
+      "type": "file"
+    },
+    {
+      "id": "netlify/functions/functions-manifest.json",
+      "type": "file"
+    },
+    {
       "id": "netlify/functions/broken-image-scanner-runner.js",
       "type": "file"
     },
@@ -291,6 +359,18 @@
     },
     {
       "id": "netlify/functions/cloud_orchestrator.js",
+      "type": "file"
+    },
+    {
+      "id": "netlify/functions/code-smell-audit-runner.js",
+      "type": "file"
+    },
+    {
+      "id": "netlify/functions/component-props-docs-runner.js",
+      "type": "file"
+    },
+    {
+      "id": "netlify/functions/component-size-report.js",
       "type": "file"
     },
     {
@@ -315,6 +395,10 @@
     },
     {
       "id": "netlify/functions/docs-search-index-runner.js",
+      "type": "file"
+    },
+    {
+      "id": "netlify/functions/duplicate-media-finder-runner.js",
       "type": "file"
     },
     {
@@ -418,6 +502,10 @@
       "type": "file"
     },
     {
+      "id": "netlify/functions/intelligent-meta-orchestrator.js",
+      "type": "file"
+    },
+    {
       "id": "netlify/functions/link-and-health-scheduler.js",
       "type": "file"
     },
@@ -442,6 +530,10 @@
       "type": "file"
     },
     {
+      "id": "netlify/functions/metadata-optimizer-runner.js",
+      "type": "file"
+    },
+    {
       "id": "netlify/functions/netlify-auto-healer-runner.js",
       "type": "file"
     },
@@ -458,6 +550,10 @@
       "type": "file"
     },
     {
+      "id": "netlify/functions/orphan-pages-detector.js",
+      "type": "file"
+    },
+    {
       "id": "netlify/functions/readme-advertiser.js",
       "type": "file"
     },
@@ -471,6 +567,14 @@
     },
     {
       "id": "netlify/functions/repo-radar-runner.js",
+      "type": "file"
+    },
+    {
+      "id": "netlify/functions/revenue-ideas-lab.js",
+      "type": "file"
+    },
+    {
+      "id": "netlify/functions/roadmap-curator.js",
       "type": "file"
     },
     {
@@ -498,6 +602,10 @@
       "type": "file"
     },
     {
+      "id": "netlify/functions/seo-audit-runner.js",
+      "type": "file"
+    },
+    {
       "id": "netlify/functions/site-crawler.js",
       "type": "file"
     },
@@ -514,11 +622,15 @@
       "type": "file"
     },
     {
-      "id": "netlify/functions/trigger-all-and-commit.js",
+      "id": "netlify/functions/topic-cluster-builder-runner.js",
       "type": "file"
     },
     {
-      "id": "netlify/functions/functions-manifest.json",
+      "id": "netlify/functions/topics-map-runner.js",
+      "type": "file"
+    },
+    {
+      "id": "netlify/functions/trigger-all-and-commit.js",
       "type": "file"
     },
     {
@@ -531,6 +643,10 @@
     },
     {
       "id": "netlify/functions/ultrafast-orchestrator.js",
+      "type": "file"
+    },
+    {
+      "id": "netlify/functions/unused-media-scanner.js",
       "type": "file"
     },
     {
@@ -591,6 +707,10 @@
     },
     {
       "id": "pages/reports/ai-trends.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/roadmap.tsx",
       "type": "file"
     },
     {
@@ -662,6 +782,10 @@
       "type": "file"
     },
     {
+      "id": "scripts/pm2-schedulers-report.cjs",
+      "type": "file"
+    },
+    {
       "id": "scripts/run-netlify-functions-locally.cjs",
       "type": "file"
     },
@@ -691,6 +815,16 @@
     }
   ],
   "edges": [
+    {
+      "from": "automation/a11y-alt-text-auditor.cjs",
+      "to": "fs",
+      "kind": "external"
+    },
+    {
+      "from": "automation/a11y-alt-text-auditor.cjs",
+      "to": "path",
+      "kind": "external"
+    },
     {
       "from": "automation/advanced-git-sync.cjs",
       "to": "child_process",
@@ -817,6 +951,41 @@
       "kind": "external"
     },
     {
+      "from": "automation/code-smell-audit.cjs",
+      "to": "fs",
+      "kind": "external"
+    },
+    {
+      "from": "automation/code-smell-audit.cjs",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "automation/component-props-docs.cjs",
+      "to": "fs-extra",
+      "kind": "external"
+    },
+    {
+      "from": "automation/component-props-docs.cjs",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "automation/component-props-docs.cjs",
+      "to": "glob",
+      "kind": "external"
+    },
+    {
+      "from": "automation/component-size-report.cjs",
+      "to": "fs",
+      "kind": "external"
+    },
+    {
+      "from": "automation/component-size-report.cjs",
+      "to": "path",
+      "kind": "external"
+    },
+    {
       "from": "automation/continuous-front-runner.cjs",
       "to": "child_process",
       "kind": "external"
@@ -864,6 +1033,21 @@
     {
       "from": "automation/docs-pages-indexer.cjs",
       "to": "glob",
+      "kind": "external"
+    },
+    {
+      "from": "automation/duplicate-media-finder.cjs",
+      "to": "fs",
+      "kind": "external"
+    },
+    {
+      "from": "automation/duplicate-media-finder.cjs",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "automation/duplicate-media-finder.cjs",
+      "to": "crypto",
       "kind": "external"
     },
     {
@@ -929,11 +1113,6 @@
     {
       "from": "automation/front-index-auto-advertiser.cjs",
       "to": "path",
-      "kind": "external"
-    },
-    {
-      "from": "automation/front-index-auto-advertiser.cjs",
-      "to": "next/link",
       "kind": "external"
     },
     {
@@ -1027,6 +1206,16 @@
       "kind": "external"
     },
     {
+      "from": "automation/metadata-optimizer.cjs",
+      "to": "fs",
+      "kind": "external"
+    },
+    {
+      "from": "automation/metadata-optimizer.cjs",
+      "to": "path",
+      "kind": "external"
+    },
+    {
       "from": "automation/netlify-auto-healer.cjs",
       "to": "https",
       "kind": "external"
@@ -1094,6 +1283,16 @@
     {
       "from": "automation/optimize-images.cjs",
       "to": "sharp",
+      "kind": "external"
+    },
+    {
+      "from": "automation/orphan-pages-detector.cjs",
+      "to": "fs",
+      "kind": "external"
+    },
+    {
+      "from": "automation/orphan-pages-detector.cjs",
+      "to": "path",
       "kind": "external"
     },
     {
@@ -1267,8 +1466,58 @@
       "kind": "external"
     },
     {
+      "from": "automation/topic-cluster-builder.cjs",
+      "to": "fs",
+      "kind": "external"
+    },
+    {
+      "from": "automation/topic-cluster-builder.cjs",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "automation/topics-map.cjs",
+      "to": "fs-extra",
+      "kind": "external"
+    },
+    {
+      "from": "automation/topics-map.cjs",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "automation/topics-map.cjs",
+      "to": "glob",
+      "kind": "external"
+    },
+    {
+      "from": "automation/unused-media-scanner.cjs",
+      "to": "fs",
+      "kind": "external"
+    },
+    {
+      "from": "automation/unused-media-scanner.cjs",
+      "to": "path",
+      "kind": "external"
+    },
+    {
       "from": "components/Landing.tsx",
       "to": "next/link",
+      "kind": "external"
+    },
+    {
+      "from": "ecosystem.config.cjs",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "netlify/functions/a11y-alt-text-runner.js",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "netlify/functions/a11y-alt-text-runner.js",
+      "to": "child_process",
       "kind": "external"
     },
     {
@@ -1278,6 +1527,21 @@
     },
     {
       "from": "netlify/functions/ai-changelog-runner.js",
+      "to": "child_process",
+      "kind": "external"
+    },
+    {
+      "from": "netlify/functions/ai-trends-radar-runner.js",
+      "to": "child_process",
+      "kind": "external"
+    },
+    {
+      "from": "netlify/functions/auto-discovery-runner.js",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "netlify/functions/auto-discovery-runner.js",
       "to": "child_process",
       "kind": "external"
     },
@@ -1302,6 +1566,11 @@
       "kind": "external"
     },
     {
+      "from": "netlify/functions/autonomous-meta-orchestrator.js",
+      "to": "netlify/functions/functions-manifest.json",
+      "kind": "local"
+    },
+    {
       "from": "netlify/functions/broken-image-scanner-runner.js",
       "to": "path",
       "kind": "external"
@@ -1318,6 +1587,36 @@
     },
     {
       "from": "netlify/functions/cloud_orchestrator.js",
+      "to": "child_process",
+      "kind": "external"
+    },
+    {
+      "from": "netlify/functions/code-smell-audit-runner.js",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "netlify/functions/code-smell-audit-runner.js",
+      "to": "child_process",
+      "kind": "external"
+    },
+    {
+      "from": "netlify/functions/component-props-docs-runner.js",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "netlify/functions/component-props-docs-runner.js",
+      "to": "child_process",
+      "kind": "external"
+    },
+    {
+      "from": "netlify/functions/component-size-report.js",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "netlify/functions/component-size-report.js",
       "to": "child_process",
       "kind": "external"
     },
@@ -1377,6 +1676,16 @@
       "kind": "external"
     },
     {
+      "from": "netlify/functions/duplicate-media-finder-runner.js",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "netlify/functions/duplicate-media-finder-runner.js",
+      "to": "child_process",
+      "kind": "external"
+    },
+    {
       "from": "netlify/functions/external-link-check-runner.js",
       "to": "path",
       "kind": "external"
@@ -1419,11 +1728,6 @@
     {
       "from": "netlify/functions/feature-advertiser.js",
       "to": "child_process",
-      "kind": "external"
-    },
-    {
-      "from": "netlify/functions/features-capabilities-benefits-advertiser.js",
-      "to": "path",
       "kind": "external"
     },
     {
@@ -1573,11 +1877,6 @@
     },
     {
       "from": "netlify/functions/hyper-front-index-accelerator.js",
-      "to": "path",
-      "kind": "external"
-    },
-    {
-      "from": "netlify/functions/hyper-front-index-accelerator.js",
       "to": "child_process",
       "kind": "external"
     },
@@ -1595,6 +1894,21 @@
       "from": "netlify/functions/innovation-lab.js",
       "to": "child_process",
       "kind": "external"
+    },
+    {
+      "from": "netlify/functions/intelligent-meta-orchestrator.js",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "netlify/functions/intelligent-meta-orchestrator.js",
+      "to": "child_process",
+      "kind": "external"
+    },
+    {
+      "from": "netlify/functions/intelligent-meta-orchestrator.js",
+      "to": "netlify/functions/functions-manifest.json",
+      "kind": "local"
     },
     {
       "from": "netlify/functions/link-and-health-scheduler.js",
@@ -1642,6 +1956,16 @@
       "kind": "external"
     },
     {
+      "from": "netlify/functions/metadata-optimizer-runner.js",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "netlify/functions/metadata-optimizer-runner.js",
+      "to": "child_process",
+      "kind": "external"
+    },
+    {
       "from": "netlify/functions/netlify-auto-healer-runner.js",
       "to": "path",
       "kind": "external"
@@ -1673,6 +1997,16 @@
     },
     {
       "from": "netlify/functions/og-image-update-runner.js",
+      "to": "child_process",
+      "kind": "external"
+    },
+    {
+      "from": "netlify/functions/orphan-pages-detector.js",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "netlify/functions/orphan-pages-detector.js",
       "to": "child_process",
       "kind": "external"
     },
@@ -1710,6 +2044,41 @@
       "from": "netlify/functions/repo-radar-runner.js",
       "to": "child_process",
       "kind": "external"
+    },
+    {
+      "from": "netlify/functions/revenue-ideas-lab.js",
+      "to": "fs",
+      "kind": "external"
+    },
+    {
+      "from": "netlify/functions/revenue-ideas-lab.js",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "netlify/functions/revenue-ideas-lab.js",
+      "to": "child_process",
+      "kind": "external"
+    },
+    {
+      "from": "netlify/functions/roadmap-curator.js",
+      "to": "fs",
+      "kind": "external"
+    },
+    {
+      "from": "netlify/functions/roadmap-curator.js",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "netlify/functions/roadmap-curator.js",
+      "to": "child_process",
+      "kind": "external"
+    },
+    {
+      "from": "netlify/functions/roadmap-curator.js",
+      "to": "netlify/functions/functions-manifest.json",
+      "kind": "local"
     },
     {
       "from": "netlify/functions/schedule-content-index.js",
@@ -1767,6 +2136,11 @@
       "kind": "external"
     },
     {
+      "from": "netlify/functions/seo-audit-runner.js",
+      "to": "child_process",
+      "kind": "external"
+    },
+    {
       "from": "netlify/functions/site-crawler.js",
       "to": "path",
       "kind": "external"
@@ -1802,6 +2176,26 @@
       "kind": "external"
     },
     {
+      "from": "netlify/functions/topic-cluster-builder-runner.js",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "netlify/functions/topic-cluster-builder-runner.js",
+      "to": "child_process",
+      "kind": "external"
+    },
+    {
+      "from": "netlify/functions/topics-map-runner.js",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "netlify/functions/topics-map-runner.js",
+      "to": "child_process",
+      "kind": "external"
+    },
+    {
       "from": "netlify/functions/trigger-all-and-commit.js",
       "to": "netlify/functions/functions-manifest.json",
       "kind": "local"
@@ -1833,6 +2227,16 @@
     },
     {
       "from": "netlify/functions/ultrafast-orchestrator.js",
+      "to": "child_process",
+      "kind": "external"
+    },
+    {
+      "from": "netlify/functions/unused-media-scanner.js",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "netlify/functions/unused-media-scanner.js",
       "to": "child_process",
       "kind": "external"
     },
@@ -1909,6 +2313,11 @@
     {
       "from": "pages/reports/ai-trends.tsx",
       "to": "react",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/roadmap.tsx",
+      "to": "next/head",
       "kind": "external"
     },
     {
@@ -2043,6 +2452,16 @@
     },
     {
       "from": "scripts/generate-sitemap.js",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "scripts/pm2-schedulers-report.cjs",
+      "to": "fs",
+      "kind": "external"
+    },
+    {
+      "from": "scripts/pm2-schedulers-report.cjs",
       "to": "path",
       "kind": "external"
     },
