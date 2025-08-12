@@ -34,6 +34,7 @@ jobs:
       - name: Update front and content
         run: |
           node automation/front-index-advertiser.cjs || true
+          node automation/front-actions-advertiser.cjs || true
           node automation/continuous-front-runner.cjs || true
           node automation/homepage-updater.cjs || true
           node scripts/generate-sitemap.js || true
