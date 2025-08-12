@@ -11,6 +11,8 @@ on:
         description: "Trigger the build hook once after setting env"
         required: false
         default: "false"
+  schedule:
+    - cron: '0 6 * * 1'
 
 permissions:
   contents: read
@@ -25,18 +27,25 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Heartbeat (scheduled no-op)
+        if: ${{ github.event_name == 'schedule' }}
+        run: echo "Scheduled heartbeat run at $(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+
       - name: Validate secrets
+        if: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
           test -n "$NETLIFY_AUTH_TOKEN" || { echo "Missing NETLIFY_AUTH_TOKEN secret"; exit 1; }
           test -n "$NETLIFY_SITE_ID" || { echo "Missing NETLIFY_SITE_ID secret"; exit 1; }
 
       - name: Install dependencies
+        if: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
           sudo npm i -g netlify-cli
           sudo apt-get update -y
           sudo apt-get install -y jq
 
       - name: Ensure build hook exists (post-function-rerun)
+        if: ${{ github.event_name == 'workflow_dispatch' }}
         id: hook
         env:
           BRANCH: ${{ github.event.inputs.branch }}
@@ -66,6 +75,7 @@ jobs:
           echo "hook_url=$hook_url" >> $GITHUB_OUTPUT
 
       - name: Set BUILD_HOOK_URL env var on Netlify site
+        if: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
           set -euo pipefail
           HOOK_URL="${{ steps.hook.outputs.hook_url }}"
@@ -73,6 +83,6 @@ jobs:
           netlify env:set BUILD_HOOK_URL "$HOOK_URL" --site "$NETLIFY_SITE_ID" --auth "$NETLIFY_AUTH_TOKEN"
 
       - name: Optionally trigger the build hook
-        if: ${{ github.event.inputs.trigger_after_config == 'true' }}
+        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.trigger_after_config == 'true' }}
         run: |
           curl -sS -X POST "${{ steps.hook.outputs.hook_url }}" -H 'Content-Type: application/json' -d '{"NETLIFY_RERUN_CHAIN":"1","reason":"post-function-rerun"}'
