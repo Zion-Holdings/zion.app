@@ -1,0 +1,209 @@
+{
+  "generatedAt": "2025-08-12T01:48:38.760Z",
+  "clusters": [
+    {
+      "files": [
+        "pages/_app.tsx",
+        "pages/front/index.tsx",
+        "pages/reports/ai-trends.tsx",
+        "pages/reports/seo.tsx"
+      ],
+      "keywords": [
+        {
+          "term": "import",
+          "count": 4
+        },
+        {
+          "term": "export",
+          "count": 4
+        },
+        {
+          "term": "default",
+          "count": 4
+        },
+        {
+          "term": "function",
+          "count": 4
+        },
+        {
+          "term": "return",
+          "count": 4
+        },
+        {
+          "term": "useeffect",
+          "count": 3
+        },
+        {
+          "term": "react",
+          "count": 3
+        },
+        {
+          "term": "replace",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "files": [
+        "components/Landing.tsx",
+        "pages/index.tsx",
+        "pages/main/front/index.tsx"
+      ],
+      "keywords": [
+        {
+          "term": "classname",
+          "count": 3
+        },
+        {
+          "term": "div",
+          "count": 3
+        },
+        {
+          "term": "href",
+          "count": 3
+        },
+        {
+          "term": "title",
+          "count": 3
+        },
+        {
+          "term": "desc",
+          "count": 3
+        },
+        {
+          "term": "text-white",
+          "count": 3
+        },
+        {
+          "term": "span",
+          "count": 3
+        },
+        {
+          "term": "link",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "files": [
+        "scripts/generate-readme.js",
+        "scripts/generate-search-index.js",
+        "scripts/generate-sitemap.js"
+      ],
+      "keywords": [
+        {
+          "term": "const",
+          "count": 3
+        },
+        {
+          "term": "function",
+          "count": 3
+        },
+        {
+          "term": "join",
+          "count": 3
+        },
+        {
+          "term": "path",
+          "count": 3
+        },
+        {
+          "term": "push",
+          "count": 2
+        },
+        {
+          "term": "return",
+          "count": 2
+        },
+        {
+          "term": "route",
+          "count": 2
+        },
+        {
+          "term": "files",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "files": [
+        "pages/automation/index.tsx",
+        "pages/newsroom.tsx"
+      ],
+      "keywords": [
+        {
+          "term": "classname",
+          "count": 2
+        },
+        {
+          "term": "text-white",
+          "count": 2
+        },
+        {
+          "term": "text-cyan-300",
+          "count": 2
+        },
+        {
+          "term": "underline",
+          "count": 2
+        },
+        {
+          "term": "href",
+          "count": 2
+        },
+        {
+          "term": "target",
+          "count": 2
+        },
+        {
+          "term": "_blank",
+          "count": 2
+        },
+        {
+          "term": "rel",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "files": [
+        "pages/reports/roadmap.tsx",
+        "pages/site-health.tsx"
+      ],
+      "keywords": [
+        {
+          "term": "classname",
+          "count": 2
+        },
+        {
+          "term": "div",
+          "count": 2
+        },
+        {
+          "term": "head",
+          "count": 2
+        },
+        {
+          "term": "text-white",
+          "count": 2
+        },
+        {
+          "term": "px-4",
+          "count": 2
+        },
+        {
+          "term": "title",
+          "count": 2
+        },
+        {
+          "term": "main",
+          "count": 2
+        },
+        {
+          "term": "import",
+          "count": 2
+        }
+      ]
+    }
+  ]
+}
