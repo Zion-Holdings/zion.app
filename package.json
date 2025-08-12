@@ -216,6 +216,8 @@
     "automation:pm2:status": "npm run pm2:status",
     "automation:pm2:logs": "npm run pm2:logs",
     "automation:pm2:report": "node scripts/pm2-schedulers-report.cjs",
+    "automation:pm2:autostart": "node scripts/pm2-autostart.cjs",
+    "automation:pm2:resurrect": "node scripts/pm2-resurrect-hook.cjs",
     "automation:pm2:fastads": "npm run pm2:fastads:start && npm run pm2:bootstrap:logrotate && pm2 save",
     "postautomation": "npm run automation:git-sync",
     "lint:staged": "lint-staged",

@@ -1,0 +1,11 @@
+{
+  "onStart": [
+    {
+      "name": "pm2-autostart",
+      "command": "npm run automation:pm2:autostart",
+      "shell": true
+    }
+  ]
+}
+
+
