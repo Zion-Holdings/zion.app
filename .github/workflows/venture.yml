@@ -1,0 +1,54 @@
+name: Venture Orchestrator
+
+on:
+  schedule:
+    - cron: '23 */6 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: venture-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  venture:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Run venture workflows
+        run: |
+          node automation/venture-orchestrator.cjs continuous || true
+          node automation/venture-services-analyzer.cjs || true
+          node automation/venture-services-factory.cjs || true
+          node automation/ads-generator.cjs || true
+          node automation/service-sales-agents-factory.cjs || true
+          node scripts/generate-readme.js || true
+
+      - name: Commit and push changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore(automation): venture updates [skip ci]"
+            git push origin HEAD:main
+          else
+            echo "No changes to push"
+          fi
+
+
