@@ -188,39 +188,28 @@
   schedule = "*/15 * * * *" # every 15 minutes
 
 [[scheduled.functions]]
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
->>>>>>> origin/main
   name = "a11y-alt-text-runner"
   schedule = "*/10 * * * *" # every 10 minutes
 
 [[scheduled.functions]]
   name = "metadata-optimizer-runner"
   schedule = "*/15 * * * *" # every 15 minutes
-<<<<<<< HEAD
-=======
-=======
-name = "seo-audit-runner"
-schedule = "0 */2 * * *"
-
->>>>>>> origin/main
-[[scheduled.functions]]
-name = "ai-trends-radar-runner"
-schedule = "*/30 * * * *"
 
 [[scheduled.functions]]
-<<<<<<< HEAD
+  name = "seo-audit-runner"
+  schedule = "0 */2 * * *"
+
+[[scheduled.functions]]
+  name = "ai-trends-radar-runner"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
   name = "stale-content-auditor-runner"
   schedule = "17 */6 * * *"
 
 [[scheduled.functions]]
   name = "deps-auto-upgrade-runner"
-<<<<<<< HEAD
-  schedule = "7 */12 * * *"
-=======
   schedule = "0 3 * * *"
->>>>>>> b2117f1dfd (feat(automation): add component-props-docs and topics-map runners; fix schedules; advertise on homepage [skip ci])
 
 # New autonomous cloud scanners
 [[scheduled.functions]]
@@ -234,13 +223,6 @@ schedule = "*/30 * * * *"
 [[scheduled.functions]]
   name = "component-size-report"
   schedule = "*/5 * * * *"
-<<<<<<< HEAD
-=======
-name = "deps-auto-upgrade-runner"
-schedule = "0 3 * * *"
->>>>>>> Stashed changes
->>>>>>> origin/main
-=======
 
 [[scheduled.functions]]
   name = "license-compliance-auditor"
@@ -280,10 +262,13 @@ schedule = "0 3 * * *"
   schedule = "*/5 * * * *"
 
 [[scheduled.functions]]
-  name = "component-props-docs-runner"
-  schedule = "*/30 * * * *"
+  name = "topic-cluster-builder-runner"
+  schedule = "13 */6 * * *"
 
 [[scheduled.functions]]
-  name = "topics-map-runner"
-  schedule = "*/20 * * * *"
->>>>>>> b2117f1dfd (feat(automation): add component-props-docs and topics-map runners; fix schedules; advertise on homepage [skip ci])
+  name = "code-smell-audit-runner"
+  schedule = "23 */6 * * *"
+
+[[scheduled.functions]]
+  name = "duplicate-media-finder-runner"
+  schedule = "0 2 * * *"
