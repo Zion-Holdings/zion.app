@@ -1,0 +1,41 @@
+{
+  "generatedAt": "2025-08-12T00:00:44.845Z",
+  "coverage": {
+    "total": 9,
+    "withJsonLd": 1
+  },
+  "suggestions": [
+    {
+      "file": "pages/site-health.tsx",
+      "suggestion": "Add JSON-LD structured data for better SEO."
+    },
+    {
+      "file": "pages/newsroom.tsx",
+      "suggestion": "Add JSON-LD structured data for better SEO."
+    },
+    {
+      "file": "pages/_app.tsx",
+      "suggestion": "Add JSON-LD structured data for better SEO."
+    },
+    {
+      "file": "pages/reports/seo.tsx",
+      "suggestion": "Add JSON-LD structured data for better SEO."
+    },
+    {
+      "file": "pages/reports/ai-trends.tsx",
+      "suggestion": "Add JSON-LD structured data for better SEO."
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "suggestion": "Add JSON-LD structured data for better SEO."
+    },
+    {
+      "file": "pages/front/index.tsx",
+      "suggestion": "Add JSON-LD structured data for better SEO."
+    },
+    {
+      "file": "pages/automation/index.tsx",
+      "suggestion": "Add JSON-LD structured data for better SEO."
+    }
+  ]
+}

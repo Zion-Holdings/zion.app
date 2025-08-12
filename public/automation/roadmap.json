@@ -1,0 +1,2143 @@
+{
+  "generatedAt": "2025-08-12T00:00:44.794Z",
+  "todoSummary": {
+    "bullets": [
+      "- Generated: 2025-08-11T20:39:28.514Z",
+      "- Total findings: 169040",
+      "- [TODO] .github/workflows.disabled/autonomous-content-scanner.yml:30 — /FIXME scanner",
+      "- [TODO] .github/workflows.disabled/autonomous-content-scanner.yml:31 — -scanner.cjs | cat",
+      "- [TODO] .github/workflows.disabled/autonomous-content-scanner.yml:40 — report and content registry [skip ci]\"",
+      "- [TODO] .github/workflows.disabled/todo-issue-sync.yml:1 — Issue Sync",
+      "- [TODO] .github/workflows.disabled/todo-issue-sync.yml:13 — s:",
+      "- [TODO] .github/workflows.disabled/todo-issue-sync.yml:29 — report",
+      "- [TODO] .github/workflows.disabled/todo-issue-sync.yml:30 — _issue_sync.cjs",
+      "- [TODO] .github/workflows.disabled/todo-issue-sync.yml:38 — ): update TODO sync report [skip ci]\"",
+      "- [TODO] .github/workflows.disabled/todo-issue-sync.yml:42 — Issue",
+      "- [TODO] .github/workflows.disabled/todo-issue-sync.yml:47 — /FIXME/NOTE Sync\""
+    ],
+    "headings": [
+      "# TODO and FIXME Report",
+      "## .github/workflows.disabled/autonomous-content-scanner.yml",
+      "## .github/workflows.disabled/todo-issue-sync.yml",
+      "## data/reports/external-links/external-links-1754934673584.json",
+      "## data/reports/external-links/external-links-1754934698424.json",
+      "## data/reports/external-links/external-links-1754935976218.json"
+    ]
+  },
+  "topIdeas": [],
+  "knowledgeGraph": {
+    "generatedAt": "2025-08-11T21:27:52.663Z",
+    "nodes": [
+      {
+        "id": "automation/advanced-git-sync.cjs",
+        "type": "file"
+      },
+      {
+        "id": "child_process",
+        "type": "package"
+      },
+      {
+        "id": "automation/ai-changelog-generator.cjs",
+        "type": "file"
+      },
+      {
+        "id": "fs",
+        "type": "package"
+      },
+      {
+        "id": "path",
+        "type": "package"
+      },
+      {
+        "id": "automation/auto-discovery-runner.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/auto-media-release.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/auto-scheduler.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/automation-guardian-10min.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/branch-cleanup.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/broken-image-scanner.cjs",
+        "type": "file"
+      },
+      {
+        "id": "axios",
+        "type": "package"
+      },
+      {
+        "id": "next/head",
+        "type": "package"
+      },
+      {
+        "id": "automation/changelog-generator.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/cloud-autonomous-orchestrator.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/continuous-front-runner.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/dead-code-scanner.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/deps-auto-upgrade.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/docs-pages-indexer.cjs",
+        "type": "file"
+      },
+      {
+        "id": "glob",
+        "type": "package"
+      },
+      {
+        "id": "automation/external-link-check.cjs",
+        "type": "file"
+      },
+      {
+        "id": "https",
+        "type": "package"
+      },
+      {
+        "id": "http",
+        "type": "package"
+      },
+      {
+        "id": "automation/front-futurizer.cjs",
+        "type": "file"
+      },
+      {
+        "id": "next/link",
+        "type": "package"
+      },
+      {
+        "id": "automation/front-index-ads.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/front-index-advertiser.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/front-index-auto-advertiser.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/front-index-directory-builder.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/front-visionary-expander.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/frontpage-advertiser.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/git-sync.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/home-index-visionary.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/homepage-auto-advertiser.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/homepage-promo-analyzer.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/homepage-promo-applier.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/homepage-promo-factory.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/homepage-updater.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/image-optimizer.cjs",
+        "type": "file"
+      },
+      {
+        "id": "sharp",
+        "type": "package"
+      },
+      {
+        "id": "automation/llm-content-curator.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/netlify-auto-healer.cjs",
+        "type": "file"
+      },
+      {
+        "id": "url",
+        "type": "package"
+      },
+      {
+        "id": "automation/newsroom-generator.cjs",
+        "type": "file"
+      },
+      {
+        "id": "cheerio",
+        "type": "package"
+      },
+      {
+        "id": "automation/og-image-generator.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/optimize-images.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/pm2/front-scheduler.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/pm2/guardian-scheduler.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/repo-knowledge-graph.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/repo-radar-metrics.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/revenue-ideas-agents/add_contact_sales_cta_on_enterprise_pages.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/revenue-ideas-agents/add_newsletter_paywall_teaser_on_long_posts.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/revenue-ideas-agents/create_affiliate_link_wrappers_for_blog_posts.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/revenue-ideas-agents/generate_paid_consultation_booking_component.cjs",
+        "type": "file"
+      },
+      {
+        "id": "react",
+        "type": "package"
+      },
+      {
+        "id": "automation/revenue-ideas-agents/introduce_pricing_cta_sections_on_high_traffic_pages.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/security-audit.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/site-link-crawler.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/site-link-fixer.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/site-promo-orchestrator.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/sitemap-runner.cjs",
+        "type": "file"
+      },
+      {
+        "id": "automation/todo-scanner.cjs",
+        "type": "file"
+      },
+      {
+        "id": "commitlint.config.js",
+        "type": "file"
+      },
+      {
+        "id": "components/Landing.tsx",
+        "type": "file"
+      },
+      {
+        "id": "ecosystem.config.cjs",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/ai-changelog-runner.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/auto-scheduler.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/automation-matrix.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/autonomous-invention-orchestrator.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/broken-image-scanner-runner.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/broken-image-scanner.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/cloud_orchestrator.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/continuous-front-runner.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/continuous-orchestrator.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/dead-code-audit.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/dead-code-report.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/docs-index-runner.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/docs-search-index-runner.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/external-link-check-runner.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/fast-front-promoter.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/fast-front-promoter.ts",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/fast-orchestrator.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/feature-advertiser.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/features-capabilities-benefits-advertiser.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/front-ads-promoter.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/front-enhancer.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/front-enhancer.ts",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/front-index-futurizer.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/front-index-orchestrator.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/front-index-scheduler.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/front-maximizer.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/front-visionary-expander.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/frontpage-enhancer.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/frontpage-scheduler.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/home-visionary-expander.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/homepage-advertiser-scheduler.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/homepage-enhancer.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/homepage-updater-scheduler.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/homepage-updater.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/homepage_advertiser.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/hyper-front-index-accelerator.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/image-optimizer-runner.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/innovation-lab.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/link-and-health-scheduler.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/link-crawler.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/maintenance-scheduler.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/marketing-and-features-promo.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/marketing-scheduler.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/media-og-and-optimize.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/netlify-auto-healer-runner.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/newsroom-auto-publisher.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/newsroom-runner.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/og-image-update-runner.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/readme-advertiser.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/repo-knowledge-graph-runner.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/repo-radar-and-graph.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/repo-radar-runner.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/schedule-content-index.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/schedule-homepage.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/schedule-knowledge-graph.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/schedule-site-health.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/security-audit-runner.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/security-audit.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/site-crawler.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/sitemap_runner.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/todo-scanner-runner.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/todo-summary-runner.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/trigger-all-and-commit.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/functions-manifest.json",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/ui-enhancer.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/ultrafast-front-orchestrator.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/functions/ultrafast-orchestrator.js",
+        "type": "file"
+      },
+      {
+        "id": "netlify/plugins/run-functions-and-rerun/index.js",
+        "type": "file"
+      },
+      {
+        "id": "os",
+        "type": "package"
+      },
+      {
+        "id": "next-env.d.ts",
+        "type": "file"
+      },
+      {
+        "id": "next.config.js",
+        "type": "file"
+      },
+      {
+        "id": "pages/_app.tsx",
+        "type": "file"
+      },
+      {
+        "id": "next/app",
+        "type": "package"
+      },
+      {
+        "id": "pages/automation/index.tsx",
+        "type": "file"
+      },
+      {
+        "id": "pages/front/index.tsx",
+        "type": "file"
+      },
+      {
+        "id": "next/router",
+        "type": "package"
+      },
+      {
+        "id": "pages/index.tsx",
+        "type": "file"
+      },
+      {
+        "id": "pages/main/front/index.tsx",
+        "type": "file"
+      },
+      {
+        "id": "lucide-react",
+        "type": "package"
+      },
+      {
+        "id": "framer-motion",
+        "type": "package"
+      },
+      {
+        "id": "pages/newsroom.tsx",
+        "type": "file"
+      },
+      {
+        "id": "pages/reports/ai-trends.tsx",
+        "type": "file"
+      },
+      {
+        "id": "pages/reports/seo.tsx",
+        "type": "file"
+      },
+      {
+        "id": "pages/site-health.tsx",
+        "type": "file"
+      },
+      {
+        "id": "postcss.config.js",
+        "type": "file"
+      },
+      {
+        "id": "scripts/ai-trends-radar.js",
+        "type": "file"
+      },
+      {
+        "id": "scripts/automations/ai_trends.cjs",
+        "type": "file"
+      },
+      {
+        "id": "node:fs",
+        "type": "package"
+      },
+      {
+        "id": "node:path",
+        "type": "package"
+      },
+      {
+        "id": "scripts/automations/check_links.cjs",
+        "type": "file"
+      },
+      {
+        "id": "scripts/automations/generate_sitemap.cjs",
+        "type": "file"
+      },
+      {
+        "id": "scripts/automations/run_all.cjs",
+        "type": "file"
+      },
+      {
+        "id": "node:child_process",
+        "type": "package"
+      },
+      {
+        "id": "scripts/automations/todo_issue_sync.cjs",
+        "type": "file"
+      },
+      {
+        "id": "scripts/automations/unused_exports_report.cjs",
+        "type": "file"
+      },
+      {
+        "id": "scripts/generate-netlify-functions-manifest.cjs",
+        "type": "file"
+      },
+      {
+        "id": "scripts/generate-readme.js",
+        "type": "file"
+      },
+      {
+        "id": "scripts/generate-search-index.js",
+        "type": "file"
+      },
+      {
+        "id": "scripts/generate-sitemap.js",
+        "type": "file"
+      },
+      {
+        "id": "scripts/run-netlify-functions-locally.cjs",
+        "type": "file"
+      },
+      {
+        "id": "perf_hooks",
+        "type": "package"
+      },
+      {
+        "id": "scripts/seo-audit.js",
+        "type": "file"
+      },
+      {
+        "id": "scripts/test-netlify-functions.cjs",
+        "type": "file"
+      },
+      {
+        "id": "scripts/trigger-netlify-automations.cjs",
+        "type": "file"
+      },
+      {
+        "id": "timers/promises",
+        "type": "package"
+      },
+      {
+        "id": "tailwind.config.js",
+        "type": "file"
+      }
+    ],
+    "edges": [
+      {
+        "from": "automation/advanced-git-sync.cjs",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "automation/ai-changelog-generator.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/ai-changelog-generator.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/ai-changelog-generator.cjs",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "automation/auto-discovery-runner.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/auto-discovery-runner.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/auto-discovery-runner.cjs",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "automation/auto-media-release.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/auto-media-release.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/auto-media-release.cjs",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "automation/auto-scheduler.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/auto-scheduler.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/automation-guardian-10min.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/automation-guardian-10min.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/automation-guardian-10min.cjs",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "automation/broken-image-scanner.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/broken-image-scanner.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/broken-image-scanner.cjs",
+        "to": "axios",
+        "kind": "external"
+      },
+      {
+        "from": "automation/broken-image-scanner.cjs",
+        "to": "next/head",
+        "kind": "external"
+      },
+      {
+        "from": "automation/changelog-generator.cjs",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "automation/changelog-generator.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/changelog-generator.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/cloud-autonomous-orchestrator.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/cloud-autonomous-orchestrator.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/cloud-autonomous-orchestrator.cjs",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "automation/continuous-front-runner.cjs",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "automation/dead-code-scanner.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/dead-code-scanner.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/dead-code-scanner.cjs",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "automation/deps-auto-upgrade.cjs",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "automation/deps-auto-upgrade.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/deps-auto-upgrade.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/docs-pages-indexer.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/docs-pages-indexer.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/docs-pages-indexer.cjs",
+        "to": "glob",
+        "kind": "external"
+      },
+      {
+        "from": "automation/external-link-check.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/external-link-check.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/external-link-check.cjs",
+        "to": "https",
+        "kind": "external"
+      },
+      {
+        "from": "automation/external-link-check.cjs",
+        "to": "http",
+        "kind": "external"
+      },
+      {
+        "from": "automation/front-futurizer.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/front-futurizer.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/front-futurizer.cjs",
+        "to": "next/link",
+        "kind": "external"
+      },
+      {
+        "from": "automation/front-index-ads.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/front-index-ads.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/front-index-advertiser.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/front-index-advertiser.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/front-index-auto-advertiser.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/front-index-auto-advertiser.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/front-index-auto-advertiser.cjs",
+        "to": "next/link",
+        "kind": "external"
+      },
+      {
+        "from": "automation/front-index-directory-builder.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/front-index-directory-builder.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/front-index-directory-builder.cjs",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "automation/frontpage-advertiser.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/frontpage-advertiser.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/git-sync.cjs",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "automation/home-index-visionary.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/home-index-visionary.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/home-index-visionary.cjs",
+        "to": "next/link",
+        "kind": "external"
+      },
+      {
+        "from": "automation/homepage-auto-advertiser.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/homepage-auto-advertiser.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/homepage-updater.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/homepage-updater.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/image-optimizer.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/image-optimizer.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/image-optimizer.cjs",
+        "to": "sharp",
+        "kind": "external"
+      },
+      {
+        "from": "automation/llm-content-curator.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/llm-content-curator.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/netlify-auto-healer.cjs",
+        "to": "https",
+        "kind": "external"
+      },
+      {
+        "from": "automation/netlify-auto-healer.cjs",
+        "to": "url",
+        "kind": "external"
+      },
+      {
+        "from": "automation/netlify-auto-healer.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/netlify-auto-healer.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/newsroom-generator.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/newsroom-generator.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/newsroom-generator.cjs",
+        "to": "axios",
+        "kind": "external"
+      },
+      {
+        "from": "automation/newsroom-generator.cjs",
+        "to": "cheerio",
+        "kind": "external"
+      },
+      {
+        "from": "automation/newsroom-generator.cjs",
+        "to": "next/head",
+        "kind": "external"
+      },
+      {
+        "from": "automation/og-image-generator.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/og-image-generator.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/optimize-images.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/optimize-images.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/optimize-images.cjs",
+        "to": "sharp",
+        "kind": "external"
+      },
+      {
+        "from": "automation/pm2/front-scheduler.cjs",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "automation/pm2/front-scheduler.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/pm2/front-scheduler.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/pm2/guardian-scheduler.cjs",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "automation/pm2/guardian-scheduler.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/pm2/guardian-scheduler.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/repo-knowledge-graph.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/repo-knowledge-graph.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/repo-radar-metrics.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/repo-radar-metrics.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/repo-radar-metrics.cjs",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "automation/revenue-ideas-agents/add_contact_sales_cta_on_enterprise_pages.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/revenue-ideas-agents/add_contact_sales_cta_on_enterprise_pages.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/revenue-ideas-agents/add_newsletter_paywall_teaser_on_long_posts.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/revenue-ideas-agents/add_newsletter_paywall_teaser_on_long_posts.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/revenue-ideas-agents/create_affiliate_link_wrappers_for_blog_posts.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/revenue-ideas-agents/create_affiliate_link_wrappers_for_blog_posts.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/revenue-ideas-agents/generate_paid_consultation_booking_component.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/revenue-ideas-agents/generate_paid_consultation_booking_component.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/revenue-ideas-agents/generate_paid_consultation_booking_component.cjs",
+        "to": "react",
+        "kind": "external"
+      },
+      {
+        "from": "automation/revenue-ideas-agents/introduce_pricing_cta_sections_on_high_traffic_pages.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/revenue-ideas-agents/introduce_pricing_cta_sections_on_high_traffic_pages.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/security-audit.cjs",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "automation/security-audit.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/security-audit.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/site-link-crawler.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/site-link-crawler.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/site-link-fixer.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/site-link-fixer.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/sitemap-runner.cjs",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "automation/sitemap-runner.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/todo-scanner.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "automation/todo-scanner.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "automation/todo-scanner.cjs",
+        "to": "glob",
+        "kind": "external"
+      },
+      {
+        "from": "components/Landing.tsx",
+        "to": "next/link",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/ai-changelog-runner.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/ai-changelog-runner.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/auto-scheduler.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/automation-matrix.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/automation-matrix.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/autonomous-invention-orchestrator.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/broken-image-scanner-runner.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/broken-image-scanner-runner.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/broken-image-scanner.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/cloud_orchestrator.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/continuous-front-runner.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/continuous-front-runner.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/continuous-orchestrator.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/continuous-orchestrator.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/dead-code-audit.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/dead-code-report.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/dead-code-report.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/docs-index-runner.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/docs-index-runner.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/docs-search-index-runner.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/docs-search-index-runner.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/external-link-check-runner.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/external-link-check-runner.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/fast-front-promoter.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/fast-front-promoter.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/fast-front-promoter.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/fast-orchestrator.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/fast-orchestrator.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/feature-advertiser.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/feature-advertiser.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/features-capabilities-benefits-advertiser.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/features-capabilities-benefits-advertiser.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/front-ads-promoter.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/front-ads-promoter.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/front-enhancer.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/front-enhancer.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/front-enhancer.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/front-index-futurizer.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/front-index-futurizer.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/front-index-orchestrator.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/front-index-orchestrator.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/front-index-scheduler.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/front-index-scheduler.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/front-maximizer.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/front-maximizer.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/front-visionary-expander.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/front-visionary-expander.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/frontpage-enhancer.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/frontpage-scheduler.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/frontpage-scheduler.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/home-visionary-expander.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/homepage-advertiser-scheduler.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/homepage-advertiser-scheduler.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/homepage-enhancer.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/homepage-enhancer.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/homepage-updater-scheduler.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/homepage-updater-scheduler.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/homepage-updater.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/homepage-updater.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/homepage_advertiser.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/hyper-front-index-accelerator.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/hyper-front-index-accelerator.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/image-optimizer-runner.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/image-optimizer-runner.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/innovation-lab.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/link-and-health-scheduler.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/link-crawler.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/link-crawler.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/maintenance-scheduler.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/maintenance-scheduler.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/marketing-and-features-promo.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/marketing-scheduler.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/marketing-scheduler.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/media-og-and-optimize.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/netlify-auto-healer-runner.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/netlify-auto-healer-runner.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/newsroom-auto-publisher.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/newsroom-runner.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/newsroom-runner.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/og-image-update-runner.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/og-image-update-runner.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/readme-advertiser.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/readme-advertiser.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/repo-knowledge-graph-runner.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/repo-knowledge-graph-runner.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/repo-radar-and-graph.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/repo-radar-runner.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/repo-radar-runner.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/schedule-content-index.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/schedule-content-index.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/schedule-homepage.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/schedule-homepage.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/schedule-knowledge-graph.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/schedule-knowledge-graph.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/schedule-site-health.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/schedule-site-health.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/security-audit-runner.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/security-audit-runner.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/security-audit.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/site-crawler.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/site-crawler.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/sitemap_runner.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/todo-scanner-runner.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/todo-scanner-runner.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/todo-summary-runner.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/todo-summary-runner.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/trigger-all-and-commit.js",
+        "to": "netlify/functions/functions-manifest.json",
+        "kind": "local"
+      },
+      {
+        "from": "netlify/functions/ui-enhancer.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/ui-enhancer.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/ultrafast-front-orchestrator.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/ultrafast-front-orchestrator.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/ultrafast-orchestrator.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/functions/ultrafast-orchestrator.js",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/plugins/run-functions-and-rerun/index.js",
+        "to": "os",
+        "kind": "external"
+      },
+      {
+        "from": "netlify/plugins/run-functions-and-rerun/index.js",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "pages/_app.tsx",
+        "to": "next/app",
+        "kind": "external"
+      },
+      {
+        "from": "pages/automation/index.tsx",
+        "to": "next/head",
+        "kind": "external"
+      },
+      {
+        "from": "pages/front/index.tsx",
+        "to": "react",
+        "kind": "external"
+      },
+      {
+        "from": "pages/front/index.tsx",
+        "to": "next/router",
+        "kind": "external"
+      },
+      {
+        "from": "pages/index.tsx",
+        "to": "next/head",
+        "kind": "external"
+      },
+      {
+        "from": "pages/index.tsx",
+        "to": "next/link",
+        "kind": "external"
+      },
+      {
+        "from": "pages/main/front/index.tsx",
+        "to": "next/head",
+        "kind": "external"
+      },
+      {
+        "from": "pages/main/front/index.tsx",
+        "to": "next/link",
+        "kind": "external"
+      },
+      {
+        "from": "pages/main/front/index.tsx",
+        "to": "lucide-react",
+        "kind": "external"
+      },
+      {
+        "from": "pages/main/front/index.tsx",
+        "to": "framer-motion",
+        "kind": "external"
+      },
+      {
+        "from": "pages/main/front/index.tsx",
+        "to": "react",
+        "kind": "external"
+      },
+      {
+        "from": "pages/newsroom.tsx",
+        "to": "next/head",
+        "kind": "external"
+      },
+      {
+        "from": "pages/reports/ai-trends.tsx",
+        "to": "react",
+        "kind": "external"
+      },
+      {
+        "from": "pages/reports/seo.tsx",
+        "to": "react",
+        "kind": "external"
+      },
+      {
+        "from": "pages/site-health.tsx",
+        "to": "next/head",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/ai-trends-radar.js",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/ai-trends-radar.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/automations/ai_trends.cjs",
+        "to": "node:fs",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/automations/ai_trends.cjs",
+        "to": "node:path",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/automations/check_links.cjs",
+        "to": "node:fs",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/automations/check_links.cjs",
+        "to": "node:path",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/automations/generate_sitemap.cjs",
+        "to": "node:fs",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/automations/generate_sitemap.cjs",
+        "to": "node:path",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/automations/run_all.cjs",
+        "to": "node:child_process",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/automations/todo_issue_sync.cjs",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/automations/todo_issue_sync.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/automations/todo_issue_sync.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/automations/unused_exports_report.cjs",
+        "to": "node:child_process",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/automations/unused_exports_report.cjs",
+        "to": "node:fs",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/automations/unused_exports_report.cjs",
+        "to": "node:path",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/generate-netlify-functions-manifest.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/generate-netlify-functions-manifest.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/generate-readme.js",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/generate-readme.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/generate-readme.js",
+        "to": "glob",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/generate-search-index.js",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/generate-search-index.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/generate-search-index.js",
+        "to": "glob",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/generate-sitemap.js",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/generate-sitemap.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/run-netlify-functions-locally.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/run-netlify-functions-locally.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/run-netlify-functions-locally.cjs",
+        "to": "os",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/run-netlify-functions-locally.cjs",
+        "to": "perf_hooks",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/seo-audit.js",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/seo-audit.js",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/test-netlify-functions.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/test-netlify-functions.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/test-netlify-functions.cjs",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/trigger-netlify-automations.cjs",
+        "to": "fs",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/trigger-netlify-automations.cjs",
+        "to": "path",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/trigger-netlify-automations.cjs",
+        "to": "child_process",
+        "kind": "external"
+      },
+      {
+        "from": "scripts/trigger-netlify-automations.cjs",
+        "to": "timers/promises",
+        "kind": "external"
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "generatedAt": "2025-08-12T00:00:44.885Z",
+  "summary": {
+    "total": 1,
+    "anyCount": 0,
+    "withPropsTypes": 0,
+    "typedCoveragePct": 0
+  },
+  "results": [
+    {
+      "file": "components/Landing.tsx",
+      "hasAny": false,
+      "hasInterface": false,
+      "hasFC": false
+    }
+  ]
+}
