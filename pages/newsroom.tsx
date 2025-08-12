@@ -12,6 +12,10 @@ export default function Newsroom() {
         <p className="text-white/70 mb-6">Updated automatically from multiple sources.</p>
         <ul className="list-disc pl-6 space-y-1">
           <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/11/slow-ventures-cuts-first-check-from-60m-creator-fund-into-woodworking-founder/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Slow Ventures cuts first check from $60M creator fund into woodworking founder</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
             <a href="https://techcrunch.com/2025/08/11/trump-administration-stops-illegal-freeze-of-5b-ev-charger-funds-after-losing-in-court/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Trump administration stops illegal freeze of $5B EV charger funds after losing in court</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
@@ -21,6 +25,10 @@ export default function Newsroom() {
           </li>
           <li className="py-2">
             <a href="https://techcrunch.com/2025/08/11/ford-throws-out-henry-fords-assembly-line-to-make-low-cost-evs-in-america/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Ford throws out Henry Ford’s assembly line to make low-cost EVs in America</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/11/ios-26-beta-6-adds-new-ringtones-snappy-app-launches-and-more/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">iOS 26 beta 6 adds new ringtones, snappy app launches, and more</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
@@ -36,35 +44,31 @@ export default function Newsroom() {
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/10/stanford-sticks-with-legacy-admissions/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Stanford sticks with legacy admissions</a>
+            <a href="https://techcrunch.com/2025/08/12/how-a-once-tiny-research-lab-helped-nvidia-become-a-4-trillion-dollar-company/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">How a once-tiny research lab helped Nvidia become a $4 trillion-dollar company</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/10/after-researchers-unmasked-a-prolific-sms-scammer-a-new-operation-has-emerged-in-its-wake/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">After researchers unmasked a prolific SMS scammer, a new operation has emerged in its wake</a>
+            <a href="https://techcrunch.com/2025/08/11/tdk-backs-ultraviolette-with-21m-to-take-india-made-electric-motorcycles-global/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">TDK backs Ultraviolette with $21M to take India-made electric motorcycles global</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/11/revel-shuts-down-its-ride-hail-business-to-focus-on-ev-charging/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Revel shuts down its ride-hail business to focus on EV charging</a>
+            <a href="https://techcrunch.com/2025/08/11/prontos-10-minute-house-help-pitch-sparked-a-3-6x-valuation-jump-in-just-90-days/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Pronto’s 10-minute house help pitch sparked a 3.6x valuation jump in just 90 days</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/11/nvidia-amd-may-sell-high-end-ai-chips-to-china-if-they-pay-us-a-cut/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Nvidia, AMD may sell high-end AI chips to China if they pay US a cut</a>
+            <a href="https://techcrunch.com/2025/08/11/seoul-based-datumo-raises-15-5m-to-expand-llm-evaluation-challenging-scale-ai/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Seoul-based Datumo raises $15.5M to take on Scale AI, backed by Salesforce</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/11/apples-new-siri-may-allow-users-to-operate-apps-just-using-voice/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Apple’s new Siri may allow users to operate apps just using voice</a>
+            <a href="https://techcrunch.com/2025/08/11/u-s-government-seized-1-million-from-russian-ransomware-gang/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">US government seized $1M from Russian ransomware gang</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/11/nigeria-profitable-food-delivery-chowdeck-lands-9m-from-novastar-y-combinator/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Profitable Nigerian food delivery Chowdeck lands $9M from Novastar, Y Combinator</a>
+            <a href="https://techcrunch.com/2025/08/11/how-founders-are-ditching-vc-norms-and-finding-capital-on-their-own-terms-at-techcrunch-disrupt-2025/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">How founders are ditching VC norms and finding capital on their own terms at TechCrunch Disrupt 2025</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/10/truemeds-challenged-how-indians-buy-medicine-and-saw-a-3-6x-jump-in-valuation/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Why investors just bet $85M on this Indian company’s generic drug strategy</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/10/the-hidden-cost-of-living-amid-mark-zuckerbergs-110m-compound/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">The hidden cost of living in Mark Zuckerberg’s $110M compound</a>
+            <a href="https://techcrunch.com/2025/08/11/oceans-new-app-brings-inbox-triage-tasks-and-invites-to-gmail-users/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Ocean’s new app brings inbox triage, tasks, and invites to Gmail users</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
@@ -88,8 +92,8 @@ export default function Newsroom() {
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/06/google-says-hackers-stole-its-customers-data-in-a-breach-of-its-salesforce-database/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Google says hackers stole its customers’ data by breaching its Salesforce database</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
+            <a href="https://www.theverge.com/policy/754356/trump-reciprocal-tariffs-august" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Trump’s endless new tariffs are threatening businesses — and you</a>
+            <span className="text-white/50 ml-2">(The Verge)</span>
           </li>
         </ul>
       </main>
