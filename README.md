@@ -38,10 +38,6 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 - /reports/updates/update-2025-08-12-1846
 - /reports/updates/update-2025-08-12-1851
 - /reports/updates/update-2025-08-12-1915
-<<<<<<< Updated upstream
-=======
-- /reports/updates/update-2025-08-12-1934
->>>>>>> Stashed changes
 - /site-health
 
 ### Automations
