@@ -11,6 +11,10 @@ permissions:
 
 jobs:
   attempt-fix:
+<<<<<<< HEAD
+=======
+    continue-on-error: true
+>>>>>>> 994fdbcc93 (chore(ci): harden CI Self-Heal workflow and agent trigger [skip ci])
     if: ${{ github.event.workflow_run.conclusion == 'failure' }}
     runs-on: ubuntu-latest
     steps:
@@ -35,11 +39,19 @@ jobs:
           node scripts/seo-audit.js || true
 
       - name: Rebuild and type-check
+<<<<<<< HEAD
+=======
+        continue-on-error: true
+>>>>>>> 994fdbcc93 (chore(ci): harden CI Self-Heal workflow and agent trigger [skip ci])
         run: |
           npm run type-check || true
           npm run build || true
 
       - name: Commit and push healing edits
+<<<<<<< HEAD
+=======
+        if: always()
+>>>>>>> 994fdbcc93 (chore(ci): harden CI Self-Heal workflow and agent trigger [skip ci])
         run: |
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions[bot]"
@@ -52,3 +64,7 @@ jobs:
           fi
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 994fdbcc93 (chore(ci): harden CI Self-Heal workflow and agent trigger [skip ci])

@@ -1,3 +1,4 @@
+// child_process imported within handler to avoid top-level unused var lint
 exports.config = {
   schedule: '*/10 * * * *', // every 10 minutes for faster iteration
 };

@@ -29,13 +29,7 @@ function parseCsv(value) {
     .filter(Boolean);
 }
 
-async function listFunctions({ baseUrl }) {
-  // There's no official list endpoint from build side. We can derive from functions directory passed via constants.
-  // This plugin instead discovers functions by hitting /.netlify/functions/{name} for each known file list provided in constants.functionsSrc.
-  // But constants don't list files. As a pragmatic alternative, we expect the project to expose an index function listing names when available.
-  // Since that may not exist, we will scan from repository using the functions directory path passed by constants.
-  throw new Error('Discovery from filesystem should be implemented by using constants.functionsSrc - wired in onSuccess.');
-}
+// listFunctions intentionally omitted; discovery is handled in onSuccess via filesystem scan.
 
 async function invokeFunction({ baseUrl, name, timeoutMs }) {
   const url = `${baseUrl}/.netlify/functions/${name}`;

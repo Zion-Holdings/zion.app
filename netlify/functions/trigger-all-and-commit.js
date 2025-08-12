@@ -1,4 +1,4 @@
-exports.handler = async function(event, context) {
+exports.handler = async function() {
   const baseUrl = (process.env.SITE_URL || process.env.URL || process.env.DEPLOY_PRIME_URL || '').replace(/\/$/, '');
   const buildHook = process.env.NETLIFY_BUILD_HOOK_URL || process.env.BUILD_HOOK_URL || '';
   const githubToken = process.env.GITHUB_TOKEN || '';
@@ -13,7 +13,7 @@ exports.handler = async function(event, context) {
   try {
     const manifest = require('./functions-manifest.json');
     if (Array.isArray(manifest.functions)) functionNames = manifest.functions;
-  } catch (e) {
+  } catch {
     functionNames = [];
   }
 
@@ -75,7 +75,9 @@ exports.handler = async function(event, context) {
         const json = await getRes.json();
         sha = json.sha;
       }
-    } catch {}
+    } catch {
+      // no-op: if file does not exist, we proceed to create it
+    }
     const body = {
       message: `chore: trigger netlify build via function (${new Date().toISOString()})`,
       content,
