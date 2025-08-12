@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-12T12:29:30.426Z",
+  "generatedAt": "2025-08-12T12:38:47.629Z",
   "totalFilesWithIssues": 6,
   "totalIssues": 8,
   "results": [
@@ -23,12 +23,12 @@
       "issues": [
         {
           "type": "size/lines",
-          "message": "File has 1837 lines (>500)",
+          "message": "File has 1829 lines (>500)",
           "line": 0
         },
         {
           "type": "style/long-lines",
-          "message": "267 lines exceed 140 chars",
+          "message": "265 lines exceed 140 chars",
           "line": 0
         }
       ]
