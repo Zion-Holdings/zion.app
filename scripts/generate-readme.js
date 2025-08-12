@@ -59,7 +59,7 @@ function collectComponentsSummary() {
 function getRepoSlug() {
   const pkg = readJson(path.join(process.cwd(), 'package.json')) || {};
   const url = (pkg.repository && pkg.repository.url) || '';
-  const m = url.match(/github.com[:/]+([^/]+)\/([^.]+)(?:\.git)?/i);
+  const m = url.match(/github.com[:/]+([^/]+)\/([^/]+?)(?:\.git)?$/i);
   if (m) return `${m[1]}/${m[2]}`;
   return '';
 }

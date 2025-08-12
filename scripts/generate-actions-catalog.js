@@ -12,7 +12,7 @@ function getRepoSlug() {
   try {
     const pkg = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
     const url = (pkg.repository && pkg.repository.url) || '';
-    const match = url.match(/github.com[:/]+([^/]+)\/([^.]+)(?:\.git)?/i);
+    const match = url.match(/github.com[:/]+([^/]+)\/([^/]+?)(?:\.git)?$/i);
     if (match) return `${match[1]}/${match[2]}`;
   } catch {
     // noop
