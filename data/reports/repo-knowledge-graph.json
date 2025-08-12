@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-12T12:40:50.400Z",
+  "generatedAt": "2025-08-12T12:41:25.409Z",
   "nodes": [
     {
       "id": "automation/a11y-alt-text-auditor.cjs",
@@ -299,6 +299,10 @@
     },
     {
       "id": "components/Landing.tsx",
+      "type": "file"
+    },
+    {
+      "id": "components/monetization/PaidConsultation.tsx",
       "type": "file"
     },
     {
@@ -803,6 +807,10 @@
     },
     {
       "id": "tailwind.config.js",
+      "type": "file"
+    },
+    {
+      "id": "utils/monetization/affiliate.ts",
       "type": "file"
     }
   ],
@@ -1465,6 +1473,11 @@
     {
       "from": "components/Landing.tsx",
       "to": "next/link",
+      "kind": "external"
+    },
+    {
+      "from": "components/monetization/PaidConsultation.tsx",
+      "to": "react",
       "kind": "external"
     },
     {
