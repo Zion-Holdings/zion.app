@@ -29,7 +29,7 @@ function loadFunctionsManifest() {
   try {
     const manifest = require('./functions-manifest.json');
     if (Array.isArray(manifest.functions)) return manifest.functions;
-  } catch {}
+  } catch { /* ignore missing functions-manifest */ }
   // Fallback: list js files in this folder
   const files = fs.readdirSync(__dirname).filter(f => f.endsWith('.js'));
   return files.map(f => f.replace(/\.js$/, ''));

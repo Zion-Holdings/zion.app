@@ -32,7 +32,7 @@ exports.handler = async () => {
   // Build search index if available
   try {
     logStep('search:index', () => runNode('scripts/generate-search-index.js'));
-  } catch (e) {
+  } catch {
     logs.push('Search index generation skipped');
   }
 
