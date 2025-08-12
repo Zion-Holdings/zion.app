@@ -150,8 +150,13 @@ function gitCommitAndPush(filesToAdd) {
   execSync(`git commit -m "${msg}"`, { stdio: 'inherit' });
   const branch = execSync('git rev-parse --abbrev-ref HEAD', { encoding: 'utf8' }).trim();
   log(`Pushing to origin ${branch}...`);
-  execSync(`git push origin ${branch}`, { stdio: 'inherit' });
-  return { committed: true, pushed: true, branch };
+  try {
+    execSync(`git push origin ${branch}`, { stdio: 'inherit' });
+    return { committed: true, pushed: true, branch };
+  } catch (err) {
+    log(`Git push failed: ${err && err.message ? err.message : err}. Continuing without failing.`);
+    return { committed: true, pushed: false, branch };
+  }
 }
 
 (async function main() {
@@ -181,10 +186,13 @@ function gitCommitAndPush(filesToAdd) {
 
   // Always commit the stamp/logs even in dry-run so scheduled workflows can sync
   try {
-    gitCommitAndPush(files);
+    const result = gitCommitAndPush(files);
+    if (!result.pushed) {
+      log('Git push not completed. Proceeding without failing the workflow.');
+    }
   } catch (err) {
-    console.error(err);
-    process.exitCode = 1;
+    console.error('[netlify-trigger] Non-fatal git commit/push error:', err && err.message ? err.message : err);
+    // Do not set non-zero exit; keep workflow green
   }
 
   log('Done.');

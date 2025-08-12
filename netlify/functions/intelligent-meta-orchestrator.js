@@ -66,10 +66,14 @@ exports.handler = async function() {
 
   try {
     let functionNames = [];
-    try {
-      const manifest = require('./functions-manifest.json');
-      if (Array.isArray(manifest.functions)) functionNames = manifest.functions;
-    } catch (_) {}
+    const manifest = (() => {
+      try {
+        return require('./functions-manifest.json');
+      } catch {
+        return null;
+      }
+    })();
+    if (manifest && Array.isArray(manifest.functions)) functionNames = manifest.functions;
 
     if (functionNames.length === 0) {
       return { statusCode: 200, body: JSON.stringify({ ok: false, error: 'No functions found in manifest' }) };

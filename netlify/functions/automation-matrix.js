@@ -31,10 +31,10 @@ exports.handler = async () => {
   logStep('links:internal-fix', () => runNode('automation/site-link-fixer.cjs'));
 
   // External links scan
-  try { logStep('links:external-check', () => runNode('automation/external-link-check.cjs')); } catch (_) {}
+  try { logStep('links:external-check', () => runNode('automation/external-link-check.cjs')); } catch (e) { logs.push(`links:external-check skipped: ${String(e)}`); }
 
   // Artifacts
-  try { logStep('sitemap:runner', () => runNode('automation/sitemap-runner.cjs')); } catch (_) {}
+  try { logStep('sitemap:runner', () => runNode('automation/sitemap-runner.cjs')); } catch (e) { logs.push(`sitemap:runner skipped: ${String(e)}`); }
 
   // Commit and push
   logStep('git:sync', () => runNode('automation/git-sync.cjs'));
