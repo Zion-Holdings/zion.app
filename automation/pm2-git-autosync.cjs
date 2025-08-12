@@ -1,4 +1,80 @@
 #!/usr/bin/env node
+'use strict';
+
+const { spawnSync } = require('child_process');
+const fs = require('fs');
+const path = require('path');
+
+const repoRoot = path.resolve(__dirname, '..');
+const logsDir = path.join(repoRoot, 'automation', 'logs');
+const lockFile = path.join(repoRoot, 'automation', '.git-sync.lock');
+
+const INTERVAL_SECONDS = Number(process.env.SYNC_INTERVAL_SECONDS || '60');
+const TARGET_BRANCH = process.env.TARGET_BRANCH || 'main';
+
+function ensureLogsDir() { try { fs.mkdirSync(logsDir, { recursive: true }); } catch {} }
+function log(msg) {
+  ensureLogsDir();
+  const line = `${new Date().toISOString()} ${msg}`;
+  console.log(line);
+  try { fs.appendFileSync(path.join(logsDir, 'git-autosync-loop.log'), line + '\n'); } catch {}
+}
+
+function run(cmd, args = []) {
+  const res = spawnSync(cmd, args, { stdio: 'inherit', cwd: repoRoot, env: process.env, shell: false });
+  return res.status === 0;
+}
+
+function withGitLock(fn) {
+  const maxAgeMs = 5 * 60 * 1000; // 5 minutes
+  try {
+    if (fs.existsSync(lockFile)) {
+      const stat = fs.statSync(lockFile);
+      if (Date.now() - stat.mtimeMs < maxAgeMs) {
+        log('lock present; skip this cycle');
+        return false;
+      }
+      try { fs.unlinkSync(lockFile); } catch {}
+    }
+    fs.writeFileSync(lockFile, String(process.pid));
+  } catch (e) {
+    log(`lock error: ${e && e.message ? e.message : String(e)}`);
+    return false;
+  }
+  try { return fn(); } finally { try { fs.unlinkSync(lockFile); } catch {} }
+}
+
+function cycle() {
+  withGitLock(() => {
+    log('git fetch --all --prune');
+    run('git', ['fetch', '--all', '--prune']);
+
+    log(`git checkout ${TARGET_BRANCH}`);
+    run('git', ['checkout', TARGET_BRANCH]);
+
+    log('git pull --rebase');
+    run('git', ['pull', '--rebase']);
+
+    // No push here; push should occur in explicit sync scripts after changes.
+  });
+}
+
+function main() {
+  log(`autosync: start (interval=${INTERVAL_SECONDS}s, branch=${TARGET_BRANCH})`);
+  cycle();
+  setInterval(cycle, INTERVAL_SECONDS * 1000);
+}
+
+if (require.main === module) {
+  try {
+    main();
+  } catch (e) {
+    log(`fatal: ${e && e.stack ? e.stack : String(e)}`);
+    process.exit(1);
+  }
+}
+
+#!/usr/bin/env node
 
 /**
  * Continuous Git autosync loop for PM2.

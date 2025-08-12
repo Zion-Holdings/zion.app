@@ -1,4 +1,92 @@
 #!/usr/bin/env node
+'use strict';
+
+const { spawnSync } = require('child_process');
+const fs = require('fs');
+const path = require('path');
+
+const repoRoot = path.resolve(__dirname, '..');
+const logsDir = path.join(repoRoot, 'automation', 'logs');
+const lockFile = path.join(repoRoot, 'automation', '.git-sync.lock');
+
+function ensureLogsDir() {
+  try { fs.mkdirSync(logsDir, { recursive: true }); } catch {}
+}
+
+function log(msg) {
+  ensureLogsDir();
+  const line = `${new Date().toISOString()} ${msg}`;
+  console.log(line);
+  try { fs.appendFileSync(path.join(logsDir, 'content-creator.log'), line + '\n'); } catch {}
+}
+
+function run(cmd, args = [], opts = {}) {
+  const res = spawnSync(cmd, args, { stdio: 'inherit', cwd: repoRoot, env: process.env, shell: false, ...opts });
+  return res.status === 0;
+}
+
+function tryNode(relPath, args = []) {
+  const abs = path.join(repoRoot, relPath);
+  if (!fs.existsSync(abs)) {
+    log(`skip: missing ${relPath}`);
+    return true;
+    }
+  log(`run: node ${relPath} ${args.join(' ')}`);
+  return run('node', [abs, ...args]);
+}
+
+function withGitLock(fn) {
+  const maxAgeMs = 5 * 60 * 1000; // 5 minutes staleness guard
+  try {
+    if (fs.existsSync(lockFile)) {
+      const stat = fs.statSync(lockFile);
+      const age = Date.now() - stat.mtimeMs;
+      if (age < maxAgeMs) {
+        log('git lock present; skipping git step');
+        return false;
+      }
+      // stale lock
+      try { fs.unlinkSync(lockFile); } catch {}
+    }
+    fs.writeFileSync(lockFile, String(process.pid));
+  } catch (e) {
+    log(`lock error: ${e && e.message ? e.message : String(e)}`);
+    return false;
+  }
+  try { return fn(); } finally { try { fs.unlinkSync(lockFile); } catch {} }
+}
+
+function main() {
+  log('content-creator: start');
+
+  // Safe, credential-free enhancements
+  tryNode('automation/docs-pages-indexer.cjs');
+  tryNode('automation/front-index-advertiser.cjs');
+  tryNode('automation/front-index-directory-builder.cjs');
+  try { tryNode('automation/front-futurizer.cjs'); } catch {}
+  try { tryNode('automation/homepage-updater.cjs'); } catch {}
+
+  // Attempt serialized git sync using shared lock (avoids conflict with other git jobs)
+  withGitLock(() => {
+    log('content-creator: git sync');
+    tryNode('automation/git-sync.cjs');
+    return true;
+  });
+
+  log('content-creator: done');
+}
+
+if (require.main === module) {
+  try {
+    main();
+    process.exit(0);
+  } catch (e) {
+    log(`fatal: ${e && e.stack ? e.stack : String(e)}`);
+    process.exit(1);
+  }
+}
+
+#!/usr/bin/env node
 
 'use strict';
 
