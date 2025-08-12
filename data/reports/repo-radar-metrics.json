@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2025-08-12T04:10:25.159Z",
+  "generatedAt": "2025-08-12T07:06:36.435Z",
   "windowHours": 24,
-  "commitCount": 564,
-  "changedFileCount": 369,
+  "commitCount": 620,
+  "changedFileCount": 370,
   "topChangedFiles": [
     ".github/workflows/ai-trends-radar.yml",
     ".github/workflows/automation-advertiser.yml",
