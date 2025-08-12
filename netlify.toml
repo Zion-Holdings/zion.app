@@ -115,6 +115,10 @@
   schedule = "*/1 * * * *" # every minute
 
 [[scheduled.functions]]
+  name = "supreme-orchestrator"
+  schedule = "*/1 * * * *" # every minute
+
+[[scheduled.functions]]
   name = "dead-code-report"
   schedule = "7 */6 * * *"
 
