@@ -1,8 +1,9 @@
 {
-  "generatedAt": "2025-08-12T01:26:16.624Z",
+  "generatedAt": "2025-08-12T01:42:38.893Z",
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
+    "agent-of-agents",
     "ai-changelog-runner",
     "ai-trends-radar-runner",
     "anchor-links-auto-fixer",
@@ -84,6 +85,7 @@
     "site-crawler",
     "sitemap_runner",
     "stale-content-auditor-runner",
+    "structured-data-auditor",
     "todo-scanner-runner",
     "todo-summary-runner",
     "topic-cluster-builder-runner",

@@ -47,6 +47,16 @@ export default function AutomationHub() {
             <a className="text-cyan-300 underline" href="/.netlify/functions/marketing-and-features-promo" target="_blank" rel="noopener">Trigger / View</a>
           </li>
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Agent of Agents (1m)</h2>
+            <p className="text-white/70">Triggers all cloud automations from the manifest, then syncs to main.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/agent-of-agents" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Adaptive Orchestrator (5m)</h2>
+            <p className="text-white/70">Runs different automation sets based on cadence and context.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/adaptive-orchestrator" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
             <h2 className="text-xl font-bold">Fast Orchestrator</h2>
             <p className="text-white/70">Runs every minute to refresh front and homepage content; commits and pushes to main.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/fast-orchestrator" target="_blank" rel="noopener">Trigger / View</a>
