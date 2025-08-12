@@ -101,23 +101,15 @@ export default function AutomationHub() {
             <p className="text-white/70">Safely bumps minor/patch deps with build verification.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/deps-auto-upgrade-runner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
-
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Structured Data Auditor</h2>
-            <p className="text-white/70">Checks JSON‑LD coverage and publishes a report to /reports/structured-data.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/structured-data-auditor" target="_blank" rel="noopener">Trigger / View</a>
+            <h2 className="text-xl font-bold">Component Props Docs</h2>
+            <p className="text-white/70">Scans components and publishes props documentation (Markdown + JSON).</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/component-props-docs-runner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
-
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Robots Auditor</h2>
-            <p className="text-white/70">Validates robots.txt presence and sitemap linkage.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/robots-auditor" target="_blank" rel="noopener">Trigger / View</a>
-          </li>
-
-          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Canonical Auditor</h2>
-            <p className="text-white/70">Scans canonical tags for correctness across key pages.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/canonical-auditor" target="_blank" rel="noopener">Trigger / View</a>
+            <h2 className="text-xl font-bold">Topics Map</h2>
+            <p className="text-white/70">Builds a live topics map from pages and docs; publishes JSON + Markdown.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/topics-map-runner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
 
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">

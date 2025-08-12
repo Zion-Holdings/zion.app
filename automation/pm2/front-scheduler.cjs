@@ -43,6 +43,9 @@ let currentIntervalMs = BASE_INTERVAL_MS;
 let consecutiveFailures = 0;
 let inCooldownUntil = 0;
 
+// Heartbeat interval in ms for lightweight health updates
+const HEARTBEAT_MS = Math.max(15_000, Number(process.env.FRONT_HEARTBEAT_MS || 60_000));
+
 function readStatus() {
   try {
     const text = fs.readFileSync(statusFilePath, 'utf8');
@@ -178,9 +181,35 @@ function runOnce() {
 // Run immediately on start
 runOnce();
 
+// Lightweight heartbeat for PM2 health visibility and external monitors
+let heartbeatTimer = null;
+function startHeartbeat() {
+  if (heartbeatTimer) clearInterval(heartbeatTimer);
+  heartbeatTimer = setInterval(() => {
+    try {
+      writeStatus({
+        heartbeatAt: new Date().toISOString(),
+        scheduler: {
+          currentIntervalMs,
+          baseIntervalMs: BASE_INTERVAL_MS,
+          maxIntervalMs: MAX_INTERVAL_MS,
+          consecutiveFailures,
+          processRssBytes: process.memoryUsage().rss,
+          uptimeMs: process.uptime() * 1000
+        }
+      });
+    } catch {}
+  }, HEARTBEAT_MS);
+}
+startHeartbeat();
+
+// PM2 ready signal (works with wait_ready + listen_timeout)
+try { if (typeof process.send === 'function') process.send('ready'); } catch {}
+
 function shutdown(signal) {
   logLine(`Received ${signal}. Shutting down scheduler.`);
   try { if (scheduledTimer) clearTimeout(scheduledTimer); } catch {}
+  try { if (heartbeatTimer) clearInterval(heartbeatTimer); } catch {}
   if (currentChild) {
     try { currentChild.kill('SIGTERM'); } catch {}
   }
@@ -191,3 +220,12 @@ process.on('SIGINT', () => shutdown('SIGINT'));
 process.on('SIGTERM', () => shutdown('SIGTERM'));
 process.on('uncaughtException', (err) => { logErr(`uncaughtException: ${err?.stack || err}`); });
 process.on('unhandledRejection', (reason) => { logErr(`unhandledRejection: ${reason}`); });
+
+// Manual trigger: pm2 sendSignal SIGUSR2 front-continuous-scheduler
+process.on('SIGUSR2', () => {
+  try {
+    logLine('Received SIGUSR2: triggering immediate run.');
+    if (scheduledTimer) clearTimeout(scheduledTimer);
+    scheduledTimer = setTimeout(runOnce, 0);
+  } catch {}
+});

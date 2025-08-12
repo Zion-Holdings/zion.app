@@ -230,7 +230,7 @@
 
 [[scheduled.functions]]
   name = "pagespeed-insights-runner"
-  schedule = "11 */6 * * *"
+  schedule = "11 */6 * * *" # every 6 hours, offset
 
 [[scheduled.functions]]
   name = "knowledge-pack-runner"
@@ -252,10 +252,22 @@
   name = "content-freshness-score-runner"
   schedule = "7 */12 * * *"
 
-# Newly added auditors
+# Newly added intelligent automations
 [[scheduled.functions]]
-  name = "structured-data-auditor"
+  name = "anchor-links-auto-fixer"
+  schedule = "*/5 * * * *"
+
+[[scheduled.functions]]
+  name = "internal-link-graph-runner"
+  schedule = "*/5 * * * *"
+
+[[scheduled.functions]]
+  name = "component-props-docs-runner"
   schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+  name = "topics-map-runner"
+  schedule = "*/20 * * * *"
 
 [[scheduled.functions]]
   name = "robots-auditor"

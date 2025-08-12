@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-11T23:59:59.000Z",
+  "generatedAt": "2025-08-12T00:00:59.000Z",
   "functions": [
     "a11y-alt-text-runner",
     "ai-changelog-runner",
@@ -13,6 +13,7 @@
     "canonical-auditor",
     "cloud_orchestrator",
     "component-coupling-graph-runner",
+    "component-props-docs-runner",
     "component-size-report",
     "continuous-front-runner",
     "continuous-orchestrator",
@@ -75,9 +76,9 @@
     "site-crawler",
     "sitemap_runner",
     "stale-content-auditor-runner",
-    "structured-data-auditor",
     "todo-scanner-runner",
     "todo-summary-runner",
+    "topics-map-runner",
     "trigger-all-and-commit",
     "ui-enhancer",
     "ultrafast-front-orchestrator",
