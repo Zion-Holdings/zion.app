@@ -359,6 +359,29 @@ export default function Home() {
             <Link href="/site-health"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Site Health — audits & insights</span></a></Link>
           </div>
         </section>
+
+        {/* Live GitHub Actions */}
+        <section className="mx-auto max-w-7xl px-6 pb-24">
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Live GitHub Actions</h2>
+          <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Autonomous workflows running in the cloud and syncing changes back to the repository.</p>
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { file: 'front-hyper-refresh.yml', title: 'Front Hyper Refresh', desc: 'Ultra-fast homepage and front index updates (every 2m).'},
+              { file: 'code-intel-sweeper.yml', title: 'Code Intelligence Sweeper', desc: 'Dead code, code smells, and broken images (every 5m).'},
+              { file: 'media-optimizer.yml', title: 'Media Optimizer', desc: 'Optimizes images and assets to keep the site fast (every 15m).'},
+              { file: 'docs-knowledge-synth.yml', title: 'Docs & Knowledge Synthesizer', desc: 'Generates component props docs and docs index (every 30m).'},
+            ].map((w) => (
+              <a key={w.file} href={`https://github.com/Zion-Holdings/zion.app/actions/workflows/${w.file}`} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <div className="text-lg font-semibold">{w.title}</div>
+                <p className="mt-1 text-sm text-white/75">{w.desc}</p>
+                <img alt={`${w.title} status`} className="mt-3 h-5 opacity-90" src={`https://github.com/Zion-Holdings/zion.app/actions/workflows/${w.file}/badge.svg`} />
+                <div className="mt-2 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+              </a>
+            ))}
+          </div>
+        </section>
+
 /* AUTO-GENERATED: HOME_VISIONARY_END */
 </main>
     </div>

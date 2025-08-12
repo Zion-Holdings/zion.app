@@ -184,6 +184,26 @@ export default function MainFrontIndex() {
               </div>
             </div>
 
+            {/* Live GitHub Actions */}
+            <div className="mx-auto mt-6 max-w-6xl">
+              <div className="mb-2 text-xs uppercase tracking-wide text-white/60 text-center">Live GitHub Actions</div>
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                {[
+                  { file: 'front-hyper-refresh.yml', title: 'Front Hyper Refresh' },
+                  { file: 'code-intel-sweeper.yml', title: 'Code Intelligence Sweeper' },
+                  { file: 'media-optimizer.yml', title: 'Media Optimizer' },
+                  { file: 'docs-knowledge-synth.yml', title: 'Docs & Knowledge Synth' },
+                ].map((w) => (
+                  <a key={w.file} href={`https://github.com/Zion-Holdings/zion.app/actions/workflows/${w.file}`} target="_blank" rel="noopener" className="group rounded-lg border border-white/10 bg-white/5 px-4 py-3 hover:bg-white/10">
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="text-sm text-white/85">{w.title}</div>
+                      <img alt={`${w.title} status`} className="h-5 opacity-90" src={`https://github.com/Zion-Holdings/zion.app/actions/workflows/${w.file}/badge.svg`} />
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+
             {/* Live metrics strip */}
             <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
               {[

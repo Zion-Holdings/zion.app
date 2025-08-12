@@ -30,13 +30,17 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 - /site-health
 
 ### Automations
-- [Automation Advertiser](https://github.com/Zion-Holdings/zion/actions/workflows/automation-advertiser.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/automation-advertiser.yml/badge.svg)
-- [Knowledge Graph Radar](https://github.com/Zion-Holdings/zion/actions/workflows/knowledge-graph-radar.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/knowledge-graph-radar.yml/badge.svg)
-- [Netlify Config](https://github.com/Zion-Holdings/zion/actions/workflows/netlify-config.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/netlify-config.yml/badge.svg)
-- [Netlify Functions Trigger](https://github.com/Zion-Holdings/zion/actions/workflows/netlify-functions-trigger.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/netlify-functions-trigger.yml/badge.svg)
-- [Readme Auto Advertiser](https://github.com/Zion-Holdings/zion/actions/workflows/readme-auto-advertiser.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/readme-auto-advertiser.yml/badge.svg)
-- [Site Health Guardian](https://github.com/Zion-Holdings/zion/actions/workflows/site-health-guardian.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/site-health-guardian.yml/badge.svg)
-- [Ultra Rapid Sync](https://github.com/Zion-Holdings/zion/actions/workflows/ultra-rapid-sync.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ultra-rapid-sync.yml/badge.svg)
+- [Automation Advertiser](https://github.com/Zion-Holdings/zion.app/actions/workflows/automation-advertiser.yml) ![status](https://github.com/Zion-Holdings/zion.app/actions/workflows/automation-advertiser.yml/badge.svg)
+- [Knowledge Graph Radar](https://github.com/Zion-Holdings/zion.app/actions/workflows/knowledge-graph-radar.yml) ![status](https://github.com/Zion-Holdings/zion.app/actions/workflows/knowledge-graph-radar.yml/badge.svg)
+- [Netlify Config](https://github.com/Zion-Holdings/zion.app/actions/workflows/netlify-config.yml) ![status](https://github.com/Zion-Holdings/zion.app/actions/workflows/netlify-config.yml/badge.svg)
+- [Netlify Functions Trigger](https://github.com/Zion-Holdings/zion.app/actions/workflows/netlify-functions-trigger.yml) ![status](https://github.com/Zion-Holdings/zion.app/actions/workflows/netlify-functions-trigger.yml/badge.svg)
+- [Readme Auto Advertiser](https://github.com/Zion-Holdings/zion.app/actions/workflows/readme-auto-advertiser.yml) ![status](https://github.com/Zion-Holdings/zion.app/actions/workflows/readme-auto-advertiser.yml/badge.svg)
+- [Site Health Guardian](https://github.com/Zion-Holdings/zion.app/actions/workflows/site-health-guardian.yml) ![status](https://github.com/Zion-Holdings/zion.app/actions/workflows/site-health-guardian.yml/badge.svg)
+- [Ultra Rapid Sync](https://github.com/Zion-Holdings/zion.app/actions/workflows/ultra-rapid-sync.yml) ![status](https://github.com/Zion-Holdings/zion.app/actions/workflows/ultra-rapid-sync.yml/badge.svg)
+- [Front Hyper Refresh](https://github.com/Zion-Holdings/zion.app/actions/workflows/front-hyper-refresh.yml) ![status](https://github.com/Zion-Holdings/zion.app/actions/workflows/front-hyper-refresh.yml/badge.svg)
+- [Code Intelligence Sweeper](https://github.com/Zion-Holdings/zion.app/actions/workflows/code-intel-sweeper.yml) ![status](https://github.com/Zion-Holdings/zion.app/actions/workflows/code-intel-sweeper.yml/badge.svg)
+- [Media Optimizer](https://github.com/Zion-Holdings/zion.app/actions/workflows/media-optimizer.yml) ![status](https://github.com/Zion-Holdings/zion.app/actions/workflows/media-optimizer.yml/badge.svg)
+- [Docs & Knowledge Synthesizer](https://github.com/Zion-Holdings/zion.app/actions/workflows/docs-knowledge-synth.yml) ![status](https://github.com/Zion-Holdings/zion.app/actions/workflows/docs-knowledge-synth.yml/badge.svg)
 
 ### Local Development
 1. Install Node 20+ and npm 10+.

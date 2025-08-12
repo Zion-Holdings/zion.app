@@ -77,6 +77,26 @@ function generateBadge(label, message, color) {
   return `![${label}: ${message}](${url})`;
 }
 
+const NEW_WORKFLOWS = [
+  ['Front Hyper Refresh', 'front-hyper-refresh.yml'],
+  ['Code Intelligence Sweeper', 'code-intel-sweeper.yml'],
+  ['Media Optimizer', 'media-optimizer.yml'],
+  ['Docs & Knowledge Synthesizer', 'docs-knowledge-synth.yml'],
+];
+
+function workflowBadgeLine([title, file]) {
+  const base = 'https://github.com/Zion-Holdings/zion.app/actions/workflows/' + file;
+  return `- [${title}](${base}) ![status](${base}/badge.svg)`;
+}
+
+function injectNewWorkflows(readme) {
+  const marker = '### Automations';
+  const idx = readme.indexOf(marker);
+  if (idx === -1) return readme;
+  const lines = NEW_WORKFLOWS.map(workflowBadgeLine).join('\n');
+  return readme.replace(marker, `${marker}\n${lines}\n`);
+}
+
 function main() {
   const pkg = readJson(path.join(process.cwd(), 'package.json')) || {};
   const name = pkg.name || 'zion.app';
@@ -150,3 +170,5 @@ function main() {
 if (require.main === module) {
   main();
 }
+
+module.exports = { injectNewWorkflows };

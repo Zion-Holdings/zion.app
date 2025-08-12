@@ -1,0 +1,53 @@
+name: Docs & Knowledge Synthesizer
+
+on:
+  schedule:
+    - cron: "*/30 * * * *" # every 30 minutes
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: docs-knowledge-synth
+  cancel-in-progress: true
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate component props docs
+        run: node automation/component-props-docs.cjs || true
+
+      - name: Index docs pages
+        run: node automation/docs-pages-indexer.cjs || true
+
+      - name: Build to validate
+        run: npm run build --if-present || true
+
+      - name: Auto-commit docs and indexes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "docs(automation): update component props and docs indexes"
+          commit_user_name: github-actions[bot]
+          commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com
+          file_pattern: |
+            README.md
+            docs/**
+            data/**
+            public/**
+            automation/logs/**

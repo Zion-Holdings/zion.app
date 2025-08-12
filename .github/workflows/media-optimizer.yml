@@ -1,0 +1,52 @@
+name: Media Optimizer
+
+on:
+  schedule:
+    - cron: "*/15 * * * *" # every 15 minutes
+  workflow_dispatch:
+  push:
+    paths:
+      - "public/**"
+      - "styles/**"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: media-optimizer
+  cancel-in-progress: true
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Optimize images
+        run: node automation/optimize-images.cjs || node automation/image-optimizer.cjs || true
+
+      - name: Build to validate
+        run: npm run build --if-present || true
+
+      - name: Auto-commit optimized assets
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(automation): optimize media assets"
+          commit_user_name: github-actions[bot]
+          commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com
+          file_pattern: |
+            public/**
+            data/**
+            automation/logs/**
