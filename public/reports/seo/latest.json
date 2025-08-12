@@ -46,6 +46,14 @@
     ]
   },
   {
+    "file": "/reports/roadmap.tsx",
+    "title": "Autonomous Roadmap",
+    "description": "Auto-generated roadmap of cloud automations.",
+    "issues": [
+      "Description length suboptimal (44)"
+    ]
+  },
+  {
     "file": "/reports/seo.tsx",
     "title": null,
     "description": null,
