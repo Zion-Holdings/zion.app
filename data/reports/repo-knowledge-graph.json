@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-12T07:06:36.374Z",
+  "generatedAt": "2025-08-12T12:40:50.400Z",
   "nodes": [
     {
       "id": "automation/a11y-alt-text-auditor.cjs",
@@ -223,14 +223,6 @@
     },
     {
       "id": "automation/orphan-pages-detector.cjs",
-      "type": "file"
-    },
-    {
-      "id": "automation/pm2/front-scheduler.cjs",
-      "type": "file"
-    },
-    {
-      "id": "automation/pm2/guardian-scheduler.cjs",
       "type": "file"
     },
     {
@@ -1293,36 +1285,6 @@
     {
       "from": "automation/orphan-pages-detector.cjs",
       "to": "path",
-      "kind": "external"
-    },
-    {
-      "from": "automation/pm2/front-scheduler.cjs",
-      "to": "child_process",
-      "kind": "external"
-    },
-    {
-      "from": "automation/pm2/front-scheduler.cjs",
-      "to": "path",
-      "kind": "external"
-    },
-    {
-      "from": "automation/pm2/front-scheduler.cjs",
-      "to": "fs",
-      "kind": "external"
-    },
-    {
-      "from": "automation/pm2/guardian-scheduler.cjs",
-      "to": "child_process",
-      "kind": "external"
-    },
-    {
-      "from": "automation/pm2/guardian-scheduler.cjs",
-      "to": "path",
-      "kind": "external"
-    },
-    {
-      "from": "automation/pm2/guardian-scheduler.cjs",
-      "to": "fs",
       "kind": "external"
     },
     {
