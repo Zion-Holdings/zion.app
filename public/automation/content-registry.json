@@ -1,85 +1,11 @@
 {
-  "pages": [
+  "items": [
     {
-      "file": "pages/site-health.tsx",
-      "route": "/site-health"
-    },
-    {
-      "file": "pages/newsroom.tsx",
-      "route": "/newsroom"
-    },
-    {
-      "file": "pages/index.tsx",
-      "route": "/"
-    },
-    {
-      "file": "pages/reports/seo.tsx",
-      "route": "/reports/seo"
-    },
-    {
-      "file": "pages/reports/roadmap.tsx",
-      "route": "/reports/roadmap"
-    },
-    {
-      "file": "pages/reports/ai-trends.tsx",
-      "route": "/reports/ai-trends"
-    },
-    {
-      "file": "pages/front/index.tsx",
-      "route": "/front"
-    },
-    {
-      "file": "pages/automation/index.tsx",
-      "route": "/automation"
-    },
-    {
-      "file": "pages/reports/updates/update-2025-08-12-1915.tsx",
-      "route": "/reports/updates/update-2025-08-12-1915"
-    },
-    {
-      "file": "pages/reports/updates/update-2025-08-12-1851.tsx",
-      "route": "/reports/updates/update-2025-08-12-1851"
-    },
-    {
-      "file": "pages/reports/updates/update-2025-08-12-1846.tsx",
-      "route": "/reports/updates/update-2025-08-12-1846"
-    },
-    {
-      "file": "pages/reports/updates/update-2025-08-12-1842.tsx",
-      "route": "/reports/updates/update-2025-08-12-1842"
-    },
-    {
-      "file": "pages/reports/updates/update-2025-08-12-1831.tsx",
-      "route": "/reports/updates/update-2025-08-12-1831"
-    },
-    {
-      "file": "pages/reports/updates/update-2025-08-12-1730.tsx",
-      "route": "/reports/updates/update-2025-08-12-1730"
-    },
-    {
-      "file": "pages/reports/updates/update-2025-08-12-1530.tsx",
-      "route": "/reports/updates/update-2025-08-12-1530"
-    },
-    {
-      "file": "pages/reports/updates/update-2025-08-12-1500.tsx",
-      "route": "/reports/updates/update-2025-08-12-1500"
-    },
-    {
-      "file": "pages/reports/updates/update-2025-08-12-1432.tsx",
-      "route": "/reports/updates/update-2025-08-12-1432"
-    },
-    {
-      "file": "pages/reports/updates/update-2025-08-12-1431.tsx",
-      "route": "/reports/updates/update-2025-08-12-1431"
-    },
-    {
-      "file": "pages/reports/updates/update-2025-08-12-1417.tsx",
-      "route": "/reports/updates/update-2025-08-12-1417"
-    },
-    {
-      "file": "pages/main/front/index.tsx",
-      "route": "/main/front"
+      "id": "cursor-chat-2025-08-12T22:50:05.093Z",
+      "type": "cursor-chat",
+      "timestamp": "2025-08-12T22:50:05.093Z"
     }
+<<<<<<< Updated upstream
   ],
   "docs": [
     {
@@ -119,5 +45,8 @@
   "generatedAt": "2025-08-12T22:49:38.010Z"
 =======
   "generatedAt": "2025-08-12T22:50:00.529Z"
+>>>>>>> Stashed changes
+=======
+  ]
 >>>>>>> Stashed changes
 }
