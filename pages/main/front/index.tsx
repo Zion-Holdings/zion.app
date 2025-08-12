@@ -461,7 +461,7 @@ export default function MainFrontIndex() {
               { label: 'SEO Audit Runner', desc: 'Analyzes meta and content signals; writes public report.', href: '/.netlify/functions/seo-audit-runner' },
               { label: 'AI Trends Radar', desc: 'Builds AI trends report from curated sources.', href: '/.netlify/functions/ai-trends-radar-runner' },
               { label: 'Dependency Auto‑Upgrade', desc: 'Safely bumps deps and verifies a clean build.', href: '/.netlify/functions/deps-auto-upgrade-runner' },
-              { label: 'Internal Link Graph', desc: 'Builds and publishes the repo's internal link graph.', href: '/.netlify/functions/internal-link-graph-runner' },
+              { label: 'Internal Link Graph', desc: "Builds and publishes the repo's internal link graph.", href: '/.netlify/functions/internal-link-graph-runner' },
               { label: 'PageSpeed Insights', desc: 'Captures core web vitals snapshots for the site.', href: '/.netlify/functions/pagespeed-insights-runner' },
               { label: 'Content Freshness', desc: 'Ranks pages by recency using git history.', href: '/.netlify/functions/content-freshness-score-runner' },
               { label: 'Anchor Links Auditor', desc: 'Finds missing in-page anchors in exported HTML.', href: '/.netlify/functions/anchor-links-auto-fixer' }
