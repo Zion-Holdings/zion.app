@@ -1758,6 +1758,14 @@ export default function MainFrontIndex() {
   <div className="text-base font-semibold">AI Trends</div>
   <div className="mt-1 text-sm text-white/75">Intelligence signals</div>
   <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+              <Link href="/reports/a11y"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">A11y Alt Text Auditor</div>
+  <div className="mt-1 text-sm text-white/75">Find missing alt text</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+              <Link href="/reports/metadata"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">Metadata Optimizer</div>
+  <div className="mt-1 text-sm text-white/75">Missing meta tags</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
               <Link href="/newsroom"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
   <div className="text-base font-semibold">Newsroom</div>
   <div className="mt-1 text-sm text-white/75">Latest autonomous updates</div>
@@ -1785,22 +1793,6 @@ export default function MainFrontIndex() {
               <Link href="/newsroom"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
   <div className="text-base font-semibold">AI Changelog — highlights</div>
   <div className="mt-1 text-sm text-white/75">Summarized updates</div>
-  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
-              <Link href="/.netlify/functions/topic-cluster-builder-runner"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
-  <div className="text-base font-semibold">Topic Cluster Builder</div>
-  <div className="mt-1 text-sm text-white/75">Clusters content and code topics</div>
-  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
-              <Link href="/.netlify/functions/unused-media-scanner"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
-  <div className="text-base font-semibold">Unused Media Scanner</div>
-  <div className="mt-1 text-sm text-white/75">Find and report unreferenced assets</div>
-  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
-              <Link href="/.netlify/functions/orphan-pages-detector"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
-  <div className="text-base font-semibold">Orphan Pages Detector</div>
-  <div className="mt-1 text-sm text-white/75">Discover pages with no inbound links</div>
-  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
-              <Link href="/.netlify/functions/component-size-report"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
-  <div className="text-base font-semibold">Component Size Report</div>
-  <div className="mt-1 text-sm text-white/75">Largest components by lines and bytes</div>
   <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
   </div>
 </section>

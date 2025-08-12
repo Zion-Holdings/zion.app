@@ -1,6 +1,6 @@
 # Autonomous Automations Roadmap
 
-Last updated: 2025-08-12T12:41:13.741Z
+Last updated: 2025-08-12T22:54:24.239Z
 
 ## Active Scheduled Cloud Functions
 
@@ -16,12 +16,11 @@ Last updated: 2025-08-12T12:41:13.741Z
 | autonomous-meta-orchestrator | */1 * * * * |
 | broken-image-scanner | 0 */6 * * * |
 | broken-image-scanner-runner | 17 */6 * * * |
-| canonical-auditor | */60 * * * * |
 | cloud_orchestrator | 0 */4 * * * |
 | code-smell-audit-runner | 23 */6 * * * |
 | component-coupling-graph-runner | 29 */6 * * * |
 | component-size-report | */5 * * * * |
-| content-freshness-score-runner | 7 */12 * * * |
+| content-freshness-score-runner | */10 * * * * |
 | continuous-front-runner | */3 * * * * |
 | continuous-orchestrator | */5 * * * * |
 | dead-code-report | 7 */6 * * * |
@@ -56,12 +55,12 @@ Last updated: 2025-08-12T12:41:13.741Z
 | og-image-update-runner | 47 */6 * * * |
 | orphan-pages-detector | */15 * * * * |
 | pagespeed-insights-runner | 11 */6 * * * |
+| pagespeed-insights-runner | 11 */6 * * * |
 | readme-advertiser | 13 */6 * * * |
 | repo-knowledge-graph-runner | 23 */6 * * * |
 | repo-radar-runner | 43 */6 * * * |
 | revenue-ideas-lab | 7 */6 * * * |
 | roadmap-curator | */30 * * * * |
-| robots-auditor | 0 */6 * * * |
 | security-audit-runner | 19 */6 * * * |
 | seo-audit-runner | 0 */2 * * * |
 | site-404-map-runner | 17 */6 * * * |
@@ -69,8 +68,6 @@ Last updated: 2025-08-12T12:41:13.741Z
 | stale-content-auditor-runner | 17 */6 * * * |
 | todo-scanner-runner | 13 */6 * * * |
 | todo-summary-runner | */30 * * * * |
-| topic-cluster-builder-runner | 13 */6 * * * |
-| topics-map-runner | */20 * * * * |
 | trigger-all-and-commit | */1 * * * * |
 | ultrafast-front-orchestrator | */5 * * * * |
 | ultrafast-orchestrator | */1 * * * * |
@@ -90,7 +87,6 @@ Last updated: 2025-08-12T12:41:13.741Z
 - autonomous-meta-orchestrator
 - broken-image-scanner
 - broken-image-scanner-runner
-- canonical-auditor
 - cloud_orchestrator
 - code-smell-audit-runner
 - component-coupling-graph-runner
@@ -151,7 +147,6 @@ Last updated: 2025-08-12T12:41:13.741Z
 - repo-radar-runner
 - revenue-ideas-lab
 - roadmap-curator
-- robots-auditor
 - schedule-content-index
 - schedule-homepage
 - schedule-knowledge-graph
