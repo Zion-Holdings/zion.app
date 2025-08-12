@@ -57,3 +57,9 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 
 ---
 This README is auto-generated. Do not edit manually.
+
+## New Cloud Cron Automations
+
+- Intelligent Orchestrator (1m): /.netlify/functions/intelligent-orchestrator
+- Anomaly Watchdog (10m): /.netlify/functions/anomaly-watchdog
+- Pulse Sync (1m): /.netlify/functions/pulse-sync

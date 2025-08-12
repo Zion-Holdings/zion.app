@@ -297,3 +297,15 @@
 [[scheduled.functions]]
   name = "duplicate-media-finder-runner"
   schedule = "0 2 * * *"
+
+[[scheduled.functions]]
+  name = "intelligent-orchestrator"
+  schedule = "*/1 * * * *" # every minute
+
+[[scheduled.functions]]
+  name = "anomaly-watchdog"
+  schedule = "*/10 * * * *" # every 10 minutes
+
+[[scheduled.functions]]
+  name = "pulse-sync"
+  schedule = "*/1 * * * *" # every minute
