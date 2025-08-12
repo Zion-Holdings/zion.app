@@ -35,8 +35,8 @@ jobs:
       - name: Trigger agent-of-agents (if base URL provided)
         if: ${{ env.NETLIFY_BASE_URL != '' }}
         run: |
-          curl -sS -m 20 "$NETLIFY_BASE_URL/.netlify/functions/agent-of-agents" || true
+          curl -sS -m 20 "/.netlify/functions/agent-of-agents" || true
 
-      - name: Fallback: Trigger via manifest fanout
+      - name: "Fallback: Trigger via manifest fanout"
         if: ${{ env.NETLIFY_BASE_URL == '' }}
         run: npm run netlify:trigger -- --only agent-of-agents --timeout 20000
