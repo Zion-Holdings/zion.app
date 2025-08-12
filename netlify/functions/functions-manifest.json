@@ -1,8 +1,7 @@
 {
-  "generatedAt": "2025-08-11T23:56:22.519Z",
+  "generatedAt": "2025-08-11T23:59:59.000Z",
   "functions": [
     "a11y-alt-text-runner",
-    "adaptive-orchestrator",
     "ai-changelog-runner",
     "ai-trends-radar-runner",
     "auto-discovery-runner",
@@ -11,10 +10,10 @@
     "autonomous-invention-orchestrator",
     "broken-image-scanner",
     "broken-image-scanner-runner",
+    "canonical-auditor",
     "cloud_orchestrator",
     "component-coupling-graph-runner",
     "component-size-report",
-    "content-freshness-score-runner",
     "continuous-front-runner",
     "continuous-orchestrator",
     "dead-code-audit",
@@ -46,7 +45,6 @@
     "image-optimizer-runner",
     "innovation-lab",
     "knowledge-pack-runner",
-    "license-compliance-auditor",
     "link-and-health-scheduler",
     "link-crawler",
     "maintenance-scheduler",
@@ -77,13 +75,13 @@
     "site-crawler",
     "sitemap_runner",
     "stale-content-auditor-runner",
+    "structured-data-auditor",
     "todo-scanner-runner",
     "todo-summary-runner",
     "trigger-all-and-commit",
     "ui-enhancer",
     "ultrafast-front-orchestrator",
     "ultrafast-orchestrator",
-    "unused-exports-runner",
     "unused-media-scanner"
   ]
 }

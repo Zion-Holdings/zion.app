@@ -7,19 +7,23 @@ function runNode(relPath, args = []) {
   return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
 }
 
+exports.config = {
+  schedule: '*/60 * * * *',
+};
+
 exports.handler = async () => {
   const logs = [];
-  function logStep(name, fn) {
+  function step(name, rel, args = []) {
     logs.push(`\n=== ${name} ===`);
-    const { status, stdout, stderr } = fn();
+    const { status, stdout, stderr } = runNode(rel, args);
     if (stdout) logs.push(stdout);
     if (stderr) logs.push(stderr);
     logs.push(`exit=${status}`);
     return status;
   }
 
-  logStep('unused-exports:report', () => runNode('scripts/automations/unused_exports_report.cjs'));
-  logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
+  step('canonical:audit', 'automation/canonical-auditor.cjs');
+  step('git:sync', 'automation/advanced-git-sync.cjs');
 
   return { statusCode: 200, body: logs.join('\n') };
 };

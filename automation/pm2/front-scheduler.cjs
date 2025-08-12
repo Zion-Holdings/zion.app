@@ -12,6 +12,22 @@ if (!fs.existsSync(logsDir)) {
   fs.mkdirSync(logsDir, { recursive: true });
 }
 
+// --- Configuration (via env with sane defaults) ---
+const BASE_INTERVAL_MINUTES = Number(process.env.FRONT_SCHEDULER_INTERVAL_MINUTES || 5);
+const MIN_INTERVAL_MS = Math.max(30_000, Number(process.env.FRONT_MIN_INTERVAL_MS || 30_000));
+const MAX_INTERVAL_MINUTES = Number(process.env.FRONT_MAX_INTERVAL_MINUTES || 30);
+const BACKOFF_MULTIPLIER = Number(process.env.FRONT_BACKOFF_MULTIPLIER || 1.5);
+const BACKOFF_RESET_RATIO = Number(process.env.FRONT_BACKOFF_RESET_RATIO || 0.5); // decay towards base on success
+const JITTER_PCT = Math.min(0.5, Math.max(0, Number(process.env.FRONT_JITTER_PCT || 0.1))); // 0..0.5
+const MAX_CONSECUTIVE_FAILURES = Number(process.env.FRONT_MAX_CONSECUTIVE_FAILURES || 6);
+const COOLDOWN_MINUTES = Number(process.env.FRONT_COOLDOWN_MINUTES || 30);
+const DISABLED = ['1', 'true', 'yes'].includes(String(process.env.DISABLE_FRONT_SCHEDULER || '').toLowerCase());
+
+const BASE_INTERVAL_MS = BASE_INTERVAL_MINUTES * 60 * 1000;
+const MAX_INTERVAL_MS = Math.max(BASE_INTERVAL_MS, MAX_INTERVAL_MINUTES * 60 * 1000);
+
+const statusFilePath = path.join(logsDir, 'schedulers-status.json');
+
 function ensureDeps() {
   const nodeModules = path.join(rootDir, 'node_modules');
   const lockFile = path.join(rootDir, 'package-lock.json');
@@ -22,6 +38,30 @@ function ensureDeps() {
 
 let isRunning = false;
 let currentChild = null;
+let scheduledTimer = null;
+let currentIntervalMs = BASE_INTERVAL_MS;
+let consecutiveFailures = 0;
+let inCooldownUntil = 0;
+
+function readStatus() {
+  try {
+    const text = fs.readFileSync(statusFilePath, 'utf8');
+    return JSON.parse(text);
+  } catch {
+    return {};
+  }
+}
+
+function writeStatus(partial) {
+  try {
+    const all = readStatus();
+    all['front-continuous-scheduler'] = {
+      ...(all['front-continuous-scheduler'] || {}),
+      ...partial
+    };
+    fs.writeFileSync(statusFilePath, JSON.stringify(all, null, 2));
+  } catch {}
+}
 
 function logLine(message) {
   try {
@@ -35,19 +75,53 @@ function logErr(message) {
   } catch {}
 }
 
+function withJitter(ms) {
+  const jitter = Math.floor(ms * JITTER_PCT * (Math.random() * 2 - 1));
+  return Math.max(MIN_INTERVAL_MS, ms + jitter);
+}
+
+function scheduleNext(reason) {
+  const nextMs = withJitter(currentIntervalMs);
+  const nextAt = new Date(Date.now() + nextMs).toISOString();
+  writeStatus({ nextRunAt: nextAt, nextIntervalMs: nextMs, reasonForNext: reason || 'scheduled' });
+  if (scheduledTimer) clearTimeout(scheduledTimer);
+  scheduledTimer = setTimeout(runOnce, nextMs);
+}
+
 function runOnce() {
+  if (DISABLED) {
+    logLine('Front scheduler disabled via env. Skipping run.');
+    scheduleNext('disabled');
+    return;
+  }
+
+  const now = Date.now();
+  if (inCooldownUntil && now < inCooldownUntil) {
+    const msLeft = inCooldownUntil - now;
+    logErr(`In cooldown for another ${msLeft} ms due to repeated failures.`);
+    writeStatus({ cooldownUntil: new Date(inCooldownUntil).toISOString() });
+    if (scheduledTimer) clearTimeout(scheduledTimer);
+    scheduledTimer = setTimeout(runOnce, Math.max(MIN_INTERVAL_MS, msLeft));
+    return;
+  }
+
   if (isRunning) {
     logLine('Skip: previous run still active');
+    scheduleNext('still-active');
     return;
   }
   isRunning = true;
   ensureDeps();
+
+  const startedAt = Date.now();
   const script = path.join(rootDir, 'automation', 'continuous-front-runner.cjs');
   currentChild = spawn(process.execPath, [script], { stdio: 'inherit', env: process.env });
 
   const timeoutMs = Number(process.env.FRONT_RUN_TIMEOUT_MS || 4.5 * 60 * 1000);
+  let timedOut = false;
   const killTimer = setTimeout(() => {
     if (currentChild) {
+      timedOut = true;
       logErr(`Timeout reached (${timeoutMs} ms). Killing child process.`);
       try { currentChild.kill('SIGTERM'); } catch {}
       setTimeout(() => { try { currentChild.kill('SIGKILL'); } catch {} }, 5000);
@@ -56,25 +130,57 @@ function runOnce() {
 
   currentChild.on('exit', (code, signal) => {
     clearTimeout(killTimer);
-    if (code !== 0) {
-      logErr(`front runner exited with code ${code}, signal ${signal || 'none'}`);
+    const endedAt = Date.now();
+    const durationMs = endedAt - startedAt;
+    const success = code === 0 && !timedOut;
+
+    if (!success) {
+      logErr(`front runner exited with code ${code}, signal ${signal || 'none'}, timedOut=${timedOut}`);
+      consecutiveFailures += 1;
+      currentIntervalMs = Math.min(MAX_INTERVAL_MS, Math.floor(currentIntervalMs * BACKOFF_MULTIPLIER));
+      if (consecutiveFailures >= MAX_CONSECUTIVE_FAILURES) {
+        const cooldownMs = COOLDOWN_MINUTES * 60 * 1000;
+        inCooldownUntil = Date.now() + cooldownMs;
+        logErr(`Entering cooldown for ${cooldownMs} ms after ${consecutiveFailures} consecutive failures.`);
+      }
+    } else {
+      consecutiveFailures = 0;
+      // Decay interval towards base when healthy
+      const target = Math.max(BASE_INTERVAL_MS, Math.floor(currentIntervalMs * (1 - BACKOFF_RESET_RATIO)));
+      currentIntervalMs = Math.max(BASE_INTERVAL_MS, Math.min(currentIntervalMs, target));
     }
+
+    writeStatus({
+      lastRun: {
+        startedAt: new Date(startedAt).toISOString(),
+        endedAt: new Date(endedAt).toISOString(),
+        durationMs,
+        exitCode: code,
+        signal: signal || null,
+        timedOut: Boolean(timedOut),
+        success
+      },
+      scheduler: {
+        currentIntervalMs,
+        baseIntervalMs: BASE_INTERVAL_MS,
+        maxIntervalMs: MAX_INTERVAL_MS,
+        consecutiveFailures,
+        processRssBytes: process.memoryUsage().rss
+      }
+    });
+
     isRunning = false;
     currentChild = null;
+    scheduleNext(success ? 'success' : 'failure');
   });
 }
 
 // Run immediately on start
 runOnce();
 
-// Then run on interval (default 5 minutes)
-const intervalMinutes = Number(process.env.FRONT_SCHEDULER_INTERVAL_MINUTES || 5);
-const intervalMs = Math.max(30_000, intervalMinutes * 60 * 1000);
-const intervalHandle = setInterval(runOnce, intervalMs);
-
 function shutdown(signal) {
   logLine(`Received ${signal}. Shutting down scheduler.`);
-  try { clearInterval(intervalHandle); } catch {}
+  try { if (scheduledTimer) clearTimeout(scheduledTimer); } catch {}
   if (currentChild) {
     try { currentChild.kill('SIGTERM'); } catch {}
   }

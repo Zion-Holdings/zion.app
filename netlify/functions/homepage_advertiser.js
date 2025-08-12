@@ -1,17 +1,12 @@
 // netlify/functions/homepage_advertiser.js
-exports.handler = async () => {
+exports.handler = async function() {
   const { execSync } = require('child_process');
-  function run(cmd) { execSync(cmd, { stdio: 'inherit', shell: true }); }
   try {
-    run('node automation/homepage-auto-advertiser.cjs || true');
-    run('node automation/front-index-advertiser.cjs || true');
-    run('git config user.name "zion-bot"');
-    run('git config user.email "bot@zion.app"');
-    run('git add -A');
-    run('git commit -m "chore(home): homepage advertiser updates [skip ci]" || true');
-    run('git push origin main || true');
+    execSync('node automation/homepage-updater.cjs', { stdio: 'inherit' });
+    execSync('node automation/homepage-auto-advertiser.cjs || true', { stdio: 'inherit', shell: true });
+    execSync('git config user.name "zion-bot" && git config user.email "bot@zion.app" && git add -A && (git commit -m "chore(home): auto-update explore section [ci skip]" || true) && (git push origin main || true)', { stdio: 'inherit', shell: true });
     return { statusCode: 200, body: JSON.stringify({ ok: true, task: 'homepage_advertiser' }) };
   } catch (e) {
     return { statusCode: 200, body: JSON.stringify({ ok: false, error: String(e) }) };
   }
-}
+};

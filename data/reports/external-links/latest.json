@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2025-08-11T23:39:01.471Z",
+  "generatedAt": "2025-08-11T20:39:21.174Z",
   "total": 28,
   "bad": 0,
   "results": [
     {
-      "url": "https://techcrunch.com/2025/08/11/poshmark-ceo-and-founder-to-step-down/",
+      "url": "https://techcrunch.com/2025/08/11/trump-administration-stops-illegal-freeze-of-5b-ev-charger-funds-after-losing-in-court/",
       "statusCode": 200,
       "ok": true
     },
     {
-      "url": "https://techcrunch.com/2025/08/11/trump-administration-stops-illegal-freeze-of-5b-ev-charger-funds-after-losing-in-court/",
+      "url": "https://techcrunch.com/2025/08/11/poshmark-ceo-and-founder-to-step-down/",
       "statusCode": 200,
       "ok": true
     },
@@ -24,6 +24,11 @@
       "ok": true
     },
     {
+      "url": "https://techcrunch.com/2025/08/11/nvidia-unveils-new-cosmos-world-models-other-infra-for-physical-applications-of-ai/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
       "url": "https://techcrunch.com/2025/08/10/security-flaws-in-a-carmakers-web-portal-let-one-hacker-remotely-unlock-cars-from-anywhere/",
       "statusCode": 200,
       "ok": true
@@ -34,17 +39,12 @@
       "ok": true
     },
     {
-      "url": "https://techcrunch.com/2025/08/11/nvidia-unveils-new-cosmos-world-models-other-infra-for-physical-applications-of-ai/",
+      "url": "https://techcrunch.com/2025/08/11/revel-shuts-down-its-ride-hail-business-to-focus-on-ev-charging/",
       "statusCode": 200,
       "ok": true
     },
     {
       "url": "https://techcrunch.com/2025/08/10/after-researchers-unmasked-a-prolific-sms-scammer-a-new-operation-has-emerged-in-its-wake/",
-      "statusCode": 200,
-      "ok": true
-    },
-    {
-      "url": "https://techcrunch.com/2025/08/11/revel-shuts-down-its-ride-hail-business-to-focus-on-ev-charging/",
       "statusCode": 200,
       "ok": true
     },
@@ -59,17 +59,12 @@
       "ok": true
     },
     {
-      "url": "https://techcrunch.com/2025/08/10/truemeds-challenged-how-indians-buy-medicine-and-saw-a-3-6x-jump-in-valuation/",
-      "statusCode": 200,
-      "ok": true
-    },
-    {
       "url": "https://techcrunch.com/2025/08/11/nigeria-profitable-food-delivery-chowdeck-lands-9m-from-novastar-y-combinator/",
       "statusCode": 200,
       "ok": true
     },
     {
-      "url": "https://techcrunch.com/2025/08/10/the-computer-science-dream-has-become-a-nightmare/",
+      "url": "https://techcrunch.com/2025/08/10/truemeds-challenged-how-indians-buy-medicine-and-saw-a-3-6x-jump-in-valuation/",
       "statusCode": 200,
       "ok": true
     },
@@ -84,12 +79,17 @@
       "ok": true
     },
     {
-      "url": "https://techcrunch.com/2025/08/06/key-sections-of-the-us-constitution-deleted-from-governments-website/",
+      "url": "https://techcrunch.com/2025/08/10/the-computer-science-dream-has-become-a-nightmare/",
       "statusCode": 200,
       "ok": true
     },
     {
       "url": "https://techcrunch.com/2025/08/07/tesla-shuts-down-dojo-the-ai-training-supercomputer-that-musk-said-would-be-key-to-full-self-driving/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/06/key-sections-of-the-us-constitution-deleted-from-governments-website/",
       "statusCode": 200,
       "ok": true
     },
@@ -100,11 +100,6 @@
     },
     {
       "url": "https://techcrunch.com/2025/08/06/google-says-hackers-stole-its-customers-data-in-a-breach-of-its-salesforce-database/",
-      "statusCode": 200,
-      "ok": true
-    },
-    {
-      "url": "https://www.netlify.com/",
       "statusCode": 200,
       "ok": true
     },
@@ -129,12 +124,17 @@
       "ok": true
     },
     {
+      "url": "https://github.com/Zion-Holdings/zion.app",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
       "url": "https://github.com/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md",
       "statusCode": 200,
       "ok": true
     },
     {
-      "url": "https://github.com/Zion-Holdings/zion.app",
+      "url": "https://www.netlify.com/",
       "statusCode": 200,
       "ok": true
     },
