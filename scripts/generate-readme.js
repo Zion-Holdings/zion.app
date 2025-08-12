@@ -7,23 +7,28 @@ const glob = require('glob');
 function readJson(filePath) {
   try {
     return JSON.parse(fs.readFileSync(filePath, 'utf8'));
-  } catch (err) {
+  } catch {
     return null;
   }
 }
 
 function listWorkflows() {
-  const workflowsDir = path.join(process.cwd(), '.github', 'workflows');
-  if (!fs.existsSync(workflowsDir)) return [];
-  return fs
-    .readdirSync(workflowsDir)
-    .filter((f) => f.endsWith('.yml') || f.endsWith('.yaml'))
-    .sort();
-}
-
-function countFiles(dir, patterns) {
-  const matches = patterns.flatMap((p) => glob.sync(path.join(dir, p), { nodir: true }));
-  return matches.length;
+  const root = process.cwd();
+  const dirs = [path.join(root, '.github', 'workflows'), path.join(root, '.github')];
+  const files = [];
+  for (const dir of dirs) {
+    if (!fs.existsSync(dir)) continue;
+    for (const f of fs.readdirSync(dir)) {
+      if (!f.match(/\.(ya?ml)$/)) continue;
+      // Skip dependabot to focus on autonomous repo workflows
+      if (f.toLowerCase().includes('dependabot')) continue;
+      const key = `${dir}/${f}`;
+      if (!files.includes(key)) files.push(key);
+    }
+  }
+  return files
+    .map((full) => ({ full, name: path.basename(full) }))
+    .sort((a, b) => a.name.localeCompare(b.name));
 }
 
 function collectPagesSummary() {
@@ -51,9 +56,21 @@ function collectComponentsSummary() {
   return { total: files.length };
 }
 
+function getRepoSlug() {
+  const pkg = readJson(path.join(process.cwd(), 'package.json')) || {};
+  const url = (pkg.repository && pkg.repository.url) || '';
+  const m = url.match(/github.com[:/]+([^/]+)\/([^.]+)(?:\.git)?/i);
+  if (m) return `${m[1]}/${m[2]}`;
+  return '';
+}
+
 function collectAutomations() {
-  const files = listWorkflows();
-  return files.map((f) => `- ${f}`);
+  const repoSlug = getRepoSlug();
+  const items = listWorkflows();
+  return items.map(({ name }) => {
+    const href = repoSlug ? `https://github.com/${repoSlug}/actions/workflows/${name}` : '#';
+    return `- [${name}](${href})`;
+  });
 }
 
 function generateBadge(label, message, color) {

@@ -31,6 +31,8 @@
     "netlify:trigger": "node scripts/trigger-netlify-automations.cjs",
     "readme:generate": "node scripts/generate-readme.js",
     "search:index": "node scripts/generate-search-index.js",
+    "actions:catalog": "node scripts/generate-actions-catalog.js",
+    "front:actions": "node automation/front-actions-advertiser.cjs",
     "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev",
     "build": "NODE_OPTIONS=--openssl-legacy-provider next build",
     "prebuild": "npm run netlify:manifest",
