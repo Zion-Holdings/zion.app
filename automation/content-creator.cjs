@@ -133,7 +133,22 @@ function updateHomepage() {
     '   </div>',
     ' </section>',
     ' ', END].join('\n');
-  const updated = content.replace(new RegExp(`${START}[\s\S]*?${END}`), section);
+
+  const startIdx = content.indexOf(START);
+  const endIdx = content.indexOf(END);
+  if (startIdx === -1 || endIdx === -1 || endIdx <= startIdx) {
+    log('homepage: markers missing or invalid, reinserting');
+    content = ensureMarkers(content);
+  }
+  const s2 = content.indexOf(START);
+  const e2 = content.indexOf(END);
+  if (s2 === -1 || e2 === -1 || e2 <= s2) {
+    log('homepage: failed to ensure markers');
+    return false;
+  }
+  const before = content.slice(0, s2);
+  const after = content.slice(e2 + END.length);
+  const updated = `${before}${section}${after}`;
   if (updated !== content) { fs.writeFileSync(INDEX_PAGE, updated, 'utf8'); log('homepage: advertised latest content'); return true; }
   return false;
 }
