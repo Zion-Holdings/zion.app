@@ -82,6 +82,10 @@
   schedule = "*/1 * * * *" # every minute
 
 [[scheduled.functions]]
+  name = "agent-swarm-orchestrator"
+  schedule = "*/1 * * * *" # every minute
+
+[[scheduled.functions]]
   name = "trigger-all-and-commit"
   schedule = "*/1 * * * *" # every minute
 

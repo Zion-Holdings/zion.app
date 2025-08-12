@@ -216,6 +216,7 @@ export default function Home() {
               { title: 'AI Trends Radar', desc: 'Aggregates trending AI topics into a public report.', href: '/.netlify/functions/ai-trends-radar-runner' },
               { title: 'Dependency Auto‑Upgrade', desc: 'Safely bumps minor/patch deps with build verification.', href: '/.netlify/functions/deps-auto-upgrade-runner' },
               { title: 'Autonomous Invention Orchestrator', desc: 'Discovers opportunities and applies safe, visible changes.', href: '/.netlify/functions/autonomous-invention-orchestrator' },
+              { title: 'Agent Swarm Orchestrator (1m)', desc: 'Triggers a fast-first set of agents and syncs via build hook or GitHub commit.', href: '/.netlify/functions/agent-swarm-orchestrator' },
               { title: 'Structured Data Auditor', desc: 'Checks JSON‑LD coverage and publishes a report.', href: '/.netlify/functions/structured-data-auditor' },
               { title: 'Robots Auditor', desc: 'Validates robots.txt and sitemap linkage.', href: '/.netlify/functions/robots-auditor' },
               { title: 'Canonical Auditor', desc: 'Scans canonical tags for correctness.', href: '/.netlify/functions/canonical-auditor' },
