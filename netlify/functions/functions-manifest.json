@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-11T23:48:13.226Z",
+  "generatedAt": "2025-08-11T23:58:50.880Z",
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
@@ -61,6 +61,7 @@
     "og-image-update-runner",
     "orphan-pages-detector",
     "pagespeed-insights-runner",
+    "reading-level-runner",
     "readme-advertiser",
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
@@ -75,6 +76,7 @@
     "site-404-map-runner",
     "site-crawler",
     "sitemap_runner",
+    "spelling-terminology-runner",
     "stale-content-auditor-runner",
     "todo-scanner-runner",
     "todo-summary-runner",

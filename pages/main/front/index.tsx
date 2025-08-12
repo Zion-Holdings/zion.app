@@ -1737,6 +1737,14 @@ export default function MainFrontIndex() {
   <div className="text-base font-semibold">Component Size Report</div>
   <div className="mt-1 text-sm text-white/75">Largest components by lines and bytes</div>
   <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+              <Link href="/.netlify/functions/spelling-terminology-runner"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">Spelling & Terminology Auditor</div>
+  <div className="mt-1 text-sm text-white/75">Find brand/style inconsistencies; publish a report</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+              <Link href="/.netlify/functions/reading-level-runner"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">Reading Level Report</div>
+  <div className="mt-1 text-sm text-white/75">Assess readability across docs/pages; commit insights</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
   </div>
 </section>
 /* AUTO-GENERATED: FRONT_ADS_END */}

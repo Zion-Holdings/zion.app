@@ -25,6 +25,8 @@ function buildAds() {
     { title: 'Metadata Optimizer', desc: 'Detect missing meta tags and propose fixes', href: '/reports/metadata' },
     { title: 'Stale Content Auditor', desc: 'Find stale files and publish a live report', href: '/.netlify/functions/stale-content-auditor-runner' },
     { title: 'Unused Exports Report', desc: 'Detects unused TS/JS exports and writes reports', href: '/.netlify/functions/unused-exports-runner' },
+    { title: 'Spelling & Terminology Auditor', desc: 'Find brand/style inconsistencies; publish a report', href: '/.netlify/functions/spelling-terminology-runner' },
+    { title: 'Reading Level Report', desc: 'Assess readability across docs and pages; commit insights', href: '/.netlify/functions/reading-level-runner' },
   ];
 
   const cards = items.map((item) => (
