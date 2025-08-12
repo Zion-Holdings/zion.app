@@ -209,11 +209,7 @@
 
 [[scheduled.functions]]
   name = "deps-auto-upgrade-runner"
-<<<<<<< HEAD
   schedule = "7 */12 * * *"
-=======
-  schedule = "0 3 * * *"
->>>>>>> origin/main
 
 # New autonomous cloud scanners
 [[scheduled.functions]]
@@ -270,7 +266,6 @@
   schedule = "13 */6 * * *"
 
 [[scheduled.functions]]
-<<<<<<< HEAD
   name = "topics-map-runner"
   schedule = "*/20 * * * *"
 
@@ -294,11 +289,11 @@
 [[scheduled.functions]]
   name = "auto-discovery-runner"
   schedule = "*/15 * * * *"
-=======
+
+[[scheduled.functions]]
   name = "code-smell-audit-runner"
   schedule = "23 */6 * * *"
 
 [[scheduled.functions]]
   name = "duplicate-media-finder-runner"
   schedule = "0 2 * * *"
->>>>>>> origin/main
