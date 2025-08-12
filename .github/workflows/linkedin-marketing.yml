@@ -15,6 +15,8 @@ concurrency:
 jobs:
   linkedin_marketing:
     runs-on: ubuntu-latest
+    # Run only when required secrets are configured
+    if: ${{ secrets.LINKEDIN_ACCESS_TOKEN != '' && secrets.LINKEDIN_ORG_ID != '' }}
     env:
       LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
       LINKEDIN_ORG_ID: ${{ secrets.LINKEDIN_ORG_ID }}
