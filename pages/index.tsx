@@ -299,6 +299,78 @@ export default function Home() {
           </div>
         </section>
 
+        
+{/* AUTO-GENERATED: ACTIONS_ADS_START */}
+<section className="mx-auto max-w-7xl px-6 pb-16">
+  <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">GitHub Actions — Live Automations</h2>
+  <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Autonomous workflows running 24/7 in the cloud. No servers. No manual steps.</p>
+  <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+
+              <a key="Actions Advertiser" href="https://github.com/Zion-Holdings/zion.app/actions/workflows/actions-advertiser.yml" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <div className="text-base font-semibold">Actions Advertiser</div>
+                <div className="mt-1 text-sm text-white/75">every minute</div>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">View runs <span aria-hidden>↗</span></div>
+              </a>
+
+              <a key="Actions Health Report" href="https://github.com/Zion-Holdings/zion.app/actions/workflows/actions-health-report.yml" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <div className="text-base font-semibold">Actions Health Report</div>
+                <div className="mt-1 text-sm text-white/75">hourly</div>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">View runs <span aria-hidden>↗</span></div>
+              </a>
+
+              <a key="Automation Advertiser" href="https://github.com/Zion-Holdings/zion.app/actions/workflows/automation-advertiser.yml" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <div className="text-base font-semibold">Automation Advertiser</div>
+                <div className="mt-1 text-sm text-white/75">*/15 * * * *</div>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">View runs <span aria-hidden>↗</span></div>
+              </a>
+
+              <a key="Configure Netlify Rerun Chain" href="https://github.com/Zion-Holdings/zion.app/actions/workflows/netlify-config.yml" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <div className="text-base font-semibold">Configure Netlify Rerun Chain</div>
+                <div className="mt-1 text-sm text-white/75">on demand / repo events</div>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">View runs <span aria-hidden>↗</span></div>
+              </a>
+
+              <a key="Knowledge Graph & Radar" href="https://github.com/Zion-Holdings/zion.app/actions/workflows/knowledge-graph-radar.yml" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <div className="text-base font-semibold">Knowledge Graph & Radar</div>
+                <div className="mt-1 text-sm text-white/75">hourly</div>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">View runs <span aria-hidden>↗</span></div>
+              </a>
+
+              <a key="Netlify Functions Trigger" href="https://github.com/Zion-Holdings/zion.app/actions/workflows/netlify-functions-trigger.yml" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <div className="text-base font-semibold">Netlify Functions Trigger</div>
+                <div className="mt-1 text-sm text-white/75">hourly</div>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">View runs <span aria-hidden>↗</span></div>
+              </a>
+
+              <a key="README Auto-Advertiser" href="https://github.com/Zion-Holdings/zion.app/actions/workflows/readme-auto-advertiser.yml" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <div className="text-base font-semibold">README Auto-Advertiser</div>
+                <div className="mt-1 text-sm text-white/75">daily</div>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">View runs <span aria-hidden>↗</span></div>
+              </a>
+
+              <a key="Site Health Guardian" href="https://github.com/Zion-Holdings/zion.app/actions/workflows/site-health-guardian.yml" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <div className="text-base font-semibold">Site Health Guardian</div>
+                <div className="mt-1 text-sm text-white/75">0 */6 * * *</div>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">View runs <span aria-hidden>↗</span></div>
+              </a>
+
+              <a key="Ultra Rapid Sync" href="https://github.com/Zion-Holdings/zion.app/actions/workflows/ultra-rapid-sync.yml" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <div className="text-base font-semibold">Ultra Rapid Sync</div>
+                <div className="mt-1 text-sm text-white/75">every minute</div>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">View runs <span aria-hidden>↗</span></div>
+              </a>
+  </div>
+</section>
+{/* AUTO-GENERATED: ACTIONS_ADS_END */}
         {/* AUTO-GENERATED: HOME_UPDATER_START */}
  <section className="mx-auto max-w-7xl px-6 pb-16">
    <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Explore more</h2>

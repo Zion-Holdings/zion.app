@@ -38,6 +38,11 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 - [Site Health Guardian](https://github.com/Zion-Holdings/zion/actions/workflows/site-health-guardian.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/site-health-guardian.yml/badge.svg)
 - [Ultra Rapid Sync](https://github.com/Zion-Holdings/zion/actions/workflows/ultra-rapid-sync.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ultra-rapid-sync.yml/badge.svg)
 
+## Autonomous GitHub Actions
+
+- Actions Advertiser: updates the homepage with live links to all workflows. [View runs](https://github.com/Zion-Holdings/zion.app/actions/workflows/actions-advertiser.yml)
+- Actions Health Report: publishes `docs/actions-health.md` and `public/actions-health.json`. [View runs](https://github.com/Zion-Holdings/zion.app/actions/workflows/actions-health-report.yml)
+
 ### Local Development
 1. Install Node 20+ and npm 10+.
 2. Install deps: `npm ci`.
