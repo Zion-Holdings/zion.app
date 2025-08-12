@@ -18,24 +18,4 @@ jobs:
         uses: rhysd/actionlint@v1
       - name: Run actionlint
         run: actionlint -color
-name: Actionlint
-
-on:
-  pull_request:
-  push:
-    branches: ["**"]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-
-jobs:
-  actionlint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Install actionlint
-        uses: rhysd/actionlint@v1
-      - name: Run actionlint
-        run: actionlint -color
 
