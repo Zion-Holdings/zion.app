@@ -1,10 +1,19 @@
 {
+<<<<<<< HEAD
   "generatedAt": "2025-08-12T00:00:59.000Z",
+=======
+  "generatedAt": "2025-08-12T00:02:22.062Z",
+>>>>>>> origin/main
   "functions": [
     "a11y-alt-text-runner",
+    "adaptive-orchestrator",
     "ai-changelog-runner",
     "ai-trends-radar-runner",
+<<<<<<< HEAD
     "auto-discovery-runner",
+=======
+    "anchor-links-auto-fixer",
+>>>>>>> origin/main
     "auto-scheduler",
     "automation-matrix",
     "autonomous-invention-orchestrator",
@@ -12,9 +21,14 @@
     "broken-image-scanner-runner",
     "canonical-auditor",
     "cloud_orchestrator",
+<<<<<<< HEAD
+=======
+    "code-smell-audit-runner",
+>>>>>>> origin/main
     "component-coupling-graph-runner",
     "component-props-docs-runner",
     "component-size-report",
+    "content-freshness-score-runner",
     "continuous-front-runner",
     "continuous-orchestrator",
     "dead-code-audit",
@@ -22,6 +36,7 @@
     "deps-auto-upgrade-runner",
     "docs-index-runner",
     "docs-search-index-runner",
+    "duplicate-media-finder-runner",
     "external-link-check-runner",
     "fast-front-promoter",
     "fast-orchestrator",
@@ -45,7 +60,13 @@
     "hyper-front-index-accelerator",
     "image-optimizer-runner",
     "innovation-lab",
+<<<<<<< HEAD
     "knowledge-pack-runner",
+=======
+    "internal-link-graph-runner",
+    "knowledge-pack-runner",
+    "license-compliance-auditor",
+>>>>>>> origin/main
     "link-and-health-scheduler",
     "link-crawler",
     "maintenance-scheduler",
@@ -78,6 +99,7 @@
     "stale-content-auditor-runner",
     "todo-scanner-runner",
     "todo-summary-runner",
+    "topic-cluster-builder-runner",
     "topics-map-runner",
     "trigger-all-and-commit",
     "ui-enhancer",
