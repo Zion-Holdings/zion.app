@@ -28,8 +28,8 @@ exports.handler = async () => {
   // If there are any local link fixers, run them (optional best-effort)
   try {
     logStep('links:fixer', () => runNode('automation/site-link-fixer.cjs'));
-  } catch (e) {
-    logs.push('No site-link-fixer found or failed gracefully');
+  } catch (error) {
+    logs.push(`No site-link-fixer found or failed gracefully: ${String(error)}`);
   }
 
   // Commit and push any changes
