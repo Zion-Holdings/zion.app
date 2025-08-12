@@ -1,0 +1,19 @@
+{
+  "generatedAt": "2025-08-12T12:29:42.447Z",
+  "durationMs": 3,
+  "totalComponents": 1,
+  "topByLines": [
+    {
+      "file": "components/Landing.tsx",
+      "sizeBytes": 12251,
+      "lines": 171
+    }
+  ],
+  "topBySize": [
+    {
+      "file": "components/Landing.tsx",
+      "sizeBytes": 12251,
+      "lines": 171
+    }
+  ]
+}
