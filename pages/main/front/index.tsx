@@ -378,23 +378,58 @@ export default function MainFrontIndex() {
               <div className="mt-3 text-xs text-cyan-300/90">View logs via Netlify →</div>
             </a>
             <a
-              href="https://github.com/Zion-Holdings/zion.app/tree/main/automation"
-              target="_blank" rel="noopener"
+              href="/.netlify/functions/internal-link-graph-runner"
               className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover"
             >
               <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <div className="text-lg font-semibold">Local Orchestrators</div>
-              <p className="mt-1 text-sm text-white/75">Node-based orchestrators that can run on any scheduler or platform.</p>
-              <div className="mt-3 text-xs text-cyan-300/90">Browse orchestration scripts ↗</div>
+              <div className="text-lg font-semibold">Internal Link Graph</div>
+              <p className="mt-1 text-sm text-white/75">Builds and publishes internal link graph JSON for navigation improvements.</p>
+              <div className="mt-3 text-xs text-cyan-300/90">Run now →</div>
             </a>
             <a
-              href="/automation"
+              href="/.netlify/functions/component-coupling-graph-runner"
               className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover"
             >
               <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <div className="text-lg font-semibold">Autonomous Cloud Orchestrator</div>
-              <p className="mt-1 text-sm text-white/75">End-to-end agents launching factories and syncing safe diffs to main.</p>
-              <div className="mt-3 text-xs text-cyan-300/90">Open Automation Hub →</div>
+              <div className="text-lg font-semibold">Component Coupling Graph</div>
+              <p className="mt-1 text-sm text-white/75">Analyzes imports to reveal refactor targets.</p>
+              <div className="mt-3 text-xs text-cyan-300/90">Run now →</div>
+            </a>
+            <a
+              href="/.netlify/functions/content-freshness-score-runner"
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover"
+            >
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-lg font-semibold">Content Freshness</div>
+              <p className="mt-1 text-sm text-white/75">Scores docs/pages recency to prioritize updates.</p>
+              <div className="mt-3 text-xs text-cyan-300/90">Run now →</div>
+            </a>
+            <a
+              href="/.netlify/functions/anchor-links-auto-fixer"
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover"
+            >
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-lg font-semibold">Anchor Links Auto‑Fixer</div>
+              <p className="mt-1 text-sm text-white/75">Adds stable anchor IDs to docs headings for deep links.</p>
+              <div className="mt-3 text-xs text-cyan-300/90">Run now →</div>
+            </a>
+            <a
+              href="/.netlify/functions/site-404-map-runner"
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover"
+            >
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-lg font-semibold">Site 404 Map</div>
+              <p className="mt-1 text-sm text-white/75">Maps internal routes to HTTP status codes.</p>
+              <div className="mt-3 text-xs text-cyan-300/90">Run now →</div>
+            </a>
+            <a
+              href="/.netlify/functions/pagespeed-insights-runner"
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover"
+            >
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-lg font-semibold">PageSpeed Insights</div>
+              <p className="mt-1 text-sm text-white/75">Fetches core metrics and stores a public report.</p>
+              <div className="mt-3 text-xs text-cyan-300/90">Run now →</div>
             </a>
           </div>
         </motion.section>

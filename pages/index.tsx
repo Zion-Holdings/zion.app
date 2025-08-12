@@ -213,6 +213,12 @@ export default function Home() {
               { title: 'SEO Audit Runner', desc: 'Analyzes pages for title/description issues and writes an HTML report.', href: '/.netlify/functions/seo-audit-runner' },
               { title: 'AI Trends Radar', desc: 'Aggregates trending AI topics into a public report.', href: '/.netlify/functions/ai-trends-radar-runner' },
               { title: 'Dependency Auto‑Upgrade', desc: 'Safely bumps minor/patch deps with build verification.', href: '/.netlify/functions/deps-auto-upgrade-runner' },
+              { title: 'Internal Link Graph', desc: 'Builds and publishes the internal link graph as JSON.', href: '/.netlify/functions/internal-link-graph-runner' },
+              { title: 'Component Coupling Graph', desc: 'Analyzes component import coupling and publishes a graph.', href: '/.netlify/functions/component-coupling-graph-runner' },
+              { title: 'Content Freshness Score', desc: 'Scores content based on last update to prioritize refresh.', href: '/.netlify/functions/content-freshness-score-runner' },
+              { title: 'Anchor Links Auto‑Fixer', desc: 'Adds stable anchor IDs to docs headings for deep linking.', href: '/.netlify/functions/anchor-links-auto-fixer' },
+              { title: 'Site 404 Map', desc: 'Maps internal routes to HTTP status to catch 404s early.', href: '/.netlify/functions/site-404-map-runner' },
+              { title: 'PageSpeed Insights', desc: 'Fetches PageSpeed metrics and stores a report.', href: '/.netlify/functions/pagespeed-insights-runner' },
             ].map((tool) => (
               <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
