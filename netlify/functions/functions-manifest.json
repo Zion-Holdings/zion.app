@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "generatedAt": "2025-08-12T11:47:33.081Z",
+=======
+  "generatedAt": "2025-08-12T10:21:40.154Z",
+>>>>>>> 2f1c65ef47 (ci: migrate PM2 schedulers to Actions; prune ecosystem [skip ci])
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
