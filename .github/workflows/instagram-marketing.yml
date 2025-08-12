@@ -37,6 +37,8 @@ jobs:
         run: |
           if [ -z "$IG_USER_ID" ] || [ -z "$IG_ACCESS_TOKEN" ]; then
             echo "Missing IG secrets; skipping."; exit 0; fi
+          if [ ! -f automation/instagram-marketing-orchestrator.cjs ]; then
+            echo "Orchestrator script not found; skipping."; exit 0; fi
           node automation/instagram-marketing-orchestrator.cjs || true
 
       - name: Lint and Build (non-blocking)

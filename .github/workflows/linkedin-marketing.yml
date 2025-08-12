@@ -37,6 +37,8 @@ jobs:
         run: |
           if [ -z "$LINKEDIN_ACCESS_TOKEN" ]; then
             echo "Missing LINKEDIN_ACCESS_TOKEN secret; skipping."; exit 0; fi
+          if [ ! -f automation/linkedin-marketing-orchestrator.cjs ]; then
+            echo "Orchestrator script not found; skipping."; exit 0; fi
           node automation/linkedin-marketing-orchestrator.cjs || true
 
       - name: Lint and Build (non-blocking)
