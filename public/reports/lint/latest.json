@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2025-08-12T12:29:30.426Z",
+  "totalFilesWithIssues": 6,
+  "totalIssues": 8,
+  "results": [
+    {
+      "file": "pages/index.tsx",
+      "issues": [
+        {
+          "type": "maint/todo",
+          "message": "Contains 3 TODOs",
+          "line": 0
+        },
+        {
+          "type": "style/long-lines",
+          "message": "108 lines exceed 140 chars",
+          "line": 0
+        }
+      ]
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "issues": [
+        {
+          "type": "size/lines",
+          "message": "File has 1837 lines (>500)",
+          "line": 0
+        },
+        {
+          "type": "style/long-lines",
+          "message": "267 lines exceed 140 chars",
+          "line": 0
+        }
+      ]
+    },
+    {
+      "file": "pages/automation/index.tsx",
+      "issues": [
+        {
+          "type": "style/long-lines",
+          "message": "23 lines exceed 140 chars",
+          "line": 0
+        }
+      ]
+    },
+    {
+      "file": "pages/newsroom.tsx",
+      "issues": [
+        {
+          "type": "style/long-lines",
+          "message": "20 lines exceed 140 chars",
+          "line": 0
+        }
+      ]
+    },
+    {
+      "file": "components/Landing.tsx",
+      "issues": [
+        {
+          "type": "style/long-lines",
+          "message": "21 lines exceed 140 chars",
+          "line": 0
+        }
+      ]
+    },
+    {
+      "file": "scripts/ai-trends-radar.js",
+      "issues": [
+        {
+          "type": "net/timeout",
+          "message": "Uses fetch() without AbortController signal",
+          "line": 0
+        }
+      ]
+    }
+  ]
+}
