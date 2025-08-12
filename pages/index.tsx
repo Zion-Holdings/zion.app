@@ -198,6 +198,8 @@ export default function Home() {
               { title: 'Security Audit Runner', desc: 'Runs security checks and commits actionable findings.', href: '/.netlify/functions/security-audit-runner' },
               { title: 'Docs Index Runner', desc: 'Refreshes docs indexes and README for better discovery.', href: '/.netlify/functions/docs-index-runner' },
               { title: 'Repo Knowledge Graph', desc: 'Regenerates the repository knowledge graph and radar metrics.', href: '/.netlify/functions/repo-knowledge-graph-runner' },
+              { title: 'Autonomous Cloud Brain (1m)', desc: 'Prioritizes and triggers critical cloud functions and commits a heartbeat.', href: '/.netlify/functions/autonomous-cloud-brain' },
+              { title: 'Function Health Monitor (5m)', desc: 'Checks all functions and publishes a live health report JSON.', href: '/.netlify/functions/function-health-monitor' },
               { title: 'Knowledge Pack Runner (10m)', desc: 'Generates a live repo knowledge pack JSON and commits it.', href: '/.netlify/functions/knowledge-pack-runner' },
               { title: 'Adaptive Orchestrator (5m)', desc: 'Triggers only the most relevant cloud functions based on recent changes.', href: '/.netlify/functions/adaptive-orchestrator' },
               { title: 'Image Optimizer', desc: 'Optimizes media assets for performance and quality.', href: '/.netlify/functions/image-optimizer-runner' },
