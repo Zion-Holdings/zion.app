@@ -1,0 +1,53 @@
+
+> project@0.0.0 build
+> NODE_OPTIONS='--no-deprecation' node scripts/pre-build-check.cjs && NODE_OPTIONS='--no-deprecation' npx next build --no-lint
+
+🚀 Pre-build Environment Check
+================================
+
+🔍 Checking dependencies...
+✅ All required dependencies found.
+
+🔍 Validating environment configuration...
+
+💡 RECOMMENDATIONS:
+===================
+
+• NEXT_PUBLIC_REOWN_PROJECT_ID
+  Reown project ID for wallet functionality
+  Current: undefined
+
+• NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+  Stripe key for payment processing
+  Current: undefined
+
+• STRIPE_SECRET_KEY
+  Stripe secret key for server-side payment processing
+  Current: undefined
+
+• NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME
+  Cloudinary cloud name for image hosting
+  Current: undefined
+
+✅ Environment validation passed!
+All critical environment variables are properly configured.
+
+✅ Pre-build check passed! Proceeding with build...
+
+ ⚠ Linting is disabled.
+ ⚠ The "experimental.esmExternals" option has been modified. experimental.esmExternals is not recommended to be modified as it may disrupt module resolution. It should be removed from your next.config.js.
+   ▲ Next.js 15.3.4
+   - Environments: .env.local
+   - Experiments (use with caution):
+     · cpus: 2
+     ✓ optimizeCss
+     · esmExternals
+
+   Checking validity of types ...
+   Creating an optimized production build ...
+🚫 Sentry disabled for CI build - using mock implementation
+🚫 Native modules externalized for server build: 17
+🚫 Sentry disabled for CI build - using mock implementation
+🚫 Native modules externalized for server build: 17
+🚫 Sentry disabled for CI build - using mock implementation
+unhandledRejection [TypeError: I.map is not a function]

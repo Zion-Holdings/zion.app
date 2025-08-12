@@ -1,0 +1,1321 @@
+{
+  "timestamp": "2025-06-26T21:12:21.308Z",
+  "totalSize": 0,
+  "chunks": [],
+  "dependencies": [
+    {
+      "name": "firebase",
+      "version": "^11.9.1",
+      "size": 41428725,
+      "type": "production"
+    },
+    {
+      "name": "typescript",
+      "version": "^5.8.3",
+      "size": 9066411,
+      "type": "development"
+    },
+    {
+      "name": "helia",
+      "version": "^5.4.2",
+      "size": 5427915,
+      "type": "production"
+    },
+    {
+      "name": "@types/jest-axe",
+      "version": "^3.5.9",
+      "size": 3145197,
+      "type": "development"
+    },
+    {
+      "name": "prisma",
+      "version": "^6.10.1",
+      "size": 2771034,
+      "type": "development"
+    },
+    {
+      "name": "libp2p",
+      "version": "^2.8.12",
+      "size": 2616373,
+      "type": "production"
+    },
+    {
+      "name": "@types/node",
+      "version": "^22.15.33",
+      "size": 2363871,
+      "type": "development"
+    },
+    {
+      "name": "three",
+      "version": "^0.172.0",
+      "size": 1330131,
+      "type": "production"
+    },
+    {
+      "name": "@libp2p/identify",
+      "version": "^3.0.37",
+      "size": 1133125,
+      "type": "production"
+    },
+    {
+      "name": "@chainsafe/libp2p-gossipsub",
+      "version": "^14.1.1",
+      "size": 1117210,
+      "type": "production"
+    },
+    {
+      "name": "npm-check-updates",
+      "version": "^18.0.1",
+      "size": 1116615,
+      "type": "development"
+    },
+    {
+      "name": "@google/model-viewer",
+      "version": "^4.1.0",
+      "size": 979139,
+      "type": "production"
+    },
+    {
+      "name": "jszip",
+      "version": "^3.10.1",
+      "size": 900985,
+      "type": "production"
+    },
+    {
+      "name": "@types/lodash",
+      "version": "^4.17.18",
+      "size": 868766,
+      "type": "development"
+    },
+    {
+      "name": "lucide-react",
+      "version": "^0.523.0",
+      "size": 855190,
+      "type": "production"
+    },
+    {
+      "name": "react-resizable-panels",
+      "version": "^3.0.3",
+      "size": 527588,
+      "type": "production"
+    },
+    {
+      "name": "@libp2p/tcp",
+      "version": "^10.1.17",
+      "size": 481822,
+      "type": "production"
+    },
+    {
+      "name": "html2canvas",
+      "version": "^1.4.1",
+      "size": 441542,
+      "type": "development"
+    },
+    {
+      "name": "@types/react",
+      "version": "18.3.23",
+      "size": 440833,
+      "type": "development"
+    },
+    {
+      "name": "datastore-core",
+      "version": "^10.0.4",
+      "size": 407331,
+      "type": "production"
+    },
+    {
+      "name": "@storybook/react",
+      "version": "^9.0.13",
+      "size": 395290,
+      "type": "development"
+    },
+    {
+      "name": "@chainsafe/libp2p-noise",
+      "version": "^16.1.3",
+      "size": 369665,
+      "type": "production"
+    },
+    {
+      "name": "jspdf",
+      "version": "^3.0.1",
+      "size": 356389,
+      "type": "production"
+    },
+    {
+      "name": "@storybook/test-runner",
+      "version": "^0.23.0",
+      "size": 351448,
+      "type": "development"
+    },
+    {
+      "name": "@types/react-redux",
+      "version": "^7.1.34",
+      "size": 209759,
+      "type": "production"
+    },
+    {
+      "name": "blockstore-core",
+      "version": "^5.0.4",
+      "size": 205022,
+      "type": "production"
+    },
+    {
+      "name": "@types/redux-mock-store",
+      "version": "^1.5.0",
+      "size": 183064,
+      "type": "development"
+    },
+    {
+      "name": "@types/jest",
+      "version": "^29.5.14",
+      "size": 177083,
+      "type": "development"
+    },
+    {
+      "name": "next-router-mock",
+      "version": "^1.0.2",
+      "size": 161194,
+      "type": "development"
+    },
+    {
+      "name": "framer-motion",
+      "version": "^12.19.1",
+      "size": 105797,
+      "type": "production"
+    },
+    {
+      "name": "react-day-picker",
+      "version": "^8.10.1",
+      "size": 100838,
+      "type": "production"
+    },
+    {
+      "name": "tailwind-merge",
+      "version": "^3.3.1",
+      "size": 93661,
+      "type": "production"
+    },
+    {
+      "name": "@helia/json",
+      "version": "^4.0.6",
+      "size": 92093,
+      "type": "production"
+    },
+    {
+      "name": "jspdf-autotable",
+      "version": "^5.0.2",
+      "size": 91445,
+      "type": "production"
+    },
+    {
+      "name": "date-fns",
+      "version": "^3.6.0",
+      "size": 84807,
+      "type": "production"
+    },
+    {
+      "name": "react-window",
+      "version": "^1.8.7",
+      "size": 83002,
+      "type": "production"
+    },
+    {
+      "name": "vaul",
+      "version": "^1.1.2",
+      "size": 80578,
+      "type": "production"
+    },
+    {
+      "name": "i18next",
+      "version": "^25.2.1",
+      "size": 77312,
+      "type": "production"
+    },
+    {
+      "name": "yup",
+      "version": "^1.6.1",
+      "size": 76199,
+      "type": "production"
+    },
+    {
+      "name": "@types/validator",
+      "version": "^13.15.2",
+      "size": 75844,
+      "type": "development"
+    },
+    {
+      "name": "sonner",
+      "version": "^2.0.5",
+      "size": 67250,
+      "type": "production"
+    },
+    {
+      "name": "fuse.js",
+      "version": "^7.1.0",
+      "size": 67175,
+      "type": "production"
+    },
+    {
+      "name": "@radix-ui/react-select",
+      "version": "^2.2.5",
+      "size": 54838,
+      "type": "production"
+    },
+    {
+      "name": "bcryptjs",
+      "version": "^3.0.2",
+      "size": 47483,
+      "type": "development"
+    },
+    {
+      "name": "ts-node",
+      "version": "^10.9.2",
+      "size": 45986,
+      "type": "development"
+    },
+    {
+      "name": "node-fetch",
+      "version": "^2.7.0",
+      "size": 45775,
+      "type": "production"
+    },
+    {
+      "name": "@stripe/react-stripe-js",
+      "version": "^3.7.0",
+      "size": 40598,
+      "type": "production"
+    },
+    {
+      "name": "@types/react-dom",
+      "version": "^18.3.7",
+      "size": 38213,
+      "type": "development"
+    },
+    {
+      "name": "@radix-ui/react-navigation-menu",
+      "version": "^1.2.13",
+      "size": 37003,
+      "type": "production"
+    },
+    {
+      "name": "prettier",
+      "version": "^3.6.1",
+      "size": 36971,
+      "type": "development"
+    },
+    {
+      "name": "@radix-ui/react-scroll-area",
+      "version": "^1.2.9",
+      "size": 33152,
+      "type": "production"
+    },
+    {
+      "name": "@chakra-ui/react",
+      "version": "2.10.9",
+      "size": 31599,
+      "type": "production"
+    },
+    {
+      "name": "usehooks-ts",
+      "version": "^3.1.1",
+      "size": 31329,
+      "type": "production"
+    },
+    {
+      "name": "@types/fetch-mock",
+      "version": "^7.3.8",
+      "size": 31198,
+      "type": "development"
+    },
+    {
+      "name": "react-hook-form",
+      "version": "7.58.1",
+      "size": 30739,
+      "type": "production"
+    },
+    {
+      "name": "@radix-ui/react-toast",
+      "version": "^1.2.14",
+      "size": 29870,
+      "type": "production"
+    },
+    {
+      "name": "swr",
+      "version": "^2.3.3",
+      "size": 29041,
+      "type": "production"
+    },
+    {
+      "name": "typescript-eslint",
+      "version": "^8.35.0",
+      "size": 27031,
+      "type": "development"
+    },
+    {
+      "name": "@types/react-window",
+      "version": "^1.8.8",
+      "size": 25793,
+      "type": "development"
+    },
+    {
+      "name": "@radix-ui/react-slider",
+      "version": "^1.3.5",
+      "size": 23106,
+      "type": "production"
+    },
+    {
+      "name": "express-rate-limit",
+      "version": "^6.11.2",
+      "size": 22381,
+      "type": "development"
+    },
+    {
+      "name": "@radix-ui/react-tooltip",
+      "version": "^1.2.7",
+      "size": 22096,
+      "type": "production"
+    },
+    {
+      "name": "@radix-ui/react-menubar",
+      "version": "^1.1.15",
+      "size": 21513,
+      "type": "production"
+    },
+    {
+      "name": "helmet",
+      "version": "^7.2.0",
+      "size": 21288,
+      "type": "production"
+    },
+    {
+      "name": "whatwg-fetch",
+      "version": "^3.6.20",
+      "size": 19815,
+      "type": "development"
+    },
+    {
+      "name": "embla-carousel-react",
+      "version": "^8.6.0",
+      "size": 19108,
+      "type": "production"
+    },
+    {
+      "name": "@radix-ui/react-context-menu",
+      "version": "^2.2.15",
+      "size": 15984,
+      "type": "production"
+    },
+    {
+      "name": "@radix-ui/react-dropdown-menu",
+      "version": "^2.1.15",
+      "size": 15442,
+      "type": "production"
+    },
+    {
+      "name": "@types/web-push",
+      "version": "^3.6.4",
+      "size": 14985,
+      "type": "development"
+    },
+    {
+      "name": "@radix-ui/react-popover",
+      "version": "^1.1.14",
+      "size": 14859,
+      "type": "production"
+    },
+    {
+      "name": "@vitejs/plugin-react",
+      "version": "^4.6.0",
+      "size": 14455,
+      "type": "development"
+    },
+    {
+      "name": "i18next-browser-languagedetector",
+      "version": "^8.2.0",
+      "size": 14338,
+      "type": "production"
+    },
+    {
+      "name": "@radix-ui/react-accordion",
+      "version": "^1.2.11",
+      "size": 14132,
+      "type": "production"
+    },
+    {
+      "name": "@types/jsonwebtoken",
+      "version": "^9.0.10",
+      "size": 13712,
+      "type": "development"
+    },
+    {
+      "name": "cmdk",
+      "version": "^1.1.1",
+      "size": 13210,
+      "type": "production"
+    },
+    {
+      "name": "@radix-ui/react-hover-card",
+      "version": "^1.1.14",
+      "size": 12549,
+      "type": "production"
+    },
+    {
+      "name": "next-cloudinary",
+      "version": "^6.16.0",
+      "size": 12470,
+      "type": "production"
+    },
+    {
+      "name": "@radix-ui/react-radio-group",
+      "version": "^1.3.7",
+      "size": 12381,
+      "type": "production"
+    },
+    {
+      "name": "next",
+      "version": "^14.2.30",
+      "size": 12259,
+      "type": "production"
+    },
+    {
+      "name": "@babel/preset-env",
+      "version": "^7.27.2",
+      "size": 12022,
+      "type": "development"
+    },
+    {
+      "name": "validator",
+      "version": "^13.15.15",
+      "size": 12007,
+      "type": "production"
+    },
+    {
+      "name": "@types/node-fetch",
+      "version": "^2.6.12",
+      "size": 11940,
+      "type": "development"
+    },
+    {
+      "name": "eslint-plugin-react-refresh",
+      "version": "^0.4.20",
+      "size": 11464,
+      "type": "development"
+    },
+    {
+      "name": "@sentry/tracing",
+      "version": "^7.120.3",
+      "size": 11410,
+      "type": "production"
+    },
+    {
+      "name": "@radix-ui/react-checkbox",
+      "version": "^1.3.2",
+      "size": 10982,
+      "type": "production"
+    },
+    {
+      "name": "axios-retry",
+      "version": "^4.5.0",
+      "size": 10803,
+      "type": "production"
+    },
+    {
+      "name": "lodash.debounce",
+      "version": "^4.0.8",
+      "size": 10784,
+      "type": "production"
+    },
+    {
+      "name": "morgan",
+      "version": "^1.10.0",
+      "size": 10765,
+      "type": "production"
+    },
+    {
+      "name": "react-hot-toast",
+      "version": "^2.5.2",
+      "size": 10658,
+      "type": "production"
+    },
+    {
+      "name": "jsdom",
+      "version": "^26.1.0",
+      "size": 10600,
+      "type": "development"
+    },
+    {
+      "name": "input-otp",
+      "version": "^1.4.2",
+      "size": 10461,
+      "type": "production"
+    },
+    {
+      "name": "eslint-plugin-jsx-a11y",
+      "version": "^6.10.2",
+      "size": 10318,
+      "type": "development"
+    },
+    {
+      "name": "eslint-plugin-prettier",
+      "version": "^5.5.1",
+      "size": 10071,
+      "type": "development"
+    },
+    {
+      "name": "dotenv",
+      "version": "^16.5.0",
+      "size": 9962,
+      "type": "development"
+    },
+    {
+      "name": "recharts",
+      "version": "^2.15.4",
+      "size": 9694,
+      "type": "production"
+    },
+    {
+      "name": "@emotion/react",
+      "version": "11.14.0",
+      "size": 9648,
+      "type": "production"
+    },
+    {
+      "name": "@radix-ui/react-alert-dialog",
+      "version": "^1.1.14",
+      "size": 9558,
+      "type": "production"
+    },
+    {
+      "name": "babel-jest",
+      "version": "^29.7.0",
+      "size": 9346,
+      "type": "development"
+    },
+    {
+      "name": "@radix-ui/react-toggle-group",
+      "version": "^1.1.10",
+      "size": 8791,
+      "type": "production"
+    },
+    {
+      "name": "@radix-ui/react-tabs",
+      "version": "^1.1.12",
+      "size": 8683,
+      "type": "production"
+    },
+    {
+      "name": "rollup-plugin-visualizer",
+      "version": "^5.14.0",
+      "size": 8179,
+      "type": "development"
+    },
+    {
+      "name": "eslint-config-prettier",
+      "version": "^9.1.0",
+      "size": 8087,
+      "type": "development"
+    },
+    {
+      "name": "@types/react-router-dom",
+      "version": "^5.3.3",
+      "size": 7638,
+      "type": "production"
+    },
+    {
+      "name": "@radix-ui/react-switch",
+      "version": "^1.2.5",
+      "size": 6849,
+      "type": "production"
+    },
+    {
+      "name": "jest-fetch-mock",
+      "version": "^3.0.3",
+      "size": 6780,
+      "type": "development"
+    },
+    {
+      "name": "vite",
+      "version": "^6.3.5",
+      "size": 6677,
+      "type": "development"
+    },
+    {
+      "name": "undici",
+      "version": "^7.10.0",
+      "size": 6629,
+      "type": "production"
+    },
+    {
+      "name": "cors",
+      "version": "^2.8.5",
+      "size": 6623,
+      "type": "production"
+    },
+    {
+      "name": "jest-axe",
+      "version": "^10.0.0",
+      "size": 6560,
+      "type": "development"
+    },
+    {
+      "name": "@radix-ui/react-avatar",
+      "version": "^1.1.10",
+      "size": 6473,
+      "type": "production"
+    },
+    {
+      "name": "@types/file-saver",
+      "version": "^2.0.7",
+      "size": 6313,
+      "type": "development"
+    },
+    {
+      "name": "web-vitals",
+      "version": "^5.0.3",
+      "size": 6105,
+      "type": "production"
+    },
+    {
+      "name": "@babel/preset-typescript",
+      "version": "^7.27.1",
+      "size": 5873,
+      "type": "development"
+    },
+    {
+      "name": "@radix-ui/react-slot",
+      "version": "^1.2.3",
+      "size": 5777,
+      "type": "production"
+    },
+    {
+      "name": "react-router-dom",
+      "version": "^7.6.2",
+      "size": 5460,
+      "type": "production"
+    },
+    {
+      "name": "@radix-ui/react-progress",
+      "version": "^1.1.7",
+      "size": 5386,
+      "type": "production"
+    },
+    {
+      "name": "react-error-boundary",
+      "version": "^3.1.4",
+      "size": 5328,
+      "type": "production"
+    },
+    {
+      "name": "tailwindcss-animate",
+      "version": "^1.0.7",
+      "size": 4971,
+      "type": "production"
+    },
+    {
+      "name": "@babel/plugin-transform-runtime",
+      "version": "^7.27.4",
+      "size": 4846,
+      "type": "development"
+    },
+    {
+      "name": "react-loading-skeleton",
+      "version": "^3.5.0",
+      "size": 4719,
+      "type": "production"
+    },
+    {
+      "name": "micro",
+      "version": "^10.0.1",
+      "size": 4715,
+      "type": "production"
+    },
+    {
+      "name": "@tanstack/react-query",
+      "version": "^5.81.2",
+      "size": 4527,
+      "type": "production"
+    },
+    {
+      "name": "@sentry/nextjs",
+      "version": "^9.32.0",
+      "size": 4251,
+      "type": "production"
+    },
+    {
+      "name": "redux-mock-store",
+      "version": "^1.5.5",
+      "size": 4212,
+      "type": "development"
+    },
+    {
+      "name": "autoprefixer",
+      "version": "^10.4.21",
+      "size": 4182,
+      "type": "development"
+    },
+    {
+      "name": "@vitest/ui",
+      "version": "^3.2.4",
+      "size": 4181,
+      "type": "development"
+    },
+    {
+      "name": "@pact-foundation/pact",
+      "version": "^15.0.1",
+      "size": 3771,
+      "type": "development"
+    },
+    {
+      "name": "eslint-plugin-react",
+      "version": "^7.37.5",
+      "size": 3768,
+      "type": "development"
+    },
+    {
+      "name": "@testing-library/cypress",
+      "version": "^10.0.3",
+      "size": 3688,
+      "type": "development"
+    },
+    {
+      "name": "class-variance-authority",
+      "version": "^0.7.1",
+      "size": 3394,
+      "type": "production"
+    },
+    {
+      "name": "socket.io-client",
+      "version": "^4.8.1",
+      "size": 3296,
+      "type": "production"
+    },
+    {
+      "name": "react-i18next",
+      "version": "^15.5.3",
+      "size": 3248,
+      "type": "production"
+    },
+    {
+      "name": "@types/lodash.debounce",
+      "version": "^4.0.9",
+      "size": 3201,
+      "type": "production"
+    },
+    {
+      "name": "msw",
+      "version": "^2.10.2",
+      "size": 2931,
+      "type": "development"
+    },
+    {
+      "name": "postcss",
+      "version": "^8.5.6",
+      "size": 2898,
+      "type": "development"
+    },
+    {
+      "name": "@radix-ui/react-toggle",
+      "version": "^1.1.9",
+      "size": 2842,
+      "type": "production"
+    },
+    {
+      "name": "cross-env",
+      "version": "^7.0.3",
+      "size": 2827,
+      "type": "development"
+    },
+    {
+      "name": "@radix-ui/react-aspect-ratio",
+      "version": "^1.1.7",
+      "size": 2821,
+      "type": "production"
+    },
+    {
+      "name": "file-saver",
+      "version": "^2.0.5",
+      "size": 2749,
+      "type": "production"
+    },
+    {
+      "name": "@radix-ui/react-separator",
+      "version": "^1.1.7",
+      "size": 2704,
+      "type": "production"
+    },
+    {
+      "name": "@supabase/supabase-js",
+      "version": "^2.50.2",
+      "size": 2678,
+      "type": "production"
+    },
+    {
+      "name": "puppeteer",
+      "version": "^24.10.2",
+      "size": 2634,
+      "type": "development"
+    },
+    {
+      "name": "mongoose",
+      "version": "^8.16.0",
+      "size": 2597,
+      "type": "production"
+    },
+    {
+      "name": "@babel/preset-react",
+      "version": "^7.27.1",
+      "size": 2465,
+      "type": "development"
+    },
+    {
+      "name": "@radix-ui/react-label",
+      "version": "^2.1.7",
+      "size": 2326,
+      "type": "production"
+    },
+    {
+      "name": "jest-environment-jsdom",
+      "version": "^30.0.2",
+      "size": 2137,
+      "type": "development"
+    },
+    {
+      "name": "@stackbit/types",
+      "version": "^2.1.14",
+      "size": 1868,
+      "type": "development"
+    },
+    {
+      "name": "@testing-library/react",
+      "version": "^16.3.0",
+      "size": 1835,
+      "type": "development"
+    },
+    {
+      "name": "next-auth",
+      "version": "^4.24.11",
+      "size": 1821,
+      "type": "production"
+    },
+    {
+      "name": "@emotion/styled",
+      "version": "11.14.0",
+      "size": 1815,
+      "type": "production"
+    },
+    {
+      "name": "react-player",
+      "version": "^2.16.0",
+      "size": 1779,
+      "type": "production"
+    },
+    {
+      "name": "@types/next",
+      "version": "^9.0.0",
+      "size": 1698,
+      "type": "production"
+    },
+    {
+      "name": "eslint",
+      "version": "^9.29.0",
+      "size": 1609,
+      "type": "development"
+    },
+    {
+      "name": "ts-jest",
+      "version": "^29.4.0",
+      "size": 1448,
+      "type": "development"
+    },
+    {
+      "name": "react-dom",
+      "version": "~18.3.1",
+      "size": 1363,
+      "type": "production"
+    },
+    {
+      "name": "supertest",
+      "version": "^6.3.4",
+      "size": 1312,
+      "type": "development"
+    },
+    {
+      "name": "node-mocks-http",
+      "version": "^1.17.2",
+      "size": 1085,
+      "type": "development"
+    },
+    {
+      "name": "zod",
+      "version": "^3.25.67",
+      "size": 1045,
+      "type": "production"
+    },
+    {
+      "name": "@datadog/browser-logs",
+      "version": "^6.12.3",
+      "size": 1015,
+      "type": "production"
+    },
+    {
+      "name": "@supabase/ssr",
+      "version": "^0.6.1",
+      "size": 989,
+      "type": "production"
+    },
+    {
+      "name": "jest",
+      "version": "^29.7.0",
+      "size": 962,
+      "type": "development"
+    },
+    {
+      "name": "fetch-mock",
+      "version": "^12.5.3",
+      "size": 909,
+      "type": "development"
+    },
+    {
+      "name": "@next/bundle-analyzer",
+      "version": "^14.2.30",
+      "size": 904,
+      "type": "development"
+    },
+    {
+      "name": "vitest",
+      "version": "^3.2.4",
+      "size": 811,
+      "type": "development"
+    },
+    {
+      "name": "web-push",
+      "version": "^3.6.7",
+      "size": 785,
+      "type": "production"
+    },
+    {
+      "name": "@orbitdb/core",
+      "version": "^3.0.2",
+      "size": 779,
+      "type": "production"
+    },
+    {
+      "name": "@hookform/resolvers",
+      "version": "3.10.0",
+      "size": 769,
+      "type": "production"
+    },
+    {
+      "name": "cypress",
+      "version": "^14.5.0",
+      "size": 757,
+      "type": "development"
+    },
+    {
+      "name": "react-focus-lock",
+      "version": "^2.13.6",
+      "size": 730,
+      "type": "production"
+    },
+    {
+      "name": "stripe",
+      "version": "^18.2.1",
+      "size": 711,
+      "type": "production"
+    },
+    {
+      "name": "electron",
+      "version": "^36.5.0",
+      "size": 659,
+      "type": "development"
+    },
+    {
+      "name": "@playwright/test",
+      "version": "^1.53.1",
+      "size": 648,
+      "type": "development"
+    },
+    {
+      "name": "@reown/appkit",
+      "version": "1.7.11",
+      "size": 601,
+      "type": "production"
+    },
+    {
+      "name": "identity-obj-proxy",
+      "version": "^3.0.0",
+      "size": 551,
+      "type": "development"
+    },
+    {
+      "name": "ethers",
+      "version": "^6.14.4",
+      "size": 540,
+      "type": "production"
+    },
+    {
+      "name": "@eslint/js",
+      "version": "^9.29.0",
+      "size": 499,
+      "type": "development"
+    },
+    {
+      "name": "react-markdown",
+      "version": "^10.1.0",
+      "size": 493,
+      "type": "production"
+    },
+    {
+      "name": "clsx",
+      "version": "^2.1.1",
+      "size": 397,
+      "type": "production"
+    },
+    {
+      "name": "eslint-plugin-react-hooks",
+      "version": "^4.6.2",
+      "size": 371,
+      "type": "development"
+    },
+    {
+      "name": "node-cache",
+      "version": "^5.1.2",
+      "size": 346,
+      "type": "production"
+    },
+    {
+      "name": "sass",
+      "version": "^1.89.2",
+      "size": 343,
+      "type": "development"
+    },
+    {
+      "name": "@testing-library/user-event",
+      "version": "^14.6.1",
+      "size": 301,
+      "type": "development"
+    },
+    {
+      "name": "@testing-library/jest-dom",
+      "version": "^6.6.3",
+      "size": 282,
+      "type": "development"
+    },
+    {
+      "name": "jsonwebtoken",
+      "version": "^9.0.2",
+      "size": 276,
+      "type": "development"
+    },
+    {
+      "name": "mongodb-memory-server",
+      "version": "^10.1.4",
+      "size": 233,
+      "type": "development"
+    },
+    {
+      "name": "express",
+      "version": "^5.1.0",
+      "size": 224,
+      "type": "development"
+    },
+    {
+      "name": "notistack",
+      "version": "^3.0.2",
+      "size": 196,
+      "type": "production"
+    },
+    {
+      "name": "@reduxjs/toolkit",
+      "version": "^2.8.2",
+      "size": 195,
+      "type": "production"
+    },
+    {
+      "name": "react-redux",
+      "version": "^9.2.0",
+      "size": 191,
+      "type": "production"
+    },
+    {
+      "name": "formik",
+      "version": "^2.4.6",
+      "size": 190,
+      "type": "production"
+    },
+    {
+      "name": "react",
+      "version": "~18.3.1",
+      "size": 190,
+      "type": "production"
+    },
+    {
+      "name": "@sendgrid/mail",
+      "version": "^8.1.5",
+      "size": 180,
+      "type": "production"
+    },
+    {
+      "name": "@reown/appkit-adapter-ethers",
+      "version": "1.7.11",
+      "size": 156,
+      "type": "production"
+    },
+    {
+      "name": "@stripe/stripe-js",
+      "version": "^7.4.0",
+      "size": 74,
+      "type": "production"
+    },
+    {
+      "name": "dd-trace",
+      "version": "^3.58.0",
+      "size": 62,
+      "type": "production"
+    },
+    {
+      "name": "@prisma/client",
+      "version": "^6.10.1",
+      "size": 61,
+      "type": "production"
+    },
+    {
+      "name": "globals",
+      "version": "^16.2.0",
+      "size": 58,
+      "type": "development"
+    },
+    {
+      "name": "tailwindcss",
+      "version": "^3.4.17",
+      "size": 52,
+      "type": "development"
+    }
+  ],
+  "recommendations": [
+    {
+      "type": "warning",
+      "category": "bundle-size",
+      "title": "Large Dependencies Detected",
+      "description": "Found 11 dependencies over 1MB",
+      "items": [
+        {
+          "name": "firebase",
+          "size": "39.51 MB",
+          "suggestion": "Review if all features are needed"
+        },
+        {
+          "name": "typescript",
+          "size": "8.65 MB",
+          "suggestion": "Review if all features are needed"
+        },
+        {
+          "name": "helia",
+          "size": "5.18 MB",
+          "suggestion": "Review if all features are needed"
+        },
+        {
+          "name": "@types/jest-axe",
+          "size": "3 MB",
+          "suggestion": "Review if all features are needed"
+        },
+        {
+          "name": "prisma",
+          "size": "2.64 MB",
+          "suggestion": "Review if all features are needed"
+        },
+        {
+          "name": "libp2p",
+          "size": "2.5 MB",
+          "suggestion": "Review if all features are needed"
+        },
+        {
+          "name": "@types/node",
+          "size": "2.25 MB",
+          "suggestion": "Review if all features are needed"
+        },
+        {
+          "name": "three",
+          "size": "1.27 MB",
+          "suggestion": "Consider lazy loading for 3D components"
+        },
+        {
+          "name": "@libp2p/identify",
+          "size": "1.08 MB",
+          "suggestion": "Review if all features are needed"
+        },
+        {
+          "name": "@chainsafe/libp2p-gossipsub",
+          "size": "1.07 MB",
+          "suggestion": "Review if all features are needed"
+        },
+        {
+          "name": "npm-check-updates",
+          "size": "1.06 MB",
+          "suggestion": "Review if all features are needed"
+        }
+      ]
+    },
+    {
+      "type": "info",
+      "category": "optimization",
+      "title": "Bundle Optimization Suggestions",
+      "items": [
+        {
+          "name": "Code Splitting",
+          "description": "Implement dynamic imports for heavy components",
+          "example": "const Component = lazy(() => import('./HeavyComponent'));"
+        },
+        {
+          "name": "Tree Shaking",
+          "description": "Import only specific functions from libraries",
+          "example": "import { debounce } from 'lodash' // instead of import _ from 'lodash'"
+        },
+        {
+          "name": "Bundle Analysis",
+          "description": "Use webpack-bundle-analyzer for detailed analysis",
+          "example": "npm run build:analyze"
+        }
+      ]
+    }
+  ],
+  "performance": {},
+  "summary": {
+    "totalDependencies": 198,
+    "productionDependencies": 120,
+    "largeDependencies": 11,
+    "totalSize": 82338871
+  },
+  "actionPlan": [
+    {
+      "priority": "high",
+      "task": "Implement code splitting for large components",
+      "impact": "Reduce initial bundle size by 30-50%",
+      "effort": "medium"
+    },
+    {
+      "priority": "high",
+      "task": "Optimize image loading with lazy loading",
+      "impact": "Improve initial page load time",
+      "effort": "low"
+    },
+    {
+      "priority": "medium",
+      "task": "Replace large dependencies with smaller alternatives",
+      "impact": "Reduce bundle size by 10-20%",
+      "effort": "high"
+    },
+    {
+      "priority": "medium",
+      "task": "Implement tree shaking for utility libraries",
+      "impact": "Remove unused code",
+      "effort": "low"
+    },
+    {
+      "priority": "low",
+      "task": "Setup bundle monitoring in CI/CD",
+      "impact": "Prevent bundle size regression",
+      "effort": "medium"
+    }
+  ]
+}

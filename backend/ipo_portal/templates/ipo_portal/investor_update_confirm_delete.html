@@ -1,0 +1,23 @@
+{% extends "ipo_portal/base_portal.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Confirm Delete" %} - IPO Portal{% endblock %}
+
+{% block page_title %}{{ page_title|default:"Confirm Delete Investor Update" }}{% endblock %}
+
+{% block content %}
+<h3>{% trans "Delete Investor Update" %}</h3>
+<p>{% blocktrans with title=update.title date=update.publication_date|date:"Y-m-d" %}
+    Are you sure you want to delete the investor update titled "<strong>{{ title }}</strong>" published on {{ date }}?
+{% endblocktrans %}</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" style="background-color: #dc3545; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer;">
+        {% trans "Yes, Delete" %}
+    </button>
+    <a href="{% url 'ipo_portal:investor_updates' %}" style="margin-left: 10px; color: #555; text-decoration: none; background-color: #f0f0f0; padding: 10px 15px; border-radius: 4px;">
+        {% trans "Cancel" %}
+    </a>
+</form>
+{% endblock %}

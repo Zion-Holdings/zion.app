@@ -1,0 +1,104 @@
+name: Suggest AI Hotfix
+
+on:
+  workflow_dispatch:
+    inputs:
+      error_id:
+        description: 'ID of the error record in ErrorAnalysisSuggestion table'
+        required: true
+        type: string
+      suggested_fix_code:
+        description: 'Base64 encoded code snippet for the suggested fix'
+        required: true
+        type: string
+      target_file:
+        description: 'Target file path for the fix (e.g., src/components/MyComponent.js)'
+        required: true
+        type: string
+      error_message:
+        description: 'Original error message for context'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  create_hotfix_pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Decode Suggested Fix
+        id: decode_fix
+        run: |
+          decoded_fix=$(echo "${{ inputs.suggested_fix_code }}" | base64 -d)
+          # Escape for multiline string in subsequent steps
+          decoded_fix="${decoded_fix//'%'/'%25'}"
+          decoded_fix="${decoded_fix//$'\n'/'%0A'}"
+          decoded_fix="${decoded_fix//$'\r'/'%0D'}"
+          echo "DECODED_FIX_CONTENT<<EOF" >> $GITHUB_ENV
+          echo "${{ inputs.suggested_fix_code }}" | base64 -d >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+          # For use in PR body, needs to be handled carefully if it contains backticks
+          pr_body_fix_content=$(echo "${{ inputs.suggested_fix_code }}" | base64 -d)
+          pr_body_fix_content="${pr_body_fix_content//'`'/'\`'}" # Escape backticks for PR body
+          echo "PR_BODY_FIX_CONTENT<<EOF" >> $GITHUB_ENV
+          echo "$pr_body_fix_content" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+
+      - name: Create New Branch
+        run: |
+          branch_name="hotfix/ai-suggested-${{ inputs.error_id }}"
+          git checkout -b $branch_name
+          echo "BRANCH_NAME=$branch_name" >> $GITHUB_ENV
+
+      - name: Apply AI Suggested Fix (Simplified)
+        run: |
+          comments="// AI-SUGGESTED HOTFIX APPLIED FOR ERROR ID: ${{ inputs.error_id }}\n"
+          comments+="// ORIGINAL ERROR: ${{ inputs.error_message }}\n"
+          comments+="// Please review this change carefully!\n"
+
+          # Create target directory if it doesn't exist
+          mkdir -p "$(dirname "${{ inputs.target_file }}")"
+
+          # Prepend comments and overwrite file with decoded fix
+          echo -e "${comments}${DECODED_FIX_CONTENT}" > "${{ inputs.target_file }}"
+          cat "${{ inputs.target_file }}" # Output file content for verification
+
+      - name: Commit Changes
+        run: |
+          git config --global user.name 'AI Hotfix Bot'
+          git config --global user.email 'actions@github.com'
+          git add "${{ inputs.target_file }}"
+          git commit -m "AI Hotfix Suggestion for Error ${{ inputs.error_id }}: Apply fix to ${{ inputs.target_file }}"
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: AI Hotfix Suggestion for Error ${{ inputs.error_id }}
+          branch: ${{ env.BRANCH_NAME }}
+          base: main # Or your default branch
+          delete-branch: true
+          title: "AI Suggested Hotfix for Error ${{ inputs.error_id }}: ${{ inputs.error_message }}"
+          body: |
+            This PR was automatically generated based on an AI suggestion for an error with ID: **${{ inputs.error_id }}**.
+
+            Original Error Message:
+            > ${{ inputs.error_message }}
+
+            Suggested Fix (applied to `${{ inputs.target_file }}`):
+            ```diff
+            ${{ env.PR_BODY_FIX_CONTENT }}
+            ```
+
+            **Important: This is an AI-generated suggestion. Please review carefully before merging!**
+            Consider the AI's explanation and impact assessment from the `ErrorAnalysisSuggestion` table (ID: `${{ inputs.error_id }}`).
+          labels: |
+            ai-suggestion
+            hotfix-candidate
+          draft: false

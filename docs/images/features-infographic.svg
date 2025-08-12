@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300">
+  <rect width="600" height="300" fill="#fafafa" stroke="#aaa" />
+  <text x="300" y="40" font-size="24" text-anchor="middle" fill="#333" font-family="Arial, sans-serif">Key Features</text>
+  <g transform="translate(0,80)">
+    <image href="icon-auth.svg" x="40" y="0" width="80" height="80" />
+    <text x="140" y="45" font-size="16" fill="#333">User Authentication</text>
+
+    <image href="icon-ecommerce.svg" x="300" y="0" width="80" height="80" />
+    <text x="400" y="45" font-size="16" fill="#333">E-commerce</text>
+  </g>
+  <g transform="translate(0,170)">
+    <image href="icon-talent.svg" x="40" y="0" width="80" height="80" />
+    <text x="140" y="45" font-size="16" fill="#333">Talent Marketplace</text>
+
+    <image href="icon-ai.svg" x="300" y="0" width="80" height="80" />
+    <text x="400" y="45" font-size="16" fill="#333">AI Features</text>
+  </g>
+  <g transform="translate(0,260)">
+    <image href="icon-content.svg" x="40" y="0" width="80" height="80" />
+    <text x="140" y="45" font-size="16" fill="#333">Content Management</text>
+
+    <image href="icon-realtime.svg" x="300" y="0" width="80" height="80" />
+    <text x="400" y="45" font-size="16" fill="#333">Real-time</text>
+  </g>
+</svg>

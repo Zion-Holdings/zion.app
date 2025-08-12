@@ -1,0 +1,91 @@
+version: 1.0
+tasks:
+  - name: setup_test_generation_context
+    run: |
+      echo "Setting up context for test generation..."
+      if [ -n "$TARGET_COMPONENT_PATH" ]; then
+        echo "Target component path for test generation: $TARGET_COMPONENT_PATH"
+        if [ -f "$TARGET_COMPONENT_PATH" ];
+          then
+            echo "Component file exists."
+            # Determine test file path
+            # Assuming structure like src/components/MyComponent.tsx -> src/components/__tests__/MyComponent.test.tsx
+            # Or src/utils/myUtil.ts -> src/utils/__tests__/myUtil.test.ts
+            COMPONENT_DIR=$(dirname "$TARGET_COMPONENT_PATH")
+            COMPONENT_FILENAME=$(basename "$TARGET_COMPONENT_PATH")
+            COMPONENT_NAME="${COMPONENT_FILENAME%.*}" # Name without extension
+
+            # Adjust for .tsx or .ts (and potentially .jsx/.js)
+            if [[ "$TARGET_COMPONENT_PATH" == *.tsx ]]; then
+              TEST_FILENAME="${COMPONENT_NAME}.test.tsx"
+            elif [[ "$TARGET_COMPONENT_PATH" == *.ts ]]; then
+              TEST_FILENAME="${COMPONENT_NAME}.test.ts"
+            elif [[ "$TARGET_COMPONENT_PATH" == *.jsx ]]; then
+              TEST_FILENAME="${COMPONENT_NAME}.test.jsx"
+            else
+              TEST_FILENAME="${COMPONENT_NAME}.test.js"
+            fi
+
+            TEST_DIR_NAME="__tests__"
+            # Handle components possibly in subdirectories of src/components or src/utils
+            # e.g. src/components/forms/Input.tsx -> src/components/forms/__tests__/Input.test.tsx
+            TARGET_TEST_DIR="$COMPONENT_DIR/$TEST_DIR_NAME"
+            mkdir -p "$TARGET_TEST_DIR" # Ensure test directory exists
+            TARGET_TEST_PATH="$TARGET_TEST_DIR/$TEST_FILENAME"
+
+            echo "Determined target test file path: $TARGET_TEST_PATH"
+            echo "$TARGET_COMPONENT_PATH" > target_component_path.txt
+            echo "$TARGET_TEST_PATH" > target_test_path.txt
+            cat "$TARGET_COMPONENT_PATH" > source_component_code.txt
+        else
+          echo "Error: TARGET_COMPONENT_PATH ($TARGET_COMPONENT_PATH) does not exist."
+          exit 1 # Critical error, cannot proceed
+        fi
+      else
+        echo "Error: TARGET_COMPONENT_PATH environment variable not set."
+        exit 1 # Critical error
+      fi
+
+  - name: generate_unit_tests
+    uses: openai:codex
+    with:
+      prompt: |
+        You are an expert React/Next.js and TypeScript developer, highly skilled in writing unit tests with Jest and Vitest, incorporating React Testing Library for components.
+        The following is the content of a component/utility file:
+        File Path: ${{ steps.setup_test_generation_context.outputs.target_component_path }}
+        ```typescript
+        ${{ steps.setup_test_generation_context.outputs.source_component_code }}
+        ```
+
+        Please generate comprehensive Jest/Vitest unit tests for this file.
+        - If it's a React component, use React Testing Library for rendering and interaction. Ensure to cover props, state changes, and user interactions where applicable.
+        - If it's a utility/logic file, ensure to cover various input scenarios, including edge cases.
+        - Mock any external dependencies or imports where necessary.
+        - The tests should be self-contained in a single test file.
+        - Only output the JavaScript/TypeScript code for the test file. Do not include any explanatory text or markdown formatting around the code.
+        - Ensure all necessary imports for testing (e.g., `describe`, `it`, `expect`, `render`, `screen`, `fireEvent`, `vi` for Vitest mocks or `jest.mock` for Jest) are included.
+        - If the component uses hooks like `useState` or `useEffect`, try to test the behavior that results from these hooks.
+        - For UI components, include tests for basic rendering, prop handling, and any event handlers if applicable.
+      temperature: 0.4 # Slightly higher for more creative test scenarios
+      max_tokens: 2000 # Allow ample space for generated tests
+
+  - name: save_generated_tests
+    run: |
+      TARGET_TEST_PATH=$(cat target_test_path.txt)
+      echo "Saving generated tests to $TARGET_TEST_PATH"
+      # Ensure fix_code.output (which is the output of the 'uses: openai:codex' step) is correctly referenced
+      # The output of a step named 'generate_unit_tests' should be ${{ steps.generate_unit_tests.output }}
+      echo "${{ steps.generate_unit_tests.output }}" > "$TARGET_TEST_PATH"
+      echo "Tests saved. Please review and adjust as necessary."
+      echo "::set-output name=generated_test_file_path::$TARGET_TEST_PATH" # Output for subsequent steps in GHA
+
+  - name: format_generated_tests # Optional: run prettier/eslint on the generated test file
+    run: |
+      TARGET_TEST_PATH=$(cat target_test_path.txt)
+      if [ -f "$TARGET_TEST_PATH" ]; then
+        echo "Formatting $TARGET_TEST_PATH..."
+        npx prettier --write "$TARGET_TEST_PATH"
+        npx eslint --fix "$TARGET_TEST_PATH" || echo "ESLint fix had issues, please check manually."
+      else
+        echo "Generated test file not found for formatting."
+      fi

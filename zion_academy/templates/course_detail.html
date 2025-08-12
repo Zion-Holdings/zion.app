@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if course %}
+        <article class="course-full-detail">
+            <h2>{{ course.title }}</h2>
+            <p><strong>Category:</strong> {{ course.category.name if course.category else 'N/A' }}</p>
+            {% if course.is_premium_tier %}
+                <p><span class="badge premium-badge">Premium Course</span></p>
+            {% else %}
+                <p><span class="badge free-badge">Free Course</span></p>
+            {% endif %}
+
+            <section class="course-description">
+                <h3>Course Description</h3>
+                <p>{{ course.description | safe }}</p> {# Use |safe if description can contain HTML #}
+            </section>
+
+            <section class="course-lessons">
+                <h3>Lessons</h3>
+                {% if course.lessons and course.lessons.all()|length > 0 %}
+                    <ul>
+                        {% for lesson in course.lessons|sort(attribute='lesson_order') %}
+                            <li>
+                                <a href="{{ url_for('lesson_detail', course_id=course.id, lesson_id=lesson.id) }}">
+                                    {{ lesson.title }}
+                                </a>
+                                <small>({{ lesson.content_type }})</small>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No lessons available for this course yet.</p>
+                {% endif %}
+            </section>
+
+            {# Placeholder for Quizzes, Final Exam, Certification info #}
+            {# <section class="course-assessment">
+                <h3>Assessment</h3>
+                <p>Details about quizzes and final exam will go here.</p>
+            </section> #}
+
+        </article>
+        <a href="{{ url_for('course_list') }}">Back to Course List</a>
+    {% else %}
+        {# This part might not be reached if the route handles not found with a 404 template #}
+        <h1>Course Not Found</h1>
+        <p>Sorry, the course you are looking for does not exist.</p>
+        <a href="{{ url_for('course_list') }}">Go to Course List</a>
+    {% endif %}
+{% endblock %}

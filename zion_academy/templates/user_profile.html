@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>{{ user.username }}'s Profile</h2>
+
+    <h3>Course Progress</h3>
+    {% if enrollments %}
+        <ul>
+        {% for en in enrollments %}
+            <li>
+                {{ courses[en.course_id].title }} - {{ en.progress }}%
+                {% if en.progress == 100 %}
+                    <span class="badge completed">Completed</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No course enrollments yet.</p>
+    {% endif %}
+
+    <h3>Achievements</h3>
+    {% if certificates %}
+        <ul>
+        {% for cert in certificates %}
+            <li>Completed {{ courses[cert.course_id].title }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No achievements yet.</p>
+    {% endif %}
+{% endblock %}

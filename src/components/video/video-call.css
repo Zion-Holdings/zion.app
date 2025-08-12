@@ -1,0 +1,40 @@
+
+/* Video call styles */
+.video-container {
+  background-color: rgba(17, 24, 39, 0.7);
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.video-participant {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(59, 130, 246, 0.5);
+}
+
+.video-metadata {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  color: white;
+  font-size: 0.875rem;
+}
+
+.video-button {
+  background-color: rgba(30, 41, 59, 0.8);
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.video-button:hover {
+  background-color: rgba(51, 65, 85, 0.9);
+}
+
+.video-button-danger:hover {
+  background-color: rgb(220, 38, 38) !important;
+  color: white;
+}

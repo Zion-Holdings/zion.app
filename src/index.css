@@ -1,0 +1,483 @@
+/* Fonts are now loaded via Next.js font optimization in _app.tsx */
+@import './styles/navbar.css';
+@import './styles/responsive.css';
+@import './styles/auth-layout.css';
+@import './styles/performance.css';
+@import './styles/responsive-320px.css';
+
+@import './styles/OnsiteForm.css';
+
+/*
+  CSS Custom Properties for Theming.
+  The primary definitions are now within @layer base.
+  The :root definitions here are commented out to avoid conflicts
+  as theme colors are intended to be primarily managed by themeUtils.ts
+  and fall back to the definitions in @layer base.
+*/
+
+/*
+:root {
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(0 0% 3.9%);
+  --primary: hsl(221 83% 53%);
+  --primary-foreground: hsl(0 0% 98%);
+  --secondary: hsl(14 80% 60%);
+  --secondary-foreground: hsl(240 5.9% 10%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(0 0% 3.9%);
+  --border: hsl(0 0% 89.8%);
+  --input: hsl(0 0% 89.8%);
+  --ring: hsl(221 83% 53%);
+  --accent: hsl(286 63% 55%);
+  --accent-foreground: hsl(0 0% 98%);
+  --muted: hsl(240 4.8% 95.9%);
+  --muted-foreground: hsl(240 3.8% 38%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(0 0% 3.9%);
+  --destructive: hsl(0 84% 60%);
+  --destructive-foreground: hsl(0 0% 98%);
+}
+
+:root[data-theme='dark'] {
+  --background: hsl(222, 47%, 8%);
+  --foreground: hsl(0, 0%, 95%);
+  --primary: hsl(221, 100%, 66%);
+  --primary-foreground: hsl(222, 47%, 8%);
+  --secondary: hsl(14, 92%, 70%);
+  --secondary-foreground: hsl(0, 0%, 95%);
+  --card: hsl(220, 30%, 11%);
+  --card-foreground: hsl(0, 0%, 95%);
+  --border: hsl(222, 39%, 17%);
+  --input: hsl(222, 39%, 17%);
+  --ring: hsl(221, 100%, 66%);
+  --accent: hsl(286, 75%, 63%);
+  --accent-foreground: hsl(0, 0%, 95%);
+  --muted: hsl(220, 30%, 15%);
+  --muted-foreground: hsl(0, 0%, 63.9%);
+  --popover: hsl(220, 30%, 11%);
+  --popover-foreground: hsl(0, 0%, 95%);
+  --destructive: hsl(0 62% 30%);
+  --destructive-foreground: hsl(0 0% 98%);
+}
+
+:root[data-theme='light'] {
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(0 0% 3.9%);
+  --primary: hsl(221 83% 53%);
+  --primary-foreground: hsl(0 0% 98%);
+  --secondary: hsl(14 80% 60%);
+  --secondary-foreground: hsl(240 5.9% 10%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(0 0% 3.9%);
+  --border: hsl(0 0% 89.8%);
+  --input: hsl(0 0% 89.8%);
+  --ring: hsl(221 83% 53%);
+  --accent: hsl(286 63% 55%);
+  --accent-foreground: hsl(0 0% 98%);
+  --muted: hsl(240 4.8% 95.9%);
+  --muted-foreground: hsl(240 3.8% 38%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(0 0% 3.9%);
+  --destructive: hsl(0 84% 60%);
+  --destructive-foreground: hsl(0 0% 98%);
+}
+*/
+
+/*
+  The prefers-color-scheme media query is commented out to prevent conflicts
+  with the JavaScript-based theme switching (themeUtils.ts), which also handles
+  detecting system preference. If a pure CSS fallback for system preference
+  is desired when JavaScript is disabled, this can be re-enabled, ensuring
+  it defines *all* necessary CSS variables consistently.
+*/
+/*
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --background: hsl(222, 47%, 8%);
+    --foreground: hsl(0, 0%, 95%);
+    --primary: hsl(221, 100%, 66%);
+    --primary-foreground: hsl(222, 47%, 8%);
+    --secondary: hsl(14, 92%, 70%);
+    --secondary-foreground: hsl(0, 0%, 95%);
+    --card: hsl(220, 30%, 11%);
+    --card-foreground: hsl(0, 0%, 95%);
+    --border: hsl(222, 39%, 17%);
+    --input: hsl(222, 39%, 17%);
+    --ring: hsl(221, 100%, 66%);
+    --accent: hsl(286, 75%, 63%);
+    --accent-foreground: hsl(0, 0%, 95%);
+    --muted: hsl(220, 30%, 15%);
+    --muted-foreground: hsl(0, 0%, 63.9%);
+    --popover: hsl(220, 30%, 11%);
+    --popover-foreground: hsl(0, 0%, 95%);
+    --destructive: hsl(0 62% 30%);
+    --destructive-foreground: hsl(0 0% 98%);
+  }
+}
+*/
+
+/*Scoped Theme Variables for Mobile App */
+.mobile-app {
+  min-height: 100vh; /* Ensure it takes full height */
+}
+
+.mobile-app[data-theme='light'] {
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(0 0% 3.9%);
+  --primary: hsl(221 83% 53%);
+  --primary-foreground: hsl(0 0% 98%);
+  --secondary: hsl(14 80% 60%);
+  --secondary-foreground: hsl(240 5.9% 10%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(0 0% 3.9%);
+  --border: hsl(0 0% 89.8%);
+  --input: hsl(0 0% 89.8%);
+  --ring: hsl(221 83% 53%);
+  --accent: hsl(286 63% 55%);
+  --accent-foreground: hsl(0 0% 98%);
+
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.mobile-app[data-theme='dark'] {
+  --background: hsl(222, 47%, 8%);
+  --foreground: hsl(0, 0%, 95%);
+  --primary: hsl(221, 100%, 66%);
+  --primary-foreground: hsl(222, 47%, 8%);
+  --secondary: hsl(14, 92%, 70%);
+  --secondary-foreground: hsl(0, 0%, 95%);
+  --card: hsl(220, 30%, 11%);
+  --card-foreground: hsl(0, 0%, 95%);
+  --border: hsl(222, 39%, 17%);
+  --input: hsl(222, 39%, 17%);
+  --ring: hsl(221, 100%, 66%);
+  --accent: hsl(286, 75%, 63%);
+  --accent-foreground: hsl(0, 0%, 95%);
+
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* Support for Tailwind's dark mode class */
+:root.dark {
+  --background: hsl(222, 47%, 8%);
+  --foreground: hsl(0, 0%, 95%);
+  --primary: hsl(221, 100%, 66%);
+  --primary-foreground: hsl(222, 47%, 8%);
+  --secondary: hsl(14, 92%, 70%);
+  --secondary-foreground: hsl(0, 0%, 95%);
+  --card: hsl(220, 30%, 11%);
+  --card-foreground: hsl(0, 0%, 95%);
+  --border: hsl(222, 39%, 17%);
+  --input: hsl(222, 39%, 17%);
+  --ring: hsl(221, 100%, 66%);
+  --accent: hsl(286, 75%, 63%);
+  --accent-foreground: hsl(0, 0%, 95%);
+  --muted: hsl(220, 30%, 15%);
+  --muted-foreground: hsl(0, 0%, 63.9%);
+  --popover: hsl(220, 30%, 11%);
+  --popover-foreground: hsl(0, 0%, 95%);
+  --destructive: hsl(0 62% 30%);
+  --destructive-foreground: hsl(0 0% 98%);
+}
+
+/* Theme transition animations */
+*,
+*::before,
+*::after {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Global layout fixes */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-heading: 'Poppins', 'Inter', sans-serif;
+
+    --background: hsl(222 47% 8%);
+    --foreground: hsl(0 0% 95%);
+
+    --card: hsl(220 30% 11%);
+    --card-foreground: hsl(0 0% 95%);
+
+    --popover: hsl(0 0% 100%); /* Kept existing */
+    --popover-foreground: hsl(224 71% 4%); /* Kept existing */
+
+    --primary: hsl(221 83% 53%);
+    --primary-foreground: hsl(0 0% 100%);
+
+    --secondary: hsl(14 80% 60%);
+    --secondary-foreground: hsl(0 0% 100%);
+
+    --muted: hsl(210 40% 96%); /* Kept existing */
+    --muted-foreground: hsl(215 20% 45%); /* Kept existing */
+
+    --accent: hsl(286 63% 55%);
+    --accent-foreground: hsl(222 47% 8%);
+
+    --destructive: hsl(0 84% 60%); /* Kept existing */
+    --destructive-foreground: hsl(210 40% 98%); /* Kept existing */
+
+    --border: hsl(222 39% 17%);
+    --input: hsl(222 39% 17%);
+    --ring: hsl(221 83% 53%);
+
+    /* Accessible primary text/background pair */
+    --bg-primary: hsl(222 47% 8%);
+    --text-primary: hsl(0 0% 100%);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: hsl(210 40% 96%);
+
+    --sidebar-foreground: hsl(224 71% 4%);
+
+    --sidebar-primary: hsl(262 83% 58%);
+
+    --sidebar-primary-foreground: hsl(210 40% 98%);
+
+    --sidebar-accent: hsl(210 40% 96%);
+
+    --sidebar-accent-foreground: hsl(224 71% 4%);
+
+    --sidebar-border: hsl(214 32% 91%);
+
+    --sidebar-ring: hsl(262 83% 58%);
+
+    /* Variables to be set by themeUtils.ts
+    --primary-color: #3b82f6; (example)
+    --background-color: #ffffff; (example)
+    --text-color: #000000; (example)
+    --accent-color: #3b82f6; (example)
+    --button-color: #3b82f6; (example)
+    --card-background: #f8fafc; (example)
+    */
+  }
+
+  /*
+    The .dark and .light classes in :root are no longer needed here
+    as theme colors are applied dynamically via JavaScript using CSS custom properties
+    set on the :root element (document.documentElement).
+    The ThemeProvider component now handles applying these styles.
+    The `document.documentElement.classList.add('dark')` or `document.documentElement.classList.add('light')`
+    is still managed by ThemeProvider for any CSS that might directly depend on these classes,
+    but the color variable definitions themselves are dynamic.
+  */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: theme('fontFamily.sans');
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: theme('fontFamily.heading');
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl font-extrabold text-secondary mb-6;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl font-bold text-primary mb-4;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold text-secondary mb-3;
+  }
+
+  h4,
+  h5,
+  h6 {
+    @apply font-medium text-foreground mb-2;
+  }
+
+  p {
+    @apply text-base text-foreground leading-relaxed mb-4;
+  }
+
+  .content-section {
+    @apply my-12 md:my-16;
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  .pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* Custom scrollbar for webkit browsers */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--card);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+    scrollbar-color: var(--accent) var(--card);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* LiveKit UI overrides */
+  [data-lk-theme='default'] {
+    --lk-color-accent: #06b6d4;
+    --lk-button-background: #06b6d4;
+    --lk-button-background-hover: #0891b2;
+    --lk-bg1: #0b1120;
+    --lk-bg2: #0f172a;
+  }
+
+  /* Skip link styles */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #ffffff;
+    color: #000000;
+    padding: 0.5rem 1rem;
+    z-index: 1000;
+    transition: top 0.3s;
+  }
+
+  .skip-link:focus {
+    top: 0;
+  }
+
+  /* Ensure keyboard focus outlines are visible */
+  button:focus-visible,
+  a:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  /* Improved placeholder contrast */
+  input::placeholder,
+  textarea::placeholder {
+    color: #b3b3b3;
+    opacity: 1;
+  }
+}
+
+@layer components {
+  a {
+    @apply transition-colors duration-200 hover:text-primary;
+    touch-action: manipulation;
+  }
+
+  button,
+  [role="button"] {
+    touch-action: manipulation;
+  }
+
+  @keyframes slide-up {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.3s ease-out;
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    body {
+      font-size: 0.875rem;
+    }
+
+    button,
+    [role='button'],
+    input,
+    textarea,
+    select {
+      min-height: 44px;
+      padding: 0.75rem;
+    }
+
+    .container {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+  }
+}
+
+.request-btn {
+  background: #00bcd4;
+  color: #fff;
+}
+.request-textarea {
+  color: #000;
+}
+.request-textarea::placeholder {
+  color: #777;
+}
+
+@media (max-width: 640px) {
+  .search-dropdown {
+    max-width: 90vw;
+    left: 5vw;
+  }
+}

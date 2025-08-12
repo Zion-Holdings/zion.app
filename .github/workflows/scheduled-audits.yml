@@ -1,0 +1,56 @@
+# .github/workflows/scheduled-audits.yml
+name: Scheduled Audits
+
+on:
+  schedule:
+    # Runs every Sunday at midnight UTC. Cron syntax: minute hour day(month) month day(week)
+    # This schedule can be adjusted as needed. For example, '0 2 * * 1' would be Monday at 2 AM UTC.
+    # Use https://crontab.guru/ to help generate or verify cron expressions.
+    - cron: '0 0 * * 0'
+  workflow_dispatch: # Allows the workflow to be manually triggered from the GitHub Actions UI.
+
+jobs:
+  weekly-audits:
+    name: Weekly Security and Dependency Audits # Descriptive name for the job
+    runs-on: ubuntu-latest # Specifies the runner environment
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4 # Action to check out the repository code
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4 # Action to set up a Node.js environment
+      with:
+        node-version: '20.x' # Specifies the Node.js version to use, consistent with other workflows
+        cache: 'npm' # Enables caching for npm dependencies to speed up installation
+
+    - name: Install dependencies
+      run: npm ci # Installs dependencies cleanly using package-lock.json
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10' # Or a generic '3.x' if preferred
+        cache: 'pip'
+
+    - name: Install pip-audit
+      run: pip install pip-audit
+
+    - name: Run Python Dependency Audit
+      run: pip-audit -r backend/requirements.txt
+
+      - name: Run Dependency and Vulnerability Audits
+        run: bash ./scripts/security-audit.sh
+        # Runs 'npm run check-updates' and 'npm run audit-vulnerabilities'.
+
+      - name: Build application
+        run: npm run build
+
+      - name: Run Performance Checks
+        run: node scripts/performance-check.cjs | tee performance-report.log
+
+      - name: Upload Performance Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: performance-report
+          path: performance-report.log

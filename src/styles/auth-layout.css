@@ -1,0 +1,9 @@
+.auth-layout {
+  padding-top: var(--nav-height);
+}
+
+@media (max-width: 640px) {
+  .auth-layout {
+    padding-top: calc(var(--nav-height) / 2);
+  }
+}

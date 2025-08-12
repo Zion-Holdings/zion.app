@@ -1,0 +1,69 @@
+
+> project@0.0.0 build
+> NODE_OPTIONS='--no-deprecation --require ./scripts/fix-self-global.js' node scripts/pre-build-check.cjs && NODE_OPTIONS='--no-deprecation --require ./scripts/fix-self-global.js' npx next build --no-lint
+
+🔧 Applying webpack runtime polyfills...
+  ✅ self -> global
+  ✅ webpackChunk_N_E -> []
+🔧 Webpack runtime polyfills applied successfully
+🚀 Pre-build Environment Check
+================================
+
+🔍 Checking dependencies...
+✅ All required dependencies found.
+
+🔍 Validating environment configuration...
+
+💡 RECOMMENDATIONS:
+===================
+
+• NEXT_PUBLIC_REOWN_PROJECT_ID
+  Reown project ID for wallet functionality
+  Current: undefined
+
+• NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+  Stripe key for payment processing
+  Current: undefined
+
+• STRIPE_SECRET_KEY
+  Stripe secret key for server-side payment processing
+  Current: undefined
+
+• NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME
+  Cloudinary cloud name for image hosting
+  Current: undefined
+
+✅ Environment validation passed!
+All critical environment variables are properly configured.
+
+✅ Pre-build check passed! Proceeding with build...
+
+🔧 Applying webpack runtime polyfills...
+  ✅ self -> global
+  ✅ webpackChunk_N_E -> []
+🔧 Webpack runtime polyfills applied successfully
+🔧 Applying webpack runtime polyfills...
+  ✅ self -> global
+  ✅ webpackChunk_N_E -> []
+🔧 Webpack runtime polyfills applied successfully
+ ⚠ Linting is disabled.
+ ⚠ The "experimental.esmExternals" option has been modified. experimental.esmExternals is not recommended to be modified as it may disrupt module resolution. It should be removed from your next.config.js.
+   ▲ Next.js 15.3.4
+   - Environments: .env.local
+   - Experiments (use with caution):
+     · cpus: 2
+     ✓ optimizeCss
+     · esmExternals
+
+   Checking validity of types ...
+🔧 Applying webpack runtime polyfills...
+  ✅ self -> global
+  ✅ webpackChunk_N_E -> []
+🔧 Webpack runtime polyfills applied successfully
+   Creating an optimized production build ...
+ ⚠ nodejs runtime support for middleware requires experimental.nodeMiddleware be enabled in your next.config
+🚫 Sentry disabled - using mock implementation (Smart Detection)
+🚫 Native modules externalized for server build: 17
+🚫 Sentry disabled - using mock implementation (Smart Detection)
+🚫 Native modules externalized for server build: 17
+🚫 Sentry disabled - using mock implementation (Smart Detection)

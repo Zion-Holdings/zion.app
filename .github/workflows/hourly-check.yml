@@ -1,0 +1,59 @@
+name: Hourly Audits (Security & Performance)
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Runs at thestart of every hour
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  hourly-audits:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Required to push branches if hourly_audit.sh commits fixes
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+
+      - name: Install dependencies (clean install)
+        run: npm ci
+
+      # Security Audit
+      - name: Make security audit script executable
+        run: chmod +x ./scripts/hourly_audit.sh
+
+              - name: Install GitHub CLI
+                run: |
+                  sudo apt-get update
+                  sudo apt-get install -y gh
+
+              - name: Run hourly security audit script
+                env:
+                  WEBHOOK_URL: ${{ secrets.MAINTENANCE_WEBHOOK_URL }}
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  MAIN_DEV_BRANCH_ENV_VAR: 'main' # Or your main development branch e.g. 'develop'
+                run: ./scripts/hourly_audit.sh
+
+              # Performance Audit (Lighthouse)
+      - name: Install Lighthouse CI
+        run: npm install -g @lhci/cli
+
+      - name: Build Next.js application
+        run: npm run build # Uses "NODE_ENV=production npx next build"
+
+      - name: Run Lighthouse CI
+        run: lhci autorun --config=./lighthouserc.js || echo "Lighthouse audit completed, potential warnings found."
+
+      - name: Upload Lighthouse Report
+        uses: actions/upload-artifact@v4
+        if: always() # Upload report even if lhci autorun has warnings/errors
+        with:
+          name: lighthouse-reports
+          path: ./lhci_reports

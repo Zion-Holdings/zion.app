@@ -1,0 +1,53 @@
+{% extends "ipo_portal/base_portal.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Investor Updates" %} - IPO Portal{% endblock %}
+
+{% block page_title %}{{ page_title|default:"Investor Updates" }}{% endblock %}
+
+{% block content %}
+<div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+    <h3>{% trans "Latest Updates for Investors" %}</h3>
+    {% if can_manage %}
+        <a href="{% url 'ipo_portal:create_investor_update' %}" style="background-color: #28a745; color: white; padding: 10px 15px; text-decoration: none; border-radius: 4px;">
+            {% trans "Create New Update" %}
+        </a>
+    {% endif %}
+</div>
+
+{% if investor_updates %}
+    {% for update in investor_updates %}
+    <div style="background-color: #fff; border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; border-radius: 5px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+        <h4>{{ update.title }}</h4>
+        <p><small style="color: #777;">
+            {% trans "Published on:" %} {{ update.publication_date|date:"Y-m-d" }}
+            {% if update.author %} | {% trans "By:" %} {{ update.author.username }}{% endif %}
+        </small></p>
+        <p>{{ update.summary|truncatewords_html:50|safe }}</p>
+        {% if update.kpis_snapshot %}
+            <details style="margin-top: 10px;">
+                <summary style="cursor: pointer; font-weight: bold; color: #007bff;">{% trans "View KPI Snapshot" %}</summary>
+                <pre style="background-color: #f0f0f0; padding: 10px; border-radius: 4px; margin-top: 5px; max-height: 200px; overflow-y: auto;">{{ update.kpis_snapshot }}</pre>
+            </details>
+        {% endif %}
+
+        <div style="margin-top: 10px; text-align: right;">
+            <a href="{% url 'ipo_portal:investor_update_pdf' pk=update.pk %}" target="_blank" style="background-color: #17a2b8; color: white; padding: 5px 10px; text-decoration: none; border-radius: 4px; font-size: 0.9em; margin-right:10px;">
+                {% trans "Download PDF" %}
+            </a>
+            {% if can_manage %}
+                <a href="{% url 'ipo_portal:edit_investor_update' pk=update.pk %}" style="color: #007bff; text-decoration: none; margin-right: 10px; font-size: 0.9em;">{% trans "Edit" %}</a>
+                <a href="{% url 'ipo_portal:delete_investor_update' pk=update.pk %}" style="color: #dc3545; text-decoration: none; margin-right: 10px; font-size: 0.9em;">{% trans "Delete" %}</a>
+                <a href="{% url 'ipo_portal:send_investor_update_email' update_pk=update.pk %}" style="background-color: #ffc107; color: #212529; padding: 5px 10px; text-decoration: none; border-radius: 4px; font-size: 0.9em;">
+                    {% trans "Send Email" %}
+                </a>
+            {% endif %}
+        </div>
+        {# Add a link to a detail view if one exists: <a href="{% url 'ipo_portal:investor_update_detail' pk=update.pk %}">Read more</a> #}
+    </div>
+    {% endfor %}
+{% else %}
+    <p>{% trans "No investor updates have been published yet." %}</p>
+{% endif %}
+
+{% endblock %}

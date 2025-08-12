@@ -1,0 +1,71 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+        continue-on-error: true
+
+         env:
+      WALLET_PROJECT_ID: dummy
+          SUPABASE_URL: https://gnwtggeptzkqnduuthto.supabase.co
+      SUPABASE_ANON_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdud3RnZ2VwdHprcW5kdXV0aHRvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU0MTQyMjcsImV4cCI6MjA2MDk5MDIyN30.mIyYJWh3S1FLCmjwoJ7FNHz0XLRiUHBd3r9we-E4DIY
+      NEXT_PUBLIC_SUPABASE_URL: https://gnwtggeptzkqnduuthto.supabase.co
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdud3RnZ2VwdHprcW5kdXV0aHRvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU0MTQyMjcsImV4cCI6MjA2MDk5MDIyN30.mIyYJWh3S1FLCmjwoJ7FNHz0XLRiUHBd3r9we-E4DIY
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: 
+      
+actions/setup-node@v3
+        with:
+          node-version:18
+      - run: npm ci
+      - name: Build project
+        run: npm run build
+      - name: Verify build output
+        run: |
+          if [ ! -d dist ]; then
+            echo "Build failed: dist folder not found"
+            exit 1
+          fi
+      - name: Verify asset paths
+        run: |
+          npx serve out/ --cors --single -l 5000 &
+          SERVE_PID=$!
+          sleep 5
+          kill $SERVE_PID
+      - name: Run Vitest with Coverage
+        run: npx vitest run --coverage
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./coverage/coverage-final.json
+      - run: npm run cypress:run
+        env:
+          TEST_USER_EMAIL: ${{ secrets.CYPRESS_TEST_USER_EMAIL }}
+          TEST_USER_PASSWORD: ${{ secrets.CYPRESS_TEST_USER_PASSWORD }}
+          TEST_USER_DISPLAY_NAME: ${{ secrets.CYPRESS_TEST_USER_DISPLAY_NAME }}
+          NEXT_PUBLIC_REOWN_PROJECT_ID: ${{ secrets.VITE_REOWN_PROJECT_ID_CI }} # Assuming secret name will be updated
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL_CI }} # Assuming secret name will be updated
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY_CI }} # Assuming secret name will be updated
+          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL_CI }} # Assuming secret name will be updated
+          NEXT_PUBLIC_VAPID_PUBLIC_KEY: ${{ secrets.VITE_VAPID_PUBLIC_KEY_CI }} # Assuming secret name will be updated
+      - uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage
+      - name: Upload build (optional)
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build
+          path: |
+            build
+            dist

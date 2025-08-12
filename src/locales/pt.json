@@ -1,0 +1,25 @@
+{
+  "greeting": "Olá, {{name}}!",
+  "nav": {
+    "home": "Início",
+    "marketplace": "Mercado",
+    "marketplace_overview": "Visão geral",
+    "categories": "Categorias",
+    "talent": "Talentos",
+    "equipment": "Equipamentos",
+    "community": "Comunidade",
+    "community_overview": "Visão geral",
+    "blog": "Blog",
+    "partners": "Parceiros",
+    "resources": "Recursos",
+    "docs": "Documentos",
+    "tutorials": "Tutoriais",
+    "case_studies": "Casos de estudo",
+    "about": "Sobre",
+    "dashboard": "Painel",
+    "analytics": "Analytics",
+    "cart": "Carrinho"
+  },
+  "login": "Entrar",
+  "signup": "Registrar"
+}

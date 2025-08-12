@@ -1,42 +1,68 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
-    './app/**/*.{js,ts,jsx,tsx}',
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
   ],
   theme: {
     extend: {
       colors: {
-        night: {
-          950: '#020617',
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
         },
       },
-      keyframes: {
-        float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } },
-        'float-slow': { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-6px)' } },
-        'float-fast': { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-14px)' } },
-        twinkle: { '0%, 100%': { opacity: '0.2' }, '50%': { opacity: '0.5' } },
-        gridMove: { '0%': { backgroundPosition: '0 0, 0 0, 0 0' }, '100%': { backgroundPosition: '0 0, 3rem 0, 0 3rem' } },
-        tilt: { to: { '--angle': '360deg' } },
-        shimmer: { '0%': { backgroundPosition: '0% 50%' }, '100%': { backgroundPosition: '100% 50%' } },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        heading: ['Orbitron', 'sans-serif'],
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
       animation: {
-        float: 'float 10s ease-in-out infinite',
-        'float-slow': 'float-slow 14s ease-in-out infinite',
-        'float-fast': 'float-fast 8s ease-in-out infinite',
-        twinkle: 'twinkle 4s ease-in-out infinite',
-        grid: 'gridMove 24s linear infinite',
-        tilt: 'tilt 8s linear infinite',
-        shimmer: 'shimmer 6s linear infinite',
+        shimmer: 'shimmer 2s infinite',
       },
-      backgroundImage: {
-        aurora: 'radial-gradient(1200px 600px at 0% 0%, rgba(168,85,247,0.12), transparent), radial-gradient(1000px 600px at 100% 0%, rgba(34,211,238,0.12), transparent), radial-gradient(800px 600px at 50% 100%, rgba(99,102,241,0.12), transparent)',
-      },
-      dropShadow: {
-        neon: '0 0 18px rgba(168,85,247,0.35)',
+      keyframes: {
+        shimmer: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
       },
     },
   },
   plugins: [],
-};
+}

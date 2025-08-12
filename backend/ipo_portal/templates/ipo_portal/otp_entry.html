@@ -1,0 +1,28 @@
+{% extends "admin/base_site.html" %} {% comment %} Or your app's base template, ensure it's accessible during login phase {% endcomment %}
+{% load i18n %}
+
+{% block title %}{% trans "Enter OTP Code" %}{% endblock %}
+
+{% block content %}
+<div>
+    <h1>{% trans "Verify Your Identity" %}</h1>
+    <p>{% trans "Your account is protected by 2-Factor Authentication. Please enter the OTP from your authenticator app." %}</p>
+
+    <form method="post" action=""> {# Action might need to be dynamic if 'next' is used extensively #}
+        {% csrf_token %}
+        <div>
+            <label for="otp_code">{% trans "OTP Code:" %}</label>
+            <input type="text" name="otp_code" id="otp_code" pattern="\d{6}" title="Enter a 6-digit code" required autofocus>
+        </div>
+
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+
+        <button type="submit">{% trans "Verify OTP" %}</button>
+    </form>
+    <br>
+    {# Consider adding a link to logout or try again if OTP is repeatedly wrong, or if they lost device #}
+    {# <p><a href="{% url 'logout' %}">{% trans "Cancel and Logout" %}</a></p> #}
+</div>
+{% endblock %}

@@ -1,0 +1,56 @@
+name: Track TODOs, FIXMEs, HACKs
+
+on:
+  schedule:
+    # Run once a week on Monday at 3 AM UTC
+    - cron: '0 3 * * 1'
+  workflow_dispatch: # Allow manual triggering
+
+jobs:
+  track_todos:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write # Permission to create issues
+      contents: read # Permission to read repository content
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: TODO to Issue
+        uses: alstr/todo-to-issue-action@v4.4.1 # Use a specific version
+        with:
+          # GitHub token, defaults to secrets.GITHUB_TOKEN
+          # TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+          # Base for issue title. The action appends the TODO text.
+          # TITLE_TEMPLATE: "TODO: {TODO_TEXT}" # Default is "AUTO: {TODO_TEXT}" by the action
+
+          # Keywords to look for (case-insensitive by default with this action)
+          # Default keywords for this action are TODO, FIXME, BUG, HACK, OPTIMIZE, REVIEW
+          # We can override if we only want specific ones, or let it use its defaults
+          # For this plan, we specified TODO, FIXME, HACK.
+          # The action's default handling of multiple keywords is good.
+          # If we want *only* these, we'd specify: KEYWORDS: '["TODO", "FIXME", "HACK"]'
+          # For now, let's rely on its broader default set and add specific labels.
+
+          # Labels to add to the created issues
+          # The action automatically adds a label for the keyword found (e.g., "todo", "fixme").
+          # These are additional custom labels.
+          LABELS: '["tech-debt", "code-comment"]' # JSON array string for additional labels
+
+          # Who to assign the issue to (GitHub username)
+          # ASSIGNEES: '["username1", "username2"]' # Optional
+
+          # How to handle comments that are already issues
+          # MODE: "CREATE_ ontwikkeling" # Default, creates new issues.
+          # alstr/todo-to-issue-action uses a unique fingerprint in the issue body
+          # to avoid creating duplicates if an issue for that specific TODO already exists.
+
+          # Search scope - glob pattern for files to include/exclude
+          # Default is to search all text files, excluding .git, node_modules, etc.
+          # Refining scope to common source/script directories:
+          SCOPE: 'src/**/*.{js,jsx,ts,tsx,py},app/**/*.{js,jsx,ts,tsx},pages/**/*.{js,jsx,ts,tsx},components/**/*.{js,jsx,ts,tsx},lib/**/*.{js,jsx,ts,tsx},utils/**/*.{js,jsx,ts,tsx},backend/**/*.{py},scripts/**/*.{js,cjs,mjs,ts,py},packages/**/*.{js,jsx,ts,tsx,py}'
+          # Exclude specific paths if necessary, e.g., "!**/__tests__/**"
+          # The action has its own default excludes like node_modules, .git, etc.
+          # Adding common directories like 'app', 'packages' for broader coverage.
+```

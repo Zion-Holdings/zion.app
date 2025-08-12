@@ -1,0 +1,61 @@
+# npm audit report
+
+cross-spawn  <6.0.6
+Severity: high
+Regular Expression Denial of Service (ReDoS) in cross-spawn - https://github.com/advisories/GHSA-3xgq-45jj-v275
+fix available via `npm audit fix --force`
+Will install react-devtools@1.0.5, which is a breaking change
+node_modules/react-devtools/node_modules/cross-spawn
+node_modules/term-size/node_modules/cross-spawn
+  execa  0.5.0 - 0.9.0
+  Depends on vulnerable versions of cross-spawn
+  node_modules/term-size/node_modules/execa
+    term-size  1.0.0 - 1.2.0
+    Depends on vulnerable versions of execa
+    node_modules/term-size
+      boxen  1.2.0 - 3.2.0
+      Depends on vulnerable versions of term-size
+      node_modules/update-notifier/node_modules/boxen
+        update-notifier  0.2.0 - 5.1.0
+        Depends on vulnerable versions of boxen
+        Depends on vulnerable versions of latest-version
+        node_modules/update-notifier
+          react-devtools  >=1.0.6
+          Depends on vulnerable versions of cross-spawn
+          Depends on vulnerable versions of electron
+          Depends on vulnerable versions of update-notifier
+          node_modules/react-devtools
+
+electron  23.0.0-alpha.1 - 23.3.13
+Severity: moderate
+ASAR Integrity bypass via filetype confusion in electron - https://github.com/advisories/GHSA-7m48-wc93-9g85
+fix available via `npm audit fix --force`
+Will install react-devtools@1.0.5, which is a breaking change
+node_modules/react-devtools/node_modules/electron
+
+got  <11.8.5
+Severity: moderate
+Got allows a redirect to a UNIX socket - https://github.com/advisories/GHSA-pfrx-2q88-qq97
+fix available via `npm audit fix --force`
+Will install react-devtools@1.0.5, which is a breaking change
+node_modules/package-json/node_modules/got
+  package-json  <=6.5.0
+  Depends on vulnerable versions of got
+  node_modules/package-json
+    latest-version  0.2.0 - 5.1.0
+    Depends on vulnerable versions of package-json
+    node_modules/latest-version
+
+ip  *
+Severity: high
+ip SSRF improper categorization in isPublic - https://github.com/advisories/GHSA-2p57-rm9w-gvfp
+No fix available
+node_modules/ip
+
+11 vulnerabilities (4 moderate, 7 high)
+
+To address all issues possible (including breaking changes), run:
+  npm audit fix --force
+
+Some issues need review, and may require choosing
+a different dependency.

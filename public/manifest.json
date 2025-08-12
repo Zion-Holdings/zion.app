@@ -1,0 +1,116 @@
+{
+  "name": "Zion Tech Marketplace",
+  "short_name": "Zion",
+  "description": "Professional tech marketplace for AI hardware, talent, and enterprise solutions",
+  "lang": "en",
+  "start_url": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "minimal-ui"],
+  "orientation": "portrait-primary",
+  "theme_color": "#2563eb",
+  "background_color": "#ffffff",
+  "scope": "/",
+  "categories": ["business", "technology", "productivity"],
+  "screenshots": [
+    {
+      "src": "/images/screenshots/desktop-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Zion marketplace desktop view"
+    },
+    {
+      "src": "/images/screenshots/mobile-narrow.png", 
+      "sizes": "375x812",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Zion marketplace mobile view"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/logos/zion-logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/logos/zion-logo.png",
+      "sizes": "512x512", 
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/logos/zion-logo.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "apple-touch-icon"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Search Equipment",
+      "short_name": "Equipment",
+      "description": "Search datacenter equipment",
+      "url": "/equipment",
+      "icons": [
+        {
+          "src": "/icons/equipment-shortcut.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Find Talent",
+      "short_name": "Talent", 
+      "description": "Browse technical talent",
+      "url": "/talent",
+      "icons": [
+        {
+          "src": "/icons/talent-shortcut.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "description": "User dashboard",
+      "url": "/dashboard",
+      "icons": [
+        {
+          "src": "/icons/dashboard-shortcut.png", 
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "protocol_handlers": [
+    {
+      "protocol": "web+zion",
+      "url": "/handle?type=%s"
+    }
+  ],
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": ["navigate-existing", "navigate-new"]
+  },
+  "handle_links": "preferred",
+  "prefer_related_applications": false,
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.zion.marketplace",
+      "id": "com.zion.marketplace"
+    },
+    {
+      "platform": "itunes",
+      "url": "https://apps.apple.com/app/zion-marketplace/id123456789"
+    }
+  ]
+}

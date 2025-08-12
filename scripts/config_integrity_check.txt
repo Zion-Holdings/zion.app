@@ -1,0 +1,10 @@
+.env
+config.json
+package.json
+next.config.js
+babel.config.js
+jest.config.js
+tsconfig.json
+server/config/index.js
+backend/django_backend/settings.py
+supabase/config.toml

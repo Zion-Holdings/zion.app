@@ -1,0 +1,154 @@
+/* Performance optimizations to prevent CLS (Cumulative Layout Shift) */
+
+/* Font loading optimizations */
+.font-loading-optimize {
+  font-display: swap;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+/* Prevent layout shift during font loading */
+.hero-text {
+  contain: layout style;
+  min-height: 1.2em;
+}
+
+/* Critical above-the-fold content sizing */
+.hero-section {
+  contain: layout;
+  min-height: 100vh;
+}
+
+/* Prevent CLS for hero elements */
+.hero-title {
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .hero-title {
+    min-height: 140px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    min-height: 180px;
+  }
+}
+
+.hero-subtitle {
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .hero-subtitle {
+    min-height: 80px;
+  }
+}
+
+/* Button height consistency */
+.hero-buttons {
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .hero-buttons {
+    min-height: 70px;
+  }
+}
+
+/* Font optimization for better CLS scores */
+@supports (font-display: optional) {
+  .hero-text {
+    font-display: optional;
+  }
+}
+
+/* Fallback for browsers that don't support CSS containment */
+@supports not (contain: layout) {
+  .hero-text {
+    height: auto;
+    min-height: 1.2em;
+  }
+}
+
+/* Preload critical fonts */
+.font-preload {
+  font-display: swap;
+  font-weight: normal;
+}
+
+/* Optimize gradient text rendering */
+.gradient-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, var(--primary), var(--secondary), var(--accent));
+}
+
+/* Fallback for browsers that don't support background-clip: text */
+@supports not (background-clip: text) {
+  .gradient-text {
+    color: var(--foreground);
+    background: none;
+    -webkit-text-fill-color: inherit;
+  }
+}
+
+/* Improve rendering performance */
+.performance-optimized {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Reduce layout thrashing */
+.layout-stable {
+  contain: layout style;
+  will-change: auto;
+}
+
+/* Critical resource hints for better loading */
+.critical-resource {
+  importance: high;
+}
+
+/* Optimize font rendering */
+.text-rendering-optimized {
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Improve button rendering stability */
+.button-stable {
+  min-height: 48px;
+  contain: layout;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Prevent reflow during image loading */
+.image-stable {
+  aspect-ratio: attr(width) / attr(height);
+  object-fit: cover;
+}
+
+/* Optimize animations to prevent jank */
+.animation-optimized {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.animation-optimized:not(:hover):not(:focus) {
+  will-change: auto;
+} 

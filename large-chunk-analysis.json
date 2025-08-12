@@ -1,0 +1,145 @@
+{
+  "timestamp": "2025-07-01T13:04:16.831Z",
+  "targetSize": 244000,
+  "targetSizeFormatted": "238.28 KB",
+  "summary": {
+    "totalChunks": 316,
+    "largeChunks": 5,
+    "totalSize": 10910139,
+    "totalSizeFormatted": "10.4 MB"
+  },
+  "largeChunks": [
+    {
+      "name": "vendors-36f5e88a-295387f4badac1b6.js",
+      "size": 342809,
+      "sizeFormatted": "334.77 KB",
+      "overTarget": 98809,
+      "overTargetFormatted": "96.49 KB",
+      "category": "unknown",
+      "strategy": {
+        "priority": "medium",
+        "actions": [
+          "Investigate chunk contents manually",
+          "Consider splitting unknown large chunks",
+          "Review bundling strategy"
+        ]
+      }
+    },
+    {
+      "name": "vendors-36e21330-598d3093443d494f.js",
+      "size": 325492,
+      "sizeFormatted": "317.86 KB",
+      "overTarget": 81492,
+      "overTargetFormatted": "79.58 KB",
+      "category": "charts",
+      "strategy": {
+        "priority": "high",
+        "actions": [
+          "Load chart libraries dynamically",
+          "Use lighter charting alternatives",
+          "Implement chart lazy loading"
+        ]
+      }
+    },
+    {
+      "name": "vendors-7998e4cd-ad232c5f0995e000.js",
+      "size": 324970,
+      "sizeFormatted": "317.35 KB",
+      "overTarget": 80970,
+      "overTargetFormatted": "79.07 KB",
+      "category": "unknown",
+      "strategy": {
+        "priority": "medium",
+        "actions": [
+          "Investigate chunk contents manually",
+          "Consider splitting unknown large chunks",
+          "Review bundling strategy"
+        ]
+      }
+    },
+    {
+      "name": "vendors-1c8909d2-5ecc046dd33833d9.js",
+      "size": 260167,
+      "sizeFormatted": "254.07 KB",
+      "overTarget": 16167,
+      "overTargetFormatted": "15.79 KB",
+      "category": "charts",
+      "strategy": {
+        "priority": "high",
+        "actions": [
+          "Load chart libraries dynamically",
+          "Use lighter charting alternatives",
+          "Implement chart lazy loading"
+        ]
+      }
+    },
+    {
+      "name": "vendors-3b1d7ece-e413a20d9af26989.js",
+      "size": 259944,
+      "sizeFormatted": "253.85 KB",
+      "overTarget": 15944,
+      "overTargetFormatted": "15.57 KB",
+      "category": "unknown",
+      "strategy": {
+        "priority": "medium",
+        "actions": [
+          "Investigate chunk contents manually",
+          "Consider splitting unknown large chunks",
+          "Review bundling strategy"
+        ]
+      }
+    }
+  ],
+  "recommendations": [
+    {
+      "chunk": "vendors-36f5e88a-295387f4badac1b6.js",
+      "category": "unknown",
+      "priority": "medium",
+      "actions": [
+        "Investigate chunk contents manually",
+        "Consider splitting unknown large chunks",
+        "Review bundling strategy"
+      ]
+    },
+    {
+      "chunk": "vendors-36e21330-598d3093443d494f.js",
+      "category": "charts",
+      "priority": "high",
+      "actions": [
+        "Load chart libraries dynamically",
+        "Use lighter charting alternatives",
+        "Implement chart lazy loading"
+      ]
+    },
+    {
+      "chunk": "vendors-7998e4cd-ad232c5f0995e000.js",
+      "category": "unknown",
+      "priority": "medium",
+      "actions": [
+        "Investigate chunk contents manually",
+        "Consider splitting unknown large chunks",
+        "Review bundling strategy"
+      ]
+    },
+    {
+      "chunk": "vendors-1c8909d2-5ecc046dd33833d9.js",
+      "category": "charts",
+      "priority": "high",
+      "actions": [
+        "Load chart libraries dynamically",
+        "Use lighter charting alternatives",
+        "Implement chart lazy loading"
+      ]
+    },
+    {
+      "chunk": "vendors-3b1d7ece-e413a20d9af26989.js",
+      "category": "unknown",
+      "priority": "medium",
+      "actions": [
+        "Investigate chunk contents manually",
+        "Consider splitting unknown large chunks",
+        "Review bundling strategy"
+      ]
+    }
+  ]
+}

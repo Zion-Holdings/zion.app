@@ -1,0 +1,135 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/.prisma/client"
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  emailVerified Boolean @default(false)
+  points Int @default(0)
+  reviews   ProductReview[] // Add this line
+  passwordResetToken String?
+  passwordResetExpires DateTime?
+}
+
+model ChatMessage {
+  id        Int      @id @default(autoincrement())
+  roomId    String
+  senderId  Int
+  content   String
+  createdAt DateTime @default(now())
+}
+
+model category {
+  id     String  @id @default(cuid())
+  name   String
+  slug   String  @unique
+  icon   String?
+  active Boolean @default(true)
+}
+
+model Product {
+  id          String @id @default(cuid())
+  name        String
+  description String?
+  price       Decimal? // For monetary values
+  currency    String?  // e.g., "USD", "EUR"
+  category    String?
+  tags        String[] @default([]) // Array of strings, defaults to empty
+  images      Json?    // Store as JSON, e.g., [{ url: "...", alt: "..." }, ...]
+
+  // Keep existing relations like reviews
+  reviews     ProductReview[]
+}
+
+model ProductReview {
+  id        String   @id @default(cuid())
+  rating    Int
+  comment   String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  product   Product @relation(fields: [productId], references: [id])
+  productId String
+
+  user      User    @relation(fields: [userId], references: [id])
+  userId    Int
+
+  @@unique([productId, userId])
+}
+
+model TalentProfile {
+  id                  String    @id @default(cuid())
+  user_id             String    // Corresponds to user_id in static data. User model has Int id, so direct relation is tricky without User id type change.
+  full_name           String
+  professional_title  String
+  profile_picture_url String?
+  bio                 String? // @@index([bio], type: Gin, opclass: gin_trgm_ops)
+  summary             String? // @@index([summary], type: Gin, opclass: gin_trgm_ops)
+  location            String?
+  skills              String[]  @default([]) // @@index([skills], type: Gin, opclass: gin_trgm_ops) - Note: Special handling might be needed for array types
+  hourly_rate         Float?
+  years_experience    Int?
+  availability_type   String?    // e.g., "full_time", "part_time", "project"
+  timezone            String?
+  average_rating      Float?
+  rating_count        Int?
+  is_verified         Boolean?  @default(false)
+  key_projects        Json?     // Store as JSON: { title: string, description: string }[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // If User model's ID was String, we could do:
+  // user User @relation(fields: [user_id], references: [id])
+  // For now, user_id is kept as String.
+}
+
+enum ErrorAnalysisStatus {
+  NEW
+  ANALYZED
+  FIX_SUGGESTED
+  REVIEWED
+  FIX_APPLIED
+  IGNORED
+}
+
+model ErrorAnalysisSuggestion {
+  id                String   @id @default(cuid())
+  error_signature   String   @unique
+  error_message     String
+  stack_trace       String   @db.Text // Use Text for potentially long strings
+  component_stack   String?  @db.Text
+  url               String
+  source            String   // e.g., 'GlobalErrorBoundary', 'window.onerror', 'logError'
+  user_agent        String?  @db.Text
+  codex_prompt      String?  @db.Text
+  codex_suggestion  String?  @db.Text
+  codex_explanation String?  @db.Text
+  codex_suggested_fix_code String? @db.Text
+  codex_impact_assessment String? @db.Text
+  codex_model       String?
+  analysis_error    String?  @db.Text // For errors from the Codex script or analysis process
+  status            ErrorAnalysisStatus @default(NEW)
+  first_seen_at     DateTime @default(now())
+  last_seen_at      DateTime @updatedAt
+  occurrence_count  Int      @default(1)
+}
+
+model Talent {
+  id     Int      @id @default(autoincrement())
+  name   String
+  role   String
+  avatar String?
+  rate   Float?
+  skills String[]
+}

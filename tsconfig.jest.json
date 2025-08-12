@@ -1,0 +1,57 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "commonjs", // Changed for Jest
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/pages/*": ["./src/pages/*", "./pages/*"],
+      "axios": ["./src/lib/axios.ts"],
+      "next-cloudinary": ["./types/next-cloudinary.d.ts"]
+    },
+    // Modified for Jest: removed vite/client, vitest/globals; added jest, @testing-library/jest-dom
+    "types": ["jest", "@testing-library/jest-dom", "react", "node"],
+
+    /* Bundler mode related - some might be less relevant for Jest's CJS context but keep for consistency */
+    "moduleResolution": "node", // Changed from bundler to node for CommonJS context
+    "allowImportingTsExtensions": true, // May or may not be needed with CJS, but harmless
+    "esModuleInterop": true, // Important for CJS interop
+    "resolveJsonModule": true,
+    "isolatedModules": false, // Changed for better type checking with ts-jest
+    "allowJs": true, // Allow JS files to be processed
+    // "noEmit": true, // Removed, ts-jest handles emit
+
+    "jsx": "react-jsx",
+
+    /* Linting (copied from base, can be reviewed later if they cause issues with tests) */
+    "strict": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": [ // Broad include for tests, can be refined by Jest's testMatch
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "tests/**/*.ts",
+    "tests/**/*.tsx",
+    "tests/**/*.js",
+    "tests/**/*.jsx",
+    "__tests__/**/*.ts",
+    "__tests__/**/*.tsx",
+    "__tests__/**/*.js",
+    "__tests__/**/*.jsx",
+    "pages/**/*.ts",
+    "pages/**/*.tsx",
+    "types/**/*.d.ts"
+  ],
+  // "references": [] // Removed references to tsconfig.node.json
+  "exclude": [
+    "node_modules",
+    "cypress" // Exclude Cypress tests from Jest's TS compilation
+  ]
+}

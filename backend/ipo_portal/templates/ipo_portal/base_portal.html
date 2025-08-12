@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}IPO Portal{% endblock %}</title>
+    <style>
+        body { font-family: sans-serif; margin: 0; display: flex; min-height: 100vh; background-color: #f4f7f9; }
+        .sidebar { width: 250px; background-color: #2c3e50; color: white; padding: 20px; }
+        .sidebar h2 { text-align: center; color: #ecf0f1; }
+        .sidebar ul { list-style-type: none; padding: 0; }
+        .sidebar ul li a { color: #bdc3c7; text-decoration: none; display: block; padding: 10px; border-radius: 4px; margin-bottom: 5px; }
+        .sidebar ul li a:hover, .sidebar ul li a.active { background-color: #34495e; color: white; }
+        .main-content { flex-grow: 1; padding: 30px; background-color: #ffffff; margin: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        header { background-color: #3498db; color: white; padding: 15px 30px; border-radius: 8px 8px 0 0; margin: -30px -30px 30px -30px; }
+        header h1 { margin: 0; font-size: 1.8em; }
+        .user-info { position: absolute; top: 10px; right: 10px; color: #333; font-size: 0.9em; }
+        /* Add more SaaS-like styling here */
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <div class="sidebar">
+        <h2>IPO Portal</h2>
+        <ul>
+            <li><a href="{% url 'ipo_portal:dashboard' %}" class="{% if request.resolver_match.url_name == 'dashboard' %}active{% endif %}">Dashboard</a></li>
+            <li><a href="{% url 'ipo_portal:data_room' %}" class="{% if request.resolver_match.url_name == 'data_room' %}active{% endif %}">Data Room</a></li>
+            <li><a href="{% url 'ipo_portal:investor_updates' %}" class="{% if request.resolver_match.url_name == 'investor_updates' %}active{% endif %}">Investor Updates</a></li>
+            <li><a href="{% url 'ipo_portal:deal_room' %}" class="{% if request.resolver_match.url_name == 'deal_room' %}active{% endif %}">Deal Room</a></li>
+            <li><hr style="border-color: #34495e;"></li>
+            <li><a href="{% url 'ipo_portal:setup_2fa' %}">Setup 2FA</a></li>
+            <li><a href="{% url 'admin:logout' %}">Logout</a></li> {# Assuming standard admin logout #}
+        </ul>
+        {% block sidebar_extra %}{% endblock %}
+    </div>
+    <div class="main-content">
+        <header>
+            <h1>{% block page_title %}Page Title{% endblock %}</h1>
+        </header>
+        {% block content %}{% endblock %}
+    </div>
+    <div class="user-info">
+        {% if user.is_authenticated %}
+            Logged in as: {{ user.username }}
+        {% endif %}
+    </div>
+</body>
+</html>

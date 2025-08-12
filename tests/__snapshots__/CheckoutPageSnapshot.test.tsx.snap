@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkout page renders header 1`] = `
+<DocumentFragment>
+  <div
+    class="container max-w-2xl py-10"
+  >
+    <h1
+      class="text-3xl font-bold mb-6"
+    >
+      Checkout
+    </h1>
+    <div
+      class="mb-4"
+    >
+      <h2
+        class="font-semibold mb-2"
+      >
+        Order Summary
+      </h2>
+      <ul
+        class="space-y-1"
+      />
+      <div
+        class="flex justify-between font-semibold mt-2"
+      >
+        <span>
+          Subtotal
+        </span>
+        <span>
+          $0.00
+        </span>
+      </div>
+    </div>
+    <form
+      class="space-y-4"
+    >
+      <div
+        class="space-y-2"
+      >
+        <label
+          class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          for=":r0:-form-item"
+        >
+          Name
+        </label>
+        <input
+          aria-describedby=":r0:-form-item-description"
+          aria-invalid="false"
+          class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm text-gray-900 dark:text-gray-100 file:text-gray-900 dark:file:text-gray-100"
+          id=":r0:-form-item"
+          name="name"
+          value=""
+        />
+      </div>
+      <div
+        class="space-y-2"
+      >
+        <label
+          class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          for=":r1:-form-item"
+        >
+          Email
+        </label>
+        <input
+          aria-describedby=":r1:-form-item-description"
+          aria-invalid="false"
+          class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm text-gray-900 dark:text-gray-100 file:text-gray-900 dark:file:text-gray-100"
+          id=":r1:-form-item"
+          name="email"
+          type="email"
+          value=""
+        />
+      </div>
+      <div
+        class="space-y-2"
+      >
+        <label
+          class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          for=":r2:-form-item"
+        >
+          Address
+        </label>
+        <input
+          aria-describedby=":r2:-form-item-description"
+          aria-invalid="false"
+          class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm text-gray-900 dark:text-gray-100 file:text-gray-900 dark:file:text-gray-100"
+          id=":r2:-form-item"
+          name="address"
+          value=""
+        />
+      </div>
+      <div
+        class="space-y-2"
+      >
+        <label
+          class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          for=":r3:-form-item"
+        >
+          City
+        </label>
+        <input
+          aria-describedby=":r3:-form-item-description"
+          aria-invalid="false"
+          class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm text-gray-900 dark:text-gray-100 file:text-gray-900 dark:file:text-gray-100"
+          id=":r3:-form-item"
+          name="city"
+          value=""
+        />
+      </div>
+      <div
+        class="space-y-2"
+      >
+        <label
+          class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          for=":r4:-form-item"
+        >
+          Country
+        </label>
+        <input
+          aria-describedby=":r4:-form-item-description"
+          aria-invalid="false"
+          class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm text-gray-900 dark:text-gray-100 file:text-gray-900 dark:file:text-gray-100"
+          id=":r4:-form-item"
+          name="country"
+          value=""
+        />
+      </div>
+      <div />
+      <button
+        class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full"
+        disabled=""
+        type="submit"
+      >
+        Pay $0.00
+      </button>
+    </form>
+    <p
+      class="text-xs text-zion-slate-light"
+    >
+      Use test card 4242 4242 4242 4242 with any future date and CVC.
+    </p>
+  </div>
+</DocumentFragment>
+`;

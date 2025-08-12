@@ -1,0 +1,11 @@
+{
+  "urlsToMonitor": [
+    "http://localhost:3000/fast",
+    "http://localhost:3000/slow",
+    "https://www.google.com"
+  ],
+  "checkIntervalMinutes": 5,
+  "responseTimeThresholdMs": 500,
+  "consecutiveChecksLimit": 3,
+  "logFile": "performance.log"
+}

@@ -1,0 +1,56 @@
+# .github/workflows/ci-cd.yml
+name: Node.js CI/CD
+
+on:
+  push:
+    branches: [ main ] # Defaulting to 'main'. Adjust if your main branch is different (e.g., master).
+  pull_request:
+    branches: [ main ] # Defaulting to 'main'. Adjust if your main branch is different.
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest # Use the latest Ubuntu runner
+
+    strategy:
+      matrix:
+        node-version: [ '20.x' ] # Using Node.js version '20.x' as per package.json engines field or a recent LTS.
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4 # Checks out your repository under $GITHUB_WORKSPACE
+
+    - name: Set up Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4 # Sets up a Node.js environment
+      with:
+        node-version: ${{ matrix.node-version }} # Specifies the Node.js version
+        cache: 'npm' # Enables caching for npm dependencies to speed up subsequent builds
+
+    - name: Install dependencies
+      run: npm ci # Use 'ci' for consistent and faster installs in CI environments
+
+    - name: Run security audits
+      run: bash ./scripts/security-audit.sh # Runs the security audit script. Assumes it's executable.
+
+    - name: Run linters and formatters
+      run: bash ./scripts/lint-format.sh # Runs the linting and formatting script. Assumes it's executable.
+      # Or, for more granular control if the script above isn't suitable:
+      # - name: Run Prettier format check
+      #   run: npm run format # Assuming 'npm run format' is configured to check formatting without writing changes.
+      # - name: Run ESLint
+      #   run: npm run lint
+
+    - name: Run tests
+      run: npm test # Executes the test suite
+
+    - name: Build application
+      run: npm run build # Builds the application using the script from package.json
+
+    # Optional: Deployment step (placeholder)
+    # This section is commented out. To enable deployment, configure it for your specific hosting environment.
+    # - name: Deploy to Staging/Production
+    #   if: github.ref == 'refs/heads/main' && github.event_name == 'push' # Example: deploy only on push to the main branch
+    #   run: |
+    #     echo "Deployment steps would go here..."
+    #     # Example commands for deployment:
+    #     # ssh user@server 'cd /path/to/app && git pull && npm install --production && pm2 restart app'
+    #     # Or use dedicated GitHub Actions for services like GitHub Pages, AWS, Azure, Google Cloud, etc.

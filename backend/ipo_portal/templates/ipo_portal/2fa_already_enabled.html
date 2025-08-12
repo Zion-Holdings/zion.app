@@ -1,0 +1,13 @@
+{% extends "admin/base_site.html" %} {% comment %} Or your app's base template {% endcomment %}
+{% load i18n %}
+
+{% block title %}{% trans "2-Factor Authentication Status" %}{% endblock %}
+
+{% block content %}
+<div>
+    <h1>{% trans "2-Factor Authentication is Already Active" %}</h1>
+    <p>{% trans "2-Factor Authentication (2FA) is already enabled for your account." %}</p>
+    <p>{% trans "If you wish to disable or reconfigure it, please contact an administrator or use the account management section (if available)." %}</p>
+    <p><a href="{% url 'admin:index' %}">{% trans "Back to Admin Dashboard" %}</a></p> {# Adjust if not admin context #}
+</div>
+{% endblock %}

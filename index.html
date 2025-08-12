@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Force a cache reset to load latest assets
+      if ('caches' in window) {
+        caches.keys().then((names) => {
+          for (const name of names) caches.delete(name);
+        });
+      }
+    </script>
+    <title>Zion - The Future of Tech & AI Marketplace</title>
+    <meta name="description" content="The world's first free marketplace dedicated to high-tech and artificial intelligence. Publish, connect, and thrive — all in one place." />
+    <meta name="author" content="Zion Tech Group" />
+    <meta name="keywords" content="AI marketplace, tech services, artificial intelligence, IT services, AI developers, technology marketplace, AI solutions, machine learning, digital transformation" />
+
+    <!-- High tech font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet" />
+
+    <meta name="theme-color" content="#000000" />
+    <link rel="manifest" href="%BASE_URL%manifest.json" />
+    <!-- Global styles built to /static -->
+    <link rel="stylesheet" href="%BASE_URL%static/index.css" />
+    <noscript><link rel="stylesheet" href="%BASE_URL%static/index.css" /></noscript>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Zion - The Future of Tech & AI Marketplace" />
+    <meta property="og:description" content="The world's first free marketplace dedicated to high-tech and artificial intelligence. Publish, connect, and thrive — all in one place." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="%BASE_URL%logos/zion-logo.png" />
+    <meta property="og:url" content="https://app.ziontechgroup.com/" />
+    <meta property="og:site_name" content="Zion Marketplace" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@lovable_dev" />
+    <meta name="twitter:title" content="Zion - The Future of Tech & AI Marketplace" />
+    <meta name="twitter:description" content="The world's first free marketplace dedicated to high-tech and artificial intelligence. Publish, connect, and thrive — all in one place." />
+    <meta name="twitter:image" content="%BASE_URL%logos/zion-logo.png" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://app.ziontechgroup.com/" />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="%BASE_URL%favicon.ico" />
+    <link rel="prefetch" href="%BASE_URL%request-quote" />
+    <link rel="prefetch" href="%BASE_URL%checkout" />
+    <link rel="prefetch" href="%BASE_URL%recommendations" />
+    
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="%BASE_URL%logos/zion-logo.png" />
+
+    <!-- Google Analytics -->
+    <script>
+      (function() {
+        function storageAvailable(type) {
+          try {
+            var storage = window[type];
+            var test = '__storage_test__';
+            storage.setItem(test, test);
+            storage.removeItem(test);
+            return true;
+          } catch {
+            return false;
+          }
+        }
+        if (storageAvailable('localStorage')) {
+          var gaScript = document.createElement('script');
+          gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=%VITE_GA_ID%';
+          gaScript.defer = true;
+          document.head.appendChild(gaScript);
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          window.addEventListener('load', function() {
+            gtag('js', new Date());
+            gtag('config', '%VITE_GA_ID%');
+          });
+        } else {
+          console.warn('Google Analytics disabled: storage is not available.');
+        }
+      })();
+    </script>
+    
+    <!-- Structured data (JSON-LD) for SEO -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline' https://js.stripe.com https://www.googletagmanager.com https://widget.intercom.io chrome-extension:; object-src 'none'; base-uri 'self';"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Zion",
+        "url": "https://app.ziontechgroup.com",
+        "logo": "%BASE_URL%logos/zion-logo.png",
+        "description": "The world's first free marketplace dedicated to high-tech and artificial intelligence. Publish, connect, and thrive — all in one place.",
+        "sameAs": [
+          "https://twitter.com/lovable_dev",
+          "https://www.facebook.com/zionmarketplace",
+          "https://www.linkedin.com/company/zion-marketplace"
+        ]
+      }
+    </script>
+    <script type="module">
+      const isProd = import.meta.env.MODE === 'production';
+      const allowDevTools = import.meta.env.NEXT_PUBLIC_DEVTOOLS === 'true';
+      if (isProd && !allowDevTools) {
+        const noop = () => {};
+        const DEV_TOOLS = window.__REACT_DEVTOOLS_GLOBAL_HOOK__;
+        if (typeof DEV_TOOLS === 'object') {
+          for (const [key, value] of Object.entries(DEV_TOOLS)) {
+            DEV_TOOLS[key] = typeof value === 'function' ? noop : null;
+          }
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="root">
+      <noscript>
+        <style>
+          body {
+            background: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+            padding: 1rem;
+          }
+        </style>
+        This application requires JavaScript. Please enable JavaScript and run
+        the development server.
+      </noscript>
+    </div>
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script type="module" src="%BASE_URL%src/main.tsx"></script>
+  </body>
+</html>

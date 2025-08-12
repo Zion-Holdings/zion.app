@@ -1,308 +1,229 @@
 [build]
-  command = "npm ci && npm run export"
-  publish = "out"
+  # Use `npm ci` for deterministic installs
+  # Generate Prisma client before building to ensure models are up to date
+  command = "npm run build:netlify:prepare"
+  # Netlify UI sets `publish` to `out` which causes the Next.js plugin to fail
+  # because no exported directory exists. Explicitly publish the `.next`
+  # directory so the plugin can run correctly.
+  publish = ".next"
+  # Increase build timeout for 176+ pages
+  command_timeout = "30m"
 
 [build.environment]
-  NODE_VERSION = "20"
-  NETLIFY_NEXT_PLUGIN_SKIP = "true"
-  # When triggering chained builds via build hook, set NETLIFY_RERUN_CHAIN=1 in the hook payload/env
+  NODE_OPTIONS = "--no-deprecation --max-old-space-size=6144 --no-warnings"
+  NPM_FLAGS = "--prefer-offline --legacy-peer-deps"
+  NEXT_PUBLIC_APP_ENV = "production"
+  NODE_VERSION = "22"
+  NEXT_TELEMETRY_DISABLED = "1"
+  CI = "true"
+  SKIP_TYPE_CHECK = "true"
+  
+  # Performance optimizations for large builds (with Netlify plugin)
+  NEXT_DISABLE_CSS_INLINE = "true"
+  NEXT_DISABLE_SOURCE_MAPS = "true"
+  GENERATE_SOURCEMAP = "false"
+  NEXT_BUILD_WORKERS = "1"
+  NEXT_PRIVATE_BUILD_CACHE = "false"
+  NEXT_PRIVATE_STATIC_OPTIMIZATION = "false"
+  
+  # CRITICAL FIX: Completely disable build trace collection to prevent hanging
+  NEXT_DISABLE_TRACE_COLLECTION = "true"
+  NEXT_PRIVATE_OUTPUT_TRACE = "false"
+  # NEXT_PRIVATE_OUTPUT_FILE_TRACING = "false" # Allowing Next.js default / plugin to manage this
+  UV_THREADPOOL_SIZE = "4"
+  NODE_NO_WARNINGS = "1"
+  NEXT_PRIVATE_MINIMIZE_BUILD_TIME = "true"
+  
+  # Configure secrets scanning to omit legitimate public environment variables
+  # NEXT_PUBLIC_* variables are meant to be public and embedded in client bundles
+  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME"
+  
+  # ========================================
+  # AUTH0 AUTHENTICATION CONFIGURATION
+  # ========================================
+  # Auth0 handles all authentication (login, signup, password reset, social login, etc.)
+  # These variables MUST be set in Netlify UI with actual values from your Auth0 application
+  # Get these from: https://manage.auth0.com/dashboard/applications/YOUR_APP_ID/settings
+  
+  # REQUIRED: Auth0 configuration
+  # Generate AUTH0_SECRET with: openssl rand -hex 32
+  AUTH0_SECRET = "your_auth0_secret_here_generate_with_openssl_rand_hex_32"
+  AUTH0_BASE_URL = "https://your-domain.netlify.app"
+  AUTH0_ISSUER_BASE_URL = "https://your-tenant.us.auth0.com"
+  AUTH0_CLIENT_ID = "your_auth0_client_id_here"
+  AUTH0_CLIENT_SECRET = "your_auth0_client_secret_here"
+  
+  # OPTIONAL: Auth0 API audience (if using Auth0 API)
+  AUTH0_AUDIENCE = "https://your-api-identifier"
+  
+  # ========================================
+  # MONITORING & ANALYTICS CONFIGURATION
+  # ========================================
+  # Sentry for error monitoring (RECOMMENDED for production)
+  NEXT_PUBLIC_SENTRY_DSN = "your_sentry_dsn_here"
+  NEXT_PUBLIC_SENTRY_ENVIRONMENT = "production"
+  NEXT_PUBLIC_SENTRY_RELEASE = "1.0.0"
+  
+  # Analytics and monitoring
+  NEXT_PUBLIC_GA_ID = "your_google_analytics_id_here"
+  NEXT_PUBLIC_INTERCOM_APP_ID = "your_intercom_app_id_here"
+  # NEXT_PUBLIC_POSTHOG_KEY = "your_posthog_key_here"  # Commented out to prevent 404 errors
+  # NEXT_PUBLIC_POSTHOG_HOST = "https://app.posthog.com"  # Commented out to prevent 404 errors
+  
+  # ========================================
+  # WALLET & WEB3 CONFIGURATION  
+  # ========================================
+  # Reown (WalletConnect) for wallet integration
+  NEXT_PUBLIC_REOWN_PROJECT_ID = "your_reown_project_id_here"
+  NEXT_PUBLIC_ALCHEMY_API_KEY = "your_alchemy_api_key_here"
+  NEXT_PUBLIC_ZION_TOKEN_CONTRACT_ADDRESS = "your_token_contract_address_here"
+  NEXT_PUBLIC_ZION_TOKEN_NETWORK_ID = "1"
+  NEXT_PUBLIC_SNAPSHOT_SPACE_ID = "yourproject.eth"
+  NEXT_PUBLIC_SNAPSHOT_HUB_URL = "https://hub.snapshot.org"
+  
+  # ========================================
+  # PAYMENT PROCESSING CONFIGURATION
+  # ========================================
+  # Stripe payment processing
+  NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY = "pk_live_your_stripe_publishable_key_here"
+  STRIPE_SECRET_KEY = "sk_live_your_stripe_secret_key_here"
+  STRIPE_WEBHOOK_SECRET = "whsec_your_stripe_webhook_secret_here"
+  
+  # ========================================
+  # MEDIA & CONTENT CONFIGURATION
+  # ========================================
+  # Cloudinary for image management
+  # NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME = Set in Netlify UI
+  # CLOUDINARY_API_KEY = Set in Netlify UI  
+  # CLOUDINARY_API_SECRET = Set in Netlify UI
+  
+  # ========================================
+  # COMMUNICATION CONFIGURATION
+  # ========================================
+  # Email configuration
+  NEXT_PUBLIC_SUPPORT_EMAIL = "support@yourdomain.com"
+  SENDGRID_API_KEY = "SG.your_sendgrid_api_key_here"
+  
+  # ========================================
+  # APPLICATION CONFIGURATION
+  # ========================================
+  # Application URLs
+  NEXT_PUBLIC_APP_URL = "https://your-domain.netlify.app"
+  NEXT_PUBLIC_API_URL = "https://your-domain.netlify.app/api"
+  # CDN domain for static assets
+  NEXT_PUBLIC_CDN_URL = "https://cdn.yourdomain.com"
+  
+  # Feature flags
+  NEXT_PUBLIC_ENABLE_ANALYTICS = "true"
+  NEXT_PUBLIC_ENABLE_WALLET = "true"
+  NEXT_PUBLIC_ENABLE_PAYMENTS = "true"
+  
+  # External APIs
+  EXAMPLE_API_URL = "https://api.example.com"
 
-[functions]
-  directory = "netlify/functions"
-  node_bundler = "esbuild"
+# Skip Husky for CI builds
+[build.processing]
+  skip_processing = false
 
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
+
+# Deploy contexts for different environments
+[context.production.environment]
+  AUTH0_BASE_URL = "https://yourdomain.com"
+  NEXT_PUBLIC_SENTRY_ENVIRONMENT = "production"
+  NEXT_PUBLIC_ENABLE_ANALYTICS = "true"
+  NEXT_PUBLIC_APP_ENV = "production"
+  NODE_ENV = "production"
+  NEXT_TELEMETRY_DISABLED = "1"
+  
+  # Production build optimizations (with Netlify plugin)
+  NODE_OPTIONS = "--no-deprecation --max-old-space-size=6144 --no-warnings"
+  NEXT_DISABLE_CSS_INLINE = "true"
+  NEXT_DISABLE_SOURCE_MAPS = "true"
+  GENERATE_SOURCEMAP = "false"
+  NEXT_BUILD_WORKERS = "1"
+  NEXT_PRIVATE_BUILD_CACHE = "false"
+  NEXT_PRIVATE_STATIC_OPTIMIZATION = "false"
+  
+  # CRITICAL FIX: Completely disable build trace collection to prevent hanging
+  NEXT_DISABLE_TRACE_COLLECTION = "true"
+  NEXT_PRIVATE_OUTPUT_TRACE = "false"
+  # NEXT_PRIVATE_OUTPUT_FILE_TRACING = "false" # Allowing Next.js default / plugin to manage this
+  UV_THREADPOOL_SIZE = "4"
+  NODE_NO_WARNINGS = "1"
+  NEXT_PRIVATE_MINIMIZE_BUILD_TIME = "true"
+
+[context.deploy-preview.environment]
+  AUTH0_BASE_URL = "https://deploy-preview-${REVIEW_ID}--your-site.netlify.app"
+  NEXT_PUBLIC_SENTRY_ENVIRONMENT = "preview"
+  NEXT_PUBLIC_ENABLE_ANALYTICS = "false"
+  NEXT_PUBLIC_APP_ENV = "preview"
+  NEXT_PUBLIC_DEVTOOLS = "true"
+  NODE_ENV = "production"
+  NEXT_TELEMETRY_DISABLED = "1"
+
+[context.branch-deploy.environment]
+  AUTH0_BASE_URL = "https://${BRANCH}--your-site.netlify.app"
+  NEXT_PUBLIC_SENTRY_ENVIRONMENT = "staging"
+  NEXT_PUBLIC_ENABLE_ANALYTICS = "false"
+  NEXT_PUBLIC_APP_ENV = "staging"
+  NEXT_PUBLIC_DEVTOOLS = "true"
+  NODE_ENV = "production"
+  NEXT_TELEMETRY_DISABLED = "1"
+
+# Headers for security and performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/logos/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Redirects
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
+
+[functions.environment]
+  SENTRY_LOG_LEVEL = "debug"
+
+[functions.sentryDsnCheckCron]
+  schedule = "@daily"
+
+[functions.healthCheckCron]
+    schedule = "*/5 * * * *"
 
 [[plugins]]
   package = "netlify-plugin-cloudinary"
-
-[[plugins]]
-  package = "./netlify/plugins/run-functions-and-rerun"
   [plugins.inputs]
-    # Optional: comma-separated includes/excludes
-    include = ""
-    exclude = ""
-    concurrency = 6
-    timeoutMs = 180000
+    # Point to the correct images directory
+    imagesPath = "public/logos"
+    # Use production domain  
+    deliveryType = "fetch"
+    # Set max file size to optimize performance
+    maxSize = 1048576
+    # Set concurrent uploads
+    uploadConcurrency = 10
 
-# Scheduled Functions (new automations replacing some GitHub Actions cadence)
-[[scheduled.functions]]
-  name = "homepage_advertiser"
-  schedule = "*/15 * * * *" # every 15 minutes
-
-[[scheduled.functions]]
-  name = "cloud_orchestrator"
-  schedule = "0 */4 * * *" # every 4 hours
-
-[[scheduled.functions]]
-  name = "front-enhancer"
-  schedule = "*/5 * * * *" # every 5 minutes
-
-[[scheduled.functions]]
-  name = "front-index-orchestrator"
-  schedule = "*/5 * * * *" # every 5 minutes
-
-[[scheduled.functions]]
-  name = "frontpage-enhancer"
-  schedule = "*/20 * * * *" # every 20 minutes
-
-[[scheduled.functions]]
-  name = "marketing-and-features-promo"
-  schedule = "0 */2 * * *" # every 2 hours
-
-[[scheduled.functions]]
-  name = "link-and-health-scheduler"
-  schedule = "0 */6 * * *" # every 6 hours
-
-[[scheduled.functions]]
-  name = "sitemap_runner"
-  schedule = "0 */12 * * *" # twice per day
-
-[[scheduled.functions]]
-  name = "fast-front-promoter"
-  schedule = "*/15 * * * *" # every 15 minutes
-
-[[scheduled.functions]]
-  name = "fast-orchestrator"
-  schedule = "*/1 * * * *" # every minute
-
-[[scheduled.functions]]
-  name = "continuous-orchestrator"
-  schedule = "*/5 * * * *" # every 5 minutes
-
-[[scheduled.functions]]
-  name = "front-visionary-expander"
-  schedule = "*/3 * * * *" # fast refresh for front systems
-
-[[scheduled.functions]]
-  name = "home-visionary-expander"
-  schedule = "*/4 * * * *" # fast refresh for homepage
-
-[[scheduled.functions]]
-  name = "ultrafast-orchestrator"
-  schedule = "*/1 * * * *" # every minute
-
-[[scheduled.functions]]
-  name = "trigger-all-and-commit"
-  schedule = "*/1 * * * *" # every minute
-
-[[scheduled.functions]]
-  name = "front-maximizer"
-  schedule = "*/5 * * * *" # every 5 minutes
-
-[[scheduled.functions]]
-  name = "continuous-front-runner"
-  schedule = "*/3 * * * *" # every 3 minutes
-
-[[scheduled.functions]]
-  name = "readme-advertiser"
-  schedule = "13 */6 * * *" # every 6 hours
-
-[[scheduled.functions]]
-  name = "front-ads-promoter"
-  schedule = "*/10 * * * *" # every 10 minutes
-
-[[scheduled.functions]]
-  name = "ultrafast-front-orchestrator"
-  schedule = "*/5 * * * *" # every 5 minutes
-
-[[scheduled.functions]]
-  name = "autonomous-meta-orchestrator"
-  schedule = "*/1 * * * *" # every minute
-
-# New ultra-fast tools
-[[scheduled.functions]]
-  name = "features-capabilities-benefits-advertiser"
-  schedule = "*/2 * * * *" # every 2 minutes
-
-[[scheduled.functions]]
-  name = "hyper-front-index-accelerator"
-  schedule = "*/1 * * * *" # every minute
-
-[[scheduled.functions]]
-  name = "dead-code-report"
-  schedule = "7 */6 * * *"
-
-[[scheduled.functions]]
-  name = "security-audit-runner"
-  schedule = "19 */6 * * *"
-
-[[scheduled.functions]]
-  name = "docs-index-runner"
-  schedule = "11 */4 * * *"
-
-[[scheduled.functions]]
-  name = "repo-knowledge-graph-runner"
-  schedule = "23 */6 * * *"
-
-[[scheduled.functions]]
-  name = "image-optimizer-runner"
-  schedule = "29 */6 * * *"
-
-[[scheduled.functions]]
-  name = "ai-changelog-runner"
-  schedule = "41 */6 * * *"
-
-[[scheduled.functions]]
-  name = "newsroom-runner"
-  schedule = "37 */6 * * *"
-
-[[scheduled.functions]]
-  name = "todo-scanner-runner"
-  schedule = "13 */6 * * *"
-
-[[scheduled.functions]]
-  name = "broken-image-scanner-runner"
-  schedule = "17 */6 * * *"
-
-[[scheduled.functions]]
-  name = "external-link-check-runner"
-  schedule = "31 */6 * * *"
-
-[[scheduled.functions]]
-  name = "repo-radar-runner"
-  schedule = "43 */6 * * *"
-
-[[scheduled.functions]]
-  name = "og-image-update-runner"
-  schedule = "47 */6 * * *"
-
-[[scheduled.functions]]
-  name = "docs-search-index-runner"
-  schedule = "53 */6 * * *"
-
-[[scheduled.functions]]
-  name = "todo-summary-runner"
-  schedule = "*/30 * * * *"
-
-[[scheduled.functions]]
-  name = "netlify-auto-healer-runner"
-  schedule = "*/20 * * * *"
-
-# New intelligent cloud automations
-[[scheduled.functions]]
-  name = "innovation-lab"
-  schedule = "*/10 * * * *" # every 10 minutes
-
-[[scheduled.functions]]
-  name = "broken-image-scanner"
-  schedule = "0 */6 * * *" # every 6 hours
-
-[[scheduled.functions]]
-  name = "auto-scheduler"
-  schedule = "*/15 * * * *" # every 15 minutes
-
-[[scheduled.functions]]
-  name = "a11y-alt-text-runner"
-  schedule = "*/10 * * * *" # every 10 minutes
-
-[[scheduled.functions]]
-  name = "metadata-optimizer-runner"
-  schedule = "*/15 * * * *" # every 15 minutes
-
-[[scheduled.functions]]
-  name = "seo-audit-runner"
-  schedule = "0 */2 * * *"
-
-[[scheduled.functions]]
-  name = "ai-trends-radar-runner"
-  schedule = "*/30 * * * *"
-
-[[scheduled.functions]]
-  name = "stale-content-auditor-runner"
-  schedule = "17 */6 * * *"
-
-[[scheduled.functions]]
-  name = "deps-auto-upgrade-runner"
-  schedule = "7 */12 * * *"
-
-# New autonomous cloud scanners
-[[scheduled.functions]]
-  name = "unused-media-scanner"
-  schedule = "*/10 * * * *"
-
-[[scheduled.functions]]
-  name = "orphan-pages-detector"
-  schedule = "*/15 * * * *"
-
-[[scheduled.functions]]
-  name = "component-size-report"
-  schedule = "*/5 * * * *"
-
-[[scheduled.functions]]
-  name = "license-compliance-auditor"
-  schedule = "0 2 * * 1"
-
-[[scheduled.functions]]
-  name = "pagespeed-insights-runner"
-  schedule = "11 */6 * * *" # every 6 hours, offset
-
-[[scheduled.functions]]
-  name = "knowledge-pack-runner"
-  schedule = "*/10 * * * *"
-
-[[scheduled.functions]]
-  name = "adaptive-orchestrator"
-  schedule = "*/5 * * * *"
-
-[[scheduled.functions]]
-  name = "site-404-map-runner"
-  schedule = "17 */6 * * *"
-
-[[scheduled.functions]]
-  name = "component-coupling-graph-runner"
-  schedule = "29 */6 * * *"
-
-[[scheduled.functions]]
-  name = "content-freshness-score-runner"
-  schedule = "7 */12 * * *"
-
-# Newly added intelligent automations
-[[scheduled.functions]]
-  name = "anchor-links-auto-fixer"
-  schedule = "*/5 * * * *"
-
-[[scheduled.functions]]
-  name = "internal-link-graph-runner"
-  schedule = "*/5 * * * *"
-
-[[scheduled.functions]]
-  name = "topic-cluster-builder-runner"
-  schedule = "13 */6 * * *"
-
-[[scheduled.functions]]
-  name = "topics-map-runner"
-  schedule = "*/20 * * * *"
-
-[[scheduled.functions]]
-  name = "robots-auditor"
-  schedule = "0 */6 * * *"
-
-[[scheduled.functions]]
-  name = "canonical-auditor"
-  schedule = "*/60 * * * *"
-
-# New autonomous orchestrations
-[[scheduled.functions]]
-  name = "roadmap-curator"
-  schedule = "*/30 * * * *"
-
-[[scheduled.functions]]
-  name = "revenue-ideas-lab"
-  schedule = "7 */6 * * *"
-
-[[scheduled.functions]]
-  name = "auto-discovery-runner"
-  schedule = "*/15 * * * *"
-
-[[scheduled.functions]]
-  name = "code-smell-audit-runner"
-  schedule = "23 */6 * * *"
-
-[[scheduled.functions]]
-  name = "duplicate-media-finder-runner"
-  schedule = "0 2 * * *"
-
-# Newly added intelligent meta orchestrator
-[[scheduled.functions]]
-  name = "intelligent-meta-orchestrator"
-  schedule = "*/3 * * * *"

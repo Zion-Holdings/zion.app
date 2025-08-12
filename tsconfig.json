@@ -1,29 +1,120 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES2022",
+    "useDefineForClassFields": true,
     "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
+      "ESNext",
+      "DOM",
+      "DOM.Iterable"
     ],
-    "allowJs": true,
+    "module": "ESNext",
     "skipLibCheck": true,
-    "strict": false,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
+    "importHelpers": false,
+    "noEmitHelpers": false,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@/pages/*": [
+        "./src/pages/*",
+        "./pages/*"
+      ],
+      "@/components/*": [
+        "./src/components/*"
+      ],
+      "@/api/*": [
+        "./src/api/*"
+      ],
+      "@/types/*": [
+        "./src/types/*",
+        "./types/*"
+      ],
+      "@/utils/*": [
+        "./src/utils/*"
+      ],
+      "@/hooks/*": [
+        "./src/hooks/*"
+      ],
+      "@/context/*": [
+        "./src/context/*"
+      ],
+      "@/services/*": [
+        "./src/services/*"
+      ],
+      "react-router-dom": [
+        "./src/stubs/react-router-dom.tsx"
+      ],
+      "next-cloudinary": [
+        "./types/next-cloudinary.d.ts"
+      ],
+      "types/*": [
+        "./types/*"
+      ]
+    },
+    /* Bundler mode */
+    "moduleResolution": "bundler",
     "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitReturns": true,
+    "allowJs": true,
+    "incremental": true,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./types"
+    ],
+    "types": [
+      "node"
+    ],
+    "jsx": "preserve",
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
+    "src",
+    "src/types",
+    "pages",
+    "types/**/*.d.ts",
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "src/components/ui/chart.tsx",
+    "src/store/index.ts",
+    "temp_essential_pages",
+    "pages_backup",
+    "scripts",
+    ".next",
+    "out",
+    "dist",
+    "build",
+    "coverage",
+    "cypress",
+    "monitoring",
+    "netlify",
+    "supabase",
+    "browserstack.config.ts",
+    "cypress.config.ts",
+    "playwright.config.ts",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.spec.ts",
+    "**/*.spec.tsx"
   ]
 }

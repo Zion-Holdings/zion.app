@@ -1,0 +1,76 @@
+openapi: 3.0.3
+info:
+  title: Zion Public API
+  version: v1
+  description: |
+    This OpenAPI specification describes the publicly accessible endpoints for the Zion Tech Marketplace.
+servers:
+  - url: https://api.ziontechgroup.com/v1
+paths:
+  /api/generate/:
+    post:
+      summary: Generate an API key for the authenticated user
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: Optional label for the key
+      security:
+        - bearerAuth: []
+      responses:
+        '201':
+          description: Key generated
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  key:
+                    type: string
+                  prefix:
+                    type: string
+                  name:
+                    type: string
+  /api/revoke/:
+    post:
+      summary: Revoke an API key belonging to the authenticated user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - prefix
+              properties:
+                prefix:
+                  type: string
+                  description: Prefix of the key to revoke
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Revoked
+  /api/ping/:
+    get:
+      summary: Verify API key validity
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: Service reachable
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY

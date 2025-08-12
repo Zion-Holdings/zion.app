@@ -1,0 +1,9 @@
+.form-container {
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.form-container button[type="submit"] {
+  position: sticky;
+  bottom: 0;
+}
