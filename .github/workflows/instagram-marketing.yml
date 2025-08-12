@@ -15,9 +15,6 @@ concurrency:
 jobs:
   instagram_marketing:
     runs-on: ubuntu-latest
-    env:
-      IG_USER_ID: ${{ secrets.IG_USER_ID }}
-      IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -34,6 +31,9 @@ jobs:
         run: npm ci --no-audit --no-fund
 
       - name: Run Instagram marketing orchestrator (skips if no secrets)
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
         run: |
           if [ -z "$IG_USER_ID" ] || [ -z "$IG_ACCESS_TOKEN" ]; then
             echo "Missing IG secrets; skipping."; exit 0; fi
