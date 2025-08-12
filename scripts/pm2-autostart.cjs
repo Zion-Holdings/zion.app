@@ -32,6 +32,7 @@ function main() {
   // Start local ecosystems (idempotent)
   safe('pm2 start ecosystem.config.cjs --update-env');
   safe('pm2 start ecosystem.fast-ads.local.cjs --update-env');
+  safe('pm2 start ecosystem.cron.local.cjs --update-env');
 
   // Setup logrotate sane defaults (idempotent)
   safe('pm2 install pm2-logrotate || true');
