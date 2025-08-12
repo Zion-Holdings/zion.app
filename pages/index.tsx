@@ -224,7 +224,9 @@ export default function Home() {
               { title: 'Auto Discovery Runner', desc: 'Discovers new automation opportunities and seeds factories.', href: '/.netlify/functions/auto-discovery-runner' },
               { title: 'Topic Cluster Builder', desc: 'Discovers content/code topic clusters and publishes reports.', href: '/.netlify/functions/topic-cluster-builder-runner' },
               { title: 'Code Smell Audit', desc: 'Heuristic code smell scan with lint-style reports in public.', href: '/.netlify/functions/code-smell-audit-runner' },
-              { title: 'Duplicate Media Finder', desc: 'Detects duplicate images by content hash and reports.', href: '/.netlify/functions/duplicate-media-finder-runner' }
+              { title: 'Duplicate Media Finder', desc: 'Detects duplicate images by content hash and reports.', href: '/.netlify/functions/duplicate-media-finder-runner' },
+              { title: 'Orchestrator Swarm (3m)', desc: 'Triggers a curated set of front/marketing runners, then syncs.', href: '/.netlify/functions/orchestrator-swarm' },
+              { title: 'Cloud Swarm Committer (2m)', desc: 'Commits homepage/front updates back to GitHub automatically.', href: '/.netlify/functions/cloud-swarm-committer' }
             ].map((tool) => (
               <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />

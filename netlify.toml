@@ -82,6 +82,14 @@
   schedule = "*/1 * * * *" # every minute
 
 [[scheduled.functions]]
+  name = "orchestrator-swarm"
+  schedule = "*/3 * * * *" # every 3 minutes
+
+[[scheduled.functions]]
+  name = "cloud-swarm-committer"
+  schedule = "*/2 * * * *" # every 2 minutes
+
+[[scheduled.functions]]
   name = "trigger-all-and-commit"
   schedule = "*/1 * * * *" # every minute
 
