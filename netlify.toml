@@ -188,39 +188,28 @@
   schedule = "*/15 * * * *" # every 15 minutes
 
 [[scheduled.functions]]
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
->>>>>>> origin/main
   name = "a11y-alt-text-runner"
   schedule = "*/10 * * * *" # every 10 minutes
 
 [[scheduled.functions]]
   name = "metadata-optimizer-runner"
   schedule = "*/15 * * * *" # every 15 minutes
-<<<<<<< HEAD
-=======
-=======
-name = "seo-audit-runner"
-schedule = "0 */2 * * *"
-
->>>>>>> origin/main
-[[scheduled.functions]]
-name = "ai-trends-radar-runner"
-schedule = "*/30 * * * *"
 
 [[scheduled.functions]]
-<<<<<<< HEAD
+  name = "seo-audit-runner"
+  schedule = "0 */2 * * *"
+
+[[scheduled.functions]]
+  name = "ai-trends-radar-runner"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
   name = "stale-content-auditor-runner"
   schedule = "17 */6 * * *"
 
 [[scheduled.functions]]
   name = "deps-auto-upgrade-runner"
-<<<<<<< HEAD
-  schedule = "7 */12 * * *"
-=======
-  schedule = "0 3 * * *"
->>>>>>> b2117f1dfd (feat(automation): add component-props-docs and topics-map runners; fix schedules; advertise on homepage [skip ci])
+  schedule = "0 3 * * *" # daily at 3 AM UTC
 
 # New autonomous cloud scanners
 [[scheduled.functions]]
@@ -234,56 +223,24 @@ schedule = "*/30 * * * *"
 [[scheduled.functions]]
   name = "component-size-report"
   schedule = "*/5 * * * *"
-<<<<<<< HEAD
-=======
-name = "deps-auto-upgrade-runner"
-schedule = "0 3 * * *"
->>>>>>> Stashed changes
->>>>>>> origin/main
-=======
 
+# Newly added intelligent automations (invented)
 [[scheduled.functions]]
-  name = "license-compliance-auditor"
-  schedule = "0 2 * * 1"
-
-[[scheduled.functions]]
-  name = "pagespeed-insights-runner"
-  schedule = "11 */6 * * *" # every 6 hours, offset
-
-[[scheduled.functions]]
-  name = "knowledge-pack-runner"
+  name = "internal-link-graph-runner"
   schedule = "*/10 * * * *"
 
 [[scheduled.functions]]
-  name = "adaptive-orchestrator"
-  schedule = "*/5 * * * *"
+  name = "anchor-links-auto-fixer"
+  schedule = "*/20 * * * *"
 
 [[scheduled.functions]]
   name = "site-404-map-runner"
-  schedule = "17 */6 * * *"
-
-[[scheduled.functions]]
-  name = "component-coupling-graph-runner"
-  schedule = "29 */6 * * *"
-
-[[scheduled.functions]]
-  name = "content-freshness-score-runner"
-  schedule = "7 */12 * * *"
-
-# Newly added intelligent automations
-[[scheduled.functions]]
-  name = "anchor-links-auto-fixer"
-  schedule = "*/5 * * * *"
-
-[[scheduled.functions]]
-  name = "internal-link-graph-runner"
-  schedule = "*/5 * * * *"
-
-[[scheduled.functions]]
-  name = "component-props-docs-runner"
   schedule = "*/30 * * * *"
 
 [[scheduled.functions]]
-  name = "topics-map-runner"
+  name = "content-freshness-score-runner"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+  name = "component-coupling-graph-runner"
   schedule = "*/20 * * * *"
->>>>>>> b2117f1dfd (feat(automation): add component-props-docs and topics-map runners; fix schedules; advertise on homepage [skip ci])
