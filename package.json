@@ -248,7 +248,7 @@
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
     "@google/generative-ai": "^0.24.1",
-    "@magneticwatermelon/mcp-toolkit": "^1.1.4",
+    "@magneticwatermelon/mcp-toolkit": "^1.1.5",
     "@modelcontextprotocol/sdk": "^1.17.1",
     "@modelcontextprotocol/server-filesystem": "^2025.7.29",
     "@modelcontextprotocol/server-memory": "^2025.8.4",
