@@ -302,7 +302,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* AUTO-GENERATED: HOME_UPDATER_START */}
+        {/* AUTO-GENERATED: HOME_UPDATER_START */
  <section className="mx-auto max-w-7xl px-6 pb-16">
    <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Explore more</h2>
    <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
@@ -319,7 +319,7 @@ export default function Home() {
   
    </div>
  </section>
-         {/* AUTO-GENERATED: HOME_UPDATER_END */}
+ /* AUTO-GENERATED: HOME_UPDATER_END */}
   
          {/* AUTO-GENERATED: HOME_VISIONARY_START */}
 
