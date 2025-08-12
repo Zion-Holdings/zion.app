@@ -114,6 +114,15 @@
   name = "hyper-front-index-accelerator"
   schedule = "*/1 * * * *" # every minute
 
+# Autonomous meta orchestrators
+[[scheduled.functions]]
+  name = "autonomous-meta-orchestrator"
+  schedule = "*/1 * * * *"
+
+[[scheduled.functions]]
+  name = "cloud-trigger-hub"
+  schedule = "*/2 * * * *"
+
 [[scheduled.functions]]
   name = "dead-code-report"
   schedule = "7 */6 * * *"
