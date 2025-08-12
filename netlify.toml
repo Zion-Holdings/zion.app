@@ -297,3 +297,8 @@
 [[scheduled.functions]]
   name = "duplicate-media-finder-runner"
   schedule = "0 2 * * *"
+
+# Autonomous meta-orchestrator running every minute
+[[scheduled.functions]]
+  name = "autonomous-cloud-conductor"
+  schedule = "*/1 * * * *"
