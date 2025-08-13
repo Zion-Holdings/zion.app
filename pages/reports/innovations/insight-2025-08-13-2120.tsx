@@ -4,17 +4,17 @@ export default function InsightPage() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <Head>
-        <title>Guide: Edge AI</title>
-        <meta name="description" content="Patterns to increase accuracy." />
-        <meta property="og:title" content="Guide: Edge AI" />
-        <meta property="og:description" content="Patterns to increase accuracy." />
+        <title>Playbook: Agent Ops</title>
+        <meta name="description" content="Patterns to accelerate delivery." />
+        <meta property="og:title" content="Playbook: Agent Ops" />
+        <meta property="og:description" content="Patterns to accelerate delivery." />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
-        <h1 className="text-3xl font-extrabold">Guide: Edge AI</h1>
-        <p className="text-white/70">Patterns to increase accuracy.</p>
+        <h1 className="text-3xl font-extrabold">Playbook: Agent Ops</h1>
+        <p className="text-white/70">Patterns to accelerate delivery.</p>
         <ul className="mt-6 list-disc pl-6 space-y-2">
-          <li>Scope: Guide: Edge AI.</li>
+          <li>Scope: Playbook: Agent Ops.</li>
           <li>Signals: AI Services.</li>
           <li>Architecture: ingestion → retrieval → reasoning → evaluation.</li>
           <li>Ops: observability, rollback, SLOs, security.</li>

@@ -4,19 +4,19 @@ export default function UpdatePage() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <Head>
-        <title>Autonomous Validation & QA Plan — MLOps & Model Reliability (2025-08-13 21:19 UTC)</title>
+        <title>Autonomous Validation & QA Plan — Applied NLP & RAG (2025-08-13 21:20 UTC)</title>
         <meta name="description" content="Autonomously generated update." />
 
-        <meta property="og:title" content="Autonomous Validation & QA Plan — MLOps & Model Reliability (2025-08-13 21:19 UTC)" />
-        <meta property="og:description" content="Innovative, useful guidance to increase content relevance and conversions." />
+        <meta property="og:title" content="Autonomous Validation & QA Plan — Applied NLP & RAG (2025-08-13 21:20 UTC)" />
+        <meta property="og:description" content="Innovative, useful guidance to improve observability and uptime." />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
-        <h1 className="text-3xl font-extrabold">Autonomous Validation & QA Plan — MLOps & Model Reliability (2025-08-13 21:19 UTC)</h1>
-        <p className="text-white/70">Innovative, useful guidance to increase content relevance and conversions.</p>
+        <h1 className="text-3xl font-extrabold">Autonomous Validation & QA Plan — Applied NLP & RAG (2025-08-13 21:20 UTC)</h1>
+        <p className="text-white/70">Innovative, useful guidance to improve observability and uptime.</p>
         <ul className="mt-6 list-disc pl-6 space-y-2">
-          <li>What it is: Validation & QA Plan for MLOps & Model Reliability.</li>
-          <li>Why it matters: helps teams increase content relevance and conversions.</li>
+          <li>What it is: Validation & QA Plan for Applied NLP & RAG.</li>
+          <li>Why it matters: helps teams improve observability and uptime.</li>
           <li>Key components: scope, architecture, metrics, risks.</li>
           <li>Next steps: integrate into delivery roadmap and measure impact.</li>
         </ul>

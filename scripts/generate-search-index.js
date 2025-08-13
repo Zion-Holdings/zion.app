@@ -2,7 +2,6 @@
 
 const fs = require('fs');
 const path = require('path');
-const glob = require('glob');
 
 function readFileSafe(p) {
   try { return fs.readFileSync(p, 'utf8'); } catch { return ''; }
@@ -38,12 +37,13 @@ function toRoute(root, file) {
   return route;
 }
 
-function main() {
+async function main() {
+  const { globSync } = await import('glob');
   const pagesRoot = path.join(process.cwd(), 'pages');
   const docsRoot = path.join(process.cwd(), 'docs');
   const files = [];
-  if (fs.existsSync(pagesRoot)) files.push(...glob.sync('**/*.{js,jsx,ts,tsx,md,mdx}', { cwd: pagesRoot, nodir: true }).map((f) => path.join(pagesRoot, f)));
-  if (fs.existsSync(docsRoot)) files.push(...glob.sync('**/*.{md,mdx}', { cwd: docsRoot, nodir: true }).map((f) => path.join(docsRoot, f)));
+  if (fs.existsSync(pagesRoot)) files.push(...globSync('**/*.{js,jsx,ts,tsx,md,mdx}', { cwd: pagesRoot, nodir: true }).map((f) => path.join(pagesRoot, f)));
+  if (fs.existsSync(docsRoot)) files.push(...globSync('**/*.{md,mdx}', { cwd: docsRoot, nodir: true }).map((f) => path.join(docsRoot, f)));
 
   const entries = files.map((file) => {
     const content = readFileSafe(file);

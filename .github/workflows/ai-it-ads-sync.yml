@@ -5,11 +5,17 @@ on:
     - cron: '*/7 * * * *'
   workflow_dispatch: {}
 
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: ai-it-ads-sync-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   advertise:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -19,24 +25,30 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '20.18.1'
+          check-latest: true
           cache: 'npm'
 
-      - name: Install
+      - name: Install dependencies
         run: npm ci --no-audit --no-fund
 
-      - name: Build ads payload from registry
-        run: node automation/ai-it-front-advertiser.cjs || true
+      - name: Generate ads payloads
+        run: |
+          node automation/ai-it-advertiser.cjs || true
+          node automation/ai-it-front-advertiser.cjs || true
 
       - name: Commit and push
         run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          git pull --rebase origin main || true
           git add -A
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "chore(automation): update ads payload [skip ci]"
+            git commit -m "chore(automation): update AI-IT ads payload [skip ci]"
             git push origin HEAD:main
           fi
 

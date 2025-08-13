@@ -3,8 +3,8 @@ import Link from 'next/link';
 
 export default function ReportsIndex() {
   const reports: Array<{ href: string; title: string; desc: string }> = [
-    { href: '/reports/seo', title: 'AI SEO Auditor', desc: 'Automated site SEO analysis' },
-    { href: '/reports/ai-trends', title: 'AI Trends Radar', desc: 'Latest AI signals' },
+    { href: '/reports/seo/index.html', title: 'AI SEO Auditor', desc: 'Automated site SEO analysis' },
+    { href: '/reports/ai-trends/index.html', title: 'AI Trends Radar', desc: 'Latest AI signals' },
     { href: '/reports/roadmap', title: 'Autonomous Roadmap', desc: 'Planned and ongoing work' },
     { href: '/newsroom', title: 'Newsroom', desc: 'Curated updates' },
     { href: '/reports/innovations', title: 'Innovations', desc: 'Autonomous AI/IT insights and guides' },
