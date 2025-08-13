@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T19:45:01.802Z",
+  "generatedAt": "2025-08-13T19:45:55.791Z",
   "entries": [
     {
       "route": "/site-health",
@@ -4548,6 +4548,12 @@
       "file": "pages/front/index.tsx",
       "title": "index",
       "summary": "import { useEffect } from 'react'; import { useRouter } from 'next/router'; export default function FrontIndexRedirect() { const router = useRouter(); useEffect(() => { router.replace('/main/front'); }, [router]); return null; }"
+    },
+    {
+      "route": "/explore",
+      "file": "pages/explore/index.tsx",
+      "title": "Explore — Zion",
+      "summary": "import Head from 'next/head'; import Link from 'next/link'; export default function ExploreIndex() { const tiles: Array = [ { href: '/automation', title: 'Automation Hub', desc: 'Live agents, runners, and schedulers' }, { href: '/main/front', title: 'Front Systems Hub', desc: 'Fu"
     },
     {
       "route": "/automation",

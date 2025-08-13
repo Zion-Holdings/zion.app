@@ -22,7 +22,10 @@ export default function ExploreIndex() {
       <Head>
         <title>Explore — Zion</title>
         <meta name="description" content="Discover all pages, features, and reports across the site." />
-      </Head>
+      
+        <meta property="og:title" content="Explore" />
+        <meta property="og:description" content="Explore — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       <main className="mx-auto max-w-7xl px-6 py-12">
         <h1 className="text-4xl font-extrabold mb-2">Explore</h1>
         <p className="text-white/70 mb-6">A directory of key sections and reports.</p>
