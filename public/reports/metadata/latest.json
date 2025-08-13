@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-13T21:52:00.569Z",
-  "pagesScanned": 895,
+  "generatedAt": "2025-08-13T21:52:38.852Z",
+  "pagesScanned": 899,
   "items": [
     {
       "route": "/_app",
@@ -77,10 +77,7 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -306,6 +303,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-13-2152",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Checklist: FinOps for AI",
+        "description": "Checklist: FinOps for AI — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-13T20-30",
       "missing": [
         "og:image"
@@ -423,6 +430,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-13 21-50",
         "description": "Innovation Insight — 2025-08-13 21-50 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-13T21-52",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-13 21-52",
+        "description": "Innovation Insight — 2025-08-13 21-52 — auto-suggested description"
       }
     },
     {
@@ -8592,10 +8609,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-1849",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 18:49",
@@ -8605,10 +8619,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-1850",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 18:50",
@@ -8618,10 +8629,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-1851",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 18:51",
@@ -8631,10 +8639,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-1852",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 18:52",
@@ -8842,6 +8847,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-13-2152",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Checklist — Cloud Cost Optimization (2025-08-13 21:52 UTC)",
+        "description": "Autonomous Checklist — Cloud Cost Optimization (2025-08-13 21:52 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-13T20-30",
       "missing": [
         "og:image"
@@ -8959,6 +8974,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 21-50",
         "description": "Autonomous Update — 2025-08-13 21-50 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13T21-52",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 21-52",
+        "description": "Autonomous Update — 2025-08-13 21-52 — auto-suggested description"
       }
     },
     {
