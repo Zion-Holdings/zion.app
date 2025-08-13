@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-13T19:59:00.397Z",
-  "pagesScanned": 772,
+  "generatedAt": "2025-08-13T20:00:00.546Z",
+  "pagesScanned": 774,
   "items": [
     {
       "route": "/_app",
@@ -7689,14 +7689,24 @@
     {
       "route": "/reports/updates/update-2025-08-13-1659",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 16:59",
+        "description": "Autonomous Update — 2025-08-13 16:59 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1700",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-13 16:59",
-        "description": "Autonomous Update — 2025-08-13 16:59 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-13 17:00",
+        "description": "Autonomous Update — 2025-08-13 17:00 — auto-suggested description"
       }
     },
     {
@@ -7717,6 +7727,16 @@
       "suggestion": {
         "title": "Autonomous Capability Map — Applied NLP & RAG (2025-08-13 19:57 UTC)",
         "description": "Autonomous Capability Map — Applied NLP & RAG (2025-08-13 19:57 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1959",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Checklist — MLOps & Model Reliability (2025-08-13 19:59 UTC)",
+        "description": "Autonomous Checklist — MLOps & Model Reliability (2025-08-13 19:59 UTC) — auto-suggested description"
       }
     },
     {
