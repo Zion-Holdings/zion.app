@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T20:21:01.544Z",
+  "generatedAt": "2025-08-13T20:22:01.551Z",
   "entries": [
     {
       "route": "/site-health",
@@ -23,7 +23,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "index",
-      "summary": "import Landing from '../components/Landing'; export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 1721 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 1"
+      "summary": "import Landing from '../components/Landing'; export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 1722 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 1"
     },
     {
       "route": "/_document",
@@ -35,7 +35,7 @@
       "route": "/_app",
       "file": "pages/_app.tsx",
       "title": "_app",
-      "summary": "import type { AppProps } from 'next/app'; import '../styles/globals.css'; import Footer from '../components/Footer'; import FuturisticLayout from '../components/FuturisticLayout'; export default function ZionApp({ Component, pageProps }: AppProps) { return ( ); }"
+      "summary": "import type { AppProps } from 'next/app'; import '../styles/globals.css'; import Header from '../components/Header'; import Footer from '../components/Footer'; import FuturisticLayout from '../components/FuturisticLayout'; export default function ZionApp({ Component, pageProps }:"
     },
     {
       "route": "/reports/seo",
@@ -68,6 +68,12 @@
       "summary": "import { useEffect, useState } from 'react'; interface ArticleEntry { title: string; url: string; createdAt: string; tags?: string[]; source?: string; } export default function AILabPage() { const [items, setItems] = useState ([]); const [loading, setLoading] = useState(true); us"
     },
     {
+      "route": "/reports/updates/update-2025-08-13-2021",
+      "file": "pages/reports/updates/update-2025-08-13-2021.tsx",
+      "title": "Autonomous Reference Architecture — Applied NLP & RAG (2025-08-13 20:21 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Reference Architecture — Applied NLP & RAG (2025-08-13 20:21 UTC) Autonomous Reference Architecture — Applied NLP & RAG (2025-08-13 20:21 UTC) Innovative, useful guidance to harden privacy an"
+    },
+    {
       "route": "/reports/updates/update-2025-08-13-2020",
       "file": "pages/reports/updates/update-2025-08-13-2020.tsx",
       "title": "Autonomous Security Hardening Guide — Vision & Multimodal (2025-08-13 20:20 UTC)",
@@ -90,6 +96,12 @@
       "file": "pages/reports/updates/update-2025-08-13-1942.tsx",
       "title": "Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC) Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC) Innovative, useful guidance to decrease unit cost per request. What it is: Playbook "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1722",
+      "file": "pages/reports/updates/update-2025-08-13-1722.tsx",
+      "title": "Autonomous Update — 2025-08-13 17:22",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 17:22 Autonomous Update — 2025-08-13 17:22 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Air Con: $1697 for an on/off switch "
     },
     {
       "route": "/reports/updates/update-2025-08-13-1721",
@@ -4674,6 +4686,12 @@
       "file": "pages/reports/updates/update-2025-08-12-1417.tsx",
       "title": "Autonomous Update — 2025-08-12 14:17",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-12 14:17 Autonomous Update — 2025-08-12 14:17 This page was created automatically by the content creator automation. It showcases our continuous, autonomous publishing pipeli"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-13-2021",
+      "file": "pages/reports/innovations/insight-2025-08-13-2021.tsx",
+      "title": "Blueprint: MLOps",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Blueprint: MLOps Blueprint: MLOps Patterns to improve reliability. Scope: Blueprint: MLOps. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observability, rollb"
     },
     {
       "route": "/reports/innovations/insight-2025-08-13-2020",

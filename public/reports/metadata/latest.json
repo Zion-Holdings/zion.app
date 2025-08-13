@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-13T20:21:00.415Z",
-  "pagesScanned": 785,
+  "generatedAt": "2025-08-13T20:22:00.413Z",
+  "pagesScanned": 787,
   "items": [
     {
       "route": "/_app",
@@ -77,10 +77,7 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -143,6 +140,16 @@
       "suggestion": {
         "title": "Blueprint: Agent Ops",
         "description": "Blueprint: Agent Ops — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-13-2021",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Blueprint: MLOps",
+        "description": "Blueprint: MLOps — auto-suggested description"
       }
     },
     {
@@ -7802,10 +7809,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-1721",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 17:21",
@@ -7850,6 +7854,16 @@
       "suggestion": {
         "title": "Autonomous Security Hardening Guide — Vision & Multimodal (2025-08-13 20:20 UTC)",
         "description": "Autonomous Security Hardening Guide — Vision & Multimodal (2025-08-13 20:20 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2021",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Reference Architecture — Applied NLP & RAG (2025-08-13 20:21 UTC)",
+        "description": "Autonomous Reference Architecture — Applied NLP & RAG (2025-08-13 20:21 UTC) — auto-suggested description"
       }
     },
     {
