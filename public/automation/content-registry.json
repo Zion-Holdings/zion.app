@@ -49,6 +49,10 @@
       "route": "/automation"
     },
     {
+      "file": "pages/reports/patterns/pattern-2025-08-13-215625.tsx",
+      "route": "/reports/patterns/pattern-2025-08-13-215625"
+    },
+    {
       "file": "pages/reports/innovations/insight-2025-08-13T21-50.tsx",
       "route": "/reports/innovations/insight-2025-08-13T21-50"
     },
@@ -167,6 +171,14 @@
     {
       "file": "pages/reports/innovations/index.tsx",
       "route": "/reports/innovations"
+    },
+    {
+      "file": "pages/reports/guides/guide-2025-08-13-215625.tsx",
+      "route": "/reports/guides/guide-2025-08-13-215625"
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "route": "/main/front"
     },
     {
       "file": "pages/reports/updates/update-2025-08-13T21-50.tsx",
@@ -295,6 +307,10 @@
     {
       "file": "pages/reports/updates/update-2025-08-13-1942.tsx",
       "route": "/reports/updates/update-2025-08-13-1942"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-13-1856.tsx",
+      "route": "/reports/updates/update-2025-08-13-1856"
     },
     {
       "file": "pages/reports/updates/update-2025-08-13-1852.tsx",
@@ -3567,10 +3583,6 @@
     {
       "file": "pages/reports/updates/update-2025-08-12-1417.tsx",
       "route": "/reports/updates/update-2025-08-12-1417"
-    },
-    {
-      "file": "pages/main/front/index.tsx",
-      "route": "/main/front"
     }
   ],
   "docs": [
@@ -3607,25 +3619,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-<<<<<<< Updated upstream
-  "generatedAt": "2025-08-13T21:56:13.772Z"
-=======
-  "generatedAt": "2025-08-13T21:56:00.473Z",
-  "items": [
-    {
-      "title": "Guide — Reports Trends Implementation",
-      "href": "/reports/guides/guide-2025-08-13-215625",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-13T21:56:25.714Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Pattern — Cloud Improving Continuously",
-      "href": "/reports/patterns/pattern-2025-08-13-215625",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-13T21:56:25.714Z",
-      "source": "cloud-deep-research-factory"
-    }
-  ]
->>>>>>> Stashed changes
+  "generatedAt": "2025-08-13T21:56:39.116Z"
 }

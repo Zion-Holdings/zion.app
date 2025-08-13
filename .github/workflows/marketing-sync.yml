@@ -1,0 +1,59 @@
+name: Marketing Sync (LinkedIn + Instagram)
+
+on:
+  schedule:
+    - cron: '0 */8 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: marketing-sync-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  marketing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: LinkedIn orchestrator
+        env:
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_ORG_ID: ${{ secrets.LINKEDIN_ORG_ID }}
+        run: |
+          if [ -n "$LINKEDIN_ACCESS_TOKEN" ]; then node automation/linkedin-marketing-orchestrator.cjs || true; else echo "Missing LINKEDIN_ACCESS_TOKEN"; fi
+
+      - name: Instagram orchestrator
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+        run: |
+          if [ -n "$IG_ACCESS_TOKEN" ] && [ -n "$IG_USER_ID" ]; then node automation/instagram-marketing-orchestrator.cjs || true; else echo "Missing IG secrets"; fi
+
+      - name: Commit and push changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore(marketing): sync updates [skip ci]"
+            git push origin HEAD:main
+          else
+            echo "No changes to push"
+          fi
+
+
