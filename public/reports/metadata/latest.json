@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-13T19:50:00.682Z",
-  "pagesScanned": 767,
+  "generatedAt": "2025-08-13T19:51:00.593Z",
+  "pagesScanned": 769,
   "items": [
     {
       "route": "/_app",
@@ -7649,14 +7649,24 @@
     {
       "route": "/reports/updates/update-2025-08-13-1650",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 16:50",
+        "description": "Autonomous Update — 2025-08-13 16:50 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1651",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-13 16:50",
-        "description": "Autonomous Update — 2025-08-13 16:50 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-13 16:51",
+        "description": "Autonomous Update — 2025-08-13 16:51 — auto-suggested description"
       }
     },
     {
@@ -7667,6 +7677,16 @@
       "suggestion": {
         "title": "Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC)",
         "description": "Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1950",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Playbook — Edge AI & IoT (2025-08-13 19:50 UTC)",
+        "description": "Autonomous Playbook — Edge AI & IoT (2025-08-13 19:50 UTC) — auto-suggested description"
       }
     },
     {
