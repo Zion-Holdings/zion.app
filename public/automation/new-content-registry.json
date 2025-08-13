@@ -1,6 +1,13 @@
 {
   "items": [
     {
+      "title": "Runbook: RAG Platforms",
+      "subtitle": "Patterns to accelerate delivery.",
+      "path": "/reports/innovations/insight-2025-08-13-2057",
+      "createdAt": "2025-08-13T20:57:22.741Z",
+      "kind": "insight"
+    },
+    {
       "title": "Blueprint: LLM Apps",
       "subtitle": "Patterns to enhance security.",
       "path": "/reports/innovations/insight-2025-08-13-2040",
