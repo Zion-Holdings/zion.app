@@ -1,6 +1,13 @@
 {
   "items": [
     {
+      "title": "Blueprint: Edge AI",
+      "subtitle": "Patterns to reduce cost.",
+      "path": "/reports/innovations/insight-2025-08-13-2049",
+      "createdAt": "2025-08-13T20:49:58.428Z",
+      "kind": "insight"
+    },
+    {
       "title": "Blueprint: LLM Apps",
       "subtitle": "Patterns to enhance security.",
       "path": "/reports/innovations/insight-2025-08-13-2040",
