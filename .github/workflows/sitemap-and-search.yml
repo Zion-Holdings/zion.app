@@ -1,0 +1,56 @@
+name: Sitemap and Search Index Refresh
+
+on:
+  schedule:
+    - cron: '5 */6 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sitemap-search-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Generate sitemap and search index
+        env:
+          SITEMAP_BASE_URL: https://ziontechgroup.com
+        run: |
+          node scripts/generate-sitemap.js || true
+          node scripts/generate-search-index.js || true
+          node scripts/generate-readme.js || true
+
+      - name: Build (non-blocking)
+        run: npm run build || true
+
+      - name: Commit and push changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore(search): refresh sitemap and search index [skip ci]"
+            git push origin HEAD:main
+          else
+            echo "No changes to push"
+          fi
+
+
