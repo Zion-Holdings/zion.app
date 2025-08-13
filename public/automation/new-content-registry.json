@@ -1,6 +1,13 @@
 {
   "items": [
     {
+      "title": "Blueprint: LLM Apps",
+      "subtitle": "Patterns to enhance security.",
+      "path": "/reports/innovations/insight-2025-08-13-2040",
+      "createdAt": "2025-08-13T20:40:08.943Z",
+      "kind": "insight"
+    },
+    {
       "title": "Runbook: DevSecOps AI",
       "subtitle": "Patterns to reduce cost.",
       "path": "/reports/innovations/insight-2025-08-13-2037",
