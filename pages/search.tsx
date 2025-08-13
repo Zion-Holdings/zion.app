@@ -35,7 +35,7 @@ export default function SearchPage() {
   }, [q, items]);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <div>
       <Head>
         <title>Search — Zion</title>
         <meta name="description" content="Search across pages and reports." />
