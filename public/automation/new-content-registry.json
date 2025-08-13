@@ -2,6 +2,13 @@
   "items": [
     {
       "title": "Blueprint: LLM Apps",
+      "subtitle": "Patterns to increase accuracy.",
+      "path": "/reports/innovations/insight-2025-08-13-2050",
+      "createdAt": "2025-08-13T20:50:08.617Z",
+      "kind": "insight"
+    },
+    {
+      "title": "Blueprint: LLM Apps",
       "subtitle": "Patterns to enhance security.",
       "path": "/reports/innovations/insight-2025-08-13-2040",
       "createdAt": "2025-08-13T20:40:08.943Z",
