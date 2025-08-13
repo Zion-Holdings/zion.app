@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T22:57:01.593Z",
+  "generatedAt": "2025-08-13T22:57:37.339Z",
   "entries": [
     {
       "route": "/site-health",
@@ -40,8 +40,8 @@
     {
       "route": "/reports/seo",
       "file": "pages/reports/seo.tsx",
-      "title": "seo",
-      "summary": "import { useEffect } from 'react'; export default function SeoReportRedirect() { useEffect(() => { if (typeof window !== 'undefined') { window.location.replace('/reports/seo/index.html'); } }, []); return null; }"
+      "title": "SEO Report — Site Metadata",
+      "summary": "import Head from 'next/head'; import { useEffect } from 'react'; export default function SeoReportRedirect() { useEffect(() => { if (typeof window !== 'undefined') { window.location.replace('/reports/seo/index.html'); } }, []); return ( <> SEO Report — Site Metadata ); }"
     },
     {
       "route": "/reports/roadmap",
@@ -58,8 +58,8 @@
     {
       "route": "/reports/ai-trends",
       "file": "pages/reports/ai-trends.tsx",
-      "title": "ai-trends",
-      "summary": "import { useEffect } from 'react'; export default function AiTrendsRedirect() { useEffect(() => { if (typeof window !== 'undefined') { window.location.replace('/reports/ai-trends/index.html'); } }, []); return null; }"
+      "title": "AI Trends — Live Reports",
+      "summary": "import Head from 'next/head'; import { useEffect } from 'react'; export default function AiTrendsRedirect() { useEffect(() => { if (typeof window !== 'undefined') { window.location.replace('/reports/ai-trends/index.html'); } }, []); return ( <> AI Trends — Live Reports ); }"
     },
     {
       "route": "/reports/ai-lab",
@@ -204,6 +204,12 @@
       "file": "pages/reports/updates/update-2025-08-13T20-30.tsx",
       "title": "Autonomous Update — 2025-08-13 20-30",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-13 20-30 Autonomous Update — 2025-08-13 20-30 Signal source: https://ziontechgroup.com Autonomous cloud systems are live and improving the app in real timeAutonomous Cloud Automati"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2257",
+      "file": "pages/reports/updates/update-2025-08-13-2257.tsx",
+      "title": "Autonomous Validation & QA Plan — MLOps & Model Reliability (2025-08-13 22:57 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Validation & QA Plan — MLOps & Model Reliability (2025-08-13 22:57 UTC) Autonomous Validation & QA Plan — MLOps & Model Reliability (2025-08-13 22:57 UTC) Innovative, useful guidance to enhan"
     },
     {
       "route": "/reports/updates/update-2025-08-13-2240",
@@ -5810,6 +5816,12 @@
       "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-13 20-30 Innovation Insight — 2025-08-13 20-30 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
     },
     {
+      "route": "/reports/innovations/insight-2025-08-13-2257",
+      "file": "pages/reports/innovations/insight-2025-08-13-2257.tsx",
+      "title": "Blueprint: AI QA & Eval",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Blueprint: AI QA & Eval Blueprint: AI QA & Eval Patterns to increase accuracy. Scope: Blueprint: AI QA & Eval. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: o"
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-13-2240",
       "file": "pages/reports/innovations/insight-2025-08-13-2240.tsx",
       "title": "Checklist: RAG Platforms",
@@ -6034,8 +6046,8 @@
     {
       "route": "/front",
       "file": "pages/front/index.tsx",
-      "title": "index",
-      "summary": "import { useEffect } from 'react'; import { useRouter } from 'next/router'; export default function FrontIndexRedirect() { const router = useRouter(); useEffect(() => { router.replace('/main/front'); }, [router]); return null; }"
+      "title": "Front Systems Hub — Redirecting",
+      "summary": "import Head from 'next/head'; import { useEffect } from 'react'; import { useRouter } from 'next/router'; export default function FrontIndexRedirect() { const router = useRouter(); useEffect(() => { router.replace('/main/front'); }, [router]); return ( <> Front Systems Hub — Redi"
     },
     {
       "route": "/explore",

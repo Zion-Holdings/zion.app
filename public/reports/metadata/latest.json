@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-13T22:57:00.417Z",
-  "pagesScanned": 1008,
+  "generatedAt": "2025-08-13T22:57:36.126Z",
+  "pagesScanned": 1010,
   "items": [
     {
       "route": "/_app",
@@ -49,11 +49,7 @@
     {
       "route": "/front/",
       "missing": [
-        "description",
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "front",
@@ -101,11 +97,7 @@
     {
       "route": "/reports/ai-trends",
       "missing": [
-        "description",
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "ai trends",
@@ -483,6 +475,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-13-2257",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Blueprint: AI QA & Eval",
+        "description": "Blueprint: AI QA & Eval — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-13T20-30",
       "missing": [
         "og:image"
@@ -795,11 +797,7 @@
     {
       "route": "/reports/seo",
       "missing": [
-        "description",
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "seo",
@@ -9529,10 +9527,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-1957",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 19:57",
@@ -9847,6 +9842,16 @@
       "suggestion": {
         "title": "Autonomous Reference Architecture — Applied NLP & RAG (2025-08-13 22:40 UTC)",
         "description": "Autonomous Reference Architecture — Applied NLP & RAG (2025-08-13 22:40 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2257",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Validation & QA Plan — MLOps & Model Reliability (2025-08-13 22:57 UTC)",
+        "description": "Autonomous Validation & QA Plan — MLOps & Model Reliability (2025-08-13 22:57 UTC) — auto-suggested description"
       }
     },
     {
