@@ -1,22 +1,27 @@
 {
-<<<<<<< Updated upstream
-  "generatedAt": "2025-08-13T23:07:39.547Z",
-=======
   "generatedAt": "2025-08-13T23:13:42.833Z",
->>>>>>> Stashed changes
   "files": [
+    "update-2025-08-13-2013.tsx",
+    "update-2025-08-13T23-11.tsx",
+    "update-2025-08-13T23-10.tsx",
     "update-2025-08-13T23-07.tsx",
+    "update-2025-08-13T23-05.tsx",
+    "update-2025-08-13T23-03.tsx",
+    "update-2025-08-13T22-40.tsx",
+    "update-2025-08-13T22-37.tsx",
+    "update-2025-08-13-2311.tsx",
+    "update-2025-08-13-2310.tsx",
+    "update-2025-08-13-2012.tsx",
+    "update-2025-08-13-2011.tsx",
+    "update-2025-08-13-2009.tsx",
+    "update-2025-08-13-2008.tsx",
     "update-2025-08-13-2307.tsx",
     "update-2025-08-13-2006.tsx",
-    "update-2025-08-13T23-05.tsx",
     "update-2025-08-13-2305.tsx",
     "update-2025-08-13-2004.tsx",
     "update-2025-08-13-2003.tsx",
     "update-2025-08-13-2005.tsx",
-    "update-2025-08-13T23-03.tsx",
     "update-2025-08-13-2303.tsx",
-    "update-2025-08-13T22-40.tsx",
-    "update-2025-08-13T22-37.tsx",
     "update-2025-08-13T22-30.tsx",
     "update-2025-08-13T22-27.tsx",
     "update-2025-08-13T22-21.tsx",
@@ -95,22 +100,13 @@
     "update-2025-08-13-1902.tsx",
     "update-2025-08-13-1901.tsx",
     "update-2025-08-13-2200.tsx",
-    "update-2025-08-13-1900.tsx",
-    "update-2025-08-13-1859.tsx",
-    "update-2025-08-13-1858.tsx",
-    "update-2025-08-13-1857.tsx",
-    "update-2025-08-13-1856.tsx",
-    "update-2025-08-13-2150.tsx",
-    "update-2025-08-13-2147.tsx",
-    "update-2025-08-13-1852.tsx",
-    "update-2025-08-13-1851.tsx",
-    "update-2025-08-13-1850.tsx"
+    "update-2025-08-13-1900.tsx"
   ],
   "metrics": {
     "diversityScore": 100,
-    "avgLen": 1889,
+    "avgLen": 1871,
     "duplicateCount": 0,
-    "seoScore": 61
+    "seoScore": 59
   },
   "guidance": [
     "Aim for varied intros, highlights, and CTAs across updates.",
