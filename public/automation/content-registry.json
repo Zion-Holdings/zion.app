@@ -53,6 +53,10 @@
       "route": "/reports/patterns/pattern-2025-08-13-215625"
     },
     {
+      "file": "pages/reports/innovations/insight-2025-08-13T22-00.tsx",
+      "route": "/reports/innovations/insight-2025-08-13T22-00"
+    },
+    {
       "file": "pages/reports/innovations/insight-2025-08-13T21-50.tsx",
       "route": "/reports/innovations/insight-2025-08-13T21-50"
     },
@@ -99,6 +103,10 @@
     {
       "file": "pages/reports/innovations/insight-2025-08-13T20-30.tsx",
       "route": "/reports/innovations/insight-2025-08-13T20-30"
+    },
+    {
+      "file": "pages/reports/innovations/insight-2025-08-13-2200.tsx",
+      "route": "/reports/innovations/insight-2025-08-13-2200"
     },
     {
       "file": "pages/reports/innovations/insight-2025-08-13-2150.tsx",
@@ -181,6 +189,10 @@
       "route": "/main/front"
     },
     {
+      "file": "pages/reports/updates/update-2025-08-13T22-00.tsx",
+      "route": "/reports/updates/update-2025-08-13T22-00"
+    },
+    {
       "file": "pages/reports/updates/update-2025-08-13T21-50.tsx",
       "route": "/reports/updates/update-2025-08-13T21-50"
     },
@@ -227,6 +239,10 @@
     {
       "file": "pages/reports/updates/update-2025-08-13T20-30.tsx",
       "route": "/reports/updates/update-2025-08-13T20-30"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-13-2200.tsx",
+      "route": "/reports/updates/update-2025-08-13-2200"
     },
     {
       "file": "pages/reports/updates/update-2025-08-13-2150.tsx",
@@ -3635,5 +3651,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-13T22:00:00.754Z"
+  "generatedAt": "2025-08-13T22:00:26.721Z"
 }

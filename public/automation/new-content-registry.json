@@ -1,11 +1,19 @@
 {
+  "generatedAt": "2025-08-13T22:00:10.295Z",
   "items": [
     {
-      "title": "Playbook: FinOps for AI",
-      "subtitle": "Patterns to enhance security.",
-      "path": "/reports/innovations/insight-2025-08-13-2200",
-      "createdAt": "2025-08-13T22:00:09.279Z",
-      "kind": "insight"
+      "title": "Innovation Insight — 2025-08-13 22-00",
+      "href": "/reports/innovations/insight-2025-08-13T22-00",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-13T22:00:10.218Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-13 22-00",
+      "href": "/reports/updates/update-2025-08-13T22-00",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-13T22:00:10.218Z",
+      "source": "cloud-content-factory"
     }
   ]
 }
