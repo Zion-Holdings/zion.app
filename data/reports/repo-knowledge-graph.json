@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T23:30:52.744Z",
+  "generatedAt": "2025-08-13T23:38:43.129Z",
   "nodes": [
     {
       "id": "automation/a11y-alt-text-auditor.cjs",
@@ -195,6 +195,10 @@
     },
     {
       "id": "automation/content-quality-analyzer.cjs",
+      "type": "file"
+    },
+    {
+      "id": "automation/content-quality-fixer.cjs",
       "type": "file"
     },
     {
@@ -1002,6 +1006,10 @@
       "type": "file"
     },
     {
+      "id": "pages/reports/blueprints/blueprint-2025-08-13-233540.tsx",
+      "type": "file"
+    },
+    {
       "id": "pages/reports/guides/guide-2025-08-13-215625.tsx",
       "type": "file"
     },
@@ -1174,6 +1182,10 @@
       "type": "file"
     },
     {
+      "id": "pages/reports/innovations/insight-2025-08-13-2335.tsx",
+      "type": "file"
+    },
+    {
       "id": "pages/reports/innovations/insight-2025-08-13T20-30.tsx",
       "type": "file"
     },
@@ -1302,6 +1314,10 @@
       "type": "file"
     },
     {
+      "id": "pages/reports/innovations/insight-2025-08-13T23-35.tsx",
+      "type": "file"
+    },
+    {
       "id": "pages/reports/patterns/pattern-2025-08-13-215625.tsx",
       "type": "file"
     },
@@ -1363,6 +1379,10 @@
     },
     {
       "id": "pages/reports/playbooks/playbook-2025-08-13-233025.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/playbooks/playbook-2025-08-13-233540.tsx",
       "type": "file"
     },
     {
@@ -4942,7 +4962,19 @@
       "type": "file"
     },
     {
+      "id": "pages/reports/updates/update-2025-08-13-2031.tsx",
+      "type": "file"
+    },
+    {
       "id": "pages/reports/updates/update-2025-08-13-2032.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-2033.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-2034.tsx",
       "type": "file"
     },
     {
@@ -4950,7 +4982,15 @@
       "type": "file"
     },
     {
+      "id": "pages/reports/updates/update-2025-08-13-2036.tsx",
+      "type": "file"
+    },
+    {
       "id": "pages/reports/updates/update-2025-08-13-2037.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-2038.tsx",
       "type": "file"
     },
     {
@@ -5071,6 +5111,10 @@
     },
     {
       "id": "pages/reports/updates/update-2025-08-13-2330.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-2335.tsx",
       "type": "file"
     },
     {
@@ -5199,6 +5243,10 @@
     },
     {
       "id": "pages/reports/updates/update-2025-08-13T23-30.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13T23-35.tsx",
       "type": "file"
     },
     {
@@ -5892,6 +5940,16 @@
     },
     {
       "from": "automation/content-quality-analyzer.cjs",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "automation/content-quality-fixer.cjs",
+      "to": "fs",
+      "kind": "external"
+    },
+    {
+      "from": "automation/content-quality-fixer.cjs",
       "to": "path",
       "kind": "external"
     },
@@ -7372,6 +7430,11 @@
     },
     {
       "from": "pages/front/index.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/front/index.tsx",
       "to": "react",
       "kind": "external"
     },
@@ -7418,6 +7481,11 @@
     {
       "from": "pages/reports/ai-lab.tsx",
       "to": "react",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/ai-trends.tsx",
+      "to": "next/head",
       "kind": "external"
     },
     {
@@ -7482,6 +7550,11 @@
     },
     {
       "from": "pages/reports/blueprints/blueprint-2025-08-13-233025.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/blueprints/blueprint-2025-08-13-233540.tsx",
       "to": "next/head",
       "kind": "external"
     },
@@ -7721,6 +7794,11 @@
       "kind": "external"
     },
     {
+      "from": "pages/reports/innovations/insight-2025-08-13-2335.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
       "from": "pages/reports/innovations/insight-2025-08-13T20-30.tsx",
       "to": "next/head",
       "kind": "external"
@@ -7881,6 +7959,11 @@
       "kind": "external"
     },
     {
+      "from": "pages/reports/innovations/insight-2025-08-13T23-35.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
       "from": "pages/reports/patterns/pattern-2025-08-13-215625.tsx",
       "to": "next/head",
       "kind": "external"
@@ -7961,7 +8044,17 @@
       "kind": "external"
     },
     {
+      "from": "pages/reports/playbooks/playbook-2025-08-13-233540.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
       "from": "pages/reports/roadmap.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/seo.tsx",
       "to": "next/head",
       "kind": "external"
     },
@@ -12431,7 +12524,22 @@
       "kind": "external"
     },
     {
+      "from": "pages/reports/updates/update-2025-08-13-2031.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
       "from": "pages/reports/updates/update-2025-08-13-2032.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-2033.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-2034.tsx",
       "to": "next/head",
       "kind": "external"
     },
@@ -12441,7 +12549,17 @@
       "kind": "external"
     },
     {
+      "from": "pages/reports/updates/update-2025-08-13-2036.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
       "from": "pages/reports/updates/update-2025-08-13-2037.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-2038.tsx",
       "to": "next/head",
       "kind": "external"
     },
@@ -12592,6 +12710,11 @@
     },
     {
       "from": "pages/reports/updates/update-2025-08-13-2330.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-2335.tsx",
       "to": "next/head",
       "kind": "external"
     },
@@ -12752,6 +12875,11 @@
     },
     {
       "from": "pages/reports/updates/update-2025-08-13T23-30.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13T23-35.tsx",
       "to": "next/head",
       "kind": "external"
     },
