@@ -8,7 +8,6 @@ export default function ZionApp({ Component, pageProps }: AppProps) {
       <main className="flex-1">
         <Component {...pageProps} />
       </main>
-      <Footer />
     </div>
   );
 }

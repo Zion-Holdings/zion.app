@@ -40,7 +40,7 @@
     "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev",
     "build": "NODE_OPTIONS=--openssl-legacy-provider next build",
     "prebuild": "npm run netlify:manifest",
-    "export": "NODE_OPTIONS=--openssl-legacy-provider next build && next export && if [ -f _redirects ]; then cp -f _redirects out/_redirects; fi",
+    "export": "NODE_OPTIONS=--openssl-legacy-provider next build && next export && if [ -f _redirects ]; then cp -f _redirects out/_redirects; fi && if [ -f public/_headers ]; then cp -f public/_headers out/_headers; elif [ -f _headers ]; then cp -f _headers out/_headers; fi",
     "start": "next start",
     "postbuild": "node automation/footer-injector.cjs || true",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
