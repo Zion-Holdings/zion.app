@@ -4,6 +4,8 @@ const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
 const cheerio = require('cheerio');
+const { fetchAndExtract } = require('./lib/web-research.cjs');
+const { summarizeWithOpenAI } = require('./lib/summarize.cjs');
 
 const OUT_PAGE = path.join(__dirname, '..', 'pages', 'newsroom.tsx');
 
@@ -55,7 +57,7 @@ async function collect() {
 }
 
 function renderPage(items) {
-  const list = items.map(it => `          <li className=\"py-2\">\n            <a href=\"${it.url}\" target=\"_blank\" rel=\"noopener\" className=\"text-cyan-300 hover:text-cyan-200 underline\">${it.title.replace(/`/g, '\\`')}</a>\n            <span className=\"text-white/50 ml-2\">(${it.source})</span>\n          </li>`).join('\n');
+  const list = items.map(it => `          <li className=\"py-3\">\n            <a href=\"${it.url}\" target=\"_blank\" rel=\"noopener\" className=\"text-cyan-300 hover:text-cyan-200 underline\">${it.title.replace(/`/g, '\\`')}</a>\n            <span className=\"text-white/50 ml-2\">(${it.source})</span>\n            ${it.summary ? `\n            <div className=\"mt-1 text-sm text-white/70\">${it.summary.replace(/`/g, '\\`')}</div>` : ''}\n          </li>`).join('\n');
 
   return `import Head from 'next/head';
 
@@ -66,6 +68,17 @@ export default function Newsroom() {
 
 async function main() {
   const items = await collect();
+  // Enrich with summaries via lightweight fetch+LLM
+  for (let i = 0; i < items.length; i += 1) {
+    const it = items[i];
+    try {
+      const text = await fetchAndExtract(it.url);
+      if (!text) continue;
+      // eslint-disable-next-line no-await-in-loop
+      const summary = await summarizeWithOpenAI(text, { bullets: false });
+      if (summary) it.summary = summary;
+    } catch {}
+  }
   const page = renderPage(items);
   fs.writeFileSync(OUT_PAGE, page, 'utf8');
   console.log(`Newsroom updated with ${items.length} item(s).`);
