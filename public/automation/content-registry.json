@@ -33,8 +33,8 @@
       "route": "/automation"
     },
     {
-      "file": "pages/main/front/index.tsx",
-      "route": "/main/front"
+      "file": "pages/reports/updates/update-2025-08-13-0030.tsx",
+      "route": "/reports/updates/update-2025-08-13-0030"
     },
     {
       "file": "pages/reports/updates/update-2025-08-13-0029.tsx",
@@ -523,6 +523,10 @@
     {
       "file": "pages/reports/updates/update-2025-08-12-1417.tsx",
       "route": "/reports/updates/update-2025-08-12-1417"
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "route": "/main/front"
     }
   ],
   "docs": [
@@ -559,5 +563,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-13T03:29:00.669Z"
+  "generatedAt": "2025-08-13T03:30:00.543Z"
 }

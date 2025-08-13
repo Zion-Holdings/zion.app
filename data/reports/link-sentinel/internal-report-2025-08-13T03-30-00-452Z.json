@@ -1,0 +1,424 @@
+{
+  "generatedAt": "2025-08-13T03:30:00.452Z",
+  "knownRoutes": [
+    "/",
+    "/automation",
+    "/front",
+    "/main/front",
+    "/newsroom",
+    "/reports/ai-trends",
+    "/reports/roadmap",
+    "/reports/seo",
+    "/reports/updates/update-2025-08-12-1417",
+    "/reports/updates/update-2025-08-12-1431",
+    "/reports/updates/update-2025-08-12-1432",
+    "/reports/updates/update-2025-08-12-1500",
+    "/reports/updates/update-2025-08-12-1530",
+    "/reports/updates/update-2025-08-12-1730",
+    "/reports/updates/update-2025-08-12-1831",
+    "/reports/updates/update-2025-08-12-1842",
+    "/reports/updates/update-2025-08-12-1846",
+    "/reports/updates/update-2025-08-12-1851",
+    "/reports/updates/update-2025-08-12-1915",
+    "/reports/updates/update-2025-08-12-2200",
+    "/reports/updates/update-2025-08-12-2230",
+    "/reports/updates/update-2025-08-12-2236",
+    "/reports/updates/update-2025-08-12-2237",
+    "/reports/updates/update-2025-08-12-2238",
+    "/reports/updates/update-2025-08-12-2239",
+    "/reports/updates/update-2025-08-12-2240",
+    "/reports/updates/update-2025-08-12-2241",
+    "/reports/updates/update-2025-08-12-2242",
+    "/reports/updates/update-2025-08-12-2243",
+    "/reports/updates/update-2025-08-12-2244",
+    "/reports/updates/update-2025-08-12-2245",
+    "/reports/updates/update-2025-08-12-2246",
+    "/reports/updates/update-2025-08-12-2247",
+    "/reports/updates/update-2025-08-12-2253",
+    "/reports/updates/update-2025-08-12-2254",
+    "/reports/updates/update-2025-08-12-2255",
+    "/reports/updates/update-2025-08-12-2256",
+    "/reports/updates/update-2025-08-12-2257",
+    "/reports/updates/update-2025-08-12-2258",
+    "/reports/updates/update-2025-08-12-2259",
+    "/reports/updates/update-2025-08-12-2300",
+    "/reports/updates/update-2025-08-12-2301",
+    "/reports/updates/update-2025-08-12-2302",
+    "/reports/updates/update-2025-08-12-2303",
+    "/reports/updates/update-2025-08-12-2304",
+    "/reports/updates/update-2025-08-12-2305",
+    "/reports/updates/update-2025-08-12-2306",
+    "/reports/updates/update-2025-08-12-2307",
+    "/reports/updates/update-2025-08-12-2308",
+    "/reports/updates/update-2025-08-12-2309",
+    "/reports/updates/update-2025-08-12-2310",
+    "/reports/updates/update-2025-08-12-2311",
+    "/reports/updates/update-2025-08-12-2312",
+    "/reports/updates/update-2025-08-12-2313",
+    "/reports/updates/update-2025-08-12-2314",
+    "/reports/updates/update-2025-08-12-2315",
+    "/reports/updates/update-2025-08-12-2316",
+    "/reports/updates/update-2025-08-12-2317",
+    "/reports/updates/update-2025-08-12-2318",
+    "/reports/updates/update-2025-08-12-2319",
+    "/reports/updates/update-2025-08-12-2320",
+    "/reports/updates/update-2025-08-12-2321",
+    "/reports/updates/update-2025-08-12-2322",
+    "/reports/updates/update-2025-08-12-2323",
+    "/reports/updates/update-2025-08-12-2324",
+    "/reports/updates/update-2025-08-12-2325",
+    "/reports/updates/update-2025-08-12-2326",
+    "/reports/updates/update-2025-08-12-2327",
+    "/reports/updates/update-2025-08-12-2328",
+    "/reports/updates/update-2025-08-12-2329",
+    "/reports/updates/update-2025-08-12-2330",
+    "/reports/updates/update-2025-08-12-2331",
+    "/reports/updates/update-2025-08-12-2332",
+    "/reports/updates/update-2025-08-12-2333",
+    "/reports/updates/update-2025-08-12-2334",
+    "/reports/updates/update-2025-08-12-2335",
+    "/reports/updates/update-2025-08-12-2336",
+    "/reports/updates/update-2025-08-12-2337",
+    "/reports/updates/update-2025-08-12-2338",
+    "/reports/updates/update-2025-08-12-2339",
+    "/reports/updates/update-2025-08-12-2340",
+    "/reports/updates/update-2025-08-12-2341",
+    "/reports/updates/update-2025-08-12-2342",
+    "/reports/updates/update-2025-08-12-2343",
+    "/reports/updates/update-2025-08-12-2344",
+    "/reports/updates/update-2025-08-12-2345",
+    "/reports/updates/update-2025-08-12-2346",
+    "/reports/updates/update-2025-08-12-2347",
+    "/reports/updates/update-2025-08-12-2348",
+    "/reports/updates/update-2025-08-12-2349",
+    "/reports/updates/update-2025-08-12-2350",
+    "/reports/updates/update-2025-08-12-2351",
+    "/reports/updates/update-2025-08-12-2352",
+    "/reports/updates/update-2025-08-12-2353",
+    "/reports/updates/update-2025-08-12-2354",
+    "/reports/updates/update-2025-08-12-2355",
+    "/reports/updates/update-2025-08-12-2356",
+    "/reports/updates/update-2025-08-12-2357",
+    "/reports/updates/update-2025-08-12-2358",
+    "/reports/updates/update-2025-08-12-2359",
+    "/reports/updates/update-2025-08-13-0000",
+    "/reports/updates/update-2025-08-13-0001",
+    "/reports/updates/update-2025-08-13-0002",
+    "/reports/updates/update-2025-08-13-0003",
+    "/reports/updates/update-2025-08-13-0004",
+    "/reports/updates/update-2025-08-13-0005",
+    "/reports/updates/update-2025-08-13-0006",
+    "/reports/updates/update-2025-08-13-0007",
+    "/reports/updates/update-2025-08-13-0008",
+    "/reports/updates/update-2025-08-13-0009",
+    "/reports/updates/update-2025-08-13-0010",
+    "/reports/updates/update-2025-08-13-0011",
+    "/reports/updates/update-2025-08-13-0012",
+    "/reports/updates/update-2025-08-13-0013",
+    "/reports/updates/update-2025-08-13-0014",
+    "/reports/updates/update-2025-08-13-0015",
+    "/reports/updates/update-2025-08-13-0016",
+    "/reports/updates/update-2025-08-13-0017",
+    "/reports/updates/update-2025-08-13-0018",
+    "/reports/updates/update-2025-08-13-0019",
+    "/reports/updates/update-2025-08-13-0020",
+    "/reports/updates/update-2025-08-13-0021",
+    "/reports/updates/update-2025-08-13-0022",
+    "/reports/updates/update-2025-08-13-0023",
+    "/reports/updates/update-2025-08-13-0024",
+    "/reports/updates/update-2025-08-13-0025",
+    "/reports/updates/update-2025-08-13-0026",
+    "/reports/updates/update-2025-08-13-0027",
+    "/reports/updates/update-2025-08-13-0028",
+    "/reports/updates/update-2025-08-13-0029",
+    "/reports/updates/update-2025-08-13-0030",
+    "/site-health"
+  ],
+  "results": [
+    {
+      "file": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/schedule-homepage",
+      "suggestion": null
+    },
+    {
+      "file": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/schedule-site-health",
+      "suggestion": null
+    },
+    {
+      "file": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/schedule-content-index",
+      "suggestion": null
+    },
+    {
+      "file": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/schedule-knowledge-graph",
+      "suggestion": null
+    },
+    {
+      "file": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/front-enhancer",
+      "suggestion": null
+    },
+    {
+      "file": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/fast-front-promoter",
+      "suggestion": null
+    },
+    {
+      "file": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/marketing-and-features-promo",
+      "suggestion": null
+    },
+    {
+      "file": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/fast-orchestrator",
+      "suggestion": null
+    },
+    {
+      "file": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/continuous-orchestrator",
+      "suggestion": null
+    },
+    {
+      "file": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/features-capabilities-benefits-advertiser",
+      "suggestion": null
+    },
+    {
+      "file": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/hyper-front-index-accelerator",
+      "suggestion": null
+    },
+    {
+      "file": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/innovation-lab",
+      "suggestion": null
+    },
+    {
+      "file": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/auto-scheduler",
+      "suggestion": null
+    },
+    {
+      "file": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/broken-image-scanner",
+      "suggestion": null
+    },
+    {
+      "file": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/seo-audit-runner",
+      "suggestion": null
+    },
+    {
+      "file": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/ai-trends-radar-runner",
+      "suggestion": null
+    },
+    {
+      "file": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/deps-auto-upgrade-runner",
+      "suggestion": null
+    },
+    {
+      "file": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/component-props-docs-runner",
+      "suggestion": null
+    },
+    {
+      "file": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/topics-map-runner",
+      "suggestion": null
+    },
+    {
+      "file": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/roadmap-curator",
+      "suggestion": null
+    },
+    {
+      "file": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/revenue-ideas-lab",
+      "suggestion": null
+    },
+    {
+      "file": "pages/automation/index.tsx",
+      "href": "/.netlify/functions/auto-discovery-runner",
+      "suggestion": null
+    },
+    {
+      "file": "pages/index.tsx",
+      "href": "/main/front#capabilities",
+      "suggestion": null
+    },
+    {
+      "file": "pages/index.tsx",
+      "href": "/.netlify/functions/front-enhancer",
+      "suggestion": null
+    },
+    {
+      "file": "pages/index.tsx",
+      "href": "/.netlify/functions/stale-content-auditor-runner",
+      "suggestion": null
+    },
+    {
+      "file": "pages/index.tsx",
+      "href": "/.netlify/functions/deps-auto-upgrade-runner",
+      "suggestion": null
+    },
+    {
+      "file": "pages/index.tsx",
+      "href": "/.netlify/functions/unused-media-scanner",
+      "suggestion": null
+    },
+    {
+      "file": "pages/index.tsx",
+      "href": "/.netlify/functions/orphan-pages-detector",
+      "suggestion": null
+    },
+    {
+      "file": "pages/index.tsx",
+      "href": "/.netlify/functions/component-size-report",
+      "suggestion": null
+    },
+    {
+      "file": "pages/index.tsx",
+      "href": "/.netlify/functions/component-props-docs-runner",
+      "suggestion": null
+    },
+    {
+      "file": "pages/index.tsx",
+      "href": "/.netlify/functions/topics-map-runner",
+      "suggestion": null
+    },
+    {
+      "file": "pages/index.tsx",
+      "href": "/.netlify/functions/netlify-auto-healer-runner",
+      "suggestion": null
+    },
+    {
+      "file": "pages/index.tsx",
+      "href": "/.netlify/functions/docs-index-runner",
+      "suggestion": null
+    },
+    {
+      "file": "pages/index.tsx",
+      "href": "/.netlify/functions/front-visionary-expander",
+      "suggestion": null
+    },
+    {
+      "file": "pages/index.tsx",
+      "href": "/.netlify/functions/home-visionary-expander",
+      "suggestion": null
+    },
+    {
+      "file": "pages/index.tsx",
+      "href": "/.netlify/functions/continuous-orchestrator",
+      "suggestion": null
+    },
+    {
+      "file": "pages/index.tsx",
+      "href": "/main/front#features",
+      "suggestion": null
+    },
+    {
+      "file": "pages/index.tsx",
+      "href": "/main/front#benefits",
+      "suggestion": null
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "href": "",
+      "suggestion": null
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "href": "/.netlify/functions/autonomous-meta-orchestrator",
+      "suggestion": null
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "href": "/.netlify/functions/front-enhancer",
+      "suggestion": null
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "href": "/main/front#features",
+      "suggestion": null
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "href": "/main/front#capabilities",
+      "suggestion": null
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "href": "/main/front#benefits",
+      "suggestion": null
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "href": "/.netlify/functions/docs-index-runner",
+      "suggestion": null
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "href": "/.netlify/functions/topic-cluster-builder-runner",
+      "suggestion": null
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "href": "/.netlify/functions/unused-media-scanner",
+      "suggestion": null
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "href": "/.netlify/functions/orphan-pages-detector",
+      "suggestion": null
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "href": "/.netlify/functions/component-size-report",
+      "suggestion": null
+    },
+    {
+      "file": "pages/reports/roadmap.tsx",
+      "href": "/.netlify/functions/roadmap-curator",
+      "suggestion": null
+    },
+    {
+      "file": "pages/reports/roadmap.tsx",
+      "href": "/docs/ROADMAP.md",
+      "suggestion": null
+    },
+    {
+      "file": "components/Landing.tsx",
+      "href": "/main/front#capabilities",
+      "suggestion": null
+    },
+    {
+      "file": "components/Landing.tsx",
+      "href": "/services/ai-seo-auditor",
+      "suggestion": null
+    },
+    {
+      "file": "components/Landing.tsx",
+      "href": "/services/customer-support-chatbot",
+      "suggestion": null
+    },
+    {
+      "file": "components/Landing.tsx",
+      "href": "/services/landing-page-generator",
+      "suggestion": null
+    },
+    {
+      "file": "components/Landing.tsx",
+      "href": "/services/price-intelligence-service",
+      "suggestion": null
+    },
+    {
+      "file": "components/monetization/PaidConsultation.tsx",
+      "href": "/contact",
+      "suggestion": null
+    }
+  ]
+}
