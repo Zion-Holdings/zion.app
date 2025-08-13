@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-13T23:51:00.430Z",
-  "pagesScanned": 1119,
+  "generatedAt": "2025-08-13T23:52:00.441Z",
+  "pagesScanned": 1120,
   "items": [
     {
       "route": "/_app",
@@ -73,7 +73,10 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -10482,6 +10485,19 @@
       "suggestion": {
         "title": "Autonomous Capability Map — DevSecOps for AI (2025-08-13 20:51 UTC)",
         "description": "Autonomous Capability Map — DevSecOps for AI (2025-08-13 20:51 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2052",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 20:52",
+        "description": "Autonomous Update — 2025-08-13 20:52 — auto-suggested description"
       }
     },
     {
