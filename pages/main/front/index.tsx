@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Head from 'next/head';
 import Link from 'next/link';
 import { Cpu, Gauge, GitBranch, Rocket, ShieldCheck, Zap, Activity, Globe, Layers, BarChart3, Search, Link2, Palette, LineChart } from 'lucide-react';
@@ -1843,3 +1844,15 @@ export default function MainFrontIndex() {
     </div>
   );
 }
+=======
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
+
+export default function MainFrontIndexRedirect() {
+  const router = useRouter();
+  useEffect(() => {
+    router.replace('/');
+  }, [router]);
+  return null;
+}
+>>>>>>> origin/feat/futuristic-homepage
