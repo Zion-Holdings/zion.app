@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T21:28:40.441Z",
+  "generatedAt": "2025-08-13T21:29:01.537Z",
   "entries": [
     {
       "route": "/site-health",
@@ -66,6 +66,12 @@
       "file": "pages/reports/ai-lab.tsx",
       "title": "ai-lab",
       "summary": "import { useEffect, useState } from 'react'; interface ArticleEntry { title: string; url: string; createdAt: string; tags?: string[]; source?: string; } export default function AILabPage() { const [items, setItems] = useState ([]); const [loading, setLoading] = useState(true); us"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13T21-29",
+      "file": "pages/reports/updates/update-2025-08-13T21-29.tsx",
+      "title": "Autonomous Update — 2025-08-13 21-29",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-13 21-29 Autonomous Update — 2025-08-13 21-29 Signal source: https://ziontechgroup.com Autonomous cloud systems are live and improving the app in real timeAutonomous Cloud Automati"
     },
     {
       "route": "/reports/updates/update-2025-08-13T21-19",
@@ -204,6 +210,12 @@
       "file": "pages/reports/updates/update-2025-08-13-1942.tsx",
       "title": "Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC) Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC) Innovative, useful guidance to decrease unit cost per request. What it is: Playbook "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1829",
+      "file": "pages/reports/updates/update-2025-08-13-1829.tsx",
+      "title": "Autonomous Update — 2025-08-13 18:29",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 18:29 Autonomous Update — 2025-08-13 18:29 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Airfoil · 2544 pts Wh"
     },
     {
       "route": "/reports/updates/update-2025-08-13-1828",
@@ -4998,6 +5010,12 @@
       "file": "pages/reports/updates/update-2025-08-12-1417.tsx",
       "title": "Autonomous Update — 2025-08-12 14:17",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-12 14:17 Autonomous Update — 2025-08-12 14:17 This page was created automatically by the content creator automation. It showcases our continuous, autonomous publishing pipeli"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-13T21-29",
+      "file": "pages/reports/innovations/insight-2025-08-13T21-29.tsx",
+      "title": "Innovation Insight — 2025-08-13 21-29",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-13 21-29 Innovation Insight — 2025-08-13 21-29 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
     },
     {
       "route": "/reports/innovations/insight-2025-08-13T21-19",
