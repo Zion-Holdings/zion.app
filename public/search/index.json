@@ -1,11 +1,17 @@
 {
-  "generatedAt": "2025-08-13T19:46:01.805Z",
+  "generatedAt": "2025-08-13T19:47:01.501Z",
   "entries": [
     {
       "route": "/site-health",
       "file": "pages/site-health.tsx",
       "title": "Site Health — Broken Images",
       "summary": "import Head from 'next/head'; export default function SiteHealth() { return ( Site Health — Broken Images Site Health Automatically detected external images that failed to load. No issues found. ); }"
+    },
+    {
+      "route": "/search",
+      "file": "pages/search.tsx",
+      "title": "Search — Zion",
+      "summary": "import { useEffect, useMemo, useState } from 'react'; import Head from 'next/head'; type SearchItem = { title: string; url: string; summary?: string }; export default function SearchPage() { const [q, setQ] = useState(''); const [items, setItems] = useState ([]); const [loaded, s"
     },
     {
       "route": "/newsroom",
@@ -17,7 +23,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "index",
-      "summary": "import Landing from '../components/Landing'; export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 1646 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 1"
+      "summary": "import Landing from '../components/Landing'; export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 1647 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 1"
     },
     {
       "route": "/_document",
@@ -66,6 +72,12 @@
       "file": "pages/reports/updates/update-2025-08-13-1942.tsx",
       "title": "Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC) Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC) Innovative, useful guidance to decrease unit cost per request. What it is: Playbook "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1647",
+      "file": "pages/reports/updates/update-2025-08-13-1647.tsx",
+      "title": "Autonomous Update — 2025-08-13 16:47",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 16:47 Autonomous Update — 2025-08-13 16:47 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Air Con: $1697 for an on/off switch "
     },
     {
       "route": "/reports/updates/update-2025-08-13-1646",

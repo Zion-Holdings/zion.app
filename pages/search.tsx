@@ -39,7 +39,10 @@ export default function SearchPage() {
       <Head>
         <title>Search — Zion</title>
         <meta name="description" content="Search across pages and reports." />
-      </Head>
+      
+        <meta property="og:title" content="Search" />
+        <meta property="og:description" content="Search — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       <main className="mx-auto max-w-5xl px-6 py-10">
         <h1 className="text-3xl font-bold">Search</h1>
         <div className="mt-4">
