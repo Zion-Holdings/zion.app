@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T16:11:37.539Z",
+  "generatedAt": "2025-08-13T16:12:01.743Z",
   "entries": [
     {
       "route": "/site-health",
@@ -11,13 +11,13 @@
       "route": "/newsroom",
       "file": "pages/newsroom.tsx",
       "title": "Newsroom — Curated Tech Headlines",
-      "summary": "import Head from 'next/head'; export default function Newsroom() { return ( Newsroom — Curated Tech Headlines Newsroom Updated automatically from multiple sources. Slow Ventures cuts first check from $60M creator fund into woodworking founder (TechCrunch) Trump administration sto"
+      "summary": "import Head from 'next/head'; export default function Newsroom() { return ( Newsroom — Curated Tech Headlines Newsroom Updated automatically from multiple sources. How we found TeaOnHer spilling users’ driver’s licenses in less than 10 minutes (TechCrunch) Why I finally left Spot"
     },
     {
       "route": "/",
       "file": "pages/index.tsx",
       "title": "index",
-      "summary": "export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 1311 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 13: 1310 Freshly published by autonomous agent"
+      "summary": "export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 1312 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 13: 1311 Freshly published by autonomous agent"
     },
     {
       "route": "/_document",
@@ -48,6 +48,12 @@
       "file": "pages/reports/ai-trends.tsx",
       "title": "ai-trends",
       "summary": "import { useEffect } from 'react'; export default function AiTrendsRedirect() { useEffect(() => { if (typeof window !== 'undefined') { window.location.replace('/reports/ai-trends/index.html'); } }, []); return null; }"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1312",
+      "file": "pages/reports/updates/update-2025-08-13-1312.tsx",
+      "title": "Autonomous Update — 2025-08-13 13:12",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 13:12 Autonomous Update — 2025-08-13 13:12 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Google Duplex: An AI System for Acco"
     },
     {
       "route": "/reports/updates/update-2025-08-13-1311",
