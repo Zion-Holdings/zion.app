@@ -1,0 +1,53 @@
+name: AI Content Factory
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install deps (frozen)
+        run: npm ci
+
+      - name: Generate autonomous content
+        run: node automation/ai-content-factory.cjs
+
+      - name: Update content registry and front index promos
+        run: |
+          node automation/docs-pages-indexer.cjs
+          node automation/front-index-directory-builder.cjs
+          node automation/ai-content-advertiser.cjs
+
+      - name: Commit changes
+        run: |
+          git config user.name "zion.app bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(automation): autonomous AI content update [skip ci]"
+          fi
+
+      - name: Push
+        if: success()
+        run: |
+          git push
+
+
