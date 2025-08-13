@@ -49,6 +49,10 @@
       "route": "/automation"
     },
     {
+      "file": "pages/reports/innovations/insight-2025-08-13T21-40.tsx",
+      "route": "/reports/innovations/insight-2025-08-13T21-40"
+    },
+    {
       "file": "pages/reports/innovations/insight-2025-08-13T21-30.tsx",
       "route": "/reports/innovations/insight-2025-08-13T21-30"
     },
@@ -83,6 +87,10 @@
     {
       "file": "pages/reports/innovations/insight-2025-08-13T20-30.tsx",
       "route": "/reports/innovations/insight-2025-08-13T20-30"
+    },
+    {
+      "file": "pages/reports/innovations/insight-2025-08-13-2140.tsx",
+      "route": "/reports/innovations/insight-2025-08-13-2140"
     },
     {
       "file": "pages/reports/innovations/insight-2025-08-13-2130.tsx",
@@ -149,6 +157,10 @@
       "route": "/main/front"
     },
     {
+      "file": "pages/reports/updates/update-2025-08-13T21-40.tsx",
+      "route": "/reports/updates/update-2025-08-13T21-40"
+    },
+    {
       "file": "pages/reports/updates/update-2025-08-13T21-30.tsx",
       "route": "/reports/updates/update-2025-08-13T21-30"
     },
@@ -183,6 +195,10 @@
     {
       "file": "pages/reports/updates/update-2025-08-13T20-30.tsx",
       "route": "/reports/updates/update-2025-08-13T20-30"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-13-2140.tsx",
+      "route": "/reports/updates/update-2025-08-13-2140"
     },
     {
       "file": "pages/reports/updates/update-2025-08-13-2130.tsx",
@@ -251,6 +267,10 @@
     {
       "file": "pages/reports/updates/update-2025-08-13-1942.tsx",
       "route": "/reports/updates/update-2025-08-13-1942"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-13-1841.tsx",
+      "route": "/reports/updates/update-2025-08-13-1841"
     },
     {
       "file": "pages/reports/updates/update-2025-08-13-1840.tsx",
@@ -3531,5 +3551,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-13T21:40:00.664Z"
+  "generatedAt": "2025-08-13T21:41:00.622Z"
 }
