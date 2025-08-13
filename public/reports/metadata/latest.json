@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-13T20:20:00.634Z",
-  "pagesScanned": 781,
+  "generatedAt": "2025-08-13T20:20:35.702Z",
+  "pagesScanned": 784,
   "items": [
     {
       "route": "/_app",
@@ -130,6 +130,16 @@
       "suggestion": {
         "title": "Innovations",
         "description": "Innovations — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-13-2020",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Blueprint: Agent Ops",
+        "description": "Blueprint: Agent Ops — auto-suggested description"
       }
     },
     {
@@ -7777,6 +7787,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-13-1720",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 17:20",
+        "description": "Autonomous Update — 2025-08-13 17:20 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-13-1942",
       "missing": [
         "og:image"
@@ -7804,6 +7824,16 @@
       "suggestion": {
         "title": "Autonomous Playbook — Evaluation & Safety (2025-08-13 20:10 UTC)",
         "description": "Autonomous Playbook — Evaluation & Safety (2025-08-13 20:10 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2020",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Security Hardening Guide — Vision & Multimodal (2025-08-13 20:20 UTC)",
+        "description": "Autonomous Security Hardening Guide — Vision & Multimodal (2025-08-13 20:20 UTC) — auto-suggested description"
       }
     },
     {

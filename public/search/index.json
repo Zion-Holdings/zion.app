@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T20:20:01.779Z",
+  "generatedAt": "2025-08-13T20:20:36.879Z",
   "entries": [
     {
       "route": "/site-health",
@@ -23,7 +23,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "index",
-      "summary": "import Landing from '../components/Landing'; export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 1720 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 1"
+      "summary": "import Landing from '../components/Landing'; export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 2020 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 1"
     },
     {
       "route": "/_document",
@@ -66,6 +66,12 @@
       "file": "pages/reports/ai-lab.tsx",
       "title": "ai-lab",
       "summary": "import { useEffect, useState } from 'react'; interface ArticleEntry { title: string; url: string; createdAt: string; tags?: string[]; source?: string; } export default function AILabPage() { const [items, setItems] = useState ([]); const [loading, setLoading] = useState(true); us"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2020",
+      "file": "pages/reports/updates/update-2025-08-13-2020.tsx",
+      "title": "Autonomous Security Hardening Guide — Vision & Multimodal (2025-08-13 20:20 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Security Hardening Guide — Vision & Multimodal (2025-08-13 20:20 UTC) Autonomous Security Hardening Guide — Vision & Multimodal (2025-08-13 20:20 UTC) Innovative, useful guidance to streamlin"
     },
     {
       "route": "/reports/updates/update-2025-08-13-2010",
@@ -4662,6 +4668,12 @@
       "file": "pages/reports/updates/update-2025-08-12-1417.tsx",
       "title": "Autonomous Update — 2025-08-12 14:17",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-12 14:17 Autonomous Update — 2025-08-12 14:17 This page was created automatically by the content creator automation. It showcases our continuous, autonomous publishing pipeli"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-13-2020",
+      "file": "pages/reports/innovations/insight-2025-08-13-2020.tsx",
+      "title": "Blueprint: Agent Ops",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Blueprint: Agent Ops Blueprint: Agent Ops Patterns to improve reliability. Scope: Blueprint: Agent Ops. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observab"
     },
     {
       "route": "/reports/innovations",
