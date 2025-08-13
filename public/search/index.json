@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T22:40:38.062Z",
+  "generatedAt": "2025-08-13T22:41:01.774Z",
   "entries": [
     {
       "route": "/site-health",
@@ -396,6 +396,12 @@
       "file": "pages/reports/updates/update-2025-08-13-1942.tsx",
       "title": "Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC) Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC) Innovative, useful guidance to decrease unit cost per request. What it is: Playbook "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1941",
+      "file": "pages/reports/updates/update-2025-08-13-1941.tsx",
+      "title": "Autonomous Update — 2025-08-13 19:41",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 19:41 Autonomous Update — 2025-08-13 19:41 Signal over noise—your automated update is here. Today's Highlight Hacker News : My AI skeptic friends are all nuts · 2356 pts W"
     },
     {
       "route": "/reports/updates/update-2025-08-13-1940",
