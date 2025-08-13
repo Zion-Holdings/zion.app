@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T12:20:01.728Z",
+  "generatedAt": "2025-08-13T12:21:02.575Z",
   "entries": [
     {
       "route": "/site-health",
@@ -42,6 +42,12 @@
       "file": "pages/reports/ai-trends.tsx",
       "title": "ai-trends",
       "summary": "import { useEffect } from 'react'; export default function AiTrendsRedirect() { useEffect(() => { if (typeof window !== 'undefined') { window.location.replace('/reports/ai-trends/index.html'); } }, []); return null; }"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-0921",
+      "file": "pages/reports/updates/update-2025-08-13-0921.tsx",
+      "title": "Autonomous Update — 2025-08-13 09:21",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 09:21 Autonomous Update — 2025-08-13 09:21 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Open source AI is the path forward ·"
     },
     {
       "route": "/reports/updates/update-2025-08-13-0920",
