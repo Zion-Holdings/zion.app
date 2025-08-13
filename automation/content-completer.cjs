@@ -16,7 +16,6 @@ const ROOT = path.resolve(__dirname, '..');
 const REPO = path.resolve(__dirname, '..');
 const PAGES_DIR = path.join(REPO, 'pages');
 const LOGS_DIR = path.join(REPO, 'automation', 'logs');
-const LOCK_FILE = path.join(REPO, 'automation', '.content-completer.lock');
 
 function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
@@ -41,18 +40,8 @@ function tryNode(relPath, args = []) {
   return run('node', [abs, ...args]);
 }
 
-function withLock(fn) {
-  const maxAgeMs = 2 * 60 * 1000; // 2 minutes
-  try {
-    if (fs.existsSync(LOCK_FILE)) {
-      const age = Date.now() - fs.statSync(LOCK_FILE).mtimeMs;
-      if (age < maxAgeMs) { log('lock present; skipping'); return false; }
-      try { fs.unlinkSync(LOCK_FILE); } catch {}
-    }
-    fs.writeFileSync(LOCK_FILE, String(process.pid));
-  } catch (e) { log(`lock error: ${e.message || e}`); return false; }
-  try { return fn(); } finally { try { fs.unlinkSync(LOCK_FILE); } catch {} }
-}
+// Lock removed: run directly
+function withLock(fn) { return fn(); }
 
 function listPageFiles(dir) {
   const files = [];
