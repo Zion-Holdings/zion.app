@@ -37,16 +37,16 @@
       "route": "/reports/ai-lab"
     },
     {
-      "file": "pages/front/index.tsx",
-      "route": "/front"
-    },
-    {
       "file": "pages/explore/index.tsx",
       "route": "/explore"
     },
     {
       "file": "pages/automation/index.tsx",
       "route": "/automation"
+    },
+    {
+      "file": "pages/front/index.tsx",
+      "route": "/front"
     },
     {
       "file": "pages/reports/patterns/pattern-2025-08-13-215625.tsx",
@@ -3659,5 +3659,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-13T22:02:09.519Z"
+  "generatedAt": "2025-08-13T22:02:34.722Z"
 }
