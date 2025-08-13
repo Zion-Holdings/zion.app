@@ -6,7 +6,11 @@ export default function AiTrendsReportPage() {
       <Head>
         <title>AI Trends Radar — Reports</title>
         <meta httpEquiv="refresh" content="0;url=/reports/ai-trends/index.html" />
-      </Head>
+      
+        <meta name="description" content="AI Trends Radar — automatically suggested description." />
+        <meta property="og:title" content="AI Trends Radar" />
+        <meta property="og:description" content="AI Trends Radar — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       <main className="mx-auto max-w-3xl px-6 py-12">
         <h1 className="text-3xl font-bold">AI Trends Radar</h1>
         <p className="text-white/70 mt-2">Redirecting to the static report…</p>

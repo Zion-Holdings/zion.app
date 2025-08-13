@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-13T21:16:00.413Z",
-  "pagesScanned": 856,
+  "generatedAt": "2025-08-13T21:25:00.710Z",
+  "pagesScanned": 870,
   "items": [
     {
       "route": "/_app",
@@ -77,10 +77,7 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -111,8 +108,8 @@
         "twitter:card"
       ],
       "suggestion": {
-        "title": "ai trends",
-        "description": "ai trends — auto-suggested description"
+        "title": "AI Trends Radar",
+        "description": "AI Trends Radar — auto-suggested description"
       }
     },
     {
@@ -256,6 +253,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-13-2120",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook: Agent Ops",
+        "description": "Playbook: Agent Ops — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-13T20-30",
       "missing": [
         "og:image"
@@ -316,6 +323,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-13T21-20",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-13 21-20",
+        "description": "Innovation Insight — 2025-08-13 21-20 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/roadmap",
       "missing": [
         "og:image"
@@ -323,6 +340,20 @@
       "suggestion": {
         "title": "Autonomous Roadmap",
         "description": "Autonomous Roadmap — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/seo",
+      "missing": [
+        "description",
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "AI SEO Auditor",
+        "description": "AI SEO Auditor — auto-suggested description"
       }
     },
     {
@@ -8338,14 +8369,128 @@
     {
       "route": "/reports/updates/update-2025-08-13-1816",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 18:16",
+        "description": "Autonomous Update — 2025-08-13 18:16 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1817",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-13 18:16",
-        "description": "Autonomous Update — 2025-08-13 18:16 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-13 18:17",
+        "description": "Autonomous Update — 2025-08-13 18:17 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1818",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 18:18",
+        "description": "Autonomous Update — 2025-08-13 18:18 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1819",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 18:19",
+        "description": "Autonomous Update — 2025-08-13 18:19 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1820",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 18:20",
+        "description": "Autonomous Update — 2025-08-13 18:20 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1821",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 18:21",
+        "description": "Autonomous Update — 2025-08-13 18:21 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1822",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 18:22",
+        "description": "Autonomous Update — 2025-08-13 18:22 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1823",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 18:23",
+        "description": "Autonomous Update — 2025-08-13 18:23 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1824",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 18:24",
+        "description": "Autonomous Update — 2025-08-13 18:24 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1825",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 18:25",
+        "description": "Autonomous Update — 2025-08-13 18:25 — auto-suggested description"
       }
     },
     {
@@ -8499,6 +8644,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-13-2120",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Validation & QA Plan — Applied NLP & RAG (2025-08-13 21:20 UTC)",
+        "description": "Autonomous Validation & QA Plan — Applied NLP & RAG (2025-08-13 21:20 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-13T20-30",
       "missing": [
         "og:image"
@@ -8556,6 +8711,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 21-00",
         "description": "Autonomous Update — 2025-08-13 21-00 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13T21-20",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 21-20",
+        "description": "Autonomous Update — 2025-08-13 21-20 — auto-suggested description"
       }
     },
     {
