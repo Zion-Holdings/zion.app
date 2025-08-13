@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T21:25:43.969Z",
+  "generatedAt": "2025-08-13T21:27:01.631Z",
   "entries": [
     {
       "route": "/site-health",
@@ -59,7 +59,7 @@
       "route": "/reports/ai-trends",
       "file": "pages/reports/ai-trends.tsx",
       "title": "AI Trends Radar — Reports",
-      "summary": "import Head from 'next/head'; export default function AiTrendsReportPage() { return ( AI Trends Radar — Reports AI Trends Radar Redirecting to the static report… If you are not redirected automatically, open the static report: {' '} /reports/ai-trends/index.html ); } import { use"
+      "summary": "import Head from 'next/head'; export default function AiTrendsReportPage() { return ( AI Trends Radar — Reports AI Trends Radar Redirecting to the static report… If you are not redirected automatically, open the static report: {' '} /reports/ai-trends/index.html ); } // Deprecate"
     },
     {
       "route": "/reports/ai-lab",
@@ -204,6 +204,18 @@
       "file": "pages/reports/updates/update-2025-08-13-1942.tsx",
       "title": "Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC) Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC) Innovative, useful guidance to decrease unit cost per request. What it is: Playbook "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1827",
+      "file": "pages/reports/updates/update-2025-08-13-1827.tsx",
+      "title": "Autonomous Update — 2025-08-13 18:27",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 18:27 Autonomous Update — 2025-08-13 18:27 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Google Duplex: An AI "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1826",
+      "file": "pages/reports/updates/update-2025-08-13-1826.tsx",
+      "title": "Autonomous Update — 2025-08-13 18:26",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 18:26 Autonomous Update — 2025-08-13 18:26 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Zoom terms now allow "
     },
     {
       "route": "/reports/updates/update-2025-08-13-1825",
