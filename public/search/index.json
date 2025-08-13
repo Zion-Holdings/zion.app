@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T20:42:40.314Z",
+  "generatedAt": "2025-08-13T20:51:01.581Z",
   "entries": [
     {
       "route": "/site-health",
@@ -23,7 +23,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "index",
-      "summary": "import Landing from '../components/Landing'; export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 1742 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 1"
+      "summary": "import Landing from '../components/Landing'; export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 1751 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 1"
     },
     {
       "route": "/_document",
@@ -68,6 +68,12 @@
       "summary": "import { useEffect, useState } from 'react'; interface ArticleEntry { title: string; url: string; createdAt: string; tags?: string[]; source?: string; } export default function AILabPage() { const [items, setItems] = useState ([]); const [loading, setLoading] = useState(true); us"
     },
     {
+      "route": "/reports/updates/update-2025-08-13T20-50",
+      "file": "pages/reports/updates/update-2025-08-13T20-50.tsx",
+      "title": "Autonomous Update — 2025-08-13 20-50",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-13 20-50 Autonomous Update — 2025-08-13 20-50 Signal source: https://ziontechgroup.com Autonomous cloud systems are live and improving the app in real timeAutonomous Cloud Automati"
+    },
+    {
       "route": "/reports/updates/update-2025-08-13T20-40",
       "file": "pages/reports/updates/update-2025-08-13T20-40.tsx",
       "title": "Autonomous Update — 2025-08-13 20-40",
@@ -84,6 +90,12 @@
       "file": "pages/reports/updates/update-2025-08-13T20-30.tsx",
       "title": "Autonomous Update — 2025-08-13 20-30",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-13 20-30 Autonomous Update — 2025-08-13 20-30 Signal source: https://ziontechgroup.com Autonomous cloud systems are live and improving the app in real timeAutonomous Cloud Automati"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2050",
+      "file": "pages/reports/updates/update-2025-08-13-2050.tsx",
+      "title": "Autonomous Checklist — DevSecOps for AI (2025-08-13 20:50 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Checklist — DevSecOps for AI (2025-08-13 20:50 UTC) Autonomous Checklist — DevSecOps for AI (2025-08-13 20:50 UTC) Innovative, useful guidance to streamline CI/CD for models. What it is: Chec"
     },
     {
       "route": "/reports/updates/update-2025-08-13-2040",
@@ -156,6 +168,24 @@
       "file": "pages/reports/updates/update-2025-08-13-1942.tsx",
       "title": "Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC) Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC) Innovative, useful guidance to decrease unit cost per request. What it is: Playbook "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1751",
+      "file": "pages/reports/updates/update-2025-08-13-1751.tsx",
+      "title": "Autonomous Update — 2025-08-13 17:51",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 17:51 Autonomous Update — 2025-08-13 17:51 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Zoom terms now allow training AI on "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1750",
+      "file": "pages/reports/updates/update-2025-08-13-1750.tsx",
+      "title": "Autonomous Update — 2025-08-13 17:50",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 17:50 Autonomous Update — 2025-08-13 17:50 Signal over noise—your automated update is here. Today's Highlight Hacker News : The young, inexperienced engineers aiding DOGE "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1749",
+      "file": "pages/reports/updates/update-2025-08-13-1749.tsx",
+      "title": "Autonomous Update — 2025-08-13 17:49",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 17:49 Autonomous Update — 2025-08-13 17:49 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Google Duplex: An AI System for Acco"
     },
     {
       "route": "/reports/updates/update-2025-08-13-1742",
@@ -4862,6 +4892,12 @@
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-12 14:17 Autonomous Update — 2025-08-12 14:17 This page was created automatically by the content creator automation. It showcases our continuous, autonomous publishing pipeli"
     },
     {
+      "route": "/reports/innovations/insight-2025-08-13T20-50",
+      "file": "pages/reports/innovations/insight-2025-08-13T20-50.tsx",
+      "title": "Innovation Insight — 2025-08-13 20-50",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-13 20-50 Innovation Insight — 2025-08-13 20-50 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-13T20-40",
       "file": "pages/reports/innovations/insight-2025-08-13T20-40.tsx",
       "title": "Innovation Insight — 2025-08-13 20-40",
@@ -4878,6 +4914,12 @@
       "file": "pages/reports/innovations/insight-2025-08-13T20-30.tsx",
       "title": "Innovation Insight — 2025-08-13 20-30",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-13 20-30 Innovation Insight — 2025-08-13 20-30 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-13-2050",
+      "file": "pages/reports/innovations/insight-2025-08-13-2050.tsx",
+      "title": "Blueprint: LLM Apps",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Blueprint: LLM Apps Blueprint: LLM Apps Patterns to increase accuracy. Scope: Blueprint: LLM Apps. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observability"
     },
     {
       "route": "/reports/innovations/insight-2025-08-13-2040",

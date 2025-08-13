@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-13T20:42:39.175Z",
-  "pagesScanned": 827,
+  "generatedAt": "2025-08-13T20:51:00.417Z",
+  "pagesScanned": 833,
   "items": [
     {
       "route": "/_app",
@@ -223,6 +223,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-13-2050",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Blueprint: LLM Apps",
+        "description": "Blueprint: LLM Apps — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-13T20-30",
       "missing": [
         "og:image"
@@ -250,6 +260,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-13 20-40",
         "description": "Innovation Insight — 2025-08-13 20-40 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-13T20-50",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-13 20-50",
+        "description": "Innovation Insight — 2025-08-13 20-50 — auto-suggested description"
       }
     },
     {
@@ -8117,6 +8137,32 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-13-1749",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 17:49",
+        "description": "Autonomous Update — 2025-08-13 17:49 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1750",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 17:50",
+        "description": "Autonomous Update — 2025-08-13 17:50 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-13-1942",
       "missing": [
         "og:image"
@@ -8237,6 +8283,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-13-2050",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Checklist — DevSecOps for AI (2025-08-13 20:50 UTC)",
+        "description": "Autonomous Checklist — DevSecOps for AI (2025-08-13 20:50 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-13T20-30",
       "missing": [
         "og:image"
@@ -8264,6 +8320,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 20-40",
         "description": "Autonomous Update — 2025-08-13 20-40 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13T20-50",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 20-50",
+        "description": "Autonomous Update — 2025-08-13 20-50 — auto-suggested description"
       }
     },
     {
