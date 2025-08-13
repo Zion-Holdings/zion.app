@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T17:01:34.443Z",
+  "generatedAt": "2025-08-13T17:02:00.403Z",
   "pagesScanned": 744,
   "items": [
     {
@@ -67,10 +67,7 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -7418,10 +7415,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-1359",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 13:59",
@@ -7431,10 +7425,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-1400",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 14:00",
@@ -7444,10 +7435,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-1401",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 14:01",
