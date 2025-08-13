@@ -1,6 +1,11 @@
 {
+<<<<<<< Updated upstream
   "generatedAt": "2025-08-13T21:07:00.433Z",
   "pagesScanned": 853,
+=======
+  "generatedAt": "2025-08-13T21:28:00.417Z",
+  "pagesScanned": 873,
+>>>>>>> Stashed changes
   "items": [
     {
       "route": "/_app",
@@ -8309,14 +8314,182 @@
     {
       "route": "/reports/updates/update-2025-08-13-1807",
       "missing": [
+<<<<<<< Updated upstream
+=======
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 18:07",
+        "description": "Autonomous Update — 2025-08-13 18:07 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1813",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 18:13",
+        "description": "Autonomous Update — 2025-08-13 18:13 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1814",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 18:14",
+        "description": "Autonomous Update — 2025-08-13 18:14 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1815",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 18:15",
+        "description": "Autonomous Update — 2025-08-13 18:15 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1816",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 18:16",
+        "description": "Autonomous Update — 2025-08-13 18:16 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1817",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 18:17",
+        "description": "Autonomous Update — 2025-08-13 18:17 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1818",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 18:18",
+        "description": "Autonomous Update — 2025-08-13 18:18 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1819",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 18:19",
+        "description": "Autonomous Update — 2025-08-13 18:19 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1820",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 18:20",
+        "description": "Autonomous Update — 2025-08-13 18:20 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1821",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 18:21",
+        "description": "Autonomous Update — 2025-08-13 18:21 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1822",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 18:22",
+        "description": "Autonomous Update — 2025-08-13 18:22 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1823",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 18:23",
+        "description": "Autonomous Update — 2025-08-13 18:23 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1824",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 18:24",
+        "description": "Autonomous Update — 2025-08-13 18:24 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1825",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 18:25",
+        "description": "Autonomous Update — 2025-08-13 18:25 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1826",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 18:26",
+        "description": "Autonomous Update — 2025-08-13 18:26 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1827",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 18:27",
+        "description": "Autonomous Update — 2025-08-13 18:27 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1828",
+      "missing": [
+>>>>>>> Stashed changes
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
+<<<<<<< Updated upstream
         "title": "Autonomous Update — 2025-08-13 18:07",
         "description": "Autonomous Update — 2025-08-13 18:07 — auto-suggested description"
+=======
+        "title": "Autonomous Update — 2025-08-13 18:28",
+        "description": "Autonomous Update — 2025-08-13 18:28 — auto-suggested description"
+>>>>>>> Stashed changes
       }
     },
     {
