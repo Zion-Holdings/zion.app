@@ -593,6 +593,10 @@
       "route": "/reports/updates/update-2025-08-13-2020"
     },
     {
+      "file": "pages/reports/updates/update-2025-08-13-2014.tsx",
+      "route": "/reports/updates/update-2025-08-13-2014"
+    },
+    {
       "file": "pages/reports/updates/update-2025-08-13-2010.tsx",
       "route": "/reports/updates/update-2025-08-13-2010"
     },
@@ -4147,9 +4151,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-<<<<<<< Updated upstream
-  "generatedAt": "2025-08-13T23:07:39.194Z"
-=======
-  "generatedAt": "2025-08-13T23:13:42.471Z"
->>>>>>> Stashed changes
+  "generatedAt": "2025-08-13T23:14:51.856Z"
 }
