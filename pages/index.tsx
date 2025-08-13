@@ -7,7 +7,10 @@ export default function Home() {
       <Head>
         <title>Zion — Autonomous Cloud Automations</title>
         <meta name="description" content="Futuristic, cloud-native autonomous automations that innovate, optimize, and sync changes to the repo continuously." />
-      </Head>
+      
+        <meta property="og:title" content="Autonomous Cloud Automations" />
+        <meta property="og:description" content="Autonomous Cloud Automations — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
 
       {/* Futuristic animated background */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">

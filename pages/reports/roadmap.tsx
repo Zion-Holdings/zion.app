@@ -6,7 +6,10 @@ export default function RoadmapReport() {
       <Head>
         <title>Autonomous Roadmap</title>
         <meta name="description" content="Auto-generated roadmap of cloud automations." />
-      </Head>
+      
+        <meta property="og:title" content="Autonomous Roadmap" />
+        <meta property="og:description" content="Autonomous Roadmap — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       <main className="container mx-auto px-4 py-12">
         <h1 className="text-4xl font-extrabold mb-2">Autonomous Roadmap</h1>
         <p className="text-white/70 mb-4">Generated from live schedules and functions. Updated continuously by cloud automations.</p>

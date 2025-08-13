@@ -6,7 +6,10 @@ export default function AutomationHub() {
       <Head>
         <title>Automation Hub</title>
         <meta name="description" content="Explore autonomous cloud automations running 24/7." />
-      </Head>
+      
+        <meta property="og:title" content="Automation Hub" />
+        <meta property="og:description" content="Automation Hub — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       <main className="container mx-auto px-4 py-12">
         <h1 className="text-4xl font-extrabold mb-2">Automation Hub</h1>
         <p className="text-white/70 mb-8">Discover our autonomous, self-healing systems that keep the codebase evergreen. Powered by scheduled cloud functions — no GitHub Actions required.</p>
