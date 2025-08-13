@@ -41,6 +41,22 @@ export default function DefaultSEO() {
           })
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            url: SITE_URL,
+            name: DEFAULT_TITLE,
+            potentialAction: {
+              '@type': 'SearchAction',
+              target: `${SITE_URL}/search?q={search_term_string}`,
+              'query-input': 'required name=search_term_string'
+            }
+          })
+        }}
+      />
     </Head>
   );
 }
