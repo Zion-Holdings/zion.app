@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-13T20:15:00.511Z",
-  "pagesScanned": 776,
+  "generatedAt": "2025-08-13T20:15:30.494Z",
+  "pagesScanned": 777,
   "items": [
     {
       "route": "/_app",
@@ -7724,6 +7724,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 17:14",
         "description": "Autonomous Update — 2025-08-13 17:14 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1715",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 17:15",
+        "description": "Autonomous Update — 2025-08-13 17:15 — auto-suggested description"
       }
     },
     {
