@@ -20,6 +20,9 @@ function main() {
   run(process.execPath, ['automation/cloud-site-crawler.cjs']);
   run(process.execPath, ['automation/cloud-content-factory.cjs']);
   run(process.execPath, ['automation/cloud-content-advertiser.cjs']);
+  // New diversified pipeline (dossier) — optional best-effort
+  try { run(process.execPath, ['automation/cloud-dossier-crawler.cjs']); } catch {}
+  try { run(process.execPath, ['automation/cloud-dossier-factory.cjs']); } catch {}
 }
 
 if (require.main === module) {
