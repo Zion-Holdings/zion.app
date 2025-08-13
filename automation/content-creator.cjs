@@ -206,14 +206,23 @@ function updateHomepage() {
     log('homepage: markers missing or invalid, reinserting');
     content = ensureMarkers(content);
   }
-  const s2 = content.indexOf(START);
-  const e2 = content.indexOf(END);
+  let s2 = content.indexOf(START);
+  let e2 = content.indexOf(END);
   if (s2 === -1 || e2 === -1 || e2 <= s2) {
     log('homepage: failed to ensure markers');
     return false;
   }
-  const before = content.slice(0, s2);
-  const after = content.slice(e2 + END.length);
+  // Expand to include surrounding JSX braces if present
+  let startPos = s2;
+  if (startPos > 0 && content[startPos - 1] === '{') {
+    startPos -= 1;
+  }
+  let endPos = e2 + END.length;
+  if (endPos < content.length && content[endPos] === '}') {
+    endPos += 1;
+  }
+  const before = content.slice(0, startPos);
+  const after = content.slice(endPos);
   const updated = `${before}${section}${after}`;
   if (updated !== content) { fs.writeFileSync(INDEX_PAGE, updated, 'utf8'); log('homepage: advertised latest content'); return true; }
   return false;
