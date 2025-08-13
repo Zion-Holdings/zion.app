@@ -25,12 +25,20 @@
       "route": "/reports/ai-trends"
     },
     {
+      "file": "pages/front/index.tsx",
+      "route": "/front"
+    },
+    {
       "file": "pages/automation/index.tsx",
       "route": "/automation"
     },
     {
-      "file": "pages/front/index.tsx",
-      "route": "/front"
+      "file": "pages/main/front/index.tsx",
+      "route": "/main/front"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-13-0740.tsx",
+      "route": "/reports/updates/update-2025-08-13-0740"
     },
     {
       "file": "pages/reports/updates/update-2025-08-13-0739.tsx",
@@ -1947,10 +1955,6 @@
     {
       "file": "pages/reports/updates/update-2025-08-12-1417.tsx",
       "route": "/reports/updates/update-2025-08-12-1417"
-    },
-    {
-      "file": "pages/main/front/index.tsx",
-      "route": "/main/front"
     }
   ],
   "docs": [
@@ -1987,5 +1991,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-13T10:39:00.557Z"
+  "generatedAt": "2025-08-13T10:40:00.650Z"
 }
