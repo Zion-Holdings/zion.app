@@ -40,7 +40,7 @@
     "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev",
     "build": "NODE_OPTIONS=--openssl-legacy-provider next build",
     "prebuild": "npm run netlify:manifest",
-    "export": "NODE_OPTIONS=--openssl-legacy-provider next build && cp -f _redirects out/_redirects || true",
+    "export": "NODE_OPTIONS=--openssl-legacy-provider next build && next export && (cp -f _redirects out/_redirects || true)",
     "start": "next start",
     "postbuild": "",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
