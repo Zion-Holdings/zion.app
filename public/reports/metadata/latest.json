@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-13T20:45:00.632Z",
-  "pagesScanned": 838,
+  "generatedAt": "2025-08-13T20:45:39.378Z",
+  "pagesScanned": 840,
   "items": [
     {
       "route": "/_app",
@@ -290,6 +290,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-13 20-44",
         "description": "Innovation Insight — 2025-08-13 20-44 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-13T20-45",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-13 20-45",
+        "description": "Innovation Insight — 2025-08-13 20-45 — auto-suggested description"
       }
     },
     {
@@ -8179,10 +8189,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-1745",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 17:45",
@@ -8377,6 +8384,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 20-44",
         "description": "Autonomous Update — 2025-08-13 20-44 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13T20-45",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 20-45",
+        "description": "Autonomous Update — 2025-08-13 20-45 — auto-suggested description"
       }
     },
     {
