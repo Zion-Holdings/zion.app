@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T12:47:59.349Z",
+  "generatedAt": "2025-08-13T12:49:07.734Z",
   "nodes": [
     {
       "id": "automation/a11y-alt-text-auditor.cjs",
@@ -3095,6 +3095,14 @@
     },
     {
       "id": "pages/reports/updates/update-2025-08-13-0944.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-0948.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-0949.tsx",
       "type": "file"
     },
     {
@@ -7684,6 +7692,16 @@
     },
     {
       "from": "pages/reports/updates/update-2025-08-13-0944.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-0948.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-0949.tsx",
       "to": "next/head",
       "kind": "external"
     },

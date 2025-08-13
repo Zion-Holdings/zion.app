@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T12:48:01.535Z",
+  "generatedAt": "2025-08-13T12:49:01.506Z",
   "entries": [
     {
       "route": "/site-health",
@@ -42,6 +42,12 @@
       "file": "pages/reports/ai-trends.tsx",
       "title": "ai-trends",
       "summary": "import { useEffect } from 'react'; export default function AiTrendsRedirect() { useEffect(() => { if (typeof window !== 'undefined') { window.location.replace('/reports/ai-trends/index.html'); } }, []); return null; }"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-0949",
+      "file": "pages/reports/updates/update-2025-08-13-0949.tsx",
+      "title": "Autonomous Update — 2025-08-13 09:49",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 09:49 Autonomous Update — 2025-08-13 09:49 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Google Duplex: An AI "
     },
     {
       "route": "/reports/updates/update-2025-08-13-0948",
