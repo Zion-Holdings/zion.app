@@ -38,8 +38,10 @@ function analyzeDiversity(contents) {
     if (found.length >= 3) duplicateCount += 1;
     const hasDesc = content.includes('meta name="description"') || content.includes("meta name=\"description\"");
     const hasKeywords = content.includes('meta name="keywords"') || content.includes("meta name=\"keywords\"");
+    const hasCanonical = content.includes('rel="canonical"') || content.includes('rel=\"canonical\"');
     const hasLink = content.includes('href="https://ziontechgroup.com"') || content.includes('href="https://www.ziontechgroup.com"') || content.includes('ziontechgroup.com');
-    seoOk.push(hasDesc && hasKeywords && hasLink);
+    const hasJsonLd = content.includes('application/ld+json') || content.includes('type="application/ld+json"');
+    seoOk.push(hasDesc && hasKeywords && hasLink && hasCanonical && hasJsonLd);
   }
   const avgLen = lengths.length ? Math.round(lengths.reduce((a, b) => a + b, 0) / lengths.length) : 0;
   const diversityScore = Math.max(0, 100 - Math.round((duplicateCount / Math.max(1, contents.length)) * 100));

@@ -10,6 +10,8 @@ export default class ZionDocument extends Document {
 					<meta name="viewport" content="width=device-width, initial-scale=1" />
 					<meta name="theme-color" content="#020617" />
 					<meta name="twitter:card" content="summary_large_image" />
+					<link rel="icon" href="/og/zion-tech-group.svg" type="image/svg+xml" />
+					<link rel="manifest" href="/manifest.webmanifest" />
 					<link rel="preconnect" href="https://fonts.googleapis.com" />
 					<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 					<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
