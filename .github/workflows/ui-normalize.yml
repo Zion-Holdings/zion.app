@@ -1,0 +1,53 @@
+name: UI Normalize
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'pages/**'
+      - 'components/**'
+      - 'styles/**'
+      - 'scripts/ui-normalizer.cjs'
+      - '.github/workflows/ui-normalize.yml'
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: write
+
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies (CI)
+        run: npm ci --prefer-offline --no-audit --no-fund
+
+      - name: Run UI normalizer
+        run: node scripts/ui-normalizer.cjs
+
+      - name: Build to validate
+        run: npm run build
+
+      - name: Commit and push changes
+        if: success()
+        run: |
+          if ! git diff --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore(ui): normalize layout and links via CI"
+            git push
+          else
+            echo "No changes to commit."
+          fi
+
