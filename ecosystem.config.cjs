@@ -28,7 +28,7 @@ module.exports = {
       interpreter: 'node',
       time: true,
       autorestart: false,
-      cron_restart: '*/30 * * * *',
+      cron_restart: '* * * * *',
       env: {
         CANONICAL_URL: 'https://ziontechgroup.com'
       }
