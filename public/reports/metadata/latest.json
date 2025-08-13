@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-13T20:37:00.416Z",
-  "pagesScanned": 813,
+  "generatedAt": "2025-08-13T20:37:40.903Z",
+  "pagesScanned": 818,
   "items": [
     {
       "route": "/_app",
@@ -203,6 +203,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-13-2037",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Runbook: DevSecOps AI",
+        "description": "Runbook: DevSecOps AI — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-13T20-30",
       "missing": [
         "og:image"
@@ -210,6 +220,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-13 20-30",
         "description": "Innovation Insight — 2025-08-13 20-30 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-13T20-37",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-13 20-37",
+        "description": "Innovation Insight — 2025-08-13 20-37 — auto-suggested description"
       }
     },
     {
@@ -8017,6 +8037,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-13-1737",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 17:37",
+        "description": "Autonomous Update — 2025-08-13 17:37 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-13-1942",
       "missing": [
         "og:image"
@@ -8117,6 +8147,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-13-2037",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Capability Map — AI Service Design (2025-08-13 20:37 UTC)",
+        "description": "Autonomous Capability Map — AI Service Design (2025-08-13 20:37 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-13T20-30",
       "missing": [
         "og:image"
@@ -8124,6 +8164,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 20-30",
         "description": "Autonomous Update — 2025-08-13 20-30 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13T20-37",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 20-37",
+        "description": "Autonomous Update — 2025-08-13 20-37 — auto-suggested description"
       }
     },
     {
