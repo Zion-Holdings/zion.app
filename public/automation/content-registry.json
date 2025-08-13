@@ -41,12 +41,12 @@
       "route": "/front"
     },
     {
-      "file": "pages/explore/index.tsx",
-      "route": "/explore"
-    },
-    {
       "file": "pages/automation/index.tsx",
       "route": "/automation"
+    },
+    {
+      "file": "pages/explore/index.tsx",
+      "route": "/explore"
     },
     {
       "file": "pages/reports/innovations/insight-2025-08-13-2021.tsx",
@@ -83,6 +83,10 @@
     {
       "file": "pages/reports/updates/update-2025-08-13-1942.tsx",
       "route": "/reports/updates/update-2025-08-13-1942"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-13-1724.tsx",
+      "route": "/reports/updates/update-2025-08-13-1724"
     },
     {
       "file": "pages/reports/updates/update-2025-08-13-1723.tsx",
@@ -3183,5 +3187,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-13T20:23:46.431Z"
+  "generatedAt": "2025-08-13T20:24:01.539Z"
 }
