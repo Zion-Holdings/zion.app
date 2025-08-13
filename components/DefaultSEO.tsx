@@ -24,6 +24,23 @@ export default function DefaultSEO() {
       <meta name="twitter:title" content={DEFAULT_TITLE} />
       <meta name="twitter:description" content={DEFAULT_DESC} />
       <meta name="twitter:image" content={`${SITE_URL}/og/zion-tech-group.svg`} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: SITE_NAME,
+            url: SITE_URL,
+            logo: `${SITE_URL}/og/zion-tech-group.svg`,
+            sameAs: [
+              'https://www.linkedin.com/company/zion-holdings/',
+              'https://www.instagram.com/ziontechgroup/'
+            ],
+            description: DEFAULT_DESC
+          })
+        }}
+      />
     </Head>
   );
 }
