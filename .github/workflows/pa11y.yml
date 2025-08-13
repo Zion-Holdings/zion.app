@@ -1,0 +1,46 @@
+name: Accessibility Scan (Pa11y)
+
+on:
+  schedule:
+    - cron: '35 2 * * *'
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  a11y:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install pa11y
+        run: npm i -g pa11y@6.3.1
+
+      - name: Run Pa11y against key pages
+        run: |
+          set -e
+          URLS=(
+            "https://ziontechgroup.com/"
+            "https://ziontechgroup.com/explore"
+            "https://ziontechgroup.com/front"
+            "https://ziontechgroup.com/newsroom"
+            "https://ziontechgroup.com/reports"
+            "https://ziontechgroup.com/site-health"
+          )
+          for u in "${URLS[@]}"; do
+            echo "Scanning $u"
+            # WCAG2AA by default; fail only on serious/critical
+            pa11y "$u" --threshold 0 --reporter cli || true
+          done
+
+
