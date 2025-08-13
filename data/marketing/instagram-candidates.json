@@ -1,0 +1,69 @@
+{
+  "analyzedAt": 1755104506925,
+  "canonical": "https://ziontechgroup.com",
+  "candidates": [
+    {
+      "url": "https://ziontechgroup.com/",
+      "title": "_document",
+      "description": "_document — automatically suggested description.",
+      "points": [
+        "Autonomous Cloud Automations",
+        "Features",
+        "Self‑Improving",
+        "Agents continuously analyze, invent, and evolve automations.",
+        "Repo Sync",
+        "Changes are committed and pushed automatically to main.",
+        "Zero Ops",
+        "Runs fully in the cloud—no servers or manual intervention.",
+        "Safety‑First",
+        "Conservative edits with logs, reports, and guardrails.",
+        "Scalable",
+        "Generates domain‑specific factories on demand."
+      ]
+    },
+    {
+      "url": "https://ziontechgroup.com/automation",
+      "title": "Automation Hub",
+      "description": "Explore autonomous cloud automations running 24/7.",
+      "points": [
+        "Automation Hub",
+        "Homepage UpdatesKeeps the homepage fresh and the sitemap up to date.Trigger / View",
+        "Homepage Updates",
+        "Keeps the homepage fresh and the sitemap up to date.",
+        "Site HealthLink checks, image optimization, and sitemap refresh.Trigger / View",
+        "Site Health",
+        "Link checks, image optimization, and sitemap refresh.",
+        "Content IndexingDocs and search index regeneration for instant discovery.Trigger / View",
+        "Content Indexing",
+        "Docs and search index regeneration for instant discovery.",
+        "Knowledge GraphRepository knowledge graph and radar metrics.Trigger / View",
+        "Knowledge Graph"
+      ]
+    },
+    {
+      "url": "https://ziontechgroup.com/reports/seo",
+      "title": "_document",
+      "description": "_document — automatically suggested description.",
+      "points": []
+    },
+    {
+      "url": "https://ziontechgroup.com/newsroom",
+      "title": "Newsroom — Curated Tech Headlines",
+      "description": "Curated technology and AI headlines from reputable sources.",
+      "points": [
+        "Newsroom",
+        "Updated automatically from multiple sources.",
+        "Slow Ventures cuts first check from $60M creator fund into woodworking founder(TechCrunch)",
+        "Trump administration stops illegal freeze of $5B EV charger funds after losing in court(TechCrunch)",
+        "Poshmark CEO and founder to step down(TechCrunch)",
+        "Ford throws out Henry Ford’s assembly line to make low-cost EVs in America(TechCrunch)",
+        "iOS 26 beta 6 adds new ringtones, snappy app launches, and more(TechCrunch)",
+        "Elon Musk confirms shutdown of Tesla Dojo, ‘an evolutionary dead end’(TechCrunch)",
+        "Nvidia unveils new Cosmos world models, infra for robotics and physical uses(TechCrunch)",
+        "Security flaws in a carmaker’s web portal let one hacker remotely unlock cars from anywhere(TechCrunch)",
+        "How a once-tiny research lab helped Nvidia become a $4 trillion-dollar company(TechCrunch)",
+        "TDK backs Ultraviolette with $21M to take India-made electric motorcycles global(TechCrunch)"
+      ]
+    }
+  ]
+}

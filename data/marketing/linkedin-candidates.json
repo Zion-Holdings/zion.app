@@ -1,0 +1,104 @@
+{
+  "analyzedAt": 1755104505307,
+  "canonical": "https://ziontechgroup.com",
+  "candidates": [
+    {
+      "url": "https://ziontechgroup.com/automation",
+      "title": "Automation Hub",
+      "description": "Explore autonomous cloud automations running 24/7.",
+      "headings": [
+        "Automation Hub",
+        "Homepage Updates",
+        "Site Health",
+        "Content Indexing",
+        "Knowledge Graph",
+        "Front Enhancer",
+        "Fast Front Promoter",
+        "Marketing & Features Promo"
+      ],
+      "bullets": [
+        "Homepage UpdatesKeeps the homepage fresh and the sitemap up to date.Trigger / View",
+        "Site HealthLink checks, image optimization, and sitemap refresh.Trigger / View",
+        "Content IndexingDocs and search index regeneration for instant discovery.Trigger / View",
+        "Knowledge GraphRepository knowledge graph and radar metrics.Trigger / View",
+        "Front EnhancerCurates and injects new frontpage promos periodically.Trigger / View",
+        "Fast Front PromoterRuns every 15 minutes to refresh homepage and front content, then syncs to main.Trigger / View",
+        "Marketing & Features PromoGenerates and applies homepage promos and deep links.Trigger / View",
+        "Fast OrchestratorRuns every minute to refresh front and homepage content; commits and pushes to main.Trigger / View",
+        "Continuous OrchestratorRuns every 5 minutes, including sitemap and UI futurizer steps.Trigger / View",
+        "Features/Capabilities/Benefits AdvertiserContinuously advertises new features with deep links on the front pages.Trigger / View",
+        "Hyper Front Index AcceleratorUltra-fast front index futurizer and directory builder.Trigger / View",
+        "Innovation LabInvents, curates, and promotes fresh ideas across the site.Trigger / View"
+      ],
+      "score": 154
+    },
+    {
+      "url": "https://ziontechgroup.com/newsroom",
+      "title": "Newsroom — Curated Tech Headlines",
+      "description": "Curated technology and AI headlines from reputable sources.",
+      "headings": [],
+      "bullets": [
+        "Slow Ventures cuts first check from $60M creator fund into woodworking founder(TechCrunch)",
+        "Trump administration stops illegal freeze of $5B EV charger funds after losing in court(TechCrunch)",
+        "Poshmark CEO and founder to step down(TechCrunch)",
+        "Ford throws out Henry Ford’s assembly line to make low-cost EVs in America(TechCrunch)",
+        "iOS 26 beta 6 adds new ringtones, snappy app launches, and more(TechCrunch)",
+        "Elon Musk confirms shutdown of Tesla Dojo, ‘an evolutionary dead end’(TechCrunch)",
+        "Nvidia unveils new Cosmos world models, infra for robotics and physical uses(TechCrunch)",
+        "Security flaws in a carmaker’s web portal let one hacker remotely unlock cars from anywhere(TechCrunch)",
+        "How a once-tiny research lab helped Nvidia become a $4 trillion-dollar company(TechCrunch)",
+        "TDK backs Ultraviolette with $21M to take India-made electric motorcycles global(TechCrunch)",
+        "Pronto’s 10-minute house help pitch sparked a 3.6x valuation jump in just 90 days(TechCrunch)",
+        "Seoul-based Datumo raises $15.5M to take on Scale AI, backed by Salesforce(TechCrunch)"
+      ],
+      "score": 132
+    },
+    {
+      "url": "https://ziontechgroup.com/",
+      "title": "_document",
+      "description": "_document — automatically suggested description.",
+      "headings": [
+        "Autonomous Cloud Automations",
+        "Self‑Improving",
+        "Safety‑First",
+        "Observability",
+        "Capabilities",
+        "Code Quality & Refactors",
+        "Performance & A11y",
+        "Content & SEO"
+      ],
+      "bullets": [],
+      "score": 107
+    },
+    {
+      "url": "https://ziontechgroup.com/site-health",
+      "title": "Site Health — Broken Images",
+      "description": "Site Health — automatically suggested description.",
+      "headings": [
+        "Site Health"
+      ],
+      "bullets": [
+        "No issues found."
+      ],
+      "score": 91
+    },
+    {
+      "url": "https://ziontechgroup.com/reports/seo",
+      "title": "_document",
+      "description": "_document — automatically suggested description.",
+      "headings": [],
+      "bullets": [],
+      "score": 57
+    },
+    {
+      "url": "https://ziontechgroup.com/reports/a11y",
+      "title": "A11y Alt Text Auditor",
+      "description": "",
+      "headings": [
+        "A11y Alt Text Auditor 0 missing"
+      ],
+      "bullets": [],
+      "score": 31
+    }
+  ]
+}
