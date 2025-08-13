@@ -13,6 +13,9 @@ const INDEX_PAGE = path.join(ROOT, 'pages', 'index.tsx');
 
 const START = '/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */';
 const END = '/* AUTO-GENERATED: HOME_LATEST_CONTENT_END */';
+// JSX-safe wrappers so the markers can live inside React components safely
+const START_JSX = `{${START}}`;
+const END_JSX = `{${END}}`;
 
 function ensureDir(dir) { fs.mkdirSync(dir, { recursive: true }); }
 function ensureLogs() { ensureDir(LOGS_DIR); }
@@ -163,16 +166,17 @@ function listLatestUpdates(limit = 6) {
 }
 
 function ensureMarkers(content) {
+  // If markers exist in any form (plain or JSX-wrapped), keep as-is
   if (content.includes(START) && content.includes(END)) return content;
   const anchor = content.indexOf('/* AUTO-GENERATED: HOME_VISIONARY_START */');
   const insertAt = anchor !== -1 ? anchor : content.lastIndexOf('</section>');
-  const section = [START, '',
+  const section = [START_JSX, '',
     ' <section className="mx-auto max-w-7xl px-6 pb-14">',
     '   <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Latest Autonomous Content</h2>',
     '   <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">',
     '   </div>',
     ' </section>',
-    ' ', END].join('\n');
+    ' ', END_JSX].join('\n');
   const pos = insertAt >= 0 ? insertAt : content.length;
   return content.slice(0, pos) + '\n' + section + '\n' + content.slice(pos);
 }
@@ -186,15 +190,16 @@ function updateHomepage() {
   let content = fs.readFileSync(INDEX_PAGE, 'utf8');
   content = ensureMarkers(content);
   const updates = listLatestUpdates(6);
-  const section = [START, '',
+  const section = [START_JSX, '',
     ' <section className="mx-auto max-w-7xl px-6 pb-14">',
     '   <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Latest Autonomous Content</h2>',
     '   <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">',
     buildCards(updates),
     '   </div>',
     ' </section>',
-    ' ', END].join('\n');
+    ' ', END_JSX].join('\n');
 
+  // Support both plain and JSX-wrapped markers by searching raw markers
   const startIdx = content.indexOf(START);
   const endIdx = content.indexOf(END);
   if (startIdx === -1 || endIdx === -1 || endIdx <= startIdx) {
