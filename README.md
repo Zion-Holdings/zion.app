@@ -1,6 +1,6 @@
 # bolt.new.zion.app
 
-![Automations: 30](https://img.shields.io/badge/Automations-30-informational) ![Pages: 560](https://img.shields.io/badge/Pages-560-success) ![Components: 3](https://img.shields.io/badge/Components-3-blue)
+![Automations: 30](https://img.shields.io/badge/Automations-30-informational) ![Pages: 634](https://img.shields.io/badge/Pages-634-success) ![Components: 3](https://img.shields.io/badge/Components-3-blue)
 
 Autonomous, cloud‑native app with self‑running automations.
 
@@ -577,6 +577,80 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 - /reports/updates/update-2025-08-13-0920
 - /reports/updates/update-2025-08-13-0921
 - /reports/updates/update-2025-08-13-0922
+- /reports/updates/update-2025-08-13-0924
+- /reports/updates/update-2025-08-13-0925
+- /reports/updates/update-2025-08-13-0926
+- /reports/updates/update-2025-08-13-0927
+- /reports/updates/update-2025-08-13-0928
+- /reports/updates/update-2025-08-13-0929
+- /reports/updates/update-2025-08-13-0930
+- /reports/updates/update-2025-08-13-0931
+- /reports/updates/update-2025-08-13-0932
+- /reports/updates/update-2025-08-13-0933
+- /reports/updates/update-2025-08-13-0934
+- /reports/updates/update-2025-08-13-0935
+- /reports/updates/update-2025-08-13-0936
+- /reports/updates/update-2025-08-13-0937
+- /reports/updates/update-2025-08-13-0938
+- /reports/updates/update-2025-08-13-0939
+- /reports/updates/update-2025-08-13-0940
+- /reports/updates/update-2025-08-13-0941
+- /reports/updates/update-2025-08-13-0942
+- /reports/updates/update-2025-08-13-0943
+- /reports/updates/update-2025-08-13-0944
+- /reports/updates/update-2025-08-13-0948
+- /reports/updates/update-2025-08-13-0949
+- /reports/updates/update-2025-08-13-0950
+- /reports/updates/update-2025-08-13-0951
+- /reports/updates/update-2025-08-13-0952
+- /reports/updates/update-2025-08-13-0953
+- /reports/updates/update-2025-08-13-0954
+- /reports/updates/update-2025-08-13-0955
+- /reports/updates/update-2025-08-13-0956
+- /reports/updates/update-2025-08-13-0957
+- /reports/updates/update-2025-08-13-0958
+- /reports/updates/update-2025-08-13-0959
+- /reports/updates/update-2025-08-13-1000
+- /reports/updates/update-2025-08-13-1001
+- /reports/updates/update-2025-08-13-1002
+- /reports/updates/update-2025-08-13-1003
+- /reports/updates/update-2025-08-13-1004
+- /reports/updates/update-2025-08-13-1005
+- /reports/updates/update-2025-08-13-1006
+- /reports/updates/update-2025-08-13-1007
+- /reports/updates/update-2025-08-13-1008
+- /reports/updates/update-2025-08-13-1009
+- /reports/updates/update-2025-08-13-1010
+- /reports/updates/update-2025-08-13-1011
+- /reports/updates/update-2025-08-13-1012
+- /reports/updates/update-2025-08-13-1013
+- /reports/updates/update-2025-08-13-1014
+- /reports/updates/update-2025-08-13-1015
+- /reports/updates/update-2025-08-13-1016
+- /reports/updates/update-2025-08-13-1017
+- /reports/updates/update-2025-08-13-1018
+- /reports/updates/update-2025-08-13-1019
+- /reports/updates/update-2025-08-13-1020
+- /reports/updates/update-2025-08-13-1021
+- /reports/updates/update-2025-08-13-1022
+- /reports/updates/update-2025-08-13-1023
+- /reports/updates/update-2025-08-13-1024
+- /reports/updates/update-2025-08-13-1025
+- /reports/updates/update-2025-08-13-1026
+- /reports/updates/update-2025-08-13-1031
+- /reports/updates/update-2025-08-13-1032
+- /reports/updates/update-2025-08-13-1033
+- /reports/updates/update-2025-08-13-1034
+- /reports/updates/update-2025-08-13-1035
+- /reports/updates/update-2025-08-13-1036
+- /reports/updates/update-2025-08-13-1037
+- /reports/updates/update-2025-08-13-1038
+- /reports/updates/update-2025-08-13-1039
+- /reports/updates/update-2025-08-13-1040
+- /reports/updates/update-2025-08-13-1041
+- /reports/updates/update-2025-08-13-1042
+- /reports/updates/update-2025-08-13-1043
+- /reports/updates/update-2025-08-13-1044
 - /site-health
 
 ### Automations
