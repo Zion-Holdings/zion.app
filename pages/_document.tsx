@@ -9,7 +9,7 @@ export default class ZionDocument extends Document {
 
 					<meta name="viewport" content="width=device-width, initial-scale=1" />
 					<meta name="theme-color" content="#020617" />
-					<meta name="twitter:card" content="summary_large_image" />
+					<meta name="color-scheme" content="dark light" />
 					<link rel="icon" href="/og/zion-tech-group.svg" type="image/svg+xml" />
 					<link rel="manifest" href="/manifest.webmanifest" />
 					<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,7 +18,8 @@ export default class ZionDocument extends Document {
 				
         <meta name="description" content="_document — automatically suggested description." />
         <meta property="og:title" content="_document" />
-        <meta property="og:description" content="_document — automatically suggested description." /></Head>
+        <meta property="og:description" content="_document — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
 				<body className="bg-slate-950 text-white">
 					<Main />
 					<NextScript />
