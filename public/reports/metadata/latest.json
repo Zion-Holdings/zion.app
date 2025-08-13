@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-13T20:29:32.632Z",
-  "pagesScanned": 797,
+  "generatedAt": "2025-08-13T20:31:00.670Z",
+  "pagesScanned": 803,
   "items": [
     {
       "route": "/_app",
@@ -160,6 +160,36 @@
       "suggestion": {
         "title": "Pilot Plan: DevSecOps AI",
         "description": "Pilot Plan: DevSecOps AI — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-13-2029",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Blueprint: Edge AI",
+        "description": "Blueprint: Edge AI — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-13-2030",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pilot Plan: DevSecOps AI",
+        "description": "Pilot Plan: DevSecOps AI — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-13T20-30",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-13 20-30",
+        "description": "Innovation Insight — 2025-08-13 20-30 — auto-suggested description"
       }
     },
     {
@@ -7964,6 +7994,36 @@
       "suggestion": {
         "title": "Autonomous Performance Tuning Guide — Applied NLP & RAG (2025-08-13 20:24 UTC)",
         "description": "Autonomous Performance Tuning Guide — Applied NLP & RAG (2025-08-13 20:24 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2029",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Capability Map — Edge AI & IoT (2025-08-13 20:29 UTC)",
+        "description": "Autonomous Capability Map — Edge AI & IoT (2025-08-13 20:29 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2030",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Validation & QA Plan — Edge AI & IoT (2025-08-13 20:30 UTC)",
+        "description": "Autonomous Validation & QA Plan — Edge AI & IoT (2025-08-13 20:30 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13T20-30",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 20-30",
+        "description": "Autonomous Update — 2025-08-13 20-30 — auto-suggested description"
       }
     },
     {
