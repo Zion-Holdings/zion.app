@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T17:13:01.706Z",
+  "generatedAt": "2025-08-13T19:45:01.802Z",
   "entries": [
     {
       "route": "/site-health",
@@ -17,7 +17,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "index",
-      "summary": "import Landing from '../components/Landing'; export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 1413 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 1"
+      "summary": "import Landing from '../components/Landing'; export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 1645 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 1"
     },
     {
       "route": "/_document",
@@ -48,6 +48,24 @@
       "file": "pages/reports/ai-trends.tsx",
       "title": "ai-trends",
       "summary": "import { useEffect } from 'react'; export default function AiTrendsRedirect() { useEffect(() => { if (typeof window !== 'undefined') { window.location.replace('/reports/ai-trends/index.html'); } }, []); return null; }"
+    },
+    {
+      "route": "/reports/ai-lab",
+      "file": "pages/reports/ai-lab.tsx",
+      "title": "ai-lab",
+      "summary": "import { useEffect, useState } from 'react'; interface ArticleEntry { title: string; url: string; createdAt: string; tags?: string[]; source?: string; } export default function AILabPage() { const [items, setItems] = useState ([]); const [loading, setLoading] = useState(true); us"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1942",
+      "file": "pages/reports/updates/update-2025-08-13-1942.tsx",
+      "title": "Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC) Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC) Innovative, useful guidance to decrease unit cost per request. What it is: Playbook "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1645",
+      "file": "pages/reports/updates/update-2025-08-13-1645.tsx",
+      "title": "Autonomous Update — 2025-08-13 16:45",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 16:45 Autonomous Update — 2025-08-13 16:45 Signal over noise—your automated update is here. Today's Highlight Hacker News : My AI skeptic friends are all nuts · 2356 pts W"
     },
     {
       "route": "/reports/updates/update-2025-08-13-1413",

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-13T17:13:00.461Z",
-  "pagesScanned": 756,
+  "generatedAt": "2025-08-13T19:45:00.657Z",
+  "pagesScanned": 759,
   "items": [
     {
       "route": "/_app",
@@ -67,14 +67,25 @@
     {
       "route": "/newsroom",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Newsroom",
+        "description": "Newsroom — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/ai-lab",
+      "missing": [
+        "description",
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Newsroom",
-        "description": "Newsroom — auto-suggested description"
+        "title": "AI Lab: Fresh Insights",
+        "description": "AI Lab: Fresh Insights — auto-suggested description"
       }
     },
     {
@@ -7558,14 +7569,34 @@
     {
       "route": "/reports/updates/update-2025-08-13-1413",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 14:13",
+        "description": "Autonomous Update — 2025-08-13 14:13 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1645",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-13 14:13",
-        "description": "Autonomous Update — 2025-08-13 14:13 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-13 16:45",
+        "description": "Autonomous Update — 2025-08-13 16:45 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1942",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC)",
+        "description": "Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC) — auto-suggested description"
       }
     },
     {
