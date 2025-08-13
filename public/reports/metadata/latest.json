@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-13T20:23:53.740Z",
-  "pagesScanned": 789,
+  "generatedAt": "2025-08-13T20:25:00.482Z",
+  "pagesScanned": 793,
   "items": [
     {
       "route": "/_app",
@@ -19,9 +19,6 @@
     {
       "route": "/_document",
       "missing": [
-        "description",
-        "og:title",
-        "og:description",
         "og:image"
       ],
       "suggestion": {
@@ -80,7 +77,10 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -153,6 +153,16 @@
       "suggestion": {
         "title": "Blueprint: MLOps",
         "description": "Blueprint: MLOps — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-13-2024",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pilot Plan: DevSecOps AI",
+        "description": "Pilot Plan: DevSecOps AI — auto-suggested description"
       }
     },
     {
@@ -7840,6 +7850,32 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-13-1724",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 17:24",
+        "description": "Autonomous Update — 2025-08-13 17:24 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1725",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 17:25",
+        "description": "Autonomous Update — 2025-08-13 17:25 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-13-1942",
       "missing": [
         "og:image"
@@ -7887,6 +7923,16 @@
       "suggestion": {
         "title": "Autonomous Reference Architecture — Applied NLP & RAG (2025-08-13 20:21 UTC)",
         "description": "Autonomous Reference Architecture — Applied NLP & RAG (2025-08-13 20:21 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2024",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Performance Tuning Guide — Applied NLP & RAG (2025-08-13 20:24 UTC)",
+        "description": "Autonomous Performance Tuning Guide — Applied NLP & RAG (2025-08-13 20:24 UTC) — auto-suggested description"
       }
     },
     {

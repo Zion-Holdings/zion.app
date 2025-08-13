@@ -1,6 +1,13 @@
 {
   "items": [
     {
+      "title": "Pilot Plan: DevSecOps AI",
+      "subtitle": "Patterns to reduce cost.",
+      "path": "/reports/innovations/insight-2025-08-13-2024",
+      "createdAt": "2025-08-13T20:24:31.705Z",
+      "kind": "insight"
+    },
+    {
       "title": "Blueprint: MLOps",
       "subtitle": "Patterns to improve reliability.",
       "path": "/reports/innovations/insight-2025-08-13-2021",
