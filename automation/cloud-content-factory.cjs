@@ -58,7 +58,15 @@ export default function Page() {
 
 function loadRegistry() {
   const registryPath = path.join(process.cwd(), 'public', 'automation', 'content-registry.json');
-  try { return JSON.parse(fs.readFileSync(registryPath, 'utf8')); } catch { return { items: [] }; }
+  try {
+    const parsed = JSON.parse(fs.readFileSync(registryPath, 'utf8'));
+    if (!parsed || typeof parsed !== 'object' || !Array.isArray(parsed.items)) {
+      return { items: [] };
+    }
+    return parsed;
+  } catch {
+    return { items: [] };
+  }
 }
 
 function saveRegistry(reg) {
@@ -98,6 +106,7 @@ function createInnovationInsight(snippet) {
 
 function updateRegistryWithNewEntries(entries) {
   const registry = loadRegistry();
+  if (!Array.isArray(registry.items)) registry.items = [];
   const now = new Date().toISOString();
   for (const e of entries) {
     registry.items.unshift({
