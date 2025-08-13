@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T17:13:01.706Z",
+  "generatedAt": "2025-08-13T17:23:02.125Z",
   "entries": [
     {
       "route": "/site-health",
@@ -17,7 +17,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "index",
-      "summary": "import Landing from '../components/Landing'; export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 1413 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 1"
+      "summary": "import Landing from '../components/Landing'; export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 1423 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 1"
     },
     {
       "route": "/_document",
@@ -48,6 +48,12 @@
       "file": "pages/reports/ai-trends.tsx",
       "title": "ai-trends",
       "summary": "import { useEffect } from 'react'; export default function AiTrendsRedirect() { useEffect(() => { if (typeof window !== 'undefined') { window.location.replace('/reports/ai-trends/index.html'); } }, []); return null; }"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1423",
+      "file": "pages/reports/updates/update-2025-08-13-1423.tsx",
+      "title": "Autonomous Update — 2025-08-13 14:23",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 14:23 Autonomous Update — 2025-08-13 14:23 Signal over noise—your automated update is here. Today's Highlight Hacker News : Gemini AI · 2135 pts Why it matters: autonomous"
     },
     {
       "route": "/reports/updates/update-2025-08-13-1413",
@@ -4520,22 +4526,28 @@
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-12 14:17 Autonomous Update — 2025-08-12 14:17 This page was created automatically by the content creator automation. It showcases our continuous, autonomous publishing pipeli"
     },
     {
+      "route": "/main",
+      "file": "pages/main/index.tsx",
+      "title": "index",
+      "summary": "import { useEffect } from 'react'; import { useRouter } from 'next/router'; export default function MainIndexRedirect() { const router = useRouter(); useEffect(() => { router.replace('/'); }, [router]); return null; }"
+    },
+    {
       "route": "/main/front",
       "file": "pages/main/front/index.tsx",
       "title": "Zion — Front Systems Hub | Autonomous Cloud Automations",
-      "summary": "import Head from 'next/head'; import Link from 'next/link'; import { Cpu, Gauge, GitBranch, Rocket, ShieldCheck, Zap, Activity, Globe, Layers, BarChart3, Search, Link2, Palette, LineChart } from 'lucide-react'; import { motion, useScroll, useSpring } from 'framer-motion'; import "
+      "summary": "{ const onScroll = () => setShowToTop(window.scrollY > 400); window.addEventListener('scroll', onScroll, { passive: true } as any); onScroll(); return () => window.removeEventListener('scroll', onScroll); }, []); return ( Zion — Front Systems Hub | Autonomous Cloud Automations {/"
     },
     {
       "route": "/front",
       "file": "pages/front/index.tsx",
       "title": "index",
-      "summary": "import { useEffect } from 'react'; import { useRouter } from 'next/router'; export default function FrontIndexRedirect() { const router = useRouter(); useEffect(() => { router.replace('/main/front'); }, [router]); return null; }"
+      "summary": "import { useEffect } from 'react'; import { useRouter } from 'next/router'; export default function FrontIndexRedirect() { const router = useRouter(); useEffect(() => { >>>>>> origin/feat/futuristic-homepage }, [router]); return null; }"
     },
     {
       "route": "/automation",
       "file": "pages/automation/index.tsx",
       "title": "Automation Hub",
-      "summary": "import Head from 'next/head'; export default function AutomationHub() { return ( Automation Hub Automation Hub Discover our autonomous, self-healing systems that keep the codebase evergreen. Powered by scheduled cloud functions — no GitHub Actions required. Homepage Updates Keeps"
+      "summary": "import Head from 'next/head'; import Link from 'next/link'; export default function AutomationIndex() { return ( Automation Hub Automation Hub Discover our autonomous, self-healing systems that keep the codebase evergreen. Powered by scheduled cloud functions — no GitHub Actions "
     },
     {
       "route": "/../docs/topics-map",

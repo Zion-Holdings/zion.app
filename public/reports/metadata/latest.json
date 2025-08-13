@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-13T17:13:00.461Z",
-  "pagesScanned": 756,
+  "generatedAt": "2025-08-13T17:23:00.692Z",
+  "pagesScanned": 758,
   "items": [
     {
       "route": "/_app",
@@ -60,17 +60,28 @@
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Page",
-        "description": "Page — auto-suggested description"
+        "title": "Autonomous Cloud Automations",
+        "description": "Autonomous Cloud Automations — auto-suggested description"
+      }
+    },
+    {
+      "route": "/main/",
+      "missing": [
+        "description",
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "main",
+        "description": "main — auto-suggested description"
       }
     },
     {
       "route": "/newsroom",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -7558,14 +7569,24 @@
     {
       "route": "/reports/updates/update-2025-08-13-1413",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 14:13",
+        "description": "Autonomous Update — 2025-08-13 14:13 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1423",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-13 14:13",
-        "description": "Autonomous Update — 2025-08-13 14:13 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-13 14:23",
+        "description": "Autonomous Update — 2025-08-13 14:23 — auto-suggested description"
       }
     },
     {
