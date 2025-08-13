@@ -1,6 +1,13 @@
 {
   "items": [
     {
+      "title": "Runbook: DevSecOps AI",
+      "subtitle": "Patterns to reduce cost.",
+      "path": "/reports/innovations/insight-2025-08-13-2037",
+      "createdAt": "2025-08-13T20:37:19.629Z",
+      "kind": "insight"
+    },
+    {
       "title": "Guide: MLOps",
       "subtitle": "Patterns to accelerate delivery.",
       "path": "/reports/innovations/insight-2025-08-13-2035",
