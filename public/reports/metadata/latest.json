@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-13T20:51:00.417Z",
-  "pagesScanned": 833,
+  "generatedAt": "2025-08-13T20:52:00.404Z",
+  "pagesScanned": 839,
   "items": [
     {
       "route": "/_app",
@@ -77,7 +77,10 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -233,6 +236,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-13-2051",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Checklist: AI QA & Eval",
+        "description": "Checklist: AI QA & Eval — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-13T20-30",
       "missing": [
         "og:image"
@@ -270,6 +283,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-13 20-50",
         "description": "Innovation Insight — 2025-08-13 20-50 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-13T20-51",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-13 20-51",
+        "description": "Innovation Insight — 2025-08-13 20-51 — auto-suggested description"
       }
     },
     {
@@ -8139,10 +8162,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-1749",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 17:49",
@@ -8152,14 +8172,34 @@
     {
       "route": "/reports/updates/update-2025-08-13-1750",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 17:50",
+        "description": "Autonomous Update — 2025-08-13 17:50 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1751",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 17:51",
+        "description": "Autonomous Update — 2025-08-13 17:51 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1752",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-13 17:50",
-        "description": "Autonomous Update — 2025-08-13 17:50 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-13 17:52",
+        "description": "Autonomous Update — 2025-08-13 17:52 — auto-suggested description"
       }
     },
     {
@@ -8293,6 +8333,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-13-2051",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Capability Map — DevSecOps for AI (2025-08-13 20:51 UTC)",
+        "description": "Autonomous Capability Map — DevSecOps for AI (2025-08-13 20:51 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-13T20-30",
       "missing": [
         "og:image"
@@ -8330,6 +8380,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 20-50",
         "description": "Autonomous Update — 2025-08-13 20-50 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13T20-51",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 20-51",
+        "description": "Autonomous Update — 2025-08-13 20-51 — auto-suggested description"
       }
     },
     {
