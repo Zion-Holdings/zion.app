@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T20:59:15.678Z",
+  "generatedAt": "2025-08-13T21:02:21.423Z",
   "nodes": [
     {
       "id": "automation/a11y-alt-text-auditor.cjs",
@@ -396,6 +396,14 @@
     {
       "id": "automation/security-audit.cjs",
       "type": "file"
+    },
+    {
+      "id": "automation/seo-og-validator.cjs",
+      "type": "file"
+    },
+    {
+      "id": "jsdom",
+      "type": "package"
     },
     {
       "id": "automation/site-link-crawler.cjs",
@@ -954,6 +962,10 @@
       "type": "file"
     },
     {
+      "id": "pages/reports/innovations/insight-2025-08-13-2100.tsx",
+      "type": "file"
+    },
+    {
       "id": "pages/reports/innovations/insight-2025-08-13T20-30.tsx",
       "type": "file"
     },
@@ -971,6 +983,10 @@
     },
     {
       "id": "pages/reports/innovations/insight-2025-08-13T20-51.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/innovations/insight-2025-08-13T21-00.tsx",
       "type": "file"
     },
     {
@@ -4146,6 +4162,14 @@
       "type": "file"
     },
     {
+      "id": "pages/reports/updates/update-2025-08-13-1800.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-1802.tsx",
+      "type": "file"
+    },
+    {
       "id": "pages/reports/updates/update-2025-08-13-1942.tsx",
       "type": "file"
     },
@@ -4202,6 +4226,10 @@
       "type": "file"
     },
     {
+      "id": "pages/reports/updates/update-2025-08-13-2100.tsx",
+      "type": "file"
+    },
+    {
       "id": "pages/reports/updates/update-2025-08-13T20-30.tsx",
       "type": "file"
     },
@@ -4219,6 +4247,10 @@
     },
     {
       "id": "pages/reports/updates/update-2025-08-13T20-51.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13T21-00.tsx",
       "type": "file"
     },
     {
@@ -5315,6 +5347,26 @@
       "kind": "external"
     },
     {
+      "from": "automation/seo-og-validator.cjs",
+      "to": "https",
+      "kind": "external"
+    },
+    {
+      "from": "automation/seo-og-validator.cjs",
+      "to": "jsdom",
+      "kind": "external"
+    },
+    {
+      "from": "automation/seo-og-validator.cjs",
+      "to": "fs",
+      "kind": "external"
+    },
+    {
+      "from": "automation/seo-og-validator.cjs",
+      "to": "path",
+      "kind": "external"
+    },
+    {
       "from": "automation/site-link-crawler.cjs",
       "to": "fs",
       "kind": "external"
@@ -6340,6 +6392,11 @@
       "kind": "external"
     },
     {
+      "from": "pages/reports/innovations/insight-2025-08-13-2100.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
       "from": "pages/reports/innovations/insight-2025-08-13T20-30.tsx",
       "to": "next/head",
       "kind": "external"
@@ -6361,6 +6418,11 @@
     },
     {
       "from": "pages/reports/innovations/insight-2025-08-13T20-51.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/innovations/insight-2025-08-13T21-00.tsx",
       "to": "next/head",
       "kind": "external"
     },
@@ -10330,6 +10392,16 @@
       "kind": "external"
     },
     {
+      "from": "pages/reports/updates/update-2025-08-13-1800.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-1802.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
       "from": "pages/reports/updates/update-2025-08-13-1942.tsx",
       "to": "next/head",
       "kind": "external"
@@ -10400,6 +10472,11 @@
       "kind": "external"
     },
     {
+      "from": "pages/reports/updates/update-2025-08-13-2100.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
       "from": "pages/reports/updates/update-2025-08-13T20-30.tsx",
       "to": "next/head",
       "kind": "external"
@@ -10421,6 +10498,11 @@
     },
     {
       "from": "pages/reports/updates/update-2025-08-13T20-51.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13T21-00.tsx",
       "to": "next/head",
       "kind": "external"
     },
