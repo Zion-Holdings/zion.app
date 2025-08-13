@@ -284,14 +284,14 @@
     "https": "^1.0.0",
     "import-fresh": "^3.3.1",
     "lucide-react": "^0.536.0",
-    "next": "^11.1.4",
+    "next": "^15.4.6",
     "node-cron": "^4.2.1",
     "openai": "^5.11.0",
     "path": "^0.12.7",
     "postcss": "^8.4.32",
-    "react": "^17.0.2",
+    "react": "^18.3.1",
     "react-datepicker": "^8.4.0",
-    "react-dom": "^17.0.2",
+    "react-dom": "^18.3.1",
     "uuid": "^11.1.0"
   },
   "devDependencies": {
