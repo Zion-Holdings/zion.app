@@ -37,6 +37,10 @@
       "route": "/main/front"
     },
     {
+      "file": "pages/reports/updates/update-2025-08-13-0905.tsx",
+      "route": "/reports/updates/update-2025-08-13-0905"
+    },
+    {
       "file": "pages/reports/updates/update-2025-08-13-0904.tsx",
       "route": "/reports/updates/update-2025-08-13-0904"
     },
@@ -2199,5 +2203,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-13T12:04:00.594Z"
+  "generatedAt": "2025-08-13T12:05:00.620Z"
 }
