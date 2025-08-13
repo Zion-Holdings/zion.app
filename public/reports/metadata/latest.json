@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-13T23:22:00.439Z",
-  "pagesScanned": 1038,
+  "generatedAt": "2025-08-13T23:22:40.870Z",
+  "pagesScanned": 1039,
   "items": [
     {
       "route": "/_app",
@@ -77,10 +77,7 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -9797,6 +9794,16 @@
       "suggestion": {
         "title": "Autonomous Reference Architecture — Applied NLP & RAG (2025-08-13 20:21 UTC)",
         "description": "Autonomous Reference Architecture — Applied NLP & RAG (2025-08-13 20:21 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2022",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 20:22",
+        "description": "Autonomous Update — 2025-08-13 20:22 — auto-suggested description"
       }
     },
     {
