@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T23:34:26.892Z",
+  "generatedAt": "2025-08-13T23:35:02.124Z",
   "entries": [
     {
       "route": "/site-health",
@@ -58,8 +58,8 @@
     {
       "route": "/reports/ai-trends",
       "file": "pages/reports/ai-trends.tsx",
-      "title": "ai-trends",
-      "summary": "import { useEffect } from 'react'; export default function AiTrendsRedirect() { useEffect(() => { if (typeof window !== 'undefined') { window.location.replace('/reports/ai-trends/index.html'); } }, []); return null; }"
+      "title": "AI Trends — Live Reports",
+      "summary": "import Head from 'next/head'; import { useEffect } from 'react'; export default function AiTrendsRedirect() { useEffect(() => { if (typeof window !== 'undefined') { window.location.replace('/reports/ai-trends/index.html'); } }, []); return ( <> AI Trends — Live Reports ); }"
     },
     {
       "route": "/reports/ai-lab",
