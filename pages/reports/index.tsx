@@ -7,6 +7,7 @@ export default function ReportsIndex() {
     { href: '/reports/ai-trends', title: 'AI Trends Radar', desc: 'Latest AI signals' },
     { href: '/reports/roadmap', title: 'Autonomous Roadmap', desc: 'Planned and ongoing work' },
     { href: '/newsroom', title: 'Newsroom', desc: 'Curated updates' },
+    { href: '/reports/innovations', title: 'Innovations', desc: 'Autonomous AI/IT insights and guides' },
   ];
 
   return (
