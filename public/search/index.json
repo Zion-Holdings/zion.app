@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T15:16:01.976Z",
+  "generatedAt": "2025-08-13T15:17:01.691Z",
   "entries": [
     {
       "route": "/site-health",
@@ -17,7 +17,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "index",
-      "summary": "export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 1216 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 13: 1215 Freshly published by autonomous agent"
+      "summary": "export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 1217 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 13: 1216 Freshly published by autonomous agent"
     },
     {
       "route": "/_document",
@@ -48,6 +48,12 @@
       "file": "pages/reports/ai-trends.tsx",
       "title": "ai-trends",
       "summary": "import { useEffect } from 'react'; export default function AiTrendsRedirect() { useEffect(() => { if (typeof window !== 'undefined') { window.location.replace('/reports/ai-trends/index.html'); } }, []); return null; }"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1217",
+      "file": "pages/reports/updates/update-2025-08-13-1217.tsx",
+      "title": "Autonomous Update — 2025-08-13 12:17",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 12:17 Autonomous Update — 2025-08-13 12:17 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Gemini AI · 2135 pts "
     },
     {
       "route": "/reports/updates/update-2025-08-13-1216",
