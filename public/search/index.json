@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T12:56:01.715Z",
+  "generatedAt": "2025-08-13T12:57:01.512Z",
   "entries": [
     {
       "route": "/site-health",
@@ -42,6 +42,12 @@
       "file": "pages/reports/ai-trends.tsx",
       "title": "ai-trends",
       "summary": "import { useEffect } from 'react'; export default function AiTrendsRedirect() { useEffect(() => { if (typeof window !== 'undefined') { window.location.replace('/reports/ai-trends/index.html'); } }, []); return null; }"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-0957",
+      "file": "pages/reports/updates/update-2025-08-13-0957.tsx",
+      "title": "Autonomous Update — 2025-08-13 09:57",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 09:57 Autonomous Update — 2025-08-13 09:57 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Airfoil · 2544 pts Wh"
     },
     {
       "route": "/reports/updates/update-2025-08-13-0956",
