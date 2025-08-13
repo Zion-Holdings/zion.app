@@ -1,6 +1,6 @@
 # bolt.new.zion.app
 
-![Automations: 30](https://img.shields.io/badge/Automations-30-informational) ![Pages: 521](https://img.shields.io/badge/Pages-521-success) ![Components: 3](https://img.shields.io/badge/Components-3-blue)
+![Automations: 30](https://img.shields.io/badge/Automations-30-informational) ![Pages: 560](https://img.shields.io/badge/Pages-560-success) ![Components: 3](https://img.shields.io/badge/Components-3-blue)
 
 Autonomous, cloud‑native app with self‑running automations.
 
@@ -537,7 +537,46 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 - /reports/updates/update-2025-08-13-0832
 - /reports/updates/update-2025-08-13-0833
 - /reports/updates/update-2025-08-13-0834
-- /reports/updates/update-2025-08-13-0835
+- /reports/updates/update-2025-08-13-0839
+- /reports/updates/update-2025-08-13-0840
+- /reports/updates/update-2025-08-13-0841
+- /reports/updates/update-2025-08-13-0842
+- /reports/updates/update-2025-08-13-0843
+- /reports/updates/update-2025-08-13-0848
+- /reports/updates/update-2025-08-13-0849
+- /reports/updates/update-2025-08-13-0850
+- /reports/updates/update-2025-08-13-0851
+- /reports/updates/update-2025-08-13-0852
+- /reports/updates/update-2025-08-13-0853
+- /reports/updates/update-2025-08-13-0854
+- /reports/updates/update-2025-08-13-0855
+- /reports/updates/update-2025-08-13-0856
+- /reports/updates/update-2025-08-13-0857
+- /reports/updates/update-2025-08-13-0858
+- /reports/updates/update-2025-08-13-0859
+- /reports/updates/update-2025-08-13-0900
+- /reports/updates/update-2025-08-13-0901
+- /reports/updates/update-2025-08-13-0902
+- /reports/updates/update-2025-08-13-0903
+- /reports/updates/update-2025-08-13-0904
+- /reports/updates/update-2025-08-13-0905
+- /reports/updates/update-2025-08-13-0906
+- /reports/updates/update-2025-08-13-0907
+- /reports/updates/update-2025-08-13-0908
+- /reports/updates/update-2025-08-13-0909
+- /reports/updates/update-2025-08-13-0910
+- /reports/updates/update-2025-08-13-0911
+- /reports/updates/update-2025-08-13-0912
+- /reports/updates/update-2025-08-13-0913
+- /reports/updates/update-2025-08-13-0914
+- /reports/updates/update-2025-08-13-0915
+- /reports/updates/update-2025-08-13-0916
+- /reports/updates/update-2025-08-13-0917
+- /reports/updates/update-2025-08-13-0918
+- /reports/updates/update-2025-08-13-0919
+- /reports/updates/update-2025-08-13-0920
+- /reports/updates/update-2025-08-13-0921
+- /reports/updates/update-2025-08-13-0922
 - /site-health
 
 ### Automations
