@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T20:43:01.530Z",
+  "generatedAt": "2025-08-13T20:45:01.812Z",
   "entries": [
     {
       "route": "/site-health",
@@ -23,7 +23,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "index",
-      "summary": "import Landing from '../components/Landing'; export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 1743 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 1"
+      "summary": "import Landing from '../components/Landing'; export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 1745 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 1"
     },
     {
       "route": "/_document",
@@ -68,6 +68,18 @@
       "summary": "import { useEffect, useState } from 'react'; interface ArticleEntry { title: string; url: string; createdAt: string; tags?: string[]; source?: string; } export default function AILabPage() { const [items, setItems] = useState ([]); const [loading, setLoading] = useState(true); us"
     },
     {
+      "route": "/reports/updates/update-2025-08-13T20-44",
+      "file": "pages/reports/updates/update-2025-08-13T20-44.tsx",
+      "title": "Autonomous Update — 2025-08-13 20-44",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-13 20-44 Autonomous Update — 2025-08-13 20-44 Signal source: https://ziontechgroup.com Autonomous cloud systems are live and improving the app in real timeAutonomous Cloud Automati"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13T20-43",
+      "file": "pages/reports/updates/update-2025-08-13T20-43.tsx",
+      "title": "Autonomous Update — 2025-08-13 20-43",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-13 20-43 Autonomous Update — 2025-08-13 20-43 Signal source: https://ziontechgroup.com Autonomous cloud systems are live and improving the app in real timeAutonomous Cloud Automati"
+    },
+    {
       "route": "/reports/updates/update-2025-08-13T20-40",
       "file": "pages/reports/updates/update-2025-08-13T20-40.tsx",
       "title": "Autonomous Update — 2025-08-13 20-40",
@@ -84,6 +96,18 @@
       "file": "pages/reports/updates/update-2025-08-13T20-30.tsx",
       "title": "Autonomous Update — 2025-08-13 20-30",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-13 20-30 Autonomous Update — 2025-08-13 20-30 Signal source: https://ziontechgroup.com Autonomous cloud systems are live and improving the app in real timeAutonomous Cloud Automati"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2044",
+      "file": "pages/reports/updates/update-2025-08-13-2044.tsx",
+      "title": "Autonomous Security Hardening Guide — Cloud Cost Optimization (2025-08-13 20:44 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Security Hardening Guide — Cloud Cost Optimization (2025-08-13 20:44 UTC) Autonomous Security Hardening Guide — Cloud Cost Optimization (2025-08-13 20:44 UTC) Innovative, useful guidance to i"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2043",
+      "file": "pages/reports/updates/update-2025-08-13-2043.tsx",
+      "title": "Autonomous Playbook — Edge AI & IoT (2025-08-13 20:43 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Edge AI & IoT (2025-08-13 20:43 UTC) Autonomous Playbook — Edge AI & IoT (2025-08-13 20:43 UTC) Innovative, useful guidance to increase content relevance and conversions. What it i"
     },
     {
       "route": "/reports/updates/update-2025-08-13-2040",
@@ -156,6 +180,18 @@
       "file": "pages/reports/updates/update-2025-08-13-1942.tsx",
       "title": "Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC) Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC) Innovative, useful guidance to decrease unit cost per request. What it is: Playbook "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1745",
+      "file": "pages/reports/updates/update-2025-08-13-1745.tsx",
+      "title": "Autonomous Update — 2025-08-13 17:45",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 17:45 Autonomous Update — 2025-08-13 17:45 Signal over noise—your automated update is here. Today's Highlight Hacker News : Airfoil · 2544 pts Why it matters: autonomous c"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1744",
+      "file": "pages/reports/updates/update-2025-08-13-1744.tsx",
+      "title": "Autonomous Update — 2025-08-13 17:44",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 17:44 Autonomous Update — 2025-08-13 17:44 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Open source AI is the path forward ·"
     },
     {
       "route": "/reports/updates/update-2025-08-13-1743",
@@ -4868,6 +4904,18 @@
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-12 14:17 Autonomous Update — 2025-08-12 14:17 This page was created automatically by the content creator automation. It showcases our continuous, autonomous publishing pipeli"
     },
     {
+      "route": "/reports/innovations/insight-2025-08-13T20-44",
+      "file": "pages/reports/innovations/insight-2025-08-13T20-44.tsx",
+      "title": "Innovation Insight — 2025-08-13 20-44",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-13 20-44 Innovation Insight — 2025-08-13 20-44 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-13T20-43",
+      "file": "pages/reports/innovations/insight-2025-08-13T20-43.tsx",
+      "title": "Innovation Insight — 2025-08-13 20-43",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-13 20-43 Innovation Insight — 2025-08-13 20-43 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-13T20-40",
       "file": "pages/reports/innovations/insight-2025-08-13T20-40.tsx",
       "title": "Innovation Insight — 2025-08-13 20-40",
@@ -4884,6 +4932,18 @@
       "file": "pages/reports/innovations/insight-2025-08-13T20-30.tsx",
       "title": "Innovation Insight — 2025-08-13 20-30",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-13 20-30 Innovation Insight — 2025-08-13 20-30 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-13-2044",
+      "file": "pages/reports/innovations/insight-2025-08-13-2044.tsx",
+      "title": "Checklist: RAG Platforms",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Checklist: RAG Platforms Checklist: RAG Platforms Patterns to improve reliability. Scope: Checklist: RAG Platforms. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. O"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-13-2043",
+      "file": "pages/reports/innovations/insight-2025-08-13-2043.tsx",
+      "title": "Blueprint: AI QA & Eval",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Blueprint: AI QA & Eval Blueprint: AI QA & Eval Patterns to increase accuracy. Scope: Blueprint: AI QA & Eval. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: o"
     },
     {
       "route": "/reports/innovations/insight-2025-08-13-2040",

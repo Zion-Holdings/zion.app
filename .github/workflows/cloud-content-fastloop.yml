@@ -1,0 +1,44 @@
+name: Cloud Content Fastloop
+
+on:
+  schedule:
+    - cron: '*/7 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  loop:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    concurrency:
+      group: cloud-content-fastloop-main
+      cancel-in-progress: true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install deps
+        run: npm ci
+      - name: Run two iterations (approx 10 minutes)
+        env:
+          CANONICAL_URL: https://ziontechgroup.com
+        run: |
+          node automation/cloud-innovation-orchestrator.cjs
+          sleep 180
+          node automation/cloud-innovation-orchestrator.cjs
+      - name: Build check
+        run: npm run build --silent
+      - name: Commit & push
+        run: |
+          git config user.name "zion-bot"
+          git config user.email "bot@zion.app"
+          git add -A
+          git commit -m "chore(cloud): fastloop content refresh [skip ci]" || true
+          git push origin HEAD:main || true
+
+

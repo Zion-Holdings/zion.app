@@ -261,7 +261,11 @@
     "cloud:crawl": "node automation/cloud-site-crawler.cjs",
     "cloud:factory": "node automation/cloud-content-factory.cjs",
     "cloud:advertise": "node automation/cloud-content-advertiser.cjs",
-    "cloud:continuous": "node scripts/continuous-cloud-agents.cjs"
+    "cloud:invent": "node automation/cloud-creative-inventor.cjs",
+    "cloud:curate": "node automation/cloud-site-curation-factory.cjs",
+    "cloud:innovate": "node automation/cloud-innovation-orchestrator.cjs",
+    "cloud:continuous": "node scripts/continuous-cloud-agents.cjs",
+    "cloud:ga:loop": "node scripts/ga-continuous-cloud-content.cjs"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",

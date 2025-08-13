@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "title": "Checklist: RAG Platforms",
+      "subtitle": "Patterns to improve reliability.",
+      "path": "/reports/innovations/insight-2025-08-13-2044",
+      "createdAt": "2025-08-13T20:44:31.471Z",
+      "kind": "insight"
+    },
+    {
+      "title": "Blueprint: AI QA & Eval",
+      "subtitle": "Patterns to increase accuracy.",
+      "path": "/reports/innovations/insight-2025-08-13-2043",
+      "createdAt": "2025-08-13T20:43:31.455Z",
+      "kind": "insight"
+    },
+    {
       "title": "Blueprint: LLM Apps",
       "subtitle": "Patterns to enhance security.",
       "path": "/reports/innovations/insight-2025-08-13-2040",

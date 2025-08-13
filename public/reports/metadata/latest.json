@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-13T20:43:00.403Z",
-  "pagesScanned": 828,
+  "generatedAt": "2025-08-13T20:45:00.632Z",
+  "pagesScanned": 838,
   "items": [
     {
       "route": "/_app",
@@ -223,6 +223,26 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-13-2043",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Blueprint: AI QA & Eval",
+        "description": "Blueprint: AI QA & Eval — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-13-2044",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Checklist: RAG Platforms",
+        "description": "Checklist: RAG Platforms — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-13T20-30",
       "missing": [
         "og:image"
@@ -250,6 +270,26 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-13 20-40",
         "description": "Innovation Insight — 2025-08-13 20-40 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-13T20-43",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-13 20-43",
+        "description": "Innovation Insight — 2025-08-13 20-43 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-13T20-44",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-13 20-44",
+        "description": "Innovation Insight — 2025-08-13 20-44 — auto-suggested description"
       }
     },
     {
@@ -8119,14 +8159,34 @@
     {
       "route": "/reports/updates/update-2025-08-13-1743",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 17:43",
+        "description": "Autonomous Update — 2025-08-13 17:43 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1744",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 17:44",
+        "description": "Autonomous Update — 2025-08-13 17:44 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1745",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-13 17:43",
-        "description": "Autonomous Update — 2025-08-13 17:43 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-13 17:45",
+        "description": "Autonomous Update — 2025-08-13 17:45 — auto-suggested description"
       }
     },
     {
@@ -8250,6 +8310,26 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-13-2043",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Playbook — Edge AI & IoT (2025-08-13 20:43 UTC)",
+        "description": "Autonomous Playbook — Edge AI & IoT (2025-08-13 20:43 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2044",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Security Hardening Guide — Cloud Cost Optimization (2025-08-13 20:44 UTC)",
+        "description": "Autonomous Security Hardening Guide — Cloud Cost Optimization (2025-08-13 20:44 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-13T20-30",
       "missing": [
         "og:image"
@@ -8277,6 +8357,26 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 20-40",
         "description": "Autonomous Update — 2025-08-13 20-40 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13T20-43",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 20-43",
+        "description": "Autonomous Update — 2025-08-13 20-43 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13T20-44",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 20-44",
+        "description": "Autonomous Update — 2025-08-13 20-44 — auto-suggested description"
       }
     },
     {
