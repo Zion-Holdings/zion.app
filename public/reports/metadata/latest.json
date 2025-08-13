@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-13T22:57:00.417Z",
-  "pagesScanned": 1008,
+  "generatedAt": "2025-08-13T23:05:01.021Z",
+  "pagesScanned": 1016,
   "items": [
     {
       "route": "/_app",
@@ -19,6 +19,9 @@
     {
       "route": "/_document",
       "missing": [
+        "description",
+        "og:title",
+        "og:description",
         "og:image"
       ],
       "suggestion": {
@@ -134,6 +137,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-13-224010",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-13-230340",
       "missing": [
         "og:image"
       ],
@@ -483,6 +496,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-13-2303",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Blueprint: AI QA & Eval",
+        "description": "Blueprint: AI QA & Eval — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-13T20-30",
       "missing": [
         "og:image"
@@ -713,6 +736,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-13T23-03",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-13 23-03",
+        "description": "Innovation Insight — 2025-08-13 23-03 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/patterns/pattern-2025-08-13-215625",
       "missing": [
         "og:image"
@@ -774,6 +807,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-13-224010",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-13-230340",
       "missing": [
         "og:image"
       ],
@@ -9529,14 +9572,37 @@
     {
       "route": "/reports/updates/update-2025-08-13-1957",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 19:57",
+        "description": "Autonomous Update — 2025-08-13 19:57 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2003",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-13 19:57",
-        "description": "Autonomous Update — 2025-08-13 19:57 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-13 20:03",
+        "description": "Autonomous Update — 2025-08-13 20:03 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2004",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 20:04",
+        "description": "Autonomous Update — 2025-08-13 20:04 — auto-suggested description"
       }
     },
     {
@@ -9850,6 +9916,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-13-2303",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Validation & QA Plan — Evaluation & Safety (2025-08-13 23:03 UTC)",
+        "description": "Autonomous Validation & QA Plan — Evaluation & Safety (2025-08-13 23:03 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-13T20-30",
       "missing": [
         "og:image"
@@ -10077,6 +10153,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 22-40",
         "description": "Autonomous Update — 2025-08-13 22-40 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13T23-03",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 23-03",
+        "description": "Autonomous Update — 2025-08-13 23-03 — auto-suggested description"
       }
     },
     {
