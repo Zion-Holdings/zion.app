@@ -10,7 +10,13 @@ export default function UpdatePage() {
         <meta property="og:title" content="Autonomous Checklist — Agentic Workflows (2025-08-13 22:37 UTC)" />
         <meta property="og:description" content="Innovative, useful guidance to decrease unit cost per request." />
         <meta name="twitter:card" content="summary_large_image" />
-      </Head>
+      
+        <link rel="canonical" href="https://ziontechgroup.com/reports/updates/update-2025-08-13-2237" />
+        <meta name="keywords" content="AI, automation, autonomous systems, product updates, engineering, Trends" />
+        <meta property="og:image" content="https://ziontechgroup.com/og/zion-tech-group.svg" />
+        <meta name="twitter:image" content="https://ziontechgroup.com/og/zion-tech-group.svg" />
+        <script type="application/ld+json">{JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Autonomous Checklist — Agentic Workflows (2025-08-13 22:37 UTC)","description":"Autonomously generated update.","author":{"@type":"Organization","name":"Zion Tech Group"},"mainEntityOfPage":"https://ziontechgroup.com/reports/updates/update-2025-08-13-2237","url":"https://ziontechgroup.com/reports/updates/update-2025-08-13-2237"})}</script>
+</Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
         <h1 className="text-3xl font-extrabold">Autonomous Checklist — Agentic Workflows (2025-08-13 22:37 UTC)</h1>
         <p className="text-white/70">Innovative, useful guidance to decrease unit cost per request.</p>

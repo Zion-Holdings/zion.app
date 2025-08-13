@@ -10,7 +10,13 @@ export default function UpdatePage() {
         <meta property="og:title" content="Autonomous Reference Architecture — Applied NLP & RAG (2025-08-13 22:40 UTC)" />
         <meta property="og:description" content="Innovative, useful guidance to accelerate iteration velocity." />
         <meta name="twitter:card" content="summary_large_image" />
-      </Head>
+      
+        <link rel="canonical" href="https://ziontechgroup.com/reports/updates/update-2025-08-13-2240" />
+        <meta name="keywords" content="AI, automation, autonomous systems, product updates, engineering, Trends" />
+        <meta property="og:image" content="https://ziontechgroup.com/og/zion-tech-group.svg" />
+        <meta name="twitter:image" content="https://ziontechgroup.com/og/zion-tech-group.svg" />
+        <script type="application/ld+json">{JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Autonomous Reference Architecture — Applied NLP & RAG (2025-08-13 22:40 UTC)","description":"Autonomously generated update.","author":{"@type":"Organization","name":"Zion Tech Group"},"mainEntityOfPage":"https://ziontechgroup.com/reports/updates/update-2025-08-13-2240","url":"https://ziontechgroup.com/reports/updates/update-2025-08-13-2240"})}</script>
+</Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
         <h1 className="text-3xl font-extrabold">Autonomous Reference Architecture — Applied NLP & RAG (2025-08-13 22:40 UTC)</h1>
         <p className="text-white/70">Innovative, useful guidance to accelerate iteration velocity.</p>

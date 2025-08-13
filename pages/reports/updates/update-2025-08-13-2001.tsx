@@ -7,7 +7,15 @@ export default function UpdatePage() {
         <title>Autonomous Update — 2025-08-13 20:01</title>
         <meta name="description" content="Autonomously generated update with curated highlights." />
         <meta name="keywords" content="AI, automation, autonomous systems, product updates, engineering, Trends" />
-      </Head>
+      
+        <link rel="canonical" href="https://ziontechgroup.com/reports/updates/update-2025-08-13-2001" />
+        <meta property="og:image" content="https://ziontechgroup.com/og/zion-tech-group.svg" />
+        <meta name="twitter:image" content="https://ziontechgroup.com/og/zion-tech-group.svg" />
+        <script type="application/ld+json">{JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Autonomous Update — 2025-08-13 20:01","description":"Autonomously generated update with curated highlights.","author":{"@type":"Organization","name":"Zion Tech Group"},"mainEntityOfPage":"https://ziontechgroup.com/reports/updates/update-2025-08-13-2001","url":"https://ziontechgroup.com/reports/updates/update-2025-08-13-2001"})}</script>
+
+        <meta property="og:title" content="Autonomous Update — 2025-08-13 20:01" />
+        <meta property="og:description" content="Autonomous Update — 2025-08-13 20:01 — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
         <h1 className="text-3xl font-extrabold">Autonomous Update — 2025-08-13 20:01</h1>
         <p className="text-white/80">Fresh insights from our autonomous systems, curated for clarity and speed.</p>
