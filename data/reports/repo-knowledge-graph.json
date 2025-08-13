@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T21:02:21.423Z",
+  "generatedAt": "2025-08-13T21:08:23.863Z",
   "nodes": [
     {
       "id": "automation/a11y-alt-text-auditor.cjs",
@@ -4170,6 +4170,30 @@
       "type": "file"
     },
     {
+      "id": "pages/reports/updates/update-2025-08-13-1803.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-1804.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-1805.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-1806.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-1807.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-1808.tsx",
+      "type": "file"
+    },
+    {
       "id": "pages/reports/updates/update-2025-08-13-1942.tsx",
       "type": "file"
     },
@@ -4306,6 +4330,10 @@
       "type": "file"
     },
     {
+      "id": "scripts/continuous-actions-poker.cjs",
+      "type": "file"
+    },
+    {
       "id": "scripts/continuous-cloud-agents.cjs",
       "type": "file"
     },
@@ -4323,6 +4351,10 @@
     },
     {
       "id": "scripts/generate-sitemap.js",
+      "type": "file"
+    },
+    {
+      "id": "scripts/generate-workflows-dashboard.cjs",
       "type": "file"
     },
     {
@@ -10402,6 +10434,36 @@
       "kind": "external"
     },
     {
+      "from": "pages/reports/updates/update-2025-08-13-1803.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-1804.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-1805.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-1806.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-1807.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-1808.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
       "from": "pages/reports/updates/update-2025-08-13-1942.tsx",
       "to": "next/head",
       "kind": "external"
@@ -10597,6 +10659,11 @@
       "kind": "external"
     },
     {
+      "from": "scripts/continuous-actions-poker.cjs",
+      "to": "child_process",
+      "kind": "external"
+    },
+    {
       "from": "scripts/continuous-cloud-agents.cjs",
       "to": "child_process",
       "kind": "external"
@@ -10648,6 +10715,16 @@
     },
     {
       "from": "scripts/generate-sitemap.js",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "scripts/generate-workflows-dashboard.cjs",
+      "to": "fs",
+      "kind": "external"
+    },
+    {
+      "from": "scripts/generate-workflows-dashboard.cjs",
       "to": "path",
       "kind": "external"
     },
