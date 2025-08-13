@@ -256,7 +256,11 @@
     "front:directory": "node automation/front-index-directory-builder.cjs",
     "front:continuous": "node automation/continuous-front-runner.cjs",
     "front:continuous:fast": "node -e \"const cp=require('child_process'); const run=()=>cp.exec('node automation/continuous-front-runner.cjs',()=>{}); run(); setInterval(run, 1000*60*5);\"",
-    "ads:fast": "node automation/fast-advertising-orchestrator.cjs"
+    "ads:fast": "node automation/fast-advertising-orchestrator.cjs",
+    "cloud:innovate": "node automation/cloud-ai-innovation-orchestrator.cjs",
+    "cloud:innovate:once": "node automation/cloud-ai-innovation-factory.cjs",
+    "cloud:innovate:advertise": "node automation/cloud-ai-innovation-advertiser.cjs",
+    "cloud:innovate:cron": "bash automation/cloud-ai-innovation-cron.sh start"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",

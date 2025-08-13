@@ -1,0 +1,39 @@
+name: Ultra Rapid Cloud Sync
+
+on:
+  schedule:
+    - cron: '*/3 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install deps (frozen)
+        run: npm ci
+      - name: Refresh content registry and front directory
+        run: |
+          node automation/docs-pages-indexer.cjs
+          node automation/front-index-directory-builder.cjs
+      - name: Commit and push
+        run: |
+          git config user.name "zion.app bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(sync): ultra rapid registry/front sync [skip ci]"
+            git push
+          fi
+
+
