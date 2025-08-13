@@ -2,7 +2,7 @@ import Landing from '../components/Landing';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <div>
       <main className="py-12">
         <Landing />
         <div className="neon-divider my-12 h-px w-full" />
