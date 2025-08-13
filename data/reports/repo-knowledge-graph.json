@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T23:05:31.717Z",
+  "generatedAt": "2025-08-13T23:06:58.416Z",
   "nodes": [
     {
       "id": "automation/a11y-alt-text-auditor.cjs",
@@ -970,6 +970,10 @@
       "type": "file"
     },
     {
+      "id": "pages/reports/blueprints/blueprint-2025-08-13-230543.tsx",
+      "type": "file"
+    },
+    {
       "id": "pages/reports/guides/guide-2025-08-13-215625.tsx",
       "type": "file"
     },
@@ -1110,6 +1114,10 @@
       "type": "file"
     },
     {
+      "id": "pages/reports/innovations/insight-2025-08-13-2305.tsx",
+      "type": "file"
+    },
+    {
       "id": "pages/reports/innovations/insight-2025-08-13T20-30.tsx",
       "type": "file"
     },
@@ -1206,6 +1214,10 @@
       "type": "file"
     },
     {
+      "id": "pages/reports/innovations/insight-2025-08-13T23-05.tsx",
+      "type": "file"
+    },
+    {
       "id": "pages/reports/patterns/pattern-2025-08-13-215625.tsx",
       "type": "file"
     },
@@ -1235,6 +1247,10 @@
     },
     {
       "id": "pages/reports/playbooks/playbook-2025-08-13-230340.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/playbooks/playbook-2025-08-13-230544.tsx",
       "type": "file"
     },
     {
@@ -4750,6 +4766,10 @@
       "type": "file"
     },
     {
+      "id": "pages/reports/updates/update-2025-08-13-2006.tsx",
+      "type": "file"
+    },
+    {
       "id": "pages/reports/updates/update-2025-08-13-2007.tsx",
       "type": "file"
     },
@@ -4878,6 +4898,10 @@
       "type": "file"
     },
     {
+      "id": "pages/reports/updates/update-2025-08-13-2305.tsx",
+      "type": "file"
+    },
+    {
       "id": "pages/reports/updates/update-2025-08-13T20-30.tsx",
       "type": "file"
     },
@@ -4971,6 +4995,10 @@
     },
     {
       "id": "pages/reports/updates/update-2025-08-13T23-03.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13T23-05.tsx",
       "type": "file"
     },
     {
@@ -7218,6 +7246,11 @@
       "kind": "external"
     },
     {
+      "from": "pages/reports/blueprints/blueprint-2025-08-13-230543.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
       "from": "pages/reports/guides/guide-2025-08-13-215625.tsx",
       "to": "next/head",
       "kind": "external"
@@ -7413,6 +7446,11 @@
       "kind": "external"
     },
     {
+      "from": "pages/reports/innovations/insight-2025-08-13-2305.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
       "from": "pages/reports/innovations/insight-2025-08-13T20-30.tsx",
       "to": "next/head",
       "kind": "external"
@@ -7533,6 +7571,11 @@
       "kind": "external"
     },
     {
+      "from": "pages/reports/innovations/insight-2025-08-13T23-05.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
       "from": "pages/reports/patterns/pattern-2025-08-13-215625.tsx",
       "to": "next/head",
       "kind": "external"
@@ -7569,6 +7612,11 @@
     },
     {
       "from": "pages/reports/playbooks/playbook-2025-08-13-230340.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/playbooks/playbook-2025-08-13-230544.tsx",
       "to": "next/head",
       "kind": "external"
     },
@@ -11963,6 +12011,11 @@
       "kind": "external"
     },
     {
+      "from": "pages/reports/updates/update-2025-08-13-2006.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
       "from": "pages/reports/updates/update-2025-08-13-2007.tsx",
       "to": "next/head",
       "kind": "external"
@@ -12123,6 +12176,11 @@
       "kind": "external"
     },
     {
+      "from": "pages/reports/updates/update-2025-08-13-2305.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
       "from": "pages/reports/updates/update-2025-08-13T20-30.tsx",
       "to": "next/head",
       "kind": "external"
@@ -12239,6 +12297,11 @@
     },
     {
       "from": "pages/reports/updates/update-2025-08-13T23-03.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13T23-05.tsx",
       "to": "next/head",
       "kind": "external"
     },
