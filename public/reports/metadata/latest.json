@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T23:39:30.726Z",
+  "generatedAt": "2025-08-13T23:40:00.577Z",
   "pagesScanned": 1086,
   "items": [
     {
@@ -19,7 +19,11 @@
     {
       "route": "/_document",
       "missing": [
-        "og:image"
+        "description",
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "_document",
