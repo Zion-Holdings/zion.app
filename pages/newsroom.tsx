@@ -6,10 +6,7 @@ export default function Newsroom() {
       <Head>
         <title>Newsroom — Curated Tech Headlines</title>
         <meta name="description" content="Curated technology and AI headlines from reputable sources." />
-      
-        <meta property="og:title" content="Newsroom" />
-        <meta property="og:description" content="Newsroom — automatically suggested description." />
-        <meta name="twitter:card" content="summary_large_image" /></Head>
+      </Head>
       <main className="container mx-auto px-4 py-12">
         <h1 className="text-4xl font-extrabold mb-2">Newsroom</h1>
         <p className="text-white/70 mb-6">Updated automatically from multiple sources.</p>
@@ -47,6 +44,10 @@ export default function Newsroom() {
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/13/waymo-finally-has-a-music-experience-worthy-of-its-robotaxi/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Waymo finally has a music experience worthy of its robotaxi</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
             <a href="https://techcrunch.com/2025/08/13/google-ceo-adds-a-new-calendar-feature-at-stripe-co-founders-request/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Google CEO adds a new calendar feature at Stripe co-founder’s request</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
@@ -68,10 +69,6 @@ export default function Newsroom() {
           </li>
           <li className="py-2">
             <a href="https://techcrunch.com/2025/08/13/pocket-fm-gives-its-writers-an-ai-tool-to-transform-narratives-write-cliffhangers-and-more/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Pocket FM gives its writers an AI tool to transform narratives, write cliffhangers, and more</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/13/amazon-rolls-out-same-day-delivery-of-perishable-groceries-in-1000-us-cities/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Amazon rolls out same-day delivery of perishable groceries in 1,000 US cities</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
