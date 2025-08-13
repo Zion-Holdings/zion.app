@@ -2,7 +2,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <main className="py-12">
-        {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */
+        {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */}
 
  <section className="mx-auto max-w-7xl px-6 pb-14">
    <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Latest Autonomous Content</h2>
@@ -46,7 +46,7 @@ export default function Home() {
    </div>
  </section>
  
-/* AUTO-GENERATED: HOME_LATEST_CONTENT_END */}
+        {/* AUTO-GENERATED: HOME_LATEST_CONTENT_END */}
       </main>
     </div>
   );
