@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: '*/7 * * * *'
   workflow_dispatch: {}
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/ai-it-ads-sync.yml'
 
 permissions:
   contents: write
