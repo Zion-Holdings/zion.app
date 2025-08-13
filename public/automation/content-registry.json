@@ -33,6 +33,10 @@
       "route": "/automation"
     },
     {
+      "file": "pages/reports/updates/update-2025-08-13-0112.tsx",
+      "route": "/reports/updates/update-2025-08-13-0112"
+    },
+    {
       "file": "pages/reports/updates/update-2025-08-13-0111.tsx",
       "route": "/reports/updates/update-2025-08-13-0111"
     },
@@ -727,5 +731,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-13T04:11:00.353Z"
+  "generatedAt": "2025-08-13T04:12:00.379Z"
 }
