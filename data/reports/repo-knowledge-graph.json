@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T20:25:58.062Z",
+  "generatedAt": "2025-08-13T20:33:22.903Z",
   "nodes": [
     {
       "id": "automation/a11y-alt-text-auditor.cjs",
@@ -114,7 +114,23 @@
       "type": "file"
     },
     {
+      "id": "automation/cloud-autonomous-agents-factory.cjs",
+      "type": "file"
+    },
+    {
       "id": "automation/cloud-autonomous-orchestrator.cjs",
+      "type": "file"
+    },
+    {
+      "id": "automation/cloud-content-advertiser.cjs",
+      "type": "file"
+    },
+    {
+      "id": "automation/cloud-content-factory.cjs",
+      "type": "file"
+    },
+    {
+      "id": "automation/cloud-site-crawler.cjs",
       "type": "file"
     },
     {
@@ -899,6 +915,22 @@
     },
     {
       "id": "pages/reports/innovations/insight-2025-08-13-2024.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/innovations/insight-2025-08-13-2029.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/innovations/insight-2025-08-13-2030.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/innovations/insight-2025-08-13-2032.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/innovations/insight-2025-08-13T20-30.tsx",
       "type": "file"
     },
     {
@@ -3982,6 +4014,34 @@
       "type": "file"
     },
     {
+      "id": "pages/reports/updates/update-2025-08-13-1726.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-1727.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-1728.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-1729.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-1731.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-1732.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-1733.tsx",
+      "type": "file"
+    },
+    {
       "id": "pages/reports/updates/update-2025-08-13-1942.tsx",
       "type": "file"
     },
@@ -4003,6 +4063,22 @@
     },
     {
       "id": "pages/reports/updates/update-2025-08-13-2024.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-2029.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-2030.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-2032.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13T20-30.tsx",
       "type": "file"
     },
     {
@@ -4055,6 +4131,10 @@
     },
     {
       "id": "scripts/automations/unused_exports_report.cjs",
+      "type": "file"
+    },
+    {
+      "id": "scripts/continuous-cloud-agents.cjs",
       "type": "file"
     },
     {
@@ -4385,6 +4465,11 @@
       "kind": "external"
     },
     {
+      "from": "automation/cloud-autonomous-agents-factory.cjs",
+      "to": "child_process",
+      "kind": "external"
+    },
+    {
       "from": "automation/cloud-autonomous-orchestrator.cjs",
       "to": "fs",
       "kind": "external"
@@ -4397,6 +4482,51 @@
     {
       "from": "automation/cloud-autonomous-orchestrator.cjs",
       "to": "child_process",
+      "kind": "external"
+    },
+    {
+      "from": "automation/cloud-content-advertiser.cjs",
+      "to": "fs",
+      "kind": "external"
+    },
+    {
+      "from": "automation/cloud-content-advertiser.cjs",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "automation/cloud-content-factory.cjs",
+      "to": "fs",
+      "kind": "external"
+    },
+    {
+      "from": "automation/cloud-content-factory.cjs",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "automation/cloud-content-factory.cjs",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "automation/cloud-site-crawler.cjs",
+      "to": "fs",
+      "kind": "external"
+    },
+    {
+      "from": "automation/cloud-site-crawler.cjs",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "automation/cloud-site-crawler.cjs",
+      "to": "axios",
+      "kind": "external"
+    },
+    {
+      "from": "automation/cloud-site-crawler.cjs",
+      "to": "cheerio",
       "kind": "external"
     },
     {
@@ -6011,6 +6141,26 @@
     },
     {
       "from": "pages/reports/innovations/insight-2025-08-13-2024.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/innovations/insight-2025-08-13-2029.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/innovations/insight-2025-08-13-2030.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/innovations/insight-2025-08-13-2032.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/innovations/insight-2025-08-13T20-30.tsx",
       "to": "next/head",
       "kind": "external"
     },
@@ -9865,6 +10015,41 @@
       "kind": "external"
     },
     {
+      "from": "pages/reports/updates/update-2025-08-13-1726.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-1727.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-1728.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-1729.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-1731.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-1732.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-1733.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
       "from": "pages/reports/updates/update-2025-08-13-1942.tsx",
       "to": "next/head",
       "kind": "external"
@@ -9891,6 +10076,26 @@
     },
     {
       "from": "pages/reports/updates/update-2025-08-13-2024.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-2029.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-2030.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-2032.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13T20-30.tsx",
       "to": "next/head",
       "kind": "external"
     },
@@ -9982,6 +10187,11 @@
     {
       "from": "scripts/automations/unused_exports_report.cjs",
       "to": "node:path",
+      "kind": "external"
+    },
+    {
+      "from": "scripts/continuous-cloud-agents.cjs",
+      "to": "child_process",
       "kind": "external"
     },
     {
