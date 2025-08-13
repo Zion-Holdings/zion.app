@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-13T19:57:00.389Z",
-  "pagesScanned": 769,
+  "generatedAt": "2025-08-13T19:58:00.544Z",
+  "pagesScanned": 771,
   "items": [
     {
       "route": "/_app",
@@ -77,10 +77,7 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -7672,14 +7669,24 @@
     {
       "route": "/reports/updates/update-2025-08-13-1657",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 16:57",
+        "description": "Autonomous Update — 2025-08-13 16:57 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1658",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-13 16:57",
-        "description": "Autonomous Update — 2025-08-13 16:57 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-13 16:58",
+        "description": "Autonomous Update — 2025-08-13 16:58 — auto-suggested description"
       }
     },
     {
@@ -7690,6 +7697,16 @@
       "suggestion": {
         "title": "Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC)",
         "description": "Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1957",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Capability Map — Applied NLP & RAG (2025-08-13 19:57 UTC)",
+        "description": "Autonomous Capability Map — Applied NLP & RAG (2025-08-13 19:57 UTC) — auto-suggested description"
       }
     },
     {

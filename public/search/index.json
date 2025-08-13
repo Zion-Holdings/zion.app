@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T19:57:01.513Z",
+  "generatedAt": "2025-08-13T19:58:01.652Z",
   "entries": [
     {
       "route": "/site-health",
@@ -23,7 +23,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "index",
-      "summary": "import Landing from '../components/Landing'; export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 1657 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 1"
+      "summary": "import Landing from '../components/Landing'; export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 1658 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 1"
     },
     {
       "route": "/_document",
@@ -68,10 +68,22 @@
       "summary": "import { useEffect, useState } from 'react'; interface ArticleEntry { title: string; url: string; createdAt: string; tags?: string[]; source?: string; } export default function AILabPage() { const [items, setItems] = useState ([]); const [loading, setLoading] = useState(true); us"
     },
     {
+      "route": "/reports/updates/update-2025-08-13-1957",
+      "file": "pages/reports/updates/update-2025-08-13-1957.tsx",
+      "title": "Autonomous Capability Map — Applied NLP & RAG (2025-08-13 19:57 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Capability Map — Applied NLP & RAG (2025-08-13 19:57 UTC) Autonomous Capability Map — Applied NLP & RAG (2025-08-13 19:57 UTC) Innovative, useful guidance to improve observability and uptime."
+    },
+    {
       "route": "/reports/updates/update-2025-08-13-1942",
       "file": "pages/reports/updates/update-2025-08-13-1942.tsx",
       "title": "Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC) Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC) Innovative, useful guidance to decrease unit cost per request. What it is: Playbook "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1658",
+      "file": "pages/reports/updates/update-2025-08-13-1658.tsx",
+      "title": "Autonomous Update — 2025-08-13 16:58",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 16:58 Autonomous Update — 2025-08-13 16:58 Signal over noise—your automated update is here. Today's Highlight Hacker News : Bypassing airport security via SQL injection · "
     },
     {
       "route": "/reports/updates/update-2025-08-13-1657",
