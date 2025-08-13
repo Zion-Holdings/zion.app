@@ -53,7 +53,7 @@ module.exports = {
       interpreter: 'node',
       time: true,
       autorestart: false,
-      cron_restart: '0 */6 * * *'
+      cron_restart: '*/10 * * * *'
     },
 
     // Internal link fix (every 6 hours, offset a few minutes)
@@ -64,7 +64,7 @@ module.exports = {
       interpreter: 'node',
       time: true,
       autorestart: false,
-      cron_restart: '5 */6 * * *'
+      cron_restart: '*/10 * * * *'
     },
 
     // Sitemap (daily)
@@ -86,7 +86,7 @@ module.exports = {
       interpreter: 'node',
       time: true,
       autorestart: false,
-      cron_restart: '*/15 * * * *'
+      cron_restart: '*/5 * * * *'
     }
     ,
 
