@@ -2,7 +2,7 @@ import Head from 'next/head';
 
 export default function Newsroom() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 text-white">
+    <div>
       <Head>
         <title>Newsroom — Curated Tech Headlines</title>
         <meta name="description" content="Curated technology and AI headlines from reputable sources." />

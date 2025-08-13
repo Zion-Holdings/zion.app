@@ -2,7 +2,7 @@ import Head from 'next/head';
 
 export default function AutomationHub() {
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <div>
       <Head>
         <title>Automation Hub</title>
         <meta name="description" content="Explore autonomous cloud automations running 24/7." />
