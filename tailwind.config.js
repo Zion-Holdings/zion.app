@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Outfit', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['Orbitron', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      },
       colors: {
         night: {
           950: '#020617',
