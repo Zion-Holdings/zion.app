@@ -103,5 +103,37 @@ module.exports = {
         TARGET_BRANCH: 'main'
       }
     }
+    ,
+
+    // Content Completer — improves pages continuously (every 1 minute)
+    {
+      name: 'content-completer',
+      cwd: rootDir,
+      script: 'automation/content-completer.cjs',
+      interpreter: 'node',
+      time: true,
+      autorestart: false,
+      cron_restart: '* * * * *',
+      env: {
+        CANONICAL_URL: 'https://ziontechgroup.com'
+      }
+    }
+    ,
+
+    // Chat → Agents Orchestrator — research-driven agent generation (every 1 minute)
+    {
+      name: 'chat-to-agents',
+      cwd: rootDir,
+      script: 'automation/chat-to-agents-orchestrator.cjs',
+      interpreter: 'node',
+      time: true,
+      autorestart: false,
+      cron_restart: '* * * * *',
+      env: {
+        ALIGNMENT_CHAT_URL: 'https://chatgpt.com/share/688b6030-1aa0-800b-9b63-ec9a269ea62d',
+        ALIGNMENT_DOC_URL: 'https://docs.google.com/document/d/1Q3-QbWjIIj83VYX_Hx258kmvEyF9qBR2nF09IOi4ppM/edit?usp=sharing',
+        SITE_URL: 'https://ziontechgroup.netlify.app'
+      }
+    }
   ]
 };
