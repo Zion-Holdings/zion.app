@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T16:57:18.221Z",
+  "generatedAt": "2025-08-13T16:58:50.834Z",
   "nodes": [
     {
       "id": "automation/a11y-alt-text-auditor.cjs",
@@ -3754,167 +3754,15 @@
       "type": "file"
     },
     {
-      "id": "pages/reports/updates/update-2025-08-13-1317.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1318.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1319.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1320.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1321.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1322.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1323.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1324.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1325.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1326.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1327.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1328.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1329.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1330.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1331.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1332.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1333.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1334.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1335.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1336.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1337.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1338.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1339.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1340.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1341.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1342.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1343.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1344.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1345.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1346.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1347.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1348.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1349.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1350.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1351.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1352.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1353.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1354.tsx",
-      "type": "file"
-    },
-    {
-      "id": "pages/reports/updates/update-2025-08-13-1355.tsx",
-      "type": "file"
-    },
-    {
       "id": "pages/reports/updates/update-2025-08-13-1356.tsx",
       "type": "file"
     },
     {
       "id": "pages/reports/updates/update-2025-08-13-1357.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-1358.tsx",
       "type": "file"
     },
     {
@@ -4540,26 +4388,6 @@
     {
       "from": "automation/image-optimizer.cjs",
       "to": "sharp",
-      "kind": "external"
-    },
-    {
-      "from": "automation/instagram-marketing-factory.cjs",
-      "to": "fs",
-      "kind": "external"
-    },
-    {
-      "from": "automation/instagram-marketing-factory.cjs",
-      "to": "path",
-      "kind": "external"
-    },
-    {
-      "from": "automation/instagram-marketing-orchestrator.cjs",
-      "to": "fs",
-      "kind": "external"
-    },
-    {
-      "from": "automation/instagram-marketing-orchestrator.cjs",
-      "to": "path",
       "kind": "external"
     },
     {
@@ -9343,207 +9171,17 @@
       "kind": "external"
     },
     {
-      "from": "pages/reports/updates/update-2025-08-13-1317.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1318.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1319.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1320.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1321.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1322.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1323.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1324.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1325.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1326.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1327.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1328.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1329.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1330.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1331.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1332.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1333.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1334.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1335.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1336.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1337.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1338.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1339.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1340.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1341.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1342.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1343.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1344.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1345.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1346.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1347.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1348.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1349.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1350.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1351.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1352.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1353.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1354.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
-      "from": "pages/reports/updates/update-2025-08-13-1355.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
       "from": "pages/reports/updates/update-2025-08-13-1356.tsx",
       "to": "next/head",
       "kind": "external"
     },
     {
       "from": "pages/reports/updates/update-2025-08-13-1357.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-1358.tsx",
       "to": "next/head",
       "kind": "external"
     },
