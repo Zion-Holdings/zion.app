@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T19:45:18.145Z",
+  "generatedAt": "2025-08-13T19:55:07.733Z",
   "nodes": [
     {
       "id": "automation/a11y-alt-text-auditor.cjs",
@@ -99,6 +99,10 @@
     },
     {
       "id": "automation/chat-to-agents-orchestrator.cjs",
+      "type": "file"
+    },
+    {
+      "id": "automation/cloud-ai-innovation-factory.cjs",
       "type": "file"
     },
     {
@@ -814,6 +818,10 @@
       "type": "file"
     },
     {
+      "id": "pages/explore/index.tsx",
+      "type": "file"
+    },
+    {
       "id": "pages/front/index.tsx",
       "type": "file"
     },
@@ -851,6 +859,10 @@
     },
     {
       "id": "pages/reports/ai-trends.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/index.tsx",
       "type": "file"
     },
     {
@@ -3846,7 +3858,27 @@
       "type": "file"
     },
     {
+      "id": "pages/reports/updates/update-2025-08-13-1646.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-1647.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-1648.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-1649.tsx",
+      "type": "file"
+    },
+    {
       "id": "pages/reports/updates/update-2025-08-13-1942.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/search.tsx",
       "type": "file"
     },
     {
@@ -4182,6 +4214,21 @@
     {
       "from": "automation/chat-to-agents-orchestrator.cjs",
       "to": "child_process",
+      "kind": "external"
+    },
+    {
+      "from": "automation/cloud-ai-innovation-factory.cjs",
+      "to": "fs",
+      "kind": "external"
+    },
+    {
+      "from": "automation/cloud-ai-innovation-factory.cjs",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "automation/cloud-ai-innovation-factory.cjs",
+      "to": "next/head",
       "kind": "external"
     },
     {
@@ -5690,6 +5737,16 @@
       "kind": "external"
     },
     {
+      "from": "pages/explore/index.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/explore/index.tsx",
+      "to": "next/link",
+      "kind": "external"
+    },
+    {
       "from": "pages/front/index.tsx",
       "to": "react",
       "kind": "external"
@@ -5742,6 +5799,16 @@
     {
       "from": "pages/reports/ai-trends.tsx",
       "to": "react",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/index.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/index.tsx",
+      "to": "next/link",
       "kind": "external"
     },
     {
@@ -9485,7 +9552,37 @@
       "kind": "external"
     },
     {
+      "from": "pages/reports/updates/update-2025-08-13-1646.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-1647.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-1648.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-1649.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
       "from": "pages/reports/updates/update-2025-08-13-1942.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/search.tsx",
+      "to": "react",
+      "kind": "external"
+    },
+    {
+      "from": "pages/search.tsx",
       "to": "next/head",
       "kind": "external"
     },
