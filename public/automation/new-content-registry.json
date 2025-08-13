@@ -2,6 +2,13 @@
   "items": [
     {
       "title": "Guide: Edge AI",
+      "subtitle": "Patterns to increase accuracy.",
+      "path": "/reports/innovations/insight-2025-08-13-2119",
+      "createdAt": "2025-08-13T21:19:46.325Z",
+      "kind": "insight"
+    },
+    {
+      "title": "Guide: Edge AI",
       "subtitle": "Patterns to enhance security.",
       "path": "/reports/innovations/insight-2025-08-13-2100",
       "createdAt": "2025-08-13T21:00:08.723Z",
