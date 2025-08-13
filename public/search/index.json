@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T12:41:01.626Z",
+  "generatedAt": "2025-08-13T12:42:01.500Z",
   "entries": [
     {
       "route": "/site-health",
@@ -42,6 +42,12 @@
       "file": "pages/reports/ai-trends.tsx",
       "title": "ai-trends",
       "summary": "import { useEffect } from 'react'; export default function AiTrendsRedirect() { useEffect(() => { if (typeof window !== 'undefined') { window.location.replace('/reports/ai-trends/index.html'); } }, []); return null; }"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-0942",
+      "file": "pages/reports/updates/update-2025-08-13-0942.tsx",
+      "title": "Autonomous Update — 2025-08-13 09:42",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 09:42 Autonomous Update — 2025-08-13 09:42 Signal over noise—your automated update is here. Today's Highlight Hacker News : Bypassing airport security via SQL injection · "
     },
     {
       "route": "/reports/updates/update-2025-08-13-0941",
