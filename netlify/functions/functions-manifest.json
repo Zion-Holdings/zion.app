@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T10:28:22.911Z",
+  "generatedAt": "2025-08-13T10:29:06.252Z",
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
@@ -42,6 +42,7 @@
     "front-visionary-expander",
     "frontpage-enhancer",
     "frontpage-scheduler",
+    "headers-enforcer",
     "home-visionary-expander",
     "homepage-advertiser-scheduler",
     "homepage-enhancer",
