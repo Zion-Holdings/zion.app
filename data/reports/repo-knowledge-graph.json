@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T17:12:54.807Z",
+  "generatedAt": "2025-08-13T19:45:18.145Z",
   "nodes": [
     {
       "id": "automation/a11y-alt-text-auditor.cjs",
@@ -23,6 +23,34 @@
     },
     {
       "id": "automation/ai-changelog-generator.cjs",
+      "type": "file"
+    },
+    {
+      "id": "automation/ai-content-advertiser.cjs",
+      "type": "file"
+    },
+    {
+      "id": "automation/ai-content-factory.cjs",
+      "type": "file"
+    },
+    {
+      "id": "next/head",
+      "type": "package"
+    },
+    {
+      "id": "automation/ai-it-advertiser.cjs",
+      "type": "file"
+    },
+    {
+      "id": "automation/ai-it-content-factory.cjs",
+      "type": "file"
+    },
+    {
+      "id": "automation/ai-it-researcher.cjs",
+      "type": "file"
+    },
+    {
+      "id": "automation/ai-research-scout.cjs",
       "type": "file"
     },
     {
@@ -64,10 +92,6 @@
     {
       "id": "automation/broken-image-scanner.cjs",
       "type": "file"
-    },
-    {
-      "id": "next/head",
-      "type": "package"
     },
     {
       "id": "automation/changelog-generator.cjs",
@@ -819,6 +843,10 @@
     },
     {
       "id": "pages/newsroom.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/ai-lab.tsx",
       "type": "file"
     },
     {
@@ -3810,6 +3838,18 @@
       "type": "file"
     },
     {
+      "id": "pages/reports/updates/update-2025-08-13-1413.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-1645.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-1942.tsx",
+      "type": "file"
+    },
+    {
       "id": "pages/site-health.tsx",
       "type": "file"
     },
@@ -3947,6 +3987,71 @@
     {
       "from": "automation/ai-changelog-generator.cjs",
       "to": "child_process",
+      "kind": "external"
+    },
+    {
+      "from": "automation/ai-content-advertiser.cjs",
+      "to": "fs",
+      "kind": "external"
+    },
+    {
+      "from": "automation/ai-content-advertiser.cjs",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "automation/ai-content-factory.cjs",
+      "to": "fs",
+      "kind": "external"
+    },
+    {
+      "from": "automation/ai-content-factory.cjs",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "automation/ai-content-factory.cjs",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "automation/ai-it-advertiser.cjs",
+      "to": "fs",
+      "kind": "external"
+    },
+    {
+      "from": "automation/ai-it-advertiser.cjs",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "automation/ai-it-content-factory.cjs",
+      "to": "fs",
+      "kind": "external"
+    },
+    {
+      "from": "automation/ai-it-content-factory.cjs",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "automation/ai-it-researcher.cjs",
+      "to": "fs",
+      "kind": "external"
+    },
+    {
+      "from": "automation/ai-it-researcher.cjs",
+      "to": "path",
+      "kind": "external"
+    },
+    {
+      "from": "automation/ai-research-scout.cjs",
+      "to": "fs",
+      "kind": "external"
+    },
+    {
+      "from": "automation/ai-research-scout.cjs",
+      "to": "path",
       "kind": "external"
     },
     {
@@ -5627,6 +5732,11 @@
     {
       "from": "pages/newsroom.tsx",
       "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/ai-lab.tsx",
+      "to": "react",
       "kind": "external"
     },
     {
@@ -9361,6 +9471,21 @@
     },
     {
       "from": "pages/reports/updates/update-2025-08-13-1412.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-1413.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-1645.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-1942.tsx",
       "to": "next/head",
       "kind": "external"
     },
