@@ -1,0 +1,9 @@
+{
+  "enforcedPaths": [
+    "pages/reports/updates/",
+    "public/reports/",
+    "data/reports/"
+  ]
+}
+
+
