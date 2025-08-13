@@ -2,7 +2,7 @@ import Head from 'next/head';
 
 export default function UpdatePage() {
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <div>
       <Head>
         <title>Autonomous Update — 2025-08-12 17:30</title>
         <meta name="description" content="Autonomously generated update." />
