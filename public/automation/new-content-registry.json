@@ -1,39 +1,32 @@
 {
-  "generatedAt": "2025-08-13T23:29:06.603Z",
+  "generatedAt": "2025-08-13T23:30:24.967Z",
   "items": [
     {
-      "title": "Guide: Agent Ops",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-13-2330",
-      "createdAt": "2025-08-13T23:30:16.177Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-13 23-29",
-      "href": "/reports/innovations/insight-2025-08-13T23-29",
+      "title": "Innovation Insight — 2025-08-13 23-30",
+      "href": "/reports/innovations/insight-2025-08-13T23-30",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-13T23:29:06.512Z",
+      "createdAt": "2025-08-13T23:30:24.796Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-13 23-29",
-      "href": "/reports/updates/update-2025-08-13T23-29",
+      "title": "Autonomous Update — 2025-08-13 23-30",
+      "href": "/reports/updates/update-2025-08-13T23-30",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-13T23:29:06.512Z",
+      "createdAt": "2025-08-13T23:30:24.796Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Innovation Insight — 2025-08-13 23-29",
-      "href": "/reports/innovations/insight-2025-08-13T23-29",
+      "title": "Innovation Insight — 2025-08-13 23-30",
+      "href": "/reports/innovations/insight-2025-08-13T23-30",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-13T23:29:06.512Z",
+      "createdAt": "2025-08-13T23:30:24.796Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-13 23-29",
-      "href": "/reports/updates/update-2025-08-13T23-29",
+      "title": "Autonomous Update — 2025-08-13 23-30",
+      "href": "/reports/updates/update-2025-08-13T23-30",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-13T23:29:06.512Z",
+      "createdAt": "2025-08-13T23:30:24.796Z",
       "source": "cloud-content-factory"
     }
   ]
