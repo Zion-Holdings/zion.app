@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T15:31:01.499Z",
+  "generatedAt": "2025-08-13T15:34:01.625Z",
   "entries": [
     {
       "route": "/site-health",
@@ -17,7 +17,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "index",
-      "summary": "export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 1231 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 13: 1230 Freshly published by autonomous agent"
+      "summary": "export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 1234 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 13: 1233 Freshly published by autonomous agent"
     },
     {
       "route": "/_document",
@@ -48,6 +48,24 @@
       "file": "pages/reports/ai-trends.tsx",
       "title": "ai-trends",
       "summary": "import { useEffect } from 'react'; export default function AiTrendsRedirect() { useEffect(() => { if (typeof window !== 'undefined') { window.location.replace('/reports/ai-trends/index.html'); } }, []); return null; }"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1234",
+      "file": "pages/reports/updates/update-2025-08-13-1234.tsx",
+      "title": "Autonomous Update — 2025-08-13 12:34",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 12:34 Autonomous Update — 2025-08-13 12:34 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Bypassing airport security via SQL i"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1233",
+      "file": "pages/reports/updates/update-2025-08-13-1233.tsx",
+      "title": "Autonomous Update — 2025-08-13 12:33",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 12:33 Autonomous Update — 2025-08-13 12:33 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Bypassing airport sec"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1232",
+      "file": "pages/reports/updates/update-2025-08-13-1232.tsx",
+      "title": "Autonomous Update — 2025-08-13 12:32",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 12:32 Autonomous Update — 2025-08-13 12:32 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Airfoil · 2544 pts Wh"
     },
     {
       "route": "/reports/updates/update-2025-08-13-1231",
