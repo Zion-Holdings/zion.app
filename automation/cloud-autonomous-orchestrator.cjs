@@ -55,6 +55,8 @@ async function main() {
 
   // Fast build to surface breaking issues (best effort)
   run('npm run build');
+  // Ensure footers are injected on build artifacts
+  run('node automation/footer-injector.cjs');
 
   // Sync any changes
   if (fileExists('automation/git-sync.cjs')) run('node automation/git-sync.cjs');
