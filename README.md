@@ -1,6 +1,6 @@
 # bolt.new.zion.app
 
-![Automations: 30](https://img.shields.io/badge/Automations-30-informational) ![Pages: 494](https://img.shields.io/badge/Pages-494-success) ![Components: 3](https://img.shields.io/badge/Components-3-blue)
+![Automations: 30](https://img.shields.io/badge/Automations-30-informational) ![Pages: 504](https://img.shields.io/badge/Pages-504-success) ![Components: 3](https://img.shields.io/badge/Components-3-blue)
 
 Autonomous, cloud‑native app with self‑running automations.
 
@@ -511,6 +511,16 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 - /reports/updates/update-2025-08-13-0742
 - /reports/updates/update-2025-08-13-0743
 - /reports/updates/update-2025-08-13-0744
+- /reports/updates/update-2025-08-13-0745
+- /reports/updates/update-2025-08-13-0746
+- /reports/updates/update-2025-08-13-0747
+- /reports/updates/update-2025-08-13-0748
+- /reports/updates/update-2025-08-13-0749
+- /reports/updates/update-2025-08-13-0750
+- /reports/updates/update-2025-08-13-0751
+- /reports/updates/update-2025-08-13-0752
+- /reports/updates/update-2025-08-13-0753
+- /reports/updates/update-2025-08-13-0754
 - /site-health
 
 ### Automations
