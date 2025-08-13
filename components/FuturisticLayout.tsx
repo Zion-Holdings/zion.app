@@ -7,13 +7,13 @@ export default function FuturisticLayout({ children }: PropsWithChildren<object>
       <div aria-hidden className="pointer-events-none absolute inset-0 bg-aurora" />
 
       {/* Subtle animated hex grid overlay */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 hex-grid opacity-20" />
+      <div aria-hidden className="pointer-events-none absolute inset-0 hex-grid opacity-10" />
 
       {/* Diagonal light beams */}
       <div aria-hidden className="pointer-events-none absolute inset-0 beams-layer beams-45 mix-blend-screen" />
 
       {/* Star twinkle field */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 twinkle-field opacity-30" />
+      <div aria-hidden className="pointer-events-none absolute inset-0 twinkle-field opacity-20" />
 
       {/* Content */}
       <div className="relative z-10">
