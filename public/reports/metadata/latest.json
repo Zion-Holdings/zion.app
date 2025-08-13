@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-13T23:35:00.836Z",
-  "pagesScanned": 1077,
+  "generatedAt": "2025-08-13T23:35:33.705Z",
+  "pagesScanned": 1079,
   "items": [
     {
       "route": "/_app",
@@ -49,11 +49,7 @@
     {
       "route": "/front/",
       "missing": [
-        "description",
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "front",
@@ -101,11 +97,7 @@
     {
       "route": "/reports/ai-trends",
       "missing": [
-        "description",
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "ai trends",
@@ -663,6 +655,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-13-2335",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide: RAG Platforms",
+        "description": "Guide: RAG Platforms — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-13T20-30",
       "missing": [
         "og:image"
@@ -1155,11 +1157,7 @@
     {
       "route": "/reports/seo",
       "missing": [
-        "description",
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "seo",
@@ -10444,6 +10442,16 @@
       "suggestion": {
         "title": "Autonomous Blueprint — Vision & Multimodal (2025-08-13 23:30 UTC)",
         "description": "Autonomous Blueprint — Vision & Multimodal (2025-08-13 23:30 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2335",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Capability Map — Evaluation & Safety (2025-08-13 23:35 UTC)",
+        "description": "Autonomous Capability Map — Evaluation & Safety (2025-08-13 23:35 UTC) — auto-suggested description"
       }
     },
     {
