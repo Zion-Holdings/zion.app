@@ -1,6 +1,13 @@
 {
   "items": [
     {
+      "title": "Guide: LLM Apps",
+      "subtitle": "Patterns to improve reliability.",
+      "path": "/reports/innovations/insight-2025-08-13-2034",
+      "createdAt": "2025-08-13T20:34:07.497Z",
+      "kind": "insight"
+    },
+    {
       "title": "Blueprint: Edge AI",
       "subtitle": "Patterns to enhance security.",
       "path": "/reports/innovations/insight-2025-08-13-2029",
