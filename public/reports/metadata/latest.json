@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-13T21:48:30.129Z",
-  "pagesScanned": 892,
+  "generatedAt": "2025-08-13T21:54:52.710Z",
+  "pagesScanned": 899,
   "items": [
     {
       "route": "/_app",
@@ -77,7 +77,10 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -110,6 +113,16 @@
       "suggestion": {
         "title": "ai trends",
         "description": "ai trends — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-13-215430",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Reports Trends Implementation",
+        "description": "Guide — Reports Trends Implementation — auto-suggested description"
       }
     },
     {
@@ -293,6 +306,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-13-2154",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pilot Plan: DevSecOps AI",
+        "description": "Pilot Plan: DevSecOps AI — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-13T20-30",
       "missing": [
         "og:image"
@@ -400,6 +423,26 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-13 21-47",
         "description": "Innovation Insight — 2025-08-13 21-47 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-13T21-54",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-13 21-54",
+        "description": "Innovation Insight — 2025-08-13 21-54 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-13-215430",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Improving Continuously",
+        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
       }
     },
     {
@@ -8617,6 +8660,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-13-1854",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 18:54",
+        "description": "Autonomous Update — 2025-08-13 18:54 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-13-1942",
       "missing": [
         "og:image"
@@ -8807,6 +8863,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-13-2154",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Performance Tuning Guide — DevSecOps for AI (2025-08-13 21:54 UTC)",
+        "description": "Autonomous Performance Tuning Guide — DevSecOps for AI (2025-08-13 21:54 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-13T20-30",
       "missing": [
         "og:image"
@@ -8914,6 +8980,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 21-47",
         "description": "Autonomous Update — 2025-08-13 21-47 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13T21-54",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 21-54",
+        "description": "Autonomous Update — 2025-08-13 21-54 — auto-suggested description"
       }
     },
     {
