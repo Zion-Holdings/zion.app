@@ -1,39 +1,32 @@
 {
-  "generatedAt": "2025-08-13T23:03:39.932Z",
+  "generatedAt": "2025-08-13T23:05:43.842Z",
   "items": [
     {
-      "title": "Runbook: AI QA & Eval",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-13-2305",
-      "createdAt": "2025-08-13T23:05:37.623Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-13 23-03",
-      "href": "/reports/innovations/insight-2025-08-13T23-03",
+      "title": "Innovation Insight — 2025-08-13 23-05",
+      "href": "/reports/innovations/insight-2025-08-13T23-05",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-13T23:03:39.856Z",
+      "createdAt": "2025-08-13T23:05:43.758Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-13 23-03",
-      "href": "/reports/updates/update-2025-08-13T23-03",
+      "title": "Autonomous Update — 2025-08-13 23-05",
+      "href": "/reports/updates/update-2025-08-13T23-05",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-13T23:03:39.856Z",
+      "createdAt": "2025-08-13T23:05:43.758Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Innovation Insight — 2025-08-13 23-03",
-      "href": "/reports/innovations/insight-2025-08-13T23-03",
+      "title": "Innovation Insight — 2025-08-13 23-05",
+      "href": "/reports/innovations/insight-2025-08-13T23-05",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-13T23:03:39.856Z",
+      "createdAt": "2025-08-13T23:05:43.758Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-13 23-03",
-      "href": "/reports/updates/update-2025-08-13T23-03",
+      "title": "Autonomous Update — 2025-08-13 23-05",
+      "href": "/reports/updates/update-2025-08-13T23-05",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-13T23:03:39.856Z",
+      "createdAt": "2025-08-13T23:05:43.758Z",
       "source": "cloud-content-factory"
     }
   ]
