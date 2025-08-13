@@ -1,6 +1,13 @@
 {
   "items": [
     {
+      "title": "Guide: Edge AI",
+      "subtitle": "Patterns to enhance security.",
+      "path": "/reports/innovations/insight-2025-08-13-2100",
+      "createdAt": "2025-08-13T21:00:08.723Z",
+      "kind": "insight"
+    },
+    {
       "title": "Checklist: AI QA & Eval",
       "subtitle": "Patterns to accelerate delivery.",
       "path": "/reports/innovations/insight-2025-08-13-2051",
