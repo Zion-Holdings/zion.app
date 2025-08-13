@@ -1,0 +1,70 @@
+{
+  "items": [
+    {
+      "title": "Playbook: Agent Ops",
+      "desc": "Patterns to accelerate delivery.",
+      "href": "/reports/innovations/insight-2025-08-13-2120"
+    },
+    {
+      "title": "Guide: Edge AI",
+      "desc": "Patterns to enhance security.",
+      "href": "/reports/innovations/insight-2025-08-13-2100"
+    },
+    {
+      "title": "Checklist: AI QA & Eval",
+      "desc": "Patterns to accelerate delivery.",
+      "href": "/reports/innovations/insight-2025-08-13-2051"
+    },
+    {
+      "title": "Blueprint: LLM Apps",
+      "desc": "Patterns to increase accuracy.",
+      "href": "/reports/innovations/insight-2025-08-13-2050"
+    },
+    {
+      "title": "Blueprint: LLM Apps",
+      "desc": "Patterns to enhance security.",
+      "href": "/reports/innovations/insight-2025-08-13-2040"
+    },
+    {
+      "title": "Runbook: DevSecOps AI",
+      "desc": "Patterns to reduce cost.",
+      "href": "/reports/innovations/insight-2025-08-13-2037"
+    },
+    {
+      "title": "Guide: MLOps",
+      "desc": "Patterns to accelerate delivery.",
+      "href": "/reports/innovations/insight-2025-08-13-2035"
+    },
+    {
+      "title": "Checklist: Agent Ops",
+      "desc": "Patterns to enhance security.",
+      "href": "/reports/innovations/insight-2025-08-13-2032"
+    },
+    {
+      "title": "Pilot Plan: DevSecOps AI",
+      "desc": "Patterns to increase accuracy.",
+      "href": "/reports/innovations/insight-2025-08-13-2030"
+    },
+    {
+      "title": "Blueprint: Edge AI",
+      "desc": "Patterns to enhance security.",
+      "href": "/reports/innovations/insight-2025-08-13-2029"
+    },
+    {
+      "title": "Pilot Plan: DevSecOps AI",
+      "desc": "Patterns to reduce cost.",
+      "href": "/reports/innovations/insight-2025-08-13-2024"
+    },
+    {
+      "title": "Blueprint: MLOps",
+      "desc": "Patterns to improve reliability.",
+      "href": "/reports/innovations/insight-2025-08-13-2021"
+    },
+    {
+      "title": "Blueprint: Agent Ops",
+      "desc": "Patterns to improve reliability.",
+      "href": "/reports/innovations/insight-2025-08-13-2020"
+    }
+  ],
+  "updatedAt": "2025-08-13T21:29:44.911Z"
+}
