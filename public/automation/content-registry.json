@@ -3607,5 +3607,25 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
+<<<<<<< Updated upstream
   "generatedAt": "2025-08-13T21:56:13.772Z"
+=======
+  "generatedAt": "2025-08-13T21:56:00.473Z",
+  "items": [
+    {
+      "title": "Guide — Reports Trends Implementation",
+      "href": "/reports/guides/guide-2025-08-13-215625",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-13T21:56:25.714Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Cloud Improving Continuously",
+      "href": "/reports/patterns/pattern-2025-08-13-215625",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-13T21:56:25.714Z",
+      "source": "cloud-deep-research-factory"
+    }
+  ]
+>>>>>>> Stashed changes
 }
