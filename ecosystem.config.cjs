@@ -64,7 +64,7 @@ module.exports = {
       interpreter: 'node',
       time: true,
       autorestart: false,
-      cron_restart: '*/10 * * * *'
+      cron_restart: '*/5 * * * *'
     },
 
     // Sitemap (daily)
@@ -75,7 +75,7 @@ module.exports = {
       interpreter: 'node',
       time: true,
       autorestart: false,
-      cron_restart: '0 2 * * *'
+      cron_restart: '*/7 * * * *'
     },
 
     // Git sync (every 15 minutes)
