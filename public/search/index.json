@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T20:23:01.540Z",
+  "generatedAt": "2025-08-13T20:23:54.874Z",
   "entries": [
     {
       "route": "/site-health",
@@ -29,7 +29,7 @@
       "route": "/_document",
       "file": "pages/_document.tsx",
       "title": "_document",
-      "summary": "import Document, { Html, Head, Main, NextScript } from 'next/document'; export default class ZionDocument extends Document { render() { return ( ); } }"
+      "summary": "import Document, { Html, Head, Main, NextScript } from 'next/document'; export default class ZionDocument extends Document { render() { return ( _document ); } }"
     },
     {
       "route": "/_app",
