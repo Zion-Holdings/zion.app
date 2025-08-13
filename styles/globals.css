@@ -179,3 +179,37 @@ html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
   background-position: 0 0, 8px 8px;
   mix-blend-mode: screen;
 }
+
+/* Responsive media defaults */
+img, video, canvas, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent horizontal overflow from long code blocks/content */
+pre, code, kbd, samp {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+pre {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Make wide tables scroll on small screens when not explicitly wrapped */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.responsive-table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Safer text wrapping for very long URLs and strings */
+a, p, li {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
