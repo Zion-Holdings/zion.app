@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-13T22:30:00.573Z",
-  "pagesScanned": 968,
+  "generatedAt": "2025-08-13T22:31:01.431Z",
+  "pagesScanned": 974,
   "items": [
     {
       "route": "/_app",
@@ -77,10 +77,7 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -113,6 +110,16 @@
       "suggestion": {
         "title": "ai trends",
         "description": "ai trends — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-13-223010",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
       }
     },
     {
@@ -426,6 +433,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-13-2230",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide: LLM Apps",
+        "description": "Guide: LLM Apps — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-13T20-30",
       "missing": [
         "og:image"
@@ -626,6 +643,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-13T22-30",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-13 22-30",
+        "description": "Innovation Insight — 2025-08-13 22-30 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/patterns/pattern-2025-08-13-215625",
       "missing": [
         "og:image"
@@ -663,6 +690,16 @@
       "suggestion": {
         "title": "Pattern — Cloud Improving Continuously",
         "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-13-223010",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
       }
     },
     {
@@ -9182,10 +9219,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-1930",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 19:30",
@@ -9483,6 +9517,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-13-2230",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Checklist — DevSecOps for AI (2025-08-13 22:30 UTC)",
+        "description": "Autonomous Checklist — DevSecOps for AI (2025-08-13 22:30 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-13T20-30",
       "missing": [
         "og:image"
@@ -9680,6 +9724,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 22-27",
         "description": "Autonomous Update — 2025-08-13 22-27 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13T22-30",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 22-30",
+        "description": "Autonomous Update — 2025-08-13 22-30 — auto-suggested description"
       }
     },
     {
