@@ -177,8 +177,8 @@ export default function Home() {
 
         {/* Automation Engine — New Tools */}
         <section className="mx-auto max-w-7xl px-6 pb-20">
-          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Automation Engine — New Tools</h2>
-          <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Now powered by scheduled cloud functions — no GitHub Actions required. Live homepage promos, health checks, and link integrity run automatically.</p>
+                     <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Live Cloud Automations</h2>
+             <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Autonomous Netlify functions invent, audit, and improve continuously — changes sync to the repo automatically.</p>
           <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { title: 'Autonomous Meta Orchestrator (1m)', desc: 'Triggers prioritized cloud functions and commits a heartbeat to main every minute.', href: '/.netlify/functions/autonomous-meta-orchestrator' },
@@ -302,7 +302,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* AUTO-GENERATED: HOME_UPDATER_START */
+        {/* AUTO-GENERATED: HOME_UPDATER_START */}
  <section className="mx-auto max-w-7xl px-6 pb-16">
    <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Explore more</h2>
    <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
