@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T15:59:38.510Z",
+  "generatedAt": "2025-08-13T16:00:12.983Z",
   "nodes": [
     {
       "id": "automation/a11y-alt-text-auditor.cjs",
@@ -3711,6 +3711,10 @@
     },
     {
       "id": "pages/reports/updates/update-2025-08-13-1259.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-1300.tsx",
       "type": "file"
     },
     {
@@ -9055,6 +9059,11 @@
     },
     {
       "from": "pages/reports/updates/update-2025-08-13-1259.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-1300.tsx",
       "to": "next/head",
       "kind": "external"
     },
