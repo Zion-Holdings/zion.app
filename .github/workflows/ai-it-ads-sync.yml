@@ -37,7 +37,7 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "chore(automation): update ads payload [skip ci]"
-            git push origin HEAD:main
+            git push origin HEAD:ai-it-innovations-automation
           fi
 
 

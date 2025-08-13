@@ -35,7 +35,7 @@ jobs:
             echo "No changes"
           else
             git commit -m "chore: ultrafast sync logs [skip ci]"
-            git push origin HEAD:main
+            git push origin HEAD:ai-it-innovations-automation
           fi
 
 
