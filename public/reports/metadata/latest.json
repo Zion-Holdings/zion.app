@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-13T23:47:00.463Z",
-  "pagesScanned": 1105,
+  "generatedAt": "2025-08-13T23:48:00.425Z",
+  "pagesScanned": 1111,
   "items": [
     {
       "route": "/_app",
@@ -73,7 +73,10 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -246,6 +249,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-13-234443",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-13-234724",
       "missing": [
         "og:image"
       ],
@@ -715,6 +728,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-13-2347",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Blueprint: Agent Ops",
+        "description": "Blueprint: Agent Ops — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-13T20-30",
       "missing": [
         "og:image"
@@ -1065,6 +1088,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-13T23-47",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-13 23-47",
+        "description": "Innovation Insight — 2025-08-13 23-47 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/patterns/pattern-2025-08-13-215625",
       "missing": [
         "og:image"
@@ -1246,6 +1279,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-13-234443",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-13-234725",
       "missing": [
         "og:image"
       ],
@@ -10357,10 +10400,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-2047",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 20:47",
@@ -10685,6 +10725,16 @@
       "suggestion": {
         "title": "Autonomous Validation & QA Plan — Data Engineering (2025-08-13 23:44 UTC)",
         "description": "Autonomous Validation & QA Plan — Data Engineering (2025-08-13 23:44 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2347",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Blueprint — Edge AI & IoT (2025-08-13 23:47 UTC)",
+        "description": "Autonomous Blueprint — Edge AI & IoT (2025-08-13 23:47 UTC) — auto-suggested description"
       }
     },
     {
@@ -11035,6 +11085,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 23-44",
         "description": "Autonomous Update — 2025-08-13 23-44 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13T23-47",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 23-47",
+        "description": "Autonomous Update — 2025-08-13 23-47 — auto-suggested description"
       }
     },
     {
