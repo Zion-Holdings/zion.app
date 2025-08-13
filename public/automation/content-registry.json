@@ -117,6 +117,10 @@
       "route": "/reports/innovations"
     },
     {
+      "file": "pages/main/front/index.tsx",
+      "route": "/main/front"
+    },
+    {
       "file": "pages/reports/updates/update-2025-08-13T20-51.tsx",
       "route": "/reports/updates/update-2025-08-13T20-51"
     },
@@ -3351,10 +3355,6 @@
     {
       "file": "pages/reports/updates/update-2025-08-12-1417.tsx",
       "route": "/reports/updates/update-2025-08-12-1417"
-    },
-    {
-      "file": "pages/main/front/index.tsx",
-      "route": "/main/front"
     }
   ],
   "docs": [
@@ -3391,5 +3391,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-13T20:58:15.149Z"
+  "generatedAt": "2025-08-13T20:58:40.044Z"
 }
