@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from 'react';
 
-export default function FuturisticLayout({ children }: PropsWithChildren<{}>) {
+export default function FuturisticLayout({ children }: PropsWithChildren<object>) {
   return (
     <div className="relative min-h-screen bg-slate-950 overflow-hidden">
       {/* Aurora gradient background */}
