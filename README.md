@@ -1,6 +1,6 @@
 # bolt.new.zion.app
 
-![Automations: 30](https://img.shields.io/badge/Automations-30-informational) ![Pages: 756](https://img.shields.io/badge/Pages-756-success) ![Components: 4](https://img.shields.io/badge/Components-4-blue)
+![Automations: 34](https://img.shields.io/badge/Automations-34-informational) ![Pages: 769](https://img.shields.io/badge/Pages-769-success) ![Components: 4](https://img.shields.io/badge/Components-4-blue)
 
 Autonomous, cloud‑native app with self‑running automations.
 
@@ -22,9 +22,12 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 - /_app
 - /_document
 - /automation
+- /explore
 - /front
 - /main/front
 - /newsroom
+- /reports
+- /reports/ai-lab
 - /reports/ai-trends
 - /reports/roadmap
 - /reports/seo
@@ -773,11 +776,24 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 - /reports/updates/update-2025-08-13-1411
 - /reports/updates/update-2025-08-13-1412
 - /reports/updates/update-2025-08-13-1413
+- /reports/updates/update-2025-08-13-1645
+- /reports/updates/update-2025-08-13-1646
+- /reports/updates/update-2025-08-13-1647
+- /reports/updates/update-2025-08-13-1648
+- /reports/updates/update-2025-08-13-1649
+- /reports/updates/update-2025-08-13-1655
+- /reports/updates/update-2025-08-13-1656
+- /reports/updates/update-2025-08-13-1942
+- /reports/updates/update-2025-08-13-2007
+- /search
 - /site-health
 
 ### Automations
 - [Actionlint](https://github.com/Zion-Holdings/zion/actions/workflows/actionlint.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/actionlint.yml/badge.svg)
 - [Agent Of Agents Trigger](https://github.com/Zion-Holdings/zion/actions/workflows/agent-of-agents-trigger.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/agent-of-agents-trigger.yml/badge.svg)
+- [Ai Content Autonomy](https://github.com/Zion-Holdings/zion/actions/workflows/ai-content-autonomy.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ai-content-autonomy.yml/badge.svg)
+- [Ai Content Factory](https://github.com/Zion-Holdings/zion/actions/workflows/ai-content-factory.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ai-content-factory.yml/badge.svg)
+- [Ai Research Scout](https://github.com/Zion-Holdings/zion/actions/workflows/ai-research-scout.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ai-research-scout.yml/badge.svg)
 - [Ai Trends Radar](https://github.com/Zion-Holdings/zion/actions/workflows/ai-trends-radar.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ai-trends-radar.yml/badge.svg)
 - [Automation Advertiser](https://github.com/Zion-Holdings/zion/actions/workflows/automation-advertiser.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/automation-advertiser.yml/badge.svg)
 - [Ci Self Heal](https://github.com/Zion-Holdings/zion/actions/workflows/ci-self-heal.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ci-self-heal.yml/badge.svg)
@@ -788,6 +804,7 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 - [Cursor Chat](https://github.com/Zion-Holdings/zion/actions/workflows/cursor-chat.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/cursor-chat.yml/badge.svg)
 - [Docs Intelligence](https://github.com/Zion-Holdings/zion/actions/workflows/docs-intelligence.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/docs-intelligence.yml/badge.svg)
 - [Front Scheduler](https://github.com/Zion-Holdings/zion/actions/workflows/front-scheduler.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/front-scheduler.yml/badge.svg)
+- [Git Ultrafast Sync](https://github.com/Zion-Holdings/zion/actions/workflows/git-ultrafast-sync.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/git-ultrafast-sync.yml/badge.svg)
 - [Guardian Scheduler](https://github.com/Zion-Holdings/zion/actions/workflows/guardian-scheduler.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/guardian-scheduler.yml/badge.svg)
 - [Instagram Marketing](https://github.com/Zion-Holdings/zion/actions/workflows/instagram-marketing.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/instagram-marketing.yml/badge.svg)
 - [Knowledge Graph Radar](https://github.com/Zion-Holdings/zion/actions/workflows/knowledge-graph-radar.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/knowledge-graph-radar.yml/badge.svg)
