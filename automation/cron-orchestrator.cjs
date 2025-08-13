@@ -29,6 +29,7 @@ async function main() {
     run('node automation/front-index-auto-advertiser.cjs');
     run('node automation/homepage-auto-advertiser.cjs');
     run('node automation/sitemap-runner.cjs');
+    run('node automation/footer-injector.cjs');
   } catch {}
 
   const intervals = [
@@ -42,6 +43,7 @@ async function main() {
     { ms: 6 * 60 * 60 * 1000, fn: () => { run('node automation/site-link-crawler.cjs'); run('node automation/site-link-fixer.cjs'); } },
     // Daily at approx midnight: sitemap (approximation via long interval)
     { ms: 24 * 60 * 60 * 1000, fn: () => run('node automation/sitemap-runner.cjs') }
+    ,{ ms: 30 * 60 * 1000, fn: () => run('node automation/footer-injector.cjs') }
   ];
 
   // Looping scheduler (drift-tolerant simple intervals)
