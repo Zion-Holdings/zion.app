@@ -1,6 +1,6 @@
 # bolt.new.zion.app
 
-![Automations: 38](https://img.shields.io/badge/Automations-38-informational) ![Pages: 777](https://img.shields.io/badge/Pages-777-success) ![Components: 4](https://img.shields.io/badge/Components-4-blue)
+![Automations: 40](https://img.shields.io/badge/Automations-40-informational) ![Pages: 841](https://img.shields.io/badge/Pages-841-success) ![Components: 5](https://img.shields.io/badge/Components-5-blue)
 
 Autonomous, cloud‑native app with self‑running automations.
 
@@ -30,6 +30,22 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 - /reports/ai-lab
 - /reports/ai-trends
 - /reports/innovations
+- /reports/innovations/insight-2025-08-13-2020
+- /reports/innovations/insight-2025-08-13-2021
+- /reports/innovations/insight-2025-08-13-2024
+- /reports/innovations/insight-2025-08-13-2029
+- /reports/innovations/insight-2025-08-13-2030
+- /reports/innovations/insight-2025-08-13-2032
+- /reports/innovations/insight-2025-08-13-2035
+- /reports/innovations/insight-2025-08-13-2037
+- /reports/innovations/insight-2025-08-13-2040
+- /reports/innovations/insight-2025-08-13-2050
+- /reports/innovations/insight-2025-08-13-2051
+- /reports/innovations/insight-2025-08-13T20-30
+- /reports/innovations/insight-2025-08-13T20-37
+- /reports/innovations/insight-2025-08-13T20-40
+- /reports/innovations/insight-2025-08-13T20-50
+- /reports/innovations/insight-2025-08-13T20-51
 - /reports/roadmap
 - /reports/seo
 - /reports/updates/update-2025-08-12-1417
@@ -784,15 +800,63 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 - /reports/updates/update-2025-08-13-1649
 - /reports/updates/update-2025-08-13-1655
 - /reports/updates/update-2025-08-13-1656
-- /reports/updates/update-2025-08-13-1657
-- /reports/updates/update-2025-08-13-1658
-- /reports/updates/update-2025-08-13-1659
-- /reports/updates/update-2025-08-13-1704
-- /reports/updates/update-2025-08-13-1705
-- /reports/updates/update-2025-08-13-1706
+- /reports/updates/update-2025-08-13-1710
+- /reports/updates/update-2025-08-13-1711
+- /reports/updates/update-2025-08-13-1712
+- /reports/updates/update-2025-08-13-1713
+- /reports/updates/update-2025-08-13-1714
+- /reports/updates/update-2025-08-13-1715
+- /reports/updates/update-2025-08-13-1716
+- /reports/updates/update-2025-08-13-1717
+- /reports/updates/update-2025-08-13-1718
+- /reports/updates/update-2025-08-13-1719
+- /reports/updates/update-2025-08-13-1720
+- /reports/updates/update-2025-08-13-1721
+- /reports/updates/update-2025-08-13-1722
+- /reports/updates/update-2025-08-13-1723
+- /reports/updates/update-2025-08-13-1724
+- /reports/updates/update-2025-08-13-1725
+- /reports/updates/update-2025-08-13-1726
+- /reports/updates/update-2025-08-13-1727
+- /reports/updates/update-2025-08-13-1728
+- /reports/updates/update-2025-08-13-1729
+- /reports/updates/update-2025-08-13-1731
+- /reports/updates/update-2025-08-13-1732
+- /reports/updates/update-2025-08-13-1733
+- /reports/updates/update-2025-08-13-1734
+- /reports/updates/update-2025-08-13-1735
+- /reports/updates/update-2025-08-13-1736
+- /reports/updates/update-2025-08-13-1737
+- /reports/updates/update-2025-08-13-1738
+- /reports/updates/update-2025-08-13-1739
+- /reports/updates/update-2025-08-13-1740
+- /reports/updates/update-2025-08-13-1741
+- /reports/updates/update-2025-08-13-1742
+- /reports/updates/update-2025-08-13-1749
+- /reports/updates/update-2025-08-13-1750
+- /reports/updates/update-2025-08-13-1751
+- /reports/updates/update-2025-08-13-1752
+- /reports/updates/update-2025-08-13-1753
+- /reports/updates/update-2025-08-13-1754
 - /reports/updates/update-2025-08-13-1942
-- /reports/updates/update-2025-08-13-1957
-- /reports/updates/update-2025-08-13-2005
+- /reports/updates/update-2025-08-13-2007
+- /reports/updates/update-2025-08-13-2010
+- /reports/updates/update-2025-08-13-2020
+- /reports/updates/update-2025-08-13-2021
+- /reports/updates/update-2025-08-13-2024
+- /reports/updates/update-2025-08-13-2029
+- /reports/updates/update-2025-08-13-2030
+- /reports/updates/update-2025-08-13-2032
+- /reports/updates/update-2025-08-13-2035
+- /reports/updates/update-2025-08-13-2037
+- /reports/updates/update-2025-08-13-2040
+- /reports/updates/update-2025-08-13-2050
+- /reports/updates/update-2025-08-13-2051
+- /reports/updates/update-2025-08-13T20-30
+- /reports/updates/update-2025-08-13T20-37
+- /reports/updates/update-2025-08-13T20-40
+- /reports/updates/update-2025-08-13T20-50
+- /reports/updates/update-2025-08-13T20-51
 - /search
 - /site-health
 
@@ -810,6 +874,8 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 - [Automation Advertiser](https://github.com/Zion-Holdings/zion/actions/workflows/automation-advertiser.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/automation-advertiser.yml/badge.svg)
 - [Ci Self Heal](https://github.com/Zion-Holdings/zion/actions/workflows/ci-self-heal.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ci-self-heal.yml/badge.svg)
 - [Ci](https://github.com/Zion-Holdings/zion/actions/workflows/ci.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ci.yml/badge.svg)
+- [Cloud Agents Fast](https://github.com/Zion-Holdings/zion/actions/workflows/cloud-agents-fast.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/cloud-agents-fast.yml/badge.svg)
+- [Cloud Agents](https://github.com/Zion-Holdings/zion/actions/workflows/cloud-agents.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/cloud-agents.yml/badge.svg)
 - [Cloud Autonomous Orchestrator](https://github.com/Zion-Holdings/zion/actions/workflows/cloud-autonomous-orchestrator.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/cloud-autonomous-orchestrator.yml/badge.svg)
 - [Codeql](https://github.com/Zion-Holdings/zion/actions/workflows/codeql.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/codeql.yml/badge.svg)
 - [Commitlint](https://github.com/Zion-Holdings/zion/actions/workflows/commitlint.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/commitlint.yml/badge.svg)
