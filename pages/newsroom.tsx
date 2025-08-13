@@ -6,10 +6,7 @@ export default function Newsroom() {
       <Head>
         <title>Newsroom — Curated Tech Headlines</title>
         <meta name="description" content="Curated technology and AI headlines from reputable sources." />
-      
-        <meta property="og:title" content="Newsroom" />
-        <meta property="og:description" content="Newsroom — automatically suggested description." />
-        <meta name="twitter:card" content="summary_large_image" /></Head>
+      </Head>
       <main className="container mx-auto px-4 py-12">
         <h1 className="text-4xl font-extrabold mb-2">Newsroom</h1>
         <p className="text-white/70 mb-6">Updated automatically from multiple sources.</p>
@@ -47,19 +44,31 @@ export default function Newsroom() {
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/13/google-ceo-adds-a-new-calendar-feature-at-stripe-co-founders-request/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Google CEO adds a new calendar feature at Stripe co-founder’s request</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/13/indias-rapido-begins-testing-food-delivery-to-take-on-swiggy-zomato/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">India’s Rapido begins testing food delivery to take on Swiggy, Zomato</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/13/instagram-is-developing-a-feature-that-helps-users-find-shared-interests/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Instagram is developing a feature that helps users find shared interests</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/13/monarch-tractors-wont-be-built-by-foxconn-after-ohio-factory-sale/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Monarch Tractors won’t be built by Foxconn after Ohio factory sale</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/13/nasa-has-sparked-a-race-to-develop-the-data-pipeline-to-mars/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">NASA has sparked a race to develop the data pipeline to Mars</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
             <a href="https://techcrunch.com/2025/08/13/pocket-fm-gives-its-writers-an-ai-tool-to-transform-narratives-write-cliffhangers-and-more/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Pocket FM gives its writers an AI tool to transform narratives, write cliffhangers, and more</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
             <a href="https://techcrunch.com/2025/08/13/amazon-rolls-out-same-day-delivery-of-perishable-groceries-in-1000-us-cities/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Amazon rolls out same-day delivery of perishable groceries in 1,000 US cities</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/13/apple-dismisses-elon-musks-claims-that-app-store-favors-openai-over-other-ai-apps/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Apple dismisses Elon Musk’s claims that App Store favors OpenAI over other AI apps</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/13/neologic-wants-to-build-more-energy-efficient-cpus-for-ai-data-centers/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">NeoLogic wants to build more energy-efficient CPUs for AI data centers</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
@@ -83,16 +92,8 @@ export default function Newsroom() {
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/07/openais-gpt-5-is-here/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">OpenAI’s GPT-5 is here</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/07/the-backlash-against-duolingo-going-ai-first-didnt-even-matter/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">The backlash against Duolingo going ‘AI-first’ didn’t even matter</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/storyline/wwdc-2025-live-updates-a-fresh-look-for-ios-a-dedicated-gaming-app-and-more/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">WWDC 2025 live updates: iOS 26, Liquid Glass, Apple Intelligence updates, and everything else revealed</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
+            <a href="https://www.theverge.com/news/715343/youtube-age-estimation-ai-minor-account-restrictions" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">YouTube will identify and restrict minors’ accounts with AI</a>
+            <span className="text-white/50 ml-2">(The Verge)</span>
           </li>
         </ul>
       </main>
