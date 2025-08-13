@@ -42,7 +42,7 @@
     "prebuild": "npm run netlify:manifest",
     "export": "NODE_OPTIONS=--openssl-legacy-provider next build && next export && if [ -f _redirects ]; then cp -f _redirects out/_redirects; fi",
     "start": "next start",
-    "postbuild": "",
+    "postbuild": "node automation/footer-injector.cjs || true",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "type-check": "tsc --noEmit",
           "prepare": "git config core.hooksPath .husky || true",
