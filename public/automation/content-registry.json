@@ -1,10 +1,6 @@
 {
   "pages": [
     {
-      "file": "pages/site-health.tsx",
-      "route": "/site-health"
-    },
-    {
       "file": "pages/newsroom.tsx",
       "route": "/newsroom"
     },
@@ -35,6 +31,26 @@
     {
       "file": "pages/main/front/index.tsx",
       "route": "/main/front"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-13-0826.tsx",
+      "route": "/reports/updates/update-2025-08-13-0826"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-13-0825.tsx",
+      "route": "/reports/updates/update-2025-08-13-0825"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-13-0824.tsx",
+      "route": "/reports/updates/update-2025-08-13-0824"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-13-0823.tsx",
+      "route": "/reports/updates/update-2025-08-13-0823"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-13-0821.tsx",
+      "route": "/reports/updates/update-2025-08-13-0821"
     },
     {
       "file": "pages/reports/updates/update-2025-08-13-0807.tsx",
@@ -2099,5 +2115,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-13T11:11:10.536Z"
+  "generatedAt": "2025-08-13T11:26:00.591Z"
 }
