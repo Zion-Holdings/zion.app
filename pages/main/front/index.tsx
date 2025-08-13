@@ -376,7 +376,7 @@ export default function MainFrontIndex() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.5 }}
-          className="mx-auto max-w-7xl px-6 pb-14"
+          className="mx-auto max-w-7xl px-6 pb-14 scroll-mt-28 md:scroll-mt-32"
         >
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Autonomous Engines (Beyond GitHub Actions)</h2>
 
@@ -415,7 +415,7 @@ export default function MainFrontIndex() {
         </motion.section>
 
         {/* Command Center */}
-        <section id="command-center" className="mx-auto max-w-7xl px-6 pb-14">
+        <section id="command-center" className="mx-auto max-w-7xl px-6 pb-14 scroll-mt-28 md:scroll-mt-32">
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Command Center</h2>
           <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {[
