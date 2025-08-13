@@ -6,24 +6,25 @@ export default function Newsroom() {
       <Head>
         <title>Newsroom — Curated Tech Headlines</title>
         <meta name="description" content="Curated technology and AI headlines from reputable sources." />
-      
-        <meta property="og:title" content="Newsroom" />
-        <meta property="og:description" content="Newsroom — automatically suggested description." />
-        <meta name="twitter:card" content="summary_large_image" /></Head>
+      </Head>
       <main className="container mx-auto px-4 py-12">
         <h1 className="text-4xl font-extrabold mb-2">Newsroom</h1>
         <p className="text-white/70 mb-6">Updated automatically from multiple sources.</p>
         <ul className="list-disc pl-6 space-y-1">
           <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/13/amazon-rolls-out-same-day-delivery-of-perishable-groceries-in-1000-us-cities/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Amazon rolls out same-day delivery of perishable groceries in 1,000 US cities</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
             <a href="https://techcrunch.com/2025/08/13/anthropic-nabs-humanloop-team-as-competition-for-enterprise-ai-talent-heats-up/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Anthropic nabs Humanloop team as competition for enterprise AI talent heats up</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/13/how-we-found-teaonher-spilling-users-drivers-licenses-in-less-than-10-minutes/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">How we found TeaOnHer spilling users’ driver’s licenses in less than 10 minutes</a>
+            <a href="https://techcrunch.com/2025/08/13/pebbles-smartwatch-is-back-pebble-time-2-specs-revealed/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Pebble’s smartwatch is back: Pebble Time 2 specs revealed</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/13/pebbles-smartwatch-is-back-pebble-time-2-specs-revealed/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Pebble’s smartwatch is back: Pebble Time 2 specs revealed</a>
+            <a href="https://techcrunch.com/2025/08/13/how-we-found-teaonher-spilling-users-drivers-licenses-in-less-than-10-minutes/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">How we found TeaOnHer spilling users’ driver’s licenses in less than 10 minutes</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
@@ -36,10 +37,6 @@ export default function Newsroom() {
           </li>
           <li className="py-2">
             <a href="https://techcrunch.com/podcast/women-are-making-real-progress-in-venture-capital-and-the-numbers-prove-it/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Women are making real progress in venture capital, and the numbers prove it</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/12/sam-altman-openai-will-reportedly-back-a-startup-that-takes-on-musks-neuralink/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Sam Altman, OpenAI will reportedly back a startup that takes on Musk’s Neuralink</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
