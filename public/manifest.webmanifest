@@ -1,4 +1,21 @@
 {
+  "name": "Zion — Autonomous Cloud Automations",
+  "short_name": "Zion",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "description": "Futuristic, cloud-native autonomous automations that innovate, optimize, and sync changes continuously.",
+  "icons": [
+    {
+      "src": "/og/zion-tech-group.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    }
+  ]
+}
+
+{
   "name": "Zion Tech Group",
   "short_name": "Zion",
   "start_url": "/",
