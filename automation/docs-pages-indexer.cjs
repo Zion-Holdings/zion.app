@@ -2,13 +2,19 @@
 
 const fs = require('fs');
 const path = require('path');
-const { glob } = require('glob');
+
+// glob@>=10 is ESM-only. Load it via dynamic import for compatibility in CJS.
+async function getGlob() {
+  const mod = await import('glob');
+  return mod.glob;
+}
 
 function ensureDir(dirPath) {
   fs.mkdirSync(dirPath, { recursive: true });
 }
 
 async function indexPages(rootDir) {
+  const glob = await getGlob();
   const pages = await glob(['pages/**/*.{js,jsx,ts,tsx,md,mdx}'], {
     cwd: rootDir,
     nodir: true,
