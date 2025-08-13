@@ -1,9 +1,4 @@
 {
-<<<<<<< Updated upstream
-  "generatedAt": "2025-08-13T21:48:31.820Z",
-  "files": [
-    "update-2025-08-13-1848.tsx",
-=======
   "generatedAt": "2025-08-13T21:54:29.652Z",
   "files": [
     "update-2025-08-13T21-54.tsx",
@@ -19,13 +14,7 @@
     "update-2025-08-13T21-50.tsx",
     "update-2025-08-13-2150.tsx",
     "update-2025-08-13-2147.tsx",
->>>>>>> Stashed changes
     "update-2025-08-13T21-47.tsx",
-    "update-2025-08-13-2147.tsx",
-    "update-2025-08-13-1847.tsx",
-    "update-2025-08-13-1846.tsx",
-    "update-2025-08-13-1845.tsx",
-    "update-2025-08-13-1844.tsx",
     "update-2025-08-13-1843.tsx",
     "update-2025-08-13-1842.tsx",
     "update-2025-08-13-1841.tsx",
@@ -111,22 +100,6 @@
     "update-2025-08-13-1715.tsx",
     "update-2025-08-13-1714.tsx",
     "update-2025-08-13-1713.tsx",
-<<<<<<< Updated upstream
-    "update-2025-08-13-1712.tsx",
-    "update-2025-08-13-1711.tsx",
-    "update-2025-08-13-2010.tsx",
-    "update-2025-08-13-1710.tsx",
-    "update-2025-08-13-2007.tsx",
-    "update-2025-08-13-1655.tsx",
-    "update-2025-08-13-1656.tsx",
-    "update-2025-08-13-1649.tsx"
-  ],
-  "metrics": {
-    "diversityScore": 99,
-    "avgLen": 1968,
-    "duplicateCount": 1,
-    "seoScore": 70
-=======
     "update-2025-08-13-1712.tsx"
   ],
   "metrics": {
@@ -134,7 +107,6 @@
     "avgLen": 1935,
     "duplicateCount": 1,
     "seoScore": 66
->>>>>>> Stashed changes
   },
   "guidance": [
     "Aim for varied intros, highlights, and CTAs across updates.",

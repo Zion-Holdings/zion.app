@@ -1,50 +1,82 @@
 {
-  "pages": [
+  "items": [
     {
-      "file": "pages/site-health.tsx",
-      "route": "/site-health"
+      "title": "Guide — Reports Trends Implementation",
+      "href": "/reports/guides/guide-2025-08-13-215430",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-13T21:54:30.018Z",
+      "source": "cloud-deep-research-factory"
     },
     {
-      "file": "pages/search.tsx",
-      "route": "/search"
+      "title": "Pattern — Cloud Improving Continuously",
+      "href": "/reports/patterns/pattern-2025-08-13-215430",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-13T21:54:30.018Z",
+      "source": "cloud-deep-research-factory"
     },
     {
-      "file": "pages/newsroom.tsx",
-      "route": "/newsroom"
+      "title": "Innovation Insight — 2025-08-13 21-54",
+      "href": "/reports/innovations/insight-2025-08-13T21-54",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-13T21:54:29.544Z",
+      "source": "cloud-content-factory"
     },
     {
-      "file": "pages/index.tsx",
-      "route": "/"
+      "title": "Autonomous Update — 2025-08-13 21-54",
+      "href": "/reports/updates/update-2025-08-13T21-54",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-13T21:54:29.544Z",
+      "source": "cloud-content-factory"
     },
     {
-      "file": "pages/reports/seo.tsx",
-      "route": "/reports/seo"
+      "title": "Innovation Insight — 2025-08-13 21-54",
+      "href": "/reports/innovations/insight-2025-08-13T21-54",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-13T21:54:29.399Z",
+      "source": "cloud-content-factory"
     },
     {
-      "file": "pages/reports/roadmap.tsx",
-      "route": "/reports/roadmap"
+      "title": "Autonomous Update — 2025-08-13 21-54",
+      "href": "/reports/updates/update-2025-08-13T21-54",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-13T21:54:29.399Z",
+      "source": "cloud-content-factory"
     },
     {
-      "file": "pages/reports/index.tsx",
-      "route": "/reports"
+      "title": "Innovation Insight — 2025-08-13 21-54",
+      "href": "/reports/innovations/insight-2025-08-13T21-54",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-13T21:54:23.893Z",
+      "source": "cloud-content-factory"
     },
     {
-      "file": "pages/reports/ai-trends.tsx",
-      "route": "/reports/ai-trends"
+      "title": "Autonomous Update — 2025-08-13 21-54",
+      "href": "/reports/updates/update-2025-08-13T21-54",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-13T21:54:23.893Z",
+      "source": "cloud-content-factory"
     },
     {
-      "file": "pages/reports/ai-lab.tsx",
-      "route": "/reports/ai-lab"
+      "title": "Innovation Insight — 2025-08-13 21-54",
+      "href": "/reports/innovations/insight-2025-08-13T21-54",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-13T21:54:23.746Z",
+      "source": "cloud-content-factory"
     },
     {
-      "file": "pages/front/index.tsx",
-      "route": "/front"
+      "title": "Autonomous Update — 2025-08-13 21-54",
+      "href": "/reports/updates/update-2025-08-13T21-54",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-13T21:54:23.746Z",
+      "source": "cloud-content-factory"
     },
     {
-      "file": "pages/explore/index.tsx",
-      "route": "/explore"
+      "id": "cursor-chat-2025-08-13T21:54:24.137Z",
+      "type": "cursor-chat",
+      "timestamp": "2025-08-13T21:54:24.137Z"
     },
     {
+<<<<<<< Updated upstream
       "file": "pages/automation/index.tsx",
       "route": "/automation"
     },
@@ -3596,4 +3628,11 @@
     }
   ],
   "generatedAt": "2025-08-13T21:48:46.140Z"
+=======
+      "id": "cursor-chat-2025-08-13T21:54:29.792Z",
+      "type": "cursor-chat",
+      "timestamp": "2025-08-13T21:54:29.792Z"
+    }
+  ]
+>>>>>>> Stashed changes
 }
