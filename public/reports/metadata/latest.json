@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-13T20:35:00.482Z",
-  "pagesScanned": 809,
+  "generatedAt": "2025-08-13T20:36:00.551Z",
+  "pagesScanned": 813,
   "items": [
     {
       "route": "/_app",
@@ -19,6 +19,9 @@
     {
       "route": "/_document",
       "missing": [
+        "description",
+        "og:title",
+        "og:description",
         "og:image"
       ],
       "suggestion": {
@@ -77,7 +80,10 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -190,6 +196,16 @@
       "suggestion": {
         "title": "Checklist: Agent Ops",
         "description": "Checklist: Agent Ops — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-13-2035",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide: MLOps",
+        "description": "Guide: MLOps — auto-suggested description"
       }
     },
     {
@@ -7987,6 +8003,29 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-13-1735",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 17:35",
+        "description": "Autonomous Update — 2025-08-13 17:35 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1736",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 17:36",
+        "description": "Autonomous Update — 2025-08-13 17:36 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-13-1942",
       "missing": [
         "og:image"
@@ -8074,6 +8113,16 @@
       "suggestion": {
         "title": "Autonomous Validation & QA Plan — AI Service Design (2025-08-13 20:32 UTC)",
         "description": "Autonomous Validation & QA Plan — AI Service Design (2025-08-13 20:32 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2035",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Security Hardening Guide — MLOps & Model Reliability (2025-08-13 20:35 UTC)",
+        "description": "Autonomous Security Hardening Guide — MLOps & Model Reliability (2025-08-13 20:35 UTC) — auto-suggested description"
       }
     },
     {
