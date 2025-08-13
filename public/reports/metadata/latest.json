@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-13T22:50:00.618Z",
-  "pagesScanned": 1005,
+  "generatedAt": "2025-08-13T22:51:00.635Z",
+  "pagesScanned": 1012,
   "items": [
     {
       "route": "/_app",
@@ -134,6 +134,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-13-224010",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-13-225014",
       "missing": [
         "og:image"
       ],
@@ -483,6 +493,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-13-2250",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide: LLM Apps",
+        "description": "Guide: LLM Apps — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-13T20-30",
       "missing": [
         "og:image"
@@ -713,6 +733,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-13T22-50",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-13 22-50",
+        "description": "Innovation Insight — 2025-08-13 22-50 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/patterns/pattern-2025-08-13-215625",
       "missing": [
         "og:image"
@@ -774,6 +804,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-13-224010",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-13-225015",
       "missing": [
         "og:image"
       ],
@@ -9499,14 +9539,24 @@
     {
       "route": "/reports/updates/update-2025-08-13-1950",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 19:50",
+        "description": "Autonomous Update — 2025-08-13 19:50 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1951",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-13 19:50",
-        "description": "Autonomous Update — 2025-08-13 19:50 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-13 19:51",
+        "description": "Autonomous Update — 2025-08-13 19:51 — auto-suggested description"
       }
     },
     {
@@ -9820,6 +9870,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-13-2250",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Security Hardening Guide — Cloud Cost Optimization (2025-08-13 22:50 UTC)",
+        "description": "Autonomous Security Hardening Guide — Cloud Cost Optimization (2025-08-13 22:50 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-13T20-30",
       "missing": [
         "og:image"
@@ -10047,6 +10107,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 22-40",
         "description": "Autonomous Update — 2025-08-13 22-40 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13T22-50",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 22-50",
+        "description": "Autonomous Update — 2025-08-13 22-50 — auto-suggested description"
       }
     },
     {
