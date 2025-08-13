@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-13T20:07:00.658Z",
-  "pagesScanned": 778,
+  "generatedAt": "2025-08-13T20:08:00.412Z",
+  "pagesScanned": 780,
   "items": [
     {
       "route": "/_app",
@@ -7739,14 +7739,24 @@
     {
       "route": "/reports/updates/update-2025-08-13-1707",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 17:07",
+        "description": "Autonomous Update — 2025-08-13 17:07 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1708",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-13 17:07",
-        "description": "Autonomous Update — 2025-08-13 17:07 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-13 17:08",
+        "description": "Autonomous Update — 2025-08-13 17:08 — auto-suggested description"
       }
     },
     {
@@ -7777,6 +7787,16 @@
       "suggestion": {
         "title": "Autonomous Checklist — Agentic Workflows (2025-08-13 20:05 UTC)",
         "description": "Autonomous Checklist — Agentic Workflows (2025-08-13 20:05 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2007",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Capability Map — Edge AI & IoT (2025-08-13 20:07 UTC)",
+        "description": "Autonomous Capability Map — Edge AI & IoT (2025-08-13 20:07 UTC) — auto-suggested description"
       }
     },
     {
