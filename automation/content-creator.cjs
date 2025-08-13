@@ -157,6 +157,13 @@ function main() {
   log('content-creator: start');
   ensureDir(UPDATES_DIR);
   const page = writeContentPage();
+  try {
+    // Attempt to inject research snapshot into the latest update (best effort)
+    const injector = path.join(ROOT, 'automation', 'research-injector.cjs');
+    if (fs.existsSync(injector)) {
+      run('node', [injector]);
+    }
+  } catch {}
   const changed = updateHomepage();
 
   // Refresh registries and auxiliary promos
