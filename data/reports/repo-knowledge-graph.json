@@ -1,9 +1,5 @@
 {
-<<<<<<< Updated upstream
-  "generatedAt": "2025-08-13T12:22:58.032Z",
-=======
-  "generatedAt": "2025-08-13T12:31:59.531Z",
->>>>>>> Stashed changes
+  "generatedAt": "2025-08-13T12:38:04.652Z",
   "nodes": [
     {
       "id": "automation/a11y-alt-text-auditor.cjs",
@@ -3018,12 +3014,6 @@
       "type": "file"
     },
     {
-<<<<<<< Updated upstream
-=======
-      "id": "pages/reports/updates/update-2025-08-13-0923.tsx",
-      "type": "file"
-    },
-    {
       "id": "pages/reports/updates/update-2025-08-13-0924.tsx",
       "type": "file"
     },
@@ -3056,7 +3046,34 @@
       "type": "file"
     },
     {
->>>>>>> Stashed changes
+      "id": "pages/reports/updates/update-2025-08-13-0932.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-0933.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-0934.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-0935.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-0936.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-0937.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-0938.tsx",
+      "type": "file"
+    },
+    {
       "id": "pages/site-health.tsx",
       "type": "file"
     },
@@ -7542,13 +7559,6 @@
       "kind": "external"
     },
     {
-<<<<<<< Updated upstream
-=======
-      "from": "pages/reports/updates/update-2025-08-13-0923.tsx",
-      "to": "next/head",
-      "kind": "external"
-    },
-    {
       "from": "pages/reports/updates/update-2025-08-13-0924.tsx",
       "to": "next/head",
       "kind": "external"
@@ -7589,7 +7599,41 @@
       "kind": "external"
     },
     {
->>>>>>> Stashed changes
+      "from": "pages/reports/updates/update-2025-08-13-0932.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-0933.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-0934.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-0935.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-0936.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-0937.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-0938.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
       "from": "pages/site-health.tsx",
       "to": "next/head",
       "kind": "external"
