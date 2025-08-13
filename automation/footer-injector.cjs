@@ -36,9 +36,8 @@ function listHtmlFiles(dir) {
 }
 
 function buildFooterHtml() {
-  const year = new Date().getFullYear();
   return (
-    `\n<footer class="w-full border-t border-gray-200 bg-white text-gray-700"><div class="mx-auto max-w-6xl px-4 py-8"><div class="flex flex-col items-center justify-between gap-3 sm:flex-row"><p class="text-sm">© ${year} Zion Tech Group. All rights reserved.</p><nav class="flex items-center gap-4 text-sm"><a class="hover:underline" href="/">Home</a><a class="hover:underline" href="/newsroom">Newsroom</a><a class="hover:underline" href="/site-health">Site Health</a><a class="hover:underline" href="https://ziontechgroup.com" target="_blank" rel="noopener noreferrer">ziontechgroup.com</a></nav></div></div></footer>\n`
+    `\n<footer class="border-t border-white/10 bg-black/20"><div class="mx-auto max-w-7xl px-6 py-8 text-sm text-white/70 flex flex-col gap-3 md:flex-row md:items-center md:justify-between"><div><span class="font-semibold text-white">Zion</span> — Autonomous Cloud Automations</div><nav class="flex flex-wrap items-center gap-4"><a href="/automation" class="hover:text-white">Automations</a><a href="/site-health" class="hover:text-white">Site Health</a><a href="/newsroom" class="hover:text-white">Newsroom</a><a href="https://ziontechgroup.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">ziontechgroup.com</a></nav></div></footer>\n`
   );
 }
 
