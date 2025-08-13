@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-13T23:40:41.256Z",
-  "pagesScanned": 1092,
+  "generatedAt": "2025-08-13T23:41:00.482Z",
+  "pagesScanned": 1093,
   "items": [
     {
       "route": "/_app",
@@ -10252,6 +10252,19 @@
       "suggestion": {
         "title": "Autonomous Playbook — MLOps & Model Reliability (2025-08-13 20:40 UTC)",
         "description": "Autonomous Playbook — MLOps & Model Reliability (2025-08-13 20:40 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2041",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 20:41",
+        "description": "Autonomous Update — 2025-08-13 20:41 — auto-suggested description"
       }
     },
     {
