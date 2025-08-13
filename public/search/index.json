@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T22:31:03.095Z",
+  "generatedAt": "2025-08-13T22:31:28.819Z",
   "entries": [
     {
       "route": "/site-health",
@@ -5656,8 +5656,8 @@
     {
       "route": "/reports/innovations/insight-2025-08-13-2220",
       "file": "pages/reports/innovations/insight-2025-08-13-2220.tsx",
-      "title": "Checklist: Edge AI",
-      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Checklist: Edge AI Checklist: Edge AI Patterns to increase accuracy. Scope: Checklist: Edge AI. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observability, r"
+      "title": "Innovation Insight — 2025-08-13 22-20",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-13 22-20 Innovation Insight — 2025-08-13 22-20 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
     },
     {
       "route": "/reports/innovations/insight-2025-08-13-2211",
