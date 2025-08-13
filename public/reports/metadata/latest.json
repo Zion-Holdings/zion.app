@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T21:25:00.710Z",
+  "generatedAt": "2025-08-13T21:25:42.755Z",
   "pagesScanned": 870,
   "items": [
     {
@@ -101,11 +101,7 @@
     {
       "route": "/reports/ai-trends",
       "missing": [
-        "description",
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "AI Trends Radar",
@@ -345,11 +341,7 @@
     {
       "route": "/reports/seo",
       "missing": [
-        "description",
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "AI SEO Auditor",
@@ -8379,10 +8371,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-1817",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 18:17",
@@ -8392,10 +8381,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-1818",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 18:18",
@@ -8405,10 +8391,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-1819",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 18:19",
@@ -8418,10 +8401,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-1820",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 18:20",
@@ -8431,10 +8411,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-1821",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 18:21",
@@ -8444,10 +8421,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-1822",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 18:22",
@@ -8457,10 +8431,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-1823",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 18:23",
@@ -8470,10 +8441,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-1824",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 18:24",
@@ -8483,10 +8451,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-1825",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 18:25",

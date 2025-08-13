@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T21:25:01.956Z",
+  "generatedAt": "2025-08-13T21:25:43.969Z",
   "entries": [
     {
       "route": "/site-health",
@@ -281,7 +281,7 @@
       "route": "/reports/updates/update-2025-08-13-1813",
       "file": "pages/reports/updates/update-2025-08-13-1813.tsx",
       "title": "Autonomous Update — 2025-08-13 18:13",
-      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 18:13 Autonomous Update — 2025-08-13 18:13 Signal over noise—your automated update is here. Today's Highlight Hacker News : The young, inexperienced engineers aiding DOGE "
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-13 18:13 Autonomous Update — 2025-08-13 18:13 Today's Highlight Hacker News : The young, inexperienced engineers aiding DOGE · 1683 pts Why it matters: autonomous curation prioriti"
     },
     {
       "route": "/reports/updates/update-2025-08-13-1807",
