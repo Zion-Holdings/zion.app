@@ -1,6 +1,13 @@
 {
   "items": [
     {
+      "title": "Playbook: Agent Ops",
+      "subtitle": "Patterns to accelerate delivery.",
+      "path": "/reports/innovations/insight-2025-08-13-2120",
+      "createdAt": "2025-08-13T21:20:08.867Z",
+      "kind": "insight"
+    },
+    {
       "title": "Guide: Edge AI",
       "subtitle": "Patterns to enhance security.",
       "path": "/reports/innovations/insight-2025-08-13-2100",
