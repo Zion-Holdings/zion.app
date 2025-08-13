@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T21:38:00.554Z",
+  "generatedAt": "2025-08-13T21:38:41.590Z",
   "pagesScanned": 874,
   "items": [
     {
@@ -77,10 +77,7 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -8412,10 +8409,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-1832",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 18:32",
@@ -8425,10 +8419,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-1833",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 18:33",
@@ -8438,10 +8429,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-1834",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 18:34",
@@ -8451,10 +8439,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-1835",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 18:35",
@@ -8464,10 +8449,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-1836",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 18:36",
@@ -8477,10 +8459,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-1837",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 18:37",
@@ -8490,10 +8469,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-1838",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 18:38",
