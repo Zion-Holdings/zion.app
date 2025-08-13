@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
 const { execSync } = require('child_process');
+const fs = require('fs');
+const path = require('path');
 
 function run(cmd, options = {}) {
   try {
@@ -50,10 +52,19 @@ function commitAllIfAny(message) {
 }
 
 function rebaseOnto(remoteBranch) {
+  // Heal any stale rebase state proactively
+  try {
+    if (fs.existsSync(path.join('.git', 'rebase-merge'))) {
+      run('git rebase --abort || true');
+      try { fs.rmSync(path.join('.git', 'rebase-merge'), { recursive: true, force: true }); } catch {}
+    }
+  } catch {}
+
   const rebase = run(`git rebase origin/${remoteBranch}`);
   if (!rebase.ok) {
     // Abort rebase on conflict and fallback to merge
     run('git rebase --abort');
+    try { fs.rmSync(path.join('.git', 'rebase-merge'), { recursive: true, force: true }); } catch {}
     const merge = run(`git merge --no-edit origin/${remoteBranch}`);
     if (!merge.ok) {
       // Last resort: create a merge commit with ours strategy
@@ -63,7 +74,14 @@ function rebaseOnto(remoteBranch) {
 }
 
 function push(refspec) {
-  return run(`git push origin ${refspec}`);
+  let res = run(`git push origin ${refspec}`);
+  if (!res.ok) {
+    // Attempt to heal by syncing and retrying once
+    run('git fetch --all --prune || true');
+    run('git gc --prune=now || true');
+    res = run(`git push origin ${refspec}`);
+  }
+  return res;
 }
 
 (function main() {
