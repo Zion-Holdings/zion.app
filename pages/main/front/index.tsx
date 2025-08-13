@@ -178,10 +178,10 @@ export default function MainFrontIndex() {
               <div className="mb-2 text-xs uppercase tracking-wide text-white/60">Cloud Automations (live)</div>
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5">
                 <a className="glow-card rounded-lg border border-white/10 bg-white/5 px-4 py-3 hover:bg-white/10" href="https://github.com/Zion-Holdings/zion.app/actions/workflows/ultra-rapid-sync.yml" target="_blank" rel="noopener">Ultra Rapid Sync →</a>
-                <a className="glow-card rounded-lg border border-white/10 bg-white/5 px-4 py-3 hover:bg-white/10" href="https://github.com/Zion-Holdings/zion.app/actions/workflows/automation-advertiser.yml" target="_blank" rel="noopener">Automation Advertiser →</a>
+                <a className="glow-card rounded-lg border border-white/10 bg-white/5 px-4 py-3 hover:bg-white/10" href="https://github.com/Zion-Holdings/zion.app/actions/workflows/workflow-radar.yml" target="_blank" rel="noopener">Workflow Radar & Badges →</a>
+                <a className="glow-card rounded-lg border border-white/10 bg-white/5 px-4 py-3 hover:bg-white/10" href="https://github.com/Zion-Holdings/zion.app/actions/workflows/ai-changelog.yml" target="_blank" rel="noopener">AI Changelog & Release Notes →</a>
+                <a className="glow-card rounded-lg border border-white/10 bg-white/5 px-4 py-3 hover:bg-white/10" href="https://github.com/Zion-Holdings/zion.app/actions/workflows/actions-keepalive.yml" target="_blank" rel="noopener">Actions Keepalive Poker →</a>
                 <a className="glow-card rounded-lg border border-white/10 bg-white/5 px-4 py-3 hover:bg-white/10" href="https://github.com/Zion-Holdings/zion.app/actions/workflows/knowledge-graph-radar.yml" target="_blank" rel="noopener">Knowledge Graph & Radar →</a>
-                <a className="glow-card rounded-lg border border-white/10 bg-white/5 px-4 py-3 hover:bg-white/10" href="https://github.com/Zion-Holdings/zion.app/actions/workflows/site-health-guardian.yml" target="_blank" rel="noopener">Site Health Guardian →</a>
-                <a className="glow-card rounded-lg border border-white/10 bg-white/5 px-4 py-3 hover:bg-white/10" href="/.netlify/functions/autonomous-meta-orchestrator">Meta Orchestrator →</a>
               </div>
             </div>
 
@@ -1751,6 +1751,14 @@ export default function MainFrontIndex() {
   <div className="text-base font-semibold">AI Trends</div>
   <div className="mt-1 text-sm text-white/75">Intelligence signals</div>
   <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+              <Link href="/reports/a11y"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">A11y Alt Text Auditor</div>
+  <div className="mt-1 text-sm text-white/75">Find missing alt text</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+              <Link href="/reports/metadata"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">Metadata Optimizer</div>
+  <div className="mt-1 text-sm text-white/75">Missing meta tags</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
               <Link href="/newsroom"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
   <div className="text-base font-semibold">Newsroom</div>
   <div className="mt-1 text-sm text-white/75">Latest autonomous updates</div>
@@ -1790,14 +1798,6 @@ export default function MainFrontIndex() {
               <Link href="/newsroom"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
   <div className="text-base font-semibold">AI Changelog — highlights</div>
   <div className="mt-1 text-sm text-white/75">Summarized updates</div>
-  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
-              <Link href="/.netlify/functions/topic-cluster-builder-runner"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
-  <div className="text-base font-semibold">Topic Cluster Builder</div>
-  <div className="mt-1 text-sm text-white/75">Clusters content and code topics</div>
-  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
-              <Link href="/.netlify/functions/unused-media-scanner"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
-  <div className="text-base font-semibold">Unused Media Scanner</div>
-  <div className="mt-1 text-sm text-white/75">Find and report unreferenced assets</div>
   <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
   </div>
 </section>
