@@ -1,6 +1,6 @@
 # bolt.new.zion.app
 
-![Automations: 30](https://img.shields.io/badge/Automations-30-informational) ![Pages: 741](https://img.shields.io/badge/Pages-741-success) ![Components: 3](https://img.shields.io/badge/Components-3-blue)
+![Automations: 30](https://img.shields.io/badge/Automations-30-informational) ![Pages: 741](https://img.shields.io/badge/Pages-741-success) ![Components: 4](https://img.shields.io/badge/Components-4-blue)
 
 Autonomous, cloud‑native app with self‑running automations.
 
