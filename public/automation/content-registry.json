@@ -49,6 +49,29 @@
       "route": "/automation"
     },
     {
+<<<<<<< Updated upstream
+=======
+      "file": "pages/reports/innovations/index.tsx",
+      "route": "/reports/innovations"
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "route": "/main/front"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-13-2002.tsx",
+      "route": "/reports/updates/update-2025-08-13-2002"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-13-2000.tsx",
+      "route": "/reports/updates/update-2025-08-13-2000"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-13-1959.tsx",
+      "route": "/reports/updates/update-2025-08-13-1959"
+    },
+    {
+>>>>>>> Stashed changes
       "file": "pages/reports/updates/update-2025-08-13-1957.tsx",
       "route": "/reports/updates/update-2025-08-13-1957"
     },
@@ -3115,5 +3138,9 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
+<<<<<<< Updated upstream
   "generatedAt": "2025-08-13T20:03:19.730Z"
+=======
+  "generatedAt": "2025-08-13T20:03:33.638Z"
+>>>>>>> Stashed changes
 }
