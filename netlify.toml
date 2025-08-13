@@ -306,3 +306,8 @@
 [[scheduled.functions]]
   name = "intelligent-meta-orchestrator"
   schedule = "*/3 * * * *"
+
+# Sidebar feed refresh
+[[scheduled.functions]]
+  name = "sidebar-feed"
+  schedule = "*/5 * * * *"
