@@ -1,39 +1,18 @@
 {
-  "generatedAt": "2025-08-13T22:30:10.620Z",
+  "generatedAt": "2025-08-13T22:37:17.042Z",
   "items": [
     {
-      "title": "Reference Architecture — Autonomous Content Mesh",
-      "href": "/reports/blueprints/blueprint-2025-08-13-223010",
+      "title": "Innovation Insight — 2025-08-13 22-37",
+      "href": "/reports/innovations/insight-2025-08-13T22-37",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-13T22:30:10.571Z",
-      "source": "cloud-blueprint-factory"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-13 22-30",
-      "href": "/reports/innovations/insight-2025-08-13T22-30",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-13T22:30:10.546Z",
+      "createdAt": "2025-08-13T22:37:16.967Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-13 22-30",
-      "href": "/reports/updates/update-2025-08-13T22-30",
+      "title": "Autonomous Update — 2025-08-13 22-37",
+      "href": "/reports/updates/update-2025-08-13T22-37",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-13T22:30:10.546Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-13 22-30",
-      "href": "/reports/innovations/insight-2025-08-13T22-30",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-13T22:30:10.407Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-13 22-30",
-      "href": "/reports/updates/update-2025-08-13T22-30",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-13T22:30:10.407Z",
+      "createdAt": "2025-08-13T22:37:16.967Z",
       "source": "cloud-content-factory"
     }
   ]
