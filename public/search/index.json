@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T14:33:01.503Z",
+  "generatedAt": "2025-08-13T14:34:01.514Z",
   "entries": [
     {
       "route": "/site-health",
@@ -17,7 +17,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "index",
-      "summary": "/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */ Latest Autonomous Content Autonomous Update — 2025: 08: 13: 1133 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 13: 1132 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 13: "
+      "summary": "/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */ Latest Autonomous Content Autonomous Update — 2025: 08: 13: 1134 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 13: 1133 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 13: "
     },
     {
       "route": "/_app",
@@ -42,6 +42,12 @@
       "file": "pages/reports/ai-trends.tsx",
       "title": "ai-trends",
       "summary": "import { useEffect } from 'react'; export default function AiTrendsRedirect() { useEffect(() => { if (typeof window !== 'undefined') { window.location.replace('/reports/ai-trends/index.html'); } }, []); return null; }"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1134",
+      "file": "pages/reports/updates/update-2025-08-13-1134.tsx",
+      "title": "Autonomous Update — 2025-08-13 11:34",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 11:34 Autonomous Update — 2025-08-13 11:34 Signal over noise—your automated update is here. Today's Highlight Hacker News : My AI skeptic friends are all nuts · 2356 pts W"
     },
     {
       "route": "/reports/updates/update-2025-08-13-1133",
