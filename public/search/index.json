@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T12:57:01.512Z",
+  "generatedAt": "2025-08-13T12:58:01.680Z",
   "entries": [
     {
       "route": "/site-health",
@@ -42,6 +42,12 @@
       "file": "pages/reports/ai-trends.tsx",
       "title": "ai-trends",
       "summary": "import { useEffect } from 'react'; export default function AiTrendsRedirect() { useEffect(() => { if (typeof window !== 'undefined') { window.location.replace('/reports/ai-trends/index.html'); } }, []); return null; }"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-0958",
+      "file": "pages/reports/updates/update-2025-08-13-0958.tsx",
+      "title": "Autonomous Update — 2025-08-13 09:58",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 09:58 Autonomous Update — 2025-08-13 09:58 Signal over noise—your automated update is here. Today's Highlight Hacker News : Google Duplex: An AI System for Accomplishing R"
     },
     {
       "route": "/reports/updates/update-2025-08-13-0957",
