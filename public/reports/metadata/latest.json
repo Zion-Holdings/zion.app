@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-13T23:52:00.441Z",
-  "pagesScanned": 1120,
+  "generatedAt": "2025-08-13T23:52:55.972Z",
+  "pagesScanned": 1126,
   "items": [
     {
       "route": "/_app",
@@ -73,10 +73,7 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -269,6 +266,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-13-235017",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-13-235241",
       "missing": [
         "og:image"
       ],
@@ -758,6 +765,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-13-2352",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook: FinOps for AI",
+        "description": "Playbook: FinOps for AI — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-13T20-30",
       "missing": [
         "og:image"
@@ -1128,6 +1145,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-13T23-52",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-13 23-52",
+        "description": "Innovation Insight — 2025-08-13 23-52 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/patterns/pattern-2025-08-13-215625",
       "missing": [
         "og:image"
@@ -1329,6 +1356,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-13-235018",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-13-235242",
       "missing": [
         "og:image"
       ],
@@ -10490,10 +10527,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-2052",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 20:52",
@@ -10818,6 +10852,16 @@
       "suggestion": {
         "title": "Autonomous Playbook — Edge AI & IoT (2025-08-13 23:50 UTC)",
         "description": "Autonomous Playbook — Edge AI & IoT (2025-08-13 23:50 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2352",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Reference Architecture — AI Service Design (2025-08-13 23:52 UTC)",
+        "description": "Autonomous Reference Architecture — AI Service Design (2025-08-13 23:52 UTC) — auto-suggested description"
       }
     },
     {
@@ -11188,6 +11232,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 23-50",
         "description": "Autonomous Update — 2025-08-13 23-50 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13T23-52",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 23-52",
+        "description": "Autonomous Update — 2025-08-13 23-52 — auto-suggested description"
       }
     },
     {
