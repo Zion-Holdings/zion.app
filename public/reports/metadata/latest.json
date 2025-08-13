@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-13T22:10:00.463Z",
-  "pagesScanned": 923,
+  "generatedAt": "2025-08-13T22:10:33.924Z",
+  "pagesScanned": 928,
   "items": [
     {
       "route": "/_app",
@@ -343,6 +343,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-13-2210",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pilot Plan: FinOps for AI",
+        "description": "Pilot Plan: FinOps for AI — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-13T20-30",
       "missing": [
         "og:image"
@@ -490,6 +500,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-13 22-06",
         "description": "Innovation Insight — 2025-08-13 22-06 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-13T22-10",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-13 22-10",
+        "description": "Innovation Insight — 2025-08-13 22-10 — auto-suggested description"
       }
     },
     {
@@ -8847,6 +8867,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-13-1910",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 19:10",
+        "description": "Autonomous Update — 2025-08-13 19:10 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-13-1942",
       "missing": [
         "og:image"
@@ -9077,6 +9107,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-13-2210",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Validation & QA Plan — Vision & Multimodal (2025-08-13 22:10 UTC)",
+        "description": "Autonomous Validation & QA Plan — Vision & Multimodal (2025-08-13 22:10 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-13T20-30",
       "missing": [
         "og:image"
@@ -9224,6 +9264,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 22-06",
         "description": "Autonomous Update — 2025-08-13 22-06 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13T22-10",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 22-10",
+        "description": "Autonomous Update — 2025-08-13 22-10 — auto-suggested description"
       }
     },
     {
