@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T19:45:55.791Z",
+  "generatedAt": "2025-08-13T19:46:01.805Z",
   "entries": [
     {
       "route": "/site-health",
@@ -17,7 +17,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "index",
-      "summary": "import Landing from '../components/Landing'; export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 1645 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 1"
+      "summary": "import Landing from '../components/Landing'; export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 1646 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 1"
     },
     {
       "route": "/_document",
@@ -44,6 +44,12 @@
       "summary": "import Head from 'next/head'; export default function RoadmapReport() { return ( Autonomous Roadmap Autonomous Roadmap Generated from live schedules and functions. Updated continuously by cloud automations. Run Curator View Markdown If the markdown is not yet generated, use “Run "
     },
     {
+      "route": "/reports",
+      "file": "pages/reports/index.tsx",
+      "title": "Reports — Zion",
+      "summary": "import Head from 'next/head'; import Link from 'next/link'; export default function ReportsIndex() { const reports: Array = [ { href: '/reports/seo', title: 'AI SEO Auditor', desc: 'Automated site SEO analysis' }, { href: '/reports/ai-trends', title: 'AI Trends Radar', desc: 'Lat"
+    },
+    {
       "route": "/reports/ai-trends",
       "file": "pages/reports/ai-trends.tsx",
       "title": "ai-trends",
@@ -60,6 +66,12 @@
       "file": "pages/reports/updates/update-2025-08-13-1942.tsx",
       "title": "Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC) Autonomous Playbook — Edge AI & IoT (2025-08-13 19:42 UTC) Innovative, useful guidance to decrease unit cost per request. What it is: Playbook "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1646",
+      "file": "pages/reports/updates/update-2025-08-13-1646.tsx",
+      "title": "Autonomous Update — 2025-08-13 16:46",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 16:46 Autonomous Update — 2025-08-13 16:46 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Airfoil · 2544 pts Why it matters: a"
     },
     {
       "route": "/reports/updates/update-2025-08-13-1645",

@@ -21,6 +21,10 @@
       "route": "/reports/roadmap"
     },
     {
+      "file": "pages/reports/index.tsx",
+      "route": "/reports"
+    },
+    {
       "file": "pages/reports/ai-trends.tsx",
       "route": "/reports/ai-trends"
     },
@@ -47,6 +51,10 @@
     {
       "file": "pages/reports/updates/update-2025-08-13-1942.tsx",
       "route": "/reports/updates/update-2025-08-13-1942"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-13-1646.tsx",
+      "route": "/reports/updates/update-2025-08-13-1646"
     },
     {
       "file": "pages/reports/updates/update-2025-08-13-1645.tsx",
@@ -3067,5 +3075,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-13T19:45:49.157Z"
+  "generatedAt": "2025-08-13T19:46:00.534Z"
 }
