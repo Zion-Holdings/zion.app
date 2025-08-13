@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T22:53:01.611Z",
+  "generatedAt": "2025-08-13T22:54:01.617Z",
   "entries": [
     {
       "route": "/site-health",
@@ -23,7 +23,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "index",
-      "summary": "import Landing from '../components/Landing'; export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 1953 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 1"
+      "summary": "import Landing from '../components/Landing'; export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 1954 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 1"
     },
     {
       "route": "/_document",
@@ -35,7 +35,7 @@
       "route": "/_app",
       "file": "pages/_app.tsx",
       "title": "_app",
-      "summary": "import type { AppProps } from 'next/app'; import '../styles/globals.css'; import Header from '../components/Header'; import Footer from '../components/Footer'; import FuturisticLayout from '../components/FuturisticLayout'; export default function ZionApp({ Component, pageProps }:"
+      "summary": "import type { AppProps } from 'next/app'; import '../styles/globals.css'; import Header from '../components/Header'; import Footer from '../components/Footer'; import FuturisticLayout from '../components/FuturisticLayout'; import DefaultSEO from '../components/DefaultSEO'; export"
     },
     {
       "route": "/reports/seo",
@@ -414,6 +414,12 @@
       "file": "pages/reports/updates/update-2025-08-13-2007.tsx",
       "title": "Autonomous Performance Tuning Guide — Data Engineering (2025-08-13 20:07 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Performance Tuning Guide — Data Engineering (2025-08-13 20:07 UTC) Autonomous Performance Tuning Guide — Data Engineering (2025-08-13 20:07 UTC) Innovative, useful guidance to enhance retriev"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1954",
+      "file": "pages/reports/updates/update-2025-08-13-1954.tsx",
+      "title": "Autonomous Update — 2025-08-13 19:54",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 19:54 Autonomous Update — 2025-08-13 19:54 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : My AI skeptic friends are all nuts ·"
     },
     {
       "route": "/reports/updates/update-2025-08-13-1953",
