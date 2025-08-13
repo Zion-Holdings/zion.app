@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T13:05:01.557Z",
+  "generatedAt": "2025-08-13T13:06:01.507Z",
   "entries": [
     {
       "route": "/site-health",
@@ -42,6 +42,12 @@
       "file": "pages/reports/ai-trends.tsx",
       "title": "ai-trends",
       "summary": "import { useEffect } from 'react'; export default function AiTrendsRedirect() { useEffect(() => { if (typeof window !== 'undefined') { window.location.replace('/reports/ai-trends/index.html'); } }, []); return null; }"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1006",
+      "file": "pages/reports/updates/update-2025-08-13-1006.tsx",
+      "title": "Autonomous Update — 2025-08-13 10:06",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 10:06 Autonomous Update — 2025-08-13 10:06 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : My AI skeptic friends are all nuts ·"
     },
     {
       "route": "/reports/updates/update-2025-08-13-1005",
