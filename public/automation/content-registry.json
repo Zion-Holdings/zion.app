@@ -37,6 +37,50 @@
       "route": "/main/front"
     },
     {
+      "file": "pages/reports/updates/update-2025-08-13-0934.tsx",
+      "route": "/reports/updates/update-2025-08-13-0934"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-13-0933.tsx",
+      "route": "/reports/updates/update-2025-08-13-0933"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-13-0932.tsx",
+      "route": "/reports/updates/update-2025-08-13-0932"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-13-0931.tsx",
+      "route": "/reports/updates/update-2025-08-13-0931"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-13-0930.tsx",
+      "route": "/reports/updates/update-2025-08-13-0930"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-13-0929.tsx",
+      "route": "/reports/updates/update-2025-08-13-0929"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-13-0928.tsx",
+      "route": "/reports/updates/update-2025-08-13-0928"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-13-0927.tsx",
+      "route": "/reports/updates/update-2025-08-13-0927"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-13-0926.tsx",
+      "route": "/reports/updates/update-2025-08-13-0926"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-13-0925.tsx",
+      "route": "/reports/updates/update-2025-08-13-0925"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-13-0924.tsx",
+      "route": "/reports/updates/update-2025-08-13-0924"
+    },
+    {
       "file": "pages/reports/updates/update-2025-08-13-0922.tsx",
       "route": "/reports/updates/update-2025-08-13-0922"
     },
@@ -2271,5 +2315,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-13T12:32:19.333Z"
+  "generatedAt": "2025-08-13T12:34:00.588Z"
 }

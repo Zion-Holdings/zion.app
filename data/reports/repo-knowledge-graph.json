@@ -1,5 +1,9 @@
 {
+<<<<<<< Updated upstream
   "generatedAt": "2025-08-13T12:22:58.032Z",
+=======
+  "generatedAt": "2025-08-13T12:31:59.531Z",
+>>>>>>> Stashed changes
   "nodes": [
     {
       "id": "automation/a11y-alt-text-auditor.cjs",
@@ -3014,6 +3018,45 @@
       "type": "file"
     },
     {
+<<<<<<< Updated upstream
+=======
+      "id": "pages/reports/updates/update-2025-08-13-0923.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-0924.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-0925.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-0926.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-0927.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-0928.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-0929.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-0930.tsx",
+      "type": "file"
+    },
+    {
+      "id": "pages/reports/updates/update-2025-08-13-0931.tsx",
+      "type": "file"
+    },
+    {
+>>>>>>> Stashed changes
       "id": "pages/site-health.tsx",
       "type": "file"
     },
@@ -7499,6 +7542,54 @@
       "kind": "external"
     },
     {
+<<<<<<< Updated upstream
+=======
+      "from": "pages/reports/updates/update-2025-08-13-0923.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-0924.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-0925.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-0926.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-0927.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-0928.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-0929.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-0930.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+      "from": "pages/reports/updates/update-2025-08-13-0931.tsx",
+      "to": "next/head",
+      "kind": "external"
+    },
+    {
+>>>>>>> Stashed changes
       "from": "pages/site-health.tsx",
       "to": "next/head",
       "kind": "external"
