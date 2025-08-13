@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T22:00:01.647Z",
+  "generatedAt": "2025-08-13T22:00:33.981Z",
   "entries": [
     {
       "route": "/site-health",
@@ -23,7 +23,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "index",
-      "summary": "import Landing from '../components/Landing'; export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 1900 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 1"
+      "summary": "import Landing from '../components/Landing'; export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13T22: 00 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: "
     },
     {
       "route": "/_document",
@@ -66,6 +66,12 @@
       "file": "pages/reports/ai-lab.tsx",
       "title": "ai-lab",
       "summary": "import { useEffect, useState } from 'react'; interface ArticleEntry { title: string; url: string; createdAt: string; tags?: string[]; source?: string; } export default function AILabPage() { const [items, setItems] = useState ([]); const [loading, setLoading] = useState(true); us"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13T22-00",
+      "file": "pages/reports/updates/update-2025-08-13T22-00.tsx",
+      "title": "Autonomous Update — 2025-08-13 22-00",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-13 22-00 Autonomous Update — 2025-08-13 22-00 Signal source: https://ziontechgroup.com Autonomous cloud systems are live and improving the app in real timeAutonomous Cloud Automati"
     },
     {
       "route": "/reports/updates/update-2025-08-13T21-50",
@@ -138,6 +144,12 @@
       "file": "pages/reports/updates/update-2025-08-13T20-30.tsx",
       "title": "Autonomous Update — 2025-08-13 20-30",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-13 20-30 Autonomous Update — 2025-08-13 20-30 Signal source: https://ziontechgroup.com Autonomous cloud systems are live and improving the app in real timeAutonomous Cloud Automati"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2200",
+      "file": "pages/reports/updates/update-2025-08-13-2200.tsx",
+      "title": "Autonomous Performance Tuning Guide — Edge AI & IoT (2025-08-13 22:00 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Performance Tuning Guide — Edge AI & IoT (2025-08-13 22:00 UTC) Autonomous Performance Tuning Guide — Edge AI & IoT (2025-08-13 22:00 UTC) Innovative, useful guidance to improve observability"
     },
     {
       "route": "/reports/updates/update-2025-08-13-2150",
@@ -5204,6 +5216,12 @@
       "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com Context Signals indicate recurring needs around cloud, improving, continuously, autonomous, syst"
     },
     {
+      "route": "/reports/innovations/insight-2025-08-13T22-00",
+      "file": "pages/reports/innovations/insight-2025-08-13T22-00.tsx",
+      "title": "Innovation Insight — 2025-08-13 22-00",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-13 22-00 Innovation Insight — 2025-08-13 22-00 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-13T21-50",
       "file": "pages/reports/innovations/insight-2025-08-13T21-50.tsx",
       "title": "Innovation Insight — 2025-08-13 21-50",
@@ -5274,6 +5292,12 @@
       "file": "pages/reports/innovations/insight-2025-08-13T20-30.tsx",
       "title": "Innovation Insight — 2025-08-13 20-30",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-13 20-30 Innovation Insight — 2025-08-13 20-30 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-13-2200",
+      "file": "pages/reports/innovations/insight-2025-08-13-2200.tsx",
+      "title": "Playbook: FinOps for AI",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Playbook: FinOps for AI Playbook: FinOps for AI Patterns to enhance security. Scope: Playbook: FinOps for AI. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: ob"
     },
     {
       "route": "/reports/innovations/insight-2025-08-13-2150",
