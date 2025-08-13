@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-13T22:06:00.394Z",
-  "pagesScanned": 916,
+  "generatedAt": "2025-08-13T22:06:32.465Z",
+  "pagesScanned": 920,
   "items": [
     {
       "route": "/_app",
@@ -77,10 +77,7 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -336,6 +333,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-13-2206",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide: LLM Apps",
+        "description": "Guide: LLM Apps — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-13T20-30",
       "missing": [
         "og:image"
@@ -473,6 +480,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-13 22-04",
         "description": "Innovation Insight — 2025-08-13 22-04 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-13T22-06",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-13 22-06",
+        "description": "Innovation Insight — 2025-08-13 22-06 — auto-suggested description"
       }
     },
     {
@@ -8792,10 +8809,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-1906",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 19:06",
@@ -9023,6 +9037,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-13-2206",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Security Hardening Guide — Applied NLP & RAG (2025-08-13 22:06 UTC)",
+        "description": "Autonomous Security Hardening Guide — Applied NLP & RAG (2025-08-13 22:06 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-13T20-30",
       "missing": [
         "og:image"
@@ -9160,6 +9184,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 22-04",
         "description": "Autonomous Update — 2025-08-13 22-04 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13T22-06",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 22-06",
+        "description": "Autonomous Update — 2025-08-13 22-06 — auto-suggested description"
       }
     },
     {

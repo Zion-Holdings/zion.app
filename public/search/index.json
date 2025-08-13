@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T22:06:01.527Z",
+  "generatedAt": "2025-08-13T22:06:33.603Z",
   "entries": [
     {
       "route": "/site-health",
@@ -66,6 +66,12 @@
       "file": "pages/reports/ai-lab.tsx",
       "title": "ai-lab",
       "summary": "import { useEffect, useState } from 'react'; interface ArticleEntry { title: string; url: string; createdAt: string; tags?: string[]; source?: string; } export default function AILabPage() { const [items, setItems] = useState ([]); const [loading, setLoading] = useState(true); us"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13T22-06",
+      "file": "pages/reports/updates/update-2025-08-13T22-06.tsx",
+      "title": "Autonomous Update — 2025-08-13 22-06",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-13 22-06 Autonomous Update — 2025-08-13 22-06 Signal source: https://ziontechgroup.com Autonomous cloud systems are live and improving the app in real timeAutonomous Cloud Automati"
     },
     {
       "route": "/reports/updates/update-2025-08-13T22-04",
@@ -150,6 +156,12 @@
       "file": "pages/reports/updates/update-2025-08-13T20-30.tsx",
       "title": "Autonomous Update — 2025-08-13 20-30",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-13 20-30 Autonomous Update — 2025-08-13 20-30 Signal source: https://ziontechgroup.com Autonomous cloud systems are live and improving the app in real timeAutonomous Cloud Automati"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2206",
+      "file": "pages/reports/updates/update-2025-08-13-2206.tsx",
+      "title": "Autonomous Security Hardening Guide — Applied NLP & RAG (2025-08-13 22:06 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Security Hardening Guide — Applied NLP & RAG (2025-08-13 22:06 UTC) Autonomous Security Hardening Guide — Applied NLP & RAG (2025-08-13 22:06 UTC) Innovative, useful guidance to decrease unit"
     },
     {
       "route": "/reports/updates/update-2025-08-13-2204",
@@ -5264,6 +5276,12 @@
       "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com Context Signals indicate recurring needs around cloud, improving, continuously, autonomous, syst"
     },
     {
+      "route": "/reports/innovations/insight-2025-08-13T22-06",
+      "file": "pages/reports/innovations/insight-2025-08-13T22-06.tsx",
+      "title": "Innovation Insight — 2025-08-13 22-06",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-13 22-06 Innovation Insight — 2025-08-13 22-06 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-13T22-04",
       "file": "pages/reports/innovations/insight-2025-08-13T22-04.tsx",
       "title": "Innovation Insight — 2025-08-13 22-04",
@@ -5346,6 +5364,12 @@
       "file": "pages/reports/innovations/insight-2025-08-13T20-30.tsx",
       "title": "Innovation Insight — 2025-08-13 20-30",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-13 20-30 Innovation Insight — 2025-08-13 20-30 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-13-2206",
+      "file": "pages/reports/innovations/insight-2025-08-13-2206.tsx",
+      "title": "Guide: LLM Apps",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Guide: LLM Apps Guide: LLM Apps Patterns to enhance security. Scope: Guide: LLM Apps. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observability, rollback, S"
     },
     {
       "route": "/reports/innovations/insight-2025-08-13-2204",
