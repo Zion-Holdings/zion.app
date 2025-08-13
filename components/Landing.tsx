@@ -24,10 +24,11 @@ export default function Landing() {
             <span className="bg-gradient-to-r from-fuchsia-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent drop-shadow-neon">Zion</span>
           </div>
           <div className="hidden gap-6 md:flex">
-            <Link href="/main/front#capabilities"><a className="text-white/80 hover:text-white">Services</a></Link>
-            <Link href="/main/front"><a className="text-white/80 hover:text-white">Products</a></Link>
+            <Link href="/explore"><a className="text-white/80 hover:text-white">Explore</a></Link>
             <Link href="/automation"><a className="text-white/80 hover:text-white">Automations</a></Link>
-            <Link href="/newsroom"><a className="text-white/80 hover:text-white">Contact</a></Link>
+            <Link href="/reports"><a className="text-white/80 hover:text-white">Reports</a></Link>
+            <Link href="/newsroom"><a className="text-white/80 hover:text-white">Updates</a></Link>
+            <Link href="/search"><a className="text-white/80 hover:text-white">Search</a></Link>
           </div>
         </nav>
       </header>
