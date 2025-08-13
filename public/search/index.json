@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-13T13:17:01.599Z",
+  "generatedAt": "2025-08-13T13:18:01.511Z",
   "entries": [
     {
       "route": "/site-health",
@@ -42,6 +42,12 @@
       "file": "pages/reports/ai-trends.tsx",
       "title": "ai-trends",
       "summary": "import { useEffect } from 'react'; export default function AiTrendsRedirect() { useEffect(() => { if (typeof window !== 'undefined') { window.location.replace('/reports/ai-trends/index.html'); } }, []); return null; }"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-1018",
+      "file": "pages/reports/updates/update-2025-08-13-1018.tsx",
+      "title": "Autonomous Update — 2025-08-13 10:18",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 10:18 Autonomous Update — 2025-08-13 10:18 Signal over noise—your automated update is here. Today's Highlight Hacker News : Open source AI is the path forward · 2360 pts W"
     },
     {
       "route": "/reports/updates/update-2025-08-13-1017",
