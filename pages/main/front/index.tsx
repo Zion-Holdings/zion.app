@@ -119,6 +119,21 @@ export default function FrontMainIndex() {
 </section>
 /* AUTO-GENERATED: FRONT_ADS_END */}
 
+        <section id="features" className="py-12">
+          <h2 className="text-2xl font-bold tracking-wide text-white/90">Features</h2>
+          <p className="mt-2 text-white/75 max-w-3xl">Core capabilities of the autonomous front systems.</p>
+        </section>
+
+        <section id="capabilities" className="py-12">
+          <h2 className="text-2xl font-bold tracking-wide text-white/90">Capabilities</h2>
+          <p className="mt-2 text-white/75 max-w-3xl">What agents can do across the site and cloud.</p>
+        </section>
+
+        <section id="benefits" className="py-12">
+          <h2 className="text-2xl font-bold tracking-wide text-white/90">Benefits</h2>
+          <p className="mt-2 text-white/75 max-w-3xl">Key outcomes and ROI.</p>
+        </section>
+
         {/* AUTO-GENERATED: FRONT_FUTURIZER_START */}
         {/* AUTO-GENERATED: FRONT_FUTURIZER_END */}
       </main>

@@ -1,4 +1,4 @@
-name: Playwright Smoke (headless)
+name: Smoke Ping (public URLs)
 
 on:
   pull_request:
@@ -28,8 +28,8 @@ jobs:
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
 
-      - name: Smoke test
+      - name: Smoke ping main pages
         run: |
-          node -e "const https=require('https'); const pages=['/','/explore','/front','/newsroom']; const base='https://ziontechgroup.com'; let ok=true; const check=(u)=>new Promise(r=>https.get(base+u, res=>{console.log(u,res.statusCode); if(res.statusCode>=400) ok=false; res.resume(); r();}).on('error',(e)=>{console.log(u,'ERR'); ok=false; r();})); (async()=>{for(const p of pages) await check(p); if(!ok) process.exit(1);})();"
+          node -e "const https=require('https'); const pages=['/','/explore','/main/front','/newsroom']; const base='https://ziontechgroup.com'; let ok=true; const check=(u)=>new Promise(r=>https.get(base+u, res=>{console.log(u,res.statusCode); if(res.statusCode>=400) ok=false; res.resume(); r();}).on('error',(e)=>{console.log(u,'ERR'); ok=false; r();})); (async()=>{for(const p of pages) await check(p); if(!ok) process.exit(1);})();"
 
 
