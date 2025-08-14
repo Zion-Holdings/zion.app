@@ -1,6 +1,11 @@
 {
+<<<<<<< Updated upstream
   "generatedAt": "2025-08-14T09:17:25.866Z",
   "pagesScanned": 2571,
+=======
+  "generatedAt": "2025-08-14T09:17:41.018Z",
+  "pagesScanned": 2586,
+>>>>>>> Stashed changes
   "items": [
     {
       "route": "/404",
@@ -2376,6 +2381,29 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-091706",
+<<<<<<< Updated upstream
+=======
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-091730",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-091736",
+>>>>>>> Stashed changes
       "missing": [
         "og:image"
       ],
@@ -3416,6 +3444,39 @@
     },
     {
       "route": "/reports/cases/case-2025-08-14-091707",
+<<<<<<< Updated upstream
+=======
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Autonomous Reports",
+        "description": "Case Study — Autonomous Reports — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-14-091730",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Autonomous Reports",
+        "description": "Case Study — Autonomous Reports — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-14-091733",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Autonomous Reports",
+        "description": "Case Study — Autonomous Reports — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-14-091737",
+>>>>>>> Stashed changes
       "missing": [
         "og:image"
       ],
@@ -4546,6 +4607,39 @@
     },
     {
       "route": "/reports/guides/guide-2025-08-14-091707",
+<<<<<<< Updated upstream
+=======
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Techcrunch Pebble Implementation",
+        "description": "Guide — Techcrunch Pebble Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-14-091730",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Techcrunch Pebble Implementation",
+        "description": "Guide — Techcrunch Pebble Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-14-091733",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Techcrunch Pebble Implementation",
+        "description": "Guide — Techcrunch Pebble Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-14-091737",
+>>>>>>> Stashed changes
       "missing": [
         "og:image"
       ],
@@ -6225,6 +6319,19 @@
       }
     },
     {
+<<<<<<< Updated upstream
+=======
+      "route": "/reports/innovations/insight-2025-08-14-0917",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide: RAG Platforms",
+        "description": "Guide: RAG Platforms — auto-suggested description"
+      }
+    },
+    {
+>>>>>>> Stashed changes
       "route": "/reports/innovations/insight-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -8166,6 +8273,39 @@
     },
     {
       "route": "/reports/patterns/pattern-2025-08-14-091707",
+<<<<<<< Updated upstream
+=======
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Trigger Homepage Sitemap",
+        "description": "Pattern — Trigger Homepage Sitemap — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-14-091730",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Trigger Homepage Sitemap",
+        "description": "Pattern — Trigger Homepage Sitemap — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-14-091733",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Trigger Homepage Sitemap",
+        "description": "Pattern — Trigger Homepage Sitemap — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-14-091737",
+>>>>>>> Stashed changes
       "missing": [
         "og:image"
       ],
@@ -10446,6 +10586,29 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-091706",
+<<<<<<< Updated upstream
+=======
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-091730",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-091737",
+>>>>>>> Stashed changes
       "missing": [
         "og:image"
       ],
@@ -24878,6 +25041,19 @@
       }
     },
     {
+<<<<<<< Updated upstream
+=======
+      "route": "/reports/updates/update-2025-08-14-0917",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Performance Tuning Guide — Cloud Cost Optimization (2025-08-14 09:17 UTC)",
+        "description": "Autonomous Performance Tuning Guide — Cloud Cost Optimization (2025-08-14 09:17 UTC) — auto-suggested description"
+      }
+    },
+    {
+>>>>>>> Stashed changes
       "route": "/reports/updates/update-2025-08-14T00-00",
       "missing": [
         "og:image"
