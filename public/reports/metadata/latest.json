@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T07:28:00.488Z",
-  "pagesScanned": 2040,
+  "generatedAt": "2025-08-14T07:33:00.503Z",
+  "pagesScanned": 2041,
   "items": [
     {
       "route": "/404",
@@ -19607,10 +19607,7 @@
     {
       "route": "/reports/updates/update-2025-08-14-0428",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 04:28",
@@ -19625,6 +19622,19 @@
       "suggestion": {
         "title": "Autonomous Blueprint — Evaluation & Safety (2025-08-14 04:30 UTC)",
         "description": "Autonomous Blueprint — Evaluation & Safety (2025-08-14 04:30 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0433",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 04:33",
+        "description": "Autonomous Update — 2025-08-14 04:33 — auto-suggested description"
       }
     },
     {
