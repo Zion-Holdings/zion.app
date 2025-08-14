@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T00:08:47.392Z",
-  "pagesScanned": 1159,
+  "generatedAt": "2025-08-14T00:09:00.550Z",
+  "pagesScanned": 1160,
   "items": [
     {
       "route": "/_app",
@@ -73,10 +73,7 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -10815,6 +10812,19 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 21:08",
         "description": "Autonomous Update — 2025-08-13 21:08 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2109",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 21:09",
+        "description": "Autonomous Update — 2025-08-13 21:09 — auto-suggested description"
       }
     },
     {
