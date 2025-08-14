@@ -75,6 +75,10 @@ export default function Newsroom() {
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/10/security-flaws-in-a-carmakers-web-portal-let-one-hacker-remotely-unlock-cars-from-anywhere/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Security flaws in a carmaker’s web portal let one hacker remotely unlock cars from anywhere</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
             <a href="https://techcrunch.com/2025/08/10/the-hidden-cost-of-living-amid-mark-zuckerbergs-110m-compound/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">The hidden cost of living in Mark Zuckerberg’s $110M compound</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
@@ -88,10 +92,6 @@ export default function Newsroom() {
           </li>
           <li className="py-2">
             <a href="https://techcrunch.com/2025/08/08/openai-priced-gpt-5-so-low-it-may-spark-a-price-war/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">OpenAI priced GPT-5 so low, it may spark a price war</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/07/tesla-shuts-down-dojo-the-ai-training-supercomputer-that-musk-said-would-be-key-to-full-self-driving/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Tesla shuts down Dojo, the AI training supercomputer that Musk said would be key to full self-driving</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
