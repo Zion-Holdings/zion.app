@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T00:31:02.916Z",
+  "generatedAt": "2025-08-14T00:31:11.390Z",
   "entries": [
     {
       "route": "/site-health",
@@ -23,7 +23,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "index",
-      "summary": "import Landing from '../components/Landing'; export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 14T00: 30 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: "
+      "summary": "import Landing from '../components/Landing'; export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 2131 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 1"
     },
     {
       "route": "/contact",
@@ -750,6 +750,12 @@
       "file": "pages/reports/updates/update-2025-08-13-2140.tsx",
       "title": "Autonomous Validation & QA Plan — AI Service Design (2025-08-13 21:40 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Validation & QA Plan — AI Service Design (2025-08-13 21:40 UTC) Autonomous Validation & QA Plan — AI Service Design (2025-08-13 21:40 UTC) Innovative, useful guidance to streamline CI/CD for "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2131",
+      "file": "pages/reports/updates/update-2025-08-13-2131.tsx",
+      "title": "Autonomous Update — 2025-08-13 21:31",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 21:31 Autonomous Update — 2025-08-13 21:31 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Bypassing airport security via SQL i"
     },
     {
       "route": "/reports/updates/update-2025-08-13-2130",
@@ -6462,6 +6468,12 @@
       "file": "pages/reports/updates/update-2025-08-12-1417.tsx",
       "title": "Autonomous Update — 2025-08-12 14:17",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-12 14:17 Autonomous Update — 2025-08-12 14:17 This page was created automatically by the content creator automation. It showcases our continuous, autonomous publishing pipeli"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-003058",
+      "file": "pages/reports/playbooks/playbook-2025-08-14-003058.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/main/front Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objec"
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-003044",
