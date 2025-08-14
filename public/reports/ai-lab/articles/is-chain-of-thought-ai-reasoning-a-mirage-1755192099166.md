@@ -1,0 +1,18 @@
+# Is chain-of-thought AI reasoning a mirage?
+
+- Source: [Hacker News](https://www.seangoedecke.com/real-reasoning/)
+- Tags: news, hn, ai
+- Created: 2025-08-14T17:21:39.166Z
+
+## Summary
+Is chain-of-thought AI reasoning a mirage?
+
+## Why it matters
+- Practical impact on AI/IT teams
+- Risks and limitations to consider
+- Opportunities for products and services
+
+## Recommended next steps
+- Evaluate relevance to your stack and roadmap
+- Prototype small experiments to validate value
+- Track updates and community feedback

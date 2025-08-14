@@ -1,0 +1,318 @@
+{
+  "date": "2025-08-14",
+  "count": 26,
+  "items": [
+    {
+      "id": "hn_44875848",
+      "title": "What's the strongest AI model you can train on a laptop in five minutes?",
+      "url": "https://www.seangoedecke.com/model-on-a-mbp/",
+      "source": "Hacker News",
+      "summary": "What's the strongest AI model you can train on a laptop in five minutes?",
+      "tags": [
+        "news",
+        "hn",
+        "ai"
+      ]
+    },
+    {
+      "id": "hn_44899935",
+      "title": "NSF and Nvidia award Ai2 $152M to support building an open AI ecosystem",
+      "url": "https://allenai.org/blog/nsf-nvidia",
+      "source": "Hacker News",
+      "summary": "NSF and Nvidia award Ai2 $152M to support building an open AI ecosystem",
+      "tags": [
+        "news",
+        "hn",
+        "ai"
+      ]
+    },
+    {
+      "id": "hn_44902148",
+      "title": "Gemma 3 270M: The compact model for hyper-efficient AI",
+      "url": "https://developers.googleblog.com/en/introducing-gemma-3-270m/",
+      "source": "Hacker News",
+      "summary": "Gemma 3 270M: The compact model for hyper-efficient AI",
+      "tags": [
+        "news",
+        "hn",
+        "ai"
+      ]
+    },
+    {
+      "id": "hn_44900340",
+      "title": "Is chain-of-thought AI reasoning a mirage?",
+      "url": "https://www.seangoedecke.com/real-reasoning/",
+      "source": "Hacker News",
+      "summary": "Is chain-of-thought AI reasoning a mirage?",
+      "tags": [
+        "news",
+        "hn",
+        "ai"
+      ]
+    },
+    {
+      "id": "hn_44901528",
+      "title": "Launch HN: Cyberdesk (YC S25) – Automate Windows legacy desktop apps",
+      "url": "https://news.ycombinator.com/item?id=44901528",
+      "source": "Hacker News",
+      "summary": "Launch HN: Cyberdesk (YC S25) – Automate Windows legacy desktop apps",
+      "tags": [
+        "news",
+        "hn",
+        "ai"
+      ]
+    },
+    {
+      "id": "hn_44901683",
+      "title": "Show HN: I built a free alternative to Adobe Acrobat PDF viewer",
+      "url": "https://github.com/embedpdf/embed-pdf-viewer",
+      "source": "Hacker News",
+      "summary": "Show HN: I built a free alternative to Adobe Acrobat PDF viewer",
+      "tags": [
+        "news",
+        "hn",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_echo-4o-harnessing-the-power-of-gpt-4o-synthetic-images-for-improved-image-gener_0",
+      "title": "Echo-4o: Harnessing the Power of GPT-4o Synthetic Images for Improved Image Generation",
+      "url": "http://arxiv.org/abs/2508.09987v1",
+      "source": "arXiv cs.AI",
+      "summary": "Recently, GPT-4o has garnered significant attention for its strong performance in image generation, yet open-source models still lag behind. Several studies have explored distilling image data from GPT-4o to enhance open-source models, achieving notable progress. However, a key question remains: given that real-world image datasets already constitute a natural source of high-quality data, why should we use GPT-4o-generated synthetic data? In this work, we identify two key advantages of synthetic images. First, they can complement rare scenarios in real-world datasets, such as surreal fantasy o",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_vision-driven-river-following-of-uav-via-safe-reinforcement-learning-using-seman_1",
+      "title": "Vision-driven River Following of UAV via Safe Reinforcement Learning using Semantic Dynamics Model",
+      "url": "http://arxiv.org/abs/2508.09971v1",
+      "source": "arXiv cs.AI",
+      "summary": "Vision-driven autonomous river following by Unmanned Aerial Vehicles is critical for applications such as rescue, surveillance, and environmental monitoring, particularly in dense riverine environments where GPS signals are unreliable. We formalize river following as a coverage control problem in which the reward function is submodular, yielding diminishing returns as more unique river segments are visited, thereby framing the task as a Submodular Markov Decision Process. First, we introduce Marginal Gain Advantage Estimation, which refines the reward advantage function by using a sliding wind",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_january-food-benchmark-jfb-a-public-benchmark-dataset-and-evaluation-suite-for-m_2",
+      "title": "January Food Benchmark (JFB): A Public Benchmark Dataset and Evaluation Suite for Multimodal Food Analysis",
+      "url": "http://arxiv.org/abs/2508.09966v1",
+      "source": "arXiv cs.AI",
+      "summary": "Progress in AI for automated nutritional analysis is critically hampered by the lack of standardized evaluation methodologies and high-quality, real-world benchmark datasets. To address this, we introduce three primary contributions. First, we present the January Food Benchmark (JFB), a publicly available collection of 1,000 food images with human-validated annotations. Second, we detail a comprehensive benchmarking framework, including robust metrics and a novel, application-oriented overall score designed to assess model performance holistically. Third, we provide baseline results from both ",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_gbc-generalized-behavior-cloning-framework-for-whole-body-humanoid-imitation_3",
+      "title": "GBC: Generalized Behavior-Cloning Framework for Whole-Body Humanoid Imitation",
+      "url": "http://arxiv.org/abs/2508.09960v1",
+      "source": "arXiv cs.AI",
+      "summary": "The creation of human-like humanoid robots is hindered by a fundamental fragmentation: data processing and learning algorithms are rarely universal across different robot morphologies. This paper introduces the Generalized Behavior Cloning (GBC) framework, a comprehensive and unified solution designed to solve this end-to-end challenge. GBC establishes a complete pathway from human motion to robot action through three synergistic innovations. First, an adaptive data pipeline leverages a differentiable IK network to automatically retarget any human MoCap data to any humanoid. Building on this f",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_specialised-or-generic-tokenization-choices-for-radiology-language-models_4",
+      "title": "Specialised or Generic? Tokenization Choices for Radiology Language Models",
+      "url": "http://arxiv.org/abs/2508.09952v1",
+      "source": "arXiv cs.AI",
+      "summary": "The vocabulary used by language models (LM) - defined by the tokenizer - plays a key role in text generation quality. However, its impact remains under-explored in radiology. In this work, we address this gap by systematically comparing general, medical, and domain-specific tokenizers on the task of radiology report summarisation across three imaging modalities. We also investigate scenarios with and without LM pre-training on PubMed abstracts. Our findings demonstrate that medical and domain-specific vocabularies outperformed widely used natural language alternatives when models are trained f",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_viscodex-unified-multimodal-code-generation-via-merging-vision-and-coding-models_5",
+      "title": "VisCodex: Unified Multimodal Code Generation via Merging Vision and Coding Models",
+      "url": "http://arxiv.org/abs/2508.09945v1",
+      "source": "arXiv cs.AI",
+      "summary": "Multimodal large language models (MLLMs) have significantly advanced the integration of visual and textual understanding. However, their ability to generate code from multimodal inputs remains limited. In this work, we introduce VisCodex, a unified framework that seamlessly merges vision and coding language models to empower MLLMs with strong multimodal code generation abilities. Leveraging a task vector-based model merging technique, we integrate a state-of-the-art coding LLM into a strong vision-language backbone, while preserving both visual comprehension and advanced coding skills. To supp",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_a-comprehensive-evaluation-framework-of-alignment-techniques-for-llms_6",
+      "title": "A Comprehensive Evaluation framework of Alignment Techniques for LLMs",
+      "url": "http://arxiv.org/abs/2508.09937v1",
+      "source": "arXiv cs.AI",
+      "summary": "As Large Language Models (LLMs) become increasingly integrated into real-world applications, ensuring their outputs align with human values and safety standards has become critical. The field has developed diverse alignment approaches including traditional fine-tuning methods (RLHF, instruction tuning), post-hoc correction systems, and inference-time interventions, each with distinct advantages and limitations. However, the lack of unified evaluation frameworks makes it difficult to systematically compare these paradigms and guide deployment decisions. This paper introduces a multi-dimensional",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_mathematical-computation-and-reasoning-errors-by-large-language-models_7",
+      "title": "Mathematical Computation and Reasoning Errors by Large Language Models",
+      "url": "http://arxiv.org/abs/2508.09932v1",
+      "source": "arXiv cs.AI",
+      "summary": "Large Language Models (LLMs) are increasingly utilized in AI-driven educational instruction and assessment, particularly within mathematics education. The capability of LLMs to generate accurate answers and detailed solutions for math problem-solving tasks is foundational for ensuring reliable and precise feedback and assessment in math education practices. Our study focuses on evaluating the accuracy of four LLMs (OpenAI GPT-4o and o1, DeepSeek-V3 and DeepSeek-R1) solving three categories of math tasks, including arithmetic, algebra, and number theory, and identifies step-level reasoning erro",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_residual-reservoir-memory-networks_8",
+      "title": "Residual Reservoir Memory Networks",
+      "url": "http://arxiv.org/abs/2508.09925v1",
+      "source": "arXiv cs.AI",
+      "summary": "We introduce a novel class of untrained Recurrent Neural Networks (RNNs) within the Reservoir Computing (RC) paradigm, called Residual Reservoir Memory Networks (ResRMNs). ResRMN combines a linear memory reservoir with a non-linear reservoir, where the latter is based on residual orthogonal connections along the temporal dimension for enhanced long-term propagation of the input. The resulting reservoir state dynamics are studied through the lens of linear stability analysis, and we investigate diverse configurations for the temporal residual connections. The proposed approach is empirically as",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_t-cace-a-time-conditioned-autoregressive-contrast-enhancement-multi-task-framewo_9",
+      "title": "T-CACE: A Time-Conditioned Autoregressive Contrast Enhancement Multi-Task Framework for Contrast-Free Liver MRI Synthesis, Segmentation, and Diagnosis",
+      "url": "http://arxiv.org/abs/2508.09919v1",
+      "source": "arXiv cs.AI",
+      "summary": "Magnetic resonance imaging (MRI) is a leading modality for the diagnosis of liver cancer, significantly improving the classification of the lesion and patient outcomes. However, traditional MRI faces challenges including risks from contrast agent (CA) administration, time-consuming manual assessment, and limited annotated datasets. To address these limitations, we propose a Time-Conditioned Autoregressive Contrast Enhancement (T-CACE) framework for synthesizing multi-phase contrast-enhanced MRI (CEMRI) directly from non-contrast MRI (NCMRI). T-CACE introduces three core innovations: a conditio",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_beyond-nave-prompting-strategies-for-improved-zero-shot-context-aided-forecastin_10",
+      "title": "Beyond Naïve Prompting: Strategies for Improved Zero-shot Context-aided Forecasting with LLMs",
+      "url": "http://arxiv.org/abs/2508.09904v1",
+      "source": "arXiv cs.AI",
+      "summary": "Forecasting in real-world settings requires models to integrate not only historical data but also relevant contextual information, often available in textual form. While recent work has shown that large language models (LLMs) can be effective context-aided forecasters via na\\\"ive direct prompting, their full potential remains underexplored. We address this gap with 4 strategies, providing new insights into the zero-shot capabilities of LLMs in this setting. ReDP improves interpretability by eliciting explicit reasoning traces, allowing us to assess the model's reasoning over the context indepe",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_rare-anomalies-require-large-datasets-about-proving-the-existence-of-anomalies_11",
+      "title": "Rare anomalies require large datasets: About proving the existence of anomalies",
+      "url": "http://arxiv.org/abs/2508.09894v1",
+      "source": "arXiv cs.AI",
+      "summary": "Detecting whether any anomalies exist within a dataset is crucial for effective anomaly detection, yet it remains surprisingly underexplored in anomaly detection literature. This paper presents a comprehensive study that addresses the fundamental question: When can we conclusively determine that anomalies are present? Through extensive experimentation involving over three million statistical tests across various anomaly detection tasks and algorithms, we identify a relationship between the dataset size, contamination rate, and an algorithm-dependent constant $ \\alpha_{\\text{algo}} $. Our resul",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_ragulating-compliance-a-multi-agent-knowledge-graph-for-regulatory-qa_12",
+      "title": "RAGulating Compliance: A Multi-Agent Knowledge Graph for Regulatory QA",
+      "url": "http://arxiv.org/abs/2508.09893v1",
+      "source": "arXiv cs.AI",
+      "summary": "Regulatory compliance question answering (QA) requires precise, verifiable information, and domain-specific expertise, posing challenges for Large Language Models (LLMs). In this work, we present a novel multi-agent framework that integrates a Knowledge Graph (KG) of Regulatory triplets with Retrieval-Augmented Generation (RAG) to address these demands. First, agents build and maintain an ontology-free KG by extracting subject--predicate--object (SPO) triplets from regulatory documents and systematically cleaning, normalizing, deduplicating, and updating them. Second, these triplets are embedd",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_aworld-dynamic-multi-agent-system-with-stable-maneuvering-for-robust-gaia-proble_13",
+      "title": "AWorld: Dynamic Multi-Agent System with Stable Maneuvering for Robust GAIA Problem Solving",
+      "url": "http://arxiv.org/abs/2508.09889v1",
+      "source": "arXiv cs.AI",
+      "summary": "The rapid advancement of large language models (LLMs) has empowered intelligent agents to leverage diverse external tools for solving complex real-world problems. However, as agents increasingly depend on multiple tools, they encounter new challenges: extended contexts from disparate sources and noisy or irrelevant tool outputs can undermine system reliability and accuracy. These challenges underscore the necessity for enhanced stability in agent-based systems. To address this, we introduce dynamic supervision and maneuvering mechanisms, constructing a robust and dynamic Multi-Agent System (MA",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_come-dual-structure-semantic-learning-with-collaborative-moe-for-universal-lesio_14",
+      "title": "COME: Dual Structure-Semantic Learning with Collaborative MoE for Universal Lesion Detection Across Heterogeneous Ultrasound Datasets",
+      "url": "http://arxiv.org/abs/2508.09886v1",
+      "source": "arXiv cs.AI",
+      "summary": "Conventional single-dataset training often fails with new data distributions, especially in ultrasound (US) image analysis due to limited data, acoustic shadows, and speckle noise. Therefore, constructing a universal framework for multi-heterogeneous US datasets is imperative. However, a key challenge arises: how to effectively mitigate inter-dataset interference while preserving dataset-specific discriminative features for robust downstream task? Previous approaches utilize either a single source-specific decoder or a domain adaptation strategy, but these methods experienced a decline in perf",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_beyond-scaling-law-a-data-efficient-distillation-framework-for-reasoning_15",
+      "title": "Beyond Scaling Law: A Data-Efficient Distillation Framework for Reasoning",
+      "url": "http://arxiv.org/abs/2508.09883v1",
+      "source": "arXiv cs.AI",
+      "summary": "Large language models (LLMs) demonstrate remarkable reasoning capabilities in tasks such as algorithmic coding and mathematical problem-solving. Recent methods have improved reasoning through expanded corpus and multistage training combining reinforcement learning and supervised fine-tuning. Although some methods suggest that small but targeted dataset can incentivize reasoning via only distillation, a reasoning scaling laws is still taking shape, increasing computational costs. To address this, we propose a data-efficient distillation framework (DED) that optimizes the Pareto frontier of reas",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_memory-decoder-a-pretrained-plug-and-play-memory-for-large-language-models_16",
+      "title": "Memory Decoder: A Pretrained, Plug-and-Play Memory for Large Language Models",
+      "url": "http://arxiv.org/abs/2508.09874v1",
+      "source": "arXiv cs.AI",
+      "summary": "Large Language Models (LLMs) have shown strong abilities in general language tasks, yet adapting them to specific domains remains a challenge. Current method like Domain Adaptive Pretraining (DAPT) requires costly full-parameter training and suffers from catastrophic forgetting. Meanwhile, Retrieval-Augmented Generation (RAG) introduces substantial inference latency due to expensive nearest-neighbor searches and longer context. This paper introduces Memory Decoder, a plug-and-play pretrained memory that enables efficient domain adaptation without changing the original model's parameters. Memor",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_human-aligned-procedural-level-generation-reinforcement-learning-via-text-level-_17",
+      "title": "Human-Aligned Procedural Level Generation Reinforcement Learning via Text-Level-Sketch Shared Representation",
+      "url": "http://arxiv.org/abs/2508.09860v1",
+      "source": "arXiv cs.AI",
+      "summary": "Human-aligned AI is a critical component of co-creativity, as it enables models to accurately interpret human intent and generate controllable outputs that align with design goals in collaborative content creation. This direction is especially relevant in procedural content generation via reinforcement learning (PCGRL), which is intended to serve as a tool for human designers. However, existing systems often fall short of exhibiting human-centered behavior, limiting the practical utility of AI-driven generation tools in real-world design workflows. In this paper, we propose VIPCGRL (Vision-Ins",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_stream-chembio-a-standard-for-transparently-reporting-evaluations-in-ai-model-re_18",
+      "title": "STREAM (ChemBio): A Standard for Transparently Reporting Evaluations in AI Model Reports",
+      "url": "http://arxiv.org/abs/2508.09853v1",
+      "source": "arXiv cs.AI",
+      "summary": "Evaluations of dangerous AI capabilities are important for managing catastrophic risks. Public transparency into these evaluations - including what they test, how they are conducted, and how their results inform decisions - is crucial for building trust in AI development. We propose STREAM (A Standard for Transparently Reporting Evaluations in AI Model Reports), a standard to improve how model reports disclose evaluation results, initially focusing on chemical and biological (ChemBio) benchmarks. Developed in consultation with 23 experts across government, civil society, academia, and frontier",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_perceptual-reality-transformer-neural-architectures-for-simulating-neurological-_19",
+      "title": "Perceptual Reality Transformer: Neural Architectures for Simulating Neurological Perception Conditions",
+      "url": "http://arxiv.org/abs/2508.09852v1",
+      "source": "arXiv cs.AI",
+      "summary": "Neurological conditions affecting visual perception create profound experiential divides between affected individuals and their caregivers, families, and medical professionals. We present the Perceptual Reality Transformer, a comprehensive framework employing six distinct neural architectures to simulate eight neurological perception conditions with scientifically-grounded visual transformations. Our system learns mappings from natural images to condition-specific perceptual states, enabling others to experience approximations of simultanagnosia, prosopagnosia, ADHD attention deficits, visual ",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    }
+  ]
+}
