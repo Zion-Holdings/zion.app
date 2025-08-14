@@ -45,12 +45,12 @@
       "route": "/front"
     },
     {
-      "file": "pages/explore/index.tsx",
-      "route": "/explore"
-    },
-    {
       "file": "pages/automation/index.tsx",
       "route": "/automation"
+    },
+    {
+      "file": "pages/explore/index.tsx",
+      "route": "/explore"
     },
     {
       "file": "pages/reports/updates/update-2025-08-14T21-42.tsx",
@@ -979,5 +979,49 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-14T21:43:05.474Z"
+  "generatedAt": "2025-08-14T21:43:11.209Z",
+  "items": [
+    {
+      "title": "Case Study — Trigger Homepage",
+      "href": "/reports/cases/case-2025-08-14-214314",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T21:43:14.735Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-14-214314",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T21:43:14.735Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Cloud Improving Continuously",
+      "href": "/reports/patterns/pattern-2025-08-14-214314",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T21:43:14.735Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Case Study — Trigger Homepage",
+      "href": "/reports/cases/case-2025-08-14-214313",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T21:43:13.386Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-14-214313",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T21:43:13.386Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Cloud Improving Continuously",
+      "href": "/reports/patterns/pattern-2025-08-14-214313",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T21:43:13.386Z",
+      "source": "cloud-deep-research-factory"
+    }
+  ]
 }
