@@ -1,48 +1,32 @@
 {
-<<<<<<< HEAD
-  "generatedAt": "2025-08-14T17:42:11.186Z",
-  "items": [
-    {
-      "title": "Guide —  Implementation",
-      "href": "/reports/guides/guide-2025-08-14-174211",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T17:42:11.148Z",
-=======
-  "generatedAt": "2025-08-14T17:43:15.132Z",
+  "generatedAt": "2025-08-14T17:58:01.886Z",
   "items": [
     {
       "title": "Reference Architecture — Autonomous Content Mesh",
-      "href": "/reports/blueprints/blueprint-2025-08-14-174315",
+      "href": "/reports/blueprints/blueprint-2025-08-14-175801",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T17:43:15.098Z",
+      "createdAt": "2025-08-14T17:58:01.859Z",
       "source": "cloud-blueprint-factory"
     },
     {
       "title": "Playbook — Autonomous Delivery",
-      "href": "/reports/playbooks/playbook-2025-08-14-174315",
+      "href": "/reports/playbooks/playbook-2025-08-14-175801",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T17:43:15.064Z",
+      "createdAt": "2025-08-14T17:58:01.831Z",
       "source": "cloud-playbook-factory"
     },
     {
       "title": "Guide —  Implementation",
-      "href": "/reports/guides/guide-2025-08-14-174315",
+      "href": "/reports/guides/guide-2025-08-14-175801",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T17:43:15.022Z",
->>>>>>> 74615c396e (chore(sync): advanced autonomous sync)
+      "createdAt": "2025-08-14T17:58:01.802Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Cloud Intelligence",
-<<<<<<< HEAD
-      "href": "/reports/patterns/pattern-2025-08-14-174211",
+      "href": "/reports/patterns/pattern-2025-08-14-175801",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T17:42:11.148Z",
-=======
-      "href": "/reports/patterns/pattern-2025-08-14-174315",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T17:43:15.022Z",
->>>>>>> 74615c396e (chore(sync): advanced autonomous sync)
+      "createdAt": "2025-08-14T17:58:01.802Z",
       "source": "cloud-deep-research-factory"
     }
   ]
