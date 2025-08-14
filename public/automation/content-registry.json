@@ -65,8 +65,13 @@
       "route": "/automation"
     },
     {
+<<<<<<< HEAD
       "file": "pages/reports/patterns/pattern-2025-08-14-111953.tsx",
       "route": "/reports/patterns/pattern-2025-08-14-111953"
+=======
+      "file": "pages/reports/patterns/pattern-2025-08-14-111648.tsx",
+      "route": "/reports/patterns/pattern-2025-08-14-111648"
+>>>>>>> f94965f780 (chore(sync): advanced autonomous sync)
     },
     {
       "file": "pages/reports/patterns/pattern-2025-08-14-111451.tsx",
@@ -589,8 +594,13 @@
       "route": "/reports/patterns/pattern-2025-08-13-215625"
     },
     {
+<<<<<<< HEAD
       "file": "pages/reports/playbooks/playbook-2025-08-14-111953.tsx",
       "route": "/reports/playbooks/playbook-2025-08-14-111953"
+=======
+      "file": "pages/reports/playbooks/playbook-2025-08-14-111648.tsx",
+      "route": "/reports/playbooks/playbook-2025-08-14-111648"
+>>>>>>> f94965f780 (chore(sync): advanced autonomous sync)
     },
     {
       "file": "pages/reports/playbooks/playbook-2025-08-14-110746.tsx",
@@ -1537,8 +1547,13 @@
       "route": "/reports/playbooks/playbook-2025-08-13-223010"
     },
     {
+<<<<<<< HEAD
       "file": "pages/reports/guides/guide-2025-08-14-111953.tsx",
       "route": "/reports/guides/guide-2025-08-14-111953"
+=======
+      "file": "pages/reports/guides/guide-2025-08-14-111648.tsx",
+      "route": "/reports/guides/guide-2025-08-14-111648"
+>>>>>>> f94965f780 (chore(sync): advanced autonomous sync)
     },
     {
       "file": "pages/reports/guides/guide-2025-08-14-111451.tsx",
@@ -2057,10 +2072,13 @@
       "route": "/reports/guides/guide-2025-08-13-215625"
     },
     {
+<<<<<<< HEAD
       "file": "pages/reports/innovations/insight-2025-08-14T11-19.tsx",
       "route": "/reports/innovations/insight-2025-08-14T11-19"
     },
     {
+=======
+>>>>>>> f94965f780 (chore(sync): advanced autonomous sync)
       "file": "pages/reports/innovations/insight-2025-08-14T11-07.tsx",
       "route": "/reports/innovations/insight-2025-08-14T11-07"
     },
@@ -3089,8 +3107,13 @@
       "route": "/reports/innovations"
     },
     {
+<<<<<<< HEAD
       "file": "pages/reports/cases/case-2025-08-14-111953.tsx",
       "route": "/reports/cases/case-2025-08-14-111953"
+=======
+      "file": "pages/reports/cases/case-2025-08-14-111648.tsx",
+      "route": "/reports/cases/case-2025-08-14-111648"
+>>>>>>> f94965f780 (chore(sync): advanced autonomous sync)
     },
     {
       "file": "pages/reports/cases/case-2025-08-14-111451.tsx",
@@ -3573,8 +3596,13 @@
       "route": "/reports/cases/case-2025-08-14-040018"
     },
     {
+<<<<<<< HEAD
       "file": "pages/reports/blueprints/blueprint-2025-08-14-111953.tsx",
       "route": "/reports/blueprints/blueprint-2025-08-14-111953"
+=======
+      "file": "pages/reports/blueprints/blueprint-2025-08-14-111648.tsx",
+      "route": "/reports/blueprints/blueprint-2025-08-14-111648"
+>>>>>>> f94965f780 (chore(sync): advanced autonomous sync)
     },
     {
       "file": "pages/reports/blueprints/blueprint-2025-08-14-110746.tsx",
@@ -10659,5 +10687,32 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
+<<<<<<< HEAD
   "generatedAt": "2025-08-14T11:26:34.245Z"
+=======
+  "generatedAt": "2025-08-14T11:28:15.594Z",
+  "items": [
+    {
+      "title": "Case Study — Autonomous Reports",
+      "href": "/reports/cases/case-2025-08-14-112816",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T11:28:16.591Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Techcrunch Pebble Implementation",
+      "href": "/reports/guides/guide-2025-08-14-112816",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T11:28:16.591Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Trigger Homepage Sitemap",
+      "href": "/reports/patterns/pattern-2025-08-14-112816",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T11:28:16.591Z",
+      "source": "cloud-deep-research-factory"
+    }
+  ]
+>>>>>>> f94965f780 (chore(sync): advanced autonomous sync)
 }
