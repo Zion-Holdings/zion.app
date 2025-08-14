@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T00:37:11.552Z",
-  "pagesScanned": 1429,
+  "generatedAt": "2025-08-14T00:37:21.697Z",
+  "pagesScanned": 1432,
   "items": [
     {
       "route": "/404",
@@ -97,10 +97,7 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -2212,6 +2209,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14-0037",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook: LLM Apps",
+        "description": "Playbook: LLM Apps — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -3413,6 +3420,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-003702",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-003712",
       "missing": [
         "og:image"
       ],
@@ -13999,6 +14016,16 @@
       "suggestion": {
         "title": "Autonomous Reference Architecture — Data Engineering (2025-08-14 00:36 UTC)",
         "description": "Autonomous Reference Architecture — Data Engineering (2025-08-14 00:36 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0037",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Playbook — Vision & Multimodal (2025-08-14 00:37 UTC)",
+        "description": "Autonomous Playbook — Vision & Multimodal (2025-08-14 00:37 UTC) — auto-suggested description"
       }
     },
     {
