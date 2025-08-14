@@ -1,18 +1,33 @@
 {
+  "generatedAt": "2025-08-14T11:07:01.044Z",
   "items": [
     {
-      "title": "Runbook: FinOps for AI",
-      "subtitle": "Patterns to enhance security.",
-      "path": "/reports/innovations/insight-2025-08-14-1101",
-      "createdAt": "2025-08-14T11:01:44.661Z",
-      "kind": "insight"
+      "title": "Innovation Insight — 2025-08-14 11-07",
+      "href": "/reports/innovations/insight-2025-08-14T11-07",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T11:07:01.018Z",
+      "source": "cloud-content-factory"
     },
     {
-      "title": "Runbook: RAG Platforms",
-      "subtitle": "Patterns to enhance security.",
-      "path": "/reports/innovations/insight-2025-08-14-1056",
-      "createdAt": "2025-08-14T10:56:20.778Z",
-      "kind": "insight"
+      "title": "Autonomous Update — 2025-08-14 11-07",
+      "href": "/reports/updates/update-2025-08-14T11-07",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T11:07:01.018Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-14 11-07",
+      "href": "/reports/innovations/insight-2025-08-14T11-07",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T11:07:01.018Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-14 11-07",
+      "href": "/reports/updates/update-2025-08-14T11-07",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T11:07:01.018Z",
+      "source": "cloud-content-factory"
     }
   ]
 }
