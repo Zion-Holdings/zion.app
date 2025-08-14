@@ -1,33 +1,33 @@
 {
-  "generatedAt": "2025-08-14T14:56:24.551Z",
+  "generatedAt": "2025-08-14T15:00:34.372Z",
   "items": [
     {
-      "title": "Playbook: Edge AI",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-14-1500",
-      "createdAt": "2025-08-14T15:00:20.448Z",
-      "kind": "insight"
+      "title": "Innovation Insight — 2025-08-14 15-00",
+      "href": "/reports/innovations/insight-2025-08-14T15-00",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T15:00:34.277Z",
+      "source": "cloud-content-factory"
     },
     {
-      "title": "Case Study — Techcrunch Pebble",
-      "href": "/reports/cases/case-2025-08-14-145624",
+      "title": "Autonomous Update — 2025-08-14 15-00",
+      "href": "/reports/updates/update-2025-08-14T15-00",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T14:56:24.514Z",
-      "source": "cloud-deep-research-factory"
+      "createdAt": "2025-08-14T15:00:34.277Z",
+      "source": "cloud-content-factory"
     },
     {
-      "title": "Guide — Capabilities Live Implementation",
-      "href": "/reports/guides/guide-2025-08-14-145624",
+      "title": "Innovation Insight — 2025-08-14 15-00",
+      "href": "/reports/innovations/insight-2025-08-14T15-00",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T14:56:24.514Z",
-      "source": "cloud-deep-research-factory"
+      "createdAt": "2025-08-14T15:00:34.277Z",
+      "source": "cloud-content-factory"
     },
     {
-      "title": "Pattern — Trigger Homepage Sitemap",
-      "href": "/reports/patterns/pattern-2025-08-14-145624",
+      "title": "Autonomous Update — 2025-08-14 15-00",
+      "href": "/reports/updates/update-2025-08-14T15-00",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T14:56:24.514Z",
-      "source": "cloud-deep-research-factory"
+      "createdAt": "2025-08-14T15:00:34.277Z",
+      "source": "cloud-content-factory"
     }
   ]
 }
