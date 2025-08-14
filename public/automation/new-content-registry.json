@@ -1,4 +1,26 @@
 {
-  "generatedAt": "2025-08-14T21:38:14.515Z",
-  "items": []
+  "generatedAt": "2025-08-14T21:38:40.412Z",
+  "items": [
+    {
+      "title": "Case Study — Trigger Homepage",
+      "href": "/reports/cases/case-2025-08-14-213840",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T21:38:40.290Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-14-213840",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T21:38:40.290Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Cloud Improving Continuously",
+      "href": "/reports/patterns/pattern-2025-08-14-213840",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T21:38:40.290Z",
+      "source": "cloud-deep-research-factory"
+    }
+  ]
 }
