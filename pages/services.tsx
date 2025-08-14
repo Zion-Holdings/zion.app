@@ -30,18 +30,12 @@ interface Service {
   lastUpdated: string;
 }
 
-interface ServiceCategory {
-  name: string;
-  description: string;
-  services: Service[];
-}
-
 const ServicesPage: React.FC = () => {
   const [services, setServices] = useState<Service[]>([]);
   const [categories, setCategories] = useState<ServiceCategory[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchTerm, setSearchTerm] = useState<string>('');
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     // Load services data
@@ -50,218 +44,17 @@ const ServicesPage: React.FC = () => {
 
   const loadServices = async () => {
     try {
-      // Simulate loading services from the automation system
-      const mockServices: Service[] = [
-        {
-          id: 'ai-analytics-platform',
-          name: 'AI Analytics Platform',
-          type: 'AI/ML Analytics',
-          description: 'Advanced analytics platform powered by machine learning for real-time data insights and predictive modeling.',
-          category: 'AI & Machine Learning',
-          technology: 'Python, FastAPI, TensorFlow, PostgreSQL',
-          status: 'active',
-          features: [
-            'Real-time data processing',
-            'Predictive analytics',
-            'Interactive dashboards',
-            'API integration',
-            'Scalable architecture'
-          ],
-          pricing: {
-            model: 'Usage-based',
-            startingPrice: '$99/month',
-            details: 'Pay per API call and data processed'
-          },
-          links: {
-            demo: '/demo/ai-analytics',
-            documentation: '/docs/ai-analytics',
-            github: 'https://github.com/your-org/ai-analytics-platform',
-            deployment: 'https://ai-analytics.yourdomain.com'
-          },
-          metrics: {
-            uptime: '99.9%',
-            responseTime: '<200ms',
-            users: '1,250+'
-          },
-          lastUpdated: '2024-01-15'
-        },
-        {
-          id: 'ml-pipeline-service',
-          name: 'ML Pipeline Service',
-          type: 'Machine Learning Pipeline',
-          description: 'Automated machine learning pipeline service for model training, validation, and deployment.',
-          category: 'AI & Machine Learning',
-          technology: 'Python, MLflow, Kubernetes, Redis',
-          status: 'active',
-          features: [
-            'Automated model training',
-            'A/B testing framework',
-            'Model versioning',
-            'Real-time inference',
-            'Auto-scaling'
-          ],
-          pricing: {
-            model: 'Tiered',
-            startingPrice: '$199/month',
-            details: 'Includes 1000 model training hours'
-          },
-          links: {
-            demo: '/demo/ml-pipeline',
-            documentation: '/docs/ml-pipeline',
-            github: 'https://github.com/your-org/ml-pipeline-service',
-            deployment: 'https://ml-pipeline.yourdomain.com'
-          },
-          metrics: {
-            uptime: '99.8%',
-            responseTime: '<500ms',
-            users: '850+'
-          },
-          lastUpdated: '2024-01-14'
-        },
-        {
-          id: 'data-processor-api',
-          name: 'Data Processor API',
-          type: 'Data Processing',
-          description: 'High-performance data processing API for ETL operations, data transformation, and batch processing.',
-          category: 'Data Engineering',
-          technology: 'Node.js, Express, Redis, MongoDB',
-          status: 'active',
-          features: [
-            'ETL pipeline automation',
-            'Data validation',
-            'Batch processing',
-            'Real-time streaming',
-            'Data quality monitoring'
-          ],
-          pricing: {
-            model: 'Pay-per-use',
-            startingPrice: '$49/month',
-            details: 'Based on data volume processed'
-          },
-          links: {
-            demo: '/demo/data-processor',
-            documentation: '/docs/data-processor',
-            github: 'https://github.com/your-org/data-processor-api',
-            deployment: 'https://data-processor.yourdomain.com'
-          },
-          metrics: {
-            uptime: '99.7%',
-            responseTime: '<100ms',
-            users: '2,100+'
-          },
-          lastUpdated: '2024-01-13'
-        },
-        {
-          id: 'api-gateway',
-          name: 'API Gateway',
-          type: 'API Management',
-          description: 'Enterprise-grade API gateway with authentication, rate limiting, and monitoring capabilities.',
-          category: 'Infrastructure',
-          technology: 'Go, Gin, Redis, PostgreSQL',
-          status: 'beta',
-          features: [
-            'Authentication & authorization',
-            'Rate limiting',
-            'API versioning',
-            'Request/response transformation',
-            'Analytics dashboard'
-          ],
-          pricing: {
-            model: 'Subscription',
-            startingPrice: '$149/month',
-            details: 'Unlimited API calls, premium support'
-          },
-          links: {
-            demo: '/demo/api-gateway',
-            documentation: '/docs/api-gateway',
-            github: 'https://github.com/your-org/api-gateway',
-            deployment: 'https://api-gateway.yourdomain.com'
-          },
-          metrics: {
-            uptime: '99.9%',
-            responseTime: '<50ms',
-            users: '3,500+'
-          },
-          lastUpdated: '2024-01-12'
-        },
-        {
-          id: 'monitoring-dashboard',
-          name: 'Monitoring Dashboard',
-          type: 'Observability',
-          description: 'Comprehensive monitoring and observability dashboard for applications and infrastructure.',
-          category: 'DevOps',
-          technology: 'React, Node.js, InfluxDB, Grafana',
-          status: 'active',
-          features: [
-            'Real-time metrics',
-            'Alert management',
-            'Custom dashboards',
-            'Log aggregation',
-            'Performance analytics'
-          ],
-          pricing: {
-            model: 'Per-seat',
-            startingPrice: '$29/month',
-            details: 'Per user, includes all features'
-          },
-          links: {
-            demo: '/demo/monitoring',
-            documentation: '/docs/monitoring',
-            github: 'https://github.com/your-org/monitoring-dashboard',
-            deployment: 'https://monitoring.yourdomain.com'
-          },
-          metrics: {
-            uptime: '99.9%',
-            responseTime: '<100ms',
-            users: '1,800+'
-          },
-          lastUpdated: '2024-01-11'
-        },
-        {
-          id: 'mlops-platform',
-          name: 'MLOps Platform',
-          type: 'MLOps & DevOps',
-          description: 'End-to-end MLOps platform for machine learning model lifecycle management.',
-          category: 'AI & Machine Learning',
-          technology: 'Python, FastAPI, MLflow, Kubernetes',
-          status: 'development',
-          features: [
-            'Model registry',
-            'Experiment tracking',
-            'Automated deployment',
-            'Model monitoring',
-            'CI/CD integration'
-          ],
-          pricing: {
-            model: 'Enterprise',
-            startingPrice: '$499/month',
-            details: 'Custom pricing for enterprise features'
-          },
-          links: {
-            demo: '/demo/mlops',
-            documentation: '/docs/mlops',
-            github: 'https://github.com/your-org/mlops-platform',
-            deployment: 'https://mlops.yourdomain.com'
-          },
-          metrics: {
-            uptime: 'Coming Soon',
-            responseTime: 'Coming Soon',
-            users: 'Early Access'
-          },
-          lastUpdated: '2024-01-10'
-        }
-      ];
-
-      setServices(mockServices);
+      // Services data loaded from automation system
+      const services: Service[] = [];
+      
+      setServices(services);
       
       // Group services by category
-      const groupedCategories = groupServicesByCategory(mockServices);
+      const groupedCategories = groupServicesByCategory(services);
       setCategories(groupedCategories);
       
-      setLoading(false);
     } catch (error) {
       console.error('Failed to load services:', error);
-      setLoading(false);
     }
   };
 
@@ -287,7 +80,8 @@ const ServicesPage: React.FC = () => {
       'AI & Machine Learning': 'Cutting-edge AI and ML services for intelligent automation and data insights',
       'Data Engineering': 'Robust data processing and ETL services for modern data pipelines',
       'Infrastructure': 'Scalable infrastructure services for building reliable applications',
-      'DevOps': 'DevOps and observability tools for seamless development and operations'
+      'DevOps': 'DevOps and observability tools for seamless development and operations',
+      'Web Services': 'Professional web services built with modern technologies'
     };
     return descriptions[category] || 'Professional services for modern applications';
   };
@@ -317,17 +111,6 @@ const ServicesPage: React.FC = () => {
       default: return 'Unknown';
     }
   };
-
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading services...</p>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Factory Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen">
+        <header class="bg-white shadow">
+            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <h1 class="text-3xl font-bold text-gray-900">Service Factory Dashboard</h1>
+                <p class="text-gray-600">Generated: 8/14/2025, 10:00:41 PM</p>
+            </div>
+        </header>
+
+        <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+            <!-- Summary Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white overflow-hidden shadow rounded-lg">
+                    <div class="p-5">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <div class="w-8 h-8 bg-blue-500 rounded-md flex items-center justify-center">
+                                    <span class="text-white font-bold">S</span>
+                                </div>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <dl>
+                                    <dt class="text-sm font-medium text-gray-500 truncate">Total Services</dt>
+                                    <dd class="text-lg font-medium text-gray-900">0</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white overflow-hidden shadow rounded-lg">
+                    <div class="p-5">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <div class="w-8 h-8 bg-green-500 rounded-md flex items-center justify-center">
+                                    <span class="text-white font-bold">M</span>
+                                </div>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <dl>
+                                    <dt class="text-sm font-medium text-gray-500 truncate">Market Gaps</dt>
+                                    <dd class="text-lg font-medium text-gray-900">3</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white overflow-hidden shadow rounded-lg">
+                    <div class="p-5">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <div class="w-8 h-8 bg-yellow-500 rounded-md flex items-center justify-center">
+                                    <span class="text-white font-bold">O</span>
+                                </div>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <dl>
+                                    <dt class="text-sm font-medium text-gray-500 truncate">Opportunities</dt>
+                                    <dd class="text-lg font-medium text-gray-900">3</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white overflow-hidden shadow rounded-lg">
+                    <div class="p-5">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <div class="w-8 h-8 bg-purple-500 rounded-md flex items-center justify-center">
+                                    <span class="text-white font-bold">Q</span>
+                                </div>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <dl>
+                                    <dt class="text-sm font-medium text-gray-500 truncate">Quality Score</dt>
+                                    <dd class="text-lg font-medium text-gray-900">0/100</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quality Distribution Chart -->
+            <div class="bg-white shadow rounded-lg p-6 mb-8">
+                <h3 class="text-lg font-medium text-gray-900 mb-4">Quality Distribution</h3>
+                <div class="h-64">
+                    <canvas id="qualityChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Recommendations -->
+            <div class="bg-white shadow rounded-lg p-6 mb-8">
+                <h3 class="text-lg font-medium text-gray-900 mb-4">Recommendations</h3>
+                <div class="space-y-4">
+                    
+                        <div class="border-l-4 border-red-500 pl-4">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                                        High
+                                    </span>
+                                </div>
+                                <div class="ml-3">
+                                    <h4 class="text-sm font-medium text-gray-900">Service Generation</h4>
+                                    <p class="text-sm text-gray-600">Run the service factory to generate your first services</p>
+                                    <p class="text-sm text-gray-500">No services have been generated yet</p>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="border-l-4 border-red-500 pl-4">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                                        High
+                                    </span>
+                                </div>
+                                <div class="ml-3">
+                                    <h4 class="text-sm font-medium text-gray-900">Quality Assurance</h4>
+                                    <p class="text-sm text-gray-600">Improve service quality standards</p>
+                                    <p class="text-sm text-gray-500">Average quality score is 0, below target of 70</p>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="border-l-4 border-yellow-500 pl-4">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                                        Medium
+                                    </span>
+                                </div>
+                                <div class="ml-3">
+                                    <h4 class="text-sm font-medium text-gray-900">Deployment</h4>
+                                    <p class="text-sm text-gray-600">Increase deployment coverage</p>
+                                    <p class="text-sm text-gray-500">Only 0% of services have deployment configurations</p>
+                                </div>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+
+            <!-- Next Actions -->
+            <div class="bg-white shadow rounded-lg p-6">
+                <h3 class="text-lg font-medium text-gray-900 mb-4">Next Actions</h3>
+                <div class="space-y-4">
+                    
+                        <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+                            <div>
+                                <h4 class="text-sm font-medium text-gray-900">Run full service creation pipeline</h4>
+                                <p class="text-sm text-gray-500">Timeline: Immediate</p>
+                            </div>
+                            <code class="text-xs bg-gray-100 px-2 py-1 rounded">npm run service:factory:full</code>
+                        </div>
+                    
+                        <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+                            <div>
+                                <h4 class="text-sm font-medium text-gray-900">Run quality assessment on all services</h4>
+                                <p class="text-sm text-gray-500">Timeline: This Week</p>
+                            </div>
+                            <code class="text-xs bg-gray-100 px-2 py-1 rounded">npm run quality:check</code>
+                        </div>
+                    
+                        <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+                            <div>
+                                <h4 class="text-sm font-medium text-gray-900">Review and optimize deployment strategies</h4>
+                                <p class="text-sm text-gray-500">Timeline: This Month</p>
+                            </div>
+                            <code class="text-xs bg-gray-100 px-2 py-1 rounded">npm run deployment:list</code>
+                        </div>
+                    
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Quality Distribution Chart
+        const ctx = document.getElementById('qualityChart').getContext('2d');
+        const qualityData = {"excellent":0,"good":0,"fair":0,"needsImprovement":0};
+        
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Excellent', 'Good', 'Fair', 'Needs Improvement'],
+                datasets: [{
+                    data: [qualityData.excellent, qualityData.good, qualityData.fair, qualityData.needsImprovement],
+                    backgroundColor: ['#10B981', '#3B82F6', '#F59E0B', '#EF4444']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Factory Integration Test Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen">
+        <header class="bg-white shadow">
+            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <h1 class="text-3xl font-bold text-gray-900">Service Factory Integration Test Report</h1>
+                <p class="text-gray-600">Test Run: 8/14/2025, 10:00:32 PM</p>
+            </div>
+        </header>
+
+        <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+            <!-- Summary Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white overflow-hidden shadow rounded-lg">
+                    <div class="p-5">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <div class="w-8 h-8 bg-green-500 rounded-md flex items-center justify-center">
+                                    <span class="text-white font-bold">P</span>
+                                </div>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <dl>
+                                    <dt class="text-sm font-medium text-gray-500 truncate">Passed Tests</dt>
+                                    <dd class="text-lg font-medium text-gray-900">5</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white overflow-hidden shadow rounded-lg">
+                    <div class="p-5">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <div class="w-8 h-8 bg-red-500 rounded-md flex items-center justify-center">
+                                    <span class="text-white font-bold">F</span>
+                                </div>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <dl>
+                                    <dt class="text-sm font-medium text-gray-500 truncate">Failed Tests</dt>
+                                    <dd class="text-lg font-medium text-gray-900">1</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white overflow-hidden shadow rounded-lg">
+                    <div class="p-5">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <div class="w-8 h-8 bg-yellow-500 rounded-md flex items-center justify-center">
+                                    <span class="text-white font-bold">E</span>
+                                </div>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <dl>
+                                    <dt class="text-sm font-medium text-gray-500 truncate">Error Tests</dt>
+                                    <dd class="text-lg font-medium text-gray-900">0</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white overflow-hidden shadow rounded-lg">
+                    <div class="p-5">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <div class="w-8 h-8 bg-red-500 rounded-md flex items-center justify-center">
+                                    <span class="text-white font-bold">O</span>
+                                </div>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <dl>
+                                    <dt class="text-sm font-medium text-gray-500 truncate">Overall Status</dt>
+                                    <dd class="text-lg font-medium text-gray-900">FAILED</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Test Results -->
+            <div class="bg-white shadow rounded-lg p-6 mb-8">
+                <h3 class="text-lg font-medium text-gray-900 mb-4">Test Results</h3>
+                <div class="space-y-4">
+                    
+                        <div class="border-l-4 border-red-500 pl-4">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h4 class="text-sm font-medium text-gray-900">Component Loading Test</h4>
+                                    <p class="text-sm text-gray-600">Status: FAILED</p>
+                                    
+                                        <div class="mt-2">
+                                            <p class="text-sm text-red-600">Errors:</p>
+                                            <ul class="text-sm text-red-600 list-disc list-inside">
+                                                <li>mvp-generator.cjs: Unexpected identifier '$'</li><li>Critical components failed to load: mvp-generator.cjs</li>
+                                            </ul>
+                                        </div>
+                                    
+                                </div>
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                                    FAILED
+                                </span>
+                            </div>
+                        </div>
+                    
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h4 class="text-sm font-medium text-gray-900">Data Flow Test</h4>
+                                    <p class="text-sm text-gray-600">Status: PASSED</p>
+                                    
+                                </div>
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                    PASSED
+                                </span>
+                            </div>
+                        </div>
+                    
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h4 class="text-sm font-medium text-gray-900">Service Generation Pipeline Test</h4>
+                                    <p class="text-sm text-gray-600">Status: PASSED</p>
+                                    
+                                </div>
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                    PASSED
+                                </span>
+                            </div>
+                        </div>
+                    
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h4 class="text-sm font-medium text-gray-900">Quality Assurance Integration Test</h4>
+                                    <p class="text-sm text-gray-600">Status: PASSED</p>
+                                    
+                                </div>
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                    PASSED
+                                </span>
+                            </div>
+                        </div>
+                    
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h4 class="text-sm font-medium text-gray-900">Deployment Orchestration Test</h4>
+                                    <p class="text-sm text-gray-600">Status: PASSED</p>
+                                    
+                                </div>
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                    PASSED
+                                </span>
+                            </div>
+                        </div>
+                    
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h4 class="text-sm font-medium text-gray-900">Performance & Scalability Test</h4>
+                                    <p class="text-sm text-gray-600">Status: PASSED</p>
+                                    
+                                </div>
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                    PASSED
+                                </span>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+
+            <!-- Recommendations -->
+            <div class="bg-white shadow rounded-lg p-6 mb-8">
+                <h3 class="text-lg font-medium text-gray-900 mb-4">Recommendations</h3>
+                <div class="space-y-4">
+                    
+                        <div class="border-l-4 border-red-500 pl-4">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                                        Critical
+                                    </span>
+                                </div>
+                                <div class="ml-3">
+                                    <h4 class="text-sm font-medium text-gray-900">Fix component loading issues</h4>
+                                    <p class="text-sm text-gray-600">Ensure all service factory components are properly installed and accessible</p>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                        Medium
+                                    </span>
+                                </div>
+                                <div class="ml-3">
+                                    <h4 class="text-sm font-medium text-gray-900">Optimize system scalability</h4>
+                                    <p class="text-sm text-gray-600">Review performance bottlenecks and implement caching or parallel processing</p>
+                                </div>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+
+            <!-- Next Steps -->
+            <div class="bg-white shadow rounded-lg p-6">
+                <h3 class="text-lg font-medium text-gray-900 mb-4">Next Steps</h3>
+                <div class="space-y-4">
+                    
+                        <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+                            <div>
+                                <h4 class="text-sm font-medium text-gray-900">Review and fix failed tests</h4>
+                                <p class="text-sm text-gray-500">Timeline: Today</p>
+                            </div>
+                            <code class="text-xs bg-gray-100 px-2 py-1 rounded">npm run integration:test</code>
+                        </div>
+                    
+                        <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+                            <div>
+                                <h4 class="text-sm font-medium text-gray-900">Run performance benchmarks</h4>
+                                <p class="text-sm text-gray-500">Timeline: This Week</p>
+                            </div>
+                            <code class="text-xs bg-gray-100 px-2 py-1 rounded">npm run performance:test</code>
+                        </div>
+                    
+                        <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+                            <div>
+                                <h4 class="text-sm font-medium text-gray-900">Generate quality dashboard</h4>
+                                <p class="text-sm text-gray-500">Timeline: This Week</p>
+                            </div>
+                            <code class="text-xs bg-gray-100 px-2 py-1 rounded">npm run dashboard:generate</code>
+                        </div>
+                    
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
