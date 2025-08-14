@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Static export handled via npm script; no inline export during build
+  // Enable static export for Next.js 14
+  output: 'export',
   trailingSlash: true,
   productionBrowserSourceMaps: false,
   images: { unoptimized: true },
