@@ -737,7 +737,6 @@
       "route": "/reports/playbooks/playbook-2025-08-13-223010"
     },
     {
-<<<<<<< Updated upstream
       "file": "pages/reports/guides/guide-2025-08-14-044122.tsx",
       "route": "/reports/guides/guide-2025-08-14-044122"
     },
@@ -776,10 +775,10 @@
     {
       "file": "pages/reports/guides/guide-2025-08-13-215625.tsx",
       "route": "/reports/guides/guide-2025-08-13-215625"
-=======
-      "file": "pages/reports/innovations/insight-2025-08-14T04-50.tsx",
-      "route": "/reports/innovations/insight-2025-08-14T04-50"
->>>>>>> Stashed changes
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-14-040018.tsx",
+      "route": "/reports/cases/case-2025-08-14-040018"
     },
     {
       "file": "pages/reports/innovations/insight-2025-08-14T04-41.tsx",
@@ -1524,87 +1523,6 @@
     {
       "file": "pages/reports/innovations/index.tsx",
       "route": "/reports/innovations"
-    },
-    {
-<<<<<<< Updated upstream
-      "file": "pages/reports/cases/case-2025-08-14-040018.tsx",
-      "route": "/reports/cases/case-2025-08-14-040018"
-=======
-      "file": "pages/reports/guides/guide-2025-08-14-045424.tsx",
-      "route": "/reports/guides/guide-2025-08-14-045424"
-    },
-    {
-      "file": "pages/reports/guides/guide-2025-08-14-045017.tsx",
-      "route": "/reports/guides/guide-2025-08-14-045017"
-    },
-    {
-      "file": "pages/reports/guides/guide-2025-08-14-044841.tsx",
-      "route": "/reports/guides/guide-2025-08-14-044841"
-    },
-    {
-      "file": "pages/reports/guides/guide-2025-08-14-044122.tsx",
-      "route": "/reports/guides/guide-2025-08-14-044122"
-    },
-    {
-      "file": "pages/reports/guides/guide-2025-08-14-043123.tsx",
-      "route": "/reports/guides/guide-2025-08-14-043123"
-    },
-    {
-      "file": "pages/reports/guides/guide-2025-08-14-043122.tsx",
-      "route": "/reports/guides/guide-2025-08-14-043122"
-    },
-    {
-      "file": "pages/reports/guides/guide-2025-08-14-042122.tsx",
-      "route": "/reports/guides/guide-2025-08-14-042122"
-    },
-    {
-      "file": "pages/reports/guides/guide-2025-08-14-041112.tsx",
-      "route": "/reports/guides/guide-2025-08-14-041112"
-    },
-    {
-      "file": "pages/reports/guides/guide-2025-08-14-040018.tsx",
-      "route": "/reports/guides/guide-2025-08-14-040018"
-    },
-    {
-      "file": "pages/reports/guides/guide-2025-08-13-222129.tsx",
-      "route": "/reports/guides/guide-2025-08-13-222129"
-    },
-    {
-      "file": "pages/reports/guides/guide-2025-08-13-222028.tsx",
-      "route": "/reports/guides/guide-2025-08-13-222028"
-    },
-    {
-      "file": "pages/reports/guides/guide-2025-08-13-222010.tsx",
-      "route": "/reports/guides/guide-2025-08-13-222010"
-    },
-    {
-      "file": "pages/reports/guides/guide-2025-08-13-215625.tsx",
-      "route": "/reports/guides/guide-2025-08-13-215625"
-    },
-    {
-      "file": "pages/reports/cases/case-2025-08-14-045424.tsx",
-      "route": "/reports/cases/case-2025-08-14-045424"
-    },
-    {
-      "file": "pages/reports/cases/case-2025-08-14-045017.tsx",
-      "route": "/reports/cases/case-2025-08-14-045017"
-    },
-    {
-      "file": "pages/reports/cases/case-2025-08-14-044841.tsx",
-      "route": "/reports/cases/case-2025-08-14-044841"
-    },
-    {
-      "file": "pages/reports/cases/case-2025-08-14-040018.tsx",
-      "route": "/reports/cases/case-2025-08-14-040018"
-    },
-    {
-      "file": "pages/reports/blueprints/blueprint-2025-08-14-045017.tsx",
-      "route": "/reports/blueprints/blueprint-2025-08-14-045017"
-    },
-    {
-      "file": "pages/reports/blueprints/blueprint-2025-08-14-044841.tsx",
-      "route": "/reports/blueprints/blueprint-2025-08-14-044841"
->>>>>>> Stashed changes
     },
     {
       "file": "pages/reports/blueprints/blueprint-2025-08-14-044122.tsx",
@@ -2481,6 +2399,10 @@
     {
       "file": "pages/reports/updates/update-2025-08-14-0200.tsx",
       "route": "/reports/updates/update-2025-08-14-0200"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-14-0156.tsx",
+      "route": "/reports/updates/update-2025-08-14-0156"
     },
     {
       "file": "pages/reports/updates/update-2025-08-14-0150.tsx",
@@ -7301,9 +7223,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-<<<<<<< Updated upstream
-  "generatedAt": "2025-08-14T04:55:41.037Z"
-=======
-  "generatedAt": "2025-08-14T04:55:51.724Z"
->>>>>>> Stashed changes
+  "generatedAt": "2025-08-14T04:56:00.673Z"
 }
