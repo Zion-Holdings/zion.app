@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "generatedAt": "2025-08-14T20:35:41.690Z",
   "items": [
     {
@@ -6,20 +7,55 @@
       "href": "/reports/cases/case-2025-08-14-203541",
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T20:35:41.650Z",
+=======
+  "generatedAt": "2025-08-14T20:36:28.712Z",
+  "items": [
+    {
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-14-203628",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T20:36:28.678Z",
+      "source": "cloud-blueprint-factory"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-14-203628",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T20:36:28.643Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Case Study — Trigger Homepage",
+      "href": "/reports/cases/case-2025-08-14-203628",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T20:36:28.604Z",
+>>>>>>> 8869be7493 (chore(sync): advanced autonomous sync)
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Guide — Cloud Improving Implementation",
+<<<<<<< HEAD
       "href": "/reports/guides/guide-2025-08-14-203541",
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T20:35:41.650Z",
+=======
+      "href": "/reports/guides/guide-2025-08-14-203628",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T20:36:28.604Z",
+>>>>>>> 8869be7493 (chore(sync): advanced autonomous sync)
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Cloud Improving Continuously",
+<<<<<<< HEAD
       "href": "/reports/patterns/pattern-2025-08-14-203541",
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T20:35:41.650Z",
+=======
+      "href": "/reports/patterns/pattern-2025-08-14-203628",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T20:36:28.604Z",
+>>>>>>> 8869be7493 (chore(sync): advanced autonomous sync)
       "source": "cloud-deep-research-factory"
     }
   ]
