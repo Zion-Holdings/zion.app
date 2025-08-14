@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T16:27:19.320Z",
-  "pagesScanned": 3307,
+  "generatedAt": "2025-08-14T16:27:38.075Z",
+  "pagesScanned": 3313,
   "items": [
     {
       "route": "/404",
@@ -3126,6 +3126,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-162702",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-162722",
       "missing": [
         "og:image"
       ],
@@ -6755,6 +6765,16 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-14-162722",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide —  Implementation",
+        "description": "Guide —  Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/",
       "missing": [
         "og:image"
@@ -8802,6 +8822,16 @@
       "suggestion": {
         "title": "Guide: MLOps",
         "description": "Guide: MLOps — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14-1627",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide: RAG Platforms",
+        "description": "Guide: RAG Platforms — auto-suggested description"
       }
     },
     {
@@ -12145,6 +12175,16 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-14-162722",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Intelligence",
+        "description": "Pattern — Cloud Intelligence — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-13-223010",
       "missing": [
         "og:image"
@@ -15136,6 +15176,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-162702",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-162722",
       "missing": [
         "og:image"
       ],
@@ -31902,6 +31952,16 @@
       "suggestion": {
         "title": "Autonomous Playbook — AI Service Design (2025-08-14 16:26 UTC)",
         "description": "Autonomous Playbook — AI Service Design (2025-08-14 16:26 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1627",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Validation & QA Plan — Vision & Multimodal (2025-08-14 16:27 UTC)",
+        "description": "Autonomous Validation & QA Plan — Vision & Multimodal (2025-08-14 16:27 UTC) — auto-suggested description"
       }
     },
     {
