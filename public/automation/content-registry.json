@@ -5934,6 +5934,27 @@
   "generatedAt": "2025-08-14T00:40:22.806Z",
   "items": [
     {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-14-004027",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T00:40:28.319Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-14-004027",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T00:40:27.708Z",
+      "source": "cloud-blueprint-factory"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-14-004026",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T00:40:26.700Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
       "title": "Innovation Insight — 2025-08-14 00-40",
       "href": "/reports/innovations/insight-2025-08-14T00-40",
       "desc": "New autonomous content",
@@ -6058,6 +6079,11 @@
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T00:40:23.351Z",
       "source": "cloud-blueprint-factory"
+    },
+    {
+      "id": "cursor-chat-2025-08-14T00:40:29.251Z",
+      "type": "cursor-chat",
+      "timestamp": "2025-08-14T00:40:29.251Z"
     }
   ]
 }
