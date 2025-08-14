@@ -13,6 +13,7 @@ export default function DefaultSEO() {
     <Head>
       <title>{DEFAULT_TITLE}</title>
       <meta name="description" content={DEFAULT_DESC} />
+      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
       <link rel="canonical" href={url} />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content={SITE_NAME} />
@@ -20,6 +21,9 @@ export default function DefaultSEO() {
       <meta property="og:description" content={DEFAULT_DESC} />
       <meta property="og:url" content={url} />
       <meta property="og:image" content={`${SITE_URL}/og/zion-tech-group.svg`} />
+      <meta property="og:image:alt" content={DEFAULT_TITLE} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={DEFAULT_TITLE} />
       <meta name="twitter:description" content={DEFAULT_DESC} />
