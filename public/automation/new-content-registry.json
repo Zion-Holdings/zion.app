@@ -1,40 +1,33 @@
 {
-  "generatedAt": "2025-08-14T16:40:50.830Z",
+  "generatedAt": "2025-08-14T16:42:29.534Z",
   "items": [
     {
-      "title": "Reference Architecture — Autonomous Content Mesh",
-      "href": "/reports/blueprints/blueprint-2025-08-14-164050",
+      "title": "Innovation Insight — 2025-08-14 16-42",
+      "href": "/reports/innovations/insight-2025-08-14T16-42",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:40:50.769Z",
-      "source": "cloud-blueprint-factory"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-14 16-40",
-      "href": "/reports/innovations/insight-2025-08-14T16-40",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:40:50.692Z",
+      "createdAt": "2025-08-14T16:42:28.970Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-14 16-40",
-      "href": "/reports/updates/update-2025-08-14T16-40",
+      "title": "Autonomous Update — 2025-08-14 16-42",
+      "href": "/reports/updates/update-2025-08-14T16-42",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:40:50.692Z",
+      "createdAt": "2025-08-14T16:42:28.970Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Innovation Insight — 2025-08-14 16-40",
-      "href": "/reports/innovations/insight-2025-08-14T16-40",
+      "title": "Guide —  Implementation",
+      "href": "/reports/guides/guide-2025-08-14-164228",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:40:49.717Z",
-      "source": "cloud-content-factory"
+      "createdAt": "2025-08-14T16:42:28.890Z",
+      "source": "cloud-deep-research-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-14 16-40",
-      "href": "/reports/updates/update-2025-08-14T16-40",
+      "title": "Pattern — Cloud Intelligence",
+      "href": "/reports/patterns/pattern-2025-08-14-164228",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:40:49.717Z",
-      "source": "cloud-content-factory"
+      "createdAt": "2025-08-14T16:42:28.890Z",
+      "source": "cloud-deep-research-factory"
     }
   ]
 }
