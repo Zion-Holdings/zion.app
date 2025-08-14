@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T00:42:05.853Z",
-  "pagesScanned": 1506,
+  "generatedAt": "2025-08-14T00:42:15.447Z",
+  "pagesScanned": 1510,
   "items": [
     {
       "route": "/404",
@@ -97,7 +97,10 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -2539,6 +2542,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14-0042",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook: DevSecOps AI",
+        "description": "Playbook: DevSecOps AI — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -4060,6 +4073,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-004158",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-004202",
       "missing": [
         "og:image"
       ],
@@ -13719,6 +13742,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-13-2142",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 21:42",
+        "description": "Autonomous Update — 2025-08-13 21:42 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-13-2147",
       "missing": [
         "og:image"
@@ -14726,6 +14762,16 @@
       "suggestion": {
         "title": "Autonomous Checklist — AI Service Design (2025-08-14 00:41 UTC)",
         "description": "Autonomous Checklist — AI Service Design (2025-08-14 00:41 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0042",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Validation & QA Plan — Vision & Multimodal (2025-08-14 00:42 UTC)",
+        "description": "Autonomous Validation & QA Plan — Vision & Multimodal (2025-08-14 00:42 UTC) — auto-suggested description"
       }
     },
     {
