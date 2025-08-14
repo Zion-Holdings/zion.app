@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T00:34:44.514Z",
-  "pagesScanned": 1392,
+  "generatedAt": "2025-08-14T00:34:47.057Z",
+  "pagesScanned": 1393,
   "items": [
     {
       "route": "/404",
@@ -3120,6 +3120,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-003435",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-003444",
       "missing": [
         "og:image"
       ],
