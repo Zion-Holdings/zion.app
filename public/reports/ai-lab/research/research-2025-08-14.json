@@ -1,0 +1,294 @@
+{
+  "date": "2025-08-14",
+  "count": 24,
+  "items": [
+    {
+      "id": "hn_44891090",
+      "title": "Launch HN: Golpo (YC S25) – AI-generated explainer videos",
+      "url": "https://video.golpoai.com/",
+      "source": "Hacker News",
+      "summary": "Launch HN: Golpo (YC S25) – AI-generated explainer videos",
+      "tags": [
+        "news",
+        "hn",
+        "ai"
+      ]
+    },
+    {
+      "id": "hn_44893254",
+      "title": "Illinois bans use of artificial intelligence for mental health therapy",
+      "url": "https://www.washingtonpost.com/nation/2025/08/12/illinois-ai-therapy-ban/",
+      "source": "Hacker News",
+      "summary": "Illinois bans use of artificial intelligence for mental health therapy",
+      "tags": [
+        "news",
+        "hn",
+        "ai"
+      ]
+    },
+    {
+      "id": "hn_44888210",
+      "title": "DoubleAgents: Fine-Tuning LLMs for Covert Malicious Tool Calls",
+      "url": "https://pub.aimind.so/doubleagents-fine-tuning-llms-for-covert-malicious-tool-calls-b8ff00bf513e",
+      "source": "Hacker News",
+      "summary": "DoubleAgents: Fine-Tuning LLMs for Covert Malicious Tool Calls",
+      "tags": [
+        "news",
+        "hn",
+        "ai"
+      ]
+    },
+    {
+      "id": "hn_44888847",
+      "title": "How well do coding agents use your library?",
+      "url": "https://stackbench.ai/",
+      "source": "Hacker News",
+      "summary": "How well do coding agents use your library?",
+      "tags": [
+        "news",
+        "hn",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_time-is-a-feature-exploiting-temporal-dynamics-in-diffusion-language-models_0",
+      "title": "Time Is a Feature: Exploiting Temporal Dynamics in Diffusion Language Models",
+      "url": "http://arxiv.org/abs/2508.09138v1",
+      "source": "arXiv cs.AI",
+      "summary": "Diffusion large language models (dLLMs) generate text through iterative denoising, yet current decoding strategies discard rich intermediate predictions in favor of the final output. Our work here reveals a critical phenomenon, temporal oscillation, where correct answers often emerge in the middle process, but are overwritten in later denoising steps. To address this issue, we introduce two complementary methods that exploit temporal consistency: 1) Temporal Self-Consistency Voting, a training-free, test-time decoding strategy that aggregates predictions across denoising steps to select the mo",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_training-free-text-guided-color-editing-with-multi-modal-diffusion-transformer_1",
+      "title": "Training-Free Text-Guided Color Editing with Multi-Modal Diffusion Transformer",
+      "url": "http://arxiv.org/abs/2508.09131v2",
+      "source": "arXiv cs.AI",
+      "summary": "Text-guided color editing in images and videos is a fundamental yet unsolved problem, requiring fine-grained manipulation of color attributes, including albedo, light source color, and ambient lighting, while preserving physical consistency in geometry, material properties, and light-matter interactions. Existing training-free methods offer broad applicability across editing tasks but struggle with precise color control and often introduce visual inconsistency in both edited and non-edited regions. In this work, we present ColorCtrl, a training-free color editing method that leverages the atte",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_browsemaster-towards-scalable-web-browsing-via-tool-augmented-programmatic-agent_2",
+      "title": "BrowseMaster: Towards Scalable Web Browsing via Tool-Augmented Programmatic Agent Pair",
+      "url": "http://arxiv.org/abs/2508.09129v1",
+      "source": "arXiv cs.AI",
+      "summary": "Effective information seeking in the vast and ever-growing digital landscape requires balancing expansive search with strategic reasoning. Current large language model (LLM)-based agents struggle to achieve this balance due to limitations in search breadth and reasoning depth, where slow, serial querying restricts coverage of relevant sources and noisy raw inputs disrupt the continuity of multi-step reasoning. To address these challenges, we propose BrowseMaster, a scalable framework built around a programmatically augmented planner-executor agent pair. The planner formulates and adapts search",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_opencua-open-foundations-for-computer-use-agents_3",
+      "title": "OpenCUA: Open Foundations for Computer-Use Agents",
+      "url": "http://arxiv.org/abs/2508.09123v1",
+      "source": "arXiv cs.AI",
+      "summary": "Vision-language models have demonstrated impressive capabilities as computer-use agents (CUAs) capable of automating diverse computer tasks. As their commercial potential grows, critical details of the most capable CUA systems remain closed. As these agents will increasingly mediate digital interactions and execute consequential decisions on our behalf, the research community needs access to open CUA frameworks to study their capabilities, limitations, and risks. To bridge this gap, we propose OpenCUA, a comprehensive open-source framework for scaling CUA data and foundation models. Our framew",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_sma-who-said-that-auditing-membership-leakage-in-semi-black-box-rag-controlling_4",
+      "title": "SMA: Who Said That? Auditing Membership Leakage in Semi-Black-box RAG Controlling",
+      "url": "http://arxiv.org/abs/2508.09105v2",
+      "source": "arXiv cs.AI",
+      "summary": "Retrieval-Augmented Generation (RAG) and its Multimodal Retrieval-Augmented Generation (MRAG) significantly improve the knowledge coverage and contextual understanding of Large Language Models (LLMs) by introducing external knowledge sources. However, retrieval and multimodal fusion obscure content provenance, rendering existing membership inference methods unable to reliably attribute generated outputs to pre-training, external retrieval, or user input, thus undermining privacy leakage accountability To address these challenges, we propose the first Source-aware Membership Audit (SMA) that en",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_towards-universal-neural-inference_5",
+      "title": "Towards Universal Neural Inference",
+      "url": "http://arxiv.org/abs/2508.09100v1",
+      "source": "arXiv cs.AI",
+      "summary": "Real-world data often appears in diverse, disjoint forms -- with varying schemas, inconsistent semantics, and no fixed feature ordering -- making it challenging to build general-purpose models that can leverage information across datasets. We introduce ASPIRE, Arbitrary Set-based Permutation-Invariant Reasoning Engine, a Universal Neural Inference model for semantic reasoning and prediction over heterogeneous structured data. ASPIRE combines a permutation-invariant, set-based Transformer with a semantic grounding module that incorporates natural language descriptions, dataset metadata, and in-",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_sparc-soft-probabilistic-adaptive-multi-interest-retrieval-model-via-codebooks-f_6",
+      "title": "SPARC: Soft Probabilistic Adaptive multi-interest Retrieval Model via Codebooks for recommender system",
+      "url": "http://arxiv.org/abs/2508.09090v2",
+      "source": "arXiv cs.AI",
+      "summary": "Modeling multi-interests has arisen as a core problem in real-world RS. Current multi-interest retrieval methods pose three major challenges: 1) Interests, typically extracted from predefined external knowledge, are invariant. Failed to dynamically evolve with users' real-time consumption preferences. 2) Online inference typically employs an over-exploited strategy, mainly matching users' existing interests, lacking proactive exploration and discovery of novel and long-tail interests. To address these challenges, we propose a novel retrieval framework named SPARC(Soft Probabilistic Adaptive Re",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_dynamic-uncertainty-aware-multimodal-fusion-for-outdoor-health-monitoring_7",
+      "title": "Dynamic Uncertainty-aware Multimodal Fusion for Outdoor Health Monitoring",
+      "url": "http://arxiv.org/abs/2508.09085v1",
+      "source": "arXiv cs.AI",
+      "summary": "Outdoor health monitoring is essential to detect early abnormal health status for safeguarding human health and safety. Conventional outdoor monitoring relies on static multimodal deep learning frameworks, which requires extensive data training from scratch and fails to capture subtle health status changes. Multimodal large language models (MLLMs) emerge as a promising alternative, utilizing only small datasets to fine-tune pre-trained information-rich models for enabling powerful health status monitoring. Unfortunately, MLLM-based outdoor health monitoring also faces significant challenges: I",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_cvcm-track-circuits-pre-emptive-failure-diagnostics-for-predictive-maintenance-u_8",
+      "title": "CVCM Track Circuits Pre-emptive Failure Diagnostics for Predictive Maintenance Using Deep Neural Networks",
+      "url": "http://arxiv.org/abs/2508.09054v1",
+      "source": "arXiv cs.AI",
+      "summary": "Track circuits are critical for railway operations, acting as the main signalling sub-system to locate trains. Continuous Variable Current Modulation (CVCM) is one such technology. Like any field-deployed, safety-critical asset, it can fail, triggering cascading disruptions. Many failures originate as subtle anomalies that evolve over time, often not visually apparent in monitored signals. Conventional approaches, which rely on clear signal changes, struggle to detect them early. Early identification of failure types is essential to improve maintenance planning, minimising downtime and revenue",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_can-we-trust-ai-to-govern-ai-benchmarking-llm-performance-on-privacy-and-ai-gove_9",
+      "title": "Can We Trust AI to Govern AI? Benchmarking LLM Performance on Privacy and AI Governance Exams",
+      "url": "http://arxiv.org/abs/2508.09036v1",
+      "source": "arXiv cs.AI",
+      "summary": "The rapid emergence of large language models (LLMs) has raised urgent questions across the modern workforce about this new technology's strengths, weaknesses, and capabilities. For privacy professionals, the question is whether these AI systems can provide reliable support on regulatory compliance, privacy program management, and AI governance. In this study, we evaluate ten leading open and closed LLMs, including models from OpenAI, Anthropic, Google DeepMind, Meta, and DeepSeek, by benchmarking their performance on industry-standard certification exams: CIPP/US, CIPM, CIPT, and AIGP from the",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_spatial-traces-enhancing-vla-models-with-spatial-temporal-understanding_10",
+      "title": "Spatial Traces: Enhancing VLA Models with Spatial-Temporal Understanding",
+      "url": "http://arxiv.org/abs/2508.09032v1",
+      "source": "arXiv cs.AI",
+      "summary": "Vision-Language-Action models have demonstrated remarkable capabilities in predicting agent movements within virtual environments and real-world scenarios based on visual observations and textual instructions. Although recent research has focused on enhancing spatial and temporal understanding independently, this paper presents a novel approach that integrates both aspects through visual prompting. We introduce a method that projects visual traces of key points from observations onto depth maps, enabling models to capture both spatial and temporal information simultaneously. The experiments in",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_a-first-look-at-predictability-and-explainability-of-pre-request-passenger-waiti_11",
+      "title": "A First Look at Predictability and Explainability of Pre-request Passenger Waiting Time in Ridesharing Systems",
+      "url": "http://arxiv.org/abs/2508.09027v1",
+      "source": "arXiv cs.AI",
+      "summary": "Passenger waiting time prediction plays a critical role in enhancing both ridesharing user experience and platform efficiency. While most existing research focuses on post-request waiting time prediction with knowing the matched driver information, pre-request waiting time prediction (i.e., before submitting a ride request and without matching a driver) is also important, as it enables passengers to plan their trips more effectively and enhance the experience of both passengers and drivers. However, it has not been fully studied by existing works. In this paper, we take the first step toward u",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_e3-rewrite-learning-to-rewrite-sql-for-executability-equivalenceand-efficiency_12",
+      "title": "E3-Rewrite: Learning to Rewrite SQL for Executability, Equivalence,and Efficiency",
+      "url": "http://arxiv.org/abs/2508.09023v1",
+      "source": "arXiv cs.AI",
+      "summary": "SQL query rewriting aims to reformulate a query into a more efficient form while preserving equivalence. Most existing methods rely on predefined rewrite rules. However, such rule-based approaches face fundamental limitations: (1) fixed rule sets generalize poorly to novel query patterns and struggle with complex queries; (2) a wide range of effective rewriting strategies cannot be fully captured by declarative rules. To overcome these issues, we propose using large language models (LLMs) to generate rewrites. LLMs can capture complex strategies, such as evaluation reordering and CTE rewriting",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_when-deepfakes-look-real-detecting-ai-generated-faces-with-unlabeled-data-due-to_13",
+      "title": "When Deepfakes Look Real: Detecting AI-Generated Faces with Unlabeled Data due to Annotation Challenges",
+      "url": "http://arxiv.org/abs/2508.09022v2",
+      "source": "arXiv cs.AI",
+      "summary": "Existing deepfake detection methods heavily depend on labeled training data. However, as AI-generated content becomes increasingly realistic, even \\textbf{human annotators struggle to distinguish} between deepfakes and authentic images. This makes the labeling process both time-consuming and less reliable. Specifically, there is a growing demand for approaches that can effectively utilize large-scale unlabeled data from online social networks. Unlike typical unsupervised learning tasks, where categories are distinct, AI-generated faces closely mimic real image distributions and share strong si",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_attacks-and-defenses-against-llm-fingerprinting_14",
+      "title": "Attacks and Defenses Against LLM Fingerprinting",
+      "url": "http://arxiv.org/abs/2508.09021v1",
+      "source": "arXiv cs.AI",
+      "summary": "As large language models are increasingly deployed in sensitive environments, fingerprinting attacks pose significant privacy and security risks. We present a study of LLM fingerprinting from both offensive and defensive perspectives. Our attack methodology uses reinforcement learning to automatically optimize query selection, achieving better fingerprinting accuracy with only 3 queries compared to randomly selecting 3 queries from the same pool. Our defensive approach employs semantic-preserving output filtering through a secondary LLM to obfuscate model identity while maintaining semantic in",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_activation-steering-for-bias-mitigation-an-interpretable-approach-to-safer-llms_15",
+      "title": "Activation Steering for Bias Mitigation: An Interpretable Approach to Safer LLMs",
+      "url": "http://arxiv.org/abs/2508.09019v1",
+      "source": "arXiv cs.AI",
+      "summary": "As large language models (LLMs) become more integrated into societal systems, the risk of them perpetuating and amplifying harmful biases becomes a critical safety concern. Traditional methods for mitigating bias often rely on data filtering or post-hoc output moderation, which treat the model as an opaque black box. In this work, we introduce a complete, end-to-end system that uses techniques from mechanistic interpretability to both identify and actively mitigate bias directly within a model's internal workings. Our method involves two primary stages. First, we train linear \"probes\" on the i",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_lys-at-semeval-2025-task-8-zero-shot-code-generation-for-tabular-qa_16",
+      "title": "LyS at SemEval 2025 Task 8: Zero-Shot Code Generation for Tabular QA",
+      "url": "http://arxiv.org/abs/2508.09012v1",
+      "source": "arXiv cs.AI",
+      "summary": "This paper describes our participation in SemEval 2025 Task 8, focused on Tabular Question Answering. We developed a zero-shot pipeline that leverages an Large Language Model to generate functional code capable of extracting the relevant information from tabular data based on an input question. Our approach consists of a modular pipeline where the main code generator module is supported by additional components that identify the most relevant columns and analyze their data types to improve extraction accuracy. In the event that the generated code fails, an iterative refinement process is trigg",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_retrospective-sparse-attention-for-efficient-long-context-generation_17",
+      "title": "Retrospective Sparse Attention for Efficient Long-Context Generation",
+      "url": "http://arxiv.org/abs/2508.09001v1",
+      "source": "arXiv cs.AI",
+      "summary": "Large Language Models (LLMs) are increasingly deployed in long-context tasks such as reasoning, code generation, and multi-turn dialogue. However, inference over extended contexts is bottlenecked by the Key-Value (KV) cache, whose memory footprint grows linearly with sequence length and dominates latency at each decoding step. While recent KV cache compression methods identify and load important tokens, they focus predominantly on input contexts and fail to address the cumulative attention errors that arise during long decoding. In this paper, we introduce RetroAttention, a novel KV cache upda",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_intrinsic-memory-agents-heterogeneous-multi-agent-llm-systems-through-structured_18",
+      "title": "Intrinsic Memory Agents: Heterogeneous Multi-Agent LLM Systems through Structured Contextual Memory",
+      "url": "http://arxiv.org/abs/2508.08997v1",
+      "source": "arXiv cs.AI",
+      "summary": "Multi-agent systems built on Large Language Models (LLMs) show exceptional promise for complex collaborative problem-solving, yet they face fundamental challenges stemming from context window limitations that impair memory consistency, role adherence, and procedural integrity. This paper introduces Intrinsic Memory Agents, a novel framework that addresses these limitations through structured agent-specific memories that evolve intrinsically with agent outputs. Specifically, our method maintains role-aligned memory templates that preserve specialized perspectives while focusing on task-relevant",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    },
+    {
+      "id": "arxiv_prospect-theory-fails-for-llms-revealing-instability-of-decision-making-under-ep_19",
+      "title": "Prospect Theory Fails for LLMs: Revealing Instability of Decision-Making under Epistemic Uncertainty",
+      "url": "http://arxiv.org/abs/2508.08992v1",
+      "source": "arXiv cs.AI",
+      "summary": "Prospect Theory (PT) models human decision-making under uncertainty, while epistemic markers (e.g., maybe) serve to express uncertainty in language. However, it remains largely unexplored whether Prospect Theory applies to contemporary Large Language Models and whether epistemic markers, which express human uncertainty, affect their decision-making behaviour. To address these research gaps, we design a three-stage experiment based on economic questionnaires. We propose a more general and precise evaluation framework to model LLMs' decision-making behaviour under PT, introducing uncertainty thr",
+      "tags": [
+        "research",
+        "arxiv",
+        "ai"
+      ]
+    }
+  ]
+}
