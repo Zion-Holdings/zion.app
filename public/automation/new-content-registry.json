@@ -1,33 +1,40 @@
 {
-  "generatedAt": "2025-08-14T19:44:23.866Z",
+  "generatedAt": "2025-08-14T19:51:49.481Z",
   "items": [
     {
-      "title": "Innovation Insight — 2025-08-14 19-44",
-      "href": "/reports/innovations/insight-2025-08-14T19-44",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-14-195149",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T19:44:23.795Z",
-      "source": "cloud-content-factory"
+      "createdAt": "2025-08-14T19:51:49.446Z",
+      "source": "cloud-blueprint-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-14 19-44",
-      "href": "/reports/updates/update-2025-08-14T19-44",
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-14-195149",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T19:44:23.795Z",
-      "source": "cloud-content-factory"
+      "createdAt": "2025-08-14T19:51:49.412Z",
+      "source": "cloud-playbook-factory"
     },
     {
-      "title": "Innovation Insight — 2025-08-14 19-44",
-      "href": "/reports/innovations/insight-2025-08-14T19-44",
+      "title": "Case Study — Trigger Homepage",
+      "href": "/reports/cases/case-2025-08-14-195149",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T19:44:23.795Z",
-      "source": "cloud-content-factory"
+      "createdAt": "2025-08-14T19:51:49.370Z",
+      "source": "cloud-deep-research-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-14 19-44",
-      "href": "/reports/updates/update-2025-08-14T19-44",
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-14-195149",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T19:44:23.795Z",
-      "source": "cloud-content-factory"
+      "createdAt": "2025-08-14T19:51:49.370Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Cloud Improving Continuously",
+      "href": "/reports/patterns/pattern-2025-08-14-195149",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T19:51:49.370Z",
+      "source": "cloud-deep-research-factory"
     }
   ]
 }
