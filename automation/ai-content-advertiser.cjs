@@ -3,7 +3,7 @@
 'use strict';
 
 // New advertiser that ensures latest update pages are listed on the front systems hub
-// using the existing directory markers in pages/main/front/index.tsx.
+// using the existing directory markers in pages/front/index.tsx.
 
 const fs = require('fs');
 const path = require('path');
