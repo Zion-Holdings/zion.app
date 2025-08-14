@@ -1,7 +1,21 @@
 {
-  "generatedAt": "2025-08-14T00:12:01.052Z",
-  "pagesScanned": 1171,
+  "generatedAt": "2025-08-14T00:12:30.627Z",
+  "pagesScanned": 1174,
   "items": [
+    {
+      "route": "/404",
+      "missing": [
+        "description",
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Page not found",
+        "description": "Page not found — auto-suggested description"
+      }
+    },
     {
       "route": "/_app",
       "missing": [
@@ -34,6 +48,19 @@
       "suggestion": {
         "title": "Automation Hub",
         "description": "Automation Hub — auto-suggested description"
+      }
+    },
+    {
+      "route": "/contact",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Contact",
+        "description": "Contact — auto-suggested description"
       }
     },
     {
@@ -10890,10 +10917,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-2112",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 21:12",
@@ -11658,6 +11682,16 @@
       "suggestion": {
         "title": "Autonomous Performance Tuning Guide — Edge AI & IoT (2025-08-14 00:10 UTC)",
         "description": "Autonomous Performance Tuning Guide — Edge AI & IoT (2025-08-14 00:10 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0012",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Security Hardening Guide — AI Service Design (2025-08-14 00:12 UTC)",
+        "description": "Autonomous Security Hardening Guide — AI Service Design (2025-08-14 00:12 UTC) — auto-suggested description"
       }
     },
     {

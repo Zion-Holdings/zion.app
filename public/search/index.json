@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T00:12:02.972Z",
+  "generatedAt": "2025-08-14T00:12:32.401Z",
   "entries": [
     {
       "route": "/site-health",
@@ -26,6 +26,12 @@
       "summary": "import Landing from '../components/Landing'; export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 2112 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 1"
     },
     {
+      "route": "/contact",
+      "file": "pages/contact.tsx",
+      "title": "Contact — Zion Tech Group",
+      "summary": "import Head from 'next/head'; export default function Contact() { return ( Contact — Zion Tech Group Contact Tell us about your use‑case. We typically reply within 24 hours. Send ); }"
+    },
+    {
       "route": "/_document",
       "file": "pages/_document.tsx",
       "title": "_document",
@@ -36,6 +42,12 @@
       "file": "pages/_app.tsx",
       "title": "_app",
       "summary": "import type { AppProps } from 'next/app'; import '../styles/globals.css'; import Header from '../components/Header'; import Footer from '../components/Footer'; import FuturisticLayout from '../components/FuturisticLayout'; import DefaultSEO from '../components/DefaultSEO'; export"
+    },
+    {
+      "route": "/404",
+      "file": "pages/404.tsx",
+      "title": "404",
+      "summary": "import Link from 'next/link'; export default function NotFound() { return ( 404 Page not found The page you’re looking for doesn’t exist or has moved. Go home Search ); }"
     },
     {
       "route": "/services",
@@ -90,6 +102,12 @@
       "file": "pages/reports/updates/update-2025-08-14T00-00.tsx",
       "title": "Autonomous Update — 2025-08-14 00-00",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-14 00-00 Autonomous Update — 2025-08-14 00-00 Signal source: https://ziontechgroup.com/ Autonomous cloud systems are live and improving the app in real timeAutonomous Cloud Automat"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0012",
+      "file": "pages/reports/updates/update-2025-08-14-0012.tsx",
+      "title": "Autonomous Security Hardening Guide — AI Service Design (2025-08-14 00:12 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Security Hardening Guide — AI Service Design (2025-08-14 00:12 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}"
     },
     {
       "route": "/reports/updates/update-2025-08-14-0010",
@@ -6318,6 +6336,12 @@
       "file": "pages/reports/innovations/insight-2025-08-14T00-00.tsx",
       "title": "Innovation Insight — 2025-08-14 00-00",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-14 00-00 Innovation Insight — 2025-08-14 00-00 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14-0012",
+      "file": "pages/reports/innovations/insight-2025-08-14-0012.tsx",
+      "title": "Pilot Plan: FinOps for AI",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Pilot Plan: FinOps for AI Pilot Plan: FinOps for AI Patterns to increase accuracy. Scope: Pilot Plan: FinOps for AI. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. "
     },
     {
       "route": "/reports/innovations/insight-2025-08-14-0010",

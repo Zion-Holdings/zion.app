@@ -6,7 +6,10 @@ export default function Contact() {
       <Head>
         <title>Contact — Zion Tech Group</title>
         <meta name="description" content="Get in touch to discuss autonomous cloud automations for your org." />
-      </Head>
+      
+        <meta property="og:title" content="Contact" />
+        <meta property="og:description" content="Contact — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       <h1 className="text-3xl font-bold tracking-tight">Contact</h1>
       <p className="mt-2 text-white/80">Tell us about your use‑case. We typically reply within 24 hours.</p>
       <form className="mt-6 grid gap-4" action="https://formspree.io/f/xyyqzqyp" method="POST">
