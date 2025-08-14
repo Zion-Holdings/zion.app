@@ -1,17 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Static export handled via npm script; no inline export during build
+  // Static export configuration for Netlify deployment
   trailingSlash: true,
   output: 'export', // Enable static HTML export
   productionBrowserSourceMaps: false,
   images: { unoptimized: true },
-  async redirects() {
-    return [
-      { source: '/main', destination: '/', permanent: true },
-      { source: '/front', destination: '/main/front', permanent: true },
-      { source: '/front/index', destination: '/main/front', permanent: true }
-    ];
-  },
+  // Note: redirects() removed as it's incompatible with output: 'export'
+  // Use Netlify _redirects file instead for redirects
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
 };

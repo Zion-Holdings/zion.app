@@ -1,39 +1,32 @@
 {
-  "generatedAt": "2025-08-14T21:48:53.062Z",
+  "generatedAt": "2025-08-14T21:49:06.552Z",
   "items": [
     {
-      "title": "Reference Architecture — Autonomous Content Mesh",
-      "href": "/reports/blueprints/blueprint-2025-08-14-214852",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T21:48:52.941Z",
-      "source": "cloud-blueprint-factory"
-    },
-    {
-      "title": "Playbook — Autonomous Delivery",
-      "href": "/reports/playbooks/playbook-2025-08-14-214852",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T21:48:52.828Z",
-      "source": "cloud-playbook-factory"
+      "title": "Blueprint: MLOps",
+      "subtitle": "Patterns to improve reliability.",
+      "path": "/reports/innovations/insight-2025-08-14-2149",
+      "createdAt": "2025-08-14T21:49:10.622Z",
+      "kind": "insight"
     },
     {
       "title": "Case Study — Trigger Homepage",
-      "href": "/reports/cases/case-2025-08-14-214852",
+      "href": "/reports/cases/case-2025-08-14-214906",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T21:48:52.704Z",
+      "createdAt": "2025-08-14T21:49:06.424Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Guide — Cloud Improving Implementation",
-      "href": "/reports/guides/guide-2025-08-14-214852",
+      "href": "/reports/guides/guide-2025-08-14-214906",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T21:48:52.704Z",
+      "createdAt": "2025-08-14T21:49:06.424Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Cloud Improving Continuously",
-      "href": "/reports/patterns/pattern-2025-08-14-214852",
+      "href": "/reports/patterns/pattern-2025-08-14-214906",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T21:48:52.704Z",
+      "createdAt": "2025-08-14T21:49:06.424Z",
       "source": "cloud-deep-research-factory"
     }
   ]
