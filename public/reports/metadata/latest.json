@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T16:10:02.540Z",
-  "pagesScanned": 3050,
+  "generatedAt": "2025-08-14T16:11:00.672Z",
+  "pagesScanned": 3059,
   "items": [
     {
       "route": "/404",
@@ -113,7 +113,10 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -2726,6 +2729,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-160020",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-161026",
       "missing": [
         "og:image"
       ],
@@ -5725,6 +5738,16 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-14-161026",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide —  Implementation",
+        "description": "Guide —  Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/",
       "missing": [
         "og:image"
@@ -7685,6 +7708,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14-1610",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Blueprint: DevSecOps AI",
+        "description": "Blueprint: DevSecOps AI — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -8732,6 +8765,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-14 16-00",
         "description": "Innovation Insight — 2025-08-14 16-00 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14T16-10",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-14 16-10",
+        "description": "Innovation Insight — 2025-08-14 16-10 — auto-suggested description"
       }
     },
     {
@@ -10296,6 +10339,16 @@
     },
     {
       "route": "/reports/patterns/pattern-2025-08-14-160020",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Intelligence",
+        "description": "Pattern — Cloud Intelligence — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-14-161026",
       "missing": [
         "og:image"
       ],
@@ -12906,6 +12959,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-160020",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-161026",
       "missing": [
         "og:image"
       ],
@@ -29265,6 +29328,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-14-1311",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 13:11",
+        "description": "Autonomous Update — 2025-08-14 13:11 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-14-1320",
       "missing": [
         "og:image"
@@ -29422,6 +29498,16 @@
       "suggestion": {
         "title": "Autonomous Checklist — Agentic Workflows (2025-08-14 16:00 UTC)",
         "description": "Autonomous Checklist — Agentic Workflows (2025-08-14 16:00 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1610",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Capability Map — Agentic Workflows (2025-08-14 16:10 UTC)",
+        "description": "Autonomous Capability Map — Agentic Workflows (2025-08-14 16:10 UTC) — auto-suggested description"
       }
     },
     {
@@ -30472,6 +30558,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 16-00",
         "description": "Autonomous Update — 2025-08-14 16-00 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14T16-10",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 16-10",
+        "description": "Autonomous Update — 2025-08-14 16-10 — auto-suggested description"
       }
     },
     {
