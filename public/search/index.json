@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T07:38:01.838Z",
+  "generatedAt": "2025-08-14T07:42:58.447Z",
   "entries": [
     {
       "route": "/site-health",
@@ -10086,6 +10086,12 @@
       "file": "pages/reports/innovations/insight-2025-08-14T00-00.tsx",
       "title": "Innovation Insight — 2025-08-14 00-00",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-14 00-00 Innovation Insight — 2025-08-14 00-00 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14-0742",
+      "file": "pages/reports/innovations/insight-2025-08-14-0742.tsx",
+      "title": "Pilot Plan: Agent Ops",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Pilot Plan: Agent Ops Pilot Plan: Agent Ops Patterns to improve reliability. Scope: Pilot Plan: Agent Ops. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: obser"
     },
     {
       "route": "/reports/innovations/insight-2025-08-14-0720",
