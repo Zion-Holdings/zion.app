@@ -1,7 +1,8 @@
 {
-  "generatedAt": "2025-08-14T10:20:22.935Z",
+  "generatedAt": "2025-08-14T10:29:18.212Z",
   "items": [
     {
+<<<<<<< HEAD
       "title": "Pilot Plan: Agent Ops",
       "subtitle": "Patterns to accelerate delivery.",
       "path": "/reports/innovations/insight-2025-08-14-1026",
@@ -37,24 +38,26 @@
       "source": "cloud-content-factory"
     },
     {
+=======
+>>>>>>> 4f069a7a60 (chore(sync): advanced autonomous sync)
       "title": "Case Study — Autonomous Reports",
-      "href": "/reports/cases/case-2025-08-14-101438",
+      "href": "/reports/cases/case-2025-08-14-102918",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T10:14:38.420Z",
+      "createdAt": "2025-08-14T10:29:18.173Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Guide — Techcrunch Pebble Implementation",
-      "href": "/reports/guides/guide-2025-08-14-101438",
+      "href": "/reports/guides/guide-2025-08-14-102918",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T10:14:38.420Z",
+      "createdAt": "2025-08-14T10:29:18.173Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Trigger Homepage Sitemap",
-      "href": "/reports/patterns/pattern-2025-08-14-101438",
+      "href": "/reports/patterns/pattern-2025-08-14-102918",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T10:14:38.420Z",
+      "createdAt": "2025-08-14T10:29:18.173Z",
       "source": "cloud-deep-research-factory"
     }
   ]
