@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T21:35:00.813Z",
-  "pagesScanned": 158,
+  "generatedAt": "2025-08-14T21:35:12.662Z",
+  "pagesScanned": 160,
   "items": [
     {
       "route": "/404",
@@ -123,10 +123,7 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -914,6 +911,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14-2135",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Checklist: FinOps for AI",
+        "description": "Checklist: FinOps for AI — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14T21-30",
       "missing": [
         "og:image"
@@ -1506,10 +1513,7 @@
     {
       "route": "/reports/updates/update-2025-08-14-1835",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 18:35",
@@ -1534,6 +1538,16 @@
       "suggestion": {
         "title": "Autonomous Playbook — Vision & Multimodal (2025-08-14 21:34 UTC)",
         "description": "Autonomous Playbook — Vision & Multimodal (2025-08-14 21:34 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-2135",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Playbook — Edge AI & IoT (2025-08-14 21:35 UTC)",
+        "description": "Autonomous Playbook — Edge AI & IoT (2025-08-14 21:35 UTC) — auto-suggested description"
       }
     },
     {
