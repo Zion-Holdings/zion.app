@@ -1,47 +1,4 @@
 {
-  "generatedAt": "2025-08-14T00:41:23.085Z",
-  "items": [
-    {
-      "title": "Blueprint: FinOps for AI",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-14-0041",
-      "createdAt": "2025-08-14T00:41:29.442Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-14 00-41",
-      "href": "/reports/innovations/insight-2025-08-14T00-41",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:41:22.287Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-14 00-41",
-      "href": "/reports/updates/update-2025-08-14T00-41",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:41:22.287Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-14 00-41",
-      "href": "/reports/innovations/insight-2025-08-14T00-41",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:41:22.287Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-14 00-41",
-      "href": "/reports/updates/update-2025-08-14T00-41",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:41:22.287Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Playbook — Autonomous Delivery",
-      "href": "/reports/playbooks/playbook-2025-08-14-004121",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:41:21.490Z",
-      "source": "cloud-playbook-factory"
-    }
-  ]
+  "generatedAt": "2025-08-14T00:41:48.360Z",
+  "items": []
 }
