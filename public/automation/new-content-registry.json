@@ -1,21 +1,35 @@
 {
-  "generatedAt": "2025-08-14T17:56:26.783Z",
+  "generatedAt": "2025-08-14T18:02:11.708Z",
   "items": [
     {
-<<<<<<< HEAD
-      "title": "Runbook: MLOps",
-      "subtitle": "Patterns to enhance security.",
-      "path": "/reports/innovations/insight-2025-08-14-1755",
-      "createdAt": "2025-08-14T17:55:19.569Z",
-      "kind": "insight"
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-14-180211",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T18:02:11.674Z",
+      "source": "cloud-blueprint-factory"
     },
     {
-      "title": "Pilot Plan: Agent Ops",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-14-1750",
-      "createdAt": "2025-08-14T17:50:16.751Z",
-      "kind": "insight"
-=======
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-14-180211",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T18:02:11.640Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Guide —  Implementation",
+      "href": "/reports/guides/guide-2025-08-14-180211",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T18:02:11.601Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Cloud Intelligence",
+      "href": "/reports/patterns/pattern-2025-08-14-180211",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T18:02:11.601Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
       "title": "Reference Architecture — Autonomous Content Mesh",
       "href": "/reports/blueprints/blueprint-2025-08-14-175626",
       "desc": "New autonomous content",
@@ -42,7 +56,6 @@
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T17:56:26.681Z",
       "source": "cloud-deep-research-factory"
->>>>>>> 2d31caa8e8 (chore(sync): advanced autonomous sync)
     }
   ]
 }
