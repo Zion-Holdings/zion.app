@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T00:38:49.634Z",
-  "pagesScanned": 1454,
+  "generatedAt": "2025-08-14T00:39:05.764Z",
+  "pagesScanned": 1460,
   "items": [
     {
       "route": "/404",
@@ -97,10 +97,7 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -1133,6 +1130,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-003845",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-003851",
       "missing": [
         "og:image"
       ],
@@ -2319,6 +2326,16 @@
       "suggestion": {
         "title": "Guide: DevSecOps AI",
         "description": "Guide: DevSecOps AI — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14-0039",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Blueprint: Edge AI",
+        "description": "Blueprint: Edge AI — auto-suggested description"
       }
     },
     {
@@ -3623,6 +3640,26 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-003839",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-003848",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-003854",
       "missing": [
         "og:image"
       ],
@@ -13252,6 +13289,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-13-2139",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 21:39",
+        "description": "Autonomous Update — 2025-08-13 21:39 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-13-2140",
       "missing": [
         "og:image"
@@ -14239,6 +14286,16 @@
       "suggestion": {
         "title": "Autonomous Performance Tuning Guide — DevSecOps for AI (2025-08-14 00:38 UTC)",
         "description": "Autonomous Performance Tuning Guide — DevSecOps for AI (2025-08-14 00:38 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0039",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Performance Tuning Guide — Edge AI & IoT (2025-08-14 00:39 UTC)",
+        "description": "Autonomous Performance Tuning Guide — Edge AI & IoT (2025-08-14 00:39 UTC) — auto-suggested description"
       }
     },
     {
