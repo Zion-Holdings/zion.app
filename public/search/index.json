@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T12:26:02.271Z",
+  "generatedAt": "2025-08-14T12:27:02.378Z",
   "entries": [
     {
       "route": "/site-health",
@@ -23,7 +23,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "Zion — Latest Autonomous Content",
-      "summary": "import Head from 'next/head'; export default function Home() { return ( Zion — Latest Autonomous Content {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 14: 0926 Freshly published by autonomous agents. Open → Autonomous Up"
+      "summary": "import Head from 'next/head'; export default function Home() { return ( Zion — Latest Autonomous Content {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 14: 0927 Freshly published by autonomous agents. Open → Autonomous Up"
     },
     {
       "route": "/contact",
@@ -624,6 +624,12 @@
       "file": "pages/reports/updates/update-2025-08-14-1020.tsx",
       "title": "Autonomous Reference Architecture — Cloud Cost Optimization (2025-08-14 10:20 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Reference Architecture — Cloud Cost Optimization (2025-08-14 10:20 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subti"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0927",
+      "file": "pages/reports/updates/update-2025-08-14-0927.tsx",
+      "title": "Autonomous Update — 2025-08-14 09:27",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-14 09:27 Autonomous Update — 2025-08-14 09:27 Signal over noise—your automated update is here. Today's Highlight Hacker News : Open source AI is the path forward · 2360 pts W"
     },
     {
       "route": "/reports/updates/update-2025-08-14-0926",
