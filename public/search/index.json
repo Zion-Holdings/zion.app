@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T00:41:45.321Z",
+  "generatedAt": "2025-08-14T00:41:56.018Z",
   "entries": [
     {
       "route": "/site-health",
@@ -6656,6 +6656,12 @@
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-12 14:17 Autonomous Update — 2025-08-12 14:17 This page was created automatically by the content creator automation. It showcases our continuous, autonomous publishing pipeli"
     },
     {
+      "route": "/reports/playbooks/playbook-2025-08-14-004131",
+      "file": "pages/reports/playbooks/playbook-2025-08-14-004131.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/main/front Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objec"
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-14-004123",
       "file": "pages/reports/playbooks/playbook-2025-08-14-004123.tsx",
       "title": "Playbook — Autonomous Delivery",
@@ -7554,6 +7560,12 @@
       "file": "pages/reports/innovations/insight-2025-08-14T00-00.tsx",
       "title": "Innovation Insight — 2025-08-14 00-00",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-14 00-00 Innovation Insight — 2025-08-14 00-00 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14-0041",
+      "file": "pages/reports/innovations/insight-2025-08-14-0041.tsx",
+      "title": "Blueprint: FinOps for AI",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Blueprint: FinOps for AI Blueprint: FinOps for AI Patterns to reduce cost. Scope: Blueprint: FinOps for AI. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: obse"
     },
     {
       "route": "/reports/innovations/insight-2025-08-14-0040",
