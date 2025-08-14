@@ -1,6 +1,13 @@
 {
   "items": [
     {
+      "title": "Runbook: MLOps",
+      "subtitle": "Patterns to enhance security.",
+      "path": "/reports/innovations/insight-2025-08-14-1755",
+      "createdAt": "2025-08-14T17:55:19.569Z",
+      "kind": "insight"
+    },
+    {
       "title": "Pilot Plan: Agent Ops",
       "subtitle": "Patterns to accelerate delivery.",
       "path": "/reports/innovations/insight-2025-08-14-1750",
