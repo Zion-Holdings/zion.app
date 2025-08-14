@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "generatedAt": "2025-08-14T09:45:13.265Z",
   "items": [
     {
@@ -6,20 +7,55 @@
       "href": "/reports/cases/case-2025-08-14-094513",
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T09:45:13.226Z",
+=======
+  "generatedAt": "2025-08-14T09:47:45.453Z",
+  "items": [
+    {
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-14-094745",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T09:47:45.421Z",
+      "source": "cloud-blueprint-factory"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-14-094745",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T09:47:45.389Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Case Study — Autonomous Reports",
+      "href": "/reports/cases/case-2025-08-14-094745",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T09:47:45.350Z",
+>>>>>>> d8b74749f7 (chore(sync): advanced autonomous sync)
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Guide — Techcrunch Pebble Implementation",
+<<<<<<< HEAD
       "href": "/reports/guides/guide-2025-08-14-094513",
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T09:45:13.226Z",
+=======
+      "href": "/reports/guides/guide-2025-08-14-094745",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T09:47:45.350Z",
+>>>>>>> d8b74749f7 (chore(sync): advanced autonomous sync)
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Trigger Homepage Sitemap",
+<<<<<<< HEAD
       "href": "/reports/patterns/pattern-2025-08-14-094513",
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T09:45:13.226Z",
+=======
+      "href": "/reports/patterns/pattern-2025-08-14-094745",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T09:47:45.350Z",
+>>>>>>> d8b74749f7 (chore(sync): advanced autonomous sync)
       "source": "cloud-deep-research-factory"
     }
   ]
