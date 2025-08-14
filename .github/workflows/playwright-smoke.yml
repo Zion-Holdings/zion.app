@@ -1,4 +1,4 @@
-name: Smoke Ping (public URLs)
+name: Playwright Smoke Tests
 
 on:
   pull_request:
@@ -19,7 +19,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20.18.1'
@@ -28,8 +28,48 @@ jobs:
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
 
-      - name: Smoke ping main pages
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Build the app
+        run: npm run build
+
+      - name: Start the app
+        run: npm start &
+        env:
+          NODE_ENV: production
+
+      - name: Wait for app to be ready
         run: |
-          node -e "const https=require('https'); const pages=['/','/explore','/main/front','/newsroom']; const base='https://ziontechgroup.com'; let ok=true; const check=(u)=>new Promise(r=>https.get(base+u, res=>{console.log(u,res.statusCode); if(res.statusCode>=400) ok=false; res.resume(); r();}).on('error',(e)=>{console.log(u,'ERR'); ok=false; r();})); (async()=>{for(const p of pages) await check(p); if(!ok) process.exit(1);})();"
+          timeout=60
+          counter=0
+          while ! curl -f http://localhost:3000 > /dev/null 2>&1; do
+            if [ $counter -ge $timeout ]; then
+              echo "App failed to start within $timeout seconds"
+              exit 1
+            fi
+            echo "Waiting for app to start... ($counter/$timeout)"
+            sleep 2
+            counter=$((counter + 2))
+          done
+          echo "App is ready!"
+
+      - name: Run Playwright tests
+        run: |
+          npx playwright test --project=chromium --reporter=list
+        env:
+          BASE_URL: http://localhost:3000
+        timeout-minutes: 15
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-results
+          path: playwright-report/
+          retention-days: 7
+
+      - name: Stop the app
+        run: pkill -f "npm start" || true
 
 
