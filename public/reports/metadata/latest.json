@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T16:17:44.433Z",
-  "pagesScanned": 3131,
+  "generatedAt": "2025-08-14T16:18:02.965Z",
+  "pagesScanned": 3134,
   "items": [
     {
       "route": "/404",
@@ -113,10 +113,7 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -6078,6 +6075,16 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-14-161758",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide —  Implementation",
+        "description": "Guide —  Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/",
       "missing": [
         "og:image"
@@ -10899,6 +10906,16 @@
     },
     {
       "route": "/reports/patterns/pattern-2025-08-14-161740",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Intelligence",
+        "description": "Pattern — Cloud Intelligence — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-14-161758",
       "missing": [
         "og:image"
       ],
@@ -30055,6 +30072,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 13:17",
         "description": "Autonomous Update — 2025-08-14 13:17 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1318",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 13:18",
+        "description": "Autonomous Update — 2025-08-14 13:18 — auto-suggested description"
       }
     },
     {
