@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T00:10:04.801Z",
-  "pagesScanned": 1162,
+  "generatedAt": "2025-08-14T00:10:38.675Z",
+  "pagesScanned": 1169,
   "items": [
     {
       "route": "/_app",
@@ -309,6 +309,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-000017",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-001013",
       "missing": [
         "og:image"
       ],
@@ -1238,6 +1248,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14-0010",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide: AI QA & Eval",
+        "description": "Guide: AI QA & Eval — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -1245,6 +1265,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-14 00-00",
         "description": "Innovation Insight — 2025-08-14 00-00 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14T00-10",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-14 00-10",
+        "description": "Innovation Insight — 2025-08-14 00-10 — auto-suggested description"
       }
     },
     {
@@ -1489,6 +1519,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-000017",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-001013",
       "missing": [
         "og:image"
       ],
@@ -11588,6 +11628,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-14-0010",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Performance Tuning Guide — Edge AI & IoT (2025-08-14 00:10 UTC)",
+        "description": "Autonomous Performance Tuning Guide — Edge AI & IoT (2025-08-14 00:10 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -11598,6 +11648,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-14T00-10",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 00-10",
+        "description": "Autonomous Update — 2025-08-14 00-10 — auto-suggested description"
+      }
+    },
+    {
       "route": "/search",
       "missing": [
         "og:image"
@@ -11605,6 +11665,19 @@
       "suggestion": {
         "title": "Search",
         "description": "Search — auto-suggested description"
+      }
+    },
+    {
+      "route": "/services/[slug]",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "{service.title}",
+        "description": "{service.title} — auto-suggested description"
       }
     },
     {

@@ -73,7 +73,10 @@ export default function ServicePage({ service }: { service: Service }) {
       <Head>
         <title>{service.title} — Zion Tech Group</title>
         <meta name="description" content={service.description} />
-      </Head>
+      
+        <meta property="og:title" content="{service.title}" />
+        <meta property="og:description" content="{service.title} — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       <h1 className="text-3xl font-bold tracking-tight">{service.title}</h1>
       <p className="mt-2 text-white/80">{service.description}</p>
       <ul className="mt-6 grid gap-2">
