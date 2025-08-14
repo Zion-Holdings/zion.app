@@ -1,58 +1,33 @@
 {
-<<<<<<< HEAD
-  "generatedAt": "2025-08-14T15:00:34.372Z",
+  "generatedAt": "2025-08-14T15:10:28.077Z",
   "items": [
     {
-      "title": "Innovation Insight — 2025-08-14 15-00",
-      "href": "/reports/innovations/insight-2025-08-14T15-00",
+      "title": "Innovation Insight — 2025-08-14 15-10",
+      "href": "/reports/innovations/insight-2025-08-14T15-10",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T15:00:34.277Z",
+      "createdAt": "2025-08-14T15:10:28.007Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-14 15-00",
-      "href": "/reports/updates/update-2025-08-14T15-00",
+      "title": "Autonomous Update — 2025-08-14 15-10",
+      "href": "/reports/updates/update-2025-08-14T15-10",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T15:00:34.277Z",
+      "createdAt": "2025-08-14T15:10:28.007Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Innovation Insight — 2025-08-14 15-00",
-      "href": "/reports/innovations/insight-2025-08-14T15-00",
+      "title": "Innovation Insight — 2025-08-14 15-10",
+      "href": "/reports/innovations/insight-2025-08-14T15-10",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T15:00:34.277Z",
+      "createdAt": "2025-08-14T15:10:28.007Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-14 15-00",
-      "href": "/reports/updates/update-2025-08-14T15-00",
+      "title": "Autonomous Update — 2025-08-14 15-10",
+      "href": "/reports/updates/update-2025-08-14T15-10",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T15:00:34.277Z",
+      "createdAt": "2025-08-14T15:10:28.007Z",
       "source": "cloud-content-factory"
-=======
-  "generatedAt": "2025-08-14T15:05:06.026Z",
-  "items": [
-    {
-      "title": "Case Study — Techcrunch Pebble",
-      "href": "/reports/cases/case-2025-08-14-150505",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T15:05:05.986Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Guide — Capabilities Live Implementation",
-      "href": "/reports/guides/guide-2025-08-14-150505",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T15:05:05.986Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Pattern — Trigger Homepage Sitemap",
-      "href": "/reports/patterns/pattern-2025-08-14-150505",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T15:05:05.986Z",
-      "source": "cloud-deep-research-factory"
->>>>>>> 4f572f8ff7 (chore(sync): advanced autonomous sync)
     }
   ]
 }
