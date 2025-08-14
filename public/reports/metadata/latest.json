@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T16:31:07.563Z",
-  "pagesScanned": 3362,
+  "generatedAt": "2025-08-14T16:31:32.359Z",
+  "pagesScanned": 3376,
   "items": [
     {
       "route": "/404",
@@ -3206,6 +3206,26 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-163037",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-163112",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-163130",
       "missing": [
         "og:image"
       ],
@@ -6975,6 +6995,36 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-14-163109",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide —  Implementation",
+        "description": "Guide —  Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-14-163112",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide —  Implementation",
+        "description": "Guide —  Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-14-163130",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide —  Implementation",
+        "description": "Guide —  Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/",
       "missing": [
         "og:image"
@@ -9045,6 +9095,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14-1631",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Blueprint: AI QA & Eval",
+        "description": "Blueprint: AI QA & Eval — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -10202,6 +10262,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-14 16-30",
         "description": "Innovation Insight — 2025-08-14 16-30 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14T16-31",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-14 16-31",
+        "description": "Innovation Insight — 2025-08-14 16-31 — auto-suggested description"
       }
     },
     {
@@ -12536,6 +12606,36 @@
     },
     {
       "route": "/reports/patterns/pattern-2025-08-14-163043",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Intelligence",
+        "description": "Pattern — Cloud Intelligence — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-14-163109",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Intelligence",
+        "description": "Pattern — Cloud Intelligence — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-14-163112",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Intelligence",
+        "description": "Pattern — Cloud Intelligence — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-14-163130",
       "missing": [
         "og:image"
       ],
@@ -15616,6 +15716,26 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-163038",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-163113",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-163130",
       "missing": [
         "og:image"
       ],
@@ -32435,6 +32555,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-14-1631",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Validation & QA Plan — Agentic Workflows (2025-08-14 16:31 UTC)",
+        "description": "Autonomous Validation & QA Plan — Agentic Workflows (2025-08-14 16:31 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -33592,6 +33722,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 16-30",
         "description": "Autonomous Update — 2025-08-14 16-30 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14T16-31",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 16-31",
+        "description": "Autonomous Update — 2025-08-14 16-31 — auto-suggested description"
       }
     },
     {
