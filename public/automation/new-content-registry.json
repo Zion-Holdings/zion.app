@@ -1,61 +1,25 @@
 {
-<<<<<<< HEAD
-  "generatedAt": "2025-08-14T10:44:14.527Z",
+  "generatedAt": "2025-08-14T10:55:30.264Z",
   "items": [
     {
       "title": "Case Study — Autonomous Reports",
-      "href": "/reports/cases/case-2025-08-14-104414",
+      "href": "/reports/cases/case-2025-08-14-105530",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T10:44:14.472Z",
-=======
-  "generatedAt": "2025-08-14T10:45:13.874Z",
-  "items": [
-    {
-      "title": "Reference Architecture — Autonomous Content Mesh",
-      "href": "/reports/blueprints/blueprint-2025-08-14-104513",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T10:45:13.844Z",
-      "source": "cloud-blueprint-factory"
-    },
-    {
-      "title": "Playbook — Autonomous Delivery",
-      "href": "/reports/playbooks/playbook-2025-08-14-104513",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T10:45:13.813Z",
-      "source": "cloud-playbook-factory"
-    },
-    {
-      "title": "Case Study — Autonomous Reports",
-      "href": "/reports/cases/case-2025-08-14-104513",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T10:45:13.777Z",
->>>>>>> 83379612dd (chore(sync): advanced autonomous sync)
+      "createdAt": "2025-08-14T10:55:30.225Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Guide — Techcrunch Pebble Implementation",
-<<<<<<< HEAD
-      "href": "/reports/guides/guide-2025-08-14-104414",
+      "href": "/reports/guides/guide-2025-08-14-105530",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T10:44:14.472Z",
-=======
-      "href": "/reports/guides/guide-2025-08-14-104513",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T10:45:13.777Z",
->>>>>>> 83379612dd (chore(sync): advanced autonomous sync)
+      "createdAt": "2025-08-14T10:55:30.225Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Trigger Homepage Sitemap",
-<<<<<<< HEAD
-      "href": "/reports/patterns/pattern-2025-08-14-104414",
+      "href": "/reports/patterns/pattern-2025-08-14-105530",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T10:44:14.472Z",
-=======
-      "href": "/reports/patterns/pattern-2025-08-14-104513",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T10:45:13.777Z",
->>>>>>> 83379612dd (chore(sync): advanced autonomous sync)
+      "createdAt": "2025-08-14T10:55:30.225Z",
       "source": "cloud-deep-research-factory"
     }
   ]
