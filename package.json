@@ -41,7 +41,7 @@
     "dev": "NODE_OPTIONS=\"--max-old-space-size=4096 --openssl-legacy-provider\" next dev",
     "build": "NODE_OPTIONS=\"--max-old-space-size=6144 --openssl-legacy-provider\" next build",
     "prebuild": "npm run netlify:manifest",
-    "export": "rm -rf .next out tsconfig.tsbuildinfo && mkdir -p .temp && mv pages/reports/cases .temp/ 2>/dev/null || true && mv pages/reports/blueprints .temp/ 2>/dev/null || true && NODE_OPTIONS=\"--max-old-space-size=6144 --openssl-legacy-provider\" next build --no-lint && next export && if [ -f _redirects ]; then cp -f _redirects out/_redirects; fi && if [ -f public/_headers ]; then cp -f public/_headers out/_headers; elif [ -f _headers ]; then cp -f _headers out/_headers; fi && mv .temp/cases pages/reports/ 2>/dev/null || true && mv .temp/blueprints pages/reports/ 2>/dev/null || true && rm -rf .temp",
+    "export": "rm -rf .next out tsconfig.tsbuildinfo && mkdir -p .temp && mv pages/reports .temp/ 2>/dev/null || true && NODE_OPTIONS=\"--max-old-space-size=6144 --openssl-legacy-provider\" next build --no-lint && mkdir -p .next/server && echo '{}' > .next/server/next-font-manifest.json && next export && if [ -f _redirects ]; then cp -f _redirects out/_redirects; fi && if [ -f public/_headers ]; then cp -f _headers out/_headers; elif [ -f _headers ]; then cp -f _headers out/_headers; fi && mv .temp/reports pages/ 2>/dev/null || true && rm -rf .temp",
     "start": "next start",
     "postbuild": "node automation/footer-injector.cjs || true",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
