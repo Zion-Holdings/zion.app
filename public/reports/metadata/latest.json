@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T16:20:39.100Z",
-  "pagesScanned": 3183,
+  "generatedAt": "2025-08-14T16:21:00.996Z",
+  "pagesScanned": 3190,
   "items": [
     {
       "route": "/404",
@@ -113,10 +113,7 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -2929,6 +2926,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-162029",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-162047",
       "missing": [
         "og:image"
       ],
@@ -6279,6 +6286,26 @@
     },
     {
       "route": "/reports/guides/guide-2025-08-14-162032",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide —  Implementation",
+        "description": "Guide —  Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-14-162047",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide —  Implementation",
+        "description": "Guide —  Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-14-162058",
       "missing": [
         "og:image"
       ],
@@ -11288,6 +11315,26 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-14-162047",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Intelligence",
+        "description": "Pattern — Cloud Intelligence — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-14-162058",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Intelligence",
+        "description": "Pattern — Cloud Intelligence — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-13-223010",
       "missing": [
         "og:image"
@@ -14089,6 +14136,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-162030",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-162047",
       "missing": [
         "og:image"
       ],
@@ -30545,6 +30602,19 @@
       "suggestion": {
         "title": "Autonomous Blueprint — Agentic Workflows (2025-08-14 13:20 UTC)",
         "description": "Autonomous Blueprint — Agentic Workflows (2025-08-14 13:20 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1321",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 13:21",
+        "description": "Autonomous Update — 2025-08-14 13:21 — auto-suggested description"
       }
     },
     {
