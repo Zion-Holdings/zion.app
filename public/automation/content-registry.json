@@ -53,12 +53,12 @@
       "route": "/reports/ai-lab"
     },
     {
-      "file": "pages/explore/index.tsx",
-      "route": "/explore"
-    },
-    {
       "file": "pages/front/index.tsx",
       "route": "/front"
+    },
+    {
+      "file": "pages/explore/index.tsx",
+      "route": "/explore"
     },
     {
       "file": "pages/automation/index.tsx",
@@ -569,10 +569,6 @@
       "route": "/reports/blueprints/blueprint-2025-08-13-223010"
     },
     {
-      "file": "pages/main/front/index.tsx",
-      "route": "/main/front"
-    },
-    {
       "file": "pages/reports/innovations/insight-2025-08-14T00-29.tsx",
       "route": "/reports/innovations/insight-2025-08-14T00-29"
     },
@@ -1059,6 +1055,10 @@
     {
       "file": "pages/reports/innovations/index.tsx",
       "route": "/reports/innovations"
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "route": "/main/front"
     },
     {
       "file": "pages/reports/updates/update-2025-08-14T00-29.tsx",
@@ -5335,5 +5335,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-14T00:30:03.254Z"
+  "generatedAt": "2025-08-14T00:30:06.454Z"
 }
