@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T19:09:00.633Z",
-  "pagesScanned": 3495,
+  "generatedAt": "2025-08-14T19:19:00.633Z",
+  "pagesScanned": 3498,
   "items": [
     {
       "route": "/404",
@@ -33507,10 +33507,7 @@
     {
       "route": "/reports/updates/update-2025-08-14-1609",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 16:09",
@@ -33525,6 +33522,36 @@
       "suggestion": {
         "title": "Autonomous Capability Map — Agentic Workflows (2025-08-14 16:10 UTC)",
         "description": "Autonomous Capability Map — Agentic Workflows (2025-08-14 16:10 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1614",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 16:14",
+        "description": "Autonomous Update — 2025-08-14 16:14 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1615",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 16:15",
+        "description": "Autonomous Update — 2025-08-14 16:15 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1616",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 16:16",
+        "description": "Autonomous Update — 2025-08-14 16:16 — auto-suggested description"
       }
     },
     {
