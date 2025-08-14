@@ -4,6 +4,8 @@
 
 [build.environment]
   NODE_VERSION = "20"
+  NODE_OPTIONS = "--max-old-space-size=6144 --openssl-legacy-provider"
+  NEXT_DISABLE_SOURCEMAPS = "1"
   NETLIFY_NEXT_PLUGIN_SKIP = "true"
   # When triggering chained builds via build hook, set NETLIFY_RERUN_CHAIN=1 in the hook payload/env
 

@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  productionBrowserSourceMaps: false,
   async redirects() {
     return [
       { source: '/main', destination: '/', permanent: true },
