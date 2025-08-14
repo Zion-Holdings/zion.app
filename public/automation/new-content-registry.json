@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2025-08-14T09:15:54.405Z",
+  "generatedAt": "2025-08-14T09:16:28.102Z",
   "items": [
     {
-      "title": "Guide: DevSecOps AI",
-      "subtitle": "Patterns to enhance security.",
-      "path": "/reports/innovations/insight-2025-08-14-0916",
-      "createdAt": "2025-08-14T09:16:09.006Z",
-      "kind": "insight"
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-14-091627",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T09:16:27.999Z",
+      "source": "cloud-blueprint-factory"
     },
     {
-      "title": "Reference Architecture — Autonomous Content Mesh",
-      "href": "/reports/blueprints/blueprint-2025-08-14-091554",
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-14-091627",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T09:15:54.297Z",
-      "source": "cloud-blueprint-factory"
+      "createdAt": "2025-08-14T09:16:27.893Z",
+      "source": "cloud-playbook-factory"
     }
   ]
 }
