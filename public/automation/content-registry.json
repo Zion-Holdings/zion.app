@@ -1611,5 +1611,32 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
+<<<<<<< HEAD
   "generatedAt": "2025-08-14T22:54:11.933Z"
+=======
+  "generatedAt": "2025-08-14T22:54:05.065Z",
+  "items": [
+    {
+      "title": "Case Study — Trigger Homepage",
+      "href": "/reports/cases/case-2025-08-14-225408",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T22:54:08.966Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-14-225408",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T22:54:08.966Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Cloud Improving Continuously",
+      "href": "/reports/patterns/pattern-2025-08-14-225408",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T22:54:08.966Z",
+      "source": "cloud-deep-research-factory"
+    }
+  ]
+>>>>>>> 1a45b452ce (chore(sync): advanced autonomous sync)
 }
