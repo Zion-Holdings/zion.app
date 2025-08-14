@@ -38,6 +38,20 @@ function ensureDir(dir) { fs.mkdirSync(dir, { recursive: true }); }
 
 function main() {
   const routes = getRoutes(PAGES_DIR);
+  // Include known dynamic service routes by parsing slugs from the source file
+  try {
+    const servicesFile = path.join(PAGES_DIR, 'services', '[slug].tsx');
+    if (fs.existsSync(servicesFile)) {
+      const content = fs.readFileSync(servicesFile, 'utf8');
+      const slugs = Array.from(content.matchAll(/slug:\s*['"]([^'\"]+)['"]/g)).map(m => m[1]);
+      for (const slug of slugs) {
+        const r = `/services/${slug}`;
+        if (!routes.includes(r)) routes.push(r);
+      }
+    }
+  } catch (e) {
+    // noop: best-effort enrichment
+  }
   ensureDir(PUBLIC_DIR);
   const xml = renderSitemap(routes);
   fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap.xml'), xml);
