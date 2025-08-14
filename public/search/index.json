@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T04:10:01.934Z",
+  "generatedAt": "2025-08-14T04:11:02.031Z",
   "entries": [
     {
       "route": "/site-health",
@@ -23,7 +23,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "Zion — Latest Autonomous Content",
-      "summary": "import Head from 'next/head'; export default function Home() { return ( Zion — Latest Autonomous Content {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 14: 0110 Freshly published by autonomous agents. Open → Autonomous Up"
+      "summary": "import Head from 'next/head'; export default function Home() { return ( Zion — Latest Autonomous Content {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 14: 0111 Freshly published by autonomous agents. Open → Autonomous Up"
     },
     {
       "route": "/contact",
@@ -362,6 +362,12 @@
       "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-14 00-00 Autonomous Update — 2025-08-14 00-00 Signal source: https://ziontechgroup.com/ Autonomous cloud systems are live and improving the app in real timeAutonomous Cloud Automat"
     },
     {
+      "route": "/reports/updates/update-2025-08-14-0410",
+      "file": "pages/reports/updates/update-2025-08-14-0410.tsx",
+      "title": "Autonomous Reference Architecture — Evaluation & Safety (2025-08-14 04:10 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Reference Architecture — Evaluation & Safety (2025-08-14 04:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}"
+    },
+    {
       "route": "/reports/updates/update-2025-08-14-0400",
       "file": "pages/reports/updates/update-2025-08-14-0400.tsx",
       "title": "Autonomous Checklist — Vision & Multimodal (2025-08-14 04:00 UTC)",
@@ -426,6 +432,12 @@
       "file": "pages/reports/updates/update-2025-08-14-0140.tsx",
       "title": "Autonomous Reference Architecture — Data Engineering (2025-08-14 01:40 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Reference Architecture — Data Engineering (2025-08-14 01:40 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0111",
+      "file": "pages/reports/updates/update-2025-08-14-0111.tsx",
+      "title": "Autonomous Update — 2025-08-14 01:11",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-14 01:11 Autonomous Update — 2025-08-14 01:11 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Google Duplex: An AI "
     },
     {
       "route": "/reports/updates/update-2025-08-14-0110",
@@ -8598,6 +8610,12 @@
       "file": "pages/reports/innovations/insight-2025-08-14T00-00.tsx",
       "title": "Innovation Insight — 2025-08-14 00-00",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-14 00-00 Innovation Insight — 2025-08-14 00-00 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14-0410",
+      "file": "pages/reports/innovations/insight-2025-08-14-0410.tsx",
+      "title": "Playbook: MLOps",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Playbook: MLOps Playbook: MLOps Patterns to enhance security. Scope: Playbook: MLOps. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observability, rollback, S"
     },
     {
       "route": "/reports/innovations/insight-2025-08-14-0400",
