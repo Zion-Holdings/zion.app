@@ -8831,5 +8831,28 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-14T09:02:25.931Z"
+  "generatedAt": "2025-08-14T09:02:25.931Z",
+  "items": [
+    {
+      "title": "Case Study — Autonomous Reports",
+      "href": "/reports/cases/case-2025-08-14-090227",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T09:02:27.697Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Techcrunch Pebble Implementation",
+      "href": "/reports/guides/guide-2025-08-14-090227",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T09:02:27.697Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Trigger Homepage Sitemap",
+      "href": "/reports/patterns/pattern-2025-08-14-090227",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T09:02:27.697Z",
+      "source": "cloud-deep-research-factory"
+    }
+  ]
 }
