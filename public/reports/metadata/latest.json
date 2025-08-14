@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T00:18:00.667Z",
-  "pagesScanned": 1229,
+  "generatedAt": "2025-08-14T00:18:45.145Z",
+  "pagesScanned": 1237,
   "items": [
     {
       "route": "/404",
@@ -470,6 +470,26 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-001748",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-001809",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-001834",
       "missing": [
         "og:image"
       ],
@@ -1469,6 +1489,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14-0018",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide: Agent Ops",
+        "description": "Guide: Agent Ops — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -1546,6 +1576,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-14 00-17",
         "description": "Innovation Insight — 2025-08-14 00-17 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14T00-18",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-14 00-18",
+        "description": "Innovation Insight — 2025-08-14 00-18 — auto-suggested description"
       }
     },
     {
@@ -1930,6 +1970,26 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-001748",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-001809",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-001835",
       "missing": [
         "og:image"
       ],
@@ -11351,10 +11411,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-2118",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 21:18",
@@ -12182,6 +12239,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-14-0018",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Validation & QA Plan — Cloud Cost Optimization (2025-08-14 00:18 UTC)",
+        "description": "Autonomous Validation & QA Plan — Cloud Cost Optimization (2025-08-14 00:18 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -12259,6 +12326,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 00-17",
         "description": "Autonomous Update — 2025-08-14 00-17 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14T00-18",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 00-18",
+        "description": "Autonomous Update — 2025-08-14 00-18 — auto-suggested description"
       }
     },
     {
