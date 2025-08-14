@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T09:36:12.831Z",
-  "pagesScanned": 2927,
+  "generatedAt": "2025-08-14T09:37:25.691Z",
+  "pagesScanned": 2953,
   "items": [
     {
       "route": "/404",
@@ -93,7 +93,10 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -2835,6 +2838,26 @@
       }
     },
     {
+      "route": "/reports/blueprints/blueprint-2025-08-14-093630",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-093710",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/cases/case-2025-08-14-040018",
       "missing": [
         "og:image"
@@ -4546,6 +4569,56 @@
     },
     {
       "route": "/reports/cases/case-2025-08-14-093605",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Autonomous Reports",
+        "description": "Case Study — Autonomous Reports — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-14-093628",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Autonomous Reports",
+        "description": "Case Study — Autonomous Reports — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-14-093629",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Autonomous Reports",
+        "description": "Case Study — Autonomous Reports — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-14-093631",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Autonomous Reports",
+        "description": "Case Study — Autonomous Reports — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-14-093711",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Autonomous Reports",
+        "description": "Case Study — Autonomous Reports — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-14-093712",
       "missing": [
         "og:image"
       ],
@@ -6365,6 +6438,56 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-14-093628",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Techcrunch Pebble Implementation",
+        "description": "Guide — Techcrunch Pebble Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-14-093629",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Techcrunch Pebble Implementation",
+        "description": "Guide — Techcrunch Pebble Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-14-093631",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Techcrunch Pebble Implementation",
+        "description": "Guide — Techcrunch Pebble Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-14-093711",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Techcrunch Pebble Implementation",
+        "description": "Guide — Techcrunch Pebble Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-14-093712",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Techcrunch Pebble Implementation",
+        "description": "Guide — Techcrunch Pebble Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/",
       "missing": [
         "og:image"
@@ -8165,6 +8288,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14-0936",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Checklist: LLM Apps",
+        "description": "Checklist: LLM Apps — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -9092,6 +9225,26 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-14 09-34",
         "description": "Innovation Insight — 2025-08-14 09-34 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14T09-36",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-14 09-36",
+        "description": "Innovation Insight — 2025-08-14 09-36 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14T09-37",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-14 09-37",
+        "description": "Innovation Insight — 2025-08-14 09-37 — auto-suggested description"
       }
     },
     {
@@ -10906,6 +11059,56 @@
     },
     {
       "route": "/reports/patterns/pattern-2025-08-14-093605",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Trigger Homepage Sitemap",
+        "description": "Pattern — Trigger Homepage Sitemap — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-14-093628",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Trigger Homepage Sitemap",
+        "description": "Pattern — Trigger Homepage Sitemap — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-14-093629",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Trigger Homepage Sitemap",
+        "description": "Pattern — Trigger Homepage Sitemap — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-14-093631",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Trigger Homepage Sitemap",
+        "description": "Pattern — Trigger Homepage Sitemap — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-14-093711",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Trigger Homepage Sitemap",
+        "description": "Pattern — Trigger Homepage Sitemap — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-14-093712",
       "missing": [
         "og:image"
       ],
@@ -13626,6 +13829,26 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-093601",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-093631",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-093712",
       "missing": [
         "og:image"
       ],
@@ -27965,6 +28188,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-14-0637",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 06:37",
+        "description": "Autonomous Update — 2025-08-14 06:37 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-14-0640",
       "missing": [
         "og:image"
@@ -28312,6 +28548,16 @@
       "suggestion": {
         "title": "Autonomous Blueprint — Vision & Multimodal (2025-08-14 09:34 UTC)",
         "description": "Autonomous Blueprint — Vision & Multimodal (2025-08-14 09:34 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0936",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Performance Tuning Guide — Cloud Cost Optimization (2025-08-14 09:36 UTC)",
+        "description": "Autonomous Performance Tuning Guide — Cloud Cost Optimization (2025-08-14 09:36 UTC) — auto-suggested description"
       }
     },
     {
@@ -29242,6 +29488,26 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 09-34",
         "description": "Autonomous Update — 2025-08-14 09-34 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14T09-36",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 09-36",
+        "description": "Autonomous Update — 2025-08-14 09-36 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14T09-37",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 09-37",
+        "description": "Autonomous Update — 2025-08-14 09-37 — auto-suggested description"
       }
     },
     {
