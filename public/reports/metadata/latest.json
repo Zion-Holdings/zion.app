@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T06:31:00.539Z",
-  "pagesScanned": 1946,
+  "generatedAt": "2025-08-14T06:32:00.501Z",
+  "pagesScanned": 1952,
   "items": [
     {
       "route": "/404",
@@ -1775,6 +1775,16 @@
       }
     },
     {
+      "route": "/reports/blueprints/blueprint-2025-08-14-063112",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/cases/case-2025-08-14-040018",
       "missing": [
         "og:image"
@@ -1876,6 +1886,16 @@
     },
     {
       "route": "/reports/cases/case-2025-08-14-063014",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Autonomous Reports",
+        "description": "Case Study — Autonomous Reports — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-14-063112",
       "missing": [
         "og:image"
       ],
@@ -2076,6 +2096,16 @@
     },
     {
       "route": "/reports/guides/guide-2025-08-14-063014",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Techcrunch Pebble Implementation",
+        "description": "Guide — Techcrunch Pebble Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-14-063112",
       "missing": [
         "og:image"
       ],
@@ -4315,6 +4345,16 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-14-063112",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Trigger Homepage Sitemap",
+        "description": "Pattern — Trigger Homepage Sitemap — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-13-223010",
       "missing": [
         "og:image"
@@ -5976,6 +6016,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-063014",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-063112",
       "missing": [
         "og:image"
       ],
@@ -18707,14 +18757,24 @@
     {
       "route": "/reports/updates/update-2025-08-14-0331",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 03:31",
+        "description": "Autonomous Update — 2025-08-14 03:31 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0332",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-14 03:31",
-        "description": "Autonomous Update — 2025-08-14 03:31 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-14 03:32",
+        "description": "Autonomous Update — 2025-08-14 03:32 — auto-suggested description"
       }
     },
     {
