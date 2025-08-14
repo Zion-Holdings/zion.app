@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T15:42:02.305Z",
+  "generatedAt": "2025-08-14T15:42:17.588Z",
   "entries": [
     {
       "route": "/site-health",
@@ -18,6 +18,12 @@
       "file": "pages/newsroom.tsx",
       "title": "Newsroom — Curated Tech Headlines",
       "summary": "import Head from 'next/head'; export default function Newsroom() { return ( Newsroom — Curated Tech Headlines Newsroom Updated automatically from multiple sources. Co-founder of Elon Musk’s xAI departs the company (TechCrunch) Amazon rolls out same-day delivery of perishable groc"
+    },
+    {
+      "route": "/landing",
+      "file": "pages/landing.tsx",
+      "title": "Zion — Features, Benefits, Services, and Content",
+      "summary": "import Head from 'next/head'; import Link from 'next/link'; import Landing from '../components/Landing'; export default function MarketingLanding() { const features: Array = [ { title: 'Autonomous Agents', desc: 'Self‑improving systems that build and run new automations.' }, { ti"
     },
     {
       "route": "/",
