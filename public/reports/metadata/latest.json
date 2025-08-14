@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T00:40:02.286Z",
-  "pagesScanned": 1473,
+  "generatedAt": "2025-08-14T00:40:06.362Z",
+  "pagesScanned": 1476,
   "items": [
     {
       "route": "/404",
@@ -97,10 +97,7 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -2402,6 +2399,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14-0040",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Blueprint: AI QA & Eval",
+        "description": "Blueprint: AI QA & Eval — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -3783,6 +3790,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-003951",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-004001",
       "missing": [
         "og:image"
       ],
@@ -14419,6 +14436,16 @@
       "suggestion": {
         "title": "Autonomous Performance Tuning Guide — Edge AI & IoT (2025-08-14 00:39 UTC)",
         "description": "Autonomous Performance Tuning Guide — Edge AI & IoT (2025-08-14 00:39 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0040",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Reference Architecture — Vision & Multimodal (2025-08-14 00:40 UTC)",
+        "description": "Autonomous Reference Architecture — Vision & Multimodal (2025-08-14 00:40 UTC) — auto-suggested description"
       }
     },
     {
