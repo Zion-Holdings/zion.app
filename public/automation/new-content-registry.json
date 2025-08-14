@@ -1,46 +1,32 @@
 {
-  "generatedAt": "2025-08-14T16:36:29.703Z",
+  "generatedAt": "2025-08-14T16:47:28.968Z",
   "items": [
     {
       "title": "Reference Architecture — Autonomous Content Mesh",
-      "href": "/reports/blueprints/blueprint-2025-08-14-163629",
+      "href": "/reports/blueprints/blueprint-2025-08-14-164728",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:36:29.493Z",
+      "createdAt": "2025-08-14T16:47:28.932Z",
       "source": "cloud-blueprint-factory"
     },
     {
       "title": "Playbook — Autonomous Delivery",
-      "href": "/reports/playbooks/playbook-2025-08-14-163629",
+      "href": "/reports/playbooks/playbook-2025-08-14-164728",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:36:29.327Z",
+      "createdAt": "2025-08-14T16:47:28.897Z",
       "source": "cloud-playbook-factory"
     },
     {
       "title": "Guide —  Implementation",
-      "href": "/reports/guides/guide-2025-08-14-163628",
+      "href": "/reports/guides/guide-2025-08-14-164728",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:36:28.665Z",
+      "createdAt": "2025-08-14T16:47:28.854Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Cloud Intelligence",
-      "href": "/reports/patterns/pattern-2025-08-14-163628",
+      "href": "/reports/patterns/pattern-2025-08-14-164728",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:36:28.665Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Guide —  Implementation",
-      "href": "/reports/guides/guide-2025-08-14-163619",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:36:19.636Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Pattern — Cloud Intelligence",
-      "href": "/reports/patterns/pattern-2025-08-14-163619",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:36:19.636Z",
+      "createdAt": "2025-08-14T16:47:28.854Z",
       "source": "cloud-deep-research-factory"
     }
   ]
