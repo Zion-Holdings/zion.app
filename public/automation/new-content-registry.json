@@ -1,54 +1,33 @@
 {
-  "generatedAt": "2025-08-14T16:28:38.061Z",
+  "generatedAt": "2025-08-14T16:28:59.218Z",
   "items": [
     {
-      "title": "Innovation Insight — 2025-08-14 16-28",
-      "href": "/reports/innovations/insight-2025-08-14T16-28",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:28:37.961Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-14 16-28",
-      "href": "/reports/updates/update-2025-08-14T16-28",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:28:37.961Z",
-      "source": "cloud-content-factory"
-    },
-    {
       "title": "Guide —  Implementation",
-      "href": "/reports/guides/guide-2025-08-14-162837",
+      "href": "/reports/guides/guide-2025-08-14-162859",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:28:37.959Z",
+      "createdAt": "2025-08-14T16:28:59.058Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Cloud Intelligence",
-      "href": "/reports/patterns/pattern-2025-08-14-162837",
+      "href": "/reports/patterns/pattern-2025-08-14-162859",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:28:37.959Z",
+      "createdAt": "2025-08-14T16:28:59.058Z",
       "source": "cloud-deep-research-factory"
     },
     {
-      "title": "Reference Architecture — Autonomous Content Mesh",
-      "href": "/reports/blueprints/blueprint-2025-08-14-162837",
+      "title": "Guide —  Implementation",
+      "href": "/reports/guides/guide-2025-08-14-162858",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:28:37.852Z",
-      "source": "cloud-blueprint-factory"
+      "createdAt": "2025-08-14T16:28:58.954Z",
+      "source": "cloud-deep-research-factory"
     },
     {
-      "title": "Innovation Insight — 2025-08-14 16-28",
-      "href": "/reports/innovations/insight-2025-08-14T16-28",
+      "title": "Pattern — Cloud Intelligence",
+      "href": "/reports/patterns/pattern-2025-08-14-162858",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:28:37.575Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-14 16-28",
-      "href": "/reports/updates/update-2025-08-14T16-28",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:28:37.575Z",
-      "source": "cloud-content-factory"
+      "createdAt": "2025-08-14T16:28:58.954Z",
+      "source": "cloud-deep-research-factory"
     }
   ]
 }
