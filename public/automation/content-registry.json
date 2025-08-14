@@ -27,6 +27,11 @@
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T00:46:00.137Z",
       "source": "cloud-content-factory"
+    },
+    {
+      "id": "cursor-chat-2025-08-14T01:00:13.406Z",
+      "type": "cursor-chat",
+      "timestamp": "2025-08-14T01:00:13.406Z"
     }
   ]
 }
