@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T00:12:40.085Z",
-  "pagesScanned": 1179,
+  "generatedAt": "2025-08-14T00:13:13.837Z",
+  "pagesScanned": 1186,
   "items": [
     {
       "route": "/404",
@@ -350,6 +350,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-001232",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-001301",
       "missing": [
         "og:image"
       ],
@@ -1299,6 +1309,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14-0013",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Runbook: AI QA & Eval",
+        "description": "Runbook: AI QA & Eval — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -1326,6 +1346,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-14 00-12",
         "description": "Innovation Insight — 2025-08-14 00-12 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14T00-13",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-14 00-13",
+        "description": "Innovation Insight — 2025-08-14 00-13 — auto-suggested description"
       }
     },
     {
@@ -1590,6 +1620,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-001232",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-001302",
       "missing": [
         "og:image"
       ],
@@ -10959,6 +10999,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-13-2113",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 21:13",
+        "description": "Autonomous Update — 2025-08-13 21:13 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-13-2119",
       "missing": [
         "og:image"
@@ -11729,6 +11779,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-14-0013",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Security Hardening Guide — Evaluation & Safety (2025-08-14 00:13 UTC)",
+        "description": "Autonomous Security Hardening Guide — Evaluation & Safety (2025-08-14 00:13 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -11756,6 +11816,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 00-12",
         "description": "Autonomous Update — 2025-08-14 00-12 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14T00-13",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 00-13",
+        "description": "Autonomous Update — 2025-08-14 00-13 — auto-suggested description"
       }
     },
     {

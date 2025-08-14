@@ -46,7 +46,7 @@
     "postbuild": "node automation/footer-injector.cjs || true",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "type-check": "tsc --noEmit",
-          "prepare": "git config core.hooksPath .husky || true",
+    "prepare": "git config core.hooksPath .husky || true",
     "fix:all": "npm run lint -- --fix || true && node fix_typescript_syntax_errors.cjs || true && node fix_all_typescript_errors.cjs || true && node final_fix.cjs || true",
     "build:heal": "npm run build || (npm run fix:all && npm run build)",
     "ci:heal": "npm run fix:all && (npm run type-check || true) && npm run build:heal",
@@ -289,6 +289,7 @@
     "glob": "^11.0.3",
     "https": "^1.0.0",
     "import-fresh": "^3.3.1",
+    "jsdom": "^24.1.0",
     "lucide-react": "^0.536.0",
     "next": "^15.4.6",
     "node-cron": "^4.2.1",
@@ -298,8 +299,7 @@
     "react": "^18.3.1",
     "react-datepicker": "^8.4.0",
     "react-dom": "^18.3.1",
-    "uuid": "^11.1.0",
-    "jsdom": "^24.1.0"
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
@@ -307,9 +307,9 @@
     "@eslint/js": "^9.32.0",
     "@testing-library/jest-dom": "^6.6.4",
     "@testing-library/react": "^14.3.1",
-    "@types/node": "^24.2.0",
+    "@types/node": "24.2.1",
     "@types/node-cron": "^3.0.11",
-    "@types/react": "^18.3.3",
+    "@types/react": "18.3.23",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^8.39.0",
     "@typescript-eslint/parser": "^8.39.0",
@@ -324,7 +324,7 @@
     "sharp": "^0.33.4",
     "tailwindcss": "^3.4.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.6.3"
+    "typescript": "5.9.2"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
