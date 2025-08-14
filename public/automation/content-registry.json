@@ -12407,5 +12407,21 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-14T16:15:21.890Z"
+  "generatedAt": "2025-08-14T16:15:21.890Z",
+  "items": [
+    {
+      "title": "Guide —  Implementation",
+      "href": "/reports/guides/guide-2025-08-14-161527",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:15:27.570Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Cloud Intelligence",
+      "href": "/reports/patterns/pattern-2025-08-14-161527",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:15:27.570Z",
+      "source": "cloud-deep-research-factory"
+    }
+  ]
 }
