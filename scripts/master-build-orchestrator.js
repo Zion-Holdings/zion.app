@@ -10,13 +10,19 @@ const path = require('path');
 const EnhancedBuildAutomation = require('./enhanced-build-automation');
 const AdvancedSecurityScanner = require('./security-scanner');
 const IntelligentBuildOptimizer = require('./intelligent-build-optimizer');
+const SmartDependencyManager = require('./smart-dependency-manager');
+const RealTimeBuildMonitor = require('./real-time-monitor');
+const AdvancedCacheManager = require('./advanced-cache-manager');
 
 class MasterBuildOrchestrator {
   constructor() {
     this.systems = {
       enhanced: new EnhancedBuildAutomation(),
       security: new AdvancedSecurityScanner(),
-      optimizer: new IntelligentBuildOptimizer()
+      optimizer: new IntelligentBuildOptimizer(),
+      dependencies: new SmartDependencyManager(),
+      monitor: new RealTimeBuildMonitor(),
+      cache: new AdvancedCacheManager()
     };
     
     this.orchestrationLog = [];
