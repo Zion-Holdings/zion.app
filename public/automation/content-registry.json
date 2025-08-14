@@ -61,20 +61,20 @@
       "route": "/front"
     },
     {
-      "file": "pages/automation/index.tsx",
-      "route": "/automation"
-    },
-    {
       "file": "pages/explore/index.tsx",
       "route": "/explore"
     },
     {
-      "file": "pages/reports/patterns/pattern-2025-08-14-163454.tsx",
-      "route": "/reports/patterns/pattern-2025-08-14-163454"
+      "file": "pages/automation/index.tsx",
+      "route": "/automation"
     },
     {
-      "file": "pages/reports/patterns/pattern-2025-08-14-163448.tsx",
-      "route": "/reports/patterns/pattern-2025-08-14-163448"
+      "file": "pages/reports/patterns/pattern-2025-08-14-163521.tsx",
+      "route": "/reports/patterns/pattern-2025-08-14-163521"
+    },
+    {
+      "file": "pages/reports/patterns/pattern-2025-08-14-163520.tsx",
+      "route": "/reports/patterns/pattern-2025-08-14-163520"
     },
     {
       "file": "pages/reports/patterns/pattern-2025-08-14-163415.tsx",
@@ -1049,8 +1049,8 @@
       "route": "/reports/patterns/pattern-2025-08-13-215625"
     },
     {
-      "file": "pages/reports/playbooks/playbook-2025-08-14-163454.tsx",
-      "route": "/reports/playbooks/playbook-2025-08-14-163454"
+      "file": "pages/reports/playbooks/playbook-2025-08-14-163520.tsx",
+      "route": "/reports/playbooks/playbook-2025-08-14-163520"
     },
     {
       "file": "pages/reports/playbooks/playbook-2025-08-14-163415.tsx",
@@ -4193,12 +4193,12 @@
       "route": "/main/front"
     },
     {
-      "file": "pages/reports/guides/guide-2025-08-14-163454.tsx",
-      "route": "/reports/guides/guide-2025-08-14-163454"
+      "file": "pages/reports/guides/guide-2025-08-14-163521.tsx",
+      "route": "/reports/guides/guide-2025-08-14-163521"
     },
     {
-      "file": "pages/reports/guides/guide-2025-08-14-163448.tsx",
-      "route": "/reports/guides/guide-2025-08-14-163448"
+      "file": "pages/reports/guides/guide-2025-08-14-163520.tsx",
+      "route": "/reports/guides/guide-2025-08-14-163520"
     },
     {
       "file": "pages/reports/guides/guide-2025-08-14-163415.tsx",
@@ -5169,8 +5169,8 @@
       "route": "/reports/guides/guide-2025-08-13-215625"
     },
     {
-      "file": "pages/reports/blueprints/blueprint-2025-08-14-163455.tsx",
-      "route": "/reports/blueprints/blueprint-2025-08-14-163455"
+      "file": "pages/reports/blueprints/blueprint-2025-08-14-163521.tsx",
+      "route": "/reports/blueprints/blueprint-2025-08-14-163521"
     },
     {
       "file": "pages/reports/blueprints/blueprint-2025-08-14-163415.tsx",
@@ -7009,8 +7009,8 @@
       "route": "/reports/updates/update-2025-08-14-1340"
     },
     {
-      "file": "pages/reports/updates/update-2025-08-14-1334.tsx",
-      "route": "/reports/updates/update-2025-08-14-1334"
+      "file": "pages/reports/updates/update-2025-08-14-1335.tsx",
+      "route": "/reports/updates/update-2025-08-14-1335"
     },
     {
       "file": "pages/reports/updates/update-2025-08-14-1332.tsx",
@@ -13667,5 +13667,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-14T16:34:59.800Z"
+  "generatedAt": "2025-08-14T16:35:26.654Z"
 }

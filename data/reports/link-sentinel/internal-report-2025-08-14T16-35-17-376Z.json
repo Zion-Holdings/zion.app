@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T16:34:45.487Z",
+  "generatedAt": "2025-08-14T16:35:17.375Z",
   "knownRoutes": [
     "/",
     "/404",
@@ -3540,17 +3540,17 @@
     },
     {
       "file": "pages/main/front/index.tsx",
+      "href": "/reports/a11y",
+      "suggestion": null
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "href": "/reports/metadata",
+      "suggestion": null
+    },
+    {
+      "file": "pages/main/front/index.tsx",
       "href": "/main/front#features",
-      "suggestion": null
-    },
-    {
-      "file": "pages/main/front/index.tsx",
-      "href": "/main/front#capabilities",
-      "suggestion": null
-    },
-    {
-      "file": "pages/main/front/index.tsx",
-      "href": "/main/front#benefits",
       "suggestion": null
     },
     {

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T16:34:50.975Z",
+  "generatedAt": "2025-08-14T16:35:13.288Z",
   "knownRoutes": [
     "/",
     "/404",
@@ -712,7 +712,6 @@
     "/reports/guides/guide-2025-08-14-163243",
     "/reports/guides/guide-2025-08-14-163244",
     "/reports/guides/guide-2025-08-14-163415",
-    "/reports/guides/guide-2025-08-14-163448",
     "/reports/innovations",
     "/reports/innovations/insight-2025-08-13-2020",
     "/reports/innovations/insight-2025-08-13-2021",
@@ -1282,7 +1281,6 @@
     "/reports/patterns/pattern-2025-08-14-163243",
     "/reports/patterns/pattern-2025-08-14-163244",
     "/reports/patterns/pattern-2025-08-14-163415",
-    "/reports/patterns/pattern-2025-08-14-163448",
     "/reports/playbooks/playbook-2025-08-13-223010",
     "/reports/playbooks/playbook-2025-08-13-223717",
     "/reports/playbooks/playbook-2025-08-13-224010",
@@ -3255,7 +3253,6 @@
     "/reports/updates/update-2025-08-14-1330",
     "/reports/updates/update-2025-08-14-1331",
     "/reports/updates/update-2025-08-14-1332",
-    "/reports/updates/update-2025-08-14-1334",
     "/reports/updates/update-2025-08-14-1340",
     "/reports/updates/update-2025-08-14-1350",
     "/reports/updates/update-2025-08-14-1400",
@@ -3543,17 +3540,17 @@
     },
     {
       "file": "pages/main/front/index.tsx",
-      "href": "/reports/a11y",
-      "suggestion": null
-    },
-    {
-      "file": "pages/main/front/index.tsx",
-      "href": "/reports/metadata",
-      "suggestion": null
-    },
-    {
-      "file": "pages/main/front/index.tsx",
       "href": "/main/front#features",
+      "suggestion": null
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "href": "/main/front#capabilities",
+      "suggestion": null
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "href": "/main/front#benefits",
       "suggestion": null
     },
     {

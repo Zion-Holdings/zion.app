@@ -1,40 +1,26 @@
 {
-  "generatedAt": "2025-08-14T16:34:55.368Z",
+  "generatedAt": "2025-08-14T16:35:21.347Z",
   "items": [
     {
-      "title": "Blueprint: LLM Apps",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-14-1634",
-      "createdAt": "2025-08-14T16:34:59.728Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Reference Architecture — Autonomous Content Mesh",
-      "href": "/reports/blueprints/blueprint-2025-08-14-163455",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:34:55.191Z",
-      "source": "cloud-blueprint-factory"
-    },
-    {
-      "title": "Playbook — Autonomous Delivery",
-      "href": "/reports/playbooks/playbook-2025-08-14-163454",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:34:54.897Z",
-      "source": "cloud-playbook-factory"
-    },
-    {
       "title": "Guide —  Implementation",
-      "href": "/reports/guides/guide-2025-08-14-163454",
+      "href": "/reports/guides/guide-2025-08-14-163521",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:34:54.694Z",
+      "createdAt": "2025-08-14T16:35:21.023Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Cloud Intelligence",
-      "href": "/reports/patterns/pattern-2025-08-14-163454",
+      "href": "/reports/patterns/pattern-2025-08-14-163521",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:34:54.694Z",
+      "createdAt": "2025-08-14T16:35:21.023Z",
       "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-14-163520",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:35:20.802Z",
+      "source": "cloud-playbook-factory"
     }
   ]
 }
