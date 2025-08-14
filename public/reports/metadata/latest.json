@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T03:45:00.530Z",
-  "pagesScanned": 1685,
+  "generatedAt": "2025-08-14T03:46:00.612Z",
+  "pagesScanned": 1686,
   "items": [
     {
       "route": "/404",
@@ -16302,6 +16302,19 @@
       "suggestion": {
         "title": "Autonomous Security Hardening Guide — AI Service Design (2025-08-14 00:45 UTC)",
         "description": "Autonomous Security Hardening Guide — AI Service Design (2025-08-14 00:45 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0046",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 00:46",
+        "description": "Autonomous Update — 2025-08-14 00:46 — auto-suggested description"
       }
     },
     {
