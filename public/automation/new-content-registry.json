@@ -1,39 +1,32 @@
 {
-  "generatedAt": "2025-08-14T00:30:57.344Z",
+  "generatedAt": "2025-08-14T00:31:13.429Z",
   "items": [
     {
-      "title": "Pilot Plan: Agent Ops",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-14-0031",
-      "createdAt": "2025-08-14T00:31:07.478Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-14 00-30",
-      "href": "/reports/innovations/insight-2025-08-14T00-30",
+      "title": "Innovation Insight — 2025-08-14 00-31",
+      "href": "/reports/innovations/insight-2025-08-14T00-31",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:30:57.135Z",
+      "createdAt": "2025-08-14T00:31:13.160Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-14 00-30",
-      "href": "/reports/updates/update-2025-08-14T00-30",
+      "title": "Autonomous Update — 2025-08-14 00-31",
+      "href": "/reports/updates/update-2025-08-14T00-31",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:30:57.135Z",
+      "createdAt": "2025-08-14T00:31:13.160Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Innovation Insight — 2025-08-14 00-30",
-      "href": "/reports/innovations/insight-2025-08-14T00-30",
+      "title": "Innovation Insight — 2025-08-14 00-31",
+      "href": "/reports/innovations/insight-2025-08-14T00-31",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:30:57.135Z",
+      "createdAt": "2025-08-14T00:31:13.160Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-14 00-30",
-      "href": "/reports/updates/update-2025-08-14T00-30",
+      "title": "Autonomous Update — 2025-08-14 00-31",
+      "href": "/reports/updates/update-2025-08-14T00-31",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:30:57.135Z",
+      "createdAt": "2025-08-14T00:31:13.160Z",
       "source": "cloud-content-factory"
     }
   ]
