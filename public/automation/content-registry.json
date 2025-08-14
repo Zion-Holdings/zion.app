@@ -569,6 +569,10 @@
       "route": "/reports/blueprints/blueprint-2025-08-13-223010"
     },
     {
+      "file": "pages/reports/innovations/insight-2025-08-14T00-30.tsx",
+      "route": "/reports/innovations/insight-2025-08-14T00-30"
+    },
+    {
       "file": "pages/reports/innovations/insight-2025-08-14T00-29.tsx",
       "route": "/reports/innovations/insight-2025-08-14T00-29"
     },
@@ -1063,6 +1067,10 @@
     {
       "file": "pages/main/front/index.tsx",
       "route": "/main/front"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-14T00-30.tsx",
+      "route": "/reports/updates/update-2025-08-14T00-30"
     },
     {
       "file": "pages/reports/updates/update-2025-08-14T00-29.tsx",
@@ -5343,5 +5351,14 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-14T00:30:16.151Z"
+  "generatedAt": "2025-08-14T00:30:18.872Z",
+  "items": [
+    {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-14-003019",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T00:30:19.433Z",
+      "source": "cloud-playbook-factory"
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T00:30:06.088Z",
-  "pagesScanned": 1327,
+  "generatedAt": "2025-08-14T00:30:18.133Z",
+  "pagesScanned": 1329,
   "items": [
     {
       "route": "/404",
@@ -97,7 +97,10 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -1806,6 +1809,16 @@
       "suggestion": {
         "title": "Blueprint: Edge AI",
         "description": "Blueprint: Edge AI — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14-0030",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Runbook: Edge AI",
+        "description": "Runbook: Edge AI — auto-suggested description"
       }
     },
     {
@@ -13056,6 +13069,16 @@
       "suggestion": {
         "title": "Autonomous Capability Map — Evaluation & Safety (2025-08-14 00:29 UTC)",
         "description": "Autonomous Capability Map — Evaluation & Safety (2025-08-14 00:29 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0030",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Validation & QA Plan — Evaluation & Safety (2025-08-14 00:30 UTC)",
+        "description": "Autonomous Validation & QA Plan — Evaluation & Safety (2025-08-14 00:30 UTC) — auto-suggested description"
       }
     },
     {
