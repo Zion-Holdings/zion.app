@@ -1,63 +1,39 @@
 {
-  "generatedAt": "2025-08-14T10:29:18.212Z",
+  "generatedAt": "2025-08-14T10:45:13.874Z",
   "items": [
     {
-<<<<<<< HEAD
-      "title": "Pilot Plan: Agent Ops",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-14-1026",
-      "createdAt": "2025-08-14T10:26:21.197Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-14 10-20",
-      "href": "/reports/innovations/insight-2025-08-14T10-20",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-14-104513",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T10:20:22.905Z",
-      "source": "cloud-content-factory"
+      "createdAt": "2025-08-14T10:45:13.844Z",
+      "source": "cloud-blueprint-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-14 10-20",
-      "href": "/reports/updates/update-2025-08-14T10-20",
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-14-104513",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T10:20:22.905Z",
-      "source": "cloud-content-factory"
+      "createdAt": "2025-08-14T10:45:13.813Z",
+      "source": "cloud-playbook-factory"
     },
     {
-      "title": "Innovation Insight — 2025-08-14 10-20",
-      "href": "/reports/innovations/insight-2025-08-14T10-20",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T10:20:22.905Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-14 10-20",
-      "href": "/reports/updates/update-2025-08-14T10-20",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T10:20:22.905Z",
-      "source": "cloud-content-factory"
-    },
-    {
-=======
->>>>>>> 4f069a7a60 (chore(sync): advanced autonomous sync)
       "title": "Case Study — Autonomous Reports",
-      "href": "/reports/cases/case-2025-08-14-102918",
+      "href": "/reports/cases/case-2025-08-14-104513",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T10:29:18.173Z",
+      "createdAt": "2025-08-14T10:45:13.777Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Guide — Techcrunch Pebble Implementation",
-      "href": "/reports/guides/guide-2025-08-14-102918",
+      "href": "/reports/guides/guide-2025-08-14-104513",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T10:29:18.173Z",
+      "createdAt": "2025-08-14T10:45:13.777Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Trigger Homepage Sitemap",
-      "href": "/reports/patterns/pattern-2025-08-14-102918",
+      "href": "/reports/patterns/pattern-2025-08-14-104513",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T10:29:18.173Z",
+      "createdAt": "2025-08-14T10:45:13.777Z",
       "source": "cloud-deep-research-factory"
     }
   ]
