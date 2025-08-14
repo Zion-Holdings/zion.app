@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T22:56:06.472Z",
+  "generatedAt": "2025-08-14T23:01:32.833Z",
   "entries": [
     {
       "route": "/site-health",
@@ -1110,6 +1110,12 @@
       "file": "pages/reports/innovations/insight-2025-08-14T21-30.tsx",
       "title": "Innovation Insight — 2025-08-14 21-30",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-14 21-30 Innovation Insight — 2025-08-14 21-30 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14-2301",
+      "file": "pages/reports/innovations/insight-2025-08-14-2301.tsx",
+      "title": "Blueprint: Agent Ops",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Blueprint: Agent Ops Blueprint: Agent Ops Patterns to enhance security. Scope: Blueprint: Agent Ops. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observabili"
     },
     {
       "route": "/reports/innovations/insight-2025-08-14-2256",

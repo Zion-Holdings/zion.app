@@ -1,6 +1,13 @@
 {
   "items": [
     {
+      "title": "Blueprint: Agent Ops",
+      "subtitle": "Patterns to enhance security.",
+      "path": "/reports/innovations/insight-2025-08-14-2301",
+      "createdAt": "2025-08-14T23:01:32.384Z",
+      "kind": "insight"
+    },
+    {
       "title": "Runbook: LLM Apps",
       "subtitle": "Patterns to enhance security.",
       "path": "/reports/innovations/insight-2025-08-14-2256",
