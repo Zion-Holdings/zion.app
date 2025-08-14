@@ -1,6 +1,62 @@
 {
-  "generatedAt": "2025-08-14T16:27:00.509Z",
+  "generatedAt": "2025-08-14T16:27:14.141Z",
   "items": [
+    {
+      "title": "Guide —  Implementation",
+      "href": "/reports/guides/guide-2025-08-14-162714",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:27:14.021Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Cloud Intelligence",
+      "href": "/reports/patterns/pattern-2025-08-14-162714",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:27:14.021Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-14-162701",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:27:01.178Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Guide —  Implementation",
+      "href": "/reports/guides/guide-2025-08-14-162700",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:27:00.931Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Cloud Intelligence",
+      "href": "/reports/patterns/pattern-2025-08-14-162700",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:27:00.931Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-14 16-27",
+      "href": "/reports/innovations/insight-2025-08-14T16-27",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:27:00.821Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-14 16-27",
+      "href": "/reports/updates/update-2025-08-14T16-27",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:27:00.821Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-14-162700",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:27:00.640Z",
+      "source": "cloud-blueprint-factory"
+    },
     {
       "title": "Innovation Insight — 2025-08-14 16-27",
       "href": "/reports/innovations/insight-2025-08-14T16-27",

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T16:27:03.323Z",
-  "pagesScanned": 3303,
+  "generatedAt": "2025-08-14T16:27:19.320Z",
+  "pagesScanned": 3307,
   "items": [
     {
       "route": "/404",
@@ -3116,6 +3116,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-162700",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-162702",
       "missing": [
         "og:image"
       ],
@@ -6726,6 +6736,16 @@
     },
     {
       "route": "/reports/guides/guide-2025-08-14-162702",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide —  Implementation",
+        "description": "Guide —  Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-14-162714",
       "missing": [
         "og:image"
       ],
@@ -12115,6 +12135,16 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-14-162714",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Intelligence",
+        "description": "Pattern — Cloud Intelligence — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-13-223010",
       "missing": [
         "og:image"
@@ -15096,6 +15126,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-162701",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-162702",
       "missing": [
         "og:image"
       ],
