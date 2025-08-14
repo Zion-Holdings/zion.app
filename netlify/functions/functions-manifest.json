@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "generatedAt": "2025-08-14T10:09:06.085Z",
-=======
-  "generatedAt": "2025-08-14T10:03:07.634Z",
->>>>>>> 900910fa4b6 (build: quote NODE_OPTIONS in npm scripts for cross-shell compatibility)
+  "generatedAt": "2025-08-14T11:37:56.091Z",
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
