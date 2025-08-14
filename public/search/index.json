@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T00:32:19.475Z",
+  "generatedAt": "2025-08-14T00:32:20.387Z",
   "entries": [
     {
       "route": "/site-health",
@@ -90,6 +90,12 @@
       "file": "pages/reports/ai-lab.tsx",
       "title": "ai-lab",
       "summary": "import { useEffect, useState } from 'react'; interface ArticleEntry { title: string; url: string; createdAt: string; tags?: string[]; source?: string; } export default function AILabPage() { const [items, setItems] = useState ([]); const [loading, setLoading] = useState(true); us"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14T00-32",
+      "file": "pages/reports/updates/update-2025-08-14T00-32.tsx",
+      "title": "Autonomous Update — 2025-08-14 00-32",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-14 00-32 Autonomous Update — 2025-08-14 00-32 Signal source: https://ziontechgroup.com/ Autonomous cloud systems are live and improving the app in real timeAutonomous Cloud Automat"
     },
     {
       "route": "/reports/updates/update-2025-08-14T00-31",
@@ -6924,6 +6930,12 @@
       "file": "pages/reports/patterns/pattern-2025-08-13-215625.tsx",
       "title": "Pattern — Cloud Improving Continuously",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com Context Signals indicate recurring needs around cloud, improving, continuously, autonomous, syst"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14T00-32",
+      "file": "pages/reports/innovations/insight-2025-08-14T00-32.tsx",
+      "title": "Innovation Insight — 2025-08-14 00-32",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-14 00-32 Innovation Insight — 2025-08-14 00-32 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
     },
     {
       "route": "/reports/innovations/insight-2025-08-14T00-31",
