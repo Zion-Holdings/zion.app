@@ -1,7 +1,5 @@
 /** @type {import('next').NextConfig} */
-const shouldExport = process.env.SKIP_EXPORT !== '1';
 const nextConfig = {
-  ...(shouldExport ? { output: 'export' } : {}),
   trailingSlash: true,
   optimizeFonts: false,
   productionBrowserSourceMaps: false,
