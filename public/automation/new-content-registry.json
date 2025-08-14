@@ -1,19 +1,33 @@
 {
-  "generatedAt": "2025-08-14T16:10:26.564Z",
+  "generatedAt": "2025-08-14T16:13:03.088Z",
   "items": [
     {
-      "title": "Innovation Insight — 2025-08-14 16-10",
-      "href": "/reports/innovations/insight-2025-08-14T16-10",
+      "title": "Guide —  Implementation",
+      "href": "/reports/guides/guide-2025-08-14-161303",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:10:26.490Z",
-      "source": "cloud-content-factory"
+      "createdAt": "2025-08-14T16:13:03.009Z",
+      "source": "cloud-deep-research-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-14 16-10",
-      "href": "/reports/updates/update-2025-08-14T16-10",
+      "title": "Pattern — Cloud Intelligence",
+      "href": "/reports/patterns/pattern-2025-08-14-161303",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:10:26.490Z",
-      "source": "cloud-content-factory"
+      "createdAt": "2025-08-14T16:13:03.009Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide —  Implementation",
+      "href": "/reports/guides/guide-2025-08-14-161302",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:13:02.986Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Cloud Intelligence",
+      "href": "/reports/patterns/pattern-2025-08-14-161302",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:13:02.986Z",
+      "source": "cloud-deep-research-factory"
     }
   ]
 }
