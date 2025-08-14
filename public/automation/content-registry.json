@@ -5723,5 +5723,14 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-14T00:36:59.652Z"
+  "generatedAt": "2025-08-14T00:36:59.652Z",
+  "items": [
+    {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-14-003702",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T00:37:02.038Z",
+      "source": "cloud-playbook-factory"
+    }
+  ]
 }
