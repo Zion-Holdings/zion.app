@@ -13,6 +13,9 @@ const IntelligentBuildOptimizer = require('./intelligent-build-optimizer');
 const SmartDependencyManager = require('./smart-dependency-manager');
 const RealTimeBuildMonitor = require('./real-time-monitor');
 const AdvancedCacheManager = require('./advanced-cache-manager');
+const AIBuildStrategist = require('./ai-build-strategist');
+const PredictiveFailurePrevention = require('./predictive-failure-prevention');
+const PerformancePredictionEngine = require('./performance-prediction-engine');
 
 class MasterBuildOrchestrator {
   constructor() {
@@ -22,7 +25,10 @@ class MasterBuildOrchestrator {
       optimizer: new IntelligentBuildOptimizer(),
       dependencies: new SmartDependencyManager(),
       monitor: new RealTimeBuildMonitor(),
-      cache: new AdvancedCacheManager()
+      cache: new AdvancedCacheManager(),
+      ai: new AIBuildStrategist(),
+      predictor: new PredictiveFailurePrevention(),
+      performance: new PerformancePredictionEngine()
     };
     
     this.orchestrationLog = [];
