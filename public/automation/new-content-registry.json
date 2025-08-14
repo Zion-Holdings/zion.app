@@ -1,46 +1,32 @@
 {
-  "generatedAt": "2025-08-14T00:26:24.656Z",
+  "generatedAt": "2025-08-14T00:28:57.022Z",
   "items": [
     {
-      "title": "Playbook: Agent Ops",
-      "subtitle": "Patterns to increase accuracy.",
-      "path": "/reports/innovations/insight-2025-08-14-0028",
-      "createdAt": "2025-08-14T00:28:04.120Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Runbook: Agent Ops",
-      "subtitle": "Patterns to improve reliability.",
-      "path": "/reports/innovations/insight-2025-08-14-0027",
-      "createdAt": "2025-08-14T00:27:43.527Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-14 00-26",
-      "href": "/reports/innovations/insight-2025-08-14T00-26",
+      "title": "Innovation Insight — 2025-08-14 00-28",
+      "href": "/reports/innovations/insight-2025-08-14T00-28",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:26:24.560Z",
+      "createdAt": "2025-08-14T00:28:56.924Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-14 00-26",
-      "href": "/reports/updates/update-2025-08-14T00-26",
+      "title": "Autonomous Update — 2025-08-14 00-28",
+      "href": "/reports/updates/update-2025-08-14T00-28",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:26:24.560Z",
+      "createdAt": "2025-08-14T00:28:56.924Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Innovation Insight — 2025-08-14 00-26",
-      "href": "/reports/innovations/insight-2025-08-14T00-26",
+      "title": "Innovation Insight — 2025-08-14 00-28",
+      "href": "/reports/innovations/insight-2025-08-14T00-28",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:26:24.560Z",
+      "createdAt": "2025-08-14T00:28:56.924Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-14 00-26",
-      "href": "/reports/updates/update-2025-08-14T00-26",
+      "title": "Autonomous Update — 2025-08-14 00-28",
+      "href": "/reports/updates/update-2025-08-14T00-28",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:26:24.560Z",
+      "createdAt": "2025-08-14T00:28:56.924Z",
       "source": "cloud-content-factory"
     }
   ]
