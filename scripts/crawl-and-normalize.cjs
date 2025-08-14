@@ -46,6 +46,10 @@ function normalizeNextLinks(source) {
   let s = source;
   const linkARegex = /<Link(\s+[^>]*?)>(\s*)<a(\s+[^>]*?)>([\s\S]*?)<\/a>(\s*)<\/Link>/g;
   s = s.replace(linkARegex, (m, linkAttrs, _ws1, aAttrs, inner) => {
+    // Skip complex attribute expressions to avoid breaking TSX
+    if (/[{}]|=>/.test(aAttrs)) {
+      return m;
+    }
     const attrsToCarry = {};
     const grab = (name) => {
       const re = new RegExp(`${name}=("[^"]*"|'[^']*')`);
