@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T15:10:00.727Z",
-  "pagesScanned": 2963,
+  "generatedAt": "2025-08-14T15:11:06.116Z",
+  "pagesScanned": 2973,
   "items": [
     {
       "route": "/404",
@@ -2665,6 +2665,16 @@
       }
     },
     {
+      "route": "/reports/blueprints/blueprint-2025-08-14-151028",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/cases/case-2025-08-14-040018",
       "missing": [
         "og:image"
@@ -4066,6 +4076,16 @@
     },
     {
       "route": "/reports/cases/case-2025-08-14-150505",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Techcrunch Pebble",
+        "description": "Case Study — Techcrunch Pebble — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-14-151028",
       "missing": [
         "og:image"
       ],
@@ -5566,6 +5586,16 @@
     },
     {
       "route": "/reports/guides/guide-2025-08-14-150505",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Capabilities Live Implementation",
+        "description": "Guide — Capabilities Live Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-14-151028",
       "missing": [
         "og:image"
       ],
@@ -7485,6 +7515,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14-1510",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook: FinOps for AI",
+        "description": "Playbook: FinOps for AI — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -8482,6 +8522,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-14 15-00",
         "description": "Innovation Insight — 2025-08-14 15-00 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14T15-10",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-14 15-10",
+        "description": "Innovation Insight — 2025-08-14 15-10 — auto-suggested description"
       }
     },
     {
@@ -9986,6 +10036,16 @@
     },
     {
       "route": "/reports/patterns/pattern-2025-08-14-150505",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Trigger Homepage Sitemap",
+        "description": "Pattern — Trigger Homepage Sitemap — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-14-151028",
       "missing": [
         "og:image"
       ],
@@ -12536,6 +12596,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-150034",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-151028",
       "missing": [
         "og:image"
       ],
@@ -28445,6 +28515,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-14-1211",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 12:11",
+        "description": "Autonomous Update — 2025-08-14 12:11 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-14-1220",
       "missing": [
         "og:image"
@@ -28602,6 +28682,16 @@
       "suggestion": {
         "title": "Autonomous Performance Tuning Guide — Edge AI & IoT (2025-08-14 15:00 UTC)",
         "description": "Autonomous Performance Tuning Guide — Edge AI & IoT (2025-08-14 15:00 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1510",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Capability Map — MLOps & Model Reliability (2025-08-14 15:10 UTC)",
+        "description": "Autonomous Capability Map — MLOps & Model Reliability (2025-08-14 15:10 UTC) — auto-suggested description"
       }
     },
     {
@@ -29602,6 +29692,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 15-00",
         "description": "Autonomous Update — 2025-08-14 15-00 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14T15-10",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 15-10",
+        "description": "Autonomous Update — 2025-08-14 15-10 — auto-suggested description"
       }
     },
     {
