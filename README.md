@@ -1,6 +1,6 @@
 # bolt.new.zion.app
 
-![Automations: 63](https://img.shields.io/badge/Automations-63-informational) ![Pages: 1906](https://img.shields.io/badge/Pages-1906-success) ![Components: 6](https://img.shields.io/badge/Components-6-blue)
+![Automations: 63](https://img.shields.io/badge/Automations-63-informational) ![Pages: 1973](https://img.shields.io/badge/Pages-1973-success) ![Components: 6](https://img.shields.io/badge/Components-6-blue)
 
 Autonomous, cloud‑native app with self‑running automations.
 
@@ -192,6 +192,11 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 - /reports/blueprints/blueprint-2025-08-14-054013
 - /reports/blueprints/blueprint-2025-08-14-055013
 - /reports/blueprints/blueprint-2025-08-14-060739
+- /reports/blueprints/blueprint-2025-08-14-061014
+- /reports/blueprints/blueprint-2025-08-14-062105
+- /reports/blueprints/blueprint-2025-08-14-063014
+- /reports/blueprints/blueprint-2025-08-14-063112
+- /reports/blueprints/blueprint-2025-08-14-064014
 - /reports/cases/case-2025-08-14-040018
 - /reports/cases/case-2025-08-14-051017
 - /reports/cases/case-2025-08-14-052014
@@ -200,6 +205,11 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 - /reports/cases/case-2025-08-14-055013
 - /reports/cases/case-2025-08-14-060210
 - /reports/cases/case-2025-08-14-060739
+- /reports/cases/case-2025-08-14-061014
+- /reports/cases/case-2025-08-14-062105
+- /reports/cases/case-2025-08-14-063014
+- /reports/cases/case-2025-08-14-063112
+- /reports/cases/case-2025-08-14-064014
 - /reports/guides/guide-2025-08-13-215625
 - /reports/guides/guide-2025-08-13-222010
 - /reports/guides/guide-2025-08-13-222028
@@ -217,6 +227,11 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 - /reports/guides/guide-2025-08-14-055013
 - /reports/guides/guide-2025-08-14-060210
 - /reports/guides/guide-2025-08-14-060739
+- /reports/guides/guide-2025-08-14-061014
+- /reports/guides/guide-2025-08-14-062105
+- /reports/guides/guide-2025-08-14-063014
+- /reports/guides/guide-2025-08-14-063112
+- /reports/guides/guide-2025-08-14-064014
 - /reports/innovations
 - /reports/innovations/insight-2025-08-13-2020
 - /reports/innovations/insight-2025-08-13-2021
@@ -358,6 +373,10 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 - /reports/innovations/insight-2025-08-14-0530
 - /reports/innovations/insight-2025-08-14-0540
 - /reports/innovations/insight-2025-08-14-0550
+- /reports/innovations/insight-2025-08-14-0610
+- /reports/innovations/insight-2025-08-14-0621
+- /reports/innovations/insight-2025-08-14-0630
+- /reports/innovations/insight-2025-08-14-0640
 - /reports/innovations/insight-2025-08-14T00-00
 - /reports/innovations/insight-2025-08-14T00-10
 - /reports/innovations/insight-2025-08-14T00-12
@@ -413,6 +432,10 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 - /reports/innovations/insight-2025-08-14T05-30
 - /reports/innovations/insight-2025-08-14T05-40
 - /reports/innovations/insight-2025-08-14T05-50
+- /reports/innovations/insight-2025-08-14T06-10
+- /reports/innovations/insight-2025-08-14T06-21
+- /reports/innovations/insight-2025-08-14T06-30
+- /reports/innovations/insight-2025-08-14T06-40
 - /reports/patterns/pattern-2025-08-13-215625
 - /reports/patterns/pattern-2025-08-13-222010
 - /reports/patterns/pattern-2025-08-13-222028
@@ -430,6 +453,11 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 - /reports/patterns/pattern-2025-08-14-055013
 - /reports/patterns/pattern-2025-08-14-060210
 - /reports/patterns/pattern-2025-08-14-060739
+- /reports/patterns/pattern-2025-08-14-061014
+- /reports/patterns/pattern-2025-08-14-062105
+- /reports/patterns/pattern-2025-08-14-063014
+- /reports/patterns/pattern-2025-08-14-063112
+- /reports/patterns/pattern-2025-08-14-064014
 - /reports/playbooks/playbook-2025-08-13-223010
 - /reports/playbooks/playbook-2025-08-13-223717
 - /reports/playbooks/playbook-2025-08-13-224010
@@ -594,6 +622,11 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 - /reports/playbooks/playbook-2025-08-14-054014
 - /reports/playbooks/playbook-2025-08-14-055013
 - /reports/playbooks/playbook-2025-08-14-060739
+- /reports/playbooks/playbook-2025-08-14-061014
+- /reports/playbooks/playbook-2025-08-14-062105
+- /reports/playbooks/playbook-2025-08-14-063014
+- /reports/playbooks/playbook-2025-08-14-063112
+- /reports/playbooks/playbook-2025-08-14-064014
 - /reports/roadmap
 - /reports/seo
 - /reports/updates/update-2025-08-12-1417
@@ -1852,8 +1885,34 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 - /reports/updates/update-2025-08-14-0307
 - /reports/updates/update-2025-08-14-0308
 - /reports/updates/update-2025-08-14-0309
+- /reports/updates/update-2025-08-14-0310
+- /reports/updates/update-2025-08-14-0311
+- /reports/updates/update-2025-08-14-0312
+- /reports/updates/update-2025-08-14-0313
+- /reports/updates/update-2025-08-14-0314
+- /reports/updates/update-2025-08-14-0315
+- /reports/updates/update-2025-08-14-0316
 - /reports/updates/update-2025-08-14-0321
+- /reports/updates/update-2025-08-14-0325
+- /reports/updates/update-2025-08-14-0326
+- /reports/updates/update-2025-08-14-0327
+- /reports/updates/update-2025-08-14-0328
+- /reports/updates/update-2025-08-14-0329
 - /reports/updates/update-2025-08-14-0330
+- /reports/updates/update-2025-08-14-0331
+- /reports/updates/update-2025-08-14-0332
+- /reports/updates/update-2025-08-14-0333
+- /reports/updates/update-2025-08-14-0334
+- /reports/updates/update-2025-08-14-0335
+- /reports/updates/update-2025-08-14-0336
+- /reports/updates/update-2025-08-14-0337
+- /reports/updates/update-2025-08-14-0338
+- /reports/updates/update-2025-08-14-0339
+- /reports/updates/update-2025-08-14-0340
+- /reports/updates/update-2025-08-14-0341
+- /reports/updates/update-2025-08-14-0342
+- /reports/updates/update-2025-08-14-0343
+- /reports/updates/update-2025-08-14-0344
 - /reports/updates/update-2025-08-14-0350
 - /reports/updates/update-2025-08-14-0400
 - /reports/updates/update-2025-08-14-0410
@@ -1865,6 +1924,10 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 - /reports/updates/update-2025-08-14-0530
 - /reports/updates/update-2025-08-14-0540
 - /reports/updates/update-2025-08-14-0550
+- /reports/updates/update-2025-08-14-0610
+- /reports/updates/update-2025-08-14-0621
+- /reports/updates/update-2025-08-14-0630
+- /reports/updates/update-2025-08-14-0640
 - /reports/updates/update-2025-08-14T00-00
 - /reports/updates/update-2025-08-14T00-10
 - /reports/updates/update-2025-08-14T00-12
@@ -1920,6 +1983,10 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 - /reports/updates/update-2025-08-14T05-30
 - /reports/updates/update-2025-08-14T05-40
 - /reports/updates/update-2025-08-14T05-50
+- /reports/updates/update-2025-08-14T06-10
+- /reports/updates/update-2025-08-14T06-21
+- /reports/updates/update-2025-08-14T06-30
+- /reports/updates/update-2025-08-14T06-40
 - /search
 - /services
 - /services/:slug
