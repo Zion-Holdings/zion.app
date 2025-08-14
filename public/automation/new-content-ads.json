@@ -1,10 +1,31 @@
 {
   "items": [
     {
-      "title": "Checklist: FinOps for AI",
-      "desc": "Patterns to improve reliability.",
-      "href": "/reports/innovations/insight-2025-08-14-0959"
+      "title": "Pilot Plan: Agent Ops",
+      "desc": "Patterns to accelerate delivery.",
+      "href": "/reports/innovations/insight-2025-08-14-1026"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-14 10-20"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-14 10-20"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-14 10-20"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-14 10-20"
+    },
+    {
+      "title": "Case Study — Autonomous Reports"
+    },
+    {
+      "title": "Guide — Techcrunch Pebble Implementation"
+    },
+    {
+      "title": "Pattern — Trigger Homepage Sitemap"
     }
   ],
-  "updatedAt": "2025-08-14T09:59:56.420Z"
+  "updatedAt": "2025-08-14T10:26:21.223Z"
 }
