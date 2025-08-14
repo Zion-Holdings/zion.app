@@ -70,8 +70,7 @@ function run() {
   const changes = [];
   for (const filePath of files) {
     const base = path.basename(filePath);
-    // Skip self and non-workflows like codeql (read-only), playwright-smoke (already handled)
-    // but include all others by default
+    // Always include all .yml/.yaml workflows; this auto-includes any new workflows added in the future.
     const before = fs.readFileSync(filePath, "utf8");
     let modified = before;
     let fileChanged = false;
