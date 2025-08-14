@@ -1,33 +1,33 @@
 {
-  "generatedAt": "2025-08-14T21:49:06.552Z",
+  "generatedAt": "2025-08-14T21:49:16.467Z",
   "items": [
     {
-      "title": "Blueprint: MLOps",
-      "subtitle": "Patterns to improve reliability.",
-      "path": "/reports/innovations/insight-2025-08-14-2149",
-      "createdAt": "2025-08-14T21:49:10.622Z",
-      "kind": "insight"
+      "title": "Innovation Insight — 2025-08-14 21-49",
+      "href": "/reports/innovations/insight-2025-08-14T21-49",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T21:49:16.357Z",
+      "source": "cloud-content-factory"
     },
     {
-      "title": "Case Study — Trigger Homepage",
-      "href": "/reports/cases/case-2025-08-14-214906",
+      "title": "Autonomous Update — 2025-08-14 21-49",
+      "href": "/reports/updates/update-2025-08-14T21-49",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T21:49:06.424Z",
-      "source": "cloud-deep-research-factory"
+      "createdAt": "2025-08-14T21:49:16.357Z",
+      "source": "cloud-content-factory"
     },
     {
-      "title": "Guide — Cloud Improving Implementation",
-      "href": "/reports/guides/guide-2025-08-14-214906",
+      "title": "Innovation Insight — 2025-08-14 21-49",
+      "href": "/reports/innovations/insight-2025-08-14T21-49",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T21:49:06.424Z",
-      "source": "cloud-deep-research-factory"
+      "createdAt": "2025-08-14T21:49:16.357Z",
+      "source": "cloud-content-factory"
     },
     {
-      "title": "Pattern — Cloud Improving Continuously",
-      "href": "/reports/patterns/pattern-2025-08-14-214906",
+      "title": "Autonomous Update — 2025-08-14 21-49",
+      "href": "/reports/updates/update-2025-08-14T21-49",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T21:49:06.424Z",
-      "source": "cloud-deep-research-factory"
+      "createdAt": "2025-08-14T21:49:16.357Z",
+      "source": "cloud-content-factory"
     }
   ]
 }
