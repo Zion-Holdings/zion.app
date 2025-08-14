@@ -1,39 +1,32 @@
 {
-  "generatedAt": "2025-08-14T00:18:58.200Z",
+  "generatedAt": "2025-08-14T00:19:11.364Z",
   "items": [
     {
-      "title": "Pilot Plan: AI QA & Eval",
-      "subtitle": "Patterns to improve reliability.",
-      "path": "/reports/innovations/insight-2025-08-14-0019",
-      "createdAt": "2025-08-14T00:19:05.730Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-14 00-18",
-      "href": "/reports/innovations/insight-2025-08-14T00-18",
+      "title": "Innovation Insight — 2025-08-14 00-19",
+      "href": "/reports/innovations/insight-2025-08-14T00-19",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:18:58.092Z",
+      "createdAt": "2025-08-14T00:19:11.224Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-14 00-18",
-      "href": "/reports/updates/update-2025-08-14T00-18",
+      "title": "Autonomous Update — 2025-08-14 00-19",
+      "href": "/reports/updates/update-2025-08-14T00-19",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:18:58.092Z",
+      "createdAt": "2025-08-14T00:19:11.224Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Innovation Insight — 2025-08-14 00-18",
-      "href": "/reports/innovations/insight-2025-08-14T00-18",
+      "title": "Innovation Insight — 2025-08-14 00-19",
+      "href": "/reports/innovations/insight-2025-08-14T00-19",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:18:58.092Z",
+      "createdAt": "2025-08-14T00:19:11.224Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-14 00-18",
-      "href": "/reports/updates/update-2025-08-14T00-18",
+      "title": "Autonomous Update — 2025-08-14 00-19",
+      "href": "/reports/updates/update-2025-08-14T00-19",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:18:58.092Z",
+      "createdAt": "2025-08-14T00:19:11.224Z",
       "source": "cloud-content-factory"
     }
   ]
