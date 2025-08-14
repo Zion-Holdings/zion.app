@@ -34,6 +34,7 @@ jobs:
         run: node scripts/generate-workflows-dashboard.cjs
 
       - name: Commit and push updates
+        if: ${{ github.ref == 'refs/heads/main' }}
         run: |
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions[bot]"
