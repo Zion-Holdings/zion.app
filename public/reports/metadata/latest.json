@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T00:19:25.615Z",
-  "pagesScanned": 1245,
+  "generatedAt": "2025-08-14T00:19:50.778Z",
+  "pagesScanned": 1247,
   "items": [
     {
       "route": "/404",
@@ -513,6 +513,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-001911",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-001932",
       "missing": [
         "og:image"
       ],
@@ -2053,6 +2063,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-001911",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-001932",
       "missing": [
         "og:image"
       ],
