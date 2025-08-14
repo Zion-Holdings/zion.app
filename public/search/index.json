@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T00:15:15.277Z",
+  "generatedAt": "2025-08-14T00:15:41.534Z",
   "entries": [
     {
       "route": "/site-health",
@@ -126,6 +126,12 @@
       "file": "pages/reports/updates/update-2025-08-14T00-00.tsx",
       "title": "Autonomous Update — 2025-08-14 00-00",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-14 00-00 Autonomous Update — 2025-08-14 00-00 Signal source: https://ziontechgroup.com/ Autonomous cloud systems are live and improving the app in real timeAutonomous Cloud Automat"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0015",
+      "file": "pages/reports/updates/update-2025-08-14-0015.tsx",
+      "title": "Autonomous Playbook — AI Service Design (2025-08-14 00:15 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — AI Service Design (2025-08-14 00:15 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { \""
     },
     {
       "route": "/reports/updates/update-2025-08-14-0014",
@@ -6224,6 +6230,12 @@
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-12 14:17 Autonomous Update — 2025-08-12 14:17 This page was created automatically by the content creator automation. It showcases our continuous, autonomous publishing pipeli"
     },
     {
+      "route": "/reports/playbooks/playbook-2025-08-14-001533",
+      "file": "pages/reports/playbooks/playbook-2025-08-14-001533.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/main/front Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objec"
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-14-001511",
       "file": "pages/reports/playbooks/playbook-2025-08-14-001511.tsx",
       "title": "Playbook — Autonomous Delivery",
@@ -6456,6 +6468,12 @@
       "file": "pages/reports/innovations/insight-2025-08-14T00-00.tsx",
       "title": "Innovation Insight — 2025-08-14 00-00",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-14 00-00 Innovation Insight — 2025-08-14 00-00 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14-0015",
+      "file": "pages/reports/innovations/insight-2025-08-14-0015.tsx",
+      "title": "Guide: AI QA & Eval",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Guide: AI QA & Eval Guide: AI QA & Eval Patterns to enhance security. Scope: Guide: AI QA & Eval. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observability,"
     },
     {
       "route": "/reports/innovations/insight-2025-08-14-0014",
@@ -7026,6 +7044,12 @@
       "file": "pages/reports/guides/guide-2025-08-13-215625.tsx",
       "title": "Guide — Reports Trends Implementation",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Reports Trends Implementation Guide — Reports Trends Implementation Source: https://ziontechgroup.com/explore Overview Focus: reports, trends, site, seo, explorea, directory. Steps Clarify objectives "
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-001533",
+      "file": "pages/reports/blueprints/blueprint-2025-08-14-001533.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-001511",
