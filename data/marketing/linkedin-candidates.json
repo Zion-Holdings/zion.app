@@ -1,7 +1,24 @@
 {
-  "analyzedAt": 1755131515504,
+  "analyzedAt": 1755131528888,
   "canonical": "https://ziontechgroup.com",
   "candidates": [
+    {
+      "url": "https://ziontechgroup.com/",
+      "title": "Zion Tech Group — Autonomous Cloud Automation",
+      "description": "AI-driven, self-improving web platform with autonomous growth, marketing, and optimization.",
+      "headings": [
+        "Autonomous Cloud Automations",
+        "Self‑Improving",
+        "Safety‑First",
+        "Observability",
+        "Capabilities",
+        "Code Quality & Refactors",
+        "Performance & A11y",
+        "Content & SEO"
+      ],
+      "bullets": [],
+      "score": 186
+    },
     {
       "url": "https://ziontechgroup.com/automation",
       "title": "Automation Hub",
