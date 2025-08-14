@@ -1,14 +1,10 @@
-import Head from 'next/head';
-
-import Link from 'next/link';
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
+import Head from 'next/head'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 
 export default function FrontIndexRedirect() {
-  const router = useRouter();
-  useEffect(() => {
-    router.replace('/main/front');
-  }, [router]);
+  const router = useRouter()
+  useEffect(() => { router.replace('/main/front') }, [router])
   return (
     <>
       <Head>
@@ -21,9 +17,10 @@ export default function FrontIndexRedirect() {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
     </>
-  );
+  )
 }
-        {/* AUTO-GENERATED: FRONT_FUTURIZER_START */}
+
+// Markers intentionally omitted here; front content is managed at pages/main/front/index.tsx
 
         <section id="front-futurizer" className="mx-auto max-w-7xl px-6 pb-20">
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Explore More — Features, Capabilities, Benefits</h2>
