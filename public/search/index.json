@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T01:35:01.972Z",
+  "generatedAt": "2025-08-14T01:36:01.815Z",
   "entries": [
     {
       "route": "/site-health",
@@ -23,7 +23,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "index",
-      "summary": "{/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 2235 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 13: 2234 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 14"
+      "summary": "{/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 2236 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 13: 2235 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 13"
     },
     {
       "route": "/contact",
@@ -852,6 +852,12 @@
       "file": "pages/reports/updates/update-2025-08-13-2237.tsx",
       "title": "Autonomous Checklist — Agentic Workflows (2025-08-13 22:37 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Checklist — Agentic Workflows (2025-08-13 22:37 UTC) Autonomous Checklist — Agentic Workflows (2025-08-13 22:37 UTC) Innovative, useful guidance to decrease unit cost per request. What it is:"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2236",
+      "file": "pages/reports/updates/update-2025-08-13-2236.tsx",
+      "title": "Autonomous Update — 2025-08-13 22:36",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 22:36 Autonomous Update — 2025-08-13 22:36 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Google Duplex: An AI System for Acco"
     },
     {
       "route": "/reports/updates/update-2025-08-13-2235",

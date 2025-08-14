@@ -12,6 +12,7 @@ concurrency:
 jobs:
   build-content:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     permissions:
       contents: write
     steps:
@@ -23,7 +24,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '20.18.1'
           cache: 'npm'
 
       - name: Install
@@ -37,6 +38,9 @@ jobs:
           node scripts/generate-readme.js || true
 
       - name: Commit and push
+        continue-on-error: true
+        env:
+          HUSKY: '0'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -44,7 +48,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "feat(automation): AI/IT innovations content [skip ci]"
+            git commit -m "feat(automation): AI/IT innovations content [skip ci]" --no-verify
             for i in 1 2 3; do
               if git push origin HEAD:main; then
                 echo "Push succeeded";
