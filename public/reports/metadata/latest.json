@@ -1,11 +1,6 @@
 {
-<<<<<<< Updated upstream
-  "generatedAt": "2025-08-14T02:54:12.194Z",
-  "pagesScanned": 1672,
-=======
-  "generatedAt": "2025-08-14T03:24:00.592Z",
-  "pagesScanned": 1682,
->>>>>>> Stashed changes
+  "generatedAt": "2025-08-14T03:28:00.672Z",
+  "pagesScanned": 1680,
   "items": [
     {
       "route": "/404",
@@ -1600,6 +1595,16 @@
       }
     },
     {
+      "route": "/reports/blueprints/blueprint-2025-08-14-032139",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/guides/guide-2025-08-13-215625",
       "missing": [
         "og:image"
@@ -2930,6 +2935,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14-0321",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Checklist: DevSecOps AI",
+        "description": "Checklist: DevSecOps AI — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -3337,6 +3352,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-14 02-50",
         "description": "Innovation Insight — 2025-08-14 02-50 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14T03-21",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-14 03-21",
+        "description": "Innovation Insight — 2025-08-14 03-21 — auto-suggested description"
       }
     },
     {
@@ -4861,6 +4886,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-025018",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-032139",
       "missing": [
         "og:image"
       ],
@@ -15880,6 +15915,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-14-0008",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 00:08",
+        "description": "Autonomous Update — 2025-08-14 00:08 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-14-0010",
       "missing": [
         "og:image"
@@ -15887,6 +15932,16 @@
       "suggestion": {
         "title": "Autonomous Performance Tuning Guide — Edge AI & IoT (2025-08-14 00:10 UTC)",
         "description": "Autonomous Performance Tuning Guide — Edge AI & IoT (2025-08-14 00:10 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0011",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 00:11",
+        "description": "Autonomous Update — 2025-08-14 00:11 — auto-suggested description"
       }
     },
     {
@@ -15990,29 +16045,6 @@
       }
     },
     {
-<<<<<<< Updated upstream
-=======
-      "route": "/reports/updates/update-2025-08-14-0022",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-14 00:22",
-        "description": "Autonomous Update — 2025-08-14 00:22 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-14-0023",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-14 00:23",
-        "description": "Autonomous Update — 2025-08-14 00:23 — auto-suggested description"
-      }
-    },
-    {
->>>>>>> Stashed changes
       "route": "/reports/updates/update-2025-08-14-0024",
       "missing": [
         "og:image"
@@ -16300,6 +16332,16 @@
       "suggestion": {
         "title": "Autonomous Performance Tuning Guide — MLOps & Model Reliability (2025-08-14 02:50 UTC)",
         "description": "Autonomous Performance Tuning Guide — MLOps & Model Reliability (2025-08-14 02:50 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0321",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Capability Map — AI Service Design (2025-08-14 03:21 UTC)",
+        "description": "Autonomous Capability Map — AI Service Design (2025-08-14 03:21 UTC) — auto-suggested description"
       }
     },
     {
@@ -16710,6 +16752,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 02-50",
         "description": "Autonomous Update — 2025-08-14 02-50 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14T03-21",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 03-21",
+        "description": "Autonomous Update — 2025-08-14 03-21 — auto-suggested description"
       }
     },
     {
