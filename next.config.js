@@ -2,6 +2,7 @@
 const nextConfig = {
   // Static export handled via npm script; no inline export during build
   trailingSlash: true,
+  output: 'export', // Enable static HTML export
   productionBrowserSourceMaps: false,
   images: { unoptimized: true },
   async redirects() {

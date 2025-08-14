@@ -1,45 +1,68 @@
 {
-  "generatedAt": "2025-08-14T21:34:54.624Z",
+  "generatedAt": "2025-08-14T21:35:39.150Z",
   "items": [
     {
-      "title": "Checklist: FinOps for AI",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-14-2135",
-      "createdAt": "2025-08-14T21:35:09.189Z",
-      "kind": "insight"
+      "title": "Innovation Insight — 2025-08-14 21-35",
+      "href": "/reports/innovations/insight-2025-08-14T21-35",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T21:35:39.073Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-14 21-35",
+      "href": "/reports/updates/update-2025-08-14T21-35",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T21:35:39.073Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-14 21-35",
+      "href": "/reports/innovations/insight-2025-08-14T21-35",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T21:35:39.073Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-14 21-35",
+      "href": "/reports/updates/update-2025-08-14T21-35",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T21:35:39.073Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-14-213538",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T21:35:38.250Z",
+      "source": "cloud-blueprint-factory"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-14-213538",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T21:35:38.124Z",
+      "source": "cloud-playbook-factory"
     },
     {
       "title": "Case Study — Trigger Homepage",
-      "href": "/reports/cases/case-2025-08-14-213454",
+      "href": "/reports/cases/case-2025-08-14-213537",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T21:34:54.528Z",
+      "createdAt": "2025-08-14T21:35:37.904Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Guide — Cloud Improving Implementation",
-      "href": "/reports/guides/guide-2025-08-14-213454",
+      "href": "/reports/guides/guide-2025-08-14-213537",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T21:34:54.528Z",
+      "createdAt": "2025-08-14T21:35:37.904Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Cloud Improving Continuously",
-      "href": "/reports/patterns/pattern-2025-08-14-213454",
+      "href": "/reports/patterns/pattern-2025-08-14-213537",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T21:34:54.528Z",
+      "createdAt": "2025-08-14T21:35:37.904Z",
       "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Playbook — Autonomous Delivery",
-      "href": "/reports/playbooks/playbook-2025-08-14-213444",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T21:34:44.963Z",
-      "source": "cloud-playbook-factory"
-    },
-    {
-      "id": "cursor-chat-2025-08-14T21:34:45.207Z",
-      "type": "cursor-chat",
-      "timestamp": "2025-08-14T21:34:45.207Z"
     }
   ]
 }
