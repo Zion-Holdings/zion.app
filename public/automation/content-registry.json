@@ -3829,6 +3829,10 @@
       "route": "/reports/innovations/insight-2025-08-14T00-00"
     },
     {
+      "file": "pages/reports/innovations/insight-2025-08-14-1658.tsx",
+      "route": "/reports/innovations/insight-2025-08-14-1658"
+    },
+    {
       "file": "pages/reports/innovations/insight-2025-08-14-1636.tsx",
       "route": "/reports/innovations/insight-2025-08-14-1636"
     },
@@ -5241,10 +5245,6 @@
       "route": "/reports/cases/case-2025-08-14-040018"
     },
     {
-      "file": "pages/main/front/index.tsx",
-      "route": "/main/front"
-    },
-    {
       "file": "pages/reports/blueprints/blueprint-2025-08-14-164728.tsx",
       "route": "/reports/blueprints/blueprint-2025-08-14-164728"
     },
@@ -6519,6 +6519,10 @@
     {
       "file": "pages/reports/blueprints/blueprint-2025-08-13-223010.tsx",
       "route": "/reports/blueprints/blueprint-2025-08-13-223010"
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "route": "/main/front"
     },
     {
       "file": "pages/reports/updates/update-2025-08-14T16-35.tsx",
@@ -13775,6 +13779,7 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
+<<<<<<< HEAD
   "generatedAt": "2025-08-14T16:58:10.673Z",
   "items": [
     {
@@ -13796,13 +13801,28 @@
       "href": "/reports/guides/guide-2025-08-14-170323",
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T17:03:23.817Z",
+=======
+  "generatedAt": "2025-08-14T17:06:51.931Z",
+  "items": [
+    {
+      "title": "Guide —  Implementation",
+      "href": "/reports/guides/guide-2025-08-14-170652",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T17:06:52.422Z",
+>>>>>>> c3928ade00 (chore(sync): advanced autonomous sync)
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Cloud Intelligence",
+<<<<<<< HEAD
       "href": "/reports/patterns/pattern-2025-08-14-170323",
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T17:03:23.817Z",
+=======
+      "href": "/reports/patterns/pattern-2025-08-14-170652",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T17:06:52.422Z",
+>>>>>>> c3928ade00 (chore(sync): advanced autonomous sync)
       "source": "cloud-deep-research-factory"
     }
   ]
