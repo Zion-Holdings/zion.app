@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T00:33:03.454Z",
-  "pagesScanned": 1368,
+  "generatedAt": "2025-08-14T00:33:18.415Z",
+  "pagesScanned": 1374,
   "items": [
     {
       "route": "/404",
@@ -97,7 +97,10 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -840,6 +843,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-003256",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-003305",
       "missing": [
         "og:image"
       ],
@@ -1969,6 +1982,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14-0033",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pilot Plan: Agent Ops",
+        "description": "Pilot Plan: Agent Ops — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -2176,6 +2199,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-14 00-32",
         "description": "Innovation Insight — 2025-08-14 00-32 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14T00-33",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-14 00-33",
+        "description": "Innovation Insight — 2025-08-14 00-33 — auto-suggested description"
       }
     },
     {
@@ -2930,6 +2963,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-003257",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-003306",
       "missing": [
         "og:image"
       ],
@@ -13439,6 +13482,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-14-0033",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Security Hardening Guide — MLOps & Model Reliability (2025-08-14 00:33 UTC)",
+        "description": "Autonomous Security Hardening Guide — MLOps & Model Reliability (2025-08-14 00:33 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -13646,6 +13699,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 00-32",
         "description": "Autonomous Update — 2025-08-14 00-32 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14T00-33",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 00-33",
+        "description": "Autonomous Update — 2025-08-14 00-33 — auto-suggested description"
       }
     },
     {
