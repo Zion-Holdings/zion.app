@@ -60,6 +60,20 @@ module.exports = {
         CATALOG_AUTO_UPDATE: 'true'
       },
       cron_restart: '0 */2 * * *' // Restart every 2 hours
+    },
+    {
+      name: 'ai-service-factory-advanced-monitor',
+      script: 'automation/service-factory/advanced-monitor.cjs',
+      cwd: '/workspace',
+      instances: 1,
+      autorestart: true,
+      watch: false,
+      max_memory_restart: '1G',
+      env: {
+        NODE_ENV: 'production',
+        ADVANCED_MONITORING_ENABLED: 'true'
+      },
+      cron_restart: '0 */3 * * *' // Restart every 3 hours
     }
   ],
 
