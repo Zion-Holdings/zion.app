@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = process.cwd();
-const FRONT_PAGE = path.join(ROOT, 'pages', 'front', 'index.tsx');
+const FRONT_PAGE = path.join(ROOT, 'pages', 'main', 'front', 'index.tsx');
 const START_MARKER = '/* AUTO-GENERATED: FRONT_ADS_START */';
 const END_MARKER = '/* AUTO-GENERATED: FRONT_ADS_END */';
 

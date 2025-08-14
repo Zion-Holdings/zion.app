@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const FRONT_PAGE = path.resolve(process.cwd(), 'pages', 'front', 'index.tsx');
+const FRONT_PAGE = path.resolve(process.cwd(), 'pages', 'main', 'front', 'index.tsx');
 
 const START_MARK = '{/* AUTO-GENERATED: FRONT_FUTURIZER_START */}';
 const END_MARK = '{/* AUTO-GENERATED: FRONT_FUTURIZER_END */}';
