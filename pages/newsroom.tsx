@@ -6,10 +6,7 @@ export default function Newsroom() {
       <Head>
         <title>Newsroom — Curated Tech Headlines</title>
         <meta name="description" content="Curated technology and AI headlines from reputable sources." />
-      
-        <meta property="og:title" content="Newsroom" />
-        <meta property="og:description" content="Newsroom — automatically suggested description." />
-        <meta name="twitter:card" content="summary_large_image" /></Head>
+      </Head>
       <main className="container mx-auto px-4 py-12">
         <h1 className="text-4xl font-extrabold mb-2">Newsroom</h1>
         <p className="text-white/70 mb-6">Updated automatically from multiple sources.</p>
@@ -44,6 +41,10 @@ export default function Newsroom() {
           </li>
           <li className="py-2">
             <a href="https://techcrunch.com/2025/08/12/chatgpts-model-picker-is-back-and-its-complicated/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">ChatGPT’s model picker is back, and it’s complicated</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/14/airbnb-will-allow-us-users-book-stays-without-paying-upfront/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Airbnb will allow US users book stays without paying upfront</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
@@ -88,10 +89,6 @@ export default function Newsroom() {
           </li>
           <li className="py-2">
             <a href="https://techcrunch.com/2025/08/08/sam-altman-addresses-bumpy-gpt-5-rollout-bringing-4o-back-and-the-chart-crime/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Sam Altman addresses ‘bumpy’ GPT-5 rollout, bringing 4o back, and the ‘chart crime’</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/08/openai-priced-gpt-5-so-low-it-may-spark-a-price-war/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">OpenAI priced GPT-5 so low, it may spark a price war</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
