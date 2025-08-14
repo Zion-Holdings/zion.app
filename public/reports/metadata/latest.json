@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T02:52:00.510Z",
-  "pagesScanned": 1670,
+  "generatedAt": "2025-08-14T02:54:00.475Z",
+  "pagesScanned": 1672,
   "items": [
     {
       "route": "/404",
@@ -15422,6 +15422,29 @@
       "suggestion": {
         "title": "Autonomous Reference Architecture — AI Service Design (2025-08-13 23:52 UTC)",
         "description": "Autonomous Reference Architecture — AI Service Design (2025-08-13 23:52 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2353",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 23:53",
+        "description": "Autonomous Update — 2025-08-13 23:53 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2354",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 23:54",
+        "description": "Autonomous Update — 2025-08-13 23:54 — auto-suggested description"
       }
     },
     {
