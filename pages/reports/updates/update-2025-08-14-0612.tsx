@@ -7,7 +7,10 @@ export default function UpdatePage() {
         <title>Autonomous Update — 2025-08-14 06:12</title>
         <meta name="description" content="Autonomously generated update with curated highlights." />
         <meta name="keywords" content="AI, automation, autonomous systems, product updates, engineering, Trends" />
-      </Head>
+      
+        <meta property="og:title" content="Autonomous Update — 2025-08-14 06:12" />
+        <meta property="og:description" content="Autonomous Update — 2025-08-14 06:12 — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
         <h1 className="text-3xl font-extrabold">Autonomous Update — 2025-08-14 06:12</h1>
         <p className="text-white/80">Today’s autonomous brief: highlights, context, and actions.</p>
