@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T00:25:03.247Z",
-  "pagesScanned": 1281,
+  "generatedAt": "2025-08-14T00:26:01.035Z",
+  "pagesScanned": 1289,
   "items": [
     {
       "route": "/404",
@@ -97,7 +97,10 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -600,6 +603,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-002433",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-002511",
       "missing": [
         "og:image"
       ],
@@ -1649,6 +1662,26 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14-0025",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook: Agent Ops",
+        "description": "Playbook: Agent Ops — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14-0026",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Checklist: Edge AI",
+        "description": "Checklist: Edge AI — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -1776,6 +1809,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-14 00-24",
         "description": "Innovation Insight — 2025-08-14 00-24 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14T00-25",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-14 00-25",
+        "description": "Innovation Insight — 2025-08-14 00-25 — auto-suggested description"
       }
     },
     {
@@ -2290,6 +2333,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-002434",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-002511",
       "missing": [
         "og:image"
       ],
@@ -12649,6 +12702,26 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-14-0025",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Validation & QA Plan — Agentic Workflows (2025-08-14 00:25 UTC)",
+        "description": "Autonomous Validation & QA Plan — Agentic Workflows (2025-08-14 00:25 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0026",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Checklist — Evaluation & Safety (2025-08-14 00:26 UTC)",
+        "description": "Autonomous Checklist — Evaluation & Safety (2025-08-14 00:26 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -12776,6 +12849,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 00-24",
         "description": "Autonomous Update — 2025-08-14 00-24 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14T00-25",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 00-25",
+        "description": "Autonomous Update — 2025-08-14 00-25 — auto-suggested description"
       }
     },
     {

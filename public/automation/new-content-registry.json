@@ -1,46 +1,32 @@
 {
-  "generatedAt": "2025-08-14T00:21:52.528Z",
+  "generatedAt": "2025-08-14T00:26:24.656Z",
   "items": [
     {
-      "title": "Playbook: Agent Ops",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-14-0025",
-      "createdAt": "2025-08-14T00:25:07.465Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Runbook: MLOps",
-      "subtitle": "Patterns to enhance security.",
-      "path": "/reports/innovations/insight-2025-08-14-0024",
-      "createdAt": "2025-08-14T00:24:31.427Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-14 00-21",
-      "href": "/reports/innovations/insight-2025-08-14T00-21",
+      "title": "Innovation Insight — 2025-08-14 00-26",
+      "href": "/reports/innovations/insight-2025-08-14T00-26",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:21:52.433Z",
+      "createdAt": "2025-08-14T00:26:24.560Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-14 00-21",
-      "href": "/reports/updates/update-2025-08-14T00-21",
+      "title": "Autonomous Update — 2025-08-14 00-26",
+      "href": "/reports/updates/update-2025-08-14T00-26",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:21:52.433Z",
+      "createdAt": "2025-08-14T00:26:24.560Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Innovation Insight — 2025-08-14 00-21",
-      "href": "/reports/innovations/insight-2025-08-14T00-21",
+      "title": "Innovation Insight — 2025-08-14 00-26",
+      "href": "/reports/innovations/insight-2025-08-14T00-26",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:21:52.433Z",
+      "createdAt": "2025-08-14T00:26:24.560Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-14 00-21",
-      "href": "/reports/updates/update-2025-08-14T00-21",
+      "title": "Autonomous Update — 2025-08-14 00-26",
+      "href": "/reports/updates/update-2025-08-14T00-26",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:21:52.433Z",
+      "createdAt": "2025-08-14T00:26:24.560Z",
       "source": "cloud-content-factory"
     }
   ]
