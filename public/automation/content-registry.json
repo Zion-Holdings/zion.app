@@ -53,24 +53,8 @@
       "route": "/automation"
     },
     {
-      "file": "pages/reports/updates/update-2025-08-14-1818.tsx",
-      "route": "/reports/updates/update-2025-08-14-1818"
-    },
-    {
-      "file": "pages/reports/updates/update-2025-08-14-1817.tsx",
-      "route": "/reports/updates/update-2025-08-14-1817"
-    },
-    {
-      "file": "pages/reports/updates/update-2025-08-14-1816.tsx",
-      "route": "/reports/updates/update-2025-08-14-1816"
-    },
-    {
-      "file": "pages/reports/updates/update-2025-08-14-1815.tsx",
-      "route": "/reports/updates/update-2025-08-14-1815"
-    },
-    {
-      "file": "pages/reports/updates/update-2025-08-14-1814.tsx",
-      "route": "/reports/updates/update-2025-08-14-1814"
+      "file": "pages/reports/updates/update-2025-08-14-1820.tsx",
+      "route": "/reports/updates/update-2025-08-14-1820"
     },
     {
       "file": "pages/main/front/index.tsx",
@@ -111,5 +95,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-14T21:18:00.951Z"
+  "generatedAt": "2025-08-14T21:20:01.070Z"
 }

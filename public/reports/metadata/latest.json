@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T21:18:00.879Z",
-  "pagesScanned": 21,
+  "generatedAt": "2025-08-14T21:20:00.922Z",
+  "pagesScanned": 17,
   "items": [
     {
       "route": "/404",
@@ -131,47 +131,7 @@
       }
     },
     {
-      "route": "/reports/updates/update-2025-08-14-1814",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-14 18:14",
-        "description": "Autonomous Update — 2025-08-14 18:14 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-14-1815",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-14 18:15",
-        "description": "Autonomous Update — 2025-08-14 18:15 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-14-1816",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-14 18:16",
-        "description": "Autonomous Update — 2025-08-14 18:16 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-14-1817",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-14 18:17",
-        "description": "Autonomous Update — 2025-08-14 18:17 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-14-1818",
+      "route": "/reports/updates/update-2025-08-14-1820",
       "missing": [
         "og:title",
         "og:description",
@@ -179,8 +139,8 @@
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-14 18:18",
-        "description": "Autonomous Update — 2025-08-14 18:18 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-14 18:20",
+        "description": "Autonomous Update — 2025-08-14 18:20 — auto-suggested description"
       }
     },
     {
