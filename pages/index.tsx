@@ -13,6 +13,57 @@ export default function Home() {
 
       {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */}
 
+  <section className="mx-auto max-w-7xl px-6 pb-6">
+    <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Live GitHub Automations</h2>
+    <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <a href="https://github.com/Zion-Holdings/zion.app/actions/workflows/pa11y.yml" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover" target="_blank" rel="noopener">
+        <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+        <h3 className="text-lg font-semibold">Accessibility Scan (Pa11y)</h3>
+        <p className="mt-1 text-sm text-white/75">Open workflow →</p>
+      </a>
+      <a href="https://github.com/Zion-Holdings/zion.app/actions/workflows/actionlint.yml" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover" target="_blank" rel="noopener">
+        <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+        <h3 className="text-lg font-semibold">Actionlint</h3>
+        <p className="mt-1 text-sm text-white/75">Open workflow →</p>
+      </a>
+      <a href="https://github.com/Zion-Holdings/zion.app/actions/workflows/actions-keepalive.yml" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover" target="_blank" rel="noopener">
+        <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+        <h3 className="text-lg font-semibold">Actions Keepalive Poker</h3>
+        <p className="mt-1 text-sm text-white/75">Open workflow →</p>
+      </a>
+      <a href="https://github.com/Zion-Holdings/zion.app/actions/workflows/agent-of-agents-trigger.yml" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover" target="_blank" rel="noopener">
+        <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+        <h3 className="text-lg font-semibold">Agent of Agents Trigger</h3>
+        <p className="mt-1 text-sm text-white/75">Open workflow →</p>
+      </a>
+      <a href="https://github.com/Zion-Holdings/zion.app/actions/workflows/ai-changelog.yml" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover" target="_blank" rel="noopener">
+        <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+        <h3 className="text-lg font-semibold">AI Changelog & Release Notes</h3>
+        <p className="mt-1 text-sm text-white/75">Open workflow →</p>
+      </a>
+      <a href="https://github.com/Zion-Holdings/zion.app/actions/workflows/ai-content-autonomy.yml" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover" target="_blank" rel="noopener">
+        <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+        <h3 className="text-lg font-semibold">AI Content Autonomy</h3>
+        <p className="mt-1 text-sm text-white/75">Open workflow →</p>
+      </a>
+      <a href="https://github.com/Zion-Holdings/zion.app/actions/workflows/ai-content-factory.yml" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover" target="_blank" rel="noopener">
+        <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+        <h3 className="text-lg font-semibold">AI Content Factory</h3>
+        <p className="mt-1 text-sm text-white/75">Open workflow →</p>
+      </a>
+      <a href="https://github.com/Zion-Holdings/zion.app/actions/workflows/ai-research-scout.yml" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover" target="_blank" rel="noopener">
+        <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+        <h3 className="text-lg font-semibold">AI Research Scout</h3>
+        <p className="mt-1 text-sm text-white/75">Open workflow →</p>
+      </a>
+      <a href="https://github.com/Zion-Holdings/zion.app/actions/workflows/ai-trends-radar.yml" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover" target="_blank" rel="noopener">
+        <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+        <h3 className="text-lg font-semibold">AI Trends Radar</h3>
+        <p className="mt-1 text-sm text-white/75">Open workflow →</p>
+      </a>
+    </div>
+  </section>
+
  <section className="mx-auto max-w-7xl px-6 pb-14">
    <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Latest Autonomous Content</h2>
    <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
