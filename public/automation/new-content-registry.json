@@ -1,11 +1,19 @@
 {
+  "generatedAt": "2025-08-14T17:57:51.178Z",
   "items": [
     {
-      "title": "Pilot Plan: Agent Ops",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-14-1750",
-      "createdAt": "2025-08-14T17:50:16.751Z",
-      "kind": "insight"
+      "title": "Innovation Insight — 2025-08-14 17-57",
+      "href": "/reports/innovations/insight-2025-08-14T17-57",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T17:57:51.152Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-14 17-57",
+      "href": "/reports/updates/update-2025-08-14T17-57",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T17:57:51.152Z",
+      "source": "cloud-content-factory"
     }
   ]
 }
