@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T03:38:01.851Z",
+  "generatedAt": "2025-08-14T03:42:02.111Z",
   "entries": [
     {
       "route": "/site-health",
@@ -10092,12 +10092,6 @@
       "file": "pages/reports/blueprints/blueprint-2025-08-13-223010.tsx",
       "title": "Reference Architecture — Autonomous Content Mesh",
       "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
-    },
-    {
-      "route": "/main/front",
-      "file": "pages/main/front/index.tsx",
-      "title": "Zion — Front Systems Hub | Autonomous Cloud Automations",
-      "summary": "import Head from 'next/head'; import Link from 'next/link'; import { Cpu, Gauge, GitBranch, Rocket, ShieldCheck, Zap, Activity, Globe, Layers, BarChart3, Search, Link2, Palette, LineChart } from 'lucide-react'; import { motion, useScroll, useSpring } from 'framer-motion'; import "
     },
     {
       "route": "/front",
