@@ -8,11 +8,13 @@ const axios = require("axios");
 function parseRepoFromPackage() {
   try {
     const pkg = require(path.resolve(__dirname, "../package.json"));
-    const url = (pkg.repository && pkg.repository.url) || "";
+    const url = (pkg.repository && (pkg.repository.url || pkg.repository)) || "";
     // Examples:
     // https://github.com/owner/repo.git
+    // https://github.com/owner/repo
     // git@github.com:owner/repo.git
-    let match = url.match(/github\.com[/:]([^/]+)\/([^\.]+)(?:\.git)?/i);
+    // git@github.com:owner/repo
+    let match = url.match(/github\.com[/:]([^/]+)\/(.+?)(?:\.git)?$/i);
     if (!match) return null;
     return { owner: match[1], repo: match[2] };
   } catch (e) {
