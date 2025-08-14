@@ -164,10 +164,23 @@ async function main() {
   });
   if (args.changedOnly) {
     const changed = getChangedFiles();
-    // simple heuristic: always include core, and include workflows whose filename appears in changes
     const core = new Set(["actionlint.yml", "commitlint.yml", "ci.yml"]);
-    selected = selected.filter(f => core.has(f) || changed.some(p => p.includes(path.basename(f).replace(/\.yml$/, ""))));
-    if (selected.length === 0) selected = Array.from(core).filter(f => allFiles.includes(f));
+    try {
+      const registry = JSON.parse(fs.readFileSync(path.resolve(__dirname, "./workflow-path-registry.json"), "utf8"));
+      const mapping = registry.prefixToWorkflows || {};
+      const hitWorkflows = new Set();
+      for (const file of changed) {
+        for (const prefix of Object.keys(mapping)) {
+          if (file.startsWith(prefix)) {
+            for (const wf of mapping[prefix]) hitWorkflows.add(wf);
+          }
+        }
+      }
+      selected = selected.filter(f => core.has(f) || hitWorkflows.has(f));
+      if (selected.length === 0) selected = Array.from(core).filter(f => allFiles.includes(f));
+    } catch {
+      selected = selected.filter(f => core.has(f));
+    }
   }
   if (args.coreFirst) {
     const coreList = ["actionlint.yml", "commitlint.yml", "ci.yml", "pr-smoke.yml", "playwright-smoke.yml"]; 
