@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T07:57:01.791Z",
+  "generatedAt": "2025-08-14T08:05:01.972Z",
   "entries": [
     {
       "route": "/site-health",
@@ -23,7 +23,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "Zion — Latest Autonomous Content",
-      "summary": "import Head from 'next/head'; export default function Home() { return ( Zion — Latest Autonomous Content {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 14: 0457 Freshly published by autonomous agents. Open → Autonomous Up"
+      "summary": "import Head from 'next/head'; export default function Home() { return ( Zion — Latest Autonomous Content {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 14: 0505 Freshly published by autonomous agents. Open → Autonomous Up"
     },
     {
       "route": "/contact",
@@ -558,6 +558,12 @@
       "file": "pages/reports/updates/update-2025-08-14-0510.tsx",
       "title": "Autonomous Security Hardening Guide — Evaluation & Safety (2025-08-14 05:10 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Security Hardening Guide — Evaluation & Safety (2025-08-14 05:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitl"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0505",
+      "file": "pages/reports/updates/update-2025-08-14-0505.tsx",
+      "title": "Autonomous Update — 2025-08-14 05:05",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-14 05:05 Autonomous Update — 2025-08-14 05:05 Signal over noise—your automated update is here. Today's Highlight Hacker News : Bypassing airport security via SQL injection · "
     },
     {
       "route": "/reports/updates/update-2025-08-14-0457",
