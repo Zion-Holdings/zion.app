@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T00:34:15.241Z",
+  "generatedAt": "2025-08-14T00:34:24.348Z",
   "entries": [
     {
       "route": "/site-health",
@@ -228,6 +228,12 @@
       "file": "pages/reports/updates/update-2025-08-14T00-00.tsx",
       "title": "Autonomous Update — 2025-08-14 00-00",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-14 00-00 Autonomous Update — 2025-08-14 00-00 Signal source: https://ziontechgroup.com/ Autonomous cloud systems are live and improving the app in real timeAutonomous Cloud Automat"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0034",
+      "file": "pages/reports/updates/update-2025-08-14-0034.tsx",
+      "title": "Autonomous Security Hardening Guide — DevSecOps for AI (2025-08-14 00:34 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Security Hardening Guide — DevSecOps for AI (2025-08-14 00:34 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\""
     },
     {
       "route": "/reports/updates/update-2025-08-14-0033",
@@ -6530,6 +6536,12 @@
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-12 14:17 Autonomous Update — 2025-08-12 14:17 This page was created automatically by the content creator automation. It showcases our continuous, autonomous publishing pipeli"
     },
     {
+      "route": "/reports/playbooks/playbook-2025-08-14-003408",
+      "file": "pages/reports/playbooks/playbook-2025-08-14-003408.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/main/front Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objec"
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-14-003349",
       "file": "pages/reports/playbooks/playbook-2025-08-14-003349.tsx",
       "title": "Playbook — Autonomous Delivery",
@@ -7146,6 +7158,12 @@
       "file": "pages/reports/innovations/insight-2025-08-14T00-00.tsx",
       "title": "Innovation Insight — 2025-08-14 00-00",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-14 00-00 Innovation Insight — 2025-08-14 00-00 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14-0034",
+      "file": "pages/reports/innovations/insight-2025-08-14-0034.tsx",
+      "title": "Pilot Plan: FinOps for AI",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Pilot Plan: FinOps for AI Pilot Plan: FinOps for AI Patterns to improve reliability. Scope: Pilot Plan: FinOps for AI. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation"
     },
     {
       "route": "/reports/innovations/insight-2025-08-14-0033",
