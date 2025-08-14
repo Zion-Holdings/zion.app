@@ -68,7 +68,7 @@ function main() {
         entries.push({ route: `/services/${slug}`, file: 'pages/services/[slug].tsx', title, summary: description });
       }
     }
-  } catch {}
+  } catch { void 0; }
 
   const outDir = path.join(process.cwd(), 'public', 'search');
   fs.mkdirSync(outDir, { recursive: true });

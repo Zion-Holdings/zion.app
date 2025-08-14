@@ -210,6 +210,7 @@ async function crawlAll() {
     const s = read(f);
     if (s === null) continue;
     let next = s;
+    // Apply safe normalizations. Link conversion is guarded and may be skipped for complex cases.
     next = normalizeNextLinks(next);
     next = normalizeWrappers(next);
     next = normalizeReportsIndex(f, next);
