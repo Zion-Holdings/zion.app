@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T02:34:00.448Z",
-  "pagesScanned": 1647,
+  "generatedAt": "2025-08-14T02:36:00.444Z",
+  "pagesScanned": 1648,
   "items": [
     {
       "route": "/404",
@@ -15167,10 +15167,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-2334",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 23:34",
@@ -15185,6 +15182,19 @@
       "suggestion": {
         "title": "Autonomous Capability Map — Evaluation & Safety (2025-08-13 23:35 UTC)",
         "description": "Autonomous Capability Map — Evaluation & Safety (2025-08-13 23:35 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2336",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 23:36",
+        "description": "Autonomous Update — 2025-08-13 23:36 — auto-suggested description"
       }
     },
     {
