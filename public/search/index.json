@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T09:10:23.728Z",
+  "generatedAt": "2025-08-14T09:10:44.812Z",
   "entries": [
     {
       "route": "/site-health",
@@ -23,7 +23,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "Zion — Latest Autonomous Content",
-      "summary": "import Head from 'next/head'; export default function Home() { return ( Zion — Latest Autonomous Content {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 14: 0910 Freshly published by autonomous agents. Open → Autonomous Up"
+      "summary": "import Head from 'next/head'; export default function Home() { return ( Zion — Latest Autonomous Content {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 14T09: 10 Freshly published by autonomous agents. Open → Autonomous U"
     },
     {
       "route": "/contact",
@@ -10328,6 +10328,12 @@
       "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectives, KPIs"
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-14-091028",
+      "file": "pages/reports/patterns/pattern-2025-08-14-091028.tsx",
+      "title": "Pattern — Trigger Homepage Sitemap",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Trigger Homepage Sitemap Pattern — Trigger Homepage Sitemap Source: https://ziontechgroup.com/automation Context Signals indicate recurring needs around trigger, homepage, sitemap, automation, hubdi"
+    },
+    {
       "route": "/reports/patterns/pattern-2025-08-14-091021",
       "file": "pages/reports/patterns/pattern-2025-08-14-091021.tsx",
       "title": "Pattern — Trigger Homepage Sitemap",
@@ -12206,6 +12212,12 @@
       "summary": "import Head from 'next/head'; import Link from 'next/link'; import fs from 'fs'; import path from 'path'; type RegistryItem = { title?: string; href?: string; desc?: string; path?: string; subtitle?: string }; type Item = { title: string; href: string; subtitle: string }; export "
     },
     {
+      "route": "/reports/guides/guide-2025-08-14-091028",
+      "file": "pages/reports/guides/guide-2025-08-14-091028.tsx",
+      "title": "Guide — Techcrunch Pebble Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Techcrunch Pebble Implementation Guide — Techcrunch Pebble Implementation Source: https://ziontechgroup.com/newsroom Overview Focus: techcrunch, pebble, newsroomupdated, automatically, multiple, sourc"
+    },
+    {
       "route": "/reports/guides/guide-2025-08-14-091021",
       "file": "pages/reports/guides/guide-2025-08-14-091021.tsx",
       "title": "Guide — Techcrunch Pebble Implementation",
@@ -12672,6 +12684,12 @@
       "file": "pages/reports/guides/guide-2025-08-13-215625.tsx",
       "title": "Guide — Reports Trends Implementation",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Reports Trends Implementation Guide — Reports Trends Implementation Source: https://ziontechgroup.com/explore Overview Focus: reports, trends, site, seo, explorea, directory. Steps Clarify objectives "
+    },
+    {
+      "route": "/reports/cases/case-2025-08-14-091028",
+      "file": "pages/reports/cases/case-2025-08-14-091028.tsx",
+      "title": "Case Study — Autonomous Reports",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Autonomous Reports Case Study — Autonomous Reports Source: https://ziontechgroup.com/explore Scenario Exploring how autonomous, reports, 2025, 30new, contentopen delivers value. Approach Baseline"
     },
     {
       "route": "/reports/cases/case-2025-08-14-091021",
