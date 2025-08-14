@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T02:54:12.194Z",
-  "pagesScanned": 1672,
+  "generatedAt": "2025-08-14T03:18:00.661Z",
+  "pagesScanned": 1674,
   "items": [
     {
       "route": "/404",
@@ -15875,6 +15875,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-14-0008",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 00:08",
+        "description": "Autonomous Update — 2025-08-14 00:08 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-14-0010",
       "missing": [
         "og:image"
@@ -15882,6 +15892,16 @@
       "suggestion": {
         "title": "Autonomous Performance Tuning Guide — Edge AI & IoT (2025-08-14 00:10 UTC)",
         "description": "Autonomous Performance Tuning Guide — Edge AI & IoT (2025-08-14 00:10 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0011",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 00:11",
+        "description": "Autonomous Update — 2025-08-14 00:11 — auto-suggested description"
       }
     },
     {
