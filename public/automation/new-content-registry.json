@@ -1,26 +1,33 @@
 {
-  "generatedAt": "2025-08-14T09:14:31.042Z",
+  "generatedAt": "2025-08-14T09:14:36.066Z",
   "items": [
     {
-      "title": "Case Study — Autonomous Reports",
-      "href": "/reports/cases/case-2025-08-14-091430",
+      "title": "Innovation Insight — 2025-08-14 09-14",
+      "href": "/reports/innovations/insight-2025-08-14T09-14",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T09:14:30.917Z",
-      "source": "cloud-deep-research-factory"
+      "createdAt": "2025-08-14T09:14:35.935Z",
+      "source": "cloud-content-factory"
     },
     {
-      "title": "Guide — Techcrunch Pebble Implementation",
-      "href": "/reports/guides/guide-2025-08-14-091430",
+      "title": "Autonomous Update — 2025-08-14 09-14",
+      "href": "/reports/updates/update-2025-08-14T09-14",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T09:14:30.917Z",
-      "source": "cloud-deep-research-factory"
+      "createdAt": "2025-08-14T09:14:35.935Z",
+      "source": "cloud-content-factory"
     },
     {
-      "title": "Pattern — Trigger Homepage Sitemap",
-      "href": "/reports/patterns/pattern-2025-08-14-091430",
+      "title": "Innovation Insight — 2025-08-14 09-14",
+      "href": "/reports/innovations/insight-2025-08-14T09-14",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T09:14:30.917Z",
-      "source": "cloud-deep-research-factory"
+      "createdAt": "2025-08-14T09:14:35.935Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-14 09-14",
+      "href": "/reports/updates/update-2025-08-14T09-14",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T09:14:35.935Z",
+      "source": "cloud-content-factory"
     }
   ]
 }
