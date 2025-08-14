@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T00:37:21.037Z",
+  "generatedAt": "2025-08-14T00:37:22.986Z",
   "entries": [
     {
       "route": "/site-health",
@@ -23,7 +23,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "index",
-      "summary": ""
+      "summary": "import Landing from '../components/Landing'; export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 14T00: 37 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: "
     },
     {
       "route": "/contact",
@@ -6590,6 +6590,12 @@
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-12 14:17 Autonomous Update — 2025-08-12 14:17 This page was created automatically by the content creator automation. It showcases our continuous, autonomous publishing pipeli"
     },
     {
+      "route": "/reports/playbooks/playbook-2025-08-14-003712",
+      "file": "pages/reports/playbooks/playbook-2025-08-14-003712.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/main/front Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objec"
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-14-003702",
       "file": "pages/reports/playbooks/playbook-2025-08-14-003702.tsx",
       "title": "Playbook — Autonomous Delivery",
@@ -7314,6 +7320,12 @@
       "file": "pages/reports/innovations/insight-2025-08-14T00-00.tsx",
       "title": "Innovation Insight — 2025-08-14 00-00",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-14 00-00 Innovation Insight — 2025-08-14 00-00 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14-0037",
+      "file": "pages/reports/innovations/insight-2025-08-14-0037.tsx",
+      "title": "Playbook: LLM Apps",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Playbook: LLM Apps Playbook: LLM Apps Patterns to improve reliability. Scope: Playbook: LLM Apps. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observability,"
     },
     {
       "route": "/reports/innovations/insight-2025-08-14-0036",
