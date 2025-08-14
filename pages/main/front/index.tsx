@@ -1505,6 +1505,134 @@ export default function MainFrontIndex() {
             </li>
 
             <li className="flex items-start gap-2">
+              <span className="mt-1 inline-b, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-7xl px-6 pb-16"
+        >
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 text-center backdrop-blur-md">
+            <p className="text-white/70">Powered by modern cloud and AI tooling</p>
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-6">
+              {['Next.js','TypeScript','Tailwind','Framer Motion','Supabase','Netlify'].map((t) => (
+                <span key={t} className="rounded-lg border border-white/10 bg-white/5 px-3 py-1 text-sm text-white/80 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)] glow-pulse">
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Quick Start */}
+        <section className="mx-auto max-w-7xl px-6 pb-20">
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Quick Start</h2>
+          <div className="mx-auto mt-6 max-w-4xl grid grid-cols-1 gap-4 md:grid-cols-4">
+            {[
+              ['Explore', 'Browse live automations', '/automation'],
+              ['Audit', 'Check site health', '/site-health'],
+              ['Optimize', 'Run the SEO auditor', '/reports/seo'],
+              ['Learn', 'Follow AI trends', '/reports/ai-trends'],
+            ].map(([title, desc, href]) => (
+              <Link key={title as string} href={href as string}>
+                <a className="rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-5 text-left backdrop-blur-xl hover:border-cyan-400/30">
+                  <div className="text-sm font-semibold text-white">{title as string}</div>
+                  <div className="mt-1 text-xs text-white/70">{desc as string}</div>
+                </a>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* CTA */}
+        <motion.section
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-7xl px-6 pb-24"
+        >
+          <div className="animated-border relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-r from-fuchsia-600/20 via-violet-600/20 to-cyan-600/20 p-8 text-center backdrop-blur-xl">
+            <h3 className="text-2xl font-bold">Ready to build with autonomous cloud agents?</h3>
+            <p className="mx-auto mt-2 max-w-2xl text-white/80">Scale development with a tireless fleet of self‑improving automations.</p>
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <Link href="/automation"><a className="rounded-xl bg-white/90 px-6 py-3 font-semibold text-slate-900 hover:bg-white">Get Started</a></Link>
+              <Link href="/automation"><a className="rounded-xl border border-white/20 bg-white/5 px-6 py-3 font-semibold backdrop-blur-md hover:bg-white/10">View Automations</a></Link>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* AUTO-GENERATED: FRONT_FUTURIZER_START */}
+
+        <section id="front-futurizer" className="mx-auto max-w-7xl px-6 pb-20">
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Explore More — Features, Capabilities, Benefits</h2>
+          <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">A quick portal to the most impactful areas across Zion. Every tile and list item links to a live hub, report, or doc.</p>
+          <div className="mt-6 grid grid-cols-1 gap-5 lg:grid-cols-3">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
+              <div className="text-lg font-semibold">Features</div>
+              <ul className="mt-3 space-y-2">
+            <li className="flex items-start gap-2">
+              <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-emerald-400 glow-pulse" />
+              <span className="text-sm text-white/80">Self‑improving autonomous agents</span>
+            </li>
+
+            <li className="flex items-start gap-2">
+              <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-emerald-400 glow-pulse" />
+              <span className="text-sm text-white/80">Repo sync to main with safe diffs</span>
+            </li>
+
+            <li className="flex items-start gap-2">
+              <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-emerald-400 glow-pulse" />
+              <span className="text-sm text-white/80">Zero‑ops, cloud‑native runtime</span>
+            </li>
+
+            <li className="flex items-start gap-2">
+              <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-emerald-400 glow-pulse" />
+              <span className="text-sm text-white/80">Defense‑in‑depth guardrails</span>
+            </li>
+              </ul>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
+              <div className="text-lg font-semibold">Capabilities</div>
+              <ul className="mt-3 space-y-2">
+            <li className="flex items-start gap-2">
+              <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-emerald-400 glow-pulse" />
+              <span className="text-sm text-white/80">Code quality and refactors</span>
+            </li>
+
+            <li className="flex items-start gap-2">
+              <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-emerald-400 glow-pulse" />
+              <span className="text-sm text-white/80">A11y and performance tuning</span>
+            </li>
+
+            <li className="flex items-start gap-2">
+              <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-emerald-400 glow-pulse" />
+              <span className="text-sm text-white/80">Content curation and SEO</span>
+            </li>
+
+            <li className="flex items-start gap-2">
+              <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-emerald-400 glow-pulse" />
+              <span className="text-sm text-white/80">Observability and analytics</span>
+            </li>
+              </ul>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
+              <div className="text-lg font-semibold">Benefits</div>
+              <ul className="mt-3 space-y-2">
+            <li className="flex items-start gap-2">
+              <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-emerald-400 glow-pulse" />
+              <span className="text-sm text-white/80">24/7 progress without manual ops</span>
+            </li>
+
+            <li className="flex items-start gap-2">
+              <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-emerald-400 glow-pulse" />
+              <span className="text-sm text-white/80">Faster feedback with small edits</span>
+            </li>
+
+            <li className="flex items-start gap-2">
+              <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-emerald-400 glow-pulse" />
+              <span className="text-sm text-white/80">Higher confidence via layered checks</span>
+            </li>
+
+            <li className="flex items-start gap-2">
               <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-emerald-400 glow-pulse" />
               <span className="text-sm text-white/80">Links to hubs, reports, and docs</span>
             </li>
