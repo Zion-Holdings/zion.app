@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T15:17:13.625Z",
-  "pagesScanned": 2983,
+  "generatedAt": "2025-08-14T15:24:00.607Z",
+  "pagesScanned": 2985,
   "items": [
     {
       "route": "/404",
@@ -28632,6 +28632,29 @@
       "suggestion": {
         "title": "Autonomous Performance Tuning Guide — Data Engineering (2025-08-14 12:20 UTC)",
         "description": "Autonomous Performance Tuning Guide — Data Engineering (2025-08-14 12:20 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1223",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 12:23",
+        "description": "Autonomous Update — 2025-08-14 12:23 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1224",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 12:24",
+        "description": "Autonomous Update — 2025-08-14 12:24 — auto-suggested description"
       }
     },
     {
