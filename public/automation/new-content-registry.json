@@ -1,6 +1,20 @@
 {
-  "generatedAt": "2025-08-14T16:26:04.351Z",
+  "generatedAt": "2025-08-14T16:27:00.509Z",
   "items": [
+    {
+      "title": "Innovation Insight — 2025-08-14 16-27",
+      "href": "/reports/innovations/insight-2025-08-14T16-27",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:27:00.279Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-14 16-27",
+      "href": "/reports/updates/update-2025-08-14T16-27",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:27:00.279Z",
+      "source": "cloud-content-factory"
+    },
     {
       "title": "Guide —  Implementation",
       "href": "/reports/guides/guide-2025-08-14-162604",

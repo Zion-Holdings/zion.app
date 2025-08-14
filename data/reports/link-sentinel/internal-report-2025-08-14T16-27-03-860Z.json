@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T16:26:46.679Z",
+  "generatedAt": "2025-08-14T16:27:03.858Z",
   "knownRoutes": [
     "/",
     "/404",
@@ -310,7 +310,8 @@
     "/reports/blueprints/blueprint-2025-08-14-162537",
     "/reports/blueprints/blueprint-2025-08-14-162557",
     "/reports/blueprints/blueprint-2025-08-14-162600",
-    "/reports/blueprints/blueprint-2025-08-14-162645",
+    "/reports/blueprints/blueprint-2025-08-14-162700",
+    "/reports/blueprints/blueprint-2025-08-14-162702",
     "/reports/cases/case-2025-08-14-040018",
     "/reports/cases/case-2025-08-14-051017",
     "/reports/cases/case-2025-08-14-052014",
@@ -670,8 +671,8 @@
     "/reports/guides/guide-2025-08-14-162557",
     "/reports/guides/guide-2025-08-14-162600",
     "/reports/guides/guide-2025-08-14-162604",
-    "/reports/guides/guide-2025-08-14-162644",
-    "/reports/guides/guide-2025-08-14-162645",
+    "/reports/guides/guide-2025-08-14-162700",
+    "/reports/guides/guide-2025-08-14-162702",
     "/reports/innovations",
     "/reports/innovations/insight-2025-08-13-2020",
     "/reports/innovations/insight-2025-08-13-2021",
@@ -875,6 +876,7 @@
     "/reports/innovations/insight-2025-08-14-1623",
     "/reports/innovations/insight-2025-08-14-1624",
     "/reports/innovations/insight-2025-08-14-1625",
+    "/reports/innovations/insight-2025-08-14-1626",
     "/reports/innovations/insight-2025-08-14T00-00",
     "/reports/innovations/insight-2025-08-14T00-10",
     "/reports/innovations/insight-2025-08-14T00-12",
@@ -988,6 +990,7 @@
     "/reports/innovations/insight-2025-08-14T16-23",
     "/reports/innovations/insight-2025-08-14T16-24",
     "/reports/innovations/insight-2025-08-14T16-25",
+    "/reports/innovations/insight-2025-08-14T16-27",
     "/reports/patterns/pattern-2025-08-13-215625",
     "/reports/patterns/pattern-2025-08-13-222010",
     "/reports/patterns/pattern-2025-08-13-222028",
@@ -1205,8 +1208,8 @@
     "/reports/patterns/pattern-2025-08-14-162557",
     "/reports/patterns/pattern-2025-08-14-162600",
     "/reports/patterns/pattern-2025-08-14-162604",
-    "/reports/patterns/pattern-2025-08-14-162644",
-    "/reports/patterns/pattern-2025-08-14-162645",
+    "/reports/patterns/pattern-2025-08-14-162700",
+    "/reports/patterns/pattern-2025-08-14-162702",
     "/reports/playbooks/playbook-2025-08-13-223010",
     "/reports/playbooks/playbook-2025-08-13-223717",
     "/reports/playbooks/playbook-2025-08-13-224010",
@@ -1505,7 +1508,8 @@
     "/reports/playbooks/playbook-2025-08-14-162536",
     "/reports/playbooks/playbook-2025-08-14-162557",
     "/reports/playbooks/playbook-2025-08-14-162600",
-    "/reports/playbooks/playbook-2025-08-14-162645",
+    "/reports/playbooks/playbook-2025-08-14-162701",
+    "/reports/playbooks/playbook-2025-08-14-162702",
     "/reports/roadmap",
     "/reports/seo",
     "/reports/updates/update-2025-08-12-1417",
@@ -3157,6 +3161,7 @@
     "/reports/updates/update-2025-08-14-1324",
     "/reports/updates/update-2025-08-14-1325",
     "/reports/updates/update-2025-08-14-1326",
+    "/reports/updates/update-2025-08-14-1327",
     "/reports/updates/update-2025-08-14-1330",
     "/reports/updates/update-2025-08-14-1340",
     "/reports/updates/update-2025-08-14-1350",
@@ -3180,6 +3185,7 @@
     "/reports/updates/update-2025-08-14-1623",
     "/reports/updates/update-2025-08-14-1624",
     "/reports/updates/update-2025-08-14-1625",
+    "/reports/updates/update-2025-08-14-1626",
     "/reports/updates/update-2025-08-14T00-00",
     "/reports/updates/update-2025-08-14T00-10",
     "/reports/updates/update-2025-08-14T00-12",
@@ -3293,6 +3299,7 @@
     "/reports/updates/update-2025-08-14T16-23",
     "/reports/updates/update-2025-08-14T16-24",
     "/reports/updates/update-2025-08-14T16-25",
+    "/reports/updates/update-2025-08-14T16-27",
     "/search",
     "/services",
     "/site-health"
@@ -3435,17 +3442,17 @@
     },
     {
       "file": "pages/main/front/index.tsx",
-      "href": "/reports/a11y",
-      "suggestion": null
-    },
-    {
-      "file": "pages/main/front/index.tsx",
-      "href": "/reports/metadata",
-      "suggestion": null
-    },
-    {
-      "file": "pages/main/front/index.tsx",
       "href": "/main/front#features",
+      "suggestion": null
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "href": "/main/front#capabilities",
+      "suggestion": null
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "href": "/main/front#benefits",
       "suggestion": null
     },
     {
