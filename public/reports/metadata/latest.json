@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T21:30:41.727Z",
-  "pagesScanned": 75,
+  "generatedAt": "2025-08-14T21:31:00.649Z",
+  "pagesScanned": 80,
   "items": [
     {
       "route": "/404",
@@ -123,10 +123,7 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -314,6 +311,16 @@
       }
     },
     {
+      "route": "/reports/cases/case-2025-08-14-213100",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Trigger Homepage",
+        "description": "Case Study — Trigger Homepage — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/guides/guide-2025-08-14-212854",
       "missing": [
         "og:image"
@@ -425,6 +432,16 @@
     },
     {
       "route": "/reports/guides/guide-2025-08-14-213041",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-14-213100",
       "missing": [
         "og:image"
       ],
@@ -574,6 +591,16 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-14-213100",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Improving Continuously",
+        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-14-212855",
       "missing": [
         "og:image"
@@ -625,6 +652,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-213035",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-213100",
       "missing": [
         "og:image"
       ],
@@ -701,6 +738,19 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 18:30",
         "description": "Autonomous Update — 2025-08-14 18:30 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1831",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 18:31",
+        "description": "Autonomous Update — 2025-08-14 18:31 — auto-suggested description"
       }
     },
     {
