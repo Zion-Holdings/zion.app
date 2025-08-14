@@ -1,6 +1,62 @@
 {
-  "generatedAt": "2025-08-14T09:19:07.412Z",
+  "generatedAt": "2025-08-14T09:19:27.223Z",
   "items": [
+    {
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-14-091927",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T09:19:27.091Z",
+      "source": "cloud-blueprint-factory"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-14-091926",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T09:19:26.965Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Case Study — Autonomous Reports",
+      "href": "/reports/cases/case-2025-08-14-091926",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T09:19:26.828Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Techcrunch Pebble Implementation",
+      "href": "/reports/guides/guide-2025-08-14-091926",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T09:19:26.828Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Trigger Homepage Sitemap",
+      "href": "/reports/patterns/pattern-2025-08-14-091926",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T09:19:26.828Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Case Study — Autonomous Reports",
+      "href": "/reports/cases/case-2025-08-14-091923",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T09:19:23.325Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Techcrunch Pebble Implementation",
+      "href": "/reports/guides/guide-2025-08-14-091923",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T09:19:23.325Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Trigger Homepage Sitemap",
+      "href": "/reports/patterns/pattern-2025-08-14-091923",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T09:19:23.325Z",
+      "source": "cloud-deep-research-factory"
+    },
     {
       "title": "Reference Architecture — Autonomous Content Mesh",
       "href": "/reports/blueprints/blueprint-2025-08-14-091907",
@@ -14,6 +70,11 @@
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T09:19:07.150Z",
       "source": "cloud-playbook-factory"
+    },
+    {
+      "id": "cursor-chat-2025-08-14T09:19:07.670Z",
+      "type": "cursor-chat",
+      "timestamp": "2025-08-14T09:19:07.670Z"
     }
   ]
 }
