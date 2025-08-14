@@ -3425,6 +3425,13 @@
       "route": "/reports/guides/guide-2025-08-13-215625"
     },
     {
+<<<<<<< HEAD
+=======
+      "file": "pages/reports/innovations/insight-2025-08-14T18-56.tsx",
+      "route": "/reports/innovations/insight-2025-08-14T18-56"
+    },
+    {
+>>>>>>> 3aab89782d (chore(sync): advanced autonomous sync)
       "file": "pages/reports/innovations/insight-2025-08-14T18-36.tsx",
       "route": "/reports/innovations/insight-2025-08-14T18-36"
     },
@@ -5333,6 +5340,13 @@
       "route": "/reports/cases/case-2025-08-14-040018"
     },
     {
+<<<<<<< HEAD
+=======
+      "file": "pages/main/front/index.tsx",
+      "route": "/main/front"
+    },
+    {
+>>>>>>> 3aab89782d (chore(sync): advanced autonomous sync)
       "file": "pages/reports/blueprints/blueprint-2025-08-14-183647.tsx",
       "route": "/reports/blueprints/blueprint-2025-08-14-183647"
     },
@@ -6625,8 +6639,13 @@
       "route": "/reports/blueprints/blueprint-2025-08-13-223010"
     },
     {
+<<<<<<< HEAD
       "file": "pages/main/front/index.tsx",
       "route": "/main/front"
+=======
+      "file": "pages/reports/updates/update-2025-08-14T18-56.tsx",
+      "route": "/reports/updates/update-2025-08-14T18-56"
+>>>>>>> 3aab89782d (chore(sync): advanced autonomous sync)
     },
     {
       "file": "pages/reports/updates/update-2025-08-14T18-36.tsx",
@@ -13855,6 +13874,60 @@
     {
       "file": "pages/reports/updates/update-2025-08-12-1417.tsx",
       "route": "/reports/updates/update-2025-08-12-1417"
+<<<<<<< HEAD
+=======
+    }
+  ],
+  "docs": [
+    {
+      "file": "docs/topics-map.md",
+      "route": "/docs/topics-map.md"
+    },
+    {
+      "file": "docs/components-props.md",
+      "route": "/docs/components-props.md"
+    },
+    {
+      "file": "docs/TODO_REPORT.md",
+      "route": "/docs/TODO_REPORT.md"
+    },
+    {
+      "file": "docs/ROADMAP.md",
+      "route": "/docs/ROADMAP.md"
+    },
+    {
+      "file": "docs/MEDIA_RELEASE.md",
+      "route": "/docs/MEDIA_RELEASE.md"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "route": "/docs/CHANGELOG_AI.md"
+    },
+    {
+      "file": "docs/CHANGELOG.md",
+      "route": "/docs/CHANGELOG.md"
+    },
+    {
+      "file": "docs/reports/unused-exports.md",
+      "route": "/docs/reports/unused-exports.md"
+    }
+  ],
+  "generatedAt": "2025-08-14T19:01:00.815Z",
+  "items": [
+    {
+      "title": "Guide —  Implementation",
+      "href": "/reports/guides/guide-2025-08-14-190101",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T19:01:01.502Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Cloud Intelligence",
+      "href": "/reports/patterns/pattern-2025-08-14-190101",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T19:01:01.502Z",
+      "source": "cloud-deep-research-factory"
+>>>>>>> 3aab89782d (chore(sync): advanced autonomous sync)
     }
   ],
   "docs": [

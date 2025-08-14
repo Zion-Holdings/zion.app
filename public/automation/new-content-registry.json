@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "generatedAt": "2025-08-14T18:36:47.816Z",
   "items": [
     {
@@ -14,6 +15,23 @@
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T18:36:47.791Z",
       "source": "cloud-content-factory"
+=======
+  "generatedAt": "2025-08-14T19:01:01.541Z",
+  "items": [
+    {
+      "title": "Guide —  Implementation",
+      "href": "/reports/guides/guide-2025-08-14-190101",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T19:01:01.502Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Cloud Intelligence",
+      "href": "/reports/patterns/pattern-2025-08-14-190101",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T19:01:01.502Z",
+      "source": "cloud-deep-research-factory"
+>>>>>>> 3aab89782d (chore(sync): advanced autonomous sync)
     }
   ]
 }
