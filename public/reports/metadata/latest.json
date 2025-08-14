@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T21:48:24.555Z",
-  "pagesScanned": 296,
+  "generatedAt": "2025-08-14T21:48:52.595Z",
+  "pagesScanned": 301,
   "items": [
     {
       "route": "/404",
@@ -123,7 +123,10 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -1031,6 +1034,16 @@
       }
     },
     {
+      "route": "/reports/cases/case-2025-08-14-214834",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Trigger Homepage",
+        "description": "Case Study — Trigger Homepage — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/guides/guide-2025-08-14-212854",
       "missing": [
         "og:image"
@@ -1581,6 +1594,16 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-14-214834",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14-2130",
       "missing": [
         "og:image"
@@ -1648,6 +1671,16 @@
       "suggestion": {
         "title": "Guide: RAG Platforms",
         "description": "Guide: RAG Platforms — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14-2148",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pilot Plan: RAG Platforms",
+        "description": "Pilot Plan: RAG Platforms — auto-suggested description"
       }
     },
     {
@@ -2281,6 +2314,16 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-14-214834",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Improving Continuously",
+        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-14-212855",
       "missing": [
         "og:image"
@@ -2848,6 +2891,16 @@
       "suggestion": {
         "title": "Autonomous Validation & QA Plan — Vision & Multimodal (2025-08-14 21:39 UTC)",
         "description": "Autonomous Validation & QA Plan — Vision & Multimodal (2025-08-14 21:39 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-2148",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Blueprint — Agentic Workflows (2025-08-14 21:48 UTC)",
+        "description": "Autonomous Blueprint — Agentic Workflows (2025-08-14 21:48 UTC) — auto-suggested description"
       }
     },
     {
