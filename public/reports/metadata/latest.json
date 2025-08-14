@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T16:14:41.264Z",
-  "pagesScanned": 3084,
+  "generatedAt": "2025-08-14T16:15:00.790Z",
+  "pagesScanned": 3089,
   "items": [
     {
       "route": "/404",
@@ -113,10 +113,7 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -2769,6 +2766,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-161412",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-161445",
       "missing": [
         "og:image"
       ],
@@ -5849,6 +5856,16 @@
     },
     {
       "route": "/reports/guides/guide-2025-08-14-161433",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide —  Implementation",
+        "description": "Guide —  Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-14-161445",
       "missing": [
         "og:image"
       ],
@@ -10548,6 +10565,16 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-14-161445",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Intelligence",
+        "description": "Pattern — Cloud Intelligence — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-13-223010",
       "missing": [
         "og:image"
@@ -13189,6 +13216,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-161412",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-161445",
       "missing": [
         "og:image"
       ],
@@ -29585,6 +29622,19 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 13:14",
         "description": "Autonomous Update — 2025-08-14 13:14 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1315",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 13:15",
+        "description": "Autonomous Update — 2025-08-14 13:15 — auto-suggested description"
       }
     },
     {
