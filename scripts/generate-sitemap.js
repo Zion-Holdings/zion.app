@@ -43,13 +43,13 @@ function main() {
     const servicesFile = path.join(PAGES_DIR, 'services', '[slug].tsx');
     if (fs.existsSync(servicesFile)) {
       const content = fs.readFileSync(servicesFile, 'utf8');
-      const slugs = Array.from(content.matchAll(/slug:\s*['"]([^'\"]+)['"]/g)).map(m => m[1]);
+      const slugs = Array.from(content.matchAll(/slug:\s*["']([^"']+)["']/g)).map((m) => m[1]);
       for (const slug of slugs) {
         const r = `/services/${slug}`;
         if (!routes.includes(r)) routes.push(r);
       }
     }
-  } catch (e) {
+  } catch {
     // noop: best-effort enrichment
   }
   ensureDir(PUBLIC_DIR);
