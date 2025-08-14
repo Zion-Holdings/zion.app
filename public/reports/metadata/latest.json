@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T00:38:04.952Z",
-  "pagesScanned": 1444,
+  "generatedAt": "2025-08-14T00:38:17.413Z",
+  "pagesScanned": 1449,
   "items": [
     {
       "route": "/404",
@@ -97,10 +97,7 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -1093,6 +1090,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-003803",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-003812",
       "missing": [
         "og:image"
       ],
@@ -2269,6 +2276,16 @@
       "suggestion": {
         "title": "Playbook: LLM Apps",
         "description": "Playbook: LLM Apps — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14-0038",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide: DevSecOps AI",
+        "description": "Guide: DevSecOps AI — auto-suggested description"
       }
     },
     {
@@ -3533,6 +3550,26 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-003753",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-003806",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-003814",
       "missing": [
         "og:image"
       ],
@@ -13154,10 +13191,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-2138",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 21:38",
@@ -14142,6 +14176,16 @@
       "suggestion": {
         "title": "Autonomous Playbook — Vision & Multimodal (2025-08-14 00:37 UTC)",
         "description": "Autonomous Playbook — Vision & Multimodal (2025-08-14 00:37 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0038",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Performance Tuning Guide — DevSecOps for AI (2025-08-14 00:38 UTC)",
+        "description": "Autonomous Performance Tuning Guide — DevSecOps for AI (2025-08-14 00:38 UTC) — auto-suggested description"
       }
     },
     {
