@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T19:32:00.641Z",
-  "pagesScanned": 3521,
+  "generatedAt": "2025-08-14T19:33:00.648Z",
+  "pagesScanned": 3522,
   "items": [
     {
       "route": "/404",
@@ -33862,6 +33862,19 @@
       "suggestion": {
         "title": "Autonomous Performance Tuning Guide — Applied NLP & RAG (2025-08-14 16:32 UTC)",
         "description": "Autonomous Performance Tuning Guide — Applied NLP & RAG (2025-08-14 16:32 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1633",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 16:33",
+        "description": "Autonomous Update — 2025-08-14 16:33 — auto-suggested description"
       }
     },
     {
