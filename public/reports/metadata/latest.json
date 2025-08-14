@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T14:56:00.653Z",
-  "pagesScanned": 2935,
+  "generatedAt": "2025-08-14T14:57:00.598Z",
+  "pagesScanned": 2939,
   "items": [
     {
       "route": "/404",
@@ -4035,6 +4035,16 @@
       }
     },
     {
+      "route": "/reports/cases/case-2025-08-14-145624",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Techcrunch Pebble",
+        "description": "Case Study — Techcrunch Pebble — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/guides/guide-2025-08-13-215625",
       "missing": [
         "og:image"
@@ -5496,6 +5506,16 @@
     },
     {
       "route": "/reports/guides/guide-2025-08-14-145025",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Capabilities Live Implementation",
+        "description": "Guide — Capabilities Live Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-14-145624",
       "missing": [
         "og:image"
       ],
@@ -9866,6 +9886,16 @@
     },
     {
       "route": "/reports/patterns/pattern-2025-08-14-145025",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Trigger Homepage Sitemap",
+        "description": "Pattern — Trigger Homepage Sitemap — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-14-145624",
       "missing": [
         "og:image"
       ],
@@ -28167,14 +28197,24 @@
     {
       "route": "/reports/updates/update-2025-08-14-1156",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 11:56",
+        "description": "Autonomous Update — 2025-08-14 11:56 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1157",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-14 11:56",
-        "description": "Autonomous Update — 2025-08-14 11:56 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-14 11:57",
+        "description": "Autonomous Update — 2025-08-14 11:57 — auto-suggested description"
       }
     },
     {

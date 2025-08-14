@@ -1,0 +1,71 @@
+name: Workflows Auto-Heal & Check
+
+on:
+  schedule:
+    - cron: '15 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: Branch or ref to dispatch workflows against
+        required: false
+        default: main
+
+permissions:
+  contents: write
+
+concurrency:
+  group: auto-heal-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  heal-and-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Run workflows auto-healer
+        run: node scripts/workflows-auto-healer.cjs | tee auto-heal-output.json
+
+      - name: Commit auto-heal changes (main only)
+        if: ${{ github.ref == 'refs/heads/main' && (success() || failure()) }}
+        run: |
+          if [ -n "$(git status --porcelain .github/workflows)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add .github/workflows
+            git commit -m "ci(auto-heal): normalize workflows [skip ci]"
+            git push origin HEAD:main
+          else
+            echo "No workflow changes to commit"
+          fi
+
+      - name: Trigger all workflows (wait)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          REF_INPUT='${{ github.event.inputs.ref }}'
+          REF_TO_USE=${REF_INPUT:-main}
+          node scripts/trigger-workflows.cjs --ref "$REF_TO_USE" --wait --verbose --delay 7000 | tee workflows-check-summary.json
+
+      - name: Upload summary artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: workflows-check-summary
+          path: |
+            auto-heal-output.json
+            workflows-check-summary.json
+
+
