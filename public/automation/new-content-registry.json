@@ -1,51 +1,33 @@
 {
-<<<<<<< HEAD
-  "generatedAt": "2025-08-14T16:00:20.406Z",
-  "items": [
-    {
-      "title": "Innovation Insight — 2025-08-14 16-00",
-      "href": "/reports/innovations/insight-2025-08-14T16-00",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:00:20.334Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-14 16-00",
-      "href": "/reports/updates/update-2025-08-14T16-00",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:00:20.334Z",
-      "source": "cloud-content-factory"
-=======
-  "generatedAt": "2025-08-14T16:09:54.404Z",
+  "generatedAt": "2025-08-14T16:34:15.762Z",
   "items": [
     {
       "title": "Reference Architecture — Autonomous Content Mesh",
-      "href": "/reports/blueprints/blueprint-2025-08-14-160954",
+      "href": "/reports/blueprints/blueprint-2025-08-14-163415",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:09:54.372Z",
+      "createdAt": "2025-08-14T16:34:15.730Z",
       "source": "cloud-blueprint-factory"
     },
     {
       "title": "Playbook — Autonomous Delivery",
-      "href": "/reports/playbooks/playbook-2025-08-14-160954",
+      "href": "/reports/playbooks/playbook-2025-08-14-163415",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:09:54.339Z",
+      "createdAt": "2025-08-14T16:34:15.697Z",
       "source": "cloud-playbook-factory"
     },
     {
       "title": "Guide —  Implementation",
-      "href": "/reports/guides/guide-2025-08-14-160954",
+      "href": "/reports/guides/guide-2025-08-14-163415",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:09:54.300Z",
+      "createdAt": "2025-08-14T16:34:15.660Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Cloud Intelligence",
-      "href": "/reports/patterns/pattern-2025-08-14-160954",
+      "href": "/reports/patterns/pattern-2025-08-14-163415",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:09:54.300Z",
+      "createdAt": "2025-08-14T16:34:15.660Z",
       "source": "cloud-deep-research-factory"
->>>>>>> ffafb22be3 (chore(sync): advanced autonomous sync)
     }
   ]
 }
