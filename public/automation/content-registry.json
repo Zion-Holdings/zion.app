@@ -3433,6 +3433,10 @@
       "route": "/reports/innovations"
     },
     {
+      "file": "pages/main/front/index.tsx",
+      "route": "/main/front"
+    },
+    {
       "file": "pages/reports/guides/guide-2025-08-14-151028.tsx",
       "route": "/reports/guides/guide-2025-08-14-151028"
     },
@@ -4035,10 +4039,6 @@
     {
       "file": "pages/reports/guides/guide-2025-08-13-215625.tsx",
       "route": "/reports/guides/guide-2025-08-13-215625"
-    },
-    {
-      "file": "pages/main/front/index.tsx",
-      "route": "/main/front"
     },
     {
       "file": "pages/reports/blueprints/blueprint-2025-08-14-151028.tsx",
@@ -5527,6 +5527,10 @@
     {
       "file": "pages/reports/updates/update-2025-08-14-1220.tsx",
       "route": "/reports/updates/update-2025-08-14-1220"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-14-1214.tsx",
+      "route": "/reports/updates/update-2025-08-14-1214"
     },
     {
       "file": "pages/reports/updates/update-2025-08-14-1213.tsx",
@@ -11927,5 +11931,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-14T15:13:33.404Z"
+  "generatedAt": "2025-08-14T15:14:00.771Z"
 }
