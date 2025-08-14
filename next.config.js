@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
+const shouldExport = process.env.SKIP_EXPORT !== '1';
 const nextConfig = {
-  output: 'export',
+  ...(shouldExport ? { output: 'export' } : {}),
   productionBrowserSourceMaps: false,
   async redirects() {
     return [
