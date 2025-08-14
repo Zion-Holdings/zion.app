@@ -13795,5 +13795,39 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
+<<<<<<< HEAD
   "generatedAt": "2025-08-14T17:09:59.941Z"
+=======
+  "generatedAt": "2025-08-14T17:15:21.787Z",
+  "items": [
+    {
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-14-172209",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T17:22:09.755Z",
+      "source": "cloud-blueprint-factory"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-14-172209",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T17:22:09.724Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Guide —  Implementation",
+      "href": "/reports/guides/guide-2025-08-14-172209",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T17:22:09.686Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Cloud Intelligence",
+      "href": "/reports/patterns/pattern-2025-08-14-172209",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T17:22:09.686Z",
+      "source": "cloud-deep-research-factory"
+    }
+  ]
+>>>>>>> 36213c4808 (chore(sync): advanced autonomous sync)
 }

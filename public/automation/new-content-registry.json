@@ -1,32 +1,46 @@
 {
+<<<<<<< HEAD
   "generatedAt": "2025-08-14T17:03:23.922Z",
+=======
+  "generatedAt": "2025-08-14T17:22:09.786Z",
+>>>>>>> 36213c4808 (chore(sync): advanced autonomous sync)
   "items": [
     {
       "title": "Reference Architecture — Autonomous Content Mesh",
-      "href": "/reports/blueprints/blueprint-2025-08-14-170323",
+      "href": "/reports/blueprints/blueprint-2025-08-14-172209",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T17:03:23.889Z",
+      "createdAt": "2025-08-14T17:22:09.755Z",
       "source": "cloud-blueprint-factory"
     },
     {
       "title": "Playbook — Autonomous Delivery",
-      "href": "/reports/playbooks/playbook-2025-08-14-170323",
+      "href": "/reports/playbooks/playbook-2025-08-14-172209",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T17:03:23.856Z",
+      "createdAt": "2025-08-14T17:22:09.724Z",
       "source": "cloud-playbook-factory"
     },
     {
       "title": "Guide —  Implementation",
-      "href": "/reports/guides/guide-2025-08-14-170323",
+      "href": "/reports/guides/guide-2025-08-14-172209",
       "desc": "New autonomous content",
+<<<<<<< HEAD
       "createdAt": "2025-08-14T17:03:23.817Z",
+=======
+      "createdAt": "2025-08-14T17:22:09.686Z",
+>>>>>>> 36213c4808 (chore(sync): advanced autonomous sync)
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Cloud Intelligence",
+<<<<<<< HEAD
       "href": "/reports/patterns/pattern-2025-08-14-170323",
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T17:03:23.817Z",
+=======
+      "href": "/reports/patterns/pattern-2025-08-14-172209",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T17:22:09.686Z",
+>>>>>>> 36213c4808 (chore(sync): advanced autonomous sync)
       "source": "cloud-deep-research-factory"
     }
   ]
