@@ -1,6 +1,11 @@
 {
+<<<<<<< Updated upstream
   "generatedAt": "2025-08-14T02:54:12.194Z",
   "pagesScanned": 1672,
+=======
+  "generatedAt": "2025-08-14T03:24:00.592Z",
+  "pagesScanned": 1682,
+>>>>>>> Stashed changes
   "items": [
     {
       "route": "/404",
@@ -15985,6 +15990,29 @@
       }
     },
     {
+<<<<<<< Updated upstream
+=======
+      "route": "/reports/updates/update-2025-08-14-0022",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 00:22",
+        "description": "Autonomous Update — 2025-08-14 00:22 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0023",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 00:23",
+        "description": "Autonomous Update — 2025-08-14 00:23 — auto-suggested description"
+      }
+    },
+    {
+>>>>>>> Stashed changes
       "route": "/reports/updates/update-2025-08-14-0024",
       "missing": [
         "og:image"
