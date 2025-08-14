@@ -1,67 +1,32 @@
 {
-  "generatedAt": "2025-08-14T00:37:08.735Z",
+  "generatedAt": "2025-08-14T00:37:24.892Z",
   "items": [
     {
-      "title": "Playbook: LLM Apps",
-      "subtitle": "Patterns to improve reliability.",
-      "path": "/reports/innovations/insight-2025-08-14-0037",
-      "createdAt": "2025-08-14T00:37:11.920Z",
-      "kind": "insight"
-    },
-    {
       "title": "Innovation Insight — 2025-08-14 00-37",
       "href": "/reports/innovations/insight-2025-08-14T00-37",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:37:08.247Z",
+      "createdAt": "2025-08-14T00:37:24.313Z",
       "source": "cloud-content-factory"
     },
     {
       "title": "Autonomous Update — 2025-08-14 00-37",
       "href": "/reports/updates/update-2025-08-14T00-37",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:37:08.247Z",
+      "createdAt": "2025-08-14T00:37:24.313Z",
       "source": "cloud-content-factory"
     },
     {
       "title": "Innovation Insight — 2025-08-14 00-37",
       "href": "/reports/innovations/insight-2025-08-14T00-37",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:37:08.247Z",
+      "createdAt": "2025-08-14T00:37:24.313Z",
       "source": "cloud-content-factory"
     },
     {
       "title": "Autonomous Update — 2025-08-14 00-37",
       "href": "/reports/updates/update-2025-08-14T00-37",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:37:08.247Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-14 00-37",
-      "href": "/reports/innovations/insight-2025-08-14T00-37",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:37:08.141Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-14 00-37",
-      "href": "/reports/updates/update-2025-08-14T00-37",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:37:08.141Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-14 00-37",
-      "href": "/reports/innovations/insight-2025-08-14T00-37",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:37:08.141Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-14 00-37",
-      "href": "/reports/updates/update-2025-08-14T00-37",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:37:08.141Z",
+      "createdAt": "2025-08-14T00:37:24.313Z",
       "source": "cloud-content-factory"
     }
   ]
