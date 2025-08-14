@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T00:45:54.678Z",
+  "generatedAt": "2025-08-14T00:46:10.522Z",
   "entries": [
     {
       "route": "/site-health",
@@ -294,6 +294,12 @@
       "file": "pages/reports/updates/update-2025-08-14T00-00.tsx",
       "title": "Autonomous Update — 2025-08-14 00-00",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-14 00-00 Autonomous Update — 2025-08-14 00-00 Signal source: https://ziontechgroup.com/ Autonomous cloud systems are live and improving the app in real timeAutonomous Cloud Automat"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0045",
+      "file": "pages/reports/updates/update-2025-08-14-0045.tsx",
+      "title": "Autonomous Security Hardening Guide — AI Service Design (2025-08-14 00:45 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Security Hardening Guide — AI Service Design (2025-08-14 00:45 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}"
     },
     {
       "route": "/reports/updates/update-2025-08-14-0044",
