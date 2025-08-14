@@ -289,7 +289,19 @@
     "cloud:advertise": "node automation/cloud-content-advertiser.cjs",
     "cloud:continuous": "node scripts/continuous-cloud-agents.cjs",
     "gh:trigger": "node scripts/trigger-workflows.cjs",
-    "gh:auto-heal": "node scripts/workflows-auto-healer.cjs && git add .github/workflows && git commit -m 'ci(auto-heal): normalize workflows [skip ci]' || true && git push origin HEAD"
+    "gh:auto-heal": "node scripts/workflows-auto-healer.cjs && git add .github/workflows && git commit -m 'ci(auto-heal): normalize workflows [skip ci]' || true && git push origin HEAD",
+    "turbo:start": "pm2 start ecosystem-turbo.config.js",
+    "turbo:stop": "pm2 stop ecosystem-turbo.config.js",
+    "turbo:restart": "pm2 restart ecosystem-turbo.config.js",
+    "turbo:status": "pm2 status",
+    "turbo:generate": "node automation/service-factory/turbo-service-generator.cjs turbo",
+    "turbo:optimize": "node automation/service-factory/turbo-performance-optimizer.cjs turbo",
+    "turbo:pipeline": "node automation/service-factory/ultimate-service-factory-turbo.cjs turbo",
+    "turbo:benchmark": "node automation/service-factory/turbo-benchmark.cjs",
+    "turbo:stress-test": "node automation/service-factory/turbo-stress-test.cjs",
+    "turbo:monitor": "pm2 monit",
+    "turbo:logs": "pm2 logs",
+    "turbo:cleanup": "pm2 delete all && pm2 save"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",

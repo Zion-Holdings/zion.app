@@ -1,0 +1,26 @@
+{
+  "name": "ai-service-factory-turbo",
+  "version": "1.0.0",
+  "description": "AI Service Factory - TURBO MODE for Maximum Performance",
+  "main": "automation/service-factory/ultimate-service-factory-turbo.cjs",
+  "scripts": {
+    "turbo:start": "pm2 start ecosystem-turbo.config.js",
+    "turbo:stop": "pm2 stop ecosystem-turbo.config.js",
+    "turbo:restart": "pm2 restart ecosystem-turbo.config.js",
+    "turbo:status": "pm2 status",
+    "turbo:generate": "node automation/service-factory/turbo-service-generator.cjs turbo",
+    "turbo:optimize": "node automation/service-factory/turbo-performance-optimizer.cjs turbo",
+    "turbo:pipeline": "node automation/service-factory/ultimate-service-factory-turbo.cjs turbo",
+    "turbo:benchmark": "node automation/service-factory/turbo-benchmark.cjs",
+    "turbo:stress-test": "node automation/service-factory/turbo-stress-test.cjs",
+    "turbo:monitor": "pm2 monit",
+    "turbo:logs": "pm2 logs",
+    "turbo:cleanup": "pm2 delete all && pm2 save"
+  },
+  "dependencies": {
+    "pm2": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
