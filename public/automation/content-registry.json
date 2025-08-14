@@ -65,6 +65,10 @@
       "route": "/automation"
     },
     {
+      "file": "pages/reports/patterns/pattern-2025-08-14-090709.tsx",
+      "route": "/reports/patterns/pattern-2025-08-14-090709"
+    },
+    {
       "file": "pages/reports/patterns/pattern-2025-08-14-090657.tsx",
       "route": "/reports/patterns/pattern-2025-08-14-090657"
     },
@@ -1069,6 +1073,10 @@
       "route": "/reports/playbooks/playbook-2025-08-13-223010"
     },
     {
+      "file": "pages/reports/guides/guide-2025-08-14-090709.tsx",
+      "route": "/reports/guides/guide-2025-08-14-090709"
+    },
+    {
       "file": "pages/reports/guides/guide-2025-08-14-090657.tsx",
       "route": "/reports/guides/guide-2025-08-14-090657"
     },
@@ -1295,6 +1303,10 @@
     {
       "file": "pages/reports/guides/guide-2025-08-13-215625.tsx",
       "route": "/reports/guides/guide-2025-08-13-215625"
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-14-090709.tsx",
+      "route": "/reports/cases/case-2025-08-14-090709"
     },
     {
       "file": "pages/reports/cases/case-2025-08-14-090657.tsx",
@@ -9171,28 +9183,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-14T09:07:04.025Z",
-  "items": [
-    {
-      "title": "Case Study — Autonomous Reports",
-      "href": "/reports/cases/case-2025-08-14-090709",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T09:07:09.933Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Guide — Techcrunch Pebble Implementation",
-      "href": "/reports/guides/guide-2025-08-14-090709",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T09:07:09.933Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Pattern — Trigger Homepage Sitemap",
-      "href": "/reports/patterns/pattern-2025-08-14-090709",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T09:07:09.933Z",
-      "source": "cloud-deep-research-factory"
-    }
-  ]
+  "generatedAt": "2025-08-14T09:07:16.168Z"
 }
