@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T18:57:56.934Z",
-  "pagesScanned": 3469,
+  "generatedAt": "2025-08-14T18:59:00.662Z",
+  "pagesScanned": 3478,
   "items": [
     {
       "route": "/404",
@@ -33,7 +33,11 @@
     {
       "route": "/_document",
       "missing": [
-        "og:image"
+        "description",
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "_document",
@@ -86,8 +90,8 @@
         "og:image"
       ],
       "suggestion": {
-        "title": "Page",
-        "description": "Page — auto-suggested description"
+        "title": "Zion — Latest Autonomous Content",
+        "description": "Zion — Latest Autonomous Content — auto-suggested description"
       }
     },
     {
@@ -113,10 +117,7 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -3369,6 +3370,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-183647",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-185827",
       "missing": [
         "og:image"
       ],
@@ -7378,6 +7389,16 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-14-185827",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide —  Implementation",
+        "description": "Guide —  Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/",
       "missing": [
         "og:image"
@@ -9528,6 +9549,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14-1858",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Runbook: AI QA & Eval",
+        "description": "Runbook: AI QA & Eval — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -10735,6 +10766,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-14 18-56",
         "description": "Innovation Insight — 2025-08-14 18-56 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14T18-58",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-14 18-58",
+        "description": "Innovation Insight — 2025-08-14 18-58 — auto-suggested description"
       }
     },
     {
@@ -13309,6 +13350,16 @@
     },
     {
       "route": "/reports/patterns/pattern-2025-08-14-183647",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Intelligence",
+        "description": "Pattern — Cloud Intelligence — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-14-185827",
       "missing": [
         "og:image"
       ],
@@ -16549,6 +16600,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-183647",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-185827",
       "missing": [
         "og:image"
       ],
@@ -33140,10 +33201,7 @@
     {
       "route": "/reports/updates/update-2025-08-14-1336",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 13:36",
@@ -33283,14 +33341,24 @@
     {
       "route": "/reports/updates/update-2025-08-14-1557",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 15:57",
+        "description": "Autonomous Update — 2025-08-14 15:57 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1559",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-14 15:57",
-        "description": "Autonomous Update — 2025-08-14 15:57 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-14 15:59",
+        "description": "Autonomous Update — 2025-08-14 15:59 — auto-suggested description"
       }
     },
     {
@@ -33461,6 +33529,16 @@
       "suggestion": {
         "title": "Autonomous Capability Map — MLOps & Model Reliability (2025-08-14 18:36 UTC)",
         "description": "Autonomous Capability Map — MLOps & Model Reliability (2025-08-14 18:36 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1858",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Reference Architecture — AI Service Design (2025-08-14 18:58 UTC)",
+        "description": "Autonomous Reference Architecture — AI Service Design (2025-08-14 18:58 UTC) — auto-suggested description"
       }
     },
     {
@@ -34671,6 +34749,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 18-56",
         "description": "Autonomous Update — 2025-08-14 18-56 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14T18-58",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 18-58",
+        "description": "Autonomous Update — 2025-08-14 18-58 — auto-suggested description"
       }
     },
     {
