@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T21:46:49.222Z",
+  "generatedAt": "2025-08-14T21:46:57.988Z",
   "knownRoutes": [
     "/",
     "/404",
@@ -56,6 +56,7 @@
     "/reports/blueprints/blueprint-2025-08-14-214619",
     "/reports/blueprints/blueprint-2025-08-14-214623",
     "/reports/blueprints/blueprint-2025-08-14-214647",
+    "/reports/blueprints/blueprint-2025-08-14-214657",
     "/reports/cases/case-2025-08-14-212854",
     "/reports/cases/case-2025-08-14-212855",
     "/reports/cases/case-2025-08-14-212903",
@@ -131,6 +132,7 @@
     "/reports/cases/case-2025-08-14-214637",
     "/reports/cases/case-2025-08-14-214639",
     "/reports/cases/case-2025-08-14-214647",
+    "/reports/cases/case-2025-08-14-214657",
     "/reports/guides/guide-2025-08-14-212854",
     "/reports/guides/guide-2025-08-14-212855",
     "/reports/guides/guide-2025-08-14-212903",
@@ -206,6 +208,7 @@
     "/reports/guides/guide-2025-08-14-214637",
     "/reports/guides/guide-2025-08-14-214639",
     "/reports/guides/guide-2025-08-14-214647",
+    "/reports/guides/guide-2025-08-14-214657",
     "/reports/innovations/insight-2025-08-14-2130",
     "/reports/innovations/insight-2025-08-14-2134",
     "/reports/innovations/insight-2025-08-14-2135",
@@ -301,6 +304,7 @@
     "/reports/patterns/pattern-2025-08-14-214637",
     "/reports/patterns/pattern-2025-08-14-214639",
     "/reports/patterns/pattern-2025-08-14-214647",
+    "/reports/patterns/pattern-2025-08-14-214657",
     "/reports/playbooks/playbook-2025-08-14-212855",
     "/reports/playbooks/playbook-2025-08-14-212923",
     "/reports/playbooks/playbook-2025-08-14-212947",
@@ -347,6 +351,7 @@
     "/reports/playbooks/playbook-2025-08-14-214619",
     "/reports/playbooks/playbook-2025-08-14-214623",
     "/reports/playbooks/playbook-2025-08-14-214647",
+    "/reports/playbooks/playbook-2025-08-14-214657",
     "/reports/updates/update-2025-08-14-1814",
     "/reports/updates/update-2025-08-14-1815",
     "/reports/updates/update-2025-08-14-1816",
@@ -537,17 +542,22 @@
     },
     {
       "file": "pages/main/front/index.tsx",
-      "href": "/reports/a11y",
-      "suggestion": null
-    },
-    {
-      "file": "pages/main/front/index.tsx",
-      "href": "/reports/metadata",
-      "suggestion": null
-    },
-    {
-      "file": "pages/main/front/index.tsx",
       "href": "/main/front#features",
+      "suggestion": null
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "href": "/main/front#capabilities",
+      "suggestion": null
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "href": "/main/front#benefits",
+      "suggestion": null
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "href": "/.netlify/functions/docs-index-runner",
       "suggestion": null
     },
     {
