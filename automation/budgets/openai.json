@@ -1,0 +1,19 @@
+{
+  "date": "2025-08-14",
+  "month": "2025-08",
+  "dailyLimit": 2.5,
+  "monthlyLimit": 50,
+  "dailySpent": 0.5,
+  "monthlySpent": 0.5,
+  "dailyResetCount": 0,
+  "monthlyResetCount": 0,
+  "transactions": [
+    {
+      "timestamp": "2025-08-14T19:52:24.723Z",
+      "amount": 0.5,
+      "description": "Test API call",
+      "dailySpent": 0.5,
+      "monthlySpent": 0.5
+    }
+  ]
+}

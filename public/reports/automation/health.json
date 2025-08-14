@@ -1,0 +1,55 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-08-14T19:52:24.726Z",
+  "functions": {
+    "test_function": {
+      "name": "test_function",
+      "lastRunAt": "2025-08-14T19:52:24.725Z",
+      "lastSuccessAt": "2025-08-14T19:52:24.725Z",
+      "lastFailureAt": null,
+      "totalRuns": 1,
+      "successfulRuns": 1,
+      "failedRuns": 0,
+      "skippedRuns": 0,
+      "totalDurationMs": 1500,
+      "averageDurationMs": 1500,
+      "totalCommits": 2,
+      "lastError": null,
+      "consecutiveFailures": 0,
+      "consecutiveSuccesses": 1,
+      "status": "healthy"
+    }
+  },
+  "workflows": {
+    "test_workflow": {
+      "name": "test_workflow",
+      "lastRunAt": "2025-08-14T19:52:24.726Z",
+      "lastSuccessAt": "2025-08-14T19:52:24.726Z",
+      "lastFailureAt": null,
+      "totalRuns": 1,
+      "successfulRuns": 1,
+      "failedRuns": 0,
+      "skippedRuns": 0,
+      "cancelledRuns": 0,
+      "totalDurationMs": 30000,
+      "averageDurationMs": 30000,
+      "totalCommits": 1,
+      "lastError": null,
+      "consecutiveFailures": 0,
+      "consecutiveSuccesses": 1,
+      "status": "healthy"
+    }
+  },
+  "summary": {
+    "totalFunctions": 1,
+    "totalWorkflows": 1,
+    "healthyFunctions": 1,
+    "healthyWorkflows": 1,
+    "failedFunctions": 0,
+    "failedWorkflows": 0,
+    "totalCommits": 3,
+    "totalErrors": 0,
+    "averageFunctionDuration": 1500,
+    "averageWorkflowDuration": 30000
+  }
+}
