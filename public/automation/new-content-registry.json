@@ -1,33 +1,40 @@
 {
-  "generatedAt": "2025-08-14T13:40:17.545Z",
+  "generatedAt": "2025-08-14T13:53:47.404Z",
   "items": [
     {
-      "title": "Innovation Insight — 2025-08-14 13-40",
-      "href": "/reports/innovations/insight-2025-08-14T13-40",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-14-135347",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T13:40:17.480Z",
-      "source": "cloud-content-factory"
+      "createdAt": "2025-08-14T13:53:47.371Z",
+      "source": "cloud-blueprint-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-14 13-40",
-      "href": "/reports/updates/update-2025-08-14T13-40",
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-14-135347",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T13:40:17.480Z",
-      "source": "cloud-content-factory"
+      "createdAt": "2025-08-14T13:53:47.339Z",
+      "source": "cloud-playbook-factory"
     },
     {
-      "title": "Innovation Insight — 2025-08-14 13-40",
-      "href": "/reports/innovations/insight-2025-08-14T13-40",
+      "title": "Case Study — Autonomous Reports",
+      "href": "/reports/cases/case-2025-08-14-135347",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T13:40:17.480Z",
-      "source": "cloud-content-factory"
+      "createdAt": "2025-08-14T13:53:47.299Z",
+      "source": "cloud-deep-research-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-14 13-40",
-      "href": "/reports/updates/update-2025-08-14T13-40",
+      "title": "Guide — Techcrunch Pebble Implementation",
+      "href": "/reports/guides/guide-2025-08-14-135347",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T13:40:17.480Z",
-      "source": "cloud-content-factory"
+      "createdAt": "2025-08-14T13:53:47.299Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Trigger Homepage Sitemap",
+      "href": "/reports/patterns/pattern-2025-08-14-135347",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T13:53:47.299Z",
+      "source": "cloud-deep-research-factory"
     }
   ]
 }
