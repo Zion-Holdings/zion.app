@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
-import { FuturisticLayout } from '../components/FuturisticLayout';
+import FuturisticLayout from '../components/FuturisticLayout';
 
 interface AutomationHealth {
   version: string;
