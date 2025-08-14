@@ -14,6 +14,7 @@ pnpm-debug.log*
 automation/logs/
 automation/.git-sync.lock
 automation/.content-completer.lock
+automation/.chat-to-agents.lock
 
 # OS/Editor
 .DS_Store
