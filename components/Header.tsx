@@ -5,6 +5,7 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navItems = [
+    { href: '/landing', label: 'Landing' },
     { href: '/explore', label: 'Explore' },
     { href: '/services', label: 'Services' },
     { href: '/automation', label: 'Automations' },
