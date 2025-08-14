@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T21:33:57.877Z",
-  "pagesScanned": 131,
+  "generatedAt": "2025-08-14T21:34:21.362Z",
+  "pagesScanned": 137,
   "items": [
     {
       "route": "/404",
@@ -123,7 +123,10 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -252,6 +255,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-213355",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-213418",
       "missing": [
         "og:image"
       ],
@@ -511,6 +524,16 @@
       }
     },
     {
+      "route": "/reports/cases/case-2025-08-14-213418",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Trigger Homepage",
+        "description": "Case Study — Trigger Homepage — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/guides/guide-2025-08-14-212854",
       "missing": [
         "og:image"
@@ -752,6 +775,16 @@
     },
     {
       "route": "/reports/guides/guide-2025-08-14-213354",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-14-213418",
       "missing": [
         "og:image"
       ],
@@ -1031,6 +1064,16 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-14-213418",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Improving Continuously",
+        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-14-212855",
       "missing": [
         "og:image"
@@ -1161,6 +1204,16 @@
       }
     },
     {
+      "route": "/reports/playbooks/playbook-2025-08-14-213418",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-14-1814",
       "missing": [
         "og:image"
@@ -1258,6 +1311,19 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 18:33",
         "description": "Autonomous Update — 2025-08-14 18:33 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1834",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 18:34",
+        "description": "Autonomous Update — 2025-08-14 18:34 — auto-suggested description"
       }
     },
     {
