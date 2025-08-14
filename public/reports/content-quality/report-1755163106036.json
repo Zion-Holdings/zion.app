@@ -1,12 +1,6 @@
 {
-<<<<<<< ours
-  "generatedAt": "2025-08-14T09:18:30.329Z",
-  "files": [
-    "update-2025-08-14T09-18.tsx",
-=======
   "generatedAt": "2025-08-14T09:18:26.035Z",
   "files": [
->>>>>>> theirs
     "update-2025-08-14-0918.tsx",
     "update-2025-08-14-0618.tsx",
     "update-2025-08-14-0617.tsx",
@@ -105,20 +99,12 @@
     "update-2025-08-14-0459.tsx",
     "update-2025-08-14-0458.tsx",
     "update-2025-08-14-0457.tsx",
-<<<<<<< ours
-    "update-2025-08-14-0456.tsx"
-  ],
-  "metrics": {
-    "diversityScore": 100,
-    "avgLen": 1947,
-=======
     "update-2025-08-14-0456.tsx",
     "update-2025-08-14-0455.tsx"
   ],
   "metrics": {
     "diversityScore": 100,
     "avgLen": 1960,
->>>>>>> theirs
     "duplicateCount": 0,
     "seoScore": 18
   },
