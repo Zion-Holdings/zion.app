@@ -425,6 +425,10 @@
       "route": "/reports/playbooks/playbook-2025-08-14-212855"
     },
     {
+      "file": "pages/reports/patterns/pattern-2025-08-14-233721.tsx",
+      "route": "/reports/patterns/pattern-2025-08-14-233721"
+    },
+    {
       "file": "pages/reports/patterns/pattern-2025-08-14-232007.tsx",
       "route": "/reports/patterns/pattern-2025-08-14-232007"
     },
@@ -857,6 +861,10 @@
       "route": "/reports/innovations/insight-2025-08-14-2130"
     },
     {
+      "file": "pages/reports/guides/guide-2025-08-14-233721.tsx",
+      "route": "/reports/guides/guide-2025-08-14-233721"
+    },
+    {
       "file": "pages/reports/guides/guide-2025-08-14-232007.tsx",
       "route": "/reports/guides/guide-2025-08-14-232007"
     },
@@ -1163,6 +1171,10 @@
     {
       "file": "pages/reports/guides/guide-2025-08-14-212854.tsx",
       "route": "/reports/guides/guide-2025-08-14-212854"
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-14-233721.tsx",
+      "route": "/reports/cases/case-2025-08-14-233721"
     },
     {
       "file": "pages/reports/cases/case-2025-08-14-232007.tsx",
@@ -1703,32 +1715,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-<<<<<<< HEAD
-  "generatedAt": "2025-08-14T23:30:53.987Z"
-=======
-  "generatedAt": "2025-08-14T23:37:17.818Z",
-  "items": [
-    {
-      "title": "Case Study — Trigger Homepage",
-      "href": "/reports/cases/case-2025-08-14-233721",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T23:37:21.652Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Guide — Cloud Improving Implementation",
-      "href": "/reports/guides/guide-2025-08-14-233721",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T23:37:21.652Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Pattern — Cloud Improving Continuously",
-      "href": "/reports/patterns/pattern-2025-08-14-233721",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T23:37:21.652Z",
-      "source": "cloud-deep-research-factory"
-    }
-  ]
->>>>>>> 9da7feba7d (chore(sync): advanced autonomous sync)
+  "generatedAt": "2025-08-14T23:51:32.630Z"
 }
