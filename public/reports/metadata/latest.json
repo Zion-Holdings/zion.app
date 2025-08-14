@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T00:46:45.207Z",
-  "pagesScanned": 1582,
+  "generatedAt": "2025-08-14T00:47:26.488Z",
+  "pagesScanned": 1592,
   "items": [
     {
       "route": "/404",
@@ -1569,6 +1569,36 @@
       }
     },
     {
+      "route": "/reports/blueprints/blueprint-2025-08-14-004653",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-004654",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-004658",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/guides/guide-2025-08-13-215625",
       "missing": [
         "og:image"
@@ -2829,6 +2859,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14-0047",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide: RAG Platforms",
+        "description": "Guide: RAG Platforms — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -3176,6 +3216,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-14 00-46",
         "description": "Innovation Insight — 2025-08-14 00-46 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14T00-47",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-14 00-47",
+        "description": "Innovation Insight — 2025-08-14 00-47 — auto-suggested description"
       }
     },
     {
@@ -4670,6 +4720,46 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-004627",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-004701",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-004702",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-004703",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-004706",
       "missing": [
         "og:image"
       ],
@@ -15786,6 +15876,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 00-46",
         "description": "Autonomous Update — 2025-08-14 00-46 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14T00-47",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 00-47",
+        "description": "Autonomous Update — 2025-08-14 00-47 — auto-suggested description"
       }
     },
     {
