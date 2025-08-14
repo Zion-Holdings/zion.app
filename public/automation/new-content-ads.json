@@ -1,31 +1,10 @@
 {
   "items": [
     {
-      "title": "Pilot Plan: Agent Ops",
-      "desc": "Patterns to accelerate delivery.",
-      "href": "/reports/innovations/insight-2025-08-14-1026"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-14 10-20"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-14 10-20"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-14 10-20"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-14 10-20"
-    },
-    {
-      "title": "Case Study — Autonomous Reports"
-    },
-    {
-      "title": "Guide — Techcrunch Pebble Implementation"
-    },
-    {
-      "title": "Pattern — Trigger Homepage Sitemap"
+      "title": "Runbook: RAG Platforms",
+      "desc": "Patterns to enhance security.",
+      "href": "/reports/innovations/insight-2025-08-14-1056"
     }
   ],
-  "updatedAt": "2025-08-14T10:26:21.223Z"
+  "updatedAt": "2025-08-14T10:56:20.804Z"
 }
