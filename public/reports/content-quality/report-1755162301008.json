@@ -1,6 +1,7 @@
 {
-  "generatedAt": "2025-08-14T09:04:59.728Z",
+  "generatedAt": "2025-08-14T09:05:01.007Z",
   "files": [
+    "update-2025-08-14-0605.tsx",
     "update-2025-08-14-0604.tsx",
     "update-2025-08-14-0603.tsx",
     "update-2025-08-14-0602.tsx",
@@ -99,12 +100,11 @@
     "update-2025-08-14-0424.tsx",
     "update-2025-08-14-0423.tsx",
     "update-2025-08-14-0422.tsx",
-    "update-2025-08-14-0421.tsx",
-    "update-2025-08-14T07-20.tsx"
+    "update-2025-08-14-0421.tsx"
   ],
   "metrics": {
     "diversityScore": 100,
-    "avgLen": 2058,
+    "avgLen": 2068,
     "duplicateCount": 0,
     "seoScore": 9
   },
