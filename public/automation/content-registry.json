@@ -745,6 +745,7 @@
       "route": "/reports/playbooks/playbook-2025-08-13-223010"
     },
     {
+<<<<<<< HEAD
       "file": "pages/reports/cases/case-2025-08-14-051017.tsx",
       "route": "/reports/cases/case-2025-08-14-051017"
     },
@@ -753,6 +754,8 @@
       "route": "/reports/cases/case-2025-08-14-040018"
     },
     {
+=======
+>>>>>>> e6fabac19e (chore(sync): advanced autonomous sync)
       "file": "pages/reports/guides/guide-2025-08-14-051017.tsx",
       "route": "/reports/guides/guide-2025-08-14-051017"
     },
@@ -1547,6 +1550,14 @@
     {
       "file": "pages/reports/innovations/index.tsx",
       "route": "/reports/innovations"
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-14-051017.tsx",
+      "route": "/reports/cases/case-2025-08-14-051017"
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-14-040018.tsx",
+      "route": "/reports/cases/case-2025-08-14-040018"
     },
     {
       "file": "pages/reports/blueprints/blueprint-2025-08-14-051017.tsx",
@@ -7315,5 +7326,32 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
+<<<<<<< HEAD
   "generatedAt": "2025-08-14T05:16:00.531Z"
+=======
+  "generatedAt": "2025-08-14T05:16:13.760Z",
+  "items": [
+    {
+      "title": "Case Study — Autonomous Reports",
+      "href": "/reports/cases/case-2025-08-14-051614",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T05:16:14.816Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Techcrunch Pebble Implementation",
+      "href": "/reports/guides/guide-2025-08-14-051614",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T05:16:14.816Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Trigger Homepage Sitemap",
+      "href": "/reports/patterns/pattern-2025-08-14-051614",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T05:16:14.816Z",
+      "source": "cloud-deep-research-factory"
+    }
+  ]
+>>>>>>> e6fabac19e (chore(sync): advanced autonomous sync)
 }
