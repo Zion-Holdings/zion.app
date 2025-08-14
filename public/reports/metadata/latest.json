@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T09:05:02.957Z",
-  "pagesScanned": 2252,
+  "generatedAt": "2025-08-14T09:05:28.845Z",
+  "pagesScanned": 2255,
   "items": [
     {
       "route": "/404",
@@ -2398,6 +2398,16 @@
       }
     },
     {
+      "route": "/reports/cases/case-2025-08-14-090519",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Autonomous Reports",
+        "description": "Case Study — Autonomous Reports — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/guides/guide-2025-08-13-215625",
       "missing": [
         "og:image"
@@ -2879,6 +2889,16 @@
     },
     {
       "route": "/reports/guides/guide-2025-08-14-090500",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Techcrunch Pebble Implementation",
+        "description": "Guide — Techcrunch Pebble Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-14-090519",
       "missing": [
         "og:image"
       ],
@@ -5669,6 +5689,16 @@
     },
     {
       "route": "/reports/patterns/pattern-2025-08-14-090500",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Trigger Homepage Sitemap",
+        "description": "Pattern — Trigger Homepage Sitemap — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-14-090519",
       "missing": [
         "og:image"
       ],
