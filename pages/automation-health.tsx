@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { GetServerSideProps } from 'next';
+import type { GetStaticProps } from 'next';
 import Head from 'next/head';
 import FuturisticLayout from '../components/FuturisticLayout';
 
@@ -450,7 +450,7 @@ export default function AutomationHealthPage({ health, controlPlane, scheduleHin
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   try {
     // Fetch automation health data
     const healthResponse = await fetch('http://localhost:3000/reports/automation/health.json');

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T20:56:02.672Z",
+  "generatedAt": "2025-08-14T20:58:02.648Z",
   "entries": [
     {
       "route": "/site-health",
@@ -29,7 +29,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "Zion — Latest Autonomous Content",
-      "summary": "import Head from 'next/head'; export default function Home() { return ( Zion — Latest Autonomous Content Zion — Latest Autonomous Content {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 14: 1756 Freshly published by autono"
+      "summary": "import Head from 'next/head'; export default function Home() { return ( Zion — Latest Autonomous Content Zion — Latest Autonomous Content {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 14: 1758 Freshly published by autono"
     },
     {
       "route": "/contact",
@@ -41,7 +41,7 @@
       "route": "/automation-health",
       "file": "pages/automation-health.tsx",
       "title": "Automation Health Dashboard | Zion Tech Group",
-      "summary": "import React, { useState } from 'react'; import { GetServerSideProps } from 'next'; import Head from 'next/head'; import FuturisticLayout from '../components/FuturisticLayout'; interface AutomationHealth { version: string; lastUpdated: string; functions: Record ; workflows: Recor"
+      "summary": "import React, { useState } from 'react'; import type { GetStaticProps } from 'next'; import Head from 'next/head'; import FuturisticLayout from '../components/FuturisticLayout'; interface AutomationHealth { version: string; lastUpdated: string; functions: Record ; workflows: Reco"
     },
     {
       "route": "/_document",
@@ -966,6 +966,18 @@
       "file": "pages/reports/updates/update-2025-08-14-1836.tsx",
       "title": "Autonomous Capability Map — MLOps & Model Reliability (2025-08-14 18:36 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Capability Map — MLOps & Model Reliability (2025-08-14 18:36 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\","
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1758",
+      "file": "pages/reports/updates/update-2025-08-14-1758.tsx",
+      "title": "Autonomous Update — 2025-08-14 17:58",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-14 17:58 Autonomous Update — 2025-08-14 17:58 Signal over noise—your automated update is here. Today's Highlight Hacker News : Air Con: $1697 for an on/off switch · 2001 pts "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1757",
+      "file": "pages/reports/updates/update-2025-08-14-1757.tsx",
+      "title": "Autonomous Update — 2025-08-14 17:57",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-14 17:57 Autonomous Update — 2025-08-14 17:57 Signal over noise—your automated update is here. Today's Highlight Hacker News : Open source AI is the path forward · 2360 pts W"
     },
     {
       "route": "/reports/updates/update-2025-08-14-1756",
