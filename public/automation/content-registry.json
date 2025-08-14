@@ -717,10 +717,6 @@
       "route": "/reports/guides/guide-2025-08-13-215625"
     },
     {
-      "file": "pages/reports/cases/case-2025-08-14-040018.tsx",
-      "route": "/reports/cases/case-2025-08-14-040018"
-    },
-    {
       "file": "pages/reports/innovations/insight-2025-08-14T04-00.tsx",
       "route": "/reports/innovations/insight-2025-08-14T04-00"
     },
@@ -1427,6 +1423,10 @@
     {
       "file": "pages/reports/innovations/index.tsx",
       "route": "/reports/innovations"
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-14-040018.tsx",
+      "route": "/reports/cases/case-2025-08-14-040018"
     },
     {
       "file": "pages/reports/blueprints/blueprint-2025-08-14-040018.tsx",
@@ -6915,5 +6915,32 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
+<<<<<<< HEAD
   "generatedAt": "2025-08-14T04:07:52.962Z"
+=======
+  "generatedAt": "2025-08-14T04:07:50.176Z",
+  "items": [
+    {
+      "title": "Case Study — Autonomous Reports",
+      "href": "/reports/cases/case-2025-08-14-040752",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T04:07:52.291Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Techcrunch Pebble Implementation",
+      "href": "/reports/guides/guide-2025-08-14-040752",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T04:07:52.291Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Trigger Homepage Sitemap",
+      "href": "/reports/patterns/pattern-2025-08-14-040752",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T04:07:52.291Z",
+      "source": "cloud-deep-research-factory"
+    }
+  ]
+>>>>>>> 79b3ce21dd (chore(sync): advanced autonomous sync)
 }
