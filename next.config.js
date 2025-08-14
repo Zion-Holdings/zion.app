@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   trailingSlash: true,
-  optimizeFonts: false,
   productionBrowserSourceMaps: false,
   async redirects() {
     return [
