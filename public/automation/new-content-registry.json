@@ -2,6 +2,13 @@
   "generatedAt": "2025-08-14T11:43:09.280Z",
   "items": [
     {
+      "title": "Checklist: Agent Ops",
+      "subtitle": "Patterns to increase accuracy.",
+      "path": "/reports/innovations/insight-2025-08-14-1155",
+      "createdAt": "2025-08-14T11:55:41.376Z",
+      "kind": "insight"
+    },
+    {
       "title": "Reference Architecture — Autonomous Content Mesh",
       "href": "/reports/blueprints/blueprint-2025-08-14-114309",
       "desc": "New autonomous content",

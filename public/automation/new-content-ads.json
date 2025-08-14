@@ -1,15 +1,25 @@
 {
   "items": [
     {
-      "title": "Runbook: FinOps for AI",
-      "desc": "Patterns to enhance security.",
-      "href": "/reports/innovations/insight-2025-08-14-1101"
+      "title": "Checklist: Agent Ops",
+      "desc": "Patterns to increase accuracy.",
+      "href": "/reports/innovations/insight-2025-08-14-1155"
     },
     {
-      "title": "Runbook: RAG Platforms",
-      "desc": "Patterns to enhance security.",
-      "href": "/reports/innovations/insight-2025-08-14-1056"
+      "title": "Reference Architecture — Autonomous Content Mesh"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery"
+    },
+    {
+      "title": "Case Study — Autonomous Reports"
+    },
+    {
+      "title": "Guide — Techcrunch Pebble Implementation"
+    },
+    {
+      "title": "Pattern — Trigger Homepage Sitemap"
     }
   ],
-  "updatedAt": "2025-08-14T11:01:44.687Z"
+  "updatedAt": "2025-08-14T11:55:41.401Z"
 }
