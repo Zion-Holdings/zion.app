@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T00:45:43.531Z",
+  "generatedAt": "2025-08-14T00:45:54.678Z",
   "entries": [
     {
       "route": "/site-health",
@@ -23,7 +23,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "index",
-      "summary": "import Landing from '../components/Landing'; export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 14T00: 44 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: "
+      "summary": "import Landing from '../components/Landing'; export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 2145 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 1"
     },
     {
       "route": "/contact",
@@ -918,6 +918,12 @@
       "file": "pages/reports/updates/update-2025-08-13-2147.tsx",
       "title": "Autonomous Blueprint — Data Engineering (2025-08-13 21:47 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Blueprint — Data Engineering (2025-08-13 21:47 UTC) Autonomous Blueprint — Data Engineering (2025-08-13 21:47 UTC) Innovative, useful guidance to streamline CI/CD for models. What it is: Blue"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2145",
+      "file": "pages/reports/updates/update-2025-08-13-2145.tsx",
+      "title": "Autonomous Update — 2025-08-13 21:45",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 21:45 Autonomous Update — 2025-08-13 21:45 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Zoom terms now allow training AI on "
     },
     {
       "route": "/reports/updates/update-2025-08-13-2144",
@@ -6716,6 +6722,24 @@
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-12 14:17 Autonomous Update — 2025-08-12 14:17 This page was created automatically by the content creator automation. It showcases our continuous, autonomous publishing pipeli"
     },
     {
+      "route": "/reports/playbooks/playbook-2025-08-14-004509",
+      "file": "pages/reports/playbooks/playbook-2025-08-14-004509.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/main/front Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objec"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-004508",
+      "file": "pages/reports/playbooks/playbook-2025-08-14-004508.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/main/front Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objec"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-004507",
+      "file": "pages/reports/playbooks/playbook-2025-08-14-004507.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/main/front Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objec"
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-14-004503",
       "file": "pages/reports/playbooks/playbook-2025-08-14-004503.tsx",
       "title": "Playbook — Autonomous Delivery",
@@ -7758,6 +7782,12 @@
       "file": "pages/reports/innovations/insight-2025-08-14T00-00.tsx",
       "title": "Innovation Insight — 2025-08-14 00-00",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-14 00-00 Innovation Insight — 2025-08-14 00-00 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14-0045",
+      "file": "pages/reports/innovations/insight-2025-08-14-0045.tsx",
+      "title": "Guide: Agent Ops",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Guide: Agent Ops Guide: Agent Ops Patterns to increase accuracy. Scope: Guide: Agent Ops. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observability, rollbac"
     },
     {
       "route": "/reports/innovations/insight-2025-08-14-0044",

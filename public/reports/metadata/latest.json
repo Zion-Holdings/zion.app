@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T00:45:21.713Z",
-  "pagesScanned": 1563,
+  "generatedAt": "2025-08-14T00:45:55.293Z",
+  "pagesScanned": 1568,
   "items": [
     {
       "route": "/404",
@@ -1500,6 +1500,26 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-004500",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-004536",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-004543",
       "missing": [
         "og:image"
       ],
@@ -4520,6 +4540,26 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-004509",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-004544",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-004545",
       "missing": [
         "og:image"
       ],
@@ -15256,6 +15296,16 @@
       "suggestion": {
         "title": "Autonomous Playbook — Cloud Cost Optimization (2025-08-14 00:44 UTC)",
         "description": "Autonomous Playbook — Cloud Cost Optimization (2025-08-14 00:44 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0045",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Security Hardening Guide — AI Service Design (2025-08-14 00:45 UTC)",
+        "description": "Autonomous Security Hardening Guide — AI Service Design (2025-08-14 00:45 UTC) — auto-suggested description"
       }
     },
     {
