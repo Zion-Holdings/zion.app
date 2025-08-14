@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T20:34:03.181Z",
+  "generatedAt": "2025-08-14T20:35:02.849Z",
   "entries": [
     {
       "route": "/site-health",
@@ -29,7 +29,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "Zion — Latest Autonomous Content",
-      "summary": "import Head from 'next/head'; export default function Home() { return ( Zion — Latest Autonomous Content Zion — Latest Autonomous Content {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 14: 1734 Freshly published by autono"
+      "summary": "import Head from 'next/head'; export default function Home() { return ( Zion — Latest Autonomous Content Zion — Latest Autonomous Content {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 14: 1735 Freshly published by autono"
     },
     {
       "route": "/contact",
@@ -942,6 +942,12 @@
       "file": "pages/reports/updates/update-2025-08-14-1836.tsx",
       "title": "Autonomous Capability Map — MLOps & Model Reliability (2025-08-14 18:36 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Capability Map — MLOps & Model Reliability (2025-08-14 18:36 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\","
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1735",
+      "file": "pages/reports/updates/update-2025-08-14-1735.tsx",
+      "title": "Autonomous Update — 2025-08-14 17:35",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-14 17:35 Autonomous Update — 2025-08-14 17:35 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Google Duplex: An AI "
     },
     {
       "route": "/reports/updates/update-2025-08-14-1734",
