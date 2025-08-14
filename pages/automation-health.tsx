@@ -452,9 +452,9 @@ export default function AutomationHealthPage({ health, controlPlane, scheduleHin
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
-    // Fetch automation health data
-    const healthResponse = await fetch('http://localhost:3000/reports/automation/health.json');
-    const health = healthResponse.ok ? await healthResponse.json() : {
+    // During build time, we can't fetch from localhost, so we'll use fallback data
+    // In production, these will be fetched client-side
+    const health = {
       version: '1.0.0',
       lastUpdated: new Date().toISOString(),
       functions: {},
@@ -473,9 +473,7 @@ export const getStaticProps: GetStaticProps = async () => {
       }
     };
 
-    // Fetch control plane data
-    const controlResponse = await fetch('http://localhost:3000/automation/control.json');
-    const controlPlane = controlResponse.ok ? await controlResponse.json() : {
+    const controlPlane = {
       globalPause: false,
       version: '1.0.0',
       lastUpdated: new Date().toISOString(),
@@ -485,9 +483,7 @@ export const getStaticProps: GetStaticProps = async () => {
       budgets: { openai: { dailyUsd: 2.50, monthlyUsd: 50.00, enabled: true }, github: { dailyActions: 2000, monthlyActions: 50000, enabled: true } }
     };
 
-    // Fetch schedule hints
-    const hintsResponse = await fetch('http://localhost:3000/automation/schedule-hints.json');
-    const scheduleHints = hintsResponse.ok ? await hintsResponse.json() : {
+    const scheduleHints = {
       version: '1.0.0',
       lastUpdated: new Date().toISOString(),
       workflows: {},
