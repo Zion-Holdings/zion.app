@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T00:38:19.125Z",
-  "pagesScanned": 1449,
+  "generatedAt": "2025-08-14T00:38:25.752Z",
+  "pagesScanned": 1450,
   "items": [
     {
       "route": "/404",
@@ -97,7 +97,10 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -1100,6 +1103,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-003812",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-003821",
       "missing": [
         "og:image"
       ],
