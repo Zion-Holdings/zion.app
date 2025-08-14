@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T00:31:53.678Z",
+  "generatedAt": "2025-08-14T00:32:09.886Z",
   "entries": [
     {
       "route": "/site-health",
@@ -23,7 +23,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "index",
-      "summary": "import Landing from '../components/Landing'; export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 14T00: 31 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: "
+      "summary": "import Landing from '../components/Landing'; export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 2132 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 1"
     },
     {
       "route": "/contact",
@@ -210,6 +210,12 @@
       "file": "pages/reports/updates/update-2025-08-14T00-00.tsx",
       "title": "Autonomous Update — 2025-08-14 00-00",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-14 00-00 Autonomous Update — 2025-08-14 00-00 Signal source: https://ziontechgroup.com/ Autonomous cloud systems are live and improving the app in real timeAutonomous Cloud Automat"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0032",
+      "file": "pages/reports/updates/update-2025-08-14-0032.tsx",
+      "title": "Autonomous Playbook — Agentic Workflows (2025-08-14 00:32 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Agentic Workflows (2025-08-14 00:32 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { \""
     },
     {
       "route": "/reports/updates/update-2025-08-14-0031",
@@ -762,6 +768,12 @@
       "file": "pages/reports/updates/update-2025-08-13-2140.tsx",
       "title": "Autonomous Validation & QA Plan — AI Service Design (2025-08-13 21:40 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Validation & QA Plan — AI Service Design (2025-08-13 21:40 UTC) Autonomous Validation & QA Plan — AI Service Design (2025-08-13 21:40 UTC) Innovative, useful guidance to streamline CI/CD for "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2132",
+      "file": "pages/reports/updates/update-2025-08-13-2132.tsx",
+      "title": "Autonomous Update — 2025-08-13 21:32",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 21:32 Autonomous Update — 2025-08-13 21:32 Signal over noise—your automated update is here. Today's Highlight Hacker News : Zoom terms now allow training AI on user conten"
     },
     {
       "route": "/reports/updates/update-2025-08-13-2131",
@@ -6482,6 +6494,12 @@
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-12 14:17 Autonomous Update — 2025-08-12 14:17 This page was created automatically by the content creator automation. It showcases our continuous, autonomous publishing pipeli"
     },
     {
+      "route": "/reports/playbooks/playbook-2025-08-14-003157",
+      "file": "pages/reports/playbooks/playbook-2025-08-14-003157.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/main/front Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objec"
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-14-003138",
       "file": "pages/reports/playbooks/playbook-2025-08-14-003138.tsx",
       "title": "Playbook — Autonomous Delivery",
@@ -7688,6 +7706,12 @@
       "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Reports Trends Implementation Guide — Reports Trends Implementation Source: https://ziontechgroup.com/explore Overview Focus: reports, trends, site, seo, explorea, directory. Steps Clarify objectives "
     },
     {
+      "route": "/reports/blueprints/blueprint-2025-08-14-003156",
+      "file": "pages/reports/blueprints/blueprint-2025-08-14-003156.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
+    },
+    {
       "route": "/reports/blueprints/blueprint-2025-08-14-003136",
       "file": "pages/reports/blueprints/blueprint-2025-08-14-003136.tsx",
       "title": "Reference Architecture — Autonomous Content Mesh",
@@ -8160,6 +8184,30 @@
       "file": "docs/reports/unused-exports.md",
       "title": "Unused Exports Report",
       "summary": "# Unused Exports Report Generated: 2025-08-11T20:34:51.906Z Total unused exports: 12 | File | Line | Export | |------|------:|--------| | components/Landing.tsx | 3 | | | pages/_app.tsx | 4 | | | pages/index.tsx | 4 | | | pages/newsroom.tsx | 3 | | | pages/site-health.tsx | 3 | |"
+    },
+    {
+      "route": "/services/ai-seo-auditor",
+      "file": "pages/services/[slug].tsx",
+      "title": "AI SEO Auditor",
+      "summary": "Automate SEO improvements with continuous audits and metadata optimization."
+    },
+    {
+      "route": "/services/customer-support-chatbot",
+      "file": "pages/services/[slug].tsx",
+      "title": "Customer Support Chatbot",
+      "summary": "Reduce response time with an AI‑powered support assistant."
+    },
+    {
+      "route": "/services/landing-page-generator",
+      "file": "pages/services/[slug].tsx",
+      "title": "Landing Page Generator",
+      "summary": "Launch optimized landing pages instantly, powered by AI content blocks."
+    },
+    {
+      "route": "/services/price-intelligence-service",
+      "file": "pages/services/[slug].tsx",
+      "title": "Price Intelligence",
+      "summary": "Market‑aware dynamic pricing insights to stay competitive."
     }
   ]
 }
