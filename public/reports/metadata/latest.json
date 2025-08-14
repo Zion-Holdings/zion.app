@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T19:51:00.649Z",
-  "pagesScanned": 3565,
+  "generatedAt": "2025-08-14T19:52:00.675Z",
+  "pagesScanned": 3567,
   "items": [
     {
       "route": "/404",
@@ -48,6 +48,19 @@
       "suggestion": {
         "title": "Automation Hub",
         "description": "Automation Hub — auto-suggested description"
+      }
+    },
+    {
+      "route": "/automation-health",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "🤖 Automation Health Dashboard",
+        "description": "🤖 Automation Health Dashboard — auto-suggested description"
       }
     },
     {
@@ -34257,14 +34270,24 @@
     {
       "route": "/reports/updates/update-2025-08-14-1651",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 16:51",
+        "description": "Autonomous Update — 2025-08-14 16:51 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1652",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-14 16:51",
-        "description": "Autonomous Update — 2025-08-14 16:51 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-14 16:52",
+        "description": "Autonomous Update — 2025-08-14 16:52 — auto-suggested description"
       }
     },
     {
