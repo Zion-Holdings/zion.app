@@ -977,78 +977,6 @@
       "route": "/reports/guides/guide-2025-08-13-215625"
     },
     {
-      "file": "pages/reports/cases/case-2025-08-14-074014.tsx",
-      "route": "/reports/cases/case-2025-08-14-074014"
-    },
-    {
-      "file": "pages/reports/cases/case-2025-08-14-072014.tsx",
-      "route": "/reports/cases/case-2025-08-14-072014"
-    },
-    {
-      "file": "pages/reports/cases/case-2025-08-14-071014.tsx",
-      "route": "/reports/cases/case-2025-08-14-071014"
-    },
-    {
-      "file": "pages/reports/cases/case-2025-08-14-070014.tsx",
-      "route": "/reports/cases/case-2025-08-14-070014"
-    },
-    {
-      "file": "pages/reports/cases/case-2025-08-14-065933.tsx",
-      "route": "/reports/cases/case-2025-08-14-065933"
-    },
-    {
-      "file": "pages/reports/cases/case-2025-08-14-064014.tsx",
-      "route": "/reports/cases/case-2025-08-14-064014"
-    },
-    {
-      "file": "pages/reports/cases/case-2025-08-14-063112.tsx",
-      "route": "/reports/cases/case-2025-08-14-063112"
-    },
-    {
-      "file": "pages/reports/cases/case-2025-08-14-063014.tsx",
-      "route": "/reports/cases/case-2025-08-14-063014"
-    },
-    {
-      "file": "pages/reports/cases/case-2025-08-14-062105.tsx",
-      "route": "/reports/cases/case-2025-08-14-062105"
-    },
-    {
-      "file": "pages/reports/cases/case-2025-08-14-061014.tsx",
-      "route": "/reports/cases/case-2025-08-14-061014"
-    },
-    {
-      "file": "pages/reports/cases/case-2025-08-14-060739.tsx",
-      "route": "/reports/cases/case-2025-08-14-060739"
-    },
-    {
-      "file": "pages/reports/cases/case-2025-08-14-060210.tsx",
-      "route": "/reports/cases/case-2025-08-14-060210"
-    },
-    {
-      "file": "pages/reports/cases/case-2025-08-14-055013.tsx",
-      "route": "/reports/cases/case-2025-08-14-055013"
-    },
-    {
-      "file": "pages/reports/cases/case-2025-08-14-054013.tsx",
-      "route": "/reports/cases/case-2025-08-14-054013"
-    },
-    {
-      "file": "pages/reports/cases/case-2025-08-14-053013.tsx",
-      "route": "/reports/cases/case-2025-08-14-053013"
-    },
-    {
-      "file": "pages/reports/cases/case-2025-08-14-052014.tsx",
-      "route": "/reports/cases/case-2025-08-14-052014"
-    },
-    {
-      "file": "pages/reports/cases/case-2025-08-14-051017.tsx",
-      "route": "/reports/cases/case-2025-08-14-051017"
-    },
-    {
-      "file": "pages/reports/cases/case-2025-08-14-040018.tsx",
-      "route": "/reports/cases/case-2025-08-14-040018"
-    },
-    {
       "file": "pages/reports/innovations/insight-2025-08-14T07-40.tsx",
       "route": "/reports/innovations/insight-2025-08-14T07-40"
     },
@@ -1897,6 +1825,81 @@
       "route": "/reports/innovations"
     },
     {
+<<<<<<< HEAD
+=======
+      "file": "pages/reports/cases/case-2025-08-14-074014.tsx",
+      "route": "/reports/cases/case-2025-08-14-074014"
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-14-072014.tsx",
+      "route": "/reports/cases/case-2025-08-14-072014"
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-14-071014.tsx",
+      "route": "/reports/cases/case-2025-08-14-071014"
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-14-070014.tsx",
+      "route": "/reports/cases/case-2025-08-14-070014"
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-14-065933.tsx",
+      "route": "/reports/cases/case-2025-08-14-065933"
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-14-064014.tsx",
+      "route": "/reports/cases/case-2025-08-14-064014"
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-14-063112.tsx",
+      "route": "/reports/cases/case-2025-08-14-063112"
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-14-063014.tsx",
+      "route": "/reports/cases/case-2025-08-14-063014"
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-14-062105.tsx",
+      "route": "/reports/cases/case-2025-08-14-062105"
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-14-061014.tsx",
+      "route": "/reports/cases/case-2025-08-14-061014"
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-14-060739.tsx",
+      "route": "/reports/cases/case-2025-08-14-060739"
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-14-060210.tsx",
+      "route": "/reports/cases/case-2025-08-14-060210"
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-14-055013.tsx",
+      "route": "/reports/cases/case-2025-08-14-055013"
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-14-054013.tsx",
+      "route": "/reports/cases/case-2025-08-14-054013"
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-14-053013.tsx",
+      "route": "/reports/cases/case-2025-08-14-053013"
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-14-052014.tsx",
+      "route": "/reports/cases/case-2025-08-14-052014"
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-14-051017.tsx",
+      "route": "/reports/cases/case-2025-08-14-051017"
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-14-040018.tsx",
+      "route": "/reports/cases/case-2025-08-14-040018"
+    },
+    {
+>>>>>>> 078d31b8cf (chore(sync): advanced autonomous sync)
       "file": "pages/reports/blueprints/blueprint-2025-08-14-074014.tsx",
       "route": "/reports/blueprints/blueprint-2025-08-14-074014"
     },
@@ -8287,5 +8290,32 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
+<<<<<<< HEAD
   "generatedAt": "2025-08-14T07:49:45.517Z"
+=======
+  "generatedAt": "2025-08-14T07:49:48.699Z",
+  "items": [
+    {
+      "title": "Case Study — Autonomous Reports",
+      "href": "/reports/cases/case-2025-08-14-074949",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T07:49:49.382Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Techcrunch Pebble Implementation",
+      "href": "/reports/guides/guide-2025-08-14-074949",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T07:49:49.382Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Trigger Homepage Sitemap",
+      "href": "/reports/patterns/pattern-2025-08-14-074949",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T07:49:49.382Z",
+      "source": "cloud-deep-research-factory"
+    }
+  ]
+>>>>>>> 078d31b8cf (chore(sync): advanced autonomous sync)
 }
