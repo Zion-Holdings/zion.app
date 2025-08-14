@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T16:18:02.965Z",
-  "pagesScanned": 3134,
+  "generatedAt": "2025-08-14T16:18:38.209Z",
+  "pagesScanned": 3140,
   "items": [
     {
       "route": "/404",
@@ -2846,6 +2846,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-161740",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-161812",
       "missing": [
         "og:image"
       ],
@@ -6076,6 +6086,26 @@
     },
     {
       "route": "/reports/guides/guide-2025-08-14-161758",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide —  Implementation",
+        "description": "Guide —  Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-14-161811",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide —  Implementation",
+        "description": "Guide —  Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-14-161829",
       "missing": [
         "og:image"
       ],
@@ -10925,6 +10955,26 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-14-161811",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Intelligence",
+        "description": "Pattern — Cloud Intelligence — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-14-161829",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Intelligence",
+        "description": "Pattern — Cloud Intelligence — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-13-223010",
       "missing": [
         "og:image"
@@ -13646,6 +13696,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-161740",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-161812",
       "missing": [
         "og:image"
       ],
