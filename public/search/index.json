@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T20:36:02.985Z",
+  "generatedAt": "2025-08-14T20:37:03.130Z",
   "entries": [
     {
       "route": "/site-health",
@@ -29,7 +29,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "Zion — Latest Autonomous Content",
-      "summary": "import Head from 'next/head'; export default function Home() { return ( Zion — Latest Autonomous Content Zion — Latest Autonomous Content {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 14: 1736 Freshly published by autono"
+      "summary": "import Head from 'next/head'; export default function Home() { return ( Zion — Latest Autonomous Content Zion — Latest Autonomous Content {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 14: 1737 Freshly published by autono"
     },
     {
       "route": "/contact",
@@ -942,6 +942,12 @@
       "file": "pages/reports/updates/update-2025-08-14-1836.tsx",
       "title": "Autonomous Capability Map — MLOps & Model Reliability (2025-08-14 18:36 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Capability Map — MLOps & Model Reliability (2025-08-14 18:36 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\","
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1737",
+      "file": "pages/reports/updates/update-2025-08-14-1737.tsx",
+      "title": "Autonomous Update — 2025-08-14 17:37",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-14 17:37 Autonomous Update — 2025-08-14 17:37 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : The young, inexperienced engineers a"
     },
     {
       "route": "/reports/updates/update-2025-08-14-1736",
