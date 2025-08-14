@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T00:20:21.775Z",
-  "pagesScanned": 1256,
+  "generatedAt": "2025-08-14T00:20:38.294Z",
+  "pagesScanned": 1260,
   "items": [
     {
       "route": "/404",
@@ -543,6 +543,26 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-002017",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-002025",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-002036",
       "missing": [
         "og:image"
       ],
@@ -2133,6 +2153,26 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-002018",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-002026",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-002036",
       "missing": [
         "og:image"
       ],
