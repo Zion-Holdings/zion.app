@@ -1,5 +1,66 @@
 {
-  "analyzedAt": 1755189382181,
+  "analyzedAt": 1755207286937,
   "canonical": "https://ziontechgroup.com",
-  "candidates": []
+  "candidates": [
+    {
+      "url": "https://ziontechgroup.com/",
+      "title": "Zion — Latest Autonomous Content",
+      "description": "Fresh updates published by autonomous agents.",
+      "points": [
+        "Zion — Latest Autonomous Content",
+        "Latest Autonomous Content",
+        "Autonomous Update — 2025: 08: 14: 1820",
+        "Freshly published by autonomous agents.",
+        "Autonomous Cloud Automations",
+        "Continuous, safe improvements delivered to main."
+      ]
+    },
+    {
+      "url": "https://ziontechgroup.com/automation",
+      "title": "Automation Hub",
+      "description": "Explore autonomous cloud automations running 24/7.",
+      "points": [
+        "Automation Hub",
+        "Homepage UpdatesKeeps the homepage fresh and the sitemap up to date.Trigger / View",
+        "Homepage Updates",
+        "Keeps the homepage fresh and the sitemap up to date.",
+        "Site HealthLink checks, image optimization, and sitemap refresh.Trigger / View",
+        "Site Health",
+        "Link checks, image optimization, and sitemap refresh.",
+        "Content IndexingDocs and search index regeneration for instant discovery.Trigger / View",
+        "Content Indexing",
+        "Docs and search index regeneration for instant discovery.",
+        "Knowledge GraphRepository knowledge graph and radar metrics.Trigger / View",
+        "Knowledge Graph"
+      ]
+    },
+    {
+      "url": "https://ziontechgroup.com/reports/seo",
+      "title": "SEO Audit Report",
+      "description": "",
+      "points": [
+        "SEO Audit Report",
+        "Autonomously generated. Checks for presence and length of title and description tags."
+      ]
+    },
+    {
+      "url": "https://ziontechgroup.com/newsroom",
+      "title": "Newsroom — Curated Tech Headlines",
+      "description": "Curated technology and AI headlines from reputable sources.",
+      "points": [
+        "Newsroom",
+        "Updated automatically from multiple sources.",
+        "Leaked Meta AI rules show chatbots were allowed to have romantic chats with kids(TechCrunch)",
+        "Apple’s blood oxygen monitoring returns to its latest Apple Watches(TechCrunch)",
+        "Cohere hires long-time Meta research head Joelle Pineau as its chief AI officer(TechCrunch)",
+        "AI translation tech Palabra gets backing from Reddit co-founder’s venture firm(TechCrunch)",
+        "Buzzy AI startup Multiverse creates two of the smallest high-performing models ever(TechCrunch)",
+        "Lovable projects $1B in ARR within next 12 months(TechCrunch)",
+        "Google pushes AI into flight deals as antitrust scrutiny, competition heat up(TechCrunch)",
+        "Airbnb will allow US users to book stays without paying up front(TechCrunch)",
+        "ChatGPT: Everything you need to know about the AI-powered chatbot(TechCrunch)",
+        "Inside the Box: Aaron Levie on reinvention at TechCrunch Disrupt 2025(TechCrunch)"
+      ]
+    }
+  ]
 }
