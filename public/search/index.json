@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T21:29:02.694Z",
+  "generatedAt": "2025-08-14T21:29:21.397Z",
   "entries": [
     {
       "route": "/site-health",
@@ -116,6 +116,12 @@
       "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-14-212903",
+      "file": "pages/reports/patterns/pattern-2025-08-14-212903.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
       "route": "/reports/patterns/pattern-2025-08-14-212855",
       "file": "pages/reports/patterns/pattern-2025-08-14-212855.tsx",
       "title": "Pattern — Cloud Improving Continuously",
@@ -128,6 +134,12 @@
       "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
     },
     {
+      "route": "/reports/guides/guide-2025-08-14-212903",
+      "file": "pages/reports/guides/guide-2025-08-14-212903.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
       "route": "/reports/guides/guide-2025-08-14-212855",
       "file": "pages/reports/guides/guide-2025-08-14-212855.tsx",
       "title": "Guide — Cloud Improving Implementation",
@@ -138,6 +150,12 @@
       "file": "pages/reports/guides/guide-2025-08-14-212854.tsx",
       "title": "Guide — Cloud Improving Implementation",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-14-212903",
+      "file": "pages/reports/cases/case-2025-08-14-212903.tsx",
+      "title": "Case Study — Trigger Homepage",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Trigger Homepage Case Study — Trigger Homepage Source: https://ziontechgroup.com/automation Scenario Exploring how trigger, homepage, sitemap, automation, hubdiscover delivers value. Approach Bas"
     },
     {
       "route": "/reports/cases/case-2025-08-14-212855",
