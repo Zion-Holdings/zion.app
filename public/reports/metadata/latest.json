@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T00:24:28.766Z",
-  "pagesScanned": 1274,
+  "generatedAt": "2025-08-14T00:25:03.247Z",
+  "pagesScanned": 1281,
   "items": [
     {
       "route": "/404",
@@ -590,6 +590,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-002152",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-002433",
       "missing": [
         "og:image"
       ],
@@ -1629,6 +1639,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14-0024",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Runbook: MLOps",
+        "description": "Runbook: MLOps — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -1746,6 +1766,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-14 00-21",
         "description": "Innovation Insight — 2025-08-14 00-21 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14T00-24",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-14 00-24",
+        "description": "Innovation Insight — 2025-08-14 00-24 — auto-suggested description"
       }
     },
     {
@@ -2250,6 +2280,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-002153",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-002434",
       "missing": [
         "og:image"
       ],
@@ -11739,6 +11779,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-13-2125",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 21:25",
+        "description": "Autonomous Update — 2025-08-13 21:25 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-13-2130",
       "missing": [
         "og:image"
@@ -12589,6 +12639,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-14-0024",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Capability Map — Vision & Multimodal (2025-08-14 00:24 UTC)",
+        "description": "Autonomous Capability Map — Vision & Multimodal (2025-08-14 00:24 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -12706,6 +12766,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 00-21",
         "description": "Autonomous Update — 2025-08-14 00-21 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14T00-24",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 00-24",
+        "description": "Autonomous Update — 2025-08-14 00-24 — auto-suggested description"
       }
     },
     {
