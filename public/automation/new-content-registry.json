@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
   "items": [
     {
       "title": "Checklist: FinOps for AI",
@@ -29,20 +30,41 @@
       "href": "/reports/cases/case-2025-08-14-100112",
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T10:01:12.185Z",
+=======
+  "generatedAt": "2025-08-14T10:03:12.466Z",
+  "items": [
+    {
+      "title": "Case Study — Autonomous Reports",
+      "href": "/reports/cases/case-2025-08-14-100312",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T10:03:12.420Z",
+>>>>>>> 05d673f1a1 (chore(sync): advanced autonomous sync)
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Guide — Techcrunch Pebble Implementation",
+<<<<<<< HEAD
       "href": "/reports/guides/guide-2025-08-14-100112",
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T10:01:12.185Z",
+=======
+      "href": "/reports/guides/guide-2025-08-14-100312",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T10:03:12.420Z",
+>>>>>>> 05d673f1a1 (chore(sync): advanced autonomous sync)
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Trigger Homepage Sitemap",
+<<<<<<< HEAD
       "href": "/reports/patterns/pattern-2025-08-14-100112",
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T10:01:12.185Z",
+=======
+      "href": "/reports/patterns/pattern-2025-08-14-100312",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T10:03:12.420Z",
+>>>>>>> 05d673f1a1 (chore(sync): advanced autonomous sync)
       "source": "cloud-deep-research-factory"
 >>>>>>> 840a7cc0a8 (chore(sync): advanced autonomous sync)
     }
