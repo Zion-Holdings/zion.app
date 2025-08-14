@@ -65,6 +65,10 @@
       "route": "/automation"
     },
     {
+      "file": "pages/reports/playbooks/playbook-2025-08-14-002949.tsx",
+      "route": "/reports/playbooks/playbook-2025-08-14-002949"
+    },
+    {
       "file": "pages/reports/playbooks/playbook-2025-08-14-002925.tsx",
       "route": "/reports/playbooks/playbook-2025-08-14-002925"
     },
@@ -323,6 +327,10 @@
     {
       "file": "pages/reports/guides/guide-2025-08-13-215625.tsx",
       "route": "/reports/guides/guide-2025-08-13-215625"
+    },
+    {
+      "file": "pages/reports/blueprints/blueprint-2025-08-14-002948.tsx",
+      "route": "/reports/blueprints/blueprint-2025-08-14-002948"
     },
     {
       "file": "pages/reports/blueprints/blueprint-2025-08-14-002924.tsx",
@@ -5319,5 +5327,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-14T00:29:44.924Z"
+  "generatedAt": "2025-08-14T00:29:50.266Z"
 }

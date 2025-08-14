@@ -1,109 +1,32 @@
 {
-  "generatedAt": "2025-08-14T00:29:24.395Z",
+  "generatedAt": "2025-08-14T00:29:48.610Z",
   "items": [
     {
-      "title": "Blueprint: Edge AI",
-      "subtitle": "Patterns to increase accuracy.",
-      "path": "/reports/innovations/insight-2025-08-14-0029",
-      "createdAt": "2025-08-14T00:29:44.166Z",
-      "kind": "insight"
-    },
-    {
       "title": "Innovation Insight — 2025-08-14 00-29",
       "href": "/reports/innovations/insight-2025-08-14T00-29",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:29:24.274Z",
+      "createdAt": "2025-08-14T00:29:48.316Z",
       "source": "cloud-content-factory"
     },
     {
       "title": "Autonomous Update — 2025-08-14 00-29",
       "href": "/reports/updates/update-2025-08-14T00-29",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:29:24.274Z",
+      "createdAt": "2025-08-14T00:29:48.316Z",
       "source": "cloud-content-factory"
     },
     {
       "title": "Innovation Insight — 2025-08-14 00-29",
       "href": "/reports/innovations/insight-2025-08-14T00-29",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:29:24.274Z",
+      "createdAt": "2025-08-14T00:29:48.316Z",
       "source": "cloud-content-factory"
     },
     {
       "title": "Autonomous Update — 2025-08-14 00-29",
       "href": "/reports/updates/update-2025-08-14T00-29",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:29:24.274Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Playbook — Autonomous Delivery",
-      "href": "/reports/playbooks/playbook-2025-08-14-002924",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:29:24.011Z",
-      "source": "cloud-playbook-factory"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-14 00-29",
-      "href": "/reports/innovations/insight-2025-08-14T00-29",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:29:23.485Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-14 00-29",
-      "href": "/reports/updates/update-2025-08-14T00-29",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:29:23.485Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-14 00-29",
-      "href": "/reports/innovations/insight-2025-08-14T00-29",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:29:23.485Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-14 00-29",
-      "href": "/reports/updates/update-2025-08-14T00-29",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:29:23.485Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Reference Architecture — Autonomous Content Mesh",
-      "href": "/reports/blueprints/blueprint-2025-08-14-002923",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:29:23.326Z",
-      "source": "cloud-blueprint-factory"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-14 00-29",
-      "href": "/reports/innovations/insight-2025-08-14T00-29",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:29:22.984Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-14 00-29",
-      "href": "/reports/updates/update-2025-08-14T00-29",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:29:22.984Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-14 00-29",
-      "href": "/reports/innovations/insight-2025-08-14T00-29",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:29:22.984Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-14 00-29",
-      "href": "/reports/updates/update-2025-08-14T00-29",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:29:22.984Z",
+      "createdAt": "2025-08-14T00:29:48.316Z",
       "source": "cloud-content-factory"
     }
   ]
