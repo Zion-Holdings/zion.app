@@ -1,54 +1,26 @@
 {
-  "generatedAt": "2025-08-14T09:12:10.911Z",
+  "generatedAt": "2025-08-14T09:18:11.314Z",
   "items": [
     {
       "title": "Case Study — Autonomous Reports",
-      "href": "/reports/cases/case-2025-08-14-091210",
+      "href": "/reports/cases/case-2025-08-14-091811",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T09:12:10.813Z",
+      "createdAt": "2025-08-14T09:18:11.275Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Guide — Techcrunch Pebble Implementation",
-      "href": "/reports/guides/guide-2025-08-14-091210",
+      "href": "/reports/guides/guide-2025-08-14-091811",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T09:12:10.813Z",
+      "createdAt": "2025-08-14T09:18:11.275Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Trigger Homepage Sitemap",
-      "href": "/reports/patterns/pattern-2025-08-14-091210",
+      "href": "/reports/patterns/pattern-2025-08-14-091811",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T09:12:10.813Z",
+      "createdAt": "2025-08-14T09:18:11.275Z",
       "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-14 09-12",
-      "href": "/reports/innovations/insight-2025-08-14T09-12",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T09:12:10.791Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-14 09-12",
-      "href": "/reports/updates/update-2025-08-14T09-12",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T09:12:10.791Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-14 09-12",
-      "href": "/reports/innovations/insight-2025-08-14T09-12",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T09:12:10.791Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-14 09-12",
-      "href": "/reports/updates/update-2025-08-14T09-12",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T09:12:10.791Z",
-      "source": "cloud-content-factory"
     }
   ]
 }
