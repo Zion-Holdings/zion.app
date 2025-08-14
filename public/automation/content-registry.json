@@ -77,12 +77,24 @@
       "route": "/reports/updates/update-2025-08-14-1814"
     },
     {
+      "file": "pages/reports/playbooks/playbook-2025-08-14-212947.tsx",
+      "route": "/reports/playbooks/playbook-2025-08-14-212947"
+    },
+    {
       "file": "pages/reports/playbooks/playbook-2025-08-14-212923.tsx",
       "route": "/reports/playbooks/playbook-2025-08-14-212923"
     },
     {
       "file": "pages/reports/playbooks/playbook-2025-08-14-212855.tsx",
       "route": "/reports/playbooks/playbook-2025-08-14-212855"
+    },
+    {
+      "file": "pages/reports/patterns/pattern-2025-08-14-212952.tsx",
+      "route": "/reports/patterns/pattern-2025-08-14-212952"
+    },
+    {
+      "file": "pages/reports/patterns/pattern-2025-08-14-212946.tsx",
+      "route": "/reports/patterns/pattern-2025-08-14-212946"
     },
     {
       "file": "pages/reports/patterns/pattern-2025-08-14-212927.tsx",
@@ -105,6 +117,14 @@
       "route": "/reports/patterns/pattern-2025-08-14-212854"
     },
     {
+      "file": "pages/reports/guides/guide-2025-08-14-212952.tsx",
+      "route": "/reports/guides/guide-2025-08-14-212952"
+    },
+    {
+      "file": "pages/reports/guides/guide-2025-08-14-212946.tsx",
+      "route": "/reports/guides/guide-2025-08-14-212946"
+    },
+    {
       "file": "pages/reports/guides/guide-2025-08-14-212927.tsx",
       "route": "/reports/guides/guide-2025-08-14-212927"
     },
@@ -125,6 +145,14 @@
       "route": "/reports/guides/guide-2025-08-14-212854"
     },
     {
+      "file": "pages/reports/cases/case-2025-08-14-212952.tsx",
+      "route": "/reports/cases/case-2025-08-14-212952"
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-14-212946.tsx",
+      "route": "/reports/cases/case-2025-08-14-212946"
+    },
+    {
       "file": "pages/reports/cases/case-2025-08-14-212927.tsx",
       "route": "/reports/cases/case-2025-08-14-212927"
     },
@@ -143,6 +171,10 @@
     {
       "file": "pages/reports/cases/case-2025-08-14-212854.tsx",
       "route": "/reports/cases/case-2025-08-14-212854"
+    },
+    {
+      "file": "pages/reports/blueprints/blueprint-2025-08-14-212947.tsx",
+      "route": "/reports/blueprints/blueprint-2025-08-14-212947"
     },
     {
       "file": "pages/reports/blueprints/blueprint-2025-08-14-212923.tsx",
@@ -191,5 +223,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-14T21:29:32.043Z"
+  "generatedAt": "2025-08-14T21:29:56.651Z"
 }
