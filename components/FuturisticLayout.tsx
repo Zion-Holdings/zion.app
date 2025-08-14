@@ -1,8 +1,11 @@
 import React, { PropsWithChildren } from 'react';
+import { Outfit } from 'next/font/google';
+
+const outfit = Outfit({ subsets: ['latin'], display: 'swap' });
 
 export default function FuturisticLayout({ children }: PropsWithChildren<object>) {
   return (
-    <div className="relative min-h-screen bg-slate-950 overflow-hidden">
+    <div className={`relative min-h-screen bg-slate-950 overflow-hidden ${outfit.className}`}>
       {/* Aurora gradient background */}
       <div aria-hidden className="pointer-events-none absolute inset-0 bg-aurora" />
 
