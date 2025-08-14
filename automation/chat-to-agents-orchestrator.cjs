@@ -15,7 +15,6 @@ const { spawnSync } = require('child_process');
 const REPO = path.resolve(__dirname, '..');
 const LOGS_DIR = path.join(REPO, 'automation', 'logs');
 const OUTPUT_DIR = path.join(REPO, 'automation', 'research-generated');
-const LOCK_FILE = path.join(REPO, 'automation', '.chat-to-agents.lock');
 
 const CHAT_URL = process.env.ALIGNMENT_CHAT_URL || 'https://chatgpt.com/share/688b6030-1aa0-800b-9b63-ec9a269ea62d';
 const DOC_URL = process.env.ALIGNMENT_DOC_URL || 'https://docs.google.com/document/d/1Q3-QbWjIIj83VYX_Hx258kmvEyF9qBR2nF09IOi4ppM/edit?usp=sharing';
@@ -42,18 +41,7 @@ function tryNode(relPath, args = []) {
   return run('node', [abs, ...args]);
 }
 
-function withLock(fn) {
-  const maxAgeMs = 2 * 60 * 1000;
-  try {
-    if (fs.existsSync(LOCK_FILE)) {
-      const age = Date.now() - fs.statSync(LOCK_FILE).mtimeMs;
-      if (age < maxAgeMs) { log('lock present; skipping'); return false; }
-      try { fs.unlinkSync(LOCK_FILE); } catch {}
-    }
-    fs.writeFileSync(LOCK_FILE, String(process.pid));
-  } catch (e) { log(`lock error: ${e.message || e}`); return false; }
-  try { return fn(); } finally { try { fs.unlinkSync(LOCK_FILE); } catch {} }
-}
+function withLock(fn) { return fn(); }
 
 function writeSeedFactory(name, description, code) {
   ensureDir(OUTPUT_DIR);

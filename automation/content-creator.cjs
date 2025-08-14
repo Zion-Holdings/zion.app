@@ -7,7 +7,6 @@ const { spawnSync } = require('child_process');
 
 const ROOT = path.resolve(__dirname, '..');
 const LOGS_DIR = path.join(ROOT, 'automation', 'logs');
-const LOCK_FILE = path.join(ROOT, 'automation', '.git-sync.lock');
 const UPDATES_DIR = path.join(ROOT, 'pages', 'reports', 'updates');
 const INDEX_PAGE = path.join(ROOT, 'pages', 'index.tsx');
 
@@ -38,18 +37,7 @@ function tryNode(relPath, args = []) {
   return run('node', [abs, ...args]);
 }
 
-function withGitLock(fn) {
-  const maxAgeMs = 5 * 60 * 1000;
-  try {
-    if (fs.existsSync(LOCK_FILE)) {
-      const age = Date.now() - fs.statSync(LOCK_FILE).mtimeMs;
-      if (age < maxAgeMs) { log('git lock present; skipping'); return false; }
-      try { fs.unlinkSync(LOCK_FILE); } catch {}
-    }
-    fs.writeFileSync(LOCK_FILE, String(process.pid));
-  } catch (e) { log(`lock error: ${e.message || e}`); return false; }
-  try { return fn(); } finally { try { fs.unlinkSync(LOCK_FILE); } catch {} }
-}
+function withGitLock(fn) { return fn(); }
 
 function nowParts() {
   const d = new Date();
