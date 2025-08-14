@@ -1,37 +1,25 @@
 {
-  "generatedAt": "2025-08-14T22:37:33.173Z",
+  "generatedAt": "2025-08-14T22:44:50.011Z",
   "items": [
     {
-<<<<<<< HEAD
-      "title": "Pilot Plan: DevSecOps AI",
-      "subtitle": "Patterns to improve reliability.",
-      "path": "/reports/innovations/insight-2025-08-14-2230",
-      "createdAt": "2025-08-14T22:30:54.887Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-14 22-19",
-      "href": "/reports/innovations/insight-2025-08-14T22-19",
-=======
       "title": "Case Study — Trigger Homepage",
-      "href": "/reports/cases/case-2025-08-14-223733",
->>>>>>> bb6bd47d60 (chore(sync): advanced autonomous sync)
+      "href": "/reports/cases/case-2025-08-14-224449",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T22:37:33.144Z",
+      "createdAt": "2025-08-14T22:44:49.983Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Guide — Cloud Improving Implementation",
-      "href": "/reports/guides/guide-2025-08-14-223733",
+      "href": "/reports/guides/guide-2025-08-14-224449",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T22:37:33.144Z",
+      "createdAt": "2025-08-14T22:44:49.983Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Cloud Improving Continuously",
-      "href": "/reports/patterns/pattern-2025-08-14-223733",
+      "href": "/reports/patterns/pattern-2025-08-14-224449",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T22:37:33.144Z",
+      "createdAt": "2025-08-14T22:44:49.983Z",
       "source": "cloud-deep-research-factory"
     }
   ]
