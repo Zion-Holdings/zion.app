@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T07:50:00.570Z",
-  "pagesScanned": 2066,
+  "generatedAt": "2025-08-14T07:51:00.683Z",
+  "pagesScanned": 2076,
   "items": [
     {
       "route": "/404",
@@ -1845,6 +1845,16 @@
       }
     },
     {
+      "route": "/reports/blueprints/blueprint-2025-08-14-075015",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/cases/case-2025-08-14-040018",
       "missing": [
         "og:image"
@@ -2016,6 +2026,16 @@
     },
     {
       "route": "/reports/cases/case-2025-08-14-074014",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Autonomous Reports",
+        "description": "Case Study — Autonomous Reports — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-14-075015",
       "missing": [
         "og:image"
       ],
@@ -2286,6 +2306,16 @@
     },
     {
       "route": "/reports/guides/guide-2025-08-14-074014",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Techcrunch Pebble Implementation",
+        "description": "Guide — Techcrunch Pebble Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-14-075015",
       "missing": [
         "og:image"
       ],
@@ -3795,6 +3825,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14-0750",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pilot Plan: DevSecOps AI",
+        "description": "Pilot Plan: DevSecOps AI — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -4425,6 +4465,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14T07-50",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-14 07-50",
+        "description": "Innovation Insight — 2025-08-14 07-50 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/patterns/pattern-2025-08-13-215625",
       "missing": [
         "og:image"
@@ -4686,6 +4736,16 @@
     },
     {
       "route": "/reports/patterns/pattern-2025-08-14-074014",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Trigger Homepage Sitemap",
+        "description": "Pattern — Trigger Homepage Sitemap — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-14-075015",
       "missing": [
         "og:image"
       ],
@@ -6426,6 +6486,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-074015",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-075015",
       "missing": [
         "og:image"
       ],
@@ -19867,14 +19937,24 @@
     {
       "route": "/reports/updates/update-2025-08-14-0450",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 04:50",
+        "description": "Autonomous Update — 2025-08-14 04:50 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0451",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-14 04:50",
-        "description": "Autonomous Update — 2025-08-14 04:50 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-14 04:51",
+        "description": "Autonomous Update — 2025-08-14 04:51 — auto-suggested description"
       }
     },
     {
@@ -20005,6 +20085,16 @@
       "suggestion": {
         "title": "Autonomous Performance Tuning Guide — Data Engineering (2025-08-14 07:40 UTC)",
         "description": "Autonomous Performance Tuning Guide — Data Engineering (2025-08-14 07:40 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0750",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Blueprint — Cloud Cost Optimization (2025-08-14 07:50 UTC)",
+        "description": "Autonomous Blueprint — Cloud Cost Optimization (2025-08-14 07:50 UTC) — auto-suggested description"
       }
     },
     {
@@ -20635,6 +20725,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 07-40",
         "description": "Autonomous Update — 2025-08-14 07-40 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14T07-50",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 07-50",
+        "description": "Autonomous Update — 2025-08-14 07-50 — auto-suggested description"
       }
     },
     {
