@@ -3697,6 +3697,10 @@
       "route": "/reports/cases/case-2025-08-14-040018"
     },
     {
+      "file": "pages/main/front/index.tsx",
+      "route": "/main/front"
+    },
+    {
       "file": "pages/reports/guides/guide-2025-08-14-161908.tsx",
       "route": "/reports/guides/guide-2025-08-14-161908"
     },
@@ -4435,10 +4439,6 @@
     {
       "file": "pages/reports/guides/guide-2025-08-13-215625.tsx",
       "route": "/reports/guides/guide-2025-08-13-215625"
-    },
-    {
-      "file": "pages/main/front/index.tsx",
-      "route": "/main/front"
     },
     {
       "file": "pages/reports/blueprints/blueprint-2025-08-14-161908.tsx",
@@ -12631,5 +12631,21 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-14T16:19:24.307Z"
+  "generatedAt": "2025-08-14T16:19:29.451Z",
+  "items": [
+    {
+      "title": "Guide —  Implementation",
+      "href": "/reports/guides/guide-2025-08-14-161930",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:19:30.754Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Cloud Intelligence",
+      "href": "/reports/patterns/pattern-2025-08-14-161930",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:19:30.754Z",
+      "source": "cloud-deep-research-factory"
+    }
+  ]
 }
