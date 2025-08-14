@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T05:30:00.521Z",
-  "pagesScanned": 1843,
+  "generatedAt": "2025-08-14T05:31:00.497Z",
+  "pagesScanned": 1853,
   "items": [
     {
       "route": "/404",
@@ -1705,6 +1705,16 @@
       }
     },
     {
+      "route": "/reports/blueprints/blueprint-2025-08-14-053013",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/cases/case-2025-08-14-040018",
       "missing": [
         "og:image"
@@ -1726,6 +1736,16 @@
     },
     {
       "route": "/reports/cases/case-2025-08-14-052014",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Autonomous Reports",
+        "description": "Case Study — Autonomous Reports — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-14-053013",
       "missing": [
         "og:image"
       ],
@@ -1846,6 +1866,16 @@
     },
     {
       "route": "/reports/guides/guide-2025-08-14-052014",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Techcrunch Pebble Implementation",
+        "description": "Guide — Techcrunch Pebble Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-14-053013",
       "missing": [
         "og:image"
       ],
@@ -3245,6 +3275,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14-0530",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook: Edge AI",
+        "description": "Playbook: Edge AI — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -3765,6 +3805,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14T05-30",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-14 05-30",
+        "description": "Innovation Insight — 2025-08-14 05-30 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/patterns/pattern-2025-08-13-215625",
       "missing": [
         "og:image"
@@ -3876,6 +3926,16 @@
     },
     {
       "route": "/reports/patterns/pattern-2025-08-14-052014",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Trigger Homepage Sitemap",
+        "description": "Pattern — Trigger Homepage Sitemap — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-14-053013",
       "missing": [
         "og:image"
       ],
@@ -5476,6 +5536,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-052015",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-053014",
       "missing": [
         "og:image"
       ],
@@ -17765,6 +17835,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-14-0231",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 02:31",
+        "description": "Autonomous Update — 2025-08-14 02:31 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-14-0240",
       "missing": [
         "og:image"
@@ -17882,6 +17965,16 @@
       "suggestion": {
         "title": "Autonomous Security Hardening Guide — Vision & Multimodal (2025-08-14 05:20 UTC)",
         "description": "Autonomous Security Hardening Guide — Vision & Multimodal (2025-08-14 05:20 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0530",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Blueprint — Evaluation & Safety (2025-08-14 05:30 UTC)",
+        "description": "Autonomous Blueprint — Evaluation & Safety (2025-08-14 05:30 UTC) — auto-suggested description"
       }
     },
     {
@@ -18402,6 +18495,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 05-20",
         "description": "Autonomous Update — 2025-08-14 05-20 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14T05-30",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 05-30",
+        "description": "Autonomous Update — 2025-08-14 05-30 — auto-suggested description"
       }
     },
     {
