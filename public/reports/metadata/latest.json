@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T00:36:04.561Z",
-  "pagesScanned": 1412,
+  "generatedAt": "2025-08-14T00:36:19.046Z",
+  "pagesScanned": 1417,
   "items": [
     {
       "route": "/404",
@@ -97,7 +97,10 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -980,6 +983,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-003601",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-003610",
       "missing": [
         "og:image"
       ],
@@ -2139,6 +2152,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14-0036",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pilot Plan: FinOps for AI",
+        "description": "Pilot Plan: FinOps for AI — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -3270,6 +3293,26 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-003556",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-003604",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-003612",
       "missing": [
         "og:image"
       ],
@@ -12871,10 +12914,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-2136",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 21:36",
@@ -13839,6 +13879,16 @@
       "suggestion": {
         "title": "Autonomous Security Hardening Guide — MLOps & Model Reliability (2025-08-14 00:35 UTC)",
         "description": "Autonomous Security Hardening Guide — MLOps & Model Reliability (2025-08-14 00:35 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0036",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Reference Architecture — Data Engineering (2025-08-14 00:36 UTC)",
+        "description": "Autonomous Reference Architecture — Data Engineering (2025-08-14 00:36 UTC) — auto-suggested description"
       }
     },
     {
