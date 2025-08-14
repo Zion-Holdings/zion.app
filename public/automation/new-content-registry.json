@@ -1,80 +1,54 @@
 {
-  "generatedAt": "2025-08-14T16:28:15.355Z",
+  "generatedAt": "2025-08-14T16:28:38.061Z",
   "items": [
     {
-      "title": "Guide —  Implementation",
-      "href": "/reports/guides/guide-2025-08-14-162815",
+      "title": "Innovation Insight — 2025-08-14 16-28",
+      "href": "/reports/innovations/insight-2025-08-14T16-28",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:28:15.245Z",
+      "createdAt": "2025-08-14T16:28:37.961Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-14 16-28",
+      "href": "/reports/updates/update-2025-08-14T16-28",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:28:37.961Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Guide —  Implementation",
+      "href": "/reports/guides/guide-2025-08-14-162837",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:28:37.959Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Cloud Intelligence",
-      "href": "/reports/patterns/pattern-2025-08-14-162815",
+      "href": "/reports/patterns/pattern-2025-08-14-162837",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:28:15.245Z",
+      "createdAt": "2025-08-14T16:28:37.959Z",
       "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-14 16-27",
-      "href": "/reports/innovations/insight-2025-08-14T16-27",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:27:57.394Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-14 16-27",
-      "href": "/reports/updates/update-2025-08-14T16-27",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:27:57.394Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Playbook — Autonomous Delivery",
-      "href": "/reports/playbooks/playbook-2025-08-14-162757",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:27:57.313Z",
-      "source": "cloud-playbook-factory"
     },
     {
       "title": "Reference Architecture — Autonomous Content Mesh",
-      "href": "/reports/blueprints/blueprint-2025-08-14-162757",
+      "href": "/reports/blueprints/blueprint-2025-08-14-162837",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:27:57.275Z",
+      "createdAt": "2025-08-14T16:28:37.852Z",
       "source": "cloud-blueprint-factory"
     },
     {
-      "title": "Guide —  Implementation",
-      "href": "/reports/guides/guide-2025-08-14-162757",
+      "title": "Innovation Insight — 2025-08-14 16-28",
+      "href": "/reports/innovations/insight-2025-08-14T16-28",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:27:57.203Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Pattern — Cloud Intelligence",
-      "href": "/reports/patterns/pattern-2025-08-14-162757",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:27:57.203Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-14 16-27",
-      "href": "/reports/innovations/insight-2025-08-14T16-27",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:27:57.067Z",
+      "createdAt": "2025-08-14T16:28:37.575Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-14 16-27",
-      "href": "/reports/updates/update-2025-08-14T16-27",
+      "title": "Autonomous Update — 2025-08-14 16-28",
+      "href": "/reports/updates/update-2025-08-14T16-28",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:27:57.067Z",
+      "createdAt": "2025-08-14T16:28:37.575Z",
       "source": "cloud-content-factory"
-    },
-    {
-      "id": "cursor-chat-2025-08-14T16:27:58.201Z",
-      "type": "cursor-chat",
-      "timestamp": "2025-08-14T16:27:58.201Z"
     }
   ]
 }
