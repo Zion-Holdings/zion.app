@@ -1,11 +1,117 @@
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   "generatedAt": "2025-08-14T11:19:53.670Z",
   "items": [
     {
       "title": "Innovation Insight — 2025-08-14 11-19",
       "href": "/reports/innovations/insight-2025-08-14T11-19",
+=======
+  "generatedAt": "2025-08-14T11:35:50.224Z",
+  "items": [
+    {
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-14-113550",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T11:35:50.198Z",
+      "source": "cloud-blueprint-factory"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-14-113550",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T11:35:50.171Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Case Study — Autonomous Reports",
+      "href": "/reports/cases/case-2025-08-14-113550",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T11:35:50.142Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Techcrunch Pebble Implementation",
+      "href": "/reports/guides/guide-2025-08-14-113550",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T11:35:50.142Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Trigger Homepage Sitemap",
+      "href": "/reports/patterns/pattern-2025-08-14-113550",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T11:35:50.142Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-14-113054",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T11:30:54.485Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Case Study — Autonomous Reports",
+      "href": "/reports/cases/case-2025-08-14-113054",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T11:30:54.429Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Techcrunch Pebble Implementation",
+      "href": "/reports/guides/guide-2025-08-14-113054",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T11:30:54.429Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Trigger Homepage Sitemap",
+      "href": "/reports/patterns/pattern-2025-08-14-113054",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T11:30:54.429Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-14 11-30",
+      "href": "/reports/innovations/insight-2025-08-14T11-30",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T11:30:54.399Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-14 11-30",
+      "href": "/reports/updates/update-2025-08-14T11-30",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T11:30:54.399Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-14 11-30",
+      "href": "/reports/innovations/insight-2025-08-14T11-30",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T11:30:54.399Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-14 11-30",
+      "href": "/reports/updates/update-2025-08-14T11-30",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T11:30:54.399Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-14-113054",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T11:30:54.370Z",
+      "source": "cloud-blueprint-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-14 11-30",
+      "href": "/reports/innovations/insight-2025-08-14T11-30",
+>>>>>>> 9fd36f0311 (chore(sync): advanced autonomous sync)
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T11:19:53.644Z",
       "source": "cloud-content-factory"
@@ -30,6 +136,7 @@
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T11:19:53.644Z",
       "source": "cloud-content-factory"
+<<<<<<< HEAD
 =======
   "generatedAt": "2025-08-14T11:28:16.628Z",
   "items": [
@@ -89,6 +196,13 @@
 >>>>>>> 4ff6496a88 (chore(sync): advanced autonomous sync)
       "source": "cloud-deep-research-factory"
 >>>>>>> f94965f780 (chore(sync): advanced autonomous sync)
+=======
+    },
+    {
+      "id": "cursor-chat-2025-08-14T11:30:54.513Z",
+      "type": "cursor-chat",
+      "timestamp": "2025-08-14T11:30:54.513Z"
+>>>>>>> 9fd36f0311 (chore(sync): advanced autonomous sync)
     }
   ]
 }
