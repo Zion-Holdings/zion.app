@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T00:31:02.451Z",
-  "pagesScanned": 1339,
+  "generatedAt": "2025-08-14T00:31:05.950Z",
+  "pagesScanned": 1340,
   "items": [
     {
       "route": "/404",
@@ -12256,6 +12256,16 @@
       "suggestion": {
         "title": "Autonomous Blueprint — DevSecOps for AI (2025-08-13 21:30 UTC)",
         "description": "Autonomous Blueprint — DevSecOps for AI (2025-08-13 21:30 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2131",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 21:31",
+        "description": "Autonomous Update — 2025-08-13 21:31 — auto-suggested description"
       }
     },
     {
