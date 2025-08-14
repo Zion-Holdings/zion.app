@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T16:28:04.614Z",
+  "generatedAt": "2025-08-14T16:28:14.789Z",
   "pagesScanned": 3324,
   "items": [
     {
@@ -113,7 +113,10 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Newsroom",

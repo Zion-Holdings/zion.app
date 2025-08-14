@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "title": "Guide —  Implementation",
+      "href": "/reports/guides/guide-2025-08-14-162815",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:28:15.245Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Cloud Intelligence",
+      "href": "/reports/patterns/pattern-2025-08-14-162815",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:28:15.245Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
       "title": "Innovation Insight — 2025-08-14 16-27",
       "href": "/reports/innovations/insight-2025-08-14T16-27",
       "desc": "New autonomous content",
