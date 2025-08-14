@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T00:45:55.293Z",
-  "pagesScanned": 1568,
+  "generatedAt": "2025-08-14T01:31:48.053Z",
+  "pagesScanned": 1570,
   "items": [
     {
       "route": "/404",
@@ -2779,6 +2779,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14-0108",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Runbook: RAG Platforms",
+        "description": "Runbook: RAG Platforms — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -4560,6 +4570,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-004545",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-004550",
       "missing": [
         "og:image"
       ],
