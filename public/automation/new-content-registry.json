@@ -1,96 +1,40 @@
 {
-<<<<<<< HEAD
-  "generatedAt": "2025-08-14T16:32:45.174Z",
+  "generatedAt": "2025-08-14T16:34:55.368Z",
   "items": [
     {
-      "title": "Playbook — Autonomous Delivery",
-      "href": "/reports/playbooks/playbook-2025-08-14-163243",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:32:43.795Z",
-=======
-  "generatedAt": "2025-08-14T16:34:15.762Z",
-  "items": [
+      "title": "Blueprint: LLM Apps",
+      "subtitle": "Patterns to reduce cost.",
+      "path": "/reports/innovations/insight-2025-08-14-1634",
+      "createdAt": "2025-08-14T16:34:59.728Z",
+      "kind": "insight"
+    },
     {
       "title": "Reference Architecture — Autonomous Content Mesh",
-      "href": "/reports/blueprints/blueprint-2025-08-14-163415",
+      "href": "/reports/blueprints/blueprint-2025-08-14-163455",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:34:15.730Z",
+      "createdAt": "2025-08-14T16:34:55.191Z",
       "source": "cloud-blueprint-factory"
     },
     {
       "title": "Playbook — Autonomous Delivery",
-      "href": "/reports/playbooks/playbook-2025-08-14-163415",
+      "href": "/reports/playbooks/playbook-2025-08-14-163454",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:34:15.697Z",
->>>>>>> f846d44233 (chore(sync): advanced autonomous sync)
+      "createdAt": "2025-08-14T16:34:54.897Z",
       "source": "cloud-playbook-factory"
     },
     {
       "title": "Guide —  Implementation",
-<<<<<<< HEAD
-      "href": "/reports/guides/guide-2025-08-14-163243",
+      "href": "/reports/guides/guide-2025-08-14-163454",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:32:43.415Z",
-=======
-      "href": "/reports/guides/guide-2025-08-14-163415",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:34:15.660Z",
->>>>>>> f846d44233 (chore(sync): advanced autonomous sync)
+      "createdAt": "2025-08-14T16:34:54.694Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Cloud Intelligence",
-<<<<<<< HEAD
-      "href": "/reports/patterns/pattern-2025-08-14-163243",
+      "href": "/reports/patterns/pattern-2025-08-14-163454",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:32:43.415Z",
+      "createdAt": "2025-08-14T16:34:54.694Z",
       "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-14 16-32",
-      "href": "/reports/innovations/insight-2025-08-14T16-32",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:32:43.225Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-14 16-32",
-      "href": "/reports/updates/update-2025-08-14T16-32",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:32:43.225Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Reference Architecture — Autonomous Content Mesh",
-      "href": "/reports/blueprints/blueprint-2025-08-14-163243",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:32:43.024Z",
-      "source": "cloud-blueprint-factory"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-14 16-32",
-      "href": "/reports/innovations/insight-2025-08-14T16-32",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:32:42.788Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-14 16-32",
-      "href": "/reports/updates/update-2025-08-14T16-32",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:32:42.788Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "id": "cursor-chat-2025-08-14T16:32:44.378Z",
-      "type": "cursor-chat",
-      "timestamp": "2025-08-14T16:32:44.378Z"
-=======
-      "href": "/reports/patterns/pattern-2025-08-14-163415",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T16:34:15.660Z",
-      "source": "cloud-deep-research-factory"
->>>>>>> f846d44233 (chore(sync): advanced autonomous sync)
     }
   ]
 }
