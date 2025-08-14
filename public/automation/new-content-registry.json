@@ -1,6 +1,8 @@
 {
+  "generatedAt": "2025-08-14T23:02:16.355Z",
   "items": [
     {
+<<<<<<< HEAD
       "title": "Blueprint: Agent Ops",
       "subtitle": "Patterns to enhance security.",
       "path": "/reports/innovations/insight-2025-08-14-2301",
@@ -13,6 +15,27 @@
       "path": "/reports/innovations/insight-2025-08-14-2256",
       "createdAt": "2025-08-14T22:56:06.038Z",
       "kind": "insight"
+=======
+      "title": "Case Study — Trigger Homepage",
+      "href": "/reports/cases/case-2025-08-14-230216",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T23:02:16.326Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-14-230216",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T23:02:16.326Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Cloud Improving Continuously",
+      "href": "/reports/patterns/pattern-2025-08-14-230216",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T23:02:16.326Z",
+      "source": "cloud-deep-research-factory"
+>>>>>>> 4e2317e579 (chore(sync): advanced autonomous sync)
     }
   ]
 }
