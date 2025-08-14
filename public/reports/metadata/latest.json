@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T00:12:30.627Z",
-  "pagesScanned": 1174,
+  "generatedAt": "2025-08-14T00:12:40.085Z",
+  "pagesScanned": 1179,
   "items": [
     {
       "route": "/404",
@@ -53,10 +53,7 @@
     {
       "route": "/contact",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Contact",
@@ -100,10 +97,7 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -346,6 +340,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-001013",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-001232",
       "missing": [
         "og:image"
       ],
@@ -1285,6 +1289,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14-0012",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pilot Plan: FinOps for AI",
+        "description": "Pilot Plan: FinOps for AI — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -1302,6 +1316,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-14 00-10",
         "description": "Innovation Insight — 2025-08-14 00-10 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14T00-12",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-14 00-12",
+        "description": "Innovation Insight — 2025-08-14 00-12 — auto-suggested description"
       }
     },
     {
@@ -1556,6 +1580,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-001013",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-001232",
       "missing": [
         "og:image"
       ],
@@ -11712,6 +11746,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 00-10",
         "description": "Autonomous Update — 2025-08-14 00-10 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14T00-12",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 00-12",
+        "description": "Autonomous Update — 2025-08-14 00-12 — auto-suggested description"
       }
     },
     {
