@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T13:20:49.615Z",
-  "pagesScanned": 2768,
+  "generatedAt": "2025-08-14T13:21:00.695Z",
+  "pagesScanned": 2769,
   "items": [
     {
       "route": "/404",
@@ -26672,6 +26672,19 @@
       "suggestion": {
         "title": "Autonomous Reference Architecture — Cloud Cost Optimization (2025-08-14 10:20 UTC)",
         "description": "Autonomous Reference Architecture — Cloud Cost Optimization (2025-08-14 10:20 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1021",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 10:21",
+        "description": "Autonomous Update — 2025-08-14 10:21 — auto-suggested description"
       }
     },
     {
