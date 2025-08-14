@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
   "generatedAt": "2025-08-14T17:42:11.186Z",
   "items": [
     {
@@ -30,10 +31,20 @@
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T17:43:15.022Z",
 >>>>>>> 74615c396e (chore(sync): advanced autonomous sync)
+=======
+  "generatedAt": "2025-08-14T17:46:29.953Z",
+  "items": [
+    {
+      "title": "Guide —  Implementation",
+      "href": "/reports/guides/guide-2025-08-14-174629",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T17:46:29.913Z",
+>>>>>>> bba5b682c2 (chore(sync): advanced autonomous sync)
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Cloud Intelligence",
+<<<<<<< HEAD
 <<<<<<< HEAD
       "href": "/reports/patterns/pattern-2025-08-14-174211",
       "desc": "New autonomous content",
@@ -43,6 +54,11 @@
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T17:43:15.022Z",
 >>>>>>> 74615c396e (chore(sync): advanced autonomous sync)
+=======
+      "href": "/reports/patterns/pattern-2025-08-14-174629",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T17:46:29.913Z",
+>>>>>>> bba5b682c2 (chore(sync): advanced autonomous sync)
       "source": "cloud-deep-research-factory"
     }
   ]
