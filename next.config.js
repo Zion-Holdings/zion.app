@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Export as a fully static site for Netlify publish (out/)
-  output: 'export',
+  // Static export handled via npm script; no inline export during build
   trailingSlash: true,
   productionBrowserSourceMaps: false,
   images: { unoptimized: true },
