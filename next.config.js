@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Export as a fully static site for Netlify publish (out/)
+  output: 'export',
   trailingSlash: true,
   productionBrowserSourceMaps: false,
+  images: { unoptimized: true },
   async redirects() {
     return [
       { source: '/main', destination: '/', permanent: true },

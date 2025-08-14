@@ -15,7 +15,11 @@ async function main() {
   const workflowsDir = path.join(process.cwd(), '.github', 'workflows');
   const logDir = path.join(process.cwd(), 'automation', 'logs');
   const logFile = path.join(logDir, 'auto-scheduler.log');
+  const hintsDir = path.join(process.cwd(), 'public', 'automation');
+  const hintsFile = path.join(hintsDir, 'schedule-hints.json');
+  
   if (!fs.existsSync(logDir)) fs.mkdirSync(logDir, { recursive: true });
+  if (!fs.existsSync(hintsDir)) fs.mkdirSync(hintsDir, { recursive: true });
 
   function log(msg) {
     const line = `[${new Date().toISOString()}] ${msg}`;
@@ -73,6 +77,13 @@ async function main() {
   }
 
   let changes = 0;
+  const scheduleHints = {
+    version: '1.0.0',
+    lastUpdated: new Date().toISOString(),
+    workflows: {},
+    recommendations: {},
+    performance: {}
+  };
 
   for (const t of targets) {
     const wf = nameToWorkflow.get(t.name);
@@ -132,6 +143,23 @@ async function main() {
 
     log(`${t.name}: successRate=${(successRate*100).toFixed(1)}% failures=${failures} current=${currentFreq}m -> target=${targetFreq}m`);
 
+    // Store schedule hints for this workflow
+    scheduleHints.workflows[t.name] = {
+      currentFrequency: currentFreq,
+      targetFrequency: targetFreq,
+      currentCron: currentCron,
+      targetCron: targetCron,
+      successRate: successRate,
+      failures: failures,
+      totalRuns: total,
+      recommendations: {
+        shouldSpeedUp: successRate >= 0.98 && failures === 0 && idx > 0,
+        shouldSlowDown: (successRate < 0.85 || failures >= 3) && idx < boundedSteps.length - 1,
+        reason: successRate >= 0.98 && failures === 0 ? 'high_success_rate' : 
+                (successRate < 0.85 || failures >= 3) ? 'high_failure_rate' : 'stable'
+      }
+    };
+
     if (targetCron !== currentCron) {
       const updated = original.replace(/(cron:\s*['\"]) ([^'\"]+)(['\"])/, (m, p1, _p2, p3) => `${p1}${targetCron}${p3}`)
         .replace(/cron:\s*['\"][^'\"]+['\"]/g, `cron: '${targetCron}'`); // fallback global
@@ -145,6 +173,37 @@ async function main() {
     } else {
       log(`No change needed for ${t.file}`);
     }
+  }
+
+  // Generate overall recommendations
+  const totalWorkflows = Object.keys(scheduleHints.workflows).length;
+  const workflowsNeedingSpeedUp = Object.values(scheduleHints.workflows).filter(w => w.recommendations.shouldSpeedUp).length;
+  const workflowsNeedingSlowDown = Object.values(scheduleHints.workflows).filter(w => w.recommendations.shouldSlowDown).length;
+  
+  scheduleHints.recommendations = {
+    totalWorkflows,
+    workflowsNeedingSpeedUp,
+    workflowsNeedingSlowDown,
+    overallHealth: workflowsNeedingSlowDown === 0 ? 'excellent' : 
+                   workflowsNeedingSlowDown <= 1 ? 'good' : 
+                   workflowsNeedingSlowDown <= 2 ? 'fair' : 'poor',
+    nextReview: new Date(Date.now() + 6 * 60 * 60 * 1000).toISOString() // 6 hours from now
+  };
+
+  // Performance insights
+  const avgSuccessRate = Object.values(scheduleHints.workflows).reduce((sum, w) => sum + w.successRate, 0) / totalWorkflows;
+  scheduleHints.performance = {
+    averageSuccessRate: avgSuccessRate,
+    totalFailures: Object.values(scheduleHints.workflows).reduce((sum, w) => sum + w.failures, 0),
+    efficiency: avgSuccessRate > 0.95 ? 'high' : avgSuccessRate > 0.85 ? 'medium' : 'low'
+  };
+
+  // Write schedule hints to public directory
+  try {
+    fs.writeFileSync(hintsFile, JSON.stringify(scheduleHints, null, 2));
+    log(`Schedule hints written to ${hintsFile}`);
+  } catch (error) {
+    log(`Failed to write schedule hints: ${error.message}`);
   }
 
   if (changes === 0) {
