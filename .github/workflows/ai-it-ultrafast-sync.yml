@@ -19,11 +19,12 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '20.18.1'
 
       - name: Trigger Netlify automations (best-effort)
+        env:
+          NETLIFY_BASE_URL: https://ziontechgroup.com
         run: |
-          npm ci --no-audit --no-fund
           node scripts/trigger-netlify-automations.cjs --timeout 8000 || true
 
       - name: Commit logs and stamp
@@ -35,7 +36,7 @@ jobs:
             echo "No changes"
           else
             git commit -m "chore: ultrafast sync logs [skip ci]"
-            git push origin HEAD:main
+            git push origin HEAD:main || true
           fi
 
 
