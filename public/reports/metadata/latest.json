@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T00:27:01.093Z",
-  "pagesScanned": 1295,
+  "generatedAt": "2025-08-14T00:28:01.738Z",
+  "pagesScanned": 1302,
   "items": [
     {
       "route": "/404",
@@ -97,7 +97,10 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -620,6 +623,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-002624",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-002753",
       "missing": [
         "og:image"
       ],
@@ -1689,6 +1702,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14-0027",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Runbook: Agent Ops",
+        "description": "Runbook: Agent Ops — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -1836,6 +1859,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-14 00-26",
         "description": "Innovation Insight — 2025-08-14 00-26 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14T00-27",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-14 00-27",
+        "description": "Innovation Insight — 2025-08-14 00-27 — auto-suggested description"
       }
     },
     {
@@ -2370,6 +2403,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-002625",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-002754",
       "missing": [
         "og:image"
       ],
@@ -11881,14 +11924,24 @@
     {
       "route": "/reports/updates/update-2025-08-13-2127",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 21:27",
+        "description": "Autonomous Update — 2025-08-13 21:27 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2128",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-13 21:27",
-        "description": "Autonomous Update — 2025-08-13 21:27 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-13 21:28",
+        "description": "Autonomous Update — 2025-08-13 21:28 — auto-suggested description"
       }
     },
     {
@@ -12772,6 +12825,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-14-0027",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Capability Map — Vision & Multimodal (2025-08-14 00:27 UTC)",
+        "description": "Autonomous Capability Map — Vision & Multimodal (2025-08-14 00:27 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -12919,6 +12982,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 00-26",
         "description": "Autonomous Update — 2025-08-14 00-26 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14T00-27",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 00-27",
+        "description": "Autonomous Update — 2025-08-14 00-27 — auto-suggested description"
       }
     },
     {
