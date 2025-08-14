@@ -11140,6 +11140,7 @@
     }
   ],
 <<<<<<< HEAD
+<<<<<<< HEAD
   "generatedAt": "2025-08-14T11:12:16.326Z"
 =======
   "generatedAt": "2025-08-14T11:14:50.779Z",
@@ -11149,17 +11150,47 @@
       "href": "/reports/cases/case-2025-08-14-111451",
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T11:14:51.805Z",
+=======
+  "generatedAt": "2025-08-14T11:12:16.326Z",
+  "items": [
+    {
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-14-111648",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T11:16:48.171Z",
+      "source": "cloud-blueprint-factory"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-14-111648",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T11:16:48.139Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Case Study — Autonomous Reports",
+      "href": "/reports/cases/case-2025-08-14-111648",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T11:16:48.102Z",
+>>>>>>> 473b88207a (chore(sync): advanced autonomous sync)
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Guide — Techcrunch Pebble Implementation",
+<<<<<<< HEAD
       "href": "/reports/guides/guide-2025-08-14-111451",
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T11:14:51.805Z",
+=======
+      "href": "/reports/guides/guide-2025-08-14-111648",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T11:16:48.102Z",
+>>>>>>> 473b88207a (chore(sync): advanced autonomous sync)
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Trigger Homepage Sitemap",
+<<<<<<< HEAD
       "href": "/reports/patterns/pattern-2025-08-14-111451",
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T11:14:51.805Z",
@@ -11167,4 +11198,12 @@
     }
   ]
 >>>>>>> 64a71749ca (chore(sync): advanced autonomous sync)
+=======
+      "href": "/reports/patterns/pattern-2025-08-14-111648",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T11:16:48.102Z",
+      "source": "cloud-deep-research-factory"
+    }
+  ]
+>>>>>>> 473b88207a (chore(sync): advanced autonomous sync)
 }
