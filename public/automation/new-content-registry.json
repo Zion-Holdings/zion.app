@@ -1,48 +1,32 @@
 {
-<<<<<<< HEAD
-  "generatedAt": "2025-08-14T17:03:23.922Z",
+  "generatedAt": "2025-08-14T17:33:36.350Z",
   "items": [
     {
       "title": "Reference Architecture — Autonomous Content Mesh",
-      "href": "/reports/blueprints/blueprint-2025-08-14-170323",
+      "href": "/reports/blueprints/blueprint-2025-08-14-173336",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T17:03:23.889Z",
+      "createdAt": "2025-08-14T17:33:36.316Z",
       "source": "cloud-blueprint-factory"
     },
     {
       "title": "Playbook — Autonomous Delivery",
-      "href": "/reports/playbooks/playbook-2025-08-14-170323",
+      "href": "/reports/playbooks/playbook-2025-08-14-173336",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T17:03:23.856Z",
+      "createdAt": "2025-08-14T17:33:36.282Z",
       "source": "cloud-playbook-factory"
     },
     {
       "title": "Guide —  Implementation",
-      "href": "/reports/guides/guide-2025-08-14-170323",
+      "href": "/reports/guides/guide-2025-08-14-173336",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T17:03:23.817Z",
-=======
-  "generatedAt": "2025-08-14T17:06:52.460Z",
-  "items": [
-    {
-      "title": "Guide —  Implementation",
-      "href": "/reports/guides/guide-2025-08-14-170652",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T17:06:52.422Z",
->>>>>>> c3928ade00 (chore(sync): advanced autonomous sync)
+      "createdAt": "2025-08-14T17:33:36.242Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Cloud Intelligence",
-<<<<<<< HEAD
-      "href": "/reports/patterns/pattern-2025-08-14-170323",
+      "href": "/reports/patterns/pattern-2025-08-14-173336",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T17:03:23.817Z",
-=======
-      "href": "/reports/patterns/pattern-2025-08-14-170652",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T17:06:52.422Z",
->>>>>>> c3928ade00 (chore(sync): advanced autonomous sync)
+      "createdAt": "2025-08-14T17:33:36.242Z",
       "source": "cloud-deep-research-factory"
     }
   ]
