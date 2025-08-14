@@ -55,6 +55,21 @@ function main() {
     };
   });
 
+  // Enrich index with known dynamic service routes by parsing the service source
+  try {
+    const servicesFile = path.join(pagesRoot, 'services', '[slug].tsx');
+    if (fs.existsSync(servicesFile)) {
+      const source = fs.readFileSync(servicesFile, 'utf8');
+      const items = Array.from(source.matchAll(/slug:\s*['"]([^'\"]+)['\"],[^\n]*\n\s*title:\s*['"]([^'\"]+)['\"],[^\n]*\n\s*description:\s*['"]([^'\"]+)['\"]/g));
+      for (const m of items) {
+        const slug = m[1];
+        const title = m[2];
+        const description = m[3];
+        entries.push({ route: `/services/${slug}`, file: 'pages/services/[slug].tsx', title, summary: description });
+      }
+    }
+  } catch {}
+
   const outDir = path.join(process.cwd(), 'public', 'search');
   fs.mkdirSync(outDir, { recursive: true });
   const outPath = path.join(outDir, 'index.json');
