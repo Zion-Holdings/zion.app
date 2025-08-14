@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T00:13:35.322Z",
-  "pagesScanned": 1186,
+  "generatedAt": "2025-08-14T00:14:00.662Z",
+  "pagesScanned": 1191,
   "items": [
     {
       "route": "/404",
@@ -363,6 +363,26 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-001301",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-001338",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-001359",
       "missing": [
         "og:image"
       ],
@@ -1633,6 +1653,26 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-001302",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-001338",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-001359",
       "missing": [
         "og:image"
       ],
@@ -11009,6 +11049,19 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 21:13",
         "description": "Autonomous Update — 2025-08-13 21:13 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2114",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 21:14",
+        "description": "Autonomous Update — 2025-08-13 21:14 — auto-suggested description"
       }
     },
     {
