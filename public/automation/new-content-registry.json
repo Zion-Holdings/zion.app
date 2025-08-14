@@ -1,58 +1,26 @@
 {
-<<<<<<< HEAD
-  "generatedAt": "2025-08-14T11:19:53.670Z",
-  "items": [
-    {
-      "title": "Innovation Insight — 2025-08-14 11-19",
-      "href": "/reports/innovations/insight-2025-08-14T11-19",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T11:19:53.644Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-14 11-19",
-      "href": "/reports/updates/update-2025-08-14T11-19",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T11:19:53.644Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-14 11-19",
-      "href": "/reports/innovations/insight-2025-08-14T11-19",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T11:19:53.644Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-14 11-19",
-      "href": "/reports/updates/update-2025-08-14T11-19",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T11:19:53.644Z",
-      "source": "cloud-content-factory"
-=======
-  "generatedAt": "2025-08-14T11:28:16.628Z",
+  "generatedAt": "2025-08-14T11:38:35.555Z",
   "items": [
     {
       "title": "Case Study — Autonomous Reports",
-      "href": "/reports/cases/case-2025-08-14-112816",
+      "href": "/reports/cases/case-2025-08-14-113835",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T11:28:16.591Z",
+      "createdAt": "2025-08-14T11:38:35.510Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Guide — Techcrunch Pebble Implementation",
-      "href": "/reports/guides/guide-2025-08-14-112816",
+      "href": "/reports/guides/guide-2025-08-14-113835",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T11:28:16.591Z",
+      "createdAt": "2025-08-14T11:38:35.510Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Trigger Homepage Sitemap",
-      "href": "/reports/patterns/pattern-2025-08-14-112816",
+      "href": "/reports/patterns/pattern-2025-08-14-113835",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T11:28:16.591Z",
+      "createdAt": "2025-08-14T11:38:35.510Z",
       "source": "cloud-deep-research-factory"
->>>>>>> f94965f780 (chore(sync): advanced autonomous sync)
     }
   ]
 }
