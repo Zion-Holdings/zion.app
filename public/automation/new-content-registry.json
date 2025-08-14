@@ -1,26 +1,47 @@
 {
-  "generatedAt": "2025-08-14T09:13:04.813Z",
+  "generatedAt": "2025-08-14T09:13:16.366Z",
   "items": [
     {
-      "title": "Case Study — Autonomous Reports",
-      "href": "/reports/cases/case-2025-08-14-091304",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T09:13:04.703Z",
-      "source": "cloud-deep-research-factory"
+      "title": "Guide: Agent Ops",
+      "subtitle": "Patterns to accelerate delivery.",
+      "path": "/reports/innovations/insight-2025-08-14-0913",
+      "createdAt": "2025-08-14T09:13:13.993Z",
+      "kind": "insight"
     },
     {
-      "title": "Guide — Techcrunch Pebble Implementation",
-      "href": "/reports/guides/guide-2025-08-14-091304",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T09:13:04.703Z",
-      "source": "cloud-deep-research-factory"
+      "title": "Guide: Agent Ops",
+      "subtitle": "Patterns to accelerate delivery.",
+      "path": "/reports/innovations/insight-2025-08-14-0913",
+      "createdAt": "2025-08-14T09:13:13.993Z",
+      "kind": "insight"
     },
     {
-      "title": "Pattern — Trigger Homepage Sitemap",
-      "href": "/reports/patterns/pattern-2025-08-14-091304",
+      "title": "Innovation Insight — 2025-08-14 09-13",
+      "href": "/reports/innovations/insight-2025-08-14T09-13",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T09:13:04.703Z",
-      "source": "cloud-deep-research-factory"
+      "createdAt": "2025-08-14T09:13:16.273Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-14 09-13",
+      "href": "/reports/updates/update-2025-08-14T09-13",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T09:13:16.273Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-14 09-13",
+      "href": "/reports/innovations/insight-2025-08-14T09-13",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T09:13:16.273Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-14 09-13",
+      "href": "/reports/updates/update-2025-08-14T09-13",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T09:13:16.273Z",
+      "source": "cloud-content-factory"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T09:13:03.866Z",
-  "pagesScanned": 2468,
+  "generatedAt": "2025-08-14T09:13:15.275Z",
+  "pagesScanned": 2473,
   "items": [
     {
       "route": "/404",
@@ -93,7 +93,10 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -3125,6 +3128,16 @@
       }
     },
     {
+      "route": "/reports/cases/case-2025-08-14-091304",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Autonomous Reports",
+        "description": "Case Study — Autonomous Reports — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/guides/guide-2025-08-13-215625",
       "missing": [
         "og:image"
@@ -4056,6 +4069,16 @@
     },
     {
       "route": "/reports/guides/guide-2025-08-14-091247",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Techcrunch Pebble Implementation",
+        "description": "Guide — Techcrunch Pebble Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-14-091304",
       "missing": [
         "og:image"
       ],
@@ -5692,6 +5715,16 @@
       "suggestion": {
         "title": "Runbook: MLOps",
         "description": "Runbook: MLOps — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14-0913",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide: Agent Ops",
+        "description": "Guide: Agent Ops — auto-suggested description"
       }
     },
     {
@@ -7396,6 +7429,16 @@
     },
     {
       "route": "/reports/patterns/pattern-2025-08-14-091247",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Trigger Homepage Sitemap",
+        "description": "Pattern — Trigger Homepage Sitemap — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-14-091304",
       "missing": [
         "og:image"
       ],
@@ -23892,6 +23935,16 @@
       "suggestion": {
         "title": "Autonomous Playbook — MLOps & Model Reliability (2025-08-14 09:12 UTC)",
         "description": "Autonomous Playbook — MLOps & Model Reliability (2025-08-14 09:12 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0913",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Reference Architecture — MLOps & Model Reliability (2025-08-14 09:13 UTC)",
+        "description": "Autonomous Reference Architecture — MLOps & Model Reliability (2025-08-14 09:13 UTC) — auto-suggested description"
       }
     },
     {
