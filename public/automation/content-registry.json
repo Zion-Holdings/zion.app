@@ -61,12 +61,20 @@
       "route": "/front"
     },
     {
+      "file": "pages/explore/index.tsx",
+      "route": "/explore"
+    },
+    {
       "file": "pages/automation/index.tsx",
       "route": "/automation"
     },
     {
-      "file": "pages/explore/index.tsx",
-      "route": "/explore"
+      "file": "pages/reports/patterns/pattern-2025-08-14-163628.tsx",
+      "route": "/reports/patterns/pattern-2025-08-14-163628"
+    },
+    {
+      "file": "pages/reports/patterns/pattern-2025-08-14-163619.tsx",
+      "route": "/reports/patterns/pattern-2025-08-14-163619"
     },
     {
       "file": "pages/reports/patterns/pattern-2025-08-14-163551.tsx",
@@ -1059,6 +1067,10 @@
     {
       "file": "pages/reports/patterns/pattern-2025-08-13-215625.tsx",
       "route": "/reports/patterns/pattern-2025-08-13-215625"
+    },
+    {
+      "file": "pages/reports/playbooks/playbook-2025-08-14-163629.tsx",
+      "route": "/reports/playbooks/playbook-2025-08-14-163629"
     },
     {
       "file": "pages/reports/playbooks/playbook-2025-08-14-163543.tsx",
@@ -4221,8 +4233,12 @@
       "route": "/reports/cases/case-2025-08-14-040018"
     },
     {
-      "file": "pages/main/front/index.tsx",
-      "route": "/main/front"
+      "file": "pages/reports/guides/guide-2025-08-14-163628.tsx",
+      "route": "/reports/guides/guide-2025-08-14-163628"
+    },
+    {
+      "file": "pages/reports/guides/guide-2025-08-14-163619.tsx",
+      "route": "/reports/guides/guide-2025-08-14-163619"
     },
     {
       "file": "pages/reports/guides/guide-2025-08-14-163551.tsx",
@@ -5211,6 +5227,14 @@
     {
       "file": "pages/reports/guides/guide-2025-08-13-215625.tsx",
       "route": "/reports/guides/guide-2025-08-13-215625"
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "route": "/main/front"
+    },
+    {
+      "file": "pages/reports/blueprints/blueprint-2025-08-14-163629.tsx",
+      "route": "/reports/blueprints/blueprint-2025-08-14-163629"
     },
     {
       "file": "pages/reports/blueprints/blueprint-2025-08-14-163543.tsx",
@@ -13735,5 +13759,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-14T16:36:03.754Z"
+  "generatedAt": "2025-08-14T16:36:31.458Z"
 }
