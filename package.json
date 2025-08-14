@@ -263,7 +263,8 @@
     "cloud:factory": "node automation/cloud-content-factory.cjs",
     "cloud:advertise": "node automation/cloud-content-advertiser.cjs",
     "cloud:continuous": "node scripts/continuous-cloud-agents.cjs",
-    "gh:trigger": "node scripts/trigger-workflows.cjs"
+    "gh:trigger": "node scripts/trigger-workflows.cjs",
+    "gh:auto-heal": "node scripts/workflows-auto-healer.cjs && git add .github/workflows && git commit -m 'ci(auto-heal): normalize workflows [skip ci]' || true && git push origin HEAD"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
