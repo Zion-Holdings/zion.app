@@ -23,9 +23,26 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Run Lighthouse on production URLs
+      - name: Run Lighthouse on production URLs (non-blocking on schedule)
+        if: ${{ github.event_name == 'schedule' }}
         uses: treosh/lighthouse-ci-action@v11
-        continue-on-error: ${{ github.event_name == 'schedule' }}
+        continue-on-error: true
+        with:
+          urls: |
+            https://ziontechgroup.com/
+            https://ziontechgroup.com/explore
+            https://ziontechgroup.com/front
+            https://ziontechgroup.com/newsroom
+            https://ziontechgroup.com/reports
+            https://ziontechgroup.com/site-health
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+          runs: 3
+          configPath: lighthouserc.json
+
+      - name: Run Lighthouse on production URLs (strict)
+        if: ${{ github.event_name != 'schedule' }}
+        uses: treosh/lighthouse-ci-action@v11
         with:
           urls: |
             https://ziontechgroup.com/
@@ -46,7 +63,5 @@ jobs:
       - name: Install Lighthouse CI
         run: npm i -g @lhci/cli@0.12.x
       - name: Run against production
-        env:
-          LHCI_TOKEN: ${{ secrets.LHCI_TOKEN }}
         run: |
           lhci autorun --collect.url=https://ziontechgroup.com --upload.target=temporary-public-storage || echo "LHCI finished with non-zero (report only)"
