@@ -44,6 +44,10 @@ export default function Newsroom() {
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/14/kodak-denies-its-shutting-down-amid-media-reports-of-finicial-struggles/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Kodak denies it’s shutting down amid media reports of finicial struggles</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
             <a href="https://techcrunch.com/2025/08/14/chatgpt-everything-to-know-about-the-ai-chatbot/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">ChatGPT: Everything you need to know about the AI-powered chatbot</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
@@ -85,10 +89,6 @@ export default function Newsroom() {
           </li>
           <li className="py-2">
             <a href="https://techcrunch.com/storyline/google-i-o-2025-live-coverage-google-ai-ultra-project-mariner-gemini-app-updates-and-more/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Google I/O 2025 live coverage: Google AI Ultra, Project Mariner, Gemini app updates, and more</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/storyline/tesla-q1-earnings-live-updates/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Tesla earnings wrap up: Elon Musk talks DOGE, Trump and tariffs, robotaxis, AI, and cheap EVs</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
