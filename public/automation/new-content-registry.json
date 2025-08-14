@@ -1,43 +1,33 @@
 {
-<<<<<<< HEAD
-  "items": [
-    {
-      "title": "Runbook: Agent Ops",
-      "subtitle": "Patterns to enhance security.",
-      "path": "/reports/innovations/insight-2025-08-14-1821",
-      "createdAt": "2025-08-14T18:21:17.799Z",
-      "kind": "insight"
-=======
-  "generatedAt": "2025-08-14T18:27:28.401Z",
+  "generatedAt": "2025-08-14T18:40:57.772Z",
   "items": [
     {
       "title": "Reference Architecture — Autonomous Content Mesh",
-      "href": "/reports/blueprints/blueprint-2025-08-14-182728",
+      "href": "/reports/blueprints/blueprint-2025-08-14-184057",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T18:27:28.367Z",
+      "createdAt": "2025-08-14T18:40:57.739Z",
       "source": "cloud-blueprint-factory"
     },
     {
       "title": "Playbook — Autonomous Delivery",
-      "href": "/reports/playbooks/playbook-2025-08-14-182728",
+      "href": "/reports/playbooks/playbook-2025-08-14-184057",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T18:27:28.334Z",
+      "createdAt": "2025-08-14T18:40:57.707Z",
       "source": "cloud-playbook-factory"
     },
     {
       "title": "Guide —  Implementation",
-      "href": "/reports/guides/guide-2025-08-14-182728",
+      "href": "/reports/guides/guide-2025-08-14-184057",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T18:27:28.294Z",
+      "createdAt": "2025-08-14T18:40:57.667Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Cloud Intelligence",
-      "href": "/reports/patterns/pattern-2025-08-14-182728",
+      "href": "/reports/patterns/pattern-2025-08-14-184057",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T18:27:28.294Z",
+      "createdAt": "2025-08-14T18:40:57.667Z",
       "source": "cloud-deep-research-factory"
->>>>>>> 1cd999e388 (chore(sync): advanced autonomous sync)
     }
   ]
 }
