@@ -28,12 +28,12 @@ function ensureGuardPushOnMainOnly(filePath, content) {
     while (j < lines.length && !lines[j].match(stepEndIndentPattern)) {
       const l = lines[j];
       if (l.includes("git push")) containsGitPush = true;
-      const ifGuardPattern = new RegExp(`^${stepIndent}[ \t]{2}if:\s*\$\{\{\s*github\.ref\s*==\s*'refs/heads/main'\s*\}\}`);
+      const ifGuardPattern = new RegExp(`^${stepIndent}[ \t]{2}if:\s*\$\{\{.*\}\}`);
       if (ifGuardPattern.test(l)) hasIfGuard = true;
       j++;
     }
     if (containsGitPush && !hasIfGuard) {
-      const guardLiteral = `${stepIndent}  if: ${{` + ` github.ref == 'refs/heads/main' }}`;
+      const guardLiteral = `${stepIndent}  if: ${{` + ` !github.event.repository.fork && github.ref == 'refs/heads/main' }}`;
       lines.splice(i + 1, 0, guardLiteral);
       changed = true;
       i++;
