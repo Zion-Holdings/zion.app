@@ -1,45 +1,35 @@
 {
-  "generatedAt": "2025-08-14T10:29:18.212Z",
+  "generatedAt": "2025-08-14T10:34:27.224Z",
   "items": [
     {
-<<<<<<< HEAD
-      "title": "Pilot Plan: Agent Ops",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-14-1026",
-      "createdAt": "2025-08-14T10:26:21.197Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-14 10-20",
-      "href": "/reports/innovations/insight-2025-08-14T10-20",
+      "title": "Innovation Insight — 2025-08-14 10-34",
+      "href": "/reports/innovations/insight-2025-08-14T10-34",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T10:20:22.905Z",
+      "createdAt": "2025-08-14T10:34:27.191Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-14 10-20",
-      "href": "/reports/updates/update-2025-08-14T10-20",
+      "title": "Autonomous Update — 2025-08-14 10-34",
+      "href": "/reports/updates/update-2025-08-14T10-34",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T10:20:22.905Z",
+      "createdAt": "2025-08-14T10:34:27.191Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Innovation Insight — 2025-08-14 10-20",
-      "href": "/reports/innovations/insight-2025-08-14T10-20",
+      "title": "Innovation Insight — 2025-08-14 10-34",
+      "href": "/reports/innovations/insight-2025-08-14T10-34",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T10:20:22.905Z",
+      "createdAt": "2025-08-14T10:34:27.191Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-14 10-20",
-      "href": "/reports/updates/update-2025-08-14T10-20",
+      "title": "Autonomous Update — 2025-08-14 10-34",
+      "href": "/reports/updates/update-2025-08-14T10-34",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T10:20:22.905Z",
+      "createdAt": "2025-08-14T10:34:27.191Z",
       "source": "cloud-content-factory"
     },
     {
-=======
->>>>>>> 4f069a7a60 (chore(sync): advanced autonomous sync)
       "title": "Case Study — Autonomous Reports",
       "href": "/reports/cases/case-2025-08-14-102918",
       "desc": "New autonomous content",
