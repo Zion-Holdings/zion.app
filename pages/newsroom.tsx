@@ -6,10 +6,7 @@ export default function Newsroom() {
       <Head>
         <title>Newsroom — Curated Tech Headlines</title>
         <meta name="description" content="Curated technology and AI headlines from reputable sources." />
-      
-        <meta property="og:title" content="Newsroom" />
-        <meta property="og:description" content="Newsroom — automatically suggested description." />
-        <meta name="twitter:card" content="summary_large_image" /></Head>
+      </Head>
       <main className="container mx-auto px-4 py-12">
         <h1 className="text-4xl font-extrabold mb-2">Newsroom</h1>
         <p className="text-white/70 mb-6">Updated automatically from multiple sources.</p>
@@ -47,6 +44,18 @@ export default function Newsroom() {
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/14/cohere-hires-long-time-meta-research-head-joelle-pineau-as-its-chief-ai-officer/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Cohere hires long-time Meta research head Joelle Pineau as its chief AI officer</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/14/inside-the-box-aaron-levie-on-reinvention-at-techcrunch-disrupt-2025/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Inside the Box: Aaron Levie on reinvention at TechCrunch Disrupt 2025</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/14/apples-blood-oxygen-monitoring-returns-to-its-latest-apple-watches/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Apple’s blood oxygen monitoring returns to its latest Apple Watches</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
             <a href="https://techcrunch.com/2025/08/14/airbnb-will-allow-us-users-book-stays-without-paying-upfront/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Airbnb will allow US users book stays without paying upfront</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
@@ -71,14 +80,6 @@ export default function Newsroom() {
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/13/nasa-has-sparked-a-race-to-develop-the-data-pipeline-to-mars/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">NASA has sparked a race to develop the data pipeline to Mars</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/13/pocket-fm-gives-its-writers-an-ai-tool-to-transform-narratives-write-cliffhangers-and-more/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Pocket FM gives its writers an AI tool to transform narratives, write cliffhangers, and more</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
             <a href="https://techcrunch.com/2025/08/10/security-flaws-in-a-carmakers-web-portal-let-one-hacker-remotely-unlock-cars-from-anywhere/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Security flaws in a carmaker’s web portal let one hacker remotely unlock cars from anywhere</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
@@ -88,10 +89,6 @@ export default function Newsroom() {
           </li>
           <li className="py-2">
             <a href="https://techcrunch.com/2025/08/10/the-computer-science-dream-has-become-a-nightmare/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">The computer science dream has become a nightmare</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/08/sam-altman-addresses-bumpy-gpt-5-rollout-bringing-4o-back-and-the-chart-crime/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Sam Altman addresses ‘bumpy’ GPT-5 rollout, bringing 4o back, and the ‘chart crime’</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
