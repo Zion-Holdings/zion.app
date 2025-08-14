@@ -3193,10 +3193,6 @@
       "route": "/reports/innovations"
     },
     {
-      "file": "pages/main/front/index.tsx",
-      "route": "/main/front"
-    },
-    {
       "file": "pages/reports/cases/case-2025-08-14-130008.tsx",
       "route": "/reports/cases/case-2025-08-14-130008"
     },
@@ -3703,6 +3699,10 @@
     {
       "file": "pages/reports/cases/case-2025-08-14-040018.tsx",
       "route": "/reports/cases/case-2025-08-14-040018"
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "route": "/main/front"
     },
     {
       "file": "pages/reports/blueprints/blueprint-2025-08-14-130008.tsx",
@@ -10995,5 +10995,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-14T13:06:03.562Z"
+  "generatedAt": "2025-08-14T13:06:20.543Z"
 }
