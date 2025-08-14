@@ -1,24 +1,7 @@
 {
-  "analyzedAt": 1755132360200,
+  "analyzedAt": 1755162509072,
   "canonical": "https://ziontechgroup.com",
   "candidates": [
-    {
-      "url": "https://ziontechgroup.com/",
-      "title": "Zion Tech Group — Autonomous Cloud Automation",
-      "description": "AI-driven, self-improving web platform with autonomous growth, marketing, and optimization.",
-      "headings": [
-        "Autonomous Cloud Automations",
-        "Self‑Improving",
-        "Safety‑First",
-        "Observability",
-        "Capabilities",
-        "Code Quality & Refactors",
-        "Performance & A11y",
-        "Content & SEO"
-      ],
-      "bullets": [],
-      "score": 186
-    },
     {
       "url": "https://ziontechgroup.com/automation",
       "title": "Automation Hub",
@@ -69,6 +52,22 @@
         "Instagram is developing a feature that helps users find shared interests(TechCrunch)"
       ],
       "score": 132
+    },
+    {
+      "url": "https://ziontechgroup.com/",
+      "title": "Zion — Latest Autonomous Content",
+      "description": "Fresh updates published by autonomous agents.",
+      "headings": [
+        "Latest Autonomous Content",
+        "Autonomous Update — 2025: 08: 14: 0109",
+        "Autonomous Update — 2025: 08: 14: 0108",
+        "Autonomous Update — 2025: 08: 14: 0107",
+        "Autonomous Update — 2025: 08: 14: 0106",
+        "Autonomous Update — 2025: 08: 14: 0105",
+        "Autonomous Update — 2025: 08: 14: 0104"
+      ],
+      "bullets": [],
+      "score": 127
     },
     {
       "url": "https://ziontechgroup.com/site-health",
