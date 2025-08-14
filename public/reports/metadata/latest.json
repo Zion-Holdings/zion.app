@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T04:20:00.849Z",
-  "pagesScanned": 1747,
+  "generatedAt": "2025-08-14T04:21:00.800Z",
+  "pagesScanned": 1750,
   "items": [
     {
       "route": "/404",
@@ -3062,6 +3062,16 @@
       "suggestion": {
         "title": "Playbook: MLOps",
         "description": "Playbook: MLOps — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14-0420",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pilot Plan: Agent Ops",
+        "description": "Pilot Plan: Agent Ops — auto-suggested description"
       }
     },
     {
@@ -16847,14 +16857,24 @@
     {
       "route": "/reports/updates/update-2025-08-14-0120",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 01:20",
+        "description": "Autonomous Update — 2025-08-14 01:20 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0121",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-14 01:20",
-        "description": "Autonomous Update — 2025-08-14 01:20 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-14 01:21",
+        "description": "Autonomous Update — 2025-08-14 01:21 — auto-suggested description"
       }
     },
     {
@@ -16975,6 +16995,16 @@
       "suggestion": {
         "title": "Autonomous Reference Architecture — Evaluation & Safety (2025-08-14 04:10 UTC)",
         "description": "Autonomous Reference Architecture — Evaluation & Safety (2025-08-14 04:10 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0420",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Playbook — Edge AI & IoT (2025-08-14 04:20 UTC)",
+        "description": "Autonomous Playbook — Edge AI & IoT (2025-08-14 04:20 UTC) — auto-suggested description"
       }
     },
     {
