@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T02:47:00.489Z",
-  "pagesScanned": 1661,
+  "generatedAt": "2025-08-14T02:48:00.624Z",
+  "pagesScanned": 1662,
   "items": [
     {
       "route": "/404",
@@ -15332,6 +15332,19 @@
       "suggestion": {
         "title": "Autonomous Blueprint — Edge AI & IoT (2025-08-13 23:47 UTC)",
         "description": "Autonomous Blueprint — Edge AI & IoT (2025-08-13 23:47 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2348",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 23:48",
+        "description": "Autonomous Update — 2025-08-13 23:48 — auto-suggested description"
       }
     },
     {
