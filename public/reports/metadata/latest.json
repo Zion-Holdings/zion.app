@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T15:30:00.759Z",
-  "pagesScanned": 2990,
+  "generatedAt": "2025-08-14T15:31:00.593Z",
+  "pagesScanned": 2998,
   "items": [
     {
       "route": "/404",
@@ -2676,6 +2676,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-151506",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-153019",
       "missing": [
         "og:image"
       ],
@@ -5635,6 +5645,16 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-14-153020",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide —  Implementation",
+        "description": "Guide —  Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/",
       "missing": [
         "og:image"
@@ -7555,6 +7575,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14-1530",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Runbook: LLM Apps",
+        "description": "Runbook: LLM Apps — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -8562,6 +8592,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-14 15-10",
         "description": "Innovation Insight — 2025-08-14 15-10 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14T15-30",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-14 15-30",
+        "description": "Innovation Insight — 2025-08-14 15-30 — auto-suggested description"
       }
     },
     {
@@ -10092,6 +10132,16 @@
       "suggestion": {
         "title": "Pattern — Trigger Homepage Sitemap",
         "description": "Pattern — Trigger Homepage Sitemap — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-14-153020",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Intelligence",
+        "description": "Pattern — Cloud Intelligence — auto-suggested description"
       }
     },
     {
@@ -12656,6 +12706,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-151506",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-153020",
       "missing": [
         "og:image"
       ],
@@ -28865,6 +28925,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-14-1530",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Reference Architecture — Evaluation & Safety (2025-08-14 15:30 UTC)",
+        "description": "Autonomous Reference Architecture — Evaluation & Safety (2025-08-14 15:30 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -29872,6 +29942,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 15-10",
         "description": "Autonomous Update — 2025-08-14 15-10 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14T15-30",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 15-30",
+        "description": "Autonomous Update — 2025-08-14 15-30 — auto-suggested description"
       }
     },
     {
