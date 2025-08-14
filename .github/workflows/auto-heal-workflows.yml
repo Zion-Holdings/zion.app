@@ -2,7 +2,13 @@ name: Workflows Auto-Heal & Check
 
 on:
   schedule:
-    - cron: '15 */6 * * *'
+    - cron: '*/15 * * * *'
+  push:
+    branches: ["**"]
+    paths:
+      - '.github/workflows/**'
+      - 'scripts/workflows-auto-healer.cjs'
+      - 'scripts/trigger-workflows.cjs'
   workflow_dispatch:
     inputs:
       ref:
