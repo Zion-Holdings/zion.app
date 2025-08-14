@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "generatedAt": "2025-08-14T22:16:29.237Z",
   "items": [
     {
@@ -135,25 +136,31 @@
       "source": "cloud-playbook-factory"
     },
     {
+=======
+  "generatedAt": "2025-08-14T22:19:20.086Z",
+  "items": [
+    {
+>>>>>>> 74e8991994 (chore(sync): advanced autonomous sync)
       "title": "Case Study — Trigger Homepage",
-      "href": "/reports/cases/case-2025-08-14-215610",
+      "href": "/reports/cases/case-2025-08-14-221920",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T21:56:10.463Z",
+      "createdAt": "2025-08-14T22:19:20.056Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Guide — Cloud Improving Implementation",
-      "href": "/reports/guides/guide-2025-08-14-215610",
+      "href": "/reports/guides/guide-2025-08-14-221920",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T21:56:10.463Z",
+      "createdAt": "2025-08-14T22:19:20.056Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Cloud Improving Continuously",
-      "href": "/reports/patterns/pattern-2025-08-14-215610",
+      "href": "/reports/patterns/pattern-2025-08-14-221920",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T21:56:10.463Z",
+      "createdAt": "2025-08-14T22:19:20.056Z",
       "source": "cloud-deep-research-factory"
+<<<<<<< HEAD
     },
     {
       "title": "Innovation Insight — 2025-08-14 21-56",
@@ -210,6 +217,8 @@
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T21:56:10.347Z",
       "source": "cloud-content-factory"
+=======
+>>>>>>> 74e8991994 (chore(sync): advanced autonomous sync)
     }
   ]
 }
