@@ -12471,6 +12471,62 @@
   "items": [
     {
       "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-14-162108",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:21:08.383Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Guide —  Implementation",
+      "href": "/reports/guides/guide-2025-08-14-162108",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:21:08.318Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Cloud Intelligence",
+      "href": "/reports/patterns/pattern-2025-08-14-162108",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:21:08.318Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-14 16-21",
+      "href": "/reports/innovations/insight-2025-08-14T16-21",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:21:08.283Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-14 16-21",
+      "href": "/reports/updates/update-2025-08-14T16-21",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:21:08.283Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-14-162108",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:21:08.249Z",
+      "source": "cloud-blueprint-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-14 16-21",
+      "href": "/reports/innovations/insight-2025-08-14T16-21",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:21:08.185Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-14 16-21",
+      "href": "/reports/updates/update-2025-08-14T16-21",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:21:08.185Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery",
       "href": "/reports/playbooks/playbook-2025-08-14-161621",
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T16:16:21.807Z",
@@ -12489,6 +12545,11 @@
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T16:16:21.685Z",
       "source": "cloud-deep-research-factory"
+    },
+    {
+      "id": "cursor-chat-2025-08-14T16:21:08.416Z",
+      "type": "cursor-chat",
+      "timestamp": "2025-08-14T16:21:08.416Z"
     }
   ]
 }
