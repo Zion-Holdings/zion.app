@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T00:32:29.579Z",
-  "pagesScanned": 1361,
+  "generatedAt": "2025-08-14T00:32:34.438Z",
+  "pagesScanned": 1363,
   "items": [
     {
       "route": "/404",
@@ -97,10 +97,7 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -813,6 +810,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-003212",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-003229",
       "missing": [
         "og:image"
       ],
@@ -2873,6 +2880,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-003214",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-003231",
       "missing": [
         "og:image"
       ],
