@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T02:03:00.475Z",
-  "pagesScanned": 1613,
+  "generatedAt": "2025-08-14T02:04:00.476Z",
+  "pagesScanned": 1614,
   "items": [
     {
       "route": "/404",
@@ -14796,6 +14796,19 @@
       "suggestion": {
         "title": "Autonomous Validation & QA Plan — Evaluation & Safety (2025-08-13 23:03 UTC)",
         "description": "Autonomous Validation & QA Plan — Evaluation & Safety (2025-08-13 23:03 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2304",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 23:04",
+        "description": "Autonomous Update — 2025-08-13 23:04 — auto-suggested description"
       }
     },
     {
