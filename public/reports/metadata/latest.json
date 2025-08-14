@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T18:59:00.662Z",
-  "pagesScanned": 3478,
+  "generatedAt": "2025-08-14T19:02:00.668Z",
+  "pagesScanned": 3488,
   "items": [
     {
       "route": "/404",
@@ -33,11 +33,7 @@
     {
       "route": "/_document",
       "missing": [
-        "description",
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "_document",
@@ -3380,6 +3376,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-185827",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-190022",
       "missing": [
         "og:image"
       ],
@@ -7399,6 +7405,16 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-14-190022",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide —  Implementation",
+        "description": "Guide —  Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/",
       "missing": [
         "og:image"
@@ -9559,6 +9575,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14-1900",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pilot Plan: FinOps for AI",
+        "description": "Pilot Plan: FinOps for AI — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -10776,6 +10802,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-14 18-58",
         "description": "Innovation Insight — 2025-08-14 18-58 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14T19-00",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-14 19-00",
+        "description": "Innovation Insight — 2025-08-14 19-00 — auto-suggested description"
       }
     },
     {
@@ -13360,6 +13396,16 @@
     },
     {
       "route": "/reports/patterns/pattern-2025-08-14-185827",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Intelligence",
+        "description": "Pattern — Cloud Intelligence — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-14-190022",
       "missing": [
         "og:image"
       ],
@@ -16610,6 +16656,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-185827",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-190022",
       "missing": [
         "og:image"
       ],
@@ -33351,10 +33407,7 @@
     {
       "route": "/reports/updates/update-2025-08-14-1559",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 15:59",
@@ -33369,6 +33422,29 @@
       "suggestion": {
         "title": "Autonomous Checklist — Agentic Workflows (2025-08-14 16:00 UTC)",
         "description": "Autonomous Checklist — Agentic Workflows (2025-08-14 16:00 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1601",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 16:01",
+        "description": "Autonomous Update — 2025-08-14 16:01 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1602",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 16:02",
+        "description": "Autonomous Update — 2025-08-14 16:02 — auto-suggested description"
       }
     },
     {
@@ -33539,6 +33615,16 @@
       "suggestion": {
         "title": "Autonomous Reference Architecture — AI Service Design (2025-08-14 18:58 UTC)",
         "description": "Autonomous Reference Architecture — AI Service Design (2025-08-14 18:58 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1900",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Playbook — Vision & Multimodal (2025-08-14 19:00 UTC)",
+        "description": "Autonomous Playbook — Vision & Multimodal (2025-08-14 19:00 UTC) — auto-suggested description"
       }
     },
     {
@@ -34759,6 +34845,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 18-58",
         "description": "Autonomous Update — 2025-08-14 18-58 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14T19-00",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 19-00",
+        "description": "Autonomous Update — 2025-08-14 19-00 — auto-suggested description"
       }
     },
     {
