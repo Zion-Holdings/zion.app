@@ -801,6 +801,10 @@
       "route": "/reports/playbooks/playbook-2025-08-13-223010"
     },
     {
+      "file": "pages/reports/patterns/pattern-2025-08-14-090254.tsx",
+      "route": "/reports/patterns/pattern-2025-08-14-090254"
+    },
+    {
       "file": "pages/reports/patterns/pattern-2025-08-14-090243.tsx",
       "route": "/reports/patterns/pattern-2025-08-14-090243"
     },
@@ -961,6 +965,10 @@
       "route": "/reports/patterns/pattern-2025-08-13-215625"
     },
     {
+      "file": "pages/reports/guides/guide-2025-08-14-090254.tsx",
+      "route": "/reports/guides/guide-2025-08-14-090254"
+    },
+    {
       "file": "pages/reports/guides/guide-2025-08-14-090243.tsx",
       "route": "/reports/guides/guide-2025-08-14-090243"
     },
@@ -1115,6 +1123,10 @@
     {
       "file": "pages/reports/guides/guide-2025-08-13-215625.tsx",
       "route": "/reports/guides/guide-2025-08-13-215625"
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-14-090254.tsx",
+      "route": "/reports/cases/case-2025-08-14-090254"
     },
     {
       "file": "pages/reports/cases/case-2025-08-14-090243.tsx",
@@ -3223,6 +3235,10 @@
     {
       "file": "pages/reports/updates/update-2025-08-14-0610.tsx",
       "route": "/reports/updates/update-2025-08-14-0610"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-14-0603.tsx",
+      "route": "/reports/updates/update-2025-08-14-0603"
     },
     {
       "file": "pages/reports/updates/update-2025-08-14-0602.tsx",
@@ -8863,28 +8879,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-14T09:02:44.848Z",
-  "items": [
-    {
-      "title": "Case Study — Autonomous Reports",
-      "href": "/reports/cases/case-2025-08-14-090254",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T09:02:54.347Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Guide — Techcrunch Pebble Implementation",
-      "href": "/reports/guides/guide-2025-08-14-090254",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T09:02:54.347Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Pattern — Trigger Homepage Sitemap",
-      "href": "/reports/patterns/pattern-2025-08-14-090254",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T09:02:54.347Z",
-      "source": "cloud-deep-research-factory"
-    }
-  ]
+  "generatedAt": "2025-08-14T09:03:00.599Z"
 }
