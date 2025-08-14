@@ -1,25 +1,18 @@
 {
-  "generatedAt": "2025-08-14T04:21:22.694Z",
+  "generatedAt": "2025-08-14T04:31:22.767Z",
   "items": [
     {
-      "title": "Pilot Plan: Edge AI",
-      "subtitle": "Patterns to enhance security.",
-      "path": "/reports/innovations/insight-2025-08-14-0430",
-      "createdAt": "2025-08-14T04:30:12.054Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-14 04-21",
-      "href": "/reports/innovations/insight-2025-08-14T04-21",
+      "title": "Innovation Insight — 2025-08-14 04-31",
+      "href": "/reports/innovations/insight-2025-08-14T04-31",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T04:21:22.625Z",
+      "createdAt": "2025-08-14T04:31:22.699Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-14 04-21",
-      "href": "/reports/updates/update-2025-08-14T04-21",
+      "title": "Autonomous Update — 2025-08-14 04-31",
+      "href": "/reports/updates/update-2025-08-14T04-31",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T04:21:22.625Z",
+      "createdAt": "2025-08-14T04:31:22.699Z",
       "source": "cloud-content-factory"
     }
   ]
