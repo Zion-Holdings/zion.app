@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T16:21:35.357Z",
-  "pagesScanned": 3200,
+  "generatedAt": "2025-08-14T16:22:01.155Z",
+  "pagesScanned": 3211,
   "items": [
     {
       "route": "/404",
@@ -2956,6 +2956,26 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-162106",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-162139",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-162155",
       "missing": [
         "og:image"
       ],
@@ -6355,6 +6375,26 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-14-162139",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide —  Implementation",
+        "description": "Guide —  Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-14-162155",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide —  Implementation",
+        "description": "Guide —  Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/",
       "missing": [
         "og:image"
@@ -8342,6 +8382,16 @@
       "suggestion": {
         "title": "Blueprint: DevSecOps AI",
         "description": "Blueprint: DevSecOps AI — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14-1621",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook: RAG Platforms",
+        "description": "Playbook: RAG Platforms — auto-suggested description"
       }
     },
     {
@@ -11405,6 +11455,26 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-14-162139",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Intelligence",
+        "description": "Pattern — Cloud Intelligence — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-14-162155",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Intelligence",
+        "description": "Pattern — Cloud Intelligence — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-13-223010",
       "missing": [
         "og:image"
@@ -14236,6 +14306,26 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-162106",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-162139",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-162155",
       "missing": [
         "og:image"
       ],
@@ -30705,6 +30795,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-14-1322",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 13:22",
+        "description": "Autonomous Update — 2025-08-14 13:22 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-14-1330",
       "missing": [
         "og:image"
@@ -30882,6 +30985,16 @@
       "suggestion": {
         "title": "Autonomous Security Hardening Guide — Cloud Cost Optimization (2025-08-14 16:20 UTC)",
         "description": "Autonomous Security Hardening Guide — Cloud Cost Optimization (2025-08-14 16:20 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1621",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Playbook — DevSecOps for AI (2025-08-14 16:21 UTC)",
+        "description": "Autonomous Playbook — DevSecOps for AI (2025-08-14 16:21 UTC) — auto-suggested description"
       }
     },
     {
