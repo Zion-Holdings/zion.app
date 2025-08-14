@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "items": [
     {
       "title": "Runbook: Agent Ops",
@@ -6,6 +7,37 @@
       "path": "/reports/innovations/insight-2025-08-14-1821",
       "createdAt": "2025-08-14T18:21:17.799Z",
       "kind": "insight"
+=======
+  "generatedAt": "2025-08-14T18:27:28.401Z",
+  "items": [
+    {
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-14-182728",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T18:27:28.367Z",
+      "source": "cloud-blueprint-factory"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-14-182728",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T18:27:28.334Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Guide —  Implementation",
+      "href": "/reports/guides/guide-2025-08-14-182728",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T18:27:28.294Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Cloud Intelligence",
+      "href": "/reports/patterns/pattern-2025-08-14-182728",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T18:27:28.294Z",
+      "source": "cloud-deep-research-factory"
+>>>>>>> 1cd999e388 (chore(sync): advanced autonomous sync)
     }
   ]
 }
