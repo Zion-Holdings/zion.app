@@ -65,6 +65,10 @@
       "route": "/automation"
     },
     {
+      "file": "pages/reports/playbooks/playbook-2025-08-14-002511.tsx",
+      "route": "/reports/playbooks/playbook-2025-08-14-002511"
+    },
+    {
       "file": "pages/reports/playbooks/playbook-2025-08-14-002434.tsx",
       "route": "/reports/playbooks/playbook-2025-08-14-002434"
     },
@@ -273,6 +277,10 @@
       "route": "/reports/patterns/pattern-2025-08-13-215625"
     },
     {
+      "file": "pages/reports/innovations/insight-2025-08-14T00-25.tsx",
+      "route": "/reports/innovations/insight-2025-08-14T00-25"
+    },
+    {
       "file": "pages/reports/innovations/insight-2025-08-14T00-24.tsx",
       "route": "/reports/innovations/insight-2025-08-14T00-24"
     },
@@ -323,6 +331,10 @@
     {
       "file": "pages/reports/innovations/insight-2025-08-14T00-00.tsx",
       "route": "/reports/innovations/insight-2025-08-14T00-00"
+    },
+    {
+      "file": "pages/reports/innovations/insight-2025-08-14-0025.tsx",
+      "route": "/reports/innovations/insight-2025-08-14-0025"
     },
     {
       "file": "pages/reports/innovations/insight-2025-08-14-0024.tsx",
@@ -737,6 +749,10 @@
       "route": "/reports/guides/guide-2025-08-13-215625"
     },
     {
+      "file": "pages/reports/blueprints/blueprint-2025-08-14-002511.tsx",
+      "route": "/reports/blueprints/blueprint-2025-08-14-002511"
+    },
+    {
       "file": "pages/reports/blueprints/blueprint-2025-08-14-002433.tsx",
       "route": "/reports/blueprints/blueprint-2025-08-14-002433"
     },
@@ -933,6 +949,10 @@
       "route": "/main/front"
     },
     {
+      "file": "pages/reports/updates/update-2025-08-14T00-25.tsx",
+      "route": "/reports/updates/update-2025-08-14T00-25"
+    },
+    {
       "file": "pages/reports/updates/update-2025-08-14T00-24.tsx",
       "route": "/reports/updates/update-2025-08-14T00-24"
     },
@@ -983,6 +1003,10 @@
     {
       "file": "pages/reports/updates/update-2025-08-14T00-00.tsx",
       "route": "/reports/updates/update-2025-08-14T00-00"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-14-0025.tsx",
+      "route": "/reports/updates/update-2025-08-14-0025"
     },
     {
       "file": "pages/reports/updates/update-2025-08-14-0024.tsx",
@@ -5151,5 +5175,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-14T00:25:01.612Z"
+  "generatedAt": "2025-08-14T00:25:23.587Z"
 }
