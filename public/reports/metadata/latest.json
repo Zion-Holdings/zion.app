@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T00:38:25.752Z",
-  "pagesScanned": 1450,
+  "generatedAt": "2025-08-14T00:38:28.855Z",
+  "pagesScanned": 1451,
   "items": [
     {
       "route": "/404",
@@ -97,10 +97,7 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -3583,6 +3580,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-003814",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-003824",
       "missing": [
         "og:image"
       ],
