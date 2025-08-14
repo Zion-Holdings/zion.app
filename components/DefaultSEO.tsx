@@ -46,6 +46,24 @@ export default function DefaultSEO() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
+            '@type': 'SiteNavigationElement',
+            name: ['Explore','Services','Automations','Reports','Updates','Search'],
+            url: [
+              `${SITE_URL}/explore`,
+              `${SITE_URL}/services`,
+              `${SITE_URL}/automation`,
+              `${SITE_URL}/reports`,
+              `${SITE_URL}/newsroom`,
+              `${SITE_URL}/search`
+            ]
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
             '@type': 'WebSite',
             url: SITE_URL,
             name: DEFAULT_TITLE,
