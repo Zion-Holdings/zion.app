@@ -1,35 +1,18 @@
 {
-<<<<<<< Updated upstream
-  "generatedAt": "2025-08-14T15:44:48.084Z",
+  "generatedAt": "2025-08-14T16:00:20.406Z",
   "items": [
     {
-      "title": "Innovation Insight — 2025-08-14 15-44",
-      "href": "/reports/innovations/insight-2025-08-14T15-44",
+      "title": "Innovation Insight — 2025-08-14 16-00",
+      "href": "/reports/innovations/insight-2025-08-14T16-00",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T15:44:48.058Z",
+      "createdAt": "2025-08-14T16:00:20.334Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-14 15-44",
-      "href": "/reports/updates/update-2025-08-14T15-44",
+      "title": "Autonomous Update — 2025-08-14 16-00",
+      "href": "/reports/updates/update-2025-08-14T16-00",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T15:44:48.058Z",
-=======
-  "generatedAt": "2025-08-14T15:50:20.839Z",
-  "items": [
-    {
-      "title": "Innovation Insight — 2025-08-14 15-50",
-      "href": "/reports/innovations/insight-2025-08-14T15-50",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T15:50:20.766Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-14 15-50",
-      "href": "/reports/updates/update-2025-08-14T15-50",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T15:50:20.766Z",
->>>>>>> Stashed changes
+      "createdAt": "2025-08-14T16:00:20.334Z",
       "source": "cloud-content-factory"
     }
   ]
