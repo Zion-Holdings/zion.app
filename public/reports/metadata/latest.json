@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T00:21:17.971Z",
-  "pagesScanned": 1265,
+  "generatedAt": "2025-08-14T00:22:00.979Z",
+  "pagesScanned": 1272,
   "items": [
     {
       "route": "/404",
@@ -573,6 +573,26 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-002059",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-002129",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-002152",
       "missing": [
         "og:image"
       ],
@@ -1602,6 +1622,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14-0021",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pilot Plan: LLM Apps",
+        "description": "Pilot Plan: LLM Apps — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -2203,6 +2233,26 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-002100",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-002129",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-002153",
       "missing": [
         "og:image"
       ],
@@ -11662,6 +11712,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-13-2122",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 21:22",
+        "description": "Autonomous Update — 2025-08-13 21:22 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-13-2130",
       "missing": [
         "og:image"
@@ -12499,6 +12562,16 @@
       "suggestion": {
         "title": "Autonomous Validation & QA Plan — Applied NLP & RAG (2025-08-14 00:20 UTC)",
         "description": "Autonomous Validation & QA Plan — Applied NLP & RAG (2025-08-14 00:20 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0021",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Reference Architecture — Evaluation & Safety (2025-08-14 00:21 UTC)",
+        "description": "Autonomous Reference Architecture — Evaluation & Safety (2025-08-14 00:21 UTC) — auto-suggested description"
       }
     },
     {
