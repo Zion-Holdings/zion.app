@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T00:10:02.054Z",
+  "generatedAt": "2025-08-14T00:10:06.554Z",
   "entries": [
     {
       "route": "/site-health",
@@ -36,6 +36,12 @@
       "file": "pages/_app.tsx",
       "title": "_app",
       "summary": "import type { AppProps } from 'next/app'; import '../styles/globals.css'; import Header from '../components/Header'; import Footer from '../components/Footer'; import FuturisticLayout from '../components/FuturisticLayout'; import DefaultSEO from '../components/DefaultSEO'; export"
+    },
+    {
+      "route": "/services",
+      "file": "pages/services/index.tsx",
+      "title": "index",
+      "summary": "import Link from 'next/link'; const services = [ { slug: 'ai-seo-auditor', title: 'AI SEO Auditor', desc: 'Automate SEO improvements with continuous audits.' }, { slug: 'customer-support-chatbot', title: 'Customer Support Chatbot', desc: 'Reduce response time and scale support.' "
     },
     {
       "route": "/reports/seo",
