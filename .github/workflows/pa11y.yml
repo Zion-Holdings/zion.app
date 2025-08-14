@@ -23,8 +23,8 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install pa11y
-        run: npm i -g pa11y@6.3.1
+      - name: Ensure Pa11y available
+        run: npx --yes pa11y@6.3.1 --version
 
       - name: Run Pa11y against key pages
         run: |
@@ -39,8 +39,8 @@ jobs:
           )
           for u in "${URLS[@]}"; do
             echo "Scanning $u"
-            # WCAG2AA by default; fail only on serious/critical
-            pa11y "$u" --threshold 0 --reporter cli || true
+            # WCAG2AA by default; fail only on serious/critical; retry once on network error
+            npx --yes pa11y@6.3.1 "$u" --threshold 0 --reporter cli || npx --yes pa11y@6.3.1 "$u" --threshold 0 --reporter cli || true
           done
 
 
