@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T00:32:09.886Z",
+  "generatedAt": "2025-08-14T00:32:13.591Z",
   "entries": [
     {
       "route": "/site-health",
@@ -7044,6 +7044,12 @@
       "file": "pages/reports/innovations/insight-2025-08-14T00-00.tsx",
       "title": "Innovation Insight — 2025-08-14 00-00",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-14 00-00 Innovation Insight — 2025-08-14 00-00 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14-0032",
+      "file": "pages/reports/innovations/insight-2025-08-14-0032.tsx",
+      "title": "Pilot Plan: FinOps for AI",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Pilot Plan: FinOps for AI Pilot Plan: FinOps for AI Patterns to accelerate delivery. Scope: Pilot Plan: FinOps for AI. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation"
     },
     {
       "route": "/reports/innovations/insight-2025-08-14-0031",
