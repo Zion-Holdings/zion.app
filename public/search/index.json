@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T00:42:12.354Z",
+  "generatedAt": "2025-08-14T00:42:33.623Z",
   "entries": [
     {
       "route": "/site-health",
@@ -23,7 +23,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "index",
-      "summary": "import Landing from '../components/Landing'; export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 14T00: 41 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: "
+      "summary": "import Landing from '../components/Landing'; export default function Home() { return ( {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 13: 2142 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 1"
     },
     {
       "route": "/contact",
@@ -270,6 +270,12 @@
       "file": "pages/reports/updates/update-2025-08-14T00-00.tsx",
       "title": "Autonomous Update — 2025-08-14 00-00",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-14 00-00 Autonomous Update — 2025-08-14 00-00 Signal source: https://ziontechgroup.com/ Autonomous cloud systems are live and improving the app in real timeAutonomous Cloud Automat"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0042",
+      "file": "pages/reports/updates/update-2025-08-14-0042.tsx",
+      "title": "Autonomous Validation & QA Plan — Vision & Multimodal (2025-08-14 00:42 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Validation & QA Plan — Vision & Multimodal (2025-08-14 00:42 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\","
     },
     {
       "route": "/reports/updates/update-2025-08-14-0041",
@@ -876,6 +882,12 @@
       "file": "pages/reports/updates/update-2025-08-13-2147.tsx",
       "title": "Autonomous Blueprint — Data Engineering (2025-08-13 21:47 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Blueprint — Data Engineering (2025-08-13 21:47 UTC) Autonomous Blueprint — Data Engineering (2025-08-13 21:47 UTC) Innovative, useful guidance to streamline CI/CD for models. What it is: Blue"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-13-2142",
+      "file": "pages/reports/updates/update-2025-08-13-2142.tsx",
+      "title": "Autonomous Update — 2025-08-13 21:42",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-13 21:42 Autonomous Update — 2025-08-13 21:42 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : The young, inexperienced engineers a"
     },
     {
       "route": "/reports/updates/update-2025-08-13-2141",
@@ -6656,6 +6668,18 @@
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-12 14:17 Autonomous Update — 2025-08-12 14:17 This page was created automatically by the content creator automation. It showcases our continuous, autonomous publishing pipeli"
     },
     {
+      "route": "/reports/playbooks/playbook-2025-08-14-004202",
+      "file": "pages/reports/playbooks/playbook-2025-08-14-004202.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/main/front Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objec"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-004158",
+      "file": "pages/reports/playbooks/playbook-2025-08-14-004158.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/main/front Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objec"
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-14-004153",
       "file": "pages/reports/playbooks/playbook-2025-08-14-004153.tsx",
       "title": "Playbook — Autonomous Delivery",
@@ -7568,6 +7592,12 @@
       "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-14 00-00 Innovation Insight — 2025-08-14 00-00 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14-0042",
+      "file": "pages/reports/innovations/insight-2025-08-14-0042.tsx",
+      "title": "Playbook: DevSecOps AI",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Playbook: DevSecOps AI Playbook: DevSecOps AI Patterns to accelerate delivery. Scope: Playbook: DevSecOps AI. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: ob"
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14-0041",
       "file": "pages/reports/innovations/insight-2025-08-14-0041.tsx",
       "title": "Blueprint: FinOps for AI",
@@ -8286,6 +8316,12 @@
       "file": "pages/reports/guides/guide-2025-08-13-215625.tsx",
       "title": "Guide — Reports Trends Implementation",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Reports Trends Implementation Guide — Reports Trends Implementation Source: https://ziontechgroup.com/explore Overview Focus: reports, trends, site, seo, explorea, directory. Steps Clarify objectives "
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-004156",
+      "file": "pages/reports/blueprints/blueprint-2025-08-14-004156.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-004153",
