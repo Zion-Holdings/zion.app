@@ -1,5 +1,101 @@
 {
-  "analyzedAt": 1755189384685,
+  "analyzedAt": 1755207289879,
   "canonical": "https://ziontechgroup.com",
-  "candidates": []
+  "candidates": [
+    {
+      "url": "https://ziontechgroup.com/automation",
+      "title": "Automation Hub",
+      "description": "Explore autonomous cloud automations running 24/7.",
+      "headings": [
+        "Automation Hub",
+        "Homepage Updates",
+        "Site Health",
+        "Content Indexing",
+        "Knowledge Graph",
+        "Front Enhancer",
+        "Fast Front Promoter",
+        "Marketing & Features Promo"
+      ],
+      "bullets": [
+        "Homepage UpdatesKeeps the homepage fresh and the sitemap up to date.Trigger / View",
+        "Site HealthLink checks, image optimization, and sitemap refresh.Trigger / View",
+        "Content IndexingDocs and search index regeneration for instant discovery.Trigger / View",
+        "Knowledge GraphRepository knowledge graph and radar metrics.Trigger / View",
+        "Front EnhancerCurates and injects new frontpage promos periodically.Trigger / View",
+        "Fast Front PromoterRuns every 15 minutes to refresh homepage and front content, then syncs to main.Trigger / View",
+        "Marketing & Features PromoGenerates and applies homepage promos and deep links.Trigger / View",
+        "Fast OrchestratorRuns every minute to refresh front and homepage content; commits and pushes to main.Trigger / View",
+        "Continuous OrchestratorRuns every 5 minutes, including sitemap and UI futurizer steps.Trigger / View",
+        "Features/Capabilities/Benefits AdvertiserContinuously advertises new features with deep links on the front pages.Trigger / View",
+        "Hyper Front Index AcceleratorUltra-fast front index futurizer and directory builder.Trigger / View",
+        "Innovation LabInvents, curates, and promotes fresh ideas across the site.Trigger / View"
+      ],
+      "score": 154
+    },
+    {
+      "url": "https://ziontechgroup.com/newsroom",
+      "title": "Newsroom — Curated Tech Headlines",
+      "description": "Curated technology and AI headlines from reputable sources.",
+      "headings": [],
+      "bullets": [
+        "Leaked Meta AI rules show chatbots were allowed to have romantic chats with kids(TechCrunch)",
+        "Apple’s blood oxygen monitoring returns to its latest Apple Watches(TechCrunch)",
+        "Cohere hires long-time Meta research head Joelle Pineau as its chief AI officer(TechCrunch)",
+        "AI translation tech Palabra gets backing from Reddit co-founder’s venture firm(TechCrunch)",
+        "Buzzy AI startup Multiverse creates two of the smallest high-performing models ever(TechCrunch)",
+        "Lovable projects $1B in ARR within next 12 months(TechCrunch)",
+        "Google pushes AI into flight deals as antitrust scrutiny, competition heat up(TechCrunch)",
+        "Airbnb will allow US users to book stays without paying up front(TechCrunch)",
+        "ChatGPT: Everything you need to know about the AI-powered chatbot(TechCrunch)",
+        "Inside the Box: Aaron Levie on reinvention at TechCrunch Disrupt 2025(TechCrunch)",
+        "Co-founder of Elon Musk’s xAI departs the company(TechCrunch)",
+        "Security flaws in a carmaker’s web portal let one hacker remotely unlock cars from anywhere(TechCrunch)"
+      ],
+      "score": 132
+    },
+    {
+      "url": "https://ziontechgroup.com/",
+      "title": "Zion — Latest Autonomous Content",
+      "description": "Fresh updates published by autonomous agents.",
+      "headings": [
+        "Zion — Latest Autonomous Content",
+        "Latest Autonomous Content",
+        "Autonomous Update — 2025: 08: 14: 1820"
+      ],
+      "bullets": [],
+      "score": 107
+    },
+    {
+      "url": "https://ziontechgroup.com/site-health",
+      "title": "Site Health — Broken Images",
+      "description": "Site Health — automatically suggested description.",
+      "headings": [
+        "Site Health"
+      ],
+      "bullets": [
+        "No issues found."
+      ],
+      "score": 91
+    },
+    {
+      "url": "https://ziontechgroup.com/reports/a11y",
+      "title": "A11y Alt Text Auditor",
+      "description": "",
+      "headings": [
+        "A11y Alt Text Auditor 0 missing"
+      ],
+      "bullets": [],
+      "score": 31
+    },
+    {
+      "url": "https://ziontechgroup.com/reports/seo",
+      "title": "SEO Audit Report",
+      "description": "",
+      "headings": [
+        "SEO Audit Report"
+      ],
+      "bullets": [],
+      "score": 26
+    }
+  ]
 }
