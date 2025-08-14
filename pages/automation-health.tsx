@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { GetServerSideProps } from 'next';
+import type { GetStaticProps } from 'next';
 import Head from 'next/head';
-import { FuturisticLayout } from '../components/FuturisticLayout';
+import FuturisticLayout from '../components/FuturisticLayout';
+import fs from 'fs';
+import path from 'path';
 
 interface AutomationHealth {
   version: string;
@@ -450,11 +452,18 @@ export default function AutomationHealthPage({ health, controlPlane, scheduleHin
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   try {
-    // Fetch automation health data
-    const healthResponse = await fetch('http://localhost:3000/reports/automation/health.json');
-    const health = healthResponse.ok ? await healthResponse.json() : {
+    const readJson = (segments: string[]) => {
+      const filePath = path.join(process.cwd(), ...segments);
+      if (fs.existsSync(filePath)) {
+        try { return JSON.parse(fs.readFileSync(filePath, 'utf8')); } catch { /* ignore */ }
+      }
+      return null;
+    };
+
+    // Read automation health data from public files during static export
+    const health = readJson(['public','reports','automation','health.json']) ?? {
       version: '1.0.0',
       lastUpdated: new Date().toISOString(),
       functions: {},
@@ -473,9 +482,8 @@ export const getServerSideProps: GetServerSideProps = async () => {
       }
     };
 
-    // Fetch control plane data
-    const controlResponse = await fetch('http://localhost:3000/automation/control.json');
-    const controlPlane = controlResponse.ok ? await controlResponse.json() : {
+    // Read control plane data
+    const controlPlane = readJson(['public','automation','control.json']) ?? {
       globalPause: false,
       version: '1.0.0',
       lastUpdated: new Date().toISOString(),
@@ -485,9 +493,8 @@ export const getServerSideProps: GetServerSideProps = async () => {
       budgets: { openai: { dailyUsd: 2.50, monthlyUsd: 50.00, enabled: true }, github: { dailyActions: 2000, monthlyActions: 50000, enabled: true } }
     };
 
-    // Fetch schedule hints
-    const hintsResponse = await fetch('http://localhost:3000/automation/schedule-hints.json');
-    const scheduleHints = hintsResponse.ok ? await hintsResponse.json() : {
+    // Read schedule hints
+    const scheduleHints = readJson(['public','automation','schedule-hints.json']) ?? {
       version: '1.0.0',
       lastUpdated: new Date().toISOString(),
       workflows: {},
