@@ -1,40 +1,4 @@
 {
-  "generatedAt": "2025-08-14T00:35:08.873Z",
-  "items": [
-    {
-      "title": "Runbook: Agent Ops",
-      "subtitle": "Patterns to improve reliability.",
-      "path": "/reports/innovations/insight-2025-08-14-0035",
-      "createdAt": "2025-08-14T00:35:23.255Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-14 00-35",
-      "href": "/reports/innovations/insight-2025-08-14T00-35",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:35:08.630Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-14 00-35",
-      "href": "/reports/updates/update-2025-08-14T00-35",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:35:08.630Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-14 00-35",
-      "href": "/reports/innovations/insight-2025-08-14T00-35",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:35:08.630Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-14 00-35",
-      "href": "/reports/updates/update-2025-08-14T00-35",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:35:08.630Z",
-      "source": "cloud-content-factory"
-    }
-  ]
+  "generatedAt": "2025-08-14T00:35:32.634Z",
+  "items": []
 }
