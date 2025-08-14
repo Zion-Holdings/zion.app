@@ -262,7 +262,8 @@
     "cloud:crawl": "node automation/cloud-site-crawler.cjs",
     "cloud:factory": "node automation/cloud-content-factory.cjs",
     "cloud:advertise": "node automation/cloud-content-advertiser.cjs",
-    "cloud:continuous": "node scripts/continuous-cloud-agents.cjs"
+    "cloud:continuous": "node scripts/continuous-cloud-agents.cjs",
+    "gh:trigger": "node scripts/trigger-workflows.cjs"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
