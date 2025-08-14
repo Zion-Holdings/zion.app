@@ -12359,6 +12359,20 @@
   "items": [
     {
       "title": "Guide —  Implementation",
+      "href": "/reports/guides/guide-2025-08-14-161445",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:14:45.460Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Cloud Intelligence",
+      "href": "/reports/patterns/pattern-2025-08-14-161445",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:14:45.460Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide —  Implementation",
       "href": "/reports/guides/guide-2025-08-14-161433",
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T16:14:33.222Z",
