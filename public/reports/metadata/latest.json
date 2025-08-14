@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T03:20:00.626Z",
-  "pagesScanned": 1674,
+  "generatedAt": "2025-08-14T03:21:00.508Z",
+  "pagesScanned": 1680,
   "items": [
     {
       "route": "/404",
@@ -1595,6 +1595,16 @@
       }
     },
     {
+      "route": "/reports/blueprints/blueprint-2025-08-14-032018",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/guides/guide-2025-08-13-215625",
       "missing": [
         "og:image"
@@ -2925,6 +2935,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14-0320",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook: AI QA & Eval",
+        "description": "Playbook: AI QA & Eval — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -3332,6 +3352,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-14 02-50",
         "description": "Innovation Insight — 2025-08-14 02-50 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14T03-20",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-14 03-20",
+        "description": "Innovation Insight — 2025-08-14 03-20 — auto-suggested description"
       }
     },
     {
@@ -4856,6 +4886,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-025018",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-032018",
       "missing": [
         "og:image"
       ],
@@ -16295,6 +16335,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-14-0320",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Checklist — AI Service Design (2025-08-14 03:20 UTC)",
+        "description": "Autonomous Checklist — AI Service Design (2025-08-14 03:20 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -16702,6 +16752,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 02-50",
         "description": "Autonomous Update — 2025-08-14 02-50 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14T03-20",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 03-20",
+        "description": "Autonomous Update — 2025-08-14 03-20 — auto-suggested description"
       }
     },
     {
