@@ -149,22 +149,6 @@
       "route": "/reports/patterns/pattern-2025-08-13-215625"
     },
     {
-      "file": "pages/reports/guides/guide-2025-08-13-222129.tsx",
-      "route": "/reports/guides/guide-2025-08-13-222129"
-    },
-    {
-      "file": "pages/reports/guides/guide-2025-08-13-222028.tsx",
-      "route": "/reports/guides/guide-2025-08-13-222028"
-    },
-    {
-      "file": "pages/reports/guides/guide-2025-08-13-222010.tsx",
-      "route": "/reports/guides/guide-2025-08-13-222010"
-    },
-    {
-      "file": "pages/reports/guides/guide-2025-08-13-215625.tsx",
-      "route": "/reports/guides/guide-2025-08-13-215625"
-    },
-    {
       "file": "pages/reports/innovations/insight-2025-08-14T00-00.tsx",
       "route": "/reports/innovations/insight-2025-08-14T00-00"
     },
@@ -515,6 +499,22 @@
     {
       "file": "pages/reports/innovations/index.tsx",
       "route": "/reports/innovations"
+    },
+    {
+      "file": "pages/reports/guides/guide-2025-08-13-222129.tsx",
+      "route": "/reports/guides/guide-2025-08-13-222129"
+    },
+    {
+      "file": "pages/reports/guides/guide-2025-08-13-222028.tsx",
+      "route": "/reports/guides/guide-2025-08-13-222028"
+    },
+    {
+      "file": "pages/reports/guides/guide-2025-08-13-222010.tsx",
+      "route": "/reports/guides/guide-2025-08-13-222010"
+    },
+    {
+      "file": "pages/reports/guides/guide-2025-08-13-215625.tsx",
+      "route": "/reports/guides/guide-2025-08-13-215625"
     },
     {
       "file": "pages/reports/blueprints/blueprint-2025-08-14-000017.tsx",
@@ -4667,5 +4667,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-14T00:09:03.590Z"
+  "generatedAt": "2025-08-14T00:09:10.179Z"
 }
