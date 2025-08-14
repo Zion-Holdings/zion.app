@@ -1,8 +1,128 @@
 {
   "pages": [
     {
+<<<<<<< Updated upstream
       "file": "pages/site-health.tsx",
       "route": "/site-health"
+=======
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-14-152028",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T15:20:28.151Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Case Study — Capabilities Live",
+      "href": "/reports/cases/case-2025-08-14-152028",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T15:20:28.008Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Techcrunch Pebble Implementation",
+      "href": "/reports/guides/guide-2025-08-14-152028",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T15:20:28.008Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Trigger Homepage Sitemap",
+      "href": "/reports/patterns/pattern-2025-08-14-152028",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T15:20:28.008Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Case Study — Capabilities Live",
+      "href": "/reports/cases/case-2025-08-14-152027",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T15:20:27.992Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Techcrunch Pebble Implementation",
+      "href": "/reports/guides/guide-2025-08-14-152027",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T15:20:27.992Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Trigger Homepage Sitemap",
+      "href": "/reports/patterns/pattern-2025-08-14-152027",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T15:20:27.992Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-14 15-20",
+      "href": "/reports/innovations/insight-2025-08-14T15-20",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T15:20:27.911Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-14 15-20",
+      "href": "/reports/updates/update-2025-08-14T15-20",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T15:20:27.911Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-14 15-20",
+      "href": "/reports/innovations/insight-2025-08-14T15-20",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T15:20:27.911Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-14 15-20",
+      "href": "/reports/updates/update-2025-08-14T15-20",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T15:20:27.911Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-14-152027",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T15:20:27.824Z",
+      "source": "cloud-blueprint-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-14 15-20",
+      "href": "/reports/innovations/insight-2025-08-14T15-20",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T15:20:27.665Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-14 15-20",
+      "href": "/reports/updates/update-2025-08-14T15-20",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T15:20:27.665Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-14 15-20",
+      "href": "/reports/innovations/insight-2025-08-14T15-20",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T15:20:27.665Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-14 15-20",
+      "href": "/reports/updates/update-2025-08-14T15-20",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T15:20:27.665Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-14-114309",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T11:43:09.253Z",
+      "source": "cloud-blueprint-factory"
+>>>>>>> Stashed changes
     },
     {
       "file": "pages/search.tsx",
@@ -17,6 +137,7 @@
       "route": "/"
     },
     {
+<<<<<<< Updated upstream
       "file": "pages/contact.tsx",
       "route": "/contact"
     },
@@ -11931,6 +12052,18 @@
     {
       "file": "pages/reports/updates/update-2025-08-12-1417.tsx",
       "route": "/reports/updates/update-2025-08-12-1417"
+=======
+      "title": "Pattern — Trigger Homepage Sitemap",
+      "href": "/reports/patterns/pattern-2025-08-14-114309",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T11:43:09.197Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "id": "cursor-chat-2025-08-14T15:20:28.228Z",
+      "type": "cursor-chat",
+      "timestamp": "2025-08-14T15:20:28.228Z"
+>>>>>>> Stashed changes
     }
   ],
   "docs": [
