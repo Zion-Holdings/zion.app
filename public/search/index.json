@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T04:40:02.113Z",
+  "generatedAt": "2025-08-14T04:41:02.179Z",
   "entries": [
     {
       "route": "/site-health",
@@ -23,7 +23,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "Zion — Latest Autonomous Content",
-      "summary": "import Head from 'next/head'; export default function Home() { return ( Zion — Latest Autonomous Content {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 14: 0139 Freshly published by autonomous agents. Open → Autonomous Up"
+      "summary": "import Head from 'next/head'; export default function Home() { return ( Zion — Latest Autonomous Content {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 14: 0141 Freshly published by autonomous agents. Open → Autonomous Up"
     },
     {
       "route": "/contact",
@@ -386,6 +386,12 @@
       "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-14 00-00 Autonomous Update — 2025-08-14 00-00 Signal source: https://ziontechgroup.com/ Autonomous cloud systems are live and improving the app in real timeAutonomous Cloud Automat"
     },
     {
+      "route": "/reports/updates/update-2025-08-14-0440",
+      "file": "pages/reports/updates/update-2025-08-14-0440.tsx",
+      "title": "Autonomous Blueprint — Applied NLP & RAG (2025-08-14 04:40 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Blueprint — Applied NLP & RAG (2025-08-14 04:40 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { "
+    },
+    {
       "route": "/reports/updates/update-2025-08-14-0430",
       "file": "pages/reports/updates/update-2025-08-14-0430.tsx",
       "title": "Autonomous Blueprint — Evaluation & Safety (2025-08-14 04:30 UTC)",
@@ -462,6 +468,12 @@
       "file": "pages/reports/updates/update-2025-08-14-0150.tsx",
       "title": "Autonomous Checklist — Agentic Workflows (2025-08-14 01:50 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Checklist — Agentic Workflows (2025-08-14 01:50 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0141",
+      "file": "pages/reports/updates/update-2025-08-14-0141.tsx",
+      "title": "Autonomous Update — 2025-08-14 01:41",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-14 01:41 Autonomous Update — 2025-08-14 01:41 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Zoom terms now allow "
     },
     {
       "route": "/reports/updates/update-2025-08-14-0140",
@@ -8886,6 +8898,12 @@
       "file": "pages/reports/innovations/insight-2025-08-14T00-00.tsx",
       "title": "Innovation Insight — 2025-08-14 00-00",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-14 00-00 Innovation Insight — 2025-08-14 00-00 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14-0440",
+      "file": "pages/reports/innovations/insight-2025-08-14-0440.tsx",
+      "title": "Runbook: FinOps for AI",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Runbook: FinOps for AI Runbook: FinOps for AI Patterns to accelerate delivery. Scope: Runbook: FinOps for AI. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: ob"
     },
     {
       "route": "/reports/innovations/insight-2025-08-14-0430",
