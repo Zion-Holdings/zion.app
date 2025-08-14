@@ -12443,5 +12443,39 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
+<<<<<<< Updated upstream
   "generatedAt": "2025-08-14T16:16:03.290Z"
+=======
+  "generatedAt": "2025-08-14T16:16:03.290Z",
+  "items": [
+    {
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-14-161605",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:16:05.761Z",
+      "source": "cloud-blueprint-factory"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-14-161605",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:16:05.660Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Guide —  Implementation",
+      "href": "/reports/guides/guide-2025-08-14-161605",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:16:05.542Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Cloud Intelligence",
+      "href": "/reports/patterns/pattern-2025-08-14-161605",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:16:05.542Z",
+      "source": "cloud-deep-research-factory"
+    }
+  ]
+>>>>>>> Stashed changes
 }
