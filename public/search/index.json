@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T06:24:01.801Z",
+  "generatedAt": "2025-08-14T06:29:02.902Z",
   "entries": [
     {
       "route": "/site-health",
@@ -9594,6 +9594,12 @@
       "file": "pages/reports/innovations/insight-2025-08-14T00-00.tsx",
       "title": "Innovation Insight — 2025-08-14 00-00",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-14 00-00 Innovation Insight — 2025-08-14 00-00 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14-0629",
+      "file": "pages/reports/innovations/insight-2025-08-14-0629.tsx",
+      "title": "Checklist: AI QA & Eval",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Checklist: AI QA & Eval Checklist: AI QA & Eval Patterns to enhance security. Scope: Checklist: AI QA & Eval. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: ob"
     },
     {
       "route": "/reports/innovations/insight-2025-08-14-0620",
