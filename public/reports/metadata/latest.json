@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T21:43:00.978Z",
-  "pagesScanned": 238,
+  "generatedAt": "2025-08-14T21:43:22.304Z",
+  "pagesScanned": 246,
   "items": [
     {
       "route": "/404",
@@ -123,10 +123,7 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -834,6 +831,26 @@
       }
     },
     {
+      "route": "/reports/cases/case-2025-08-14-214313",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Trigger Homepage",
+        "description": "Case Study — Trigger Homepage — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-14-214314",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Trigger Homepage",
+        "description": "Case Study — Trigger Homepage — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/guides/guide-2025-08-14-212854",
       "missing": [
         "og:image"
@@ -1264,6 +1281,26 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-14-214313",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-14-214314",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14-2130",
       "missing": [
         "og:image"
@@ -1321,6 +1358,16 @@
       "suggestion": {
         "title": "Playbook: FinOps for AI",
         "description": "Playbook: FinOps for AI — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14-2143",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Runbook: MLOps",
+        "description": "Runbook: MLOps — auto-suggested description"
       }
     },
     {
@@ -1814,6 +1861,26 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-14-214313",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Improving Continuously",
+        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-14-214314",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Improving Continuously",
+        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-14-212855",
       "missing": [
         "og:image"
@@ -2226,10 +2293,7 @@
     {
       "route": "/reports/updates/update-2025-08-14-1843",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 18:43",
@@ -2294,6 +2358,16 @@
       "suggestion": {
         "title": "Autonomous Checklist — AI Service Design (2025-08-14 21:42 UTC)",
         "description": "Autonomous Checklist — AI Service Design (2025-08-14 21:42 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-2143",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Performance Tuning Guide — Edge AI & IoT (2025-08-14 21:43 UTC)",
+        "description": "Autonomous Performance Tuning Guide — Edge AI & IoT (2025-08-14 21:43 UTC) — auto-suggested description"
       }
     },
     {
