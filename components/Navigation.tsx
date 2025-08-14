@@ -8,7 +8,9 @@ const Navigation: React.FC = () => {
 
   const navigation = [
     { name: 'Home', href: '/', current: router.pathname === '/' },
+    { name: 'Dashboard', href: '/dashboard', current: router.pathname === '/dashboard' },
     { name: 'Services', href: '/services', current: router.pathname === '/services' },
+    { name: 'Status', href: '/status', current: router.pathname === '/status' },
     { name: 'Automation', href: '/automation', current: router.pathname.startsWith('/automation') },
     { name: 'Reports', href: '/reports', current: router.pathname.startsWith('/reports') },
     { name: 'About', href: '/about', current: router.pathname === '/about' },
