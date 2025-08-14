@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T16:31:32.359Z",
-  "pagesScanned": 3376,
+  "generatedAt": "2025-08-14T16:32:33.992Z",
+  "pagesScanned": 3382,
   "items": [
     {
       "route": "/404",
@@ -113,7 +113,10 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -3226,6 +3229,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-163130",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-163138",
       "missing": [
         "og:image"
       ],
@@ -7025,6 +7038,16 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-14-163138",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide —  Implementation",
+        "description": "Guide —  Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/",
       "missing": [
         "og:image"
@@ -9102,6 +9125,16 @@
       "suggestion": {
         "title": "Blueprint: AI QA & Eval",
         "description": "Blueprint: AI QA & Eval — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14-1632",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Runbook: RAG Platforms",
+        "description": "Runbook: RAG Platforms — auto-suggested description"
       }
     },
     {
@@ -12645,6 +12678,16 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-14-163138",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Intelligence",
+        "description": "Pattern — Cloud Intelligence — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-13-223010",
       "missing": [
         "og:image"
@@ -15736,6 +15779,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-163130",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-163138",
       "missing": [
         "og:image"
       ],
@@ -32562,6 +32615,16 @@
       "suggestion": {
         "title": "Autonomous Validation & QA Plan — Agentic Workflows (2025-08-14 16:31 UTC)",
         "description": "Autonomous Validation & QA Plan — Agentic Workflows (2025-08-14 16:31 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1632",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Performance Tuning Guide — Applied NLP & RAG (2025-08-14 16:32 UTC)",
+        "description": "Autonomous Performance Tuning Guide — Applied NLP & RAG (2025-08-14 16:32 UTC) — auto-suggested description"
       }
     },
     {
