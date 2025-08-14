@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T04:09:01.852Z",
+  "generatedAt": "2025-08-14T04:23:12.672Z",
   "entries": [
     {
       "route": "/site-health",
@@ -8592,6 +8592,12 @@
       "file": "pages/reports/innovations/insight-2025-08-14T00-00.tsx",
       "title": "Innovation Insight — 2025-08-14 00-00",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-14 00-00 Innovation Insight — 2025-08-14 00-00 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14-0423",
+      "file": "pages/reports/innovations/insight-2025-08-14-0423.tsx",
+      "title": "Playbook: Agent Ops",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Playbook: Agent Ops Playbook: Agent Ops Patterns to accelerate delivery. Scope: Playbook: Agent Ops. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observabili"
     },
     {
       "route": "/reports/innovations/insight-2025-08-14-0400",
