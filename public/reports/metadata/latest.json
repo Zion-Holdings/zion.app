@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T21:00:01.198Z",
-  "pagesScanned": 3326,
+  "generatedAt": "2025-08-14T21:01:01.393Z",
+  "pagesScanned": 3336,
   "items": [
     {
       "route": "/404",
@@ -152,6 +152,16 @@
       "suggestion": {
         "title": "ai trends",
         "description": "ai trends — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-210032",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
       }
     },
     {
@@ -1716,6 +1726,16 @@
     },
     {
       "route": "/reports/cases/case-2025-08-14-205030",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Trigger Homepage",
+        "description": "Case Study — Trigger Homepage — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-14-210033",
       "missing": [
         "og:image"
       ],
@@ -4445,6 +4465,16 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-14-210033",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/",
       "missing": [
         "og:image"
@@ -6705,6 +6735,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14-2100",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide: Edge AI",
+        "description": "Guide: Edge AI — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -8022,6 +8062,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-14 20-50",
         "description": "Innovation Insight — 2025-08-14 20-50 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14T21-00",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-14 21-00",
+        "description": "Innovation Insight — 2025-08-14 21-00 — auto-suggested description"
       }
     },
     {
@@ -10746,6 +10796,16 @@
     },
     {
       "route": "/reports/patterns/pattern-2025-08-14-205030",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Improving Continuously",
+        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-14-210033",
       "missing": [
         "og:image"
       ],
@@ -14126,6 +14186,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-205030",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-210033",
       "missing": [
         "og:image"
       ],
@@ -31787,14 +31857,24 @@
     {
       "route": "/reports/updates/update-2025-08-14-1800",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 18:00",
+        "description": "Autonomous Update — 2025-08-14 18:00 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1801",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-14 18:00",
-        "description": "Autonomous Update — 2025-08-14 18:00 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-14 18:01",
+        "description": "Autonomous Update — 2025-08-14 18:01 — auto-suggested description"
       }
     },
     {
@@ -31915,6 +31995,16 @@
       "suggestion": {
         "title": "Autonomous Playbook — Evaluation & Safety (2025-08-14 20:50 UTC)",
         "description": "Autonomous Playbook — Evaluation & Safety (2025-08-14 20:50 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-2100",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Security Hardening Guide — AI Service Design (2025-08-14 21:00 UTC)",
+        "description": "Autonomous Security Hardening Guide — AI Service Design (2025-08-14 21:00 UTC) — auto-suggested description"
       }
     },
     {
@@ -33235,6 +33325,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 20-50",
         "description": "Autonomous Update — 2025-08-14 20-50 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14T21-00",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 21-00",
+        "description": "Autonomous Update — 2025-08-14 21-00 — auto-suggested description"
       }
     },
     {
