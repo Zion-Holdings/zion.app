@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T00:45:55.293Z",
-  "pagesScanned": 1568,
+  "generatedAt": "2025-08-14T00:46:25.576Z",
+  "pagesScanned": 1578,
   "items": [
     {
       "route": "/404",
@@ -1529,6 +1529,36 @@
       }
     },
     {
+      "route": "/reports/blueprints/blueprint-2025-08-14-004605",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-004610",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-004613",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/guides/guide-2025-08-13-215625",
       "missing": [
         "og:image"
@@ -2779,6 +2809,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14-0046",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook: DevSecOps AI",
+        "description": "Playbook: DevSecOps AI — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -3116,6 +3156,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-14 00-45",
         "description": "Innovation Insight — 2025-08-14 00-45 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14T00-46",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-14 00-46",
+        "description": "Innovation Insight — 2025-08-14 00-46 — auto-suggested description"
       }
     },
     {
@@ -4560,6 +4610,26 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-004545",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-004550",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-004614",
       "missing": [
         "og:image"
       ],
@@ -14259,6 +14329,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-13-2146",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-13 21:46",
+        "description": "Autonomous Update — 2025-08-13 21:46 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-13-2147",
       "missing": [
         "og:image"
@@ -15309,6 +15392,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-14-0046",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Playbook — Cloud Cost Optimization (2025-08-14 00:46 UTC)",
+        "description": "Autonomous Playbook — Cloud Cost Optimization (2025-08-14 00:46 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -15646,6 +15739,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 00-45",
         "description": "Autonomous Update — 2025-08-14 00-45 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14T00-46",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 00-46",
+        "description": "Autonomous Update — 2025-08-14 00-46 — auto-suggested description"
       }
     },
     {
