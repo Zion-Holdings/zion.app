@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T00:35:53.299Z",
-  "pagesScanned": 1406,
+  "generatedAt": "2025-08-14T00:35:57.824Z",
+  "pagesScanned": 1407,
   "items": [
     {
       "route": "/404",
@@ -960,6 +960,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-003538",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-003554",
       "missing": [
         "og:image"
       ],
