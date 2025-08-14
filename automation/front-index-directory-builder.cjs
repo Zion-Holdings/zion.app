@@ -7,7 +7,7 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 const ROOT = process.cwd();
-const FRONT_PAGE = path.join(ROOT, 'pages', 'front', 'index.tsx');
+const FRONT_PAGE = path.join(ROOT, 'pages', 'main', 'front', 'index.tsx');
 const REGISTRY_JSON = path.join(ROOT, 'public', 'automation', 'content-registry.json');
 const START_MARKER = '/* AUTO:FRONT_INDEX_DIRECTORY_START */';
 const END_MARKER = '/* AUTO:FRONT_INDEX_DIRECTORY_END */';
