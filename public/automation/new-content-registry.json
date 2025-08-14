@@ -1,33 +1,26 @@
 {
-  "generatedAt": "2025-08-14T14:50:25.346Z",
+  "generatedAt": "2025-08-14T14:56:24.551Z",
   "items": [
     {
-      "title": "Innovation Insight — 2025-08-14 14-50",
-      "href": "/reports/innovations/insight-2025-08-14T14-50",
+      "title": "Case Study — Techcrunch Pebble",
+      "href": "/reports/cases/case-2025-08-14-145624",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T14:50:25.192Z",
-      "source": "cloud-content-factory"
+      "createdAt": "2025-08-14T14:56:24.514Z",
+      "source": "cloud-deep-research-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-14 14-50",
-      "href": "/reports/updates/update-2025-08-14T14-50",
+      "title": "Guide — Capabilities Live Implementation",
+      "href": "/reports/guides/guide-2025-08-14-145624",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T14:50:25.192Z",
-      "source": "cloud-content-factory"
+      "createdAt": "2025-08-14T14:56:24.514Z",
+      "source": "cloud-deep-research-factory"
     },
     {
-      "title": "Innovation Insight — 2025-08-14 14-50",
-      "href": "/reports/innovations/insight-2025-08-14T14-50",
+      "title": "Pattern — Trigger Homepage Sitemap",
+      "href": "/reports/patterns/pattern-2025-08-14-145624",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T14:50:25.192Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-14 14-50",
-      "href": "/reports/updates/update-2025-08-14T14-50",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T14:50:25.192Z",
-      "source": "cloud-content-factory"
+      "createdAt": "2025-08-14T14:56:24.514Z",
+      "source": "cloud-deep-research-factory"
     }
   ]
 }
