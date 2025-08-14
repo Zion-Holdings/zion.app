@@ -21,6 +21,10 @@
       "route": "/contact"
     },
     {
+      "file": "pages/404.tsx",
+      "route": "/404"
+    },
+    {
       "file": "pages/services/index.tsx",
       "route": "/services"
     },
@@ -49,16 +53,16 @@
       "route": "/reports/ai-lab"
     },
     {
-      "file": "pages/front/index.tsx",
-      "route": "/front"
-    },
-    {
       "file": "pages/explore/index.tsx",
       "route": "/explore"
     },
     {
       "file": "pages/automation/index.tsx",
       "route": "/automation"
+    },
+    {
+      "file": "pages/front/index.tsx",
+      "route": "/front"
     },
     {
       "file": "pages/reports/playbooks/playbook-2025-08-14-001013.tsx",
@@ -4715,5 +4719,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-14T00:12:03.568Z"
+  "generatedAt": "2025-08-14T00:12:08.815Z"
 }
