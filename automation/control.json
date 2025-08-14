@@ -1,0 +1,132 @@
+{
+  "globalPause": false,
+  "version": "1.0.0",
+  "lastUpdated": "2025-08-14T16:50:00.000Z",
+  "functions": {
+    "ultrafast_orchestrator": true,
+    "fast_orchestrator": true,
+    "continuous_orchestrator": true,
+    "front_index_orchestrator": true,
+    "homepage_advertiser": true,
+    "cloud_orchestrator": true,
+    "marketing_scheduler": true,
+    "maintenance_scheduler": true,
+    "automation_matrix": true,
+    "ai_trends_radar_runner": true,
+    "security_audit_runner": true,
+    "broken_image_scanner": true,
+    "external_link_check_runner": true,
+    "dead_code_report": true,
+    "component_size_report": true,
+    "image_optimizer_runner": true,
+    "ai_changelog_runner": true,
+    "newsroom_runner": true,
+    "todo_scanner_runner": true,
+    "repo_knowledge_graph_runner": true,
+    "docs_index_runner": true,
+    "og_image_update_runner": true,
+    "docs_search_index_runner": true,
+    "todo_summary_runner": true,
+    "netlify_auto_healer_runner": true,
+    "innovation_lab": true,
+    "auto_scheduler": true,
+    "a11y_alt_text_runner": true,
+    "metadata_optimizer_runner": true,
+    "seo_audit_runner": true,
+    "stale_content_auditor_runner": true,
+    "deps_auto_upgrade_runner": true,
+    "unused_media_scanner": true,
+    "orphan_pages_detector": true,
+    "license_compliance_auditor": true,
+    "pagespeed_insights_runner": true,
+    "knowledge_pack_runner": true,
+    "adaptive_orchestrator": true,
+    "site_404_map_runner": true,
+    "component_coupling_graph_runner": true,
+    "content_freshness_score_runner": true,
+    "anchor_links_auto_fixer": true,
+    "internal_link_graph_runner": true,
+    "topic_cluster_builder_runner": true,
+    "topics_map_runner": true,
+    "robots_auditor": true,
+    "canonical_auditor": true,
+    "roadmap_curator": true,
+    "revenue_ideas_lab": true,
+    "auto_discovery_runner": true,
+    "code_smell_audit_runner": true,
+    "duplicate_media_finder_runner": true,
+    "intelligent_meta_orchestrator": true,
+    "headers_enforcer": true
+  },
+  "workflows": {
+    "autonomous_ultrafast": true,
+    "autonomous_cloud_fast": true,
+    "autonomous_cloud": true,
+    "rapid_git_sync": true,
+    "autonomous_auto_discovery": true
+  },
+  "throttles": {
+    "maxConcurrentFunctions": 6,
+    "maxConcurrentWorkflows": 3,
+    "functionTimeoutMs": 180000,
+    "workflowTimeoutMs": 3600000
+  },
+  "budgets": {
+    "openai": {
+      "dailyUsd": 2.50,
+      "monthlyUsd": 50.00,
+      "enabled": true
+    },
+    "github": {
+      "dailyActions": 2000,
+      "monthlyActions": 50000,
+      "enabled": true
+    }
+  },
+  "schedules": {
+    "ultraFast": "*/1 * * * *",
+    "fast": "*/5 * * * *",
+    "medium": "*/15 * * * *",
+    "slow": "*/30 * * * *",
+    "hourly": "0 * * * *",
+    "daily": "0 0 * * *",
+    "weekly": "0 0 * * 1"
+  },
+  "marketing": {
+    "linkedin": {
+      "enabled": true,
+      "quietHours": {
+        "start": "22:00",
+        "end": "08:00"
+      },
+      "maxPostsPerDay": 3,
+      "canonicalUrl": "https://ziontechgroup.com"
+    },
+    "instagram": {
+      "enabled": true,
+      "quietHours": {
+        "start": "22:00",
+        "end": "08:00"
+      },
+      "maxPostsPerDay": 2,
+      "canonicalUrl": "https://ziontechgroup.com"
+    }
+  },
+  "security": {
+    "headersEnforcement": true,
+    "cspStrictness": "medium",
+    "licenseCompliance": true,
+    "sbomGeneration": true
+  },
+  "content": {
+    "autoArchive": true,
+    "archiveThresholdDays": 30,
+    "archiveThresholdTraffic": 10,
+    "freshnessSignals": true
+  },
+  "ci": {
+    "playwrightTests": true,
+    "lighthouseBudgets": true,
+    "mergeSafety": true
+  }
+}
