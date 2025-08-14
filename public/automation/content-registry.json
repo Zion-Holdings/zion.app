@@ -53,16 +53,20 @@
       "route": "/reports/ai-lab"
     },
     {
-      "file": "pages/front/index.tsx",
-      "route": "/front"
-    },
-    {
       "file": "pages/explore/index.tsx",
       "route": "/explore"
     },
     {
       "file": "pages/automation/index.tsx",
       "route": "/automation"
+    },
+    {
+      "file": "pages/front/index.tsx",
+      "route": "/front"
+    },
+    {
+      "file": "pages/reports/playbooks/playbook-2025-08-14-001932.tsx",
+      "route": "/reports/playbooks/playbook-2025-08-14-001932"
     },
     {
       "file": "pages/reports/playbooks/playbook-2025-08-14-001911.tsx",
@@ -251,6 +255,10 @@
     {
       "file": "pages/reports/guides/guide-2025-08-13-215625.tsx",
       "route": "/reports/guides/guide-2025-08-13-215625"
+    },
+    {
+      "file": "pages/reports/blueprints/blueprint-2025-08-14-001932.tsx",
+      "route": "/reports/blueprints/blueprint-2025-08-14-001932"
     },
     {
       "file": "pages/reports/blueprints/blueprint-2025-08-14-001911.tsx",
@@ -5007,5 +5015,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-14T00:19:16.911Z"
+  "generatedAt": "2025-08-14T00:19:34.431Z"
 }
