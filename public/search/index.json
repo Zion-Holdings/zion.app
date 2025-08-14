@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T20:05:02.480Z",
+  "generatedAt": "2025-08-14T20:06:02.389Z",
   "entries": [
     {
       "route": "/site-health",
@@ -29,7 +29,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "Zion — Latest Autonomous Content",
-      "summary": "import Head from 'next/head'; export default function Home() { return ( Zion — Latest Autonomous Content Zion — Latest Autonomous Content {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 14: 1705 Freshly published by autono"
+      "summary": "import Head from 'next/head'; export default function Home() { return ( Zion — Latest Autonomous Content Zion — Latest Autonomous Content {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 14: 1706 Freshly published by autono"
     },
     {
       "route": "/contact",
@@ -930,6 +930,12 @@
       "file": "pages/reports/updates/update-2025-08-14-1836.tsx",
       "title": "Autonomous Capability Map — MLOps & Model Reliability (2025-08-14 18:36 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Capability Map — MLOps & Model Reliability (2025-08-14 18:36 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\","
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1706",
+      "file": "pages/reports/updates/update-2025-08-14-1706.tsx",
+      "title": "Autonomous Update — 2025-08-14 17:06",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-14 17:06 Autonomous Update — 2025-08-14 17:06 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Zoom terms now allow "
     },
     {
       "route": "/reports/updates/update-2025-08-14-1705",
