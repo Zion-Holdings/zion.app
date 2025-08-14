@@ -1,4 +1,4 @@
 {
   "error": true,
-  "message": "AxiosError: timeout of 30000ms exceeded"
+  "message": "Error: getaddrinfo ENOTFOUND chatgpt.com"
 }
