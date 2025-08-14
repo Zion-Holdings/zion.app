@@ -5935,6 +5935,13 @@
   "items": [
     {
       "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-14-004030",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T00:40:30.924Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery",
       "href": "/reports/playbooks/playbook-2025-08-14-004027",
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T00:40:28.319Z",
