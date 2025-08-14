@@ -1,45 +1,33 @@
 {
-  "generatedAt": "2025-08-14T00:38:20.681Z",
+  "generatedAt": "2025-08-14T00:38:34.587Z",
   "items": [
     {
       "title": "Innovation Insight — 2025-08-14 00-38",
       "href": "/reports/innovations/insight-2025-08-14T00-38",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:38:19.948Z",
+      "createdAt": "2025-08-14T00:38:34.043Z",
       "source": "cloud-content-factory"
     },
     {
       "title": "Autonomous Update — 2025-08-14 00-38",
       "href": "/reports/updates/update-2025-08-14T00-38",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:38:19.948Z",
+      "createdAt": "2025-08-14T00:38:34.043Z",
       "source": "cloud-content-factory"
     },
     {
       "title": "Innovation Insight — 2025-08-14 00-38",
       "href": "/reports/innovations/insight-2025-08-14T00-38",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:38:19.948Z",
+      "createdAt": "2025-08-14T00:38:34.043Z",
       "source": "cloud-content-factory"
     },
     {
       "title": "Autonomous Update — 2025-08-14 00-38",
       "href": "/reports/updates/update-2025-08-14T00-38",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:38:19.948Z",
+      "createdAt": "2025-08-14T00:38:34.043Z",
       "source": "cloud-content-factory"
-    },
-    {
-      "title": "Playbook — Autonomous Delivery",
-      "href": "/reports/playbooks/playbook-2025-08-14-003814",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T00:38:14.892Z",
-      "source": "cloud-playbook-factory"
-    },
-    {
-      "id": "cursor-chat-2025-08-14T00:38:17.576Z",
-      "type": "cursor-chat",
-      "timestamp": "2025-08-14T00:38:17.576Z"
     }
   ]
 }
