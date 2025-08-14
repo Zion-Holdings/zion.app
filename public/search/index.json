@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T00:42:33.623Z",
+  "generatedAt": "2025-08-14T00:42:42.105Z",
   "entries": [
     {
       "route": "/site-health",
@@ -90,6 +90,12 @@
       "file": "pages/reports/ai-lab.tsx",
       "title": "ai-lab",
       "summary": "import { useEffect, useState } from 'react'; interface ArticleEntry { title: string; url: string; createdAt: string; tags?: string[]; source?: string; } export default function AILabPage() { const [items, setItems] = useState ([]); const [loading, setLoading] = useState(true); us"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14T00-42",
+      "file": "pages/reports/updates/update-2025-08-14T00-42.tsx",
+      "title": "Autonomous Update — 2025-08-14 00-42",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-14 00-42 Autonomous Update — 2025-08-14 00-42 Signal source: https://ziontechgroup.com/ Autonomous cloud systems are live and improving the app in real timeAutonomous Cloud Automat"
     },
     {
       "route": "/reports/updates/update-2025-08-14T00-41",
@@ -7412,6 +7418,12 @@
       "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com Context Signals indicate recurring needs around cloud, improving, continuously, autonomous, syst"
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14T00-42",
+      "file": "pages/reports/innovations/insight-2025-08-14T00-42.tsx",
+      "title": "Innovation Insight — 2025-08-14 00-42",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-14 00-42 Innovation Insight — 2025-08-14 00-42 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14T00-41",
       "file": "pages/reports/innovations/insight-2025-08-14T00-41.tsx",
       "title": "Innovation Insight — 2025-08-14 00-41",
@@ -8316,6 +8328,12 @@
       "file": "pages/reports/guides/guide-2025-08-13-215625.tsx",
       "title": "Guide — Reports Trends Implementation",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Reports Trends Implementation Guide — Reports Trends Implementation Source: https://ziontechgroup.com/explore Overview Focus: reports, trends, site, seo, explorea, directory. Steps Clarify objectives "
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-004216",
+      "file": "pages/reports/blueprints/blueprint-2025-08-14-004216.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-004156",
