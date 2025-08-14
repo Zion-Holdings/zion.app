@@ -7947,5 +7947,32 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
+<<<<<<< HEAD
   "generatedAt": "2025-08-14T07:02:21.307Z"
+=======
+  "generatedAt": "2025-08-14T07:02:30.110Z",
+  "items": [
+    {
+      "title": "Case Study — Autonomous Reports",
+      "href": "/reports/cases/case-2025-08-14-070230",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T07:02:30.679Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Techcrunch Pebble Implementation",
+      "href": "/reports/guides/guide-2025-08-14-070230",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T07:02:30.679Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Trigger Homepage Sitemap",
+      "href": "/reports/patterns/pattern-2025-08-14-070230",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T07:02:30.679Z",
+      "source": "cloud-deep-research-factory"
+    }
+  ]
+>>>>>>> 7cb87988e1 (chore(sync): advanced autonomous sync)
 }
