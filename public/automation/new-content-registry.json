@@ -2,6 +2,13 @@
   "generatedAt": "2025-08-14T16:47:28.968Z",
   "items": [
     {
+      "title": "Guide: MLOps",
+      "subtitle": "Patterns to increase accuracy.",
+      "path": "/reports/innovations/insight-2025-08-14-1658",
+      "createdAt": "2025-08-14T16:58:40.092Z",
+      "kind": "insight"
+    },
+    {
       "title": "Reference Architecture — Autonomous Content Mesh",
       "href": "/reports/blueprints/blueprint-2025-08-14-164728",
       "desc": "New autonomous content",

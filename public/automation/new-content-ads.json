@@ -1,15 +1,22 @@
 {
   "items": [
     {
-      "title": "Runbook: FinOps for AI",
-      "desc": "Patterns to enhance security.",
-      "href": "/reports/innovations/insight-2025-08-14-1101"
+      "title": "Guide: MLOps",
+      "desc": "Patterns to increase accuracy.",
+      "href": "/reports/innovations/insight-2025-08-14-1658"
     },
     {
-      "title": "Runbook: RAG Platforms",
-      "desc": "Patterns to enhance security.",
-      "href": "/reports/innovations/insight-2025-08-14-1056"
+      "title": "Reference Architecture — Autonomous Content Mesh"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery"
+    },
+    {
+      "title": "Guide —  Implementation"
+    },
+    {
+      "title": "Pattern — Cloud Intelligence"
     }
   ],
-  "updatedAt": "2025-08-14T11:01:44.687Z"
+  "updatedAt": "2025-08-14T16:58:40.120Z"
 }
