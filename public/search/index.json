@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T10:56:21.333Z",
+  "generatedAt": "2025-08-14T11:01:45.262Z",
   "entries": [
     {
       "route": "/site-health",
@@ -11892,6 +11892,12 @@
       "file": "pages/reports/innovations/insight-2025-08-14T00-00.tsx",
       "title": "Innovation Insight — 2025-08-14 00-00",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-14 00-00 Innovation Insight — 2025-08-14 00-00 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14-1101",
+      "file": "pages/reports/innovations/insight-2025-08-14-1101.tsx",
+      "title": "Runbook: FinOps for AI",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Runbook: FinOps for AI Runbook: FinOps for AI Patterns to enhance security. Scope: Runbook: FinOps for AI. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: obser"
     },
     {
       "route": "/reports/innovations/insight-2025-08-14-1056",

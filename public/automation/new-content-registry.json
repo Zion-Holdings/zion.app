@@ -1,6 +1,13 @@
 {
   "items": [
     {
+      "title": "Runbook: FinOps for AI",
+      "subtitle": "Patterns to enhance security.",
+      "path": "/reports/innovations/insight-2025-08-14-1101",
+      "createdAt": "2025-08-14T11:01:44.661Z",
+      "kind": "insight"
+    },
+    {
       "title": "Runbook: RAG Platforms",
       "subtitle": "Patterns to enhance security.",
       "path": "/reports/innovations/insight-2025-08-14-1056",
