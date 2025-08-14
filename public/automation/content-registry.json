@@ -12418,6 +12418,20 @@
   "generatedAt": "2025-08-14T16:15:38.569Z",
   "items": [
     {
+      "title": "Guide —  Implementation",
+      "href": "/reports/guides/guide-2025-08-14-161551",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:15:51.234Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Cloud Intelligence",
+      "href": "/reports/patterns/pattern-2025-08-14-161551",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T16:15:51.234Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
       "title": "Reference Architecture — Autonomous Content Mesh",
       "href": "/reports/blueprints/blueprint-2025-08-14-161541",
       "desc": "New autonomous content",
