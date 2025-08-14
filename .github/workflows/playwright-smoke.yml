@@ -22,23 +22,17 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '20.18.1'
           cache: 'npm'
 
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
 
-      - name: Install Playwright Browsers
-        run: npx --yes playwright install --with-deps chromium
-
-      - name: Build static site
-        run: npm run export
-
-      - name: Start server
-        run: npx serve -s out -l 3000 &
+      - name: Build app
+        run: npm run build
 
       - name: Smoke test
         run: |
-          node -e "const https=require('https'); const pages=['/','/explore','/front','/newsroom']; const base='https://ziontechgroup.com'; let ok=true; const check=(u)=>new Promise(r=>https.get(base+u, res=>{console.log(u,res.statusCode); if(res.statusCode>=400) ok=false; res.resume(); r();}).on('error',()=>{ok=false; r();})); (async()=>{for(const p of pages) await check(p); if(!ok) process.exit(1);})();"
+          node -e "const https=require('https'); const pages=['/','/explore','/front','/newsroom']; const base='https://ziontechgroup.com'; let ok=true; const check=(u)=>new Promise(r=>https.get(base+u, res=>{console.log(u,res.statusCode); if(res.statusCode>=400) ok=false; res.resume(); r();}).on('error',(e)=>{console.log(u,'ERR'); ok=false; r();})); (async()=>{for(const p of pages) await check(p); if(!ok) process.exit(1);})();"
 
 
