@@ -1,25 +1,45 @@
 {
+<<<<<<< HEAD
   "generatedAt": "2025-08-14T09:45:13.265Z",
+=======
+  "generatedAt": "2025-08-14T09:55:08.357Z",
+>>>>>>> fd4fc44213 (chore(sync): advanced autonomous sync)
   "items": [
     {
       "title": "Case Study — Autonomous Reports",
-      "href": "/reports/cases/case-2025-08-14-094513",
+      "href": "/reports/cases/case-2025-08-14-095508",
       "desc": "New autonomous content",
+<<<<<<< HEAD
       "createdAt": "2025-08-14T09:45:13.226Z",
+=======
+      "createdAt": "2025-08-14T09:55:08.319Z",
+>>>>>>> fd4fc44213 (chore(sync): advanced autonomous sync)
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Guide — Techcrunch Pebble Implementation",
+<<<<<<< HEAD
       "href": "/reports/guides/guide-2025-08-14-094513",
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T09:45:13.226Z",
+=======
+      "href": "/reports/guides/guide-2025-08-14-095508",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T09:55:08.319Z",
+>>>>>>> fd4fc44213 (chore(sync): advanced autonomous sync)
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Trigger Homepage Sitemap",
+<<<<<<< HEAD
       "href": "/reports/patterns/pattern-2025-08-14-094513",
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T09:45:13.226Z",
+=======
+      "href": "/reports/patterns/pattern-2025-08-14-095508",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T09:55:08.319Z",
+>>>>>>> fd4fc44213 (chore(sync): advanced autonomous sync)
       "source": "cloud-deep-research-factory"
     }
   ]
