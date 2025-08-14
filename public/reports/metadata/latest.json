@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T16:36:03.527Z",
-  "pagesScanned": 3427,
+  "generatedAt": "2025-08-14T16:37:43.148Z",
+  "pagesScanned": 3444,
   "items": [
     {
       "route": "/404",
@@ -3306,6 +3306,26 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-163543",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-163629",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-163738",
       "missing": [
         "og:image"
       ],
@@ -7215,6 +7235,46 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-14-163619",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide —  Implementation",
+        "description": "Guide —  Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-14-163628",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide —  Implementation",
+        "description": "Guide —  Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-14-163723",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide —  Implementation",
+        "description": "Guide —  Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-14-163739",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide —  Implementation",
+        "description": "Guide —  Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/",
       "missing": [
         "og:image"
@@ -9325,6 +9385,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-14-1637",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Runbook: DevSecOps AI",
+        "description": "Runbook: DevSecOps AI — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14T00-00",
       "missing": [
         "og:image"
@@ -10512,6 +10582,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-14 16-35",
         "description": "Innovation Insight — 2025-08-14 16-35 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14T16-37",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-14 16-37",
+        "description": "Innovation Insight — 2025-08-14 16-37 — auto-suggested description"
       }
     },
     {
@@ -12986,6 +13066,46 @@
     },
     {
       "route": "/reports/patterns/pattern-2025-08-14-163551",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Intelligence",
+        "description": "Pattern — Cloud Intelligence — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-14-163619",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Intelligence",
+        "description": "Pattern — Cloud Intelligence — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-14-163628",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Intelligence",
+        "description": "Pattern — Cloud Intelligence — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-14-163723",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Intelligence",
+        "description": "Pattern — Cloud Intelligence — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-14-163739",
       "missing": [
         "og:image"
       ],
@@ -16166,6 +16286,26 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-14-163543",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-163629",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-14-163740",
       "missing": [
         "og:image"
       ],
@@ -32757,14 +32897,21 @@
     {
       "route": "/reports/updates/update-2025-08-14-1336",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 13:36",
         "description": "Autonomous Update — 2025-08-14 13:36 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1337",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 13:37",
+        "description": "Autonomous Update — 2025-08-14 13:37 — auto-suggested description"
       }
     },
     {
@@ -33055,6 +33202,16 @@
       "suggestion": {
         "title": "Autonomous Checklist — Vision & Multimodal (2025-08-14 16:36 UTC)",
         "description": "Autonomous Checklist — Vision & Multimodal (2025-08-14 16:36 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1637",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Reference Architecture — Cloud Cost Optimization (2025-08-14 16:37 UTC)",
+        "description": "Autonomous Reference Architecture — Cloud Cost Optimization (2025-08-14 16:37 UTC) — auto-suggested description"
       }
     },
     {
@@ -34245,6 +34402,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 16-35",
         "description": "Autonomous Update — 2025-08-14 16-35 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14T16-37",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 16-37",
+        "description": "Autonomous Update — 2025-08-14 16-37 — auto-suggested description"
       }
     },
     {
