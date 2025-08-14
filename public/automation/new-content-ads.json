@@ -1,15 +1,10 @@
 {
   "items": [
     {
-      "title": "Blueprint: Agent Ops",
+      "title": "Guide: RAG Platforms",
       "desc": "Patterns to enhance security.",
-      "href": "/reports/innovations/insight-2025-08-14-2301"
-    },
-    {
-      "title": "Runbook: LLM Apps",
-      "desc": "Patterns to enhance security.",
-      "href": "/reports/innovations/insight-2025-08-14-2256"
+      "href": "/reports/innovations/insight-2025-08-14-2352"
     }
   ],
-  "updatedAt": "2025-08-14T23:01:32.409Z"
+  "updatedAt": "2025-08-14T23:52:29.011Z"
 }
