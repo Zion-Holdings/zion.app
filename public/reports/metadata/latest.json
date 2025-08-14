@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T15:41:40.927Z",
-  "pagesScanned": 3018,
+  "generatedAt": "2025-08-14T15:42:00.631Z",
+  "pagesScanned": 3019,
   "items": [
     {
       "route": "/404",
@@ -28962,6 +28962,19 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 12:41",
         "description": "Autonomous Update — 2025-08-14 12:41 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1242",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 12:42",
+        "description": "Autonomous Update — 2025-08-14 12:42 — auto-suggested description"
       }
     },
     {
