@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T15:42:00.631Z",
-  "pagesScanned": 3019,
+  "generatedAt": "2025-08-14T15:43:00.591Z",
+  "pagesScanned": 3021,
   "items": [
     {
       "route": "/404",
@@ -88,6 +88,16 @@
       "suggestion": {
         "title": "Page",
         "description": "Page — auto-suggested description"
+      }
+    },
+    {
+      "route": "/landing",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Zion — All Features, Benefits, Services, Pages and Content",
+        "description": "Zion — All Features, Benefits, Services, Pages and Content — auto-suggested description"
       }
     },
     {
@@ -28967,14 +28977,24 @@
     {
       "route": "/reports/updates/update-2025-08-14-1242",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 12:42",
+        "description": "Autonomous Update — 2025-08-14 12:42 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1243",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-14 12:42",
-        "description": "Autonomous Update — 2025-08-14 12:42 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-14 12:43",
+        "description": "Autonomous Update — 2025-08-14 12:43 — auto-suggested description"
       }
     },
     {
