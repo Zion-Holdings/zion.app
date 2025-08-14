@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T00:37:06.256Z",
-  "pagesScanned": 1426,
+  "generatedAt": "2025-08-14T00:37:11.552Z",
+  "pagesScanned": 1429,
   "items": [
     {
       "route": "/404",
@@ -1033,6 +1033,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-14-003659",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-14-003709",
       "missing": [
         "og:image"
       ],
@@ -2449,6 +2459,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-14 00-36",
         "description": "Innovation Insight — 2025-08-14 00-36 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14T00-37",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-14 00-37",
+        "description": "Innovation Insight — 2025-08-14 00-37 — auto-suggested description"
       }
     },
     {
@@ -13004,10 +13024,7 @@
     {
       "route": "/reports/updates/update-2025-08-13-2137",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-13 21:37",
@@ -14232,6 +14249,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 00-36",
         "description": "Autonomous Update — 2025-08-14 00-36 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14T00-37",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 00-37",
+        "description": "Autonomous Update — 2025-08-14 00-37 — auto-suggested description"
       }
     },
     {
