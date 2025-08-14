@@ -8,7 +8,8 @@ const DEFAULT_DESC = 'AI-driven, self-improving web platform with autonomous gro
 
 export default function DefaultSEO() {
   const { asPath } = useRouter();
-  const url = `${SITE_URL}${asPath === '/' ? '' : asPath}`;
+  const normalizedPath = asPath === '/' ? '/' : asPath.endsWith('/') ? asPath : `${asPath}/`;
+  const url = `${SITE_URL}${normalizedPath === '/' ? '' : normalizedPath}`;
   return (
     <Head>
       <title>{DEFAULT_TITLE}</title>

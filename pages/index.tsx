@@ -11,6 +11,8 @@ export default function Home() {
         <meta property="og:description" content="Zion — automatically suggested description." />
         <meta name="twitter:card" content="summary_large_image" /></Head>
 
+      <h1 className="sr-only">Zion — Latest Autonomous Content</h1>
+
       {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */}
 
  <section className="mx-auto max-w-7xl px-6 pb-14">
