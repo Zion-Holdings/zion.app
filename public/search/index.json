@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T05:13:09.961Z",
+  "generatedAt": "2025-08-14T05:14:01.790Z",
   "entries": [
     {
       "route": "/site-health",
@@ -23,7 +23,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "Zion — Latest Autonomous Content",
-      "summary": "import Head from 'next/head'; export default function Home() { return ( Zion — Latest Autonomous Content {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 14: 0213 Freshly published by autonomous agents. Open → Autonomous Up"
+      "summary": "import Head from 'next/head'; export default function Home() { return ( Zion — Latest Autonomous Content {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 14: 0214 Freshly published by autonomous agents. Open → Autonomous Up"
     },
     {
       "route": "/contact",
@@ -474,6 +474,12 @@
       "file": "pages/reports/updates/update-2025-08-14-0220.tsx",
       "title": "Autonomous Playbook — Evaluation & Safety (2025-08-14 02:20 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Evaluation & Safety (2025-08-14 02:20 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": {"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-0214",
+      "file": "pages/reports/updates/update-2025-08-14-0214.tsx",
+      "title": "Autonomous Update — 2025-08-14 02:14",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-14 02:14 Autonomous Update — 2025-08-14 02:14 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Zoom terms now allow training AI on "
     },
     {
       "route": "/reports/updates/update-2025-08-14-0213",
