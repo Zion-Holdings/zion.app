@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T14:06:40.583Z",
-  "pagesScanned": 2842,
+  "generatedAt": "2025-08-14T14:07:00.686Z",
+  "pagesScanned": 2843,
   "items": [
     {
       "route": "/404",
@@ -27342,6 +27342,19 @@
       "suggestion": {
         "title": "Autonomous Reference Architecture — Edge AI & IoT (2025-08-14 11:06 UTC)",
         "description": "Autonomous Reference Architecture — Edge AI & IoT (2025-08-14 11:06 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1107",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 11:07",
+        "description": "Autonomous Update — 2025-08-14 11:07 — auto-suggested description"
       }
     },
     {
