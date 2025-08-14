@@ -7,7 +7,6 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
 const LOG = path.join(ROOT, 'automation', 'logs', 'git-autosync.log');
-const LOCK_FILE = path.join(ROOT, 'automation', '.git-sync.lock');
 
 function ensureDir(p) { fs.mkdirSync(p, { recursive: true }); }
 function log(msg) {
@@ -17,18 +16,7 @@ function log(msg) {
   try { fs.appendFileSync(LOG, line + '\n'); } catch {}
 }
 
-function withGitLock(fn) {
-  const maxAgeMs = 5 * 60 * 1000;
-  try {
-    if (fs.existsSync(LOCK_FILE)) {
-      const age = Date.now() - fs.statSync(LOCK_FILE).mtimeMs;
-      if (age < maxAgeMs) { log('lock present; skip this cycle'); return false; }
-      try { fs.unlinkSync(LOCK_FILE); } catch {}
-    }
-    fs.writeFileSync(LOCK_FILE, String(process.pid));
-  } catch (e) { log(`lock error: ${e.message || e}`); return false; }
-  try { return fn(); } finally { try { fs.unlinkSync(LOCK_FILE); } catch {} }
-}
+function withGitLock(fn) { return fn(); }
 
 function run(cmd, args = []) {
   const res = spawnSync(cmd, args, { stdio: 'inherit', cwd: ROOT, env: process.env, shell: false });
