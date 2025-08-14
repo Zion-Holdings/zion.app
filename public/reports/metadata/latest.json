@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-14T16:19:09.578Z",
-  "pagesScanned": 3151,
+  "generatedAt": "2025-08-14T16:19:33.818Z",
+  "pagesScanned": 3155,
   "items": [
     {
       "route": "/404",
@@ -6165,6 +6165,16 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-14-161930",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide —  Implementation",
+        "description": "Guide —  Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/",
       "missing": [
         "og:image"
@@ -8132,6 +8142,16 @@
       "suggestion": {
         "title": "Blueprint: DevSecOps AI",
         "description": "Blueprint: DevSecOps AI — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-14-1619",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Checklist: FinOps for AI",
+        "description": "Checklist: FinOps for AI — auto-suggested description"
       }
     },
     {
@@ -11046,6 +11066,16 @@
     },
     {
       "route": "/reports/patterns/pattern-2025-08-14-161908",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Intelligence",
+        "description": "Pattern — Cloud Intelligence — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-14-161930",
       "missing": [
         "og:image"
       ],
@@ -30247,10 +30277,7 @@
     {
       "route": "/reports/updates/update-2025-08-14-1319",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 13:19",
@@ -30425,6 +30452,16 @@
       "suggestion": {
         "title": "Autonomous Capability Map — Agentic Workflows (2025-08-14 16:10 UTC)",
         "description": "Autonomous Capability Map — Agentic Workflows (2025-08-14 16:10 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-1619",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Reference Architecture — DevSecOps for AI (2025-08-14 16:19 UTC)",
+        "description": "Autonomous Reference Architecture — DevSecOps for AI (2025-08-14 16:19 UTC) — auto-suggested description"
       }
     },
     {
