@@ -4,17 +4,17 @@ export default function InsightPage() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <Head>
-        <title>Guide: LLM Apps</title>
-        <meta name="description" content="Patterns to reduce cost." />
-        <meta property="og:title" content="Guide: LLM Apps" />
-        <meta property="og:description" content="Patterns to reduce cost." />
+        <title>Checklist: Agent Ops</title>
+        <meta name="description" content="Patterns to increase accuracy." />
+        <meta property="og:title" content="Checklist: Agent Ops" />
+        <meta property="og:description" content="Patterns to increase accuracy." />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
-        <h1 className="text-3xl font-extrabold">Guide: LLM Apps</h1>
-        <p className="text-white/70">Patterns to reduce cost.</p>
+        <h1 className="text-3xl font-extrabold">Checklist: Agent Ops</h1>
+        <p className="text-white/70">Patterns to increase accuracy.</p>
         <ul className="mt-6 list-disc pl-6 space-y-2">
-          <li>Scope: Guide: LLM Apps.</li>
+          <li>Scope: Checklist: Agent Ops.</li>
           <li>Signals: AI Services.</li>
           <li>Architecture: ingestion → retrieval → reasoning → evaluation.</li>
           <li>Ops: observability, rollback, SLOs, security.</li>

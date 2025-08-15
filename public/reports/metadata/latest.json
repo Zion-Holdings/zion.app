@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T07:06:20.154Z",
-  "pagesScanned": 2636,
+  "generatedAt": "2025-08-15T07:06:04.093Z",
+  "pagesScanned": 2631,
   "items": [
     {
       "route": "/404",
@@ -7903,16 +7903,6 @@
       }
     },
     {
-      "route": "/reports/cases/case-2025-08-15-070607",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Case Study — Automation Autonomous",
-        "description": "Case Study — Automation Autonomous — auto-suggested description"
-      }
-    },
-    {
       "route": "/reports/guides/guide-2025-08-15-021207",
       "missing": [
         "og:image"
@@ -12563,16 +12553,6 @@
       }
     },
     {
-      "route": "/reports/guides/guide-2025-08-15-070607",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Guide — Cloud Improving Implementation",
-        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
-      }
-    },
-    {
       "route": "/reports/innovations/insight-2025-08-15-0211",
       "missing": [
         "og:image"
@@ -13450,16 +13430,6 @@
       "suggestion": {
         "title": "Playbook: Agent Ops",
         "description": "Playbook: Agent Ops — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/innovations/insight-2025-08-15-0706",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Guide: LLM Apps",
-        "description": "Guide: LLM Apps — auto-suggested description"
       }
     },
     {
@@ -18984,16 +18954,6 @@
     },
     {
       "route": "/reports/patterns/pattern-2025-08-15-070553",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Pattern — Cloud Improving Continuously",
-        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/patterns/pattern-2025-08-15-070607",
       "missing": [
         "og:image"
       ],
@@ -25440,16 +25400,6 @@
       "suggestion": {
         "title": "Autonomous Checklist — Data Engineering (2025-08-15 07:05 UTC)",
         "description": "Autonomous Checklist — Data Engineering (2025-08-15 07:05 UTC) — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-15-0706",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Performance Tuning Guide — Vision & Multimodal (2025-08-15 07:06 UTC)",
-        "description": "Autonomous Performance Tuning Guide — Vision & Multimodal (2025-08-15 07:06 UTC) — auto-suggested description"
       }
     },
     {
