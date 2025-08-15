@@ -1,19 +1,33 @@
 {
-  "generatedAt": "2025-08-15T06:25:23.238Z",
+  "generatedAt": "2025-08-15T06:25:25.765Z",
   "items": [
     {
-      "title": "Reference Architecture — Autonomous Content Mesh",
-      "href": "/reports/blueprints/blueprint-2025-08-15-062523",
+      "title": "Innovation Insight — 2025-08-15 06-25",
+      "href": "/reports/innovations/insight-2025-08-15T06-25",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T06:25:23.165Z",
-      "source": "cloud-blueprint-factory"
+      "createdAt": "2025-08-15T06:25:25.679Z",
+      "source": "cloud-content-factory"
     },
     {
-      "title": "Playbook — Autonomous Delivery",
-      "href": "/reports/playbooks/playbook-2025-08-15-062523",
+      "title": "Autonomous Update — 2025-08-15 06-25",
+      "href": "/reports/updates/update-2025-08-15T06-25",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T06:25:23.083Z",
-      "source": "cloud-playbook-factory"
+      "createdAt": "2025-08-15T06:25:25.679Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-15 06-25",
+      "href": "/reports/innovations/insight-2025-08-15T06-25",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T06:25:25.679Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-15 06-25",
+      "href": "/reports/updates/update-2025-08-15T06-25",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T06:25:25.679Z",
+      "source": "cloud-content-factory"
     },
     {
       "title": "Case Study — Automation Autonomous",
