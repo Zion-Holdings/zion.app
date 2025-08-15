@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-15T23:42:34.906Z",
+  "timestamp": "2025-08-15T23:43:33.891Z",
   "summary": {
     "totalWorkflows": 148,
     "complexityDistribution": {
@@ -413,18 +413,18 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cloud-autonomous-orchestrator.yml"
     },
     "cloud-deep-research.yml": {
-      "complexityScore": 20,
+      "complexityScore": 15,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 62,
+        "totalLines": 67,
         "jobCount": 0,
-        "stepCount": 10,
+        "stepCount": 8,
         "conditionalCount": 0,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 4,
-        "actionCount": 4
+        "actionCount": 2
       },
       "refactoringPriority": "low",
       "status": "active",
