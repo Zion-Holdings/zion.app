@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T21:07:03.276Z",
+  "generatedAt": "2025-08-15T21:08:03.302Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1476,6 +1476,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1810.tsx",
       "title": "Autonomous Validation & QA Plan — Edge AI & IoT (2025-08-15 18:10 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Validation & QA Plan — Edge AI & IoT (2025-08-15 18:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"auth"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1808",
+      "file": "pages/reports/updates/update-2025-08-15-1808.tsx",
+      "title": "Autonomous Update — 2025-08-15 18:08",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 18:08 Autonomous Update — 2025-08-15 18:08 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Paper Airplane Designs · 1753 pts Wh"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1807",
