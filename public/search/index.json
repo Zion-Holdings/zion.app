@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T22:31:03.387Z",
+  "generatedAt": "2025-08-15T22:32:03.119Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1530,6 +1530,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1940.tsx",
       "title": "Autonomous Capability Map — Applied NLP & RAG (2025-08-15 19:40 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Capability Map — Applied NLP & RAG (2025-08-15 19:40 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1932",
+      "file": "pages/reports/updates/update-2025-08-15-1932.tsx",
+      "title": "Autonomous Update — 2025-08-15 19:32",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 19:32 Autonomous Update — 2025-08-15 19:32 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Paper Airplane Designs · 1753 pts Wh"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1931",
