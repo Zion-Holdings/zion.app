@@ -53,6 +53,13 @@
       "route": "/automation"
     },
     {
+<<<<<<< HEAD
+=======
+      "file": "pages/reports/updates/update-2025-08-15T09-58.tsx",
+      "route": "/reports/updates/update-2025-08-15T09-58"
+    },
+    {
+>>>>>>> d2046a25a37 (chore(sync): advanced autonomous sync)
       "file": "pages/reports/updates/update-2025-08-15T09-08.tsx",
       "route": "/reports/updates/update-2025-08-15T09-08"
     },
@@ -649,6 +656,13 @@
       "route": "/reports/updates/update-2025-08-15T02-12"
     },
     {
+<<<<<<< HEAD
+=======
+      "file": "pages/reports/updates/update-2025-08-15-0958.tsx",
+      "route": "/reports/updates/update-2025-08-15-0958"
+    },
+    {
+>>>>>>> d2046a25a37 (chore(sync): advanced autonomous sync)
       "file": "pages/reports/updates/update-2025-08-15-0907.tsx",
       "route": "/reports/updates/update-2025-08-15-0907"
     },
@@ -1221,12 +1235,25 @@
       "route": "/reports/updates/update-2025-08-15-0510"
     },
     {
+<<<<<<< HEAD
       "file": "pages/reports/updates/update-2025-08-15-0508.tsx",
       "route": "/reports/updates/update-2025-08-15-0508"
     },
     {
       "file": "pages/reports/updates/update-2025-08-15-0507.tsx",
       "route": "/reports/updates/update-2025-08-15-0507"
+=======
+      "file": "pages/reports/updates/update-2025-08-15-0506.tsx",
+      "route": "/reports/updates/update-2025-08-15-0506"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-15-0505.tsx",
+      "route": "/reports/updates/update-2025-08-15-0505"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-15-0504.tsx",
+      "route": "/reports/updates/update-2025-08-15-0504"
+>>>>>>> d2046a25a37 (chore(sync): advanced autonomous sync)
     },
     {
       "file": "pages/reports/updates/update-2025-08-15-0503.tsx",
@@ -2441,8 +2468,13 @@
       "route": "/reports/updates/update-2025-08-14-2311"
     },
     {
+<<<<<<< HEAD
       "file": "pages/reports/playbooks/playbook-2025-08-15-100703.tsx",
       "route": "/reports/playbooks/playbook-2025-08-15-100703"
+=======
+      "file": "pages/reports/playbooks/playbook-2025-08-15-095824.tsx",
+      "route": "/reports/playbooks/playbook-2025-08-15-095824"
+>>>>>>> d2046a25a37 (chore(sync): advanced autonomous sync)
     },
     {
       "file": "pages/reports/playbooks/playbook-2025-08-15-094807.tsx",
@@ -4489,6 +4521,13 @@
       "route": "/reports/playbooks/playbook-2025-08-15-021207"
     },
     {
+<<<<<<< HEAD
+=======
+      "file": "pages/reports/innovations/insight-2025-08-15T09-58.tsx",
+      "route": "/reports/innovations/insight-2025-08-15T09-58"
+    },
+    {
+>>>>>>> d2046a25a37 (chore(sync): advanced autonomous sync)
       "file": "pages/reports/innovations/insight-2025-08-15T09-08.tsx",
       "route": "/reports/innovations/insight-2025-08-15T09-08"
     },
@@ -14141,12 +14180,21 @@
       "route": "/reports/blueprints/blueprint-2025-08-14-212855"
     },
     {
+<<<<<<< HEAD
       "file": "pages/reports/cases/case-2025-08-15-100703.tsx",
       "route": "/reports/cases/case-2025-08-15-100703"
     },
     {
       "file": "pages/reports/cases/case-2025-08-15-095557.tsx",
       "route": "/reports/cases/case-2025-08-15-095557"
+=======
+      "file": "pages/reports/cases/case-2025-08-15-100356.tsx",
+      "route": "/reports/cases/case-2025-08-15-100356"
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-15-095824.tsx",
+      "route": "/reports/cases/case-2025-08-15-095824"
+>>>>>>> d2046a25a37 (chore(sync): advanced autonomous sync)
     },
     {
       "file": "pages/reports/cases/case-2025-08-15-094807.tsx",
@@ -17387,5 +17435,32 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
+<<<<<<< HEAD
   "generatedAt": "2025-08-15T10:13:17.762Z"
+=======
+  "generatedAt": "2025-08-15T10:15:32.678Z",
+  "items": [
+    {
+      "title": "Case Study — Automation Autonomous",
+      "href": "/reports/cases/case-2025-08-15-101534",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T10:15:34.061Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-15-101534",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T10:15:34.061Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Cloud Improving Continuously",
+      "href": "/reports/patterns/pattern-2025-08-15-101534",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T10:15:34.061Z",
+      "source": "cloud-deep-research-factory"
+    }
+  ]
+>>>>>>> d2046a25a37 (chore(sync): advanced autonomous sync)
 }
