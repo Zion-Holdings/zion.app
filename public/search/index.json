@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T20:12:03.295Z",
+  "generatedAt": "2025-08-15T20:13:03.130Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1446,6 +1446,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1720.tsx",
       "title": "Autonomous Checklist — Vision & Multimodal (2025-08-15 17:20 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Checklist — Vision & Multimodal (2025-08-15 17:20 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1713",
+      "file": "pages/reports/updates/update-2025-08-15-1713.tsx",
+      "title": "Autonomous Update — 2025-08-15 17:13",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 17:13 Autonomous Update — 2025-08-15 17:13 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Air Con: $1697 for an on/off switch "
     },
     {
       "route": "/reports/updates/update-2025-08-15-1712",
