@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-15T22:49:42.788Z",
+  "timestamp": "2025-08-15T22:50:00.556Z",
   "summary": {
     "totalWorkflows": 148,
     "activeWorkflows": 73,
@@ -4357,8 +4357,8 @@
       "name": "release.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/release.yml",
-      "size": 5530,
-      "lines": 202,
+      "size": 5024,
+      "lines": 186,
       "triggers": [
         "push",
         "workflow_dispatch"
@@ -4371,9 +4371,6 @@
         "version",
         "release_type",
         "options",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
         "jobs",
         "create-release",
         "steps",
@@ -4399,67 +4396,7 @@
       "permissions": [
         {
           "permission": "contents",
-          "value": "read"
-        },
-        {
-          "permission": "branch_protection_rules",
-          "value": ""
-        },
-        {
-          "permission": "- pattern",
-          "value": "\"main\""
-        },
-        {
-          "permission": "required_status_checks",
-          "value": ""
-        },
-        {
-          "permission": "strict",
-          "value": "true"
-        },
-        {
-          "permission": "contexts",
-          "value": "[]"
-        },
-        {
-          "permission": "required_pull_request_reviews",
-          "value": ""
-        },
-        {
-          "permission": "required_approving_review_count",
-          "value": "1"
-        },
-        {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
-        },
-        {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
-        },
-        {
-          "permission": "enforce_admins",
-          "value": "false"
-        },
-        {
-          "permission": "required_linear_history",
-          "value": "false"
-        },
-        {
-          "permission": "allow_force_pushes",
-          "value": "false"
-        },
-        {
-          "permission": "allow_deletions",
-          "value": "false"
-        },
-        {
-          "permission": "block_creations",
-          "value": "false"
-        },
-        {
-          "permission": "required_conversation_resolution",
-          "value": "true"
+          "value": "write"
         },
         {
           "permission": "pull-requests",
