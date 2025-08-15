@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T06:30:00.904Z",
-  "pagesScanned": 1518,
+  "generatedAt": "2025-08-15T06:30:14.330Z",
+  "pagesScanned": 1520,
   "items": [
     {
       "route": "/404",
@@ -7296,6 +7296,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-15-0630",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide: MLOps",
+        "description": "Guide: MLOps — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-15T02-12",
       "missing": [
         "og:image"
@@ -14208,10 +14218,7 @@
     {
       "route": "/reports/updates/update-2025-08-15-0330",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-15 03:30",
@@ -14626,6 +14633,16 @@
       "suggestion": {
         "title": "Autonomous Performance Tuning Guide — Evaluation & Safety (2025-08-15 06:29 UTC)",
         "description": "Autonomous Performance Tuning Guide — Evaluation & Safety (2025-08-15 06:29 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0630",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Blueprint — Data Engineering (2025-08-15 06:30 UTC)",
+        "description": "Autonomous Blueprint — Data Engineering (2025-08-15 06:30 UTC) — auto-suggested description"
       }
     },
     {

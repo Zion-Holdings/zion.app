@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T06:30:02.600Z",
+  "generatedAt": "2025-08-15T06:30:15.802Z",
   "entries": [
     {
       "route": "/site-health",
@@ -72,6 +72,12 @@
       "file": "pages/services/[slug].tsx",
       "title": "{service.title} — Zion Tech Group",
       "summary": "import { GetStaticPaths, GetStaticProps } from 'next'; import Head from 'next/head'; type Service = { slug: string; title: string; description: string; bullets: string[]; ctaHref: string; }; const services: Service[] = [ { slug: 'ai-seo-auditor', title: 'AI SEO Auditor', descript"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15T06-30",
+      "file": "pages/reports/updates/update-2025-08-15T06-30.tsx",
+      "title": "Autonomous Update — 2025-08-15 06-30",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-15 06-30 Autonomous Update — 2025-08-15 06-30 Signal source: https://ziontechgroup.com/main/front Autonomous Front SystemsAI-powered automation orchestrating continuous content gen"
     },
     {
       "route": "/reports/updates/update-2025-08-15T06-29",
@@ -396,6 +402,12 @@
       "file": "pages/reports/updates/update-2025-08-15T02-12.tsx",
       "title": "Autonomous Update — 2025-08-15 02-12",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-15 02-12 Autonomous Update — 2025-08-15 02-12 Signal source: https://ziontechgroup.com/main/front Autonomous Front SystemsAI-powered automation orchestrating continuous content gen"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0630",
+      "file": "pages/reports/updates/update-2025-08-15-0630.tsx",
+      "title": "Autonomous Blueprint — Data Engineering (2025-08-15 06:30 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Blueprint — Data Engineering (2025-08-15 06:30 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { \""
     },
     {
       "route": "/reports/updates/update-2025-08-15-0629",
@@ -2990,6 +3002,12 @@
       "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-15-063014",
+      "file": "pages/reports/patterns/pattern-2025-08-15-063014.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
       "route": "/reports/patterns/pattern-2025-08-15-063000",
       "file": "pages/reports/patterns/pattern-2025-08-15-063000.tsx",
       "title": "Pattern — Cloud Improving Continuously",
@@ -4472,6 +4490,12 @@
       "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
     },
     {
+      "route": "/reports/innovations/insight-2025-08-15T06-30",
+      "file": "pages/reports/innovations/insight-2025-08-15T06-30.tsx",
+      "title": "Innovation Insight — 2025-08-15 06-30",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-15 06-30 Innovation Insight — 2025-08-15 06-30 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-15T06-29",
       "file": "pages/reports/innovations/insight-2025-08-15T06-29.tsx",
       "title": "Innovation Insight — 2025-08-15 06-29",
@@ -4796,6 +4820,12 @@
       "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-15 02-12 Innovation Insight — 2025-08-15 02-12 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
     },
     {
+      "route": "/reports/innovations/insight-2025-08-15-0630",
+      "file": "pages/reports/innovations/insight-2025-08-15-0630.tsx",
+      "title": "Guide: MLOps",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Guide: MLOps Guide: MLOps Patterns to enhance security. Scope: Guide: MLOps. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observability, rollback, SLOs, secu"
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-15-0629",
       "file": "pages/reports/innovations/insight-2025-08-15-0629.tsx",
       "title": "Runbook: RAG Platforms",
@@ -5106,6 +5136,12 @@
       "file": "pages/reports/innovations/insight-2025-08-15-0211.tsx",
       "title": "Blueprint: Edge AI",
       "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Blueprint: Edge AI Blueprint: Edge AI Patterns to accelerate delivery. Scope: Blueprint: Edge AI. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observability,"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-063014",
+      "file": "pages/reports/guides/guide-2025-08-15-063014.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
     },
     {
       "route": "/reports/guides/guide-2025-08-15-063000",
@@ -6596,6 +6632,12 @@
       "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
     },
     {
+      "route": "/reports/cases/case-2025-08-15-063014",
+      "file": "pages/reports/cases/case-2025-08-15-063014.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
       "route": "/reports/cases/case-2025-08-15-063000",
       "file": "pages/reports/cases/case-2025-08-15-063000.tsx",
       "title": "Case Study — Automation Autonomous",
@@ -8082,6 +8124,12 @@
       "file": "pages/reports/cases/case-2025-08-15-021207.tsx",
       "title": "Case Study — Automation Autonomous",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-063014",
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-063014.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-15-062951",
