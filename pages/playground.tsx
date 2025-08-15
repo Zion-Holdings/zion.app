@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Head from 'next/link';
+import Head from 'next/head';
 import Pagination from '../components/Pagination';
 import Form from '../components/Form';
 import Modal from '../components/Modal';
@@ -25,7 +25,8 @@ export default function ComponentPlayground() {
       
         <meta property="og:title" content="Component Playground" />
         <meta property="og:description" content="Component Playground — automatically suggested description." />
-        <meta name="twitter:card" content="summary_large_image" /></Head>
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
       
       <main className="container mx-auto px-6 py-12">
         <div className="text-center mb-12">

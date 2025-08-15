@@ -64,7 +64,7 @@ export default function ContentDiscovery() {
   const sortedContent = [...filteredContent].sort((a, b) => {
     switch (sortBy) {
       case 'date':
-        return new Date(b.date) - new Date(a.date);
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
       case 'title':
         return a.title.localeCompare(b.title);
       case 'readTime':
