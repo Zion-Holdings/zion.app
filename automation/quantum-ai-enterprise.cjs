@@ -7,7 +7,6 @@ class QuantumAIEnterprise {
         this.version = '1.0.0';
         this.description = 'Enterprise-grade Quantum AI system with production capabilities';
         this.status = 'initialized';
-        this.components = {};
         this.enterpriseFeatures = {};
         this.productionSystems = {};
         this.securityFeatures = {};
@@ -19,24 +18,14 @@ class QuantumAIEnterprise {
         try {
             console.log(`🚀 Initializing ${this.name} v${this.version}...`);
             
-            // Initialize enterprise components
             await this.initializeEnterpriseComponents();
-            
-            // Initialize production systems
             await this.initializeProductionSystems();
-            
-            // Initialize security features
             await this.initializeSecurityFeatures();
-            
-            // Initialize scalability features
             await this.initializeScalabilityFeatures();
-            
-            // Initialize operational features
             await this.initializeOperationalFeatures();
             
             this.status = 'ready';
             console.log(`✅ ${this.name} initialized successfully`);
-            
             return true;
         } catch (error) {
             console.error(`❌ Error initializing ${this.name}:`, error.message);
@@ -658,10 +647,8 @@ class QuantumAIEnterprise {
     }
 }
 
-// Export the class
 module.exports = QuantumAIEnterprise;
 
-// If running directly, initialize and run
 if (require.main === module) {
     const enterprise = new QuantumAIEnterprise();
     enterprise.initialize().then(() => {
