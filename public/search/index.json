@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T23:21:03.374Z",
+  "generatedAt": "2025-08-15T23:22:03.155Z",
   "entries": [
     {
       "route": "/terms",
@@ -1578,6 +1578,12 @@
       "file": "pages/reports/updates/update-2025-08-15-2030.tsx",
       "title": "Autonomous Reference Architecture — Cloud Cost Optimization (2025-08-15 20:30 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Reference Architecture — Cloud Cost Optimization (2025-08-15 20:30 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subti"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-2022",
+      "file": "pages/reports/updates/update-2025-08-15-2022.tsx",
+      "title": "Autonomous Update — 2025-08-15 20:22",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 20:22 Autonomous Update — 2025-08-15 20:22 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Gemini AI · 2135 pts Why it matters:"
     },
     {
       "route": "/reports/updates/update-2025-08-15-2021",
