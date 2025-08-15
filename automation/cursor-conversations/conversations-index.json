@@ -4498,5 +4498,173 @@
     "startTime": "2025-08-15T21:47:25.685Z",
     "status": "active",
     "filePath": "conv-1755294445685.json"
+  },
+  {
+    "id": "conv-1755294605292",
+    "type": "architecture-discussion",
+    "participants": [
+      "Backend Developer",
+      "DevOps Engineer",
+      "Security Expert"
+    ],
+    "startTime": "2025-08-15T21:50:05.292Z",
+    "status": "active",
+    "filePath": "conv-1755294605292.json"
+  },
+  {
+    "id": "conv-1755294607299",
+    "type": "testing-strategy",
+    "participants": [
+      "QA Tester",
+      "Frontend Specialist",
+      "Backend Developer"
+    ],
+    "startTime": "2025-08-15T21:50:07.299Z",
+    "status": "active",
+    "filePath": "conv-1755294607299.json"
+  },
+  {
+    "id": "conv-1755294747700",
+    "type": "feature-planning",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "DevOps Engineer"
+    ],
+    "startTime": "2025-08-15T21:52:27.700Z",
+    "status": "active",
+    "filePath": "conv-1755294747700.json"
+  },
+  {
+    "id": "conv-1755294749707",
+    "type": "performance-optimization",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "DevOps Engineer"
+    ],
+    "startTime": "2025-08-15T21:52:29.708Z",
+    "status": "active",
+    "filePath": "conv-1755294749707.json"
+  },
+  {
+    "id": "conv-1755294909314",
+    "type": "deployment-planning",
+    "participants": [
+      "DevOps Engineer",
+      "Backend Developer",
+      "Security Expert"
+    ],
+    "startTime": "2025-08-15T21:55:09.314Z",
+    "status": "active",
+    "filePath": "conv-1755294909314.json"
+  },
+  {
+    "id": "conv-1755294911322",
+    "type": "code-review",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "QA Tester"
+    ],
+    "startTime": "2025-08-15T21:55:11.322Z",
+    "status": "active",
+    "filePath": "conv-1755294911322.json"
+  },
+  {
+    "id": "conv-1755295051723",
+    "type": "testing-strategy",
+    "participants": [
+      "QA Tester",
+      "Frontend Specialist",
+      "Backend Developer"
+    ],
+    "startTime": "2025-08-15T21:57:31.723Z",
+    "status": "active",
+    "filePath": "conv-1755295051723.json"
+  },
+  {
+    "id": "conv-1755295053747",
+    "type": "feature-planning",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "DevOps Engineer"
+    ],
+    "startTime": "2025-08-15T21:57:33.747Z",
+    "status": "active",
+    "filePath": "conv-1755295053747.json"
+  },
+  {
+    "id": "conv-1755295213336",
+    "type": "security-audit",
+    "participants": [
+      "Security Expert",
+      "Backend Developer",
+      "DevOps Engineer"
+    ],
+    "startTime": "2025-08-15T22:00:13.336Z",
+    "status": "active",
+    "filePath": "conv-1755295213336.json"
+  },
+  {
+    "id": "conv-1755295215345",
+    "type": "performance-optimization",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "DevOps Engineer"
+    ],
+    "startTime": "2025-08-15T22:00:15.345Z",
+    "status": "active",
+    "filePath": "conv-1755295215345.json"
+  },
+  {
+    "id": "conv-1755295355774",
+    "type": "code-review",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "QA Tester"
+    ],
+    "startTime": "2025-08-15T22:02:35.774Z",
+    "status": "active",
+    "filePath": "conv-1755295355774.json"
+  },
+  {
+    "id": "conv-1755295357782",
+    "type": "feature-planning",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "DevOps Engineer"
+    ],
+    "startTime": "2025-08-15T22:02:37.782Z",
+    "status": "active",
+    "filePath": "conv-1755295357782.json"
+  },
+  {
+    "id": "conv-1755295517360",
+    "type": "feature-planning",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "DevOps Engineer"
+    ],
+    "startTime": "2025-08-15T22:05:17.360Z",
+    "status": "active",
+    "filePath": "conv-1755295517360.json"
+  },
+  {
+    "id": "conv-1755295519368",
+    "type": "deployment-planning",
+    "participants": [
+      "DevOps Engineer",
+      "Backend Developer",
+      "Security Expert"
+    ],
+    "startTime": "2025-08-15T22:05:19.368Z",
+    "status": "active",
+    "filePath": "conv-1755295519368.json"
   }
 ]
