@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T02:06:01.977Z",
+  "generatedAt": "2025-08-15T02:06:14.910Z",
   "entries": [
     {
       "route": "/site-health",
@@ -102,6 +102,12 @@
       "file": "pages/reports/updates/update-2025-08-15T01-53.tsx",
       "title": "Autonomous Update — 2025-08-15 01-53",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-15 01-53 Autonomous Update — 2025-08-15 01-53 Signal source: https://ziontechgroup.com/automation Automation HubDiscover our autonomous, self-healing systems that keep the codebase"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0206",
+      "file": "pages/reports/updates/update-2025-08-15-0206.tsx",
+      "title": "Autonomous Playbook — Vision & Multimodal (2025-08-15 02:06 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Vision & Multimodal (2025-08-15 02:06 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": {"
     },
     {
       "route": "/reports/updates/update-2025-08-15-0201",
@@ -1428,6 +1434,12 @@
       "file": "pages/reports/innovations/insight-2025-08-15T01-53.tsx",
       "title": "Innovation Insight — 2025-08-15 01-53",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-15 01-53 Innovation Insight — 2025-08-15 01-53 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-0206",
+      "file": "pages/reports/innovations/insight-2025-08-15-0206.tsx",
+      "title": "Runbook: AI QA & Eval",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Runbook: AI QA & Eval Runbook: AI QA & Eval Patterns to reduce cost. Scope: Runbook: AI QA & Eval. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observability"
     },
     {
       "route": "/reports/innovations/insight-2025-08-15-0201",

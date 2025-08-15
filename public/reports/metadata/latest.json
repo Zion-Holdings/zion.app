@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T02:06:00.798Z",
-  "pagesScanned": 513,
+  "generatedAt": "2025-08-15T02:06:13.834Z",
+  "pagesScanned": 515,
   "items": [
     {
       "route": "/404",
@@ -2845,6 +2845,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-15-0206",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Runbook: AI QA & Eval",
+        "description": "Runbook: AI QA & Eval — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-15T01-53",
       "missing": [
         "og:image"
@@ -4887,10 +4897,7 @@
     {
       "route": "/reports/updates/update-2025-08-14-2306",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 23:06",
@@ -5055,6 +5062,16 @@
       "suggestion": {
         "title": "Autonomous Security Hardening Guide — AI Service Design (2025-08-15 02:01 UTC)",
         "description": "Autonomous Security Hardening Guide — AI Service Design (2025-08-15 02:01 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0206",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Playbook — Vision & Multimodal (2025-08-15 02:06 UTC)",
+        "description": "Autonomous Playbook — Vision & Multimodal (2025-08-15 02:06 UTC) — auto-suggested description"
       }
     },
     {
