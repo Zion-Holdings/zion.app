@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T17:05:03.377Z",
+  "generatedAt": "2025-08-15T17:06:03.236Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1332,6 +1332,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1410.tsx",
       "title": "Autonomous Capability Map — Vision & Multimodal (2025-08-15 14:10 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Capability Map — Vision & Multimodal (2025-08-15 14:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"auth"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1406",
+      "file": "pages/reports/updates/update-2025-08-15-1406.tsx",
+      "title": "Autonomous Update — 2025-08-15 14:06",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 14:06 Autonomous Update — 2025-08-15 14:06 Signal over noise—your automated update is here. Today's Highlight Hacker News : Airfoil · 2544 pts Why it matters: autonomous c"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1405",
