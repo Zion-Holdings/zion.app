@@ -12958,5 +12958,35 @@
     "status": "pending",
     "dueDate": "2025-08-17T23:03:25.917Z",
     "filePath": "tasks-1755299005917.json"
+  },
+  {
+    "id": "task-1755299165506-1",
+    "title": "Technical Specification",
+    "type": "security-audit",
+    "priority": "high",
+    "assignedTo": "security-expert",
+    "status": "pending",
+    "dueDate": "2025-08-18T23:06:05.506Z",
+    "filePath": "tasks-1755299165506.json"
+  },
+  {
+    "id": "task-1755299165506-2",
+    "title": "User Experience Design",
+    "type": "security-audit",
+    "priority": "high",
+    "assignedTo": "backend-developer",
+    "status": "pending",
+    "dueDate": "2025-08-19T23:06:05.506Z",
+    "filePath": "tasks-1755299165506.json"
+  },
+  {
+    "id": "task-1755299165506-3",
+    "title": "Implementation Plan",
+    "type": "security-audit",
+    "priority": "medium",
+    "assignedTo": "devops-engineer",
+    "status": "pending",
+    "dueDate": "2025-08-17T23:06:05.506Z",
+    "filePath": "tasks-1755299165506.json"
   }
 ]

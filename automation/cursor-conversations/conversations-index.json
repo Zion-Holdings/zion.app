@@ -5218,5 +5218,17 @@
     "startTime": "2025-08-15T23:03:25.915Z",
     "status": "active",
     "filePath": "conv-1755299005915.json"
+  },
+  {
+    "id": "conv-1755299165504",
+    "type": "security-audit",
+    "participants": [
+      "Security Expert",
+      "Backend Developer",
+      "DevOps Engineer"
+    ],
+    "startTime": "2025-08-15T23:06:05.504Z",
+    "status": "active",
+    "filePath": "conv-1755299165504.json"
   }
 ]

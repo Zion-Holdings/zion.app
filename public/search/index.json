@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T23:05:04.179Z",
+  "generatedAt": "2025-08-15T23:06:03.424Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1560,6 +1560,12 @@
       "file": "pages/reports/updates/update-2025-08-15-2010.tsx",
       "title": "Autonomous Reference Architecture — Vision & Multimodal (2025-08-15 20:10 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Reference Architecture — Vision & Multimodal (2025-08-15 20:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-2006",
+      "file": "pages/reports/updates/update-2025-08-15-2006.tsx",
+      "title": "Autonomous Update — 2025-08-15 20:06",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 20:06 Autonomous Update — 2025-08-15 20:06 Signal over noise—your automated update is here. Today's Highlight Hacker News : Bypassing airport security via SQL injection · "
     },
     {
       "route": "/reports/updates/update-2025-08-15-2005",
