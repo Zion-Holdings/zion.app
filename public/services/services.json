@@ -292,5 +292,47 @@
       "API.md",
       "deployment.md"
     ]
+  },
+  {
+    "id": "quantum-computing-mecav0lt",
+    "name": "Intelligent Quantum Computing Platform",
+    "type": "Quantum Computing",
+    "description": "Next-generation quantum computing platforms",
+    "category": "Quantum Computing",
+    "technology": "GraphQL, gRPC",
+    "status": "development",
+    "features": [
+      "Quantum circuit design",
+      "Algorithm testing",
+      "Performance analysis",
+      "Cloud integration"
+    ],
+    "pricing": {
+      "model": "time-based",
+      "startingPrice": "$0.50/minute",
+      "details": "Free tier available for students"
+    },
+    "links": {
+      "demo": "/demo/quantum-computing-mecav0lt/",
+      "documentation": "/docs/quantum-computing-mecav0lt/",
+      "github": "https://github.com/ai-factory/quantum-computing-mecav0lt",
+      "deployment": "/deploy/quantum-computing-mecav0lt/"
+    },
+    "metrics": {
+      "uptime": "99.6%",
+      "responseTime": "<1s",
+      "users": "1,000+"
+    },
+    "lastUpdated": "2025-08-15",
+    "path": "services/quantum-computing-mecav0lt",
+    "files": [
+      "README.md",
+      "package.json",
+      "Dockerfile",
+      "docker-compose.yml",
+      "kubernetes.yaml",
+      "API.md",
+      "deployment.md"
+    ]
   }
 ]
