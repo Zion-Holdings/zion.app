@@ -6,7 +6,7 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
-      timeout-minutes: 20
+    timeout-minutes: 20
     permissions:
       contents: read
       - name: Checkout

@@ -287,7 +287,7 @@
     "name": "ai-it-ads-sync.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-it-ads-sync.yml",
-    "size": 1060,
+    "size": 1058,
     "lines": 36,
     "triggers": [
       "schedule",
@@ -432,7 +432,7 @@
     "name": "ai-it-multi-factory.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-it-multi-factory.yml",
-    "size": 1275,
+    "size": 1273,
     "lines": 40,
     "triggers": [
       "schedule",
@@ -536,7 +536,7 @@
     "name": "ai-it-ultrafast-sync.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-it-ultrafast-sync.yml",
-    "size": 1127,
+    "size": 1125,
     "lines": 35,
     "triggers": [
       "schedule",
@@ -1121,7 +1121,7 @@
     "name": "cloud-deep-research.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cloud-deep-research.yml",
-    "size": 1503,
+    "size": 1501,
     "lines": 54,
     "triggers": [
       "schedule",
@@ -1182,7 +1182,7 @@
     "name": "cloud-orchestrator-plus.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cloud-orchestrator-plus.yml",
-    "size": 1301,
+    "size": 1299,
     "lines": 49,
     "triggers": [
       "schedule",
@@ -1326,7 +1326,7 @@
     "name": "commitlint.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/commitlint.yml",
-    "size": 583,
+    "size": 581,
     "lines": 30,
     "triggers": [
       "pull_request",
@@ -1403,7 +1403,7 @@
     "name": "crawl-normalize.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/crawl-normalize.yml",
-    "size": 1526,
+    "size": 1524,
     "lines": 62,
     "triggers": [
       "schedule",
@@ -1586,7 +1586,7 @@
     "name": "dependency-auto-upgrade.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/dependency-auto-upgrade.yml",
-    "size": 1888,
+    "size": 1886,
     "lines": 67,
     "triggers": [
       "schedule",
@@ -2067,7 +2067,7 @@
     "name": "lighthouse-budgets.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/lighthouse-budgets.yml",
-    "size": 556,
+    "size": 554,
     "lines": 29,
     "triggers": [
       "pull_request"
@@ -2341,7 +2341,7 @@
     "name": "netlify-config.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/netlify-config.yml",
-    "size": 2899,
+    "size": 2897,
     "lines": 79,
     "triggers": [
       "workflow_dispatch"
@@ -2374,7 +2374,7 @@
     "name": "netlify-functions-trigger.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/netlify-functions-trigger.yml",
-    "size": 1437,
+    "size": 1435,
     "lines": 56,
     "triggers": [
       "schedule",
@@ -2488,7 +2488,7 @@
     "name": "pin-actions-weekly.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/pin-actions-weekly.yml",
-    "size": 1171,
+    "size": 1169,
     "lines": 43,
     "triggers": [
       "schedule",
@@ -2522,7 +2522,7 @@
     "name": "playwright-smoke.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/playwright-smoke.yml",
-    "size": 1772,
+    "size": 1770,
     "lines": 76,
     "triggers": [
       "pull_request",
@@ -2556,7 +2556,7 @@
     "name": "pr-auto-curator.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/pr-auto-curator.yml",
-    "size": 1826,
+    "size": 1824,
     "lines": 44,
     "triggers": [
       "pull_request",

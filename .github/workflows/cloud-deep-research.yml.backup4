@@ -1,4 +1,4 @@
-name: Cloud Orchestrator Plus
+name: Cloud Deep Research
 
 on:
   schedule:
@@ -8,7 +8,7 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+      timeout-minutes: 15
     permissions:
       contents: write
       pull-requests: write
@@ -26,14 +26,19 @@ jobs:
       - name: Install
         run: npm ci
 
-      - name: Extended Cloud Content Orchestration
+      - name: Pre-index docs/pages
+        run: node automation/docs-pages-indexer.cjs
+
+      - name: Run Cloud Deep Research Orchestrator
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           CANONICAL_URL: https://ziontechgroup.com
+        run: node automation/cloud-deep-research-orchestrator.cjs || node automation/cloud-autonomous-agents-factory.cjs
+
+      - name: Refresh front directory and homepage promos
         run: |
-          node automation/cloud-orchestrator-plus.cjs || true
           node automation/front-index-directory-builder.cjs || true
           node automation/front-index-advertiser.cjs || true
           node automation/homepage-updater.cjs || true
