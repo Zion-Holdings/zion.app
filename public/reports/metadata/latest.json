@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T23:20:01.575Z",
-  "pagesScanned": 5602,
+  "generatedAt": "2025-08-15T23:21:00.937Z",
+  "pagesScanned": 5612,
   "items": [
     {
       "route": "/404",
@@ -78,6 +78,16 @@
       "suggestion": {
         "title": "🤖 Automation Health Dashboard",
         "description": "🤖 Automation Health Dashboard — auto-suggested description"
+      }
+    },
+    {
+      "route": "/blog/ai-automation-trends-2025",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "AI Automation Trends That Will Dominate 2025",
+        "description": "AI Automation Trends That Will Dominate 2025 — auto-suggested description"
       }
     },
     {
@@ -6196,6 +6206,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-15-230034",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-232032",
       "missing": [
         "og:image"
       ],
@@ -23555,6 +23575,16 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-15-232033",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Autonomous Update Implementation",
+        "description": "Guide — Autonomous Update Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-15-0211",
       "missing": [
         "og:image"
@@ -25672,6 +25702,16 @@
       "suggestion": {
         "title": "Checklist: RAG Platforms",
         "description": "Checklist: RAG Platforms — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-2320",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide: Edge AI",
+        "description": "Guide: Edge AI — auto-suggested description"
       }
     },
     {
@@ -27852,6 +27892,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-15 23-00",
         "description": "Innovation Insight — 2025-08-15 23-00 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15T23-20",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-15 23-20",
+        "description": "Innovation Insight — 2025-08-15 23-20 — auto-suggested description"
       }
     },
     {
@@ -36785,6 +36835,16 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-15-232033",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Improving Continuously",
+        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-15-021207",
       "missing": [
         "og:image"
@@ -42686,6 +42746,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-15-230034",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-232033",
       "missing": [
         "og:image"
       ],
@@ -53625,6 +53695,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-15-2021",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 20:21",
+        "description": "Autonomous Update — 2025-08-15 20:21 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-15-2030",
       "missing": [
         "og:image"
@@ -53782,6 +53865,16 @@
       "suggestion": {
         "title": "Autonomous Reference Architecture — Cloud Cost Optimization (2025-08-15 23:00 UTC)",
         "description": "Autonomous Reference Architecture — Cloud Cost Optimization (2025-08-15 23:00 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-2320",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Playbook — Cloud Cost Optimization (2025-08-15 23:20 UTC)",
+        "description": "Autonomous Playbook — Cloud Cost Optimization (2025-08-15 23:20 UTC) — auto-suggested description"
       }
     },
     {
@@ -55962,6 +56055,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-15 23-00",
         "description": "Autonomous Update — 2025-08-15 23-00 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15T23-20",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 23-20",
+        "description": "Autonomous Update — 2025-08-15 23-20 — auto-suggested description"
       }
     },
     {
