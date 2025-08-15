@@ -5238,8 +5238,8 @@
     "name": "ultra-rapid-sync.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-rapid-sync.yml",
-    "size": 1650,
-    "lines": 61,
+    "size": 1605,
+    "lines": 60,
     "triggers": [
       "schedule",
       "workflow_dispatch {}"
