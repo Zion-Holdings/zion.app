@@ -16,6 +16,9 @@ const AdvancedCacheManager = require('./advanced-cache-manager');
 const AIBuildStrategist = require('./ai-build-strategist');
 const PredictiveFailurePrevention = require('./predictive-failure-prevention');
 const PerformancePredictionEngine = require('./performance-prediction-engine');
+const DeepLearningEngine = require('./deep-learning-engine');
+const NLPEngine = require('./nlp-engine');
+const ReinforcementLearningEngine = require('./reinforcement-learning-engine');
 
 class MasterBuildOrchestrator {
   constructor() {
@@ -28,7 +31,10 @@ class MasterBuildOrchestrator {
       cache: new AdvancedCacheManager(),
       ai: new AIBuildStrategist(),
       predictor: new PredictiveFailurePrevention(),
-      performance: new PerformancePredictionEngine()
+      performance: new PerformancePredictionEngine(),
+      deepLearning: new DeepLearningEngine(),
+      nlp: new NLPEngine(),
+      reinforcementLearning: new ReinforcementLearningEngine()
     };
     
     this.orchestrationLog = [];
@@ -140,6 +146,46 @@ class MasterBuildOrchestrator {
           results.systems.postBuild = { status: 'failed', error: error.message };
           results.overall.warnings.push(`Post-build optimization failed: ${error.message}`);
         }
+      }
+      
+      // Phase 5: Advanced AI & Deep Learning Analysis
+      this.log('🧠 Phase 5: Advanced AI & Deep Learning Analysis');
+      try {
+        // Deep Learning Neural Network Analysis
+        this.log('🔬 Running deep learning neural network analysis...');
+        const deepLearningResults = await this.systems.deepLearning.runDeepLearningEngine();
+        results.systems.deepLearning = {
+          status: 'completed',
+          models: Object.keys(deepLearningResults.results),
+          predictions: deepLearningResults.results
+        };
+        
+        // Natural Language Processing Analysis
+        this.log('📝 Running natural language processing analysis...');
+        const nlpResults = await this.systems.nlp.runNLPEngine();
+        results.systems.nlp = {
+          status: 'completed',
+          analyses: Object.keys(nlpResults.analyses),
+          insights: nlpResults.analyses
+        };
+        
+        // Reinforcement Learning Optimization
+        this.log('🎯 Running reinforcement learning optimization...');
+        const rlResults = await this.systems.reinforcementLearning.runReinforcementLearningEngine();
+        results.systems.reinforcementLearning = {
+          status: 'completed',
+          models: Object.keys(rlResults.actions),
+          actions: rlResults.actions,
+          evaluations: rlResults.evaluations
+        };
+        
+        this.log('✅ Advanced AI & Deep Learning analysis completed');
+      } catch (error) {
+        this.log(`❌ Advanced AI & Deep Learning analysis failed: ${error.message}`, 'error');
+        results.systems.deepLearning = { status: 'failed', error: error.message };
+        results.systems.nlp = { status: 'failed', error: error.message };
+        results.systems.reinforcementLearning = { status: 'failed', error: error.message };
+        results.overall.errors.push(`Advanced AI & Deep Learning analysis failed: ${error.message}`);
       }
       
       // Calculate overall results
