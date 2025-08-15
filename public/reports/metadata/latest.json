@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T02:11:51.276Z",
-  "pagesScanned": 17,
+  "generatedAt": "2025-08-15T02:12:00.623Z",
+  "pagesScanned": 20,
   "items": [
     {
       "route": "/404",
@@ -135,6 +135,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-15-0211",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Blueprint: Edge AI",
+        "description": "Blueprint: Edge AI — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-14-2311",
       "missing": [
         "og:image"
@@ -142,6 +152,29 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 23:11",
         "description": "Autonomous Update — 2025-08-14 23:11 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-2312",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 23:12",
+        "description": "Autonomous Update — 2025-08-14 23:12 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0211",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Security Hardening Guide — Applied NLP & RAG (2025-08-15 02:11 UTC)",
+        "description": "Autonomous Security Hardening Guide — Applied NLP & RAG (2025-08-15 02:11 UTC) — auto-suggested description"
       }
     },
     {
