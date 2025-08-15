@@ -1,0 +1,128 @@
+[
+  {
+    "id": "iot---edge-meca0rvv",
+    "name": "Intelligent IoT & Edge Hub",
+    "type": "IoT & Edge",
+    "description": "Internet of Things and edge computing solutions",
+    "category": "IoT & Edge",
+    "technology": "Go, Rust, Node.js, GraphQL",
+    "status": "development",
+    "features": [
+      "Edge node management",
+      "Workload optimization",
+      "Resource monitoring",
+      "Real-time analytics"
+    ],
+    "pricing": {
+      "model": "per-node",
+      "startingPrice": "$20/node/month",
+      "details": "Includes monitoring and support"
+    },
+    "links": {
+      "demo": "/demo/iot---edge-meca0rvv/",
+      "documentation": "/docs/iot---edge-meca0rvv/",
+      "github": "https://github.com/ai-factory/iot---edge-meca0rvv",
+      "deployment": "/deploy/iot---edge-meca0rvv/"
+    },
+    "metrics": {
+      "uptime": "99.8%",
+      "responseTime": "<200ms",
+      "users": "3,000+"
+    },
+    "lastUpdated": "2025-08-15",
+    "path": "services/iot---edge-meca0rvv",
+    "files": [
+      "README.md",
+      "package.json",
+      "Dockerfile",
+      "docker-compose.yml",
+      "kubernetes.yaml",
+      "API.md",
+      "deployment.md"
+    ]
+  },
+  {
+    "id": "ai---machine-learning-meca0rvw",
+    "name": "Next-Gen AI & Machine Learning Solution",
+    "type": "AI & Machine Learning",
+    "description": "Advanced AI and ML solutions for modern businesses",
+    "category": "AI & Machine Learning",
+    "technology": "Kubernetes, Node.js",
+    "status": "development",
+    "features": [
+      "Real-time processing",
+      "Model training",
+      "Interactive dashboards",
+      "API integration"
+    ],
+    "pricing": {
+      "model": "subscription",
+      "startingPrice": "$99/month",
+      "details": "Pay per API call and data processed"
+    },
+    "links": {
+      "demo": "/demo/ai---machine-learning-meca0rvw/",
+      "documentation": "/docs/ai---machine-learning-meca0rvw/",
+      "github": "https://github.com/ai-factory/ai---machine-learning-meca0rvw",
+      "deployment": "/deploy/ai---machine-learning-meca0rvw/"
+    },
+    "metrics": {
+      "uptime": "99.9%",
+      "responseTime": "<200ms",
+      "users": "10,000+"
+    },
+    "lastUpdated": "2025-08-15",
+    "path": "services/ai---machine-learning-meca0rvw",
+    "files": [
+      "README.md",
+      "package.json",
+      "Dockerfile",
+      "docker-compose.yml",
+      "kubernetes.yaml",
+      "API.md",
+      "deployment.md"
+    ]
+  },
+  {
+    "id": "predictive-analytics-meca0rw1",
+    "name": "Smart Predictive Analytics Solution",
+    "type": "Predictive Analytics",
+    "description": "Innovative predictive analytics solution for modern businesses",
+    "category": "Predictive Analytics",
+    "technology": "TypeScript, Node.js, Apache Kafka",
+    "status": "development",
+    "features": [
+      "Scalable architecture",
+      "High performance",
+      "Easy integration",
+      "Comprehensive documentation"
+    ],
+    "pricing": {
+      "model": "subscription",
+      "startingPrice": "$79/month",
+      "details": "Flexible pricing plans available"
+    },
+    "links": {
+      "demo": "/demo/predictive-analytics-meca0rw1/",
+      "documentation": "/docs/predictive-analytics-meca0rw1/",
+      "github": "https://github.com/ai-factory/predictive-analytics-meca0rw1",
+      "deployment": "/deploy/predictive-analytics-meca0rw1/"
+    },
+    "metrics": {
+      "uptime": "99.5%",
+      "responseTime": "<300ms",
+      "users": "5,000+"
+    },
+    "lastUpdated": "2025-08-15",
+    "path": "services/predictive-analytics-meca0rw1",
+    "files": [
+      "README.md",
+      "package.json",
+      "Dockerfile",
+      "docker-compose.yml",
+      "kubernetes.yaml",
+      "API.md",
+      "deployment.md"
+    ]
+  }
+]

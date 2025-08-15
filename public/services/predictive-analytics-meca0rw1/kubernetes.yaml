@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: predictive-analytics-meca0rw1
+  labels:
+    app: predictive-analytics-meca0rw1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: predictive-analytics-meca0rw1
+  template:
+    metadata:
+      labels:
+        app: predictive-analytics-meca0rw1
+    spec:
+      containers:
+      - name: predictive-analytics-meca0rw1
+        image: predictive-analytics-meca0rw1:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: NODE_ENV
+          value: "production"
+        - name: PORT
+          value: "3000"
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 3000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 3000
+          initialDelaySeconds: 5
+          periodSeconds: 5
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: predictive-analytics-meca0rw1-service
+spec:
+  selector:
+    app: predictive-analytics-meca0rw1
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 3000
+  type: LoadBalancer
