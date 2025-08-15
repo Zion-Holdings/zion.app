@@ -3958,5 +3958,65 @@
     "status": "pending",
     "dueDate": "2025-08-17T16:41:02.862Z",
     "filePath": "tasks-1755276062862.json"
+  },
+  {
+    "id": "task-1755276203146-1",
+    "title": "Update Coding Standards",
+    "type": "code-review",
+    "priority": "high",
+    "assignedTo": "frontend-specialist",
+    "status": "pending",
+    "dueDate": "2025-08-17T16:43:23.146Z",
+    "filePath": "tasks-1755276203146.json"
+  },
+  {
+    "id": "task-1755276203146-2",
+    "title": "Implement Code Quality Tools",
+    "type": "code-review",
+    "priority": "high",
+    "assignedTo": "backend-developer",
+    "status": "pending",
+    "dueDate": "2025-08-18T16:43:23.146Z",
+    "filePath": "tasks-1755276203146.json"
+  },
+  {
+    "id": "task-1755276203146-3",
+    "title": "Performance Optimization",
+    "type": "code-review",
+    "priority": "medium",
+    "assignedTo": "qa-tester",
+    "status": "pending",
+    "dueDate": "2025-08-20T16:43:23.146Z",
+    "filePath": "tasks-1755276203146.json"
+  },
+  {
+    "id": "task-1755276205151-1",
+    "title": "Root Cause Analysis",
+    "type": "bug-investigation",
+    "priority": "high",
+    "assignedTo": "frontend-specialist",
+    "status": "pending",
+    "dueDate": "2025-08-17T16:43:25.151Z",
+    "filePath": "tasks-1755276205151.json"
+  },
+  {
+    "id": "task-1755276205151-2",
+    "title": "Fix Implementation",
+    "type": "bug-investigation",
+    "priority": "high",
+    "assignedTo": "backend-developer",
+    "status": "pending",
+    "dueDate": "2025-08-16T16:43:25.151Z",
+    "filePath": "tasks-1755276205151.json"
+  },
+  {
+    "id": "task-1755276205151-3",
+    "title": "Prevention Measures",
+    "type": "bug-investigation",
+    "priority": "medium",
+    "assignedTo": "qa-tester",
+    "status": "pending",
+    "dueDate": "2025-08-18T16:43:25.151Z",
+    "filePath": "tasks-1755276205151.json"
   }
 ]

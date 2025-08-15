@@ -1618,5 +1618,29 @@
     "startTime": "2025-08-15T16:41:02.860Z",
     "status": "active",
     "filePath": "conv-1755276062860.json"
+  },
+  {
+    "id": "conv-1755276203145",
+    "type": "code-review",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "QA Tester"
+    ],
+    "startTime": "2025-08-15T16:43:23.145Z",
+    "status": "active",
+    "filePath": "conv-1755276203145.json"
+  },
+  {
+    "id": "conv-1755276205150",
+    "type": "bug-investigation",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "QA Tester"
+    ],
+    "startTime": "2025-08-15T16:43:25.150Z",
+    "status": "active",
+    "filePath": "conv-1755276205150.json"
   }
 ]
