@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T04:53:00.346Z",
-  "pagesScanned": 314,
+  "generatedAt": "2025-08-15T04:54:00.205Z",
+  "pagesScanned": 316,
   "items": [
     {
       "route": "/404",
@@ -2773,6 +2773,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-15-0153",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 01:53",
+        "description": "Autonomous Update — 2025-08-15 01:53 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-15-0211",
       "missing": [
         "og:image"
@@ -2940,6 +2950,19 @@
       "suggestion": {
         "title": "Autonomous Performance Tuning Guide — AI Service Design (2025-08-15 04:50 UTC)",
         "description": "Autonomous Performance Tuning Guide — AI Service Design (2025-08-15 04:50 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0454",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 04:54",
+        "description": "Autonomous Update — 2025-08-15 04:54 — auto-suggested description"
       }
     },
     {
