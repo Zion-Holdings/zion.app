@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T06:31:00.747Z",
-  "pagesScanned": 1554,
+  "generatedAt": "2025-08-15T06:31:13.299Z",
+  "pagesScanned": 1556,
   "items": [
     {
       "route": "/404",
@@ -7493,6 +7493,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-15-0631",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Runbook: FinOps for AI",
+        "description": "Runbook: FinOps for AI — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-15T02-12",
       "missing": [
         "og:image"
@@ -14545,10 +14555,7 @@
     {
       "route": "/reports/updates/update-2025-08-15-0331",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-15 03:31",
@@ -14973,6 +14980,16 @@
       "suggestion": {
         "title": "Autonomous Blueprint — Data Engineering (2025-08-15 06:30 UTC)",
         "description": "Autonomous Blueprint — Data Engineering (2025-08-15 06:30 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0631",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Performance Tuning Guide — Applied NLP & RAG (2025-08-15 06:31 UTC)",
+        "description": "Autonomous Performance Tuning Guide — Applied NLP & RAG (2025-08-15 06:31 UTC) — auto-suggested description"
       }
     },
     {
