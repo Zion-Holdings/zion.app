@@ -1,0 +1,53 @@
+name: Autonomous Quick Fixes
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: automation-quick-fixes
+  cancel-in-progress: true
+
+jobs:
+  quick-fixes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run quick factories and fixers
+        run: |
+          node automation/build-rescue-factory.cjs || true
+          node automation/security-remediation-factory.cjs || true
+          node automation/sitemap-maintenance-factory.cjs || true
+          node automation/lint-error-fixer.cjs all || true
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(automation): autonomous quick fixes"
+            git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }} HEAD:main
+          else
+            echo "No changes to commit."
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -12,6 +12,7 @@ jobs:
   auto-approve:
     if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot'
     runs-on: ubuntu-latest
+      timeout-minutes: 10
     steps:
       - name: Auto-approve
         uses: hmarr/auto-approve-action@v4

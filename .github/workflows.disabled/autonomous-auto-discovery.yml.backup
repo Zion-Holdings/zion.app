@@ -1,0 +1,51 @@
+name: Autonomous Auto-Discovery (7m)
+
+on:
+  schedule:
+    - cron: '*/7 * * * *'
+  workflow_dispatch: {}
+
+concurrency:
+  group: autonomous-auto-discovery-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  matrix-runner:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        partition_index: [0, 1, 2]
+        partition_total: [3]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run auto-discovery partition ${{ matrix.partition_index }} of ${{ matrix.partition_total }}
+        env:
+          PARTITION_INDEX: ${{ matrix.partition_index }}
+          PARTITION_TOTAL: ${{ matrix.partition_total }}
+          TASK_TIMEOUT_MS: '180000'
+        run: node automation/auto-discovery-runner.cjs | cat
+
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: auto-discovery-logs-${{ matrix.partition_index }}
+          path: automation/logs/**/*
+          if-no-files-found: ignore

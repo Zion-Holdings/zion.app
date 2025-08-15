@@ -1,0 +1,41 @@
+[
+  {
+    "id": "task-1755287918968-1",
+    "title": "Technical Specification",
+    "description": "Create detailed technical specification document for the new feature",
+    "type": "security-audit",
+    "priority": "high",
+    "estimatedEffort": "6-8 hours",
+    "assignedTo": "security-expert",
+    "status": "pending",
+    "createdAt": "2025-08-15T19:58:38.968Z",
+    "dueDate": "2025-08-18T19:58:38.968Z",
+    "conversationId": "conv-1755287918966"
+  },
+  {
+    "id": "task-1755287918968-2",
+    "title": "User Experience Design",
+    "description": "Design user interface mockups and user experience flow",
+    "type": "security-audit",
+    "priority": "high",
+    "estimatedEffort": "8-12 hours",
+    "assignedTo": "backend-developer",
+    "status": "pending",
+    "createdAt": "2025-08-15T19:58:38.968Z",
+    "dueDate": "2025-08-19T19:58:38.968Z",
+    "conversationId": "conv-1755287918966"
+  },
+  {
+    "id": "task-1755287918968-3",
+    "title": "Implementation Plan",
+    "description": "Create detailed implementation plan with timeline and milestones",
+    "type": "security-audit",
+    "priority": "medium",
+    "estimatedEffort": "4-6 hours",
+    "assignedTo": "devops-engineer",
+    "status": "pending",
+    "createdAt": "2025-08-15T19:58:38.968Z",
+    "dueDate": "2025-08-17T19:58:38.968Z",
+    "conversationId": "conv-1755287918966"
+  }
+]

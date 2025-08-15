@@ -16,6 +16,7 @@ concurrency:
 jobs:
   cleanup:
     runs-on: ubuntu-latest
+      timeout-minutes: 15
     steps:
       - name: Delete old workflow runs (> 14 days)
         id: oldruns

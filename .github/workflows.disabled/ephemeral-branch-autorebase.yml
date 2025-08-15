@@ -13,6 +13,7 @@ permissions:
 jobs:
   autorebase:
     runs-on: ubuntu-latest
+      timeout-minutes: 15
     steps:
       - name: Checkout full history
         uses: actions/checkout@v4

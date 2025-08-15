@@ -1,0 +1,32 @@
+{
+  "timestamp": "2025-08-15T21:02:38.254Z",
+  "critical": [
+    {
+      "workflow": "security-gates.yml",
+      "status": "active",
+      "complexityScore": 70,
+      "complexityLevel": "very-high",
+      "metrics": {
+        "totalLines": 409,
+        "jobCount": 0,
+        "stepCount": 32,
+        "conditionalCount": 8,
+        "matrixCount": 1,
+        "dependencyCount": 4,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 16
+      },
+      "refactoringStrategy": [
+        "Break down into smaller job steps",
+        "Simplify conditional logic",
+        "Consider parallel workflow execution",
+        "Optimize job dependencies",
+        "Extract common functionality to reusable workflows"
+      ]
+    }
+  ],
+  "high": [],
+  "medium": [],
+  "low": []
+}

@@ -1,0 +1,33 @@
+name: Auto-merge to main
+
+on:
+  pull_request:
+    types: [labeled, opened, synchronize, reopened]
+    branches: [ main ]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  automerge:
+    if: contains(github.event.pull_request.labels.*.name, 'automerge')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Ensure no conflicts with base
+        run: |
+          git fetch origin ${{ github.base_ref }}
+          git merge --no-commit --no-ff --no-edit origin/${{ github.base_ref }} || {
+            echo "Conflicts exist. Aborting automerge.";
+            exit 1;
+          }
+          git merge --abort || true
+      - name: Enable auto-merge
+        uses: peter-evans/enable-pull-request-automerge@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          pull-request-number: ${{ github.event.pull_request.number }}
+          merge-method: squash

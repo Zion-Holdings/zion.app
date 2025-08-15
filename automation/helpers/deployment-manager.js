@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const { spawnSync } = require('child_process');
 
 class DeploymentManager {
   constructor(config = {}) {
@@ -282,7 +281,7 @@ class DeploymentManager {
    * @param {object} deploymentConfig - Deployment configuration
    * @returns {object} - Health check result
    */
-  async executeHealthCheck(deploymentConfig) {
+  async executeHealthCheck() {
     if (!this.config.healthCheckEnabled) {
       return { success: true, reason: 'Health checks disabled' };
     }
@@ -334,14 +333,14 @@ class DeploymentManager {
    * @param {object} deploymentConfig - Deployment configuration
    * @returns {object} - Postflight verification result
    */
-  async executePostflightVerification(deploymentConfig) {
+  async executePostflightVerification() {
     this.logDeployment('Running postflight verification...', 'info');
     
     try {
       const verifications = [];
 
       // Verify feature functionality
-      verifications.push(await this.verifyFeatureFunctionality(deploymentConfig));
+      verifications.push(await this.verifyFeatureFunctionality());
       
       // Verify system integration
       verifications.push(await this.verifySystemIntegration());
@@ -718,7 +717,7 @@ class DeploymentManager {
    * @param {object} deploymentConfig - Deployment configuration
    * @returns {object} - Verification result
    */
-  async verifyFeatureFunctionality(deploymentConfig) {
+  async verifyFeatureFunctionality() {
     try {
       // Simulate feature verification
       await new Promise(resolve => setTimeout(resolve, 3000));
@@ -790,7 +789,7 @@ class DeploymentManager {
    * @param {object} deploymentConfig - Deployment configuration
    * @returns {object} - Rollback result
    */
-  async executeRollback(deploymentConfig) {
+  async executeRollback() {
     this.logDeployment('Executing deployment rollback...', 'warning');
     
     try {

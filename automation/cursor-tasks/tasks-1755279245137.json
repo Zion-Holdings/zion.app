@@ -1,0 +1,41 @@
+[
+  {
+    "id": "task-1755279245137-1",
+    "title": "Technical Specification",
+    "description": "Create detailed technical specification document for the new feature",
+    "type": "performance-optimization",
+    "priority": "high",
+    "estimatedEffort": "6-8 hours",
+    "assignedTo": "frontend-specialist",
+    "status": "pending",
+    "createdAt": "2025-08-15T17:34:05.137Z",
+    "dueDate": "2025-08-18T17:34:05.137Z",
+    "conversationId": "conv-1755279245136"
+  },
+  {
+    "id": "task-1755279245137-2",
+    "title": "User Experience Design",
+    "description": "Design user interface mockups and user experience flow",
+    "type": "performance-optimization",
+    "priority": "high",
+    "estimatedEffort": "8-12 hours",
+    "assignedTo": "backend-developer",
+    "status": "pending",
+    "createdAt": "2025-08-15T17:34:05.137Z",
+    "dueDate": "2025-08-19T17:34:05.137Z",
+    "conversationId": "conv-1755279245136"
+  },
+  {
+    "id": "task-1755279245137-3",
+    "title": "Implementation Plan",
+    "description": "Create detailed implementation plan with timeline and milestones",
+    "type": "performance-optimization",
+    "priority": "medium",
+    "estimatedEffort": "4-6 hours",
+    "assignedTo": "devops-engineer",
+    "status": "pending",
+    "createdAt": "2025-08-15T17:34:05.137Z",
+    "dueDate": "2025-08-17T17:34:05.137Z",
+    "conversationId": "conv-1755279245136"
+  }
+]
