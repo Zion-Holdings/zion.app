@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T09:06:53.641Z",
-  "pagesScanned": 4291,
+  "generatedAt": "2025-08-15T09:08:23.810Z",
+  "pagesScanned": 4298,
   "items": [
     {
       "route": "/404",
@@ -5143,7 +5143,7 @@
       }
     },
     {
-      "route": "/reports/blueprints/blueprint-2025-08-15-090508",
+      "route": "/reports/blueprints/blueprint-2025-08-15-090710",
       "missing": [
         "og:image"
       ],
@@ -5153,7 +5153,7 @@
       }
     },
     {
-      "route": "/reports/blueprints/blueprint-2025-08-15-090547",
+      "route": "/reports/blueprints/blueprint-2025-08-15-090729",
       "missing": [
         "og:image"
       ],
@@ -5163,7 +5163,7 @@
       }
     },
     {
-      "route": "/reports/blueprints/blueprint-2025-08-15-090549",
+      "route": "/reports/blueprints/blueprint-2025-08-15-090730",
       "missing": [
         "og:image"
       ],
@@ -5173,7 +5173,7 @@
       }
     },
     {
-      "route": "/reports/blueprints/blueprint-2025-08-15-090620",
+      "route": "/reports/blueprints/blueprint-2025-08-15-090748",
       "missing": [
         "og:image"
       ],
@@ -5183,7 +5183,7 @@
       }
     },
     {
-      "route": "/reports/blueprints/blueprint-2025-08-15-090635",
+      "route": "/reports/blueprints/blueprint-2025-08-15-090807",
       "missing": [
         "og:image"
       ],
@@ -5193,7 +5193,7 @@
       }
     },
     {
-      "route": "/reports/blueprints/blueprint-2025-08-15-090647",
+      "route": "/reports/blueprints/blueprint-2025-08-15-090817",
       "missing": [
         "og:image"
       ],
@@ -13003,7 +13003,7 @@
       }
     },
     {
-      "route": "/reports/cases/case-2025-08-15-090507",
+      "route": "/reports/cases/case-2025-08-15-090708",
       "missing": [
         "og:image"
       ],
@@ -13013,7 +13013,7 @@
       }
     },
     {
-      "route": "/reports/cases/case-2025-08-15-090510",
+      "route": "/reports/cases/case-2025-08-15-090709",
       "missing": [
         "og:image"
       ],
@@ -13023,7 +13023,7 @@
       }
     },
     {
-      "route": "/reports/cases/case-2025-08-15-090534",
+      "route": "/reports/cases/case-2025-08-15-090728",
       "missing": [
         "og:image"
       ],
@@ -13033,7 +13033,7 @@
       }
     },
     {
-      "route": "/reports/cases/case-2025-08-15-090545",
+      "route": "/reports/cases/case-2025-08-15-090729",
       "missing": [
         "og:image"
       ],
@@ -13043,7 +13043,7 @@
       }
     },
     {
-      "route": "/reports/cases/case-2025-08-15-090551",
+      "route": "/reports/cases/case-2025-08-15-090730",
       "missing": [
         "og:image"
       ],
@@ -13053,7 +13053,7 @@
       }
     },
     {
-      "route": "/reports/cases/case-2025-08-15-090603",
+      "route": "/reports/cases/case-2025-08-15-090731",
       "missing": [
         "og:image"
       ],
@@ -13063,7 +13063,7 @@
       }
     },
     {
-      "route": "/reports/cases/case-2025-08-15-090604",
+      "route": "/reports/cases/case-2025-08-15-090732",
       "missing": [
         "og:image"
       ],
@@ -13073,7 +13073,7 @@
       }
     },
     {
-      "route": "/reports/cases/case-2025-08-15-090619",
+      "route": "/reports/cases/case-2025-08-15-090749",
       "missing": [
         "og:image"
       ],
@@ -13083,7 +13083,7 @@
       }
     },
     {
-      "route": "/reports/cases/case-2025-08-15-090633",
+      "route": "/reports/cases/case-2025-08-15-090756",
       "missing": [
         "og:image"
       ],
@@ -13093,7 +13093,7 @@
       }
     },
     {
-      "route": "/reports/cases/case-2025-08-15-090634",
+      "route": "/reports/cases/case-2025-08-15-090757",
       "missing": [
         "og:image"
       ],
@@ -13103,7 +13103,37 @@
       }
     },
     {
-      "route": "/reports/cases/case-2025-08-15-090648",
+      "route": "/reports/cases/case-2025-08-15-090809",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Automation Autonomous",
+        "description": "Case Study — Automation Autonomous — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-090815",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Automation Autonomous",
+        "description": "Case Study — Automation Autonomous — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-090816",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Automation Autonomous",
+        "description": "Case Study — Automation Autonomous — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-090817",
       "missing": [
         "og:image"
       ],
@@ -20933,7 +20963,7 @@
       }
     },
     {
-      "route": "/reports/guides/guide-2025-08-15-090507",
+      "route": "/reports/guides/guide-2025-08-15-090708",
       "missing": [
         "og:image"
       ],
@@ -20943,7 +20973,7 @@
       }
     },
     {
-      "route": "/reports/guides/guide-2025-08-15-090510",
+      "route": "/reports/guides/guide-2025-08-15-090709",
       "missing": [
         "og:image"
       ],
@@ -20953,7 +20983,7 @@
       }
     },
     {
-      "route": "/reports/guides/guide-2025-08-15-090534",
+      "route": "/reports/guides/guide-2025-08-15-090728",
       "missing": [
         "og:image"
       ],
@@ -20963,7 +20993,7 @@
       }
     },
     {
-      "route": "/reports/guides/guide-2025-08-15-090545",
+      "route": "/reports/guides/guide-2025-08-15-090729",
       "missing": [
         "og:image"
       ],
@@ -20973,7 +21003,7 @@
       }
     },
     {
-      "route": "/reports/guides/guide-2025-08-15-090551",
+      "route": "/reports/guides/guide-2025-08-15-090730",
       "missing": [
         "og:image"
       ],
@@ -20983,7 +21013,7 @@
       }
     },
     {
-      "route": "/reports/guides/guide-2025-08-15-090603",
+      "route": "/reports/guides/guide-2025-08-15-090731",
       "missing": [
         "og:image"
       ],
@@ -20993,7 +21023,7 @@
       }
     },
     {
-      "route": "/reports/guides/guide-2025-08-15-090604",
+      "route": "/reports/guides/guide-2025-08-15-090732",
       "missing": [
         "og:image"
       ],
@@ -21003,7 +21033,7 @@
       }
     },
     {
-      "route": "/reports/guides/guide-2025-08-15-090619",
+      "route": "/reports/guides/guide-2025-08-15-090749",
       "missing": [
         "og:image"
       ],
@@ -21013,7 +21043,7 @@
       }
     },
     {
-      "route": "/reports/guides/guide-2025-08-15-090633",
+      "route": "/reports/guides/guide-2025-08-15-090756",
       "missing": [
         "og:image"
       ],
@@ -21023,7 +21053,7 @@
       }
     },
     {
-      "route": "/reports/guides/guide-2025-08-15-090634",
+      "route": "/reports/guides/guide-2025-08-15-090757",
       "missing": [
         "og:image"
       ],
@@ -21033,7 +21063,37 @@
       }
     },
     {
-      "route": "/reports/guides/guide-2025-08-15-090648",
+      "route": "/reports/guides/guide-2025-08-15-090809",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-090815",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-090816",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-090817",
       "missing": [
         "og:image"
       ],
@@ -22483,23 +22543,13 @@
       }
     },
     {
-      "route": "/reports/innovations/insight-2025-08-15-0905",
+      "route": "/reports/innovations/insight-2025-08-15-0907",
       "missing": [
         "og:image"
       ],
       "suggestion": {
-        "title": "Guide: LLM Apps",
-        "description": "Guide: LLM Apps — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/innovations/insight-2025-08-15-0906",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Checklist: RAG Platforms",
-        "description": "Checklist: RAG Platforms — auto-suggested description"
+        "title": "Pilot Plan: Agent Ops",
+        "description": "Pilot Plan: Agent Ops — auto-suggested description"
       }
     },
     {
@@ -23973,23 +24023,23 @@
       }
     },
     {
-      "route": "/reports/innovations/insight-2025-08-15T09-05",
+      "route": "/reports/innovations/insight-2025-08-15T09-07",
       "missing": [
         "og:image"
       ],
       "suggestion": {
-        "title": "Innovation Insight — 2025-08-15 09-05",
-        "description": "Innovation Insight — 2025-08-15 09-05 — auto-suggested description"
+        "title": "Innovation Insight — 2025-08-15 09-07",
+        "description": "Innovation Insight — 2025-08-15 09-07 — auto-suggested description"
       }
     },
     {
-      "route": "/reports/innovations/insight-2025-08-15T09-06",
+      "route": "/reports/innovations/insight-2025-08-15T09-08",
       "missing": [
         "og:image"
       ],
       "suggestion": {
-        "title": "Innovation Insight — 2025-08-15 09-06",
-        "description": "Innovation Insight — 2025-08-15 09-06 — auto-suggested description"
+        "title": "Innovation Insight — 2025-08-15 09-08",
+        "description": "Innovation Insight — 2025-08-15 09-08 — auto-suggested description"
       }
     },
     {
@@ -31803,7 +31853,7 @@
       }
     },
     {
-      "route": "/reports/patterns/pattern-2025-08-15-090507",
+      "route": "/reports/patterns/pattern-2025-08-15-090708",
       "missing": [
         "og:image"
       ],
@@ -31813,7 +31863,7 @@
       }
     },
     {
-      "route": "/reports/patterns/pattern-2025-08-15-090510",
+      "route": "/reports/patterns/pattern-2025-08-15-090709",
       "missing": [
         "og:image"
       ],
@@ -31823,7 +31873,7 @@
       }
     },
     {
-      "route": "/reports/patterns/pattern-2025-08-15-090534",
+      "route": "/reports/patterns/pattern-2025-08-15-090728",
       "missing": [
         "og:image"
       ],
@@ -31833,7 +31883,7 @@
       }
     },
     {
-      "route": "/reports/patterns/pattern-2025-08-15-090545",
+      "route": "/reports/patterns/pattern-2025-08-15-090729",
       "missing": [
         "og:image"
       ],
@@ -31843,7 +31893,7 @@
       }
     },
     {
-      "route": "/reports/patterns/pattern-2025-08-15-090551",
+      "route": "/reports/patterns/pattern-2025-08-15-090730",
       "missing": [
         "og:image"
       ],
@@ -31853,7 +31903,7 @@
       }
     },
     {
-      "route": "/reports/patterns/pattern-2025-08-15-090603",
+      "route": "/reports/patterns/pattern-2025-08-15-090731",
       "missing": [
         "og:image"
       ],
@@ -31863,7 +31913,7 @@
       }
     },
     {
-      "route": "/reports/patterns/pattern-2025-08-15-090604",
+      "route": "/reports/patterns/pattern-2025-08-15-090732",
       "missing": [
         "og:image"
       ],
@@ -31873,7 +31923,7 @@
       }
     },
     {
-      "route": "/reports/patterns/pattern-2025-08-15-090619",
+      "route": "/reports/patterns/pattern-2025-08-15-090749",
       "missing": [
         "og:image"
       ],
@@ -31883,7 +31933,7 @@
       }
     },
     {
-      "route": "/reports/patterns/pattern-2025-08-15-090633",
+      "route": "/reports/patterns/pattern-2025-08-15-090756",
       "missing": [
         "og:image"
       ],
@@ -31893,7 +31943,7 @@
       }
     },
     {
-      "route": "/reports/patterns/pattern-2025-08-15-090634",
+      "route": "/reports/patterns/pattern-2025-08-15-090757",
       "missing": [
         "og:image"
       ],
@@ -31903,7 +31953,37 @@
       }
     },
     {
-      "route": "/reports/patterns/pattern-2025-08-15-090648",
+      "route": "/reports/patterns/pattern-2025-08-15-090809",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Improving Continuously",
+        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-090815",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Improving Continuously",
+        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-090816",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Improving Continuously",
+        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-090817",
       "missing": [
         "og:image"
       ],
@@ -36913,7 +36993,7 @@
       }
     },
     {
-      "route": "/reports/playbooks/playbook-2025-08-15-090508",
+      "route": "/reports/playbooks/playbook-2025-08-15-090709",
       "missing": [
         "og:image"
       ],
@@ -36923,7 +37003,7 @@
       }
     },
     {
-      "route": "/reports/playbooks/playbook-2025-08-15-090546",
+      "route": "/reports/playbooks/playbook-2025-08-15-090729",
       "missing": [
         "og:image"
       ],
@@ -36933,7 +37013,7 @@
       }
     },
     {
-      "route": "/reports/playbooks/playbook-2025-08-15-090552",
+      "route": "/reports/playbooks/playbook-2025-08-15-090731",
       "missing": [
         "og:image"
       ],
@@ -36943,7 +37023,7 @@
       }
     },
     {
-      "route": "/reports/playbooks/playbook-2025-08-15-090619",
+      "route": "/reports/playbooks/playbook-2025-08-15-090750",
       "missing": [
         "og:image"
       ],
@@ -36953,7 +37033,7 @@
       }
     },
     {
-      "route": "/reports/playbooks/playbook-2025-08-15-090634",
+      "route": "/reports/playbooks/playbook-2025-08-15-090809",
       "missing": [
         "og:image"
       ],
@@ -36963,7 +37043,7 @@
       }
     },
     {
-      "route": "/reports/playbooks/playbook-2025-08-15-090650",
+      "route": "/reports/playbooks/playbook-2025-08-15-090816",
       "missing": [
         "og:image"
       ],
@@ -41383,23 +41463,13 @@
       }
     },
     {
-      "route": "/reports/updates/update-2025-08-15-0905",
+      "route": "/reports/updates/update-2025-08-15-0907",
       "missing": [
         "og:image"
       ],
       "suggestion": {
-        "title": "Autonomous Reference Architecture — Cloud Cost Optimization (2025-08-15 09:05 UTC)",
-        "description": "Autonomous Reference Architecture — Cloud Cost Optimization (2025-08-15 09:05 UTC) — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-15-0906",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Reference Architecture — Edge AI & IoT (2025-08-15 09:06 UTC)",
-        "description": "Autonomous Reference Architecture — Edge AI & IoT (2025-08-15 09:06 UTC) — auto-suggested description"
+        "title": "Autonomous Checklist — AI Service Design (2025-08-15 09:07 UTC)",
+        "description": "Autonomous Checklist — AI Service Design (2025-08-15 09:07 UTC) — auto-suggested description"
       }
     },
     {
@@ -42873,23 +42943,23 @@
       }
     },
     {
-      "route": "/reports/updates/update-2025-08-15T09-05",
+      "route": "/reports/updates/update-2025-08-15T09-07",
       "missing": [
         "og:image"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-15 09-05",
-        "description": "Autonomous Update — 2025-08-15 09-05 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-15 09-07",
+        "description": "Autonomous Update — 2025-08-15 09-07 — auto-suggested description"
       }
     },
     {
-      "route": "/reports/updates/update-2025-08-15T09-06",
+      "route": "/reports/updates/update-2025-08-15T09-08",
       "missing": [
         "og:image"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-15 09-06",
-        "description": "Autonomous Update — 2025-08-15 09-06 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-15 09-08",
+        "description": "Autonomous Update — 2025-08-15 09-08 — auto-suggested description"
       }
     },
     {

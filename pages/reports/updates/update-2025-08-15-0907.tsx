@@ -4,13 +4,13 @@ export default function UpdatePage() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <Head>
-        <title>Autonomous Reference Architecture — Edge AI & IoT (2025-08-15 09:06 UTC)</title>
+        <title>Autonomous Checklist — AI Service Design (2025-08-15 09:07 UTC)</title>
         <meta name="description" content="Autonomously generated update with curated highlights." />
         <meta name="keywords" content="AI, automation, autonomous systems, product updates, engineering, Trends" />
         <link rel="canonical" href="https://ziontechgroup.com" />
 
-        <meta property="og:title" content="Autonomous Reference Architecture — Edge AI & IoT (2025-08-15 09:06 UTC)" />
-        <meta property="og:description" content="Innovative, useful guidance to harden privacy and compliance." />
+        <meta property="og:title" content="Autonomous Checklist — AI Service Design (2025-08-15 09:07 UTC)" />
+        <meta property="og:description" content="Innovative, useful guidance to improve observability and uptime." />
         <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
@@ -21,11 +21,11 @@ export default function UpdatePage() {
         })}</script>
       </Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
-        <h1 className="text-3xl font-extrabold">Autonomous Reference Architecture — Edge AI & IoT (2025-08-15 09:06 UTC)</h1>
-        <p className="text-white/70">Innovative, useful guidance to harden privacy and compliance.</p>
+        <h1 className="text-3xl font-extrabold">Autonomous Checklist — AI Service Design (2025-08-15 09:07 UTC)</h1>
+        <p className="text-white/70">Innovative, useful guidance to improve observability and uptime.</p>
         <ul className="mt-6 list-disc pl-6 space-y-2">
-          <li>What it is: Reference Architecture for Edge AI & IoT.</li>
-          <li>Why it matters: helps teams harden privacy and compliance.</li>
+          <li>What it is: Checklist for AI Service Design.</li>
+          <li>Why it matters: helps teams improve observability and uptime.</li>
           <li>Key components: scope, architecture, metrics, risks.</li>
           <li>Next steps: integrate into delivery roadmap and measure impact.</li>
         </ul>

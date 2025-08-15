@@ -4,17 +4,17 @@ export default function InsightPage() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <Head>
-        <title>Checklist: RAG Platforms</title>
-        <meta name="description" content="Patterns to enhance security." />
-        <meta property="og:title" content="Checklist: RAG Platforms" />
-        <meta property="og:description" content="Patterns to enhance security." />
+        <title>Pilot Plan: Agent Ops</title>
+        <meta name="description" content="Patterns to improve reliability." />
+        <meta property="og:title" content="Pilot Plan: Agent Ops" />
+        <meta property="og:description" content="Patterns to improve reliability." />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
-        <h1 className="text-3xl font-extrabold">Checklist: RAG Platforms</h1>
-        <p className="text-white/70">Patterns to enhance security.</p>
+        <h1 className="text-3xl font-extrabold">Pilot Plan: Agent Ops</h1>
+        <p className="text-white/70">Patterns to improve reliability.</p>
         <ul className="mt-6 list-disc pl-6 space-y-2">
-          <li>Scope: Checklist: RAG Platforms.</li>
+          <li>Scope: Pilot Plan: Agent Ops.</li>
           <li>Signals: AI Services.</li>
           <li>Architecture: ingestion → retrieval → reasoning → evaluation.</li>
           <li>Ops: observability, rollback, SLOs, security.</li>
