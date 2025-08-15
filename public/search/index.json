@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T12:48:03.063Z",
+  "generatedAt": "2025-08-15T12:49:02.896Z",
   "entries": [
     {
       "route": "/site-health",
@@ -72,6 +72,12 @@
       "file": "pages/services/[slug].tsx",
       "title": "{service.title} — Zion Tech Group",
       "summary": "import { GetStaticPaths, GetStaticProps } from 'next'; import Head from 'next/head'; type Service = { slug: string; title: string; description: string; bullets: string[]; ctaHref: string; }; const services: Service[] = [ { slug: 'ai-seo-auditor', title: 'AI SEO Auditor', descript"
+    },
+    {
+      "route": "/reports/whitepapers",
+      "file": "pages/reports/whitepapers/index.tsx",
+      "title": "Whitepapers | Zion Tech Group",
+      "summary": "import Head from 'next/head'; export default function WhitepapersIndex() { return ( Whitepapers | Zion Tech Group Whitepapers Sample Whitepaper This is a placeholder for whitepapers content. Learn more → ); }"
     },
     {
       "route": "/reports/updates/update-2025-08-15T12-42",
@@ -1068,6 +1074,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1034.tsx",
       "title": "Autonomous Security Hardening Guide — Edge AI & IoT (2025-08-15 10:34 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Security Hardening Guide — Edge AI & IoT (2025-08-15 10:34 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0949",
+      "file": "pages/reports/updates/update-2025-08-15-0949.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:49",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:49 Autonomous Update — 2025-08-15 09:49 Signal over noise—your automated update is here. Today's Highlight Hacker News : Air Con: $1697 for an on/off switch · 2001 pts "
     },
     {
       "route": "/reports/updates/update-2025-08-15-0948",
@@ -3954,6 +3966,12 @@
       "file": "pages/reports/updates/update-2025-08-14-2311.tsx",
       "title": "Autonomous Update — 2025-08-14 23:11",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-14 23:11 Autonomous Update — 2025-08-14 23:11 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Bypassing airport sec"
+    },
+    {
+      "route": "/reports/tutorials",
+      "file": "pages/reports/tutorials/index.tsx",
+      "title": "Tutorials | Zion Tech Group",
+      "summary": "import Head from 'next/head'; export default function TutorialsIndex() { return ( Tutorials | Zion Tech Group Tutorials Sample Tutorial This is a placeholder for tutorials content. Learn more → ); }"
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-15-124218",

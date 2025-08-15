@@ -6,7 +6,10 @@ export default function WhitepapersIndex() {
       <Head>
         <title>Whitepapers | Zion Tech Group</title>
         <meta name="description" content="Browse our collection of whitepapers and insights." />
-      </Head>
+      
+        <meta property="og:title" content="Whitepapers" />
+        <meta property="og:description" content="Whitepapers — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       
       <main className="container mx-auto px-6 py-12">
         <h1 className="text-4xl font-bold mb-8">Whitepapers</h1>

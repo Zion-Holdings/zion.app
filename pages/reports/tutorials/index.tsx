@@ -6,7 +6,10 @@ export default function TutorialsIndex() {
       <Head>
         <title>Tutorials | Zion Tech Group</title>
         <meta name="description" content="Browse our collection of tutorials and insights." />
-      </Head>
+      
+        <meta property="og:title" content="Tutorials" />
+        <meta property="og:description" content="Tutorials — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       
       <main className="container mx-auto px-6 py-12">
         <h1 className="text-4xl font-bold mb-8">Tutorials</h1>
