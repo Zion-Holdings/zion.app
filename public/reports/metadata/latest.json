@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T13:52:00.933Z",
-  "pagesScanned": 4641,
+  "generatedAt": "2025-08-15T13:54:00.780Z",
+  "pagesScanned": 4633,
   "items": [
     {
       "route": "/404",
@@ -63,7 +63,10 @@
     {
       "route": "/component-library",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Component Library",
@@ -113,16 +116,6 @@
       }
     },
     {
-      "route": "/components",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Component Library",
-        "description": "Component Library — auto-suggested description"
-      }
-    },
-    {
       "route": "/contact",
       "missing": [
         "og:image"
@@ -135,7 +128,10 @@
     {
       "route": "/content-hub",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Content Hub",
@@ -145,11 +141,27 @@
     {
       "route": "/discover",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Content Discovery",
         "description": "Content Discovery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/enhanced-navigation",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Enhanced Navigation",
+        "description": "Enhanced Navigation — auto-suggested description"
       }
     },
     {
@@ -195,7 +207,10 @@
     {
       "route": "/live-dashboard",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Live Dashboard",
@@ -243,7 +258,10 @@
     {
       "route": "/playground",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Component Playground",
@@ -5576,16 +5594,6 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-15-134107",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Reference Architecture — Autonomous Content Mesh",
-        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/blueprints/blueprint-2025-08-15-135033",
       "missing": [
         "og:image"
       ],
@@ -13886,16 +13894,6 @@
     },
     {
       "route": "/reports/cases/case-2025-08-15-134107",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Case Study — Automation Autonomous",
-        "description": "Case Study — Automation Autonomous — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/cases/case-2025-08-15-135033",
       "missing": [
         "og:image"
       ],
@@ -22235,16 +22233,6 @@
       }
     },
     {
-      "route": "/reports/guides/guide-2025-08-15-135033",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Guide — Cloud Improving Implementation",
-        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
-      }
-    },
-    {
       "route": "/reports/innovations/insight-2025-08-15-0211",
       "missing": [
         "og:image"
@@ -23822,16 +23810,6 @@
       "suggestion": {
         "title": "Blueprint: LLM Apps",
         "description": "Blueprint: LLM Apps — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/innovations/insight-2025-08-15-1350",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Playbook: RAG Platforms",
-        "description": "Playbook: RAG Platforms — auto-suggested description"
       }
     },
     {
@@ -25472,16 +25450,6 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-15 13-40",
         "description": "Innovation Insight — 2025-08-15 13-40 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/innovations/insight-2025-08-15T13-50",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Innovation Insight — 2025-08-15 13-50",
-        "description": "Innovation Insight — 2025-08-15 13-50 — auto-suggested description"
       }
     },
     {
@@ -44547,14 +44515,34 @@
     {
       "route": "/reports/updates/update-2025-08-15-1052",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 10:52",
+        "description": "Autonomous Update — 2025-08-15 10:52 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1053",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 10:53",
+        "description": "Autonomous Update — 2025-08-15 10:53 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1054",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-15 10:52",
-        "description": "Autonomous Update — 2025-08-15 10:52 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-15 10:54",
+        "description": "Autonomous Update — 2025-08-15 10:54 — auto-suggested description"
       }
     },
     {
@@ -46338,6 +46326,19 @@
       }
     },
     {
+      "route": "/reports",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Reports & Content",
+        "description": "Reports & Content — auto-suggested description"
+      }
+    },
+    {
       "route": "/search",
       "missing": [
         "og:image"
@@ -46379,6 +46380,20 @@
       "suggestion": {
         "title": "Site Health",
         "description": "Site Health — auto-suggested description"
+      }
+    },
+    {
+      "route": "/sitemap",
+      "missing": [
+        "description",
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "sitemap",
+        "description": "sitemap — auto-suggested description"
       }
     }
   ]

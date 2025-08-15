@@ -22,7 +22,10 @@ export default function ComponentPlayground() {
       <Head>
         <title>Component Playground | Zion Tech Group</title>
         <meta name="description" content="Interactive playground to test and explore our UI components." />
-      </Head>
+      
+        <meta property="og:title" content="Component Playground" />
+        <meta property="og:description" content="Component Playground — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       
       <main className="container mx-auto px-6 py-12">
         <div className="text-center mb-12">

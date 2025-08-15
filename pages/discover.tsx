@@ -79,7 +79,10 @@ export default function ContentDiscovery() {
       <Head>
         <title>Content Discovery | Zion Tech Group</title>
         <meta name="description" content="Discover and explore our comprehensive content library with AI-powered search and recommendations." />
-      </Head>
+      
+        <meta property="og:title" content="Content Discovery" />
+        <meta property="og:description" content="Content Discovery — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       
       <main className="container mx-auto px-6 py-12">
         <div className="text-center mb-12">

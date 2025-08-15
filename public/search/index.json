@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T13:53:02.891Z",
+  "generatedAt": "2025-08-15T13:54:02.857Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -47,7 +47,7 @@
       "route": "/live-dashboard",
       "file": "pages/live-dashboard.tsx",
       "title": "Live Dashboard | Zion Tech Group",
-      "summary": "import { useState, useEffect } from 'react'; import Head from 'next/head'; export default function LiveContentDashboard() { const [dashboardData, setDashboardData] = useState({ lastUpdate: new Date().toISOString(), contentGenerated: 0, componentsCreated: 0, reportsPublished: 0 })"
+      "summary": "import { useState } from 'react'; import Head from 'next/head'; export default function LiveContentDashboard() { // Dashboard data for future use // const [dashboardData] = useState({ // lastUpdate: new Date().toISOString(), // contentGenerated: 0, // componentsCreated: 0, // rep"
     },
     {
       "route": "/landing",
@@ -71,13 +71,13 @@
       "route": "/discover",
       "file": "pages/discover.tsx",
       "title": "Content Discovery | Zion Tech Group",
-      "summary": "import { useState, useEffect } from 'react'; import Head from 'next/head'; import Link from 'next/link'; export default function ContentDiscovery() { const [searchQuery, setSearchQuery] = useState(''); const [selectedCategory, setSelectedCategory] = useState('all'); const [sortBy"
+      "summary": "import { useState } from 'react'; import Head from 'next/head'; import Link from 'next/link'; export default function ContentDiscovery() { const [searchQuery, setSearchQuery] = useState(''); const [selectedCategory, setSelectedCategory] = useState('all'); const [sortBy, setSortBy"
     },
     {
       "route": "/content-hub",
       "file": "pages/content-hub.tsx",
       "title": "Content Hub | Zion Tech Group",
-      "summary": "import { useState, useEffect } from 'react'; import Head from 'next/head'; import Link from 'next/link'; export default function ContentHub() { const [contentStats, setContentStats] = useState({ totalReports: 0, totalComponents: 0, lastUpdated: new Date().toISOString() }); const "
+      "summary": "import { useState } from 'react'; import Head from 'next/head'; import Link from 'next/link'; export default function ContentHub() { const [contentStats] = useState({ totalReports: 0, totalComponents: 0, lastUpdated: new Date().toISOString() }); const contentCategories = [ { name"
     },
     {
       "route": "/contact",
@@ -1194,6 +1194,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1107.tsx",
       "title": "Autonomous Playbook — Evaluation & Safety (2025-08-15 11:07 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Evaluation & Safety (2025-08-15 11:07 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": {"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1054",
+      "file": "pages/reports/updates/update-2025-08-15-1054.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:54",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:54 Autonomous Update — 2025-08-15 10:54 Signal over noise—your automated update is here. Today's Highlight Hacker News : Airfoil · 2544 pts Why it matters: autonomous c"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1053",
@@ -27773,19 +27779,19 @@
       "route": "/components/pagination-demo",
       "file": "pages/components/pagination-demo.tsx",
       "title": "pagination-demo",
-      "summary": ""
+      "summary": "import { useState } from 'react'; import Pagination from '../../components/Pagination'; export default function PaginationDemo() { const [currentPage, setCurrentPage] = useState(1); const totalPages = 10; return ( Pagination Component Demo Current Page: {currentPage} ); }"
     },
     {
       "route": "/components/modal-demo",
       "file": "pages/components/modal-demo.tsx",
       "title": "modal-demo",
-      "summary": ""
+      "summary": "import { useState } from 'react'; import Modal from '../../components/Modal'; import Button from '../../components/Button'; export default function ModalDemo() { const [isOpen, setIsOpen] = useState(false); return ( Modal Component Demo setIsOpen(true)}>Open Modal setIsOpen(false"
     },
     {
       "route": "/components/form-demo",
       "file": "pages/components/form-demo.tsx",
       "title": "form-demo",
-      "summary": ""
+      "summary": "import Form from '../../components/Form'; export default function FormDemo() { const handleSubmit = (data) => { alert('Form submitted: ' + JSON.stringify(data, null, 2)); }; return ( Form Component Demo ); }"
     },
     {
       "route": "/automation",
