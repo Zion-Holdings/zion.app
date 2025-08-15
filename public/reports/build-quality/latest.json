@@ -1,0 +1,133 @@
+{
+  "summary": {
+    "generatedAt": "2025-08-15T15:33:40.626Z",
+    "totalFiles": 9,
+    "totalIssues": 6,
+    "criticalIssues": 0,
+    "warningIssues": 6,
+    "errorIssues": 0
+  },
+  "results": [
+    {
+      "file": "components/monetization/PaidConsultation.tsx",
+      "issues": [],
+      "totalIssues": 0
+    },
+    {
+      "file": "pages/explore/index.tsx",
+      "issues": [
+        {
+          "severity": "WARNING",
+          "message": "List items should have unique key props",
+          "lineNumbers": [
+            70,
+            84,
+            87,
+            98,
+            110,
+            114,
+            119,
+            128,
+            131,
+            133,
+            143,
+            146,
+            148,
+            159,
+            162,
+            164,
+            175,
+            178,
+            180
+          ],
+          "pattern": "/<div\\s+(?!.*\\bkey=)/g"
+        }
+      ],
+      "totalIssues": 1
+    },
+    {
+      "file": "pages/components/pagination-demo.tsx",
+      "issues": [
+        {
+          "severity": "WARNING",
+          "message": "List items should have unique key props",
+          "lineNumbers": [
+            9,
+            12
+          ],
+          "pattern": "/<div\\s+(?!.*\\bkey=)/g"
+        }
+      ],
+      "totalIssues": 1
+    },
+    {
+      "file": "pages/components/modal-demo.tsx",
+      "issues": [
+        {
+          "severity": "WARNING",
+          "message": "List items should have unique key props",
+          "lineNumbers": [
+            9
+          ],
+          "pattern": "/<div\\s+(?!.*\\bkey=)/g"
+        }
+      ],
+      "totalIssues": 1
+    },
+    {
+      "file": "pages/components/form-demo.tsx",
+      "issues": [
+        {
+          "severity": "WARNING",
+          "message": "List items should have unique key props",
+          "lineNumbers": [
+            9,
+            12
+          ],
+          "pattern": "/<div\\s+(?!.*\\bkey=)/g"
+        }
+      ],
+      "totalIssues": 1
+    },
+    {
+      "file": "pages/front/index.tsx",
+      "issues": [],
+      "totalIssues": 0
+    },
+    {
+      "file": "pages/automation/index.tsx",
+      "issues": [],
+      "totalIssues": 0
+    },
+    {
+      "file": "pages/services/index.tsx",
+      "issues": [
+        {
+          "severity": "WARNING",
+          "message": "List items should have unique key props",
+          "lineNumbers": [
+            12,
+            15,
+            20
+          ],
+          "pattern": "/<div\\s+(?!.*\\bkey=)/g"
+        }
+      ],
+      "totalIssues": 1
+    },
+    {
+      "file": "pages/services/[slug].tsx",
+      "issues": [
+        {
+          "severity": "WARNING",
+          "message": "List items should have unique key props",
+          "lineNumbers": [
+            72
+          ],
+          "pattern": "/<div\\s+(?!.*\\bkey=)/g"
+        }
+      ],
+      "totalIssues": 1
+    }
+  ]
+}
