@@ -1,39 +1,32 @@
 {
-  "generatedAt": "2025-08-15T02:18:10.364Z",
+  "generatedAt": "2025-08-15T02:19:09.409Z",
   "items": [
     {
-      "title": "Guide: Agent Ops",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-15-0219",
-      "createdAt": "2025-08-15T02:19:03.398Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-15 02-18",
-      "href": "/reports/innovations/insight-2025-08-15T02-18",
+      "title": "Innovation Insight — 2025-08-15 02-19",
+      "href": "/reports/innovations/insight-2025-08-15T02-19",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T02:18:10.293Z",
+      "createdAt": "2025-08-15T02:19:09.337Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-15 02-18",
-      "href": "/reports/updates/update-2025-08-15T02-18",
+      "title": "Autonomous Update — 2025-08-15 02-19",
+      "href": "/reports/updates/update-2025-08-15T02-19",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T02:18:10.293Z",
+      "createdAt": "2025-08-15T02:19:09.337Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Innovation Insight — 2025-08-15 02-18",
-      "href": "/reports/innovations/insight-2025-08-15T02-18",
+      "title": "Innovation Insight — 2025-08-15 02-19",
+      "href": "/reports/innovations/insight-2025-08-15T02-19",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T02:18:10.293Z",
+      "createdAt": "2025-08-15T02:19:09.337Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-15 02-18",
-      "href": "/reports/updates/update-2025-08-15T02-18",
+      "title": "Autonomous Update — 2025-08-15 02-19",
+      "href": "/reports/updates/update-2025-08-15T02-19",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T02:18:10.293Z",
+      "createdAt": "2025-08-15T02:19:09.337Z",
       "source": "cloud-content-factory"
     }
   ]
