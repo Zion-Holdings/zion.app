@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T21:38:03.275Z",
+  "generatedAt": "2025-08-15T21:39:02.979Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1494,6 +1494,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1840.tsx",
       "title": "Autonomous Security Hardening Guide — AI Service Design (2025-08-15 18:40 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Security Hardening Guide — AI Service Design (2025-08-15 18:40 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1839",
+      "file": "pages/reports/updates/update-2025-08-15-1839.tsx",
+      "title": "Autonomous Update — 2025-08-15 18:39",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 18:39 Autonomous Update — 2025-08-15 18:39 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Airfoil · 2544 pts Why it matters: a"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1838",
