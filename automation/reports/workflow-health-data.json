@@ -1308,15 +1308,12 @@
     "name": "ci-self-heal.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci-self-heal.yml",
-    "size": 1949,
-    "lines": 73,
+    "size": 1626,
+    "lines": 65,
     "triggers": [],
     "jobs": [
       "workflow_run",
       "types",
-      "branch_protection_rules",
-      "required_status_checks",
-      "required_pull_request_reviews",
       "jobs",
       "attempt-fix",
       "steps",
@@ -1329,70 +1326,14 @@
     "permissions": [
       {
         "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
         "value": "read"
-      },
-      {
-        "permission": "branch_protection_rules",
-        "value": ""
-      },
-      {
-        "permission": "- pattern",
-        "value": "\"main\""
-      },
-      {
-        "permission": "required_status_checks",
-        "value": ""
-      },
-      {
-        "permission": "strict",
-        "value": "true"
-      },
-      {
-        "permission": "contexts",
-        "value": "[]"
-      },
-      {
-        "permission": "required_pull_request_reviews",
-        "value": ""
-      },
-      {
-        "permission": "required_approving_review_count",
-        "value": "1"
-      },
-      {
-        "permission": "dismiss_stale_reviews",
-        "value": "true"
-      },
-      {
-        "permission": "require_code_owner_reviews",
-        "value": "false"
-      },
-      {
-        "permission": "enforce_admins",
-        "value": "false"
-      },
-      {
-        "permission": "required_linear_history",
-        "value": "false"
-      },
-      {
-        "permission": "allow_force_pushes",
-        "value": "false"
-      },
-      {
-        "permission": "allow_deletions",
-        "value": "false"
-      },
-      {
-        "permission": "block_creations",
-        "value": "false"
-      },
-      {
-        "permission": "required_conversation_resolution",
-        "value": "true"
       }
     ],
-    "concurrency": null,
+    "concurrency": "ci-self-heal-${{ github.ref }}",
     "issues": [],
     "recommendations": [
       "Consider splitting into smaller workflows for better maintainability"
@@ -1402,8 +1343,8 @@
     "name": "ci.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci.yml",
-    "size": 1516,
-    "lines": 83,
+    "size": 1729,
+    "lines": 92,
     "triggers": [
       "push",
       "pull_request",
@@ -1431,6 +1372,10 @@
     "permissions": [
       {
         "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
         "value": "read"
       }
     ],
