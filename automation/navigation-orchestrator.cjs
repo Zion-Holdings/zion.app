@@ -529,7 +529,6 @@ export default function DynamicSidebar({ navigation, related, quickLinks }) {
   async generateBreadcrumbComponents() {
     const breadcrumbContent = `import React from 'react';
 import Link from 'next/link';
-import { ChevronRightIcon, HomeIcon } from '@heroicons/react/24/outline';
 
 export default function DynamicBreadcrumbs({ breadcrumbs }) {
   if (!breadcrumbs || breadcrumbs.length <= 1) return null;
@@ -540,12 +539,16 @@ export default function DynamicBreadcrumbs({ breadcrumbs }) {
         <React.Fragment key={crumb.route}>
           {index === 0 ? (
             <Link href={crumb.route} className="flex items-center hover:text-white transition-colors">
-              <HomeIcon className="w-4 h-4 mr-1" />
+              <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
               {crumb.title}
             </Link>
           ) : (
             <>
-              <ChevronRightIcon className="w-4 h-4 text-white/40" />
+              <svg className="w-4 h-4 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
               {index === breadcrumbs.length - 1 ? (
                 <span className="text-white font-medium">{crumb.title}</span>
               ) : (
