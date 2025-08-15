@@ -53,6 +53,10 @@
       "route": "/automation"
     },
     {
+      "file": "pages/reports/playbooks/playbook-2025-08-15-060638.tsx",
+      "route": "/reports/playbooks/playbook-2025-08-15-060638"
+    },
+    {
       "file": "pages/reports/playbooks/playbook-2025-08-15-060628.tsx",
       "route": "/reports/playbooks/playbook-2025-08-15-060628"
     },
@@ -1741,6 +1745,10 @@
       "route": "/reports/updates/update-2025-08-14-2311"
     },
     {
+      "file": "pages/reports/patterns/pattern-2025-08-15-060638.tsx",
+      "route": "/reports/patterns/pattern-2025-08-15-060638"
+    },
+    {
       "file": "pages/reports/patterns/pattern-2025-08-15-060628.tsx",
       "route": "/reports/patterns/pattern-2025-08-15-060628"
     },
@@ -2273,8 +2281,8 @@
       "route": "/reports/patterns/pattern-2025-08-15-021207"
     },
     {
-      "file": "pages/main/front/index.tsx",
-      "route": "/main/front"
+      "file": "pages/reports/guides/guide-2025-08-15-060638.tsx",
+      "route": "/reports/guides/guide-2025-08-15-060638"
     },
     {
       "file": "pages/reports/guides/guide-2025-08-15-060628.tsx",
@@ -2813,6 +2821,14 @@
       "route": "/reports/guides/guide-2025-08-15-021207"
     },
     {
+      "file": "pages/main/front/index.tsx",
+      "route": "/main/front"
+    },
+    {
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-060638.tsx",
+      "route": "/reports/blueprints/blueprint-2025-08-15-060638"
+    },
+    {
       "file": "pages/reports/blueprints/blueprint-2025-08-15-060628.tsx",
       "route": "/reports/blueprints/blueprint-2025-08-15-060628"
     },
@@ -3167,6 +3183,10 @@
     {
       "file": "pages/reports/blueprints/blueprint-2025-08-14-212855.tsx",
       "route": "/reports/blueprints/blueprint-2025-08-14-212855"
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-15-060638.tsx",
+      "route": "/reports/cases/case-2025-08-15-060638"
     },
     {
       "file": "pages/reports/cases/case-2025-08-15-060628.tsx",
@@ -3739,5 +3759,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-15T06:06:29.493Z"
+  "generatedAt": "2025-08-15T06:06:42.973Z"
 }
