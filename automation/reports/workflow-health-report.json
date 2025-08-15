@@ -1,8 +1,8 @@
 {
-  "timestamp": "2025-08-15T22:36:39.400Z",
+  "timestamp": "2025-08-15T22:36:55.759Z",
   "summary": {
-    "totalWorkflows": 146,
-    "activeWorkflows": 71,
+    "totalWorkflows": 147,
+    "activeWorkflows": 72,
     "disabledWorkflows": 74,
     "workflowsWithIssues": 79,
     "totalIssues": 83
@@ -63,6 +63,7 @@
       "pr-quality-gate.yml",
       "pr-smoke.yml",
       "readme-auto-advertiser.yml",
+      "release.yml",
       "responsive-content.yml",
       "security-auto-heal.yml",
       "security-gates.yml",
@@ -4281,6 +4282,66 @@
       "recommendations": [
         "Add branch protection to git push operations",
         "Add workflow_dispatch trigger for manual testing",
+        "Consider splitting into smaller workflows for better maintainability"
+      ]
+    },
+    "release.yml": {
+      "name": "release.yml",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/release.yml",
+      "size": 4989,
+      "lines": 186,
+      "triggers": [
+        "push",
+        "workflow_dispatch"
+      ],
+      "jobs": [
+        "push",
+        "tags",
+        "workflow_dispatch",
+        "inputs",
+        "version",
+        "release_type",
+        "options",
+        "jobs",
+        "create-release",
+        "steps",
+        "with",
+        "with",
+        "with",
+        "with",
+        "deploy-release",
+        "environment",
+        "steps",
+        "with",
+        "with",
+        "with",
+        "post-release",
+        "steps",
+        "with"
+      ],
+      "timeouts": [
+        30,
+        25,
+        20
+      ],
+      "permissions": [
+        {
+          "permission": "contents",
+          "value": "write"
+        },
+        {
+          "permission": "pull-requests",
+          "value": "write"
+        },
+        {
+          "permission": "actions",
+          "value": "read"
+        }
+      ],
+      "concurrency": "release-management",
+      "issues": [],
+      "recommendations": [
         "Consider splitting into smaller workflows for better maintainability"
       ]
     },
@@ -10494,6 +10555,7 @@
         "Refactor pr-quality-gate.yml into smaller, focused workflows",
         "Refactor pr-smoke.yml into smaller, focused workflows",
         "Refactor readme-auto-advertiser.yml into smaller, focused workflows",
+        "Refactor release.yml into smaller, focused workflows",
         "Refactor responsive-content.yml into smaller, focused workflows",
         "Refactor security-auto-heal.yml into smaller, focused workflows",
         "Refactor security-gates.yml into smaller, focused workflows",
@@ -10706,6 +10768,7 @@
       "Refactor pr-quality-gate.yml into smaller, focused workflows",
       "Refactor pr-smoke.yml into smaller, focused workflows",
       "Refactor readme-auto-advertiser.yml into smaller, focused workflows",
+      "Refactor release.yml into smaller, focused workflows",
       "Refactor responsive-content.yml into smaller, focused workflows",
       "Refactor security-auto-heal.yml into smaller, focused workflows",
       "Refactor security-gates.yml into smaller, focused workflows",
