@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T23:25:03.610Z",
+  "generatedAt": "2025-08-15T23:26:03.885Z",
   "entries": [
     {
       "route": "/terms",
@@ -1578,6 +1578,12 @@
       "file": "pages/reports/updates/update-2025-08-15-2030.tsx",
       "title": "Autonomous Reference Architecture — Cloud Cost Optimization (2025-08-15 20:30 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Reference Architecture — Cloud Cost Optimization (2025-08-15 20:30 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subti"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-2026",
+      "file": "pages/reports/updates/update-2025-08-15-2026.tsx",
+      "title": "Autonomous Update — 2025-08-15 20:26",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 20:26 Autonomous Update — 2025-08-15 20:26 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Bypassing airport security via SQL i"
     },
     {
       "route": "/reports/updates/update-2025-08-15-2025",
@@ -33666,6 +33672,12 @@
       "file": "pages/explore/index.tsx",
       "title": "Explore — Zion",
       "summary": "import Head from 'next/head'; import Link from 'next/link'; import Landing from '../../components/Landing'; export default function ExploreIndex() { // AUTO-GENERATED: EXPLORE_PROMOS const promos = [ { \"href\": \"/reports/innovations/insight-2025-08-13T21-30\", \"title\": \"Innovation "
+    },
+    {
+      "route": "/events",
+      "file": "pages/events/index.tsx",
+      "title": "Events | Zion Tech Group - Conferences, Workshops & Webinars",
+      "summary": "import Head from 'next/head'; import Link from 'next/link'; export default function EventsIndexPage() { const events = [ { id: 'ai-automation-summit-2025', title: 'AI Automation Summit 2025', excerpt: 'Join industry leaders and experts for a comprehensive exploration of AI automa"
     },
     {
       "route": "/components/pagination-demo",
