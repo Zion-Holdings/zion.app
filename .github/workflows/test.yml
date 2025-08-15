@@ -1,55 +1,22 @@
 name: Test Suite
 
 on:
-  push:
-    branches: [ main, develop ]
   pull_request:
-    branches: [ main, develop ]
-  schedule:
-    - cron: '0 4 * * *' # Daily at 4 AM UTC
+    branches: ["main"]
+  push:
+    branches: ["main"]
   workflow_dispatch: {}
 
 permissions:
   contents: read
   actions: read
 
-concurrency:
-  group: test-suite-${{ github.ref }}
-  cancel-in-progress: true
+env:
+  NODE_OPTIONS: "--max-old-space-size=4096"
 
 jobs:
   unit-tests:
     name: Unit Tests
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run unit tests
-        run: |
-          npm run test:unit || true
-          npm run test:coverage || true
-
-      - name: Upload coverage reports
-        uses: codecov/codecov-action@v3
-        if: always()
-        with:
-          file: ./coverage/lcov.info
-          flags: unittests
-          name: codecov-umbrella
-
-  integration-tests:
-    name: Integration Tests
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
@@ -63,28 +30,90 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --no-audit --no-fund
+
+      - name: Run unit tests
+        run: npm run test:unit
+
+      - name: Generate coverage report
+        run: npm run test:coverage
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          file: ./coverage/lcov.info
+          flags: unittests
+          name: codecov-umbrella
+          fail_ci_if_error: false
+
+  integration-tests:
+    name: Integration Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: unit-tests
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
 
       - name: Run integration tests
-        run: |
-          npm run test:integration || true
-          npm run test:e2e || true
+        run: npm run test:integration
 
       - name: Upload test results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: test-results
+          name: integration-test-results
           path: |
             test-results/
             coverage/
-            *.xml
-            *.html
+          retention-days: 7
+
+  e2e-tests:
+    name: End-to-End Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    needs: unit-tests
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Run E2E tests
+        run: npm run test:e2e
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: e2e-test-results
+          path: |
+            test-results/
+            coverage/
+            screenshots/
+          retention-days: 7
 
   smoke-tests:
     name: Smoke Tests
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    needs: unit-tests
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -96,29 +125,16 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
-
-      - name: Build application
-        run: npm run build
+        run: npm ci --no-audit --no-fund
 
       - name: Run smoke tests
-        run: |
-          npm run test:smoke || true
-          npm run test:build || true
+        run: npm run test:smoke
 
-      - name: Check build artifacts
-        run: |
-          if [ -d ".next" ]; then
-            echo "✅ Build successful"
-          else
-            echo "❌ Build failed"
-            exit 1
-          fi
-
-  performance-tests:
-    name: Performance Tests
+  build-tests:
+    name: Build Tests
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    needs: unit-tests
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -130,22 +146,23 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --no-audit --no-fund
 
-      - name: Build application
-        run: npm run build
+      - name: Test build process
+        run: npm run test:build
 
-      - name: Run Lighthouse CI
-        run: |
-          npm run lighthouse || true
-          npm run performance:test || true
+      - name: Run Lighthouse tests
+        run: npm run lighthouse
 
-      - name: Upload performance reports
-        uses: actions/upload-artifact@v3
+      - name: Performance tests
+        run: npm run performance:test
+
+      - name: Upload build test results
+        uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: performance-reports
+          name: build-test-results
           path: |
-            .lighthouseci/
             lighthouse-results/
-            *.json
+            performance-results/
+          retention-days: 7

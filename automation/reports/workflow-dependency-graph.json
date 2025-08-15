@@ -570,20 +570,19 @@
   "deploy.yml": {
     "name": "deploy.yml",
     "triggers": [
-      "push",
       "pull_request",
+      "push",
       "workflow_dispatch {}"
     ],
     "needs": [
-      "build-and-test",
-      "build-and-test",
-      "deploy-production"
+      "build",
+      "build"
     ],
     "outputs": [],
     "priority": "medium",
     "resourceRequirements": {
       "runner": "ubuntu-latest",
-      "memory": "high",
+      "memory": "medium",
       "timeout": 30,
       "concurrentJobs": 5
     },

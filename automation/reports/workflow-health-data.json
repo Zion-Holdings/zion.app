@@ -1668,20 +1668,19 @@
     "name": "deploy.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/deploy.yml",
-    "size": 3760,
-    "lines": 152,
+    "size": 2750,
+    "lines": 116,
     "triggers": [
-      "push",
       "pull_request",
+      "push",
       "workflow_dispatch {}"
     ],
     "jobs": [
-      "push",
       "pull_request",
+      "push",
       "jobs",
-      "build-and-test",
+      "build",
       "steps",
-      "with",
       "with",
       "with",
       "deploy-preview",
@@ -1689,17 +1688,12 @@
       "with",
       "with",
       "deploy-production",
-      "environment",
       "steps",
       "with",
-      "with",
-      "post-deploy",
-      "steps",
       "with"
     ],
     "timeouts": [
       30,
-      20,
       25,
       15
     ],
