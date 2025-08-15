@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T20:20:01.499Z",
-  "pagesScanned": 5302,
+  "generatedAt": "2025-08-15T20:21:00.844Z",
+  "pagesScanned": 5311,
   "items": [
     {
       "route": "/404",
@@ -5986,6 +5986,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-15-201030",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-202031",
       "missing": [
         "og:image"
       ],
@@ -23145,6 +23155,16 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-15-202031",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Autonomous Update Implementation",
+        "description": "Guide — Autonomous Update Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-15-0211",
       "missing": [
         "og:image"
@@ -25092,6 +25112,16 @@
       "suggestion": {
         "title": "Playbook: Edge AI",
         "description": "Playbook: Edge AI — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-2020",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Checklist: Agent Ops",
+        "description": "Checklist: Agent Ops — auto-suggested description"
       }
     },
     {
@@ -27102,6 +27132,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-15 20-10",
         "description": "Innovation Insight — 2025-08-15 20-10 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15T20-20",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-15 20-20",
+        "description": "Innovation Insight — 2025-08-15 20-20 — auto-suggested description"
       }
     },
     {
@@ -35855,6 +35895,16 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-15-202031",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Improving Continuously",
+        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-15-021207",
       "missing": [
         "og:image"
@@ -41586,6 +41636,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-15-201030",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-202031",
       "missing": [
         "og:image"
       ],
@@ -50805,6 +50865,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-15-1721",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 17:21",
+        "description": "Autonomous Update — 2025-08-15 17:21 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-15-1730",
       "missing": [
         "og:image"
@@ -50972,6 +51045,16 @@
       "suggestion": {
         "title": "Autonomous Reference Architecture — Vision & Multimodal (2025-08-15 20:10 UTC)",
         "description": "Autonomous Reference Architecture — Vision & Multimodal (2025-08-15 20:10 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-2020",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Reference Architecture — Agentic Workflows (2025-08-15 20:20 UTC)",
+        "description": "Autonomous Reference Architecture — Agentic Workflows (2025-08-15 20:20 UTC) — auto-suggested description"
       }
     },
     {
@@ -52982,6 +53065,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-15 20-10",
         "description": "Autonomous Update — 2025-08-15 20-10 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15T20-20",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 20-20",
+        "description": "Autonomous Update — 2025-08-15 20-20 — auto-suggested description"
       }
     },
     {
