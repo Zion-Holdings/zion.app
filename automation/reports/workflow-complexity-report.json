@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-15T22:33:36.978Z",
+  "timestamp": "2025-08-15T22:34:23.755Z",
   "summary": {
     "totalWorkflows": 139,
     "complexityDistribution": {
@@ -305,17 +305,17 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci-quality.yml"
     },
     "ci-self-heal.yml": {
-      "complexityScore": 10,
+      "complexityScore": 15,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 73,
+        "totalLines": 65,
         "jobCount": 0,
-        "stepCount": 5,
+        "stepCount": 6,
         "conditionalCount": 2,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 0,
+        "secretCount": 1,
         "actionCount": 2
       },
       "refactoringPriority": "low",
@@ -323,12 +323,12 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci-self-heal.yml"
     },
     "ci.yml": {
-      "complexityScore": 20,
+      "complexityScore": 25,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 83,
+        "totalLines": 92,
         "jobCount": 0,
-        "stepCount": 9,
+        "stepCount": 11,
         "conditionalCount": 0,
         "matrixCount": 0,
         "dependencyCount": 0,
@@ -1154,14 +1154,14 @@
       "complexityScore": 15,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 75,
+        "totalLines": 61,
         "jobCount": 0,
         "stepCount": 6,
         "conditionalCount": 0,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 0,
+        "secretCount": 1,
         "actionCount": 2
       },
       "refactoringPriority": "low",

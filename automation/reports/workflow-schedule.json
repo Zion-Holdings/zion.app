@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-15T22:33:44.308Z",
+  "timestamp": "2025-08-15T22:34:31.671Z",
   "critical": [
     {
       "name": "ci.yml",
@@ -46,7 +46,7 @@
       "priority": "critical",
       "resourceIntensity": "medium",
       "estimatedDuration": 25,
-      "concurrentJobs": 10,
+      "concurrentJobs": 7,
       "runnerRequirements": {
         "runner": "ubuntu-latest",
         "size": "standard",
@@ -54,7 +54,7 @@
       },
       "dependencies": [],
       "triggers": [],
-      "resourceScore": 155
+      "resourceScore": 158
     },
     {
       "name": "security-gates.yml",
@@ -125,6 +125,25 @@
         "workflow_dispatch {}"
       ],
       "resourceScore": 136
+    },
+    {
+      "name": "dependency-management.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/dependency-management.yml",
+      "priority": "high",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 30,
+      "concurrentJobs": 7,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch {}"
+      ],
+      "resourceScore": 133
     }
   ],
   "medium": [
@@ -932,6 +951,25 @@
       "resourceScore": 109
     },
     {
+      "name": "ultra-rapid-sync.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-rapid-sync.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 25,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch {}"
+      ],
+      "resourceScore": 109
+    },
+    {
       "name": "ai-trends-radar.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-trends-radar.yml",
       "priority": "medium",
@@ -1200,25 +1238,6 @@
     {
       "name": "topics-and-clusters.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/topics-and-clusters.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 25,
-      "concurrentJobs": 9,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "schedule",
-        "workflow_dispatch {}"
-      ],
-      "resourceScore": 106
-    },
-    {
-      "name": "ultra-rapid-sync.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-rapid-sync.yml",
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 25,
