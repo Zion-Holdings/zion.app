@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T18:46:03.388Z",
+  "generatedAt": "2025-08-15T18:47:03.131Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1392,6 +1392,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1550.tsx",
       "title": "Autonomous Reference Architecture — Applied NLP & RAG (2025-08-15 15:50 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Reference Architecture — Applied NLP & RAG (2025-08-15 15:50 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\","
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1547",
+      "file": "pages/reports/updates/update-2025-08-15-1547.tsx",
+      "title": "Autonomous Update — 2025-08-15 15:47",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 15:47 Autonomous Update — 2025-08-15 15:47 Signal over noise—your automated update is here. Today's Highlight Hacker News : Paper Airplane Designs · 1753 pts Why it matter"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1546",
