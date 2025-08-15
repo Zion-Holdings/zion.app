@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T07:33:07.766Z",
+  "generatedAt": "2025-08-15T07:33:20.173Z",
   "entries": [
     {
       "route": "/site-health",
@@ -2958,6 +2958,12 @@
       "file": "pages/reports/updates/update-2025-08-14-2311.tsx",
       "title": "Autonomous Update — 2025-08-14 23:11",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-14 23:11 Autonomous Update — 2025-08-14 23:11 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Bypassing airport sec"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-073304",
+      "file": "pages/reports/playbooks/playbook-2025-08-15-073304.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-15-073256",
