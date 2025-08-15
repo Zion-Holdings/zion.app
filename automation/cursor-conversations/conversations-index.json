@@ -898,5 +898,29 @@
     "startTime": "2025-08-15T15:25:02.773Z",
     "status": "active",
     "filePath": "conv-1755271502773.json"
+  },
+  {
+    "id": "conv-1755271643086",
+    "type": "performance-optimization",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "DevOps Engineer"
+    ],
+    "startTime": "2025-08-15T15:27:23.086Z",
+    "status": "active",
+    "filePath": "conv-1755271643086.json"
+  },
+  {
+    "id": "conv-1755271645090",
+    "type": "code-review",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "QA Tester"
+    ],
+    "startTime": "2025-08-15T15:27:25.090Z",
+    "status": "active",
+    "filePath": "conv-1755271645090.json"
   }
 ]
