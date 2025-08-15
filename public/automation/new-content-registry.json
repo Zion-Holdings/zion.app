@@ -1,33 +1,33 @@
 {
-  "generatedAt": "2025-08-15T06:35:05.043Z",
+  "generatedAt": "2025-08-15T06:35:15.131Z",
   "items": [
     {
-      "title": "Checklist: AI QA & Eval",
-      "subtitle": "Patterns to enhance security.",
-      "path": "/reports/innovations/insight-2025-08-15-0635",
-      "createdAt": "2025-08-15T06:35:12.220Z",
-      "kind": "insight"
+      "title": "Innovation Insight — 2025-08-15 06-35",
+      "href": "/reports/innovations/insight-2025-08-15T06-35",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T06:35:15.058Z",
+      "source": "cloud-content-factory"
     },
     {
-      "title": "Case Study — Automation Autonomous",
-      "href": "/reports/cases/case-2025-08-15-063504",
+      "title": "Autonomous Update — 2025-08-15 06-35",
+      "href": "/reports/updates/update-2025-08-15T06-35",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T06:35:04.884Z",
-      "source": "cloud-deep-research-factory"
+      "createdAt": "2025-08-15T06:35:15.058Z",
+      "source": "cloud-content-factory"
     },
     {
-      "title": "Guide — Cloud Improving Implementation",
-      "href": "/reports/guides/guide-2025-08-15-063504",
+      "title": "Innovation Insight — 2025-08-15 06-35",
+      "href": "/reports/innovations/insight-2025-08-15T06-35",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T06:35:04.884Z",
-      "source": "cloud-deep-research-factory"
+      "createdAt": "2025-08-15T06:35:15.058Z",
+      "source": "cloud-content-factory"
     },
     {
-      "title": "Pattern — Cloud Improving Continuously",
-      "href": "/reports/patterns/pattern-2025-08-15-063504",
+      "title": "Autonomous Update — 2025-08-15 06-35",
+      "href": "/reports/updates/update-2025-08-15T06-35",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T06:35:04.884Z",
-      "source": "cloud-deep-research-factory"
+      "createdAt": "2025-08-15T06:35:15.058Z",
+      "source": "cloud-content-factory"
     }
   ]
 }
