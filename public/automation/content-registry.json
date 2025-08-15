@@ -1,58 +1,98 @@
 {
-  "pages": [
+  "items": [
     {
-      "file": "pages/site-health.tsx",
-      "route": "/site-health"
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-15-020012",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T02:00:12.372Z",
+      "source": "cloud-playbook-factory"
     },
     {
-      "file": "pages/search.tsx",
-      "route": "/search"
+      "title": "Case Study — Trigger Homepage",
+      "href": "/reports/cases/case-2025-08-15-020012",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T02:00:12.205Z",
+      "source": "cloud-deep-research-factory"
     },
     {
-      "file": "pages/newsroom.tsx",
-      "route": "/newsroom"
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-15-020012",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T02:00:12.205Z",
+      "source": "cloud-deep-research-factory"
     },
     {
-      "file": "pages/landing.tsx",
-      "route": "/landing"
+      "title": "Pattern — Cloud Improving Continuously",
+      "href": "/reports/patterns/pattern-2025-08-15-020012",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T02:00:12.205Z",
+      "source": "cloud-deep-research-factory"
     },
     {
-      "file": "pages/index.tsx",
-      "route": "/"
+      "title": "Innovation Insight — 2025-08-15 02-00",
+      "href": "/reports/innovations/insight-2025-08-15T02-00",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T02:00:12.118Z",
+      "source": "cloud-content-factory"
     },
     {
-      "file": "pages/contact.tsx",
-      "route": "/contact"
+      "title": "Autonomous Update — 2025-08-15 02-00",
+      "href": "/reports/updates/update-2025-08-15T02-00",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T02:00:12.118Z",
+      "source": "cloud-content-factory"
     },
     {
-      "file": "pages/automation-health.tsx",
-      "route": "/automation-health"
+      "title": "Innovation Insight — 2025-08-15 02-00",
+      "href": "/reports/innovations/insight-2025-08-15T02-00",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T02:00:12.118Z",
+      "source": "cloud-content-factory"
     },
     {
-      "file": "pages/404.tsx",
-      "route": "/404"
+      "title": "Autonomous Update — 2025-08-15 02-00",
+      "href": "/reports/updates/update-2025-08-15T02-00",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T02:00:12.118Z",
+      "source": "cloud-content-factory"
     },
     {
-      "file": "pages/services/index.tsx",
-      "route": "/services"
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-15-020012",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T02:00:12.030Z",
+      "source": "cloud-blueprint-factory"
     },
     {
-      "file": "pages/services/[slug].tsx",
-      "route": "/services/[slug]"
+      "title": "Innovation Insight — 2025-08-15 02-00",
+      "href": "/reports/innovations/insight-2025-08-15T02-00",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T02:00:11.867Z",
+      "source": "cloud-content-factory"
     },
     {
-      "file": "pages/front/index.tsx",
-      "route": "/front"
+      "title": "Autonomous Update — 2025-08-15 02-00",
+      "href": "/reports/updates/update-2025-08-15T02-00",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T02:00:11.867Z",
+      "source": "cloud-content-factory"
     },
     {
-      "file": "pages/explore/index.tsx",
-      "route": "/explore"
+      "title": "Innovation Insight — 2025-08-15 02-00",
+      "href": "/reports/innovations/insight-2025-08-15T02-00",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T02:00:11.867Z",
+      "source": "cloud-content-factory"
     },
     {
-      "file": "pages/automation/index.tsx",
-      "route": "/automation"
+      "title": "Autonomous Update — 2025-08-15 02-00",
+      "href": "/reports/updates/update-2025-08-15T02-00",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T02:00:11.867Z",
+      "source": "cloud-content-factory"
     },
     {
+<<<<<<< Updated upstream
       "file": "pages/reports/updates/update-2025-08-15T01-58.tsx",
       "route": "/reports/updates/update-2025-08-15T01-58"
     },
@@ -2225,4 +2265,11 @@
     }
   ]
 >>>>>>> 918b675398 (chore(sync): advanced autonomous sync)
+=======
+      "id": "cursor-chat-2025-08-15T02:00:12.448Z",
+      "type": "cursor-chat",
+      "timestamp": "2025-08-15T02:00:12.448Z"
+    }
+  ]
+>>>>>>> Stashed changes
 }
