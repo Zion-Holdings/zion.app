@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T06:55:13.389Z",
-  "pagesScanned": 2277,
+  "generatedAt": "2025-08-15T06:55:28.747Z",
+  "pagesScanned": 2287,
   "items": [
     {
       "route": "/404",
@@ -2774,6 +2774,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-15-065501",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-065526",
       "missing": [
         "og:image"
       ],
@@ -6733,6 +6743,26 @@
       }
     },
     {
+      "route": "/reports/cases/case-2025-08-15-065513",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Automation Autonomous",
+        "description": "Case Study — Automation Autonomous — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-065526",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Automation Autonomous",
+        "description": "Case Study — Automation Autonomous — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/guides/guide-2025-08-15-021207",
       "missing": [
         "og:image"
@@ -10683,6 +10713,26 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-15-065513",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-065526",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-15-0211",
       "missing": [
         "og:image"
@@ -11450,6 +11500,16 @@
       "suggestion": {
         "title": "Guide: Agent Ops",
         "description": "Guide: Agent Ops — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-0655",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook: Edge AI",
+        "description": "Playbook: Edge AI — auto-suggested description"
       }
     },
     {
@@ -16183,6 +16243,26 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-15-065513",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Improving Continuously",
+        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-065526",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Improving Continuously",
+        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-15-021207",
       "missing": [
         "og:image"
@@ -18824,6 +18904,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-15-065501",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-065527",
       "missing": [
         "og:image"
       ],
@@ -21960,6 +22050,16 @@
       "suggestion": {
         "title": "Autonomous Security Hardening Guide — Applied NLP & RAG (2025-08-15 06:54 UTC)",
         "description": "Autonomous Security Hardening Guide — Applied NLP & RAG (2025-08-15 06:54 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0655",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Reference Architecture — AI Service Design (2025-08-15 06:55 UTC)",
+        "description": "Autonomous Reference Architecture — AI Service Design (2025-08-15 06:55 UTC) — auto-suggested description"
       }
     },
     {
