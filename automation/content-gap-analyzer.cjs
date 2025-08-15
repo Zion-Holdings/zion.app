@@ -493,6 +493,7 @@ async function main() {
         const structure = analyzer.analyzeContentStructure();
         const gaps = analyzer.identifyContentGaps(structure);
         console.log(JSON.stringify(gaps, null, 2));
+        process.exit(0);
         break;
       default:
         console.log('Usage: node automation/content-gap-analyzer.cjs [analyze|report|gaps]');
