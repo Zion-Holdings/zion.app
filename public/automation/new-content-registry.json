@@ -1,40 +1,33 @@
 {
-  "generatedAt": "2025-08-15T07:16:50.970Z",
+  "generatedAt": "2025-08-15T07:17:03.672Z",
   "items": [
     {
-      "title": "Reference Architecture — Autonomous Content Mesh",
-      "href": "/reports/blueprints/blueprint-2025-08-15-071650",
+      "title": "Innovation Insight — 2025-08-15 07-17",
+      "href": "/reports/innovations/insight-2025-08-15T07-17",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T07:16:50.854Z",
-      "source": "cloud-blueprint-factory"
+      "createdAt": "2025-08-15T07:17:03.514Z",
+      "source": "cloud-content-factory"
     },
     {
-      "title": "Playbook — Autonomous Delivery",
-      "href": "/reports/playbooks/playbook-2025-08-15-071650",
+      "title": "Autonomous Update — 2025-08-15 07-17",
+      "href": "/reports/updates/update-2025-08-15T07-17",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T07:16:50.725Z",
-      "source": "cloud-playbook-factory"
+      "createdAt": "2025-08-15T07:17:03.514Z",
+      "source": "cloud-content-factory"
     },
     {
-      "title": "Case Study — Automation Autonomous",
-      "href": "/reports/cases/case-2025-08-15-071650",
+      "title": "Innovation Insight — 2025-08-15 07-17",
+      "href": "/reports/innovations/insight-2025-08-15T07-17",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T07:16:50.396Z",
-      "source": "cloud-deep-research-factory"
+      "createdAt": "2025-08-15T07:17:03.514Z",
+      "source": "cloud-content-factory"
     },
     {
-      "title": "Guide — Cloud Improving Implementation",
-      "href": "/reports/guides/guide-2025-08-15-071650",
+      "title": "Autonomous Update — 2025-08-15 07-17",
+      "href": "/reports/updates/update-2025-08-15T07-17",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T07:16:50.396Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Pattern — Cloud Improving Continuously",
-      "href": "/reports/patterns/pattern-2025-08-15-071650",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T07:16:50.396Z",
-      "source": "cloud-deep-research-factory"
+      "createdAt": "2025-08-15T07:17:03.514Z",
+      "source": "cloud-content-factory"
     }
   ]
 }
