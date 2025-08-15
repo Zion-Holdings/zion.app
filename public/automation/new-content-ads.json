@@ -1,10 +1,25 @@
 {
   "items": [
     {
-      "title": "Runbook: Agent Ops",
-      "desc": "Patterns to enhance security.",
-      "href": "/reports/innovations/insight-2025-08-14-1821"
+      "title": "Playbook: FinOps for AI",
+      "desc": "Patterns to improve reliability.",
+      "href": "/reports/innovations/insight-2025-08-15-1104"
+    },
+    {
+      "title": "Reference Architecture — Autonomous Content Mesh"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery"
+    },
+    {
+      "title": "Case Study — Automation Autonomous"
+    },
+    {
+      "title": "Guide — Cloud Improving Implementation"
+    },
+    {
+      "title": "Pattern — Cloud Improving Continuously"
     }
   ],
-  "updatedAt": "2025-08-14T18:21:17.825Z"
+  "updatedAt": "2025-08-15T11:04:35.913Z"
 }
