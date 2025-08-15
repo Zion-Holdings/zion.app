@@ -40,7 +40,7 @@
     "netlify:intelligent": "node automation/netlify-intelligent-build-orchestrator.cjs",
     "netlify:artifacts": "node automation/netlify-build-artifact-optimizer.cjs",
     "netlify:errors": "node automation/netlify-build-error-analyzer.cjs",
-    "netlify:comprehensive": "node automation/netlify-comprehensive-build-automator.cjs",
+    "netlify:comprehensive": "node automation/netlify-build-automator.cjs",
     "readme:generate": "node scripts/generate-readme.js",
     "search:index": "node scripts/generate-search-index.js",
     "content:fix": "node automation/content-quality-fixer.cjs && node automation/content-quality-analyzer.cjs",
