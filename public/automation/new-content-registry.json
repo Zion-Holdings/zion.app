@@ -1,33 +1,26 @@
 {
-  "generatedAt": "2025-08-15T05:40:09.991Z",
+  "generatedAt": "2025-08-15T05:50:02.968Z",
   "items": [
     {
-      "title": "Innovation Insight — 2025-08-15 05-40",
-      "href": "/reports/innovations/insight-2025-08-15T05-40",
+      "title": "Case Study — Automation Autonomous",
+      "href": "/reports/cases/case-2025-08-15-055002",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T05:40:09.920Z",
-      "source": "cloud-content-factory"
+      "createdAt": "2025-08-15T05:50:02.872Z",
+      "source": "cloud-deep-research-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-15 05-40",
-      "href": "/reports/updates/update-2025-08-15T05-40",
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-15-055002",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T05:40:09.920Z",
-      "source": "cloud-content-factory"
+      "createdAt": "2025-08-15T05:50:02.872Z",
+      "source": "cloud-deep-research-factory"
     },
     {
-      "title": "Innovation Insight — 2025-08-15 05-40",
-      "href": "/reports/innovations/insight-2025-08-15T05-40",
+      "title": "Pattern — Cloud Improving Continuously",
+      "href": "/reports/patterns/pattern-2025-08-15-055002",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T05:40:09.920Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-15 05-40",
-      "href": "/reports/updates/update-2025-08-15T05-40",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T05:40:09.920Z",
-      "source": "cloud-content-factory"
+      "createdAt": "2025-08-15T05:50:02.872Z",
+      "source": "cloud-deep-research-factory"
     }
   ]
 }
