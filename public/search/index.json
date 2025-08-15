@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T15:40:04.116Z",
+  "generatedAt": "2025-08-15T15:41:03.002Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -132,6 +132,12 @@
       "file": "pages/reports/whitepapers/index.tsx",
       "title": "Whitepapers | Zion Tech Group",
       "summary": "import Head from 'next/head'; export default function WhitepapersIndex() { return ( Whitepapers | Zion Tech Group Whitepapers Sample Whitepaper This is a placeholder for whitepapers content. Learn more → ); }"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15T15-40",
+      "file": "pages/reports/updates/update-2025-08-15T15-40.tsx",
+      "title": "Autonomous Update — 2025-08-15 15-40",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-15 15-40 Autonomous Update — 2025-08-15 15-40 Signal source: https://ziontechgroup.com/explore Autonomous cloud systems are live and improving the app in real timeAutonomous Cloud "
     },
     {
       "route": "/reports/updates/update-2025-08-15T15-30",
@@ -1172,6 +1178,12 @@
       "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-15 02-12 Autonomous Update — 2025-08-15 02-12 Signal source: https://ziontechgroup.com/main/front Autonomous Front SystemsAI-powered automation orchestrating continuous content gen"
     },
     {
+      "route": "/reports/updates/update-2025-08-15-1540",
+      "file": "pages/reports/updates/update-2025-08-15-1540.tsx",
+      "title": "Autonomous Security Hardening Guide — Vision & Multimodal (2025-08-15 15:40 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Security Hardening Guide — Vision & Multimodal (2025-08-15 15:40 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitl"
+    },
+    {
       "route": "/reports/updates/update-2025-08-15-1530",
       "file": "pages/reports/updates/update-2025-08-15-1530.tsx",
       "title": "Autonomous Blueprint — MLOps & Model Reliability (2025-08-15 15:30 UTC)",
@@ -1266,6 +1278,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1242.tsx",
       "title": "Autonomous Playbook — Edge AI & IoT (2025-08-15 12:42 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Edge AI & IoT (2025-08-15 12:42 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { \"@typ"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1241",
+      "file": "pages/reports/updates/update-2025-08-15-1241.tsx",
+      "title": "Autonomous Update — 2025-08-15 12:41",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 12:41 Autonomous Update — 2025-08-15 12:41 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : My AI skeptic friends are all nuts ·"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1240",
@@ -5120,6 +5138,12 @@
       "summary": "import Head from 'next/head'; export default function TutorialsIndex() { return ( Tutorials | Zion Tech Group Tutorials Sample Tutorial This is a placeholder for tutorials content. Learn more → ); }"
     },
     {
+      "route": "/reports/playbooks/playbook-2025-08-15-154030",
+      "file": "pages/reports/playbooks/playbook-2025-08-15-154030.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-15-153031",
       "file": "pages/reports/playbooks/playbook-2025-08-15-153031.tsx",
       "title": "Playbook — Autonomous Delivery",
@@ -8394,6 +8418,12 @@
       "file": "pages/reports/playbooks/playbook-2025-08-15-021207.tsx",
       "title": "Playbook — Autonomous Delivery",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-154030",
+      "file": "pages/reports/patterns/pattern-2025-08-15-154030.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
     },
     {
       "route": "/reports/patterns/pattern-2025-08-15-153030",
@@ -13472,6 +13502,12 @@
       "summary": "import Head from 'next/head'; export default function InsightsIndex() { return ( Insights | Zion Tech Group Insights Sample Insight This is a placeholder for insights content. Learn more → ); }"
     },
     {
+      "route": "/reports/innovations/insight-2025-08-15T15-40",
+      "file": "pages/reports/innovations/insight-2025-08-15T15-40.tsx",
+      "title": "Innovation Insight — 2025-08-15 15-40",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-15 15-40 Innovation Insight — 2025-08-15 15-40 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-15T15-30",
       "file": "pages/reports/innovations/insight-2025-08-15T15-30.tsx",
       "title": "Innovation Insight — 2025-08-15 15-30",
@@ -14510,6 +14546,12 @@
       "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-15 02-12 Innovation Insight — 2025-08-15 02-12 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
     },
     {
+      "route": "/reports/innovations/insight-2025-08-15-1540",
+      "file": "pages/reports/innovations/insight-2025-08-15-1540.tsx",
+      "title": "Runbook: FinOps for AI",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Runbook: FinOps for AI Runbook: FinOps for AI Patterns to accelerate delivery. Scope: Runbook: FinOps for AI. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: ob"
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-15-1530",
       "file": "pages/reports/innovations/insight-2025-08-15-1530.tsx",
       "title": "Pilot Plan: Edge AI",
@@ -15510,6 +15552,12 @@
       "file": "pages/reports/innovations/insight-2025-08-15-0211.tsx",
       "title": "Blueprint: Edge AI",
       "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Blueprint: Edge AI Blueprint: Edge AI Patterns to accelerate delivery. Scope: Blueprint: Edge AI. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observability,"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-154030",
+      "file": "pages/reports/guides/guide-2025-08-15-154030.tsx",
+      "title": "Guide — Autonomous Update Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Autonomous Update Implementation Guide — Autonomous Update Implementation Source: https://ziontechgroup.com Overview Focus: autonomous, update, 2025, published, agents, open. Steps Clarify objectives "
     },
     {
       "route": "/reports/guides/guide-2025-08-15-153030",
@@ -25626,6 +25674,12 @@
       "file": "pages/reports/cases/case-2025-08-15-021207.tsx",
       "title": "Case Study — Automation Autonomous",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-154030",
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-154030.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-15-153030",
