@@ -16,7 +16,7 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 // Import the AI Service Generator
-const AIServiceGenerator = require('../automation/ai-service-generator.cjs');
+const AIServiceGenerator = require('./../automation/ai-service-generator.cjs');
 
 class AIServiceCLI {
   constructor() {
