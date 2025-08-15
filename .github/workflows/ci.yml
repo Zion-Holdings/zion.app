@@ -18,14 +18,15 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
+  actions: read
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 env:
-      NODE_OPTIONS: "--max-old-space-size=4096"
+  NODE_OPTIONS: "--max-old-space-size=4096"
   NEXT_TELEMETRY_DISABLED: '1'
   CI: 'true'
 
@@ -58,6 +59,10 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Test (non-blocking)
+        run: npm test
+        continue-on-error: true
+
   lint:
     name: Lint
     runs-on: ubuntu-latest
@@ -77,6 +82,10 @@ jobs:
 
       - name: ESLint (non-blocking)
         run: npm run lint
+        continue-on-error: true
+
+      - name: Security scan (non-blocking)
+        run: npm run security:scan
         continue-on-error: true
 
 

@@ -7,40 +7,32 @@ on:
       - completed
 
 permissions:
-  contents: read
-  # Branch protection rules
-  branch_protection_rules:
-    - pattern: "main"
-      required_status_checks:
-        strict: true
-        contexts: []
-      required_pull_request_reviews:
-        required_approving_review_count: 1
-        dismiss_stale_reviews: true
-        require_code_owner_reviews: false
-      enforce_admins: false
-      required_linear_history: false
-      allow_force_pushes: false
-      allow_deletions: false
-      block_creations: false
-      required_conversation_resolution: true
+  contents: write
+  actions: read
+
+concurrency:
+  group: ci-self-heal-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   attempt-fix:
+    name: Attempt Auto-Fix
     continue-on-error: true
     if: ${{ github.event.workflow_run.conclusion == 'failure' }}
     runs-on: ubuntu-latest
-      timeout-minutes: 25
+    timeout-minutes: 25
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: npm
+          cache: 'npm'
 
       - name: Install deps with best-effort
         run: |
@@ -49,8 +41,8 @@ jobs:
       - name: Run automated fixes
         run: |
           npm run lint -- --fix || true
+          npm run fix:all || true
           node scripts/generate-sitemap.js || true
-          node scripts/seo-audit.js || true
 
       - name: Rebuild and type-check
         continue-on-error: true
