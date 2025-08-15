@@ -37,8 +37,8 @@ class ContentGapAnalyzer {
   log(message, level = 'INFO') {
     const timestamp = new Date().toISOString();
     const logEntry = `[${timestamp}] [${level}] ${message}`;
-    console.log(logEntry);
     
+    // Only log to file, not to console when running gaps command
     const logFile = path.join(this.logsDir, 'content-gap-analyzer.log');
     fs.appendFileSync(logFile, logEntry + '\n');
   }

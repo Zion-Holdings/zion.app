@@ -81,7 +81,10 @@ class AutonomousContentGenerator {
       });
       
       if (result.status === 0 && result.stdout) {
-        return JSON.parse(result.stdout);
+        // Clean the output to remove any extra characters
+        const cleanOutput = result.stdout.trim();
+        this.log(`Raw output: ${cleanOutput}`);
+        return JSON.parse(cleanOutput);
       } else {
         this.log('Failed to analyze content gaps', 'ERROR');
         return [];
