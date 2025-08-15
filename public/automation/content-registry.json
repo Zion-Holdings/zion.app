@@ -53,6 +53,10 @@
       "route": "/automation"
     },
     {
+      "file": "pages/reports/playbooks/playbook-2025-08-15-055155.tsx",
+      "route": "/reports/playbooks/playbook-2025-08-15-055155"
+    },
+    {
       "file": "pages/reports/playbooks/playbook-2025-08-15-055140.tsx",
       "route": "/reports/playbooks/playbook-2025-08-15-055140"
     },
@@ -175,6 +179,10 @@
     {
       "file": "pages/reports/playbooks/playbook-2025-08-15-021207.tsx",
       "route": "/reports/playbooks/playbook-2025-08-15-021207"
+    },
+    {
+      "file": "pages/reports/patterns/pattern-2025-08-15-055155.tsx",
+      "route": "/reports/patterns/pattern-2025-08-15-055155"
     },
     {
       "file": "pages/reports/patterns/pattern-2025-08-15-055141.tsx",
@@ -479,6 +487,10 @@
     {
       "file": "pages/reports/updates/update-2025-08-15-0300.tsx",
       "route": "/reports/updates/update-2025-08-15-0300"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-15-0252.tsx",
+      "route": "/reports/updates/update-2025-08-15-0252"
     },
     {
       "file": "pages/reports/updates/update-2025-08-15-0251.tsx",
@@ -1421,6 +1433,10 @@
       "route": "/reports/innovations/insight-2025-08-15-0211"
     },
     {
+      "file": "pages/reports/guides/guide-2025-08-15-055155.tsx",
+      "route": "/reports/guides/guide-2025-08-15-055155"
+    },
+    {
       "file": "pages/reports/guides/guide-2025-08-15-055141.tsx",
       "route": "/reports/guides/guide-2025-08-15-055141"
     },
@@ -1573,6 +1589,10 @@
       "route": "/reports/guides/guide-2025-08-15-021207"
     },
     {
+      "file": "pages/reports/cases/case-2025-08-15-055155.tsx",
+      "route": "/reports/cases/case-2025-08-15-055155"
+    },
+    {
       "file": "pages/reports/cases/case-2025-08-15-055141.tsx",
       "route": "/reports/cases/case-2025-08-15-055141"
     },
@@ -1723,6 +1743,10 @@
     {
       "file": "pages/reports/cases/case-2025-08-15-021207.tsx",
       "route": "/reports/cases/case-2025-08-15-021207"
+    },
+    {
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-055155.tsx",
+      "route": "/reports/blueprints/blueprint-2025-08-15-055155"
     },
     {
       "file": "pages/reports/blueprints/blueprint-2025-08-15-055140.tsx",
@@ -1883,5 +1907,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-15T05:51:52.461Z"
+  "generatedAt": "2025-08-15T05:52:00.434Z"
 }
