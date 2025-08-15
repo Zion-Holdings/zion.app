@@ -1,6 +1,13 @@
 {
-  "generatedAt": "2025-08-15T07:48:58.073Z",
+  "generatedAt": "2025-08-15T07:50:48.730Z",
   "items": [
+    {
+      "title": "Playbook: MLOps",
+      "subtitle": "Patterns to accelerate delivery.",
+      "path": "/reports/innovations/insight-2025-08-15-0750",
+      "createdAt": "2025-08-15T07:50:56.762Z",
+      "kind": "insight"
+    },
     {
       "title": "Case Study — Automation Autonomous",
       "href": "/reports/cases/case-2025-08-15-074857",
