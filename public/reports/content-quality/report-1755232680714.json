@@ -1,17 +1,6 @@
 {
-<<<<<<< HEAD
-  "generatedAt": "2025-08-15T04:41:00.262Z",
+  "generatedAt": "2025-08-15T04:38:00.713Z",
   "files": [
-    "update-2025-08-15-0441.tsx",
-=======
-  "generatedAt": "2025-08-15T04:41:00.714Z",
-  "files": [
-    "update-2025-08-15-0141.tsx",
->>>>>>> origin/main
-    "update-2025-08-15T04-40.tsx",
-    "update-2025-08-15-0440.tsx",
-    "update-2025-08-15-0140.tsx",
-    "update-2025-08-15-0139.tsx",
     "update-2025-08-15-0138.tsx",
     "update-2025-08-15-0137.tsx",
     "update-2025-08-15-0136.tsx",
@@ -58,54 +47,6 @@
     "update-2025-08-15-0101.tsx",
     "update-2025-08-15-0100.tsx",
     "update-2025-08-15T04-00.tsx",
-<<<<<<< HEAD
-    "update-2025-08-14-2337.tsx",
-    "update-2025-08-14-2338.tsx",
-    "update-2025-08-14-2339.tsx",
-    "update-2025-08-14-2340.tsx",
-    "update-2025-08-14-2341.tsx",
-    "update-2025-08-14-2342.tsx",
-    "update-2025-08-14-2343.tsx",
-    "update-2025-08-14-2344.tsx",
-    "update-2025-08-14-2345.tsx",
-    "update-2025-08-14-2346.tsx",
-    "update-2025-08-14-2347.tsx",
-    "update-2025-08-14-2348.tsx",
-    "update-2025-08-14-2349.tsx",
-    "update-2025-08-14-2350.tsx",
-    "update-2025-08-14-2351.tsx",
-    "update-2025-08-14-2352.tsx",
-    "update-2025-08-14-2353.tsx",
-    "update-2025-08-14-2354.tsx",
-    "update-2025-08-14-2355.tsx",
-    "update-2025-08-14-2356.tsx",
-    "update-2025-08-14-2357.tsx",
-    "update-2025-08-14-2358.tsx",
-    "update-2025-08-14-2359.tsx",
-    "update-2025-08-15-0000.tsx",
-    "update-2025-08-15-0001.tsx",
-    "update-2025-08-15-0002.tsx",
-    "update-2025-08-15-0003.tsx",
-    "update-2025-08-15-0004.tsx",
-    "update-2025-08-15-0005.tsx",
-    "update-2025-08-15-0006.tsx",
-    "update-2025-08-15-0007.tsx",
-    "update-2025-08-15-0008.tsx",
-    "update-2025-08-15-0009.tsx",
-    "update-2025-08-15-0010.tsx",
-    "update-2025-08-15-0011.tsx",
-    "update-2025-08-15-0012.tsx",
-    "update-2025-08-15-0013.tsx",
-    "update-2025-08-15-0014.tsx",
-    "update-2025-08-15-0015.tsx",
-    "update-2025-08-15-0016.tsx"
-  ],
-  "metrics": {
-    "diversityScore": 100,
-    "avgLen": 2142,
-    "duplicateCount": 0,
-    "seoScore": 4
-=======
     "update-2025-08-15-0400.tsx",
     "update-2025-08-15-0059.tsx",
     "update-2025-08-15-0058.tsx",
@@ -154,14 +95,18 @@
     "update-2025-08-14-2348.tsx",
     "update-2025-08-14-2347.tsx",
     "update-2025-08-14-2346.tsx",
-    "update-2025-08-14-2345.tsx"
+    "update-2025-08-14-2345.tsx",
+    "update-2025-08-14-2344.tsx",
+    "update-2025-08-14-2343.tsx",
+    "update-2025-08-14-2342.tsx",
+    "update-2025-08-14-2341.tsx",
+    "update-2025-08-14-2340.tsx"
   ],
   "metrics": {
     "diversityScore": 100,
-    "avgLen": 2112,
+    "avgLen": 2122,
     "duplicateCount": 0,
-    "seoScore": 8
->>>>>>> origin/main
+    "seoScore": 7
   },
   "guidance": [
     "Aim for varied intros, highlights, and CTAs across updates.",

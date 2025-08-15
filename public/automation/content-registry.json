@@ -53,8 +53,13 @@
       "route": "/automation"
     },
     {
+<<<<<<< HEAD
       "file": "pages/reports/playbooks/playbook-2025-08-15-044004.tsx",
       "route": "/reports/playbooks/playbook-2025-08-15-044004"
+=======
+      "file": "pages/reports/playbooks/playbook-2025-08-15-044013.tsx",
+      "route": "/reports/playbooks/playbook-2025-08-15-044013"
+>>>>>>> origin/main
     },
     {
       "file": "pages/reports/playbooks/playbook-2025-08-15-043013.tsx",
@@ -197,14 +202,18 @@
       "route": "/reports/updates/update-2025-08-15T02-12"
     },
     {
+<<<<<<< HEAD
       "file": "pages/reports/updates/update-2025-08-15-0441.tsx",
       "route": "/reports/updates/update-2025-08-15-0441"
     },
     {
+=======
+>>>>>>> origin/main
       "file": "pages/reports/updates/update-2025-08-15-0440.tsx",
       "route": "/reports/updates/update-2025-08-15-0440"
     },
     {
+<<<<<<< HEAD
       "file": "pages/reports/updates/update-2025-08-15-0439.tsx",
       "route": "/reports/updates/update-2025-08-15-0439"
     },
@@ -213,6 +222,8 @@
       "route": "/reports/updates/update-2025-08-15-0438"
     },
     {
+=======
+>>>>>>> origin/main
       "file": "pages/reports/updates/update-2025-08-15-0430.tsx",
       "route": "/reports/updates/update-2025-08-15-0430"
     },
@@ -273,6 +284,25 @@
       "route": "/reports/updates/update-2025-08-15-0211"
     },
     {
+<<<<<<< HEAD
+=======
+      "file": "pages/reports/updates/update-2025-08-15-0141.tsx",
+      "route": "/reports/updates/update-2025-08-15-0141"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-15-0140.tsx",
+      "route": "/reports/updates/update-2025-08-15-0140"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-15-0139.tsx",
+      "route": "/reports/updates/update-2025-08-15-0139"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-15-0138.tsx",
+      "route": "/reports/updates/update-2025-08-15-0138"
+    },
+    {
+>>>>>>> origin/main
       "file": "pages/reports/updates/update-2025-08-15-0137.tsx",
       "route": "/reports/updates/update-2025-08-15-0137"
     },
@@ -729,8 +759,13 @@
       "route": "/reports/updates/update-2025-08-14-2311"
     },
     {
+<<<<<<< HEAD
       "file": "pages/reports/patterns/pattern-2025-08-15-044004.tsx",
       "route": "/reports/patterns/pattern-2025-08-15-044004"
+=======
+      "file": "pages/reports/patterns/pattern-2025-08-15-044013.tsx",
+      "route": "/reports/patterns/pattern-2025-08-15-044013"
+>>>>>>> origin/main
     },
     {
       "file": "pages/reports/patterns/pattern-2025-08-15-043013.tsx",
@@ -937,8 +972,13 @@
       "route": "/reports/innovations/insight-2025-08-15-0211"
     },
     {
+<<<<<<< HEAD
       "file": "pages/reports/guides/guide-2025-08-15-044004.tsx",
       "route": "/reports/guides/guide-2025-08-15-044004"
+=======
+      "file": "pages/reports/guides/guide-2025-08-15-044013.tsx",
+      "route": "/reports/guides/guide-2025-08-15-044013"
+>>>>>>> origin/main
     },
     {
       "file": "pages/reports/guides/guide-2025-08-15-043013.tsx",
@@ -1013,8 +1053,13 @@
       "route": "/reports/guides/guide-2025-08-15-021207"
     },
     {
+<<<<<<< HEAD
       "file": "pages/reports/cases/case-2025-08-15-044004.tsx",
       "route": "/reports/cases/case-2025-08-15-044004"
+=======
+      "file": "pages/reports/cases/case-2025-08-15-044013.tsx",
+      "route": "/reports/cases/case-2025-08-15-044013"
+>>>>>>> origin/main
     },
     {
       "file": "pages/reports/cases/case-2025-08-15-043013.tsx",
@@ -1089,8 +1134,13 @@
       "route": "/reports/cases/case-2025-08-15-021207"
     },
     {
+<<<<<<< HEAD
       "file": "pages/reports/blueprints/blueprint-2025-08-15-044004.tsx",
       "route": "/reports/blueprints/blueprint-2025-08-15-044004"
+=======
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-044013.tsx",
+      "route": "/reports/blueprints/blueprint-2025-08-15-044013"
+>>>>>>> origin/main
     },
     {
       "file": "pages/reports/blueprints/blueprint-2025-08-15-043013.tsx",
@@ -1199,5 +1249,9 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
+<<<<<<< HEAD
   "generatedAt": "2025-08-15T04:41:00.176Z"
+=======
+  "generatedAt": "2025-08-15T04:41:00.437Z"
+>>>>>>> origin/main
 }

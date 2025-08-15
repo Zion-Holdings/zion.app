@@ -4,17 +4,17 @@ export default function InsightPage() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <Head>
-        <title>Runbook: DevSecOps AI</title>
-        <meta name="description" content="Patterns to enhance security." />
-        <meta property="og:title" content="Runbook: DevSecOps AI" />
-        <meta property="og:description" content="Patterns to enhance security." />
+        <title>Guide: MLOps</title>
+        <meta name="description" content="Patterns to increase accuracy." />
+        <meta property="og:title" content="Guide: MLOps" />
+        <meta property="og:description" content="Patterns to increase accuracy." />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
-        <h1 className="text-3xl font-extrabold">Runbook: DevSecOps AI</h1>
-        <p className="text-white/70">Patterns to enhance security.</p>
+        <h1 className="text-3xl font-extrabold">Guide: MLOps</h1>
+        <p className="text-white/70">Patterns to increase accuracy.</p>
         <ul className="mt-6 list-disc pl-6 space-y-2">
-          <li>Scope: Runbook: DevSecOps AI.</li>
+          <li>Scope: Guide: MLOps.</li>
           <li>Signals: AI Services.</li>
           <li>Architecture: ingestion → retrieval → reasoning → evaluation.</li>
           <li>Ops: observability, rollback, SLOs, security.</li>
