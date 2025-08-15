@@ -601,10 +601,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 30,
-      "concurrentJobs": 3
+      "timeout": 20,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 45
+    "estimatedDuration": 20
   },
   "emergency-fix.yml": {
     "name": "emergency-fix.yml",

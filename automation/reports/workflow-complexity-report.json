@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-15T23:15:40.223Z",
+  "timestamp": "2025-08-15T23:16:36.218Z",
   "summary": {
     "totalWorkflows": 148,
     "complexityDistribution": {
@@ -629,10 +629,10 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/deploy.yml"
     },
     "docs-intelligence.yml": {
-      "complexityScore": 5,
+      "complexityScore": 15,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 37,
+        "totalLines": 52,
         "jobCount": 0,
         "stepCount": 6,
         "conditionalCount": 0,
