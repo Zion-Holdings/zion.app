@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T01:56:24.992Z",
-  "pagesScanned": 473,
+  "generatedAt": "2025-08-15T01:58:00.366Z",
+  "pagesScanned": 477,
   "items": [
     {
       "route": "/404",
@@ -2705,6 +2705,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-15-0156",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pilot Plan: FinOps for AI",
+        "description": "Pilot Plan: FinOps for AI — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-15T01-53",
       "missing": [
         "og:image"
@@ -4555,6 +4565,29 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-14-2257",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 22:57",
+        "description": "Autonomous Update — 2025-08-14 22:57 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-2258",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 22:58",
+        "description": "Autonomous Update — 2025-08-14 22:58 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-14T21-30",
       "missing": [
         "og:image"
@@ -4682,6 +4715,16 @@
       "suggestion": {
         "title": "Autonomous Blueprint — MLOps & Model Reliability (2025-08-15 01:54 UTC)",
         "description": "Autonomous Blueprint — MLOps & Model Reliability (2025-08-15 01:54 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0156",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Reference Architecture — AI Service Design (2025-08-15 01:56 UTC)",
+        "description": "Autonomous Reference Architecture — AI Service Design (2025-08-15 01:56 UTC) — auto-suggested description"
       }
     },
     {
