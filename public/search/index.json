@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T06:05:55.723Z",
+  "generatedAt": "2025-08-15T06:06:01.870Z",
   "entries": [
     {
       "route": "/site-health",
@@ -29,7 +29,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "index",
-      "summary": "{/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 15T06: 05 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 15: 0605 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 1"
+      "summary": "{/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 15: 0306 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 15: 0606 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 15"
     },
     {
       "route": "/contact",
@@ -278,6 +278,12 @@
       "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-15 02-12 Autonomous Update — 2025-08-15 02-12 Signal source: https://ziontechgroup.com/main/front Autonomous Front SystemsAI-powered automation orchestrating continuous content gen"
     },
     {
+      "route": "/reports/updates/update-2025-08-15-0606",
+      "file": "pages/reports/updates/update-2025-08-15-0606.tsx",
+      "title": "Autonomous Checklist — Agentic Workflows (2025-08-15 06:06 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Checklist — Agentic Workflows (2025-08-15 06:06 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { "
+    },
+    {
       "route": "/reports/updates/update-2025-08-15-0605",
       "file": "pages/reports/updates/update-2025-08-15-0605.tsx",
       "title": "Autonomous Blueprint — Applied NLP & RAG (2025-08-15 06:05 UTC)",
@@ -414,6 +420,12 @@
       "file": "pages/reports/updates/update-2025-08-15-0310.tsx",
       "title": "Autonomous Playbook — Applied NLP & RAG (2025-08-15 03:10 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Applied NLP & RAG (2025-08-15 03:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { \""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0306",
+      "file": "pages/reports/updates/update-2025-08-15-0306.tsx",
+      "title": "Autonomous Update — 2025-08-15 03:06",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 03:06 Autonomous Update — 2025-08-15 03:06 Signal over noise—your automated update is here. Today's Highlight Hacker News : Google Duplex: An AI System for Accomplishing R"
     },
     {
       "route": "/reports/updates/update-2025-08-15-0305",
@@ -3126,6 +3138,12 @@
       "file": "pages/reports/innovations/insight-2025-08-15T02-12.tsx",
       "title": "Innovation Insight — 2025-08-15 02-12",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-15 02-12 Innovation Insight — 2025-08-15 02-12 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-0606",
+      "file": "pages/reports/innovations/insight-2025-08-15-0606.tsx",
+      "title": "Guide: LLM Apps",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Guide: LLM Apps Guide: LLM Apps Patterns to accelerate delivery. Scope: Guide: LLM Apps. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observability, rollback"
     },
     {
       "route": "/reports/innovations/insight-2025-08-15-0605",

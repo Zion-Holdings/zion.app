@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T06:05:54.506Z",
-  "pagesScanned": 902,
+  "generatedAt": "2025-08-15T06:06:00.515Z",
+  "pagesScanned": 904,
   "items": [
     {
       "route": "/404",
@@ -131,10 +131,7 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -3913,6 +3910,16 @@
       "suggestion": {
         "title": "Playbook: LLM Apps",
         "description": "Playbook: LLM Apps — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-0606",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide: LLM Apps",
+        "description": "Guide: LLM Apps — auto-suggested description"
       }
     },
     {
@@ -8663,6 +8670,16 @@
       "suggestion": {
         "title": "Autonomous Blueprint — Applied NLP & RAG (2025-08-15 06:05 UTC)",
         "description": "Autonomous Blueprint — Applied NLP & RAG (2025-08-15 06:05 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0606",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Checklist — Agentic Workflows (2025-08-15 06:06 UTC)",
+        "description": "Autonomous Checklist — Agentic Workflows (2025-08-15 06:06 UTC) — auto-suggested description"
       }
     },
     {
