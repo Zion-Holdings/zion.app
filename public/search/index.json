@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T04:23:00.699Z",
+  "generatedAt": "2025-08-15T04:23:14.648Z",
   "entries": [
     {
       "route": "/site-health",
@@ -42,6 +42,12 @@
       "file": "pages/automation-health.tsx",
       "title": "Automation Health Dashboard | Zion Tech Group",
       "summary": "import React, { useState } from 'react'; import type { GetStaticProps } from 'next'; import Head from 'next/head'; import FuturisticLayout from '../components/FuturisticLayout'; interface AutomationHealth { version: string; lastUpdated: string; functions: Record ; workflows: Reco"
+    },
+    {
+      "route": "/advanced-dashboard",
+      "file": "pages/advanced-dashboard.tsx",
+      "title": "Advanced AI Dashboard - AI Service Factory",
+      "summary": "import React, { useState, useEffect } from 'react'; import Head from 'next/head'; import Link from 'next/link'; interface SystemStatus { name: string; status: 'online' | 'offline' | 'error' | 'starting'; uptime: string; memory: string; cpu: string; lastActivity: string; } interfa"
     },
     {
       "route": "/_document",
