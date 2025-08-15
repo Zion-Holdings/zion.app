@@ -2,6 +2,13 @@
   "generatedAt": "2025-08-15T06:35:52.670Z",
   "items": [
     {
+      "title": "Runbook: Edge AI",
+      "subtitle": "Patterns to enhance security.",
+      "path": "/reports/innovations/insight-2025-08-15-0636",
+      "createdAt": "2025-08-15T06:36:01.929Z",
+      "kind": "insight"
+    },
+    {
       "title": "Reference Architecture — Autonomous Content Mesh",
       "href": "/reports/blueprints/blueprint-2025-08-15-063552",
       "desc": "New autonomous content",
