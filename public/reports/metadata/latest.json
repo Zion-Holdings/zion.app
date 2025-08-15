@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T01:53:37.778Z",
-  "pagesScanned": 461,
+  "generatedAt": "2025-08-15T01:54:27.842Z",
+  "pagesScanned": 462,
   "items": [
     {
       "route": "/404",
@@ -113,11 +113,15 @@
     {
       "route": "/main/front/",
       "missing": [
-        "og:image"
+        "description",
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
-        "title": "Front Systems Hub",
-        "description": "Front Systems Hub — auto-suggested description"
+        "title": "Autonomous Front Systems",
+        "description": "Autonomous Front Systems — auto-suggested description"
       }
     },
     {
@@ -4423,10 +4427,7 @@
     {
       "route": "/reports/updates/update-2025-08-14-2251",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 22:51",
@@ -4436,10 +4437,7 @@
     {
       "route": "/reports/updates/update-2025-08-14-2252",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 22:52",
@@ -4454,6 +4452,19 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-14 22:53",
         "description": "Autonomous Update — 2025-08-14 22:53 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-2254",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-14 22:54",
+        "description": "Autonomous Update — 2025-08-14 22:54 — auto-suggested description"
       }
     },
     {
