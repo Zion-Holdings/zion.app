@@ -122,6 +122,10 @@ class CursorAgentConversationGenerator {
     // Create agent interaction prompts
     const prompts = await this.generateAgentPrompts(conversationType, participants, conversation);
     
+    // Save tasks and prompts
+    await this.saveTasks(tasks);
+    await this.savePrompts(prompts);
+    
     console.log(`✅ Generated conversation: ${conversationId}`);
     console.log(`📋 Created ${tasks.length} related tasks`);
     console.log(`🎯 Generated ${prompts.length} agent prompts`);
