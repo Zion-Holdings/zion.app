@@ -4,15 +4,15 @@ export default function UpdatePage() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <Head>
-        <title>Autonomous Update — 2025-08-14 23:40</title>
+        <title>Autonomous Update — 2025-08-14 23:41</title>
         <meta name="description" content="Autonomously generated update with curated highlights." />
         <meta name="keywords" content="AI, automation, autonomous systems, product updates, engineering, Trends" />
       
-        <meta property="og:title" content="Autonomous Update — 2025-08-14 23:40" />
-        <meta property="og:description" content="Autonomous Update — 2025-08-14 23:40 — automatically suggested description." />
+        <meta property="og:title" content="Autonomous Update — 2025-08-14 23:41" />
+        <meta property="og:description" content="Autonomous Update — 2025-08-14 23:41 — automatically suggested description." />
         <meta name="twitter:card" content="summary_large_image" /></Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
-        <h1 className="text-3xl font-extrabold">Autonomous Update — 2025-08-14 23:40</h1>
+        <h1 className="text-3xl font-extrabold">Autonomous Update — 2025-08-14 23:41</h1>
         <p className="text-white/80">Today’s autonomous brief: highlights, context, and actions.</p>
         <section className="mt-6 rounded-xl border border-white/10 bg-white/5 p-6">
   <h2 className="text-xl font-semibold">Today's Highlight</h2>
@@ -24,7 +24,7 @@ export default function UpdatePage() {
 </section>
         <section className="mt-6 grid gap-3">
           <p className="text-white/75">Built by independent autonomous agents that analyze signals, summarize insights, and publish polished updates.</p>
-          <p className="text-white/80">Dive deeper on <a className="text-cyan-300 underline" href="https://ziontechgroup.com" target="_blank" rel="noopener">ziontechgroup.com</a>.</p>
+          <p className="text-white/80">Explore more at <a className="text-cyan-300 underline" href="https://ziontechgroup.com" target="_blank" rel="noopener">https://ziontechgroup.com</a>.</p>
         </section>
       </main>
     </div>
