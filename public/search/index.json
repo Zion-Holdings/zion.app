@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T02:52:01.316Z",
+  "generatedAt": "2025-08-15T02:53:01.301Z",
   "entries": [
     {
       "route": "/site-health",
@@ -29,7 +29,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "index",
-      "summary": "{/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 14: 2352 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 14: 2351 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 14"
+      "summary": "{/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 14: 2353 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 14: 2352 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 14"
     },
     {
       "route": "/contact",
@@ -186,6 +186,12 @@
       "file": "pages/reports/updates/update-2025-08-15-0211.tsx",
       "title": "Autonomous Security Hardening Guide — Applied NLP & RAG (2025-08-15 02:11 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Security Hardening Guide — Applied NLP & RAG (2025-08-15 02:11 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-2353",
+      "file": "pages/reports/updates/update-2025-08-14-2353.tsx",
+      "title": "Autonomous Update — 2025-08-14 23:53",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-14 23:53 Autonomous Update — 2025-08-14 23:53 Signal over noise—your automated update is here. Today's Highlight Hacker News : My AI skeptic friends are all nuts · 2356 pts W"
     },
     {
       "route": "/reports/updates/update-2025-08-14-2352",
