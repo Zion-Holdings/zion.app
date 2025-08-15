@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T21:04:03.227Z",
+  "generatedAt": "2025-08-15T21:05:03.223Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1476,6 +1476,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1810.tsx",
       "title": "Autonomous Validation & QA Plan — Edge AI & IoT (2025-08-15 18:10 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Validation & QA Plan — Edge AI & IoT (2025-08-15 18:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"auth"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1805",
+      "file": "pages/reports/updates/update-2025-08-15-1805.tsx",
+      "title": "Autonomous Update — 2025-08-15 18:05",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 18:05 Autonomous Update — 2025-08-15 18:05 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : My AI skeptic friends"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1804",
