@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T19:31:03.108Z",
+  "generatedAt": "2025-08-15T19:32:02.967Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1422,6 +1422,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1640.tsx",
       "title": "Autonomous Validation & QA Plan — AI Service Design (2025-08-15 16:40 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Validation & QA Plan — AI Service Design (2025-08-15 16:40 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1632",
+      "file": "pages/reports/updates/update-2025-08-15-1632.tsx",
+      "title": "Autonomous Update — 2025-08-15 16:32",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 16:32 Autonomous Update — 2025-08-15 16:32 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : My AI skeptic friends are all nuts ·"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1631",
