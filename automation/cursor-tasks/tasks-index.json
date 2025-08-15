@@ -4018,5 +4018,35 @@
     "status": "pending",
     "dueDate": "2025-08-18T16:43:25.151Z",
     "filePath": "tasks-1755276205151.json"
+  },
+  {
+    "id": "task-1755276364858-1",
+    "title": "Technical Specification",
+    "type": "deployment-planning",
+    "priority": "high",
+    "assignedTo": "devops-engineer",
+    "status": "pending",
+    "dueDate": "2025-08-18T16:46:04.858Z",
+    "filePath": "tasks-1755276364858.json"
+  },
+  {
+    "id": "task-1755276364858-2",
+    "title": "User Experience Design",
+    "type": "deployment-planning",
+    "priority": "high",
+    "assignedTo": "backend-developer",
+    "status": "pending",
+    "dueDate": "2025-08-19T16:46:04.858Z",
+    "filePath": "tasks-1755276364858.json"
+  },
+  {
+    "id": "task-1755276364858-3",
+    "title": "Implementation Plan",
+    "type": "deployment-planning",
+    "priority": "medium",
+    "assignedTo": "security-expert",
+    "status": "pending",
+    "dueDate": "2025-08-17T16:46:04.858Z",
+    "filePath": "tasks-1755276364858.json"
   }
 ]
