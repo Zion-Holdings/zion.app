@@ -85,6 +85,10 @@
       "route": "/explore"
     },
     {
+      "file": "pages/automation/index.tsx",
+      "route": "/automation"
+    },
+    {
       "file": "pages/components/pagination-demo.tsx",
       "route": "/components/pagination-demo"
     },
@@ -95,10 +99,6 @@
     {
       "file": "pages/components/form-demo.tsx",
       "route": "/components/form-demo"
-    },
-    {
-      "file": "pages/automation/index.tsx",
-      "route": "/automation"
     },
     {
       "file": "pages/reports/whitepapers/index.tsx",
@@ -8183,6 +8183,10 @@
     {
       "file": "pages/reports/updates/update-2025-08-15-1550.tsx",
       "route": "/reports/updates/update-2025-08-15-1550"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-15-1542.tsx",
+      "route": "/reports/updates/update-2025-08-15-1542"
     },
     {
       "file": "pages/reports/updates/update-2025-08-15-1541.tsx",
@@ -20583,5 +20587,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-15T18:41:00.786Z"
+  "generatedAt": "2025-08-15T18:42:00.834Z"
 }
