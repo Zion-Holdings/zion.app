@@ -1273,18 +1273,22 @@
   "test.yml": {
     "name": "test.yml",
     "triggers": [
-      "push",
       "pull_request",
-      "schedule",
+      "push",
       "workflow_dispatch {}"
     ],
-    "needs": [],
+    "needs": [
+      "unit-tests",
+      "unit-tests",
+      "unit-tests",
+      "unit-tests"
+    ],
     "outputs": [],
     "priority": "medium",
     "resourceRequirements": {
       "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
+      "memory": "medium",
+      "timeout": 25,
       "concurrentJobs": 5
     },
     "estimatedDuration": 30

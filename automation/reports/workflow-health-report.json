@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-15T23:34:42.838Z",
+  "timestamp": "2025-08-15T23:35:32.879Z",
   "summary": {
     "totalWorkflows": 149,
     "activeWorkflows": 74,
@@ -1467,8 +1467,8 @@
       "name": "codeql.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/codeql.yml",
-      "size": 850,
-      "lines": 45,
+      "size": 975,
+      "lines": 48,
       "triggers": [
         "push",
         "pull_request",
@@ -1483,6 +1483,7 @@
         "strategy",
         "matrix",
         "steps",
+        "with",
         "with"
       ],
       "timeouts": [
@@ -3454,18 +3455,16 @@
       "name": "test.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/test.yml",
-      "size": 3248,
-      "lines": 152,
+      "size": 3682,
+      "lines": 169,
       "triggers": [
-        "push",
         "pull_request",
-        "schedule",
+        "push",
         "workflow_dispatch {}"
       ],
       "jobs": [
-        "push",
         "pull_request",
-        "schedule",
+        "push",
         "jobs",
         "unit-tests",
         "steps",
@@ -3475,17 +3474,22 @@
         "steps",
         "with",
         "with",
+        "e2e-tests",
+        "steps",
+        "with",
+        "with",
         "smoke-tests",
         "steps",
         "with",
-        "performance-tests",
+        "build-tests",
         "steps",
         "with",
         "with"
       ],
       "timeouts": [
-        20,
         25,
+        15,
+        30,
         15,
         30
       ],
@@ -3499,10 +3503,9 @@
           "value": "read"
         }
       ],
-      "concurrency": "test-suite-${{ github.ref }}",
+      "concurrency": null,
       "issues": [],
       "recommendations": [
-        "Add workflow_dispatch trigger for manual testing",
         "Consider splitting into smaller workflows for better maintainability"
       ]
     },

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-15T23:34:31.500Z",
+  "timestamp": "2025-08-15T23:35:23.038Z",
   "critical": [
     {
       "name": "ci.yml",
@@ -1434,17 +1434,21 @@
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 30,
-      "concurrentJobs": 19,
+      "concurrentJobs": 22,
       "runnerRequirements": {
         "runner": "ubuntu-latest",
         "size": "standard",
         "special": []
       },
-      "dependencies": [],
+      "dependencies": [
+        "unit-tests",
+        "unit-tests",
+        "unit-tests",
+        "unit-tests"
+      ],
       "triggers": [
-        "push",
         "pull_request",
-        "schedule",
+        "push",
         "workflow_dispatch {}"
       ],
       "resourceScore": 100
