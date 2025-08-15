@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T21:03:00.820Z",
-  "pagesScanned": 5381,
+  "generatedAt": "2025-08-15T21:09:00.879Z",
+  "pagesScanned": 5387,
   "items": [
     {
       "route": "/404",
@@ -51527,14 +51527,74 @@
     {
       "route": "/reports/updates/update-2025-08-15-1803",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 18:03",
+        "description": "Autonomous Update — 2025-08-15 18:03 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1804",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 18:04",
+        "description": "Autonomous Update — 2025-08-15 18:04 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1805",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 18:05",
+        "description": "Autonomous Update — 2025-08-15 18:05 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1806",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 18:06",
+        "description": "Autonomous Update — 2025-08-15 18:06 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1807",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 18:07",
+        "description": "Autonomous Update — 2025-08-15 18:07 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1808",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 18:08",
+        "description": "Autonomous Update — 2025-08-15 18:08 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1809",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-15 18:03",
-        "description": "Autonomous Update — 2025-08-15 18:03 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-15 18:09",
+        "description": "Autonomous Update — 2025-08-15 18:09 — auto-suggested description"
       }
     },
     {
