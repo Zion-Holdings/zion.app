@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-15T23:35:32.879Z",
+  "timestamp": "2025-08-15T23:36:55.489Z",
   "summary": {
     "totalWorkflows": 149,
     "activeWorkflows": 74,
@@ -1467,12 +1467,13 @@
       "name": "codeql.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/codeql.yml",
-      "size": 975,
-      "lines": 48,
+      "size": 931,
+      "lines": 45,
       "triggers": [
         "push",
         "pull_request",
-        "schedule"
+        "schedule",
+        "workflow_dispatch {}"
       ],
       "jobs": [
         "push",
@@ -1491,16 +1492,16 @@
       ],
       "permissions": [
         {
-          "permission": "actions",
-          "value": "read"
-        },
-        {
           "permission": "contents",
           "value": "read"
         },
         {
           "permission": "security-events",
           "value": "write"
+        },
+        {
+          "permission": "actions",
+          "value": "read"
         }
       ],
       "concurrency": null,

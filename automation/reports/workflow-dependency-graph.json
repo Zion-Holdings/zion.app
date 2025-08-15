@@ -416,7 +416,8 @@
     "triggers": [
       "push",
       "pull_request",
-      "schedule"
+      "schedule",
+      "workflow_dispatch {}"
     ],
     "needs": [],
     "outputs": [],

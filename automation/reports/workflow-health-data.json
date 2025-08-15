@@ -1243,12 +1243,13 @@
     "name": "codeql.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/codeql.yml",
-    "size": 975,
-    "lines": 48,
+    "size": 931,
+    "lines": 45,
     "triggers": [
       "push",
       "pull_request",
-      "schedule"
+      "schedule",
+      "workflow_dispatch {}"
     ],
     "jobs": [
       "push",
@@ -1267,16 +1268,16 @@
     ],
     "permissions": [
       {
-        "permission": "actions",
-        "value": "read"
-      },
-      {
         "permission": "contents",
         "value": "read"
       },
       {
         "permission": "security-events",
         "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
       }
     ],
     "concurrency": null,
