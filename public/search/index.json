@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T08:04:32.977Z",
+  "generatedAt": "2025-08-15T08:05:14.756Z",
   "entries": [
     {
       "route": "/site-health",
@@ -1488,6 +1488,12 @@
       "file": "pages/reports/updates/update-2025-08-15-0510.tsx",
       "title": "Autonomous Reference Architecture — MLOps & Model Reliability (2025-08-15 05:10 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Reference Architecture — MLOps & Model Reliability (2025-08-15 05:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${sub"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0505",
+      "file": "pages/reports/updates/update-2025-08-15-0505.tsx",
+      "title": "Autonomous Update — 2025-08-15 05:05",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 05:05 Autonomous Update — 2025-08-15 05:05 Signal over noise—your automated update is here. Today's Highlight Hacker News : Airfoil · 2544 pts Why it matters: autonomous c"
     },
     {
       "route": "/reports/updates/update-2025-08-15-0503",
@@ -3282,6 +3288,12 @@
       "file": "pages/reports/updates/update-2025-08-14-2311.tsx",
       "title": "Autonomous Update — 2025-08-14 23:11",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-14 23:11 Autonomous Update — 2025-08-14 23:11 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Bypassing airport sec"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-080501",
+      "file": "pages/reports/playbooks/playbook-2025-08-15-080501.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-15-080355",
@@ -5972,8 +5984,8 @@
       "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
     },
     {
-      "route": "/reports/patterns/pattern-2025-08-15-080422",
-      "file": "pages/reports/patterns/pattern-2025-08-15-080422.tsx",
+      "route": "/reports/patterns/pattern-2025-08-15-080501",
+      "file": "pages/reports/patterns/pattern-2025-08-15-080501.tsx",
       "title": "Pattern — Cloud Improving Continuously",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
     },
@@ -11582,10 +11594,10 @@
       "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Blueprint: Edge AI Blueprint: Edge AI Patterns to accelerate delivery. Scope: Blueprint: Edge AI. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observability,"
     },
     {
-      "route": "/reports/guides/guide-2025-08-15-080422",
-      "file": "pages/reports/guides/guide-2025-08-15-080422.tsx",
-      "title": "guide-2025-08-15-080422",
-      "summary": ""
+      "route": "/reports/guides/guide-2025-08-15-080501",
+      "file": "pages/reports/guides/guide-2025-08-15-080501.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
     },
     {
       "route": "/reports/guides/guide-2025-08-15-080354",
@@ -15680,10 +15692,10 @@
       "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
     },
     {
-      "route": "/reports/cases/case-2025-08-15-080422",
-      "file": "pages/reports/cases/case-2025-08-15-080422.tsx",
-      "title": "case-2025-08-15-080422",
-      "summary": ""
+      "route": "/reports/cases/case-2025-08-15-080501",
+      "file": "pages/reports/cases/case-2025-08-15-080501.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
     },
     {
       "route": "/reports/cases/case-2025-08-15-080354",
@@ -19776,6 +19788,12 @@
       "file": "pages/reports/cases/case-2025-08-15-021207.tsx",
       "title": "Case Study — Automation Autonomous",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-080501",
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-080501.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-15-080354",
