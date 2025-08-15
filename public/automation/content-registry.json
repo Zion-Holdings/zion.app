@@ -81,6 +81,10 @@
       "route": "/reports/updates/update-2025-08-15-0211"
     },
     {
+      "file": "pages/reports/updates/update-2025-08-14-2317.tsx",
+      "route": "/reports/updates/update-2025-08-14-2317"
+    },
+    {
       "file": "pages/reports/updates/update-2025-08-14-2316.tsx",
       "route": "/reports/updates/update-2025-08-14-2316"
     },
@@ -105,6 +109,10 @@
       "route": "/reports/updates/update-2025-08-14-2311"
     },
     {
+      "file": "pages/reports/playbooks/playbook-2025-08-15-021706.tsx",
+      "route": "/reports/playbooks/playbook-2025-08-15-021706"
+    },
+    {
       "file": "pages/reports/playbooks/playbook-2025-08-15-021609.tsx",
       "route": "/reports/playbooks/playbook-2025-08-15-021609"
     },
@@ -119,6 +127,10 @@
     {
       "file": "pages/reports/playbooks/playbook-2025-08-15-021207.tsx",
       "route": "/reports/playbooks/playbook-2025-08-15-021207"
+    },
+    {
+      "file": "pages/reports/patterns/pattern-2025-08-15-021705.tsx",
+      "route": "/reports/patterns/pattern-2025-08-15-021705"
     },
     {
       "file": "pages/reports/patterns/pattern-2025-08-15-021609.tsx",
@@ -165,6 +177,10 @@
       "route": "/reports/innovations/insight-2025-08-15-0211"
     },
     {
+      "file": "pages/reports/guides/guide-2025-08-15-021705.tsx",
+      "route": "/reports/guides/guide-2025-08-15-021705"
+    },
+    {
       "file": "pages/reports/guides/guide-2025-08-15-021609.tsx",
       "route": "/reports/guides/guide-2025-08-15-021609"
     },
@@ -179,6 +195,10 @@
     {
       "file": "pages/reports/guides/guide-2025-08-15-021207.tsx",
       "route": "/reports/guides/guide-2025-08-15-021207"
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-15-021705.tsx",
+      "route": "/reports/cases/case-2025-08-15-021705"
     },
     {
       "file": "pages/reports/cases/case-2025-08-15-021609.tsx",
@@ -255,5 +275,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-15T02:16:39.541Z"
+  "generatedAt": "2025-08-15T02:17:33.158Z"
 }
