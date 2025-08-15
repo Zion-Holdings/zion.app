@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T19:51:03.038Z",
+  "generatedAt": "2025-08-15T19:52:03.018Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1434,6 +1434,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1700.tsx",
       "title": "Autonomous Playbook — Agentic Workflows (2025-08-15 17:00 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Agentic Workflows (2025-08-15 17:00 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { \""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1652",
+      "file": "pages/reports/updates/update-2025-08-15-1652.tsx",
+      "title": "Autonomous Update — 2025-08-15 16:52",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 16:52 Autonomous Update — 2025-08-15 16:52 Signal over noise—your automated update is here. Today's Highlight Hacker News : Gemini AI · 2135 pts Why it matters: autonomous"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1651",
