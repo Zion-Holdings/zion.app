@@ -3994,5 +3994,29 @@
     "startTime": "2025-08-15T20:51:41.467Z",
     "status": "active",
     "filePath": "conv-1755291101467.json"
+  },
+  {
+    "id": "conv-1755291261053",
+    "type": "deployment-planning",
+    "participants": [
+      "DevOps Engineer",
+      "Backend Developer",
+      "Security Expert"
+    ],
+    "startTime": "2025-08-15T20:54:21.053Z",
+    "status": "active",
+    "filePath": "conv-1755291261053.json"
+  },
+  {
+    "id": "conv-1755291263060",
+    "type": "code-review",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "QA Tester"
+    ],
+    "startTime": "2025-08-15T20:54:23.060Z",
+    "status": "active",
+    "filePath": "conv-1755291263060.json"
   }
 ]
