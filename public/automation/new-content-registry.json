@@ -1,33 +1,33 @@
 {
-  "generatedAt": "2025-08-15T09:55:57.838Z",
+  "generatedAt": "2025-08-15T10:08:05.535Z",
   "items": [
     {
-      "title": "Checklist: MLOps",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-15-1001",
-      "createdAt": "2025-08-15T10:01:46.306Z",
-      "kind": "insight"
+      "title": "Innovation Insight — 2025-08-15 10-08",
+      "href": "/reports/innovations/insight-2025-08-15T10-08",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T10:08:05.508Z",
+      "source": "cloud-content-factory"
     },
     {
-      "title": "Case Study — Automation Autonomous",
-      "href": "/reports/cases/case-2025-08-15-095557",
+      "title": "Autonomous Update — 2025-08-15 10-08",
+      "href": "/reports/updates/update-2025-08-15T10-08",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T09:55:57.797Z",
-      "source": "cloud-deep-research-factory"
+      "createdAt": "2025-08-15T10:08:05.508Z",
+      "source": "cloud-content-factory"
     },
     {
-      "title": "Guide — Cloud Improving Implementation",
-      "href": "/reports/guides/guide-2025-08-15-095557",
+      "title": "Innovation Insight — 2025-08-15 10-08",
+      "href": "/reports/innovations/insight-2025-08-15T10-08",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T09:55:57.797Z",
-      "source": "cloud-deep-research-factory"
+      "createdAt": "2025-08-15T10:08:05.508Z",
+      "source": "cloud-content-factory"
     },
     {
-      "title": "Pattern — Cloud Improving Continuously",
-      "href": "/reports/patterns/pattern-2025-08-15-095557",
+      "title": "Autonomous Update — 2025-08-15 10-08",
+      "href": "/reports/updates/update-2025-08-15T10-08",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T09:55:57.797Z",
-      "source": "cloud-deep-research-factory"
+      "createdAt": "2025-08-15T10:08:05.508Z",
+      "source": "cloud-content-factory"
     }
   ]
 }
