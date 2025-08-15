@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T12:07:00.733Z",
-  "pagesScanned": 4388,
+  "generatedAt": "2025-08-15T12:08:00.751Z",
+  "pagesScanned": 4389,
   "items": [
     {
       "route": "/404",
@@ -42310,6 +42310,19 @@
       "suggestion": {
         "title": "Autonomous Checklist — AI Service Design (2025-08-15 09:07 UTC)",
         "description": "Autonomous Checklist — AI Service Design (2025-08-15 09:07 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0908",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 09:08",
+        "description": "Autonomous Update — 2025-08-15 09:08 — auto-suggested description"
       }
     },
     {
