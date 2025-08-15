@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T13:38:02.934Z",
+  "generatedAt": "2025-08-15T13:39:02.857Z",
   "entries": [
     {
       "route": "/site-health",
@@ -1128,6 +1128,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1107.tsx",
       "title": "Autonomous Playbook — Evaluation & Safety (2025-08-15 11:07 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Evaluation & Safety (2025-08-15 11:07 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": {"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1039",
+      "file": "pages/reports/updates/update-2025-08-15-1039.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:39",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:39 Autonomous Update — 2025-08-15 10:39 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Open source AI is the path forward ·"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1038",
