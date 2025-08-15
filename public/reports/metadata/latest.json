@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T12:03:00.857Z",
+  "generatedAt": "2025-08-15T12:04:00.780Z",
   "pagesScanned": 4389,
   "items": [
     {
@@ -93,15 +93,11 @@
     {
       "route": "/",
       "missing": [
-        "description",
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
-        "title": "Page",
-        "description": "Page — auto-suggested description"
+        "title": "Zion Tech Group",
+        "description": "Zion Tech Group — auto-suggested description"
       }
     },
     {
@@ -42295,10 +42291,7 @@
     {
       "route": "/reports/updates/update-2025-08-15-0903",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-15 09:03",

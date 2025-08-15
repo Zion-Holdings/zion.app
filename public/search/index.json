@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T12:03:02.890Z",
+  "generatedAt": "2025-08-15T12:04:03.105Z",
   "entries": [
     {
       "route": "/site-health",
@@ -28,8 +28,8 @@
     {
       "route": "/",
       "file": "pages/index.tsx",
-      "title": "index",
-      "summary": "{/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 15: 0903 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 15T11: 19 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 1"
+      "title": "Zion Tech Group — Autonomous Cloud Automations",
+      "summary": "import React from 'react'; import Head from 'next/head'; export default function HomePage() { return ( <> Zion Tech Group — Autonomous Cloud Automations Zion Tech Group AI-powered automation orchestrating continuous content generation, site optimization, and intelligent workflows"
     },
     {
       "route": "/contact",
