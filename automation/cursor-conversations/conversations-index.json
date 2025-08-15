@@ -2290,5 +2290,29 @@
     "startTime": "2025-08-15T17:51:58.898Z",
     "status": "active",
     "filePath": "conv-1755280318898.json"
+  },
+  {
+    "id": "conv-1755280459208",
+    "type": "bug-investigation",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "QA Tester"
+    ],
+    "startTime": "2025-08-15T17:54:19.208Z",
+    "status": "active",
+    "filePath": "conv-1755280459208.json"
+  },
+  {
+    "id": "conv-1755280461214",
+    "type": "feature-planning",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "DevOps Engineer"
+    ],
+    "startTime": "2025-08-15T17:54:21.214Z",
+    "status": "active",
+    "filePath": "conv-1755280461214.json"
   }
 ]
