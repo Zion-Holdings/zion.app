@@ -1,45 +1,6 @@
 {
-<<<<<<< HEAD
-  "generatedAt": "2025-08-15T04:50:12.499Z",
+  "generatedAt": "2025-08-15T09:30:51.189Z",
   "items": [
-    {
-      "title": "Innovation Insight — 2025-08-15 04-50",
-      "href": "/reports/innovations/insight-2025-08-15T04-50",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T04:50:12.432Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-15 04-50",
-      "href": "/reports/updates/update-2025-08-15T04-50",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T04:50:12.432Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-15 04-50",
-      "href": "/reports/innovations/insight-2025-08-15T04-50",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T04:50:12.432Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-15 04-50",
-      "href": "/reports/updates/update-2025-08-15T04-50",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T04:50:12.432Z",
-      "source": "cloud-content-factory"
-=======
-  "generatedAt": "2025-08-15T09:36:42.964Z",
-  "items": [
-    {
-<<<<<<< HEAD
-      "title": "Guide: RAG Platforms",
-      "subtitle": "Patterns to increase accuracy.",
-      "path": "/reports/innovations/insight-2025-08-15-0935",
-      "createdAt": "2025-08-15T09:35:43.891Z",
-      "kind": "insight"
-    },
     {
       "title": "Reference Architecture — Autonomous Content Mesh",
       "href": "/reports/blueprints/blueprint-2025-08-15-093051",
@@ -55,28 +16,25 @@
       "source": "cloud-playbook-factory"
     },
     {
-=======
->>>>>>> 6ebcdb30d95 (chore(sync): advanced autonomous sync)
       "title": "Case Study — Automation Autonomous",
-      "href": "/reports/cases/case-2025-08-15-093642",
+      "href": "/reports/cases/case-2025-08-15-093051",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T09:36:42.921Z",
+      "createdAt": "2025-08-15T09:30:51.079Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Guide — Cloud Improving Implementation",
-      "href": "/reports/guides/guide-2025-08-15-093642",
+      "href": "/reports/guides/guide-2025-08-15-093051",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T09:36:42.921Z",
+      "createdAt": "2025-08-15T09:30:51.079Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Cloud Improving Continuously",
-      "href": "/reports/patterns/pattern-2025-08-15-093642",
+      "href": "/reports/patterns/pattern-2025-08-15-093051",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T09:36:42.921Z",
+      "createdAt": "2025-08-15T09:30:51.079Z",
       "source": "cloud-deep-research-factory"
->>>>>>> origin/main
     }
   ]
 }
