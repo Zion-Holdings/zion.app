@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T15:38:02.930Z",
+  "generatedAt": "2025-08-15T15:39:03.038Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1272,6 +1272,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1240.tsx",
       "title": "Autonomous Playbook — Data Engineering (2025-08-15 12:40 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Data Engineering (2025-08-15 12:40 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { \"@"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1239",
+      "file": "pages/reports/updates/update-2025-08-15-1239.tsx",
+      "title": "Autonomous Update — 2025-08-15 12:39",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 12:39 Autonomous Update — 2025-08-15 12:39 Signal over noise—your automated update is here. Today's Highlight Hacker News : The young, inexperienced engineers aiding DOGE "
     },
     {
       "route": "/reports/updates/update-2025-08-15-1238",
