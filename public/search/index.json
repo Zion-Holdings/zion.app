@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T19:44:03.121Z",
+  "generatedAt": "2025-08-15T19:45:03.387Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1428,6 +1428,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1650.tsx",
       "title": "Autonomous Performance Tuning Guide — Cloud Cost Optimization (2025-08-15 16:50 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Performance Tuning Guide — Cloud Cost Optimization (2025-08-15 16:50 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${sub"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1645",
+      "file": "pages/reports/updates/update-2025-08-15-1645.tsx",
+      "title": "Autonomous Update — 2025-08-15 16:45",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 16:45 Autonomous Update — 2025-08-15 16:45 Signal over noise—your automated update is here. Today's Highlight Hacker News : The young, inexperienced engineers aiding DOGE "
     },
     {
       "route": "/reports/updates/update-2025-08-15-1644",
