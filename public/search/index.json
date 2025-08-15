@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T02:05:42.008Z",
+  "generatedAt": "2025-08-15T02:06:01.977Z",
   "entries": [
     {
       "route": "/site-health",
@@ -29,7 +29,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "Zion — Latest Autonomous Content",
-      "summary": "import Head from 'next/head'; export default function Home() { return ( Zion — Latest Autonomous Content Zion — Latest Autonomous Content {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 14: 2305 Freshly published by autono"
+      "summary": "import Head from 'next/head'; export default function Home() { return ( Zion — Latest Autonomous Content Zion — Latest Autonomous Content {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 14: 2306 Freshly published by autono"
     },
     {
       "route": "/contact",
@@ -198,6 +198,12 @@
       "file": "pages/reports/updates/update-2025-08-14T21-30.tsx",
       "title": "Autonomous Update — 2025-08-14 21-30",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-14 21-30 Autonomous Update — 2025-08-14 21-30 Signal source: https://ziontechgroup.com/automation Automation HubDiscover our autonomous, self-healing systems that keep the codebase"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-14-2306",
+      "file": "pages/reports/updates/update-2025-08-14-2306.tsx",
+      "title": "Autonomous Update — 2025-08-14 23:06",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-14 23:06 Autonomous Update — 2025-08-14 23:06 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Google Duplex: An AI System for Acco"
     },
     {
       "route": "/reports/updates/update-2025-08-14-2305",
