@@ -1018,5 +1018,125 @@
     "status": "pending",
     "dueDate": "2025-08-17T14:36:45.094Z",
     "filePath": "tasks-1755268605094.json"
+  },
+  {
+    "id": "task-1755268764760-1",
+    "title": "Technical Specification",
+    "type": "performance-optimization",
+    "priority": "high",
+    "assignedTo": "frontend-specialist",
+    "status": "pending",
+    "dueDate": "2025-08-18T14:39:24.760Z",
+    "filePath": "tasks-1755268764760.json"
+  },
+  {
+    "id": "task-1755268764760-2",
+    "title": "User Experience Design",
+    "type": "performance-optimization",
+    "priority": "high",
+    "assignedTo": "backend-developer",
+    "status": "pending",
+    "dueDate": "2025-08-19T14:39:24.760Z",
+    "filePath": "tasks-1755268764760.json"
+  },
+  {
+    "id": "task-1755268764760-3",
+    "title": "Implementation Plan",
+    "type": "performance-optimization",
+    "priority": "medium",
+    "assignedTo": "devops-engineer",
+    "status": "pending",
+    "dueDate": "2025-08-17T14:39:24.760Z",
+    "filePath": "tasks-1755268764760.json"
+  },
+  {
+    "id": "task-1755268766763-1",
+    "title": "Update Coding Standards",
+    "type": "code-review",
+    "priority": "high",
+    "assignedTo": "frontend-specialist",
+    "status": "pending",
+    "dueDate": "2025-08-17T14:39:26.763Z",
+    "filePath": "tasks-1755268766763.json"
+  },
+  {
+    "id": "task-1755268766763-2",
+    "title": "Implement Code Quality Tools",
+    "type": "code-review",
+    "priority": "high",
+    "assignedTo": "backend-developer",
+    "status": "pending",
+    "dueDate": "2025-08-18T14:39:26.763Z",
+    "filePath": "tasks-1755268766763.json"
+  },
+  {
+    "id": "task-1755268766763-3",
+    "title": "Performance Optimization",
+    "type": "code-review",
+    "priority": "medium",
+    "assignedTo": "qa-tester",
+    "status": "pending",
+    "dueDate": "2025-08-20T14:39:26.763Z",
+    "filePath": "tasks-1755268766763.json"
+  },
+  {
+    "id": "task-1755268907087-1",
+    "title": "Root Cause Analysis",
+    "type": "bug-investigation",
+    "priority": "high",
+    "assignedTo": "frontend-specialist",
+    "status": "pending",
+    "dueDate": "2025-08-17T14:41:47.088Z",
+    "filePath": "tasks-1755268907088.json"
+  },
+  {
+    "id": "task-1755268907088-2",
+    "title": "Fix Implementation",
+    "type": "bug-investigation",
+    "priority": "high",
+    "assignedTo": "backend-developer",
+    "status": "pending",
+    "dueDate": "2025-08-16T14:41:47.088Z",
+    "filePath": "tasks-1755268907088.json"
+  },
+  {
+    "id": "task-1755268907088-3",
+    "title": "Prevention Measures",
+    "type": "bug-investigation",
+    "priority": "medium",
+    "assignedTo": "qa-tester",
+    "status": "pending",
+    "dueDate": "2025-08-18T14:41:47.088Z",
+    "filePath": "tasks-1755268907088.json"
+  },
+  {
+    "id": "task-1755268909092-1",
+    "title": "Update Coding Standards",
+    "type": "code-review",
+    "priority": "high",
+    "assignedTo": "frontend-specialist",
+    "status": "pending",
+    "dueDate": "2025-08-17T14:41:49.092Z",
+    "filePath": "tasks-1755268909092.json"
+  },
+  {
+    "id": "task-1755268909092-2",
+    "title": "Implement Code Quality Tools",
+    "type": "code-review",
+    "priority": "high",
+    "assignedTo": "backend-developer",
+    "status": "pending",
+    "dueDate": "2025-08-18T14:41:49.092Z",
+    "filePath": "tasks-1755268909092.json"
+  },
+  {
+    "id": "task-1755268909092-3",
+    "title": "Performance Optimization",
+    "type": "code-review",
+    "priority": "medium",
+    "assignedTo": "qa-tester",
+    "status": "pending",
+    "dueDate": "2025-08-20T14:41:49.092Z",
+    "filePath": "tasks-1755268909092.json"
   }
 ]
