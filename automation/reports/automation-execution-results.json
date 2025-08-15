@@ -1,36 +1,36 @@
 {
-  "timestamp": "2025-08-15T12:20:48.155Z",
+  "timestamp": "2025-08-15T14:52:35.611Z",
   "systems": {
     "workflow-health": {
       "success": true,
-      "duration": 34,
+      "duration": 223,
       "error": null
     },
     "dependency-health": {
-      "success": true,
-      "duration": 90812,
-      "error": null
+      "success": false,
+      "duration": 0,
+      "error": "Command failed: node ./dependency-health-checker.cjs"
     },
     "resource-optimization": {
       "success": true,
-      "duration": 40,
+      "duration": 99,
       "error": null
     },
     "smart-dispatch": {
       "success": true,
-      "duration": 10047,
+      "duration": 8879,
       "error": null
     },
     "retry-system": {
       "success": true,
-      "duration": 27,
+      "duration": 82,
       "error": null
     }
   },
   "summary": {
     "total": 5,
-    "success": 5,
-    "failed": 0,
-    "totalDuration": 100960
+    "success": 4,
+    "failed": 1,
+    "totalDuration": 9283
   }
 }

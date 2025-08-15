@@ -2,7 +2,7 @@
   "actionlint.yml": {
     "name": "actionlint.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/actionlint.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/actionlint.yml",
     "size": 473,
     "lines": 26,
     "triggers": [
@@ -37,7 +37,7 @@
   "actions-keepalive.yml": {
     "name": "actions-keepalive.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/actions-keepalive.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/actions-keepalive.yml",
     "size": 714,
     "lines": 36,
     "triggers": [
@@ -73,7 +73,7 @@
   "agent-of-agents-trigger.yml": {
     "name": "agent-of-agents-trigger.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/agent-of-agents-trigger.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-of-agents-trigger.yml",
     "size": 1128,
     "lines": 45,
     "triggers": [
@@ -107,7 +107,7 @@
   "ai-changelog.yml": {
     "name": "ai-changelog.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/ai-changelog.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/ai-changelog.yml",
     "size": 1601,
     "lines": 55,
     "triggers": [
@@ -207,7 +207,7 @@
   "ai-content-autonomy.yml": {
     "name": "ai-content-autonomy.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/ai-content-autonomy.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-content-autonomy.yml",
     "size": 2044,
     "lines": 74,
     "triggers": [
@@ -304,7 +304,7 @@
   "ai-content-factory.yml": {
     "name": "ai-content-factory.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/ai-content-factory.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-content-factory.yml",
     "size": 1220,
     "lines": 54,
     "triggers": [
@@ -345,7 +345,7 @@
   "ai-it-ads-sync.yml": {
     "name": "ai-it-ads-sync.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/ai-it-ads-sync.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-it-ads-sync.yml",
     "size": 1586,
     "lines": 61,
     "triggers": [
@@ -465,7 +465,7 @@
   "ai-it-innovations.yml": {
     "name": "ai-it-innovations.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/ai-it-innovations.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-it-innovations.yml",
     "size": 2332,
     "lines": 82,
     "triggers": [
@@ -585,7 +585,7 @@
   "ai-it-multi-factory.yml": {
     "name": "ai-it-multi-factory.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/ai-it-multi-factory.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-it-multi-factory.yml",
     "size": 1801,
     "lines": 65,
     "triggers": [
@@ -705,7 +705,7 @@
   "ai-it-ultrafast-sync.yml": {
     "name": "ai-it-ultrafast-sync.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/ai-it-ultrafast-sync.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-it-ultrafast-sync.yml",
     "size": 1652,
     "lines": 59,
     "triggers": [
@@ -827,7 +827,7 @@
   "ai-research-scout.yml": {
     "name": "ai-research-scout.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/ai-research-scout.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-research-scout.yml",
     "size": 918,
     "lines": 43,
     "triggers": [
@@ -866,7 +866,7 @@
   "ai-trends-radar.yml": {
     "name": "ai-trends-radar.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/ai-trends-radar.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-trends-radar.yml",
     "size": 1804,
     "lines": 68,
     "triggers": [
@@ -966,7 +966,7 @@
   "auto-heal-workflows.yml": {
     "name": "auto-heal-workflows.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/auto-heal-workflows.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/auto-heal-workflows.yml",
     "size": 2705,
     "lines": 92,
     "triggers": [
@@ -1070,7 +1070,7 @@
   "automation-advertiser.yml": {
     "name": "automation-advertiser.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/automation-advertiser.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/automation-advertiser.yml",
     "size": 2140,
     "lines": 75,
     "triggers": [
@@ -1174,7 +1174,7 @@
   "broken-images.yml": {
     "name": "broken-images.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/broken-images.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/broken-images.yml",
     "size": 1685,
     "lines": 65,
     "triggers": [
@@ -1274,7 +1274,7 @@
   "ci-quality.yml": {
     "name": "ci-quality.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/ci-quality.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci-quality.yml",
     "size": 616,
     "lines": 36,
     "triggers": [
@@ -1307,7 +1307,7 @@
   "ci-self-heal.yml": {
     "name": "ci-self-heal.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/ci-self-heal.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci-self-heal.yml",
     "size": 1949,
     "lines": 73,
     "triggers": [],
@@ -1401,7 +1401,7 @@
   "ci.yml": {
     "name": "ci.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/ci.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci.yml",
     "size": 1516,
     "lines": 83,
     "triggers": [
@@ -1443,7 +1443,7 @@
   "cloud-agents-fast.yml": {
     "name": "cloud-agents-fast.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/cloud-agents-fast.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cloud-agents-fast.yml",
     "size": 904,
     "lines": 36,
     "triggers": [
@@ -1479,7 +1479,7 @@
   "cloud-agents.yml": {
     "name": "cloud-agents.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/cloud-agents.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cloud-agents.yml",
     "size": 1287,
     "lines": 55,
     "triggers": [
@@ -1520,7 +1520,7 @@
   "cloud-autonomous-orchestrator.yml": {
     "name": "cloud-autonomous-orchestrator.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/cloud-autonomous-orchestrator.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cloud-autonomous-orchestrator.yml",
     "size": 2139,
     "lines": 75,
     "triggers": [
@@ -1624,7 +1624,7 @@
   "cloud-deep-research.yml": {
     "name": "cloud-deep-research.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/cloud-deep-research.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cloud-deep-research.yml",
     "size": 1503,
     "lines": 54,
     "triggers": [
@@ -1685,7 +1685,7 @@
   "cloud-orchestrator-plus.yml": {
     "name": "cloud-orchestrator-plus.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/cloud-orchestrator-plus.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cloud-orchestrator-plus.yml",
     "size": 1301,
     "lines": 49,
     "triggers": [
@@ -1746,7 +1746,7 @@
   "codeql.yml": {
     "name": "codeql.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/codeql.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/codeql.yml",
     "size": 849,
     "lines": 42,
     "triggers": [
@@ -1792,7 +1792,7 @@
   "commit-message-lint.yml": {
     "name": "commit-message-lint.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/commit-message-lint.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/commit-message-lint.yml",
     "size": 1023,
     "lines": 41,
     "triggers": [
@@ -1829,7 +1829,7 @@
   "commitlint.yml": {
     "name": "commitlint.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/commitlint.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/commitlint.yml",
     "size": 583,
     "lines": 30,
     "triggers": [
@@ -1865,7 +1865,7 @@
   "components-size-report.yml": {
     "name": "components-size-report.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/components-size-report.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/components-size-report.yml",
     "size": 1627,
     "lines": 62,
     "triggers": [
@@ -1965,7 +1965,7 @@
   "crawl-normalize.yml": {
     "name": "crawl-normalize.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/crawl-normalize.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/crawl-normalize.yml",
     "size": 1526,
     "lines": 62,
     "triggers": [
@@ -2007,7 +2007,7 @@
   "cursor-chat.yml": {
     "name": "cursor-chat.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/cursor-chat.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cursor-chat.yml",
     "size": 2311,
     "lines": 80,
     "triggers": [
@@ -2107,7 +2107,7 @@
   "dead-code-report.yml": {
     "name": "dead-code-report.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/dead-code-report.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/dead-code-report.yml",
     "size": 1648,
     "lines": 59,
     "triggers": [
@@ -2207,7 +2207,7 @@
   "dependency-auto-upgrade.yml": {
     "name": "dependency-auto-upgrade.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/dependency-auto-upgrade.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/dependency-auto-upgrade.yml",
     "size": 1888,
     "lines": 67,
     "triggers": [
@@ -2246,7 +2246,7 @@
   "docs-intelligence.yml": {
     "name": "docs-intelligence.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/docs-intelligence.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/docs-intelligence.yml",
     "size": 1935,
     "lines": 70,
     "triggers": [
@@ -2346,7 +2346,7 @@
   "external-links.yml": {
     "name": "external-links.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/external-links.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/external-links.yml",
     "size": 1679,
     "lines": 63,
     "triggers": [
@@ -2443,7 +2443,7 @@
   "front-scheduler.yml": {
     "name": "front-scheduler.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/front-scheduler.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/front-scheduler.yml",
     "size": 2616,
     "lines": 90,
     "triggers": [
@@ -2543,7 +2543,7 @@
   "git-ultrafast-sync.yml": {
     "name": "git-ultrafast-sync.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/git-ultrafast-sync.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/git-ultrafast-sync.yml",
     "size": 710,
     "lines": 35,
     "triggers": [
@@ -2579,7 +2579,7 @@
   "guardian-scheduler.yml": {
     "name": "guardian-scheduler.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/guardian-scheduler.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/guardian-scheduler.yml",
     "size": 1968,
     "lines": 76,
     "triggers": [
@@ -2679,7 +2679,7 @@
   "instagram-marketing.yml": {
     "name": "instagram-marketing.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/instagram-marketing.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/instagram-marketing.yml",
     "size": 2332,
     "lines": 80,
     "triggers": [
@@ -2779,7 +2779,7 @@
   "knowledge-graph-radar.yml": {
     "name": "knowledge-graph-radar.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/knowledge-graph-radar.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/knowledge-graph-radar.yml",
     "size": 2015,
     "lines": 73,
     "triggers": [
@@ -2883,7 +2883,7 @@
   "lighthouse-budgets.yml": {
     "name": "lighthouse-budgets.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/lighthouse-budgets.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/lighthouse-budgets.yml",
     "size": 556,
     "lines": 29,
     "triggers": [
@@ -2914,7 +2914,7 @@
   "lighthouse-live.yml": {
     "name": "lighthouse-live.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/lighthouse-live.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/lighthouse-live.yml",
     "size": 1999,
     "lines": 68,
     "triggers": [
@@ -2952,7 +2952,7 @@
   "linkedin-marketing.yml": {
     "name": "linkedin-marketing.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/linkedin-marketing.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/linkedin-marketing.yml",
     "size": 2346,
     "lines": 80,
     "triggers": [
@@ -3052,7 +3052,7 @@
   "linkedin-pro.yml": {
     "name": "linkedin-pro.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/linkedin-pro.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/linkedin-pro.yml",
     "size": 2305,
     "lines": 80,
     "triggers": [
@@ -3152,7 +3152,7 @@
   "marketing-sync.yml": {
     "name": "marketing-sync.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/marketing-sync.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/marketing-sync.yml",
     "size": 2290,
     "lines": 77,
     "triggers": [
@@ -3252,7 +3252,7 @@
   "media-optimizer.yml": {
     "name": "media-optimizer.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/media-optimizer.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/media-optimizer.yml",
     "size": 1858,
     "lines": 69,
     "triggers": [
@@ -3352,7 +3352,7 @@
   "monetization.yml": {
     "name": "monetization.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/monetization.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/monetization.yml",
     "size": 1889,
     "lines": 70,
     "triggers": [
@@ -3452,7 +3452,7 @@
   "netlify-config.yml": {
     "name": "netlify-config.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/netlify-config.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/netlify-config.yml",
     "size": 2899,
     "lines": 79,
     "triggers": [
@@ -3485,7 +3485,7 @@
   "netlify-functions-trigger.yml": {
     "name": "netlify-functions-trigger.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/netlify-functions-trigger.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/netlify-functions-trigger.yml",
     "size": 1437,
     "lines": 56,
     "triggers": [
@@ -3523,7 +3523,7 @@
   "og-image-refresh.yml": {
     "name": "og-image-refresh.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/og-image-refresh.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/og-image-refresh.yml",
     "size": 1598,
     "lines": 62,
     "triggers": [
@@ -3623,7 +3623,7 @@
   "pa11y.yml": {
     "name": "pa11y.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/pa11y.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/pa11y.yml",
     "size": 1194,
     "lines": 47,
     "triggers": [
@@ -3658,7 +3658,7 @@
   "pin-actions-weekly.yml": {
     "name": "pin-actions-weekly.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/pin-actions-weekly.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/pin-actions-weekly.yml",
     "size": 1171,
     "lines": 43,
     "triggers": [
@@ -3692,7 +3692,7 @@
   "playwright-smoke.yml": {
     "name": "playwright-smoke.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/playwright-smoke.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/playwright-smoke.yml",
     "size": 1772,
     "lines": 76,
     "triggers": [
@@ -3726,7 +3726,7 @@
   "pr-auto-curator.yml": {
     "name": "pr-auto-curator.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/pr-auto-curator.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/pr-auto-curator.yml",
     "size": 1826,
     "lines": 44,
     "triggers": [
@@ -3765,7 +3765,7 @@
   "pr-smoke.yml": {
     "name": "pr-smoke.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/pr-smoke.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/pr-smoke.yml",
     "size": 745,
     "lines": 40,
     "triggers": [
@@ -3797,7 +3797,7 @@
   "readme-auto-advertiser.yml": {
     "name": "readme-auto-advertiser.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/readme-auto-advertiser.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/readme-auto-advertiser.yml",
     "size": 1804,
     "lines": 68,
     "triggers": [
@@ -3900,7 +3900,7 @@
   "responsive-content.yml": {
     "name": "responsive-content.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/responsive-content.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/responsive-content.yml",
     "size": 1938,
     "lines": 70,
     "triggers": [
@@ -4000,7 +4000,7 @@
   "security-auto-heal.yml": {
     "name": "security-auto-heal.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/security-auto-heal.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/security-auto-heal.yml",
     "size": 1854,
     "lines": 69,
     "triggers": [
@@ -4100,7 +4100,7 @@
   "security-gates.yml": {
     "name": "security-gates.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/security-gates.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/security-gates.yml",
     "size": 14054,
     "lines": 409,
     "triggers": [
@@ -4174,7 +4174,7 @@
   "seo-audit.yml": {
     "name": "seo-audit.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/seo-audit.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/seo-audit.yml",
     "size": 1565,
     "lines": 59,
     "triggers": [
@@ -4274,7 +4274,7 @@
   "seo-validator.yml": {
     "name": "seo-validator.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/seo-validator.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/seo-validator.yml",
     "size": 1595,
     "lines": 62,
     "triggers": [
@@ -4375,7 +4375,7 @@
   "site-health-guardian.yml": {
     "name": "site-health-guardian.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/site-health-guardian.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/site-health-guardian.yml",
     "size": 2149,
     "lines": 76,
     "triggers": [
@@ -4479,7 +4479,7 @@
   "site-link.yml": {
     "name": "site-link.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/site-link.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/site-link.yml",
     "size": 1914,
     "lines": 71,
     "triggers": [
@@ -4576,7 +4576,7 @@
   "sitemap-and-search.yml": {
     "name": "sitemap-and-search.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/sitemap-and-search.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/sitemap-and-search.yml",
     "size": 1970,
     "lines": 74,
     "triggers": [
@@ -4676,7 +4676,7 @@
   "topics-and-clusters.yml": {
     "name": "topics-and-clusters.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/topics-and-clusters.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/topics-and-clusters.yml",
     "size": 1881,
     "lines": 69,
     "triggers": [
@@ -4776,7 +4776,7 @@
   "ultra-rapid-sync.yml": {
     "name": "ultra-rapid-sync.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/ultra-rapid-sync.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-rapid-sync.yml",
     "size": 2090,
     "lines": 75,
     "triggers": [
@@ -4880,7 +4880,7 @@
   "variation.yml": {
     "name": "variation.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/variation.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/variation.yml",
     "size": 1866,
     "lines": 70,
     "triggers": [
@@ -4980,7 +4980,7 @@
   "venture.yml": {
     "name": "venture.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/venture.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/venture.yml",
     "size": 1998,
     "lines": 72,
     "triggers": [
@@ -5080,7 +5080,7 @@
   "workflow-radar.yml": {
     "name": "workflow-radar.yml",
     "status": "active",
-    "path": "/workspace/.github/workflows/workflow-radar.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/workflow-radar.yml",
     "size": 1757,
     "lines": 67,
     "triggers": [
@@ -5177,7 +5177,7 @@
   "accessibility-audit.yml": {
     "name": "accessibility-audit.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/accessibility-audit.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/accessibility-audit.yml",
     "size": 1590,
     "lines": 48,
     "triggers": [
@@ -5214,7 +5214,7 @@
   "auto-media-release.yml": {
     "name": "auto-media-release.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/auto-media-release.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/auto-media-release.yml",
     "size": 1622,
     "lines": 55,
     "triggers": [
@@ -5314,7 +5314,7 @@
   "auto-pr-automerge.yml": {
     "name": "auto-pr-automerge.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/auto-pr-automerge.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/auto-pr-automerge.yml",
     "size": 3475,
     "lines": 108,
     "triggers": [
@@ -5354,7 +5354,7 @@
   "auto-pr-cursor-branches.yml": {
     "name": "auto-pr-cursor-branches.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/auto-pr-cursor-branches.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/auto-pr-cursor-branches.yml",
     "size": 1359,
     "lines": 48,
     "triggers": [
@@ -5394,7 +5394,7 @@
   "auto-semver-release.yml": {
     "name": "auto-semver-release.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/auto-semver-release.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/auto-semver-release.yml",
     "size": 2830,
     "lines": 84,
     "triggers": [
@@ -5499,7 +5499,7 @@
   "auto-update-prs.yml": {
     "name": "auto-update-prs.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/auto-update-prs.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/auto-update-prs.yml",
     "size": 1345,
     "lines": 40,
     "triggers": [
@@ -5537,7 +5537,7 @@
   "automation-guardian-10min.yml": {
     "name": "automation-guardian-10min.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/automation-guardian-10min.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/automation-guardian-10min.yml",
     "size": 840,
     "lines": 39,
     "triggers": [
@@ -5572,7 +5572,7 @@
   "automations.yml": {
     "name": "automations.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/automations.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/automations.yml",
     "size": 1017,
     "lines": 44,
     "triggers": [
@@ -5630,7 +5630,7 @@
   "automerge-main.yml": {
     "name": "automerge-main.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/automerge-main.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/automerge-main.yml",
     "size": 974,
     "lines": 34,
     "triggers": [
@@ -5666,7 +5666,7 @@
   "autonomous-auto-discovery.yml": {
     "name": "autonomous-auto-discovery.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/autonomous-auto-discovery.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/autonomous-auto-discovery.yml",
     "size": 1284,
     "lines": 52,
     "triggers": [
@@ -5703,7 +5703,7 @@
   "autonomous-auto-merge-to-main.yml": {
     "name": "autonomous-auto-merge-to-main.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/autonomous-auto-merge-to-main.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/autonomous-auto-merge-to-main.yml",
     "size": 2980,
     "lines": 90,
     "triggers": [
@@ -5744,7 +5744,7 @@
   "autonomous-cloud-automations.yml": {
     "name": "autonomous-cloud-automations.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/autonomous-cloud-automations.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/autonomous-cloud-automations.yml",
     "size": 1225,
     "lines": 43,
     "triggers": [
@@ -5781,7 +5781,7 @@
   "autonomous-cloud-fast.yml": {
     "name": "autonomous-cloud-fast.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/autonomous-cloud-fast.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/autonomous-cloud-fast.yml",
     "size": 1837,
     "lines": 66,
     "triggers": [
@@ -5881,7 +5881,7 @@
   "autonomous-cloud-runner.yml": {
     "name": "autonomous-cloud-runner.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/autonomous-cloud-runner.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/autonomous-cloud-runner.yml",
     "size": 934,
     "lines": 43,
     "triggers": [
@@ -5916,7 +5916,7 @@
   "autonomous-cloud.yml": {
     "name": "autonomous-cloud.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/autonomous-cloud.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/autonomous-cloud.yml",
     "size": 2708,
     "lines": 76,
     "triggers": [
@@ -6176,7 +6176,7 @@
   "autonomous-content-curation.yml": {
     "name": "autonomous-content-curation.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/autonomous-content-curation.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/autonomous-content-curation.yml",
     "size": 1727,
     "lines": 65,
     "triggers": [
@@ -6276,7 +6276,7 @@
   "autonomous-content-scanner.yml": {
     "name": "autonomous-content-scanner.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/autonomous-content-scanner.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/autonomous-content-scanner.yml",
     "size": 1834,
     "lines": 61,
     "triggers": [
@@ -6376,7 +6376,7 @@
   "autonomous-deep-maintenance.yml": {
     "name": "autonomous-deep-maintenance.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/autonomous-deep-maintenance.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/autonomous-deep-maintenance.yml",
     "size": 2209,
     "lines": 73,
     "triggers": [
@@ -6476,7 +6476,7 @@
   "autonomous-deps-upgrade.yml": {
     "name": "autonomous-deps-upgrade.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/autonomous-deps-upgrade.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/autonomous-deps-upgrade.yml",
     "size": 2442,
     "lines": 76,
     "triggers": [
@@ -6516,7 +6516,7 @@
   "autonomous-external-links.yml": {
     "name": "autonomous-external-links.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/autonomous-external-links.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/autonomous-external-links.yml",
     "size": 1727,
     "lines": 65,
     "triggers": [
@@ -6616,7 +6616,7 @@
   "autonomous-image-optimizer.yml": {
     "name": "autonomous-image-optimizer.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/autonomous-image-optimizer.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/autonomous-image-optimizer.yml",
     "size": 1737,
     "lines": 65,
     "triggers": [
@@ -6716,7 +6716,7 @@
   "autonomous-intelligence.yml": {
     "name": "autonomous-intelligence.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/autonomous-intelligence.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/autonomous-intelligence.yml",
     "size": 1525,
     "lines": 54,
     "triggers": [
@@ -6756,7 +6756,7 @@
   "autonomous-keepalive.yml": {
     "name": "autonomous-keepalive.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/autonomous-keepalive.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/autonomous-keepalive.yml",
     "size": 1345,
     "lines": 46,
     "triggers": [
@@ -6855,7 +6855,7 @@
   "autonomous-lighthouse.yml": {
     "name": "autonomous-lighthouse.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/autonomous-lighthouse.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/autonomous-lighthouse.yml",
     "size": 874,
     "lines": 44,
     "triggers": [
@@ -6892,7 +6892,7 @@
   "autonomous-marketing-seo.yml": {
     "name": "autonomous-marketing-seo.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/autonomous-marketing-seo.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/autonomous-marketing-seo.yml",
     "size": 1949,
     "lines": 70,
     "triggers": [
@@ -6992,7 +6992,7 @@
   "autonomous-minute-orchestrator.yml": {
     "name": "autonomous-minute-orchestrator.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/autonomous-minute-orchestrator.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/autonomous-minute-orchestrator.yml",
     "size": 2236,
     "lines": 77,
     "triggers": [
@@ -7092,7 +7092,7 @@
   "autonomous-quick-fixes.yml": {
     "name": "autonomous-quick-fixes.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/autonomous-quick-fixes.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/autonomous-quick-fixes.yml",
     "size": 1929,
     "lines": 69,
     "triggers": [
@@ -7192,7 +7192,7 @@
   "autonomous-release.yml": {
     "name": "autonomous-release.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/autonomous-release.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/autonomous-release.yml",
     "size": 1606,
     "lines": 63,
     "triggers": [
@@ -7230,7 +7230,7 @@
   "autonomous-self-tune.yml": {
     "name": "autonomous-self-tune.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/autonomous-self-tune.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/autonomous-self-tune.yml",
     "size": 2075,
     "lines": 74,
     "triggers": [
@@ -7328,7 +7328,7 @@
   "autonomous-ultrafast.yml": {
     "name": "autonomous-ultrafast.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/autonomous-ultrafast.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/autonomous-ultrafast.yml",
     "size": 1188,
     "lines": 49,
     "triggers": [
@@ -7363,7 +7363,7 @@
   "autonomous-workflow-cleanup.yml": {
     "name": "autonomous-workflow-cleanup.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/autonomous-workflow-cleanup.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/autonomous-workflow-cleanup.yml",
     "size": 2717,
     "lines": 74,
     "triggers": [
@@ -7401,7 +7401,7 @@
   "autonomous-workflow-watchdog.yml": {
     "name": "autonomous-workflow-watchdog.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/autonomous-workflow-watchdog.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/autonomous-workflow-watchdog.yml",
     "size": 3136,
     "lines": 85,
     "triggers": [
@@ -7442,7 +7442,7 @@
   "branch-cleanup.yml": {
     "name": "branch-cleanup.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/branch-cleanup.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/branch-cleanup.yml",
     "size": 741,
     "lines": 33,
     "triggers": [
@@ -7480,7 +7480,7 @@
   "branch-pruner.yml": {
     "name": "branch-pruner.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/branch-pruner.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/branch-pruner.yml",
     "size": 1587,
     "lines": 48,
     "triggers": [
@@ -7516,7 +7516,7 @@
   "ci-auto-heal.yml": {
     "name": "ci-auto-heal.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/ci-auto-heal.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/ci-auto-heal.yml",
     "size": 1537,
     "lines": 55,
     "triggers": [],
@@ -7552,7 +7552,7 @@
   "ci-merge-main.yml": {
     "name": "ci-merge-main.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/ci-merge-main.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/ci-merge-main.yml",
     "size": 1523,
     "lines": 53,
     "triggers": [
@@ -7653,7 +7653,7 @@
   "cleanup-merged-branches.yml": {
     "name": "cleanup-merged-branches.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/cleanup-merged-branches.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/cleanup-merged-branches.yml",
     "size": 1741,
     "lines": 56,
     "triggers": [
@@ -7690,7 +7690,7 @@
   "codeql-analysis.yml": {
     "name": "codeql-analysis.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/codeql-analysis.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/codeql-analysis.yml",
     "size": 755,
     "lines": 34,
     "triggers": [
@@ -7796,7 +7796,7 @@
   "dependabot-auto-approve.yml": {
     "name": "dependabot-auto-approve.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/dependabot-auto-approve.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/dependabot-auto-approve.yml",
     "size": 854,
     "lines": 32,
     "triggers": [
@@ -7834,7 +7834,7 @@
   "docs-autogen.yml": {
     "name": "docs-autogen.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/docs-autogen.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/docs-autogen.yml",
     "size": 1150,
     "lines": 30,
     "triggers": [
@@ -7870,7 +7870,7 @@
   "ephemeral-branch-autorebase.yml": {
     "name": "ephemeral-branch-autorebase.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/ephemeral-branch-autorebase.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/ephemeral-branch-autorebase.yml",
     "size": 1786,
     "lines": 60,
     "triggers": [
@@ -7911,7 +7911,7 @@
   "fast-auto-push-to-main.yml": {
     "name": "fast-auto-push-to-main.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/fast-auto-push-to-main.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/fast-auto-push-to-main.yml",
     "size": 736,
     "lines": 38,
     "triggers": [
@@ -7948,7 +7948,7 @@
   "fast-lint-sync.yml": {
     "name": "fast-lint-sync.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/fast-lint-sync.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/fast-lint-sync.yml",
     "size": 1609,
     "lines": 57,
     "triggers": [
@@ -8048,7 +8048,7 @@
   "gitleaks.yml": {
     "name": "gitleaks.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/gitleaks.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/gitleaks.yml",
     "size": 1111,
     "lines": 45,
     "triggers": [
@@ -8090,7 +8090,7 @@
   "homepage-auto-advertiser.yml": {
     "name": "homepage-auto-advertiser.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/homepage-auto-advertiser.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/homepage-auto-advertiser.yml",
     "size": 1720,
     "lines": 59,
     "triggers": [
@@ -8190,7 +8190,7 @@
   "homepage-auto-update.yml": {
     "name": "homepage-auto-update.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/homepage-auto-update.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/homepage-auto-update.yml",
     "size": 1,
     "lines": 2,
     "triggers": [],
@@ -8206,7 +8206,7 @@
   "labeler.yml": {
     "name": "labeler.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/labeler.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/labeler.yml",
     "size": 346,
     "lines": 19,
     "triggers": [],
@@ -8239,7 +8239,7 @@
   "link-auto-fix.yml": {
     "name": "link-auto-fix.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/link-auto-fix.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/link-auto-fix.yml",
     "size": 1645,
     "lines": 58,
     "triggers": [
@@ -8339,7 +8339,7 @@
   "link-scan-hourly.yml": {
     "name": "link-scan-hourly.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/link-scan-hourly.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/link-scan-hourly.yml",
     "size": 1552,
     "lines": 56,
     "triggers": [
@@ -8439,7 +8439,7 @@
   "netlify-auto-healer.yml": {
     "name": "netlify-auto-healer.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/netlify-auto-healer.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/netlify-auto-healer.yml",
     "size": 1406,
     "lines": 43,
     "triggers": [
@@ -8477,7 +8477,7 @@
   "og-image-update.yml": {
     "name": "og-image-update.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/og-image-update.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/og-image-update.yml",
     "size": 1597,
     "lines": 58,
     "triggers": [
@@ -8577,7 +8577,7 @@
   "optimize-images.yml": {
     "name": "optimize-images.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/optimize-images.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/optimize-images.yml",
     "size": 1593,
     "lines": 58,
     "triggers": [
@@ -8677,7 +8677,7 @@
   "performance-audit.yml": {
     "name": "performance-audit.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/performance-audit.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/performance-audit.yml",
     "size": 2110,
     "lines": 61,
     "triggers": [
@@ -8715,7 +8715,7 @@
   "pr-size-labeler.yml": {
     "name": "pr-size-labeler.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/pr-size-labeler.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/pr-size-labeler.yml",
     "size": 524,
     "lines": 25,
     "triggers": [
@@ -8750,7 +8750,7 @@
   "pr-update-with-main.yml": {
     "name": "pr-update-with-main.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/pr-update-with-main.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/pr-update-with-main.yml",
     "size": 1514,
     "lines": 56,
     "triggers": [
@@ -8795,7 +8795,7 @@
   "rapid-git-sync.yml": {
     "name": "rapid-git-sync.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/rapid-git-sync.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/rapid-git-sync.yml",
     "size": 666,
     "lines": 35,
     "triggers": [
@@ -8829,7 +8829,7 @@
   "readme-autogen.yml": {
     "name": "readme-autogen.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/readme-autogen.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/readme-autogen.yml",
     "size": 1586,
     "lines": 55,
     "triggers": [
@@ -8929,7 +8929,7 @@
   "release-drafter.yml": {
     "name": "release-drafter.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/release-drafter.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/release-drafter.yml",
     "size": 357,
     "lines": 20,
     "triggers": [
@@ -8962,7 +8962,7 @@
   "repo-knowledge-graph.yml": {
     "name": "repo-knowledge-graph.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/repo-knowledge-graph.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/repo-knowledge-graph.yml",
     "size": 1640,
     "lines": 55,
     "triggers": [
@@ -9062,7 +9062,7 @@
   "repo-radar.yml": {
     "name": "repo-radar.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/repo-radar.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/repo-radar.yml",
     "size": 1621,
     "lines": 55,
     "triggers": [
@@ -9162,7 +9162,7 @@
   "search-index-autogen.yml": {
     "name": "search-index-autogen.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/search-index-autogen.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/search-index-autogen.yml",
     "size": 1635,
     "lines": 55,
     "triggers": [
@@ -9262,7 +9262,7 @@
   "security-audit.yml": {
     "name": "security-audit.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/security-audit.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/security-audit.yml",
     "size": 634,
     "lines": 32,
     "triggers": [
@@ -9299,7 +9299,7 @@
   "security-weekly.yml": {
     "name": "security-weekly.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/security-weekly.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/security-weekly.yml",
     "size": 1104,
     "lines": 42,
     "triggers": [
@@ -9337,7 +9337,7 @@
   "self-healing-build.yml": {
     "name": "self-healing-build.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/self-healing-build.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/self-healing-build.yml",
     "size": 1257,
     "lines": 49,
     "triggers": [
@@ -9376,7 +9376,7 @@
   "sitemap-auto-commit.yml": {
     "name": "sitemap-auto-commit.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/sitemap-auto-commit.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/sitemap-auto-commit.yml",
     "size": 1582,
     "lines": 58,
     "triggers": [
@@ -9476,7 +9476,7 @@
   "sitemap-daily.yml": {
     "name": "sitemap-daily.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/sitemap-daily.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/sitemap-daily.yml",
     "size": 1526,
     "lines": 55,
     "triggers": [
@@ -9576,7 +9576,7 @@
   "stale.yml": {
     "name": "stale.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/stale.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/stale.yml",
     "size": 1334,
     "lines": 38,
     "triggers": [
@@ -9613,7 +9613,7 @@
   "todo-issue-sync.yml": {
     "name": "todo-issue-sync.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/todo-issue-sync.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/todo-issue-sync.yml",
     "size": 2266,
     "lines": 73,
     "triggers": [
@@ -9719,7 +9719,7 @@
   "unused-deps-cleaner.yml": {
     "name": "unused-deps-cleaner.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/unused-deps-cleaner.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/unused-deps-cleaner.yml",
     "size": 1964,
     "lines": 52,
     "triggers": [
@@ -9758,7 +9758,7 @@
   "unused-exports-report.yml": {
     "name": "unused-exports-report.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/unused-exports-report.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/unused-exports-report.yml",
     "size": 1746,
     "lines": 59,
     "triggers": [
@@ -9858,7 +9858,7 @@
   "workflow-supervisor.yml": {
     "name": "workflow-supervisor.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/workflow-supervisor.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/workflow-supervisor.yml",
     "size": 4321,
     "lines": 105,
     "triggers": [
@@ -9895,7 +9895,7 @@
   "workflow-watchdog.yml": {
     "name": "workflow-watchdog.yml",
     "status": "disabled",
-    "path": "/workspace/.github/workflows.disabled/workflow-watchdog.yml",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/workflow-watchdog.yml",
     "size": 3679,
     "lines": 98,
     "triggers": [
