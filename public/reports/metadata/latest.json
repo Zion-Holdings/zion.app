@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T07:48:30.039Z",
-  "pagesScanned": 3569,
+  "generatedAt": "2025-08-15T07:49:13.602Z",
+  "pagesScanned": 3573,
   "items": [
     {
       "route": "/404",
@@ -4393,7 +4393,7 @@
       }
     },
     {
-      "route": "/reports/blueprints/blueprint-2025-08-15-074826",
+      "route": "/reports/blueprints/blueprint-2025-08-15-074855",
       "missing": [
         "og:image"
       ],
@@ -10873,7 +10873,17 @@
       }
     },
     {
-      "route": "/reports/cases/case-2025-08-15-074826",
+      "route": "/reports/cases/case-2025-08-15-074855",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Automation Autonomous",
+        "description": "Case Study — Automation Autonomous — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-074857",
       "missing": [
         "og:image"
       ],
@@ -17353,7 +17363,17 @@
       }
     },
     {
-      "route": "/reports/guides/guide-2025-08-15-074826",
+      "route": "/reports/guides/guide-2025-08-15-074855",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-074857",
       "missing": [
         "og:image"
       ],
@@ -26233,7 +26253,17 @@
       }
     },
     {
-      "route": "/reports/patterns/pattern-2025-08-15-074826",
+      "route": "/reports/patterns/pattern-2025-08-15-074855",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Improving Continuously",
+        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-074857",
       "missing": [
         "og:image"
       ],
@@ -30493,7 +30523,7 @@
       }
     },
     {
-      "route": "/reports/playbooks/playbook-2025-08-15-074826",
+      "route": "/reports/playbooks/playbook-2025-08-15-074856",
       "missing": [
         "og:image"
       ],
@@ -33410,6 +33440,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-15 04:48",
         "description": "Autonomous Update — 2025-08-15 04:48 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0449",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 04:49",
+        "description": "Autonomous Update — 2025-08-15 04:49 — auto-suggested description"
       }
     },
     {
