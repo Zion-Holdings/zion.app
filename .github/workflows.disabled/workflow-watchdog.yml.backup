@@ -1,0 +1,97 @@
+name: Workflow Watchdog
+
+on:
+  schedule:
+    - cron: '*/2 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ensure critical workflows are healthy
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const criticalNames = [
+              'Autonomous Cloud Runner (Fast)',
+              'Rapid Git Sync (1m)',
+              'Autonomous Cloud Automations'
+            ];
+
+            const { data } = await github.rest.actions.listRepoWorkflows({ owner, repo, per_page: 100 });
+            const workflows = data.workflows || [];
+            const nameToWorkflow = Object.fromEntries(workflows.map(w => [w.name, w]));
+
+            const nowMs = Date.now();
+            const maxAgeMinutes = 15;
+
+            for (const wfName of criticalNames) {
+              const wf = nameToWorkflow[wfName];
+              if (!wf) {
+                core.warning(`Workflow not found: ${wfName}`);
+                continue;
+              }
+
+              const runsResp = await github.rest.actions.listWorkflowRuns({
+                owner,
+                repo,
+                workflow_id: wf.id,
+                per_page: 1,
+                branch: 'main'
+              });
+
+              const lastRun = runsResp.data.workflow_runs?.[0];
+              let shouldDispatch = false;
+
+              if (!lastRun) {
+                core.warning(`No runs found for ${wfName}. Will dispatch.`);
+                shouldDispatch = true;
+              } else {
+                const updatedAtMs = Date.parse(lastRun.updated_at);
+                const ageMinutes = (nowMs - updatedAtMs) / 60000;
+                const conclusion = lastRun.conclusion;
+                const status = lastRun.status;
+
+                if (ageMinutes > maxAgeMinutes) {
+                  core.notice(`${wfName} is stale (${ageMinutes.toFixed(1)}m). Attempting re-run.`);
+                  try {
+                    await github.rest.actions.reRunWorkflow({ owner, repo, run_id: lastRun.id });
+                    continue;
+                  } catch (e) {
+                    core.warning(`Re-run failed for ${wfName}: ${e.message}`);
+                    shouldDispatch = true;
+                  }
+                } else if (conclusion && conclusion !== 'success') {
+                  core.notice(`${wfName} last conclusion=${conclusion}. Attempting re-run.`);
+                  try {
+                    await github.rest.actions.reRunWorkflow({ owner, repo, run_id: lastRun.id });
+                    continue;
+                  } catch (e) {
+                    core.warning(`Re-run failed for ${wfName}: ${e.message}`);
+                    shouldDispatch = true;
+                  }
+                } else if (status && status !== 'completed') {
+                  core.notice(`${wfName} is currently ${status}. Skipping intervention.`);
+                  continue;
+                } else {
+                  core.notice(`${wfName} is healthy (age ${ageMinutes.toFixed(1)}m, conclusion=${conclusion}).`);
+                  continue;
+                }
+              }
+
+              if (shouldDispatch) {
+                try {
+                  await github.rest.actions.createWorkflowDispatch({ owner, repo, workflow_id: wf.id, ref: 'main' });
+                  core.notice(`Dispatched ${wfName} via workflow_dispatch.`);
+                } catch (e) {
+                  core.warning(`Dispatch failed for ${wfName}: ${e.message}`);
+                }
+              }
+            }

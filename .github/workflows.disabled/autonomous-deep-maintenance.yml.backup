@@ -1,0 +1,57 @@
+name: Autonomous Deep Maintenance
+
+on:
+  schedule:
+    - cron: '15 */2 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: automation-deep-maintenance
+  cancel-in-progress: false
+
+jobs:
+  deep-maintenance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run intelligent orchestrator and factories
+        env:
+          APP_MARKETING_URL: https://ziontechgroup.com
+        run: |
+          node automation/intelligent-orchestrator.cjs run priority || true
+          node automation/smoke-test-factory.cjs || true
+          # Run a subset of generated smoke tests
+          find automation/smoke-test-agents -maxdepth 1 -name 'smoke-*.cjs' | head -n 50 | xargs -I {} node {} || true
+          node automation/site-link-orchestrator.cjs || true
+          node automation/security-remediation-factory.cjs || true
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(automation): autonomous deep maintenance"
+            git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }} HEAD:main
+          else
+            echo "No changes to commit."
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

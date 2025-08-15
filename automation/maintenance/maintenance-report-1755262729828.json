@@ -1,0 +1,82 @@
+{
+  "timestamp": "2025-08-15T12:58:49.828Z",
+  "predictions": {
+    "timestamp": "2025-08-15T12:58:49.827Z",
+    "failurePredictions": {
+      "prediction": "low",
+      "confidence": 0.8,
+      "currentHealth": null,
+      "predictedHealth": null,
+      "trend": "stable",
+      "reasoning": "Health trend: stable, predicted health: NaN/100",
+      "timeframe": "24 hours"
+    },
+    "performancePredictions": {
+      "prediction": "low",
+      "confidence": 0.8,
+      "currentPerformance": 95,
+      "predictedPerformance": 1052.6,
+      "trend": "increasing",
+      "reasoning": "Performance trend: increasing, predicted performance: 1052.6/100",
+      "timeframe": "1 week"
+    },
+    "resourcePredictions": {
+      "prediction": "high",
+      "confidence": 0.85,
+      "currentMemoryUsage": 5128848,
+      "currentCpuUsage": 100.74000000000001,
+      "reasoning": "Memory usage: 512884800.0%, CPU usage: 10074.0%",
+      "timeframe": "48 hours"
+    },
+    "securityPredictions": {
+      "prediction": "insufficient_data",
+      "confidence": 0,
+      "reasoning": "Not enough historical data"
+    },
+    "dependencyPredictions": {
+      "prediction": "insufficient_data",
+      "confidence": 0,
+      "reasoning": "Not enough historical data"
+    }
+  },
+  "maintenanceNeeds": {
+    "timestamp": "2025-08-15T12:58:49.827Z",
+    "immediate": [],
+    "shortTerm": [
+      {
+        "type": "resource_optimization",
+        "priority": "high",
+        "description": "Optimize resource usage",
+        "prediction": {
+          "prediction": "high",
+          "confidence": 0.85,
+          "currentMemoryUsage": 5128848,
+          "currentCpuUsage": 100.74000000000001,
+          "reasoning": "Memory usage: 512884800.0%, CPU usage: 10074.0%",
+          "timeframe": "48 hours"
+        },
+        "action": "resource_optimization"
+      }
+    ],
+    "mediumTerm": [],
+    "longTerm": []
+  },
+  "maintenanceResults": [],
+  "summary": {
+    "totalPredictions": 5,
+    "criticalPredictions": 0,
+    "totalMaintenanceNeeds": 1,
+    "totalMaintenanceActions": 0,
+    "successfulActions": 0,
+    "successRate": 100
+  },
+  "recommendations": [
+    {
+      "priority": "low",
+      "action": "Continue predictive maintenance",
+      "description": "Maintain continuous predictive maintenance for optimal system health",
+      "impact": "preventive_care"
+    }
+  ],
+  "nextActions": []
+}

@@ -25,6 +25,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
+      NODE_OPTIONS: "--max-old-space-size=4096"
   NEXT_TELEMETRY_DISABLED: '1'
   CI: 'true'
 

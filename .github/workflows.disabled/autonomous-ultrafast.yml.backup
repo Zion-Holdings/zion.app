@@ -1,0 +1,48 @@
+name: Autonomous Ultrafast Orchestrator
+
+on:
+  schedule:
+    - cron: '* * * * *'
+  workflow_dispatch: {}
+
+concurrency:
+  group: autonomous-ultrafast-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  run-ultrafast:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies (minimal)
+        run: npm ci --omit=dev || npm ci
+
+      - name: Run Cloud Autonomous Orchestrator (ultrafast)
+        run: node automation/cloud-autonomous-orchestrator.cjs | cat
+
+      - name: Advanced Git Sync to main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: node automation/advanced-git-sync.cjs | cat
+
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: autonomous-ultrafast-logs
+          path: automation/logs/**/*
+          if-no-files-found: ignore

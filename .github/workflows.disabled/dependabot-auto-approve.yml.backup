@@ -1,0 +1,31 @@
+name: Dependabot Auto Approve
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  pull-requests: write
+  contents: write
+
+jobs:
+  auto-approve:
+    if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Auto-approve
+        uses: hmarr/auto-approve-action@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+  enable-automerge:
+    needs: auto-approve
+    if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enable Auto-merge
+        uses: peter-evans/enable-pull-request-automerge@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          pull-request-number: ${{ github.event.pull_request.number }}
+          merge-method: squash

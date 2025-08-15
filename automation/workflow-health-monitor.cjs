@@ -11,7 +11,13 @@ class WorkflowHealthMonitor {
     this.disabledDir = path.resolve(__dirname, "../.github/workflows.disabled");
     this.reportsDir = path.resolve(__dirname, "reports");
     this.healthData = {};
-    this.failurePatterns = {};
+    this.failurePatterns = {
+      highComplexity: [],
+      missingTimeouts: [],
+      unsafeOperations: [],
+      outdatedActions: [],
+      resourceIntensive: []
+    };
     
     if (!fs.existsSync(this.reportsDir)) {
       fs.mkdirSync(this.reportsDir, { recursive: true });
@@ -34,14 +40,14 @@ class WorkflowHealthMonitor {
       await this.analyzeWorkflow(workflow, 'disabled');
     }
     
-    // Generate comprehensive health report
-    this.generateHealthReport();
-    
     // Identify failure patterns
     this.identifyFailurePatterns();
     
     // Suggest optimizations
     this.suggestOptimizations();
+    
+    // Generate comprehensive health report
+    this.generateHealthReport();
     
     // Save health data
     this.saveHealthData();
@@ -84,7 +90,7 @@ class WorkflowHealthMonitor {
       timeouts: this.extractTimeouts(content),
       permissions: this.extractPermissions(content),
       concurrency: this.extractConcurrency(content),
-      issues: this.identifyIssues(content),
+      issues: this.identifyIssues(content) || [],
       recommendations: []
     };
 
@@ -336,8 +342,8 @@ class WorkflowHealthMonitor {
         totalWorkflows: Object.keys(this.healthData).length,
         activeWorkflows: Object.values(this.healthData).filter(w => w.status === 'active').length,
         disabledWorkflows: Object.values(this.healthData).filter(w => w.status === 'disabled').length,
-        workflowsWithIssues: Object.values(this.healthData).filter(w => w.issues.length > 0).length,
-        totalIssues: Object.values(this.healthData).reduce((sum, w) => sum + w.issues.length, 0)
+        workflowsWithIssues: Object.values(this.healthData).filter(w => w.issues && w.issues.length > 0).length,
+        totalIssues: Object.values(this.healthData).reduce((sum, w) => sum + (w.issues ? w.issues.length : 0), 0)
       },
       patterns: this.failurePatterns,
       workflows: this.healthData,
@@ -361,17 +367,17 @@ class WorkflowHealthMonitor {
     console.log(`With Issues: ${report.summary.workflowsWithIssues}`);
     console.log(`Total Issues: ${report.summary.totalIssues}`);
     
-    if (report.recommendations.immediate.length > 0) {
+    if (report.recommendations.immediate && report.recommendations.immediate.length > 0) {
       console.log("\n🔴 IMMEDIATE ACTIONS NEEDED:");
       report.recommendations.immediate.forEach(rec => console.log(`  • ${rec}`));
     }
     
-    if (report.recommendations.shortTerm.length > 0) {
+    if (report.recommendations.shortTerm && report.recommendations.shortTerm.length > 0) {
       console.log("\n🟡 SHORT TERM IMPROVEMENTS:");
       report.recommendations.shortTerm.forEach(rec => console.log(`  • ${rec}`));
     }
     
-    if (report.recommendations.longTerm.length > 0) {
+    if (report.recommendations.longTerm && report.recommendations.longTerm.length > 0) {
       console.log("\n🟢 LONG TERM OPTIMIZATIONS:");
       report.recommendations.longTerm.forEach(rec => console.log(`  • ${rec}`));
     }

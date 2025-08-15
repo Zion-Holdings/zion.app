@@ -580,7 +580,7 @@ class PerformanceOptimizer {
       if (fs.existsSync(logFile)) {
         try {
           logData = JSON.parse(fs.readFileSync(logFile, 'utf8'));
-        } catch (error) {
+        } catch {
           // If file is corrupted, start fresh
           logData = [];
         }
@@ -589,8 +589,8 @@ class PerformanceOptimizer {
       logData.push(logEntry);
       fs.writeFileSync(logFile, JSON.stringify(logData, null, 2));
       
-    } catch (error) {
-      console.error('Failed to log optimization application:', error.message);
+    } catch {
+      console.error('Failed to log optimization application');
     }
   }
 
@@ -645,8 +645,8 @@ class PerformanceOptimizer {
             fs.unlinkSync(optimizationFile);
             cleaned++;
           }
-        } catch (error) {
-          console.warn(`Failed to process optimization file ${file}:`, error.message);
+        } catch {
+          console.warn(`Failed to process optimization file ${file}`);
         }
       }
 

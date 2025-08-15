@@ -14,6 +14,7 @@ permissions:
 jobs:
   list:
     runs-on: ubuntu-latest
+      timeout-minutes: 15
     outputs:
       prs: ${{ steps.collect.outputs.prs }}
     steps:

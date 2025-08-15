@@ -1,0 +1,48 @@
+name: Self-Healing Build
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  build-and-heal:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Try build
+        id: build
+        continue-on-error: true
+        run: npm run build | cat
+      - name: Heal and retry build
+        if: steps.build.outcome == 'failure'
+        run: |
+          npm run ci:heal || true
+      - name: Create Pull Request if changes
+        if: always()
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore(self-heal): automated build healing"
+          title: "chore(self-heal): automated build healing"
+          body: |
+            Automated build healing changes.
+          branch: automation/self-heal-build
+          delete-branch: true
+          labels: |
+            automation
+            auto-merge
