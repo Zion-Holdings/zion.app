@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T21:03:02.978Z",
+  "generatedAt": "2025-08-15T21:04:03.227Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1476,6 +1476,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1810.tsx",
       "title": "Autonomous Validation & QA Plan — Edge AI & IoT (2025-08-15 18:10 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Validation & QA Plan — Edge AI & IoT (2025-08-15 18:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"auth"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1804",
+      "file": "pages/reports/updates/update-2025-08-15-1804.tsx",
+      "title": "Autonomous Update — 2025-08-15 18:04",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 18:04 Autonomous Update — 2025-08-15 18:04 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Open source AI is the path forward ·"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1803",
