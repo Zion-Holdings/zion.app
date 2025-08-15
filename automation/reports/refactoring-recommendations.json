@@ -1,25 +1,90 @@
 {
-  "timestamp": "2025-08-15T23:44:39.163Z",
+  "timestamp": "2025-08-15T23:45:40.694Z",
   "critical": [],
   "high": [
     {
-      "workflow": "security-gates.yml",
+      "workflow": "emergency-fix.yml",
       "status": "active",
       "complexityScore": 50,
       "complexityLevel": "high",
       "metrics": {
-        "totalLines": 339,
+        "totalLines": 302,
         "jobCount": 0,
-        "stepCount": 35,
-        "conditionalCount": 5,
+        "stepCount": 46,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 10,
+        "actionCount": 16
+      },
+      "refactoringStrategy": [
+        "Break down into smaller job steps",
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "release.yml",
+      "status": "active",
+      "complexityScore": 50,
+      "complexityLevel": "high",
+      "metrics": {
+        "totalLines": 260,
+        "jobCount": 0,
+        "stepCount": 52,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 6,
+        "actionCount": 20
+      },
+      "refactoringStrategy": [
+        "Break down into smaller job steps",
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "security-gates.yml",
+      "status": "active",
+      "complexityScore": 55,
+      "complexityLevel": "high",
+      "metrics": {
+        "totalLines": 650,
+        "jobCount": 0,
+        "stepCount": 70,
+        "conditionalCount": 10,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 18
+        "actionCount": 34
       },
       "refactoringStrategy": [
         "Break down into smaller job steps",
+        "Simplify conditional logic",
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "test.yml",
+      "status": "active",
+      "complexityScore": 55,
+      "complexityLevel": "high",
+      "metrics": {
+        "totalLines": 228,
+        "jobCount": 0,
+        "stepCount": 60,
+        "conditionalCount": 6,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 30
+      },
+      "refactoringStrategy": [
+        "Break down into smaller job steps",
+        "Simplify conditional logic",
         "Extract common functionality to reusable workflows"
       ]
     }
@@ -170,40 +235,145 @@
       ]
     },
     {
-      "workflow": "deploy.yml",
+      "workflow": "dependency-auto-upgrade.yml",
       "status": "active",
       "complexityScore": 30,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 96,
+        "totalLines": 120,
         "jobCount": 0,
-        "stepCount": 19,
+        "stepCount": 20,
+        "conditionalCount": 2,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 8
+      },
+      "refactoringStrategy": [
+        "Break down into smaller job steps",
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "dependency-management.yml",
+      "status": "active",
+      "complexityScore": 40,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 142,
+        "jobCount": 0,
+        "stepCount": 22,
+        "conditionalCount": 4,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 2,
+        "actionCount": 8
+      },
+      "refactoringStrategy": [
+        "Break down into smaller job steps",
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "deploy.yml",
+      "status": "active",
+      "complexityScore": 40,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 164,
+        "jobCount": 0,
+        "stepCount": 38,
         "conditionalCount": 0,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 6,
-        "actionCount": 11
+        "secretCount": 12,
+        "actionCount": 20
+      },
+      "refactoringStrategy": [
+        "Break down into smaller job steps",
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "lighthouse-live.yml",
+      "status": "active",
+      "complexityScore": 35,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 114,
+        "jobCount": 0,
+        "stepCount": 16,
+        "conditionalCount": 4,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 10
+      },
+      "refactoringStrategy": [
+        "Break down into smaller job steps",
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "netlify-config.yml",
+      "status": "active",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 130,
+        "jobCount": 0,
+        "stepCount": 18,
+        "conditionalCount": 2,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 4
+      },
+      "refactoringStrategy": [
+        "Break down into smaller job steps",
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "netlify-functions-trigger.yml",
+      "status": "active",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 92,
+        "jobCount": 0,
+        "stepCount": 20,
+        "conditionalCount": 4,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 6
       },
       "refactoringStrategy": [
         "Break down into smaller job steps"
       ]
     },
     {
-      "workflow": "emergency-fix.yml",
+      "workflow": "playwright-smoke.yml",
       "status": "active",
       "complexityScore": 35,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 165,
+        "totalLines": 126,
         "jobCount": 0,
-        "stepCount": 23,
-        "conditionalCount": 0,
+        "stepCount": 26,
+        "conditionalCount": 2,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 5,
-        "actionCount": 9
+        "secretCount": 0,
+        "actionCount": 8
       },
       "refactoringStrategy": [
         "Break down into smaller job steps",
@@ -213,18 +383,18 @@
     {
       "workflow": "pr-quality-gate.yml",
       "status": "active",
-      "complexityScore": 35,
+      "complexityScore": 45,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 154,
+        "totalLines": 280,
         "jobCount": 0,
-        "stepCount": 33,
+        "stepCount": 66,
         "conditionalCount": 0,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 13
+        "actionCount": 24
       },
       "refactoringStrategy": [
         "Break down into smaller job steps",
@@ -232,41 +402,41 @@
       ]
     },
     {
-      "workflow": "release.yml",
+      "workflow": "security-scan.yml",
       "status": "active",
       "complexityScore": 35,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 144,
-        "jobCount": 0,
-        "stepCount": 26,
-        "conditionalCount": 0,
-        "matrixCount": 0,
-        "dependencyCount": 0,
-        "environmentCount": 0,
-        "secretCount": 3,
-        "actionCount": 11
-      },
-      "refactoringStrategy": [
-        "Break down into smaller job steps",
-        "Extract common functionality to reusable workflows"
-      ]
-    },
-    {
-      "workflow": "test.yml",
-      "status": "active",
-      "complexityScore": 40,
-      "complexityLevel": "medium",
-      "metrics": {
-        "totalLines": 128,
+        "totalLines": 132,
         "jobCount": 0,
         "stepCount": 30,
-        "conditionalCount": 3,
+        "conditionalCount": 2,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 16
+        "actionCount": 20
+      },
+      "refactoringStrategy": [
+        "Break down into smaller job steps",
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "ultra-rapid-sync.yml",
+      "status": "active",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 104,
+        "jobCount": 0,
+        "stepCount": 18,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 6
       },
       "refactoringStrategy": [
         "Break down into smaller job steps",
