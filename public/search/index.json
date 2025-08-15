@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T15:12:02.993Z",
+  "generatedAt": "2025-08-15T15:13:03.036Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1260,6 +1260,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1220.tsx",
       "title": "Autonomous Validation & QA Plan — Vision & Multimodal (2025-08-15 12:20 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Validation & QA Plan — Vision & Multimodal (2025-08-15 12:20 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\","
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1213",
+      "file": "pages/reports/updates/update-2025-08-15-1213.tsx",
+      "title": "Autonomous Update — 2025-08-15 12:13",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 12:13 Autonomous Update — 2025-08-15 12:13 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Bypassing airport sec"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1212",
