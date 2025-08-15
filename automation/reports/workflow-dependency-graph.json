@@ -606,6 +606,71 @@
     },
     "estimatedDuration": 25
   },
+  "emergency-fix.yml": {
+    "name": "emergency-fix.yml",
+    "triggers": [
+      "workflow_dispatch"
+    ],
+    "needs": [
+      "validate-action",
+      "validate-action",
+      "validate-action",
+      "[validate-action",
+      "hotfix",
+      "rollback",
+      "emergency-deploy]"
+    ],
+    "outputs": [
+      {
+        "key": "action",
+        "value": "${{ github.event.inputs.action }}"
+      },
+      {
+        "key": "target_branch",
+        "value": "${{ github.event.inputs.target_branch }}"
+      },
+      {
+        "key": "commit_sha",
+        "value": "${{ github.event.inputs.commit_sha }}"
+      },
+      {
+        "key": "description",
+        "value": "${{ github.event.inputs.description }}"
+      },
+      {
+        "key": "steps",
+        "value": ""
+      },
+      {
+        "key": "- name",
+        "value": "Validate inputs"
+      },
+      {
+        "key": "run",
+        "value": "|"
+      },
+      {
+        "key": "echo \"Action",
+        "value": "${{ github.event.inputs.action }}\""
+      },
+      {
+        "key": "echo \"Target Branch",
+        "value": "${{ github.event.inputs.target_branch }}\""
+      },
+      {
+        "key": "echo \"Description",
+        "value": "${{ github.event.inputs.description }}\""
+      }
+    ],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 30
+  },
   "external-links.yml": {
     "name": "external-links.yml",
     "triggers": [
@@ -1002,6 +1067,27 @@
       "concurrentJobs": 5
     },
     "estimatedDuration": 20
+  },
+  "release.yml": {
+    "name": "release.yml",
+    "triggers": [
+      "push",
+      "workflow_dispatch"
+    ],
+    "needs": [
+      "create-release",
+      "[create-release",
+      "deploy-release]"
+    ],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 30,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 30
   },
   "responsive-content.yml": {
     "name": "responsive-content.yml",

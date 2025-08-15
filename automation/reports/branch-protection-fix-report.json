@@ -1,10 +1,15 @@
 {
-  "timestamp": "2025-08-15T22:36:38.053Z",
+  "timestamp": "2025-08-15T22:37:40.981Z",
   "summary": {
-    "totalWorkflows": 0,
-    "fixed": 0,
+    "totalWorkflows": 1,
+    "fixed": 1,
     "failed": 0
   },
-  "fixedWorkflows": [],
+  "fixedWorkflows": [
+    {
+      "name": "release.yml",
+      "status": "active"
+    }
+  ],
   "failedWorkflows": []
 }
