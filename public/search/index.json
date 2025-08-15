@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T23:22:03.155Z",
+  "generatedAt": "2025-08-15T23:23:03.562Z",
   "entries": [
     {
       "route": "/terms",
@@ -1578,6 +1578,12 @@
       "file": "pages/reports/updates/update-2025-08-15-2030.tsx",
       "title": "Autonomous Reference Architecture — Cloud Cost Optimization (2025-08-15 20:30 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Reference Architecture — Cloud Cost Optimization (2025-08-15 20:30 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subti"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-2023",
+      "file": "pages/reports/updates/update-2025-08-15-2023.tsx",
+      "title": "Autonomous Update — 2025-08-15 20:23",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 20:23 Autonomous Update — 2025-08-15 20:23 Signal over noise—your automated update is here. Today's Highlight Hacker News : Zoom terms now allow training AI on user conten"
     },
     {
       "route": "/reports/updates/update-2025-08-15-2022",
@@ -33624,6 +33630,12 @@
       "file": "pages/reports/blueprints/blueprint-2025-08-14-212855.tsx",
       "title": "blueprint-2025-08-14-212855",
       "summary": "import React from 'react'; export default function Blueprint20250814212855() { return ( Blueprint Report This is a placeholder blueprint report. ); }"
+    },
+    {
+      "route": "/news",
+      "file": "pages/news/index.tsx",
+      "title": "News | Zion Tech Group - Latest Updates and Announcements",
+      "summary": "import Head from 'next/head'; import Link from 'next/link'; export default function NewsIndexPage() { const newsArticles = [ { id: 'zion-tech-group-ai-breakthrough', title: 'Zion Tech Group Announces Major AI Breakthrough in Autonomous Systems', excerpt: 'Company achieves signifi"
     },
     {
       "route": "/main/front",
