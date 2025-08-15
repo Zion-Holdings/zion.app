@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T13:18:00.863Z",
-  "pagesScanned": 4545,
+  "generatedAt": "2025-08-15T13:19:00.762Z",
+  "pagesScanned": 4549,
   "items": [
     {
       "route": "/404",
@@ -13649,6 +13649,16 @@
       }
     },
     {
+      "route": "/reports/cases/case-2025-08-15-131815",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Automation Autonomous",
+        "description": "Case Study — Automation Autonomous — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/guides/guide-2025-08-15-021207",
       "missing": [
         "og:image"
@@ -21890,6 +21900,16 @@
     },
     {
       "route": "/reports/guides/guide-2025-08-15-131032",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-131815",
       "missing": [
         "og:image"
       ],
@@ -33309,6 +33329,16 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-15-131815",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Improving Continuously",
+        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-15-021207",
       "missing": [
         "og:image"
@@ -43691,14 +43721,24 @@
     {
       "route": "/reports/updates/update-2025-08-15-1018",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 10:18",
+        "description": "Autonomous Update — 2025-08-15 10:18 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1019",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-15 10:18",
-        "description": "Autonomous Update — 2025-08-15 10:18 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-15 10:19",
+        "description": "Autonomous Update — 2025-08-15 10:19 — auto-suggested description"
       }
     },
     {
