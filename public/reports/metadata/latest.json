@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T23:40:01.323Z",
-  "pagesScanned": 5640,
+  "generatedAt": "2025-08-15T23:41:00.981Z",
+  "pagesScanned": 5649,
   "items": [
     {
       "route": "/404",
@@ -6246,6 +6246,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-15-233033",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-234033",
       "missing": [
         "og:image"
       ],
@@ -23635,6 +23645,16 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-15-234033",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Autonomous Update Implementation",
+        "description": "Guide — Autonomous Update Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-15-0211",
       "missing": [
         "og:image"
@@ -25772,6 +25792,16 @@
       "suggestion": {
         "title": "Guide: Edge AI",
         "description": "Guide: Edge AI — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-2340",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Blueprint: FinOps for AI",
+        "description": "Blueprint: FinOps for AI — auto-suggested description"
       }
     },
     {
@@ -27972,6 +28002,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-15 23-30",
         "description": "Innovation Insight — 2025-08-15 23-30 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15T23-40",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-15 23-40",
+        "description": "Innovation Insight — 2025-08-15 23-40 — auto-suggested description"
       }
     },
     {
@@ -36935,6 +36975,16 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-15-234033",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Improving Continuously",
+        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-15-021207",
       "missing": [
         "og:image"
@@ -42856,6 +42906,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-15-233034",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-234033",
       "missing": [
         "og:image"
       ],
@@ -53985,6 +54045,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-15-2041",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 20:41",
+        "description": "Autonomous Update — 2025-08-15 20:41 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-15-2050",
       "missing": [
         "og:image"
@@ -54142,6 +54215,16 @@
       "suggestion": {
         "title": "Autonomous Checklist — AI Service Design (2025-08-15 23:30 UTC)",
         "description": "Autonomous Checklist — AI Service Design (2025-08-15 23:30 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-2340",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Reference Architecture — Cloud Cost Optimization (2025-08-15 23:40 UTC)",
+        "description": "Autonomous Reference Architecture — Cloud Cost Optimization (2025-08-15 23:40 UTC) — auto-suggested description"
       }
     },
     {
@@ -56342,6 +56425,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-15 23-30",
         "description": "Autonomous Update — 2025-08-15 23-30 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15T23-40",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 23-40",
+        "description": "Autonomous Update — 2025-08-15 23-40 — auto-suggested description"
       }
     },
     {
