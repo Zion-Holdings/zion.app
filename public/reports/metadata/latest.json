@@ -1,11 +1,6 @@
 {
-<<<<<<< HEAD
-  "generatedAt": "2025-08-15T04:41:00.114Z",
-  "pagesScanned": 293,
-=======
-  "generatedAt": "2025-08-15T04:41:00.361Z",
-  "pagesScanned": 294,
->>>>>>> origin/main
+  "generatedAt": "2025-08-15T04:42:00.167Z",
+  "pagesScanned": 296,
   "items": [
     {
       "route": "/404",
@@ -318,11 +313,7 @@
       }
     },
     {
-<<<<<<< HEAD
-      "route": "/reports/blueprints/blueprint-2025-08-15-044004",
-=======
       "route": "/reports/blueprints/blueprint-2025-08-15-044013",
->>>>>>> origin/main
       "missing": [
         "og:image"
       ],
@@ -512,11 +503,7 @@
       }
     },
     {
-<<<<<<< HEAD
-      "route": "/reports/cases/case-2025-08-15-044004",
-=======
       "route": "/reports/cases/case-2025-08-15-044013",
->>>>>>> origin/main
       "missing": [
         "og:image"
       ],
@@ -706,11 +693,7 @@
       }
     },
     {
-<<<<<<< HEAD
-      "route": "/reports/guides/guide-2025-08-15-044004",
-=======
       "route": "/reports/guides/guide-2025-08-15-044013",
->>>>>>> origin/main
       "missing": [
         "og:image"
       ],
@@ -875,13 +858,8 @@
         "og:image"
       ],
       "suggestion": {
-<<<<<<< HEAD
-        "title": "Runbook: DevSecOps AI",
-        "description": "Runbook: DevSecOps AI — auto-suggested description"
-=======
         "title": "Guide: MLOps",
         "description": "Guide: MLOps — auto-suggested description"
->>>>>>> origin/main
       }
     },
     {
@@ -1235,11 +1213,7 @@
       }
     },
     {
-<<<<<<< HEAD
-      "route": "/reports/patterns/pattern-2025-08-15-044004",
-=======
       "route": "/reports/patterns/pattern-2025-08-15-044013",
->>>>>>> origin/main
       "missing": [
         "og:image"
       ],
@@ -1429,11 +1403,7 @@
       }
     },
     {
-<<<<<<< HEAD
-      "route": "/reports/playbooks/playbook-2025-08-15-044004",
-=======
       "route": "/reports/playbooks/playbook-2025-08-15-044013",
->>>>>>> origin/main
       "missing": [
         "og:image"
       ],
@@ -2615,10 +2585,7 @@
     {
       "route": "/reports/updates/update-2025-08-15-0141",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-15 01:41",
@@ -2779,15 +2746,24 @@
       "route": "/reports/updates/update-2025-08-15-0440",
       "missing": [
         "og:image"
-<<<<<<< HEAD
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-15 04:40",
-        "description": "Autonomous Update — 2025-08-15 04:40 — auto-suggested description"
+        "title": "Autonomous Blueprint — Evaluation & Safety (2025-08-15 04:40 UTC)",
+        "description": "Autonomous Blueprint — Evaluation & Safety (2025-08-15 04:40 UTC) — auto-suggested description"
       }
     },
     {
       "route": "/reports/updates/update-2025-08-15-0441",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 04:41",
+        "description": "Autonomous Update — 2025-08-15 04:41 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0442",
       "missing": [
         "og:title",
         "og:description",
@@ -2795,14 +2771,8 @@
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-15 04:41",
-        "description": "Autonomous Update — 2025-08-15 04:41 — auto-suggested description"
-=======
-      ],
-      "suggestion": {
-        "title": "Autonomous Blueprint — Evaluation & Safety (2025-08-15 04:40 UTC)",
-        "description": "Autonomous Blueprint — Evaluation & Safety (2025-08-15 04:40 UTC) — auto-suggested description"
->>>>>>> origin/main
+        "title": "Autonomous Update — 2025-08-15 04:42",
+        "description": "Autonomous Update — 2025-08-15 04:42 — auto-suggested description"
       }
     },
     {
