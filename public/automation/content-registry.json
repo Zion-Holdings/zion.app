@@ -9723,5 +9723,14 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-15T07:00:09.089Z"
+  "generatedAt": "2025-08-15T07:00:09.089Z",
+  "items": [
+    {
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-15-070025",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T07:00:25.480Z",
+      "source": "cloud-blueprint-factory"
+    }
+  ]
 }
