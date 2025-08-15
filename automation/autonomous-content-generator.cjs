@@ -528,6 +528,211 @@ export default function Button({
 }`;
   }
 
+  getPaginationTemplate() {
+    return `interface PaginationProps {
+  currentPage: number;
+  totalPages: number;
+  onPageChange: (page: number) => void;
+  className?: string;
+}
+
+export default function Pagination({ 
+  currentPage, 
+  totalPages, 
+  onPageChange, 
+  className = '' 
+}: PaginationProps) {
+  const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
+  
+  return (
+    <div className={\`flex items-center justify-center space-x-2 \${className}\`}>
+      <button
+        onClick={() => onPageChange(currentPage - 1)}
+        disabled={currentPage === 1}
+        className="px-3 py-2 text-white/80 hover:text-cyan-400 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+      >
+        Previous
+      </button>
+      
+      {pages.map((page) => (
+        <button
+          key={page}
+          onClick={() => onPageChange(page)}
+          className={\`px-3 py-2 rounded-lg transition-colors \${
+            page === currentPage
+              ? 'bg-cyan-500 text-white'
+              : 'text-white/80 hover:text-cyan-400 hover:bg-white/10'
+          }\`}
+        >
+          {page}
+        </button>
+      ))}
+      
+      <button
+        onClick={() => onPageChange(currentPage + 1)}
+        disabled={currentPage === totalPages}
+        className="px-3 py-2 text-white/80 hover:text-cyan-400 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+      >
+        Next
+      </button>
+    </div>
+  );
+}`;
+  }
+
+  getFormTemplate() {
+    return `import { useState } from 'react';
+
+interface FormProps {
+  onSubmit: (data: any) => void;
+  className?: string;
+}
+
+export default function Form({ onSubmit, className = '' }: FormProps) {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    onSubmit(formData);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className={\`space-y-4 \${className}\`}>
+      <div>
+        <label htmlFor="name" className="block text-sm font-medium text-white/80 mb-2">
+          Name
+        </label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
+          placeholder="Enter your name"
+          required
+        />
+      </div>
+      
+      <div>
+        <label htmlFor="email" className="block text-sm font-medium text-white/80 mb-2">
+          Email
+        </label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
+          placeholder="Enter your email"
+          required
+        />
+      </div>
+      
+      <div>
+        <label htmlFor="message" className="block text-sm font-medium text-white/80 mb-2">
+          Message
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          rows={4}
+          className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
+          placeholder="Enter your message"
+          required
+        />
+      </div>
+      
+      <button
+        type="submit"
+        className="w-full bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+      >
+        Submit
+      </form>
+    </form>
+  );
+}`;
+  }
+
+  getModalTemplate() {
+    return `import { useState, useEffect } from 'react';
+
+interface ModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  title: string;
+  children: React.ReactNode;
+  className?: string;
+}
+
+export default function Modal({ 
+  isOpen, 
+  onClose, 
+  title, 
+  children, 
+  className = '' 
+}: ModalProps) {
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen, onClose]);
+
+  if (!isOpen) return null;
+
+  return (
+    <>
+      <div 
+        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+        onClick={onClose}
+      />
+      <div className={\`fixed inset-0 z-50 flex items-center justify-center p-4 \${className}\`}>
+        <div className="bg-slate-900 border border-white/20 rounded-lg shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+          <div className="flex items-center justify-between p-6 border-b border-white/10">
+            <h2 className="text-xl font-semibold text-white">{title}</h2>
+            <button
+              onClick={onClose}
+              className="text-white/60 hover:text-white transition-colors"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div className="p-6">
+            {children}
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}`;
+  }
+
   getDefaultComponentTemplate(componentName) {
     return `interface ${componentName}Props {
   className?: string;
