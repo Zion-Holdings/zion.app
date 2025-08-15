@@ -1,33 +1,33 @@
 {
-  "generatedAt": "2025-08-15T08:21:20.140Z",
+  "generatedAt": "2025-08-15T08:32:29.959Z",
   "items": [
     {
-      "title": "Innovation Insight — 2025-08-15 08-21",
-      "href": "/reports/innovations/insight-2025-08-15T08-21",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T08:21:20.115Z",
-      "source": "cloud-content-factory"
+      "title": "Playbook: FinOps for AI",
+      "subtitle": "Patterns to reduce cost.",
+      "path": "/reports/innovations/insight-2025-08-15-0832",
+      "createdAt": "2025-08-15T08:32:32.688Z",
+      "kind": "insight"
     },
     {
-      "title": "Autonomous Update — 2025-08-15 08-21",
-      "href": "/reports/updates/update-2025-08-15T08-21",
+      "title": "Case Study — Automation Autonomous",
+      "href": "/reports/cases/case-2025-08-15-083207",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T08:21:20.115Z",
-      "source": "cloud-content-factory"
+      "createdAt": "2025-08-15T08:32:07.704Z",
+      "source": "cloud-deep-research-factory"
     },
     {
-      "title": "Innovation Insight — 2025-08-15 08-21",
-      "href": "/reports/innovations/insight-2025-08-15T08-21",
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-15-083207",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T08:21:20.115Z",
-      "source": "cloud-content-factory"
+      "createdAt": "2025-08-15T08:32:07.704Z",
+      "source": "cloud-deep-research-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-15 08-21",
-      "href": "/reports/updates/update-2025-08-15T08-21",
+      "title": "Pattern — Cloud Improving Continuously",
+      "href": "/reports/patterns/pattern-2025-08-15-083207",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T08:21:20.115Z",
-      "source": "cloud-content-factory"
+      "createdAt": "2025-08-15T08:32:07.704Z",
+      "source": "cloud-deep-research-factory"
     }
   ]
 }
