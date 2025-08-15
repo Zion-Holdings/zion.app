@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T21:01:03.057Z",
+  "generatedAt": "2025-08-15T21:02:03.343Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1476,6 +1476,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1810.tsx",
       "title": "Autonomous Validation & QA Plan — Edge AI & IoT (2025-08-15 18:10 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Validation & QA Plan — Edge AI & IoT (2025-08-15 18:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"auth"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1802",
+      "file": "pages/reports/updates/update-2025-08-15-1802.tsx",
+      "title": "Autonomous Update — 2025-08-15 18:02",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 18:02 Autonomous Update — 2025-08-15 18:02 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Airfoil · 2544 pts Wh"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1801",
