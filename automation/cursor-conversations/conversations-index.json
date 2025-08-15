@@ -286,5 +286,29 @@
     "startTime": "2025-08-15T23:41:35.574Z",
     "status": "active",
     "filePath": "conv-1755301295574.json"
+  },
+  {
+    "id": "conv-1755301435904",
+    "type": "bug-investigation",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "QA Tester"
+    ],
+    "startTime": "2025-08-15T23:43:55.904Z",
+    "status": "active",
+    "filePath": "conv-1755301435904.json"
+  },
+  {
+    "id": "conv-1755301437907",
+    "type": "architecture-discussion",
+    "participants": [
+      "Backend Developer",
+      "DevOps Engineer",
+      "Security Expert"
+    ],
+    "startTime": "2025-08-15T23:43:57.907Z",
+    "status": "active",
+    "filePath": "conv-1755301437907.json"
   }
 ]
