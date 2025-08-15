@@ -1,51 +1,25 @@
 {
-  "timestamp": "2025-08-15T23:39:39.407Z",
-  "critical": [
-    {
-      "workflow": "security-gates.yml",
-      "status": "active",
-      "complexityScore": 70,
-      "complexityLevel": "very-high",
-      "metrics": {
-        "totalLines": 409,
-        "jobCount": 0,
-        "stepCount": 32,
-        "conditionalCount": 8,
-        "matrixCount": 1,
-        "dependencyCount": 4,
-        "environmentCount": 0,
-        "secretCount": 0,
-        "actionCount": 16
-      },
-      "refactoringStrategy": [
-        "Break down into smaller job steps",
-        "Simplify conditional logic",
-        "Consider parallel workflow execution",
-        "Optimize job dependencies",
-        "Extract common functionality to reusable workflows"
-      ]
-    }
-  ],
+  "timestamp": "2025-08-15T23:40:38.469Z",
+  "critical": [],
   "high": [
     {
-      "workflow": "emergency-fix.yml",
+      "workflow": "security-gates.yml",
       "status": "active",
       "complexityScore": 50,
       "complexityLevel": "high",
       "metrics": {
-        "totalLines": 229,
+        "totalLines": 339,
         "jobCount": 0,
-        "stepCount": 20,
-        "conditionalCount": 4,
+        "stepCount": 35,
+        "conditionalCount": 5,
         "matrixCount": 0,
-        "dependencyCount": 4,
-        "environmentCount": 1,
-        "secretCount": 5,
-        "actionCount": 7
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 18
       },
       "refactoringStrategy": [
         "Break down into smaller job steps",
-        "Optimize job dependencies",
         "Extract common functionality to reusable workflows"
       ]
     }
@@ -57,15 +31,15 @@
       "complexityScore": 35,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 171,
+        "totalLines": 134,
         "jobCount": 0,
-        "stepCount": 24,
-        "conditionalCount": 1,
+        "stepCount": 27,
+        "conditionalCount": 0,
         "matrixCount": 0,
-        "dependencyCount": 1,
+        "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 9
+        "actionCount": 11
       },
       "refactoringStrategy": [
         "Break down into smaller job steps",
@@ -75,17 +49,37 @@
     {
       "workflow": "deploy.yml",
       "status": "active",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 96,
+        "jobCount": 0,
+        "stepCount": 19,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 6,
+        "actionCount": 11
+      },
+      "refactoringStrategy": [
+        "Break down into smaller job steps"
+      ]
+    },
+    {
+      "workflow": "emergency-fix.yml",
+      "status": "active",
       "complexityScore": 35,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 116,
+        "totalLines": 165,
         "jobCount": 0,
-        "stepCount": 16,
-        "conditionalCount": 2,
+        "stepCount": 23,
+        "conditionalCount": 0,
         "matrixCount": 0,
-        "dependencyCount": 2,
+        "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 6,
+        "secretCount": 5,
         "actionCount": 9
       },
       "refactoringStrategy": [
@@ -96,18 +90,18 @@
     {
       "workflow": "pr-quality-gate.yml",
       "status": "active",
-      "complexityScore": 45,
+      "complexityScore": 35,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 202,
+        "totalLines": 154,
         "jobCount": 0,
-        "stepCount": 30,
-        "conditionalCount": 1,
+        "stepCount": 33,
+        "conditionalCount": 0,
         "matrixCount": 0,
-        "dependencyCount": 1,
+        "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 11
+        "actionCount": 13
       },
       "refactoringStrategy": [
         "Break down into smaller job steps",
@@ -120,15 +114,15 @@
       "complexityScore": 35,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 186,
+        "totalLines": 144,
         "jobCount": 0,
-        "stepCount": 23,
-        "conditionalCount": 1,
+        "stepCount": 26,
+        "conditionalCount": 0,
         "matrixCount": 0,
-        "dependencyCount": 2,
-        "environmentCount": 1,
+        "dependencyCount": 0,
+        "environmentCount": 0,
         "secretCount": 3,
-        "actionCount": 9
+        "actionCount": 11
       },
       "refactoringStrategy": [
         "Break down into smaller job steps",
@@ -138,22 +132,21 @@
     {
       "workflow": "test.yml",
       "status": "active",
-      "complexityScore": 45,
+      "complexityScore": 40,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 169,
+        "totalLines": 128,
         "jobCount": 0,
-        "stepCount": 27,
+        "stepCount": 30,
         "conditionalCount": 3,
         "matrixCount": 0,
-        "dependencyCount": 4,
+        "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 14
+        "actionCount": 16
       },
       "refactoringStrategy": [
         "Break down into smaller job steps",
-        "Optimize job dependencies",
         "Extract common functionality to reusable workflows"
       ]
     }

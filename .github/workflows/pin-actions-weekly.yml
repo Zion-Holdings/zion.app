@@ -1,42 +1,55 @@
 name: Weekly Actions Pin Refresh
 
 on:
-  schedule:
-    - cron: '7 3 * * 1'
   workflow_dispatch: {}
+  schedule:
+    - cron: '*/10 * * * *'
 
 permissions:
   contents: write
+  actions: read
 
 jobs:
-  pin-refresh:
+  main:
+    name: Main Job
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Find unpinned actions
-        id: scan
-        run: |
-          set -e
-          files=$(grep -RIl "uses: .*@v" .github/workflows || true)
-          echo "files<<EOF" >> $GITHUB_OUTPUT
-          echo "$files" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
-
-      - name: Pin guidance PR
-        if: steps.scan.outputs.files != ''
-        uses: peter-evans/create-pull-request@v6
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: 'chore(actions): pin action versions to SHAs'
-          title: 'chore(actions): pin action versions to SHAs'
-          body: |
-            This PR suggests pinning action versions to exact SHAs for supply-chain security.
-            A maintainer should update `uses: owner/repo@<sha>` accordingly.
-          branch: automation/pin-actions
-          delete-branch: true
+          node-version: '20'
+          cache: 'npm'
 
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+            - name: Checkout
+              uses: actions/checkout@v4
+              with:
+                fetch-depth: 0
+            - name: Find unpinned actions
+              id: scan
+              run: |
+                set -e
+                files=$(grep -RIl "uses: .*@v" .github/workflows || true)
+                echo "files<<EOF" >> $GITHUB_OUTPUT
+                echo "$files" >> $GITHUB_OUTPUT
+                echo "EOF" >> $GITHUB_OUTPUT
+            - name: Pin guidance PR
+              if: steps.scan.outputs.files != ''
+              uses: peter-evans/create-pull-request@v6
+              with:
+                token: ${{ secrets.GITHUB_TOKEN }}
+                commit-message: 'chore(actions): pin action versions to SHAs'
+                title: 'chore(actions): pin action versions to SHAs'
+                body: |
+                  This PR suggests pinning action versions to exact SHAs for supply-chain security.
+                  A maintainer should update `uses: owner/repo@<sha>` accordingly.
+                branch: automation/pin-actions
+                delete-branch: true
