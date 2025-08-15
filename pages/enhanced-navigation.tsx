@@ -13,6 +13,7 @@ export default function EnhancedNavigation() {
     { href: '/discover', label: 'Discover', icon: '🔍' },
     { href: '/playground', label: 'Playground', icon: '🎮' },
     { href: '/live-dashboard', label: 'Live Dashboard', icon: '📈' },
+    { href: '/performance-dashboard', label: 'Performance', icon: '⚡' },
     { href: '/automation', label: 'Automation', icon: '🤖' }
   ];
 
