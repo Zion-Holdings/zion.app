@@ -5074,5 +5074,29 @@
     "startTime": "2025-08-15T22:48:13.872Z",
     "status": "active",
     "filePath": "conv-1755298093872.json"
+  },
+  {
+    "id": "conv-1755298253458",
+    "type": "testing-strategy",
+    "participants": [
+      "QA Tester",
+      "Frontend Specialist",
+      "Backend Developer"
+    ],
+    "startTime": "2025-08-15T22:50:53.458Z",
+    "status": "active",
+    "filePath": "conv-1755298253458.json"
+  },
+  {
+    "id": "conv-1755298255466",
+    "type": "performance-optimization",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "DevOps Engineer"
+    ],
+    "startTime": "2025-08-15T22:50:55.466Z",
+    "status": "active",
+    "filePath": "conv-1755298255466.json"
   }
 ]

@@ -1256,6 +1256,23 @@
     },
     "estimatedDuration": 25
   },
+  "test-auth.yml": {
+    "name": "test-auth.yml",
+    "triggers": [
+      "workflow_dispatch {}",
+      "push"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 10
+  },
   "test.yml": {
     "name": "test.yml",
     "triggers": [
