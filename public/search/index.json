@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T23:04:04.143Z",
+  "generatedAt": "2025-08-15T23:05:04.179Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -24,6 +24,12 @@
       "file": "pages/reports.tsx",
       "title": "Reports & Content | Zion Tech Group",
       "summary": "import Head from 'next/head'; import Link from 'next/link'; export default function ReportsOverview() { const categories = [ { name: 'Insights', href: '/reports/insights', description: 'AI and technology insights', count: '15+ reports', color: 'cyan' }, { name: 'Dossiers', href: "
+    },
+    {
+      "route": "/privacy",
+      "file": "pages/privacy.tsx",
+      "title": "Privacy Policy | Zion Tech Group",
+      "summary": "import Head from 'next/head'; export default function PrivacyPage() { return ( Privacy Policy | Zion Tech Group {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"WebPage\", \"headline\": \"Privacy Policy\", \"description\": \"Privacy Policy for Zion Tech Group\", \"url\": \"https"
     },
     {
       "route": "/playground",
@@ -1554,6 +1560,12 @@
       "file": "pages/reports/updates/update-2025-08-15-2010.tsx",
       "title": "Autonomous Reference Architecture — Vision & Multimodal (2025-08-15 20:10 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Reference Architecture — Vision & Multimodal (2025-08-15 20:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-2005",
+      "file": "pages/reports/updates/update-2025-08-15-2005.tsx",
+      "title": "Autonomous Update — 2025-08-15 20:05",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 20:05 Autonomous Update — 2025-08-15 20:05 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Zoom terms now allow "
     },
     {
       "route": "/reports/updates/update-2025-08-15-2004",
