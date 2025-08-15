@@ -2995,8 +2995,8 @@
     "name": "seo-audit.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/seo-audit.yml",
-    "size": 930,
-    "lines": 33,
+    "size": 1611,
+    "lines": 58,
     "triggers": [
       "workflow_dispatch {}",
       "schedule"
@@ -3005,7 +3005,9 @@
       "schedule",
       "jobs",
       "main",
-      "steps"
+      "steps",
+      "with",
+      "with"
     ],
     "timeouts": [
       20
@@ -3021,13 +3023,8 @@
       }
     ],
     "concurrency": null,
-    "issues": [
-      "missing_npm_cache",
-      "unsafe_git_push"
-    ],
+    "issues": [],
     "recommendations": [
-      "Add npm cache to improve build performance",
-      "Add branch protection to git push operations",
       "Add workflow_dispatch trigger for manual testing",
       "Consider splitting into smaller workflows for better maintainability"
     ]
@@ -8277,7 +8274,6 @@
       "Add branch protection to readme-auto-advertiser.yml",
       "Add branch protection to responsive-content.yml",
       "Add branch protection to security-auto-heal.yml",
-      "Add branch protection to seo-audit.yml",
       "Add branch protection to site-health-guardian.yml",
       "Add branch protection to sitemap-and-search.yml",
       "Add branch protection to topics-and-clusters.yml",
@@ -8376,6 +8372,7 @@
       "Refactor security-auto-heal.yml into smaller, focused workflows",
       "Refactor security-gates.yml into smaller, focused workflows",
       "Refactor security-scan.yml into smaller, focused workflows",
+      "Refactor seo-audit.yml into smaller, focused workflows",
       "Refactor site-health-guardian.yml into smaller, focused workflows",
       "Refactor site-link.yml into smaller, focused workflows",
       "Refactor sitemap-and-search.yml into smaller, focused workflows",
