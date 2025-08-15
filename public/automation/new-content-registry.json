@@ -1,32 +1,39 @@
 {
-  "generatedAt": "2025-08-15T09:55:57.838Z",
+  "generatedAt": "2025-08-15T10:07:03.258Z",
   "items": [
     {
-      "title": "Checklist: MLOps",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-15-1001",
-      "createdAt": "2025-08-15T10:01:46.306Z",
-      "kind": "insight"
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-15-100703",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T10:07:03.224Z",
+      "source": "cloud-blueprint-factory"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-15-100703",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T10:07:03.191Z",
+      "source": "cloud-playbook-factory"
     },
     {
       "title": "Case Study — Automation Autonomous",
-      "href": "/reports/cases/case-2025-08-15-095557",
+      "href": "/reports/cases/case-2025-08-15-100703",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T09:55:57.797Z",
+      "createdAt": "2025-08-15T10:07:03.148Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Guide — Cloud Improving Implementation",
-      "href": "/reports/guides/guide-2025-08-15-095557",
+      "href": "/reports/guides/guide-2025-08-15-100703",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T09:55:57.797Z",
+      "createdAt": "2025-08-15T10:07:03.148Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Cloud Improving Continuously",
-      "href": "/reports/patterns/pattern-2025-08-15-095557",
+      "href": "/reports/patterns/pattern-2025-08-15-100703",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T09:55:57.797Z",
+      "createdAt": "2025-08-15T10:07:03.148Z",
       "source": "cloud-deep-research-factory"
     }
   ]
