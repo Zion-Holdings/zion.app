@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T23:09:03.873Z",
+  "generatedAt": "2025-08-15T23:10:03.686Z",
   "entries": [
     {
       "route": "/terms",
@@ -29988,6 +29988,12 @@
       "file": "pages/reports/cases/case-2025-08-15-021207.tsx",
       "title": "Case Study — Automation Autonomous",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/case-studies",
+      "file": "pages/reports/case-studies/index.tsx",
+      "title": "index",
+      "summary": ""
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-15-230034",
