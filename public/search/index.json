@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T17:31:03.245Z",
+  "generatedAt": "2025-08-15T17:32:03.316Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1350,6 +1350,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1440.tsx",
       "title": "Autonomous Checklist — MLOps & Model Reliability (2025-08-15 14:40 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Checklist — MLOps & Model Reliability (2025-08-15 14:40 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"aut"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1432",
+      "file": "pages/reports/updates/update-2025-08-15-1432.tsx",
+      "title": "Autonomous Update — 2025-08-15 14:32",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 14:32 Autonomous Update — 2025-08-15 14:32 Signal over noise—your automated update is here. Today's Highlight Hacker News : My AI skeptic friends are all nuts · 2356 pts W"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1431",
