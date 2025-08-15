@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T21:36:03.317Z",
+  "generatedAt": "2025-08-15T21:37:03.178Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1494,6 +1494,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1840.tsx",
       "title": "Autonomous Security Hardening Guide — AI Service Design (2025-08-15 18:40 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Security Hardening Guide — AI Service Design (2025-08-15 18:40 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1837",
+      "file": "pages/reports/updates/update-2025-08-15-1837.tsx",
+      "title": "Autonomous Update — 2025-08-15 18:37",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 18:37 Autonomous Update — 2025-08-15 18:37 Signal over noise—your automated update is here. Today's Highlight Hacker News : My AI skeptic friends are all nuts · 2356 pts W"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1836",
