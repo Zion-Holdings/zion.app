@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-08-15T14:48:46.211Z",
+  "generated": 1,
+  "contentTypes": [
+    "insights"
+  ],
+  "qualityScores": [
+    0.7999999999999999
+  ],
+  "averageQuality": 0.7999999999999999,
+  "contentHistory": {
+    "updates": 1,
+    "insights": 1,
+    "guides": 0,
+    "cases": 0,
+    "patterns": 0
+  },
+  "recommendations": [
+    "Consider improving content quality through enhanced templates and validation",
+    "Focus on generating more content for: updates, insights, guides, cases, patterns"
+  ]
+}

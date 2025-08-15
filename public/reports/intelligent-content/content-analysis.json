@@ -1,0 +1,14 @@
+{
+  "totalContent": 1,
+  "contentTypeDistribution": {
+    "updates": 1
+  },
+  "qualityTrends": [
+    {
+      "type": "updates",
+      "score": 0.7999999999999999,
+      "sampleSize": 1
+    }
+  ],
+  "timestamp": "2025-08-15T14:48:45.998Z"
+}
