@@ -1,9 +1,84 @@
 {
   "items": [
     {
-      "title": "Pilot Plan: Agent Ops",
-      "desc": "Patterns to reduce cost.",
-      "href": "/reports/innovations/insight-2025-08-15-0023"
+      "title": "Blueprint: DevSecOps AI",
+      "desc": "Patterns to accelerate delivery.",
+      "href": "/reports/innovations/insight-2025-08-15-0113"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-15 00-57"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-15 00-57"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-15 00-57"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-15 00-57"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery"
+    },
+    {
+      "title": "Case Study — Trigger Homepage"
+    },
+    {
+      "title": "Guide — Cloud Improving Implementation"
+    },
+    {
+      "title": "Pattern — Cloud Improving Continuously"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-15 00-45"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-15 00-45"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-15 00-45"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-15 00-45"
+    },
+    {
+      "title": "Reference Architecture — Autonomous Content Mesh"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-15 00-45"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-15 00-45"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-15 00-45"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-15 00-45"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-15 00-34"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-15 00-34"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-15 00-34"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-15 00-34"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery"
+    },
+    {
+      "title": "Case Study — Trigger Homepage"
+    },
+    {
+      "title": "Guide — Cloud Improving Implementation"
+    },
+    {
+      "title": "Pattern — Cloud Improving Continuously"
     },
     {
       "title": "Innovation Insight — 2025-08-15 00-17"
@@ -16,7 +91,10 @@
     },
     {
       "title": "Autonomous Update — 2025-08-15 00-17"
+    },
+    {
+      "title": "Reference Architecture — Autonomous Content Mesh"
     }
   ],
-  "updatedAt": "2025-08-15T00:23:08.408Z"
+  "updatedAt": "2025-08-15T01:13:23.447Z"
 }

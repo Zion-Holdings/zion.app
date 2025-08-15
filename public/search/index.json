@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T00:57:18.425Z",
+  "generatedAt": "2025-08-15T01:13:23.884Z",
   "entries": [
     {
       "route": "/site-health",
@@ -96,6 +96,12 @@
       "file": "pages/reports/updates/update-2025-08-15T00-17.tsx",
       "title": "Autonomous Update — 2025-08-15 00-17",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-15 00-17 Autonomous Update — 2025-08-15 00-17 Signal source: https://ziontechgroup.com/automation Automation HubDiscover our autonomous, self-healing systems that keep the codebase"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0107",
+      "file": "pages/reports/updates/update-2025-08-15-0107.tsx",
+      "title": "Autonomous Security Hardening Guide — DevSecOps for AI (2025-08-15 01:07 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Security Hardening Guide — DevSecOps for AI (2025-08-15 01:07 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\""
     },
     {
       "route": "/reports/updates/update-2025-08-15-0045",
@@ -1212,6 +1218,12 @@
       "file": "pages/reports/innovations/insight-2025-08-15T00-17.tsx",
       "title": "Innovation Insight — 2025-08-15 00-17",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-15 00-17 Innovation Insight — 2025-08-15 00-17 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-0113",
+      "file": "pages/reports/innovations/insight-2025-08-15-0113.tsx",
+      "title": "Blueprint: DevSecOps AI",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Blueprint: DevSecOps AI Blueprint: DevSecOps AI Patterns to accelerate delivery. Scope: Blueprint: DevSecOps AI. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops:"
     },
     {
       "route": "/reports/innovations/insight-2025-08-15-0045",
@@ -2723,7 +2735,7 @@
       "route": "/main/front",
       "file": "pages/main/front/index.tsx",
       "title": "Zion — Front Systems Hub",
-      "summary": "import Head from 'next/head'; import Link from 'next/link'; export default function FrontMainIndex() { return ( Zion — Front Systems Hub Front Systems Hub Explore capabilities, benefits, and live reports. {/* AUTO:FRONT_INDEX_DIRECTORY_START */ Autonomous Catalog Auto‑discovered "
+      "summary": "import Head from 'next/head'; import Link from 'next/link'; export default function FrontMainIndex() { return ( Zion — Front Systems Hub Front Systems Hub Explore capabilities, benefits, and live reports. {/* AUTO:FRONT_INDEX_DIRECTORY_START */ Latest Autonomous AI Content Fresh,"
     },
     {
       "route": "/front",
