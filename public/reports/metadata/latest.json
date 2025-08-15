@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T04:26:00.343Z",
-  "pagesScanned": 261,
+  "generatedAt": "2025-08-15T04:27:00.130Z",
+  "pagesScanned": 262,
   "items": [
     {
       "route": "/404",
@@ -2295,10 +2295,7 @@
     {
       "route": "/reports/updates/update-2025-08-15-0126",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-15 01:26",
@@ -2443,6 +2440,19 @@
       "suggestion": {
         "title": "Autonomous Validation & QA Plan — Applied NLP & RAG (2025-08-15 04:20 UTC)",
         "description": "Autonomous Validation & QA Plan — Applied NLP & RAG (2025-08-15 04:20 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0427",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 04:27",
+        "description": "Autonomous Update — 2025-08-15 04:27 — auto-suggested description"
       }
     },
     {
