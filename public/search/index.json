@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T14:31:02.817Z",
+  "generatedAt": "2025-08-15T14:32:03.170Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1218,6 +1218,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1209.tsx",
       "title": "Autonomous Validation & QA Plan — AI Service Design (2025-08-15 12:09 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Validation & QA Plan — AI Service Design (2025-08-15 12:09 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1132",
+      "file": "pages/reports/updates/update-2025-08-15-1132.tsx",
+      "title": "Autonomous Update — 2025-08-15 11:32",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 11:32 Autonomous Update — 2025-08-15 11:32 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Airfoil · 2544 pts Wh"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1131",
