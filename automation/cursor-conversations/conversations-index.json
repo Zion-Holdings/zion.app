@@ -2578,5 +2578,29 @@
     "startTime": "2025-08-15T18:22:22.926Z",
     "status": "active",
     "filePath": "conv-1755282142926.json"
+  },
+  {
+    "id": "conv-1755282283230",
+    "type": "performance-optimization",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "DevOps Engineer"
+    ],
+    "startTime": "2025-08-15T18:24:43.230Z",
+    "status": "active",
+    "filePath": "conv-1755282283230.json"
+  },
+  {
+    "id": "conv-1755282285236",
+    "type": "feature-planning",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "DevOps Engineer"
+    ],
+    "startTime": "2025-08-15T18:24:45.236Z",
+    "status": "active",
+    "filePath": "conv-1755282285236.json"
   }
 ]
