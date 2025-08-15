@@ -1,6 +1,12 @@
 {
-  "generatedAt": "2025-08-15T13:52:03.513Z",
+  "generatedAt": "2025-08-15T13:53:02.891Z",
   "entries": [
+    {
+      "route": "/sitemap",
+      "file": "pages/sitemap.tsx",
+      "title": "sitemap",
+      "summary": "import { GetServerSideProps } from 'next'; export default function Sitemap() { return null; } export const getServerSideProps: GetServerSideProps = async ({ res }) => { const baseUrl = 'https://ziontechgroup.com'; const sitemap = ; res.setHeader('Content-Type', 'text/xml'); res.w"
+    },
     {
       "route": "/site-health",
       "file": "pages/site-health.tsx",
@@ -14,10 +20,34 @@
       "summary": "import { useEffect, useMemo, useState } from 'react'; import Head from 'next/head'; type SearchItem = { title: string; url: string; summary?: string }; export default function SearchPage() { const [q, setQ] = useState(''); const [items, setItems] = useState ([]); const [loaded, s"
     },
     {
+      "route": "/reports",
+      "file": "pages/reports.tsx",
+      "title": "Reports & Content | Zion Tech Group",
+      "summary": "import Head from 'next/head'; import Link from 'next/link'; export default function ReportsOverview() { const categories = [ { name: 'Insights', href: '/reports/insights', description: 'AI and technology insights', count: '15+ reports', color: 'cyan' }, { name: 'Dossiers', href: "
+    },
+    {
+      "route": "/playground",
+      "file": "pages/playground.tsx",
+      "title": "Component Playground | Zion Tech Group",
+      "summary": "import { useState } from 'react'; import Head from 'next/link'; import Pagination from '../components/Pagination'; import Form from '../components/Form'; import Modal from '../components/Modal'; import Button from '../components/Button'; import Card from '../components/Card'; exp"
+    },
+    {
       "route": "/newsroom",
       "file": "pages/newsroom.tsx",
       "title": "Newsroom — Curated Tech Headlines",
       "summary": "import Head from 'next/head'; export default function Newsroom() { return ( Newsroom — Curated Tech Headlines Newsroom Updated automatically from multiple sources. Cohere hits a $6.8B valuation as investors AMD, Nvidia, and Salesforce double down (TechCrunch) Bluesky rolls out ma"
+    },
+    {
+      "route": "/navigation",
+      "file": "pages/navigation.tsx",
+      "title": "navigation",
+      "summary": "import Link from 'next/link'; export default function MainNavigation() { const navItems = [ { href: '/', label: 'Home' }, { href: '/services', label: 'Services' }, { href: '/explore', label: 'Explore' }, { href: '/automation', label: 'Automation' }, { href: '/components', label: "
+    },
+    {
+      "route": "/live-dashboard",
+      "file": "pages/live-dashboard.tsx",
+      "title": "Live Dashboard | Zion Tech Group",
+      "summary": "import { useState, useEffect } from 'react'; import Head from 'next/head'; export default function LiveContentDashboard() { const [dashboardData, setDashboardData] = useState({ lastUpdate: new Date().toISOString(), contentGenerated: 0, componentsCreated: 0, reportsPublished: 0 })"
     },
     {
       "route": "/landing",
@@ -28,14 +58,38 @@
     {
       "route": "/",
       "file": "pages/index.tsx",
-      "title": "Zion Tech Group — Autonomous Cloud Automations",
-      "summary": "import React from 'react'; import Head from 'next/head'; export default function HomePage() { return ( <> Zion Tech Group — Autonomous Cloud Automations Zion Tech Group AI-powered automation orchestrating continuous content generation, site optimization, and intelligent workflows"
+      "title": "Zion Tech Group - AI & Cloud Solutions",
+      "summary": "import Head from 'next/head'; import Link from 'next/link'; export default function HomePage() { const featuredReports = [ { title: 'Latest Insights', description: 'Discover cutting-edge AI and technology insights', href: '/reports/insights', count: '15+ reports' }, { title: 'Str"
+    },
+    {
+      "route": "/enhanced-navigation",
+      "file": "pages/enhanced-navigation.tsx",
+      "title": "Enhanced Navigation | Zion Tech Group",
+      "summary": "import { useState } from 'react'; import Head from 'next/head'; import Link from 'next/link'; export default function EnhancedNavigation() { const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); const mainNavItems = [ { href: '/', label: 'Home', icon: '🏠' }, { href: '"
+    },
+    {
+      "route": "/discover",
+      "file": "pages/discover.tsx",
+      "title": "Content Discovery | Zion Tech Group",
+      "summary": "import { useState, useEffect } from 'react'; import Head from 'next/head'; import Link from 'next/link'; export default function ContentDiscovery() { const [searchQuery, setSearchQuery] = useState(''); const [selectedCategory, setSelectedCategory] = useState('all'); const [sortBy"
+    },
+    {
+      "route": "/content-hub",
+      "file": "pages/content-hub.tsx",
+      "title": "Content Hub | Zion Tech Group",
+      "summary": "import { useState, useEffect } from 'react'; import Head from 'next/head'; import Link from 'next/link'; export default function ContentHub() { const [contentStats, setContentStats] = useState({ totalReports: 0, totalComponents: 0, lastUpdated: new Date().toISOString() }); const "
     },
     {
       "route": "/contact",
       "file": "pages/contact.tsx",
       "title": "Contact — Zion Tech Group",
       "summary": "import Head from 'next/head'; export default function Contact() { return ( Contact — Zion Tech Group Contact Tell us about your use‑case. We typically reply within 24 hours. Send ); }"
+    },
+    {
+      "route": "/component-library",
+      "file": "pages/component-library.tsx",
+      "title": "Component Library | Zion Tech Group",
+      "summary": "import Head from 'next/head'; import Link from 'next/link'; export default function ComponentLibrary() { const components = [ { name: 'Pagination', description: 'Advanced pagination with customizable styling and accessibility features', usage: 'Use for navigating through large da"
     },
     {
       "route": "/automation-health",
@@ -1140,6 +1194,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1107.tsx",
       "title": "Autonomous Playbook — Evaluation & Safety (2025-08-15 11:07 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Evaluation & Safety (2025-08-15 11:07 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": {"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1053",
+      "file": "pages/reports/updates/update-2025-08-15-1053.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:53",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:53 Autonomous Update — 2025-08-15 10:53 Signal over noise—your automated update is here. Today's Highlight Hacker News : The young, inexperienced engineers aiding DOGE "
     },
     {
       "route": "/reports/updates/update-2025-08-15-1052",
@@ -27708,6 +27768,24 @@
       "file": "pages/explore/index.tsx",
       "title": "Explore — Zion",
       "summary": "import Head from 'next/head'; import Link from 'next/link'; import Landing from '../../components/Landing'; export default function ExploreIndex() { // AUTO-GENERATED: EXPLORE_PROMOS const promos = [ { \"href\": \"/reports/innovations/insight-2025-08-13T21-30\", \"title\": \"Innovation "
+    },
+    {
+      "route": "/components/pagination-demo",
+      "file": "pages/components/pagination-demo.tsx",
+      "title": "pagination-demo",
+      "summary": ""
+    },
+    {
+      "route": "/components/modal-demo",
+      "file": "pages/components/modal-demo.tsx",
+      "title": "modal-demo",
+      "summary": ""
+    },
+    {
+      "route": "/components/form-demo",
+      "file": "pages/components/form-demo.tsx",
+      "title": "form-demo",
+      "summary": ""
     },
     {
       "route": "/automation",
