@@ -1,15 +1,22 @@
 {
   "items": [
     {
-      "title": "Blueprint: Agent Ops",
-      "desc": "Patterns to enhance security.",
-      "href": "/reports/innovations/insight-2025-08-14-2301"
+      "title": "Runbook: DevSecOps AI",
+      "desc": "Patterns to reduce cost.",
+      "href": "/reports/innovations/insight-2025-08-15-0007"
     },
     {
-      "title": "Runbook: LLM Apps",
-      "desc": "Patterns to enhance security.",
-      "href": "/reports/innovations/insight-2025-08-14-2256"
+      "title": "Innovation Insight — 2025-08-14 23-55"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-14 23-55"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-14 23-55"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-14 23-55"
     }
   ],
-  "updatedAt": "2025-08-14T23:01:32.409Z"
+  "updatedAt": "2025-08-15T00:07:22.435Z"
 }
