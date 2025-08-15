@@ -322,5 +322,29 @@
     "startTime": "2025-08-15T14:24:14.788Z",
     "status": "active",
     "filePath": "conv-1755267854788.json"
+  },
+  {
+    "id": "conv-1755267995117",
+    "type": "deployment-planning",
+    "participants": [
+      "DevOps Engineer",
+      "Backend Developer",
+      "Security Expert"
+    ],
+    "startTime": "2025-08-15T14:26:35.117Z",
+    "status": "active",
+    "filePath": "conv-1755267995117.json"
+  },
+  {
+    "id": "conv-1755267997120",
+    "type": "testing-strategy",
+    "participants": [
+      "QA Tester",
+      "Frontend Specialist",
+      "Backend Developer"
+    ],
+    "startTime": "2025-08-15T14:26:37.120Z",
+    "status": "active",
+    "filePath": "conv-1755267997120.json"
   }
 ]
