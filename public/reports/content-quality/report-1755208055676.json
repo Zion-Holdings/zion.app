@@ -1,24 +1,7 @@
 {
-  "generatedAt": "2025-08-15T01:52:48.219Z",
+  "generatedAt": "2025-08-14T21:47:35.674Z",
   "files": [
-    "update-2025-08-15T01-52.tsx",
-    "update-2025-08-15-0152.tsx",
-    "update-2025-08-14-2252.tsx",
-    "update-2025-08-14-2251.tsx",
     "update-2025-08-14-1847.tsx",
-    "update-2025-08-14T21-54.tsx",
-    "update-2025-08-14-1854.tsx",
-    "update-2025-08-14-2154.tsx",
-    "update-2025-08-14T21-53.tsx",
-    "update-2025-08-14-1853.tsx",
-    "update-2025-08-14-2153.tsx",
-    "update-2025-08-14-1851.tsx",
-    "update-2025-08-14T21-49.tsx",
-    "update-2025-08-14-1849.tsx",
-    "update-2025-08-14-2149.tsx",
-    "update-2025-08-14T21-48.tsx",
-    "update-2025-08-14-2148.tsx",
-    "update-2025-08-14-1848.tsx",
     "update-2025-08-14T21-39.tsx",
     "update-2025-08-14T21-38.tsx",
     "update-2025-08-14T21-37.tsx",
@@ -31,6 +14,7 @@
     "update-2025-08-14-1838.tsx",
     "update-2025-08-14-1837.tsx",
     "update-2025-08-14-1836.tsx",
+    "update-2025-08-14T21-47.tsx",
     "update-2025-08-14T21-35.tsx",
     "update-2025-08-14-2135.tsx",
     "update-2025-08-14-1835.tsx",
@@ -52,9 +36,9 @@
   ],
   "metrics": {
     "diversityScore": 100,
-    "avgLen": 1954,
+    "avgLen": 1951,
     "duplicateCount": 0,
-    "seoScore": 25
+    "seoScore": 22
   },
   "guidance": [
     "Aim for varied intros, highlights, and CTAs across updates.",
