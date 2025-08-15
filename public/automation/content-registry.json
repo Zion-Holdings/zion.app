@@ -1,6 +1,55 @@
 {
   "items": [
     {
+      "title": "Case Study — Automation Autonomous",
+      "href": "/reports/cases/case-2025-08-15-060721",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T06:07:21.870Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-15-060721",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T06:07:21.870Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Cloud Improving Continuously",
+      "href": "/reports/patterns/pattern-2025-08-15-060721",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T06:07:21.870Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-15-060717",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T06:07:17.007Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Case Study — Automation Autonomous",
+      "href": "/reports/cases/case-2025-08-15-060716",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T06:07:16.854Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-15-060716",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T06:07:16.854Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Cloud Improving Continuously",
+      "href": "/reports/patterns/pattern-2025-08-15-060716",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T06:07:16.854Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
       "title": "Innovation Insight — 2025-08-15 06-07",
       "href": "/reports/innovations/insight-2025-08-15T06-07",
       "desc": "New autonomous content",
@@ -62,6 +111,11 @@
       "desc": "New autonomous content",
       "createdAt": "2025-08-15T06:07:16.480Z",
       "source": "cloud-content-factory"
+    },
+    {
+      "id": "cursor-chat-2025-08-15T06:07:17.239Z",
+      "type": "cursor-chat",
+      "timestamp": "2025-08-15T06:07:17.239Z"
     }
   ]
 }
