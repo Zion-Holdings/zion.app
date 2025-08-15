@@ -1,62 +1,33 @@
 {
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-  "generatedAt": "2025-08-15T01:53:19.077Z",
-=======
-  "generatedAt": "2025-08-15T02:00:11.940Z",
->>>>>>> Stashed changes
+  "generatedAt": "2025-08-15T02:01:20.504Z",
   "items": [
     {
-      "title": "Innovation Insight — 2025-08-15 02-00",
-      "href": "/reports/innovations/insight-2025-08-15T02-00",
+      "title": "Innovation Insight — 2025-08-15 02-01",
+      "href": "/reports/innovations/insight-2025-08-15T02-01",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T02:00:11.867Z",
+      "createdAt": "2025-08-15T02:01:20.433Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-15 02-00",
-      "href": "/reports/updates/update-2025-08-15T02-00",
+      "title": "Autonomous Update — 2025-08-15 02-01",
+      "href": "/reports/updates/update-2025-08-15T02-01",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T02:00:11.867Z",
+      "createdAt": "2025-08-15T02:01:20.433Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Innovation Insight — 2025-08-15 02-00",
-      "href": "/reports/innovations/insight-2025-08-15T02-00",
+      "title": "Innovation Insight — 2025-08-15 02-01",
+      "href": "/reports/innovations/insight-2025-08-15T02-01",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T02:00:11.867Z",
+      "createdAt": "2025-08-15T02:01:20.433Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-15 02-00",
-      "href": "/reports/updates/update-2025-08-15T02-00",
+      "title": "Autonomous Update — 2025-08-15 02-01",
+      "href": "/reports/updates/update-2025-08-15T02-01",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T02:00:11.867Z",
+      "createdAt": "2025-08-15T02:01:20.433Z",
       "source": "cloud-content-factory"
-=======
-  "generatedAt": "2025-08-15T02:00:29.234Z",
-  "items": [
-    {
-      "title": "Case Study — Trigger Homepage",
-      "href": "/reports/cases/case-2025-08-15-020029",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T02:00:29.202Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Guide — Cloud Improving Implementation",
-      "href": "/reports/guides/guide-2025-08-15-020029",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T02:00:29.202Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Pattern — Cloud Improving Continuously",
-      "href": "/reports/patterns/pattern-2025-08-15-020029",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T02:00:29.202Z",
-      "source": "cloud-deep-research-factory"
->>>>>>> 918b675398 (chore(sync): advanced autonomous sync)
     }
   ]
 }
