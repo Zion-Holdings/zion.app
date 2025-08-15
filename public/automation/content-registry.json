@@ -5190,6 +5190,27 @@
   "generatedAt": "2025-08-15T06:23:07.802Z",
   "items": [
     {
+      "title": "Case Study — Automation Autonomous",
+      "href": "/reports/cases/case-2025-08-15-062313",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T06:23:13.912Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-15-062313",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T06:23:13.912Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Cloud Improving Continuously",
+      "href": "/reports/patterns/pattern-2025-08-15-062313",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T06:23:13.912Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
       "title": "Playbook — Autonomous Delivery",
       "href": "/reports/playbooks/playbook-2025-08-15-062308",
       "desc": "New autonomous content",
@@ -5216,6 +5237,11 @@
       "desc": "New autonomous content",
       "createdAt": "2025-08-15T06:23:07.855Z",
       "source": "cloud-deep-research-factory"
+    },
+    {
+      "id": "cursor-chat-2025-08-15T06:23:08.348Z",
+      "type": "cursor-chat",
+      "timestamp": "2025-08-15T06:23:08.348Z"
     }
   ]
 }
