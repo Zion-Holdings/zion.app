@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T15:05:03.504Z",
+  "generatedAt": "2025-08-15T15:06:03.091Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1254,6 +1254,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1209.tsx",
       "title": "Autonomous Validation & QA Plan — AI Service Design (2025-08-15 12:09 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Validation & QA Plan — AI Service Design (2025-08-15 12:09 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1206",
+      "file": "pages/reports/updates/update-2025-08-15-1206.tsx",
+      "title": "Autonomous Update — 2025-08-15 12:06",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 12:06 Autonomous Update — 2025-08-15 12:06 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Air Con: $1697 for an"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1205",
