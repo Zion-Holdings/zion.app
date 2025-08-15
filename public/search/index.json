@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T13:58:04.247Z",
+  "generatedAt": "2025-08-15T14:08:02.893Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1188,6 +1188,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1119.tsx",
       "title": "Autonomous Security Hardening Guide — DevSecOps for AI (2025-08-15 11:19 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Security Hardening Guide — DevSecOps for AI (2025-08-15 11:19 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1108",
+      "file": "pages/reports/updates/update-2025-08-15-1108.tsx",
+      "title": "Autonomous Update — 2025-08-15 11:08",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 11:08 Autonomous Update — 2025-08-15 11:08 Signal over noise—your automated update is here. Today's Highlight Hacker News : Zoom terms now allow training AI on user conten"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1107",
