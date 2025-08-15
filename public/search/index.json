@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T18:25:03.433Z",
+  "generatedAt": "2025-08-15T18:26:04.073Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1380,6 +1380,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1530.tsx",
       "title": "Autonomous Blueprint — MLOps & Model Reliability (2025-08-15 15:30 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Blueprint — MLOps & Model Reliability (2025-08-15 15:30 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"aut"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1526",
+      "file": "pages/reports/updates/update-2025-08-15-1526.tsx",
+      "title": "Autonomous Update — 2025-08-15 15:26",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 15:26 Autonomous Update — 2025-08-15 15:26 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Airfoil · 2544 pts Wh"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1525",
