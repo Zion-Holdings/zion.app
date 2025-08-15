@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T20:37:03.198Z",
+  "generatedAt": "2025-08-15T20:38:03.045Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1458,6 +1458,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1740.tsx",
       "title": "Autonomous Playbook — Edge AI & IoT (2025-08-15 17:40 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Edge AI & IoT (2025-08-15 17:40 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { \"@typ"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1738",
+      "file": "pages/reports/updates/update-2025-08-15-1738.tsx",
+      "title": "Autonomous Update — 2025-08-15 17:38",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 17:38 Autonomous Update — 2025-08-15 17:38 Signal over noise—your automated update is here. Today's Highlight Hacker News : Bypassing airport security via SQL injection · "
     },
     {
       "route": "/reports/updates/update-2025-08-15-1737",
