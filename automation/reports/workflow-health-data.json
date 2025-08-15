@@ -2522,8 +2522,8 @@
     "name": "playwright-smoke.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/playwright-smoke.yml",
-    "size": 1770,
-    "lines": 76,
+    "size": 1744,
+    "lines": 75,
     "triggers": [
       "pull_request",
       "workflow_dispatch {}"
@@ -2537,8 +2537,7 @@
       "with"
     ],
     "timeouts": [
-      25,
-      15
+      25
     ],
     "permissions": [
       {
