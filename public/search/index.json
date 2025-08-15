@@ -1,6 +1,12 @@
 {
-  "generatedAt": "2025-08-15T05:08:01.058Z",
+  "generatedAt": "2025-08-15T14:26:02.983Z",
   "entries": [
+    {
+      "route": "/sitemap",
+      "file": "pages/sitemap.tsx",
+      "title": "sitemap",
+      "summary": "import { GetServerSideProps } from 'next'; export default function Sitemap() { return null; } export const getServerSideProps: GetServerSideProps = async ({ res }) => { const baseUrl = 'https://ziontechgroup.com'; const sitemap = ; res.setHeader('Content-Type', 'text/xml'); res.w"
+    },
     {
       "route": "/site-health",
       "file": "pages/site-health.tsx",
@@ -14,10 +20,34 @@
       "summary": "import { useEffect, useMemo, useState } from 'react'; import Head from 'next/head'; type SearchItem = { title: string; url: string; summary?: string }; export default function SearchPage() { const [q, setQ] = useState(''); const [items, setItems] = useState ([]); const [loaded, s"
     },
     {
+      "route": "/reports",
+      "file": "pages/reports.tsx",
+      "title": "Reports & Content | Zion Tech Group",
+      "summary": "import Head from 'next/head'; import Link from 'next/link'; export default function ReportsOverview() { const categories = [ { name: 'Insights', href: '/reports/insights', description: 'AI and technology insights', count: '15+ reports', color: 'cyan' }, { name: 'Dossiers', href: "
+    },
+    {
+      "route": "/playground",
+      "file": "pages/playground.tsx",
+      "title": "Component Playground | Zion Tech Group",
+      "summary": "import { useState } from 'react'; import Head from 'next/link'; import Pagination from '../components/Pagination'; import Form from '../components/Form'; import Modal from '../components/Modal'; import Button from '../components/Button'; import Card from '../components/Card'; exp"
+    },
+    {
       "route": "/newsroom",
       "file": "pages/newsroom.tsx",
       "title": "Newsroom — Curated Tech Headlines",
       "summary": "import Head from 'next/head'; export default function Newsroom() { return ( Newsroom — Curated Tech Headlines Newsroom Updated automatically from multiple sources. Cohere hits a $6.8B valuation as investors AMD, Nvidia, and Salesforce double down (TechCrunch) Bluesky rolls out ma"
+    },
+    {
+      "route": "/navigation",
+      "file": "pages/navigation.tsx",
+      "title": "navigation",
+      "summary": "import Link from 'next/link'; export default function MainNavigation() { const navItems = [ { href: '/', label: 'Home' }, { href: '/services', label: 'Services' }, { href: '/explore', label: 'Explore' }, { href: '/automation', label: 'Automation' }, { href: '/components', label: "
+    },
+    {
+      "route": "/live-dashboard",
+      "file": "pages/live-dashboard.tsx",
+      "title": "Live Dashboard | Zion Tech Group",
+      "summary": "import { useState } from 'react'; import Head from 'next/head'; export default function LiveContentDashboard() { // Dashboard data for future use // const [dashboardData] = useState({ // lastUpdate: new Date().toISOString(), // contentGenerated: 0, // componentsCreated: 0, // rep"
     },
     {
       "route": "/landing",
@@ -28,14 +58,38 @@
     {
       "route": "/",
       "file": "pages/index.tsx",
-      "title": "index",
-      "summary": "{/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 15: 0508 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 15: 0507 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 15"
+      "title": "Zion Tech Group - AI & Cloud Solutions",
+      "summary": "import Head from 'next/head'; import Link from 'next/link'; export default function HomePage() { const featuredReports = [ { title: 'Latest Insights', description: 'Discover cutting-edge AI and technology insights', href: '/reports/insights', count: '15+ reports' }, { title: 'Str"
+    },
+    {
+      "route": "/enhanced-navigation",
+      "file": "pages/enhanced-navigation.tsx",
+      "title": "Enhanced Navigation | Zion Tech Group",
+      "summary": "import { useState } from 'react'; import Head from 'next/head'; import Link from 'next/link'; export default function EnhancedNavigation() { const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); const mainNavItems = [ { href: '/', label: 'Home', icon: '🏠' }, { href: '"
+    },
+    {
+      "route": "/discover",
+      "file": "pages/discover.tsx",
+      "title": "Content Discovery | Zion Tech Group",
+      "summary": "import { useState } from 'react'; import Head from 'next/head'; import Link from 'next/link'; export default function ContentDiscovery() { const [searchQuery, setSearchQuery] = useState(''); const [selectedCategory, setSelectedCategory] = useState('all'); const [sortBy, setSortBy"
+    },
+    {
+      "route": "/content-hub",
+      "file": "pages/content-hub.tsx",
+      "title": "Content Hub | Zion Tech Group",
+      "summary": "import { useState } from 'react'; import Head from 'next/head'; import Link from 'next/link'; export default function ContentHub() { const [contentStats] = useState({ totalReports: 0, totalComponents: 0, lastUpdated: new Date().toISOString() }); const contentCategories = [ { name"
     },
     {
       "route": "/contact",
       "file": "pages/contact.tsx",
       "title": "Contact — Zion Tech Group",
       "summary": "import Head from 'next/head'; export default function Contact() { return ( Contact — Zion Tech Group Contact Tell us about your use‑case. We typically reply within 24 hours. Send ); }"
+    },
+    {
+      "route": "/component-library",
+      "file": "pages/component-library.tsx",
+      "title": "Component Library | Zion Tech Group",
+      "summary": "import Head from 'next/head'; import Link from 'next/link'; export default function ComponentLibrary() { const components = [ { name: 'Pagination', description: 'Advanced pagination with customizable styling and accessibility features', usage: 'Use for navigating through large da"
     },
     {
       "route": "/automation-health",
@@ -72,6 +126,114 @@
       "file": "pages/services/[slug].tsx",
       "title": "{service.title} — Zion Tech Group",
       "summary": "import { GetStaticPaths, GetStaticProps } from 'next'; import Head from 'next/head'; type Service = { slug: string; title: string; description: string; bullets: string[]; ctaHref: string; }; const services: Service[] = [ { slug: 'ai-seo-auditor', title: 'AI SEO Auditor', descript"
+    },
+    {
+      "route": "/reports/whitepapers",
+      "file": "pages/reports/whitepapers/index.tsx",
+      "title": "Whitepapers | Zion Tech Group",
+      "summary": "import Head from 'next/head'; export default function WhitepapersIndex() { return ( Whitepapers | Zion Tech Group Whitepapers Sample Whitepaper This is a placeholder for whitepapers content. Learn more → ); }"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15T14-20",
+      "file": "pages/reports/updates/update-2025-08-15T14-20.tsx",
+      "title": "Autonomous Update — 2025-08-15 14-20",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-15 14-20 Autonomous Update — 2025-08-15 14-20 Signal source: https://ziontechgroup.com/main/front Autonomous Front SystemsAI-powered automation orchestrating continuous content gen"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15T14-10",
+      "file": "pages/reports/updates/update-2025-08-15T14-10.tsx",
+      "title": "Autonomous Update — 2025-08-15 14-10",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-15 14-10 Autonomous Update — 2025-08-15 14-10 Signal source: https://ziontechgroup.com/main/front Autonomous Front SystemsAI-powered automation orchestrating continuous content gen"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15T13-40",
+      "file": "pages/reports/updates/update-2025-08-15T13-40.tsx",
+      "title": "Autonomous Update — 2025-08-15 13-40",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-15 13-40 Autonomous Update — 2025-08-15 13-40 Signal source: https://ziontechgroup.com/main/front Autonomous Front SystemsAI-powered automation orchestrating continuous content gen"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15T13-30",
+      "file": "pages/reports/updates/update-2025-08-15T13-30.tsx",
+      "title": "Autonomous Update — 2025-08-15 13-30",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-15 13-30 Autonomous Update — 2025-08-15 13-30 Signal source: https://ziontechgroup.com/main/front Autonomous Front SystemsAI-powered automation orchestrating continuous content gen"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15T13-22",
+      "file": "pages/reports/updates/update-2025-08-15T13-22.tsx",
+      "title": "Autonomous Update — 2025-08-15 13-22",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-15 13-22 Autonomous Update — 2025-08-15 13-22 Signal source: https://ziontechgroup.com/main/front Autonomous Front SystemsAI-powered automation orchestrating continuous content gen"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15T13-10",
+      "file": "pages/reports/updates/update-2025-08-15T13-10.tsx",
+      "title": "Autonomous Update — 2025-08-15 13-10",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-15 13-10 Autonomous Update — 2025-08-15 13-10 Signal source: https://ziontechgroup.com/main/front Autonomous Front SystemsAI-powered automation orchestrating continuous content gen"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15T13-00",
+      "file": "pages/reports/updates/update-2025-08-15T13-00.tsx",
+      "title": "Autonomous Update — 2025-08-15 13-00",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-15 13-00 Autonomous Update — 2025-08-15 13-00 Signal source: https://ziontechgroup.com/main/front Autonomous Front SystemsAI-powered automation orchestrating continuous content gen"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15T12-50",
+      "file": "pages/reports/updates/update-2025-08-15T12-50.tsx",
+      "title": "Autonomous Update — 2025-08-15 12-50",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-15 12-50 Autonomous Update — 2025-08-15 12-50 Signal source: https://ziontechgroup.com/main/front Autonomous Front SystemsAI-powered automation orchestrating continuous content gen"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15T12-42",
+      "file": "pages/reports/updates/update-2025-08-15T12-42.tsx",
+      "title": "Autonomous Update — 2025-08-15 12-42",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-15 12-42 Autonomous Update — 2025-08-15 12-42 Signal source: https://ziontechgroup.com/main/front Autonomous Front SystemsAI-powered automation orchestrating continuous content gen"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15T12-41",
+      "file": "pages/reports/updates/update-2025-08-15T12-41.tsx",
+      "title": "Autonomous Update — 2025-08-15 12-41",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-15 12-41 Autonomous Update — 2025-08-15 12-41 Signal source: https://ziontechgroup.com/main/front Autonomous Front SystemsAI-powered automation orchestrating continuous content gen"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15T12-40",
+      "file": "pages/reports/updates/update-2025-08-15T12-40.tsx",
+      "title": "Autonomous Update — 2025-08-15 12-40",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-15 12-40 Autonomous Update — 2025-08-15 12-40 Signal source: https://ziontechgroup.com/main/front Autonomous Front SystemsAI-powered automation orchestrating continuous content gen"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15T12-30",
+      "file": "pages/reports/updates/update-2025-08-15T12-30.tsx",
+      "title": "Autonomous Update — 2025-08-15 12-30",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-15 12-30 Autonomous Update — 2025-08-15 12-30 Signal source: https://ziontechgroup.com/main/front Autonomous Front SystemsAI-powered automation orchestrating continuous content gen"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15T12-20",
+      "file": "pages/reports/updates/update-2025-08-15T12-20.tsx",
+      "title": "Autonomous Update — 2025-08-15 12-20",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-15 12-20 Autonomous Update — 2025-08-15 12-20 Signal source: https://ziontechgroup.com/main/front Autonomous Front SystemsAI-powered automation orchestrating continuous content gen"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15T12-09",
+      "file": "pages/reports/updates/update-2025-08-15T12-09.tsx",
+      "title": "Autonomous Update — 2025-08-15 12-09",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-15 12-09 Autonomous Update — 2025-08-15 12-09 Signal source: https://ziontechgroup.com/main/front Autonomous Front SystemsAI-powered automation orchestrating continuous content gen"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15T11-19",
+      "file": "pages/reports/updates/update-2025-08-15T11-19.tsx",
+      "title": "Autonomous Update — 2025-08-15 11-19",
+      "summary": "import React from 'react'; import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-15 11-19 Autonomous Update — 2025-08-15 11-19 Signal source: https://ziontechgroup.com/main/front Autonomous Front SystemsAI-powered automation orchestra"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15T11-07",
+      "file": "pages/reports/updates/update-2025-08-15T11-07.tsx",
+      "title": "Autonomous Update — 2025-08-15 11-07",
+      "summary": "import React from 'react'; import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-15 11-07 Autonomous Update — 2025-08-15 11-07 Signal source: https://ziontechgroup.com/main/front Autonomous Front SystemsAI-powered automation orchestra"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15T10-34",
+      "file": "pages/reports/updates/update-2025-08-15T10-34.tsx",
+      "title": "Autonomous Update — 2025-08-15 10-34",
+      "summary": "import React from 'react'; import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-15 10-34 Autonomous Update — 2025-08-15 10-34 Signal source: https://ziontechgroup.com/main/front Autonomous Front SystemsAI-powered automation orchestra"
     },
     {
       "route": "/reports/updates/update-2025-08-15T09-08",
@@ -968,6 +1130,792 @@
       "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-15 02-12 Autonomous Update — 2025-08-15 02-12 Signal source: https://ziontechgroup.com/main/front Autonomous Front SystemsAI-powered automation orchestrating continuous content gen"
     },
     {
+      "route": "/reports/updates/update-2025-08-15-1420",
+      "file": "pages/reports/updates/update-2025-08-15-1420.tsx",
+      "title": "Autonomous Checklist — Evaluation & Safety (2025-08-15 14:20 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Checklist — Evaluation & Safety (2025-08-15 14:20 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1410",
+      "file": "pages/reports/updates/update-2025-08-15-1410.tsx",
+      "title": "Autonomous Capability Map — Vision & Multimodal (2025-08-15 14:10 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Capability Map — Vision & Multimodal (2025-08-15 14:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"auth"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1340",
+      "file": "pages/reports/updates/update-2025-08-15-1340.tsx",
+      "title": "Autonomous Blueprint — Edge AI & IoT (2025-08-15 13:40 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Blueprint — Edge AI & IoT (2025-08-15 13:40 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { \"@ty"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1330",
+      "file": "pages/reports/updates/update-2025-08-15-1330.tsx",
+      "title": "Autonomous Performance Tuning Guide — Vision & Multimodal (2025-08-15 13:30 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Performance Tuning Guide — Vision & Multimodal (2025-08-15 13:30 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitl"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1322",
+      "file": "pages/reports/updates/update-2025-08-15-1322.tsx",
+      "title": "Autonomous Performance Tuning Guide — Data Engineering (2025-08-15 13:22 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Performance Tuning Guide — Data Engineering (2025-08-15 13:22 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1310",
+      "file": "pages/reports/updates/update-2025-08-15-1310.tsx",
+      "title": "Autonomous Blueprint — Data Engineering (2025-08-15 13:10 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Blueprint — Data Engineering (2025-08-15 13:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { \""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1300",
+      "file": "pages/reports/updates/update-2025-08-15-1300.tsx",
+      "title": "Autonomous Reference Architecture — Applied NLP & RAG (2025-08-15 13:00 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Reference Architecture — Applied NLP & RAG (2025-08-15 13:00 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\","
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1250",
+      "file": "pages/reports/updates/update-2025-08-15-1250.tsx",
+      "title": "Autonomous Performance Tuning Guide — Applied NLP & RAG (2025-08-15 12:50 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Performance Tuning Guide — Applied NLP & RAG (2025-08-15 12:50 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1242",
+      "file": "pages/reports/updates/update-2025-08-15-1242.tsx",
+      "title": "Autonomous Playbook — Edge AI & IoT (2025-08-15 12:42 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Edge AI & IoT (2025-08-15 12:42 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { \"@typ"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1240",
+      "file": "pages/reports/updates/update-2025-08-15-1240.tsx",
+      "title": "Autonomous Playbook — Data Engineering (2025-08-15 12:40 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Data Engineering (2025-08-15 12:40 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { \"@"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1230",
+      "file": "pages/reports/updates/update-2025-08-15-1230.tsx",
+      "title": "Autonomous Performance Tuning Guide — AI Service Design (2025-08-15 12:30 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Performance Tuning Guide — AI Service Design (2025-08-15 12:30 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1220",
+      "file": "pages/reports/updates/update-2025-08-15-1220.tsx",
+      "title": "Autonomous Validation & QA Plan — Vision & Multimodal (2025-08-15 12:20 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Validation & QA Plan — Vision & Multimodal (2025-08-15 12:20 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\","
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1209",
+      "file": "pages/reports/updates/update-2025-08-15-1209.tsx",
+      "title": "Autonomous Validation & QA Plan — AI Service Design (2025-08-15 12:09 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Validation & QA Plan — AI Service Design (2025-08-15 12:09 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1126",
+      "file": "pages/reports/updates/update-2025-08-15-1126.tsx",
+      "title": "Autonomous Update — 2025-08-15 11:26",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 11:26 Autonomous Update — 2025-08-15 11:26 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Open source AI is the"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1125",
+      "file": "pages/reports/updates/update-2025-08-15-1125.tsx",
+      "title": "Autonomous Update — 2025-08-15 11:25",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 11:25 Autonomous Update — 2025-08-15 11:25 A concise snapshot generated by our continuous publishing agents. Today's Highlight Hacker News : Air Con: $1697 for an on/off s"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1124",
+      "file": "pages/reports/updates/update-2025-08-15-1124.tsx",
+      "title": "Autonomous Update — 2025-08-15 11:24",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 11:24 Autonomous Update — 2025-08-15 11:24 Signal over noise—your automated update is here. Today's Highlight Hacker News : Airfoil · 2544 pts Why it matters: autonomous c"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1123",
+      "file": "pages/reports/updates/update-2025-08-15-1123.tsx",
+      "title": "Autonomous Update — 2025-08-15 11:23",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 11:23 Autonomous Update — 2025-08-15 11:23 A concise snapshot generated by our continuous publishing agents. Today's Highlight Hacker News : Airfoil · 2544 pts Why it matt"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1122",
+      "file": "pages/reports/updates/update-2025-08-15-1122.tsx",
+      "title": "Autonomous Update — 2025-08-15 11:22",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 11:22 Autonomous Update — 2025-08-15 11:22 Signal over noise—your automated update is here. Today's Highlight Hacker News : Gemini AI · 2135 pts Why it matters: autonomous"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1121",
+      "file": "pages/reports/updates/update-2025-08-15-1121.tsx",
+      "title": "Autonomous Update — 2025-08-15 11:21",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 11:21 Autonomous Update — 2025-08-15 11:21 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : The young, inexperienced engineers a"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1120",
+      "file": "pages/reports/updates/update-2025-08-15-1120.tsx",
+      "title": "Autonomous Update — 2025-08-15 11:20",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 11:20 Autonomous Update — 2025-08-15 11:20 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Paper Airplane Design"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1119",
+      "file": "pages/reports/updates/update-2025-08-15-1119.tsx",
+      "title": "Autonomous Security Hardening Guide — DevSecOps for AI (2025-08-15 11:19 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Security Hardening Guide — DevSecOps for AI (2025-08-15 11:19 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1118",
+      "file": "pages/reports/updates/update-2025-08-15-1118.tsx",
+      "title": "Autonomous Update — 2025-08-15 11:18",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 11:18 Autonomous Update — 2025-08-15 11:18 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Air Con: $1697 for an on/off switch "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1117",
+      "file": "pages/reports/updates/update-2025-08-15-1117.tsx",
+      "title": "Autonomous Update — 2025-08-15 11:17",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 11:17 Autonomous Update — 2025-08-15 11:17 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : The young, inexperien"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1116",
+      "file": "pages/reports/updates/update-2025-08-15-1116.tsx",
+      "title": "Autonomous Update — 2025-08-15 11:16",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 11:16 Autonomous Update — 2025-08-15 11:16 A concise snapshot generated by our continuous publishing agents. Today's Highlight Hacker News : Air Con: $1697 for an on/off s"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1115",
+      "file": "pages/reports/updates/update-2025-08-15-1115.tsx",
+      "title": "Autonomous Update — 2025-08-15 11:15",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 11:15 Autonomous Update — 2025-08-15 11:15 Signal over noise—your automated update is here. Today's Highlight Hacker News : Bypassing airport security via SQL injection · "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1114",
+      "file": "pages/reports/updates/update-2025-08-15-1114.tsx",
+      "title": "Autonomous Update — 2025-08-15 11:14",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 11:14 Autonomous Update — 2025-08-15 11:14 A concise snapshot generated by our continuous publishing agents. Today's Highlight Hacker News : Paper Airplane Designs · 1753 "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1113",
+      "file": "pages/reports/updates/update-2025-08-15-1113.tsx",
+      "title": "Autonomous Update — 2025-08-15 11:13",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 11:13 Autonomous Update — 2025-08-15 11:13 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Air Con: $1697 for an on/off switch "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1112",
+      "file": "pages/reports/updates/update-2025-08-15-1112.tsx",
+      "title": "Autonomous Update — 2025-08-15 11:12",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 11:12 Autonomous Update — 2025-08-15 11:12 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Airfoil · 2544 pts Why it matters: a"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1111",
+      "file": "pages/reports/updates/update-2025-08-15-1111.tsx",
+      "title": "Autonomous Update — 2025-08-15 11:11",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 11:11 Autonomous Update — 2025-08-15 11:11 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Zoom terms now allow training AI on "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1110",
+      "file": "pages/reports/updates/update-2025-08-15-1110.tsx",
+      "title": "Autonomous Update — 2025-08-15 11:10",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 11:10 Autonomous Update — 2025-08-15 11:10 A concise snapshot generated by our continuous publishing agents. Today's Highlight Hacker News : Airfoil · 2544 pts Why it matt"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1109",
+      "file": "pages/reports/updates/update-2025-08-15-1109.tsx",
+      "title": "Autonomous Update — 2025-08-15 11:09",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 11:09 Autonomous Update — 2025-08-15 11:09 A concise snapshot generated by our continuous publishing agents. Today's Highlight Hacker News : The young, inexperienced engin"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1108",
+      "file": "pages/reports/updates/update-2025-08-15-1108.tsx",
+      "title": "Autonomous Update — 2025-08-15 11:08",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 11:08 Autonomous Update — 2025-08-15 11:08 Signal over noise—your automated update is here. Today's Highlight Hacker News : Zoom terms now allow training AI on user conten"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1107",
+      "file": "pages/reports/updates/update-2025-08-15-1107.tsx",
+      "title": "Autonomous Playbook — Evaluation & Safety (2025-08-15 11:07 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Evaluation & Safety (2025-08-15 11:07 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": {"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1058",
+      "file": "pages/reports/updates/update-2025-08-15-1058.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:58",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:58 Autonomous Update — 2025-08-15 10:58 A concise snapshot generated by our continuous publishing agents. Today's Highlight Hacker News : Zoom terms now allow training "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1057",
+      "file": "pages/reports/updates/update-2025-08-15-1057.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:57",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:57 Autonomous Update — 2025-08-15 10:57 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Google Duplex: An AI "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1056",
+      "file": "pages/reports/updates/update-2025-08-15-1056.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:56",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:56 Autonomous Update — 2025-08-15 10:56 Signal over noise—your automated update is here. Today's Highlight Hacker News : The young, inexperienced engineers aiding DOGE "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1055",
+      "file": "pages/reports/updates/update-2025-08-15-1055.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:55",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:55 Autonomous Update — 2025-08-15 10:55 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : The young, inexperien"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1054",
+      "file": "pages/reports/updates/update-2025-08-15-1054.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:54",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:54 Autonomous Update — 2025-08-15 10:54 Signal over noise—your automated update is here. Today's Highlight Hacker News : Airfoil · 2544 pts Why it matters: autonomous c"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1053",
+      "file": "pages/reports/updates/update-2025-08-15-1053.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:53",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:53 Autonomous Update — 2025-08-15 10:53 Signal over noise—your automated update is here. Today's Highlight Hacker News : The young, inexperienced engineers aiding DOGE "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1052",
+      "file": "pages/reports/updates/update-2025-08-15-1052.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:52",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:52 Autonomous Update — 2025-08-15 10:52 Signal over noise—your automated update is here. Today's Highlight Hacker News : Paper Airplane Designs · 1753 pts Why it matter"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1050",
+      "file": "pages/reports/updates/update-2025-08-15-1050.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:50",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:50 Autonomous Update — 2025-08-15 10:50 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Google Duplex: An AI System for Acco"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1049",
+      "file": "pages/reports/updates/update-2025-08-15-1049.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:49",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:49 Autonomous Update — 2025-08-15 10:49 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Gemini AI · 2135 pts "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1048",
+      "file": "pages/reports/updates/update-2025-08-15-1048.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:48",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:48 Autonomous Update — 2025-08-15 10:48 A concise snapshot generated by our continuous publishing agents. Today's Highlight Hacker News : Open source AI is the path for"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1047",
+      "file": "pages/reports/updates/update-2025-08-15-1047.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:47",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:47 Autonomous Update — 2025-08-15 10:47 A concise snapshot generated by our continuous publishing agents. Today's Highlight Hacker News : Airfoil · 2544 pts Why it matt"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1046",
+      "file": "pages/reports/updates/update-2025-08-15-1046.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:46",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:46 Autonomous Update — 2025-08-15 10:46 A concise snapshot generated by our continuous publishing agents. Today's Highlight Hacker News : Google Duplex: An AI System fo"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1045",
+      "file": "pages/reports/updates/update-2025-08-15-1045.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:45",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:45 Autonomous Update — 2025-08-15 10:45 Signal over noise—your automated update is here. Today's Highlight Hacker News : Bypassing airport security via SQL injection · "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1044",
+      "file": "pages/reports/updates/update-2025-08-15-1044.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:44",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:44 Autonomous Update — 2025-08-15 10:44 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : The young, inexperienced engineers a"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1043",
+      "file": "pages/reports/updates/update-2025-08-15-1043.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:43",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:43 Autonomous Update — 2025-08-15 10:43 Signal over noise—your automated update is here. Today's Highlight Hacker News : Google Duplex: An AI System for Accomplishing R"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1042",
+      "file": "pages/reports/updates/update-2025-08-15-1042.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:42",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:42 Autonomous Update — 2025-08-15 10:42 A concise snapshot generated by our continuous publishing agents. Today's Highlight Hacker News : Airfoil · 2544 pts Why it matt"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1041",
+      "file": "pages/reports/updates/update-2025-08-15-1041.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:41",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:41 Autonomous Update — 2025-08-15 10:41 Signal over noise—your automated update is here. Today's Highlight Hacker News : The young, inexperienced engineers aiding DOGE "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1040",
+      "file": "pages/reports/updates/update-2025-08-15-1040.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:40",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:40 Autonomous Update — 2025-08-15 10:40 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Paper Airplane Design"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1039",
+      "file": "pages/reports/updates/update-2025-08-15-1039.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:39",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:39 Autonomous Update — 2025-08-15 10:39 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Open source AI is the path forward ·"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1038",
+      "file": "pages/reports/updates/update-2025-08-15-1038.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:38",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:38 Autonomous Update — 2025-08-15 10:38 Signal over noise—your automated update is here. Today's Highlight Hacker News : Air Con: $1697 for an on/off switch · 2001 pts "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1037",
+      "file": "pages/reports/updates/update-2025-08-15-1037.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:37",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:37 Autonomous Update — 2025-08-15 10:37 A concise snapshot generated by our continuous publishing agents. Today's Highlight Hacker News : Gemini AI · 2135 pts Why it ma"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1036",
+      "file": "pages/reports/updates/update-2025-08-15-1036.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:36",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:36 Autonomous Update — 2025-08-15 10:36 A concise snapshot generated by our continuous publishing agents. Today's Highlight Hacker News : Open source AI is the path for"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1035",
+      "file": "pages/reports/updates/update-2025-08-15-1035.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:35",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:35 Autonomous Update — 2025-08-15 10:35 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Gemini AI · 2135 pts Why it matters:"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1034",
+      "file": "pages/reports/updates/update-2025-08-15-1034.tsx",
+      "title": "Autonomous Security Hardening Guide — Edge AI & IoT (2025-08-15 10:34 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Security Hardening Guide — Edge AI & IoT (2025-08-15 10:34 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1033",
+      "file": "pages/reports/updates/update-2025-08-15-1033.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:33",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:33 Autonomous Update — 2025-08-15 10:33 Signal over noise—your automated update is here. Today's Highlight Hacker News : Gemini AI · 2135 pts Why it matters: autonomous"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1032",
+      "file": "pages/reports/updates/update-2025-08-15-1032.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:32",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:32 Autonomous Update — 2025-08-15 10:32 Signal over noise—your automated update is here. Today's Highlight Hacker News : My AI skeptic friends are all nuts · 2356 pts W"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1031",
+      "file": "pages/reports/updates/update-2025-08-15-1031.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:31",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:31 Autonomous Update — 2025-08-15 10:31 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : My AI skeptic friends"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1030",
+      "file": "pages/reports/updates/update-2025-08-15-1030.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:30",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:30 Autonomous Update — 2025-08-15 10:30 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Bypassing airport security via SQL i"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1029",
+      "file": "pages/reports/updates/update-2025-08-15-1029.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:29",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:29 Autonomous Update — 2025-08-15 10:29 A concise snapshot generated by our continuous publishing agents. Today's Highlight Hacker News : Paper Airplane Designs · 1753 "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1028",
+      "file": "pages/reports/updates/update-2025-08-15-1028.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:28",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:28 Autonomous Update — 2025-08-15 10:28 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Bypassing airport sec"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1027",
+      "file": "pages/reports/updates/update-2025-08-15-1027.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:27",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:27 Autonomous Update — 2025-08-15 10:27 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Air Con: $1697 for an on/off switch "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1025",
+      "file": "pages/reports/updates/update-2025-08-15-1025.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:25",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:25 Autonomous Update — 2025-08-15 10:25 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Bypassing airport sec"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1024",
+      "file": "pages/reports/updates/update-2025-08-15-1024.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:24",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:24 Autonomous Update — 2025-08-15 10:24 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Air Con: $1697 for an"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1023",
+      "file": "pages/reports/updates/update-2025-08-15-1023.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:23",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:23 Autonomous Update — 2025-08-15 10:23 A concise snapshot generated by our continuous publishing agents. Today's Highlight Hacker News : Bypassing airport security via"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1022",
+      "file": "pages/reports/updates/update-2025-08-15-1022.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:22",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:22 Autonomous Update — 2025-08-15 10:22 Signal over noise—your automated update is here. Today's Highlight Hacker News : Open source AI is the path forward · 2360 pts W"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1020",
+      "file": "pages/reports/updates/update-2025-08-15-1020.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:20",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:20 Autonomous Update — 2025-08-15 10:20 Signal over noise—your automated update is here. Today's Highlight Hacker News : The young, inexperienced engineers aiding DOGE "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1019",
+      "file": "pages/reports/updates/update-2025-08-15-1019.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:19",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:19 Autonomous Update — 2025-08-15 10:19 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Google Duplex: An AI "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1018",
+      "file": "pages/reports/updates/update-2025-08-15-1018.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:18",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:18 Autonomous Update — 2025-08-15 10:18 Signal over noise—your automated update is here. Today's Highlight Hacker News : Zoom terms now allow training AI on user conten"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1017",
+      "file": "pages/reports/updates/update-2025-08-15-1017.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:17",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:17 Autonomous Update — 2025-08-15 10:17 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Bypassing airport sec"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1016",
+      "file": "pages/reports/updates/update-2025-08-15-1016.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:16",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:16 Autonomous Update — 2025-08-15 10:16 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Airfoil · 2544 pts Why it matters: a"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1015",
+      "file": "pages/reports/updates/update-2025-08-15-1015.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:15",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:15 Autonomous Update — 2025-08-15 10:15 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : The young, inexperien"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1014",
+      "file": "pages/reports/updates/update-2025-08-15-1014.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:14",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:14 Autonomous Update — 2025-08-15 10:14 Signal over noise—your automated update is here. Today's Highlight Hacker News : Google Duplex: An AI System for Accomplishing R"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1013",
+      "file": "pages/reports/updates/update-2025-08-15-1013.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:13",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:13 Autonomous Update — 2025-08-15 10:13 Signal over noise—your automated update is here. Today's Highlight Hacker News : Google Duplex: An AI System for Accomplishing R"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1012",
+      "file": "pages/reports/updates/update-2025-08-15-1012.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:12",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:12 Autonomous Update — 2025-08-15 10:12 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : My AI skeptic friends"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1011",
+      "file": "pages/reports/updates/update-2025-08-15-1011.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:11",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:11 Autonomous Update — 2025-08-15 10:11 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Gemini AI · 2135 pts Why it matters:"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1010",
+      "file": "pages/reports/updates/update-2025-08-15-1010.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:10",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:10 Autonomous Update — 2025-08-15 10:10 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : My AI skeptic friends"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1009",
+      "file": "pages/reports/updates/update-2025-08-15-1009.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:09",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:09 Autonomous Update — 2025-08-15 10:09 Signal over noise—your automated update is here. Today's Highlight Hacker News : My AI skeptic friends are all nuts · 2356 pts W"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1008",
+      "file": "pages/reports/updates/update-2025-08-15-1008.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:08",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:08 Autonomous Update — 2025-08-15 10:08 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : The young, inexperienced engineers a"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1007",
+      "file": "pages/reports/updates/update-2025-08-15-1007.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:07",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:07 Autonomous Update — 2025-08-15 10:07 A concise snapshot generated by our continuous publishing agents. Today's Highlight Hacker News : Airfoil · 2544 pts Why it matt"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1006",
+      "file": "pages/reports/updates/update-2025-08-15-1006.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:06",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:06 Autonomous Update — 2025-08-15 10:06 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Air Con: $1697 for an"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1005",
+      "file": "pages/reports/updates/update-2025-08-15-1005.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:05",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:05 Autonomous Update — 2025-08-15 10:05 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Bypassing airport sec"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1004",
+      "file": "pages/reports/updates/update-2025-08-15-1004.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:04",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:04 Autonomous Update — 2025-08-15 10:04 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Airfoil · 2544 pts Wh"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1003",
+      "file": "pages/reports/updates/update-2025-08-15-1003.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:03",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:03 Autonomous Update — 2025-08-15 10:03 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Zoom terms now allow training AI on "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1002",
+      "file": "pages/reports/updates/update-2025-08-15-1002.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:02",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:02 Autonomous Update — 2025-08-15 10:02 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Google Duplex: An AI System for Acco"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1001",
+      "file": "pages/reports/updates/update-2025-08-15-1001.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:01",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:01 Autonomous Update — 2025-08-15 10:01 Signal over noise—your automated update is here. Today's Highlight Hacker News : Air Con: $1697 for an on/off switch · 2001 pts "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1000",
+      "file": "pages/reports/updates/update-2025-08-15-1000.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:00",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:00 Autonomous Update — 2025-08-15 10:00 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Google Duplex: An AI System for Acco"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0959",
+      "file": "pages/reports/updates/update-2025-08-15-0959.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:59",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:59 Autonomous Update — 2025-08-15 09:59 A concise snapshot generated by our continuous publishing agents. Today's Highlight Hacker News : Air Con: $1697 for an on/off s"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0958",
+      "file": "pages/reports/updates/update-2025-08-15-0958.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:58",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:58 Autonomous Update — 2025-08-15 09:58 A concise snapshot generated by our continuous publishing agents. Today's Highlight Hacker News : Paper Airplane Designs · 1753 "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0957",
+      "file": "pages/reports/updates/update-2025-08-15-0957.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:57",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:57 Autonomous Update — 2025-08-15 09:57 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Airfoil · 2544 pts Wh"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0956",
+      "file": "pages/reports/updates/update-2025-08-15-0956.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:56",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:56 Autonomous Update — 2025-08-15 09:56 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Zoom terms now allow training AI on "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0955",
+      "file": "pages/reports/updates/update-2025-08-15-0955.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:55",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:55 Autonomous Update — 2025-08-15 09:55 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Google Duplex: An AI System for Acco"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0954",
+      "file": "pages/reports/updates/update-2025-08-15-0954.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:54",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:54 Autonomous Update — 2025-08-15 09:54 Signal over noise—your automated update is here. Today's Highlight Hacker News : The young, inexperienced engineers aiding DOGE "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0953",
+      "file": "pages/reports/updates/update-2025-08-15-0953.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:53",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:53 Autonomous Update — 2025-08-15 09:53 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : The young, inexperien"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0952",
+      "file": "pages/reports/updates/update-2025-08-15-0952.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:52",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:52 Autonomous Update — 2025-08-15 09:52 A concise snapshot generated by our continuous publishing agents. Today's Highlight Hacker News : My AI skeptic friends are all "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0951",
+      "file": "pages/reports/updates/update-2025-08-15-0951.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:51",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:51 Autonomous Update — 2025-08-15 09:51 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Paper Airplane Design"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0949",
+      "file": "pages/reports/updates/update-2025-08-15-0949.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:49",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:49 Autonomous Update — 2025-08-15 09:49 Signal over noise—your automated update is here. Today's Highlight Hacker News : Air Con: $1697 for an on/off switch · 2001 pts "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0948",
+      "file": "pages/reports/updates/update-2025-08-15-0948.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:48",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:48 Autonomous Update — 2025-08-15 09:48 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Gemini AI · 2135 pts Why it matters:"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0947",
+      "file": "pages/reports/updates/update-2025-08-15-0947.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:47",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:47 Autonomous Update — 2025-08-15 09:47 Signal over noise—your automated update is here. Today's Highlight Hacker News : Zoom terms now allow training AI on user conten"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0945",
+      "file": "pages/reports/updates/update-2025-08-15-0945.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:45",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:45 Autonomous Update — 2025-08-15 09:45 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : The young, inexperienced engineers a"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0944",
+      "file": "pages/reports/updates/update-2025-08-15-0944.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:44",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:44 Autonomous Update — 2025-08-15 09:44 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Google Duplex: An AI "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0943",
+      "file": "pages/reports/updates/update-2025-08-15-0943.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:43",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:43 Autonomous Update — 2025-08-15 09:43 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : The young, inexperienced engineers a"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0942",
+      "file": "pages/reports/updates/update-2025-08-15-0942.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:42",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:42 Autonomous Update — 2025-08-15 09:42 A concise snapshot generated by our continuous publishing agents. Today's Highlight Hacker News : The young, inexperienced engin"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0941",
+      "file": "pages/reports/updates/update-2025-08-15-0941.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:41",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:41 Autonomous Update — 2025-08-15 09:41 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Paper Airplane Design"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0940",
+      "file": "pages/reports/updates/update-2025-08-15-0940.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:40",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:40 Autonomous Update — 2025-08-15 09:40 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : My AI skeptic friends"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0938",
+      "file": "pages/reports/updates/update-2025-08-15-0938.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:38",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:38 Autonomous Update — 2025-08-15 09:38 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Open source AI is the path forward ·"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0937",
+      "file": "pages/reports/updates/update-2025-08-15-0937.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:37",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:37 Autonomous Update — 2025-08-15 09:37 Signal over noise—your automated update is here. Today's Highlight Hacker News : Air Con: $1697 for an on/off switch · 2001 pts "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0936",
+      "file": "pages/reports/updates/update-2025-08-15-0936.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:36",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:36 Autonomous Update — 2025-08-15 09:36 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Gemini AI · 2135 pts "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0935",
+      "file": "pages/reports/updates/update-2025-08-15-0935.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:35",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:35 Autonomous Update — 2025-08-15 09:35 Signal over noise—your automated update is here. Today's Highlight Hacker News : Bypassing airport security via SQL injection · "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0934",
+      "file": "pages/reports/updates/update-2025-08-15-0934.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:34",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:34 Autonomous Update — 2025-08-15 09:34 A concise snapshot generated by our continuous publishing agents. Today's Highlight Hacker News : Zoom terms now allow training "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0933",
+      "file": "pages/reports/updates/update-2025-08-15-0933.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:33",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:33 Autonomous Update — 2025-08-15 09:33 A concise snapshot generated by our continuous publishing agents. Today's Highlight Hacker News : Airfoil · 2544 pts Why it matt"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0932",
+      "file": "pages/reports/updates/update-2025-08-15-0932.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:32",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:32 Autonomous Update — 2025-08-15 09:32 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Paper Airplane Designs · 1753 pts Wh"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0931",
+      "file": "pages/reports/updates/update-2025-08-15-0931.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:31",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:31 Autonomous Update — 2025-08-15 09:31 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Bypassing airport security via SQL i"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0930",
+      "file": "pages/reports/updates/update-2025-08-15-0930.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:30",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:30 Autonomous Update — 2025-08-15 09:30 Signal over noise—your automated update is here. Today's Highlight Hacker News : Google Duplex: An AI System for Accomplishing R"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0929",
+      "file": "pages/reports/updates/update-2025-08-15-0929.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:29",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:29 Autonomous Update — 2025-08-15 09:29 A concise snapshot generated by our continuous publishing agents. Today's Highlight Hacker News : Air Con: $1697 for an on/off s"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0928",
+      "file": "pages/reports/updates/update-2025-08-15-0928.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:28",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:28 Autonomous Update — 2025-08-15 09:28 A concise snapshot generated by our continuous publishing agents. Today's Highlight Hacker News : Gemini AI · 2135 pts Why it ma"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0927",
+      "file": "pages/reports/updates/update-2025-08-15-0927.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:27",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:27 Autonomous Update — 2025-08-15 09:27 A concise snapshot generated by our continuous publishing agents. Today's Highlight Hacker News : Bypassing airport security via"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0926",
+      "file": "pages/reports/updates/update-2025-08-15-0926.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:26",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:26 Autonomous Update — 2025-08-15 09:26 Signal over noise—your automated update is here. Today's Highlight Hacker News : Zoom terms now allow training AI on user conten"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0925",
+      "file": "pages/reports/updates/update-2025-08-15-0925.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:25",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:25 Autonomous Update — 2025-08-15 09:25 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Google Duplex: An AI "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0924",
+      "file": "pages/reports/updates/update-2025-08-15-0924.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:24",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:24 Autonomous Update — 2025-08-15 09:24 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Open source AI is the path forward ·"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0923",
+      "file": "pages/reports/updates/update-2025-08-15-0923.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:23",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:23 Autonomous Update — 2025-08-15 09:23 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : The young, inexperienced engineers a"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0921",
+      "file": "pages/reports/updates/update-2025-08-15-0921.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:21",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:21 Autonomous Update — 2025-08-15 09:21 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Airfoil · 2544 pts Why it matters: a"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0920",
+      "file": "pages/reports/updates/update-2025-08-15-0920.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:20",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:20 Autonomous Update — 2025-08-15 09:20 A concise snapshot generated by our continuous publishing agents. Today's Highlight Hacker News : Airfoil · 2544 pts Why it matt"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0919",
+      "file": "pages/reports/updates/update-2025-08-15-0919.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:19",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:19 Autonomous Update — 2025-08-15 09:19 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : My AI skeptic friends"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0918",
+      "file": "pages/reports/updates/update-2025-08-15-0918.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:18",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:18 Autonomous Update — 2025-08-15 09:18 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Airfoil · 2544 pts Why it matters: a"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0917",
+      "file": "pages/reports/updates/update-2025-08-15-0917.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:17",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:17 Autonomous Update — 2025-08-15 09:17 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Google Duplex: An AI "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0916",
+      "file": "pages/reports/updates/update-2025-08-15-0916.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:16",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:16 Autonomous Update — 2025-08-15 09:16 A concise snapshot generated by our continuous publishing agents. Today's Highlight Hacker News : Bypassing airport security via"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0915",
+      "file": "pages/reports/updates/update-2025-08-15-0915.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:15",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:15 Autonomous Update — 2025-08-15 09:15 Signal over noise—your automated update is here. Today's Highlight Hacker News : Gemini AI · 2135 pts Why it matters: autonomous"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0914",
+      "file": "pages/reports/updates/update-2025-08-15-0914.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:14",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:14 Autonomous Update — 2025-08-15 09:14 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Open source AI is the path forward ·"
+    },
+    {
       "route": "/reports/updates/update-2025-08-15-0907",
       "file": "pages/reports/updates/update-2025-08-15-0907.tsx",
       "title": "Autonomous Checklist — AI Service Design (2025-08-15 09:07 UTC)",
@@ -978,6 +1926,12 @@
       "file": "pages/reports/updates/update-2025-08-15-0904.tsx",
       "title": "Autonomous Capability Map — AI Service Design (2025-08-15 09:04 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Capability Map — AI Service Design (2025-08-15 09:04 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0903",
+      "file": "pages/reports/updates/update-2025-08-15-0903.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:03",
+      "summary": "import React from 'react'; import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:03 Autonomous Update — 2025-08-15 09:03 Signal over noise—your automated update is here. Today's Highlight Hacker News : Gemini AI · 2135 pts"
     },
     {
       "route": "/reports/updates/update-2025-08-15-0900",
@@ -3654,6 +4608,168 @@
       "file": "pages/reports/updates/update-2025-08-14-2311.tsx",
       "title": "Autonomous Update — 2025-08-14 23:11",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-14 23:11 Autonomous Update — 2025-08-14 23:11 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Bypassing airport sec"
+    },
+    {
+      "route": "/reports/tutorials",
+      "file": "pages/reports/tutorials/index.tsx",
+      "title": "Tutorials | Zion Tech Group",
+      "summary": "import Head from 'next/head'; export default function TutorialsIndex() { return ( Tutorials | Zion Tech Group Tutorials Sample Tutorial This is a placeholder for tutorials content. Learn more → ); }"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-142030",
+      "file": "pages/reports/playbooks/playbook-2025-08-15-142030.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-141220",
+      "file": "pages/reports/playbooks/playbook-2025-08-15-141220.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-141033",
+      "file": "pages/reports/playbooks/playbook-2025-08-15-141033.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-135728",
+      "file": "pages/reports/playbooks/playbook-2025-08-15-135728.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-134107",
+      "file": "pages/reports/playbooks/playbook-2025-08-15-134107.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-134033",
+      "file": "pages/reports/playbooks/playbook-2025-08-15-134033.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-133035",
+      "file": "pages/reports/playbooks/playbook-2025-08-15-133035.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-132631",
+      "file": "pages/reports/playbooks/playbook-2025-08-15-132631.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-132212",
+      "file": "pages/reports/playbooks/playbook-2025-08-15-132212.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-131032",
+      "file": "pages/reports/playbooks/playbook-2025-08-15-131032.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-130031",
+      "file": "pages/reports/playbooks/playbook-2025-08-15-130031.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-125720",
+      "file": "pages/reports/playbooks/playbook-2025-08-15-125720.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-125033",
+      "file": "pages/reports/playbooks/playbook-2025-08-15-125033.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-124218",
+      "file": "pages/reports/playbooks/playbook-2025-08-15-124218.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-124100",
+      "file": "pages/reports/playbooks/playbook-2025-08-15-124100.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-123033",
+      "file": "pages/reports/playbooks/playbook-2025-08-15-123033.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-122130",
+      "file": "pages/reports/playbooks/playbook-2025-08-15-122130.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-122034",
+      "file": "pages/reports/playbooks/playbook-2025-08-15-122034.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-120932",
+      "file": "pages/reports/playbooks/playbook-2025-08-15-120932.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-114845",
+      "file": "pages/reports/playbooks/playbook-2025-08-15-114845.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-111956",
+      "file": "pages/reports/playbooks/playbook-2025-08-15-111956.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-110733",
+      "file": "pages/reports/playbooks/playbook-2025-08-15-110733.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-110209",
+      "file": "pages/reports/playbooks/playbook-2025-08-15-110209.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-104010",
+      "file": "pages/reports/playbooks/playbook-2025-08-15-104010.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-103408",
+      "file": "pages/reports/playbooks/playbook-2025-08-15-103408.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-100703",
+      "file": "pages/reports/playbooks/playbook-2025-08-15-100703.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-15-094807",
@@ -6720,6 +7836,216 @@
       "file": "pages/reports/playbooks/playbook-2025-08-15-021207.tsx",
       "title": "Playbook — Autonomous Delivery",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-142030",
+      "file": "pages/reports/patterns/pattern-2025-08-15-142030.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-141831",
+      "file": "pages/reports/patterns/pattern-2025-08-15-141831.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-141220",
+      "file": "pages/reports/patterns/pattern-2025-08-15-141220.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-141033",
+      "file": "pages/reports/patterns/pattern-2025-08-15-141033.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-135728",
+      "file": "pages/reports/patterns/pattern-2025-08-15-135728.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-134107",
+      "file": "pages/reports/patterns/pattern-2025-08-15-134107.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-134033",
+      "file": "pages/reports/patterns/pattern-2025-08-15-134033.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-133500",
+      "file": "pages/reports/patterns/pattern-2025-08-15-133500.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-133034",
+      "file": "pages/reports/patterns/pattern-2025-08-15-133034.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-132631",
+      "file": "pages/reports/patterns/pattern-2025-08-15-132631.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-132212",
+      "file": "pages/reports/patterns/pattern-2025-08-15-132212.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-131815",
+      "file": "pages/reports/patterns/pattern-2025-08-15-131815.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-131032",
+      "file": "pages/reports/patterns/pattern-2025-08-15-131032.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-130031",
+      "file": "pages/reports/patterns/pattern-2025-08-15-130031.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-125924",
+      "file": "pages/reports/patterns/pattern-2025-08-15-125924.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-125720",
+      "file": "pages/reports/patterns/pattern-2025-08-15-125720.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-125033",
+      "file": "pages/reports/patterns/pattern-2025-08-15-125033.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-124218",
+      "file": "pages/reports/patterns/pattern-2025-08-15-124218.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-124217",
+      "file": "pages/reports/patterns/pattern-2025-08-15-124217.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-124100",
+      "file": "pages/reports/patterns/pattern-2025-08-15-124100.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-123033",
+      "file": "pages/reports/patterns/pattern-2025-08-15-123033.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-122130",
+      "file": "pages/reports/patterns/pattern-2025-08-15-122130.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-122034",
+      "file": "pages/reports/patterns/pattern-2025-08-15-122034.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-121817",
+      "file": "pages/reports/patterns/pattern-2025-08-15-121817.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-120932",
+      "file": "pages/reports/patterns/pattern-2025-08-15-120932.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-114845",
+      "file": "pages/reports/patterns/pattern-2025-08-15-114845.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-111956",
+      "file": "pages/reports/patterns/pattern-2025-08-15-111956.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-111327",
+      "file": "pages/reports/patterns/pattern-2025-08-15-111327.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-110733",
+      "file": "pages/reports/patterns/pattern-2025-08-15-110733.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-110209",
+      "file": "pages/reports/patterns/pattern-2025-08-15-110209.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-104010",
+      "file": "pages/reports/patterns/pattern-2025-08-15-104010.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-103408",
+      "file": "pages/reports/patterns/pattern-2025-08-15-103408.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-101534",
+      "file": "pages/reports/patterns/pattern-2025-08-15-101534.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-100703",
+      "file": "pages/reports/patterns/pattern-2025-08-15-100703.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-095557",
+      "file": "pages/reports/patterns/pattern-2025-08-15-095557.tsx",
+      "title": "Pattern — Cloud Improving Continuously",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
     },
     {
       "route": "/reports/patterns/pattern-2025-08-15-094807",
@@ -11528,6 +12854,114 @@
       "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
     },
     {
+      "route": "/reports/insights",
+      "file": "pages/reports/insights/index.tsx",
+      "title": "Insights | Zion Tech Group",
+      "summary": "import Head from 'next/head'; export default function InsightsIndex() { return ( Insights | Zion Tech Group Insights Sample Insight This is a placeholder for insights content. Learn more → ); }"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15T14-20",
+      "file": "pages/reports/innovations/insight-2025-08-15T14-20.tsx",
+      "title": "Innovation Insight — 2025-08-15 14-20",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-15 14-20 Innovation Insight — 2025-08-15 14-20 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15T14-10",
+      "file": "pages/reports/innovations/insight-2025-08-15T14-10.tsx",
+      "title": "Innovation Insight — 2025-08-15 14-10",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-15 14-10 Innovation Insight — 2025-08-15 14-10 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15T13-40",
+      "file": "pages/reports/innovations/insight-2025-08-15T13-40.tsx",
+      "title": "Innovation Insight — 2025-08-15 13-40",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-15 13-40 Innovation Insight — 2025-08-15 13-40 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15T13-30",
+      "file": "pages/reports/innovations/insight-2025-08-15T13-30.tsx",
+      "title": "Innovation Insight — 2025-08-15 13-30",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-15 13-30 Innovation Insight — 2025-08-15 13-30 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15T13-22",
+      "file": "pages/reports/innovations/insight-2025-08-15T13-22.tsx",
+      "title": "Innovation Insight — 2025-08-15 13-22",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-15 13-22 Innovation Insight — 2025-08-15 13-22 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15T13-10",
+      "file": "pages/reports/innovations/insight-2025-08-15T13-10.tsx",
+      "title": "Innovation Insight — 2025-08-15 13-10",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-15 13-10 Innovation Insight — 2025-08-15 13-10 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15T13-00",
+      "file": "pages/reports/innovations/insight-2025-08-15T13-00.tsx",
+      "title": "Innovation Insight — 2025-08-15 13-00",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-15 13-00 Innovation Insight — 2025-08-15 13-00 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15T12-50",
+      "file": "pages/reports/innovations/insight-2025-08-15T12-50.tsx",
+      "title": "Innovation Insight — 2025-08-15 12-50",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-15 12-50 Innovation Insight — 2025-08-15 12-50 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15T12-42",
+      "file": "pages/reports/innovations/insight-2025-08-15T12-42.tsx",
+      "title": "Innovation Insight — 2025-08-15 12-42",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-15 12-42 Innovation Insight — 2025-08-15 12-42 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15T12-41",
+      "file": "pages/reports/innovations/insight-2025-08-15T12-41.tsx",
+      "title": "Innovation Insight — 2025-08-15 12-41",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-15 12-41 Innovation Insight — 2025-08-15 12-41 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15T12-40",
+      "file": "pages/reports/innovations/insight-2025-08-15T12-40.tsx",
+      "title": "Innovation Insight — 2025-08-15 12-40",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-15 12-40 Innovation Insight — 2025-08-15 12-40 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15T12-30",
+      "file": "pages/reports/innovations/insight-2025-08-15T12-30.tsx",
+      "title": "Innovation Insight — 2025-08-15 12-30",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-15 12-30 Innovation Insight — 2025-08-15 12-30 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15T12-20",
+      "file": "pages/reports/innovations/insight-2025-08-15T12-20.tsx",
+      "title": "Innovation Insight — 2025-08-15 12-20",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-15 12-20 Innovation Insight — 2025-08-15 12-20 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15T12-09",
+      "file": "pages/reports/innovations/insight-2025-08-15T12-09.tsx",
+      "title": "Innovation Insight — 2025-08-15 12-09",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-15 12-09 Innovation Insight — 2025-08-15 12-09 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15T11-19",
+      "file": "pages/reports/innovations/insight-2025-08-15T11-19.tsx",
+      "title": "Innovation Insight — 2025-08-15 11-19",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-15 11-19 Innovation Insight — 2025-08-15 11-19 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15T11-07",
+      "file": "pages/reports/innovations/insight-2025-08-15T11-07.tsx",
+      "title": "Innovation Insight — 2025-08-15 11-07",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-15 11-07 Innovation Insight — 2025-08-15 11-07 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15T10-34",
+      "file": "pages/reports/innovations/insight-2025-08-15T10-34.tsx",
+      "title": "Innovation Insight — 2025-08-15 10-34",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-15 10-34 Innovation Insight — 2025-08-15 10-34 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-15T09-08",
       "file": "pages/reports/innovations/insight-2025-08-15T09-08.tsx",
       "title": "Innovation Insight — 2025-08-15 09-08",
@@ -12422,6 +13856,96 @@
       "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-15 02-12 Innovation Insight — 2025-08-15 02-12 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
     },
     {
+      "route": "/reports/innovations/insight-2025-08-15-1420",
+      "file": "pages/reports/innovations/insight-2025-08-15-1420.tsx",
+      "title": "Pilot Plan: Agent Ops",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Pilot Plan: Agent Ops Pilot Plan: Agent Ops Patterns to enhance security. Scope: Pilot Plan: Agent Ops. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observab"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-1410",
+      "file": "pages/reports/innovations/insight-2025-08-15-1410.tsx",
+      "title": "Checklist: Agent Ops",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Checklist: Agent Ops Checklist: Agent Ops Patterns to improve reliability. Scope: Checklist: Agent Ops. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observab"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-1340",
+      "file": "pages/reports/innovations/insight-2025-08-15-1340.tsx",
+      "title": "Blueprint: LLM Apps",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Blueprint: LLM Apps Blueprint: LLM Apps Patterns to enhance security. Scope: Blueprint: LLM Apps. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observability,"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-1330",
+      "file": "pages/reports/innovations/insight-2025-08-15-1330.tsx",
+      "title": "Playbook: FinOps for AI",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Playbook: FinOps for AI Playbook: FinOps for AI Patterns to reduce cost. Scope: Playbook: FinOps for AI. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observa"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-1310",
+      "file": "pages/reports/innovations/insight-2025-08-15-1310.tsx",
+      "title": "Pilot Plan: AI QA & Eval",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Pilot Plan: AI QA & Eval Pilot Plan: AI QA & Eval Patterns to increase accuracy. Scope: Pilot Plan: AI QA & Eval. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-1300",
+      "file": "pages/reports/innovations/insight-2025-08-15-1300.tsx",
+      "title": "Runbook: FinOps for AI",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Runbook: FinOps for AI Runbook: FinOps for AI Patterns to reduce cost. Scope: Runbook: FinOps for AI. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observabil"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-1250",
+      "file": "pages/reports/innovations/insight-2025-08-15-1250.tsx",
+      "title": "Blueprint: RAG Platforms",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Blueprint: RAG Platforms Blueprint: RAG Platforms Patterns to improve reliability. Scope: Blueprint: RAG Platforms. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. O"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-1242",
+      "file": "pages/reports/innovations/insight-2025-08-15-1242.tsx",
+      "title": "Checklist: Edge AI",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Checklist: Edge AI Checklist: Edge AI Patterns to improve reliability. Scope: Checklist: Edge AI. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observability,"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-1240",
+      "file": "pages/reports/innovations/insight-2025-08-15-1240.tsx",
+      "title": "Playbook: Edge AI",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Playbook: Edge AI Playbook: Edge AI Patterns to accelerate delivery. Scope: Playbook: Edge AI. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observability, ro"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-1230",
+      "file": "pages/reports/innovations/insight-2025-08-15-1230.tsx",
+      "title": "Guide: MLOps",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Guide: MLOps Guide: MLOps Patterns to reduce cost. Scope: Guide: MLOps. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observability, rollback, SLOs, security."
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-1220",
+      "file": "pages/reports/innovations/insight-2025-08-15-1220.tsx",
+      "title": "Checklist: Edge AI",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Checklist: Edge AI Checklist: Edge AI Patterns to increase accuracy. Scope: Checklist: Edge AI. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observability, r"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-1209",
+      "file": "pages/reports/innovations/insight-2025-08-15-1209.tsx",
+      "title": "Blueprint: DevSecOps AI",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Blueprint: DevSecOps AI Blueprint: DevSecOps AI Patterns to enhance security. Scope: Blueprint: DevSecOps AI. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: ob"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-1119",
+      "file": "pages/reports/innovations/insight-2025-08-15-1119.tsx",
+      "title": "Runbook: LLM Apps",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Runbook: LLM Apps Runbook: LLM Apps Patterns to accelerate delivery. Scope: Runbook: LLM Apps. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observability, ro"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-1107",
+      "file": "pages/reports/innovations/insight-2025-08-15-1107.tsx",
+      "title": "Playbook: Agent Ops",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Playbook: Agent Ops Playbook: Agent Ops Patterns to enhance security. Scope: Playbook: Agent Ops. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observability,"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-1034",
+      "file": "pages/reports/innovations/insight-2025-08-15-1034.tsx",
+      "title": "Pilot Plan: Agent Ops",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Pilot Plan: Agent Ops Pilot Plan: Agent Ops Patterns to improve reliability. Scope: Pilot Plan: Agent Ops. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: obser"
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-15-0907",
       "file": "pages/reports/innovations/insight-2025-08-15-0907.tsx",
       "title": "Pilot Plan: Agent Ops",
@@ -13290,6 +14814,216 @@
       "file": "pages/reports/innovations/insight-2025-08-15-0211.tsx",
       "title": "Blueprint: Edge AI",
       "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Blueprint: Edge AI Blueprint: Edge AI Patterns to accelerate delivery. Scope: Blueprint: Edge AI. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observability,"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-142030",
+      "file": "pages/reports/guides/guide-2025-08-15-142030.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-141831",
+      "file": "pages/reports/guides/guide-2025-08-15-141831.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-141220",
+      "file": "pages/reports/guides/guide-2025-08-15-141220.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-141033",
+      "file": "pages/reports/guides/guide-2025-08-15-141033.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-135728",
+      "file": "pages/reports/guides/guide-2025-08-15-135728.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-134107",
+      "file": "pages/reports/guides/guide-2025-08-15-134107.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-134033",
+      "file": "pages/reports/guides/guide-2025-08-15-134033.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-133500",
+      "file": "pages/reports/guides/guide-2025-08-15-133500.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-133034",
+      "file": "pages/reports/guides/guide-2025-08-15-133034.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-132631",
+      "file": "pages/reports/guides/guide-2025-08-15-132631.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-132212",
+      "file": "pages/reports/guides/guide-2025-08-15-132212.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-131815",
+      "file": "pages/reports/guides/guide-2025-08-15-131815.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-131032",
+      "file": "pages/reports/guides/guide-2025-08-15-131032.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-130031",
+      "file": "pages/reports/guides/guide-2025-08-15-130031.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-125924",
+      "file": "pages/reports/guides/guide-2025-08-15-125924.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-125720",
+      "file": "pages/reports/guides/guide-2025-08-15-125720.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-125033",
+      "file": "pages/reports/guides/guide-2025-08-15-125033.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-124218",
+      "file": "pages/reports/guides/guide-2025-08-15-124218.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-124217",
+      "file": "pages/reports/guides/guide-2025-08-15-124217.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-124100",
+      "file": "pages/reports/guides/guide-2025-08-15-124100.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-123033",
+      "file": "pages/reports/guides/guide-2025-08-15-123033.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-122130",
+      "file": "pages/reports/guides/guide-2025-08-15-122130.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-122034",
+      "file": "pages/reports/guides/guide-2025-08-15-122034.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-121817",
+      "file": "pages/reports/guides/guide-2025-08-15-121817.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-120932",
+      "file": "pages/reports/guides/guide-2025-08-15-120932.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-114845",
+      "file": "pages/reports/guides/guide-2025-08-15-114845.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-111956",
+      "file": "pages/reports/guides/guide-2025-08-15-111956.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-111327",
+      "file": "pages/reports/guides/guide-2025-08-15-111327.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-110733",
+      "file": "pages/reports/guides/guide-2025-08-15-110733.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-110209",
+      "file": "pages/reports/guides/guide-2025-08-15-110209.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-104010",
+      "file": "pages/reports/guides/guide-2025-08-15-104010.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-103408",
+      "file": "pages/reports/guides/guide-2025-08-15-103408.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-101534",
+      "file": "pages/reports/guides/guide-2025-08-15-101534.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-100703",
+      "file": "pages/reports/guides/guide-2025-08-15-100703.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-095557",
+      "file": "pages/reports/guides/guide-2025-08-15-095557.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
     },
     {
       "route": "/reports/guides/guide-2025-08-15-094807",
@@ -18104,6 +19838,222 @@
       "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/landing Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
     },
     {
+      "route": "/reports/dossiers",
+      "file": "pages/reports/dossiers/index.tsx",
+      "title": "Dossiers | Zion Tech Group",
+      "summary": "import Head from 'next/head'; export default function DossiersIndex() { return ( Dossiers | Zion Tech Group Dossiers Sample Dossier This is a placeholder for dossiers content. Learn more → ); }"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-142030",
+      "file": "pages/reports/cases/case-2025-08-15-142030.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-141831",
+      "file": "pages/reports/cases/case-2025-08-15-141831.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-141220",
+      "file": "pages/reports/cases/case-2025-08-15-141220.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-141033",
+      "file": "pages/reports/cases/case-2025-08-15-141033.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-135728",
+      "file": "pages/reports/cases/case-2025-08-15-135728.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-134107",
+      "file": "pages/reports/cases/case-2025-08-15-134107.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-134033",
+      "file": "pages/reports/cases/case-2025-08-15-134033.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-133500",
+      "file": "pages/reports/cases/case-2025-08-15-133500.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-133034",
+      "file": "pages/reports/cases/case-2025-08-15-133034.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-132631",
+      "file": "pages/reports/cases/case-2025-08-15-132631.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-132212",
+      "file": "pages/reports/cases/case-2025-08-15-132212.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-131815",
+      "file": "pages/reports/cases/case-2025-08-15-131815.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-131032",
+      "file": "pages/reports/cases/case-2025-08-15-131032.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-130031",
+      "file": "pages/reports/cases/case-2025-08-15-130031.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-125924",
+      "file": "pages/reports/cases/case-2025-08-15-125924.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-125720",
+      "file": "pages/reports/cases/case-2025-08-15-125720.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-125033",
+      "file": "pages/reports/cases/case-2025-08-15-125033.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-124218",
+      "file": "pages/reports/cases/case-2025-08-15-124218.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-124217",
+      "file": "pages/reports/cases/case-2025-08-15-124217.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-124100",
+      "file": "pages/reports/cases/case-2025-08-15-124100.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-123033",
+      "file": "pages/reports/cases/case-2025-08-15-123033.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-122130",
+      "file": "pages/reports/cases/case-2025-08-15-122130.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-122034",
+      "file": "pages/reports/cases/case-2025-08-15-122034.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-121817",
+      "file": "pages/reports/cases/case-2025-08-15-121817.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-120932",
+      "file": "pages/reports/cases/case-2025-08-15-120932.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-114845",
+      "file": "pages/reports/cases/case-2025-08-15-114845.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-111956",
+      "file": "pages/reports/cases/case-2025-08-15-111956.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-111327",
+      "file": "pages/reports/cases/case-2025-08-15-111327.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-110733",
+      "file": "pages/reports/cases/case-2025-08-15-110733.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-110209",
+      "file": "pages/reports/cases/case-2025-08-15-110209.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-104010",
+      "file": "pages/reports/cases/case-2025-08-15-104010.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-103408",
+      "file": "pages/reports/cases/case-2025-08-15-103408.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-101534",
+      "file": "pages/reports/cases/case-2025-08-15-101534.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-100703",
+      "file": "pages/reports/cases/case-2025-08-15-100703.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-095557",
+      "file": "pages/reports/cases/case-2025-08-15-095557.tsx",
+      "title": "Case Study — Automation Autonomous",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
       "route": "/reports/cases/case-2025-08-15-094807",
       "file": "pages/reports/cases/case-2025-08-15-094807.tsx",
       "title": "Case Study — Automation Autonomous",
@@ -22904,6 +24854,162 @@
       "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
     },
     {
+      "route": "/reports/blueprints/blueprint-2025-08-15-142029",
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-142029.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-141220",
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-141220.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-141033",
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-141033.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-135728",
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-135728.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-134107",
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-134107.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-134033",
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-134033.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-133034",
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-133034.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-132631",
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-132631.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-132212",
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-132212.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-131032",
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-131032.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-130031",
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-130031.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-125720",
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-125720.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-125033",
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-125033.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-124217",
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-124217.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-124059",
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-124059.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-123033",
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-123033.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-122130",
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-122130.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-122034",
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-122034.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-120932",
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-120932.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-114845",
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-114845.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-111956",
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-111956.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-110733",
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-110733.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-110209",
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-110209.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-104011",
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-104011.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-103408",
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-103408.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-100703",
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-100703.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
+    },
+    {
       "route": "/reports/blueprints/blueprint-2025-08-15-094807",
       "file": "pages/reports/blueprints/blueprint-2025-08-15-094807.tsx",
       "title": "Reference Architecture — Autonomous Content Mesh",
@@ -25979,13 +28085,31 @@
       "route": "/front",
       "file": "pages/front/index.tsx",
       "title": "Front Systems Hub — Redirecting",
-      "summary": "import Head from 'next/head' import { useRouter } from 'next/router' import { useEffect } from 'react' export default function FrontIndexRedirect() { const router = useRouter() useEffect(() => { router.replace('/main/front') }, [router]) return ( <> Front Systems Hub — Redirectin"
+      "summary": "import React from 'react'; import Head from 'next/head' import { useRouter } from 'next/router' import { useEffect } from 'react' export default function FrontIndexRedirect() { const router = useRouter() useEffect(() => { router.replace('/main/front') }, [router]) return ( <> Fro"
     },
     {
       "route": "/explore",
       "file": "pages/explore/index.tsx",
       "title": "Explore — Zion",
       "summary": "import Head from 'next/head'; import Link from 'next/link'; import Landing from '../../components/Landing'; export default function ExploreIndex() { // AUTO-GENERATED: EXPLORE_PROMOS const promos = [ { \"href\": \"/reports/innovations/insight-2025-08-13T21-30\", \"title\": \"Innovation "
+    },
+    {
+      "route": "/components/pagination-demo",
+      "file": "pages/components/pagination-demo.tsx",
+      "title": "pagination-demo",
+      "summary": "import { useState } from 'react'; import Pagination from '../../components/Pagination'; export default function PaginationDemo() { const [currentPage, setCurrentPage] = useState(1); const totalPages = 10; return ( Pagination Component Demo Current Page: {currentPage} ); }"
+    },
+    {
+      "route": "/components/modal-demo",
+      "file": "pages/components/modal-demo.tsx",
+      "title": "modal-demo",
+      "summary": "import { useState } from 'react'; import Modal from '../../components/Modal'; import Button from '../../components/Button'; export default function ModalDemo() { const [isOpen, setIsOpen] = useState(false); return ( Modal Component Demo setIsOpen(true)}>Open Modal setIsOpen(false"
+    },
+    {
+      "route": "/components/form-demo",
+      "file": "pages/components/form-demo.tsx",
+      "title": "form-demo",
+      "summary": "import Form from '../../components/Form'; export default function FormDemo() { const handleSubmit = (data) => { alert('Form submitted: ' + JSON.stringify(data, null, 2)); }; return ( Form Component Demo ); }"
     },
     {
       "route": "/automation",
