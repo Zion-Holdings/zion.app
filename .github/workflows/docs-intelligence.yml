@@ -1,62 +1,29 @@
 name: Docs Intelligence
-
 on:
   schedule:
     - cron: '13 */2 * * *'
   workflow_dispatch: {}
-
 permissions:
   contents: read
-  # Branch protection rules
-  branch_protection_rules:
-    - pattern: "main"
-      required_status_checks:
-        strict: true
-        contexts: []
-      required_pull_request_reviews:
-        required_approving_review_count: 1
-        dismiss_stale_reviews: true
-        require_code_owner_reviews: false
-      enforce_admins: false
-      required_linear_history: false
-      allow_force_pushes: false
-      allow_deletions: false
-      block_creations: false
-      required_conversation_resolution: true
-
-concurrency:
-  group: docs-intelligence-${{ github.ref }}
-  cancel-in-progress: true
-
-jobs:
-  docs_refresh:
-    runs-on: ubuntu-latest
-      timeout-minutes: 25
-    steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
-
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
-
       - name: Generate docs indices and search
         run: |
           node automation/docs-pages-indexer.cjs || true
           node automation/component-props-docs.cjs || true
           node scripts/generate-search-index.js || true
           node scripts/generate-readme.js
-
       - name: Build (non-blocking)
         run: npm run build || true
-
       - name: Commit and push changes
         run: |
           if [ -n "$(git status --porcelain)" ]; then

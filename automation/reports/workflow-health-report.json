@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-15T22:53:42.439Z",
+  "timestamp": "2025-08-15T22:54:37.144Z",
   "summary": {
     "totalWorkflows": 149,
     "activeWorkflows": 74,
@@ -12,74 +12,40 @@
       "actionlint.yml",
       "agent-of-agents-trigger.yml",
       "ai-changelog.yml",
-      "ai-content-autonomy.yml",
       "ai-content-factory.yml",
-      "ai-it-ads-sync.yml",
       "ai-it-innovations.yml",
-      "ai-it-multi-factory.yml",
-      "ai-it-ultrafast-sync.yml",
       "ai-research-scout.yml",
-      "ai-trends-radar.yml",
       "auto-heal-workflows.yml",
-      "automation-advertiser.yml",
       "automation-orchestrator.yml",
-      "broken-images.yml",
       "ci-quality.yml",
       "ci-self-heal.yml",
       "ci.yml",
       "cloud-agents.yml",
-      "cloud-autonomous-orchestrator.yml",
       "cloud-deep-research.yml",
       "cloud-orchestrator-plus.yml",
       "codeql.yml",
       "commit-message-lint.yml",
       "commitlint.yml",
-      "components-size-report.yml",
       "crawl-normalize.yml",
-      "cursor-chat.yml",
       "dead-code-report.yml",
       "dependency-auto-upgrade.yml",
       "dependency-management.yml",
       "deploy.yml",
-      "docs-intelligence.yml",
       "emergency-fix.yml",
-      "external-links.yml",
-      "front-scheduler.yml",
-      "guardian-scheduler.yml",
-      "instagram-marketing.yml",
-      "knowledge-graph-radar.yml",
       "lighthouse-live.yml",
-      "linkedin-marketing.yml",
-      "linkedin-pro.yml",
-      "marketing-sync.yml",
-      "media-optimizer.yml",
-      "monetization.yml",
       "netlify-config.yml",
       "netlify-functions-trigger.yml",
-      "og-image-refresh.yml",
       "pa11y.yml",
       "pin-actions-weekly.yml",
       "playwright-smoke.yml",
       "pr-auto-curator.yml",
       "pr-quality-gate.yml",
       "pr-smoke.yml",
-      "readme-auto-advertiser.yml",
       "release.yml",
-      "responsive-content.yml",
-      "security-auto-heal.yml",
       "security-gates.yml",
       "security-scan.yml",
-      "seo-audit.yml",
-      "seo-validator.yml",
-      "site-health-guardian.yml",
-      "site-link.yml",
-      "sitemap-and-search.yml",
       "test.yml",
-      "topics-and-clusters.yml",
       "ultra-rapid-sync.yml",
-      "variation.yml",
-      "venture.yml",
-      "workflow-radar.yml",
       "accessibility-audit.yml",
       "auto-media-release.yml",
       "auto-pr-automerge.yml",
@@ -146,6 +112,38 @@
       "unused-exports-report.yml"
     ],
     "missingTimeouts": [
+      "ai-content-autonomy.yml",
+      "ai-trends-radar.yml",
+      "auto-heal-workflows.yml",
+      "automation-advertiser.yml",
+      "broken-images.yml",
+      "cloud-autonomous-orchestrator.yml",
+      "components-size-report.yml",
+      "cursor-chat.yml",
+      "docs-intelligence.yml",
+      "external-links.yml",
+      "front-scheduler.yml",
+      "guardian-scheduler.yml",
+      "instagram-marketing.yml",
+      "knowledge-graph-radar.yml",
+      "linkedin-marketing.yml",
+      "linkedin-pro.yml",
+      "marketing-sync.yml",
+      "media-optimizer.yml",
+      "monetization.yml",
+      "og-image-refresh.yml",
+      "readme-auto-advertiser.yml",
+      "responsive-content.yml",
+      "security-auto-heal.yml",
+      "seo-audit.yml",
+      "seo-validator.yml",
+      "site-health-guardian.yml",
+      "site-link.yml",
+      "sitemap-and-search.yml",
+      "topics-and-clusters.yml",
+      "variation.yml",
+      "venture.yml",
+      "workflow-radar.yml",
       "homepage-auto-update.yml"
     ],
     "unsafeOperations": [
@@ -437,8 +435,8 @@
       "name": "ai-content-autonomy.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-content-autonomy.yml",
-      "size": 2044,
-      "lines": 74,
+      "size": 1445,
+      "lines": 43,
       "triggers": [
         "workflow_dispatch",
         "schedule"
@@ -446,87 +444,116 @@
       "jobs": [
         "workflow_dispatch",
         "schedule",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "jobs",
-        "generate",
-        "steps",
         "with",
         "with"
       ],
-      "timeouts": [
-        20
-      ],
+      "timeouts": [],
       "permissions": [
         {
           "permission": "contents",
           "value": "read"
         },
         {
-          "permission": "branch_protection_rules",
+          "permission": "- name",
+          "value": "Checkout"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/checkout@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "- pattern",
-          "value": "\"main\""
+          "permission": "fetch-depth",
+          "value": "0"
         },
         {
-          "permission": "required_status_checks",
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "strict",
-          "value": "true"
+          "permission": "node-version",
+          "value": "20"
         },
         {
-          "permission": "contexts",
-          "value": "[]"
+          "permission": "cache",
+          "value": "'npm'"
         },
         {
-          "permission": "required_pull_request_reviews",
-          "value": ""
+          "permission": "- name",
+          "value": "Install dependencies"
         },
         {
-          "permission": "required_approving_review_count",
-          "value": "1"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
+          "permission": "- name",
+          "value": "Run AI/IT researcher"
         },
         {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
+          "permission": "run",
+          "value": "node automation/ai-it-researcher.cjs || true"
         },
         {
-          "permission": "enforce_admins",
-          "value": "false"
+          "permission": "- name",
+          "value": "Run content factory"
         },
         {
-          "permission": "required_linear_history",
-          "value": "false"
+          "permission": "run",
+          "value": "node automation/ai-it-content-factory.cjs || true"
         },
         {
-          "permission": "allow_force_pushes",
-          "value": "false"
+          "permission": "- name",
+          "value": "Advertise new content"
         },
         {
-          "permission": "allow_deletions",
-          "value": "false"
+          "permission": "run",
+          "value": "node automation/ai-it-advertiser.cjs || true"
         },
         {
-          "permission": "block_creations",
-          "value": "false"
+          "permission": "- name",
+          "value": "Commit changes"
         },
         {
-          "permission": "required_conversation_resolution",
-          "value": "true"
+          "permission": "run",
+          "value": "|"
+        },
+        {
+          "permission": "git commit -m \"chore(automation)",
+          "value": "ai/it content update\""
+        },
+        {
+          "permission": "- name",
+          "value": "Push changes"
+        },
+        {
+          "permission": "if",
+          "value": "success()"
+        },
+        {
+          "permission": "run",
+          "value": "|"
+        },
+        {
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
         }
       ],
       "concurrency": null,
       "issues": [],
       "recommendations": [
+        "Add timeout-minutes to prevent infinite hanging",
         "Consider splitting into smaller workflows for better maintainability"
       ]
     },
@@ -575,8 +602,8 @@
       "name": "ai-it-ads-sync.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-it-ads-sync.yml",
-      "size": 1586,
-      "lines": 61,
+      "size": 1060,
+      "lines": 36,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
@@ -585,10 +612,6 @@
         "schedule",
         "jobs",
         "advertise",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "steps",
         "with",
         "with"
       ],
@@ -599,70 +622,6 @@
         {
           "permission": "contents",
           "value": "read"
-        },
-        {
-          "permission": "branch_protection_rules",
-          "value": ""
-        },
-        {
-          "permission": "- pattern",
-          "value": "\"main\""
-        },
-        {
-          "permission": "required_status_checks",
-          "value": ""
-        },
-        {
-          "permission": "strict",
-          "value": "true"
-        },
-        {
-          "permission": "contexts",
-          "value": "[]"
-        },
-        {
-          "permission": "required_pull_request_reviews",
-          "value": ""
-        },
-        {
-          "permission": "required_approving_review_count",
-          "value": "1"
-        },
-        {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
-        },
-        {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
-        },
-        {
-          "permission": "enforce_admins",
-          "value": "false"
-        },
-        {
-          "permission": "required_linear_history",
-          "value": "false"
-        },
-        {
-          "permission": "allow_force_pushes",
-          "value": "false"
-        },
-        {
-          "permission": "allow_deletions",
-          "value": "false"
-        },
-        {
-          "permission": "block_creations",
-          "value": "false"
-        },
-        {
-          "permission": "required_conversation_resolution",
-          "value": "true"
-        },
-        {
-          "permission": "steps",
-          "value": ""
         },
         {
           "permission": "- name",
@@ -679,6 +638,58 @@
         {
           "permission": "fetch-depth",
           "value": "0"
+        },
+        {
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
+          "value": ""
+        },
+        {
+          "permission": "node-version",
+          "value": "'20'"
+        },
+        {
+          "permission": "cache",
+          "value": "'npm'"
+        },
+        {
+          "permission": "- name",
+          "value": "Install"
+        },
+        {
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
+        },
+        {
+          "permission": "- name",
+          "value": "Build ads payload from registry"
+        },
+        {
+          "permission": "run",
+          "value": "node automation/ai-it-front-advertiser.cjs || true"
+        },
+        {
+          "permission": "- name",
+          "value": "Commit and push"
+        },
+        {
+          "permission": "run",
+          "value": "|"
+        },
+        {
+          "permission": "git commit -m \"chore(automation)",
+          "value": "update ads payload [skip ci]\""
+        },
+        {
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
         }
       ],
       "concurrency": null,
@@ -695,8 +706,8 @@
       "name": "ai-it-innovations.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-it-innovations.yml",
-      "size": 2332,
-      "lines": 82,
+      "size": 1865,
+      "lines": 69,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
@@ -705,9 +716,6 @@
         "schedule",
         "jobs",
         "build-content",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
         "steps",
         "with",
         "with"
@@ -718,87 +726,11 @@
       "permissions": [
         {
           "permission": "contents",
+          "value": "write"
+        },
+        {
+          "permission": "actions",
           "value": "read"
-        },
-        {
-          "permission": "branch_protection_rules",
-          "value": ""
-        },
-        {
-          "permission": "- pattern",
-          "value": "\"main\""
-        },
-        {
-          "permission": "required_status_checks",
-          "value": ""
-        },
-        {
-          "permission": "strict",
-          "value": "true"
-        },
-        {
-          "permission": "contexts",
-          "value": "[]"
-        },
-        {
-          "permission": "required_pull_request_reviews",
-          "value": ""
-        },
-        {
-          "permission": "required_approving_review_count",
-          "value": "1"
-        },
-        {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
-        },
-        {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
-        },
-        {
-          "permission": "enforce_admins",
-          "value": "false"
-        },
-        {
-          "permission": "required_linear_history",
-          "value": "false"
-        },
-        {
-          "permission": "allow_force_pushes",
-          "value": "false"
-        },
-        {
-          "permission": "allow_deletions",
-          "value": "false"
-        },
-        {
-          "permission": "block_creations",
-          "value": "false"
-        },
-        {
-          "permission": "required_conversation_resolution",
-          "value": "true"
-        },
-        {
-          "permission": "steps",
-          "value": ""
-        },
-        {
-          "permission": "- name",
-          "value": "Checkout"
-        },
-        {
-          "permission": "uses",
-          "value": "actions/checkout@v4"
-        },
-        {
-          "permission": "with",
-          "value": ""
-        },
-        {
-          "permission": "fetch-depth",
-          "value": "0"
         }
       ],
       "concurrency": "content-automation-${{ github.ref }}",
@@ -815,8 +747,8 @@
       "name": "ai-it-multi-factory.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-it-multi-factory.yml",
-      "size": 1801,
-      "lines": 65,
+      "size": 1275,
+      "lines": 40,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
@@ -825,10 +757,6 @@
         "schedule",
         "jobs",
         "factories",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "steps",
         "with",
         "with"
       ],
@@ -839,70 +767,6 @@
         {
           "permission": "contents",
           "value": "read"
-        },
-        {
-          "permission": "branch_protection_rules",
-          "value": ""
-        },
-        {
-          "permission": "- pattern",
-          "value": "\"main\""
-        },
-        {
-          "permission": "required_status_checks",
-          "value": ""
-        },
-        {
-          "permission": "strict",
-          "value": "true"
-        },
-        {
-          "permission": "contexts",
-          "value": "[]"
-        },
-        {
-          "permission": "required_pull_request_reviews",
-          "value": ""
-        },
-        {
-          "permission": "required_approving_review_count",
-          "value": "1"
-        },
-        {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
-        },
-        {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
-        },
-        {
-          "permission": "enforce_admins",
-          "value": "false"
-        },
-        {
-          "permission": "required_linear_history",
-          "value": "false"
-        },
-        {
-          "permission": "allow_force_pushes",
-          "value": "false"
-        },
-        {
-          "permission": "allow_deletions",
-          "value": "false"
-        },
-        {
-          "permission": "block_creations",
-          "value": "false"
-        },
-        {
-          "permission": "required_conversation_resolution",
-          "value": "true"
-        },
-        {
-          "permission": "steps",
-          "value": ""
         },
         {
           "permission": "- name",
@@ -919,6 +783,58 @@
         {
           "permission": "fetch-depth",
           "value": "0"
+        },
+        {
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
+          "value": ""
+        },
+        {
+          "permission": "node-version",
+          "value": "'20'"
+        },
+        {
+          "permission": "cache",
+          "value": "'npm'"
+        },
+        {
+          "permission": "- name",
+          "value": "Install"
+        },
+        {
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
+        },
+        {
+          "permission": "- name",
+          "value": "Run factories"
+        },
+        {
+          "permission": "run",
+          "value": "|"
+        },
+        {
+          "permission": "- name",
+          "value": "Commit and push"
+        },
+        {
+          "permission": "run",
+          "value": "|"
+        },
+        {
+          "permission": "git commit -m \"feat(automation)",
+          "value": "multi-factory content refresh [skip ci]\""
+        },
+        {
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
         }
       ],
       "concurrency": null,
@@ -935,8 +851,8 @@
       "name": "ai-it-ultrafast-sync.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-it-ultrafast-sync.yml",
-      "size": 1652,
-      "lines": 59,
+      "size": 1127,
+      "lines": 35,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
@@ -945,10 +861,6 @@
         "schedule",
         "jobs",
         "sync",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "steps",
         "with",
         "with"
       ],
@@ -959,70 +871,6 @@
         {
           "permission": "contents",
           "value": "read"
-        },
-        {
-          "permission": "branch_protection_rules",
-          "value": ""
-        },
-        {
-          "permission": "- pattern",
-          "value": "\"main\""
-        },
-        {
-          "permission": "required_status_checks",
-          "value": ""
-        },
-        {
-          "permission": "strict",
-          "value": "true"
-        },
-        {
-          "permission": "contexts",
-          "value": "[]"
-        },
-        {
-          "permission": "required_pull_request_reviews",
-          "value": ""
-        },
-        {
-          "permission": "required_approving_review_count",
-          "value": "1"
-        },
-        {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
-        },
-        {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
-        },
-        {
-          "permission": "enforce_admins",
-          "value": "false"
-        },
-        {
-          "permission": "required_linear_history",
-          "value": "false"
-        },
-        {
-          "permission": "allow_force_pushes",
-          "value": "false"
-        },
-        {
-          "permission": "allow_deletions",
-          "value": "false"
-        },
-        {
-          "permission": "block_creations",
-          "value": "false"
-        },
-        {
-          "permission": "required_conversation_resolution",
-          "value": "true"
-        },
-        {
-          "permission": "steps",
-          "value": ""
         },
         {
           "permission": "- name",
@@ -1039,6 +887,46 @@
         {
           "permission": "fetch-depth",
           "value": "0"
+        },
+        {
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
+          "value": ""
+        },
+        {
+          "permission": "node-version",
+          "value": "'20'"
+        },
+        {
+          "permission": "- name",
+          "value": "Trigger Netlify automations (best-effort)"
+        },
+        {
+          "permission": "run",
+          "value": "|"
+        },
+        {
+          "permission": "- name",
+          "value": "Commit logs and stamp"
+        },
+        {
+          "permission": "run",
+          "value": "|"
+        },
+        {
+          "permission": "git commit -m \"chore",
+          "value": "ultrafast sync logs [skip ci]\""
+        },
+        {
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
         }
       ],
       "concurrency": null,
@@ -1096,108 +984,116 @@
       "name": "ai-trends-radar.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-trends-radar.yml",
-      "size": 1804,
-      "lines": 68,
+      "size": 1126,
+      "lines": 35,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "jobs",
-        "radar",
-        "steps",
         "with",
         "with"
       ],
-      "timeouts": [
-        25
-      ],
+      "timeouts": [],
       "permissions": [
         {
           "permission": "contents",
           "value": "read"
         },
         {
-          "permission": "branch_protection_rules",
+          "permission": "- name",
+          "value": "Checkout"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/checkout@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "- pattern",
-          "value": "\"main\""
+          "permission": "fetch-depth",
+          "value": "0"
         },
         {
-          "permission": "required_status_checks",
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "strict",
-          "value": "true"
+          "permission": "node-version",
+          "value": "'20'"
         },
         {
-          "permission": "contexts",
-          "value": "[]"
+          "permission": "cache",
+          "value": "'npm'"
         },
         {
-          "permission": "required_pull_request_reviews",
-          "value": ""
+          "permission": "- name",
+          "value": "Install dependencies"
         },
         {
-          "permission": "required_approving_review_count",
-          "value": "1"
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
         },
         {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
+          "permission": "- name",
+          "value": "Generate AI trends radar and report"
         },
         {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "enforce_admins",
-          "value": "false"
+          "permission": "- name",
+          "value": "Build (non-blocking)"
         },
         {
-          "permission": "required_linear_history",
-          "value": "false"
+          "permission": "run",
+          "value": "npm run build || true"
         },
         {
-          "permission": "allow_force_pushes",
-          "value": "false"
+          "permission": "- name",
+          "value": "Commit and push changes"
         },
         {
-          "permission": "allow_deletions",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "block_creations",
-          "value": "false"
+          "permission": "git commit -m \"reports",
+          "value": "AI trends radar update [skip ci]\""
         },
         {
-          "permission": "required_conversation_resolution",
-          "value": "true"
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
         }
       ],
-      "concurrency": "ai-trends-radar-${{ github.ref }}",
+      "concurrency": null,
       "issues": [
         "unsafe_git_push"
       ],
       "recommendations": [
         "Add branch protection to git push operations",
-        "Add workflow_dispatch trigger for manual testing",
-        "Consider splitting into smaller workflows for better maintainability"
+        "Add timeout-minutes to prevent infinite hanging",
+        "Add workflow_dispatch trigger for manual testing"
       ]
     },
     "auto-heal-workflows.yml": {
       "name": "auto-heal-workflows.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/auto-heal-workflows.yml",
-      "size": 2705,
-      "lines": 92,
+      "size": 2005,
+      "lines": 54,
       "triggers": [
         "schedule",
         "workflow_dispatch"
@@ -1207,92 +1103,141 @@
         "workflow_dispatch",
         "inputs",
         "ref",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "jobs",
-        "heal-and-check",
-        "steps",
         "with",
         "with",
         "with"
       ],
-      "timeouts": [
-        60
-      ],
+      "timeouts": [],
       "permissions": [
         {
           "permission": "contents",
           "value": "read"
         },
         {
-          "permission": "branch_protection_rules",
+          "permission": "- name",
+          "value": "Checkout"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/checkout@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "- pattern",
-          "value": "\"main\""
+          "permission": "fetch-depth",
+          "value": "0"
         },
         {
-          "permission": "required_status_checks",
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "strict",
-          "value": "true"
+          "permission": "node-version",
+          "value": "'20'"
         },
         {
-          "permission": "contexts",
-          "value": "[]"
+          "permission": "cache",
+          "value": "'npm'"
         },
         {
-          "permission": "required_pull_request_reviews",
+          "permission": "- name",
+          "value": "Install dependencies"
+        },
+        {
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
+        },
+        {
+          "permission": "- name",
+          "value": "Migrate misplaced workflow files"
+        },
+        {
+          "permission": "run",
+          "value": "node scripts/migrate-workflows.cjs | tee migrate-workflows-output.json"
+        },
+        {
+          "permission": "- name",
+          "value": "Run workflows auto-healer"
+        },
+        {
+          "permission": "run",
+          "value": "node scripts/workflows-auto-healer.cjs | tee auto-heal-output.json"
+        },
+        {
+          "permission": "- name",
+          "value": "Commit auto-heal changes (main only)"
+        },
+        {
+          "permission": "if",
+          "value": "${{ github.ref == 'refs/heads/main' && (success() || failure()) }}"
+        },
+        {
+          "permission": "run",
+          "value": "|"
+        },
+        {
+          "permission": "git commit -m \"ci(auto-heal)",
+          "value": "normalize workflows [skip ci]\""
+        },
+        {
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
+        },
+        {
+          "permission": "- name",
+          "value": "Trigger all workflows (wait)"
+        },
+        {
+          "permission": "env",
           "value": ""
         },
         {
-          "permission": "required_approving_review_count",
-          "value": "1"
+          "permission": "GITHUB_TOKEN",
+          "value": "${{ secrets.GITHUB_TOKEN }}"
         },
         {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
+          "permission": "REF_TO_USE=${REF_INPUT",
+          "value": "-main}"
         },
         {
-          "permission": "enforce_admins",
-          "value": "false"
+          "permission": "- name",
+          "value": "Upload summary artifact"
         },
         {
-          "permission": "required_linear_history",
-          "value": "false"
+          "permission": "uses",
+          "value": "actions/upload-artifact@v4"
         },
         {
-          "permission": "allow_force_pushes",
-          "value": "false"
+          "permission": "with",
+          "value": ""
         },
         {
-          "permission": "allow_deletions",
-          "value": "false"
+          "permission": "name",
+          "value": "workflows-check-summary"
         },
         {
-          "permission": "block_creations",
-          "value": "false"
-        },
-        {
-          "permission": "required_conversation_resolution",
-          "value": "true"
-        },
-        {
-          "permission": "actions",
-          "value": "write"
+          "permission": "path",
+          "value": "|"
         }
       ],
-      "concurrency": "auto-heal-${{ github.ref }}",
+      "concurrency": null,
       "issues": [],
       "recommendations": [
+        "Add timeout-minutes to prevent infinite hanging",
         "Consider splitting into smaller workflows for better maintainability"
       ]
     },
@@ -1300,104 +1245,108 @@
       "name": "automation-advertiser.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/automation-advertiser.yml",
-      "size": 2140,
-      "lines": 75,
+      "size": 1435,
+      "lines": 41,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "jobs",
-        "advertise",
-        "steps",
         "with",
         "with"
       ],
-      "timeouts": [
-        25
-      ],
+      "timeouts": [],
       "permissions": [
         {
           "permission": "contents",
           "value": "read"
         },
         {
-          "permission": "branch_protection_rules",
+          "permission": "- name",
+          "value": "Checkout"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/checkout@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "- pattern",
-          "value": "\"main\""
+          "permission": "fetch-depth",
+          "value": "0"
         },
         {
-          "permission": "required_status_checks",
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "strict",
-          "value": "true"
+          "permission": "node-version",
+          "value": "'20'"
         },
         {
-          "permission": "contexts",
-          "value": "[]"
+          "permission": "cache",
+          "value": "'npm'"
         },
         {
-          "permission": "required_pull_request_reviews",
-          "value": ""
+          "permission": "- name",
+          "value": "Install dependencies"
         },
         {
-          "permission": "required_approving_review_count",
-          "value": "1"
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
         },
         {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
+          "permission": "- name",
+          "value": "Promote and update front content"
         },
         {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "enforce_admins",
-          "value": "false"
+          "permission": "- name",
+          "value": "Lint and Build (non-blocking)"
         },
         {
-          "permission": "required_linear_history",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "allow_force_pushes",
-          "value": "false"
+          "permission": "- name",
+          "value": "Commit and push changes"
         },
         {
-          "permission": "allow_deletions",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "block_creations",
-          "value": "false"
+          "permission": "git commit -m \"chore(automation)",
+          "value": "automation advertiser updates [skip ci]\""
         },
         {
-          "permission": "required_conversation_resolution",
-          "value": "true"
-        },
-        {
-          "permission": "actions",
-          "value": "read"
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
         }
       ],
-      "concurrency": "automation-advertiser-${{ github.ref }}",
+      "concurrency": null,
       "issues": [
         "unsafe_git_push"
       ],
       "recommendations": [
         "Add branch protection to git push operations",
-        "Add workflow_dispatch trigger for manual testing",
-        "Consider splitting into smaller workflows for better maintainability"
+        "Add timeout-minutes to prevent infinite hanging",
+        "Add workflow_dispatch trigger for manual testing"
       ]
     },
     "automation-orchestrator.yml": {
@@ -1462,90 +1411,98 @@
       "name": "broken-images.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/broken-images.yml",
-      "size": 1685,
-      "lines": 65,
+      "size": 1081,
+      "lines": 34,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "jobs",
-        "broken_images",
-        "steps",
         "with",
         "with"
       ],
-      "timeouts": [
-        25
-      ],
+      "timeouts": [],
       "permissions": [
         {
           "permission": "contents",
           "value": "read"
         },
         {
-          "permission": "branch_protection_rules",
+          "permission": "- name",
+          "value": "Checkout"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/checkout@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "- pattern",
-          "value": "\"main\""
+          "permission": "fetch-depth",
+          "value": "0"
         },
         {
-          "permission": "required_status_checks",
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "strict",
-          "value": "true"
+          "permission": "node-version",
+          "value": "'20'"
         },
         {
-          "permission": "contexts",
-          "value": "[]"
+          "permission": "cache",
+          "value": "'npm'"
         },
         {
-          "permission": "required_pull_request_reviews",
-          "value": ""
+          "permission": "- name",
+          "value": "Install dependencies"
         },
         {
-          "permission": "required_approving_review_count",
-          "value": "1"
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
         },
         {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
+          "permission": "- name",
+          "value": "Run broken image scanner"
         },
         {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
+          "permission": "run",
+          "value": "node automation/broken-image-scanner.cjs || true"
         },
         {
-          "permission": "enforce_admins",
-          "value": "false"
+          "permission": "- name",
+          "value": "Build (non-blocking)"
         },
         {
-          "permission": "required_linear_history",
-          "value": "false"
+          "permission": "run",
+          "value": "npm run build || true"
         },
         {
-          "permission": "allow_force_pushes",
-          "value": "false"
+          "permission": "- name",
+          "value": "Commit and push changes"
         },
         {
-          "permission": "allow_deletions",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "block_creations",
-          "value": "false"
+          "permission": "git commit -m \"chore(health)",
+          "value": "broken image scan updates [skip ci]\""
         },
         {
-          "permission": "required_conversation_resolution",
-          "value": "true"
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
         }
       ],
       "concurrency": null,
@@ -1554,8 +1511,8 @@
       ],
       "recommendations": [
         "Add branch protection to git push operations",
-        "Add workflow_dispatch trigger for manual testing",
-        "Consider splitting into smaller workflows for better maintainability"
+        "Add timeout-minutes to prevent infinite hanging",
+        "Add workflow_dispatch trigger for manual testing"
       ]
     },
     "ci-quality.yml": {
@@ -1753,104 +1710,108 @@
       "name": "cloud-autonomous-orchestrator.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cloud-autonomous-orchestrator.yml",
-      "size": 2139,
-      "lines": 75,
+      "size": 1425,
+      "lines": 41,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "jobs",
-        "orchestrate",
-        "steps",
         "with",
         "with"
       ],
-      "timeouts": [
-        25
-      ],
+      "timeouts": [],
       "permissions": [
         {
           "permission": "contents",
           "value": "read"
         },
         {
-          "permission": "branch_protection_rules",
+          "permission": "- name",
+          "value": "Checkout"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/checkout@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "- pattern",
-          "value": "\"main\""
+          "permission": "fetch-depth",
+          "value": "0"
         },
         {
-          "permission": "required_status_checks",
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "strict",
-          "value": "true"
+          "permission": "node-version",
+          "value": "'20'"
         },
         {
-          "permission": "contexts",
-          "value": "[]"
+          "permission": "cache",
+          "value": "'npm'"
         },
         {
-          "permission": "required_pull_request_reviews",
-          "value": ""
+          "permission": "- name",
+          "value": "Install dependencies"
         },
         {
-          "permission": "required_approving_review_count",
-          "value": "1"
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
         },
         {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
+          "permission": "- name",
+          "value": "Run cloud autonomous orchestrator"
         },
         {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "enforce_admins",
-          "value": "false"
+          "permission": "- name",
+          "value": "Lint and Build (non-blocking)"
         },
         {
-          "permission": "required_linear_history",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "allow_force_pushes",
-          "value": "false"
+          "permission": "- name",
+          "value": "Commit and push changes"
         },
         {
-          "permission": "allow_deletions",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "block_creations",
-          "value": "false"
+          "permission": "git commit -m \"chore(automation)",
+          "value": "cloud orchestrator updates [skip ci]\""
         },
         {
-          "permission": "required_conversation_resolution",
-          "value": "true"
-        },
-        {
-          "permission": "actions",
-          "value": "read"
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
         }
       ],
-      "concurrency": "cloud-autonomous-orchestrator-${{ github.ref }}",
+      "concurrency": null,
       "issues": [
         "unsafe_git_push"
       ],
       "recommendations": [
         "Add branch protection to git push operations",
-        "Add workflow_dispatch trigger for manual testing",
-        "Consider splitting into smaller workflows for better maintainability"
+        "Add timeout-minutes to prevent infinite hanging",
+        "Add workflow_dispatch trigger for manual testing"
       ]
     },
     "cloud-deep-research.yml": {
@@ -2098,90 +2059,90 @@
       "name": "components-size-report.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/components-size-report.yml",
-      "size": 1627,
-      "lines": 62,
+      "size": 1023,
+      "lines": 32,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "jobs",
-        "component_size",
-        "steps",
         "with",
         "with"
       ],
-      "timeouts": [
-        20
-      ],
+      "timeouts": [],
       "permissions": [
         {
           "permission": "contents",
           "value": "read"
         },
         {
-          "permission": "branch_protection_rules",
+          "permission": "- name",
+          "value": "Checkout"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/checkout@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "- pattern",
-          "value": "\"main\""
+          "permission": "fetch-depth",
+          "value": "0"
         },
         {
-          "permission": "required_status_checks",
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "strict",
-          "value": "true"
+          "permission": "node-version",
+          "value": "'20'"
         },
         {
-          "permission": "contexts",
-          "value": "[]"
+          "permission": "cache",
+          "value": "'npm'"
         },
         {
-          "permission": "required_pull_request_reviews",
-          "value": ""
+          "permission": "- name",
+          "value": "Install dependencies"
         },
         {
-          "permission": "required_approving_review_count",
-          "value": "1"
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
         },
         {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
+          "permission": "- name",
+          "value": "Generate component size report"
         },
         {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
+          "permission": "run",
+          "value": "node automation/component-size-report.cjs || true"
         },
         {
-          "permission": "enforce_admins",
-          "value": "false"
+          "permission": "- name",
+          "value": "Commit and push report"
         },
         {
-          "permission": "required_linear_history",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "allow_force_pushes",
-          "value": "false"
+          "permission": "git commit -m \"chore(report)",
+          "value": "update component size report [skip ci]\""
         },
         {
-          "permission": "allow_deletions",
-          "value": "false"
-        },
-        {
-          "permission": "block_creations",
-          "value": "false"
-        },
-        {
-          "permission": "required_conversation_resolution",
-          "value": "true"
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
         }
       ],
       "concurrency": null,
@@ -2190,8 +2151,8 @@
       ],
       "recommendations": [
         "Add branch protection to git push operations",
-        "Add workflow_dispatch trigger for manual testing",
-        "Consider splitting into smaller workflows for better maintainability"
+        "Add timeout-minutes to prevent infinite hanging",
+        "Add workflow_dispatch trigger for manual testing"
       ]
     },
     "crawl-normalize.yml": {
@@ -2240,100 +2201,100 @@
       "name": "cursor-chat.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cursor-chat.yml",
-      "size": 2311,
-      "lines": 80,
+      "size": 1630,
+      "lines": 46,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "jobs",
-        "cursor_chat",
-        "steps",
         "with",
         "with"
       ],
-      "timeouts": [
-        20
-      ],
+      "timeouts": [],
       "permissions": [
         {
           "permission": "contents",
           "value": "read"
         },
         {
-          "permission": "branch_protection_rules",
+          "permission": "- name",
+          "value": "Checkout"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/checkout@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "- pattern",
-          "value": "\"main\""
+          "permission": "fetch-depth",
+          "value": "0"
         },
         {
-          "permission": "required_status_checks",
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "strict",
-          "value": "true"
+          "permission": "node-version",
+          "value": "'20.18.1'"
         },
         {
-          "permission": "contexts",
-          "value": "[]"
+          "permission": "cache",
+          "value": "'npm'"
         },
         {
-          "permission": "required_pull_request_reviews",
-          "value": ""
+          "permission": "- name",
+          "value": "Install dependencies"
         },
         {
-          "permission": "required_approving_review_count",
-          "value": "1"
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
         },
         {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
+          "permission": "- name",
+          "value": "Analyze and update cursor chat assets"
         },
         {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "enforce_admins",
-          "value": "false"
+          "permission": "- name",
+          "value": "Commit and push changes"
         },
         {
-          "permission": "required_linear_history",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "allow_force_pushes",
-          "value": "false"
+          "permission": "git commit -m \"chore(automation)",
+          "value": "cursor chat updates [skip ci]\""
         },
         {
-          "permission": "allow_deletions",
-          "value": "false"
-        },
-        {
-          "permission": "block_creations",
-          "value": "false"
-        },
-        {
-          "permission": "required_conversation_resolution",
-          "value": "true"
+          "permission": "if git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD); then"
         }
       ],
-      "concurrency": "cursor-chat-${{ github.ref }}",
+      "concurrency": null,
       "issues": [
         "unsafe_git_push"
       ],
       "recommendations": [
         "Add branch protection to git push operations",
-        "Add workflow_dispatch trigger for manual testing",
-        "Consider splitting into smaller workflows for better maintainability"
+        "Add timeout-minutes to prevent infinite hanging",
+        "Add workflow_dispatch trigger for manual testing"
       ]
     },
     "dead-code-report.yml": {
@@ -2577,100 +2538,108 @@
       "name": "docs-intelligence.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/docs-intelligence.yml",
-      "size": 1935,
-      "lines": 70,
+      "size": 1248,
+      "lines": 37,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "jobs",
-        "docs_refresh",
-        "steps",
         "with",
         "with"
       ],
-      "timeouts": [
-        25
-      ],
+      "timeouts": [],
       "permissions": [
         {
           "permission": "contents",
           "value": "read"
         },
         {
-          "permission": "branch_protection_rules",
+          "permission": "- name",
+          "value": "Checkout"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/checkout@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "- pattern",
-          "value": "\"main\""
+          "permission": "fetch-depth",
+          "value": "0"
         },
         {
-          "permission": "required_status_checks",
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "strict",
-          "value": "true"
+          "permission": "node-version",
+          "value": "'20'"
         },
         {
-          "permission": "contexts",
-          "value": "[]"
+          "permission": "cache",
+          "value": "'npm'"
         },
         {
-          "permission": "required_pull_request_reviews",
-          "value": ""
+          "permission": "- name",
+          "value": "Install dependencies"
         },
         {
-          "permission": "required_approving_review_count",
-          "value": "1"
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
         },
         {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
+          "permission": "- name",
+          "value": "Generate docs indices and search"
         },
         {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "enforce_admins",
-          "value": "false"
+          "permission": "- name",
+          "value": "Build (non-blocking)"
         },
         {
-          "permission": "required_linear_history",
-          "value": "false"
+          "permission": "run",
+          "value": "npm run build || true"
         },
         {
-          "permission": "allow_force_pushes",
-          "value": "false"
+          "permission": "- name",
+          "value": "Commit and push changes"
         },
         {
-          "permission": "allow_deletions",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "block_creations",
-          "value": "false"
+          "permission": "git commit -m \"docs",
+          "value": "refresh indices and search [skip ci]\""
         },
         {
-          "permission": "required_conversation_resolution",
-          "value": "true"
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
         }
       ],
-      "concurrency": "docs-intelligence-${{ github.ref }}",
+      "concurrency": null,
       "issues": [
         "unsafe_git_push"
       ],
       "recommendations": [
         "Add branch protection to git push operations",
-        "Add workflow_dispatch trigger for manual testing",
-        "Consider splitting into smaller workflows for better maintainability"
+        "Add timeout-minutes to prevent infinite hanging",
+        "Add workflow_dispatch trigger for manual testing"
       ]
     },
     "emergency-fix.yml": {
@@ -2742,197 +2711,217 @@
       "name": "external-links.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/external-links.yml",
-      "size": 1679,
-      "lines": 63,
+      "size": 1075,
+      "lines": 33,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "jobs",
-        "external_links",
-        "steps",
         "with",
         "with"
       ],
-      "timeouts": [
-        20
-      ],
+      "timeouts": [],
       "permissions": [
         {
           "permission": "contents",
           "value": "read"
         },
         {
-          "permission": "branch_protection_rules",
+          "permission": "- name",
+          "value": "Checkout"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/checkout@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "- pattern",
-          "value": "\"main\""
+          "permission": "fetch-depth",
+          "value": "0"
         },
         {
-          "permission": "required_status_checks",
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "strict",
-          "value": "true"
+          "permission": "node-version",
+          "value": "'20'"
         },
         {
-          "permission": "contexts",
-          "value": "[]"
+          "permission": "cache",
+          "value": "'npm'"
         },
         {
-          "permission": "required_pull_request_reviews",
-          "value": ""
+          "permission": "- name",
+          "value": "Install dependencies"
         },
         {
-          "permission": "required_approving_review_count",
-          "value": "1"
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
         },
         {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
+          "permission": "- name",
+          "value": "Scan external links and write report"
         },
         {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
+          "permission": "run",
+          "value": "node automation/external-link-check.cjs || true"
         },
         {
-          "permission": "enforce_admins",
-          "value": "false"
+          "permission": "- name",
+          "value": "Commit and push report"
         },
         {
-          "permission": "required_linear_history",
-          "value": "false"
+          "permission": "if",
+          "value": "${{ github.ref == 'refs/heads/main' }}"
         },
         {
-          "permission": "allow_force_pushes",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "allow_deletions",
-          "value": "false"
+          "permission": "git commit -m \"chore(links)",
+          "value": "update external link report [skip ci]\""
         },
         {
-          "permission": "block_creations",
-          "value": "false"
-        },
-        {
-          "permission": "required_conversation_resolution",
-          "value": "true"
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
         }
       ],
       "concurrency": null,
       "issues": [],
       "recommendations": [
-        "Add workflow_dispatch trigger for manual testing",
-        "Consider splitting into smaller workflows for better maintainability"
+        "Add timeout-minutes to prevent infinite hanging",
+        "Add workflow_dispatch trigger for manual testing"
       ]
     },
     "front-scheduler.yml": {
       "name": "front-scheduler.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/front-scheduler.yml",
-      "size": 2616,
-      "lines": 90,
+      "size": 1936,
+      "lines": 55,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "jobs",
-        "front",
-        "steps",
         "with",
         "with"
       ],
-      "timeouts": [
-        25
-      ],
+      "timeouts": [],
       "permissions": [
         {
           "permission": "contents",
           "value": "read"
         },
         {
-          "permission": "branch_protection_rules",
+          "permission": "- name",
+          "value": "Checkout"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/checkout@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "- pattern",
-          "value": "\"main\""
+          "permission": "fetch-depth",
+          "value": "0"
         },
         {
-          "permission": "required_status_checks",
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "strict",
-          "value": "true"
+          "permission": "node-version",
+          "value": "'20'"
         },
         {
-          "permission": "contexts",
-          "value": "[]"
+          "permission": "cache",
+          "value": "'npm'"
         },
         {
-          "permission": "required_pull_request_reviews",
+          "permission": "- name",
+          "value": "Install dependencies"
+        },
+        {
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
+        },
+        {
+          "permission": "- name",
+          "value": "Run front continuous tasks"
+        },
+        {
+          "permission": "env",
           "value": ""
         },
         {
-          "permission": "required_approving_review_count",
-          "value": "1"
+          "permission": "NODE_ENV",
+          "value": "production"
         },
         {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
+          "permission": "- name",
+          "value": "Lint and Build (non-blocking)"
         },
         {
-          "permission": "enforce_admins",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "required_linear_history",
-          "value": "false"
+          "permission": "- name",
+          "value": "Commit and push changes"
         },
         {
-          "permission": "allow_force_pushes",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "allow_deletions",
-          "value": "false"
+          "permission": "git commit -m \"chore(automation)",
+          "value": "front scheduler updates [skip ci]\""
         },
         {
-          "permission": "block_creations",
-          "value": "false"
-        },
-        {
-          "permission": "required_conversation_resolution",
-          "value": "true"
+          "permission": "if git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD); then"
         }
       ],
-      "concurrency": "front-scheduler-${{ github.ref }}",
+      "concurrency": null,
       "issues": [
         "unsafe_git_push"
       ],
       "recommendations": [
         "Add branch protection to git push operations",
-        "Add workflow_dispatch trigger for manual testing",
-        "Consider splitting into smaller workflows for better maintainability"
+        "Add timeout-minutes to prevent infinite hanging",
+        "Add workflow_dispatch trigger for manual testing"
       ]
     },
     "git-ultrafast-sync.yml": {
@@ -2975,304 +2964,344 @@
       "name": "guardian-scheduler.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/guardian-scheduler.yml",
-      "size": 1968,
-      "lines": 76,
+      "size": 1282,
+      "lines": 41,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "jobs",
-        "guardian",
-        "steps",
         "with",
         "with"
       ],
-      "timeouts": [
-        25
-      ],
+      "timeouts": [],
       "permissions": [
         {
           "permission": "contents",
           "value": "read"
         },
         {
-          "permission": "branch_protection_rules",
+          "permission": "- name",
+          "value": "Checkout"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/checkout@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "- pattern",
-          "value": "\"main\""
+          "permission": "fetch-depth",
+          "value": "0"
         },
         {
-          "permission": "required_status_checks",
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "strict",
-          "value": "true"
+          "permission": "node-version",
+          "value": "'20'"
         },
         {
-          "permission": "contexts",
-          "value": "[]"
+          "permission": "cache",
+          "value": "'npm'"
         },
         {
-          "permission": "required_pull_request_reviews",
+          "permission": "- name",
+          "value": "Install dependencies"
+        },
+        {
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
+        },
+        {
+          "permission": "- name",
+          "value": "Run guardian tasks"
+        },
+        {
+          "permission": "env",
           "value": ""
         },
         {
-          "permission": "required_approving_review_count",
-          "value": "1"
+          "permission": "NODE_ENV",
+          "value": "production"
         },
         {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
+          "permission": "- name",
+          "value": "Lint and Build (non-blocking)"
         },
         {
-          "permission": "enforce_admins",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "required_linear_history",
-          "value": "false"
+          "permission": "- name",
+          "value": "Commit and push changes"
         },
         {
-          "permission": "allow_force_pushes",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "allow_deletions",
-          "value": "false"
+          "permission": "git commit -m \"chore(automation)",
+          "value": "guardian scheduler updates [skip ci]\""
         },
         {
-          "permission": "block_creations",
-          "value": "false"
-        },
-        {
-          "permission": "required_conversation_resolution",
-          "value": "true"
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
         }
       ],
-      "concurrency": "guardian-scheduler-${{ github.ref }}",
+      "concurrency": null,
       "issues": [
         "unsafe_git_push"
       ],
       "recommendations": [
         "Add branch protection to git push operations",
-        "Add workflow_dispatch trigger for manual testing",
-        "Consider splitting into smaller workflows for better maintainability"
+        "Add timeout-minutes to prevent infinite hanging",
+        "Add workflow_dispatch trigger for manual testing"
       ]
     },
     "instagram-marketing.yml": {
       "name": "instagram-marketing.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/instagram-marketing.yml",
-      "size": 2332,
-      "lines": 80,
+      "size": 1634,
+      "lines": 45,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "jobs",
-        "instagram_marketing",
-        "steps",
         "with",
         "with"
       ],
-      "timeouts": [
-        25
-      ],
+      "timeouts": [],
       "permissions": [
         {
           "permission": "contents",
           "value": "read"
         },
         {
-          "permission": "branch_protection_rules",
+          "permission": "- name",
+          "value": "Checkout"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/checkout@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "- pattern",
-          "value": "\"main\""
+          "permission": "fetch-depth",
+          "value": "0"
         },
         {
-          "permission": "required_status_checks",
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "strict",
-          "value": "true"
+          "permission": "node-version",
+          "value": "'20'"
         },
         {
-          "permission": "contexts",
-          "value": "[]"
+          "permission": "cache",
+          "value": "'npm'"
         },
         {
-          "permission": "required_pull_request_reviews",
+          "permission": "- name",
+          "value": "Install dependencies"
+        },
+        {
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
+        },
+        {
+          "permission": "- name",
+          "value": "Run Instagram marketing orchestrator (skips if no secrets)"
+        },
+        {
+          "permission": "env",
           "value": ""
         },
         {
-          "permission": "required_approving_review_count",
-          "value": "1"
+          "permission": "IG_USER_ID",
+          "value": "${{ secrets.IG_USER_ID }}"
         },
         {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
+          "permission": "IG_ACCESS_TOKEN",
+          "value": "${{ secrets.IG_ACCESS_TOKEN }}"
         },
         {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "enforce_admins",
-          "value": "false"
+          "permission": "- name",
+          "value": "Lint and Build (non-blocking)"
         },
         {
-          "permission": "required_linear_history",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "allow_force_pushes",
-          "value": "false"
+          "permission": "- name",
+          "value": "Commit and push changes"
         },
         {
-          "permission": "allow_deletions",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "block_creations",
-          "value": "false"
+          "permission": "git commit -m \"chore(automation)",
+          "value": "Instagram marketing updates [skip ci]\""
         },
         {
-          "permission": "required_conversation_resolution",
-          "value": "true"
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
         }
       ],
-      "concurrency": "instagram-marketing-${{ github.ref }}",
+      "concurrency": null,
       "issues": [
         "unsafe_git_push"
       ],
       "recommendations": [
         "Add branch protection to git push operations",
-        "Add workflow_dispatch trigger for manual testing",
-        "Consider splitting into smaller workflows for better maintainability"
+        "Add timeout-minutes to prevent infinite hanging",
+        "Add workflow_dispatch trigger for manual testing"
       ]
     },
     "knowledge-graph-radar.yml": {
       "name": "knowledge-graph-radar.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/knowledge-graph-radar.yml",
-      "size": 2015,
-      "lines": 73,
+      "size": 1312,
+      "lines": 39,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "jobs",
-        "analyze",
-        "steps",
         "with",
         "with"
       ],
-      "timeouts": [
-        25
-      ],
+      "timeouts": [],
       "permissions": [
         {
           "permission": "contents",
           "value": "read"
         },
         {
-          "permission": "branch_protection_rules",
+          "permission": "- name",
+          "value": "Checkout"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/checkout@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "- pattern",
-          "value": "\"main\""
+          "permission": "fetch-depth",
+          "value": "0"
         },
         {
-          "permission": "required_status_checks",
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "strict",
-          "value": "true"
+          "permission": "node-version",
+          "value": "'20'"
         },
         {
-          "permission": "contexts",
-          "value": "[]"
+          "permission": "cache",
+          "value": "'npm'"
         },
         {
-          "permission": "required_pull_request_reviews",
-          "value": ""
+          "permission": "- name",
+          "value": "Install dependencies"
         },
         {
-          "permission": "required_approving_review_count",
-          "value": "1"
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
         },
         {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
+          "permission": "- name",
+          "value": "Generate knowledge graph and radar metrics"
         },
         {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "enforce_admins",
-          "value": "false"
+          "permission": "- name",
+          "value": "Lint and Build (non-blocking)"
         },
         {
-          "permission": "required_linear_history",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "allow_force_pushes",
-          "value": "false"
+          "permission": "- name",
+          "value": "Commit and push changes"
         },
         {
-          "permission": "allow_deletions",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "block_creations",
-          "value": "false"
+          "permission": "git commit -m \"chore(automation)",
+          "value": "knowledge graph & radar updates [skip ci]\""
         },
         {
-          "permission": "required_conversation_resolution",
-          "value": "true"
-        },
-        {
-          "permission": "actions",
-          "value": "read"
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
         }
       ],
-      "concurrency": "knowledge-graph-radar-${{ github.ref }}",
+      "concurrency": null,
       "issues": [
         "unsafe_git_push"
       ],
       "recommendations": [
         "Add branch protection to git push operations",
-        "Add workflow_dispatch trigger for manual testing",
-        "Consider splitting into smaller workflows for better maintainability"
+        "Add timeout-minutes to prevent infinite hanging",
+        "Add workflow_dispatch trigger for manual testing"
       ]
     },
     "lighthouse-budgets.yml": {
@@ -3348,500 +3377,580 @@
       "name": "linkedin-marketing.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/linkedin-marketing.yml",
-      "size": 2346,
-      "lines": 80,
+      "size": 1650,
+      "lines": 45,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "jobs",
-        "linkedin_marketing",
-        "steps",
         "with",
         "with"
       ],
-      "timeouts": [
-        25
-      ],
+      "timeouts": [],
       "permissions": [
         {
           "permission": "contents",
           "value": "read"
         },
         {
-          "permission": "branch_protection_rules",
+          "permission": "- name",
+          "value": "Checkout"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/checkout@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "- pattern",
-          "value": "\"main\""
+          "permission": "fetch-depth",
+          "value": "0"
         },
         {
-          "permission": "required_status_checks",
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "strict",
-          "value": "true"
+          "permission": "node-version",
+          "value": "'20'"
         },
         {
-          "permission": "contexts",
-          "value": "[]"
+          "permission": "cache",
+          "value": "'npm'"
         },
         {
-          "permission": "required_pull_request_reviews",
+          "permission": "- name",
+          "value": "Install dependencies"
+        },
+        {
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
+        },
+        {
+          "permission": "- name",
+          "value": "Run LinkedIn marketing orchestrator (skips if no secrets)"
+        },
+        {
+          "permission": "env",
           "value": ""
         },
         {
-          "permission": "required_approving_review_count",
-          "value": "1"
+          "permission": "LINKEDIN_ACCESS_TOKEN",
+          "value": "${{ secrets.LINKEDIN_ACCESS_TOKEN }}"
         },
         {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
+          "permission": "LINKEDIN_ORG_ID",
+          "value": "${{ secrets.LINKEDIN_ORG_ID }}"
         },
         {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "enforce_admins",
-          "value": "false"
+          "permission": "- name",
+          "value": "Lint and Build (non-blocking)"
         },
         {
-          "permission": "required_linear_history",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "allow_force_pushes",
-          "value": "false"
+          "permission": "- name",
+          "value": "Commit and push changes"
         },
         {
-          "permission": "allow_deletions",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "block_creations",
-          "value": "false"
+          "permission": "git commit -m \"chore(automation)",
+          "value": "LinkedIn marketing updates [skip ci]\""
         },
         {
-          "permission": "required_conversation_resolution",
-          "value": "true"
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
         }
       ],
-      "concurrency": "linkedin-marketing-${{ github.ref }}",
+      "concurrency": null,
       "issues": [
         "unsafe_git_push"
       ],
       "recommendations": [
         "Add branch protection to git push operations",
-        "Add workflow_dispatch trigger for manual testing",
-        "Consider splitting into smaller workflows for better maintainability"
+        "Add timeout-minutes to prevent infinite hanging",
+        "Add workflow_dispatch trigger for manual testing"
       ]
     },
     "linkedin-pro.yml": {
       "name": "linkedin-pro.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/linkedin-pro.yml",
-      "size": 2305,
-      "lines": 80,
+      "size": 1621,
+      "lines": 45,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "jobs",
-        "linkedin_pro",
-        "steps",
         "with",
         "with"
       ],
-      "timeouts": [
-        25
-      ],
+      "timeouts": [],
       "permissions": [
         {
           "permission": "contents",
           "value": "read"
         },
         {
-          "permission": "branch_protection_rules",
+          "permission": "- name",
+          "value": "Checkout"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/checkout@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "- pattern",
-          "value": "\"main\""
+          "permission": "fetch-depth",
+          "value": "0"
         },
         {
-          "permission": "required_status_checks",
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "strict",
-          "value": "true"
+          "permission": "node-version",
+          "value": "'20'"
         },
         {
-          "permission": "contexts",
-          "value": "[]"
+          "permission": "cache",
+          "value": "'npm'"
         },
         {
-          "permission": "required_pull_request_reviews",
+          "permission": "- name",
+          "value": "Install dependencies"
+        },
+        {
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
+        },
+        {
+          "permission": "- name",
+          "value": "Run LinkedIn Pro orchestrator (skips if no secrets)"
+        },
+        {
+          "permission": "env",
           "value": ""
         },
         {
-          "permission": "required_approving_review_count",
-          "value": "1"
+          "permission": "LINKEDIN_ACCESS_TOKEN",
+          "value": "${{ secrets.LINKEDIN_ACCESS_TOKEN }}"
         },
         {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
+          "permission": "LINKEDIN_ORG_ID",
+          "value": "${{ secrets.LINKEDIN_ORG_ID }}"
         },
         {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "enforce_admins",
-          "value": "false"
+          "permission": "- name",
+          "value": "Lint and Build (non-blocking)"
         },
         {
-          "permission": "required_linear_history",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "allow_force_pushes",
-          "value": "false"
+          "permission": "- name",
+          "value": "Commit and push changes"
         },
         {
-          "permission": "allow_deletions",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "block_creations",
-          "value": "false"
+          "permission": "git commit -m \"chore(automation)",
+          "value": "LinkedIn Pro updates [skip ci]\""
         },
         {
-          "permission": "required_conversation_resolution",
-          "value": "true"
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
         }
       ],
-      "concurrency": "linkedin-pro-${{ github.ref }}",
+      "concurrency": null,
       "issues": [
         "unsafe_git_push"
       ],
       "recommendations": [
         "Add branch protection to git push operations",
-        "Add workflow_dispatch trigger for manual testing",
-        "Consider splitting into smaller workflows for better maintainability"
+        "Add timeout-minutes to prevent infinite hanging",
+        "Add workflow_dispatch trigger for manual testing"
       ]
     },
     "marketing-sync.yml": {
       "name": "marketing-sync.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/marketing-sync.yml",
-      "size": 2290,
-      "lines": 77,
+      "size": 1607,
+      "lines": 42,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "jobs",
-        "marketing",
-        "steps",
         "with",
         "with"
       ],
-      "timeouts": [
-        20
-      ],
+      "timeouts": [],
       "permissions": [
         {
           "permission": "contents",
           "value": "read"
         },
         {
-          "permission": "branch_protection_rules",
+          "permission": "- name",
+          "value": "Checkout"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/checkout@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "- pattern",
-          "value": "\"main\""
+          "permission": "fetch-depth",
+          "value": "0"
         },
         {
-          "permission": "required_status_checks",
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "strict",
-          "value": "true"
+          "permission": "node-version",
+          "value": "'20'"
         },
         {
-          "permission": "contexts",
-          "value": "[]"
+          "permission": "cache",
+          "value": "'npm'"
         },
         {
-          "permission": "required_pull_request_reviews",
+          "permission": "- name",
+          "value": "Install dependencies"
+        },
+        {
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
+        },
+        {
+          "permission": "- name",
+          "value": "LinkedIn orchestrator"
+        },
+        {
+          "permission": "env",
           "value": ""
         },
         {
-          "permission": "required_approving_review_count",
-          "value": "1"
+          "permission": "LINKEDIN_ACCESS_TOKEN",
+          "value": "${{ secrets.LINKEDIN_ACCESS_TOKEN }}"
         },
         {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
+          "permission": "LINKEDIN_ORG_ID",
+          "value": "${{ secrets.LINKEDIN_ORG_ID }}"
         },
         {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "enforce_admins",
-          "value": "false"
+          "permission": "- name",
+          "value": "Instagram orchestrator"
         },
         {
-          "permission": "required_linear_history",
-          "value": "false"
+          "permission": "env",
+          "value": ""
         },
         {
-          "permission": "allow_force_pushes",
-          "value": "false"
+          "permission": "IG_ACCESS_TOKEN",
+          "value": "${{ secrets.IG_ACCESS_TOKEN }}"
         },
         {
-          "permission": "allow_deletions",
-          "value": "false"
+          "permission": "IG_USER_ID",
+          "value": "${{ secrets.IG_USER_ID }}"
         },
         {
-          "permission": "block_creations",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "required_conversation_resolution",
-          "value": "true"
+          "permission": "- name",
+          "value": "Commit and push changes"
+        },
+        {
+          "permission": "run",
+          "value": "|"
+        },
+        {
+          "permission": "git commit -m \"chore(marketing)",
+          "value": "sync updates [skip ci]\""
+        },
+        {
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
         }
       ],
-      "concurrency": "marketing-sync-${{ github.ref }}",
+      "concurrency": null,
       "issues": [
         "unsafe_git_push"
       ],
       "recommendations": [
         "Add branch protection to git push operations",
-        "Add workflow_dispatch trigger for manual testing",
-        "Consider splitting into smaller workflows for better maintainability"
+        "Add timeout-minutes to prevent infinite hanging",
+        "Add workflow_dispatch trigger for manual testing"
       ]
     },
     "media-optimizer.yml": {
       "name": "media-optimizer.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/media-optimizer.yml",
-      "size": 1858,
-      "lines": 69,
+      "size": 1171,
+      "lines": 36,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "jobs",
-        "optimize_media",
-        "steps",
         "with",
         "with"
       ],
-      "timeouts": [
-        25
-      ],
+      "timeouts": [],
       "permissions": [
         {
           "permission": "contents",
           "value": "read"
         },
         {
-          "permission": "branch_protection_rules",
+          "permission": "- name",
+          "value": "Checkout"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/checkout@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "- pattern",
-          "value": "\"main\""
+          "permission": "fetch-depth",
+          "value": "0"
         },
         {
-          "permission": "required_status_checks",
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "strict",
-          "value": "true"
+          "permission": "node-version",
+          "value": "'20'"
         },
         {
-          "permission": "contexts",
-          "value": "[]"
+          "permission": "cache",
+          "value": "'npm'"
         },
         {
-          "permission": "required_pull_request_reviews",
-          "value": ""
+          "permission": "- name",
+          "value": "Install dependencies"
         },
         {
-          "permission": "required_approving_review_count",
-          "value": "1"
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
         },
         {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
+          "permission": "- name",
+          "value": "Optimize images and media"
         },
         {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "enforce_admins",
-          "value": "false"
+          "permission": "- name",
+          "value": "Build (non-blocking)"
         },
         {
-          "permission": "required_linear_history",
-          "value": "false"
+          "permission": "run",
+          "value": "npm run build || true"
         },
         {
-          "permission": "allow_force_pushes",
-          "value": "false"
+          "permission": "- name",
+          "value": "Commit and push changes"
         },
         {
-          "permission": "allow_deletions",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "block_creations",
-          "value": "false"
+          "permission": "git commit -m \"perf(media)",
+          "value": "optimized assets [skip ci]\""
         },
         {
-          "permission": "required_conversation_resolution",
-          "value": "true"
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
         }
       ],
-      "concurrency": "media-optimizer-${{ github.ref }}",
+      "concurrency": null,
       "issues": [
         "unsafe_git_push"
       ],
       "recommendations": [
         "Add branch protection to git push operations",
-        "Add workflow_dispatch trigger for manual testing",
-        "Consider splitting into smaller workflows for better maintainability"
+        "Add timeout-minutes to prevent infinite hanging",
+        "Add workflow_dispatch trigger for manual testing"
       ]
     },
     "monetization.yml": {
       "name": "monetization.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/monetization.yml",
-      "size": 1889,
-      "lines": 70,
+      "size": 1206,
+      "lines": 36,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "jobs",
-        "monetization",
-        "steps",
         "with",
         "with"
       ],
-      "timeouts": [
-        20
-      ],
+      "timeouts": [],
       "permissions": [
         {
           "permission": "contents",
           "value": "read"
         },
         {
-          "permission": "branch_protection_rules",
+          "permission": "- name",
+          "value": "Checkout"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/checkout@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "- pattern",
-          "value": "\"main\""
+          "permission": "fetch-depth",
+          "value": "0"
         },
         {
-          "permission": "required_status_checks",
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "strict",
-          "value": "true"
+          "permission": "node-version",
+          "value": "'20'"
         },
         {
-          "permission": "contexts",
-          "value": "[]"
+          "permission": "cache",
+          "value": "'npm'"
         },
         {
-          "permission": "required_pull_request_reviews",
-          "value": ""
+          "permission": "- name",
+          "value": "Install dependencies"
         },
         {
-          "permission": "required_approving_review_count",
-          "value": "1"
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
         },
         {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
+          "permission": "- name",
+          "value": "Run monetization workflows"
         },
         {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "enforce_admins",
-          "value": "false"
+          "permission": "- name",
+          "value": "Commit and push changes"
         },
         {
-          "permission": "required_linear_history",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "allow_force_pushes",
-          "value": "false"
+          "permission": "git commit -m \"chore(automation)",
+          "value": "monetization updates [skip ci]\""
         },
         {
-          "permission": "allow_deletions",
-          "value": "false"
-        },
-        {
-          "permission": "block_creations",
-          "value": "false"
-        },
-        {
-          "permission": "required_conversation_resolution",
-          "value": "true"
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
         }
       ],
-      "concurrency": "monetization-${{ github.ref }}",
+      "concurrency": null,
       "issues": [
         "unsafe_git_push"
       ],
       "recommendations": [
         "Add branch protection to git push operations",
-        "Add workflow_dispatch trigger for manual testing",
-        "Consider splitting into smaller workflows for better maintainability"
+        "Add timeout-minutes to prevent infinite hanging",
+        "Add workflow_dispatch trigger for manual testing"
       ]
     },
     "netlify-config.yml": {
@@ -3919,90 +4028,90 @@
       "name": "og-image-refresh.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/og-image-refresh.yml",
-      "size": 1598,
-      "lines": 62,
+      "size": 999,
+      "lines": 32,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "jobs",
-        "og_images",
-        "steps",
         "with",
         "with"
       ],
-      "timeouts": [
-        20
-      ],
+      "timeouts": [],
       "permissions": [
         {
           "permission": "contents",
           "value": "read"
         },
         {
-          "permission": "branch_protection_rules",
+          "permission": "- name",
+          "value": "Checkout"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/checkout@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "- pattern",
-          "value": "\"main\""
+          "permission": "fetch-depth",
+          "value": "0"
         },
         {
-          "permission": "required_status_checks",
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "strict",
-          "value": "true"
+          "permission": "node-version",
+          "value": "'20'"
         },
         {
-          "permission": "contexts",
-          "value": "[]"
+          "permission": "cache",
+          "value": "'npm'"
         },
         {
-          "permission": "required_pull_request_reviews",
-          "value": ""
+          "permission": "- name",
+          "value": "Install dependencies"
         },
         {
-          "permission": "required_approving_review_count",
-          "value": "1"
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
         },
         {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
+          "permission": "- name",
+          "value": "Generate OG images"
         },
         {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
+          "permission": "run",
+          "value": "node automation/og-image-generator.cjs || true"
         },
         {
-          "permission": "enforce_admins",
-          "value": "false"
+          "permission": "- name",
+          "value": "Commit and push changes"
         },
         {
-          "permission": "required_linear_history",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "allow_force_pushes",
-          "value": "false"
+          "permission": "git commit -m \"chore(og)",
+          "value": "refresh generated OG images [skip ci]\""
         },
         {
-          "permission": "allow_deletions",
-          "value": "false"
-        },
-        {
-          "permission": "block_creations",
-          "value": "false"
-        },
-        {
-          "permission": "required_conversation_resolution",
-          "value": "true"
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
         }
       ],
       "concurrency": null,
@@ -4011,8 +4120,8 @@
       ],
       "recommendations": [
         "Add branch protection to git push operations",
-        "Add workflow_dispatch trigger for manual testing",
-        "Consider splitting into smaller workflows for better maintainability"
+        "Add timeout-minutes to prevent infinite hanging",
+        "Add workflow_dispatch trigger for manual testing"
       ]
     },
     "pa11y.yml": {
@@ -4254,8 +4363,8 @@
       "name": "readme-auto-advertiser.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/readme-auto-advertiser.yml",
-      "size": 1804,
-      "lines": 68,
+      "size": 1111,
+      "lines": 36,
       "triggers": [
         "push",
         "schedule",
@@ -4265,90 +4374,91 @@
         "push",
         "paths",
         "schedule",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "jobs",
-        "update-readme",
-        "steps",
         "with",
         "with"
       ],
-      "timeouts": [
-        20
-      ],
+      "timeouts": [],
       "permissions": [
         {
           "permission": "contents",
           "value": "read"
         },
         {
-          "permission": "branch_protection_rules",
+          "permission": "- name",
+          "value": "Checkout"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/checkout@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "- pattern",
-          "value": "\"main\""
+          "permission": "fetch-depth",
+          "value": "0"
         },
         {
-          "permission": "required_status_checks",
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "strict",
-          "value": "true"
+          "permission": "node-version",
+          "value": "'20'"
         },
         {
-          "permission": "contexts",
-          "value": "[]"
+          "permission": "cache",
+          "value": "'npm'"
         },
         {
-          "permission": "required_pull_request_reviews",
-          "value": ""
+          "permission": "- name",
+          "value": "Install dependencies"
         },
         {
-          "permission": "required_approving_review_count",
-          "value": "1"
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
         },
         {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
+          "permission": "- name",
+          "value": "Regenerate README"
         },
         {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
+          "permission": "run",
+          "value": "node scripts/generate-readme.js"
         },
         {
-          "permission": "enforce_admins",
-          "value": "false"
+          "permission": "- name",
+          "value": "Commit and push changes"
         },
         {
-          "permission": "required_linear_history",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "allow_force_pushes",
-          "value": "false"
+          "permission": "git commit -m \"docs(readme)",
+          "value": "auto-update badges and workflows [skip ci]\""
         },
         {
-          "permission": "allow_deletions",
-          "value": "false"
-        },
-        {
-          "permission": "block_creations",
-          "value": "false"
-        },
-        {
-          "permission": "required_conversation_resolution",
-          "value": "true"
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
         }
       ],
-      "concurrency": "readme-auto-advertiser-${{ github.ref }}",
+      "concurrency": null,
       "issues": [
         "unsafe_git_push"
       ],
       "recommendations": [
         "Add branch protection to git push operations",
+        "Add timeout-minutes to prevent infinite hanging",
         "Add workflow_dispatch trigger for manual testing",
         "Consider splitting into smaller workflows for better maintainability"
       ]
@@ -4417,200 +4527,208 @@
       "name": "responsive-content.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/responsive-content.yml",
-      "size": 1938,
-      "lines": 70,
+      "size": 1243,
+      "lines": 36,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "jobs",
-        "responsive_content",
-        "steps",
         "with",
         "with"
       ],
-      "timeouts": [
-        20
-      ],
+      "timeouts": [],
       "permissions": [
         {
           "permission": "contents",
           "value": "read"
         },
         {
-          "permission": "branch_protection_rules",
+          "permission": "- name",
+          "value": "Checkout"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/checkout@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "- pattern",
-          "value": "\"main\""
+          "permission": "fetch-depth",
+          "value": "0"
         },
         {
-          "permission": "required_status_checks",
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "strict",
-          "value": "true"
+          "permission": "node-version",
+          "value": "'20'"
         },
         {
-          "permission": "contexts",
-          "value": "[]"
+          "permission": "cache",
+          "value": "'npm'"
         },
         {
-          "permission": "required_pull_request_reviews",
-          "value": ""
+          "permission": "- name",
+          "value": "Install dependencies"
         },
         {
-          "permission": "required_approving_review_count",
-          "value": "1"
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
         },
         {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
+          "permission": "- name",
+          "value": "Run responsive content workflows"
         },
         {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "enforce_admins",
-          "value": "false"
+          "permission": "- name",
+          "value": "Commit and push changes"
         },
         {
-          "permission": "required_linear_history",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "allow_force_pushes",
-          "value": "false"
+          "permission": "git commit -m \"chore(automation)",
+          "value": "responsive content updates [skip ci]\""
         },
         {
-          "permission": "allow_deletions",
-          "value": "false"
-        },
-        {
-          "permission": "block_creations",
-          "value": "false"
-        },
-        {
-          "permission": "required_conversation_resolution",
-          "value": "true"
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
         }
       ],
-      "concurrency": "responsive-content-${{ github.ref }}",
+      "concurrency": null,
       "issues": [
         "unsafe_git_push"
       ],
       "recommendations": [
         "Add branch protection to git push operations",
-        "Add workflow_dispatch trigger for manual testing",
-        "Consider splitting into smaller workflows for better maintainability"
+        "Add timeout-minutes to prevent infinite hanging",
+        "Add workflow_dispatch trigger for manual testing"
       ]
     },
     "security-auto-heal.yml": {
       "name": "security-auto-heal.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/security-auto-heal.yml",
-      "size": 1854,
-      "lines": 69,
+      "size": 1165,
+      "lines": 36,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "jobs",
-        "security_scan",
-        "steps",
         "with",
         "with"
       ],
-      "timeouts": [
-        25
-      ],
+      "timeouts": [],
       "permissions": [
         {
           "permission": "contents",
           "value": "read"
         },
         {
-          "permission": "branch_protection_rules",
+          "permission": "- name",
+          "value": "Checkout"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/checkout@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "- pattern",
-          "value": "\"main\""
+          "permission": "fetch-depth",
+          "value": "0"
         },
         {
-          "permission": "required_status_checks",
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "strict",
-          "value": "true"
+          "permission": "node-version",
+          "value": "'20'"
         },
         {
-          "permission": "contexts",
-          "value": "[]"
+          "permission": "cache",
+          "value": "'npm'"
         },
         {
-          "permission": "required_pull_request_reviews",
-          "value": ""
+          "permission": "- name",
+          "value": "Install dependencies"
         },
         {
-          "permission": "required_approving_review_count",
-          "value": "1"
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
         },
         {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
+          "permission": "- name",
+          "value": "Run security audit and fixes"
         },
         {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "enforce_admins",
-          "value": "false"
+          "permission": "- name",
+          "value": "Build (non-blocking)"
         },
         {
-          "permission": "required_linear_history",
-          "value": "false"
+          "permission": "run",
+          "value": "npm run build || true"
         },
         {
-          "permission": "allow_force_pushes",
-          "value": "false"
+          "permission": "- name",
+          "value": "Commit and push changes"
         },
         {
-          "permission": "allow_deletions",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "block_creations",
-          "value": "false"
+          "permission": "git commit -m \"security",
+          "value": "auto-heal updates [skip ci]\""
         },
         {
-          "permission": "required_conversation_resolution",
-          "value": "true"
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
         }
       ],
-      "concurrency": "security-auto-heal-${{ github.ref }}",
+      "concurrency": null,
       "issues": [
         "unsafe_git_push"
       ],
       "recommendations": [
         "Add branch protection to git push operations",
-        "Add workflow_dispatch trigger for manual testing",
-        "Consider splitting into smaller workflows for better maintainability"
+        "Add timeout-minutes to prevent infinite hanging",
+        "Add workflow_dispatch trigger for manual testing"
       ]
     },
     "security-gates.yml": {
@@ -4746,108 +4864,100 @@
       "name": "seo-audit.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/seo-audit.yml",
-      "size": 1565,
-      "lines": 59,
+      "size": 899,
+      "lines": 30,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "jobs",
-        "run",
-        "steps",
         "with",
         "with"
       ],
-      "timeouts": [
-        20
-      ],
+      "timeouts": [],
       "permissions": [
         {
           "permission": "contents",
           "value": "read"
         },
         {
-          "permission": "branch_protection_rules",
+          "permission": "- uses",
+          "value": "actions/checkout@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "- pattern",
-          "value": "\"main\""
+          "permission": "fetch-depth",
+          "value": "0"
         },
         {
-          "permission": "required_status_checks",
+          "permission": "- uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "strict",
-          "value": "true"
+          "permission": "node-version",
+          "value": "'20'"
         },
         {
-          "permission": "contexts",
-          "value": "[]"
+          "permission": "cache",
+          "value": "'npm'"
         },
         {
-          "permission": "required_pull_request_reviews",
-          "value": ""
+          "permission": "- name",
+          "value": "Install deps"
         },
         {
-          "permission": "required_approving_review_count",
-          "value": "1"
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
         },
         {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
+          "permission": "- name",
+          "value": "Generate SEO report"
         },
         {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
+          "permission": "run",
+          "value": "node scripts/seo-audit.js"
         },
         {
-          "permission": "enforce_admins",
-          "value": "false"
+          "permission": "- name",
+          "value": "Commit report"
         },
         {
-          "permission": "required_linear_history",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "allow_force_pushes",
-          "value": "false"
+          "permission": "git commit -m \"chore(report)",
+          "value": "update SEO audit [skip ci]\""
         },
         {
-          "permission": "allow_deletions",
-          "value": "false"
-        },
-        {
-          "permission": "block_creations",
-          "value": "false"
-        },
-        {
-          "permission": "required_conversation_resolution",
-          "value": "true"
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
         }
       ],
-      "concurrency": "seo-audit-${{ github.ref }}",
+      "concurrency": null,
       "issues": [
         "unsafe_git_push"
       ],
       "recommendations": [
         "Add branch protection to git push operations",
-        "Add workflow_dispatch trigger for manual testing",
-        "Consider splitting into smaller workflows for better maintainability"
+        "Add timeout-minutes to prevent infinite hanging",
+        "Add workflow_dispatch trigger for manual testing"
       ]
     },
     "seo-validator.yml": {
       "name": "seo-validator.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/seo-validator.yml",
-      "size": 1595,
-      "lines": 62,
+      "size": 999,
+      "lines": 32,
       "triggers": [
         "schedule",
         "pull_request",
@@ -4856,81 +4966,73 @@
       "jobs": [
         "schedule",
         "pull_request",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "jobs",
-        "validate",
-        "steps",
         "with"
       ],
-      "timeouts": [
-        15
-      ],
+      "timeouts": [],
       "permissions": [
         {
           "permission": "contents",
           "value": "read"
         },
         {
-          "permission": "branch_protection_rules",
+          "permission": "- name",
+          "value": "Checkout"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/checkout@v4"
+        },
+        {
+          "permission": "- name",
+          "value": "Setup Node"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "- pattern",
-          "value": "\"main\""
+          "permission": "node-version",
+          "value": "'20'"
         },
         {
-          "permission": "required_status_checks",
-          "value": ""
+          "permission": "- name",
+          "value": "Install deps"
         },
         {
-          "permission": "strict",
-          "value": "true"
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
         },
         {
-          "permission": "contexts",
-          "value": "[]"
+          "permission": "- name",
+          "value": "Run validator"
         },
         {
-          "permission": "required_pull_request_reviews",
-          "value": ""
+          "permission": "run",
+          "value": "node automation/seo-og-validator.cjs"
         },
         {
-          "permission": "required_approving_review_count",
-          "value": "1"
+          "permission": "- name",
+          "value": "Commit fixes (if any)"
         },
         {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
+          "permission": "if",
+          "value": "${{ github.ref == 'refs/heads/main' }}"
         },
         {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "enforce_admins",
-          "value": "false"
+          "permission": "git commit -m \"chore(seo)",
+          "value": "auto-fix OG/SEO issues [skip ci]\""
         },
         {
-          "permission": "required_linear_history",
-          "value": "false"
-        },
-        {
-          "permission": "allow_force_pushes",
-          "value": "false"
-        },
-        {
-          "permission": "allow_deletions",
-          "value": "false"
-        },
-        {
-          "permission": "block_creations",
-          "value": "false"
-        },
-        {
-          "permission": "required_conversation_resolution",
-          "value": "true"
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
         }
       ],
       "concurrency": null,
@@ -4939,309 +5041,333 @@
       ],
       "recommendations": [
         "Add npm cache to improve build performance",
-        "Add workflow_dispatch trigger for manual testing",
-        "Consider splitting into smaller workflows for better maintainability"
+        "Add timeout-minutes to prevent infinite hanging",
+        "Add workflow_dispatch trigger for manual testing"
       ]
     },
     "site-health-guardian.yml": {
       "name": "site-health-guardian.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/site-health-guardian.yml",
-      "size": 2149,
-      "lines": 76,
+      "size": 1448,
+      "lines": 42,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "jobs",
-        "health",
-        "steps",
         "with",
         "with"
       ],
-      "timeouts": [
-        25
-      ],
+      "timeouts": [],
       "permissions": [
         {
           "permission": "contents",
           "value": "read"
         },
         {
-          "permission": "branch_protection_rules",
+          "permission": "- name",
+          "value": "Checkout"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/checkout@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "- pattern",
-          "value": "\"main\""
+          "permission": "fetch-depth",
+          "value": "0"
         },
         {
-          "permission": "required_status_checks",
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "strict",
-          "value": "true"
+          "permission": "node-version",
+          "value": "'20'"
         },
         {
-          "permission": "contexts",
-          "value": "[]"
+          "permission": "cache",
+          "value": "'npm'"
         },
         {
-          "permission": "required_pull_request_reviews",
-          "value": ""
+          "permission": "- name",
+          "value": "Install dependencies"
         },
         {
-          "permission": "required_approving_review_count",
-          "value": "1"
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
         },
         {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
+          "permission": "- name",
+          "value": "Run health audits"
         },
         {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "enforce_admins",
-          "value": "false"
+          "permission": "- name",
+          "value": "Lint and Build (non-blocking)"
         },
         {
-          "permission": "required_linear_history",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "allow_force_pushes",
-          "value": "false"
+          "permission": "- name",
+          "value": "Commit and push changes"
         },
         {
-          "permission": "allow_deletions",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "block_creations",
-          "value": "false"
+          "permission": "git commit -m \"chore(automation)",
+          "value": "site health guardian updates [skip ci]\""
         },
         {
-          "permission": "required_conversation_resolution",
-          "value": "true"
-        },
-        {
-          "permission": "actions",
-          "value": "read"
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
         }
       ],
-      "concurrency": "site-health-guardian-${{ github.ref }}",
+      "concurrency": null,
       "issues": [
         "unsafe_git_push"
       ],
       "recommendations": [
         "Add branch protection to git push operations",
-        "Add workflow_dispatch trigger for manual testing",
-        "Consider splitting into smaller workflows for better maintainability"
+        "Add timeout-minutes to prevent infinite hanging",
+        "Add workflow_dispatch trigger for manual testing"
       ]
     },
     "site-link.yml": {
       "name": "site-link.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/site-link.yml",
-      "size": 1914,
-      "lines": 71,
+      "size": 1237,
+      "lines": 37,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "jobs",
-        "site_link",
-        "steps",
         "with",
         "with"
       ],
-      "timeouts": [
-        20
-      ],
+      "timeouts": [],
       "permissions": [
         {
           "permission": "contents",
           "value": "read"
         },
         {
-          "permission": "branch_protection_rules",
+          "permission": "- name",
+          "value": "Checkout"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/checkout@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "- pattern",
-          "value": "\"main\""
+          "permission": "fetch-depth",
+          "value": "0"
         },
         {
-          "permission": "required_status_checks",
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "strict",
-          "value": "true"
+          "permission": "node-version",
+          "value": "'20'"
         },
         {
-          "permission": "contexts",
-          "value": "[]"
+          "permission": "cache",
+          "value": "'npm'"
         },
         {
-          "permission": "required_pull_request_reviews",
-          "value": ""
+          "permission": "- name",
+          "value": "Install dependencies"
         },
         {
-          "permission": "required_approving_review_count",
-          "value": "1"
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
         },
         {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
+          "permission": "- name",
+          "value": "Run site link workflows"
         },
         {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "enforce_admins",
-          "value": "false"
+          "permission": "- name",
+          "value": "Commit and push changes"
         },
         {
-          "permission": "required_linear_history",
-          "value": "false"
+          "permission": "if",
+          "value": "${{ github.ref == 'refs/heads/main' }}"
         },
         {
-          "permission": "allow_force_pushes",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "allow_deletions",
-          "value": "false"
+          "permission": "git commit -m \"chore(automation)",
+          "value": "site-link updates [skip ci]\""
         },
         {
-          "permission": "block_creations",
-          "value": "false"
-        },
-        {
-          "permission": "required_conversation_resolution",
-          "value": "true"
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
         }
       ],
-      "concurrency": "site-link-${{ github.ref }}",
+      "concurrency": null,
       "issues": [],
       "recommendations": [
-        "Add workflow_dispatch trigger for manual testing",
-        "Consider splitting into smaller workflows for better maintainability"
+        "Add timeout-minutes to prevent infinite hanging",
+        "Add workflow_dispatch trigger for manual testing"
       ]
     },
     "sitemap-and-search.yml": {
       "name": "sitemap-and-search.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/sitemap-and-search.yml",
-      "size": 1970,
-      "lines": 74,
+      "size": 1289,
+      "lines": 39,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "jobs",
-        "refresh",
-        "steps",
         "with",
         "with"
       ],
-      "timeouts": [
-        25
-      ],
+      "timeouts": [],
       "permissions": [
         {
           "permission": "contents",
           "value": "read"
         },
         {
-          "permission": "branch_protection_rules",
+          "permission": "- name",
+          "value": "Checkout"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/checkout@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "- pattern",
-          "value": "\"main\""
+          "permission": "fetch-depth",
+          "value": "0"
         },
         {
-          "permission": "required_status_checks",
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "strict",
-          "value": "true"
+          "permission": "node-version",
+          "value": "'20'"
         },
         {
-          "permission": "contexts",
-          "value": "[]"
+          "permission": "cache",
+          "value": "'npm'"
         },
         {
-          "permission": "required_pull_request_reviews",
+          "permission": "- name",
+          "value": "Install dependencies"
+        },
+        {
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
+        },
+        {
+          "permission": "- name",
+          "value": "Generate sitemap and search index"
+        },
+        {
+          "permission": "env",
           "value": ""
         },
         {
-          "permission": "required_approving_review_count",
-          "value": "1"
+          "permission": "SITEMAP_BASE_URL",
+          "value": "https"
         },
         {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
+          "permission": "- name",
+          "value": "Build (non-blocking)"
         },
         {
-          "permission": "enforce_admins",
-          "value": "false"
+          "permission": "run",
+          "value": "npm run build || true"
         },
         {
-          "permission": "required_linear_history",
-          "value": "false"
+          "permission": "- name",
+          "value": "Commit and push changes"
         },
         {
-          "permission": "allow_force_pushes",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "allow_deletions",
-          "value": "false"
+          "permission": "git commit -m \"chore(search)",
+          "value": "refresh sitemap and search index [skip ci]\""
         },
         {
-          "permission": "block_creations",
-          "value": "false"
-        },
-        {
-          "permission": "required_conversation_resolution",
-          "value": "true"
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
         }
       ],
-      "concurrency": "sitemap-search-${{ github.ref }}",
+      "concurrency": null,
       "issues": [
         "unsafe_git_push"
       ],
       "recommendations": [
         "Add branch protection to git push operations",
-        "Add workflow_dispatch trigger for manual testing",
-        "Consider splitting into smaller workflows for better maintainability"
+        "Add timeout-minutes to prevent infinite hanging",
+        "Add workflow_dispatch trigger for manual testing"
       ]
     },
     "test-auth.yml": {
@@ -5340,100 +5466,108 @@
       "name": "topics-and-clusters.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/topics-and-clusters.yml",
-      "size": 1881,
-      "lines": 69,
+      "size": 1192,
+      "lines": 36,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "jobs",
-        "build_topics",
-        "steps",
         "with",
         "with"
       ],
-      "timeouts": [
-        25
-      ],
+      "timeouts": [],
       "permissions": [
         {
           "permission": "contents",
           "value": "read"
         },
         {
-          "permission": "branch_protection_rules",
+          "permission": "- name",
+          "value": "Checkout"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/checkout@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "- pattern",
-          "value": "\"main\""
+          "permission": "fetch-depth",
+          "value": "0"
         },
         {
-          "permission": "required_status_checks",
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "strict",
-          "value": "true"
+          "permission": "node-version",
+          "value": "'20'"
         },
         {
-          "permission": "contexts",
-          "value": "[]"
+          "permission": "cache",
+          "value": "'npm'"
         },
         {
-          "permission": "required_pull_request_reviews",
-          "value": ""
+          "permission": "- name",
+          "value": "Install dependencies"
         },
         {
-          "permission": "required_approving_review_count",
-          "value": "1"
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
         },
         {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
+          "permission": "- name",
+          "value": "Generate topics map and clusters"
         },
         {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "enforce_admins",
-          "value": "false"
+          "permission": "- name",
+          "value": "Build (non-blocking)"
         },
         {
-          "permission": "required_linear_history",
-          "value": "false"
+          "permission": "run",
+          "value": "npm run build || true"
         },
         {
-          "permission": "allow_force_pushes",
-          "value": "false"
+          "permission": "- name",
+          "value": "Commit and push changes"
         },
         {
-          "permission": "allow_deletions",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "block_creations",
-          "value": "false"
+          "permission": "git commit -m \"docs(topics)",
+          "value": "refresh clusters and maps [skip ci]\""
         },
         {
-          "permission": "required_conversation_resolution",
-          "value": "true"
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
         }
       ],
-      "concurrency": "topics-and-clusters-${{ github.ref }}",
+      "concurrency": null,
       "issues": [
         "unsafe_git_push"
       ],
       "recommendations": [
         "Add branch protection to git push operations",
-        "Add workflow_dispatch trigger for manual testing",
-        "Consider splitting into smaller workflows for better maintainability"
+        "Add timeout-minutes to prevent infinite hanging",
+        "Add workflow_dispatch trigger for manual testing"
       ]
     },
     "ultra-rapid-sync.yml": {
@@ -5481,297 +5615,301 @@
       "name": "variation.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/variation.yml",
-      "size": 1866,
-      "lines": 70,
+      "size": 1189,
+      "lines": 36,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "jobs",
-        "variation",
-        "steps",
         "with",
         "with"
       ],
-      "timeouts": [
-        20
-      ],
+      "timeouts": [],
       "permissions": [
         {
           "permission": "contents",
           "value": "read"
         },
         {
-          "permission": "branch_protection_rules",
+          "permission": "- name",
+          "value": "Checkout"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/checkout@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "- pattern",
-          "value": "\"main\""
+          "permission": "fetch-depth",
+          "value": "0"
         },
         {
-          "permission": "required_status_checks",
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "strict",
-          "value": "true"
+          "permission": "node-version",
+          "value": "'20'"
         },
         {
-          "permission": "contexts",
-          "value": "[]"
+          "permission": "cache",
+          "value": "'npm'"
         },
         {
-          "permission": "required_pull_request_reviews",
-          "value": ""
+          "permission": "- name",
+          "value": "Install dependencies"
         },
         {
-          "permission": "required_approving_review_count",
-          "value": "1"
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
         },
         {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
+          "permission": "- name",
+          "value": "Run variation workflows"
         },
         {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "enforce_admins",
-          "value": "false"
+          "permission": "- name",
+          "value": "Commit and push changes"
         },
         {
-          "permission": "required_linear_history",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "allow_force_pushes",
-          "value": "false"
+          "permission": "git commit -m \"chore(automation)",
+          "value": "variation updates [skip ci]\""
         },
         {
-          "permission": "allow_deletions",
-          "value": "false"
-        },
-        {
-          "permission": "block_creations",
-          "value": "false"
-        },
-        {
-          "permission": "required_conversation_resolution",
-          "value": "true"
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
         }
       ],
-      "concurrency": "variation-${{ github.ref }}",
+      "concurrency": null,
       "issues": [
         "unsafe_git_push"
       ],
       "recommendations": [
         "Add branch protection to git push operations",
-        "Add workflow_dispatch trigger for manual testing",
-        "Consider splitting into smaller workflows for better maintainability"
+        "Add timeout-minutes to prevent infinite hanging",
+        "Add workflow_dispatch trigger for manual testing"
       ]
     },
     "venture.yml": {
       "name": "venture.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/venture.yml",
-      "size": 1998,
-      "lines": 72,
+      "size": 1325,
+      "lines": 38,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "jobs",
-        "venture",
-        "steps",
         "with",
         "with"
       ],
-      "timeouts": [
-        20
-      ],
+      "timeouts": [],
       "permissions": [
         {
           "permission": "contents",
           "value": "read"
         },
         {
-          "permission": "branch_protection_rules",
+          "permission": "- name",
+          "value": "Checkout"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/checkout@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "- pattern",
-          "value": "\"main\""
+          "permission": "fetch-depth",
+          "value": "0"
         },
         {
-          "permission": "required_status_checks",
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "strict",
-          "value": "true"
+          "permission": "node-version",
+          "value": "'20'"
         },
         {
-          "permission": "contexts",
-          "value": "[]"
+          "permission": "cache",
+          "value": "'npm'"
         },
         {
-          "permission": "required_pull_request_reviews",
-          "value": ""
+          "permission": "- name",
+          "value": "Install dependencies"
         },
         {
-          "permission": "required_approving_review_count",
-          "value": "1"
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
         },
         {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
+          "permission": "- name",
+          "value": "Run venture workflows"
         },
         {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "enforce_admins",
-          "value": "false"
+          "permission": "- name",
+          "value": "Commit and push changes"
         },
         {
-          "permission": "required_linear_history",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "allow_force_pushes",
-          "value": "false"
+          "permission": "git commit -m \"chore(automation)",
+          "value": "venture updates [skip ci]\""
         },
         {
-          "permission": "allow_deletions",
-          "value": "false"
-        },
-        {
-          "permission": "block_creations",
-          "value": "false"
-        },
-        {
-          "permission": "required_conversation_resolution",
-          "value": "true"
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
         }
       ],
-      "concurrency": "venture-${{ github.ref }}",
+      "concurrency": null,
       "issues": [
         "unsafe_git_push"
       ],
       "recommendations": [
         "Add branch protection to git push operations",
-        "Add workflow_dispatch trigger for manual testing",
-        "Consider splitting into smaller workflows for better maintainability"
+        "Add timeout-minutes to prevent infinite hanging",
+        "Add workflow_dispatch trigger for manual testing"
       ]
     },
     "workflow-radar.yml": {
       "name": "workflow-radar.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/workflow-radar.yml",
-      "size": 1757,
-      "lines": 67,
+      "size": 1079,
+      "lines": 33,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
-        "jobs",
-        "radar",
-        "steps",
         "with",
         "with"
       ],
-      "timeouts": [
-        20
-      ],
+      "timeouts": [],
       "permissions": [
         {
           "permission": "contents",
           "value": "read"
         },
         {
-          "permission": "branch_protection_rules",
+          "permission": "- name",
+          "value": "Checkout"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/checkout@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "- pattern",
-          "value": "\"main\""
+          "permission": "fetch-depth",
+          "value": "0"
         },
         {
-          "permission": "required_status_checks",
+          "permission": "- name",
+          "value": "Setup Node.js"
+        },
+        {
+          "permission": "uses",
+          "value": "actions/setup-node@v4"
+        },
+        {
+          "permission": "with",
           "value": ""
         },
         {
-          "permission": "strict",
-          "value": "true"
+          "permission": "node-version",
+          "value": "'20'"
         },
         {
-          "permission": "contexts",
-          "value": "[]"
+          "permission": "cache",
+          "value": "'npm'"
         },
         {
-          "permission": "required_pull_request_reviews",
-          "value": ""
+          "permission": "- name",
+          "value": "Install dependencies"
         },
         {
-          "permission": "required_approving_review_count",
-          "value": "1"
+          "permission": "run",
+          "value": "npm ci --no-audit --no-fund"
         },
         {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
+          "permission": "- name",
+          "value": "Generate workflows dashboard"
         },
         {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
+          "permission": "run",
+          "value": "node scripts/generate-workflows-dashboard.cjs"
         },
         {
-          "permission": "enforce_admins",
-          "value": "false"
+          "permission": "- name",
+          "value": "Commit and push updates"
         },
         {
-          "permission": "required_linear_history",
-          "value": "false"
+          "permission": "if",
+          "value": "${{ github.ref == 'refs/heads/main' }}"
         },
         {
-          "permission": "allow_force_pushes",
-          "value": "false"
+          "permission": "run",
+          "value": "|"
         },
         {
-          "permission": "allow_deletions",
-          "value": "false"
+          "permission": "git commit -m \"chore(automation)",
+          "value": "update workflow radar & badges [skip ci]\""
         },
         {
-          "permission": "block_creations",
-          "value": "false"
-        },
-        {
-          "permission": "required_conversation_resolution",
-          "value": "true"
+          "permission": "git push origin HEAD",
+          "value": "$(git rev-parse --abbrev-ref HEAD)"
         }
       ],
-      "concurrency": "workflow-radar-${{ github.ref }}",
+      "concurrency": null,
       "issues": [],
       "recommendations": [
-        "Add workflow_dispatch trigger for manual testing",
-        "Consider splitting into smaller workflows for better maintainability"
+        "Add timeout-minutes to prevent infinite hanging",
+        "Add workflow_dispatch trigger for manual testing"
       ]
     },
     "accessibility-audit.yml": {
@@ -10531,6 +10669,38 @@
     },
     "optimizations": {
       "immediate": [
+        "Add timeout-minutes to ai-content-autonomy.yml",
+        "Add timeout-minutes to ai-trends-radar.yml",
+        "Add timeout-minutes to auto-heal-workflows.yml",
+        "Add timeout-minutes to automation-advertiser.yml",
+        "Add timeout-minutes to broken-images.yml",
+        "Add timeout-minutes to cloud-autonomous-orchestrator.yml",
+        "Add timeout-minutes to components-size-report.yml",
+        "Add timeout-minutes to cursor-chat.yml",
+        "Add timeout-minutes to docs-intelligence.yml",
+        "Add timeout-minutes to external-links.yml",
+        "Add timeout-minutes to front-scheduler.yml",
+        "Add timeout-minutes to guardian-scheduler.yml",
+        "Add timeout-minutes to instagram-marketing.yml",
+        "Add timeout-minutes to knowledge-graph-radar.yml",
+        "Add timeout-minutes to linkedin-marketing.yml",
+        "Add timeout-minutes to linkedin-pro.yml",
+        "Add timeout-minutes to marketing-sync.yml",
+        "Add timeout-minutes to media-optimizer.yml",
+        "Add timeout-minutes to monetization.yml",
+        "Add timeout-minutes to og-image-refresh.yml",
+        "Add timeout-minutes to readme-auto-advertiser.yml",
+        "Add timeout-minutes to responsive-content.yml",
+        "Add timeout-minutes to security-auto-heal.yml",
+        "Add timeout-minutes to seo-audit.yml",
+        "Add timeout-minutes to seo-validator.yml",
+        "Add timeout-minutes to site-health-guardian.yml",
+        "Add timeout-minutes to site-link.yml",
+        "Add timeout-minutes to sitemap-and-search.yml",
+        "Add timeout-minutes to topics-and-clusters.yml",
+        "Add timeout-minutes to variation.yml",
+        "Add timeout-minutes to venture.yml",
+        "Add timeout-minutes to workflow-radar.yml",
         "Add timeout-minutes to homepage-auto-update.yml"
       ],
       "shortTerm": [
@@ -10608,74 +10778,40 @@
         "Refactor actionlint.yml into smaller, focused workflows",
         "Refactor agent-of-agents-trigger.yml into smaller, focused workflows",
         "Refactor ai-changelog.yml into smaller, focused workflows",
-        "Refactor ai-content-autonomy.yml into smaller, focused workflows",
         "Refactor ai-content-factory.yml into smaller, focused workflows",
-        "Refactor ai-it-ads-sync.yml into smaller, focused workflows",
         "Refactor ai-it-innovations.yml into smaller, focused workflows",
-        "Refactor ai-it-multi-factory.yml into smaller, focused workflows",
-        "Refactor ai-it-ultrafast-sync.yml into smaller, focused workflows",
         "Refactor ai-research-scout.yml into smaller, focused workflows",
-        "Refactor ai-trends-radar.yml into smaller, focused workflows",
         "Refactor auto-heal-workflows.yml into smaller, focused workflows",
-        "Refactor automation-advertiser.yml into smaller, focused workflows",
         "Refactor automation-orchestrator.yml into smaller, focused workflows",
-        "Refactor broken-images.yml into smaller, focused workflows",
         "Refactor ci-quality.yml into smaller, focused workflows",
         "Refactor ci-self-heal.yml into smaller, focused workflows",
         "Refactor ci.yml into smaller, focused workflows",
         "Refactor cloud-agents.yml into smaller, focused workflows",
-        "Refactor cloud-autonomous-orchestrator.yml into smaller, focused workflows",
         "Refactor cloud-deep-research.yml into smaller, focused workflows",
         "Refactor cloud-orchestrator-plus.yml into smaller, focused workflows",
         "Refactor codeql.yml into smaller, focused workflows",
         "Refactor commit-message-lint.yml into smaller, focused workflows",
         "Refactor commitlint.yml into smaller, focused workflows",
-        "Refactor components-size-report.yml into smaller, focused workflows",
         "Refactor crawl-normalize.yml into smaller, focused workflows",
-        "Refactor cursor-chat.yml into smaller, focused workflows",
         "Refactor dead-code-report.yml into smaller, focused workflows",
         "Refactor dependency-auto-upgrade.yml into smaller, focused workflows",
         "Refactor dependency-management.yml into smaller, focused workflows",
         "Refactor deploy.yml into smaller, focused workflows",
-        "Refactor docs-intelligence.yml into smaller, focused workflows",
         "Refactor emergency-fix.yml into smaller, focused workflows",
-        "Refactor external-links.yml into smaller, focused workflows",
-        "Refactor front-scheduler.yml into smaller, focused workflows",
-        "Refactor guardian-scheduler.yml into smaller, focused workflows",
-        "Refactor instagram-marketing.yml into smaller, focused workflows",
-        "Refactor knowledge-graph-radar.yml into smaller, focused workflows",
         "Refactor lighthouse-live.yml into smaller, focused workflows",
-        "Refactor linkedin-marketing.yml into smaller, focused workflows",
-        "Refactor linkedin-pro.yml into smaller, focused workflows",
-        "Refactor marketing-sync.yml into smaller, focused workflows",
-        "Refactor media-optimizer.yml into smaller, focused workflows",
-        "Refactor monetization.yml into smaller, focused workflows",
         "Refactor netlify-config.yml into smaller, focused workflows",
         "Refactor netlify-functions-trigger.yml into smaller, focused workflows",
-        "Refactor og-image-refresh.yml into smaller, focused workflows",
         "Refactor pa11y.yml into smaller, focused workflows",
         "Refactor pin-actions-weekly.yml into smaller, focused workflows",
         "Refactor playwright-smoke.yml into smaller, focused workflows",
         "Refactor pr-auto-curator.yml into smaller, focused workflows",
         "Refactor pr-quality-gate.yml into smaller, focused workflows",
         "Refactor pr-smoke.yml into smaller, focused workflows",
-        "Refactor readme-auto-advertiser.yml into smaller, focused workflows",
         "Refactor release.yml into smaller, focused workflows",
-        "Refactor responsive-content.yml into smaller, focused workflows",
-        "Refactor security-auto-heal.yml into smaller, focused workflows",
         "Refactor security-gates.yml into smaller, focused workflows",
         "Refactor security-scan.yml into smaller, focused workflows",
-        "Refactor seo-audit.yml into smaller, focused workflows",
-        "Refactor seo-validator.yml into smaller, focused workflows",
-        "Refactor site-health-guardian.yml into smaller, focused workflows",
-        "Refactor site-link.yml into smaller, focused workflows",
-        "Refactor sitemap-and-search.yml into smaller, focused workflows",
         "Refactor test.yml into smaller, focused workflows",
-        "Refactor topics-and-clusters.yml into smaller, focused workflows",
         "Refactor ultra-rapid-sync.yml into smaller, focused workflows",
-        "Refactor variation.yml into smaller, focused workflows",
-        "Refactor venture.yml into smaller, focused workflows",
-        "Refactor workflow-radar.yml into smaller, focused workflows",
         "Refactor accessibility-audit.yml into smaller, focused workflows",
         "Refactor auto-media-release.yml into smaller, focused workflows",
         "Refactor auto-pr-automerge.yml into smaller, focused workflows",
@@ -10745,6 +10881,38 @@
   },
   "recommendations": {
     "immediate": [
+      "Add timeout-minutes to ai-content-autonomy.yml",
+      "Add timeout-minutes to ai-trends-radar.yml",
+      "Add timeout-minutes to auto-heal-workflows.yml",
+      "Add timeout-minutes to automation-advertiser.yml",
+      "Add timeout-minutes to broken-images.yml",
+      "Add timeout-minutes to cloud-autonomous-orchestrator.yml",
+      "Add timeout-minutes to components-size-report.yml",
+      "Add timeout-minutes to cursor-chat.yml",
+      "Add timeout-minutes to docs-intelligence.yml",
+      "Add timeout-minutes to external-links.yml",
+      "Add timeout-minutes to front-scheduler.yml",
+      "Add timeout-minutes to guardian-scheduler.yml",
+      "Add timeout-minutes to instagram-marketing.yml",
+      "Add timeout-minutes to knowledge-graph-radar.yml",
+      "Add timeout-minutes to linkedin-marketing.yml",
+      "Add timeout-minutes to linkedin-pro.yml",
+      "Add timeout-minutes to marketing-sync.yml",
+      "Add timeout-minutes to media-optimizer.yml",
+      "Add timeout-minutes to monetization.yml",
+      "Add timeout-minutes to og-image-refresh.yml",
+      "Add timeout-minutes to readme-auto-advertiser.yml",
+      "Add timeout-minutes to responsive-content.yml",
+      "Add timeout-minutes to security-auto-heal.yml",
+      "Add timeout-minutes to seo-audit.yml",
+      "Add timeout-minutes to seo-validator.yml",
+      "Add timeout-minutes to site-health-guardian.yml",
+      "Add timeout-minutes to site-link.yml",
+      "Add timeout-minutes to sitemap-and-search.yml",
+      "Add timeout-minutes to topics-and-clusters.yml",
+      "Add timeout-minutes to variation.yml",
+      "Add timeout-minutes to venture.yml",
+      "Add timeout-minutes to workflow-radar.yml",
       "Add timeout-minutes to homepage-auto-update.yml"
     ],
     "shortTerm": [
@@ -10822,74 +10990,40 @@
       "Refactor actionlint.yml into smaller, focused workflows",
       "Refactor agent-of-agents-trigger.yml into smaller, focused workflows",
       "Refactor ai-changelog.yml into smaller, focused workflows",
-      "Refactor ai-content-autonomy.yml into smaller, focused workflows",
       "Refactor ai-content-factory.yml into smaller, focused workflows",
-      "Refactor ai-it-ads-sync.yml into smaller, focused workflows",
       "Refactor ai-it-innovations.yml into smaller, focused workflows",
-      "Refactor ai-it-multi-factory.yml into smaller, focused workflows",
-      "Refactor ai-it-ultrafast-sync.yml into smaller, focused workflows",
       "Refactor ai-research-scout.yml into smaller, focused workflows",
-      "Refactor ai-trends-radar.yml into smaller, focused workflows",
       "Refactor auto-heal-workflows.yml into smaller, focused workflows",
-      "Refactor automation-advertiser.yml into smaller, focused workflows",
       "Refactor automation-orchestrator.yml into smaller, focused workflows",
-      "Refactor broken-images.yml into smaller, focused workflows",
       "Refactor ci-quality.yml into smaller, focused workflows",
       "Refactor ci-self-heal.yml into smaller, focused workflows",
       "Refactor ci.yml into smaller, focused workflows",
       "Refactor cloud-agents.yml into smaller, focused workflows",
-      "Refactor cloud-autonomous-orchestrator.yml into smaller, focused workflows",
       "Refactor cloud-deep-research.yml into smaller, focused workflows",
       "Refactor cloud-orchestrator-plus.yml into smaller, focused workflows",
       "Refactor codeql.yml into smaller, focused workflows",
       "Refactor commit-message-lint.yml into smaller, focused workflows",
       "Refactor commitlint.yml into smaller, focused workflows",
-      "Refactor components-size-report.yml into smaller, focused workflows",
       "Refactor crawl-normalize.yml into smaller, focused workflows",
-      "Refactor cursor-chat.yml into smaller, focused workflows",
       "Refactor dead-code-report.yml into smaller, focused workflows",
       "Refactor dependency-auto-upgrade.yml into smaller, focused workflows",
       "Refactor dependency-management.yml into smaller, focused workflows",
       "Refactor deploy.yml into smaller, focused workflows",
-      "Refactor docs-intelligence.yml into smaller, focused workflows",
       "Refactor emergency-fix.yml into smaller, focused workflows",
-      "Refactor external-links.yml into smaller, focused workflows",
-      "Refactor front-scheduler.yml into smaller, focused workflows",
-      "Refactor guardian-scheduler.yml into smaller, focused workflows",
-      "Refactor instagram-marketing.yml into smaller, focused workflows",
-      "Refactor knowledge-graph-radar.yml into smaller, focused workflows",
       "Refactor lighthouse-live.yml into smaller, focused workflows",
-      "Refactor linkedin-marketing.yml into smaller, focused workflows",
-      "Refactor linkedin-pro.yml into smaller, focused workflows",
-      "Refactor marketing-sync.yml into smaller, focused workflows",
-      "Refactor media-optimizer.yml into smaller, focused workflows",
-      "Refactor monetization.yml into smaller, focused workflows",
       "Refactor netlify-config.yml into smaller, focused workflows",
       "Refactor netlify-functions-trigger.yml into smaller, focused workflows",
-      "Refactor og-image-refresh.yml into smaller, focused workflows",
       "Refactor pa11y.yml into smaller, focused workflows",
       "Refactor pin-actions-weekly.yml into smaller, focused workflows",
       "Refactor playwright-smoke.yml into smaller, focused workflows",
       "Refactor pr-auto-curator.yml into smaller, focused workflows",
       "Refactor pr-quality-gate.yml into smaller, focused workflows",
       "Refactor pr-smoke.yml into smaller, focused workflows",
-      "Refactor readme-auto-advertiser.yml into smaller, focused workflows",
       "Refactor release.yml into smaller, focused workflows",
-      "Refactor responsive-content.yml into smaller, focused workflows",
-      "Refactor security-auto-heal.yml into smaller, focused workflows",
       "Refactor security-gates.yml into smaller, focused workflows",
       "Refactor security-scan.yml into smaller, focused workflows",
-      "Refactor seo-audit.yml into smaller, focused workflows",
-      "Refactor seo-validator.yml into smaller, focused workflows",
-      "Refactor site-health-guardian.yml into smaller, focused workflows",
-      "Refactor site-link.yml into smaller, focused workflows",
-      "Refactor sitemap-and-search.yml into smaller, focused workflows",
       "Refactor test.yml into smaller, focused workflows",
-      "Refactor topics-and-clusters.yml into smaller, focused workflows",
       "Refactor ultra-rapid-sync.yml into smaller, focused workflows",
-      "Refactor variation.yml into smaller, focused workflows",
-      "Refactor venture.yml into smaller, focused workflows",
-      "Refactor workflow-radar.yml into smaller, focused workflows",
       "Refactor accessibility-audit.yml into smaller, focused workflows",
       "Refactor auto-media-release.yml into smaller, focused workflows",
       "Refactor auto-pr-automerge.yml into smaller, focused workflows",

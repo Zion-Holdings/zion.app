@@ -1,48 +1,26 @@
 name: AI-IT Ultrafast Sync
-
 on:
   schedule:
     - cron: '*/5 * * * *'
   workflow_dispatch: {}
-
 jobs:
   sync:
     runs-on: ubuntu-latest
       timeout-minutes: 20
     permissions:
       contents: read
-  # Branch protection rules
-  branch_protection_rules:
-    - pattern: "main"
-      required_status_checks:
-        strict: true
-        contexts: []
-      required_pull_request_reviews:
-        required_approving_review_count: 1
-        dismiss_stale_reviews: true
-        require_code_owner_reviews: false
-      enforce_admins: false
-      required_linear_history: false
-      allow_force_pushes: false
-      allow_deletions: false
-      block_creations: false
-      required_conversation_resolution: true
-    steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-
       - name: Trigger Netlify automations (best-effort)
         run: |
           npm ci --no-audit --no-fund
           node scripts/trigger-netlify-automations.cjs --timeout 8000 || true
-
       - name: Commit logs and stamp
         run: |
           git config user.name "github-actions[bot]"
@@ -54,5 +32,3 @@ jobs:
             git commit -m "chore: ultrafast sync logs [skip ci]"
             git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
           fi
-
-

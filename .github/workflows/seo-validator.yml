@@ -1,50 +1,22 @@
 name: SEO & OG Validator
-
 on:
   schedule:
     - cron: '50 2 * * *'
   pull_request:
     branches: ["main"]
   workflow_dispatch: {}
-
 permissions:
   contents: read
-  # Branch protection rules
-  branch_protection_rules:
-    - pattern: "main"
-      required_status_checks:
-        strict: true
-        contexts: []
-      required_pull_request_reviews:
-        required_approving_review_count: 1
-        dismiss_stale_reviews: true
-        require_code_owner_reviews: false
-      enforce_admins: false
-      required_linear_history: false
-      allow_force_pushes: false
-      allow_deletions: false
-      block_creations: false
-      required_conversation_resolution: true
-
-jobs:
-  validate:
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-
       - name: Install deps
         run: npm ci --no-audit --no-fund
-
       - name: Run validator
         run: node automation/seo-og-validator.cjs
-
       - name: Commit fixes (if any)
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |
@@ -57,5 +29,3 @@ jobs:
           else
             echo "No changes to commit"
           fi
-
-
