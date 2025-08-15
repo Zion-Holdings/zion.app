@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T16:19:04.471Z",
+  "generatedAt": "2025-08-15T16:20:03.965Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1290,6 +1290,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1322.tsx",
       "title": "Autonomous Performance Tuning Guide — Data Engineering (2025-08-15 13:22 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Performance Tuning Guide — Data Engineering (2025-08-15 13:22 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1320",
+      "file": "pages/reports/updates/update-2025-08-15-1320.tsx",
+      "title": "Autonomous Update — 2025-08-15 13:20",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 13:20 Autonomous Update — 2025-08-15 13:20 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Bypassing airport security via SQL i"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1319",
