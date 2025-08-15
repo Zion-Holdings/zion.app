@@ -65,6 +65,10 @@
       "route": "/automation-health"
     },
     {
+      "file": "pages/about.tsx",
+      "route": "/about"
+    },
+    {
       "file": "pages/404.tsx",
       "route": "/404"
     },
@@ -8691,6 +8695,10 @@
     {
       "file": "pages/reports/updates/update-2025-08-15-2000.tsx",
       "route": "/reports/updates/update-2025-08-15-2000"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-15-1953.tsx",
+      "route": "/reports/updates/update-2025-08-15-1953"
     },
     {
       "file": "pages/reports/updates/update-2025-08-15-1952.tsx",
@@ -22295,5 +22303,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-15T22:52:00.915Z"
+  "generatedAt": "2025-08-15T22:53:01.081Z"
 }
