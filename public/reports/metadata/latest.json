@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T08:18:39.553Z",
-  "pagesScanned": 4011,
+  "generatedAt": "2025-08-15T08:19:04.698Z",
+  "pagesScanned": 4006,
   "items": [
     {
       "route": "/404",
@@ -4856,7 +4856,7 @@
       }
     },
     {
-      "route": "/reports/blueprints/blueprint-2025-08-15-081756",
+      "route": "/reports/blueprints/blueprint-2025-08-15-081852",
       "missing": [
         "og:image"
       ],
@@ -4866,7 +4866,7 @@
       }
     },
     {
-      "route": "/reports/blueprints/blueprint-2025-08-15-081805",
+      "route": "/reports/blueprints/blueprint-2025-08-15-081858",
       "missing": [
         "og:image"
       ],
@@ -4876,7 +4876,7 @@
       }
     },
     {
-      "route": "/reports/blueprints/blueprint-2025-08-15-081828",
+      "route": "/reports/blueprints/blueprint-2025-08-15-081859",
       "missing": [
         "og:image"
       ],
@@ -12216,7 +12216,7 @@
       }
     },
     {
-      "route": "/reports/cases/case-2025-08-15-081757",
+      "route": "/reports/cases/case-2025-08-15-081853",
       "missing": [
         "og:image"
       ],
@@ -12226,7 +12226,7 @@
       }
     },
     {
-      "route": "/reports/cases/case-2025-08-15-081806",
+      "route": "/reports/cases/case-2025-08-15-081857",
       "missing": [
         "og:image"
       ],
@@ -12236,17 +12236,7 @@
       }
     },
     {
-      "route": "/reports/cases/case-2025-08-15-081807",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Case Study — Automation Autonomous",
-        "description": "Case Study — Automation Autonomous — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/cases/case-2025-08-15-081826",
+      "route": "/reports/cases/case-2025-08-15-081858",
       "missing": [
         "og:image"
       ],
@@ -19586,7 +19576,7 @@
       }
     },
     {
-      "route": "/reports/guides/guide-2025-08-15-081757",
+      "route": "/reports/guides/guide-2025-08-15-081853",
       "missing": [
         "og:image"
       ],
@@ -19596,7 +19586,7 @@
       }
     },
     {
-      "route": "/reports/guides/guide-2025-08-15-081806",
+      "route": "/reports/guides/guide-2025-08-15-081857",
       "missing": [
         "og:image"
       ],
@@ -19606,17 +19596,7 @@
       }
     },
     {
-      "route": "/reports/guides/guide-2025-08-15-081807",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Guide — Cloud Improving Implementation",
-        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/guides/guide-2025-08-15-081826",
+      "route": "/reports/guides/guide-2025-08-15-081858",
       "missing": [
         "og:image"
       ],
@@ -22333,16 +22313,6 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-15 08-17",
         "description": "Innovation Insight — 2025-08-15 08-17 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/innovations/insight-2025-08-15T08-18",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Innovation Insight — 2025-08-15 08-18",
-        "description": "Innovation Insight — 2025-08-15 08-18 — auto-suggested description"
       }
     },
     {
@@ -29656,7 +29626,7 @@
       }
     },
     {
-      "route": "/reports/patterns/pattern-2025-08-15-081757",
+      "route": "/reports/patterns/pattern-2025-08-15-081853",
       "missing": [
         "og:image"
       ],
@@ -29666,7 +29636,7 @@
       }
     },
     {
-      "route": "/reports/patterns/pattern-2025-08-15-081806",
+      "route": "/reports/patterns/pattern-2025-08-15-081857",
       "missing": [
         "og:image"
       ],
@@ -29676,17 +29646,7 @@
       }
     },
     {
-      "route": "/reports/patterns/pattern-2025-08-15-081807",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Pattern — Cloud Improving Continuously",
-        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/patterns/pattern-2025-08-15-081826",
+      "route": "/reports/patterns/pattern-2025-08-15-081858",
       "missing": [
         "og:image"
       ],
@@ -34426,7 +34386,7 @@
       }
     },
     {
-      "route": "/reports/playbooks/playbook-2025-08-15-081758",
+      "route": "/reports/playbooks/playbook-2025-08-15-081851",
       "missing": [
         "og:image"
       ],
@@ -34436,7 +34396,7 @@
       }
     },
     {
-      "route": "/reports/playbooks/playbook-2025-08-15-081807",
+      "route": "/reports/playbooks/playbook-2025-08-15-081854",
       "missing": [
         "og:image"
       ],
@@ -34446,7 +34406,7 @@
       }
     },
     {
-      "route": "/reports/playbooks/playbook-2025-08-15-081827",
+      "route": "/reports/playbooks/playbook-2025-08-15-081858",
       "missing": [
         "og:image"
       ],
@@ -37546,13 +37506,16 @@
       }
     },
     {
-      "route": "/reports/updates/update-2025-08-15-0518",
+      "route": "/reports/updates/update-2025-08-15-0519",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-15 05:18",
-        "description": "Autonomous Update — 2025-08-15 05:18 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-15 05:19",
+        "description": "Autonomous Update — 2025-08-15 05:19 — auto-suggested description"
       }
     },
     {
@@ -40083,16 +40046,6 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-15 08-17",
         "description": "Autonomous Update — 2025-08-15 08-17 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-15T08-18",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-15 08-18",
-        "description": "Autonomous Update — 2025-08-15 08-18 — auto-suggested description"
       }
     },
     {

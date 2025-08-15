@@ -4,17 +4,17 @@ export default function InsightPage() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <Head>
-        <title>Blueprint: AI QA & Eval</title>
-        <meta name="description" content="Patterns to enhance security." />
-        <meta property="og:title" content="Blueprint: AI QA & Eval" />
-        <meta property="og:description" content="Patterns to enhance security." />
+        <title>Blueprint: Agent Ops</title>
+        <meta name="description" content="Patterns to accelerate delivery." />
+        <meta property="og:title" content="Blueprint: Agent Ops" />
+        <meta property="og:description" content="Patterns to accelerate delivery." />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
-        <h1 className="text-3xl font-extrabold">Blueprint: AI QA & Eval</h1>
-        <p className="text-white/70">Patterns to enhance security.</p>
+        <h1 className="text-3xl font-extrabold">Blueprint: Agent Ops</h1>
+        <p className="text-white/70">Patterns to accelerate delivery.</p>
         <ul className="mt-6 list-disc pl-6 space-y-2">
-          <li>Scope: Blueprint: AI QA & Eval.</li>
+          <li>Scope: Blueprint: Agent Ops.</li>
           <li>Signals: AI Services.</li>
           <li>Architecture: ingestion → retrieval → reasoning → evaluation.</li>
           <li>Ops: observability, rollback, SLOs, security.</li>
