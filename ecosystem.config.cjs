@@ -134,6 +134,60 @@ module.exports = {
         ALIGNMENT_DOC_URL: 'https://docs.google.com/document/d/1Q3-QbWjIIj83VYX_Hx258kmvEyF9qBR2nF09IOi4ppM/edit?usp=sharing',
         SITE_URL: 'https://ziontechgroup.netlify.app'
       }
+    },
+
+    // AI Service Scheduler - Intelligent scheduling based on market conditions (runs perpetually)
+    {
+      name: 'ai-service-scheduler',
+      cwd: rootDir,
+      script: 'automation/ai-service-scheduler.cjs',
+      interpreter: 'node',
+      time: true,
+      autorestart: true,
+      watch: false,
+      max_memory_restart: '512M',
+      env: {
+        NODE_ENV: 'production',
+        MAX_SERVICES_PER_DAY: '12',
+        MARKET_ANALYSIS_ENABLED: 'true'
+      }
+    },
+
+    // AI Market Intelligence - Advanced market analysis and trend detection (runs perpetually)
+    {
+      name: 'ai-market-intelligence',
+      cwd: rootDir,
+      script: 'automation/ai-market-intelligence.cjs',
+      interpreter: 'node',
+      time: true,
+      autorestart: true,
+      watch: false,
+      max_memory_restart: '1G',
+      env: {
+        NODE_ENV: 'production',
+        MARKET_ANALYSIS_INTERVAL: '30',
+        TREND_DETECTION_ENABLED: 'true',
+        COMPETITIVE_ANALYSIS_ENABLED: 'true'
+      }
+    },
+
+    // AI Service Optimizer - Continuous service optimization and enhancement (runs perpetually)
+    {
+      name: 'ai-service-optimizer',
+      cwd: rootDir,
+      script: 'automation/ai-service-optimizer.cjs',
+      interpreter: 'node',
+      time: true,
+      autorestart: true,
+      watch: false,
+      max_memory_restart: '1G',
+      env: {
+        NODE_ENV: 'production',
+        OPTIMIZATION_INTERVAL: '60',
+        PERFORMANCE_OPTIMIZATION_ENABLED: 'true',
+        QUALITY_OPTIMIZATION_ENABLED: 'true',
+        MARKET_FIT_OPTIMIZATION_ENABLED: 'true'
+      }
     }
   ]
 };
