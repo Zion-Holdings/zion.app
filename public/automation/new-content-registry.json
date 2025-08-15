@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2025-08-15T17:20:30.000Z",
+  "generatedAt": "2025-08-15T17:30:30.656Z",
   "items": [
     {
-      "title": "Innovation Insight — 2025-08-15 17-20",
-      "href": "/reports/innovations/insight-2025-08-15T17-20",
+      "title": "Innovation Insight — 2025-08-15 17-30",
+      "href": "/reports/innovations/insight-2025-08-15T17-30",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T17:20:29.928Z",
+      "createdAt": "2025-08-15T17:30:30.586Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-15 17-20",
-      "href": "/reports/updates/update-2025-08-15T17-20",
+      "title": "Autonomous Update — 2025-08-15 17-30",
+      "href": "/reports/updates/update-2025-08-15T17-30",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T17:20:29.928Z",
+      "createdAt": "2025-08-15T17:30:30.586Z",
       "source": "cloud-content-factory"
     }
   ]
