@@ -98,9 +98,42 @@ module.exports = {
       interpreter: 'node',
       time: true,
       autorestart: true,
+      watch: false,
+      max_memory_restart: '256M',
       env: {
-        SYNC_INTERVAL_SECONDS: '60',
-        TARGET_BRANCH: 'main'
+        NODE_ENV: 'production'
+      }
+    },
+
+    // AI Service Generator - Creates new AI services automatically (every 2 hours)
+    {
+      name: 'ai-service-generator',
+      cwd: rootDir,
+      script: 'automation/ai-service-generator.cjs',
+      interpreter: 'node',
+      time: true,
+      autorestart: false,
+      cron_restart: '0 */2 * * *',
+      env: {
+        NODE_ENV: 'production',
+        MAX_SERVICES_PER_RUN: '3'
+      }
+    },
+
+    // AI Service Scheduler - Intelligent scheduling based on market conditions (runs perpetually)
+    {
+      name: 'ai-service-scheduler',
+      cwd: rootDir,
+      script: 'automation/ai-service-scheduler.cjs',
+      interpreter: 'node',
+      time: true,
+      autorestart: true,
+      watch: false,
+      max_memory_restart: '512M',
+      env: {
+        NODE_ENV: 'production',
+        MAX_SERVICES_PER_DAY: '12',
+        MARKET_ANALYSIS_ENABLED: 'true'
       }
     }
     ,
