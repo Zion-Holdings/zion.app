@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T23:13:00.866Z",
-  "pagesScanned": 5591,
+  "generatedAt": "2025-08-15T23:14:00.895Z",
+  "pagesScanned": 5594,
   "items": [
     {
       "route": "/404",
@@ -53517,14 +53517,24 @@
     {
       "route": "/reports/updates/update-2025-08-15-2013",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 20:13",
+        "description": "Autonomous Update — 2025-08-15 20:13 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-2014",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-15 20:13",
-        "description": "Autonomous Update — 2025-08-15 20:13 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-15 20:14",
+        "description": "Autonomous Update — 2025-08-15 20:14 — auto-suggested description"
       }
     },
     {
@@ -55898,6 +55908,20 @@
       }
     },
     {
+      "route": "/robots",
+      "missing": [
+        "description",
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "robots",
+        "description": "robots — auto-suggested description"
+      }
+    },
+    {
       "route": "/search",
       "missing": [
         "og:image"
@@ -55953,6 +55977,16 @@
       "suggestion": {
         "title": "sitemap",
         "description": "sitemap — auto-suggested description"
+      }
+    },
+    {
+      "route": "/terms",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Terms of Service",
+        "description": "Terms of Service — auto-suggested description"
       }
     }
   ]
