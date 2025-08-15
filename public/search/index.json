@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T14:19:02.883Z",
+  "generatedAt": "2025-08-15T14:20:03.884Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1194,6 +1194,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1209.tsx",
       "title": "Autonomous Validation & QA Plan — AI Service Design (2025-08-15 12:09 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Validation & QA Plan — AI Service Design (2025-08-15 12:09 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1120",
+      "file": "pages/reports/updates/update-2025-08-15-1120.tsx",
+      "title": "Autonomous Update — 2025-08-15 11:20",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 11:20 Autonomous Update — 2025-08-15 11:20 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Paper Airplane Design"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1119",
