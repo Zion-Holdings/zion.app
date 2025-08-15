@@ -1,53 +1,74 @@
 {
-  "generatedAt": "2025-08-15T09:00:25.352Z",
+  "generatedAt": "2025-08-15T09:04:46.585Z",
   "items": [
     {
-      "title": "Innovation Insight — 2025-08-15 09-00",
-      "href": "/reports/innovations/insight-2025-08-15T09-00",
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-15-090446",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T09:00:24.485Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-15 09-00",
-      "href": "/reports/updates/update-2025-08-15T09-00",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T09:00:24.485Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-15 09-00",
-      "href": "/reports/innovations/insight-2025-08-15T09-00",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T09:00:24.485Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-15 09-00",
-      "href": "/reports/updates/update-2025-08-15T09-00",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T09:00:24.485Z",
-      "source": "cloud-content-factory"
+      "createdAt": "2025-08-15T09:04:46.451Z",
+      "source": "cloud-playbook-factory"
     },
     {
       "title": "Case Study — Automation Autonomous",
-      "href": "/reports/cases/case-2025-08-15-090023",
+      "href": "/reports/cases/case-2025-08-15-090446",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T09:00:23.637Z",
+      "createdAt": "2025-08-15T09:04:46.078Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Guide — Cloud Improving Implementation",
-      "href": "/reports/guides/guide-2025-08-15-090023",
+      "href": "/reports/guides/guide-2025-08-15-090446",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T09:00:23.637Z",
+      "createdAt": "2025-08-15T09:04:46.078Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Cloud Improving Continuously",
-      "href": "/reports/patterns/pattern-2025-08-15-090023",
+      "href": "/reports/patterns/pattern-2025-08-15-090446",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T09:00:23.637Z",
+      "createdAt": "2025-08-15T09:04:46.078Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Case Study — Automation Autonomous",
+      "href": "/reports/cases/case-2025-08-15-090445",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T09:04:45.584Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-15-090445",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T09:04:45.584Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Cloud Improving Continuously",
+      "href": "/reports/patterns/pattern-2025-08-15-090445",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T09:04:45.584Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Case Study — Automation Autonomous",
+      "href": "/reports/cases/case-2025-08-15-090444",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T09:04:44.768Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-15-090444",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T09:04:44.768Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Cloud Improving Continuously",
+      "href": "/reports/patterns/pattern-2025-08-15-090444",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T09:04:44.768Z",
       "source": "cloud-deep-research-factory"
     }
   ]
