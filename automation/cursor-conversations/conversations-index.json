@@ -682,5 +682,29 @@
     "startTime": "2025-08-15T15:02:05.082Z",
     "status": "active",
     "filePath": "conv-1755270125082.json"
+  },
+  {
+    "id": "conv-1755270284748",
+    "type": "deployment-planning",
+    "participants": [
+      "DevOps Engineer",
+      "Backend Developer",
+      "Security Expert"
+    ],
+    "startTime": "2025-08-15T15:04:44.748Z",
+    "status": "active",
+    "filePath": "conv-1755270284748.json"
+  },
+  {
+    "id": "conv-1755270286752",
+    "type": "architecture-discussion",
+    "participants": [
+      "Backend Developer",
+      "DevOps Engineer",
+      "Security Expert"
+    ],
+    "startTime": "2025-08-15T15:04:46.752Z",
+    "status": "active",
+    "filePath": "conv-1755270286752.json"
   }
 ]
