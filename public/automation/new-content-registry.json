@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "generatedAt": "2025-08-15T07:38:42.180Z",
   "items": [
     {
@@ -34,20 +35,41 @@
       "href": "/reports/cases/case-2025-08-15-073333",
       "desc": "New autonomous content",
       "createdAt": "2025-08-15T07:33:33.549Z",
+=======
+  "generatedAt": "2025-08-15T07:48:27.310Z",
+  "items": [
+    {
+      "title": "Case Study — Automation Autonomous",
+      "href": "/reports/cases/case-2025-08-15-074827",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T07:48:27.271Z",
+>>>>>>> ee24b19dfbc (chore(sync): advanced autonomous sync)
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Guide — Cloud Improving Implementation",
+<<<<<<< HEAD
       "href": "/reports/guides/guide-2025-08-15-073333",
       "desc": "New autonomous content",
       "createdAt": "2025-08-15T07:33:33.549Z",
+=======
+      "href": "/reports/guides/guide-2025-08-15-074827",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T07:48:27.271Z",
+>>>>>>> ee24b19dfbc (chore(sync): advanced autonomous sync)
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Cloud Improving Continuously",
+<<<<<<< HEAD
       "href": "/reports/patterns/pattern-2025-08-15-073333",
       "desc": "New autonomous content",
       "createdAt": "2025-08-15T07:33:33.549Z",
+=======
+      "href": "/reports/patterns/pattern-2025-08-15-074827",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T07:48:27.271Z",
+>>>>>>> ee24b19dfbc (chore(sync): advanced autonomous sync)
       "source": "cloud-deep-research-factory"
     }
   ]
