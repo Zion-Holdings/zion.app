@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T15:42:03.030Z",
+  "generatedAt": "2025-08-15T15:43:02.961Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1272,6 +1272,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1250.tsx",
       "title": "Autonomous Performance Tuning Guide — Applied NLP & RAG (2025-08-15 12:50 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Performance Tuning Guide — Applied NLP & RAG (2025-08-15 12:50 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1243",
+      "file": "pages/reports/updates/update-2025-08-15-1243.tsx",
+      "title": "Autonomous Update — 2025-08-15 12:43",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 12:43 Autonomous Update — 2025-08-15 12:43 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Paper Airplane Design"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1242",
