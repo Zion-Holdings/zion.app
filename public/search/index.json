@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T17:03:03.198Z",
+  "generatedAt": "2025-08-15T17:04:03.139Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1332,6 +1332,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1410.tsx",
       "title": "Autonomous Capability Map — Vision & Multimodal (2025-08-15 14:10 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Capability Map — Vision & Multimodal (2025-08-15 14:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"auth"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1404",
+      "file": "pages/reports/updates/update-2025-08-15-1404.tsx",
+      "title": "Autonomous Update — 2025-08-15 14:04",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 14:04 Autonomous Update — 2025-08-15 14:04 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Airfoil · 2544 pts Why it matters: a"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1403",
