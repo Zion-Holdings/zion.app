@@ -4,7 +4,7 @@
 
 Autonomous, cloud‑native app with self‑running automations.
 
-Home: https://github.com/Zion-Holdings/zion.app#readme
+Home: https://github.com/Zion-Holdings/zion#readme
 
 ### Highlights
 - **Autonomous cloud automations**: GitHub Actions run on schedules to maintain, audit, and improve the repo without human intervention.

@@ -20,7 +20,7 @@ export default function Footer() {
           <a href="/sitemap.xml" className="hover:text-white">Sitemap</a>
         </nav>
         <div className="flex items-start gap-4 md:justify-end">
-          <a href="https://github.com/Zion-Holdings/zion.app" target="_blank" rel="noopener noreferrer" className="rounded-md border border-white/10 bg-white/5 px-3 py-2 hover:bg-white/10">GitHub</a>
+          <a href="https://github.com/Zion-Holdings/zion" target="_blank" rel="noopener noreferrer" className="rounded-md border border-white/10 bg-white/5 px-3 py-2 hover:bg-white/10">GitHub</a>
           <a href="https://ziontechgroup.com" target="_blank" rel="noopener noreferrer" className="rounded-md border border-white/10 bg-white/5 px-3 py-2 hover:bg-white/10">Website</a>
         </div>
       </div>
