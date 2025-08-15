@@ -1,0 +1,26 @@
+{
+  "timestamp": "2025-08-15T03:48:26.805Z",
+  "metrics": {
+    "linkHealth": {
+      "total": 51,
+      "healthy": 49,
+      "broken": 2,
+      "score": 96.07843137254902,
+      "trend": "stable"
+    },
+    "performance": {
+      "responseTime": 0,
+      "throughput": 0,
+      "errorRate": 3.9215686274509802,
+      "uptime": 100
+    },
+    "system": {
+      "memoryUsage": 70.39731920433856,
+      "cpuUsage": 49.27520184113487,
+      "activeConnections": 69,
+      "lastUpdate": "2025-08-15T03:48:26.800Z",
+      "uptime": 100
+    }
+  },
+  "alerts": []
+}
