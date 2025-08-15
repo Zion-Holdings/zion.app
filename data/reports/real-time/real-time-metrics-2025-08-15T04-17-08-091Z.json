@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-15T04:17:18.093Z",
+  "timestamp": "2025-08-15T04:17:08.091Z",
   "metrics": {
     "linkHealth": {
       "total": 51,
@@ -10,16 +10,16 @@
     },
     "performance": {
       "responseTime": 0,
-      "throughput": 815.782458011197,
+      "throughput": 1223.2660403757745,
       "errorRate": 3.9215686274509802,
       "uptime": 100
     },
     "system": {
-      "memoryUsage": 38.48194044405317,
-      "cpuUsage": 12.549080500702715,
-      "activeConnections": 35,
-      "lastUpdate": "2025-08-15T04:17:13.092Z",
-      "uptime": 99.99944430555556
+      "memoryUsage": 79.82671163261534,
+      "cpuUsage": 4.313937674927026,
+      "activeConnections": 71,
+      "lastUpdate": "2025-08-15T04:17:03.091Z",
+      "uptime": 99.99972213888888
     }
   },
   "alerts": []

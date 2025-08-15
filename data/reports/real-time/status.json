@@ -1,6 +1,6 @@
 {
   "status": "running",
-  "lastUpdate": "2025-08-15T03:48:31.812Z",
+  "lastUpdate": "2025-08-15T04:17:18.093Z",
   "metrics": {
     "linkHealth": {
       "total": 51,
@@ -11,16 +11,16 @@
     },
     "performance": {
       "responseTime": 0,
-      "throughput": 0,
+      "throughput": 815.782458011197,
       "errorRate": 3.9215686274509802,
       "uptime": 100
     },
     "system": {
-      "memoryUsage": 85.87267496906219,
-      "cpuUsage": 10.246294041325822,
-      "activeConnections": 30,
-      "lastUpdate": "2025-08-15T03:48:31.812Z",
-      "uptime": 99.999861
+      "memoryUsage": 38.48194044405317,
+      "cpuUsage": 12.549080500702715,
+      "activeConnections": 35,
+      "lastUpdate": "2025-08-15T04:17:18.093Z",
+      "uptime": 99.99944430555556
     }
   },
   "activeAlerts": 0
