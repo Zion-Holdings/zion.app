@@ -1,47 +1,4 @@
 {
-  "generatedAt": "2025-08-15T09:30:51.189Z",
-  "items": [
-    {
-      "title": "Guide: RAG Platforms",
-      "subtitle": "Patterns to increase accuracy.",
-      "path": "/reports/innovations/insight-2025-08-15-0935",
-      "createdAt": "2025-08-15T09:35:43.891Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Reference Architecture — Autonomous Content Mesh",
-      "href": "/reports/blueprints/blueprint-2025-08-15-093051",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T09:30:51.157Z",
-      "source": "cloud-blueprint-factory"
-    },
-    {
-      "title": "Playbook — Autonomous Delivery",
-      "href": "/reports/playbooks/playbook-2025-08-15-093051",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T09:30:51.122Z",
-      "source": "cloud-playbook-factory"
-    },
-    {
-      "title": "Case Study — Automation Autonomous",
-      "href": "/reports/cases/case-2025-08-15-093051",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T09:30:51.079Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Guide — Cloud Improving Implementation",
-      "href": "/reports/guides/guide-2025-08-15-093051",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T09:30:51.079Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Pattern — Cloud Improving Continuously",
-      "href": "/reports/patterns/pattern-2025-08-15-093051",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T09:30:51.079Z",
-      "source": "cloud-deep-research-factory"
-    }
-  ]
+  "generatedAt": "2025-08-15T09:40:24.475Z",
+  "items": []
 }
