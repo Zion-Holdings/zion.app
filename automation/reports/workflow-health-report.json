@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-15T22:47:59.913Z",
+  "timestamp": "2025-08-15T22:48:42.427Z",
   "summary": {
     "totalWorkflows": 148,
     "activeWorkflows": 73,
@@ -1404,8 +1404,8 @@
       "name": "automation-orchestrator.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/automation-orchestrator.yml",
-      "size": 4878,
-      "lines": 177,
+      "size": 4590,
+      "lines": 171,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
