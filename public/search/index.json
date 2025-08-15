@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T20:04:03.444Z",
+  "generatedAt": "2025-08-15T20:05:03.395Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1440,6 +1440,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1710.tsx",
       "title": "Autonomous Checklist — MLOps & Model Reliability (2025-08-15 17:10 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Checklist — MLOps & Model Reliability (2025-08-15 17:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"aut"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1705",
+      "file": "pages/reports/updates/update-2025-08-15-1705.tsx",
+      "title": "Autonomous Update — 2025-08-15 17:05",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 17:05 Autonomous Update — 2025-08-15 17:05 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Airfoil · 2544 pts Why it matters: a"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1704",
