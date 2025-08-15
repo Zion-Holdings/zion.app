@@ -6,7 +6,10 @@ export default function InsightsIndex() {
       <Head>
         <title>Insights | Zion Tech Group</title>
         <meta name="description" content="Browse our collection of insights and insights." />
-      </Head>
+      
+        <meta property="og:title" content="Insights" />
+        <meta property="og:description" content="Insights — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       
       <main className="container mx-auto px-6 py-12">
         <h1 className="text-4xl font-bold mb-8">Insights</h1>
