@@ -1,47 +1,33 @@
 {
-  "generatedAt": "2025-08-15T08:06:44.313Z",
+  "generatedAt": "2025-08-15T08:07:16.327Z",
   "items": [
     {
-      "title": "Innovation Insight — 2025-08-15 08-06",
-      "href": "/reports/innovations/insight-2025-08-15T08-06",
+      "title": "Innovation Insight — 2025-08-15 08-07",
+      "href": "/reports/innovations/insight-2025-08-15T08-07",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T08:06:44.255Z",
+      "createdAt": "2025-08-15T08:07:16.127Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-15 08-06",
-      "href": "/reports/updates/update-2025-08-15T08-06",
+      "title": "Autonomous Update — 2025-08-15 08-07",
+      "href": "/reports/updates/update-2025-08-15T08-07",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T08:06:44.255Z",
+      "createdAt": "2025-08-15T08:07:16.127Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Innovation Insight — 2025-08-15 08-06",
-      "href": "/reports/innovations/insight-2025-08-15T08-06",
+      "title": "Innovation Insight — 2025-08-15 08-07",
+      "href": "/reports/innovations/insight-2025-08-15T08-07",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T08:06:44.255Z",
+      "createdAt": "2025-08-15T08:07:16.127Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-15 08-06",
-      "href": "/reports/updates/update-2025-08-15T08-06",
+      "title": "Autonomous Update — 2025-08-15 08-07",
+      "href": "/reports/updates/update-2025-08-15T08-07",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T08:06:44.255Z",
+      "createdAt": "2025-08-15T08:07:16.127Z",
       "source": "cloud-content-factory"
-    },
-    {
-      "title": "Reference Architecture — Autonomous Content Mesh",
-      "href": "/reports/blueprints/blueprint-2025-08-15-080643",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T08:06:43.735Z",
-      "source": "cloud-blueprint-factory"
-    },
-    {
-      "title": "Playbook — Autonomous Delivery",
-      "href": "/reports/playbooks/playbook-2025-08-15-080643",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T08:06:43.536Z",
-      "source": "cloud-playbook-factory"
     }
   ]
 }
