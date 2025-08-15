@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T20:24:02.986Z",
+  "generatedAt": "2025-08-15T20:25:03.029Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1452,6 +1452,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1730.tsx",
       "title": "Autonomous Validation & QA Plan — Vision & Multimodal (2025-08-15 17:30 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Validation & QA Plan — Vision & Multimodal (2025-08-15 17:30 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\","
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1725",
+      "file": "pages/reports/updates/update-2025-08-15-1725.tsx",
+      "title": "Autonomous Update — 2025-08-15 17:25",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 17:25 Autonomous Update — 2025-08-15 17:25 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Bypassing airport security via SQL i"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1724",
