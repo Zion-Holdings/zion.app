@@ -1,12 +1,33 @@
 {
-  "generatedAt": "2025-08-15T06:20:51.444Z",
+  "generatedAt": "2025-08-15T06:20:55.329Z",
   "items": [
     {
-      "title": "Playbook: Agent Ops",
-      "subtitle": "Patterns to increase accuracy.",
-      "path": "/reports/innovations/insight-2025-08-15-0620",
-      "createdAt": "2025-08-15T06:20:52.356Z",
-      "kind": "insight"
+      "title": "Innovation Insight — 2025-08-15 06-20",
+      "href": "/reports/innovations/insight-2025-08-15T06-20",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T06:20:55.246Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-15 06-20",
+      "href": "/reports/updates/update-2025-08-15T06-20",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T06:20:55.246Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-15 06-20",
+      "href": "/reports/innovations/insight-2025-08-15T06-20",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T06:20:55.246Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-15 06-20",
+      "href": "/reports/updates/update-2025-08-15T06-20",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T06:20:55.246Z",
+      "source": "cloud-content-factory"
     },
     {
       "title": "Case Study — Automation Autonomous",
