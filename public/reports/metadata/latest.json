@@ -1,6 +1,11 @@
 {
+<<<<<<< Updated upstream
   "generatedAt": "2025-08-15T06:16:40.120Z",
   "pagesScanned": 1248,
+=======
+  "generatedAt": "2025-08-15T06:22:24.132Z",
+  "pagesScanned": 1405,
+>>>>>>> Stashed changes
   "items": [
     {
       "route": "/404",
@@ -5816,6 +5821,69 @@
       }
     },
     {
+<<<<<<< Updated upstream
+=======
+      "route": "/reports/innovations/insight-2025-08-15-0617",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Blueprint: MLOps",
+        "description": "Blueprint: MLOps — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-0618",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Runbook: Edge AI",
+        "description": "Runbook: Edge AI — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-0619",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Blueprint: DevSecOps AI",
+        "description": "Blueprint: DevSecOps AI — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-0620",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook: Agent Ops",
+        "description": "Playbook: Agent Ops — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-0621",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide: AI QA & Eval",
+        "description": "Guide: AI QA & Eval — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-0622",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Checklist: AI QA & Eval",
+        "description": "Checklist: AI QA & Eval — auto-suggested description"
+      }
+    },
+    {
+>>>>>>> Stashed changes
       "route": "/reports/innovations/insight-2025-08-15T02-12",
       "missing": [
         "og:image"
@@ -12016,6 +12084,69 @@
       }
     },
     {
+<<<<<<< Updated upstream
+=======
+      "route": "/reports/updates/update-2025-08-15-0617",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Playbook — MLOps & Model Reliability (2025-08-15 06:17 UTC)",
+        "description": "Autonomous Playbook — MLOps & Model Reliability (2025-08-15 06:17 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0618",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Capability Map — Evaluation & Safety (2025-08-15 06:18 UTC)",
+        "description": "Autonomous Capability Map — Evaluation & Safety (2025-08-15 06:18 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0619",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Blueprint — Evaluation & Safety (2025-08-15 06:19 UTC)",
+        "description": "Autonomous Blueprint — Evaluation & Safety (2025-08-15 06:19 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0620",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Security Hardening Guide — Vision & Multimodal (2025-08-15 06:20 UTC)",
+        "description": "Autonomous Security Hardening Guide — Vision & Multimodal (2025-08-15 06:20 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0621",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Checklist — MLOps & Model Reliability (2025-08-15 06:21 UTC)",
+        "description": "Autonomous Checklist — MLOps & Model Reliability (2025-08-15 06:21 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0622",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Capability Map — Agentic Workflows (2025-08-15 06:22 UTC)",
+        "description": "Autonomous Capability Map — Agentic Workflows (2025-08-15 06:22 UTC) — auto-suggested description"
+      }
+    },
+    {
+>>>>>>> Stashed changes
       "route": "/reports/updates/update-2025-08-15T02-12",
       "missing": [
         "og:image"
