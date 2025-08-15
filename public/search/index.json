@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T13:07:02.962Z",
+  "generatedAt": "2025-08-15T13:08:02.909Z",
   "entries": [
     {
       "route": "/site-health",
@@ -1098,6 +1098,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1034.tsx",
       "title": "Autonomous Security Hardening Guide — Edge AI & IoT (2025-08-15 10:34 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Security Hardening Guide — Edge AI & IoT (2025-08-15 10:34 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1008",
+      "file": "pages/reports/updates/update-2025-08-15-1008.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:08",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:08 Autonomous Update — 2025-08-15 10:08 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : The young, inexperienced engineers a"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1007",
