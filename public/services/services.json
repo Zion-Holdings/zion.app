@@ -124,5 +124,173 @@
       "API.md",
       "deployment.md"
     ]
+  },
+  {
+    "id": "data-pipeline-meca0x7d",
+    "name": "Intelligent Data Pipeline System",
+    "type": "Data Pipeline",
+    "description": "Scalable data processing and analytics platforms",
+    "category": "Data Pipeline",
+    "technology": "WebAssembly, Docker, gRPC",
+    "status": "development",
+    "features": [
+      "Real-time streaming",
+      "Scalable architecture",
+      "Custom alerting rules",
+      "Data validation"
+    ],
+    "pricing": {
+      "model": "usage-based",
+      "startingPrice": "$5/device/month",
+      "details": "Includes data storage and processing"
+    },
+    "links": {
+      "demo": "/demo/data-pipeline-meca0x7d/",
+      "documentation": "/docs/data-pipeline-meca0x7d/",
+      "github": "https://github.com/ai-factory/data-pipeline-meca0x7d",
+      "deployment": "/deploy/data-pipeline-meca0x7d/"
+    },
+    "metrics": {
+      "uptime": "99.7%",
+      "responseTime": "<50ms",
+      "users": "5,000+"
+    },
+    "lastUpdated": "2025-08-15",
+    "path": "services/data-pipeline-meca0x7d",
+    "files": [
+      "README.md",
+      "package.json",
+      "Dockerfile",
+      "docker-compose.yml",
+      "kubernetes.yaml",
+      "API.md",
+      "deployment.md"
+    ]
+  },
+  {
+    "id": "real-time-analytics-meca0x7e",
+    "name": "Next-Gen Real-time Analytics Framework",
+    "type": "Real-time Analytics",
+    "description": "Innovative real-time analytics solution for modern businesses",
+    "category": "Real-time Analytics",
+    "technology": "Node.js, React, gRPC, PyTorch",
+    "status": "beta",
+    "features": [
+      "Scalable architecture",
+      "High performance",
+      "Easy integration",
+      "Comprehensive documentation"
+    ],
+    "pricing": {
+      "model": "subscription",
+      "startingPrice": "$79/month",
+      "details": "Flexible pricing plans available"
+    },
+    "links": {
+      "demo": "/demo/real-time-analytics-meca0x7e/",
+      "documentation": "/docs/real-time-analytics-meca0x7e/",
+      "github": "https://github.com/ai-factory/real-time-analytics-meca0x7e",
+      "deployment": "/deploy/real-time-analytics-meca0x7e/"
+    },
+    "metrics": {
+      "uptime": "99.5%",
+      "responseTime": "<300ms",
+      "users": "5,000+"
+    },
+    "lastUpdated": "2025-08-15",
+    "path": "services/real-time-analytics-meca0x7e",
+    "files": [
+      "README.md",
+      "package.json",
+      "Dockerfile",
+      "docker-compose.yml",
+      "kubernetes.yaml",
+      "API.md",
+      "deployment.md"
+    ]
+  },
+  {
+    "id": "blockchain-meca0x7e",
+    "name": "Autonomous Blockchain Engine",
+    "type": "Blockchain",
+    "description": "Secure and transparent blockchain applications",
+    "category": "Blockchain",
+    "technology": "React, TypeScript",
+    "status": "development",
+    "features": [
+      "Smart contract templates",
+      "Security auditing",
+      "Multi-chain support",
+      "DeFi integration"
+    ],
+    "pricing": {
+      "model": "transaction-based",
+      "startingPrice": "$0.01/transaction",
+      "details": "Gas fees not included"
+    },
+    "links": {
+      "demo": "/demo/blockchain-meca0x7e/",
+      "documentation": "/docs/blockchain-meca0x7e/",
+      "github": "https://github.com/ai-factory/blockchain-meca0x7e",
+      "deployment": "/deploy/blockchain-meca0x7e/"
+    },
+    "metrics": {
+      "uptime": "99.5%",
+      "responseTime": "<500ms",
+      "users": "2,000+"
+    },
+    "lastUpdated": "2025-08-15",
+    "path": "services/blockchain-meca0x7e",
+    "files": [
+      "README.md",
+      "package.json",
+      "Dockerfile",
+      "docker-compose.yml",
+      "kubernetes.yaml",
+      "API.md",
+      "deployment.md"
+    ]
+  },
+  {
+    "id": "computer-vision-meca0x9x",
+    "name": "Smart Computer Vision System",
+    "type": "Computer Vision",
+    "description": "Innovative computer vision solution for modern businesses",
+    "category": "Computer Vision",
+    "technology": "PostgreSQL, gRPC, Docker",
+    "status": "development",
+    "features": [
+      "Scalable architecture",
+      "High performance",
+      "Easy integration",
+      "Comprehensive documentation"
+    ],
+    "pricing": {
+      "model": "subscription",
+      "startingPrice": "$79/month",
+      "details": "Flexible pricing plans available"
+    },
+    "links": {
+      "demo": "/demo/computer-vision-meca0x9x/",
+      "documentation": "/docs/computer-vision-meca0x9x/",
+      "github": "https://github.com/ai-factory/computer-vision-meca0x9x",
+      "deployment": "/deploy/computer-vision-meca0x9x/"
+    },
+    "metrics": {
+      "uptime": "99.5%",
+      "responseTime": "<300ms",
+      "users": "5,000+"
+    },
+    "lastUpdated": "2025-08-15",
+    "path": "services/computer-vision-meca0x9x",
+    "files": [
+      "README.md",
+      "package.json",
+      "Dockerfile",
+      "docker-compose.yml",
+      "kubernetes.yaml",
+      "API.md",
+      "deployment.md"
+    ]
   }
 ]

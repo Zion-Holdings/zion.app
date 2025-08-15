@@ -1,0 +1,31 @@
+{
+  "name": "computer-vision-meca0x9x",
+  "version": "1.0.0",
+  "description": "Innovative computer vision solution for modern businesses",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "jest",
+    "build": "npm run build:prod",
+    "build:prod": "webpack --mode production"
+  },
+  "dependencies": {
+    "express": "^4.18.0",
+    "cors": "^2.8.5",
+    "helmet": "^7.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0",
+    "jest": "^29.0.0",
+    "webpack": "^5.88.0"
+  },
+  "keywords": [
+    "ai",
+    "automation",
+    "service",
+    "computer vision"
+  ],
+  "author": "AI Service Factory",
+  "license": "MIT"
+}

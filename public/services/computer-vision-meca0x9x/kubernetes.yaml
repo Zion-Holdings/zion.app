@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: computer-vision-meca0x9x
+  labels:
+    app: computer-vision-meca0x9x
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: computer-vision-meca0x9x
+  template:
+    metadata:
+      labels:
+        app: computer-vision-meca0x9x
+    spec:
+      containers:
+      - name: computer-vision-meca0x9x
+        image: computer-vision-meca0x9x:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: NODE_ENV
+          value: "production"
+        - name: PORT
+          value: "3000"
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 3000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 3000
+          initialDelaySeconds: 5
+          periodSeconds: 5
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: computer-vision-meca0x9x-service
+spec:
+  selector:
+    app: computer-vision-meca0x9x
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 3000
+  type: LoadBalancer
