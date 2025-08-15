@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T16:40:01.391Z",
-  "pagesScanned": 4925,
+  "generatedAt": "2025-08-15T16:41:01.038Z",
+  "pagesScanned": 4934,
   "items": [
     {
       "route": "/404",
@@ -5766,6 +5766,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-15-163031",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-164029",
       "missing": [
         "og:image"
       ],
@@ -22695,6 +22705,16 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-15-164029",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Autonomous Update Implementation",
+        "description": "Guide — Autonomous Update Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-15-0211",
       "missing": [
         "og:image"
@@ -24422,6 +24442,16 @@
       "suggestion": {
         "title": "Checklist: LLM Apps",
         "description": "Checklist: LLM Apps — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-1640",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Runbook: Agent Ops",
+        "description": "Runbook: Agent Ops — auto-suggested description"
       }
     },
     {
@@ -26212,6 +26242,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-15 16-30",
         "description": "Innovation Insight — 2025-08-15 16-30 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15T16-40",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-15 16-40",
+        "description": "Innovation Insight — 2025-08-15 16-40 — auto-suggested description"
       }
     },
     {
@@ -34735,6 +34775,16 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-15-164029",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Improving Continuously",
+        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-15-021207",
       "missing": [
         "og:image"
@@ -40246,6 +40296,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-15-163031",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-164030",
       "missing": [
         "og:image"
       ],
@@ -47275,6 +47335,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-15-1341",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 13:41",
+        "description": "Autonomous Update — 2025-08-15 13:41 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-15-1410",
       "missing": [
         "og:image"
@@ -47422,6 +47495,16 @@
       "suggestion": {
         "title": "Autonomous Capability Map — Edge AI & IoT (2025-08-15 16:30 UTC)",
         "description": "Autonomous Capability Map — Edge AI & IoT (2025-08-15 16:30 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1640",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Validation & QA Plan — AI Service Design (2025-08-15 16:40 UTC)",
+        "description": "Autonomous Validation & QA Plan — AI Service Design (2025-08-15 16:40 UTC) — auto-suggested description"
       }
     },
     {
@@ -49212,6 +49295,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-15 16-30",
         "description": "Autonomous Update — 2025-08-15 16-30 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15T16-40",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 16-40",
+        "description": "Autonomous Update — 2025-08-15 16-40 — auto-suggested description"
       }
     },
     {
