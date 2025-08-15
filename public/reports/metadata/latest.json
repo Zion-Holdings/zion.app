@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T06:17:37.493Z",
-  "pagesScanned": 1289,
+  "generatedAt": "2025-08-15T06:17:14.659Z",
+  "pagesScanned": 1272,
   "items": [
     {
       "route": "/404",
@@ -131,7 +131,10 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -1474,36 +1477,6 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-15-061701",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Reference Architecture — Autonomous Content Mesh",
-        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/blueprints/blueprint-2025-08-15-061715",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Reference Architecture — Autonomous Content Mesh",
-        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/blueprints/blueprint-2025-08-15-061727",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Reference Architecture — Autonomous Content Mesh",
-        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/blueprints/blueprint-2025-08-15-061733",
       "missing": [
         "og:image"
       ],
@@ -3523,36 +3496,6 @@
       }
     },
     {
-      "route": "/reports/cases/case-2025-08-15-061715",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Case Study — Automation Autonomous",
-        "description": "Case Study — Automation Autonomous — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/cases/case-2025-08-15-061727",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Case Study — Automation Autonomous",
-        "description": "Case Study — Automation Autonomous — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/cases/case-2025-08-15-061734",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Case Study — Automation Autonomous",
-        "description": "Case Study — Automation Autonomous — auto-suggested description"
-      }
-    },
-    {
       "route": "/reports/guides/guide-2025-08-15-021207",
       "missing": [
         "og:image"
@@ -5563,36 +5506,6 @@
       }
     },
     {
-      "route": "/reports/guides/guide-2025-08-15-061715",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Guide — Cloud Improving Implementation",
-        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/guides/guide-2025-08-15-061727",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Guide — Cloud Improving Implementation",
-        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/guides/guide-2025-08-15-061734",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Guide — Cloud Improving Implementation",
-        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
-      }
-    },
-    {
       "route": "/reports/innovations/insight-2025-08-15-0211",
       "missing": [
         "og:image"
@@ -6030,16 +5943,6 @@
       "suggestion": {
         "title": "Pilot Plan: FinOps for AI",
         "description": "Pilot Plan: FinOps for AI — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/innovations/insight-2025-08-15-0617",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Blueprint: MLOps",
-        "description": "Blueprint: MLOps — auto-suggested description"
       }
     },
     {
@@ -8503,36 +8406,6 @@
       }
     },
     {
-      "route": "/reports/patterns/pattern-2025-08-15-061715",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Pattern — Cloud Improving Continuously",
-        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/patterns/pattern-2025-08-15-061727",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Pattern — Cloud Improving Continuously",
-        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/patterns/pattern-2025-08-15-061734",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Pattern — Cloud Improving Continuously",
-        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
-      }
-    },
-    {
       "route": "/reports/playbooks/playbook-2025-08-15-021207",
       "missing": [
         "og:image"
@@ -9894,36 +9767,6 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-15-061701",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Playbook — Autonomous Delivery",
-        "description": "Playbook — Autonomous Delivery — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/playbooks/playbook-2025-08-15-061715",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Playbook — Autonomous Delivery",
-        "description": "Playbook — Autonomous Delivery — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/playbooks/playbook-2025-08-15-061727",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Playbook — Autonomous Delivery",
-        "description": "Playbook — Autonomous Delivery — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/playbooks/playbook-2025-08-15-061734",
       "missing": [
         "og:image"
       ],
@@ -12400,16 +12243,6 @@
       "suggestion": {
         "title": "Autonomous Capability Map — Applied NLP & RAG (2025-08-15 06:16 UTC)",
         "description": "Autonomous Capability Map — Applied NLP & RAG (2025-08-15 06:16 UTC) — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-15-0617",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Playbook — MLOps & Model Reliability (2025-08-15 06:17 UTC)",
-        "description": "Autonomous Playbook — MLOps & Model Reliability (2025-08-15 06:17 UTC) — auto-suggested description"
       }
     },
     {
