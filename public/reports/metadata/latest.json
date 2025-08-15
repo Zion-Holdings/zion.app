@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T05:12:00.348Z",
-  "pagesScanned": 353,
+  "generatedAt": "2025-08-15T05:13:00.487Z",
+  "pagesScanned": 354,
   "items": [
     {
       "route": "/404",
@@ -3130,6 +3130,16 @@
       "suggestion": {
         "title": "Autonomous Security Hardening Guide — Applied NLP & RAG (2025-08-15 02:11 UTC)",
         "description": "Autonomous Security Hardening Guide — Applied NLP & RAG (2025-08-15 02:11 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0212",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 02:12",
+        "description": "Autonomous Update — 2025-08-15 02:12 — auto-suggested description"
       }
     },
     {
