@@ -4378,5 +4378,17 @@
     "startTime": "2025-08-15T21:32:13.524Z",
     "status": "active",
     "filePath": "conv-1755293533524.json"
+  },
+  {
+    "id": "conv-1755293693123",
+    "type": "performance-optimization",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "DevOps Engineer"
+    ],
+    "startTime": "2025-08-15T21:34:53.123Z",
+    "status": "active",
+    "filePath": "conv-1755293693123.json"
   }
 ]
