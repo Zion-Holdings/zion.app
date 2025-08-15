@@ -406,5 +406,29 @@
     "startTime": "2025-08-15T23:54:05.904Z",
     "status": "active",
     "filePath": "conv-1755302045904.json"
+  },
+  {
+    "id": "conv-1755302205567",
+    "type": "testing-strategy",
+    "participants": [
+      "QA Tester",
+      "Frontend Specialist",
+      "Backend Developer"
+    ],
+    "startTime": "2025-08-15T23:56:45.567Z",
+    "status": "active",
+    "filePath": "conv-1755302205567.json"
+  },
+  {
+    "id": "conv-1755302207570",
+    "type": "security-audit",
+    "participants": [
+      "Security Expert",
+      "Backend Developer",
+      "DevOps Engineer"
+    ],
+    "startTime": "2025-08-15T23:56:47.570Z",
+    "status": "active",
+    "filePath": "conv-1755302207570.json"
   }
 ]
