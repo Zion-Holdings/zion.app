@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import type { GetStaticProps } from 'next';
 import Head from 'next/head';
 import FuturisticLayout from '../components/FuturisticLayout';
+import fs from 'fs';
+import path from 'path';
 
 interface AutomationHealth {
   version: string;
@@ -452,9 +454,16 @@ export default function AutomationHealthPage({ health, controlPlane, scheduleHin
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
-    // Fetch automation health data
-    const healthResponse = await fetch('http://localhost:3000/reports/automation/health.json');
-    const health = healthResponse.ok ? await healthResponse.json() : {
+    const readJson = (relPath: string) => {
+      const filePath = path.join(process.cwd(), 'public', relPath);
+      if (fs.existsSync(filePath)) {
+        const content = fs.readFileSync(filePath, 'utf-8');
+        return JSON.parse(content);
+      }
+      return null;
+    };
+
+    const health = readJson(path.join('reports', 'automation', 'health.json')) || {
       version: '1.0.0',
       lastUpdated: new Date().toISOString(),
       functions: {},
@@ -473,9 +482,7 @@ export const getStaticProps: GetStaticProps = async () => {
       }
     };
 
-    // Fetch control plane data
-    const controlResponse = await fetch('http://localhost:3000/automation/control.json');
-    const controlPlane = controlResponse.ok ? await controlResponse.json() : {
+    const controlPlane = readJson(path.join('automation', 'control.json')) || {
       globalPause: false,
       version: '1.0.0',
       lastUpdated: new Date().toISOString(),
@@ -485,9 +492,7 @@ export const getStaticProps: GetStaticProps = async () => {
       budgets: { openai: { dailyUsd: 2.50, monthlyUsd: 50.00, enabled: true }, github: { dailyActions: 2000, monthlyActions: 50000, enabled: true } }
     };
 
-    // Fetch schedule hints
-    const hintsResponse = await fetch('http://localhost:3000/automation/schedule-hints.json');
-    const scheduleHints = hintsResponse.ok ? await hintsResponse.json() : {
+    const scheduleHints = readJson(path.join('automation', 'schedule-hints.json')) || {
       version: '1.0.0',
       lastUpdated: new Date().toISOString(),
       workflows: {},
@@ -504,7 +509,6 @@ export const getStaticProps: GetStaticProps = async () => {
     };
   } catch (error) {
     console.error('Error fetching automation data:', error);
-    
     return {
       props: {
         health: {
