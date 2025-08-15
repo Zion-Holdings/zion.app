@@ -1,10 +1,10 @@
 {
   "summary": {
-    "generatedAt": "2025-08-15T11:22:32.959Z",
-    "totalFiles": 6,
-    "totalIssues": 3,
+    "generatedAt": "2025-08-15T14:30:19.607Z",
+    "totalFiles": 9,
+    "totalIssues": 6,
     "criticalIssues": 0,
-    "warningIssues": 3,
+    "warningIssues": 6,
     "errorIssues": 0
   },
   "results": [
@@ -39,6 +39,50 @@
             175,
             178,
             180
+          ],
+          "pattern": "/<div\\s+(?!.*\\bkey=)/g"
+        }
+      ],
+      "totalIssues": 1
+    },
+    {
+      "file": "pages/components/pagination-demo.tsx",
+      "issues": [
+        {
+          "severity": "WARNING",
+          "message": "List items should have unique key props",
+          "lineNumbers": [
+            9,
+            12
+          ],
+          "pattern": "/<div\\s+(?!.*\\bkey=)/g"
+        }
+      ],
+      "totalIssues": 1
+    },
+    {
+      "file": "pages/components/modal-demo.tsx",
+      "issues": [
+        {
+          "severity": "WARNING",
+          "message": "List items should have unique key props",
+          "lineNumbers": [
+            9
+          ],
+          "pattern": "/<div\\s+(?!.*\\bkey=)/g"
+        }
+      ],
+      "totalIssues": 1
+    },
+    {
+      "file": "pages/components/form-demo.tsx",
+      "issues": [
+        {
+          "severity": "WARNING",
+          "message": "List items should have unique key props",
+          "lineNumbers": [
+            9,
+            12
           ],
           "pattern": "/<div\\s+(?!.*\\bkey=)/g"
         }
