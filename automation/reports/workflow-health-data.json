@@ -809,8 +809,8 @@
     "name": "cloud-agents-fast.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cloud-agents-fast.yml",
-    "size": 1189,
-    "lines": 45,
+    "size": 1112,
+    "lines": 46,
     "triggers": [
       "workflow_dispatch {}",
       "schedule"
