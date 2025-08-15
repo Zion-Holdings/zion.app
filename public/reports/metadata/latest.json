@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T21:00:01.607Z",
-  "pagesScanned": 5370,
+  "generatedAt": "2025-08-15T21:01:00.862Z",
+  "pagesScanned": 5379,
   "items": [
     {
       "route": "/404",
@@ -6026,6 +6026,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-15-205031",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-210031",
       "missing": [
         "og:image"
       ],
@@ -23225,6 +23235,16 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-15-210031",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Autonomous Update Implementation",
+        "description": "Guide — Autonomous Update Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-15-0211",
       "missing": [
         "og:image"
@@ -25212,6 +25232,16 @@
       "suggestion": {
         "title": "Pilot Plan: MLOps",
         "description": "Pilot Plan: MLOps — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-2100",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook: DevSecOps AI",
+        "description": "Playbook: DevSecOps AI — auto-suggested description"
       }
     },
     {
@@ -27262,6 +27292,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-15 20-50",
         "description": "Innovation Insight — 2025-08-15 20-50 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15T21-00",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-15 21-00",
+        "description": "Innovation Insight — 2025-08-15 21-00 — auto-suggested description"
       }
     },
     {
@@ -36055,6 +36095,16 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-15-210031",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Improving Continuously",
+        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-15-021207",
       "missing": [
         "og:image"
@@ -41826,6 +41876,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-15-205031",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-210031",
       "missing": [
         "og:image"
       ],
@@ -51445,6 +51505,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-15-1801",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 18:01",
+        "description": "Autonomous Update — 2025-08-15 18:01 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-15-1810",
       "missing": [
         "og:image"
@@ -51612,6 +51685,16 @@
       "suggestion": {
         "title": "Autonomous Playbook — Edge AI & IoT (2025-08-15 20:50 UTC)",
         "description": "Autonomous Playbook — Edge AI & IoT (2025-08-15 20:50 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-2100",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Checklist — DevSecOps for AI (2025-08-15 21:00 UTC)",
+        "description": "Autonomous Checklist — DevSecOps for AI (2025-08-15 21:00 UTC) — auto-suggested description"
       }
     },
     {
@@ -53662,6 +53745,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-15 20-50",
         "description": "Autonomous Update — 2025-08-15 20-50 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15T21-00",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 21-00",
+        "description": "Autonomous Update — 2025-08-15 21-00 — auto-suggested description"
       }
     },
     {
