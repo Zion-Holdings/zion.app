@@ -1,46 +1,25 @@
 {
-  "generatedAt": "2025-08-15T07:35:38.105Z",
+  "generatedAt": "2025-08-15T07:36:30.700Z",
   "items": [
     {
       "title": "Case Study — Automation Autonomous",
-      "href": "/reports/cases/case-2025-08-15-073538",
+      "href": "/reports/cases/case-2025-08-15-073630",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T07:35:38.007Z",
+      "createdAt": "2025-08-15T07:36:30.487Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Guide — Cloud Improving Implementation",
-      "href": "/reports/guides/guide-2025-08-15-073538",
+      "href": "/reports/guides/guide-2025-08-15-073630",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T07:35:38.007Z",
+      "createdAt": "2025-08-15T07:36:30.487Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Cloud Improving Continuously",
-      "href": "/reports/patterns/pattern-2025-08-15-073538",
+      "href": "/reports/patterns/pattern-2025-08-15-073630",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T07:35:38.007Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Case Study — Automation Autonomous",
-      "href": "/reports/cases/case-2025-08-15-073537",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T07:35:37.971Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Guide — Cloud Improving Implementation",
-      "href": "/reports/guides/guide-2025-08-15-073537",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T07:35:37.971Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Pattern — Cloud Improving Continuously",
-      "href": "/reports/patterns/pattern-2025-08-15-073537",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T07:35:37.971Z",
+      "createdAt": "2025-08-15T07:36:30.487Z",
       "source": "cloud-deep-research-factory"
     }
   ]
