@@ -208,5 +208,26 @@
     "message": "Quality score below threshold: 70.00%",
     "recommendation": "Run quality optimization and review critical issues",
     "timestamp": "2025-08-15T17:37:25.621Z"
+  },
+  {
+    "type": "quality_alert",
+    "severity": "warning",
+    "message": "Quality score below threshold: 70.00%",
+    "recommendation": "Run quality optimization and review critical issues",
+    "timestamp": "2025-08-15T17:42:25.621Z"
+  },
+  {
+    "type": "quality_alert",
+    "severity": "warning",
+    "message": "Quality score below threshold: 70.00%",
+    "recommendation": "Run quality optimization and review critical issues",
+    "timestamp": "2025-08-15T17:47:25.662Z"
+  },
+  {
+    "type": "quality_alert",
+    "severity": "warning",
+    "message": "Quality score below threshold: 70.00%",
+    "recommendation": "Run quality optimization and review critical issues",
+    "timestamp": "2025-08-15T17:52:25.689Z"
   }
 ]
