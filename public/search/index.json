@@ -1,6 +1,12 @@
 {
-  "generatedAt": "2025-08-15T23:06:03.424Z",
+  "generatedAt": "2025-08-15T23:07:05.253Z",
   "entries": [
+    {
+      "route": "/terms",
+      "file": "pages/terms.tsx",
+      "title": "Terms of Service | Zion Tech Group",
+      "summary": "import Head from 'next/head'; export default function TermsPage() { return ( Terms of Service | Zion Tech Group {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"WebPage\", \"headline\": \"Terms of Service\", \"description\": \"Terms of Service for Zion Tech Group\", \"url\": \"h"
+    },
     {
       "route": "/sitemap",
       "file": "pages/sitemap.tsx",
@@ -18,6 +24,12 @@
       "file": "pages/search.tsx",
       "title": "Search — Zion",
       "summary": "import { useEffect, useMemo, useState } from 'react'; import Head from 'next/head'; type SearchItem = { title: string; url: string; summary?: string }; export default function SearchPage() { const [q, setQ] = useState(''); const [items, setItems] = useState ([]); const [loaded, s"
+    },
+    {
+      "route": "/robots",
+      "file": "pages/robots.tsx",
+      "title": "Sitemap",
+      "summary": "import { GetServerSideProps } from 'next'; export const getServerSideProps: GetServerSideProps = async ({ res }) => { const robotsTxt = ; res.setHeader('Content-Type', 'text/plain'); res.write(robotsTxt); res.end(); return { props: {}, }; }; export default function RobotsPage() {"
     },
     {
       "route": "/reports",
@@ -1560,6 +1572,12 @@
       "file": "pages/reports/updates/update-2025-08-15-2010.tsx",
       "title": "Autonomous Reference Architecture — Vision & Multimodal (2025-08-15 20:10 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Reference Architecture — Vision & Multimodal (2025-08-15 20:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-2007",
+      "file": "pages/reports/updates/update-2025-08-15-2007.tsx",
+      "title": "Autonomous Update — 2025-08-15 20:07",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 20:07 Autonomous Update — 2025-08-15 20:07 Signal over noise—your automated update is here. Today's Highlight Hacker News : Open source AI is the path forward · 2360 pts W"
     },
     {
       "route": "/reports/updates/update-2025-08-15-2006",
