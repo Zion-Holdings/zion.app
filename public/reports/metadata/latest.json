@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T16:00:01.370Z",
-  "pagesScanned": 4857,
+  "generatedAt": "2025-08-15T16:01:00.833Z",
+  "pagesScanned": 4866,
   "items": [
     {
       "route": "/404",
@@ -5726,6 +5726,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-15-155029",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-160029",
       "missing": [
         "og:image"
       ],
@@ -22615,6 +22625,16 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-15-160030",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Autonomous Update Implementation",
+        "description": "Guide — Autonomous Update Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-15-0211",
       "missing": [
         "og:image"
@@ -24302,6 +24322,16 @@
       "suggestion": {
         "title": "Checklist: Edge AI",
         "description": "Checklist: Edge AI — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-1600",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook: AI QA & Eval",
+        "description": "Playbook: AI QA & Eval — auto-suggested description"
       }
     },
     {
@@ -26052,6 +26082,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-15 15-50",
         "description": "Innovation Insight — 2025-08-15 15-50 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15T16-00",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-15 16-00",
+        "description": "Innovation Insight — 2025-08-15 16-00 — auto-suggested description"
       }
     },
     {
@@ -34535,6 +34575,16 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-15-160030",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Improving Continuously",
+        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-15-021207",
       "missing": [
         "og:image"
@@ -40006,6 +40056,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-15-155029",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-160030",
       "missing": [
         "og:image"
       ],
@@ -46635,6 +46695,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-15-1301",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 13:01",
+        "description": "Autonomous Update — 2025-08-15 13:01 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-15-1310",
       "missing": [
         "og:image"
@@ -46782,6 +46855,16 @@
       "suggestion": {
         "title": "Autonomous Reference Architecture — Applied NLP & RAG (2025-08-15 15:50 UTC)",
         "description": "Autonomous Reference Architecture — Applied NLP & RAG (2025-08-15 15:50 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1600",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Security Hardening Guide — Data Engineering (2025-08-15 16:00 UTC)",
+        "description": "Autonomous Security Hardening Guide — Data Engineering (2025-08-15 16:00 UTC) — auto-suggested description"
       }
     },
     {
@@ -48532,6 +48615,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-15 15-50",
         "description": "Autonomous Update — 2025-08-15 15-50 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15T16-00",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 16-00",
+        "description": "Autonomous Update — 2025-08-15 16-00 — auto-suggested description"
       }
     },
     {
