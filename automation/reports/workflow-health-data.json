@@ -5015,6 +5015,42 @@
       "Consider splitting into smaller workflows for better maintainability"
     ]
   },
+  "test-auth.yml": {
+    "name": "test-auth.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/test-auth.yml",
+    "size": 945,
+    "lines": 41,
+    "triggers": [
+      "workflow_dispatch {}",
+      "push"
+    ],
+    "jobs": [
+      "push",
+      "jobs",
+      "test-auth",
+      "steps",
+      "with"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
   "test.yml": {
     "name": "test.yml",
     "status": "active",
