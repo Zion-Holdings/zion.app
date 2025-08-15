@@ -1,10 +1,25 @@
 {
   "items": [
     {
-      "title": "Runbook: Agent Ops",
-      "desc": "Patterns to enhance security.",
-      "href": "/reports/innovations/insight-2025-08-14-1821"
+      "title": "Guide: RAG Platforms",
+      "desc": "Patterns to increase accuracy.",
+      "href": "/reports/innovations/insight-2025-08-15-0935"
+    },
+    {
+      "title": "Reference Architecture — Autonomous Content Mesh"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery"
+    },
+    {
+      "title": "Case Study — Automation Autonomous"
+    },
+    {
+      "title": "Guide — Cloud Improving Implementation"
+    },
+    {
+      "title": "Pattern — Cloud Improving Continuously"
     }
   ],
-  "updatedAt": "2025-08-14T18:21:17.825Z"
+  "updatedAt": "2025-08-15T09:35:43.917Z"
 }
