@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
   "generatedAt": "2025-08-15T07:38:42.180Z",
   "items": [
     {
@@ -44,10 +45,34 @@
       "desc": "New autonomous content",
       "createdAt": "2025-08-15T07:48:27.271Z",
 >>>>>>> ee24b19dfbc (chore(sync): advanced autonomous sync)
+=======
+  "generatedAt": "2025-08-15T07:48:47.090Z",
+  "items": [
+    {
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-15-074847",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T07:48:47.057Z",
+      "source": "cloud-blueprint-factory"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-15-074847",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T07:48:47.024Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Case Study — Automation Autonomous",
+      "href": "/reports/cases/case-2025-08-15-074846",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T07:48:46.985Z",
+>>>>>>> 8542c31579d (chore(sync): advanced autonomous sync)
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Guide — Cloud Improving Implementation",
+<<<<<<< HEAD
 <<<<<<< HEAD
       "href": "/reports/guides/guide-2025-08-15-073333",
       "desc": "New autonomous content",
@@ -57,10 +82,16 @@
       "desc": "New autonomous content",
       "createdAt": "2025-08-15T07:48:27.271Z",
 >>>>>>> ee24b19dfbc (chore(sync): advanced autonomous sync)
+=======
+      "href": "/reports/guides/guide-2025-08-15-074846",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T07:48:46.985Z",
+>>>>>>> 8542c31579d (chore(sync): advanced autonomous sync)
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Cloud Improving Continuously",
+<<<<<<< HEAD
 <<<<<<< HEAD
       "href": "/reports/patterns/pattern-2025-08-15-073333",
       "desc": "New autonomous content",
@@ -70,6 +101,11 @@
       "desc": "New autonomous content",
       "createdAt": "2025-08-15T07:48:27.271Z",
 >>>>>>> ee24b19dfbc (chore(sync): advanced autonomous sync)
+=======
+      "href": "/reports/patterns/pattern-2025-08-15-074846",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T07:48:46.985Z",
+>>>>>>> 8542c31579d (chore(sync): advanced autonomous sync)
       "source": "cloud-deep-research-factory"
     }
   ]
