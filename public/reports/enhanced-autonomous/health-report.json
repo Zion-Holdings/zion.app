@@ -1,24 +1,24 @@
 {
-  "timestamp": "2025-08-15T16:10:53.878Z",
+  "timestamp": "2025-08-15T16:13:41.094Z",
   "quality": {
     "status": "healthy",
     "details": "Quality system operational",
-    "timestamp": "2025-08-15T16:10:53.770Z"
+    "timestamp": "2025-08-15T16:13:41.001Z"
   },
   "automation": {
     "status": "unhealthy",
     "details": "Unexpected token '>', \"\n> bolt.new\"... is not valid JSON",
-    "timestamp": "2025-08-15T16:10:53.878Z"
+    "timestamp": "2025-08-15T16:13:41.094Z"
   },
   "build": {
-    "status": "degraded",
-    "details": "Some build directories missing",
-    "timestamp": "2025-08-15T16:10:53.878Z"
+    "status": "healthy",
+    "details": "Build directories accessible",
+    "timestamp": "2025-08-15T16:13:41.094Z"
   },
   "overall": {
-    "status": "critical",
-    "score": 0.3333333333333333,
-    "details": "1/3 systems healthy",
-    "timestamp": "2025-08-15T16:10:53.878Z"
+    "status": "degraded",
+    "score": 0.6666666666666666,
+    "details": "2/3 systems healthy",
+    "timestamp": "2025-08-15T16:13:41.094Z"
   }
 }
