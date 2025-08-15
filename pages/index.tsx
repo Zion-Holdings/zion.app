@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 
@@ -41,7 +41,6 @@ interface ServiceCategory {
 const HomePage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [loading, setLoading] = useState(true);
 
   // AI Service Factory Services Data
   const services: Service[] = [
@@ -290,12 +289,6 @@ const HomePage: React.FC = () => {
     }
   ];
 
-  useEffect(() => {
-    // Simulate loading
-    const timer = setTimeout(() => setLoading(false), 1000);
-    return () => clearTimeout(timer);
-  }, []);
-
   const groupServicesByCategory = (services: Service[]): ServiceCategory[] => {
     const categories: { [key: string]: Service[] } = {};
     
@@ -335,17 +328,6 @@ const HomePage: React.FC = () => {
 
   const categories = groupServicesByCategory(filteredServices);
   const uniqueCategories = [...new Set(services.map(s => s.category))];
-
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-white mx-auto"></div>
-          <p className="text-white text-xl mt-4">Loading services...</p>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900">
