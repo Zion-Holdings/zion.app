@@ -1,0 +1,14 @@
+[
+  {
+    "id": "conv-1755264483096",
+    "type": "code-review",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "QA Tester"
+    ],
+    "startTime": "2025-08-15T13:28:03.096Z",
+    "status": "active",
+    "filePath": "conv-1755264483096.json"
+  }
+]
