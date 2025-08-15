@@ -45,7 +45,70 @@ const ServicesPage: React.FC = () => {
   const loadServices = async () => {
     try {
       // Services data loaded from automation system
-      const services: Service[] = [];
+      const services: Service[] = [
+  {
+    "id": "demo-ai-service",
+    "name": "Demo Ai Service",
+    "type": "Machine Learning",
+    "description": "Professional demo ai service service built with modern technologies.",
+    "category": "Web Services",
+    "technology": "Python, Docker, Kubernetes",
+    "status": "active",
+    "features": [
+      "RESTful API",
+      "Containerized",
+      "Test Coverage"
+    ],
+    "pricing": {
+      "model": "Standard",
+      "startingPrice": "$79/month",
+      "details": "Professional service with full support"
+    },
+    "links": {
+      "demo": "/demo/demo-ai-service",
+      "documentation": "/docs/demo-ai-service",
+      "github": "https://github.com/your-org/demo-ai-service",
+      "deployment": "https://demo-ai-service.yourdomain.com"
+    },
+    "metrics": {
+      "uptime": "99.9%",
+      "responseTime": "<200ms",
+      "users": "762+"
+    },
+    "lastUpdated": "2025-08-15",
+    "path": "/workspace/generated-services/demo-ai-service",
+    "files": [
+      ".env.example",
+      ".gitignore",
+      "Dockerfile",
+      "Makefile",
+      "config/config.yaml",
+      "deploy/deploy.sh",
+      "deploy/docker-compose.yml",
+      "deploy/kubernetes/deployment.yaml",
+      "deploy/monitor.sh",
+      "deploy/setup.sh",
+      "docs/API.md",
+      "docs/DEPLOYMENT.md",
+      "docs/DEVELOPMENT.md",
+      "docs/README.md",
+      "pyproject.toml",
+      "requirements.txt",
+      "src/api/__init__.py",
+      "src/api/routes.py",
+      "src/main.py",
+      "src/models/__init__.py",
+      "src/models/ml_model.py",
+      "src/utils/__init__.py",
+      "src/utils/data_processor.py",
+      "tests/__init__.py",
+      "tests/conftest.py",
+      "tests/test_api.py",
+      "tests/test_ml_model.py",
+      "tests/test_utils.py"
+    ]
+  }
+];
       
       setServices(services);
       
