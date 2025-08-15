@@ -74,7 +74,7 @@ class EnhancedGitSyncOrchestrator {
         this.log('🔍 Running git health check...');
         
         try {
-            const healthScript = path.join(this.scriptsDir, 'git-health-checker.sh');
+            const healthScript = path.join(this.scriptsDir, 'git-health-checker-simple.sh');
             if (fs.existsSync(healthScript)) {
                 await this.runCommand(`chmod +x "${healthScript}" && "${healthScript}"`);
                 this.log('✅ Git health check completed');
