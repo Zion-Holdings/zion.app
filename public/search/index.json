@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T18:48:03.206Z",
+  "generatedAt": "2025-08-15T18:49:03.158Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1392,6 +1392,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1550.tsx",
       "title": "Autonomous Reference Architecture — Applied NLP & RAG (2025-08-15 15:50 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Reference Architecture — Applied NLP & RAG (2025-08-15 15:50 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\","
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1549",
+      "file": "pages/reports/updates/update-2025-08-15-1549.tsx",
+      "title": "Autonomous Update — 2025-08-15 15:49",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 15:49 Autonomous Update — 2025-08-15 15:49 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Zoom terms now allow "
     },
     {
       "route": "/reports/updates/update-2025-08-15-1548",
