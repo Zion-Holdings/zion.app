@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "generatedAt": "2025-08-15T05:07:00.418Z",
   "files": [
     "update-2025-08-15-0507.tsx",
@@ -7,7 +8,13 @@
     "update-2025-08-15-0457.tsx",
     "update-2025-08-15-0458.tsx",
     "update-2025-08-15-0504.tsx",
+=======
+  "generatedAt": "2025-08-15T05:01:00.544Z",
+  "files": [
+>>>>>>> origin/main
     "update-2025-08-15T05-00.tsx",
+    "update-2025-08-15-0458.tsx",
+    "update-2025-08-15-0457.tsx",
     "update-2025-08-15-0456.tsx",
     "update-2025-08-15-0841.tsx",
     "update-2025-08-15-0845.tsx",
@@ -100,11 +107,23 @@
     "update-2025-08-15T07-10.tsx",
     "update-2025-08-15T07-11.tsx",
     "update-2025-08-15T07-13.tsx",
+<<<<<<< HEAD
     "update-2025-08-15T07-14.tsx"
   ],
   "metrics": {
     "diversityScore": 100,
     "avgLen": 1560,
+=======
+    "update-2025-08-15T07-14.tsx",
+    "update-2025-08-15T07-15.tsx",
+    "update-2025-08-15T07-16.tsx",
+    "update-2025-08-15T07-17.tsx",
+    "update-2025-08-15T07-18.tsx"
+  ],
+  "metrics": {
+    "diversityScore": 100,
+    "avgLen": 1530,
+>>>>>>> origin/main
     "duplicateCount": 0,
     "seoScore": 15
   },
