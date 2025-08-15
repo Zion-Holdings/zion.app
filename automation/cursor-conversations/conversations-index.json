@@ -1498,5 +1498,29 @@
     "startTime": "2025-08-15T16:28:13.145Z",
     "status": "active",
     "filePath": "conv-1755275293145.json"
+  },
+  {
+    "id": "conv-1755275452848",
+    "type": "bug-investigation",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "QA Tester"
+    ],
+    "startTime": "2025-08-15T16:30:52.848Z",
+    "status": "active",
+    "filePath": "conv-1755275452848.json"
+  },
+  {
+    "id": "conv-1755275454854",
+    "type": "deployment-planning",
+    "participants": [
+      "DevOps Engineer",
+      "Backend Developer",
+      "Security Expert"
+    ],
+    "startTime": "2025-08-15T16:30:54.854Z",
+    "status": "active",
+    "filePath": "conv-1755275454854.json"
   }
 ]
