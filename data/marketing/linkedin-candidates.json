@@ -1,7 +1,37 @@
 {
-  "analyzedAt": 1755208428768,
+  "analyzedAt": 1755237399701,
   "canonical": "https://ziontechgroup.com",
   "candidates": [
+    {
+      "url": "https://ziontechgroup.com/",
+      "title": "AI Service Factory - AI-Powered Services",
+      "description": "Discover cutting-edge AI services and solutions powered by autonomous AI agents",
+      "headings": [
+        "AI Service Factory",
+        "AI & Machine Learning",
+        "AI-Powered Data Analytics Platform",
+        "Intelligent Customer Support Bot",
+        "Predictive Maintenance System",
+        "Real-time Video Analytics",
+        "IoT & Edge",
+        "Real-time IoT Data Pipeline"
+      ],
+      "bullets": [
+        "•Real-time data processing",
+        "•ML model training",
+        "•Interactive dashboards",
+        "•Natural language understanding",
+        "•Multi-language support",
+        "•Integration with CRM systems",
+        "•Equipment monitoring",
+        "•Failure prediction",
+        "•Maintenance scheduling",
+        "•Real-time processing",
+        "•Object detection",
+        "•Video streaming"
+      ],
+      "score": 209
+    },
     {
       "url": "https://ziontechgroup.com/automation",
       "title": "Automation Hub",
@@ -41,29 +71,17 @@
         "Leaked Meta AI rules show chatbots were allowed to have romantic chats with kids(TechCrunch)",
         "Apple’s blood oxygen monitoring returns to its latest Apple Watches(TechCrunch)",
         "Cohere hires long-time Meta research head Joelle Pineau as its chief AI officer(TechCrunch)",
+        "The wait is almost over: The 2025 Startup Battlefield 200 list drops August 27(TechCrunch)",
         "AI translation tech Palabra gets backing from Reddit co-founder’s venture firm(TechCrunch)",
         "Buzzy AI startup Multiverse creates two of the smallest high-performing models ever(TechCrunch)",
         "Lovable projects $1B in ARR within next 12 months(TechCrunch)",
         "Google pushes AI into flight deals as antitrust scrutiny, competition heat up(TechCrunch)",
-        "Airbnb will allow US users to book stays without paying up front(TechCrunch)",
-        "ChatGPT: Everything you need to know about the AI-powered chatbot(TechCrunch)",
-        "Inside the Box: Aaron Levie on reinvention at TechCrunch Disrupt 2025(TechCrunch)",
-        "Co-founder of Elon Musk’s xAI departs the company(TechCrunch)",
-        "Security flaws in a carmaker’s web portal let one hacker remotely unlock cars from anywhere(TechCrunch)"
+        "US government is reportedly in discussions to take stake in Intel(TechCrunch)",
+        "What is Bluesky? Everything to know about the X competitor(TechCrunch)",
+        "Bluesky rolls out massive revamp to policies and Community Guidelines(TechCrunch)",
+        "Norway spy chief blames Russian hackers for hijacking dam(TechCrunch)"
       ],
       "score": 132
-    },
-    {
-      "url": "https://ziontechgroup.com/",
-      "title": "Zion — Latest Autonomous Content",
-      "description": "Fresh updates published by autonomous agents.",
-      "headings": [
-        "Zion — Latest Autonomous Content",
-        "Latest Autonomous Content",
-        "Autonomous Update — 2025: 08: 14: 1820"
-      ],
-      "bullets": [],
-      "score": 107
     },
     {
       "url": "https://ziontechgroup.com/site-health",
