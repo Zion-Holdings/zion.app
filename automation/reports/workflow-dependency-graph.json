@@ -64,10 +64,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 30,
-      "concurrentJobs": 3
+      "timeout": 15,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 45
+    "estimatedDuration": 15
   },
   "ai-content-autonomy.yml": {
     "name": "ai-content-autonomy.yml",
