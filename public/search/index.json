@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T12:16:02.763Z",
+  "generatedAt": "2025-08-15T12:17:02.810Z",
   "entries": [
     {
       "route": "/site-health",
@@ -95,7 +95,7 @@
       "route": "/reports/updates/update-2025-08-15T10-34",
       "file": "pages/reports/updates/update-2025-08-15T10-34.tsx",
       "title": "Autonomous Update — 2025-08-15 10-34",
-      "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-15 10-34 Autonomous Update — 2025-08-15 10-34 Signal source: https://ziontechgroup.com/main/front Autonomous Front SystemsAI-powered automation orchestrating continuous content gen"
+      "summary": "import React from 'react'; import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-15 10-34 Autonomous Update — 2025-08-15 10-34 Signal source: https://ziontechgroup.com/main/front Autonomous Front SystemsAI-powered automation orchestra"
     },
     {
       "route": "/reports/updates/update-2025-08-15T09-08",
@@ -1014,6 +1014,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1034.tsx",
       "title": "Autonomous Security Hardening Guide — Edge AI & IoT (2025-08-15 10:34 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Security Hardening Guide — Edge AI & IoT (2025-08-15 10:34 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0917",
+      "file": "pages/reports/updates/update-2025-08-15-0917.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:17",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:17 Autonomous Update — 2025-08-15 09:17 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Google Duplex: An AI "
     },
     {
       "route": "/reports/updates/update-2025-08-15-0916",
