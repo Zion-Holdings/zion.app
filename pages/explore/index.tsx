@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Landing from '../../components/Landing';
+import Breadcrumbs from '../../components/Breadcrumbs';
+import RelatedContent from '../../components/RelatedContent';
 
 export default function ExploreIndex() {
   // AUTO-GENERATED: EXPLORE_PROMOS
@@ -71,6 +73,7 @@ export default function ExploreIndex() {
         <Landing />
       </div>
       <main className="mx-auto max-w-7xl px-6 py-12">
+        <Breadcrumbs />
         <h1 className="sr-only">Explore</h1>
 
         {/* Everything at a glance */}
@@ -183,6 +186,8 @@ export default function ExploreIndex() {
             ))}
           </div>
         </section>
+        
+        <RelatedContent currentPage="explore" />
       </main>
     </div>
   );

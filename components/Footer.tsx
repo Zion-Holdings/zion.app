@@ -12,11 +12,13 @@ export default function Footer() {
         </div>
         <nav className="grid grid-cols-2 gap-3">
           <Link href="/explore" className="hover:text-white">Explore</Link>
-          <Link href="/automation" className="hover:text-white">Automations</Link>
+          <Link href="/automation" className="hover:text-white">Automation</Link>
           <Link href="/reports" className="hover:text-white">Reports</Link>
-          <Link href="/newsroom" className="hover:text-white">Updates</Link>
+          <Link href="/components" className="hover:text-white">Components</Link>
+          <Link href="/newsroom" className="hover:text-white">Newsroom</Link>
           <Link href="/site-health" className="hover:text-white">Site Health</Link>
           <Link href="/search" className="hover:text-white">Search</Link>
+          <Link href="/playground" className="hover:text-white">Playground</Link>
           <a href="/sitemap.xml" className="hover:text-white">Sitemap</a>
         </nav>
         <div className="flex items-start gap-4 md:justify-end">

@@ -1,18 +1,32 @@
 import Head from 'next/head';
 
+import Head from 'next/head';
+import Breadcrumbs from '../../components/Breadcrumbs';
+import RelatedContent from '../../components/RelatedContent';
+import QuickNavigation from '../../components/QuickNavigation';
+
 export default function AutomationHub() {
   return (
-    <div>
+    <div className="min-h-screen bg-slate-950 text-white">
       <Head>
-        <title>Automation Hub</title>
-        <meta name="description" content="Explore autonomous cloud automations running 24/7." />
+        <title>Automation Hub | Zion Tech Group</title>
+        <meta name="description" content="Explore autonomous cloud automations running 24/7 with live monitoring and self-healing systems." />
+        <meta property="og:title" content="Automation Hub | Zion Tech Group" />
+        <meta property="og:description" content="Explore autonomous cloud automations running 24/7 with live monitoring and self-healing systems." />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
       
-        <meta property="og:title" content="Automation Hub" />
-        <meta property="og:description" content="Automation Hub — automatically suggested description." />
-        <meta name="twitter:card" content="summary_large_image" /></Head>
-      <main className="container mx-auto px-4 py-12">
-        <h1 className="text-4xl font-extrabold mb-2">Automation Hub</h1>
-        <p className="text-white/70 mb-8">Discover our autonomous, self-healing systems that keep the codebase evergreen. Powered by scheduled cloud functions — no GitHub Actions required.</p>
+      <main className="container mx-auto px-6 py-12">
+        <Breadcrumbs />
+        
+        <div className="mb-8">
+          <h1 className="text-5xl font-bold mb-4">Automation Hub</h1>
+          <p className="text-xl text-white/70 max-w-4xl">
+            Discover our autonomous, self-healing systems that keep the codebase evergreen. Powered by scheduled cloud functions — no GitHub Actions required.
+          </p>
+        </div>
+
+        <QuickNavigation />
         <ul className="space-y-4">
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
             <h2 className="text-xl font-bold">Homepage Updates</h2>
@@ -133,6 +147,8 @@ export default function AutomationHub() {
             <a className="text-cyan-300 underline" href="/.netlify/functions/auto-discovery-runner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
         </ul>
+        
+        <RelatedContent currentPage="automation" />
       </main>
     </div>
   );

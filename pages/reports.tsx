@@ -1,5 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import Breadcrumbs from '../components/Breadcrumbs';
+import RelatedContent from '../components/RelatedContent';
+import QuickNavigation from '../components/QuickNavigation';
 
 export default function ReportsOverview() {
   const categories = [
@@ -58,12 +61,16 @@ export default function ReportsOverview() {
         <meta name="twitter:card" content="summary_large_image" /></Head>
       
       <main className="container mx-auto px-6 py-12">
+        <Breadcrumbs />
+        
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold mb-4">Reports & Content</h1>
           <p className="text-xl text-white/70 max-w-3xl mx-auto">
             Discover our extensive library of AI, cloud, and technology content
           </p>
         </div>
+
+        <QuickNavigation />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {categories.map((category) => (
@@ -83,6 +90,8 @@ export default function ReportsOverview() {
             </Link>
           ))}
         </div>
+        
+        <RelatedContent currentPage="reports" />
       </main>
     </div>
   );
