@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T15:52:02.959Z",
+  "generatedAt": "2025-08-15T15:53:02.934Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1278,6 +1278,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1300.tsx",
       "title": "Autonomous Reference Architecture — Applied NLP & RAG (2025-08-15 13:00 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Reference Architecture — Applied NLP & RAG (2025-08-15 13:00 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\","
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1253",
+      "file": "pages/reports/updates/update-2025-08-15-1253.tsx",
+      "title": "Autonomous Update — 2025-08-15 12:53",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 12:53 Autonomous Update — 2025-08-15 12:53 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : The young, inexperienced engineers a"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1252",
