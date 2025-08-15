@@ -64,6 +64,8 @@
     "transformer:ai": "node scripts/transformer-ai-engine.js",
     "graph:ai": "node scripts/graph-neural-network-engine.js",
     "multimodal:ai": "node scripts/multi-modal-learning-engine.js",
+    "quantum:ai": "node scripts/quantum-ai-engine.js",
+    "symbolic:ai": "node scripts/symbolic-ai-engine.js",
     "export": "rm -rf .next out tsconfig.tsbuildinfo && NODE_OPTIONS=\"--max-old-space-size=6144 --openssl-legacy-provider\" next build --no-lint && if [ -f _redirects ]; then cp -f _redirects out/_redirects; fi && if [ -f _headers ]; then cp -f _headers out/_headers; fi || echo 'Warning: Some files not found, continuing build'",
     "start": "next start",
     "postbuild": "node automation/footer-injector.cjs || true",
