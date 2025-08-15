@@ -7078,5 +7078,65 @@
     "status": "pending",
     "dueDate": "2025-08-18T18:52:46.961Z",
     "filePath": "tasks-1755283966961.json"
+  },
+  {
+    "id": "task-1755284107351-1",
+    "title": "Technical Specification",
+    "type": "security-audit",
+    "priority": "high",
+    "assignedTo": "security-expert",
+    "status": "pending",
+    "dueDate": "2025-08-18T18:55:07.351Z",
+    "filePath": "tasks-1755284107351.json"
+  },
+  {
+    "id": "task-1755284107351-2",
+    "title": "User Experience Design",
+    "type": "security-audit",
+    "priority": "high",
+    "assignedTo": "backend-developer",
+    "status": "pending",
+    "dueDate": "2025-08-19T18:55:07.351Z",
+    "filePath": "tasks-1755284107351.json"
+  },
+  {
+    "id": "task-1755284107351-3",
+    "title": "Implementation Plan",
+    "type": "security-audit",
+    "priority": "medium",
+    "assignedTo": "devops-engineer",
+    "status": "pending",
+    "dueDate": "2025-08-17T18:55:07.351Z",
+    "filePath": "tasks-1755284107351.json"
+  },
+  {
+    "id": "task-1755284109357-1",
+    "title": "Technical Specification",
+    "type": "performance-optimization",
+    "priority": "high",
+    "assignedTo": "frontend-specialist",
+    "status": "pending",
+    "dueDate": "2025-08-18T18:55:09.357Z",
+    "filePath": "tasks-1755284109357.json"
+  },
+  {
+    "id": "task-1755284109357-2",
+    "title": "User Experience Design",
+    "type": "performance-optimization",
+    "priority": "high",
+    "assignedTo": "backend-developer",
+    "status": "pending",
+    "dueDate": "2025-08-19T18:55:09.357Z",
+    "filePath": "tasks-1755284109357.json"
+  },
+  {
+    "id": "task-1755284109357-3",
+    "title": "Implementation Plan",
+    "type": "performance-optimization",
+    "priority": "medium",
+    "assignedTo": "devops-engineer",
+    "status": "pending",
+    "dueDate": "2025-08-17T18:55:09.357Z",
+    "filePath": "tasks-1755284109357.json"
   }
 ]
