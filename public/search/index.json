@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T01:30:33.937Z",
+  "generatedAt": "2025-08-15T01:48:13.075Z",
   "entries": [
     {
       "route": "/site-health",
@@ -1260,6 +1260,12 @@
       "file": "pages/reports/innovations/insight-2025-08-15T00-17.tsx",
       "title": "Innovation Insight — 2025-08-15 00-17",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-15 00-17 Innovation Insight — 2025-08-15 00-17 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-0148",
+      "file": "pages/reports/innovations/insight-2025-08-15-0148.tsx",
+      "title": "Playbook: Edge AI",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Playbook: Edge AI Playbook: Edge AI Patterns to increase accuracy. Scope: Playbook: Edge AI. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observability, roll"
     },
     {
       "route": "/reports/innovations/insight-2025-08-15-0122",
