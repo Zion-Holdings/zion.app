@@ -4390,5 +4390,17 @@
     "startTime": "2025-08-15T21:34:53.123Z",
     "status": "active",
     "filePath": "conv-1755293693123.json"
+  },
+  {
+    "id": "conv-1755293695131",
+    "type": "bug-investigation",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "QA Tester"
+    ],
+    "startTime": "2025-08-15T21:34:55.131Z",
+    "status": "active",
+    "filePath": "conv-1755293695131.json"
   }
 ]
