@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T02:06:13.834Z",
-  "pagesScanned": 515,
+  "generatedAt": "2025-08-15T02:06:31.278Z",
+  "pagesScanned": 522,
   "items": [
     {
       "route": "/404",
@@ -726,6 +726,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-15-020120",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-020618",
       "missing": [
         "og:image"
       ],
@@ -1655,6 +1665,16 @@
       }
     },
     {
+      "route": "/reports/cases/case-2025-08-15-020618",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Trigger Homepage",
+        "description": "Case Study — Trigger Homepage — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/guides/guide-2025-08-14-212854",
       "missing": [
         "og:image"
@@ -2575,6 +2595,16 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-15-020618",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-14-2130",
       "missing": [
         "og:image"
@@ -2902,6 +2932,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-15 02-01",
         "description": "Innovation Insight — 2025-08-15 02-01 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15T02-06",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-15 02-06",
+        "description": "Innovation Insight — 2025-08-15 02-06 — auto-suggested description"
       }
     },
     {
@@ -3825,6 +3865,16 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-15-020618",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Improving Continuously",
+        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-14-212855",
       "missing": [
         "og:image"
@@ -4416,6 +4466,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-15-020120",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-020618",
       "missing": [
         "og:image"
       ],
@@ -5122,6 +5182,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-15 02-01",
         "description": "Autonomous Update — 2025-08-15 02-01 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15T02-06",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 02-06",
+        "description": "Autonomous Update — 2025-08-15 02-06 — auto-suggested description"
       }
     },
     {
