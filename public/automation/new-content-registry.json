@@ -2,6 +2,13 @@
   "generatedAt": "2025-08-15T06:50:02.337Z",
   "items": [
     {
+      "title": "Pilot Plan: MLOps",
+      "subtitle": "Patterns to improve reliability.",
+      "path": "/reports/innovations/insight-2025-08-15-0650",
+      "createdAt": "2025-08-15T06:50:12.181Z",
+      "kind": "insight"
+    },
+    {
       "title": "Reference Architecture — Autonomous Content Mesh",
       "href": "/reports/blueprints/blueprint-2025-08-15-065002",
       "desc": "New autonomous content",
