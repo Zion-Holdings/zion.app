@@ -1,16 +1,16 @@
 {
-  "timestamp": "2025-08-15T22:37:40.570Z",
+  "timestamp": "2025-08-15T22:38:40.558Z",
   "summary": {
-    "totalWorkflows": 146,
+    "totalWorkflows": 147,
     "complexityDistribution": {
       "very-high": 1,
-      "high": 0,
+      "high": 1,
       "medium": 5,
       "low": 140
     },
     "refactoringPriorities": {
       "critical": 1,
-      "high": 0,
+      "high": 1,
       "medium": 5,
       "low": 140
     }
@@ -646,6 +646,24 @@
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/docs-intelligence.yml"
     },
+    "emergency-fix.yml": {
+      "complexityScore": 50,
+      "complexityLevel": "high",
+      "metrics": {
+        "totalLines": 229,
+        "jobCount": 0,
+        "stepCount": 20,
+        "conditionalCount": 4,
+        "matrixCount": 0,
+        "dependencyCount": 4,
+        "environmentCount": 1,
+        "secretCount": 5,
+        "actionCount": 7
+      },
+      "refactoringPriority": "high",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/emergency-fix.yml"
+    },
     "external-links.yml": {
       "complexityScore": 10,
       "complexityLevel": "low",
@@ -1061,10 +1079,10 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/readme-auto-advertiser.yml"
     },
     "release.yml": {
-      "complexityScore": 35,
+      "complexityScore": 45,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 186,
+        "totalLines": 202,
         "jobCount": 0,
         "stepCount": 23,
         "conditionalCount": 1,

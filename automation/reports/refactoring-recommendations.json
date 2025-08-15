@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-15T22:37:40.573Z",
+  "timestamp": "2025-08-15T22:38:40.561Z",
   "critical": [
     {
       "workflow": "security-gates.yml",
@@ -26,7 +26,30 @@
       ]
     }
   ],
-  "high": [],
+  "high": [
+    {
+      "workflow": "emergency-fix.yml",
+      "status": "active",
+      "complexityScore": 50,
+      "complexityLevel": "high",
+      "metrics": {
+        "totalLines": 229,
+        "jobCount": 0,
+        "stepCount": 20,
+        "conditionalCount": 4,
+        "matrixCount": 0,
+        "dependencyCount": 4,
+        "environmentCount": 1,
+        "secretCount": 5,
+        "actionCount": 7
+      },
+      "refactoringStrategy": [
+        "Break down into smaller job steps",
+        "Optimize job dependencies",
+        "Extract common functionality to reusable workflows"
+      ]
+    }
+  ],
   "medium": [
     {
       "workflow": "automation-orchestrator.yml",
@@ -94,10 +117,10 @@
     {
       "workflow": "release.yml",
       "status": "active",
-      "complexityScore": 35,
+      "complexityScore": 45,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 186,
+        "totalLines": 202,
         "jobCount": 0,
         "stepCount": 23,
         "conditionalCount": 1,
