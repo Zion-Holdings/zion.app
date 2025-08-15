@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T08:44:34.906Z",
+  "generatedAt": "2025-08-15T08:45:16.864Z",
   "knownRoutes": [
     "/",
     "/404",
@@ -472,6 +472,8 @@
     "/reports/blueprints/blueprint-2025-08-15-084153",
     "/reports/blueprints/blueprint-2025-08-15-084154",
     "/reports/blueprints/blueprint-2025-08-15-084240",
+    "/reports/blueprints/blueprint-2025-08-15-084507",
+    "/reports/blueprints/blueprint-2025-08-15-084514",
     "/reports/cases/case-2025-08-15-021207",
     "/reports/cases/case-2025-08-15-021325",
     "/reports/cases/case-2025-08-15-021452",
@@ -1177,7 +1179,8 @@
     "/reports/cases/case-2025-08-15-084249",
     "/reports/cases/case-2025-08-15-084250",
     "/reports/cases/case-2025-08-15-084321",
-    "/reports/cases/case-2025-08-15-084418",
+    "/reports/cases/case-2025-08-15-084506",
+    "/reports/cases/case-2025-08-15-084507",
     "/reports/guides/guide-2025-08-15-021207",
     "/reports/guides/guide-2025-08-15-021325",
     "/reports/guides/guide-2025-08-15-021452",
@@ -1883,7 +1886,8 @@
     "/reports/guides/guide-2025-08-15-084249",
     "/reports/guides/guide-2025-08-15-084250",
     "/reports/guides/guide-2025-08-15-084321",
-    "/reports/guides/guide-2025-08-15-084418",
+    "/reports/guides/guide-2025-08-15-084506",
+    "/reports/guides/guide-2025-08-15-084507",
     "/reports/innovations/insight-2025-08-15-0211",
     "/reports/innovations/insight-2025-08-15-0213",
     "/reports/innovations/insight-2025-08-15-0214",
@@ -2015,6 +2019,7 @@
     "/reports/innovations/insight-2025-08-15-0838",
     "/reports/innovations/insight-2025-08-15-0840",
     "/reports/innovations/insight-2025-08-15-0841",
+    "/reports/innovations/insight-2025-08-15-0845",
     "/reports/innovations/insight-2025-08-15T02-12",
     "/reports/innovations/insight-2025-08-15T02-13",
     "/reports/innovations/insight-2025-08-15T02-14",
@@ -2150,6 +2155,7 @@
     "/reports/innovations/insight-2025-08-15T08-40",
     "/reports/innovations/insight-2025-08-15T08-41",
     "/reports/innovations/insight-2025-08-15T08-42",
+    "/reports/innovations/insight-2025-08-15T08-45",
     "/reports/patterns/pattern-2025-08-15-021207",
     "/reports/patterns/pattern-2025-08-15-021325",
     "/reports/patterns/pattern-2025-08-15-021452",
@@ -2853,7 +2859,8 @@
     "/reports/patterns/pattern-2025-08-15-084249",
     "/reports/patterns/pattern-2025-08-15-084250",
     "/reports/patterns/pattern-2025-08-15-084321",
-    "/reports/patterns/pattern-2025-08-15-084418",
+    "/reports/patterns/pattern-2025-08-15-084506",
+    "/reports/patterns/pattern-2025-08-15-084507",
     "/reports/playbooks/playbook-2025-08-15-021207",
     "/reports/playbooks/playbook-2025-08-15-021325",
     "/reports/playbooks/playbook-2025-08-15-021452",
@@ -3314,6 +3321,7 @@
     "/reports/playbooks/playbook-2025-08-15-084123",
     "/reports/playbooks/playbook-2025-08-15-084153",
     "/reports/playbooks/playbook-2025-08-15-084242",
+    "/reports/playbooks/playbook-2025-08-15-084507",
     "/reports/updates/update-2025-08-14-2311",
     "/reports/updates/update-2025-08-14-2312",
     "/reports/updates/update-2025-08-14-2313",
@@ -3624,7 +3632,7 @@
     "/reports/updates/update-2025-08-15-0541",
     "/reports/updates/update-2025-08-15-0542",
     "/reports/updates/update-2025-08-15-0543",
-    "/reports/updates/update-2025-08-15-0544",
+    "/reports/updates/update-2025-08-15-0545",
     "/reports/updates/update-2025-08-15-0550",
     "/reports/updates/update-2025-08-15-0556",
     "/reports/updates/update-2025-08-15-0557",
@@ -3734,6 +3742,7 @@
     "/reports/updates/update-2025-08-15-0838",
     "/reports/updates/update-2025-08-15-0840",
     "/reports/updates/update-2025-08-15-0841",
+    "/reports/updates/update-2025-08-15-0845",
     "/reports/updates/update-2025-08-15T02-12",
     "/reports/updates/update-2025-08-15T02-13",
     "/reports/updates/update-2025-08-15T02-14",
@@ -3869,6 +3878,7 @@
     "/reports/updates/update-2025-08-15T08-40",
     "/reports/updates/update-2025-08-15T08-41",
     "/reports/updates/update-2025-08-15T08-42",
+    "/reports/updates/update-2025-08-15T08-45",
     "/search",
     "/services",
     "/site-health"
@@ -4006,22 +4016,27 @@
     },
     {
       "file": "pages/main/front/index.tsx",
+      "href": "/reports/seo",
+      "suggestion": null
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "href": "/reports/ai-trends",
+      "suggestion": null
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "href": "/reports/a11y",
+      "suggestion": null
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "href": "/reports/metadata",
+      "suggestion": null
+    },
+    {
+      "file": "pages/main/front/index.tsx",
       "href": "/main/front#features",
-      "suggestion": null
-    },
-    {
-      "file": "pages/main/front/index.tsx",
-      "href": "/main/front#capabilities",
-      "suggestion": null
-    },
-    {
-      "file": "pages/main/front/index.tsx",
-      "href": "/main/front#benefits",
-      "suggestion": null
-    },
-    {
-      "file": "pages/main/front/index.tsx",
-      "href": "/.netlify/functions/docs-index-runner",
       "suggestion": null
     },
     {
