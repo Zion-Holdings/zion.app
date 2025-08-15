@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T18:16:04.268Z",
+  "generatedAt": "2025-08-15T18:17:03.351Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1374,6 +1374,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1520.tsx",
       "title": "Autonomous Playbook — Agentic Workflows (2025-08-15 15:20 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Agentic Workflows (2025-08-15 15:20 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { \""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1517",
+      "file": "pages/reports/updates/update-2025-08-15-1517.tsx",
+      "title": "Autonomous Update — 2025-08-15 15:17",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 15:17 Autonomous Update — 2025-08-15 15:17 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Bypassing airport sec"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1516",
