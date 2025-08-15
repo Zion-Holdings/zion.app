@@ -1,11 +1,11 @@
 {
-  "timestamp": "2025-08-15T23:41:46.263Z",
+  "timestamp": "2025-08-15T23:42:52.703Z",
   "summary": {
     "totalWorkflows": 149,
     "activeWorkflows": 74,
     "disabledWorkflows": 74,
-    "workflowsWithIssues": 49,
-    "totalIssues": 50
+    "workflowsWithIssues": 50,
+    "totalIssues": 51
   },
   "patterns": {
     "highComplexity": [
@@ -162,6 +162,7 @@
       "ai-research-scout.yml",
       "automation-orchestrator.yml",
       "cloud-agents-fast.yml",
+      "cloud-deep-research.yml",
       "dead-code-report.yml",
       "docs-intelligence.yml",
       "emergency-fix.yml",
@@ -1167,8 +1168,8 @@
       "name": "cloud-deep-research.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cloud-deep-research.yml",
-      "size": 1992,
-      "lines": 62,
+      "size": 2069,
+      "lines": 67,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -1178,8 +1179,6 @@
         "jobs",
         "main",
         "steps",
-        "with",
-        "with",
         "with",
         "with"
       ],
@@ -1197,8 +1196,11 @@
         }
       ],
       "concurrency": null,
-      "issues": [],
+      "issues": [
+        "unsafe_git_push"
+      ],
       "recommendations": [
+        "Add branch protection to git push operations",
         "Add workflow_dispatch trigger for manual testing",
         "Consider splitting into smaller workflows for better maintainability"
       ]
@@ -8148,6 +8150,7 @@
         "Add branch protection to ai-research-scout.yml",
         "Add branch protection to automation-orchestrator.yml",
         "Add branch protection to cloud-agents-fast.yml",
+        "Add branch protection to cloud-deep-research.yml",
         "Add branch protection to dead-code-report.yml",
         "Add branch protection to docs-intelligence.yml",
         "Add branch protection to emergency-fix.yml",
@@ -8345,6 +8348,7 @@
       "Add branch protection to ai-research-scout.yml",
       "Add branch protection to automation-orchestrator.yml",
       "Add branch protection to cloud-agents-fast.yml",
+      "Add branch protection to cloud-deep-research.yml",
       "Add branch protection to dead-code-report.yml",
       "Add branch protection to docs-intelligence.yml",
       "Add branch protection to emergency-fix.yml",
