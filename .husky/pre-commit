@@ -1,4 +1,26 @@
-#!/usr/bin/env bash
-set -euo pipefail
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
 
-npm run lint:staged
+echo "🔍 Running pre-commit checks..."
+
+# Run React component validation
+echo "📋 Validating React components..."
+if node automation/react-component-validator.cjs; then
+    echo "✅ React component validation passed"
+else
+    echo "❌ React component validation failed. Please fix issues before committing."
+    echo "💡 Run 'node automation/react-component-validator.cjs' for detailed report."
+    exit 1
+fi
+
+# Run build preflight check
+echo "🚀 Running build preflight check..."
+if node automation/build-preflight-checker.cjs; then
+    echo "✅ Build preflight check passed"
+else
+    echo "❌ Build preflight check failed. Please fix issues before committing."
+    echo "💡 Run 'node automation/build-preflight-checker.cjs' for detailed report."
+    exit 1
+fi
+
+echo "🎉 All pre-commit checks passed!"
