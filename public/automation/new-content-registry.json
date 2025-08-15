@@ -2,6 +2,13 @@
   "generatedAt": "2025-08-15T06:42:53.910Z",
   "items": [
     {
+      "title": "Playbook: LLM Apps",
+      "subtitle": "Patterns to accelerate delivery.",
+      "path": "/reports/innovations/insight-2025-08-15-0643",
+      "createdAt": "2025-08-15T06:43:04.855Z",
+      "kind": "insight"
+    },
+    {
       "title": "Reference Architecture — Autonomous Content Mesh",
       "href": "/reports/blueprints/blueprint-2025-08-15-064253",
       "desc": "New autonomous content",
