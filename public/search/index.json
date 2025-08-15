@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T12:36:02.995Z",
+  "generatedAt": "2025-08-15T12:37:02.838Z",
   "entries": [
     {
       "route": "/site-health",
@@ -1038,6 +1038,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1034.tsx",
       "title": "Autonomous Security Hardening Guide — Edge AI & IoT (2025-08-15 10:34 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Security Hardening Guide — Edge AI & IoT (2025-08-15 10:34 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0937",
+      "file": "pages/reports/updates/update-2025-08-15-0937.tsx",
+      "title": "Autonomous Update — 2025-08-15 09:37",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 09:37 Autonomous Update — 2025-08-15 09:37 Signal over noise—your automated update is here. Today's Highlight Hacker News : Air Con: $1697 for an on/off switch · 2001 pts "
     },
     {
       "route": "/reports/updates/update-2025-08-15-0936",
