@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T23:12:00.943Z",
-  "pagesScanned": 5589,
+  "generatedAt": "2025-08-15T23:13:00.866Z",
+  "pagesScanned": 5591,
   "items": [
     {
       "route": "/404",
@@ -6182,6 +6182,16 @@
       "suggestion": {
         "title": "Reference Architecture — Autonomous Content Mesh",
         "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/case-studies/ai-automation-success",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "AI-Powered Automation Success Story",
+        "description": "AI-Powered Automation Success Story — auto-suggested description"
       }
     },
     {
@@ -53497,14 +53507,24 @@
     {
       "route": "/reports/updates/update-2025-08-15-2012",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 20:12",
+        "description": "Autonomous Update — 2025-08-15 20:12 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-2013",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-15 20:12",
-        "description": "Autonomous Update — 2025-08-15 20:12 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-15 20:13",
+        "description": "Autonomous Update — 2025-08-15 20:13 — auto-suggested description"
       }
     },
     {

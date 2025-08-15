@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T23:12:03.182Z",
+  "generatedAt": "2025-08-15T23:13:03.136Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1554,6 +1554,12 @@
       "file": "pages/reports/updates/update-2025-08-15-2020.tsx",
       "title": "Autonomous Reference Architecture — Agentic Workflows (2025-08-15 20:20 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Reference Architecture — Agentic Workflows (2025-08-15 20:20 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\","
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-2013",
+      "file": "pages/reports/updates/update-2025-08-15-2013.tsx",
+      "title": "Autonomous Update — 2025-08-15 20:13",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 20:13 Autonomous Update — 2025-08-15 20:13 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Airfoil · 2544 pts Wh"
     },
     {
       "route": "/reports/updates/update-2025-08-15-2012",
@@ -29946,6 +29952,12 @@
       "file": "pages/reports/cases/case-2025-08-15-021207.tsx",
       "title": "Case Study — Automation Autonomous",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/case-studies/ai-automation-success",
+      "file": "pages/reports/case-studies/ai-automation-success.tsx",
+      "title": "AI-Powered Automation Success Story - TechCorp Industries | Zion Tech Group",
+      "summary": "import Head from 'next/head'; import Link from 'next/link'; export default function AIAutomationCaseStudy() { return ( AI-Powered Automation Success Story - TechCorp Industries | Zion Tech Group {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \""
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-15-230034",
