@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T23:16:00.827Z",
-  "pagesScanned": 5597,
+  "generatedAt": "2025-08-15T23:17:00.852Z",
+  "pagesScanned": 5599,
   "items": [
     {
       "route": "/404",
@@ -6202,6 +6202,16 @@
       "suggestion": {
         "title": "AI-Powered Automation Success Story",
         "description": "AI-Powered Automation Success Story — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/case-studies/",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Studies",
+        "description": "Case Studies — auto-suggested description"
       }
     },
     {
@@ -53557,14 +53567,24 @@
     {
       "route": "/reports/updates/update-2025-08-15-2016",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 20:16",
+        "description": "Autonomous Update — 2025-08-15 20:16 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-2017",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-15 20:16",
-        "description": "Autonomous Update — 2025-08-15 20:16 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-15 20:17",
+        "description": "Autonomous Update — 2025-08-15 20:17 — auto-suggested description"
       }
     },
     {

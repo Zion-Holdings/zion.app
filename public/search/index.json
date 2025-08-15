@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T23:16:02.992Z",
+  "generatedAt": "2025-08-15T23:17:03.134Z",
   "entries": [
     {
       "route": "/terms",
@@ -1572,6 +1572,12 @@
       "file": "pages/reports/updates/update-2025-08-15-2020.tsx",
       "title": "Autonomous Reference Architecture — Agentic Workflows (2025-08-15 20:20 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Reference Architecture — Agentic Workflows (2025-08-15 20:20 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\","
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-2017",
+      "file": "pages/reports/updates/update-2025-08-15-2017.tsx",
+      "title": "Autonomous Update — 2025-08-15 20:17",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 20:17 Autonomous Update — 2025-08-15 20:17 Signal over noise—your automated update is here. Today's Highlight Hacker News : Paper Airplane Designs · 1753 pts Why it matter"
     },
     {
       "route": "/reports/updates/update-2025-08-15-2016",
@@ -29988,6 +29994,12 @@
       "file": "pages/reports/cases/case-2025-08-15-021207.tsx",
       "title": "Case Study — Automation Autonomous",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Automation Autonomous Case Study — Automation Autonomous Source: https://ziontechgroup.com/main/front Scenario Exploring how automation, autonomous, site, front, systemsai delivers value. Approac"
+    },
+    {
+      "route": "/reports/case-studies",
+      "file": "pages/reports/case-studies/index.tsx",
+      "title": "Case Studies | Zion Tech Group",
+      "summary": "import Head from 'next/head'; import Link from 'next/link'; export default function CaseStudiesIndexPage() { const caseStudies = [ { id: 'ai-automation-success', title: 'AI-Powered Automation Success Story', company: 'TechCorp Industries', industry: 'Manufacturing', challenge: 'M"
     },
     {
       "route": "/reports/case-studies/ai-automation-success",
