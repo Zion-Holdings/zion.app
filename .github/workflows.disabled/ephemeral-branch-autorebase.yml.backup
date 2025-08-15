@@ -1,0 +1,59 @@
+name: Ephemeral Branch Auto-Rebase
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  autorebase:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: List branches
+        id: list
+        run: |
+          git fetch --all --prune
+          git for-each-ref --format='%(refname:short)' refs/remotes/origin > branches.txt
+          awk '{print $0}' branches.txt | sed 's#^origin/##' | sort -u > local_branches.txt
+          cat local_branches.txt
+
+      - name: Rebase ephemeral branches on main
+        env:
+          BRANCH_PREFIXES: 'cursor/,feat/,fix/,chore/,refactor/'
+        run: |
+          set -euo pipefail
+          IFS=',' read -r -a prefixes <<< "$BRANCH_PREFIXES"
+          while read -r br; do
+            if [ "$br" = "main" ] || [ -z "$br" ]; then continue; fi
+            match=false
+            for p in "${prefixes[@]}"; do
+              case "$br" in
+                ${p}*) match=true ;;
+              esac
+            done
+            if [ "$match" = true ]; then
+              echo "Rebasing $br onto main"
+              git checkout -B "$br" "origin/$br" || continue
+              if git rebase origin/main; then
+                git push --force-with-lease origin "$br"
+              else
+                echo "Rebase conflict on $br; aborting and moving on"
+                git rebase --abort || true
+              fi
+            fi
+          done < local_branches.txt

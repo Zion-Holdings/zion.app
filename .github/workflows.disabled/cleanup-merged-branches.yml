@@ -11,6 +11,7 @@ permissions:
 jobs:
   cleanup:
     runs-on: ubuntu-latest
+      timeout-minutes: 15
     steps:
       - name: List open PR heads
         id: list

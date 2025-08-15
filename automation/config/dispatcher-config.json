@@ -1,0 +1,32 @@
+{
+  "maxConcurrentDispatches": 5,
+  "batchDelayMs": 5000,
+  "smartFiltering": true,
+  "changeDetection": true,
+  "priorityQueue": true,
+  "autoRetry": true,
+  "maxRetries": 3,
+  "retryDelayMs": 10000,
+  "workflowGroups": {
+    "critical": [
+      "ci.yml",
+      "security-gates.yml",
+      "dependency-auto-upgrade.yml"
+    ],
+    "high": [
+      "ci-self-heal.yml",
+      "auto-heal-workflows.yml",
+      "playwright-smoke.yml"
+    ],
+    "medium": [
+      "pa11y.yml",
+      "lighthouse-live.yml",
+      "seo-audit.yml"
+    ],
+    "low": [
+      "marketing-daily.yml",
+      "instagram-six-hourly.yml",
+      "performance-weekly.yml"
+    ]
+  }
+}

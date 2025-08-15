@@ -1,0 +1,6 @@
+{
+  "maxConcurrentWorkflows": 10,
+  "maxConcurrentRunners": 20,
+  "criticalWorkflowSlots": 3,
+  "resourceIntensiveSlots": 2
+}

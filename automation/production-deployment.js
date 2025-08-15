@@ -360,7 +360,7 @@ async function readControlPlane() {
       return JSON.parse(fs.readFileSync(controlFile, 'utf8'));
     }
     return null;
-  } catch (error) {
+  } catch {
     return null;
   }
 }
@@ -375,7 +375,7 @@ async function readAutomationHealth() {
       return JSON.parse(fs.readFileSync(healthFile, 'utf8'));
     }
     return null;
-  } catch (error) {
+  } catch {
     return null;
   }
 }
@@ -390,7 +390,7 @@ async function readSecurityStatus() {
       return JSON.parse(fs.readFileSync(securityFile, 'utf8'));
     }
     return null;
-  } catch (error) {
+  } catch {
     return null;
   }
 }
@@ -408,7 +408,7 @@ async function readPerformanceData() {
       system: healthData?.system || {},
       security: securityData?.summary || {}
     };
-  } catch (error) {
+  } catch {
     return { functions: {}, system: {}, security: {} };
   }
 }
@@ -464,12 +464,12 @@ async function checkNotificationSystemAccess() {
 async function checkPerformanceOptimizerAccess() {
   try {
     const optimizerPath = path.join(process.cwd(), 'automation', 'helpers', 'performance-optimizer.js');
-    if (!fs.existsSync(optimifierPath)) {
+    if (!fs.existsSync(optimizerPath)) {
       return { success: false, reason: 'Performance optimizer not found' };
     }
     return { success: true };
-  } catch (error) {
-    return { success: false, reason: error.message };
+  } catch {
+    return { success: false, reason: 'Performance optimizer not found' };
   }
 }
 

@@ -1,0 +1,55 @@
+name: Update PR branches with main
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  list:
+    runs-on: ubuntu-latest
+    outputs:
+      prs: ${{ steps.collect.outputs.prs }}
+    steps:
+      - id: collect
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { data: prs } = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              per_page: 100
+            });
+            const own = prs
+              .filter(pr => pr.head.repo && pr.head.repo.full_name === pr.base.repo.full_name)
+              .map(pr => ({ number: pr.number, headRef: pr.head.ref }));
+            core.setOutput('prs', JSON.stringify(own));
+
+  update:
+    needs: list
+    if: needs.list.outputs.prs != '[]'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJSON(needs.list.outputs.prs) }}
+    steps:
+      - name: Checkout PR head
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ matrix.headRef }}
+      - name: Merge main into PR branch
+        run: |
+          git fetch origin main
+          git merge --no-edit origin/main || true
+      - name: Push updated branch
+        run: |
+          git push origin HEAD:${{ matrix.headRef }} || echo "Push failed (likely fork)"

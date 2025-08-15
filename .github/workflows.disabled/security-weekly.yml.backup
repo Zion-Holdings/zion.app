@@ -1,0 +1,41 @@
+name: Security Weekly
+
+on:
+  schedule:
+    - cron: '0 2 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Run security scanner and audit fix (best-effort)
+        run: |
+          npm run security:scan || true
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore(security): automated security scan and fixes"
+          title: "chore(security): automated security scan and fixes"
+          body: |
+            Security scan and best-effort fixes.
+          branch: automation/security-weekly
+          delete-branch: true
+          labels: |
+            automation
+            security
+            auto-merge

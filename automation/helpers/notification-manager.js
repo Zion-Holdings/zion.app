@@ -133,7 +133,7 @@ class NotificationManager {
     }
 
     try {
-      const emailContent = this.generateEmailContent(escalation);
+      this.generateEmailContent(escalation);
       console.log(`📧 Email notification prepared for ${escalation.functionName}`);
       
       // In a real implementation, you would send the email here
@@ -163,7 +163,7 @@ class NotificationManager {
     }
 
     try {
-      const slackMessage = this.generateSlackMessage(escalation);
+      this.generateSlackMessage(escalation);
       console.log(`💬 Slack notification prepared for ${escalation.functionName}`);
       
       // In a real implementation, you would send to Slack here
@@ -193,7 +193,7 @@ class NotificationManager {
     }
 
     try {
-      const webhookPayload = this.generateWebhookPayload(escalation);
+      this.generateWebhookPayload(escalation);
       console.log(`🌐 Webhook notification prepared for ${escalation.functionName}`);
       
       // In a real implementation, you would send the webhook here

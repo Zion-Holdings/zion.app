@@ -1,0 +1,104 @@
+name: Workflow Supervisor
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch: {}
+
+concurrency:
+  group: workflow-supervisor-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  supervise:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Supervise critical workflows
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+
+            // Map friendly names to workflow file IDs for dispatch
+            const monitored = [
+              { name: 'CI', id: 'ci.yml' },
+              { name: 'Rapid Git Sync (1m)', id: 'rapid-git-sync.yml' },
+              { name: 'Autonomous Cloud Orchestrator', id: 'autonomous-cloud.yml' },
+              { name: 'Autonomous Cloud Runner (Fast)', id: 'autonomous-cloud-runner.yml' },
+              { name: 'Autonomous Cloud Automations', id: 'autonomous-cloud-automations.yml' }
+            ];
+
+            const windowRuns = 10; // recent N runs
+            const failureThresholdRatio = 0.5; // alert if > 50% failures
+            const failingNow = [];
+
+            const fmt = (r) => `${r.name}#${r.run_number} (${r.status}/${r.conclusion})`;
+
+            for (const wf of monitored) {
+              try {
+                const runsResp = await github.rest.actions.listWorkflowRuns({
+                  owner,
+                  repo,
+                  workflow_id: wf.id,
+                  per_page: windowRuns,
+                  branch: 'main'
+                });
+                const runs = runsResp.data.workflow_runs || [];
+                if (runs.length === 0) continue;
+
+                const recent = runs.slice(0, windowRuns);
+                const failures = recent.filter(r => r.conclusion === 'failure' || r.conclusion === 'timed_out' || r.conclusion === 'cancelled');
+                const ratio = failures.length / recent.length;
+
+                core.info(`Workflow ${wf.name}: ${recent.length} recent, ${failures.length} failing (ratio=${ratio.toFixed(2)})`);
+
+                if (ratio > failureThresholdRatio) {
+                  failingNow.push({ wf, failures, recent });
+
+                  // Attempt a re-dispatch (fresh run on main)
+                  try {
+                    await github.rest.actions.createWorkflowDispatch({ owner, repo, workflow_id: wf.id, ref: 'main' });
+                    core.notice(`Dispatched rerun for ${wf.name}`);
+                  } catch (e) {
+                    core.warning(`Dispatch failed for ${wf.name}: ${e.message}`);
+                  }
+                }
+              } catch (e) {
+                core.warning(`Unable to list runs for ${wf.name} (${wf.id}): ${e.message}`);
+              }
+            }
+
+            if (failingNow.length === 0) {
+              core.notice('All monitored workflows are healthy enough.');
+              return;
+            }
+
+            const title = 'Supervisor: Workflows experiencing elevated failure rates';
+            const bodyLines = [];
+            for (const item of failingNow) {
+              const { wf, failures, recent } = item;
+              bodyLines.push(`- ${wf.name} (${wf.id}): ${failures.length}/${recent.length} failing. Example recent runs:`);
+              for (const r of recent.slice(0, 5)) {
+                bodyLines.push(`  - ${fmt(r)} ➜ ${r.html_url}`);
+              }
+            }
+            bodyLines.push('\nAutomated supervisor triggered reruns via workflow_dispatch on main.');
+
+            const body = bodyLines.join('\n');
+
+            // Create or update a single sticky issue
+            const issues = await github.rest.issues.listForRepo({ owner, repo, state: 'open', labels: 'automation,supervisor' });
+            let issue = issues.data.find(i => i.title === title);
+            if (!issue) {
+              const created = await github.rest.issues.create({ owner, repo, title, body, labels: ['automation', 'supervisor'] });
+              core.notice(`Opened issue #${created.data.number}`);
+            } else {
+              await github.rest.issues.update({ owner, repo, issue_number: issue.number, body });
+              core.notice(`Updated issue #${issue.number}`);
+            }

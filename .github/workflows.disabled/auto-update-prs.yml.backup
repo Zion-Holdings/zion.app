@@ -1,0 +1,39 @@
+name: Auto Update PRs
+
+on:
+  schedule:
+    - cron: '13 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-branches:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Update open PR branches (merge base into PR)
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const prs = await github.paginate(github.rest.pulls.list, { owner, repo, state: 'open', per_page: 100 });
+            for (const pr of prs) {
+              try {
+                // Only update if label 'autoupdate' is present or branch is behind
+                const labels = pr.labels.map(l => l.name);
+                if (!labels.includes('autoupdate') && !pr.mergeable_state) {
+                  continue;
+                }
+                await github.rest.pulls.updateBranch({ owner, repo, pull_number: pr.number, expected_head_sha: pr.head.sha });
+                core.info(`Updated PR #${pr.number} (${pr.head.ref}) with base ${pr.base.ref}`);
+              } catch (e) {
+                core.warning(`Skipping PR #${pr.number}: ${e.message}`);
+              }
+            }

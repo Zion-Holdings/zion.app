@@ -1,0 +1,55 @@
+name: Cleanup merged branches
+
+on:
+  schedule:
+    - cron: '0 4 * * 0'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List open PR heads
+        id: list
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { data: prs } = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              per_page: 100
+            });
+            const heads = prs.map(pr => pr.head.ref);
+            const fs = require('fs');
+            fs.writeFileSync('open_pr_heads.txt', heads.join('\n'));
+            core.info(`Open PR heads: ${heads.length}`);
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Prune merged branches
+        run: |
+          set -e
+          git fetch --all --prune
+          base="origin/main"
+          protected_regex='^(origin/(main|master|develop|dev|preview|gh-pages))$'
+          echo "Protected regex: $protected_regex"
+          while read -r ref; do
+            ref=$(echo "$ref" | sed 's/^ *//')
+            [ -z "$ref" ] && continue
+            if [[ $ref =~ $protected_regex ]]; then
+              echo "Skip protected: $ref"
+              continue
+            fi
+            branch=${ref#origin/}
+            if grep -qx "$branch" open_pr_heads.txt; then
+              echo "Skip open PR head: $branch"
+              continue
+            fi
+            echo "Attempt delete: $branch"
+            git push origin --delete "$branch" || echo "Could not delete $branch"
+          done < <(git branch -r --merged "$base")
