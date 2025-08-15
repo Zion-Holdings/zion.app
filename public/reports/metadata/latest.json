@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T05:15:00.369Z",
-  "pagesScanned": 354,
+  "generatedAt": "2025-08-15T05:16:02.395Z",
+  "pagesScanned": 356,
   "items": [
     {
       "route": "/404",
@@ -3160,6 +3160,32 @@
       "suggestion": {
         "title": "Autonomous Blueprint — Applied NLP & RAG (2025-08-15 02:14 UTC)",
         "description": "Autonomous Blueprint — Applied NLP & RAG (2025-08-15 02:14 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0215",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 02:15",
+        "description": "Autonomous Update — 2025-08-15 02:15 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0216",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 02:16",
+        "description": "Autonomous Update — 2025-08-15 02:16 — auto-suggested description"
       }
     },
     {
