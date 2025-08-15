@@ -4018,5 +4018,29 @@
     "startTime": "2025-08-15T20:54:23.060Z",
     "status": "active",
     "filePath": "conv-1755291263060.json"
+  },
+  {
+    "id": "conv-1755291403456",
+    "type": "architecture-discussion",
+    "participants": [
+      "Backend Developer",
+      "DevOps Engineer",
+      "Security Expert"
+    ],
+    "startTime": "2025-08-15T20:56:43.457Z",
+    "status": "active",
+    "filePath": "conv-1755291403456.json"
+  },
+  {
+    "id": "conv-1755291405462",
+    "type": "performance-optimization",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "DevOps Engineer"
+    ],
+    "startTime": "2025-08-15T20:56:45.462Z",
+    "status": "active",
+    "filePath": "conv-1755291405462.json"
   }
 ]
