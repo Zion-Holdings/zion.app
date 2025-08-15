@@ -289,11 +289,23 @@ export default function ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}P
   extractMissingComponents(description) {
     const components = [];
     
-    if (description.includes('Header')) components.push('Header');
-    if (description.includes('Navigation')) components.push('Navigation');
-    if (description.includes('Search')) components.push('Search');
-    if (description.includes('Card')) components.push('Card');
-    if (description.includes('Button')) components.push('Button');
+    // Extract component names from description (e.g., "Pagination.tsx, Form.tsx, Modal.tsx")
+    const componentMatches = description.match(/(\w+)\.tsx/g);
+    if (componentMatches) {
+      componentMatches.forEach(match => {
+        const componentName = match.replace('.tsx', '');
+        components.push(componentName);
+      });
+    }
+    
+    // Fallback to specific components if no .tsx matches found
+    if (components.length === 0) {
+      if (description.includes('Header')) components.push('Header');
+      if (description.includes('Navigation')) components.push('Navigation');
+      if (description.includes('Search')) components.push('Search');
+      if (description.includes('Card')) components.push('Card');
+      if (description.includes('Button')) components.push('Button');
+    }
     
     return components;
   }
@@ -318,7 +330,10 @@ export default function ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}P
       Navigation: this.getNavigationTemplate(),
       Search: this.getSearchTemplate(),
       Card: this.getCardTemplate(),
-      Button: this.getButtonTemplate()
+      Button: this.getButtonTemplate(),
+      Pagination: this.getPaginationTemplate(),
+      Form: this.getFormTemplate(),
+      Modal: this.getModalTemplate()
     };
     
     return templates[componentName] || this.getDefaultComponentTemplate(componentName);
