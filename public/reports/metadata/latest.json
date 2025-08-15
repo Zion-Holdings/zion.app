@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T05:55:00.412Z",
+  "generatedAt": "2025-08-15T05:55:09.770Z",
   "pagesScanned": 526,
   "items": [
     {
@@ -131,10 +131,7 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -4858,10 +4855,7 @@
     {
       "route": "/reports/updates/update-2025-08-15-0255",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-15 02:55",
