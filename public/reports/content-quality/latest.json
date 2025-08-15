@@ -1,8 +1,37 @@
 {
+<<<<<<< HEAD
   "generatedAt": "2025-08-15T04:03:00.993Z",
   "files": [
     "update-2025-08-15-0403.tsx",
     "update-2025-08-15-0402.tsx",
+=======
+  "generatedAt": "2025-08-15T04:11:00.673Z",
+  "files": [
+    "update-2025-08-15-0111.tsx",
+    "update-2025-08-15T04-10.tsx",
+    "update-2025-08-15-0410.tsx",
+    "update-2025-08-15-0110.tsx",
+    "update-2025-08-15-0109.tsx",
+    "update-2025-08-15-0108.tsx",
+    "update-2025-08-15-0107.tsx",
+    "update-2025-08-15-0106.tsx",
+    "update-2025-08-15-0105.tsx",
+    "update-2025-08-15-0104.tsx",
+    "update-2025-08-15-0103.tsx",
+    "update-2025-08-15-0102.tsx",
+    "update-2025-08-15-0101.tsx",
+    "update-2025-08-15-0100.tsx",
+    "update-2025-08-15T04-00.tsx",
+    "update-2025-08-15-0400.tsx",
+    "update-2025-08-15-0059.tsx",
+    "update-2025-08-15-0058.tsx",
+    "update-2025-08-15-0057.tsx",
+    "update-2025-08-15-0056.tsx",
+    "update-2025-08-15-0055.tsx",
+    "update-2025-08-15-0054.tsx",
+    "update-2025-08-15-0053.tsx",
+    "update-2025-08-15-0052.tsx",
+>>>>>>> origin/main
     "update-2025-08-15-0051.tsx",
     "update-2025-08-15-0052.tsx",
     "update-2025-08-15-0053.tsx",
@@ -66,6 +95,7 @@
     "update-2025-08-15T03-00.tsx",
     "update-2025-08-15T03-10.tsx",
     "update-2025-08-14-2323.tsx",
+<<<<<<< HEAD
     "update-2025-08-14-2324.tsx",
     "update-2025-08-14-2325.tsx",
     "update-2025-08-14-2326.tsx",
@@ -101,12 +131,28 @@
     "update-2025-08-15-0220.tsx",
     "update-2025-08-15T02-12.tsx",
     "update-2025-08-15T02-13.tsx"
+=======
+    "update-2025-08-14-2322.tsx",
+    "update-2025-08-14-2321.tsx",
+    "update-2025-08-15T02-20.tsx",
+    "update-2025-08-15-0220.tsx",
+    "update-2025-08-14-2320.tsx",
+    "update-2025-08-14-2318.tsx",
+    "update-2025-08-15-0218.tsx",
+    "update-2025-08-14-2319.tsx",
+    "update-2025-08-15T02-19.tsx",
+    "update-2025-08-15-0219.tsx"
+>>>>>>> origin/main
   ],
   "metrics": {
     "diversityScore": 100,
     "avgLen": 2114,
     "duplicateCount": 0,
+<<<<<<< HEAD
     "seoScore": 12
+=======
+    "seoScore": 10
+>>>>>>> origin/main
   },
   "guidance": [
     "Aim for varied intros, highlights, and CTAs across updates.",
