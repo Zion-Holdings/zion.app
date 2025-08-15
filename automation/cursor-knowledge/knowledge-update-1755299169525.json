@@ -1,0 +1,32 @@
+{
+  "id": "knowledge-1755299169525",
+  "timestamp": "2025-08-15T23:06:09.525Z",
+  "patterns": {
+    "priorities": {
+      "high": 868,
+      "medium": 434
+    },
+    "types": {
+      "performance-optimization": 189,
+      "code-review": 201,
+      "deployment-planning": 162,
+      "testing-strategy": 171,
+      "architecture-discussion": 126,
+      "feature-planning": 201,
+      "bug-investigation": 150,
+      "security-audit": 102
+    },
+    "estimatedEffort": {
+      "undefined": 1302
+    },
+    "commonThemes": []
+  },
+  "insights": [
+    "High priority tasks are over-represented, consider task prioritization strategy",
+    "Most common task type is code-review (201 tasks)"
+  ],
+  "recommendations": [
+    "Average task effort: 1302.0 units",
+    "Consider reducing high priority tasks to improve focus"
+  ]
+}

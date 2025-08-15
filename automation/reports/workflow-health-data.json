@@ -1932,8 +1932,8 @@
     "name": "crawl-normalize.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/crawl-normalize.yml",
-    "size": 1526,
-    "lines": 62,
+    "size": 1617,
+    "lines": 64,
     "triggers": [
       "schedule",
       "workflow_dispatch",
@@ -1959,6 +1959,10 @@
       {
         "permission": "contents",
         "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
       }
     ],
     "concurrency": null,

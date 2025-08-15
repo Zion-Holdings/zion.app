@@ -5230,5 +5230,17 @@
     "startTime": "2025-08-15T23:06:05.504Z",
     "status": "active",
     "filePath": "conv-1755299165504.json"
+  },
+  {
+    "id": "conv-1755299167512",
+    "type": "feature-planning",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "DevOps Engineer"
+    ],
+    "startTime": "2025-08-15T23:06:07.512Z",
+    "status": "active",
+    "filePath": "conv-1755299167512.json"
   }
 ]
