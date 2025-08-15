@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T18:20:01.861Z",
-  "pagesScanned": 5097,
+  "generatedAt": "2025-08-15T18:21:00.836Z",
+  "pagesScanned": 5105,
   "items": [
     {
       "route": "/404",
@@ -5866,6 +5866,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-15-181031",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-182030",
       "missing": [
         "og:image"
       ],
@@ -22895,6 +22905,16 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-15-182030",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Autonomous Update Implementation",
+        "description": "Guide — Autonomous Update Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-15-0211",
       "missing": [
         "og:image"
@@ -24722,6 +24742,16 @@
       "suggestion": {
         "title": "Blueprint: FinOps for AI",
         "description": "Blueprint: FinOps for AI — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-1820",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Blueprint: Agent Ops",
+        "description": "Blueprint: Agent Ops — auto-suggested description"
       }
     },
     {
@@ -26612,6 +26642,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-15 18-10",
         "description": "Innovation Insight — 2025-08-15 18-10 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15T18-20",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-15 18-20",
+        "description": "Innovation Insight — 2025-08-15 18-20 — auto-suggested description"
       }
     },
     {
@@ -35235,6 +35275,16 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-15-182030",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Improving Continuously",
+        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-15-021207",
       "missing": [
         "og:image"
@@ -40846,6 +40896,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-15-181031",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-182031",
       "missing": [
         "og:image"
       ],
@@ -49045,6 +49105,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-15-1820",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Blueprint — Vision & Multimodal (2025-08-15 18:20 UTC)",
+        "description": "Autonomous Blueprint — Vision & Multimodal (2025-08-15 18:20 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-15T02-12",
       "missing": [
         "og:image"
@@ -50932,6 +51002,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-15 18-10",
         "description": "Autonomous Update — 2025-08-15 18-10 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15T18-20",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 18-20",
+        "description": "Autonomous Update — 2025-08-15 18-20 — auto-suggested description"
       }
     },
     {
