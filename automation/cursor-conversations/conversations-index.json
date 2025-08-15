@@ -130,5 +130,29 @@
     "startTime": "2025-08-15T13:53:50.791Z",
     "status": "active",
     "filePath": "conv-1755266030791.json"
+  },
+  {
+    "id": "conv-1755266171113",
+    "type": "feature-planning",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "DevOps Engineer"
+    ],
+    "startTime": "2025-08-15T13:56:11.113Z",
+    "status": "active",
+    "filePath": "conv-1755266171113.json"
+  },
+  {
+    "id": "conv-1755266173116",
+    "type": "architecture-discussion",
+    "participants": [
+      "Backend Developer",
+      "DevOps Engineer",
+      "Security Expert"
+    ],
+    "startTime": "2025-08-15T13:56:13.116Z",
+    "status": "active",
+    "filePath": "conv-1755266173116.json"
   }
 ]
