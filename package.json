@@ -70,6 +70,8 @@
     "quantum:classical:hybrid": "node scripts/quantum-classical-hybrid-engine.js",
     "agi:ai": "node scripts/agi-engine.js",
     "post:human:ai": "node scripts/post-human-intelligence-engine.js",
+    "divine:ai": "node scripts/divine-intelligence-engine.js",
+    "cosmic:consciousness": "node scripts/cosmic-consciousness-engine.js",
     "export": "rm -rf .next out tsconfig.tsbuildinfo && NODE_OPTIONS=\"--max-old-space-size=6144 --openssl-legacy-provider\" next build --no-lint && if [ -f _redirects ]; then cp -f _redirects out/_redirects; fi && if [ -f _headers ]; then cp -f _headers out/_headers; fi || echo 'Warning: Some files not found, continuing build'",
     "start": "next start",
     "postbuild": "node automation/footer-injector.cjs || true",
