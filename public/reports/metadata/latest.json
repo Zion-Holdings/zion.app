@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T19:10:01.663Z",
-  "pagesScanned": 5181,
+  "generatedAt": "2025-08-15T19:11:00.816Z",
+  "pagesScanned": 5190,
   "items": [
     {
       "route": "/404",
@@ -5916,6 +5916,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-15-190032",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-191031",
       "missing": [
         "og:image"
       ],
@@ -22995,6 +23005,16 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-15-191031",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Autonomous Update Implementation",
+        "description": "Guide — Autonomous Update Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-15-0211",
       "missing": [
         "og:image"
@@ -24872,6 +24892,16 @@
       "suggestion": {
         "title": "Checklist: MLOps",
         "description": "Checklist: MLOps — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-1910",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook: DevSecOps AI",
+        "description": "Playbook: DevSecOps AI — auto-suggested description"
       }
     },
     {
@@ -26812,6 +26842,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-15 19-00",
         "description": "Innovation Insight — 2025-08-15 19-00 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15T19-10",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-15 19-10",
+        "description": "Innovation Insight — 2025-08-15 19-10 — auto-suggested description"
       }
     },
     {
@@ -35485,6 +35525,16 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-15-191031",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Improving Continuously",
+        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-15-021207",
       "missing": [
         "og:image"
@@ -41146,6 +41196,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-15-190032",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-191031",
       "missing": [
         "og:image"
       ],
@@ -49665,6 +49725,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-15-1611",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 16:11",
+        "description": "Autonomous Update — 2025-08-15 16:11 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-15-1620",
       "missing": [
         "og:image"
@@ -49832,6 +49905,16 @@
       "suggestion": {
         "title": "Autonomous Reference Architecture — Edge AI & IoT (2025-08-15 19:00 UTC)",
         "description": "Autonomous Reference Architecture — Edge AI & IoT (2025-08-15 19:00 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1910",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Checklist — Data Engineering (2025-08-15 19:10 UTC)",
+        "description": "Autonomous Checklist — Data Engineering (2025-08-15 19:10 UTC) — auto-suggested description"
       }
     },
     {
@@ -51772,6 +51855,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-15 19-00",
         "description": "Autonomous Update — 2025-08-15 19-00 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15T19-10",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 19-10",
+        "description": "Autonomous Update — 2025-08-15 19-10 — auto-suggested description"
       }
     },
     {
