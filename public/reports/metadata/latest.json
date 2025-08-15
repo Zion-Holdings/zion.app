@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T08:58:38.975Z",
-  "pagesScanned": 4172,
+  "generatedAt": "2025-08-15T08:59:08.403Z",
+  "pagesScanned": 4182,
   "items": [
     {
       "route": "/404",
@@ -5054,6 +5054,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-15-085822",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-085903",
       "missing": [
         "og:image"
       ],
@@ -12724,6 +12734,26 @@
     },
     {
       "route": "/reports/cases/case-2025-08-15-085820",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Automation Autonomous",
+        "description": "Case Study — Automation Autonomous — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-085836",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Automation Autonomous",
+        "description": "Case Study — Automation Autonomous — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-15-085904",
       "missing": [
         "og:image"
       ],
@@ -20423,6 +20453,26 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-15-085836",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-085904",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-15-0211",
       "missing": [
         "og:image"
@@ -23270,6 +23320,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-15 08-57",
         "description": "Innovation Insight — 2025-08-15 08-57 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15T08-59",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-15 08-59",
+        "description": "Innovation Insight — 2025-08-15 08-59 — auto-suggested description"
       }
     },
     {
@@ -30953,6 +31013,26 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-15-085836",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Improving Continuously",
+        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-085904",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Improving Continuously",
+        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-15-021207",
       "missing": [
         "og:image"
@@ -35874,6 +35954,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-15-085821",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-085905",
       "missing": [
         "og:image"
       ],
@@ -41700,6 +41790,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-15 08-57",
         "description": "Autonomous Update — 2025-08-15 08-57 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15T08-59",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 08-59",
+        "description": "Autonomous Update — 2025-08-15 08-59 — auto-suggested description"
       }
     },
     {
