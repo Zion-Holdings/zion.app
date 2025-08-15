@@ -157,6 +157,7 @@
     "automation:orchestrate": "node automation/advanced-system-orchestrator.cjs",
     "automation:maintain": "node automation/ai-predictive-maintenance.cjs",
     "automation:decide": "node automation/autonomous-decision-engine.cjs",
+    "automation:quantum": "node automation/quantum-computing-integration.cjs",
     "git:sync": "node automation/advanced-git-sync.cjs",
     "git:sync:enhanced": "node automation/enhanced-git-sync-orchestrator.cjs",
     "git:health": "node automation/enhanced-git-sync-orchestrator.cjs health-check",
