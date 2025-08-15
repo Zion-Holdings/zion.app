@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Static export handled via npm script
+  output: 'export',
   trailingSlash: true,
   productionBrowserSourceMaps: false,
   images: { unoptimized: true },

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import type { GetStaticProps } from 'next';
 import Head from 'next/head';
 import FuturisticLayout from '../components/FuturisticLayout';
+import fs from 'fs';
+import path from 'path';
 
 interface AutomationHealth {
   version: string;
@@ -452,9 +454,19 @@ export default function AutomationHealthPage({ health, controlPlane, scheduleHin
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
-    // Fetch automation health data
-    const healthResponse = await fetch('http://localhost:3000/reports/automation/health.json');
-    const health = healthResponse.ok ? await healthResponse.json() : {
+    const baseDir = process.cwd();
+
+    const readJsonIfExists = (filePath: string) => {
+      try {
+        if (fs.existsSync(filePath)) {
+          const raw = fs.readFileSync(filePath, 'utf8');
+          return JSON.parse(raw);
+        }
+      } catch { /* noop */ }
+      return null;
+    };
+
+    const defaultHealth = {
       version: '1.0.0',
       lastUpdated: new Date().toISOString(),
       functions: {},
@@ -473,9 +485,7 @@ export const getStaticProps: GetStaticProps = async () => {
       }
     };
 
-    // Fetch control plane data
-    const controlResponse = await fetch('http://localhost:3000/automation/control.json');
-    const controlPlane = controlResponse.ok ? await controlResponse.json() : {
+    const defaultControl = {
       globalPause: false,
       version: '1.0.0',
       lastUpdated: new Date().toISOString(),
@@ -485,15 +495,21 @@ export const getStaticProps: GetStaticProps = async () => {
       budgets: { openai: { dailyUsd: 2.50, monthlyUsd: 50.00, enabled: true }, github: { dailyActions: 2000, monthlyActions: 50000, enabled: true } }
     };
 
-    // Fetch schedule hints
-    const hintsResponse = await fetch('http://localhost:3000/automation/schedule-hints.json');
-    const scheduleHints = hintsResponse.ok ? await hintsResponse.json() : {
+    const defaultHints = {
       version: '1.0.0',
       lastUpdated: new Date().toISOString(),
       workflows: {},
       recommendations: { totalWorkflows: 0, workflowsNeedingSpeedUp: 0, workflowsNeedingSlowDown: 0, overallHealth: 'unknown', nextReview: new Date().toISOString() },
       performance: { averageSuccessRate: 0, totalFailures: 0, efficiency: 'unknown' }
     };
+
+    const healthPath = path.join(baseDir, 'public', 'reports', 'automation', 'health.json');
+    const controlPath = path.join(baseDir, 'public', 'automation', 'control.json');
+    const hintsPath = path.join(baseDir, 'public', 'automation', 'schedule-hints.json');
+
+    const health = readJsonIfExists(healthPath) ?? defaultHealth;
+    const controlPlane = readJsonIfExists(controlPath) ?? defaultControl;
+    const scheduleHints = readJsonIfExists(hintsPath) ?? defaultHints;
 
     return {
       props: {
@@ -502,9 +518,7 @@ export const getStaticProps: GetStaticProps = async () => {
         scheduleHints,
       },
     };
-  } catch (error) {
-    console.error('Error fetching automation data:', error);
-    
+  } catch {
     return {
       props: {
         health: {
