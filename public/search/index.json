@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T18:01:03.293Z",
+  "generatedAt": "2025-08-15T18:02:03.138Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1368,6 +1368,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1510.tsx",
       "title": "Autonomous Security Hardening Guide — Applied NLP & RAG (2025-08-15 15:10 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Security Hardening Guide — Applied NLP & RAG (2025-08-15 15:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1502",
+      "file": "pages/reports/updates/update-2025-08-15-1502.tsx",
+      "title": "Autonomous Update — 2025-08-15 15:02",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 15:02 Autonomous Update — 2025-08-15 15:02 Signal over noise—your automated update is here. Today's Highlight Hacker News : Open source AI is the path forward · 2360 pts W"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1501",

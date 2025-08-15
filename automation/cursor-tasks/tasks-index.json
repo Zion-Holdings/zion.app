@@ -5818,5 +5818,35 @@
     "status": "pending",
     "dueDate": "2025-08-17T17:59:25.222Z",
     "filePath": "tasks-1755280765222.json"
+  },
+  {
+    "id": "task-1755280924908-1",
+    "title": "Update Coding Standards",
+    "type": "code-review",
+    "priority": "high",
+    "assignedTo": "frontend-specialist",
+    "status": "pending",
+    "dueDate": "2025-08-17T18:02:04.908Z",
+    "filePath": "tasks-1755280924908.json"
+  },
+  {
+    "id": "task-1755280924908-2",
+    "title": "Implement Code Quality Tools",
+    "type": "code-review",
+    "priority": "high",
+    "assignedTo": "backend-developer",
+    "status": "pending",
+    "dueDate": "2025-08-18T18:02:04.908Z",
+    "filePath": "tasks-1755280924908.json"
+  },
+  {
+    "id": "task-1755280924908-3",
+    "title": "Performance Optimization",
+    "type": "code-review",
+    "priority": "medium",
+    "assignedTo": "qa-tester",
+    "status": "pending",
+    "dueDate": "2025-08-20T18:02:04.908Z",
+    "filePath": "tasks-1755280924908.json"
   }
 ]
