@@ -39,8 +39,8 @@ function loadEnvFromFile(filePath) {
 }
 
 function runCommand(command, options = {}) {
+  const startTime = Date.now();
   try {
-    const startTime = Date.now();
     const result = execSync(command, { 
       encoding: 'utf8', 
       stdio: 'pipe',
