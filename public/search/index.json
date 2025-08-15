@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T17:58:03.231Z",
+  "generatedAt": "2025-08-15T17:59:03.089Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1362,6 +1362,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1500.tsx",
       "title": "Autonomous Performance Tuning Guide — Edge AI & IoT (2025-08-15 15:00 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Performance Tuning Guide — Edge AI & IoT (2025-08-15 15:00 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1459",
+      "file": "pages/reports/updates/update-2025-08-15-1459.tsx",
+      "title": "Autonomous Update — 2025-08-15 14:59",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 14:59 Autonomous Update — 2025-08-15 14:59 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Bypassing airport sec"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1458",
