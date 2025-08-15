@@ -1,0 +1,89 @@
+{
+  "summary": {
+    "generatedAt": "2025-08-15T11:22:32.959Z",
+    "totalFiles": 6,
+    "totalIssues": 3,
+    "criticalIssues": 0,
+    "warningIssues": 3,
+    "errorIssues": 0
+  },
+  "results": [
+    {
+      "file": "components/monetization/PaidConsultation.tsx",
+      "issues": [],
+      "totalIssues": 0
+    },
+    {
+      "file": "pages/explore/index.tsx",
+      "issues": [
+        {
+          "severity": "WARNING",
+          "message": "List items should have unique key props",
+          "lineNumbers": [
+            70,
+            84,
+            87,
+            98,
+            110,
+            114,
+            119,
+            128,
+            131,
+            133,
+            143,
+            146,
+            148,
+            159,
+            162,
+            164,
+            175,
+            178,
+            180
+          ],
+          "pattern": "/<div\\s+(?!.*\\bkey=)/g"
+        }
+      ],
+      "totalIssues": 1
+    },
+    {
+      "file": "pages/front/index.tsx",
+      "issues": [],
+      "totalIssues": 0
+    },
+    {
+      "file": "pages/automation/index.tsx",
+      "issues": [],
+      "totalIssues": 0
+    },
+    {
+      "file": "pages/services/index.tsx",
+      "issues": [
+        {
+          "severity": "WARNING",
+          "message": "List items should have unique key props",
+          "lineNumbers": [
+            12,
+            15,
+            20
+          ],
+          "pattern": "/<div\\s+(?!.*\\bkey=)/g"
+        }
+      ],
+      "totalIssues": 1
+    },
+    {
+      "file": "pages/services/[slug].tsx",
+      "issues": [
+        {
+          "severity": "WARNING",
+          "message": "List items should have unique key props",
+          "lineNumbers": [
+            72
+          ],
+          "pattern": "/<div\\s+(?!.*\\bkey=)/g"
+        }
+      ],
+      "totalIssues": 1
+    }
+  ]
+}
