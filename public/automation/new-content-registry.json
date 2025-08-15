@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
   "generatedAt": "2025-08-15T10:07:03.258Z",
   "items": [
     {
@@ -9,10 +10,20 @@
       "href": "/reports/blueprints/blueprint-2025-08-15-100703",
       "desc": "New autonomous content",
       "createdAt": "2025-08-15T10:07:03.224Z",
+=======
+  "generatedAt": "2025-08-15T10:16:30.158Z",
+  "items": [
+    {
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-15-101630",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T10:16:30.123Z",
+>>>>>>> 22cadde44d6 (chore(sync): advanced autonomous sync)
       "source": "cloud-blueprint-factory"
     },
     {
       "title": "Playbook — Autonomous Delivery",
+<<<<<<< HEAD
       "href": "/reports/playbooks/playbook-2025-08-15-100703",
       "desc": "New autonomous content",
       "createdAt": "2025-08-15T10:07:03.191Z",
@@ -33,10 +44,23 @@
       "desc": "New autonomous content",
       "createdAt": "2025-08-15T10:15:34.061Z",
 >>>>>>> d2046a25a37 (chore(sync): advanced autonomous sync)
+=======
+      "href": "/reports/playbooks/playbook-2025-08-15-101630",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T10:16:30.086Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Case Study — Automation Autonomous",
+      "href": "/reports/cases/case-2025-08-15-101630",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T10:16:30.037Z",
+>>>>>>> 22cadde44d6 (chore(sync): advanced autonomous sync)
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Guide — Cloud Improving Implementation",
+<<<<<<< HEAD
 <<<<<<< HEAD
       "href": "/reports/guides/guide-2025-08-15-100703",
       "desc": "New autonomous content",
@@ -46,10 +70,16 @@
       "desc": "New autonomous content",
       "createdAt": "2025-08-15T10:15:34.061Z",
 >>>>>>> d2046a25a37 (chore(sync): advanced autonomous sync)
+=======
+      "href": "/reports/guides/guide-2025-08-15-101630",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T10:16:30.037Z",
+>>>>>>> 22cadde44d6 (chore(sync): advanced autonomous sync)
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Cloud Improving Continuously",
+<<<<<<< HEAD
 <<<<<<< HEAD
       "href": "/reports/patterns/pattern-2025-08-15-100703",
       "desc": "New autonomous content",
@@ -59,6 +89,11 @@
       "desc": "New autonomous content",
       "createdAt": "2025-08-15T10:15:34.061Z",
 >>>>>>> d2046a25a37 (chore(sync): advanced autonomous sync)
+=======
+      "href": "/reports/patterns/pattern-2025-08-15-101630",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T10:16:30.037Z",
+>>>>>>> 22cadde44d6 (chore(sync): advanced autonomous sync)
       "source": "cloud-deep-research-factory"
     }
   ]
