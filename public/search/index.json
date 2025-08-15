@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T05:28:01.534Z",
+  "generatedAt": "2025-08-15T05:29:01.382Z",
   "entries": [
     {
       "route": "/site-health",
@@ -29,7 +29,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "index",
-      "summary": "{/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 15: 0228 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 15: 0227 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 15"
+      "summary": "{/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 15: 0229 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 15: 0228 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 15"
     },
     {
       "route": "/contact",
@@ -282,6 +282,12 @@
       "file": "pages/reports/updates/update-2025-08-15-0230.tsx",
       "title": "Autonomous Playbook — Evaluation & Safety (2025-08-15 02:30 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Evaluation & Safety (2025-08-15 02:30 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": {"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0229",
+      "file": "pages/reports/updates/update-2025-08-15-0229.tsx",
+      "title": "Autonomous Update — 2025-08-15 02:29",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 02:29 Autonomous Update — 2025-08-15 02:29 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Open source AI is the path forward ·"
     },
     {
       "route": "/reports/updates/update-2025-08-15-0228",
