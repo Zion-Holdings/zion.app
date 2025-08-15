@@ -38,3 +38,16 @@ jobs:
               run: npm ci
             - name: Validate commit messages (last 50)
               run: npx commitlint --from=HEAD~50 --to=HEAD --verbose || true
+      - name: Checkout repository
+      - name: Setup Node.js
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                node-version: '20'
+                cache: 'npm'
+            - name: Install dependencies
+              run: npm ci
+            - name: Validate commit messages (last 50)
+              run: npx commitlint --from=HEAD~50 --to=HEAD --verbose || true

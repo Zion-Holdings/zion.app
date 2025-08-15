@@ -410,8 +410,10 @@
   "codeql.yml": {
     "name": "codeql.yml",
     "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
+      "push",
+      "pull_request",
+      "schedule",
+      "workflow_dispatch {}"
     ],
     "needs": [],
     "outputs": [],

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-15T23:43:33.894Z",
+  "timestamp": "2025-08-15T23:44:39.163Z",
   "critical": [],
   "high": [
     {
@@ -26,24 +26,147 @@
   ],
   "medium": [
     {
-      "workflow": "automation-orchestrator.yml",
+      "workflow": "agent-of-agents-trigger.yml",
       "status": "active",
-      "complexityScore": 35,
+      "complexityScore": 30,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 134,
+        "totalLines": 74,
         "jobCount": 0,
-        "stepCount": 27,
+        "stepCount": 16,
+        "conditionalCount": 4,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 6
+      },
+      "refactoringStrategy": [
+        "Break down into smaller job steps"
+      ]
+    },
+    {
+      "workflow": "ai-it-innovations.yml",
+      "status": "active",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 118,
+        "jobCount": 0,
+        "stepCount": 16,
         "conditionalCount": 0,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 11
+        "actionCount": 6
       },
       "refactoringStrategy": [
         "Break down into smaller job steps",
         "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "automation-orchestrator.yml",
+      "status": "active",
+      "complexityScore": 45,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 240,
+        "jobCount": 0,
+        "stepCount": 54,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 20
+      },
+      "refactoringStrategy": [
+        "Break down into smaller job steps",
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "ci-self-heal.yml",
+      "status": "active",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 104,
+        "jobCount": 0,
+        "stepCount": 18,
+        "conditionalCount": 2,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 6
+      },
+      "refactoringStrategy": [
+        "Break down into smaller job steps",
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "ci.yml",
+      "status": "active",
+      "complexityScore": 35,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 104,
+        "jobCount": 0,
+        "stepCount": 28,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 10
+      },
+      "refactoringStrategy": [
+        "Break down into smaller job steps",
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "cloud-orchestrator-plus.yml",
+      "status": "active",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 90,
+        "jobCount": 0,
+        "stepCount": 16,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 8,
+        "actionCount": 6
+      },
+      "refactoringStrategy": [
+        "Break down into smaller job steps"
+      ]
+    },
+    {
+      "workflow": "commit-message-lint.yml",
+      "status": "active",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 72,
+        "jobCount": 0,
+        "stepCount": 16,
+        "conditionalCount": 4,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 6
+      },
+      "refactoringStrategy": [
+        "Break down into smaller job steps"
       ]
     },
     {

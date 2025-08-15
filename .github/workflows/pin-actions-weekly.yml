@@ -53,3 +53,31 @@ jobs:
                   A maintainer should update `uses: owner/repo@<sha>` accordingly.
                 branch: automation/pin-actions
                 delete-branch: true
+      - name: Checkout repository
+      - name: Setup Node.js
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+            - name: Checkout
+              uses: actions/checkout@v4
+              with:
+                fetch-depth: 0
+            - name: Find unpinned actions
+              id: scan
+              run: |
+                set -e
+                files=$(grep -RIl "uses: .*@v" .github/workflows || true)
+                echo "files<<EOF" >> $GITHUB_OUTPUT
+                echo "$files" >> $GITHUB_OUTPUT
+                echo "EOF" >> $GITHUB_OUTPUT
+            - name: Pin guidance PR
+              if: steps.scan.outputs.files != ''
+              uses: peter-evans/create-pull-request@v6
+              with:
+                token: ${{ secrets.GITHUB_TOKEN }}
+                commit-message: 'chore(actions): pin action versions to SHAs'
+                title: 'chore(actions): pin action versions to SHAs'
+                body: |
+                  This PR suggests pinning action versions to exact SHAs for supply-chain security.
+                  A maintainer should update `uses: owner/repo@<sha>` accordingly.
+                branch: automation/pin-actions
+                delete-branch: true

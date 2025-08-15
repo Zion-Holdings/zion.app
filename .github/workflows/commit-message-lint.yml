@@ -47,3 +47,25 @@ jobs:
               run: |
                 SHA=$(git rev-parse HEAD~1)..HEAD
                 npx --yes commitlint --extends @commitlint/config-conventional --from ${SHA%%..*} --to ${SHA##*..}
+      - name: Checkout repository
+      - name: Setup Node.js
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+            - name: Checkout
+              uses: actions/checkout@v4
+              with:
+                fetch-depth: 0
+            - name: Setup Node
+              uses: actions/setup-node@v4
+              with:
+                node-version: '20'
+            - name: Install dependencies
+              run: npm ci --no-audit --no-fund
+            - name: Lint commit messages (PR)
+              if: github.event_name == 'pull_request'
+              run: npx --yes commitlint --extends @commitlint/config-conventional --from ${{ github.event.pull_request.base.sha }} --to ${{ github.sha }}
+            - name: Lint commit messages (push)
+              if: github.event_name == 'push'
+              run: |
+                SHA=$(git rev-parse HEAD~1)..HEAD
+                npx --yes commitlint --extends @commitlint/config-conventional --from ${SHA%%..*} --to ${SHA##*..}

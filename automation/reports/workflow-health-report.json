@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-15T23:43:49.961Z",
+  "timestamp": "2025-08-15T23:44:40.903Z",
   "summary": {
     "totalWorkflows": 149,
     "activeWorkflows": 74,
@@ -205,10 +205,15 @@
     ],
     "outdatedActions": [],
     "resourceIntensive": [
+      "automation-orchestrator.yml",
+      "dependency-management.yml",
+      "deploy.yml",
       "emergency-fix.yml",
+      "netlify-config.yml",
       "pr-quality-gate.yml",
       "release.yml",
-      "security-gates.yml"
+      "security-gates.yml",
+      "test.yml"
     ]
   },
   "workflows": {
@@ -255,8 +260,8 @@
       "name": "actions-keepalive.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/actions-keepalive.yml",
-      "size": 1139,
-      "lines": 46,
+      "size": 1858,
+      "lines": 64,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -266,6 +271,7 @@
         "jobs",
         "main",
         "steps",
+        "with",
         "with",
         "with",
         "with"
@@ -294,8 +300,8 @@
       "name": "agent-of-agents-trigger.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-of-agents-trigger.yml",
-      "size": 1454,
-      "lines": 51,
+      "size": 2488,
+      "lines": 74,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -305,6 +311,8 @@
         "jobs",
         "main",
         "steps",
+        "with",
+        "with",
         "with",
         "with",
         "with",
@@ -472,8 +480,8 @@
       "name": "ai-content-factory.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-content-factory.yml",
-      "size": 1709,
-      "lines": 61,
+      "size": 3003,
+      "lines": 94,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -483,6 +491,8 @@
         "jobs",
         "main",
         "steps",
+        "with",
+        "with",
         "with",
         "with",
         "with",
@@ -512,8 +522,8 @@
       "name": "ai-it-ads-sync.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-it-ads-sync.yml",
-      "size": 1556,
-      "lines": 56,
+      "size": 2701,
+      "lines": 84,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -523,6 +533,8 @@
         "jobs",
         "main",
         "steps",
+        "with",
+        "with",
         "with",
         "with",
         "with",
@@ -555,8 +567,8 @@
       "name": "ai-it-innovations.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-it-innovations.yml",
-      "size": 2314,
-      "lines": 73,
+      "size": 4206,
+      "lines": 118,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -566,6 +578,8 @@
         "jobs",
         "main",
         "steps",
+        "with",
+        "with",
         "with",
         "with",
         "with",
@@ -598,8 +612,8 @@
       "name": "ai-it-multi-factory.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-it-multi-factory.yml",
-      "size": 1775,
-      "lines": 60,
+      "size": 3134,
+      "lines": 92,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -609,6 +623,8 @@
         "jobs",
         "main",
         "steps",
+        "with",
+        "with",
         "with",
         "with",
         "with",
@@ -641,8 +657,8 @@
       "name": "ai-it-ultrafast-sync.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-it-ultrafast-sync.yml",
-      "size": 1622,
-      "lines": 55,
+      "size": 2827,
+      "lines": 82,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -652,6 +668,8 @@
         "jobs",
         "main",
         "steps",
+        "with",
+        "with",
         "with",
         "with",
         "with",
@@ -684,8 +702,8 @@
       "name": "ai-research-scout.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-research-scout.yml",
-      "size": 1388,
-      "lines": 53,
+      "size": 2362,
+      "lines": 78,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -695,6 +713,8 @@
         "jobs",
         "main",
         "steps",
+        "with",
+        "with",
         "with",
         "with",
         "with",
@@ -841,8 +861,8 @@
       "name": "automation-orchestrator.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/automation-orchestrator.yml",
-      "size": 4772,
-      "lines": 134,
+      "size": 9124,
+      "lines": 240,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -852,6 +872,15 @@
         "jobs",
         "main",
         "steps",
+        "with",
+        "with",
+        "with",
+        "with",
+        "with",
+        "with",
+        "with",
+        "with",
+        "with",
         "with",
         "with",
         "with",
@@ -929,8 +958,8 @@
       "name": "ci-quality.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci-quality.yml",
-      "size": 1030,
-      "lines": 45,
+      "size": 1647,
+      "lines": 62,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -940,6 +969,7 @@
         "jobs",
         "main",
         "steps",
+        "with",
         "with",
         "with",
         "with"
@@ -968,8 +998,8 @@
       "name": "ci-self-heal.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci-self-heal.yml",
-      "size": 1904,
-      "lines": 66,
+      "size": 3399,
+      "lines": 104,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -979,6 +1009,8 @@
         "jobs",
         "main",
         "steps",
+        "with",
+        "with",
         "with",
         "with",
         "with",
@@ -1008,8 +1040,8 @@
       "name": "ci.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci.yml",
-      "size": 1707,
-      "lines": 66,
+      "size": 3015,
+      "lines": 104,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -1019,6 +1051,9 @@
         "jobs",
         "main",
         "steps",
+        "with",
+        "with",
+        "with",
         "with",
         "with",
         "with",
@@ -1090,8 +1125,8 @@
       "name": "cloud-agents.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cloud-agents.yml",
-      "size": 1790,
-      "lines": 63,
+      "size": 3160,
+      "lines": 98,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -1101,6 +1136,8 @@
         "jobs",
         "main",
         "steps",
+        "with",
+        "with",
         "with",
         "with",
         "with",
@@ -1209,8 +1246,8 @@
       "name": "cloud-orchestrator-plus.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cloud-orchestrator-plus.yml",
-      "size": 1774,
-      "lines": 59,
+      "size": 3128,
+      "lines": 90,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -1220,6 +1257,8 @@
         "jobs",
         "main",
         "steps",
+        "with",
+        "with",
         "with",
         "with",
         "with",
@@ -1297,8 +1336,8 @@
       "name": "commit-message-lint.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/commit-message-lint.yml",
-      "size": 1424,
-      "lines": 50,
+      "size": 2432,
+      "lines": 72,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -1308,6 +1347,8 @@
         "jobs",
         "main",
         "steps",
+        "with",
+        "with",
         "with",
         "with",
         "with",
@@ -1337,8 +1378,8 @@
       "name": "commitlint.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/commitlint.yml",
-      "size": 904,
-      "lines": 41,
+      "size": 1401,
+      "lines": 54,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -1348,6 +1389,7 @@
         "jobs",
         "main",
         "steps",
+        "with",
         "with",
         "with",
         "with"
@@ -1414,8 +1456,8 @@
       "name": "crawl-normalize.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/crawl-normalize.yml",
-      "size": 1705,
-      "lines": 60,
+      "size": 2994,
+      "lines": 92,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -1425,6 +1467,8 @@
         "jobs",
         "main",
         "steps",
+        "with",
+        "with",
         "with",
         "with",
         "with",
@@ -1592,8 +1636,8 @@
       "name": "dependency-auto-upgrade.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/dependency-auto-upgrade.yml",
-      "size": 2429,
-      "lines": 74,
+      "size": 4433,
+      "lines": 120,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -1603,6 +1647,9 @@
         "jobs",
         "main",
         "steps",
+        "with",
+        "with",
+        "with",
         "with",
         "with",
         "with",
@@ -1633,8 +1680,8 @@
       "name": "dependency-management.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/dependency-management.yml",
-      "size": 2752,
-      "lines": 85,
+      "size": 5086,
+      "lines": 142,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -1644,6 +1691,9 @@
         "jobs",
         "main",
         "steps",
+        "with",
+        "with",
+        "with",
         "with",
         "with",
         "with",
@@ -1674,8 +1724,8 @@
       "name": "deploy.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/deploy.yml",
-      "size": 2983,
-      "lines": 96,
+      "size": 5563,
+      "lines": 164,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -1685,6 +1735,12 @@
         "jobs",
         "main",
         "steps",
+        "with",
+        "with",
+        "with",
+        "with",
+        "with",
+        "with",
         "with",
         "with",
         "with",
@@ -1718,8 +1774,8 @@
       "name": "docs-intelligence.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/docs-intelligence.yml",
-      "size": 1860,
-      "lines": 62,
+      "size": 3306,
+      "lines": 96,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -1729,6 +1785,8 @@
         "jobs",
         "main",
         "steps",
+        "with",
+        "with",
         "with",
         "with",
         "with",
@@ -1761,8 +1819,8 @@
       "name": "emergency-fix.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/emergency-fix.yml",
-      "size": 6644,
-      "lines": 165,
+      "size": 12843,
+      "lines": 302,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -1772,6 +1830,13 @@
         "jobs",
         "main",
         "steps",
+        "with",
+        "with",
+        "with",
+        "with",
+        "with",
+        "with",
+        "with",
         "with",
         "with",
         "with",
@@ -1885,8 +1950,8 @@
       "name": "git-ultrafast-sync.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/git-ultrafast-sync.yml",
-      "size": 1149,
-      "lines": 47,
+      "size": 1883,
+      "lines": 66,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -1896,6 +1961,7 @@
         "jobs",
         "main",
         "steps",
+        "with",
         "with",
         "with",
         "with"
@@ -2041,8 +2107,8 @@
       "name": "lighthouse-budgets.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/lighthouse-budgets.yml",
-      "size": 946,
-      "lines": 42,
+      "size": 1467,
+      "lines": 56,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -2052,6 +2118,7 @@
         "jobs",
         "main",
         "steps",
+        "with",
         "with",
         "with",
         "with"
@@ -2080,8 +2147,8 @@
       "name": "lighthouse-live.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/lighthouse-live.yml",
-      "size": 2382,
-      "lines": 71,
+      "size": 4352,
+      "lines": 114,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -2091,6 +2158,8 @@
         "jobs",
         "main",
         "steps",
+        "with",
+        "with",
         "with",
         "with",
         "with",
@@ -2310,8 +2379,8 @@
       "name": "netlify-config.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/netlify-config.yml",
-      "size": 3167,
-      "lines": 79,
+      "size": 5908,
+      "lines": 130,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -2348,8 +2417,8 @@
       "name": "netlify-functions-trigger.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/netlify-functions-trigger.yml",
-      "size": 1776,
-      "lines": 60,
+      "size": 3130,
+      "lines": 92,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -2359,6 +2428,8 @@
         "jobs",
         "main",
         "steps",
+        "with",
+        "with",
         "with",
         "with",
         "with",
@@ -2426,8 +2497,8 @@
       "name": "pa11y.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/pa11y.yml",
-      "size": 1648,
-      "lines": 56,
+      "size": 2873,
+      "lines": 84,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -2437,6 +2508,7 @@
         "jobs",
         "main",
         "steps",
+        "with",
         "with",
         "with",
         "with"
@@ -2465,8 +2537,8 @@
       "name": "pin-actions-weekly.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/pin-actions-weekly.yml",
-      "size": 1657,
-      "lines": 56,
+      "size": 2891,
+      "lines": 84,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -2476,6 +2548,8 @@
         "jobs",
         "main",
         "steps",
+        "with",
+        "with",
         "with",
         "with",
         "with",
@@ -2505,8 +2579,8 @@
       "name": "playwright-smoke.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/playwright-smoke.yml",
-      "size": 2266,
-      "lines": 77,
+      "size": 4113,
+      "lines": 126,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -2516,6 +2590,8 @@
         "jobs",
         "main",
         "steps",
+        "with",
+        "with",
         "with",
         "with",
         "with",
@@ -2545,8 +2621,8 @@
       "name": "pr-auto-curator.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/pr-auto-curator.yml",
-      "size": 2113,
-      "lines": 50,
+      "size": 3814,
+      "lines": 72,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -2556,6 +2632,7 @@
         "jobs",
         "main",
         "steps",
+        "with",
         "with",
         "with",
         "with"
@@ -2584,8 +2661,8 @@
       "name": "pr-quality-gate.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/pr-quality-gate.yml",
-      "size": 5464,
-      "lines": 154,
+      "size": 10516,
+      "lines": 280,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -2595,6 +2672,13 @@
         "jobs",
         "main",
         "steps",
+        "with",
+        "with",
+        "with",
+        "with",
+        "with",
+        "with",
+        "with",
         "with",
         "with",
         "with",
@@ -2629,8 +2713,8 @@
       "name": "pr-smoke.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/pr-smoke.yml",
-      "size": 1099,
-      "lines": 49,
+      "size": 1787,
+      "lines": 70,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -2640,6 +2724,8 @@
         "jobs",
         "main",
         "steps",
+        "with",
+        "with",
         "with",
         "with",
         "with",
@@ -2707,8 +2793,8 @@
       "name": "release.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/release.yml",
-      "size": 5256,
-      "lines": 144,
+      "size": 10097,
+      "lines": 260,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -2718,6 +2804,14 @@
         "jobs",
         "main",
         "steps",
+        "with",
+        "with",
+        "with",
+        "with",
+        "with",
+        "with",
+        "with",
+        "with",
         "with",
         "with",
         "with",
@@ -2832,8 +2926,8 @@
       "name": "security-gates.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/security-gates.yml",
-      "size": 15014,
-      "lines": 339,
+      "size": 29580,
+      "lines": 650,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -2843,6 +2937,16 @@
         "jobs",
         "main",
         "steps",
+        "with",
+        "with",
+        "with",
+        "with",
+        "with",
+        "with",
+        "with",
+        "with",
+        "with",
+        "with",
         "with",
         "with",
         "with",
@@ -2880,8 +2984,8 @@
       "name": "security-scan.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/security-scan.yml",
-      "size": 2494,
-      "lines": 80,
+      "size": 4578,
+      "lines": 132,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -2891,6 +2995,11 @@
         "jobs",
         "main",
         "steps",
+        "with",
+        "with",
+        "with",
+        "with",
+        "with",
         "with",
         "with",
         "with",
@@ -3113,8 +3222,8 @@
       "name": "test-auth.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/test-auth.yml",
-      "size": 1356,
-      "lines": 52,
+      "size": 2296,
+      "lines": 76,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -3124,6 +3233,7 @@
         "jobs",
         "main",
         "steps",
+        "with",
         "with",
         "with",
         "with"
@@ -3152,8 +3262,8 @@
       "name": "test.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/test.yml",
-      "size": 3961,
-      "lines": 128,
+      "size": 7515,
+      "lines": 228,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -3163,6 +3273,15 @@
         "jobs",
         "main",
         "steps",
+        "with",
+        "with",
+        "with",
+        "with",
+        "with",
+        "with",
+        "with",
+        "with",
+        "with",
         "with",
         "with",
         "with",
@@ -3237,8 +3356,8 @@
       "name": "ultra-rapid-sync.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-rapid-sync.yml",
-      "size": 2032,
-      "lines": 66,
+      "size": 3651,
+      "lines": 104,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -3248,6 +3367,8 @@
         "jobs",
         "main",
         "steps",
+        "with",
+        "with",
         "with",
         "with",
         "with",

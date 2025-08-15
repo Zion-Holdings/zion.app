@@ -42,3 +42,20 @@ jobs:
               run: npm run lint -- --max-warnings=0
             - name: Type check
               run: npm run type-check
+      - name: Checkout repository
+      - name: Setup Node.js
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Setup Node
+              uses: actions/setup-node@v4
+              with:
+                node-version: '20.18.1'
+                cache: 'npm'
+            - name: Install dependencies
+              run: npm ci --no-audit --no-fund
+            - name: Lint (no warnings)
+              run: npm run lint -- --max-warnings=0
+            - name: Type check
+              run: npm run type-check

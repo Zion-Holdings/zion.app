@@ -1,0 +1,79 @@
+name: Security Scan
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '*/10 * * * *'
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  main:
+    name: Main Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+            - name: Checkout
+              uses: actions/checkout@v4
+              with:
+                fetch-depth: 0
+            - name: Initialize CodeQL
+              uses: github/codeql-action/init@v2
+              with:
+                languages: javascript, typescript
+            - name: Autobuild
+              uses: github/codeql-action/autobuild@v2
+            - name: Perform CodeQL Analysis
+              uses: github/codeql-action/analyze@v2
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                node-version: '20'
+                cache: 'npm'
+            - name: Install dependencies
+              run: npm ci
+            - name: Run security audit
+              run: |
+                npm audit --audit-level=moderate || true
+                npm audit --audit-level=high || true
+            - name: Check for known vulnerabilities
+              run: |
+                npm audit --json > audit-report.json || echo "{}" > audit-report.json
+                if [ -s audit-report.json ] && [ "$(cat audit-report.json)" != "{}" ]; then
+                  echo "Vulnerabilities found. Check audit-report.json for details."
+                  exit 1
+                else
+                  echo "No high-severity vulnerabilities found."
+                fi
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Run Trivy vulnerability scanner
+              uses: aquasecurity/trivy-action@master
+              with:
+                scan-type: 'fs'
+                scan-ref: '.'
+                format: 'sarif'
+                output: 'trivy-results.sarif'
+            - name: Upload Trivy scan results to GitHub Security tab
+              uses: github/codeql-action/upload-sarif@v2
+              if: always()
+              with:
+                sarif_file: 'trivy-results.sarif'
