@@ -1,0 +1,115 @@
+{
+  "lastUpdated": "2025-01-15T00:00:00.000Z",
+  "categories": [
+    {
+      "id": "ai-machine-learning",
+      "name": "AI & Machine Learning",
+      "slug": "ai-machine-learning",
+      "description": "Cutting-edge AI and ML solutions for modern businesses",
+      "serviceCount": 4,
+      "icon": "🤖",
+      "color": "from-blue-500 to-purple-600",
+      "features": [
+        "Machine Learning Models",
+        "Natural Language Processing",
+        "Computer Vision",
+        "Predictive Analytics"
+      ],
+      "technologies": [
+        "Python",
+        "TensorFlow",
+        "PyTorch",
+        "Scikit-learn",
+        "OpenCV"
+      ]
+    },
+    {
+      "id": "iot-edge",
+      "name": "IoT & Edge",
+      "slug": "iot-edge",
+      "description": "Internet of Things and edge computing solutions",
+      "serviceCount": 2,
+      "icon": "🌐",
+      "color": "from-green-500 to-teal-600",
+      "features": [
+        "Real-time Data Processing",
+        "Edge Computing",
+        "IoT Device Management",
+        "Data Pipeline Orchestration"
+      ],
+      "technologies": [
+        "Apache Kafka",
+        "Kubernetes",
+        "Docker",
+        "Python",
+        "Node.js"
+      ]
+    },
+    {
+      "id": "blockchain",
+      "name": "Blockchain",
+      "slug": "blockchain",
+      "description": "Secure and transparent blockchain applications",
+      "serviceCount": 1,
+      "icon": "⛓️",
+      "color": "from-yellow-500 to-orange-600",
+      "features": [
+        "Smart Contracts",
+        "Decentralized Applications",
+        "Security Auditing",
+        "Multi-chain Support"
+      ],
+      "technologies": [
+        "Ethereum",
+        "Solidity",
+        "Web3.js",
+        "React",
+        "Node.js"
+      ]
+    },
+    {
+      "id": "quantum-computing",
+      "name": "Quantum Computing",
+      "slug": "quantum-computing",
+      "description": "Next-generation quantum computing platforms",
+      "serviceCount": 1,
+      "icon": "⚛️",
+      "color": "from-purple-500 to-pink-600",
+      "features": [
+        "Quantum Circuit Design",
+        "Algorithm Testing",
+        "Performance Analysis",
+        "Research Tools"
+      ],
+      "technologies": [
+        "Python",
+        "Qiskit",
+        "React",
+        "WebAssembly",
+        "Quantum Algorithms"
+      ]
+    },
+    {
+      "id": "microservices",
+      "name": "Microservices",
+      "slug": "microservices",
+      "description": "Modular and scalable service architectures",
+      "serviceCount": 1,
+      "icon": "🔧",
+      "color": "from-indigo-500 to-blue-600",
+      "features": [
+        "API Gateway",
+        "Load Balancing",
+        "Rate Limiting",
+        "Authentication"
+      ],
+      "technologies": [
+        "Node.js",
+        "Express",
+        "Redis",
+        "Docker",
+        "Kubernetes"
+      ]
+    }
+  ]
+}
