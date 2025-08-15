@@ -47,6 +47,7 @@
     {
       "file": "pages/explore/index.tsx",
       "route": "/explore"
+<<<<<<< HEAD
     },
     {
       "file": "pages/automation/index.tsx",
@@ -55,6 +56,12 @@
     {
       "file": "pages/reports/playbooks/playbook-2025-08-15-045012.tsx",
       "route": "/reports/playbooks/playbook-2025-08-15-045012"
+=======
+    },
+    {
+      "file": "pages/automation/index.tsx",
+      "route": "/automation"
+>>>>>>> aa9d2ab892 (chore(sync): advanced autonomous sync)
     },
     {
       "file": "pages/reports/playbooks/playbook-2025-08-15-044013.tsx",
@@ -1287,5 +1294,32 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
+<<<<<<< HEAD
   "generatedAt": "2025-08-15T04:53:00.551Z"
+=======
+  "generatedAt": "2025-08-15T04:53:54.861Z",
+  "items": [
+    {
+      "title": "Case Study — Automation Autonomous",
+      "href": "/reports/cases/case-2025-08-15-045357",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T04:53:57.323Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-15-045357",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T04:53:57.323Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Cloud Improving Continuously",
+      "href": "/reports/patterns/pattern-2025-08-15-045357",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T04:53:57.323Z",
+      "source": "cloud-deep-research-factory"
+    }
+  ]
+>>>>>>> aa9d2ab892 (chore(sync): advanced autonomous sync)
 }
