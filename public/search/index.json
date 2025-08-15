@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T18:28:03.367Z",
+  "generatedAt": "2025-08-15T18:29:03.251Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1380,6 +1380,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1530.tsx",
       "title": "Autonomous Blueprint — MLOps & Model Reliability (2025-08-15 15:30 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Blueprint — MLOps & Model Reliability (2025-08-15 15:30 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"aut"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1529",
+      "file": "pages/reports/updates/update-2025-08-15-1529.tsx",
+      "title": "Autonomous Update — 2025-08-15 15:29",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 15:29 Autonomous Update — 2025-08-15 15:29 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Gemini AI · 2135 pts "
     },
     {
       "route": "/reports/updates/update-2025-08-15-1528",
