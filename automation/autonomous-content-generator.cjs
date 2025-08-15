@@ -761,6 +761,8 @@ export default function ${componentName}({ className = '' }: ${componentName}Pro
   extractMissingReportCategories(description) {
     const categories = [];
     
+    if (description.includes('insights')) categories.push('insights');
+    if (description.includes('dossiers')) categories.push('dossiers');
     if (description.includes('tutorials')) categories.push('tutorials');
     if (description.includes('whitepapers')) categories.push('whitepapers');
     if (description.includes('case studies')) categories.push('case-studies');
