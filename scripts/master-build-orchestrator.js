@@ -19,6 +19,9 @@ const PerformancePredictionEngine = require('./performance-prediction-engine');
 const DeepLearningEngine = require('./deep-learning-engine');
 const NLPEngine = require('./nlp-engine');
 const ReinforcementLearningEngine = require('./reinforcement-learning-engine');
+const TransformerAIEngine = require('./transformer-ai-engine');
+const GraphNeuralNetworkEngine = require('./graph-neural-network-engine');
+const MultiModalLearningEngine = require('./multi-modal-learning-engine');
 
 class MasterBuildOrchestrator {
   constructor() {
@@ -32,9 +35,12 @@ class MasterBuildOrchestrator {
       ai: new AIBuildStrategist(),
       predictor: new PredictiveFailurePrevention(),
       performance: new PerformancePredictionEngine(),
-      deepLearning: new DeepLearningEngine(),
-      nlp: new NLPEngine(),
-      reinforcementLearning: new ReinforcementLearningEngine()
+              deepLearning: new DeepLearningEngine(),
+        nlp: new NLPEngine(),
+        reinforcementLearning: new ReinforcementLearningEngine(),
+        transformerAI: new TransformerAIEngine(),
+        graphNeuralNetwork: new GraphNeuralNetworkEngine(),
+        multiModalLearning: new MultiModalLearningEngine()
     };
     
     this.orchestrationLog = [];
@@ -179,12 +185,42 @@ class MasterBuildOrchestrator {
           evaluations: rlResults.evaluations
         };
         
+        // Transformer AI Analysis
+        this.log('🔄 Running transformer AI analysis...');
+        const transformerResults = await this.systems.transformerAI.runTransformerEngine();
+        results.systems.transformerAI = {
+          status: 'completed',
+          models: Object.keys(transformerResults?.models || {}),
+          predictions: transformerResults?.predictions || {}
+        };
+        
+        // Graph Neural Network Analysis
+        this.log('🕸️ Running graph neural network analysis...');
+        const gnnResults = await this.systems.graphNeuralNetwork.runGNNAnalysis();
+        results.systems.graphNeuralNetwork = {
+          status: 'completed',
+          graphSize: gnnResults?.graphStats?.nodes || 0,
+          analysis: gnnResults?.analysis || {}
+        };
+        
+        // Multi-Modal Learning Analysis
+        this.log('🎯 Running multi-modal learning analysis...');
+        const multimodalResults = await this.systems.multiModalLearning.runMultiModalLearning();
+        results.systems.multiModalLearning = {
+          status: 'completed',
+          modalities: multimodalResults?.modalities || [],
+          fusion: multimodalResults?.fusion || {}
+        };
+        
         this.log('✅ Advanced AI & Deep Learning analysis completed');
       } catch (error) {
         this.log(`❌ Advanced AI & Deep Learning analysis failed: ${error.message}`, 'error');
         results.systems.deepLearning = { status: 'failed', error: error.message };
         results.systems.nlp = { status: 'failed', error: error.message };
         results.systems.reinforcementLearning = { status: 'failed', error: error.message };
+        results.systems.transformerAI = { status: 'failed', error: error.message };
+        results.systems.graphNeuralNetwork = { status: 'failed', error: error.message };
+        results.systems.multiModalLearning = { status: 'failed', error: error.message };
         results.overall.errors.push(`Advanced AI & Deep Learning analysis failed: ${error.message}`);
       }
       
