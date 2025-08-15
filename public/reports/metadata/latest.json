@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T06:33:00.629Z",
-  "pagesScanned": 1629,
+  "generatedAt": "2025-08-15T06:33:07.878Z",
+  "pagesScanned": 1632,
   "items": [
     {
       "route": "/404",
@@ -131,10 +131,7 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -4666,6 +4663,16 @@
       }
     },
     {
+      "route": "/reports/cases/case-2025-08-15-063301",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Automation Autonomous",
+        "description": "Case Study — Automation Autonomous — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/guides/guide-2025-08-15-021207",
       "missing": [
         "og:image"
@@ -7357,6 +7364,16 @@
     },
     {
       "route": "/reports/guides/guide-2025-08-15-063256",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-15-063301",
       "missing": [
         "og:image"
       ],
@@ -11167,6 +11184,16 @@
     },
     {
       "route": "/reports/patterns/pattern-2025-08-15-063256",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Improving Continuously",
+        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-15-063301",
       "missing": [
         "og:image"
       ],
@@ -15258,10 +15285,7 @@
     {
       "route": "/reports/updates/update-2025-08-15-0333",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-15 03:33",
