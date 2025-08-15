@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T13:54:00.780Z",
-  "pagesScanned": 4633,
+  "generatedAt": "2025-08-15T13:55:00.835Z",
+  "pagesScanned": 4634,
   "items": [
     {
       "route": "/404",
@@ -63,10 +63,7 @@
     {
       "route": "/component-library",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Component Library",
@@ -128,10 +125,7 @@
     {
       "route": "/content-hub",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Content Hub",
@@ -141,10 +135,7 @@
     {
       "route": "/discover",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Content Discovery",
@@ -154,10 +145,7 @@
     {
       "route": "/enhanced-navigation",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Enhanced Navigation",
@@ -207,10 +195,7 @@
     {
       "route": "/live-dashboard",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Live Dashboard",
@@ -258,10 +243,7 @@
     {
       "route": "/playground",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Component Playground",
@@ -44535,14 +44517,24 @@
     {
       "route": "/reports/updates/update-2025-08-15-1054",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 10:54",
+        "description": "Autonomous Update — 2025-08-15 10:54 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1055",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-15 10:54",
-        "description": "Autonomous Update — 2025-08-15 10:54 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-15 10:55",
+        "description": "Autonomous Update — 2025-08-15 10:55 — auto-suggested description"
       }
     },
     {
@@ -46328,10 +46320,7 @@
     {
       "route": "/reports",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Reports & Content",

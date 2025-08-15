@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T13:54:02.857Z",
+  "generatedAt": "2025-08-15T13:55:02.937Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1194,6 +1194,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1107.tsx",
       "title": "Autonomous Playbook — Evaluation & Safety (2025-08-15 11:07 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Evaluation & Safety (2025-08-15 11:07 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": {"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1055",
+      "file": "pages/reports/updates/update-2025-08-15-1055.tsx",
+      "title": "Autonomous Update — 2025-08-15 10:55",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 10:55 Autonomous Update — 2025-08-15 10:55 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : The young, inexperien"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1054",
