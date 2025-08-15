@@ -6958,5 +6958,65 @@
     "status": "pending",
     "dueDate": "2025-08-17T18:47:42.954Z",
     "filePath": "tasks-1755283662954.json"
+  },
+  {
+    "id": "task-1755283803301-1",
+    "title": "Technical Specification",
+    "type": "architecture-discussion",
+    "priority": "high",
+    "assignedTo": "backend-developer",
+    "status": "pending",
+    "dueDate": "2025-08-18T18:50:03.301Z",
+    "filePath": "tasks-1755283803301.json"
+  },
+  {
+    "id": "task-1755283803301-2",
+    "title": "User Experience Design",
+    "type": "architecture-discussion",
+    "priority": "high",
+    "assignedTo": "devops-engineer",
+    "status": "pending",
+    "dueDate": "2025-08-19T18:50:03.301Z",
+    "filePath": "tasks-1755283803301.json"
+  },
+  {
+    "id": "task-1755283803301-3",
+    "title": "Implementation Plan",
+    "type": "architecture-discussion",
+    "priority": "medium",
+    "assignedTo": "security-expert",
+    "status": "pending",
+    "dueDate": "2025-08-17T18:50:03.301Z",
+    "filePath": "tasks-1755283803301.json"
+  },
+  {
+    "id": "task-1755283805338-1",
+    "title": "Technical Specification",
+    "type": "feature-planning",
+    "priority": "high",
+    "assignedTo": "frontend-specialist",
+    "status": "pending",
+    "dueDate": "2025-08-18T18:50:05.338Z",
+    "filePath": "tasks-1755283805338.json"
+  },
+  {
+    "id": "task-1755283805338-2",
+    "title": "User Experience Design",
+    "type": "feature-planning",
+    "priority": "high",
+    "assignedTo": "backend-developer",
+    "status": "pending",
+    "dueDate": "2025-08-19T18:50:05.338Z",
+    "filePath": "tasks-1755283805338.json"
+  },
+  {
+    "id": "task-1755283805338-3",
+    "title": "Implementation Plan",
+    "type": "feature-planning",
+    "priority": "medium",
+    "assignedTo": "devops-engineer",
+    "status": "pending",
+    "dueDate": "2025-08-17T18:50:05.338Z",
+    "filePath": "tasks-1755283805338.json"
   }
 ]
