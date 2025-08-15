@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-15T22:56:41.053Z",
+  "timestamp": "2025-08-15T22:57:30.726Z",
   "critical": [
     {
       "name": "ci.yml",
@@ -1010,26 +1010,6 @@
       "resourceScore": 109
     },
     {
-      "name": "ai-changelog.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-changelog.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 25,
-      "concurrentJobs": 10,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "push",
-        "schedule",
-        "workflow_dispatch {}"
-      ],
-      "resourceScore": 105
-    },
-    {
       "name": "crawl-normalize.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/crawl-normalize.yml",
       "priority": "medium",
@@ -1451,6 +1431,26 @@
         "workflow_dispatch {}"
       ],
       "resourceScore": 92
+    },
+    {
+      "name": "ai-changelog.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-changelog.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 45,
+      "concurrentJobs": 5,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "push",
+        "schedule",
+        "workflow_dispatch {}"
+      ],
+      "resourceScore": 90
     },
     {
       "name": "automation-orchestrator.yml",
