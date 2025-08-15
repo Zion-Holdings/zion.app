@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import Breadcrumbs from '../components/Breadcrumbs';
+import RelatedContent from '../components/RelatedContent';
 
 export default function Newsroom() {
   return (
@@ -10,9 +12,13 @@ export default function Newsroom() {
         <meta property="og:title" content="Newsroom" />
         <meta property="og:description" content="Newsroom — automatically suggested description." />
         <meta name="twitter:card" content="summary_large_image" /></Head>
-      <main className="container mx-auto px-4 py-12">
-        <h1 className="text-4xl font-extrabold mb-2">Newsroom</h1>
-        <p className="text-white/70 mb-6">Updated automatically from multiple sources.</p>
+      <main className="container mx-auto px-6 py-12">
+        <Breadcrumbs />
+        
+        <div className="mb-8">
+          <h1 className="text-4xl font-bold mb-2">Newsroom</h1>
+          <p className="text-white/70 mb-6">Updated automatically from multiple sources.</p>
+        </div>
         <ul className="list-disc pl-6 space-y-1">
           <li className="py-2">
             <a href="https://techcrunch.com/2025/08/14/cohere-hits-a-6-8b-valuation-as-investors-amd-nvidia-and-salesforce-double-down/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Cohere hits a $6.8B valuation as investors AMD, Nvidia, and Salesforce double down</a>
@@ -99,6 +105,8 @@ export default function Newsroom() {
             <span className="text-white/50 ml-2">(The Verge)</span>
           </li>
         </ul>
+        
+        <RelatedContent currentPage="newsroom" />
       </main>
     </div>
   );

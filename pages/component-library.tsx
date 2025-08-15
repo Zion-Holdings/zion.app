@@ -1,5 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import Breadcrumbs from '../components/Breadcrumbs';
+import RelatedContent from '../components/RelatedContent';
 
 export default function ComponentLibrary() {
   const components = [
@@ -51,8 +53,10 @@ export default function ComponentLibrary() {
         <meta name="twitter:card" content="summary_large_image" /></Head>
       
       <main className="container mx-auto px-6 py-12">
+        <Breadcrumbs />
+        
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold mb-4">Component Library</h1>
+          <h1 className="text-4xl font-bold mb-4">Component Library</h1>
           <p className="text-xl text-white/70 max-w-3xl mx-auto">
             Build beautiful, accessible, and performant user interfaces with our component library
           </p>
@@ -98,6 +102,8 @@ export default function ComponentLibrary() {
             </div>
           ))}
         </div>
+        
+        <RelatedContent currentPage="components" />
       </main>
     </div>
   );
