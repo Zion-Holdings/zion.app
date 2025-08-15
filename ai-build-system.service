@@ -1,0 +1,53 @@
+[Unit]
+Description=AI-Powered Build System - Autonomous Continuous Learning
+Documentation=https://github.com/your-repo/ai-build-system
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/workspace
+Environment=NODE_ENV=production
+Environment=NODE_OPTIONS="--max-old-space-size=8192"
+Environment=AI_SYSTEM_AUTONOMOUS=true
+Environment=AI_SYSTEM_HIGH_SPEED=true
+
+# Main autonomous learning system
+ExecStart=/usr/bin/node scripts/autonomous-continuous-learner.js
+ExecReload=/bin/kill -HUP $MAINPID
+
+# High-speed performance optimizer
+ExecStartPre=/usr/bin/node scripts/high-speed-optimizer.js
+
+# Restart configuration
+Restart=always
+RestartSec=10
+StartLimitInterval=60
+StartLimitBurst=3
+
+# Resource limits
+LimitNOFILE=65536
+LimitNPROC=4096
+MemoryMax=4G
+CPUQuota=80%
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/workspace/.autonomous-learning /workspace/.high-speed-optimizer /workspace/.deep-learning-models /workspace/.nlp-models /workspace/.rl-models
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=ai-build-system
+
+[Install]
+WantedBy=multi-user.target
+
+# Additional service dependencies
+Requires=network.target
+After=network.target
