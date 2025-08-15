@@ -3863,6 +3863,67 @@
       "Consider splitting into smaller workflows for better maintainability"
     ]
   },
+  "pr-quality-gate.yml": {
+    "name": "pr-quality-gate.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/pr-quality-gate.yml",
+    "size": 5220,
+    "lines": 202,
+    "triggers": [
+      "pull_request"
+    ],
+    "jobs": [
+      "pull_request",
+      "pull_request_target",
+      "jobs",
+      "code-quality",
+      "steps",
+      "with",
+      "with",
+      "tests",
+      "steps",
+      "with",
+      "build",
+      "steps",
+      "with",
+      "dependency-check",
+      "steps",
+      "with",
+      "performance-check",
+      "steps",
+      "with",
+      "pr-comment",
+      "steps",
+      "with"
+    ],
+    "timeouts": [
+      20,
+      25,
+      20,
+      15,
+      20,
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      },
+      {
+        "permission": "pull-requests",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": "pr-quality-${{ github.head_ref }}",
+    "issues": [],
+    "recommendations": [
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
   "pr-smoke.yml": {
     "name": "pr-smoke.yml",
     "status": "active",
@@ -10205,6 +10266,7 @@
       "Refactor pin-actions-weekly.yml into smaller, focused workflows",
       "Refactor playwright-smoke.yml into smaller, focused workflows",
       "Refactor pr-auto-curator.yml into smaller, focused workflows",
+      "Refactor pr-quality-gate.yml into smaller, focused workflows",
       "Refactor pr-smoke.yml into smaller, focused workflows",
       "Refactor readme-auto-advertiser.yml into smaller, focused workflows",
       "Refactor responsive-content.yml into smaller, focused workflows",

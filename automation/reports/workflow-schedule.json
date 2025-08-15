@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-15T22:35:40.754Z",
+  "timestamp": "2025-08-15T22:36:44.840Z",
   "critical": [
     {
       "name": "ci.yml",
@@ -1316,6 +1316,30 @@
       "resourceScore": 105
     },
     {
+      "name": "pr-quality-gate.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/pr-quality-gate.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 25,
+      "concurrentJobs": 22,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [
+        "[code-quality",
+        "tests",
+        "build",
+        "dependency-check",
+        "performance-check]"
+      ],
+      "triggers": [
+        "pull_request"
+      ],
+      "resourceScore": 105
+    },
+    {
       "name": "deploy.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/deploy.yml",
       "priority": "medium",
@@ -1359,6 +1383,30 @@
         "workflow_dispatch {}"
       ],
       "resourceScore": 100
+    },
+    {
+      "name": "automation-orchestrator.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/automation-orchestrator.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 45,
+      "concurrentJobs": 22,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [
+        "[content-automation",
+        "seo-automation",
+        "marketing-automation",
+        "quality-assurance]"
+      ],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch {}"
+      ],
+      "resourceScore": 85
     },
     {
       "name": "cloud-agents-fast.yml",

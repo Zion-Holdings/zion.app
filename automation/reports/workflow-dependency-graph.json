@@ -239,6 +239,28 @@
     },
     "estimatedDuration": 25
   },
+  "automation-orchestrator.yml": {
+    "name": "automation-orchestrator.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [
+      "[content-automation",
+      "seo-automation",
+      "marketing-automation",
+      "quality-assurance]"
+    ],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 45,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 45
+  },
   "broken-images.yml": {
     "name": "broken-images.yml",
     "triggers": [
@@ -924,6 +946,28 @@
       "concurrentJobs": 5
     },
     "estimatedDuration": 10
+  },
+  "pr-quality-gate.yml": {
+    "name": "pr-quality-gate.yml",
+    "triggers": [
+      "pull_request"
+    ],
+    "needs": [
+      "[code-quality",
+      "tests",
+      "build",
+      "dependency-check",
+      "performance-check]"
+    ],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 20,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 25
   },
   "pr-smoke.yml": {
     "name": "pr-smoke.yml",

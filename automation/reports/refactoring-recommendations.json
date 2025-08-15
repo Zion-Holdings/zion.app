@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-15T22:35:33.365Z",
+  "timestamp": "2025-08-15T22:36:37.646Z",
   "critical": [
     {
       "workflow": "security-gates.yml",
@@ -29,6 +29,27 @@
   "high": [],
   "medium": [
     {
+      "workflow": "automation-orchestrator.yml",
+      "status": "active",
+      "complexityScore": 35,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 177,
+        "jobCount": 0,
+        "stepCount": 24,
+        "conditionalCount": 1,
+        "matrixCount": 0,
+        "dependencyCount": 1,
+        "environmentCount": 0,
+        "secretCount": 5,
+        "actionCount": 9
+      },
+      "refactoringStrategy": [
+        "Break down into smaller job steps",
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
       "workflow": "deploy.yml",
       "status": "active",
       "complexityScore": 40,
@@ -43,6 +64,27 @@
         "environmentCount": 1,
         "secretCount": 2,
         "actionCount": 9
+      },
+      "refactoringStrategy": [
+        "Break down into smaller job steps",
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "pr-quality-gate.yml",
+      "status": "active",
+      "complexityScore": 45,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 202,
+        "jobCount": 0,
+        "stepCount": 30,
+        "conditionalCount": 1,
+        "matrixCount": 0,
+        "dependencyCount": 1,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 11
       },
       "refactoringStrategy": [
         "Break down into smaller job steps",
