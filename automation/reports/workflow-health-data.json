@@ -1366,8 +1366,8 @@
     "name": "ci-self-heal.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci-self-heal.yml",
-    "size": 1626,
-    "lines": 65,
+    "size": 1581,
+    "lines": 64,
     "triggers": [],
     "jobs": [
       "workflow_run",
