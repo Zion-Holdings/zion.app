@@ -1,10 +1,19 @@
 {
   "items": [
     {
-      "title": "Runbook: Agent Ops",
-      "desc": "Patterns to enhance security.",
-      "href": "/reports/innovations/insight-2025-08-14-1821"
+      "title": "Checklist: MLOps",
+      "desc": "Patterns to reduce cost.",
+      "href": "/reports/innovations/insight-2025-08-15-1001"
+    },
+    {
+      "title": "Case Study — Automation Autonomous"
+    },
+    {
+      "title": "Guide — Cloud Improving Implementation"
+    },
+    {
+      "title": "Pattern — Cloud Improving Continuously"
     }
   ],
-  "updatedAt": "2025-08-14T18:21:17.825Z"
+  "updatedAt": "2025-08-15T10:01:46.333Z"
 }
