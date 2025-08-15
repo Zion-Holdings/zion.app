@@ -118,5 +118,29 @@
     "startTime": "2025-08-15T23:23:41.951Z",
     "status": "active",
     "filePath": "conv-1755300221951.json"
+  },
+  {
+    "id": "conv-1755300381538",
+    "type": "testing-strategy",
+    "participants": [
+      "QA Tester",
+      "Frontend Specialist",
+      "Backend Developer"
+    ],
+    "startTime": "2025-08-15T23:26:21.538Z",
+    "status": "active",
+    "filePath": "conv-1755300381538.json"
+  },
+  {
+    "id": "conv-1755300383541",
+    "type": "architecture-discussion",
+    "participants": [
+      "Backend Developer",
+      "DevOps Engineer",
+      "Security Expert"
+    ],
+    "startTime": "2025-08-15T23:26:23.541Z",
+    "status": "active",
+    "filePath": "conv-1755300383541.json"
   }
 ]
