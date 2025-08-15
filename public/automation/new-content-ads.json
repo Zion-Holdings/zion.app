@@ -1,15 +1,22 @@
 {
   "items": [
     {
-      "title": "Blueprint: Agent Ops",
-      "desc": "Patterns to enhance security.",
-      "href": "/reports/innovations/insight-2025-08-14-2301"
+      "title": "Playbook: Edge AI",
+      "desc": "Patterns to increase accuracy.",
+      "href": "/reports/innovations/insight-2025-08-15-0001"
     },
     {
-      "title": "Runbook: LLM Apps",
-      "desc": "Patterns to enhance security.",
-      "href": "/reports/innovations/insight-2025-08-14-2256"
+      "title": "Innovation Insight — 2025-08-14 23-55"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-14 23-55"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-14 23-55"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-14 23-55"
     }
   ],
-  "updatedAt": "2025-08-14T23:01:32.409Z"
+  "updatedAt": "2025-08-15T00:01:16.857Z"
 }
