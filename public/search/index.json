@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T23:37:05.584Z",
+  "generatedAt": "2025-08-15T23:38:03.332Z",
   "entries": [
     {
       "route": "/terms",
@@ -1584,6 +1584,12 @@
       "file": "pages/reports/updates/update-2025-08-15-2040.tsx",
       "title": "Autonomous Blueprint — DevSecOps for AI (2025-08-15 20:40 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Blueprint — DevSecOps for AI (2025-08-15 20:40 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { \""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-2038",
+      "file": "pages/reports/updates/update-2025-08-15-2038.tsx",
+      "title": "Autonomous Update — 2025-08-15 20:38",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 20:38 Autonomous Update — 2025-08-15 20:38 Signal over noise—your automated update is here. Today's Highlight Hacker News : My AI skeptic friends are all nuts · 2356 pts W"
     },
     {
       "route": "/reports/updates/update-2025-08-15-2037",
