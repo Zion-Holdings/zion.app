@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T07:26:11.942Z",
-  "pagesScanned": 3182,
+  "generatedAt": "2025-08-15T07:26:26.942Z",
+  "pagesScanned": 3173,
   "items": [
     {
       "route": "/404",
@@ -131,7 +131,10 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -3914,16 +3917,6 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-15-072539",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Reference Architecture — Autonomous Content Mesh",
-        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/blueprints/blueprint-2025-08-15-072558",
       "missing": [
         "og:image"
       ],
@@ -9653,26 +9646,6 @@
       }
     },
     {
-      "route": "/reports/cases/case-2025-08-15-072558",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Case Study — Automation Autonomous",
-        "description": "Case Study — Automation Autonomous — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/cases/case-2025-08-15-072610",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Case Study — Automation Autonomous",
-        "description": "Case Study — Automation Autonomous — auto-suggested description"
-      }
-    },
-    {
       "route": "/reports/guides/guide-2025-08-15-021207",
       "missing": [
         "og:image"
@@ -15393,26 +15366,6 @@
       }
     },
     {
-      "route": "/reports/guides/guide-2025-08-15-072558",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Guide — Cloud Improving Implementation",
-        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/guides/guide-2025-08-15-072610",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Guide — Cloud Improving Implementation",
-        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
-      }
-    },
-    {
       "route": "/reports/innovations/insight-2025-08-15-0211",
       "missing": [
         "og:image"
@@ -16488,8 +16441,8 @@
         "og:image"
       ],
       "suggestion": {
-        "title": "Guide: LLM Apps",
-        "description": "Guide: LLM Apps — auto-suggested description"
+        "title": "Checklist: DevSecOps AI",
+        "description": "Checklist: DevSecOps AI — auto-suggested description"
       }
     },
     {
@@ -23243,26 +23196,6 @@
       }
     },
     {
-      "route": "/reports/patterns/pattern-2025-08-15-072558",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Pattern — Cloud Improving Continuously",
-        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/patterns/pattern-2025-08-15-072610",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Pattern — Cloud Improving Continuously",
-        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
-      }
-    },
-    {
       "route": "/reports/playbooks/playbook-2025-08-15-021207",
       "missing": [
         "og:image"
@@ -27033,16 +26966,6 @@
       }
     },
     {
-      "route": "/reports/playbooks/playbook-2025-08-15-072558",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Playbook — Autonomous Delivery",
-        "description": "Playbook — Autonomous Delivery — auto-suggested description"
-      }
-    },
-    {
       "route": "/reports/updates/update-2025-08-14-2311",
       "missing": [
         "og:image"
@@ -29805,21 +29728,14 @@
     {
       "route": "/reports/updates/update-2025-08-15-0425",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-15 04:25",
         "description": "Autonomous Update — 2025-08-15 04:25 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-15-0426",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-15 04:26",
-        "description": "Autonomous Update — 2025-08-15 04:26 — auto-suggested description"
       }
     },
     {
@@ -30758,8 +30674,8 @@
         "og:image"
       ],
       "suggestion": {
-        "title": "Autonomous Capability Map — Cloud Cost Optimization (2025-08-15 07:26 UTC)",
-        "description": "Autonomous Capability Map — Cloud Cost Optimization (2025-08-15 07:26 UTC) — auto-suggested description"
+        "title": "Autonomous Validation & QA Plan — Vision & Multimodal (2025-08-15 07:26 UTC)",
+        "description": "Autonomous Validation & QA Plan — Vision & Multimodal (2025-08-15 07:26 UTC) — auto-suggested description"
       }
     },
     {
