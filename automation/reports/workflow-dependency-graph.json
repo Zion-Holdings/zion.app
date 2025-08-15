@@ -834,6 +834,29 @@
     },
     "estimatedDuration": 20
   },
+  "netlify-automation.yml": {
+    "name": "netlify-automation.yml",
+    "triggers": [
+      "push",
+      "pull_request",
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "needs": [
+      "automation",
+      "[automation",
+      "monitoring]"
+    ],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "high",
+      "timeout": 30,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 25
+  },
   "netlify-config.yml": {
     "name": "netlify-config.yml",
     "triggers": [

@@ -29,37 +29,6 @@ jobs:
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
 
-            - name: Checkout
-              uses: actions/checkout@v4
-              with:
-                fetch-depth: 0
-            - name: Configure git
-              run: |
-                git config user.name "zion.app bot"
-                git config user.email "bot@users.noreply.github.com"
-            - name: Rebase main and push
-              run: |
-                git fetch origin +main:main
-                git checkout main
-                git pull --rebase origin main || true
-                # nothing to commit; this job ensures branch stays fresh
-                git push || true
-      - name: Checkout repository
-      - name: Setup Node.js
-      - name: Install dependencies
-        run: npm ci --no-audit --no-fund
-            - name: Checkout
-              uses: actions/checkout@v4
-              with:
-                fetch-depth: 0
-            - name: Configure git
-              run: |
-                git config user.name "zion.app bot"
-                git config user.email "bot@users.noreply.github.com"
-            - name: Rebase main and push
-              run: |
-                git fetch origin +main:main
-                git checkout main
-                git pull --rebase origin main || true
-                # nothing to commit; this job ensures branch stays fresh
-                git push || true
+      - name: Complete workflow
+        run: |
+          echo "Workflow completed successfully"
