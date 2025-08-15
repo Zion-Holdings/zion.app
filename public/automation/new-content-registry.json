@@ -1,32 +1,46 @@
 {
-  "generatedAt": "2025-08-15T08:32:29.959Z",
+  "generatedAt": "2025-08-15T08:33:19.649Z",
   "items": [
     {
-      "title": "Playbook: FinOps for AI",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-15-0832",
-      "createdAt": "2025-08-15T08:32:32.688Z",
-      "kind": "insight"
-    },
-    {
       "title": "Case Study — Automation Autonomous",
-      "href": "/reports/cases/case-2025-08-15-083207",
+      "href": "/reports/cases/case-2025-08-15-083319",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T08:32:07.704Z",
+      "createdAt": "2025-08-15T08:33:19.247Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Guide — Cloud Improving Implementation",
-      "href": "/reports/guides/guide-2025-08-15-083207",
+      "href": "/reports/guides/guide-2025-08-15-083319",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T08:32:07.704Z",
+      "createdAt": "2025-08-15T08:33:19.247Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Cloud Improving Continuously",
-      "href": "/reports/patterns/pattern-2025-08-15-083207",
+      "href": "/reports/patterns/pattern-2025-08-15-083319",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T08:32:07.704Z",
+      "createdAt": "2025-08-15T08:33:19.247Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Case Study — Automation Autonomous",
+      "href": "/reports/cases/case-2025-08-15-083318",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T08:33:19.002Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-15-083318",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T08:33:19.002Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Cloud Improving Continuously",
+      "href": "/reports/patterns/pattern-2025-08-15-083318",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T08:33:19.002Z",
       "source": "cloud-deep-research-factory"
     }
   ]

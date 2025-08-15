@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2025-08-15T08:33:15.553Z",
+  "generatedAt": "2025-08-15T08:32:44.942Z",
   "files": [
-    "update-2025-08-15-0533.tsx",
+    "update-2025-08-15T08-32.tsx",
+    "update-2025-08-15-0832.tsx",
     "update-2025-08-15-0532.tsx",
     "update-2025-08-15-0503.tsx",
-    "update-2025-08-15T08-32.tsx",
     "update-2025-08-15T08-21.tsx",
     "update-2025-08-15-0821.tsx",
     "update-2025-08-15-0808.tsx",
@@ -104,9 +104,9 @@
   ],
   "metrics": {
     "diversityScore": 100,
-    "avgLen": 1868,
+    "avgLen": 1866,
     "duplicateCount": 0,
-    "seoScore": 32
+    "seoScore": 33
   },
   "guidance": [
     "Aim for varied intros, highlights, and CTAs across updates.",

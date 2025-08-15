@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T08:32:28.335Z",
+  "generatedAt": "2025-08-15T08:32:48.648Z",
   "knownRoutes": [
     "/",
     "/404",
@@ -459,7 +459,7 @@
     "/reports/blueprints/blueprint-2025-08-15-080255",
     "/reports/blueprints/blueprint-2025-08-15-080833",
     "/reports/blueprints/blueprint-2025-08-15-082120",
-    "/reports/blueprints/blueprint-2025-08-15-083206",
+    "/reports/blueprints/blueprint-2025-08-15-083242",
     "/reports/cases/case-2025-08-15-021207",
     "/reports/cases/case-2025-08-15-021325",
     "/reports/cases/case-2025-08-15-021452",
@@ -1140,8 +1140,7 @@
     "/reports/cases/case-2025-08-15-080259",
     "/reports/cases/case-2025-08-15-080833",
     "/reports/cases/case-2025-08-15-082120",
-    "/reports/cases/case-2025-08-15-083205",
-    "/reports/cases/case-2025-08-15-083207",
+    "/reports/cases/case-2025-08-15-083243",
     "/reports/guides/guide-2025-08-15-021207",
     "/reports/guides/guide-2025-08-15-021325",
     "/reports/guides/guide-2025-08-15-021452",
@@ -1822,8 +1821,7 @@
     "/reports/guides/guide-2025-08-15-080259",
     "/reports/guides/guide-2025-08-15-080833",
     "/reports/guides/guide-2025-08-15-082120",
-    "/reports/guides/guide-2025-08-15-083205",
-    "/reports/guides/guide-2025-08-15-083207",
+    "/reports/guides/guide-2025-08-15-083243",
     "/reports/innovations/insight-2025-08-15-0211",
     "/reports/innovations/insight-2025-08-15-0213",
     "/reports/innovations/insight-2025-08-15-0214",
@@ -2080,6 +2078,7 @@
     "/reports/innovations/insight-2025-08-15T08-02",
     "/reports/innovations/insight-2025-08-15T08-08",
     "/reports/innovations/insight-2025-08-15T08-21",
+    "/reports/innovations/insight-2025-08-15T08-32",
     "/reports/patterns/pattern-2025-08-15-021207",
     "/reports/patterns/pattern-2025-08-15-021325",
     "/reports/patterns/pattern-2025-08-15-021452",
@@ -2758,8 +2757,7 @@
     "/reports/patterns/pattern-2025-08-15-080259",
     "/reports/patterns/pattern-2025-08-15-080833",
     "/reports/patterns/pattern-2025-08-15-082120",
-    "/reports/patterns/pattern-2025-08-15-083205",
-    "/reports/patterns/pattern-2025-08-15-083207",
+    "/reports/patterns/pattern-2025-08-15-083243",
     "/reports/playbooks/playbook-2025-08-15-021207",
     "/reports/playbooks/playbook-2025-08-15-021325",
     "/reports/playbooks/playbook-2025-08-15-021452",
@@ -3207,7 +3205,7 @@
     "/reports/playbooks/playbook-2025-08-15-080256",
     "/reports/playbooks/playbook-2025-08-15-080833",
     "/reports/playbooks/playbook-2025-08-15-082120",
-    "/reports/playbooks/playbook-2025-08-15-083205",
+    "/reports/playbooks/playbook-2025-08-15-083244",
     "/reports/updates/update-2025-08-14-2311",
     "/reports/updates/update-2025-08-14-2312",
     "/reports/updates/update-2025-08-14-2313",
@@ -3510,7 +3508,6 @@
     "/reports/updates/update-2025-08-15-0510",
     "/reports/updates/update-2025-08-15-0520",
     "/reports/updates/update-2025-08-15-0530",
-    "/reports/updates/update-2025-08-15-0532",
     "/reports/updates/update-2025-08-15-0540",
     "/reports/updates/update-2025-08-15-0550",
     "/reports/updates/update-2025-08-15-0556",
@@ -3746,6 +3743,7 @@
     "/reports/updates/update-2025-08-15T08-02",
     "/reports/updates/update-2025-08-15T08-08",
     "/reports/updates/update-2025-08-15T08-21",
+    "/reports/updates/update-2025-08-15T08-32",
     "/search",
     "/services",
     "/site-health"
@@ -3883,27 +3881,22 @@
     },
     {
       "file": "pages/main/front/index.tsx",
-      "href": "/reports/seo",
-      "suggestion": null
-    },
-    {
-      "file": "pages/main/front/index.tsx",
-      "href": "/reports/ai-trends",
-      "suggestion": null
-    },
-    {
-      "file": "pages/main/front/index.tsx",
-      "href": "/reports/a11y",
-      "suggestion": null
-    },
-    {
-      "file": "pages/main/front/index.tsx",
-      "href": "/reports/metadata",
-      "suggestion": null
-    },
-    {
-      "file": "pages/main/front/index.tsx",
       "href": "/main/front#features",
+      "suggestion": null
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "href": "/main/front#capabilities",
+      "suggestion": null
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "href": "/main/front#benefits",
+      "suggestion": null
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "href": "/.netlify/functions/docs-index-runner",
       "suggestion": null
     },
     {
