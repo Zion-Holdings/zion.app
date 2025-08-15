@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T00:23:08.832Z",
+  "generatedAt": "2025-08-15T00:34:10.320Z",
   "entries": [
     {
       "route": "/site-health",
@@ -72,6 +72,12 @@
       "file": "pages/services/[slug].tsx",
       "title": "{service.title} — Zion Tech Group",
       "summary": "import { GetStaticPaths, GetStaticProps } from 'next'; import Head from 'next/head'; type Service = { slug: string; title: string; description: string; bullets: string[]; ctaHref: string; }; const services: Service[] = [ { slug: 'ai-seo-auditor', title: 'AI SEO Auditor', descript"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15T00-34",
+      "file": "pages/reports/updates/update-2025-08-15T00-34.tsx",
+      "title": "Autonomous Update — 2025-08-15 00-34",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-15 00-34 Autonomous Update — 2025-08-15 00-34 Signal source: https://ziontechgroup.com/automation Automation HubDiscover our autonomous, self-healing systems that keep the codebase"
     },
     {
       "route": "/reports/updates/update-2025-08-15T00-17",
@@ -1152,6 +1158,12 @@
       "file": "pages/reports/patterns/pattern-2025-08-14-212854.tsx",
       "title": "Pattern — Cloud Improving Continuously",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Cloud Improving Continuously Pattern — Cloud Improving Continuously Source: https://ziontechgroup.com/explore Context Signals indicate recurring needs around cloud, improving, continuously, autonomo"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15T00-34",
+      "file": "pages/reports/innovations/insight-2025-08-15T00-34.tsx",
+      "title": "Innovation Insight — 2025-08-15 00-34",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-15 00-34 Innovation Insight — 2025-08-15 00-34 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
     },
     {
       "route": "/reports/innovations/insight-2025-08-15T00-17",
