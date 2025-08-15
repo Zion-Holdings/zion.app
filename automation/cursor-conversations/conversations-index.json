@@ -262,5 +262,29 @@
     "startTime": "2025-08-15T23:38:53.909Z",
     "status": "active",
     "filePath": "conv-1755301133909.json"
+  },
+  {
+    "id": "conv-1755301293570",
+    "type": "bug-investigation",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "QA Tester"
+    ],
+    "startTime": "2025-08-15T23:41:33.570Z",
+    "status": "active",
+    "filePath": "conv-1755301293570.json"
+  },
+  {
+    "id": "conv-1755301295574",
+    "type": "testing-strategy",
+    "participants": [
+      "QA Tester",
+      "Frontend Specialist",
+      "Backend Developer"
+    ],
+    "startTime": "2025-08-15T23:41:35.574Z",
+    "status": "active",
+    "filePath": "conv-1755301295574.json"
   }
 ]

@@ -1,0 +1,51 @@
+{
+  "id": "enhanced-1755301297577",
+  "timestamp": "2025-08-15T23:41:37.577Z",
+  "patterns": {
+    "types": {
+      "performance-optimization": 6,
+      "security-audit": 2,
+      "testing-strategy": 3,
+      "deployment-planning": 4,
+      "code-review": 3,
+      "architecture-discussion": 2,
+      "bug-investigation": 4
+    },
+    "participants": {
+      "Frontend Specialist": 16,
+      "Backend Developer": 24,
+      "DevOps Engineer": 14,
+      "Security Expert": 8,
+      "QA Tester": 10
+    },
+    "topics": {},
+    "duration": [
+      1685640,
+      1683633,
+      1524039,
+      1522036,
+      1381632,
+      1379629,
+      1220037,
+      1218035,
+      1077629,
+      1075626,
+      916039,
+      914036,
+      773626,
+      771624,
+      612038,
+      609962,
+      469624,
+      467618,
+      307947,
+      305944,
+      165672,
+      163668,
+      4007,
+      2003
+    ]
+  },
+  "prompt": "Based on the analysis of 24 conversations:\n\nMost common conversation type: performance-optimization\nMost active participants: Backend Developer, Frontend Specialist, DevOps Engineer\n\nUse this context to provide more relevant and targeted assistance. Focus on patterns that have emerged from successful conversations and apply similar approaches to new situations.",
+  "usage": "Use this enhanced prompt for agents based on conversation patterns"
+}

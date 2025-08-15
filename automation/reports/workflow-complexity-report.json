@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-15T23:40:38.467Z",
+  "timestamp": "2025-08-15T23:41:27.185Z",
   "summary": {
     "totalWorkflows": 148,
     "complexityDistribution": {
@@ -1169,18 +1169,18 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/security-scan.yml"
     },
     "seo-audit.yml": {
-      "complexityScore": 20,
+      "complexityScore": 15,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 66,
+        "totalLines": 58,
         "jobCount": 0,
-        "stepCount": 10,
+        "stepCount": 7,
         "conditionalCount": 2,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 4
+        "actionCount": 2
       },
       "refactoringPriority": "low",
       "status": "active",
