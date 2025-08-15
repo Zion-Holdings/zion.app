@@ -1,6 +1,34 @@
 {
-  "generatedAt": "2025-08-15T06:24:26.643Z",
+  "generatedAt": "2025-08-15T06:24:35.136Z",
   "items": [
+    {
+      "title": "Innovation Insight — 2025-08-15 06-24",
+      "href": "/reports/innovations/insight-2025-08-15T06-24",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T06:24:35.057Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-15 06-24",
+      "href": "/reports/updates/update-2025-08-15T06-24",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T06:24:35.057Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-15 06-24",
+      "href": "/reports/innovations/insight-2025-08-15T06-24",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T06:24:35.057Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-15 06-24",
+      "href": "/reports/updates/update-2025-08-15T06-24",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T06:24:35.057Z",
+      "source": "cloud-content-factory"
+    },
     {
       "title": "Reference Architecture — Autonomous Content Mesh",
       "href": "/reports/blueprints/blueprint-2025-08-15-062426",
