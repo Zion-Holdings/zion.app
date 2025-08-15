@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T21:45:03.150Z",
+  "generatedAt": "2025-08-15T21:46:03.027Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1500,6 +1500,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1850.tsx",
       "title": "Autonomous Capability Map — Agentic Workflows (2025-08-15 18:50 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Capability Map — Agentic Workflows (2025-08-15 18:50 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1846",
+      "file": "pages/reports/updates/update-2025-08-15-1846.tsx",
+      "title": "Autonomous Update — 2025-08-15 18:46",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 18:46 Autonomous Update — 2025-08-15 18:46 Signal over noise—your automated update is here. Today's Highlight Hacker News : Air Con: $1697 for an on/off switch · 2001 pts "
     },
     {
       "route": "/reports/updates/update-2025-08-15-1845",
