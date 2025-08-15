@@ -5218,5 +5218,80 @@
     "startTime": "2025-08-15T23:03:25.915Z",
     "status": "active",
     "filePath": "conv-1755299005915.json"
+<<<<<<< Updated upstream
+=======
+  },
+  {
+    "id": "conv-1755299165504",
+    "type": "security-audit",
+    "participants": [
+      "Security Expert",
+      "Backend Developer",
+      "DevOps Engineer"
+    ],
+    "startTime": "2025-08-15T23:06:05.504Z",
+    "status": "active",
+    "filePath": "conv-1755299165504.json"
+  },
+  {
+    "id": "conv-1755299167512",
+    "type": "feature-planning",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "DevOps Engineer"
+    ],
+    "startTime": "2025-08-15T23:06:07.512Z",
+    "status": "active",
+    "filePath": "conv-1755299167512.json"
+  },
+  {
+    "id": "conv-1755299307923",
+    "type": "performance-optimization",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "DevOps Engineer"
+    ],
+    "startTime": "2025-08-15T23:08:27.923Z",
+    "status": "active",
+    "filePath": "conv-1755299307923.json"
+  },
+  {
+    "id": "conv-1755299309930",
+    "type": "code-review",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "QA Tester"
+    ],
+    "startTime": "2025-08-15T23:08:29.930Z",
+    "status": "active",
+    "filePath": "conv-1755299309930.json"
+  },
+  {
+    "id": "conv-1755299469520",
+    "type": "bug-investigation",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "QA Tester"
+    ],
+    "startTime": "2025-08-15T23:11:09.520Z",
+    "status": "active",
+    "filePath": "conv-1755299469520.json"
+  },
+  {
+    "id": "conv-1755299471532",
+    "type": "feature-planning",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "DevOps Engineer"
+    ],
+    "startTime": "2025-08-15T23:11:11.532Z",
+    "status": "active",
+    "filePath": "conv-1755299471532.json"
+>>>>>>> Stashed changes
   }
 ]
