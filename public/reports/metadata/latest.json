@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T17:10:01.535Z",
-  "pagesScanned": 4978,
+  "generatedAt": "2025-08-15T17:11:00.927Z",
+  "pagesScanned": 4987,
   "items": [
     {
       "route": "/404",
@@ -5796,6 +5796,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-15-170029",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-15-171030",
       "missing": [
         "og:image"
       ],
@@ -22755,6 +22765,16 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-15-171030",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Autonomous Update Implementation",
+        "description": "Guide — Autonomous Update Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-15-0211",
       "missing": [
         "og:image"
@@ -24512,6 +24532,16 @@
       "suggestion": {
         "title": "Playbook: DevSecOps AI",
         "description": "Playbook: DevSecOps AI — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-1710",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook: Edge AI",
+        "description": "Playbook: Edge AI — auto-suggested description"
       }
     },
     {
@@ -26332,6 +26362,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-15 17-00",
         "description": "Innovation Insight — 2025-08-15 17-00 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15T17-10",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-15 17-10",
+        "description": "Innovation Insight — 2025-08-15 17-10 — auto-suggested description"
       }
     },
     {
@@ -34885,6 +34925,16 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-15-171030",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Improving Continuously",
+        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-15-021207",
       "missing": [
         "og:image"
@@ -40426,6 +40476,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-15-170029",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-15-171030",
       "missing": [
         "og:image"
       ],
@@ -47755,6 +47815,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-15-1411",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 14:11",
+        "description": "Autonomous Update — 2025-08-15 14:11 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-15-1420",
       "missing": [
         "og:image"
@@ -47922,6 +47995,16 @@
       "suggestion": {
         "title": "Autonomous Playbook — Agentic Workflows (2025-08-15 17:00 UTC)",
         "description": "Autonomous Playbook — Agentic Workflows (2025-08-15 17:00 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1710",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Checklist — MLOps & Model Reliability (2025-08-15 17:10 UTC)",
+        "description": "Autonomous Checklist — MLOps & Model Reliability (2025-08-15 17:10 UTC) — auto-suggested description"
       }
     },
     {
@@ -49742,6 +49825,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-15 17-00",
         "description": "Autonomous Update — 2025-08-15 17-00 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15T17-10",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 17-10",
+        "description": "Autonomous Update — 2025-08-15 17-10 — auto-suggested description"
       }
     },
     {
