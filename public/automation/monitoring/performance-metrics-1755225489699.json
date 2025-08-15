@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-08-15T02:38:09.692Z",
-  "performance": {
-    "responseTimes": 1,
-    "throughput": 52.32563918295301,
-    "errorRates": 0.16331118533956301,
-    "availability": 99.89748381696856
-  }
-}
