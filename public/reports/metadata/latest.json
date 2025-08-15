@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T23:18:00.850Z",
-  "pagesScanned": 5600,
+  "generatedAt": "2025-08-15T23:19:00.919Z",
+  "pagesScanned": 5602,
   "items": [
     {
       "route": "/404",
@@ -78,6 +78,16 @@
       "suggestion": {
         "title": "🤖 Automation Health Dashboard",
         "description": "🤖 Automation Health Dashboard — auto-suggested description"
+      }
+    },
+    {
+      "route": "/blog/",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Blog",
+        "description": "Blog — auto-suggested description"
       }
     },
     {
@@ -53587,14 +53597,24 @@
     {
       "route": "/reports/updates/update-2025-08-15-2018",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 20:18",
+        "description": "Autonomous Update — 2025-08-15 20:18 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-2019",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-15 20:18",
-        "description": "Autonomous Update — 2025-08-15 20:18 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-15 20:19",
+        "description": "Autonomous Update — 2025-08-15 20:19 — auto-suggested description"
       }
     },
     {

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T23:18:03.320Z",
+  "generatedAt": "2025-08-15T23:19:03.340Z",
   "entries": [
     {
       "route": "/terms",
@@ -1572,6 +1572,12 @@
       "file": "pages/reports/updates/update-2025-08-15-2020.tsx",
       "title": "Autonomous Reference Architecture — Agentic Workflows (2025-08-15 20:20 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Reference Architecture — Agentic Workflows (2025-08-15 20:20 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\","
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-2019",
+      "file": "pages/reports/updates/update-2025-08-15-2019.tsx",
+      "title": "Autonomous Update — 2025-08-15 20:19",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 20:19 Autonomous Update — 2025-08-15 20:19 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Open source AI is the path forward ·"
     },
     {
       "route": "/reports/updates/update-2025-08-15-2018",
@@ -33594,6 +33600,12 @@
       "file": "pages/components/form-demo.tsx",
       "title": "form-demo",
       "summary": "import Form from '../../components/Form'; export default function FormDemo() { const handleSubmit = (data) => { alert('Form submitted: ' + JSON.stringify(data, null, 2)); }; return ( Form Component Demo ); }"
+    },
+    {
+      "route": "/blog",
+      "file": "pages/blog/index.tsx",
+      "title": "Blog | Zion Tech Group - AI & Cloud Automation Insights",
+      "summary": "import Head from 'next/head'; import Link from 'next/link'; export default function BlogIndexPage() { const blogPosts = [ { id: 'ai-automation-trends-2025', title: 'AI Automation Trends That Will Dominate 2025', excerpt: 'Discover the top AI automation trends that are reshaping i"
     },
     {
       "route": "/automation",
