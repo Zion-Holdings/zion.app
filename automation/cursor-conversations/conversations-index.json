@@ -1294,5 +1294,17 @@
     "startTime": "2025-08-15T16:07:55.132Z",
     "status": "active",
     "filePath": "conv-1755274075132.json"
+  },
+  {
+    "id": "conv-1755274077136",
+    "type": "testing-strategy",
+    "participants": [
+      "QA Tester",
+      "Frontend Specialist",
+      "Backend Developer"
+    ],
+    "startTime": "2025-08-15T16:07:57.136Z",
+    "status": "active",
+    "filePath": "conv-1755274077136.json"
   }
 ]
