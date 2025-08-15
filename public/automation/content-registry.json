@@ -41,20 +41,16 @@
       "route": "/services/[slug]"
     },
     {
-      "file": "pages/explore/index.tsx",
-      "route": "/explore"
-    },
-    {
       "file": "pages/front/index.tsx",
       "route": "/front"
     },
     {
-      "file": "pages/automation/index.tsx",
-      "route": "/automation"
+      "file": "pages/explore/index.tsx",
+      "route": "/explore"
     },
     {
-      "file": "pages/main/front/index.tsx",
-      "route": "/main/front"
+      "file": "pages/automation/index.tsx",
+      "route": "/automation"
     },
     {
       "file": "pages/reports/playbooks/playbook-2025-08-15-044013.tsx",
@@ -1199,6 +1195,10 @@
     {
       "file": "pages/reports/blueprints/blueprint-2025-08-14-212855.tsx",
       "route": "/reports/blueprints/blueprint-2025-08-14-212855"
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "route": "/main/front"
     }
   ],
   "docs": [
@@ -1235,5 +1235,28 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-15T04:49:00.174Z"
+  "generatedAt": "2025-08-15T04:53:54.861Z",
+  "items": [
+    {
+      "title": "Case Study — Automation Autonomous",
+      "href": "/reports/cases/case-2025-08-15-045357",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T04:53:57.323Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-15-045357",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T04:53:57.323Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Cloud Improving Continuously",
+      "href": "/reports/patterns/pattern-2025-08-15-045357",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T04:53:57.323Z",
+      "source": "cloud-deep-research-factory"
+    }
+  ]
 }
