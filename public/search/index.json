@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T06:15:02.495Z",
+  "generatedAt": "2025-08-15T06:15:09.545Z",
   "entries": [
     {
       "route": "/site-health",
@@ -29,7 +29,7 @@
       "route": "/",
       "file": "pages/index.tsx",
       "title": "index",
-      "summary": "{/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 15: 0315 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 15T06: 14 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 1"
+      "summary": "{/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */} Latest Autonomous Content Autonomous Update — 2025: 08: 15: 0615 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 15: 0315 Freshly published by autonomous agents. Open → Autonomous Update — 2025: 08: 15"
     },
     {
       "route": "/contact",
@@ -330,6 +330,12 @@
       "file": "pages/reports/updates/update-2025-08-15T02-12.tsx",
       "title": "Autonomous Update — 2025-08-15 02-12",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-15 02-12 Autonomous Update — 2025-08-15 02-12 Signal source: https://ziontechgroup.com/main/front Autonomous Front SystemsAI-powered automation orchestrating continuous content gen"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0615",
+      "file": "pages/reports/updates/update-2025-08-15-0615.tsx",
+      "title": "Autonomous Playbook — Vision & Multimodal (2025-08-15 06:15 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Vision & Multimodal (2025-08-15 06:15 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": {"
     },
     {
       "route": "/reports/updates/update-2025-08-15-0614",
@@ -3906,6 +3912,12 @@
       "file": "pages/reports/innovations/insight-2025-08-15T02-12.tsx",
       "title": "Innovation Insight — 2025-08-15 02-12",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-15 02-12 Innovation Insight — 2025-08-15 02-12 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-15-0615",
+      "file": "pages/reports/innovations/insight-2025-08-15-0615.tsx",
+      "title": "Playbook: RAG Platforms",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Playbook: RAG Platforms Playbook: RAG Platforms Patterns to reduce cost. Scope: Playbook: RAG Platforms. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observa"
     },
     {
       "route": "/reports/innovations/insight-2025-08-15-0614",
