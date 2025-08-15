@@ -53,6 +53,10 @@
       "route": "/automation"
     },
     {
+      "file": "pages/reports/playbooks/playbook-2025-08-15-062308.tsx",
+      "route": "/reports/playbooks/playbook-2025-08-15-062308"
+    },
+    {
       "file": "pages/reports/playbooks/playbook-2025-08-15-062305.tsx",
       "route": "/reports/playbooks/playbook-2025-08-15-062305"
     },
@@ -2181,6 +2185,14 @@
       "route": "/reports/innovations/insight-2025-08-15-0211"
     },
     {
+      "file": "pages/reports/patterns/pattern-2025-08-15-062313.tsx",
+      "route": "/reports/patterns/pattern-2025-08-15-062313"
+    },
+    {
+      "file": "pages/reports/patterns/pattern-2025-08-15-062307.tsx",
+      "route": "/reports/patterns/pattern-2025-08-15-062307"
+    },
+    {
       "file": "pages/reports/patterns/pattern-2025-08-15-062305.tsx",
       "route": "/reports/patterns/pattern-2025-08-15-062305"
     },
@@ -2983,6 +2995,18 @@
     {
       "file": "pages/reports/patterns/pattern-2025-08-15-021207.tsx",
       "route": "/reports/patterns/pattern-2025-08-15-021207"
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "route": "/main/front"
+    },
+    {
+      "file": "pages/reports/guides/guide-2025-08-15-062313.tsx",
+      "route": "/reports/guides/guide-2025-08-15-062313"
+    },
+    {
+      "file": "pages/reports/guides/guide-2025-08-15-062307.tsx",
+      "route": "/reports/guides/guide-2025-08-15-062307"
     },
     {
       "file": "pages/reports/guides/guide-2025-08-15-062305.tsx",
@@ -4341,8 +4365,12 @@
       "route": "/reports/blueprints/blueprint-2025-08-14-212855"
     },
     {
-      "file": "pages/main/front/index.tsx",
-      "route": "/main/front"
+      "file": "pages/reports/cases/case-2025-08-15-062313.tsx",
+      "route": "/reports/cases/case-2025-08-15-062313"
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-15-062307.tsx",
+      "route": "/reports/cases/case-2025-08-15-062307"
     },
     {
       "file": "pages/reports/cases/case-2025-08-15-062305.tsx",
@@ -5187,61 +5215,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-15T06:23:07.802Z",
-  "items": [
-    {
-      "title": "Case Study — Automation Autonomous",
-      "href": "/reports/cases/case-2025-08-15-062313",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T06:23:13.912Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Guide — Cloud Improving Implementation",
-      "href": "/reports/guides/guide-2025-08-15-062313",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T06:23:13.912Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Pattern — Cloud Improving Continuously",
-      "href": "/reports/patterns/pattern-2025-08-15-062313",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T06:23:13.912Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Playbook — Autonomous Delivery",
-      "href": "/reports/playbooks/playbook-2025-08-15-062308",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T06:23:08.051Z",
-      "source": "cloud-playbook-factory"
-    },
-    {
-      "title": "Case Study — Automation Autonomous",
-      "href": "/reports/cases/case-2025-08-15-062307",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T06:23:07.855Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Guide — Cloud Improving Implementation",
-      "href": "/reports/guides/guide-2025-08-15-062307",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T06:23:07.855Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Pattern — Cloud Improving Continuously",
-      "href": "/reports/patterns/pattern-2025-08-15-062307",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T06:23:07.855Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "id": "cursor-chat-2025-08-15T06:23:08.348Z",
-      "type": "cursor-chat",
-      "timestamp": "2025-08-15T06:23:08.348Z"
-    }
-  ]
+  "generatedAt": "2025-08-15T06:23:23.444Z"
 }
