@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-15T23:38:37.168Z",
+  "timestamp": "2025-08-15T23:39:46.792Z",
   "critical": [
     {
       "name": "ci.yml",
@@ -511,25 +511,6 @@
         "workflow_dispatch"
       ],
       "resourceScore": 118
-    },
-    {
-      "name": "seo-audit.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/seo-audit.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 20,
-      "concurrentJobs": 4,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "workflow_dispatch {}",
-        "schedule"
-      ],
-      "resourceScore": 116
     },
     {
       "name": "ai-it-ads-sync.yml",
@@ -1066,6 +1047,25 @@
     {
       "name": "responsive-content.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/responsive-content.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 20,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch {}",
+        "schedule"
+      ],
+      "resourceScore": 114
+    },
+    {
+      "name": "seo-audit.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/seo-audit.yml",
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 20,
