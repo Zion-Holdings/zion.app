@@ -1,25 +1,46 @@
 {
-  "generatedAt": "2025-08-15T07:30:06.061Z",
+  "generatedAt": "2025-08-15T07:30:14.306Z",
   "items": [
     {
-      "title": "Case Study — Automation Autonomous",
-      "href": "/reports/cases/case-2025-08-15-073005",
+      "title": "Runbook: Agent Ops",
+      "subtitle": "Patterns to enhance security.",
+      "path": "/reports/innovations/insight-2025-08-15-0730",
+      "createdAt": "2025-08-15T07:30:25.588Z",
+      "kind": "insight"
+    },
+    {
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-15-073014",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T07:30:05.781Z",
+      "createdAt": "2025-08-15T07:30:14.143Z",
+      "source": "cloud-blueprint-factory"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-15-073013",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T07:30:13.845Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Case Study — Automation Autonomous",
+      "href": "/reports/cases/case-2025-08-15-073013",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-15T07:30:13.676Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Guide — Cloud Improving Implementation",
-      "href": "/reports/guides/guide-2025-08-15-073005",
+      "href": "/reports/guides/guide-2025-08-15-073013",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T07:30:05.781Z",
+      "createdAt": "2025-08-15T07:30:13.676Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Cloud Improving Continuously",
-      "href": "/reports/patterns/pattern-2025-08-15-073005",
+      "href": "/reports/patterns/pattern-2025-08-15-073013",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T07:30:05.781Z",
+      "createdAt": "2025-08-15T07:30:13.676Z",
       "source": "cloud-deep-research-factory"
     }
   ]
