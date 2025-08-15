@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T23:23:03.562Z",
+  "generatedAt": "2025-08-15T23:24:03.326Z",
   "entries": [
     {
       "route": "/terms",
@@ -1578,6 +1578,12 @@
       "file": "pages/reports/updates/update-2025-08-15-2030.tsx",
       "title": "Autonomous Reference Architecture — Cloud Cost Optimization (2025-08-15 20:30 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Reference Architecture — Cloud Cost Optimization (2025-08-15 20:30 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subti"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-2024",
+      "file": "pages/reports/updates/update-2025-08-15-2024.tsx",
+      "title": "Autonomous Update — 2025-08-15 20:24",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 20:24 Autonomous Update — 2025-08-15 20:24 Signal over noise—your automated update is here. Today's Highlight Hacker News : Paper Airplane Designs · 1753 pts Why it matter"
     },
     {
       "route": "/reports/updates/update-2025-08-15-2023",
