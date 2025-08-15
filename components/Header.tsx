@@ -1,72 +1,115 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import SmartNavigation from './SmartNavigation';
+
+const navItems = [
+  { href: '/explore', label: 'Explore' },
+  { href: '/automation', label: 'Automation' },
+  { href: '/reports', label: 'Reports' },
+  { href: '/components', label: 'Components' },
+  { href: '/newsroom', label: 'Newsroom' },
+  { href: '/search', label: 'Search' },
+];
 
 export default function Header() {
-  const [mobileOpen, setMobileOpen] = useState(false);
-
-  const navItems = [
-    { href: '/landing', label: 'Landing' },
-    { href: '/explore', label: 'Explore' },
-    { href: '/services', label: 'Services' },
-    { href: '/automation', label: 'Automations' },
-    { href: '/reports', label: 'Reports' },
-    { href: '/newsroom', label: 'Updates' },
-    { href: '/search', label: 'Search' },
-  ];
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50">
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 rounded bg-white px-3 py-2 text-slate-900">Skip to content</a>
-      <div className="backdrop-blur supports-[backdrop-filter]:bg-black/30 bg-black/50 border-b border-white/10">
-        <nav className="mx-auto max-w-7xl px-6">
-          <div className="flex h-16 items-center justify-between">
-            <div className="flex items-center gap-3">
-              <Link href="/" className="inline-flex items-center gap-2">
-                <span className="text-xl font-extrabold tracking-wide bg-gradient-to-r from-fuchsia-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent drop-shadow-neon">Zion</span>
-              </Link>
-              <span className="hidden text-xs text-white/60 sm:inline">Autonomous Cloud Automations</span>
-            </div>
+    <header className="bg-slate-900/80 backdrop-blur-xl border-b border-white/10 sticky top-0 z-50">
+      <div className="container mx-auto px-6">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <Link href="/" className="flex items-center space-x-2 group">
+            <div className="text-2xl">🚀</div>
+            <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent group-hover:from-cyan-300 group-hover:to-fuchsia-300 transition-all">
+              Zion Tech Group
+            </span>
+          </Link>
 
-            <div className="hidden items-center gap-6 md:flex">
-              {navItems.map((item) => (
-                <Link key={item.href} href={item.href} className="text-white/80 hover:text-white transition-colors">
-                  {item.label}
-                </Link>
-              ))}
-              <Link href="/main/front#features" className="rounded-lg bg-gradient-to-r from-fuchsia-500 to-cyan-500 px-3 py-1.5 text-sm font-semibold shadow-[0_0_20px_rgba(34,211,238,0.35)] hover:shadow-[0_0_28px_rgba(34,211,238,0.6)] transition-shadow">
-                Get Started
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-8">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-white/70 hover:text-white transition-colors font-medium"
+              >
+                {item.label}
               </Link>
-            </div>
-
-            <button
-              aria-label="Toggle navigation menu"
-              className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/10 bg-white/10 text-white/90 hover:bg-white/15"
-              aria-expanded={mobileOpen}
-              aria-controls="mobile-nav"
-              onClick={() => setMobileOpen((v) => !v)}
+            ))}
+            
+            {/* Smart Navigation */}
+            <SmartNavigation />
+            
+            {/* Performance Dashboard Link */}
+            <Link
+              href="/performance-dashboard"
+              className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-4 py-2 rounded-lg font-medium transition-all transform hover:scale-105"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                {mobileOpen ? (
-                  <path d="M18 6L6 18M6 6l12 12" />
-                ) : (
-                  <path d="M3 12h18M3 6h18M3 18h18" />
-                )}
-              </svg>
-            </button>
-          </div>
-        </nav>
-        {mobileOpen && (
-          <div id="mobile-nav" className="md:hidden border-t border-white/10">
-            <div className="mx-auto max-w-7xl px-6 py-3 grid gap-3">
+              📈 Dashboard
+            </Link>
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
+            aria-label="Toggle mobile menu"
+          >
+            <svg
+              className="w-6 h-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              {isMobileMenuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isMobileMenuOpen && (
+          <div className="lg:hidden py-4 border-t border-white/10">
+            <nav className="space-y-2">
               {navItems.map((item) => (
-                <Link key={item.href} href={item.href} className="rounded-md px-3 py-2 text-white/90 hover:bg-white/10">
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="block px-4 py-2 text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
                   {item.label}
                 </Link>
               ))}
-              <Link href="/main/front#features" className="rounded-md bg-white/90 px-3 py-2 text-center font-semibold text-slate-900 hover:bg-white">
-                Get Started
+              
+              {/* Mobile Smart Navigation */}
+              <div className="px-4 py-2">
+                <SmartNavigation showSuggestions={false} />
+              </div>
+              
+              {/* Mobile Performance Dashboard Link */}
+              <Link
+                href="/performance-dashboard"
+                className="block px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-medium text-center"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                📈 Performance Dashboard
               </Link>
-            </div>
+            </nav>
           </div>
         )}
       </div>
