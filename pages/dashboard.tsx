@@ -202,19 +202,58 @@ const DashboardPage: React.FC = () => {
       </Head>
 
       <div className="min-h-screen bg-gray-50">
-        {/* Header */}
-        <header className="bg-white shadow-sm">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div className="text-center">
-              <h1 className="text-4xl font-bold text-gray-900 mb-4">
-                AI Service Factory Dashboard
-              </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Monitor, manage, and control the entire AI Service Factory automation system from a single interface.
-              </p>
+        {/* Navigation */}
+        <nav className="bg-white shadow-sm border-b border-gray-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-8">
+                <Link href="/" className="text-2xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
+                  🚀 AI Service Factory
+                </Link>
+                <div className="hidden md:flex items-center space-x-6">
+                  <Link href="/" className="text-gray-600 hover:text-gray-900 transition-colors">
+                    🏠 Home
+                  </Link>
+                  <Link href="/dashboard" className="text-blue-600 font-medium">
+                    📊 Dashboard
+                  </Link>
+                  <Link href="/system-status" className="text-gray-600 hover:text-gray-900 transition-colors">
+                    ⚡ System Status
+                  </Link>
+                  <Link href="/updates" className="text-gray-600 hover:text-gray-900 transition-colors">
+                    📰 Updates
+                  </Link>
+                </div>
+              </div>
+              <div className="flex items-center space-x-4">
+                <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                  TURBO MODE
+                </span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                  AI Generated
+                </span>
+              </div>
+            </div>
+            
+            {/* Mobile Navigation */}
+            <div className="md:hidden mt-4 pt-4 border-t border-gray-200">
+              <div className="flex flex-col space-y-3">
+                <Link href="/" className="text-gray-600 hover:text-gray-900 transition-colors">
+                  🏠 Home
+                </Link>
+                <Link href="/dashboard" className="text-blue-600 font-medium">
+                  📊 Dashboard
+                </Link>
+                <Link href="/system-status" className="text-gray-600 hover:text-gray-900 transition-colors">
+                  ⚡ System Status
+                </Link>
+                <Link href="/updates" className="text-gray-600 hover:text-gray-900 transition-colors">
+                  📰 Updates
+                </Link>
+              </div>
             </div>
           </div>
-        </header>
+        </nav>
 
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* System Health Status */}
