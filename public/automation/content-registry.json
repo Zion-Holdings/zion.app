@@ -177,6 +177,10 @@
       "route": "/reports/playbooks/playbook-2025-08-15-021207"
     },
     {
+      "file": "pages/reports/patterns/pattern-2025-08-15-055141.tsx",
+      "route": "/reports/patterns/pattern-2025-08-15-055141"
+    },
+    {
       "file": "pages/reports/patterns/pattern-2025-08-15-055140.tsx",
       "route": "/reports/patterns/pattern-2025-08-15-055140"
     },
@@ -1417,6 +1421,10 @@
       "route": "/reports/innovations/insight-2025-08-15-0211"
     },
     {
+      "file": "pages/reports/guides/guide-2025-08-15-055141.tsx",
+      "route": "/reports/guides/guide-2025-08-15-055141"
+    },
+    {
       "file": "pages/reports/guides/guide-2025-08-15-055140.tsx",
       "route": "/reports/guides/guide-2025-08-15-055140"
     },
@@ -1563,6 +1571,10 @@
     {
       "file": "pages/reports/guides/guide-2025-08-15-021207.tsx",
       "route": "/reports/guides/guide-2025-08-15-021207"
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-15-055141.tsx",
+      "route": "/reports/cases/case-2025-08-15-055141"
     },
     {
       "file": "pages/reports/cases/case-2025-08-15-055140.tsx",
@@ -1871,28 +1883,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-15T05:51:40.930Z",
-  "items": [
-    {
-      "title": "Case Study — Automation Autonomous",
-      "href": "/reports/cases/case-2025-08-15-055141",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T05:51:41.255Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Guide — Cloud Improving Implementation",
-      "href": "/reports/guides/guide-2025-08-15-055141",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T05:51:41.255Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Pattern — Cloud Improving Continuously",
-      "href": "/reports/patterns/pattern-2025-08-15-055141",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T05:51:41.255Z",
-      "source": "cloud-deep-research-factory"
-    }
-  ]
+  "generatedAt": "2025-08-15T05:51:52.461Z"
 }
