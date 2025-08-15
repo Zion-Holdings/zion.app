@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T17:34:02.950Z",
+  "generatedAt": "2025-08-15T17:35:03.148Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1350,6 +1350,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1440.tsx",
       "title": "Autonomous Checklist — MLOps & Model Reliability (2025-08-15 14:40 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Checklist — MLOps & Model Reliability (2025-08-15 14:40 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"aut"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1435",
+      "file": "pages/reports/updates/update-2025-08-15-1435.tsx",
+      "title": "Autonomous Update — 2025-08-15 14:35",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 14:35 Autonomous Update — 2025-08-15 14:35 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Zoom terms now allow training AI on "
     },
     {
       "route": "/reports/updates/update-2025-08-15-1434",
