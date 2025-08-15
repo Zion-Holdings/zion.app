@@ -1,39 +1,32 @@
 {
-  "generatedAt": "2025-08-15T02:01:20.504Z",
+  "generatedAt": "2025-08-15T02:06:18.198Z",
   "items": [
     {
-      "title": "Runbook: AI QA & Eval",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-15-0206",
-      "createdAt": "2025-08-15T02:06:07.645Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-15 02-01",
-      "href": "/reports/innovations/insight-2025-08-15T02-01",
+      "title": "Innovation Insight — 2025-08-15 02-06",
+      "href": "/reports/innovations/insight-2025-08-15T02-06",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T02:01:20.433Z",
+      "createdAt": "2025-08-15T02:06:18.119Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-15 02-01",
-      "href": "/reports/updates/update-2025-08-15T02-01",
+      "title": "Autonomous Update — 2025-08-15 02-06",
+      "href": "/reports/updates/update-2025-08-15T02-06",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T02:01:20.433Z",
+      "createdAt": "2025-08-15T02:06:18.119Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Innovation Insight — 2025-08-15 02-01",
-      "href": "/reports/innovations/insight-2025-08-15T02-01",
+      "title": "Innovation Insight — 2025-08-15 02-06",
+      "href": "/reports/innovations/insight-2025-08-15T02-06",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T02:01:20.433Z",
+      "createdAt": "2025-08-15T02:06:18.119Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-15 02-01",
-      "href": "/reports/updates/update-2025-08-15T02-01",
+      "title": "Autonomous Update — 2025-08-15 02-06",
+      "href": "/reports/updates/update-2025-08-15T02-06",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T02:01:20.433Z",
+      "createdAt": "2025-08-15T02:06:18.119Z",
       "source": "cloud-content-factory"
     }
   ]
