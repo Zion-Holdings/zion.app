@@ -53,6 +53,10 @@
       "route": "/automation"
     },
     {
+      "file": "pages/reports/playbooks/playbook-2025-08-15-060739.tsx",
+      "route": "/reports/playbooks/playbook-2025-08-15-060739"
+    },
+    {
       "file": "pages/reports/playbooks/playbook-2025-08-15-060717.tsx",
       "route": "/reports/playbooks/playbook-2025-08-15-060717"
     },
@@ -1777,6 +1781,10 @@
       "route": "/reports/updates/update-2025-08-14-2311"
     },
     {
+      "file": "pages/reports/patterns/pattern-2025-08-15-060739.tsx",
+      "route": "/reports/patterns/pattern-2025-08-15-060739"
+    },
+    {
       "file": "pages/reports/patterns/pattern-2025-08-15-060721.tsx",
       "route": "/reports/patterns/pattern-2025-08-15-060721"
     },
@@ -2331,6 +2339,14 @@
     {
       "file": "pages/reports/patterns/pattern-2025-08-15-021207.tsx",
       "route": "/reports/patterns/pattern-2025-08-15-021207"
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "route": "/main/front"
+    },
+    {
+      "file": "pages/reports/guides/guide-2025-08-15-060739.tsx",
+      "route": "/reports/guides/guide-2025-08-15-060739"
     },
     {
       "file": "pages/reports/guides/guide-2025-08-15-060721.tsx",
@@ -2893,8 +2909,8 @@
       "route": "/reports/guides/guide-2025-08-15-021207"
     },
     {
-      "file": "pages/main/front/index.tsx",
-      "route": "/main/front"
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-060739.tsx",
+      "route": "/reports/blueprints/blueprint-2025-08-15-060739"
     },
     {
       "file": "pages/reports/blueprints/blueprint-2025-08-15-060716.tsx",
@@ -3267,6 +3283,10 @@
     {
       "file": "pages/reports/blueprints/blueprint-2025-08-14-212855.tsx",
       "route": "/reports/blueprints/blueprint-2025-08-14-212855"
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-15-060739.tsx",
+      "route": "/reports/cases/case-2025-08-15-060739"
     },
     {
       "file": "pages/reports/cases/case-2025-08-15-060721.tsx",
@@ -3863,41 +3883,27 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-15T06:07:37.650Z",
+  "generatedAt": "2025-08-15T06:07:44.556Z",
   "items": [
     {
-      "title": "Reference Architecture — Autonomous Content Mesh",
-      "href": "/reports/blueprints/blueprint-2025-08-15-060739",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T06:07:39.375Z",
-      "source": "cloud-blueprint-factory"
-    },
-    {
-      "title": "Playbook — Autonomous Delivery",
-      "href": "/reports/playbooks/playbook-2025-08-15-060739",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-15T06:07:39.284Z",
-      "source": "cloud-playbook-factory"
-    },
-    {
       "title": "Case Study — Automation Autonomous",
-      "href": "/reports/cases/case-2025-08-15-060739",
+      "href": "/reports/cases/case-2025-08-15-060746",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T06:07:39.177Z",
+      "createdAt": "2025-08-15T06:07:46.201Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Guide — Cloud Improving Implementation",
-      "href": "/reports/guides/guide-2025-08-15-060739",
+      "href": "/reports/guides/guide-2025-08-15-060746",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T06:07:39.177Z",
+      "createdAt": "2025-08-15T06:07:46.201Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Cloud Improving Continuously",
-      "href": "/reports/patterns/pattern-2025-08-15-060739",
+      "href": "/reports/patterns/pattern-2025-08-15-060746",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T06:07:39.177Z",
+      "createdAt": "2025-08-15T06:07:46.201Z",
       "source": "cloud-deep-research-factory"
     }
   ]
