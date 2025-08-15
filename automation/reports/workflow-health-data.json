@@ -1289,7 +1289,7 @@
     "name": "commit-message-lint.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/commit-message-lint.yml",
-    "size": 1023,
+    "size": 1021,
     "lines": 41,
     "triggers": [
       "pull_request",
