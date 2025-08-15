@@ -1,0 +1,39 @@
+{
+  "timestamp": "2025-08-15T14:29:02.817Z",
+  "mode": "development",
+  "success": true,
+  "git": {
+    "hasChanges": true,
+    "stagedFiles": [],
+    "unstagedFiles": [
+      "public/reports/build-quality/index.html",
+      "public/reports/build-quality/latest.json",
+      "public/reports/build-quality/report.md"
+    ],
+    "totalChanges": 3
+  },
+  "results": {
+    "preCommit": {
+      "success": false,
+      "issues": 999,
+      "error": "ENOENT: no such file or directory, open '/workspace/public/reports/pre-commit/pre-commit-latest.json'"
+    },
+    "buildQuality": {
+      "success": true,
+      "issues": 3,
+      "summary": {
+        "generatedAt": "2025-08-15T14:29:02.806Z",
+        "totalFiles": 5,
+        "totalIssues": 3,
+        "criticalIssues": 1,
+        "warningIssues": 2,
+        "errorIssues": 0
+      }
+    }
+  },
+  "summary": {
+    "totalChecks": 2,
+    "passedChecks": 1,
+    "failedChecks": 1
+  }
+}
