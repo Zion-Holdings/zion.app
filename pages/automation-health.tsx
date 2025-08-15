@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import type { GetStaticProps } from 'next';
 import Head from 'next/head';
 import FuturisticLayout from '../components/FuturisticLayout';
+import fs from 'fs/promises';
+import path from 'path';
 
 interface AutomationHealth {
   version: string;
@@ -451,10 +453,18 @@ export default function AutomationHealthPage({ health, controlPlane, scheduleHin
 }
 
 export const getStaticProps: GetStaticProps = async () => {
+  const readJson = async (relPath: string, fallback: any) => {
+    try {
+      const filePath = path.join(process.cwd(), 'public', relPath);
+      const raw = await fs.readFile(filePath, 'utf8');
+      return JSON.parse(raw);
+    } catch {
+      return fallback;
+    }
+  };
+
   try {
-    // Fetch automation health data
-    const healthResponse = await fetch('http://localhost:3000/reports/automation/health.json');
-    const health = healthResponse.ok ? await healthResponse.json() : {
+    const health = await readJson('reports/automation/health.json', {
       version: '1.0.0',
       lastUpdated: new Date().toISOString(),
       functions: {},
@@ -471,11 +481,9 @@ export const getStaticProps: GetStaticProps = async () => {
         averageFunctionDuration: 0,
         averageWorkflowDuration: 0
       }
-    };
+    });
 
-    // Fetch control plane data
-    const controlResponse = await fetch('http://localhost:3000/automation/control.json');
-    const controlPlane = controlResponse.ok ? await controlResponse.json() : {
+    const controlPlane = await readJson('automation/control.json', {
       globalPause: false,
       version: '1.0.0',
       lastUpdated: new Date().toISOString(),
@@ -483,28 +491,19 @@ export const getStaticProps: GetStaticProps = async () => {
       workflows: {},
       throttles: { maxConcurrentFunctions: 6, maxConcurrentWorkflows: 3, functionTimeoutMs: 180000, workflowTimeoutMs: 3600000 },
       budgets: { openai: { dailyUsd: 2.50, monthlyUsd: 50.00, enabled: true }, github: { dailyActions: 2000, monthlyActions: 50000, enabled: true } }
-    };
+    });
 
-    // Fetch schedule hints
-    const hintsResponse = await fetch('http://localhost:3000/automation/schedule-hints.json');
-    const scheduleHints = hintsResponse.ok ? await hintsResponse.json() : {
+    const scheduleHints = await readJson('automation/schedule-hints.json', {
       version: '1.0.0',
       lastUpdated: new Date().toISOString(),
       workflows: {},
       recommendations: { totalWorkflows: 0, workflowsNeedingSpeedUp: 0, workflowsNeedingSlowDown: 0, overallHealth: 'unknown', nextReview: new Date().toISOString() },
       performance: { averageSuccessRate: 0, totalFailures: 0, efficiency: 'unknown' }
-    };
+    });
 
-    return {
-      props: {
-        health,
-        controlPlane,
-        scheduleHints,
-      },
-    };
+    return { props: { health, controlPlane, scheduleHints } };
   } catch (error) {
     console.error('Error fetching automation data:', error);
-    
     return {
       props: {
         health: {
@@ -540,8 +539,8 @@ export const getStaticProps: GetStaticProps = async () => {
           workflows: {},
           recommendations: { totalWorkflows: 0, workflowsNeedingSpeedUp: 0, workflowsNeedingSlowDown: 0, overallHealth: 'unknown', nextReview: new Date().toISOString() },
           performance: { averageSuccessRate: 0, totalFailures: 0, efficiency: 'unknown' }
-        },
-      },
+        }
+      }
     };
   }
 };

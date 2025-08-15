@@ -217,3 +217,15 @@ a, p, li {
   overflow-wrap: anywhere;
   word-break: break-word;
 }
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .beams-layer, .twinkle-field, .animate-grid, .animate-marquee, .animate-shimmer, .glow-pulse, .tilt-on-hover, .animated-border::before {
+    animation: none !important;
+  }
+}

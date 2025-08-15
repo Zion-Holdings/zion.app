@@ -8,8 +8,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Outfit', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        display: ['Orbitron', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-outfit)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['var(--font-orbitron)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       colors: {
         night: {

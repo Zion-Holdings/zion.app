@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
 
 type Service = {
   slug: string;
@@ -73,10 +74,11 @@ export default function ServicePage({ service }: { service: Service }) {
       <Head>
         <title>{service.title} — Zion Tech Group</title>
         <meta name="description" content={service.description} />
-      
-        <meta property="og:title" content="{service.title}" />
-        <meta property="og:description" content="{service.title} — automatically suggested description." />
-        <meta name="twitter:card" content="summary_large_image" /></Head>
+        
+        <meta property="og:title" content={service.title} />
+        <meta property="og:description" content={`${service.title} — automatically suggested description.`} />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
       <h1 className="text-3xl font-bold tracking-tight">{service.title}</h1>
       <p className="mt-2 text-white/80">{service.description}</p>
       <ul className="mt-6 grid gap-2">
@@ -87,7 +89,7 @@ export default function ServicePage({ service }: { service: Service }) {
           </li>
         ))}
       </ul>
-      <a href={service.ctaHref} className="mt-6 inline-flex rounded-lg bg-white/90 px-5 py-2 font-semibold text-slate-900 hover:bg-white">Get in touch</a>
+      <Link href={service.ctaHref} className="mt-6 inline-flex rounded-lg bg-white/90 px-5 py-2 font-semibold text-slate-900 hover:bg-white">Get in touch</Link>
     </div>
   );
 }

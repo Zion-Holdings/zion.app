@@ -7,22 +7,32 @@ export default function SearchPage() {
   const [q, setQ] = useState('');
   const [items, setItems] = useState<SearchItem[]>([]);
   const [loaded, setLoaded] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    const term = q.trim();
+    if (loaded || term.length < 2) return;
+
     let cancelled = false;
-    fetch('/search/index.json')
-      .then((r) => r.json())
-      .then((data) => {
-        if (!cancelled) {
-          setItems(Array.isArray(data) ? data : []);
-          setLoaded(true);
-        }
-      })
-      .catch(() => setLoaded(true));
+    const id = setTimeout(() => {
+      setIsLoading(true);
+      fetch('/search/index.json')
+        .then((r) => r.json())
+        .then((data) => {
+          if (!cancelled) {
+            setItems(Array.isArray(data) ? data : []);
+            setLoaded(true);
+          }
+        })
+        .catch(() => setLoaded(true))
+        .finally(() => setIsLoading(false));
+    }, 200);
+
     return () => {
       cancelled = true;
+      clearTimeout(id);
     };
-  }, []);
+  }, [q, loaded]);
 
   const filtered = useMemo(() => {
     const term = q.trim().toLowerCase();
@@ -39,19 +49,23 @@ export default function SearchPage() {
       <Head>
         <title>Search — Zion</title>
         <meta name="description" content="Search across pages and reports." />
-      
+        
         <meta property="og:title" content="Search" />
         <meta property="og:description" content="Search — automatically suggested description." />
-        <meta name="twitter:card" content="summary_large_image" /></Head>
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
       <main className="mx-auto max-w-5xl px-6 py-10">
         <h1 className="text-3xl font-bold">Search</h1>
         <div className="mt-4">
           <input
             value={q}
             onChange={(e) => setQ(e.target.value)}
-            placeholder={loaded ? 'Type to search…' : 'Loading index…'}
+            placeholder={loaded ? 'Type to search…' : isLoading ? 'Loading index…' : 'Type at least 2 characters…'}
             className="w-full rounded-lg border border-white/15 bg-white/5 p-3 outline-none placeholder:text-white/50"
           />
+          {!loaded && q.trim().length > 0 && q.trim().length < 2 ? (
+            <p className="mt-2 text-sm text-white/60">Enter at least 2 characters to load the index.</p>
+          ) : null}
         </div>
         <ul className="mt-6 space-y-3">
           {filtered.map((it) => (

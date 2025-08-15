@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 
 export default function TutorialsIndex() {
   return (
@@ -6,10 +7,11 @@ export default function TutorialsIndex() {
       <Head>
         <title>Tutorials | Zion Tech Group</title>
         <meta name="description" content="Browse our collection of tutorials and insights." />
-      
+        
         <meta property="og:title" content="Tutorials" />
         <meta property="og:description" content="Tutorials — automatically suggested description." />
-        <meta name="twitter:card" content="summary_large_image" /></Head>
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
       
       <main className="container mx-auto px-6 py-12">
         <h1 className="text-4xl font-bold mb-8">Tutorials</h1>
@@ -18,9 +20,9 @@ export default function TutorialsIndex() {
           <div className="bg-white/5 border border-white/10 rounded-lg p-6">
             <h3 className="text-lg font-semibold mb-2">Sample Tutorial</h3>
             <p className="text-white/70 mb-4">This is a placeholder for tutorials content.</p>
-            <a href="/" className="text-cyan-400 hover:text-cyan-300 transition-colors">
+            <Link href="/" className="text-cyan-400 hover:text-cyan-300 transition-colors">
               Learn more →
-            </a>
+            </Link>
           </div>
         </div>
       </main>
