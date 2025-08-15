@@ -7,7 +7,6 @@
   - Deep analysis of existing content structure
   - Identifies missing pages, content types, and quality gaps
   - Generates detailed gap reports for Cursor agents
-  - Integrates with existing automation systems
   - Provides actionable insights for content completion
 
   Usage:
@@ -18,7 +17,6 @@
 
 const fs = require('fs');
 const path = require('path');
-const { spawnSync } = require('child_process');
 
 class ContentGapAnalyzer {
   constructor() {
@@ -26,7 +24,7 @@ class ContentGapAnalyzer {
     this.logsDir = path.join(this.rootDir, 'automation', 'logs');
     this.reportsDir = path.join(this.rootDir, 'pages', 'reports');
     this.pagesDir = path.join(this.rootDir, 'pages');
-    this.publicDir = path.join(this.rootDir, 'public');
+    this.componentsDir = path.join(this.rootDir, 'components');
     this.ensureDirectories();
   }
 
@@ -52,9 +50,7 @@ class ContentGapAnalyzer {
       pages: this.analyzePages(),
       reports: this.analyzeReports(),
       components: this.analyzeComponents(),
-      public: this.analyzePublicAssets(),
-      automation: this.analyzeAutomation(),
-      metadata: this.analyzeMetadata()
+      automation: this.analyzeAutomation()
     };
     
     return structure;
@@ -151,8 +147,7 @@ class ContentGapAnalyzer {
       totalFiles: files.length,
       averageLength: 0,
       shortContent: 0,
-      missingMetadata: 0,
-      brokenLinks: 0
+      missingMetadata: 0
     };
     
     try {
@@ -197,9 +192,8 @@ class ContentGapAnalyzer {
     };
     
     try {
-      const componentsDir = path.join(this.rootDir, 'components');
-      if (fs.existsSync(componentsDir)) {
-        const files = fs.readdirSync(componentsDir).filter(f => f.endsWith('.tsx'));
+      if (fs.existsSync(this.componentsDir)) {
+        const files = fs.readdirSync(this.componentsDir).filter(f => f.endsWith('.tsx'));
         components.total = files.length;
         
         // Categorize components
@@ -216,7 +210,7 @@ class ContentGapAnalyzer {
       ];
       
       essentialComponents.forEach(component => {
-        if (!fs.existsSync(path.join(this.rootDir, 'components', component))) {
+        if (!fs.existsSync(path.join(this.componentsDir, component))) {
           components.missing.push(component);
         }
       });
@@ -237,59 +231,11 @@ class ContentGapAnalyzer {
     return 'other';
   }
 
-  analyzePublicAssets() {
-    const assets = {
-      images: 0,
-      documents: 0,
-      scripts: 0,
-      styles: 0,
-      missing: []
-    };
-    
-    try {
-      if (fs.existsSync(this.publicDir)) {
-        const files = fs.readdirSync(this.publicDir, { recursive: true });
-        
-        files.forEach(file => {
-          if (typeof file === 'string') {
-            const ext = path.extname(file).toLowerCase();
-            if (['.jpg', '.jpeg', '.png', '.gif', '.svg', '.webp'].includes(ext)) {
-              assets.images++;
-            } else if (['.pdf', '.doc', '.docx'].includes(ext)) {
-              assets.documents++;
-            } else if (['.js', '.ts'].includes(ext)) {
-              assets.scripts++;
-            } else if (['.css', '.scss'].includes(ext)) {
-              assets.styles++;
-            }
-          }
-        });
-      }
-      
-      // Check for missing essential assets
-      const essentialAssets = [
-        'favicon.ico', 'robots.txt', 'sitemap.xml', 'manifest.json'
-      ];
-      
-      essentialAssets.forEach(asset => {
-        if (!fs.existsSync(path.join(this.publicDir, asset))) {
-          assets.missing.push(asset);
-        }
-      });
-      
-    } catch (error) {
-      this.log(`Error analyzing public assets: ${error.message}`, 'ERROR');
-    }
-    
-    return assets;
-  }
-
   analyzeAutomation() {
     const automation = {
       total: 0,
       categories: {},
-      health: {},
-      missing: []
+      health: {}
     };
     
     try {
@@ -307,22 +253,6 @@ class ContentGapAnalyzer {
         // Check automation health
         automation.health = this.checkAutomationHealth(automationDir, files);
       }
-      
-      // Identify missing automation types
-      const expectedAutomation = [
-        'content-generation', 'seo-optimization', 'security-audit', 
-        'performance-monitoring', 'link-management', 'image-optimization'
-      ];
-      
-      expectedAutomation.forEach(type => {
-        const hasType = Object.keys(automation.categories).some(cat => 
-          cat.toLowerCase().includes(type.toLowerCase())
-        );
-        if (!hasType) {
-          automation.missing.push(type);
-        }
-      });
-      
     } catch (error) {
       this.log(`Error analyzing automation: ${error.message}`, 'ERROR');
     }
@@ -372,54 +302,6 @@ class ContentGapAnalyzer {
     }
     
     return health;
-  }
-
-  analyzeMetadata() {
-    const metadata = {
-      seo: {},
-      social: {},
-      technical: {},
-      missing: []
-    };
-    
-    try {
-      // Check package.json
-      const packagePath = path.join(this.rootDir, 'package.json');
-      if (fs.existsSync(packagePath)) {
-        const pkg = JSON.parse(fs.readFileSync(packagePath, 'utf8'));
-        metadata.technical.name = pkg.name;
-        metadata.technical.version = pkg.version;
-        metadata.technical.description = pkg.description;
-      }
-      
-      // Check next.config.js
-      const nextConfigPath = path.join(this.rootDir, 'next.config.js');
-      if (fs.existsSync(nextConfigPath)) {
-        metadata.technical.hasNextConfig = true;
-      }
-      
-      // Check tailwind.config.js
-      const tailwindPath = path.join(this.rootDir, 'tailwind.config.js');
-      if (fs.existsSync(tailwindPath)) {
-        metadata.technical.hasTailwind = true;
-      }
-      
-      // Check for missing essential metadata
-      const essentialMetadata = [
-        'robots.txt', 'sitemap.xml', 'manifest.json', 'favicon.ico'
-      ];
-      
-      essentialMetadata.forEach(item => {
-        if (!fs.existsSync(path.join(this.publicDir, item))) {
-          metadata.missing.push(item);
-        }
-      });
-      
-    } catch (error) {
-      this.log(`Error analyzing metadata: ${error.message}`, 'ERROR');
-    }
-    
-    return metadata;
   }
 
   generateGapReport() {
@@ -484,17 +366,6 @@ class ContentGapAnalyzer {
         description: `Missing essential components: ${structure.components.missing.join(', ')}`,
         impact: 'UI consistency and reusability',
         solution: 'Create missing UI components'
-      });
-    }
-    
-    // Automation gaps
-    if (structure.automation.missing.length > 0) {
-      gaps.push({
-        type: 'missing_automation',
-        priority: 'low',
-        description: `Missing automation types: ${structure.automation.missing.join(', ')}`,
-        impact: 'Maintenance efficiency',
-        solution: 'Implement missing automation scripts'
       });
     }
     
