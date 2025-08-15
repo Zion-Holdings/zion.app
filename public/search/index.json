@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T21:37:03.178Z",
+  "generatedAt": "2025-08-15T21:38:03.275Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1494,6 +1494,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1840.tsx",
       "title": "Autonomous Security Hardening Guide — AI Service Design (2025-08-15 18:40 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Security Hardening Guide — AI Service Design (2025-08-15 18:40 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1838",
+      "file": "pages/reports/updates/update-2025-08-15-1838.tsx",
+      "title": "Autonomous Update — 2025-08-15 18:38",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 18:38 Autonomous Update — 2025-08-15 18:38 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Open source AI is the path forward ·"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1837",
