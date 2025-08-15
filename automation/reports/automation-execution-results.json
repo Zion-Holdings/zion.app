@@ -1,9 +1,9 @@
 {
-  "timestamp": "2025-08-15T15:28:42.288Z",
+  "timestamp": "2025-08-15T15:29:36.939Z",
   "systems": {
     "workflow-health": {
       "success": true,
-      "duration": 143,
+      "duration": 132,
       "error": null
     },
     "dependency-health": {
@@ -18,12 +18,12 @@
     },
     "smart-dispatch": {
       "success": true,
-      "duration": 8938,
+      "duration": 7713,
       "error": null
     },
     "retry-system": {
       "success": true,
-      "duration": 89,
+      "duration": 87,
       "error": null
     }
   },
@@ -31,6 +31,6 @@
     "total": 5,
     "success": 4,
     "failed": 1,
-    "totalDuration": 9276
+    "totalDuration": 8038
   }
 }
