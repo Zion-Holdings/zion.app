@@ -249,6 +249,10 @@
       "route": "/reports/updates/update-2025-08-15-0211"
     },
     {
+      "file": "pages/reports/updates/update-2025-08-15-0134.tsx",
+      "route": "/reports/updates/update-2025-08-15-0134"
+    },
+    {
       "file": "pages/reports/updates/update-2025-08-15-0133.tsx",
       "route": "/reports/updates/update-2025-08-15-0133"
     },
@@ -957,74 +961,6 @@
       "route": "/reports/guides/guide-2025-08-15-021207"
     },
     {
-      "file": "pages/reports/blueprints/blueprint-2025-08-15-043013.tsx",
-      "route": "/reports/blueprints/blueprint-2025-08-15-043013"
-    },
-    {
-      "file": "pages/reports/blueprints/blueprint-2025-08-15-042012.tsx",
-      "route": "/reports/blueprints/blueprint-2025-08-15-042012"
-    },
-    {
-      "file": "pages/reports/blueprints/blueprint-2025-08-15-041012.tsx",
-      "route": "/reports/blueprints/blueprint-2025-08-15-041012"
-    },
-    {
-      "file": "pages/reports/blueprints/blueprint-2025-08-15-040013.tsx",
-      "route": "/reports/blueprints/blueprint-2025-08-15-040013"
-    },
-    {
-      "file": "pages/reports/blueprints/blueprint-2025-08-15-031010.tsx",
-      "route": "/reports/blueprints/blueprint-2025-08-15-031010"
-    },
-    {
-      "file": "pages/reports/blueprints/blueprint-2025-08-15-030012.tsx",
-      "route": "/reports/blueprints/blueprint-2025-08-15-030012"
-    },
-    {
-      "file": "pages/reports/blueprints/blueprint-2025-08-15-025013.tsx",
-      "route": "/reports/blueprints/blueprint-2025-08-15-025013"
-    },
-    {
-      "file": "pages/reports/blueprints/blueprint-2025-08-15-024012.tsx",
-      "route": "/reports/blueprints/blueprint-2025-08-15-024012"
-    },
-    {
-      "file": "pages/reports/blueprints/blueprint-2025-08-15-023012.tsx",
-      "route": "/reports/blueprints/blueprint-2025-08-15-023012"
-    },
-    {
-      "file": "pages/reports/blueprints/blueprint-2025-08-15-022012.tsx",
-      "route": "/reports/blueprints/blueprint-2025-08-15-022012"
-    },
-    {
-      "file": "pages/reports/blueprints/blueprint-2025-08-15-021909.tsx",
-      "route": "/reports/blueprints/blueprint-2025-08-15-021909"
-    },
-    {
-      "file": "pages/reports/blueprints/blueprint-2025-08-15-021810.tsx",
-      "route": "/reports/blueprints/blueprint-2025-08-15-021810"
-    },
-    {
-      "file": "pages/reports/blueprints/blueprint-2025-08-15-021608.tsx",
-      "route": "/reports/blueprints/blueprint-2025-08-15-021608"
-    },
-    {
-      "file": "pages/reports/blueprints/blueprint-2025-08-15-021452.tsx",
-      "route": "/reports/blueprints/blueprint-2025-08-15-021452"
-    },
-    {
-      "file": "pages/reports/blueprints/blueprint-2025-08-15-021325.tsx",
-      "route": "/reports/blueprints/blueprint-2025-08-15-021325"
-    },
-    {
-      "file": "pages/reports/blueprints/blueprint-2025-08-15-021207.tsx",
-      "route": "/reports/blueprints/blueprint-2025-08-15-021207"
-    },
-    {
-      "file": "pages/reports/blueprints/blueprint-2025-08-14-212855.tsx",
-      "route": "/reports/blueprints/blueprint-2025-08-14-212855"
-    },
-    {
       "file": "pages/reports/cases/case-2025-08-15-043013.tsx",
       "route": "/reports/cases/case-2025-08-15-043013"
     },
@@ -1097,6 +1033,74 @@
       "route": "/reports/cases/case-2025-08-15-021207"
     },
     {
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-043013.tsx",
+      "route": "/reports/blueprints/blueprint-2025-08-15-043013"
+    },
+    {
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-042012.tsx",
+      "route": "/reports/blueprints/blueprint-2025-08-15-042012"
+    },
+    {
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-041012.tsx",
+      "route": "/reports/blueprints/blueprint-2025-08-15-041012"
+    },
+    {
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-040013.tsx",
+      "route": "/reports/blueprints/blueprint-2025-08-15-040013"
+    },
+    {
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-031010.tsx",
+      "route": "/reports/blueprints/blueprint-2025-08-15-031010"
+    },
+    {
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-030012.tsx",
+      "route": "/reports/blueprints/blueprint-2025-08-15-030012"
+    },
+    {
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-025013.tsx",
+      "route": "/reports/blueprints/blueprint-2025-08-15-025013"
+    },
+    {
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-024012.tsx",
+      "route": "/reports/blueprints/blueprint-2025-08-15-024012"
+    },
+    {
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-023012.tsx",
+      "route": "/reports/blueprints/blueprint-2025-08-15-023012"
+    },
+    {
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-022012.tsx",
+      "route": "/reports/blueprints/blueprint-2025-08-15-022012"
+    },
+    {
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-021909.tsx",
+      "route": "/reports/blueprints/blueprint-2025-08-15-021909"
+    },
+    {
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-021810.tsx",
+      "route": "/reports/blueprints/blueprint-2025-08-15-021810"
+    },
+    {
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-021608.tsx",
+      "route": "/reports/blueprints/blueprint-2025-08-15-021608"
+    },
+    {
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-021452.tsx",
+      "route": "/reports/blueprints/blueprint-2025-08-15-021452"
+    },
+    {
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-021325.tsx",
+      "route": "/reports/blueprints/blueprint-2025-08-15-021325"
+    },
+    {
+      "file": "pages/reports/blueprints/blueprint-2025-08-15-021207.tsx",
+      "route": "/reports/blueprints/blueprint-2025-08-15-021207"
+    },
+    {
+      "file": "pages/reports/blueprints/blueprint-2025-08-14-212855.tsx",
+      "route": "/reports/blueprints/blueprint-2025-08-14-212855"
+    },
+    {
       "file": "pages/main/front/index.tsx",
       "route": "/main/front"
     }
@@ -1135,5 +1139,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-15T04:33:00.418Z"
+  "generatedAt": "2025-08-15T04:34:00.553Z"
 }
