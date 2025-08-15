@@ -3850,5 +3850,29 @@
     "startTime": "2025-08-15T20:36:29.431Z",
     "status": "active",
     "filePath": "conv-1755290189431.json"
+  },
+  {
+    "id": "conv-1755290349037",
+    "type": "feature-planning",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "DevOps Engineer"
+    ],
+    "startTime": "2025-08-15T20:39:09.037Z",
+    "status": "active",
+    "filePath": "conv-1755290349037.json"
+  },
+  {
+    "id": "conv-1755290351044",
+    "type": "security-audit",
+    "participants": [
+      "Security Expert",
+      "Backend Developer",
+      "DevOps Engineer"
+    ],
+    "startTime": "2025-08-15T20:39:11.044Z",
+    "status": "active",
+    "filePath": "conv-1755290351044.json"
   }
 ]
