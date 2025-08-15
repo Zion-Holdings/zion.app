@@ -6,10 +6,7 @@ export default function Newsroom() {
       <Head>
         <title>Newsroom — Curated Tech Headlines</title>
         <meta name="description" content="Curated technology and AI headlines from reputable sources." />
-      
-        <meta property="og:title" content="Newsroom" />
-        <meta property="og:description" content="Newsroom — automatically suggested description." />
-        <meta name="twitter:card" content="summary_large_image" /></Head>
+      </Head>
       <main className="container mx-auto px-4 py-12">
         <h1 className="text-4xl font-extrabold mb-2">Newsroom</h1>
         <p className="text-white/70 mb-6">Updated automatically from multiple sources.</p>
@@ -79,19 +76,19 @@ export default function Newsroom() {
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/11/ios-26-beta-6-adds-new-ringtones-snappy-app-launches-and-more/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">iOS 26 beta 6 adds new ringtones, snappy app launches, and more</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/10/security-flaws-in-a-carmakers-web-portal-let-one-hacker-remotely-unlock-cars-from-anywhere/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Security flaws in a carmaker’s web portal let one hacker remotely unlock cars from anywhere</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
             <a href="https://techcrunch.com/2025/08/10/the-hidden-cost-of-living-amid-mark-zuckerbergs-110m-compound/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">The hidden cost of living in Mark Zuckerberg’s $110M compound</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
             <a href="https://techcrunch.com/2025/08/10/the-computer-science-dream-has-become-a-nightmare/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">The computer science dream has become a nightmare</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/08/sam-altman-addresses-bumpy-gpt-5-rollout-bringing-4o-back-and-the-chart-crime/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Sam Altman addresses ‘bumpy’ GPT-5 rollout, bringing 4o back, and the ‘chart crime’</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/08/openai-priced-gpt-5-so-low-it-may-spark-a-price-war/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">OpenAI priced GPT-5 so low, it may spark a price war</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
