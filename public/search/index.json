@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T19:52:03.018Z",
+  "generatedAt": "2025-08-15T19:53:03.341Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1434,6 +1434,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1700.tsx",
       "title": "Autonomous Playbook — Agentic Workflows (2025-08-15 17:00 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Agentic Workflows (2025-08-15 17:00 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { \""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1653",
+      "file": "pages/reports/updates/update-2025-08-15-1653.tsx",
+      "title": "Autonomous Update — 2025-08-15 16:53",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 16:53 Autonomous Update — 2025-08-15 16:53 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Bypassing airport security via SQL i"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1652",
