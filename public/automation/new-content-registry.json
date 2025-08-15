@@ -1,46 +1,39 @@
 {
-  "generatedAt": "2025-08-15T07:30:14.306Z",
+  "generatedAt": "2025-08-15T07:42:13.704Z",
   "items": [
     {
-      "title": "Runbook: Agent Ops",
-      "subtitle": "Patterns to enhance security.",
-      "path": "/reports/innovations/insight-2025-08-15-0730",
-      "createdAt": "2025-08-15T07:30:25.588Z",
-      "kind": "insight"
-    },
-    {
       "title": "Reference Architecture — Autonomous Content Mesh",
-      "href": "/reports/blueprints/blueprint-2025-08-15-073014",
+      "href": "/reports/blueprints/blueprint-2025-08-15-074213",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T07:30:14.143Z",
+      "createdAt": "2025-08-15T07:42:13.670Z",
       "source": "cloud-blueprint-factory"
     },
     {
       "title": "Playbook — Autonomous Delivery",
-      "href": "/reports/playbooks/playbook-2025-08-15-073013",
+      "href": "/reports/playbooks/playbook-2025-08-15-074213",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T07:30:13.845Z",
+      "createdAt": "2025-08-15T07:42:13.635Z",
       "source": "cloud-playbook-factory"
     },
     {
       "title": "Case Study — Automation Autonomous",
-      "href": "/reports/cases/case-2025-08-15-073013",
+      "href": "/reports/cases/case-2025-08-15-074213",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T07:30:13.676Z",
+      "createdAt": "2025-08-15T07:42:13.594Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Guide — Cloud Improving Implementation",
-      "href": "/reports/guides/guide-2025-08-15-073013",
+      "href": "/reports/guides/guide-2025-08-15-074213",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T07:30:13.676Z",
+      "createdAt": "2025-08-15T07:42:13.594Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Cloud Improving Continuously",
-      "href": "/reports/patterns/pattern-2025-08-15-073013",
+      "href": "/reports/patterns/pattern-2025-08-15-074213",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T07:30:13.676Z",
+      "createdAt": "2025-08-15T07:42:13.594Z",
       "source": "cloud-deep-research-factory"
     }
   ]
