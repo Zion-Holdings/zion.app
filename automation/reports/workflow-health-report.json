@@ -1,8 +1,8 @@
 {
-  "timestamp": "2025-08-15T22:37:42.329Z",
+  "timestamp": "2025-08-15T22:37:58.931Z",
   "summary": {
-    "totalWorkflows": 147,
-    "activeWorkflows": 72,
+    "totalWorkflows": 148,
+    "activeWorkflows": 73,
     "disabledWorkflows": 74,
     "workflowsWithIssues": 79,
     "totalIssues": 83
@@ -42,6 +42,7 @@
       "dependency-management.yml",
       "deploy.yml",
       "docs-intelligence.yml",
+      "emergency-fix.yml",
       "external-links.yml",
       "front-scheduler.yml",
       "guardian-scheduler.yml",
@@ -220,6 +221,7 @@
     ],
     "outdatedActions": [],
     "resourceIntensive": [
+      "emergency-fix.yml",
       "pr-quality-gate.yml",
       "release.yml",
       "security-gates.yml"
@@ -2668,6 +2670,71 @@
       "recommendations": [
         "Add branch protection to git push operations",
         "Add workflow_dispatch trigger for manual testing",
+        "Consider splitting into smaller workflows for better maintainability"
+      ]
+    },
+    "emergency-fix.yml": {
+      "name": "emergency-fix.yml",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/emergency-fix.yml",
+      "size": 7218,
+      "lines": 229,
+      "triggers": [
+        "workflow_dispatch"
+      ],
+      "jobs": [
+        "workflow_dispatch",
+        "inputs",
+        "action",
+        "options",
+        "target_branch",
+        "commit_sha",
+        "description",
+        "jobs",
+        "validate-action",
+        "outputs",
+        "steps",
+        "hotfix",
+        "steps",
+        "with",
+        "with",
+        "rollback",
+        "steps",
+        "with",
+        "with",
+        "emergency-deploy",
+        "environment",
+        "steps",
+        "with",
+        "with",
+        "with",
+        "notification",
+        "steps"
+      ],
+      "timeouts": [
+        10,
+        30,
+        25,
+        20,
+        10
+      ],
+      "permissions": [
+        {
+          "permission": "contents",
+          "value": "write"
+        },
+        {
+          "permission": "actions",
+          "value": "read"
+        },
+        {
+          "permission": "deployments",
+          "value": "write"
+        }
+      ],
+      "concurrency": "emergency-action",
+      "issues": [],
+      "recommendations": [
         "Consider splitting into smaller workflows for better maintainability"
       ]
     },
@@ -10598,6 +10665,7 @@
         "Refactor dependency-management.yml into smaller, focused workflows",
         "Refactor deploy.yml into smaller, focused workflows",
         "Refactor docs-intelligence.yml into smaller, focused workflows",
+        "Refactor emergency-fix.yml into smaller, focused workflows",
         "Refactor external-links.yml into smaller, focused workflows",
         "Refactor front-scheduler.yml into smaller, focused workflows",
         "Refactor guardian-scheduler.yml into smaller, focused workflows",
@@ -10811,6 +10879,7 @@
       "Refactor dependency-management.yml into smaller, focused workflows",
       "Refactor deploy.yml into smaller, focused workflows",
       "Refactor docs-intelligence.yml into smaller, focused workflows",
+      "Refactor emergency-fix.yml into smaller, focused workflows",
       "Refactor external-links.yml into smaller, focused workflows",
       "Refactor front-scheduler.yml into smaller, focused workflows",
       "Refactor guardian-scheduler.yml into smaller, focused workflows",
