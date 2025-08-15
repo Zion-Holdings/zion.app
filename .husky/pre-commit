@@ -1,4 +1,39 @@
-#!/usr/bin/env bash
-set -euo pipefail
+#!/bin/bash
 
-npm run lint:staged
+echo "🔍 Running pre-commit checks..."
+
+# Run page structure validation
+echo "  📋 Validating page structure..."
+npm run build:validate
+
+if [ $? -ne 0 ]; then
+  echo "❌ Page structure validation failed!"
+  echo "   Please fix the issues before committing."
+  echo "   Run 'npm run build:validate' for details."
+  exit 1
+fi
+
+# Run quick build health check
+echo "  🏥 Running build health check..."
+npm run build:health-check
+
+if [ $? -ne 0 ]; then
+  echo "❌ Build health check failed!"
+  echo "   Please fix the build issues before committing."
+  echo "   Run 'npm run build:health-check' for details."
+  exit 1
+fi
+
+# Run linting (if not already done)
+echo "  🧹 Running linting..."
+npm run lint
+
+if [ $? -ne 0 ]; then
+  echo "❌ Linting failed!"
+  echo "   Please fix the linting issues before committing."
+  echo "   Run 'npm run lint -- --fix' to auto-fix some issues."
+  exit 1
+fi
+
+echo "✅ All pre-commit checks passed"
+echo "   🚀 Ready to commit!"
