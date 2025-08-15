@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Head from 'next/link';
+import Head from 'next/head';
 import Pagination from '../components/Pagination';
 import Form from '../components/Form';
 import Modal from '../components/Modal';
