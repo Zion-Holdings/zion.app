@@ -1,0 +1,1091 @@
+{
+  "timestamp": "2025-08-15T04:23:13.915Z",
+  "marketData": {
+    "github": [
+      {
+        "category": "AI/ML",
+        "popularity": 97.4912486478201,
+        "growth": 3.9340664752222443,
+        "stars": 2067,
+        "repositories": 476,
+        "contributors": 6,
+        "lastUpdated": "2025-08-02T04:41:59.701Z"
+      },
+      {
+        "category": "Blockchain",
+        "popularity": 36.07399627036847,
+        "growth": 6.947088040438243,
+        "stars": 481,
+        "repositories": 327,
+        "contributors": 53,
+        "lastUpdated": "2025-07-19T21:25:02.249Z"
+      },
+      {
+        "category": "IoT",
+        "popularity": 90.3205103439833,
+        "growth": 2.5600115176572524,
+        "stars": 5872,
+        "repositories": 151,
+        "contributors": 78,
+        "lastUpdated": "2025-07-27T01:03:18.521Z"
+      },
+      {
+        "category": "Cloud Computing",
+        "popularity": 23.228088828361095,
+        "growth": -4.916632536667356,
+        "stars": 9042,
+        "repositories": 357,
+        "contributors": 24,
+        "lastUpdated": "2025-07-27T07:27:00.021Z"
+      },
+      {
+        "category": "Edge Computing",
+        "popularity": 10.589176636594622,
+        "growth": 6.311234038734503,
+        "stars": 1100,
+        "repositories": 250,
+        "contributors": 66,
+        "lastUpdated": "2025-07-22T21:10:43.022Z"
+      },
+      {
+        "category": "Quantum Computing",
+        "popularity": 82.45520278712566,
+        "growth": -3.358046405267112,
+        "stars": 8563,
+        "repositories": 241,
+        "contributors": 36,
+        "lastUpdated": "2025-08-02T13:11:54.387Z"
+      },
+      {
+        "category": "Cybersecurity",
+        "popularity": 26.504891638777337,
+        "growth": -9.769026833742673,
+        "stars": 8288,
+        "repositories": 309,
+        "contributors": 15,
+        "lastUpdated": "2025-08-07T04:33:50.740Z"
+      },
+      {
+        "category": "Data Science",
+        "popularity": 2.723555765305541,
+        "growth": 0.1305932123452802,
+        "stars": 6549,
+        "repositories": 341,
+        "contributors": 40,
+        "lastUpdated": "2025-07-20T19:57:19.539Z"
+      },
+      {
+        "category": "DevOps",
+        "popularity": 73.97356050899724,
+        "growth": 3.571059189199688,
+        "stars": 290,
+        "repositories": 508,
+        "contributors": 93,
+        "lastUpdated": "2025-07-22T02:57:41.782Z"
+      },
+      {
+        "category": "Mobile Development",
+        "popularity": 84.97191540226436,
+        "growth": 6.584195499840941,
+        "stars": 3596,
+        "repositories": 270,
+        "contributors": 59,
+        "lastUpdated": "2025-07-27T16:59:00.062Z"
+      },
+      {
+        "category": "Web Development",
+        "popularity": 20.346810732142284,
+        "growth": -2.564170448020513,
+        "stars": 1157,
+        "repositories": 951,
+        "contributors": 12,
+        "lastUpdated": "2025-07-31T00:22:33.560Z"
+      },
+      {
+        "category": "Game Development",
+        "popularity": 74.04184472425636,
+        "growth": 5.221478922345626,
+        "stars": 6199,
+        "repositories": 258,
+        "contributors": 21,
+        "lastUpdated": "2025-08-09T08:48:26.716Z"
+      }
+    ],
+    "npm": [
+      {
+        "category": "AI/ML",
+        "downloads": 512026,
+        "weeklyGrowth": 1.5898242517522465,
+        "dependencies": 47,
+        "packages": 65,
+        "maintainers": 13
+      },
+      {
+        "category": "Blockchain",
+        "downloads": 420970,
+        "weeklyGrowth": -2.813008945296823,
+        "dependencies": 82,
+        "packages": 87,
+        "maintainers": 4
+      },
+      {
+        "category": "IoT",
+        "downloads": 296757,
+        "weeklyGrowth": -0.3851399179380699,
+        "dependencies": 431,
+        "packages": 32,
+        "maintainers": 34
+      },
+      {
+        "category": "Cloud Computing",
+        "downloads": 271306,
+        "weeklyGrowth": -2.1948164355152255,
+        "dependencies": 904,
+        "packages": 25,
+        "maintainers": 48
+      },
+      {
+        "category": "Edge Computing",
+        "downloads": 864437,
+        "weeklyGrowth": 7.220876487354117,
+        "dependencies": 823,
+        "packages": 6,
+        "maintainers": 36
+      },
+      {
+        "category": "Quantum Computing",
+        "downloads": 591843,
+        "weeklyGrowth": 2.0380846741908742,
+        "dependencies": 998,
+        "packages": 94,
+        "maintainers": 23
+      },
+      {
+        "category": "Cybersecurity",
+        "downloads": 886085,
+        "weeklyGrowth": 2.321141117089811,
+        "dependencies": 529,
+        "packages": 56,
+        "maintainers": 35
+      },
+      {
+        "category": "Data Science",
+        "downloads": 950441,
+        "weeklyGrowth": 2.2584680739285146,
+        "dependencies": 947,
+        "packages": 31,
+        "maintainers": 21
+      },
+      {
+        "category": "DevOps",
+        "downloads": 773671,
+        "weeklyGrowth": 4.1622151636765405,
+        "dependencies": 364,
+        "packages": 65,
+        "maintainers": 15
+      },
+      {
+        "category": "Mobile Development",
+        "downloads": 799822,
+        "weeklyGrowth": -5.145593287630334,
+        "dependencies": 630,
+        "packages": 18,
+        "maintainers": 20
+      },
+      {
+        "category": "Web Development",
+        "downloads": 99190,
+        "weeklyGrowth": 0.6269037314761883,
+        "dependencies": 985,
+        "packages": 36,
+        "maintainers": 3
+      },
+      {
+        "category": "Game Development",
+        "downloads": 345709,
+        "weeklyGrowth": 5.433692685627901,
+        "dependencies": 613,
+        "packages": 24,
+        "maintainers": 17
+      }
+    ],
+    "stackoverflow": [
+      {
+        "category": "AI/ML",
+        "questions": 6203,
+        "views": 3311,
+        "answers": 4721,
+        "score": 65.94100375870167,
+        "tags": [
+          "ai/ml"
+        ],
+        "trending": false
+      },
+      {
+        "category": "Blockchain",
+        "questions": 6667,
+        "views": 75170,
+        "answers": 1356,
+        "score": 56.089246766261326,
+        "tags": [
+          "blockchain"
+        ],
+        "trending": false
+      },
+      {
+        "category": "IoT",
+        "questions": 6534,
+        "views": 94925,
+        "answers": 2762,
+        "score": 81.83420519626421,
+        "tags": [
+          "iot"
+        ],
+        "trending": false
+      },
+      {
+        "category": "Cloud Computing",
+        "questions": 9180,
+        "views": 61175,
+        "answers": 1172,
+        "score": 10.362085423908152,
+        "tags": [
+          "cloud-computing"
+        ],
+        "trending": false
+      },
+      {
+        "category": "Edge Computing",
+        "questions": 630,
+        "views": 73595,
+        "answers": 2869,
+        "score": 5.729497975194842,
+        "tags": [
+          "edge-computing"
+        ],
+        "trending": true
+      },
+      {
+        "category": "Quantum Computing",
+        "questions": 2106,
+        "views": 42920,
+        "answers": 1245,
+        "score": 76.54572212227033,
+        "tags": [
+          "quantum-computing"
+        ],
+        "trending": false
+      },
+      {
+        "category": "Cybersecurity",
+        "questions": 2449,
+        "views": 66917,
+        "answers": 1730,
+        "score": 18.275879186740028,
+        "tags": [
+          "cybersecurity"
+        ],
+        "trending": true
+      },
+      {
+        "category": "Data Science",
+        "questions": 1612,
+        "views": 10463,
+        "answers": 2379,
+        "score": 38.6429072353472,
+        "tags": [
+          "data-science"
+        ],
+        "trending": false
+      },
+      {
+        "category": "DevOps",
+        "questions": 5732,
+        "views": 31434,
+        "answers": 3369,
+        "score": 3.697537889405478,
+        "tags": [
+          "devops"
+        ],
+        "trending": true
+      },
+      {
+        "category": "Mobile Development",
+        "questions": 5565,
+        "views": 3535,
+        "answers": 3387,
+        "score": 82.90435599004131,
+        "tags": [
+          "mobile-development"
+        ],
+        "trending": false
+      },
+      {
+        "category": "Web Development",
+        "questions": 5598,
+        "views": 75319,
+        "answers": 993,
+        "score": 21.693477291651607,
+        "tags": [
+          "web-development"
+        ],
+        "trending": true
+      },
+      {
+        "category": "Game Development",
+        "questions": 6809,
+        "views": 49543,
+        "answers": 2044,
+        "score": 78.92963720725984,
+        "tags": [
+          "game-development"
+        ],
+        "trending": false
+      }
+    ],
+    "reddit": [
+      {
+        "category": "AI/ML",
+        "upvotes": 115,
+        "comments": 34,
+        "engagement": 41.30244466038231,
+        "sentiment": 0.8852753057312204,
+        "trending": false,
+        "hot": false
+      },
+      {
+        "category": "Blockchain",
+        "upvotes": 655,
+        "comments": 31,
+        "engagement": 60.034566307434936,
+        "sentiment": 0.13227638023018606,
+        "trending": false,
+        "hot": false
+      },
+      {
+        "category": "IoT",
+        "upvotes": 270,
+        "comments": 37,
+        "engagement": 35.09781677262107,
+        "sentiment": -0.3981861361731607,
+        "trending": false,
+        "hot": false
+      },
+      {
+        "category": "Cloud Computing",
+        "upvotes": 740,
+        "comments": 55,
+        "engagement": 97.66369803235457,
+        "sentiment": -0.9616633802639614,
+        "trending": false,
+        "hot": false
+      },
+      {
+        "category": "Edge Computing",
+        "upvotes": 902,
+        "comments": 2,
+        "engagement": 0.025855071980029898,
+        "sentiment": -0.4805991015631421,
+        "trending": false,
+        "hot": false
+      },
+      {
+        "category": "Quantum Computing",
+        "upvotes": 531,
+        "comments": 97,
+        "engagement": 63.84155531721953,
+        "sentiment": 0.3337221031083377,
+        "trending": false,
+        "hot": false
+      },
+      {
+        "category": "Cybersecurity",
+        "upvotes": 85,
+        "comments": 40,
+        "engagement": 68.49361490543006,
+        "sentiment": -0.5615980757271588,
+        "trending": false,
+        "hot": false
+      },
+      {
+        "category": "Data Science",
+        "upvotes": 641,
+        "comments": 25,
+        "engagement": 23.148344437551227,
+        "sentiment": -0.3508517362693815,
+        "trending": false,
+        "hot": false
+      },
+      {
+        "category": "DevOps",
+        "upvotes": 643,
+        "comments": 95,
+        "engagement": 43.278744776462716,
+        "sentiment": 0.7659777342754865,
+        "trending": false,
+        "hot": false
+      },
+      {
+        "category": "Mobile Development",
+        "upvotes": 861,
+        "comments": 27,
+        "engagement": 97.77467705011911,
+        "sentiment": -0.7342785307332851,
+        "trending": false,
+        "hot": false
+      },
+      {
+        "category": "Web Development",
+        "upvotes": 613,
+        "comments": 24,
+        "engagement": 11.2057535184676,
+        "sentiment": 0.8914005340985582,
+        "trending": false,
+        "hot": false
+      },
+      {
+        "category": "Game Development",
+        "upvotes": 980,
+        "comments": 8,
+        "engagement": 16.56348427251515,
+        "sentiment": 0.07601373559897162,
+        "trending": true,
+        "hot": false
+      }
+    ],
+    "timestamp": "2025-08-15T04:23:13.914Z"
+  },
+  "trends": [
+    {
+      "category": "DevOps",
+      "trendType": "emerging",
+      "score": 0.6641774957930495,
+      "confidence": 0.7641774957930495,
+      "indicators": {
+        "github": {
+          "category": "DevOps",
+          "popularity": 73.97356050899724,
+          "growth": 3.571059189199688,
+          "stars": 290,
+          "repositories": 508,
+          "contributors": 93,
+          "lastUpdated": "2025-07-22T02:57:41.782Z"
+        },
+        "npm": {
+          "category": "DevOps",
+          "downloads": 773671,
+          "weeklyGrowth": 4.1622151636765405,
+          "dependencies": 364,
+          "packages": 65,
+          "maintainers": 15
+        },
+        "stackoverflow": {
+          "category": "DevOps",
+          "questions": 5732,
+          "views": 31434,
+          "answers": 3369,
+          "score": 3.697537889405478,
+          "tags": [
+            "devops"
+          ],
+          "trending": true
+        },
+        "reddit": {
+          "category": "DevOps",
+          "upvotes": 643,
+          "comments": 95,
+          "engagement": 43.278744776462716,
+          "sentiment": 0.7659777342754865,
+          "trending": false,
+          "hot": false
+        }
+      },
+      "recommendation": {
+        "action": "soon",
+        "priority": "medium",
+        "message": "DevOps is showing strong growth. Consider creating services in this area.",
+        "serviceCount": 2
+      },
+      "timestamp": "2025-08-15T04:23:13.915Z"
+    },
+    {
+      "category": "AI/ML",
+      "trendType": "emerging",
+      "score": 0.6150981909673674,
+      "confidence": 0.7150981909673674,
+      "indicators": {
+        "github": {
+          "category": "AI/ML",
+          "popularity": 97.4912486478201,
+          "growth": 3.9340664752222443,
+          "stars": 2067,
+          "repositories": 476,
+          "contributors": 6,
+          "lastUpdated": "2025-08-02T04:41:59.701Z"
+        },
+        "npm": {
+          "category": "AI/ML",
+          "downloads": 512026,
+          "weeklyGrowth": 1.5898242517522465,
+          "dependencies": 47,
+          "packages": 65,
+          "maintainers": 13
+        },
+        "stackoverflow": {
+          "category": "AI/ML",
+          "questions": 6203,
+          "views": 3311,
+          "answers": 4721,
+          "score": 65.94100375870167,
+          "tags": [
+            "ai/ml"
+          ],
+          "trending": false
+        },
+        "reddit": {
+          "category": "AI/ML",
+          "upvotes": 115,
+          "comments": 34,
+          "engagement": 41.30244466038231,
+          "sentiment": 0.8852753057312204,
+          "trending": false,
+          "hot": false
+        }
+      },
+      "recommendation": {
+        "action": "soon",
+        "priority": "medium",
+        "message": "AI/ML is showing strong growth. Consider creating services in this area.",
+        "serviceCount": 2
+      },
+      "timestamp": "2025-08-15T04:23:13.914Z"
+    },
+    {
+      "category": "Game Development",
+      "trendType": "stable",
+      "score": 0.5873217361254821,
+      "confidence": 0.6873217361254821,
+      "indicators": {
+        "github": {
+          "category": "Game Development",
+          "popularity": 74.04184472425636,
+          "growth": 5.221478922345626,
+          "stars": 6199,
+          "repositories": 258,
+          "contributors": 21,
+          "lastUpdated": "2025-08-09T08:48:26.716Z"
+        },
+        "npm": {
+          "category": "Game Development",
+          "downloads": 345709,
+          "weeklyGrowth": 5.433692685627901,
+          "dependencies": 613,
+          "packages": 24,
+          "maintainers": 17
+        },
+        "stackoverflow": {
+          "category": "Game Development",
+          "questions": 6809,
+          "views": 49543,
+          "answers": 2044,
+          "score": 78.92963720725984,
+          "tags": [
+            "game-development"
+          ],
+          "trending": false
+        },
+        "reddit": {
+          "category": "Game Development",
+          "upvotes": 980,
+          "comments": 8,
+          "engagement": 16.56348427251515,
+          "sentiment": 0.07601373559897162,
+          "trending": true,
+          "hot": false
+        }
+      },
+      "recommendation": {
+        "action": "monitor",
+        "priority": "low",
+        "message": "Game Development is stable. Maintain existing services, consider minor updates.",
+        "serviceCount": 1
+      },
+      "timestamp": "2025-08-15T04:23:13.915Z"
+    },
+    {
+      "category": "Edge Computing",
+      "trendType": "stable",
+      "score": 0.5798795289701918,
+      "confidence": 0.6798795289701918,
+      "indicators": {
+        "github": {
+          "category": "Edge Computing",
+          "popularity": 10.589176636594622,
+          "growth": 6.311234038734503,
+          "stars": 1100,
+          "repositories": 250,
+          "contributors": 66,
+          "lastUpdated": "2025-07-22T21:10:43.022Z"
+        },
+        "npm": {
+          "category": "Edge Computing",
+          "downloads": 864437,
+          "weeklyGrowth": 7.220876487354117,
+          "dependencies": 823,
+          "packages": 6,
+          "maintainers": 36
+        },
+        "stackoverflow": {
+          "category": "Edge Computing",
+          "questions": 630,
+          "views": 73595,
+          "answers": 2869,
+          "score": 5.729497975194842,
+          "tags": [
+            "edge-computing"
+          ],
+          "trending": true
+        },
+        "reddit": {
+          "category": "Edge Computing",
+          "upvotes": 902,
+          "comments": 2,
+          "engagement": 0.025855071980029898,
+          "sentiment": -0.4805991015631421,
+          "trending": false,
+          "hot": false
+        }
+      },
+      "recommendation": {
+        "action": "monitor",
+        "priority": "low",
+        "message": "Edge Computing is stable. Maintain existing services, consider minor updates.",
+        "serviceCount": 1
+      },
+      "timestamp": "2025-08-15T04:23:13.914Z"
+    },
+    {
+      "category": "Mobile Development",
+      "trendType": "stable",
+      "score": 0.568850545648344,
+      "confidence": 0.668850545648344,
+      "indicators": {
+        "github": {
+          "category": "Mobile Development",
+          "popularity": 84.97191540226436,
+          "growth": 6.584195499840941,
+          "stars": 3596,
+          "repositories": 270,
+          "contributors": 59,
+          "lastUpdated": "2025-07-27T16:59:00.062Z"
+        },
+        "npm": {
+          "category": "Mobile Development",
+          "downloads": 799822,
+          "weeklyGrowth": -5.145593287630334,
+          "dependencies": 630,
+          "packages": 18,
+          "maintainers": 20
+        },
+        "stackoverflow": {
+          "category": "Mobile Development",
+          "questions": 5565,
+          "views": 3535,
+          "answers": 3387,
+          "score": 82.90435599004131,
+          "tags": [
+            "mobile-development"
+          ],
+          "trending": false
+        },
+        "reddit": {
+          "category": "Mobile Development",
+          "upvotes": 861,
+          "comments": 27,
+          "engagement": 97.77467705011911,
+          "sentiment": -0.7342785307332851,
+          "trending": false,
+          "hot": false
+        }
+      },
+      "recommendation": {
+        "action": "monitor",
+        "priority": "low",
+        "message": "Mobile Development is stable. Maintain existing services, consider minor updates.",
+        "serviceCount": 1
+      },
+      "timestamp": "2025-08-15T04:23:13.915Z"
+    },
+    {
+      "category": "Quantum Computing",
+      "trendType": "stable",
+      "score": 0.5253760129634677,
+      "confidence": 0.6253760129634677,
+      "indicators": {
+        "github": {
+          "category": "Quantum Computing",
+          "popularity": 82.45520278712566,
+          "growth": -3.358046405267112,
+          "stars": 8563,
+          "repositories": 241,
+          "contributors": 36,
+          "lastUpdated": "2025-08-02T13:11:54.387Z"
+        },
+        "npm": {
+          "category": "Quantum Computing",
+          "downloads": 591843,
+          "weeklyGrowth": 2.0380846741908742,
+          "dependencies": 998,
+          "packages": 94,
+          "maintainers": 23
+        },
+        "stackoverflow": {
+          "category": "Quantum Computing",
+          "questions": 2106,
+          "views": 42920,
+          "answers": 1245,
+          "score": 76.54572212227033,
+          "tags": [
+            "quantum-computing"
+          ],
+          "trending": false
+        },
+        "reddit": {
+          "category": "Quantum Computing",
+          "upvotes": 531,
+          "comments": 97,
+          "engagement": 63.84155531721953,
+          "sentiment": 0.3337221031083377,
+          "trending": false,
+          "hot": false
+        }
+      },
+      "recommendation": {
+        "action": "monitor",
+        "priority": "low",
+        "message": "Quantum Computing is stable. Maintain existing services, consider minor updates.",
+        "serviceCount": 1
+      },
+      "timestamp": "2025-08-15T04:23:13.914Z"
+    },
+    {
+      "category": "IoT",
+      "trendType": "stable",
+      "score": 0.5187828384770937,
+      "confidence": 0.6187828384770937,
+      "indicators": {
+        "github": {
+          "category": "IoT",
+          "popularity": 90.3205103439833,
+          "growth": 2.5600115176572524,
+          "stars": 5872,
+          "repositories": 151,
+          "contributors": 78,
+          "lastUpdated": "2025-07-27T01:03:18.521Z"
+        },
+        "npm": {
+          "category": "IoT",
+          "downloads": 296757,
+          "weeklyGrowth": -0.3851399179380699,
+          "dependencies": 431,
+          "packages": 32,
+          "maintainers": 34
+        },
+        "stackoverflow": {
+          "category": "IoT",
+          "questions": 6534,
+          "views": 94925,
+          "answers": 2762,
+          "score": 81.83420519626421,
+          "tags": [
+            "iot"
+          ],
+          "trending": false
+        },
+        "reddit": {
+          "category": "IoT",
+          "upvotes": 270,
+          "comments": 37,
+          "engagement": 35.09781677262107,
+          "sentiment": -0.3981861361731607,
+          "trending": false,
+          "hot": false
+        }
+      },
+      "recommendation": {
+        "action": "monitor",
+        "priority": "low",
+        "message": "IoT is stable. Maintain existing services, consider minor updates.",
+        "serviceCount": 1
+      },
+      "timestamp": "2025-08-15T04:23:13.914Z"
+    },
+    {
+      "category": "Blockchain",
+      "trendType": "stable",
+      "score": 0.43603043976416705,
+      "confidence": 0.5360304397641671,
+      "indicators": {
+        "github": {
+          "category": "Blockchain",
+          "popularity": 36.07399627036847,
+          "growth": 6.947088040438243,
+          "stars": 481,
+          "repositories": 327,
+          "contributors": 53,
+          "lastUpdated": "2025-07-19T21:25:02.249Z"
+        },
+        "npm": {
+          "category": "Blockchain",
+          "downloads": 420970,
+          "weeklyGrowth": -2.813008945296823,
+          "dependencies": 82,
+          "packages": 87,
+          "maintainers": 4
+        },
+        "stackoverflow": {
+          "category": "Blockchain",
+          "questions": 6667,
+          "views": 75170,
+          "answers": 1356,
+          "score": 56.089246766261326,
+          "tags": [
+            "blockchain"
+          ],
+          "trending": false
+        },
+        "reddit": {
+          "category": "Blockchain",
+          "upvotes": 655,
+          "comments": 31,
+          "engagement": 60.034566307434936,
+          "sentiment": 0.13227638023018606,
+          "trending": false,
+          "hot": false
+        }
+      },
+      "recommendation": {
+        "action": "monitor",
+        "priority": "low",
+        "message": "Blockchain is stable. Maintain existing services, consider minor updates.",
+        "serviceCount": 1
+      },
+      "timestamp": "2025-08-15T04:23:13.914Z"
+    },
+    {
+      "category": "Cybersecurity",
+      "trendType": "stable",
+      "score": 0.4156796034045871,
+      "confidence": 0.5156796034045871,
+      "indicators": {
+        "github": {
+          "category": "Cybersecurity",
+          "popularity": 26.504891638777337,
+          "growth": -9.769026833742673,
+          "stars": 8288,
+          "repositories": 309,
+          "contributors": 15,
+          "lastUpdated": "2025-08-07T04:33:50.740Z"
+        },
+        "npm": {
+          "category": "Cybersecurity",
+          "downloads": 886085,
+          "weeklyGrowth": 2.321141117089811,
+          "dependencies": 529,
+          "packages": 56,
+          "maintainers": 35
+        },
+        "stackoverflow": {
+          "category": "Cybersecurity",
+          "questions": 2449,
+          "views": 66917,
+          "answers": 1730,
+          "score": 18.275879186740028,
+          "tags": [
+            "cybersecurity"
+          ],
+          "trending": true
+        },
+        "reddit": {
+          "category": "Cybersecurity",
+          "upvotes": 85,
+          "comments": 40,
+          "engagement": 68.49361490543006,
+          "sentiment": -0.5615980757271588,
+          "trending": false,
+          "hot": false
+        }
+      },
+      "recommendation": {
+        "action": "monitor",
+        "priority": "low",
+        "message": "Cybersecurity is stable. Maintain existing services, consider minor updates.",
+        "serviceCount": 1
+      },
+      "timestamp": "2025-08-15T04:23:13.915Z"
+    },
+    {
+      "category": "Data Science",
+      "trendType": "stable",
+      "score": 0.4017754882219617,
+      "confidence": 0.5017754882219617,
+      "indicators": {
+        "github": {
+          "category": "Data Science",
+          "popularity": 2.723555765305541,
+          "growth": 0.1305932123452802,
+          "stars": 6549,
+          "repositories": 341,
+          "contributors": 40,
+          "lastUpdated": "2025-07-20T19:57:19.539Z"
+        },
+        "npm": {
+          "category": "Data Science",
+          "downloads": 950441,
+          "weeklyGrowth": 2.2584680739285146,
+          "dependencies": 947,
+          "packages": 31,
+          "maintainers": 21
+        },
+        "stackoverflow": {
+          "category": "Data Science",
+          "questions": 1612,
+          "views": 10463,
+          "answers": 2379,
+          "score": 38.6429072353472,
+          "tags": [
+            "data-science"
+          ],
+          "trending": false
+        },
+        "reddit": {
+          "category": "Data Science",
+          "upvotes": 641,
+          "comments": 25,
+          "engagement": 23.148344437551227,
+          "sentiment": -0.3508517362693815,
+          "trending": false,
+          "hot": false
+        }
+      },
+      "recommendation": {
+        "action": "monitor",
+        "priority": "low",
+        "message": "Data Science is stable. Maintain existing services, consider minor updates.",
+        "serviceCount": 1
+      },
+      "timestamp": "2025-08-15T04:23:13.915Z"
+    },
+    {
+      "category": "Web Development",
+      "trendType": "declining",
+      "score": 0.38017794494295687,
+      "confidence": 0.48017794494295685,
+      "indicators": {
+        "github": {
+          "category": "Web Development",
+          "popularity": 20.346810732142284,
+          "growth": -2.564170448020513,
+          "stars": 1157,
+          "repositories": 951,
+          "contributors": 12,
+          "lastUpdated": "2025-07-31T00:22:33.560Z"
+        },
+        "npm": {
+          "category": "Web Development",
+          "downloads": 99190,
+          "weeklyGrowth": 0.6269037314761883,
+          "dependencies": 985,
+          "packages": 36,
+          "maintainers": 3
+        },
+        "stackoverflow": {
+          "category": "Web Development",
+          "questions": 5598,
+          "views": 75319,
+          "answers": 993,
+          "score": 21.693477291651607,
+          "tags": [
+            "web-development"
+          ],
+          "trending": true
+        },
+        "reddit": {
+          "category": "Web Development",
+          "upvotes": 613,
+          "comments": 24,
+          "engagement": 11.2057535184676,
+          "sentiment": 0.8914005340985582,
+          "trending": false,
+          "hot": false
+        }
+      },
+      "recommendation": {
+        "action": "avoid",
+        "priority": "none",
+        "message": "Web Development is declining. Focus on other areas unless specific demand exists.",
+        "serviceCount": 0
+      },
+      "timestamp": "2025-08-15T04:23:13.915Z"
+    },
+    {
+      "category": "Cloud Computing",
+      "trendType": "declining",
+      "score": 0.20235808885220552,
+      "confidence": 0.3023580888522055,
+      "indicators": {
+        "github": {
+          "category": "Cloud Computing",
+          "popularity": 23.228088828361095,
+          "growth": -4.916632536667356,
+          "stars": 9042,
+          "repositories": 357,
+          "contributors": 24,
+          "lastUpdated": "2025-07-27T07:27:00.021Z"
+        },
+        "npm": {
+          "category": "Cloud Computing",
+          "downloads": 271306,
+          "weeklyGrowth": -2.1948164355152255,
+          "dependencies": 904,
+          "packages": 25,
+          "maintainers": 48
+        },
+        "stackoverflow": {
+          "category": "Cloud Computing",
+          "questions": 9180,
+          "views": 61175,
+          "answers": 1172,
+          "score": 10.362085423908152,
+          "tags": [
+            "cloud-computing"
+          ],
+          "trending": false
+        },
+        "reddit": {
+          "category": "Cloud Computing",
+          "upvotes": 740,
+          "comments": 55,
+          "engagement": 97.66369803235457,
+          "sentiment": -0.9616633802639614,
+          "trending": false,
+          "hot": false
+        }
+      },
+      "recommendation": {
+        "action": "avoid",
+        "priority": "none",
+        "message": "Cloud Computing is declining. Focus on other areas unless specific demand exists.",
+        "serviceCount": 0
+      },
+      "timestamp": "2025-08-15T04:23:13.914Z"
+    }
+  ],
+  "summary": {
+    "totalTrends": 12,
+    "hotTrends": 0,
+    "emergingTrends": 2,
+    "stableTrends": 8,
+    "decliningTrends": 2
+  }
+}

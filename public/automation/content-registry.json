@@ -29,6 +29,10 @@
       "route": "/automation-health"
     },
     {
+      "file": "pages/advanced-dashboard.tsx",
+      "route": "/advanced-dashboard"
+    },
+    {
       "file": "pages/404.tsx",
       "route": "/404"
     },
@@ -1043,5 +1047,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-15T04:23:00.190Z"
+  "generatedAt": "2025-08-15T04:23:13.652Z"
 }

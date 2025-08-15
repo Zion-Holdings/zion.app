@@ -1,0 +1,156 @@
+{
+  "timestamp": "2025-08-15T04:23:13.918Z",
+  "recommendations": {
+    "timestamp": "2025-08-15T04:23:13.918Z",
+    "immediate": [],
+    "soon": [
+      {
+        "category": "DevOps",
+        "priority": "soon",
+        "serviceCount": 2,
+        "reason": "DevOps is showing strong growth. Consider creating services in this area.",
+        "confidence": 0.7641774957930495
+      },
+      {
+        "category": "AI/ML",
+        "priority": "soon",
+        "serviceCount": 2,
+        "reason": "AI/ML is showing strong growth. Consider creating services in this area.",
+        "confidence": 0.7150981909673674
+      }
+    ],
+    "monitor": [
+      {
+        "category": "Game Development",
+        "priority": "monitor",
+        "serviceCount": 1,
+        "reason": "Game Development is stable. Maintain existing services, consider minor updates.",
+        "confidence": 0.6873217361254821
+      },
+      {
+        "category": "Edge Computing",
+        "priority": "monitor",
+        "serviceCount": 1,
+        "reason": "Edge Computing is stable. Maintain existing services, consider minor updates.",
+        "confidence": 0.6798795289701918
+      },
+      {
+        "category": "Mobile Development",
+        "priority": "monitor",
+        "serviceCount": 1,
+        "reason": "Mobile Development is stable. Maintain existing services, consider minor updates.",
+        "confidence": 0.668850545648344
+      },
+      {
+        "category": "Quantum Computing",
+        "priority": "monitor",
+        "serviceCount": 1,
+        "reason": "Quantum Computing is stable. Maintain existing services, consider minor updates.",
+        "confidence": 0.6253760129634677
+      },
+      {
+        "category": "IoT",
+        "priority": "monitor",
+        "serviceCount": 1,
+        "reason": "IoT is stable. Maintain existing services, consider minor updates.",
+        "confidence": 0.6187828384770937
+      },
+      {
+        "category": "Blockchain",
+        "priority": "monitor",
+        "serviceCount": 1,
+        "reason": "Blockchain is stable. Maintain existing services, consider minor updates.",
+        "confidence": 0.5360304397641671
+      },
+      {
+        "category": "Cybersecurity",
+        "priority": "monitor",
+        "serviceCount": 1,
+        "reason": "Cybersecurity is stable. Maintain existing services, consider minor updates.",
+        "confidence": 0.5156796034045871
+      },
+      {
+        "category": "Data Science",
+        "priority": "monitor",
+        "serviceCount": 1,
+        "reason": "Data Science is stable. Maintain existing services, consider minor updates.",
+        "confidence": 0.5017754882219617
+      }
+    ]
+  },
+  "marketConditions": [
+    {
+      "category": "DevOps",
+      "trendType": "emerging",
+      "score": 0.6641774957930495,
+      "confidence": 0.7641774957930495
+    },
+    {
+      "category": "AI/ML",
+      "trendType": "emerging",
+      "score": 0.6150981909673674,
+      "confidence": 0.7150981909673674
+    },
+    {
+      "category": "Game Development",
+      "trendType": "stable",
+      "score": 0.5873217361254821,
+      "confidence": 0.6873217361254821
+    },
+    {
+      "category": "Edge Computing",
+      "trendType": "stable",
+      "score": 0.5798795289701918,
+      "confidence": 0.6798795289701918
+    },
+    {
+      "category": "Mobile Development",
+      "trendType": "stable",
+      "score": 0.568850545648344,
+      "confidence": 0.668850545648344
+    },
+    {
+      "category": "Quantum Computing",
+      "trendType": "stable",
+      "score": 0.5253760129634677,
+      "confidence": 0.6253760129634677
+    },
+    {
+      "category": "IoT",
+      "trendType": "stable",
+      "score": 0.5187828384770937,
+      "confidence": 0.6187828384770937
+    },
+    {
+      "category": "Blockchain",
+      "trendType": "stable",
+      "score": 0.43603043976416705,
+      "confidence": 0.5360304397641671
+    },
+    {
+      "category": "Cybersecurity",
+      "trendType": "stable",
+      "score": 0.4156796034045871,
+      "confidence": 0.5156796034045871
+    },
+    {
+      "category": "Data Science",
+      "trendType": "stable",
+      "score": 0.4017754882219617,
+      "confidence": 0.5017754882219617
+    },
+    {
+      "category": "Web Development",
+      "trendType": "declining",
+      "score": 0.38017794494295687,
+      "confidence": 0.48017794494295685
+    },
+    {
+      "category": "Cloud Computing",
+      "trendType": "declining",
+      "score": 0.20235808885220552,
+      "confidence": 0.3023580888522055
+    }
+  ],
+  "nextUpdate": "2025-08-15T04:53:13.918Z"
+}
