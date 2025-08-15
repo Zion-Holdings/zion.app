@@ -1,25 +1,32 @@
 {
-  "generatedAt": "2025-08-15T08:00:12.343Z",
+  "generatedAt": "2025-08-15T08:00:46.033Z",
   "items": [
     {
+      "title": "Runbook: Edge AI",
+      "subtitle": "Patterns to improve reliability.",
+      "path": "/reports/innovations/insight-2025-08-15-0801",
+      "createdAt": "2025-08-15T08:01:01.004Z",
+      "kind": "insight"
+    },
+    {
       "title": "Case Study — Automation Autonomous",
-      "href": "/reports/cases/case-2025-08-15-080011",
+      "href": "/reports/cases/case-2025-08-15-080045",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T08:00:11.948Z",
+      "createdAt": "2025-08-15T08:00:45.749Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Guide — Cloud Improving Implementation",
-      "href": "/reports/guides/guide-2025-08-15-080011",
+      "href": "/reports/guides/guide-2025-08-15-080045",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T08:00:11.948Z",
+      "createdAt": "2025-08-15T08:00:45.749Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Cloud Improving Continuously",
-      "href": "/reports/patterns/pattern-2025-08-15-080011",
+      "href": "/reports/patterns/pattern-2025-08-15-080045",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-15T08:00:11.948Z",
+      "createdAt": "2025-08-15T08:00:45.749Z",
       "source": "cloud-deep-research-factory"
     }
   ]
