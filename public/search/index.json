@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T22:47:03.343Z",
+  "generatedAt": "2025-08-15T22:48:03.331Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1536,6 +1536,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1950.tsx",
       "title": "Autonomous Capability Map — Applied NLP & RAG (2025-08-15 19:50 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Capability Map — Applied NLP & RAG (2025-08-15 19:50 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1948",
+      "file": "pages/reports/updates/update-2025-08-15-1948.tsx",
+      "title": "Autonomous Update — 2025-08-15 19:48",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 19:48 Autonomous Update — 2025-08-15 19:48 Signal over noise—your automated update is here. Today's Highlight Hacker News : Airfoil · 2544 pts Why it matters: autonomous c"
     },
     {
       "route": "/reports/updates/update-2025-08-15-1947",
@@ -8302,8 +8308,8 @@
     {
       "route": "/reports/playbooks/playbook-2025-08-15-132212",
       "file": "pages/reports/playbooks/playbook-2025-08-15-132212.tsx",
-      "title": "Playbook — Autonomous Delivery",
-      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
+      "title": "Playbook — Autonomous Delivery | Zion Tech Group",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery | Zion Tech Group {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"Playbook — Autonomous Delivery\", \"description\": \"Comprehensive playbook fo"
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-15-131032",

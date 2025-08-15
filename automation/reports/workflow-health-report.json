@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-15T22:47:44.455Z",
+  "timestamp": "2025-08-15T22:47:59.913Z",
   "summary": {
     "totalWorkflows": 148,
     "activeWorkflows": 73,
@@ -2479,8 +2479,8 @@
       "name": "dependency-management.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/dependency-management.yml",
-      "size": 2320,
-      "lines": 84,
+      "size": 2275,
+      "lines": 83,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"

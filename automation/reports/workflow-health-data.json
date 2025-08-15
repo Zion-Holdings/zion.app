@@ -2250,8 +2250,8 @@
     "name": "dependency-management.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/dependency-management.yml",
-    "size": 2320,
-    "lines": 84,
+    "size": 2275,
+    "lines": 83,
     "triggers": [
       "schedule",
       "workflow_dispatch {}"
