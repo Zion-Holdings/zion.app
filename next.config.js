@@ -1,8 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Static export configuration for Netlify deployment
+  // Static export handled via npm script
   trailingSlash: true,
-  output: 'export', // Enable static HTML export
   productionBrowserSourceMaps: false,
   images: { unoptimized: true },
   // Note: redirects() removed as it's incompatible with output: 'export'
