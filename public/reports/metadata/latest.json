@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-15T04:34:00.345Z",
-  "pagesScanned": 277,
+  "generatedAt": "2025-08-15T04:35:00.174Z",
+  "pagesScanned": 279,
   "items": [
     {
       "route": "/404",
@@ -2443,6 +2443,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-15-0134",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 01:34",
+        "description": "Autonomous Update — 2025-08-15 01:34 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-15-0211",
       "missing": [
         "og:image"
@@ -2590,6 +2600,19 @@
       "suggestion": {
         "title": "Autonomous Capability Map — AI Service Design (2025-08-15 04:30 UTC)",
         "description": "Autonomous Capability Map — AI Service Design (2025-08-15 04:30 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-0435",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 04:35",
+        "description": "Autonomous Update — 2025-08-15 04:35 — auto-suggested description"
       }
     },
     {
