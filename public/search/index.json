@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T20:57:03.178Z",
+  "generatedAt": "2025-08-15T20:58:03.139Z",
   "entries": [
     {
       "route": "/sitemap",
@@ -1470,6 +1470,12 @@
       "file": "pages/reports/updates/update-2025-08-15-1800.tsx",
       "title": "Autonomous Reference Architecture — Edge AI & IoT (2025-08-15 18:00 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Reference Architecture — Edge AI & IoT (2025-08-15 18:00 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"au"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-1758",
+      "file": "pages/reports/updates/update-2025-08-15-1758.tsx",
+      "title": "Autonomous Update — 2025-08-15 17:58",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 17:58 Autonomous Update — 2025-08-15 17:58 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Gemini AI · 2135 pts "
     },
     {
       "route": "/reports/updates/update-2025-08-15-1757",
