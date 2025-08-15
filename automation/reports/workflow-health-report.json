@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-15T23:48:42.326Z",
+  "timestamp": "2025-08-15T23:49:00.649Z",
   "summary": {
     "totalWorkflows": 149,
     "activeWorkflows": 74,
@@ -221,8 +221,8 @@
       "name": "actionlint.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/actionlint.yml",
-      "size": 823,
-      "lines": 39,
+      "size": 940,
+      "lines": 44,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
