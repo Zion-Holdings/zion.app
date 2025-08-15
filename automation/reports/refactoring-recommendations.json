@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-15T22:34:23.757Z",
+  "timestamp": "2025-08-15T22:35:33.365Z",
   "critical": [
     {
       "workflow": "security-gates.yml",
@@ -27,6 +27,49 @@
     }
   ],
   "high": [],
-  "medium": [],
+  "medium": [
+    {
+      "workflow": "deploy.yml",
+      "status": "active",
+      "complexityScore": 40,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 152,
+        "jobCount": 0,
+        "stepCount": 20,
+        "conditionalCount": 3,
+        "matrixCount": 0,
+        "dependencyCount": 3,
+        "environmentCount": 1,
+        "secretCount": 2,
+        "actionCount": 9
+      },
+      "refactoringStrategy": [
+        "Break down into smaller job steps",
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "test.yml",
+      "status": "active",
+      "complexityScore": 40,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 152,
+        "jobCount": 0,
+        "stepCount": 22,
+        "conditionalCount": 3,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 11
+      },
+      "refactoringStrategy": [
+        "Break down into smaller job steps",
+        "Extract common functionality to reusable workflows"
+      ]
+    }
+  ],
   "low": []
 }

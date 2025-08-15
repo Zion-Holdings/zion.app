@@ -545,6 +545,28 @@
     },
     "estimatedDuration": 30
   },
+  "deploy.yml": {
+    "name": "deploy.yml",
+    "triggers": [
+      "push",
+      "pull_request",
+      "workflow_dispatch {}"
+    ],
+    "needs": [
+      "build-and-test",
+      "build-and-test",
+      "deploy-production"
+    ],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "high",
+      "timeout": 30,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 30
+  },
   "docs-intelligence.yml": {
     "name": "docs-intelligence.yml",
     "triggers": [
@@ -999,6 +1021,25 @@
     },
     "estimatedDuration": 30
   },
+  "security-scan.yml": {
+    "name": "security-scan.yml",
+    "triggers": [
+      "schedule",
+      "push",
+      "pull_request",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 30,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 30
+  },
   "seo-audit.yml": {
     "name": "seo-audit.yml",
     "triggers": [
@@ -1084,6 +1125,25 @@
       "concurrentJobs": 5
     },
     "estimatedDuration": 25
+  },
+  "test.yml": {
+    "name": "test.yml",
+    "triggers": [
+      "push",
+      "pull_request",
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 20,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 30
   },
   "topics-and-clusters.yml": {
     "name": "topics-and-clusters.yml",

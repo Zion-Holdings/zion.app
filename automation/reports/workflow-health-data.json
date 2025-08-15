@@ -1171,6 +1171,64 @@
       "Consider splitting into smaller workflows for better maintainability"
     ]
   },
+  "automation-orchestrator.yml": {
+    "name": "automation-orchestrator.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/automation-orchestrator.yml",
+    "size": 4878,
+    "lines": 177,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "repository_dispatch",
+      "jobs",
+      "content-automation",
+      "steps",
+      "with",
+      "with",
+      "seo-automation",
+      "steps",
+      "with",
+      "with",
+      "marketing-automation",
+      "steps",
+      "with",
+      "with",
+      "quality-assurance",
+      "steps",
+      "with",
+      "with",
+      "commit-and-push",
+      "steps",
+      "with"
+    ],
+    "timeouts": [
+      45,
+      30,
+      40,
+      25,
+      15
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": "automation-orchestrator",
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
   "broken-images.yml": {
     "name": "broken-images.yml",
     "status": "active",
@@ -2228,6 +2286,61 @@
     "issues": [],
     "recommendations": [
       "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "deploy.yml": {
+    "name": "deploy.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/deploy.yml",
+    "size": 3760,
+    "lines": 152,
+    "triggers": [
+      "push",
+      "pull_request",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "push",
+      "pull_request",
+      "jobs",
+      "build-and-test",
+      "steps",
+      "with",
+      "with",
+      "with",
+      "deploy-preview",
+      "steps",
+      "with",
+      "with",
+      "deploy-production",
+      "environment",
+      "steps",
+      "with",
+      "with",
+      "post-deploy",
+      "steps",
+      "with"
+    ],
+    "timeouts": [
+      30,
+      20,
+      25,
+      15
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
       "Consider splitting into smaller workflows for better maintainability"
     ]
   },
@@ -4163,16 +4276,55 @@
     "name": "security-scan.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/security-scan.yml",
-    "size": 0,
-    "lines": 1,
-    "triggers": [],
-    "jobs": [],
-    "timeouts": [],
-    "permissions": [],
-    "concurrency": null,
+    "size": 2361,
+    "lines": 96,
+    "triggers": [
+      "schedule",
+      "push",
+      "pull_request",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "push",
+      "pull_request",
+      "jobs",
+      "codeql-analysis",
+      "steps",
+      "with",
+      "with",
+      "dependency-scan",
+      "steps",
+      "with",
+      "container-scan",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      30,
+      20,
+      15
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      },
+      {
+        "permission": "security-events",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": "security-scan-${{ github.ref }}",
     "issues": [],
     "recommendations": [
-      "Add timeout-minutes to prevent infinite hanging"
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
     ]
   },
   "seo-audit.yml": {
@@ -4673,6 +4825,62 @@
     ],
     "recommendations": [
       "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "test.yml": {
+    "name": "test.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/test.yml",
+    "size": 3248,
+    "lines": 152,
+    "triggers": [
+      "push",
+      "pull_request",
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "push",
+      "pull_request",
+      "schedule",
+      "jobs",
+      "unit-tests",
+      "steps",
+      "with",
+      "with",
+      "integration-tests",
+      "steps",
+      "with",
+      "with",
+      "smoke-tests",
+      "steps",
+      "with",
+      "performance-tests",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20,
+      25,
+      15,
+      30
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": "test-suite-${{ github.ref }}",
+    "issues": [],
+    "recommendations": [
       "Add workflow_dispatch trigger for manual testing",
       "Consider splitting into smaller workflows for better maintainability"
     ]
@@ -9872,7 +10080,6 @@
   },
   "optimizations": {
     "immediate": [
-      "Add timeout-minutes to security-scan.yml",
       "Add timeout-minutes to homepage-auto-update.yml"
     ],
     "shortTerm": [
@@ -9960,6 +10167,7 @@
       "Refactor ai-trends-radar.yml into smaller, focused workflows",
       "Refactor auto-heal-workflows.yml into smaller, focused workflows",
       "Refactor automation-advertiser.yml into smaller, focused workflows",
+      "Refactor automation-orchestrator.yml into smaller, focused workflows",
       "Refactor broken-images.yml into smaller, focused workflows",
       "Refactor ci-quality.yml into smaller, focused workflows",
       "Refactor ci-self-heal.yml into smaller, focused workflows",
@@ -9977,6 +10185,7 @@
       "Refactor dead-code-report.yml into smaller, focused workflows",
       "Refactor dependency-auto-upgrade.yml into smaller, focused workflows",
       "Refactor dependency-management.yml into smaller, focused workflows",
+      "Refactor deploy.yml into smaller, focused workflows",
       "Refactor docs-intelligence.yml into smaller, focused workflows",
       "Refactor external-links.yml into smaller, focused workflows",
       "Refactor front-scheduler.yml into smaller, focused workflows",
@@ -10001,11 +10210,13 @@
       "Refactor responsive-content.yml into smaller, focused workflows",
       "Refactor security-auto-heal.yml into smaller, focused workflows",
       "Refactor security-gates.yml into smaller, focused workflows",
+      "Refactor security-scan.yml into smaller, focused workflows",
       "Refactor seo-audit.yml into smaller, focused workflows",
       "Refactor seo-validator.yml into smaller, focused workflows",
       "Refactor site-health-guardian.yml into smaller, focused workflows",
       "Refactor site-link.yml into smaller, focused workflows",
       "Refactor sitemap-and-search.yml into smaller, focused workflows",
+      "Refactor test.yml into smaller, focused workflows",
       "Refactor topics-and-clusters.yml into smaller, focused workflows",
       "Refactor ultra-rapid-sync.yml into smaller, focused workflows",
       "Refactor variation.yml into smaller, focused workflows",

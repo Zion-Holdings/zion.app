@@ -1,0 +1,176 @@
+name: Automation Orchestrator
+
+on:
+  schedule:
+    - cron: '0 */6 * * *' # Every 6 hours
+  workflow_dispatch: {}
+  repository_dispatch:
+    types: [automation-trigger]
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: automation-orchestrator
+  cancel-in-progress: false
+
+jobs:
+  content-automation:
+    name: Content Automation
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run content generation
+        run: |
+          node automation/autonomous-content-generator.cjs || true
+          node automation/content-gap-analyzer.cjs || true
+          node automation/dynamic-content-showcase.cjs || true
+
+      - name: Update frontend content
+        run: |
+          node automation/frontend-content-display-automator.cjs update || true
+          node automation/frontend-content-display-automator.cjs homepage || true
+
+      - name: Generate documentation
+        run: |
+          node scripts/generate-readme.js || true
+          node automation/docs-intelligence-generator.cjs || true
+
+  seo-automation:
+    name: SEO Automation
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run SEO optimization
+        run: |
+          node scripts/generate-sitemap.js || true
+          node automation/seo-optimizer.cjs || true
+          node automation/og-image-refresher.cjs || true
+
+      - name: Update search index
+        run: |
+          node scripts/generate-search-index.js || true
+          node automation/search-optimizer.cjs || true
+
+  marketing-automation:
+    name: Marketing Automation
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run LinkedIn marketing
+        run: |
+          node automation/linkedin-marketing-automator.cjs || true
+          node automation/linkedin-pro-automator.cjs || true
+
+      - name: Run Instagram marketing
+        run: |
+          node automation/instagram-marketing-automator.cjs || true
+          node automation/instagram-six-hourly-automator.cjs || true
+
+      - name: Run content marketing
+        run: |
+          node automation/marketing-sync-automator.cjs || true
+          node automation/cloud-marketing-automator.cjs || true
+
+  quality-assurance:
+    name: Quality Assurance
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run quality checks
+        run: |
+          npm run lint || true
+          npm run type-check || true
+          node automation/content-quality-analyzer.cjs || true
+
+      - name: Run performance checks
+        run: |
+          node automation/performance-optimizer.cjs || true
+          node automation/lighthouse-budgets.cjs || true
+
+  commit-and-push:
+    name: Commit and Push Changes
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: [content-automation, seo-automation, marketing-automation, quality-assurance]
+    if: always()
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit and push changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore(automation): orchestrated updates [skip ci]"
+            git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
+            echo "✅ Changes committed and pushed successfully"
+          else
+            echo "ℹ️ No changes to commit"
+          fi

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-15T22:34:31.671Z",
+  "timestamp": "2025-08-15T22:35:40.754Z",
   "critical": [
     {
       "name": "ci.yml",
@@ -144,6 +144,27 @@
         "workflow_dispatch {}"
       ],
       "resourceScore": 133
+    },
+    {
+      "name": "security-scan.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/security-scan.yml",
+      "priority": "high",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 30,
+      "concurrentJobs": 15,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "schedule",
+        "push",
+        "pull_request",
+        "workflow_dispatch {}"
+      ],
+      "resourceScore": 130
     }
   ],
   "medium": [
@@ -1295,6 +1316,51 @@
       "resourceScore": 105
     },
     {
+      "name": "deploy.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/deploy.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 30,
+      "concurrentJobs": 20,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "large",
+        "special": []
+      },
+      "dependencies": [
+        "build-and-test",
+        "build-and-test",
+        "deploy-production"
+      ],
+      "triggers": [
+        "push",
+        "pull_request",
+        "workflow_dispatch {}"
+      ],
+      "resourceScore": 100
+    },
+    {
+      "name": "test.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/test.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 30,
+      "concurrentJobs": 19,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "push",
+        "pull_request",
+        "schedule",
+        "workflow_dispatch {}"
+      ],
+      "resourceScore": 100
+    },
+    {
       "name": "cloud-agents-fast.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cloud-agents-fast.yml",
       "priority": "medium",
@@ -1341,6 +1407,11 @@
       "type": "warning",
       "message": "Too many critical workflows (5/3)",
       "suggestion": "Consider consolidating or deprioritizing some critical workflows"
+    },
+    {
+      "type": "info",
+      "message": "High priority workflows may compete for resources (8)",
+      "suggestion": "Consider staggering high-priority workflow execution"
     }
   ]
 }

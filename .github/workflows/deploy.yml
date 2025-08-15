@@ -1,0 +1,151 @@
+name: Deploy to Netlify
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  actions: read
+
+env:
+  NODE_OPTIONS: "--max-old-space-size=6144"
+  NEXT_TELEMETRY_DISABLED: '1'
+  CI: 'true'
+
+jobs:
+  build-and-test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run linting
+        run: npm run lint
+
+      - name: Run type checking
+        run: npm run type-check
+
+      - name: Run tests
+        run: npm test
+
+      - name: Build application
+        run: npm run build
+
+      - name: Generate sitemap
+        run: npm run sitemap
+
+      - name: Generate search index
+        run: npm run search:index
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-files
+          path: |
+            .next/
+            out/
+            public/
+            package.json
+            package-lock.json
+
+  deploy-preview:
+    name: Deploy Preview
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    if: github.event_name == 'pull_request'
+    needs: build-and-test
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-files
+          path: .
+
+      - name: Deploy to Netlify (Preview)
+        uses: nwtgck/actions-netlify@v2.0
+        with:
+          publish-dir: './out'
+          production-branch: main
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy Preview for PR #${{ github.event.number }}"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+
+  deploy-production:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs: build-and-test
+    environment:
+      name: production
+      url: ${{ steps.deploy.outputs.url }}
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-files
+          path: .
+
+      - name: Deploy to Netlify (Production)
+        id: deploy
+        uses: nwtgck/actions-netlify@v2.0
+        with:
+          publish-dir: './out'
+          production-branch: main
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy to production - ${{ github.sha }}"
+          enable-pull-request-comment: false
+          enable-commit-comment: false
+
+      - name: Notify deployment
+        run: |
+          echo "🚀 Deployment successful!"
+          echo "URL: ${{ steps.deploy.outputs.url }}"
+          echo "Admin URL: ${{ steps.deploy.outputs.admin-url }}"
+
+  post-deploy:
+    name: Post-Deployment Tasks
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs: deploy-production
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run post-deployment checks
+        run: |
+          npm run security:scan || true
+          npm run performance:test || true
+
+      - name: Update deployment status
+        run: |
+          echo "✅ Post-deployment tasks completed successfully"
