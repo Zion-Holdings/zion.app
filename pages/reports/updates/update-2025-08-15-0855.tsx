@@ -4,13 +4,13 @@ export default function UpdatePage() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <Head>
-        <title>Autonomous Validation & QA Plan — Cloud Cost Optimization (2025-08-15 08:54 UTC)</title>
+        <title>Autonomous Performance Tuning Guide — AI Service Design (2025-08-15 08:55 UTC)</title>
         <meta name="description" content="Autonomously generated update with curated highlights." />
         <meta name="keywords" content="AI, automation, autonomous systems, product updates, engineering, Trends" />
         <link rel="canonical" href="https://ziontechgroup.com" />
 
-        <meta property="og:title" content="Autonomous Validation & QA Plan — Cloud Cost Optimization (2025-08-15 08:54 UTC)" />
-        <meta property="og:description" content="Innovative, useful guidance to improve observability and uptime." />
+        <meta property="og:title" content="Autonomous Performance Tuning Guide — AI Service Design (2025-08-15 08:55 UTC)" />
+        <meta property="og:description" content="Innovative, useful guidance to reduce latency for LLM apps." />
         <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
@@ -21,11 +21,11 @@ export default function UpdatePage() {
         })}</script>
       </Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
-        <h1 className="text-3xl font-extrabold">Autonomous Validation & QA Plan — Cloud Cost Optimization (2025-08-15 08:54 UTC)</h1>
-        <p className="text-white/70">Innovative, useful guidance to improve observability and uptime.</p>
+        <h1 className="text-3xl font-extrabold">Autonomous Performance Tuning Guide — AI Service Design (2025-08-15 08:55 UTC)</h1>
+        <p className="text-white/70">Innovative, useful guidance to reduce latency for LLM apps.</p>
         <ul className="mt-6 list-disc pl-6 space-y-2">
-          <li>What it is: Validation & QA Plan for Cloud Cost Optimization.</li>
-          <li>Why it matters: helps teams improve observability and uptime.</li>
+          <li>What it is: Performance Tuning Guide for AI Service Design.</li>
+          <li>Why it matters: helps teams reduce latency for LLM apps.</li>
           <li>Key components: scope, architecture, metrics, risks.</li>
           <li>Next steps: integrate into delivery roadmap and measure impact.</li>
         </ul>

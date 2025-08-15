@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-15T08:54:11.652Z",
+  "generatedAt": "2025-08-15T08:55:08.061Z",
   "knownRoutes": [
     "/",
     "/404",
@@ -496,6 +496,10 @@
     "/reports/blueprints/blueprint-2025-08-15-085320",
     "/reports/blueprints/blueprint-2025-08-15-085346",
     "/reports/blueprints/blueprint-2025-08-15-085409",
+    "/reports/blueprints/blueprint-2025-08-15-085423",
+    "/reports/blueprints/blueprint-2025-08-15-085425",
+    "/reports/blueprints/blueprint-2025-08-15-085428",
+    "/reports/blueprints/blueprint-2025-08-15-085442",
     "/reports/cases/case-2025-08-15-021207",
     "/reports/cases/case-2025-08-15-021325",
     "/reports/cases/case-2025-08-15-021452",
@@ -1250,6 +1254,14 @@
     "/reports/cases/case-2025-08-15-085358",
     "/reports/cases/case-2025-08-15-085359",
     "/reports/cases/case-2025-08-15-085408",
+    "/reports/cases/case-2025-08-15-085420",
+    "/reports/cases/case-2025-08-15-085421",
+    "/reports/cases/case-2025-08-15-085426",
+    "/reports/cases/case-2025-08-15-085429",
+    "/reports/cases/case-2025-08-15-085432",
+    "/reports/cases/case-2025-08-15-085443",
+    "/reports/cases/case-2025-08-15-085444",
+    "/reports/cases/case-2025-08-15-085457",
     "/reports/guides/guide-2025-08-15-021207",
     "/reports/guides/guide-2025-08-15-021325",
     "/reports/guides/guide-2025-08-15-021452",
@@ -2004,6 +2016,14 @@
     "/reports/guides/guide-2025-08-15-085358",
     "/reports/guides/guide-2025-08-15-085359",
     "/reports/guides/guide-2025-08-15-085408",
+    "/reports/guides/guide-2025-08-15-085420",
+    "/reports/guides/guide-2025-08-15-085421",
+    "/reports/guides/guide-2025-08-15-085426",
+    "/reports/guides/guide-2025-08-15-085429",
+    "/reports/guides/guide-2025-08-15-085432",
+    "/reports/guides/guide-2025-08-15-085443",
+    "/reports/guides/guide-2025-08-15-085444",
+    "/reports/guides/guide-2025-08-15-085457",
     "/reports/innovations/insight-2025-08-15-0211",
     "/reports/innovations/insight-2025-08-15-0213",
     "/reports/innovations/insight-2025-08-15-0214",
@@ -2142,6 +2162,7 @@
     "/reports/innovations/insight-2025-08-15-0851",
     "/reports/innovations/insight-2025-08-15-0852",
     "/reports/innovations/insight-2025-08-15-0853",
+    "/reports/innovations/insight-2025-08-15-0854",
     "/reports/innovations/insight-2025-08-15T02-12",
     "/reports/innovations/insight-2025-08-15T02-13",
     "/reports/innovations/insight-2025-08-15T02-14",
@@ -2283,6 +2304,7 @@
     "/reports/innovations/insight-2025-08-15T08-50",
     "/reports/innovations/insight-2025-08-15T08-51",
     "/reports/innovations/insight-2025-08-15T08-53",
+    "/reports/innovations/insight-2025-08-15T08-54",
     "/reports/patterns/pattern-2025-08-15-021207",
     "/reports/patterns/pattern-2025-08-15-021325",
     "/reports/patterns/pattern-2025-08-15-021452",
@@ -3036,6 +3058,14 @@
     "/reports/patterns/pattern-2025-08-15-085358",
     "/reports/patterns/pattern-2025-08-15-085359",
     "/reports/patterns/pattern-2025-08-15-085408",
+    "/reports/patterns/pattern-2025-08-15-085420",
+    "/reports/patterns/pattern-2025-08-15-085421",
+    "/reports/patterns/pattern-2025-08-15-085426",
+    "/reports/patterns/pattern-2025-08-15-085429",
+    "/reports/patterns/pattern-2025-08-15-085432",
+    "/reports/patterns/pattern-2025-08-15-085443",
+    "/reports/patterns/pattern-2025-08-15-085444",
+    "/reports/patterns/pattern-2025-08-15-085457",
     "/reports/playbooks/playbook-2025-08-15-021207",
     "/reports/playbooks/playbook-2025-08-15-021325",
     "/reports/playbooks/playbook-2025-08-15-021452",
@@ -3522,6 +3552,10 @@
     "/reports/playbooks/playbook-2025-08-15-085346",
     "/reports/playbooks/playbook-2025-08-15-085348",
     "/reports/playbooks/playbook-2025-08-15-085408",
+    "/reports/playbooks/playbook-2025-08-15-085422",
+    "/reports/playbooks/playbook-2025-08-15-085427",
+    "/reports/playbooks/playbook-2025-08-15-085430",
+    "/reports/playbooks/playbook-2025-08-15-085444",
     "/reports/updates/update-2025-08-14-2311",
     "/reports/updates/update-2025-08-14-2312",
     "/reports/updates/update-2025-08-14-2313",
@@ -3841,6 +3875,7 @@
     "/reports/updates/update-2025-08-15-0552",
     "/reports/updates/update-2025-08-15-0553",
     "/reports/updates/update-2025-08-15-0554",
+    "/reports/updates/update-2025-08-15-0555",
     "/reports/updates/update-2025-08-15-0556",
     "/reports/updates/update-2025-08-15-0557",
     "/reports/updates/update-2025-08-15-0558",
@@ -3956,6 +3991,7 @@
     "/reports/updates/update-2025-08-15-0851",
     "/reports/updates/update-2025-08-15-0852",
     "/reports/updates/update-2025-08-15-0853",
+    "/reports/updates/update-2025-08-15-0854",
     "/reports/updates/update-2025-08-15T02-12",
     "/reports/updates/update-2025-08-15T02-13",
     "/reports/updates/update-2025-08-15T02-14",
@@ -4097,6 +4133,7 @@
     "/reports/updates/update-2025-08-15T08-50",
     "/reports/updates/update-2025-08-15T08-51",
     "/reports/updates/update-2025-08-15T08-53",
+    "/reports/updates/update-2025-08-15T08-54",
     "/search",
     "/services",
     "/site-health"
@@ -4234,22 +4271,27 @@
     },
     {
       "file": "pages/main/front/index.tsx",
+      "href": "/reports/seo",
+      "suggestion": null
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "href": "/reports/ai-trends",
+      "suggestion": null
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "href": "/reports/a11y",
+      "suggestion": null
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "href": "/reports/metadata",
+      "suggestion": null
+    },
+    {
+      "file": "pages/main/front/index.tsx",
       "href": "/main/front#features",
-      "suggestion": null
-    },
-    {
-      "file": "pages/main/front/index.tsx",
-      "href": "/main/front#capabilities",
-      "suggestion": null
-    },
-    {
-      "file": "pages/main/front/index.tsx",
-      "href": "/main/front#benefits",
-      "suggestion": null
-    },
-    {
-      "file": "pages/main/front/index.tsx",
-      "href": "/.netlify/functions/docs-index-runner",
       "suggestion": null
     },
     {
