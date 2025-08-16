@@ -1,10 +1,15 @@
 {
-  "timestamp": "2025-08-16T22:20:41.126Z",
+  "timestamp": "2025-08-16T22:21:27.598Z",
   "summary": {
-    "totalWorkflows": 0,
-    "fixed": 0,
+    "totalWorkflows": 1,
+    "fixed": 1,
     "failed": 0
   },
-  "fixedWorkflows": [],
+  "fixedWorkflows": [
+    {
+      "name": "autonomous-quick-fixes.yml",
+      "status": "active"
+    }
+  ],
   "failedWorkflows": []
 }

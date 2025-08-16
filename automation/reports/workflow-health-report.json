@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T22:20:59.708Z",
+  "timestamp": "2025-08-16T22:21:29.158Z",
   "summary": {
     "totalWorkflows": 188,
     "activeWorkflows": 187,
@@ -3389,14 +3389,17 @@
       "name": "autonomous-quick-fixes.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-quick-fixes.yml",
-      "size": 1422,
-      "lines": 53,
+      "size": 1929,
+      "lines": 69,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
+        "branch_protection_rules",
+        "required_status_checks",
+        "required_pull_request_reviews",
         "jobs",
         "quick-fixes",
         "steps",
@@ -3410,6 +3413,66 @@
         {
           "permission": "contents",
           "value": "write"
+        },
+        {
+          "permission": "branch_protection_rules",
+          "value": ""
+        },
+        {
+          "permission": "- pattern",
+          "value": "\"main\""
+        },
+        {
+          "permission": "required_status_checks",
+          "value": ""
+        },
+        {
+          "permission": "strict",
+          "value": "true"
+        },
+        {
+          "permission": "contexts",
+          "value": "[]"
+        },
+        {
+          "permission": "required_pull_request_reviews",
+          "value": ""
+        },
+        {
+          "permission": "required_approving_review_count",
+          "value": "1"
+        },
+        {
+          "permission": "dismiss_stale_reviews",
+          "value": "true"
+        },
+        {
+          "permission": "require_code_owner_reviews",
+          "value": "false"
+        },
+        {
+          "permission": "enforce_admins",
+          "value": "false"
+        },
+        {
+          "permission": "required_linear_history",
+          "value": "false"
+        },
+        {
+          "permission": "allow_force_pushes",
+          "value": "false"
+        },
+        {
+          "permission": "allow_deletions",
+          "value": "false"
+        },
+        {
+          "permission": "block_creations",
+          "value": "false"
+        },
+        {
+          "permission": "required_conversation_resolution",
+          "value": "true"
         }
       ],
       "concurrency": "automation-quick-fixes",
