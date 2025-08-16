@@ -1,0 +1,72 @@
+name: Agents Factory - Generate
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: agents-factory-generate
+  cancel-in-progress: false
+
+jobs:
+  build-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      topics: ${{ steps.set.outputs.topics }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: set
+        shell: bash
+        run: |
+          topics_json=$(jq -cr '.topics // []' data/topics-map.json 2>/dev/null || echo '[]')
+          if [ "$topics_json" = "[]" ]; then
+            topics_json='["automation","growth","content","seo","analytics"]'
+          fi
+          echo "topics=${topics_json}" >> "$GITHUB_OUTPUT"
+
+  generate:
+    needs: build-matrix
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        topic: ${{ fromJSON(needs.build-matrix.outputs.topics) }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install (if package.json exists)
+        shell: bash
+        run: |
+          if [ -f package.json ]; then
+            npm ci --ignore-scripts
+          fi
+
+      - name: Generate agents for topic
+        env:
+          TOPIC: ${{ matrix.topic }}
+        run: |
+          node zion.app/automation/agents/factory/generate.cjs \
+            --topic "$TOPIC" \
+            --count 3 \
+            --out "zion.app/automation/cursor-agents/proposals"
+
+      - name: Create PR with proposals
+        uses: peter-evans/create-pull-request@v6
+        with:
+          title: "Agent proposals: ${{ matrix.topic }} (run ${{ github.run_id }})"
+          body: "Automated agent proposals for topic: `${{ matrix.topic }}`"
+          commit-message: "chore(factory): add agent proposals for ${{ matrix.topic }}"
+          add-paths: |
+            zion.app/automation/cursor-agents/proposals/**
+          branch: agents/proposals-${{ matrix.topic }}-${{ github.run_id }}
+          labels: agents, proposals
+          draft: true

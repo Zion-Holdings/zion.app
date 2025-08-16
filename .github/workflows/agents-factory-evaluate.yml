@@ -1,0 +1,80 @@
+name: Agents Factory - Evaluate
+on:
+  pull_request:
+    types: [opened, synchronize, ready_for_review]
+    paths:
+      - 'zion.app/automation/cursor-agents/proposals/**.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: agents-factory-evaluate-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Detect changed agent files
+        id: changes
+        uses: tj-actions/changed-files@v45
+        with:
+          files: |
+            zion.app/automation/cursor-agents/proposals/**.json
+
+      - name: Validate JSON
+        if: steps.changes.outputs.any_changed == 'true'
+        shell: bash
+        run: |
+          for f in ${{ steps.changes.outputs.all_changed_files }}; do
+            echo "Validating $f";
+            cat "$f" | jq empty;
+          done
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install (if package.json exists)
+        shell: bash
+        run: |
+          if [ -f package.json ]; then
+            npm ci --ignore-scripts
+          fi
+
+      - name: Evaluate proposals
+        id: eval
+        if: steps.changes.outputs.any_changed == 'true'
+        run: |
+          mkdir -p zion.app/automation/analytics
+          for f in ${{ steps.changes.outputs.all_changed_files }}; do
+            node zion.app/automation/agents/factory/evaluate.cjs \
+              --agent "$f" \
+              --tasks "zion.app/automation/cursor-tasks" \
+              --out "zion.app/automation/analytics"
+          done
+          node -e 'const fs=require("fs"); const p="zion.app/automation/analytics"; const files=fs.readdirSync(p).filter(x=>x.endsWith(".json")); const data=files.map(f=>JSON.parse(fs.readFileSync(p+"/"+f,"utf8"))); const avg=(data.reduce((s,d)=>s+(d.score||0),0)/(data.length||1)).toFixed(3); console.log("avg="+avg);' | tee eval.env
+          echo "avg=$(grep ^avg= eval.env | cut -d= -f2)" >> $GITHUB_OUTPUT
+
+      - name: Comment results
+        if: steps.changes.outputs.any_changed == 'true'
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          recreate: true
+          message: |
+            Evaluation complete.
+            - Avg score: `${{ steps.eval.outputs.avg }}`
+            - Artifacts: stored under `zion.app/automation/analytics/` in the PR diff
+
+      - name: Add label if passing
+        if: steps.eval.outputs.avg && steps.eval.outputs.avg >= 0.75
+        uses: actions-ecosystem/action-add-labels@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          labels: ready-to-promote

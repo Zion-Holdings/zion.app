@@ -1,0 +1,42 @@
+name: Agents Factory - Evolve
+on:
+  schedule:
+    - cron: '0 3 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  evolve:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - name: Install (if package.json exists)
+        run: |
+          if [ -f package.json ]; then
+            npm ci --ignore-scripts
+          fi
+      - name: Evolve top performers
+        run: |
+          node zion.app/automation/agents/factory/evolve.cjs \
+            --active "zion.app/automation/cursor-agents/active" \
+            --analytics "zion.app/automation/analytics" \
+            --out "zion.app/automation/cursor-agents/proposals" \
+            --keep-top 10 --mutations 2
+      - name: Create PR
+        uses: peter-evans/create-pull-request@v6
+        with:
+          title: "Agent evolution batch"
+          body: "Automated evolution of top-performing agents"
+          commit-message: "chore(factory): evolve agents"
+          add-paths: |
+            zion.app/automation/cursor-agents/proposals/**
+          branch: agents/evolution-${{ github.run_id }}
+          labels: agents, evolution, proposals
+          draft: true

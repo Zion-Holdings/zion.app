@@ -1,0 +1,39 @@
+name: Agents Factory - Promote
+on:
+  pull_request:
+    types: [labeled]
+  workflow_dispatch:
+    inputs:
+      pr:
+        description: PR number to promote
+        required: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  promote:
+    if: (github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'ready-to-promote')) || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Move proposals to active
+        shell: bash
+        run: |
+          pr_number="${{ github.event.pull_request.number || inputs.pr }}"
+          git fetch origin pull/$pr_number/head:pr-$pr_number
+          git checkout pr-$pr_number
+          mkdir -p zion.app/automation/cursor-agents/active
+          if compgen -G "zion.app/automation/cursor-agents/proposals/*.json" > /dev/null; then
+            git mv zion.app/automation/cursor-agents/proposals/*.json zion.app/automation/cursor-agents/active/ || true
+          fi
+          git commit -m "chore(factory): promote agents from proposals to active" || true
+
+      - name: Push and merge
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git push origin HEAD
+          gh pr merge ${{ github.event.pull_request.number || inputs.pr }} --squash --auto --delete-branch
