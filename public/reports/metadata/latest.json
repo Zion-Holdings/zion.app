@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-16T00:36:00.845Z",
-  "pagesScanned": 5737,
+  "generatedAt": "2025-08-16T00:37:00.993Z",
+  "pagesScanned": 5743,
   "items": [
     {
       "route": "/404",
@@ -23755,6 +23755,26 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-16-003625",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Autonomous Update Implementation",
+        "description": "Guide — Autonomous Update Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-16-003626",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Autonomous Update Implementation",
+        "description": "Guide — Autonomous Update Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-15-0211",
       "missing": [
         "og:image"
@@ -37226,6 +37246,26 @@
     },
     {
       "route": "/reports/patterns/pattern-2025-08-16-003032",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Improving Continuously",
+        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-16-003625",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Improving Continuously",
+        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-16-003626",
       "missing": [
         "og:image"
       ],
@@ -54882,6 +54922,29 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-15 21:35",
         "description": "Autonomous Update — 2025-08-15 21:35 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-2136",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 21:36",
+        "description": "Autonomous Update — 2025-08-15 21:36 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-2137",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 21:37",
+        "description": "Autonomous Update — 2025-08-15 21:37 — auto-suggested description"
       }
     },
     {
