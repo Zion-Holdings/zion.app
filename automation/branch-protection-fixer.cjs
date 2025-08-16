@@ -116,8 +116,8 @@ class BranchProtectionFixer {
     // Fix 1: Replace direct push to main with push to feature branch
     updatedContent = this.fixDirectPushToMain(updatedContent);
     
-    // Fix 2: Add branch protection rules
-    updatedContent = this.addBranchProtectionRules(updatedContent);
+    // Fix 2: Add branch protection rules - DISABLED due to invalid YAML syntax
+    // updatedContent = this.addBranchProtectionRules(updatedContent);
     
     // Fix 3: Add pull request requirement
     updatedContent = this.addPullRequestRequirement(updatedContent);
