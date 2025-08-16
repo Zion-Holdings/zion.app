@@ -1,11 +1,11 @@
 {
-  "timestamp": "2025-08-16T21:28:55.830Z",
+  "timestamp": "2025-08-16T21:30:04.987Z",
   "summary": {
-    "totalWorkflows": 159,
-    "activeWorkflows": 84,
+    "totalWorkflows": 178,
+    "activeWorkflows": 103,
     "disabledWorkflows": 74,
-    "workflowsWithIssues": 58,
-    "totalIssues": 59
+    "workflowsWithIssues": 74,
+    "totalIssues": 75
   },
   "patterns": {
     "highComplexity": [
@@ -23,6 +23,8 @@
       "ai-it-ultrafast-sync.yml",
       "ai-research-scout.yml",
       "ai-trends-radar.yml",
+      "app-automation.yml",
+      "app-monitoring.yml",
       "auto-heal-workflows.yml",
       "automation-advertiser.yml",
       "automation-orchestrator.yml",
@@ -40,6 +42,7 @@
       "commit-message-lint.yml",
       "commitlint.yml",
       "components-size-report.yml",
+      "content-generation.yml",
       "crawl-normalize.yml",
       "cursor-chat.yml",
       "dead-code-report.yml",
@@ -161,9 +164,28 @@
       "agent-agent-1755379731005-0-full-stack-expert.yml",
       "agent-agent-1755379731007-1-deployment-expert.yml",
       "agent-agent-1755379731008-2-monitoring-expert.yml",
+      "agent-agent-1755379759029-0-optimization-intermediate.yml",
+      "agent-agent-1755379759032-1-full-stack-intermediate.yml",
+      "agent-agent-1755379759033-2-deployment-expert.yml",
+      "agent-agent-1755379759033-3-frontend-expert.yml",
+      "agent-agent-1755379759035-4-full-stack-intermediate.yml",
+      "agent-agent-1755379759035-5-frontend-basic.yml",
+      "agent-agent-1755379759036-6-monitoring-advanced.yml",
+      "agent-agent-1755379759037-7-full-stack-intermediate.yml",
+      "agent-agent-1755379777746-0-full-stack-advanced.yml",
+      "agent-agent-1755379777749-1-full-stack-basic.yml",
+      "agent-agent-1755379777750-2-monitoring-intermediate.yml",
+      "agent-agent-1755379777751-3-monitoring-advanced.yml",
+      "agent-agent-1755379777751-4-optimization-advanced.yml",
+      "agent-agent-1755379777752-5-testing-expert.yml",
+      "agent-agent-1755379777754-6-backend-expert.yml",
+      "agent-agent-1755379777755-7-backend-intermediate.yml",
       "agent-factory-automation.yml",
       "agent-factory-proliferation.yml",
+      "app-automation.yml",
+      "app-monitoring.yml",
       "autonomous-agent-orchestrator.yml",
+      "content-generation.yml",
       "exponential-agent-factory-proliferation.yml",
       "exponential-ai-delegation.yml",
       "netlify-automation.yml",
@@ -377,6 +399,470 @@
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379731008-2-monitoring-expert.yml",
       "size": 493,
+      "lines": 15,
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "jobs": [
+        "workflow_dispatch",
+        "schedule",
+        "agent-execution",
+        "steps",
+        "with"
+      ],
+      "timeouts": [],
+      "permissions": [],
+      "concurrency": null,
+      "issues": [
+        "missing_npm_cache"
+      ],
+      "recommendations": [
+        "Add npm cache to improve build performance",
+        "Add timeout-minutes to prevent infinite hanging",
+        "Consider splitting into smaller workflows for better maintainability"
+      ]
+    },
+    "agent-agent-1755379759029-0-optimization-intermediate.yml": {
+      "name": "agent-agent-1755379759029-0-optimization-intermediate.yml",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379759029-0-optimization-intermediate.yml",
+      "size": 511,
+      "lines": 15,
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "jobs": [
+        "workflow_dispatch",
+        "schedule",
+        "agent-execution",
+        "steps",
+        "with"
+      ],
+      "timeouts": [],
+      "permissions": [],
+      "concurrency": null,
+      "issues": [
+        "missing_npm_cache"
+      ],
+      "recommendations": [
+        "Add npm cache to improve build performance",
+        "Add timeout-minutes to prevent infinite hanging",
+        "Consider splitting into smaller workflows for better maintainability"
+      ]
+    },
+    "agent-agent-1755379759032-1-full-stack-intermediate.yml": {
+      "name": "agent-agent-1755379759032-1-full-stack-intermediate.yml",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379759032-1-full-stack-intermediate.yml",
+      "size": 505,
+      "lines": 15,
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "jobs": [
+        "workflow_dispatch",
+        "schedule",
+        "agent-execution",
+        "steps",
+        "with"
+      ],
+      "timeouts": [],
+      "permissions": [],
+      "concurrency": null,
+      "issues": [
+        "missing_npm_cache"
+      ],
+      "recommendations": [
+        "Add npm cache to improve build performance",
+        "Add timeout-minutes to prevent infinite hanging",
+        "Consider splitting into smaller workflows for better maintainability"
+      ]
+    },
+    "agent-agent-1755379759033-2-deployment-expert.yml": {
+      "name": "agent-agent-1755379759033-2-deployment-expert.yml",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379759033-2-deployment-expert.yml",
+      "size": 493,
+      "lines": 15,
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "jobs": [
+        "workflow_dispatch",
+        "schedule",
+        "agent-execution",
+        "steps",
+        "with"
+      ],
+      "timeouts": [],
+      "permissions": [],
+      "concurrency": null,
+      "issues": [
+        "missing_npm_cache"
+      ],
+      "recommendations": [
+        "Add npm cache to improve build performance",
+        "Add timeout-minutes to prevent infinite hanging",
+        "Consider splitting into smaller workflows for better maintainability"
+      ]
+    },
+    "agent-agent-1755379759033-3-frontend-expert.yml": {
+      "name": "agent-agent-1755379759033-3-frontend-expert.yml",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379759033-3-frontend-expert.yml",
+      "size": 487,
+      "lines": 15,
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "jobs": [
+        "workflow_dispatch",
+        "schedule",
+        "agent-execution",
+        "steps",
+        "with"
+      ],
+      "timeouts": [],
+      "permissions": [],
+      "concurrency": null,
+      "issues": [
+        "missing_npm_cache"
+      ],
+      "recommendations": [
+        "Add npm cache to improve build performance",
+        "Add timeout-minutes to prevent infinite hanging",
+        "Consider splitting into smaller workflows for better maintainability"
+      ]
+    },
+    "agent-agent-1755379759035-4-full-stack-intermediate.yml": {
+      "name": "agent-agent-1755379759035-4-full-stack-intermediate.yml",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379759035-4-full-stack-intermediate.yml",
+      "size": 505,
+      "lines": 15,
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "jobs": [
+        "workflow_dispatch",
+        "schedule",
+        "agent-execution",
+        "steps",
+        "with"
+      ],
+      "timeouts": [],
+      "permissions": [],
+      "concurrency": null,
+      "issues": [
+        "missing_npm_cache"
+      ],
+      "recommendations": [
+        "Add npm cache to improve build performance",
+        "Add timeout-minutes to prevent infinite hanging",
+        "Consider splitting into smaller workflows for better maintainability"
+      ]
+    },
+    "agent-agent-1755379759035-5-frontend-basic.yml": {
+      "name": "agent-agent-1755379759035-5-frontend-basic.yml",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379759035-5-frontend-basic.yml",
+      "size": 485,
+      "lines": 15,
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "jobs": [
+        "workflow_dispatch",
+        "schedule",
+        "agent-execution",
+        "steps",
+        "with"
+      ],
+      "timeouts": [],
+      "permissions": [],
+      "concurrency": null,
+      "issues": [
+        "missing_npm_cache"
+      ],
+      "recommendations": [
+        "Add npm cache to improve build performance",
+        "Add timeout-minutes to prevent infinite hanging",
+        "Consider splitting into smaller workflows for better maintainability"
+      ]
+    },
+    "agent-agent-1755379759036-6-monitoring-advanced.yml": {
+      "name": "agent-agent-1755379759036-6-monitoring-advanced.yml",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379759036-6-monitoring-advanced.yml",
+      "size": 497,
+      "lines": 15,
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "jobs": [
+        "workflow_dispatch",
+        "schedule",
+        "agent-execution",
+        "steps",
+        "with"
+      ],
+      "timeouts": [],
+      "permissions": [],
+      "concurrency": null,
+      "issues": [
+        "missing_npm_cache"
+      ],
+      "recommendations": [
+        "Add npm cache to improve build performance",
+        "Add timeout-minutes to prevent infinite hanging",
+        "Consider splitting into smaller workflows for better maintainability"
+      ]
+    },
+    "agent-agent-1755379759037-7-full-stack-intermediate.yml": {
+      "name": "agent-agent-1755379759037-7-full-stack-intermediate.yml",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379759037-7-full-stack-intermediate.yml",
+      "size": 505,
+      "lines": 15,
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "jobs": [
+        "workflow_dispatch",
+        "schedule",
+        "agent-execution",
+        "steps",
+        "with"
+      ],
+      "timeouts": [],
+      "permissions": [],
+      "concurrency": null,
+      "issues": [
+        "missing_npm_cache"
+      ],
+      "recommendations": [
+        "Add npm cache to improve build performance",
+        "Add timeout-minutes to prevent infinite hanging",
+        "Consider splitting into smaller workflows for better maintainability"
+      ]
+    },
+    "agent-agent-1755379777746-0-full-stack-advanced.yml": {
+      "name": "agent-agent-1755379777746-0-full-stack-advanced.yml",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379777746-0-full-stack-advanced.yml",
+      "size": 497,
+      "lines": 15,
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "jobs": [
+        "workflow_dispatch",
+        "schedule",
+        "agent-execution",
+        "steps",
+        "with"
+      ],
+      "timeouts": [],
+      "permissions": [],
+      "concurrency": null,
+      "issues": [
+        "missing_npm_cache"
+      ],
+      "recommendations": [
+        "Add npm cache to improve build performance",
+        "Add timeout-minutes to prevent infinite hanging",
+        "Consider splitting into smaller workflows for better maintainability"
+      ]
+    },
+    "agent-agent-1755379777749-1-full-stack-basic.yml": {
+      "name": "agent-agent-1755379777749-1-full-stack-basic.yml",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379777749-1-full-stack-basic.yml",
+      "size": 491,
+      "lines": 15,
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "jobs": [
+        "workflow_dispatch",
+        "schedule",
+        "agent-execution",
+        "steps",
+        "with"
+      ],
+      "timeouts": [],
+      "permissions": [],
+      "concurrency": null,
+      "issues": [
+        "missing_npm_cache"
+      ],
+      "recommendations": [
+        "Add npm cache to improve build performance",
+        "Add timeout-minutes to prevent infinite hanging",
+        "Consider splitting into smaller workflows for better maintainability"
+      ]
+    },
+    "agent-agent-1755379777750-2-monitoring-intermediate.yml": {
+      "name": "agent-agent-1755379777750-2-monitoring-intermediate.yml",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379777750-2-monitoring-intermediate.yml",
+      "size": 505,
+      "lines": 15,
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "jobs": [
+        "workflow_dispatch",
+        "schedule",
+        "agent-execution",
+        "steps",
+        "with"
+      ],
+      "timeouts": [],
+      "permissions": [],
+      "concurrency": null,
+      "issues": [
+        "missing_npm_cache"
+      ],
+      "recommendations": [
+        "Add npm cache to improve build performance",
+        "Add timeout-minutes to prevent infinite hanging",
+        "Consider splitting into smaller workflows for better maintainability"
+      ]
+    },
+    "agent-agent-1755379777751-3-monitoring-advanced.yml": {
+      "name": "agent-agent-1755379777751-3-monitoring-advanced.yml",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379777751-3-monitoring-advanced.yml",
+      "size": 497,
+      "lines": 15,
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "jobs": [
+        "workflow_dispatch",
+        "schedule",
+        "agent-execution",
+        "steps",
+        "with"
+      ],
+      "timeouts": [],
+      "permissions": [],
+      "concurrency": null,
+      "issues": [
+        "missing_npm_cache"
+      ],
+      "recommendations": [
+        "Add npm cache to improve build performance",
+        "Add timeout-minutes to prevent infinite hanging",
+        "Consider splitting into smaller workflows for better maintainability"
+      ]
+    },
+    "agent-agent-1755379777751-4-optimization-advanced.yml": {
+      "name": "agent-agent-1755379777751-4-optimization-advanced.yml",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379777751-4-optimization-advanced.yml",
+      "size": 503,
+      "lines": 15,
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "jobs": [
+        "workflow_dispatch",
+        "schedule",
+        "agent-execution",
+        "steps",
+        "with"
+      ],
+      "timeouts": [],
+      "permissions": [],
+      "concurrency": null,
+      "issues": [
+        "missing_npm_cache"
+      ],
+      "recommendations": [
+        "Add npm cache to improve build performance",
+        "Add timeout-minutes to prevent infinite hanging",
+        "Consider splitting into smaller workflows for better maintainability"
+      ]
+    },
+    "agent-agent-1755379777752-5-testing-expert.yml": {
+      "name": "agent-agent-1755379777752-5-testing-expert.yml",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379777752-5-testing-expert.yml",
+      "size": 484,
+      "lines": 15,
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "jobs": [
+        "workflow_dispatch",
+        "schedule",
+        "agent-execution",
+        "steps",
+        "with"
+      ],
+      "timeouts": [],
+      "permissions": [],
+      "concurrency": null,
+      "issues": [
+        "missing_npm_cache"
+      ],
+      "recommendations": [
+        "Add npm cache to improve build performance",
+        "Add timeout-minutes to prevent infinite hanging",
+        "Consider splitting into smaller workflows for better maintainability"
+      ]
+    },
+    "agent-agent-1755379777754-6-backend-expert.yml": {
+      "name": "agent-agent-1755379777754-6-backend-expert.yml",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379777754-6-backend-expert.yml",
+      "size": 484,
+      "lines": 15,
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "jobs": [
+        "workflow_dispatch",
+        "schedule",
+        "agent-execution",
+        "steps",
+        "with"
+      ],
+      "timeouts": [],
+      "permissions": [],
+      "concurrency": null,
+      "issues": [
+        "missing_npm_cache"
+      ],
+      "recommendations": [
+        "Add npm cache to improve build performance",
+        "Add timeout-minutes to prevent infinite hanging",
+        "Consider splitting into smaller workflows for better maintainability"
+      ]
+    },
+    "agent-agent-1755379777755-7-backend-intermediate.yml": {
+      "name": "agent-agent-1755379777755-7-backend-intermediate.yml",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379777755-7-backend-intermediate.yml",
+      "size": 496,
       "lines": 15,
       "triggers": [
         "workflow_dispatch",
@@ -953,6 +1439,75 @@
       "concurrency": null,
       "issues": [],
       "recommendations": [
+        "Add workflow_dispatch trigger for manual testing",
+        "Consider splitting into smaller workflows for better maintainability"
+      ]
+    },
+    "app-automation.yml": {
+      "name": "app-automation.yml",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/app-automation.yml",
+      "size": 1687,
+      "lines": 61,
+      "triggers": [
+        "schedule",
+        "workflow_dispatch  # Manual trigger",
+        "push"
+      ],
+      "jobs": [
+        "schedule",
+        "push",
+        "paths",
+        "jobs",
+        "run-orchestrator",
+        "steps",
+        "with",
+        "with",
+        "notify-completion",
+        "steps",
+        "with"
+      ],
+      "timeouts": [],
+      "permissions": [],
+      "concurrency": null,
+      "issues": [],
+      "recommendations": [
+        "Add timeout-minutes to prevent infinite hanging",
+        "Add workflow_dispatch trigger for manual testing",
+        "Consider splitting into smaller workflows for better maintainability"
+      ]
+    },
+    "app-monitoring.yml": {
+      "name": "app-monitoring.yml",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/app-monitoring.yml",
+      "size": 2147,
+      "lines": 86,
+      "triggers": [
+        "schedule",
+        "workflow_dispatch  # Manual trigger"
+      ],
+      "jobs": [
+        "schedule",
+        "jobs",
+        "monitor-performance",
+        "steps",
+        "with",
+        "with",
+        "monitor-security",
+        "steps",
+        "with",
+        "with",
+        "monitor-uptime",
+        "steps",
+        "with"
+      ],
+      "timeouts": [],
+      "permissions": [],
+      "concurrency": null,
+      "issues": [],
+      "recommendations": [
+        "Add timeout-minutes to prevent infinite hanging",
         "Add workflow_dispatch trigger for manual testing",
         "Consider splitting into smaller workflows for better maintainability"
       ]
@@ -1631,6 +2186,39 @@
       "concurrency": null,
       "issues": [],
       "recommendations": [
+        "Add workflow_dispatch trigger for manual testing",
+        "Consider splitting into smaller workflows for better maintainability"
+      ]
+    },
+    "content-generation.yml": {
+      "name": "content-generation.yml",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/content-generation.yml",
+      "size": 1522,
+      "lines": 60,
+      "triggers": [
+        "schedule",
+        "workflow_dispatch  # Manual trigger",
+        "push"
+      ],
+      "jobs": [
+        "schedule",
+        "push",
+        "paths",
+        "jobs",
+        "generate-content",
+        "steps",
+        "with",
+        "with",
+        "create-content-tasks",
+        "steps"
+      ],
+      "timeouts": [],
+      "permissions": [],
+      "concurrency": null,
+      "issues": [],
+      "recommendations": [
+        "Add timeout-minutes to prevent infinite hanging",
         "Add workflow_dispatch trigger for manual testing",
         "Consider splitting into smaller workflows for better maintainability"
       ]
@@ -8580,9 +9168,28 @@
         "Add timeout-minutes to agent-agent-1755379731005-0-full-stack-expert.yml",
         "Add timeout-minutes to agent-agent-1755379731007-1-deployment-expert.yml",
         "Add timeout-minutes to agent-agent-1755379731008-2-monitoring-expert.yml",
+        "Add timeout-minutes to agent-agent-1755379759029-0-optimization-intermediate.yml",
+        "Add timeout-minutes to agent-agent-1755379759032-1-full-stack-intermediate.yml",
+        "Add timeout-minutes to agent-agent-1755379759033-2-deployment-expert.yml",
+        "Add timeout-minutes to agent-agent-1755379759033-3-frontend-expert.yml",
+        "Add timeout-minutes to agent-agent-1755379759035-4-full-stack-intermediate.yml",
+        "Add timeout-minutes to agent-agent-1755379759035-5-frontend-basic.yml",
+        "Add timeout-minutes to agent-agent-1755379759036-6-monitoring-advanced.yml",
+        "Add timeout-minutes to agent-agent-1755379759037-7-full-stack-intermediate.yml",
+        "Add timeout-minutes to agent-agent-1755379777746-0-full-stack-advanced.yml",
+        "Add timeout-minutes to agent-agent-1755379777749-1-full-stack-basic.yml",
+        "Add timeout-minutes to agent-agent-1755379777750-2-monitoring-intermediate.yml",
+        "Add timeout-minutes to agent-agent-1755379777751-3-monitoring-advanced.yml",
+        "Add timeout-minutes to agent-agent-1755379777751-4-optimization-advanced.yml",
+        "Add timeout-minutes to agent-agent-1755379777752-5-testing-expert.yml",
+        "Add timeout-minutes to agent-agent-1755379777754-6-backend-expert.yml",
+        "Add timeout-minutes to agent-agent-1755379777755-7-backend-intermediate.yml",
         "Add timeout-minutes to agent-factory-automation.yml",
         "Add timeout-minutes to agent-factory-proliferation.yml",
+        "Add timeout-minutes to app-automation.yml",
+        "Add timeout-minutes to app-monitoring.yml",
         "Add timeout-minutes to autonomous-agent-orchestrator.yml",
+        "Add timeout-minutes to content-generation.yml",
         "Add timeout-minutes to exponential-agent-factory-proliferation.yml",
         "Add timeout-minutes to exponential-ai-delegation.yml",
         "Add timeout-minutes to netlify-automation.yml",
@@ -8659,6 +9266,8 @@
         "Refactor ai-it-ultrafast-sync.yml into smaller, focused workflows",
         "Refactor ai-research-scout.yml into smaller, focused workflows",
         "Refactor ai-trends-radar.yml into smaller, focused workflows",
+        "Refactor app-automation.yml into smaller, focused workflows",
+        "Refactor app-monitoring.yml into smaller, focused workflows",
         "Refactor auto-heal-workflows.yml into smaller, focused workflows",
         "Refactor automation-advertiser.yml into smaller, focused workflows",
         "Refactor automation-orchestrator.yml into smaller, focused workflows",
@@ -8676,6 +9285,7 @@
         "Refactor commit-message-lint.yml into smaller, focused workflows",
         "Refactor commitlint.yml into smaller, focused workflows",
         "Refactor components-size-report.yml into smaller, focused workflows",
+        "Refactor content-generation.yml into smaller, focused workflows",
         "Refactor crawl-normalize.yml into smaller, focused workflows",
         "Refactor cursor-chat.yml into smaller, focused workflows",
         "Refactor dead-code-report.yml into smaller, focused workflows",
@@ -8800,9 +9410,28 @@
       "Add timeout-minutes to agent-agent-1755379731005-0-full-stack-expert.yml",
       "Add timeout-minutes to agent-agent-1755379731007-1-deployment-expert.yml",
       "Add timeout-minutes to agent-agent-1755379731008-2-monitoring-expert.yml",
+      "Add timeout-minutes to agent-agent-1755379759029-0-optimization-intermediate.yml",
+      "Add timeout-minutes to agent-agent-1755379759032-1-full-stack-intermediate.yml",
+      "Add timeout-minutes to agent-agent-1755379759033-2-deployment-expert.yml",
+      "Add timeout-minutes to agent-agent-1755379759033-3-frontend-expert.yml",
+      "Add timeout-minutes to agent-agent-1755379759035-4-full-stack-intermediate.yml",
+      "Add timeout-minutes to agent-agent-1755379759035-5-frontend-basic.yml",
+      "Add timeout-minutes to agent-agent-1755379759036-6-monitoring-advanced.yml",
+      "Add timeout-minutes to agent-agent-1755379759037-7-full-stack-intermediate.yml",
+      "Add timeout-minutes to agent-agent-1755379777746-0-full-stack-advanced.yml",
+      "Add timeout-minutes to agent-agent-1755379777749-1-full-stack-basic.yml",
+      "Add timeout-minutes to agent-agent-1755379777750-2-monitoring-intermediate.yml",
+      "Add timeout-minutes to agent-agent-1755379777751-3-monitoring-advanced.yml",
+      "Add timeout-minutes to agent-agent-1755379777751-4-optimization-advanced.yml",
+      "Add timeout-minutes to agent-agent-1755379777752-5-testing-expert.yml",
+      "Add timeout-minutes to agent-agent-1755379777754-6-backend-expert.yml",
+      "Add timeout-minutes to agent-agent-1755379777755-7-backend-intermediate.yml",
       "Add timeout-minutes to agent-factory-automation.yml",
       "Add timeout-minutes to agent-factory-proliferation.yml",
+      "Add timeout-minutes to app-automation.yml",
+      "Add timeout-minutes to app-monitoring.yml",
       "Add timeout-minutes to autonomous-agent-orchestrator.yml",
+      "Add timeout-minutes to content-generation.yml",
       "Add timeout-minutes to exponential-agent-factory-proliferation.yml",
       "Add timeout-minutes to exponential-ai-delegation.yml",
       "Add timeout-minutes to netlify-automation.yml",
@@ -8879,6 +9508,8 @@
       "Refactor ai-it-ultrafast-sync.yml into smaller, focused workflows",
       "Refactor ai-research-scout.yml into smaller, focused workflows",
       "Refactor ai-trends-radar.yml into smaller, focused workflows",
+      "Refactor app-automation.yml into smaller, focused workflows",
+      "Refactor app-monitoring.yml into smaller, focused workflows",
       "Refactor auto-heal-workflows.yml into smaller, focused workflows",
       "Refactor automation-advertiser.yml into smaller, focused workflows",
       "Refactor automation-orchestrator.yml into smaller, focused workflows",
@@ -8896,6 +9527,7 @@
       "Refactor commit-message-lint.yml into smaller, focused workflows",
       "Refactor commitlint.yml into smaller, focused workflows",
       "Refactor components-size-report.yml into smaller, focused workflows",
+      "Refactor content-generation.yml into smaller, focused workflows",
       "Refactor crawl-normalize.yml into smaller, focused workflows",
       "Refactor cursor-chat.yml into smaller, focused workflows",
       "Refactor dead-code-report.yml into smaller, focused workflows",

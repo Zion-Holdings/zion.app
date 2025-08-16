@@ -123,9 +123,9 @@ class ExponentialAutonomousOrchestrator {
       this.factoriesDir,
       this.agentsDir,
       this.reportsDir,
-      path.join(this.appRoot, 'automation', 'config'),
-      path.join(this.appRoot, 'automation', 'workflows'),
-      path.join(this.appRoot, 'automation', 'templates')
+      path.join(this.appRoot, 'config'),
+      path.join(this.appRoot, 'workflows'),
+      path.join(this.appRoot, 'templates')
     ];
     
     for (const dir of dirs) {
@@ -143,7 +143,7 @@ class ExponentialAutonomousOrchestrator {
     const totalAgents = this.countFiles(this.agentsDir, '*.json');
     const totalFactories = this.countFiles(this.factoriesDir, 'factory-config.json');
     const totalWorkflows = this.countFiles(path.join(this.appRoot, '.github/workflows'), '*.yml');
-    const totalScripts = this.countFiles(path.join(this.appRoot, 'automation'), '*.cjs');
+    const totalScripts = this.countFiles(this.appRoot, '*.cjs');
     
     this.growthMetrics.totalFactories = totalAgents + totalFactories + totalWorkflows + totalScripts;
     this.growthMetrics.totalAgents = totalAgents;

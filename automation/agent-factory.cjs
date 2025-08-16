@@ -314,7 +314,7 @@ ${agents.map(agent => `
 - **Complexity**: ${agent.complexity}
 - **Status**: ${agent.status}
 - **Created**: ${agent.created_at}
-- **Capabilities**: ${agent.capabilities.join(', ')}
+- **Capabilities**: ${Object.keys(agent.capabilities).join(', ')}
 `).join('\n')}
 
 ## 📊 Agent Statistics

@@ -559,7 +559,7 @@ ${rec.items.map(item => `- ${item}`).join('\n')}
 ## 🤖 Agents Created
 
 ${results.agentsCreated.length > 0 ? 
-  results.agentsCreated.map(agent => `- **${agent.name}** (${agent.type}): ${agent.config.description}`).join('\n') :
+  results.agentsCreated.map(agent => `- **${agent.id}** (${agent.type}): ${agent.complexity} complexity`).join('\n') :
   'No agents were created in this run'
 }
 
