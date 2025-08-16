@@ -2363,8 +2363,8 @@
     "name": "autonomous-content-curation.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-content-curation.yml",
-    "size": 1740,
-    "lines": 66,
+    "size": 1739,
+    "lines": 65,
     "triggers": [
       "schedule",
       "workflow_dispatch {}"
@@ -2500,8 +2500,85 @@
     "name": "autonomous-deep-maintenance.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-deep-maintenance.yml",
-    "size": 1870,
-    "lines": 69,
+    "size": 1362,
+    "lines": 52,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "deep-maintenance",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      45
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      }
+    ],
+    "concurrency": "automation-deep-maintenance",
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "autonomous-deps-upgrade.yml": {
+    "name": "autonomous-deps-upgrade.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-deps-upgrade.yml",
+    "size": 2442,
+    "lines": 76,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "deps-upgrade",
+      "steps",
+      "with",
+      "with",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      30
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "pull-requests",
+        "value": "write"
+      }
+    ],
+    "concurrency": "automation-deps-upgrade",
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "autonomous-external-links.yml": {
+    "name": "autonomous-external-links.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-external-links.yml",
+    "size": 1727,
+    "lines": 65,
     "triggers": [
       "schedule",
       "workflow_dispatch {}"
@@ -2512,13 +2589,13 @@
       "required_status_checks",
       "required_pull_request_reviews",
       "jobs",
-      "deep-maintenance",
+      "external-links",
       "steps",
       "with",
       "with"
     ],
     "timeouts": [
-      45
+      20
     ],
     "permissions": [
       {
@@ -2584,83 +2661,6 @@
       {
         "permission": "required_conversation_resolution",
         "value": "true"
-      }
-    ],
-    "concurrency": "automation-deep-maintenance",
-    "issues": [
-      "unsafe_git_push"
-    ],
-    "recommendations": [
-      "Add branch protection to git push operations",
-      "Add workflow_dispatch trigger for manual testing",
-      "Consider splitting into smaller workflows for better maintainability"
-    ]
-  },
-  "autonomous-deps-upgrade.yml": {
-    "name": "autonomous-deps-upgrade.yml",
-    "status": "active",
-    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-deps-upgrade.yml",
-    "size": 2442,
-    "lines": 76,
-    "triggers": [
-      "schedule",
-      "workflow_dispatch {}"
-    ],
-    "jobs": [
-      "schedule",
-      "jobs",
-      "deps-upgrade",
-      "steps",
-      "with",
-      "with",
-      "with",
-      "with"
-    ],
-    "timeouts": [
-      30
-    ],
-    "permissions": [
-      {
-        "permission": "contents",
-        "value": "write"
-      },
-      {
-        "permission": "pull-requests",
-        "value": "write"
-      }
-    ],
-    "concurrency": "automation-deps-upgrade",
-    "issues": [],
-    "recommendations": [
-      "Add workflow_dispatch trigger for manual testing",
-      "Consider splitting into smaller workflows for better maintainability"
-    ]
-  },
-  "autonomous-external-links.yml": {
-    "name": "autonomous-external-links.yml",
-    "status": "active",
-    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-external-links.yml",
-    "size": 1220,
-    "lines": 49,
-    "triggers": [
-      "schedule",
-      "workflow_dispatch {}"
-    ],
-    "jobs": [
-      "schedule",
-      "jobs",
-      "external-links",
-      "steps",
-      "with",
-      "with"
-    ],
-    "timeouts": [
-      20
-    ],
-    "permissions": [
-      {
-        "permission": "contents",
-        "value": "write"
       }
     ],
     "concurrency": "automation-external-links",
@@ -2890,14 +2890,17 @@
     "name": "autonomous-marketing-seo.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-marketing-seo.yml",
-    "size": 1442,
-    "lines": 54,
+    "size": 1949,
+    "lines": 70,
     "triggers": [
       "schedule",
       "workflow_dispatch {}"
     ],
     "jobs": [
       "schedule",
+      "branch_protection_rules",
+      "required_status_checks",
+      "required_pull_request_reviews",
       "jobs",
       "marketing-seo",
       "steps",
@@ -2911,6 +2914,66 @@
       {
         "permission": "contents",
         "value": "write"
+      },
+      {
+        "permission": "branch_protection_rules",
+        "value": ""
+      },
+      {
+        "permission": "- pattern",
+        "value": "\"main\""
+      },
+      {
+        "permission": "required_status_checks",
+        "value": ""
+      },
+      {
+        "permission": "strict",
+        "value": "true"
+      },
+      {
+        "permission": "contexts",
+        "value": "[]"
+      },
+      {
+        "permission": "required_pull_request_reviews",
+        "value": ""
+      },
+      {
+        "permission": "required_approving_review_count",
+        "value": "1"
+      },
+      {
+        "permission": "dismiss_stale_reviews",
+        "value": "true"
+      },
+      {
+        "permission": "require_code_owner_reviews",
+        "value": "false"
+      },
+      {
+        "permission": "enforce_admins",
+        "value": "false"
+      },
+      {
+        "permission": "required_linear_history",
+        "value": "false"
+      },
+      {
+        "permission": "allow_force_pushes",
+        "value": "false"
+      },
+      {
+        "permission": "allow_deletions",
+        "value": "false"
+      },
+      {
+        "permission": "block_creations",
+        "value": "false"
+      },
+      {
+        "permission": "required_conversation_resolution",
+        "value": "true"
       }
     ],
     "concurrency": "automation-marketing-seo",

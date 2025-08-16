@@ -8,7 +8,6 @@ on:
 permissions:
   contents: write
 
-
 concurrency:
   group: automation-marketing-seo
   cancel-in-progress: true

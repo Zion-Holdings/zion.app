@@ -8,7 +8,6 @@ on:
 permissions:
   contents: write
 
-
 concurrency:
   group: automation-content-curation
   cancel-in-progress: true
