@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-16T00:41:00.988Z",
-  "pagesScanned": 5754,
+  "generatedAt": "2025-08-16T00:42:01.108Z",
+  "pagesScanned": 5755,
   "items": [
     {
       "route": "/404",
@@ -303,7 +303,11 @@
     {
       "route": "/playground",
       "missing": [
-        "og:image"
+        "description",
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Component Playground",
@@ -55037,14 +55041,24 @@
     {
       "route": "/reports/updates/update-2025-08-15-2141",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 21:41",
+        "description": "Autonomous Update — 2025-08-15 21:41 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-2142",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-15 21:41",
-        "description": "Autonomous Update — 2025-08-15 21:41 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-15 21:42",
+        "description": "Autonomous Update — 2025-08-15 21:42 — auto-suggested description"
       }
     },
     {
