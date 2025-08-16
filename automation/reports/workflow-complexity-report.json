@@ -1,18 +1,18 @@
 {
-  "timestamp": "2025-08-16T22:11:26.355Z",
+  "timestamp": "2025-08-16T22:12:40.913Z",
   "summary": {
     "totalWorkflows": 187,
     "complexityDistribution": {
       "very-high": 0,
       "high": 6,
-      "medium": 2,
-      "low": 179
+      "medium": 3,
+      "low": 178
     },
     "refactoringPriorities": {
       "critical": 0,
       "high": 6,
-      "medium": 2,
-      "low": 179
+      "medium": 3,
+      "low": 178
     }
   },
   "workflows": {
@@ -3023,20 +3023,20 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/self-replicating-factory-manager.yml"
     },
     "seo-audit.yml": {
-      "complexityScore": 15,
-      "complexityLevel": "low",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 58,
+        "totalLines": 111,
         "jobCount": 0,
-        "stepCount": 7,
-        "conditionalCount": 2,
+        "stepCount": 12,
+        "conditionalCount": 4,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 0,
+        "secretCount": 1,
         "actionCount": 2
       },
-      "refactoringPriority": "low",
+      "refactoringPriority": "medium",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/seo-audit.yml"
     },

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T22:12:33.432Z",
+  "timestamp": "2025-08-16T22:12:43.111Z",
   "summary": {
     "totalWorkflows": 188,
     "activeWorkflows": 187,
@@ -30,6 +30,7 @@
       "agent-agent-1755379777752-5-testing-expert.yml",
       "agent-agent-1755379777754-6-backend-expert.yml",
       "agent-agent-1755379777755-7-backend-intermediate.yml",
+      "agent-agent-1755381089841-0-backend-expert.yml",
       "agent-agent-1755381089844-1-deployment-advanced.yml",
       "agent-agent-1755381089846-3-optimization-expert.yml",
       "agent-agent-1755381089846-4-testing-advanced.yml",
@@ -952,8 +953,8 @@
       "name": "agent-agent-1755381089841-0-backend-expert.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089841-0-backend-expert.yml",
-      "size": 502,
-      "lines": 15,
+      "size": 492,
+      "lines": 19,
       "triggers": [
         "workflow_dispatch",
         "schedule"
@@ -961,6 +962,7 @@
       "jobs": [
         "workflow_dispatch",
         "schedule",
+        "jobs",
         "agent-execution",
         "steps",
         "with"
@@ -7129,8 +7131,8 @@
       "name": "seo-audit.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/seo-audit.yml",
-      "size": 3457,
-      "lines": 111,
+      "size": 3586,
+      "lines": 116,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
@@ -8008,6 +8010,7 @@
         "Refactor agent-agent-1755379777752-5-testing-expert.yml into smaller, focused workflows",
         "Refactor agent-agent-1755379777754-6-backend-expert.yml into smaller, focused workflows",
         "Refactor agent-agent-1755379777755-7-backend-intermediate.yml into smaller, focused workflows",
+        "Refactor agent-agent-1755381089841-0-backend-expert.yml into smaller, focused workflows",
         "Refactor agent-agent-1755381089844-1-deployment-advanced.yml into smaller, focused workflows",
         "Refactor agent-agent-1755381089846-3-optimization-expert.yml into smaller, focused workflows",
         "Refactor agent-agent-1755381089846-4-testing-advanced.yml into smaller, focused workflows",
@@ -8284,6 +8287,7 @@
       "Refactor agent-agent-1755379777752-5-testing-expert.yml into smaller, focused workflows",
       "Refactor agent-agent-1755379777754-6-backend-expert.yml into smaller, focused workflows",
       "Refactor agent-agent-1755379777755-7-backend-intermediate.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755381089841-0-backend-expert.yml into smaller, focused workflows",
       "Refactor agent-agent-1755381089844-1-deployment-advanced.yml into smaller, focused workflows",
       "Refactor agent-agent-1755381089846-3-optimization-expert.yml into smaller, focused workflows",
       "Refactor agent-agent-1755381089846-4-testing-advanced.yml into smaller, focused workflows",

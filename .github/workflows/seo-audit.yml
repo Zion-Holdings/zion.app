@@ -37,6 +37,11 @@ jobs:
           mkdir -p public/reports/seo
           echo "Reports directory created"
 
+      - name: Set file permissions
+        run: |
+          chmod +x scripts/seo-audit.js
+          echo "File permissions set"
+
       - name: Generate SEO report
         id: seo_report
         run: |
