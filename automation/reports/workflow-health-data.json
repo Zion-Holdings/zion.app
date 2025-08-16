@@ -736,7 +736,7 @@
     "name": "agent-agent-1755381089846-4-testing-advanced.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089846-4-testing-advanced.yml",
-    "size": 546,
+    "size": 548,
     "lines": 23,
     "triggers": [
       "workflow_dispatch",

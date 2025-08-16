@@ -67,7 +67,7 @@ jobs:
 
       - name: Enable Auto-merge (squash)
         if: steps.pr.outputs.number
-        uses: peter-evans/enable-pull-request-automerge@v3
+        uses: peter-evans/enable-pull-request-automerge@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           pull-request-number: ${{ steps.pr.outputs.number }}

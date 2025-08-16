@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T22:02:32.318Z",
+  "timestamp": "2025-08-16T22:02:54.688Z",
   "summary": {
     "totalWorkflows": 188,
     "activeWorkflows": 113,
@@ -1029,7 +1029,7 @@
       "name": "agent-agent-1755381089846-4-testing-advanced.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089846-4-testing-advanced.yml",
-      "size": 546,
+      "size": 548,
       "lines": 23,
       "triggers": [
         "workflow_dispatch",

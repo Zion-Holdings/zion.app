@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T22:01:25.532Z",
+  "timestamp": "2025-08-16T22:02:36.763Z",
   "summary": {
     "totalWorkflows": 187,
     "complexityDistribution": {
@@ -452,9 +452,9 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 15,
+        "totalLines": 23,
         "jobCount": 0,
-        "stepCount": 1,
+        "stepCount": 4,
         "conditionalCount": 0,
         "matrixCount": 0,
         "dependencyCount": 0,
@@ -862,6 +862,24 @@
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-agent-orchestrator.yml"
     },
+    "autonomous-intelligence.yml": {
+      "complexityScore": 20,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 54,
+        "jobCount": 0,
+        "stepCount": 6,
+        "conditionalCount": 1,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 2,
+        "actionCount": 4
+      },
+      "refactoringPriority": "low",
+      "status": "disabled",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/autonomous-intelligence.yml"
+    },
     "broken-images.yml": {
       "complexityScore": 0,
       "complexityLevel": "low",
@@ -1023,6 +1041,24 @@
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cloud-orchestrator-plus.yml"
+    },
+    "codeql-analysis.yml": {
+      "complexityScore": 15,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 34,
+        "jobCount": 0,
+        "stepCount": 4,
+        "conditionalCount": 0,
+        "matrixCount": 1,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 4
+      },
+      "refactoringPriority": "low",
+      "status": "disabled",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/codeql-analysis.yml"
     },
     "codeql.yml": {
       "complexityScore": 15,
@@ -1347,6 +1383,24 @@
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/git-ultrafast-sync.yml"
+    },
+    "gitleaks.yml": {
+      "complexityScore": 0,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 45,
+        "jobCount": 0,
+        "stepCount": 4,
+        "conditionalCount": 2,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 3
+      },
+      "refactoringPriority": "low",
+      "status": "disabled",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/gitleaks.yml"
     },
     "guardian-scheduler.yml": {
       "complexityScore": 0,
@@ -2464,24 +2518,6 @@
       "status": "disabled",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/autonomous-image-optimizer.yml"
     },
-    "autonomous-intelligence.yml": {
-      "complexityScore": 20,
-      "complexityLevel": "low",
-      "metrics": {
-        "totalLines": 54,
-        "jobCount": 0,
-        "stepCount": 6,
-        "conditionalCount": 1,
-        "matrixCount": 0,
-        "dependencyCount": 0,
-        "environmentCount": 0,
-        "secretCount": 2,
-        "actionCount": 4
-      },
-      "refactoringPriority": "low",
-      "status": "disabled",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/autonomous-intelligence.yml"
-    },
     "autonomous-keepalive.yml": {
       "complexityScore": 0,
       "complexityLevel": "low",
@@ -2752,24 +2788,6 @@
       "status": "disabled",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/cleanup-merged-branches.yml"
     },
-    "codeql-analysis.yml": {
-      "complexityScore": 15,
-      "complexityLevel": "low",
-      "metrics": {
-        "totalLines": 34,
-        "jobCount": 0,
-        "stepCount": 4,
-        "conditionalCount": 0,
-        "matrixCount": 1,
-        "dependencyCount": 0,
-        "environmentCount": 0,
-        "secretCount": 0,
-        "actionCount": 4
-      },
-      "refactoringPriority": "low",
-      "status": "disabled",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/codeql-analysis.yml"
-    },
     "dependabot-auto-approve.yml": {
       "complexityScore": 0,
       "complexityLevel": "low",
@@ -2859,24 +2877,6 @@
       "refactoringPriority": "low",
       "status": "disabled",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/fast-lint-sync.yml"
-    },
-    "gitleaks.yml": {
-      "complexityScore": 0,
-      "complexityLevel": "low",
-      "metrics": {
-        "totalLines": 45,
-        "jobCount": 0,
-        "stepCount": 4,
-        "conditionalCount": 2,
-        "matrixCount": 0,
-        "dependencyCount": 0,
-        "environmentCount": 0,
-        "secretCount": 0,
-        "actionCount": 3
-      },
-      "refactoringPriority": "low",
-      "status": "disabled",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/gitleaks.yml"
     },
     "homepage-auto-advertiser.yml": {
       "complexityScore": 10,

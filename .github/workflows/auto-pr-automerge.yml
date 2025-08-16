@@ -101,7 +101,7 @@ jobs:
 
       - name: Enable auto-merge
         if: steps.cpr.outputs.pr_number
-        uses: peter-evans/enable-pull-request-automerge@v3
+        uses: peter-evans/enable-pull-request-automerge@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           pull-request-number: ${{ steps.cpr.outputs.pr_number }}

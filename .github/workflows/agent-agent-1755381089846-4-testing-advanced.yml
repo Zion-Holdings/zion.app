@@ -1,4 +1,4 @@
-name: Agent: agent-1755381089846-4-testing-advanced
+name: "Agent: agent-1755381089846-4-testing-advanced"
 on:
   workflow_dispatch:
   schedule:
@@ -20,4 +20,4 @@ jobs:
         run: npm ci
         
       - name: Run agent
-        run: node automation/agents/testing/agent-1755381089846-4-testing-advanced/index.cjs
+        run: node automation/agents/agent-1755381089846-4-testing-advanced.cjs
