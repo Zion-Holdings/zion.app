@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-16T01:09:00.821Z",
-  "pagesScanned": 5798,
+  "generatedAt": "2025-08-16T01:10:00.961Z",
+  "pagesScanned": 5801,
   "items": [
     {
       "route": "/404",
@@ -14779,6 +14779,16 @@
       }
     },
     {
+      "route": "/reports/cases/case-2025-08-16-010931",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Cloud Improving",
+        "description": "Case Study — Cloud Improving — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/dossiers/",
       "missing": [
         "og:image"
@@ -23850,6 +23860,16 @@
     },
     {
       "route": "/reports/guides/guide-2025-08-16-010043",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-16-010931",
       "missing": [
         "og:image"
       ],
@@ -37440,6 +37460,16 @@
     },
     {
       "route": "/reports/patterns/pattern-2025-08-16-010043",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Automation Trends 2025",
+        "description": "Pattern — Automation Trends 2025 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-16-010931",
       "missing": [
         "og:image"
       ],
@@ -55461,10 +55491,7 @@
     {
       "route": "/reports/updates/update-2025-08-15-2209",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-15 22:09",
