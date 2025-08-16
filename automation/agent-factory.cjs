@@ -288,7 +288,7 @@ class AgentFactory {
         yaml += `${spaces}${key}:\n`;
         for (const item of value) {
           if (typeof item === 'object') {
-            yaml += `${spaces}- ${this.convertToYaml(item, indent + 1).trim()}`;
+            yaml += `${spaces}- ${this.convertToYaml(item, indent + 1).trimStart()}`;
           } else {
             yaml += `${spaces}- ${item}\n`;
           }
