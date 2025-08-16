@@ -91,7 +91,7 @@ jobs:
           echo "" >> automation-dashboard.md
           
       - name: Upload dashboard
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: automation-dashboard
           path: automation-dashboard.md
