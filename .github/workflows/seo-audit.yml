@@ -3,7 +3,7 @@ name: SEO Audit
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '0 */2 * * *'  # Run every 2 hours instead of every 10 minutes
 
 permissions:
   contents: write
@@ -46,6 +46,11 @@ jobs:
         id: seo_report
         run: |
           echo "Starting SEO audit..."
+          echo "Node version: $(node --version)"
+          echo "NPM version: $(npm --version)"
+          echo "Current directory: $(pwd)"
+          echo "Script path: $(realpath scripts/seo-audit.js)"
+          
           if node scripts/seo-audit.js; then
             echo "SEO audit completed successfully"
             echo "::set-output name=status::success"

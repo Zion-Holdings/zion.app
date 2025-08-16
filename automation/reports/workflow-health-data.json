@@ -6835,8 +6835,8 @@
     "name": "seo-audit.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/seo-audit.yml",
-    "size": 3586,
-    "lines": 116,
+    "size": 3847,
+    "lines": 121,
     "triggers": [
       "workflow_dispatch {}",
       "schedule"

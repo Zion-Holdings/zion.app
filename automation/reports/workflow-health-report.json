@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T22:13:00.312Z",
+  "timestamp": "2025-08-16T22:13:33.002Z",
   "summary": {
     "totalWorkflows": 188,
     "activeWorkflows": 187,
@@ -7131,8 +7131,8 @@
       "name": "seo-audit.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/seo-audit.yml",
-      "size": 3586,
-      "lines": 116,
+      "size": 3847,
+      "lines": 121,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
