@@ -646,5 +646,17 @@
     "startTime": "2025-08-16T00:19:25.917Z",
     "status": "active",
     "filePath": "conv-1755303565917.json"
+  },
+  {
+    "id": "conv-1755303725575",
+    "type": "architecture-discussion",
+    "participants": [
+      "Backend Developer",
+      "DevOps Engineer",
+      "Security Expert"
+    ],
+    "startTime": "2025-08-16T00:22:05.575Z",
+    "status": "active",
+    "filePath": "conv-1755303725575.json"
   }
 ]
