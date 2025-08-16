@@ -1124,6 +1124,24 @@
     },
     "estimatedDuration": 20
   },
+  "codeql-analysis.yml": {
+    "name": "codeql-analysis.yml",
+    "triggers": [
+      "push",
+      "pull_request",
+      "schedule"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 20,
+      "concurrentJobs": 3
+    },
+    "estimatedDuration": 20
+  },
   "codeql.yml": {
     "name": "codeql.yml",
     "triggers": [
