@@ -2021,6 +2021,112 @@
       "Consider splitting into smaller workflows for better maintainability"
     ]
   },
+  "codeql-analysis.yml": {
+    "name": "codeql-analysis.yml",
+    "status": "disabled",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/codeql-analysis.yml",
+    "size": 755,
+    "lines": 34,
+    "triggers": [
+      "push",
+      "pull_request",
+      "schedule"
+    ],
+    "jobs": [
+      "push",
+      "pull_request",
+      "schedule",
+      "jobs",
+      "analyze",
+      "strategy",
+      "matrix",
+      "steps",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "actions",
+        "value": "read"
+      },
+      {
+        "permission": "contents",
+        "value": "read"
+      },
+      {
+        "permission": "security-events",
+        "value": "write"
+      },
+      {
+        "permission": "strategy",
+        "value": ""
+      },
+      {
+        "permission": "fail-fast",
+        "value": "false"
+      },
+      {
+        "permission": "matrix",
+        "value": ""
+      },
+      {
+        "permission": "language",
+        "value": "[ 'javascript' ]"
+      },
+      {
+        "permission": "steps",
+        "value": ""
+      },
+      {
+        "permission": "- name",
+        "value": "Checkout repository"
+      },
+      {
+        "permission": "uses",
+        "value": "actions/checkout@v4"
+      },
+      {
+        "permission": "- name",
+        "value": "Initialize CodeQL"
+      },
+      {
+        "permission": "uses",
+        "value": "github/codeql-action/init@v3"
+      },
+      {
+        "permission": "with",
+        "value": ""
+      },
+      {
+        "permission": "languages",
+        "value": "${{ matrix.language }}"
+      },
+      {
+        "permission": "- name",
+        "value": "Autobuild"
+      },
+      {
+        "permission": "uses",
+        "value": "github/codeql-action/autobuild@v3"
+      },
+      {
+        "permission": "- name",
+        "value": "Perform CodeQL Analysis"
+      },
+      {
+        "permission": "uses",
+        "value": "github/codeql-action/analyze@v3"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
   "codeql.yml": {
     "name": "codeql.yml",
     "status": "active",
@@ -6985,112 +7091,6 @@
       "Consider splitting into smaller workflows for better maintainability"
     ]
   },
-  "codeql-analysis.yml": {
-    "name": "codeql-analysis.yml",
-    "status": "disabled",
-    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows.disabled/codeql-analysis.yml",
-    "size": 755,
-    "lines": 34,
-    "triggers": [
-      "push",
-      "pull_request",
-      "schedule"
-    ],
-    "jobs": [
-      "push",
-      "pull_request",
-      "schedule",
-      "jobs",
-      "analyze",
-      "strategy",
-      "matrix",
-      "steps",
-      "with"
-    ],
-    "timeouts": [
-      20
-    ],
-    "permissions": [
-      {
-        "permission": "actions",
-        "value": "read"
-      },
-      {
-        "permission": "contents",
-        "value": "read"
-      },
-      {
-        "permission": "security-events",
-        "value": "write"
-      },
-      {
-        "permission": "strategy",
-        "value": ""
-      },
-      {
-        "permission": "fail-fast",
-        "value": "false"
-      },
-      {
-        "permission": "matrix",
-        "value": ""
-      },
-      {
-        "permission": "language",
-        "value": "[ 'javascript' ]"
-      },
-      {
-        "permission": "steps",
-        "value": ""
-      },
-      {
-        "permission": "- name",
-        "value": "Checkout repository"
-      },
-      {
-        "permission": "uses",
-        "value": "actions/checkout@v4"
-      },
-      {
-        "permission": "- name",
-        "value": "Initialize CodeQL"
-      },
-      {
-        "permission": "uses",
-        "value": "github/codeql-action/init@v3"
-      },
-      {
-        "permission": "with",
-        "value": ""
-      },
-      {
-        "permission": "languages",
-        "value": "${{ matrix.language }}"
-      },
-      {
-        "permission": "- name",
-        "value": "Autobuild"
-      },
-      {
-        "permission": "uses",
-        "value": "github/codeql-action/autobuild@v3"
-      },
-      {
-        "permission": "- name",
-        "value": "Perform CodeQL Analysis"
-      },
-      {
-        "permission": "uses",
-        "value": "github/codeql-action/analyze@v3"
-      }
-    ],
-    "concurrency": null,
-    "issues": [],
-    "recommendations": [
-      "Add workflow_dispatch trigger for manual testing",
-      "Consider splitting into smaller workflows for better maintainability"
-    ]
-  },
   "dependabot-auto-approve.yml": {
     "name": "dependabot-auto-approve.yml",
     "status": "disabled",
@@ -9374,6 +9374,7 @@
       "Refactor cloud-autonomous-orchestrator.yml into smaller, focused workflows",
       "Refactor cloud-deep-research.yml into smaller, focused workflows",
       "Refactor cloud-orchestrator-plus.yml into smaller, focused workflows",
+      "Refactor codeql-analysis.yml into smaller, focused workflows",
       "Refactor codeql.yml into smaller, focused workflows",
       "Refactor commit-message-lint.yml into smaller, focused workflows",
       "Refactor commitlint.yml into smaller, focused workflows",
@@ -9469,7 +9470,6 @@
       "Refactor ci-auto-heal.yml into smaller, focused workflows",
       "Refactor ci-merge-main.yml into smaller, focused workflows",
       "Refactor cleanup-merged-branches.yml into smaller, focused workflows",
-      "Refactor codeql-analysis.yml into smaller, focused workflows",
       "Refactor dependabot-auto-approve.yml into smaller, focused workflows",
       "Refactor ephemeral-branch-autorebase.yml into smaller, focused workflows",
       "Refactor fast-auto-push-to-main.yml into smaller, focused workflows",
