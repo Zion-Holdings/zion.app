@@ -9168,6 +9168,12 @@
     "issues": []
   },
   {
+    "file": "/reports/cases/case-2025-08-16-173543.tsx",
+    "title": "Case Study — Cloud Improving",
+    "description": "Pragmatic case scenario inspired by live site signals.",
+    "issues": []
+  },
+  {
     "file": "/reports/dossiers/index.tsx",
     "title": "Dossiers | Zion Tech Group",
     "description": "Browse our collection of dossiers and insights.",
@@ -14880,6 +14886,12 @@
   {
     "file": "/reports/guides/guide-2025-08-16-172403.tsx",
     "title": "Guide — Zion Tech Implementation",
+    "description": "Step-by-step guidance derived from live research signals.",
+    "issues": []
+  },
+  {
+    "file": "/reports/guides/guide-2025-08-16-173543.tsx",
+    "title": "Guide — Cloud Improving Implementation",
     "description": "Step-by-step guidance derived from live research signals.",
     "issues": []
   },
@@ -23804,6 +23816,12 @@
   {
     "file": "/reports/patterns/pattern-2025-08-16-172403.tsx",
     "title": "Pattern — Cloud Improving Continuously",
+    "description": "Actionable architectural pattern synthesized from live site signals.",
+    "issues": []
+  },
+  {
+    "file": "/reports/patterns/pattern-2025-08-16-173543.tsx",
+    "title": "Pattern — Automation Trends 2025",
     "description": "Actionable architectural pattern synthesized from live site signals.",
     "issues": []
   },
