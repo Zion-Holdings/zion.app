@@ -24,6 +24,7 @@ permissions:
       block_creations: false
       required_conversation_resolution: true
 
+
 concurrency:
   group: automation-quick-fixes
   cancel-in-progress: true

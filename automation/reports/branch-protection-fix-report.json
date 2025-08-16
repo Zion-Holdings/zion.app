@@ -1,25 +1,13 @@
 {
-  "timestamp": "2025-08-16T22:25:41.612Z",
+  "timestamp": "2025-08-16T22:26:57.826Z",
   "summary": {
-    "totalWorkflows": 4,
-    "fixed": 4,
+    "totalWorkflows": 1,
+    "fixed": 1,
     "failed": 0
   },
   "fixedWorkflows": [
     {
-      "name": "autonomous-content-curation.yml",
-      "status": "active"
-    },
-    {
-      "name": "autonomous-deep-maintenance.yml",
-      "status": "active"
-    },
-    {
-      "name": "autonomous-external-links.yml",
-      "status": "active"
-    },
-    {
-      "name": "autonomous-marketing-seo.yml",
+      "name": "autonomous-quick-fixes.yml",
       "status": "active"
     }
   ],

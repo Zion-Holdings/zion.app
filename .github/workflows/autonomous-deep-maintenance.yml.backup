@@ -8,6 +8,7 @@ on:
 permissions:
   contents: write
 
+
 concurrency:
   group: automation-deep-maintenance
   cancel-in-progress: true
