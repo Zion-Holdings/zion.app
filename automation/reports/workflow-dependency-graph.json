@@ -290,10 +290,7 @@
   },
   "agent-agent-1755379777751-4-optimization-advanced.yml": {
     "name": "agent-agent-1755379777751-4-optimization-advanced.yml",
-    "triggers": [
-      "workflow_dispatch",
-      "schedule"
-    ],
+    "triggers": [],
     "needs": [],
     "outputs": [],
     "priority": "medium",
@@ -301,9 +298,9 @@
       "runner": "ubuntu-latest",
       "memory": "standard",
       "timeout": 30,
-      "concurrentJobs": 3
+      "concurrentJobs": 1
     },
-    "estimatedDuration": 25
+    "estimatedDuration": 15
   },
   "agent-agent-1755379777752-5-testing-expert.yml": {
     "name": "agent-agent-1755379777752-5-testing-expert.yml",
