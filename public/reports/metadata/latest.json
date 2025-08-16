@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-16T00:00:01.180Z",
-  "pagesScanned": 5673,
+  "generatedAt": "2025-08-16T00:01:00.895Z",
+  "pagesScanned": 5682,
   "items": [
     {
       "route": "/404",
@@ -6266,6 +6266,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-15-235033",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-16-000033",
       "missing": [
         "og:image"
       ],
@@ -23675,6 +23685,16 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-16-000033",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Autonomous Update Implementation",
+        "description": "Guide — Autonomous Update Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-15-0211",
       "missing": [
         "og:image"
@@ -28052,6 +28072,26 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-15 23-50",
         "description": "Innovation Insight — 2025-08-15 23-50 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-16-0000",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Runbook: AI QA & Eval",
+        "description": "Runbook: AI QA & Eval — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-16T00-00",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-16 00-00",
+        "description": "Innovation Insight — 2025-08-16 00-00 — auto-suggested description"
       }
     },
     {
@@ -37035,6 +37075,16 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-16-000033",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Improving Continuously",
+        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-15-021207",
       "missing": [
         "og:image"
@@ -42976,6 +43026,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-15-235034",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-16-000033",
       "missing": [
         "og:image"
       ],
@@ -54295,6 +54355,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-15-2101",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-15 21:01",
+        "description": "Autonomous Update — 2025-08-15 21:01 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-15-2110",
       "missing": [
         "og:image"
@@ -56672,6 +56745,26 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-15 23-50",
         "description": "Autonomous Update — 2025-08-15 23-50 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-16-0000",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Reference Architecture — AI Service Design (2025-08-16 00:00 UTC)",
+        "description": "Autonomous Reference Architecture — AI Service Design (2025-08-16 00:00 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-16T00-00",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-16 00-00",
+        "description": "Autonomous Update — 2025-08-16 00-00 — auto-suggested description"
       }
     },
     {
