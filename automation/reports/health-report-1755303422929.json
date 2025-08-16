@@ -1,0 +1,53 @@
+{
+  "timestamp": "2025-08-16T00:17:02.929Z",
+  "totalSystems": 5,
+  "runningSystems": 2,
+  "stoppedSystems": 3,
+  "errorSystems": 0,
+  "systems": {
+    "dependency-health": {
+      "name": "Dependency Health Checker",
+      "status": "running",
+      "lastRun": "2025-08-16T00:17:02.922Z",
+      "nextRun": null,
+      "priority": "critical",
+      "safeMode": true
+    },
+    "workflow-standardization": {
+      "name": "Workflow Template Standardizer (Safe Mode)",
+      "status": "stopped",
+      "lastRun": null,
+      "nextRun": null,
+      "priority": "high",
+      "safeMode": true
+    },
+    "smart-dispatch": {
+      "name": "Smart Workflow Dispatcher",
+      "status": "running",
+      "lastRun": "2025-08-16T00:17:02.927Z",
+      "nextRun": null,
+      "priority": "medium",
+      "safeMode": true
+    },
+    "security-monitor": {
+      "name": "Security Monitor",
+      "status": "stopped",
+      "lastRun": null,
+      "nextRun": null,
+      "priority": "high",
+      "safeMode": true
+    },
+    "performance-optimizer": {
+      "name": "Performance Optimizer",
+      "status": "stopped",
+      "lastRun": null,
+      "nextRun": null,
+      "priority": "medium",
+      "safeMode": true
+    }
+  },
+  "recentExecutions": [],
+  "recommendations": [
+    "Consider starting 3 stopped systems"
+  ]
+}

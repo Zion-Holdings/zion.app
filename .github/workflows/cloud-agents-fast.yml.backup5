@@ -1,0 +1,35 @@
+name: Cloud Agents Fast Loop
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  run-fast-loop:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - name: Run continuous fast loop for ~30 min
+        env:
+          CANONICAL_URL: https://ziontechgroup.com
+        run: |
+          nohup node scripts/continuous-cloud-agents.cjs &
+          sleep 1800
+      - name: Commit and push
+        run: |
+          git config user.name "zion-cloud-agents"
+          git config user.email "cloud-agents@users.noreply.github.com"
+          git add -A
+          if git diff --staged --quiet; then echo "No changes"; else git commit -m "chore(cloud): fast-loop content update"; fi
+          git push || true
+
+

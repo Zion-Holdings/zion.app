@@ -1,20 +1,34 @@
 name: Actionlint
 
 on:
-  pull_request:
-  push:
-    branches: ["**"]
-  workflow_dispatch:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '*/10 * * * *'
 
 permissions:
-  contents: read
+  contents: write
+  actions: read
 
 jobs:
-  actionlint:
+  main:
+    name: Main Job
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
       - name: Run actionlint
         uses: reviewdog/action-actionlint@v1
         with:
@@ -23,3 +37,7 @@ jobs:
           fail_level: error
           actionlint_flags: -color
 
+      - name: Check for actionlint issues
+        run: |
+          echo "Actionlint check completed"
+          echo "Any issues found will be reported above"

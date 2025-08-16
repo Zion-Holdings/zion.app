@@ -1,0 +1,153 @@
+name: PR Quality Gate
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '*/10 * * * *'
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  main:
+    name: Main Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+            - name: Checkout
+              uses: actions/checkout@v4
+              with:
+                fetch-depth: 0
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                node-version: '20'
+                cache: 'npm'
+            - name: Install dependencies
+              run: npm ci
+            - name: Run ESLint
+              run: npm run lint
+            - name: Run TypeScript check
+              run: npm run type-check
+            - name: Check code formatting
+              run: |
+                npm run lint -- --check || true
+                npx prettier --check . || true
+            - name: Check for security issues
+              run: npm run security:scan || true
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                node-version: '20'
+                cache: 'npm'
+            - name: Install dependencies
+              run: npm ci
+            - name: Run unit tests
+              run: npm test
+            - name: Run integration tests
+              run: npm run test:integration || true
+            - name: Run E2E tests
+              run: npm run test:e2e || true
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                node-version: '20'
+                cache: 'npm'
+            - name: Install dependencies
+              run: npm ci
+            - name: Build application
+              run: npm run build
+            - name: Check build output
+              run: |
+                if [ -d ".next" ]; then
+                  echo "✅ Build successful"
+                else
+                  echo "❌ Build failed"
+                  exit 1
+                fi
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                node-version: '20'
+                cache: 'npm'
+            - name: Install dependencies
+              run: npm ci
+            - name: Check for outdated dependencies
+              run: npm outdated || echo "All dependencies are up to date"
+            - name: Security audit
+              run: npm audit --audit-level=moderate
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                node-version: '20'
+                cache: 'npm'
+            - name: Install dependencies
+              run: npm ci
+            - name: Build application
+              run: npm run build
+            - name: Run Lighthouse CI
+              run: npm run lighthouse || true
+            - name: Check bundle size
+              run: |
+                npm run build:analyze || true
+                echo "Bundle size analysis completed"
+            - name: Comment on PR
+              uses: actions/github-script@v6
+              with:
+                script: |
+                  const { data: checks } = await github.rest.checks.listForRef({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    ref: context.payload.pull_request.head.sha,
+                  });
+                  
+                  const failedChecks = checks.check_runs.filter(check => check.conclusion === 'failure');
+                  const successfulChecks = checks.check_runs.filter(check => check.conclusion === 'success');
+                  
+                  let comment = `## 🔍 PR Quality Gate Results\n\n`;
+                  comment += `**Status:** ${failedChecks.length > 0 ? '❌ Failed' : '✅ Passed'}\n\n`;
+                  comment += `**Checks Summary:**\n`;
+                  comment += `- ✅ Successful: ${successfulChecks.length}\n`;
+                  comment += `- ❌ Failed: ${failedChecks.length}\n\n`;
+                  
+                  if (failedChecks.length > 0) {
+                    comment += `**Failed Checks:**\n`;
+                    failedChecks.forEach(check => {
+                      comment += `- \`${check.name}\` - ${check.conclusion}\n`;
+                    });
+                    comment += `\nPlease fix the failing checks before merging.\n`;
+                  } else {
+                    comment += `🎉 All quality checks passed! This PR is ready for review.\n`;
+                  }
+                  
+                  comment += `\n---\n*Auto-generated by GitHub Actions*`;
+                  
+                  await github.rest.issues.createComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: context.payload.pull_request.number,
+                    body: comment,
+                  });
