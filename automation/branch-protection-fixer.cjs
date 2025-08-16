@@ -159,6 +159,7 @@ class BranchProtectionFixer {
     return updatedContent;
   }
 
+  /*
   addBranchProtectionRules(content) {
     // Add branch protection rules if they don't exist
     if (content.includes('branch_protection_rules:')) {
@@ -197,6 +198,7 @@ class BranchProtectionFixer {
     
     return content;
   }
+  */
 
   addPullRequestRequirement(content) {
     // Add pull request requirement if not present
