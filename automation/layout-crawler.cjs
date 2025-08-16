@@ -61,6 +61,25 @@ function collectRoutes() {
 
 function ts() { return new Date().toISOString().replace(/[:.]/g, '-'); }
 
+async function extractAnchors(page, baseURL) {
+	const origin = new URL(baseURL).origin;
+	const links = await page.evaluate(() => Array.from(document.querySelectorAll('a[href]')).map(a => a.getAttribute('href') || ''));
+	const siteRelative = new Set();
+	for (const href of links) {
+		if (!href) continue;
+		if (href.startsWith('#')) continue;
+		const lower = href.toLowerCase();
+		if (lower.startsWith('mailto:') || lower.startsWith('tel:') || lower.startsWith('javascript:')) continue;
+		try {
+			const u = new URL(href, origin);
+			if (u.origin !== origin) continue;
+			const pathOnly = u.pathname.replace(/\/$/, '') || '/';
+			siteRelative.add(pathOnly);
+		} catch (_) { /* ignore */ }
+	}
+	return Array.from(siteRelative);
+}
+
 async function auditRoute(page, baseURL, route) {
 	const url = new URL(route, baseURL).toString();
 	const consoleErrors = [];
@@ -125,17 +144,31 @@ async function auditRoute(page, baseURL, route) {
 
 (async function main() {
 	const baseURL = process.env.BASE_URL || process.env.PLAYWRIGHT_BASE_URL || 'http://localhost:3000';
-	const routes = collectRoutes();
+	const maxPages = Number(process.env.LAYOUT_MAX_PAGES || 150);
+	const failThreshold = process.env.LAYOUT_FAIL_THRESHOLD ? Number(process.env.LAYOUT_FAIL_THRESHOLD) : null; // 0..1
+
+	const seeded = collectRoutes();
 	const browser = await chromium.launch({ headless: true });
 	const context = await browser.newContext();
 	const page = await context.newPage();
 
+	const queue = Array.from(seeded);
+	const seen = new Set();
 	const results = [];
-	for (const route of routes) {
+
+	while (queue.length && results.length < maxPages) {
+		const route = queue.shift();
+		if (!route || seen.has(route)) continue;
+		seen.add(route);
 		try {
 			const r = await auditRoute(page, baseURL, route);
 			results.push(r);
 			console.log(`[layout] ${route} status=${r.status} overflow=${r.horizontalOverflow} missingImgDim=${r.images.withoutDimensionsCount}`);
+			// BFS discover anchors from this page and enqueue
+			const anchors = await extractAnchors(page, baseURL);
+			for (const a of anchors) {
+				if (!seen.has(a)) queue.push(a);
+			}
 		} catch (e) {
 			console.error(`[layout] ERROR route=${route}:`, e.message);
 			results.push({ route, url: new URL(route, baseURL).toString(), status: null, error: String(e.message), consoleErrors: [], horizontalOverflow: null });
@@ -144,11 +177,20 @@ async function auditRoute(page, baseURL, route) {
 
 	await browser.close();
 
-	const report = { generatedAt: new Date().toISOString(), baseURL, totalRoutes: routes.length, results };
+	const report = { generatedAt: new Date().toISOString(), baseURL, totalRoutes: results.length, results };
 	const outFile = path.join(REPORT_DIR, `layout-report-${ts()}.json`);
 	fs.writeFileSync(outFile, JSON.stringify(report, null, 2));
 	console.log(`Layout audit report saved to ${outFile}`);
 
-	// Also write/refresh a latest pointer for convenience
 	fs.writeFileSync(path.join(REPORT_DIR, 'latest.json'), JSON.stringify({ path: outFile }, null, 2));
+
+	if (failThreshold !== null) {
+		const overflowCount = results.filter((r) => r && r.horizontalOverflow === true).length;
+		const ratio = results.length ? (overflowCount / results.length) : 0;
+		console.log(`[layout] overflow ratio ${(ratio * 100).toFixed(1)}% (threshold ${(failThreshold * 100).toFixed(1)}%)`);
+		if (ratio > failThreshold) {
+			console.error(`[layout] Failing due to overflow ratio ${(ratio * 100).toFixed(1)}% > ${(failThreshold * 100).toFixed(1)}%`);
+			process.exit(2);
+		}
+	}
 })();

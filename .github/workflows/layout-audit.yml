@@ -14,6 +14,10 @@ on:
 jobs:
   audit:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -49,3 +53,10 @@ jobs:
           message: |
             Layout audit completed. Artifacts uploaded as 'layout-audit-report'.
             If issues were detected, see suggestions in data/reports/agent-suggestions.
+      - name: Create Issue on Schedule
+        if: github.event_name == 'schedule'
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: 'Layout Audit: Agent Factory Proposals'
+          content-filepath: data/reports/agent-suggestions/latest.md
+          labels: 'automation, layout'

@@ -102,6 +102,8 @@ function groupByRoute(suggestions) {
 	}
 
 	const out = path.join(OUT_DIR, `layout-agent-proposals-${new Date().toISOString().replace(/[:.]/g, '-')}.md`);
+	const latest = path.join(OUT_DIR, 'latest.md');
 	fs.writeFileSync(out, issueBody.join('\n'));
+	fs.writeFileSync(latest, issueBody.join('\n'));
 	console.log(`Agent factory proposal written to ${out}`);
 })();
