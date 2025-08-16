@@ -514,5 +514,17 @@
     "startTime": "2025-08-16T00:06:53.564Z",
     "status": "active",
     "filePath": "conv-1755302813563.json"
+  },
+  {
+    "id": "conv-1755302815567",
+    "type": "deployment-planning",
+    "participants": [
+      "DevOps Engineer",
+      "Backend Developer",
+      "Security Expert"
+    ],
+    "startTime": "2025-08-16T00:06:55.567Z",
+    "status": "active",
+    "filePath": "conv-1755302815567.json"
   }
 ]
