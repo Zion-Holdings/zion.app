@@ -782,7 +782,7 @@ const APIDocumentation: React.FC = () => {
                       <div>curl -X POST https://api.zion.app/api/v1/users \</div>
                       <div>     -H "Authorization: Bearer YOUR_TOKEN" \</div>
                       <div>     -H "Content-Type: application/json" \</div>
-                      <div>     -d '{"username": "john.doe", "email": "john@example.com"}'</div>
+                      <div>     -d &apos;&#123;&quot;username&quot;: &quot;john.doe&quot;, &quot;email&quot;: &quot;john@example.com&quot;&#125;&apos;</div>
                     </div>
                   </div>
                 </div>
@@ -1134,7 +1134,7 @@ const APIDocumentation: React.FC = () => {
                                   <div key={key}>  -H '{key}: {value}' \</div>
                                 ))}
                                 {example.request.body && (
-                                  <div>  -d '{JSON.stringify(example.request.body)}'</div>
+                                  <div>  -d &apos;{JSON.stringify(example.request.body)}&apos;</div>
                                 )}
                               </div>
                             </div>
