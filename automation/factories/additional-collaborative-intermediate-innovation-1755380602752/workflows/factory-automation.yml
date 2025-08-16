@@ -1,0 +1,16 @@
+name: 🤖 additional-collaborative-intermediate-innovation-1755380602752 - Autonomous Factory Automation
+
+on:
+  schedule:
+    - cron: '0 */2 * * *' # Every 2 hours
+  workflow_dispatch:
+
+jobs:
+  autonomous-operation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run autonomous factory
+        run: |
+          cd automation/factories/additional-collaborative-intermediate-innovation-1755380602752
+          node autonomous-agent-factory.cjs

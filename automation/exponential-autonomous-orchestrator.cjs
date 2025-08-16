@@ -749,7 +749,7 @@ node autonomous-agent-factory.cjs
     };
     
     fs.writeFileSync(
-      path.join(this.appRoot, 'automation', 'config', 'quantum-optimization.json'),
+      path.join(this.appRoot, 'config', 'quantum-optimization.json'),
       JSON.stringify(quantumConfig, null, 2)
     );
   }

@@ -3249,6 +3249,46 @@
       "Consider splitting into smaller workflows for better maintainability"
     ]
   },
+  "performance-monitoring.yml": {
+    "name": "performance-monitoring.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/performance-monitoring.yml",
+    "size": 3741,
+    "lines": 129,
+    "triggers": [
+      "workflow_dispatch",
+      "schedule",
+      "push"
+    ],
+    "jobs": [
+      "workflow_dispatch",
+      "schedule",
+      "push",
+      "paths",
+      "jobs",
+      "performance-audit",
+      "steps",
+      "with",
+      "with",
+      "with",
+      "with",
+      "bundle-optimization",
+      "steps",
+      "with",
+      "with",
+      "performance-alerts",
+      "steps",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
   "pin-actions-weekly.yml": {
     "name": "pin-actions-weekly.yml",
     "status": "active",
@@ -8966,6 +9006,7 @@
       "Add timeout-minutes to exponential-ai-delegation.yml",
       "Add timeout-minutes to intelligent-content-generation.yml",
       "Add timeout-minutes to netlify-automation.yml",
+      "Add timeout-minutes to performance-monitoring.yml",
       "Add timeout-minutes to self-replicating-factory-manager.yml",
       "Add timeout-minutes to homepage-auto-update.yml"
     ],
@@ -9089,6 +9130,7 @@
       "Refactor netlify-functions-trigger.yml into smaller, focused workflows",
       "Refactor og-image-refresh.yml into smaller, focused workflows",
       "Refactor pa11y.yml into smaller, focused workflows",
+      "Refactor performance-monitoring.yml into smaller, focused workflows",
       "Refactor pin-actions-weekly.yml into smaller, focused workflows",
       "Refactor playwright-smoke.yml into smaller, focused workflows",
       "Refactor pr-auto-curator.yml into smaller, focused workflows",
