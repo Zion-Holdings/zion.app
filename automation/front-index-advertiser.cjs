@@ -9,6 +9,7 @@ const ROOT = process.cwd();
 const FRONT_PAGE = path.join(ROOT, 'pages', 'main', 'front', 'index.tsx');
 const START_MARKER = '/* AUTO-GENERATED: FRONT_ADS_START */';
 const END_MARKER = '/* AUTO-GENERATED: FRONT_ADS_END */';
+const REGISTRY_PATH = path.join(ROOT, 'public', 'automation', 'content-registry.json');
 
 function titleCase(slug) {
   return slug
@@ -92,6 +93,58 @@ function discoverExternalLinks() {
   ];
 }
 
+function loadRegistry() {
+  try {
+    const raw = JSON.parse(fs.readFileSync(REGISTRY_PATH, 'utf8'));
+    return raw && Array.isArray(raw.pages) ? raw.pages : [];
+  } catch {
+    return [];
+  }
+}
+
+function scoreEntry(entry) {
+  const freshnessDays = (Date.now() - new Date(entry.lastmod || 0).getTime()) / (1000 * 60 * 60 * 24);
+  const freshnessBoost = Math.max(0, 1 - Math.min(freshnessDays / 30, 1));
+  const basePriority = typeof entry.priority === 'number' ? entry.priority : 0.5;
+  return basePriority * 0.7 + freshnessBoost * 0.3;
+}
+
+function buildItemsFromRegistry() {
+  const pages = loadRegistry()
+    .filter(p => p.route && p.route !== '/front' && p.route !== '/main/front')
+    .filter(p => !/\[(slug|id|.+)\]/.test(p.route));
+
+  // Prefer key hubs and content types
+  const preferred = new Set(['/automation', '/site-health', '/newsroom', '/reports', '/content-hub', '/search']);
+  const boosted = pages.map(p => ({
+    ...p,
+    _score: scoreEntry(p) + (preferred.has(p.route) ? 0.2 : 0)
+  }));
+
+  // Diversity by tag
+  const seenTags = new Set();
+  const selected = [];
+  for (const p of boosted.sort((a,b) => b._score - a._score)) {
+    const key = (p.tags && p.tags[0]) || p.type || 'misc';
+    if (selected.length >= 16) break;
+    if (!seenTags.has(key) || selected.length < 8) {
+      seenTags.add(key);
+      selected.push({ type: 'internal', href: p.route, label: p.title || p.route, tagline: p.description || (p.tags && p.tags.join(', ')) || '' });
+    }
+  }
+
+  // Fallbacks if needed
+  if (selected.length < 8) {
+    const fallback = discoverInternalPages();
+    for (const f of fallback) {
+      if (selected.length >= 16) break;
+      if (!selected.find(x => x.href === f.href)) selected.push(f);
+    }
+  }
+
+  return selected.slice(0, 16);
+}
+
 function buildCard(item) {
   const common = 'group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo';
   const inner = `\n  <div className=\"text-base font-semibold\">${item.label}</div>\n  <div className=\"mt-1 text-sm text-white/75\">${item.tagline || ''}</div>\n`;
@@ -129,10 +182,10 @@ function replaceBetweenMarkers(source, startMarker, endMarker, replacement) {
     console.log('Front page not found, skipping');
     process.exit(0);
   }
-  const internal = discoverInternalPages();
-  const external = discoverExternalLinks();
-  const combined = [...internal, ...external].slice(0, 16);
-  const block = generateSection(combined);
+  // Prefer registry when available
+  const fromRegistry = buildItemsFromRegistry();
+  const items = fromRegistry && fromRegistry.length ? fromRegistry : [...discoverInternalPages(), ...discoverExternalLinks()].slice(0, 16);
+  const block = generateSection(items);
   const original = fs.readFileSync(FRONT_PAGE, 'utf8');
   let updated;
   try {
