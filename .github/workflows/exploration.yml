@@ -1,0 +1,36 @@
+name: Exploration & Intel
+on:
+  schedule:
+    - cron: "49 3 * * 1,4"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  crawl-and-propose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install crawler deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4
+      - name: Crawl the web
+        run: |
+          python ./crawl_links.py --out automation/analytics/external-links.json || true
+      - name: Generate ideas from intel
+        run: |
+          node scripts/idea-generator.cjs automation/analytics/external-links.json > automation/cursor-agents/generated-ideas.json
+      - name: Open PR with new blueprints
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: "agents/new-blueprints-${{ github.run_id }}"
+          title: "New agent blueprints from exploration"
+          body: "Adds/updates agent blueprints based on competitive intel."
+          commit-message: "chore: add agent blueprints"
+          labels: agents, exploration

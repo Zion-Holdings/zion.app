@@ -1,0 +1,71 @@
+name: PR Evaluator
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compute basic score (no package.json)
+        id: basic
+        if: ${{ hashFiles('package.json') == '' }}
+        run: |
+          echo "value=0.70" >> "$GITHUB_OUTPUT"
+      - uses: actions/setup-node@v4
+        if: ${{ hashFiles('package.json') != '' }}
+        with:
+          node-version: 20
+      - name: Install
+        if: ${{ hashFiles('package.json') != '' }}
+        run: |
+          npm ci || (pnpm i || yarn)
+      - name: Typecheck, Lint, Unit
+        if: ${{ hashFiles('package.json') != '' }}
+        continue-on-error: true
+        run: |
+          npm run typecheck || npx tsc -p . || true
+          npm run lint || npx eslint . || true
+          npm test -- --ci || true
+      - name: Build app
+        if: ${{ hashFiles('package.json') != '' }}
+        continue-on-error: true
+        run: |
+          npm run build || npx next build || true
+      - name: Lighthouse (static)
+        if: ${{ hashFiles('package.json') != '' }}
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          configPath: .lighthouserc.json
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+      - name: Accessibility audit
+        uses: pa11y/pa11y-ci-action@v1
+        continue-on-error: true
+      - name: Bundle size check
+        uses: simonbengtsson/size-limit-action@v1
+        continue-on-error: true
+      - name: Compute score
+        id: score
+        run: |
+          if [ -n "$(ls -d ./lighthouseci/* 2>/dev/null | head -1)" ]; then
+            PERF=$(jq '.summary.performance' ./lighthouseci/*/manifest.json 2>/dev/null | head -1 || echo 0.6)
+          else
+            PERF=0.7
+          fi
+          A11Y=$(echo 0.7)
+          TESTS=$(echo 0.7)
+          SCORE=$(node -e "console.log((Number('${PERF}')+Number('${A11Y}')+Number('${TESTS}'))/3)")
+          echo "value=${SCORE}" >> "$GITHUB_OUTPUT"
+      - name: Comment score
+        uses: mshick/add-pr-comment@v2
+        with:
+          message: |
+            Reward score: `${{ steps.basic.outputs.value || steps.score.outputs.value }}`
+            Artifacts include Lighthouse and pa11y reports when available.

@@ -1,0 +1,38 @@
+name: Auto-merge if Better
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  decide-and-merge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        id: baseline
+        with:
+          script: |
+            return { baseline: 0.70 }
+      - uses: actions/github-script@v7
+        id: readScore
+        with:
+          script: |
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number
+            });
+            const text = comments.map(c => c.body).join('\n');
+            const m = text.match(/Reward score:\s*`([\d\.]+)`/);
+            return { score: m ? parseFloat(m[1]) : 0.0 }
+      - name: Merge if improved (pascalgn)
+        if: ${{ fromJSON(steps.readScore.outputs.result).score > fromJSON(steps.baseline.outputs.result).baseline }}
+        uses: pascalgn/automerge-action@v0.16.3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MERGE_DELETE_BRANCH: "true"
+          MERGE_METHOD: "squash"
