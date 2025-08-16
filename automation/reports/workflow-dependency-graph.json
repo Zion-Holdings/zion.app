@@ -33,6 +33,30 @@
     },
     "estimatedDuration": 20
   },
+  "agent-factory-automation.yml": {
+    "name": "agent-factory-automation.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch",
+      "push"
+    ],
+    "needs": [
+      "generate-agents",
+      "[generate-agents",
+      "deploy-agents",
+      "optimize-agents]",
+      "monitor-growth"
+    ],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 30,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 25
+  },
   "agent-of-agents-trigger.yml": {
     "name": "agent-of-agents-trigger.yml",
     "triggers": [
@@ -612,6 +636,24 @@
       "concurrentJobs": 4
     },
     "estimatedDuration": 20
+  },
+  "exponential-ai-delegation.yml": {
+    "name": "exponential-ai-delegation.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}",
+      "push"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 30,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 25
   },
   "external-links.yml": {
     "name": "external-links.yml",

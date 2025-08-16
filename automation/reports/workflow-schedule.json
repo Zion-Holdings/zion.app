@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T21:19:48.461Z",
+  "timestamp": "2025-08-16T21:22:48.571Z",
   "critical": [
     {
       "name": "auto-heal-workflows.yml",
@@ -1450,6 +1450,52 @@
         "workflow_dispatch {}"
       ],
       "resourceScore": 110
+    },
+    {
+      "name": "agent-factory-automation.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-factory-automation.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 25,
+      "concurrentJobs": 28,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [
+        "generate-agents",
+        "[generate-agents",
+        "deploy-agents",
+        "optimize-agents]",
+        "monitor-growth"
+      ],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch",
+        "push"
+      ],
+      "resourceScore": 105
+    },
+    {
+      "name": "exponential-ai-delegation.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/exponential-ai-delegation.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 25,
+      "concurrentJobs": 14,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch {}",
+        "push"
+      ],
+      "resourceScore": 105
     },
     {
       "name": "netlify-automation.yml",

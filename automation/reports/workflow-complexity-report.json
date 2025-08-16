@@ -1,17 +1,17 @@
 {
-  "timestamp": "2025-08-16T21:19:40.286Z",
+  "timestamp": "2025-08-16T21:22:40.565Z",
   "summary": {
-    "totalWorkflows": 149,
+    "totalWorkflows": 151,
     "complexityDistribution": {
       "very-high": 0,
-      "high": 1,
-      "medium": 0,
+      "high": 2,
+      "medium": 1,
       "low": 148
     },
     "refactoringPriorities": {
       "critical": 0,
-      "high": 1,
-      "medium": 0,
+      "high": 2,
+      "medium": 1,
       "low": 148
     }
   },
@@ -51,6 +51,24 @@
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/actions-keepalive.yml"
+    },
+    "agent-factory-automation.yml": {
+      "complexityScore": 55,
+      "complexityLevel": "high",
+      "metrics": {
+        "totalLines": 511,
+        "jobCount": 0,
+        "stepCount": 20,
+        "conditionalCount": 1,
+        "matrixCount": 2,
+        "dependencyCount": 3,
+        "environmentCount": 0,
+        "secretCount": 1,
+        "actionCount": 7
+      },
+      "refactoringPriority": "high",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-factory-automation.yml"
     },
     "agent-of-agents-trigger.yml": {
       "complexityScore": 0,
@@ -663,6 +681,24 @@
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/emergency-fix.yml"
+    },
+    "exponential-ai-delegation.yml": {
+      "complexityScore": 30,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 180,
+        "jobCount": 0,
+        "stepCount": 14,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 2,
+        "actionCount": 4
+      },
+      "refactoringPriority": "medium",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/exponential-ai-delegation.yml"
     },
     "external-links.yml": {
       "complexityScore": 0,

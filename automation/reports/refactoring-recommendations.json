@@ -1,7 +1,29 @@
 {
-  "timestamp": "2025-08-16T21:19:40.289Z",
+  "timestamp": "2025-08-16T21:22:40.568Z",
   "critical": [],
   "high": [
+    {
+      "workflow": "agent-factory-automation.yml",
+      "status": "active",
+      "complexityScore": 55,
+      "complexityLevel": "high",
+      "metrics": {
+        "totalLines": 511,
+        "jobCount": 0,
+        "stepCount": 20,
+        "conditionalCount": 1,
+        "matrixCount": 2,
+        "dependencyCount": 3,
+        "environmentCount": 0,
+        "secretCount": 1,
+        "actionCount": 7
+      },
+      "refactoringStrategy": [
+        "Break down into smaller job steps",
+        "Consider parallel workflow execution",
+        "Extract common functionality to reusable workflows"
+      ]
+    },
     {
       "workflow": "netlify-automation.yml",
       "status": "active",
@@ -25,6 +47,27 @@
       ]
     }
   ],
-  "medium": [],
+  "medium": [
+    {
+      "workflow": "exponential-ai-delegation.yml",
+      "status": "active",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 180,
+        "jobCount": 0,
+        "stepCount": 14,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 2,
+        "actionCount": 4
+      },
+      "refactoringStrategy": [
+        "Extract common functionality to reusable workflows"
+      ]
+    }
+  ],
   "low": []
 }
