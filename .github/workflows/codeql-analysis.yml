@@ -12,7 +12,7 @@ jobs:
   analyze:
     name: Analyze
     runs-on: ubuntu-latest
-      timeout-minutes: 20
+    timeout-minutes: 20
     permissions:
       actions: read
       contents: read
@@ -25,10 +25,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3
+        uses: github/codeql-action/init@v2
         with:
           languages: ${{ matrix.language }}
       - name: Autobuild
-        uses: github/codeql-action/autobuild@v3
+        uses: github/codeql-action/autobuild@v2
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v3
+        uses: github/codeql-action/analyze@v2
