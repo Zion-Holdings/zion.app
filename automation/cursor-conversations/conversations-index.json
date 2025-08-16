@@ -574,5 +574,29 @@
     "startTime": "2025-08-16T00:11:59.568Z",
     "status": "active",
     "filePath": "conv-1755303119568.json"
+  },
+  {
+    "id": "conv-1755303259914",
+    "type": "performance-optimization",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "DevOps Engineer"
+    ],
+    "startTime": "2025-08-16T00:14:19.914Z",
+    "status": "active",
+    "filePath": "conv-1755303259914.json"
+  },
+  {
+    "id": "conv-1755303261918",
+    "type": "security-audit",
+    "participants": [
+      "Security Expert",
+      "Backend Developer",
+      "DevOps Engineer"
+    ],
+    "startTime": "2025-08-16T00:14:21.918Z",
+    "status": "active",
+    "filePath": "conv-1755303261918.json"
   }
 ]
