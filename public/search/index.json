@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-16T00:25:03.683Z",
+  "generatedAt": "2025-08-16T00:26:03.442Z",
   "entries": [
     {
       "route": "/terms",
@@ -1614,6 +1614,12 @@
       "file": "pages/reports/updates/update-2025-08-15-2130.tsx",
       "title": "Autonomous Playbook — Applied NLP & RAG (2025-08-15 21:30 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Applied NLP & RAG (2025-08-15 21:30 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { \""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-2126",
+      "file": "pages/reports/updates/update-2025-08-15-2126.tsx",
+      "title": "Autonomous Update — 2025-08-15 21:26",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 21:26 Autonomous Update — 2025-08-15 21:26 Signal over noise—your automated update is here. Today's Highlight Hacker News : Google Duplex: An AI System for Accomplishing R"
     },
     {
       "route": "/reports/updates/update-2025-08-15-2125",
