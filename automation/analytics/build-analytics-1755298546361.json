@@ -1,0 +1,389 @@
+{
+  "timestamp": "2025-08-15T22:55:46.361Z",
+  "buildId": "build-1755298528124",
+  "metrics": {
+    "timestamp": "2025-08-15T22:55:28.124Z",
+    "buildId": "build-1755298528124",
+    "environment": {
+      "nodeVersion": "v22.16.0",
+      "npmVersion": "10.9.2",
+      "platform": "darwin",
+      "arch": "x64",
+      "memoryUsage": {
+        "rss": 32317440,
+        "heapTotal": 6098944,
+        "heapUsed": 5255736,
+        "external": 1954317,
+        "arrayBuffers": 16659
+      },
+      "envVars": {
+        "hasNodeOptions": true,
+        "hasNextTelemetry": false,
+        "hasCi": false,
+        "nodeOptions": "--max-old-space-size=6144 --openssl-legacy-provider"
+      }
+    },
+    "performance": {
+      "startTime": 1755298528124,
+      "collectionTime": 18236
+    },
+    "dependencies": {
+      "total": 59,
+      "production": 36,
+      "development": 23,
+      "peer": 0,
+      "optional": 0,
+      "outdated": 0,
+      "vulnerable": 0,
+      "size": 498989279
+    },
+    "fileSystem": {
+      "projectSize": 52800371365,
+      "directories": {
+        "pages": {
+          "exists": true,
+          "size": 9682627,
+          "fileCount": 5571
+        },
+        "components": {
+          "exists": true,
+          "size": 29880,
+          "fileCount": 13
+        },
+        "styles": {
+          "exists": true,
+          "size": 7450,
+          "fileCount": 1
+        },
+        "public": {
+          "exists": true,
+          "size": 69183476,
+          "fileCount": 4308
+        },
+        "utils": {
+          "exists": true,
+          "size": 221,
+          "fileCount": 1
+        },
+        "automation": {
+          "exists": true,
+          "size": 784757727,
+          "fileCount": 12633
+        }
+      },
+      "files": {},
+      "buildFiles": {
+        "next.config.js": {
+          "exists": true,
+          "size": 558,
+          "modified": "2025-08-15T22:43:05.344Z",
+          "isDirectory": false
+        },
+        "netlify.toml": {
+          "exists": true,
+          "size": 8301,
+          "modified": "2025-08-14T18:58:54.090Z",
+          "isDirectory": false
+        },
+        "package.json": {
+          "exists": true,
+          "size": 32580,
+          "modified": "2025-08-15T22:53:11.073Z",
+          "isDirectory": false
+        },
+        "tsconfig.json": {
+          "exists": true,
+          "size": 558,
+          "modified": "2025-08-13T16:54:45.280Z",
+          "isDirectory": false
+        },
+        ".next": {
+          "exists": true,
+          "size": 3424971098,
+          "modified": "2025-08-15T22:50:50.400Z",
+          "isDirectory": true
+        },
+        "out": {
+          "exists": false,
+          "size": 0,
+          "modified": null,
+          "isDirectory": false
+        },
+        "tsconfig.tsbuildinfo": {
+          "exists": true,
+          "size": 961887,
+          "modified": "2025-08-15T22:50:55.047Z",
+          "isDirectory": false
+        }
+      }
+    },
+    "buildArtifacts": {
+      "nextBuild": {
+        "exists": true,
+        "size": 3424971098,
+        "modified": "2025-08-15T22:50:50.400Z",
+        "subdirectories": {
+          "cache": {
+            "size": 3420802602,
+            "fileCount": 295,
+            "modified": "2025-08-15T02:10:57.202Z"
+          },
+          "export": {
+            "size": 4168496,
+            "fileCount": 220,
+            "modified": "2025-08-15T22:52:13.919Z"
+          }
+        }
+      },
+      "netlifyBuild": {
+        "exists": false,
+        "size": 0,
+        "modified": null,
+        "subdirectories": {}
+      },
+      "staticAssets": {
+        "exists": true,
+        "size": 69183476,
+        "modified": "2025-08-15T22:55:07.262Z",
+        "subdirectories": {
+          "automation": {
+            "size": 43369410,
+            "fileCount": 7,
+            "modified": "2025-08-15T22:55:07.233Z"
+          },
+          "og": {
+            "size": 926,
+            "fileCount": 2,
+            "modified": "2025-08-13T16:54:44.987Z"
+          },
+          "reports": {
+            "size": 21814892,
+            "fileCount": 4292,
+            "modified": "2025-08-15T02:19:03.325Z"
+          },
+          "search": {
+            "size": 2814985,
+            "fileCount": 1,
+            "modified": "2025-08-15T22:55:07.251Z"
+          }
+        }
+      },
+      "functions": {
+        "exists": true,
+        "size": 113440,
+        "modified": "2025-08-15T22:50:55.041Z",
+        "count": 87,
+        "subdirectories": {}
+      }
+    },
+    "errors": []
+  },
+  "performance": {
+    "timestamp": "2025-08-15T22:55:46.360Z",
+    "metrics": {
+      "timestamp": "2025-08-15T22:55:28.124Z",
+      "buildId": "build-1755298528124",
+      "environment": {
+        "nodeVersion": "v22.16.0",
+        "npmVersion": "10.9.2",
+        "platform": "darwin",
+        "arch": "x64",
+        "memoryUsage": {
+          "rss": 32317440,
+          "heapTotal": 6098944,
+          "heapUsed": 5255736,
+          "external": 1954317,
+          "arrayBuffers": 16659
+        },
+        "envVars": {
+          "hasNodeOptions": true,
+          "hasNextTelemetry": false,
+          "hasCi": false,
+          "nodeOptions": "--max-old-space-size=6144 --openssl-legacy-provider"
+        }
+      },
+      "performance": {
+        "startTime": 1755298528124,
+        "collectionTime": 18236
+      },
+      "dependencies": {
+        "total": 59,
+        "production": 36,
+        "development": 23,
+        "peer": 0,
+        "optional": 0,
+        "outdated": 0,
+        "vulnerable": 0,
+        "size": 498989279
+      },
+      "fileSystem": {
+        "projectSize": 52800371365,
+        "directories": {
+          "pages": {
+            "exists": true,
+            "size": 9682627,
+            "fileCount": 5571
+          },
+          "components": {
+            "exists": true,
+            "size": 29880,
+            "fileCount": 13
+          },
+          "styles": {
+            "exists": true,
+            "size": 7450,
+            "fileCount": 1
+          },
+          "public": {
+            "exists": true,
+            "size": 69183476,
+            "fileCount": 4308
+          },
+          "utils": {
+            "exists": true,
+            "size": 221,
+            "fileCount": 1
+          },
+          "automation": {
+            "exists": true,
+            "size": 784757727,
+            "fileCount": 12633
+          }
+        },
+        "files": {},
+        "buildFiles": {
+          "next.config.js": {
+            "exists": true,
+            "size": 558,
+            "modified": "2025-08-15T22:43:05.344Z",
+            "isDirectory": false
+          },
+          "netlify.toml": {
+            "exists": true,
+            "size": 8301,
+            "modified": "2025-08-14T18:58:54.090Z",
+            "isDirectory": false
+          },
+          "package.json": {
+            "exists": true,
+            "size": 32580,
+            "modified": "2025-08-15T22:53:11.073Z",
+            "isDirectory": false
+          },
+          "tsconfig.json": {
+            "exists": true,
+            "size": 558,
+            "modified": "2025-08-13T16:54:45.280Z",
+            "isDirectory": false
+          },
+          ".next": {
+            "exists": true,
+            "size": 3424971098,
+            "modified": "2025-08-15T22:50:50.400Z",
+            "isDirectory": true
+          },
+          "out": {
+            "exists": false,
+            "size": 0,
+            "modified": null,
+            "isDirectory": false
+          },
+          "tsconfig.tsbuildinfo": {
+            "exists": true,
+            "size": 961887,
+            "modified": "2025-08-15T22:50:55.047Z",
+            "isDirectory": false
+          }
+        }
+      },
+      "buildArtifacts": {
+        "nextBuild": {
+          "exists": true,
+          "size": 3424971098,
+          "modified": "2025-08-15T22:50:50.400Z",
+          "subdirectories": {
+            "cache": {
+              "size": 3420802602,
+              "fileCount": 295,
+              "modified": "2025-08-15T02:10:57.202Z"
+            },
+            "export": {
+              "size": 4168496,
+              "fileCount": 220,
+              "modified": "2025-08-15T22:52:13.919Z"
+            }
+          }
+        },
+        "netlifyBuild": {
+          "exists": false,
+          "size": 0,
+          "modified": null,
+          "subdirectories": {}
+        },
+        "staticAssets": {
+          "exists": true,
+          "size": 69183476,
+          "modified": "2025-08-15T22:55:07.262Z",
+          "subdirectories": {
+            "automation": {
+              "size": 43369410,
+              "fileCount": 7,
+              "modified": "2025-08-15T22:55:07.233Z"
+            },
+            "og": {
+              "size": 926,
+              "fileCount": 2,
+              "modified": "2025-08-13T16:54:44.987Z"
+            },
+            "reports": {
+              "size": 21814892,
+              "fileCount": 4292,
+              "modified": "2025-08-15T02:19:03.325Z"
+            },
+            "search": {
+              "size": 2814985,
+              "fileCount": 1,
+              "modified": "2025-08-15T22:55:07.251Z"
+            }
+          }
+        },
+        "functions": {
+          "exists": true,
+          "size": 113440,
+          "modified": "2025-08-15T22:50:55.041Z",
+          "count": 87,
+          "subdirectories": {}
+        }
+      },
+      "errors": []
+    },
+    "analysis": {
+      "fileSizes": {
+        "nextBuild": 3424971098,
+        "netlifyBuild": 0,
+        "total": 3424971098
+      },
+      "dependencies": {
+        "total": 59,
+        "outdated": 0,
+        "vulnerable": 0,
+        "health": "excellent"
+      }
+    },
+    "recommendations": [
+      {
+        "priority": "medium",
+        "category": "optimization",
+        "title": "Reduce build artifact size",
+        "description": "Build artifacts exceed 100MB. Consider cleaning up unnecessary files and optimizing dependencies.",
+        "action": "Review and clean build outputs, optimize bundle sizes"
+      }
+    ]
+  },
+  "summary": {
+    "totalMetrics": 8,
+    "recommendations": 1,
+    "criticalIssues": 0,
+    "buildHealth": "good"
+  }
+}

@@ -1,0 +1,65 @@
+name: CI
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '*/10 * * * *'
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  main:
+    name: Main Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+            - name: Checkout
+              uses: actions/checkout@v4
+              with:
+                fetch-depth: 0
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                node-version: '20'
+                cache: 'npm'
+            - name: Install dependencies
+              run: npm ci
+            - name: Type check (non-blocking)
+              run: npm run type-check
+              continue-on-error: true
+            - name: Build
+              run: npm run build
+            - name: Test (non-blocking)
+              run: npm test
+              continue-on-error: true
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                node-version: '20'
+                cache: 'npm'
+            - name: Install dependencies
+              run: npm ci
+            - name: ESLint (non-blocking)
+              run: npm run lint
+              continue-on-error: true
+            - name: Security scan (non-blocking)
+              run: npm run security:scan
+              continue-on-error: true

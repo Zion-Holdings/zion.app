@@ -1,32 +1,30 @@
 {
-  "timestamp": "2025-08-15T22:06:29.714Z",
-  "critical": [
+  "timestamp": "2025-08-16T00:58:39.050Z",
+  "critical": [],
+  "high": [
     {
-      "workflow": "security-gates.yml",
+      "workflow": "netlify-automation.yml",
       "status": "active",
-      "complexityScore": 70,
-      "complexityLevel": "very-high",
+      "complexityScore": 55,
+      "complexityLevel": "high",
       "metrics": {
-        "totalLines": 409,
+        "totalLines": 237,
         "jobCount": 0,
-        "stepCount": 32,
-        "conditionalCount": 8,
+        "stepCount": 16,
+        "conditionalCount": 5,
         "matrixCount": 1,
-        "dependencyCount": 4,
+        "dependencyCount": 2,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 16
+        "actionCount": 7
       },
       "refactoringStrategy": [
         "Break down into smaller job steps",
-        "Simplify conditional logic",
         "Consider parallel workflow execution",
-        "Optimize job dependencies",
         "Extract common functionality to reusable workflows"
       ]
     }
   ],
-  "high": [],
   "medium": [],
   "low": []
 }

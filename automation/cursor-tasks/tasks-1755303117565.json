@@ -1,0 +1,41 @@
+[
+  {
+    "id": "task-1755303117565-1",
+    "title": "Root Cause Analysis",
+    "description": "Complete thorough investigation to identify the root cause of the bug",
+    "type": "bug-investigation",
+    "priority": "high",
+    "estimatedEffort": "4-6 hours",
+    "assignedTo": "frontend-specialist",
+    "status": "pending",
+    "createdAt": "2025-08-16T00:11:57.565Z",
+    "dueDate": "2025-08-18T00:11:57.565Z",
+    "conversationId": "conv-1755303117564"
+  },
+  {
+    "id": "task-1755303117565-2",
+    "title": "Fix Implementation",
+    "description": "Implement the fix for the identified bug",
+    "type": "bug-investigation",
+    "priority": "high",
+    "estimatedEffort": "2-4 hours",
+    "assignedTo": "backend-developer",
+    "status": "pending",
+    "createdAt": "2025-08-16T00:11:57.565Z",
+    "dueDate": "2025-08-17T00:11:57.565Z",
+    "conversationId": "conv-1755303117564"
+  },
+  {
+    "id": "task-1755303117565-3",
+    "title": "Prevention Measures",
+    "description": "Implement measures to prevent similar bugs in the future",
+    "type": "bug-investigation",
+    "priority": "medium",
+    "estimatedEffort": "6-8 hours",
+    "assignedTo": "qa-tester",
+    "status": "pending",
+    "createdAt": "2025-08-16T00:11:57.565Z",
+    "dueDate": "2025-08-19T00:11:57.565Z",
+    "conversationId": "conv-1755303117564"
+  }
+]

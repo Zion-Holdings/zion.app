@@ -1,0 +1,28 @@
+name: Lighthouse Budgets (PR Gate)
+
+on:
+  pull_request:
+    branches: ["main"]
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  lh:
+    runs-on: ubuntu-latest
+      timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run Lighthouse on production baseline
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          urls: |
+            https://ziontechgroup.com/
+          runs: 2
+          temporaryPublicStorage: true
+          configPath: lighthouserc.json
+
+
