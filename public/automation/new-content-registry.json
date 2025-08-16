@@ -1,33 +1,26 @@
 {
-  "generatedAt": "2025-08-16T22:40:48.205Z",
+  "generatedAt": "2025-08-16T23:28:27.905Z",
   "items": [
     {
-      "title": "Innovation Insight — 2025-08-16 22-40",
-      "href": "/reports/innovations/insight-2025-08-16T22-40",
+      "title": "Case Study — Cloud Improving",
+      "href": "/reports/cases/case-2025-08-16-232827",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-16T22:40:48.132Z",
-      "source": "cloud-content-factory"
+      "createdAt": "2025-08-16T23:28:27.855Z",
+      "source": "cloud-deep-research-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-16 22-40",
-      "href": "/reports/updates/update-2025-08-16T22-40",
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-16-232827",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-16T22:40:48.132Z",
-      "source": "cloud-content-factory"
+      "createdAt": "2025-08-16T23:28:27.855Z",
+      "source": "cloud-deep-research-factory"
     },
     {
-      "title": "Innovation Insight — 2025-08-16 22-40",
-      "href": "/reports/innovations/insight-2025-08-16T22-40",
+      "title": "Pattern — Automation Trends 2025",
+      "href": "/reports/patterns/pattern-2025-08-16-232827",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-16T22:40:48.132Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-16 22-40",
-      "href": "/reports/updates/update-2025-08-16T22-40",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-16T22:40:48.132Z",
-      "source": "cloud-content-factory"
+      "createdAt": "2025-08-16T23:28:27.855Z",
+      "source": "cloud-deep-research-factory"
     }
   ]
 }
