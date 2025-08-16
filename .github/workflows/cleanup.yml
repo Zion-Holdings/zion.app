@@ -1,0 +1,37 @@
+name: Cleanup stale agents
+
+on:
+  schedule:
+    - cron: "30 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  prune:
+    if: ${{ ! (vars.FACTORY_ENABLED && vars.FACTORY_ENABLED == 'false') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prune low-performers
+        shell: bash
+        run: |
+          set -euo pipefail
+          cutoff_days=3
+          now=$(date +%s)
+          shopt -s nullglob
+          for f in metrics/*.json; do
+            mtime=$(date -r "$f" +%s)
+            age=$(( (now - mtime) / 86400 ))
+            pass=$(jq -r '.pass_rate // 0' "$f")
+            if [[ $age -ge $cutoff_days && $(awk "BEGIN {print ($pass < 0.5)}") -eq 1 ]]; then
+              id=$(jq -r '.id' "$f")
+              git rm -rf "agents/$id" || true
+              git rm -f "$f" || true
+            fi
+          done
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "cleanup: prune stale/low-performer agents"

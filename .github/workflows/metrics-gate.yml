@@ -1,0 +1,68 @@
+name: Metrics gate
+
+on:
+  schedule:
+    - cron: "15 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: factory-metrics-gate
+  cancel-in-progress: true
+
+env:
+  MIN_PASS_RATE: "0.6"
+  MAX_COST_PER_AGENT_USD: "5"
+  EXPLORATION_FRACTION: "0.3"
+
+jobs:
+  gate:
+    if: ${{ ! (vars.FACTORY_ENABLED && vars.FACTORY_ENABLED == 'false') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: aggregate
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p factory
+          shopt -s nullglob
+          files=(metrics/*.json)
+          if (( ${#files[@]} == 0 )); then
+            echo '{}' > factory/last_cohort_summary.json
+            echo "allowed=0" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          jq -s 'map(. as $m | {id: $m.id, pass: (($m.pass_rate//0) >= (env.MIN_PASS_RATE|tonumber)), cost: ($m.cost_usd//0)})' metrics/*.json \
+            > factory/last_cohort_summary.json
+          allowed=$(jq '[.[] | select(.pass==true and .cost <= (env.MAX_COST_PER_AGENT_USD|tonumber))] | length' factory/last_cohort_summary.json)
+          echo "allowed=$allowed" >> $GITHUB_OUTPUT
+
+      - name: Write budget summary
+        shell: bash
+        run: |
+          set -euo pipefail
+          total_cost=$(jq '[.[] | .cost] | add // 0' factory/last_cohort_summary.json)
+          total_pass=$(jq '[.[] | select(.pass==true)] | length' factory/last_cohort_summary.json)
+          jq -n --arg total_cost "$total_cost" --argjson allowed "$ALLOWED" --arg total_pass "$total_pass" '{total_cost: ($total_cost|tonumber), allowed: $allowed, total_pass: ($total_pass|tonumber)}' > factory/budget_summary.json || true
+
+      - name: Upload budget summary
+        uses: actions/upload-artifact@v4
+        with:
+          name: factory-budget-summary
+          path: factory/budget_summary.json
+          retention-days: 7
+
+      - name: Update factory policy
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "factory(policy): update after gate"
+          title: "Factory policy refresh"
+          body: "Automated gate applied. Allowed: ${{ steps.aggregate.outputs.allowed }}"
+          branch: "factory/policy-${{ github.run_id }}"
+          labels: factory,policy

@@ -1,0 +1,194 @@
+name: Plan and scale agents
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: factory-plan-and-scale
+  cancel-in-progress: false
+
+env:
+  BASE: "2"
+  GROWTH: "1.5"
+  MAX_AGENTS: "64"
+  MAX_PARALLEL: "8"
+  DEFAULT_PROFILES: '["code","web","data","ops"]'
+  MAX_DELEGATION: "0.9"
+  MIN_DELEGATION: "0.3"
+  DELEGATION_STEP: "0.05"
+  ESTIMATED_COST_PER_AGENT_USD: "1.5"
+  BUDGET_REMAINING_USD: "${{ vars.FACTORY_BUDGET_REMAINING_USD }}"
+  FACTORY_DRY_RUN: "${{ vars.FACTORY_DRY_RUN }}"
+
+jobs:
+  plan:
+    if: ${{ ! (vars.FACTORY_ENABLED && vars.FACTORY_ENABLED == 'false') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+      epoch: ${{ steps.plan.outputs.epoch }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node for math helpers
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - id: plan
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p factory agents metrics
+
+          if [[ -f factory/state.json ]]; then
+            state="$(cat factory/state.json)"
+          else
+            state='{"epoch":0,"lastCount":0}'
+          fi
+
+          epoch=$(jq -r '.epoch // 0' <<<"$state")
+          next_epoch=$((epoch + 1))
+
+          base=${BASE}
+          growth=${GROWTH}
+          max_agents=${MAX_AGENTS}
+
+          count=$(node -e "console.log(Math.min(${max_agents}, Math.floor(${base} * Math.pow(${growth}, ${next_epoch}))))")
+
+          budget_remaining="${BUDGET_REMAINING_USD:-}"
+          est_per_agent="${ESTIMATED_COST_PER_AGENT_USD}"
+          if [[ -n "${budget_remaining}" ]]; then
+            budget_cap=$(node -e "const b=parseFloat(process.argv[1]||'0'); const c=parseFloat(process.argv[2]||'1'); console.log(Math.max(0, Math.floor(b/c)));" "${budget_remaining}" "${est_per_agent}")
+            count=$(node -e "console.log(Math.min(${count}, ${budget_cap}))")
+          fi
+
+          if [[ "${FACTORY_DRY_RUN:-}" == "true" ]]; then
+            echo "DRY RUN enabled: setting planned count to 0" >&2
+            count=0
+          fi
+
+          min_del=${MIN_DELEGATION}
+          step=${DELEGATION_STEP}
+          max_del=${MAX_DELEGATION}
+          delegation=$(node -e "const d=${min_del} + ${step}*${next_epoch}; console.log((d>${max_del}?${max_del}:d).toFixed(2))")
+
+          profiles='${{ env.DEFAULT_PROFILES }}'
+
+          matrix=$(node -e '
+            const count=Number(process.argv[2]);
+            const delegation=Number(process.argv[3]);
+            const profiles=JSON.parse(process.argv[4]);
+            const include=[];
+            const ts=Date.now();
+            for (let i=0;i<count;i++){
+              include.push({
+                agent_id: `agent-${ts}-${i}`,
+                profile: profiles[i % profiles.length],
+                delegation: delegation
+              });
+            }
+            console.log(JSON.stringify({include}));
+          ' "$count" "$delegation" "$profiles")
+
+          echo "epoch=$next_epoch" >> $GITHUB_OUTPUT
+          echo "matrix=$matrix" >> $GITHUB_OUTPUT
+
+          jq -n --argjson epoch "$next_epoch" --argjson count "$count" \
+            '{epoch:$epoch, lastCount:$count}' > factory/state.json
+
+      - name: Open PR with updated state
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "factory(state): epoch ${{ steps.plan.outputs.epoch }}"
+          title: "Factory state update (epoch ${{ steps.plan.outputs.epoch }})"
+          body: "Automated update of factory state."
+          branch: "factory/state-epoch-${{ steps.plan.outputs.epoch }}"
+          labels: factory,automation
+
+  spawn_and_run:
+    if: ${{ ! (vars.FACTORY_ENABLED && vars.FACTORY_ENABLED == 'false') && !(vars.FACTORY_DRY_RUN && vars.FACTORY_DRY_RUN == 'true') }}
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      max-parallel: ${{ env.MAX_PARALLEL }}
+      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    concurrency:
+      group: agent-${{ matrix.agent_id }}
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Materialize agent config
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "agents/${{ matrix.agent_id }}"
+          cat > "agents/${{ matrix.agent_id }}/config.yaml" <<'YAML'
+          id: ${{ matrix.agent_id }}
+          profile: ${{ matrix.profile }}
+          delegation: ${{ matrix.delegation }}
+          tools:
+            - name: search
+              enabled: true
+            - name: code
+              enabled: ${{ matrix.profile == 'code' || matrix.profile == 'ops' }}
+            - name: web
+              enabled: ${{ matrix.profile == 'web' }}
+            - name: data
+              enabled: ${{ matrix.profile == 'data' }}
+          budget:
+            max_calls: 300
+            max_cost_usd: 5
+          YAML
+
+      - name: Commit agent config and PR
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "agents: add ${{ matrix.agent_id }} @ delegation=${{ matrix.delegation }}"
+          title: "Agent ${{ matrix.agent_id }} (delegation=${{ matrix.delegation }})"
+          body: "Spawned by factory at epoch ${{ needs.plan.outputs.epoch }}."
+          branch: "agents/${{ matrix.agent_id }}"
+          labels: agent,automation
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install -U pip
+          pip install -r requirements.txt
+
+      - name: Run agent eval
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python scripts/run_agent.py \
+            --config "agents/${{ matrix.agent_id }}/config.yaml" \
+            --output "metrics/${{ matrix.agent_id }}.json"
+
+      - name: Upload metrics artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: metrics-${{ matrix.agent_id }}
+          path: metrics/${{ matrix.agent_id }}.json
+          retention-days: 7
+
+      - name: Commit metrics
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "metrics: ${{ matrix.agent_id }}"
+          file_pattern: metrics/${{ matrix.agent_id }}.json
