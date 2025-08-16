@@ -417,8 +417,8 @@ const APIDocumentation: React.FC = () => {
       ],
       examples: [
         {
-          name: 'Create Admin User',
-          description: 'Create a new administrator user',
+          name: 'Create User',
+          description: 'Create a new user account',
           request: {
             method: 'POST',
             url: '/api/v1/users',
@@ -427,13 +427,13 @@ const APIDocumentation: React.FC = () => {
               'Content-Type': 'application/json'
             },
             body: {
-              username: 'admin2',
-              email: 'admin2@zion.app',
-              firstName: 'Admin',
-              lastName: 'User',
-              password: 'adminpassword123',
-              role: 'Super Admin',
-              department: 'IT'
+              username: 'john.doe',
+              email: 'john.doe@zion.app',
+              firstName: 'John',
+              lastName: 'Doe',
+              password: 'securepassword123',
+              role: 'Content Manager',
+              department: 'Content'
             }
           },
           response: {
@@ -445,13 +445,13 @@ const APIDocumentation: React.FC = () => {
             body: {
               user: {
                 id: '2',
-                username: 'admin2',
-                email: 'admin2@zion.app',
-                firstName: 'Admin',
-                lastName: 'User',
+                username: 'john.doe',
+                email: 'john.doe@zion.app',
+                firstName: 'John',
+                lastName: 'Doe',
                 status: 'active',
-                role: 'Super Admin',
-                department: 'IT',
+                role: 'Content Manager',
+                department: 'Content',
                 createdAt: '2024-01-15T10:30:00Z'
               },
               message: 'User created successfully'
@@ -459,13 +459,13 @@ const APIDocumentation: React.FC = () => {
           }
         }
       ],
-      tags: ['users', 'creation', 'authentication']
+      tags: ['users', 'authentication', 'creation']
     },
     {
       id: '3',
       method: 'GET',
       path: '/api/v1/analytics/dashboard',
-      name: 'Get Analytics Dashboard',
+      name: 'Get Dashboard Analytics',
       description: 'Retrieve comprehensive analytics data for the dashboard',
       category: 'Analytics',
       version: 'v1',
@@ -474,20 +474,19 @@ const APIDocumentation: React.FC = () => {
       rateLimit: '200 requests/hour',
       parameters: [
         {
-          name: 'dateRange',
+          name: 'period',
           type: 'string',
           required: false,
-          description: 'Date range for analytics data',
-          enum: ['1d', '7d', '30d', '90d'],
-          defaultValue: '7d',
-          example: '7d'
+          description: 'Time period for analytics',
+          enum: ['day', 'week', 'month', 'year'],
+          example: 'week'
         },
         {
           name: 'metrics',
           type: 'string',
           required: false,
           description: 'Comma-separated list of metrics to include',
-          example: 'pageviews,users,conversions'
+          example: 'users,revenue,engagement'
         }
       ],
       responses: [
@@ -501,24 +500,35 @@ const APIDocumentation: React.FC = () => {
                 properties: {
                   period: { type: 'string' },
                   metrics: { type: 'object' },
-                  trends: { type: 'object' },
-                  lastUpdated: { type: 'string' }
+                  summary: { type: 'object' }
                 }
               },
               example: {
-                period: '7d',
+                period: 'week',
                 metrics: {
-                  pageViews: 15420,
-                  uniqueVisitors: 3247,
-                  bounceRate: 23.4,
-                  avgSessionDuration: 245
+                  users: {
+                    total: 15420,
+                    active: 8920,
+                    new: 1230
+                  },
+                  revenue: {
+                    total: 45600,
+                    growth: 12.5
+                  },
+                  engagement: {
+                    avgSessionTime: 320,
+                    bounceRate: 0.28,
+                    conversionRate: 0.045
+                  }
                 },
-                trends: {
-                  pageViews: { change: 12.5, direction: 'up' },
-                  uniqueVisitors: { change: 8.3, direction: 'up' },
-                  bounceRate: { change: -2.1, direction: 'down' }
-                },
-                lastUpdated: '2024-01-15T10:30:00Z'
+                summary: {
+                  status: 'healthy',
+                  trends: 'positive',
+                  recommendations: [
+                    'User engagement is strong',
+                    'Consider A/B testing for conversion optimization'
+                  ]
+                }
               }
             }
           }
@@ -527,10 +537,10 @@ const APIDocumentation: React.FC = () => {
       examples: [
         {
           name: 'Weekly Analytics',
-          description: 'Get analytics data for the last 7 days',
+          description: 'Get analytics for the current week',
           request: {
             method: 'GET',
-            url: '/api/v1/analytics/dashboard?dateRange=7d',
+            url: '/api/v1/analytics/dashboard?period=week&metrics=users,revenue,engagement',
             headers: {
               'Authorization': 'Bearer YOUR_TOKEN',
               'Content-Type': 'application/json'
@@ -543,19 +553,31 @@ const APIDocumentation: React.FC = () => {
               'Cache-Control': 'max-age=300'
             },
             body: {
-              period: '7d',
+              period: 'week',
               metrics: {
-                pageViews: 15420,
-                uniqueVisitors: 3247,
-                bounceRate: 23.4,
-                avgSessionDuration: 245
+                users: {
+                  total: 15420,
+                  active: 8920,
+                  new: 1230
+                },
+                revenue: {
+                  total: 45600,
+                  growth: 12.5
+                },
+                engagement: {
+                  avgSessionTime: 320,
+                  bounceRate: 0.28,
+                  conversionRate: 0.045
+                }
               },
-              trends: {
-                pageViews: { change: 12.5, direction: 'up' },
-                uniqueVisitors: { change: 8.3, direction: 'up' },
-                bounceRate: { change: -2.1, direction: 'down' }
-              },
-              lastUpdated: '2024-01-15T10:30:00Z'
+              summary: {
+                status: 'healthy',
+                trends: 'positive',
+                recommendations: [
+                  'User engagement is strong',
+                  'Consider A/B testing for conversion optimization'
+                ]
+              }
             }
           }
         }
@@ -772,26 +794,31 @@ const APIDocumentation: React.FC = () => {
                   <div>
                     <h3 className="text-sm font-medium text-gray-700 mb-2">1. Authentication</h3>
                     <div className="bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-sm">
-                      <div>curl -H "Authorization: Bearer YOUR_TOKEN" \</div>
-                      <div>     https://api.zion.app/api/v1/users</div>
+                      <div>Authorization: Bearer YOUR_TOKEN</div>
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-sm font-medium text-gray-700 mb-2">2. Create User</h3>
+                    <h3 className="text-sm font-medium text-gray-700 mb-2">2. Make a Request</h3>
                     <div className="bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-sm">
-                      <div>curl -X POST https://api.zion.app/api/v1/users \</div>
-                      <div>     -H "Authorization: Bearer YOUR_TOKEN" \</div>
-                      <div>     -H "Content-Type: application/json" \</div>
-                      <div>     -d '{"username": "john.doe", "email": "john@example.com"}'</div>
+                      <div>GET /api/v1/users</div>
+                      <div>Host: api.zion.app</div>
+                      <div>Authorization: Bearer YOUR_TOKEN</div>
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-medium text-gray-700 mb-2">3. Handle Response</h3>
+                    <div className="bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-sm">
+                      <div>Status: 200 OK</div>
+                      <div>Content-Type: application/json</div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Categories */}
+              {/* Endpoints Summary */}
               <div className="bg-white rounded-lg shadow p-6">
-                <h2 className="text-xl font-semibold text-gray-900 mb-4">API Categories</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <h2 className="text-xl font-semibold text-gray-900 mb-4">Endpoints Summary</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {Array.from(new Set(endpoints.map(e => e.category))).map(category => {
                     const categoryEndpoints = endpoints.filter(e => e.category === category);
                     return (
