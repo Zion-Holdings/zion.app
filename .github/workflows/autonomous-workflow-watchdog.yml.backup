@@ -15,10 +15,9 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-
   watchdog:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+      timeout-minutes: 15
     steps:
       - name: Scan and remediate failed workflow runs
         id: scan

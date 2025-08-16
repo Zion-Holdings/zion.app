@@ -10,11 +10,10 @@ permissions:
   pull-requests: write
 
 jobs:
-
   automerge:
     if: contains(github.event.pull_request.labels.*.name, 'automerge')
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+      timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
         with:
