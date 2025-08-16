@@ -142,6 +142,7 @@
     "app:agents": "node automation/agent-factory.cjs",
     "app:analyze": "node automation/app-content-crawler.cjs && node automation/agent-factory.cjs",
     "app:full": "node automation/app-automation-orchestrator.cjs",
+    "app:content": "node automation/intelligent-content-generator.cjs",
     "app:report": "ls -la automation/reports/ && echo '--- Latest Report ---' && ls -t automation/reports/*.md | head -1 | xargs cat",
     "app:status": "echo 'Agents:' && ls -la automation/agents/*/*/ 2>/dev/null | grep -E '^d' | wc -l && echo 'Workflows:' && ls -la .github/workflows/*.yml 2>/dev/null | wc -l && echo 'Reports:' && ls -la automation/reports/*.json 2>/dev/null | wc -l",
     "automation:orchestrator": "node automation/intelligent-orchestrator.cjs continuous",

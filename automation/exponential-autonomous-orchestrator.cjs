@@ -14,7 +14,7 @@ const { spawn, execSync } = require('child_process');
 class ExponentialAutonomousOrchestrator {
   constructor() {
     this.appRoot = process.cwd();
-    this.configPath = path.join(this.appRoot, 'automation', 'exponential-config.json');
+    this.configPath = path.join(this.appRoot, 'exponential-config.json');
     this.factoriesDir = path.join(this.appRoot, 'automation', 'factories');
     this.agentsDir = path.join(this.appRoot, 'automation', 'agents');
     this.reportsDir = path.join(this.appRoot, 'automation', 'reports');

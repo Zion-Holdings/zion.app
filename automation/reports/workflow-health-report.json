@@ -1,16 +1,17 @@
 {
-  "timestamp": "2025-08-16T21:41:51.076Z",
+  "timestamp": "2025-08-16T21:42:30.955Z",
   "summary": {
-    "totalWorkflows": 177,
-    "activeWorkflows": 102,
+    "totalWorkflows": 178,
+    "activeWorkflows": 103,
     "disabledWorkflows": 74,
-    "workflowsWithIssues": 73,
-    "totalIssues": 74
+    "workflowsWithIssues": 74,
+    "totalIssues": 75
   },
   "patterns": {
     "highComplexity": [
       "actionlint.yml",
       "actions-keepalive.yml",
+      "agent-agent-1755379777751-4-optimization-advanced.yml",
       "agent-factory-automation.yml",
       "agent-factory-proliferation.yml",
       "agent-of-agents-trigger.yml",
@@ -176,6 +177,7 @@
       "agent-agent-1755379777749-1-full-stack-basic.yml",
       "agent-agent-1755379777750-2-monitoring-intermediate.yml",
       "agent-agent-1755379777751-3-monitoring-advanced.yml",
+      "agent-agent-1755379777751-4-optimization-advanced.yml",
       "agent-agent-1755379777752-5-testing-expert.yml",
       "agent-agent-1755379777754-6-backend-expert.yml",
       "agent-agent-1755379777755-7-backend-intermediate.yml",
@@ -754,6 +756,36 @@
       "jobs": [
         "workflow_dispatch",
         "schedule",
+        "agent-execution",
+        "steps",
+        "with"
+      ],
+      "timeouts": [],
+      "permissions": [],
+      "concurrency": null,
+      "issues": [
+        "missing_npm_cache"
+      ],
+      "recommendations": [
+        "Add npm cache to improve build performance",
+        "Add timeout-minutes to prevent infinite hanging",
+        "Consider splitting into smaller workflows for better maintainability"
+      ]
+    },
+    "agent-agent-1755379777751-4-optimization-advanced.yml": {
+      "name": "agent-agent-1755379777751-4-optimization-advanced.yml",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379777751-4-optimization-advanced.yml",
+      "size": 510,
+      "lines": 20,
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "jobs": [
+        "workflow_dispatch",
+        "schedule",
+        "jobs",
         "agent-execution",
         "steps",
         "with"
@@ -9150,6 +9182,7 @@
         "Add timeout-minutes to agent-agent-1755379777749-1-full-stack-basic.yml",
         "Add timeout-minutes to agent-agent-1755379777750-2-monitoring-intermediate.yml",
         "Add timeout-minutes to agent-agent-1755379777751-3-monitoring-advanced.yml",
+        "Add timeout-minutes to agent-agent-1755379777751-4-optimization-advanced.yml",
         "Add timeout-minutes to agent-agent-1755379777752-5-testing-expert.yml",
         "Add timeout-minutes to agent-agent-1755379777754-6-backend-expert.yml",
         "Add timeout-minutes to agent-agent-1755379777755-7-backend-intermediate.yml",
@@ -9223,6 +9256,7 @@
       "longTerm": [
         "Refactor actionlint.yml into smaller, focused workflows",
         "Refactor actions-keepalive.yml into smaller, focused workflows",
+        "Refactor agent-agent-1755379777751-4-optimization-advanced.yml into smaller, focused workflows",
         "Refactor agent-factory-automation.yml into smaller, focused workflows",
         "Refactor agent-factory-proliferation.yml into smaller, focused workflows",
         "Refactor agent-of-agents-trigger.yml into smaller, focused workflows",
@@ -9391,6 +9425,7 @@
       "Add timeout-minutes to agent-agent-1755379777749-1-full-stack-basic.yml",
       "Add timeout-minutes to agent-agent-1755379777750-2-monitoring-intermediate.yml",
       "Add timeout-minutes to agent-agent-1755379777751-3-monitoring-advanced.yml",
+      "Add timeout-minutes to agent-agent-1755379777751-4-optimization-advanced.yml",
       "Add timeout-minutes to agent-agent-1755379777752-5-testing-expert.yml",
       "Add timeout-minutes to agent-agent-1755379777754-6-backend-expert.yml",
       "Add timeout-minutes to agent-agent-1755379777755-7-backend-intermediate.yml",
@@ -9464,6 +9499,7 @@
     "longTerm": [
       "Refactor actionlint.yml into smaller, focused workflows",
       "Refactor actions-keepalive.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755379777751-4-optimization-advanced.yml into smaller, focused workflows",
       "Refactor agent-factory-automation.yml into smaller, focused workflows",
       "Refactor agent-factory-proliferation.yml into smaller, focused workflows",
       "Refactor agent-of-agents-trigger.yml into smaller, focused workflows",
