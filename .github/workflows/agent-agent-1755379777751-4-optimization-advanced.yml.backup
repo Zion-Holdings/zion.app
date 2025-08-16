@@ -1,4 +1,4 @@
-name: Agent: agent-1755379759029-0-optimization-intermediate
+name: Agent: agent-1755379777751-4-optimization-advanced
 on:
   workflow_dispatch:
   schedule:
@@ -16,4 +16,4 @@ jobs:
     - name: Install dependencies
       run: npm ci
     - name: Run agent
-      run: node automation/agents/optimization/agent-1755379759029-0-optimization-intermediate/index.cjs
+      run: node automation/agents/optimization/agent-1755379777751-4-optimization-advanced/index.cjs
