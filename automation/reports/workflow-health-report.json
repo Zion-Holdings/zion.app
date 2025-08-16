@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T22:11:44.228Z",
+  "timestamp": "2025-08-16T22:12:33.432Z",
   "summary": {
     "totalWorkflows": 188,
     "activeWorkflows": 187,
@@ -952,7 +952,7 @@
       "name": "agent-agent-1755381089841-0-backend-expert.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089841-0-backend-expert.yml",
-      "size": 488,
+      "size": 502,
       "lines": 15,
       "triggers": [
         "workflow_dispatch",
@@ -1011,7 +1011,7 @@
       "name": "agent-agent-1755381089845-2-full-stack-advanced.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089845-2-full-stack-advanced.yml",
-      "size": 501,
+      "size": 515,
       "lines": 15,
       "triggers": [
         "workflow_dispatch",
@@ -1100,7 +1100,7 @@
       "name": "agent-agent-1755381089847-5-frontend-expert.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089847-5-frontend-expert.yml",
-      "size": 491,
+      "size": 505,
       "lines": 15,
       "triggers": [
         "workflow_dispatch",
@@ -1159,7 +1159,7 @@
       "name": "agent-agent-1755381089849-7-monitoring-intermediate.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089849-7-monitoring-intermediate.yml",
-      "size": 509,
+      "size": 523,
       "lines": 15,
       "triggers": [
         "workflow_dispatch",
@@ -7129,8 +7129,8 @@
       "name": "seo-audit.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/seo-audit.yml",
-      "size": 1611,
-      "lines": 58,
+      "size": 3457,
+      "lines": 111,
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
