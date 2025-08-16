@@ -17,6 +17,8 @@ export default function EnhancedNavigation() {
     { href: '/analytics-dashboard', label: 'Analytics', icon: '📈' },
     { href: '/ai-search-engine', label: 'AI Search', icon: '🔍' },
     { href: '/notification-center', label: 'Notifications', icon: '🔔' },
+    { href: '/user-management', label: 'Users', icon: '👥' },
+    { href: '/api-documentation', label: 'API Docs', icon: '📚' },
     { href: '/automation', label: 'Automation', icon: '🤖' }
   ];
 
