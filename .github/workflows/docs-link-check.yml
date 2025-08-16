@@ -1,0 +1,27 @@
+name: Docs link check
+
+on:
+  push:
+    paths:
+      - '**/*.md'
+      - '**/*.html'
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: lycheeverse/lychee-action@v2
+        with:
+          args: --verbose --no-progress --timeout 20 --max-redirects 5 --retry 2 --retry-wait-time 2 --exclude-mail .
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lychee-report
+          path: lychee/out.md
