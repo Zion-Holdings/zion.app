@@ -1,8 +1,8 @@
 {
-  "timestamp": "2025-08-16T21:40:54.922Z",
+  "timestamp": "2025-08-16T21:41:31.638Z",
   "summary": {
-    "totalWorkflows": 178,
-    "activeWorkflows": 103,
+    "totalWorkflows": 177,
+    "activeWorkflows": 102,
     "disabledWorkflows": 74,
     "workflowsWithIssues": 73,
     "totalIssues": 74
@@ -176,7 +176,6 @@
       "agent-agent-1755379777749-1-full-stack-basic.yml",
       "agent-agent-1755379777750-2-monitoring-intermediate.yml",
       "agent-agent-1755379777751-3-monitoring-advanced.yml",
-      "agent-agent-1755379777751-4-optimization-advanced.yml",
       "agent-agent-1755379777752-5-testing-expert.yml",
       "agent-agent-1755379777754-6-backend-expert.yml",
       "agent-agent-1755379777755-7-backend-intermediate.yml",
@@ -769,22 +768,6 @@
         "Add npm cache to improve build performance",
         "Add timeout-minutes to prevent infinite hanging",
         "Consider splitting into smaller workflows for better maintainability"
-      ]
-    },
-    "agent-agent-1755379777751-4-optimization-advanced.yml": {
-      "name": "agent-agent-1755379777751-4-optimization-advanced.yml",
-      "status": "active",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379777751-4-optimization-advanced.yml",
-      "size": 490,
-      "lines": 19,
-      "triggers": [],
-      "jobs": [],
-      "timeouts": [],
-      "permissions": [],
-      "concurrency": null,
-      "issues": [],
-      "recommendations": [
-        "Add timeout-minutes to prevent infinite hanging"
       ]
     },
     "agent-agent-1755379777752-5-testing-expert.yml": {
@@ -9167,7 +9150,6 @@
         "Add timeout-minutes to agent-agent-1755379777749-1-full-stack-basic.yml",
         "Add timeout-minutes to agent-agent-1755379777750-2-monitoring-intermediate.yml",
         "Add timeout-minutes to agent-agent-1755379777751-3-monitoring-advanced.yml",
-        "Add timeout-minutes to agent-agent-1755379777751-4-optimization-advanced.yml",
         "Add timeout-minutes to agent-agent-1755379777752-5-testing-expert.yml",
         "Add timeout-minutes to agent-agent-1755379777754-6-backend-expert.yml",
         "Add timeout-minutes to agent-agent-1755379777755-7-backend-intermediate.yml",
@@ -9409,7 +9391,6 @@
       "Add timeout-minutes to agent-agent-1755379777749-1-full-stack-basic.yml",
       "Add timeout-minutes to agent-agent-1755379777750-2-monitoring-intermediate.yml",
       "Add timeout-minutes to agent-agent-1755379777751-3-monitoring-advanced.yml",
-      "Add timeout-minutes to agent-agent-1755379777751-4-optimization-advanced.yml",
       "Add timeout-minutes to agent-agent-1755379777752-5-testing-expert.yml",
       "Add timeout-minutes to agent-agent-1755379777754-6-backend-expert.yml",
       "Add timeout-minutes to agent-agent-1755379777755-7-backend-intermediate.yml",
