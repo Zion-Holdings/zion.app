@@ -1,4 +1,4 @@
-name: ""Agent: agent-1755381089844-1-deployment-advanced"
+name: "Agent: agent-1755381089844-1-deployment-advanced"
 on:
   workflow_dispatch:
   schedule:

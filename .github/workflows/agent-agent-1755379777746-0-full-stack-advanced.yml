@@ -1,9 +1,10 @@
-name: ""Agent: agent-1755379777746-0-full-stack-advanced"
+name: "Agent: agent-1755379777746-0-full-stack-advanced"
 on:
   workflow_dispatch:
   schedule:
     - cron: 0 */6 * * *
 jobs:
+
 
   agent-execution:
     runs-on: ubuntu-latest
