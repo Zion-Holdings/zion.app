@@ -1,18 +1,18 @@
 {
-  "timestamp": "2025-08-16T21:22:40.565Z",
+  "timestamp": "2025-08-16T21:24:31.479Z",
   "summary": {
-    "totalWorkflows": 151,
+    "totalWorkflows": 155,
     "complexityDistribution": {
       "very-high": 0,
-      "high": 2,
-      "medium": 1,
-      "low": 148
+      "high": 6,
+      "medium": 0,
+      "low": 149
     },
     "refactoringPriorities": {
       "critical": 0,
-      "high": 2,
-      "medium": 1,
-      "low": 148
+      "high": 6,
+      "medium": 0,
+      "low": 149
     }
   },
   "workflows": {
@@ -69,6 +69,24 @@
       "refactoringPriority": "high",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-factory-automation.yml"
+    },
+    "agent-factory-proliferation.yml": {
+      "complexityScore": 55,
+      "complexityLevel": "high",
+      "metrics": {
+        "totalLines": 364,
+        "jobCount": 0,
+        "stepCount": 11,
+        "conditionalCount": 1,
+        "matrixCount": 1,
+        "dependencyCount": 4,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 5
+      },
+      "refactoringPriority": "high",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-factory-proliferation.yml"
     },
     "agent-of-agents-trigger.yml": {
       "complexityScore": 0,
@@ -303,6 +321,24 @@
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/automation-orchestrator.yml"
+    },
+    "autonomous-agent-orchestrator.yml": {
+      "complexityScore": 50,
+      "complexityLevel": "high",
+      "metrics": {
+        "totalLines": 659,
+        "jobCount": 0,
+        "stepCount": 10,
+        "conditionalCount": 1,
+        "matrixCount": 1,
+        "dependencyCount": 4,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 5
+      },
+      "refactoringPriority": "high",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-agent-orchestrator.yml"
     },
     "broken-images.yml": {
       "complexityScore": 0,
@@ -682,11 +718,29 @@
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/emergency-fix.yml"
     },
-    "exponential-ai-delegation.yml": {
-      "complexityScore": 30,
-      "complexityLevel": "medium",
+    "exponential-agent-factory-proliferation.yml": {
+      "complexityScore": 55,
+      "complexityLevel": "high",
       "metrics": {
-        "totalLines": 180,
+        "totalLines": 518,
+        "jobCount": 0,
+        "stepCount": 13,
+        "conditionalCount": 1,
+        "matrixCount": 1,
+        "dependencyCount": 4,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 7
+      },
+      "refactoringPriority": "high",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/exponential-agent-factory-proliferation.yml"
+    },
+    "exponential-ai-delegation.yml": {
+      "complexityScore": 25,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 182,
         "jobCount": 0,
         "stepCount": 14,
         "conditionalCount": 0,
@@ -694,9 +748,9 @@
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 2,
-        "actionCount": 4
+        "actionCount": 3
       },
-      "refactoringPriority": "medium",
+      "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/exponential-ai-delegation.yml"
     },
@@ -1221,6 +1275,24 @@
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/security-scan.yml"
+    },
+    "self-replicating-factory-manager.yml": {
+      "complexityScore": 50,
+      "complexityLevel": "high",
+      "metrics": {
+        "totalLines": 553,
+        "jobCount": 0,
+        "stepCount": 8,
+        "conditionalCount": 1,
+        "matrixCount": 1,
+        "dependencyCount": 4,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 5
+      },
+      "refactoringPriority": "high",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/self-replicating-factory-manager.yml"
     },
     "seo-audit.yml": {
       "complexityScore": 15,

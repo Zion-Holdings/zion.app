@@ -1,15 +1,10 @@
 {
-  "timestamp": "2025-08-16T21:22:40.968Z",
+  "timestamp": "2025-08-16T21:24:55.971Z",
   "summary": {
-    "totalWorkflows": 1,
-    "fixed": 1,
+    "totalWorkflows": 0,
+    "fixed": 0,
     "failed": 0
   },
-  "fixedWorkflows": [
-    {
-      "name": "exponential-ai-delegation.yml",
-      "status": "active"
-    }
-  ],
+  "fixedWorkflows": [],
   "failedWorkflows": []
 }

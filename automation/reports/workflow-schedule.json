@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T21:22:48.571Z",
+  "timestamp": "2025-08-16T21:24:32.297Z",
   "critical": [
     {
       "name": "auto-heal-workflows.yml",
@@ -157,6 +157,111 @@
     }
   ],
   "medium": [
+    {
+      "name": "agent-factory-proliferation.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-factory-proliferation.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 15,
+      "concurrentJobs": 24,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [
+        "analyze-current-state",
+        "[analyze-current-state",
+        "create-factory-templates]",
+        "[analyze-current-state",
+        "deploy-factories]",
+        "[exponential-growth-monitor]"
+      ],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch",
+        "push"
+      ],
+      "resourceScore": 115
+    },
+    {
+      "name": "autonomous-agent-orchestrator.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-agent-orchestrator.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 15,
+      "concurrentJobs": 23,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [
+        "agent-inventory",
+        "[agent-inventory",
+        "exponential-growth-orchestrator]",
+        "[growth-metrics-analyzer]",
+        "[autonomous-decision-engine]"
+      ],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch",
+        "push"
+      ],
+      "resourceScore": 115
+    },
+    {
+      "name": "exponential-agent-factory-proliferation.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/exponential-agent-factory-proliferation.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 15,
+      "concurrentJobs": 29,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [
+        "analyze-exponential-growth",
+        "create-exponential-factories",
+        "[analyze-exponential-growth",
+        "deploy-exponential-factories]",
+        "monitor-exponential-growth"
+      ],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch",
+        "push"
+      ],
+      "resourceScore": 115
+    },
+    {
+      "name": "self-replicating-factory-manager.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/self-replicating-factory-manager.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 15,
+      "concurrentJobs": 23,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [
+        "factory-health-check",
+        "[factory-health-check",
+        "replication-engine]",
+        "[self-replication-monitor]",
+        "[infinite-growth-validator]"
+      ],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch",
+        "push"
+      ],
+      "resourceScore": 115
+    },
     {
       "name": "actions-keepalive.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/actions-keepalive.yml",
@@ -1483,7 +1588,7 @@
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 25,
-      "concurrentJobs": 14,
+      "concurrentJobs": 13,
       "runnerRequirements": {
         "runner": "ubuntu-latest",
         "size": "standard",
