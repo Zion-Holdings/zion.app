@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T21:35:44.411Z",
+  "timestamp": "2025-08-16T21:36:32.856Z",
   "summary": {
     "totalWorkflows": 178,
     "activeWorkflows": 103,
@@ -11,6 +11,7 @@
     "highComplexity": [
       "actionlint.yml",
       "actions-keepalive.yml",
+      "agent-agent-1755379777751-4-optimization-advanced.yml",
       "agent-factory-automation.yml",
       "agent-factory-proliferation.yml",
       "agent-of-agents-trigger.yml",
@@ -775,8 +776,8 @@
       "name": "agent-agent-1755379777751-4-optimization-advanced.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379777751-4-optimization-advanced.yml",
-      "size": 503,
-      "lines": 15,
+      "size": 509,
+      "lines": 19,
       "triggers": [
         "workflow_dispatch",
         "schedule"
@@ -784,6 +785,7 @@
       "jobs": [
         "workflow_dispatch",
         "schedule",
+        "jobs",
         "agent-execution",
         "steps",
         "with"
@@ -9254,6 +9256,7 @@
       "longTerm": [
         "Refactor actionlint.yml into smaller, focused workflows",
         "Refactor actions-keepalive.yml into smaller, focused workflows",
+        "Refactor agent-agent-1755379777751-4-optimization-advanced.yml into smaller, focused workflows",
         "Refactor agent-factory-automation.yml into smaller, focused workflows",
         "Refactor agent-factory-proliferation.yml into smaller, focused workflows",
         "Refactor agent-of-agents-trigger.yml into smaller, focused workflows",
@@ -9496,6 +9499,7 @@
     "longTerm": [
       "Refactor actionlint.yml into smaller, focused workflows",
       "Refactor actions-keepalive.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755379777751-4-optimization-advanced.yml into smaller, focused workflows",
       "Refactor agent-factory-automation.yml into smaller, focused workflows",
       "Refactor agent-factory-proliferation.yml into smaller, focused workflows",
       "Refactor agent-of-agents-trigger.yml into smaller, focused workflows",

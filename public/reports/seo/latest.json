@@ -3850,6 +3850,24 @@
     "issues": []
   },
   {
+    "file": "/reports/blueprints/blueprint-2025-08-16-210049.tsx",
+    "title": "Reference Architecture — Autonomous Content Mesh",
+    "description": "High-level blueprint for an autonomous content mesh with evaluation-in-the-loop.",
+    "issues": []
+  },
+  {
+    "file": "/reports/blueprints/blueprint-2025-08-16-211045.tsx",
+    "title": "Reference Architecture — Autonomous Content Mesh",
+    "description": "High-level blueprint for an autonomous content mesh with evaluation-in-the-loop.",
+    "issues": []
+  },
+  {
+    "file": "/reports/blueprints/blueprint-2025-08-16-213049.tsx",
+    "title": "Reference Architecture — Autonomous Content Mesh",
+    "description": "High-level blueprint for an autonomous content mesh with evaluation-in-the-loop.",
+    "issues": []
+  },
+  {
     "file": "/reports/case-studies/ai-automation-success.tsx",
     "title": "AI-Powered Automation Success Story - TechCorp Industries | Zion Tech Group",
     "description": "Discover how TechCorp Industries achieved 60% reduction in production time and 35% cost savings through AI-powered automation. Read the complete case study.",
@@ -8977,6 +8995,24 @@
   },
   {
     "file": "/reports/cases/case-2025-08-16-095040.tsx",
+    "title": "Case Study — Cloud Improving",
+    "description": "Pragmatic case scenario inspired by live site signals.",
+    "issues": []
+  },
+  {
+    "file": "/reports/cases/case-2025-08-16-210049.tsx",
+    "title": "Case Study — Cloud Improving",
+    "description": "Pragmatic case scenario inspired by live site signals.",
+    "issues": []
+  },
+  {
+    "file": "/reports/cases/case-2025-08-16-211046.tsx",
+    "title": "Case Study — Cloud Improving",
+    "description": "Pragmatic case scenario inspired by live site signals.",
+    "issues": []
+  },
+  {
+    "file": "/reports/cases/case-2025-08-16-213049.tsx",
     "title": "Case Study — Cloud Improving",
     "description": "Pragmatic case scenario inspired by live site signals.",
     "issues": []
@@ -14506,6 +14542,24 @@
     "issues": []
   },
   {
+    "file": "/reports/guides/guide-2025-08-16-210049.tsx",
+    "title": "Guide — Cloud Improving Implementation",
+    "description": "Step-by-step guidance derived from live research signals.",
+    "issues": []
+  },
+  {
+    "file": "/reports/guides/guide-2025-08-16-211046.tsx",
+    "title": "Guide — Cloud Improving Implementation",
+    "description": "Step-by-step guidance derived from live research signals.",
+    "issues": []
+  },
+  {
+    "file": "/reports/guides/guide-2025-08-16-213049.tsx",
+    "title": "Guide — Cloud Improving Implementation",
+    "description": "Step-by-step guidance derived from live research signals.",
+    "issues": []
+  },
+  {
     "file": "/reports/innovations/insight-2025-08-15-0211.tsx",
     "title": "Blueprint: Edge AI",
     "description": "Patterns to accelerate delivery.",
@@ -17662,6 +17716,30 @@
     ]
   },
   {
+    "file": "/reports/innovations/insight-2025-08-16-2100.tsx",
+    "title": "Blueprint: Edge AI",
+    "description": "Patterns to enhance security.",
+    "issues": [
+      "Description length suboptimal (29)"
+    ]
+  },
+  {
+    "file": "/reports/innovations/insight-2025-08-16-2110.tsx",
+    "title": "Guide: MLOps",
+    "description": "Patterns to improve reliability.",
+    "issues": [
+      "Description length suboptimal (32)"
+    ]
+  },
+  {
+    "file": "/reports/innovations/insight-2025-08-16-2130.tsx",
+    "title": "Pilot Plan: FinOps for AI",
+    "description": "Patterns to reduce cost.",
+    "issues": [
+      "Description length suboptimal (24)"
+    ]
+  },
+  {
     "file": "/reports/innovations/insight-2025-08-16T00-00.tsx",
     "title": "Innovation Insight — 2025-08-16 00-00",
     "description": "An inventive insight derived from autonomous research.",
@@ -17730,6 +17808,24 @@
   {
     "file": "/reports/innovations/insight-2025-08-16T09-50.tsx",
     "title": "Innovation Insight — 2025-08-16 09-50",
+    "description": "An inventive insight derived from autonomous research.",
+    "issues": []
+  },
+  {
+    "file": "/reports/innovations/insight-2025-08-16T21-00.tsx",
+    "title": "Innovation Insight — 2025-08-16 21-00",
+    "description": "An inventive insight derived from autonomous research.",
+    "issues": []
+  },
+  {
+    "file": "/reports/innovations/insight-2025-08-16T21-10.tsx",
+    "title": "Innovation Insight — 2025-08-16 21-10",
+    "description": "An inventive insight derived from autonomous research.",
+    "issues": []
+  },
+  {
+    "file": "/reports/innovations/insight-2025-08-16T21-30.tsx",
+    "title": "Innovation Insight — 2025-08-16 21-30",
     "description": "An inventive insight derived from autonomous research.",
     "issues": []
   },
@@ -23244,6 +23340,24 @@
     "issues": []
   },
   {
+    "file": "/reports/patterns/pattern-2025-08-16-210049.tsx",
+    "title": "Pattern — Automation Trends 2025",
+    "description": "Actionable architectural pattern synthesized from live site signals.",
+    "issues": []
+  },
+  {
+    "file": "/reports/patterns/pattern-2025-08-16-211046.tsx",
+    "title": "Pattern — Automation Trends 2025",
+    "description": "Actionable architectural pattern synthesized from live site signals.",
+    "issues": []
+  },
+  {
+    "file": "/reports/patterns/pattern-2025-08-16-213049.tsx",
+    "title": "Pattern — Automation Trends 2025",
+    "description": "Actionable architectural pattern synthesized from live site signals.",
+    "issues": []
+  },
+  {
     "file": "/reports/playbooks/playbook-2025-08-15-021207.tsx",
     "title": "Playbook — Autonomous Delivery",
     "description": "A practical step-by-step playbook for reliable autonomous delivery.",
@@ -26883,6 +26997,24 @@
   },
   {
     "file": "/reports/playbooks/playbook-2025-08-16-095040.tsx",
+    "title": "Playbook — Autonomous Delivery",
+    "description": "A practical step-by-step playbook for reliable autonomous delivery.",
+    "issues": []
+  },
+  {
+    "file": "/reports/playbooks/playbook-2025-08-16-210050.tsx",
+    "title": "Playbook — Autonomous Delivery",
+    "description": "A practical step-by-step playbook for reliable autonomous delivery.",
+    "issues": []
+  },
+  {
+    "file": "/reports/playbooks/playbook-2025-08-16-211046.tsx",
+    "title": "Playbook — Autonomous Delivery",
+    "description": "A practical step-by-step playbook for reliable autonomous delivery.",
+    "issues": []
+  },
+  {
+    "file": "/reports/playbooks/playbook-2025-08-16-213049.tsx",
     "title": "Playbook — Autonomous Delivery",
     "description": "A practical step-by-step playbook for reliable autonomous delivery.",
     "issues": []
@@ -35857,6 +35989,236 @@
     ]
   },
   {
+    "file": "/reports/updates/update-2025-08-16-1758.tsx",
+    "title": "Autonomous Update — 2025-08-16 17:58",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1759.tsx",
+    "title": "Autonomous Update — 2025-08-16 17:59",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1800.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:00",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1801.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:01",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1802.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:02",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1803.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:03",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1804.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:04",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1805.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:05",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1806.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:06",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1807.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:07",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1808.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:08",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1809.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:09",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1810.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:10",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1811.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:11",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1812.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:12",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1813.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:13",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1814.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:14",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1815.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:15",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1816.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:16",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1818.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:18",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1820.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:20",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1823.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:23",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1824.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:24",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1825.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:25",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1826.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:26",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1827.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:27",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1828.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:28",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1829.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:29",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1830.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:30",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1831.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:31",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1832.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:32",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1833.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:33",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1834.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:34",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1835.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:35",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-1836.tsx",
+    "title": "Autonomous Update — 2025-08-16 18:36",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-2100.tsx",
+    "title": "Autonomous Playbook — Edge AI & IoT (2025-08-16 21:00 UTC)",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-2110.tsx",
+    "title": "Autonomous Validation & QA Plan — MLOps & Model Reliability (2025-08-16 21:10 UTC)",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": [
+      "Title length suboptimal (82)"
+    ]
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-2130.tsx",
+    "title": "Autonomous Capability Map — AI Service Design (2025-08-16 21:30 UTC)",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
     "file": "/reports/updates/update-2025-08-16T00-00.tsx",
     "title": "Autonomous Update — 2025-08-16 00-00",
     "description": "Fresh autonomous update synthesized from recent site signals.",
@@ -35925,6 +36287,24 @@
   {
     "file": "/reports/updates/update-2025-08-16T09-50.tsx",
     "title": "Autonomous Update — 2025-08-16 09-50",
+    "description": "Fresh autonomous update synthesized from recent site signals.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16T21-00.tsx",
+    "title": "Autonomous Update — 2025-08-16 21-00",
+    "description": "Fresh autonomous update synthesized from recent site signals.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16T21-10.tsx",
+    "title": "Autonomous Update — 2025-08-16 21-10",
+    "description": "Fresh autonomous update synthesized from recent site signals.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16T21-30.tsx",
+    "title": "Autonomous Update — 2025-08-16 21-30",
     "description": "Fresh autonomous update synthesized from recent site signals.",
     "issues": []
   },
