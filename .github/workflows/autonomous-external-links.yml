@@ -8,6 +8,7 @@ on:
 permissions:
   contents: write
 
+
 concurrency:
   group: automation-external-links
   cancel-in-progress: true

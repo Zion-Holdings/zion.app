@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T22:24:36.953Z",
+  "timestamp": "2025-08-16T22:25:41.201Z",
   "summary": {
     "totalWorkflows": 187,
     "complexityDistribution": {
@@ -1223,10 +1223,10 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-external-links.yml"
     },
     "autonomous-image-optimizer.yml": {
-      "complexityScore": 0,
+      "complexityScore": 10,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 49,
+        "totalLines": 65,
         "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
@@ -1334,7 +1334,7 @@
       "complexityScore": 10,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 53,
+        "totalLines": 69,
         "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
