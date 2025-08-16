@@ -6,10 +6,10 @@ on:
     agent-execution:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: 18    - name: Install dependencies
-      run: npm ci    - name: Run agent
-      run: node automation/agents/backend/agent-1755381089841-0-backend-expert/index.cjs
+      - name: Checkout code
+        uses: actions/checkout@v4    - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18    - name: Install dependencies
+        run: npm ci    - name: Run agent
+        run: node automation/agents/backend/agent-1755381089841-0-backend-expert/index.cjs
