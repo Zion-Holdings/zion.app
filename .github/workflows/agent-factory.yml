@@ -1,0 +1,136 @@
+name: Agent Factory
+
+on:
+  workflow_call:
+    inputs:
+      agent:
+        description: Which agent to run
+        required: true
+        type: string
+      start_url:
+        description: Start URL for crawling (fallback to PROD_URL secret)
+        required: false
+        type: string
+      pr_branch:
+        description: Branch name for PRs
+        required: false
+        type: string
+        default: chore/agent-factory-updates
+      node_version:
+        required: false
+        type: string
+        default: '20'
+      python_version:
+        required: false
+        type: string
+        default: '3.11'
+      labels:
+        required: false
+        type: string
+        default: 'automation,agents,navigation'
+    secrets:
+      PROD_URL:
+        required: false
+      GH_TOKEN:
+        required: true
+
+jobs:
+  run-agent:
+    name: Run ${{ inputs.agent }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    concurrency:
+      group: agent-factory-${{ inputs.agent }}
+      cancel-in-progress: false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ inputs.node_version }}
+
+      - name: Setup Python
+        if: ${{ inputs.agent == 'CrawlerAgent' }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ inputs.python_version }}
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Run CrawlerAgent
+        if: ${{ inputs.agent == 'CrawlerAgent' }}
+        env:
+          START_URL: ${{ inputs.start_url || secrets.PROD_URL }}
+        run: |
+          python3 crawl_links.py "${START_URL}" --max-pages 2500 --timeout 20 --output /workspace/link_report.csv
+          echo "Link CSV at /workspace/link_report.csv"
+
+      - name: Upload Crawler CSV
+        if: ${{ inputs.agent == 'CrawlerAgent' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-report
+          path: /workspace/link_report.csv
+
+      - name: Run LinkSentinelAgent
+        if: ${{ inputs.agent == 'LinkSentinelAgent' }}
+        run: |
+          node automation/site-link-crawler.cjs
+          ls -lah data/reports/link-sentinel || true
+
+      - name: Upload LinkSentinel report
+        if: ${{ inputs.agent == 'LinkSentinelAgent' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: internal-link-sentinel
+          path: data/reports/link-sentinel/
+
+      - name: Run FrontAdvertiserAgent
+        if: ${{ inputs.agent == 'FrontAdvertiserAgent' }}
+        run: npm run front:advertise
+
+      - name: Run SitemapAgent
+        if: ${{ inputs.agent == 'SitemapAgent' }}
+        run: npm run sitemap
+
+      - name: Run SearchIndexAgent
+        if: ${{ inputs.agent == 'SearchIndexAgent' }}
+        run: npm run search:index
+
+      - name: Run FrontendNavigatorAgent
+        if: ${{ inputs.agent == 'FrontendNavigatorAgent' }}
+        run: npm run frontend:navigation
+
+      - name: Create Pull Request (if changes)
+        env:
+          GIT_AUTHOR_NAME: github-actions
+          GIT_AUTHOR_EMAIL: github-actions@users.noreply.github.com
+          GIT_COMMITTER_NAME: github-actions
+          GIT_COMMITTER_EMAIL: github-actions@users.noreply.github.com
+        run: |
+          set -e
+          if ! git diff --quiet; then
+            git checkout -B "${{ inputs.pr_branch }}"
+            git add -A
+            git commit -m "chore(${{ inputs.agent }}): autonomous navigation/intelligence updates"
+            git push -f origin "${{ inputs.pr_branch }}"
+          else
+            echo "No changes to commit."
+          fi
+
+      - name: Open PR
+        if: always()
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          branch: ${{ inputs.pr_branch }}
+          title: "Autonomous update from ${{ inputs.agent }}"
+          commit-message: "chore(${{ inputs.agent }}): autonomous navigation/intelligence updates"
+          labels: ${{ inputs.labels }}
+          draft: false
+          signoff: false

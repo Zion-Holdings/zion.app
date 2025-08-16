@@ -1,0 +1,45 @@
+name: PR Navigation Smarts
+
+on:
+  pull_request:
+    paths:
+      - 'pages/**'
+      - 'components/**'
+      - 'public/**'
+      - 'automation/**'
+
+jobs:
+  link-sanity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - run: node automation/site-link-crawler.cjs
+      - name: Upload internal link sentinel
+        uses: actions/upload-artifact@v4
+        with:
+          name: internal-link-sentinel
+          path: data/reports/link-sentinel/
+      - name: Summarize internal link sentinel
+        id: summarize
+        run: |
+          REPORT=$(ls -t data/reports/link-sentinel/internal-report-*.json 2>/dev/null | head -n1 || true)
+          if [ -z "$REPORT" ]; then
+            printf 'body=No internal link sentinel report found.' >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          BODY=$(node -e "const fs=require('fs');const p=process.argv[1];const j=JSON.parse(fs.readFileSync(p,'utf8'));const broken=j.results||[];const known=(j.knownRoutes||[]).length;const suggest=broken.filter(r=>r.suggestion).length;const lines=[\`Internal Link Sentinel\`, \`- Known routes: \${known}\`, \`- Broken href refs: \${broken.length}\`, \`- With suggestions: \${suggest}\`, '', 'Top 5 examples:', ...broken.slice(0,5).map(r=>\`- \${r.href} in \${r.file} => \${r.suggestion||'n/a'}\`)]; process.stdout.write(lines.join('\\n'));" "$REPORT")
+          BODY_ESCAPED=$(printf '%s' "$BODY" | sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/%0A/g')
+          printf 'body=%s' "$BODY_ESCAPED" >> $GITHUB_OUTPUT
+      - name: Comment summary on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = decodeURIComponent(`${{ steps.summarize.outputs.body }}`.replace(/%0A/g, '\n')) || 'No report.';
+            const {owner, repo} = context.repo;
+            const issue_number = context.payload.pull_request.number;
+            await github.rest.issues.createComment({ owner, repo, issue_number, body });

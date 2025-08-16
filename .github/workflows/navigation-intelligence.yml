@@ -1,0 +1,35 @@
+name: Navigation Intelligence
+
+on:
+  push:
+    paths:
+      - 'pages/**'
+      - 'components/**'
+      - 'automation/**'
+      - 'scripts/**'
+      - 'public/**'
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      start_url:
+        description: Override start URL
+        required: false
+        type: string
+
+jobs:
+  run-agents:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        agent: [CrawlerAgent, LinkSentinelAgent, FrontAdvertiserAgent, SitemapAgent, SearchIndexAgent, FrontendNavigatorAgent]
+    steps:
+      - name: Call Agent Factory
+        uses: ./.github/workflows/agent-factory.yml
+        with:
+          agent: ${{ matrix.agent }}
+          start_url: ${{ inputs.start_url }}
+        secrets:
+          PROD_URL: ${{ secrets.PROD_URL }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
