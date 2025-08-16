@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T22:07:40.155Z",
+  "timestamp": "2025-08-16T22:08:40.954Z",
   "summary": {
     "totalWorkflows": 187,
     "complexityDistribution": {
@@ -92,7 +92,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 21,
+        "totalLines": 22,
         "jobCount": 1,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -236,7 +236,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 21,
+        "totalLines": 22,
         "jobCount": 1,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1133,10 +1133,10 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-cloud.yml"
     },
     "autonomous-content-curation.yml": {
-      "complexityScore": 0,
+      "complexityScore": 10,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 49,
+        "totalLines": 65,
         "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
@@ -1172,7 +1172,7 @@
       "complexityScore": 10,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 57,
+        "totalLines": 73,
         "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
@@ -1205,10 +1205,10 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-deps-upgrade.yml"
     },
     "autonomous-external-links.yml": {
-      "complexityScore": 0,
+      "complexityScore": 10,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 49,
+        "totalLines": 65,
         "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
@@ -1223,10 +1223,10 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-external-links.yml"
     },
     "autonomous-image-optimizer.yml": {
-      "complexityScore": 0,
+      "complexityScore": 10,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 49,
+        "totalLines": 65,
         "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
@@ -1298,7 +1298,7 @@
       "complexityScore": 10,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 54,
+        "totalLines": 70,
         "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
@@ -1334,7 +1334,7 @@
       "complexityScore": 10,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 53,
+        "totalLines": 69,
         "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,

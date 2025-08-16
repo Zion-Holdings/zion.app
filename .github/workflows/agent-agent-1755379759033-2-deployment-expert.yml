@@ -4,8 +4,6 @@ on:
   schedule:
     - cron: 0 */6 * * *
 jobs:
-
-
   agent-execution:
     runs-on: ubuntu-latest
     steps:
