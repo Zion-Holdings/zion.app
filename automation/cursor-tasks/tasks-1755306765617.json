@@ -1,0 +1,41 @@
+[
+  {
+    "id": "task-1755306765617-1",
+    "title": "Technical Specification",
+    "description": "Create detailed technical specification document for the new feature",
+    "type": "deployment-planning",
+    "priority": "high",
+    "estimatedEffort": "6-8 hours",
+    "assignedTo": "devops-engineer",
+    "status": "pending",
+    "createdAt": "2025-08-16T01:12:45.617Z",
+    "dueDate": "2025-08-19T01:12:45.617Z",
+    "conversationId": "conv-1755306765616"
+  },
+  {
+    "id": "task-1755306765617-2",
+    "title": "User Experience Design",
+    "description": "Design user interface mockups and user experience flow",
+    "type": "deployment-planning",
+    "priority": "high",
+    "estimatedEffort": "8-12 hours",
+    "assignedTo": "backend-developer",
+    "status": "pending",
+    "createdAt": "2025-08-16T01:12:45.617Z",
+    "dueDate": "2025-08-20T01:12:45.617Z",
+    "conversationId": "conv-1755306765616"
+  },
+  {
+    "id": "task-1755306765617-3",
+    "title": "Implementation Plan",
+    "description": "Create detailed implementation plan with timeline and milestones",
+    "type": "deployment-planning",
+    "priority": "medium",
+    "estimatedEffort": "4-6 hours",
+    "assignedTo": "security-expert",
+    "status": "pending",
+    "createdAt": "2025-08-16T01:12:45.617Z",
+    "dueDate": "2025-08-18T01:12:45.617Z",
+    "conversationId": "conv-1755306765616"
+  }
+]
