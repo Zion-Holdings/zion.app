@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T22:42:35.176Z",
+  "timestamp": "2025-08-16T22:43:37.627Z",
   "summary": {
     "totalWorkflows": 187,
     "complexityDistribution": {
@@ -1133,10 +1133,10 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-cloud.yml"
     },
     "autonomous-content-curation.yml": {
-      "complexityScore": 10,
+      "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 66,
+        "totalLines": 50,
         "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
@@ -1205,10 +1205,10 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-deps-upgrade.yml"
     },
     "autonomous-external-links.yml": {
-      "complexityScore": 10,
+      "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 66,
+        "totalLines": 50,
         "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
@@ -1223,10 +1223,10 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-external-links.yml"
     },
     "autonomous-image-optimizer.yml": {
-      "complexityScore": 10,
+      "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 66,
+        "totalLines": 50,
         "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
@@ -1334,7 +1334,7 @@
       "complexityScore": 10,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 71,
+        "totalLines": 55,
         "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
