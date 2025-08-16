@@ -3,7 +3,17 @@
     "system": "dependency-health",
     "status": "error",
     "error": "System Dependency Health Checker has no run/execute method",
-    "timestamp": "2025-08-16T00:17:02.932Z"
+    "timestamp": "2025-08-16T00:17:29.273Z"
+  },
+  {
+    "system": "workflow-standardization",
+    "status": "success",
+    "executionTime": 10,
+    "result": {
+      "skipped": true,
+      "reason": "Workflows have issues"
+    },
+    "timestamp": "2025-08-16T00:17:29.274Z"
   },
   {
     "system": "smart-dispatch",
@@ -11,7 +21,7 @@
     "executionTime": 3,
     "result": {
       "plan": {
-        "timestamp": "2025-08-16T00:17:02.931Z",
+        "timestamp": "2025-08-16T00:17:29.272Z",
         "changes": [],
         "manualTrigger": null,
         "workflows": [],
@@ -29,6 +39,6 @@
       "skipped": 0,
       "totalDuration": 0
     },
-    "timestamp": "2025-08-16T00:17:02.933Z"
+    "timestamp": "2025-08-16T00:17:29.274Z"
   }
 ]
