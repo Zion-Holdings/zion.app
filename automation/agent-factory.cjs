@@ -244,8 +244,9 @@ class AgentFactory {
       fs.mkdirSync(workflowDir, { recursive: true });
     }
     
-    // Write workflow file
-    fs.writeFileSync(workflowPath, JSON.stringify(workflow, null, 2));
+    // Write workflow file as YAML
+    const yamlContent = this.convertToYaml(workflow);
+    fs.writeFileSync(workflowPath, yamlContent);
     
     console.log(`✅ Created workflow for agent ${agent.id}`);
     return workflow;
@@ -264,6 +265,30 @@ class AgentFactory {
     
     fs.writeFileSync(readmePath, readme);
     console.log('✅ Agent documentation generated');
+  }
+
+  convertToYaml(obj, indent = 0) {
+    const spaces = '  '.repeat(indent);
+    let yaml = '';
+    
+    for (const [key, value] of Object.entries(obj)) {
+      if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
+        yaml += `${spaces}${key}:\n${this.convertToYaml(value, indent + 1)}`;
+      } else if (Array.isArray(value)) {
+        yaml += `${spaces}${key}:\n`;
+        for (const item of value) {
+          if (typeof item === 'object') {
+            yaml += `${spaces}- ${this.convertToYaml(item, indent + 1).trim()}`;
+          } else {
+            yaml += `${spaces}- ${item}\n`;
+          }
+        }
+      } else {
+        yaml += `${spaces}${key}: ${value}\n`;
+      }
+    }
+    
+    return yaml;
   }
 
   generateReadmeContent(agents) {
