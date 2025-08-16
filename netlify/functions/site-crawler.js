@@ -29,11 +29,27 @@ exports.handler = async () => {
   // Generate sitemap for crawling
   logStep('sitemap:generate', () => runNode('scripts/generate-sitemap.js'));
 
+  // Generate feeds from registry
+  try {
+    logStep('feeds:generate', () => runNode('scripts/generate-feeds.cjs'));
+  } catch {
+    logs.push('Feed generation skipped');
+  }
+
   // Build search index if available
   try {
     logStep('search:index', () => runNode('scripts/generate-search-index.js'));
   } catch {
     logs.push('Search index generation skipped');
+  }
+
+  // Ping search engines
+  try {
+    const sitemapUrl = (process.env.SITE_BASE_URL || 'https://zion.app') + '/sitemap.xml';
+    logStep('ping:google', () => run('curl', ['-sS', `http://www.google.com/ping?sitemap=${sitemapUrl}`]));
+    logStep('ping:bing', () => run('curl', ['-sS', `http://www.bing.com/ping?sitemap=${sitemapUrl}`]));
+  } catch {
+    logs.push('Engine pings skipped');
   }
 
   // Commit and push
