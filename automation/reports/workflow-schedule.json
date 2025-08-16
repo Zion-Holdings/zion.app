@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T21:41:39.418Z",
+  "timestamp": "2025-08-16T21:42:44.782Z",
   "critical": [
     {
       "name": "auto-heal-workflows.yml",
@@ -1897,6 +1897,45 @@
         "workflow_dispatch {}"
       ],
       "resourceScore": 110
+    },
+    {
+      "name": "agent-agent-1755379777751-4-optimization-advanced.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379777751-4-optimization-advanced.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 25,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "resourceScore": 109
+    },
+    {
+      "name": "intelligent-content-generation.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/intelligent-content-generation.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 25,
+      "concurrentJobs": 9,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch",
+        "schedule",
+        "push"
+      ],
+      "resourceScore": 106
     },
     {
       "name": "agent-factory-automation.yml",

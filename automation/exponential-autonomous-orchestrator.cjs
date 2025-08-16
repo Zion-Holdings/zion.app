@@ -15,9 +15,9 @@ class ExponentialAutonomousOrchestrator {
   constructor() {
     this.appRoot = process.cwd();
     this.configPath = path.join(this.appRoot, 'exponential-config.json');
-    this.factoriesDir = path.join(this.appRoot, 'automation', 'factories');
-    this.agentsDir = path.join(this.appRoot, 'automation', 'agents');
-    this.reportsDir = path.join(this.appRoot, 'automation', 'reports');
+    this.factoriesDir = path.join(this.appRoot, 'factories');
+    this.agentsDir = path.join(this.appRoot, 'agents');
+    this.reportsDir = path.join(this.appRoot, 'reports');
     
     this.config = this.loadConfiguration();
     this.activeFactories = new Map();
@@ -732,7 +732,7 @@ node autonomous-agent-factory.cjs
     };
     
     fs.writeFileSync(
-      path.join(this.appRoot, 'automation', 'config', 'collaboration-protocols.json'),
+      path.join(this.appRoot, 'config', 'collaboration-protocols.json'),
       JSON.stringify(collaborationConfig, null, 2)
     );
   }

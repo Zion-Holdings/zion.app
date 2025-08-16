@@ -2709,6 +2709,37 @@
       "Consider splitting into smaller workflows for better maintainability"
     ]
   },
+  "intelligent-content-generation.yml": {
+    "name": "intelligent-content-generation.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/intelligent-content-generation.yml",
+    "size": 2072,
+    "lines": 73,
+    "triggers": [
+      "workflow_dispatch",
+      "schedule",
+      "push"
+    ],
+    "jobs": [
+      "workflow_dispatch",
+      "schedule",
+      "push",
+      "paths",
+      "jobs",
+      "content-generation",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
   "knowledge-graph-radar.yml": {
     "name": "knowledge-graph-radar.yml",
     "status": "active",
@@ -8933,6 +8964,7 @@
       "Add timeout-minutes to content-generation.yml",
       "Add timeout-minutes to exponential-agent-factory-proliferation.yml",
       "Add timeout-minutes to exponential-ai-delegation.yml",
+      "Add timeout-minutes to intelligent-content-generation.yml",
       "Add timeout-minutes to netlify-automation.yml",
       "Add timeout-minutes to self-replicating-factory-manager.yml",
       "Add timeout-minutes to homepage-auto-update.yml"
@@ -9043,6 +9075,7 @@
       "Refactor git-ultrafast-sync.yml into smaller, focused workflows",
       "Refactor guardian-scheduler.yml into smaller, focused workflows",
       "Refactor instagram-marketing.yml into smaller, focused workflows",
+      "Refactor intelligent-content-generation.yml into smaller, focused workflows",
       "Refactor knowledge-graph-radar.yml into smaller, focused workflows",
       "Refactor lighthouse-budgets.yml into smaller, focused workflows",
       "Refactor lighthouse-live.yml into smaller, focused workflows",
