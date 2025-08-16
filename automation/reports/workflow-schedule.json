@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T21:35:49.587Z",
+  "timestamp": "2025-08-16T21:36:48.442Z",
   "critical": [
     {
       "name": "auto-heal-workflows.yml",
@@ -1821,25 +1821,6 @@
       "resourceScore": 110
     },
     {
-      "name": "agent-agent-1755379777751-4-optimization-advanced.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379777751-4-optimization-advanced.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 25,
-      "concurrentJobs": 5,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "workflow_dispatch",
-        "schedule"
-      ],
-      "resourceScore": 110
-    },
-    {
       "name": "agent-agent-1755379777752-5-testing-expert.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379777752-5-testing-expert.yml",
       "priority": "medium",
@@ -1916,6 +1897,25 @@
         "workflow_dispatch {}"
       ],
       "resourceScore": 110
+    },
+    {
+      "name": "agent-agent-1755379777751-4-optimization-advanced.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379777751-4-optimization-advanced.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 25,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "resourceScore": 109
     },
     {
       "name": "agent-factory-automation.yml",
