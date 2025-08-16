@@ -1,0 +1,60 @@
+name: Crawl & Index Content
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore: [ "README.md", "docs/**.md" ]
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: crawl-index-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: ${{ runner.os }}-pip-
+
+      - name: Install deps
+        run: |
+          pip install -U pip
+          pip install -r requirements.txt || true
+
+      - name: Crawl repo
+        run: |
+          python scripts/crawl_repo.py --root . --out content_index.json --arch docs/architecture.md
+
+      - name: Lint links (docs)
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: "--verbose docs/**/*.md"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create PR with updates
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: chore/auto-content-refresh
+          title: "chore: auto content refresh"
+          commit-message: "chore: update content_index.json and architecture.md"
+          body: "Automated content refresh."
+          labels: "automation,docs"

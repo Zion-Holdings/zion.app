@@ -1,0 +1,61 @@
+name: Reusable Agent Runner
+
+on:
+  workflow_call:
+    inputs:
+      agent:
+        required: true
+        type: string
+    secrets:
+      OPENAI_API_KEY:
+        required: false
+      ANTHROPIC_API_KEY:
+        required: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: run-agent-${{ inputs.agent }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  run-agent:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          pip install -U pip
+          pip install -r requirements.txt || true
+
+      - name: Authenticate gh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if command -v gh >/dev/null 2>&1; then
+            echo "$GITHUB_TOKEN" | gh auth login --with-token
+          else
+            echo "gh not found; attempting installation";
+            sudo apt-get update -y && sudo apt-get install -y gh || true
+            if command -v gh >/dev/null 2>&1; then
+              echo "$GITHUB_TOKEN" | gh auth login --with-token
+            fi
+          fi
+
+      - name: Execute agent
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/run_agent.py --agent "agents/${{ inputs.agent }}.yaml"
