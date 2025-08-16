@@ -728,7 +728,7 @@ jobs:
   }
 
   addConcurrency(content, workflowType) {
-    const concurrencyBlock = `\nconcurrency:\n  group: '${{ github.workflow }}-${{ github.ref }}'\n  cancel-in-progress: true\n`;
+    const concurrencyBlock = '\nconcurrency:\n  group: \'${{ github.workflow }}-${{ github.ref }}\'\n  cancel-in-progress: true\n';
     
     // Insert after permissions section
     const permissionsIndex = content.indexOf('permissions:');
