@@ -910,5 +910,29 @@
     "startTime": "2025-08-16T00:52:31.609Z",
     "status": "active",
     "filePath": "conv-1755305551609.json"
+  },
+  {
+    "id": "conv-1755305853606",
+    "type": "security-audit",
+    "participants": [
+      "Security Expert",
+      "Backend Developer",
+      "DevOps Engineer"
+    ],
+    "startTime": "2025-08-16T00:57:33.606Z",
+    "status": "active",
+    "filePath": "conv-1755305853606.json"
+  },
+  {
+    "id": "conv-1755305855610",
+    "type": "architecture-discussion",
+    "participants": [
+      "Backend Developer",
+      "DevOps Engineer",
+      "Security Expert"
+    ],
+    "startTime": "2025-08-16T00:57:35.610Z",
+    "status": "active",
+    "filePath": "conv-1755305855610.json"
   }
 ]
