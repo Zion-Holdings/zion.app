@@ -3832,6 +3832,12 @@
     "issues": []
   },
   {
+    "file": "/reports/blueprints/blueprint-2025-08-16-070035.tsx",
+    "title": "Reference Architecture — Autonomous Content Mesh",
+    "description": "High-level blueprint for an autonomous content mesh with evaluation-in-the-loop.",
+    "issues": []
+  },
+  {
     "file": "/reports/case-studies/ai-automation-success.tsx",
     "title": "AI-Powered Automation Success Story - TechCorp Industries | Zion Tech Group",
     "description": "Discover how TechCorp Industries achieved 60% reduction in production time and 35% cost savings through AI-powered automation. Read the complete case study.",
@@ -8935,6 +8941,18 @@
   },
   {
     "file": "/reports/cases/case-2025-08-16-061520.tsx",
+    "title": "Case Study — Cloud Improving",
+    "description": "Pragmatic case scenario inspired by live site signals.",
+    "issues": []
+  },
+  {
+    "file": "/reports/cases/case-2025-08-16-065328.tsx",
+    "title": "Case Study — Cloud Improving",
+    "description": "Pragmatic case scenario inspired by live site signals.",
+    "issues": []
+  },
+  {
+    "file": "/reports/cases/case-2025-08-16-070035.tsx",
     "title": "Case Study — Cloud Improving",
     "description": "Pragmatic case scenario inspired by live site signals.",
     "issues": []
@@ -14440,6 +14458,18 @@
     "issues": []
   },
   {
+    "file": "/reports/guides/guide-2025-08-16-065328.tsx",
+    "title": "Guide — Cloud Improving Implementation",
+    "description": "Step-by-step guidance derived from live research signals.",
+    "issues": []
+  },
+  {
+    "file": "/reports/guides/guide-2025-08-16-070035.tsx",
+    "title": "Guide — Cloud Improving Implementation",
+    "description": "Step-by-step guidance derived from live research signals.",
+    "issues": []
+  },
+  {
     "file": "/reports/innovations/insight-2025-08-15-0211.tsx",
     "title": "Blueprint: Edge AI",
     "description": "Patterns to accelerate delivery.",
@@ -17572,6 +17602,14 @@
     ]
   },
   {
+    "file": "/reports/innovations/insight-2025-08-16-0700.tsx",
+    "title": "Blueprint: FinOps for AI",
+    "description": "Patterns to increase accuracy.",
+    "issues": [
+      "Description length suboptimal (30)"
+    ]
+  },
+  {
     "file": "/reports/innovations/insight-2025-08-16T00-00.tsx",
     "title": "Innovation Insight — 2025-08-16 00-00",
     "description": "An inventive insight derived from autonomous research.",
@@ -17622,6 +17660,12 @@
   {
     "file": "/reports/innovations/insight-2025-08-16T01-20.tsx",
     "title": "Innovation Insight — 2025-08-16 01-20",
+    "description": "An inventive insight derived from autonomous research.",
+    "issues": []
+  },
+  {
+    "file": "/reports/innovations/insight-2025-08-16T07-00.tsx",
+    "title": "Innovation Insight — 2025-08-16 07-00",
     "description": "An inventive insight derived from autonomous research.",
     "issues": []
   },
@@ -23112,6 +23156,18 @@
     "issues": []
   },
   {
+    "file": "/reports/patterns/pattern-2025-08-16-065328.tsx",
+    "title": "Pattern — Automation Trends 2025",
+    "description": "Actionable architectural pattern synthesized from live site signals.",
+    "issues": []
+  },
+  {
+    "file": "/reports/patterns/pattern-2025-08-16-070035.tsx",
+    "title": "Pattern — Automation Trends 2025",
+    "description": "Actionable architectural pattern synthesized from live site signals.",
+    "issues": []
+  },
+  {
     "file": "/reports/playbooks/playbook-2025-08-15-021207.tsx",
     "title": "Playbook — Autonomous Delivery",
     "description": "A practical step-by-step playbook for reliable autonomous delivery.",
@@ -26733,6 +26789,12 @@
   },
   {
     "file": "/reports/playbooks/playbook-2025-08-16-012041.tsx",
+    "title": "Playbook — Autonomous Delivery",
+    "description": "A practical step-by-step playbook for reliable autonomous delivery.",
+    "issues": []
+  },
+  {
+    "file": "/reports/playbooks/playbook-2025-08-16-070035.tsx",
     "title": "Playbook — Autonomous Delivery",
     "description": "A practical step-by-step playbook for reliable autonomous delivery.",
     "issues": []
@@ -35685,6 +35747,14 @@
     "issues": []
   },
   {
+    "file": "/reports/updates/update-2025-08-16-0700.tsx",
+    "title": "Autonomous Security Hardening Guide — Agentic Workflows (2025-08-16 07:00 UTC)",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": [
+      "Title length suboptimal (78)"
+    ]
+  },
+  {
     "file": "/reports/updates/update-2025-08-16T00-00.tsx",
     "title": "Autonomous Update — 2025-08-16 00-00",
     "description": "Fresh autonomous update synthesized from recent site signals.",
@@ -35735,6 +35805,12 @@
   {
     "file": "/reports/updates/update-2025-08-16T01-20.tsx",
     "title": "Autonomous Update — 2025-08-16 01-20",
+    "description": "Fresh autonomous update synthesized from recent site signals.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16T07-00.tsx",
+    "title": "Autonomous Update — 2025-08-16 07-00",
     "description": "Fresh autonomous update synthesized from recent site signals.",
     "issues": []
   },
