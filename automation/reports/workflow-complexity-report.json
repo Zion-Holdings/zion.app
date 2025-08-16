@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T22:30:35.950Z",
+  "timestamp": "2025-08-16T22:31:37.171Z",
   "summary": {
     "totalWorkflows": 187,
     "complexityDistribution": {
@@ -1028,7 +1028,7 @@
       "complexityScore": 20,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 53,
+        "totalLines": 54,
         "jobCount": 1,
         "stepCount": 5,
         "conditionalCount": 1,
@@ -1046,7 +1046,7 @@
       "complexityScore": 20,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 91,
+        "totalLines": 92,
         "jobCount": 1,
         "stepCount": 7,
         "conditionalCount": 2,
@@ -1064,7 +1064,7 @@
       "complexityScore": 5,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 44,
+        "totalLines": 45,
         "jobCount": 1,
         "stepCount": 7,
         "conditionalCount": 0,
@@ -1082,7 +1082,7 @@
       "complexityScore": 15,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 51,
+        "totalLines": 52,
         "jobCount": 1,
         "stepCount": 6,
         "conditionalCount": 0,
@@ -1100,7 +1100,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 44,
+        "totalLines": 45,
         "jobCount": 1,
         "stepCount": 5,
         "conditionalCount": 1,
@@ -1118,7 +1118,7 @@
       "complexityScore": 20,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 61,
+        "totalLines": 62,
         "jobCount": 1,
         "stepCount": 14,
         "conditionalCount": 0,
@@ -1154,7 +1154,7 @@
       "complexityScore": 5,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 46,
+        "totalLines": 47,
         "jobCount": 1,
         "stepCount": 6,
         "conditionalCount": 0,
@@ -1190,7 +1190,7 @@
       "complexityScore": 20,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 76,
+        "totalLines": 77,
         "jobCount": 0,
         "stepCount": 8,
         "conditionalCount": 2,
@@ -1244,7 +1244,7 @@
       "complexityScore": 20,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 55,
+        "totalLines": 56,
         "jobCount": 1,
         "stepCount": 6,
         "conditionalCount": 1,
@@ -1262,7 +1262,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 31,
+        "totalLines": 32,
         "jobCount": 1,
         "stepCount": 2,
         "conditionalCount": 0,
@@ -1280,7 +1280,7 @@
       "complexityScore": 5,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 44,
+        "totalLines": 45,
         "jobCount": 0,
         "stepCount": 6,
         "conditionalCount": 0,
@@ -1316,7 +1316,7 @@
       "complexityScore": 15,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 62,
+        "totalLines": 63,
         "jobCount": 1,
         "stepCount": 9,
         "conditionalCount": 0,
@@ -1352,7 +1352,7 @@
       "complexityScore": 20,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 64,
+        "totalLines": 65,
         "jobCount": 1,
         "stepCount": 8,
         "conditionalCount": 0,
@@ -1370,7 +1370,7 @@
       "complexityScore": 15,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 59,
+        "totalLines": 60,
         "jobCount": 1,
         "stepCount": 6,
         "conditionalCount": 1,
@@ -1385,10 +1385,10 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-self-tune.yml"
     },
     "autonomous-ultrafast.yml": {
-      "complexityScore": 5,
+      "complexityScore": 15,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 50,
+        "totalLines": 51,
         "jobCount": 1,
         "stepCount": 6,
         "conditionalCount": 1,
@@ -1406,7 +1406,7 @@
       "complexityScore": 10,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 75,
+        "totalLines": 76,
         "jobCount": 1,
         "stepCount": 3,
         "conditionalCount": 0,
@@ -1424,7 +1424,7 @@
       "complexityScore": 10,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 86,
+        "totalLines": 87,
         "jobCount": 1,
         "stepCount": 2,
         "conditionalCount": 0,
