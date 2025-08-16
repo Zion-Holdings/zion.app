@@ -687,8 +687,8 @@
     "name": "agent-agent-1755381089844-1-deployment-advanced.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089844-1-deployment-advanced.yml",
-    "size": 540,
-    "lines": 23,
+    "size": 505,
+    "lines": 19,
     "triggers": [
       "workflow_dispatch",
       "schedule"
@@ -717,8 +717,8 @@
     "name": "agent-agent-1755381089845-2-full-stack-advanced.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089845-2-full-stack-advanced.yml",
-    "size": 515,
-    "lines": 15,
+    "size": 505,
+    "lines": 19,
     "triggers": [
       "workflow_dispatch",
       "schedule"
@@ -726,6 +726,7 @@
     "jobs": [
       "workflow_dispatch",
       "schedule",
+      "jobs",
       "agent-execution",
       "steps",
       "with"
@@ -7717,6 +7718,7 @@
       "Refactor agent-agent-1755379777755-7-backend-intermediate.yml into smaller, focused workflows",
       "Refactor agent-agent-1755381089841-0-backend-expert.yml into smaller, focused workflows",
       "Refactor agent-agent-1755381089844-1-deployment-advanced.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755381089845-2-full-stack-advanced.yml into smaller, focused workflows",
       "Refactor agent-agent-1755381089846-3-optimization-expert.yml into smaller, focused workflows",
       "Refactor agent-agent-1755381089846-4-testing-advanced.yml into smaller, focused workflows",
       "Refactor agent-agent-1755381089847-5-frontend-expert.yml into smaller, focused workflows",
