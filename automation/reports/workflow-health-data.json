@@ -76,6 +76,56 @@
       "Consider splitting into smaller workflows for better maintainability"
     ]
   },
+  "agent-factory-automation.yml": {
+    "name": "agent-factory-automation.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-factory-automation.yml",
+    "size": 19879,
+    "lines": 511,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch",
+      "push"
+    ],
+    "jobs": [
+      "schedule",
+      "workflow_dispatch",
+      "inputs",
+      "agent_type",
+      "options",
+      "complexity_level",
+      "options",
+      "push",
+      "paths",
+      "jobs",
+      "generate-agents",
+      "strategy",
+      "matrix",
+      "steps",
+      "with",
+      "with",
+      "deploy-agents",
+      "steps",
+      "with",
+      "optimize-agents",
+      "strategy",
+      "matrix",
+      "steps",
+      "try",
+      "monitor-growth",
+      "steps",
+      "autonomous-decisions",
+      "steps"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
   "agent-of-agents-trigger.yml": {
     "name": "agent-of-agents-trigger.yml",
     "status": "active",
@@ -7883,6 +7933,7 @@
   },
   "optimizations": {
     "immediate": [
+      "Add timeout-minutes to agent-factory-automation.yml",
       "Add timeout-minutes to netlify-automation.yml",
       "Add timeout-minutes to homepage-auto-update.yml"
     ],
@@ -7943,6 +7994,7 @@
     "longTerm": [
       "Refactor actionlint.yml into smaller, focused workflows",
       "Refactor actions-keepalive.yml into smaller, focused workflows",
+      "Refactor agent-factory-automation.yml into smaller, focused workflows",
       "Refactor agent-of-agents-trigger.yml into smaller, focused workflows",
       "Refactor ai-changelog.yml into smaller, focused workflows",
       "Refactor ai-content-autonomy.yml into smaller, focused workflows",
