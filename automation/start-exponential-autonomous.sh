@@ -73,7 +73,7 @@ start_orchestrator() {
     if [ ! -f "$ORCHESTRATOR_SCRIPT" ]; then
         print_error "Orchestrator script not found: $ORCHESTRATOR_SCRIPT"
         exit 1
-    }
+    fi
     
     # Start the orchestrator in the background
     print_status "Launching orchestrator in background..."

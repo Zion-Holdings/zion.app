@@ -146,8 +146,18 @@ class AgentFactory {
         };
       }
       
-      // Read the latest report
-      const latestReport = files.sort().pop();
+      // Read the latest report (look for JSON files, not markdown)
+      const jsonFiles = files.filter(f => f.endsWith('.json'));
+      if (jsonFiles.length === 0) {
+        console.log('⚠️ No JSON reports found, using default needs');
+        return {
+          agentCount: 3,
+          priorityAreas: ['content', 'automation', 'monitoring'],
+          urgency: 'medium'
+        };
+      }
+      
+      const latestReport = jsonFiles.sort().pop();
       const reportPath = path.join(reportsDir, latestReport);
       const report = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
       
@@ -213,7 +223,7 @@ class AgentFactory {
       },
       jobs: {
         'agent-execution': {
-          runs-on: 'ubuntu-latest',
+          'runs-on': 'ubuntu-latest',
           steps: [
             {
               name: 'Checkout code',
