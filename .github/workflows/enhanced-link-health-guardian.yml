@@ -1,0 +1,344 @@
+name: Enhanced Link Health Guardian
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '*/15 * * * *'  # Every 15 minutes
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+  actions: read
+  pull-requests: write
+
+env:
+  SITE_URL: https://ziontechgroup.com
+  MAX_RETRIES: 3
+  LINK_TIMEOUT: 30
+
+jobs:
+  link-health-scan:
+    name: Comprehensive Link Health Scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    outputs:
+      broken-links: ${{ steps.scan-links.outputs.broken-links }}
+      missing-pages: ${{ steps.scan-links.outputs.missing-pages }}
+      content-gaps: ${{ steps.scan-links.outputs.content-gaps }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          npm ci --no-audit --no-fund
+          pip install requests beautifulsoup4 lxml
+
+      - name: Run comprehensive link scan
+        id: scan-links
+        run: |
+          echo "Starting comprehensive link health scan..."
+          
+          # Run Python link crawler
+          python3 crawl_links.py --url ${{ env.SITE_URL }} --max-pages 1000 --timeout ${{ env.LINK_TIMEOUT }}
+          
+          # Parse results and identify issues
+          python3 -c "
+          import csv
+          import json
+          
+          broken_links = []
+          missing_pages = []
+          content_gaps = []
+          
+          with open('link_report.csv', 'r') as f:
+              reader = csv.DictReader(f)
+              for row in reader:
+                  if not row['ok'] and row['is_internal'] == 'True':
+                      if row['status_code'] == '404':
+                          missing_pages.append({
+                              'url': row['link_url'],
+                              'source': row['source_url'],
+                              'status': row['status_code']
+                          })
+                      else:
+                          broken_links.append({
+                              'url': row['link_url'],
+                              'source': row['source_url'],
+                              'status': row['status_code'],
+                              'error': row['error']
+                          })
+          
+          # Identify content gaps based on missing pages
+          unique_missing = list(set([p['url'] for p in missing_pages]))
+          for url in unique_missing:
+              if '/services' in url or '/products' in url or '/contact' in url:
+                  content_gaps.append({
+                      'type': 'core_page',
+                      'url': url,
+                      'priority': 'high'
+                  })
+          
+          print(f'::set-output name=broken-links::{json.dumps(broken_links)}')
+          print(f'::set-output name=missing-pages::{json.dumps(missing_pages)}')
+          print(f'::set-output name=content-gaps::{json.dumps(content_gaps)}')
+          
+          echo 'Scan completed:'
+          echo '- Broken links: ${#broken_links[@]}'
+          echo '- Missing pages: ${#missing_pages[@]}'
+          echo '- Content gaps: ${#content_gaps[@]}'
+          "
+
+      - name: Generate link health report
+        run: |
+          echo "## 🔗 Link Health Report - $(date)" >> link-health-report.md
+          echo "" >> link-health-report.md
+          
+          if [ "${{ steps.scan-links.outputs.broken-links }}" != "[]" ]; then
+            echo "### ❌ Broken Links Found" >> link-health-report.md
+            echo "${{ steps.scan-links.outputs.broken-links }}" | jq -r '.[] | "- " + .url + " (from " + .source + ") - Status: " + .status' >> link-health-report.md
+            echo "" >> link-health-report.md
+          fi
+          
+          if [ "${{ steps.scan-links.outputs.missing-pages }}" != "[]" ]; then
+            echo "### 🚫 Missing Pages" >> link-health-report.md
+            echo "${{ steps.scan-links.outputs.missing-pages }}" | jq -r '.[] | "- " + .url + " (referenced from " + .source + ")"' >> link-health-report.md
+            echo "" >> link-health-report.md
+          fi
+          
+          if [ "${{ steps.scan-links.outputs.content-gaps }}" != "[]" ]; then
+            echo "### 📝 Content Gaps Identified" >> link-health-report.md
+            echo "${{ steps.scan-links.outputs.content-gaps }}" | jq -r '.[] | "- " + .type + ": " + .url + " (Priority: " + .priority + ")"' >> link-health-report.md
+            echo "" >> link-health-report.md
+          fi
+          
+          echo "Report generated at: $(date)" >> link-health-report.md
+
+      - name: Upload link health report
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-health-report
+          path: link-health-report.md
+
+  auto-fix-links:
+    name: Auto-fix Broken Links
+    runs-on: ubuntu-latest
+    needs: link-health-scan
+    if: needs.link-health-scan.outputs.broken-links != '[]'
+    timeout-minutes: 30
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Download link health report
+        uses: actions/download-artifact@v4
+        with:
+          name: link-health-report
+
+      - name: Auto-fix broken links
+        run: |
+          echo "Starting automatic link fixes..."
+          
+          # Run the existing link fixer
+          node automation/site-link-fixer.cjs
+          
+          # Additional intelligent fixes
+          node automation/smart-content-completer.cjs fix-links
+          
+          echo "Link fixes completed"
+
+      - name: Commit and push fixes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          if git diff --quiet; then
+            echo "No changes to commit"
+          else
+            git add .
+            git commit -m "🔧 Auto-fix broken links and improve site health
+            
+            - Fixed broken internal links
+            - Improved link structure
+            - Enhanced site navigation
+            
+            Automated by Enhanced Link Health Guardian"
+            git push
+          fi
+
+  auto-generate-content:
+    name: Auto-generate Missing Content
+    runs-on: ubuntu-latest
+    needs: link-health-scan
+    if: needs.link-health-scan.outputs.content-gaps != '[]'
+    timeout-minutes: 60
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Download link health report
+        uses: actions/download-artifact@v4
+        with:
+          name: link-health-report
+
+      - name: Generate missing content
+        run: |
+          echo "Starting automatic content generation..."
+          
+          # Run smart content completer
+          node automation/smart-content-completer.cjs complete
+          
+          # Generate missing pages based on gaps
+          node automation/smart-content-completer.cjs generate missing-pages
+          
+          # Update site structure
+          node automation/smart-content-completer.cjs update-structure
+          
+          echo "Content generation completed"
+
+      - name: Build and test
+        run: |
+          npm run build:heal
+          npm run test
+
+      - name: Commit and push new content
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          if git diff --quiet; then
+            echo "No content changes to commit"
+          else
+            git add .
+            git commit -m "📝 Auto-generate missing content and pages
+            
+            - Created missing core pages
+            - Generated content for identified gaps
+            - Updated site structure and navigation
+            
+            Automated by Enhanced Link Health Guardian"
+            git push
+          fi
+
+  create-pr-for-major-fixes:
+    name: Create PR for Major Fixes
+    runs-on: ubuntu-latest
+    needs: [link-health-scan, auto-fix-links, auto-generate-content]
+    if: |
+      needs.link-health-scan.outputs.broken-links != '[]' ||
+      needs.link-health-scan.outputs.content-gaps != '[]'
+    timeout-minutes: 15
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Download link health report
+        uses: actions/download-artifact@v4
+        with:
+          name: link-health-report
+
+      - name: Create Pull Request
+        run: |
+          # Check if there are uncommitted changes
+          if git diff --quiet; then
+            echo "No changes to create PR for"
+            exit 0
+          fi
+          
+          # Create a new branch
+          BRANCH_NAME="auto-fix-links-$(date +%Y%m%d-%H%M%S)"
+          git checkout -b "$BRANCH_NAME"
+          
+          # Add and commit changes
+          git add .
+          git commit -m "🔧 Automated link health improvements
+          
+          This PR contains automated fixes for:
+          - Broken internal links
+          - Missing page content
+          - Site structure improvements
+          
+          Generated by Enhanced Link Health Guardian workflow"
+          
+          # Push the branch
+          git push origin "$BRANCH_NAME"
+          
+          # Create PR using GitHub CLI
+          gh pr create \
+            --title "🔧 Automated Link Health Improvements" \
+            --body "$(cat link-health-report.md)" \
+            --base main \
+            --head "$BRANCH_NAME" \
+            --label "automated,link-health,content-generation"
+
+  notify-team:
+    name: Notify Team of Issues
+    runs-on: ubuntu-latest
+    needs: link-health-scan
+    if: |
+      needs.link-health-scan.outputs.broken-links != '[]' ||
+      needs.link-health-scan.outputs.content-gaps != '[]'
+    timeout-minutes: 10
+    
+    steps:
+      - name: Download link health report
+        uses: actions/download-artifact@v4
+        with:
+          name: link-health-report
+
+      - name: Create issue for critical problems
+        run: |
+          if [ "${{ needs.link-health-scan.outputs.content-gaps }}" != "[]" ]; then
+            gh issue create \
+              --title "🚨 Critical Content Gaps Detected" \
+              --body "$(cat link-health-report.md)" \
+              --label "critical,content-gap,automated" \
+              --assignee "@me"
+          fi
+          
+          if [ "${{ needs.link-health-scan.outputs.broken-links }}" != "[]" ]; then
+            gh issue create \
+              --title "⚠️ Broken Links Detected" \
+              --body "$(cat link-health-report.md)" \
+              --label "broken-links,automated" \
+              --assignee "@me"
+          fi
