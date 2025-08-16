@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T22:40:44.607Z",
+  "timestamp": "2025-08-16T22:41:44.038Z",
   "critical": [
     {
       "name": "auto-heal-workflows.yml",
@@ -3600,7 +3600,7 @@
       "priority": "low",
       "resourceIntensity": "medium",
       "estimatedDuration": 45,
-      "concurrentJobs": 9,
+      "concurrentJobs": 6,
       "runnerRequirements": {
         "runner": "ubuntu-latest",
         "size": "standard",
@@ -3611,7 +3611,7 @@
         "schedule",
         "workflow_dispatch {}"
       ],
-      "resourceScore": 56
+      "resourceScore": 59
     }
   ],
   "resourceIntensive": [],
