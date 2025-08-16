@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-16T01:03:03.224Z",
+  "generatedAt": "2025-08-16T01:04:03.203Z",
   "entries": [
     {
       "route": "/terms",
@@ -1638,6 +1638,12 @@
       "file": "pages/reports/updates/update-2025-08-15-2210.tsx",
       "title": "Autonomous Reference Architecture — DevSecOps for AI (2025-08-15 22:10 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Reference Architecture — DevSecOps for AI (2025-08-15 22:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-2204",
+      "file": "pages/reports/updates/update-2025-08-15-2204.tsx",
+      "title": "Autonomous Update — 2025-08-15 22:04",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 22:04 Autonomous Update — 2025-08-15 22:04 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Open source AI is the"
     },
     {
       "route": "/reports/updates/update-2025-08-15-2203",
