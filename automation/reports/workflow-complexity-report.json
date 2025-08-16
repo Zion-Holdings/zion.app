@@ -1,18 +1,18 @@
 {
-  "timestamp": "2025-08-16T21:43:36.658Z",
+  "timestamp": "2025-08-16T21:44:39.814Z",
   "summary": {
     "totalWorkflows": 179,
     "complexityDistribution": {
       "very-high": 0,
       "high": 6,
-      "medium": 1,
-      "low": 172
+      "medium": 2,
+      "low": 171
     },
     "refactoringPriorities": {
       "critical": 0,
       "high": 6,
-      "medium": 1,
-      "low": 172
+      "medium": 2,
+      "low": 171
     }
   },
   "workflows": {
@@ -69,24 +69,6 @@
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379731005-0-full-stack-expert.yml"
-    },
-    "agent-agent-1755379731007-1-deployment-expert.yml": {
-      "complexityScore": 0,
-      "complexityLevel": "low",
-      "metrics": {
-        "totalLines": 15,
-        "jobCount": 0,
-        "stepCount": 1,
-        "conditionalCount": 0,
-        "matrixCount": 0,
-        "dependencyCount": 0,
-        "environmentCount": 0,
-        "secretCount": 0,
-        "actionCount": 2
-      },
-      "refactoringPriority": "low",
-      "status": "active",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379731007-1-deployment-expert.yml"
     },
     "agent-agent-1755379731008-2-monitoring-expert.yml": {
       "complexityScore": 0,
@@ -681,6 +663,24 @@
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/automation-advertiser.yml"
+    },
+    "automation-dashboard.yml": {
+      "complexityScore": 30,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 127,
+        "jobCount": 0,
+        "stepCount": 13,
+        "conditionalCount": 1,
+        "matrixCount": 0,
+        "dependencyCount": 1,
+        "environmentCount": 0,
+        "secretCount": 1,
+        "actionCount": 5
+      },
+      "refactoringPriority": "medium",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/automation-dashboard.yml"
     },
     "automation-orchestrator.yml": {
       "complexityScore": 0,

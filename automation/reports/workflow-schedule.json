@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T21:43:44.186Z",
+  "timestamp": "2025-08-16T21:44:46.646Z",
   "critical": [
     {
       "name": "auto-heal-workflows.yml",
@@ -1555,25 +1555,6 @@
       "resourceScore": 110
     },
     {
-      "name": "agent-agent-1755379731007-1-deployment-expert.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379731007-1-deployment-expert.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 25,
-      "concurrentJobs": 5,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "workflow_dispatch",
-        "schedule"
-      ],
-      "resourceScore": 110
-    },
-    {
       "name": "agent-agent-1755379731008-2-monitoring-expert.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379731008-2-monitoring-expert.yml",
       "priority": "medium",
@@ -1982,6 +1963,27 @@
         "schedule",
         "workflow_dispatch  # Manual trigger",
         "push"
+      ],
+      "resourceScore": 105
+    },
+    {
+      "name": "automation-dashboard.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/automation-dashboard.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 25,
+      "concurrentJobs": 11,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [
+        "dashboard-generation"
+      ],
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
       ],
       "resourceScore": 105
     },
