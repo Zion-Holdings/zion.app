@@ -64,7 +64,7 @@ class MasterAutomationOrchestrator {
     
     this.automationSystems.set('workflow-standardization', {
       name: 'Workflow Template Standardizer (Safe Mode)',
-      class: this.safeRequire('./workflow-template-standardizer-fixed.cjs'),
+      class: this.safeRequire('./workflow-template-standardizer-simple.cjs'),
       instance: null,
       status: 'stopped',
       lastRun: null,

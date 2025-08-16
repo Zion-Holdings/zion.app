@@ -2039,8 +2039,8 @@
     "name": "netlify-automation.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/netlify-automation.yml",
-    "size": 8236,
-    "lines": 233,
+    "size": 8283,
+    "lines": 237,
     "triggers": [
       "push",
       "pull_request",
@@ -2071,7 +2071,16 @@
       "steps"
     ],
     "timeouts": [],
-    "permissions": [],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
     "concurrency": null,
     "issues": [],
     "recommendations": [

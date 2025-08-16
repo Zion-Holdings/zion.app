@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T00:15:38.227Z",
+  "timestamp": "2025-08-16T00:16:36.883Z",
   "summary": {
     "totalWorkflows": 150,
     "activeWorkflows": 75,
@@ -2255,8 +2255,8 @@
       "name": "netlify-automation.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/netlify-automation.yml",
-      "size": 8236,
-      "lines": 233,
+      "size": 8283,
+      "lines": 237,
       "triggers": [
         "push",
         "pull_request",
@@ -2287,7 +2287,16 @@
         "steps"
       ],
       "timeouts": [],
-      "permissions": [],
+      "permissions": [
+        {
+          "permission": "contents",
+          "value": "read"
+        },
+        {
+          "permission": "actions",
+          "value": "read"
+        }
+      ],
       "concurrency": null,
       "issues": [],
       "recommendations": [

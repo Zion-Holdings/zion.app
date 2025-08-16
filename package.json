@@ -65,7 +65,7 @@
     "auto:intel": "node automation/intelligent-orchestrator.cjs run intelligent",
     "autonomous": "node automation/launch-enhanced-autonomous-system.js",
     "autonomous:dev": "nodemon automation/launch-enhanced-autonomous-system.js",
-    "autonomous:status": "node automation/autonomous-system-orchestrator.cjs status",
+
     "linkedin:run": "ts-node scripts/linkedin-automation.ts run",
     "linkedin:cron": "ts-node scripts/linkedin-automation.ts cron",
     "linkedin:generate": "ts-node scripts/linkedin-automation.ts generate",
