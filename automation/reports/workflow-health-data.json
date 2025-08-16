@@ -686,7 +686,7 @@
     "name": "agent-agent-1755381089844-1-deployment-advanced.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089844-1-deployment-advanced.yml",
-    "size": 499,
+    "size": 501,
     "lines": 15,
     "triggers": [
       "workflow_dispatch",
@@ -803,7 +803,7 @@
     "name": "agent-agent-1755381089847-5-frontend-expert.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089847-5-frontend-expert.yml",
-    "size": 489,
+    "size": 491,
     "lines": 15,
     "triggers": [
       "workflow_dispatch",
@@ -861,7 +861,7 @@
     "name": "agent-agent-1755381089849-7-monitoring-intermediate.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089849-7-monitoring-intermediate.yml",
-    "size": 507,
+    "size": 509,
     "lines": 15,
     "triggers": [
       "workflow_dispatch",
