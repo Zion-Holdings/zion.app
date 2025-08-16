@@ -686,8 +686,8 @@
     "name": "agent-agent-1755381089844-1-deployment-advanced.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089844-1-deployment-advanced.yml",
-    "size": 501,
-    "lines": 15,
+    "size": 540,
+    "lines": 23,
     "triggers": [
       "workflow_dispatch",
       "schedule"
@@ -695,6 +695,7 @@
     "jobs": [
       "workflow_dispatch",
       "schedule",
+      "jobs",
       "agent-execution",
       "steps",
       "with"
@@ -744,8 +745,8 @@
     "name": "agent-agent-1755381089846-3-optimization-expert.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089846-3-optimization-expert.yml",
-    "size": 503,
-    "lines": 15,
+    "size": 507,
+    "lines": 19,
     "triggers": [
       "workflow_dispatch",
       "schedule"
@@ -753,6 +754,7 @@
     "jobs": [
       "workflow_dispatch",
       "schedule",
+      "jobs",
       "agent-execution",
       "steps",
       "with"
@@ -832,8 +834,8 @@
     "name": "agent-agent-1755381089848-6-testing-intermediate.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089848-6-testing-intermediate.yml",
-    "size": 500,
-    "lines": 15,
+    "size": 504,
+    "lines": 19,
     "triggers": [
       "workflow_dispatch",
       "schedule"
@@ -841,6 +843,7 @@
     "jobs": [
       "workflow_dispatch",
       "schedule",
+      "jobs",
       "agent-execution",
       "steps",
       "with"
@@ -7710,7 +7713,10 @@
       "Refactor agent-agent-1755379777752-5-testing-expert.yml into smaller, focused workflows",
       "Refactor agent-agent-1755379777754-6-backend-expert.yml into smaller, focused workflows",
       "Refactor agent-agent-1755379777755-7-backend-intermediate.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755381089844-1-deployment-advanced.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755381089846-3-optimization-expert.yml into smaller, focused workflows",
       "Refactor agent-agent-1755381089846-4-testing-advanced.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755381089848-6-testing-intermediate.yml into smaller, focused workflows",
       "Refactor agent-factory-automation.yml into smaller, focused workflows",
       "Refactor agent-factory-proliferation.yml into smaller, focused workflows",
       "Refactor agent-of-agents-trigger.yml into smaller, focused workflows",
