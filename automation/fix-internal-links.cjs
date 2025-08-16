@@ -6,7 +6,6 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = process.cwd();
-const PAGES_DIR = path.join(ROOT, 'pages');
 const SRC_DIRS = [path.join(ROOT, 'pages'), path.join(ROOT, 'components')];
 const REPORT_DIR = path.join(ROOT, 'data', 'reports', 'link-sentinel');
 
@@ -17,10 +16,11 @@ function isSpecial(name) { return name.startsWith('_') || name.startsWith('['); 
 
 function collectRoutes() {
   const routes = new Set();
+  const pagesDir = path.join(ROOT, 'pages');
+  if (!fs.existsSync(pagesDir)) return routes;
   function walk(dir, routePrefix = '') {
     const entries = fs.readdirSync(dir, { withFileTypes: true });
 
-    // if directory has index.* treat as routePrefix
     const hasIndex = entries.some((e) => e.isFile() && /^(index)\.(tsx|jsx|ts|js)$/i.test(e.name));
     if (hasIndex && routePrefix) {
       routes.add(routePrefix);
@@ -42,14 +42,14 @@ function collectRoutes() {
       }
     }
   }
-  walk(PAGES_DIR, '');
-  // root index exists implicitly at '/'
+  walk(pagesDir, '');
   routes.add('/');
   return routes;
 }
 
 function collectDynamicPatterns() {
   const patterns = [];
+  const pagesDir = path.join(ROOT, 'pages');
   function walk(dir, routePrefix = '') {
     let entries = [];
     try { entries = fs.readdirSync(dir, { withFileTypes: true }); } catch { return; }
@@ -77,7 +77,7 @@ function collectDynamicPatterns() {
       }
     }
   }
-  walk(PAGES_DIR, '');
+  walk(pagesDir, '');
   return patterns;
 }
 
@@ -100,6 +100,25 @@ function loadRedirects() {
   return map;
 }
 
+function* walkFiles(startDir, exts = ['.tsx', '.ts', '.jsx', '.js', '.mdx']) {
+  if (!fs.existsSync(startDir)) return;
+  const stack = [startDir];
+  while (stack.length) {
+    const current = stack.pop();
+    let entries = [];
+    try { entries = fs.readdirSync(current, { withFileTypes: true }); } catch { continue; }
+    for (const entry of entries) {
+      const full = path.join(current, entry.name);
+      if (entry.isDirectory()) {
+        if (entry.name === 'node_modules' || entry.name.startsWith('.')) continue;
+        stack.push(full);
+      } else if (entry.isFile()) {
+        if (exts.includes(path.extname(entry.name))) yield full;
+      }
+    }
+  }
+}
+
 function extractSiteRelativeHrefs(content) {
   const hrefs = new Set();
   const re = /href\s*=\s*(?:"([^"]+)"|'([^']+)'|\{\s*`([^`]+)`\s*\}|\{\s*"([^"]+)"\s*\}|\{\s*'([^']+)'\s*\})/g;
@@ -112,11 +131,13 @@ function extractSiteRelativeHrefs(content) {
   return Array.from(hrefs);
 }
 
-function suggestFix(route, knownRoutes, redirects) {
-  // Remove trailing '/index' or trailing slash
+function suggestFix(route, knownRoutes, dynamicPatterns, redirects) {
+  const normalized = route.replace(/\/$/, '');
+  // If dynamic route matches, do not rewrite automatically
+  if (dynamicPatterns.some((rx) => rx.test(normalized))) return null;
   const candidates = new Set([
-    route.replace(/\/$/, ''),
-    route.replace(/\/index$/i, ''),
+    normalized,
+    normalized.replace(/\/index$/i, ''),
   ]);
   for (const cand of candidates) {
     if (knownRoutes.has(cand)) return cand;
@@ -125,51 +146,70 @@ function suggestFix(route, knownRoutes, redirects) {
   return null;
 }
 
-function isValidInternalRoute(route, knownRoutes, dynamicPatterns, redirects) {
-  if (knownRoutes.has(route)) return true;
-  if (redirects.has(route)) return true;
-  for (const rx of dynamicPatterns) {
-    if (rx.test(route)) return true;
+function buildReplacements(content, href, replacement) {
+  const patterns = [
+    { re: new RegExp(`href\\s*=\\s*"${escapeRegExp(href)}"`, 'g'), fmt: () => `href="${replacement}"` },
+    { re: new RegExp(`href\\s*=\\s*'${escapeRegExp(href)}'`, 'g'), fmt: () => `href='${replacement}'` },
+    { re: new RegExp(`href\\s*=\\s*\\{\\s*\\?` + escapeRegExp(href) + `\\?\\s*\\}`, 'g'), fmt: () => `href={\`${replacement}\`}` },
+    { re: new RegExp(`href\\s*=\\s*\\{\\s*"${escapeRegExp(href)}"\\s*\\}`, 'g'), fmt: () => `href={"${replacement}"}` },
+    { re: new RegExp(`href\\s*=\\s*\\{\\s*'${escapeRegExp(href)}'\\s*\\}`, 'g'), fmt: () => `href={'${replacement}'}` },
+  ];
+  let changed = content;
+  let count = 0;
+  for (const p of patterns) {
+    const before = changed;
+    changed = changed.replace(p.re, p.fmt);
+    if (changed !== before) count++;
   }
-  return false;
+  return { changed, touched: count > 0 };
 }
 
-(function main() {
+function escapeRegExp(s) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+(async function main() {
+  const args = new Set(process.argv.slice(2));
+  const write = args.has('--write');
+  const dryRun = args.has('--dry-run') || !write;
+
   const knownRoutes = collectRoutes();
   const dynamicPatterns = collectDynamicPatterns();
   const redirects = loadRedirects();
-  const files = SRC_DIRS.flatMap((d) => (fs.existsSync(d) ? listSourceFiles(d) : []));
+  const files = SRC_DIRS.flatMap((d) => (fs.existsSync(d) ? Array.from(walkFiles(d)) : []));
 
-  const broken = [];
-  const seen = new Set();
+  const changes = [];
 
   for (const file of files) {
     const content = fs.readFileSync(file, 'utf8');
     const hrefs = extractSiteRelativeHrefs(content);
+    let updated = content;
+    let fileTouched = false;
     for (const href of hrefs) {
-      const normalized = href.replace(/\/$/, '');
-      if (isValidInternalRoute(normalized, knownRoutes, dynamicPatterns, redirects)) continue;
-      const key = `${normalized}::${file}`;
-      if (seen.has(key)) continue;
-      seen.add(key);
-      const suggestion = suggestFix(normalized, knownRoutes, redirects);
-      broken.push({ file: path.relative(ROOT, file), href: normalized, suggestion });
+      if (knownRoutes.has(href) || dynamicPatterns.some((rx) => rx.test(href)) || redirects.has(href)) continue;
+      const suggestion = suggestFix(href, knownRoutes, dynamicPatterns, redirects);
+      if (!suggestion) continue;
+      const { changed, touched } = buildReplacements(updated, href, suggestion);
+      if (touched) {
+        updated = changed;
+        fileTouched = true;
+        changes.push({ file: path.relative(ROOT, file), from: href, to: suggestion });
+      }
+    }
+    if (fileTouched && write) {
+      fs.writeFileSync(file, updated);
     }
   }
 
-  const report = { generatedAt: new Date().toISOString(), knownRoutes: Array.from(knownRoutes).sort(), results: broken };
-  const out = path.join(REPORT_DIR, `internal-report-${new Date().toISOString().replace(/[:.]/g, '-')}.json`);
+  const report = {
+    generatedAt: new Date().toISOString(),
+    writeMode: write,
+    totalChanges: changes.length,
+    changes,
+  };
+  const out = path.join(REPORT_DIR, `internal-fixes-${new Date().toISOString().replace(/[:.]/g, '-')}.json`);
   fs.writeFileSync(out, JSON.stringify(report, null, 2));
-  console.log(`Internal Link Sentinel report saved to ${out}`);
-})();
+  console.log(`${write ? 'Wrote' : 'Planned'} ${changes.length} changes. Report: ${out}`);
 
-function listSourceFiles(dir) {
-  const out = [];
-  const entries = fs.readdirSync(dir, { withFileTypes: true });
-  for (const entry of entries) {
-    const full = path.join(dir, entry.name);
-    if (entry.isDirectory()) out.push(...listSourceFiles(full));
-    else if (/\.(tsx|ts|js|jsx|mdx)$/i.test(entry.name)) out.push(full);
-  }
-  return out;
-}
+  if (dryRun && changes.length) process.exitCode = 2; // signal potential changes
+})();
