@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T22:08:59.563Z",
+  "timestamp": "2025-08-16T22:09:32.462Z",
   "summary": {
     "totalWorkflows": 188,
     "activeWorkflows": 187,
@@ -559,8 +559,8 @@
       "name": "agent-agent-1755379759033-2-deployment-expert.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379759033-2-deployment-expert.yml",
-      "size": 504,
-      "lines": 22,
+      "size": 502,
+      "lines": 20,
       "triggers": [
         "workflow_dispatch",
         "schedule"
