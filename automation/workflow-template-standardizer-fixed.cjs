@@ -59,9 +59,9 @@ permissions:
   contents: read
   pull-requests: read
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+      concurrency:
+        group: '${{ github.workflow }}-${{ github.ref }}'
+        cancel-in-progress: true
 
 env:
   CI: 'true'
