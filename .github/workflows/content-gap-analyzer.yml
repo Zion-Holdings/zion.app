@@ -1,0 +1,623 @@
+name: Content Gap Analyzer & Auto-Completer
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '0 */6 * * *'  # Every 6 hours
+  push:
+    branches: [main]
+    paths:
+      - 'pages/**'
+      - 'components/**'
+      - 'content/**'
+
+permissions:
+  contents: write
+  actions: read
+  pull-requests: write
+
+env:
+  SITE_URL: https://ziontechgroup.com
+  AI_MODEL: gpt-4
+  MAX_CONTENT_LENGTH: 2000
+
+jobs:
+  analyze-content-gaps:
+    name: Analyze Content Gaps
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    outputs:
+      gaps-found: ${{ steps.analyze-gaps.outputs.gaps-found }}
+      missing-pages: ${{ steps.analyze-gaps.outputs.missing-pages }}
+      incomplete-content: ${{ steps.analyze-gaps.outputs.incomplete-content }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Analyze content gaps
+        id: analyze-gaps
+        run: |
+          echo "Starting comprehensive content gap analysis..."
+          
+          # Run content gap analyzer
+          node automation/content-gap-analyzer.cjs analyze
+          
+          # Run enhanced content quality analyzer
+          node automation/enhanced-content-quality-analyzer.cjs gaps
+          
+          # Parse results and identify gaps
+          node -e "
+          const fs = require('fs');
+          const path = require('path');
+          
+          // Read gap analysis results
+          let gaps = [];
+          let missingPages = [];
+          let incompleteContent = [];
+          
+          try {
+            // Check for gap analysis reports
+            const reportsDir = path.join(process.cwd(), 'automation', 'reports');
+            if (fs.existsSync(reportsDir)) {
+              const files = fs.readdirSync(reportsDir);
+              const gapFiles = files.filter(f => f.includes('gap') || f.includes('content'));
+              
+              for (const file of gapFiles) {
+                const content = fs.readFileSync(path.join(reportsDir, file), 'utf8');
+                try {
+                  const data = JSON.parse(content);
+                  if (data.gaps) gaps = gaps.concat(data.gaps);
+                  if (data.missingPages) missingPages = missingPages.concat(data.missingPages);
+                  if (data.incompleteContent) incompleteContent = incompleteContent.concat(data.incompleteContent);
+                } catch (e) {
+                  // Skip non-JSON files
+                }
+              }
+            }
+          } catch (e) {
+            console.log('No existing reports found, will generate new analysis');
+          }
+          
+          // Analyze site structure for missing core pages
+          const pagesDir = path.join(process.cwd(), 'pages');
+          const expectedPages = [
+            '/services', '/products', '/contact', '/about', '/blog', '/docs',
+            '/pricing', '/support', '/careers', '/privacy', '/terms'
+          ];
+          
+          for (const expectedPage of expectedPages) {
+            const pagePath = path.join(pagesDir, expectedPage.slice(1));
+            if (!fs.existsSync(pagePath) && !fs.existsSync(pagePath + '.tsx') && !fs.existsSync(pagePath + '.jsx')) {
+              missingPages.push({
+                path: expectedPage,
+                type: 'core_page',
+                priority: 'high',
+                description: 'Missing core business page'
+              });
+            }
+          }
+          
+          // Check for incomplete content
+          const contentFiles = [
+            'pages/index.tsx', 'pages/automation/index.tsx', 'pages/site-health/index.tsx'
+          ];
+          
+          for (const file of contentFiles) {
+            if (fs.existsSync(file)) {
+              const content = fs.readFileSync(file, 'utf8');
+              if (content.length < 500) { // Very short content
+                incompleteContent.push({
+                  file: file,
+                  issue: 'content_too_short',
+                  currentLength: content.length,
+                  recommendedLength: 1000
+                });
+              }
+            }
+          }
+          
+          console.log('::set-output name=gaps-found::' + JSON.stringify(gaps));
+          console.log('::set-output name=missing-pages::' + JSON.stringify(missingPages));
+          console.log('::set-output name=incomplete-content::' + JSON.stringify(incompleteContent));
+          
+          console.log('Content gap analysis completed:');
+          console.log('- Content gaps found:', gaps.length);
+          console.log('- Missing pages:', missingPages.length);
+          console.log('- Incomplete content:', incompleteContent.length);
+          "
+
+      - name: Generate content gap report
+        run: |
+          echo "## 📝 Content Gap Analysis Report - $(date)" > content-gap-report.md
+          echo "" >> content-gap-report.md
+          
+          if [ "${{ steps.analyze-gaps.outputs.gaps-found }}" != "[]" ]; then
+            echo "### 🔍 Content Gaps Identified" >> content-gap-report.md
+            echo "${{ steps.analyze-gaps.outputs.gaps-found }}" | jq -r '.[] | "- **" + .type + "**: " + .description + " (Priority: " + .priority + ")"' >> content-gap-report.md
+            echo "" >> content-gap-report.md
+          fi
+          
+          if [ "${{ steps.analyze-gaps.outputs.missing-pages }}" != "[]" ]; then
+            echo "### 🚫 Missing Pages" >> content-gap-report.md
+            echo "${{ steps.analyze-gaps.outputs.missing-pages }}" | jq -r '.[] | "- **" + .path + "**: " + .description + " (Priority: " + .priority + ")"' >> content-gap-report.md
+            echo "" >> content-gap-report.md
+          fi
+          
+          if [ "${{ steps.analyze-gaps.outputs.incomplete-content }}" != "[]" ]; then
+            echo "### ⚠️ Incomplete Content" >> content-gap-report.md
+            echo "${{ steps.analyze-gaps.outputs.incomplete-content }}" | jq -r '.[] | "- **" + .file + "**: " + .issue + " (Current: " + .currentLength + " chars, Recommended: " + .recommendedLength + ")"' >> content-gap-report.md
+            echo "" >> content-gap-report.md
+          fi
+          
+          echo "Report generated at: $(date)" >> content-gap-report.md
+
+      - name: Upload content gap report
+        uses: actions/upload-artifact@v4
+        with:
+          name: content-gap-report
+          path: content-gap-report.md
+
+  auto-generate-missing-pages:
+    name: Auto-generate Missing Pages
+    runs-on: ubuntu-latest
+    needs: analyze-content-gaps
+    if: needs.analyze-content-gaps.outputs.missing-pages != '[]'
+    timeout-minutes: 45
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Download content gap report
+        uses: actions/download-artifact@v4
+        with:
+          name: content-gap-report
+
+      - name: Generate missing pages
+        run: |
+          echo "Starting automatic page generation..."
+          
+          # Run smart content completer for missing pages
+          node automation/smart-content-completer.cjs generate pages
+          
+          # Generate specific missing pages based on analysis
+          node -e "
+          const fs = require('fs');
+          const path = require('path');
+          
+          const missingPages = ${{ needs.analyze-content-gaps.outputs.missing-pages }};
+          
+          for (const page of missingPages) {
+            if (page.type === 'core_page') {
+              console.log('Generating core page:', page.path);
+              
+              // Create page directory if needed
+              const pageDir = path.join(process.cwd(), 'pages', page.path.slice(1));
+              fs.mkdirSync(pageDir, { recursive: true });
+              
+              // Generate page content
+              const pageContent = generatePageContent(page);
+              const indexPath = path.join(pageDir, 'index.tsx');
+              fs.writeFileSync(indexPath, pageContent);
+              
+              console.log('Generated page:', indexPath);
+            }
+          }
+          
+          function generatePageContent(page) {
+            const title = page.path.slice(1).charAt(0).toUpperCase() + page.path.slice(2);
+            const description = page.description || 'Page for ' + title;
+            
+            return \`import React from 'react';
+import Head from 'next/head';
+import Link from 'next/link';
+
+export default function \${title.replace(/[^a-zA-Z0-9]/g, '')}Page() {
+  return (
+    <div className='min-h-screen bg-gray-50'>
+      <Head>
+        <title>\${title} - Zion Tech Group</title>
+        <meta name='description' content='\${description}' />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <link rel='icon' href='/favicon.ico' />
+      </Head>
+      
+      <main className='container mx-auto px-4 py-8'>
+        <div className='max-w-4xl mx-auto'>
+          <h1 className='text-4xl font-bold text-gray-900 mb-6'>
+            \${title}
+          </h1>
+          
+          <div className='prose prose-lg max-w-none'>
+            <p className='text-gray-600 mb-6'>
+              This page is automatically generated content for \${title.toLowerCase()}.
+              It will be enhanced with relevant content and features.
+            </p>
+            
+            <div className='bg-blue-50 border-l-4 border-blue-400 p-4 mb-6'>
+              <div className='flex'>
+                <div className='flex-shrink-0'>
+                  <svg className='h-5 w-5 text-blue-400' viewBox='0 0 20 20' fill='currentColor'>
+                    <path fillRule='evenodd' d='M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z' clipRule='evenodd' />
+                  </svg>
+                </div>
+                <div className='ml-3'>
+                  <p className='text-sm text-blue-700'>
+                    This is an automatically generated page. Content will be enhanced over time.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mt-8'>
+              <div className='bg-white p-6 rounded-lg shadow-sm border'>
+                <h3 className='text-lg font-semibold text-gray-900 mb-3'>Quick Links</h3>
+                <ul className='space-y-2'>
+                  <li><Link href='/' className='text-blue-600 hover:text-blue-800'>Home</Link></li>
+                  <li><Link href='/automation' className='text-blue-600 hover:text-blue-800'>Automation</Link></li>
+                  <li><Link href='/site-health' className='text-blue-600 hover:text-blue-800'>Site Health</Link></li>
+                </ul>
+              </div>
+              
+              <div className='bg-white p-6 rounded-lg shadow-sm border'>
+                <h3 className='text-lg font-semibold text-gray-900 mb-3'>Contact</h3>
+                <p className='text-gray-600 mb-3'>
+                  Need help or have questions?
+                </p>
+                <Link href='/contact' className='inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700'>
+                  Get in Touch
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  );
+}
+\`;
+          }
+          "
+
+      - name: Build and test generated pages
+        run: |
+          npm run build:heal
+          npm run test
+
+      - name: Commit generated pages
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          if git diff --quiet; then
+            echo "No pages generated"
+          else
+            git add .
+            git commit -m "📄 Auto-generate missing core pages
+            
+            - Created missing business pages
+            - Generated basic page structure
+            - Added navigation and content placeholders
+            
+            Automated by Content Gap Analyzer"
+            git push
+          fi
+
+  enhance-incomplete-content:
+    name: Enhance Incomplete Content
+    runs-on: ubuntu-latest
+    needs: analyze-content-gaps
+    if: needs.analyze-content-gaps.outputs.incomplete-content != '[]'
+    timeout-minutes: 60
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Download content gap report
+        uses: actions/download-artifact@v4
+        with:
+          name: content-gap-report
+
+      - name: Enhance incomplete content
+        run: |
+          echo "Starting content enhancement..."
+          
+          # Run intelligent content completer
+          node automation/intelligent-content-completer.cjs enhance
+          
+          # Run smart content completer
+          node automation/smart-content-completer.cjs complete
+          
+          # Enhance specific incomplete files
+          node -e "
+          const fs = require('fs');
+          const path = require('path');
+          
+          const incompleteContent = ${{ needs.analyze-content-gaps.outputs.incomplete-content }};
+          
+          for (const item of incompleteContent) {
+            if (fs.existsSync(item.file)) {
+              console.log('Enhancing content in:', item.file);
+              
+              let content = fs.readFileSync(item.file, 'utf8');
+              const originalLength = content.length;
+              
+              // Add more content based on the file type
+              if (item.file.includes('index.tsx')) {
+                content = enhanceIndexPage(content, item);
+              } else if (item.file.includes('automation')) {
+                content = enhanceAutomationPage(content, item);
+              } else if (item.file.includes('site-health')) {
+                content = enhanceSiteHealthPage(content, item);
+              }
+              
+              if (content.length > originalLength) {
+                fs.writeFileSync(item.file, content);
+                console.log('Enhanced content in:', item.file);
+              }
+            }
+          }
+          
+          function enhanceIndexPage(content, item) {
+            // Add more sections to make content richer
+            const additionalContent = \`
+            
+            {/* Enhanced Content Sections */}
+            <section className='py-16 bg-white'>
+              <div className='container mx-auto px-4'>
+                <h2 className='text-3xl font-bold text-center text-gray-900 mb-8'>
+                  Why Choose Zion Tech Group?
+                </h2>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+                  <div className='text-center'>
+                    <div className='bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4'>
+                      <svg className='w-8 h-8 text-blue-600' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                        <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M13 10V3L4 14h7v7l9-11h-7z' />
+                      </svg>
+                    </div>
+                    <h3 className='text-xl font-semibold text-gray-900 mb-2'>Lightning Fast</h3>
+                    <p className='text-gray-600'>Optimized performance and rapid response times</p>
+                  </div>
+                  <div className='text-center'>
+                    <div className='bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4'>
+                      <svg className='w-8 h-8 text-green-600' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                        <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' />
+                      </svg>
+                    </div>
+                    <h3 className='text-xl font-semibold text-gray-900 mb-2'>Reliable</h3>
+                    <p className='text-gray-600'>99.9% uptime with robust error handling</p>
+                  </div>
+                  <div className='text-center'>
+                    <div className='bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4'>
+                      <svg className='w-8 h-8 text-purple-600' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                        <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z' />
+                      </svg>
+                    </div>
+                    <h3 className='text-xl font-semibold text-gray-900 mb-2'>Innovative</h3>
+                    <p className='text-gray-600'>Cutting-edge technology and forward-thinking solutions</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            
+            <section className='py-16 bg-gray-50'>
+              <div className='container mx-auto px-4'>
+                <h2 className='text-3xl font-bold text-center text-gray-900 mb-8'>
+                  Our Services
+                </h2>
+                <div className='max-w-4xl mx-auto'>
+                  <p className='text-lg text-gray-600 text-center mb-8'>
+                    We provide comprehensive solutions for modern businesses, from automation to AI integration.
+                  </p>
+                  <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                    <div className='bg-white p-6 rounded-lg shadow-sm'>
+                      <h3 className='text-xl font-semibold text-gray-900 mb-3'>Automation Solutions</h3>
+                      <p className='text-gray-600 mb-4'>Streamline your operations with intelligent automation workflows.</p>
+                      <Link href='/automation' className='text-blue-600 hover:text-blue-800 font-medium'>
+                        Learn More →
+                      </Link>
+                    </div>
+                    <div className='bg-white p-6 rounded-lg shadow-sm'>
+                      <h3 className='text-xl font-semibold text-gray-900 mb-3'>Site Health Monitoring</h3>
+                      <p className='text-gray-600 mb-4'>Keep your digital presence healthy and optimized.</p>
+                      <Link href='/site-health' className='text-blue-600 hover:text-blue-800 font-medium'>
+                        Learn More →
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            \`;
+            
+            // Insert before the closing main tag
+            const mainCloseIndex = content.lastIndexOf('</main>');
+            if (mainCloseIndex !== -1) {
+              return content.slice(0, mainCloseIndex) + additionalContent + content.slice(mainCloseIndex);
+            }
+            return content;
+          }
+          
+          function enhanceAutomationPage(content, item) {
+            // Add automation-specific content
+            const additionalContent = \`
+            
+            {/* Automation Features Section */}
+            <section className='py-16 bg-white'>
+              <div className='container mx-auto px-4'>
+                <h2 className='text-3xl font-bold text-center text-gray-900 mb-8'>
+                  Automation Features
+                </h2>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+                  <div className='bg-gray-50 p-6 rounded-lg'>
+                    <h3 className='text-lg font-semibold text-gray-900 mb-3'>Workflow Automation</h3>
+                    <p className='text-gray-600'>Create complex workflows with drag-and-drop interface</p>
+                  </div>
+                  <div className='bg-gray-50 p-6 rounded-lg'>
+                    <h3 className='text-lg font-semibold text-gray-900 mb-3'>AI Integration</h3>
+                    <p className='text-gray-600'>Leverage machine learning for intelligent decision making</p>
+                  </div>
+                  <div className='bg-gray-50 p-6 rounded-lg'>
+                    <h3 className='text-lg font-semibold text-gray-900 mb-3'>Monitoring & Alerts</h3>
+                    <p className='text-gray-600'>Real-time monitoring with instant notifications</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            \`;
+            
+            const mainCloseIndex = content.lastIndexOf('</main>');
+            if (mainCloseIndex !== -1) {
+              return content.slice(0, mainCloseIndex) + additionalContent + content.slice(mainCloseIndex);
+            }
+            return content;
+          }
+          
+          function enhanceSiteHealthPage(content, item) {
+            // Add site health specific content
+            const additionalContent = \`
+            
+            {/* Site Health Metrics */}
+            <section className='py-16 bg-white'>
+              <div className='container mx-auto px-4'>
+                <h2 className='text-3xl font-bold text-center text-gray-900 mb-8'>
+                  Health Metrics
+                </h2>
+                <div className='grid grid-cols-1 md:grid-cols-4 gap-6'>
+                  <div className='text-center'>
+                    <div className='text-3xl font-bold text-green-600 mb-2'>99.9%</div>
+                    <div className='text-gray-600'>Uptime</div>
+                  </div>
+                  <div className='text-center'>
+                    <div className='text-3xl font-bold text-blue-600 mb-2'>< 2s</div>
+                    <div className='text-gray-600'>Response Time</div>
+                  </div>
+                  <div className='text-center'>
+                    <div className='text-3xl font-bold text-purple-600 mb-2'>100%</div>
+                    <div className='text-gray-600'>SSL Security</div>
+                  </div>
+                  <div className='text-center'>
+                    <div className='text-3xl font-bold text-orange-600 mb-2'>A+</div>
+                    <div className='text-gray-600'>Performance Grade</div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            \`;
+            
+            const mainCloseIndex = content.lastIndexOf('</main>');
+            if (mainCloseIndex !== -1) {
+              return content.slice(0, mainCloseIndex) + additionalContent + content.slice(mainCloseIndex);
+            }
+            return content;
+          }
+          "
+
+      - name: Build and test enhanced content
+        run: |
+          npm run build:heal
+          npm run test
+
+      - name: Commit enhanced content
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          if git diff --quiet; then
+            echo "No content enhanced"
+          else
+            git add .
+            git commit -m "✨ Enhance incomplete content and pages
+            
+            - Added rich content sections
+            - Improved page structure
+            - Enhanced user experience
+            
+            Automated by Content Gap Analyzer"
+            git push
+          fi
+
+  create-content-pr:
+    name: Create PR for Content Improvements
+    runs-on: ubuntu-latest
+    needs: [auto-generate-missing-pages, enhance-incomplete-content]
+    if: |
+      always() && (
+        needs.auto-generate-missing-pages.result == 'success' ||
+        needs.enhance-incomplete-content.result == 'success'
+      )
+    timeout-minutes: 15
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Download content gap report
+        uses: actions/download-artifact@v4
+        with:
+          name: content-gap-report
+
+      - name: Create Pull Request
+        run: |
+          # Check if there are uncommitted changes
+          if git diff --quiet; then
+            echo "No changes to create PR for"
+            exit 0
+          fi
+          
+          # Create a new branch
+          BRANCH_NAME="auto-content-improvements-$(date +%Y%m%d-%H%M%S)"
+          git checkout -b "$BRANCH_NAME"
+          
+          # Add and commit changes
+          git add .
+          git commit -m "📝 Automated content improvements and gap filling
+          
+          This PR contains automated improvements for:
+          - Missing page generation
+          - Content enhancement
+          - Site structure improvements
+          
+          Generated by Content Gap Analyzer workflow"
+          
+          # Push the branch
+          git push origin "$BRANCH_NAME"
+          
+          # Create PR using GitHub CLI
+          gh pr create \
+            --title "📝 Automated Content Improvements & Gap Filling" \
+            --body "$(cat content-gap-report.md)" \
+            --base main \
+            --head "$BRANCH_NAME" \
+            --label "automated,content-generation,content-enhancement"

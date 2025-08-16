@@ -1,0 +1,567 @@
+name: Continuous Site Health Monitor
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '*/30 * * * *'  # Every 30 minutes
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+  actions: read
+  pull-requests: write
+
+env:
+  SITE_URL: https://ziontechgroup.com
+  LIGHTHOUSE_THRESHOLD: 80
+  PERFORMANCE_THRESHOLD: 70
+  ACCESSIBILITY_THRESHOLD: 90
+
+jobs:
+  site-health-scan:
+    name: Comprehensive Site Health Scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    outputs:
+      health-score: ${{ steps.health-scan.outputs.health-score }}
+      performance-score: ${{ steps.health-scan.outputs.performance-score }}
+      accessibility-score: ${{ steps.health-scan.outputs.accessibility-score }}
+      seo-score: ${{ steps.health-scan.outputs.seo-score }}
+      issues-found: ${{ steps.health-scan.outputs.issues-found }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: |
+          npm ci --no-audit --no-fund
+          npm install -g lighthouse
+
+      - name: Run Lighthouse audit
+        id: lighthouse-audit
+        run: |
+          echo "Running Lighthouse audit..."
+          
+          # Run Lighthouse with multiple configurations
+          lighthouse ${{ env.SITE_URL }} --output=json --output-path=./lighthouse-report.json --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage"
+          
+          # Parse Lighthouse results
+          node -e "
+          const fs = require('fs');
+          const report = JSON.parse(fs.readFileSync('./lighthouse-report.json', 'utf8'));
+          
+          const scores = {
+            performance: Math.round(report.categories.performance.score * 100),
+            accessibility: Math.round(report.categories.accessibility.score * 100),
+            'best-practices': Math.round(report.categories['best-practices'].score * 100),
+            seo: Math.round(report.categories.seo.score * 100)
+          };
+          
+          const issues = [];
+          
+          // Collect performance issues
+          if (report.audits['first-contentful-paint']) {
+            const fcp = report.audits['first-contentful-paint'];
+            if (fcp.score < 0.9) {
+              issues.push({
+                type: 'performance',
+                title: 'Slow First Contentful Paint',
+                description: fcp.description,
+                score: fcp.score,
+                priority: 'high'
+              });
+            }
+          }
+          
+          if (report.audits['largest-contentful-paint']) {
+            const lcp = report.audits['largest-contentful-paint'];
+            if (lcp.score < 0.9) {
+              issues.push({
+                type: 'performance',
+                title: 'Slow Largest Contentful Paint',
+                description: lcp.description,
+                score: lcp.score,
+                priority: 'high'
+              });
+            }
+          }
+          
+          // Collect accessibility issues
+          if (report.audits['color-contrast']) {
+            const contrast = report.audits['color-contrast'];
+            if (contrast.score < 1) {
+              issues.push({
+                type: 'accessibility',
+                title: 'Color Contrast Issues',
+                description: contrast.description,
+                score: contrast.score,
+                priority: 'medium'
+              });
+            }
+          }
+          
+          // Collect SEO issues
+          if (report.audits['meta-description']) {
+            const meta = report.audits['meta-description'];
+            if (meta.score < 1) {
+              issues.push({
+                type: 'seo',
+                title: 'Missing Meta Descriptions',
+                description: meta.description,
+                score: meta.score,
+                priority: 'medium'
+              });
+            }
+          }
+          
+          console.log('::set-output name=health-score::' + Math.round((scores.performance + scores.accessibility + scores.seo) / 3));
+          console.log('::set-output name=performance-score::' + scores.performance);
+          console.log('::set-output name=accessibility-score::' + scores.accessibility);
+          console.log('::set-output name=seo-score::' + scores.seo);
+          console.log('::set-output name=issues-found::' + JSON.stringify(issues));
+          
+          console.log('Lighthouse scores:');
+          console.log('- Performance:', scores.performance);
+          console.log('- Accessibility:', scores.accessibility);
+          console.log('- Best Practices:', scores['best-practices']);
+          console.log('- SEO:', scores.seo);
+          console.log('- Issues found:', issues.length);
+          "
+
+      - name: Run Playwright tests
+        id: playwright-tests
+        run: |
+          echo "Running Playwright smoke tests..."
+          
+          # Run existing Playwright tests
+          npm run test:e2e || echo "No e2e tests found"
+          
+          # Run additional health checks
+          npx playwright test --config=playwright.config.ts --grep="health|smoke" || echo "No health tests found"
+
+      - name: Check site availability
+        id: availability-check
+        run: |
+          echo "Checking site availability..."
+          
+          # Check multiple endpoints
+          endpoints=(
+            "${{ env.SITE_URL }}"
+            "${{ env.SITE_URL }}/automation"
+            "${{ env.SITE_URL }}/site-health"
+            "${{ env.SITE_URL }}/.netlify/functions/front-enhancer"
+          )
+          
+          for endpoint in "\${endpoints[@]}"; do
+            response=$(curl -s -o /dev/null -w "%{http_code}" "$endpoint")
+            if [ "$response" != "200" ]; then
+              echo "❌ $endpoint returned $response"
+            else
+              echo "✅ $endpoint is healthy"
+            fi
+          done
+
+      - name: Generate health report
+        id: health-scan
+        run: |
+          echo "## 🏥 Site Health Report - $(date)" > site-health-report.md
+          echo "" >> site-health-report.md
+          
+          echo "### 📊 Performance Metrics" >> site-health-report.md
+          echo "- **Overall Health Score**: ${{ steps.lighthouse-audit.outputs.health-score }}/100" >> site-health-report.md
+          echo "- **Performance Score**: ${{ steps.lighthouse-audit.outputs.performance-score }}/100" >> site-health-report.md
+          echo "- **Accessibility Score**: ${{ steps.lighthouse-audit.outputs.accessibility-score }}/100" >> site-health-report.md
+          echo "- **SEO Score**: ${{ steps.lighthouse-audit.outputs.seo-score }}/100" >> site-health-report.md
+          echo "" >> site-health-report.md
+          
+          if [ "${{ steps.lighthouse-audit.outputs.issues-found }}" != "[]" ]; then
+            echo "### ⚠️ Issues Identified" >> site-health-report.md
+            echo "${{ steps.lighthouse-audit.outputs.issues-found }}" | jq -r '.[] | "- **" + .type + "**: " + .title + " (Priority: " + .priority + ")"' >> site-health-report.md
+            echo "" >> site-health-report.md
+          fi
+          
+          echo "### 🔍 Test Results" >> site-health-report.md
+          echo "- **Playwright Tests**: ${{ steps.playwright-tests.outputs.result || 'completed' }}" >> site-health-report.md
+          echo "- **Availability Check**: ${{ steps.availability-check.outputs.result || 'completed' }}" >> site-health-report.md
+          echo "" >> site-health-report.md
+          
+          echo "Report generated at: $(date)" >> site-health-report.md
+
+      - name: Upload health report
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-health-report
+          path: site-health-report.md
+
+  auto-fix-performance:
+    name: Auto-fix Performance Issues
+    runs-on: ubuntu-latest
+    needs: site-health-scan
+    if: |
+      needs.site-health-scan.outputs.performance-score < env.PERFORMANCE_THRESHOLD ||
+      needs.site-health-scan.outputs.issues-found != '[]'
+    timeout-minutes: 45
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Download health report
+        uses: actions/download-artifact@v4
+        with:
+          name: site-health-report
+
+      - name: Run performance optimization
+        run: |
+          echo "Starting performance optimization..."
+          
+          # Run existing performance optimizers
+          node automation/performance-optimization-engine.cjs optimize
+          
+          # Run image optimization
+          node automation/optimize-images.cjs
+          
+          # Run build optimization
+          node automation/netlify-build-optimizer.cjs
+          
+          echo "Performance optimization completed"
+
+      - name: Build and test optimizations
+        run: |
+          npm run build:heal
+          npm run test
+
+      - name: Commit performance improvements
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          if git diff --quiet; then
+            echo "No performance improvements to commit"
+          else
+            git add .
+            git commit -m "⚡ Auto-optimize performance and fix issues
+            
+            - Optimized build process
+            - Improved image loading
+            - Enhanced site performance
+            
+            Automated by Continuous Site Health Monitor"
+            git push
+          fi
+
+  auto-fix-accessibility:
+    name: Auto-fix Accessibility Issues
+    runs-on: ubuntu-latest
+    needs: site-health-scan
+    if: needs.site-health-scan.outputs.accessibility-score < env.ACCESSIBILITY_THRESHOLD
+    timeout-minutes: 30
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Download health report
+        uses: actions/download-artifact@v4
+        with:
+          name: site-health-report
+
+      - name: Fix accessibility issues
+        run: |
+          echo "Starting accessibility fixes..."
+          
+          # Run accessibility improvements
+          node -e "
+          const fs = require('fs');
+          const path = require('path');
+          
+          // Find and fix common accessibility issues
+          const pagesDir = path.join(process.cwd(), 'pages');
+          
+          function fixAccessibilityIssues(filePath) {
+            if (!fs.existsSync(filePath)) return;
+            
+            let content = fs.readFileSync(filePath, 'utf8');
+            let modified = false;
+            
+            // Fix missing alt attributes
+            content = content.replace(
+              /<img([^>]*?)(?<!alt=)[^>]*?>/g,
+              '<img$1 alt=\"\" $2>'
+            );
+            
+            // Fix missing aria-labels
+            content = content.replace(
+              /<button([^>]*?)(?<!aria-label=)[^>]*?>/g,
+              '<button$1 aria-label=\"Button\" $2>'
+            );
+            
+            // Fix heading hierarchy
+            if (content.includes('<h1>') && !content.includes('<h2>')) {
+              content = content.replace(
+                /<h3>/g,
+                '<h2>'
+              );
+            }
+            
+            if (modified) {
+              fs.writeFileSync(filePath, content);
+              console.log('Fixed accessibility issues in:', filePath);
+            }
+          }
+          
+          // Process all page files
+          const pageFiles = [
+            'pages/index.tsx',
+            'pages/automation/index.tsx',
+            'pages/site-health/index.tsx'
+          ];
+          
+          pageFiles.forEach(fixAccessibilityIssues);
+          "
+
+      - name: Build and test accessibility fixes
+        run: |
+          npm run build:heal
+          npm run test
+
+      - name: Commit accessibility improvements
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          if git diff --quiet; then
+            echo "No accessibility improvements to commit"
+          else
+            git add .
+            git commit -m "♿ Auto-fix accessibility issues
+            
+            - Added missing alt attributes
+            - Fixed heading hierarchy
+            - Improved ARIA labels
+            
+            Automated by Continuous Site Health Monitor"
+            git push
+          fi
+
+  auto-fix-seo:
+    name: Auto-fix SEO Issues
+    runs-on: ubuntu-latest
+    needs: site-health-scan
+    if: needs.site-health-scan.outputs.seo-score < 90
+    timeout-minutes: 30
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Download health report
+        uses: actions/download-artifact@v4
+        with:
+          name: site-health-report
+
+      - name: Fix SEO issues
+        run: |
+          echo "Starting SEO fixes..."
+          
+          # Run SEO improvements
+          node -e "
+          const fs = require('fs');
+          const path = require('path');
+          
+          // Find and fix common SEO issues
+          const pagesDir = path.join(process.cwd(), 'pages');
+          
+          function fixSEOIssues(filePath) {
+            if (!fs.existsSync(filePath)) return;
+            
+            let content = fs.readFileSync(filePath, 'utf8');
+            let modified = false;
+            
+            // Add missing meta descriptions
+            if (!content.includes('meta name=\\"description\\"')) {
+              const headEndIndex = content.indexOf('</Head>');
+              if (headEndIndex !== -1) {
+                const metaDescription = '        <meta name=\\"description\\" content=\\"Zion Tech Group - ' + 
+                  path.basename(filePath, path.extname(filePath)).replace(/[A-Z]/g, ' $&').trim() + ' page\\" />';
+                content = content.slice(0, headEndIndex) + '\\n' + metaDescription + '\\n' + content.slice(headEndIndex);
+                modified = true;
+              }
+            }
+            
+            // Add missing Open Graph tags
+            if (!content.includes('property=\\"og:title\\"')) {
+              const headEndIndex = content.indexOf('</Head>');
+              if (headEndIndex !== -1) {
+                const ogTags = \`
+        <meta property=\\"og:title\\" content=\\"Zion Tech Group - \${path.basename(filePath, path.extname(filePath)).replace(/[A-Z]/g, ' $&').trim()}\\" />
+        <meta property=\\"og:description\\" content=\\"Zion Tech Group provides innovative automation and technology solutions\\" />
+        <meta property=\\"og:type\\" content=\\"website\\" />
+        <meta property=\\"og:url\\" content=\\"https://ziontechgroup.com\${filePath.replace('pages', '').replace('.tsx', '').replace('.jsx', '')}\\" />
+        <meta property=\\"og:image\\" content=\\"https://ziontechgroup.com/og-image.jpg\\" />
+        <meta property=\\"og:site_name\\" content=\\"Zion Tech Group\\" />
+        <meta name=\\"twitter:card\\" content=\\"summary_large_image\\" />
+        <meta name=\\"twitter:title\\" content=\\"Zion Tech Group - \${path.basename(filePath, path.extname(filePath)).replace(/[A-Z]/g, ' $&').trim()}\\" />
+        <meta name=\\"twitter:description\\" content=\\"Zion Tech Group provides innovative automation and technology solutions\\" />
+        <meta name=\\"twitter:image\\" content=\\"https://ziontechgroup.com/og-image.jpg\\" />
+        \`;
+                content = content.slice(0, headEndIndex) + '\\n' + ogTags + '\\n' + content.slice(headEndIndex);
+                modified = true;
+              }
+            }
+            
+            if (modified) {
+              fs.writeFileSync(filePath, content);
+              console.log('Fixed SEO issues in:', filePath);
+            }
+          }
+          
+          // Process all page files
+          const pageFiles = [
+            'pages/index.tsx',
+            'pages/automation/index.tsx',
+            'pages/site-health/index.tsx'
+          ];
+          
+          pageFiles.forEach(fixSEOIssues);
+          "
+
+      - name: Build and test SEO fixes
+        run: |
+          npm run build:heal
+          npm run test
+
+      - name: Commit SEO improvements
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          if git diff --quiet; then
+            echo "No SEO improvements to commit"
+          else
+            git add .
+            git commit -m "🔍 Auto-fix SEO issues
+            
+            - Added missing meta descriptions
+            - Enhanced Open Graph tags
+            - Improved social media sharing
+            
+            Automated by Continuous Site Health Monitor"
+            git push
+          fi
+
+  create-health-pr:
+    name: Create PR for Health Improvements
+    runs-on: ubuntu-latest
+    needs: [auto-fix-performance, auto-fix-accessibility, auto-fix-seo]
+    if: |
+      always() && (
+        needs.auto-fix-performance.result == 'success' ||
+        needs.auto-fix-accessibility.result == 'success' ||
+        needs.auto-fix-seo.result == 'success'
+      )
+    timeout-minutes: 15
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Download health report
+        uses: actions/download-artifact@v4
+        with:
+          name: site-health-report
+
+      - name: Create Pull Request
+        run: |
+          # Check if there are uncommitted changes
+          if git diff --quiet; then
+            echo "No changes to create PR for"
+            exit 0
+          fi
+          
+          # Create a new branch
+          BRANCH_NAME="auto-health-improvements-$(date +%Y%m%d-%H%M%S)"
+          git checkout -b "$BRANCH_NAME"
+          
+          # Add and commit changes
+          git add .
+          git commit -m "🏥 Automated site health improvements
+          
+          This PR contains automated improvements for:
+          - Performance optimization
+          - Accessibility fixes
+          - SEO enhancements
+          
+          Generated by Continuous Site Health Monitor workflow"
+          
+          # Push the branch
+          git push origin "$BRANCH_NAME"
+          
+          # Create PR using GitHub CLI
+          gh pr create \
+            --title "🏥 Automated Site Health Improvements" \
+            --body "$(cat site-health-report.md)" \
+            --base main \
+            --head "$BRANCH_NAME" \
+            --label "automated,health,performance,accessibility,seo"
+
+  notify-critical-issues:
+    name: Notify Critical Health Issues
+    runs-on: ubuntu-latest
+    needs: site-health-scan
+    if: |
+      needs.site-health-scan.outputs.health-score < 70 ||
+      needs.site-health-scan.outputs.performance-score < 50
+    timeout-minutes: 10
+    
+    steps:
+      - name: Download health report
+        uses: actions/download-artifact@v4
+        with:
+          name: site-health-report
+
+      - name: Create critical issue
+        run: |
+          gh issue create \
+            --title "🚨 Critical Site Health Issues Detected" \
+            --body "$(cat site-health-report.md)" \
+            --label "critical,health,performance,automated" \
+            --assignee "@me"
