@@ -1,46 +1,25 @@
 {
-  "generatedAt": "2025-08-16T15:40:51.125Z",
+  "generatedAt": "2025-08-16T15:50:21.302Z",
   "items": [
     {
       "title": "Case Study — Cloud Improving",
-      "href": "/reports/cases/case-2025-08-16-154051",
+      "href": "/reports/cases/case-2025-08-16-155021",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-16T15:40:51.026Z",
+      "createdAt": "2025-08-16T15:50:21.253Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Guide — Cloud Improving Implementation",
-      "href": "/reports/guides/guide-2025-08-16-154051",
+      "href": "/reports/guides/guide-2025-08-16-155021",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-16T15:40:51.026Z",
+      "createdAt": "2025-08-16T15:50:21.253Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Automation Trends 2025",
-      "href": "/reports/patterns/pattern-2025-08-16-154051",
+      "href": "/reports/patterns/pattern-2025-08-16-155021",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-16T15:40:51.026Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Case Study — Cloud Improving",
-      "href": "/reports/cases/case-2025-08-16-154050",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-16T15:40:51.003Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Guide — Cloud Improving Implementation",
-      "href": "/reports/guides/guide-2025-08-16-154050",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-16T15:40:51.003Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Pattern — Automation Trends 2025",
-      "href": "/reports/patterns/pattern-2025-08-16-154050",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-16T15:40:51.003Z",
+      "createdAt": "2025-08-16T15:50:21.253Z",
       "source": "cloud-deep-research-factory"
     }
   ]
