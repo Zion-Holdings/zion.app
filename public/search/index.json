@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-16T00:05:03.557Z",
+  "generatedAt": "2025-08-16T00:06:03.449Z",
   "entries": [
     {
       "route": "/terms",
@@ -1602,6 +1602,12 @@
       "file": "pages/reports/updates/update-2025-08-15-2110.tsx",
       "title": "Autonomous Playbook — Data Engineering (2025-08-15 21:10 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Data Engineering (2025-08-15 21:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { \"@"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-15-2106",
+      "file": "pages/reports/updates/update-2025-08-15-2106.tsx",
+      "title": "Autonomous Update — 2025-08-15 21:06",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-15 21:06 Autonomous Update — 2025-08-15 21:06 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Zoom terms now allow training AI on "
     },
     {
       "route": "/reports/updates/update-2025-08-15-2105",
