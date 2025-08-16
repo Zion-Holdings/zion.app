@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T22:21:35.752Z",
+  "timestamp": "2025-08-16T22:22:42.940Z",
   "critical": [
     {
       "name": "auto-heal-workflows.yml",
@@ -833,25 +833,6 @@
       "dependencies": [],
       "triggers": [
         "push",
-        "workflow_dispatch {}"
-      ],
-      "resourceScore": 121
-    },
-    {
-      "name": "autonomous-content-curation.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-content-curation.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 10,
-      "concurrentJobs": 9,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "schedule",
         "workflow_dispatch {}"
       ],
       "resourceScore": 121
@@ -2648,6 +2629,25 @@
         "workflow_dispatch"
       ],
       "resourceScore": 113
+    },
+    {
+      "name": "autonomous-content-curation.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-content-curation.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 20,
+      "concurrentJobs": 9,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch {}"
+      ],
+      "resourceScore": 111
     },
     {
       "name": "autonomous-external-links.yml",

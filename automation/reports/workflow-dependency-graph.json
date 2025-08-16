@@ -1236,10 +1236,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
+      "timeout": 20,
       "concurrentJobs": 5
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 20
   },
   "autonomous-content-scanner.yml": {
     "name": "autonomous-content-scanner.yml",

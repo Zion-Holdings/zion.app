@@ -2,7 +2,7 @@ name: Autonomous Content Curation
 
 on:
   schedule:
-    - cron: '*/20 * * * *'
+    - cron: '*/30 * * * *'
   workflow_dispatch: {}
 
 permissions:
@@ -15,7 +15,7 @@ concurrency:
 jobs:
   content-curation:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -31,16 +31,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Curate content
-        run: node automation/llm-content-curator.cjs || true
+      - name: Run content curation
+        run: node automation/content-curation-factory.cjs || true
 
-      - name: Commit and push proposals
+      - name: Commit and push changes
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add -A
           if ! git diff --cached --quiet; then
-            git commit -m "chore(content): automated curation proposal"
+            git commit -m "chore(automation): autonomous content curation"
             git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }} HEAD:main
           else
             echo "No changes to commit."
