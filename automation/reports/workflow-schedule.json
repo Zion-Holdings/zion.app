@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T21:42:44.782Z",
+  "timestamp": "2025-08-16T21:43:44.186Z",
   "critical": [
     {
       "name": "auto-heal-workflows.yml",
@@ -2068,6 +2068,30 @@
       "triggers": [
         "schedule",
         "workflow_dispatch  # Manual trigger"
+      ],
+      "resourceScore": 75
+    },
+    {
+      "name": "performance-monitoring.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/performance-monitoring.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 55,
+      "concurrentJobs": 18,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [
+        "performance-audit",
+        "[performance-audit",
+        "bundle-optimization]"
+      ],
+      "triggers": [
+        "workflow_dispatch",
+        "schedule",
+        "push"
       ],
       "resourceScore": 75
     }

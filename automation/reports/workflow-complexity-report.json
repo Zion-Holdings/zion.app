@@ -1,18 +1,18 @@
 {
-  "timestamp": "2025-08-16T21:42:37.747Z",
+  "timestamp": "2025-08-16T21:43:36.658Z",
   "summary": {
-    "totalWorkflows": 177,
+    "totalWorkflows": 179,
     "complexityDistribution": {
       "very-high": 0,
       "high": 6,
-      "medium": 0,
-      "low": 171
+      "medium": 1,
+      "low": 172
     },
     "refactoringPriorities": {
       "critical": 0,
       "high": 6,
-      "medium": 0,
-      "low": 171
+      "medium": 1,
+      "low": 172
     }
   },
   "workflows": {
@@ -1240,6 +1240,24 @@
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/instagram-marketing.yml"
     },
+    "intelligent-content-generation.yml": {
+      "complexityScore": 15,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 73,
+        "jobCount": 0,
+        "stepCount": 7,
+        "conditionalCount": 1,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 1,
+        "actionCount": 3
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/intelligent-content-generation.yml"
+    },
     "knowledge-graph-radar.yml": {
       "complexityScore": 0,
       "complexityLevel": "low",
@@ -1473,6 +1491,24 @@
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/pa11y.yml"
+    },
+    "performance-monitoring.yml": {
+      "complexityScore": 30,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 129,
+        "jobCount": 0,
+        "stepCount": 17,
+        "conditionalCount": 1,
+        "matrixCount": 0,
+        "dependencyCount": 2,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 9
+      },
+      "refactoringPriority": "medium",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/performance-monitoring.yml"
     },
     "pin-actions-weekly.yml": {
       "complexityScore": 0,

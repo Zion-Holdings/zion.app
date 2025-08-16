@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T21:42:37.749Z",
+  "timestamp": "2025-08-16T21:43:36.660Z",
   "critical": [],
   "high": [
     {
@@ -135,6 +135,28 @@
       ]
     }
   ],
-  "medium": [],
+  "medium": [
+    {
+      "workflow": "performance-monitoring.yml",
+      "status": "active",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 129,
+        "jobCount": 0,
+        "stepCount": 17,
+        "conditionalCount": 1,
+        "matrixCount": 0,
+        "dependencyCount": 2,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 9
+      },
+      "refactoringStrategy": [
+        "Break down into smaller job steps",
+        "Extract common functionality to reusable workflows"
+      ]
+    }
+  ],
   "low": []
 }

@@ -1,8 +1,8 @@
 {
-  "timestamp": "2025-08-16T21:43:32.122Z",
+  "timestamp": "2025-08-16T21:43:53.955Z",
   "summary": {
-    "totalWorkflows": 180,
-    "activeWorkflows": 105,
+    "totalWorkflows": 181,
+    "activeWorkflows": 106,
     "disabledWorkflows": 74,
     "workflowsWithIssues": 74,
     "totalIssues": 75
@@ -28,6 +28,7 @@
       "app-monitoring.yml",
       "auto-heal-workflows.yml",
       "automation-advertiser.yml",
+      "automation-dashboard.yml",
       "automation-orchestrator.yml",
       "autonomous-agent-orchestrator.yml",
       "broken-images.yml",
@@ -187,6 +188,7 @@
       "agent-factory-proliferation.yml",
       "app-automation.yml",
       "app-monitoring.yml",
+      "automation-dashboard.yml",
       "autonomous-agent-orchestrator.yml",
       "content-generation.yml",
       "exponential-agent-factory-proliferation.yml",
@@ -256,6 +258,7 @@
     "resourceIntensive": [
       "agent-factory-automation.yml",
       "agent-factory-proliferation.yml",
+      "automation-dashboard.yml",
       "autonomous-agent-orchestrator.yml",
       "exponential-agent-factory-proliferation.yml",
       "exponential-ai-delegation.yml",
@@ -1591,6 +1594,38 @@
       "issues": [],
       "recommendations": [
         "Add workflow_dispatch trigger for manual testing",
+        "Consider splitting into smaller workflows for better maintainability"
+      ]
+    },
+    "automation-dashboard.yml": {
+      "name": "automation-dashboard.yml",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/automation-dashboard.yml",
+      "size": 5329,
+      "lines": 127,
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "jobs": [
+        "workflow_dispatch",
+        "schedule",
+        "workflow_run",
+        "jobs",
+        "dashboard-generation",
+        "steps",
+        "with",
+        "with",
+        "dashboard-deployment",
+        "steps",
+        "with"
+      ],
+      "timeouts": [],
+      "permissions": [],
+      "concurrency": null,
+      "issues": [],
+      "recommendations": [
+        "Add timeout-minutes to prevent infinite hanging",
         "Consider splitting into smaller workflows for better maintainability"
       ]
     },
@@ -9265,6 +9300,7 @@
         "Add timeout-minutes to agent-factory-proliferation.yml",
         "Add timeout-minutes to app-automation.yml",
         "Add timeout-minutes to app-monitoring.yml",
+        "Add timeout-minutes to automation-dashboard.yml",
         "Add timeout-minutes to autonomous-agent-orchestrator.yml",
         "Add timeout-minutes to content-generation.yml",
         "Add timeout-minutes to exponential-agent-factory-proliferation.yml",
@@ -9350,6 +9386,7 @@
         "Refactor app-monitoring.yml into smaller, focused workflows",
         "Refactor auto-heal-workflows.yml into smaller, focused workflows",
         "Refactor automation-advertiser.yml into smaller, focused workflows",
+        "Refactor automation-dashboard.yml into smaller, focused workflows",
         "Refactor automation-orchestrator.yml into smaller, focused workflows",
         "Refactor autonomous-agent-orchestrator.yml into smaller, focused workflows",
         "Refactor broken-images.yml into smaller, focused workflows",
@@ -9512,6 +9549,7 @@
       "Add timeout-minutes to agent-factory-proliferation.yml",
       "Add timeout-minutes to app-automation.yml",
       "Add timeout-minutes to app-monitoring.yml",
+      "Add timeout-minutes to automation-dashboard.yml",
       "Add timeout-minutes to autonomous-agent-orchestrator.yml",
       "Add timeout-minutes to content-generation.yml",
       "Add timeout-minutes to exponential-agent-factory-proliferation.yml",
@@ -9597,6 +9635,7 @@
       "Refactor app-monitoring.yml into smaller, focused workflows",
       "Refactor auto-heal-workflows.yml into smaller, focused workflows",
       "Refactor automation-advertiser.yml into smaller, focused workflows",
+      "Refactor automation-dashboard.yml into smaller, focused workflows",
       "Refactor automation-orchestrator.yml into smaller, focused workflows",
       "Refactor autonomous-agent-orchestrator.yml into smaller, focused workflows",
       "Refactor broken-images.yml into smaller, focused workflows",
