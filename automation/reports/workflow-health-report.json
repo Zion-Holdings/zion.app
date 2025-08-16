@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T22:07:42.478Z",
+  "timestamp": "2025-08-16T22:08:33.457Z",
   "summary": {
     "totalWorkflows": 188,
     "activeWorkflows": 187,
@@ -440,7 +440,7 @@
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379731007-1-deployment-expert.yml",
       "size": 504,
-      "lines": 21,
+      "lines": 22,
       "triggers": [
         "workflow_dispatch",
         "schedule"
@@ -1036,7 +1036,7 @@
       "name": "agent-agent-1755381089846-3-optimization-expert.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089846-3-optimization-expert.yml",
-      "size": 502,
+      "size": 501,
       "lines": 15,
       "triggers": [
         "workflow_dispatch",
