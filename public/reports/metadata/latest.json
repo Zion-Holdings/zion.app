@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-16T00:10:01.073Z",
-  "pagesScanned": 5690,
+  "generatedAt": "2025-08-16T00:11:00.878Z",
+  "pagesScanned": 5698,
   "items": [
     {
       "route": "/404",
@@ -6276,6 +6276,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-16-000033",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-16-001033",
       "missing": [
         "og:image"
       ],
@@ -23695,6 +23705,16 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-16-001033",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Autonomous Update Implementation",
+        "description": "Guide — Autonomous Update Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-15-0211",
       "missing": [
         "og:image"
@@ -28085,6 +28105,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-16-0010",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Blueprint: FinOps for AI",
+        "description": "Blueprint: FinOps for AI — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-16T00-00",
       "missing": [
         "og:image"
@@ -28092,6 +28122,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-16 00-00",
         "description": "Innovation Insight — 2025-08-16 00-00 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-16T00-10",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-16 00-10",
+        "description": "Innovation Insight — 2025-08-16 00-10 — auto-suggested description"
       }
     },
     {
@@ -37085,6 +37125,16 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-16-001033",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Cloud Improving Continuously",
+        "description": "Pattern — Cloud Improving Continuously — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-15-021207",
       "missing": [
         "og:image"
@@ -43036,6 +43086,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-16-000033",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-16-001033",
       "missing": [
         "og:image"
       ],
@@ -56835,6 +56895,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-16-0010",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Checklist — Edge AI & IoT (2025-08-16 00:10 UTC)",
+        "description": "Autonomous Checklist — Edge AI & IoT (2025-08-16 00:10 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-16T00-00",
       "missing": [
         "og:image"
@@ -56842,6 +56912,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-16 00-00",
         "description": "Autonomous Update — 2025-08-16 00-00 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-16T00-10",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-16 00-10",
+        "description": "Autonomous Update — 2025-08-16 00-10 — auto-suggested description"
       }
     },
     {
