@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T22:26:51.913Z",
+  "timestamp": "2025-08-16T22:27:33.262Z",
   "summary": {
     "totalWorkflows": 188,
     "activeWorkflows": 187,
@@ -2939,17 +2939,14 @@
       "name": "autonomous-external-links.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-external-links.yml",
-      "size": 1728,
-      "lines": 66,
+      "size": 1220,
+      "lines": 49,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
-        "branch_protection_rules",
-        "required_status_checks",
-        "required_pull_request_reviews",
         "jobs",
         "external-links",
         "steps",
@@ -2963,66 +2960,6 @@
         {
           "permission": "contents",
           "value": "write"
-        },
-        {
-          "permission": "branch_protection_rules",
-          "value": ""
-        },
-        {
-          "permission": "- pattern",
-          "value": "\"main\""
-        },
-        {
-          "permission": "required_status_checks",
-          "value": ""
-        },
-        {
-          "permission": "strict",
-          "value": "true"
-        },
-        {
-          "permission": "contexts",
-          "value": "[]"
-        },
-        {
-          "permission": "required_pull_request_reviews",
-          "value": ""
-        },
-        {
-          "permission": "required_approving_review_count",
-          "value": "1"
-        },
-        {
-          "permission": "dismiss_stale_reviews",
-          "value": "true"
-        },
-        {
-          "permission": "require_code_owner_reviews",
-          "value": "false"
-        },
-        {
-          "permission": "enforce_admins",
-          "value": "false"
-        },
-        {
-          "permission": "required_linear_history",
-          "value": "false"
-        },
-        {
-          "permission": "allow_force_pushes",
-          "value": "false"
-        },
-        {
-          "permission": "allow_deletions",
-          "value": "false"
-        },
-        {
-          "permission": "block_creations",
-          "value": "false"
-        },
-        {
-          "permission": "required_conversation_resolution",
-          "value": "true"
         }
       ],
       "concurrency": "automation-external-links",
@@ -3252,8 +3189,82 @@
       "name": "autonomous-marketing-seo.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-marketing-seo.yml",
-      "size": 1950,
-      "lines": 71,
+      "size": 1442,
+      "lines": 54,
+      "triggers": [
+        "schedule",
+        "workflow_dispatch {}"
+      ],
+      "jobs": [
+        "schedule",
+        "jobs",
+        "marketing-seo",
+        "steps",
+        "with",
+        "with"
+      ],
+      "timeouts": [
+        25
+      ],
+      "permissions": [
+        {
+          "permission": "contents",
+          "value": "write"
+        }
+      ],
+      "concurrency": "automation-marketing-seo",
+      "issues": [
+        "unsafe_git_push"
+      ],
+      "recommendations": [
+        "Add branch protection to git push operations",
+        "Add workflow_dispatch trigger for manual testing",
+        "Consider splitting into smaller workflows for better maintainability"
+      ]
+    },
+    "autonomous-minute-orchestrator.yml": {
+      "name": "autonomous-minute-orchestrator.yml",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-minute-orchestrator.yml",
+      "size": 1728,
+      "lines": 62,
+      "triggers": [
+        "schedule",
+        "workflow_dispatch {}"
+      ],
+      "jobs": [
+        "schedule",
+        "jobs",
+        "run-autonomous-suite",
+        "steps",
+        "with",
+        "with"
+      ],
+      "timeouts": [
+        15
+      ],
+      "permissions": [
+        {
+          "permission": "contents",
+          "value": "read"
+        }
+      ],
+      "concurrency": "autonomous-minute-orchestrator-${{ github.ref }}",
+      "issues": [
+        "unsafe_git_push"
+      ],
+      "recommendations": [
+        "Add branch protection to git push operations",
+        "Add workflow_dispatch trigger for manual testing",
+        "Consider splitting into smaller workflows for better maintainability"
+      ]
+    },
+    "autonomous-quick-fixes.yml": {
+      "name": "autonomous-quick-fixes.yml",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-quick-fixes.yml",
+      "size": 1930,
+      "lines": 70,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
@@ -3264,13 +3275,13 @@
         "required_status_checks",
         "required_pull_request_reviews",
         "jobs",
-        "marketing-seo",
+        "quick-fixes",
         "steps",
         "with",
         "with"
       ],
       "timeouts": [
-        25
+        15
       ],
       "permissions": [
         {
@@ -3336,80 +3347,6 @@
         {
           "permission": "required_conversation_resolution",
           "value": "true"
-        }
-      ],
-      "concurrency": "automation-marketing-seo",
-      "issues": [
-        "unsafe_git_push"
-      ],
-      "recommendations": [
-        "Add branch protection to git push operations",
-        "Add workflow_dispatch trigger for manual testing",
-        "Consider splitting into smaller workflows for better maintainability"
-      ]
-    },
-    "autonomous-minute-orchestrator.yml": {
-      "name": "autonomous-minute-orchestrator.yml",
-      "status": "active",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-minute-orchestrator.yml",
-      "size": 1728,
-      "lines": 62,
-      "triggers": [
-        "schedule",
-        "workflow_dispatch {}"
-      ],
-      "jobs": [
-        "schedule",
-        "jobs",
-        "run-autonomous-suite",
-        "steps",
-        "with",
-        "with"
-      ],
-      "timeouts": [
-        15
-      ],
-      "permissions": [
-        {
-          "permission": "contents",
-          "value": "read"
-        }
-      ],
-      "concurrency": "autonomous-minute-orchestrator-${{ github.ref }}",
-      "issues": [
-        "unsafe_git_push"
-      ],
-      "recommendations": [
-        "Add branch protection to git push operations",
-        "Add workflow_dispatch trigger for manual testing",
-        "Consider splitting into smaller workflows for better maintainability"
-      ]
-    },
-    "autonomous-quick-fixes.yml": {
-      "name": "autonomous-quick-fixes.yml",
-      "status": "active",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-quick-fixes.yml",
-      "size": 1423,
-      "lines": 54,
-      "triggers": [
-        "schedule",
-        "workflow_dispatch {}"
-      ],
-      "jobs": [
-        "schedule",
-        "jobs",
-        "quick-fixes",
-        "steps",
-        "with",
-        "with"
-      ],
-      "timeouts": [
-        15
-      ],
-      "permissions": [
-        {
-          "permission": "contents",
-          "value": "write"
         }
       ],
       "concurrency": "automation-quick-fixes",
