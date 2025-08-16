@@ -87,7 +87,6 @@ interface APITest {
 
 const APIDocumentation: React.FC = () => {
   const [endpoints, setEndpoints] = useState<APIEndpoint[]>([]);
-  const [selectedEndpoint, setSelectedEndpoint] = useState<APIEndpoint | null>(null);
   const [currentView, setCurrentView] = useState<'overview' | 'endpoints' | 'testing' | 'examples'>('overview');
   const [filters, setFilters] = useState({
     method: [] as string[],
@@ -588,7 +587,7 @@ const APIDocumentation: React.FC = () => {
 
   useEffect(() => {
     setEndpoints(mockEndpoints);
-  }, []);
+  }, [mockEndpoints]);
 
   const filteredEndpoints = endpoints.filter(endpoint => {
     const methodMatch = filters.method.length === 0 || filters.method.includes(endpoint.method);
@@ -664,7 +663,7 @@ const APIDocumentation: React.FC = () => {
           t === test ? { ...t, response, loading: false } : t
         ));
       }
-    } catch (error) {
+    } catch {
       setActiveTests(prev => prev.map(t => 
         t === test ? { ...t, loading: false, error: 'Network error' } : t
       ));
@@ -963,12 +962,6 @@ const APIDocumentation: React.FC = () => {
                         </div>
                         
                         <div className="flex items-center space-x-2 ml-4">
-                          <button
-                            onClick={() => setSelectedEndpoint(endpoint)}
-                            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-                          >
-                            View Details
-                          </button>
                           <button
                             onClick={() => addTest(endpoint)}
                             className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
