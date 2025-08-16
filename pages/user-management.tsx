@@ -62,10 +62,11 @@ const UserManagement: React.FC = () => {
   const [sortBy, setSortBy] = useState<'username' | 'role' | 'status' | 'lastLogin' | 'createdAt'>('username');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
   const [currentView, setCurrentView] = useState<'users' | 'roles' | 'permissions'>('users');
-  const [editingUser, setEditingUser] = useState<User | null>(null);
-  const [editingRole, setEditingRole] = useState<UserRole | null>(null);
-  const [showCreateModal, setShowCreateModal] = useState(false);
-  const [showRoleModal, setShowRoleModal] = useState(false);
+  // These state variables are reserved for future editing functionality
+  // const [editingUser, setEditingUser] = useState<User | null>(null);
+  // const [editingRole, setEditingRole] = useState<UserRole | null>(null);
+  // const [showCreateModal, setShowCreateModal] = useState(false);
+  // const [showRoleModal, setShowRoleModal] = useState(false);
 
   // Mock data for demonstration
   const mockUsers: User[] = [
@@ -275,7 +276,7 @@ const UserManagement: React.FC = () => {
     setUsers(mockUsers);
     setRoles(mockRoles);
     setPermissions(mockPermissions);
-  }, []);
+  }, [mockUsers, mockRoles, mockPermissions]);
 
   const filteredUsers = users.filter(user => {
     const roleMatch = filters.role.length === 0 || filters.role.includes(user.role.name);
@@ -415,7 +416,10 @@ const UserManagement: React.FC = () => {
       <Head>
         <title>User Management - Zion App</title>
         <meta name="description" content="Advanced user management system with role-based access control" />
-      </Head>
+      
+        <meta property="og:title" content="👥 User Management" />
+        <meta property="og:description" content="👥 User Management — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
 
       <div className="min-h-screen bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

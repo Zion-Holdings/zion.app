@@ -702,7 +702,10 @@ const APIDocumentation: React.FC = () => {
       <Head>
         <title>API Documentation - Zion App</title>
         <meta name="description" content="Comprehensive API documentation with interactive testing and examples" />
-      </Head>
+      
+        <meta property="og:title" content="📚 API Documentation" />
+        <meta property="og:description" content="📚 API Documentation — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
 
       <div className="min-h-screen bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
