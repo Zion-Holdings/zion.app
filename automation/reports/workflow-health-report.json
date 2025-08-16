@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T22:13:58.700Z",
+  "timestamp": "2025-08-16T22:14:26.585Z",
   "summary": {
     "totalWorkflows": 188,
     "activeWorkflows": 187,
@@ -34,6 +34,7 @@
       "agent-agent-1755381089844-1-deployment-advanced.yml",
       "agent-agent-1755381089846-3-optimization-expert.yml",
       "agent-agent-1755381089846-4-testing-advanced.yml",
+      "agent-agent-1755381089847-5-frontend-expert.yml",
       "agent-agent-1755381089848-6-testing-intermediate.yml",
       "agent-factory-automation.yml",
       "agent-factory-proliferation.yml",
@@ -1102,8 +1103,8 @@
       "name": "agent-agent-1755381089847-5-frontend-expert.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089847-5-frontend-expert.yml",
-      "size": 505,
-      "lines": 15,
+      "size": 532,
+      "lines": 23,
       "triggers": [
         "workflow_dispatch",
         "schedule"
@@ -1111,6 +1112,7 @@
       "jobs": [
         "workflow_dispatch",
         "schedule",
+        "jobs",
         "agent-execution",
         "steps",
         "with"
@@ -8014,6 +8016,7 @@
         "Refactor agent-agent-1755381089844-1-deployment-advanced.yml into smaller, focused workflows",
         "Refactor agent-agent-1755381089846-3-optimization-expert.yml into smaller, focused workflows",
         "Refactor agent-agent-1755381089846-4-testing-advanced.yml into smaller, focused workflows",
+        "Refactor agent-agent-1755381089847-5-frontend-expert.yml into smaller, focused workflows",
         "Refactor agent-agent-1755381089848-6-testing-intermediate.yml into smaller, focused workflows",
         "Refactor agent-factory-automation.yml into smaller, focused workflows",
         "Refactor agent-factory-proliferation.yml into smaller, focused workflows",
@@ -8291,6 +8294,7 @@
       "Refactor agent-agent-1755381089844-1-deployment-advanced.yml into smaller, focused workflows",
       "Refactor agent-agent-1755381089846-3-optimization-expert.yml into smaller, focused workflows",
       "Refactor agent-agent-1755381089846-4-testing-advanced.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755381089847-5-frontend-expert.yml into smaller, focused workflows",
       "Refactor agent-agent-1755381089848-6-testing-intermediate.yml into smaller, focused workflows",
       "Refactor agent-factory-automation.yml into smaller, focused workflows",
       "Refactor agent-factory-proliferation.yml into smaller, focused workflows",

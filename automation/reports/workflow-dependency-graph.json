@@ -403,7 +403,7 @@
       "runner": "ubuntu-latest",
       "memory": "standard",
       "timeout": 30,
-      "concurrentJobs": 2
+      "concurrentJobs": 3
     },
     "estimatedDuration": 25
   },
@@ -454,7 +454,7 @@
       "runner": "ubuntu-latest",
       "memory": "standard",
       "timeout": 30,
-      "concurrentJobs": 2
+      "concurrentJobs": 3
     },
     "estimatedDuration": 25
   },
