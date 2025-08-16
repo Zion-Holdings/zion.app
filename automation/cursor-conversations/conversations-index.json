@@ -862,5 +862,29 @@
     "startTime": "2025-08-16T00:42:23.596Z",
     "status": "active",
     "filePath": "conv-1755304943596.json"
+  },
+  {
+    "id": "conv-1755305245593",
+    "type": "performance-optimization",
+    "participants": [
+      "Frontend Specialist",
+      "Backend Developer",
+      "DevOps Engineer"
+    ],
+    "startTime": "2025-08-16T00:47:25.593Z",
+    "status": "active",
+    "filePath": "conv-1755305245593.json"
+  },
+  {
+    "id": "conv-1755305247603",
+    "type": "deployment-planning",
+    "participants": [
+      "DevOps Engineer",
+      "Backend Developer",
+      "Security Expert"
+    ],
+    "startTime": "2025-08-16T00:47:27.603Z",
+    "status": "active",
+    "filePath": "conv-1755305247603.json"
   }
 ]
