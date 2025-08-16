@@ -1,33 +1,40 @@
 {
-  "generatedAt": "2025-08-16T01:20:40.907Z",
+  "generatedAt": "2025-08-16T04:15:41.083Z",
   "items": [
     {
-      "title": "Innovation Insight — 2025-08-16 01-20",
-      "href": "/reports/innovations/insight-2025-08-16T01-20",
+      "title": "Case Study — Cloud Improving",
+      "href": "/reports/cases/case-2025-08-16-041541",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-16T01:20:40.841Z",
-      "source": "cloud-content-factory"
+      "createdAt": "2025-08-16T04:15:41.041Z",
+      "source": "cloud-deep-research-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-16 01-20",
-      "href": "/reports/updates/update-2025-08-16T01-20",
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-16-041541",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-16T01:20:40.841Z",
-      "source": "cloud-content-factory"
+      "createdAt": "2025-08-16T04:15:41.041Z",
+      "source": "cloud-deep-research-factory"
     },
     {
-      "title": "Innovation Insight — 2025-08-16 01-20",
-      "href": "/reports/innovations/insight-2025-08-16T01-20",
+      "title": "Case Study — Cloud Improving",
+      "href": "/reports/cases/case-2025-08-16-041540",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-16T01:20:40.841Z",
-      "source": "cloud-content-factory"
+      "createdAt": "2025-08-16T04:15:40.806Z",
+      "source": "cloud-deep-research-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-16 01-20",
-      "href": "/reports/updates/update-2025-08-16T01-20",
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-16-041540",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-16T01:20:40.841Z",
-      "source": "cloud-content-factory"
+      "createdAt": "2025-08-16T04:15:40.806Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Automation Trends 2025",
+      "href": "/reports/patterns/pattern-2025-08-16-041540",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-16T04:15:40.806Z",
+      "source": "cloud-deep-research-factory"
     }
   ]
 }
