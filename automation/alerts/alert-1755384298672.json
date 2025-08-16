@@ -1,0 +1,6 @@
+{
+  "level": "critical",
+  "category": "security_status",
+  "message": "security_status health is poor: 50.80213903743316/100",
+  "timestamp": "2025-08-16T22:44:58.654Z"
+}

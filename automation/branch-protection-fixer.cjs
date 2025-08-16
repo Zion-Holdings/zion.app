@@ -159,46 +159,8 @@ class BranchProtectionFixer {
     return updatedContent;
   }
 
-  /*
-  addBranchProtectionRules(content) {
-    // Add branch protection rules if they don't exist
-    if (content.includes('branch_protection_rules:')) {
-      return content; // Already has branch protection
-    }
-    
-    // Add branch protection rules after permissions
-    const branchProtectionRules = `
-  # Branch protection rules
-  branch_protection_rules:
-    - pattern: "main"
-      required_status_checks:
-        strict: true
-        contexts: []
-      required_pull_request_reviews:
-        required_approving_review_count: 1
-        dismiss_stale_reviews: true
-        require_code_owner_reviews: false
-      enforce_admins: false
-      required_linear_history: false
-      allow_force_pushes: false
-      allow_deletions: false
-      block_creations: false
-      required_conversation_resolution: true`;
-    
-    // Insert after permissions section
-    if (content.includes('permissions:')) {
-      const permissionsIndex = content.indexOf('permissions:');
-      const nextSectionIndex = content.indexOf('\n', content.indexOf('\n', permissionsIndex) + 1);
-      
-      const beforePermissions = content.substring(0, nextSectionIndex);
-      const afterPermissions = content.substring(nextSectionIndex);
-      
-      return beforePermissions + branchProtectionRules + afterPermissions;
-    }
-    
-    return content;
-  }
-  */
+  // Branch protection rules are not valid GitHub Actions permissions
+  // This method has been removed as it was causing YAML syntax errors
 
   addPullRequestRequirement(content) {
     // Add pull request requirement if not present
