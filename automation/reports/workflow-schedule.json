@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T22:48:42.117Z",
+  "timestamp": "2025-08-16T22:49:46.390Z",
   "critical": [
     {
       "name": "auto-heal-workflows.yml",
@@ -1180,22 +1180,6 @@
       "resourceScore": 115
     },
     {
-      "name": "homepage-auto-update.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/homepage-auto-update.yml",
-      "priority": "medium",
-      "resourceIntensity": "low",
-      "estimatedDuration": 15,
-      "concurrentJobs": 0,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [],
-      "resourceScore": 115
-    },
-    {
       "name": "pr-update-with-main.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/pr-update-with-main.yml",
       "priority": "medium",
@@ -1962,6 +1946,25 @@
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
+      ],
+      "resourceScore": 114
+    },
+    {
+      "name": "homepage-auto-update.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/homepage-auto-update.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 20,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch {}"
       ],
       "resourceScore": 114
     },

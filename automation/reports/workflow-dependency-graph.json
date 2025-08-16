@@ -2322,17 +2322,20 @@
   },
   "homepage-auto-update.yml": {
     "name": "homepage-auto-update.yml",
-    "triggers": [],
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
     "needs": [],
     "outputs": [],
     "priority": "medium",
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 30,
-      "concurrentJobs": 0
+      "timeout": 20,
+      "concurrentJobs": 5
     },
-    "estimatedDuration": 15
+    "estimatedDuration": 20
   },
   "instagram-marketing.yml": {
     "name": "instagram-marketing.yml",
