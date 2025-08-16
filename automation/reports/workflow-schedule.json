@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T22:05:36.926Z",
+  "timestamp": "2025-08-16T22:06:47.676Z",
   "critical": [
     {
       "name": "auto-heal-workflows.yml",
@@ -363,6 +363,25 @@
       "resourceScore": 124
     },
     {
+      "name": "search-index-autogen.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/search-index-autogen.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 10,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch {}"
+      ],
+      "resourceScore": 124
+    },
+    {
       "name": "automation-guardian-10min.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/automation-guardian-10min.yml",
       "priority": "medium",
@@ -670,25 +689,6 @@
     {
       "name": "repo-radar.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/repo-radar.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 10,
-      "concurrentJobs": 9,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "schedule",
-        "workflow_dispatch {}"
-      ],
-      "resourceScore": 121
-    },
-    {
-      "name": "search-index-autogen.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/search-index-autogen.yml",
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 10,
