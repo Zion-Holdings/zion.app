@@ -8922,6 +8922,18 @@
     "issues": []
   },
   {
+    "file": "/reports/cases/case-2025-08-16-051306.tsx",
+    "title": "Case Study — Cloud Improving",
+    "description": "Pragmatic case scenario inspired by live site signals.",
+    "issues": []
+  },
+  {
+    "file": "/reports/cases/case-2025-08-16-052726.tsx",
+    "title": "Case Study — Cloud Improving",
+    "description": "Pragmatic case scenario inspired by live site signals.",
+    "issues": []
+  },
+  {
     "file": "/reports/dossiers/index.tsx",
     "title": "Dossiers | Zion Tech Group",
     "description": "Browse our collection of dossiers and insights.",
@@ -14399,6 +14411,18 @@
   },
   {
     "file": "/reports/guides/guide-2025-08-16-041541.tsx",
+    "title": "Guide — Cloud Improving Implementation",
+    "description": "Step-by-step guidance derived from live research signals.",
+    "issues": []
+  },
+  {
+    "file": "/reports/guides/guide-2025-08-16-051306.tsx",
+    "title": "Guide — Cloud Improving Implementation",
+    "description": "Step-by-step guidance derived from live research signals.",
+    "issues": []
+  },
+  {
+    "file": "/reports/guides/guide-2025-08-16-052726.tsx",
     "title": "Guide — Cloud Improving Implementation",
     "description": "Step-by-step guidance derived from live research signals.",
     "issues": []
@@ -23053,6 +23077,18 @@
   },
   {
     "file": "/reports/patterns/pattern-2025-08-16-041540.tsx",
+    "title": "Pattern — Automation Trends 2025",
+    "description": "Actionable architectural pattern synthesized from live site signals.",
+    "issues": []
+  },
+  {
+    "file": "/reports/patterns/pattern-2025-08-16-051306.tsx",
+    "title": "Pattern — Automation Trends 2025",
+    "description": "Actionable architectural pattern synthesized from live site signals.",
+    "issues": []
+  },
+  {
+    "file": "/reports/patterns/pattern-2025-08-16-052726.tsx",
     "title": "Pattern — Automation Trends 2025",
     "description": "Actionable architectural pattern synthesized from live site signals.",
     "issues": []
@@ -35615,6 +35651,18 @@
   {
     "file": "/reports/updates/update-2025-08-16-0120.tsx",
     "title": "Autonomous Playbook — Data Engineering (2025-08-16 01:20 UTC)",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-0202.tsx",
+    "title": "Autonomous Update — 2025-08-16 02:02",
+    "description": "Autonomously generated update with curated highlights.",
+    "issues": []
+  },
+  {
+    "file": "/reports/updates/update-2025-08-16-0203.tsx",
+    "title": "Autonomous Update — 2025-08-16 02:03",
     "description": "Autonomously generated update with curated highlights.",
     "issues": []
   },
