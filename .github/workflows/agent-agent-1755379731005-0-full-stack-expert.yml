@@ -2,7 +2,7 @@ name: Agent: agent-1755379731005-0-full-stack-expert
 on:
   workflow_dispatch:
   schedule:
-  - cron: 0 */6 * * *
+    - cron: 0 */6 * * *
 jobs:
   agent-execution:
     runs-on: ubuntu-latest
