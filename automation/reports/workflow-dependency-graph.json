@@ -1270,10 +1270,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 55,
+      "timeout": 45,
       "concurrentJobs": 5
     },
-    "estimatedDuration": 55
+    "estimatedDuration": 45
   },
   "autonomous-deps-upgrade.yml": {
     "name": "autonomous-deps-upgrade.yml",
@@ -1321,10 +1321,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 30,
+      "timeout": 20,
       "concurrentJobs": 5
     },
-    "estimatedDuration": 30
+    "estimatedDuration": 20
   },
   "autonomous-intelligence.yml": {
     "name": "autonomous-intelligence.yml",

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T22:22:42.940Z",
+  "timestamp": "2025-08-16T22:23:46.199Z",
   "critical": [
     {
       "name": "auto-heal-workflows.yml",
@@ -2669,6 +2669,25 @@
       "resourceScore": 111
     },
     {
+      "name": "autonomous-image-optimizer.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-image-optimizer.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 20,
+      "concurrentJobs": 9,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch {}"
+      ],
+      "resourceScore": 111
+    },
+    {
       "name": "gitleaks.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/gitleaks.yml",
       "priority": "medium",
@@ -3241,6 +3260,25 @@
       "resourceScore": 109
     },
     {
+      "name": "autonomous-marketing-seo.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-marketing-seo.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 25,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch {}"
+      ],
+      "resourceScore": 109
+    },
+    {
       "name": "unused-deps-cleaner.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/unused-deps-cleaner.yml",
       "priority": "medium",
@@ -3296,25 +3334,6 @@
         "workflow_dispatch"
       ],
       "resourceScore": 107
-    },
-    {
-      "name": "autonomous-marketing-seo.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-marketing-seo.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 25,
-      "concurrentJobs": 9,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "schedule",
-        "workflow_dispatch {}"
-      ],
-      "resourceScore": 106
     },
     {
       "name": "intelligent-content-generation.yml",
@@ -3511,25 +3530,6 @@
       "resourceScore": 102
     },
     {
-      "name": "autonomous-image-optimizer.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-image-optimizer.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 30,
-      "concurrentJobs": 9,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "schedule",
-        "workflow_dispatch {}"
-      ],
-      "resourceScore": 101
-    },
-    {
       "name": "codeql-analysis.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/codeql-analysis.yml",
       "priority": "medium",
@@ -3599,7 +3599,7 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-deep-maintenance.yml",
       "priority": "low",
       "resourceIntensity": "medium",
-      "estimatedDuration": 55,
+      "estimatedDuration": 45,
       "concurrentJobs": 9,
       "runnerRequirements": {
         "runner": "ubuntu-latest",
@@ -3611,7 +3611,7 @@
         "schedule",
         "workflow_dispatch {}"
       ],
-      "resourceScore": 46
+      "resourceScore": 56
     }
   ],
   "resourceIntensive": [],

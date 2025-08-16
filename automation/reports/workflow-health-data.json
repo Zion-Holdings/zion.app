@@ -2500,14 +2500,17 @@
     "name": "autonomous-deep-maintenance.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-deep-maintenance.yml",
-    "size": 1362,
-    "lines": 52,
+    "size": 1869,
+    "lines": 68,
     "triggers": [
       "schedule",
       "workflow_dispatch {}"
     ],
     "jobs": [
       "schedule",
+      "branch_protection_rules",
+      "required_status_checks",
+      "required_pull_request_reviews",
       "jobs",
       "deep-maintenance",
       "steps",
@@ -2521,6 +2524,66 @@
       {
         "permission": "contents",
         "value": "write"
+      },
+      {
+        "permission": "branch_protection_rules",
+        "value": ""
+      },
+      {
+        "permission": "- pattern",
+        "value": "\"main\""
+      },
+      {
+        "permission": "required_status_checks",
+        "value": ""
+      },
+      {
+        "permission": "strict",
+        "value": "true"
+      },
+      {
+        "permission": "contexts",
+        "value": "[]"
+      },
+      {
+        "permission": "required_pull_request_reviews",
+        "value": ""
+      },
+      {
+        "permission": "required_approving_review_count",
+        "value": "1"
+      },
+      {
+        "permission": "dismiss_stale_reviews",
+        "value": "true"
+      },
+      {
+        "permission": "require_code_owner_reviews",
+        "value": "false"
+      },
+      {
+        "permission": "enforce_admins",
+        "value": "false"
+      },
+      {
+        "permission": "required_linear_history",
+        "value": "false"
+      },
+      {
+        "permission": "allow_force_pushes",
+        "value": "false"
+      },
+      {
+        "permission": "allow_deletions",
+        "value": "false"
+      },
+      {
+        "permission": "block_creations",
+        "value": "false"
+      },
+      {
+        "permission": "required_conversation_resolution",
+        "value": "true"
       }
     ],
     "concurrency": "automation-deep-maintenance",
@@ -2577,7 +2640,44 @@
     "name": "autonomous-external-links.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-external-links.yml",
-    "size": 1727,
+    "size": 1220,
+    "lines": 49,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "external-links",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      }
+    ],
+    "concurrency": "automation-external-links",
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "autonomous-image-optimizer.yml": {
+    "name": "autonomous-image-optimizer.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-image-optimizer.yml",
+    "size": 1742,
     "lines": 65,
     "triggers": [
       "schedule",
@@ -2589,7 +2689,7 @@
       "required_status_checks",
       "required_pull_request_reviews",
       "jobs",
-      "external-links",
+      "image-optimizer",
       "steps",
       "with",
       "with"
@@ -2661,43 +2761,6 @@
       {
         "permission": "required_conversation_resolution",
         "value": "true"
-      }
-    ],
-    "concurrency": "automation-external-links",
-    "issues": [
-      "unsafe_git_push"
-    ],
-    "recommendations": [
-      "Add branch protection to git push operations",
-      "Add workflow_dispatch trigger for manual testing",
-      "Consider splitting into smaller workflows for better maintainability"
-    ]
-  },
-  "autonomous-image-optimizer.yml": {
-    "name": "autonomous-image-optimizer.yml",
-    "status": "active",
-    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-image-optimizer.yml",
-    "size": 1235,
-    "lines": 49,
-    "triggers": [
-      "schedule",
-      "workflow_dispatch {}"
-    ],
-    "jobs": [
-      "schedule",
-      "jobs",
-      "image-optimizer",
-      "steps",
-      "with",
-      "with"
-    ],
-    "timeouts": [
-      20
-    ],
-    "permissions": [
-      {
-        "permission": "contents",
-        "value": "write"
       }
     ],
     "concurrency": "automation-image-optimizer",
@@ -2827,17 +2890,14 @@
     "name": "autonomous-marketing-seo.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-marketing-seo.yml",
-    "size": 1949,
-    "lines": 70,
+    "size": 1442,
+    "lines": 54,
     "triggers": [
       "schedule",
       "workflow_dispatch {}"
     ],
     "jobs": [
       "schedule",
-      "branch_protection_rules",
-      "required_status_checks",
-      "required_pull_request_reviews",
       "jobs",
       "marketing-seo",
       "steps",
@@ -2851,66 +2911,6 @@
       {
         "permission": "contents",
         "value": "write"
-      },
-      {
-        "permission": "branch_protection_rules",
-        "value": ""
-      },
-      {
-        "permission": "- pattern",
-        "value": "\"main\""
-      },
-      {
-        "permission": "required_status_checks",
-        "value": ""
-      },
-      {
-        "permission": "strict",
-        "value": "true"
-      },
-      {
-        "permission": "contexts",
-        "value": "[]"
-      },
-      {
-        "permission": "required_pull_request_reviews",
-        "value": ""
-      },
-      {
-        "permission": "required_approving_review_count",
-        "value": "1"
-      },
-      {
-        "permission": "dismiss_stale_reviews",
-        "value": "true"
-      },
-      {
-        "permission": "require_code_owner_reviews",
-        "value": "false"
-      },
-      {
-        "permission": "enforce_admins",
-        "value": "false"
-      },
-      {
-        "permission": "required_linear_history",
-        "value": "false"
-      },
-      {
-        "permission": "allow_force_pushes",
-        "value": "false"
-      },
-      {
-        "permission": "allow_deletions",
-        "value": "false"
-      },
-      {
-        "permission": "block_creations",
-        "value": "false"
-      },
-      {
-        "permission": "required_conversation_resolution",
-        "value": "true"
       }
     ],
     "concurrency": "automation-marketing-seo",
