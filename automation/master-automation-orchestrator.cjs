@@ -7,11 +7,11 @@ const { execSync } = require("child_process");
 
 class MasterAutomationOrchestrator {
   constructor() {
-    this.configPath = path.resolve(__dirname, "config/orchestrator-config.json");
     this.reportsDir = path.resolve(__dirname, "reports");
+    this.configPath = path.resolve(__dirname, "config/master-orchestrator.json");
     this.automationSystems = new Map();
-    this.systemStatus = new Map();
     this.executionHistory = [];
+    this.healthStatus = {};
     
     this.ensureDirectories();
     this.loadConfiguration();
@@ -19,24 +19,33 @@ class MasterAutomationOrchestrator {
   }
 
   ensureDirectories() {
-    [path.dirname(this.configPath), this.reportsDir].forEach(dir => {
-      if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
-      }
-    });
+    if (!fs.existsSync(this.reportsDir)) {
+      fs.mkdirSync(this.reportsDir, { recursive: true });
+    }
   }
 
   loadConfiguration() {
     this.config = {
+      executionMode: 'intelligent', // 'aggressive', 'conservative', 'intelligent'
       maxConcurrentSystems: 3,
-      systemTimeoutMs: 300000, // 5 minutes
-      autoRetry: true,
-      maxRetries: 2,
-      retryDelayMs: 30000,
-      healthCheckInterval: 60000, // 1 minute
-      workflowProtection: true, // Prevent automation from modifying workflows
-      backupBeforeModification: true,
-      logLevel: 'info'
+      healthCheckInterval: 300000, // 5 minutes
+      autoRecovery: true,
+      reporting: {
+        enabled: true,
+        format: 'json',
+        retention: 30 // days
+      },
+      priorities: {
+        critical: ['workflow-health', 'dependency-health', 'security'],
+        high: ['resource-optimization', 'workflow-standardization'],
+        medium: ['smart-dispatch', 'retry-system'],
+        low: ['reporting', 'cleanup']
+      },
+      schedules: {
+        hourly: ['workflow-health', 'smart-dispatch'],
+        daily: ['dependency-health', 'resource-optimization', 'workflow-standardization'],
+        weekly: ['comprehensive-audit', 'cleanup']
+      }
     };
     
     // Save default configuration
@@ -48,91 +57,74 @@ class MasterAutomationOrchestrator {
   }
 
   initializeAutomationSystems() {
-    console.log("🚀 Initializing automation systems...");
-    
-    // Initialize core automation systems
-    this.automationSystems.set('dependency-health', {
-      name: 'Dependency Health Checker',
-      class: this.safeRequire('./dependency-health-checker.cjs'),
+    // Initialize all automation systems
+    this.automationSystems.set('workflow-health', {
+      name: 'Workflow Health Monitor',
+      class: require('./workflow-health-monitor.cjs'),
       instance: null,
       status: 'stopped',
       lastRun: null,
       nextRun: null,
-      priority: 'critical',
-      safeMode: true
+      priority: 'critical'
+    });
+    
+    this.automationSystems.set('retry-system', {
+      name: 'Intelligent Retry System',
+      class: require('./intelligent-retry-system.cjs'),
+      instance: null,
+      status: 'stopped',
+      lastRun: null,
+      nextRun: null,
+      priority: 'medium'
+    });
+    
+    this.automationSystems.set('resource-optimization', {
+      name: 'Resource Optimization Orchestrator',
+      class: require('./resource-optimization-orchestrator.cjs'),
+      instance: null,
+      status: 'stopped',
+      lastRun: null,
+      nextRun: null,
+      priority: 'high'
+    });
+    
+    this.automationSystems.set('dependency-health', {
+      name: 'Dependency Health Checker',
+      class: require('./dependency-health-checker.cjs'),
+      instance: null,
+      status: 'stopped',
+      lastRun: null,
+      nextRun: null,
+      priority: 'critical'
     });
     
     this.automationSystems.set('workflow-standardization', {
-      name: 'Workflow Template Standardizer (Safe Mode)',
-      class: this.safeRequire('./workflow-template-standardizer.cjs'),
+      name: 'Workflow Template Standardizer',
+      class: require('./workflow-template-standardizer.cjs'),
       instance: null,
       status: 'stopped',
       lastRun: null,
       nextRun: null,
-      priority: 'high',
-      safeMode: true,
-      workflowProtection: true
+      priority: 'high'
     });
     
     this.automationSystems.set('smart-dispatch', {
       name: 'Smart Workflow Dispatcher',
-      class: this.safeRequire('./smart-workflow-dispatcher.cjs'),
+      class: require('./smart-workflow-dispatcher.cjs'),
       instance: null,
       status: 'stopped',
       lastRun: null,
       nextRun: null,
-      priority: 'medium',
-      safeMode: true
-    });
-    
-    this.automationSystems.set('security-monitor', {
-      name: 'Security Monitor',
-      class: this.safeRequire('./security-auto-heal.cjs'),
-      instance: null,
-      status: 'stopped',
-      lastRun: null,
-      nextRun: null,
-      priority: 'high',
-      safeMode: true
-    });
-    
-    this.automationSystems.set('performance-optimizer', {
-      name: 'Performance Optimizer',
-      class: this.safeRequire('./performance-optimizer.cjs'),
-      instance: null,
-      status: 'stopped',
-      lastRun: null,
-      nextRun: null,
-      priority: 'medium',
-      safeMode: true
+      priority: 'medium'
     });
     
     console.log(`🚀 Initialized ${this.automationSystems.size} automation systems`);
-  }
-
-  safeRequire(modulePath) {
-    try {
-      const fullPath = path.resolve(__dirname, modulePath);
-      if (fs.existsSync(fullPath)) {
-        return require(fullPath);
-      } else {
-        console.warn(`⚠️  Module not found: ${modulePath}`);
-        return null;
-      }
-    } catch (error) {
-      console.warn(`⚠️  Failed to require ${modulePath}:`, error.message);
-      return null;
-    }
   }
 
   async startAutomationSystem(systemKey) {
     const system = this.automationSystems.get(systemKey);
     if (!system) {
       throw new Error(`Unknown automation system: ${systemKey}`);
-    }
-    
-    if (!system.class) {
-      throw new Error(`System ${systemKey} has no valid class`);
     }
     
     try {
@@ -184,10 +176,6 @@ class MasterAutomationOrchestrator {
       throw new Error(`Unknown automation system: ${systemKey}`);
     }
     
-    if (!system.class) {
-      throw new Error(`System ${systemKey} has no valid class`);
-    }
-    
     try {
       console.log(`🔄 Running ${system.name}...`);
       
@@ -200,348 +188,510 @@ class MasterAutomationOrchestrator {
       
       // Execute the system based on its type
       let result;
-      if (systemKey === 'workflow-standardization') {
-        result = await this.runWorkflowStandardizer(system, options);
-      } else if (systemKey === 'smart-dispatch') {
-        result = await this.runSmartDispatcher(system, options);
-      } else {
-        result = await this.runGenericSystem(system, options);
+      switch (systemKey) {
+        case 'workflow-health':
+          result = await system.instance.analyzeWorkflowHealth();
+          break;
+          
+        case 'retry-system':
+          // Run retry analysis on a sample failure
+          const sampleFailure = `
+          npm ERR! code ETIMEDOUT
+          npm ERR! errno ETIMEDOUT
+          npm ERR! network timeout at: https://registry.npmjs.org/package-name
+          `;
+          result = await system.instance.analyzeFailure(sampleFailure, 'ci.yml', 1);
+          break;
+          
+        case 'resource-optimization':
+          result = await system.instance.optimizeWorkflowSchedule();
+          break;
+          
+        case 'dependency-health':
+          result = await system.instance.checkDependencyHealth();
+          break;
+          
+        case 'workflow-standardization':
+          result = await system.instance.standardizeWorkflows();
+          break;
+          
+        case 'smart-dispatch':
+          result = await system.instance.dispatchWorkflows(['package.json', 'src/components/Button.tsx']);
+          break;
+          
+        default:
+          throw new Error(`Unknown system execution method for: ${systemKey}`);
       }
       
-      const executionTime = Date.now() - startTime;
+      const duration = Date.now() - startTime;
       
       // Record execution
-      this.recordExecution(systemKey, {
-        status: 'success',
-        executionTime,
-        result,
-        timestamp: new Date().toISOString()
-      });
+      const execution = {
+        system: systemKey,
+        timestamp: new Date().toISOString(),
+        duration,
+        success: true,
+        result: result,
+        error: null
+      };
       
-      console.log(`✅ ${system.name} completed successfully in ${executionTime}ms`);
+      this.executionHistory.push(execution);
+      system.lastRun = new Date().toISOString();
+      
+      console.log(`✅ ${system.name} completed successfully in ${duration}ms`);
       return result;
       
     } catch (error) {
-      console.error(`❌ Error running ${system.name}:`, error.message);
+      console.error(`❌ ${system.name} failed:`, error.message);
       
-      // Record failure
-      this.recordExecution(systemKey, {
-        status: 'error',
-        error: error.message,
-        timestamp: new Date().toISOString()
-      });
+      // Record failed execution
+      const execution = {
+        system: systemKey,
+        timestamp: new Date().toISOString(),
+        duration: 0,
+        success: false,
+        result: null,
+        error: error.message
+      };
       
+      this.executionHistory.push(execution);
+      system.lastRun = new Date().toISOString();
       system.status = 'error';
       system.lastError = error.message;
       
-      // Auto-retry if enabled
-      if (this.config.autoRetry && system.retryCount < this.config.maxRetries) {
-        system.retryCount = (system.retryCount || 0) + 1;
-        console.log(`🔄 Retrying ${system.name} (attempt ${system.retryCount}/${this.config.maxRetries})...`);
-        
-        setTimeout(() => {
-          this.runAutomationSystem(systemKey, options);
-        }, this.config.retryDelayMs);
+      // Auto-recovery if enabled
+      if (this.config.autoRecovery) {
+        await this.attemptRecovery(systemKey, error);
       }
       
       throw error;
     }
   }
 
-  async runWorkflowStandardizer(system, options) {
-    // Special handling for workflow standardizer to prevent conflicts
-    if (this.config.workflowProtection) {
-      console.log("🛡️  Workflow protection enabled - running in safe mode");
-      
-      // Check if workflows are currently stable
-      const workflowStatus = await this.checkWorkflowHealth();
-      if (workflowStatus.hasIssues) {
-        console.log("⚠️  Workflows have issues - skipping standardization");
-        return { skipped: true, reason: 'Workflows have issues' };
-      }
-    }
+  async attemptRecovery(systemKey, error) {
+    const system = this.automationSystems.get(systemKey);
+    if (!system) return;
     
-    // Run the standardizer
-    const standardizer = system.instance;
-    if (standardizer && typeof standardizer.standardizeWorkflows === 'function') {
-      return await standardizer.standardizeWorkflows();
-    } else {
-      throw new Error('Workflow standardizer not properly initialized');
+    console.log(`🔄 Attempting recovery for ${system.name}...`);
+    
+    try {
+      // Stop the system
+      await this.stopAutomationSystem(systemKey);
+      
+      // Wait a bit
+      await this.sleep(5000);
+      
+      // Restart the system
+      await this.startAutomationSystem(systemKey);
+      
+      console.log(`✅ Recovery successful for ${system.name}`);
+      
+    } catch (recoveryError) {
+      console.error(`❌ Recovery failed for ${system.name}:`, recoveryError.message);
+      system.status = 'unrecoverable';
     }
   }
 
-  async runSmartDispatcher(system, options) {
-    // Run the smart dispatcher
-    const dispatcher = system.instance;
-    if (dispatcher && typeof dispatcher.dispatchWorkflows === 'function') {
-      return await dispatcher.dispatchWorkflows();
+  async runComprehensiveAudit() {
+    console.log("🔍 Running comprehensive automation audit...");
+    
+    const audit = {
+      timestamp: new Date().toISOString(),
+      systems: {},
+      overallHealth: 0,
+      recommendations: [],
+      actions: []
+    };
+    
+    let totalHealth = 0;
+    let systemCount = 0;
+    
+    // Audit each system
+    for (const [key, system] of this.automationSystems) {
+      try {
+        const systemHealth = await this.auditSystem(key);
+        audit.systems[key] = systemHealth;
+        
+        totalHealth += systemHealth.score;
+        systemCount++;
+        
+        if (systemHealth.score < 70) {
+          audit.recommendations.push({
+            system: key,
+            issue: systemHealth.issues.join(', '),
+            priority: systemHealth.score < 50 ? 'high' : 'medium',
+            action: `Run ${key} to resolve issues`
+          });
+          
+          audit.actions.push({
+            type: 'run_system',
+            system: key,
+            priority: systemHealth.score < 50 ? 'immediate' : 'scheduled'
+          });
+        }
+        
+      } catch (error) {
+        console.error(`❌ Failed to audit ${key}:`, error.message);
+        audit.systems[key] = {
+          score: 0,
+          status: 'error',
+          issues: ['Audit failed'],
+          lastRun: null
+        };
+      }
+    }
+    
+    // Calculate overall health
+    audit.overallHealth = systemCount > 0 ? Math.round(totalHealth / systemCount) : 0;
+    
+    // Save audit report
+    this.saveAuditReport(audit);
+    
+    console.log(`📊 Comprehensive audit completed. Overall health: ${audit.overallHealth}/100`);
+    
+    return audit;
+  }
+
+  async auditSystem(systemKey) {
+    const system = this.automationSystems.get(systemKey);
+    if (!system) {
+      throw new Error(`Unknown system: ${systemKey}`);
+    }
+    
+    const audit = {
+      score: 100,
+      status: system.status,
+      issues: [],
+      lastRun: system.lastRun,
+      recommendations: []
+    };
+    
+    // Check system status
+    if (system.status === 'error') {
+      audit.score -= 30;
+      audit.issues.push('System in error state');
+    } else if (system.status === 'stopped') {
+      audit.score -= 20;
+      audit.issues.push('System stopped');
+    }
+    
+    // Check last run time
+    if (system.lastRun) {
+      const lastRun = new Date(system.lastRun);
+      const hoursSinceLastRun = (Date.now() - lastRun.getTime()) / (1000 * 60 * 60);
+      
+      if (hoursSinceLastRun > 24) {
+        audit.score -= 15;
+        audit.issues.push('System not run recently');
+      } else if (hoursSinceLastRun > 6) {
+        audit.score -= 5;
+        audit.issues.push('System run more than 6 hours ago');
+      }
     } else {
-      throw new Error('Smart dispatcher not properly initialized');
+      audit.score -= 25;
+      audit.issues.push('System never run');
+    }
+    
+    // Check for errors
+    if (system.lastError) {
+      audit.score -= 20;
+      audit.issues.push('System has recent errors');
+    }
+    
+    // Ensure score doesn't go below 0
+    audit.score = Math.max(0, audit.score);
+    
+    // Generate recommendations
+    if (audit.score < 70) {
+      if (system.status === 'error') {
+        audit.recommendations.push('Restart system to clear error state');
+      }
+      if (system.status === 'stopped') {
+        audit.recommendations.push('Start system to enable automation');
+      }
+      if (!system.lastRun || (new Date(system.lastRun) < new Date(Date.now() - 24 * 60 * 60 * 1000))) {
+        audit.recommendations.push('Run system to update status');
+      }
+    }
+    
+    return audit;
+  }
+
+  async runPriorityQueue() {
+    console.log("🚀 Running priority queue...");
+    
+    const priorityOrder = ['critical', 'high', 'medium', 'low'];
+    const results = {};
+    
+    for (const priority of priorityOrder) {
+      const systems = Array.from(this.automationSystems.entries())
+        .filter(([key, system]) => system.priority === priority);
+      
+      if (systems.length === 0) continue;
+      
+      console.log(`\n📋 Executing ${priority} priority systems (${systems.length} systems)`);
+      
+      results[priority] = [];
+      
+      for (const [key, system] of systems) {
+        try {
+          console.log(`  🚀 Running ${system.name}...`);
+          const result = await this.runAutomationSystem(key);
+          results[priority].push({
+            system: key,
+            success: true,
+            result: result
+          });
+        } catch (error) {
+          console.error(`  ❌ ${system.name} failed:`, error.message);
+          results[priority].push({
+            system: key,
+            success: false,
+            error: error.message
+          });
+        }
+      }
+    }
+    
+    return results;
+  }
+
+  async runScheduledTasks() {
+    console.log("⏰ Running scheduled tasks...");
+    
+    const now = new Date();
+    const hour = now.getHours();
+    const dayOfWeek = now.getDay();
+    
+    const results = {
+      timestamp: now.toISOString(),
+      hourly: [],
+      daily: [],
+      weekly: []
+    };
+    
+    // Hourly tasks
+    if (this.config.schedules.hourly) {
+      console.log("🕐 Executing hourly tasks...");
+      for (const systemKey of this.config.schedules.hourly) {
+        try {
+          await this.runAutomationSystem(systemKey);
+          results.hourly.push({ system: systemKey, success: true });
+        } catch (error) {
+          results.hourly.push({ system: systemKey, success: false, error: error.message });
+        }
+      }
+    }
+    
+    // Daily tasks (run once per day)
+    if (this.config.schedules.daily && hour === 2) { // 2 AM
+      console.log("🌅 Executing daily tasks...");
+      for (const systemKey of this.config.schedules.daily) {
+        try {
+          await this.runAutomationSystem(systemKey);
+          results.daily.push({ system: systemKey, success: true });
+        } catch (error) {
+          results.daily.push({ system: systemKey, success: false, error: error.message });
+        }
+      }
+    }
+    
+    // Weekly tasks (run once per week on Sunday)
+    if (this.config.schedules.weekly && dayOfWeek === 0 && hour === 3) { // Sunday 3 AM
+      console.log("📅 Executing weekly tasks...");
+      for (const systemKey of this.config.schedules.weekly) {
+        try {
+          if (systemKey === 'comprehensive-audit') {
+            await this.runComprehensiveAudit();
+          } else {
+            await this.runAutomationSystem(systemKey);
+          }
+          results.weekly.push({ system: systemKey, success: true });
+        } catch (error) {
+          results.weekly.push({ system: systemKey, success: false, error: error.message });
+        }
+      }
+    }
+    
+    return results;
+  }
+
+  async startContinuousMode() {
+    console.log("🔄 Starting continuous automation mode...");
+    
+    this.continuousMode = true;
+    
+    while (this.continuousMode) {
+      try {
+        // Run scheduled tasks
+        await this.runScheduledTasks();
+        
+        // Health check
+        await this.performHealthCheck();
+        
+        // Wait for next cycle
+        await this.sleep(this.config.healthCheckInterval);
+        
+      } catch (error) {
+        console.error("❌ Error in continuous mode:", error.message);
+        await this.sleep(60000); // Wait 1 minute before retrying
+      }
     }
   }
 
-  async runGenericSystem(system, options) {
-    // Generic system execution
-    const instance = system.instance;
-    if (instance && typeof instance.run === 'function') {
-      return await instance.run(options);
-    } else if (instance && typeof instance.execute === 'function') {
-      return await instance.execute(options);
-    } else {
-      throw new Error(`System ${system.name} has no run/execute method`);
+  async performHealthCheck() {
+    console.log("🏥 Performing health check...");
+    
+    const healthStatus = {
+      timestamp: new Date().toISOString(),
+      systems: {},
+      overallStatus: 'healthy'
+    };
+    
+    let healthySystems = 0;
+    let totalSystems = 0;
+    
+    for (const [key, system] of this.automationSystems) {
+      totalSystems++;
+      
+      if (system.status === 'running' && !system.lastError) {
+        healthStatus.systems[key] = 'healthy';
+        healthySystems++;
+      } else if (system.status === 'error') {
+        healthStatus.systems[key] = 'unhealthy';
+        healthStatus.overallStatus = 'degraded';
+      } else {
+        healthStatus.systems[key] = 'warning';
+        if (healthStatus.overallStatus === 'healthy') {
+          healthStatus.overallStatus = 'warning';
+        }
+      }
     }
+    
+    const healthPercentage = Math.round((healthySystems / totalSystems) * 100);
+    healthStatus.healthPercentage = healthPercentage;
+    
+    this.healthStatus = healthStatus;
+    
+    console.log(`🏥 Health check completed: ${healthPercentage}% healthy (${healthStatus.overallStatus})`);
+    
+    return healthStatus;
   }
 
-  async checkWorkflowHealth() {
-    const workflowsDir = path.resolve(__dirname, "../.github/workflows");
-    if (!fs.existsSync(workflowsDir)) {
-      return { hasIssues: false, issues: [] };
-    }
-    
-    const workflows = fs.readdirSync(workflowsDir)
-      .filter(f => f.endsWith('.yml') || f.endsWith('.yaml'));
-    
-    const issues = [];
-    
-    for (const workflow of workflows) {
-      const workflowPath = path.join(workflowsDir, workflow);
-      const content = fs.readFileSync(workflowPath, 'utf8');
-      
-      // Check for common issues
-      if (!content.includes('jobs:')) {
-        issues.push(`${workflow}: Missing jobs section`);
-      }
-      
-      if (!content.includes('steps:')) {
-        issues.push(`${workflow}: Missing steps section`);
-      }
-      
-      if (!content.includes('runs-on:')) {
-        issues.push(`${workflow}: Missing runs-on configuration`);
-      }
-      
-      // Check for YAML syntax issues (basic)
-      if (content.includes('  - name:') && content.includes('    - name:')) {
-        issues.push(`${workflow}: Inconsistent indentation detected`);
-      }
-    }
+  stopContinuousMode() {
+    console.log("🛑 Stopping continuous automation mode...");
+    this.continuousMode = false;
+  }
+
+  getSystemStatus(systemKey) {
+    const system = this.automationSystems.get(systemKey);
+    if (!system) return null;
     
     return {
-      hasIssues: issues.length > 0,
-      issues,
-      totalWorkflows: workflows.length
+      name: system.name,
+      status: system.status,
+      priority: system.priority,
+      lastRun: system.lastRun,
+      lastError: system.lastError,
+      nextRun: system.nextRun
     };
   }
 
-  recordExecution(systemKey, execution) {
-    this.executionHistory.push({
-      system: systemKey,
-      ...execution
-    });
-    
-    // Keep only last 100 executions
-    if (this.executionHistory.length > 100) {
-      this.executionHistory = this.executionHistory.slice(-100);
-    }
-    
-    // Save to file
-    const historyPath = path.join(this.reportsDir, 'execution-history.json');
-    fs.writeFileSync(historyPath, JSON.stringify(this.executionHistory, null, 2));
-  }
-
-  async runAllSystems(options = {}) {
-    console.log("🚀 Running all automation systems...");
-    
-    const results = {};
-    const runningSystems = [];
-    
-    for (const [systemKey, system] of this.automationSystems) {
-      if (system.status === 'running') {
-        runningSystems.push(systemKey);
-      }
-    }
-    
-    // Limit concurrent systems
-    const maxConcurrent = Math.min(this.config.maxConcurrentSystems, runningSystems.length);
-    
-    for (let i = 0; i < runningSystems.length; i += maxConcurrent) {
-      const batch = runningSystems.slice(i, i + maxConcurrent);
-      
-      const batchPromises = batch.map(async (systemKey) => {
-        try {
-          const result = await this.runAutomationSystem(systemKey, options);
-          results[systemKey] = { success: true, result };
-        } catch (error) {
-          results[systemKey] = { success: false, error: error.message };
-        }
-      });
-      
-      await Promise.all(batchPromises);
-      
-      // Small delay between batches
-      if (i + maxConcurrent < runningSystems.length) {
-        await new Promise(resolve => setTimeout(resolve, 1000));
-      }
-    }
-    
-    return results;
-  }
-
-  async startAllSystems() {
-    console.log("🚀 Starting all automation systems...");
-    
-    const results = {};
-    
-    for (const [systemKey, system] of this.automationSystems) {
-      try {
-        const success = await this.startAutomationSystem(systemKey);
-        results[systemKey] = success;
-      } catch (error) {
-        console.error(`❌ Failed to start ${systemKey}:`, error.message);
-        results[systemKey] = false;
-      }
-    }
-    
-    return results;
-  }
-
-  async stopAllSystems() {
-    console.log("🛑 Stopping all automation systems...");
-    
-    const results = {};
-    
-    for (const [systemKey, system] of this.automationSystems) {
-      try {
-        const success = await this.stopAutomationSystem(systemKey);
-        results[systemKey] = success;
-      } catch (error) {
-        console.error(`❌ Failed to stop ${systemKey}:`, error.message);
-        results[systemKey] = false;
-      }
-    }
-    
-    return results;
-  }
-
-  getSystemStatus() {
+  getAllSystemsStatus() {
     const status = {};
     
-    for (const [systemKey, system] of this.automationSystems) {
-      status[systemKey] = {
-        name: system.name,
-        status: system.status,
-        lastRun: system.lastRun,
-        nextRun: system.nextRun,
-        priority: system.priority,
-        safeMode: system.safeMode || false,
-        lastError: system.lastError
-      };
+    for (const [key, system] of this.automationSystems) {
+      status[key] = this.getSystemStatus(key);
     }
     
     return status;
   }
 
-  generateHealthReport() {
-    const status = this.getSystemStatus();
-    const healthReport = {
-      timestamp: new Date().toISOString(),
-      totalSystems: Object.keys(status).length,
-      runningSystems: Object.values(status).filter(s => s.status === 'running').length,
-      stoppedSystems: Object.values(status).filter(s => s.status === 'stopped').length,
-      errorSystems: Object.values(status).filter(s => s.status === 'error').length,
-      systems: status,
-      recentExecutions: this.executionHistory.slice(-10),
-      recommendations: this.generateRecommendations(status)
-    };
-    
-    // Save health report
-    const reportPath = path.join(this.reportsDir, `health-report-${Date.now()}.json`);
-    fs.writeFileSync(reportPath, JSON.stringify(healthReport, null, 2));
-    
-    return healthReport;
+  getExecutionHistory(limit = 50) {
+    return this.executionHistory.slice(-limit);
   }
 
-  generateRecommendations(status) {
-    const recommendations = [];
+  saveAuditReport(audit) {
+    const reportPath = path.join(this.reportsDir, 'comprehensive-audit-report.json');
+    fs.writeFileSync(reportPath, JSON.stringify(audit, null, 2));
     
-    const errorSystems = Object.values(status).filter(s => s.status === 'error');
-    if (errorSystems.length > 0) {
-      recommendations.push(`Review ${errorSystems.length} systems with errors`);
-    }
-    
-    const stoppedSystems = Object.values(status).filter(s => s.status === 'stopped');
-    if (stoppedSystems.length > 0) {
-      recommendations.push(`Consider starting ${stoppedSystems.length} stopped systems`);
-    }
-    
-    if (Object.values(status).filter(s => s.status === 'running').length > this.config.maxConcurrentSystems) {
-      recommendations.push('Reduce concurrent systems to prevent resource conflicts');
-    }
-    
-    return recommendations;
+    console.log(`📊 Audit report saved to: ${reportPath}`);
+  }
+
+  saveConfiguration() {
+    fs.writeFileSync(this.configPath, JSON.stringify(this.config, null, 2));
+  }
+
+  sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
   }
 
   printStatus() {
-    console.log('\n📊 Automation Systems Status');
-    console.log('==============================');
+    console.log("\n" + "=".repeat(60));
+    console.log("🚀 MASTER AUTOMATION ORCHESTRATOR STATUS");
+    console.log("=".repeat(60));
     
-    const status = this.getSystemStatus();
+    console.log(`Continuous Mode: ${this.continuousMode ? 'Running' : 'Stopped'}`);
+    console.log(`Total Systems: ${this.automationSystems.size}`);
     
-    for (const [systemKey, system] of Object.entries(status)) {
-      const statusIcon = system.status === 'running' ? '🟢' : 
-                        system.status === 'stopped' ? '🔴' : '🟡';
-      
-      console.log(`${statusIcon} ${system.name} (${systemKey})`);
-      console.log(`   Status: ${system.status}`);
-      console.log(`   Priority: ${system.priority}`);
-      console.log(`   Safe Mode: ${system.safeMode ? 'Yes' : 'No'}`);
-      
-      if (system.lastRun) {
-        console.log(`   Last Run: ${system.lastRun}`);
-      }
-      
-      if (system.lastError) {
-        console.log(`   Last Error: ${system.lastError}`);
-      }
-      
-      console.log('');
+    const statusCounts = { running: 0, stopped: 0, error: 0, unrecoverable: 0 };
+    for (const [key, system] of this.automationSystems) {
+      statusCounts[system.status]++;
     }
+    
+    console.log(`\nSystem Status:`);
+    console.log(`  Running: ${statusCounts.running}`);
+    console.log(`  Stopped: ${statusCounts.stopped}`);
+    console.log(`  Error: ${statusCounts.error}`);
+    console.log(`  Unrecoverable: ${statusCounts.unrecoverable}`);
+    
+    if (this.healthStatus.overallStatus) {
+      console.log(`\nOverall Health: ${this.healthStatus.overallStatus} (${this.healthStatus.healthPercentage}%)`);
+    }
+    
+    console.log(`\nRecent Executions: ${this.executionHistory.length}`);
+    
+    console.log("=".repeat(60));
   }
 }
 
-// Run the orchestrator if called directly
+// Run the master orchestrator
+async function main() {
+  try {
+    const orchestrator = new MasterAutomationOrchestrator();
+    
+    // Print initial status
+    orchestrator.printStatus();
+    
+    // Run a comprehensive audit
+    console.log("\n🔍 Running initial comprehensive audit...");
+    const audit = await orchestrator.runComprehensiveAudit();
+    
+    // Run priority queue
+    console.log("\n🚀 Running priority queue...");
+    const priorityResults = await orchestrator.runPriorityQueue();
+    
+    // Print final status
+    orchestrator.printStatus();
+    
+    // Example: Start continuous mode for a short time
+    console.log("\n🔄 Starting continuous mode for 30 seconds...");
+    orchestrator.startContinuousMode();
+    
+    setTimeout(() => {
+      orchestrator.stopContinuousMode();
+      console.log("\n✅ Demo completed successfully!");
+      process.exit(0);
+    }, 30000);
+    
+  } catch (error) {
+    console.error("❌ Error running master automation orchestrator:", error);
+    process.exit(1);
+  }
+}
+
 if (require.main === module) {
-  (async () => {
-    try {
-      console.log("🚀 Starting Master Automation Orchestrator...");
-      
-      const orchestrator = new MasterAutomationOrchestrator();
-      
-      // Start all systems
-      await orchestrator.startAllSystems();
-      
-      // Print status
-      orchestrator.printStatus();
-      
-      // Generate health report
-      const healthReport = orchestrator.generateHealthReport();
-      console.log(`💾 Health report saved to: ${orchestrator.reportsDir}`);
-      
-      // Run all systems
-      console.log("\n🔄 Running all systems...");
-      const results = await orchestrator.runAllSystems();
-      
-      console.log("\n📊 Execution Results:");
-      for (const [system, result] of Object.entries(results)) {
-        const icon = result.success ? '✅' : '❌';
-        console.log(`${icon} ${system}: ${result.success ? 'Success' : result.error}`);
-      }
-      
-    } catch (error) {
-      console.error("❌ Error running master automation orchestrator:", error);
-      process.exit(1);
-    }
-  })();
+  main();
 }
 
 module.exports = MasterAutomationOrchestrator;
