@@ -1,4 +1,4 @@
-name: ""Agent: agent-1755381089841-0-backend-expert"
+name: "Agent: agent-1755381089841-0-backend-expert"
 on:
   workflow_dispatch:
   schedule:

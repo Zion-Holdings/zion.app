@@ -1,37 +1,21 @@
-name: Autonomous Content Curation
+name: Autonomous Quick Fixes
 
 on:
   schedule:
-    - cron: '*/20 * * * *'
+    - cron: '*/30 * * * *'
   workflow_dispatch: {}
 
 permissions:
   contents: write
-  # Branch protection rules
-  branch_protection_rules:
-    - pattern: "main"
-      required_status_checks:
-        strict: true
-        contexts: []
-      required_pull_request_reviews:
-        required_approving_review_count: 1
-        dismiss_stale_reviews: true
-        require_code_owner_reviews: false
-      enforce_admins: false
-      required_linear_history: false
-      allow_force_pushes: false
-      allow_deletions: false
-      block_creations: false
-      required_conversation_resolution: true
 
 concurrency:
-  group: automation-content-curation
+  group: automation-quick-fixes
   cancel-in-progress: true
 
 jobs:
-  content-curation:
+  quick-fixes:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -47,16 +31,20 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Curate content
-        run: node automation/llm-content-curator.cjs || true
+      - name: Run quick factories and fixers
+        run: |
+          node automation/build-rescue-factory.cjs || true
+          node automation/security-remediation-factory.cjs || true
+          node automation/sitemap-maintenance-factory.cjs || true
+          node automation/lint-error-fixer.cjs all || true
 
-      - name: Commit and push proposals
+      - name: Commit and push changes
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add -A
           if ! git diff --cached --quiet; then
-            git commit -m "chore(content): automated curation proposal"
+            git commit -m "chore(automation): autonomous quick fixes"
             git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }} HEAD:main
           else
             echo "No changes to commit."

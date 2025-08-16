@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T22:07:32.357Z",
+  "timestamp": "2025-08-16T22:07:42.478Z",
   "summary": {
     "totalWorkflows": 188,
     "activeWorkflows": 187,
@@ -410,7 +410,7 @@
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379731005-0-full-stack-expert.yml",
       "size": 504,
-      "lines": 21,
+      "lines": 22,
       "triggers": [
         "workflow_dispatch",
         "schedule"
@@ -500,7 +500,7 @@
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379759029-0-optimization-intermediate.yml",
       "size": 522,
-      "lines": 21,
+      "lines": 22,
       "triggers": [
         "workflow_dispatch",
         "schedule"
@@ -560,7 +560,7 @@
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379759033-2-deployment-expert.yml",
       "size": 504,
-      "lines": 21,
+      "lines": 22,
       "triggers": [
         "workflow_dispatch",
         "schedule"
@@ -650,7 +650,7 @@
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379759035-5-frontend-basic.yml",
       "size": 496,
-      "lines": 21,
+      "lines": 22,
       "triggers": [
         "workflow_dispatch",
         "schedule"
@@ -680,7 +680,7 @@
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379759036-6-monitoring-advanced.yml",
       "size": 508,
-      "lines": 21,
+      "lines": 22,
       "triggers": [
         "workflow_dispatch",
         "schedule"
@@ -890,7 +890,7 @@
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379777754-6-backend-expert.yml",
       "size": 495,
-      "lines": 21,
+      "lines": 22,
       "triggers": [
         "workflow_dispatch",
         "schedule"
@@ -920,7 +920,7 @@
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379777755-7-backend-intermediate.yml",
       "size": 507,
-      "lines": 21,
+      "lines": 22,
       "triggers": [
         "workflow_dispatch",
         "schedule"
@@ -949,7 +949,7 @@
       "name": "agent-agent-1755381089841-0-backend-expert.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089841-0-backend-expert.yml",
-      "size": 487,
+      "size": 486,
       "lines": 15,
       "triggers": [
         "workflow_dispatch",
@@ -1124,7 +1124,7 @@
       "name": "agent-agent-1755381089848-6-testing-intermediate.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089848-6-testing-intermediate.yml",
-      "size": 499,
+      "size": 498,
       "lines": 15,
       "triggers": [
         "workflow_dispatch",
@@ -2648,14 +2648,17 @@
       "name": "autonomous-content-curation.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-content-curation.yml",
-      "size": 1220,
-      "lines": 49,
+      "size": 1727,
+      "lines": 65,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
+        "branch_protection_rules",
+        "required_status_checks",
+        "required_pull_request_reviews",
         "jobs",
         "content-curation",
         "steps",
@@ -2669,6 +2672,66 @@
         {
           "permission": "contents",
           "value": "write"
+        },
+        {
+          "permission": "branch_protection_rules",
+          "value": ""
+        },
+        {
+          "permission": "- pattern",
+          "value": "\"main\""
+        },
+        {
+          "permission": "required_status_checks",
+          "value": ""
+        },
+        {
+          "permission": "strict",
+          "value": "true"
+        },
+        {
+          "permission": "contexts",
+          "value": "[]"
+        },
+        {
+          "permission": "required_pull_request_reviews",
+          "value": ""
+        },
+        {
+          "permission": "required_approving_review_count",
+          "value": "1"
+        },
+        {
+          "permission": "dismiss_stale_reviews",
+          "value": "true"
+        },
+        {
+          "permission": "require_code_owner_reviews",
+          "value": "false"
+        },
+        {
+          "permission": "enforce_admins",
+          "value": "false"
+        },
+        {
+          "permission": "required_linear_history",
+          "value": "false"
+        },
+        {
+          "permission": "allow_force_pushes",
+          "value": "false"
+        },
+        {
+          "permission": "allow_deletions",
+          "value": "false"
+        },
+        {
+          "permission": "block_creations",
+          "value": "false"
+        },
+        {
+          "permission": "required_conversation_resolution",
+          "value": "true"
         }
       ],
       "concurrency": "automation-content-curation",
@@ -2722,14 +2785,17 @@
       "name": "autonomous-deep-maintenance.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-deep-maintenance.yml",
-      "size": 1702,
-      "lines": 57,
+      "size": 2209,
+      "lines": 73,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
+        "branch_protection_rules",
+        "required_status_checks",
+        "required_pull_request_reviews",
         "jobs",
         "deep-maintenance",
         "steps",
@@ -2743,6 +2809,66 @@
         {
           "permission": "contents",
           "value": "write"
+        },
+        {
+          "permission": "branch_protection_rules",
+          "value": ""
+        },
+        {
+          "permission": "- pattern",
+          "value": "\"main\""
+        },
+        {
+          "permission": "required_status_checks",
+          "value": ""
+        },
+        {
+          "permission": "strict",
+          "value": "true"
+        },
+        {
+          "permission": "contexts",
+          "value": "[]"
+        },
+        {
+          "permission": "required_pull_request_reviews",
+          "value": ""
+        },
+        {
+          "permission": "required_approving_review_count",
+          "value": "1"
+        },
+        {
+          "permission": "dismiss_stale_reviews",
+          "value": "true"
+        },
+        {
+          "permission": "require_code_owner_reviews",
+          "value": "false"
+        },
+        {
+          "permission": "enforce_admins",
+          "value": "false"
+        },
+        {
+          "permission": "required_linear_history",
+          "value": "false"
+        },
+        {
+          "permission": "allow_force_pushes",
+          "value": "false"
+        },
+        {
+          "permission": "allow_deletions",
+          "value": "false"
+        },
+        {
+          "permission": "block_creations",
+          "value": "false"
+        },
+        {
+          "permission": "required_conversation_resolution",
+          "value": "true"
         }
       ],
       "concurrency": "automation-deep-maintenance",
@@ -2799,14 +2925,17 @@
       "name": "autonomous-external-links.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-external-links.yml",
-      "size": 1220,
-      "lines": 49,
+      "size": 1727,
+      "lines": 65,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
+        "branch_protection_rules",
+        "required_status_checks",
+        "required_pull_request_reviews",
         "jobs",
         "external-links",
         "steps",
@@ -2820,6 +2949,66 @@
         {
           "permission": "contents",
           "value": "write"
+        },
+        {
+          "permission": "branch_protection_rules",
+          "value": ""
+        },
+        {
+          "permission": "- pattern",
+          "value": "\"main\""
+        },
+        {
+          "permission": "required_status_checks",
+          "value": ""
+        },
+        {
+          "permission": "strict",
+          "value": "true"
+        },
+        {
+          "permission": "contexts",
+          "value": "[]"
+        },
+        {
+          "permission": "required_pull_request_reviews",
+          "value": ""
+        },
+        {
+          "permission": "required_approving_review_count",
+          "value": "1"
+        },
+        {
+          "permission": "dismiss_stale_reviews",
+          "value": "true"
+        },
+        {
+          "permission": "require_code_owner_reviews",
+          "value": "false"
+        },
+        {
+          "permission": "enforce_admins",
+          "value": "false"
+        },
+        {
+          "permission": "required_linear_history",
+          "value": "false"
+        },
+        {
+          "permission": "allow_force_pushes",
+          "value": "false"
+        },
+        {
+          "permission": "allow_deletions",
+          "value": "false"
+        },
+        {
+          "permission": "block_creations",
+          "value": "false"
+        },
+        {
+          "permission": "required_conversation_resolution",
+          "value": "true"
         }
       ],
       "concurrency": "automation-external-links",
@@ -2836,14 +3025,17 @@
       "name": "autonomous-image-optimizer.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-image-optimizer.yml",
-      "size": 1230,
-      "lines": 49,
+      "size": 1737,
+      "lines": 65,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
+        "branch_protection_rules",
+        "required_status_checks",
+        "required_pull_request_reviews",
         "jobs",
         "image-optimizer",
         "steps",
@@ -2857,6 +3049,66 @@
         {
           "permission": "contents",
           "value": "write"
+        },
+        {
+          "permission": "branch_protection_rules",
+          "value": ""
+        },
+        {
+          "permission": "- pattern",
+          "value": "\"main\""
+        },
+        {
+          "permission": "required_status_checks",
+          "value": ""
+        },
+        {
+          "permission": "strict",
+          "value": "true"
+        },
+        {
+          "permission": "contexts",
+          "value": "[]"
+        },
+        {
+          "permission": "required_pull_request_reviews",
+          "value": ""
+        },
+        {
+          "permission": "required_approving_review_count",
+          "value": "1"
+        },
+        {
+          "permission": "dismiss_stale_reviews",
+          "value": "true"
+        },
+        {
+          "permission": "require_code_owner_reviews",
+          "value": "false"
+        },
+        {
+          "permission": "enforce_admins",
+          "value": "false"
+        },
+        {
+          "permission": "required_linear_history",
+          "value": "false"
+        },
+        {
+          "permission": "allow_force_pushes",
+          "value": "false"
+        },
+        {
+          "permission": "allow_deletions",
+          "value": "false"
+        },
+        {
+          "permission": "block_creations",
+          "value": "false"
+        },
+        {
+          "permission": "required_conversation_resolution",
+          "value": "true"
         }
       ],
       "concurrency": "automation-image-optimizer",
@@ -2986,14 +3238,17 @@
       "name": "autonomous-marketing-seo.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-marketing-seo.yml",
-      "size": 1442,
-      "lines": 54,
+      "size": 1949,
+      "lines": 70,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
+        "branch_protection_rules",
+        "required_status_checks",
+        "required_pull_request_reviews",
         "jobs",
         "marketing-seo",
         "steps",
@@ -3007,6 +3262,66 @@
         {
           "permission": "contents",
           "value": "write"
+        },
+        {
+          "permission": "branch_protection_rules",
+          "value": ""
+        },
+        {
+          "permission": "- pattern",
+          "value": "\"main\""
+        },
+        {
+          "permission": "required_status_checks",
+          "value": ""
+        },
+        {
+          "permission": "strict",
+          "value": "true"
+        },
+        {
+          "permission": "contexts",
+          "value": "[]"
+        },
+        {
+          "permission": "required_pull_request_reviews",
+          "value": ""
+        },
+        {
+          "permission": "required_approving_review_count",
+          "value": "1"
+        },
+        {
+          "permission": "dismiss_stale_reviews",
+          "value": "true"
+        },
+        {
+          "permission": "require_code_owner_reviews",
+          "value": "false"
+        },
+        {
+          "permission": "enforce_admins",
+          "value": "false"
+        },
+        {
+          "permission": "required_linear_history",
+          "value": "false"
+        },
+        {
+          "permission": "allow_force_pushes",
+          "value": "false"
+        },
+        {
+          "permission": "allow_deletions",
+          "value": "false"
+        },
+        {
+          "permission": "block_creations",
+          "value": "false"
+        },
+        {
+          "permission": "required_conversation_resolution",
+          "value": "true"
         }
       ],
       "concurrency": "automation-marketing-seo",
@@ -3060,14 +3375,17 @@
       "name": "autonomous-quick-fixes.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-quick-fixes.yml",
-      "size": 1422,
-      "lines": 53,
+      "size": 1929,
+      "lines": 69,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
       ],
       "jobs": [
         "schedule",
+        "branch_protection_rules",
+        "required_status_checks",
+        "required_pull_request_reviews",
         "jobs",
         "quick-fixes",
         "steps",
@@ -3081,6 +3399,66 @@
         {
           "permission": "contents",
           "value": "write"
+        },
+        {
+          "permission": "branch_protection_rules",
+          "value": ""
+        },
+        {
+          "permission": "- pattern",
+          "value": "\"main\""
+        },
+        {
+          "permission": "required_status_checks",
+          "value": ""
+        },
+        {
+          "permission": "strict",
+          "value": "true"
+        },
+        {
+          "permission": "contexts",
+          "value": "[]"
+        },
+        {
+          "permission": "required_pull_request_reviews",
+          "value": ""
+        },
+        {
+          "permission": "required_approving_review_count",
+          "value": "1"
+        },
+        {
+          "permission": "dismiss_stale_reviews",
+          "value": "true"
+        },
+        {
+          "permission": "require_code_owner_reviews",
+          "value": "false"
+        },
+        {
+          "permission": "enforce_admins",
+          "value": "false"
+        },
+        {
+          "permission": "required_linear_history",
+          "value": "false"
+        },
+        {
+          "permission": "allow_force_pushes",
+          "value": "false"
+        },
+        {
+          "permission": "allow_deletions",
+          "value": "false"
+        },
+        {
+          "permission": "block_creations",
+          "value": "false"
+        },
+        {
+          "permission": "required_conversation_resolution",
+          "value": "true"
         }
       ],
       "concurrency": "automation-quick-fixes",

@@ -1,10 +1,9 @@
-name: "Agent: agent-1755379759036-6-monitoring-advanced"
+name: ""Agent: agent-1755379759036-6-monitoring-advanced"
 on:
   workflow_dispatch:
   schedule:
     - cron: 0 */6 * * *
 jobs:
-
 
   agent-execution:
     runs-on: ubuntu-latest
