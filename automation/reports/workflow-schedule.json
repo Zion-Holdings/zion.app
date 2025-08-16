@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T22:14:32.002Z",
+  "timestamp": "2025-08-16T22:15:49.511Z",
   "critical": [
     {
       "name": "auto-heal-workflows.yml",
@@ -2689,25 +2689,6 @@
       "resourceScore": 111
     },
     {
-      "name": "agent-agent-1755381089849-7-monitoring-intermediate.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089849-7-monitoring-intermediate.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 25,
-      "concurrentJobs": 5,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "workflow_dispatch",
-        "schedule"
-      ],
-      "resourceScore": 110
-    },
-    {
       "name": "auto-pr-automerge.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/auto-pr-automerge.yml",
       "priority": "medium",
@@ -3205,6 +3186,25 @@
     {
       "name": "agent-agent-1755381089848-6-testing-intermediate.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089848-6-testing-intermediate.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 25,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "resourceScore": 109
+    },
+    {
+      "name": "agent-agent-1755381089849-7-monitoring-intermediate.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089849-7-monitoring-intermediate.yml",
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 25,

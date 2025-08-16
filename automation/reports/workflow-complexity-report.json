@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T22:14:24.686Z",
+  "timestamp": "2025-08-16T22:15:41.161Z",
   "summary": {
     "totalWorkflows": 187,
     "complexityDistribution": {
@@ -416,7 +416,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 23,
+        "totalLines": 19,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -434,9 +434,9 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 15,
+        "totalLines": 23,
         "jobCount": 0,
-        "stepCount": 1,
+        "stepCount": 4,
         "conditionalCount": 0,
         "matrixCount": 0,
         "dependencyCount": 0,
@@ -488,7 +488,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 23,
+        "totalLines": 19,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -524,9 +524,9 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 15,
+        "totalLines": 19,
         "jobCount": 0,
-        "stepCount": 1,
+        "stepCount": 4,
         "conditionalCount": 0,
         "matrixCount": 0,
         "dependencyCount": 0,
