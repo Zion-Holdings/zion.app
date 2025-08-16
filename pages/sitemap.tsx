@@ -1,10 +1,6 @@
-import { GetServerSideProps } from 'next';
+import { GetStaticProps } from 'next';
 
-export default function Sitemap() {
-  return null;
-}
-
-export const getServerSideProps: GetServerSideProps = async ({ res }) => {
+export const getStaticProps: GetStaticProps = async () => {
   const baseUrl = 'https://ziontechgroup.com';
   
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -53,11 +49,17 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   </url>
 </urlset>`;
 
-  res.setHeader('Content-Type', 'text/xml');
-  res.write(sitemap);
-  res.end();
-
   return {
-    props: {},
+    props: {
+      sitemap,
+    },
   };
 };
+
+export default function Sitemap({ sitemap }: { sitemap: string }) {
+  return (
+    <pre style={{ whiteSpace: 'pre-wrap', fontFamily: 'monospace' }}>
+      {sitemap}
+    </pre>
+  );
+}

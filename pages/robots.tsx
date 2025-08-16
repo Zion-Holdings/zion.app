@@ -1,6 +1,6 @@
-import { GetServerSideProps } from 'next';
+import { GetStaticProps } from 'next';
 
-export const getServerSideProps: GetServerSideProps = async ({ res }) => {
+export const getStaticProps: GetStaticProps = async () => {
   const robotsTxt = `User-agent: *
 Allow: /
 
@@ -30,16 +30,17 @@ Allow: /downloads/
 # Crawl delay (optional)
 Crawl-delay: 1`;
 
-  res.setHeader('Content-Type', 'text/plain');
-  res.write(robotsTxt);
-  res.end();
-
   return {
-    props: {},
+    props: {
+      robotsTxt,
+    },
   };
 };
 
-export default function RobotsPage() {
-  // This page should never render as it's handled by getServerSideProps
-  return null;
+export default function RobotsPage({ robotsTxt }: { robotsTxt: string }) {
+  return (
+    <pre style={{ whiteSpace: 'pre-wrap', fontFamily: 'monospace' }}>
+      {robotsTxt}
+    </pre>
+  );
 }
