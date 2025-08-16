@@ -14,9 +14,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+
   pa11y:
     runs-on: ubuntu-latest
-      timeout-minutes: 20
+    timeout-minutes: 20
     env:
       SITE_URL: ${{ secrets.SITE_URL }}
     steps:

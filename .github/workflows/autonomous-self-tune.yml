@@ -29,9 +29,10 @@ permissions:
       required_conversation_resolution: true
 
 jobs:
+
   self-tune:
     runs-on: ubuntu-latest
-      timeout-minutes: 15
+    timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@v4

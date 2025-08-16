@@ -19,6 +19,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+
   exponential-delegation:
     name: Exponential AI Delegation
     runs-on: ubuntu-latest

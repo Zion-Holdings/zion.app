@@ -9,9 +9,10 @@ permissions:
   contents: write
 
 jobs:
+
   guardian:
     runs-on: ubuntu-latest
-      timeout-minutes: 10
+    timeout-minutes: 10
     steps:
       - name: Checkout
         uses: actions/checkout@v4

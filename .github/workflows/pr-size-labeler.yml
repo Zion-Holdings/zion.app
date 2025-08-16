@@ -9,9 +9,10 @@ permissions:
   pull-requests: write
 
 jobs:
+
   size-label:
     runs-on: ubuntu-latest
-      timeout-minutes: 10
+    timeout-minutes: 10
     steps:
       - uses: codelytv/pr-size-labeler@v1
         with:

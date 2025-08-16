@@ -10,9 +10,10 @@ permissions:
   contents: write
 
 jobs:
+
   update_release_draft:
     runs-on: ubuntu-latest
-      timeout-minutes: 10
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: release-drafter/release-drafter@v6

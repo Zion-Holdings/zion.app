@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T22:05:29.257Z",
+  "timestamp": "2025-08-16T22:05:49.458Z",
   "summary": {
     "totalWorkflows": 188,
     "activeWorkflows": 187,
@@ -530,8 +530,8 @@
       "name": "agent-agent-1755379759032-1-full-stack-intermediate.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379759032-1-full-stack-intermediate.yml",
-      "size": 512,
-      "lines": 20,
+      "size": 516,
+      "lines": 21,
       "triggers": [
         "workflow_dispatch",
         "schedule"
@@ -590,8 +590,8 @@
       "name": "agent-agent-1755379759033-3-frontend-expert.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379759033-3-frontend-expert.yml",
-      "size": 494,
-      "lines": 20,
+      "size": 498,
+      "lines": 21,
       "triggers": [
         "workflow_dispatch",
         "schedule"
@@ -620,8 +620,8 @@
       "name": "agent-agent-1755379759035-4-full-stack-intermediate.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379759035-4-full-stack-intermediate.yml",
-      "size": 512,
-      "lines": 20,
+      "size": 516,
+      "lines": 21,
       "triggers": [
         "workflow_dispatch",
         "schedule"
@@ -740,8 +740,8 @@
       "name": "agent-agent-1755379777746-0-full-stack-advanced.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379777746-0-full-stack-advanced.yml",
-      "size": 504,
-      "lines": 20,
+      "size": 508,
+      "lines": 21,
       "triggers": [
         "workflow_dispatch",
         "schedule"
@@ -830,8 +830,8 @@
       "name": "agent-agent-1755379777751-3-monitoring-advanced.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379777751-3-monitoring-advanced.yml",
-      "size": 504,
-      "lines": 20,
+      "size": 508,
+      "lines": 21,
       "triggers": [
         "workflow_dispatch",
         "schedule"
@@ -860,8 +860,8 @@
       "name": "agent-agent-1755379777752-5-testing-expert.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379777752-5-testing-expert.yml",
-      "size": 491,
-      "lines": 20,
+      "size": 495,
+      "lines": 21,
       "triggers": [
         "workflow_dispatch",
         "schedule"
@@ -979,7 +979,7 @@
       "name": "agent-agent-1755381089844-1-deployment-advanced.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089844-1-deployment-advanced.yml",
-      "size": 497,
+      "size": 500,
       "lines": 15,
       "triggers": [
         "workflow_dispatch",
@@ -1096,7 +1096,7 @@
       "name": "agent-agent-1755381089847-5-frontend-expert.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089847-5-frontend-expert.yml",
-      "size": 487,
+      "size": 490,
       "lines": 15,
       "triggers": [
         "workflow_dispatch",
@@ -1154,7 +1154,7 @@
       "name": "agent-agent-1755381089849-7-monitoring-intermediate.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089849-7-monitoring-intermediate.yml",
-      "size": 505,
+      "size": 508,
       "lines": 15,
       "triggers": [
         "workflow_dispatch",
@@ -1946,8 +1946,8 @@
       "name": "auto-pr-automerge.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/auto-pr-automerge.yml",
-      "size": 3475,
-      "lines": 108,
+      "size": 3474,
+      "lines": 109,
       "triggers": [
         "push"
       ],
@@ -2239,8 +2239,8 @@
       "name": "automation-guardian-10min.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/automation-guardian-10min.yml",
-      "size": 840,
-      "lines": 39,
+      "size": 839,
+      "lines": 40,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
@@ -4151,8 +4151,8 @@
       "name": "autonomous-workflow-cleanup.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-workflow-cleanup.yml",
-      "size": 2717,
-      "lines": 74,
+      "size": 2716,
+      "lines": 75,
       "triggers": [
         "schedule",
         "workflow_dispatch"
@@ -4342,8 +4342,8 @@
       "name": "ci-auto-heal.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci-auto-heal.yml",
-      "size": 1537,
-      "lines": 55,
+      "size": 1536,
+      "lines": 56,
       "triggers": [],
       "jobs": [
         "workflow_run",
@@ -4593,8 +4593,8 @@
       "name": "cleanup-merged-branches.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cleanup-merged-branches.yml",
-      "size": 1741,
-      "lines": 56,
+      "size": 1740,
+      "lines": 57,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
@@ -5309,8 +5309,8 @@
       "name": "dependabot-auto-approve.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/dependabot-auto-approve.yml",
-      "size": 854,
-      "lines": 32,
+      "size": 853,
+      "lines": 33,
       "triggers": [
         "pull_request"
       ],
@@ -5579,8 +5579,8 @@
       "name": "ephemeral-branch-autorebase.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ephemeral-branch-autorebase.yml",
-      "size": 1786,
-      "lines": 60,
+      "size": 1785,
+      "lines": 61,
       "triggers": [
         "push",
         "workflow_dispatch"
@@ -5878,8 +5878,8 @@
       "name": "fast-lint-sync.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/fast-lint-sync.yml",
-      "size": 1609,
-      "lines": 57,
+      "size": 1608,
+      "lines": 58,
       "triggers": [
         "schedule",
         "workflow_dispatch"
@@ -6357,8 +6357,8 @@
       "name": "labeler.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/labeler.yml",
-      "size": 346,
-      "lines": 19,
+      "size": 345,
+      "lines": 20,
       "triggers": [],
       "jobs": [
         "pull_request_target",
@@ -7996,8 +7996,8 @@
       "name": "repo-radar.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/repo-radar.yml",
-      "size": 1621,
-      "lines": 55,
+      "size": 1620,
+      "lines": 56,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
@@ -8800,8 +8800,8 @@
       "name": "sitemap-daily.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/sitemap-daily.yml",
-      "size": 1526,
-      "lines": 55,
+      "size": 1525,
+      "lines": 56,
       "triggers": [
         "schedule",
         "workflow_dispatch"

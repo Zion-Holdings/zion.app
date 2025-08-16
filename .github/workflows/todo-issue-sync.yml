@@ -26,9 +26,10 @@ permissions:
   issues: write
 
 jobs:
+
   sync-todos:
     runs-on: ubuntu-latest
-      timeout-minutes: 15
+    timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@v4

@@ -10,9 +10,10 @@ permissions:
   pull-requests: write
 
 jobs:
+
   security-scan:
     runs-on: ubuntu-latest
-      timeout-minutes: 20
+    timeout-minutes: 20
     steps:
       - name: Checkout
         uses: actions/checkout@v4

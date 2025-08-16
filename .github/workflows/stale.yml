@@ -10,9 +10,10 @@ permissions:
   pull-requests: write
 
 jobs:
+
   stale:
     runs-on: ubuntu-latest
-      timeout-minutes: 20
+    timeout-minutes: 20
     steps:
       - name: Run stale bot
         uses: actions/stale@v9

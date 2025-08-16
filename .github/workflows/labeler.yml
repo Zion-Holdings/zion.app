@@ -9,9 +9,10 @@ permissions:
   pull-requests: write
 
 jobs:
+
   label:
     runs-on: ubuntu-latest
-      timeout-minutes: 10
+    timeout-minutes: 10
     steps:
       - uses: actions/labeler@v5
         with:

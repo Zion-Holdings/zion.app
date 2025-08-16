@@ -14,9 +14,10 @@ permissions:
   issues: write
 
 jobs:
+
   supervise:
     runs-on: ubuntu-latest
-      timeout-minutes: 20
+    timeout-minutes: 20
     steps:
       - name: Supervise critical workflows
         uses: actions/github-script@v7

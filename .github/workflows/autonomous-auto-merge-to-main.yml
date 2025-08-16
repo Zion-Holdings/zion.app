@@ -17,9 +17,10 @@ permissions:
   pull-requests: write
 
 jobs:
+
   build-and-pr:
     runs-on: ubuntu-latest
-      timeout-minutes: 25
+    timeout-minutes: 25
     steps:
       - name: Checkout
         uses: actions/checkout@v4
