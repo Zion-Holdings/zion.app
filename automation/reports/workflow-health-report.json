@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T22:14:44.437Z",
+  "timestamp": "2025-08-16T22:15:33.031Z",
   "summary": {
     "totalWorkflows": 188,
     "activeWorkflows": 187,
@@ -37,6 +37,7 @@
       "agent-agent-1755381089846-4-testing-advanced.yml",
       "agent-agent-1755381089847-5-frontend-expert.yml",
       "agent-agent-1755381089848-6-testing-intermediate.yml",
+      "agent-agent-1755381089849-7-monitoring-intermediate.yml",
       "agent-factory-automation.yml",
       "agent-factory-proliferation.yml",
       "agent-of-agents-trigger.yml",
@@ -1015,8 +1016,8 @@
       "name": "agent-agent-1755381089845-2-full-stack-advanced.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089845-2-full-stack-advanced.yml",
-      "size": 505,
-      "lines": 19,
+      "size": 540,
+      "lines": 23,
       "triggers": [
         "workflow_dispatch",
         "schedule"
@@ -1105,8 +1106,8 @@
       "name": "agent-agent-1755381089847-5-frontend-expert.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089847-5-frontend-expert.yml",
-      "size": 532,
-      "lines": 23,
+      "size": 495,
+      "lines": 19,
       "triggers": [
         "workflow_dispatch",
         "schedule"
@@ -1165,8 +1166,8 @@
       "name": "agent-agent-1755381089849-7-monitoring-intermediate.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089849-7-monitoring-intermediate.yml",
-      "size": 523,
-      "lines": 15,
+      "size": 513,
+      "lines": 19,
       "triggers": [
         "workflow_dispatch",
         "schedule"
@@ -1174,6 +1175,7 @@
       "jobs": [
         "workflow_dispatch",
         "schedule",
+        "jobs",
         "agent-execution",
         "steps",
         "with"
@@ -8021,6 +8023,7 @@
         "Refactor agent-agent-1755381089846-4-testing-advanced.yml into smaller, focused workflows",
         "Refactor agent-agent-1755381089847-5-frontend-expert.yml into smaller, focused workflows",
         "Refactor agent-agent-1755381089848-6-testing-intermediate.yml into smaller, focused workflows",
+        "Refactor agent-agent-1755381089849-7-monitoring-intermediate.yml into smaller, focused workflows",
         "Refactor agent-factory-automation.yml into smaller, focused workflows",
         "Refactor agent-factory-proliferation.yml into smaller, focused workflows",
         "Refactor agent-of-agents-trigger.yml into smaller, focused workflows",
@@ -8300,6 +8303,7 @@
       "Refactor agent-agent-1755381089846-4-testing-advanced.yml into smaller, focused workflows",
       "Refactor agent-agent-1755381089847-5-frontend-expert.yml into smaller, focused workflows",
       "Refactor agent-agent-1755381089848-6-testing-intermediate.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755381089849-7-monitoring-intermediate.yml into smaller, focused workflows",
       "Refactor agent-factory-automation.yml into smaller, focused workflows",
       "Refactor agent-factory-proliferation.yml into smaller, focused workflows",
       "Refactor agent-of-agents-trigger.yml into smaller, focused workflows",
