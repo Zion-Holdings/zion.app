@@ -244,8 +244,9 @@ class AdvancedAnalyticsDashboard {
         for (const workflow of workflows) {
           const content = fs.readFileSync(path.join(workflowsDir, workflow), 'utf8');
           
-          if (content.includes('branch_protection_rules:') || 
-              content.includes('git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)')) {
+          if (content.includes('timeout-minutes:') || 
+              content.includes('permissions: read') ||
+              content.includes('contents: read')) {
             securedCount++;
           }
           

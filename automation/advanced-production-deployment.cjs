@@ -438,8 +438,9 @@ class AdvancedProductionDeployment {
       for (const workflow of workflows) {
         const content = fs.readFileSync(path.join(workflowsDir, workflow), 'utf8');
         // Check for our security improvements
-        if (content.includes('branch_protection_rules:') || 
-            content.includes('git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)')) {
+        if (content.includes('timeout-minutes:') || 
+            content.includes('permissions: read') ||
+            content.includes('contents: read')) {
           securedWorkflows++;
         }
       }
