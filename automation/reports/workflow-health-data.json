@@ -4688,16 +4688,37 @@
     "name": "homepage-auto-update.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/homepage-auto-update.yml",
-    "size": 1,
-    "lines": 2,
-    "triggers": [],
-    "jobs": [],
-    "timeouts": [],
-    "permissions": [],
-    "concurrency": null,
-    "issues": [],
+    "size": 1235,
+    "lines": 50,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "homepage-update",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      }
+    ],
+    "concurrency": "automation-homepage-update",
+    "issues": [
+      "unsafe_git_push"
+    ],
     "recommendations": [
-      "Add timeout-minutes to prevent infinite hanging"
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
     ]
   },
   "instagram-marketing.yml": {
@@ -7256,7 +7277,6 @@
       "Add timeout-minutes to content-generation.yml",
       "Add timeout-minutes to exponential-agent-factory-proliferation.yml",
       "Add timeout-minutes to exponential-ai-delegation.yml",
-      "Add timeout-minutes to homepage-auto-update.yml",
       "Add timeout-minutes to intelligent-content-generation.yml",
       "Add timeout-minutes to netlify-automation.yml",
       "Add timeout-minutes to performance-monitoring.yml",
@@ -7300,6 +7320,7 @@
       "Add branch protection to exponential-ai-delegation.yml",
       "Add branch protection to fast-lint-sync.yml",
       "Add branch protection to homepage-auto-advertiser.yml",
+      "Add branch protection to homepage-auto-update.yml",
       "Add branch protection to link-auto-fix.yml",
       "Add branch protection to link-scan-hourly.yml",
       "Add branch protection to og-image-update.yml",
@@ -7435,6 +7456,7 @@
       "Refactor gitleaks.yml into smaller, focused workflows",
       "Refactor guardian-scheduler.yml into smaller, focused workflows",
       "Refactor homepage-auto-advertiser.yml into smaller, focused workflows",
+      "Refactor homepage-auto-update.yml into smaller, focused workflows",
       "Refactor instagram-marketing.yml into smaller, focused workflows",
       "Refactor intelligent-content-generation.yml into smaller, focused workflows",
       "Refactor knowledge-graph-radar.yml into smaller, focused workflows",
