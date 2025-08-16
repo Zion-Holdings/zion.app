@@ -47,6 +47,59 @@ function collectRoutes() {
   return routes;
 }
 
+function collectDynamicPatterns() {
+  const patterns = [];
+  const pagesDir = path.join(ROOT, 'pages');
+  function walk(dir, routePrefix = '') {
+    let entries = [];
+    try { entries = fs.readdirSync(dir, { withFileTypes: true }); } catch { return; }
+    for (const entry of entries) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        if (entry.name.startsWith('[')) {
+          const seg = '([^/]+)';
+          const prefix = path.posix.join(routePrefix || '/', seg).replace(/\\/g, '/');
+          walk(full, prefix);
+        } else if (!entry.name.startsWith('_')) {
+          const prefix = path.posix.join(routePrefix || '/', entry.name).replace(/\\/g, '/');
+          walk(full, prefix);
+        }
+      } else if (entry.isFile()) {
+        if (!/\.(tsx|jsx|ts|js)$/i.test(entry.name)) continue;
+        const base = entry.name.replace(/\.(tsx|jsx|ts|js)$/i, '');
+        if (base === 'index') {
+          const rx = new RegExp('^' + (routePrefix || '/') + '$');
+          patterns.push(rx);
+        } else if (base.startsWith('[')) {
+          const rx = new RegExp('^' + path.posix.join(routePrefix || '/', '([^/]+)') + '$');
+          patterns.push(rx);
+        }
+      }
+    }
+  }
+  walk(pagesDir, '');
+  return patterns;
+}
+
+function loadRedirects() {
+  const files = [path.join(ROOT, 'public', '_redirects'), path.join(ROOT, 'zion.app', '_redirects')];
+  const map = new Map();
+  for (const file of files) {
+    if (!fs.existsSync(file)) continue;
+    const lines = fs.readFileSync(file, 'utf8').split(/\r?\n/);
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith('#')) continue;
+      const parts = trimmed.split(/\s+/);
+      if (parts.length < 2) continue;
+      const from = parts[0];
+      const to = parts[1];
+      if (from.startsWith('/') && to.startsWith('/')) map.set(from.replace(/\/$/, ''), to.replace(/\/$/, ''));
+    }
+  }
+  return map;
+}
+
 function* walkFiles(startDir, exts = ['.tsx', '.ts', '.jsx', '.js', '.mdx']) {
   if (!fs.existsSync(startDir)) return;
   const stack = [startDir];
@@ -78,14 +131,17 @@ function extractSiteRelativeHrefs(content) {
   return Array.from(hrefs);
 }
 
-function suggestFix(route, knownRoutes) {
+function suggestFix(route, knownRoutes, dynamicPatterns, redirects) {
   const normalized = route.replace(/\/$/, '');
+  // If dynamic route matches, do not rewrite automatically
+  if (dynamicPatterns.some((rx) => rx.test(normalized))) return null;
   const candidates = new Set([
     normalized,
     normalized.replace(/\/index$/i, ''),
   ]);
   for (const cand of candidates) {
     if (knownRoutes.has(cand)) return cand;
+    if (redirects.has(cand)) return redirects.get(cand);
   }
   return null;
 }
@@ -118,6 +174,8 @@ function escapeRegExp(s) {
   const dryRun = args.has('--dry-run') || !write;
 
   const knownRoutes = collectRoutes();
+  const dynamicPatterns = collectDynamicPatterns();
+  const redirects = loadRedirects();
   const files = SRC_DIRS.flatMap((d) => (fs.existsSync(d) ? Array.from(walkFiles(d)) : []));
 
   const changes = [];
@@ -128,8 +186,8 @@ function escapeRegExp(s) {
     let updated = content;
     let fileTouched = false;
     for (const href of hrefs) {
-      if (knownRoutes.has(href)) continue;
-      const suggestion = suggestFix(href, knownRoutes);
+      if (knownRoutes.has(href) || dynamicPatterns.some((rx) => rx.test(href)) || redirects.has(href)) continue;
+      const suggestion = suggestFix(href, knownRoutes, dynamicPatterns, redirects);
       if (!suggestion) continue;
       const { changed, touched } = buildReplacements(updated, href, suggestion);
       if (touched) {

@@ -48,15 +48,56 @@ function collectRoutes() {
   return routes;
 }
 
-function listSourceFiles(dir) {
-  const out = [];
-  const entries = fs.readdirSync(dir, { withFileTypes: true });
-  for (const entry of entries) {
-    const full = path.join(dir, entry.name);
-    if (entry.isDirectory()) out.push(...listSourceFiles(full));
-    else if (/\.(tsx|ts|js|jsx|mdx)$/i.test(entry.name)) out.push(full);
+function collectDynamicPatterns() {
+  const patterns = [];
+  function walk(dir, routePrefix = '') {
+    let entries = [];
+    try { entries = fs.readdirSync(dir, { withFileTypes: true }); } catch { return; }
+    for (const entry of entries) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        if (entry.name.startsWith('[')) {
+          const seg = '([^/]+)';
+          const prefix = path.posix.join(routePrefix || '/', seg).replace(/\\/g, '/');
+          walk(full, prefix);
+        } else if (!entry.name.startsWith('_')) {
+          const prefix = path.posix.join(routePrefix || '/', entry.name).replace(/\\/g, '/');
+          walk(full, prefix);
+        }
+      } else if (entry.isFile()) {
+        if (!/\.(tsx|jsx|ts|js)$/i.test(entry.name)) continue;
+        const base = entry.name.replace(/\.(tsx|jsx|ts|js)$/i, '');
+        if (base === 'index') {
+          const rx = new RegExp('^' + (routePrefix || '/') + '$');
+          patterns.push(rx);
+        } else if (base.startsWith('[')) {
+          const rx = new RegExp('^' + path.posix.join(routePrefix || '/', '([^/]+)') + '$');
+          patterns.push(rx);
+        }
+      }
+    }
   }
-  return out;
+  walk(PAGES_DIR, '');
+  return patterns;
+}
+
+function loadRedirects() {
+  const files = [path.join(ROOT, 'public', '_redirects'), path.join(ROOT, 'zion.app', '_redirects')];
+  const map = new Map();
+  for (const file of files) {
+    if (!fs.existsSync(file)) continue;
+    const lines = fs.readFileSync(file, 'utf8').split(/\r?\n/);
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith('#')) continue;
+      const parts = trimmed.split(/\s+/);
+      if (parts.length < 2) continue;
+      const from = parts[0];
+      const to = parts[1];
+      if (from.startsWith('/') && to.startsWith('/')) map.set(from.replace(/\/$/, ''), to.replace(/\/$/, ''));
+    }
+  }
+  return map;
 }
 
 function extractSiteRelativeHrefs(content) {
@@ -71,7 +112,7 @@ function extractSiteRelativeHrefs(content) {
   return Array.from(hrefs);
 }
 
-function suggestFix(route, knownRoutes) {
+function suggestFix(route, knownRoutes, redirects) {
   // Remove trailing '/index' or trailing slash
   const candidates = new Set([
     route.replace(/\/$/, ''),
@@ -79,12 +120,24 @@ function suggestFix(route, knownRoutes) {
   ]);
   for (const cand of candidates) {
     if (knownRoutes.has(cand)) return cand;
+    if (redirects.has(cand)) return redirects.get(cand);
   }
   return null;
 }
 
+function isValidInternalRoute(route, knownRoutes, dynamicPatterns, redirects) {
+  if (knownRoutes.has(route)) return true;
+  if (redirects.has(route)) return true;
+  for (const rx of dynamicPatterns) {
+    if (rx.test(route)) return true;
+  }
+  return false;
+}
+
 (function main() {
   const knownRoutes = collectRoutes();
+  const dynamicPatterns = collectDynamicPatterns();
+  const redirects = loadRedirects();
   const files = SRC_DIRS.flatMap((d) => (fs.existsSync(d) ? listSourceFiles(d) : []));
 
   const broken = [];
@@ -95,11 +148,11 @@ function suggestFix(route, knownRoutes) {
     const hrefs = extractSiteRelativeHrefs(content);
     for (const href of hrefs) {
       const normalized = href.replace(/\/$/, '');
-      if (knownRoutes.has(normalized)) continue;
+      if (isValidInternalRoute(normalized, knownRoutes, dynamicPatterns, redirects)) continue;
       const key = `${normalized}::${file}`;
       if (seen.has(key)) continue;
       seen.add(key);
-      const suggestion = suggestFix(normalized, knownRoutes);
+      const suggestion = suggestFix(normalized, knownRoutes, redirects);
       broken.push({ file: path.relative(ROOT, file), href: normalized, suggestion });
     }
   }
@@ -109,3 +162,14 @@ function suggestFix(route, knownRoutes) {
   fs.writeFileSync(out, JSON.stringify(report, null, 2));
   console.log(`Internal Link Sentinel report saved to ${out}`);
 })();
+
+function listSourceFiles(dir) {
+  const out = [];
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  for (const entry of entries) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) out.push(...listSourceFiles(full));
+    else if (/\.(tsx|ts|js|jsx|mdx)$/i.test(entry.name)) out.push(full);
+  }
+  return out;
+}

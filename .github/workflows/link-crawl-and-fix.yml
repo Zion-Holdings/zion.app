@@ -48,6 +48,16 @@ jobs:
         run: node automation/fix-internal-links.cjs --dry-run
         continue-on-error: true
 
+      - name: Upload reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-reports
+          path: |
+            data/reports/link-sentinel/*.json
+            data/reports/external-links/*.json
+            link_report.csv
+          if-no-files-found: ignore
+
       - name: Apply safe internal fixes
         if: ${{ github.event.inputs.apply_fixes == 'true' }}
         run: |
