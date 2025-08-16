@@ -1,0 +1,44 @@
+name: Run All Agents
+
+on:
+  schedule:
+    - cron: "0 4 * * *"
+  push:
+    branches: [ main ]
+    paths: [ "agents/**" ]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: run-all-agents-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  list-agents:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: set-matrix
+        run: |
+          if [ ! -d agents ]; then echo "[]" > /tmp/agents.json; else ls agents | sed 's/.yaml$//' | jq -R -s -c 'split("\n")[:-1]' > /tmp/agents.json; fi
+          echo "matrix=$(cat /tmp/agents.json)" >> $GITHUB_OUTPUT
+
+  run:
+    needs: list-agents
+    if: ${{ needs.list-agents.outputs.matrix != '[]' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        agent: ${{ fromJson(needs.list-agents.outputs.matrix) }}
+    uses: ./.github/workflows/reusable-agent.yml
+    with:
+      agent: ${{ matrix.agent }}
+    secrets:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}

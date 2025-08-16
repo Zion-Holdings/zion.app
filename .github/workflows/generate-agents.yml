@@ -1,0 +1,45 @@
+name: Generate Agents From Index
+
+on:
+  workflow_run:
+    workflows: ["Crawl & Index Content"]
+    types: [completed]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: generate-agents-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          pip install -U pip
+          pip install -r requirements.txt || true
+
+      - name: Generate agent specs
+        run: |
+          python scripts/generate_agents.py --index content_index.json --out-dir agents
+
+      - name: Create PR for new/updated agents
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: chore/auto-agents-update
+          title: "chore: auto agents update"
+          commit-message: "chore: generate/refresh agents from index"
+          body: "Automated agent spec generation."
+          labels: "automation,agents"
