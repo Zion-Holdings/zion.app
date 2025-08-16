@@ -1,4 +1,21 @@
 {
+  "accessibility-audit.yml": {
+    "name": "accessibility-audit.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 20,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 20
+  },
   "actionlint.yml": {
     "name": "actionlint.yml",
     "triggers": [
@@ -621,8 +638,8 @@
   "ai-changelog.yml": {
     "name": "ai-changelog.yml",
     "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
+      "schedule",
+      "workflow_dispatch {}"
     ],
     "needs": [],
     "outputs": [],
@@ -630,10 +647,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
+      "timeout": 10,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 10
   },
   "ai-content-autonomy.yml": {
     "name": "ai-content-autonomy.yml",
@@ -825,6 +842,90 @@
     },
     "estimatedDuration": 20
   },
+  "auto-media-release.yml": {
+    "name": "auto-media-release.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 10
+  },
+  "auto-pr-automerge.yml": {
+    "name": "auto-pr-automerge.yml",
+    "triggers": [
+      "push"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 20,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 20
+  },
+  "auto-pr-cursor-branches.yml": {
+    "name": "auto-pr-cursor-branches.yml",
+    "triggers": [
+      "push",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 10
+  },
+  "auto-semver-release.yml": {
+    "name": "auto-semver-release.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 20,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 20
+  },
+  "auto-update-prs.yml": {
+    "name": "auto-update-prs.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 10
+  },
   "automation-advertiser.yml": {
     "name": "automation-advertiser.yml",
     "triggers": [
@@ -861,6 +962,23 @@
     },
     "estimatedDuration": 25
   },
+  "automation-guardian-10min.yml": {
+    "name": "automation-guardian-10min.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 10
+  },
   "automation-orchestrator.yml": {
     "name": "automation-orchestrator.yml",
     "triggers": [
@@ -877,6 +995,39 @@
       "concurrentJobs": 4
     },
     "estimatedDuration": 20
+  },
+  "automations.yml": {
+    "name": "automations.yml",
+    "triggers": [
+      "schedule",
+      "push"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 20,
+      "concurrentJobs": 3
+    },
+    "estimatedDuration": 20
+  },
+  "automerge-main.yml": {
+    "name": "automerge-main.yml",
+    "triggers": [
+      "pull_request"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 10
   },
   "autonomous-agent-orchestrator.yml": {
     "name": "autonomous-agent-orchestrator.yml",
@@ -971,6 +1122,210 @@
     },
     "estimatedDuration": 15
   },
+  "autonomous-auto-discovery.yml": {
+    "name": "autonomous-auto-discovery.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 15,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 15
+  },
+  "autonomous-auto-merge-to-main.yml": {
+    "name": "autonomous-auto-merge-to-main.yml",
+    "triggers": [
+      "push",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 25,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 25
+  },
+  "autonomous-cloud-automations.yml": {
+    "name": "autonomous-cloud-automations.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 20,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 20
+  },
+  "autonomous-cloud-fast.yml": {
+    "name": "autonomous-cloud-fast.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 10
+  },
+  "autonomous-cloud-runner.yml": {
+    "name": "autonomous-cloud-runner.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 10
+  },
+  "autonomous-cloud.yml": {
+    "name": "autonomous-cloud.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 15,
+      "concurrentJobs": 3
+    },
+    "estimatedDuration": 15
+  },
+  "autonomous-content-curation.yml": {
+    "name": "autonomous-content-curation.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 10
+  },
+  "autonomous-content-scanner.yml": {
+    "name": "autonomous-content-scanner.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 10
+  },
+  "autonomous-deep-maintenance.yml": {
+    "name": "autonomous-deep-maintenance.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 55,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 55
+  },
+  "autonomous-deps-upgrade.yml": {
+    "name": "autonomous-deps-upgrade.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 30,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 30
+  },
+  "autonomous-external-links.yml": {
+    "name": "autonomous-external-links.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 20,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 20
+  },
+  "autonomous-image-optimizer.yml": {
+    "name": "autonomous-image-optimizer.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 30,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 30
+  },
   "autonomous-intelligence.yml": {
     "name": "autonomous-intelligence.yml",
     "triggers": [
@@ -988,6 +1343,210 @@
     },
     "estimatedDuration": 15
   },
+  "autonomous-keepalive.yml": {
+    "name": "autonomous-keepalive.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 10
+  },
+  "autonomous-lighthouse.yml": {
+    "name": "autonomous-lighthouse.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 25,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 25
+  },
+  "autonomous-marketing-seo.yml": {
+    "name": "autonomous-marketing-seo.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 25,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 25
+  },
+  "autonomous-minute-orchestrator.yml": {
+    "name": "autonomous-minute-orchestrator.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 15,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 15
+  },
+  "autonomous-quick-fixes.yml": {
+    "name": "autonomous-quick-fixes.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 15,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 15
+  },
+  "autonomous-release.yml": {
+    "name": "autonomous-release.yml",
+    "triggers": [
+      "push",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 25,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 25
+  },
+  "autonomous-self-tune.yml": {
+    "name": "autonomous-self-tune.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 15,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 15
+  },
+  "autonomous-ultrafast.yml": {
+    "name": "autonomous-ultrafast.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 10
+  },
+  "autonomous-workflow-cleanup.yml": {
+    "name": "autonomous-workflow-cleanup.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 15,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 15
+  },
+  "autonomous-workflow-watchdog.yml": {
+    "name": "autonomous-workflow-watchdog.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 15,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 15
+  },
+  "branch-cleanup.yml": {
+    "name": "branch-cleanup.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 10
+  },
+  "branch-pruner.yml": {
+    "name": "branch-pruner.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 10
+  },
   "broken-images.yml": {
     "name": "broken-images.yml",
     "triggers": [
@@ -1004,6 +1563,36 @@
       "concurrentJobs": 4
     },
     "estimatedDuration": 20
+  },
+  "ci-auto-heal.yml": {
+    "name": "ci-auto-heal.yml",
+    "triggers": [],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 15,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 15
+  },
+  "ci-merge-main.yml": {
+    "name": "ci-merge-main.yml",
+    "triggers": [
+      "push"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 10
   },
   "ci-quality.yml": {
     "name": "ci-quality.yml",
@@ -1055,6 +1644,23 @@
       "concurrentJobs": 4
     },
     "estimatedDuration": 20
+  },
+  "cleanup-merged-branches.yml": {
+    "name": "cleanup-merged-branches.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 15,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 15
   },
   "cloud-agents-fast.yml": {
     "name": "cloud-agents-fast.yml",
@@ -1286,8 +1892,8 @@
   "dead-code-report.yml": {
     "name": "dead-code-report.yml",
     "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
+      "schedule",
+      "workflow_dispatch {}"
     ],
     "needs": [],
     "outputs": [],
@@ -1295,10 +1901,28 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
+      "timeout": 10,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 10
+  },
+  "dependabot-auto-approve.yml": {
+    "name": "dependabot-auto-approve.yml",
+    "triggers": [
+      "pull_request"
+    ],
+    "needs": [
+      "auto-approve"
+    ],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 10
   },
   "dependency-auto-upgrade.yml": {
     "name": "dependency-auto-upgrade.yml",
@@ -1351,6 +1975,23 @@
     },
     "estimatedDuration": 20
   },
+  "docs-autogen.yml": {
+    "name": "docs-autogen.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 10
+  },
   "docs-intelligence.yml": {
     "name": "docs-intelligence.yml",
     "triggers": [
@@ -1384,6 +2025,23 @@
       "concurrentJobs": 4
     },
     "estimatedDuration": 20
+  },
+  "ephemeral-branch-autorebase.yml": {
+    "name": "ephemeral-branch-autorebase.yml",
+    "triggers": [
+      "push",
+      "workflow_dispatch"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 15,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 15
   },
   "exponential-agent-factory-proliferation.yml": {
     "name": "exponential-agent-factory-proliferation.yml",
@@ -1541,6 +2199,41 @@
     },
     "estimatedDuration": 20
   },
+  "fast-auto-push-to-main.yml": {
+    "name": "fast-auto-push-to-main.yml",
+    "triggers": [
+      "push",
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 10
+  },
+  "fast-lint-sync.yml": {
+    "name": "fast-lint-sync.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 15,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 15
+  },
   "front-scheduler.yml": {
     "name": "front-scheduler.yml",
     "triggers": [
@@ -1610,6 +2303,37 @@
     },
     "estimatedDuration": 20
   },
+  "homepage-auto-advertiser.yml": {
+    "name": "homepage-auto-advertiser.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 10
+  },
+  "homepage-auto-update.yml": {
+    "name": "homepage-auto-update.yml",
+    "triggers": [],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 30,
+      "concurrentJobs": 0
+    },
+    "estimatedDuration": 15
+  },
   "instagram-marketing.yml": {
     "name": "instagram-marketing.yml",
     "triggers": [
@@ -1662,6 +2386,20 @@
     },
     "estimatedDuration": 20
   },
+  "labeler.yml": {
+    "name": "labeler.yml",
+    "triggers": [],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 10
+  },
   "lighthouse-budgets.yml": {
     "name": "lighthouse-budgets.yml",
     "triggers": [
@@ -1695,6 +2433,40 @@
       "concurrentJobs": 4
     },
     "estimatedDuration": 20
+  },
+  "link-auto-fix.yml": {
+    "name": "link-auto-fix.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 10
+  },
+  "link-scan-hourly.yml": {
+    "name": "link-scan-hourly.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 10
   },
   "linkedin-marketing.yml": {
     "name": "linkedin-marketing.yml",
@@ -1781,6 +2553,23 @@
     },
     "estimatedDuration": 20
   },
+  "netlify-auto-healer.yml": {
+    "name": "netlify-auto-healer.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 10
+  },
   "netlify-automation.yml": {
     "name": "netlify-automation.yml",
     "triggers": [
@@ -1855,6 +2644,40 @@
     },
     "estimatedDuration": 20
   },
+  "og-image-update.yml": {
+    "name": "og-image-update.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 10
+  },
+  "optimize-images.yml": {
+    "name": "optimize-images.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 10
+  },
   "pa11y.yml": {
     "name": "pa11y.yml",
     "triggers": [
@@ -1869,6 +2692,23 @@
       "memory": "standard",
       "timeout": 20,
       "concurrentJobs": 4
+    },
+    "estimatedDuration": 20
+  },
+  "performance-audit.yml": {
+    "name": "performance-audit.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 20,
+      "concurrentJobs": 5
     },
     "estimatedDuration": 20
   },
@@ -1962,6 +2802,22 @@
     },
     "estimatedDuration": 20
   },
+  "pr-size-labeler.yml": {
+    "name": "pr-size-labeler.yml",
+    "triggers": [
+      "pull_request"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 10
+  },
   "pr-smoke.yml": {
     "name": "pr-smoke.yml",
     "triggers": [
@@ -1978,6 +2834,92 @@
       "concurrentJobs": 4
     },
     "estimatedDuration": 20
+  },
+  "pr-update-with-main.yml": {
+    "name": "pr-update-with-main.yml",
+    "triggers": [
+      "push",
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [
+      "list"
+    ],
+    "outputs": [
+      {
+        "key": "prs",
+        "value": "${{ steps.collect.outputs.prs }}"
+      },
+      {
+        "key": "steps",
+        "value": ""
+      },
+      {
+        "key": "- id",
+        "value": "collect"
+      },
+      {
+        "key": "uses",
+        "value": "actions/github-script@v7"
+      },
+      {
+        "key": "with",
+        "value": ""
+      },
+      {
+        "key": "script",
+        "value": "|"
+      },
+      {
+        "key": "const { data",
+        "value": "prs } = await github.rest.pulls.list({"
+      },
+      {
+        "key": "owner",
+        "value": "context.repo.owner,"
+      },
+      {
+        "key": "repo",
+        "value": "context.repo.repo,"
+      },
+      {
+        "key": "state",
+        "value": "'open',"
+      },
+      {
+        "key": "per_page",
+        "value": "100"
+      },
+      {
+        "key": ".map(pr => ({ number",
+        "value": "pr.number, headRef"
+      }
+    ],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 15,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 15
+  },
+  "rapid-git-sync.yml": {
+    "name": "rapid-git-sync.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 10
   },
   "readme-auto-advertiser.yml": {
     "name": "readme-auto-advertiser.yml",
@@ -1996,6 +2938,40 @@
     },
     "estimatedDuration": 20
   },
+  "readme-autogen.yml": {
+    "name": "readme-autogen.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 10
+  },
+  "release-drafter.yml": {
+    "name": "release-drafter.yml",
+    "triggers": [
+      "push",
+      "workflow_dispatch"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 10
+  },
   "release.yml": {
     "name": "release.yml",
     "triggers": [
@@ -2013,6 +2989,40 @@
     },
     "estimatedDuration": 20
   },
+  "repo-knowledge-graph.yml": {
+    "name": "repo-knowledge-graph.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 10
+  },
+  "repo-radar.yml": {
+    "name": "repo-radar.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 10
+  },
   "responsive-content.yml": {
     "name": "responsive-content.yml",
     "triggers": [
@@ -2027,6 +3037,40 @@
       "memory": "standard",
       "timeout": 20,
       "concurrentJobs": 4
+    },
+    "estimatedDuration": 20
+  },
+  "search-index-autogen.yml": {
+    "name": "search-index-autogen.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 10
+  },
+  "security-audit.yml": {
+    "name": "security-audit.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 20,
+      "concurrentJobs": 5
     },
     "estimatedDuration": 20
   },
@@ -2080,6 +3124,40 @@
       "concurrentJobs": 4
     },
     "estimatedDuration": 20
+  },
+  "security-weekly.yml": {
+    "name": "security-weekly.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 20,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 20
+  },
+  "self-healing-build.yml": {
+    "name": "self-healing-build.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 25,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 25
   },
   "self-replicating-factory-manager.yml": {
     "name": "self-replicating-factory-manager.yml",
@@ -2239,6 +3317,57 @@
     },
     "estimatedDuration": 20
   },
+  "sitemap-auto-commit.yml": {
+    "name": "sitemap-auto-commit.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 10
+  },
+  "sitemap-daily.yml": {
+    "name": "sitemap-daily.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 10,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 10
+  },
+  "stale.yml": {
+    "name": "stale.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 20,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 20
+  },
   "test-auth.yml": {
     "name": "test-auth.yml",
     "triggers": [
@@ -2273,6 +3402,23 @@
     },
     "estimatedDuration": 20
   },
+  "todo-issue-sync.yml": {
+    "name": "todo-issue-sync.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 15,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 15
+  },
   "topics-and-clusters.yml": {
     "name": "topics-and-clusters.yml",
     "triggers": [
@@ -2304,6 +3450,40 @@
       "memory": "standard",
       "timeout": 20,
       "concurrentJobs": 4
+    },
+    "estimatedDuration": 20
+  },
+  "unused-deps-cleaner.yml": {
+    "name": "unused-deps-cleaner.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 25,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 25
+  },
+  "unused-exports-report.yml": {
+    "name": "unused-exports-report.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 20,
+      "concurrentJobs": 5
     },
     "estimatedDuration": 20
   },
@@ -2357,5 +3537,39 @@
       "concurrentJobs": 4
     },
     "estimatedDuration": 20
+  },
+  "workflow-supervisor.yml": {
+    "name": "workflow-supervisor.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 20,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 20
+  },
+  "workflow-watchdog.yml": {
+    "name": "workflow-watchdog.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 15,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 15
   }
 }
