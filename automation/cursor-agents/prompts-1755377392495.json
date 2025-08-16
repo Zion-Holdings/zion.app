@@ -1,0 +1,46 @@
+[
+  {
+    "id": "prompt-1755377392495-external",
+    "agentId": "external-link-auditor",
+    "agentName": "External Link Auditor",
+    "conversationType": "maintenance",
+    "conversationId": "conv-1755377392495",
+    "prompt": "You are External Link Auditor. Review broken external links and propose updates or removal. Prefer authoritative sources.",
+    "context": {
+      "tasks": [
+        {
+          "id": "external-check-1",
+          "description": "Investigate broken external link https://fonts.gstatic.com (status 404) and update or remove references",
+          "url": "https://fonts.gstatic.com",
+          "statusCode": 404
+        },
+        {
+          "id": "external-check-2",
+          "description": "Investigate broken external link https://fonts.googleapis.com (status 404) and update or remove references",
+          "url": "https://fonts.googleapis.com",
+          "statusCode": 404
+        },
+        {
+          "id": "external-check-3",
+          "description": "Investigate broken external link https://ziontechgroup.com/reports/case-studies/ai-automation-success (status 404) and update or remove references",
+          "url": "https://ziontechgroup.com/reports/case-studies/ai-automation-success",
+          "statusCode": 404
+        },
+        {
+          "id": "external-check-4",
+          "description": "Investigate broken external link https://ian.sh/tsa (status 403) and update or remove references",
+          "url": "https://ian.sh/tsa",
+          "statusCode": 403
+        },
+        {
+          "id": "external-check-5",
+          "description": "Investigate broken external link https://ziontechgroup.com/reports/case-studies (status 404) and update or remove references",
+          "url": "https://ziontechgroup.com/reports/case-studies",
+          "statusCode": 404
+        }
+      ]
+    },
+    "timestamp": "2025-08-16T20:49:52.495Z",
+    "status": "pending"
+  }
+]

@@ -1,0 +1,45 @@
+name: Agent Factories
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate agent factory prompts
+        run: node automation/generate-agent-factories.cjs
+
+      - name: Commit prompts
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git checkout -b chore/agent-factories-${{ github.run_id }}
+          git add automation/cursor-agents/*.json || true
+          if git diff --cached --quiet; then
+            echo "No prompts to commit"
+          else
+            git commit -m "chore: generate agent factories from latest reports"
+            git push --set-upstream origin chore/agent-factories-${{ github.run_id }}
+          fi
+
+      - name: Open PR
+        if: ${{ !cancelled() }}
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: chore/agent-factories-${{ github.run_id }}
+          title: "chore: generate agent factories"
+          body: |
+            Adds generated agent factory prompts based on latest link reports.
+          labels: chore, automation

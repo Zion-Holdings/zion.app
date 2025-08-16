@@ -1,0 +1,81 @@
+name: Link Crawl and Auto-Fix
+
+on:
+  workflow_dispatch:
+    inputs:
+      start_url:
+        description: 'Base URL to crawl (e.g., https://zion.app)'
+        required: false
+        default: 'https://zion.app'
+      apply_fixes:
+        description: 'Apply safe internal fixes and open PR'
+        required: false
+        default: 'false'
+  schedule:
+    - cron: '0 3 * * *'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  link-health:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: |
+          npm ci || npm i --no-audit --no-fund
+
+      - name: Internal link static analysis
+        run: node automation/site-link-crawler.cjs
+
+      - name: External link check
+        run: node automation/external-link-check.cjs
+
+      - name: Runtime crawl with Python
+        run: |
+          python3 crawl_links.py ${{ github.event.inputs.start_url || 'https://zion.app' }} --max-pages 1200 --timeout 12 --output link_report.csv || true
+
+      - name: Dry-run safe internal fixes
+        run: node automation/fix-internal-links.cjs --dry-run
+        continue-on-error: true
+
+      - name: Apply safe internal fixes
+        if: ${{ github.event.inputs.apply_fixes == 'true' }}
+        run: |
+          node automation/fix-internal-links.cjs --write
+
+      - name: Generate agent factory prompts
+        run: node automation/generate-agent-factories.cjs
+
+      - name: Commit changes
+        if: ${{ github.event.inputs.apply_fixes == 'true' }}
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git checkout -b chore/auto-fix-links-${{ github.run_id }}
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: safe internal link fixes and agent prompts"
+            git push --set-upstream origin chore/auto-fix-links-${{ github.run_id }}
+          fi
+
+      - name: Open PR
+        if: ${{ github.event.inputs.apply_fixes == 'true' }}
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: chore/auto-fix-links-${{ github.run_id }}
+          title: "chore: safe internal link fixes and agent prompts"
+          body: |
+            This PR applies automated safe internal link fixes and adds agent prompts for follow-up.
+          labels: chore, automation
