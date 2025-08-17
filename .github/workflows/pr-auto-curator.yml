@@ -1,0 +1,42 @@
+name: PR Auto Curator
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  schedule:
+    - cron: '7/30 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: pr-auto-curator-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  curate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Summarize PR and label
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request || (await github.pulls.get({ owner: context.repo.owner, repo: context.repo.repo, pull_number: context.issue.number })).data;
+            const files = await github.pulls.listFiles({ owner: context.repo.owner, repo: context.repo.repo, pull_number: pr.number, per_page: 200 });
+            const changed = files.data.map(f => `- ${f.status.toUpperCase()}: ${f.filename}`).join('\n');
+            const body = `Auto-curation summary for #${pr.number}:\n\nTitle: ${pr.title}\nAuthor: ${pr.user.login}\nCommits: ${pr.commits}\nAdditions/Deletions: +${pr.additions} / -${pr.deletions}\nFiles changed: ${pr.changed_files}\n\nChanged files:\n${changed}`;
+            await github.issues.createComment({ owner: context.repo.owner, repo: context.repo.repo, issue_number: pr.number, body });
+            const labels = [];
+            if (pr.changed_files > 50) labels.push('size/XL');
+            else if (pr.changed_files > 20) labels.push('size/L');
+            else if (pr.changed_files > 10) labels.push('size/M');
+            else labels.push('size/S');
+            if (pr.draft) labels.push('status/draft');
+            await github.issues.addLabels({ owner: context.repo.owner, repo: context.repo.repo, issue_number: pr.number, labels });
+
+

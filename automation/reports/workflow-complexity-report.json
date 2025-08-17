@@ -1,18 +1,18 @@
 {
-  "timestamp": "2025-08-17T12:33:41.191Z",
+  "timestamp": "2025-08-17T12:34:41.185Z",
   "summary": {
     "totalWorkflows": 67,
     "complexityDistribution": {
       "very-high": 0,
       "high": 0,
-      "medium": 6,
-      "low": 61
+      "medium": 7,
+      "low": 60
     },
     "refactoringPriorities": {
       "critical": 0,
       "high": 0,
-      "medium": 6,
-      "low": 61
+      "medium": 7,
+      "low": 60
     }
   },
   "workflows": {
@@ -74,8 +74,8 @@
       "complexityScore": 20,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 86,
-        "jobCount": 1,
+        "totalLines": 91,
+        "jobCount": 0,
         "stepCount": 7,
         "conditionalCount": 2,
         "matrixCount": 0,
@@ -989,20 +989,20 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/security-auto-heal.yml"
     },
     "security.yml": {
-      "complexityScore": 25,
-      "complexityLevel": "low",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 95,
+        "totalLines": 147,
         "jobCount": 0,
-        "stepCount": 12,
-        "conditionalCount": 1,
+        "stepCount": 15,
+        "conditionalCount": 2,
         "matrixCount": 0,
-        "dependencyCount": 0,
+        "dependencyCount": 1,
         "environmentCount": 0,
-        "secretCount": 0,
-        "actionCount": 7
+        "secretCount": 1,
+        "actionCount": 8
       },
-      "refactoringPriority": "low",
+      "refactoringPriority": "medium",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/security.yml"
     },

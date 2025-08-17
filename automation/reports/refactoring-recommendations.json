@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-17T12:33:41.193Z",
+  "timestamp": "2025-08-17T12:34:41.187Z",
   "critical": [],
   "high": [],
   "medium": [
@@ -101,6 +101,26 @@
         "environmentCount": 0,
         "secretCount": 2,
         "actionCount": 5
+      },
+      "refactoringStrategy": [
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "security.yml",
+      "status": "active",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 147,
+        "jobCount": 0,
+        "stepCount": 15,
+        "conditionalCount": 2,
+        "matrixCount": 0,
+        "dependencyCount": 1,
+        "environmentCount": 0,
+        "secretCount": 1,
+        "actionCount": 8
       },
       "refactoringStrategy": [
         "Extract common functionality to reusable workflows"

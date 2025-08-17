@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-17T12:33:48.604Z",
+  "timestamp": "2025-08-17T12:34:48.277Z",
   "critical": [
     {
       "name": "ci-self-heal.yml",
@@ -50,13 +50,16 @@
       "priority": "high",
       "resourceIntensity": "medium",
       "estimatedDuration": 15,
-      "concurrentJobs": 13,
+      "concurrentJobs": 16,
       "runnerRequirements": {
         "runner": "ubuntu-latest",
         "size": "standard",
         "special": []
       },
-      "dependencies": [],
+      "dependencies": [
+        "[security-audit",
+        "dependency-check]"
+      ],
       "triggers": [
         "push",
         "pull_request",
@@ -513,25 +516,6 @@
       "resourceScore": 111
     },
     {
-      "name": "auto-fix.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/auto-fix.yml",
-      "priority": "medium",
-      "resourceIntensity": "high",
-      "estimatedDuration": 30,
-      "concurrentJobs": 14,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "workflow_dispatch",
-        "schedule"
-      ],
-      "resourceScore": 110
-    },
-    {
       "name": "automerge-main.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/automerge-main.yml",
       "priority": "medium",
@@ -964,15 +948,39 @@
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 30,
-      "concurrentJobs": 9,
+      "concurrentJobs": 8,
       "runnerRequirements": {
         "runner": "ubuntu-latest",
         "size": "standard",
         "special": []
       },
       "dependencies": [],
-      "triggers": [],
-      "resourceScore": 101
+      "triggers": [
+        "push",
+        "schedule",
+        "workflow_dispatch null"
+      ],
+      "resourceScore": 102
+    },
+    {
+      "name": "auto-fix.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/auto-fix.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 30,
+      "concurrentJobs": 12,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch",
+        "schedule",
+        "pull_request"
+      ],
+      "resourceScore": 100
     },
     {
       "name": "release.yml",
@@ -1553,25 +1561,6 @@
       "resourceScore": 111
     },
     {
-      "name": "auto-fix.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/auto-fix.yml",
-      "priority": "medium",
-      "resourceIntensity": "high",
-      "estimatedDuration": 30,
-      "concurrentJobs": 14,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "workflow_dispatch",
-        "schedule"
-      ],
-      "resourceScore": 110
-    },
-    {
       "name": "automerge-main.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/automerge-main.yml",
       "priority": "medium",
@@ -1735,7 +1724,7 @@
   "recommendations": [
     {
       "type": "warning",
-      "message": "Too many resource-intensive workflows (22/2)",
+      "message": "Too many resource-intensive workflows (21/2)",
       "suggestion": "Schedule resource-intensive workflows during off-peak hours"
     }
   ]
