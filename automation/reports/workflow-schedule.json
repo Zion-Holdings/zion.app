@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-17T12:30:45.824Z",
+  "timestamp": "2025-08-17T12:32:48.662Z",
   "critical": [
     {
       "name": "ci-self-heal.yml",
@@ -70,16 +70,24 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/dependency-maintenance.yml",
       "priority": "high",
       "resourceIntensity": "medium",
-      "estimatedDuration": 30,
-      "concurrentJobs": 6,
+      "estimatedDuration": 20,
+      "concurrentJobs": 13,
       "runnerRequirements": {
         "runner": "ubuntu-latest",
         "size": "standard",
         "special": []
       },
-      "dependencies": [],
-      "triggers": [],
-      "resourceScore": 134
+      "dependencies": [
+        "check-dependencies",
+        "[check-dependencies",
+        "update-dependencies]"
+      ],
+      "triggers": [
+        "workflow_dispatch {}",
+        "schedule",
+        "push"
+      ],
+      "resourceScore": 140
     },
     {
       "name": "dependencies.yml",
@@ -617,7 +625,10 @@
         "special": []
       },
       "dependencies": [],
-      "triggers": [],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch"
+      ],
       "resourceScore": 103
     },
     {

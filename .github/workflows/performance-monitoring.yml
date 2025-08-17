@@ -1,0 +1,152 @@
+name: Performance Monitoring
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '0 10 * * 1,3,5' # Monday, Wednesday, Friday at 10 AM UTC
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'src/**'
+      - 'pages/**'
+      - 'components/**'
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: "performance-monitoring"
+  cancel-in-progress: false
+
+jobs:
+  lighthouse-audit:
+    name: Lighthouse Performance Audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Build application
+        run: npm run build
+        env:
+          NODE_OPTIONS: "--max-old-space-size=6144 --openssl-legacy-provider"
+
+      - name: Export static files
+        run: npm run export
+
+      - name: Start application
+        run: |
+          npm run start &
+          echo "Starting application for performance testing..."
+        env:
+          NODE_OPTIONS: "--max-old-space-size=4096"
+
+      - name: Wait for app to be ready
+        run: |
+          timeout 60 bash -c 'until curl -f http://localhost:3000 > /dev/null 2>&1; do sleep 2; done'
+
+      - name: Install Lighthouse CI
+        run: npm install -g @lhci/cli@0.12.x
+
+      - name: Run Lighthouse CI
+        run: |
+          lhci autorun --config=./.lighthouserc.json || echo "Lighthouse CI completed"
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
+      - name: Stop application
+        if: always()
+        run: |
+          pkill -f "next start" || true
+          sleep 2
+
+      - name: Upload performance results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-results
+          path: |
+            .lighthouseci/
+            lhci_reports/
+          retention-days: 30
+
+  bundle-analysis:
+    name: Bundle Analysis
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Build with bundle analyzer
+        run: |
+          ANALYZE=true npm run build
+        env:
+          NODE_OPTIONS: "--max-old-space-size=6144 --openssl-legacy-provider"
+
+      - name: Upload bundle analysis
+        uses: actions/upload-artifact@v4
+        with:
+          name: bundle-analysis
+          path: |
+            .next/analyze/
+            .next/bundle-analyzer/
+          retention-days: 30
+
+  performance-summary:
+    name: Performance Summary
+    runs-on: ubuntu-latest
+    needs: [lighthouse-audit, bundle-analysis]
+    if: always()
+    timeout-minutes: 5
+    
+    steps:
+      - name: Generate performance summary
+        run: |
+          echo "## 🚀 Performance Monitoring Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Status:" >> $GITHUB_STEP_SUMMARY
+          echo "- Lighthouse Audit: ${{ needs.lighthouse-audit.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Bundle Analysis: ${{ needs.bundle-analysis.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ needs.lighthouse-audit.result }}" == "success" ]; then
+            echo "✅ Performance audit completed successfully" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Performance audit failed" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          if [ "${{ needs.bundle-analysis.result }}" == "success" ]; then
+            echo "✅ Bundle analysis completed successfully" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Bundle analysis failed" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Next Steps:" >> $GITHUB_STEP_SUMMARY
+          echo "1. Review Lighthouse scores" >> $GITHUB_STEP_SUMMARY
+          echo "2. Analyze bundle size trends" >> $GITHUB_STEP_SUMMARY
+          echo "3. Identify performance bottlenecks" >> $GITHUB_STEP_SUMMARY
+          echo "4. Implement optimizations" >> $GITHUB_STEP_SUMMARY

@@ -157,7 +157,10 @@
   },
   "cursor-rules-autoupdate.yml": {
     "name": "cursor-rules-autoupdate.yml",
-    "triggers": [],
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
     "needs": [],
     "outputs": [],
     "priority": "medium",
@@ -188,17 +191,25 @@
   },
   "dependency-maintenance.yml": {
     "name": "dependency-maintenance.yml",
-    "triggers": [],
-    "needs": [],
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule",
+      "push"
+    ],
+    "needs": [
+      "check-dependencies",
+      "[check-dependencies",
+      "update-dependencies]"
+    ],
     "outputs": [],
     "priority": "medium",
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 30,
+      "timeout": 15,
       "concurrentJobs": 5
     },
-    "estimatedDuration": 30
+    "estimatedDuration": 20
   },
   "deploy.yml": {
     "name": "deploy.yml",
