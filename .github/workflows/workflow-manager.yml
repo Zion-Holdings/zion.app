@@ -2,10 +2,7 @@ name: Workflow Manager
 true:
   workflow_dispatch: null
   schedule:
-  - cron: 0 6 * * 1-5
-  workflow_run:
-    types:
-    - completed
+  - cron: 0 2 * * *
 permissions:
   contents: read
   actions: read
@@ -15,10 +12,6 @@ concurrency:
   cancel-in-progress: false
 env:
   NODE_VERSION: '20'
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: '0 2 * * *' # Daily at 2 AM
 jobs:
   workflow-health-check:
     name: Workflow Health Check

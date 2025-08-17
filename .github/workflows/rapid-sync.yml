@@ -1,17 +1,13 @@
 name: Rapid Sync
 true:
+  workflow_dispatch: null
   schedule:
-  - cron: '*/10 * * * *'
-  workflow_dispatch: {}
+  - cron: 0 2 * * *
 concurrency:
   group: rapid-sync-${{ github.ref }}
   cancel-in-progress: false
 permissions:
   contents: read
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: '0 2 * * *' # Daily at 2 AM
 jobs:
   run-and-sync:
     runs-on: ubuntu-latest

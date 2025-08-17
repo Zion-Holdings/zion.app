@@ -1,14 +1,10 @@
 name: Continuous Improvement
 true:
+  workflow_dispatch: null
   schedule:
-  - cron: 0 */6 * * *
-  workflow_dispatch: {}
+  - cron: 0 2 * * *
 permissions:
   contents: read
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: '0 2 * * *' # Daily at 2 AM
 jobs:
   improve:
     runs-on: ubuntu-latest

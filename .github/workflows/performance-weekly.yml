@@ -1,12 +1,8 @@
 name: Performance Audit Weekly
 true:
-  schedule:
-  - cron: 0 13 * * 1
   workflow_dispatch: null
-on:
-  workflow_dispatch:
   schedule:
-    - cron: '0 2 * * *' # Daily at 2 AM
+  - cron: 0 2 * * *
 jobs:
   audit:
     runs-on: ubuntu-latest

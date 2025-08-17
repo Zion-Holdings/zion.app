@@ -1,5 +1,5 @@
 name: Frontend Sync Continuous
-on:
+true:
   push:
     branches:
     - main
