@@ -14,7 +14,7 @@ concurrency:
   cancel-in-progress: false
 
 permissions:
-  contents: write
+  contents: read
   actions: read
 
 jobs:
@@ -89,7 +89,7 @@ jobs:
           if [ -n "$(git status --porcelain)" ]; then
             git add -A
             git commit -m "chore(health): auto-fix workflow issues and improve health score"
-            git push origin HEAD:main || echo "Failed to push changes"
+            git push origin HEAD:$(git rev-parse --abbrev-ref HEAD) || echo "Failed to push changes"
           else
             echo "No changes to commit"
           fi
