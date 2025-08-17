@@ -1,110 +1,95 @@
 name: Release
-
-on:
+true:
   push:
     tags:
-      - 'v*'
+    - v*
   workflow_dispatch:
     inputs:
       version:
-        description: 'Release version (e.g., v1.0.0)'
+        description: Release version (e.g., v1.0.0)
         required: true
         type: string
-
 permissions:
   contents: write
   pull-requests: write
   actions: read
-
 concurrency:
-  group: "release"
+  group: release
   cancel-in-progress: false
-
 jobs:
   release:
     name: Create Release
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: npm
+    - name: Install dependencies
+      run: npm ci --no-audit --no-fund
+    - name: Get version
+      id: version
+      run: "if [ \"${{ github.event_name }}\" == \"workflow_dispatch\" ]; then\n \
+        \ echo \"version=${{ github.event.inputs.version }}\" >> $GITHUB_OUTPUT\n\
+        else\n  echo \"version=${GITHUB_REF#refs/tags/}\" >> $GITHUB_OUTPUT\nfi\n"
+    - name: Build application
+      run: npm run build
+      env:
+        NODE_OPTIONS: --max-old-space-size=6144 --openssl-legacy-provider
+    - name: Export static files
+      run: npm run export
+    - name: Create release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ steps.version.outputs.version }}
+        release_name: Release ${{ steps.version.outputs.version }}
+        draft: false
+        prerelease: false
+    - name: Upload build artifacts
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./out
+        asset_name: zion-app-${{ steps.version.outputs.version }}.zip
+        asset_content_type: application/zip
+    - name: Update package.json version
+      run: 'npm version ${{ steps.version.outputs.version }} --no-git-tag-version
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
+        git config user.name "github-actions[bot]"
 
-      - name: Install dependencies
-        run: npm ci --no-audit --no-fund
+        git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Get version
-        id: version
-        run: |
-          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
-            echo "version=${{ github.event.inputs.version }}" >> $GITHUB_OUTPUT
-          else
-            echo "version=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
-          fi
+        git add package.json package-lock.json
 
-      - name: Build application
-        run: npm run build
-        env:
-          NODE_OPTIONS: "--max-old-space-size=6144 --openssl-legacy-provider"
+        git commit -m "chore: bump version to ${{ steps.version.outputs.version }}"
 
-      - name: Export static files
-        run: npm run export
+        git push
 
-      - name: Create release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ steps.version.outputs.version }}
-          release_name: Release ${{ steps.version.outputs.version }}
-          draft: false
-          prerelease: false
+        '
+    - name: Deploy to production
+      run: 'echo "Deploying version ${{ steps.version.outputs.version }} to production"
 
-      - name: Upload build artifacts
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./out
-          asset_name: zion-app-${{ steps.version.outputs.version }}.zip
-          asset_content_type: application/zip
+        # Add your deployment logic here
 
-      - name: Update package.json version
-        run: |
-          npm version ${{ steps.version.outputs.version }} --no-git-tag-version
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add package.json package-lock.json
-          git commit -m "chore: bump version to ${{ steps.version.outputs.version }}"
-          git push
+        # Example: netlify deploy --dir=out --prod=true
 
-      - name: Deploy to production
-        run: |
-          echo "Deploying version ${{ steps.version.outputs.version }} to production"
-          # Add your deployment logic here
-          # Example: netlify deploy --dir=out --prod=true
-
-      - name: Notify release
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const version = '${{ steps.version.outputs.version }}';
-            const message = `🚀 **Release ${version} Deployed**\n\nVersion ${version} has been successfully released and deployed to production.`;
-            
-            // Create a release summary issue
-            github.rest.issues.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              title: `Release ${version} Summary`,
-              body: message,
-              labels: ['release', 'deployment']
-            });
+        '
+    - name: Notify release
+      uses: actions/github-script@v7
+      with:
+        script: "const version = '${{ steps.version.outputs.version }}';\nconst message\
+          \ = `\U0001F680 **Release ${version} Deployed**\\n\\nVersion ${version}\
+          \ has been successfully released and deployed to production.`;\n\n// Create\
+          \ a release summary issue\ngithub.rest.issues.create({\n  owner: context.repo.owner,\n\
+          \  repo: context.repo.repo,\n  title: `Release ${version} Summary`,\n  body:\
+          \ message,\n  labels: ['release', 'deployment']\n});\n"

@@ -1,0 +1,34 @@
+name: UI Evolution Daily
+
+on:
+  schedule:
+    - cron: '15 2 * * *' # daily at 02:15 UTC
+  workflow_dispatch:
+
+jobs:
+  ui-evolution:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run UI evolution orchestrator (single cycle)
+        run: node automation/ui-evolution-orchestrator.cjs once | cat
+
+      - name: Upload UI evolution reports and logs
+        uses: actions/upload-artifact@v4
+        with:
+          name: ui-evolution-reports
+          path: |
+            data/reports/ui-evolution/**/*
+            automation/logs/**/*ui-evolution*.log
+          if-no-files-found: ignore
