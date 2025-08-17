@@ -28,4 +28,4 @@ jobs:
           l_label: size/L
           xl_label: size/XL
           fail_if_xl: false"
-          update_always: true"
+          update_always: true

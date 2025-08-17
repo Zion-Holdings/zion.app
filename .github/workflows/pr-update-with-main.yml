@@ -59,4 +59,4 @@ jobs:
           git merge --no-edit origin/main || true
       - name: Push updated branch
         run: |
-          git push origin HEAD:${{ matrix.headRef }} || echo "Push failed (likely fork)"
+          git push origin HEAD:${{ matrix.headRef }} || echo "Push failed (likely fork)

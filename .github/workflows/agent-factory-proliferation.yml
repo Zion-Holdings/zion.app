@@ -56,7 +56,7 @@ jobs:
         run: |
           CURRENT=${{ steps.count.outputs.total }}
           GROWTH=${{ env.GROWTH_FACTOR }}
-          POTENTIAL=$((CURRENT * GROWTH))"
+          POTENTIAL=$((CURRENT * GROWTH))
           echo "potential=$POTENTIAL" >> $GITHUB_OUTPUT
           echo "Growth potential: $POTENTIAL factories"
       
@@ -65,7 +65,7 @@ jobs:
         run: |
           CURRENT=${{ steps.count.outputs.total }}
           TARGET=${{ env.TARGET_COUNT }}
-          NEXT=$((CURRENT + TARGET))"
+          NEXT=$((CURRENT + TARGET))
           echo "next=$NEXT" >> $GITHUB_OUTPUT
           echo "Next target: $NEXT factories"
 
@@ -87,15 +87,15 @@ jobs:
           cache: 'npm'
       
       - name: Create factory template
-        run: "|
+        run: |
           mkdir -p automation/factories/${{ matrix.factory-type }}-${{ matrix.complexity }}-${{ github.run_number }}
           
           cat > automation/factories/${{ matrix.factory-type }}-${{ matrix.complexity }}-${{ github.run_number }}/factory-config.json << EOF
           {"
-            "factoryId": "${{ matrix.factory-type }}-${{ matrix.complexity }}-${{ github.run_number }}",
-            "type": "${{ matrix.factory-type }}",
-            "complexity": "${{ matrix.complexity }}",
-            "createdAt": "${{ github.event.head_commit.timestamp || github.event.schedule }}",
+            "factoryId": "${{ matrix.factory-type }}-${{ matrix.complexity }}-${{ github.run_number }}","
+            "type": "${{ matrix.factory-type }}","
+            "complexity": "${{ matrix.complexity }}","
+            "createdAt": "${{ github.event.head_commit.timestamp || github.event.schedule }}","
             "version": "1.0.0",
             "capabilities": {
               "autonomous": true,
@@ -103,7 +103,7 @@ jobs:
               "exponential-growth": true
             },
             "growthMetrics": {
-              "creationTime": "${{ github.run_number }}",
+              "creationTime": "${{ github.run_number }}","
               "expectedLifespan": "infinite",
               "replicationRate": 2.0
             }
@@ -188,16 +188,15 @@ jobs:
           # Create package.json for the factory
           cat > $FACTORY_DIR/package.json << EOF
           {"
-            "name": "${{ matrix.factory-type }}-factory-${{ matrix.complexity }}",
+            "name": "${{ matrix.factory-type }}-factory-${{ matrix.complexity }}","
             "version": "1.0.0",
-            "description": "Autonomous ${{ matrix.factory-type }} factory with exponential growth capabilities",
+            "description": "Autonomous ${{ matrix.factory-type }} factory with exponential growth capabilities","
             "main": "factory.js",
             "scripts": {
               "start": "node factory.js",
-              "test": "node -e 'console.log(\"Factory ${{ matrix.factory-type }}-${{ matrix.complexity }} is ready for exponential growth!\")'",
-              "grow": "node -e 'const Factory = require(\"./factory.js\"); const f = new Factory(require(\"./factory-config.json\")); console.log(\"Growth potential: \", f.getGrowthMetrics())'"
+              "test": "node -e 'console.log(\"Factory ${{ matrix.factory-type }}-${{ matrix.complexity }} is ready for exponential growth!\")'", "grow": "node -e 'const Factory = require(\"./factory.js\"); const f = new Factory(require(\"./factory-config.json\")); console.log(\"Growth potential: \", f.getGrowthMetrics())'"
             },
-            "keywords": ["agent", "factory", "autonomous", "exponential-growth", "${{ matrix.factory-type }}"],
+            "keywords": ["agent", "factory", "autonomous", "exponential-growth", "${{ matrix.factory-type }}"],"
             "author": "Zion App Automation System",
             "license": "MIT"
           }
@@ -272,8 +271,8 @@ jobs:
             "totalFactories": $(find automation/factories/ -name "factory-config.json" | wc -l),
             "growthMetrics": {
               "currentCount": $(find automation/factories/ -name "factory-config.json" | wc -l),
-              "targetCount": ${{ env.TARGET_COUNT }},
-              "growthFactor": ${{ env.GROWTH_FACTOR }},
+              "targetCount": ${{ env.TARGET_COUNT }},"
+              "growthFactor": ${{ env.GROWTH_FACTOR }},"
               "isExponential": true
             },
             "factories": [
@@ -310,7 +309,7 @@ jobs:
           echo "Doubling time: $DOUBLING_TIME cycles"
       
       - name: Generate growth report
-        run: "|
+        run: |
           cat > automation/reports/exponential-growth-report-$(date +%Y%m%d-%H%M%S).md << EOF
           # Exponential Growth Report
           

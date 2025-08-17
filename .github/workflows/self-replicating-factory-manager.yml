@@ -353,7 +353,7 @@ jobs:
           echo "Self-replicating factories: $SELF_REPLICATING"
       
       - name: Generate replication report
-        run: "|
+        run: |
           mkdir -p automation/reports
           
           cat > automation/reports/self-replication-report-$(date +%Y%m%d-%H%M%S).md << EOF

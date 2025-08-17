@@ -503,9 +503,9 @@ jobs:
           {
             "last_updated": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
             "decisions": {
-              "scale_up": ${{ steps.execute-decisions.outputs.scale_up_triggered || 'false' }},
-              "prioritize_optimization": ${{ steps.execute-decisions.outputs.optimization_prioritized || 'false' }},
-              "enable_collaboration": ${{ steps.execute-decisions.outputs.collaboration_enabled || 'false' }}
+              "scale_up": ${{ steps.execute-decisions.outputs.scale_up_triggered || 'false' }},"
+              "prioritize_optimization": ${{ steps.execute-decisions.outputs.optimization_prioritized || 'false' }},"
+              "enable_collaboration": ${{ steps.execute-decisions.outputs.collaboration_enabled || 'false' }}"
             },
             "next_actions": [
               "Continue exponential growth",

@@ -48,4 +48,3 @@ jobs:
           name: autonomous-ultrafast-logs
           path: automation/logs/**/*
           if-no-files-found: ignore"
-"

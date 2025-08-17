@@ -51,4 +51,3 @@ jobs:
           name: auto-discovery-logs-${{ matrix.partition_index }}
           path: automation/logs/**/*
           if-no-files-found: ignore
-"

@@ -53,4 +53,4 @@ jobs:
           node automation/git-sync.cjs | cat
         env:
           PUSH_TO_MAIN: "false"
-          TARGET_BRANCH: "main"
+          TARGET_BRANCH: "main

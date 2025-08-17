@@ -429,7 +429,7 @@ jobs:
           done
       
       - name: Generate orchestration report
-        run: "|
+        run: |
           mkdir -p automation/reports
           
           cat > automation/reports/orchestration-report-$(date +%Y%m%d-%H%M%S).md << EOF

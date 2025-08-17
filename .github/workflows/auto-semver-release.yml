@@ -43,7 +43,7 @@ jobs:
           echo "new_version=$NEW" >> $GITHUB_OUTPUT
           npx -y conventional-changelog -p conventionalcommits -r 2 > CHANGELOG.tmp.md
       - name: Update package.json version
-        run: "|
+        run: |
           NEW=${{ steps.sv.outputs.new_version }}"
           node -e "const fs=require('fs');const p=require('./package.json');p.version='${NEW}';fs.writeFileSync('package.json',JSON.stringify(p,null,2)+'\n')"
       - name: Commit version bump
@@ -55,7 +55,7 @@ jobs:
             git commit -m "chore(release): v${{ steps.sv.outputs.new_version }} [skip ci]"
           fi
       - name: Tag and push
-        run: "|
+        run: |
           NEW=${{ steps.sv.outputs.new_version }}
           git tag v$NEW
           git push origin HEAD:$(git rev-parse --abbrev-ref HEAD) --tags
@@ -66,4 +66,4 @@ jobs:
           name: v${{ steps.sv.outputs.new_version }}
           body_path: CHANGELOG.tmp.md
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

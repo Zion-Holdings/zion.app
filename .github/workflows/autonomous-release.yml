@@ -67,4 +67,3 @@ jobs:
           name: web-build
           path: .next/**
           if-no-files-found: warn
-"

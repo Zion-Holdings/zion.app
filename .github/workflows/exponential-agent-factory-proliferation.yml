@@ -430,7 +430,7 @@ jobs:
           echo "Total Components: $TOTAL_COMPONENTS"
           echo "Growth Rate: $GROWTH_RATE"
           echo "Exponential Factor: $EXPONENTIAL_FACTOR"
-          echo "Next Target: $((TOTAL_COMPONENTS * ${{ env.GROWTH_MULTIPLIER }}))"
+          echo "Next Target: $((TOTAL_COMPONENTS * ${{ env.GROWTH_MULTIPLIER }}))
 
       - name: Commit growth report
         run: |

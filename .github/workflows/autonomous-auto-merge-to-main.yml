@@ -89,4 +89,3 @@ jobs:
           result-encoding: "string
           github-token: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ steps.pr.outputs.number }}
-"

@@ -37,7 +37,7 @@ jobs:
         run: npm run build | cat
       - name: Heal and retry build
         if: steps.build.outcome == 'failure'
-        run: "|
+        run: |
           npm run ci:heal || true
       - name: Create Pull Request if changes
         if: always()

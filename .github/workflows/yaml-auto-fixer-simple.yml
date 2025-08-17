@@ -189,17 +189,17 @@ jobs:
               content = '\n'.join(fixed_lines)
               
               # Fix 13: Fix stray quotes in run commands and id fields
-              if 'id: "' in content:
-                  content = content.replace('id: "', 'id: ')
+              if 'id: ' in content:
+                  content = content.replace('id: ', 'id: ')
                   fixes_applied.append("Fixed id field with stray quote")
               
-              if 'run: "|' in content:
-                  content = content.replace('run: "|', 'run: |')
+              if 'run: |' in content:
+                  content = content.replace('run: |', 'run: |')
                   fixes_applied.append("Fixed run command with stray quote")
               
               # Fix 14: Fix stray quotes in arithmetic expressions
-              if '))"' in content:
-                  content = content.replace('))"', '))')
+              if '))' in content:
+                  content = content.replace('))', '))')
                   fixes_applied.append("Fixed arithmetic expression with stray quote")
               
               # Fix 11: Fix stray quotes at end of files
@@ -241,17 +241,17 @@ jobs:
               content = '\n'.join(fixed_lines)
               
               # Fix 13: Fix stray quotes in run commands and id fields
-              if 'id: "' in content:
-                  content = content.replace('id: "', 'id: ')
+              if 'id: ' in content:
+                  content = content.replace('id: ', 'id: ')
                   fixes_applied.append("Fixed id field with stray quote")
               
-              if 'run: "|' in content:
-                  content = content.replace('run: "|', 'run: |')
+              if 'run: |' in content:
+                  content = content.replace('run: |', 'run: |')
                   fixes_applied.append("Fixed run command with stray quote")
               
               # Fix 14: Fix stray quotes in arithmetic expressions
-              if '))"' in content:
-                  content = content.replace('))"', '))')
+              if '))' in content:
+                  content = content.replace('))', '))')
                   fixes_applied.append("Fixed arithmetic expression with stray quote")
               
               # Fix 12: Fix step indentation issues (conservative mode and up)
