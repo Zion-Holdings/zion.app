@@ -1,18 +1,18 @@
 {
-  "timestamp": "2025-08-17T21:06:40.997Z",
+  "timestamp": "2025-08-17T21:07:29.259Z",
   "summary": {
-    "totalWorkflows": 222,
+    "totalWorkflows": 223,
     "complexityDistribution": {
       "very-high": 0,
       "high": 0,
       "medium": 13,
-      "low": 209
+      "low": 210
     },
     "refactoringPriorities": {
       "critical": 0,
       "high": 0,
       "medium": 13,
-      "low": 209
+      "low": 210
     }
   },
   "workflows": {
@@ -2717,12 +2717,12 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/media-optimizer.yml"
     },
     "merge-conflict-guard.yml": {
-      "complexityScore": 10,
+      "complexityScore": 15,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 55,
-        "jobCount": 1,
-        "stepCount": 4,
+        "totalLines": 67,
+        "jobCount": 0,
+        "stepCount": 6,
         "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
@@ -3134,8 +3134,8 @@
       "complexityScore": 10,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 53,
-        "jobCount": 1,
+        "totalLines": 59,
+        "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
         "matrixCount": 0,
@@ -3598,6 +3598,24 @@
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/sitemap-daily.yml"
     },
+    "smart-merge-agent.yml": {
+      "complexityScore": 25,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 161,
+        "jobCount": 0,
+        "stepCount": 9,
+        "conditionalCount": 4,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 1,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/smart-merge-agent.yml"
+    },
     "stale.yml": {
       "complexityScore": 0,
       "complexityLevel": "low",
@@ -3833,18 +3851,18 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/venture.yml"
     },
     "workflow-auto-healer.yml": {
-      "complexityScore": 25,
+      "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 196,
+        "totalLines": 50,
         "jobCount": 0,
-        "stepCount": 10,
-        "conditionalCount": 2,
+        "stepCount": 4,
+        "conditionalCount": 0,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 1,
-        "actionCount": 5
+        "secretCount": 0,
+        "actionCount": 2
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -3908,8 +3926,8 @@
       "complexityScore": 15,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 105,
-        "jobCount": 1,
+        "totalLines": 109,
+        "jobCount": 0,
         "stepCount": 1,
         "conditionalCount": 0,
         "matrixCount": 0,

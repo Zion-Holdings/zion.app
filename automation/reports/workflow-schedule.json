@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-17T21:06:47.996Z",
+  "timestamp": "2025-08-17T21:07:30.116Z",
   "critical": [
     {
       "name": "ci.yml",
@@ -299,25 +299,6 @@
     {
       "name": "stale.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/stale.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 15,
-      "concurrentJobs": 3,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "schedule",
-        "workflow_dispatch {}"
-      ],
-      "resourceScore": 122
-    },
-    {
-      "name": "workflow-supervisor.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/workflow-supervisor.yml",
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 15,
@@ -2372,6 +2353,25 @@
       "resourceScore": 114
     },
     {
+      "name": "workflow-auto-healer.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/workflow-auto-healer.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 20,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch {}"
+      ],
+      "resourceScore": 114
+    },
+    {
       "name": "actionlint.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/actionlint.yml",
       "priority": "medium",
@@ -3052,25 +3052,6 @@
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
-      ],
-      "resourceScore": 112
-    },
-    {
-      "name": "rapid-git-sync.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/rapid-git-sync.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 25,
-      "concurrentJobs": 3,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "schedule",
-        "workflow_dispatch {}"
       ],
       "resourceScore": 112
     },
@@ -3854,44 +3835,6 @@
       "resourceScore": 110
     },
     {
-      "name": "merge-conflict-guard.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/merge-conflict-guard.yml",
-      "priority": "medium",
-      "resourceIntensity": "high",
-      "estimatedDuration": 30,
-      "concurrentJobs": 16,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "workflow_dispatch",
-        "schedule"
-      ],
-      "resourceScore": 110
-    },
-    {
-      "name": "workflow-auto-healer.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/workflow-auto-healer.yml",
-      "priority": "medium",
-      "resourceIntensity": "high",
-      "estimatedDuration": 30,
-      "concurrentJobs": 18,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "schedule",
-        "workflow_dispatch"
-      ],
-      "resourceScore": 110
-    },
-    {
       "name": "workflow-manager.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/workflow-manager.yml",
       "priority": "medium",
@@ -4034,6 +3977,25 @@
       "resourceScore": 105
     },
     {
+      "name": "workflow-supervisor.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/workflow-supervisor.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 30,
+      "concurrentJobs": 5,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch {}"
+      ],
+      "resourceScore": 105
+    },
+    {
       "name": "yaml-auto-fixer-simple.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/yaml-auto-fixer-simple.yml",
       "priority": "medium",
@@ -4091,6 +4053,25 @@
       "resourceScore": 104
     },
     {
+      "name": "rapid-git-sync.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/rapid-git-sync.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 30,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch {}"
+      ],
+      "resourceScore": 104
+    },
+    {
       "name": "frontend-sync-continuous.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/frontend-sync-continuous.yml",
       "priority": "medium",
@@ -4131,6 +4112,27 @@
       "resourceScore": 100
     },
     {
+      "name": "merge-conflict-guard.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/merge-conflict-guard.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 30,
+      "concurrentJobs": 13,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "pull_request",
+        "push",
+        "schedule",
+        "workflow_dispatch {}"
+      ],
+      "resourceScore": 100
+    },
+    {
       "name": "unused-deps-cleaner.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/unused-deps-cleaner.yml",
       "priority": "medium",
@@ -4148,6 +4150,25 @@
         "workflow_dispatch {}"
       ],
       "resourceScore": 92
+    },
+    {
+      "name": "smart-merge-agent.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/smart-merge-agent.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 45,
+      "concurrentJobs": 7,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch {}"
+      ],
+      "resourceScore": 88
     },
     {
       "name": "app-monitoring.yml",
@@ -4520,44 +4541,6 @@
       "resourceScore": 110
     },
     {
-      "name": "merge-conflict-guard.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/merge-conflict-guard.yml",
-      "priority": "medium",
-      "resourceIntensity": "high",
-      "estimatedDuration": 30,
-      "concurrentJobs": 16,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "workflow_dispatch",
-        "schedule"
-      ],
-      "resourceScore": 110
-    },
-    {
-      "name": "workflow-auto-healer.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/workflow-auto-healer.yml",
-      "priority": "medium",
-      "resourceIntensity": "high",
-      "estimatedDuration": 30,
-      "concurrentJobs": 18,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "schedule",
-        "workflow_dispatch"
-      ],
-      "resourceScore": 110
-    },
-    {
       "name": "workflow-manager.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/workflow-manager.yml",
       "priority": "medium",
@@ -4612,7 +4595,7 @@
     },
     {
       "type": "warning",
-      "message": "Too many resource-intensive workflows (18/2)",
+      "message": "Too many resource-intensive workflows (16/2)",
       "suggestion": "Schedule resource-intensive workflows during off-peak hours"
     },
     {
