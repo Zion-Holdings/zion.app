@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-17T14:48:01.057Z",
-  "pagesScanned": 7833,
+  "generatedAt": "2025-08-17T14:49:01.034Z",
+  "pagesScanned": 7835,
   "items": [
     {
       "route": "/404",
@@ -77189,6 +77189,29 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-17-1148",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 11:48",
+        "description": "Autonomous Update — 2025-08-17 11:48 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1149",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 11:49",
+        "description": "Autonomous Update — 2025-08-17 11:49 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-17-1150",
       "missing": [
         "og:image"
@@ -78367,21 +78390,6 @@
       ],
       "suggestion": {
         "title": "Terms of Service",
-        "description": "Terms of Service — auto-suggested description"
-      }
-    },
-    {
-      "route": "/user-management",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "👥 User Management",
-        "description": "👥 User Management — auto-suggested description"
-      }
-    }
-  ]
-}        "title": "Terms of Service",
         "description": "Terms of Service — auto-suggested description"
       }
     },
