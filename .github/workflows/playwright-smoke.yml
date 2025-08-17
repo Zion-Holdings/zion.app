@@ -1,12 +1,14 @@
 name: Playwright Smoke Tests
 
 on:
-  workflow_dispatch: {}
-  schedule:
-    - cron: '0 0 * * *'
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   actions: read
 
 concurrency:
@@ -14,15 +16,14 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  main:
-    name: Main Job
+  smoke-test:
+    name: Smoke Tests
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -33,6 +34,34 @@ jobs:
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
 
-      - name: Complete workflow
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Build application
+        run: npm run build
+        env:
+          NODE_OPTIONS: "--max-old-space-size=6144 --openssl-legacy-provider"
+
+      - name: Start application
+        run: npm start &
+        env:
+          NODE_OPTIONS: "--max-old-space-size=4096 --openssl-legacy-provider"
+
+      - name: Wait for app to be ready
         run: |
-          echo "Workflow completed successfully"
+          timeout 60 bash -c 'until curl -f http://localhost:3000 > /dev/null 2>&1; do sleep 2; done'
+        timeout-minutes: 2
+
+      - name: Run smoke tests
+        run: npx playwright test tests/smoke.spec.ts --project=chromium --reporter=list
+        env:
+          CI: true
+          BASE_URL: http://localhost:3000
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: smoke-test-results
+          path: test-results/
+          retention-days: 7

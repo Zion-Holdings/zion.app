@@ -3,7 +3,8 @@ name: Autonomous Cloud Automations
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: '0 0 * * * # hourly'
+    # hourly
+    - cron: '0 0 * * *'
 
 permissions:
   contents: write
