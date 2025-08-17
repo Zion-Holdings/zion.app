@@ -1,0 +1,4336 @@
+{
+  "summary": {
+    "total_workflows": 192,
+    "healthy_workflows": 0,
+    "broken_workflows": 192,
+    "health_score": 0.0
+  },
+  "details": {
+    "timestamp": "2025-08-17T02:06:25.500082",
+    "total_workflows": 192,
+    "healthy_workflows": 0,
+    "broken_workflows": 192,
+    "workflow_details": [
+      {
+        "file": ".github/workflows/optimize-images.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Optimize Images\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch:\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1017
+      },
+      {
+        "file": ".github/workflows/agent-agent-1755379731007-1-deployment-expert.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block collection\n  in \"<unicode string>\", line 13, column 7:\n          - name: Checkout code\n          ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 15, column 8:\n           with:\n           ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 678
+      },
+      {
+        "file": ".github/workflows/playwright-smoke.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 686
+      },
+      {
+        "file": ".github/workflows/sitemap-auto-commit.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Sitemap Auto-Commit\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch:\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1006
+      },
+      {
+        "file": ".github/workflows/agent-agent-1755381089849-7-monitoring-intermediate.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block collection\n  in \"<unicode string>\", line 13, column 7:\n          - name: Checkout code\n          ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 15, column 8:\n           with:\n           ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 689
+      },
+      {
+        "file": ".github/workflows/intelligent-content-generation.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 25, column 13:\n          - name: Checkout code\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 2215
+      },
+      {
+        "file": ".github/workflows/app-monitoring.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: App Monitoring\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch:  # Manual trigger\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 2301
+      },
+      {
+        "file": ".github/workflows/stale.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Stale Issue and PR Manager\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 4:\n       with:\n       ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1747
+      },
+      {
+        "file": ".github/workflows/accessibility-audit.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Accessibility Audit\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 4:\n       with:\n       ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1701
+      },
+      {
+        "file": ".github/workflows/pr-update-with-main.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Update PR branches with main\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      schedule:\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1465
+      },
+      {
+        "file": ".github/workflows/auto-heal-workflows.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "missing_jobs",
+            "message": "Missing required section: jobs",
+            "severity": "critical"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 199
+      },
+      {
+        "file": ".github/workflows/automation-cleanup.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Automation Cleanup\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 2219
+      },
+      {
+        "file": ".github/workflows/agent-agent-1755379731005-0-full-stack-expert.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block collection\n  in \"<unicode string>\", line 13, column 7:\n          - name: Checkout code\n          ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 15, column 8:\n           with:\n           ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 678
+      },
+      {
+        "file": ".github/workflows/ai-it-innovations.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1224
+      },
+      {
+        "file": ".github/workflows/marketing-sync.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 605
+      },
+      {
+        "file": ".github/workflows/ephemeral-branch-autorebase.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Ephemeral Branch Auto-Rebase\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 7, column 3:\n      workflow_dispatch:\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1938
+      },
+      {
+        "file": ".github/workflows/autonomous-content-scanner.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Autonomous Content Scanner\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1325
+      },
+      {
+        "file": ".github/workflows/seo-validator.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 585
+      },
+      {
+        "file": ".github/workflows/docs-intelligence.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1216
+      },
+      {
+        "file": ".github/workflows/actionlint.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 960
+      },
+      {
+        "file": ".github/workflows/seo-audit.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 3641
+      },
+      {
+        "file": ".github/workflows/agent-agent-1755379777752-5-testing-expert.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block collection\n  in \"<unicode string>\", line 13, column 7:\n          - name: Checkout code\n          ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 15, column 8:\n           with:\n           ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 669
+      },
+      {
+        "file": ".github/workflows/autonomous-image-optimizer.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Autonomous Image Optimizer\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1253
+      },
+      {
+        "file": ".github/workflows/deploy.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 673
+      },
+      {
+        "file": ".github/workflows/autonomous-deps-upgrade.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Autonomous Dependency Upgrades\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 2317
+      },
+      {
+        "file": ".github/workflows/automation-dashboard.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 20, column 13:\n          - name: Checkout code\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 5315
+      },
+      {
+        "file": ".github/workflows/pr-size-labeler.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: PR Size Labeler\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 4:\n       with:\n       ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 871
+      },
+      {
+        "file": ".github/workflows/front-scheduler.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 594
+      },
+      {
+        "file": ".github/workflows/site-health-guardian.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 588
+      },
+      {
+        "file": ".github/workflows/auto-semver-release.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Auto Semver Release\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 2276
+      },
+      {
+        "file": ".github/workflows/self-healing-build.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "missing_jobs",
+            "message": "Missing required section: jobs",
+            "severity": "critical"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 189
+      },
+      {
+        "file": ".github/workflows/autonomous-workflow-cleanup.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Autonomous Workflow Cleanup\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 4:\n       with:\n       ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 2953
+      },
+      {
+        "file": ".github/workflows/automations.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Automations\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      push:\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1035
+      },
+      {
+        "file": ".github/workflows/repo-knowledge-graph.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Repo Knowledge Graph\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1217
+      },
+      {
+        "file": ".github/workflows/codeql-analysis.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: \"CodeQL\"\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 4:\n       with:\n       ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1042
+      },
+      {
+        "file": ".github/workflows/og-image-update.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: OG Images Update\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch:\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1021
+      },
+      {
+        "file": ".github/workflows/components-size-report.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 589
+      },
+      {
+        "file": ".github/workflows/ci-merge-main.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "missing_jobs",
+            "message": "Missing required section: jobs",
+            "severity": "critical"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 286
+      },
+      {
+        "file": ".github/workflows/security-gates.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1225
+      },
+      {
+        "file": ".github/workflows/autonomous-auto-merge-to-main.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Autonomous Auto-Merge to m ... \n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 9, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 2797
+      },
+      {
+        "file": ".github/workflows/yaml-auto-fixer.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: YAML Auto-Fixer\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 15, column 3:\n      schedule:\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 9027
+      },
+      {
+        "file": ".github/workflows/agent-agent-1755381089841-0-backend-expert.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block collection\n  in \"<unicode string>\", line 13, column 7:\n          - name: Checkout code\n          ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 15, column 8:\n           with:\n           ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 668
+      },
+      {
+        "file": ".github/workflows/lighthouse-budgets.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 692
+      },
+      {
+        "file": ".github/workflows/docs-autogen.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Docs Auto Generator\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1328
+      },
+      {
+        "file": ".github/workflows/agent-agent-1755379759037-7-full-stack-intermediate.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block collection\n  in \"<unicode string>\", line 13, column 7:\n          - name: Checkout code\n          ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 15, column 8:\n           with:\n           ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 690
+      },
+      {
+        "file": ".github/workflows/cloud-autonomous-orchestrator.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 597
+      },
+      {
+        "file": ".github/workflows/linkedin-pro.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 580
+      },
+      {
+        "file": ".github/workflows/autonomous-self-tune.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Autonomous Self-Tuning Sch ... \n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1452
+      },
+      {
+        "file": ".github/workflows/ci.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "missing_jobs",
+            "message": "Missing required section: jobs",
+            "severity": "critical"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 179
+      },
+      {
+        "file": ".github/workflows/unused-exports-report.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Unused Exports Report\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1236
+      },
+      {
+        "file": ".github/workflows/test-auth.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 683
+      },
+      {
+        "file": ".github/workflows/gitleaks.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Secret scan (Gitleaks)\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      pull_request:\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1103
+      },
+      {
+        "file": ".github/workflows/fast-lint-sync.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Fast Lint Sync\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch:\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1183
+      },
+      {
+        "file": ".github/workflows/automation-guardian-10min.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Automation Guardian Every  ... \n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 859
+      },
+      {
+        "file": ".github/workflows/agent-agent-1755379777755-7-backend-intermediate.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block collection\n  in \"<unicode string>\", line 13, column 7:\n          - name: Checkout code\n          ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 15, column 8:\n           with:\n           ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 687
+      },
+      {
+        "file": ".github/workflows/dependency-auto-upgrade.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1227
+      },
+      {
+        "file": ".github/workflows/agent-agent-1755379777751-3-monitoring-advanced.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block collection\n  in \"<unicode string>\", line 13, column 7:\n          - name: Checkout code\n          ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 15, column 8:\n           with:\n           ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 682
+      },
+      {
+        "file": ".github/workflows/codeql.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: CodeQL Analysis\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 4:\n       with:\n       ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1207
+      },
+      {
+        "file": ".github/workflows/linkedin-marketing.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 586
+      },
+      {
+        "file": ".github/workflows/media-optimizer.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 583
+      },
+      {
+        "file": ".github/workflows/auto-pr-automerge.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Auto PR + Automerge\n    ^\nexpected <block end>, but found '-'\n  in \"<unicode string>\", line 8, column 1:\n    - name: Install dependencies\n    ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 3375
+      },
+      {
+        "file": ".github/workflows/autonomous-cloud-runner.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Autonomous Cloud Runner (Fast)\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1769
+      },
+      {
+        "file": ".github/workflows/auto-media-release.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Auto Media Release Draft\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1197
+      },
+      {
+        "file": ".github/workflows/ci-self-heal.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "missing_jobs",
+            "message": "Missing required section: jobs",
+            "severity": "critical"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 186
+      },
+      {
+        "file": ".github/workflows/app-automation.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: App Automation\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch:  # Manual trigger\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1738
+      },
+      {
+        "file": ".github/workflows/autonomous-external-links.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Autonomous External Link C ... \n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1239
+      },
+      {
+        "file": ".github/workflows/yaml-validator.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: YAML Syntax Validator\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 8, column 3:\n      pull_request:\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 4149
+      },
+      {
+        "file": ".github/workflows/netlify-config.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 693
+      },
+      {
+        "file": ".github/workflows/yaml-auto-fixer-simple.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: YAML Auto-Fixer (Simple)\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 15, column 3:\n      schedule:\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 20026
+      },
+      {
+        "file": ".github/workflows/exponential-agent-factory-proliferation.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: \ud83d\ude80 Exponential Agent Factor ... \n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 4:\n       with:\n       ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 20254
+      },
+      {
+        "file": ".github/workflows/agent-agent-1755381089847-5-frontend-expert.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block collection\n  in \"<unicode string>\", line 13, column 7:\n          - name: Checkout code\n          ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 15, column 8:\n           with:\n           ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 671
+      },
+      {
+        "file": ".github/workflows/cursor-chat.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 590
+      },
+      {
+        "file": ".github/workflows/knowledge-graph-radar.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 699
+      },
+      {
+        "file": ".github/workflows/agent-factory-proliferation.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: \ud83d\ude80 Agent Factory Proliferat ... \n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 7, column 3:\n      workflow_dispatch:\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 13114
+      },
+      {
+        "file": ".github/workflows/ai-it-ads-sync.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1213
+      },
+      {
+        "file": ".github/workflows/security-audit.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Security Audit\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch:\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 531
+      },
+      {
+        "file": ".github/workflows/agent-agent-1755379759029-0-optimization-intermediate.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block collection\n  in \"<unicode string>\", line 13, column 7:\n          - name: Checkout code\n          ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 15, column 8:\n           with:\n           ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 696
+      },
+      {
+        "file": ".github/workflows/test.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 674
+      },
+      {
+        "file": ".github/workflows/ci-quality.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "missing_jobs",
+            "message": "Missing required section: jobs",
+            "severity": "critical"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 190
+      },
+      {
+        "file": ".github/workflows/ai-trends-radar.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 583
+      },
+      {
+        "file": ".github/workflows/commit-message-lint.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 683
+      },
+      {
+        "file": ".github/workflows/pr-quality-gate.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 679
+      },
+      {
+        "file": ".github/workflows/repo-radar.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Repo Radar\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1195
+      },
+      {
+        "file": ".github/workflows/site-link.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 590
+      },
+      {
+        "file": ".github/workflows/labeler.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: PR Labeler\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 4:\n       with:\n       ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 702
+      },
+      {
+        "file": ".github/workflows/cloud-agents.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1222
+      },
+      {
+        "file": ".github/workflows/pin-actions-weekly.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1225
+      },
+      {
+        "file": ".github/workflows/homepage-auto-advertiser.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Homepage Auto Advertiser\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch:\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1203
+      },
+      {
+        "file": ".github/workflows/topics-and-clusters.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 584
+      },
+      {
+        "file": ".github/workflows/search-index-autogen.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Search Index Autogen\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1209
+      },
+      {
+        "file": ".github/workflows/agent-agent-1755379777749-1-full-stack-basic.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block collection\n  in \"<unicode string>\", line 13, column 7:\n          - name: Checkout code\n          ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 15, column 8:\n           with:\n           ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 676
+      },
+      {
+        "file": ".github/workflows/readme-auto-advertiser.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 590
+      },
+      {
+        "file": ".github/workflows/agent-agent-1755379777750-2-monitoring-intermediate.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block collection\n  in \"<unicode string>\", line 13, column 7:\n          - name: Checkout code\n          ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 15, column 8:\n           with:\n           ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 690
+      },
+      {
+        "file": ".github/workflows/readme-autogen.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: README Autogen\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1163
+      },
+      {
+        "file": ".github/workflows/venture.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 588
+      },
+      {
+        "file": ".github/workflows/ai-research-scout.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1216
+      },
+      {
+        "file": ".github/workflows/agent-agent-1755381089844-1-deployment-advanced.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block collection\n  in \"<unicode string>\", line 13, column 7:\n          - name: Checkout code\n          ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 15, column 8:\n           with:\n           ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 687
+      },
+      {
+        "file": ".github/workflows/cloud-orchestrator-plus.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1222
+      },
+      {
+        "file": ".github/workflows/actions-keepalive.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 687
+      },
+      {
+        "file": ".github/workflows/autonomous-cloud-fast.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Autonomous Cloud (Fast)\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1329
+      },
+      {
+        "file": ".github/workflows/branch-pruner.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Branch Pruner\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1725
+      },
+      {
+        "file": ".github/workflows/agent-agent-1755381089845-2-full-stack-advanced.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block collection\n  in \"<unicode string>\", line 13, column 7:\n          - name: Checkout code\n          ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 15, column 8:\n           with:\n           ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 690
+      },
+      {
+        "file": ".github/workflows/performance-audit.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Performance Audit\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 4:\n       with:\n       ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 2324
+      },
+      {
+        "file": ".github/workflows/autonomous-content-curation.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Autonomous Content Curation\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1251
+      },
+      {
+        "file": ".github/workflows/lighthouse-live.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 679
+      },
+      {
+        "file": ".github/workflows/self-replicating-factory-manager.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: \ud83c\udfed Self-Replicating Factory ... \n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 4:\n       with:\n       ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 21755
+      },
+      {
+        "file": ".github/workflows/emergency-fix.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 687
+      },
+      {
+        "file": ".github/workflows/cloud-agents-fast.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1130
+      },
+      {
+        "file": ".github/workflows/autonomous-cloud.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Autonomous Cloud Orchestrator\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch:\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 2729
+      },
+      {
+        "file": ".github/workflows/agent-agent-1755379759035-4-full-stack-intermediate.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block collection\n  in \"<unicode string>\", line 13, column 7:\n          - name: Checkout code\n          ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 15, column 8:\n           with:\n           ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 690
+      },
+      {
+        "file": ".github/workflows/sitemap-daily.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Sitemap Daily\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch:\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1103
+      },
+      {
+        "file": ".github/workflows/broken-images.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 586
+      },
+      {
+        "file": ".github/workflows/autonomous-ultrafast.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Autonomous Ultrafast Orche ... \n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1071
+      },
+      {
+        "file": ".github/workflows/responsive-content.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 599
+      },
+      {
+        "file": ".github/workflows/variation.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 590
+      },
+      {
+        "file": ".github/workflows/autonomous-marketing-seo.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Autonomous Marketing & SEO\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1449
+      },
+      {
+        "file": ".github/workflows/autonomous-quick-fixes.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Autonomous Quick Fixes\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1441
+      },
+      {
+        "file": ".github/workflows/agent-agent-1755381089846-4-testing-advanced.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block collection\n  in \"<unicode string>\", line 13, column 7:\n          - name: Checkout code\n          ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 15, column 8:\n           with:\n           ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 684
+      },
+      {
+        "file": ".github/workflows/pr-smoke.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 678
+      },
+      {
+        "file": ".github/workflows/security-weekly.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Security Weekly\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch:\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1225
+      },
+      {
+        "file": ".github/workflows/link-scan-hourly.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Link Scan Hourly\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch:\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1129
+      },
+      {
+        "file": ".github/workflows/fast-auto-push-to-main.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Fast Auto Push to Main\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 7, column 3:\n      schedule:\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 798
+      },
+      {
+        "file": ".github/workflows/cloud-deep-research.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1899
+      },
+      {
+        "file": ".github/workflows/content-generation.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Content Generation\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch:  # Manual trigger\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1664
+      },
+      {
+        "file": ".github/workflows/release-drafter.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Release Drafter\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 4:\n       with:\n       ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 667
+      },
+      {
+        "file": ".github/workflows/branch-cleanup.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Branch Cleanup\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch:\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 924
+      },
+      {
+        "file": ".github/workflows/external-links.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 588
+      },
+      {
+        "file": ".github/workflows/performance-monitoring.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 24, column 13:\n          - name: Checkout code\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 3876
+      },
+      {
+        "file": ".github/workflows/dependency-management.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 685
+      },
+      {
+        "file": ".github/workflows/agent-agent-1755379759032-1-full-stack-intermediate.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block collection\n  in \"<unicode string>\", line 13, column 7:\n          - name: Checkout code\n          ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 15, column 8:\n           with:\n           ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 690
+      },
+      {
+        "file": ".github/workflows/release.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1217
+      },
+      {
+        "file": ".github/workflows/workflow-watchdog.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Workflow Watchdog\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 4:\n       with:\n       ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 4088
+      },
+      {
+        "file": ".github/workflows/agent-of-agents-trigger.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 687
+      },
+      {
+        "file": ".github/workflows/agent-agent-1755381089846-3-optimization-expert.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block collection\n  in \"<unicode string>\", line 13, column 7:\n          - name: Checkout code\n          ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 15, column 8:\n           with:\n           ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 683
+      },
+      {
+        "file": ".github/workflows/agent-agent-1755379759035-5-frontend-basic.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block collection\n  in \"<unicode string>\", line 13, column 7:\n          - name: Checkout code\n          ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 15, column 8:\n           with:\n           ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 670
+      },
+      {
+        "file": ".github/workflows/og-image-refresh.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 584
+      },
+      {
+        "file": ".github/workflows/workflow-supervisor.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Workflow Supervisor\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 4:\n       with:\n       ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 4647
+      },
+      {
+        "file": ".github/workflows/security-scan.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 680
+      },
+      {
+        "file": ".github/workflows/autonomous-auto-discovery.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Autonomous Auto-Discovery (7m)\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1111
+      },
+      {
+        "file": ".github/workflows/workflow-health-monitor.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "missing_jobs",
+            "message": "Missing required section: jobs",
+            "severity": "critical"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 343
+      },
+      {
+        "file": ".github/workflows/autonomous-cloud-automations.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Autonomous Cloud Automations\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1821
+      },
+      {
+        "file": ".github/workflows/ai-it-multi-factory.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1218
+      },
+      {
+        "file": ".github/workflows/agent-agent-1755379759033-3-frontend-expert.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block collection\n  in \"<unicode string>\", line 13, column 7:\n          - name: Checkout code\n          ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 15, column 8:\n           with:\n           ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 678
+      },
+      {
+        "file": ".github/workflows/autonomous-minute-orchestrator.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Autonomous Minute Orchestrator\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1730
+      },
+      {
+        "file": ".github/workflows/autonomous-deep-maintenance.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Autonomous Deep Maintenance\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1384
+      },
+      {
+        "file": ".github/workflows/pa11y.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 690
+      },
+      {
+        "file": ".github/workflows/autonomous-intelligence.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Autonomous Intelligence\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch:\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1383
+      },
+      {
+        "file": ".github/workflows/agent-agent-1755379777746-0-full-stack-advanced.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block collection\n  in \"<unicode string>\", line 13, column 7:\n          - name: Checkout code\n          ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 15, column 8:\n           with:\n           ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 682
+      },
+      {
+        "file": ".github/workflows/homepage-auto-update.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Homepage Auto Update\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1253
+      },
+      {
+        "file": ".github/workflows/netlify-automation.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Netlify Build Automation\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      pull_request:\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 8204
+      },
+      {
+        "file": ".github/workflows/autonomous-agent-orchestrator.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: \ud83e\udd16 Autonomous Agent Orchest ... \n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 4:\n       with:\n       ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 25079
+      },
+      {
+        "file": ".github/workflows/exponential-ai-delegation.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Exponential AI Delegation\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 6926
+      },
+      {
+        "file": ".github/workflows/git-ultrafast-sync.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 682
+      },
+      {
+        "file": ".github/workflows/autonomous-keepalive.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Autonomous Keepalive\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1018
+      },
+      {
+        "file": ".github/workflows/automerge-main.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Auto-merge to main\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 4:\n       with:\n       ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1268
+      },
+      {
+        "file": ".github/workflows/cleanup-merged-branches.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 2, column 9:\n        uses: actions/setup-node@v4\n            ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 2009
+      },
+      {
+        "file": ".github/workflows/ultra-rapid-sync.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1215
+      },
+      {
+        "file": ".github/workflows/netlify-auto-healer.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "missing_jobs",
+            "message": "Missing required section: jobs",
+            "severity": "critical"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 190
+      },
+      {
+        "file": ".github/workflows/agent-agent-1755381089848-6-testing-intermediate.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block collection\n  in \"<unicode string>\", line 13, column 7:\n          - name: Checkout code\n          ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 15, column 8:\n           with:\n           ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 680
+      },
+      {
+        "file": ".github/workflows/dependabot-auto-approve.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Dependabot Auto Approve\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 4:\n       with:\n       ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1041
+      },
+      {
+        "file": ".github/workflows/crawl-normalize.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 683
+      },
+      {
+        "file": ".github/workflows/autonomous-workflow-watchdog.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Autonomous Workflow Watchdog\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 4:\n       with:\n       ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 3425
+      },
+      {
+        "file": ".github/workflows/ci-auto-heal.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "missing_jobs",
+            "message": "Missing required section: jobs",
+            "severity": "critical"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 185
+      },
+      {
+        "file": ".github/workflows/dead-code-report.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Dead Code Report\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1138
+      },
+      {
+        "file": ".github/workflows/agent-agent-1755379731008-2-monitoring-expert.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block collection\n  in \"<unicode string>\", line 13, column 7:\n          - name: Checkout code\n          ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 15, column 8:\n           with:\n           ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 678
+      },
+      {
+        "file": ".github/workflows/automation-orchestrator.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1222
+      },
+      {
+        "file": ".github/workflows/rapid-git-sync.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "missing_jobs",
+            "message": "Missing required section: jobs",
+            "severity": "critical"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 194
+      },
+      {
+        "file": ".github/workflows/unused-deps-cleaner.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Unused Dependencies Cleaner\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1957
+      },
+      {
+        "file": ".github/workflows/monetization.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 593
+      },
+      {
+        "file": ".github/workflows/autonomous-lighthouse.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Autonomous Lighthouse CI\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 912
+      },
+      {
+        "file": ".github/workflows/auto-pr-cursor-branches.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Auto PR for Cursor Branches\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 7, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1502
+      },
+      {
+        "file": ".github/workflows/commitlint.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 674
+      },
+      {
+        "file": ".github/workflows/workflow-radar.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 590
+      },
+      {
+        "file": ".github/workflows/ai-content-factory.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1217
+      },
+      {
+        "file": ".github/workflows/agent-agent-1755379759033-2-deployment-expert.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block collection\n  in \"<unicode string>\", line 13, column 7:\n          - name: Checkout code\n          ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 15, column 8:\n           with:\n           ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 678
+      },
+      {
+        "file": ".github/workflows/ai-it-ultrafast-sync.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1219
+      },
+      {
+        "file": ".github/workflows/security-auto-heal.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "missing_jobs",
+            "message": "Missing required section: jobs",
+            "severity": "critical"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 192
+      },
+      {
+        "file": ".github/workflows/instagram-marketing.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 587
+      },
+      {
+        "file": ".github/workflows/ai-changelog.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: AI Changelog\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1175
+      },
+      {
+        "file": ".github/workflows/automation-advertiser.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 589
+      },
+      {
+        "file": ".github/workflows/ai-content-autonomy.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 587
+      },
+      {
+        "file": ".github/workflows/autonomous-release.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Autonomous Release\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1639
+      },
+      {
+        "file": ".github/workflows/agent-agent-1755379759036-6-monitoring-advanced.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block collection\n  in \"<unicode string>\", line 13, column 7:\n          - name: Checkout code\n          ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 15, column 8:\n           with:\n           ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 682
+      },
+      {
+        "file": ".github/workflows/agent-factory-automation.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Agent Factory - Exponentia ... \n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 7, column 3:\n      workflow_dispatch:\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 18342
+      },
+      {
+        "file": ".github/workflows/auto-update-prs.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Auto Update PRs\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1508
+      },
+      {
+        "file": ".github/workflows/link-auto-fix.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: Link Auto-Fix\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch:\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1069
+      },
+      {
+        "file": ".github/workflows/netlify-functions-trigger.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 689
+      },
+      {
+        "file": ".github/workflows/pr-auto-curator.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 679
+      },
+      {
+        "file": ".github/workflows/agent-agent-1755379777754-6-backend-expert.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block collection\n  in \"<unicode string>\", line 13, column 7:\n          - name: Checkout code\n          ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 15, column 8:\n           with:\n           ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 669
+      },
+      {
+        "file": ".github/workflows/sitemap-and-search.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 600
+      },
+      {
+        "file": ".github/workflows/guardian-scheduler.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 13:\n          - name: Checkout repository\n                ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 586
+      },
+      {
+        "file": ".github/workflows/todo-issue-sync.yml",
+        "status": "broken",
+        "issues": [
+          {
+            "type": "yaml_syntax_error",
+            "message": "while parsing a block mapping\n  in \"<unicode string>\", line 1, column 1:\n    name: TODO Issue Sync\n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<unicode string>\", line 6, column 3:\n      workflow_dispatch: {}\n      ^",
+            "severity": "critical"
+          },
+          {
+            "type": "missing_runs_on",
+            "message": "Missing runs-on specification",
+            "severity": "high"
+          },
+          {
+            "type": "missing_steps",
+            "message": "Missing steps section",
+            "severity": "high"
+          }
+        ],
+        "severity": "critical",
+        "content_length": 1828
+      }
+    ],
+    "common_issues": {
+      "yaml_syntax_error": 181,
+      "missing_runs_on": 181,
+      "missing_steps": 181,
+      "missing_jobs": 11
+    },
+    "recommendations": [
+      "Fix 192 broken workflows immediately",
+      "Add missing runs-on specifications to all jobs",
+      "Add missing steps sections to all jobs",
+      "Fix YAML syntax errors in broken workflows",
+      "Implement automated workflow repair system"
+    ]
+  },
+  "timestamp": "2025-08-17T02:06:25.567644"
+}
