@@ -1,28 +1,7 @@
 {
-  "timestamp": "2025-08-17T11:44:37.960Z",
+  "timestamp": "2025-08-17T11:45:26.243Z",
   "critical": [],
-  "high": [
-    {
-      "workflow": "workflow-manager.yml",
-      "status": "active",
-      "complexityScore": 50,
-      "complexityLevel": "high",
-      "metrics": {
-        "totalLines": 203,
-        "jobCount": 0,
-        "stepCount": 12,
-        "conditionalCount": 4,
-        "matrixCount": 0,
-        "dependencyCount": 3,
-        "environmentCount": 0,
-        "secretCount": 0,
-        "actionCount": 6
-      },
-      "refactoringStrategy": [
-        "Extract common functionality to reusable workflows"
-      ]
-    }
-  ],
+  "high": [],
   "medium": [
     {
       "workflow": "dependencies.yml",
@@ -39,26 +18,6 @@
         "environmentCount": 0,
         "secretCount": 2,
         "actionCount": 4
-      },
-      "refactoringStrategy": [
-        "Extract common functionality to reusable workflows"
-      ]
-    },
-    {
-      "workflow": "dependency-maintenance.yml",
-      "status": "active",
-      "complexityScore": 30,
-      "complexityLevel": "medium",
-      "metrics": {
-        "totalLines": 144,
-        "jobCount": 0,
-        "stepCount": 12,
-        "conditionalCount": 2,
-        "matrixCount": 0,
-        "dependencyCount": 1,
-        "environmentCount": 0,
-        "secretCount": 0,
-        "actionCount": 6
       },
       "refactoringStrategy": [
         "Extract common functionality to reusable workflows"
