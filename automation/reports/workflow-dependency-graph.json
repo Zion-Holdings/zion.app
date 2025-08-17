@@ -2919,10 +2919,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
+      "timeout": 15,
       "concurrentJobs": 5
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 15
   },
   "readme-auto-advertiser.yml": {
     "name": "readme-auto-advertiser.yml",

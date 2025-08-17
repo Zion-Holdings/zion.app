@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-17T00:14:28.693Z",
+  "timestamp": "2025-08-17T00:14:35.871Z",
   "critical": [
     {
       "name": "auto-heal-workflows.yml",
@@ -422,25 +422,6 @@
     {
       "name": "dead-code-report.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/dead-code-report.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 10,
-      "concurrentJobs": 6,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "schedule",
-        "workflow_dispatch {}"
-      ],
-      "resourceScore": 124
-    },
-    {
-      "name": "rapid-git-sync.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/rapid-git-sync.yml",
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 10,
@@ -916,6 +897,25 @@
     {
       "name": "cleanup-merged-branches.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cleanup-merged-branches.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 15,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch {}"
+      ],
+      "resourceScore": 119
+    },
+    {
+      "name": "rapid-git-sync.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/rapid-git-sync.yml",
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 15,
