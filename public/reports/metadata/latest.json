@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-17T17:50:01.567Z",
-  "pagesScanned": 8161,
+  "generatedAt": "2025-08-17T17:51:01.240Z",
+  "pagesScanned": 8166,
   "items": [
     {
       "route": "/404",
@@ -34069,6 +34069,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-17-1750",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook: LLM Apps",
+        "description": "Playbook: LLM Apps — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-17T00-00",
       "missing": [
         "og:image"
@@ -35156,6 +35166,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-17 17-41",
         "description": "Innovation Insight — 2025-08-17 17-41 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-17T17-51",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-17 17-51",
+        "description": "Innovation Insight — 2025-08-17 17-51 — auto-suggested description"
       }
     },
     {
@@ -80289,6 +80309,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-17-1451",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 14:51",
+        "description": "Autonomous Update — 2025-08-17 14:51 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-17-1500",
       "missing": [
         "og:image"
@@ -80456,6 +80489,16 @@
       "suggestion": {
         "title": "Autonomous Checklist — DevSecOps for AI (2025-08-17 17:40 UTC)",
         "description": "Autonomous Checklist — DevSecOps for AI (2025-08-17 17:40 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1750",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Blueprint — AI Service Design (2025-08-17 17:50 UTC)",
+        "description": "Autonomous Blueprint — AI Service Design (2025-08-17 17:50 UTC) — auto-suggested description"
       }
     },
     {
@@ -81546,6 +81589,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-17 17-41",
         "description": "Autonomous Update — 2025-08-17 17-41 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17T17-51",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 17-51",
+        "description": "Autonomous Update — 2025-08-17 17-51 — auto-suggested description"
       }
     },
     {
