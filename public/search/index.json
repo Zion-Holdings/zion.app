@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T07:13:03.592Z",
+  "generatedAt": "2025-08-17T07:14:03.659Z",
   "entries": [
     {
       "route": "/user-management",
@@ -546,6 +546,12 @@
       "file": "pages/reports/updates/update-2025-08-17-0420.tsx",
       "title": "Autonomous Performance Tuning Guide — Agentic Workflows (2025-08-17 04:20 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Performance Tuning Guide — Agentic Workflows (2025-08-17 04:20 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0414",
+      "file": "pages/reports/updates/update-2025-08-17-0414.tsx",
+      "title": "Autonomous Update — 2025-08-17 04:14",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 04:14 Autonomous Update — 2025-08-17 04:14 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : My AI skeptic friends are all nuts ·"
     },
     {
       "route": "/reports/updates/update-2025-08-17-0413",
