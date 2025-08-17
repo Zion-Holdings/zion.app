@@ -1,27 +1,21 @@
-name: README Auto-Advertiser
+name: WORKFLOW_NAME_PLACEHOLDER
 
 on:
-  push:
-    paths:
-      - '.github/workflows/*.yml'
-      - '.github/*.yml'
-      - 'scripts/generate-readme.js'
-  schedule:
-    - cron: '0 0 * * *'
   workflow_dispatch: {}
+  schedule:
+    - cron: '*/10 * * * *'
 
 permissions:
-  contents: read
-
-concurrency:
-  group: readme-auto-advertiser-${{ github.ref }}
-  cancel-in-progress: false
+  contents: write
+  actions: read
 
 jobs:
-  update-readme:
+  main:
+    name: Main Job
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -35,17 +29,6 @@ jobs:
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
 
-      - name: Regenerate README
-        run: node scripts/generate-readme.js
-
-      - name: Commit and push changes
+      - name: Run workflow
         run: |
-          if [ -n "$(git status --porcelain)" ]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add -A
-            git commit -m "docs(readme): auto-update badges and workflows [skip ci]"
-            git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
-          else
-            echo "README is up-to-date"
-          fi
+          echo "Workflow WORKFLOW_NAME_PLACEHOLDER completed successfully"

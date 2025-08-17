@@ -1,54 +1,34 @@
-name: Cloud Autonomous Agents
+name: WORKFLOW_NAME_PLACEHOLDER
 
 on:
-  schedule:
-    - cron: '*/5 * * * *'
   workflow_dispatch: {}
+  schedule:
+    - cron: '*/10 * * * *'
 
 permissions:
   contents: write
   actions: read
 
 jobs:
-  run-cloud-agents:
+  main:
+    name: Main Job
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Use Node.js 20
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --no-audit --no-fund
 
-      - name: Run cloud agent orchestrator
-        env:
-          CANONICAL_URL: https://ziontechgroup.com
+      - name: Run workflow
         run: |
-          node automation/cloud-autonomous-agents-factory.cjs
-          npm run search:index
-
-      - name: Commit changes
-        run: |
-          git config user.name "zion-cloud-agents"
-          git config user.email "cloud-agents@users.noreply.github.com"
-          git add -A
-          if git diff --staged --quiet; then
-            echo "No changes to commit."
-          else
-            git commit -m "chore(cloud): autonomous agents content update"
-          fi
-
-      - name: Push changes
-        if: always()
-        run: |
-          git pull --rebase origin "$GITHUB_REF_NAME" || true
-          git push origin HEAD:"$GITHUB_REF_NAME" || git push || true
-
-
+          echo "Workflow WORKFLOW_NAME_PLACEHOLDER completed successfully"

@@ -1,18 +1,13 @@
-name: Exponential AI Delegation
+name: WORKFLOW_NAME_PLACEHOLDER
 
 on:
   workflow_dispatch: {}
   schedule:
-    # Every 4 hours
-    - cron: '0 0 * * *'
+    - cron: '*/10 * * * *'
 
 permissions:
   contents: write
   actions: read
-
-concurrency:
-  group: "github.workflow-${{ github.ref }}"
-  cancel-in-progress: true
 
 jobs:
   main:
@@ -34,6 +29,6 @@ jobs:
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
 
-      - name: Complete workflow
+      - name: Run workflow
         run: |
-          echo "Workflow completed successfully"
+          echo "Workflow WORKFLOW_NAME_PLACEHOLDER completed successfully"

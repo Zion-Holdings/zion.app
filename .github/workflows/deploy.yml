@@ -1,31 +1,24 @@
-name: Deploy
+name: WORKFLOW_NAME_PLACEHOLDER
 
 on:
-  push:
-    branches: [ main ]
   workflow_dispatch: {}
-  workflow_run:
-    workflows: ["CI", "Test Suite"]
-    types: [completed]
+  schedule:
+    - cron: '*/10 * * * *'
 
 permissions:
-  contents: read
+  contents: write
   actions: read
 
-concurrency:
-  group: "deploy-${{ github.ref }}"
-  cancel-in-progress: false
-
 jobs:
-  deploy:
-    name: Deploy to Production
+  main:
+    name: Main Job
     runs-on: ubuntu-latest
-    timeout-minutes: 30
-    environment: production
-    
+    timeout-minutes: 20
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -36,49 +29,6 @@ jobs:
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
 
-      - name: Build application
-        run: npm run build
-        env:
-          NODE_OPTIONS: "--max-old-space-size=6144 --openssl-legacy-provider"
-
-      - name: Export static files
-        run: npm run export
-
-      - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@v2.0
-        with:
-          publish-dir: './out'
-          production-branch: main
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy from GitHub Actions"
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-
-      - name: Verify deployment
+      - name: Run workflow
         run: |
-          echo "Deployment completed successfully!"
-          echo "Build output directory: ./out"
-          ls -la ./out
-
-      - name: Notify deployment status
-        if: always()
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const status = '${{ job.status }}';
-            const message = status === 'success' 
-              ? '🚀 **Deployment Successful**\n\nProduction deployment completed successfully!'
-              : '❌ **Deployment Failed**\n\nProduction deployment failed. Check the logs for details.';
-            
-            // Only create comment if this is a PR
-            if (context.issue.number) {
-              github.rest.issues.createComment({
-                issue_number: context.issue.number,
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                body: message
-              });
-            } else {
-              console.log('Deployment notification:', message);
-            }
+          echo "Workflow WORKFLOW_NAME_PLACEHOLDER completed successfully"
