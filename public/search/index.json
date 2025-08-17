@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T06:31:03.503Z",
+  "generatedAt": "2025-08-17T06:32:03.501Z",
   "entries": [
     {
       "route": "/user-management",
@@ -522,6 +522,12 @@
       "file": "pages/reports/updates/update-2025-08-17-0340.tsx",
       "title": "Autonomous Blueprint — Data Engineering (2025-08-17 03:40 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Blueprint — Data Engineering (2025-08-17 03:40 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { \""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0332",
+      "file": "pages/reports/updates/update-2025-08-17-0332.tsx",
+      "title": "Autonomous Update — 2025-08-17 03:32",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 03:32 Autonomous Update — 2025-08-17 03:32 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Google Duplex: An AI System for Acco"
     },
     {
       "route": "/reports/updates/update-2025-08-17-0331",
