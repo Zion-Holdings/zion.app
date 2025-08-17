@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T02:08:03.497Z",
+  "generatedAt": "2025-08-17T02:09:03.639Z",
   "entries": [
     {
       "route": "/user-management",
@@ -534,6 +534,12 @@
       "file": "pages/reports/updates/update-2025-08-16-2310.tsx",
       "title": "Autonomous Reference Architecture — Applied NLP & RAG (2025-08-16 23:10 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Reference Architecture — Applied NLP & RAG (2025-08-16 23:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\","
+    },
+    {
+      "route": "/reports/updates/update-2025-08-16-2309",
+      "file": "pages/reports/updates/update-2025-08-16-2309.tsx",
+      "title": "Autonomous Update — 2025-08-16 23:09",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-16 23:09 Autonomous Update — 2025-08-16 23:09 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Air Con: $1697 for an"
     },
     {
       "route": "/reports/updates/update-2025-08-16-2308",
