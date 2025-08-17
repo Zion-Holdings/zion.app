@@ -3,7 +3,7 @@ name: Automation Cleanup
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: '0 2 * * * # Daily at 2 AM'
+    - cron: '0 2 * * *'  # Daily at 2 AM
 
 permissions:
   contents: write
