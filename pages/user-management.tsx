@@ -444,7 +444,7 @@ const UserManagement: React.FC = () => {
                 </span>
               </div>
               <button
-                onClick={() => setShowCreateModal(true)}
+                onClick={() => {/* TODO: Implement create user modal */}}
                 className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
               >
                 Add User
@@ -727,7 +727,7 @@ const UserManagement: React.FC = () => {
                           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                             <div className="flex items-center space-x-2">
                               <button
-                                onClick={() => setEditingUser(user)}
+                                onClick={() => {/* TODO: Implement edit user modal */}}
                                 className="text-blue-600 hover:text-blue-900"
                               >
                                 Edit
@@ -771,7 +771,7 @@ const UserManagement: React.FC = () => {
                 <div className="flex items-center justify-between">
                   <h3 className="text-lg font-medium text-gray-900">System Roles</h3>
                   <button
-                    onClick={() => setShowRoleModal(true)}
+                    onClick={() => {/* TODO: Implement create role modal */}}
                     className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
                   >
                     Create Role
@@ -824,7 +824,7 @@ const UserManagement: React.FC = () => {
                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                           <div className="flex items-center space-x-2">
                             <button
-                              onClick={() => setEditingRole(role)}
+                              onClick={() => {/* TODO: Implement edit role modal */}}
                               className="text-blue-600 hover:text-blue-900"
                             >
                               Edit

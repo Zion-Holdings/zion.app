@@ -1,0 +1,81 @@
+name: Auto-Fix GitHub Actions Workflows
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '0 3 * * *' # Daily at 3 AM UTC
+  workflow_run:
+    workflows: ["Comprehensive Test Suite"]
+    types: [completed]
+    branches: [main, develop]
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: "workflow-fixes"
+  cancel-in-progress: false
+
+jobs:
+  auto-fix:
+    name: Auto-Fix Workflow Issues
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Run comprehensive workflow fixer
+        run: |
+          chmod +x fix-github-actions-comprehensive.sh
+          ./fix-github-actions-comprehensive.sh
+
+      - name: Validate fixes
+        run: |
+          chmod +x validate-workflows-comprehensive.sh
+          ./validate-workflows-comprehensive.sh
+
+      - name: Check for changes
+        id: check-changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "has-changes=true" >> $GITHUB_OUTPUT
+            echo "Changes detected in workflows"
+            git status --porcelain
+          else
+            echo "has-changes=false" >> $GITHUB_OUTPUT
+            echo "No changes detected"
+          fi
+
+      - name: Commit and push fixes
+        if: steps.check-changes.outputs.has-changes == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .github/workflows/*.yml
+          git commit -m "🔧 Auto-fix GitHub Actions workflows - $(date -u +'%Y-%m-%d %H:%M:%S UTC')" || exit 0
+          git push origin HEAD:${{ github.ref }}
+
+      - name: Create summary
+        run: |
+          echo "## Workflow Auto-Fix Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Status:** ${{ steps.check-changes.outputs.has-changes == 'true' && 'Fixed issues and committed changes' || 'No issues found' }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Timestamp:** $(date -u)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Branch:** ${{ github.ref }}" >> $GITHUB_STEP_SUMMARY

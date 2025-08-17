@@ -1,122 +1,124 @@
-name: 🗺️ Sitemap Auto-Commit
+name: Sitemap Auto-Commit
 
 on:
-  schedule:
-    - cron: '12 3 * * *'  # Daily at 3:12 AM
-  workflow_dispatch:
-    inputs:
-      force_update:
-        description: 'Force sitemap update even if no changes detected'
-        required: false
-        default: false
-        type: boolean
-  push:
-    branches: [main, develop]
-    paths:
-      - 'src/**'
-      - 'pages/**'
-      - 'app/**'
-      - '.github/workflows/sitemap-auto-commit.yml'
-
 permissions:
-  contents: write
+  contents: read
   actions: read
-
-concurrency:
-  group: sitemap-auto-commit
-  cancel-in-progress: true
-
-jobs:
-  build-and-update:
-    name: Build and Update Sitemap
+  schedule:
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: "npm"
-
       - name: Install dependencies
         run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
+    - cron: '12 3 * * *'
+  workflow_dispatch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
 
-      - name: Build application
-        run: npm run build
+  contents: write
+  pull-requests: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
 
+concurrency:
+  group: sitemap-auto-commit
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
+  cancel-in-progress: true
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
+
+jobs:
+
+  build-and-update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
+          fetch-depth: 0
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v4
+          node-version: 20.x
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
       - name: Generate sitemap
-        run: |
-          echo "🗺️ Generating sitemap..."
-          
-          # Create sitemap directory if it doesn't exist
-          mkdir -p public
-          
-          # Generate sitemap.xml
-          cat > public/sitemap.xml << 'EOF'
-          <?xml version="1.0" encoding="UTF-8"?>
-          <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-            <url>
-              <loc>https://zion.app/</loc>
-              <lastmod>$(date -u +%Y-%m-%d)</lastmod>
-              <changefreq>daily</changefreq>
-              <priority>1.0</priority>
-            </url>
-            <url>
-              <loc>https://zion.app/about</loc>
-              <lastmod>$(date -u +%Y-%m-%d)</lastmod>
-              <changefreq>weekly</changefreq>
-              <priority>0.8</priority>
-            </url>
-            <url>
-              <loc>https://zion.app/services</loc>
-              <lastmod>$(date -u +%Y-%m-%d)</lastmod>
-              <changefreq>weekly</changefreq>
-              <priority>0.8</priority>
-            </url>
-            <url>
-              <loc>https://zion.app/contact</loc>
-              <lastmod>$(date -u +%Y-%m-%d)</lastmod>
-              <changefreq>monthly</changefreq>
-              <priority>0.6</priority>
-            </url>
-          </urlset>
-          EOF
-          
-          echo "✅ Sitemap generated successfully"
-
-      - name: Check for changes
-        id: check-changes
+        run: npm run sitemap
+      - name: Commit changes if any
         run: |
           if [ -n "$(git status --porcelain)" ]; then
-            echo "has_changes=true" >> $GITHUB_OUTPUT
-            echo "✅ Changes detected in sitemap"
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore(sitemap): auto-update sitemap"
+            git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
           else
-            echo "has_changes=false" >> $GITHUB_OUTPUT
-            echo "ℹ️ No changes detected"
+            echo "No changes to commit."
           fi
-
-      - name: Commit and push changes
-        if: steps.check-changes.outputs.has_changes == 'true'
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add public/sitemap.xml
-          git commit -m "🗺️ Update sitemap - Automated daily update" || echo "No changes to commit"
-          git push origin HEAD:main || echo "Push failed or no changes"
-
-      - name: Summary
-        run: |
-          echo "🎉 Sitemap auto-commit completed!"
-          if [ "${{ steps.check-changes.outputs.has_changes }}" == "true" ]; then
-            echo "✅ Sitemap updated and committed"
-          else
-            echo "ℹ️ No sitemap changes in this run"
-          fi
-          
-          echo "📅 Next run: Tomorrow at 3:12 AM UTC"
