@@ -58,7 +58,7 @@ jobs:
           echo "🏭 Active factories: $ACTIVE_FACTORIES"
       
       - name: Calculate growth capacity
-        id: "capacity
+        id: capacity
         run: |
           AGENTS=${{ steps.count.outputs.total }}
           FACTORIES=${{ steps.factories.outputs.active }}
@@ -660,5 +660,5 @@ jobs:
           echo "🚀 Growth capacity: ${{ needs.agent-inventory.outputs.growth-capacity }}"
           echo "🎯 Target agents: ${{ env.TARGET_AGENTS }}"
           echo "⏰ Next orchestration: In 2 hours"
-          echo ""
+          echo "
           echo "The system is now autonomously orchestrating exponential growth!"

@@ -39,10 +39,10 @@ jobs:
         run: |
           cat > yaml_fixer.py << 'EOF'
           #!/usr/bin/env python3
-          """
+          ""
           YAML Auto-Fixer for GitHub Actions workflows
           Fixes common syntax errors automatically
-          """
+          ""
           
           import os
           import re
@@ -50,7 +50,7 @@ jobs:
           from pathlib import Path
           
           def fix_yaml_file(file_path, fix_mode='conservative'):
-              """Fix common YAML syntax errors in a file"""
+              ""Fix common YAML syntax errors in a file""
               print(f"🔧 Fixing: {file_path}")
               
               try:
@@ -64,8 +64,8 @@ jobs:
               fixes_applied = []
               
               # Fix 1: Remove stray quotes in concurrency
-              if 'concurrency:"' in content:
-                  content = content.replace('concurrency:"', 'concurrency:')
+              if 'concurrency:' in content:
+                  content = content.replace('concurrency:', 'concurrency:')
                   fixes_applied.append("Fixed concurrency syntax")
               
               # Fix 2: Fix group references
@@ -78,8 +78,8 @@ jobs:
                   fixes_applied.append("Fixed concurrency group reference")
               
               # Fix 3: Fix cancel-in-progress quotes
-              if 'cancel-in-progress: "true' in content:
-                  content = content.replace('cancel-in-progress: "true', 'cancel-in-progress: true')
+              if 'cancel-in-progress: true' in content:
+                  content = content.replace('cancel-in-progress: true', 'cancel-in-progress: true')
                   fixes_applied.append("Fixed cancel-in-progress quotes")
               
               # Fix 4: Fix environment variable quotes
@@ -98,8 +98,8 @@ jobs:
               )
               
               # Fix 6: Fix run command syntax
-              if 'run: |"' in content:
-                  content = content.replace('run: |"', 'run: |')
+              if 'run: |' in content:
+                  content = content.replace('run: |', 'run: |')
                   fixes_applied.append("Fixed run command syntax")
               
               # Fix 7: Fix id field quotes

@@ -46,13 +46,13 @@ jobs:
       
       - name: Count existing agent factories
         id: count"
-        run: |"
+        run: |
           FACTORIES=$(find automation/ -name "*agent*factory*" -type f | wc -l)
           echo "total=$FACTORIES" >> $GITHUB_OUTPUT
           echo "Current agent factories: $FACTORIES"
       
       - name: Calculate growth potential
-        id: "growth
+        id: growth
         run: |
           CURRENT=${{ steps.count.outputs.total }}
           GROWTH=${{ env.GROWTH_FACTOR }}
@@ -61,7 +61,7 @@ jobs:
           echo "Growth potential: $POTENTIAL factories"
       
       - name: Determine next target
-        id: "target
+        id: target
         run: |
           CURRENT=${{ steps.count.outputs.total }}
           TARGET=${{ env.TARGET_COUNT }}
@@ -365,5 +365,5 @@ jobs:
           echo "🎯 Growth target: ${{ env.TARGET_COUNT }}"
           echo "📈 Growth factor: ${{ env.GROWTH_FACTOR }}"
           echo "⏰ Next run: In 6 hours"
-          echo ""
+          echo "
           echo "The system is now autonomously growing exponentially!"

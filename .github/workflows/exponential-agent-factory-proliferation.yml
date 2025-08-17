@@ -55,7 +55,7 @@ jobs:
       
       - name: Analyze current automation ecosystem
         id: analyze"
-        run: |"
+        run: |
           echo "🔍 Analyzing current automation ecosystem..."
           
           # Count all automation components
@@ -317,7 +317,7 @@ jobs:
               steps:
                 - uses: actions/checkout@v4
                   - name: Run autonomous factory
-                  run: |
+        run: |
                     cd automation/factories/$FACTORY_ID
                     node autonomous-agent-factory.cjs
           EOF
@@ -348,7 +348,7 @@ jobs:
           echo "🚀 Deploying exponential factories to production..."
           
           # Find all newly created factories
-          NEW_FACTORIES=$(find automation/factories -name "factory-config.json" -newer automation/factories/.deployment_timestamp 2>/dev/null || echo "")
+          NEW_FACTORIES=$(find automation/factories -name "factory-config.json" -newer automation/factories/.deployment_timestamp 2>/dev/null || echo ")
           
           if [ -n "$NEW_FACTORIES" ]; then
             echo "📦 Found factories to deploy: $NEW_FACTORIES"

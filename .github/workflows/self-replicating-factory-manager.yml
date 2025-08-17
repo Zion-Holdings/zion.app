@@ -104,13 +104,13 @@ jobs:
           
           # Calculate replication count based on mode
           case $MODE in
-            "aggressive")
+            ""aggressive")
               REPLICATION_COUNT=$((CURRENT_FACTORIES * 3))
               ;;
-            "balanced")
+            ""balanced")
               REPLICATION_COUNT=$((CURRENT_FACTORIES * 2))
               ;;
-            "conservative")
+            ""conservative")
               REPLICATION_COUNT=$((CURRENT_FACTORIES / 2))
               ;;
             *)
@@ -553,5 +553,5 @@ jobs:
           echo "🔄 Replication mode: ${{ env.REPLICATION_MODE }}"
           echo "♾️ Max factories: ${{ env.MAX_FACTORIES }}"
           echo "⏰ Next replication cycle: In 4 hours"
-          echo ""
+          echo "
           echo "The system is now autonomously self-replicating for infinite growth!"

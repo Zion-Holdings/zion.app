@@ -100,7 +100,7 @@ jobs:
         run: |
           if [ -f "automation/logs/workflow-health-report.json" ]; then
             echo "## 📊 Workflow Health Summary" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
+            echo " >> $GITHUB_STEP_SUMMARY
             
             # Extract health score
             HEALTH_SCORE=$(node -e "
@@ -113,7 +113,7 @@ jobs:
             )
             
             echo "**Health Score:** $HEALTH_SCORE/100" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
+            echo " >> $GITHUB_STEP_SUMMARY
             
             # Extract summary stats
             TOTAL=$(node -e "
@@ -146,7 +146,7 @@ jobs:
             echo "**Total Workflows:** $TOTAL" >> $GITHUB_STEP_SUMMARY
             echo "**Active Workflows:** $ACTIVE" >> $GITHUB_STEP_SUMMARY
             echo "**Failing Workflows:** $FAILING" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
+            echo " >> $GITHUB_STEP_SUMMARY
             
             # Add recommendations if any
             RECOMMENDATIONS=$(node -e "
@@ -164,7 +164,7 @@ jobs:
             
             if [ "$RECOMMENDATIONS" -gt 0 ]; then
               echo "**Recommendations:** $RECOMMENDATIONS" >> $GITHUB_STEP_SUMMARY
-              echo "" >> $GITHUB_STEP_SUMMARY
+              echo " >> $GITHUB_STEP_SUMMARY
             fi
             
             # Add fixes applied if any
@@ -183,7 +183,7 @@ jobs:
             
             if [ "$FIXES" -gt 0 ]; then
               echo "**Fixes Applied:** $FIXES" >> $GITHUB_STEP_SUMMARY
-              echo "" >> $GITHUB_STEP_SUMMARY
+              echo " >> $GITHUB_STEP_SUMMARY
             fi
             
             echo "---" >> $GITHUB_STEP_SUMMARY

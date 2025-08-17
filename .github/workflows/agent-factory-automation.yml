@@ -274,11 +274,11 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
 
       - name: Deploy Agents to Production
-        run: |"
+        run: |
           echo "Deploying generated agents to production environment..."
           
           # Find all newly generated agents
-          AGENTS=$(find automation/agents -name "*.json" -newer automation/agents/.timestamp 2>/dev/null || echo "")
+          AGENTS=$(find automation/agents -name "*.json" -newer automation/agents/.timestamp 2>/dev/null || echo ")
           
           if [ -n "$AGENTS" ]; then
             echo "Found agents to deploy: $AGENTS"

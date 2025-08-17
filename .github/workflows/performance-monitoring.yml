@@ -14,7 +14,7 @@ on:
 
 
 concurrency:
-  group: github.workflow-github.ref
+  group: "github.workflow-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:
@@ -63,12 +63,12 @@ jobs:
       - name: Performance metrics report
         run: |
           echo "## Performance Metrics Report" > performance-report.md
-          echo "" >> performance-report.md
+          echo " >> performance-report.md
           echo "Generated on: $(date)" >> performance-report.md
-          echo "" >> performance-report.md
+          echo " >> performance-report.md
           echo "### Bundle Size Analysis" >> performance-report.md
           echo "Bundle analysis artifacts uploaded to bundle-analysis/" >> performance-report.md
-          echo "" >> performance-report.md
+          echo " >> performance-report.md
           echo "### Lighthouse Scores" >> performance-report.md
           echo "Lighthouse CI results available in artifacts" >> performance-report.md
           
@@ -123,7 +123,7 @@ jobs:
       - name: Performance summary
         run: |
           echo "## Performance Summary" >> summary.md
-          echo "" >> summary.md
+          echo " >> summary.md
           echo "All performance checks completed." >> summary.md
           echo "Check artifacts for detailed reports." >> summary.md
           
