@@ -42,10 +42,10 @@ jobs:
           node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('depcheck.json','utf8'));const u=[...new Set([...(r.dependencies||[]),...(r.devDependencies||[])])];if(u.length){const {execSync}=require('child_process');for(const d of u){try{execSync(`npm uninstall ${d}`,{stdio:'inherit'})}catch(e){}}}"
           npm run build || npm run build:heal || true
       - name: Create Pull Request
-        if: "success()
+        if: success()
         uses: peter-evans/create-pull-request@v6
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}"
+          token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "chore(deps): remove unused dependencies via depcheck"
           title: "chore(deps): remove unused dependencies"
           body: |
