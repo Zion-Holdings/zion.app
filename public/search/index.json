@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T13:58:03.877Z",
+  "generatedAt": "2025-08-17T14:00:04.323Z",
   "entries": [
     {
       "route": "/user-management",
@@ -792,6 +792,12 @@
       "file": "pages/reports/updates/update-2025-08-17-1100.tsx",
       "title": "Autonomous Playbook — DevSecOps for AI (2025-08-17 11:00 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — DevSecOps for AI (2025-08-17 11:00 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { \"@"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1059",
+      "file": "pages/reports/updates/update-2025-08-17-1059.tsx",
+      "title": "Autonomous Update — 2025-08-17 10:59",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 10:59 Autonomous Update — 2025-08-17 10:59 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Zoom terms now allow training AI on "
     },
     {
       "route": "/reports/updates/update-2025-08-17-1058",
