@@ -3,7 +3,7 @@ name: YAML Syntax Validator
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: '0 0 * * *  # Daily validation'
+    - cron: '0 0 * * *' # Daily validation
 
 permissions:
   contents: write
