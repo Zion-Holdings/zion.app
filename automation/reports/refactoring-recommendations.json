@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-17T12:39:42.160Z",
+  "timestamp": "2025-08-17T12:40:37.854Z",
   "critical": [],
   "high": [],
   "medium": [
@@ -50,7 +50,7 @@
       "complexityScore": 35,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 486,
+        "totalLines": 489,
         "jobCount": 0,
         "stepCount": 13,
         "conditionalCount": 0,
@@ -86,6 +86,48 @@
       ]
     },
     {
+      "workflow": "netlify-automation.yml",
+      "status": "active",
+      "complexityScore": 40,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 217,
+        "jobCount": 1,
+        "stepCount": 16,
+        "conditionalCount": 1,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 6
+      },
+      "refactoringStrategy": [
+        "Break down into smaller job steps",
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "performance-monitoring.yml",
+      "status": "active",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 121,
+        "jobCount": 0,
+        "stepCount": 17,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 9
+      },
+      "refactoringStrategy": [
+        "Break down into smaller job steps",
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
       "workflow": "security.yml",
       "status": "active",
       "complexityScore": 30,
@@ -106,20 +148,40 @@
       ]
     },
     {
-      "workflow": "workflow-health-monitor.yml",
+      "workflow": "self-replicating-factory-manager.yml",
       "status": "active",
       "complexityScore": 30,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 236,
+        "totalLines": 531,
         "jobCount": 0,
-        "stepCount": 9,
-        "conditionalCount": 1,
+        "stepCount": 8,
+        "conditionalCount": 0,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 3
+        "actionCount": 1
+      },
+      "refactoringStrategy": [
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "seo-audit.yml",
+      "status": "active",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 114,
+        "jobCount": 0,
+        "stepCount": 13,
+        "conditionalCount": 4,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 1,
+        "actionCount": 2
       },
       "refactoringStrategy": [
         "Extract common functionality to reusable workflows"
@@ -151,7 +213,7 @@
       "complexityScore": 30,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 232,
+        "totalLines": 236,
         "jobCount": 0,
         "stepCount": 7,
         "conditionalCount": 2,
@@ -159,6 +221,46 @@
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
+        "actionCount": 3
+      },
+      "refactoringStrategy": [
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "yaml-auto-fixer-simple.yml",
+      "status": "active",
+      "complexityScore": 35,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 405,
+        "jobCount": 0,
+        "stepCount": 8,
+        "conditionalCount": 4,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 1,
+        "actionCount": 3
+      },
+      "refactoringStrategy": [
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "yaml-auto-fixer.yml",
+      "status": "active",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 234,
+        "jobCount": 0,
+        "stepCount": 8,
+        "conditionalCount": 1,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 1,
         "actionCount": 3
       },
       "refactoringStrategy": [
