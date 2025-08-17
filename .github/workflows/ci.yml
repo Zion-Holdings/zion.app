@@ -1,12 +1,14 @@
 name: CI
 
 on:
-  workflow_dispatch: {}
-  schedule:
-    - cron: '0 0 * * *'
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   actions: read
 
 concurrency:
@@ -14,10 +16,11 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  main:
-    name: Main Job
+  ci:
+    name: CI Pipeline
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -33,6 +36,32 @@ jobs:
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
 
-      - name: Complete workflow
-        run: |
-          echo "Workflow completed successfully"
+      - name: Run linting
+        run: npm run lint
+
+      - name: Type checking
+        run: npm run type-check
+
+      - name: Build application
+        run: npm run build
+        env:
+          NODE_OPTIONS: "--max-old-space-size=6144 --openssl-legacy-provider"
+
+      - name: Run tests
+        run: npm run test:ci
+        env:
+          CI: true
+
+      - name: Security audit
+        run: npm audit --audit-level=high
+        continue-on-error: true
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: build-output
+          path: |
+            .next/
+            out/
+          retention-days: 7
