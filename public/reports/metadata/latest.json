@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-17T22:13:01.090Z",
-  "pagesScanned": 8634,
+  "generatedAt": "2025-08-17T22:14:01.168Z",
+  "pagesScanned": 8635,
   "items": [
     {
       "route": "/404",
@@ -84741,14 +84741,24 @@
     {
       "route": "/reports/updates/update-2025-08-17-1913",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 19:13",
+        "description": "Autonomous Update — 2025-08-17 19:13 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1914",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-17 19:13",
-        "description": "Autonomous Update — 2025-08-17 19:13 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-17 19:14",
+        "description": "Autonomous Update — 2025-08-17 19:14 — auto-suggested description"
       }
     },
     {
