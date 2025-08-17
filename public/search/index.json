@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T00:15:03.933Z",
+  "generatedAt": "2025-08-17T00:16:03.606Z",
   "entries": [
     {
       "route": "/user-management",
@@ -462,6 +462,12 @@
       "file": "pages/reports/updates/update-2025-08-16-2130.tsx",
       "title": "Autonomous Capability Map — AI Service Design (2025-08-16 21:30 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Capability Map — AI Service Design (2025-08-16 21:30 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-16-2116",
+      "file": "pages/reports/updates/update-2025-08-16-2116.tsx",
+      "title": "Autonomous Update — 2025-08-16 21:16",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-16 21:16 Autonomous Update — 2025-08-16 21:16 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Zoom terms now allow "
     },
     {
       "route": "/reports/updates/update-2025-08-16-2115",
@@ -14114,6 +14120,12 @@
       "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-17-001505",
+      "file": "pages/reports/patterns/pattern-2025-08-17-001505.tsx",
+      "title": "Pattern — Automation Trends 2025",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Automation Trends 2025 Pattern — Automation Trends 2025 Source: https://ziontechgroup.com/blog/ai-automation-trends-2025 Context Signals indicate recurring needs around automation, trends, 2025, how"
+    },
+    {
       "route": "/reports/patterns/pattern-2025-08-17-001049",
       "file": "pages/reports/patterns/pattern-2025-08-17-001049.tsx",
       "title": "Pattern — Automation Trends 2025",
@@ -22748,6 +22760,12 @@
       "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Blueprint: Edge AI Blueprint: Edge AI Patterns to accelerate delivery. Scope: Blueprint: Edge AI. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observability,"
     },
     {
+      "route": "/reports/guides/guide-2025-08-17-001505",
+      "file": "pages/reports/guides/guide-2025-08-17-001505.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/explore Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
       "route": "/reports/guides/guide-2025-08-17-001049",
       "file": "pages/reports/guides/guide-2025-08-17-001049.tsx",
       "title": "Guide — Cloud Improving Implementation",
@@ -28392,6 +28410,12 @@
       "file": "pages/reports/dossiers/index.tsx",
       "title": "Dossiers | Zion Tech Group",
       "summary": "import Head from 'next/head'; export default function DossiersIndex() { return ( Dossiers | Zion Tech Group Dossiers Sample Dossier This is a placeholder for dossiers content. Learn more → ); }"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-17-001505",
+      "file": "pages/reports/cases/case-2025-08-17-001505.tsx",
+      "title": "Case Study — Cloud Improving",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Cloud Improving Case Study — Cloud Improving Source: https://ziontechgroup.com/landing Scenario Exploring how cloud, improving, continuously, autonomous, systems delivers value. Approach Baseline"
     },
     {
       "route": "/reports/cases/case-2025-08-17-001049",

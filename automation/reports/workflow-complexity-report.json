@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-17T00:14:27.864Z",
+  "timestamp": "2025-08-17T00:15:41.123Z",
   "summary": {
     "totalWorkflows": 187,
     "complexityDistribution": {
@@ -2735,12 +2735,12 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/pr-update-with-main.yml"
     },
     "rapid-git-sync.yml": {
-      "complexityScore": 0,
+      "complexityScore": 10,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 36,
+        "totalLines": 56,
         "jobCount": 1,
-        "stepCount": 4,
+        "stepCount": 5,
         "conditionalCount": 0,
         "matrixCount": 0,
         "dependencyCount": 0,
