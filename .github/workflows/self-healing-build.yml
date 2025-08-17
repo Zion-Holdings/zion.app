@@ -1,43 +1,47 @@
-name: self-healing-build
+name: Self-Healing Build
 
 on:
   schedule:
-    - cron: '0 2 * * *'
+    - cron: '0 0 * * *'
   workflow_dispatch:
+
+
+concurrency:
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
+
+  contents: write
+  pull-requests: write
 
 permissions:
   contents: read
   actions: read
-
-concurrency:
-  group: "${{ github.workflow }}-${{ github.ref }}"
-  cancel-in-progress: true
-
 jobs:
-  main:
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
+
+  build-and-heal:
       - name: Checkout
         uses: actions/checkout@v4
-        
-      - name: Setup Node
+          fetch-depth: 0
+      - name: Setup Node.js
         uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: npm
-          
+          node-version: 20
+          cache: 'npm'
       - name: Install dependencies
         run: npm ci
-        
-      - name: Run workflow
-        run: echo "Workflow executed successfully"
-        
-      - name: Upload results
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: workflow-results
-          path: |
-            .github/workflows/
-          retention-days: 7
+      - name: Try build
+        id: build
+      - name: Heal and retry build
+  if: steps.build.outcome == 'failure'
+          npm run ci:heal || true
+      - name: Create Pull Request if changes
+  if: always()
+          token: ${{ secrets.GITHUB_TOKEN }}"
+          commit-message: "chore(self-heal): automated build healing"
+          title: "chore(self-heal): automated build healing"
+          body: |
+            Automated build healing changes.
+          branch: automation/self-heal-build
+          delete-branch: true
+          labels: |
+            automation
+            auto-merge

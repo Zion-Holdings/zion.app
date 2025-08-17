@@ -1,11 +1,21 @@
 name: Merge Conflict Guard
 true:
-  workflow_dispatch: null
+  pull_request:
+    branches:
+    - main
+  push:
+    branches:
+    - main
   schedule:
-  - cron: 0 2 * * *
+  - cron: '*/30 * * * *'
+  workflow_dispatch: null
 concurrency:
   group: merge-guard-${{ github.ref }}
   cancel-in-progress: true
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * *' # Daily at 2 AM
 jobs:
   check-conflicts:
     runs-on: ubuntu-latest

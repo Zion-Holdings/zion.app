@@ -1,8 +1,12 @@
 name: Instagram Six-Hourly Posting
 true:
-  workflow_dispatch: null
   schedule:
-  - cron: 0 2 * * *
+  - cron: 0 */6 * * *
+  workflow_dispatch: null
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * *' # Daily at 2 AM
 jobs:
   instagram_post:
     runs-on: ubuntu-latest

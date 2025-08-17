@@ -1,8 +1,16 @@
 name: Git Health
 true:
-  workflow_dispatch: null
+  push:
+    branches:
+    - main
+    - '**'
+  pull_request: null
   schedule:
-  - cron: 0 2 * * *
+  - cron: 17 3 * * *
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * *' # Daily at 2 AM
 jobs:
   health:
     runs-on: ubuntu-latest

@@ -1,11 +1,15 @@
 name: Diverse Agent Matrix
 true:
-  workflow_dispatch: null
   schedule:
-  - cron: 0 2 * * *
+  - cron: 7 * * * *
+  workflow_dispatch: {}
 concurrency:
   group: diverse-agent-matrix-${{ github.ref }}
   cancel-in-progress: false
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * *' # Daily at 2 AM
 jobs:
   run-diverse-agents:
     name: Run ${matrix.task}

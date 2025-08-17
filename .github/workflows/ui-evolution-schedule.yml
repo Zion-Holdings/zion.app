@@ -1,8 +1,12 @@
 name: UI Evolution Daily
 true:
-  workflow_dispatch: null
   schedule:
-  - cron: 0 2 * * *
+  - cron: 15 2 * * *
+  workflow_dispatch: null
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * *' # Daily at 2 AM
 jobs:
   ui-evolution:
     runs-on: ubuntu-latest
