@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T09:25:03.824Z",
+  "generatedAt": "2025-08-17T09:26:03.683Z",
   "entries": [
     {
       "route": "/user-management",
@@ -624,6 +624,12 @@
       "file": "pages/reports/updates/update-2025-08-17-0630.tsx",
       "title": "Autonomous Checklist — Cloud Cost Optimization (2025-08-17 06:30 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Checklist — Cloud Cost Optimization (2025-08-17 06:30 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"autho"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0626",
+      "file": "pages/reports/updates/update-2025-08-17-0626.tsx",
+      "title": "Autonomous Update — 2025-08-17 06:26",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 06:26 Autonomous Update — 2025-08-17 06:26 Signal over noise—your automated update is here. Today's Highlight Hacker News : Gemini AI · 2135 pts Why it matters: autonomous"
     },
     {
       "route": "/reports/updates/update-2025-08-17-0625",
