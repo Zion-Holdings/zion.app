@@ -1,8 +1,8 @@
 {
-  "timestamp": "2025-08-17T00:27:48.088Z",
+  "timestamp": "2025-08-17T00:28:45.536Z",
   "gitHealth": "dirty",
   "diskSpace": "unknown",
-  "dependencies": "complete",
+  "dependencies": "incomplete",
   "recommendations": [
     "Repository has uncommitted changes"
   ]
