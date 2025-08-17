@@ -1,43 +1,10 @@
 {
-  "timestamp": "2025-08-17T12:35:42.596Z",
+  "timestamp": "2025-08-17T12:36:38.467Z",
   "summary": {
-    "totalWorkflows": 8,
-    "fixed": 8,
+    "totalWorkflows": 0,
+    "fixed": 0,
     "failed": 0
   },
-  "fixedWorkflows": [
-    {
-      "name": "ai-changelog.yml",
-      "status": "active"
-    },
-    {
-      "name": "ai-content-autonomy.yml",
-      "status": "active"
-    },
-    {
-      "name": "ai-it-ads-sync.yml",
-      "status": "active"
-    },
-    {
-      "name": "ai-it-innovations.yml",
-      "status": "active"
-    },
-    {
-      "name": "ai-it-multi-factory.yml",
-      "status": "active"
-    },
-    {
-      "name": "ai-it-ultrafast-sync.yml",
-      "status": "active"
-    },
-    {
-      "name": "seo-validator.yml",
-      "status": "active"
-    },
-    {
-      "name": "workflow-radar.yml",
-      "status": "active"
-    }
-  ],
+  "fixedWorkflows": [],
   "failedWorkflows": []
 }
