@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T17:10:04.470Z",
+  "generatedAt": "2025-08-17T17:11:03.999Z",
   "entries": [
     {
       "route": "/user-management",
@@ -174,6 +174,12 @@
       "file": "pages/reports/whitepapers/index.tsx",
       "title": "Whitepapers | Zion Tech Group",
       "summary": "import Head from 'next/head'; export default function WhitepapersIndex() { return ( Whitepapers | Zion Tech Group Whitepapers Sample Whitepaper This is a placeholder for whitepapers content. Learn more → ); }"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17T17-10",
+      "file": "pages/reports/updates/update-2025-08-17T17-10.tsx",
+      "title": "Autonomous Update — 2025-08-17 17-10",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-17 17-10 Autonomous Update — 2025-08-17 17-10 Signal source: https://ziontechgroup.com/landing Autonomous cloud systems are live and improving the app in real timeAutonomous Cloud "
     },
     {
       "route": "/reports/updates/update-2025-08-17T17-00",
@@ -806,6 +812,12 @@
       "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-17 00-00 Autonomous Update — 2025-08-17 00-00 Signal source: https://ziontechgroup.com/landing Autonomous cloud systems are live and improving the app in real timeAutonomous Cloud "
     },
     {
+      "route": "/reports/updates/update-2025-08-17-1710",
+      "file": "pages/reports/updates/update-2025-08-17-1710.tsx",
+      "title": "Autonomous Reference Architecture — Evaluation & Safety (2025-08-17 17:10 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Reference Architecture — Evaluation & Safety (2025-08-17 17:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}"
+    },
+    {
       "route": "/reports/updates/update-2025-08-17-1700",
       "file": "pages/reports/updates/update-2025-08-17-1700.tsx",
       "title": "Autonomous Checklist — Evaluation & Safety (2025-08-17 17:00 UTC)",
@@ -906,6 +918,12 @@
       "file": "pages/reports/updates/update-2025-08-17-1420.tsx",
       "title": "Autonomous Performance Tuning Guide — MLOps & Model Reliability (2025-08-17 14:20 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Performance Tuning Guide — MLOps & Model Reliability (2025-08-17 14:20 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${s"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1411",
+      "file": "pages/reports/updates/update-2025-08-17-1411.tsx",
+      "title": "Autonomous Update — 2025-08-17 14:11",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 14:11 Autonomous Update — 2025-08-17 14:11 Signal over noise—your automated update is here. Today's Highlight Hacker News : The young, inexperienced engineers aiding DOGE "
     },
     {
       "route": "/reports/updates/update-2025-08-17-1410",
@@ -17060,6 +17078,12 @@
       "summary": "import Head from 'next/head'; export default function TutorialsIndex() { return ( Tutorials | Zion Tech Group Tutorials Sample Tutorial This is a placeholder for tutorials content. Learn more → ); }"
     },
     {
+      "route": "/reports/playbooks/playbook-2025-08-17-171059",
+      "file": "pages/reports/playbooks/playbook-2025-08-17-171059.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/blog/ai-automation-trends-2025 Purpose Operational steps to execute reliably with measurable outcomes. Ch"
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-17-170100",
       "file": "pages/reports/playbooks/playbook-2025-08-17-170100.tsx",
       "title": "Playbook — Autonomous Delivery",
@@ -21420,6 +21444,12 @@
       "file": "pages/reports/playbooks/playbook-2025-08-15-021207.tsx",
       "title": "Playbook — Autonomous Delivery",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/explore Purpose Operational steps to execute reliably with measurable outcomes. Checklist Define objectiv"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-17-171059",
+      "file": "pages/reports/patterns/pattern-2025-08-17-171059.tsx",
+      "title": "Pattern — Automation Trends 2025",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Automation Trends 2025 Pattern — Automation Trends 2025 Source: https://ziontechgroup.com/blog/ai-automation-trends-2025 Context Signals indicate recurring needs around automation, trends, 2025, how"
     },
     {
       "route": "/reports/patterns/pattern-2025-08-17-170059",
@@ -27698,6 +27728,12 @@
       "summary": "import Head from 'next/head'; export default function InsightsIndex() { return ( Insights | Zion Tech Group Insights Sample Insight This is a placeholder for insights content. Learn more → ); }"
     },
     {
+      "route": "/reports/innovations/insight-2025-08-17T17-10",
+      "file": "pages/reports/innovations/insight-2025-08-17T17-10.tsx",
+      "title": "Innovation Insight — 2025-08-17 17-10",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-17 17-10 Innovation Insight — 2025-08-17 17-10 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-17T17-00",
       "file": "pages/reports/innovations/insight-2025-08-17T17-00.tsx",
       "title": "Innovation Insight — 2025-08-17 17-00",
@@ -28326,6 +28362,12 @@
       "file": "pages/reports/innovations/insight-2025-08-17T00-00.tsx",
       "title": "Innovation Insight — 2025-08-17 00-00",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-17 00-00 Innovation Insight — 2025-08-17 00-00 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-17-1710",
+      "file": "pages/reports/innovations/insight-2025-08-17-1710.tsx",
+      "title": "Pilot Plan: LLM Apps",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Pilot Plan: LLM Apps Pilot Plan: LLM Apps Patterns to accelerate delivery. Scope: Pilot Plan: LLM Apps. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observab"
     },
     {
       "route": "/reports/innovations/insight-2025-08-17-1700",
@@ -31920,6 +31962,12 @@
       "file": "pages/reports/innovations/insight-2025-08-15-0211.tsx",
       "title": "Blueprint: Edge AI",
       "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Blueprint: Edge AI Blueprint: Edge AI Patterns to accelerate delivery. Scope: Blueprint: Edge AI. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observability,"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-17-171059",
+      "file": "pages/reports/guides/guide-2025-08-17-171059.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/explore Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
     },
     {
       "route": "/reports/guides/guide-2025-08-17-170059",
@@ -38210,6 +38258,12 @@
       "summary": "import Head from 'next/head'; export default function DossiersIndex() { return ( Dossiers | Zion Tech Group Dossiers Sample Dossier This is a placeholder for dossiers content. Learn more → ); }"
     },
     {
+      "route": "/reports/cases/case-2025-08-17-171059",
+      "file": "pages/reports/cases/case-2025-08-17-171059.tsx",
+      "title": "Case Study — Cloud Improving",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Cloud Improving Case Study — Cloud Improving Source: https://ziontechgroup.com/landing Scenario Exploring how cloud, improving, continuously, autonomous, systems delivers value. Approach Baseline"
+    },
+    {
       "route": "/reports/cases/case-2025-08-17-170059",
       "file": "pages/reports/cases/case-2025-08-17-170059.tsx",
       "title": "Case Study — Cloud Improving",
@@ -44106,6 +44160,12 @@
       "file": "pages/reports/case-studies/ai-automation-success.tsx",
       "title": "AI-Powered Automation Success Story - TechCorp Industries | Zion Tech Group",
       "summary": "import Head from 'next/head'; import Link from 'next/link'; export default function AIAutomationCaseStudy() { return ( AI-Powered Automation Success Story - TechCorp Industries | Zion Tech Group {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \""
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-17-171059",
+      "file": "pages/reports/blueprints/blueprint-2025-08-17-171059.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-17-170059",
