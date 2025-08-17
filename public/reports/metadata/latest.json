@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-17T20:30:01.792Z",
-  "pagesScanned": 8438,
+  "generatedAt": "2025-08-17T20:31:01.148Z",
+  "pagesScanned": 8441,
   "items": [
     {
       "route": "/404",
@@ -34666,6 +34666,16 @@
       "suggestion": {
         "title": "Runbook: Agent Ops",
         "description": "Runbook: Agent Ops — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-17-2030",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Checklist: RAG Platforms",
+        "description": "Checklist: RAG Platforms — auto-suggested description"
       }
     },
     {
@@ -82919,6 +82929,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-17-1731",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 17:31",
+        "description": "Autonomous Update — 2025-08-17 17:31 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-17-1740",
       "missing": [
         "og:image"
@@ -83076,6 +83099,16 @@
       "suggestion": {
         "title": "Autonomous Checklist — AI Service Design (2025-08-17 20:20 UTC)",
         "description": "Autonomous Checklist — AI Service Design (2025-08-17 20:20 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-2030",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Playbook — MLOps & Model Reliability (2025-08-17 20:30 UTC)",
+        "description": "Autonomous Playbook — MLOps & Model Reliability (2025-08-17 20:30 UTC) — auto-suggested description"
       }
     },
     {
