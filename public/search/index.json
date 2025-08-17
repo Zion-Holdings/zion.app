@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T11:33:03.611Z",
+  "generatedAt": "2025-08-17T11:34:03.681Z",
   "entries": [
     {
       "route": "/user-management",
@@ -702,6 +702,12 @@
       "file": "pages/reports/updates/update-2025-08-17-0840.tsx",
       "title": "Autonomous Playbook — Data Engineering (2025-08-17 08:40 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Data Engineering (2025-08-17 08:40 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { \"@"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0834",
+      "file": "pages/reports/updates/update-2025-08-17-0834.tsx",
+      "title": "Autonomous Update — 2025-08-17 08:34",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 08:34 Autonomous Update — 2025-08-17 08:34 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : The young, inexperienced engineers a"
     },
     {
       "route": "/reports/updates/update-2025-08-17-0833",
