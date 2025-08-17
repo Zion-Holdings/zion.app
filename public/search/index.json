@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T07:04:03.515Z",
+  "generatedAt": "2025-08-17T07:05:03.567Z",
   "entries": [
     {
       "route": "/user-management",
@@ -540,6 +540,12 @@
       "file": "pages/reports/updates/update-2025-08-17-0410.tsx",
       "title": "Autonomous Blueprint — Data Engineering (2025-08-17 04:10 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Blueprint — Data Engineering (2025-08-17 04:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { \""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0405",
+      "file": "pages/reports/updates/update-2025-08-17-0405.tsx",
+      "title": "Autonomous Update — 2025-08-17 04:05",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 04:05 Autonomous Update — 2025-08-17 04:05 Signal over noise—your automated update is here. Today's Highlight Hacker News : Paper Airplane Designs · 1753 pts Why it matter"
     },
     {
       "route": "/reports/updates/update-2025-08-17-0404",
