@@ -1,18 +1,18 @@
 {
-  "timestamp": "2025-08-17T01:04:35.989Z",
+  "timestamp": "2025-08-17T01:05:40.504Z",
   "summary": {
     "totalWorkflows": 191,
     "complexityDistribution": {
       "very-high": 0,
       "high": 6,
-      "medium": 4,
-      "low": 181
+      "medium": 5,
+      "low": 180
     },
     "refactoringPriorities": {
       "critical": 0,
       "high": 6,
-      "medium": 4,
-      "low": 181
+      "medium": 5,
+      "low": 180
     }
   },
   "workflows": {
@@ -3419,20 +3419,20 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/workflow-watchdog.yml"
     },
     "yaml-auto-fixer.yml": {
-      "complexityScore": 0,
-      "complexityLevel": "low",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 1,
+        "totalLines": 241,
         "jobCount": 0,
-        "stepCount": 0,
-        "conditionalCount": 0,
+        "stepCount": 8,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 0,
-        "actionCount": 0
+        "secretCount": 1,
+        "actionCount": 3
       },
-      "refactoringPriority": "low",
+      "refactoringPriority": "medium",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/yaml-auto-fixer.yml"
     },

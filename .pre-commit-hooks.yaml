@@ -1,0 +1,76 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-yaml
+        name: Check YAML syntax
+        description: Validates YAML files for syntax errors
+        types: [yaml, yml]
+        args: [--allow-multiple-documents]
+      
+      - id: check-json
+        name: Check JSON syntax
+        description: Validates JSON files for syntax errors
+        types: [json]
+      
+      - id: trailing-whitespace
+        name: Trailing whitespace
+        description: Trims trailing whitespace
+        types: [text]
+      
+      - id: end-of-file-fixer
+        name: End of file fixer
+        description: Ensures files end with a newline
+        types: [text]
+
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.32.0
+    hooks:
+      - id: yamllint
+        name: YAML Lint
+        description: Lints YAML files for style and syntax issues
+        args: [--strict]
+        types: [yaml, yml]
+
+  - repo: local
+    hooks:
+      - id: yaml-syntax-check
+        name: YAML Syntax Check
+        description: Custom YAML syntax validation
+        entry: python -c "
+import sys
+import yaml
+from pathlib import Path
+
+def check_yaml_file(file_path):
+    try:
+        with open(file_path, 'r') as f:
+            yaml.safe_load(f)
+        return True
+    except Exception as e:
+        print(f'❌ {file_path}: {e}')
+        return False
+
+def main():
+    yaml_files = [f for f in sys.argv[1:] if f.endswith(('.yml', '.yaml'))]
+    if not yaml_files:
+        return 0
+    
+    invalid_files = []
+    for file_path in yaml_files:
+        if not check_yaml_file(file_path):
+            invalid_files.append(file_path)
+    
+    if invalid_files:
+        print(f'\\n❌ Found {len(invalid_files)} invalid YAML files')
+        return 1
+    
+    print('✅ All YAML files are valid!')
+    return 0
+
+if __name__ == '__main__':
+    sys.exit(main())
+        "
+        language: python
+        types: [yaml, yml]
+        pass_filenames: true
