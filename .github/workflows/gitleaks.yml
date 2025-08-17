@@ -23,24 +23,24 @@ jobs:
     timeout-minutes: 20
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+  uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Run Gitleaks
-        uses: zricethezav/gitleaks-action@v2
+  uses: zricethezav/gitleaks-action@v2
         with:
           args: --verbose --redact --exit-code 1
 
       - name: Generate SARIF report
-        if: always()
+  if: always()
         run: |
           curl -sSL https://github.com/gitleaks/gitleaks/releases/download/v8.18.4/gitleaks_8.18.4_linux_x64.tar.gz -o gitleaks.tgz
           tar -xzf gitleaks.tgz
           ./gitleaks detect --no-git -v --report-format sarif --report-path gitleaks.sarif || true
 
       - name: Upload SARIF to code scanning
-        if: always()
+  if: always()
         uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: gitleaks.sarif

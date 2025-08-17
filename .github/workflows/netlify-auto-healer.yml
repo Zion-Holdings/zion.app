@@ -26,13 +26,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js 20.x
-        uses: actions/setup-node@v4
+  uses: actions/setup-node@v4
         with:
           node-version: 20.x
       - name: Run auto-healer
         run: node automation/netlify-auto-healer.cjs
       - name: Create issue on failure
-        if: failure()
+  if: failure()
         uses: actions/github-script@v7
         with:
           script: |"

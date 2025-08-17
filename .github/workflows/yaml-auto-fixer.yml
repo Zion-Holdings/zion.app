@@ -21,12 +21,12 @@ jobs:
     name: Auto-Fix YAML Syntax
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+  uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Python
-        uses: actions/setup-python@v4
+  uses: actions/setup-python@v4
         with:
           python-version: '3.11'
 
@@ -202,7 +202,7 @@ jobs:
           EOF
 
       - name: Run YAML auto-fixer
-        env:
+  env:
           FIX_MODE: ${{ github.event.inputs.fix_mode || 'conservative' }}
         run: |
           python3 yaml_fixer.py
@@ -213,7 +213,7 @@ jobs:
           python3 yaml_fixer.py validate-only
 
       - name: Create fix report
-        if: always()
+  if: always()
         run: |
           echo "📝 Creating fix report..."
           
@@ -234,7 +234,7 @@ jobs:
           EOF
 
       - name: Upload fix report
-        uses: actions/upload-artifact@v3
+  uses: actions/upload-artifact@v3
         with:
           name: yaml-fix-report
           path: yaml-fix-report.md

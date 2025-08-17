@@ -25,12 +25,12 @@ jobs:
     
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+  uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+  uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
@@ -73,7 +73,7 @@ jobs:
           TARGET_BRANCH: "main"
 
       - name: Upload health reports
-        if: always()
+  if: always()
         uses: actions/upload-artifact@v4
         with:
           name: workflow-health-reports
@@ -84,7 +84,7 @@ jobs:
           if-no-files-found: ignore
 
       - name: Commit health improvements
-        if: always()
+  if: always()
         run: |
           if [ -n "$(git status --porcelain)" ]; then
             git add -A
@@ -96,7 +96,7 @@ jobs:
         continue-on-error: true
 
       - name: Create health summary
-        if: always()
+  if: always()
         run: |
           if [ -f "automation/logs/workflow-health-report.json" ]; then
             echo "## 📊 Workflow Health Summary" >> $GITHUB_STEP_SUMMARY

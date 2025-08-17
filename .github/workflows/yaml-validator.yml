@@ -18,10 +18,10 @@ jobs:
     name: Validate YAML Syntax
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+  uses: actions/checkout@v4
 
       - name: Setup Python
-        uses: actions/setup-python@v4
+  uses: actions/setup-python@v4
         with:
           python-version: '3.11'
 
@@ -67,7 +67,7 @@ jobs:
           fi
 
       - name: Create validation report
-        if: steps.validate.outputs.invalid_count != '0'
+  if: steps.validate.outputs.invalid_count != '0'
         run: |
           echo "📝 Creating validation report..."
           
@@ -93,14 +93,14 @@ jobs:
           done
 
       - name: Upload validation report
-        if: steps.validate.outputs.invalid_count != '0'
+  if: steps.validate.outputs.invalid_count != '0'
         uses: actions/upload-artifact@v3
         with:
           name: yaml-validation-report
           path: yaml-validation-report.md
 
       - name: Comment on PR
-        if: github.event_name == 'pull_request' && steps.validate.outputs.invalid_count != '0'
+  if: github.event_name == 'pull_request' && steps.validate.outputs.invalid_count != '0'
         uses: actions/github-script@v6
         with:
           script: |

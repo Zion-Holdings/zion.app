@@ -41,7 +41,7 @@ jobs:
       next-target: ${{ steps.target.outputs.next }}
     steps:
       - uses: actions/checkout@v4
-        with:
+  with:
           fetch-depth: 0
       
       - name: Count existing agent factories
@@ -81,7 +81,7 @@ jobs:
       - uses: actions/checkout@v4
       
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+  uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'

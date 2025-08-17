@@ -20,7 +20,7 @@ jobs:
     timeout-minutes: 20
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+  uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -65,7 +65,7 @@ jobs:
             core.setOutput('pr_number', String(pr.number));
 
       - name: Ensure 'automerge' label exists
-        uses: "actions/github-script@v7
+  uses: "actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |"
@@ -87,7 +87,7 @@ jobs:
             }
 
       - name: Add automerge label
-        if: "steps.cpr.outputs.pr_number
+  if: "steps.cpr.outputs.pr_number
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -101,7 +101,7 @@ jobs:
             });
 
       - name: Enable auto-merge
-        if: "steps.cpr.outputs.pr_number
+  if: "steps.cpr.outputs.pr_number
         uses: peter-evans/enable-pull-request-automerge@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}

@@ -21,10 +21,10 @@ jobs:
     timeout-minutes: 60
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+  uses: actions/checkout@v4
         
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+  uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
@@ -41,7 +41,7 @@ jobs:
           echo "Review the generated suggestions in automation/reports/"
           
       - name: Upload content analysis
-        uses: actions/upload-artifact@v4
+  uses: actions/upload-artifact@v4
         with:
           name: content-analysis
           path: automation/reports/
@@ -52,7 +52,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+  uses: actions/checkout@v4
         
       - name: Create content tasks
         run: |

@@ -20,7 +20,7 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: codelytv/pr-size-labeler@v1
-        with:
+  with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           xs_label: size/XS
           s_label: size/S

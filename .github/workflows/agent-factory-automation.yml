@@ -61,13 +61,13 @@ jobs:
     
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+  uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+  uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}"
           cache: 'npm'
@@ -266,10 +266,10 @@ jobs:
     
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+  uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+  uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
 
@@ -312,7 +312,7 @@ jobs:
     
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+  uses: actions/checkout@v4
 
       - name: Analyze Agent Performance
         run: |
@@ -383,7 +383,7 @@ jobs:
     
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+  uses: actions/checkout@v4
 
       - name: Calculate Growth Metrics
         run: |
@@ -438,7 +438,7 @@ jobs:
     
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+  uses: actions/checkout@v4
 
       - name: Analyze Development Patterns
         run: |

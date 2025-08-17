@@ -21,11 +21,11 @@ jobs:
     timeout-minutes: 25
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+  uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+  uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
@@ -37,12 +37,12 @@ jobs:
         run: |
           node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('depcheck.json','utf8'));const u=[...new Set([...(r.dependencies||[]),...(r.devDependencies||[])])];if(u.length){console.log('Unused:',u);process.exit(0)}else{console.log('No unused deps');process.exit(2)}" || echo "NONE" > /dev/null
       - name: Prune and test
-        if: success()
+  if: success()
         run: |
           node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('depcheck.json','utf8'));const u=[...new Set([...(r.dependencies||[]),...(r.devDependencies||[])])];if(u.length){const {execSync}=require('child_process');for(const d of u){try{execSync(`npm uninstall ${d}`,{stdio:'inherit'})}catch(e){}}}"
           npm run build || npm run build:heal || true
       - name: Create Pull Request
-        if: success()
+  if: success()
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}

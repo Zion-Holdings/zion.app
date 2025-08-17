@@ -22,7 +22,7 @@ jobs:
     timeout-minutes: 15
     steps:
       - name: Checkout full history
-        uses: actions/checkout@v4
+  uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -40,7 +40,7 @@ jobs:
           cat local_branches.txt
 
       - name: Rebase ephemeral branches on main
-        env:
+  env:
           BRANCH_PREFIXES: 'cursor/,feat/,fix/,chore/,refactor/'
         run: |
           set -euo pipefail

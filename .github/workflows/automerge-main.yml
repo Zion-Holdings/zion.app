@@ -22,7 +22,7 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-        with:
+  with:
           fetch-depth: 0
       - name: Ensure no conflicts with base
         run: |
@@ -33,7 +33,7 @@ jobs:
           }
           git merge --abort || true
       - name: Enable auto-merge
-        uses: "peter-evans/enable-pull-request-automerge@v1
+  uses: "peter-evans/enable-pull-request-automerge@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           pull-request-number: ${{ github.event.pull_request.number }}

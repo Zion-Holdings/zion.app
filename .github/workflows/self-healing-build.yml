@@ -21,11 +21,11 @@ jobs:
     timeout-minutes: 25
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+  uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+  uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
@@ -36,11 +36,11 @@ jobs:
         continue-on-error: true
         run: npm run build | cat
       - name: Heal and retry build
-        if: steps.build.outcome == 'failure'
+  if: steps.build.outcome == 'failure'
         run: |
           npm run ci:heal || true
       - name: Create Pull Request if changes
-        if: always()
+  if: always()
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}"
