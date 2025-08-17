@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-17T21:40:01.996Z",
-  "pagesScanned": 8568,
+  "generatedAt": "2025-08-17T21:41:01.242Z",
+  "pagesScanned": 8571,
   "items": [
     {
       "route": "/404",
@@ -34966,6 +34966,16 @@
       "suggestion": {
         "title": "Playbook: DevSecOps AI",
         "description": "Playbook: DevSecOps AI — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-17-2140",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Runbook: RAG Platforms",
+        "description": "Runbook: RAG Platforms — auto-suggested description"
       }
     },
     {
@@ -84139,6 +84149,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-17-1841",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 18:41",
+        "description": "Autonomous Update — 2025-08-17 18:41 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-17-1850",
       "missing": [
         "og:image"
@@ -84306,6 +84329,16 @@
       "suggestion": {
         "title": "Autonomous Validation & QA Plan — Applied NLP & RAG (2025-08-17 21:30 UTC)",
         "description": "Autonomous Validation & QA Plan — Applied NLP & RAG (2025-08-17 21:30 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-2140",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Capability Map — Vision & Multimodal (2025-08-17 21:40 UTC)",
+        "description": "Autonomous Capability Map — Vision & Multimodal (2025-08-17 21:40 UTC) — auto-suggested description"
       }
     },
     {
