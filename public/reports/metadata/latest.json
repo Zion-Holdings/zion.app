@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-17T21:00:01.622Z",
-  "pagesScanned": 8492,
+  "generatedAt": "2025-08-17T21:01:01.090Z",
+  "pagesScanned": 8496,
   "items": [
     {
       "route": "/404",
@@ -34786,6 +34786,16 @@
       "suggestion": {
         "title": "Pilot Plan: FinOps for AI",
         "description": "Pilot Plan: FinOps for AI — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-17-2100",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pilot Plan: MLOps",
+        "description": "Pilot Plan: MLOps — auto-suggested description"
       }
     },
     {
@@ -83419,6 +83429,29 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-17-1800",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 18:00",
+        "description": "Autonomous Update — 2025-08-17 18:00 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1801",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 18:01",
+        "description": "Autonomous Update — 2025-08-17 18:01 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-17-1810",
       "missing": [
         "og:image"
@@ -83586,6 +83619,16 @@
       "suggestion": {
         "title": "Autonomous Playbook — AI Service Design (2025-08-17 20:50 UTC)",
         "description": "Autonomous Playbook — AI Service Design (2025-08-17 20:50 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-2100",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Performance Tuning Guide — Applied NLP & RAG (2025-08-17 21:00 UTC)",
+        "description": "Autonomous Performance Tuning Guide — Applied NLP & RAG (2025-08-17 21:00 UTC) — auto-suggested description"
       }
     },
     {
