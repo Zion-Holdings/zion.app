@@ -3,7 +3,8 @@ name: Content Generation
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: '0 2 * * 1  # Every Monday at 2 AM'
+    # Every Monday at 2 AM
+    - cron: '0 2 * * 1'
 
 permissions:
   contents: write

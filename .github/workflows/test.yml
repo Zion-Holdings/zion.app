@@ -7,7 +7,7 @@ on:
     branches: [ main, develop ]
   workflow_dispatch: {}
   schedule:
-    - cron: '0 2 * * *' # Daily at 2 AM
+    - cron: '0 2 * * *' # Daily at 2 AM UTC
 
 permissions:
   contents: read
@@ -21,13 +21,11 @@ jobs:
   test:
     name: Run Tests
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 20
     
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -41,19 +39,17 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
-      - name: Build application for testing
+      - name: Build application
         run: npm run build
-        env:
-          NODE_OPTIONS: "--max-old-space-size=6144 --openssl-legacy-provider"
 
       - name: Start application
         run: npm run start &
         env:
-          NODE_OPTIONS: "--max-old-space-size=6144 --openssl-legacy-provider"
+          NODE_OPTIONS: "--max-old-space-size=4096"
 
-      - name: Wait for application to start
+      - name: Wait for app to be ready
         run: |
-          timeout 60 bash -c 'until curl -f http://localhost:3000 >/dev/null 2>&1; do sleep 2; done'
+          timeout 60 bash -c 'until curl -f http://localhost:3000 > /dev/null 2>&1; do sleep 2; done'
 
       - name: Run Playwright tests
         run: npx playwright test --reporter=html
@@ -68,10 +64,26 @@ jobs:
           path: playwright-report/
           retention-days: 7
 
-      - name: Upload test screenshots
-        uses: actions/upload-artifact@v4
-        if: always()
+  lint-and-typecheck:
+    name: Code Quality
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          name: test-screenshots
-          path: test-results/
-          retention-days: 7
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Type check
+        run: npm run type-check
+
+      - name: Lint
+        run: npm run lint

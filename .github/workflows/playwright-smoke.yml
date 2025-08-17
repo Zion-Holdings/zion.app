@@ -5,21 +5,23 @@ on:
     branches: [ main, develop ]
   pull_request:
     branches: [ main, develop ]
-  workflow_dispatch:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '0 4 * * *' # Daily at 4 AM UTC
 
 permissions:
   contents: read
   actions: read
 
 concurrency:
-  group: "github.workflow-${{ github.ref }}"
+  group: "smoke-test-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:
   smoke-test:
     name: Smoke Tests
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 15
     
     steps:
       - name: Checkout repository
@@ -39,23 +41,19 @@ jobs:
 
       - name: Build application
         run: npm run build
-        env:
-          NODE_OPTIONS: "--max-old-space-size=6144 --openssl-legacy-provider"
 
       - name: Start application
-        run: npm start &
+        run: npm run start &
         env:
-          NODE_OPTIONS: "--max-old-space-size=4096 --openssl-legacy-provider"
+          NODE_OPTIONS: "--max-old-space-size=4096"
 
       - name: Wait for app to be ready
         run: |
           timeout 60 bash -c 'until curl -f http://localhost:3000 > /dev/null 2>&1; do sleep 2; done'
-        timeout-minutes: 2
 
       - name: Run smoke tests
-        run: npx playwright test tests/smoke.spec.ts --project=chromium --reporter=list
+        run: npx playwright test smoke.spec.ts --project=chromium --reporter=html
         env:
-          CI: true
           BASE_URL: http://localhost:3000
 
       - name: Upload test results
@@ -63,5 +61,5 @@ jobs:
         if: always()
         with:
           name: smoke-test-results
-          path: test-results/
+          path: playwright-report/
           retention-days: 7

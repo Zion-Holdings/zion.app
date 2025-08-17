@@ -2485,19 +2485,20 @@
   "playwright-smoke.yml": {
     "name": "playwright-smoke.yml",
     "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
+      "push",
+      "pull_request",
+      "workflow_dispatch"
     ],
     "needs": [],
     "outputs": [],
     "priority": "high",
     "resourceRequirements": {
       "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
+      "memory": "high",
+      "timeout": 30,
       "concurrentJobs": 5
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 30
   },
   "pr-auto-curator.yml": {
     "name": "pr-auto-curator.yml",
@@ -3017,19 +3018,16 @@
       "workflow_dispatch {}",
       "schedule"
     ],
-    "needs": [
-      "[unit-tests",
-      "integration-tests]"
-    ],
+    "needs": [],
     "outputs": [],
     "priority": "medium",
     "resourceRequirements": {
       "runner": "ubuntu-latest",
-      "memory": "high",
-      "timeout": 30,
+      "memory": "medium",
+      "timeout": 20,
       "concurrentJobs": 5
     },
-    "estimatedDuration": 30
+    "estimatedDuration": 20
   },
   "todo-issue-sync.yml": {
     "name": "todo-issue-sync.yml",

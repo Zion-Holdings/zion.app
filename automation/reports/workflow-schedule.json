@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-17T11:39:34.979Z",
+  "timestamp": "2025-08-17T11:40:49.346Z",
   "critical": [
     {
       "name": "auto-heal-workflows.yml",
@@ -2857,25 +2857,6 @@
       "resourceScore": 114
     },
     {
-      "name": "playwright-smoke.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/playwright-smoke.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 20,
-      "concurrentJobs": 6,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "workflow_dispatch {}",
-        "schedule"
-      ],
-      "resourceScore": 114
-    },
-    {
       "name": "pr-auto-curator.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/pr-auto-curator.yml",
       "priority": "medium",
@@ -3621,24 +3602,41 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/test.yml",
       "priority": "medium",
       "resourceIntensity": "medium",
-      "estimatedDuration": 30,
-      "concurrentJobs": 14,
+      "estimatedDuration": 20,
+      "concurrentJobs": 11,
       "runnerRequirements": {
         "runner": "ubuntu-latest",
-        "size": "large",
+        "size": "standard",
         "special": []
       },
-      "dependencies": [
-        "[unit-tests",
-        "integration-tests]"
-      ],
+      "dependencies": [],
       "triggers": [
         "push",
         "pull_request",
         "workflow_dispatch {}",
         "schedule"
       ],
-      "resourceScore": 100
+      "resourceScore": 110
+    },
+    {
+      "name": "playwright-smoke.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/playwright-smoke.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 30,
+      "concurrentJobs": 8,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "large",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "push",
+        "pull_request",
+        "workflow_dispatch"
+      ],
+      "resourceScore": 102
     }
   ],
   "low": [
