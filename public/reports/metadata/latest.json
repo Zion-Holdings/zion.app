@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-17T18:10:01.857Z",
-  "pagesScanned": 8186,
+  "generatedAt": "2025-08-17T18:11:01.037Z",
+  "pagesScanned": 8189,
   "items": [
     {
       "route": "/404",
@@ -34106,6 +34106,16 @@
       "suggestion": {
         "title": "Playbook: LLM Apps",
         "description": "Playbook: LLM Apps — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-17-1810",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide: Agent Ops",
+        "description": "Guide: Agent Ops — auto-suggested description"
       }
     },
     {
@@ -80539,6 +80549,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-17-1511",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 15:11",
+        "description": "Autonomous Update — 2025-08-17 15:11 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-17-1520",
       "missing": [
         "og:image"
@@ -80696,6 +80719,16 @@
       "suggestion": {
         "title": "Autonomous Blueprint — AI Service Design (2025-08-17 17:50 UTC)",
         "description": "Autonomous Blueprint — AI Service Design (2025-08-17 17:50 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1810",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Performance Tuning Guide — Agentic Workflows (2025-08-17 18:10 UTC)",
+        "description": "Autonomous Performance Tuning Guide — Agentic Workflows (2025-08-17 18:10 UTC) — auto-suggested description"
       }
     },
     {

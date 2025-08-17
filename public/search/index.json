@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T18:10:04.984Z",
+  "generatedAt": "2025-08-17T18:11:03.705Z",
   "entries": [
     {
       "route": "/user-management",
@@ -836,6 +836,12 @@
       "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-17 00-00 Autonomous Update — 2025-08-17 00-00 Signal source: https://ziontechgroup.com/landing Autonomous cloud systems are live and improving the app in real timeAutonomous Cloud "
     },
     {
+      "route": "/reports/updates/update-2025-08-17-1810",
+      "file": "pages/reports/updates/update-2025-08-17-1810.tsx",
+      "title": "Autonomous Performance Tuning Guide — Agentic Workflows (2025-08-17 18:10 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Performance Tuning Guide — Agentic Workflows (2025-08-17 18:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}"
+    },
+    {
       "route": "/reports/updates/update-2025-08-17-1750",
       "file": "pages/reports/updates/update-2025-08-17-1750.tsx",
       "title": "Autonomous Blueprint — AI Service Design (2025-08-17 17:50 UTC)",
@@ -930,6 +936,12 @@
       "file": "pages/reports/updates/update-2025-08-17-1520.tsx",
       "title": "Autonomous Playbook — AI Service Design (2025-08-17 15:20 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — AI Service Design (2025-08-17 15:20 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { \""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1511",
+      "file": "pages/reports/updates/update-2025-08-17-1511.tsx",
+      "title": "Autonomous Update — 2025-08-17 15:11",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 15:11 Autonomous Update — 2025-08-17 15:11 Signal over noise—your automated update is here. Today's Highlight Hacker News : Airfoil · 2544 pts Why it matters: autonomous c"
     },
     {
       "route": "/reports/updates/update-2025-08-17-1510",
@@ -28788,6 +28800,12 @@
       "file": "pages/reports/innovations/insight-2025-08-17T00-00.tsx",
       "title": "Innovation Insight — 2025-08-17 00-00",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-17 00-00 Innovation Insight — 2025-08-17 00-00 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-17-1810",
+      "file": "pages/reports/innovations/insight-2025-08-17-1810.tsx",
+      "title": "Guide: Agent Ops",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Guide: Agent Ops Guide: Agent Ops Patterns to reduce cost. Scope: Guide: Agent Ops. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observability, rollback, SLO"
     },
     {
       "route": "/reports/innovations/insight-2025-08-17-1750",
