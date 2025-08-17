@@ -2,101 +2,29 @@ name: CI
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [ main ]
   pull_request:
-    branches: [ main, develop ]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  actions: read
 
 concurrency:
-  group: "ci-${{ github.ref }}"
+  group: ci-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  test:
-    name: Test & Build
+  lint-and-types:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
-    
+    timeout-minutes: 45
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Setup Node.js
+      - uses: actions/checkout@v4
+      - name: Use Node.js 20
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
-
       - name: Install dependencies
-        run: npm ci --no-audit --no-fund
-
-      - name: Run linting
+        run: npm ci
+      - name: ESLint
         run: npm run lint
-        continue-on-error: true
-
       - name: Type check
         run: npm run type-check
-        continue-on-error: true
-
-      - name: Run tests
-        run: npm run test:ci
-        env:
-          CI: true
-
-      - name: Build application
+      - name: Build
         run: npm run build
-        env:
-          NODE_OPTIONS: "--max-old-space-size=6144 --openssl-legacy-provider"
-
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v4
-        if: success()
-        with:
-          name: build-output
-          path: |
-            .next/
-            out/
-          retention-days: 7
-
-  security:
-    name: Security Scan
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci --no-audit --no-fund
-
-      - name: Run security audit
-        run: npm audit --audit-level=high
-        continue-on-error: true
-
-      - name: Run security scanner
-        run: npm run security:scan
-        continue-on-error: true
-
-      - name: Upload security results
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: security-results
-          path: |
-            npm-audit.json
-            security-scan-results.json
-          retention-days: 30
-

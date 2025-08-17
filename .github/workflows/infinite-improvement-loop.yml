@@ -1,25 +1,19 @@
-name: Diverse Agent Matrix
+name: Infinite Improvement Loop
 
 on:
   schedule:
-    - cron: '7 * * * *'
+    - cron: '*/30 * * * *'
   workflow_dispatch: {}
 
 concurrency:
-  group: diverse-agent-matrix-${{ github.ref }}
+  group: infinite-improvement-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
-  run-diverse-agents:
-    name: Run ${matrix.task}
+  improve:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      max-parallel: 3
-      matrix:
-        task: [seo, security, testgen, frontend-sync, variation, meta, responsive, monetization, saas, ui-evolution]
     permissions:
-      contents: write
+      contents: read
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -30,23 +24,29 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
+          cache: npm
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Run diverse agent
-        env:
-          MATRIX_TASK: ${{ matrix.task }}
-        run: |
-          node automation/diverse-agent-runner.cjs "$MATRIX_TASK" || true
+      - name: Run consolidated improvement runner
+        run: node automation/infinite-improvement-runner.cjs || true
 
-      - name: Upload agent logs
+      - name: Lint and type-check
+        run: |
+          npm run lint
+          npm run type-check
+
+      - name: Build (smoke)
+        run: npm run build
+
+      - name: Upload improvement artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: diverse-agent-${{ matrix.task }}-logs
+          name: infinite-improvement-artifacts
           path: |
-            automation/logs/diverse-agent-matrix/${{ matrix.task }}-*.log
+            automation/logs/**/*
+            data/reports/**/*.json
           if-no-files-found: ignore
 
       - name: Commit and push changes
@@ -55,8 +55,8 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add -A
-            git commit -m "chore(automation): diverse agent matrix (${MATRIX_TASK}) updates [skip ci]"
-            git push origin HEAD:main
+            git commit -m "chore(automation): infinite improvement loop updates [skip ci]"
+            git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
           else
             echo "No changes to push"
           fi

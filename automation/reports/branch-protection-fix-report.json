@@ -1,10 +1,43 @@
 {
-  "timestamp": "2025-08-17T11:58:43.941Z",
+  "timestamp": "2025-08-17T11:59:41.964Z",
   "summary": {
-    "totalWorkflows": 0,
-    "fixed": 0,
+    "totalWorkflows": 8,
+    "fixed": 8,
     "failed": 0
   },
-  "fixedWorkflows": [],
+  "fixedWorkflows": [
+    {
+      "name": "autonomous-meta.yml",
+      "status": "active"
+    },
+    {
+      "name": "ci-self-heal.yml",
+      "status": "active"
+    },
+    {
+      "name": "continuous-improvement.yml",
+      "status": "active"
+    },
+    {
+      "name": "dependency-maintenance.yml",
+      "status": "active"
+    },
+    {
+      "name": "diverse-agent-matrix.yml",
+      "status": "active"
+    },
+    {
+      "name": "frontend-sync-continuous.yml",
+      "status": "active"
+    },
+    {
+      "name": "infinite-improvement-loop.yml",
+      "status": "active"
+    },
+    {
+      "name": "rapid-sync.yml",
+      "status": "active"
+    }
+  ],
   "failedWorkflows": []
 }
