@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-17T18:30:01.907Z",
-  "pagesScanned": 8222,
+  "generatedAt": "2025-08-17T18:31:01.144Z",
+  "pagesScanned": 8225,
   "items": [
     {
       "route": "/404",
@@ -34186,6 +34186,16 @@
       "suggestion": {
         "title": "Pilot Plan: FinOps for AI",
         "description": "Pilot Plan: FinOps for AI — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-17-1830",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Blueprint: RAG Platforms",
+        "description": "Blueprint: RAG Platforms — auto-suggested description"
       }
     },
     {
@@ -80879,6 +80889,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-17-1531",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 15:31",
+        "description": "Autonomous Update — 2025-08-17 15:31 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-17-1540",
       "missing": [
         "og:image"
@@ -81036,6 +81059,16 @@
       "suggestion": {
         "title": "Autonomous Checklist — AI Service Design (2025-08-17 18:20 UTC)",
         "description": "Autonomous Checklist — AI Service Design (2025-08-17 18:20 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1830",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Capability Map — Evaluation & Safety (2025-08-17 18:30 UTC)",
+        "description": "Autonomous Capability Map — Evaluation & Safety (2025-08-17 18:30 UTC) — auto-suggested description"
       }
     },
     {
