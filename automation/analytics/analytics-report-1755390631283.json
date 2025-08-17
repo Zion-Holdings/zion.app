@@ -1,12 +1,12 @@
 {
-  "timestamp": "2025-08-16T00:29:49.518Z",
+  "timestamp": "2025-08-17T00:30:31.283Z",
   "summary": {
-    "overallScore": 67.22943722943724,
+    "overallScore": 61.71985815602837,
     "systemHealth": "poor",
     "keyMetrics": {
-      "workflowCount": 150,
-      "healthScore": 90,
-      "securityScore": 23.376623376623375,
+      "workflowCount": 0,
+      "healthScore": 95,
+      "securityScore": 80.31914893617021,
       "dependencyHealth": 0
     },
     "trends": {
@@ -17,54 +17,54 @@
   },
   "detailedAnalysis": {
     "workflowHealth": {
-      "totalWorkflows": 150,
+      "totalWorkflows": 0,
       "activeWorkflows": 0,
       "disabledWorkflows": 0,
       "workflowsWithIssues": 0,
-      "totalIssues": 55,
+      "totalIssues": 0,
       "immediateActions": 0,
       "shortTermImprovements": 0,
       "longTermOptimizations": 0,
-      "timestamp": "2025-08-16T00:29:49.501Z"
+      "timestamp": "2025-08-17T00:30:31.257Z"
     },
     "monitoringData": {
       "totalChecks": 10,
-      "averageHealth": 90,
+      "averageHealth": 95,
       "totalAlerts": 10,
       "totalRecommendations": 10,
       "recentData": [
         {
-          "timestamp": "2025-08-16T00:16:42.733Z",
-          "overallHealth": 90,
+          "timestamp": "2025-08-17T00:12:50.932Z",
+          "overallHealth": 95,
           "alerts": 1,
           "recommendations": 1
         },
         {
-          "timestamp": "2025-08-16T00:17:43.596Z",
-          "overallHealth": 90,
+          "timestamp": "2025-08-17T00:14:45.152Z",
+          "overallHealth": 95,
           "alerts": 1,
           "recommendations": 1
         },
         {
-          "timestamp": "2025-08-16T00:19:53.918Z",
-          "overallHealth": 90,
+          "timestamp": "2025-08-17T00:17:46.781Z",
+          "overallHealth": 95,
           "alerts": 1,
           "recommendations": 1
         },
         {
-          "timestamp": "2025-08-16T00:21:52.447Z",
-          "overallHealth": 90,
+          "timestamp": "2025-08-17T00:22:46.776Z",
+          "overallHealth": 95,
           "alerts": 1,
           "recommendations": 1
         },
         {
-          "timestamp": "2025-08-16T00:22:52.350Z",
-          "overallHealth": 90,
+          "timestamp": "2025-08-17T00:27:46.765Z",
+          "overallHealth": 95,
           "alerts": 1,
           "recommendations": 1
         }
       ],
-      "timestamp": "2025-08-16T00:29:49.505Z"
+      "timestamp": "2025-08-17T00:30:31.261Z"
     },
     "performanceData": {
       "averageExecutionTime": 0,
@@ -72,17 +72,17 @@
       "slowestWorkflow": null,
       "resourceEfficiency": 100,
       "concurrencyUtilization": 0,
-      "timeoutIncidents": 55,
+      "timeoutIncidents": 0,
       "retrySuccessRate": 0,
-      "timestamp": "2025-08-16T00:29:49.505Z"
+      "timestamp": "2025-08-17T00:30:31.261Z"
     },
     "securityData": {
-      "securedWorkflows": 18,
-      "workflowsWithTimeouts": 76,
-      "securityScore": 23.376623376623375,
+      "securedWorkflows": 151,
+      "workflowsWithTimeouts": 149,
+      "securityScore": 80.31914893617021,
       "vulnerabilityCount": 0,
       "lastSecurityAudit": null,
-      "timestamp": "2025-08-16T00:29:49.506Z"
+      "timestamp": "2025-08-17T00:30:31.261Z"
     },
     "dependencyData": {
       "healthScore": 0,
@@ -91,7 +91,7 @@
       "securityIssues": 0,
       "criticalIssues": 0,
       "lastUpdate": "2025-08-15T12:35:10.776Z",
-      "timestamp": "2025-08-16T00:29:49.513Z"
+      "timestamp": "2025-08-17T00:30:31.279Z"
     },
     "resourceData": {
       "diskUsage": 0,
@@ -99,8 +99,8 @@
       "cpuUsage": 0,
       "networkActivity": 0,
       "storageEfficiency": 0,
-      "resourceOptimization": 90,
-      "timestamp": "2025-08-16T00:29:49.514Z"
+      "resourceOptimization": 95,
+      "timestamp": "2025-08-17T00:30:31.279Z"
     }
   },
   "trendAnalysis": {
@@ -109,7 +109,7 @@
       "slope": 0,
       "change": 0,
       "volatility": 0,
-      "prediction": 90
+      "prediction": 95
     },
     "alerts": {
       "trend": "stable",
@@ -125,12 +125,12 @@
       "averageRecommendations": 1,
       "prediction": 1
     },
-    "timestamp": "2025-08-16T00:29:49.515Z"
+    "timestamp": "2025-08-17T00:30:31.280Z"
   },
   "predictiveInsights": {
     "failurePrediction": {
-      "currentHealth": 90,
-      "predictedHealth": 90,
+      "currentHealth": 95,
+      "predictedHealth": 95,
       "failureRisk": "low",
       "confidence": "high",
       "recommendations": [
@@ -139,12 +139,13 @@
       ]
     },
     "resourceForecasting": {
-      "currentUtilization": 90,
-      "predictedUtilization": 90,
-      "resourceNeeds": "maintain",
+      "currentUtilization": 95,
+      "predictedUtilization": 95,
+      "resourceNeeds": "scale_up",
       "optimizationOpportunities": [
-        "Fine-tune performance",
-        "Monitor for changes"
+        "Scale resources",
+        "Optimize processes",
+        "Reduce overhead"
       ]
     },
     "performanceOptimization": {
@@ -161,36 +162,35 @@
       "estimatedImprovement": 0
     },
     "securityRiskAssessment": {
-      "currentScore": 23.376623376623375,
-      "riskLevel": "high",
+      "currentScore": 80.31914893617021,
+      "riskLevel": "medium",
       "vulnerabilities": [
-        "Critical security gaps",
-        "Missing branch protection",
-        "Unsafe operations"
+        "Security improvements needed",
+        "Additional protection rules"
       ],
-      "remediationPriority": "immediate",
-      "estimatedTimeToFix": "1-2 days"
+      "remediationPriority": "high",
+      "estimatedTimeToFix": "3-5 days"
     },
-    "timestamp": "2025-08-16T00:29:49.516Z"
+    "timestamp": "2025-08-17T00:30:31.281Z"
   },
   "performanceMetrics": {
-    "overallScore": 67.22943722943724,
+    "overallScore": 61.71985815602837,
     "efficiencyMetrics": {
       "workflowEfficiency": 100,
       "resourceEfficiency": 100,
-      "monitoringEfficiency": 90
+      "monitoringEfficiency": 95
     },
     "reliabilityMetrics": {
       "uptime": 0,
-      "errorRate": 55,
+      "errorRate": 0,
       "recoveryTime": 10
     },
     "scalabilityMetrics": {
-      "currentCapacity": 150,
-      "utilizationRate": 90,
-      "growthPotential": "medium"
+      "currentCapacity": 0,
+      "utilizationRate": 95,
+      "growthPotential": "high"
     },
-    "timestamp": "2025-08-16T00:29:49.517Z"
+    "timestamp": "2025-08-17T00:30:31.282Z"
   },
   "recommendations": {
     "immediate": [
@@ -200,13 +200,6 @@
         "impact": "high",
         "effort": "medium",
         "description": "Dependency health is critical and requires immediate attention"
-      },
-      {
-        "priority": "critical",
-        "action": "Address security vulnerabilities",
-        "impact": "high",
-        "effort": "high",
-        "description": "Security score is below acceptable threshold"
       }
     ],
     "shortTerm": [
@@ -228,7 +221,7 @@
       }
     ],
     "priority": [],
-    "timestamp": "2025-08-16T00:29:49.517Z"
+    "timestamp": "2025-08-17T00:30:31.283Z"
   },
   "config": {
     "analysisPeriods": [
