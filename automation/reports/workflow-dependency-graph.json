@@ -1481,19 +1481,20 @@
   "ci.yml": {
     "name": "ci.yml",
     "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
+      "push",
+      "pull_request",
+      "workflow_dispatch {}"
     ],
     "needs": [],
     "outputs": [],
     "priority": "critical",
     "resourceRequirements": {
       "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
+      "memory": "high",
+      "timeout": 30,
       "concurrentJobs": 5
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 30
   },
   "cleanup-merged-branches.yml": {
     "name": "cleanup-merged-branches.yml",
@@ -3011,19 +3012,24 @@
   "test.yml": {
     "name": "test.yml",
     "triggers": [
+      "push",
+      "pull_request",
       "workflow_dispatch {}",
       "schedule"
     ],
-    "needs": [],
+    "needs": [
+      "[unit-tests",
+      "integration-tests]"
+    ],
     "outputs": [],
     "priority": "medium",
     "resourceRequirements": {
       "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
+      "memory": "high",
+      "timeout": 30,
       "concurrentJobs": 5
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 30
   },
   "todo-issue-sync.yml": {
     "name": "todo-issue-sync.yml",

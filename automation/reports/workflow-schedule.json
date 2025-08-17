@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-17T11:39:28.379Z",
+  "timestamp": "2025-08-17T11:39:34.979Z",
   "critical": [
     {
       "name": "auto-heal-workflows.yml",
@@ -3621,20 +3621,24 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/test.yml",
       "priority": "medium",
       "resourceIntensity": "medium",
-      "estimatedDuration": 45,
-      "concurrentJobs": 9,
+      "estimatedDuration": 30,
+      "concurrentJobs": 14,
       "runnerRequirements": {
         "runner": "ubuntu-latest",
         "size": "large",
         "special": []
       },
-      "dependencies": [],
+      "dependencies": [
+        "[unit-tests",
+        "integration-tests]"
+      ],
       "triggers": [
         "push",
         "pull_request",
-        "workflow_dispatch"
+        "workflow_dispatch {}",
+        "schedule"
       ],
-      "resourceScore": 86
+      "resourceScore": 100
     }
   ],
   "low": [
