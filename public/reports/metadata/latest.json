@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-17T19:40:01.767Z",
-  "pagesScanned": 8348,
+  "generatedAt": "2025-08-17T19:41:01.308Z",
+  "pagesScanned": 8351,
   "items": [
     {
       "route": "/404",
@@ -34466,6 +34466,16 @@
       "suggestion": {
         "title": "Guide: RAG Platforms",
         "description": "Guide: RAG Platforms — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-17-1940",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook: DevSecOps AI",
+        "description": "Playbook: DevSecOps AI — auto-suggested description"
       }
     },
     {
@@ -82069,6 +82079,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-17-1641",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 16:41",
+        "description": "Autonomous Update — 2025-08-17 16:41 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-17-1650",
       "missing": [
         "og:image"
@@ -82226,6 +82249,16 @@
       "suggestion": {
         "title": "Autonomous Validation & QA Plan — Vision & Multimodal (2025-08-17 19:30 UTC)",
         "description": "Autonomous Validation & QA Plan — Vision & Multimodal (2025-08-17 19:30 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1940",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Capability Map — Edge AI & IoT (2025-08-17 19:40 UTC)",
+        "description": "Autonomous Capability Map — Edge AI & IoT (2025-08-17 19:40 UTC) — auto-suggested description"
       }
     },
     {
