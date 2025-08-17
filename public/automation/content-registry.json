@@ -9509,14 +9509,6 @@
       "route": "/reports/patterns/pattern-2025-08-15-021207"
     },
     {
-      "file": "pages/reports/case-studies/index.tsx",
-      "route": "/reports/case-studies"
-    },
-    {
-      "file": "pages/reports/case-studies/ai-automation-success.tsx",
-      "route": "/reports/case-studies/ai-automation-success"
-    },
-    {
       "file": "pages/reports/guides/guide-2025-08-17-112056.tsx",
       "route": "/reports/guides/guide-2025-08-17-112056"
     },
@@ -13563,6 +13555,14 @@
     {
       "file": "pages/reports/guides/guide-2025-08-15-021207.tsx",
       "route": "/reports/guides/guide-2025-08-15-021207"
+    },
+    {
+      "file": "pages/reports/case-studies/index.tsx",
+      "route": "/reports/case-studies"
+    },
+    {
+      "file": "pages/reports/case-studies/ai-automation-success.tsx",
+      "route": "/reports/case-studies/ai-automation-success"
     },
     {
       "file": "pages/main/front/index.tsx",
@@ -20471,6 +20471,10 @@
     {
       "file": "pages/reports/updates/update-2025-08-17-0830.tsx",
       "route": "/reports/updates/update-2025-08-17-0830"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-17-0829.tsx",
+      "route": "/reports/updates/update-2025-08-17-0829"
     },
     {
       "file": "pages/reports/updates/update-2025-08-17-0828.tsx",
@@ -29903,5 +29907,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-17T11:28:01.066Z"
+  "generatedAt": "2025-08-17T11:29:01.042Z"
 }
