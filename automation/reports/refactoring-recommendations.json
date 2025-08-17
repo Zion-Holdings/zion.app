@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-17T00:53:36.702Z",
+  "timestamp": "2025-08-17T00:54:22.912Z",
   "critical": [],
   "high": [
     {
@@ -144,7 +144,7 @@
       "metrics": {
         "totalLines": 133,
         "jobCount": 0,
-        "stepCount": 13,
+        "stepCount": 12,
         "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 1,
