@@ -116,7 +116,7 @@ validate_workflow() {
     fi
     
     # Check for proper step structure
-    if ! grep -q "^- name:" "$file"; then
+    if ! grep -q "      - name:" "$file"; then
         log_issue "$file" "No step definitions found" "error"
         is_valid=false
         ((file_issues++))
