@@ -89,7 +89,10 @@
   },
   "cloud-maintenance.yml": {
     "name": "cloud-maintenance.yml",
-    "triggers": [],
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
     "needs": [],
     "outputs": [],
     "priority": "medium",
