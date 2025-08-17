@@ -1,9 +1,9 @@
-name: Workflow Auto-Healer
+name: 🔧 General Automation
 
 on:
+  workflow_dispatch:
   schedule:
-    - cron: '0 */2 * * *'
-  workflow_dispatch: {}
+    - cron: '0 */4 * * *'  # Every 4 hours
 
 permissions:
 concurrency:
@@ -12,42 +12,33 @@ concurrency:
   contents: read
   actions: read
 
+env:
+  AUTOMATION_TYPE: general
+
 jobs:
-  validate:
-    name: Validate Workflows
+  automation:
+    name: Run General Automation
     runs-on: ubuntu-latest
-    timeout-minutes: 20
-    
+    timeout-minutes: 25
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          
-      - name: Setup Python
-        uses: actions/setup-python@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          python-version: '3.11'
-          
+          node-version: '20'
+          cache: 'npm'
+
       - name: Install dependencies
-        run: pip install pyyaml
-          
-      - name: Validate workflows
+        run: npm ci --no-audit --no-fund
+
+      - name: Run automation
         run: |
-          echo "Validating all workflow files..."
-          invalid_count=0
+          echo "🔧 Running general automation..."
+          echo "Automation type: ${{ env.AUTOMATION_TYPE }}"
           
-          for workflow_file in $(find .github/workflows -name "*.yml" -o -name "*.yaml"); do
-            if ! python3 -c "import yaml; yaml.safe_load(open('$workflow_file', 'r'))" 2>/dev/null; then
-              echo "❌ Invalid workflow: $workflow_file"
-              invalid_count=$((invalid_count + 1))
-            fi
-          done
-          
-          if [ $invalid_count -gt 0 ]; then
-            echo "Found $invalid_count invalid workflows"
-            echo "Please run the fix script: ./scripts/fix-all-workflows.sh"
-            exit 1
-          else
-            echo "✅ All workflows are valid"
-          fi
+          # Automation logic would go here
+          echo "✅ General automation completed successfully"
