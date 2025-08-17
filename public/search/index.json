@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T03:15:03.518Z",
+  "generatedAt": "2025-08-17T03:16:03.525Z",
   "entries": [
     {
       "route": "/user-management",
@@ -402,6 +402,12 @@
       "file": "pages/reports/updates/update-2025-08-17-0020.tsx",
       "title": "Autonomous Playbook — AI Service Design (2025-08-17 00:20 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — AI Service Design (2025-08-17 00:20 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { \""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0016",
+      "file": "pages/reports/updates/update-2025-08-17-0016.tsx",
+      "title": "Autonomous Update — 2025-08-17 00:16",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 00:16 Autonomous Update — 2025-08-17 00:16 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Air Con: $1697 for an on/off switch "
     },
     {
       "route": "/reports/updates/update-2025-08-17-0015",
