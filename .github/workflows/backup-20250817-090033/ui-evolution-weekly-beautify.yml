@@ -1,0 +1,37 @@
+name: UI Evolution Weekly Beautify
+
+on:
+  schedule:
+    - cron: '30 3 * * 1' # weekly on Monday at 03:30 UTC
+  workflow_dispatch:
+
+jobs:
+  ui-beautify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate beautify suggestions
+        run: node automation/beautify-hightech-ui.cjs | cat
+
+      - name: Summarize UI evolution
+        run: node automation/ui-evolution-dashboard.cjs | tee ui-evolution-summary.json
+
+      - name: Upload UI beautify artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ui-evolution-beautify
+          path: |
+            data/reports/ui-evolution/**/*
+            ui-evolution-summary.json
+          if-no-files-found: ignore
