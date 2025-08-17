@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-17T04:21:00.973Z",
-  "pagesScanned": 6699,
+  "generatedAt": "2025-08-17T04:22:00.996Z",
+  "pagesScanned": 6701,
   "items": [
     {
       "route": "/404",
@@ -66476,6 +66476,29 @@
       "suggestion": {
         "title": "Autonomous Reference Architecture — Evaluation & Safety (2025-08-17 01:20 UTC)",
         "description": "Autonomous Reference Architecture — Evaluation & Safety (2025-08-17 01:20 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0121",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 01:21",
+        "description": "Autonomous Update — 2025-08-17 01:21 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0122",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 01:22",
+        "description": "Autonomous Update — 2025-08-17 01:22 — auto-suggested description"
       }
     },
     {
