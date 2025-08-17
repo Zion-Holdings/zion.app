@@ -1,17 +1,17 @@
 {
-  "timestamp": "2025-08-17T01:02:39.209Z",
+  "timestamp": "2025-08-17T01:03:41.465Z",
   "summary": {
-    "totalWorkflows": 189,
+    "totalWorkflows": 190,
     "complexityDistribution": {
       "very-high": 0,
       "high": 6,
-      "medium": 3,
+      "medium": 4,
       "low": 180
     },
     "refactoringPriorities": {
       "critical": 0,
       "high": 6,
-      "medium": 3,
+      "medium": 4,
       "low": 180
     }
   },
@@ -3417,6 +3417,24 @@
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/workflow-watchdog.yml"
+    },
+    "yaml-validator.yml": {
+      "complexityScore": 30,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 120,
+        "jobCount": 0,
+        "stepCount": 7,
+        "conditionalCount": 3,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 4
+      },
+      "refactoringPriority": "medium",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/yaml-validator.yml"
     }
   }
 }
