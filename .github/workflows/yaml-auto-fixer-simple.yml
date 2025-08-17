@@ -116,14 +116,14 @@ jobs:
               
               # Fix 7: Fix case statement quotes (conservative mode only)
               if fix_mode in ['conservative', 'aggressive']:
-                  if '"aggressive")' in content:
-                      content = content.replace('"aggressive")', '""aggressive")')
+                  if '""aggressive")' in content:
+                      content = content.replace('""aggressive")', '""aggressive")')
                       fixes_applied.append("Fixed case statement quotes")
-                  if '"balanced")' in content:
-                      content = content.replace('"balanced")', '""balanced")')
+                  if '""balanced")' in content:
+                      content = content.replace('""balanced")', '""balanced")')
                       fixes_applied.append("Fixed case statement quotes")
-                  if '"conservative")' in content:
-                      content = content.replace('"conservative")', '""conservative")')
+                  if '""conservative")' in content:
+                      content = content.replace('""conservative")', '""conservative")')
                       fixes_applied.append("Fixed case statement quotes")
               
               # Fix 8: Fix job names with stray quotes
@@ -139,7 +139,18 @@ jobs:
                       fixed_lines.append(line)
                   content = '\n'.join(fixed_lines)
               
-              # Fix 9: Fix step indentation issues (conservative mode and up)
+              # Fix 9: Fix conditional statements with stray quotes
+              if 'if: "' in content:
+                  content = content.replace('if: "', 'if: ')
+                  fixes_applied.append("Fixed conditional statement quotes")
+              
+              # Fix 10: Fix token fields with stray quotes
+              if 'token: ${{' in content and '}}"' in content:
+                  content = content.replace('}}",', '}},')
+                  content = content.replace('}}"', '}}')
+                  fixes_applied.append("Fixed token field quotes")
+              
+              # Fix 11: Fix step indentation issues (conservative mode and up)
               if fix_mode in ['conservative', 'aggressive']:
                   lines = content.split('\n')
                   fixed_lines = []
@@ -165,7 +176,7 @@ jobs:
                   if new_content != content:
                       content = new_content
               
-              # Fix 10: Fix missing step dashes (aggressive mode only)
+              # Fix 12: Fix missing step dashes (aggressive mode only)
               if fix_mode == 'aggressive':
                   lines = content.split('\n')
                   fixed_lines = []
