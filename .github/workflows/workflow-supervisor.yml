@@ -2,31 +2,35 @@ name: Workflow Supervisor
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 0 * * *'  # Daily at midnight
   workflow_dispatch: {}
 
 concurrency:
   group: "workflow-supervisor-${{ github.ref }}"
   cancel-in-progress: true
 
-  contents: write
-  issues: write
-
 permissions:
   contents: read
   actions: read
-jobs:
+  issues: write
 
+jobs:
   supervise:
+    name: Supervise Critical Workflows
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    
+    steps:
       - name: Supervise critical workflows
         uses: actions/github-script@v7
+        with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const owner = context.repo.owner;
             const repo = context.repo.repo;
 
-            // Map friendly names to workflow file IDs for dispatch"
-            const monitored = ["
+            // Map friendly names to workflow file IDs for dispatch
+            const monitored = [
               { name: 'CI', id: 'ci.yml' },
               { name: 'Rapid Git Sync (1m)', id: 'rapid-git-sync.yml' },
               { name: 'Autonomous Cloud Orchestrator', id: 'autonomous-cloud.yml' },

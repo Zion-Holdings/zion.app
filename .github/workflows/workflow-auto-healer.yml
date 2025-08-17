@@ -1,23 +1,19 @@
-name: 🔧 Workflow Auto-Healer
+name: Workflow Auto-Healer
 
 on:
   schedule:
-    - cron: '0 */2 * * *'  # Every 2 hours
-  workflow_dispatch:
-  workflow_run:
-    workflows: ['CI', 'Test Suite', 'Security Scan']
-    types: [completed, failed]
+    - cron: '0 */2 * * *'
+  workflow_dispatch: {}
 
 permissions:
-  contents: write
+  contents: read
   actions: read
-  pull-requests: write
 
 jobs:
-  auto-heal:
-    name: Auto-Heal Workflows
+  validate:
+    name: Validate Workflows
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 20
     
     steps:
       - name: Checkout repository
@@ -31,166 +27,24 @@ jobs:
           python-version: '3.11'
           
       - name: Install dependencies
-        run: |
-          pip install pyyaml
+        run: pip install pyyaml
           
-      - name: Run workflow validation
-        id: validate
+      - name: Validate workflows
         run: |
-          echo "🔍 Validating all workflow files..."
-          invalid_files = []
+          echo "Validating all workflow files..."
+          invalid_count=0
           
           for workflow_file in $(find .github/workflows -name "*.yml" -o -name "*.yaml"); do
             if ! python3 -c "import yaml; yaml.safe_load(open('$workflow_file', 'r'))" 2>/dev/null; then
-              invalid_files.append("$workflow_file")
               echo "❌ Invalid workflow: $workflow_file"
+              invalid_count=$((invalid_count + 1))
             fi
           done
           
-          if [ ${#invalid_files[@]} -gt 0 ]; then
-            echo "::set-output name=needs_fix::true"
-            echo "::set-output name=invalid_count::${#invalid_files[@]}"
-            echo "Found ${#invalid_files[@]} invalid workflows"
+          if [ $invalid_count -gt 0 ]; then
+            echo "Found $invalid_count invalid workflows"
+            echo "Please run the fix script: ./scripts/fix-all-workflows.sh"
+            exit 1
           else
-            echo "::set-output name=needs_fix::false"
             echo "✅ All workflows are valid"
           fi
-          
-      - name: Auto-fix workflows
-        if: steps.validate.outputs.needs_fix == 'true'
-        run: |
-          echo "🔧 Auto-fixing invalid workflows..."
-          
-          # Create auto-fix script
-          cat > auto_fix.py << 'EOF'
-          #!/usr/bin/env python3
-          import os
-          import yaml
-          import shutil
-          from pathlib import Path
-          
-          def fix_workflow(file_path):
-              print(f"Fixing: {file_path}")
-              
-              # Create backup
-              backup_path = f"{file_path}.autoheal_backup"
-              shutil.copy2(file_path, backup_path)
-              
-              try:
-                  # Read original content to extract name
-                  with open(file_path, 'r') as f:
-                      content = f.read()
-                  
-                  # Extract workflow name
-                  lines = content.split('\n')
-                  workflow_name = "Workflow"
-                  for line in lines:
-                      if line.strip().startswith('name:'):
-                          name_part = line.split(':', 1)[1].strip()
-                          if name_part and not name_part.startswith('WORKFLOW_NAME_PLACEHOLDER'):
-                              workflow_name = name_part.strip('"\'')
-                              break
-                  
-                  # Create fixed workflow
-                  fixed_content = f'''name: {workflow_name}
-
-on:
-  workflow_dispatch: {{}}
-  schedule:
-    - cron: '*/10 * * * *'
-
-permissions:
-  contents: write
-  actions: read
-
-jobs:
-  main:
-    name: Main Job
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci --no-audit --no-fund
-
-      - name: Run workflow
-        run: |
-          echo "Workflow {workflow_name} completed successfully"
-'''
-                  
-                  # Write fixed content
-                  with open(file_path, 'w') as f:
-                      f.write(fixed_content)
-                      
-                  print(f"  ✅ Fixed: {file_path}")
-                  return True
-                  
-              except Exception as e:
-                  print(f"  ❌ Error: {e}")
-                  # Restore from backup
-                  shutil.copy2(backup_path, file_path)
-                  return False
-          
-          # Find and fix all invalid workflows
-          workflows_dir = Path('.github/workflows')
-          fixed_count = 0
-          
-          for workflow_file in workflows_dir.glob('*.yml'):
-              try:
-                  yaml.safe_load(open(workflow_file, 'r'))
-              except:
-                  if fix_workflow(workflow_file):
-                      fixed_count += 1
-          
-          print(f"Fixed {fixed_count} workflows")
-          EOF
-          
-          # Run the auto-fix script
-          python3 auto_fix.py
-          
-      - name: Create Pull Request for fixes
-        if: steps.validate.outputs.needs_fix == 'true'
-        uses: peter-evans/create-pull-request@v5
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "🔧 auto-heal: fix invalid workflow files"
-          title: "🔧 Auto-heal: Fix Invalid Workflow Files"
-          body: |
-            ## 🔧 Workflow Auto-Healing
-            
-            This PR was automatically created to fix **${{ steps.validate.outputs.invalid_count }}** invalid workflow files.
-            
-            ### What was fixed:
-            - Invalid YAML syntax
-            - Missing required fields
-            - Malformed workflow structure
-            
-            ### Auto-healing features:
-            - ✅ Automatic validation every 2 hours
-            - ✅ Instant fixes for common issues
-            - ✅ Backup creation before fixes
-            - ✅ Pull request creation for review
-            
-            ### Next steps:
-            1. Review the changes
-            2. Test the workflows
-            3. Merge if everything looks good
-            
-            ---
-            *This PR was created automatically by the Workflow Auto-Healer*
-          branch: auto-heal/workflow-fixes
-          delete-branch: true
-          labels: |
-            auto-heal
-            workflow-fix
-            automation

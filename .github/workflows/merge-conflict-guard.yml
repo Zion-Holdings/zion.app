@@ -1,54 +1,66 @@
 name: Merge Conflict Guard
-true:
+
+on:
   pull_request:
     branches:
-    - main
+      - main
   push:
     branches:
-    - main
+      - main
   schedule:
-  - cron: '*/30 * * * *'
-  workflow_dispatch: null
+    - cron: '0 2 * * *' # Daily at 2 AM
+  workflow_dispatch: {}
+
 concurrency:
   group: merge-guard-${{ github.ref }}
   cancel-in-progress: true
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: '0 2 * * *' # Daily at 2 AM
-jobs:
-  check-conflicts:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-    - name: Use Node.js 20.x
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20.x
-    - name: Install dependencies
-      run: 'npm ci --ignore-scripts
 
-        '
-    - name: Check for merge conflicts and markers
-      run: 'bash scripts/check-merge-conflicts.sh
-
-        '
-    timeout-minutes: 30
-  pr-automerge-check:
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-    - name: Simulate merge with base branch
-      run: "git fetch origin ${{ github.base_ref }}\ngit merge --no-commit --no-ff\
-        \ --no-edit origin/${{ github.base_ref }} || {\n  echo \"Merge conflicts detected\
-        \ when merging PR into ${{ github.base_ref }}\";\n  git diff --name-only --diff-filter=U\
-        \ || true;\n  exit 1;\n}\ngit merge --abort || true"
-    timeout-minutes: 30
 permissions:
   contents: read
   actions: read
+  pull-requests: read
+
+jobs:
+  check-conflicts:
+    name: Check for Merge Conflicts
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+        
+      - name: Check for merge conflicts and markers
+        run: bash scripts/check-merge-conflicts.sh
+        
+  pr-automerge-check:
+    name: PR Auto-merge Check
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: Simulate merge with base branch
+        run: |
+          git fetch origin ${{ github.base_ref }}
+          git merge --no-commit --no-ff --no-edit origin/${{ github.base_ref }} || {
+            echo "Merge conflicts detected when merging PR into ${{ github.base_ref }}"
+            git diff --name-only --diff-filter=U || true
+            exit 1
+          }
+          git merge --abort || true
