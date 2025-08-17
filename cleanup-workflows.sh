@@ -20,6 +20,8 @@ ESSENTIAL_WORKFLOWS=(
     "security.yml"
     "dependencies.yml"
     "playwright-smoke.yml"
+    "cleanup.yml"
+    "maintenance.yml"
 )
 
 # Workflows to remove (generic templates)
