@@ -1,18 +1,18 @@
 {
-  "timestamp": "2025-08-17T12:04:36.756Z",
+  "timestamp": "2025-08-17T12:05:22.708Z",
   "summary": {
-    "totalWorkflows": 33,
+    "totalWorkflows": 34,
     "complexityDistribution": {
       "very-high": 0,
       "high": 0,
       "medium": 4,
-      "low": 29
+      "low": 30
     },
     "refactoringPriorities": {
       "critical": 0,
       "high": 0,
       "medium": 4,
-      "low": 29
+      "low": 30
     }
   },
   "workflows": {
@@ -87,6 +87,24 @@
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci-self-heal.yml"
+    },
+    "ci.yml": {
+      "complexityScore": 25,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 79,
+        "jobCount": 0,
+        "stepCount": 11,
+        "conditionalCount": 1,
+        "matrixCount": 0,
+        "dependencyCount": 1,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 5
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci.yml"
     },
     "cloud-maintenance.yml": {
       "complexityScore": 5,

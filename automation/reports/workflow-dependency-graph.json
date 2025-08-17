@@ -55,6 +55,26 @@
     },
     "estimatedDuration": 30
   },
+  "ci.yml": {
+    "name": "ci.yml",
+    "triggers": [
+      "push",
+      "pull_request",
+      "workflow_dispatch"
+    ],
+    "needs": [
+      "lint-and-types"
+    ],
+    "outputs": [],
+    "priority": "critical",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "high",
+      "timeout": 20,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 30
+  },
   "cloud-maintenance.yml": {
     "name": "cloud-maintenance.yml",
     "triggers": [],
