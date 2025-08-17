@@ -148,8 +148,8 @@ validate_workflow() {
     fi
     
     # Check for excessive cron schedules
-    local cron_count=$(grep -c "cron:" "$file" || echo "0")
-    if [ $cron_count -gt 2 ]; then
+    cron_count=$(grep -c "cron:" "$file" || echo "0")
+    if [ "$cron_count" -gt 2 ]; then
         log_issue "$file" "Multiple cron schedules detected - may cause excessive runs" "warning"
         ((file_issues++))
     fi
