@@ -570,7 +570,7 @@
       },
       {
         "key": "run",
-        "value": "|\""
+        "value": "|"
       },
       {
         "key": "echo \"Current agent factories",
@@ -582,7 +582,7 @@
       },
       {
         "key": "id",
-        "value": "\"growth"
+        "value": "growth"
       },
       {
         "key": "run",
@@ -598,7 +598,7 @@
       },
       {
         "key": "id",
-        "value": "\"target"
+        "value": "target"
       },
       {
         "key": "run",
@@ -1119,7 +1119,7 @@
       },
       {
         "key": "id",
-        "value": "\"capacity"
+        "value": "capacity"
       },
       {
         "key": "run",
@@ -2117,7 +2117,7 @@
       },
       {
         "key": "run",
-        "value": "|\""
+        "value": "|"
       },
       {
         "key": "echo \"📈 Current automation components",
