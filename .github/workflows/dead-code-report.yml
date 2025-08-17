@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: "dead-code-report-${{ github.ref }}
+  group: "dead-code-report-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:

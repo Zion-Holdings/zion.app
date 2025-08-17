@@ -426,7 +426,7 @@ jobs:
           # Update component count
           echo $TOTAL_COMPONENTS > automation/factories/.component_count
           
-          echo "📊 Exponential Growth Report:"
+          echo "📊 Exponential Growth Report:
           echo "Total Components: $TOTAL_COMPONENTS"
           echo "Growth Rate: $GROWTH_RATE"
           echo "Exponential Factor: $EXPONENTIAL_FACTOR"
@@ -462,7 +462,7 @@ jobs:
             GROWTH_RATE=$(jq -r '.growthRate' $LATEST_REPORT)
             EXPONENTIAL_FACTOR=$(jq -r '.exponentialFactor' $LATEST_REPORT)
             
-            echo "📊 Analysis Results:"
+            echo "📊 Analysis Results:
             echo "Total Components: $TOTAL_COMPONENTS"
             echo "Growth Rate: $GROWTH_RATE"
             echo "Exponential Factor: $EXPONENTIAL_FACTOR"

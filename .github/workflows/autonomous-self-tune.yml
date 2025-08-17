@@ -6,7 +6,7 @@ on:
   workflow_dispatch: {}
 
 concurrency:
-  group: "autonomous-self-tuning-${{ github.ref }}
+  group: "autonomous-self-tuning-${{ github.ref }}"
   cancel-in-progress: true
 
 permissions:

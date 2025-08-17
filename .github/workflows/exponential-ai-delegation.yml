@@ -15,7 +15,7 @@ on:
     types: [completed]
 
 concurrency:
-  group: "exponential-ai-delegation-${{ github.ref }}
+  group: "exponential-ai-delegation-${{ github.ref }}"
   cancel-in-progress: false
 
 jobs:
@@ -36,7 +36,7 @@ jobs:
 
       - name: Setup Node
         uses: actions/setup-node@v4
-        with:"
+        with:
           node-version: '20'
           cache: 'npm'
 

@@ -51,13 +51,13 @@ jobs:
             fi
           done
           
-          echo "📊 Validation Summary:"
+          echo "📊 Validation Summary:
           echo "Total files: $total_files"
           echo "Valid files: $((total_files - ${#invalid_files[@]}))"
           echo "Invalid files: ${#invalid_files[@]}"
           
           if [ ${#invalid_files[@]} -gt 0 ]; then
-            echo "❌ Invalid files found:"
+            echo "❌ Invalid files found:
             printf '%s\n' "${invalid_files[@]}"
             echo "invalid_count=${#invalid_files[@]}" >> $GITHUB_OUTPUT
             exit 1

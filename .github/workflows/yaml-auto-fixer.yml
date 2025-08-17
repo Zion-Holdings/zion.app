@@ -39,10 +39,10 @@ jobs:
         run: |
           cat > yaml_fixer.py << 'EOF'
           #!/usr/bin/env python3
-          ""
+          "
           YAML Auto-Fixer for GitHub Actions workflows
           Fixes common syntax errors automatically
-          ""
+          "
           
           import os
           import re
@@ -50,7 +50,7 @@ jobs:
           from pathlib import Path
           
           def fix_yaml_file(file_path, fix_mode='conservative'):
-              ""Fix common YAML syntax errors in a file""
+              "Fix common YAML syntax errors in a file"
               print(f"🔧 Fixing: {file_path}")
               
               try:
@@ -74,7 +74,7 @@ jobs:
                   'group: "github.workflow-${{ github.ref }}"',
                   content
               )
-              if 'group: "github.workflow-github.ref' in original_content:
+              if 'group: "github.workflow-${{ github.ref }}"' in original_content:
                   fixes_applied.append("Fixed concurrency group reference")
               
               # Fix 3: Fix cancel-in-progress quotes

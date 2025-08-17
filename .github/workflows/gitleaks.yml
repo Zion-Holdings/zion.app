@@ -12,7 +12,7 @@ permissions:
   security-events: write
 
 concurrency:
-  group: "gitleaks-${{ github.ref }}
+  group: "gitleaks-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:

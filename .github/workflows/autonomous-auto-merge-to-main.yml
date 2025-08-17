@@ -9,7 +9,7 @@ on:
   workflow_dispatch: {}
 
 concurrency:
-  group: "auto-merge-to-main-${{ github.ref }}
+  group: "auto-merge-to-main-${{ github.ref }}"
   cancel-in-progress: true
 
 permissions:

@@ -34,7 +34,7 @@ jobs:
       - name: Create issue on failure
         if: failure()
         uses: actions/github-script@v7
-        with:"
+        with:
           script: |"
             const title = 'Netlify auto-healer failed';
             const body = 'The Netlify auto-healer could not restore or trigger a rebuild. Check API credentials and deploy logs.';

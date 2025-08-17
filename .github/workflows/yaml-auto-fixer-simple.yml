@@ -38,16 +38,16 @@ jobs:
         run: |
           cat > simple_yaml_fixer.py << 'EOF'
           #!/usr/bin/env python3
-          ""
+          "
           Simple YAML Auto-Fixer for GitHub Actions workflows
-          ""
+          "
           
           import os
           import sys
           from pathlib import Path
           
           def fix_yaml_file(file_path, fix_mode='conservative'):
-              ""Fix common YAML syntax errors in a file""
+              "Fix common YAML syntax errors in a file"
               print(f"🔧 Fixing: {file_path}")
               
               try:
@@ -61,18 +61,18 @@ jobs:
               fixes_applied = []
               
               # Fix 1: Remove stray quotes in concurrency
-              if 'concurrency:"' in content:
-                  content = content.replace('concurrency:"', 'concurrency:')
+              if 'concurrency:' in content:
+                  content = content.replace('concurrency:', 'concurrency:')
                   fixes_applied.append("Fixed concurrency syntax")
               
               # Fix 2: Fix group references
-              if 'group: "github.workflow-github.ref' in content:
-                  content = content.replace('group: "github.workflow-github.ref', 'group: "github.workflow-${{ github.ref }}"')
+              if 'group: "github.workflow-${{ github.ref }}"' in content:
+                  content = content.replace('group: "github.workflow-${{ github.ref }}"', 'group: "github.workflow-${{ github.ref }}"')
                   fixes_applied.append("Fixed concurrency group reference")
               
               # Fix 2b: Fix unquoted group references
-              if 'group: github.workflow-github.ref' in content:
-                  content = content.replace('group: github.workflow-github.ref', 'group: "github.workflow-${{ github.ref }}"')
+              if 'group: "github.workflow-${{ github.ref }}"' in content:
+                  content = content.replace('group: "github.workflow-${{ github.ref }}"', 'group: "github.workflow-${{ github.ref }}"')
                   fixes_applied.append("Fixed unquoted concurrency group reference")
               
               # Fix 2c: Fix missing closing quotes in group references
@@ -95,40 +95,40 @@ jobs:
               content = '\n'.join(fixed_lines)
               
               # Fix 3: Fix cancel-in-progress quotes
-              if 'cancel-in-progress: "true' in content:
-                  content = content.replace('cancel-in-progress: "true', 'cancel-in-progress: true')
+              if 'cancel-in-progress: true' in content:
+                  content = content.replace('cancel-in-progress: true', 'cancel-in-progress: true')
                   fixes_applied.append("Fixed cancel-in-progress quotes")
               
               # Fix 4: Fix double quotes in env vars
-              if '""' in content:
-                  content = content.replace('""', '"')
+              if '"' in content:
+                  content = content.replace('"', '"')
                   fixes_applied.append("Fixed double quotes")
               
               # Fix 5: Fix run command syntax
-              if 'run: |"' in content:
-                  content = content.replace('run: |"', 'run: |')
+              if 'run: |' in content:
+                  content = content.replace('run: |', 'run: |')
                   fixes_applied.append("Fixed run command syntax")
               
               # Fix 6: Fix id field quotes
-              if 'id: "' in content:
-                  content = content.replace('id: "', 'id: ')
+              if 'id: ' in content:
+                  content = content.replace('id: ', 'id: ')
                   fixes_applied.append("Fixed id field quotes")
               
               # Fix 7: Fix case statement quotes (conservative mode only)
               if fix_mode in ['conservative', 'aggressive']:
-                  if 'aggressive")' in content:
-                      content = content.replace('aggressive")', '"aggressive")')
+                  if '"aggressive")' in content:
+                      content = content.replace('"aggressive")', '""aggressive")')
                       fixes_applied.append("Fixed case statement quotes")
-                  if 'balanced")' in content:
-                      content = content.replace('balanced")', '"balanced")')
+                  if '"balanced")' in content:
+                      content = content.replace('"balanced")', '""balanced")')
                       fixes_applied.append("Fixed case statement quotes")
-                  if 'conservative")' in content:
-                      content = content.replace('conservative")', '"conservative")')
+                  if '"conservative")' in content:
+                      content = content.replace('"conservative")', '""conservative")')
                       fixes_applied.append("Fixed case statement quotes")
               
               # Fix 8: Fix job names with stray quotes
               if ':"' in content:
-                  # Find and fix job names like "fast-push:""
+                  # Find and fix job names like "fast-push:
                   lines = content.split('\n')
                   fixed_lines = []
                   for line in lines:

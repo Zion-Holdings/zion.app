@@ -70,7 +70,7 @@ jobs:
           echo "healthy=$HEALTHY" >> $GITHUB_OUTPUT
           echo "unhealthy=$UNHEALTHY" >> $GITHUB_OUTPUT
           
-          echo "📊 Factory Health Report:"
+          echo "📊 Factory Health Report:
           echo "  Total: $TOTAL_FACTORIES"
           echo "  Healthy: $HEALTHY"
           echo "  Unhealthy: $UNHEALTHY"

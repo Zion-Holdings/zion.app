@@ -6,7 +6,7 @@ on:
   workflow_dispatch: {}
 
 concurrency:
-  group: "workflow-supervisor-${{ github.ref }}
+  group: "workflow-supervisor-${{ github.ref }}"
   cancel-in-progress: true
 
 permissions:

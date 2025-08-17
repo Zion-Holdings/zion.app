@@ -28,7 +28,7 @@ jobs:
 
       - name: Setup Node.js
         uses: actions/setup-node@v4"
-        with:"
+        with:
           node-version: '20'
           cache: 'npm'
 
@@ -66,10 +66,10 @@ jobs:
 
       - name: List generated files
         run: |
-          echo "Generated files:"
+          echo "Generated files:
           ls -la public/reports/seo/ || echo "No SEO reports directory found"
           echo "Current working directory: $(pwd)"
-          echo "Directory contents:"
+          echo "Directory contents:
           ls -la public/ || echo "No public directory found"
 
       - name: Check for changes

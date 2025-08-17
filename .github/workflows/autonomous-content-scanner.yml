@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: "autonomous-content-scanner-${{ github.ref }}
+  group: "autonomous-content-scanner-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:

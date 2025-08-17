@@ -10,7 +10,7 @@ permissions:
   pull-requests: write
 
 concurrency:
-  group: "auto-pr-${{ github.ref }}
+  group: "auto-pr-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:

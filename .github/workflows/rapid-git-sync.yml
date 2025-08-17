@@ -6,7 +6,7 @@ on:
   workflow_dispatch: {}
 
 concurrency:
-  group: "rapid-git-sync-${{ github.ref }}
+  group: "rapid-git-sync-${{ github.ref }}"
   cancel-in-progress: true
 
 permissions:

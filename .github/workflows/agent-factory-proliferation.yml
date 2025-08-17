@@ -295,7 +295,7 @@ jobs:
           CURRENT=${{ needs.analyze-current-state.outputs.current-factories }}
           GROWTH=${{ env.GROWTH_FACTOR }}
           "
-          echo "📈 Exponential Growth Analysis:"
+          echo "📈 Exponential Growth Analysis:
           echo "Current factories: $CURRENT"
           echo "Growth factor: $GROWTH"
           

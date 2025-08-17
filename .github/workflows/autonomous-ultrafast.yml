@@ -6,7 +6,7 @@ on:
   workflow_dispatch: {}
 
 concurrency:
-  group: "autonomous-ultrafast-${{ github.ref }}
+  group: "autonomous-ultrafast-${{ github.ref }}"
   cancel-in-progress: true
 
 permissions:

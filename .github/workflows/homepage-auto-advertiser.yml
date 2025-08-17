@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: "homepage-auto-advertiser-${{ github.ref }}
+  group: "homepage-auto-advertiser-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:

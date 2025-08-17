@@ -68,7 +68,7 @@ jobs:
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
-        with:"
+        with:
           node-version: ${{ env.NODE_VERSION }}"
           cache: 'npm'
 
@@ -415,7 +415,7 @@ jobs:
           # Update agent count
           echo $TOTAL_AGENTS > automation/agents/.agent_count
           
-          echo "Growth Report Generated:"
+          echo "Growth Report Generated:
           echo "Total Agents: $TOTAL_AGENTS"
           echo "Growth Rate: $GROWTH_RATE"
           echo "Average Efficiency: $EFFICIENCY_IMPROVEMENT"
