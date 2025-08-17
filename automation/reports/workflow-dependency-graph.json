@@ -2562,8 +2562,10 @@
   "merge-conflict-guard.yml": {
     "name": "merge-conflict-guard.yml",
     "triggers": [
-      "workflow_dispatch",
-      "schedule"
+      "pull_request",
+      "push",
+      "schedule",
+      "workflow_dispatch {}"
     ],
     "needs": [],
     "outputs": [],
@@ -2572,7 +2574,7 @@
       "runner": "ubuntu-latest",
       "memory": "standard",
       "timeout": 30,
-      "concurrentJobs": 6
+      "concurrentJobs": 5
     },
     "estimatedDuration": 30
   },
@@ -2968,7 +2970,7 @@
       "timeout": 30,
       "concurrentJobs": 5
     },
-    "estimatedDuration": 25
+    "estimatedDuration": 30
   },
   "rapid-sync.yml": {
     "name": "rapid-sync.yml",
@@ -3401,6 +3403,23 @@
     },
     "estimatedDuration": 25
   },
+  "smart-merge-agent.yml": {
+    "name": "smart-merge-agent.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 45,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 45
+  },
   "stale.yml": {
     "name": "stale.yml",
     "triggers": [
@@ -3627,7 +3646,7 @@
     "name": "workflow-auto-healer.yml",
     "triggers": [
       "schedule",
-      "workflow_dispatch"
+      "workflow_dispatch {}"
     ],
     "needs": [],
     "outputs": [],
@@ -3635,10 +3654,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 30,
-      "concurrentJobs": 7
+      "timeout": 20,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 30
+    "estimatedDuration": 20
   },
   "workflow-health-monitor.yml": {
     "name": "workflow-health-monitor.yml",
@@ -3710,7 +3729,7 @@
       "timeout": 30,
       "concurrentJobs": 5
     },
-    "estimatedDuration": 15
+    "estimatedDuration": 30
   },
   "workflow-validator.yml": {
     "name": "workflow-validator.yml",
