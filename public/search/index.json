@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T12:26:04.059Z",
+  "generatedAt": "2025-08-17T12:27:03.766Z",
   "entries": [
     {
       "route": "/user-management",
@@ -738,6 +738,12 @@
       "file": "pages/reports/updates/update-2025-08-17-0930.tsx",
       "title": "Autonomous Validation & QA Plan — Edge AI & IoT (2025-08-17 09:30 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Validation & QA Plan — Edge AI & IoT (2025-08-17 09:30 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"auth"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0927",
+      "file": "pages/reports/updates/update-2025-08-17-0927.tsx",
+      "title": "Autonomous Update — 2025-08-17 09:27",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 09:27 Autonomous Update — 2025-08-17 09:27 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : The young, inexperien"
     },
     {
       "route": "/reports/updates/update-2025-08-17-0926",
