@@ -29,39 +29,39 @@ jobs:
       actions: write
       pull-requests: write
     steps:
-        - name: Checkout
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-        - name: Setup Node
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:"
           node-version: '20'
           cache: 'npm'
 
-        - name: Install dependencies
+      - name: Install dependencies
         run: npm ci
 
-        - name: Setup GitHub CLI
+      - name: Setup GitHub CLI
         run: |
           curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
           echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | tee /etc/apt/sources.list.d/github-cli.list > /dev/null
           apt-get update
           apt-get install gh -y
 
-        - name: Authenticate with GitHub
+      - name: Authenticate with GitHub
         run: |
           echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
 
-        - name: Run Exponential AI Delegation Orchestrator
+      - name: Run Exponential AI Delegation Orchestrator
         run: |
           echo "🚀 Starting Exponential AI Delegation Orchestrator..."
           node automation/exponential-ai-delegation-orchestrator.cjs
         env:
           "GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-        - name: Deploy new factories
+      - name: Deploy new factories
         run: |"
           echo "🏭 Deploying new AI delegation factories..."
           for factory in automation/factories/*.cjs; do
@@ -71,7 +71,7 @@ jobs:
             fi
           done
 
-        - name: Generate new agents
+      - name: Generate new agents
         run: |
           echo "🤖 Generating new AI agents..."
           for agent in automation/agents/*.cjs; do
@@ -81,7 +81,7 @@ jobs:
             fi
           done
 
-        - name: Analyze exponential growth
+      - name: Analyze exponential growth
         run: |
           echo "📊 Analyzing exponential growth metrics..."
           node -e "
@@ -115,7 +115,7 @@ jobs:
             }
           "
 
-        - name: Commit and push changes
+      - name: Commit and push changes
         run: |
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions[bot]"
@@ -127,12 +127,12 @@ jobs:
             echo "No changes to push"
           fi
 
-        - name: Trigger recursive delegation
+      - name: Trigger recursive delegation
         run: |
           echo "🔄 Triggering next delegation cycle..."
           gh workflow run exponential-ai-delegation.yml --ref main || echo "Recursive trigger failed"
 
-        - name: Create delegation summary
+      - name: Create delegation summary
         run: |
           echo "📋 Creating delegation summary..."
           
@@ -166,7 +166,7 @@ jobs:
               --label "automation,ai-delegation,milestone" || echo "Issue creation failed"
           fi
 
-        - name: Upload delegation artifacts
+      - name: Upload delegation artifacts
         uses: actions/upload-artifact@v4
         with:
           name: exponential-ai-delegation-artifacts
@@ -176,7 +176,7 @@ jobs:
             delegation-summary.md
           if-no-files-found: ignore
 
-        - name: Notify completion
+      - name: Notify completion
         run: |
           echo "✅ Exponential AI Delegation cycle completed successfully!"
           echo "📊 Next cycle will create approximately $(( $(ls automation/factories/*.cjs 2>/dev/null | wc -l) * 3 )) new factories"

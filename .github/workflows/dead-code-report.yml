@@ -18,20 +18,20 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-        - name: Checkout
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-        - name: Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
-        - name: Install dependencies
+      - name: Install dependencies
         run: npm ci
-        - name: Run dead-code scanner
+      - name: Run dead-code scanner
         run: node automation/dead-code-scanner.cjs | cat
-        - name: Commit and push report
+      - name: Commit and push report
         run: |"
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions[bot]"

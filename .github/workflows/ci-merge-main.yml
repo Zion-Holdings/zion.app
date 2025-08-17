@@ -11,8 +11,8 @@ on:
 
 
 concurrency:
-  group: "github.workflow-github.ref
-  cancel-in-progress: "true
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
 
 permissions:
   contents: write
@@ -27,15 +27,15 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-        - name: Checkout
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-        - name: Configure git"
+      - name: Configure git"
         run: |"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        - name: Merge branch into main
+      - name: Merge branch into main
         run: |
           git fetch origin main
           git checkout main

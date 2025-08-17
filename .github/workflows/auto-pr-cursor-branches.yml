@@ -8,8 +8,8 @@ on:
 
 
 concurrency:
-  group: "github.workflow-github.ref
-  cancel-in-progress: "true
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
 
 permissions:
   contents: write
@@ -21,12 +21,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-        - name: Checkout
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-        - name: Create or update PR to main
+      - name: Create or update PR to main
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -41,12 +41,12 @@ jobs:
           draft: false
           delete-branch: false
 
-        - name: Add automerge label (ensures label exists)
+      - name: Add automerge label (ensures label exists)
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: automerge, automated
 
-        - name: Enable auto-merge (squash)
+      - name: Enable auto-merge (squash)
         uses: peter-evans/enable-pull-request-automerge@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}

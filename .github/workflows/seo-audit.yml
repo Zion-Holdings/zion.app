@@ -7,8 +7,8 @@ on:
 
 
 concurrency:
-  group: "github.workflow-github.ref
-  cancel-in-progress: "true
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
 
 permissions:
   contents: write
@@ -20,34 +20,34 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-        - name: Checkout repository
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-        - name: Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4"
         with:"
           node-version: '20'
           cache: 'npm'
 
-        - name: Install dependencies
+      - name: Install dependencies
         run: |
           npm ci --no-audit --no-fund
           echo "Dependencies installed successfully"
 
-        - name: Create reports directory
+      - name: Create reports directory
         run: |
           mkdir -p public/reports/seo
           echo "Reports directory created"
 
-        - name: Set file permissions
+      - name: Set file permissions
         run: |
           chmod +x scripts/seo-audit.js
           echo "File permissions set"
 
-        - name: Generate SEO report
+      - name: Generate SEO report
         id: seo_report
         run: |
           echo "Starting SEO audit..."
@@ -64,7 +64,7 @@ jobs:
             echo "::set-output name=status::failed"
           fi
 
-        - name: List generated files
+      - name: List generated files
         run: |
           echo "Generated files:"
           ls -la public/reports/seo/ || echo "No SEO reports directory found"
@@ -72,7 +72,7 @@ jobs:
           echo "Directory contents:"
           ls -la public/ || echo "No public directory found"
 
-        - name: Check for changes
+      - name: Check for changes
         id: check_changes
         run: |
           echo "Checking for git changes..."
@@ -86,14 +86,14 @@ jobs:
             echo "No changes detected"
           fi
 
-        - name: Configure git
+      - name: Configure git
         if: steps.check_changes.outputs.has_changes == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           echo "Git configured successfully"
 
-        - name: Add and commit changes
+      - name: Add and commit changes
         if: steps.check_changes.outputs.has_changes == 'true'
         run: |
           echo "Adding files to git..."
@@ -105,7 +105,7 @@ jobs:
             echo "Commit failed, but continuing..."
           fi
 
-        - name: Push changes
+      - name: Push changes
         if: steps.check_changes.outputs.has_changes == 'true'
         run: |
           echo "Pushing changes..."
@@ -115,11 +115,11 @@ jobs:
             echo "Push failed, but this is not critical"
           fi
 
-        - name: No changes notification
+      - name: No changes notification
         if: steps.check_changes.outputs.has_changes == 'false'
         run: echo "No changes to commit - SEO audit completed successfully"
 
-        - name: Final status
+      - name: Final status
         run: |
           echo "SEO Audit workflow completed"
           echo "Check the generated reports in public/reports/seo/"

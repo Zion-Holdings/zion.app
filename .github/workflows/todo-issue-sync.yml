@@ -20,23 +20,23 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-        - name: Checkout
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-        - name: Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-        - name: Install deps (minimal)
+      - name: Install deps (minimal)
         run: npm ci --omit=dev || npm ci
 
-        - name: Generate TODO report
+      - name: Generate TODO report
         run: node scripts/automations/todo_issue_sync.cjs
 
-        - name: Commit and push report
+      - name: Commit and push report
         run: |
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions[bot]"
@@ -46,7 +46,7 @@ jobs:
             git push origin HEAD:$(git rev-parse --abbrev-ref HEAD) || git push origin HEAD
           fi
 
-        - name: Create or update TODO Issue
+      - name: Create or update TODO Issue
         env:
           "GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}

@@ -9,8 +9,8 @@ on:
 
 
 concurrency:
-  group: "github.workflow-github.ref
-  cancel-in-progress: "true
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
 
 permissions:
   contents: write
@@ -48,15 +48,15 @@ jobs:
       matrix:
         include: ${{ fromJSON(needs.list.outputs.prs) }}
     steps:
-        - name: Checkout PR head
+      - name: Checkout PR head
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           ref: ${{ matrix.headRef }}
-        - name: Merge main into PR branch
+      - name: Merge main into PR branch
         run: |
           git fetch origin main
           git merge --no-edit origin/main || true
-        - name: Push updated branch
+      - name: Push updated branch
         run: |"
           git push origin HEAD:${{ matrix.headRef }} || echo "Push failed (likely fork)"

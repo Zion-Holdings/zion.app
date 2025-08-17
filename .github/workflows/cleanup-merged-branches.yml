@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-        - name: List open PR heads
+      - name: List open PR heads
         id: list
         uses: actions/github-script@v7
         with:
@@ -34,11 +34,11 @@ jobs:
             const fs = require('fs');
             fs.writeFileSync('open_pr_heads.txt', heads.join('\n'));
             core.info(`Open PR heads: ${heads.length}`);
-        - name: Checkout repository
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-        - name: Prune merged branches
+      - name: Prune merged branches
         run: |
           set -e
           git fetch --all --prune

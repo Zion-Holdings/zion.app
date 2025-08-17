@@ -28,8 +28,8 @@ env:
 
 
 concurrency:
-  group: "github.workflow-github.ref
-  cancel-in-progress: "true
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
 
 jobs:
   analyze-current-state:
@@ -44,14 +44,14 @@ jobs:
         with:
           fetch-depth: 0
       
-        - name: Count existing agent factories
+      - name: Count existing agent factories
         id: count"
         run: |"
           FACTORIES=$(find automation/ -name "*agent*factory*" -type f | wc -l)
           echo "total=$FACTORIES" >> $GITHUB_OUTPUT
           echo "Current agent factories: $FACTORIES"
       
-        - name: Calculate growth potential
+      - name: Calculate growth potential
         id: "growth
         run: |
           CURRENT=${{ steps.count.outputs.total }}
@@ -60,7 +60,7 @@ jobs:
           echo "potential=$POTENTIAL" >> $GITHUB_OUTPUT
           echo "Growth potential: $POTENTIAL factories"
       
-        - name: Determine next target
+      - name: Determine next target
         id: "target
         run: |
           CURRENT=${{ steps.count.outputs.total }}
@@ -80,13 +80,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-        - name: Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
       
-        - name: Create factory template
+      - name: Create factory template
         run: "|
           mkdir -p automation/factories/${{ matrix.factory-type }}-${{ matrix.complexity }}-${{ github.run_number }}
           
@@ -110,7 +110,7 @@ jobs:
           }
           EOF
       
-        - name: Generate factory code
+      - name: Generate factory code
         run: |
           FACTORY_DIR="automation/factories/${{ matrix.factory-type }}-${{ matrix.complexity }}-${{ github.run_number }}"
           
@@ -241,7 +241,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-        - name: Deploy new factories
+      - name: Deploy new factories
         run: |
           echo "🚀 Deploying ${{ needs.create-factory-templates.result == 'success' && 'new factories' || 'existing factories' }}"
           
@@ -263,7 +263,7 @@ jobs:
             echo "✅ Factory $FACTORY_NAME deployed successfully"
           done
       
-        - name: Update factory registry
+      - name: Update factory registry
         run: |
           # Create/update factory registry
           cat > automation/factory-registry.json << EOF
@@ -290,7 +290,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-        - name: Calculate exponential growth metrics
+      - name: Calculate exponential growth metrics
         run: |
           CURRENT=${{ needs.analyze-current-state.outputs.current-factories }}
           GROWTH=${{ env.GROWTH_FACTOR }}
@@ -309,7 +309,7 @@ jobs:
           DOUBLING_TIME=$(echo "scale=2; 1 / $GROWTH" | bc -l 2>/dev/null || echo "~0.5 cycles")
           echo "Doubling time: $DOUBLING_TIME cycles"
       
-        - name: Generate growth report
+      - name: Generate growth report
         run: "|
           cat > automation/reports/exponential-growth-report-$(date +%Y%m%d-%H%M%S).md << EOF
           # Exponential Growth Report
@@ -358,7 +358,7 @@ jobs:
     runs-on: ubuntu-latest
     if: always()
     steps:
-        - name: Growth notification
+      - name: Growth notification
         run: |
           echo "🚀 Agent Factory Proliferation Complete!"
           echo "📊 Current factories: ${{ needs.analyze-current-state.outputs.current-factories }}"

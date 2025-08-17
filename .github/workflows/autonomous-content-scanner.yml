@@ -18,22 +18,22 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-        - name: Checkout
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-        - name: Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
-        - name: Install dependencies (minimal)
+      - name: Install dependencies (minimal)
         run: npm ci --omit=dev || npm ci
-        - name: Run TODO/FIXME scanner
+      - name: Run TODO/FIXME scanner
         run: node automation/todo-scanner.cjs | cat
-        - name: Build pages/docs registry
+      - name: Build pages/docs registry
         run: node automation/docs-pages-indexer.cjs | cat
-        - name: Commit and push changes to main
+      - name: Commit and push changes to main
         run: |"
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions[bot]"

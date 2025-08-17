@@ -12,7 +12,7 @@ permissions:
 
 concurrency:
   group: "workflow-watchdog-${{ github.ref }}
-  cancel-in-progress: "true
+  cancel-in-progress: true
 
 jobs:
 
@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-        - name: Scan and remediate failed workflow runs
+      - name: Scan and remediate failed workflow runs
         id: scan
         uses: actions/github-script@v7
         with:
@@ -80,7 +80,7 @@ jobs:
             core.setOutput('reruns', rerunCount);
             core.setOutput('issues', issueCount);
 
-        - name: Summary
+      - name: Summary
         run: |
           echo "Reruns: ${{ steps.scan.outputs.reruns }}" >> $GITHUB_STEP_SUMMARY
           echo "Issues: ${{ steps.scan.outputs.issues }}" >> $GITHUB_STEP_SUMMARY

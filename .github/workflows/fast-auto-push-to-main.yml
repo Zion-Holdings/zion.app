@@ -22,17 +22,17 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-        - name: Checkout
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-        - name: Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-        - name: Push HEAD to main fast
+      - name: Push HEAD to main fast
         env:
           TARGET_BRANCH: main
           PUSH_TO_MAIN: 'true'

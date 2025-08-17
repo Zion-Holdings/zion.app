@@ -19,17 +19,17 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-        - name: Checkout
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-        - name: Fetch all branches
+      - name: Fetch all branches
         run: |
           git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}"
           git fetch --all --prune
         env:
           "GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        - name: Delete merged remote branches older than 7 days
+      - name: Delete merged remote branches older than 7 days
         shell: bash
         run: |
           set -euo pipefail

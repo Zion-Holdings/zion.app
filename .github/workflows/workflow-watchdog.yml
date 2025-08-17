@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-        - name: Ensure critical workflows are healthy
+      - name: Ensure critical workflows are healthy
         uses: actions/github-script@v7
         with:
           script: |

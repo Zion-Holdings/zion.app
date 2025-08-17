@@ -22,7 +22,7 @@ on:
 
 env:
   REPLICATION_MODE: "${{ github.event.inputs.replication_mode || 'balanced' }}"
-  MAX_FACTORIES: "${{ github.event.inputs.max_factories || '1000' }}"
+  MAX_FACTORIES: "${{ github.event.inputs.max_factories || '1000' }}""
   REPLICATION_FACTOR: 2.0
   HEALTH_CHECK_INTERVAL: 3600
 
@@ -41,7 +41,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-        - name: Check factory health
+      - name: Check factory health
         id: health"
         run: |"
           echo "🏥 Checking factory health status..."
@@ -84,13 +84,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-        - name: Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
       
-        - name: Execute replication strategy
+      - name: Execute replication strategy
         run: |
           REPLICATION_TYPE="${{ matrix.replication-type }}"
           CURRENT_FACTORIES="${{ needs.factory-health-check.outputs.total-factories }}"
@@ -336,7 +336,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-        - name: Monitor self-replication
+      - name: Monitor self-replication
         run: |
           echo "📊 Monitoring self-replication progress..."
           
@@ -352,7 +352,7 @@ jobs:
           SELF_REPLICATING=$(find automation/factories/ -name "*.js" -exec grep -l "selfReplicate\|self-replicating" {} \; | wc -l)
           echo "Self-replicating factories: $SELF_REPLICATING"
       
-        - name: Generate replication report
+      - name: Generate replication report
         run: "|
           mkdir -p automation/reports
           
@@ -397,7 +397,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-        - name: Validate infinite growth potential
+      - name: Validate infinite growth potential
         run: |
           echo "♾️ Validating infinite growth potential..."
           
@@ -527,7 +527,7 @@ jobs:
           
           echo "✅ Infinite growth validator created"
       
-        - name: Run validation
+      - name: Run validation
         run: |
           cd automation/validation
           node -e "
@@ -545,7 +545,7 @@ jobs:
     runs-on: ubuntu-latest
     if: always()
     steps:
-        - name: Replication completion notification
+      - name: Replication completion notification
         run: |
           echo "🏭 Self-Replicating Factory Manager Complete!"
           echo "📊 Total factories: ${{ needs.factory-health-check.outputs.total-factories }}"

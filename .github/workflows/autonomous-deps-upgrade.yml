@@ -18,31 +18,31 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-        - name: Checkout
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           persist-credentials: false
 
-        - name: Setup Node
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
 
-        - name: Install dependencies
+      - name: Install dependencies
         run: npm ci
 
-        - name: Create branch
+      - name: Create branch
         id: branch
         run: |
           BR="auto/deps-upgrade-$(date +%s)"
           git checkout -b "$BR"
           echo "branch=$BR" >> $GITHUB_OUTPUT
 
-        - name: Run auto-upgrade
+      - name: Run auto-upgrade
         run: node automation/deps-auto-upgrade.cjs || true
 
-        - name: Commit changes
+      - name: Commit changes
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
@@ -56,7 +56,7 @@ jobs:
         env:
           "GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-        - name: Open PR
+      - name: Open PR
         id: pr
         if: always()
         uses: actions/github-script@v7
@@ -66,7 +66,7 @@ jobs:
             const { data: pr } = await github.rest.pulls.create({ owner: context.repo.owner, repo: context.repo.repo, title: 'chore(deps): automated minor/patch upgrades', head: branch, base: 'main', body: 'Automated dependency upgrades with build verification.' });
             core.setOutput('number', pr.number);
 
-        - name: Auto-merge PR if build ok
+      - name: Auto-merge PR if build ok
         if: always()
         uses: actions/github-script@v7
         with:
