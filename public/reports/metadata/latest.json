@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-17T20:20:01.627Z",
-  "pagesScanned": 8420,
+  "generatedAt": "2025-08-17T20:21:01.077Z",
+  "pagesScanned": 8422,
   "items": [
     {
       "route": "/404",
@@ -34626,6 +34626,16 @@
       "suggestion": {
         "title": "Pilot Plan: LLM Apps",
         "description": "Pilot Plan: LLM Apps — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-17-2020",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Runbook: Agent Ops",
+        "description": "Runbook: Agent Ops — auto-suggested description"
       }
     },
     {
@@ -82906,6 +82916,16 @@
       "suggestion": {
         "title": "Autonomous Capability Map — Applied NLP & RAG (2025-08-17 20:10 UTC)",
         "description": "Autonomous Capability Map — Applied NLP & RAG (2025-08-17 20:10 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-2020",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Checklist — AI Service Design (2025-08-17 20:20 UTC)",
+        "description": "Autonomous Checklist — AI Service Design (2025-08-17 20:20 UTC) — auto-suggested description"
       }
     },
     {
