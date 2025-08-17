@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-17T12:02:38.861Z",
+  "timestamp": "2025-08-17T12:03:41.151Z",
   "critical": [],
   "high": [],
   "medium": [
@@ -26,11 +26,11 @@
     {
       "workflow": "maintenance.yml",
       "status": "active",
-      "complexityScore": 40,
+      "complexityScore": 30,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 224,
-        "jobCount": 1,
+        "totalLines": 195,
+        "jobCount": 0,
         "stepCount": 17,
         "conditionalCount": 1,
         "matrixCount": 0,
@@ -41,6 +41,26 @@
       },
       "refactoringStrategy": [
         "Break down into smaller job steps",
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "release.yml",
+      "status": "active",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 111,
+        "jobCount": 0,
+        "stepCount": 11,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 2,
+        "actionCount": 5
+      },
+      "refactoringStrategy": [
         "Extract common functionality to reusable workflows"
       ]
     },

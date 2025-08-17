@@ -57,7 +57,10 @@
   },
   "ci.yml": {
     "name": "ci.yml",
-    "triggers": [],
+    "triggers": [
+      "push",
+      "pull_request"
+    ],
     "needs": [],
     "outputs": [],
     "priority": "critical",
@@ -65,7 +68,7 @@
       "runner": "ubuntu-latest",
       "memory": "standard",
       "timeout": 45,
-      "concurrentJobs": 5
+      "concurrentJobs": 4
     },
     "estimatedDuration": 45
   },
@@ -155,7 +158,10 @@
   },
   "deploy.yml": {
     "name": "deploy.yml",
-    "triggers": [],
+    "triggers": [
+      "push",
+      "workflow_dispatch {}"
+    ],
     "needs": [],
     "outputs": [],
     "priority": "medium",
@@ -239,9 +245,14 @@
   },
   "maintenance.yml": {
     "name": "maintenance.yml",
-    "triggers": [],
+    "triggers": [
+      "workflow_dispatch",
+      "schedule"
+    ],
     "needs": [
-      ""
+      "[cleanup-artifacts",
+      "optimize-workflows",
+      "dependency-maintenance]"
     ],
     "outputs": [],
     "priority": "medium",
@@ -251,7 +262,7 @@
       "timeout": 15,
       "concurrentJobs": 6
     },
-    "estimatedDuration": 30
+    "estimatedDuration": 25
   },
   "marketing-daily.yml": {
     "name": "marketing-daily.yml",
@@ -339,7 +350,12 @@
   },
   "playwright-smoke.yml": {
     "name": "playwright-smoke.yml",
-    "triggers": [],
+    "triggers": [
+      "push",
+      "pull_request",
+      "workflow_dispatch {}",
+      "schedule"
+    ],
     "needs": [],
     "outputs": [],
     "priority": "high",
@@ -367,7 +383,10 @@
   },
   "release.yml": {
     "name": "release.yml",
-    "triggers": [],
+    "triggers": [
+      "push",
+      "workflow_dispatch"
+    ],
     "needs": [],
     "outputs": [],
     "priority": "medium",
@@ -395,7 +414,12 @@
   },
   "security.yml": {
     "name": "security.yml",
-    "triggers": [],
+    "triggers": [
+      "push",
+      "pull_request",
+      "workflow_dispatch {}",
+      "schedule"
+    ],
     "needs": [],
     "outputs": [],
     "priority": "medium",
@@ -423,7 +447,12 @@
   },
   "test.yml": {
     "name": "test.yml",
-    "triggers": [],
+    "triggers": [
+      "push",
+      "pull_request",
+      "workflow_dispatch {}",
+      "schedule"
+    ],
     "needs": [],
     "outputs": [],
     "priority": "medium",

@@ -1,18 +1,18 @@
 {
-  "timestamp": "2025-08-17T12:02:38.858Z",
+  "timestamp": "2025-08-17T12:03:41.148Z",
   "summary": {
     "totalWorkflows": 34,
     "complexityDistribution": {
       "very-high": 0,
       "high": 0,
-      "medium": 3,
-      "low": 31
+      "medium": 4,
+      "low": 30
     },
     "refactoringPriorities": {
       "critical": 0,
       "high": 0,
-      "medium": 3,
-      "low": 31
+      "medium": 4,
+      "low": 30
     }
   },
   "workflows": {
@@ -92,8 +92,8 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 32,
-        "jobCount": 1,
+        "totalLines": 31,
+        "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
         "matrixCount": 0,
@@ -218,8 +218,8 @@
       "complexityScore": 20,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 71,
-        "jobCount": 1,
+        "totalLines": 85,
+        "jobCount": 0,
         "stepCount": 8,
         "conditionalCount": 1,
         "matrixCount": 0,
@@ -323,11 +323,11 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/instagram-six-hourly.yml"
     },
     "maintenance.yml": {
-      "complexityScore": 40,
+      "complexityScore": 30,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 224,
-        "jobCount": 1,
+        "totalLines": 195,
+        "jobCount": 0,
         "stepCount": 17,
         "conditionalCount": 1,
         "matrixCount": 0,
@@ -452,8 +452,8 @@
       "complexityScore": 15,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 59,
-        "jobCount": 1,
+        "totalLines": 66,
+        "jobCount": 0,
         "stepCount": 9,
         "conditionalCount": 1,
         "matrixCount": 0,
@@ -485,11 +485,11 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/rapid-sync.yml"
     },
     "release.yml": {
-      "complexityScore": 25,
-      "complexityLevel": "low",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 96,
-        "jobCount": 1,
+        "totalLines": 111,
+        "jobCount": 0,
         "stepCount": 11,
         "conditionalCount": 0,
         "matrixCount": 0,
@@ -498,7 +498,7 @@
         "secretCount": 2,
         "actionCount": 5
       },
-      "refactoringPriority": "low",
+      "refactoringPriority": "medium",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/release.yml"
     },
@@ -524,8 +524,8 @@
       "complexityScore": 25,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 86,
-        "jobCount": 1,
+        "totalLines": 95,
+        "jobCount": 0,
         "stepCount": 12,
         "conditionalCount": 1,
         "matrixCount": 0,
@@ -560,8 +560,8 @@
       "complexityScore": 25,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 90,
-        "jobCount": 1,
+        "totalLines": 100,
+        "jobCount": 0,
         "stepCount": 15,
         "conditionalCount": 2,
         "matrixCount": 0,

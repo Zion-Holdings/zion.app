@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-17T12:02:46.286Z",
+  "timestamp": "2025-08-17T12:03:48.678Z",
   "critical": [
     {
       "name": "ci-self-heal.yml",
@@ -23,15 +23,18 @@
       "priority": "critical",
       "resourceIntensity": "medium",
       "estimatedDuration": 45,
-      "concurrentJobs": 7,
+      "concurrentJobs": 6,
       "runnerRequirements": {
         "runner": "ubuntu-latest",
         "size": "standard",
         "special": []
       },
       "dependencies": [],
-      "triggers": [],
-      "resourceScore": 138
+      "triggers": [
+        "push",
+        "pull_request"
+      ],
+      "resourceScore": 139
     }
   ],
   "high": [
@@ -41,14 +44,19 @@
       "priority": "high",
       "resourceIntensity": "medium",
       "estimatedDuration": 15,
-      "concurrentJobs": 16,
+      "concurrentJobs": 13,
       "runnerRequirements": {
         "runner": "ubuntu-latest",
         "size": "standard",
         "special": []
       },
       "dependencies": [],
-      "triggers": [],
+      "triggers": [
+        "push",
+        "pull_request",
+        "workflow_dispatch {}",
+        "schedule"
+      ],
       "resourceScore": 145
     },
     {
@@ -91,15 +99,20 @@
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 15,
-      "concurrentJobs": 11,
+      "concurrentJobs": 8,
       "runnerRequirements": {
         "runner": "ubuntu-latest",
         "size": "standard",
         "special": []
       },
       "dependencies": [],
-      "triggers": [],
-      "resourceScore": 115
+      "triggers": [
+        "push",
+        "pull_request",
+        "workflow_dispatch {}",
+        "schedule"
+      ],
+      "resourceScore": 117
     },
     {
       "name": "test.yml",
@@ -107,14 +120,19 @@
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 20,
-      "concurrentJobs": 14,
+      "concurrentJobs": 11,
       "runnerRequirements": {
         "runner": "ubuntu-latest",
         "size": "standard",
         "special": []
       },
       "dependencies": [],
-      "triggers": [],
+      "triggers": [
+        "push",
+        "pull_request",
+        "workflow_dispatch {}",
+        "schedule"
+      ],
       "resourceScore": 110
     },
     {
@@ -362,6 +380,25 @@
       "resourceScore": 103
     },
     {
+      "name": "deploy.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/deploy.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 30,
+      "concurrentJobs": 8,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "large",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "push",
+        "workflow_dispatch {}"
+      ],
+      "resourceScore": 102
+    },
+    {
       "name": "infinite-improvement-loop.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/infinite-improvement-loop.yml",
       "priority": "medium",
@@ -458,22 +495,6 @@
       "resourceScore": 100
     },
     {
-      "name": "deploy.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/deploy.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 30,
-      "concurrentJobs": 12,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "large",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [],
-      "resourceScore": 100
-    },
-    {
       "name": "diverse-agent-matrix.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/diverse-agent-matrix.yml",
       "priority": "medium",
@@ -511,14 +532,17 @@
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 30,
-      "concurrentJobs": 14,
+      "concurrentJobs": 13,
       "runnerRequirements": {
         "runner": "ubuntu-latest",
         "size": "large",
         "special": []
       },
       "dependencies": [],
-      "triggers": [],
+      "triggers": [
+        "push",
+        "workflow_dispatch"
+      ],
       "resourceScore": 100
     }
   ],
@@ -528,18 +552,23 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/maintenance.yml",
       "priority": "low",
       "resourceIntensity": "high",
-      "estimatedDuration": 30,
-      "concurrentJobs": 17,
+      "estimatedDuration": 25,
+      "concurrentJobs": 16,
       "runnerRequirements": {
         "runner": "ubuntu-latest",
         "size": "standard",
         "special": []
       },
       "dependencies": [
-        ""
+        "[cleanup-artifacts",
+        "optimize-workflows",
+        "dependency-maintenance]"
       ],
-      "triggers": [],
-      "resourceScore": 80
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "resourceScore": 85
     },
     {
       "name": "cloud-maintenance.yml",
@@ -584,18 +613,23 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/maintenance.yml",
       "priority": "low",
       "resourceIntensity": "high",
-      "estimatedDuration": 30,
-      "concurrentJobs": 17,
+      "estimatedDuration": 25,
+      "concurrentJobs": 16,
       "runnerRequirements": {
         "runner": "ubuntu-latest",
         "size": "standard",
         "special": []
       },
       "dependencies": [
-        ""
+        "[cleanup-artifacts",
+        "optimize-workflows",
+        "dependency-maintenance]"
       ],
-      "triggers": [],
-      "resourceScore": 80
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "resourceScore": 85
     }
   ],
   "recommendations": []
