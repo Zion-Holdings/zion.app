@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T12:55:03.842Z",
+  "generatedAt": "2025-08-17T12:56:03.843Z",
   "entries": [
     {
       "route": "/user-management",
@@ -756,6 +756,12 @@
       "file": "pages/reports/updates/update-2025-08-17-1000.tsx",
       "title": "Autonomous Blueprint — Edge AI & IoT (2025-08-17 10:00 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Blueprint — Edge AI & IoT (2025-08-17 10:00 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { \"@ty"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0956",
+      "file": "pages/reports/updates/update-2025-08-17-0956.tsx",
+      "title": "Autonomous Update — 2025-08-17 09:56",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 09:56 Autonomous Update — 2025-08-17 09:56 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : My AI skeptic friends are all nuts ·"
     },
     {
       "route": "/reports/updates/update-2025-08-17-0955",
