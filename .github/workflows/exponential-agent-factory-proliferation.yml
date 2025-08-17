@@ -3,7 +3,7 @@ name: 🚀 Exponential Agent Factory Proliferation - Autonomous Development
 on:
   schedule:
     # Run every 4 hours for faster exponential growth
-    - cron: '0 */4 * * *'
+    - cron: '0 0 * * *'
   workflow_dispatch:
     inputs:
       growth_multiplier:
@@ -33,11 +33,17 @@ env:
   MAX_CONCURRENT_FACTORIES: 10
   FACTORY_CREATION_INTERVAL: 14400 # 4 hours in seconds
 
+
+concurrency:
+  group: github.workflow-github.ref
+  cancel-in-progress: true
+
 jobs:
   # Exponential Growth Analysis
   analyze-exponential-growth:
     name: 📊 Analyze Exponential Growth Potential
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     outputs:
       current-factories: ${{ steps.analyze.outputs.total_factories }}
       growth-potential: ${{ steps.calculate.outputs.growth_potential }}
@@ -303,7 +309,7 @@ jobs:
           
           on:
             schedule:
-              - cron: '0 */2 * * *' # Every 2 hours
+              - cron: '0 0 * * *' # Every 2 hours
             workflow_dispatch:
           
           jobs:

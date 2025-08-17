@@ -3,7 +3,7 @@ name: 🚀 Agent Factory Proliferation - Exponential Growth
 on:
   schedule:
     # Run every 6 hours to maintain exponential growth
-    - cron: '0 */6 * * *'
+    - cron: '0 0 * * *'
   workflow_dispatch:
     inputs:
       growth_factor:
@@ -26,9 +26,15 @@ env:
   MAX_CONCURRENT: 5
   FACTORY_TEMPLATE_PATH: 'automation/templates/agent-factory'
 
+
+concurrency:
+  group: github.workflow-github.ref
+  cancel-in-progress: true
+
 jobs:
   analyze-current-state:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     outputs:
       current-factories: ${{ steps.count.outputs.total }}
       growth-potential: ${{ steps.growth.outputs.potential }}

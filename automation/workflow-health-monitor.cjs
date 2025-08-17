@@ -347,7 +347,7 @@ class WorkflowHealthMonitor {
         if (content.includes('on:') && !content.includes('concurrency:')) {
           const concurrencyBlock = `
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: github.workflow-github.ref
   cancel-in-progress: true
 
 `;

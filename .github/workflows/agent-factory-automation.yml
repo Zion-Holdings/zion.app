@@ -3,7 +3,7 @@ name: Agent Factory - Exponential Development Automation
 on:
   schedule:
     # Run every 6 hours for continuous automation
-    - cron: '0 */6 * * *'
+    - cron: '0 0 * * *'
   workflow_dispatch:
     inputs:
       agent_type:
@@ -41,11 +41,17 @@ env:
   NODE_VERSION: '18'
   AGENT_GENERATION_INTERVAL: 21600 # 6 hours in seconds
 
+
+concurrency:
+  group: github.workflow-github.ref
+  cancel-in-progress: true
+
 jobs:
   # Agent Generation Pipeline
   generate-agents:
     name: Generate Development Agents
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     strategy:
       matrix:
         agent_type: [full-stack, frontend, backend, testing, deployment, monitoring, optimization]

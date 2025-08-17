@@ -3,14 +3,20 @@ name: Automation Dashboard
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */4 * * *'  # Every 4 hours
+    - cron: '0 0 * * *'  # Every 4 hours
   workflow_run:
     workflows: ["*"]
     types: [completed]
 
+
+concurrency:
+  group: github.workflow-github.ref
+  cancel-in-progress: true
+
 jobs:
   dashboard-generation:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     name: Generate Automation Dashboard
     
     steps:

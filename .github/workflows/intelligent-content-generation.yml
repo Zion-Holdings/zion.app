@@ -13,9 +13,15 @@ on:
       - 'components/**'
       - 'docs/**'
 
+
+concurrency:
+  group: github.workflow-github.ref
+  cancel-in-progress: true
+
 jobs:
   content-generation:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     name: Generate Missing Content
     
     steps:

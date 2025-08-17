@@ -219,9 +219,9 @@ class WorkflowPrioritizer {
 
       // Add concurrency control
       if (analysis.recommendations.some(r => r.type === 'add_concurrency')) {
-        const concurrencyBlock = `
+                  const concurrencyBlock = `
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: github.workflow-github.ref
   cancel-in-progress: true
 
 `;

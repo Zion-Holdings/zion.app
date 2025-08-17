@@ -2,8 +2,13 @@ name: Autonomous Cloud Automations
 
 on:
   schedule:
-    - cron: '0 * * * *' # hourly
+    - cron: '0 0 * * *' # hourly
   workflow_dispatch: {}
+
+
+concurrency:
+  group: github.workflow-github.ref
+  cancel-in-progress: true
 
 permissions:
   contents: write

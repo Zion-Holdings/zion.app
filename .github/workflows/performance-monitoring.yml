@@ -3,7 +3,7 @@ name: Performance Monitoring
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */6 * * *'  # Every 6 hours
+    - cron: '0 0 * * *'  # Every 6 hours
   push:
     branches: [ main, develop ]
     paths:
@@ -12,9 +12,15 @@ on:
       - 'next.config.js'
       - 'tailwind.config.js'
 
+
+concurrency:
+  group: github.workflow-github.ref
+  cancel-in-progress: true
+
 jobs:
   performance-audit:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     name: Performance Audit
     
     steps:

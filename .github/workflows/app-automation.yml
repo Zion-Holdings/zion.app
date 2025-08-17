@@ -9,9 +9,15 @@ on:
       - 'automation/orchestrator-config.json'
       - 'automation/app-automation-orchestrator.cjs'
 
+
+concurrency:
+  group: github.workflow-github.ref
+  cancel-in-progress: true
+
 jobs:
   run-orchestrator:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     steps:
       - name: Checkout code
         uses: actions/checkout@v4

@@ -2,12 +2,18 @@ name: App Monitoring
 
 on:
   schedule:
-    - cron: '0 */6 * * *'  # Every 6 hours
+    - cron: '0 0 * * *'  # Every 6 hours
   workflow_dispatch:  # Manual trigger
+
+
+concurrency:
+  group: github.workflow-github.ref
+  cancel-in-progress: true
 
 jobs:
   monitor-performance:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     steps:
       - name: Checkout code
         uses: actions/checkout@v4

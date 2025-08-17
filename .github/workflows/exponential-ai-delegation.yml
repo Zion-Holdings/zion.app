@@ -2,7 +2,7 @@ name: Exponential AI Delegation
 
 on:
   schedule:
-    - cron: '0 */4 * * *'  # Every 4 hours
+    - cron: '0 0 * * *'  # Every 4 hours
   workflow_dispatch: {}
   push:
     branches: [main]
@@ -23,6 +23,7 @@ jobs:
   exponential-delegation:
     name: Exponential AI Delegation
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     permissions:
       contents: read
       actions: write

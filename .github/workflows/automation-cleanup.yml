@@ -5,6 +5,11 @@ on:
     - cron: '0 2 * * *' # Daily at 2 AM
   workflow_dispatch: {}
 
+
+concurrency:
+  group: github.workflow-github.ref
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
