@@ -157,6 +157,10 @@
       "route": "/reports/insights"
     },
     {
+      "file": "pages/reports/innovations/insight-2025-08-17T02-10.tsx",
+      "route": "/reports/innovations/insight-2025-08-17T02-10"
+    },
+    {
       "file": "pages/reports/innovations/insight-2025-08-17T02-00.tsx",
       "route": "/reports/innovations/insight-2025-08-17T02-00"
     },
@@ -207,6 +211,10 @@
     {
       "file": "pages/reports/innovations/insight-2025-08-17T00-00.tsx",
       "route": "/reports/innovations/insight-2025-08-17T00-00"
+    },
+    {
+      "file": "pages/reports/innovations/insight-2025-08-17-0210.tsx",
+      "route": "/reports/innovations/insight-2025-08-17-0210"
     },
     {
       "file": "pages/reports/innovations/insight-2025-08-17-0200.tsx",
@@ -2243,6 +2251,10 @@
     {
       "file": "pages/reports/innovations/insight-2025-08-15-0211.tsx",
       "route": "/reports/innovations/insight-2025-08-15-0211"
+    },
+    {
+      "file": "pages/reports/playbooks/playbook-2025-08-17-021051.tsx",
+      "route": "/reports/playbooks/playbook-2025-08-17-021051"
     },
     {
       "file": "pages/reports/playbooks/playbook-2025-08-17-020048.tsx",
@@ -4795,6 +4807,10 @@
     {
       "file": "pages/reports/dossiers/index.tsx",
       "route": "/reports/dossiers"
+    },
+    {
+      "file": "pages/reports/patterns/pattern-2025-08-17-021051.tsx",
+      "route": "/reports/patterns/pattern-2025-08-17-021051"
     },
     {
       "file": "pages/reports/patterns/pattern-2025-08-17-020048.tsx",
@@ -8607,6 +8623,10 @@
     {
       "file": "pages/reports/case-studies/ai-automation-success.tsx",
       "route": "/reports/case-studies/ai-automation-success"
+    },
+    {
+      "file": "pages/reports/guides/guide-2025-08-17-021051.tsx",
+      "route": "/reports/guides/guide-2025-08-17-021051"
     },
     {
       "file": "pages/reports/guides/guide-2025-08-17-020048.tsx",
@@ -12425,6 +12445,10 @@
       "route": "/main/front"
     },
     {
+      "file": "pages/reports/cases/case-2025-08-17-021051.tsx",
+      "route": "/reports/cases/case-2025-08-17-021051"
+    },
+    {
       "file": "pages/reports/cases/case-2025-08-17-020048.tsx",
       "route": "/reports/cases/case-2025-08-17-020048"
     },
@@ -15973,6 +15997,10 @@
       "route": "/reports/cases/case-2025-08-15-021207"
     },
     {
+      "file": "pages/reports/blueprints/blueprint-2025-08-17-021051.tsx",
+      "route": "/reports/blueprints/blueprint-2025-08-17-021051"
+    },
+    {
       "file": "pages/reports/blueprints/blueprint-2025-08-17-020048.tsx",
       "route": "/reports/blueprints/blueprint-2025-08-17-020048"
     },
@@ -18521,6 +18549,10 @@
       "route": "/reports/blueprints/blueprint-2025-08-14-212855"
     },
     {
+      "file": "pages/reports/updates/update-2025-08-17T02-10.tsx",
+      "route": "/reports/updates/update-2025-08-17T02-10"
+    },
+    {
       "file": "pages/reports/updates/update-2025-08-17T02-00.tsx",
       "route": "/reports/updates/update-2025-08-17T02-00"
     },
@@ -18571,6 +18603,10 @@
     {
       "file": "pages/reports/updates/update-2025-08-17T00-00.tsx",
       "route": "/reports/updates/update-2025-08-17T00-00"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-17-0210.tsx",
+      "route": "/reports/updates/update-2025-08-17-0210"
     },
     {
       "file": "pages/reports/updates/update-2025-08-17-0200.tsx",
@@ -18757,8 +18793,20 @@
       "route": "/reports/updates/update-2025-08-16-2320"
     },
     {
+      "file": "pages/reports/updates/update-2025-08-16-2312.tsx",
+      "route": "/reports/updates/update-2025-08-16-2312"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-16-2311.tsx",
+      "route": "/reports/updates/update-2025-08-16-2311"
+    },
+    {
       "file": "pages/reports/updates/update-2025-08-16-2310.tsx",
       "route": "/reports/updates/update-2025-08-16-2310"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-16-2309.tsx",
+      "route": "/reports/updates/update-2025-08-16-2309"
     },
     {
       "file": "pages/reports/updates/update-2025-08-16-2308.tsx",
@@ -25835,5 +25883,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-17T02:08:00.938Z"
+  "generatedAt": "2025-08-17T02:12:00.895Z"
 }
