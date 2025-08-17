@@ -5873,8 +5873,8 @@
     "name": "rapid-git-sync.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/rapid-git-sync.yml",
-    "size": 665,
-    "lines": 36,
+    "size": 1580,
+    "lines": 56,
     "triggers": [
       "schedule",
       "workflow_dispatch {}"
@@ -5888,7 +5888,7 @@
       "with"
     ],
     "timeouts": [
-      10
+      15
     ],
     "permissions": [
       {

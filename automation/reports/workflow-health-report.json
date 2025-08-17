@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-17T00:13:58.275Z",
+  "timestamp": "2025-08-17T00:14:29.665Z",
   "summary": {
     "totalWorkflows": 188,
     "activeWorkflows": 187,
@@ -6173,8 +6173,8 @@
       "name": "rapid-git-sync.yml",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/rapid-git-sync.yml",
-      "size": 665,
-      "lines": 36,
+      "size": 1580,
+      "lines": 56,
       "triggers": [
         "schedule",
         "workflow_dispatch {}"
@@ -6188,7 +6188,7 @@
         "with"
       ],
       "timeouts": [
-        10
+        15
       ],
       "permissions": [
         {
