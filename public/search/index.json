@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T02:34:03.392Z",
+  "generatedAt": "2025-08-17T02:38:03.609Z",
   "entries": [
     {
       "route": "/user-management",
@@ -552,6 +552,30 @@
       "file": "pages/reports/updates/update-2025-08-16-2340.tsx",
       "title": "Autonomous Performance Tuning Guide — DevSecOps for AI (2025-08-16 23:40 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Performance Tuning Guide — DevSecOps for AI (2025-08-16 23:40 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-16-2338",
+      "file": "pages/reports/updates/update-2025-08-16-2338.tsx",
+      "title": "Autonomous Update — 2025-08-16 23:38",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-16 23:38 Autonomous Update — 2025-08-16 23:38 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Gemini AI · 2135 pts Why it matters:"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-16-2337",
+      "file": "pages/reports/updates/update-2025-08-16-2337.tsx",
+      "title": "Autonomous Update — 2025-08-16 23:37",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-16 23:37 Autonomous Update — 2025-08-16 23:37 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Paper Airplane Design"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-16-2336",
+      "file": "pages/reports/updates/update-2025-08-16-2336.tsx",
+      "title": "Autonomous Update — 2025-08-16 23:36",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-16 23:36 Autonomous Update — 2025-08-16 23:36 Signal over noise—your automated update is here. Today's Highlight Hacker News : Zoom terms now allow training AI on user conten"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-16-2335",
+      "file": "pages/reports/updates/update-2025-08-16-2335.tsx",
+      "title": "Autonomous Update — 2025-08-16 23:35",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-16 23:35 Autonomous Update — 2025-08-16 23:35 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Gemini AI · 2135 pts "
     },
     {
       "route": "/reports/updates/update-2025-08-16-2334",
