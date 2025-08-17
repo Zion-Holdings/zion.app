@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-17T01:30:39.474Z",
+  "timestamp": "2025-08-17T01:31:41.653Z",
   "critical": [],
   "high": [
     {
@@ -27,10 +27,10 @@
     {
       "workflow": "agent-factory-proliferation.yml",
       "status": "active",
-      "complexityScore": 55,
+      "complexityScore": 50,
       "complexityLevel": "high",
       "metrics": {
-        "totalLines": 366,
+        "totalLines": 367,
         "jobCount": 0,
         "stepCount": 11,
         "conditionalCount": 1,
@@ -38,29 +38,7 @@
         "dependencyCount": 4,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 5
-      },
-      "refactoringStrategy": [
-        "Consider parallel workflow execution",
-        "Optimize job dependencies",
-        "Extract common functionality to reusable workflows"
-      ]
-    },
-    {
-      "workflow": "autonomous-agent-orchestrator.yml",
-      "status": "active",
-      "complexityScore": 50,
-      "complexityLevel": "high",
-      "metrics": {
-        "totalLines": 663,
-        "jobCount": 0,
-        "stepCount": 10,
-        "conditionalCount": 1,
-        "matrixCount": 1,
-        "dependencyCount": 4,
-        "environmentCount": 0,
-        "secretCount": 0,
-        "actionCount": 5
+        "actionCount": 1
       },
       "refactoringStrategy": [
         "Consider parallel workflow execution",
@@ -71,10 +49,10 @@
     {
       "workflow": "exponential-agent-factory-proliferation.yml",
       "status": "active",
-      "complexityScore": 55,
+      "complexityScore": 50,
       "complexityLevel": "high",
       "metrics": {
-        "totalLines": 520,
+        "totalLines": 514,
         "jobCount": 0,
         "stepCount": 13,
         "conditionalCount": 1,
@@ -82,7 +60,7 @@
         "dependencyCount": 4,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 7
+        "actionCount": 1
       },
       "refactoringStrategy": [
         "Consider parallel workflow execution",
@@ -111,28 +89,6 @@
         "Consider parallel workflow execution",
         "Extract common functionality to reusable workflows"
       ]
-    },
-    {
-      "workflow": "self-replicating-factory-manager.yml",
-      "status": "active",
-      "complexityScore": 50,
-      "complexityLevel": "high",
-      "metrics": {
-        "totalLines": 556,
-        "jobCount": 0,
-        "stepCount": 8,
-        "conditionalCount": 1,
-        "matrixCount": 1,
-        "dependencyCount": 4,
-        "environmentCount": 0,
-        "secretCount": 0,
-        "actionCount": 5
-      },
-      "refactoringStrategy": [
-        "Consider parallel workflow execution",
-        "Optimize job dependencies",
-        "Extract common functionality to reusable workflows"
-      ]
     }
   ],
   "medium": [
@@ -157,6 +113,28 @@
       ]
     },
     {
+      "workflow": "autonomous-agent-orchestrator.yml",
+      "status": "active",
+      "complexityScore": 45,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 659,
+        "jobCount": 0,
+        "stepCount": 10,
+        "conditionalCount": 1,
+        "matrixCount": 1,
+        "dependencyCount": 4,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 1
+      },
+      "refactoringStrategy": [
+        "Consider parallel workflow execution",
+        "Optimize job dependencies",
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
       "workflow": "performance-monitoring.yml",
       "status": "active",
       "complexityScore": 30,
@@ -174,6 +152,28 @@
       },
       "refactoringStrategy": [
         "Break down into smaller job steps",
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "self-replicating-factory-manager.yml",
+      "status": "active",
+      "complexityScore": 45,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 552,
+        "jobCount": 0,
+        "stepCount": 8,
+        "conditionalCount": 1,
+        "matrixCount": 1,
+        "dependencyCount": 4,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 1
+      },
+      "refactoringStrategy": [
+        "Consider parallel workflow execution",
+        "Optimize job dependencies",
         "Extract common functionality to reusable workflows"
       ]
     },
