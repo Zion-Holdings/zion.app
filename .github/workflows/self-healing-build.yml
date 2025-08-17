@@ -20,30 +20,30 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
-      - name: Checkout
+        - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Setup Node.js
+        - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
-      - name: Install dependencies
+        - name: Install dependencies
         run: npm ci
-      - name: Try build
+        - name: Try build
         id: build
         continue-on-error: true
         run: npm run build | cat
-      - name: Heal and retry build
+        - name: Heal and retry build
         if: steps.build.outcome == 'failure'
-        run: |
+        run: "|
           npm run ci:heal || true
-      - name: Create Pull Request if changes
+        - name: Create Pull Request if changes
         if: always()
         uses: peter-evans/create-pull-request@v6
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}"
           commit-message: "chore(self-heal): automated build healing"
           title: "chore(self-heal): automated build healing"
           body: |

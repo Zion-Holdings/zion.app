@@ -27,16 +27,16 @@ on:
       - 'scripts/**'
 
 env:
-  GROWTH_MULTIPLIER: ${{ github.event.inputs.growth_multiplier || '3' }}
-  TARGET_EXPONENTIAL_FACTOR: ${{ github.event.inputs.target_exponential_factor || '10' }}
-  ENABLE_AUTONOMOUS: ${{ github.event.inputs.enable_autonomous_creation || 'true' }}
+  "GROWTH_MULTIPLIER: ${{ github.event.inputs.growth_multiplier || '3' }}"
+  TARGET_EXPONENTIAL_FACTOR: "${{ github.event.inputs.target_exponential_factor || '10' }}"
+  ENABLE_AUTONOMOUS: "${{ github.event.inputs.enable_autonomous_creation || 'true' }}
   MAX_CONCURRENT_FACTORIES: 10
   FACTORY_CREATION_INTERVAL: 14400 # 4 hours in seconds
 
 
-concurrency:
-  group: github.workflow-github.ref
-  cancel-in-progress: true
+concurrency:"
+  group: "github.workflow-github.ref
+  cancel-in-progress: "true
 
 jobs:
   # Exponential Growth Analysis
@@ -54,9 +54,9 @@ jobs:
         with:
           fetch-depth: 0
       
-      - name: Analyze current automation ecosystem
-        id: analyze
-        run: |
+        - name: Analyze current automation ecosystem
+        id: analyze"
+        run: |"
           echo "🔍 Analyzing current automation ecosystem..."
           
           # Count all automation components
@@ -70,23 +70,23 @@ jobs:
           echo "total_factories=$TOTAL_FACTORIES" >> $GITHUB_OUTPUT
           echo "📈 Current automation components: $TOTAL_FACTORIES"
       
-      - name: Calculate exponential growth potential
-        id: calculate
+        - name: Calculate exponential growth potential
+        id: "calculate
         run: |
           CURRENT=${{ steps.analyze.outputs.total_factories }}
           MULTIPLIER=${{ env.GROWTH_MULTIPLIER }}
           POTENTIAL=$((CURRENT * MULTIPLIER))
-          
+          "
           echo "growth_potential=$POTENTIAL" >> $GITHUB_OUTPUT
           echo "🚀 Growth potential: $POTENTIAL components"
       
-      - name: Calculate exponential factor
-        id: exponential
+        - name: Calculate exponential factor
+        id: "exponential
         run: |
           CURRENT=${{ steps.analyze.outputs.total_factories }}
           TARGET=${{ env.TARGET_EXPONENTIAL_FACTOR }}
           
-          if [ $CURRENT -gt 0 ]; then
+          if [ $CURRENT -gt 0 ]; then"
             FACTOR=$(echo "scale=2; $TARGET / $CURRENT" | bc -l 2>/dev/null || echo "1.0")
           else
             FACTOR="1.0"
@@ -95,13 +95,13 @@ jobs:
           echo "factor=$FACTOR" >> $GITHUB_OUTPUT
           echo "⚡ Exponential factor: $FACTOR"
       
-      - name: Determine next generation target
-        id: target
+        - name: Determine next generation target
+        id: "target
         run: |
           CURRENT=${{ steps.analyze.outputs.total_factories }}
           MULTIPLIER=${{ env.GROWTH_MULTIPLIER }}
           NEXT=$((CURRENT * MULTIPLIER))
-          
+          "
           echo "next_generation=$NEXT" >> $GITHUB_OUTPUT
           echo "🎯 Next generation target: $NEXT components"
 
@@ -120,13 +120,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Setup Node.js
+        - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
       
-      - name: Create exponential factory
+        - name: Create exponential factory
         run: |
           echo "🏭 Creating exponential factory: ${{ matrix.factory-type }}-${{ matrix.complexity }}-${{ matrix.specialization }}"
           
@@ -317,7 +317,7 @@ jobs:
               runs-on: ubuntu-latest
               steps:
                 - uses: actions/checkout@v4
-                - name: Run autonomous factory
+                  - name: Run autonomous factory
                   run: |
                     cd automation/factories/$FACTORY_ID
                     node autonomous-agent-factory.cjs
@@ -344,7 +344,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Deploy factories to production
+        - name: Deploy factories to production
         run: |
           echo "🚀 Deploying exponential factories to production..."
           
@@ -382,7 +382,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Calculate exponential growth metrics
+        - name: Calculate exponential growth metrics
         run: |
           echo "📊 Calculating exponential growth metrics..."
           
@@ -433,7 +433,7 @@ jobs:
           echo "Exponential Factor: $EXPONENTIAL_FACTOR"
           echo "Next Target: $((TOTAL_COMPONENTS * ${{ env.GROWTH_MULTIPLIER }}))"
 
-      - name: Commit growth report
+        - name: Commit growth report
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
@@ -451,7 +451,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Analyze growth patterns and make autonomous decisions
+        - name: Analyze growth patterns and make autonomous decisions
         run: |
           echo "🧠 Analyzing growth patterns for autonomous decision making..."
           
@@ -485,7 +485,7 @@ jobs:
             fi
           fi
 
-      - name: Execute autonomous decisions
+        - name: Execute autonomous decisions
         run: |
           echo "🎯 Executing autonomous decisions..."
           
@@ -514,7 +514,7 @@ jobs:
           
           echo "✅ Autonomous decisions executed and strategy updated"
 
-      - name: Commit autonomous decisions
+        - name: Commit autonomous decisions
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"

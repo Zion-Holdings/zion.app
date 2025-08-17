@@ -20,19 +20,19 @@ jobs:
     name: Generate Automation Dashboard
     
     steps:
-      - name: Checkout code
+        - name: Checkout code
         uses: actions/checkout@v4
         
-      - name: Setup Node.js
+        - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           'node-version': '18'
           cache: 'npm'
           
-      - name: Install dependencies
+        - name: Install dependencies
         run: npm ci
         
-      - name: Generate automation status
+        - name: Generate automation status
         run: |
           echo "## 🤖 Automation Dashboard" > automation-dashboard.md
           echo "" >> automation-dashboard.md
@@ -43,7 +43,7 @@ jobs:
           npm run app:status >> automation-dashboard.md
           echo "" >> automation-dashboard.md
           
-      - name: Generate workflow summary
+        - name: Generate workflow summary
         run: |
           echo "### ⚡ GitHub Actions Summary" >> automation-dashboard.md
           echo "" >> automation-dashboard.md
@@ -53,7 +53,7 @@ jobs:
           echo "" >> automation-dashboard.md
           # Add workflow run information here
           
-      - name: Generate agent summary
+        - name: Generate agent summary
         run: |
           echo "### 🤖 Agent Summary" >> automation-dashboard.md
           echo "" >> automation-dashboard.md
@@ -65,7 +65,7 @@ jobs:
           done
           echo "" >> automation-dashboard.md
           
-      - name: Generate content summary
+        - name: Generate content summary
         run: |
           echo "### 📚 Content Summary" >> automation-dashboard.md
           echo "" >> automation-dashboard.md
@@ -74,7 +74,7 @@ jobs:
           echo "**Documentation:** $(ls -1 *.md 2>/dev/null | wc -l)" >> automation-dashboard.md
           echo "" >> automation-dashboard.md
           
-      - name: Generate automation coverage
+        - name: Generate automation coverage
         run: |
           echo "### 📈 Automation Coverage" >> automation-dashboard.md
           echo "" >> automation-dashboard.md
@@ -85,7 +85,7 @@ jobs:
           echo "**Workflow Management:** ✅ Active" >> automation-dashboard.md
           echo "" >> automation-dashboard.md
           
-      - name: Generate recommendations
+        - name: Generate recommendations
         run: |
           echo "### 💡 Recommendations" >> automation-dashboard.md
           echo "" >> automation-dashboard.md
@@ -96,7 +96,7 @@ jobs:
           echo "5. **Security Review**: Regularly review automation permissions and access" >> automation-dashboard.md
           echo "" >> automation-dashboard.md
           
-      - name: Upload dashboard
+        - name: Upload dashboard
         uses: actions/upload-artifact@v4
         with:
           name: automation-dashboard
@@ -109,18 +109,18 @@ jobs:
     if: github.ref == 'refs/heads/main'
     
     steps:
-      - name: Checkout code
+      "- name: Checkout code
         uses: actions/checkout@v4
         
-      - name: Deploy to GitHub Pages
+        - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./automation-dashboard.md
           destination_dir: automation-dashboard
           
-      - name: Update dashboard index
-        run: |
+        - name: Update dashboard index
+        run: |"
           echo "# Automation Dashboard" > index.md
           echo "" >> index.md
           echo "The automation dashboard is available at:" >> index.md

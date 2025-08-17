@@ -20,21 +20,21 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - name: Checkout repository
+        - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js
+        - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
 
-      - name: Install dependencies
-        run: npm ci --no-audit --no-fund
+        - name: Install dependencies
+        run: "npm ci --no-audit --no-fund
 
-      - name: Run actionlint
+        - name: Run actionlint
         uses: reviewdog/action-actionlint@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -42,7 +42,7 @@ jobs:
           fail_level: error
           actionlint_flags: -color
 
-      - name: Check for actionlint issues
-        run: |
+        - name: Check for actionlint issues
+        run: |"
           echo "Actionlint check completed"
           echo "Any issues found will be reported above"

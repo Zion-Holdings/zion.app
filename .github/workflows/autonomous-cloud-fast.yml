@@ -6,11 +6,11 @@ on:
   workflow_dispatch: {}
 
 concurrency:
-  group: autonomous-cloud-fast-${{ github.ref }}
+  group: "autonomous-cloud-fast-${{ github.ref }}
   cancel-in-progress: true
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
 
@@ -18,28 +18,28 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Checkout
+        - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js
+        - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
 
-      - name: Install dependencies
+        - name: Install dependencies
         run: npm ci
 
-      - name: Run Cloud Autonomous Orchestrator (fast track)
+        - name: Run Cloud Autonomous Orchestrator (fast track)
         run: node automation/cloud-autonomous-orchestrator.cjs | cat
 
-      - name: Advanced Git Sync
+        - name: Advanced Git Sync
         run: node automation/advanced-git-sync.cjs | cat
 
-      - name: Commit and push any remaining changes
-        run: |
+        - name: Commit and push any remaining changes
+        run: |"
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

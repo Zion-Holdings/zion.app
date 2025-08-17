@@ -20,24 +20,24 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - name: Checkout repository
+        - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js
+        - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
 
-      - name: Install dependencies
-        run: npm ci --no-audit --no-fund
+        - name: Install dependencies
+        run: "npm ci --no-audit --no-fund
 
-      - name: Pre-index docs/pages
+        - name: Pre-index docs/pages
         run: node automation/docs-pages-indexer.cjs
 
-      - name: Run Cloud Deep Research Orchestrator
+        - name: Run Cloud Deep Research Orchestrator
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -45,21 +45,21 @@ jobs:
           CANONICAL_URL: https://ziontechgroup.com
         run: node automation/cloud-deep-research-orchestrator.cjs || node automation/cloud-autonomous-agents-factory.cjs
 
-      - name: Refresh front directory and homepage promos
+        - name: Refresh front directory and homepage promos
         run: |
           node automation/front-index-directory-builder.cjs || true
           node automation/front-index-advertiser.cjs || true
           node automation/homepage-updater.cjs || true
 
-      - name: Advanced git sync
+        - name: Advanced git sync
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: node automation/advanced-git-sync.cjs || node automation/git-sync.cjs
 
-      - name: Commit and push changes
-        run: |
+        - name: Commit and push changes
+        run: |"
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

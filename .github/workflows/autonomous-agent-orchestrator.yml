@@ -21,15 +21,15 @@ on:
       - '.github/workflows/**'
 
 env:
-  ORCHESTRATION_MODE: ${{ github.event.inputs.orchestration_mode || 'growth' }}
-  TARGET_AGENTS: ${{ github.event.inputs.target_agents || '100' }}
+  "ORCHESTRATION_MODE: ${{ github.event.inputs.orchestration_mode || 'growth' }}"
+  TARGET_AGENTS: "${{ github.event.inputs.target_agents || '100' }}"
   GROWTH_ALGORITHM: 'exponential'
   REPLICATION_THRESHOLD: 3
 
 
 concurrency:
-  group: github.workflow-github.ref
-  cancel-in-progress: true
+  group: "github.workflow-github.ref
+  cancel-in-progress: "true
 
 jobs:
   agent-inventory:
@@ -42,27 +42,27 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Inventory all agents
+        - name: Inventory all agents
         id: count
-        run: |
-          # Count all agents across all factories
+        run: |"
+          # Count all agents across all factories"
           TOTAL_AGENTS=$(find automation/factories/ -name "*.js" -exec grep -l "class.*Agent\|createAgent" {} \; | wc -l)
           echo "total=$TOTAL_AGENTS" >> $GITHUB_OUTPUT
           echo "📊 Total agents found: $TOTAL_AGENTS"
       
-      - name: Count active factories
+        - name: Count active factories
         id: factories
         run: |
           ACTIVE_FACTORIES=$(find automation/factories/ -name "factory-config.json" | wc -l)
           echo "active=$ACTIVE_FACTORIES" >> $GITHUB_OUTPUT
           echo "🏭 Active factories: $ACTIVE_FACTORIES"
       
-      - name: Calculate growth capacity
-        id: capacity
+        - name: Calculate growth capacity
+        id: "capacity
         run: |
           AGENTS=${{ steps.count.outputs.total }}
           FACTORIES=${{ steps.factories.outputs.active }}
-          CAPACITY=$((AGENTS * FACTORIES * 2))  # Exponential growth factor
+          CAPACITY=$((AGENTS * FACTORIES * 2))  # Exponential growth factor"
           echo "capacity=$CAPACITY" >> $GITHUB_OUTPUT
           echo "🚀 Growth capacity: $CAPACITY agents"
 
@@ -75,13 +75,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Setup Node.js
+        - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
       
-      - name: Execute growth strategy
+        - name: Execute growth strategy
         run: |
           STRATEGY="${{ matrix.growth-strategy }}"
           CURRENT_AGENTS="${{ needs.agent-inventory.outputs.total-agents }}"
@@ -404,7 +404,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Analyze growth metrics
+        - name: Analyze growth metrics
         run: |
           echo "📊 Analyzing exponential growth metrics..."
           
@@ -428,8 +428,8 @@ jobs:
             fi
           done
       
-      - name: Generate orchestration report
-        run: |
+        - name: Generate orchestration report
+        run: "|
           mkdir -p automation/reports
           
           cat > automation/reports/orchestration-report-$(date +%Y%m%d-%H%M%S).md << EOF
@@ -467,7 +467,7 @@ jobs:
           - Intelligent diversification
           - Growth acceleration
           EOF
-          
+          "
           echo "📋 Orchestration report generated"
 
   autonomous-decision-engine:
@@ -476,7 +476,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Execute autonomous decisions
+        - name: Execute autonomous decisions
         run: |
           echo "🧠 Executing autonomous decisions for exponential growth..."
           
@@ -636,7 +636,7 @@ jobs:
           
           echo "✅ Autonomous decision engine created"
       
-      - name: Execute autonomous decisions
+        - name: Execute autonomous decisions
         run: |
           cd automation/orchestration/decisions
           node -e "
@@ -652,7 +652,7 @@ jobs:
     runs-on: ubuntu-latest
     if: always()
     steps:
-      - name: Orchestration completion notification
+        - name: Orchestration completion notification
         run: |
           echo "🤖 Autonomous Agent Orchestration Complete!"
           echo "📊 Total agents managed: ${{ needs.agent-inventory.outputs.total-agents }}"

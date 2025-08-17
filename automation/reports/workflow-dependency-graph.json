@@ -566,11 +566,11 @@
       },
       {
         "key": "id",
-        "value": "count"
+        "value": "count\""
       },
       {
         "key": "run",
-        "value": "|"
+        "value": "|\""
       },
       {
         "key": "echo \"Current agent factories",
@@ -582,7 +582,7 @@
       },
       {
         "key": "id",
-        "value": "growth"
+        "value": "\"growth"
       },
       {
         "key": "run",
@@ -598,7 +598,7 @@
       },
       {
         "key": "id",
-        "value": "target"
+        "value": "\"target"
       },
       {
         "key": "run",
@@ -1091,7 +1091,7 @@
       },
       {
         "key": "run",
-        "value": "|"
+        "value": "|\""
       },
       {
         "key": "echo \"📊 Total agents found",
@@ -1119,7 +1119,7 @@
       },
       {
         "key": "id",
-        "value": "capacity"
+        "value": "\"capacity"
       },
       {
         "key": "run",
@@ -1929,7 +1929,7 @@
       "pull_request"
     ],
     "needs": [
-      "auto-approve"
+      "auto-approve\""
     ],
     "outputs": [],
     "priority": "medium",
@@ -2113,11 +2113,11 @@
       },
       {
         "key": "id",
-        "value": "analyze"
+        "value": "analyze\""
       },
       {
         "key": "run",
-        "value": "|"
+        "value": "|\""
       },
       {
         "key": "echo \"📈 Current automation components",
@@ -2129,7 +2129,7 @@
       },
       {
         "key": "id",
-        "value": "calculate"
+        "value": "\"calculate"
       },
       {
         "key": "run",
@@ -2145,7 +2145,7 @@
       },
       {
         "key": "id",
-        "value": "exponential"
+        "value": "\"exponential"
       },
       {
         "key": "run",
@@ -2161,7 +2161,7 @@
       },
       {
         "key": "id",
-        "value": "target"
+        "value": "\"target"
       },
       {
         "key": "run",
@@ -2896,11 +2896,11 @@
       },
       {
         "key": "owner",
-        "value": "context.repo.owner,"
+        "value": "context.repo.owner,\""
       },
       {
         "key": "repo",
-        "value": "context.repo.repo,"
+        "value": "context.repo.repo,\""
       },
       {
         "key": "state",
@@ -3220,11 +3220,11 @@
       },
       {
         "key": "id",
-        "value": "health"
+        "value": "health\""
       },
       {
         "key": "run",
-        "value": "|"
+        "value": "|\""
       },
       {
         "key": "echo \"📊 Factory Health Report",

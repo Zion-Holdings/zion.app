@@ -25,25 +25,25 @@ jobs:
     name: Generate Missing Content
     
     steps:
-      - name: Checkout code
+        - name: Checkout code
         uses: actions/checkout@v4
         
-      - name: Setup Node.js
+        - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           'node-version': '18'
           cache: 'npm'
           
-      - name: Install dependencies
+        - name: Install dependencies
         run: npm ci
         
-      - name: Run content analysis
+        - name: Run content analysis
         run: npm run app:crawl
         
-      - name: Generate missing content
+        - name: Generate missing content
         run: npm run app:content
         
-      - name: Commit generated content
+        - name: Commit generated content
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
@@ -55,11 +55,11 @@ jobs:
             git push
           fi
           
-      - name: Create Pull Request
+        - name: Create Pull Request
         if: github.event_name == 'push'
-        uses: peter-evans/create-pull-request@v5
+        uses: "peter-evans/create-pull-request@v5
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}"
           title: "🤖 Auto-generated content from intelligent content generator"
           body: |
             This PR contains automatically generated content based on content analysis:

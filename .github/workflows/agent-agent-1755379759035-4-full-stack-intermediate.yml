@@ -9,19 +9,17 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-
-
   agent-execution:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
-    - name: Checkout code
+      - name: Checkout code
       uses: actions/checkout@v4
-    - name: Setup Node.js
+      - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: 18
-    - name: Install dependencies
+      - name: Install dependencies
       run: npm ci
-    - name: Run agent
+      - name: Run agent
       run: node automation/agents/full-stack/agent-1755379759035-4-full-stack-intermediate/index.cjs

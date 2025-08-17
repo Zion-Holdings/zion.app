@@ -10,8 +10,8 @@ permissions:
   contents: read
 
 concurrency:
-  group: workflow-cleanup-${{ github.ref }}
-  cancel-in-progress: true
+  group: "workflow-cleanup-${{ github.ref }}
+  cancel-in-progress: "true
 
 jobs:
 
@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - name: Delete old workflow runs (> 14 days)
+        - name: Delete old workflow runs (> 14 days)
         id: oldruns
         uses: actions/github-script@v7
         with:
@@ -40,12 +40,12 @@ jobs:
                     core.warning(`Failed to delete run ${run.id}: ${e.message}`);
                   }
                 }
-              }
-            }
+              }"
+            }"
             core.setOutput('deleted_runs', deleted);
 
-      - name: Delete expired artifacts (> 14 days)
-        id: oldartifacts
+        - name: Delete expired artifacts (> 14 days)
+        id: "oldartifacts
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -66,10 +66,10 @@ jobs:
                   }
                 }
               }
-            }
+            }"
             core.setOutput('deleted_artifacts', deleted);
 
-      - name: Summary
+        - name: Summary
         run: |
           echo "Deleted runs: ${{ steps.oldruns.outputs.deleted_runs }}" >> $GITHUB_STEP_SUMMARY
           echo "Deleted artifacts: ${{ steps.oldartifacts.outputs.deleted_artifacts }}" >> $GITHUB_STEP_SUMMARY

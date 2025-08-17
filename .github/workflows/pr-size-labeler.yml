@@ -6,8 +6,8 @@ on:
 
 
 concurrency:
-  group: github.workflow-github.ref
-  cancel-in-progress: true
+  group: "github.workflow-github.ref
+  cancel-in-progress: "true
 
 permissions:
   contents: read
@@ -27,5 +27,5 @@ jobs:
           m_label: size/M
           l_label: size/L
           xl_label: size/XL
-          fail_if_xl: false
-          update_always: true
+          fail_if_xl: false"
+          update_always: true"

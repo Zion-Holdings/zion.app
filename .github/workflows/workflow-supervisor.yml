@@ -6,8 +6,8 @@ on:
   workflow_dispatch: {}
 
 concurrency:
-  group: workflow-supervisor-${{ github.ref }}
-  cancel-in-progress: true
+  group: "workflow-supervisor-${{ github.ref }}
+  cancel-in-progress: "true
 
 permissions:
   contents: write
@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - name: Supervise critical workflows
+        - name: Supervise critical workflows
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -27,8 +27,8 @@ jobs:
             const owner = context.repo.owner;
             const repo = context.repo.repo;
 
-            // Map friendly names to workflow file IDs for dispatch
-            const monitored = [
+            // Map friendly names to workflow file IDs for dispatch"
+            const monitored = ["
               { name: 'CI', id: 'ci.yml' },
               { name: 'Rapid Git Sync (1m)', id: 'rapid-git-sync.yml' },
               { name: 'Autonomous Cloud Orchestrator', id: 'autonomous-cloud.yml' },

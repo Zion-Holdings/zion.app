@@ -35,7 +35,7 @@ env:
   NODE_OPTIONS: '--max-old-space-size=6144 --openssl-legacy-provider'
 
 jobs:
-  automation:
+  "automation:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     
@@ -44,25 +44,25 @@ jobs:
         node-version: [18.x, 20.x]
     
     steps:
-    - name: Checkout code
+      - name: Checkout code
       uses: actions/checkout@v4
       
-    - name: Setup Node.js ${{ matrix.node-version }}
+      - name: Setup Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: ${{ matrix.node-version }}"
         cache: 'npm'
         
-    - name: Install dependencies
+      - name: Install dependencies
       run: npm ci
       
-    - name: Run system diagnostics
+      - name: Run system diagnostics
       run: node automation/netlify-continuous-monitor.cjs diagnostics
       
-    - name: Run health check
+      - name: Run health check
       run: npm run netlify:intelligent health
       
-    - name: Run automation based on trigger
+      - name: Run automation based on trigger
       run: |
         if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
           npm run netlify:comprehensive ${{ github.event.inputs.automation_type }}
@@ -74,7 +74,7 @@ jobs:
           npm run netlify:comprehensive quick
         fi
         
-    - name: Collect optimization results
+      - name: Collect optimization results
       run: |
         echo "=== OPTIMIZATION RESULTS ===" >> $GITHUB_STEP_SUMMARY
         echo "Build artifacts size:" >> $GITHUB_STEP_SUMMARY
@@ -113,8 +113,8 @@ jobs:
           console.log(\`Total: \${(totalSize / 1024 / 1024).toFixed(2)} MB\`);
         " >> $GITHUB_STEP_SUMMARY
         
-    - name: Upload automation logs
-      uses: actions/upload-artifact@v4
+      - name: Upload automation logs
+      uses: "actions/upload-artifact@v4
       if: always()
       with:
         name: automation-logs-${{ matrix.node-version }}
@@ -124,7 +124,7 @@ jobs:
           automation/optimization/
         retention-days: 7
         
-    - name: Comment PR with results
+      - name: Comment PR with results"
       if: github.event_name == 'pull_request'
       uses: actions/github-script@v7
       with:
@@ -188,24 +188,24 @@ jobs:
     if: github.event_name == 'schedule'
     
     steps:
-    - name: Checkout code
+      - name: Checkout code
       uses: actions/checkout@v4
       
-    - name: Setup Node.js
+      - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '20'
         cache: 'npm'
         
-    - name: Install dependencies
+      - name: Install dependencies
       run: npm ci
       
-    - name: Start continuous monitoring
+      - name: Start continuous monitoring
       run: |
         echo "Starting continuous monitoring..."
         timeout 300 node automation/netlify-continuous-monitor.cjs start
         
-    - name: Upload monitoring logs
+      - name: Upload monitoring logs
       uses: actions/upload-artifact@v4
       if: always()
       with:
@@ -219,7 +219,7 @@ jobs:
     if: always()
     
     steps:
-    - name: Check automation status
+      - name: Check automation status
       id: check-status
       run: |
         if [ "${{ needs.automation.result }}" = "success" ]; then
@@ -230,7 +230,7 @@ jobs:
           echo "message=❌ Netlify automation failed" >> $GITHUB_OUTPUT
         fi
         
-    - name: Create summary
+      - name: Create summary
       run: |
         echo "## 🚀 Netlify Automation Summary" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
