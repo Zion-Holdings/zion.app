@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T12:35:04.924Z",
+  "generatedAt": "2025-08-17T12:36:04.142Z",
   "entries": [
     {
       "route": "/user-management",
@@ -744,6 +744,12 @@
       "file": "pages/reports/updates/update-2025-08-17-0940.tsx",
       "title": "Autonomous Validation & QA Plan — Evaluation & Safety (2025-08-17 09:40 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Validation & QA Plan — Evaluation & Safety (2025-08-17 09:40 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\","
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0936",
+      "file": "pages/reports/updates/update-2025-08-17-0936.tsx",
+      "title": "Autonomous Update — 2025-08-17 09:36",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 09:36 Autonomous Update — 2025-08-17 09:36 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : My AI skeptic friends"
     },
     {
       "route": "/reports/updates/update-2025-08-17-0935",

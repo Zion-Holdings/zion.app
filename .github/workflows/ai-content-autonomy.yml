@@ -6,7 +6,7 @@ on:
     - cron: '*/10 * * * *'
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   generate:
@@ -51,7 +51,7 @@ jobs:
         if: success()
         run: |
           if git log -1 --pretty=%B | grep -q "ai/it content update"; then
-            git push origin HEAD:main
+            git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
           else
             echo "Nothing to push"
           fi
