@@ -2,7 +2,7 @@ name: Homepage Auto Update
 
 on:
   schedule:
-    - cron: '*/30 * * * *'  # Every 30 minutes
+    - cron: '0 0 * * *'  # Every 30 minutes
   workflow_dispatch: {}
 
 permissions:
@@ -47,3 +47,4 @@ jobs:
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+"

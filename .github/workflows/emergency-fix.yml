@@ -1,9 +1,14 @@
-name: Emergency Fix WORKFLOW_NAME_PLACEHOLDER Rollback
+name: Emergency Fix  Rollback
 
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '0 0 * * *'
+
+
+concurrency:
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
 
 permissions:
   contents: write

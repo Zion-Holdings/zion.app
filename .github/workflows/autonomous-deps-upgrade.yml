@@ -62,7 +62,7 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const branch = `${{ steps.branch.outputs.branch }}`;
+            const branch = `${{ steps.branch.outputs.branch }}`;"
             const { data: pr } = await github.rest.pulls.create({ owner: context.repo.owner, repo: context.repo.repo, title: 'chore(deps): automated minor/patch upgrades', head: branch, base: 'main', body: 'Automated dependency upgrades with build verification.' });
             core.setOutput('number', pr.number);
 

@@ -2,11 +2,11 @@ name: Workflow Supervisor
 
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '0 0 * * *'
   workflow_dispatch: {}
 
 concurrency:
-  group: workflow-supervisor-${{ github.ref }}
+  group: "workflow-supervisor-${{ github.ref }}"
   cancel-in-progress: true
 
 permissions:
@@ -27,8 +27,8 @@ jobs:
             const owner = context.repo.owner;
             const repo = context.repo.repo;
 
-            // Map friendly names to workflow file IDs for dispatch
-            const monitored = [
+            // Map friendly names to workflow file IDs for dispatch"
+            const monitored = ["
               { name: 'CI', id: 'ci.yml' },
               { name: 'Rapid Git Sync (1m)', id: 'rapid-git-sync.yml' },
               { name: 'Autonomous Cloud Orchestrator', id: 'autonomous-cloud.yml' },

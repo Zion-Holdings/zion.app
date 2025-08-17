@@ -3,7 +3,12 @@ name: SEO Audit
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: '0 */2 * * *'  # Run every 2 hours instead of every 10 minutes
+    - cron: '0 */4 * * *'  # Run every 2 hours instead of every 10 minutes
+
+
+concurrency:
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
 
 permissions:
   contents: write
@@ -22,7 +27,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v4"
         with:
           node-version: '20'
           cache: 'npm'
@@ -61,10 +66,10 @@ jobs:
 
       - name: List generated files
         run: |
-          echo "Generated files:"
+          echo "Generated files:
           ls -la public/reports/seo/ || echo "No SEO reports directory found"
           echo "Current working directory: $(pwd)"
-          echo "Directory contents:"
+          echo "Directory contents:
           ls -la public/ || echo "No public directory found"
 
       - name: Check for changes

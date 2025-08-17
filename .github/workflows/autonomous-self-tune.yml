@@ -2,15 +2,15 @@ name: Autonomous Self-Tuning Scheduler
 
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '0 0 * * *'
   workflow_dispatch: {}
 
 concurrency:
-  group: autonomous-self-tuning-${{ github.ref }}
+  group: "autonomous-self-tuning-${{ github.ref }}"
   cancel-in-progress: true
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
 
@@ -38,7 +38,7 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: node automation/auto-scheduler.cjs | cat
 
-      - name: Commit and push schedule changes
+      - name: Commit and push schedule changes"
         run: |
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions[bot]"

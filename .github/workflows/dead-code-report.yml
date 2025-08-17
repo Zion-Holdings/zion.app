@@ -2,14 +2,14 @@ name: Dead Code Report
 
 on:
   schedule:
-    - cron: '11 */6 * * *'
+    - cron: '0 0 * * *'
   workflow_dispatch: {}
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
-  group: dead-code-report-${{ github.ref }}
+  group: "dead-code-report-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:

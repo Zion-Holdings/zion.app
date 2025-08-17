@@ -2,11 +2,11 @@ name: Autonomous Ultrafast Orchestrator
 
 on:
   schedule:
-    - cron: '* * * * *'
+    - cron: '0 0 * * *'
   workflow_dispatch: {}
 
 concurrency:
-  group: autonomous-ultrafast-${{ github.ref }}
+  group: "autonomous-ultrafast-${{ github.ref }}"
   cancel-in-progress: true
 
 permissions:
@@ -47,4 +47,5 @@ jobs:
         with:
           name: autonomous-ultrafast-logs
           path: automation/logs/**/*
-          if-no-files-found: ignore
+          if-no-files-found: ignore"
+"

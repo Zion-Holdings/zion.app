@@ -5,6 +5,11 @@ on:
     types: [labeled, opened, synchronize, reopened]
     branches: [ main ]
 
+
+concurrency:
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
+
 permissions:
   contents: write
   pull-requests: write
@@ -13,7 +18,7 @@ jobs:
 
   automerge:
     if: contains(github.event.pull_request.labels.*.name, 'automerge')
-    runs-on: ubuntu-latest
+    runs-on: "ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
@@ -22,14 +27,14 @@ jobs:
       - name: Ensure no conflicts with base
         run: |
           git fetch origin ${{ github.base_ref }}
-          git merge --no-commit --no-ff --no-edit origin/${{ github.base_ref }} || {
+          git merge --no-commit --no-ff --no-edit origin/${{ github.base_ref }} || {"
             echo "Conflicts exist. Aborting automerge.";
             exit 1;
           }
           git merge --abort || true
       - name: Enable auto-merge
-        uses: peter-evans/enable-pull-request-automerge@v1
+        uses: "peter-evans/enable-pull-request-automerge@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           pull-request-number: ${{ github.event.pull_request.number }}
-          merge-method: squash
+          merge-method: squash"

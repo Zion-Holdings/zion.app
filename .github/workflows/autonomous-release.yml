@@ -5,6 +5,11 @@ on:
     branches: [main]
   workflow_dispatch: {}
 
+
+concurrency:
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
@@ -48,7 +53,7 @@ jobs:
           git push origin ${{ steps.ver.outputs.version }}
 
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v2
+        uses: "softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.ver.outputs.version }}
           name: Release ${{ steps.ver.outputs.version }}
@@ -62,3 +67,4 @@ jobs:
           name: web-build
           path: .next/**
           if-no-files-found: warn
+"

@@ -3,7 +3,7 @@ name: Agent Factory - Exponential Development Automation
 on:
   schedule:
     # Run every 6 hours for continuous automation
-    - cron: '0 */6 * * *'
+    - cron: '0 0 * * *'
   workflow_dispatch:
     inputs:
       agent_type:
@@ -41,11 +41,17 @@ env:
   NODE_VERSION: '18'
   AGENT_GENERATION_INTERVAL: 21600 # 6 hours in seconds
 
+
+concurrency:
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
+
 jobs:
   # Agent Generation Pipeline
   generate-agents:
     name: Generate Development Agents
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     strategy:
       matrix:
         agent_type: [full-stack, frontend, backend, testing, deployment, monitoring, optimization]
@@ -63,7 +69,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-version: ${{ env.NODE_VERSION }}"
           cache: 'npm'
 
       - name: Install Dependencies
@@ -253,7 +259,7 @@ jobs:
 
   # Agent Deployment Pipeline
   deploy-agents:
-    name: Deploy Generated Agents
+    "name: Deploy Generated Agents
     needs: generate-agents
     runs-on: ubuntu-latest
     if: always()
@@ -272,7 +278,7 @@ jobs:
           echo "Deploying generated agents to production environment..."
           
           # Find all newly generated agents
-          AGENTS=$(find automation/agents -name "*.json" -newer automation/agents/.timestamp 2>/dev/null || echo "")
+          AGENTS=$(find automation/agents -name "*.json" -newer automation/agents/.timestamp 2>/dev/null || echo ")
           
           if [ -n "$AGENTS" ]; then
             echo "Found agents to deploy: $AGENTS"
@@ -409,7 +415,7 @@ jobs:
           # Update agent count
           echo $TOTAL_AGENTS > automation/agents/.agent_count
           
-          echo "Growth Report Generated:"
+          echo "Growth Report Generated:
           echo "Total Agents: $TOTAL_AGENTS"
           echo "Growth Rate: $GROWTH_RATE"
           echo "Average Efficiency: $EFFICIENCY_IMPROVEMENT"

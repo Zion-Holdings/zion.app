@@ -2,11 +2,11 @@ name: Autonomous Cloud Runner (Fast)
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '0 * * * *'
   workflow_dispatch: {}
 
 concurrency:
-  group: autonomous-cloud-runner-${{ github.ref }}
+  group: "autonomous-cloud-runner-${{ github.ref }}"
   cancel-in-progress: true
 
 permissions:
@@ -16,7 +16,7 @@ jobs:
 
   run-fast-suite:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -32,8 +32,28 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Clean git state
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Clean up any existing rebase state
+          git rebase --abort 2>/dev/null || true
+          rm -rf .git/rebase-merge .git/rebase-apply 2>/dev/null || true
+          # Reset to clean state
+          git reset --hard HEAD
+          git clean -fd
+
       - name: Run Cloud Autonomous Orchestrator (fast)
-        run: node automation/cloud-autonomous-orchestrator.cjs | cat
+        run: |
+          # Set environment variables for safer git operations
+          export GIT_AUTHOR_NAME="github-actions[bot]"
+          export GIT_COMMITTER_NAME="github-actions[bot]"
+          export GIT_AUTHOR_EMAIL="41898282+github-actions[bot]@users.noreply.github.com"
+          export GIT_COMMITTER_EMAIL="41898282+github-actions[bot]@users.noreply.github.com"
+          node automation/cloud-autonomous-orchestrator.cjs | cat
+        env:
+          PUSH_TO_MAIN: "false"
+          TARGET_BRANCH: "main"
 
       - name: Upload logs
         if: always()

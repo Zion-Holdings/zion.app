@@ -2,11 +2,16 @@ name: Auto Media Release Draft
 
 on:
   schedule:
-    - cron: '0 */6 * * *'
+    - cron: '0 0 * * *'
   workflow_dispatch: {}
 
+
+concurrency:
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
+
 permissions:
-  contents: read
+  contents: write
 
 jobs:
 

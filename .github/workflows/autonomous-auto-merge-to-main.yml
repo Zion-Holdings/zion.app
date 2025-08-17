@@ -9,7 +9,7 @@ on:
   workflow_dispatch: {}
 
 concurrency:
-  group: auto-merge-to-main-${{ github.ref }}
+  group: "auto-merge-to-main-${{ github.ref }}"
   cancel-in-progress: true
 
 permissions:
@@ -47,7 +47,7 @@ jobs:
             const head = process.env.GITHUB_REF_NAME;
             const owner = context.repo.owner;
             const repo = context.repo.repo;
-            // Find existing open PR from this head to main
+            // Find existing open PR from this head to main"
             const { data: prs } = await github.rest.pulls.list({ owner, repo, state: 'open', head: `${owner}:${head}`, base: 'main' });
             let pr;
             if (prs.length > 0) {
@@ -67,7 +67,7 @@ jobs:
             core.setOutput('number', pr.number.toString());
 
       - name: Enable Auto-merge (squash)
-        if: steps.pr.outputs.number
+        if: "steps.pr.outputs.number
         uses: peter-evans/enable-pull-request-automerge@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -78,7 +78,7 @@ jobs:
         if: steps.pr.outputs.number
         uses: actions/github-script@v7
         with:
-          script: |
+          script: |"
             const number = Number(core.getInput('number'))
             await github.rest.issues.createComment({
               owner: context.repo.owner,
@@ -86,6 +86,7 @@ jobs:
               issue_number: Number(process.env.PR_NUMBER || '${{ steps.pr.outputs.number }}'),
               body: 'Auto-merge enabled. This PR will merge to main after checks pass.'
             })
-          result-encoding: string
+          result-encoding: "string
           github-token: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ steps.pr.outputs.number }}
+"

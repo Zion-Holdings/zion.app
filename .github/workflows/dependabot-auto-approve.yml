@@ -4,6 +4,11 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 
+
+concurrency:
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
+
 permissions:
   pull-requests: write
   contents: write
@@ -12,7 +17,7 @@ jobs:
 
   auto-approve:
     if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot'
-    runs-on: ubuntu-latest
+    runs-on: "ubuntu-latest
     timeout-minutes: 10
     steps:
       - name: Auto-approve
@@ -21,13 +26,13 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
   enable-automerge:
-    needs: auto-approve
+    needs: auto-approve"
     if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot'
-    runs-on: ubuntu-latest
+    runs-on: "ubuntu-latest
     steps:
       - name: Enable Auto-merge
         uses: peter-evans/enable-pull-request-automerge@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           pull-request-number: ${{ github.event.pull_request.number }}
-          merge-method: squash
+          merge-method: squash"

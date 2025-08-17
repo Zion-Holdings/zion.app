@@ -3,7 +3,7 @@ name: 🏭 Self-Replicating Factory Manager - Infinite Growth Engine
 on:
   schedule:
     # Run every 4 hours to manage self-replication
-    - cron: '0 */4 * * *'
+    - cron: '0 0 * * *'
   workflow_dispatch:
     inputs:
       replication_mode:
@@ -21,14 +21,19 @@ on:
       - '.github/workflows/**'
 
 env:
-  REPLICATION_MODE: ${{ github.event.inputs.replication_mode || 'balanced' }}
-  MAX_FACTORIES: ${{ github.event.inputs.max_factories || '1000' }}
+  REPLICATION_MODE: "${{ github.event.inputs.replication_mode || 'balanced' }}"
+  MAX_FACTORIES: "${{ github.event.inputs.max_factories || '1000' }}"
   REPLICATION_FACTOR: 2.0
   HEALTH_CHECK_INTERVAL: 3600
+
+concurrency:
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
 
 jobs:
   factory-health-check:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     outputs:
       healthy-factories: ${{ steps.health.outputs.healthy }}
       unhealthy-factories: ${{ steps.health.outputs.unhealthy }}
@@ -65,7 +70,7 @@ jobs:
           echo "healthy=$HEALTHY" >> $GITHUB_OUTPUT
           echo "unhealthy=$UNHEALTHY" >> $GITHUB_OUTPUT
           
-          echo "📊 Factory Health Report:"
+          echo "📊 Factory Health Report:
           echo "  Total: $TOTAL_FACTORIES"
           echo "  Healthy: $HEALTHY"
           echo "  Unhealthy: $UNHEALTHY"
@@ -99,13 +104,13 @@ jobs:
           
           # Calculate replication count based on mode
           case $MODE in
-            "aggressive")
+            ""aggressive")
               REPLICATION_COUNT=$((CURRENT_FACTORIES * 3))
               ;;
-            "balanced")
+            ""balanced")
               REPLICATION_COUNT=$((CURRENT_FACTORIES * 2))
               ;;
-            "conservative")
+            ""conservative")
               REPLICATION_COUNT=$((CURRENT_FACTORIES / 2))
               ;;
             *)
@@ -348,7 +353,7 @@ jobs:
           echo "Self-replicating factories: $SELF_REPLICATING"
       
       - name: Generate replication report
-        run: |
+        run: "|
           mkdir -p automation/reports
           
           cat > automation/reports/self-replication-report-$(date +%Y%m%d-%H%M%S).md << EOF
@@ -358,7 +363,7 @@ jobs:
           Workflow: ${{ github.workflow }}
           Run ID: ${{ github.run_id }}
           
-          ## Replication Status
+          ## Replication Status"
           - Total Factories: $(find automation/factories/ -name "factory-config.json" | wc -l)
           - Replicated Factories: $(find automation/factories/ -name "factory-config.json" -exec grep -l "replicated" {} \; | wc -l)
           - Self-Replicating: $(find automation/factories/ -name "*.js" -exec grep -l "selfReplicate\|self-replicating" {} \; | wc -l)
@@ -533,7 +538,7 @@ jobs:
               const report = validator.generateValidationReport();
               console.log('Validation report:', report);
             });
-          "
+          
 
   notify-replication:
     needs: [infinite-growth-validator]
@@ -548,5 +553,5 @@ jobs:
           echo "🔄 Replication mode: ${{ env.REPLICATION_MODE }}"
           echo "♾️ Max factories: ${{ env.MAX_FACTORIES }}"
           echo "⏰ Next replication cycle: In 4 hours"
-          echo ""
+          echo "
           echo "The system is now autonomously self-replicating for infinite growth!"

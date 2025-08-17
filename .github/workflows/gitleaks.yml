@@ -12,7 +12,7 @@ permissions:
   security-events: write
 
 concurrency:
-  group: gitleaks-${{ github.ref }}
+  group: "gitleaks-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:
@@ -43,4 +43,4 @@ jobs:
         if: always()
         uses: github/codeql-action/upload-sarif@v2
         with:
-          sarif_file: gitleaks.sarif
+          sarif_file: gitleaks.sarif"

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T23:26:32.825Z",
+  "timestamp": "2025-08-17T01:16:39.312Z",
   "critical": [],
   "high": [
     {
@@ -8,7 +8,7 @@
       "complexityScore": 55,
       "complexityLevel": "high",
       "metrics": {
-        "totalLines": 511,
+        "totalLines": 517,
         "jobCount": 0,
         "stepCount": 20,
         "conditionalCount": 1,
@@ -30,7 +30,7 @@
       "complexityScore": 55,
       "complexityLevel": "high",
       "metrics": {
-        "totalLines": 364,
+        "totalLines": 370,
         "jobCount": 0,
         "stepCount": 11,
         "conditionalCount": 1,
@@ -52,7 +52,7 @@
       "complexityScore": 50,
       "complexityLevel": "high",
       "metrics": {
-        "totalLines": 659,
+        "totalLines": 665,
         "jobCount": 0,
         "stepCount": 10,
         "conditionalCount": 1,
@@ -74,7 +74,7 @@
       "complexityScore": 55,
       "complexityLevel": "high",
       "metrics": {
-        "totalLines": 518,
+        "totalLines": 523,
         "jobCount": 0,
         "stepCount": 13,
         "conditionalCount": 1,
@@ -96,7 +96,7 @@
       "complexityScore": 55,
       "complexityLevel": "high",
       "metrics": {
-        "totalLines": 237,
+        "totalLines": 243,
         "jobCount": 0,
         "stepCount": 16,
         "conditionalCount": 5,
@@ -118,7 +118,7 @@
       "complexityScore": 50,
       "complexityLevel": "high",
       "metrics": {
-        "totalLines": 553,
+        "totalLines": 558,
         "jobCount": 0,
         "stepCount": 8,
         "conditionalCount": 1,
@@ -142,9 +142,9 @@
       "complexityScore": 30,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 127,
+        "totalLines": 133,
         "jobCount": 0,
-        "stepCount": 13,
+        "stepCount": 12,
         "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 1,
@@ -162,7 +162,7 @@
       "complexityScore": 30,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 129,
+        "totalLines": 135,
         "jobCount": 0,
         "stepCount": 17,
         "conditionalCount": 1,
@@ -183,7 +183,7 @@
       "complexityScore": 30,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 121,
+        "totalLines": 126,
         "jobCount": 0,
         "stepCount": 13,
         "conditionalCount": 4,
@@ -192,6 +192,66 @@
         "environmentCount": 0,
         "secretCount": 1,
         "actionCount": 2
+      },
+      "refactoringStrategy": [
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "yaml-auto-fixer-simple.yml",
+      "status": "active",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 297,
+        "jobCount": 0,
+        "stepCount": 8,
+        "conditionalCount": 1,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 1,
+        "actionCount": 3
+      },
+      "refactoringStrategy": [
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "yaml-auto-fixer.yml",
+      "status": "active",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 241,
+        "jobCount": 0,
+        "stepCount": 8,
+        "conditionalCount": 1,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 1,
+        "actionCount": 3
+      },
+      "refactoringStrategy": [
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "yaml-validator.yml",
+      "status": "active",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 120,
+        "jobCount": 0,
+        "stepCount": 7,
+        "conditionalCount": 3,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 4
       },
       "refactoringStrategy": [
         "Extract common functionality to reusable workflows"

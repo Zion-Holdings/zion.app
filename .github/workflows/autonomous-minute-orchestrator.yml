@@ -2,15 +2,15 @@ name: Autonomous Minute Orchestrator
 
 on:
   schedule:
-    - cron: '* * * * *'
+    - cron: '0 0 * * *'
   workflow_dispatch: {}
 
 concurrency:
-  group: autonomous-minute-orchestrator-${{ github.ref }}
+  group: "autonomous-minute-orchestrator-${{ github.ref }}"
   cancel-in-progress: true
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
 

@@ -3,7 +3,7 @@ name: 🤖 Autonomous Agent Orchestrator - Exponential Growth Manager
 on:
   schedule:
     # Run every 2 hours to manage exponential growth
-    - cron: '0 */2 * * *'
+    - cron: '0 0 * * *'
   workflow_dispatch:
     inputs:
       orchestration_mode:
@@ -21,14 +21,20 @@ on:
       - '.github/workflows/**'
 
 env:
-  ORCHESTRATION_MODE: ${{ github.event.inputs.orchestration_mode || 'growth' }}
-  TARGET_AGENTS: ${{ github.event.inputs.target_agents || '100' }}
+  "ORCHESTRATION_MODE: ${{ github.event.inputs.orchestration_mode || 'growth' }}"
+  TARGET_AGENTS: "${{ github.event.inputs.target_agents || '100' }}"
   GROWTH_ALGORITHM: 'exponential'
   REPLICATION_THRESHOLD: 3
+
+
+concurrency:
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
 
 jobs:
   agent-inventory:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     outputs:
       total-agents: ${{ steps.count.outputs.total }}
       active-factories: ${{ steps.factories.outputs.active }}
@@ -39,7 +45,7 @@ jobs:
       - name: Inventory all agents
         id: count
         run: |
-          # Count all agents across all factories
+          # Count all agents across all factories"
           TOTAL_AGENTS=$(find automation/factories/ -name "*.js" -exec grep -l "class.*Agent\|createAgent" {} \; | wc -l)
           echo "total=$TOTAL_AGENTS" >> $GITHUB_OUTPUT
           echo "📊 Total agents found: $TOTAL_AGENTS"
@@ -56,7 +62,7 @@ jobs:
         run: |
           AGENTS=${{ steps.count.outputs.total }}
           FACTORIES=${{ steps.factories.outputs.active }}
-          CAPACITY=$((AGENTS * FACTORIES * 2))  # Exponential growth factor
+          CAPACITY=$((AGENTS * FACTORIES * 2))  # Exponential growth factor"
           echo "capacity=$CAPACITY" >> $GITHUB_OUTPUT
           echo "🚀 Growth capacity: $CAPACITY agents"
 
@@ -86,7 +92,7 @@ jobs:
           echo "Target agents: $TARGET"
           
           case $STRATEGY in
-            "replicate")
+            replicate")
               echo "🔄 Replicating existing agents..."
               # Create replication scripts
               mkdir -p automation/orchestration/replication
@@ -151,7 +157,7 @@ jobs:
               EOF
               ;;
               
-            "optimize")
+            optimize")
               echo "⚡ Optimizing agent performance..."
               # Create optimization scripts
               mkdir -p automation/orchestration/optimization
@@ -236,7 +242,7 @@ jobs:
               EOF
               ;;
               
-            "diversify")
+            diversify")
               echo "🌱 Diversifying agent types..."
               # Create diversification scripts
               mkdir -p automation/orchestration/diversification
@@ -309,7 +315,7 @@ jobs:
               EOF
               ;;
               
-            "accelerate")
+            accelerate")
               echo "🚀 Accelerating growth rate..."
               # Create acceleration scripts
               mkdir -p automation/orchestration/acceleration
@@ -423,7 +429,7 @@ jobs:
           done
       
       - name: Generate orchestration report
-        run: |
+        run: "|
           mkdir -p automation/reports
           
           cat > automation/reports/orchestration-report-$(date +%Y%m%d-%H%M%S).md << EOF
@@ -639,7 +645,7 @@ jobs:
             engine.makeDecisions().then(decisions => {
               console.log('Autonomous decisions executed:', decisions);
             });
-          "
+          
 
   notify-orchestration:
     needs: [autonomous-decision-engine]
@@ -654,5 +660,5 @@ jobs:
           echo "🚀 Growth capacity: ${{ needs.agent-inventory.outputs.growth-capacity }}"
           echo "🎯 Target agents: ${{ env.TARGET_AGENTS }}"
           echo "⏰ Next orchestration: In 2 hours"
-          echo ""
+          echo "
           echo "The system is now autonomously orchestrating exponential growth!"

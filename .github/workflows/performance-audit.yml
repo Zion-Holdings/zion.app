@@ -2,7 +2,7 @@ name: Performance Audit
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '0 0 * * *'
   workflow_dispatch:
 
 permissions:
@@ -10,7 +10,7 @@ permissions:
   issues: write
 
 concurrency:
-  group: performance-audit
+  group: "performance-audit
   cancel-in-progress: true
 
 jobs:
@@ -22,13 +22,13 @@ jobs:
       SITE_URL: ${{ secrets.SITE_URL }}
     steps:
       - uses: actions/checkout@v4
-      - name: Ensure SITE_URL present
+      - name: Ensure SITE_URL present"
         run: |
           if [ -z "${SITE_URL}" ]; then
             echo "SITE_URL secret not set, skipping." && exit 0
           fi
       - name: Run Lighthouse
-        uses: treosh/lighthouse-ci-action@v11
+        uses: "treosh/lighthouse-ci-action@v11
         with:
           urls: |
             ${{ secrets.SITE_URL }}/
@@ -40,7 +40,7 @@ jobs:
         env:
           SITE_URL: ${{ secrets.SITE_URL }}
         with:
-          script: |
+          script: |"
             const core = require('@actions/core');
             const fs = require('fs');
             const glob = require('glob');

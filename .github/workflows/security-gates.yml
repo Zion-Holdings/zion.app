@@ -1,9 +1,14 @@
-name: Security Gates WORKFLOW_NAME_PLACEHOLDER Compliance
+name: Security Gates  Compliance
 
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '0 0 * * *'
+
+
+concurrency:
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
 
 permissions:
   contents: write

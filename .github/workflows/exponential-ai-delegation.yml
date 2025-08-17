@@ -2,7 +2,7 @@ name: Exponential AI Delegation
 
 on:
   schedule:
-    - cron: '0 */4 * * *'  # Every 4 hours
+    - cron: '0 0 * * *'  # Every 4 hours
   workflow_dispatch: {}
   push:
     branches: [main]
@@ -15,7 +15,7 @@ on:
     types: [completed]
 
 concurrency:
-  group: exponential-ai-delegation-${{ github.ref }}
+  group: "exponential-ai-delegation-${{ github.ref }}"
   cancel-in-progress: false
 
 jobs:
@@ -23,8 +23,9 @@ jobs:
   exponential-delegation:
     name: Exponential AI Delegation
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     permissions:
-      contents: read
+      contents: write
       actions: write
       pull-requests: write
     steps:
@@ -112,7 +113,7 @@ jobs:
             } catch (error) {
               console.log('Error analyzing growth:', error.message);
             }
-          "
+          
 
       - name: Commit and push changes
         run: |

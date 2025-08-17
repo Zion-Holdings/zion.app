@@ -5,6 +5,11 @@ on:
     - cron: '7 3 * * 0'
   workflow_dispatch: {}
 
+
+concurrency:
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
@@ -29,7 +34,7 @@ jobs:
         run: |
           set -euo pipefail
           BASE=origin/main
-          git fetch origin main
+          git fetch origin main"
           git for-each-ref --format='%(refname:short) %(committerdate:iso8601)' refs/remotes/origin | while read ref date; do
             branch=${ref#origin/}
             # Skip protected and special branches
@@ -46,4 +51,4 @@ jobs:
             fi
           done
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}"

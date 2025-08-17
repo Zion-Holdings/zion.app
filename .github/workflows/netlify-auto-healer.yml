@@ -2,7 +2,7 @@ name: Netlify Auto-Healer
 
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '0 0 * * *'
   workflow_dispatch:
 
 permissions:
@@ -10,7 +10,7 @@ permissions:
   issues: write
 
 concurrency:
-  group: netlify-auto-healer
+  group: "netlify-auto-healer
   cancel-in-progress: true
 
 jobs:
@@ -35,7 +35,7 @@ jobs:
         if: failure()
         uses: actions/github-script@v7
         with:
-          script: |
+          script: |"
             const title = 'Netlify auto-healer failed';
             const body = 'The Netlify auto-healer could not restore or trigger a rebuild. Check API credentials and deploy logs.';
             const { data: issues } = await github.rest.issues.listForRepo({ owner: context.repo.owner, repo: context.repo.repo, state: 'open' });

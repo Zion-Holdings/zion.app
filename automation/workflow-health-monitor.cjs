@@ -1,410 +1,531 @@
 #!/usr/bin/env node
-"use strict";
 
-const fs = require("fs");
-const path = require("path");
-const { execSync } = require("child_process");
+const fs = require('fs');
+const path = require('path');
+const { execSync } = require('child_process');
+
+const logsDir = path.join(__dirname, 'logs');
+const healthReportFile = path.join(logsDir, 'workflow-health-report.json');
+const workflowStatusFile = path.join(logsDir, 'workflow-status.json');
+
+if (!fs.existsSync(logsDir)) fs.mkdirSync(logsDir, { recursive: true });
 
 class WorkflowHealthMonitor {
   constructor() {
-    this.workflowsDir = path.resolve(__dirname, "../.github/workflows");
-    this.disabledDir = path.resolve(__dirname, "../.github/workflows.disabled");
-    this.reportsDir = path.resolve(__dirname, "reports");
-    this.healthData = {};
-    this.failurePatterns = {
-      highComplexity: [],
-      missingTimeouts: [],
-      unsafeOperations: [],
-      outdatedActions: [],
-      resourceIntensive: []
+    this.workflowsDir = path.join(process.cwd(), '.github', 'workflows');
+    this.healthData = this.loadHealthData();
+    this.workflowStatus = this.loadWorkflowStatus();
+  }
+
+  loadHealthData() {
+    try {
+      if (fs.existsSync(healthReportFile)) {
+        return JSON.parse(fs.readFileSync(healthReportFile, 'utf8'));
+      }
+    } catch (error) {
+      console.log('Creating new health data file');
+    }
+    return {
+      lastCheck: new Date().toISOString(),
+      totalWorkflows: 0,
+      activeWorkflows: 0,
+      disabledWorkflows: 0,
+      failingWorkflows: [],
+      recommendations: [],
+      fixesApplied: []
     };
+  }
+
+  loadWorkflowStatus() {
+    try {
+      if (fs.existsSync(workflowStatusFile)) {
+        return JSON.parse(fs.readFileSync(workflowStatusFile, 'utf8'));
+      }
+    } catch (error) {
+      console.log('Creating new workflow status file');
+    }
+    return {};
+  }
+
+  log(message) {
+    const timestamp = new Date().toISOString();
+    const logMessage = `[${timestamp}] ${message}`;
+    console.log(logMessage);
     
-    if (!fs.existsSync(this.reportsDir)) {
-      fs.mkdirSync(this.reportsDir, { recursive: true });
+    // Append to log file
+    const logFile = path.join(logsDir, 'workflow-health-monitor.log');
+    fs.appendFileSync(logFile, logMessage + '\n');
+  }
+
+  runCommand(command, options = {}) {
+    try {
+      const output = execSync(command, { 
+        stdio: 'pipe', 
+        encoding: 'utf8', 
+        ...options 
+      });
+      return { ok: true, output: output.trim() };
+    } catch (error) {
+      return { 
+        ok: false, 
+        error: error.message,
+        stdout: error.stdout?.toString() || '',
+        stderr: error.stderr?.toString() || ''
+      };
     }
   }
 
-  async analyzeWorkflowHealth() {
-    console.log("🔍 Analyzing workflow health...");
+  async analyzeWorkflows() {
+    this.log('🔍 Starting workflow health analysis...');
     
-    const activeWorkflows = this.getActiveWorkflows();
-    const disabledWorkflows = this.getDisabledWorkflows();
+    const workflowFiles = this.getWorkflowFiles();
+    this.healthData.totalWorkflows = workflowFiles.length;
     
-    // Analyze each active workflow
-    for (const workflow of activeWorkflows) {
-      await this.analyzeWorkflow(workflow, 'active');
+    let activeCount = 0;
+    let disabledCount = 0;
+    const failingWorkflows = [];
+    const recommendations = [];
+
+    for (const workflowFile of workflowFiles) {
+      const analysis = await this.analyzeWorkflow(workflowFile);
+      
+      if (analysis.isActive) {
+        activeCount++;
+        this.workflowStatus[workflowFile] = {
+          ...analysis,
+          lastChecked: new Date().toISOString(),
+          status: 'active'
+        };
+      } else {
+        disabledCount++;
+        this.workflowStatus[workflowFile] = {
+          ...analysis,
+          lastChecked: new Date().toISOString(),
+          status: 'disabled'
+        };
+      }
+
+      if (analysis.issues.length > 0) {
+        failingWorkflows.push({
+          file: workflowFile,
+          issues: analysis.issues,
+          severity: analysis.severity
+        });
+      }
+
+      if (analysis.recommendations.length > 0) {
+        recommendations.push(...analysis.recommendations);
+      }
     }
-    
-    // Analyze disabled workflows for patterns
-    for (const workflow of disabledWorkflows) {
-      await this.analyzeWorkflow(workflow, 'disabled');
+
+    this.healthData.activeWorkflows = activeCount;
+    this.healthData.disabledWorkflows = disabledCount;
+    this.healthData.failingWorkflows = failingWorkflows;
+    this.healthData.recommendations = recommendations;
+    this.healthData.lastCheck = new Date().toISOString();
+
+    this.log(`📊 Analysis complete: ${activeCount} active, ${disabledCount} disabled, ${failingWorkflows.length} with issues`);
+  }
+
+  getWorkflowFiles() {
+    try {
+      const files = fs.readdirSync(this.workflowsDir);
+      return files.filter(file => 
+        file.endsWith('.yml') || file.endsWith('.yaml')
+      ).map(file => path.join(this.workflowsDir, file));
+    } catch (error) {
+      this.log(`❌ Error reading workflows directory: ${error.message}`);
+      return [];
     }
-    
-    // Identify failure patterns
-    this.identifyFailurePatterns();
-    
-    // Suggest optimizations
-    this.suggestOptimizations();
-    
-    // Generate comprehensive health report
-    this.generateHealthReport();
-    
-    // Save health data
-    this.saveHealthData();
   }
 
-  getActiveWorkflows() {
-    if (!fs.existsSync(this.workflowsDir)) return [];
-    
-    return fs.readdirSync(this.workflowsDir)
-      .filter(f => f.endsWith('.yml') || f.endsWith('.yaml'))
-      .map(f => ({
-        name: f,
-        path: path.join(this.workflowsDir, f),
-        status: 'active'
-      }));
-  }
-
-  getDisabledWorkflows() {
-    if (!fs.existsSync(this.disabledDir)) return [];
-    
-    return fs.readdirSync(this.disabledDir)
-      .filter(f => f.endsWith('.yml') || f.endsWith('.yaml'))
-      .map(f => ({
-        name: f,
-        path: path.join(this.disabledDir, f),
-        status: 'disabled'
-      }));
-  }
-
-  async analyzeWorkflow(workflow, status) {
-    const content = fs.readFileSync(workflow.path, 'utf8');
+  async analyzeWorkflow(workflowPath) {
+    const filename = path.basename(workflowPath);
     const analysis = {
-      name: workflow.name,
-      status,
-      path: workflow.path,
-      size: content.length,
-      lines: content.split('\n').length,
-      triggers: this.extractTriggers(content),
-      jobs: this.extractJobs(content),
-      timeouts: this.extractTimeouts(content),
-      permissions: this.extractPermissions(content),
-      concurrency: this.extractConcurrency(content),
-      issues: this.identifyIssues(content) || [],
-      recommendations: []
+      file: filename,
+      isActive: false,
+      issues: [],
+      recommendations: [],
+      severity: 'low',
+      schedule: null,
+      triggers: [],
+      lastModified: null
     };
 
-    // Add specific recommendations
-    analysis.recommendations = this.generateRecommendations(analysis);
-    
-    this.healthData[workflow.name] = analysis;
-  }
+    try {
+      const content = fs.readFileSync(workflowPath, 'utf8');
+      const stats = fs.statSync(workflowPath);
+      analysis.lastModified = stats.mtime.toISOString();
 
-  extractTriggers(content) {
-    const triggers = [];
-    const lines = content.split('\n');
-    
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i].trim();
-      if (line.startsWith('on:')) {
-        // Look for trigger types
-        let j = i + 1;
-        while (j < lines.length && lines[j].startsWith(' ')) {
-          const triggerLine = lines[j].trim();
-          if (triggerLine.includes('push:') || triggerLine.includes('pull_request:') || 
-              triggerLine.includes('schedule:') || triggerLine.includes('workflow_dispatch:')) {
-            triggers.push(triggerLine.replace(':', ''));
-          }
-          j++;
-        }
-        break;
+      // Check if workflow is active
+      if (content.includes('on:') && !content.includes('disabled: true')) {
+        analysis.isActive = true;
       }
-    }
-    
-    return triggers;
-  }
 
-  extractJobs(content) {
-    const jobs = [];
-    const lines = content.split('\n');
-    
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i].trim();
-      if (line.match(/^[a-zA-Z_][a-zA-Z0-9_-]*:$/)) {
-        const jobName = line.replace(':', '');
-        if (jobName !== 'on' && jobName !== 'permissions' && jobName !== 'concurrency' && jobName !== 'env') {
-          jobs.push(jobName);
-        }
+      // Extract triggers
+      if (content.includes('workflow_dispatch')) {
+        analysis.triggers.push('manual');
       }
-    }
-    
-    return jobs;
-  }
-
-  extractTimeouts(content) {
-    const timeouts = [];
-    const lines = content.split('\n');
-    
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i].trim();
-      if (line.includes('timeout-minutes:')) {
-        const timeout = line.split(':')[1].trim();
-        timeouts.push(parseInt(timeout) || 0);
+      if (content.includes('push:')) {
+        analysis.triggers.push('push');
       }
-    }
-    
-    return timeouts;
-  }
-
-  extractPermissions(content) {
-    const permissions = [];
-    const lines = content.split('\n');
-    
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i].trim();
-      if (line.startsWith('permissions:')) {
-        let j = i + 1;
-        while (j < lines.length && lines[j].startsWith(' ')) {
-          const permLine = lines[j].trim();
-          if (permLine.includes(':')) {
-            const [perm, value] = permLine.split(':').map(s => s.trim());
-            permissions.push({ permission: perm, value });
-          }
-          j++;
-        }
-        break;
+      if (content.includes('pull_request:')) {
+        analysis.triggers.push('pull_request');
       }
-    }
-    
-    return permissions;
-  }
 
-  extractConcurrency(content) {
-    const lines = content.split('\n');
-    
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i].trim();
-      if (line.startsWith('concurrency:')) {
-        let j = i + 1;
-        while (j < lines.length && lines[j].startsWith(' ')) {
-          const concurrencyLine = lines[j].trim();
-          if (concurrencyLine.includes('group:')) {
-            return concurrencyLine.split(':')[1].trim();
-          }
-          j++;
-        }
-        break;
+      // Extract schedule
+      const scheduleMatch = content.match(/cron:\s*['"`]([^'"`]+)['"`]/);
+      if (scheduleMatch) {
+        analysis.schedule = scheduleMatch[1];
+        analysis.triggers.push('scheduled');
       }
+
+      // Check for common issues
+      const issues = this.detectWorkflowIssues(content, filename);
+      analysis.issues = issues;
+      
+      if (issues.some(issue => issue.severity === 'high')) {
+        analysis.severity = 'high';
+      } else if (issues.some(issue => issue.severity === 'medium')) {
+        analysis.severity = 'medium';
+      }
+
+      // Generate recommendations
+      analysis.recommendations = this.generateRecommendations(analysis);
+
+    } catch (error) {
+      analysis.issues.push({
+        type: 'parse_error',
+        message: `Failed to parse workflow file: ${error.message}`,
+        severity: 'high'
+      });
     }
-    
-    return null;
+
+    return analysis;
   }
 
-  identifyIssues(content) {
+  detectWorkflowIssues(content, filename) {
     const issues = [];
-    
-    // Check for common problems
-    if (content.includes('npm ci') && !content.includes('cache:')) {
-      issues.push('missing_npm_cache');
+
+    // Check for excessive frequency
+    const cronMatch = content.match(/cron:\s*['"`]([^'"`]+)['"`]/);
+    if (cronMatch) {
+      const cron = cronMatch[1];
+      if (cron.includes('*/5') || cron.includes('*/10') || cron.includes('*/15')) {
+        issues.push({
+          type: 'excessive_frequency',
+          message: `Workflow runs very frequently (${cron}), may cause resource conflicts`,
+          severity: 'medium',
+          fix: 'Consider increasing interval to */30 or */60 minutes'
+        });
+      }
     }
-    
-    if (content.includes('timeout-minutes:') && content.includes('timeout-minutes: 0')) {
-      issues.push('zero_timeout');
+
+    // Check for missing concurrency control
+    if (content.includes('schedule:') && !content.includes('concurrency:')) {
+      issues.push({
+        type: 'missing_concurrency',
+        message: 'Scheduled workflow missing concurrency control',
+        severity: 'medium',
+        fix: 'Add concurrency group to prevent overlapping runs'
+      });
     }
-    
-    if (content.includes('git push') && !content.includes('if:') && !content.includes('github.ref ==')) {
-      issues.push('unsafe_git_push');
+
+    // Check for missing error handling
+    if (content.includes('node automation/') && !content.includes('if: always()')) {
+      issues.push({
+        type: 'missing_error_handling',
+        message: 'Automation script may fail workflow on errors',
+        severity: 'low',
+        fix: 'Add error handling or continue-on-error: true'
+      });
     }
-    
-    if (content.includes('actions/checkout@v3') || content.includes('actions/checkout@v2')) {
-      issues.push('outdated_checkout_action');
+
+    // Check for missing timeouts
+    if (content.includes('runs-on:') && !content.includes('timeout-minutes:')) {
+      issues.push({
+        type: 'missing_timeout',
+        message: 'Workflow missing timeout, may run indefinitely',
+        severity: 'low',
+        fix: 'Add timeout-minutes: 30 or appropriate value'
+      });
     }
-    
-    if (content.includes('ubuntu-16.04') || content.includes('ubuntu-18.04')) {
-      issues.push('outdated_runner');
+
+    // Check for backup files
+    if (filename.includes('.backup')) {
+      issues.push({
+        type: 'backup_file',
+        message: 'Backup workflow file should be removed',
+        severity: 'low',
+        fix: 'Remove backup file to reduce confusion'
+      });
     }
-    
+
     return issues;
   }
 
   generateRecommendations(analysis) {
     const recommendations = [];
-    
-    if (analysis.issues.includes('missing_npm_cache')) {
-      recommendations.push('Add npm cache to improve build performance');
+
+    if (analysis.schedule && analysis.schedule.includes('*/15')) {
+      recommendations.push({
+        type: 'frequency_optimization',
+        message: `Consider reducing frequency from ${analysis.schedule} to */30 or */60 minutes`,
+        priority: 'high'
+      });
     }
-    
-    if (analysis.issues.includes('zero_timeout')) {
-      recommendations.push('Set appropriate timeout-minutes to prevent hanging workflows');
+
+    if (!analysis.triggers.includes('manual')) {
+      recommendations.push({
+        type: 'add_manual_trigger',
+        message: 'Add workflow_dispatch for manual execution during debugging',
+        priority: 'medium'
+      });
     }
-    
-    if (analysis.issues.includes('unsafe_git_push')) {
-      recommendations.push('Add branch protection to git push operations');
+
+    if (analysis.issues.length > 0) {
+      recommendations.push({
+        type: 'fix_issues',
+        message: `Fix ${analysis.issues.length} detected issues to improve reliability`,
+        priority: 'high'
+      });
     }
-    
-    if (analysis.issues.includes('outdated_checkout_action')) {
-      recommendations.push('Update to actions/checkout@v4 for better security and performance');
-    }
-    
-    if (analysis.issues.includes('outdated_runner')) {
-      recommendations.push('Update to ubuntu-latest for better performance and security');
-    }
-    
-    if (analysis.timeouts.length === 0) {
-      recommendations.push('Add timeout-minutes to prevent infinite hanging');
-    }
-    
-    if (analysis.triggers.includes('schedule') && !analysis.triggers.includes('workflow_dispatch')) {
-      recommendations.push('Add workflow_dispatch trigger for manual testing');
-    }
-    
-    if (analysis.jobs.length > 3) {
-      recommendations.push('Consider splitting into smaller workflows for better maintainability');
-    }
-    
+
     return recommendations;
   }
 
-  identifyFailurePatterns() {
-    console.log("🔍 Identifying failure patterns...");
+  async applyFixes() {
+    this.log('🔧 Applying automatic fixes...');
     
-    // Group workflows by common characteristics
-    const patterns = {
-      highComplexity: [],
-      missingTimeouts: [],
-      unsafeOperations: [],
-      outdatedActions: [],
-      resourceIntensive: []
-    };
-    
-    for (const [name, data] of Object.entries(this.healthData)) {
-      if (data.jobs.length > 5) {
-        patterns.highComplexity.push(name);
-      }
-      
-      if (data.timeouts.length === 0) {
-        patterns.missingTimeouts.push(name);
-      }
-      
-      if (data.issues.includes('unsafe_git_push')) {
-        patterns.unsafeOperations.push(name);
-      }
-      
-      if (data.issues.includes('outdated_checkout_action')) {
-        patterns.outdatedActions.push(name);
-      }
-      
-      if (data.size > 5000) {
-        patterns.resourceIntensive.push(name);
+    let fixesApplied = 0;
+    const fixResults = [];
+
+    for (const failingWorkflow of this.healthData.failingWorkflows) {
+      const fixResult = await this.fixWorkflow(failingWorkflow);
+      if (fixResult.fixed) {
+        fixesApplied++;
+        fixResults.push(fixResult);
       }
     }
-    
-    this.failurePatterns = patterns;
+
+    this.healthData.fixesApplied = fixResults;
+    this.log(`✅ Applied ${fixesApplied} fixes`);
+
+    return fixResults;
   }
 
-  suggestOptimizations() {
-    console.log("💡 Generating optimization suggestions...");
-    
-    const optimizations = {
-      immediate: [],
-      shortTerm: [],
-      longTerm: []
+  async fixWorkflow(failingWorkflow) {
+    const workflowPath = path.join(this.workflowsDir, failingWorkflow.file);
+    const result = {
+      file: failingWorkflow.file,
+      fixed: false,
+      changes: [],
+      errors: []
     };
-    
-    // Immediate fixes
-    for (const workflow of this.failurePatterns.missingTimeouts) {
-      optimizations.immediate.push(`Add timeout-minutes to ${workflow}`);
+
+    try {
+      let content = fs.readFileSync(workflowPath, 'utf8');
+      let modified = false;
+
+      // Fix excessive frequency
+      if (failingWorkflow.issues.some(issue => issue.type === 'excessive_frequency')) {
+        const oldContent = content;
+        content = content.replace(/cron:\s*['"`](\*\/[0-9]+)['"`]/g, (match, cron) => {
+          const interval = parseInt(cron.split('/')[1]);
+          if (interval <= 15) {
+            const newInterval = Math.min(interval * 2, 60);
+            modified = true;
+            result.changes.push(`Reduced frequency from ${cron} to */${newInterval}`);
+            return `cron: '*/${newInterval}'`;
+          }
+          return match;
+        });
+      }
+
+      // Add concurrency control
+      if (failingWorkflow.issues.some(issue => issue.type === 'missing_concurrency')) {
+        if (content.includes('on:') && !content.includes('concurrency:')) {
+          const concurrencyBlock = `
+concurrency:
+  group: github.workflow-github.ref
+  cancel-in-progress: true
+
+`;
+          content = content.replace(/(on:[\s\S]*?)(permissions:|jobs:)/, `$1${concurrencyBlock}$2`);
+          modified = true;
+          result.changes.push('Added concurrency control');
+        }
+      }
+
+      // Add timeout
+      if (failingWorkflow.issues.some(issue => issue.type === 'missing_timeout')) {
+        if (content.includes('runs-on:') && !content.includes('timeout-minutes:')) {
+          content = content.replace(/(runs-on:[^\n]*)/, `$1\n    timeout-minutes: 30`);
+          modified = true;
+          result.changes.push('Added 30-minute timeout');
+        }
+      }
+
+      // Add error handling
+      if (failingWorkflow.issues.some(issue => issue.type === 'missing_error_handling')) {
+        if (content.includes('node automation/') && !content.includes('continue-on-error: true')) {
+          content = content.replace(/(\s+-\s+name:[^\n]*\n\s+runs-on:[^\n]*)/, `$1\n      continue-on-error: true`);
+          modified = true;
+          result.changes.push('Added continue-on-error for automation scripts');
+        }
+      }
+
+      if (modified) {
+        // Create backup
+        const backupPath = `${workflowPath}.backup-${Date.now()}`;
+        fs.writeFileSync(backupPath, fs.readFileSync(workflowPath, 'utf8'));
+        
+        // Write modified content
+        fs.writeFileSync(workflowPath, content);
+        result.fixed = true;
+      }
+
+    } catch (error) {
+      result.errors.push(`Failed to apply fixes: ${error.message}`);
     }
+
+    return result;
+  }
+
+  async cleanupBackupFiles() {
+    this.log('🧹 Cleaning up backup files...');
     
-    for (const workflow of this.failurePatterns.outdatedActions) {
-      optimizations.immediate.push(`Update actions in ${workflow} to latest versions`);
+    const backupFiles = fs.readdirSync(this.workflowsDir)
+      .filter(file => file.includes('.backup'))
+      .map(file => path.join(this.workflowsDir, file));
+
+    let cleanedCount = 0;
+    for (const backupFile of backupFiles) {
+      try {
+        fs.unlinkSync(backupFile);
+        cleanedCount++;
+      } catch (error) {
+        this.log(`⚠️ Failed to remove backup file ${backupFile}: ${error.message}`);
+      }
     }
-    
-    // Short term improvements
-    for (const workflow of this.failurePatterns.unsafeOperations) {
-      optimizations.shortTerm.push(`Add branch protection to ${workflow}`);
-    }
-    
-    // Long term optimizations
-    for (const workflow of this.failurePatterns.highComplexity) {
-      optimizations.longTerm.push(`Refactor ${workflow} into smaller, focused workflows`);
-    }
-    
-    this.healthData.optimizations = optimizations;
+
+    this.log(`✅ Cleaned up ${cleanedCount} backup files`);
+    return cleanedCount;
   }
 
   generateHealthReport() {
-    console.log("📊 Generating health report...");
-    
     const report = {
-      timestamp: new Date().toISOString(),
       summary: {
-        totalWorkflows: Object.keys(this.healthData).length,
-        activeWorkflows: Object.values(this.healthData).filter(w => w.status === 'active').length,
-        disabledWorkflows: Object.values(this.healthData).filter(w => w.status === 'disabled').length,
-        workflowsWithIssues: Object.values(this.healthData).filter(w => w.issues && w.issues.length > 0).length,
-        totalIssues: Object.values(this.healthData).reduce((sum, w) => sum + (w.issues ? w.issues.length : 0), 0)
+        totalWorkflows: this.healthData.totalWorkflows,
+        activeWorkflows: this.healthData.activeWorkflows,
+        disabledWorkflows: this.healthData.disabledWorkflows,
+        failingWorkflows: this.healthData.failingWorkflows.length,
+        healthScore: this.calculateHealthScore()
       },
-      patterns: this.failurePatterns,
-      workflows: this.healthData,
-      recommendations: this.healthData.optimizations || {}
+      failingWorkflows: this.healthData.failingWorkflows,
+      recommendations: this.healthData.recommendations,
+      fixesApplied: this.healthData.fixesApplied,
+      lastCheck: this.healthData.lastCheck
     };
-    
-    const reportPath = path.join(this.reportsDir, 'workflow-health-report.json');
-    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    
-    console.log(`📊 Health report saved to: ${reportPath}`);
-    this.printSummary(report);
+
+    return report;
   }
 
-  printSummary(report) {
-    console.log("\n" + "=".repeat(60));
-    console.log("🚀 WORKFLOW HEALTH SUMMARY");
-    console.log("=".repeat(60));
-    console.log(`Total Workflows: ${report.summary.totalWorkflows}`);
-    console.log(`Active: ${report.summary.activeWorkflows}`);
-    console.log(`Disabled: ${report.summary.disabledWorkflows}`);
-    console.log(`With Issues: ${report.summary.workflowsWithIssues}`);
-    console.log(`Total Issues: ${report.summary.totalIssues}`);
+  calculateHealthScore() {
+    const total = this.healthData.totalWorkflows;
+    const failing = this.healthData.failingWorkflows.length;
+    const disabled = this.healthData.disabledWorkflows;
     
-    if (report.recommendations.immediate && report.recommendations.immediate.length > 0) {
-      console.log("\n🔴 IMMEDIATE ACTIONS NEEDED:");
-      report.recommendations.immediate.forEach(rec => console.log(`  • ${rec}`));
-    }
+    if (total === 0) return 100;
     
-    if (report.recommendations.shortTerm && report.recommendations.shortTerm.length > 0) {
-      console.log("\n🟡 SHORT TERM IMPROVEMENTS:");
-      report.recommendations.shortTerm.forEach(rec => console.log(`  • ${rec}`));
-    }
+    const activeScore = ((total - disabled) / total) * 100;
+    const failurePenalty = (failing / total) * 50;
     
-    if (report.recommendations.longTerm && report.recommendations.longTerm.length > 0) {
-      console.log("\n🟢 LONG TERM OPTIMIZATIONS:");
-      report.recommendations.longTerm.forEach(rec => console.log(`  • ${rec}`));
-    }
-    
-    console.log("=".repeat(60));
+    return Math.max(0, Math.round(activeScore - failurePenalty));
   }
 
-  saveHealthData() {
-    const dataPath = path.join(this.reportsDir, 'workflow-health-data.json');
-    fs.writeFileSync(dataPath, JSON.stringify(this.healthData, null, 2));
-    console.log(`💾 Health data saved to: ${dataPath}`);
+  async saveData() {
+    try {
+      fs.writeFileSync(healthReportFile, JSON.stringify(this.healthData, null, 2));
+      fs.writeFileSync(workflowStatusFile, JSON.stringify(this.workflowStatus, null, 2));
+      this.log('💾 Health data saved');
+    } catch (error) {
+      this.log(`❌ Failed to save health data: ${error.message}`);
+    }
+  }
+
+  async run() {
+    this.log('🚀 Starting Workflow Health Monitor...');
+    
+    try {
+      await this.analyzeWorkflows();
+      await this.applyFixes();
+      await this.cleanupBackupFiles();
+      
+      const report = this.generateHealthReport();
+      await this.saveData();
+      
+      this.log('📋 Health Report:');
+      this.log(`   Total Workflows: ${report.summary.totalWorkflows}`);
+      this.log(`   Active: ${report.summary.activeWorkflows}`);
+      this.log(`   Disabled: ${report.summary.disabledWorkflows}`);
+      this.log(`   Failing: ${report.summary.failingWorkflows}`);
+      this.log(`   Health Score: ${report.summary.healthScore}/100`);
+      
+      if (report.recommendations.length > 0) {
+        this.log('\n💡 Recommendations:');
+        report.recommendations.forEach(rec => {
+          this.log(`   - ${rec.message} (Priority: ${rec.priority})`);
+        });
+      }
+      
+      if (report.fixesApplied.length > 0) {
+        this.log('\n🔧 Fixes Applied:');
+        report.fixesApplied.forEach(fix => {
+          this.log(`   - ${fix.file}: ${fix.changes.join(', ')}`);
+        });
+      }
+      
+      this.log('\n✅ Workflow Health Monitor completed successfully');
+      
+    } catch (error) {
+      this.log(`❌ Workflow Health Monitor failed: ${error.message}`);
+      throw error;
+    }
   }
 }
 
-// Run the monitor
-async function main() {
-  try {
-    const monitor = new WorkflowHealthMonitor();
-    await monitor.analyzeWorkflowHealth();
-  } catch (error) {
-    console.error("❌ Error running workflow health monitor:", error);
-    process.exit(1);
-  }
-}
-
+// CLI interface
 if (require.main === module) {
-  main();
+  const monitor = new WorkflowHealthMonitor();
+  
+  const args = process.argv.slice(2);
+  const command = args[0] || 'run';
+  
+  switch (command) {
+    case 'run':
+      monitor.run().catch(console.error);
+      break;
+    case 'analyze':
+      monitor.analyzeWorkflows().then(() => {
+        const report = monitor.generateHealthReport();
+        console.log(JSON.stringify(report, null, 2));
+      }).catch(console.error);
+      break;
+    case 'fix':
+      monitor.applyFixes().then(fixes => {
+        console.log(`Applied ${fixes.length} fixes`);
+      }).catch(console.error);
+      break;
+    case 'cleanup':
+      monitor.cleanupBackupFiles().then(count => {
+        console.log(`Cleaned up ${count} backup files`);
+      }).catch(console.error);
+      break;
+    default:
+      console.log('Usage: node workflow-health-monitor.cjs [run|analyze|fix|cleanup]');
+      process.exit(1);
+  }
 }
 
 module.exports = WorkflowHealthMonitor;

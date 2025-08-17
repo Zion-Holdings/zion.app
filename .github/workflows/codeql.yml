@@ -9,6 +9,11 @@ on:
     - cron: '0 2 * * 0'  # Weekly on Sunday at 2 AM UTC
   workflow_dispatch: {}
 
+
+concurrency:
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
+
 permissions:
   contents: read
   security-events: write
@@ -25,7 +30,7 @@ jobs:
         language: ['javascript']
 
     steps:
-      - name: Checkout repository
+      "- name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Initialize CodeQL
