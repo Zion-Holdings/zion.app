@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T17:13:03.845Z",
+  "generatedAt": "2025-08-17T17:14:03.955Z",
   "entries": [
     {
       "route": "/user-management",
@@ -918,6 +918,12 @@
       "file": "pages/reports/updates/update-2025-08-17-1420.tsx",
       "title": "Autonomous Performance Tuning Guide — MLOps & Model Reliability (2025-08-17 14:20 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Performance Tuning Guide — MLOps & Model Reliability (2025-08-17 14:20 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${s"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1414",
+      "file": "pages/reports/updates/update-2025-08-17-1414.tsx",
+      "title": "Autonomous Update — 2025-08-17 14:14",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 14:14 Autonomous Update — 2025-08-17 14:14 Signal over noise—your automated update is here. Today's Highlight Hacker News : The young, inexperienced engineers aiding DOGE "
     },
     {
       "route": "/reports/updates/update-2025-08-17-1413",
