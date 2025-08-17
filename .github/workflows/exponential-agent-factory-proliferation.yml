@@ -70,7 +70,7 @@ jobs:
           echo "📈 Current automation components: $TOTAL_FACTORIES"
       
       - name: Calculate exponential growth potential
-        id: "calculate
+        id: calculate
         run: |
           CURRENT=${{ steps.analyze.outputs.total_factories }}
           MULTIPLIER=${{ env.GROWTH_MULTIPLIER }}
@@ -80,12 +80,12 @@ jobs:
           echo "🚀 Growth potential: $POTENTIAL components"
       
       - name: Calculate exponential factor
-        id: "exponential
+        id: exponential
         run: |
           CURRENT=${{ steps.analyze.outputs.total_factories }}
           TARGET=${{ env.TARGET_EXPONENTIAL_FACTOR }}
           
-          if [ $CURRENT -gt 0 ]; then"
+          if [ $CURRENT -gt 0 ]; then
             FACTOR=$(echo "scale=2; $TARGET / $CURRENT" | bc -l 2>/dev/null || echo "1.0")
           else
             FACTOR="1.0"
@@ -95,7 +95,7 @@ jobs:
           echo "⚡ Exponential factor: $FACTOR"
       
       - name: Determine next generation target
-        id: "target
+        id: target
         run: |
           CURRENT=${{ steps.analyze.outputs.total_factories }}
           MULTIPLIER=${{ env.GROWTH_MULTIPLIER }}
