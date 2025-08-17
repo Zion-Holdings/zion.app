@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T17:17:03.723Z",
+  "generatedAt": "2025-08-17T17:18:03.788Z",
   "entries": [
     {
       "route": "/user-management",
@@ -918,6 +918,12 @@
       "file": "pages/reports/updates/update-2025-08-17-1420.tsx",
       "title": "Autonomous Performance Tuning Guide — MLOps & Model Reliability (2025-08-17 14:20 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Performance Tuning Guide — MLOps & Model Reliability (2025-08-17 14:20 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${s"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1418",
+      "file": "pages/reports/updates/update-2025-08-17-1418.tsx",
+      "title": "Autonomous Update — 2025-08-17 14:18",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 14:18 Autonomous Update — 2025-08-17 14:18 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : The young, inexperienced engineers a"
     },
     {
       "route": "/reports/updates/update-2025-08-17-1417",
