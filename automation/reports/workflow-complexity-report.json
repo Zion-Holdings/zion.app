@@ -1,18 +1,18 @@
 {
-  "timestamp": "2025-08-17T11:47:41.696Z",
+  "timestamp": "2025-08-17T11:48:38.289Z",
   "summary": {
-    "totalWorkflows": 7,
+    "totalWorkflows": 8,
     "complexityDistribution": {
       "very-high": 0,
       "high": 1,
       "medium": 2,
-      "low": 4
+      "low": 5
     },
     "refactoringPriorities": {
       "critical": 0,
       "high": 1,
       "medium": 2,
-      "low": 4
+      "low": 5
     }
   },
   "workflows": {
@@ -20,10 +20,10 @@
       "complexityScore": 25,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 87,
+        "totalLines": 91,
         "jobCount": 0,
         "stepCount": 13,
-        "conditionalCount": 0,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
@@ -69,6 +69,24 @@
       "refactoringPriority": "medium",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/maintenance.yml"
+    },
+    "playwright-smoke.yml": {
+      "complexityScore": 15,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 66,
+        "jobCount": 0,
+        "stepCount": 9,
+        "conditionalCount": 1,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 3
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/playwright-smoke.yml"
     },
     "release.yml": {
       "complexityScore": 30,

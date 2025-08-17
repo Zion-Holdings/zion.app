@@ -55,6 +55,25 @@
     },
     "estimatedDuration": 25
   },
+  "playwright-smoke.yml": {
+    "name": "playwright-smoke.yml",
+    "triggers": [
+      "push",
+      "pull_request",
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "high",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "medium",
+      "timeout": 15,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 15
+  },
   "release.yml": {
     "name": "release.yml",
     "triggers": [
