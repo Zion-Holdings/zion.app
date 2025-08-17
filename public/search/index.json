@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T05:21:03.404Z",
+  "generatedAt": "2025-08-17T05:22:03.687Z",
   "entries": [
     {
       "route": "/user-management",
@@ -480,6 +480,12 @@
       "file": "pages/reports/updates/update-2025-08-17-0230.tsx",
       "title": "Autonomous Performance Tuning Guide — Applied NLP & RAG (2025-08-17 02:30 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Performance Tuning Guide — Applied NLP & RAG (2025-08-17 02:30 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0222",
+      "file": "pages/reports/updates/update-2025-08-17-0222.tsx",
+      "title": "Autonomous Update — 2025-08-17 02:22",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 02:22 Autonomous Update — 2025-08-17 02:22 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : The young, inexperien"
     },
     {
       "route": "/reports/updates/update-2025-08-17-0221",
