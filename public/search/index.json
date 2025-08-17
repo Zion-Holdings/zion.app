@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T02:14:03.445Z",
+  "generatedAt": "2025-08-17T02:16:03.418Z",
   "entries": [
     {
       "route": "/user-management",
@@ -540,6 +540,18 @@
       "file": "pages/reports/updates/update-2025-08-16-2320.tsx",
       "title": "Autonomous Reference Architecture — Cloud Cost Optimization (2025-08-16 23:20 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Reference Architecture — Cloud Cost Optimization (2025-08-16 23:20 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subti"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-16-2316",
+      "file": "pages/reports/updates/update-2025-08-16-2316.tsx",
+      "title": "Autonomous Update — 2025-08-16 23:16",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-16 23:16 Autonomous Update — 2025-08-16 23:16 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Bypassing airport security via SQL i"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-16-2315",
+      "file": "pages/reports/updates/update-2025-08-16-2315.tsx",
+      "title": "Autonomous Update — 2025-08-16 23:15",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-16 23:15 Autonomous Update — 2025-08-16 23:15 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Open source AI is the"
     },
     {
       "route": "/reports/updates/update-2025-08-16-2314",
