@@ -1,5 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import DivineTechnologyPlatform from '../components/DivineTechnologyPlatform';
+import DivineCrossDomainOptimizer from '../components/DivineCrossDomainOptimizer';
 
 export default function HomePage() {
   const featuredReports = [
@@ -102,7 +104,7 @@ export default function HomePage() {
                   {report.title}
                 </h3>
                 <p className="text-white/70 mb-3">{report.description}</p>
-                <span className="text-cyan-400 text-sm">{report.count}</span>
+                <div className="text-cyan-400 font-medium">{report.count}</div>
               </Link>
             ))}
           </div>
@@ -113,17 +115,15 @@ export default function HomePage() {
       <section className="py-16">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-12">New Features</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {newFeatures.map((feature) => (
               <Link 
                 key={feature.title}
                 href={feature.href}
-                className="group text-center"
+                className="group bg-slate-800/50 border border-white/10 rounded-lg p-6 hover:border-fuchsia-400/50 transition-all text-center"
               >
-                <div className="text-6xl mb-4 group-hover:scale-110 transition-transform">
-                  {feature.icon}
-                </div>
-                <h3 className="text-2xl font-semibold mb-3 group-hover:text-cyan-400 transition-colors">
+                <div className="text-4xl mb-4">{feature.icon}</div>
+                <h3 className="text-xl font-semibold mb-2 group-hover:text-fuchsia-400 transition-colors">
                   {feature.title}
                 </h3>
                 <p className="text-white/70">{feature.description}</p>
@@ -131,53 +131,54 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      
-{/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */}
+      </section>
 
- <section className="mx-auto max-w-7xl px-6 pb-14">
-   <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Latest Autonomous Content</h2>
-   <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <a href="/reports/updates/update-2025-08-16-2304" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
-              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <h3 className="text-lg font-semibold">Autonomous Update — 2025: 08: 16: 2304</h3>
-              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
-              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
-            </a>
-            <a href="/reports/updates/update-2025-08-16-2303" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
-              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <h3 className="text-lg font-semibold">Autonomous Update — 2025: 08: 16: 2303</h3>
-              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
-              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
-            </a>
-            <a href="/reports/updates/update-2025-08-16-2302" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
-              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <h3 className="text-lg font-semibold">Autonomous Update — 2025: 08: 16: 2302</h3>
-              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
-              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
-            </a>
-            <a href="/reports/updates/update-2025-08-16-2301" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
-              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <h3 className="text-lg font-semibold">Autonomous Update — 2025: 08: 16: 2301</h3>
-              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
-              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
-            </a>
-            <a href="/reports/updates/update-2025-08-17T02-00" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
-              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <h3 className="text-lg font-semibold">Autonomous Update — 2025: 08: 17T02: 00</h3>
-              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
-              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
-            </a>
-            <a href="/reports/updates/update-2025-08-17-0200" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
-              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <h3 className="text-lg font-semibold">Autonomous Update — 2025: 08: 17: 0200</h3>
-              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
-              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
-            </a>
-   </div>
- </section>
- 
-{/* AUTO-GENERATED: HOME_LATEST_CONTENT_END */}
-</section>
+      {/* Divine Technology Integration Section */}
+      <section className="py-16 bg-slate-900/30">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">🌟🌌 Divine Technology Integration</h2>
+            <p className="text-xl text-white/70 max-w-3xl mx-auto">
+              Divine-powered universal technology integration and transcendent divine capabilities
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <DivineTechnologyPlatform 
+              showMetrics={true}
+              maxTechnologies={3}
+            />
+            
+            <DivineCrossDomainOptimizer 
+              showMetrics={true}
+              maxOptimizations={3}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-16 text-center">
+        <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
+        <p className="text-xl text-white/70 mb-8 max-w-2xl mx-auto">
+          Join thousands of developers and organizations using Zion Tech Group's autonomous solutions
+        </p>
+        
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link 
+            href="/components"
+            className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+          >
+            Explore Components
+          </Link>
+          <Link 
+            href="/reports"
+            className="bg-fuchsia-500 hover:bg-fuchsia-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+          >
+            View Reports
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }
