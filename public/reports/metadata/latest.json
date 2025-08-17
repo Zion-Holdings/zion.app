@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-17T18:20:01.949Z",
-  "pagesScanned": 8204,
+  "generatedAt": "2025-08-17T18:21:01.097Z",
+  "pagesScanned": 8207,
   "items": [
     {
       "route": "/404",
@@ -34146,6 +34146,16 @@
       "suggestion": {
         "title": "Guide: Agent Ops",
         "description": "Guide: Agent Ops — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-17-1820",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pilot Plan: FinOps for AI",
+        "description": "Pilot Plan: FinOps for AI — auto-suggested description"
       }
     },
     {
@@ -80709,6 +80719,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-17-1521",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 15:21",
+        "description": "Autonomous Update — 2025-08-17 15:21 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-17-1530",
       "missing": [
         "og:image"
@@ -80866,6 +80889,16 @@
       "suggestion": {
         "title": "Autonomous Performance Tuning Guide — Agentic Workflows (2025-08-17 18:10 UTC)",
         "description": "Autonomous Performance Tuning Guide — Agentic Workflows (2025-08-17 18:10 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1820",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Checklist — AI Service Design (2025-08-17 18:20 UTC)",
+        "description": "Autonomous Checklist — AI Service Design (2025-08-17 18:20 UTC) — auto-suggested description"
       }
     },
     {
