@@ -155,6 +155,53 @@ jobs:
                   content = content.rstrip('"')
                   fixes_applied.append("Fixed stray quote at end of file")
               
+              # Fix 12: Fix complex environment variable issues
+              lines = content.split('\n')
+              fixed_lines = []
+              for i, line in enumerate(lines):
+                  # Fix env variables with missing closing quotes
+                  if line.strip().startswith('"') and line.strip().endswith('"') and '${{' in line:
+                      # This is a complete quoted env var line
+                      fixed_lines.append(line)
+                  elif line.strip().startswith('"') and '${{' in line and not line.strip().endswith('"'):
+                      # This is an env var line missing closing quote
+                      if i + 1 < len(lines) and lines[i + 1].strip().startswith('"'):
+                          # Next line starts with quote, merge them
+                          next_line = lines[i + 1].strip()
+                          if next_line.endswith('"'):
+                              # Next line has closing quote, merge properly
+                              merged_line = line.rstrip() + ' ' + next_line
+                              fixed_lines.append(merged_line)
+                              # Skip the next line since we merged it
+                              i += 1
+                              fixes_applied.append("Fixed merged env variable lines")
+                          else:
+                              # Next line doesn't have closing quote, add it
+                              fixed_lines.append(line.rstrip() + '"')
+                              fixes_applied.append("Fixed env variable missing closing quote")
+                      else:
+                          # No next line or next line doesn't start with quote, add closing quote
+                          fixed_lines.append(line.rstrip() + '"')
+                          fixes_applied.append("Fixed env variable missing closing quote")
+                  else:
+                      fixed_lines.append(line)
+              
+              content = '\n'.join(fixed_lines)
+              
+              # Fix 13: Fix stray quotes in run commands and id fields
+              if 'id: "' in content:
+                  content = content.replace('id: "', 'id: ')
+                  fixes_applied.append("Fixed id field with stray quote")
+              
+              if 'run: "|' in content:
+                  content = content.replace('run: "|', 'run: |')
+                  fixes_applied.append("Fixed run command with stray quote")
+              
+              # Fix 14: Fix stray quotes in arithmetic expressions
+              if '))"' in content:
+                  content = content.replace('))"', '))')
+                  fixes_applied.append("Fixed arithmetic expression with stray quote")
+              
               # Fix 12: Fix step indentation issues (conservative mode and up)
               if fix_mode in ['conservative', 'aggressive']:
                   lines = content.split('\n')
