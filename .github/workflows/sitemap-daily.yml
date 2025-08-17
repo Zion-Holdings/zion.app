@@ -12,6 +12,9 @@ concurrency:
 
   contents: write
 
+permissions:
+  contents: read
+  actions: read
 jobs:
 
   sitemap:

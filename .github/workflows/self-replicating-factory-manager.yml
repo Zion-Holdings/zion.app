@@ -29,6 +29,9 @@ concurrency:
   group: "github.workflow-${{ github.ref }}"
   cancel-in-progress: true
 
+permissions:
+  contents: read
+  actions: read
 jobs:
   factory-health-check:
       healthy-factories: ${{ steps.health.outputs.healthy }}

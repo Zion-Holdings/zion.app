@@ -13,6 +13,9 @@ concurrency:
   contents: write
   actions: read
 
+permissions:
+  contents: read
+  actions: read
 jobs:
   main:
     name: Main Job
@@ -31,4 +34,3 @@ jobs:
       - name: Complete workflow
         run: |
           echo "Knowledge Graph Radar completed successfully"
-

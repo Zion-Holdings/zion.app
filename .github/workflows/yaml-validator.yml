@@ -12,6 +12,12 @@ on:
   schedule:
     - cron: '0 0 * * *'  # Daily validation
 
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: "workflow-${{ github.ref }}"
+  cancel-in-progress: false
 jobs:
   validate-yaml:
     name: Validate YAML Syntax

@@ -11,6 +11,9 @@ concurrency:
   group: unused-exports-report
   cancel-in-progress: true
 
+permissions:
+  contents: read
+  actions: read
 jobs:
 
   report:

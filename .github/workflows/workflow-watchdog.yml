@@ -13,6 +13,9 @@ concurrency:
   actions: write
   contents: read
 
+permissions:
+  contents: read
+  actions: read
 jobs:
 
   guard:

@@ -11,6 +11,9 @@ concurrency:
   group: og-images-update
   cancel-in-progress: true
 
+permissions:
+  contents: read
+  actions: read
 jobs:
 
   generate:

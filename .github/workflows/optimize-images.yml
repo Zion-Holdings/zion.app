@@ -11,6 +11,9 @@ concurrency:
   group: optimize-images
   cancel-in-progress: true
 
+permissions:
+  contents: read
+  actions: read
 jobs:
 
   optimize:

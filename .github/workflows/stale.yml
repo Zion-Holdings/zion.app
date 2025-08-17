@@ -13,6 +13,9 @@ concurrency:
   issues: write
   pull-requests: write
 
+permissions:
+  contents: read
+  actions: read
 jobs:
 
   stale:

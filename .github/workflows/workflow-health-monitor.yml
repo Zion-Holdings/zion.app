@@ -16,6 +16,9 @@ concurrency:
   contents: write
   actions: read
 
+permissions:
+  contents: read
+  actions: read
 jobs:
   monitor:
     name: Monitor and Fix Workflows

@@ -15,6 +15,9 @@ concurrency:
   contents: write
   pull-requests: write
 
+permissions:
+  contents: read
+  actions: read
 jobs:
 
   list:

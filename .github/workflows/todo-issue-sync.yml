@@ -13,6 +13,9 @@ concurrency:
   contents: write
   issues: write
 
+permissions:
+  contents: read
+  actions: read
 jobs:
 
   sync-todos:

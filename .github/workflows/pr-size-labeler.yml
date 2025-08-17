@@ -11,6 +11,9 @@ concurrency:
 
   contents: read
 
+permissions:
+  contents: read
+  actions: read
 jobs:
 
   size-label:
