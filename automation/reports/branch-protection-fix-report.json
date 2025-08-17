@@ -1,10 +1,99 @@
 {
-  "timestamp": "2025-08-17T12:32:41.849Z",
+  "timestamp": "2025-08-17T12:33:41.598Z",
   "summary": {
-    "totalWorkflows": 0,
-    "fixed": 0,
+    "totalWorkflows": 22,
+    "fixed": 22,
     "failed": 0
   },
-  "fixedWorkflows": [],
+  "fixedWorkflows": [
+    {
+      "name": "ai-trends-radar.yml",
+      "status": "active"
+    },
+    {
+      "name": "automation-advertiser.yml",
+      "status": "active"
+    },
+    {
+      "name": "cloud-autonomous-orchestrator.yml",
+      "status": "active"
+    },
+    {
+      "name": "cursor-chat.yml",
+      "status": "active"
+    },
+    {
+      "name": "docs-intelligence.yml",
+      "status": "active"
+    },
+    {
+      "name": "front-scheduler.yml",
+      "status": "active"
+    },
+    {
+      "name": "guardian-scheduler.yml",
+      "status": "active"
+    },
+    {
+      "name": "instagram-marketing.yml",
+      "status": "active"
+    },
+    {
+      "name": "knowledge-graph-radar.yml",
+      "status": "active"
+    },
+    {
+      "name": "linkedin-marketing.yml",
+      "status": "active"
+    },
+    {
+      "name": "linkedin-pro.yml",
+      "status": "active"
+    },
+    {
+      "name": "media-optimizer.yml",
+      "status": "active"
+    },
+    {
+      "name": "monetization.yml",
+      "status": "active"
+    },
+    {
+      "name": "readme-auto-advertiser.yml",
+      "status": "active"
+    },
+    {
+      "name": "responsive-content.yml",
+      "status": "active"
+    },
+    {
+      "name": "security-auto-heal.yml",
+      "status": "active"
+    },
+    {
+      "name": "site-health-guardian.yml",
+      "status": "active"
+    },
+    {
+      "name": "site-link.yml",
+      "status": "active"
+    },
+    {
+      "name": "topics-and-clusters.yml",
+      "status": "active"
+    },
+    {
+      "name": "ultra-rapid-sync.yml",
+      "status": "active"
+    },
+    {
+      "name": "variation.yml",
+      "status": "active"
+    },
+    {
+      "name": "venture.yml",
+      "status": "active"
+    }
+  ],
   "failedWorkflows": []
 }

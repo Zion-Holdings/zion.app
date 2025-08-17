@@ -6,7 +6,7 @@ on:
   workflow_dispatch: {}
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: front-scheduler-${{ github.ref }}
@@ -55,7 +55,7 @@ jobs:
             git commit -m "chore(automation): front scheduler updates [skip ci]"
             # Robust push with safe rebase-and-retry to avoid non-fast-forward failures
             for i in 1 2 3; do
-              if git push origin HEAD:main; then
+              if git push origin HEAD:$(git rev-parse --abbrev-ref HEAD); then
                 echo "Push succeeded";
                 break;
               else
