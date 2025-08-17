@@ -1,5 +1,5 @@
 name: "\u2705 Workflow Validator"
-true:
+on:
   push:
     branches:
     - main

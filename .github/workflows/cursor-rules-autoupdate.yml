@@ -1,5 +1,5 @@
 name: Cursor Rules Auto Update
-true:
+on:
   schedule:
   - cron: 17 */6 * * *
   workflow_dispatch: null

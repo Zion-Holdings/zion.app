@@ -1,5 +1,5 @@
 name: Cloud Maintenance Automations
-true:
+on:
   schedule:
   - cron: '*/30 * * * *'
   workflow_dispatch: null
