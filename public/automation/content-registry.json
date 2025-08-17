@@ -121,18 +121,6 @@
       "route": "/events"
     },
     {
-      "file": "pages/blog/index.tsx",
-      "route": "/blog"
-    },
-    {
-      "file": "pages/blog/ai-automation-trends-2025.tsx",
-      "route": "/blog/ai-automation-trends-2025"
-    },
-    {
-      "file": "pages/automation/index.tsx",
-      "route": "/automation"
-    },
-    {
       "file": "pages/components/pagination-demo.tsx",
       "route": "/components/pagination-demo"
     },
@@ -143,6 +131,18 @@
     {
       "file": "pages/components/form-demo.tsx",
       "route": "/components/form-demo"
+    },
+    {
+      "file": "pages/blog/index.tsx",
+      "route": "/blog"
+    },
+    {
+      "file": "pages/blog/ai-automation-trends-2025.tsx",
+      "route": "/blog/ai-automation-trends-2025"
+    },
+    {
+      "file": "pages/automation/index.tsx",
+      "route": "/automation"
     },
     {
       "file": "pages/reports/whitepapers/index.tsx",
@@ -21461,6 +21461,10 @@
       "route": "/reports/updates/update-2025-08-17-1330"
     },
     {
+      "file": "pages/reports/updates/update-2025-08-17-1329.tsx",
+      "route": "/reports/updates/update-2025-08-17-1329"
+    },
+    {
       "file": "pages/reports/updates/update-2025-08-17-1328.tsx",
       "route": "/reports/updates/update-2025-08-17-1328"
     },
@@ -32091,5 +32095,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-17T16:28:00.976Z"
+  "generatedAt": "2025-08-17T16:29:00.987Z"
 }
