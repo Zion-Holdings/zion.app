@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T10:38:03.655Z",
+  "generatedAt": "2025-08-17T10:39:03.772Z",
   "entries": [
     {
       "route": "/user-management",
@@ -666,6 +666,12 @@
       "file": "pages/reports/updates/update-2025-08-17-0740.tsx",
       "title": "Autonomous Blueprint — Applied NLP & RAG (2025-08-17 07:40 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Blueprint — Applied NLP & RAG (2025-08-17 07:40 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0739",
+      "file": "pages/reports/updates/update-2025-08-17-0739.tsx",
+      "title": "Autonomous Update — 2025-08-17 07:39",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 07:39 Autonomous Update — 2025-08-17 07:39 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Air Con: $1697 for an"
     },
     {
       "route": "/reports/updates/update-2025-08-17-0738",
