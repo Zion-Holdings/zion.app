@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T17:03:03.742Z",
+  "generatedAt": "2025-08-17T17:04:03.801Z",
   "entries": [
     {
       "route": "/user-management",
@@ -912,6 +912,12 @@
       "file": "pages/reports/updates/update-2025-08-17-1410.tsx",
       "title": "Autonomous Playbook — Cloud Cost Optimization (2025-08-17 14:10 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Cloud Cost Optimization (2025-08-17 14:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1404",
+      "file": "pages/reports/updates/update-2025-08-17-1404.tsx",
+      "title": "Autonomous Update — 2025-08-17 14:04",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 14:04 Autonomous Update — 2025-08-17 14:04 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : The young, inexperien"
     },
     {
       "route": "/reports/updates/update-2025-08-17-1403",
