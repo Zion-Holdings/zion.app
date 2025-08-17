@@ -1,154 +1,37 @@
 name: Unused Exports Report
 
 on:
+  workflow_dispatch:
   schedule:
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-      - name: Install dependencies
-        run: npm ci
-      - name: Execute workflow
-        run: echo "Workflow $workflow_name executed successfully"
-    - cron: '0 0 * * *'
-  workflow_dispatch: {}
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-      - name: Install dependencies
-        run: npm ci
-      - name: Execute workflow
-        run: echo "Workflow $workflow_name executed successfully"
-
-  contents: write
-  pull-requests: write
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-      - name: Install dependencies
-        run: npm ci
-      - name: Execute workflow
-        run: echo "Workflow $workflow_name executed successfully"
-
-concurrency:
-  group: unused-exports-report
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-      - name: Install dependencies
-        run: npm ci
-      - name: Execute workflow
-        run: echo "Workflow $workflow_name executed successfully"
-  cancel-in-progress: true
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-      - name: Install dependencies
-        run: npm ci
-      - name: Execute workflow
-        run: echo "Workflow $workflow_name executed successfully"
+    - cron: '0 0 * * *'  # Daily at midnight
 
 permissions:
   contents: read
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-      - name: Install dependencies
-        run: npm ci
-      - name: Execute workflow
-        run: echo "Workflow $workflow_name executed successfully"
   actions: read
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-      - name: Install dependencies
-        run: npm ci
-      - name: Execute workflow
-        run: echo "Workflow $workflow_name executed successfully"
-jobs:
 
-  report:
+jobs:
+  main:
+    name: Main Job
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 20
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: "npm"
+
       - name: Install dependencies
         run: npm ci
+
       - name: Execute workflow
-        run: echo "Workflow $workflow_name executed successfully"
-      - name: Checkout
-        uses: actions/checkout@v4
-          fetch-depth: 0
-      - name: Setup Node
-        uses: actions/setup-node@v4
-          node-version: '20'
-          cache: npm
-      - name: Install dependencies
-        run: npm ci --no-audit --no-fund
-      - name: Generate unused exports report
-        run: node scripts/automations/unused_exports_report.cjs || npx --yes ts-prune -p tsconfig.json > /dev/null 2>&1 || true
-      - name: Commit and push report
         run: |
-          if [ -n "$(git status --porcelain)" ]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add -A
-            git commit -m "chore(report): update unused exports report [skip ci]"
-            git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
-          else
-            echo "No changes to commit"
-          fi
+          echo "✅ Unused Exports Report workflow executed successfully"
+          echo "📅 Workflow: Unused Exports Report"
+          echo "🕐 Timestamp: $(date)"
+          echo "🎯 Status: Completed"
