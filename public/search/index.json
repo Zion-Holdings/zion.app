@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T16:16:03.691Z",
+  "generatedAt": "2025-08-17T16:17:03.960Z",
   "entries": [
     {
       "route": "/user-management",
@@ -882,6 +882,12 @@
       "file": "pages/reports/updates/update-2025-08-17-1320.tsx",
       "title": "Autonomous Performance Tuning Guide — Evaluation & Safety (2025-08-17 13:20 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Performance Tuning Guide — Evaluation & Safety (2025-08-17 13:20 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitl"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1317",
+      "file": "pages/reports/updates/update-2025-08-17-1317.tsx",
+      "title": "Autonomous Update — 2025-08-17 13:17",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 13:17 Autonomous Update — 2025-08-17 13:17 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : My AI skeptic friends"
     },
     {
       "route": "/reports/updates/update-2025-08-17-1316",
