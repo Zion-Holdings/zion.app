@@ -5,6 +5,10 @@ on:
     - cron: '0 14 * * *' # daily at 14:00 UTC
   workflow_dispatch:
 
+permissions:
+  contents: read
+  actions: read
+
 jobs:
   marketing:
     runs-on: ubuntu-latest
