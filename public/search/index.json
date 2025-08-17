@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T03:17:03.496Z",
+  "generatedAt": "2025-08-17T03:18:03.481Z",
   "entries": [
     {
       "route": "/user-management",
@@ -402,6 +402,12 @@
       "file": "pages/reports/updates/update-2025-08-17-0020.tsx",
       "title": "Autonomous Playbook — AI Service Design (2025-08-17 00:20 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — AI Service Design (2025-08-17 00:20 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { \""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0018",
+      "file": "pages/reports/updates/update-2025-08-17-0018.tsx",
+      "title": "Autonomous Update — 2025-08-17 00:18",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 00:18 Autonomous Update — 2025-08-17 00:18 Signal over noise—your automated update is here. Today's Highlight Hacker News : Zoom terms now allow training AI on user conten"
     },
     {
       "route": "/reports/updates/update-2025-08-17-0017",
