@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T09:05:03.625Z",
+  "generatedAt": "2025-08-17T09:06:03.457Z",
   "entries": [
     {
       "route": "/user-management",
@@ -612,6 +612,12 @@
       "file": "pages/reports/updates/update-2025-08-17-0610.tsx",
       "title": "Autonomous Reference Architecture — Agentic Workflows (2025-08-17 06:10 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Reference Architecture — Agentic Workflows (2025-08-17 06:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\","
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0606",
+      "file": "pages/reports/updates/update-2025-08-17-0606.tsx",
+      "title": "Autonomous Update — 2025-08-17 06:06",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 06:06 Autonomous Update — 2025-08-17 06:06 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Air Con: $1697 for an on/off switch "
     },
     {
       "route": "/reports/updates/update-2025-08-17-0605",
