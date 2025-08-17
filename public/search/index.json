@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T13:06:03.676Z",
+  "generatedAt": "2025-08-17T13:07:03.943Z",
   "entries": [
     {
       "route": "/user-management",
@@ -762,6 +762,12 @@
       "file": "pages/reports/updates/update-2025-08-17-1010.tsx",
       "title": "Autonomous Checklist — Agentic Workflows (2025-08-17 10:10 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Checklist — Agentic Workflows (2025-08-17 10:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1007",
+      "file": "pages/reports/updates/update-2025-08-17-1007.tsx",
+      "title": "Autonomous Update — 2025-08-17 10:07",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 10:07 Autonomous Update — 2025-08-17 10:07 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Air Con: $1697 for an"
     },
     {
       "route": "/reports/updates/update-2025-08-17-1006",
