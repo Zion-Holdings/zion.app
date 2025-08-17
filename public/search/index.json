@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T03:06:03.479Z",
+  "generatedAt": "2025-08-17T03:07:03.460Z",
   "entries": [
     {
       "route": "/user-management",
@@ -396,6 +396,12 @@
       "file": "pages/reports/updates/update-2025-08-17-0010.tsx",
       "title": "Autonomous Security Hardening Guide — AI Service Design (2025-08-17 00:10 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Security Hardening Guide — AI Service Design (2025-08-17 00:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0007",
+      "file": "pages/reports/updates/update-2025-08-17-0007.tsx",
+      "title": "Autonomous Update — 2025-08-17 00:07",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 00:07 Autonomous Update — 2025-08-17 00:07 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Gemini AI · 2135 pts "
     },
     {
       "route": "/reports/updates/update-2025-08-17-0006",
