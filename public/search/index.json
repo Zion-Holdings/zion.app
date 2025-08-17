@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T05:53:03.492Z",
+  "generatedAt": "2025-08-17T05:54:03.669Z",
   "entries": [
     {
       "route": "/user-management",
@@ -498,6 +498,12 @@
       "file": "pages/reports/updates/update-2025-08-17-0300.tsx",
       "title": "Autonomous Reference Architecture — DevSecOps for AI (2025-08-17 03:00 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Reference Architecture — DevSecOps for AI (2025-08-17 03:00 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0254",
+      "file": "pages/reports/updates/update-2025-08-17-0254.tsx",
+      "title": "Autonomous Update — 2025-08-17 02:54",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 02:54 Autonomous Update — 2025-08-17 02:54 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : The young, inexperien"
     },
     {
       "route": "/reports/updates/update-2025-08-17-0253",
