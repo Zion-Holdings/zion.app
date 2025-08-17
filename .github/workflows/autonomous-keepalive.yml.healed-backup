@@ -1,0 +1,55 @@
+name: Autonomous Keepalive
+
+on:
+  schedule:
+    - cron: '17 3 * * *'
+  workflow_dispatch: {}
+
+
+concurrency:
+permissions:
+  contents: write
+  actions: read
+
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
+
+  contents: write
+
+jobs:
+main:
+  runs-on: ubuntu-latest
+  name: Main Job
+  steps:
+    name: Checkout repository
+    uses: actions/checkout@v4
+    with:
+      fetch-depth: 0
+    name: Setup Node.js
+    uses: actions/setup-node@v4
+    with:
+      node-version: 20
+      cache: npm
+    name: Install dependencies
+    run: npm ci --no-audit --no-fund
+    name: Run tests
+    run: npm test
+    name: Build project
+    run: npm run build
+
+
+  keepalive:
+        - name: Checkout
+        uses: actions/checkout@v4
+          fetch-depth: 0
+
+        - name: Create keepalive commit if no changes today
+        run: |
+          if [ -z "$(git log --since=24.hours --oneline)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit --allow-empty -m "chore(keepalive): daily keepalive [skip ci]"
+            git push origin HEAD:$(git rev-parse --abbrev-ref HEAD) || true
+          else
+            echo "Recent commits exist; skipping keepalive"
+          fi

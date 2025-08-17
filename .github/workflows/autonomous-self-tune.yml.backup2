@@ -1,0 +1,50 @@
+name: Autonomous Self-Tuning Scheduler
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch: {}
+
+concurrency:
+  group: "autonomous-self-tuning-${{ github.ref }}"
+  cancel-in-progress: "true
+
+  contents: write
+
+jobs:
+
+  self-tune:
+        - name: Checkout
+        uses: actions/checkout@v4
+          fetch-depth: 0
+
+        - name: Setup Node.js
+        uses: actions/setup-node@v4
+          node-version: 20
+          cache: npm
+
+        - name: Install dependencies (minimal)
+        run: npm ci --omit=dev || npm ci
+
+        - name: Run Auto-Scheduler
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+"
+        - name: Commit and push schedule changes"
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore(automation): self-tuned workflow cadences [skip ci]"
+            git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
+          else
+            echo "No cadence changes to push"
+          fi
+
+        - name: Upload logs
+  if: always()
+          name: auto-scheduler-logs
+          path: automation/logs/auto-scheduler.log
+          if-no-files-found: ignore

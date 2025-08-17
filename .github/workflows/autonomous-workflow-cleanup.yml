@@ -10,12 +10,30 @@ on:
 
 concurrency:
   group: "workflow-cleanup-${{ github.ref }}"
-  cancel-in-progress: true
+  cancel-in-progress: "true
 
 jobs:
+main:
+  runs-on: ubuntu-latest
+    - name: Main Job
+  steps:
+    - name: Checkout repository
+    - uses: actions/checkout@v4
+    - with:
+      fetch-depth: 0
+    - name: Setup Node.js
+    - uses: actions/setup-node@v4
+    - with:
+      node-version: 20
+      cache: npm
+    - name: Install dependencies
+    - run: npm ci --no-audit --no-fund
+    - name: Run tests
+    - run: npm test
+    - name: Build project
+    - run: npm run build
 
-  cleanup:
-      - name: Delete old workflow runs (> 14 days)
+        - name: Delete old workflow runs (> 14 days)
         id: oldruns
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -33,13 +51,13 @@ jobs:
                   } catch (e) {
                     core.warning(`Failed to delete run ${run.id}: ${e.message}`);
                   }
-                }
+                }"
               }"
             }"
             core.setOutput('deleted_runs', deleted);
 
-      - name: Delete expired artifacts (> 14 days)
-        id: oldartifacts
+        - name: Delete expired artifacts (> 14 days)
+        id: "oldartifacts
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const owner = context.repo.owner;
@@ -57,11 +75,11 @@ jobs:
                     core.warning(`Failed to delete artifact ${a.id}: ${e.message}`);
                   }
                 }
-              }
+              }"
             }"
             core.setOutput('deleted_artifacts', deleted);
 
-      - name: Summary
-        run: |
+        - name: Summary
+        - run: |
           echo "Deleted runs: ${{ steps.oldruns.outputs.deleted_runs }}" >> $GITHUB_STEP_SUMMARY
           echo "Deleted artifacts: ${{ steps.oldartifacts.outputs.deleted_artifacts }}" >> $GITHUB_STEP_SUMMARY

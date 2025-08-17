@@ -1,0 +1,50 @@
+name: App Automation
+
+on:
+  schedule:
+    - cron: '0 1 * * 1'  # Every Monday at 1 AM
+  workflow_dispatch:  # Manual trigger
+  push:
+    paths:
+      - 'automation/orchestrator-config.json'
+      - 'automation/app-automation-orchestrator.cjs'
+
+
+concurrency:
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
+
+jobs:
+main:
+  runs-on: ubuntu-latest
+  name: Main Job
+  steps:
+    name: Checkout repository
+    uses: actions/checkout@v4
+    with:
+      fetch-depth: 0
+    name: Setup Node.js
+    uses: actions/setup-node@v4
+    with:
+      node-version: 20
+      cache: npm
+    name: Install dependencies
+    run: npm ci --no-audit --no-fund
+    name: Run tests
+    run: npm test
+    name: Build project
+    run: npm run build
+
+
+  notify-completion:
+        - name: Notify completion
+        run: |"
+          echo "App Automation Orchestrator completed"
+          echo "Timestamp: $(date)"
+          echo "Status: ${{ needs.run-orchestrator.result }}"
+          
+        - name: Upload results
+        uses: actions/upload-artifact@v4
+          name: automation-results
+          path: automation/reports/
+          retention-days: 30

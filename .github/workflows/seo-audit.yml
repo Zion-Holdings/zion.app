@@ -5,43 +5,48 @@ on:
   schedule:
     - cron: '0 */4 * * *'  # Run every 2 hours instead of every 10 minutes
 
-
 concurrency:
+permissions:
+  contents: write
+  actions: read
+
   group: "github.workflow-${{ github.ref }}"
-  cancel-in-progress: true
+  cancel-in-progress: "true
 
   contents: write
   actions: read
 
 jobs:
-  main:
-    name: Main Job
-      - name: Checkout repository
-        uses: actions/checkout@v4
-          fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
+security:
+  runs-on: ubuntu-latest
+    - name: Security Analysis
+  steps:
+    - name: Checkout repository
+    - uses: actions/checkout@v4
+    - name: Run security scan
+    - run: npm audit --audit-level=high
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4"
+        - name: Setup Node.js"
+        - uses: actions/setup-node@v4"
           node-version: '20'
           cache: 'npm'
 
-      - name: Install dependencies
-        run: |
+        - name: Install dependencies
+        - run: |
           npm ci --no-audit --no-fund
           echo "Dependencies installed successfully"
 
-      - name: Create reports directory
-        run: |
+        - name: Create reports directory
+        - run: |
           mkdir -p public/reports/seo
           echo "Reports directory created"
 
-      - name: Set file permissions
-        run: |
+        - name: Set file permissions
+        - run: |
           chmod +x scripts/seo-audit.js
           echo "File permissions set"
 
-      - name: Generate SEO report
+        - name: Generate SEO report
         id: seo_report
           echo "Starting SEO audit..."
           echo "Node version: $(node --version)"
@@ -49,23 +54,15 @@ jobs:
           echo "Current directory: $(pwd)"
           echo "Script path: $(realpath scripts/seo-audit.js)"
           
-          if node scripts/seo-audit.js; then
-            echo "SEO audit completed successfully"
-            echo "::set-output name=status::success"
-          else
-            echo "SEO audit failed, but continuing..."
-            echo "::set-output name=status::failed"
-          fi
-
-      - name: List generated files
-        run: |
+        - name: List generated files
+        - run: |
           echo "Generated files:
           ls -la public/reports/seo/ || echo "No SEO reports directory found"
           echo "Current working directory: $(pwd)"
           echo "Directory contents:
           ls -la public/ || echo "No public directory found"
 
-      - name: Check for changes
+        - name: Check for changes
         id: check_changes
           echo "Checking for git changes..."
           git status --porcelain || echo "Git status check failed"
@@ -78,13 +75,13 @@ jobs:
             echo "No changes detected"
           fi
 
-      - name: Configure git
+        - name: Configure git
   if: steps.check_changes.outputs.has_changes == 'true'
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           echo "Git configured successfully"
 
-      - name: Add and commit changes
+        - name: Add and commit changes
   if: steps.check_changes.outputs.has_changes == 'true'
           echo "Adding files to git..."
           git add -A || echo "Git add failed"
@@ -95,7 +92,7 @@ jobs:
             echo "Commit failed, but continuing..."
           fi
 
-      - name: Push changes
+        - name: Push changes
   if: steps.check_changes.outputs.has_changes == 'true'
           echo "Pushing changes..."
           if git push origin HEAD:$(git rev-parse --abbrev-ref HEAD); then
@@ -104,10 +101,10 @@ jobs:
             echo "Push failed, but this is not critical"
           fi
 
-      - name: No changes notification
+        - name: No changes notification
   if: steps.check_changes.outputs.has_changes == 'false'
 
-      - name: Final status
-        run: |
+        - name: Final status
+        - run: |
           echo "SEO Audit workflow completed"
           echo "Check the generated reports in public/reports/seo/"

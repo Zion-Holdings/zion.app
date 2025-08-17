@@ -9,6 +9,10 @@ on:
   workflow_dispatch: {}
 
 concurrency:
+permissions:
+  contents: write
+  actions: read
+
   group: "auto-merge-to-main-${{ github.ref }}"
   cancel-in-progress: true
 
@@ -16,24 +20,42 @@ concurrency:
   pull-requests: write
 
 jobs:
+main:
+  runs-on: ubuntu-latest
+    - name: Main Job
+  steps:
+    - name: Checkout repository
+    - uses: actions/checkout@v4
+    - with:
+      fetch-depth: 0
+    - name: Setup Node.js
+    - uses: actions/setup-node@v4
+    - with:
+      node-version: 20
+      cache: npm
+    - name: Install dependencies
+    - run: npm ci --no-audit --no-fund
+    - name: Run tests
+    - run: npm test
+    - name: Build project
+    - run: npm run build
 
-  build-and-pr:
-      - name: Checkout
-        uses: actions/checkout@v4
+        - name: Checkout
+        - uses: actions/checkout@v4
           fetch-depth: 0
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+        - name: Setup Node.js
+        - uses: actions/setup-node@v4
           node-version: 20
           cache: npm
 
-      - name: Install dependencies
-        run: npm ci --no-audit --no-fund || npm ci
+        - name: Install dependencies
+        - run: npm ci --no-audit --no-fund || npm ci
 
-      - name: Build (self-heal)
-        run: npm run build:heal
+        - name: Build (self-heal)
+        - run: npm run build:heal
 
-      - name: Create or update PR to main
+        - name: Create or update PR to main
         id: pr
           script: |
             const head = process.env.GITHUB_REF_NAME;
@@ -58,14 +80,14 @@ jobs:
             }
             core.setOutput('number', pr.number.toString());
 
-      - name: Enable Auto-merge (squash)
+        - name: Enable Auto-merge (squash)
   if: "steps.pr.outputs.number
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: "${{ secrets.GITHUB_TOKEN }}
           pull-request-number: ${{ steps.pr.outputs.number }}
           merge-method: squash
 
-      - name: Comment with status
-  if: steps.pr.outputs.number
+        - name: Comment with status
+  if: steps.pr.outputs.number"
           script: |"
             const number = Number(core.getInput('number'))
             await github.rest.issues.createComment({
@@ -75,5 +97,6 @@ jobs:
               body: 'Auto-merge enabled. This PR will merge to main after checks pass.'
             })
           result-encoding: "string
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: "${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ steps.pr.outputs.number }}
+"

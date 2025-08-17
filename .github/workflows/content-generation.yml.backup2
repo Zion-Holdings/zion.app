@@ -1,0 +1,57 @@
+name: Content Generation
+
+on:
+  schedule:
+    - cron: '0 2 * * 1'  # Every Monday at 2 AM
+  workflow_dispatch:  # Manual trigger
+  push:
+    paths:
+      - 'pages/**'
+      - 'components/**'
+      - 'docs/**'
+
+
+concurrency:
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
+
+jobs:
+  generate-content:
+        - name: Checkout code
+        uses: actions/checkout@v4
+        
+        - name: Setup Node.js
+        uses: actions/setup-node@v4
+          node-version: '20'
+          cache: 'npm'
+          
+        - name: Install dependencies
+        run: npm ci
+        
+        - name: Run content crawler
+        run: node automation/app-content-crawler.cjs
+        
+        - name: Generate content suggestions
+        run: |
+          echo "Content analysis completed"
+          echo "Review the generated suggestions in automation/reports/"
+          
+        - name: Upload content analysis
+        uses: actions/upload-artifact@v4
+          name: content-analysis
+          path: automation/reports/
+          retention-days: 30
+
+  create-content-tasks:
+        - name: Checkout code
+        uses: actions/checkout@v4
+        
+        - name: Create content tasks
+        run: |
+          echo "Content tasks would be created here"
+          echo "This could integrate with project management tools"
+          
+        - name: Notify content team
+        run: |
+          echo "Content generation workflow completed"
+          echo "New content suggestions available"
