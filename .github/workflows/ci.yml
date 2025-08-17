@@ -20,7 +20,6 @@ jobs:
     name: Test & Build
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -87,4 +86,3 @@ jobs:
       - name: Run security scanner
         run: npm run security:scan
         continue-on-error: true
-
