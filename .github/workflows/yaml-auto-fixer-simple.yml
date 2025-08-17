@@ -17,17 +17,13 @@ on:
 
 jobs:
   auto-fix-yaml:
-    runs-on: ubuntu-latest
     name: Auto-Fix YAML Syntax
-    steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Python
         uses: actions/setup-python@v4
-        with:
           python-version: '3.11'
 
       - name: Install dependencies
@@ -375,7 +371,6 @@ jobs:
       - name: Run simple YAML auto-fixer
         env:
           FIX_MODE: ${{ github.event.inputs.fix_mode || 'conservative' }}
-        run: |
           python3 simple_yaml_fixer.py
 
       - name: Validate fixed files
@@ -385,7 +380,6 @@ jobs:
 
       - name: Create fix report
   if: always()
-        run: |
           echo "📝 Creating fix report..."
           
           cat > yaml-fix-report.md << EOF
@@ -406,6 +400,5 @@ jobs:
 
       - name: Upload fix report
         uses: actions/upload-artifact@v3
-        with:
           name: yaml-fix-report
           path: yaml-fix-report.md

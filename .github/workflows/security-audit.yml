@@ -15,11 +15,8 @@ concurrency:
 jobs:
 
   audit:
-    runs-on: ubuntu-latest
-    steps:
       - name: Use Node.js 20.x
         uses: actions/setup-node@v4
-        with:
           node-version: 20.x
           cache: 'npm'
       - name: Install dependencies
@@ -27,4 +24,3 @@ jobs:
       - name: Run audit
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node automation/security-audit.cjs

@@ -16,13 +16,10 @@ concurrency:
 jobs:
 
   security-scan:
-    runs-on: ubuntu-latest
-    steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Node.js
         uses: actions/setup-node@v4
-        with:
           node-version: 20
           cache: 'npm'
       - name: Install dependencies
@@ -32,7 +29,6 @@ jobs:
           npm run security:scan || true
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
-        with:
           token: ${{ secrets.GITHUB_TOKEN }}"
           commit-message: "chore(security): automated security scan and fixes"
           title: "chore(security): automated security scan and fixes"

@@ -16,12 +16,8 @@ concurrency:
 jobs:
 
   watchdog:
-    runs-on: ubuntu-latest
-    steps:
       - name: Scan and remediate failed workflow runs
         id: scan
-        uses: actions/github-script@v7
-        with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const owner = context.repo.owner;

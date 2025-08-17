@@ -1,112 +1,64 @@
 {
-  "timestamp": "2025-08-17T01:33:39.412Z",
+  "timestamp": "2025-08-17T01:34:32.299Z",
   "critical": [],
-  "high": [
+  "high": [],
+  "medium": [
     {
       "workflow": "agent-factory-automation.yml",
       "status": "active",
-      "complexityScore": 55,
-      "complexityLevel": "high",
+      "complexityScore": 40,
+      "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 515,
+        "totalLines": 461,
         "jobCount": 0,
         "stepCount": 20,
-        "conditionalCount": 1,
-        "matrixCount": 2,
-        "dependencyCount": 3,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 1,
         "actionCount": 7
       },
       "refactoringStrategy": [
         "Break down into smaller job steps",
-        "Consider parallel workflow execution",
         "Extract common functionality to reusable workflows"
       ]
     },
     {
       "workflow": "agent-factory-proliferation.yml",
       "status": "active",
-      "complexityScore": 50,
-      "complexityLevel": "high",
+      "complexityScore": 35,
+      "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 367,
+        "totalLines": 328,
         "jobCount": 0,
         "stepCount": 11,
-        "conditionalCount": 1,
-        "matrixCount": 1,
-        "dependencyCount": 4,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
         "actionCount": 1
       },
       "refactoringStrategy": [
-        "Consider parallel workflow execution",
-        "Optimize job dependencies",
         "Extract common functionality to reusable workflows"
       ]
     },
-    {
-      "workflow": "exponential-agent-factory-proliferation.yml",
-      "status": "active",
-      "complexityScore": 50,
-      "complexityLevel": "high",
-      "metrics": {
-        "totalLines": 514,
-        "jobCount": 0,
-        "stepCount": 13,
-        "conditionalCount": 1,
-        "matrixCount": 1,
-        "dependencyCount": 4,
-        "environmentCount": 0,
-        "secretCount": 0,
-        "actionCount": 1
-      },
-      "refactoringStrategy": [
-        "Consider parallel workflow execution",
-        "Optimize job dependencies",
-        "Extract common functionality to reusable workflows"
-      ]
-    },
-    {
-      "workflow": "netlify-automation.yml",
-      "status": "active",
-      "complexityScore": 55,
-      "complexityLevel": "high",
-      "metrics": {
-        "totalLines": 240,
-        "jobCount": 0,
-        "stepCount": 16,
-        "conditionalCount": 5,
-        "matrixCount": 1,
-        "dependencyCount": 2,
-        "environmentCount": 0,
-        "secretCount": 0,
-        "actionCount": 7
-      },
-      "refactoringStrategy": [
-        "Break down into smaller job steps",
-        "Consider parallel workflow execution",
-        "Extract common functionality to reusable workflows"
-      ]
-    }
-  ],
-  "medium": [
     {
       "workflow": "automation-dashboard.yml",
       "status": "active",
       "complexityScore": 30,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 132,
+        "totalLines": 121,
         "jobCount": 0,
         "stepCount": 12,
-        "conditionalCount": 1,
+        "conditionalCount": 0,
         "matrixCount": 0,
-        "dependencyCount": 1,
+        "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 1,
-        "actionCount": 5
+        "actionCount": 4
       },
       "refactoringStrategy": [
         "Extract common functionality to reusable workflows"
@@ -115,22 +67,61 @@
     {
       "workflow": "autonomous-agent-orchestrator.yml",
       "status": "active",
-      "complexityScore": 45,
+      "complexityScore": 30,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 659,
+        "totalLines": 634,
         "jobCount": 0,
         "stepCount": 10,
-        "conditionalCount": 1,
-        "matrixCount": 1,
-        "dependencyCount": 4,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
         "actionCount": 1
       },
       "refactoringStrategy": [
-        "Consider parallel workflow execution",
-        "Optimize job dependencies",
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "exponential-agent-factory-proliferation.yml",
+      "status": "active",
+      "complexityScore": 35,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 486,
+        "jobCount": 0,
+        "stepCount": 13,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 1
+      },
+      "refactoringStrategy": [
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "netlify-automation.yml",
+      "status": "active",
+      "complexityScore": 40,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 217,
+        "jobCount": 1,
+        "stepCount": 16,
+        "conditionalCount": 1,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 6
+      },
+      "refactoringStrategy": [
+        "Break down into smaller job steps",
         "Extract common functionality to reusable workflows"
       ]
     },
@@ -140,12 +131,12 @@
       "complexityScore": 30,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 134,
+        "totalLines": 118,
         "jobCount": 0,
         "stepCount": 17,
-        "conditionalCount": 1,
+        "conditionalCount": 0,
         "matrixCount": 0,
-        "dependencyCount": 2,
+        "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
         "actionCount": 9
@@ -158,22 +149,20 @@
     {
       "workflow": "self-replicating-factory-manager.yml",
       "status": "active",
-      "complexityScore": 45,
+      "complexityScore": 30,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 552,
+        "totalLines": 528,
         "jobCount": 0,
         "stepCount": 8,
-        "conditionalCount": 1,
-        "matrixCount": 1,
-        "dependencyCount": 4,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
         "actionCount": 1
       },
       "refactoringStrategy": [
-        "Consider parallel workflow execution",
-        "Optimize job dependencies",
         "Extract common functionality to reusable workflows"
       ]
     },
@@ -183,7 +172,7 @@
       "complexityScore": 30,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 124,
+        "totalLines": 114,
         "jobCount": 0,
         "stepCount": 13,
         "conditionalCount": 4,
@@ -203,7 +192,7 @@
       "complexityScore": 35,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 412,
+        "totalLines": 405,
         "jobCount": 0,
         "stepCount": 8,
         "conditionalCount": 4,
@@ -223,7 +212,7 @@
       "complexityScore": 30,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 241,
+        "totalLines": 234,
         "jobCount": 0,
         "stepCount": 8,
         "conditionalCount": 1,
@@ -232,26 +221,6 @@
         "environmentCount": 0,
         "secretCount": 1,
         "actionCount": 3
-      },
-      "refactoringStrategy": [
-        "Extract common functionality to reusable workflows"
-      ]
-    },
-    {
-      "workflow": "yaml-validator.yml",
-      "status": "active",
-      "complexityScore": 30,
-      "complexityLevel": "medium",
-      "metrics": {
-        "totalLines": 120,
-        "jobCount": 0,
-        "stepCount": 7,
-        "conditionalCount": 3,
-        "matrixCount": 0,
-        "dependencyCount": 0,
-        "environmentCount": 0,
-        "secretCount": 0,
-        "actionCount": 4
       },
       "refactoringStrategy": [
         "Extract common functionality to reusable workflows"

@@ -15,15 +15,11 @@ concurrency:
 jobs:
 
   orchestrate:
-    runs-on: ubuntu-latest
-    steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
           fetch-depth: 0
       - name: Setup Node.js
         uses: actions/setup-node@v4
-        with:
           node-version: 20
           cache: 'npm'
       - name: Install dependencies
@@ -32,8 +28,6 @@ jobs:
         run: npm run auto:intel | cat
       - name: Create Pull Request
         id: cpr
-        uses: peter-evans/create-pull-request@v6
-        with:
           token: ${{ secrets.GITHUB_TOKEN }}"
           commit-message: "chore(intel): autonomous intelligence updates"
           title: "chore(intel): autonomous intelligence updates"
@@ -46,8 +40,6 @@ jobs:
             auto-merge
       - name: Enable Auto-merge
   if: steps.cpr.outputs.pull-request-number
-        uses: peter-evans/enable-pull-request-automerge@v1
-        with:
           token: ${{ secrets.GITHUB_TOKEN }}
           pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
           merge-method: squash

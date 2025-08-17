@@ -14,16 +14,12 @@ concurrency:
 jobs:
 
   run-ultrafast:
-    runs-on: ubuntu-latest
-    steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
           fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
-        with:
           node-version: 20
           cache: npm
 
@@ -37,12 +33,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
-        run: node automation/advanced-git-sync.cjs | cat
 
       - name: Upload logs
   if: always()
-        uses: actions/upload-artifact@v4
-        with:
           name: autonomous-ultrafast-logs
           path: automation/logs/**/*
           if-no-files-found: ignore"

@@ -30,6 +30,10 @@ concurrency:
   group: "github.workflow-${{ github.ref }}"
   cancel-in-progress: true
 
+  GROWTH_FACTOR: ${{ github.event.inputs.growth_factor || "2" }}
+  TARGET_COUNT: "${{ github.event.inputs.target_count || "10" }}"
+  MAX_CONCURRENT: 5
+
 env:
   GROWTH_FACTOR: ${{ github.event.inputs.growth_factor || "2" }}
   TARGET_COUNT: "${{ github.event.inputs.target_count || "10" }}"
@@ -37,24 +41,19 @@ env:
 
 jobs:
   analyze-current-state:
-    runs-on: ubuntu-latest
-    outputs:
       current-factories: ${{ steps.count.outputs.total }}
       growth-potential: ${{ steps.growth.outputs.potential }}
       next-target: ${{ steps.target.outputs.next }}
-    steps:
           fetch-depth: 0
       
       - name: Count existing agent factories
         id: count"
-        run: |
           FACTORIES=$(find automation/ -name "*agent*factory*" -type f | wc -l)
           echo "total=$FACTORIES" >> $GITHUB_OUTPUT
           echo "Current agent factories: $FACTORIES"
       
       - name: Calculate growth potential
         id: growth
-        run: |
           CURRENT=${{ steps.count.outputs.total }}
           GROWTH=${{ env.GROWTH_FACTOR }}
           POTENTIAL=$((CURRENT * GROWTH))
@@ -63,7 +62,6 @@ jobs:
       
       - name: Determine next target
         id: target
-        run: |
           CURRENT=${{ steps.count.outputs.total }}
           TARGET=${{ env.TARGET_COUNT }}
           NEXT=$((CURRENT + TARGET))
@@ -71,18 +69,11 @@ jobs:
           echo "Next target: $NEXT factories"
 
   create-factory-templates:
-    needs: analyze-current-state
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
         factory-type: [content, automation, monitoring, optimization, intelligence]
         complexity: [basic, intermediate, advanced]
-      max-parallel: 5
-    steps:
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
-        with:
           node-version: '20'
           cache: 'npm'
       
@@ -96,16 +87,8 @@ jobs:
             "type": "${{ matrix.factory-type }}","
             "complexity": "${{ matrix.complexity }}","
             "createdAt": "${{ github.event.head_commit.timestamp || github.event.schedule }}","
-            "version": "1.0.0",
-            "capabilities": {
-              "autonomous": true,
-              "self-improving": true,
-              "exponential-growth": true
             },
-            "growthMetrics": {
               "creationTime": "${{ github.run_number }}","
-              "expectedLifespan": "infinite",
-              "replicationRate": 2.0
             }
           }
           EOF
@@ -129,7 +112,6 @@ jobs:
             
             async createAgent(agentType) {
               const agent = {
-                id: \`\${this.config.factoryId}-\${agentType}-\${Date.now()}\`,
                 type: agentType,
                 createdAt: new Date(),
                 capabilities: this.generateCapabilities(agentType),
@@ -189,15 +171,10 @@ jobs:
           cat > $FACTORY_DIR/package.json << EOF
           {"
             "name": "${{ matrix.factory-type }}-factory-${{ matrix.complexity }}","
-            "version": "1.0.0",
             "description": "Autonomous ${{ matrix.factory-type }} factory with exponential growth capabilities","
-            "main": "factory.js",
-            "scripts": {
-              "start": "node factory.js",
               "test": "node -e 'console.log(\"Factory ${{ matrix.factory-type }}-${{ matrix.complexity }} is ready for exponential growth!\")'", "grow": "node -e 'const Factory = require(\"./factory.js\"); const f = new Factory(require(\"./factory-config.json\")); console.log(\"Growth potential: \", f.getGrowthMetrics())'"
             },
             "keywords": ["agent", "factory", "autonomous", "exponential-growth", "${{ matrix.factory-type }}"],"
-            "author": "Zion App Automation System",
             "license": "MIT"
           }
           EOF
@@ -235,9 +212,6 @@ jobs:
           EOF
 
   deploy-factories:
-    needs: [analyze-current-state, create-factory-templates]
-    runs-on: ubuntu-latest
-    steps:
       
       - name: Deploy new factories
         run: |
@@ -266,15 +240,9 @@ jobs:
           # Create/update factory registry
           cat > automation/factory-registry.json << EOF
           {
-            "lastUpdated": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")",
-            "totalFactories": $(find automation/factories/ -name "factory-config.json" | wc -l),
-            "growthMetrics": {
-              "currentCount": $(find automation/factories/ -name "factory-config.json" | wc -l),
               "targetCount": ${{ env.TARGET_COUNT }},"
               "growthFactor": ${{ env.GROWTH_FACTOR }},"
-              "isExponential": true
             },
-            "factories": [
               $(find automation/factories/ -name "factory-config.json" | xargs -I {} sh -c 'echo "{\"path\": \"{}\", \"config\": $(cat {})}"' | paste -sd ',' -)
             ]
           }
@@ -283,9 +251,6 @@ jobs:
           echo "📊 Factory registry updated with ${{ needs.analyze-current-state.outputs.current-factories }} factories"
 
   exponential-growth-monitor:
-    "needs: [analyze-current-state, deploy-factories]
-    runs-on: ubuntu-latest
-    steps:
       
       - name: Calculate exponential growth metrics
         run: |
@@ -351,10 +316,6 @@ jobs:
           echo "📋 Growth report generated"
 
   notify-growth:
-    needs: [exponential-growth-monitor]
-    runs-on: ubuntu-latest
-    if: always()
-    steps:
       - name: Growth notification
         run: |
           echo "🚀 Agent Factory Proliferation Complete!"

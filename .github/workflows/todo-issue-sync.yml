@@ -16,16 +16,12 @@ concurrency:
 jobs:
 
   sync-todos:
-    runs-on: ubuntu-latest
-    steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
           fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
-        with:
           node-version: 20
 
       - name: Install deps (minimal)
@@ -48,7 +44,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
-        run: |
           TITLE="Automated TODO/FIXME/NOTE Sync"
           BODY_FILE="docs/TODO_SYNC.md"
           if [ ! -f "$BODY_FILE" ]; then echo "No report file found"; exit 0; fi

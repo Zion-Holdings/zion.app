@@ -16,6 +16,4 @@ concurrency:
 jobs:
 
   update_release_draft:
-    runs-on: ubuntu-latest
-    steps:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

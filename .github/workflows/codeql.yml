@@ -21,19 +21,11 @@ concurrency:
 jobs:
   analyze:
     name: Analyze
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
         language: ['javascript']
 
-    steps:
-      "- name: Checkout repository
-        uses: actions/checkout@v4
 
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v2
-        with:
           languages: ${{ matrix.language }}
           queries: security-extended,security-and-quality
 
@@ -42,5 +34,4 @@ jobs:
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v2
-        with:
           category: "/language:${{matrix.language}}"

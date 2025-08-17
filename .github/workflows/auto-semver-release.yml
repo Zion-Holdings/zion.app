@@ -15,22 +15,17 @@ concurrency:
 jobs:
 
   release:
-    runs-on: ubuntu-latest
-    steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
           fetch-depth: 0
       - name: Setup Node
         uses: actions/setup-node@v4
-        with:
           node-version: 20
           cache: npm
       - name: Install deps
         run: npm ci --no-audit --no-fund
       - name: Generate version and changelog
         id: sv
-        run: |
           npx -y conventional-recommended-bump -p conventionalcommits > .bump
           BUMP=$(cat .bump | tr -d '\n' | tr -d '\r')
           if [ -z "$BUMP" ]; then BUMP=patch; fi
@@ -59,9 +54,7 @@ jobs:
           git push origin HEAD:$(git rev-parse --abbrev-ref HEAD) --tags
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
-        with:
           tag_name: v${{ steps.sv.outputs.new_version }}
           name: v${{ steps.sv.outputs.new_version }}
           body_path: CHANGELOG.tmp.md
-        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -17,16 +17,12 @@ concurrency:
 jobs:
 
   open-pr:
-    runs-on: ubuntu-latest
-    steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
           fetch-depth: 0
 
       - name: Create or update PR to main
         uses: peter-evans/create-pull-request@v6
-        with:
           token: ${{ secrets.GITHUB_TOKEN }}
           base: main"
           branch: ${{ github.ref_name }}"
@@ -41,12 +37,10 @@ jobs:
 
       - name: Add automerge label (ensures label exists)
         uses: actions-ecosystem/action-add-labels@v1
-        with:
           labels: automerge, automated
 
       - name: Enable auto-merge (squash)
         uses: peter-evans/enable-pull-request-automerge@v1
-        with:
           token: ${{ secrets.GITHUB_TOKEN }}
           pull-request-number: ${{ steps.cpr.outputs.pull-request-number || '' }}
           merge-method: squash

@@ -14,16 +14,12 @@ concurrency:
 
 jobs:
   deps-upgrade:
-    runs-on: ubuntu-latest
-    steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
           persist-credentials: false
 
       - name: Setup Node
         uses: actions/setup-node@v4
-        with:
           node-version: '20'
           cache: 'npm'
 
@@ -32,7 +28,6 @@ jobs:
 
       - name: Create branch
         id: branch
-        run: |
           BR="auto/deps-upgrade-$(date +%s)"
           git checkout -b "$BR"
           echo "branch=$BR" >> $GITHUB_OUTPUT
@@ -51,14 +46,10 @@ jobs:
           else
             echo "No dependency changes."
           fi
-        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Open PR
         id: pr
-        if: always()
-        uses: actions/github-script@v7
-        with:
           script: |
             const branch = `${{ steps.branch.outputs.branch }}`;"
             const { data: pr } = await github.rest.pulls.create({ owner: context.repo.owner, repo: context.repo.repo, title: 'chore(deps): automated minor/patch upgrades', head: branch, base: 'main', body: 'Automated dependency upgrades with build verification.' });
@@ -66,8 +57,6 @@ jobs:
 
       - name: Auto-merge PR if build ok
   if: always()
-        uses: actions/github-script@v7
-        with:
           script: |
             const prNumber = Number(`$${'{'}{ steps.pr.outputs.number }}`);
             if (!prNumber) { core.info('No PR number found.'); return; }

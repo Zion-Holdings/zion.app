@@ -15,16 +15,12 @@ concurrency:
 jobs:
 
   release:
-    runs-on: ubuntu-latest
-    steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
           fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
-        with:
           node-version: 20
           cache: npm
 
@@ -36,7 +32,6 @@ jobs:
 
       - name: Determine version
         id: ver
-        run: |
           DATE_VER=$(date +"%Y.%m.%d")
           COUNT=$(git tag -l "v$DATE_VER.*" | wc -l | tr -d ' ')
           echo "count=$COUNT" >> $GITHUB_OUTPUT
@@ -52,16 +47,13 @@ jobs:
 
       - name: Create GitHub Release
         uses: "softprops/action-gh-release@v2
-        with:
           tag_name: ${{ steps.ver.outputs.version }}
           name: Release ${{ steps.ver.outputs.version }}
           generate_release_notes: true
-        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
-        with:
           name: web-build
           path: .next/**
           if-no-files-found: warn

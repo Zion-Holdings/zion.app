@@ -31,16 +31,12 @@ concurrency:
 
 jobs:
   factory-health-check:
-    runs-on: ubuntu-latest
-    outputs:
       healthy-factories: ${{ steps.health.outputs.healthy }}
       unhealthy-factories: ${{ steps.health.outputs.unhealthy }}
       total-factories: ${{ steps.health.outputs.total }}
-    steps:
       
       - name: Check factory health
         id: health
-        run: |
           echo "🏥 Checking factory health status..."
           
           # Count total factories
@@ -73,16 +69,10 @@ jobs:
           echo "  Unhealthy: $UNHEALTHY"
 
   replication-engine:
-    needs: factory-health-check
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
         replication-type: [horizontal, vertical, diagonal]
-    steps:
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
-        with:
           node-version: '20'
           cache: 'npm'
       
@@ -100,13 +90,10 @@ jobs:
           
           # Calculate replication count based on mode
           case $MODE in
-            ""aggressive")
               REPLICATION_COUNT=$((CURRENT_FACTORIES * 3))
               ;;
-            ""balanced")
               REPLICATION_COUNT=$((CURRENT_FACTORIES * 2))
               ;;
-            ""conservative")
               REPLICATION_COUNT=$((CURRENT_FACTORIES / 2))
               ;;
             *)
@@ -235,7 +222,6 @@ jobs:
                   
                   async createAgent(agentType) {
                     const agent = {
-                      id: \`\${this.config.factoryId}-\${agentType}-\${Date.now()}\`,
                       type: agentType,
                       createdAt: new Date(),
                       capabilities: this.generateCapabilities(agentType),
@@ -327,9 +313,6 @@ jobs:
           echo "✅ $REPLICATION_TYPE replication engine created"
 
   self-replication-monitor:
-    needs: [factory-health-check, replication-engine]
-    runs-on: ubuntu-latest
-    steps:
       
       - name: Monitor self-replication
         run: |
@@ -387,9 +370,6 @@ jobs:
           echo "📋 Self-replication report generated"
 
   infinite-growth-validator:
-    needs: [self-replication-monitor]
-    runs-on: ubuntu-latest
-    steps:
       
       - name: Validate infinite growth potential
         run: |
@@ -535,10 +515,6 @@ jobs:
           
 
   notify-replication:
-    needs: [infinite-growth-validator]
-    runs-on: ubuntu-latest
-    if: always()
-    steps:
       - name: Replication completion notification
         run: |
           echo "🏭 Self-Replicating Factory Manager Complete!"

@@ -14,15 +14,12 @@ on:
 
 jobs:
   validate-yaml:
-    runs-on: ubuntu-latest
     name: Validate YAML Syntax
-    steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Setup Python
         uses: actions/setup-python@v4
-        with:
           python-version: '3.11'
 
       - name: Install PyYAML
@@ -30,7 +27,6 @@ jobs:
 
       - name: Validate YAML files
         id: validate
-        run: |
           echo "🔍 Validating YAML files..."
           
           # Find all YAML files
@@ -68,7 +64,6 @@ jobs:
 
       - name: Create validation report
   if: steps.validate.outputs.invalid_count != '0'
-        run: |
           echo "📝 Creating validation report..."
           
           cat > yaml-validation-report.md << EOF
@@ -94,15 +89,11 @@ jobs:
 
       - name: Upload validation report
   if: steps.validate.outputs.invalid_count != '0'
-        uses: actions/upload-artifact@v3
-        with:
           name: yaml-validation-report
           path: yaml-validation-report.md
 
       - name: Comment on PR
   if: github.event_name == 'pull_request' && steps.validate.outputs.invalid_count != '0'
-        uses: actions/github-script@v6
-        with:
           script: |
             const fs = require('fs');
             const report = fs.readFileSync('yaml-validation-report.md', 'utf8');

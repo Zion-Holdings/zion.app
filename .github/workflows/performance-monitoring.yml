@@ -19,16 +19,13 @@ concurrency:
 
 jobs:
   performance-audit:
-    runs-on: ubuntu-latest
     name: Performance Audit
     
-    steps:
       - name: Checkout code
         uses: actions/checkout@v4
         
       - name: Setup Node.js
         uses: actions/setup-node@v4
-        with:
           'node-version': '18'
           cache: 'npm'
           
@@ -40,7 +37,6 @@ jobs:
         
       - name: Run Lighthouse CI
         uses: treosh/lighthouse-ci-action@v10
-        with:
           urls: |
             http://localhost:3000
             http://localhost:3000/dashboard
@@ -55,7 +51,6 @@ jobs:
           
       - name: Upload bundle analysis
         uses: actions/upload-artifact@v4
-        with:
           name: bundle-analysis
           path: ./bundle-analysis
           
@@ -73,22 +68,17 @@ jobs:
           
       - name: Upload performance report
         uses: actions/upload-artifact@v4
-        with:
           name: performance-report
           path: performance-report.md
 
   bundle-optimization:
-    runs-on: ubuntu-latest
     name: Bundle Optimization
-    needs: performance-audit
     
-    steps:
       - name: Checkout code
         uses: actions/checkout@v4
         
       - name: Setup Node.js
         uses: actions/setup-node@v4
-        with:
           'node-version': '18'
           cache: 'npm'
           
@@ -102,17 +92,12 @@ jobs:
           
       - name: Upload bundle report
         uses: actions/upload-artifact@v4
-        with:
           name: webpack-bundle-report
           path: webpack-bundle-analyzer-report.html
 
   performance-alerts:
-    runs-on: ubuntu-latest
     name: Performance Alerts
-    needs: [performance-audit, bundle-optimization]
-    if: always()
     
-    steps:
       - name: Check performance thresholds
         run: |
           echo "Checking performance thresholds..."
@@ -128,6 +113,5 @@ jobs:
           
       - name: Upload summary
         uses: actions/upload-artifact@v4
-        with:
           name: performance-summary
           path: summary.md

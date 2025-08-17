@@ -32,16 +32,12 @@ concurrency:
 
 jobs:
   agent-inventory:
-    runs-on: ubuntu-latest
-    outputs:
       total-agents: ${{ steps.count.outputs.total }}
       active-factories: ${{ steps.factories.outputs.active }}
       growth-capacity: ${{ steps.capacity.outputs.capacity }}
-    steps:
       
       - name: Inventory all agents
         id: count
-        run: |
           # Count all agents across all factories"
           TOTAL_AGENTS=$(find automation/factories/ -name "*.js" -exec grep -l "class.*Agent\|createAgent" {} \; | wc -l)
           echo "total=$TOTAL_AGENTS" >> $GITHUB_OUTPUT
@@ -49,14 +45,12 @@ jobs:
       
       - name: Count active factories
         id: factories
-        run: |
           ACTIVE_FACTORIES=$(find automation/factories/ -name "factory-config.json" | wc -l)
           echo "active=$ACTIVE_FACTORIES" >> $GITHUB_OUTPUT
           echo "🏭 Active factories: $ACTIVE_FACTORIES"
       
       - name: Calculate growth capacity
         id: capacity
-        run: |
           AGENTS=${{ steps.count.outputs.total }}
           FACTORIES=${{ steps.factories.outputs.active }}
           CAPACITY=$((AGENTS * FACTORIES * 2))  # Exponential growth factor"
@@ -64,16 +58,10 @@ jobs:
           echo "🚀 Growth capacity: $CAPACITY agents"
 
   exponential-growth-orchestrator:
-    needs: agent-inventory
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
         growth-strategy: [replicate, optimize, diversify, accelerate]
-    steps:
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
-        with:
           node-version: '20'
           cache: 'npm'
       
@@ -135,7 +123,6 @@ jobs:
                     fs.mkdirSync(path.dirname(agentPath), { recursive: true });
                     
                     const agentConfig = {
-                      id: agentId,
                       parentFactory: config.factoryId,
                       replicatedAt: new Date().toISOString(),
                       capabilities: [...config.capabilities, 'replicated', 'exponential-growth'],
@@ -291,7 +278,6 @@ jobs:
                     fs.mkdirSync(path.dirname(agentPath), { recursive: true });
                     
                     const agentConfig = {
-                      id: agentId,
                       type: type,
                       parentFactory: config.factoryId,
                       createdAt: new Date().toISOString(),
@@ -367,7 +353,6 @@ jobs:
                     fs.mkdirSync(path.dirname(agentPath), { recursive: true });
                     
                     const agentConfig = {
-                      id: agentId,
                       type: 'accelerated-agent',
                       parentFactory: config.factoryId,
                       createdAt: new Date().toISOString(),
@@ -395,9 +380,6 @@ jobs:
           echo "✅ $STRATEGY strategy executed successfully"
 
   growth-metrics-analyzer:
-    needs: [agent-inventory, exponential-growth-orchestrator]
-    runs-on: ubuntu-latest
-    steps:
       
       - name: Analyze growth metrics
         run: |
@@ -466,9 +448,6 @@ jobs:
           echo "📋 Orchestration report generated"
 
   autonomous-decision-engine:
-    needs: [growth-metrics-analyzer]
-    runs-on: ubuntu-latest
-    steps:
       
       - name: Execute autonomous decisions
         run: |
@@ -642,10 +621,6 @@ jobs:
           
 
   notify-orchestration:
-    needs: [autonomous-decision-engine]
-    runs-on: ubuntu-latest
-    if: always()
-    steps:
       - name: Orchestration completion notification
         run: |
           echo "🤖 Autonomous Agent Orchestration Complete!"

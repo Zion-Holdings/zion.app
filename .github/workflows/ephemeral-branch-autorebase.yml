@@ -17,11 +17,8 @@ concurrency:
 jobs:
 
   autorebase:
-    runs-on: ubuntu-latest
-    steps:
       - name: Checkout full history
         uses: actions/checkout@v4
-        with:
           fetch-depth: 0
 
       - name: Configure git
@@ -31,7 +28,6 @@ jobs:
 
       - name: List branches
         id: list
-        run: |
           git fetch --all --prune
           git for-each-ref --format='%(refname:short)' refs/remotes/origin > branches.txt
           awk '{print $0}' branches.txt | sed 's#^origin/##' | sort -u > local_branches.txt
@@ -40,7 +36,6 @@ jobs:
       - name: Rebase ephemeral branches on main
         env:
           BRANCH_PREFIXES: 'cursor/,feat/,fix/,chore/,refactor/'
-        run: |
           set -euo pipefail
           IFS=',' read -r -a prefixes <<< "$BRANCH_PREFIXES"
           while read -r br; do

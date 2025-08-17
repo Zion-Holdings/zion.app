@@ -22,20 +22,15 @@ jobs:
 
   exponential-delegation:
     name: Exponential AI Delegation
-    runs-on: ubuntu-latest
-    permissions:
       contents: write
       actions: write
       pull-requests: write
-    steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
           fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
-        with:
           node-version: '20'
           cache: 'npm'
 
@@ -57,7 +52,6 @@ jobs:
         run: |
           echo "🚀 Starting Exponential AI Delegation Orchestrator..."
           node automation/exponential-ai-delegation-orchestrator.cjs
-        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy new factories
@@ -167,7 +161,6 @@ jobs:
 
       - name: Upload delegation artifacts
         uses: actions/upload-artifact@v4
-        with:
           name: exponential-ai-delegation-artifacts
           path: |
             automation/reports/exponential-ai-delegation-*.json

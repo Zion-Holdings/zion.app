@@ -40,18 +40,14 @@ jobs:
   # Exponential Growth Analysis
   analyze-exponential-growth:
     name: 📊 Analyze Exponential Growth Potential
-    runs-on: ubuntu-latest
-    outputs:
       current-factories: ${{ steps.analyze.outputs.total_factories }}
       growth-potential: ${{ steps.calculate.outputs.growth_potential }}
       exponential-factor: ${{ steps.exponential.outputs.factor }}
       next-generation-target: ${{ steps.target.outputs.next_generation }}
-    steps:
           fetch-depth: 0
       
       - name: Analyze current automation ecosystem
         id: analyze"
-        run: |
           echo "🔍 Analyzing current automation ecosystem..."
           
           # Count all automation components
@@ -67,7 +63,6 @@ jobs:
       
       - name: Calculate exponential growth potential
         id: calculate
-        run: |
           CURRENT=${{ steps.analyze.outputs.total_factories }}
           MULTIPLIER=${{ env.GROWTH_MULTIPLIER }}
           POTENTIAL=$((CURRENT * MULTIPLIER))
@@ -77,7 +72,6 @@ jobs:
       
       - name: Calculate exponential factor
         id: exponential
-        run: |
           CURRENT=${{ steps.analyze.outputs.total_factories }}
           TARGET=${{ env.TARGET_EXPONENTIAL_FACTOR }}
           
@@ -92,7 +86,6 @@ jobs:
       
       - name: Determine next generation target
         id: target
-        run: |
           CURRENT=${{ steps.analyze.outputs.total_factories }}
           MULTIPLIER=${{ env.GROWTH_MULTIPLIER }}
           NEXT=$((CURRENT * MULTIPLIER))
@@ -103,20 +96,12 @@ jobs:
   # Create Exponential Agent Factories
   create-exponential-factories:
     name: 🏭 Create Exponential Agent Factories
-    needs: analyze-exponential-growth
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
         factory-type: [autonomous, intelligent, self-replicating, exponential, quantum]
         complexity: [basic, intermediate, advanced, expert]
         specialization: [development, testing, deployment, monitoring, optimization, research]
-      max-parallel: 10
-      fail-fast: false
-    steps:
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
-        with:
           node-version: '20'
           cache: 'npm'
       
@@ -229,7 +214,6 @@ jobs:
             
             async createAgent(agentId) {
               const agentConfig = {
-                id: agentId,
                 factory: this.config.factoryId,
                 specialization: this.config.specialization,
                 complexity: this.config.complexity,
@@ -308,8 +292,6 @@ jobs:
           
           jobs:
             autonomous-operation:
-              runs-on: ubuntu-latest
-              steps:
                   - name: Run autonomous factory
         run: |
                     cd automation/factories/$FACTORY_ID
@@ -331,10 +313,6 @@ jobs:
   # Deploy Exponential Factories
   deploy-exponential-factories:
     name: 🚀 Deploy Exponential Factories
-    needs: create-exponential-factories
-    runs-on: ubuntu-latest
-    if: always()
-    steps:
       
       - name: Deploy factories to production
         run: |
@@ -369,9 +347,6 @@ jobs:
   # Monitor Exponential Growth
   monitor-exponential-growth:
     name: 📊 Monitor Exponential Growth
-    needs: [analyze-exponential-growth, deploy-exponential-factories]
-    runs-on: ubuntu-latest
-    steps:
       
       - name: Calculate exponential growth metrics
         run: |
@@ -437,9 +412,6 @@ jobs:
   # Autonomous Decision Engine
   autonomous-decision-engine:
     name: 🧠 Autonomous Decision Engine
-    needs: monitor-exponential-growth
-    runs-on: ubuntu-latest
-    steps:
       
       - name: Analyze growth patterns and make autonomous decisions
         run: |

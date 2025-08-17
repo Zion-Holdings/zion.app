@@ -16,16 +16,12 @@ concurrency:
 jobs:
   main:
     name: Main Job
-    runs-on: ubuntu-latest
-    steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
           fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
-        with:
           node-version: '20'
           cache: 'npm'
 
@@ -41,7 +37,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           CANONICAL_URL: https://ziontechgroup.com
-        run: node automation/cloud-deep-research-orchestrator.cjs || node automation/cloud-autonomous-agents-factory.cjs
 
       - name: Refresh front directory and homepage promos
         run: |
@@ -54,7 +49,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
-        run: node automation/advanced-git-sync.cjs || node automation/git-sync.cjs
 
       - name: Commit and push changes
         run: |

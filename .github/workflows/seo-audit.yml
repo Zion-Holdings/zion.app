@@ -16,17 +16,13 @@ concurrency:
 jobs:
   main:
     name: Main Job
-    runs-on: ubuntu-latest
-    steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4"
-        with:
           node-version: '20'
           cache: 'npm'
 
@@ -47,7 +43,6 @@ jobs:
 
       - name: Generate SEO report
         id: seo_report
-        run: |
           echo "Starting SEO audit..."
           echo "Node version: $(node --version)"
           echo "NPM version: $(npm --version)"
@@ -72,7 +67,6 @@ jobs:
 
       - name: Check for changes
         id: check_changes
-        run: |
           echo "Checking for git changes..."
           git status --porcelain || echo "Git status check failed"
           if [ -n "$(git status --porcelain 2>/dev/null)" ]; then
@@ -86,14 +80,12 @@ jobs:
 
       - name: Configure git
   if: steps.check_changes.outputs.has_changes == 'true'
-        run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           echo "Git configured successfully"
 
       - name: Add and commit changes
   if: steps.check_changes.outputs.has_changes == 'true'
-        run: |
           echo "Adding files to git..."
           git add -A || echo "Git add failed"
           echo "Committing changes..."
@@ -105,7 +97,6 @@ jobs:
 
       - name: Push changes
   if: steps.check_changes.outputs.has_changes == 'true'
-        run: |
           echo "Pushing changes..."
           if git push origin HEAD:$(git rev-parse --abbrev-ref HEAD); then
             echo "Changes pushed successfully"
@@ -115,7 +106,6 @@ jobs:
 
       - name: No changes notification
   if: steps.check_changes.outputs.has_changes == 'false'
-        run: echo "No changes to commit - SEO audit completed successfully"
 
       - name: Final status
         run: |

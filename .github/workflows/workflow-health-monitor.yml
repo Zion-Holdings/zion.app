@@ -19,17 +19,13 @@ concurrency:
 jobs:
   monitor:
     name: Monitor and Fix Workflows
-    runs-on: ubuntu-latest
     
-    steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
           fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
-        with:
           node-version: 20
           cache: npm
 
@@ -66,14 +62,11 @@ jobs:
           
           echo "📊 Generating final health report..."
           node automation/workflow-health-monitor.cjs run
-        env:
           PUSH_TO_MAIN: "false"
           TARGET_BRANCH: "main"
 
       - name: Upload health reports
   if: always()
-        uses: actions/upload-artifact@v4
-        with:
           name: workflow-health-reports
           path: |
             automation/logs/workflow-health-report.json
@@ -83,7 +76,6 @@ jobs:
 
       - name: Commit health improvements
   if: always()
-        run: |
           if [ -n "$(git status --porcelain)" ]; then
             git add -A
             git commit -m "chore(health): auto-fix workflow issues and improve health score"
@@ -91,11 +83,9 @@ jobs:
           else
             echo "No changes to commit"
           fi
-        continue-on-error: true
 
       - name: Create health summary
   if: always()
-        run: |
           if [ -f "automation/logs/workflow-health-report.json" ]; then
             echo "## 📊 Workflow Health Summary" >> $GITHUB_STEP_SUMMARY
             echo " >> $GITHUB_STEP_SUMMARY

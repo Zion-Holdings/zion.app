@@ -13,17 +13,12 @@ concurrency:
 jobs:
 
   cloud-automation:
-    runs-on: ubuntu-latest
-    permissions:
       contents: write
-    steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
           fetch-depth: 0
       - name: Setup Node.js
         uses: actions/setup-node@v4
-        with:
           node-version: 20
           cache: npm
       - name: Install dependencies
@@ -58,7 +53,6 @@ jobs:
         run: node automation/faq-generator.cjs | cat
       - name: Analytics Promoter (optional)
         run: node automation/analytics-promoter.cjs | cat
-        env:
           GA4_PROJECT_ID: ${{ secrets.GA4_PROJECT_ID }}
           GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
           GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}

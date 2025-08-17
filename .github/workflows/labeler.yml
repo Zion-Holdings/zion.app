@@ -15,7 +15,5 @@ concurrency:
 jobs:
 
   label:
-    runs-on: ubuntu-latest
-    steps:
           repo-token: ${{ secrets.GITHUB_TOKEN }}"
           sync-labels: true

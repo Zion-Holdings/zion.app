@@ -14,21 +14,14 @@ concurrency:
 jobs:
 
   matrix-runner:
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
         partition_index: [0, 1, 2]
         partition_total: [3]
-    steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
           fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
-        with:
           node-version: 20
           cache: npm
 
@@ -40,12 +33,9 @@ jobs:
           PARTITION_INDEX: ${{ matrix.partition_index }}"
           PARTITION_TOTAL: ${{ matrix.partition_total }}"
           TASK_TIMEOUT_MS: '180000'
-        run: "node automation/auto-discovery-runner.cjs | cat
 
       - name: Upload logs
   if: always()
-        uses: actions/upload-artifact@v4
-        with:
           name: auto-discovery-logs-${{ matrix.partition_index }}
           path: automation/logs/**/*
           if-no-files-found: ignore

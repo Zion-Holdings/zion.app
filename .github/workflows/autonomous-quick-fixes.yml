@@ -14,16 +14,12 @@ concurrency:
 
 jobs:
   quick-fixes:
-    runs-on: ubuntu-latest
-    steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
           persist-credentials: false
 
       - name: Setup Node
         uses: actions/setup-node@v4
-        with:
           node-version: '20'
           cache: 'npm'
 
@@ -48,5 +44,4 @@ jobs:
           else
             echo "No changes to commit."
           fi
-        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

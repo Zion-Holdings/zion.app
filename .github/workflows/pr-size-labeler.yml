@@ -15,8 +15,6 @@ concurrency:
 jobs:
 
   size-label:
-    runs-on: ubuntu-latest
-    steps:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           xs_label: size/XS
           s_label: size/S
