@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-17T20:50:01.986Z",
-  "pagesScanned": 8474,
+  "generatedAt": "2025-08-17T20:51:01.163Z",
+  "pagesScanned": 8477,
   "items": [
     {
       "route": "/404",
@@ -34746,6 +34746,16 @@
       "suggestion": {
         "title": "Guide: LLM Apps",
         "description": "Guide: LLM Apps — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-17-2050",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pilot Plan: FinOps for AI",
+        "description": "Pilot Plan: FinOps for AI — auto-suggested description"
       }
     },
     {
@@ -83259,6 +83269,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-17-1751",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 17:51",
+        "description": "Autonomous Update — 2025-08-17 17:51 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-17-1810",
       "missing": [
         "og:image"
@@ -83416,6 +83439,16 @@
       "suggestion": {
         "title": "Autonomous Performance Tuning Guide — Cloud Cost Optimization (2025-08-17 20:40 UTC)",
         "description": "Autonomous Performance Tuning Guide — Cloud Cost Optimization (2025-08-17 20:40 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-2050",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Playbook — AI Service Design (2025-08-17 20:50 UTC)",
+        "description": "Autonomous Playbook — AI Service Design (2025-08-17 20:50 UTC) — auto-suggested description"
       }
     },
     {
