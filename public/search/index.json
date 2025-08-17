@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T18:40:04.398Z",
+  "generatedAt": "2025-08-17T18:41:03.844Z",
   "entries": [
     {
       "route": "/user-management",
@@ -854,6 +854,12 @@
       "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-17 00-00 Autonomous Update — 2025-08-17 00-00 Signal source: https://ziontechgroup.com/landing Autonomous cloud systems are live and improving the app in real timeAutonomous Cloud "
     },
     {
+      "route": "/reports/updates/update-2025-08-17-1840",
+      "file": "pages/reports/updates/update-2025-08-17-1840.tsx",
+      "title": "Autonomous Validation & QA Plan — Cloud Cost Optimization (2025-08-17 18:40 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Validation & QA Plan — Cloud Cost Optimization (2025-08-17 18:40 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitl"
+    },
+    {
       "route": "/reports/updates/update-2025-08-17-1830",
       "file": "pages/reports/updates/update-2025-08-17-1830.tsx",
       "title": "Autonomous Capability Map — Evaluation & Safety (2025-08-17 18:30 UTC)",
@@ -948,6 +954,12 @@
       "file": "pages/reports/updates/update-2025-08-17-1550.tsx",
       "title": "Autonomous Playbook — Edge AI & IoT (2025-08-17 15:50 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Edge AI & IoT (2025-08-17 15:50 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { \"@typ"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1541",
+      "file": "pages/reports/updates/update-2025-08-17-1541.tsx",
+      "title": "Autonomous Update — 2025-08-17 15:41",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 15:41 Autonomous Update — 2025-08-17 15:41 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Airfoil · 2544 pts Why it matters: a"
     },
     {
       "route": "/reports/updates/update-2025-08-17-1540",
@@ -29040,6 +29052,12 @@
       "file": "pages/reports/innovations/insight-2025-08-17T00-00.tsx",
       "title": "Innovation Insight — 2025-08-17 00-00",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-17 00-00 Innovation Insight — 2025-08-17 00-00 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-17-1840",
+      "file": "pages/reports/innovations/insight-2025-08-17-1840.tsx",
+      "title": "Blueprint: FinOps for AI",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Blueprint: FinOps for AI Blueprint: FinOps for AI Patterns to reduce cost. Scope: Blueprint: FinOps for AI. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: obse"
     },
     {
       "route": "/reports/innovations/insight-2025-08-17-1830",

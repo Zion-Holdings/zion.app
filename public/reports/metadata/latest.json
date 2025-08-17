@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-17T18:40:01.314Z",
-  "pagesScanned": 8240,
+  "generatedAt": "2025-08-17T18:41:01.147Z",
+  "pagesScanned": 8243,
   "items": [
     {
       "route": "/404",
@@ -34226,6 +34226,16 @@
       "suggestion": {
         "title": "Blueprint: RAG Platforms",
         "description": "Blueprint: RAG Platforms — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-17-1840",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Blueprint: FinOps for AI",
+        "description": "Blueprint: FinOps for AI — auto-suggested description"
       }
     },
     {
@@ -81049,6 +81059,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-17-1541",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 15:41",
+        "description": "Autonomous Update — 2025-08-17 15:41 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-17-1550",
       "missing": [
         "og:image"
@@ -81206,6 +81229,16 @@
       "suggestion": {
         "title": "Autonomous Capability Map — Evaluation & Safety (2025-08-17 18:30 UTC)",
         "description": "Autonomous Capability Map — Evaluation & Safety (2025-08-17 18:30 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1840",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Validation & QA Plan — Cloud Cost Optimization (2025-08-17 18:40 UTC)",
+        "description": "Autonomous Validation & QA Plan — Cloud Cost Optimization (2025-08-17 18:40 UTC) — auto-suggested description"
       }
     },
     {
