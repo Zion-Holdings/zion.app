@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T08:46:03.636Z",
+  "generatedAt": "2025-08-17T08:47:03.930Z",
   "entries": [
     {
       "route": "/user-management",
@@ -600,6 +600,12 @@
       "file": "pages/reports/updates/update-2025-08-17-0550.tsx",
       "title": "Autonomous Capability Map — Agentic Workflows (2025-08-17 05:50 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Capability Map — Agentic Workflows (2025-08-17 05:50 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0547",
+      "file": "pages/reports/updates/update-2025-08-17-0547.tsx",
+      "title": "Autonomous Update — 2025-08-17 05:47",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 05:47 Autonomous Update — 2025-08-17 05:47 Signal over noise—your automated update is here. Today's Highlight Hacker News : Airfoil · 2544 pts Why it matters: autonomous c"
     },
     {
       "route": "/reports/updates/update-2025-08-17-0546",
