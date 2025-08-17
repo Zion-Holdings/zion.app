@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T04:31:03.556Z",
+  "generatedAt": "2025-08-17T04:32:03.507Z",
   "entries": [
     {
       "route": "/user-management",
@@ -450,6 +450,12 @@
       "file": "pages/reports/updates/update-2025-08-17-0140.tsx",
       "title": "Autonomous Blueprint — Vision & Multimodal (2025-08-17 01:40 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Blueprint — Vision & Multimodal (2025-08-17 01:40 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0132",
+      "file": "pages/reports/updates/update-2025-08-17-0132.tsx",
+      "title": "Autonomous Update — 2025-08-17 01:32",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 01:32 Autonomous Update — 2025-08-17 01:32 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Air Con: $1697 for an"
     },
     {
       "route": "/reports/updates/update-2025-08-17-0131",
