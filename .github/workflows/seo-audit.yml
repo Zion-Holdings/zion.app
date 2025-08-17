@@ -1,24 +1,22 @@
 name: SEO Audit
 
 on:
-  workflow_dispatch: {}
+
   schedule:
     - cron: '0 */4 * * *'  # Run every 2 hours instead of every 10 minutes
 
-
+permissions:
 concurrency:
   group: "github.workflow-${{ github.ref }}"
   cancel-in-progress: true
-
-  contents: write
-  actions: read
-
 jobs:
   main:
     name: Main Job
       - name: Checkout repository
         uses: actions/checkout@v4
-          fetch-depth: 0
+          with:
+            fetch-depth: 0
+fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js

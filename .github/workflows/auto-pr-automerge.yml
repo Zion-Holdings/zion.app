@@ -1,10 +1,21 @@
 name: Auto PR + Automerge
 
 on:
-  push:
+
     branches-ignore:
       - main
 
+- name: Install dependencies
+
+  run: npm ci --no-audit --no-fund
+
+- name: Complete workflow
+
+  run: |
+
+    echo "Workflow completed successfully"
+
+permissions:
   contents: write
   pull-requests: write
 
@@ -17,7 +28,9 @@ jobs:
   open-and-automerge:
       - name: Checkout
         uses: actions/checkout@v4
-          fetch-depth: 0
+          with:
+            fetch-depth: 0
+fetch-depth: 0
 
       - name: Create or update PR to main
         id: cpr

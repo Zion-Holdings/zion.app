@@ -1,13 +1,14 @@
 name: Autonomous Auto-Merge to main (fast)
 
 on:
-  push:
+
     branches:
       - 'cursor/**'
       - 'feat/**'
       - 'fix/**'
   workflow_dispatch: {}
 
+permissions:
 concurrency:
   group: "auto-merge-to-main-${{ github.ref }}"
   cancel-in-progress: true
@@ -20,11 +21,16 @@ jobs:
   build-and-pr:
       - name: Checkout
         uses: actions/checkout@v4
-          fetch-depth: 0
+          with:
+            fetch-depth: 0
+fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
-          node-version: 20
+          with:
+            node-version: \'20\'
+            cache: \'npm\'
+node-version: 20
           cache: npm
 
       - name: Install dependencies

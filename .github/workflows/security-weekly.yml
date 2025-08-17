@@ -1,11 +1,11 @@
 name: Security Weekly
 
 on:
-  schedule:
+
     - cron: '0 2 * * 1'
   workflow_dispatch:
 
-
+permissions:
 concurrency:
   group: "github.workflow-${{ github.ref }}"
   cancel-in-progress: true
@@ -18,9 +18,16 @@ jobs:
   security-scan:
       - name: Checkout
         uses: actions/checkout@v4
+       with:
+         fetch-depth: 0
+ with:
+          fetch-depth: 0
       - name: Setup Node.js
         uses: actions/setup-node@v4
-          node-version: 20
+          with:
+            node-version: \'20\'
+            cache: \'npm\'
+node-version: 20
           cache: 'npm'
       - name: Install dependencies
         run: "npm ci

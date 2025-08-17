@@ -1,7 +1,7 @@
 name: Netlify Build Automation
 
 on:
-  push:
+
     branches: [ main, develop ]
   pull_request:
     branches: [ main ]
@@ -21,13 +21,13 @@ on:
           - monitor
           - health-check
 
+permissions:
 concurrency:
   group: "github.workflow-${{ github.ref }}"
   cancel-in-progress: true
 
   contents: read
   actions: read
-
 
   NODE_VERSION: '20'
   NODE_OPTIONS: '--max-old-space-size=6144 --openssl-legacy-provider'
@@ -38,10 +38,16 @@ jobs:
     
       - name: Checkout code
         uses: actions/checkout@v4
-      
+       with:
+         fetch-depth: 0
+ with:
+          fetch-depth: 0
       - name: Setup Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
-        node-version: ${{ matrix.node-version }}"
+        with:
+          node-version: \'20\'
+          cache: \'npm\'
+node-version: ${{ matrix.node-version }}"
         cache: 'npm'
         
       - name: Install dependencies
@@ -172,10 +178,16 @@ jobs:
     
       - name: Checkout code
         uses: actions/checkout@v4
-      
+       with:
+         fetch-depth: 0
+ with:
+          fetch-depth: 0
       - name: Setup Node.js
         uses: actions/setup-node@v4
-        node-version: '20'
+        with:
+          node-version: \'20\'
+          cache: \'npm\'
+node-version: '20'
         cache: 'npm'
         
       - name: Install dependencies

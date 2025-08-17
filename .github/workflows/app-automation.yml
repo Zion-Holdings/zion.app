@@ -1,7 +1,7 @@
 name: App Automation
 
 on:
-  schedule:
+
     - cron: '0 1 * * 1'  # Every Monday at 1 AM
   workflow_dispatch:  # Manual trigger
   push:
@@ -9,7 +9,7 @@ on:
       - 'automation/orchestrator-config.json'
       - 'automation/app-automation-orchestrator.cjs'
 
-
+permissions:
 concurrency:
   group: "github.workflow-${{ github.ref }}"
   cancel-in-progress: true
@@ -18,10 +18,16 @@ jobs:
   run-orchestrator:
       - name: Checkout code
         uses: actions/checkout@v4
-        
+       with:
+         fetch-depth: 0
+ with:
+          fetch-depth: 0
       - name: Setup Node.js
         uses: actions/setup-node@v4
-          node-version: '20'
+          with:
+            node-version: \'20\'
+            cache: \'npm\'
+node-version: '20'
           cache: 'npm'
           
       - name: Install dependencies

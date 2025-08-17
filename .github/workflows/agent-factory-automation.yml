@@ -1,7 +1,7 @@
 name: Agent Factory - Exponential Development Automation
 
 on:
-  schedule:
+
     # Run every 6 hours for continuous automation
     - cron: '0 0 * * *'
   workflow_dispatch:
@@ -37,9 +37,9 @@ on:
       - 'components/**'
       - 'pages/**'
 
+permissions:
   NODE_VERSION: '18'
   AGENT_GENERATION_INTERVAL: 21600 # 6 hours in seconds
-
 
 concurrency:
   group: "github.workflow-${{ github.ref }}"
@@ -54,12 +54,17 @@ jobs:
     
       - name: Checkout Repository
         uses: actions/checkout@v4
-          token: ${{ secrets.GITHUB_TOKEN }}
+          with:
+            fetch-depth: 0
+token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
-          node-version: ${{ env.NODE_VERSION }}"
+          with:
+            node-version: \'20\'
+            cache: \'npm\'
+node-version: ${{ env.NODE_VERSION }}"
           cache: 'npm'
 
       - name: Install Dependencies
@@ -234,10 +239,14 @@ jobs:
     
       - name: Checkout Repository
         uses: actions/checkout@v4
-
-      - name: Setup Node.js
+      with:
+        fetch-depth: 0
+- name: Setup Node.js
         uses: actions/setup-node@v4
-          node-version: ${{ env.NODE_VERSION }}
+          with:
+            node-version: \'20\'
+            cache: \'npm\'
+node-version: ${{ env.NODE_VERSION }}
 
       - name: Deploy Agents to Production
         run: |
@@ -275,8 +284,9 @@ jobs:
     
       - name: Checkout Repository
         uses: actions/checkout@v4
-
-      - name: Analyze Agent Performance
+      with:
+        fetch-depth: 0
+- name: Analyze Agent Performance
         run: |
           echo "Analyzing agent performance for ${{ matrix.optimization_type }} optimization..."
           
@@ -343,8 +353,9 @@ jobs:
     
       - name: Checkout Repository
         uses: actions/checkout@v4
-
-      - name: Calculate Growth Metrics
+      with:
+        fetch-depth: 0
+- name: Calculate Growth Metrics
         run: |
           echo "Calculating exponential growth metrics..."
           
@@ -388,8 +399,9 @@ jobs:
     
       - name: Checkout Repository
         uses: actions/checkout@v4
-
-      - name: Analyze Development Patterns
+      with:
+        fetch-depth: 0
+- name: Analyze Development Patterns
         run: |
           echo "Analyzing development patterns for autonomous decision making..."
           

@@ -1,28 +1,29 @@
 name: AI-IT Multi Factory
 
 on:
-  workflow_dispatch: {}
+
   schedule:
     - cron: '0 0 * * *'
 
-
+permissions:
 concurrency:
   group: "github.workflow-${{ github.ref }}"
   cancel-in-progress: true
-
-  contents: write
-  actions: read
-
 jobs:
   main:
     name: Main Job
       - name: Checkout repository
         uses: actions/checkout@v4
-          fetch-depth: 0
+          with:
+            fetch-depth: 0
+fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
-          node-version: '20'
+          with:
+            node-version: \'20\'
+            cache: \'npm\'
+node-version: '20'
           cache: 'npm'
 
       - name: Install dependencies

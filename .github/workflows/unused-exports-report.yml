@@ -1,10 +1,11 @@
 name: Unused Exports Report
 
 on:
-  schedule:
+
     - cron: '0 0 * * *'
   workflow_dispatch: {}
 
+permissions:
   contents: write
 
 concurrency:
@@ -16,10 +17,15 @@ jobs:
   report:
       - name: Checkout
         uses: actions/checkout@v4
-          fetch-depth: 0
+          with:
+            fetch-depth: 0
+fetch-depth: 0
       - name: Setup Node
         uses: actions/setup-node@v4
-          node-version: '20'
+          with:
+            node-version: \'20\'
+            cache: \'npm\'
+node-version: '20'
           cache: npm
       - name: Install dependencies
         run: npm ci --no-audit --no-fund

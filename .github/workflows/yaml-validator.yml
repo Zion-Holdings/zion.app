@@ -1,7 +1,7 @@
 name: YAML Syntax Validator
 
 on:
-  push:
+
     paths:
       - '**.yml'
       - '**.yaml'
@@ -12,12 +12,32 @@ on:
   schedule:
     - cron: '0 0 * * *'  # Daily validation
 
+- name: Install dependencies
+
+  run: npm ci --no-audit --no-fund
+
+- name: Complete workflow
+
+  run: |
+
+    echo "Workflow completed successfully"
+
+permissions:
+
+concurrency:
+
+  group: "github.workflow-${{ github.ref }}"
+
+  cancel-in-progress: true
 jobs:
   validate-yaml:
     name: Validate YAML Syntax
       - name: Checkout code
         uses: actions/checkout@v4
-
+       with:
+         fetch-depth: 0
+ with:
+          fetch-depth: 0
       - name: Setup Python
         uses: actions/setup-python@v4
           python-version: '3.11'

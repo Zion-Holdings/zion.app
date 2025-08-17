@@ -1,11 +1,21 @@
 name: Branch Pruner
 
 on:
-  schedule:
+
     - cron: '7 3 * * 0'
   workflow_dispatch: {}
 
+- name: Install dependencies
 
+  run: npm ci --no-audit --no-fund
+
+- name: Complete workflow
+
+  run: |
+
+    echo "Workflow completed successfully"
+
+permissions:
 concurrency:
   group: "github.workflow-${{ github.ref }}"
   cancel-in-progress: true
@@ -17,7 +27,9 @@ jobs:
   prune:
       - name: Checkout
         uses: actions/checkout@v4
-          fetch-depth: 0
+          with:
+            fetch-depth: 0
+fetch-depth: 0
       - name: Fetch all branches
         run: |
           git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}"

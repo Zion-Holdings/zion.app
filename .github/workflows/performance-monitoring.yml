@@ -1,7 +1,7 @@
 name: Performance Monitoring
 
 on:
-  workflow_dispatch:
+
   schedule:
     - cron: '0 0 * * *'  # Every 6 hours
   push:
@@ -12,7 +12,7 @@ on:
       - 'next.config.js'
       - 'tailwind.config.js'
 
-
+permissions:
 concurrency:
   group: "github.workflow-${{ github.ref }}"
   cancel-in-progress: true
@@ -23,9 +23,18 @@ jobs:
     
       - name: Checkout code
         uses: actions/checkout@v4
-        
+       with:
+         fetch-depth: 0
+ with:
+          fetch-depth: 0
       - name: Setup Node.js
         uses: actions/setup-node@v4
+       with:
+         node-version: \'20\'
+         cache: \'npm\'
+ with:
+          node-version: '20'
+          cache: 'npm'
           'node-version': '18'
           cache: 'npm'
           
@@ -76,9 +85,18 @@ jobs:
     
       - name: Checkout code
         uses: actions/checkout@v4
-        
+       with:
+         fetch-depth: 0
+ with:
+          fetch-depth: 0
       - name: Setup Node.js
         uses: actions/setup-node@v4
+       with:
+         node-version: \'20\'
+         cache: \'npm\'
+ with:
+          node-version: '20'
+          cache: 'npm'
           'node-version': '18'
           cache: 'npm'
           

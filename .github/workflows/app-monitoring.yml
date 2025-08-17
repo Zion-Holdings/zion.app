@@ -1,11 +1,11 @@
 name: App Monitoring
 
 on:
-  schedule:
+
     - cron: '0 0 * * *'  # Every 6 hours
   workflow_dispatch:  # Manual trigger
 
-
+permissions:
 concurrency:
   group: "github.workflow-${{ github.ref }}"
   cancel-in-progress: true
@@ -14,10 +14,16 @@ jobs:
   monitor-performance:
       - name: Checkout code
         uses: actions/checkout@v4
-        
+       with:
+         fetch-depth: 0
+ with:
+          fetch-depth: 0
       - name: Setup Node.js
         uses: actions/setup-node@v4
-          node-version: '20'
+          with:
+            node-version: \'20\'
+            cache: \'npm\'
+node-version: '20'
           cache: 'npm'
           
       - name: Install dependencies
@@ -40,10 +46,16 @@ jobs:
   monitor-security:
       - name: Checkout code
         uses: actions/checkout@v4
-        
+       with:
+         fetch-depth: 0
+ with:
+          fetch-depth: 0
       - name: Setup Node.js
         uses: actions/setup-node@v4
-          node-version: '20'
+          with:
+            node-version: \'20\'
+            cache: \'npm\'
+node-version: '20'
           cache: 'npm'
           
       - name: Install dependencies

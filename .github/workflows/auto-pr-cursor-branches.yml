@@ -1,12 +1,22 @@
 name: Auto PR for Cursor Branches
 
 on:
-  push:
+
     branches:
       - 'cursor/**'
   workflow_dispatch: {}
 
+- name: Install dependencies
 
+  run: npm ci --no-audit --no-fund
+
+- name: Complete workflow
+
+  run: |
+
+    echo "Workflow completed successfully"
+
+permissions:
 concurrency:
   group: "github.workflow-${{ github.ref }}"
   cancel-in-progress: true
@@ -19,7 +29,9 @@ jobs:
   open-pr:
       - name: Checkout
         uses: actions/checkout@v4
-          fetch-depth: 0
+          with:
+            fetch-depth: 0
+fetch-depth: 0
 
       - name: Create or update PR to main
         uses: peter-evans/create-pull-request@v6

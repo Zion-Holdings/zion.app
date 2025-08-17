@@ -1,9 +1,9 @@
 name: "Agent: agent-1755379759037-7-full-stack-intermediate"
 on:
-  workflow_dispatch:
+
   schedule:
     - cron: 0 */6 * * *
-
+permissions:
 concurrency:
   group: "github.workflow-${{ github.ref }}"
   cancel-in-progress: true
@@ -12,9 +12,16 @@ jobs:
   agent-execution:
       - name: Checkout code
         uses: actions/checkout@v4
+       with:
+         fetch-depth: 0
+ with:
+          fetch-depth: 0
       - name: Setup Node.js
         uses: actions/setup-node@v4
-        node-version: 18
+        with:
+          node-version: \'20\'
+          cache: \'npm\'
+node-version: 18
       - name: Install dependencies
         run: npm ci
       - name: Run agent

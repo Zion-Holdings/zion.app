@@ -1,24 +1,30 @@
 name: Autonomous Lighthouse CI
 
 on:
-  schedule:
+
     - cron: '30 3 * * *'
   workflow_dispatch: {}
 
+permissions:
 concurrency:
   group: automation-lighthouse
   cancel-in-progress: false
 
 jobs:
   lhci:
-    runs-on: ubuntu-latest
-    steps:
+
       - name: Checkout
         uses: actions/checkout@v4
-
+       with:
+         fetch-depth: 0
+ with:
+          fetch-depth: 0
       - name: Setup Node
         uses: actions/setup-node@v4
-        with:
+       with:
+         node-version: \'20\'
+         cache: \'npm\'
+ with:
           node-version: '20'
 
       - name: Install dependencies
