@@ -1,0 +1,67 @@
+name: Agent Factory
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  generate-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.build.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build agent matrix from blueprints
+        id: build
+        shell: bash
+        run: |
+          set -e
+          node -e '
+          const fs = require("fs");
+          const path = require("path");
+          const dir = "automation/cursor-agents";
+          const files = fs.existsSync(dir) ? fs.readdirSync(dir).filter(f => f.endsWith(".json")) : [];
+          const MAX = parseInt(process.env.MAX_AGENTS || "25", 10);
+          const include = files.slice(0, MAX).map(f => ({ id: path.basename(f, ".json"), path: path.join(dir, f) }));
+          const matrix = include.map(x => ({ id: x.id, path: x.path }));
+          process.stdout.write(JSON.stringify(matrix));
+          ' > /tmp/matrix.json
+          echo "matrix=$(cat /tmp/matrix.json)" >> "$GITHUB_OUTPUT"
+
+  spawn-agents:
+    needs: generate-matrix
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJSON(needs.generate-matrix.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install minimal tooling
+        run: |
+          npm i -g pnpm || true
+          pnpm -v || true
+      - name: Run agent to generate proposal changes
+        env:
+          AGENT_ID: ${{ matrix.id }}
+          AGENT_BLUEPRINT: ${{ matrix.path }}
+        run: |
+          node scripts/run-agent.cjs --blueprint "$AGENT_BLUEPRINT" || echo "No agent output"
+      - name: Open PR for agent
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: agent/${{ matrix.id }}-${{ github.run_id }}
+          title: "Agent: ${{ matrix.id }} improvement"
+          body: |
+            Automated proposal from agent `${{ matrix.id }}`.
+            Generated from blueprint `${{ matrix.path }}`.
+          commit-message: "Agent ${{ matrix.id }} proposal"
+          labels: agent, automated
+          signoff: true
