@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T13:07:03.943Z",
+  "generatedAt": "2025-08-17T13:08:03.801Z",
   "entries": [
     {
       "route": "/user-management",
@@ -762,6 +762,12 @@
       "file": "pages/reports/updates/update-2025-08-17-1010.tsx",
       "title": "Autonomous Checklist — Agentic Workflows (2025-08-17 10:10 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Checklist — Agentic Workflows (2025-08-17 10:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1008",
+      "file": "pages/reports/updates/update-2025-08-17-1008.tsx",
+      "title": "Autonomous Update — 2025-08-17 10:08",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 10:08 Autonomous Update — 2025-08-17 10:08 Signal over noise—your automated update is here. Today's Highlight Hacker News : The young, inexperienced engineers aiding DOGE "
     },
     {
       "route": "/reports/updates/update-2025-08-17-1007",
