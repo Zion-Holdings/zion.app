@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-17T14:20:01.760Z",
-  "pagesScanned": 7781,
+  "generatedAt": "2025-08-17T14:21:01.073Z",
+  "pagesScanned": 7790,
   "items": [
     {
       "route": "/404",
@@ -7430,6 +7430,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-17-141056",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-17-142057",
       "missing": [
         "og:image"
       ],
@@ -17090,6 +17100,16 @@
     },
     {
       "route": "/reports/cases/case-2025-08-17-141057",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Cloud Improving",
+        "description": "Case Study — Cloud Improving — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-17-142058",
       "missing": [
         "og:image"
       ],
@@ -27409,6 +27429,16 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-17-142058",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-15-0211",
       "missing": [
         "og:image"
@@ -33229,6 +33259,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-17-1420",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Checklist: RAG Platforms",
+        "description": "Checklist: RAG Platforms — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-17T00-00",
       "missing": [
         "og:image"
@@ -34096,6 +34136,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-17 14-10",
         "description": "Innovation Insight — 2025-08-17 14-10 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-17T14-20",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-17 14-20",
+        "description": "Innovation Insight — 2025-08-17 14-20 — auto-suggested description"
       }
     },
     {
@@ -44389,6 +44439,16 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-17-142058",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Automation Trends 2025",
+        "description": "Pattern — Automation Trends 2025 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-15-021207",
       "missing": [
         "og:image"
@@ -51480,6 +51540,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-17-141057",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-17-142058",
       "missing": [
         "og:image"
       ],
@@ -76879,6 +76949,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-17-1420",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Performance Tuning Guide — MLOps & Model Reliability (2025-08-17 14:20 UTC)",
+        "description": "Autonomous Performance Tuning Guide — MLOps & Model Reliability (2025-08-17 14:20 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-17T00-00",
       "missing": [
         "og:image"
@@ -77746,6 +77826,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-17 14-10",
         "description": "Autonomous Update — 2025-08-17 14-10 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17T14-20",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 14-20",
+        "description": "Autonomous Update — 2025-08-17 14-20 — auto-suggested description"
       }
     },
     {
