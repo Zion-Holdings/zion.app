@@ -1,10 +1,55 @@
 name: App Automation
 
 on:
+permissions:
+  contents: read
+  actions: read
   schedule:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
     - cron: '0 1 * * 1'  # Every Monday at 1 AM
   workflow_dispatch:  # Manual trigger
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
   push:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
     paths:
       - 'automation/orchestrator-config.json'
       - 'automation/app-automation-orchestrator.cjs'
@@ -12,10 +57,52 @@ on:
 
 concurrency:
   group: "github.workflow-${{ github.ref }}"
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
   cancel-in-progress: true
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
 
 jobs:
   run-orchestrator:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
       - name: Checkout code
         uses: actions/checkout@v4
         
@@ -43,6 +130,20 @@ jobs:
           branch: ${{ github.ref }}
 
   notify-completion:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
       - name: Notify completion
         run: |
           echo "App Automation Orchestrator completed"

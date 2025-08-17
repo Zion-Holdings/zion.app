@@ -1,20 +1,121 @@
 name: SEO Audit
 
 on:
+permissions:
+  contents: read
+  actions: read
   workflow_dispatch: {}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
   schedule:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
     - cron: '0 */4 * * *'  # Run every 2 hours instead of every 10 minutes
 
 
 concurrency:
   group: "github.workflow-${{ github.ref }}"
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
   cancel-in-progress: true
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
 
   contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
   actions: read
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
 
 jobs:
   main:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
     name: Main Job
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -80,12 +181,40 @@ jobs:
 
       - name: Configure git
   if: steps.check_changes.outputs.has_changes == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           echo "Git configured successfully"
 
       - name: Add and commit changes
   if: steps.check_changes.outputs.has_changes == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
           echo "Adding files to git..."
           git add -A || echo "Git add failed"
           echo "Committing changes..."
@@ -97,6 +226,20 @@ jobs:
 
       - name: Push changes
   if: steps.check_changes.outputs.has_changes == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
           echo "Pushing changes..."
           if git push origin HEAD:$(git rev-parse --abbrev-ref HEAD); then
             echo "Changes pushed successfully"
@@ -106,6 +249,20 @@ jobs:
 
       - name: No changes notification
   if: steps.check_changes.outputs.has_changes == 'false'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
 
       - name: Final status
         run: |

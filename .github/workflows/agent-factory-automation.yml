@@ -1,4 +1,4 @@
-name: WORKFLOW_NAME_PLACEHOLDER
+name: agent-factory-automation
 
 on:
   workflow_dispatch: {}
@@ -6,7 +6,11 @@ on:
     - cron: '*/10 * * * *'
 
 permissions:
+concurrency:
+  group: "${{ github.workflow }}-${{ github.ref }}"
+  cancel-in-progress: true
   contents: write
+  pull-requests: write
   actions: read
 
 jobs:
@@ -31,4 +35,4 @@ jobs:
 
       - name: Run workflow
         run: |
-          echo "Workflow WORKFLOW_NAME_PLACEHOLDER completed successfully"
+          echo "Workflow agent-factory-automation completed successfully"

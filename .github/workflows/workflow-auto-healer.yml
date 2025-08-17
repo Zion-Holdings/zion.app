@@ -6,6 +6,9 @@ on:
   workflow_dispatch: {}
 
 permissions:
+concurrency:
+  group: "${{ github.workflow }}-${{ github.ref }}"
+  cancel-in-progress: true
   contents: read
   actions: read
 

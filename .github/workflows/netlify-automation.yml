@@ -1,14 +1,73 @@
 name: Netlify Build Automation
 
 on:
+permissions:
+  contents: read
+  actions: read
   push:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
     branches: [ main, develop ]
   pull_request:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
     branches: [ main ]
   schedule:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
     # Run automation every 6 hours
     - cron: '0 0 * * *'
   workflow_dispatch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
     inputs:
       automation_type:
         description: 'Type of automation to run'
@@ -23,14 +82,98 @@ on:
 
 concurrency:
   group: "github.workflow-${{ github.ref }}"
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
   cancel-in-progress: true
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
 
   contents: read
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
   actions: read
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
 
 
   NODE_VERSION: '20'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
   NODE_OPTIONS: '--max-old-space-size=6144 --openssl-legacy-provider'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
 
 jobs:
     
@@ -114,6 +257,20 @@ jobs:
         
       - name: Comment PR with results"
   if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
         script: |
           const fs = require('fs');
           
@@ -169,6 +326,20 @@ jobs:
           });
 
   monitoring:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
     
       - name: Checkout code
         uses: actions/checkout@v4
@@ -193,6 +364,20 @@ jobs:
         retention-days: 7
 
   notification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
     
       - name: Check automation status
         id: check-status

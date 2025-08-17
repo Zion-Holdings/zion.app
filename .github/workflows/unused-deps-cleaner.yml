@@ -2,23 +2,149 @@ name: Unused Dependencies Cleaner
 
 on:
   schedule:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
     - cron: '0 4 * * 0'
   workflow_dispatch: {}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
 
 
 concurrency:
   group: "github.workflow-${{ github.ref }}"
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
   cancel-in-progress: true
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
 
   contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
   pull-requests: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
 
 permissions:
   contents: read
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
   actions: read
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
 jobs:
 
   detect-and-prune:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
       - name: Checkout
         uses: actions/checkout@v4
           fetch-depth: 0
@@ -35,10 +161,38 @@ jobs:
           node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('depcheck.json','utf8'));const u=[...new Set([...(r.dependencies||[]),...(r.devDependencies||[])])];if(u.length){console.log('Unused:',u);process.exit(0)}else{console.log('No unused deps');process.exit(2)}" || echo "NONE" > /dev/null
       - name: Prune and test
   if: success()
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
           node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('depcheck.json','utf8'));const u=[...new Set([...(r.dependencies||[]),...(r.devDependencies||[])])];if(u.length){const {execSync}=require('child_process');for(const d of u){try{execSync(`npm uninstall ${d}`,{stdio:'inherit'})}catch(e){}}}"
           npm run build || npm run build:heal || true
       - name: Create Pull Request
   if: success()
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "chore(deps): remove unused dependencies via depcheck"
           title: "chore(deps): remove unused dependencies"
