@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-17T15:41:01.407Z",
-  "pagesScanned": 7936,
+  "generatedAt": "2025-08-17T15:42:01.068Z",
+  "pagesScanned": 7938,
   "items": [
     {
       "route": "/404",
@@ -78146,6 +78146,29 @@
       "suggestion": {
         "title": "Autonomous Blueprint — Data Engineering (2025-08-17 12:40 UTC)",
         "description": "Autonomous Blueprint — Data Engineering (2025-08-17 12:40 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1241",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 12:41",
+        "description": "Autonomous Update — 2025-08-17 12:41 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1242",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 12:42",
+        "description": "Autonomous Update — 2025-08-17 12:42 — auto-suggested description"
       }
     },
     {
