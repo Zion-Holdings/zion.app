@@ -9,6 +9,9 @@ permissions:
   contents: write
   actions: read
 
+concurrency:
+  group: "workflow-${{ github.ref }}"
+  cancel-in-progress: false
 jobs:
   cleanup:
     name: Cleanup Repository
