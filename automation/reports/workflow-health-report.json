@@ -1,11 +1,11 @@
 {
-  "timestamp": "2025-08-17T00:19:32.157Z",
+  "timestamp": "2025-08-17T00:19:58.522Z",
   "summary": {
-    "totalWorkflows": 188,
-    "activeWorkflows": 187,
+    "totalWorkflows": 189,
+    "activeWorkflows": 188,
     "disabledWorkflows": 0,
-    "workflowsWithIssues": 82,
-    "totalIssues": 83
+    "workflowsWithIssues": 83,
+    "totalIssues": 84
   },
   "patterns": {
     "highComplexity": [
@@ -59,6 +59,7 @@
       "auto-semver-release.yml",
       "auto-update-prs.yml",
       "automation-advertiser.yml",
+      "automation-cleanup.yml",
       "automation-dashboard.yml",
       "automation-guardian-10min.yml",
       "automation-orchestrator.yml",
@@ -240,6 +241,7 @@
       "ai-research-scout.yml",
       "auto-media-release.yml",
       "auto-semver-release.yml",
+      "automation-cleanup.yml",
       "automation-orchestrator.yml",
       "autonomous-cloud-automations.yml",
       "autonomous-cloud-fast.yml",
@@ -2024,6 +2026,43 @@
       "concurrency": null,
       "issues": [],
       "recommendations": [
+        "Add workflow_dispatch trigger for manual testing",
+        "Consider splitting into smaller workflows for better maintainability"
+      ]
+    },
+    "automation-cleanup.yml": {
+      "name": "automation-cleanup.yml",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/automation-cleanup.yml",
+      "size": 2135,
+      "lines": 65,
+      "triggers": [
+        "schedule",
+        "workflow_dispatch {}"
+      ],
+      "jobs": [
+        "schedule",
+        "jobs",
+        "cleanup",
+        "steps",
+        "with",
+        "with"
+      ],
+      "timeouts": [
+        30
+      ],
+      "permissions": [
+        {
+          "permission": "contents",
+          "value": "write"
+        }
+      ],
+      "concurrency": null,
+      "issues": [
+        "unsafe_git_push"
+      ],
+      "recommendations": [
+        "Add branch protection to git push operations",
         "Add workflow_dispatch trigger for manual testing",
         "Consider splitting into smaller workflows for better maintainability"
       ]
@@ -7600,6 +7639,7 @@
         "Add branch protection to ai-research-scout.yml",
         "Add branch protection to auto-media-release.yml",
         "Add branch protection to auto-semver-release.yml",
+        "Add branch protection to automation-cleanup.yml",
         "Add branch protection to automation-orchestrator.yml",
         "Add branch protection to autonomous-cloud-automations.yml",
         "Add branch protection to autonomous-cloud-fast.yml",
@@ -7697,6 +7737,7 @@
         "Refactor auto-semver-release.yml into smaller, focused workflows",
         "Refactor auto-update-prs.yml into smaller, focused workflows",
         "Refactor automation-advertiser.yml into smaller, focused workflows",
+        "Refactor automation-cleanup.yml into smaller, focused workflows",
         "Refactor automation-dashboard.yml into smaller, focused workflows",
         "Refactor automation-guardian-10min.yml into smaller, focused workflows",
         "Refactor automation-orchestrator.yml into smaller, focused workflows",
@@ -7881,6 +7922,7 @@
       "Add branch protection to ai-research-scout.yml",
       "Add branch protection to auto-media-release.yml",
       "Add branch protection to auto-semver-release.yml",
+      "Add branch protection to automation-cleanup.yml",
       "Add branch protection to automation-orchestrator.yml",
       "Add branch protection to autonomous-cloud-automations.yml",
       "Add branch protection to autonomous-cloud-fast.yml",
@@ -7978,6 +8020,7 @@
       "Refactor auto-semver-release.yml into smaller, focused workflows",
       "Refactor auto-update-prs.yml into smaller, focused workflows",
       "Refactor automation-advertiser.yml into smaller, focused workflows",
+      "Refactor automation-cleanup.yml into smaller, focused workflows",
       "Refactor automation-dashboard.yml into smaller, focused workflows",
       "Refactor automation-guardian-10min.yml into smaller, focused workflows",
       "Refactor automation-orchestrator.yml into smaller, focused workflows",

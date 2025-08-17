@@ -1,18 +1,18 @@
 {
-  "timestamp": "2025-08-17T00:17:39.313Z",
+  "timestamp": "2025-08-17T00:19:39.788Z",
   "summary": {
-    "totalWorkflows": 187,
+    "totalWorkflows": 188,
     "complexityDistribution": {
       "very-high": 0,
       "high": 6,
       "medium": 3,
-      "low": 178
+      "low": 179
     },
     "refactoringPriorities": {
       "critical": 0,
       "high": 6,
       "medium": 3,
-      "low": 178
+      "low": 179
     }
   },
   "workflows": {
@@ -916,6 +916,24 @@
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/automation-advertiser.yml"
     },
+    "automation-cleanup.yml": {
+      "complexityScore": 10,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 65,
+        "jobCount": 1,
+        "stepCount": 5,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/automation-cleanup.yml"
+    },
     "automation-dashboard.yml": {
       "complexityScore": 30,
       "complexityLevel": "medium",
@@ -1061,12 +1079,12 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-auto-merge-to-main.yml"
     },
     "autonomous-cloud-automations.yml": {
-      "complexityScore": 5,
+      "complexityScore": 15,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 45,
+        "totalLines": 57,
         "jobCount": 1,
-        "stepCount": 7,
+        "stepCount": 8,
         "conditionalCount": 0,
         "matrixCount": 0,
         "dependencyCount": 0,
@@ -1097,12 +1115,12 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-cloud-fast.yml"
     },
     "autonomous-cloud-runner.yml": {
-      "complexityScore": 0,
+      "complexityScore": 15,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 45,
+        "totalLines": 65,
         "jobCount": 1,
-        "stepCount": 5,
+        "stepCount": 6,
         "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
@@ -1118,9 +1136,9 @@
       "complexityScore": 20,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 62,
+        "totalLines": 72,
         "jobCount": 1,
-        "stepCount": 14,
+        "stepCount": 15,
         "conditionalCount": 0,
         "matrixCount": 0,
         "dependencyCount": 0,

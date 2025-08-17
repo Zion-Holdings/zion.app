@@ -943,6 +943,23 @@
     },
     "estimatedDuration": 20
   },
+  "automation-cleanup.yml": {
+    "name": "automation-cleanup.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 30,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 30
+  },
   "automation-dashboard.yml": {
     "name": "automation-dashboard.yml",
     "triggers": [
@@ -1168,10 +1185,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 30
   },
   "autonomous-cloud-fast.yml": {
     "name": "autonomous-cloud-fast.yml",
@@ -1219,10 +1236,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 15,
+      "timeout": 25,
       "concurrentJobs": 3
     },
-    "estimatedDuration": 15
+    "estimatedDuration": 25
   },
   "autonomous-content-curation.yml": {
     "name": "autonomous-content-curation.yml",

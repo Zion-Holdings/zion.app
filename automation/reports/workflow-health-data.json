@@ -1728,6 +1728,43 @@
       "Consider splitting into smaller workflows for better maintainability"
     ]
   },
+  "automation-cleanup.yml": {
+    "name": "automation-cleanup.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/automation-cleanup.yml",
+    "size": 2135,
+    "lines": 65,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "cleanup",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      30
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
   "automation-dashboard.yml": {
     "name": "automation-dashboard.yml",
     "status": "active",
@@ -7300,6 +7337,7 @@
       "Add branch protection to ai-research-scout.yml",
       "Add branch protection to auto-media-release.yml",
       "Add branch protection to auto-semver-release.yml",
+      "Add branch protection to automation-cleanup.yml",
       "Add branch protection to automation-orchestrator.yml",
       "Add branch protection to autonomous-cloud-automations.yml",
       "Add branch protection to autonomous-cloud-fast.yml",
@@ -7397,6 +7435,7 @@
       "Refactor auto-semver-release.yml into smaller, focused workflows",
       "Refactor auto-update-prs.yml into smaller, focused workflows",
       "Refactor automation-advertiser.yml into smaller, focused workflows",
+      "Refactor automation-cleanup.yml into smaller, focused workflows",
       "Refactor automation-dashboard.yml into smaller, focused workflows",
       "Refactor automation-guardian-10min.yml into smaller, focused workflows",
       "Refactor automation-orchestrator.yml into smaller, focused workflows",
