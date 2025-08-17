@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T06:01:03.517Z",
+  "generatedAt": "2025-08-17T06:02:03.703Z",
   "entries": [
     {
       "route": "/user-management",
@@ -504,6 +504,12 @@
       "file": "pages/reports/updates/update-2025-08-17-0310.tsx",
       "title": "Autonomous Reference Architecture — AI Service Design (2025-08-17 03:10 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Reference Architecture — AI Service Design (2025-08-17 03:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\","
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0302",
+      "file": "pages/reports/updates/update-2025-08-17-0302.tsx",
+      "title": "Autonomous Update — 2025-08-17 03:02",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 03:02 Autonomous Update — 2025-08-17 03:02 Signal over noise—your automated update is here. Today's Highlight Hacker News : Open source AI is the path forward · 2360 pts W"
     },
     {
       "route": "/reports/updates/update-2025-08-17-0301",
