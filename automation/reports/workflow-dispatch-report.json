@@ -1,6 +1,6 @@
 {
   "plan": {
-    "timestamp": "2025-08-17T18:44:45.271Z",
+    "timestamp": "2025-08-17T18:45:48.592Z",
     "changes": [
       "package.json",
       "src/components/Button.tsx",
@@ -70,14 +70,14 @@
           "workflow": "ci.yml",
           "success": true,
           "skipped": false,
-          "executionId": "exec_1755456287375_wfcvdclp1",
-          "duration": 2384.4538187278845
+          "executionId": "exec_1755456350758_9s3cpkgda",
+          "duration": 2985.822610746465
         }
       ],
       "success": 1,
       "failed": 0,
       "skipped": 0,
-      "duration": 2102
+      "duration": 2164
     },
     {
       "type": "security",
@@ -94,18 +94,18 @@
           "workflow": "dependency-auto-upgrade.yml",
           "success": true,
           "skipped": false,
-          "executionId": "exec_1755456293761_b09ox8bsc",
-          "duration": 5782.347289157486
+          "executionId": "exec_1755456358212_v04njo6n3",
+          "duration": 5025.227783608036
         }
       ],
       "success": 1,
       "failed": 0,
       "skipped": 0,
-      "duration": 1383
+      "duration": 2452
     }
   ],
   "success": 2,
   "failed": 0,
   "skipped": 0,
-  "totalDuration": 3485
+  "totalDuration": 4616
 }
