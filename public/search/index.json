@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T10:26:03.611Z",
+  "generatedAt": "2025-08-17T10:27:03.639Z",
   "entries": [
     {
       "route": "/user-management",
@@ -660,6 +660,12 @@
       "file": "pages/reports/updates/update-2025-08-17-0730.tsx",
       "title": "Autonomous Security Hardening Guide — Edge AI & IoT (2025-08-17 07:30 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Security Hardening Guide — Edge AI & IoT (2025-08-17 07:30 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0727",
+      "file": "pages/reports/updates/update-2025-08-17-0727.tsx",
+      "title": "Autonomous Update — 2025-08-17 07:27",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 07:27 Autonomous Update — 2025-08-17 07:27 Signal over noise—your automated update is here. Today's Highlight Hacker News : My AI skeptic friends are all nuts · 2356 pts W"
     },
     {
       "route": "/reports/updates/update-2025-08-17-0726",
