@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T10:41:03.532Z",
+  "generatedAt": "2025-08-17T10:42:03.524Z",
   "entries": [
     {
       "route": "/user-management",
@@ -672,6 +672,12 @@
       "file": "pages/reports/updates/update-2025-08-17-0750.tsx",
       "title": "Autonomous Reference Architecture — Edge AI & IoT (2025-08-17 07:50 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Reference Architecture — Edge AI & IoT (2025-08-17 07:50 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"au"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0742",
+      "file": "pages/reports/updates/update-2025-08-17-0742.tsx",
+      "title": "Autonomous Update — 2025-08-17 07:42",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 07:42 Autonomous Update — 2025-08-17 07:42 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : My AI skeptic friends"
     },
     {
       "route": "/reports/updates/update-2025-08-17-0741",
