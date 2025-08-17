@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T17:48:03.855Z",
+  "generatedAt": "2025-08-17T17:49:03.901Z",
   "entries": [
     {
       "route": "/user-management",
@@ -936,6 +936,12 @@
       "file": "pages/reports/updates/update-2025-08-17-1450.tsx",
       "title": "Autonomous Capability Map — AI Service Design (2025-08-17 14:50 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Capability Map — AI Service Design (2025-08-17 14:50 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1449",
+      "file": "pages/reports/updates/update-2025-08-17-1449.tsx",
+      "title": "Autonomous Update — 2025-08-17 14:49",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 14:49 Autonomous Update — 2025-08-17 14:49 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Airfoil · 2544 pts Why it matters: a"
     },
     {
       "route": "/reports/updates/update-2025-08-17-1448",
