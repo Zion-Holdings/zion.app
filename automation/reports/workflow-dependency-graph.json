@@ -1202,10 +1202,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
+      "timeout": 20,
       "concurrentJobs": 5
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 20
   },
   "autonomous-cloud.yml": {
     "name": "autonomous-cloud.yml",

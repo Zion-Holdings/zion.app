@@ -2131,8 +2131,8 @@
     "name": "autonomous-cloud-runner.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-cloud-runner.yml",
-    "size": 934,
-    "lines": 45,
+    "size": 1846,
+    "lines": 65,
     "triggers": [
       "schedule",
       "workflow_dispatch {}"
@@ -2147,7 +2147,7 @@
       "with"
     ],
     "timeouts": [
-      10
+      20
     ],
     "permissions": [
       {

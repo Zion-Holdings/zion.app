@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-17T00:16:45.149Z",
+  "timestamp": "2025-08-17T00:17:46.669Z",
   "critical": [
     {
       "name": "auto-heal-workflows.yml",
@@ -536,25 +536,6 @@
     {
       "name": "automation-guardian-10min.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/automation-guardian-10min.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 10,
-      "concurrentJobs": 7,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "schedule",
-        "workflow_dispatch {}"
-      ],
-      "resourceScore": 123
-    },
-    {
-      "name": "autonomous-cloud-runner.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-cloud-runner.yml",
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 10,
@@ -2668,6 +2649,25 @@
       "triggers": [
         "schedule",
         "push"
+      ],
+      "resourceScore": 113
+    },
+    {
+      "name": "autonomous-cloud-runner.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-cloud-runner.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 20,
+      "concurrentJobs": 7,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch {}"
       ],
       "resourceScore": 113
     },
