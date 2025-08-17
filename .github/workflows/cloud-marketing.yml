@@ -1,41 +1,64 @@
-name: 🔧 Marketing Automation
-
-on:
-  workflow_dispatch:
+name: Cloud Marketing Automations
+true:
+  workflow_dispatch: null
   schedule:
-    - cron: '0 */4 * * *'  # Every 4 hours
-
+  - cron: 0 2 * * *
 permissions:
-  contents: read
-  actions: read
-
-env:
-  AUTOMATION_TYPE: marketing
-
+  contents: write
+  pull-requests: write
+concurrency:
+  group: cloud-marketing-${{ github.ref }}
+  cancel-in-progress: false
 jobs:
-  automation:
-    name: Run Marketing Automation
+  marketing:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    env:
+      LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+      LINKEDIN_URN: ${{ secrets.LINKEDIN_URN }}
+      LINKEDIN_PERSON_URN: ${{ secrets.LINKEDIN_PERSON_URN }}
+      IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+      IG_IMAGE_URL: ${{ secrets.IG_IMAGE_URL }}
+      CANONICAL_URL: https://ziontechgroup.com
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+        cache: npm
+    - name: Install dependencies
+      run: npm ci
+    - name: Prepare LinkedIn Marketing (analyze + factory)
+      run: 'node automation/linkedin-marketing-analyzer.cjs || true
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
+        node automation/linkedin-marketing-factory.cjs || true
 
-      - name: Install dependencies
-        run: npm ci --no-audit --no-fund
+        '
+    - name: Run LinkedIn Marketing poster (once)
+      run: node automation/linkedin-marketing-orchestrator.cjs once || true
+    - name: Run LinkedIn Pro (analyze + factory + post once)
+      run: node automation/linkedin-pro-orchestrator.cjs once || true
+    - name: Prepare Instagram Marketing (analyze + factory)
+      run: 'node automation/instagram-marketing-analyzer.cjs || true
 
-      - name: Run automation
-        run: |
-          echo "🔧 Running marketing automation..."
-          echo "Automation type: ${{ env.AUTOMATION_TYPE }}"
-          
-          # Automation logic would go here
-          echo "✅ Marketing automation completed successfully"
+        node automation/instagram-marketing-factory.cjs || true
+
+        '
+    - name: Run Instagram Marketing poster (once)
+      run: node automation/instagram-marketing-orchestrator.cjs once || true
+    - name: Commit any generated changes
+      run: 'git config user.name "github-actions[bot]"
+
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+        git add -A
+
+        git diff --cached --quiet || git commit -m "chore(marketing): cloud-run automations
+        [skip ci]"
+
+        git push
+
+        '
+    timeout-minutes: 30

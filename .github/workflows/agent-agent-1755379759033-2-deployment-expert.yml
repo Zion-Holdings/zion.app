@@ -1,38 +1,33 @@
-name: agent-agent-1755379759033-2-deployment-expert
-
-on:
+name: WORKFLOW_NAME_PLACEHOLDER
+true:
   workflow_dispatch: {}
   schedule:
-    - cron: '*/10 * * * *'
-
+  - cron: '*/10 * * * *'
 permissions:
-concurrency:
-  group: "${{ github.workflow }}-${{ github.ref }}"
-  cancel-in-progress: true
   contents: write
-  pull-requests: write
   actions: read
-
+  pull-requests: write
 jobs:
   main:
     name: Main Job
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: npm
+    - name: Install dependencies
+      run: npm ci --no-audit --no-fund
+    - name: Run workflow
+      run: 'echo "Workflow WORKFLOW_NAME_PLACEHOLDER completed successfully"
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci --no-audit --no-fund
-
-      - name: Run workflow
-        run: |
-          echo "Workflow agent-agent-1755379759033-2-deployment-expert completed successfully"
+        '
+concurrency:
+  group: agent-agent-1755379759033-2-deployment-expert.yml-${{ github.ref }}
+  cancel-in-progress: true

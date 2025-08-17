@@ -1,35 +1,120 @@
-name: workflow-validator
-
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: '0 0 * * *'  # Daily at midnight
-
+name: "\u2705 Workflow Validator"
+true:
+  push:
+    branches:
+    - main
+    - develop
+    paths:
+    - .github/workflows/**
+  pull_request:
+    branches:
+    - main
+    - develop
+    paths:
+    - .github/workflows/**
+  workflow_dispatch: null
 permissions:
   contents: read
   actions: read
-
+concurrency:
+  group: workflow-${{ github.ref }}
+  cancel-in-progress: false
 jobs:
-  main:
-    name: Main Job
+  validate:
+    name: Validate Workflows
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 10
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    - name: Install dependencies
+      run: 'pip install pyyaml
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci --no-audit --no-fund
-
-      - name: Run workflow
-        run: |
-          echo "Workflow workflow-validator completed successfully"
-          echo "Automated workflow for workflow-validator"
+        '
+    - name: Validate workflow syntax
+      id: validate
+      run: "echo \"\U0001F50D Validating workflow syntax...\"\n\n# Find all workflow\
+        \ files\nworkflow_files=$(find .github/workflows -name \"*.yml\" -o -name\
+        \ \"*.yaml\")\ntotal_files=$(echo \"$workflow_files\" | wc -l)\n\necho \"\U0001F4C1\
+        \ Found $total_files workflow files\"\n\n# Validate each file\ninvalid_files=()\n\
+        valid_count=0\n\nfor file in $workflow_files; do\n  echo \"  \U0001F50D Checking:\
+        \ $file\"\n  \n  if python3 -c \"import yaml; yaml.safe_load(open('$file',\
+        \ 'r'))\" 2>/dev/null; then\n    echo \"    \u2705 Valid\"\n    valid_count=$((valid_count\
+        \ + 1))\n  else\n    echo \"    \u274C Invalid\"\n    invalid_files+=(\"$file\"\
+        )\n  fi\ndone\n\n# Set outputs\necho \"::set-output name=total_files::$total_files\"\
+        \necho \"::set-output name=valid_count::$valid_count\"\necho \"::set-output\
+        \ name=invalid_count::${#invalid_files[@]}\"\n\n# Summary\necho \"\"\necho\
+        \ \"\U0001F4CA Validation Summary:\"\necho \"  Total files: $total_files\"\
+        \necho \"  Valid files: $valid_count\"\necho \"  Invalid files: ${#invalid_files[@]}\"\
+        \n\nif [ ${#invalid_files[@]} -gt 0 ]; then\n  echo \"\"\n  echo \"\u274C\
+        \ Invalid workflows found:\"\n  for file in \"${invalid_files[@]}\"; do\n\
+        \    echo \"  - $file\"\n  done\n  echo \"\"\n  echo \"\U0001F6A8 Please fix\
+        \ these workflow files before merging\"\n  exit 1\nelse\n  echo \"\"\n  echo\
+        \ \"\u2705 All workflows are valid!\"\nfi\n"
+    - name: Check workflow structure
+      if: steps.validate.outputs.invalid_count == 0
+      run: "echo \"\U0001F50D Checking workflow structure...\"\n\n# Check for common\
+        \ structural issues\nissues_found=0\n\nfor file in $(find .github/workflows\
+        \ -name \"*.yml\" -o -name \"*.yaml\"); do\n  echo \"  \U0001F50D Analyzing:\
+        \ $file\"\n  \n  # Check for required fields\n  if ! grep -q \"^name:\" \"\
+        $file\"; then\n    echo \"    \u26A0\uFE0F  Missing 'name' field\"\n    issues_found=$((issues_found\
+        \ + 1))\n  fi\n  \n  if ! grep -q \"^on:\" \"$file\"; then\n    echo \"  \
+        \  \u26A0\uFE0F  Missing 'on' field\"\n    issues_found=$((issues_found +\
+        \ 1))\n  fi\n  \n  if ! grep -q \"^jobs:\" \"$file\"; then\n    echo \"  \
+        \  \u26A0\uFE0F  Missing 'jobs' field\"\n    issues_found=$((issues_found\
+        \ + 1))\n  fi\n  \n  # Check for runs-on\n  if ! grep -q \"runs-on:\" \"$file\"\
+        ; then\n    echo \"    \u26A0\uFE0F  Missing 'runs-on' specification\"\n \
+        \   issues_found=$((issues_found + 1))\n  fi\n  \n  # Check for steps\n  if\
+        \ ! grep -q \"^  steps:\" \"$file\"; then\n    echo \"    \u26A0\uFE0F  Missing\
+        \ 'steps' section\"\n    issues_found=$((issues_found + 1))\n  fi\ndone\n\n\
+        if [ $issues_found -gt 0 ]; then\n  echo \"\"\n  echo \"\u26A0\uFE0F  Found\
+        \ $issues_found structural issues\"\n  echo \"   These are warnings and won't\
+        \ prevent the workflow from running\"\n  echo \"   but may cause unexpected\
+        \ behavior\"\nelse\n  echo \"\"\n  echo \"\u2705 All workflows have proper\
+        \ structure\"\nfi\n"
+    - name: Generate validation report
+      run: "echo \"\U0001F4CB Generating validation report...\"\n\ncat > workflow-validation-report.md\
+        \ << EOF\n# \u2705 Workflow Validation Report\n\n**Generated:** $(date -u\
+        \ +\"%Y-%m-%d %H:%M UTC\")\n**Repository:** ${{ github.repository }}\n**Branch:**\
+        \ ${{ github.ref_name }}\n**Commit:** ${{ github.sha }}\n\n## \U0001F4CA Validation\
+        \ Results\n\n- **Total Workflows:** ${{ steps.validate.outputs.total_files\
+        \ }}\n- **Valid Workflows:** ${{ steps.validate.outputs.valid_count }}\n-\
+        \ **Invalid Workflows:** ${{ steps.validate.outputs.invalid_count }}\n- **Status:**\
+        \ ${{ steps.validate.outputs.invalid_count == 0 && '\u2705 PASSED' || '\u274C\
+        \ FAILED' }}\n\n## \U0001F50D Details\n\nEOF\n\nif [ \"${{ steps.validate.outputs.invalid_count\
+        \ }}\" -gt 0 ]; then\n  cat >> workflow-validation-report.md << EOF\n### \u274C\
+        \ Validation Failed\n\nThe following workflows have syntax errors and must\
+        \ be fixed:\n\nEOF\n  \n  for file in $(find .github/workflows -name \"*.yml\"\
+        \ -o -name \"*.yaml\"); do\n    if ! python3 -c \"import yaml; yaml.safe_load(open('$file',\
+        \ 'r'))\" 2>/dev/null; then\n      echo \"- \\`$file\\`\" >> workflow-validation-report.md\n\
+        \    fi\n  done\n  \n  cat >> workflow-validation-report.md << EOF\n\n###\
+        \ \U0001F6E0\uFE0F How to Fix\n\n1. **Run the auto-healer:** Use the workflow\
+        \ auto-healer workflow\n2. **Manual fix:** Correct YAML syntax errors manually\n\
+        3. **Validate locally:** Use \\`python3 -c \"import yaml; yaml.safe_load(open('file.yml',\
+        \ 'r'))\"\\`\n\nEOF\nelse\n  cat >> workflow-validation-report.md << EOF\n\
+        ### \u2705 Validation Passed\n\nAll workflows are syntactically correct and\
+        \ ready to run.\n\n### \U0001F3AF Next Steps\n\n- Deploy with confidence\n\
+        - Monitor workflow execution\n- Set up auto-healing for future issues\n\n\
+        EOF\nfi\n\ncat >> workflow-validation-report.md << EOF\n\n## \U0001F4C8 Recommendations\n\
+        \n- **Enable Auto-Healing:** Set up the workflow auto-healer for automatic\
+        \ fixes\n- **Regular Monitoring:** Use the workflow health monitor for ongoing\
+        \ health checks\n- **Pre-commit Hooks:** Consider adding YAML validation to\
+        \ your development workflow\n\n---\n*Report generated automatically by Workflow\
+        \ Validator*\nEOF\n\necho \"\U0001F4C4 Validation report generated: workflow-validation-report.md\"\
+        \n"
+    - name: Comment on PR
+      if: github.event_name == 'pull_request' && steps.validate.outputs.invalid_count
+        > 0
+      uses: actions/github-script@v7
+      with:
+        script: "const fs = require('fs');\nconst report = fs.readFileSync('workflow-validation-report.md',\
+          \ 'utf8');\n\nawait github.rest.issues.createComment({\n  owner: context.repo.owner,\n\
+          \  repo: context.repo.repo,\n  issue_number: context.issue.number,\n  body:\
+          \ report\n});\n\nconsole.log('\U0001F4AC Validation report commented on\
+          \ PR');\n"

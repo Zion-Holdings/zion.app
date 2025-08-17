@@ -1,35 +1,37 @@
-name: dependency-maintenance
+name: Dependency Maintenance
 
 on:
-  workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *'  # Daily at midnight
-
-permissions:
-  contents: read
-  actions: read
+    - cron: '17 5 * * *'
+  workflow_dispatch: {}
 
 jobs:
-  main:
-    name: Main Job
+  maintain-deps:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci --no-audit --no-fund
+        run: npm ci
 
-      - name: Run workflow
+      - name: Run dependency maintenance
+        run: node automation/dependency-update-orchestrator.cjs
+
+      - name: Push changes (if any)
         run: |
-          echo "Workflow dependency-maintenance completed successfully"
-          echo "Automated workflow for dependency-maintenance"
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
+          else
+            echo "No changes to push"
+          fi

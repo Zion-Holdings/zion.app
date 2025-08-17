@@ -1,45 +1,66 @@
-name: 🤖 General Intermediate Automation Agent
-
-on:
-  workflow_dispatch:
+name: Diverse Agent Matrix
+true:
+  workflow_dispatch: null
   schedule:
-    - cron: '0 */6 * * *'  # Every 6 hours
+  - cron: 0 2 * * *
+concurrency:
+  group: diverse-agent-matrix-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  run-diverse-agents:
+    name: Run ${matrix.task}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        task:
+        - seo
+        - security
+        - testgen
+        - frontend-sync
+        - variation
+        - meta
+        - responsive
+        - monetization
+        - saas
+        - ui-evolution
+    permissions:
+      contents: read
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: npm
+    - name: Install dependencies
+      run: npm ci
+    - name: Run diverse agent
+      env:
+        MATRIX_TASK: ${{ matrix.task }}
+      run: 'node automation/diverse-agent-runner.cjs "$MATRIX_TASK" || true
 
+        '
+    - name: Upload agent logs
+      uses: actions/upload-artifact@v4
+      with:
+        name: diverse-agent-${{ matrix.task }}-logs
+        path: 'automation/logs/diverse-agent-matrix/${{ matrix.task }}-*.log
+
+          '
+        if-no-files-found: ignore
+        retention-days: 7
+    - name: Commit and push changes
+      run: "if [ -n \"$(git status --porcelain)\" ]; then\n  git config user.name\
+        \ \"github-actions[bot]\"\n  git config user.email \"41898282+github-actions[bot]@users.noreply.github.com\"\
+        \n  git add -A\n  git commit -m \"chore(automation): diverse agent matrix\
+        \ (${MATRIX_TASK}) updates [skip ci]\"\n  git push origin HEAD:$(git rev-parse\
+        \ --abbrev-ref HEAD)\nelse\n  echo \"No changes to push\"\nfi"
+    timeout-minutes: 30
 permissions:
   contents: read
   actions: read
-
-env:
-  AGENT_TYPE: general
-  COMPLEXITY: intermediate
-  SPECIALIZATION: automation
-
-jobs:
-  agent-execution:
-    name: Execute General Agent
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci --no-audit --no-fund
-
-      - name: Execute agent
-        run: |
-          echo "🤖 Executing general intermediate automation agent..."
-          echo "Agent type: ${{ env.AGENT_TYPE }}"
-          echo "Complexity: ${{ env.COMPLEXITY }}"
-          echo "Specialization: ${{ env.SPECIALIZATION }}"
-          
-          # Agent execution logic would go here
-          echo "✅ Agent execution completed successfully"
