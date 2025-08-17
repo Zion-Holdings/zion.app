@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T19:02:03.858Z",
+  "generatedAt": "2025-08-17T19:03:03.775Z",
   "entries": [
     {
       "route": "/user-management",
@@ -972,6 +972,12 @@
       "file": "pages/reports/updates/update-2025-08-17-1610.tsx",
       "title": "Autonomous Checklist — Evaluation & Safety (2025-08-17 16:10 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Checklist — Evaluation & Safety (2025-08-17 16:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1603",
+      "file": "pages/reports/updates/update-2025-08-17-1603.tsx",
+      "title": "Autonomous Update — 2025-08-17 16:03",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 16:03 Autonomous Update — 2025-08-17 16:03 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : The young, inexperienced engineers a"
     },
     {
       "route": "/reports/updates/update-2025-08-17-1602",
