@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-17T15:01:01.108Z",
-  "pagesScanned": 7863,
+  "generatedAt": "2025-08-17T15:02:01.213Z",
+  "pagesScanned": 7866,
   "items": [
     {
       "route": "/404",
@@ -51839,6 +51839,16 @@
       }
     },
     {
+      "route": "/reports/playbooks/playbook-2025-08-17-150100",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/tutorials/",
       "missing": [
         "og:image"
@@ -77456,6 +77466,29 @@
       "suggestion": {
         "title": "Autonomous Checklist — Vision & Multimodal (2025-08-17 12:00 UTC)",
         "description": "Autonomous Checklist — Vision & Multimodal (2025-08-17 12:00 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1201",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 12:01",
+        "description": "Autonomous Update — 2025-08-17 12:01 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1202",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 12:02",
+        "description": "Autonomous Update — 2025-08-17 12:02 — auto-suggested description"
       }
     },
     {
