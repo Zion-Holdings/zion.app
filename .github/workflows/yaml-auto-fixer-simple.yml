@@ -165,7 +165,7 @@ jobs:
                   if new_content != content:
                       content = new_content
               
-              # Fix 9: Fix missing step dashes (aggressive mode only)
+              # Fix 10: Fix missing step dashes (aggressive mode only)
               if fix_mode == 'aggressive':
                   lines = content.split('\n')
                   fixed_lines = []
