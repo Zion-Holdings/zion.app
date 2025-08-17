@@ -1296,16 +1296,16 @@
     "name": "dependencies.yml",
     "triggers": [
       "schedule",
-      "workflow_dispatch {}"
+      "workflow_dispatch"
     ],
     "needs": [],
     "outputs": [],
     "priority": "medium",
     "resourceRequirements": {
       "runner": "ubuntu-latest",
-      "memory": "high",
+      "memory": "standard",
       "timeout": 30,
-      "concurrentJobs": 4
+      "concurrentJobs": 5
     },
     "estimatedDuration": 30
   },
@@ -1325,6 +1325,25 @@
       "concurrentJobs": 5
     },
     "estimatedDuration": 20
+  },
+  "dependency-maintenance.yml": {
+    "name": "dependency-maintenance.yml",
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "needs": [
+      "check-dependencies"
+    ],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 20,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 30
   },
   "dependency-management.yml": {
     "name": "dependency-management.yml",
