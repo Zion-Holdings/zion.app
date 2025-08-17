@@ -50,499 +50,6 @@
     },
     "estimatedDuration": 20
   },
-  "agent-agent-1755379731005-0-full-stack-expert.yml": {
-    "name": "agent-agent-1755379731005-0-full-stack-expert.yml",
-    "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
-    ],
-    "needs": [],
-    "outputs": [],
-    "priority": "medium",
-    "resourceRequirements": {
-      "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
-    },
-    "estimatedDuration": 20
-  },
-  "agent-agent-1755379731007-1-deployment-expert.yml": {
-    "name": "agent-agent-1755379731007-1-deployment-expert.yml",
-    "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
-    ],
-    "needs": [],
-    "outputs": [],
-    "priority": "medium",
-    "resourceRequirements": {
-      "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
-    },
-    "estimatedDuration": 20
-  },
-  "agent-agent-1755379731008-2-monitoring-expert.yml": {
-    "name": "agent-agent-1755379731008-2-monitoring-expert.yml",
-    "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
-    ],
-    "needs": [],
-    "outputs": [],
-    "priority": "medium",
-    "resourceRequirements": {
-      "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
-    },
-    "estimatedDuration": 20
-  },
-  "agent-agent-1755379759029-0-optimization-intermediate.yml": {
-    "name": "agent-agent-1755379759029-0-optimization-intermediate.yml",
-    "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
-    ],
-    "needs": [],
-    "outputs": [],
-    "priority": "medium",
-    "resourceRequirements": {
-      "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
-    },
-    "estimatedDuration": 20
-  },
-  "agent-agent-1755379759032-1-full-stack-intermediate.yml": {
-    "name": "agent-agent-1755379759032-1-full-stack-intermediate.yml",
-    "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
-    ],
-    "needs": [],
-    "outputs": [],
-    "priority": "medium",
-    "resourceRequirements": {
-      "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
-    },
-    "estimatedDuration": 20
-  },
-  "agent-agent-1755379759033-2-deployment-expert.yml": {
-    "name": "agent-agent-1755379759033-2-deployment-expert.yml",
-    "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
-    ],
-    "needs": [],
-    "outputs": [],
-    "priority": "medium",
-    "resourceRequirements": {
-      "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
-    },
-    "estimatedDuration": 20
-  },
-  "agent-agent-1755379759033-3-frontend-expert.yml": {
-    "name": "agent-agent-1755379759033-3-frontend-expert.yml",
-    "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
-    ],
-    "needs": [],
-    "outputs": [],
-    "priority": "medium",
-    "resourceRequirements": {
-      "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
-    },
-    "estimatedDuration": 20
-  },
-  "agent-agent-1755379759035-4-full-stack-intermediate.yml": {
-    "name": "agent-agent-1755379759035-4-full-stack-intermediate.yml",
-    "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
-    ],
-    "needs": [],
-    "outputs": [],
-    "priority": "medium",
-    "resourceRequirements": {
-      "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
-    },
-    "estimatedDuration": 20
-  },
-  "agent-agent-1755379759035-5-frontend-basic.yml": {
-    "name": "agent-agent-1755379759035-5-frontend-basic.yml",
-    "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
-    ],
-    "needs": [],
-    "outputs": [],
-    "priority": "medium",
-    "resourceRequirements": {
-      "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
-    },
-    "estimatedDuration": 20
-  },
-  "agent-agent-1755379759036-6-monitoring-advanced.yml": {
-    "name": "agent-agent-1755379759036-6-monitoring-advanced.yml",
-    "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
-    ],
-    "needs": [],
-    "outputs": [],
-    "priority": "medium",
-    "resourceRequirements": {
-      "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
-    },
-    "estimatedDuration": 20
-  },
-  "agent-agent-1755379759037-7-full-stack-intermediate.yml": {
-    "name": "agent-agent-1755379759037-7-full-stack-intermediate.yml",
-    "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
-    ],
-    "needs": [],
-    "outputs": [],
-    "priority": "medium",
-    "resourceRequirements": {
-      "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
-    },
-    "estimatedDuration": 20
-  },
-  "agent-agent-1755379777746-0-full-stack-advanced.yml": {
-    "name": "agent-agent-1755379777746-0-full-stack-advanced.yml",
-    "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
-    ],
-    "needs": [],
-    "outputs": [],
-    "priority": "medium",
-    "resourceRequirements": {
-      "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
-    },
-    "estimatedDuration": 20
-  },
-  "agent-agent-1755379777749-1-full-stack-basic.yml": {
-    "name": "agent-agent-1755379777749-1-full-stack-basic.yml",
-    "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
-    ],
-    "needs": [],
-    "outputs": [],
-    "priority": "medium",
-    "resourceRequirements": {
-      "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
-    },
-    "estimatedDuration": 20
-  },
-  "agent-agent-1755379777750-2-monitoring-intermediate.yml": {
-    "name": "agent-agent-1755379777750-2-monitoring-intermediate.yml",
-    "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
-    ],
-    "needs": [],
-    "outputs": [],
-    "priority": "medium",
-    "resourceRequirements": {
-      "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
-    },
-    "estimatedDuration": 20
-  },
-  "agent-agent-1755379777751-3-monitoring-advanced.yml": {
-    "name": "agent-agent-1755379777751-3-monitoring-advanced.yml",
-    "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
-    ],
-    "needs": [],
-    "outputs": [],
-    "priority": "medium",
-    "resourceRequirements": {
-      "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
-    },
-    "estimatedDuration": 20
-  },
-  "agent-agent-1755379777752-5-testing-expert.yml": {
-    "name": "agent-agent-1755379777752-5-testing-expert.yml",
-    "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
-    ],
-    "needs": [],
-    "outputs": [],
-    "priority": "medium",
-    "resourceRequirements": {
-      "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
-    },
-    "estimatedDuration": 20
-  },
-  "agent-agent-1755379777754-6-backend-expert.yml": {
-    "name": "agent-agent-1755379777754-6-backend-expert.yml",
-    "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
-    ],
-    "needs": [],
-    "outputs": [],
-    "priority": "medium",
-    "resourceRequirements": {
-      "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
-    },
-    "estimatedDuration": 20
-  },
-  "agent-agent-1755379777755-7-backend-intermediate.yml": {
-    "name": "agent-agent-1755379777755-7-backend-intermediate.yml",
-    "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
-    ],
-    "needs": [],
-    "outputs": [],
-    "priority": "medium",
-    "resourceRequirements": {
-      "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
-    },
-    "estimatedDuration": 20
-  },
-  "agent-agent-1755381089841-0-backend-expert.yml": {
-    "name": "agent-agent-1755381089841-0-backend-expert.yml",
-    "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
-    ],
-    "needs": [],
-    "outputs": [],
-    "priority": "medium",
-    "resourceRequirements": {
-      "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
-    },
-    "estimatedDuration": 20
-  },
-  "agent-agent-1755381089844-1-deployment-advanced.yml": {
-    "name": "agent-agent-1755381089844-1-deployment-advanced.yml",
-    "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
-    ],
-    "needs": [],
-    "outputs": [],
-    "priority": "medium",
-    "resourceRequirements": {
-      "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
-    },
-    "estimatedDuration": 20
-  },
-  "agent-agent-1755381089845-2-full-stack-advanced.yml": {
-    "name": "agent-agent-1755381089845-2-full-stack-advanced.yml",
-    "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
-    ],
-    "needs": [],
-    "outputs": [],
-    "priority": "medium",
-    "resourceRequirements": {
-      "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
-    },
-    "estimatedDuration": 20
-  },
-  "agent-agent-1755381089846-3-optimization-expert.yml": {
-    "name": "agent-agent-1755381089846-3-optimization-expert.yml",
-    "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
-    ],
-    "needs": [],
-    "outputs": [],
-    "priority": "medium",
-    "resourceRequirements": {
-      "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
-    },
-    "estimatedDuration": 20
-  },
-  "agent-agent-1755381089846-4-testing-advanced.yml": {
-    "name": "agent-agent-1755381089846-4-testing-advanced.yml",
-    "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
-    ],
-    "needs": [],
-    "outputs": [],
-    "priority": "medium",
-    "resourceRequirements": {
-      "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
-    },
-    "estimatedDuration": 20
-  },
-  "agent-agent-1755381089847-5-frontend-expert.yml": {
-    "name": "agent-agent-1755381089847-5-frontend-expert.yml",
-    "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
-    ],
-    "needs": [],
-    "outputs": [],
-    "priority": "medium",
-    "resourceRequirements": {
-      "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
-    },
-    "estimatedDuration": 20
-  },
-  "agent-agent-1755381089848-6-testing-intermediate.yml": {
-    "name": "agent-agent-1755381089848-6-testing-intermediate.yml",
-    "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
-    ],
-    "needs": [],
-    "outputs": [],
-    "priority": "medium",
-    "resourceRequirements": {
-      "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
-    },
-    "estimatedDuration": 20
-  },
-  "agent-agent-1755381089849-7-monitoring-intermediate.yml": {
-    "name": "agent-agent-1755381089849-7-monitoring-intermediate.yml",
-    "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
-    ],
-    "needs": [],
-    "outputs": [],
-    "priority": "medium",
-    "resourceRequirements": {
-      "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
-    },
-    "estimatedDuration": 20
-  },
-  "agent-factory-automation.yml": {
-    "name": "agent-factory-automation.yml",
-    "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
-    ],
-    "needs": [],
-    "outputs": [],
-    "priority": "medium",
-    "resourceRequirements": {
-      "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
-    },
-    "estimatedDuration": 20
-  },
-  "agent-factory-proliferation.yml": {
-    "name": "agent-factory-proliferation.yml",
-    "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
-    ],
-    "needs": [],
-    "outputs": [],
-    "priority": "medium",
-    "resourceRequirements": {
-      "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
-    },
-    "estimatedDuration": 20
-  },
-  "agent-of-agents-trigger.yml": {
-    "name": "agent-of-agents-trigger.yml",
-    "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
-    ],
-    "needs": [],
-    "outputs": [],
-    "priority": "medium",
-    "resourceRequirements": {
-      "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
-    },
-    "estimatedDuration": 20
-  },
   "ai-changelog.yml": {
     "name": "ai-changelog.yml",
     "triggers": [
@@ -1513,6 +1020,23 @@
     },
     "estimatedDuration": 20
   },
+  "cleanup.yml": {
+    "name": "cleanup.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 20,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 20
+  },
   "cloud-agents-fast.yml": {
     "name": "cloud-agents-fast.yml",
     "triggers": [
@@ -2261,6 +1785,27 @@
     },
     "estimatedDuration": 20
   },
+  "maintenance.yml": {
+    "name": "maintenance.yml",
+    "triggers": [
+      "workflow_dispatch",
+      "schedule"
+    ],
+    "needs": [
+      "[cleanup-artifacts",
+      "optimize-workflows",
+      "dependency-maintenance]"
+    ],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 15,
+      "concurrentJobs": 6
+    },
+    "estimatedDuration": 25
+  },
   "marketing-sync.yml": {
     "name": "marketing-sync.yml",
     "triggers": [
@@ -2846,23 +2391,19 @@
     "triggers": [
       "push",
       "pull_request",
-      "workflow_dispatch",
+      "workflow_dispatch {}",
       "schedule"
     ],
-    "needs": [
-      "[security-scan",
-      "dependency-update",
-      "code-scanning]"
-    ],
+    "needs": [],
     "outputs": [],
     "priority": "medium",
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
       "timeout": 15,
-      "concurrentJobs": 6
+      "concurrentJobs": 5
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 15
   },
   "self-healing-build.yml": {
     "name": "self-healing-build.yml",
@@ -3203,6 +2744,29 @@
       "memory": "standard",
       "timeout": 20,
       "concurrentJobs": 5
+    },
+    "estimatedDuration": 20
+  },
+  "workflow-manager.yml": {
+    "name": "workflow-manager.yml",
+    "triggers": [
+      "workflow_dispatch",
+      "schedule"
+    ],
+    "needs": [
+      "workflow-health-check",
+      "workflow-health-check",
+      "[workflow-health-check",
+      "workflow-optimization",
+      "workflow-scheduling]"
+    ],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 15,
+      "concurrentJobs": 6
     },
     "estimatedDuration": 20
   },
