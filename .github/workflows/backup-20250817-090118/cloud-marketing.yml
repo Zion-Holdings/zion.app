@@ -1,0 +1,69 @@
+name: Cloud Marketing Automations
+
+on:
+  schedule:
+    - cron: "0 */6 * * *" # every 6 hours
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cloud-marketing-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  marketing:
+    runs-on: ubuntu-latest
+    env:
+      # LinkedIn secrets (set in repo/environment secrets)
+      LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+      LINKEDIN_URN: ${{ secrets.LINKEDIN_URN }}
+      LINKEDIN_PERSON_URN: ${{ secrets.LINKEDIN_PERSON_URN }}
+      # Instagram secrets (set in repo/environment secrets)
+      IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+      IG_IMAGE_URL: ${{ secrets.IG_IMAGE_URL }}
+      # Canonical URL for marketing content
+      CANONICAL_URL: https://ziontechgroup.com
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Prepare LinkedIn Marketing (analyze + factory)
+        run: |
+          node automation/linkedin-marketing-analyzer.cjs || true
+          node automation/linkedin-marketing-factory.cjs || true
+
+      - name: Run LinkedIn Marketing poster (once)
+        run: node automation/linkedin-marketing-orchestrator.cjs once || true
+
+      - name: Run LinkedIn Pro (analyze + factory + post once)
+        run: node automation/linkedin-pro-orchestrator.cjs once || true
+
+      - name: Prepare Instagram Marketing (analyze + factory)
+        run: |
+          node automation/instagram-marketing-analyzer.cjs || true
+          node automation/instagram-marketing-factory.cjs || true
+
+      - name: Run Instagram Marketing poster (once)
+        run: node automation/instagram-marketing-orchestrator.cjs once || true
+
+      - name: Commit any generated changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "chore(marketing): cloud-run automations [skip ci]"
+          git push
+
+

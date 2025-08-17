@@ -1,0 +1,54 @@
+name: Cloud Maintenance Automations
+
+on:
+  schedule:
+    - cron: "*/30 * * * *" # every 30 minutes
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cloud-maintenance-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  maintenance:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run SaaS services once
+        run: node automation/saas-services-orchestrator.cjs once || true
+
+      - name: Run Feature marketing pipeline once (analyze + factory)
+        run: node automation/feature-marketing-orchestrator.cjs once || true
+
+      - name: Run Homepage promo pipeline once (analyze + factory + apply)
+        run: node automation/homepage-promo-orchestrator.cjs once || true
+
+      - name: Run Site link crawl/fix once
+        run: node automation/site-link-orchestrator.cjs once || true
+
+      - name: Run Site promo orchestrator once
+        run: node automation/site-promo-orchestrator.cjs once || true
+
+      - name: Commit any generated changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "chore(maintenance): cloud-run automations [skip ci]"
+          git push
+
+
