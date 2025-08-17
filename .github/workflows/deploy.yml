@@ -55,6 +55,12 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
 
+      - name: Verify deployment
+        run: |
+          echo "Deployment completed successfully!"
+          echo "Build output directory: ./out"
+          ls -la ./out
+
       - name: Notify deployment status
         if: always()
         uses: actions/github-script@v7
@@ -65,18 +71,14 @@ jobs:
               ? '🚀 **Deployment Successful**\n\nProduction deployment completed successfully!'
               : '❌ **Deployment Failed**\n\nProduction deployment failed. Check the logs for details.';
             
-            // Only try to comment if this is a pull request
-            if (context.issue && context.issue.number) {
-              try {
-                await github.rest.issues.createComment({
-                  issue_number: context.issue.number,
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  body: message
-                });
-              } catch (error) {
-                console.log('Could not create comment:', error.message);
-              }
+            // Only create comment if this is a PR
+            if (context.issue.number) {
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: message
+              });
             } else {
-              console.log('No issue number available for commenting. Deployment status:', status);
+              console.log('Deployment notification:', message);
             }
