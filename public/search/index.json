@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T01:34:03.649Z",
+  "generatedAt": "2025-08-17T01:35:03.739Z",
   "entries": [
     {
       "route": "/user-management",
@@ -516,6 +516,12 @@
       "file": "pages/reports/updates/update-2025-08-16-2240.tsx",
       "title": "Autonomous Capability Map — Cloud Cost Optimization (2025-08-16 22:40 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Capability Map — Cloud Cost Optimization (2025-08-16 22:40 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-16-2235",
+      "file": "pages/reports/updates/update-2025-08-16-2235.tsx",
+      "title": "Autonomous Update — 2025-08-16 22:35",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-16 22:35 Autonomous Update — 2025-08-16 22:35 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Gemini AI · 2135 pts Why it matters:"
     },
     {
       "route": "/reports/updates/update-2025-08-16-2234",

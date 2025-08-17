@@ -499,13 +499,7 @@
       "workflow_dispatch",
       "push"
     ],
-    "needs": [
-      "generate-agents",
-      "[generate-agents",
-      "deploy-agents",
-      "optimize-agents]",
-      "monitor-growth"
-    ],
+    "needs": [],
     "outputs": [],
     "priority": "medium",
     "resourceRequirements": {
@@ -523,84 +517,8 @@
       "workflow_dispatch",
       "push"
     ],
-    "needs": [
-      "analyze-current-state",
-      "[analyze-current-state",
-      "create-factory-templates]",
-      "[analyze-current-state",
-      "deploy-factories]",
-      "[exponential-growth-monitor]"
-    ],
-    "outputs": [
-      {
-        "key": "current-factories",
-        "value": "${{ steps.count.outputs.total }}"
-      },
-      {
-        "key": "growth-potential",
-        "value": "${{ steps.growth.outputs.potential }}"
-      },
-      {
-        "key": "next-target",
-        "value": "${{ steps.target.outputs.next }}"
-      },
-      {
-        "key": "steps",
-        "value": ""
-      },
-      {
-        "key": "fetch-depth",
-        "value": "0"
-      },
-      {
-        "key": "- name",
-        "value": "Count existing agent factories"
-      },
-      {
-        "key": "id",
-        "value": "count\""
-      },
-      {
-        "key": "run",
-        "value": "|"
-      },
-      {
-        "key": "echo \"Current agent factories",
-        "value": "$FACTORIES\""
-      },
-      {
-        "key": "- name",
-        "value": "Calculate growth potential"
-      },
-      {
-        "key": "id",
-        "value": "growth"
-      },
-      {
-        "key": "run",
-        "value": "|"
-      },
-      {
-        "key": "echo \"Growth potential",
-        "value": "$POTENTIAL factories\""
-      },
-      {
-        "key": "- name",
-        "value": "Determine next target"
-      },
-      {
-        "key": "id",
-        "value": "target"
-      },
-      {
-        "key": "run",
-        "value": "|"
-      },
-      {
-        "key": "echo \"Next target",
-        "value": "$NEXT factories\""
-      }
-    ],
+    "needs": [],
+    "outputs": [],
     "priority": "medium",
     "resourceRequirements": {
       "runner": "ubuntu-latest",
@@ -787,9 +705,7 @@
       "workflow_dispatch  # Manual trigger",
       "push"
     ],
-    "needs": [
-      "run-orchestrator"
-    ],
+    "needs": [],
     "outputs": [],
     "priority": "medium",
     "resourceRequirements": {
@@ -958,9 +874,7 @@
       "workflow_dispatch",
       "schedule"
     ],
-    "needs": [
-      "dashboard-generation"
-    ],
+    "needs": [],
     "outputs": [],
     "priority": "medium",
     "resourceRequirements": {
@@ -1045,79 +959,8 @@
       "workflow_dispatch",
       "push"
     ],
-    "needs": [
-      "agent-inventory",
-      "[agent-inventory",
-      "exponential-growth-orchestrator]",
-      "[growth-metrics-analyzer]",
-      "[autonomous-decision-engine]"
-    ],
-    "outputs": [
-      {
-        "key": "total-agents",
-        "value": "${{ steps.count.outputs.total }}"
-      },
-      {
-        "key": "active-factories",
-        "value": "${{ steps.factories.outputs.active }}"
-      },
-      {
-        "key": "growth-capacity",
-        "value": "${{ steps.capacity.outputs.capacity }}"
-      },
-      {
-        "key": "steps",
-        "value": ""
-      },
-      {
-        "key": "- name",
-        "value": "Inventory all agents"
-      },
-      {
-        "key": "id",
-        "value": "count"
-      },
-      {
-        "key": "run",
-        "value": "|"
-      },
-      {
-        "key": "echo \"📊 Total agents found",
-        "value": "$TOTAL_AGENTS\""
-      },
-      {
-        "key": "- name",
-        "value": "Count active factories"
-      },
-      {
-        "key": "id",
-        "value": "factories"
-      },
-      {
-        "key": "run",
-        "value": "|"
-      },
-      {
-        "key": "echo \"🏭 Active factories",
-        "value": "$ACTIVE_FACTORIES\""
-      },
-      {
-        "key": "- name",
-        "value": "Calculate growth capacity"
-      },
-      {
-        "key": "id",
-        "value": "capacity"
-      },
-      {
-        "key": "run",
-        "value": "|"
-      },
-      {
-        "key": "echo \"🚀 Growth capacity",
-        "value": "$CAPACITY agents\""
-      }
-    ],
+    "needs": [],
+    "outputs": [],
     "priority": "medium",
     "resourceRequirements": {
       "runner": "ubuntu-latest",
@@ -1645,10 +1488,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 45,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 45
+    "estimatedDuration": 25
   },
   "cleanup-merged-branches.yml": {
     "name": "cleanup-merged-branches.yml",
@@ -1847,9 +1690,7 @@
       "workflow_dispatch  # Manual trigger",
       "push"
     ],
-    "needs": [
-      "generate-content"
-    ],
+    "needs": [],
     "outputs": [],
     "priority": "medium",
     "resourceRequirements": {
@@ -1916,9 +1757,7 @@
     "triggers": [
       "pull_request"
     ],
-    "needs": [
-      "auto-approve\""
-    ],
+    "needs": [],
     "outputs": [],
     "priority": "medium",
     "resourceRequirements": {
@@ -2055,103 +1894,8 @@
       "workflow_dispatch",
       "push"
     ],
-    "needs": [
-      "analyze-exponential-growth",
-      "create-exponential-factories",
-      "[analyze-exponential-growth",
-      "deploy-exponential-factories]",
-      "monitor-exponential-growth"
-    ],
-    "outputs": [
-      {
-        "key": "current-factories",
-        "value": "${{ steps.analyze.outputs.total_factories }}"
-      },
-      {
-        "key": "growth-potential",
-        "value": "${{ steps.calculate.outputs.growth_potential }}"
-      },
-      {
-        "key": "exponential-factor",
-        "value": "${{ steps.exponential.outputs.factor }}"
-      },
-      {
-        "key": "next-generation-target",
-        "value": "${{ steps.target.outputs.next_generation }}"
-      },
-      {
-        "key": "steps",
-        "value": ""
-      },
-      {
-        "key": "fetch-depth",
-        "value": "0"
-      },
-      {
-        "key": "- name",
-        "value": "Analyze current automation ecosystem"
-      },
-      {
-        "key": "id",
-        "value": "analyze\""
-      },
-      {
-        "key": "run",
-        "value": "|"
-      },
-      {
-        "key": "echo \"📈 Current automation components",
-        "value": "$TOTAL_FACTORIES\""
-      },
-      {
-        "key": "- name",
-        "value": "Calculate exponential growth potential"
-      },
-      {
-        "key": "id",
-        "value": "calculate"
-      },
-      {
-        "key": "run",
-        "value": "|"
-      },
-      {
-        "key": "echo \"🚀 Growth potential",
-        "value": "$POTENTIAL components\""
-      },
-      {
-        "key": "- name",
-        "value": "Calculate exponential factor"
-      },
-      {
-        "key": "id",
-        "value": "exponential"
-      },
-      {
-        "key": "run",
-        "value": "|"
-      },
-      {
-        "key": "echo \"⚡ Exponential factor",
-        "value": "$FACTOR\""
-      },
-      {
-        "key": "- name",
-        "value": "Determine next generation target"
-      },
-      {
-        "key": "id",
-        "value": "target"
-      },
-      {
-        "key": "run",
-        "value": "|"
-      },
-      {
-        "key": "echo \"🎯 Next generation target",
-        "value": "$NEXT components\""
-      }
-    ],
+    "needs": [],
+    "outputs": [],
     "priority": "medium",
     "resourceRequirements": {
       "runner": "ubuntu-latest",
@@ -2578,11 +2322,7 @@
       "schedule",
       "workflow_dispatch"
     ],
-    "needs": [
-      "automation",
-      "[automation",
-      "monitoring]"
-    ],
+    "needs": [],
     "outputs": [],
     "priority": "medium",
     "resourceRequirements": {
@@ -2719,11 +2459,7 @@
       "schedule",
       "push"
     ],
-    "needs": [
-      "performance-audit",
-      "[performance-audit",
-      "bundle-optimization]"
-    ],
+    "needs": [],
     "outputs": [],
     "priority": "medium",
     "resourceRequirements": {
@@ -2842,51 +2578,8 @@
       "schedule",
       "workflow_dispatch {}"
     ],
-    "needs": [
-      "list"
-    ],
-    "outputs": [
-      {
-        "key": "prs",
-        "value": "${{ steps.collect.outputs.prs }}"
-      },
-      {
-        "key": "steps",
-        "value": ""
-      },
-      {
-        "key": "with",
-        "value": ""
-      },
-      {
-        "key": "script",
-        "value": "|"
-      },
-      {
-        "key": "const { data",
-        "value": "prs } = await github.rest.pulls.list({"
-      },
-      {
-        "key": "owner",
-        "value": "context.repo.owner,\""
-      },
-      {
-        "key": "repo",
-        "value": "context.repo.repo,\""
-      },
-      {
-        "key": "state",
-        "value": "'open',"
-      },
-      {
-        "key": "per_page",
-        "value": "100"
-      },
-      {
-        "key": ".map(pr => ({ number",
-        "value": "pr.number, headRef"
-      }
-    ],
+    "needs": [],
+    "outputs": [],
     "priority": "medium",
     "resourceRequirements": {
       "runner": "ubuntu-latest",
@@ -3149,7 +2842,7 @@
       "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 45
+    "estimatedDuration": 25
   },
   "self-replicating-factory-manager.yml": {
     "name": "self-replicating-factory-manager.yml",
@@ -3158,59 +2851,8 @@
       "workflow_dispatch",
       "push"
     ],
-    "needs": [
-      "factory-health-check",
-      "[factory-health-check",
-      "replication-engine]",
-      "[self-replication-monitor]",
-      "[infinite-growth-validator]"
-    ],
-    "outputs": [
-      {
-        "key": "healthy-factories",
-        "value": "${{ steps.health.outputs.healthy }}"
-      },
-      {
-        "key": "unhealthy-factories",
-        "value": "${{ steps.health.outputs.unhealthy }}"
-      },
-      {
-        "key": "total-factories",
-        "value": "${{ steps.health.outputs.total }}"
-      },
-      {
-        "key": "steps",
-        "value": ""
-      },
-      {
-        "key": "- name",
-        "value": "Check factory health"
-      },
-      {
-        "key": "id",
-        "value": "health"
-      },
-      {
-        "key": "run",
-        "value": "|"
-      },
-      {
-        "key": "echo \"📊 Factory Health Report",
-        "value": ""
-      },
-      {
-        "key": "echo \"  Total",
-        "value": "$TOTAL_FACTORIES\""
-      },
-      {
-        "key": "echo \"  Healthy",
-        "value": "$HEALTHY\""
-      },
-      {
-        "key": "echo \"  Unhealthy",
-        "value": "$UNHEALTHY\""
-      }
-    ],
+    "needs": [],
+    "outputs": [],
     "priority": "medium",
     "resourceRequirements": {
       "runner": "ubuntu-latest",
