@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-17T19:20:01.732Z",
-  "pagesScanned": 8312,
+  "generatedAt": "2025-08-17T19:21:01.085Z",
+  "pagesScanned": 8315,
   "items": [
     {
       "route": "/404",
@@ -34386,6 +34386,16 @@
       "suggestion": {
         "title": "Pilot Plan: FinOps for AI",
         "description": "Pilot Plan: FinOps for AI — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-17-1920",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Checklist: FinOps for AI",
+        "description": "Checklist: FinOps for AI — auto-suggested description"
       }
     },
     {
@@ -81729,6 +81739,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-17-1621",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 16:21",
+        "description": "Autonomous Update — 2025-08-17 16:21 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-17-1630",
       "missing": [
         "og:image"
@@ -81886,6 +81909,16 @@
       "suggestion": {
         "title": "Autonomous Capability Map — Evaluation & Safety (2025-08-17 19:10 UTC)",
         "description": "Autonomous Capability Map — Evaluation & Safety (2025-08-17 19:10 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1920",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Reference Architecture — Vision & Multimodal (2025-08-17 19:20 UTC)",
+        "description": "Autonomous Reference Architecture — Vision & Multimodal (2025-08-17 19:20 UTC) — auto-suggested description"
       }
     },
     {
