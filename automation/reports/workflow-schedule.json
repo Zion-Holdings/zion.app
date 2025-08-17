@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-17T11:41:43.769Z",
+  "timestamp": "2025-08-17T11:42:43.484Z",
   "critical": [
     {
       "name": "auto-heal-workflows.yml",
@@ -237,6 +237,25 @@
         "schedule"
       ],
       "resourceScore": 144
+    },
+    {
+      "name": "dependencies.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/dependencies.yml",
+      "priority": "high",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 30,
+      "concurrentJobs": 7,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "large",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch {}"
+      ],
+      "resourceScore": 133
     }
   ],
   "medium": [
@@ -3721,7 +3740,7 @@
     },
     {
       "type": "info",
-      "message": "High priority workflows may compete for resources (12)",
+      "message": "High priority workflows may compete for resources (13)",
       "suggestion": "Consider staggering high-priority workflow execution"
     }
   ]

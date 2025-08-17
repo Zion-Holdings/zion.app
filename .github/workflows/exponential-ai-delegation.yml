@@ -3,7 +3,8 @@ name: Exponential AI Delegation
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: '0 0 * * *  # Every 4 hours'
+    # Every 4 hours
+    - cron: '0 0 * * *'
 
 permissions:
   contents: write
