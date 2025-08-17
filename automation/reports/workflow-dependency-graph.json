@@ -1091,7 +1091,7 @@
       },
       {
         "key": "run",
-        "value": "|\""
+        "value": "|"
       },
       {
         "key": "echo \"📊 Total agents found",
