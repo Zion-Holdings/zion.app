@@ -10,6 +10,7 @@ concurrency:
   group: "github.workflow-${{ github.ref }}"
   cancel-in-progress: true
 
+permissions:
   contents: write
 
 jobs:
@@ -28,8 +29,10 @@ jobs:
             const fs = require('fs');
             fs.writeFileSync('open_pr_heads.txt', heads.join('\n'));
             core.info(`Open PR heads: ${heads.length}`);
+    steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
           fetch-depth: 0
       - name: Prune merged branches
         run: |

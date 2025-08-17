@@ -14,8 +14,9 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Node.js
         uses: actions/setup-node@v4
-        node-version: 18
+        with:
+          node-version: 18
       - name: Install dependencies
-        run: npm ci
+          run: npm ci
       - name: Run agent
         run: node automation/agents/monitoring/agent-1755381089849-7-monitoring-intermediate/index.cjs

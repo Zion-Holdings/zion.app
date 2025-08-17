@@ -11,6 +11,7 @@ concurrency:
   group: "github.workflow-${{ github.ref }}"
   cancel-in-progress: true
 
+permissions:
   contents: write
   pull-requests: write
 
@@ -19,6 +20,7 @@ jobs:
   open-pr:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
           fetch-depth: 0
 
       - name: Create or update PR to main

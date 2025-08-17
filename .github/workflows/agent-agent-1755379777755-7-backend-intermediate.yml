@@ -14,8 +14,9 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Node.js
         uses: actions/setup-node@v4
+        with:
           node-version: 18
       - name: Install dependencies
-        run: npm ci
+          run: npm ci
       - name: Run agent
         run: node automation/agents/backend/agent-1755379777755-7-backend-intermediate/index.cjs

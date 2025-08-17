@@ -12,6 +12,7 @@ concurrency:
   group: "github.workflow-${{ github.ref }}"
   cancel-in-progress: true
 
+permissions:
   contents: write
   pull-requests: write
 
@@ -35,6 +36,7 @@ jobs:
         include: ${{ fromJSON(needs.list.outputs.prs) }}
       - name: Checkout PR head
         uses: actions/checkout@v4
+        with:
           fetch-depth: 0
           ref: ${{ matrix.headRef }}
       - name: Merge main into PR branch

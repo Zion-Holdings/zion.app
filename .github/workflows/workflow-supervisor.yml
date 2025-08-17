@@ -9,6 +9,7 @@ concurrency:
   group: "workflow-supervisor-${{ github.ref }}"
   cancel-in-progress: true
 
+permissions:
   contents: write
   issues: write
 

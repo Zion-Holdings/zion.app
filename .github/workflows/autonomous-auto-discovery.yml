@@ -9,6 +9,7 @@ concurrency:
   group: "autonomous-auto-discovery-${{ github.ref }}"
   cancel-in-progress: true
 
+permissions:
   contents: write
 
 jobs:
@@ -18,10 +19,12 @@ jobs:
         partition_total: [3]
       - name: Checkout
         uses: actions/checkout@v4
+        with:
           fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
+        with:
           node-version: 20
           cache: npm
 
