@@ -32,7 +32,7 @@ jobs:
 
       - name: Run branch cleanup
         env:
-          "GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}"
           BRANCH_STALE_DAYS: '14'
           BRANCH_PREFIXES: 'cursor/,feat/,fix/,chore/,refactor/'

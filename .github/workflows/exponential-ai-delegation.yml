@@ -59,10 +59,10 @@ jobs:
           echo "🚀 Starting Exponential AI Delegation Orchestrator..."
           node automation/exponential-ai-delegation-orchestrator.cjs
         env:
-          "GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy new factories
-        run: |"
+        run: |
           echo "🏭 Deploying new AI delegation factories..."
           for factory in automation/factories/*.cjs; do
             if [ -f "$factory" ]; then
@@ -113,7 +113,7 @@ jobs:
             } catch (error) {
               console.log('Error analyzing growth:', error.message);
             }
-          "
+          
 
       - name: Commit and push changes
         run: |

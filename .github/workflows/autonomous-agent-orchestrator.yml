@@ -44,7 +44,7 @@ jobs:
       
       - name: Inventory all agents
         id: count
-        run: |"
+        run: |
           # Count all agents across all factories"
           TOTAL_AGENTS=$(find automation/factories/ -name "*.js" -exec grep -l "class.*Agent\|createAgent" {} \; | wc -l)
           echo "total=$TOTAL_AGENTS" >> $GITHUB_OUTPUT
@@ -92,7 +92,7 @@ jobs:
           echo "Target agents: $TARGET"
           
           case $STRATEGY in
-            "replicate")
+            replicate")
               echo "🔄 Replicating existing agents..."
               # Create replication scripts
               mkdir -p automation/orchestration/replication
@@ -157,7 +157,7 @@ jobs:
               EOF
               ;;
               
-            "optimize")
+            optimize")
               echo "⚡ Optimizing agent performance..."
               # Create optimization scripts
               mkdir -p automation/orchestration/optimization
@@ -242,7 +242,7 @@ jobs:
               EOF
               ;;
               
-            "diversify")
+            diversify")
               echo "🌱 Diversifying agent types..."
               # Create diversification scripts
               mkdir -p automation/orchestration/diversification
@@ -315,7 +315,7 @@ jobs:
               EOF
               ;;
               
-            "accelerate")
+            accelerate")
               echo "🚀 Accelerating growth rate..."
               # Create acceleration scripts
               mkdir -p automation/orchestration/acceleration
@@ -467,7 +467,7 @@ jobs:
           - Intelligent diversification
           - Growth acceleration
           EOF
-          "
+          
           echo "📋 Orchestration report generated"
 
   autonomous-decision-engine:
@@ -645,7 +645,7 @@ jobs:
             engine.makeDecisions().then(decisions => {
               console.log('Autonomous decisions executed:', decisions);
             });
-          "
+          
 
   notify-orchestration:
     needs: [autonomous-decision-engine]

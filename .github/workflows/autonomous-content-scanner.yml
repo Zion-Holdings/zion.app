@@ -34,7 +34,7 @@ jobs:
       - name: Build pages/docs registry
         run: node automation/docs-pages-indexer.cjs | cat
       - name: Commit and push changes to main
-        run: |"
+        run: |
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

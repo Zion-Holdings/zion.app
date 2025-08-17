@@ -104,13 +104,13 @@ jobs:
           
           # Calculate replication count based on mode
           case $MODE in
-            "aggressive")
+            aggressive")
               REPLICATION_COUNT=$((CURRENT_FACTORIES * 3))
               ;;
-            "balanced")
+            balanced")
               REPLICATION_COUNT=$((CURRENT_FACTORIES * 2))
               ;;
-            "conservative")
+            conservative")
               REPLICATION_COUNT=$((CURRENT_FACTORIES / 2))
               ;;
             *)
@@ -538,7 +538,7 @@ jobs:
               const report = validator.generateValidationReport();
               console.log('Validation report:', report);
             });
-          "
+          
 
   notify-replication:
     needs: [infinite-growth-validator]

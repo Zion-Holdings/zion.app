@@ -59,7 +59,7 @@ jobs:
         run: node automation/advanced-git-sync.cjs || node automation/git-sync.cjs
 
       - name: Commit and push changes
-        run: |"
+        run: |
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

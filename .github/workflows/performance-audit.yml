@@ -23,7 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Ensure SITE_URL present"
-        run: |"
+        run: |
           if [ -z "${SITE_URL}" ]; then
             echo "SITE_URL secret not set, skipping." && exit 0
           fi

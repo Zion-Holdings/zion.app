@@ -43,6 +43,6 @@ jobs:
           actionlint_flags: -color
 
       - name: Check for actionlint issues
-        run: |"
+        run: |
           echo "Actionlint check completed"
           echo "Any issues found will be reported above"

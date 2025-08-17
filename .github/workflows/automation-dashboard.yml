@@ -120,7 +120,7 @@ jobs:
           destination_dir: automation-dashboard
           
       - name: Update dashboard index
-        run: |"
+        run: |
           echo "# Automation Dashboard" > index.md
           echo "" >> index.md
           echo "The automation dashboard is available at:" >> index.md

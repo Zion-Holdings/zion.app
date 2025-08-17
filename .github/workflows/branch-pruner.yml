@@ -28,7 +28,7 @@ jobs:
           git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}"
           git fetch --all --prune
         env:
-          "GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Delete merged remote branches older than 7 days
         shell: bash
         run: |
@@ -51,4 +51,4 @@ jobs:
             fi
           done
         env:
-          "GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}"

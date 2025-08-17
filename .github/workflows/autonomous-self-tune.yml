@@ -39,7 +39,7 @@ jobs:
         run: node automation/auto-scheduler.cjs | cat
 
       - name: Commit and push schedule changes"
-        run: |"
+        run: |
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

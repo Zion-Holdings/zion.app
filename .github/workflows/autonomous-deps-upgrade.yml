@@ -54,7 +54,7 @@ jobs:
             echo "No dependency changes."
           fi
         env:
-          "GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Open PR
         id: pr
