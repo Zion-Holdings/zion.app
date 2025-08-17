@@ -1,0 +1,185 @@
+{
+  "timestamp": "2025-08-17T00:38:39.861Z",
+  "baselines": {
+    "workflow": {
+      "error": "Command failed: npm run automation:health\n/Users/miami2/ ZION_APP_AUG_11_25/zion.app/automation/workflow-health-monitor.cjs:350\n  group: ${{ github.workflow }}-${{ github.ref }}\n                   ^\n\nSyntaxError: Unexpected token '.'\n    at wrapSafe (node:internal/modules/cjs/loader:1662:18)\n    at Module._compile (node:internal/modules/cjs/loader:1704:20)\n    at Object..js (node:internal/modules/cjs/loader:1895:10)\n    at Module.load (node:internal/modules/cjs/loader:1465:32)\n    at Function._load (node:internal/modules/cjs/loader:1282:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49\n\nNode.js v22.16.0\n"
+    },
+    "resource": {
+      "memoryUsage": {
+        "rss": 30543872,
+        "heapUsed": 4569976,
+        "heapTotal": 5574656,
+        "external": 1555514
+      },
+      "cpuUsage": {
+        "user": 91664,
+        "system": 3930,
+        "percentage": 95.594
+      },
+      "diskUsage": {
+        "automationDirSize": 2283860,
+        "availableSpace": "unknown",
+        "usagePercentage": "unknown"
+      },
+      "networkLatency": {
+        "latency": 0,
+        "status": "local",
+        "timestamp": "2025-08-17T00:38:33.077Z"
+      }
+    },
+    "system": {
+      "error": "Command failed: npm run automation:health\n/Users/miami2/ ZION_APP_AUG_11_25/zion.app/automation/workflow-health-monitor.cjs:350\n  group: ${{ github.workflow }}-${{ github.ref }}\n                   ^\n\nSyntaxError: Unexpected token '.'\n    at wrapSafe (node:internal/modules/cjs/loader:1662:18)\n    at Module._compile (node:internal/modules/cjs/loader:1704:20)\n    at Object..js (node:internal/modules/cjs/loader:1895:10)\n    at Module.load (node:internal/modules/cjs/loader:1465:32)\n    at Function._load (node:internal/modules/cjs/loader:1282:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49\n\nNode.js v22.16.0\n"
+    },
+    "timestamp": "2025-08-17T00:38:33.516Z"
+  },
+  "optimizations": [
+    {
+      "success": true,
+      "optimizations": [
+        "file_caching_optimization",
+        "memory_pool_optimization"
+      ],
+      "message": "Applied 2 memory optimizations",
+      "type": "memory_optimization",
+      "timestamp": "2025-08-17T00:38:33.518Z",
+      "opportunity": {
+        "type": "memory_optimization",
+        "priority": "medium",
+        "description": "Optimize memory usage and reduce heap consumption",
+        "estimatedImpact": "10-20% improvement",
+        "effort": "low",
+        "strategies": [
+          "garbage_collection",
+          "memory_pooling",
+          "cache_optimization"
+        ]
+      }
+    },
+    {
+      "success": true,
+      "optimizations": [
+        "code_optimization",
+        "configuration_optimization",
+        "monitoring_optimization"
+      ],
+      "message": "Applied 3 general optimizations",
+      "type": "general_optimization",
+      "timestamp": "2025-08-17T00:38:33.519Z",
+      "opportunity": {
+        "type": "general_optimization",
+        "priority": "low",
+        "description": "Apply general performance improvements",
+        "estimatedImpact": "5-15% improvement",
+        "effort": "low",
+        "strategies": [
+          "code_optimization",
+          "configuration_tuning",
+          "monitoring_improvement"
+        ]
+      }
+    }
+  ],
+  "validation": [
+    {
+      "type": "memory_optimization",
+      "validated": true,
+      "improvement": 0,
+      "shouldKeep": false,
+      "afterPerformance": {
+        "workflow": {
+          "error": "Command failed: npm run automation:health\n/Users/miami2/ ZION_APP_AUG_11_25/zion.app/automation/workflow-health-monitor.cjs:350\n  group: ${{ github.workflow }}-${{ github.ref }}\n                   ^\n\nSyntaxError: Unexpected token '.'\n    at wrapSafe (node:internal/modules/cjs/loader:1662:18)\n    at Module._compile (node:internal/modules/cjs/loader:1704:20)\n    at Object..js (node:internal/modules/cjs/loader:1895:10)\n    at Module.load (node:internal/modules/cjs/loader:1465:32)\n    at Function._load (node:internal/modules/cjs/loader:1282:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49\n\nNode.js v22.16.0\n"
+        },
+        "resource": {
+          "memoryUsage": {
+            "rss": 38330368,
+            "heapUsed": 4690592,
+            "heapTotal": 7147520,
+            "external": 1556453
+          },
+          "cpuUsage": {
+            "user": 83664,
+            "system": 1220,
+            "percentage": 84.884
+          },
+          "diskUsage": {
+            "automationDirSize": 2283860,
+            "availableSpace": "unknown",
+            "usagePercentage": "unknown"
+          },
+          "networkLatency": {
+            "latency": 0,
+            "status": "local",
+            "timestamp": "2025-08-17T00:38:36.098Z"
+          }
+        },
+        "system": {
+          "error": "Command failed: npm run automation:health\n/Users/miami2/ ZION_APP_AUG_11_25/zion.app/automation/workflow-health-monitor.cjs:350\n  group: ${{ github.workflow }}-${{ github.ref }}\n                   ^\n\nSyntaxError: Unexpected token '.'\n    at wrapSafe (node:internal/modules/cjs/loader:1662:18)\n    at Module._compile (node:internal/modules/cjs/loader:1704:20)\n    at Object..js (node:internal/modules/cjs/loader:1895:10)\n    at Module.load (node:internal/modules/cjs/loader:1465:32)\n    at Function._load (node:internal/modules/cjs/loader:1282:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49\n\nNode.js v22.16.0\n"
+        },
+        "timestamp": "2025-08-17T00:38:36.636Z"
+      },
+      "timestamp": "2025-08-17T00:38:36.637Z"
+    },
+    {
+      "type": "general_optimization",
+      "validated": true,
+      "improvement": 0.05,
+      "shouldKeep": false,
+      "afterPerformance": {
+        "workflow": {
+          "error": "Command failed: npm run automation:health\n/Users/miami2/ ZION_APP_AUG_11_25/zion.app/automation/workflow-health-monitor.cjs:350\n  group: ${{ github.workflow }}-${{ github.ref }}\n                   ^\n\nSyntaxError: Unexpected token '.'\n    at wrapSafe (node:internal/modules/cjs/loader:1662:18)\n    at Module._compile (node:internal/modules/cjs/loader:1704:20)\n    at Object..js (node:internal/modules/cjs/loader:1895:10)\n    at Module.load (node:internal/modules/cjs/loader:1465:32)\n    at Function._load (node:internal/modules/cjs/loader:1282:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49\n\nNode.js v22.16.0\n"
+        },
+        "resource": {
+          "memoryUsage": {
+            "rss": 38735872,
+            "heapUsed": 4714624,
+            "heapTotal": 7147520,
+            "external": 1556453
+          },
+          "cpuUsage": {
+            "user": 92220,
+            "system": 675,
+            "percentage": 92.895
+          },
+          "diskUsage": {
+            "automationDirSize": 2283860,
+            "availableSpace": "unknown",
+            "usagePercentage": "unknown"
+          },
+          "networkLatency": {
+            "latency": 0,
+            "status": "local",
+            "timestamp": "2025-08-17T00:38:39.284Z"
+          }
+        },
+        "system": {
+          "error": "Command failed: npm run automation:health\n/Users/miami2/ ZION_APP_AUG_11_25/zion.app/automation/workflow-health-monitor.cjs:350\n  group: ${{ github.workflow }}-${{ github.ref }}\n                   ^\n\nSyntaxError: Unexpected token '.'\n    at wrapSafe (node:internal/modules/cjs/loader:1662:18)\n    at Module._compile (node:internal/modules/cjs/loader:1704:20)\n    at Object..js (node:internal/modules/cjs/loader:1895:10)\n    at Module.load (node:internal/modules/cjs/loader:1465:32)\n    at Function._load (node:internal/modules/cjs/loader:1282:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49\n\nNode.js v22.16.0\n"
+        },
+        "timestamp": "2025-08-17T00:38:39.861Z"
+      },
+      "timestamp": "2025-08-17T00:38:39.861Z"
+    }
+  ],
+  "summary": {
+    "totalOptimizations": 2,
+    "successfulOptimizations": 2,
+    "validatedOptimizations": 2,
+    "keptOptimizations": 0,
+    "averageImprovement": 2.5,
+    "successRate": 100,
+    "validationRate": 100
+  },
+  "recommendations": [
+    {
+      "priority": "medium",
+      "action": "Review low-impact optimizations",
+      "description": "2 optimizations showed minimal improvement",
+      "impact": "medium"
+    },
+    {
+      "priority": "low",
+      "action": "Monitor optimization performance",
+      "description": "Continue monitoring to ensure optimizations remain effective",
+      "impact": "low"
+    }
+  ]
+}
