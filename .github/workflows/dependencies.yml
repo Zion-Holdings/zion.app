@@ -25,6 +25,8 @@ jobs:
       with:
         node-version: '20'
         cache: npm
+    - name: Install jq
+      run: sudo apt-get update && sudo apt-get install -y jq
     - name: Install dependencies
       run: npm ci --no-audit --no-fund
     - name: Check for outdated dependencies
