@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T07:47:03.673Z",
+  "generatedAt": "2025-08-17T07:48:03.551Z",
   "entries": [
     {
       "route": "/user-management",
@@ -564,6 +564,12 @@
       "file": "pages/reports/updates/update-2025-08-17-0450.tsx",
       "title": "Autonomous Capability Map — Applied NLP & RAG (2025-08-17 04:50 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Capability Map — Applied NLP & RAG (2025-08-17 04:50 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0448",
+      "file": "pages/reports/updates/update-2025-08-17-0448.tsx",
+      "title": "Autonomous Update — 2025-08-17 04:48",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 04:48 Autonomous Update — 2025-08-17 04:48 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Zoom terms now allow training AI on "
     },
     {
       "route": "/reports/updates/update-2025-08-17-0447",
