@@ -1,4 +1,4 @@
-name: Knowledge Graph WORKFLOW_NAME_PLACEHOLDER Radar
+name: Knowledge Graph Radar
 
 on:
   workflow_dispatch: {}
