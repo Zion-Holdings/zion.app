@@ -22,7 +22,6 @@ jobs:
     outputs:
       prs: ${{ steps.collect.outputs.prs }}
     steps:
-      - id: collect
         with:
           script: |
             const { data: prs } = await github.rest.pulls.list({

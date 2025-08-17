@@ -38,7 +38,6 @@ jobs:
       active-factories: ${{ steps.factories.outputs.active }}
       growth-capacity: ${{ steps.capacity.outputs.capacity }}
     steps:
-      - uses: actions/checkout@v4
       
       - name: Inventory all agents
         id: count
@@ -71,7 +70,6 @@ jobs:
       matrix:
         growth-strategy: [replicate, optimize, diversify, accelerate]
     steps:
-      - uses: actions/checkout@v4
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -400,7 +398,6 @@ jobs:
     needs: [agent-inventory, exponential-growth-orchestrator]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
       
       - name: Analyze growth metrics
         run: |
@@ -472,7 +469,6 @@ jobs:
     needs: [growth-metrics-analyzer]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
       
       - name: Execute autonomous decisions
         run: |

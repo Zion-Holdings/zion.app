@@ -37,7 +37,6 @@ jobs:
       unhealthy-factories: ${{ steps.health.outputs.unhealthy }}
       total-factories: ${{ steps.health.outputs.total }}
     steps:
-      - uses: actions/checkout@v4
       
       - name: Check factory health
         id: health
@@ -80,7 +79,6 @@ jobs:
       matrix:
         replication-type: [horizontal, vertical, diagonal]
     steps:
-      - uses: actions/checkout@v4
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -332,7 +330,6 @@ jobs:
     needs: [factory-health-check, replication-engine]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
       
       - name: Monitor self-replication
         run: |
@@ -393,7 +390,6 @@ jobs:
     needs: [self-replication-monitor]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
       
       - name: Validate infinite growth potential
         run: |

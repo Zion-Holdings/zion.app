@@ -30,6 +30,11 @@ concurrency:
   group: "github.workflow-${{ github.ref }}"
   cancel-in-progress: true
 
+env:
+  GROWTH_FACTOR: ${{ github.event.inputs.growth_factor || "2" }}
+  TARGET_COUNT: "${{ github.event.inputs.target_count || "10" }}"
+  MAX_CONCURRENT: 5
+
 jobs:
   analyze-current-state:
     runs-on: ubuntu-latest
@@ -38,7 +43,6 @@ jobs:
       growth-potential: ${{ steps.growth.outputs.potential }}
       next-target: ${{ steps.target.outputs.next }}
     steps:
-      - uses: actions/checkout@v4
           fetch-depth: 0
       
       - name: Count existing agent factories
@@ -75,7 +79,6 @@ jobs:
         complexity: [basic, intermediate, advanced]
       max-parallel: 5
     steps:
-      - uses: actions/checkout@v4
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -235,7 +238,6 @@ jobs:
     needs: [analyze-current-state, create-factory-templates]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
       
       - name: Deploy new factories
         run: |
@@ -284,7 +286,6 @@ jobs:
     "needs: [analyze-current-state, deploy-factories]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
       
       - name: Calculate exponential growth metrics
         run: |

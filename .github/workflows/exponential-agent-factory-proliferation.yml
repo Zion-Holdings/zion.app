@@ -47,7 +47,6 @@ jobs:
       exponential-factor: ${{ steps.exponential.outputs.factor }}
       next-generation-target: ${{ steps.target.outputs.next_generation }}
     steps:
-      - uses: actions/checkout@v4
           fetch-depth: 0
       
       - name: Analyze current automation ecosystem
@@ -114,7 +113,6 @@ jobs:
       max-parallel: 10
       fail-fast: false
     steps:
-      - uses: actions/checkout@v4
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -312,7 +310,6 @@ jobs:
             autonomous-operation:
               runs-on: ubuntu-latest
               steps:
-                - uses: actions/checkout@v4
                   - name: Run autonomous factory
         run: |
                     cd automation/factories/$FACTORY_ID
@@ -338,7 +335,6 @@ jobs:
     runs-on: ubuntu-latest
     if: always()
     steps:
-      - uses: actions/checkout@v4
       
       - name: Deploy factories to production
         run: |
@@ -376,7 +372,6 @@ jobs:
     needs: [analyze-exponential-growth, deploy-exponential-factories]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
       
       - name: Calculate exponential growth metrics
         run: |
@@ -445,7 +440,6 @@ jobs:
     needs: monitor-exponential-growth
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
       
       - name: Analyze growth patterns and make autonomous decisions
         run: |
