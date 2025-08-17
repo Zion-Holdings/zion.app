@@ -12137,6 +12137,10 @@
       "route": "/reports/cases/case-2025-08-15-021207"
     },
     {
+      "file": "pages/main/front/index.tsx",
+      "route": "/main/front"
+    },
+    {
       "file": "pages/reports/guides/guide-2025-08-17-015054.tsx",
       "route": "/reports/guides/guide-2025-08-17-015054"
     },
@@ -15945,10 +15949,6 @@
       "route": "/reports/guides/guide-2025-08-15-021207"
     },
     {
-      "file": "pages/main/front/index.tsx",
-      "route": "/main/front"
-    },
-    {
       "file": "pages/reports/blueprints/blueprint-2025-08-17-015054.tsx",
       "route": "/reports/blueprints/blueprint-2025-08-17-015054"
     },
@@ -18727,6 +18727,10 @@
     {
       "file": "pages/reports/updates/update-2025-08-16-2300.tsx",
       "route": "/reports/updates/update-2025-08-16-2300"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-16-2254.tsx",
+      "route": "/reports/updates/update-2025-08-16-2254"
     },
     {
       "file": "pages/reports/updates/update-2025-08-16-2253.tsx",
@@ -25743,5 +25747,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-17T01:53:00.889Z"
+  "generatedAt": "2025-08-17T01:54:01.049Z"
 }
