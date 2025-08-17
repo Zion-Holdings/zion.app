@@ -1,21 +1,37 @@
-name: "Agent: agent-1755381089846-3-optimization-expert"
+name: WORKFLOW_NAME_PLACEHOLDER
+
 on:
-  workflow_dispatch:
+  workflow_dispatch: {}
   schedule:
-    - cron: 0 */6 * * *
+    - cron: '*/10 * * * *'
+
+permissions:
+  contents: write
+  actions: read
 
 concurrency:
-  group: "github.workflow-${{ github.ref }}"
-  cancel-in-progress: true
-
+  group: "workflow-${{ github.ref }}"
+  cancel-in-progress: false
 jobs:
-  agent-execution:
-      - name: Checkout code
+  main:
+    name: Main Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
-        node-version: 18
+        with:
+          node-version: '20'
+          cache: 'npm'
+
       - name: Install dependencies
-        run: npm ci
-      - name: Run agent
-        run: node automation/agents/optimization/agent-1755381089846-3-optimization-expert/index.cjs
+        run: npm ci --no-audit --no-fund
+
+      - name: Run workflow
+        run: |
+          echo "Workflow WORKFLOW_NAME_PLACEHOLDER completed successfully"

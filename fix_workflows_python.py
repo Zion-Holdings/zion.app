@@ -1,124 +1,135 @@
 #!/usr/bin/env python3
 """
-Python script to fix YAML syntax errors in GitHub Actions workflows
+GitHub Actions Workflow Fix Script
+Fixes common issues using proper YAML parsing
 """
 
+import yaml
 import os
-import re
 import shutil
+from datetime import datetime
 from pathlib import Path
 
 def fix_workflow_file(file_path):
-    """Fix a single workflow file by reading and rewriting it properly"""
-    print(f"Fixing: {file_path}")
-    
-    # Create backup
-    backup_path = f"{file_path}.backup4"
-    shutil.copy2(file_path, backup_path)
+    """Fix a single workflow file"""
+    filename = os.path.basename(file_path)
+    print(f"🔍 Fixing: {filename}")
     
     try:
+        # Read and parse YAML
         with open(file_path, 'r') as f:
-            content = f.read()
+            content = yaml.safe_load(f)
         
-        # Fix common patterns
-        fixed_content = content
+        if not content:
+            print(f"  ❌ Empty or invalid YAML file")
+            return False
         
-        # Fix missing newlines after cron schedules
-        fixed_content = re.sub(r'(cron: [^\n]*)\njobs:', r'\1\n\njobs:', fixed_content)
+        # Fix 1: Add permissions if missing
+        if 'permissions' not in content:
+            print(f"  ➕ Adding permissions section")
+            content['permissions'] = {
+                'contents': 'read',
+                'actions': 'read'
+            }
         
-        # Fix missing newlines after schedule
-        fixed_content = re.sub(r'(schedule:)\njobs:', r'\1\n\njobs:', fixed_content)
+        # Fix 2: Add concurrency if missing
+        if 'concurrency' not in content:
+            print(f"  ➕ Adding concurrency settings")
+            content['concurrency'] = {
+                'group': f"{filename}-${{{{ github.ref }}}}",
+                'cancel-in-progress': True
+            }
         
-        # Fix missing newlines after on:
-        fixed_content = re.sub(r'(on:)\njobs:', r'\1\n\njobs:', fixed_content)
+        # Fix 3: Add timeout to jobs if missing
+        if 'jobs' in content:
+            for job_name, job_config in content['jobs'].items():
+                if isinstance(job_config, dict) and 'timeout-minutes' not in job_config:
+                    print(f"  ➕ Adding timeout to job: {job_name}")
+                    job_config['timeout-minutes'] = 30
         
-        # Fix missing newlines after workflow_dispatch
-        fixed_content = re.sub(r'(workflow_dispatch:)\njobs:', r'\1\n\njobs:', fixed_content)
+        # Fix 4: Fix permission warnings
+        if 'permissions' in content:
+            if content['permissions'].get('contents') == 'write' and 'pull-requests' not in content['permissions']:
+                print(f"  🔒 Fixing permission warnings")
+                content['permissions']['pull-requests'] = 'write'
         
-        # Fix missing newlines after permissions
-        fixed_content = re.sub(r'(permissions:)\njobs:', r'\1\n\njobs:', fixed_content)
+        # Fix 5: Add artifact retention
+        if 'jobs' in content:
+            for job_name, job_config in content['jobs'].items():
+                if isinstance(job_config, dict) and 'steps' in job_config:
+                    for step in job_config['steps']:
+                        if isinstance(step, dict) and step.get('uses', '').startswith('actions/upload-artifact'):
+                            # Update to v4 if needed
+                            if not step['uses'].endswith('@v4'):
+                                step['uses'] = 'actions/upload-artifact@v4'
+                            
+                            # Add retention if missing
+                            if 'with' in step and 'retention-days' not in step['with']:
+                                print(f"  📦 Adding artifact retention to {job_name}")
+                                step['with']['retention-days'] = 7
         
-        # Fix missing newlines after steps:
-        fixed_content = re.sub(r'(steps:)\n    - name:', r'\1\n      - name:', fixed_content)
-        
-        # Fix missing newlines between step names and their properties
-        fixed_content = re.sub(r'(- name: [^\n]*)\n    uses:', r'\1\n      uses:', fixed_content)
-        fixed_content = re.sub(r'(- name: [^\n]*)\n    run:', r'\1\n      run:', fixed_content)
-        fixed_content = re.sub(r'(- name: [^\n]*)\n    with:', r'\1\n      with:', fixed_content)
-        fixed_content = re.sub(r'(- name: [^\n]*)\n    if:', r'\1\n      if:', fixed_content)
-        
-        # Fix missing newlines between uses and with
-        fixed_content = re.sub(r'(uses: [^\n]*)\n    with:', r'\1\n      with:', fixed_content)
-        
-        # Fix missing newlines between run and next step
-        fixed_content = re.sub(r'(run: [^\n]*)\n    - name:', r'\1\n      - name:', fixed_content)
-        
-        # Fix missing newlines between with and node-version
-        fixed_content = re.sub(r'(with:)\n    node-version:', r'\1\n      node-version:', fixed_content)
-        
-        # Fix indentation issues
-        fixed_content = re.sub(r'^      timeout-minutes:', '    timeout-minutes:', fixed_content, flags=re.MULTILINE)
-        fixed_content = re.sub(r'^  runs-on:', '    runs-on:', fixed_content, flags=re.MULTILINE)
-        fixed_content = re.sub(r'^  steps:', '    steps:', fixed_content, flags=re.MULTILINE)
-        fixed_content = re.sub(r'^  agent-execution:', '    agent-execution:', fixed_content, flags=re.MULTILINE)
-        
-        # Fix missing newlines between steps
-        fixed_content = re.sub(r'(run: [^\n]*)\n    - name:', r'\1\n      - name:', fixed_content)
-        
-        # Fix missing newlines after step names
-        fixed_content = re.sub(r'(- name: [^\n]*)\n      uses:', r'\1\n        uses:', fixed_content)
-        fixed_content = re.sub(r'(- name: [^\n]*)\n      run:', r'\1\n        run:', fixed_content)
-        fixed_content = re.sub(r'(- name: [^\n]*)\n      with:', r'\1\n        with:', fixed_content)
-        
-        # Fix missing newlines after uses
-        fixed_content = re.sub(r'(uses: [^\n]*)\n      with:', r'\1\n        with:', fixed_content)
-        
-        # Fix missing newlines after with
-        fixed_content = re.sub(r'(with:)\n        node-version:', r'\1\n          node-version:', fixed_content)
-        
-        # Write the fixed content back
+        # Write back to file
         with open(file_path, 'w') as f:
-            f.write(fixed_content)
+            yaml.dump(content, f, default_flow_style=False, sort_keys=False, indent=2)
         
-        print(f"  Fixed: {file_path}")
+        # Validate the fixed YAML
+        with open(file_path, 'r') as f:
+            yaml.safe_load(f)
+        
+        print(f"  ✅ Fixed successfully")
+        return True
         
     except Exception as e:
-        print(f"  Error fixing {file_path}: {e}")
-        # Restore from backup
-        shutil.copy2(backup_path, file_path)
+        print(f"  ❌ Error fixing file: {str(e)}")
+        return False
 
 def main():
-    """Main function to find and fix all workflow files with errors"""
-    print("Python-based workflow fixer starting...")
+    """Main function"""
+    print("🔧 Python-based Workflow Fix Script")
+    print("===================================")
     
-    workflows_dir = Path('.github/workflows')
-    if not workflows_dir.exists():
-        print("Workflows directory not found!")
+    workflows_dir = Path(".github/workflows")
+    backup_dir = workflows_dir / f"backup-{datetime.now().strftime('%Y%m%d-%H%M%S')}"
+    
+    # Create backup directory
+    backup_dir.mkdir(parents=True, exist_ok=True)
+    
+    # Get all workflow files
+    workflow_files = list(workflows_dir.glob("*.yml"))
+    
+    if not workflow_files:
+        print("❌ No workflow files found")
         return
     
-    # Find all workflow files
-    workflow_files = list(workflows_dir.glob('*.yml')) + list(workflows_dir.glob('*.yaml'))
+    print(f"📁 Processing {len(workflow_files)} workflow files in {workflows_dir}")
+    print("")
     
-    print(f"Found {len(workflow_files)} workflow files")
+    successful_fixes = 0
+    total_files = len(workflow_files)
     
-    # Find files with errors
-    files_with_errors = []
-    for file_path in workflow_files:
-        try:
-            import yaml
-            with open(file_path, 'r') as f:
-                yaml.safe_load(f)
-        except Exception:
-            files_with_errors.append(file_path)
+    for workflow_file in workflow_files:
+        # Create backup
+        shutil.copy2(workflow_file, backup_dir / workflow_file.name)
+        
+        # Fix the workflow
+        if fix_workflow_file(workflow_file):
+            successful_fixes += 1
+        
+        print("")
     
-    print(f"Found {len(files_with_errors)} files with YAML syntax errors")
-    
-    # Fix each file
-    for file_path in files_with_errors:
-        fix_workflow_file(file_path)
-    
-    print("Python-based workflow fixes completed!")
-    print("Note: Backup files have been created with .backup4 extension")
+    print("🎉 Workflow fixes completed!")
+    print("============================")
+    print(f"📊 Summary:")
+    print(f"  - Total files processed: {total_files}")
+    print(f"  - Successfully fixed: {successful_fixes}")
+    print(f"  - Failed: {total_files - successful_fixes}")
+    print(f"  - Backup created in: {backup_dir}")
+    print("")
+    print("🔧 Next steps:")
+    print("  1. Review the changes")
+    print("  2. Test workflows if possible")
+    print("  3. Run validation script to confirm fixes")
+    print("  4. Commit changes when satisfied")
 
 if __name__ == "__main__":
     main()

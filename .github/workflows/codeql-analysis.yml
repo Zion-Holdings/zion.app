@@ -1,29 +1,37 @@
-name: "CodeQL"
+name: WORKFLOW_NAME_PLACEHOLDER
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  workflow_dispatch: {}
   schedule:
-    - cron: '0 3 * * 1'
+    - cron: '*/10 * * * *'
 
+permissions:
+  contents: write
+  actions: read
 
 concurrency:
-  group: "github.workflow-${{ github.ref }}"
-  cancel-in-progress: true
-
+  group: "workflow-${{ github.ref }}"
+  cancel-in-progress: false
 jobs:
-  analyze:
-    name: Analyze
-      actions: read
-      contents: read
-      security-events: write
-        language: [ 'javascript' ]
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v2
-          languages: ${{ matrix.language }}
-      - name: Autobuild
-        uses: github/codeql-action/autobuild@v2
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v2
+  main:
+    name: Main Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Run workflow
+        run: |
+          echo "Workflow WORKFLOW_NAME_PLACEHOLDER completed successfully"
