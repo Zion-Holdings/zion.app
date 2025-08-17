@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-17T12:46:42.024Z",
+  "timestamp": "2025-08-17T12:48:41.599Z",
   "summary": {
     "totalWorkflows": 222,
     "complexityDistribution": {
@@ -1601,13 +1601,13 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci-quality.yml"
     },
     "ci-self-heal.yml": {
-      "complexityScore": 0,
+      "complexityScore": 10,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 55,
         "jobCount": 0,
-        "stepCount": 4,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
@@ -1745,10 +1745,10 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cloud-deep-research.yml"
     },
     "cloud-maintenance.yml": {
-      "complexityScore": 5,
+      "complexityScore": 15,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 50,
+        "totalLines": 55,
         "jobCount": 0,
         "stepCount": 9,
         "conditionalCount": 0,
@@ -1964,7 +1964,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 35,
+        "totalLines": 37,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -2990,8 +2990,8 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 42,
-        "jobCount": 1,
+        "totalLines": 35,
+        "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
         "matrixCount": 0,
@@ -3620,8 +3620,8 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 50,
-        "jobCount": 1,
+        "totalLines": 39,
+        "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
         "matrixCount": 0,
@@ -3710,8 +3710,8 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 34,
-        "jobCount": 0,
+        "totalLines": 43,
+        "jobCount": 1,
         "stepCount": 5,
         "conditionalCount": 0,
         "matrixCount": 0,
