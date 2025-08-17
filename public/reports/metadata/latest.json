@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-17T19:30:01.319Z",
-  "pagesScanned": 8330,
+  "generatedAt": "2025-08-17T19:31:01.150Z",
+  "pagesScanned": 8333,
   "items": [
     {
       "route": "/404",
@@ -34426,6 +34426,16 @@
       "suggestion": {
         "title": "Checklist: FinOps for AI",
         "description": "Checklist: FinOps for AI — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-17-1930",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide: RAG Platforms",
+        "description": "Guide: RAG Platforms — auto-suggested description"
       }
     },
     {
@@ -81899,6 +81909,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-17-1631",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 16:31",
+        "description": "Autonomous Update — 2025-08-17 16:31 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-17-1640",
       "missing": [
         "og:image"
@@ -82056,6 +82079,16 @@
       "suggestion": {
         "title": "Autonomous Reference Architecture — Vision & Multimodal (2025-08-17 19:20 UTC)",
         "description": "Autonomous Reference Architecture — Vision & Multimodal (2025-08-17 19:20 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1930",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Validation & QA Plan — Vision & Multimodal (2025-08-17 19:30 UTC)",
+        "description": "Autonomous Validation & QA Plan — Vision & Multimodal (2025-08-17 19:30 UTC) — auto-suggested description"
       }
     },
     {
