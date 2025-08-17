@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T11:34:03.681Z",
+  "generatedAt": "2025-08-17T11:35:04.376Z",
   "entries": [
     {
       "route": "/user-management",
@@ -702,6 +702,12 @@
       "file": "pages/reports/updates/update-2025-08-17-0840.tsx",
       "title": "Autonomous Playbook — Data Engineering (2025-08-17 08:40 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Playbook — Data Engineering (2025-08-17 08:40 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { \"@"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0835",
+      "file": "pages/reports/updates/update-2025-08-17-0835.tsx",
+      "title": "Autonomous Update — 2025-08-17 08:35",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 08:35 Autonomous Update — 2025-08-17 08:35 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : The young, inexperien"
     },
     {
       "route": "/reports/updates/update-2025-08-17-0834",
