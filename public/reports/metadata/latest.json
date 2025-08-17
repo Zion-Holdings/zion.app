@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-17T14:21:01.073Z",
-  "pagesScanned": 7790,
+  "generatedAt": "2025-08-17T14:22:01.216Z",
+  "pagesScanned": 7792,
   "items": [
     {
       "route": "/404",
@@ -76776,6 +76776,29 @@
       "suggestion": {
         "title": "Autonomous Performance Tuning Guide — Cloud Cost Optimization (2025-08-17 11:20 UTC)",
         "description": "Autonomous Performance Tuning Guide — Cloud Cost Optimization (2025-08-17 11:20 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1121",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 11:21",
+        "description": "Autonomous Update — 2025-08-17 11:21 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1122",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 11:22",
+        "description": "Autonomous Update — 2025-08-17 11:22 — auto-suggested description"
       }
     },
     {
