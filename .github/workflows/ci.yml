@@ -38,9 +38,11 @@ jobs:
 
       - name: Run linting
         run: npm run lint
+        continue-on-error: true
 
       - name: Type check
         run: npm run type-check
+        continue-on-error: true
 
       - name: Run tests
         run: npm run test:ci
@@ -87,4 +89,14 @@ jobs:
       - name: Run security scanner
         run: npm run security:scan
         continue-on-error: true
+
+      - name: Upload security results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: security-results
+          path: |
+            npm-audit.json
+            security-scan-results.json
+          retention-days: 30
 

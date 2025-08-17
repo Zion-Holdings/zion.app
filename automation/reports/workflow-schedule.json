@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-17T11:55:30.262Z",
+  "timestamp": "2025-08-17T11:56:30.524Z",
   "critical": [
     {
       "name": "ci.yml",
@@ -7,7 +7,7 @@
       "priority": "critical",
       "resourceIntensity": "medium",
       "estimatedDuration": 30,
-      "concurrentJobs": 12,
+      "concurrentJobs": 13,
       "runnerRequirements": {
         "runner": "ubuntu-latest",
         "size": "large",

@@ -1,36 +1,36 @@
 {
-  "timestamp": "2025-08-17T11:55:23.271Z",
+  "timestamp": "2025-08-17T11:56:29.732Z",
   "summary": {
     "totalWorkflows": 8,
     "complexityDistribution": {
       "very-high": 0,
       "high": 1,
-      "medium": 2,
-      "low": 5
+      "medium": 3,
+      "low": 4
     },
     "refactoringPriorities": {
       "critical": 0,
       "high": 1,
-      "medium": 2,
-      "low": 5
+      "medium": 3,
+      "low": 4
     }
   },
   "workflows": {
     "ci.yml": {
-      "complexityScore": 25,
-      "complexityLevel": "low",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 91,
+        "totalLines": 103,
         "jobCount": 0,
-        "stepCount": 13,
-        "conditionalCount": 1,
+        "stepCount": 14,
+        "conditionalCount": 2,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 5
+        "actionCount": 6
       },
-      "refactoringPriority": "low",
+      "refactoringPriority": "medium",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci.yml"
     },
