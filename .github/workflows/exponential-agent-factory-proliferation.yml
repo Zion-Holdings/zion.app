@@ -28,8 +28,8 @@ on:
 
 env:
   GROWTH_MULTIPLIER: "${{ github.event.inputs.growth_multiplier || '3' }}"
-  TARGET_EXPONENTIAL_FACTOR: "${{ github.event.inputs.target_exponential_factor || '10' }}""
-  ENABLE_AUTONOMOUS: "${{ github.event.inputs.enable_autonomous_creation || 'true' }}""
+  TARGET_EXPONENTIAL_FACTOR: "${{ github.event.inputs.target_exponential_factor || '10' }}"
+  ENABLE_AUTONOMOUS: "${{ github.event.inputs.enable_autonomous_creation || 'true' }}"
   MAX_CONCURRENT_FACTORIES: 10
   FACTORY_CREATION_INTERVAL: 14400 # 4 hours in seconds
 

@@ -22,7 +22,7 @@ on:
 
 env:
   REPLICATION_MODE: "${{ github.event.inputs.replication_mode || 'balanced' }}"
-  MAX_FACTORIES: "${{ github.event.inputs.max_factories || '1000' }}""
+  MAX_FACTORIES: "${{ github.event.inputs.max_factories || '1000' }}"
   REPLICATION_FACTOR: 2.0
   HEALTH_CHECK_INTERVAL: 3600
 
@@ -42,8 +42,8 @@ jobs:
       - uses: actions/checkout@v4
       
       - name: Check factory health
-        id: health"
-        run: |"
+        id: health
+        run: |
           echo "🏥 Checking factory health status..."
           
           # Count total factories
@@ -104,13 +104,13 @@ jobs:
           
           # Calculate replication count based on mode
           case $MODE in
-            aggressive")
+            "aggressive")
               REPLICATION_COUNT=$((CURRENT_FACTORIES * 3))
               ;;
-            balanced")
+            "balanced")
               REPLICATION_COUNT=$((CURRENT_FACTORIES * 2))
               ;;
-            conservative")
+            "conservative")
               REPLICATION_COUNT=$((CURRENT_FACTORIES / 2))
               ;;
             *)
