@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T10:57:04.105Z",
+  "generatedAt": "2025-08-17T10:58:04.327Z",
   "entries": [
     {
       "route": "/user-management",
@@ -678,6 +678,12 @@
       "file": "pages/reports/updates/update-2025-08-17-0800.tsx",
       "title": "Autonomous Security Hardening Guide — Agentic Workflows (2025-08-17 08:00 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Security Hardening Guide — Agentic Workflows (2025-08-17 08:00 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0758",
+      "file": "pages/reports/updates/update-2025-08-17-0758.tsx",
+      "title": "Autonomous Update — 2025-08-17 07:58",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 07:58 Autonomous Update — 2025-08-17 07:58 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : My AI skeptic friends are all nuts ·"
     },
     {
       "route": "/reports/updates/update-2025-08-17-0757",
