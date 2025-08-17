@@ -87,4 +87,5 @@ jobs:
             } catch (e) {
               core.info(`Merge not completed yet: ${e.message}`)
             }
-          inputs: '{"pr": "${{ steps.cpr.outputs.pull-request-number }}"}'
+          inputs: |
+            pr: ${{ steps.cpr.outputs.pull-request-number }}
