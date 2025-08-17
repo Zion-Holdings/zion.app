@@ -1,8 +1,9 @@
 name: Cloud Maintenance Automations
-true:
+
+on:
   schedule:
-  - cron: '*/30 * * * *'
-  workflow_dispatch: {}
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
 permissions:
   contents: write
   pull-requests: write
