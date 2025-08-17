@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T17:41:03.880Z",
+  "generatedAt": "2025-08-17T17:42:03.872Z",
   "entries": [
     {
       "route": "/user-management",
@@ -936,6 +936,12 @@
       "file": "pages/reports/updates/update-2025-08-17-1450.tsx",
       "title": "Autonomous Capability Map — AI Service Design (2025-08-17 14:50 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Capability Map — AI Service Design (2025-08-17 14:50 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1442",
+      "file": "pages/reports/updates/update-2025-08-17-1442.tsx",
+      "title": "Autonomous Update — 2025-08-17 14:42",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 14:42 Autonomous Update — 2025-08-17 14:42 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : My AI skeptic friends"
     },
     {
       "route": "/reports/updates/update-2025-08-17-1441",
