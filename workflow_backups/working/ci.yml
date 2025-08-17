@@ -1,0 +1,46 @@
+name: CI
+
+on:
+
+
+  workflow_dispatch: {}
+  schedule:
+    - cron: '*/30 * * * *'
+
+
+concurrency:
+
+
+
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
+
+  contents: write
+  actions: read
+
+jobs:
+
+
+  main: name: Main Job
+      - name: Checkout repository
+
+                
+          fetch-depth: 0
+
+      - name: Setup Node.js
+
+
+                
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+
+
+                
+
+      - name: Complete workflow
+
+
+                
+          echo "Workflow completed successfully"
