@@ -1,7 +1,26 @@
 name: YAML Auto-Fixer (Simple)
 
 on:
+permissions:
+concurrency:
+  group: "${{ github.workflow }}-${{ github.ref }}"
+  cancel-in-progress: true
+  contents: read
+  actions: read
   workflow_dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
     inputs:
       fix_mode:
         description: 'Fix mode (validate-only, conservative, aggressive)'
@@ -13,10 +32,36 @@ on:
           - conservative
           - aggressive
   schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
     - cron: '0 2 * * *'  # Daily at 2 AM
 
 jobs:
   auto-fix-yaml:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
     name: Auto-Fix YAML Syntax
       - name: Checkout code
         uses: actions/checkout@v4
@@ -380,6 +425,19 @@ jobs:
 
       - name: Create fix report
   if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Execute workflow
+        run: echo "Workflow $workflow_name executed successfully"
           echo "📝 Creating fix report..."
           
           cat > yaml-fix-report.md << EOF
@@ -399,6 +457,7 @@ jobs:
           EOF
 
       - name: Upload fix report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
+          retention-days: 30
           name: yaml-fix-report
           path: yaml-fix-report.md

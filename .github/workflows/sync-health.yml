@@ -1,6 +1,12 @@
 name: Sync Health
 
 on:
+permissions:
+concurrency:
+  group: "${{ github.workflow }}-${{ github.ref }}"
+  cancel-in-progress: true
+  contents: read
+  actions: read
   push:
     branches: [ main ]
   schedule:
@@ -10,6 +16,7 @@ on:
 jobs:
   health:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     permissions:
       contents: read
     steps:
@@ -30,6 +37,7 @@ jobs:
 
       - name: Upload sync health artifacts
         uses: actions/upload-artifact@v4
+          retention-days: 30
         with:
           name: sync-health-artifacts
           path: |

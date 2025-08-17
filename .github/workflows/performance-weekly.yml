@@ -1,6 +1,12 @@
 name: Performance Audit Weekly
 
 on:
+permissions:
+concurrency:
+  group: "${{ github.workflow }}-${{ github.ref }}"
+  cancel-in-progress: true
+  contents: read
+  actions: read
   schedule:
     - cron: '0 13 * * 1' # Mondays at 13:00 UTC
   workflow_dispatch:
@@ -8,6 +14,7 @@ on:
 jobs:
   audit:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     permissions:
       contents: read
       actions: read
@@ -29,6 +36,7 @@ jobs:
 
       - name: Upload performance reports
         uses: actions/upload-artifact@v4
+          retention-days: 30
         with:
           name: performance-reports
           path: data/reports/performance/**/*.json
