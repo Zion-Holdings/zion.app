@@ -1,0 +1,53 @@
+{
+  "timestamp": "2025-08-17T10:12:45.201Z",
+  "metrics": {
+    "workflow_health": {
+      "success": true,
+      "score": 100,
+      "level": "excellent",
+      "metrics": {
+        "totalWorkflows": 0,
+        "workflowsWithIssues": 0,
+        "totalIssues": 0,
+        "successRate": 100
+      }
+    },
+    "automation_health": {
+      "success": true,
+      "score": 100,
+      "level": "excellent",
+      "message": "All automation systems operational"
+    },
+    "security_status": {
+      "success": true,
+      "score": 100,
+      "level": "excellent",
+      "metrics": {
+        "totalWorkflows": 192,
+        "securedWorkflows": 192,
+        "workflowsWithTimeouts": 192,
+        "securityScore": 100,
+        "timeoutScore": 100
+      }
+    },
+    "dependency_health": {
+      "success": false,
+      "reason": "Command failed: npm run automation:deps\n⚠️  Could not backup node_modules info: Command failed: npm list --depth=0 --json\nnpm error code ELSPROBLEMS\nnpm error extraneous: @emnapi/runtime@1.4.5 /Users/miami2/ ZION_APP_AUG_11_25/zion.app/node_modules/@emnapi/runtime\nnpm error missing: @playwright/test@^1.54.2, required by bolt.new.zion.app@0.1.0\nnpm error invalid: @types/node@24.2.1 /Users/miami2/ ZION_APP_AUG_11_25/zion.app/node_modules/@types/node\nnpm error invalid: lucide-react@0.536.0 /Users/miami2/ ZION_APP_AUG_11_25/zion.app/node_modules/lucide-react\nnpm error invalid: next@14.2.5 /Users/miami2/ ZION_APP_AUG_11_25/zion.app/node_modules/next\nnpm error invalid: sharp@0.33.5 /Users/miami2/ ZION_APP_AUG_11_25/zion.app/node_modules/sharp\nnpm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-08-17T10_12_46_650Z-debug-0.log\n\n❌ Error checking dependency health: TypeError: Cannot read properties of undefined (reading 'split')\n    at DependencyHealthChecker.determineUpdateType (/Users/miami2/ ZION_APP_AUG_11_25/zion.app/automation/dependency-health-checker.cjs:279:34)\n    at DependencyHealthChecker.analyzeDependencyHealth (/Users/miami2/ ZION_APP_AUG_11_25/zion.app/automation/dependency-health-checker.cjs:222:31)\n    at DependencyHealthChecker.checkDependencyHealth (/Users/miami2/ ZION_APP_AUG_11_25/zion.app/automation/dependency-health-checker.cjs:70:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async main (/Users/miami2/ ZION_APP_AUG_11_25/zion.app/automation/dependency-health-checker.cjs:630:22)\n❌ Error running dependency health checker: TypeError: Cannot read properties of undefined (reading 'split')\n    at DependencyHealthChecker.determineUpdateType (/Users/miami2/ ZION_APP_AUG_11_25/zion.app/automation/dependency-health-checker.cjs:279:34)\n    at DependencyHealthChecker.analyzeDependencyHealth (/Users/miami2/ ZION_APP_AUG_11_25/zion.app/automation/dependency-health-checker.cjs:222:31)\n    at DependencyHealthChecker.checkDependencyHealth (/Users/miami2/ ZION_APP_AUG_11_25/zion.app/automation/dependency-health-checker.cjs:70:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async main (/Users/miami2/ ZION_APP_AUG_11_25/zion.app/automation/dependency-health-checker.cjs:630:22)\n"
+    },
+    "resource_usage": {
+      "success": true,
+      "score": 100,
+      "level": "excellent",
+      "metrics": {
+        "diskUsage": 100,
+        "automationSize": 100
+      }
+    }
+  },
+  "alerts": [],
+  "recommendations": [],
+  "overall_health": {
+    "score": 100,
+    "level": "excellent"
+  }
+}
