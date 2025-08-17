@@ -1,46 +1,42 @@
-name: AI-IT Ultrafast Sync
-
-on:
+name: WORKFLOW_NAME_PLACEHOLDER
+'on':
   workflow_dispatch: {}
   schedule:
-    - cron: '0 0 * * *'
-
-
+  - cron: '*/30 * * * *'
 concurrency:
-  group: "github.workflow-${{ github.ref }}"
+  group: workflow-workflow_name_placeholder-${{ github.ref }}
   cancel-in-progress: true
-
+permissions:
   contents: write
   actions: read
-
 jobs:
   main:
     name: Main Job
-      - name: Checkout repository
-        uses: actions/checkout@v4
-          fetch-depth: 0
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: npm
+    - name: Install dependencies
+      run: npm ci
+    - name: Clean git state
+      run: 'git config --global user.name "github-actions[bot]"
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-          node-version: '20'
-          cache: 'npm'
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Install dependencies
-        run: npm ci --no-audit --no-fund
+        git rebase --abort 2>/dev/null || true
 
-      - name: Run automation
-        run: |
-          echo "Running automation tasks..."
-          # Add your automation commands here
+        rm -rf .git/rebase-merge .git/rebase-apply 2>/dev/null || true
 
-      - name: Commit and push changes
-        run: |
-          if [ -n "$(git status --porcelain)" ]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add -A
-            git commit -m "chore(automation): update from $workflow_name [skip ci]"
-            git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
-          else
-            echo "No changes to commit"
-          fi
+        git reset --hard HEAD
+
+        git clean -fd'
+    - name: Run automation
+      run: echo "Automation workflow placeholder - customize as needed"

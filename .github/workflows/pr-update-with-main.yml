@@ -1,46 +1,42 @@
-name: Update PR branches with main
-
-on:
-  push:
-    branches: [ main ]
-  schedule:
-    - cron: '0 0 * * *'
+name: WORKFLOW_NAME_PLACEHOLDER
+'on':
   workflow_dispatch: {}
-
-
+  schedule:
+  - cron: '*/30 * * * *'
 concurrency:
-  group: "github.workflow-${{ github.ref }}"
+  group: workflow-workflow_name_placeholder-${{ github.ref }}
   cancel-in-progress: true
-
+permissions:
   contents: write
-  pull-requests: write
-
+  actions: read
 jobs:
+  main:
+    name: Main Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: npm
+    - name: Install dependencies
+      run: npm ci
+    - name: Clean git state
+      run: 'git config --global user.name "github-actions[bot]"
 
-  list:
-      prs: ${{ steps.collect.outputs.prs }}
-          script: |
-            const { data: prs } = await github.rest.pulls.list({
-              owner: context.repo.owner,"
-              repo: context.repo.repo,"
-              state: 'open',
-              per_page: 100
-            });
-            const own = prs
-              .filter(pr => pr.head.repo && pr.head.repo.full_name === pr.base.repo.full_name)
-              .map(pr => ({ number: pr.number, headRef: pr.head.ref }));
-            core.setOutput('prs', JSON.stringify(own));
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-  update:
-        include: ${{ fromJSON(needs.list.outputs.prs) }}
-      - name: Checkout PR head
-        uses: actions/checkout@v4
-          fetch-depth: 0
-          ref: ${{ matrix.headRef }}
-      - name: Merge main into PR branch
-        run: |
-          git fetch origin main
-          git merge --no-edit origin/main || true
-      - name: Push updated branch
-        run: |
-          git push origin HEAD:${{ matrix.headRef }} || echo "Push failed (likely fork)
+        git rebase --abort 2>/dev/null || true
+
+        rm -rf .git/rebase-merge .git/rebase-apply 2>/dev/null || true
+
+        git reset --hard HEAD
+
+        git clean -fd'
+    - name: Run automation
+      run: echo "Automation workflow placeholder - customize as needed"

@@ -1,55 +1,42 @@
-name: Cleanup merged branches
-
-on:
-  schedule:
-    - cron: '0 4 * * 0'
+name: WORKFLOW_NAME_PLACEHOLDER
+'on':
   workflow_dispatch: {}
-
-
+  schedule:
+  - cron: '*/30 * * * *'
 concurrency:
-  group: "github.workflow-${{ github.ref }}"
+  group: workflow-workflow_name_placeholder-${{ github.ref }}
   cancel-in-progress: true
-
+permissions:
   contents: write
-
+  actions: read
 jobs:
+  main:
+    name: Main Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: npm
+    - name: Install dependencies
+      run: npm ci
+    - name: Clean git state
+      run: 'git config --global user.name "github-actions[bot]"
 
-  cleanup:
-      - name: List open PR heads
-        id: list
-          script: |
-            const { data: prs } = await github.rest.pulls.list({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              state: 'open',
-              per_page: 100
-            });
-            const heads = prs.map(pr => pr.head.ref);
-            const fs = require('fs');
-            fs.writeFileSync('open_pr_heads.txt', heads.join('\n'));
-            core.info(`Open PR heads: ${heads.length}`);
-      - name: Checkout repository
-        uses: actions/checkout@v4
-          fetch-depth: 0
-      - name: Prune merged branches
-        run: |
-          set -e
-          git fetch --all --prune
-          base="origin/main"
-          protected_regex='^(origin/(main|master|develop|dev|preview|gh-pages))$'
-          echo "Protected regex: $protected_regex"
-          while read -r ref; do
-            ref=$(echo "$ref" | sed 's/^ *//')
-            [ -z "$ref" ] && continue
-            if [[ $ref =~ $protected_regex ]]; then
-              echo "Skip protected: $ref"
-              continue
-            fi
-            branch=${ref#origin/}
-            if grep -qx "$branch" open_pr_heads.txt; then
-              echo "Skip open PR head: $branch"
-              continue
-            fi
-            echo "Attempt delete: $branch"
-            git push origin --delete "$branch" || echo "Could not delete $branch"
-          done < <(git branch -r --merged "$base")
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+        git rebase --abort 2>/dev/null || true
+
+        rm -rf .git/rebase-merge .git/rebase-apply 2>/dev/null || true
+
+        git reset --hard HEAD
+
+        git clean -fd'
+    - name: Run automation
+      run: echo "Automation workflow placeholder - customize as needed"

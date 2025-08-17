@@ -1,41 +1,42 @@
-name: Autonomous Auto-Discovery (7m)
-
-on:
-  schedule:
-    - cron: '0 0 * * *'
+name: WORKFLOW_NAME_PLACEHOLDER
+'on':
   workflow_dispatch: {}
-
+  schedule:
+  - cron: '*/30 * * * *'
 concurrency:
-  group: "autonomous-auto-discovery-${{ github.ref }}"
+  group: workflow-workflow_name_placeholder-${{ github.ref }}
   cancel-in-progress: true
-
+permissions:
   contents: write
-
+  actions: read
 jobs:
+  main:
+    name: Main Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: npm
+    - name: Install dependencies
+      run: npm ci
+    - name: Clean git state
+      run: 'git config --global user.name "github-actions[bot]"
 
-  matrix-runner:
-        partition_index: [0, 1, 2]
-        partition_total: [3]
-      - name: Checkout
-        uses: actions/checkout@v4
-          fetch-depth: 0
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-          node-version: 20
-          cache: npm
+        git rebase --abort 2>/dev/null || true
 
-      - name: Install dependencies
-        run: npm ci
+        rm -rf .git/rebase-merge .git/rebase-apply 2>/dev/null || true
 
-      - name: Run auto-discovery partition ${{ matrix.partition_index }} of ${{ matrix.partition_total }}
-        env:
-          PARTITION_INDEX: ${{ matrix.partition_index }}"
-          PARTITION_TOTAL: ${{ matrix.partition_total }}"
-          TASK_TIMEOUT_MS: '180000'
+        git reset --hard HEAD
 
-      - name: Upload logs
-  if: always()
-          name: auto-discovery-logs-${{ matrix.partition_index }}
-          path: automation/logs/**/*
-          if-no-files-found: ignore
+        git clean -fd'
+    - name: Run automation
+      run: echo "Automation workflow placeholder - customize as needed"
