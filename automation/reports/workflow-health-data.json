@@ -2057,8 +2057,8 @@
     "name": "autonomous-cloud-automations.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-cloud-automations.yml",
-    "size": 1225,
-    "lines": 45,
+    "size": 1701,
+    "lines": 57,
     "triggers": [
       "schedule",
       "workflow_dispatch {}"
@@ -2072,7 +2072,7 @@
       "with"
     ],
     "timeouts": [
-      20
+      30
     ],
     "permissions": [
       {
@@ -2166,8 +2166,8 @@
     "name": "autonomous-cloud.yml",
     "status": "active",
     "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-cloud.yml",
-    "size": 2201,
-    "lines": 62,
+    "size": 2663,
+    "lines": 72,
     "triggers": [
       "schedule",
       "workflow_dispatch"
@@ -2182,7 +2182,7 @@
       "with"
     ],
     "timeouts": [
-      15
+      25
     ],
     "permissions": [
       {
@@ -2236,6 +2236,14 @@
       {
         "permission": "run",
         "value": "npm ci"
+      },
+      {
+        "permission": "- name",
+        "value": "Clean git state"
+      },
+      {
+        "permission": "run",
+        "value": "|"
       },
       {
         "permission": "- name",
@@ -2343,7 +2351,7 @@
       },
       {
         "permission": "git commit -m \"chore(cloud)",
-        "value": "autonomous updates (15m cadence) [skip ci]\""
+        "value": "autonomous updates (30m cadence) [skip ci]\""
       },
       {
         "permission": "git push origin HEAD",
