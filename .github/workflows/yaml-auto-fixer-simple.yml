@@ -82,10 +82,17 @@ jobs:
               
               # Fix 2d: Fix missing closing quotes in any group reference
               import re
-              group_pattern = r'group:\s*"([^"]*\${{[^}]*}}[^"]*)'
-              if re.search(group_pattern, content):
-                  content = re.sub(group_pattern, r'group: "\1"', content)
-                  fixes_applied.append("Fixed missing closing quotes in group references")
+              # Simple pattern to find group lines with missing closing quotes
+              lines = content.split('\n')
+              fixed_lines = []
+              for line in lines:
+                  if line.strip().startswith('group: "') and not line.strip().endswith('"'):
+                      if '${{' in line and '}}' in line:
+                          # This is a group line with GitHub context that's missing closing quote
+                          line = line.rstrip() + '"'
+                          fixes_applied.append("Fixed missing closing quote in group reference")
+                  fixed_lines.append(line)
+              content = '\n'.join(fixed_lines)
               
               # Fix 3: Fix cancel-in-progress quotes
               if 'cancel-in-progress: "true' in content:
@@ -119,7 +126,20 @@ jobs:
                       content = content.replace('conservative")', '"conservative")')
                       fixes_applied.append("Fixed case statement quotes")
               
-              # Fix 8: Fix step indentation issues (conservative mode and up)
+              # Fix 8: Fix job names with stray quotes
+              if ':"' in content:
+                  # Find and fix job names like "fast-push:""
+                  lines = content.split('\n')
+                  fixed_lines = []
+                  for line in lines:
+                      if ':"' in line and line.strip().endswith(':"'):
+                          # This is a job name with a stray quote
+                          line = line.rstrip(':"') + ':'
+                          fixes_applied.append("Fixed job name with stray quote")
+                      fixed_lines.append(line)
+                  content = '\n'.join(fixed_lines)
+              
+              # Fix 9: Fix step indentation issues (conservative mode and up)
               if fix_mode in ['conservative', 'aggressive']:
                   lines = content.split('\n')
                   fixed_lines = []
