@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T15:27:03.724Z",
+  "generatedAt": "2025-08-17T15:28:03.990Z",
   "entries": [
     {
       "route": "/user-management",
@@ -852,6 +852,12 @@
       "file": "pages/reports/updates/update-2025-08-17-1230.tsx",
       "title": "Autonomous Capability Map — MLOps & Model Reliability (2025-08-17 12:30 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Capability Map — MLOps & Model Reliability (2025-08-17 12:30 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\","
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1228",
+      "file": "pages/reports/updates/update-2025-08-17-1228.tsx",
+      "title": "Autonomous Update — 2025-08-17 12:28",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 12:28 Autonomous Update — 2025-08-17 12:28 Signal over noise—your automated update is here. Today's Highlight Hacker News : Zoom terms now allow training AI on user conten"
     },
     {
       "route": "/reports/updates/update-2025-08-17-1227",
