@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T17:31:03.939Z",
+  "generatedAt": "2025-08-17T17:32:04.033Z",
   "entries": [
     {
       "route": "/user-management",
@@ -930,6 +930,12 @@
       "file": "pages/reports/updates/update-2025-08-17-1440.tsx",
       "title": "Autonomous Checklist — AI Service Design (2025-08-17 14:40 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Checklist — AI Service Design (2025-08-17 14:40 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1432",
+      "file": "pages/reports/updates/update-2025-08-17-1432.tsx",
+      "title": "Autonomous Update — 2025-08-17 14:32",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 14:32 Autonomous Update — 2025-08-17 14:32 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : The young, inexperienced engineers a"
     },
     {
       "route": "/reports/updates/update-2025-08-17-1431",
