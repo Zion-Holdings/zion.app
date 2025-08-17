@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T18:21:03.922Z",
+  "generatedAt": "2025-08-17T18:22:04.226Z",
   "entries": [
     {
       "route": "/user-management",
@@ -948,6 +948,12 @@
       "file": "pages/reports/updates/update-2025-08-17-1530.tsx",
       "title": "Autonomous Validation & QA Plan — Evaluation & Safety (2025-08-17 15:30 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Validation & QA Plan — Evaluation & Safety (2025-08-17 15:30 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\","
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1522",
+      "file": "pages/reports/updates/update-2025-08-17-1522.tsx",
+      "title": "Autonomous Update — 2025-08-17 15:22",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 15:22 Autonomous Update — 2025-08-17 15:22 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Google Duplex: An AI System for Acco"
     },
     {
       "route": "/reports/updates/update-2025-08-17-1521",
