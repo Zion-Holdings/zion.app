@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-17T10:30:01.382Z",
-  "pagesScanned": 7359,
+  "generatedAt": "2025-08-17T10:31:00.986Z",
+  "pagesScanned": 7369,
   "items": [
     {
       "route": "/404",
@@ -7200,6 +7200,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-17-102056",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-17-103054",
       "missing": [
         "og:image"
       ],
@@ -16610,6 +16620,16 @@
     },
     {
       "route": "/reports/cases/case-2025-08-17-102056",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Cloud Improving",
+        "description": "Case Study — Cloud Improving — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-17-103054",
       "missing": [
         "og:image"
       ],
@@ -26679,6 +26699,16 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-17-103054",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-15-0211",
       "missing": [
         "og:image"
@@ -32269,6 +32299,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-17-1030",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Checklist: Edge AI",
+        "description": "Checklist: Edge AI — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-17T00-00",
       "missing": [
         "og:image"
@@ -32896,6 +32936,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-17 10-20",
         "description": "Innovation Insight — 2025-08-17 10-20 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-17T10-30",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-17 10-30",
+        "description": "Innovation Insight — 2025-08-17 10-30 — auto-suggested description"
       }
     },
     {
@@ -42939,6 +42989,16 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-17-103054",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Automation Trends 2025",
+        "description": "Pattern — Automation Trends 2025 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-15-021207",
       "missing": [
         "og:image"
@@ -49800,6 +49860,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-17-102056",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-17-103055",
       "missing": [
         "og:image"
       ],
@@ -72729,6 +72799,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-17-0731",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 07:31",
+        "description": "Autonomous Update — 2025-08-17 07:31 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-17-0740",
       "missing": [
         "og:image"
@@ -72896,6 +72979,16 @@
       "suggestion": {
         "title": "Autonomous Capability Map — Edge AI & IoT (2025-08-17 10:20 UTC)",
         "description": "Autonomous Capability Map — Edge AI & IoT (2025-08-17 10:20 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1030",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Playbook — Vision & Multimodal (2025-08-17 10:30 UTC)",
+        "description": "Autonomous Playbook — Vision & Multimodal (2025-08-17 10:30 UTC) — auto-suggested description"
       }
     },
     {
@@ -73526,6 +73619,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-17 10-20",
         "description": "Autonomous Update — 2025-08-17 10-20 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17T10-30",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 10-30",
+        "description": "Autonomous Update — 2025-08-17 10-30 — auto-suggested description"
       }
     },
     {
