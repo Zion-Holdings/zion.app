@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T18:28:03.978Z",
+  "generatedAt": "2025-08-17T18:29:03.861Z",
   "entries": [
     {
       "route": "/user-management",
@@ -948,6 +948,12 @@
       "file": "pages/reports/updates/update-2025-08-17-1530.tsx",
       "title": "Autonomous Validation & QA Plan — Evaluation & Safety (2025-08-17 15:30 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Validation & QA Plan — Evaluation & Safety (2025-08-17 15:30 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\","
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1529",
+      "file": "pages/reports/updates/update-2025-08-17-1529.tsx",
+      "title": "Autonomous Update — 2025-08-17 15:29",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 15:29 Autonomous Update — 2025-08-17 15:29 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Paper Airplane Designs · 1753 pts Wh"
     },
     {
       "route": "/reports/updates/update-2025-08-17-1528",
