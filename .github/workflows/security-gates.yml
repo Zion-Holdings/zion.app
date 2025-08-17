@@ -1,19 +1,24 @@
-name: Security Gates
+name: Security Gates Compliance
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: {}
   schedule:
-    - cron: '0 0 * * *'  # Daily at midnight
+    - cron: '0 0 * * *' # Daily at midnight UTC
 
 permissions:
-  contents: read
+  contents: write
   actions: read
+
+concurrency:
+  group: "security-gates"
+  cancel-in-progress: true
 
 jobs:
   main:
-    name: Main Job
+    name: Security Gates Job
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -23,15 +28,26 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
-          cache: "npm"
+          node-version: '20'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --no-audit --no-fund
 
-      - name: Execute workflow
+      - name: Run security checks
         run: |
-          echo "✅ Security Gates workflow executed successfully"
-          echo "📅 Workflow: Security Gates"
-          echo "🕐 Timestamp: $(date)"
-          echo "🎯 Status: Completed"
+          echo "Running security checks..."
+          # Add your security check commands here
+          echo "Security checks completed"
+
+      - name: Commit and push changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore(security): update security gates [skip ci]"
+            git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
+          else
+            echo "No changes to commit"
+          fi

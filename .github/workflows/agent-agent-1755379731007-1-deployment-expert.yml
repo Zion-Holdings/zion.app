@@ -1,38 +1,40 @@
-name: agent-agent-1755379731007-1-deployment-expert
+name: Deployment Expert
 
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '0 */6 * * *' # Every 6 hours
 
 permissions:
-concurrency:
-  group: "${{ github.workflow }}-${{ github.ref }}"
-  cancel-in-progress: true
-  contents: write
-  pull-requests: write
+  contents: read
   actions: read
+
+concurrency:
+  group: "Deployment-Expert"
+  cancel-in-progress: true
 
 jobs:
   main:
-    name: Main Job
+    name: Deployment Expert Job
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 15
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
+      
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
-
+      
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
-
-      - name: Run workflow
+      
+      - name: Run Deployment Expert
         run: |
-          echo "Workflow agent-agent-1755379731007-1-deployment-expert completed successfully"
+          echo "Running Deployment Expert..."
+          echo "Workflow completed successfully"

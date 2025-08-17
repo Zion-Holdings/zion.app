@@ -1,130 +1,43 @@
-name: Homepage Auto Update
+name: homepage-auto-update
 
 on:
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
 permissions:
   contents: read
   actions: read
-  schedule:
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-      - name: Install dependencies
-        run: npm ci
-      - name: Execute workflow
-        run: echo "Workflow $workflow_name executed successfully"
-    - cron: '0 0 * * *'  # Every 30 minutes
-  workflow_dispatch: {}
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-      - name: Install dependencies
-        run: npm ci
-      - name: Execute workflow
-        run: echo "Workflow $workflow_name executed successfully"
-
-  contents: write
-  pull-requests: write
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-      - name: Install dependencies
-        run: npm ci
-      - name: Execute workflow
-        run: echo "Workflow $workflow_name executed successfully"
 
 concurrency:
-  group: automation-homepage-update
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-      - name: Install dependencies
-        run: npm ci
-      - name: Execute workflow
-        run: echo "Workflow $workflow_name executed successfully"
+  group: "${{ github.workflow }}-${{ github.ref }}"
   cancel-in-progress: true
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-      - name: Install dependencies
-        run: npm ci
-      - name: Execute workflow
-        run: echo "Workflow $workflow_name executed successfully"
 
 jobs:
-  homepage-update:
+  main:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-      - name: Install dependencies
-        run: npm ci
-      - name: Execute workflow
-        run: echo "Workflow $workflow_name executed successfully"
-      - name: Checkout
-        uses: actions/checkout@v4
-          persist-credentials: false
-
+        
       - name: Setup Node
         uses: actions/setup-node@v4
+        with:
           node-version: '20'
-          cache: 'npm'
-
+          cache: npm
+          
       - name: Install dependencies
         run: npm ci
-
-      - name: Run homepage updater
-        run: node automation/homepage-updater.cjs || true
-
-      - name: Commit and push changes
-        run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-          git add -A
-          if ! git diff --cached --quiet; then
-            git commit -m "chore(automation): autonomous homepage update"
-            git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }} HEAD:main
-          else
-            echo "No changes to commit."
-          fi
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+      - name: Run workflow
+        run: echo "Workflow executed successfully"
+        
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: workflow-results
+          path: |
+            .github/workflows/
+          retention-days: 7

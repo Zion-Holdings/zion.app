@@ -1,38 +1,40 @@
-name: agent-agent-1755379731005-0-full-stack-expert
+name: Full Stack Expert
 
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '0 */6 * * *' # Every 6 hours
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
   actions: read
 
 concurrency:
-  group: "workflow-${{ github.ref }}"
-  cancel-in-progress: false
+  group: "Full-Stack-Expert"
+  cancel-in-progress: true
+
 jobs:
   main:
-    name: Main Job
+    name: Full Stack Expert Job
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 15
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
+      
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
-
+      
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
-
-      - name: Run workflow
+      
+      - name: Run Full Stack Expert
         run: |
-          echo "Workflow agent-agent-1755379731005-0-full-stack-expert completed successfully"
+          echo "Running Full Stack Expert..."
+          echo "Workflow completed successfully"

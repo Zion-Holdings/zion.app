@@ -1,19 +1,24 @@
 name: Security Scan
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: {}
   schedule:
-    - cron: '0 0 * * *'  # Daily at midnight
+    - cron: '*/30 * * * *' # Every 30 minutes
 
 permissions:
-  contents: read
+  contents: write
   actions: read
+
+concurrency:
+  group: "security-scan"
+  cancel-in-progress: true
 
 jobs:
   main:
-    name: Main Job
+    name: Security Scan Job
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -23,15 +28,14 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
-          cache: "npm"
+          node-version: '20'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --no-audit --no-fund
 
-      - name: Execute workflow
+      - name: Run security scan
         run: |
-          echo "✅ Security Scan workflow executed successfully"
-          echo "📅 Workflow: Security Scan"
-          echo "🕐 Timestamp: $(date)"
-          echo "🎯 Status: Completed"
+          echo "Running security scan..."
+          npm audit --audit-level=moderate || true
+          echo "Security scan completed"

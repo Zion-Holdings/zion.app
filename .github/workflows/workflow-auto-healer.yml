@@ -1,44 +1,79 @@
-name: 🔧 General Automation
+name: Workflow Auto-Healer
 
 on:
-  workflow_dispatch:
   schedule:
-    - cron: '0 */4 * * *'  # Every 4 hours
+    - cron: '0 */2 * * *'  # Every 2 hours
+  workflow_dispatch: {}
+  workflow_run:
+    workflows: ['CI', 'Test Suite', 'Security Scan']
+    types: [completed, failed]
 
 permissions:
-concurrency:
-  group: "${{ github.workflow }}-${{ github.ref }}"
-  cancel-in-progress: true
-  contents: read
+  contents: write
   actions: read
-
-env:
-  AUTOMATION_TYPE: general
+  pull-requests: write
 
 jobs:
-  automation:
-    name: Run General Automation
+  auto-heal:
+    name: Auto-Heal Workflows
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 30
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci --no-audit --no-fund
-
-      - name: Run automation
-        run: |
-          echo "🔧 Running general automation..."
-          echo "Automation type: ${{ env.AUTOMATION_TYPE }}"
           
-          # Automation logic would go here
-          echo "✅ General automation completed successfully"
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          
+      - name: Install dependencies
+        run: |
+          pip install pyyaml
+          
+      - name: Run workflow validation
+        id: validate
+        run: |
+          echo "Validating all workflow files..."
+          invalid_files = []
+          
+          for workflow_file in $(find .github/workflows -name "*.yml" -o -name "*.yaml"); do
+            if ! python3 -c "import yaml; yaml.safe_load(open('$workflow_file', 'r'))" 2>/dev/null; then
+              invalid_files.append("$workflow_file")
+              echo "Invalid workflow: $workflow_file"
+            fi
+          done
+          
+          if [ ${#invalid_files[@]} -gt 0 ]; then
+            echo "needs_fix=true" >> $GITHUB_OUTPUT
+            echo "invalid_count=${#invalid_files[@]}" >> $GITHUB_OUTPUT
+            echo "Found ${#invalid_files[@]} invalid workflows"
+          else
+            echo "needs_fix=false" >> $GITHUB_OUTPUT
+            echo "All workflows are valid"
+          fi
+          
+      - name: Report workflow status
+        run: |
+          echo "Workflow validation completed"
+          echo "Needs fix: ${{ steps.validate.outputs.needs_fix }}"
+          echo "Invalid count: ${{ steps.validate.outputs.invalid_count }}"
+          
+      - name: Create issue for manual review
+        if: steps.validate.outputs.needs_fix == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const invalidCount = '${{ steps.validate.outputs.invalid_count }}';
+            const message = `🔧 **Workflow Auto-Healer Report**\n\nFound ${invalidCount} invalid workflow files that need manual attention.\n\nPlease review and fix these workflows manually.`;
+            
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Workflow Auto-Healer: ${invalidCount} Invalid Workflows Found`,
+              body: message,
+              labels: ['workflow-fix', 'automation', 'needs-attention']
+            });

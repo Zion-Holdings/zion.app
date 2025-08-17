@@ -1,130 +1,35 @@
 name: SEO Audit
 
 on:
-permissions:
-  contents: read
-  actions: read
   workflow_dispatch: {}
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-      - name: Install dependencies
-        run: npm ci
-      - name: Execute workflow
-        run: echo "Workflow $workflow_name executed successfully"
   schedule:
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-      - name: Install dependencies
-        run: npm ci
-      - name: Execute workflow
-        run: echo "Workflow $workflow_name executed successfully"
-    - cron: '0 */4 * * *'  # Run every 2 hours instead of every 10 minutes
+    - cron: '0 6 * * *' # Daily at 6 AM UTC
 
-
-concurrency:
-  group: "github.workflow-${{ github.ref }}"
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-      - name: Install dependencies
-        run: npm ci
-      - name: Execute workflow
-        run: echo "Workflow $workflow_name executed successfully"
-  cancel-in-progress: true
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-      - name: Install dependencies
-        run: npm ci
-      - name: Execute workflow
-        run: echo "Workflow $workflow_name executed successfully"
-
+permissions:
   contents: write
   pull-requests: write
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-      - name: Install dependencies
-        run: npm ci
-      - name: Execute workflow
-        run: echo "Workflow $workflow_name executed successfully"
   actions: read
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-      - name: Install dependencies
-        run: npm ci
-      - name: Execute workflow
-        run: echo "Workflow $workflow_name executed successfully"
+
+concurrency:
+  group: "seo-audit"
+  cancel-in-progress: false
 
 jobs:
   main:
+    name: SEO Audit Job
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-      - name: Install dependencies
-        run: npm ci
-      - name: Execute workflow
-        run: echo "Workflow $workflow_name executed successfully"
-    name: Main Job
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4"
+        uses: actions/setup-node@v4
+        with:
           node-version: '20'
           cache: 'npm'
 
@@ -145,6 +50,7 @@ jobs:
 
       - name: Generate SEO report
         id: seo_report
+        run: |
           echo "Starting SEO audit..."
           echo "Node version: $(node --version)"
           echo "NPM version: $(npm --version)"
@@ -153,22 +59,23 @@ jobs:
           
           if node scripts/seo-audit.js; then
             echo "SEO audit completed successfully"
-            echo "::set-output name=status::success"
+            echo "status=success" >> $GITHUB_OUTPUT
           else
             echo "SEO audit failed, but continuing..."
-            echo "::set-output name=status::failed"
+            echo "status=failed" >> $GITHUB_OUTPUT
           fi
 
       - name: List generated files
         run: |
-          echo "Generated files:
+          echo "Generated files:"
           ls -la public/reports/seo/ || echo "No SEO reports directory found"
           echo "Current working directory: $(pwd)"
-          echo "Directory contents:
+          echo "Directory contents:"
           ls -la public/ || echo "No public directory found"
 
       - name: Check for changes
         id: check_changes
+        run: |
           echo "Checking for git changes..."
           git status --porcelain || echo "Git status check failed"
           if [ -n "$(git status --porcelain 2>/dev/null)" ]; then
@@ -181,41 +88,15 @@ jobs:
           fi
 
       - name: Configure git
-  if: steps.check_changes.outputs.has_changes == 'true'
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-      - name: Install dependencies
-        run: npm ci
-      - name: Execute workflow
-        run: echo "Workflow $workflow_name executed successfully"
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           echo "Git configured successfully"
 
       - name: Add and commit changes
-  if: steps.check_changes.outputs.has_changes == 'true'
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-      - name: Install dependencies
-        run: npm ci
-      - name: Execute workflow
-        run: echo "Workflow $workflow_name executed successfully"
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
           echo "Adding files to git..."
           git add -A || echo "Git add failed"
           echo "Committing changes..."
@@ -226,21 +107,8 @@ jobs:
           fi
 
       - name: Push changes
-  if: steps.check_changes.outputs.has_changes == 'true'
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-      - name: Install dependencies
-        run: npm ci
-      - name: Execute workflow
-        run: echo "Workflow $workflow_name executed successfully"
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
           echo "Pushing changes..."
           if git push origin HEAD:$(git rev-parse --abbrev-ref HEAD); then
             echo "Changes pushed successfully"
@@ -249,21 +117,9 @@ jobs:
           fi
 
       - name: No changes notification
-  if: steps.check_changes.outputs.has_changes == 'false'
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-      - name: Install dependencies
-        run: npm ci
-      - name: Execute workflow
-        run: echo "Workflow $workflow_name executed successfully"
+        if: steps.check_changes.outputs.has_changes == 'false'
+        run: |
+          echo "No changes to commit"
 
       - name: Final status
         run: |
