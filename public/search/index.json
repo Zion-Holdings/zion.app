@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T16:48:03.877Z",
+  "generatedAt": "2025-08-17T16:49:03.753Z",
   "entries": [
     {
       "route": "/user-management",
@@ -900,6 +900,12 @@
       "file": "pages/reports/updates/update-2025-08-17-1350.tsx",
       "title": "Autonomous Validation & QA Plan — Applied NLP & RAG (2025-08-17 13:50 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Validation & QA Plan — Applied NLP & RAG (2025-08-17 13:50 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1349",
+      "file": "pages/reports/updates/update-2025-08-17-1349.tsx",
+      "title": "Autonomous Update — 2025-08-17 13:49",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 13:49 Autonomous Update — 2025-08-17 13:49 Signal over noise—your automated update is here. Today's Highlight Hacker News : Bypassing airport security via SQL injection · "
     },
     {
       "route": "/reports/updates/update-2025-08-17-1348",
