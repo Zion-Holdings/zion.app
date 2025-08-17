@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T10:05:03.701Z",
+  "generatedAt": "2025-08-17T10:06:03.890Z",
   "entries": [
     {
       "route": "/user-management",
@@ -648,6 +648,12 @@
       "file": "pages/reports/updates/update-2025-08-17-0710.tsx",
       "title": "Autonomous Capability Map — DevSecOps for AI (2025-08-17 07:10 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Capability Map — DevSecOps for AI (2025-08-17 07:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0706",
+      "file": "pages/reports/updates/update-2025-08-17-0706.tsx",
+      "title": "Autonomous Update — 2025-08-17 07:06",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 07:06 Autonomous Update — 2025-08-17 07:06 Signal over noise—your automated update is here. Today's Highlight Hacker News : Open source AI is the path forward · 2360 pts W"
     },
     {
       "route": "/reports/updates/update-2025-08-17-0705",
