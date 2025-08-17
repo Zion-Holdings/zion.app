@@ -1,7 +1,29 @@
 {
-  "timestamp": "2025-08-17T11:40:42.233Z",
+  "timestamp": "2025-08-17T11:41:36.456Z",
   "critical": [],
   "high": [],
-  "medium": [],
+  "medium": [
+    {
+      "workflow": "security.yml",
+      "status": "active",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 140,
+        "jobCount": 0,
+        "stepCount": 16,
+        "conditionalCount": 2,
+        "matrixCount": 0,
+        "dependencyCount": 1,
+        "environmentCount": 0,
+        "secretCount": 1,
+        "actionCount": 11
+      },
+      "refactoringStrategy": [
+        "Break down into smaller job steps",
+        "Extract common functionality to reusable workflows"
+      ]
+    }
+  ],
   "low": []
 }

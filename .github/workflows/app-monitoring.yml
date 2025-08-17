@@ -3,7 +3,8 @@ name: App Monitoring
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: '0 0 * * *  # Every 6 hours'
+    # Every 6 hours
+    - cron: '0 0 * * *'
 
 permissions:
   contents: write

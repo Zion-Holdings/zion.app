@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-17T11:40:49.346Z",
+  "timestamp": "2025-08-17T11:41:43.769Z",
   "critical": [
     {
       "name": "auto-heal-workflows.yml",
@@ -99,6 +99,31 @@
     }
   ],
   "high": [
+    {
+      "name": "security.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/security.yml",
+      "priority": "high",
+      "resourceIntensity": "high",
+      "estimatedDuration": 20,
+      "concurrentJobs": 19,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [
+        "[security-scan",
+        "dependency-update",
+        "code-scanning]"
+      ],
+      "triggers": [
+        "push",
+        "pull_request",
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "resourceScore": 150
+    },
     {
       "name": "dependabot-auto-approve.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/dependabot-auto-approve.yml",
@@ -215,6 +240,27 @@
     }
   ],
   "medium": [
+    {
+      "name": "playwright-smoke.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/playwright-smoke.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 15,
+      "concurrentJobs": 8,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "push",
+        "pull_request",
+        "workflow_dispatch {}",
+        "schedule"
+      ],
+      "resourceScore": 117
+    },
     {
       "name": "accessibility-audit.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/accessibility-audit.yml",
@@ -2097,25 +2143,6 @@
       "resourceScore": 114
     },
     {
-      "name": "deploy.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/deploy.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 20,
-      "concurrentJobs": 6,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "workflow_dispatch {}",
-        "schedule"
-      ],
-      "resourceScore": 114
-    },
-    {
       "name": "docs-autogen.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/docs-autogen.yml",
       "priority": "medium",
@@ -3619,8 +3646,8 @@
       "resourceScore": 110
     },
     {
-      "name": "playwright-smoke.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/playwright-smoke.yml",
+      "name": "deploy.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/deploy.yml",
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 30,
@@ -3633,8 +3660,7 @@
       "dependencies": [],
       "triggers": [
         "push",
-        "pull_request",
-        "workflow_dispatch"
+        "workflow_dispatch {}"
       ],
       "resourceScore": 102
     }
@@ -3660,7 +3686,33 @@
       "resourceScore": 84
     }
   ],
-  "resourceIntensive": [],
+  "resourceIntensive": [
+    {
+      "name": "security.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/security.yml",
+      "priority": "high",
+      "resourceIntensity": "high",
+      "estimatedDuration": 20,
+      "concurrentJobs": 19,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [
+        "[security-scan",
+        "dependency-update",
+        "code-scanning]"
+      ],
+      "triggers": [
+        "push",
+        "pull_request",
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "resourceScore": 150
+    }
+  ],
   "recommendations": [
     {
       "type": "warning",
@@ -3669,7 +3721,7 @@
     },
     {
       "type": "info",
-      "message": "High priority workflows may compete for resources (11)",
+      "message": "High priority workflows may compete for resources (12)",
       "suggestion": "Consider staggering high-priority workflow execution"
     }
   ]
