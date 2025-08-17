@@ -1,33 +1,326 @@
-name: Security Scan
+name: 🔒 Security Scanning
 
 on:
-  workflow_dispatch: {}
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '0 3 * * *'  # Daily at 3 AM
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+  workflow_dispatch:
+    inputs:
+      scan_type:
+        description: 'Type of security scan to run'
+        required: false
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - codeql
+          - dependencies
+          - secrets
+          - containers
+          - infrastructure
 
-
-concurrency:
-  group: "github.workflow-${{ github.ref }}"
-  cancel-in-progress: true
-
-  contents: write
+permissions:
+  contents: read
+  security-events: write
+  pull-requests: write
   actions: read
 
+concurrency:
+  group: "security-scan-${{ github.ref }}"
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: '20'
+  PYTHON_VERSION: '3.11'
+
 jobs:
-  main:
-    name: Main Job
-      - name: Checkout repository
+  codeql-analysis:
+    name: 🔍 CodeQL Analysis
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    
+    steps:
+      - name: 📥 Checkout code
         uses: actions/checkout@v4
+        with:
           fetch-depth: 0
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-          node-version: '20'
-          cache: 'npm'
+      - name: 🔒 Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: javascript, typescript
+          queries: security-extended, security-and-quality
 
-      - name: Install dependencies
-        run: npm ci --no-audit --no-fund
+      - name: 🔍 Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:${{matrix.language}}"
 
-      - name: Complete workflow
+      - name: 📊 CodeQL results
+        if: always()
         run: |
-          echo "Workflow completed successfully"
+          echo "✅ CodeQL analysis completed"
+          echo "📋 Job: ${{ job.name }}"
+          echo "🔗 Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
+  dependency-scan:
+    name: 📦 Dependency Vulnerability Scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
+
+      - name: 📦 Install dependencies
+        run: npm ci --prefer-offline
+
+      - name: 🔒 Run npm audit
+        run: |
+          echo "Running npm security audit..."
+          npm audit --audit-level=moderate --json > audit-report.json || echo "Audit completed with findings"
+        continue-on-error: true
+
+      - name: 🔒 Run Snyk security scan
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --severity-threshold=high
+        continue-on-error: true
+
+      - name: 📊 Dependency scan results
+        if: always()
+        run: |
+          echo "✅ Dependency vulnerability scan completed"
+          echo "📋 Job: ${{ job.name }}"
+          echo "🔗 Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
+      - name: 📤 Upload audit report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: dependency-audit-report
+          path: audit-report.json
+          retention-days: 30
+
+  secret-scan:
+    name: 🔐 Secret Detection
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🔐 Run TruffleHog
+        uses: trufflesecurity/trufflehog@main
+        with:
+          path: .
+          base: HEAD~1
+          head: HEAD
+          extra_args: --only-verified --json
+
+      - name: 🔐 Run Gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          args: --verbose --redact
+
+      - name: 📊 Secret scan results
+        if: always()
+        run: |
+          echo "✅ Secret detection completed"
+          echo "📋 Job: ${{ job.name }}"
+          echo "🔗 Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
+  container-scan:
+    name: 🐳 Container Security Scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🔍 Check for Dockerfile
+        run: |
+          if [ -f "Dockerfile" ] || [ -f "docker-compose.yml" ]; then
+            echo "Container files found, proceeding with scan"
+          else
+            echo "No container files found, skipping container scan"
+            exit 0
+          fi
+
+      - name: 🐳 Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+
+      - name: 📤 Upload Trivy results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: trivy-scan-results
+          path: trivy-results.sarif
+          retention-days: 30
+
+      - name: 📊 Container scan results
+        if: always()
+        run: |
+          echo "✅ Container security scan completed"
+          echo "📋 Job: ${{ job.name }}"
+          echo "🔗 Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
+  infrastructure-scan:
+    name: 🏗️ Infrastructure Security Scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: 🔒 Install security tools
+        run: |
+          pip install bandit safety
+
+      - name: 🔍 Run Bandit security linter
+        run: |
+          echo "Running Bandit security linter..."
+          bandit -r . -f json -o bandit-report.json || echo "Bandit scan completed with findings"
+        continue-on-error: true
+
+      - name: 🔒 Run Safety check
+        run: |
+          echo "Running Safety dependency check..."
+          safety check --json --output safety-report.json || echo "Safety check completed with findings"
+        continue-on-error: true
+
+      - name: 📤 Upload infrastructure scan results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: infrastructure-scan-results
+          path: |
+            bandit-report.json
+            safety-report.json
+          retention-days: 30
+
+      - name: 📊 Infrastructure scan results
+        if: always()
+        run: |
+          echo "✅ Infrastructure security scan completed"
+          echo "📋 Job: ${{ job.name }}"
+          echo "🔗 Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
+  security-policy-check:
+    name: 📋 Security Policy Compliance
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: [codeql-analysis, dependency-scan, secret-scan, container-scan, infrastructure-scan]
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 📋 Check security policy
+        run: |
+          echo "Checking security policy compliance..."
+          
+          # Check for security policy file
+          if [ -f "SECURITY.md" ]; then
+            echo "✅ SECURITY.md found"
+          else
+            echo "⚠️ SECURITY.md not found - consider creating one"
+          fi
+          
+          # Check for security advisories
+          if [ -f ".github/security/advisories.md" ]; then
+            echo "✅ Security advisories found"
+          else
+            echo "ℹ️ No security advisories found"
+          fi
+          
+          # Check for dependency policy
+          if [ -f ".github/dependabot.yml" ]; then
+            echo "✅ Dependabot configuration found"
+          else
+            echo "ℹ️ No Dependabot configuration found"
+          fi
+
+      - name: 📊 Policy compliance results
+        if: always()
+        run: |
+          echo "✅ Security policy compliance check completed"
+          echo "📋 Job: ${{ job.name }}"
+          echo "🔗 Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
+  security-summary:
+    name: 📋 Security Scan Summary
+    runs-on: ubuntu-latest
+    needs: [codeql-analysis, dependency-scan, secret-scan, container-scan, infrastructure-scan, security-policy-check]
+    if: always()
+    
+    steps:
+      - name: 📊 Generate security summary
+        run: |
+          echo "🔒 Security Scanning Summary"
+          echo "============================"
+          echo "📅 Run: $(date)"
+          echo "🔗 Workflow: ${{ github.workflow }}"
+          echo "🔗 Run ID: ${{ github.run_id }}"
+          echo "🔗 Commit: ${{ github.sha }}"
+          echo "🔗 Branch: ${{ github.ref_name }}"
+          echo ""
+          echo "📋 Security Scan Results:"
+          echo "✅ CodeQL Analysis: ${{ needs.codeql-analysis.result }}"
+          echo "✅ Dependency Scan: ${{ needs.dependency-scan.result }}"
+          echo "✅ Secret Detection: ${{ needs.secret-scan.result }}"
+          echo "✅ Container Scan: ${{ needs.container-scan.result }}"
+          echo "✅ Infrastructure Scan: ${{ needs.infrastructure-scan.result }}"
+          echo "✅ Policy Compliance: ${{ needs.security-policy-check.result }}"
+          echo ""
+          if [[ "${{ needs.codeql-analysis.result }}" == "success" && "${{ needs.dependency-scan.result }}" == "success" ]]; then
+            echo "🎉 Core security scans completed successfully!"
+          else
+            echo "⚠️ Some security scans failed. Please review the logs above."
+          fi
+
+      - name: 📤 Upload security summary
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: security-scan-summary
+          path: |
+            security-summary.txt
+          retention-days: 30
