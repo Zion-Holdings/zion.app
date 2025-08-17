@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T08:18:03.540Z",
+  "generatedAt": "2025-08-17T08:19:03.588Z",
   "entries": [
     {
       "route": "/user-management",
@@ -582,6 +582,12 @@
       "file": "pages/reports/updates/update-2025-08-17-0520.tsx",
       "title": "Autonomous Security Hardening Guide — Agentic Workflows (2025-08-17 05:20 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Security Hardening Guide — Agentic Workflows (2025-08-17 05:20 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0519",
+      "file": "pages/reports/updates/update-2025-08-17-0519.tsx",
+      "title": "Autonomous Update — 2025-08-17 05:19",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 05:19 Autonomous Update — 2025-08-17 05:19 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Zoom terms now allow training AI on "
     },
     {
       "route": "/reports/updates/update-2025-08-17-0518",
