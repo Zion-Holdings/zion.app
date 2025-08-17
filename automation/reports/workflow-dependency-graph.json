@@ -87,6 +87,23 @@
     },
     "estimatedDuration": 30
   },
+  "cleanup.yml": {
+    "name": "cleanup.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 20,
+      "concurrentJobs": 4
+    },
+    "estimatedDuration": 20
+  },
   "cloud-maintenance.yml": {
     "name": "cloud-maintenance.yml",
     "triggers": [
@@ -217,6 +234,23 @@
     },
     "estimatedDuration": 30
   },
+  "exponential-ai-delegation.yml": {
+    "name": "exponential-ai-delegation.yml",
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 20,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 20
+  },
   "frontend-sync-continuous.yml": {
     "name": "frontend-sync-continuous.yml",
     "triggers": [],
@@ -247,6 +281,23 @@
       "concurrentJobs": 6
     },
     "estimatedDuration": 30
+  },
+  "gitleaks.yml": {
+    "name": "gitleaks.yml",
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 20,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 20
   },
   "infinite-improvement-loop.yml": {
     "name": "infinite-improvement-loop.yml",
@@ -581,5 +632,22 @@
       "concurrentJobs": 7
     },
     "estimatedDuration": 30
+  },
+  "yaml-validator.yml": {
+    "name": "yaml-validator.yml",
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 20,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 20
   }
 }
