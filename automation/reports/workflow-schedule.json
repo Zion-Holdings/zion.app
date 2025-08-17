@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-17T01:36:48.467Z",
+  "timestamp": "2025-08-17T01:37:30.062Z",
   "critical": [
     {
       "name": "auto-heal-workflows.yml",
@@ -3585,25 +3585,6 @@
       "resourceScore": 91
     },
     {
-      "name": "autonomous-lighthouse.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-lighthouse.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 55,
-      "concurrentJobs": 3,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "schedule",
-        "workflow_dispatch {}"
-      ],
-      "resourceScore": 82
-    },
-    {
       "name": "app-monitoring.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/app-monitoring.yml",
       "priority": "medium",
@@ -3621,6 +3602,25 @@
         "workflow_dispatch  # Manual trigger"
       ],
       "resourceScore": 80
+    },
+    {
+      "name": "autonomous-lighthouse.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-lighthouse.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 55,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch {}"
+      ],
+      "resourceScore": 79
     },
     {
       "name": "performance-monitoring.yml",
