@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-17T20:00:01.665Z",
-  "pagesScanned": 8384,
+  "generatedAt": "2025-08-17T20:01:01.083Z",
+  "pagesScanned": 8387,
   "items": [
     {
       "route": "/404",
@@ -34546,6 +34546,16 @@
       "suggestion": {
         "title": "Guide: FinOps for AI",
         "description": "Guide: FinOps for AI — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-17-2000",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide: Agent Ops",
+        "description": "Guide: Agent Ops — auto-suggested description"
       }
     },
     {
@@ -82409,6 +82419,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-17-1701",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 17:01",
+        "description": "Autonomous Update — 2025-08-17 17:01 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-17-1710",
       "missing": [
         "og:image"
@@ -82566,6 +82589,16 @@
       "suggestion": {
         "title": "Autonomous Blueprint — MLOps & Model Reliability (2025-08-17 19:50 UTC)",
         "description": "Autonomous Blueprint — MLOps & Model Reliability (2025-08-17 19:50 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-2000",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Security Hardening Guide — Evaluation & Safety (2025-08-17 20:00 UTC)",
+        "description": "Autonomous Security Hardening Guide — Evaluation & Safety (2025-08-17 20:00 UTC) — auto-suggested description"
       }
     },
     {
