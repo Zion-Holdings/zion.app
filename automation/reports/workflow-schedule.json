@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-17T11:38:34.614Z",
+  "timestamp": "2025-08-17T11:39:28.379Z",
   "critical": [
     {
       "name": "auto-heal-workflows.yml",
@@ -23,25 +23,6 @@
     {
       "name": "ci-self-heal.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci-self-heal.yml",
-      "priority": "critical",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 20,
-      "concurrentJobs": 6,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "workflow_dispatch {}",
-        "schedule"
-      ],
-      "resourceScore": 164
-    },
-    {
-      "name": "ci.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci.yml",
       "priority": "critical",
       "resourceIntensity": "medium",
       "estimatedDuration": 20,
@@ -95,6 +76,26 @@
         "schedule"
       ],
       "resourceScore": 164
+    },
+    {
+      "name": "ci.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci.yml",
+      "priority": "critical",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 30,
+      "concurrentJobs": 11,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "large",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "push",
+        "pull_request",
+        "workflow_dispatch {}"
+      ],
+      "resourceScore": 150
     }
   ],
   "high": [
@@ -3350,25 +3351,6 @@
       "resourceScore": 114
     },
     {
-      "name": "test.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/test.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 20,
-      "concurrentJobs": 6,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "workflow_dispatch {}",
-        "schedule"
-      ],
-      "resourceScore": 114
-    },
-    {
       "name": "todo-issue-sync.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/todo-issue-sync.yml",
       "priority": "medium",
@@ -3633,6 +3615,26 @@
         "schedule"
       ],
       "resourceScore": 114
+    },
+    {
+      "name": "test.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/test.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 45,
+      "concurrentJobs": 9,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "large",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "push",
+        "pull_request",
+        "workflow_dispatch"
+      ],
+      "resourceScore": 86
     }
   ],
   "low": [
