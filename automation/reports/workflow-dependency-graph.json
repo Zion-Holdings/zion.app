@@ -4,7 +4,7 @@
     "triggers": [
       "push",
       "pull_request",
-      "workflow_dispatch {}"
+      "workflow_dispatch"
     ],
     "needs": [],
     "outputs": [],
@@ -54,6 +54,23 @@
       "concurrentJobs": 6
     },
     "estimatedDuration": 25
+  },
+  "release.yml": {
+    "name": "release.yml",
+    "triggers": [
+      "push",
+      "workflow_dispatch"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "high",
+      "timeout": 30,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 30
   },
   "security.yml": {
     "name": "security.yml",

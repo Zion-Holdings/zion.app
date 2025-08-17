@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-17T11:46:47.851Z",
+  "timestamp": "2025-08-17T11:47:51.130Z",
   "critical": [
     {
       "name": "ci.yml",
@@ -7,7 +7,7 @@
       "priority": "critical",
       "resourceIntensity": "medium",
       "estimatedDuration": 30,
-      "concurrentJobs": 11,
+      "concurrentJobs": 12,
       "runnerRequirements": {
         "runner": "ubuntu-latest",
         "size": "large",
@@ -17,7 +17,7 @@
       "triggers": [
         "push",
         "pull_request",
-        "workflow_dispatch {}"
+        "workflow_dispatch"
       ],
       "resourceScore": 150
     }
@@ -110,6 +110,25 @@
         "workflow_dispatch {}"
       ],
       "resourceScore": 102
+    },
+    {
+      "name": "release.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/release.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 30,
+      "concurrentJobs": 13,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "large",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "push",
+        "workflow_dispatch"
+      ],
+      "resourceScore": 100
     }
   ],
   "low": [

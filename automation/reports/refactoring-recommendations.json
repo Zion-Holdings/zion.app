@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-17T11:46:40.753Z",
+  "timestamp": "2025-08-17T11:47:41.698Z",
   "critical": [],
   "high": [
     {
@@ -42,6 +42,26 @@
       },
       "refactoringStrategy": [
         "Break down into smaller job steps",
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "release.yml",
+      "status": "active",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 110,
+        "jobCount": 0,
+        "stepCount": 11,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 2,
+        "actionCount": 5
+      },
+      "refactoringStrategy": [
         "Extract common functionality to reusable workflows"
       ]
     }

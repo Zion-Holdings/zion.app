@@ -1,17 +1,17 @@
 {
-  "timestamp": "2025-08-17T11:46:40.751Z",
+  "timestamp": "2025-08-17T11:47:41.696Z",
   "summary": {
-    "totalWorkflows": 6,
+    "totalWorkflows": 7,
     "complexityDistribution": {
       "very-high": 0,
       "high": 1,
-      "medium": 1,
+      "medium": 2,
       "low": 4
     },
     "refactoringPriorities": {
       "critical": 0,
       "high": 1,
-      "medium": 1,
+      "medium": 2,
       "low": 4
     }
   },
@@ -69,6 +69,24 @@
       "refactoringPriority": "medium",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/maintenance.yml"
+    },
+    "release.yml": {
+      "complexityScore": 30,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 110,
+        "jobCount": 0,
+        "stepCount": 11,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 2,
+        "actionCount": 5
+      },
+      "refactoringPriority": "medium",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/release.yml"
     },
     "security.yml": {
       "complexityScore": 25,
