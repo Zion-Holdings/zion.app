@@ -7,7 +7,6 @@ on:
   schedule:
     - cron: "0 3 * * *"  # daily at 03:00 UTC
 
-permissions:
   contents: read
   security-events: write
 
@@ -20,15 +19,14 @@ jobs:
   gitleaks:
     name: Run Gitleaks
     runs-on: ubuntu-latest
-    timeout-minutes: 20
     steps:
       - name: Checkout
-  uses: actions/checkout@v4
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Run Gitleaks
-  uses: zricethezav/gitleaks-action@v2
+        uses: zricethezav/gitleaks-action@v2
         with:
           args: --verbose --redact --exit-code 1
 

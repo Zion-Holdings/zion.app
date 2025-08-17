@@ -11,10 +11,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 15
   },
   "actionlint.yml": {
     "name": "actionlint.yml",
@@ -28,10 +28,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "actions-keepalive.yml": {
     "name": "actions-keepalive.yml",
@@ -45,10 +45,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "agent-agent-1755379731005-0-full-stack-expert.yml": {
     "name": "agent-agent-1755379731005-0-full-stack-expert.yml",
@@ -62,10 +62,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "agent-agent-1755379731007-1-deployment-expert.yml": {
     "name": "agent-agent-1755379731007-1-deployment-expert.yml",
@@ -79,10 +79,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "agent-agent-1755379731008-2-monitoring-expert.yml": {
     "name": "agent-agent-1755379731008-2-monitoring-expert.yml",
@@ -96,10 +96,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "agent-agent-1755379759029-0-optimization-intermediate.yml": {
     "name": "agent-agent-1755379759029-0-optimization-intermediate.yml",
@@ -113,10 +113,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "agent-agent-1755379759032-1-full-stack-intermediate.yml": {
     "name": "agent-agent-1755379759032-1-full-stack-intermediate.yml",
@@ -130,10 +130,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "agent-agent-1755379759033-2-deployment-expert.yml": {
     "name": "agent-agent-1755379759033-2-deployment-expert.yml",
@@ -147,10 +147,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "agent-agent-1755379759033-3-frontend-expert.yml": {
     "name": "agent-agent-1755379759033-3-frontend-expert.yml",
@@ -164,10 +164,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "agent-agent-1755379759035-4-full-stack-intermediate.yml": {
     "name": "agent-agent-1755379759035-4-full-stack-intermediate.yml",
@@ -181,10 +181,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "agent-agent-1755379759035-5-frontend-basic.yml": {
     "name": "agent-agent-1755379759035-5-frontend-basic.yml",
@@ -198,10 +198,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "agent-agent-1755379759036-6-monitoring-advanced.yml": {
     "name": "agent-agent-1755379759036-6-monitoring-advanced.yml",
@@ -215,10 +215,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "agent-agent-1755379759037-7-full-stack-intermediate.yml": {
     "name": "agent-agent-1755379759037-7-full-stack-intermediate.yml",
@@ -232,10 +232,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "agent-agent-1755379777746-0-full-stack-advanced.yml": {
     "name": "agent-agent-1755379777746-0-full-stack-advanced.yml",
@@ -249,10 +249,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "agent-agent-1755379777749-1-full-stack-basic.yml": {
     "name": "agent-agent-1755379777749-1-full-stack-basic.yml",
@@ -266,10 +266,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "agent-agent-1755379777750-2-monitoring-intermediate.yml": {
     "name": "agent-agent-1755379777750-2-monitoring-intermediate.yml",
@@ -283,10 +283,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "agent-agent-1755379777751-3-monitoring-advanced.yml": {
     "name": "agent-agent-1755379777751-3-monitoring-advanced.yml",
@@ -300,10 +300,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "agent-agent-1755379777752-5-testing-expert.yml": {
     "name": "agent-agent-1755379777752-5-testing-expert.yml",
@@ -317,10 +317,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "agent-agent-1755379777754-6-backend-expert.yml": {
     "name": "agent-agent-1755379777754-6-backend-expert.yml",
@@ -334,10 +334,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "agent-agent-1755379777755-7-backend-intermediate.yml": {
     "name": "agent-agent-1755379777755-7-backend-intermediate.yml",
@@ -351,10 +351,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "agent-agent-1755381089841-0-backend-expert.yml": {
     "name": "agent-agent-1755381089841-0-backend-expert.yml",
@@ -368,10 +368,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "agent-agent-1755381089844-1-deployment-advanced.yml": {
     "name": "agent-agent-1755381089844-1-deployment-advanced.yml",
@@ -385,10 +385,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "agent-agent-1755381089845-2-full-stack-advanced.yml": {
     "name": "agent-agent-1755381089845-2-full-stack-advanced.yml",
@@ -402,10 +402,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "agent-agent-1755381089846-3-optimization-expert.yml": {
     "name": "agent-agent-1755381089846-3-optimization-expert.yml",
@@ -419,10 +419,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "agent-agent-1755381089846-4-testing-advanced.yml": {
     "name": "agent-agent-1755381089846-4-testing-advanced.yml",
@@ -436,10 +436,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "agent-agent-1755381089847-5-frontend-expert.yml": {
     "name": "agent-agent-1755381089847-5-frontend-expert.yml",
@@ -453,10 +453,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "agent-agent-1755381089848-6-testing-intermediate.yml": {
     "name": "agent-agent-1755381089848-6-testing-intermediate.yml",
@@ -470,10 +470,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "agent-agent-1755381089849-7-monitoring-intermediate.yml": {
     "name": "agent-agent-1755381089849-7-monitoring-intermediate.yml",
@@ -487,10 +487,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "agent-factory-automation.yml": {
     "name": "agent-factory-automation.yml",
@@ -511,10 +511,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "agent-factory-proliferation.yml": {
     "name": "agent-factory-proliferation.yml",
@@ -551,10 +551,6 @@
       {
         "key": "- uses",
         "value": "actions/checkout@v4"
-      },
-      {
-        "key": "with",
-        "value": ""
       },
       {
         "key": "fetch-depth",
@@ -613,10 +609,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 15
   },
   "agent-of-agents-trigger.yml": {
     "name": "agent-of-agents-trigger.yml",
@@ -630,10 +626,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "ai-changelog.yml": {
     "name": "ai-changelog.yml",
@@ -647,10 +643,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 25
   },
   "ai-content-autonomy.yml": {
     "name": "ai-content-autonomy.yml",
@@ -664,10 +660,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "ai-content-factory.yml": {
     "name": "ai-content-factory.yml",
@@ -681,10 +677,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "ai-it-ads-sync.yml": {
     "name": "ai-it-ads-sync.yml",
@@ -698,10 +694,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "ai-it-innovations.yml": {
     "name": "ai-it-innovations.yml",
@@ -715,10 +711,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "ai-it-multi-factory.yml": {
     "name": "ai-it-multi-factory.yml",
@@ -732,10 +728,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "ai-it-ultrafast-sync.yml": {
     "name": "ai-it-ultrafast-sync.yml",
@@ -749,10 +745,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "ai-research-scout.yml": {
     "name": "ai-research-scout.yml",
@@ -766,10 +762,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "ai-trends-radar.yml": {
     "name": "ai-trends-radar.yml",
@@ -783,10 +779,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "app-automation.yml": {
     "name": "app-automation.yml",
@@ -803,10 +799,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "app-monitoring.yml": {
     "name": "app-monitoring.yml",
@@ -820,10 +816,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 55
   },
   "auto-heal-workflows.yml": {
     "name": "auto-heal-workflows.yml",
@@ -837,10 +833,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "auto-media-release.yml": {
     "name": "auto-media-release.yml",
@@ -854,10 +850,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 25
   },
   "auto-pr-automerge.yml": {
     "name": "auto-pr-automerge.yml",
@@ -870,10 +866,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 15
   },
   "auto-pr-cursor-branches.yml": {
     "name": "auto-pr-cursor-branches.yml",
@@ -887,10 +883,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 15
   },
   "auto-semver-release.yml": {
     "name": "auto-semver-release.yml",
@@ -904,10 +900,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "auto-update-prs.yml": {
     "name": "auto-update-prs.yml",
@@ -921,10 +917,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 15
   },
   "automation-advertiser.yml": {
     "name": "automation-advertiser.yml",
@@ -938,10 +934,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "automation-cleanup.yml": {
     "name": "automation-cleanup.yml",
@@ -956,9 +952,9 @@
       "runner": "ubuntu-latest",
       "memory": "standard",
       "timeout": 30,
-      "concurrentJobs": 5
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 30
+    "estimatedDuration": 25
   },
   "automation-dashboard.yml": {
     "name": "automation-dashboard.yml",
@@ -974,10 +970,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "automation-guardian-10min.yml": {
     "name": "automation-guardian-10min.yml",
@@ -991,10 +987,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 25
   },
   "automation-orchestrator.yml": {
     "name": "automation-orchestrator.yml",
@@ -1008,10 +1004,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "automations.yml": {
     "name": "automations.yml",
@@ -1025,10 +1021,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "automerge-main.yml": {
     "name": "automerge-main.yml",
@@ -1041,10 +1037,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 15
   },
   "autonomous-agent-orchestrator.yml": {
     "name": "autonomous-agent-orchestrator.yml",
@@ -1134,10 +1130,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 15
   },
   "autonomous-auto-discovery.yml": {
     "name": "autonomous-auto-discovery.yml",
@@ -1151,10 +1147,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 15,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 15
+    "estimatedDuration": 25
   },
   "autonomous-auto-merge-to-main.yml": {
     "name": "autonomous-auto-merge-to-main.yml",
@@ -1168,10 +1164,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 25,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 25
+    "estimatedDuration": 45
   },
   "autonomous-cloud-automations.yml": {
     "name": "autonomous-cloud-automations.yml",
@@ -1186,9 +1182,9 @@
       "runner": "ubuntu-latest",
       "memory": "standard",
       "timeout": 30,
-      "concurrentJobs": 5
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 30
+    "estimatedDuration": 25
   },
   "autonomous-cloud-fast.yml": {
     "name": "autonomous-cloud-fast.yml",
@@ -1202,10 +1198,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 25
   },
   "autonomous-cloud-runner.yml": {
     "name": "autonomous-cloud-runner.yml",
@@ -1219,10 +1215,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "autonomous-cloud.yml": {
     "name": "autonomous-cloud.yml",
@@ -1236,7 +1232,7 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 25,
+      "timeout": 30,
       "concurrentJobs": 4
     },
     "estimatedDuration": 25
@@ -1253,10 +1249,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "autonomous-content-scanner.yml": {
     "name": "autonomous-content-scanner.yml",
@@ -1270,10 +1266,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 25
   },
   "autonomous-deep-maintenance.yml": {
     "name": "autonomous-deep-maintenance.yml",
@@ -1287,10 +1283,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 45,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 45
+    "estimatedDuration": 25
   },
   "autonomous-deps-upgrade.yml": {
     "name": "autonomous-deps-upgrade.yml",
@@ -1305,9 +1301,9 @@
       "runner": "ubuntu-latest",
       "memory": "standard",
       "timeout": 30,
-      "concurrentJobs": 5
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 30
+    "estimatedDuration": 25
   },
   "autonomous-external-links.yml": {
     "name": "autonomous-external-links.yml",
@@ -1321,10 +1317,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "autonomous-image-optimizer.yml": {
     "name": "autonomous-image-optimizer.yml",
@@ -1338,10 +1334,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "autonomous-intelligence.yml": {
     "name": "autonomous-intelligence.yml",
@@ -1355,10 +1351,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 15,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 15
+    "estimatedDuration": 25
   },
   "autonomous-keepalive.yml": {
     "name": "autonomous-keepalive.yml",
@@ -1372,10 +1368,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 15
   },
   "autonomous-lighthouse.yml": {
     "name": "autonomous-lighthouse.yml",
@@ -1389,10 +1385,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 25,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 25
+    "estimatedDuration": 55
   },
   "autonomous-marketing-seo.yml": {
     "name": "autonomous-marketing-seo.yml",
@@ -1406,8 +1402,8 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 25,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
     "estimatedDuration": 25
   },
@@ -1423,10 +1419,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 15,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 15
+    "estimatedDuration": 25
   },
   "autonomous-quick-fixes.yml": {
     "name": "autonomous-quick-fixes.yml",
@@ -1440,10 +1436,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 15,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 15
+    "estimatedDuration": 25
   },
   "autonomous-release.yml": {
     "name": "autonomous-release.yml",
@@ -1457,10 +1453,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 25,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 25
+    "estimatedDuration": 45
   },
   "autonomous-self-tune.yml": {
     "name": "autonomous-self-tune.yml",
@@ -1474,10 +1470,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 15,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 15
+    "estimatedDuration": 25
   },
   "autonomous-ultrafast.yml": {
     "name": "autonomous-ultrafast.yml",
@@ -1491,10 +1487,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 25
   },
   "autonomous-workflow-cleanup.yml": {
     "name": "autonomous-workflow-cleanup.yml",
@@ -1508,8 +1504,8 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 15,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
     "estimatedDuration": 15
   },
@@ -1525,8 +1521,8 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 15,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
     "estimatedDuration": 15
   },
@@ -1542,10 +1538,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 15
   },
   "branch-pruner.yml": {
     "name": "branch-pruner.yml",
@@ -1559,10 +1555,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 15
   },
   "broken-images.yml": {
     "name": "broken-images.yml",
@@ -1576,10 +1572,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "ci-auto-heal.yml": {
     "name": "ci-auto-heal.yml",
@@ -1590,10 +1586,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 15,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 15
+    "estimatedDuration": 25
   },
   "ci-merge-main.yml": {
     "name": "ci-merge-main.yml",
@@ -1606,10 +1602,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 15
   },
   "ci-quality.yml": {
     "name": "ci-quality.yml",
@@ -1623,10 +1619,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "ci-self-heal.yml": {
     "name": "ci-self-heal.yml",
@@ -1640,10 +1636,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "ci.yml": {
     "name": "ci.yml",
@@ -1657,10 +1653,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "cleanup-merged-branches.yml": {
     "name": "cleanup-merged-branches.yml",
@@ -1674,8 +1670,8 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 15,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
     "estimatedDuration": 15
   },
@@ -1691,10 +1687,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "cloud-agents.yml": {
     "name": "cloud-agents.yml",
@@ -1708,10 +1704,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "cloud-autonomous-orchestrator.yml": {
     "name": "cloud-autonomous-orchestrator.yml",
@@ -1725,10 +1721,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "cloud-deep-research.yml": {
     "name": "cloud-deep-research.yml",
@@ -1742,10 +1738,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "cloud-orchestrator-plus.yml": {
     "name": "cloud-orchestrator-plus.yml",
@@ -1759,10 +1755,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "codeql-analysis.yml": {
     "name": "codeql-analysis.yml",
@@ -1777,10 +1773,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 15
   },
   "codeql.yml": {
     "name": "codeql.yml",
@@ -1796,10 +1792,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 15
   },
   "commit-message-lint.yml": {
     "name": "commit-message-lint.yml",
@@ -1813,10 +1809,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "commitlint.yml": {
     "name": "commitlint.yml",
@@ -1830,10 +1826,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "components-size-report.yml": {
     "name": "components-size-report.yml",
@@ -1847,10 +1843,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "content-generation.yml": {
     "name": "content-generation.yml",
@@ -1867,10 +1863,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "crawl-normalize.yml": {
     "name": "crawl-normalize.yml",
@@ -1884,10 +1880,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "cursor-chat.yml": {
     "name": "cursor-chat.yml",
@@ -1901,10 +1897,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "dead-code-report.yml": {
     "name": "dead-code-report.yml",
@@ -1918,10 +1914,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 25
   },
   "dependabot-auto-approve.yml": {
     "name": "dependabot-auto-approve.yml",
@@ -1936,10 +1932,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 15
   },
   "dependency-auto-upgrade.yml": {
     "name": "dependency-auto-upgrade.yml",
@@ -1953,10 +1949,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "dependency-management.yml": {
     "name": "dependency-management.yml",
@@ -1970,10 +1966,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "deploy.yml": {
     "name": "deploy.yml",
@@ -1987,10 +1983,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "docs-autogen.yml": {
     "name": "docs-autogen.yml",
@@ -2004,10 +2000,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 15
   },
   "docs-intelligence.yml": {
     "name": "docs-intelligence.yml",
@@ -2021,10 +2017,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "emergency-fix.yml": {
     "name": "emergency-fix.yml",
@@ -2038,10 +2034,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "ephemeral-branch-autorebase.yml": {
     "name": "ephemeral-branch-autorebase.yml",
@@ -2055,8 +2051,8 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 15,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
     "estimatedDuration": 15
   },
@@ -2098,10 +2094,6 @@
       {
         "key": "- uses",
         "value": "actions/checkout@v4"
-      },
-      {
-        "key": "with",
-        "value": ""
       },
       {
         "key": "fetch-depth",
@@ -2176,10 +2168,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 15
   },
   "exponential-ai-delegation.yml": {
     "name": "exponential-ai-delegation.yml",
@@ -2194,10 +2186,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "external-links.yml": {
     "name": "external-links.yml",
@@ -2211,10 +2203,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "fast-auto-push-to-main.yml": {
     "name": "fast-auto-push-to-main.yml",
@@ -2229,10 +2221,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 15
   },
   "fast-lint-sync.yml": {
     "name": "fast-lint-sync.yml",
@@ -2246,10 +2238,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 15,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 15
+    "estimatedDuration": 25
   },
   "front-scheduler.yml": {
     "name": "front-scheduler.yml",
@@ -2263,10 +2255,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "git-ultrafast-sync.yml": {
     "name": "git-ultrafast-sync.yml",
@@ -2280,10 +2272,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "gitleaks.yml": {
     "name": "gitleaks.yml",
@@ -2298,10 +2290,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 15
   },
   "guardian-scheduler.yml": {
     "name": "guardian-scheduler.yml",
@@ -2315,10 +2307,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "homepage-auto-advertiser.yml": {
     "name": "homepage-auto-advertiser.yml",
@@ -2332,10 +2324,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 25
   },
   "homepage-auto-update.yml": {
     "name": "homepage-auto-update.yml",
@@ -2349,10 +2341,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "instagram-marketing.yml": {
     "name": "instagram-marketing.yml",
@@ -2366,10 +2358,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "intelligent-content-generation.yml": {
     "name": "intelligent-content-generation.yml",
@@ -2384,10 +2376,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "knowledge-graph-radar.yml": {
     "name": "knowledge-graph-radar.yml",
@@ -2401,10 +2393,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "labeler.yml": {
     "name": "labeler.yml",
@@ -2415,10 +2407,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 15
   },
   "lighthouse-budgets.yml": {
     "name": "lighthouse-budgets.yml",
@@ -2432,10 +2424,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "lighthouse-live.yml": {
     "name": "lighthouse-live.yml",
@@ -2449,10 +2441,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "link-auto-fix.yml": {
     "name": "link-auto-fix.yml",
@@ -2466,10 +2458,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 25
   },
   "link-scan-hourly.yml": {
     "name": "link-scan-hourly.yml",
@@ -2483,10 +2475,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 25
   },
   "linkedin-marketing.yml": {
     "name": "linkedin-marketing.yml",
@@ -2500,10 +2492,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "linkedin-pro.yml": {
     "name": "linkedin-pro.yml",
@@ -2517,10 +2509,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "marketing-sync.yml": {
     "name": "marketing-sync.yml",
@@ -2534,10 +2526,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "media-optimizer.yml": {
     "name": "media-optimizer.yml",
@@ -2551,10 +2543,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "monetization.yml": {
     "name": "monetization.yml",
@@ -2568,10 +2560,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "netlify-auto-healer.yml": {
     "name": "netlify-auto-healer.yml",
@@ -2585,10 +2577,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 15
   },
   "netlify-automation.yml": {
     "name": "netlify-automation.yml",
@@ -2608,10 +2600,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "high",
-      "timeout": 60,
-      "concurrentJobs": 6
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 25
   },
   "netlify-config.yml": {
     "name": "netlify-config.yml",
@@ -2625,10 +2617,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "netlify-functions-trigger.yml": {
     "name": "netlify-functions-trigger.yml",
@@ -2642,10 +2634,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "og-image-refresh.yml": {
     "name": "og-image-refresh.yml",
@@ -2659,10 +2651,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "og-image-update.yml": {
     "name": "og-image-update.yml",
@@ -2676,10 +2668,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 25
   },
   "optimize-images.yml": {
     "name": "optimize-images.yml",
@@ -2693,10 +2685,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 25
   },
   "pa11y.yml": {
     "name": "pa11y.yml",
@@ -2710,10 +2702,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "performance-audit.yml": {
     "name": "performance-audit.yml",
@@ -2727,10 +2719,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "performance-monitoring.yml": {
     "name": "performance-monitoring.yml",
@@ -2749,10 +2741,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
+      "timeout": 30,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 55
   },
   "pin-actions-weekly.yml": {
     "name": "pin-actions-weekly.yml",
@@ -2766,10 +2758,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "playwright-smoke.yml": {
     "name": "playwright-smoke.yml",
@@ -2783,10 +2775,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "pr-auto-curator.yml": {
     "name": "pr-auto-curator.yml",
@@ -2800,10 +2792,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "pr-quality-gate.yml": {
     "name": "pr-quality-gate.yml",
@@ -2817,10 +2809,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "pr-size-labeler.yml": {
     "name": "pr-size-labeler.yml",
@@ -2833,10 +2825,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 15
   },
   "pr-smoke.yml": {
     "name": "pr-smoke.yml",
@@ -2850,10 +2842,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "pr-update-with-main.yml": {
     "name": "pr-update-with-main.yml",
@@ -2877,10 +2869,6 @@
       {
         "key": "- id",
         "value": "collect"
-      },
-      {
-        "key": "uses",
-        "value": "actions/github-script@v7"
       },
       {
         "key": "with",
@@ -2919,8 +2907,8 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 15,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
     "estimatedDuration": 15
   },
@@ -2936,10 +2924,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 15,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 15
+    "estimatedDuration": 25
   },
   "readme-auto-advertiser.yml": {
     "name": "readme-auto-advertiser.yml",
@@ -2953,10 +2941,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "readme-autogen.yml": {
     "name": "readme-autogen.yml",
@@ -2970,10 +2958,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 25
   },
   "release-drafter.yml": {
     "name": "release-drafter.yml",
@@ -2987,10 +2975,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 15
   },
   "release.yml": {
     "name": "release.yml",
@@ -3004,10 +2992,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "repo-knowledge-graph.yml": {
     "name": "repo-knowledge-graph.yml",
@@ -3021,10 +3009,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 25
   },
   "repo-radar.yml": {
     "name": "repo-radar.yml",
@@ -3038,10 +3026,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 25
   },
   "responsive-content.yml": {
     "name": "responsive-content.yml",
@@ -3055,10 +3043,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "search-index-autogen.yml": {
     "name": "search-index-autogen.yml",
@@ -3072,10 +3060,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 25
   },
   "security-audit.yml": {
     "name": "security-audit.yml",
@@ -3089,10 +3077,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "security-auto-heal.yml": {
     "name": "security-auto-heal.yml",
@@ -3106,10 +3094,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "security-gates.yml": {
     "name": "security-gates.yml",
@@ -3123,10 +3111,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "security-scan.yml": {
     "name": "security-scan.yml",
@@ -3140,10 +3128,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "security-weekly.yml": {
     "name": "security-weekly.yml",
@@ -3157,10 +3145,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "self-healing-build.yml": {
     "name": "self-healing-build.yml",
@@ -3174,10 +3162,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 25,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 25
+    "estimatedDuration": 45
   },
   "self-replicating-factory-manager.yml": {
     "name": "self-replicating-factory-manager.yml",
@@ -3247,10 +3235,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 60,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 60
+    "estimatedDuration": 15
   },
   "seo-audit.yml": {
     "name": "seo-audit.yml",
@@ -3264,10 +3252,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "seo-validator.yml": {
     "name": "seo-validator.yml",
@@ -3281,10 +3269,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "site-health-guardian.yml": {
     "name": "site-health-guardian.yml",
@@ -3298,10 +3286,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "site-link.yml": {
     "name": "site-link.yml",
@@ -3315,10 +3303,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "sitemap-and-search.yml": {
     "name": "sitemap-and-search.yml",
@@ -3332,10 +3320,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "sitemap-auto-commit.yml": {
     "name": "sitemap-auto-commit.yml",
@@ -3349,10 +3337,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 25
   },
   "sitemap-daily.yml": {
     "name": "sitemap-daily.yml",
@@ -3366,10 +3354,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 10,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 10
+    "estimatedDuration": 25
   },
   "stale.yml": {
     "name": "stale.yml",
@@ -3383,10 +3371,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 15
   },
   "test-auth.yml": {
     "name": "test-auth.yml",
@@ -3400,10 +3388,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "test.yml": {
     "name": "test.yml",
@@ -3417,10 +3405,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "todo-issue-sync.yml": {
     "name": "todo-issue-sync.yml",
@@ -3434,10 +3422,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 15,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 15
+    "estimatedDuration": 25
   },
   "topics-and-clusters.yml": {
     "name": "topics-and-clusters.yml",
@@ -3451,10 +3439,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "ultra-rapid-sync.yml": {
     "name": "ultra-rapid-sync.yml",
@@ -3468,10 +3456,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "unused-deps-cleaner.yml": {
     "name": "unused-deps-cleaner.yml",
@@ -3485,10 +3473,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 25,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 25
+    "estimatedDuration": 45
   },
   "unused-exports-report.yml": {
     "name": "unused-exports-report.yml",
@@ -3502,10 +3490,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "variation.yml": {
     "name": "variation.yml",
@@ -3519,10 +3507,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "venture.yml": {
     "name": "venture.yml",
@@ -3536,10 +3524,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "workflow-health-monitor.yml": {
     "name": "workflow-health-monitor.yml",
@@ -3554,9 +3542,9 @@
       "runner": "ubuntu-latest",
       "memory": "standard",
       "timeout": 30,
-      "concurrentJobs": 5
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 30
+    "estimatedDuration": 25
   },
   "workflow-radar.yml": {
     "name": "workflow-radar.yml",
@@ -3570,10 +3558,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "workflow-supervisor.yml": {
     "name": "workflow-supervisor.yml",
@@ -3587,10 +3575,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 15
   },
   "workflow-watchdog.yml": {
     "name": "workflow-watchdog.yml",
@@ -3604,8 +3592,8 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 15,
-      "concurrentJobs": 5
+      "timeout": 30,
+      "concurrentJobs": 4
     },
     "estimatedDuration": 15
   },

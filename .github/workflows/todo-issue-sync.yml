@@ -10,7 +10,6 @@ concurrency:
   group: "github.workflow-${{ github.ref }}"
   cancel-in-progress: true
 
-permissions:
   contents: write
   issues: write
 
@@ -18,15 +17,14 @@ jobs:
 
   sync-todos:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
     steps:
       - name: Checkout
-  uses: actions/checkout@v4
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Setup Node.js
-  uses: actions/setup-node@v4
+        uses: actions/setup-node@v4
         with:
           node-version: 20
 
@@ -47,7 +45,7 @@ jobs:
           fi
 
       - name: Create or update TODO Issue
-  env:
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
         run: |

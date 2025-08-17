@@ -16,15 +16,14 @@ concurrency:
 jobs:
   dashboard-generation:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
     name: Generate Automation Dashboard
     
     steps:
       - name: Checkout code
-  uses: actions/checkout@v4
+        uses: actions/checkout@v4
         
       - name: Setup Node.js
-  uses: actions/setup-node@v4
+        uses: actions/setup-node@v4
         with:
           'node-version': '18'
           cache: 'npm'
@@ -97,7 +96,7 @@ jobs:
           echo " >> automation-dashboard.md
           
       - name: Upload dashboard
-  uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4
         with:
           name: automation-dashboard
           path: automation-dashboard.md
@@ -113,7 +112,7 @@ jobs:
         uses: actions/checkout@v4
         
       - name: Deploy to GitHub Pages
-  uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./automation-dashboard.md

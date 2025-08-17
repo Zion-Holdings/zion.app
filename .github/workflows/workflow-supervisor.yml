@@ -9,7 +9,6 @@ concurrency:
   group: "workflow-supervisor-${{ github.ref }}"
   cancel-in-progress: true
 
-permissions:
   contents: write
   issues: write
 
@@ -17,10 +16,9 @@ jobs:
 
   supervise:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
     steps:
       - name: Supervise critical workflows
-  uses: actions/github-script@v7
+        uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |

@@ -37,7 +37,6 @@ on:
       - 'components/**'
       - 'pages/**'
 
-env:
   NODE_VERSION: '18'
   AGENT_GENERATION_INTERVAL: 21600 # 6 hours in seconds
 
@@ -51,7 +50,6 @@ jobs:
   generate-agents:
     name: Generate Development Agents
     runs-on: ubuntu-latest
-    timeout-minutes: 60
     strategy:
       matrix:
         agent_type: [full-stack, frontend, backend, testing, deployment, monitoring, optimization]
@@ -61,13 +59,13 @@ jobs:
     
     steps:
       - name: Checkout Repository
-  uses: actions/checkout@v4
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
       - name: Setup Node.js
-  uses: actions/setup-node@v4
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}"
           cache: 'npm'
@@ -266,10 +264,10 @@ jobs:
     
     steps:
       - name: Checkout Repository
-  uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-  uses: actions/setup-node@v4
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
 
@@ -312,7 +310,7 @@ jobs:
     
     steps:
       - name: Checkout Repository
-  uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Analyze Agent Performance
         run: |
@@ -383,7 +381,7 @@ jobs:
     
     steps:
       - name: Checkout Repository
-  uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Calculate Growth Metrics
         run: |
@@ -438,7 +436,7 @@ jobs:
     
     steps:
       - name: Checkout Repository
-  uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Analyze Development Patterns
         run: |

@@ -9,14 +9,12 @@ concurrency:
   group: "autonomous-auto-discovery-${{ github.ref }}"
   cancel-in-progress: true
 
-permissions:
   contents: write
 
 jobs:
 
   matrix-runner:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
     strategy:
       fail-fast: false
       matrix:
@@ -24,12 +22,12 @@ jobs:
         partition_total: [3]
     steps:
       - name: Checkout
-  uses: actions/checkout@v4
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Setup Node.js
-  uses: actions/setup-node@v4
+        uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
@@ -38,7 +36,7 @@ jobs:
         run: npm ci
 
       - name: Run auto-discovery partition ${{ matrix.partition_index }} of ${{ matrix.partition_total }}
-  env:
+        env:
           PARTITION_INDEX: ${{ matrix.partition_index }}"
           PARTITION_TOTAL: ${{ matrix.partition_total }}"
           TASK_TIMEOUT_MS: '180000'

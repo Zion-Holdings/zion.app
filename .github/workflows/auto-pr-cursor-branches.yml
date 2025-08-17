@@ -11,7 +11,6 @@ concurrency:
   group: "github.workflow-${{ github.ref }}"
   cancel-in-progress: true
 
-permissions:
   contents: write
   pull-requests: write
 
@@ -19,15 +18,14 @@ jobs:
 
   open-pr:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
     steps:
       - name: Checkout
-  uses: actions/checkout@v4
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Create or update PR to main
-  uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           base: main"
@@ -42,12 +40,12 @@ jobs:
           delete-branch: false
 
       - name: Add automerge label (ensures label exists)
-  uses: actions-ecosystem/action-add-labels@v1
+        uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: automerge, automated
 
       - name: Enable auto-merge (squash)
-  uses: peter-evans/enable-pull-request-automerge@v1
+        uses: peter-evans/enable-pull-request-automerge@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           pull-request-number: ${{ steps.cpr.outputs.pull-request-number || '' }}

@@ -10,14 +10,12 @@ concurrency:
   group: "github.workflow-${{ github.ref }}"
   cancel-in-progress: true
 
-permissions:
   contents: write
 
 jobs:
 
   cleanup:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
     steps:
       - name: List open PR heads
         id: list
@@ -35,7 +33,7 @@ jobs:
             fs.writeFileSync('open_pr_heads.txt', heads.join('\n'));
             core.info(`Open PR heads: ${heads.length}`);
       - name: Checkout repository
-  uses: actions/checkout@v4
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Prune merged branches

@@ -10,7 +10,6 @@ concurrency:
   group: "github.workflow-${{ github.ref }}"
   cancel-in-progress: true
 
-permissions:
   issues: write
   pull-requests: write
 
@@ -18,10 +17,9 @@ jobs:
 
   stale:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
     steps:
       - name: Run stale bot
-  uses: actions/stale@v9
+        uses: actions/stale@v9
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           days-before-stale: 14"

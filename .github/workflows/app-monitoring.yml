@@ -13,13 +13,12 @@ concurrency:
 jobs:
   monitor-performance:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
     steps:
       - name: Checkout code
-  uses: actions/checkout@v4
+        uses: actions/checkout@v4
         
       - name: Setup Node.js
-  uses: actions/setup-node@v4
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
@@ -36,7 +35,7 @@ jobs:
           lighthouse https://your-app-url.com --output=json --output-path=./lighthouse-report.json
           
       - name: Upload performance report
-  uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4
         with:
           name: performance-report
           path: lighthouse-report.json
@@ -46,10 +45,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-  uses: actions/checkout@v4
+        uses: actions/checkout@v4
         
       - name: Setup Node.js
-  uses: actions/setup-node@v4
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
@@ -64,7 +63,7 @@ jobs:
         run: npm outdated
         
       - name: Upload security report
-  uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4
         with:
           name: security-report
           path: npm-audit.json
@@ -84,7 +83,7 @@ jobs:
           echo "Timestamp: $(date)"
           
       - name: Upload uptime report
-  uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4
         with:
           name: uptime-report
           path: uptime-report.txt

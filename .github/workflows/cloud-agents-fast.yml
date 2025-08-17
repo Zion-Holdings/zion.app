@@ -10,7 +10,6 @@ concurrency:
   group: "github.workflow-${{ github.ref }}"
   cancel-in-progress: true
 
-permissions:
   contents: write
   actions: read
 
@@ -18,15 +17,14 @@ jobs:
   main:
     name: Main Job
     runs-on: ubuntu-latest
-    timeout-minutes: 20
     steps:
       - name: Checkout repository
-  uses: actions/checkout@v4
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Setup Node.js
-  uses: actions/setup-node@v4
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
@@ -35,7 +33,7 @@ jobs:
         run: npm ci --no-audit --no-fund
 
       - name: Run continuous fast loop for ~30 min
-  env:
+        env:
           CANONICAL_URL: https://ziontechgroup.com
         run: |
           nohup node scripts/continuous-cloud-agents.cjs &

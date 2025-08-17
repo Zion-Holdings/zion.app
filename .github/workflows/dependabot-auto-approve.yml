@@ -9,7 +9,6 @@ concurrency:
   group: "github.workflow-${{ github.ref }}"
   cancel-in-progress: true
 
-permissions:
   pull-requests: write
   contents: write
 
@@ -18,10 +17,9 @@ jobs:
   auto-approve:
     if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot'
     runs-on: "ubuntu-latest
-    timeout-minutes: 10
     steps:
       - name: Auto-approve
-  uses: hmarr/auto-approve-action@v4
+        uses: hmarr/auto-approve-action@v4
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -31,7 +29,7 @@ jobs:
     runs-on: "ubuntu-latest
     steps:
       - name: Enable Auto-merge
-  uses: peter-evans/enable-pull-request-automerge@v1
+        uses: peter-evans/enable-pull-request-automerge@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           pull-request-number: ${{ github.event.pull_request.number }}

@@ -5,7 +5,6 @@ on:
     - cron: '0 0 * * *'
   workflow_dispatch:
 
-permissions:
   actions: write
   issues: write
   contents: read
@@ -18,7 +17,6 @@ jobs:
 
   watchdog:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
     steps:
       - name: Scan and remediate failed workflow runs
         id: scan

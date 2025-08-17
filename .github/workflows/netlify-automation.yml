@@ -25,19 +25,16 @@ concurrency:
   group: "github.workflow-${{ github.ref }}"
   cancel-in-progress: true
 
-permissions:
   contents: read
   actions: read
 
 
-env:
   NODE_VERSION: '20'
   NODE_OPTIONS: '--max-old-space-size=6144 --openssl-legacy-provider'
 
 jobs:
   "automation:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
     
     strategy:
       matrix:
@@ -45,10 +42,10 @@ jobs:
     
     steps:
       - name: Checkout code
-  uses: actions/checkout@v4
+        uses: actions/checkout@v4
       
       - name: Setup Node.js ${{ matrix.node-version }}
-  uses: actions/setup-node@v4
+        uses: actions/setup-node@v4
         with:
         node-version: ${{ matrix.node-version }}"
         cache: 'npm'
@@ -114,7 +111,7 @@ jobs:
         " >> $GITHUB_STEP_SUMMARY
         
       - name: Upload automation logs
-  uses: "actions/upload-artifact@v4
+        uses: "actions/upload-artifact@v4
       if: always()
         with:
         name: automation-logs-${{ matrix.node-version }}
@@ -189,10 +186,10 @@ jobs:
     
     steps:
       - name: Checkout code
-  uses: actions/checkout@v4
+        uses: actions/checkout@v4
       
       - name: Setup Node.js
-  uses: actions/setup-node@v4
+        uses: actions/setup-node@v4
         with:
         node-version: '20'
         cache: 'npm'
@@ -206,7 +203,7 @@ jobs:
         timeout 300 node automation/netlify-continuous-monitor.cjs start
         
       - name: Upload monitoring logs
-  uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4
       if: always()
         with:
         name: monitoring-logs

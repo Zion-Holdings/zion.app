@@ -5,7 +5,6 @@ on:
     - cron: '30 3 * * *'
   workflow_dispatch: {}
 
-permissions:
   contents: write
 
 concurrency:
@@ -15,13 +14,12 @@ concurrency:
 jobs:
   lhci:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
     steps:
       - name: Checkout
-  uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Setup Node
-  uses: actions/setup-node@v4
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
 
@@ -35,7 +33,7 @@ jobs:
         run: npx serve -s out -l 3000 &
 
       - name: Run Lighthouse CI
-  uses: treosh/lighthouse-ci-action@v10
+        uses: treosh/lighthouse-ci-action@v10
         with:
           urls: |
             http://localhost:3000/

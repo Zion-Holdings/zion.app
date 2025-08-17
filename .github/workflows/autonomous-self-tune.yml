@@ -9,22 +9,20 @@ concurrency:
   group: "autonomous-self-tuning-${{ github.ref }}"
   cancel-in-progress: true
 
-permissions:
   contents: write
 
 jobs:
 
   self-tune:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
     steps:
       - name: Checkout
-  uses: actions/checkout@v4
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Setup Node.js
-  uses: actions/setup-node@v4
+        uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
@@ -33,7 +31,7 @@ jobs:
         run: npm ci --omit=dev || npm ci
 
       - name: Run Auto-Scheduler
-  env:
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: node automation/auto-scheduler.cjs | cat

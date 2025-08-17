@@ -12,7 +12,6 @@ concurrency:
   group: "fast-auto-push-${{ github.ref }}"
   cancel-in-progress: true
 
-permissions:
   contents: write
 
 jobs:
@@ -20,20 +19,19 @@ jobs:
   fast-push:
     if: github.ref != 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 10
     steps:
       - name: Checkout
-  uses: actions/checkout@v4
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Setup Node.js
-  uses: actions/setup-node@v4
+        uses: actions/setup-node@v4
         with:
           node-version: 20
 
       - name: Push HEAD to main fast
-  env:
+        env:
           TARGET_BRANCH: main
           PUSH_TO_MAIN: 'true'
         run: node automation/git-sync.cjs | cat
