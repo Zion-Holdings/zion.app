@@ -1,15 +1,10 @@
 {
-  "timestamp": "2025-08-17T00:35:37.523Z",
+  "timestamp": "2025-08-17T00:36:35.472Z",
   "summary": {
-    "totalWorkflows": 1,
-    "fixed": 1,
+    "totalWorkflows": 0,
+    "fixed": 0,
     "failed": 0
   },
-  "fixedWorkflows": [
-    {
-      "name": "workflow-health-monitor.yml",
-      "status": "active"
-    }
-  ],
+  "fixedWorkflows": [],
   "failedWorkflows": []
 }
