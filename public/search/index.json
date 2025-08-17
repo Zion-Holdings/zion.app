@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T19:05:04.666Z",
+  "generatedAt": "2025-08-17T19:06:04.114Z",
   "entries": [
     {
       "route": "/user-management",
@@ -972,6 +972,12 @@
       "file": "pages/reports/updates/update-2025-08-17-1610.tsx",
       "title": "Autonomous Checklist — Evaluation & Safety (2025-08-17 16:10 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Checklist — Evaluation & Safety (2025-08-17 16:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1606",
+      "file": "pages/reports/updates/update-2025-08-17-1606.tsx",
+      "title": "Autonomous Update — 2025-08-17 16:06",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 16:06 Autonomous Update — 2025-08-17 16:06 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : My AI skeptic friends"
     },
     {
       "route": "/reports/updates/update-2025-08-17-1605",
