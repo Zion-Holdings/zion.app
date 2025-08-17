@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-17T20:40:01.884Z",
-  "pagesScanned": 8456,
+  "generatedAt": "2025-08-17T20:41:01.155Z",
+  "pagesScanned": 8459,
   "items": [
     {
       "route": "/404",
@@ -34706,6 +34706,16 @@
       "suggestion": {
         "title": "Checklist: RAG Platforms",
         "description": "Checklist: RAG Platforms — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-17-2040",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide: LLM Apps",
+        "description": "Guide: LLM Apps — auto-suggested description"
       }
     },
     {
@@ -83089,6 +83099,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-17-1741",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 17:41",
+        "description": "Autonomous Update — 2025-08-17 17:41 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-17-1750",
       "missing": [
         "og:image"
@@ -83246,6 +83269,16 @@
       "suggestion": {
         "title": "Autonomous Playbook — MLOps & Model Reliability (2025-08-17 20:30 UTC)",
         "description": "Autonomous Playbook — MLOps & Model Reliability (2025-08-17 20:30 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-2040",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Performance Tuning Guide — Cloud Cost Optimization (2025-08-17 20:40 UTC)",
+        "description": "Autonomous Performance Tuning Guide — Cloud Cost Optimization (2025-08-17 20:40 UTC) — auto-suggested description"
       }
     },
     {
