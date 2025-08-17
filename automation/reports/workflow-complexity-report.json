@@ -1,18 +1,18 @@
 {
-  "timestamp": "2025-08-17T00:33:41.001Z",
+  "timestamp": "2025-08-17T00:35:37.099Z",
   "summary": {
-    "totalWorkflows": 188,
+    "totalWorkflows": 189,
     "complexityDistribution": {
       "very-high": 0,
       "high": 6,
       "medium": 3,
-      "low": 179
+      "low": 180
     },
     "refactoringPriorities": {
       "critical": 0,
       "high": 6,
       "medium": 3,
-      "low": 179
+      "low": 180
     }
   },
   "workflows": {
@@ -3345,6 +3345,24 @@
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/venture.yml"
+    },
+    "workflow-health-monitor.yml": {
+      "complexityScore": 25,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 195,
+        "jobCount": 0,
+        "stepCount": 8,
+        "conditionalCount": 3,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 3
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/workflow-health-monitor.yml"
     },
     "workflow-radar.yml": {
       "complexityScore": 0,

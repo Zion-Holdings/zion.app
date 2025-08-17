@@ -3541,6 +3541,23 @@
     },
     "estimatedDuration": 20
   },
+  "workflow-health-monitor.yml": {
+    "name": "workflow-health-monitor.yml",
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 30,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 30
+  },
   "workflow-radar.yml": {
     "name": "workflow-radar.yml",
     "triggers": [

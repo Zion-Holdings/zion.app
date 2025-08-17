@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-17T00:33:49.606Z",
+  "timestamp": "2025-08-17T00:35:44.245Z",
   "critical": [
     {
       "name": "auto-heal-workflows.yml",
@@ -3535,6 +3535,25 @@
     {
       "name": "autonomous-deps-upgrade.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-deps-upgrade.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 30,
+      "concurrentJobs": 8,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch {}"
+      ],
+      "resourceScore": 102
+    },
+    {
+      "name": "workflow-health-monitor.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/workflow-health-monitor.yml",
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 30,

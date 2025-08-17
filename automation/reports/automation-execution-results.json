@@ -1,10 +1,10 @@
 {
-  "timestamp": "2025-08-17T00:33:43.206Z",
+  "timestamp": "2025-08-17T00:35:38.782Z",
   "systems": {
     "workflow-health": {
-      "success": true,
-      "duration": 487,
-      "error": null
+      "success": false,
+      "duration": 0,
+      "error": "Command failed: node ./workflow-health-monitor.cjs"
     },
     "dependency-health": {
       "success": false,
@@ -13,12 +13,12 @@
     },
     "resource-optimization": {
       "success": true,
-      "duration": 120,
+      "duration": 119,
       "error": null
     },
     "smart-dispatch": {
       "success": true,
-      "duration": 9873,
+      "duration": 8786,
       "error": null
     },
     "retry-system": {
@@ -29,8 +29,8 @@
   },
   "summary": {
     "total": 5,
-    "success": 4,
-    "failed": 1,
-    "totalDuration": 10562
+    "success": 3,
+    "failed": 2,
+    "totalDuration": 8987
   }
 }
