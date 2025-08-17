@@ -55,23 +55,6 @@
     },
     "estimatedDuration": 30
   },
-  "ci.yml": {
-    "name": "ci.yml",
-    "triggers": [
-      "push",
-      "pull_request"
-    ],
-    "needs": [],
-    "outputs": [],
-    "priority": "critical",
-    "resourceRequirements": {
-      "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 45,
-      "concurrentJobs": 4
-    },
-    "estimatedDuration": 45
-  },
   "cloud-maintenance.yml": {
     "name": "cloud-maintenance.yml",
     "triggers": [],
@@ -130,7 +113,10 @@
   },
   "dependencies.yml": {
     "name": "dependencies.yml",
-    "triggers": [],
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
     "needs": [],
     "outputs": [],
     "priority": "medium",

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-17T12:03:48.678Z",
+  "timestamp": "2025-08-17T12:04:44.592Z",
   "critical": [
     {
       "name": "ci-self-heal.yml",
@@ -16,25 +16,6 @@
       "dependencies": [],
       "triggers": [],
       "resourceScore": 151
-    },
-    {
-      "name": "ci.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci.yml",
-      "priority": "critical",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 45,
-      "concurrentJobs": 6,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "push",
-        "pull_request"
-      ],
-      "resourceScore": 139
     }
   ],
   "high": [
@@ -88,7 +69,10 @@
         "special": []
       },
       "dependencies": [],
-      "triggers": [],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch"
+      ],
       "resourceScore": 131
     }
   ],
