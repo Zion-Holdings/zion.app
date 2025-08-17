@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-17T17:40:01.671Z",
-  "pagesScanned": 8143,
+  "generatedAt": "2025-08-17T17:41:01.125Z",
+  "pagesScanned": 8146,
   "items": [
     {
       "route": "/404",
@@ -34026,6 +34026,16 @@
       "suggestion": {
         "title": "Guide: AI QA & Eval",
         "description": "Guide: AI QA & Eval — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-17-1740",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook: DevSecOps AI",
+        "description": "Playbook: DevSecOps AI — auto-suggested description"
       }
     },
     {
@@ -80119,6 +80129,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-17-1441",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 14:41",
+        "description": "Autonomous Update — 2025-08-17 14:41 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-17-1450",
       "missing": [
         "og:image"
@@ -80286,6 +80309,16 @@
       "suggestion": {
         "title": "Autonomous Capability Map — MLOps & Model Reliability (2025-08-17 17:30 UTC)",
         "description": "Autonomous Capability Map — MLOps & Model Reliability (2025-08-17 17:30 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1740",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Checklist — DevSecOps for AI (2025-08-17 17:40 UTC)",
+        "description": "Autonomous Checklist — DevSecOps for AI (2025-08-17 17:40 UTC) — auto-suggested description"
       }
     },
     {
