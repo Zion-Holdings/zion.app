@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-17T01:05:40.508Z",
+  "timestamp": "2025-08-17T01:06:41.453Z",
   "critical": [],
   "high": [
     {
@@ -192,6 +192,26 @@
         "environmentCount": 0,
         "secretCount": 1,
         "actionCount": 2
+      },
+      "refactoringStrategy": [
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "yaml-auto-fixer-simple.yml",
+      "status": "active",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 222,
+        "jobCount": 0,
+        "stepCount": 8,
+        "conditionalCount": 1,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 1,
+        "actionCount": 3
       },
       "refactoringStrategy": [
         "Extract common functionality to reusable workflows"

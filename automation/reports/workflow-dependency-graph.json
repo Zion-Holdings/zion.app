@@ -3609,6 +3609,23 @@
     },
     "estimatedDuration": 15
   },
+  "yaml-auto-fixer-simple.yml": {
+    "name": "yaml-auto-fixer-simple.yml",
+    "triggers": [
+      "workflow_dispatch",
+      "schedule"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "standard",
+      "timeout": 30,
+      "concurrentJobs": 3
+    },
+    "estimatedDuration": 15
+  },
   "yaml-auto-fixer.yml": {
     "name": "yaml-auto-fixer.yml",
     "triggers": [
