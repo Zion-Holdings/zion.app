@@ -7,6 +7,10 @@ true:
     - completed
 permissions:
   contents: read
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * *' # Daily at 2 AM
 jobs:
   attempt-fix:
     if: ${{ github.event.workflow_run.conclusion == 'failure' }}

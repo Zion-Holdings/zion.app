@@ -3,6 +3,10 @@ true:
   schedule:
   - cron: '*/30 * * * *'
   workflow_dispatch: {}
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * *' # Daily at 2 AM
 jobs:
   meta-factory:
     runs-on: ubuntu-latest

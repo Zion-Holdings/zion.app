@@ -6,6 +6,10 @@ true:
 concurrency:
   group: netlify-monitor
   cancel-in-progress: true
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * *' # Daily at 2 AM
 jobs:
   check:
     runs-on: ubuntu-latest

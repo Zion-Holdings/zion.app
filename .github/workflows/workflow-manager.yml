@@ -15,6 +15,10 @@ concurrency:
   cancel-in-progress: false
 env:
   NODE_VERSION: '20'
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * *' # Daily at 2 AM
 jobs:
   workflow-health-check:
     name: Workflow Health Check

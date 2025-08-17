@@ -6,6 +6,10 @@ true:
   schedule:
   - cron: '*/10 * * * *'
   workflow_dispatch: null
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * *' # Daily at 2 AM
 jobs:
   health:
     runs-on: ubuntu-latest
