@@ -1645,10 +1645,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 30,
+      "timeout": 45,
       "concurrentJobs": 4
     },
-    "estimatedDuration": 25
+    "estimatedDuration": 45
   },
   "cleanup-merged-branches.yml": {
     "name": "cleanup-merged-branches.yml",
