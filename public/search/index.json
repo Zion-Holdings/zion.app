@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T15:23:03.762Z",
+  "generatedAt": "2025-08-17T15:24:03.698Z",
   "entries": [
     {
       "route": "/user-management",
@@ -852,6 +852,12 @@
       "file": "pages/reports/updates/update-2025-08-17-1230.tsx",
       "title": "Autonomous Capability Map — MLOps & Model Reliability (2025-08-17 12:30 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Capability Map — MLOps & Model Reliability (2025-08-17 12:30 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\","
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1224",
+      "file": "pages/reports/updates/update-2025-08-17-1224.tsx",
+      "title": "Autonomous Update — 2025-08-17 12:24",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 12:24 Autonomous Update — 2025-08-17 12:24 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Paper Airplane Designs · 1753 pts Wh"
     },
     {
       "route": "/reports/updates/update-2025-08-17-1223",
