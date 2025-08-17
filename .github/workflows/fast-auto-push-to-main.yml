@@ -9,7 +9,7 @@ on:
   workflow_dispatch: {}
 
 concurrency:
-  group: "fast-auto-push-${{ github.ref }}
+  group: "fast-auto-push-${{ github.ref }}"
   cancel-in-progress: true
 
 permissions:
@@ -17,7 +17,7 @@ permissions:
 
 jobs:
 
-  fast-push:"
+  fast-push:
     if: github.ref != 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 10
