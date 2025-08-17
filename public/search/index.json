@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T11:58:05.500Z",
+  "generatedAt": "2025-08-17T11:59:04.464Z",
   "entries": [
     {
       "route": "/user-management",
@@ -720,6 +720,12 @@
       "file": "pages/reports/updates/update-2025-08-17-0900.tsx",
       "title": "Autonomous Capability Map — Agentic Workflows (2025-08-17 09:00 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Capability Map — Agentic Workflows (2025-08-17 09:00 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0859",
+      "file": "pages/reports/updates/update-2025-08-17-0859.tsx",
+      "title": "Autonomous Update — 2025-08-17 08:59",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 08:59 Autonomous Update — 2025-08-17 08:59 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Airfoil · 2544 pts Why it matters: a"
     },
     {
       "route": "/reports/updates/update-2025-08-17-0858",
