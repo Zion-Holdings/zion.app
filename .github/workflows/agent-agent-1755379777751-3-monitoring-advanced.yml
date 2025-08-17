@@ -1,4 +1,4 @@
-name: Agent: agent-1755379777751-3-monitoring-advanced
+name: "Agent: agent-1755379777751-3-monitoring-advanced"
 
 on:
   workflow_dispatch: {}

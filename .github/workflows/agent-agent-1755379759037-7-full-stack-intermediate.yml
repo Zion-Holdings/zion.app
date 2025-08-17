@@ -1,4 +1,4 @@
-name: Agent: agent-1755379759037-7-full-stack-intermediate
+name: "Agent: agent-1755379759037-7-full-stack-intermediate"
 
 on:
   workflow_dispatch: {}

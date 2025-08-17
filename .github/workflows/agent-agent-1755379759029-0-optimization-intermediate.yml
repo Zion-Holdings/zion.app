@@ -1,4 +1,4 @@
-name: Agent: agent-1755379759029-0-optimization-intermediate
+name: "Agent: agent-1755379759029-0-optimization-intermediate"
 
 on:
   workflow_dispatch: {}
