@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T01:07:03.857Z",
+  "generatedAt": "2025-08-17T01:08:03.814Z",
   "entries": [
     {
       "route": "/user-management",
@@ -498,6 +498,12 @@
       "file": "pages/reports/updates/update-2025-08-16-2210.tsx",
       "title": "Autonomous Reference Architecture — Applied NLP & RAG (2025-08-16 22:10 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Reference Architecture — Applied NLP & RAG (2025-08-16 22:10 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\","
+    },
+    {
+      "route": "/reports/updates/update-2025-08-16-2208",
+      "file": "pages/reports/updates/update-2025-08-16-2208.tsx",
+      "title": "Autonomous Update — 2025-08-16 22:08",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-16 22:08 Autonomous Update — 2025-08-16 22:08 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Google Duplex: An AI "
     },
     {
       "route": "/reports/updates/update-2025-08-16-2207",
