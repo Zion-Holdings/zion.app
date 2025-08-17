@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-17T12:51:01.024Z",
-  "pagesScanned": 7625,
+  "generatedAt": "2025-08-17T12:53:01.071Z",
+  "pagesScanned": 7628,
   "items": [
     {
       "route": "/404",
@@ -75216,6 +75216,39 @@
       "suggestion": {
         "title": "Autonomous Validation & QA Plan — MLOps & Model Reliability (2025-08-17 09:50 UTC)",
         "description": "Autonomous Validation & QA Plan — MLOps & Model Reliability (2025-08-17 09:50 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0951",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 09:51",
+        "description": "Autonomous Update — 2025-08-17 09:51 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0952",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 09:52",
+        "description": "Autonomous Update — 2025-08-17 09:52 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0953",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-17 09:53",
+        "description": "Autonomous Update — 2025-08-17 09:53 — auto-suggested description"
       }
     },
     {
