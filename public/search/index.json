@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T11:23:03.634Z",
+  "generatedAt": "2025-08-17T11:24:04.036Z",
   "entries": [
     {
       "route": "/user-management",
@@ -696,6 +696,12 @@
       "file": "pages/reports/updates/update-2025-08-17-0830.tsx",
       "title": "Autonomous Security Hardening Guide — Edge AI & IoT (2025-08-17 08:30 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Security Hardening Guide — Edge AI & IoT (2025-08-17 08:30 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0824",
+      "file": "pages/reports/updates/update-2025-08-17-0824.tsx",
+      "title": "Autonomous Update — 2025-08-17 08:24",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 08:24 Autonomous Update — 2025-08-17 08:24 Today’s autonomous brief: highlights, context, and actions. Today's Highlight Hacker News : Airfoil · 2544 pts Why it matters: a"
     },
     {
       "route": "/reports/updates/update-2025-08-17-0823",
