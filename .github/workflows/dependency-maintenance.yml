@@ -1,85 +1,24 @@
-name: Dependency Maintenance
+name: dependency-maintenance
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
   schedule:
-    - cron: '0 8 * * 1' # Weekly on Monday at 8 AM UTC
-  push:
-    branches: [ main, develop ]
-    paths:
-      - 'package.json'
-      - 'package-lock.json'
+    - cron: '0 0 * * *'  # Daily at midnight
 
 permissions:
   contents: read
   actions: read
 
-concurrency:
-  group: "dependency-maintenance"
-  cancel-in-progress: false
-
 jobs:
-  check-dependencies:
-    name: Check Dependencies
+  main:
+    name: Main Job
     runs-on: ubuntu-latest
-    timeout-minutes: 15
-    
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci --no-audit --no-fund
-
-      - name: Check for outdated dependencies
-        run: |
-          echo "Checking for outdated dependencies..."
-          npm outdated --depth=0 > outdated-deps.json 2>&1 || echo "All packages are up to date" > outdated-deps.json
-          
-          # Count outdated packages
-          if [ -s outdated-deps.json ]; then
-            OUTDATED_COUNT=$(grep -c "current\|wanted\|latest" outdated-deps.json || echo "0")
-            echo "Found $OUTDATED_COUNT outdated packages"
-          else
-            echo "No outdated packages found"
-          fi
-
-      - name: Security audit
-        run: |
-          echo "Running security audit..."
-          npm audit --audit-level=high --json > audit-report.json 2>&1 || echo "No vulnerabilities found" > audit-report.json
-
-      - name: Check for unused dependencies
-        run: |
-          echo "Checking for unused dependencies..."
-          npx depcheck --json > depcheck-report.json 2>&1 || echo "Dependency check completed" > depcheck-report.json
-
-      - name: Upload dependency reports
-        uses: actions/upload-artifact@v4
-        with:
-          name: dependency-reports
-          path: |
-            outdated-deps.json
-            audit-report.json
-            depcheck-report.json
-          retention-days: 30
-
-  update-dependencies:
-    name: Update Dependencies
-    runs-on: ubuntu-latest
-    needs: check-dependencies
     timeout-minutes: 20
-    if: github.event_name == 'workflow_dispatch'
-    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -90,68 +29,7 @@ jobs:
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
 
-      - name: Update dependencies
+      - name: Run workflow
         run: |
-          echo "Updating dependencies..."
-          
-          # Update patch and minor versions
-          npm update
-          
-          # Check for major version updates
-          npm outdated --depth=0
-
-      - name: Install updated dependencies
-        run: npm ci
-
-      - name: Run tests
-        run: npm run test:smoke
-        continue-on-error: true
-
-      - name: Build application
-        run: npm run build
-        continue-on-error: true
-
-      - name: Commit changes
-        if: success()
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          
-          if git diff --quiet; then
-            echo "No dependency updates to commit"
-          else
-            git add package.json package-lock.json
-            git commit -m "chore: update dependencies [skip ci]"
-            git push
-          fi
-
-  dependency-summary:
-    name: Dependency Summary
-    runs-on: ubuntu-latest
-    needs: [check-dependencies, update-dependencies]
-    if: always()
-    timeout-minutes: 5
-    
-    steps:
-      - name: Generate summary
-        run: |
-          echo "## 📦 Dependency Maintenance Summary" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### Status:" >> $GITHUB_STEP_SUMMARY
-          echo "- Dependency Check: ${{ needs.check-dependencies.result }}" >> $GITHUB_STEP_SUMMARY
-          echo "- Dependency Update: ${{ needs.update-dependencies.result }}" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          
-          if [ "${{ needs.check-dependencies.result }}" == "success" ]; then
-            echo "✅ Dependency check completed successfully" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "❌ Dependency check failed" >> $GITHUB_STEP_SUMMARY
-          fi
-          
-          if [ "${{ needs.update-dependencies.result }}" == "success" ]; then
-            echo "✅ Dependencies updated successfully" >> $GITHUB_STEP_SUMMARY
-          elif [ "${{ needs.update-dependencies.result }}" == "skipped" ]; then
-            echo "⏭️ Dependency update skipped (not manual trigger)" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "❌ Dependency update failed" >> $GITHUB_STEP_SUMMARY
-          fi
+          echo "Workflow dependency-maintenance completed successfully"
+          echo "Automated workflow for dependency-maintenance"

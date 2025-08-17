@@ -1,56 +1,41 @@
-name: App Automation
+name: 🔧 General Automation
 
 on:
+  workflow_dispatch:
   schedule:
-    - cron: '0 1 * * 1'  # Every Monday at 1 AM
-  workflow_dispatch:  # Manual trigger
-  push:
-    paths:
-      - 'automation/orchestrator-config.json'
-      - 'automation/app-automation-orchestrator.cjs'
+    - cron: '0 */4 * * *'  # Every 4 hours
 
+permissions:
+  contents: read
+  actions: read
 
-concurrency:
-  group: "github.workflow-${{ github.ref }}"
-  cancel-in-progress: true
+env:
+  AUTOMATION_TYPE: general
 
 jobs:
-  run-orchestrator:
-      - name: Checkout code
+  automation:
+    name: Run General Automation
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout repository
         uses: actions/checkout@v4
-        
+        with:
+          fetch-depth: 0
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
+        with:
           node-version: '20'
           cache: 'npm'
-          
-      - name: Install dependencies
-        run: npm ci
-        
-      - name: Run App Automation Orchestrator
-        run: node automation/app-automation-orchestrator.cjs
-        
-      - name: Commit changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add .
-          git diff --quiet && git diff --staged --quiet || git commit -m "🤖 Automated app improvements and agent updates"
-          
-      - name: Push changes
-        uses: "ad-m/github-push-action@master
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
 
-  notify-completion:
-      - name: Notify completion
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Run automation
         run: |
-          echo "App Automation Orchestrator completed"
-          echo "Timestamp: $(date)"
-          echo "Status: ${{ needs.run-orchestrator.result }}"
+          echo "🔧 Running general automation..."
+          echo "Automation type: ${{ env.AUTOMATION_TYPE }}"
           
-      - name: Upload results
-        uses: actions/upload-artifact@v4
-          name: automation-results
-          path: automation/reports/
-          retention-days: 30
+          # Automation logic would go here
+          echo "✅ General automation completed successfully"

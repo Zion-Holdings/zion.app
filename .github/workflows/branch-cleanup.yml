@@ -1,12 +1,12 @@
-name: WORKFLOW_NAME_PLACEHOLDER
+name: branch-cleanup
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '0 0 * * *'  # Daily at midnight
 
 permissions:
-  contents: write
+  contents: read
   actions: read
 
 jobs:
@@ -31,4 +31,5 @@ jobs:
 
       - name: Run workflow
         run: |
-          echo "Workflow WORKFLOW_NAME_PLACEHOLDER completed successfully"
+          echo "Workflow branch-cleanup completed successfully"
+          echo "Automated workflow for branch-cleanup"

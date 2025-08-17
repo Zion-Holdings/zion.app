@@ -1,17 +1,14 @@
-name: WORKFLOW_NAME_PLACEHOLDER
+name: deploy
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '0 0 * * *'  # Daily at midnight
 
 permissions:
-  contents: write
+  contents: read
   actions: read
 
-concurrency:
-  group: "workflow-${{ github.ref }}"
-  cancel-in-progress: false
 jobs:
   main:
     name: Main Job
@@ -34,4 +31,5 @@ jobs:
 
       - name: Run workflow
         run: |
-          echo "Workflow WORKFLOW_NAME_PLACEHOLDER completed successfully"
+          echo "Workflow deploy completed successfully"
+          echo "Automated workflow for deploy"

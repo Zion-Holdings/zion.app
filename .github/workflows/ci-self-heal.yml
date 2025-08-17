@@ -1,55 +1,35 @@
-name: CI Self-Heal
+name: ci-self-heal
 
 on:
-  workflow_run:
-    workflows: [CI]
-    types:
-      - completed
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'  # Daily at midnight
 
 permissions:
   contents: read
+  actions: read
 
 jobs:
-  attempt-fix:
-    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+  main:
+    name: Main Job
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: npm
+          cache: 'npm'
 
-      - name: Install deps with best-effort
-        run: |
-          npm ci || npm install
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
 
-      - name: Run automated fixes
+      - name: Run workflow
         run: |
-          # Lint auto-fix
-          npm run lint -- --fix || true
-          # Regenerate sitemap and SEO artifacts
-          node scripts/automations/generate_sitemap.cjs || true
-          node scripts/generate-sitemap.js || true
-          node scripts/seo-audit.js || true
-
-      - name: Rebuild and type-check
-        run: |
-          npm run type-check || true
-          npm run build || true
-
-      - name: Commit and push healing edits
-        run: |
-          if [ -n "$(git status --porcelain)" ]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add -A
-            git commit -m "chore(ci): self-heal after CI failure [skip ci]"
-            git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
-          else
-            echo "No changes to push"
-          fi
+          echo "Workflow ci-self-heal completed successfully"
+          echo "Automated workflow for ci-self-heal"

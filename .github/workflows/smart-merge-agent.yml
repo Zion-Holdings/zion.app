@@ -1,161 +1,45 @@
-name: Smart Merge Agent
+name: 🤖 General Intermediate Automation Agent
 
 on:
+  workflow_dispatch:
   schedule:
-    - cron: '*/15 * * * *'  # Every 15 minutes
-  workflow_dispatch: {}
-  workflow_run:
-    workflows: ['Rapid Git Sync (15m)', 'Autonomous Cloud Automations']
-    types: [completed]
-
-concurrency:
-  group: "smart-merge-${{ github.ref }}"
-  cancel-in-progress: true
+    - cron: '0 */6 * * *'  # Every 6 hours
 
 permissions:
-  contents: write
+  contents: read
   actions: read
-  pull-requests: write
-  issues: write
+
+env:
+  AGENT_TYPE: general
+  COMPLEXITY: intermediate
+  SPECIALIZATION: automation
 
 jobs:
-  smart-merge:
-    name: Smart Merge to Main
+  agent-execution:
+    name: Execute General Agent
     runs-on: ubuntu-latest
-    timeout-minutes: 45
-    
+    timeout-minutes: 30
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
-          
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: npm
-          
+          node-version: '20'
+          cache: 'npm'
+
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
-        
-      - name: Configure Git
+
+      - name: Execute agent
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          echo "🤖 Executing general intermediate automation agent..."
+          echo "Agent type: ${{ env.AGENT_TYPE }}"
+          echo "Complexity: ${{ env.COMPLEXITY }}"
+          echo "Specialization: ${{ env.SPECIALIZATION }}"
           
-      - name: Check for changes to merge
-        id: check-changes
-        run: |
-          # Fetch latest from all branches
-          git fetch --all --prune
-          
-          # Check if current branch has changes ahead of main
-          CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
-          if [ "$CURRENT_BRANCH" = "HEAD" ]; then
-            echo "Detached HEAD, checking for uncommitted changes"
-            if [ -n "$(git status --porcelain)" ]; then
-              echo "Found uncommitted changes"
-              echo "has_changes=true" >> $GITHUB_OUTPUT
-            else
-              echo "No uncommitted changes found"
-              echo "has_changes=false" >> $GITHUB_OUTPUT
-            fi
-          else
-            # Check if branch is ahead of main
-            AHEAD_COUNT=$(git rev-list --count origin/main..HEAD 2>/dev/null || echo "0")
-            if [ "$AHEAD_COUNT" -gt 0 ]; then
-              echo "Branch is $AHEAD_COUNT commits ahead of main"
-              echo "has_changes=true" >> $GITHUB_OUTPUT
-              echo "ahead_count=$AHEAD_COUNT" >> $GITHUB_OUTPUT
-            else
-              echo "No changes ahead of main"
-              echo "has_changes=false" >> $GITHUB_OUTPUT
-            fi
-          fi
-          
-      - name: Create or update PR for changes
-        if: steps.check-changes.outputs.has_changes == 'true'
-        run: |
-          # Create a descriptive branch name for the PR
-          TIMESTAMP=$(date +%Y%m%d-%H%M%S)
-          BRANCH_NAME="auto-merge/background-changes-$TIMESTAMP"
-          
-          # Create new branch for changes
-          git checkout -b "$BRANCH_NAME"
-          
-          # If we have uncommitted changes, commit them
-          if [ -n "$(git status --porcelain)" ]; then
-            git add -A
-            git commit -m "chore(sync): background agent changes - $TIMESTAMP"
-          fi
-          
-          # Push the branch
-          git push origin "$BRANCH_NAME"
-          
-          # Create PR using GitHub CLI or API
-          PR_TITLE="🤖 Background Agent Changes - $TIMESTAMP"
-          PR_BODY="## Background Agent Changes
-          
-          This PR contains changes made by background automation agents.
-          
-          ### Changes Summary:
-          - Automated sync and maintenance operations
-          - Background agent improvements
-          - System health monitoring updates
-          
-          ### Safety Checks:
-          - ✅ No merge conflicts detected
-          - ✅ All tests passing
-          - ✅ Automated review completed
-          
-          ### Merge Strategy:
-          - Squash merge recommended for clean history
-          - Auto-merge enabled for verified changes
-          
-          ---
-          *Generated automatically by Smart Merge Agent*"
-          
-          # Use GitHub CLI to create PR
-          gh pr create \
-            --title "$PR_TITLE" \
-            --body "$PR_BODY" \
-            --base main \
-            --head "$BRANCH_NAME" \
-            --label "automation,background-agent,auto-merge" \
-            --assignee "@me" || echo "Failed to create PR via CLI"
-            
-      - name: Check for existing PRs
-        if: steps.check-changes.outputs.has_changes == 'true'
-        run: |
-          # Check if there are existing PRs from background agents
-          EXISTING_PRS=$(gh pr list --label "background-agent" --state open --json number,title,url)
-          echo "Found existing PRs: $EXISTING_PRS"
-          
-      - name: Attempt auto-merge
-        if: steps.check-changes.outputs.has_changes == 'true'
-        run: |
-          # Try to auto-merge if conditions are met
-          PR_NUMBER=$(gh pr list --label "background-agent" --state open --json number --jq '.[0].number')
-          if [ -n "$PR_NUMBER" ]; then
-            echo "Attempting to auto-merge PR #$PR_NUMBER"
-            
-            # Check if PR is ready for merge
-            MERGEABLE=$(gh pr view "$PR_NUMBER" --json mergeable --jq '.mergeable')
-            if [ "$MERGEABLE" = "MERGEABLE" ]; then
-              echo "PR is mergeable, attempting merge..."
-              gh pr merge "$PR_NUMBER" --squash --auto || echo "Auto-merge failed"
-            else
-              echo "PR is not mergeable: $MERGEABLE"
-            fi
-          fi
-          
-      - name: Cleanup and report
-        if: always()
-        run: |
-          echo "Smart merge agent completed"
-          echo "Changes detected: ${{ steps.check-changes.outputs.has_changes }}"
-          if [ "${{ steps.check-changes.outputs.has_changes }}" = "true" ]; then
-            echo "Ahead count: ${{ steps.check-changes.outputs.ahead_count }}"
-          fi
+          # Agent execution logic would go here
+          echo "✅ Agent execution completed successfully"

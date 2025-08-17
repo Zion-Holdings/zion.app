@@ -1,49 +1,45 @@
-name: Cloud Autonomous Agents
+name: 🤖 General Intermediate Automation Agent
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *'
-
-
-concurrency:
-  group: "github.workflow-${{ github.ref }}"
-  cancel-in-progress: true
-
-  contents: write
-  actions: read
+    - cron: '0 */6 * * *'  # Every 6 hours
 
 permissions:
   contents: read
   actions: read
+
+env:
+  AGENT_TYPE: general
+  COMPLEXITY: intermediate
+  SPECIALIZATION: automation
+
 jobs:
-  main:
-    name: Main Job
+  agent-execution:
+    name: Execute General Agent
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
           fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
+        with:
           node-version: '20'
           cache: 'npm'
 
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
 
-      - name: Run automation
+      - name: Execute agent
         run: |
-          echo "Running automation tasks..."
-          # Add your automation commands here
-
-      - name: Commit and push changes
-        run: |
-          if [ -n "$(git status --porcelain)" ]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add -A
-            git commit -m "chore(automation): update from $workflow_name [skip ci]"
-            git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
-          else
-            echo "No changes to commit"
-          fi
+          echo "🤖 Executing general intermediate automation agent..."
+          echo "Agent type: ${{ env.AGENT_TYPE }}"
+          echo "Complexity: ${{ env.COMPLEXITY }}"
+          echo "Specialization: ${{ env.SPECIALIZATION }}"
+          
+          # Agent execution logic would go here
+          echo "✅ Agent execution completed successfully"

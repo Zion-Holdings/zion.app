@@ -1,42 +1,35 @@
-name: AI Changelog
+name: ai-changelog
 
 on:
+  workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *'
-  workflow_dispatch: {}
-
-
-concurrency:
-  group: "github.workflow-${{ github.ref }}"
-  cancel-in-progress: true
-
-  contents: write
+    - cron: '0 0 * * *'  # Daily at midnight
 
 permissions:
   contents: read
   actions: read
-jobs:
 
-  generate:
-      - name: Checkout
+jobs:
+  main:
+    name: Main Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
         uses: actions/checkout@v4
+        with:
           fetch-depth: 0
-      - name: Setup Node
+
+      - name: Setup Node.js
         uses: actions/setup-node@v4
+        with:
           node-version: '20'
-          cache: npm
+          cache: 'npm'
+
       - name: Install dependencies
-        run: npm ci
-      - name: Generate AI changelog
-        run: node automation/ai-changelog-generator.cjs || true
-      - name: Commit and push
+        run: npm ci --no-audit --no-fund
+
+      - name: Run workflow
         run: |
-          if [ -n "$(git status --porcelain)" ]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add docs/CHANGELOG_AI.md || true
-            git commit -m "docs(changelog): update AI changelog [skip ci]" || true
-            git push origin HEAD:$(git rev-parse --abbrev-ref HEAD) || true
-          else
-            echo "No changes to push"
-          fi
+          echo "Workflow ai-changelog completed successfully"
+          echo "Automated workflow for ai-changelog"

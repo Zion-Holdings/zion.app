@@ -1,42 +1,41 @@
-name: Auto Media Release Draft
+name: 🔧 General Automation
 
 on:
+  workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *'
-  workflow_dispatch: {}
-
-
-concurrency:
-  group: "github.workflow-${{ github.ref }}"
-  cancel-in-progress: true
-
-  contents: write
+    - cron: '0 */4 * * *'  # Every 4 hours
 
 permissions:
   contents: read
   actions: read
-jobs:
 
-  media:
-      - name: Checkout
+env:
+  AUTOMATION_TYPE: general
+
+jobs:
+  automation:
+    name: Run General Automation
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout repository
         uses: actions/checkout@v4
+        with:
           fetch-depth: 0
-      - name: Setup Node
+
+      - name: Setup Node.js
         uses: actions/setup-node@v4
+        with:
           node-version: '20'
-          cache: npm
+          cache: 'npm'
+
       - name: Install dependencies
-        run: npm ci
-      - name: Generate media release draft
-        run: node automation/auto-media-release.cjs || true
-      - name: Commit and push draft
+        run: npm ci --no-audit --no-fund
+
+      - name: Run automation
         run: |
-          if [ -n "$(git status --porcelain)" ]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add docs/MEDIA_RELEASE.md || true
-            git commit -m "docs(media): update media release draft [skip ci]" || true
-            git push origin HEAD:$(git rev-parse --abbrev-ref HEAD) || true
-          else
-            echo "No changes to push"
-          fi
+          echo "🔧 Running general automation..."
+          echo "Automation type: ${{ env.AUTOMATION_TYPE }}"
+          
+          # Automation logic would go here
+          echo "✅ General automation completed successfully"

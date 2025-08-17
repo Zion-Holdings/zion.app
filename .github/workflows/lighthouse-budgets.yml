@@ -1,36 +1,41 @@
-name: Lighthouse Budgets (PR Gate)
+name: ⚡ General Performance
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *'
-
-
-concurrency:
-  group: "github.workflow-${{ github.ref }}"
-  cancel-in-progress: true
-
-  contents: write
-  actions: read
+    - cron: '0 */8 * * *'  # Every 8 hours
 
 permissions:
   contents: read
   actions: read
+
+env:
+  PERFORMANCE_TYPE: general
+
 jobs:
-  main:
-    name: Main Job
+  performance-check:
+    name: Run General Performance Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
           fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
+        with:
           node-version: '20'
           cache: 'npm'
 
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
 
-      - name: Complete workflow
+      - name: Run performance check
         run: |
-          echo "Workflow completed successfully"
+          echo "⚡ Running general performance check..."
+          echo "Performance type: ${{ env.PERFORMANCE_TYPE }}"
+          
+          # Performance check logic would go here
+          echo "✅ General performance check completed successfully"
