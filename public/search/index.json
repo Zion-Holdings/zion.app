@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T12:16:03.658Z",
+  "generatedAt": "2025-08-17T12:17:03.638Z",
   "entries": [
     {
       "route": "/user-management",
@@ -732,6 +732,12 @@
       "file": "pages/reports/updates/update-2025-08-17-0920.tsx",
       "title": "Autonomous Blueprint — Data Engineering (2025-08-17 09:20 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Blueprint — Data Engineering (2025-08-17 09:20 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": { \""
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-0917",
+      "file": "pages/reports/updates/update-2025-08-17-0917.tsx",
+      "title": "Autonomous Update — 2025-08-17 09:17",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 09:17 Autonomous Update — 2025-08-17 09:17 Signal over noise—your automated update is here. Today's Highlight Hacker News : Airfoil · 2544 pts Why it matters: autonomous c"
     },
     {
       "route": "/reports/updates/update-2025-08-17-0916",
