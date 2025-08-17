@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T08:44:01.055Z",
+  "generatedAt": "2025-08-17T08:45:01.033Z",
   "pagesScanned": 7174,
   "items": [
     {
@@ -70961,10 +70961,7 @@
     {
       "route": "/reports/updates/update-2025-08-17-0544",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-17 05:44",
