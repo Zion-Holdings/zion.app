@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-17T01:14:45.256Z",
+  "timestamp": "2025-08-17T01:15:32.668Z",
   "critical": [
     {
       "name": "auto-heal-workflows.yml",
@@ -439,25 +439,6 @@
       "resourceScore": 124
     },
     {
-      "name": "netlify-auto-healer.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/netlify-auto-healer.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 10,
-      "concurrentJobs": 6,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "schedule",
-        "workflow_dispatch"
-      ],
-      "resourceScore": 124
-    },
-    {
       "name": "readme-autogen.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/readme-autogen.yml",
       "priority": "medium",
@@ -650,6 +631,25 @@
     {
       "name": "link-scan-hourly.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/link-scan-hourly.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 10,
+      "concurrentJobs": 7,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch"
+      ],
+      "resourceScore": 123
+    },
+    {
+      "name": "netlify-auto-healer.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/netlify-auto-healer.yml",
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 10,
@@ -971,22 +971,6 @@
       "resourceScore": 118
     },
     {
-      "name": "ci-auto-heal.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci-auto-heal.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 15,
-      "concurrentJobs": 7,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [],
-      "resourceScore": 118
-    },
-    {
       "name": "ephemeral-branch-autorebase.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ephemeral-branch-autorebase.yml",
       "priority": "medium",
@@ -1023,6 +1007,22 @@
         "workflow_dispatch"
       ],
       "resourceScore": 118
+    },
+    {
+      "name": "ci-auto-heal.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci-auto-heal.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 15,
+      "concurrentJobs": 8,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [],
+      "resourceScore": 117
     },
     {
       "name": "autonomous-auto-discovery.yml",
@@ -1081,25 +1081,6 @@
         "push",
         "schedule",
         "workflow_dispatch {}"
-      ],
-      "resourceScore": 115
-    },
-    {
-      "name": "seo-audit.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/seo-audit.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 20,
-      "concurrentJobs": 5,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "workflow_dispatch {}",
-        "schedule"
       ],
       "resourceScore": 115
     },
@@ -2225,6 +2206,25 @@
       "resourceScore": 114
     },
     {
+      "name": "seo-audit.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/seo-audit.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 20,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch {}",
+        "schedule"
+      ],
+      "resourceScore": 114
+    },
+    {
       "name": "seo-validator.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/seo-validator.yml",
       "priority": "medium",
@@ -2568,27 +2568,6 @@
       "resourceScore": 111
     },
     {
-      "name": "codeql.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/codeql.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 20,
-      "concurrentJobs": 9,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "push",
-        "pull_request",
-        "schedule",
-        "workflow_dispatch {}"
-      ],
-      "resourceScore": 111
-    },
-    {
       "name": "gitleaks.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/gitleaks.yml",
       "priority": "medium",
@@ -2623,6 +2602,27 @@
       "dependencies": [],
       "triggers": [
         "push"
+      ],
+      "resourceScore": 110
+    },
+    {
+      "name": "codeql.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/codeql.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 20,
+      "concurrentJobs": 10,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "push",
+        "pull_request",
+        "schedule",
+        "workflow_dispatch {}"
       ],
       "resourceScore": 110
     },
@@ -3413,26 +3413,6 @@
       "resourceScore": 74
     },
     {
-      "name": "exponential-ai-delegation.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/exponential-ai-delegation.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 60,
-      "concurrentJobs": 9,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "schedule",
-        "workflow_dispatch {}",
-        "push"
-      ],
-      "resourceScore": 71
-    },
-    {
       "name": "intelligent-content-generation.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/intelligent-content-generation.yml",
       "priority": "medium",
@@ -3458,7 +3438,7 @@
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 60,
-      "concurrentJobs": 27,
+      "concurrentJobs": 28,
       "runnerRequirements": {
         "runner": "ubuntu-latest",
         "size": "standard",
@@ -3637,6 +3617,26 @@
       "triggers": [
         "schedule",
         "workflow_dispatch",
+        "push"
+      ],
+      "resourceScore": 70
+    },
+    {
+      "name": "exponential-ai-delegation.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/exponential-ai-delegation.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 60,
+      "concurrentJobs": 10,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch {}",
         "push"
       ],
       "resourceScore": 70
