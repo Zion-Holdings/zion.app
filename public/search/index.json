@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T13:14:03.918Z",
+  "generatedAt": "2025-08-17T13:15:03.765Z",
   "entries": [
     {
       "route": "/user-management",
@@ -768,6 +768,12 @@
       "file": "pages/reports/updates/update-2025-08-17-1020.tsx",
       "title": "Autonomous Capability Map — Edge AI & IoT (2025-08-17 10:20 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Capability Map — Edge AI & IoT (2025-08-17 10:20 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"author\": {"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1015",
+      "file": "pages/reports/updates/update-2025-08-17-1015.tsx",
+      "title": "Autonomous Update — 2025-08-17 10:15",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 10:15 Autonomous Update — 2025-08-17 10:15 Fresh insights from our autonomous systems, curated for clarity and speed. Today's Highlight Hacker News : Bypassing airport sec"
     },
     {
       "route": "/reports/updates/update-2025-08-17-1014",
