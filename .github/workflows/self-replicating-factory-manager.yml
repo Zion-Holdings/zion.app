@@ -21,15 +21,14 @@ on:
       - '.github/workflows/**'
 
 env:
-  "REPLICATION_MODE: ${{ github.event.inputs.replication_mode || 'balanced' }}"
-  MAX_FACTORIES: "${{ github.event.inputs.max_factories || '1000' }}
+  REPLICATION_MODE: "${{ github.event.inputs.replication_mode || 'balanced' }}"
+  MAX_FACTORIES: "${{ github.event.inputs.max_factories || '1000' }}"
   REPLICATION_FACTOR: 2.0
   HEALTH_CHECK_INTERVAL: 3600
 
-
-concurrency:"
-  group: "github.workflow-github.ref
-  cancel-in-progress: "true
+concurrency:
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
 
 jobs:
   factory-health-check:
