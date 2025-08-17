@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-17T15:56:03.764Z",
+  "generatedAt": "2025-08-17T15:57:03.809Z",
   "entries": [
     {
       "route": "/user-management",
@@ -870,6 +870,12 @@
       "file": "pages/reports/updates/update-2025-08-17-1300.tsx",
       "title": "Autonomous Reference Architecture — Edge AI & IoT (2025-08-17 13:00 UTC)",
       "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Reference Architecture — Edge AI & IoT (2025-08-17 13:00 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitle}\", \"au"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-17-1257",
+      "file": "pages/reports/updates/update-2025-08-17-1257.tsx",
+      "title": "Autonomous Update — 2025-08-17 12:57",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Update — 2025-08-17 12:57 Autonomous Update — 2025-08-17 12:57 Signal over noise—your automated update is here. Today's Highlight Hacker News : Zoom terms now allow training AI on user conten"
     },
     {
       "route": "/reports/updates/update-2025-08-17-1256",
