@@ -29,7 +29,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run site health guardian
-        run: echo "Workflow executed successfully"
+        run: |
+          echo "Checking site health..."
+          echo "This would monitor site health and performance metrics"
       - name: Upload results
         uses: actions/upload-artifact@v4
         if: always()

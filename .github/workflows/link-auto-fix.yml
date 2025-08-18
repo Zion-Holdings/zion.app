@@ -29,7 +29,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run link auto fix
-        run: echo "Workflow executed successfully"
+        run: |
+          echo "Checking for broken links..."
+          echo "This would run link validation tools"
       - name: Upload results
         uses: actions/upload-artifact@v4
         if: always()

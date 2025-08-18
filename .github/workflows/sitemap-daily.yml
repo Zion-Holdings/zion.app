@@ -29,7 +29,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run sitemap daily
-        run: echo "Workflow executed successfully"
+        run: |
+          echo "Generating sitemap..."
+          echo "This would generate sitemap files"
       - name: Upload results
         uses: actions/upload-artifact@v4
         if: always()

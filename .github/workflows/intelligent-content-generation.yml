@@ -29,7 +29,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run intelligent content generation
-        run: echo "Workflow executed successfully"
+        run: |
+          echo "Generating intelligent content..."
+          echo "This would handle AI-powered content generation and curation"
       - name: Upload results
         uses: actions/upload-artifact@v4
         if: always()

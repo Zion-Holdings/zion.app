@@ -29,7 +29,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run workflow
-        run: echo "Workflow executed successfully"
+        run: |
+          echo "Checking for stale issues and PRs..."
+          echo "This would check for stale issues and PRs older than 30 days"
       - name: Upload results
         uses: actions/upload-artifact@v4
         if: always()

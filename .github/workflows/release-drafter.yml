@@ -29,7 +29,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run release drafter
-        run: echo "Workflow executed successfully"
+        run: |
+          echo "Drafting release..."
+          echo "This would automatically draft releases based on commits"
       - name: Upload results
         uses: actions/upload-artifact@v4
         if: always()

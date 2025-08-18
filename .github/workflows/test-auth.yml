@@ -29,7 +29,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run test authentication
-        run: echo "Workflow executed successfully"
+        run: |
+          echo "Testing authentication..."
+          echo "This would test authentication flows and security"
       - name: Upload results
         uses: actions/upload-artifact@v4
         if: always()

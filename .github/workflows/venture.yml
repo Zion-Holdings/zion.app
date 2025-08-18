@@ -29,7 +29,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run venture automation
-        run: echo "Workflow executed successfully"
+        run: |
+          echo "Processing content..."
+          echo "This would handle content processing and optimization"
       - name: Upload results
         uses: actions/upload-artifact@v4
         if: always()

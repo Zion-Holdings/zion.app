@@ -29,7 +29,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run actions keepalive
-        run: echo "Workflow executed successfully"
+        run: |
+          echo "Managing actions..."
+          echo "This would handle GitHub Actions management and keepalive"
       - name: Upload results
         uses: actions/upload-artifact@v4
         if: always()

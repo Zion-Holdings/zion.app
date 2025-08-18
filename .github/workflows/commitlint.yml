@@ -28,5 +28,7 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
-      - name: Run workflow
-        run: echo "Workflow Workflow completed successfully"
+      - name: Run commitlint
+        run: |
+          # Get the last 50 commits and validate them
+          git log --oneline -50 | cut -d' ' -f2- | npx commitlint --from HEAD~50 --to HEAD --verbose

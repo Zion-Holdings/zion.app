@@ -29,7 +29,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run workflow radar
-        run: echo "Workflow executed successfully"
+        run: |
+          echo "Monitoring workflow health..."
+          echo "This would monitor and report on workflow health and performance"
       - name: Upload results
         uses: actions/upload-artifact@v4
         if: always()

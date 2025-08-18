@@ -29,7 +29,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run marketing sync
-        run: echo "Workflow executed successfully"
+        run: |
+          echo "Running marketing automation..."
+          echo "This would handle marketing-related automation tasks"
       - name: Upload results
         uses: actions/upload-artifact@v4
         if: always()

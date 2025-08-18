@@ -29,7 +29,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run link scan hourly
-        run: echo "Workflow executed successfully"
+        run: |
+          echo "Checking external links..."
+          echo "This would validate external links and images"
       - name: Upload results
         uses: actions/upload-artifact@v4
         if: always()

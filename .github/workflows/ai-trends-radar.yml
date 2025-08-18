@@ -29,7 +29,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run ai trends radar
-        run: echo "Workflow executed successfully"
+        run: |
+          echo "Running AI content generation..."
+          echo "This would use AI tools for content generation and analysis"
       - name: Upload results
         uses: actions/upload-artifact@v4
         if: always()

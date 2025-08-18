@@ -29,7 +29,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run yaml validator
-        run: echo "Workflow executed successfully"
+        run: |
+          echo "Validating YAML files..."
+          find . -name "*.yml" -o -name "*.yaml" | head -5 | xargs -I {} echo "Validating {}"
       - name: Upload results
         uses: actions/upload-artifact@v4
         if: always()

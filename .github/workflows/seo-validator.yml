@@ -29,7 +29,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run seo validator
-        run: echo "Workflow executed successfully"
+        run: |
+          echo "Running SEO validation..."
+          echo "This would run SEO analysis tools"
       - name: Upload results
         uses: actions/upload-artifact@v4
         if: always()

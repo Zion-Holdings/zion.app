@@ -29,7 +29,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run self replicating factory manager
-        run: echo "Workflow executed successfully"
+        run: |
+          echo "Managing UI evolution..."
+          echo "This would handle UI improvements and factory management"
       - name: Upload results
         uses: actions/upload-artifact@v4
         if: always()

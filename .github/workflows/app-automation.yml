@@ -29,7 +29,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run app automation
-        run: echo "Workflow executed successfully"
+        run: |
+          echo "Running app automation..."
+          echo "This would handle application-specific automation tasks"
       - name: Upload results
         uses: actions/upload-artifact@v4
         if: always()

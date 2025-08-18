@@ -29,7 +29,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run lighthouse budgets
-        run: echo "Workflow executed successfully"
+        run: |
+          echo "Running Lighthouse audit..."
+          echo "This would run Lighthouse performance audits"
       - name: Upload results
         uses: actions/upload-artifact@v4
         if: always()
