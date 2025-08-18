@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T06:40:01.101Z",
-  "pagesScanned": 8685,
+  "generatedAt": "2025-08-18T06:41:01.118Z",
+  "pagesScanned": 8688,
   "items": [
     {
       "route": "/404",
@@ -36496,6 +36496,16 @@
       "suggestion": {
         "title": "Blueprint: RAG Platforms",
         "description": "Blueprint: RAG Platforms — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18-0640",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Blueprint: MLOps",
+        "description": "Blueprint: MLOps — auto-suggested description"
       }
     },
     {
@@ -86601,14 +86611,24 @@
     {
       "route": "/reports/updates/update-2025-08-18-0340",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 03:40",
+        "description": "Autonomous Update — 2025-08-18 03:40 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0341",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 03:40",
-        "description": "Autonomous Update — 2025-08-18 03:40 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-18 03:41",
+        "description": "Autonomous Update — 2025-08-18 03:41 — auto-suggested description"
       }
     },
     {
@@ -86699,6 +86719,16 @@
       "suggestion": {
         "title": "Autonomous Security Hardening Guide — Data Engineering (2025-08-18 06:39 UTC)",
         "description": "Autonomous Security Hardening Guide — Data Engineering (2025-08-18 06:39 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0640",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Security Hardening Guide — Edge AI & IoT (2025-08-18 06:40 UTC)",
+        "description": "Autonomous Security Hardening Guide — Edge AI & IoT (2025-08-18 06:40 UTC) — auto-suggested description"
       }
     },
     {
