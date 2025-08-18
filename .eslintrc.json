@@ -1,0 +1,14 @@
+{
+  "extends": ["next/core-web-vitals"],
+  "ignorePatterns": [
+    "node_modules/",
+    ".next/",
+    "out/",
+    "dist/",
+    "coverage/",
+    "*.log",
+    "**/*.generated.*",
+    "scripts/**/*.js",
+    "automation/**/*.js"
+  ]
+}
