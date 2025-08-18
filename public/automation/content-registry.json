@@ -22906,6 +22906,34 @@
   "generatedAt": "2025-08-18T18:30:32.433Z",
   "items": [
     {
+      "title": "Innovation Insight — 2025-08-18 18-31",
+      "href": "/reports/innovations/insight-2025-08-18T18-31",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:31:04.482Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-31",
+      "href": "/reports/updates/update-2025-08-18T18-31",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:31:04.482Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 18-31",
+      "href": "/reports/innovations/insight-2025-08-18T18-31",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:31:04.482Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-31",
+      "href": "/reports/updates/update-2025-08-18T18-31",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:31:04.482Z",
+      "source": "cloud-content-factory"
+    },
+    {
       "title": "Autonomous Content Generation",
       "href": "/automation",
       "desc": "AI-powered content completion via Cursor agents",
@@ -22985,6 +23013,46 @@
       "route": "/reports/patterns/ultra-1755541833182-a8v74z",
       "type": "ultra-fast-generated",
       "created": "2025-08-18T18:30:33.241Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541863753-uw9nz0",
+      "title": "Rapid Technology Advancement",
+      "route": "/reports/updates/ultra-1755541863753-uw9nz0",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:31:03.767Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541863755-c7vyob",
+      "title": "Ultra-Fast Instant deployment systems Insight",
+      "route": "/reports/insights/ultra-1755541863755-c7vyob",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:31:03.767Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541863756-063fsg",
+      "title": "Ultra-Fast Guide: Instant feedback loops",
+      "route": "/reports/guides/ultra-1755541863756-063fsg",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:31:03.767Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541863757-kvprlj",
+      "title": "Case Study: Real-time data processing Success",
+      "route": "/reports/cases/ultra-1755541863757-kvprlj",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:31:03.767Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541863758-moi98c",
+      "title": "Pattern: Instant deployment systems Architecture",
+      "route": "/reports/patterns/ultra-1755541863758-moi98c",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:31:03.767Z",
       "process": "ultra-fast"
     }
   ]
