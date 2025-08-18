@@ -43,7 +43,7 @@ jobs:
         continue-on-error: true
       - name: Check for secrets in code
         if: github.event_name == 'push' || github.event_name == 'pull_request'
-        uses: trufflesecurity/trufflehog@v3.77.0
+        uses: trufflesecurity/trufflehog@v3.90.5
         with:
           path: .
           base: ${{ github.event.before }}
