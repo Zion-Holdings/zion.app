@@ -54,7 +54,7 @@ jobs:
           git diff --quiet && git diff --staged --quiet || git commit -m "🏭 Simple service generation - Total: ${{ steps.count-services.outputs.services_count }}"
       
       - name: 🚀 Push to main
-        run: git push origin main
+        run: git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
       
       - name: 📈 Update metrics
         run: |

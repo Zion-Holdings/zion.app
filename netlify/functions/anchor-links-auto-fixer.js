@@ -1,89 +1,29 @@
 #!/usr/bin/env node
 
 const { execSync } = require('child_process');
-const fs = require('fs');
 const path = require('path');
 
-console.log('🤖 Starting anchor-links-auto-fixer...');
-
-try {
-  // TODO: Implement anchor-links-auto-fixer functionality
-  console.log('Starting anchor-links-auto-fixer...');
-  
-  // Placeholder implementation - replace with actual logic
-  const timestamp = new Date().toISOString();
-  const reportPath = path.join(process.cwd(), 'anchor-links-auto-fixer-report.md');
-  
-  const reportContent = `# anchor-links-auto-fixer Report
-
-Generated: ${timestamp}
-
-## Status
-- Task: anchor-links-auto-fixer
-- Status: Completed
-- Timestamp: ${timestamp}
-
-## Next Steps
-- Implement actual anchor-links-auto-fixer functionality
-- Add proper error handling
-- Add logging and monitoring
-`;
-
-  fs.writeFileSync(reportPath, reportContent);
-  console.log('📝 Report generated');
-  
-  // Commit the report
+exports.handler = async (event, context) => {
   try {
-    execSync('git add ' + reportPath, { stdio: 'inherit' });
-    execSync('git commit -m "🤖 Add anchor-links-auto-fixer report [skip ci]"', { stdio: 'inherit' });
-    execSync('git push', { stdio: 'inherit' });
-    console.log('✅ Report committed and pushed');
-  } catch (gitError) {
-    console.log('Git error:', gitError.message);
-  }
-  
-  console.log('✅ anchor-links-auto-fixer completed successfully');
-  
-} catch (error) {
-  console.error('❌ anchor-links-auto-fixer failed:', error.message);
-  process.exit(1);
-}
-
-// Netlify function handler
-exports.handler = async function(event, context) {
-  try {
-    console.log('🤖 Starting anchor-links-auto-fixer...');
+    console.log('🤖 Starting anchor-links-auto-fixer function...');
     
-    // Placeholder implementation - replace with actual logic
-    const timestamp = new Date().toISOString();
-    const reportPath = path.join(process.cwd(), 'anchor-links-auto-fixer-report.md');
+    // Run anchor links auto-fixing tasks
+    const tasks = [
+      'anchor-links-auto-fixer',
+      'anchor-links-fixer',
+      'links-fixer'
+    ];
     
-    const reportContent = `# anchor-links-auto-fixer Report
-
-Generated: ${timestamp}
-
-## Status
-- Task: anchor-links-auto-fixer
-- Status: Completed
-- Timestamp: ${timestamp}
-
-## Next Steps
-- Implement actual anchor-links-auto-fixer functionality
-- Add proper error handling
-- Add logging and monitoring
-`;
-
-    fs.writeFileSync(reportPath, reportContent);
-    console.log('📝 Report generated');
-    
-    // Commit the report
-    try {
-      execSync('git add ' + reportPath, { stdio: 'inherit' });
-      execSync('git commit -m "🤖 Add anchor-links-auto-fixer report [skip ci]"', { stdio: 'inherit' });
-      execSync('git push', { stdio: 'inherit' });
-      console.log('✅ Report committed and pushed');
-    } catch (gitError) {
-      console.log('Git error:', gitError.message);
+    for (const task of tasks) {
+      try {
+        const scriptPath = path.join(process.cwd(), 'automation', `${task}.cjs`);
+        if (require('fs').existsSync(scriptPath)) {
+          console.log(`Running ${task}...`);
+          execSync(`node ${scriptPath}`, { stdio: 'inherit' });
+        }
+      } catch (taskError) {
+        console.warn(`Warning: ${task} failed:`, taskError.message);
+      }
     }
     
     console.log('✅ anchor-links-auto-fixer completed successfully');
@@ -92,12 +32,13 @@ Generated: ${timestamp}
       statusCode: 200,
       body: JSON.stringify({
         message: 'anchor-links-auto-fixer completed successfully',
-        timestamp: timestamp
+        tasks: tasks,
+        timestamp: new Date().toISOString()
       })
     };
-    
   } catch (error) {
     console.error('❌ anchor-links-auto-fixer failed:', error.message);
+    
     return {
       statusCode: 500,
       body: JSON.stringify({

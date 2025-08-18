@@ -1,18 +1,18 @@
 {
-  "timestamp": "2025-08-18T17:13:33.413Z",
+  "timestamp": "2025-08-18T17:29:50.378Z",
   "summary": {
-    "totalWorkflows": 250,
+    "totalWorkflows": 253,
     "complexityDistribution": {
       "very-high": 0,
       "high": 2,
       "medium": 9,
-      "low": 239
+      "low": 242
     },
     "refactoringPriorities": {
       "critical": 0,
       "high": 2,
       "medium": 9,
-      "low": 239
+      "low": 242
     }
   },
   "workflows": {
@@ -4102,6 +4102,24 @@
       "status": "active",
       "path": "/workspace/.github/workflows/ultra-fast-ai-powered-generator-research-advanced-1755537007378.yml"
     },
+    "ultra-fast-ai-powered-generator-testing-basic-1755537157364.yml": {
+      "complexityScore": 15,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 56,
+        "jobCount": 0,
+        "stepCount": 6,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/workspace/.github/workflows/ultra-fast-ai-powered-generator-testing-basic-1755537157364.yml"
+    },
     "ultra-fast-automation-creator.yml": {
       "complexityScore": 50,
       "complexityLevel": "high",
@@ -4137,6 +4155,24 @@
       "refactoringPriority": "low",
       "status": "active",
       "path": "/workspace/.github/workflows/ultra-fast-autonomous-agent-monitoring-advanced-1755536917348.yml"
+    },
+    "ultra-fast-collaborative-automation-optimization-advanced-1755537157349.yml": {
+      "complexityScore": 15,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 56,
+        "jobCount": 0,
+        "stepCount": 6,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/workspace/.github/workflows/ultra-fast-collaborative-automation-optimization-advanced-1755537157349.yml"
     },
     "ultra-fast-collaborative-automation-orchestration-advanced-1755537007345.yml": {
       "complexityScore": 15,
@@ -4245,6 +4281,24 @@
       "refactoringPriority": "low",
       "status": "active",
       "path": "/workspace/.github/workflows/ultra-fast-quantum-automation-generation-basic-1755537037396.yml"
+    },
+    "ultra-fast-self-replicating-factory-deployment-advanced-1755537157378.yml": {
+      "complexityScore": 15,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 56,
+        "jobCount": 0,
+        "stepCount": 6,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/workspace/.github/workflows/ultra-fast-self-replicating-factory-deployment-advanced-1755537157378.yml"
     },
     "ultra-rapid-sync.yml": {
       "complexityScore": 0,

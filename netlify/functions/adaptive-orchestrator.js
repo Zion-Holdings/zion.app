@@ -1,89 +1,29 @@
 #!/usr/bin/env node
 
 const { execSync } = require('child_process');
-const fs = require('fs');
 const path = require('path');
 
-console.log('🤖 Starting adaptive-orchestrator...');
-
-try {
-  // TODO: Implement adaptive-orchestrator functionality
-  console.log('Starting adaptive-orchestrator...');
-  
-  // Placeholder implementation - replace with actual logic
-  const timestamp = new Date().toISOString();
-  const reportPath = path.join(process.cwd(), 'adaptive-orchestrator-report.md');
-  
-  const reportContent = `# adaptive-orchestrator Report
-
-Generated: ${timestamp}
-
-## Status
-- Task: adaptive-orchestrator
-- Status: Completed
-- Timestamp: ${timestamp}
-
-## Next Steps
-- Implement actual adaptive-orchestrator functionality
-- Add proper error handling
-- Add logging and monitoring
-`;
-
-  fs.writeFileSync(reportPath, reportContent);
-  console.log('📝 Report generated');
-  
-  // Commit the report
+exports.handler = async (event, context) => {
   try {
-    execSync('git add ' + reportPath, { stdio: 'inherit' });
-    execSync('git commit -m "🤖 Add adaptive-orchestrator report [skip ci]"', { stdio: 'inherit' });
-    execSync('git push', { stdio: 'inherit' });
-    console.log('✅ Report committed and pushed');
-  } catch (gitError) {
-    console.log('Git error:', gitError.message);
-  }
-  
-  console.log('✅ adaptive-orchestrator completed successfully');
-  
-} catch (error) {
-  console.error('❌ adaptive-orchestrator failed:', error.message);
-  process.exit(1);
-}
-
-// Netlify function handler
-exports.handler = async function(event, context) {
-  try {
-    console.log('🤖 Starting adaptive-orchestrator...');
+    console.log('🤖 Starting adaptive-orchestrator function...');
     
-    // Placeholder implementation - replace with actual logic
-    const timestamp = new Date().toISOString();
-    const reportPath = path.join(process.cwd(), 'adaptive-orchestrator-report.md');
+    // Run adaptive orchestration tasks
+    const tasks = [
+      'adaptive-orchestrator',
+      'adaptive-monitor',
+      'adaptive-scheduler'
+    ];
     
-    const reportContent = `# adaptive-orchestrator Report
-
-Generated: ${timestamp}
-
-## Status
-- Task: adaptive-orchestrator
-- Status: Completed
-- Timestamp: ${timestamp}
-
-## Next Steps
-- Implement actual adaptive-orchestrator functionality
-- Add proper error handling
-- Add logging and monitoring
-`;
-
-    fs.writeFileSync(reportPath, reportContent);
-    console.log('📝 Report generated');
-    
-    // Commit the report
-    try {
-      execSync('git add ' + reportPath, { stdio: 'inherit' });
-      execSync('git commit -m "🤖 Add adaptive-orchestrator report [skip ci]"', { stdio: 'inherit' });
-      execSync('git push', { stdio: 'inherit' });
-      console.log('✅ Report committed and pushed');
-    } catch (gitError) {
-      console.log('Git error:', gitError.message);
+    for (const task of tasks) {
+      try {
+        const scriptPath = path.join(process.cwd(), 'automation', `${task}.cjs`);
+        if (require('fs').existsSync(scriptPath)) {
+          console.log(`Running ${task}...`);
+          execSync(`node ${scriptPath}`, { stdio: 'inherit' });
+        }
+      } catch (taskError) {
+        console.warn(`Warning: ${task} failed:`, taskError.message);
+      }
     }
     
     console.log('✅ adaptive-orchestrator completed successfully');
@@ -92,12 +32,13 @@ Generated: ${timestamp}
       statusCode: 200,
       body: JSON.stringify({
         message: 'adaptive-orchestrator completed successfully',
-        timestamp: timestamp
+        tasks: tasks,
+        timestamp: new Date().toISOString()
       })
     };
-    
   } catch (error) {
     console.error('❌ adaptive-orchestrator failed:', error.message);
+    
     return {
       statusCode: 500,
       body: JSON.stringify({

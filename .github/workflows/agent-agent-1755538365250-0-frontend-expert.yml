@@ -1,0 +1,19 @@
+name: Agent: agent-1755538365250-0-frontend-expert
+on:
+  workflow_dispatch:
+  schedule:
+  - cron: 0 */6 * * *
+jobs:
+  agent-execution:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 18
+    - name: Install dependencies
+      run: npm ci
+    - name: Run agent
+      run: node automation/agents/frontend/agent-1755538365250-0-frontend-expert/index.cjs

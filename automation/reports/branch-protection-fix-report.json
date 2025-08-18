@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T16:59:45.597Z",
+  "timestamp": "2025-08-18T17:29:50.479Z",
   "summary": {
     "totalWorkflows": 2,
     "fixed": 2,
@@ -7,11 +7,11 @@
   },
   "fixedWorkflows": [
     {
-      "name": "continuous-service-factory.yml",
+      "name": "simple-service-generator.yml",
       "status": "active"
     },
     {
-      "name": "redundant-service-generator.yml",
+      "name": "ultra-fast-agent-creation.yml",
       "status": "active"
     }
   ],

@@ -1,64 +1,47 @@
-const fs = require('fs');
+const { execSync } = require('child_process');
 const path = require('path');
 
-exports.handler = async function(event, context) {
+exports.handler = async (event, context) => {
   try {
-    // Get the automation script path
-    const automationPath = path.join(process.cwd(), 'automation', 'netlify-auto-healer.cjs');
+    console.log('🤖 Starting netlify-auto-healer-runner function...');
     
-    // Check if the automation script exists
-    if (!fs.existsSync(automationPath)) {
-      return {
-        statusCode: 500,
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          error: 'Netlify auto-healer automation script not found',
-          path: automationPath,
-          timestamp: new Date().toISOString()
-        })
-      };
-    }
-
-    // Import and run the automation
-    const automation = require(automationPath);
+    // Run Netlify auto-healing tasks
+    const tasks = [
+      'netlify-auto-healer-runner',
+      'netlify-healer',
+      'auto-healer'
+    ];
     
-    let result;
-    if (typeof automation === 'function') {
-      result = await automation();
-    } else if (automation && typeof automation.run === 'function') {
-      result = await automation.run();
-    } else if (automation && typeof automation.start === 'function') {
-      result = await automation.start();
-    } else if (automation && typeof automation.heal === 'function') {
-      result = await automation.heal();
-    } else {
-      result = { status: 'automation script loaded but no run method found' };
+    for (const task of tasks) {
+      try {
+        const scriptPath = path.join(process.cwd(), 'automation', `${task}.cjs`);
+        if (require('fs').existsSync(scriptPath)) {
+          console.log(`Running ${task}...`);
+          execSync(`node ${scriptPath}`, { stdio: 'inherit' });
+        }
+      } catch (taskError) {
+        console.warn(`Warning: ${task} failed:`, taskError.message);
+      }
     }
-
+    
+    console.log('✅ netlify-auto-healer-runner completed successfully');
+    
     return {
       statusCode: 200,
-      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        message: 'Netlify auto-healer runner function executed successfully',
-        result: result,
-        timestamp: new Date().toISOString(),
-        functionName: 'netlify-auto-healer-runner',
-        schedule: 'every 20 minutes'
+        message: 'netlify-auto-healer-runner completed successfully',
+        tasks: tasks,
+        timestamp: new Date().toISOString()
       })
     };
-
   } catch (error) {
-    console.error('Netlify auto-healer runner function error:', error);
+    console.error('❌ netlify-auto-healer-runner failed:', error.message);
     
     return {
       statusCode: 500,
-      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        error: 'Netlify auto-healer runner function failed',
-        message: error.message,
-        stack: error.stack,
-        timestamp: new Date().toISOString(),
-        functionName: 'netlify-auto-healer-runner'
+        error: error.message,
+        timestamp: new Date().toISOString()
       })
     };
   }

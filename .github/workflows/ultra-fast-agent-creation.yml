@@ -11,7 +11,7 @@ on:
     branches: [main]
 
 permissions:
-  contents: write
+  contents: read
   actions: read
   pull-requests: write
   workflows: write
@@ -540,7 +540,7 @@ jobs:
           git add automation/agents/ automation/factories/ automation/reports/
           git commit -m "🤖 Create new agents and factories via GitHub Actions [skip ci]"
           
-          git push origin HEAD:main
+          git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
           
           echo "✅ Changes committed and pushed successfully"
       
