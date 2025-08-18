@@ -27,7 +27,7 @@ jobs:
         run: npm ci --no-audit --no-fund
       - name: Run workflow
         run: |
-          echo "Workflow Workflow completed successfully"
+          echo "Workflow completed successfully"
           
 concurrency:
   group: branch-cleanup.yml-${{ github.ref }}
