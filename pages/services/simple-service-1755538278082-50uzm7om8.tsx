@@ -4,6 +4,34 @@ import { useState } from 'react';
 export default function SimpleService175553827808250uzm7om8() {
   const [selectedPlan, setSelectedPlan] = useState(0);
 
+  const serviceData = {
+    features: [
+      "Strategic Consulting",
+      "Technology Assessment",
+      "Digital Transformation",
+      "Process Optimization",
+      "Change Management",
+      "Performance Monitoring"
+    ],
+    pricing: [
+      {
+        plan: "Starter",
+        price: "$1,499/month",
+        features: ["Basic Consultation", "Standard Support", "Monthly Reports"]
+      },
+      {
+        plan: "Professional",
+        price: "$3,499/month",
+        features: ["Advanced Consulting", "Priority Support", "Weekly Reports"]
+      },
+      {
+        plan: "Enterprise",
+        price: "$6,999/month",
+        features: ["Full Consulting Suite", "Dedicated Support", "Real-time Analytics"]
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <Head>
@@ -11,14 +39,10 @@ export default function SimpleService175553827808250uzm7om8() {
         <meta name="description" content="Professional Consulting solution for modern businesses" />
         <meta name="keywords" content="consulting, technology services" />
         <link rel="canonical" href="https://ziontechgroup.com/services/simple-service-1755538278082-50uzm7om8" />
-<<<<<<< Updated upstream
-      
         <meta property="og:title" content="Consulting Service" />
         <meta property="og:description" content="Consulting Service — automatically suggested description." />
-        <meta name="twitter:card" content="summary_large_image" /></Head>
-=======
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
->>>>>>> Stashed changes
       
       <main className="container mx-auto px-6 py-12">
         <div className="text-center mb-16">
