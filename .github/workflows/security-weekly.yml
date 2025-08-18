@@ -3,7 +3,7 @@ name: Security Weekly
 on:
   schedule:
     - cron: '0 2 * * 1' # Weekly on Monday at 2 AM UTC
-  workflow_dispatch: null
+  workflow_dispatch: {}
 
 permissions:
   contents: write

@@ -1,7 +1,7 @@
 name: Deployment Expert
 
 on:
-  workflow_dispatch: null
+  workflow_dispatch: {}
   schedule:
     - cron: '0 */6 * * *' # Every 6 hours
 

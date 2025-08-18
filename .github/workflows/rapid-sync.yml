@@ -3,7 +3,7 @@ name: Rapid Sync
 on:
   schedule:
     - cron: '*/10 * * * *'
-  workflow_dispatch: null
+  workflow_dispatch: {}
 
 concurrency:
   group: rapid-sync-${{ github.ref }}

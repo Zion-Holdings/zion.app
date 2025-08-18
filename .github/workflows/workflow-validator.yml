@@ -12,7 +12,7 @@ on:
     - develop
     paths:
     - .github/workflows/**
-  workflow_dispatch: null
+  workflow_dispatch: {}
 permissions:
   contents: read
   actions: read

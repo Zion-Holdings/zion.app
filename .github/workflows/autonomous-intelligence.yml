@@ -1,6 +1,6 @@
 name: Autonomous Intelligence
 on:
-  workflow_dispatch: null
+  workflow_dispatch: {}
   schedule:
     - cron: '0 */6 * * *'
 permissions:
