@@ -3,7 +3,7 @@ name: Workflow Manager Manager
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: 0 2 * * *
+    - cron: '0 2 * * *'
 permissions:
   contents: read
   actions: read

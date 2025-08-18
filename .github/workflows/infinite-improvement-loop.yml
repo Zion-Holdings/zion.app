@@ -3,7 +3,7 @@ name: Infinite Improvement Loop
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: 0 2 * * *
+    - cron: '0 2 * * *'
 concurrency:
   group: infinite-improvement-${{ github.ref }}
   cancel-in-progress: false

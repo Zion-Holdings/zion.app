@@ -63,7 +63,7 @@ jobs:
           done
       - name: Run smoke tests
         run:
-                npx playwright test tests/tests/smoke.spec.ts --project=chromium --reporter=html
+                npx playwright test tests/smoke.spec.ts --project=chromium --reporter=html
         env:
           BASE_URL: http://localhost:3000
         continue-on-error: false

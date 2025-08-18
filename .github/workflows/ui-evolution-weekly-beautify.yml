@@ -3,7 +3,7 @@ name: UI Evolution Weekly Beautify
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: 0 2 * * *
+    - cron: '0 2 * * *'
 jobs:
   ui-beautify:
     runs-on: ubuntu-latest

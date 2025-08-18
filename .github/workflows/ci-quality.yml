@@ -1,15 +1,15 @@
 ---
-name: ci-quality
+name: CI Quality Check
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: '0 */6 * * *'
 permissions:
   contents: write
   actions: read
   pull-requests: write
 concurrency:
-  group: workflow-${{ github.ref }}
+  group: ci-quality
   cancel-in-progress: false
 jobs:
   main:
@@ -29,6 +29,4 @@ jobs:
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
       - name: Run workflow
-        run: 'echo "Workflow Workflow completed successfully"
-
-        '
+        run: 'echo "CI Quality Check completed successfully"'
