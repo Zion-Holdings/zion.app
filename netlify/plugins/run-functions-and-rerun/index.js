@@ -4,14 +4,6 @@
 // Inputs are defined to match netlify.toml but are not used yet.
 
 module.exports = {
-  name: 'run-functions-and-rerun',
-  inputs: {
-    include: { type: 'string', default: '' },
-    exclude: { type: 'string', default: '' },
-    concurrency: { type: 'number', default: 6 },
-    timeoutMs: { type: 'number', default: 180000 },
-  },
-
   async onPreBuild({ logs }) {
     logs.info('[run-functions-and-rerun] Plugin detected. Proceeding with no-op prebuild.');
   },
