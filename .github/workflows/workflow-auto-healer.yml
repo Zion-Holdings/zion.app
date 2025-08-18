@@ -6,12 +6,16 @@ on:
   workflow_dispatch: {}
   workflow_run:
     workflows: ['CI', 'Test Suite', 'Security Scan']
-    types: [completed, failed]
+    types: [completed, in_progress]
 
 permissions:
   contents: write
   actions: read
   pull-requests: write
+
+concurrency:
+  group: workflow-auto-healer
+  cancel-in-progress: false
 
 jobs:
   auto-heal:
