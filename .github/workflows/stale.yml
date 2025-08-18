@@ -1,5 +1,5 @@
 ---
-name: stale
+name: Stale Issues and PRs
 
 on:
   schedule:
@@ -9,32 +9,54 @@ on:
 permissions:
   contents: read
   actions: read
+  issues: write
+  pull-requests: write
 
 concurrency:
   group: "${{ github.workflow }}-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:
-  main:
+  stale:
+    name: Mark Stale Issues and PRs
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Node
-        uses: actions/setup-node@v4
+        
+      - name: Mark stale issues
+        uses: actions/stale@v9
         with:
-          node-version: '20'
-          cache: npm
-      - name: Install dependencies
-        run: npm ci
-      - name: Run workflow
-        run: echo "Workflow executed successfully"
-      - name: Upload results
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: workflow-results
-          path: |
-            .github/workflows/
-          retention-days: 7
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          stale-issue-message: |
+            This issue has been automatically marked as stale because it has not had recent activity.
+            It will be closed if no further activity occurs. Thank you for your contributions.
+          stale-issue-label: 'no-remove'
+          stale-pr-message: |
+            This pull request has been automatically marked as stale because it has not had recent activity.
+            It will be closed if no further activity occurs. Thank you for your contributions.
+          stale-pr-label: 'no-remove'
+          stale-issue-days: 30
+          stale-pr-days: 30
+          stale-issue-warn-days: 7
+          stale-pr-warn-days: 7
+          exempt-issue-labels: 'pinned,security,bug,enhancement,help wanted,good first issue'
+          exempt-pr-labels: 'work-in-progress,ready-for-review,blocked'
+          exempt-all-milestones: true
+          exempt-all-issue-assignees: true
+          exempt-all-pr-assignees: true
+          exempt-all-pr-reviewers: true
+          exempt-draft-pr: true
+          close-issue-message: |
+            This issue has been automatically closed due to inactivity.
+            If you believe this issue should remain open, please add a comment or reopen it.
+          close-pr-message: |
+            This pull request has been automatically closed due to inactivity.
+            If you believe this PR should remain open, please add a comment or reopen it.
+          days-before-issue-close: 7
+          days-before-pr-close: 7
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+        
+      - name: Report completion
+        run: echo "Stale issues and PRs workflow completed successfully"
