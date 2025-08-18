@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T04:32:50.356Z",
+  "timestamp": "2025-08-18T04:33:50.845Z",
   "critical": [
     {
       "name": "ci-self-heal.yml",
@@ -2299,6 +2299,25 @@
       "resourceScore": 105
     },
     {
+      "name": "sync-health.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/sync-health.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 30,
+      "concurrentJobs": 5,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch {}",
+        "schedule"
+      ],
+      "resourceScore": 105
+    },
+    {
       "name": "continuous-improvement.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/continuous-improvement.yml",
       "priority": "medium",
@@ -2446,25 +2465,6 @@
       "dependencies": [],
       "triggers": [
         "workflow_dispatch {}",
-        "schedule"
-      ],
-      "resourceScore": 104
-    },
-    {
-      "name": "sync-health.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/sync-health.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 30,
-      "concurrentJobs": 6,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "workflow_dispatch null",
         "schedule"
       ],
       "resourceScore": 104
