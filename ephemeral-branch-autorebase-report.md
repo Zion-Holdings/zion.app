@@ -1,19 +1,11 @@
 # ephemeral-branch-autorebase Report
 
-<<<<<<< Updated upstream
-Generated: 2025-08-18T16:17:41.254Z
-=======
-Generated: 2025-08-18T16:16:46.765Z
->>>>>>> Stashed changes
+Generated: 2025-08-18T16:18:35.753Z
 
 ## Status
 - Task: ephemeral-branch-autorebase
 - Status: Completed
-<<<<<<< Updated upstream
-- Timestamp: 2025-08-18T16:17:41.254Z
-=======
-- Timestamp: 2025-08-18T16:16:46.765Z
->>>>>>> Stashed changes
+- Timestamp: 2025-08-18T16:18:35.753Z
 
 ## Next Steps
 - Implement actual ephemeral-branch-autorebase functionality
