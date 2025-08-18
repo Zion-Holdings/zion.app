@@ -1,6 +1,69 @@
 {
   "items": [
     {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-18-182433",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:24:33.458Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Case Study — Cloud Improving",
+      "href": "/reports/cases/case-2025-08-18-182432",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:24:32.842Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-18-182432",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:24:32.842Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Automation Trends 2025",
+      "href": "/reports/patterns/pattern-2025-08-18-182432",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:24:32.842Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 18-24",
+      "href": "/reports/innovations/insight-2025-08-18T18-24",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:24:32.637Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-24",
+      "href": "/reports/updates/update-2025-08-18T18-24",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:24:32.637Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 18-24",
+      "href": "/reports/innovations/insight-2025-08-18T18-24",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:24:32.637Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-24",
+      "href": "/reports/updates/update-2025-08-18T18-24",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:24:32.637Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-18-182432",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:24:32.450Z",
+      "source": "cloud-blueprint-factory"
+    },
+    {
       "title": "Innovation Insight — 2025-08-18 18-24",
       "href": "/reports/innovations/insight-2025-08-18T18-24",
       "desc": "New autonomous content",
@@ -386,142 +449,48 @@
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-18 18-24",
-      "href": "/reports/updates/update-2025-08-18T18-24",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:24:07.230Z",
-      "source": "cloud-content-factory"
+      "id": "cursor-chat-2025-08-18T18:24:33.582Z",
+      "type": "cursor-chat",
+      "timestamp": "2025-08-18T18:24:33.582Z"
     },
     {
-      "title": "Innovation Insight — 2025-08-18 18-24",
-      "href": "/reports/innovations/insight-2025-08-18T18-24",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:24:04.051Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-18 18-24",
-      "href": "/reports/updates/update-2025-08-18T18-24",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:24:04.051Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-18 18-24",
-      "href": "/reports/innovations/insight-2025-08-18T18-24",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:24:04.051Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-18 18-24",
-      "href": "/reports/updates/update-2025-08-18T18-24",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:24:04.051Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "id": "rapid-1755541467499-9kgb09",
-      "title": "Machine Learning",
-      "route": "/services/rapid-1755541467499-9kgb09",
-      "type": "rapid-generated",
-      "created": "2025-08-18T18:24:27.502Z",
-      "process": "rapid"
-    },
-    {
-      "id": "rapid-1755541467500-x8hmwt",
-      "title": "Security Framework",
-      "route": "/products/rapid-1755541467500-x8hmwt",
-      "type": "rapid-generated",
-      "created": "2025-08-18T18:24:27.502Z",
-      "process": "rapid"
-    },
-    {
-      "id": "rapid-1755541467501-ro3if6",
-      "title": "Expert Techniques for Cloud Infrastructure",
-      "route": "/tutorials/rapid-1755541467501-ro3if6",
-      "type": "rapid-generated",
-      "created": "2025-08-18T18:24:27.502Z",
-      "process": "rapid"
-    },
-    {
-      "id": "ultra-1755541468057-qukmyu",
-      "title": "Speed-of-Thought Engineering",
-      "route": "/reports/updates/ultra-1755541468057-qukmyu",
+      "id": "ultra-1755541476091-ew47o6",
+      "title": "Instantaneous Tech Insights",
+      "route": "/reports/updates/ultra-1755541476091-ew47o6",
       "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:24:28.062Z",
+      "created": "2025-08-18T18:24:36.125Z",
       "process": "ultra-fast"
     },
     {
-      "id": "ultra-1755541468058-19ho97",
-      "title": "Ultra-Fast Lightning deployment pipelines Insight",
-      "route": "/reports/insights/ultra-1755541468058-19ho97",
+      "id": "ultra-1755541476101-ejmqd5",
+      "title": "Ultra-Fast Ultra-fast testing frameworks Insight",
+      "route": "/reports/insights/ultra-1755541476101-ejmqd5",
       "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:24:28.062Z",
+      "created": "2025-08-18T18:24:36.126Z",
       "process": "ultra-fast"
     },
     {
-      "id": "ultra-1755541468059-qt4yan",
-      "title": "Ultra-Fast Guide: Real-time collaboration tools",
-      "route": "/reports/guides/ultra-1755541468059-qt4yan",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:24:28.062Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755541468060-iw7fvb",
-      "title": "Case Study: Real-time collaboration tools Success",
-      "route": "/reports/cases/ultra-1755541468060-iw7fvb",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:24:28.062Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755541468061-vy0yjq",
-      "title": "Pattern: Lightning deployment pipelines Architecture",
-      "route": "/reports/patterns/ultra-1755541468061-vy0yjq",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:24:28.062Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755541470771-agdsd6",
-      "title": "Rapid Technology Advancement",
-      "route": "/reports/updates/ultra-1755541470771-agdsd6",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:24:30.776Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755541470772-3y5rmm",
-      "title": "Ultra-Fast Ultra-responsive applications Insight",
-      "route": "/reports/insights/ultra-1755541470772-3y5rmm",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:24:30.776Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755541470773-5yhks7",
+      "id": "ultra-1755541476109-iqtcg1",
       "title": "Ultra-Fast Guide: Rapid prototyping systems",
-      "route": "/reports/guides/ultra-1755541470773-5yhks7",
+      "route": "/reports/guides/ultra-1755541476109-iqtcg1",
       "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:24:30.776Z",
+      "created": "2025-08-18T18:24:36.126Z",
       "process": "ultra-fast"
     },
     {
-      "id": "ultra-1755541470774-bmebka",
-      "title": "Case Study: Instant feedback loops Success",
-      "route": "/reports/cases/ultra-1755541470774-bmebka",
+      "id": "ultra-1755541476116-jwyh1x",
+      "title": "Case Study: Ultra-responsive applications Success",
+      "route": "/reports/cases/ultra-1755541476116-jwyh1x",
       "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:24:30.776Z",
+      "created": "2025-08-18T18:24:36.126Z",
       "process": "ultra-fast"
     },
     {
-      "id": "ultra-1755541470775-vpx45a",
-      "title": "Pattern: Instant deployment systems Architecture",
-      "route": "/reports/patterns/ultra-1755541470775-vpx45a",
+      "id": "ultra-1755541476121-dyxjws",
+      "title": "Pattern: Ultra-responsive applications Architecture",
+      "route": "/reports/patterns/ultra-1755541476121-dyxjws",
       "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:24:30.776Z",
+      "created": "2025-08-18T18:24:36.126Z",
       "process": "ultra-fast"
     }
   ]

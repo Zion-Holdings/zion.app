@@ -8,7 +8,10 @@ export default function TutorialPage() {
         <meta name="description" content="Learn web development with our comprehensive tutorial. Step-by-step guidance for beginners and advanced users." />
         <meta name="keywords" content="tutorial, web development, learning, guide, education, technology" />
         <link rel="canonical" href="https://ziontechgroup.com/tutorials/rapid-1755541465522-1wvga1" />
-      </Head>
+      
+        <meta property="og:title" content="Best Practices in Web Development" />
+        <meta property="og:description" content="Best Practices in Web Development — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
         <h1 className="text-4xl font-extrabold text-center mb-8">Best Practices in Web Development</h1>
         
