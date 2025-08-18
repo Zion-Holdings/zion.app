@@ -91,6 +91,70 @@
       "type": "ultra-fast-generated",
       "created": "2025-08-18T18:33:33.766Z",
       "process": "ultra-fast"
+    },
+    {
+      "id": "rapid-1755542015576-u468qt",
+      "title": "AI-Powered Analytics",
+      "route": "/services/rapid-1755542015576-u468qt",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:33:35.578Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755542015577-b4kv1z",
+      "title": "Analytics Engine",
+      "route": "/products/rapid-1755542015577-b4kv1z",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:33:35.578Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755542015577-pp3zqk",
+      "title": "Complete Guide to AI-Powered Analytics",
+      "route": "/tutorials/rapid-1755542015577-pp3zqk",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:33:35.578Z",
+      "process": "rapid"
+    },
+    {
+      "id": "ultra-1755542015883-bam9wo",
+      "title": "Rapid Technology Advancement",
+      "route": "/reports/updates/ultra-1755542015883-bam9wo",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:33:35.888Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542015884-o6smk0",
+      "title": "Ultra-Fast Real-time data processing Insight",
+      "route": "/reports/insights/ultra-1755542015884-o6smk0",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:33:35.888Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542015885-fqmeqc",
+      "title": "Ultra-Fast Guide: Lightning deployment pipelines",
+      "route": "/reports/guides/ultra-1755542015885-fqmeqc",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:33:35.888Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542015886-5dl5cw",
+      "title": "Case Study: Ultra-fast testing frameworks Success",
+      "route": "/reports/cases/ultra-1755542015886-5dl5cw",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:33:35.888Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542015887-g716j0",
+      "title": "Pattern: Ultra-fast testing frameworks Architecture",
+      "route": "/reports/patterns/ultra-1755542015887-g716j0",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:33:35.888Z",
+      "process": "ultra-fast"
     }
   ]
 }
