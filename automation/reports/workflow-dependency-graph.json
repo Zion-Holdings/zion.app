@@ -3450,7 +3450,7 @@
   "sync-health.yml": {
     "name": "sync-health.yml",
     "triggers": [
-      "workflow_dispatch null",
+      "workflow_dispatch {}",
       "schedule"
     ],
     "needs": [],
