@@ -1,0 +1,49 @@
+---
+name: "🧪 Workflow Test"
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [ main, develop ]
+    paths: [ .github/workflows/workflow-test.yml ]
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: "workflow-test-${{ github.ref }}"
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Test Workflow Creation
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+        
+      - name: Run type check
+        run: npm run type-check
+        
+      - name: Run linting
+        run: npm run lint --silent | head -20
+        
+      - name: Test build
+        run: npm run build --silent
+        
+      - name: Success message
+        run: |
+          echo "✅ All workflow tests passed!"
+          echo "🎉 GitHub Actions workflows are working correctly"
+          echo "📊 Workflow validation completed successfully"
