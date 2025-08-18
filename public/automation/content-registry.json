@@ -29858,6 +29858,34 @@
   "generatedAt": "2025-08-18T20:17:40.463Z",
   "items": [
     {
+      "title": "Innovation Insight — 2025-08-18 20-17",
+      "href": "/reports/innovations/insight-2025-08-18T20-17",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T20:17:44.362Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 20-17",
+      "href": "/reports/updates/update-2025-08-18T20-17",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T20:17:44.362Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 20-17",
+      "href": "/reports/innovations/insight-2025-08-18T20-17",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T20:17:44.362Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 20-17",
+      "href": "/reports/updates/update-2025-08-18T20-17",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T20:17:44.362Z",
+      "source": "cloud-content-factory"
+    },
+    {
       "id": "rapid-1755548261089-nfxg7p",
       "title": "AI-Powered Analytics",
       "route": "/services/rapid-1755548261089-nfxg7p",
@@ -29920,6 +29948,94 @@
       "type": "ultra-fast-generated",
       "created": "2025-08-18T20:17:41.605Z",
       "process": "ultra-fast"
+    },
+    {
+      "id": "rapid-1755548263049-106c6d",
+      "title": "API Integration",
+      "route": "/services/rapid-1755548263049-106c6d",
+      "type": "rapid-generated",
+      "created": "2025-08-18T20:17:43.060Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755548263050-kx7pfe",
+      "title": "Data Platform",
+      "route": "/products/rapid-1755548263050-kx7pfe",
+      "type": "rapid-generated",
+      "created": "2025-08-18T20:17:43.060Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755548263051-ko3hig",
+      "title": "Best Practices in Web Development",
+      "route": "/tutorials/rapid-1755548263051-ko3hig",
+      "type": "rapid-generated",
+      "created": "2025-08-18T20:17:43.060Z",
+      "process": "rapid"
+    },
+    {
+      "id": "ultra-1755548263827-ijm7ub",
+      "title": "Rapid Technology Advancement",
+      "route": "/reports/updates/ultra-1755548263827-ijm7ub",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T20:17:43.840Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755548263828-plc287",
+      "title": "Ultra-Fast Ultra-responsive applications Insight",
+      "route": "/reports/insights/ultra-1755548263828-plc287",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T20:17:43.840Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755548263829-if7s47",
+      "title": "Ultra-Fast Guide: Real-time data processing",
+      "route": "/reports/guides/ultra-1755548263829-if7s47",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T20:17:43.840Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755548263829-azk5dl",
+      "title": "Case Study: Instant deployment systems Success",
+      "route": "/reports/cases/ultra-1755548263829-azk5dl",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T20:17:43.840Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755548263830-75td3l",
+      "title": "Pattern: Real-time data processing Architecture",
+      "route": "/reports/patterns/ultra-1755548263830-75td3l",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T20:17:43.840Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "rapid-1755548263859-4c0ybo",
+      "title": "Security Auditing",
+      "route": "/services/rapid-1755548263859-4c0ybo",
+      "type": "rapid-generated",
+      "created": "2025-08-18T20:17:43.871Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755548263860-44cgfq",
+      "title": "Security Framework",
+      "route": "/products/rapid-1755548263860-44cgfq",
+      "type": "rapid-generated",
+      "created": "2025-08-18T20:17:43.871Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755548263861-x2szvb",
+      "title": "Comprehensive Tutorial on Data Processing",
+      "route": "/tutorials/rapid-1755548263861-x2szvb",
+      "type": "rapid-generated",
+      "created": "2025-08-18T20:17:43.871Z",
+      "process": "rapid"
     }
   ]
 }
