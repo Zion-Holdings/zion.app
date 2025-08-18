@@ -107,10 +107,40 @@
       "eventType": "health_monitoring_failed",
       "message": "Health monitoring failed: Cannot read properties of undefined (reading 'status')",
       "orchestratorStatus": "running"
+    },
+    {
+      "timestamp": "2025-08-18T18:06:38.722Z",
+      "eventType": "orchestrator_started",
+      "message": "Orchestrator started successfully",
+      "orchestratorStatus": "running"
+    },
+    {
+      "timestamp": "2025-08-18T18:07:08.730Z",
+      "eventType": "health_monitoring_failed",
+      "message": "Health monitoring failed: Cannot read properties of undefined (reading 'status')",
+      "orchestratorStatus": "running"
+    },
+    {
+      "timestamp": "2025-08-18T18:07:38.758Z",
+      "eventType": "health_monitoring_failed",
+      "message": "Health monitoring failed: Cannot read properties of undefined (reading 'status')",
+      "orchestratorStatus": "running"
+    },
+    {
+      "timestamp": "2025-08-18T18:08:08.786Z",
+      "eventType": "health_monitoring_failed",
+      "message": "Health monitoring failed: Cannot read properties of undefined (reading 'status')",
+      "orchestratorStatus": "running"
+    },
+    {
+      "timestamp": "2025-08-18T18:08:38.817Z",
+      "eventType": "health_monitoring_failed",
+      "message": "Health monitoring failed: Cannot read properties of undefined (reading 'status')",
+      "orchestratorStatus": "running"
     }
   ],
   "metrics": {
-    "orchestrator_started": 3,
-    "health_monitoring_failed": 15
+    "orchestrator_started": 4,
+    "health_monitoring_failed": 19
   }
 }
