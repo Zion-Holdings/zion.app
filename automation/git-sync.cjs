@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
 const { execSync } = require('child_process');
+const fs = require('fs');
+const path = require('path');
 
 function run(cmd, options = {}) {
   try {
@@ -46,7 +48,7 @@ const AUTH_ENV = getAuthEnv();
 
 function runGit(cmd) {
   // Apply Authorization header if token is present (no logging of command)
-  const env = Object.keys(AUTH_ENV).length ? { env: { ...process.env, ...AUTH_ENV } } : {};
+  const env = { env: { ...process.env, ...AUTH_ENV, GIT_TERMINAL_PROMPT: '0' } };
   return run(cmd, env);
 }
 
@@ -67,9 +69,38 @@ function ensureOnMainBranch() {
   if (currentBranch !== 'main') {
     console.log(`Switching from ${currentBranch} to main branch...`);
     runGit('git checkout main');
-    runGit('git pull origin main');
+    runGit('git pull --rebase origin main || true');
   }
   console.log('✅ Now working on main branch');
+}
+
+function clearStaleGitIndexLock() {
+  try {
+    const lockPath = path.join(process.cwd(), '.git', 'index.lock');
+    if (fs.existsSync(lockPath)) {
+      const stat = fs.statSync(lockPath);
+      const ageMs = Date.now() - stat.mtimeMs;
+      if (ageMs > 5 * 60 * 1000) {
+        fs.unlinkSync(lockPath);
+        console.log('Removed stale .git/index.lock');
+      } else {
+        console.log('Recent .git/index.lock present; skipping destructive ops');
+      }
+    }
+  } catch {}
+}
+
+function rebaseOriginMainWithFallback() {
+  // Clean rebase first
+  const rb = runGit('git rebase origin/main');
+  if (rb.ok) return true;
+  console.log('Rebase failed, attempting fallback reset/stash strategy');
+  runGit('git rebase --abort || true');
+  runGit('git stash push -u -m "autosync-stash" || true');
+  const reset = runGit('git reset --hard origin/main');
+  if (!reset.ok) return false;
+  runGit('git stash pop || true');
+  return true;
 }
 
 function push(refspec) {
@@ -91,9 +122,13 @@ function push(refspec) {
   const currentBranch = getCurrentBranch();
   console.log(`Current branch: ${currentBranch}`);
 
-  // Always sync with latest main branch
-  console.log('Syncing with latest main...');
-  runGit('git pull origin main || true');
+  clearStaleGitIndexLock();
+  // Always sync with latest main via rebase-first strategy
+  console.log('Syncing with origin/main via rebase...');
+  if (!rebaseOriginMainWithFallback()) {
+    console.log('Rebase/reset strategy failed; using merge -X ours as last resort');
+    runGit('git merge -X ours --no-edit origin/main || true');
+  }
   
   // Commit any working tree changes
   const committed = commitAllIfAny('chore(sync): enhanced autonomous sync on main');
@@ -106,8 +141,8 @@ function push(refspec) {
   const res = push('HEAD:main');
   if (!res.ok) {
     console.log('Push to main failed, attempting to resolve...');
-    // Try to resolve any issues and push again
-    run('git pull --rebase origin main || true');
+    runGit('git fetch origin --prune');
+    rebaseOriginMainWithFallback();
     push('HEAD:main');
   }
 
