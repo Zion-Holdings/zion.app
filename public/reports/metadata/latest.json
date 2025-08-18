@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T17:43:04.995Z",
-  "pagesScanned": 3450,
+  "generatedAt": "2025-08-18T17:46:18.511Z",
+  "pagesScanned": 3454,
   "items": [
     {
       "route": "/404",
@@ -14571,6 +14571,16 @@
       }
     },
     {
+      "route": "/reports/innovations/innovation-2025-08-18-1744",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous UIs",
+        "description": "Reference Architecture — Autonomous UIs — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-18-1229",
       "missing": [
         "og:image"
@@ -16908,6 +16918,16 @@
       "suggestion": {
         "title": "Pilot Plan: Edge AI",
         "description": "Pilot Plan: Edge AI — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18-1744",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Blueprint: DevSecOps AI",
+        "description": "Blueprint: DevSecOps AI — auto-suggested description"
       }
     },
     {
@@ -29941,6 +29961,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-18-1446",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 14:46",
+        "description": "Autonomous Update — 2025-08-18 14:46 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-18-1447",
       "missing": [
         "og:image"
@@ -31288,6 +31318,16 @@
       "suggestion": {
         "title": "Autonomous Playbook — Vision & Multimodal (2025-08-18 17:40 UTC)",
         "description": "Autonomous Playbook — Vision & Multimodal (2025-08-18 17:40 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-1744",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Capability Map — AI Service Design (2025-08-18 17:44 UTC)",
+        "description": "Autonomous Capability Map — AI Service Design (2025-08-18 17:44 UTC) — auto-suggested description"
       }
     },
     {
