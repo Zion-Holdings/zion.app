@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T04:07:47.760Z",
+  "timestamp": "2025-08-18T04:08:46.802Z",
   "critical": [
     {
       "name": "ci-self-heal.yml",
@@ -2143,6 +2143,25 @@
       "resourceScore": 110
     },
     {
+      "name": "performance-weekly.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/performance-weekly.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 25,
+      "concurrentJobs": 5,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch {}",
+        "schedule"
+      ],
+      "resourceScore": 110
+    },
+    {
       "name": "workflow-manager.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/workflow-manager.yml",
       "priority": "medium",
@@ -2377,25 +2396,6 @@
     {
       "name": "netlify-monitor.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/netlify-monitor.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 30,
-      "concurrentJobs": 6,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "workflow_dispatch null",
-        "schedule"
-      ],
-      "resourceScore": 104
-    },
-    {
-      "name": "performance-weekly.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/performance-weekly.yml",
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 30,

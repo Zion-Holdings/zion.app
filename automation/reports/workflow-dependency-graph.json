@@ -2851,7 +2851,7 @@
   "performance-weekly.yml": {
     "name": "performance-weekly.yml",
     "triggers": [
-      "workflow_dispatch null",
+      "workflow_dispatch {}",
       "schedule"
     ],
     "needs": [],
@@ -2861,9 +2861,9 @@
       "runner": "ubuntu-latest",
       "memory": "standard",
       "timeout": 30,
-      "concurrentJobs": 5
+      "concurrentJobs": 3
     },
-    "estimatedDuration": 30
+    "estimatedDuration": 25
   },
   "pin-actions-weekly.yml": {
     "name": "pin-actions-weekly.yml",
