@@ -1,6 +1,13 @@
 {
   "items": [
     {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-18-182755",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:27:55.378Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
       "title": "Autonomous Content Generation",
       "href": "/automation",
       "desc": "AI-powered content completion via Cursor agents",
@@ -500,6 +507,51 @@
       "route": "/reports/patterns/ultra-1755541668962-tlzyng",
       "type": "ultra-fast-generated",
       "created": "2025-08-18T18:27:48.963Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "cursor-chat-2025-08-18T18:27:55.598Z",
+      "type": "cursor-chat",
+      "timestamp": "2025-08-18T18:27:55.598Z"
+    },
+    {
+      "id": "ultra-1755541677275-keve6h",
+      "title": "Lightning-Fast Development",
+      "route": "/reports/updates/ultra-1755541677275-keve6h",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:27:57.280Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541677276-72e0yo",
+      "title": "Ultra-Fast Lightning-fast development Insight",
+      "route": "/reports/insights/ultra-1755541677276-72e0yo",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:27:57.280Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541677277-xmat7u",
+      "title": "Ultra-Fast Guide: Instant deployment systems",
+      "route": "/reports/guides/ultra-1755541677277-xmat7u",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:27:57.280Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541677278-al62fn",
+      "title": "Case Study: Lightning-fast development Success",
+      "route": "/reports/cases/ultra-1755541677278-al62fn",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:27:57.280Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541677279-sch676",
+      "title": "Pattern: AI-powered automation Architecture",
+      "route": "/reports/patterns/ultra-1755541677279-sch676",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:27:57.280Z",
       "process": "ultra-fast"
     }
   ]
