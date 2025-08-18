@@ -1,221 +1,85 @@
 {
-  "generatedAt": "2025-08-18T18:42:33.363Z",
+  "generatedAt": "2025-08-18T18:46:45.627Z",
   "items": [
     {
-      "title": "Blueprint: Agent Ops",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-18-1846",
-      "createdAt": "2025-08-18T18:46:38.514Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Runbook: DevSecOps AI",
-      "subtitle": "Patterns to improve reliability.",
-      "path": "/reports/innovations/insight-2025-08-18-1843",
-      "createdAt": "2025-08-18T18:43:13.530Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-18 18-42",
-      "href": "/reports/innovations/insight-2025-08-18T18-42",
+      "title": "Innovation Insight — 2025-08-18 18-46",
+      "href": "/reports/innovations/insight-2025-08-18T18-46",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:33.237Z",
+      "createdAt": "2025-08-18T18:46:45.540Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-18 18-42",
-      "href": "/reports/updates/update-2025-08-18T18-42",
+      "title": "Autonomous Update — 2025-08-18 18-46",
+      "href": "/reports/updates/update-2025-08-18T18-46",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:33.237Z",
+      "createdAt": "2025-08-18T18:46:45.540Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Innovation Insight — 2025-08-18 18-42",
-      "href": "/reports/innovations/insight-2025-08-18T18-42",
+      "title": "Innovation Insight — 2025-08-18 18-46",
+      "href": "/reports/innovations/insight-2025-08-18T18-46",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:33.237Z",
+      "createdAt": "2025-08-18T18:46:45.540Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-18 18-42",
-      "href": "/reports/updates/update-2025-08-18T18-42",
+      "title": "Autonomous Update — 2025-08-18 18-46",
+      "href": "/reports/updates/update-2025-08-18T18-46",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:33.237Z",
+      "createdAt": "2025-08-18T18:46:45.540Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Content Generation",
-      "href": "/automation",
-      "desc": "AI-powered content completion via Cursor agents",
-      "createdAt": "2025-08-18T18:42:15.203Z",
-      "source": "cursor-autonomous-orchestrator"
-    },
-    {
-      "title": "Reference Architecture — Autonomous Content Mesh",
-      "href": "/reports/blueprints/blueprint-2025-08-18-184214",
+      "title": "Innovation Insight — 2025-08-18 18-46",
+      "href": "/reports/innovations/insight-2025-08-18T18-46",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:14.969Z",
-      "source": "cloud-blueprint-factory"
-    },
-    {
-      "title": "Playbook — Autonomous Delivery",
-      "href": "/reports/playbooks/playbook-2025-08-18-184214",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:14.795Z",
-      "source": "cloud-playbook-factory"
-    },
-    {
-      "title": "Case Study — Cloud Improving",
-      "href": "/reports/cases/case-2025-08-18-184214",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:14.637Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Guide — Cloud Improving Implementation",
-      "href": "/reports/guides/guide-2025-08-18-184214",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:14.637Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Pattern — Automation Trends 2025",
-      "href": "/reports/patterns/pattern-2025-08-18-184214",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:14.637Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-18 18-42",
-      "href": "/reports/innovations/insight-2025-08-18T18-42",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:14.505Z",
+      "createdAt": "2025-08-18T18:46:43.568Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-18 18-42",
-      "href": "/reports/updates/update-2025-08-18T18-42",
+      "title": "Autonomous Update — 2025-08-18 18-46",
+      "href": "/reports/updates/update-2025-08-18T18-46",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:14.505Z",
+      "createdAt": "2025-08-18T18:46:43.568Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Innovation Insight — 2025-08-18 18-42",
-      "href": "/reports/innovations/insight-2025-08-18T18-42",
+      "title": "Innovation Insight — 2025-08-18 18-46",
+      "href": "/reports/innovations/insight-2025-08-18T18-46",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:14.505Z",
+      "createdAt": "2025-08-18T18:46:43.568Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-18 18-42",
-      "href": "/reports/updates/update-2025-08-18T18-42",
+      "title": "Autonomous Update — 2025-08-18 18-46",
+      "href": "/reports/updates/update-2025-08-18T18-46",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:14.505Z",
+      "createdAt": "2025-08-18T18:46:43.568Z",
       "source": "cloud-content-factory"
     },
     {
-      "id": "rapid-1755542533408-2317fy",
-      "title": "API Integration",
-      "route": "/services/rapid-1755542533408-2317fy",
+      "id": "rapid-1755542804849-r3ry58",
+      "title": "Database Optimization",
+      "route": "/services/rapid-1755542804849-r3ry58",
       "type": "rapid-generated",
-      "created": "2025-08-18T18:42:13.420Z",
+      "created": "2025-08-18T18:46:44.852Z",
       "process": "rapid"
     },
     {
-      "id": "rapid-1755542533409-nsn4sv",
-      "title": "Automation Suite",
-      "route": "/products/rapid-1755542533409-nsn4sv",
+      "id": "rapid-1755542804850-i50snh",
+      "title": "Analytics Engine",
+      "route": "/products/rapid-1755542804850-i50snh",
       "type": "rapid-generated",
-      "created": "2025-08-18T18:42:13.420Z",
+      "created": "2025-08-18T18:46:44.852Z",
       "process": "rapid"
     },
     {
-      "id": "rapid-1755542533410-tptuh1",
-      "title": "Step-by-Step Guide to Web Development",
-      "route": "/tutorials/rapid-1755542533410-tptuh1",
+      "id": "rapid-1755542804851-p76mru",
+      "title": "Professional Tips for API Integration",
+      "route": "/tutorials/rapid-1755542804851-p76mru",
       "type": "rapid-generated",
-      "created": "2025-08-18T18:42:13.420Z",
+      "created": "2025-08-18T18:46:44.852Z",
       "process": "rapid"
-    },
-    {
-      "id": "ultra-1755542533698-ogsqzo",
-      "title": "Rapid Technology Advancement",
-      "route": "/reports/updates/ultra-1755542533698-ogsqzo",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:42:13.718Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755542533699-v23f9p",
-      "title": "Ultra-Fast Real-time collaboration tools Insight",
-      "route": "/reports/insights/ultra-1755542533699-v23f9p",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:42:13.718Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755542533700-2n2xyi",
-      "title": "Ultra-Fast Guide: Ultra-responsive applications",
-      "route": "/reports/guides/ultra-1755542533700-2n2xyi",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:42:13.718Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755542533701-zb2qz8",
-      "title": "Case Study: Lightning-fast development Success",
-      "route": "/reports/cases/ultra-1755542533701-zb2qz8",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:42:13.718Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755542533702-jdmv9r",
-      "title": "Pattern: Ultra-responsive applications Architecture",
-      "route": "/reports/patterns/ultra-1755542533702-jdmv9r",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:42:13.718Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755542552506-jqpar3",
-      "title": "Real-Time Innovation Hub",
-      "route": "/reports/updates/ultra-1755542552506-jqpar3",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:42:32.520Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755542552508-36kzx4",
-      "title": "Ultra-Fast Real-time collaboration tools Insight",
-      "route": "/reports/insights/ultra-1755542552508-36kzx4",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:42:32.520Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755542552508-1klt6x",
-      "title": "Ultra-Fast Guide: Lightning-fast development",
-      "route": "/reports/guides/ultra-1755542552508-1klt6x",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:42:32.520Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755542552509-0dz85c",
-      "title": "Case Study: Lightning-fast development Success",
-      "route": "/reports/cases/ultra-1755542552509-0dz85c",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:42:32.520Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755542552510-n4pxq8",
-      "title": "Pattern: Real-time data processing Architecture",
-      "route": "/reports/patterns/ultra-1755542552510-n4pxq8",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:42:32.520Z",
-      "process": "ultra-fast"
     }
   ]
 }
