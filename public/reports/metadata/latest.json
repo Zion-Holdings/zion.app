@@ -1,7 +1,12 @@
 {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   "generatedAt": "2025-08-18T13:26:01.172Z",
   "pagesScanned": 516,
+=======
+  "generatedAt": "2025-08-18T13:23:00.367Z",
+  "pagesScanned": 480,
+>>>>>>> Stashed changes
 =======
   "generatedAt": "2025-08-18T13:23:00.367Z",
   "pagesScanned": 480,
@@ -891,6 +896,7 @@
     },
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "route": "/reports/blueprints/blueprint-2025-08-18-132331",
       "missing": [
         "og:image"
@@ -921,6 +927,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
       "route": "/reports/cases/case-2025-08-18-122902",
@@ -1514,6 +1522,7 @@
     },
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "route": "/reports/cases/case-2025-08-18-132332",
       "missing": [
         "og:image"
@@ -1554,6 +1563,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
       "route": "/reports/guides/guide-2025-08-18-122902",
@@ -2147,6 +2158,7 @@
     },
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "route": "/reports/guides/guide-2025-08-18-132332",
       "missing": [
         "og:image"
@@ -2187,6 +2199,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
       "route": "/reports/innovations/innovation-2025-08-18-1229",
@@ -2440,6 +2454,7 @@
     },
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "route": "/reports/innovations/innovation-2025-08-18-1323",
       "missing": [
         "og:image"
@@ -2470,6 +2485,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
       "route": "/reports/innovations/insight-2025-08-18-1229",
@@ -2723,6 +2740,7 @@
     },
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "route": "/reports/innovations/insight-2025-08-18-1323",
       "missing": [
         "og:image"
@@ -2753,6 +2771,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
       "route": "/reports/innovations/insight-2025-08-18T12-29",
@@ -3006,6 +3026,7 @@
     },
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "route": "/reports/innovations/insight-2025-08-18T13-23",
       "missing": [
         "og:image"
@@ -3036,6 +3057,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
       "route": "/reports/patterns/pattern-2025-08-18-122902",
@@ -3639,6 +3662,7 @@
     },
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "route": "/reports/patterns/pattern-2025-08-18-132332",
       "missing": [
         "og:image"
@@ -3679,6 +3703,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
       "route": "/reports/playbooks/playbook-2025-08-18-122902",
@@ -4242,6 +4268,7 @@
     },
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "route": "/reports/playbooks/playbook-2025-08-18-132332",
       "missing": [
         "og:image"
@@ -4272,6 +4299,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
       "route": "/reports/updates/update-2025-08-18-0928",
@@ -4557,12 +4586,18 @@
       "route": "/reports/updates/update-2025-08-18-1023",
       "missing": [
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         "og:image"
 =======
+=======
+>>>>>>> Stashed changes
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
       ],
       "suggestion": {
@@ -4571,6 +4606,7 @@
       }
     },
     {
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
       "route": "/reports/updates/update-2025-08-18-1024",
       "missing": [
@@ -4605,6 +4641,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
       "route": "/reports/updates/update-2025-08-18-1229",
@@ -4858,6 +4896,7 @@
     },
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "route": "/reports/updates/update-2025-08-18-1323",
       "missing": [
         "og:image"
@@ -4888,6 +4927,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
       "route": "/reports/updates/update-2025-08-18T12-29",
@@ -5141,6 +5182,7 @@
     },
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "route": "/reports/updates/update-2025-08-18T13-23",
       "missing": [
         "og:image"
@@ -5171,6 +5213,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
       "route": "/reports",
