@@ -39,20 +39,20 @@ jobs:
     - name: Validate workflow syntax
       run: |
         echo "🔍 Validating workflow syntax..."
-        
+
         # Find all workflow files
         workflow_files=$(find .github/workflows -name "*.yml" -o -name "*.yaml")
         total_files=$(echo "$workflow_files" | wc -l)
-        
+
         echo "📁 Found $total_files workflow files"
-        
+
         # Validate each file
         invalid_files=()
         valid_count=0
-        
+
         for file in $workflow_files; do
           echo "  🔍 Checking: $file"
-          
+
           if python3 -c "import yaml; yaml.safe_load(open('$file', 'r'))" 2>/dev/null; then
             echo "    ✅ Valid"
             valid_count=$((valid_count + 1))
@@ -61,14 +61,14 @@ jobs:
             invalid_files+=("$file")
           fi
         done
-        
+
         # Summary
         echo ""
         echo "📊 Validation Summary:"
         echo "  Total files: $total_files"
         echo "  Valid files: $valid_count"
         echo "  Invalid files: ${#invalid_files[@]}"
-        
+
         if [ ${#invalid_files[@]} -gt 0 ]; then
           echo ""
           echo "❌ Invalid workflows found:"
