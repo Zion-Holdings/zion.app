@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T04:41:01.116Z",
-  "pagesScanned": 8534,
+  "generatedAt": "2025-08-18T04:17:01.108Z",
+  "pagesScanned": 8530,
   "items": [
     {
       "route": "/404",
@@ -36166,16 +36166,6 @@
       "suggestion": {
         "title": "Guide: RAG Platforms",
         "description": "Guide: RAG Platforms — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/innovations/insight-2025-08-18-0440",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Pilot Plan: DevSecOps AI",
-        "description": "Pilot Plan: DevSecOps AI — auto-suggested description"
       }
     },
     {
@@ -85221,34 +85211,14 @@
     {
       "route": "/reports/updates/update-2025-08-18-0117",
       "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 01:17",
-        "description": "Autonomous Update — 2025-08-18 01:17 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18-0139",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 01:39",
-        "description": "Autonomous Update — 2025-08-18 01:39 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18-0141",
-      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 01:41",
-        "description": "Autonomous Update — 2025-08-18 01:41 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-18 01:17",
+        "description": "Autonomous Update — 2025-08-18 01:17 — auto-suggested description"
       }
     },
     {
@@ -85259,16 +85229,6 @@
       "suggestion": {
         "title": "Autonomous Performance Tuning Guide — Vision & Multimodal (2025-08-18 03:10 UTC)",
         "description": "Autonomous Performance Tuning Guide — Vision & Multimodal (2025-08-18 03:10 UTC) — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18-0440",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Playbook — Cloud Cost Optimization (2025-08-18 04:40 UTC)",
-        "description": "Autonomous Playbook — Cloud Cost Optimization (2025-08-18 04:40 UTC) — auto-suggested description"
       }
     },
     {

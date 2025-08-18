@@ -2834,17 +2834,15 @@
   "performance-monitoring.yml": {
     "name": "performance-monitoring.yml",
     "triggers": [
-      "push",
-      "pull_request",
-      "workflow_dispatch {}",
-      "schedule"
+      "schedule",
+      "workflow_dispatch"
     ],
     "needs": [],
     "outputs": [],
     "priority": "medium",
     "resourceRequirements": {
       "runner": "ubuntu-latest",
-      "memory": "medium",
+      "memory": "standard",
       "timeout": 30,
       "concurrentJobs": 5
     },
