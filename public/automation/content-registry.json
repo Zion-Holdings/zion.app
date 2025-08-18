@@ -441,6 +441,30 @@
       "type": "rapid-generated",
       "created": "2025-08-18T18:24:13.021Z",
       "process": "rapid"
+    },
+    {
+      "id": "rapid-1755541458275-bhb4b5",
+      "title": "Security Auditing",
+      "route": "/services/rapid-1755541458275-bhb4b5",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:24:18.278Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755541458276-i0521u",
+      "title": "Performance Optimizer",
+      "route": "/products/rapid-1755541458276-i0521u",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:24:18.278Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755541458277-hnerm2",
+      "title": "Step-by-Step Guide to Security Auditing",
+      "route": "/tutorials/rapid-1755541458277-hnerm2",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:24:18.278Z",
+      "process": "rapid"
     }
   ]
 }
