@@ -8,7 +8,10 @@ export default function ProductPage() {
         <meta name="description" content="Integration Hub - The ultimate solution for modern businesses seeking innovation and efficiency." />
         <meta name="keywords" content="integration hub, product, technology, innovation, business solution" />
         <link rel="canonical" href="https://ziontechgroup.com/products/rapid-1755542405783-9wye0t" />
-      </Head>
+      
+        <meta property="og:title" content="Integration Hub" />
+        <meta property="og:description" content="Integration Hub — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
         <h1 className="text-4xl font-extrabold text-center mb-8">Integration Hub</h1>
         
@@ -56,3 +59,9 @@ export default function ProductPage() {
     </div>
   );
 }
+
+<Link href="/products/rapid-1755539340460-oastx4" className="internal-link">Related Content</Link>
+
+<Link href="/products/rapid-1755539347155-oli1gc" className="internal-link">Related Content</Link>
+
+<Link href="/products/rapid-1755539353530-gfmdyl" className="internal-link">Related Content</Link>
