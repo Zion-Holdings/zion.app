@@ -5,9 +5,10 @@ on:
   schedule:
     - cron: '30 2 * * *'
   workflow_dispatch:
+
 concurrency:
-  group: "revenue-ideas-daily"
-  cancel-in-progress: false
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
