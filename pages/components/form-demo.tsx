@@ -17,4 +17,3 @@ export default function FormDemo() {
   );
 }
 
-<Link href="/components/pagination-demo" className="internal-link">Related Content</Link>
