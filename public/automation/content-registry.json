@@ -1,6 +1,13 @@
 {
   "items": [
     {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-18-162653",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T16:26:53.025Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
       "title": "Case Study — Cloud Improving",
       "href": "/reports/cases/case-2025-08-18-162652",
       "desc": "New autonomous content",
@@ -440,6 +447,11 @@
       "desc": "New autonomous content",
       "createdAt": "2025-08-18T16:09:26.471Z",
       "source": "cloud-content-factory"
+    },
+    {
+      "id": "cursor-chat-2025-08-18T16:26:53.124Z",
+      "type": "cursor-chat",
+      "timestamp": "2025-08-18T16:26:53.124Z"
     }
   ]
 }
