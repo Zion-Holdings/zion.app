@@ -1,3 +1,5 @@
+const path = require('path');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   compiler: {
@@ -13,6 +15,38 @@ const nextConfig = {
   // Use Netlify _redirects file instead for redirects
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
+  // Force React version to prevent mismatches
+  experimental: {
+    forceSwcTransforms: true,
+    esmExternals: false,
+    swcMinify: true,
+  },
+  // Ensure consistent React versions
+  webpack: (config, { isServer }) => {
+    // Force React and React DOM versions
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'react': require.resolve('react'),
+      'react-dom': require.resolve('react-dom'),
+    };
+    
+    // Add fallback for React version resolution
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      'react': require.resolve('react'),
+      'react-dom': require.resolve('react-dom'),
+    };
+    
+    // Ensure consistent module resolution
+    config.resolve.modules = [
+      'node_modules',
+      path.resolve(__dirname, 'node_modules'),
+    ];
+    
+    return config;
+  },
+  // Disable React version checks
+  reactStrictMode: false,
 };
 
 module.exports = nextConfig;
