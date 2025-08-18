@@ -2,6 +2,13 @@
   "generatedAt": "2025-08-18T08:33:55.375Z",
   "items": [
     {
+      "title": "Guide: Edge AI",
+      "subtitle": "Patterns to improve reliability.",
+      "path": "/reports/innovations/insight-2025-08-18-1620",
+      "createdAt": "2025-08-18T16:20:03.398Z",
+      "kind": "insight"
+    },
+    {
       "title": "Blueprint: AI QA & Eval",
       "subtitle": "Patterns to accelerate delivery.",
       "path": "/reports/innovations/insight-2025-08-18-1603",
