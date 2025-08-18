@@ -66,7 +66,7 @@ jobs:
           git diff --quiet && git diff --staged --quiet || git commit -m "🔄 Redundant service generation - Growth: +${{ steps.analyze-growth.outputs.growth }} - Total: ${{ steps.analyze-growth.outputs.current_count }}"
       
       - name: 🚀 Push to main
-        run: git push origin main
+        run: git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
       
       - name: 📈 Generate growth report
         run: |

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T08:34:40.953Z",
+  "timestamp": "2025-08-18T16:59:45.473Z",
   "critical": [],
   "high": [],
   "medium": [
@@ -68,13 +68,13 @@
     {
       "workflow": "maintenance.yml",
       "status": "active",
-      "complexityScore": 40,
+      "complexityScore": 45,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 215,
+        "totalLines": 218,
         "jobCount": 0,
         "stepCount": 17,
-        "conditionalCount": 1,
+        "conditionalCount": 4,
         "matrixCount": 0,
         "dependencyCount": 1,
         "environmentCount": 0,
@@ -107,26 +107,6 @@
       ]
     },
     {
-      "workflow": "release-deploy.yml",
-      "status": "active",
-      "complexityScore": 30,
-      "complexityLevel": "medium",
-      "metrics": {
-        "totalLines": 103,
-        "jobCount": 0,
-        "stepCount": 11,
-        "conditionalCount": 0,
-        "matrixCount": 0,
-        "dependencyCount": 0,
-        "environmentCount": 0,
-        "secretCount": 2,
-        "actionCount": 5
-      },
-      "refactoringStrategy": [
-        "Extract common functionality to reusable workflows"
-      ]
-    },
-    {
       "workflow": "seo-audit.yml",
       "status": "active",
       "complexityScore": 30,
@@ -149,13 +129,13 @@
     {
       "workflow": "test-suite.yml",
       "status": "active",
-      "complexityScore": 35,
+      "complexityScore": 40,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 137,
+        "totalLines": 140,
         "jobCount": 0,
         "stepCount": 21,
-        "conditionalCount": 2,
+        "conditionalCount": 5,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
@@ -173,7 +153,7 @@
       "complexityScore": 40,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 146,
+        "totalLines": 187,
         "jobCount": 0,
         "stepCount": 12,
         "conditionalCount": 4,

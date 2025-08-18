@@ -1,10 +1,19 @@
 {
-  "timestamp": "2025-08-18T08:34:41.442Z",
+  "timestamp": "2025-08-18T16:59:45.597Z",
   "summary": {
-    "totalWorkflows": 0,
-    "fixed": 0,
+    "totalWorkflows": 2,
+    "fixed": 2,
     "failed": 0
   },
-  "fixedWorkflows": [],
+  "fixedWorkflows": [
+    {
+      "name": "continuous-service-factory.yml",
+      "status": "active"
+    },
+    {
+      "name": "redundant-service-generator.yml",
+      "status": "active"
+    }
+  ],
   "failedWorkflows": []
 }

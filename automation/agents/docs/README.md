@@ -1,79 +1,79 @@
 # Agent Factory Documentation
 
-Generated on: 2025-08-16T21:51:29.854Z
+Generated on: 2025-08-18T17:02:40.539Z
 
 ## 🤖 Active Agents
 
 
-### agent-1755381089841-0-backend-expert
-- **Type**: backend
-- **Complexity**: expert
+### agent-1755536560534-0-monitoring-basic
+- **Type**: monitoring
+- **Complexity**: basic
 - **Status**: generated
-- **Created**: 2025-08-16T21:51:29.842Z
-- **Capabilities**: code_generation, testing, deployment, monitoring, optimization, learning, ai_integration, quantum_computing, advanced_analytics, microservices, cloud_native, security_hardening
-
-
-### agent-1755381089844-1-deployment-advanced
-- **Type**: deployment
-- **Complexity**: advanced
-- **Status**: generated
-- **Created**: 2025-08-16T21:51:29.844Z
-- **Capabilities**: code_generation, testing, deployment, monitoring, optimization, learning, microservices, cloud_native, security_hardening
-
-
-### agent-1755381089845-2-full-stack-advanced
-- **Type**: full-stack
-- **Complexity**: advanced
-- **Status**: generated
-- **Created**: 2025-08-16T21:51:29.845Z
-- **Capabilities**: code_generation, testing, deployment, monitoring, optimization, learning, microservices, cloud_native, security_hardening
-
-
-### agent-1755381089846-3-optimization-expert
-- **Type**: optimization
-- **Complexity**: expert
-- **Status**: generated
-- **Created**: 2025-08-16T21:51:29.846Z
-- **Capabilities**: code_generation, testing, deployment, monitoring, optimization, learning, ai_integration, quantum_computing, advanced_analytics, microservices, cloud_native, security_hardening
-
-
-### agent-1755381089846-4-testing-advanced
-- **Type**: testing
-- **Complexity**: advanced
-- **Status**: generated
-- **Created**: 2025-08-16T21:51:29.846Z
-- **Capabilities**: code_generation, testing, deployment, monitoring, optimization, learning, microservices, cloud_native, security_hardening
-
-
-### agent-1755381089847-5-frontend-expert
-- **Type**: frontend
-- **Complexity**: expert
-- **Status**: generated
-- **Created**: 2025-08-16T21:51:29.847Z
-- **Capabilities**: code_generation, testing, deployment, monitoring, optimization, learning, ai_integration, quantum_computing, advanced_analytics, microservices, cloud_native, security_hardening
-
-
-### agent-1755381089848-6-testing-intermediate
-- **Type**: testing
-- **Complexity**: intermediate
-- **Status**: generated
-- **Created**: 2025-08-16T21:51:29.848Z
+- **Created**: 2025-08-18T17:02:40.534Z
 - **Capabilities**: code_generation, testing, deployment, monitoring, optimization, learning
 
 
-### agent-1755381089849-7-monitoring-intermediate
-- **Type**: monitoring
+### agent-1755536560535-1-frontend-intermediate
+- **Type**: frontend
 - **Complexity**: intermediate
 - **Status**: generated
-- **Created**: 2025-08-16T21:51:29.849Z
+- **Created**: 2025-08-18T17:02:40.535Z
+- **Capabilities**: code_generation, testing, deployment, monitoring, optimization, learning
+
+
+### agent-1755536560536-2-full-stack-basic
+- **Type**: full-stack
+- **Complexity**: basic
+- **Status**: generated
+- **Created**: 2025-08-18T17:02:40.536Z
+- **Capabilities**: code_generation, testing, deployment, monitoring, optimization, learning
+
+
+### agent-1755536560536-3-frontend-advanced
+- **Type**: frontend
+- **Complexity**: advanced
+- **Status**: generated
+- **Created**: 2025-08-18T17:02:40.536Z
+- **Capabilities**: code_generation, testing, deployment, monitoring, optimization, learning, microservices, cloud_native, security_hardening
+
+
+### agent-1755536560536-4-monitoring-basic
+- **Type**: monitoring
+- **Complexity**: basic
+- **Status**: generated
+- **Created**: 2025-08-18T17:02:40.536Z
+- **Capabilities**: code_generation, testing, deployment, monitoring, optimization, learning
+
+
+### agent-1755536560536-5-backend-intermediate
+- **Type**: backend
+- **Complexity**: intermediate
+- **Status**: generated
+- **Created**: 2025-08-18T17:02:40.536Z
+- **Capabilities**: code_generation, testing, deployment, monitoring, optimization, learning
+
+
+### agent-1755536560537-6-optimization-basic
+- **Type**: optimization
+- **Complexity**: basic
+- **Status**: generated
+- **Created**: 2025-08-18T17:02:40.537Z
+- **Capabilities**: code_generation, testing, deployment, monitoring, optimization, learning
+
+
+### agent-1755536560537-7-optimization-intermediate
+- **Type**: optimization
+- **Complexity**: intermediate
+- **Status**: generated
+- **Created**: 2025-08-18T17:02:40.537Z
 - **Capabilities**: code_generation, testing, deployment, monitoring, optimization, learning
 
 
 ## 📊 Agent Statistics
 
 - **Total Agents**: 8
-- **Agent Types**: backend, deployment, full-stack, optimization, testing, frontend, monitoring
-- **Complexity Levels**: expert, advanced, intermediate
+- **Agent Types**: monitoring, frontend, full-stack, backend, optimization
+- **Complexity Levels**: basic, intermediate, advanced
 
 ## 🚀 Getting Started
 
@@ -89,56 +89,56 @@ The factory configuration is stored in `automation/config/factory-config.json`
 ## 📈 Performance Metrics
 
 
-### agent-1755381089841-0-backend-expert
+### agent-1755536560534-0-monitoring-basic
 - Tasks Completed: 0
 - Success Rate: 0.5
 - Efficiency Score: 0.5
 - Learning Rate: 0.1
 
 
-### agent-1755381089844-1-deployment-advanced
+### agent-1755536560535-1-frontend-intermediate
 - Tasks Completed: 0
 - Success Rate: 0.5
 - Efficiency Score: 0.5
 - Learning Rate: 0.1
 
 
-### agent-1755381089845-2-full-stack-advanced
+### agent-1755536560536-2-full-stack-basic
 - Tasks Completed: 0
 - Success Rate: 0.5
 - Efficiency Score: 0.5
 - Learning Rate: 0.1
 
 
-### agent-1755381089846-3-optimization-expert
+### agent-1755536560536-3-frontend-advanced
 - Tasks Completed: 0
 - Success Rate: 0.5
 - Efficiency Score: 0.5
 - Learning Rate: 0.1
 
 
-### agent-1755381089846-4-testing-advanced
+### agent-1755536560536-4-monitoring-basic
 - Tasks Completed: 0
 - Success Rate: 0.5
 - Efficiency Score: 0.5
 - Learning Rate: 0.1
 
 
-### agent-1755381089847-5-frontend-expert
+### agent-1755536560536-5-backend-intermediate
 - Tasks Completed: 0
 - Success Rate: 0.5
 - Efficiency Score: 0.5
 - Learning Rate: 0.1
 
 
-### agent-1755381089848-6-testing-intermediate
+### agent-1755536560537-6-optimization-basic
 - Tasks Completed: 0
 - Success Rate: 0.5
 - Efficiency Score: 0.5
 - Learning Rate: 0.1
 
 
-### agent-1755381089849-7-monitoring-intermediate
+### agent-1755536560537-7-optimization-intermediate
 - Tasks Completed: 0
 - Success Rate: 0.5
 - Efficiency Score: 0.5
