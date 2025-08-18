@@ -1,16 +1,23 @@
 ---
 name: Diverse Agent Matrix
 on:
-  workflow_dispatch: null
+  workflow_dispatch: {}
   schedule:
-    - cron: 0 2 * * *
+    - cron: '0 2 * * *' # Daily at 2 AM UTC
+
+permissions:
+  contents: read
+  actions: read
+
 concurrency:
   group: diverse-agent-matrix-${{ github.ref }}
   cancel-in-progress: false
+
 jobs:
   run-diverse-agents:
-    name: Run ${matrix.task}
+    name: Run ${{ matrix.task }}
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     strategy:
       fail-fast: false
       max-parallel: 3
@@ -26,8 +33,6 @@ jobs:
         - monetization
         - saas
         - ui-evolution
-    permissions:
-      contents: read
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -64,7 +69,3 @@ jobs:
           else
             echo "No changes to push"
           fi
-    timeout-minutes: 30
-permissions:
-  contents: read
-  actions: read

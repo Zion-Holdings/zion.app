@@ -2366,7 +2366,7 @@
       "runner": "ubuntu-latest",
       "memory": "standard",
       "timeout": 30,
-      "concurrentJobs": 4
+      "concurrentJobs": 5
     },
     "estimatedDuration": 30
   },
@@ -3074,19 +3074,19 @@
   "release.yml": {
     "name": "release.yml",
     "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
+      "push",
+      "workflow_dispatch"
     ],
     "needs": [],
     "outputs": [],
     "priority": "medium",
     "resourceRequirements": {
       "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
+      "memory": "medium",
+      "timeout": 45,
       "concurrentJobs": 5
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 45
   },
   "repo-knowledge-graph.yml": {
     "name": "repo-knowledge-graph.yml",

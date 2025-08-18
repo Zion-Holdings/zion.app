@@ -1,18 +1,18 @@
 {
-  "timestamp": "2025-08-18T03:40:40.697Z",
+  "timestamp": "2025-08-18T03:41:39.563Z",
   "summary": {
     "totalWorkflows": 224,
     "complexityDistribution": {
       "very-high": 0,
       "high": 0,
-      "medium": 7,
-      "low": 217
+      "medium": 8,
+      "low": 216
     },
     "refactoringPriorities": {
       "critical": 0,
       "high": 0,
-      "medium": 7,
-      "low": 217
+      "medium": 8,
+      "low": 216
     }
   },
   "workflows": {
@@ -2144,7 +2144,7 @@
       "complexityScore": 25,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 68,
+        "totalLines": 71,
         "jobCount": 0,
         "stepCount": 6,
         "conditionalCount": 0,
@@ -2504,7 +2504,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 36,
+        "totalLines": 41,
         "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 1,
@@ -2792,7 +2792,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 40,
+        "totalLines": 38,
         "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
@@ -3257,20 +3257,20 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/release-drafter.yml"
     },
     "release.yml": {
-      "complexityScore": 0,
-      "complexityLevel": "low",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 33,
+        "totalLines": 140,
         "jobCount": 0,
-        "stepCount": 4,
+        "stepCount": 12,
         "conditionalCount": 0,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 0,
-        "actionCount": 2
+        "secretCount": 3,
+        "actionCount": 6
       },
-      "refactoringPriority": "low",
+      "refactoringPriority": "medium",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/release.yml"
     },

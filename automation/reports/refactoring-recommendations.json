@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T03:40:40.700Z",
+  "timestamp": "2025-08-18T03:41:39.566Z",
   "critical": [],
   "high": [],
   "medium": [
@@ -100,6 +100,26 @@
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
+        "actionCount": 6
+      },
+      "refactoringStrategy": [
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "release.yml",
+      "status": "active",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 140,
+        "jobCount": 0,
+        "stepCount": 12,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 3,
         "actionCount": 6
       },
       "refactoringStrategy": [
