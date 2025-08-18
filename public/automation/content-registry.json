@@ -1,6 +1,76 @@
 {
   "items": [
     {
+      "title": "Autonomous Content Generation",
+      "href": "/automation",
+      "desc": "AI-powered content completion via Cursor agents",
+      "createdAt": "2025-08-18T18:27:48.781Z",
+      "source": "cursor-autonomous-orchestrator"
+    },
+    {
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-18-182748",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:27:48.584Z",
+      "source": "cloud-blueprint-factory"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-18-182748",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:27:48.494Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Case Study — Cloud Improving",
+      "href": "/reports/cases/case-2025-08-18-182748",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:27:48.392Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-18-182748",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:27:48.392Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Automation Trends 2025",
+      "href": "/reports/patterns/pattern-2025-08-18-182748",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:27:48.392Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 18-27",
+      "href": "/reports/innovations/insight-2025-08-18T18-27",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:27:48.275Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-27",
+      "href": "/reports/updates/update-2025-08-18T18-27",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:27:48.275Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 18-27",
+      "href": "/reports/innovations/insight-2025-08-18T18-27",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:27:48.275Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-27",
+      "href": "/reports/updates/update-2025-08-18T18-27",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:27:48.275Z",
+      "source": "cloud-content-factory"
+    },
+    {
       "title": "Innovation Insight — 2025-08-18 18-27",
       "href": "/reports/innovations/insight-2025-08-18T18-27",
       "desc": "New autonomous content",
@@ -393,56 +463,44 @@
       "source": "cloud-content-factory"
     },
     {
-      "title": "Innovation Insight — 2025-08-18 18-26",
-      "href": "/reports/innovations/insight-2025-08-18T18-26",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:26:22.770Z",
-      "source": "cloud-content-factory"
+      "id": "ultra-1755541668959-p2j99k",
+      "title": "Ultra-Fast Problem Solving",
+      "route": "/reports/updates/ultra-1755541668959-p2j99k",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:27:48.963Z",
+      "process": "ultra-fast"
     },
     {
-      "title": "Autonomous Update — 2025-08-18 18-26",
-      "href": "/reports/updates/update-2025-08-18T18-26",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:26:22.770Z",
-      "source": "cloud-content-factory"
+      "id": "ultra-1755541668960-gai4qf",
+      "title": "Ultra-Fast Ultra-responsive applications Insight",
+      "route": "/reports/insights/ultra-1755541668960-gai4qf",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:27:48.963Z",
+      "process": "ultra-fast"
     },
     {
-      "title": "Reference Architecture — Autonomous Content Mesh",
-      "href": "/reports/blueprints/blueprint-2025-08-18-182622",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:26:22.642Z",
-      "source": "cloud-blueprint-factory"
+      "id": "ultra-1755541668961-w5mt1r",
+      "title": "Ultra-Fast Guide: Ultra-fast testing frameworks",
+      "route": "/reports/guides/ultra-1755541668961-w5mt1r",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:27:48.963Z",
+      "process": "ultra-fast"
     },
     {
-      "title": "Autonomous Content Generation",
-      "href": "/automation",
-      "desc": "AI-powered content completion via Cursor agents",
-      "createdAt": "2025-08-18T18:26:14.766Z",
-      "source": "cursor-autonomous-orchestrator"
+      "id": "ultra-1755541668962-95puwj",
+      "title": "Case Study: AI-powered automation Success",
+      "route": "/reports/cases/ultra-1755541668962-95puwj",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:27:48.963Z",
+      "process": "ultra-fast"
     },
     {
-      "id": "rapid-1755541660491-xul0oh",
-      "title": "AI-Powered Analytics",
-      "route": "/services/rapid-1755541660491-xul0oh",
-      "type": "rapid-generated",
-      "created": "2025-08-18T18:27:40.495Z",
-      "process": "rapid"
-    },
-    {
-      "id": "rapid-1755541660492-mhcbwx",
-      "title": "Data Platform",
-      "route": "/products/rapid-1755541660492-mhcbwx",
-      "type": "rapid-generated",
-      "created": "2025-08-18T18:27:40.495Z",
-      "process": "rapid"
-    },
-    {
-      "id": "rapid-1755541660494-x9iyp4",
-      "title": "Best Practices in AI-Powered Analytics",
-      "route": "/tutorials/rapid-1755541660494-x9iyp4",
-      "type": "rapid-generated",
-      "created": "2025-08-18T18:27:40.495Z",
-      "process": "rapid"
+      "id": "ultra-1755541668962-tlzyng",
+      "title": "Pattern: Real-time data processing Architecture",
+      "route": "/reports/patterns/ultra-1755541668962-tlzyng",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:27:48.963Z",
+      "process": "ultra-fast"
     }
   ]
 }
