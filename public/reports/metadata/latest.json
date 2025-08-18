@@ -1,6 +1,11 @@
 {
+<<<<<<< Updated upstream
   "generatedAt": "2025-08-18T13:38:00.900Z",
   "pagesScanned": 685,
+=======
+  "generatedAt": "2025-08-18T13:37:55.345Z",
+  "pagesScanned": 677,
+>>>>>>> Stashed changes
   "items": [
     {
       "route": "/404",
@@ -1085,6 +1090,7 @@
       }
     },
     {
+<<<<<<< Updated upstream
       "route": "/reports/blueprints/blueprint-2025-08-18-133757",
       "missing": [
         "og:image"
@@ -1095,6 +1101,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
       "route": "/reports/cases/case-2025-08-18-122902",
       "missing": [
         "og:image"
@@ -1915,6 +1923,7 @@
       }
     },
     {
+<<<<<<< Updated upstream
       "route": "/reports/cases/case-2025-08-18-133757",
       "missing": [
         "og:image"
@@ -1935,6 +1944,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
       "route": "/reports/guides/guide-2025-08-18-122902",
       "missing": [
         "og:image"
@@ -2755,6 +2766,7 @@
       }
     },
     {
+<<<<<<< Updated upstream
       "route": "/reports/guides/guide-2025-08-18-133757",
       "missing": [
         "og:image"
@@ -2775,6 +2787,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
       "route": "/reports/innovations/innovation-2025-08-18-1229",
       "missing": [
         "og:image"
@@ -4805,6 +4819,7 @@
       }
     },
     {
+<<<<<<< Updated upstream
       "route": "/reports/patterns/pattern-2025-08-18-133757",
       "missing": [
         "og:image"
@@ -4825,6 +4840,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
       "route": "/reports/playbooks/playbook-2025-08-18-122902",
       "missing": [
         "og:image"
@@ -5988,6 +6005,7 @@
       "route": "/reports/updates/update-2025-08-18-1035",
       "missing": [
         "og:image"
+<<<<<<< Updated upstream
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-18 10:35",
@@ -6021,10 +6039,32 @@
         "og:description",
         "og:image",
         "twitter:card"
+=======
+>>>>>>> Stashed changes
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-18 10:38",
         "description": "Autonomous Update — 2025-08-18 10:38 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-1036",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 10:36",
+        "description": "Autonomous Update — 2025-08-18 10:36 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-1037",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 10:37",
+        "description": "Autonomous Update — 2025-08-18 10:37 — auto-suggested description"
       }
     },
     {
