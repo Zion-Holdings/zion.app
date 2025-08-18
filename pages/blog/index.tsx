@@ -272,3 +272,5 @@ export default function BlogIndexPage() {
     </div>
   );
 }
+
+<Link href="/blog/ai-automation-trends-2025" className="internal-link">Related Content</Link>
