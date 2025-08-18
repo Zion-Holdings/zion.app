@@ -47,8 +47,8 @@ check_workflow_structure() {
         issues+=("Missing 'runs-on:' specification")
     fi
     
-    # Check for permissions
-    if ! grep -q "^permissions:" "$file"; then
+    # Check for permissions (either at workflow level or job level)
+    if ! grep -q "^permissions:" "$file" && ! grep -q "^\s*permissions:" "$file"; then
         issues+=("Missing 'permissions:' section")
     fi
     
@@ -103,8 +103,9 @@ for workflow_file in "$workflow_dir"/*.yml "$workflow_dir"/*.yaml; do
         fi
         
         # Check structure
-        structure_issues=$(check_workflow_structure "$workflow_file")
-        if [ ${#structure_issues[@]} -eq 0 ]; then
+        check_workflow_structure "$workflow_file"
+        structure_issues_count=$?
+        if [ $structure_issues_count -eq 0 ]; then
             echo -n -e " ${GREEN}✅ Good structure${NC}"
         else
             echo -n -e " ${YELLOW}⚠️  Structure issues${NC}"
@@ -146,8 +147,9 @@ fi
 # Check for workflows without proper structure
 for workflow_file in "$workflow_dir"/*.yml "$workflow_dir"/*.yaml; do
     if [ -f "$workflow_file" ]; then
-        structure_issues=$(check_workflow_structure "$workflow_file")
-        if [ ${#structure_issues[@]} -gt 0 ]; then
+        check_workflow_structure "$workflow_file"
+        structure_issues_count=$?
+        if [ $structure_issues_count -gt 0 ]; then
             echo -e "  ${YELLOW}⚠️  $(basename "$workflow_file") has structural issues${NC}"
             critical_issues=$((critical_issues + 1))
         fi
