@@ -1,19 +1,11 @@
 # responsive-content Report
 
-<<<<<<< Updated upstream
-Generated: 2025-08-18T15:05:06.273Z
-=======
-Generated: 2025-08-18T15:04:29.843Z
->>>>>>> Stashed changes
+Generated: 2025-08-18T15:06:01.023Z
 
 ## Status
 - Task: responsive-content
 - Status: Completed
-<<<<<<< Updated upstream
-- Timestamp: 2025-08-18T15:05:06.273Z
-=======
-- Timestamp: 2025-08-18T15:04:29.843Z
->>>>>>> Stashed changes
+- Timestamp: 2025-08-18T15:06:01.023Z
 
 ## Next Steps
 - Implement actual responsive-content functionality
