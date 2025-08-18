@@ -4,6 +4,7 @@
 const fs = require("fs");
 const path = require("path");
 const axios = require("axios");
+const { execSync } = require("child_process");
 
 function parseRepoFromPackage() {
   try {
@@ -35,6 +36,8 @@ function parseArgs(argv) {
     rerunFailed: true,
     coreFirst: true,
     changedOnly: false,
+    owner: "",
+    repo: "",
   };
   for (let i = 2; i < argv.length; i++) {
     const a = argv[i];
@@ -49,6 +52,8 @@ function parseArgs(argv) {
     if (a === "--no-rerun-failed") { args.rerunFailed = false; continue; }
     if (a === "--no-core-first") { args.coreFirst = false; continue; }
     if (a === "--changed-only") { args.changedOnly = true; continue; }
+    if (a === "--owner" && argv[i + 1]) { args.owner = argv[++i]; continue; }
+    if (a === "--repo" && argv[i + 1]) { args.repo = argv[++i]; continue; }
   }
   return args;
 }
@@ -139,11 +144,34 @@ function getChangedFiles() {
   }
 }
 
+function parseRepoFromGitRemote() {
+  try {
+    // Prefer GITHUB_REPOSITORY if available (format: owner/repo)
+    const envRepo = process.env.GITHUB_REPOSITORY;
+    if (envRepo && envRepo.includes("/")) {
+      const [owner, repo] = envRepo.split("/");
+      return { owner, repo };
+    }
+    // Fallback to git remote origin URL
+    const url = execSync("git remote get-url origin", { encoding: "utf8" }).trim();
+    const match = url.match(/github\.com[/:]([^/]+)\/(.+?)(?:\.git)?$/i);
+    if (!match) return null;
+    return { owner: match[1], repo: match[2] };
+  } catch (_) {
+    return null;
+  }
+}
+
 async function main() {
   const args = parseArgs(process.argv);
-  const repoInfo = parseRepoFromPackage();
+  let repoInfo = null;
+  if (args.owner && args.repo) {
+    repoInfo = { owner: args.owner, repo: args.repo };
+  } else {
+    repoInfo = parseRepoFromPackage() || parseRepoFromGitRemote();
+  }
   if (!repoInfo) {
-    console.error("Could not determine GitHub owner/repo from package.json repository.url");
+    console.error("Could not determine GitHub owner/repo. Provide --owner and --repo, or set package.json repository, or configure git remote origin.");
     process.exit(2);
   }
   const token = getEnvToken();
