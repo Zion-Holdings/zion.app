@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T03:30:01.403Z",
-  "pagesScanned": 8544,
+  "generatedAt": "2025-08-18T03:31:01.248Z",
+  "pagesScanned": 8547,
   "items": [
     {
       "route": "/404",
@@ -36206,6 +36206,16 @@
       "suggestion": {
         "title": "Blueprint: Agent Ops",
         "description": "Blueprint: Agent Ops — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18-0330",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide: AI QA & Eval",
+        "description": "Guide: AI QA & Eval — auto-suggested description"
       }
     },
     {
@@ -85331,14 +85341,24 @@
     {
       "route": "/reports/updates/update-2025-08-18-0030",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 00:30",
+        "description": "Autonomous Update — 2025-08-18 00:30 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0031",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 00:30",
-        "description": "Autonomous Update — 2025-08-18 00:30 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-18 00:31",
+        "description": "Autonomous Update — 2025-08-18 00:31 — auto-suggested description"
       }
     },
     {
@@ -85359,6 +85379,16 @@
       "suggestion": {
         "title": "Autonomous Playbook — Vision & Multimodal (2025-08-18 03:20 UTC)",
         "description": "Autonomous Playbook — Vision & Multimodal (2025-08-18 03:20 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0330",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Performance Tuning Guide — AI Service Design (2025-08-18 03:30 UTC)",
+        "description": "Autonomous Performance Tuning Guide — AI Service Design (2025-08-18 03:30 UTC) — auto-suggested description"
       }
     },
     {

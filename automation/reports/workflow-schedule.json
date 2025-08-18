@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T03:29:36.994Z",
+  "timestamp": "2025-08-18T03:30:44.493Z",
   "critical": [
     {
       "name": "ci-self-heal.yml",
@@ -4224,6 +4224,25 @@
   ],
   "low": [
     {
+      "name": "maintenance.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/maintenance.yml",
+      "priority": "low",
+      "resourceIntensity": "high",
+      "estimatedDuration": 20,
+      "concurrentJobs": 8,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch null",
+        "schedule"
+      ],
+      "resourceScore": 92
+    },
+    {
       "name": "autonomous-deep-maintenance.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-deep-maintenance.yml",
       "priority": "low",
@@ -4241,27 +4260,6 @@
         "schedule"
       ],
       "resourceScore": 84
-    },
-    {
-      "name": "maintenance.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/maintenance.yml",
-      "priority": "low",
-      "resourceIntensity": "high",
-      "estimatedDuration": 30,
-      "concurrentJobs": 16,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [
-        ""
-      ],
-      "triggers": [
-        "workflow_dispatch null",
-        "schedule"
-      ],
-      "resourceScore": 80
     },
     {
       "name": "cloud-maintenance.yml",
@@ -4333,21 +4331,19 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/maintenance.yml",
       "priority": "low",
       "resourceIntensity": "high",
-      "estimatedDuration": 30,
-      "concurrentJobs": 16,
+      "estimatedDuration": 20,
+      "concurrentJobs": 8,
       "runnerRequirements": {
         "runner": "ubuntu-latest",
         "size": "standard",
         "special": []
       },
-      "dependencies": [
-        ""
-      ],
+      "dependencies": [],
       "triggers": [
         "workflow_dispatch null",
         "schedule"
       ],
-      "resourceScore": 80
+      "resourceScore": 92
     }
   ],
   "recommendations": [

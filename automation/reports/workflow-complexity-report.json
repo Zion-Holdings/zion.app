@@ -1,18 +1,18 @@
 {
-  "timestamp": "2025-08-18T03:29:29.854Z",
+  "timestamp": "2025-08-18T03:30:37.316Z",
   "summary": {
     "totalWorkflows": 224,
     "complexityDistribution": {
       "very-high": 0,
       "high": 0,
-      "medium": 7,
-      "low": 217
+      "medium": 6,
+      "low": 218
     },
     "refactoringPriorities": {
       "critical": 0,
       "high": 0,
-      "medium": 7,
-      "low": 217
+      "medium": 6,
+      "low": 218
     }
   },
   "workflows": {
@@ -2126,7 +2126,7 @@
       "complexityScore": 15,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 72,
+        "totalLines": 71,
         "jobCount": 0,
         "stepCount": 7,
         "conditionalCount": 1,
@@ -2681,20 +2681,20 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/linkedin-pro.yml"
     },
     "maintenance.yml": {
-      "complexityScore": 30,
-      "complexityLevel": "medium",
+      "complexityScore": 25,
+      "complexityLevel": "low",
       "metrics": {
-        "totalLines": 179,
+        "totalLines": 112,
         "jobCount": 0,
-        "stepCount": 17,
-        "conditionalCount": 1,
+        "stepCount": 10,
+        "conditionalCount": 0,
         "matrixCount": 0,
-        "dependencyCount": 1,
+        "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 8
+        "actionCount": 4
       },
-      "refactoringPriority": "medium",
+      "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/maintenance.yml"
     },
