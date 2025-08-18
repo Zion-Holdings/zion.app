@@ -9,10 +9,6 @@ concurrency:
   group: "dependency-maintenance"
   cancel-in-progress: false
 
-concurrency:
-  group: dependency-maintenance
-  cancel-in-progress: true
-
 jobs:
   maintain-deps:
     runs-on: ubuntu-latest
