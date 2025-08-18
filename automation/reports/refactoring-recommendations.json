@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T04:19:40.483Z",
+  "timestamp": "2025-08-18T04:20:40.782Z",
   "critical": [],
   "high": [],
   "medium": [
@@ -60,6 +60,26 @@
         "environmentCount": 0,
         "secretCount": 2,
         "actionCount": 4
+      },
+      "refactoringStrategy": [
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "dependency-maintenance.yml",
+      "status": "active",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 155,
+        "jobCount": 0,
+        "stepCount": 13,
+        "conditionalCount": 2,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 3,
+        "actionCount": 6
       },
       "refactoringStrategy": [
         "Extract common functionality to reusable workflows"

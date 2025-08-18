@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T04:20:01.292Z",
-  "pagesScanned": 8533,
+  "generatedAt": "2025-08-18T04:21:01.153Z",
+  "pagesScanned": 8536,
   "items": [
     {
       "route": "/404",
@@ -36166,6 +36166,16 @@
       "suggestion": {
         "title": "Guide: RAG Platforms",
         "description": "Guide: RAG Platforms — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18-0420",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Runbook: RAG Platforms",
+        "description": "Runbook: RAG Platforms — auto-suggested description"
       }
     },
     {
@@ -85241,14 +85251,24 @@
     {
       "route": "/reports/updates/update-2025-08-18-0120",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 01:20",
+        "description": "Autonomous Update — 2025-08-18 01:20 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0121",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 01:20",
-        "description": "Autonomous Update — 2025-08-18 01:20 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-18 01:21",
+        "description": "Autonomous Update — 2025-08-18 01:21 — auto-suggested description"
       }
     },
     {
@@ -85259,6 +85279,16 @@
       "suggestion": {
         "title": "Autonomous Performance Tuning Guide — Vision & Multimodal (2025-08-18 03:10 UTC)",
         "description": "Autonomous Performance Tuning Guide — Vision & Multimodal (2025-08-18 03:10 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0420",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Blueprint — Evaluation & Safety (2025-08-18 04:20 UTC)",
+        "description": "Autonomous Blueprint — Evaluation & Safety (2025-08-18 04:20 UTC) — auto-suggested description"
       }
     },
     {
