@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T09:44:01.504Z",
-  "pagesScanned": 9061,
+  "generatedAt": "2025-08-18T09:45:01.589Z",
+  "pagesScanned": 9062,
   "items": [
     {
       "route": "/404",
@@ -90006,6 +90006,19 @@
       "suggestion": {
         "title": "Autonomous Validation & QA Plan — AI Service Design (2025-08-18 06:44 UTC)",
         "description": "Autonomous Validation & QA Plan — AI Service Design (2025-08-18 06:44 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0645",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 06:45",
+        "description": "Autonomous Update — 2025-08-18 06:45 — auto-suggested description"
       }
     },
     {
