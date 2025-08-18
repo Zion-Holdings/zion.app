@@ -1,6 +1,11 @@
 {
+<<<<<<< Updated upstream
   "generatedAt": "2025-08-18T17:05:00.899Z",
   "pagesScanned": 3164,
+=======
+  "generatedAt": "2025-08-18T17:07:07.670Z",
+  "pagesScanned": 3181,
+>>>>>>> Stashed changes
   "items": [
     {
       "route": "/404",
@@ -29411,6 +29416,29 @@
       }
     },
     {
+<<<<<<< Updated upstream
+=======
+      "route": "/reports/updates/update-2025-08-18-1704",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 17:04",
+        "description": "Autonomous Update — 2025-08-18 17:04 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-1705",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Security Hardening Guide — MLOps & Model Reliability (2025-08-18 17:05 UTC)",
+        "description": "Autonomous Security Hardening Guide — MLOps & Model Reliability (2025-08-18 17:05 UTC) — auto-suggested description"
+      }
+    },
+    {
+>>>>>>> Stashed changes
       "route": "/reports/updates/update-2025-08-18T12-29",
       "missing": [
         "og:image"
@@ -31148,10 +31176,13 @@
     {
       "route": "/services/simple-service-1755536698092-91kql16r9",
       "missing": [
+<<<<<<< Updated upstream
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
+=======
+        "og:image"
       ],
       "suggestion": {
         "title": "Premium Training Solution",
@@ -31159,6 +31190,70 @@
       }
     },
     {
+      "route": "/services/simple-service-1755536758091-l3r7tliu9",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "DevOps Service",
+        "description": "DevOps Service — auto-suggested description"
+      }
+    },
+    {
+      "route": "/services/simple-service-1755536758092-dko4a4zi3",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "AI Solutions Service",
+        "description": "AI Solutions Service — auto-suggested description"
+      }
+    },
+    {
+      "route": "/services/simple-service-1755536778091-8nh8yvv24",
+      "missing": [
+        "og:image"
+>>>>>>> Stashed changes
+      ],
+      "suggestion": {
+        "title": "Premium Training Solution",
+        "description": "Premium Training Solution — auto-suggested description"
+      }
+    },
+    {
+<<<<<<< Updated upstream
+=======
+      "route": "/services/simple-service-1755536778092-swdp40qqh",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Data Analytics Service",
+        "description": "Data Analytics Service — auto-suggested description"
+      }
+    },
+    {
+      "route": "/services/simple-service-1755536818090-7zhdwr7l4",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Premium Training Solution",
+        "description": "Premium Training Solution — auto-suggested description"
+      }
+    },
+    {
+      "route": "/services/simple-service-1755536818091-g88wgyp2c",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Training Service",
+        "description": "Training Service — auto-suggested description"
+      }
+    },
+    {
+>>>>>>> Stashed changes
       "route": "/site-health",
       "missing": [
         "og:image"
