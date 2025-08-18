@@ -1,18 +1,18 @@
 {
-  "timestamp": "2025-08-18T18:31:18.712Z",
+  "timestamp": "2025-08-18T18:34:53.950Z",
   "summary": {
-    "totalWorkflows": 488,
+    "totalWorkflows": 506,
     "complexityDistribution": {
       "very-high": 0,
       "high": 3,
       "medium": 9,
-      "low": 476
+      "low": 494
     },
     "refactoringPriorities": {
       "critical": 0,
       "high": 3,
       "medium": 9,
-      "low": 476
+      "low": 494
     }
   },
   "workflows": {
@@ -4714,6 +4714,24 @@
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-ai-powered-generator-generation-advanced-1755537397342.yml"
     },
+    "ultra-fast-ai-powered-generator-generation-advanced-1755541879588.yml": {
+      "complexityScore": 15,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 56,
+        "jobCount": 0,
+        "stepCount": 6,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-ai-powered-generator-generation-advanced-1755541879588.yml"
+    },
     "ultra-fast-ai-powered-generator-generation-intermediate-1755541130992.yml": {
       "complexityScore": 15,
       "complexityLevel": "low",
@@ -4965,6 +4983,24 @@
       "refactoringPriority": "high",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-automation-creator.yml"
+    },
+    "ultra-fast-autonomous-agent-automation-basic-1755541939606.yml": {
+      "complexityScore": 15,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 56,
+        "jobCount": 0,
+        "stepCount": 6,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-autonomous-agent-automation-basic-1755541939606.yml"
     },
     "ultra-fast-autonomous-agent-development-advanced-1755539721038.yml": {
       "complexityScore": 15,
@@ -5344,6 +5380,24 @@
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-collaborative-automation-automation-intermediate-1755539106241.yml"
     },
+    "ultra-fast-collaborative-automation-automation-intermediate-1755541939599.yml": {
+      "complexityScore": 15,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 56,
+        "jobCount": 0,
+        "stepCount": 6,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-collaborative-automation-automation-intermediate-1755541939599.yml"
+    },
     "ultra-fast-collaborative-automation-deployment-basic-1755541160975.yml": {
       "complexityScore": 15,
       "complexityLevel": "low",
@@ -5451,6 +5505,24 @@
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-collaborative-automation-development-advanced-1755539046260.yml"
+    },
+    "ultra-fast-collaborative-automation-development-advanced-1755541909592.yml": {
+      "complexityScore": 15,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 56,
+        "jobCount": 0,
+        "stepCount": 6,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-collaborative-automation-development-advanced-1755541909592.yml"
     },
     "ultra-fast-collaborative-automation-development-basic-1755541130976.yml": {
       "complexityScore": 15,
@@ -5595,6 +5667,24 @@
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-collaborative-automation-monitoring-advanced-1755537967356.yml"
+    },
+    "ultra-fast-collaborative-automation-monitoring-advanced-1755541939590.yml": {
+      "complexityScore": 15,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 56,
+        "jobCount": 0,
+        "stepCount": 6,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-collaborative-automation-monitoring-advanced-1755541939590.yml"
     },
     "ultra-fast-collaborative-automation-monitoring-basic-1755538329827.yml": {
       "complexityScore": 15,
@@ -5992,6 +6082,24 @@
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-exponential-growth-deployment-intermediate-1755541759591.yml"
     },
+    "ultra-fast-exponential-growth-deployment-intermediate-1755541879617.yml": {
+      "complexityScore": 15,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 56,
+        "jobCount": 0,
+        "stepCount": 6,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-exponential-growth-deployment-intermediate-1755541879617.yml"
+    },
     "ultra-fast-exponential-growth-development-advanced-1755541260505.yml": {
       "complexityScore": 15,
       "complexityLevel": "low",
@@ -6334,6 +6442,24 @@
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-hyper-fast-generator-automation-advanced-1755537847341.yml"
     },
+    "ultra-fast-hyper-fast-generator-automation-basic-1755541909647.yml": {
+      "complexityScore": 15,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 56,
+        "jobCount": 0,
+        "stepCount": 6,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-hyper-fast-generator-automation-basic-1755541909647.yml"
+    },
     "ultra-fast-hyper-fast-generator-automation-expert-1755538723164.yml": {
       "complexityScore": 15,
       "complexityLevel": "low",
@@ -6369,6 +6495,24 @@
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-hyper-fast-generator-development-intermediate-1755541639603.yml"
+    },
+    "ultra-fast-hyper-fast-generator-generation-intermediate-1755541909683.yml": {
+      "complexityScore": 15,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 56,
+        "jobCount": 0,
+        "stepCount": 6,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-hyper-fast-generator-generation-intermediate-1755541909683.yml"
     },
     "ultra-fast-hyper-fast-generator-innovation-basic-1755537937369.yml": {
       "complexityScore": 15,
@@ -6514,6 +6658,24 @@
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-hyper-fast-generator-monitoring-intermediate-1755541789613.yml"
     },
+    "ultra-fast-hyper-fast-generator-monitoring-intermediate-1755542078208.yml": {
+      "complexityScore": 15,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 56,
+        "jobCount": 0,
+        "stepCount": 6,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-hyper-fast-generator-monitoring-intermediate-1755542078208.yml"
+    },
     "ultra-fast-hyper-fast-generator-optimization-advanced-1755538393156.yml": {
       "complexityScore": 15,
       "complexityLevel": "low",
@@ -6585,6 +6747,24 @@
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-hyper-fast-generator-research-advanced-1755541399596.yml"
+    },
+    "ultra-fast-hyper-fast-generator-research-basic-1755542048197.yml": {
+      "complexityScore": 15,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 56,
+        "jobCount": 0,
+        "stepCount": 6,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-hyper-fast-generator-research-basic-1755542048197.yml"
     },
     "ultra-fast-hyper-fast-generator-research-expert-1755538027351.yml": {
       "complexityScore": 15,
@@ -6675,6 +6855,24 @@
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-intelligent-orchestrator-deployment-intermediate-1755538147353.yml"
+    },
+    "ultra-fast-intelligent-orchestrator-deployment-intermediate-1755542048182.yml": {
+      "complexityScore": 15,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 56,
+        "jobCount": 0,
+        "stepCount": 6,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-intelligent-orchestrator-deployment-intermediate-1755542048182.yml"
     },
     "ultra-fast-intelligent-orchestrator-development-basic-1755538573205.yml": {
       "complexityScore": 15,
@@ -7306,6 +7504,24 @@
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-meta-orchestrator-innovation-expert-1755538087340.yml"
     },
+    "ultra-fast-meta-orchestrator-orchestration-expert-1755542078181.yml": {
+      "complexityScore": 15,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 56,
+        "jobCount": 0,
+        "stepCount": 6,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-meta-orchestrator-orchestration-expert-1755542078181.yml"
+    },
     "ultra-fast-meta-orchestrator-research-basic-1755537967370.yml": {
       "complexityScore": 15,
       "complexityLevel": "low",
@@ -7414,6 +7630,24 @@
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-quantum-automation-automation-expert-1755538813147.yml"
     },
+    "ultra-fast-quantum-automation-development-basic-1755541969590.yml": {
+      "complexityScore": 15,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 56,
+        "jobCount": 0,
+        "stepCount": 6,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-quantum-automation-development-basic-1755541969590.yml"
+    },
     "ultra-fast-quantum-automation-development-intermediate-1755538783164.yml": {
       "complexityScore": 15,
       "complexityLevel": "low",
@@ -7503,6 +7737,24 @@
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-quantum-automation-generation-expert-1755537637369.yml"
+    },
+    "ultra-fast-quantum-automation-innovation-advanced-1755541969604.yml": {
+      "complexityScore": 15,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 56,
+        "jobCount": 0,
+        "stepCount": 6,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-quantum-automation-innovation-advanced-1755541969604.yml"
     },
     "ultra-fast-quantum-automation-innovation-expert-1755540141049.yml": {
       "complexityScore": 15,
@@ -7755,6 +8007,24 @@
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-quantum-automation-research-intermediate-1755538117339.yml"
+    },
+    "ultra-fast-quantum-automation-testing-advanced-1755541969618.yml": {
+      "complexityScore": 15,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 56,
+        "jobCount": 0,
+        "stepCount": 6,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-quantum-automation-testing-advanced-1755541969618.yml"
     },
     "ultra-fast-quantum-automation-testing-basic-1755541313100.yml": {
       "complexityScore": 15,
@@ -8206,6 +8476,24 @@
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-self-improving-system-research-basic-1755538087361.yml"
     },
+    "ultra-fast-self-improving-system-research-basic-1755541879602.yml": {
+      "complexityScore": 15,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 56,
+        "jobCount": 0,
+        "stepCount": 6,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-self-improving-system-research-basic-1755541879602.yml"
+    },
     "ultra-fast-self-replicating-factory-automation-basic-1755541160990.yml": {
       "complexityScore": 15,
       "complexityLevel": "low",
@@ -8295,6 +8583,24 @@
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-self-replicating-factory-deployment-advanced-1755539350664.yml"
+    },
+    "ultra-fast-self-replicating-factory-deployment-advanced-1755542078194.yml": {
+      "complexityScore": 15,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 56,
+        "jobCount": 0,
+        "stepCount": 6,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-self-replicating-factory-deployment-advanced-1755542078194.yml"
     },
     "ultra-fast-self-replicating-factory-deployment-basic-1755538513179.yml": {
       "complexityScore": 15,
@@ -8457,6 +8763,24 @@
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-self-replicating-factory-orchestration-basic-1755538207338.yml"
+    },
+    "ultra-fast-self-replicating-factory-research-expert-1755542048213.yml": {
+      "complexityScore": 15,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 56,
+        "jobCount": 0,
+        "stepCount": 6,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-self-replicating-factory-research-expert-1755542048213.yml"
     },
     "ultra-fast-self-replicating-factory-testing-advanced-1755537487341.yml": {
       "complexityScore": 15,
