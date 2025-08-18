@@ -1,5 +1,6 @@
 {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   "generatedAt": "2025-08-18T18:40:14.895Z",
   "files": [
     "update-2025-08-18T18-40.tsx",
@@ -69,6 +70,13 @@
     "update-2025-08-18T18-37.tsx",
     "ultra-1755542225416-r75jhy.tsx",
 >>>>>>> Stashed changes
+=======
+  "generatedAt": "2025-08-18T18:37:08.498Z",
+  "files": [
+    "update-2025-08-18-1837.tsx",
+    "update-2025-08-18T18-37.tsx",
+    "ultra-1755542225416-r75jhy.tsx",
+>>>>>>> Stashed changes
     "update-2025-08-18T18-36.tsx",
     "update-2025-08-18T18-35.tsx",
     "update-2025-08-18-1836.tsx",
@@ -87,12 +95,18 @@
     "ultra-1755542103172-uytfxg.tsx",
     "ultra-1755542101000-jreo1r.tsx",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
     "ultra-1755542220958-thtp4e.tsx",
     "ultra-1755542216526-1chqgd.tsx",
     "ultra-1755542214331-godf0q.tsx",
     "ultra-1755542212457-0fipot.tsx",
     "ultra-1755542144619-0gqqnj.tsx",
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     "update-2025-08-18T18-34.tsx",
     "update-2025-08-18T18-33.tsx",
@@ -184,6 +198,9 @@
     "avgLen": 2385,
     "duplicateCount": 0,
     "seoScore": 5
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   },
   "guidance": [

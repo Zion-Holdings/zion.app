@@ -1,65 +1,132 @@
 {
   "items": [
     {
-      "title": "Playbook — Autonomous Delivery",
-      "href": "/reports/playbooks/playbook-2025-08-18-184123",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:41:23.185Z",
-      "source": "cloud-playbook-factory"
+      "id": "rapid-1755542528875-8mtd3d",
+      "title": "Security Auditing",
+      "route": "/services/rapid-1755542528875-8mtd3d",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:42:08.878Z",
+      "process": "rapid"
     },
     {
-      "title": "Case Study — Cloud Improving",
-      "href": "/reports/cases/case-2025-08-18-184122",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:41:22.918Z",
-      "source": "cloud-deep-research-factory"
+      "id": "rapid-1755542528876-h8r1wq",
+      "title": "Automation Suite",
+      "route": "/products/rapid-1755542528876-h8r1wq",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:42:08.878Z",
+      "process": "rapid"
     },
     {
-      "title": "Guide — Cloud Improving Implementation",
-      "href": "/reports/guides/guide-2025-08-18-184122",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:41:22.918Z",
-      "source": "cloud-deep-research-factory"
+      "id": "rapid-1755542528876-nssnst",
+      "title": "Best Practices in Database Optimization",
+      "route": "/tutorials/rapid-1755542528876-nssnst",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:42:08.878Z",
+      "process": "rapid"
     },
     {
-      "title": "Pattern — Automation Trends 2025",
-      "href": "/reports/patterns/pattern-2025-08-18-184122",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:41:22.918Z",
-      "source": "cloud-deep-research-factory"
+      "id": "ultra-1755542529246-si59t2",
+      "title": "Rapid Technology Advancement",
+      "route": "/reports/updates/ultra-1755542529246-si59t2",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:42:09.250Z",
+      "process": "ultra-fast"
     },
     {
-      "title": "Innovation Insight — 2025-08-18 18-41",
-      "href": "/reports/innovations/insight-2025-08-18T18-41",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:41:22.690Z",
-      "source": "cloud-content-factory"
+      "id": "ultra-1755542529246-zx0hp6",
+      "title": "Ultra-Fast Ultra-fast testing frameworks Insight",
+      "route": "/reports/insights/ultra-1755542529246-zx0hp6",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:42:09.250Z",
+      "process": "ultra-fast"
     },
     {
-      "title": "Autonomous Update — 2025-08-18 18-41",
-      "href": "/reports/updates/update-2025-08-18T18-41",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:41:22.690Z",
-      "source": "cloud-content-factory"
+      "id": "ultra-1755542529247-s7b8xr",
+      "title": "Ultra-Fast Guide: Real-time data processing",
+      "route": "/reports/guides/ultra-1755542529247-s7b8xr",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:42:09.250Z",
+      "process": "ultra-fast"
     },
     {
-      "title": "Innovation Insight — 2025-08-18 18-41",
-      "href": "/reports/innovations/insight-2025-08-18T18-41",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:41:22.690Z",
-      "source": "cloud-content-factory"
+      "id": "ultra-1755542529248-154s3t",
+      "title": "Case Study: Lightning-fast development Success",
+      "route": "/reports/cases/ultra-1755542529248-154s3t",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:42:09.250Z",
+      "process": "ultra-fast"
     },
     {
-      "title": "Autonomous Update — 2025-08-18 18-41",
-      "href": "/reports/updates/update-2025-08-18T18-41",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:41:22.690Z",
-      "source": "cloud-content-factory"
+      "id": "ultra-1755542529249-ujz8z6",
+      "title": "Pattern: Instant deployment systems Architecture",
+      "route": "/reports/patterns/ultra-1755542529249-ujz8z6",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:42:09.250Z",
+      "process": "ultra-fast"
     },
     {
-      "id": "cursor-chat-2025-08-18T18:41:23.301Z",
-      "type": "cursor-chat",
-      "timestamp": "2025-08-18T18:41:23.301Z"
+      "id": "ultra-1755542531320-idmjty",
+      "title": "Ultra-Fast Problem Solving",
+      "route": "/reports/updates/ultra-1755542531320-idmjty",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:42:11.391Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542531322-2htqz8",
+      "title": "Ultra-Fast Real-time data processing Insight",
+      "route": "/reports/insights/ultra-1755542531322-2htqz8",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:42:11.391Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542531323-l9pm04",
+      "title": "Ultra-Fast Guide: Instant feedback loops",
+      "route": "/reports/guides/ultra-1755542531323-l9pm04",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:42:11.391Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542531324-e60s8u",
+      "title": "Case Study: Instant deployment systems Success",
+      "route": "/reports/cases/ultra-1755542531324-e60s8u",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:42:11.391Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542531331-09puzd",
+      "title": "Pattern: Rapid prototyping systems Architecture",
+      "route": "/reports/patterns/ultra-1755542531331-09puzd",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:42:11.391Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "rapid-1755542531480-cvayqz",
+      "title": "Data Processing",
+      "route": "/services/rapid-1755542531480-cvayqz",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:42:11.483Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755542531481-x09xip",
+      "title": "Collaboration Platform",
+      "route": "/products/rapid-1755542531481-x09xip",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:42:11.483Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755542531482-8w5pn2",
+      "title": "Best Practices in Database Optimization",
+      "route": "/tutorials/rapid-1755542531482-8w5pn2",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:42:11.483Z",
+      "process": "rapid"
     }
   ]
 }
