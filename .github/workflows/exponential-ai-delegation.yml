@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   main:
-    name: Main Job
+    name: Exponential Ai Delegation Job
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:

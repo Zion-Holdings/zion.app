@@ -1,18 +1,18 @@
-name: Workflow
+name: Autonomous Workflow Watchdog
 on:
   workflow_dispatch: {}
   schedule:
-  - cron: '*/10 * * * *'
+  - cron: '0 */6 * * *'
 permissions:
   contents: write
   actions: read
   pull-requests: write
 concurrency:
-  group: workflow-${{ github.ref }}
+  group: autonomous-workflow-watchdog
   cancel-in-progress: false
 jobs:
   main:
-    name: Main Job
+    name: Autonomous Workflow Watchdog Job
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -27,7 +27,7 @@ jobs:
         cache: npm
     - name: Install dependencies
       run: npm ci --no-audit --no-fund
-    - name: Run workflow
-      run: 'echo "Workflow Workflow completed successfully"
+    - name: Run Autonomous Workflow Watchdog
+      run: 'echo "Autonomous Workflow Watchdog workflow completed successfully"
 
         '

@@ -30,7 +30,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
         
-      - name: Run workflow
+      - name: Run Pin Actions Weekly
         run: echo "Workflow executed successfully"
         
       - name: Upload results

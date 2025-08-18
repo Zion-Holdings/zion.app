@@ -1671,7 +1671,7 @@
   "cloud-marketing.yml": {
     "name": "cloud-marketing.yml",
     "triggers": [
-      "workflow_dispatch null",
+      "workflow_dispatch {}",
       "schedule"
     ],
     "needs": [],

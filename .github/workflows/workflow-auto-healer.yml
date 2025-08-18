@@ -1,4 +1,4 @@
-name: Workflow Auto-Healer
+name: Workflow Auto Healer Auto-Healer
 
 on:
   schedule:
@@ -38,7 +38,7 @@ jobs:
         run: |
           pip install pyyaml
           
-      - name: Run workflow validation
+      - name: Run Workflow Auto Healer validation
         id: validate
         run: |
           echo "Validating all workflow files..."
