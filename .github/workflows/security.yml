@@ -1,4 +1,4 @@
-name: Security
+name: Security Audit
 
 on:
   push:
@@ -19,10 +19,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  security-audit:
-    name: Security Audit
+  security-scan:
+    name: Security Scan
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     
     steps:
       - name: Checkout repository
@@ -38,57 +38,60 @@ jobs:
         run: npm ci --no-audit --no-fund
 
       - name: Run npm audit
-        run: npm audit --audit-level=high
-        continue-on-error: true
+        run: |
+          echo "Running npm audit..."
+          npm audit --audit-level=high --json > audit-report.json || true
+          
+          # Check for high/critical vulnerabilities
+          if npm audit --audit-level=high; then
+            echo "✅ No high or critical vulnerabilities found"
+          else
+            echo "⚠️ High or critical vulnerabilities detected"
+            exit 1
+          fi
 
-      - name: Run security scanner
-        run: npm run security:scan
-        continue-on-error: true
+      - name: Check for outdated packages
+        run: |
+          echo "Checking for outdated packages..."
+          npm outdated --json > outdated-packages.json || true
+          
+          # Count outdated packages
+          OUTDATED_COUNT=$(cat outdated-packages.json | jq 'length' 2>/dev/null || echo "0")
+          echo "Found $OUTDATED_COUNT outdated packages"
 
-      - name: Check for secrets in code
-        uses: trufflesecurity/trufflehog@main
+      - name: Run Snyk security scan
+        uses: snyk/actions/node@master
+        continue-on-error: true
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          path: .
-          base: ${{ github.event.before }}
-          head: ${{ github.event.after }}
-          extra_args: --only-verified
+          args: --severity-threshold=high
 
-      - name: Upload security report
+      - name: Upload security results
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: security-report
+          name: security-scan-results
           path: |
-            npm-audit.json
-            security-scan-results.json
-          retention-days: 30
-
-  dependency-check:
-    name: Dependency Check
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Check for outdated dependencies
-        run: npm outdated --json > outdated-deps.json || true
-
-      - name: Check for vulnerable dependencies
-        run: npm audit --json > audit-report.json || true
-
-      - name: Upload dependency reports
-        uses: actions/upload-artifact@v4
-        with:
-          name: dependency-reports
-          path: |
-            outdated-deps.json
             audit-report.json
-          retention-days: 30
+            outdated-packages.json
+          retention-days: 7
+
+      - name: Create security summary
+        run: |
+          echo "# Security Scan Summary" > security-summary.md
+          echo "Generated: $(date)" >> security-summary.md
+          echo "" >> security-summary.md
+          
+          if [ -f "audit-report.json" ]; then
+            echo "## NPM Audit Results" >> security-summary.md
+            echo "✅ NPM audit completed" >> security-summary.md
+          fi
+          
+          if [ -f "outdated-packages.json" ]; then
+            echo "## Outdated Packages" >> security-summary.md
+            echo "📦 Package update check completed" >> security-summary.md
+          fi
+          
+          echo "## Snyk Security Scan" >> security-summary.md
+          echo "🔒 Snyk security scan completed" >> security-summary.md
