@@ -29,26 +29,27 @@ check_workflow_structure() {
     local file="$1"
     local issues=()
     
-    # Check for required sections
-    if ! grep -q "^name:" "$file"; then
+    # Check for required sections (allowing for indentation)
+    # Look for workflow name at the top level (either at start or after ---)
+    if ! grep -q "^[[:space:]]*name:" "$file"; then
         issues+=("Missing 'name:' section")
     fi
     
-    if ! grep -q "^on:" "$file"; then
+    if ! grep -q "^[[:space:]]*on:" "$file"; then
         issues+=("Missing 'on:' section")
     fi
     
-    if ! grep -q "^jobs:" "$file"; then
+    if ! grep -q "^[[:space:]]*jobs:" "$file"; then
         issues+=("Missing 'jobs:' section")
     fi
     
-    # Check for runs-on in jobs
-    if ! grep -A 10 "^jobs:" "$file" | grep -q "runs-on:"; then
+    # Check for runs-on in jobs (allowing for indentation)
+    if ! grep -A 10 "^[[:space:]]*jobs:" "$file" | grep -q "runs-on:"; then
         issues+=("Missing 'runs-on:' specification")
     fi
     
-    # Check for permissions
-    if ! grep -q "^permissions:" "$file"; then
+    # Check for permissions (allowing for indentation)
+    if ! grep -q "^[[:space:]]*permissions:" "$file"; then
         issues+=("Missing 'permissions:' section")
     fi
     
@@ -104,7 +105,7 @@ for workflow_file in "$workflow_dir"/*.yml "$workflow_dir"/*.yaml; do
         
         # Check structure
         structure_issues=$(check_workflow_structure "$workflow_file")
-        if [ ${#structure_issues[@]} -eq 0 ]; then
+        if [ -z "$structure_issues" ]; then
             echo -n -e " ${GREEN}✅ Good structure${NC}"
         else
             echo -n -e " ${YELLOW}⚠️  Structure issues${NC}"
@@ -147,7 +148,7 @@ fi
 for workflow_file in "$workflow_dir"/*.yml "$workflow_dir"/*.yaml; do
     if [ -f "$workflow_file" ]; then
         structure_issues=$(check_workflow_structure "$workflow_file")
-        if [ ${#structure_issues[@]} -gt 0 ]; then
+        if [ -n "$structure_issues" ]; then
             echo -e "  ${YELLOW}⚠️  $(basename "$workflow_file") has structural issues${NC}"
             critical_issues=$((critical_issues + 1))
         fi
