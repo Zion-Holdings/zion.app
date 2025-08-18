@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T04:36:37.222Z",
+  "timestamp": "2025-08-18T04:37:40.991Z",
   "summary": {
     "totalWorkflows": 224,
     "complexityDistribution": {
@@ -1835,18 +1835,18 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/codeql-analysis.yml"
     },
     "codeql.yml": {
-      "complexityScore": 0,
+      "complexityScore": 10,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 34,
+        "totalLines": 48,
         "jobCount": 0,
-        "stepCount": 4,
+        "stepCount": 8,
         "conditionalCount": 0,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 5
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -1946,7 +1946,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 35,
+        "totalLines": 42,
         "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
@@ -3332,7 +3332,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 34,
+        "totalLines": 38,
         "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
