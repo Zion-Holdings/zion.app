@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T04:18:43.682Z",
+  "timestamp": "2025-08-18T04:19:48.683Z",
   "critical": [
     {
       "name": "ci-self-heal.yml",
@@ -217,25 +217,6 @@
       "resourceScore": 143
     },
     {
-      "name": "dependency-maintenance.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/dependency-maintenance.yml",
-      "priority": "high",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 25,
-      "concurrentJobs": 5,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "schedule",
-        "workflow_dispatch {}"
-      ],
-      "resourceScore": 140
-    },
-    {
       "name": "security-weekly.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/security-weekly.yml",
       "priority": "high",
@@ -272,6 +253,25 @@
         "workflow_dispatch null"
       ],
       "resourceScore": 132
+    },
+    {
+      "name": "dependency-maintenance.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/dependency-maintenance.yml",
+      "priority": "high",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 45,
+      "concurrentJobs": 12,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch {}",
+        "schedule"
+      ],
+      "resourceScore": 115
     }
   ],
   "medium": [

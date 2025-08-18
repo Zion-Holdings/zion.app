@@ -30,7 +30,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
         
-      - name: Run workflow radar
+      - name: Run workflow radar radar
         run: echo "Workflow executed successfully"
         
       - name: Upload results

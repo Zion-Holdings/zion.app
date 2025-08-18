@@ -30,7 +30,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
         
-      - name: Run workflow health monitor
+      - name: Run workflow health monitor health monitor
         run: echo "Workflow executed successfully"
         
       - name: Upload results

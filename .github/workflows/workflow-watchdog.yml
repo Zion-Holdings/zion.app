@@ -30,7 +30,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
         
-      - name: Run workflow watchdog
+      - name: Run workflow watchdog watchdog
         run: echo "Workflow executed successfully"
         
       - name: Upload results

@@ -1,4 +1,4 @@
-name: Workflow Manager Manager
+name: Workflow Manager Manager Manager
 on:
   workflow_dispatch: null
   schedule:
