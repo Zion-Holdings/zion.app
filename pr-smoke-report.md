@@ -1,19 +1,11 @@
 # pr-smoke Report
 
-<<<<<<< Updated upstream
-Generated: 2025-08-18T15:16:06.078Z
-=======
-Generated: 2025-08-18T15:16:42.515Z
->>>>>>> Stashed changes
+Generated: 2025-08-18T15:20:02.519Z
 
 ## Status
 - Task: pr-smoke
 - Status: Completed
-<<<<<<< Updated upstream
-- Timestamp: 2025-08-18T15:16:06.078Z
-=======
-- Timestamp: 2025-08-18T15:16:42.515Z
->>>>>>> Stashed changes
+- Timestamp: 2025-08-18T15:20:02.519Z
 
 ## Next Steps
 - Implement actual pr-smoke functionality

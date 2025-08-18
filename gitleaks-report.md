@@ -1,19 +1,11 @@
 # gitleaks Report
 
-<<<<<<< Updated upstream
-Generated: 2025-08-18T15:16:05.499Z
-=======
-Generated: 2025-08-18T15:16:41.974Z
->>>>>>> Stashed changes
+Generated: 2025-08-18T15:20:01.900Z
 
 ## Status
 - Task: gitleaks
 - Status: Completed
-<<<<<<< Updated upstream
-- Timestamp: 2025-08-18T15:16:05.499Z
-=======
-- Timestamp: 2025-08-18T15:16:41.974Z
->>>>>>> Stashed changes
+- Timestamp: 2025-08-18T15:20:01.900Z
 
 ## Next Steps
 - Implement actual gitleaks functionality
