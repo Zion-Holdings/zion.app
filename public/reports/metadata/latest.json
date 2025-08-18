@@ -1,6 +1,11 @@
 {
+<<<<<<< Updated upstream
   "generatedAt": "2025-08-18T13:50:00.733Z",
   "pagesScanned": 865,
+=======
+  "generatedAt": "2025-08-18T13:49:00.819Z",
+  "pagesScanned": 849,
+>>>>>>> Stashed changes
   "items": [
     {
       "route": "/404",
@@ -1285,6 +1290,7 @@
       }
     },
     {
+<<<<<<< Updated upstream
       "route": "/reports/blueprints/blueprint-2025-08-18-134901",
       "missing": [
         "og:image"
@@ -1305,6 +1311,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
       "route": "/reports/cases/case-2025-08-18-122902",
       "missing": [
         "og:image"
@@ -2345,6 +2353,7 @@
       }
     },
     {
+<<<<<<< Updated upstream
       "route": "/reports/cases/case-2025-08-18-134901",
       "missing": [
         "og:image"
@@ -2365,6 +2374,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
       "route": "/reports/guides/guide-2025-08-18-122902",
       "missing": [
         "og:image"
@@ -3405,6 +3416,7 @@
       }
     },
     {
+<<<<<<< Updated upstream
       "route": "/reports/guides/guide-2025-08-18-134901",
       "missing": [
         "og:image"
@@ -3425,6 +3437,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
       "route": "/reports/innovations/innovation-2025-08-18-1229",
       "missing": [
         "og:image"
@@ -3935,6 +3949,7 @@
       }
     },
     {
+<<<<<<< Updated upstream
       "route": "/reports/innovations/innovation-2025-08-18-1349",
       "missing": [
         "og:image"
@@ -3945,6 +3960,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
       "route": "/reports/innovations/insight-2025-08-18-1229",
       "missing": [
         "og:image"
@@ -4455,6 +4472,7 @@
       }
     },
     {
+<<<<<<< Updated upstream
       "route": "/reports/innovations/insight-2025-08-18-1349",
       "missing": [
         "og:image"
@@ -4465,6 +4483,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
       "route": "/reports/innovations/insight-2025-08-18T12-29",
       "missing": [
         "og:image"
@@ -4975,6 +4995,7 @@
       }
     },
     {
+<<<<<<< Updated upstream
       "route": "/reports/innovations/insight-2025-08-18T13-49",
       "missing": [
         "og:image"
@@ -4985,6 +5006,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
       "route": "/reports/patterns/pattern-2025-08-18-122902",
       "missing": [
         "og:image"
@@ -6035,6 +6058,7 @@
       }
     },
     {
+<<<<<<< Updated upstream
       "route": "/reports/patterns/pattern-2025-08-18-134901",
       "missing": [
         "og:image"
@@ -6055,6 +6079,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
       "route": "/reports/playbooks/playbook-2025-08-18-122902",
       "missing": [
         "og:image"
@@ -7005,6 +7031,7 @@
       }
     },
     {
+<<<<<<< Updated upstream
       "route": "/reports/playbooks/playbook-2025-08-18-134902",
       "missing": [
         "og:image"
@@ -7025,6 +7052,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
       "route": "/reports/updates/update-2025-08-18-0928",
       "missing": [
         "og:image"
@@ -7567,7 +7596,14 @@
     {
       "route": "/reports/updates/update-2025-08-18-1049",
       "missing": [
+<<<<<<< Updated upstream
         "og:image"
+=======
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+>>>>>>> Stashed changes
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-18 10:49",
@@ -7575,6 +7611,7 @@
       }
     },
     {
+<<<<<<< Updated upstream
       "route": "/reports/updates/update-2025-08-18-1050",
       "missing": [
         "og:title",
@@ -7588,6 +7625,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
       "route": "/reports/updates/update-2025-08-18-1229",
       "missing": [
         "og:image"
@@ -8088,6 +8127,7 @@
       }
     },
     {
+<<<<<<< Updated upstream
       "route": "/reports/updates/update-2025-08-18-1349",
       "missing": [
         "og:image"
@@ -8098,6 +8138,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
       "route": "/reports/updates/update-2025-08-18T12-29",
       "missing": [
         "og:image"
@@ -8608,6 +8650,7 @@
       }
     },
     {
+<<<<<<< Updated upstream
       "route": "/reports/updates/update-2025-08-18T13-49",
       "missing": [
         "og:image"
@@ -8618,6 +8661,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
       "route": "/reports",
       "missing": [
         "og:image"
