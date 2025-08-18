@@ -2,6 +2,34 @@
   "items": [
     {
       "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-18-143805",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T14:38:05.365Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Case Study — Cloud Improving",
+      "href": "/reports/cases/case-2025-08-18-143805",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T14:38:05.146Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-18-143805",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T14:38:05.146Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Automation Trends 2025",
+      "href": "/reports/patterns/pattern-2025-08-18-143805",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T14:38:05.146Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery",
       "href": "/reports/playbooks/playbook-2025-08-18-143747",
       "desc": "New autonomous content",
       "createdAt": "2025-08-18T14:37:47.571Z",
@@ -485,6 +513,11 @@
       "id": "cursor-chat-2025-08-18T14:37:47.653Z",
       "type": "cursor-chat",
       "timestamp": "2025-08-18T14:37:47.653Z"
+    },
+    {
+      "id": "cursor-chat-2025-08-18T14:38:05.564Z",
+      "type": "cursor-chat",
+      "timestamp": "2025-08-18T14:38:05.564Z"
     }
   ]
 }
