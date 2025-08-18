@@ -5699,4 +5699,4 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 - `npm run readme:generate` – Refresh this README
 
 ---
-This README is auto-generated. Do not edit manually.
+This README is auto-generated. Do not edit manually.# Triggering GitHub Actions workflows for testing
