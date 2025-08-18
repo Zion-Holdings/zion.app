@@ -1,19 +1,11 @@
 # agent-agent-1755379777751-3-monitoring-advanced Report
 
-<<<<<<< Updated upstream
-Generated: 2025-08-18T13:50:04.327Z
-=======
-Generated: 2025-08-18T13:48:51.272Z
->>>>>>> Stashed changes
+Generated: 2025-08-18T13:50:40.544Z
 
 ## Status
 - Task: agent-agent-1755379777751-3-monitoring-advanced
 - Status: Completed
-<<<<<<< Updated upstream
-- Timestamp: 2025-08-18T13:50:04.327Z
-=======
-- Timestamp: 2025-08-18T13:48:51.272Z
->>>>>>> Stashed changes
+- Timestamp: 2025-08-18T13:50:40.544Z
 
 ## Next Steps
 - Implement actual agent-agent-1755379777751-3-monitoring-advanced functionality
