@@ -4,21 +4,18 @@ export default function ServicePage() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <Head>
-        <title>Data Processing - Zion Tech Group</title>
-        <meta name="description" content="Professional data processing services to accelerate your business growth and digital transformation." />
-        <meta name="keywords" content="data processing, services, technology, business, digital transformation" />
-        <link rel="canonical" href="https://ziontechgroup.com/services/rapid-1755541699585-z6xf2k" />
-      
-        <meta property="og:title" content="Data Processing" />
-        <meta property="og:description" content="Data Processing — automatically suggested description." />
-        <meta name="twitter:card" content="summary_large_image" /></Head>
+        <title>Security Auditing - Zion Tech Group</title>
+        <meta name="description" content="Professional security auditing services to accelerate your business growth and digital transformation." />
+        <meta name="keywords" content="security auditing, services, technology, business, digital transformation" />
+        <link rel="canonical" href="https://ziontechgroup.com/services/rapid-1755541754312-y4wkaz" />
+      </Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
-        <h1 className="text-4xl font-extrabold text-center mb-8">Data Processing</h1>
+        <h1 className="text-4xl font-extrabold text-center mb-8">Security Auditing</h1>
         
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4">🚀 Service Overview</h2>
           <p className="text-xl text-white/90 mb-4">
-            Our data processing service delivers cutting-edge solutions to help your business thrive in the digital age.
+            Our security auditing service delivers cutting-edge solutions to help your business thrive in the digital age.
           </p>
           <p className="text-white/80">
             We combine industry expertise with innovative technology to deliver results that exceed expectations.
@@ -40,13 +37,13 @@ export default function ServicePage() {
           <h2 className="text-2xl font-bold mb-4">🎯 What We Deliver</h2>
           <p className="text-white/80">
             Our comprehensive approach includes strategy development, implementation, training, and ongoing support
-            to ensure your success with data processing.
+            to ensure your success with security auditing.
           </p>
         </section>
 
         <section className="text-center">
           <p className="text-white/75 mb-4">
-            Ready to transform your business with data processing?
+            Ready to transform your business with security auditing?
           </p>
           <a 
             href="https://ziontechgroup.com/contact" 
@@ -59,9 +56,3 @@ export default function ServicePage() {
     </div>
   );
 }
-
-<Link href="/services/rapid-1755539340458-6lge19" className="internal-link">Related Content</Link>
-
-<Link href="/services/rapid-1755539347154-xzj546" className="internal-link">Related Content</Link>
-
-<Link href="/services/rapid-1755539353529-war86k" className="internal-link">Related Content</Link>
