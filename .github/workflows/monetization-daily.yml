@@ -1,6 +1,6 @@
 name: Monetization Automation Daily
 on:
-  workflow_dispatch: null
+  workflow_dispatch: {}
   schedule:
   - cron: 0 2 * * *
 jobs:
