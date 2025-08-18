@@ -36156,6 +36156,11 @@
       "desc": "New autonomous content",
       "createdAt": "2025-08-18T11:03:49.851Z",
       "source": "cloud-content-factory"
+    },
+    {
+      "id": "cursor-chat-2025-08-18T11:05:28.288Z",
+      "type": "cursor-chat",
+      "timestamp": "2025-08-18T11:05:28.288Z"
     }
   ]
 }
