@@ -22,6 +22,4 @@ export default function Contact() {
   );
 }
 
-
-
 <a href="https://zoom.us/j/ziontechgroup" target="_blank" rel="noopener noreferrer" className="external-link link-instance-5">[BUSINESS] Business Tool</a>

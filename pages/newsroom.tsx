@@ -6,7 +6,10 @@ export default function Newsroom() {
       <Head>
         <title>Newsroom — Curated Tech Headlines</title>
         <meta name="description" content="Curated technology and AI headlines from reputable sources." />
-      </Head>
+      
+        <meta property="og:title" content="Newsroom" />
+        <meta property="og:description" content="Newsroom — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       <main className="container mx-auto px-4 py-12">
         <h1 className="text-4xl font-extrabold mb-2">Newsroom</h1>
         <p className="text-white/70 mb-6">Updated automatically from multiple sources.</p>
@@ -41,6 +44,10 @@ export default function Newsroom() {
           </li>
           <li className="py-2">
             <a href="https://techcrunch.com/2025/08/15/sam-altman-over-bread-rolls-explores-life-after-gpt-5/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Sam Altman, over bread rolls, explores life after GPT-5</a>
+            <span className="text-white/50 ml-2">(TechCrunch)</span>
+          </li>
+          <li className="py-2">
+            <a href="https://techcrunch.com/2025/08/18/texas-ag-accuses-meta-character-ai-of-misleading-kids-with-mental-health-claims/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Texas AG accuses Meta, Character.AI of misleading kids with mental health claims</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
           <li className="py-2">
@@ -85,10 +92,6 @@ export default function Newsroom() {
           </li>
           <li className="py-2">
             <a href="https://techcrunch.com/2025/08/13/nasa-has-sparked-a-race-to-develop-the-data-pipeline-to-mars/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">NASA has sparked a race to develop the data pipeline to Mars</a>
-            <span className="text-white/50 ml-2">(TechCrunch)</span>
-          </li>
-          <li className="py-2">
-            <a href="https://techcrunch.com/2025/08/13/why-i-finally-left-spotify/" target="_blank" rel="noopener" className="text-cyan-300 hover:text-cyan-200 underline">Why I finally left Spotify</a>
             <span className="text-white/50 ml-2">(TechCrunch)</span>
           </li>
         </ul>

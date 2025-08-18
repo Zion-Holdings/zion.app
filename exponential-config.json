@@ -3,7 +3,7 @@
     "enabled": true,
     "growthMultiplier": 3,
     "targetExponentialFactor": 10,
-    "factoryCreationInterval": 9216,
+    "factoryCreationInterval": 7372.8,
     "agentCreationInterval": 7200,
     "selfReplicationInterval": 21600
   },

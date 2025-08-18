@@ -1,5 +1,5 @@
 [build]
-  command = "npm ci && npm run export"
+  command = "npm run netlify:build"
   publish = "out"
 
 [build.environment]
@@ -7,6 +7,8 @@
   NODE_OPTIONS = "--max-old-space-size=6144 --openssl-legacy-provider"
   NEXT_DISABLE_SOURCEMAPS = "1"
   NETLIFY_NEXT_PLUGIN_SKIP = "true"
+  SKIP_REACT_VERSION_CHECK = "true"
+  LEGACY_PEER_DEPS = "true"
   # When triggering chained builds via build hook, set NETLIFY_RERUN_CHAIN=1 in the hook payload/env
 
 [functions]
