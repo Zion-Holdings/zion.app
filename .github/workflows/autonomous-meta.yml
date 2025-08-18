@@ -3,7 +3,7 @@ name: Autonomous Meta Factory
 on:
   schedule:
     - cron: '*/30 * * * *'
-  workflow_dispatch: {}
+  workflow_dispatch: null
 
 jobs:
   meta-factory:
@@ -15,18 +15,14 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-
       - name: Install dependencies
         run: npm ci
-
       - name: Run Autonomous Meta Orchestrator (once)
         run: node automation/autonomous-meta-orchestrator.cjs once
-
       - name: Commit and push changes
         run: |
           if [ -n "$(git status --porcelain)" ]; then

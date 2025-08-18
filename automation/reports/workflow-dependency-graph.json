@@ -1826,7 +1826,7 @@
   "continuous-improvement.yml": {
     "name": "continuous-improvement.yml",
     "triggers": [
-      "workflow_dispatch null",
+      "workflow_dispatch {}",
       "schedule"
     ],
     "needs": [],
@@ -2398,7 +2398,7 @@
     "priority": "medium",
     "resourceRequirements": {
       "runner": "ubuntu-latest",
-      "memory": "standard",
+      "memory": "medium",
       "timeout": 30,
       "concurrentJobs": 5
     },
@@ -2732,7 +2732,7 @@
   "netlify-monitor.yml": {
     "name": "netlify-monitor.yml",
     "triggers": [
-      "workflow_dispatch null",
+      "workflow_dispatch {}",
       "schedule"
     ],
     "needs": [],
@@ -2834,15 +2834,17 @@
   "performance-monitoring.yml": {
     "name": "performance-monitoring.yml",
     "triggers": [
-      "schedule",
-      "workflow_dispatch"
+      "push",
+      "pull_request",
+      "workflow_dispatch {}",
+      "schedule"
     ],
     "needs": [],
     "outputs": [],
     "priority": "medium",
     "resourceRequirements": {
       "runner": "ubuntu-latest",
-      "memory": "standard",
+      "memory": "medium",
       "timeout": 30,
       "concurrentJobs": 5
     },

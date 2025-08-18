@@ -1,7 +1,7 @@
 name: Dependency Updates
 on:
   schedule:
-  - cron: 0 4 * * 1
+    - cron: 0 4 * * 1
   workflow_dispatch: null
 permissions:
   contents: write
@@ -16,30 +16,32 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-      with:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
         token: ${{ secrets.GITHUB_TOKEN }}
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
-        cache: npm
-    - name: Install jq
-      run: sudo apt-get update && sudo apt-get install -y jq
-    - name: Install dependencies
-      run: npm ci --no-audit --no-fund
-    - name: Check for outdated dependencies
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Check for outdated dependencies
       id: check-deps
-      run: "echo \"Checking for outdated dependencies...\"\nnpm outdated --json >\
+        run:
+                "echo \"Checking for outdated dependencies...\"\nnpm outdated --json >\
         \ outdated-deps.json || echo \"{}\" > outdated-deps.json\n\n# Count outdated\
         \ packages\nOUTDATED_COUNT=$(jq 'length' outdated-deps.json)\necho \"outdated_count=$OUTDATED_COUNT\"\
         \ >> $GITHUB_OUTPUT\n\nif [ \"$OUTDATED_COUNT\" -gt 0 ]; then\n  echo \"Found\
         \ $OUTDATED_COUNT outdated dependencies\"\nelse\n  echo \"All dependencies\
         \ are up to date\"\nfi\n"
-    - name: Update dependencies
+      - name: Update dependencies
       if: steps.check-deps.outputs.outdated_count > '0'
-      run: "echo \"Updating dependencies...\"\n\n# Update npm packages\nnpm update\n\
+        run:
+                "echo \"Updating dependencies...\"\n\n# Update npm packages\nnpm update\n\
         \n# Check for major version updates\nnpm outdated --json > major-updates.json\
         \ || echo \"{}\" > major-updates.json\n\n# Generate update report\necho \"\
         ## Dependency Update Report\" > update-report.md\necho \"Generated on $(date)\"\
@@ -47,10 +49,10 @@ jobs:
         \ >> update-report.md\njq -r 'to_entries[] | \"- \\(.key): \\(.value.current)\
         \ \u2192 \\(.value.latest)\"' outdated-deps.json >> update-report.md || echo\
         \ \"No updates available\" >> update-report.md\n"
-    - name: Create Pull Request
+      - name: Create Pull Request
       if: steps.check-deps.outputs.outdated_count > '0'
-      uses: peter-evans/create-pull-request@v5
-      with:
+        uses: peter-evans/create-pull-request@v5
+        with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: 'chore: update dependencies'
         title: "\U0001F916 Automated Dependency Updates"
@@ -87,10 +89,10 @@ jobs:
           maintenance
 
           '
-    - name: Upload reports
-      uses: actions/upload-artifact@v4
+      - name: Upload reports
+        uses: actions/upload-artifact@v4
       if: always()
-      with:
+        with:
         name: dependency-reports
         path: 'outdated-deps.json
 

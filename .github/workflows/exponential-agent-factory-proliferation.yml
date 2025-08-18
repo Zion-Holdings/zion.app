@@ -37,13 +37,11 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
-      
       - name: Analyze current automation ecosystem
         id: analyze
         run: |
@@ -59,7 +57,6 @@ jobs:
           
           echo "total_factories=$TOTAL_FACTORIES" >> $GITHUB_OUTPUT
           echo "Current automation components: $TOTAL_FACTORIES"
-      
       - name: Calculate exponential growth potential
         id: calculate
         run: |
@@ -69,7 +66,6 @@ jobs:
           
           echo "growth_potential=$POTENTIAL" >> $GITHUB_OUTPUT
           echo "Growth potential: $POTENTIAL components"
-      
       - name: Calculate exponential factor
         id: exponential
         run: |
@@ -84,7 +80,6 @@ jobs:
           
           echo "factor=$FACTOR" >> $GITHUB_OUTPUT
           echo "Exponential factor: $FACTOR"
-      
       - name: Determine next generation target
         id: target
         run: |
@@ -112,13 +107,11 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
-      
       - name: Create exponential factory
         run: |
           echo "Creating exponential factory: ${{ matrix.factory-type }}-${{ matrix.complexity }}-${{ matrix.specialization }}"

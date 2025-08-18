@@ -2,7 +2,7 @@ name: Infinite Improvement Loop
 on:
   workflow_dispatch: null
   schedule:
-  - cron: 0 2 * * *
+    - cron: 0 2 * * *
 concurrency:
   group: infinite-improvement-${{ github.ref }}
   cancel-in-progress: false
@@ -12,30 +12,30 @@ jobs:
     permissions:
       contents: read
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-    - name: Setup Node
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
-        cache: npm
-    - name: Install dependencies
-      run: npm ci
-    - name: Run consolidated improvement runner
-      run: node automation/infinite-improvement-runner.cjs || true
-    - name: Lint and type-check
-      run: 'npm run lint
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Run consolidated improvement runner
+        run: node automation/infinite-improvement-runner.cjs || true
+      - name: Lint and type-check
+        run: 'npm run lint
 
         npm run type-check
 
         '
-    - name: Build (smoke)
-      run: npm run build
-    - name: Upload improvement artifacts
-      uses: actions/upload-artifact@v4
-      with:
+      - name: Build (smoke)
+        run: npm run build
+      - name: Upload improvement artifacts
+        uses: actions/upload-artifact@v4
+        with:
         name: infinite-improvement-artifacts
         path: 'automation/logs/**/*
 
@@ -44,8 +44,9 @@ jobs:
           '
         if-no-files-found: ignore
         retention-days: 7
-    - name: Commit and push changes
-      run: "if [ -n \"$(git status --porcelain)\" ]; then\n  git config user.name\
+      - name: Commit and push changes
+        run:
+                "if [ -n \"$(git status --porcelain)\" ]; then\n  git config user.name\
         \ \"github-actions[bot]\"\n  git config user.email \"41898282+github-actions[bot]@users.noreply.github.com\"\
         \n  git add -A\n  git commit -m \"chore(automation): infinite improvement\
         \ loop updates [skip ci]\"\n  git push origin HEAD:$(git rev-parse --abbrev-ref\

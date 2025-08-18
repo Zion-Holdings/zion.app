@@ -3,7 +3,7 @@ name: Dependency Maintenance
 on:
   schedule:
     - cron: '17 5 * * *'
-  workflow_dispatch: {}
+  workflow_dispatch: null
 
 jobs:
   maintain-deps:
@@ -14,18 +14,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-
       - name: Install dependencies
         run: npm ci
-
       - name: Run dependency maintenance
         run: node automation/dependency-update-orchestrator.cjs
-
       - name: Push changes (if any)
         run: |
           if [ -n "$(git status --porcelain)" ]; then

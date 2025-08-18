@@ -1,18 +1,18 @@
 {
-  "timestamp": "2025-08-18T04:09:31.041Z",
+  "timestamp": "2025-08-18T04:48:40.525Z",
   "summary": {
     "totalWorkflows": 224,
     "complexityDistribution": {
       "very-high": 0,
       "high": 0,
-      "medium": 8,
-      "low": 216
+      "medium": 9,
+      "low": 215
     },
     "refactoringPriorities": {
       "critical": 0,
       "high": 0,
-      "medium": 8,
-      "low": 216
+      "medium": 9,
+      "low": 215
     }
   },
   "workflows": {
@@ -1946,7 +1946,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 35,
+        "totalLines": 42,
         "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
@@ -2537,12 +2537,12 @@
       "path": "/workspace/.github/workflows/intelligent-content-generation.yml"
     },
     "knowledge-graph-radar.yml": {
-      "complexityScore": 0,
+      "complexityScore": 15,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 44,
+        "totalLines": 77,
         "jobCount": 0,
-        "stepCount": 5,
+        "stepCount": 6,
         "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
@@ -3005,20 +3005,20 @@
       "path": "/workspace/.github/workflows/performance-audit.yml"
     },
     "performance-monitoring.yml": {
-      "complexityScore": 0,
-      "complexityLevel": "low",
+      "complexityScore": 35,
+      "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 44,
+        "totalLines": 124,
         "jobCount": 0,
-        "stepCount": 5,
-        "conditionalCount": 1,
+        "stepCount": 15,
+        "conditionalCount": 3,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 3
+        "actionCount": 6
       },
-      "refactoringPriority": "low",
+      "refactoringPriority": "medium",
       "status": "active",
       "path": "/workspace/.github/workflows/performance-monitoring.yml"
     },
