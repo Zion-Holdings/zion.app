@@ -1,3 +1,4 @@
+---
 name: UI Evolution Weekly Beautify
 on:
   workflow_dispatch: {}

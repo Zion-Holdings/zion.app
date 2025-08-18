@@ -1,3 +1,4 @@
+---
 name: Cloud Marketing Automations
 on:
   workflow_dispatch: {}

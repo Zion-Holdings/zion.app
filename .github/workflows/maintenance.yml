@@ -1,3 +1,4 @@
+---
 name: Repository Maintenance
 on:
   workflow_dispatch: {}

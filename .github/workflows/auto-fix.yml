@@ -1,3 +1,4 @@
+---
 name: Autonomous Auto-Fix
 on:
   workflow_dispatch: {}

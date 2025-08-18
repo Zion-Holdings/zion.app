@@ -1,3 +1,4 @@
+---
 name: Diverse Agent Matrix
 on:
   workflow_dispatch: {}
