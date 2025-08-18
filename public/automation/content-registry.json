@@ -4,6 +4,62 @@
       "title": "Innovation Insight — 2025-08-18 17-49",
       "href": "/reports/innovations/insight-2025-08-18T17-49",
       "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:49:07.261Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 17-49",
+      "href": "/reports/updates/update-2025-08-18T17-49",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:49:07.261Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 17-49",
+      "href": "/reports/innovations/insight-2025-08-18T17-49",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:49:07.261Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 17-49",
+      "href": "/reports/updates/update-2025-08-18T17-49",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:49:07.261Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 17-49",
+      "href": "/reports/innovations/insight-2025-08-18T17-49",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:49:03.704Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 17-49",
+      "href": "/reports/updates/update-2025-08-18T17-49",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:49:03.704Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 17-49",
+      "href": "/reports/innovations/insight-2025-08-18T17-49",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:49:03.704Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 17-49",
+      "href": "/reports/updates/update-2025-08-18T17-49",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:49:03.704Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 17-49",
+      "href": "/reports/innovations/insight-2025-08-18T17-49",
+      "desc": "New autonomous content",
       "createdAt": "2025-08-18T17:49:00.315Z",
       "source": "cloud-content-factory"
     },
@@ -91,6 +147,30 @@
       "type": "ultra-fast-generated",
       "created": "2025-08-18T17:49:01.012Z",
       "process": "ultra-fast"
+    },
+    {
+      "id": "rapid-1755539347154-xzj546",
+      "title": "Cloud Infrastructure",
+      "route": "/services/rapid-1755539347154-xzj546",
+      "type": "rapid-generated",
+      "created": "2025-08-18T17:49:07.157Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755539347155-oli1gc",
+      "title": "Smart Dashboard",
+      "route": "/products/rapid-1755539347155-oli1gc",
+      "type": "rapid-generated",
+      "created": "2025-08-18T17:49:07.157Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755539347156-s63t87",
+      "title": "Getting Started with Web Development",
+      "route": "/tutorials/rapid-1755539347156-s63t87",
+      "type": "rapid-generated",
+      "created": "2025-08-18T17:49:07.157Z",
+      "process": "rapid"
     }
   ]
 }
