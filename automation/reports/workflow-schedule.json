@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T03:41:46.899Z",
+  "timestamp": "2025-08-18T03:42:41.387Z",
   "critical": [
     {
       "name": "ci-self-heal.yml",
@@ -4159,7 +4159,7 @@
       },
       "dependencies": [],
       "triggers": [
-        "workflow_dispatch null",
+        "workflow_dispatch {}",
         "schedule"
       ],
       "resourceScore": 100
@@ -4226,25 +4226,6 @@
   ],
   "low": [
     {
-      "name": "maintenance.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/maintenance.yml",
-      "priority": "low",
-      "resourceIntensity": "high",
-      "estimatedDuration": 20,
-      "concurrentJobs": 8,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "workflow_dispatch null",
-        "schedule"
-      ],
-      "resourceScore": 92
-    },
-    {
       "name": "autonomous-deep-maintenance.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-deep-maintenance.yml",
       "priority": "low",
@@ -4281,6 +4262,25 @@
         "workflow_dispatch null"
       ],
       "resourceScore": 75
+    },
+    {
+      "name": "maintenance.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/maintenance.yml",
+      "priority": "low",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 30,
+      "concurrentJobs": 9,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch {}"
+      ],
+      "resourceScore": 71
     }
   ],
   "resourceIntensive": [
@@ -4327,25 +4327,6 @@
         "schedule"
       ],
       "resourceScore": 110
-    },
-    {
-      "name": "maintenance.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/maintenance.yml",
-      "priority": "low",
-      "resourceIntensity": "high",
-      "estimatedDuration": 20,
-      "concurrentJobs": 8,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "workflow_dispatch null",
-        "schedule"
-      ],
-      "resourceScore": 92
     }
   ],
   "recommendations": [
@@ -4353,11 +4334,6 @@
       "type": "warning",
       "message": "Too many critical workflows (5/3)",
       "suggestion": "Consider consolidating or deprioritizing some critical workflows"
-    },
-    {
-      "type": "warning",
-      "message": "Too many resource-intensive workflows (3/2)",
-      "suggestion": "Schedule resource-intensive workflows during off-peak hours"
     },
     {
       "type": "info",

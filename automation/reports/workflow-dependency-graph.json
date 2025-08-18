@@ -2013,7 +2013,7 @@
   "diverse-agent-matrix.yml": {
     "name": "diverse-agent-matrix.yml",
     "triggers": [
-      "workflow_dispatch null",
+      "workflow_dispatch {}",
       "schedule"
     ],
     "needs": [],
@@ -2526,8 +2526,8 @@
   "maintenance.yml": {
     "name": "maintenance.yml",
     "triggers": [
-      "workflow_dispatch null",
-      "schedule"
+      "schedule",
+      "workflow_dispatch {}"
     ],
     "needs": [],
     "outputs": [],
@@ -2535,10 +2535,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 15,
-      "concurrentJobs": 6
+      "timeout": 30,
+      "concurrentJobs": 5
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 30
   },
   "marketing-daily.yml": {
     "name": "marketing-daily.yml",

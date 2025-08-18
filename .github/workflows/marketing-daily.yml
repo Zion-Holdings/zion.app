@@ -10,9 +10,14 @@ permissions:
   contents: read
   actions: read
 
+concurrency:
+  group: marketing-daily
+  cancel-in-progress: false
+
 jobs:
   marketing:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Checkout
         uses: actions/checkout@v4
