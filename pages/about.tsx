@@ -305,7 +305,6 @@ export default function AboutPage() {
   );
 }
 
-<a href="https://linkedin.com/company/zion-tech-group" target="_blank" rel="noopener noreferrer" className="external-link">Company Profile</a>
 
 <a href="https://youtube.com/ziontechgroup" target="_blank" rel="noopener noreferrer" className="external-link link-instance-4">[SOCIAL] Social Media</a>
 
