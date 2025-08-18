@@ -16,6 +16,9 @@ export default function MicroservicesTutorial() {
       <main className="container mx-auto px-6 py-12">
         <div className="max-w-4xl mx-auto">
           <nav className="mb-8">
+        <Link href="/reports/blueprints/blueprint-2025-08-18-122952" className="internal-link">Related Content</Link>
+        <Link href="/reports/blueprints/blueprint-2025-08-18-122931" className="internal-link">Related Content</Link>
+        <Link href="/reports/blueprints/blueprint-2025-08-18-122901" className="internal-link">Related Content</Link>
             <Link href="/reports" className="text-cyan-400 hover:text-cyan-300">
               ← Back to Reports
             </Link>
