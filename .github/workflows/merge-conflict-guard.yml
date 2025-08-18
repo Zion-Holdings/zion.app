@@ -3,7 +3,7 @@ name: Merge Conflict Guard
 on:
   workflow_dispatch: null
   schedule:
-  - cron: 0 2 * * *
+    - cron: 0 2 * * *
 concurrency:
   group: merge-guard-${{ github.ref }}
   cancel-in-progress: true
@@ -12,18 +12,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-    - name: Use Node.js 20.x
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20.x
-    - name: Install dependencies
-      run: 'npm ci --ignore-scripts
+        with:
+          fetch-depth: 0
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+      - name: Install dependencies
+        run: 'npm ci --ignore-scripts
 
         '
-    - name: Check for merge conflicts and markers
-      run: 'bash scripts/check-merge-conflicts.sh
+      - name: Check for merge conflicts and markers
+        run: 'bash scripts/check-merge-conflicts.sh
 
         '
     timeout-minutes: 30
@@ -32,10 +32,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-    - name: Simulate merge with base branch
-      run: "git fetch origin ${{ github.base_ref }}\ngit merge --no-commit --no-ff\
+        with:
+          fetch-depth: 0
+      - name: Simulate merge with base branch
+        run: "git fetch origin ${{ github.base_ref }}\ngit merge --no-commit --no-ff\
         \ --no-edit origin/${{ github.base_ref }} || {\n  echo \"Merge conflicts detected\
         \ when merging PR into ${{ github.base_ref }}\";\n  git diff --name-only --diff-filter=U\
         \ || true;\n  exit 1;\n}\ngit merge --abort || true"

@@ -3,17 +3,17 @@ name: CI Self Heal
 on:
   workflow_dispatch: {}
   schedule:
-  - cron: '0 */4 * * *'
+  - cron: '0 */2 * * *' # Every 2 hours
 permissions:
   contents: write
   actions: read
   pull-requests: write
 concurrency:
-  group: ci-self-heal
+  group: ci-self-heal-${{ github.ref }}
   cancel-in-progress: false
 jobs:
   main:
-    name: CI Self Heal Job
+    name: Main Job
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -28,5 +28,5 @@ jobs:
         cache: npm
     - name: Install dependencies
       run: npm ci --no-audit --no-fund
-    - name: Run CI self heal
-      run: 'echo "CI self heal workflow completed successfully"'
+    - name: Run workflow
+      run: echo "CI self-heal workflow completed successfully"

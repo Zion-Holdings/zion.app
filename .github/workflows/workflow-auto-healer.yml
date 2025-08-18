@@ -25,16 +25,13 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
-
       - name: Install dependencies
         run: |
           pip install pyyaml
-
       - name: Run workflow validation
         id: validate
         run: |
@@ -56,13 +53,11 @@ jobs:
             echo "needs_fix=false" >> $GITHUB_OUTPUT
             echo "All workflows are valid"
           fi
-
       - name: Report workflow status
         run: |
           echo "Workflow validation completed"
           echo "Needs fix: ${{ steps.validate.outputs.needs_fix }}"
           echo "Invalid count: ${{ steps.validate.outputs.invalid_count }}"
-
       - name: Create issue for manual review
         if: steps.validate.outputs.needs_fix == 'true'
         uses: actions/github-script@v7

@@ -30,26 +30,21 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
-
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
-
       - name: Run comprehensive workflow fixer
         run: |
           chmod +x fix-github-actions-comprehensive.sh
           ./fix-github-actions-comprehensive.sh
-
       - name: Validate fixes
         run: |
           chmod +x validate-workflows-comprehensive.sh
           ./validate-workflows-comprehensive.sh
-
       - name: Check for changes
         id: check-changes
         run: |
@@ -61,7 +56,6 @@ jobs:
             echo "has-changes=false" >> $GITHUB_OUTPUT
             echo "No changes detected"
           fi
-
       - name: Commit and push fixes
         if: steps.check-changes.outputs.has-changes == 'true'
         run: |
@@ -70,7 +64,6 @@ jobs:
           git add .github/workflows/*.yml
           git commit -m "🔧 Auto-fix GitHub Actions workflows - $(date -u +'%Y-%m-%d %H:%M:%S UTC')" || exit 0
           git push origin HEAD:${{ github.ref }}
-
       - name: Create summary
         run: |
           echo "## Workflow Auto-Fix Summary" >> $GITHUB_STEP_SUMMARY

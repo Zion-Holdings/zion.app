@@ -3,7 +3,7 @@ name: monetization
 on:
   workflow_dispatch: {}
   schedule:
-  - cron: '0 */2 * * *'
+    - cron: '0 */2 * * *'
 permissions:
   contents: write
   actions: read
@@ -17,16 +17,16 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
-        cache: npm
-    - name: Install dependencies
-      run: npm ci --no-audit --no-fund
-    - name: Run workflow
-      run: echo "Workflow completed successfully"
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Run workflow
+        run: echo "Workflow completed successfully"

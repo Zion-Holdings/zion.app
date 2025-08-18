@@ -3,7 +3,7 @@ name: Cloud Marketing Automations
 on:
   workflow_dispatch: null
   schedule:
-  - cron: 0 2 * * *
+    - cron: 0 2 * * *
 permissions:
   contents: write
   pull-requests: write
@@ -22,35 +22,35 @@ jobs:
       IG_IMAGE_URL: ${{ secrets.IG_IMAGE_URL }}
       CANONICAL_URL: https://ziontechgroup.com
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20
-        cache: npm
-    - name: Install dependencies
-      run: npm ci
-    - name: Prepare LinkedIn Marketing (analyze + factory)
-      run: 'node automation/linkedin-marketing-analyzer.cjs || true
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Prepare LinkedIn Marketing (analyze + factory)
+        run: 'node automation/linkedin-marketing-analyzer.cjs || true
 
         node automation/linkedin-marketing-factory.cjs || true
 
         '
-    - name: Run LinkedIn Marketing poster (once)
-      run: node automation/linkedin-marketing-orchestrator.cjs once || true
-    - name: Run LinkedIn Pro (analyze + factory + post once)
-      run: node automation/linkedin-pro-orchestrator.cjs once || true
-    - name: Prepare Instagram Marketing (analyze + factory)
-      run: 'node automation/instagram-marketing-analyzer.cjs || true
+      - name: Run LinkedIn Marketing poster (once)
+        run: node automation/linkedin-marketing-orchestrator.cjs once || true
+      - name: Run LinkedIn Pro (analyze + factory + post once)
+        run: node automation/linkedin-pro-orchestrator.cjs once || true
+      - name: Prepare Instagram Marketing (analyze + factory)
+        run: 'node automation/instagram-marketing-analyzer.cjs || true
 
         node automation/instagram-marketing-factory.cjs || true
 
         '
-    - name: Run Instagram Marketing poster (once)
-      run: node automation/instagram-marketing-orchestrator.cjs once || true
-    - name: Commit any generated changes
-      run: 'git config user.name "github-actions[bot]"
+      - name: Run Instagram Marketing poster (once)
+        run: node automation/instagram-marketing-orchestrator.cjs once || true
+      - name: Commit any generated changes
+        run: 'git config user.name "github-actions[bot]"
 
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 

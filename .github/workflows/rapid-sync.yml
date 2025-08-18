@@ -21,28 +21,22 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: npm
-
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
-
       - name: Run automations bundle
         run: |
           node scripts/automations/run_all.cjs || true
-
       - name: Lint and type-check (non-blocking)
         run: |
           npm run lint || true
           npm run type-check || true
-
       - name: Build (non-blocking)
         run: npm run build || true
-
       - name: Commit and push changes
         run: |
           if [ -n "$(git status --porcelain)" ]; then

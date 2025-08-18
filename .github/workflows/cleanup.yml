@@ -2,7 +2,7 @@
 name: Cleanup
 on:
   schedule:
-  - cron: 0 3 * * *
+    - cron: 0 3 * * *
   workflow_dispatch: {}
 permissions:
   contents: write
@@ -17,19 +17,19 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
-        cache: npm
-    - name: Install dependencies
-      run: npm ci --no-audit --no-fund
-    - name: Clean up old automation files
-      run: '# Remove old analytics files (older than 7 days)
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Clean up old automation files
+        run: '# Remove old analytics files (older than 7 days)
 
         find automation/analytics -name "*.json" -mtime +7 -delete 2>/dev/null ||
         true
@@ -63,16 +63,16 @@ jobs:
         find pages/reports -name "*.md" -mtime +7 -delete 2>/dev/null || true
 
         '
-    - name: Clean up build artifacts
-      run: '# Remove build artifacts
+      - name: Clean up build artifacts
+        run: '# Remove build artifacts
 
         rm -rf .next out tsconfig.tsbuildinfo 2>/dev/null || true
 
         rm -rf node_modules/.cache 2>/dev/null || true
 
         '
-    - name: Clean up git state
-      run: 'git config --global user.name "github-actions[bot]"
+      - name: Clean up git state
+        run: 'git config --global user.name "github-actions[bot]"
 
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
@@ -91,7 +91,7 @@ jobs:
         git clean -fd
 
         '
-    - name: Commit cleanup changes
-      run: "if [[ -n \"$(git status --porcelain)\" ]]; then\n  git add -A\n  git commit\
+      - name: Commit cleanup changes
+        run: "if [[ -n \"$(git status --porcelain)\" ]]; then\n  git add -A\n  git commit\
         \ -m \"chore: cleanup old files and artifacts [skip ci]\"\n  git push\nelse\n\
         \  echo \"No cleanup changes to commit\"\nfi\n"

@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  run:
+        run:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
@@ -25,21 +25,17 @@ jobs:
         uses: actions/checkout@v4
         with:
           persist-credentials: true
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
-
       - name: Install dependencies
         run: npm ci
-
       - name: Configure Git identity
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
       - name: Ensure branch up to date
         env:
           BRANCH: ${{ github.ref_name || 'main' }}
@@ -47,15 +43,12 @@ jobs:
           git fetch origin
           git checkout "$BRANCH"
           git pull --rebase origin "$BRANCH" || true
-
       - name: Run Netlify trigger (live)
         if: ${{ env.NETLIFY_BASE_URL != '' }}
         run: npm run netlify:trigger -- --concurrency 10 --timeout 15000
-
       - name: Run Netlify trigger (dry-run fallback)
         if: ${{ env.NETLIFY_BASE_URL == '' }}
         run: npm run netlify:trigger -- --dry-run --concurrency 10 --timeout 15000
-
       - name: Commit and push changes
         if: always()
         run: |

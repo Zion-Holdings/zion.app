@@ -26,18 +26,18 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-    - name: Setup Python
-      uses: actions/setup-python@v4
-      with:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
         python-version: '3.11'
-    - name: Install dependencies
-      run: pip install pyyaml
-    - name: Validate workflow syntax
-      run: |
+      - name: Install dependencies
+        run: pip install pyyaml
+      - name: Validate workflow syntax
+        run: |
         echo "🔍 Validating workflow syntax..."
 
         # Find all workflow files

@@ -5,7 +5,7 @@ on:
     branches:
     - main
   schedule:
-  - cron: '0 */2 * * *'
+    - cron: '0 */2 * * *'
   workflow_dispatch: null
 jobs:
   sync:
@@ -13,20 +13,20 @@ jobs:
     permissions:
       contents: read
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20
-        cache: npm
-    - name: Install dependencies
-      run: npm ci
-    - name: Run frontend sync (single cycle)
-      run: node automation/frontend-sync-orchestrator.cjs once | cat
-    - name: Upload frontend-sync reports and logs
-      uses: actions/upload-artifact@v4
-      with:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Run frontend sync (single cycle)
+        run: node automation/frontend-sync-orchestrator.cjs once | cat
+      - name: Upload frontend-sync reports and logs
+        uses: actions/upload-artifact@v4
+        with:
         name: frontend-sync-artifacts
         path: 'data/reports/frontend-sync/**/*.json
 
@@ -35,8 +35,8 @@ jobs:
           '
         if-no-files-found: ignore
         retention-days: 7
-    - name: Push changes (if any)
-      run: "if [ -n \"$(git status --porcelain)\" ]; then\n  git config user.name\
+      - name: Push changes (if any)
+        run: "if [ -n \"$(git status --porcelain)\" ]; then\n  git config user.name\
         \ \"github-actions[bot]\"\n  git config user.email \"41898282+github-actions[bot]@users.noreply.github.com\"\
         \n  git add -A\n  git commit -m \"chore(frontend-sync): continuous sync updates\
         \ [skip ci]\"\n  git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)\n\
