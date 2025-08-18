@@ -1,11 +1,6 @@
 {
-<<<<<<< Updated upstream
-  "generatedAt": "2025-08-18T15:27:00.533Z",
-  "pagesScanned": 2109,
-=======
-  "generatedAt": "2025-08-18T15:25:00.598Z",
-  "pagesScanned": 2094,
->>>>>>> Stashed changes
+  "generatedAt": "2025-08-18T15:28:00.570Z",
+  "pagesScanned": 2125,
   "items": [
     {
       "route": "/404",
@@ -2730,7 +2725,6 @@
       }
     },
     {
-<<<<<<< Updated upstream
       "route": "/reports/blueprints/blueprint-2025-08-18-152546",
       "missing": [
         "og:image"
@@ -2741,8 +2735,26 @@
       }
     },
     {
-=======
->>>>>>> Stashed changes
+      "route": "/reports/blueprints/blueprint-2025-08-18-152719",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-18-152743",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/cases/case-2025-08-18-122902",
       "missing": [
         "og:image"
@@ -5263,7 +5275,6 @@
       }
     },
     {
-<<<<<<< Updated upstream
       "route": "/reports/cases/case-2025-08-18-152546",
       "missing": [
         "og:image"
@@ -5274,8 +5285,26 @@
       }
     },
     {
-=======
->>>>>>> Stashed changes
+      "route": "/reports/cases/case-2025-08-18-152719",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Cloud Improving",
+        "description": "Case Study — Cloud Improving — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-18-152743",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Cloud Improving",
+        "description": "Case Study — Cloud Improving — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/guides/guide-2025-08-18-122902",
       "missing": [
         "og:image"
@@ -7796,7 +7825,6 @@
       }
     },
     {
-<<<<<<< Updated upstream
       "route": "/reports/guides/guide-2025-08-18-152546",
       "missing": [
         "og:image"
@@ -7807,8 +7835,26 @@
       }
     },
     {
-=======
->>>>>>> Stashed changes
+      "route": "/reports/guides/guide-2025-08-18-152719",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-18-152743",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/innovation-2025-08-18-1229",
       "missing": [
         "og:image"
@@ -9159,7 +9205,6 @@
       }
     },
     {
-<<<<<<< Updated upstream
       "route": "/reports/innovations/innovation-2025-08-18-1525",
       "missing": [
         "og:image"
@@ -9180,8 +9225,16 @@
       }
     },
     {
-=======
->>>>>>> Stashed changes
+      "route": "/reports/innovations/innovation-2025-08-18-1527",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Service Blueprint — Generative AI Systems",
+        "description": "Service Blueprint — Generative AI Systems — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-18-1229",
       "missing": [
         "og:image"
@@ -10542,7 +10595,6 @@
       }
     },
     {
-<<<<<<< Updated upstream
       "route": "/reports/innovations/insight-2025-08-18-1525",
       "missing": [
         "og:image"
@@ -10563,8 +10615,16 @@
       }
     },
     {
-=======
->>>>>>> Stashed changes
+      "route": "/reports/innovations/insight-2025-08-18-1527",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook: MLOps",
+        "description": "Playbook: MLOps — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-18T12-29",
       "missing": [
         "og:image"
@@ -11915,7 +11975,6 @@
       }
     },
     {
-<<<<<<< Updated upstream
       "route": "/reports/innovations/insight-2025-08-18T15-25",
       "missing": [
         "og:image"
@@ -11926,8 +11985,16 @@
       }
     },
     {
-=======
->>>>>>> Stashed changes
+      "route": "/reports/innovations/insight-2025-08-18T15-27",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-18 15-27",
+        "description": "Innovation Insight — 2025-08-18 15-27 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/patterns/pattern-2025-08-18-122902",
       "missing": [
         "og:image"
@@ -14468,7 +14535,6 @@
       }
     },
     {
-<<<<<<< Updated upstream
       "route": "/reports/patterns/pattern-2025-08-18-152546",
       "missing": [
         "og:image"
@@ -14479,8 +14545,26 @@
       }
     },
     {
-=======
->>>>>>> Stashed changes
+      "route": "/reports/patterns/pattern-2025-08-18-152719",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Automation Trends 2025",
+        "description": "Pattern — Automation Trends 2025 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-18-152743",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Automation Trends 2025",
+        "description": "Pattern — Automation Trends 2025 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-18-122902",
       "missing": [
         "og:image"
@@ -16831,7 +16915,6 @@
       }
     },
     {
-<<<<<<< Updated upstream
       "route": "/reports/playbooks/playbook-2025-08-18-152547",
       "missing": [
         "og:image"
@@ -16842,8 +16925,26 @@
       }
     },
     {
-=======
->>>>>>> Stashed changes
+      "route": "/reports/playbooks/playbook-2025-08-18-152719",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-18-152743",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-18-0928",
       "missing": [
         "og:image"
@@ -18326,7 +18427,6 @@
     {
       "route": "/reports/updates/update-2025-08-18-1225",
       "missing": [
-<<<<<<< Updated upstream
         "og:image"
       ],
       "suggestion": {
@@ -18347,21 +18447,24 @@
     {
       "route": "/reports/updates/update-2025-08-18-1227",
       "missing": [
-=======
->>>>>>> Stashed changes
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 12:27",
+        "description": "Autonomous Update — 2025-08-18 12:27 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-1228",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-<<<<<<< Updated upstream
-        "title": "Autonomous Update — 2025-08-18 12:27",
-        "description": "Autonomous Update — 2025-08-18 12:27 — auto-suggested description"
-=======
-        "title": "Autonomous Update — 2025-08-18 12:25",
-        "description": "Autonomous Update — 2025-08-18 12:25 — auto-suggested description"
->>>>>>> Stashed changes
+        "title": "Autonomous Update — 2025-08-18 12:28",
+        "description": "Autonomous Update — 2025-08-18 12:28 — auto-suggested description"
       }
     },
     {
@@ -19715,7 +19818,6 @@
       }
     },
     {
-<<<<<<< Updated upstream
       "route": "/reports/updates/update-2025-08-18-1525",
       "missing": [
         "og:image"
@@ -19736,8 +19838,16 @@
       }
     },
     {
-=======
->>>>>>> Stashed changes
+      "route": "/reports/updates/update-2025-08-18-1527",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Validation & QA Plan — DevSecOps for AI (2025-08-18 15:27 UTC)",
+        "description": "Autonomous Validation & QA Plan — DevSecOps for AI (2025-08-18 15:27 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-18T12-29",
       "missing": [
         "og:image"
@@ -21088,7 +21198,6 @@
       }
     },
     {
-<<<<<<< Updated upstream
       "route": "/reports/updates/update-2025-08-18T15-25",
       "missing": [
         "og:image"
@@ -21099,8 +21208,16 @@
       }
     },
     {
-=======
->>>>>>> Stashed changes
+      "route": "/reports/updates/update-2025-08-18T15-27",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 15-27",
+        "description": "Autonomous Update — 2025-08-18 15-27 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports",
       "missing": [
         "og:image"
