@@ -63,3 +63,5 @@ export default function ProductPage() {
 <Link href="/products/rapid-1755539340460-oastx4" className="internal-link">Related Content</Link>
 
 <Link href="/products/rapid-1755539353530-gfmdyl" className="internal-link">Related Content</Link>
+
+<Link href="/products/rapid-1755539363327-qs52kw" className="internal-link">Related Content</Link>
