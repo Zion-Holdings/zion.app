@@ -18,8 +18,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Generate beautify suggestions
+        if: always()
         run: node automation/beautify-hightech-ui.cjs | cat
       - name: Summarize UI evolution
+        if: always()
         run: node automation/ui-evolution-dashboard.cjs | tee ui-evolution-summary.json
       - name: Upload UI beautify artifacts
         uses: actions/upload-artifact@v4

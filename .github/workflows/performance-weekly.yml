@@ -21,6 +21,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run performance audit
+        if: always()
         run: node automation/performance-audit.cjs | cat
       - name: Upload performance reports
         uses: actions/upload-artifact@v4

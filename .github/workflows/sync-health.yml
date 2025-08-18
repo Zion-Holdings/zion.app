@@ -20,6 +20,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run sync health check
+        if: always()
         run: node automation/sync-health-check.cjs | tee sync-health.out
       - name: Upload sync health artifacts
         uses: actions/upload-artifact@v4

@@ -43,6 +43,7 @@ jobs:
       - name: Run diverse agent
         env:
           MATRIX_TASK: ${{ matrix.task }}
+        if: always()
         run: node automation/diverse-agent-runner.cjs "$MATRIX_TASK" || true
       - name: Upload agent logs
         uses: actions/upload-artifact@v4
@@ -52,6 +53,7 @@ jobs:
           if-no-files-found: ignore
           retention-days: 7
       - name: Commit and push changes
+        if: always()
         run: |
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions[bot]"

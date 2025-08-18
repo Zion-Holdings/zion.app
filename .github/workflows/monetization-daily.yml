@@ -18,6 +18,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run monetization orchestrator (single cycle)
+        if: always()
         run: node automation/monetization-orchestrator.cjs once | cat
       - name: Upload monetization artifacts
         uses: actions/upload-artifact@v4

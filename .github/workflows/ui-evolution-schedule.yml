@@ -18,6 +18,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run UI evolution
+        if: always()
         run: node automation/ui-evolution-runner.cjs
       - name: Upload UI evolution reports and logs
         uses: actions/upload-artifact@v4

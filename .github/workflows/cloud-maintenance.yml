@@ -24,16 +24,22 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run SaaS services once
+        if: always()
         run: node automation/saas-services-orchestrator.cjs once || true
       - name: Run Feature marketing pipeline once (analyze + factory)
+        if: always()
         run: node automation/feature-marketing-orchestrator.cjs once || true
       - name: Run Homepage promo pipeline once (analyze + factory + apply)
+        if: always()
         run: node automation/homepage-promo-orchestrator.cjs once || true
       - name: Run Site link crawl/fix once
+        if: always()
         run: node automation/site-link-orchestrator.cjs once || true
       - name: Run Site promo orchestrator once
+        if: always()
         run: node automation/site-promo-orchestrator.cjs once || true
       - name: Commit any generated changes
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

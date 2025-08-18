@@ -39,6 +39,7 @@ jobs:
         run: npm ci --no-audit --no-fund
       - name: Check workflow health before fixing
         id: pre-check
+        if: always()
         run: |
           echo "Checking workflow health before attempting fixes..."
           if node automation/check-workflow-health.cjs | grep -q "✅ All workflows are healthy"; then
@@ -50,11 +51,13 @@ jobs:
           fi
       - name: Run comprehensive workflow fixer (only if needed)
         if: steps.pre-check.outputs.needs-fixing == 'true'
+        if: always()
         run: |
           chmod +x fix-github-actions-comprehensive.sh
           ./fix-github-actions-comprehensive.sh
       - name: Validate fixes (only if fixes were applied)
         if: steps.pre-check.outputs.needs-fixing == 'true'
+        if: always()
         run: |
           chmod +x validate-workflows-comprehensive.sh
           ./validate-workflows-comprehensive.sh

@@ -22,6 +22,7 @@ jobs:
         with:
           node-version: '20'
       - name: Netlify status check
+        if: always()
         run: node automation/netlify-status-checker.cjs
       - name: Create issue on failure
         if: failure()

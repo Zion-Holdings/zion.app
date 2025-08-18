@@ -25,12 +25,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run consolidated improvement runner
+        if: always()
         run: node automation/infinite-improvement-runner.cjs || true
       - name: Lint and type-check
+        if: always()
         run: |
           npm run lint
           npm run type-check
       - name: Build (smoke)
+        if: always()
         run: npm run build
       - name: Upload improvement artifacts
         uses: actions/upload-artifact@v4
@@ -42,6 +45,7 @@ jobs:
           if-no-files-found: ignore
           retention-days: 7
       - name: Commit and push changes
+        if: always()
         run: |
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions[bot]"
