@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T04:01:40.731Z",
+  "timestamp": "2025-08-18T04:10:35.631Z",
   "summary": {
     "totalWorkflows": 224,
     "complexityDistribution": {
@@ -1298,7 +1298,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 34,
+        "totalLines": 32,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -2360,7 +2360,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 29,
+        "totalLines": 30,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -2537,12 +2537,12 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/intelligent-content-generation.yml"
     },
     "knowledge-graph-radar.yml": {
-      "complexityScore": 0,
+      "complexityScore": 15,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 44,
+        "totalLines": 77,
         "jobCount": 0,
-        "stepCount": 5,
+        "stepCount": 6,
         "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
@@ -3689,12 +3689,12 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/test-auth.yml"
     },
     "test.yml": {
-      "complexityScore": 0,
+      "complexityScore": 5,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 34,
+        "totalLines": 46,
         "jobCount": 0,
-        "stepCount": 4,
+        "stepCount": 8,
         "conditionalCount": 0,
         "matrixCount": 0,
         "dependencyCount": 0,

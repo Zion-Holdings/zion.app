@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T04:10:01.300Z",
-  "pagesScanned": 8529,
+  "generatedAt": "2025-08-18T04:11:01.184Z",
+  "pagesScanned": 8532,
   "items": [
     {
       "route": "/404",
@@ -36166,6 +36166,16 @@
       "suggestion": {
         "title": "Guide: RAG Platforms",
         "description": "Guide: RAG Platforms — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18-0410",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook: AI QA & Eval",
+        "description": "Playbook: AI QA & Eval — auto-suggested description"
       }
     },
     {
@@ -85201,14 +85211,24 @@
     {
       "route": "/reports/updates/update-2025-08-18-0110",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 01:10",
+        "description": "Autonomous Update — 2025-08-18 01:10 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0111",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 01:10",
-        "description": "Autonomous Update — 2025-08-18 01:10 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-18 01:11",
+        "description": "Autonomous Update — 2025-08-18 01:11 — auto-suggested description"
       }
     },
     {
@@ -85219,6 +85239,16 @@
       "suggestion": {
         "title": "Autonomous Performance Tuning Guide — Vision & Multimodal (2025-08-18 03:10 UTC)",
         "description": "Autonomous Performance Tuning Guide — Vision & Multimodal (2025-08-18 03:10 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0410",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Performance Tuning Guide — AI Service Design (2025-08-18 04:10 UTC)",
+        "description": "Autonomous Performance Tuning Guide — AI Service Design (2025-08-18 04:10 UTC) — auto-suggested description"
       }
     },
     {

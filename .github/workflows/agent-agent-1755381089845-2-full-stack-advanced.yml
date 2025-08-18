@@ -1,20 +1,21 @@
-name: Workflow
+name: Full Stack Analysis Agent
+
 on:
   workflow_dispatch: {}
   schedule:
-  - cron: '*/10 * * * *'
+  - cron: '0 2 * * *'
 permissions:
-  contents: write
+  contents: read
   actions: read
-  pull-requests: write
+  
 concurrency:
-  group: workflow-${{ github.ref }}
+  group: full-stack-analysis-${{ github.ref }}
   cancel-in-progress: false
 jobs:
-  main:
-    name: Main Job
+  analysis:
+    name: Full Stack Analysis
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
@@ -27,7 +28,44 @@ jobs:
         cache: npm
     - name: Install dependencies
       run: npm ci --no-audit --no-fund
-    - name: Run workflow
-      run: 'echo "Workflow Workflow completed successfully"
-
-        '
+    - name: Run full stack analysis
+      run: |
+        echo "🔍 Running Full Stack Analysis..."
+        
+        # Create analysis report
+        echo "# Full Stack Analysis Report" > full-stack-analysis.md
+        echo "Generated: $(date)" >> full-stack-analysis.md
+        echo "" >> full-stack-analysis.md
+        
+        # Frontend analysis
+        echo "## Frontend Analysis" >> full-stack-analysis.md
+        echo "### Pages" >> full-stack-analysis.md
+        find pages -name "*.tsx" -o -name "*.ts" -o -name "*.jsx" -o -name "*.js" | head -20 >> full-stack-analysis.md
+        echo "" >> full-stack-analysis.md
+        
+        # Backend analysis
+        echo "## Backend Analysis" >> full-stack-analysis.md
+        echo "### API Routes" >> full-stack-analysis.md
+        find pages/api -name "*.ts" -o -name "*.js" 2>/dev/null | head -20 >> full-stack-analysis.md
+        echo "" >> full-stack-analysis.md
+        
+        # Dependencies analysis
+        echo "## Dependencies" >> full-stack-analysis.md
+        npm list --depth=0 --json > dependencies.json
+        echo "Dependencies exported to dependencies.json" >> full-stack-analysis.md
+        
+        # Build analysis
+        echo "## Build Analysis" >> full-stack-analysis.md
+        npm run build 2>&1 | tee build.log || echo "Build failed - see build.log" >> full-stack-analysis.md
+        
+        echo "Full stack analysis completed"
+    - name: Upload analysis results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: full-stack-analysis-results
+        path: |
+          full-stack-analysis.md
+          dependencies.json
+          build.log
+        retention-days: 7
