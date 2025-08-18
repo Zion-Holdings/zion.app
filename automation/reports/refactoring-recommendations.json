@@ -1,23 +1,23 @@
 {
-  "timestamp": "2025-08-18T03:19:40.809Z",
+  "timestamp": "2025-08-18T04:00:27.857Z",
   "critical": [],
   "high": [],
   "medium": [
     {
       "workflow": "ci.yml",
       "status": "active",
-      "complexityScore": 30,
+      "complexityScore": 35,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 105,
+        "totalLines": 154,
         "jobCount": 0,
-        "stepCount": 16,
+        "stepCount": 21,
         "conditionalCount": 2,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 5
+        "actionCount": 7
       },
       "refactoringStrategy": [
         "Break down into smaller job steps",
