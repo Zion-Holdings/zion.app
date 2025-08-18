@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T03:43:35.563Z",
+  "timestamp": "2025-08-18T03:44:40.802Z",
   "critical": [],
   "high": [],
   "medium": [
@@ -161,26 +161,6 @@
         "environmentCount": 0,
         "secretCount": 1,
         "actionCount": 2
-      },
-      "refactoringStrategy": [
-        "Extract common functionality to reusable workflows"
-      ]
-    },
-    {
-      "workflow": "workflow-manager.yml",
-      "status": "active",
-      "complexityScore": 40,
-      "complexityLevel": "medium",
-      "metrics": {
-        "totalLines": 142,
-        "jobCount": 0,
-        "stepCount": 12,
-        "conditionalCount": 4,
-        "matrixCount": 0,
-        "dependencyCount": 3,
-        "environmentCount": 0,
-        "secretCount": 0,
-        "actionCount": 6
       },
       "refactoringStrategy": [
         "Extract common functionality to reusable workflows"
