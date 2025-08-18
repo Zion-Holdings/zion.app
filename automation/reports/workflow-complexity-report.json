@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T03:38:26.960Z",
+  "timestamp": "2025-08-18T03:39:40.629Z",
   "summary": {
     "totalWorkflows": 224,
     "complexityDistribution": {
@@ -1370,7 +1370,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 37,
+        "totalLines": 45,
         "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
@@ -2000,9 +2000,9 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 35,
+        "totalLines": 42,
         "jobCount": 0,
-        "stepCount": 4,
+        "stepCount": 5,
         "conditionalCount": 0,
         "matrixCount": 0,
         "dependencyCount": 0,
@@ -2051,20 +2051,20 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/dependabot-auto-approve.yml"
     },
     "dependencies.yml": {
-      "complexityScore": 30,
-      "complexityLevel": "medium",
+      "complexityScore": 0,
+      "complexityLevel": "low",
       "metrics": {
-        "totalLines": 102,
+        "totalLines": 36,
         "jobCount": 0,
-        "stepCount": 8,
-        "conditionalCount": 3,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 2,
-        "actionCount": 4
+        "secretCount": 0,
+        "actionCount": 3
       },
-      "refactoringPriority": "medium",
+      "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/dependencies.yml"
     },
@@ -2087,20 +2087,20 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/dependency-auto-upgrade.yml"
     },
     "dependency-maintenance.yml": {
-      "complexityScore": 0,
-      "complexityLevel": "low",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 35,
+        "totalLines": 156,
         "jobCount": 0,
-        "stepCount": 5,
-        "conditionalCount": 0,
+        "stepCount": 13,
+        "conditionalCount": 2,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 0,
-        "actionCount": 2
+        "secretCount": 3,
+        "actionCount": 6
       },
-      "refactoringPriority": "low",
+      "refactoringPriority": "medium",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/dependency-maintenance.yml"
     },

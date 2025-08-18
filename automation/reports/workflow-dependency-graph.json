@@ -1288,9 +1288,9 @@
       "runner": "ubuntu-latest",
       "memory": "standard",
       "timeout": 30,
-      "concurrentJobs": 3
+      "concurrentJobs": 5
     },
-    "estimatedDuration": 25
+    "estimatedDuration": 30
   },
   "autonomous-minute-orchestrator.yml": {
     "name": "autonomous-minute-orchestrator.yml",
@@ -1928,8 +1928,8 @@
   "dependencies.yml": {
     "name": "dependencies.yml",
     "triggers": [
-      "schedule",
-      "workflow_dispatch null"
+      "workflow_dispatch {}",
+      "schedule"
     ],
     "needs": [],
     "outputs": [],
@@ -1938,7 +1938,7 @@
       "runner": "ubuntu-latest",
       "memory": "standard",
       "timeout": 30,
-      "concurrentJobs": 5
+      "concurrentJobs": 4
     },
     "estimatedDuration": 30
   },
@@ -1962,8 +1962,8 @@
   "dependency-maintenance.yml": {
     "name": "dependency-maintenance.yml",
     "triggers": [
-      "schedule",
-      "workflow_dispatch {}"
+      "workflow_dispatch {}",
+      "schedule"
     ],
     "needs": [],
     "outputs": [],
@@ -1972,9 +1972,9 @@
       "runner": "ubuntu-latest",
       "memory": "standard",
       "timeout": 30,
-      "concurrentJobs": 3
+      "concurrentJobs": 5
     },
-    "estimatedDuration": 25
+    "estimatedDuration": 45
   },
   "dependency-management.yml": {
     "name": "dependency-management.yml",
