@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useState } from 'react';
 
-export default function Simple-service-1755537778089-atmjaano8Service() {
+export default function Simple-service-1755537798088-2c2xsm46vService() {
   const [selectedPlan, setSelectedPlan] = useState(0);
 
   return (
@@ -10,11 +10,8 @@ export default function Simple-service-1755537778089-atmjaano8Service() {
         <title>Premium AI Solutions Solution - Zion Tech Group</title>
         <meta name="description" content="Advanced AI Solutions solution with premium features" />
         <meta name="keywords" content="ai solutions, technology services" />
-        <link rel="canonical" href="https://ziontechgroup.com/services/simple-service-1755537778089-atmjaano8" />
-      
-        <meta property="og:title" content="Premium AI Solutions Solution" />
-        <meta property="og:description" content="Premium AI Solutions Solution — automatically suggested description." />
-        <meta name="twitter:card" content="summary_large_image" /></Head>
+        <link rel="canonical" href="https://ziontechgroup.com/services/simple-service-1755537798088-2c2xsm46v" />
+      </Head>
       
       <main className="container mx-auto px-6 py-12">
         <div className="text-center mb-16">
@@ -77,8 +74,3 @@ export default function Simple-service-1755537778089-atmjaano8Service() {
     </div>
   );
 }
-<Link href="/services/simple-service-1755536632488-7c6l7htn7" className="internal-link">Related Content</Link>
-
-<Link href="/services/simple-service-1755536632490-0pdxjco7f" className="internal-link">Related Content</Link>
-
-<Link href="/services/simple-service-1755536658090-oexyi4u1a" className="internal-link">Related Content</Link>
