@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T11:03:15.065Z",
-  "pagesScanned": 9216,
+  "generatedAt": "2025-08-18T11:03:32.016Z",
+  "pagesScanned": 9224,
   "items": [
     {
       "route": "/404",
@@ -8290,6 +8290,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-18-110300",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-18-110316",
       "missing": [
         "og:image"
       ],
@@ -18820,6 +18830,16 @@
     },
     {
       "route": "/reports/cases/case-2025-08-18-110300",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Cloud Improving",
+        "description": "Case Study — Cloud Improving — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-18-110317",
       "missing": [
         "og:image"
       ],
@@ -30009,6 +30029,16 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-18-110317",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/innovation-2025-08-18-0751",
       "missing": [
         "og:image"
@@ -30256,6 +30286,16 @@
       "suggestion": {
         "title": "Case Study Template — DevSecOps for AI",
         "description": "Case Study Template — DevSecOps for AI — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/innovation-2025-08-18-1103",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Runbook — DevSecOps for AI",
+        "description": "Runbook — DevSecOps for AI — auto-suggested description"
       }
     },
     {
@@ -38196,6 +38236,16 @@
       "suggestion": {
         "title": "Playbook: LLM Apps",
         "description": "Playbook: LLM Apps — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18-1103",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook: MLOps",
+        "description": "Playbook: MLOps — auto-suggested description"
       }
     },
     {
@@ -49809,6 +49859,16 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-18-110317",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Automation Trends 2025",
+        "description": "Pattern — Automation Trends 2025 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-15-021207",
       "missing": [
         "og:image"
@@ -57760,6 +57820,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-18-110300",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-18-110317",
       "missing": [
         "og:image"
       ],
@@ -91666,6 +91736,16 @@
       "suggestion": {
         "title": "Autonomous Validation & QA Plan — Evaluation & Safety (2025-08-18 11:02 UTC)",
         "description": "Autonomous Validation & QA Plan — Evaluation & Safety (2025-08-18 11:02 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-1103",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Validation & QA Plan — Data Engineering (2025-08-18 11:03 UTC)",
+        "description": "Autonomous Validation & QA Plan — Data Engineering (2025-08-18 11:03 UTC) — auto-suggested description"
       }
     },
     {
