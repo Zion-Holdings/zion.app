@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T17:48:11.667Z",
-  "pagesScanned": 3464,
+  "generatedAt": "2025-08-18T17:48:58.857Z",
+  "pagesScanned": 3474,
   "items": [
     {
       "route": "/404",
@@ -113,10 +113,7 @@
     {
       "route": "/component-library",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Component Library",
@@ -178,10 +175,7 @@
     {
       "route": "/content-hub",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Content Hub",
@@ -191,10 +185,7 @@
     {
       "route": "/discover",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Content Discovery",
@@ -204,10 +195,7 @@
     {
       "route": "/enhanced-navigation",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Enhanced Navigation",
@@ -267,10 +255,7 @@
     {
       "route": "/live-dashboard",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Live Dashboard",
@@ -294,10 +279,7 @@
     {
       "route": "/marketing/",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Marketing & Features",
@@ -341,10 +323,7 @@
     {
       "route": "/playground",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Component Playground",
@@ -4203,6 +4182,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-18-174651",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-18-174843",
       "missing": [
         "og:image"
       ],
@@ -8243,6 +8232,16 @@
     },
     {
       "route": "/reports/cases/case-2025-08-18-174651",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Cloud Improving",
+        "description": "Case Study — Cloud Improving — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-18-174843",
       "missing": [
         "og:image"
       ],
@@ -12302,6 +12301,16 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-18-174843",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/",
       "missing": [
         "og:image"
@@ -14639,6 +14648,16 @@
       "suggestion": {
         "title": "Reference Architecture — Autonomous UIs",
         "description": "Reference Architecture — Autonomous UIs — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/innovation-2025-08-18-1748",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Retrieval-Augmented Generation",
+        "description": "Reference Architecture — Retrieval-Augmented Generation — auto-suggested description"
       }
     },
     {
@@ -16992,6 +17011,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-18-1748",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Checklist: DevSecOps AI",
+        "description": "Checklist: DevSecOps AI — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-18T12-29",
       "missing": [
         "og:image"
@@ -19269,6 +19298,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-18 17-46",
         "description": "Innovation Insight — 2025-08-18 17-46 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18T17-48",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-18 17-48",
+        "description": "Innovation Insight — 2025-08-18 17-48 — auto-suggested description"
       }
     },
     {
@@ -23342,6 +23381,16 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-18-174843",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Automation Trends 2025",
+        "description": "Pattern — Automation Trends 2025 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-18-122902",
       "missing": [
         "og:image"
@@ -27163,6 +27212,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-18-174651",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-18-174843",
       "missing": [
         "og:image"
       ],
@@ -31422,6 +31481,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-18-1748",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Performance Tuning Guide — Vision & Multimodal (2025-08-18 17:48 UTC)",
+        "description": "Autonomous Performance Tuning Guide — Vision & Multimodal (2025-08-18 17:48 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-18T12-29",
       "missing": [
         "og:image"
@@ -33202,6 +33271,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-18T17-48",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 17-48",
+        "description": "Autonomous Update — 2025-08-18 17-48 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/whitepapers/enterprise-ai-strategy-framework",
       "missing": [
         "og:image"
@@ -33224,10 +33303,7 @@
     {
       "route": "/reports",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Reports & Content",

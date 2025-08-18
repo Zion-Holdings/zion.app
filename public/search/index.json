@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-18T17:46:22.089Z",
+  "generatedAt": "2025-08-18T17:49:03.046Z",
   "entries": [
     {
       "route": "/user-management",
@@ -156,6 +156,18 @@
       "file": "pages/404.tsx",
       "title": "404",
       "summary": "import Link from 'next/link'; export default function NotFound() { return ( 404 Page not found The page you’re looking for doesn’t exist or has moved. Go home Search ); }"
+    },
+    {
+      "route": "/services/simple-service-1755539184873-e6t8lfcj2",
+      "file": "pages/services/simple-service-1755539184873-e6t8lfcj2.tsx",
+      "title": "Training Service - Zion Tech Group",
+      "summary": "import Head from 'next/head'; import { useState } from 'react'; export default function Simple-service-1755539184873-e6t8lfcj2Service() { const [selectedPlan, setSelectedPlan] = useState(0); return ( Training Service - Zion Tech Group Training Service Professional Training soluti"
+    },
+    {
+      "route": "/services/simple-service-1755539184871-hvmi0rz6d",
+      "file": "pages/services/simple-service-1755539184871-hvmi0rz6d.tsx",
+      "title": "Support Service - Zion Tech Group",
+      "summary": "import Head from 'next/head'; import { useState } from 'react'; export default function Simple-service-1755539184871-hvmi0rz6dService() { const [selectedPlan, setSelectedPlan] = useState(0); return ( Support Service - Zion Tech Group Support Service Professional Support solution "
     },
     {
       "route": "/services/simple-service-1755538278082-50uzm7om8",
@@ -702,6 +714,18 @@
       "file": "pages/reports/whitepapers/enterprise-ai-strategy-framework.tsx",
       "title": "Enterprise AI Strategy Framework - Zion Tech Group",
       "summary": "import Head from 'next/head'; import Link from 'next/link'; export default function AIStrategyWhitepaper() { return ( Enterprise AI Strategy Framework - Zion Tech Group Related Content Related Content Related Content ← Back to Reports Whitepaper Enterprise AI Strategy Framework C"
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18T17-48",
+      "file": "pages/reports/updates/update-2025-08-18T17-48.tsx",
+      "title": "Autonomous Update — 2025-08-18 17-48",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-18 17-48 Autonomous Update — 2025-08-18 17-48 Signal source: https://ziontechgroup.com/landing Autonomous cloud systems are live and improving the app in real timeAutonomous Cloud "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18T17-46",
+      "file": "pages/reports/updates/update-2025-08-18T17-46.tsx",
+      "title": "Autonomous Update — 2025-08-18 17-46",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-18 17-46 Autonomous Update — 2025-08-18 17-46 Signal source: https://ziontechgroup.com/landing Autonomous cloud systems are live and improving the app in real timeAutonomous Cloud "
     },
     {
       "route": "/reports/updates/update-2025-08-18T17-38",
@@ -2064,6 +2088,12 @@
       "file": "pages/reports/updates/update-2025-08-18T12-29.tsx",
       "title": "Autonomous Update — 2025-08-18 12-29",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Autonomous Update — 2025-08-18 12-29 Autonomous Update — 2025-08-18 12-29 Signal source: https://ziontechgroup.com/landing Autonomous cloud systems are live and improving the app in real timeAutonomous Cloud "
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-1748",
+      "file": "pages/reports/updates/update-2025-08-18-1748.tsx",
+      "title": "Autonomous Performance Tuning Guide — Vision & Multimodal (2025-08-18 17:48 UTC)",
+      "summary": "import Head from 'next/head'; export default function UpdatePage() { return ( Autonomous Performance Tuning Guide — Vision & Multimodal (2025-08-18 17:48 UTC) {JSON.stringify({ \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"${title}\", \"description\": \"${subtitl"
     },
     {
       "route": "/reports/updates/update-2025-08-18-1744",
@@ -4616,6 +4646,18 @@
       "summary": "import Head from 'next/head'; export default function TutorialsIndex() { return ( Tutorials | Zion Tech Group Tutorials Sample Tutorial This is a placeholder for tutorials content. Learn more → ); } Related Content Related Content Related Content"
     },
     {
+      "route": "/reports/playbooks/playbook-2025-08-18-174843",
+      "file": "pages/reports/playbooks/playbook-2025-08-18-174843.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/blog/ai-automation-trends-2025 Purpose Operational steps to execute reliably with measurable outcomes. Ch"
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-18-174651",
+      "file": "pages/reports/playbooks/playbook-2025-08-18-174651.tsx",
+      "title": "Playbook — Autonomous Delivery",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/blog/ai-automation-trends-2025 Purpose Operational steps to execute reliably with measurable outcomes. Ch"
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-18-173843",
       "file": "pages/reports/playbooks/playbook-2025-08-18-173843.tsx",
       "title": "Playbook — Autonomous Delivery",
@@ -6906,6 +6948,18 @@
       "file": "pages/reports/playbooks/playbook-2025-08-18-122902.tsx",
       "title": "Playbook — Autonomous Delivery",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Playbook — Autonomous Delivery Playbook — Autonomous Delivery Signal source: https://ziontechgroup.com/blog/ai-automation-trends-2025 Purpose Operational steps to execute reliably with measurable outcomes. Ch"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-18-174843",
+      "file": "pages/reports/patterns/pattern-2025-08-18-174843.tsx",
+      "title": "Pattern — Automation Trends 2025",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Automation Trends 2025 Pattern — Automation Trends 2025 Source: https://ziontechgroup.com/blog/ai-automation-trends-2025 Context Signals indicate recurring needs around automation, trends, 2025, how"
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-18-174651",
+      "file": "pages/reports/patterns/pattern-2025-08-18-174651.tsx",
+      "title": "Pattern — Automation Trends 2025",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Pattern — Automation Trends 2025 Pattern — Automation Trends 2025 Source: https://ziontechgroup.com/blog/ai-automation-trends-2025 Context Signals indicate recurring needs around automation, trends, 2025, how"
     },
     {
       "route": "/reports/patterns/pattern-2025-08-18-173843",
@@ -9344,6 +9398,18 @@
       "summary": "import Head from 'next/head'; import Link from 'next/link'; export default function CloudInsights() { return ( The Future of Cloud Computing: 2025 Trends - Zion Tech Group Related Content Related Content Related Content ← Back to Reports Industry Insight The Future of Cloud Compu"
     },
     {
+      "route": "/reports/innovations/insight-2025-08-18T17-48",
+      "file": "pages/reports/innovations/insight-2025-08-18T17-48.tsx",
+      "title": "Innovation Insight — 2025-08-18 17-48",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-18 17-48 Innovation Insight — 2025-08-18 17-48 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18T17-46",
+      "file": "pages/reports/innovations/insight-2025-08-18T17-46.tsx",
+      "title": "Innovation Insight — 2025-08-18 17-46",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-18 17-46 Innovation Insight — 2025-08-18 17-46 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-18T17-38",
       "file": "pages/reports/innovations/insight-2025-08-18T17-38.tsx",
       "title": "Innovation Insight — 2025-08-18 17-38",
@@ -10704,6 +10770,12 @@
       "file": "pages/reports/innovations/insight-2025-08-18T12-29.tsx",
       "title": "Innovation Insight — 2025-08-18 12-29",
       "summary": "import Head from 'next/head'; export default function Page() { return ( Innovation Insight — 2025-08-18 12-29 Innovation Insight — 2025-08-18 12-29 Opportunity: Transform recurring signals into structured guides Idea: Build a feature row summarizing value, capability, and link to"
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18-1748",
+      "file": "pages/reports/innovations/insight-2025-08-18-1748.tsx",
+      "title": "Checklist: DevSecOps AI",
+      "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Checklist: DevSecOps AI Checklist: DevSecOps AI Patterns to reduce cost. Scope: Checklist: DevSecOps AI. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. Ops: observa"
     },
     {
       "route": "/reports/innovations/insight-2025-08-18-1744",
@@ -12116,6 +12188,12 @@
       "summary": "import Head from 'next/head'; export default function InsightPage() { return ( Pilot Plan: RAG Platforms Pilot Plan: RAG Platforms Patterns to enhance security. Scope: Pilot Plan: RAG Platforms. Signals: AI Services. Architecture: ingestion → retrieval → reasoning → evaluation. O"
     },
     {
+      "route": "/reports/innovations/innovation-2025-08-18-1748",
+      "file": "pages/reports/innovations/innovation-2025-08-18-1748.tsx",
+      "title": "Reference Architecture — Retrieval-Augmented Generation",
+      "summary": "import Head from 'next/head'; export default function InnovationPage() { return ( Reference Architecture — Retrieval-Augmented Generation Reference Architecture — Retrieval-Augmented Generation Innovative, useful guidance to improve retrieval quality. Scope and objectives: Refere"
+    },
+    {
       "route": "/reports/innovations/innovation-2025-08-18-1744",
       "file": "pages/reports/innovations/innovation-2025-08-18-1744.tsx",
       "title": "Reference Architecture — Autonomous UIs",
@@ -13512,6 +13590,18 @@
       "file": "pages/reports/innovations/innovation-2025-08-18-1229.tsx",
       "title": "Playbook — Generative AI Systems",
       "summary": "import Head from 'next/head'; export default function InnovationPage() { return ( Playbook — Generative AI Systems Playbook — Generative AI Systems Innovative, useful guidance to improve retrieval quality. Scope and objectives: Playbook for Generative AI Systems. Key components: "
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-18-174843",
+      "file": "pages/reports/guides/guide-2025-08-18-174843.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/explore Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-18-174651",
+      "file": "pages/reports/guides/guide-2025-08-18-174651.tsx",
+      "title": "Guide — Cloud Improving Implementation",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Guide — Cloud Improving Implementation Guide — Cloud Improving Implementation Source: https://ziontechgroup.com/explore Overview Focus: cloud, improving, continuously, autonomous, systems, live. Steps Clarify"
     },
     {
       "route": "/reports/guides/guide-2025-08-18-173843",
@@ -15938,6 +16028,18 @@
       "summary": "import Head from 'next/head'; export default function DossiersIndex() { return ( Dossiers | Zion Tech Group Dossiers Sample Dossier This is a placeholder for dossiers content. Learn more → ); } Related Content Related Content Related Content"
     },
     {
+      "route": "/reports/cases/case-2025-08-18-174843",
+      "file": "pages/reports/cases/case-2025-08-18-174843.tsx",
+      "title": "Case Study — Cloud Improving",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Cloud Improving Case Study — Cloud Improving Source: https://ziontechgroup.com/landing Scenario Exploring how cloud, improving, continuously, autonomous, systems delivers value. Approach Baseline"
+    },
+    {
+      "route": "/reports/cases/case-2025-08-18-174651",
+      "file": "pages/reports/cases/case-2025-08-18-174651.tsx",
+      "title": "Case Study — Cloud Improving",
+      "summary": "import Head from 'next/head'; export default function Page() { return ( Case Study — Cloud Improving Case Study — Cloud Improving Source: https://ziontechgroup.com/landing Scenario Exploring how cloud, improving, continuously, autonomous, systems delivers value. Approach Baseline"
+    },
+    {
       "route": "/reports/cases/case-2025-08-18-173843",
       "file": "pages/reports/cases/case-2025-08-18-173843.tsx",
       "title": "Case Study — Cloud Improving",
@@ -18356,6 +18458,18 @@
       "summary": "import Head from 'next/head'; import Link from 'next/link'; export default function RetailCaseStudy() { return ( Digital Transformation Success Story: Retail Giant - Zion Tech Group Related Content Related Content Related Content ← Back to Reports Case Study Digital Transformatio"
     },
     {
+      "route": "/reports/blueprints/blueprint-2025-08-18-174843",
+      "file": "pages/reports/blueprints/blueprint-2025-08-18-174843.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-18-174651",
+      "file": "pages/reports/blueprints/blueprint-2025-08-18-174651.tsx",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "summary": "import Head from 'next/head'; export default function Page(){ return ( Reference Architecture — Autonomous Content Mesh Reference Architecture — Autonomous Content Mesh Signal source: https://ziontechgroup.com Components Ingestion & normalization Knowledge index Generation & eval"
+    },
+    {
       "route": "/reports/blueprints/blueprint-2025-08-18-173843",
       "file": "pages/reports/blueprints/blueprint-2025-08-18-173843.tsx",
       "title": "Reference Architecture — Autonomous Content Mesh",
@@ -20664,6 +20778,12 @@
       "file": "pages/news/index.tsx",
       "title": "News | Zion Tech Group - Latest Updates and Announcements",
       "summary": "import Head from 'next/head'; import Link from 'next/link'; export default function NewsIndexPage() { const newsArticles = [ { id: 'zion-tech-group-ai-breakthrough', title: 'Zion Tech Group Announces Major AI Breakthrough in Autonomous Systems', excerpt: 'Company achieves signifi"
+    },
+    {
+      "route": "/marketing",
+      "file": "pages/marketing/index.tsx",
+      "title": "Marketing & Features - Zion Tech Group",
+      "summary": "import React from 'react'; import Head from 'next/head'; export default function MarketingPage() { return ( <> Marketing & Features - Zion Tech Group Marketing & Features Discover our powerful features and marketing capabilities {/* AUTO-GENERATED: MARKETING_FEATURES_START */} AI"
     },
     {
       "route": "/main/front",
