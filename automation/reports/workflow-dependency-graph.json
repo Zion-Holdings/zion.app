@@ -2220,7 +2220,7 @@
   "git-health.yml": {
     "name": "git-health.yml",
     "triggers": [
-      "workflow_dispatch null",
+      "workflow_dispatch {}",
       "schedule"
     ],
     "needs": [],
@@ -2398,7 +2398,7 @@
     "priority": "medium",
     "resourceRequirements": {
       "runner": "ubuntu-latest",
-      "memory": "standard",
+      "memory": "medium",
       "timeout": 30,
       "concurrentJobs": 5
     },
@@ -3492,11 +3492,11 @@
     "priority": "medium",
     "resourceRequirements": {
       "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
+      "memory": "medium",
+      "timeout": 25,
       "concurrentJobs": 5
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 25
   },
   "todo-issue-sync.yml": {
     "name": "todo-issue-sync.yml",
