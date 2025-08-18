@@ -85,9 +85,9 @@ jobs:
       - name: Upload optimization report
         uses: actions/upload-artifact@v4
         with:
-        name: workflow-optimization-report
-        path: workflow-optimization-report.md
-        retention-days: 30
+          name: workflow-optimization-report
+          path: workflow-optimization-report.md
+          retention-days: 30
   workflow-scheduling:
     name: Workflow Scheduling
     runs-on: ubuntu-latest
