@@ -12,7 +12,8 @@ function run(cmd, options = {}) {
     if (output) process.stdout.write(output);
     return { ok: true, output };
   } catch (err) {
-    process.stderr.write(`Command failed: ${cmd}\n`);
+    // Avoid echoing command contents to prevent accidental secret leakage
+    process.stderr.write('Command failed\n');
     if (err.stdout) process.stderr.write(err.stdout.toString());
     if (err.stderr) process.stderr.write(err.stderr.toString());
     return { ok: false, error: err };
@@ -34,6 +35,21 @@ function hasMergeConflicts() {
   return res.ok && res.output.trim().length > 0;
 }
 
+function getAuthEnv() {
+  const token = process.env.GH_TOKEN || process.env.GITHUB_TOKEN || process.env.GITHUB_PAT;
+  if (!token) return {};
+  const basic = Buffer.from(`x-access-token:${token}`).toString('base64');
+  return { GIT_HTTP_EXTRAHEADER: `Authorization: Basic ${basic}` };
+}
+
+const AUTH_ENV = getAuthEnv();
+
+function runGit(cmd) {
+  // Apply Authorization header if token is present (no logging of command)
+  const env = Object.keys(AUTH_ENV).length ? { env: { ...process.env, ...AUTH_ENV } } : {};
+  return run(cmd, env);
+}
+
 function configureBotIdentity() {
   run('git config user.name "github-actions[bot]"');
   run('git config user.email "41898282+github-actions[bot]@users.noreply.github.com"');
@@ -41,8 +57,8 @@ function configureBotIdentity() {
 
 function commitAllIfAny(message) {
   if (!hasChanges()) return false;
-  run('git add -A');
-  const committed = run(`git commit -m ${JSON.stringify(message)}`);
+  runGit('git add -A');
+  const committed = runGit(`git commit -m ${JSON.stringify(message)}`);
   return committed.ok;
 }
 
@@ -50,14 +66,14 @@ function ensureOnMainBranch() {
   const currentBranch = getCurrentBranch();
   if (currentBranch !== 'main') {
     console.log(`Switching from ${currentBranch} to main branch...`);
-    run('git checkout main');
-    run('git pull origin main');
+    runGit('git checkout main');
+    runGit('git pull origin main');
   }
   console.log('✅ Now working on main branch');
 }
 
 function push(refspec) {
-  return run(`git push origin ${refspec}`);
+  return runGit(`git push origin ${refspec}`);
 }
 
 (function main() {
@@ -67,7 +83,7 @@ function push(refspec) {
 
   // Fetch latest changes
   console.log('Fetching latest changes...');
-  run('git fetch --all --prune');
+  runGit('git fetch --all --prune');
 
   // Ensure we're on main branch
   ensureOnMainBranch();
@@ -77,7 +93,7 @@ function push(refspec) {
 
   // Always sync with latest main branch
   console.log('Syncing with latest main...');
-  run('git pull origin main || true');
+  runGit('git pull origin main || true');
   
   // Commit any working tree changes
   const committed = commitAllIfAny('chore(sync): enhanced autonomous sync on main');
