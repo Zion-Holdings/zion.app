@@ -8,7 +8,10 @@ export default function TutorialPage() {
         <meta name="description" content="Learn data processing with our comprehensive tutorial. Step-by-step guidance for beginners and advanced users." />
         <meta name="keywords" content="tutorial, data processing, learning, guide, education, technology" />
         <link rel="canonical" href="https://ziontechgroup.com/tutorials/rapid-1755541161880-enmfzk" />
-      </Head>
+      
+        <meta property="og:title" content="Complete Guide to Data Processing" />
+        <meta property="og:description" content="Complete Guide to Data Processing — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
         <h1 className="text-4xl font-extrabold text-center mb-8">Complete Guide to Data Processing</h1>
         

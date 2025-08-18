@@ -307,4 +307,5 @@ export default function AboutPage() {
 
 
 
-<Link href="/careers" className="internal-link link-instance-2">[FOOTER] Footer Link</Link>
+
+<a href="https://linkedin.com/company/zion-tech-group" target="_blank" rel="noopener noreferrer" className="external-link">Company Profile</a>
