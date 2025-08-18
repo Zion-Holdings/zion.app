@@ -35711,6 +35711,62 @@
   "items": [
     {
       "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-18-134328",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T13:43:28.871Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Case Study — Cloud Improving",
+      "href": "/reports/cases/case-2025-08-18-134328",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T13:43:28.556Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-18-134328",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T13:43:28.556Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Automation Trends 2025",
+      "href": "/reports/patterns/pattern-2025-08-18-134328",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T13:43:28.556Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 13-43",
+      "href": "/reports/innovations/insight-2025-08-18T13-43",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T13:43:28.336Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 13-43",
+      "href": "/reports/updates/update-2025-08-18T13-43",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T13:43:28.336Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 13-43",
+      "href": "/reports/innovations/insight-2025-08-18T13-43",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T13:43:28.336Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 13-43",
+      "href": "/reports/updates/update-2025-08-18T13-43",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T13:43:28.336Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery",
       "href": "/reports/playbooks/playbook-2025-08-18-134255",
       "desc": "New autonomous content",
       "createdAt": "2025-08-18T13:42:55.492Z",
@@ -36102,65 +36158,9 @@
       "source": "cloud-playbook-factory"
     },
     {
-      "title": "Playbook — Autonomous Delivery",
-      "href": "/reports/playbooks/playbook-2025-08-18-133513",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T13:35:13.288Z",
-      "source": "cloud-playbook-factory"
-    },
-    {
-      "title": "Case Study — Cloud Improving",
-      "href": "/reports/cases/case-2025-08-18-133513",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T13:35:13.040Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Guide — Cloud Improving Implementation",
-      "href": "/reports/guides/guide-2025-08-18-133513",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T13:35:13.040Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Pattern — Automation Trends 2025",
-      "href": "/reports/patterns/pattern-2025-08-18-133513",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T13:35:13.040Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-18 13-35",
-      "href": "/reports/innovations/insight-2025-08-18T13-35",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T13:35:12.874Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-18 13-35",
-      "href": "/reports/updates/update-2025-08-18T13-35",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T13:35:12.874Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-18 13-35",
-      "href": "/reports/innovations/insight-2025-08-18T13-35",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T13:35:12.874Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-18 13-35",
-      "href": "/reports/updates/update-2025-08-18T13-35",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T13:35:12.874Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "id": "cursor-chat-2025-08-18T13:42:55.645Z",
+      "id": "cursor-chat-2025-08-18T13:43:28.979Z",
       "type": "cursor-chat",
-      "timestamp": "2025-08-18T13:42:55.645Z"
+      "timestamp": "2025-08-18T13:43:28.979Z"
     }
   ]
 }
