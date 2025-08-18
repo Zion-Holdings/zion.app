@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T18:19:36.022Z",
+  "timestamp": "2025-08-18T18:22:13.725Z",
   "critical": [
     {
       "name": "ci-self-heal.yml",
@@ -1590,6 +1590,27 @@
       "resourceScore": 117
     },
     {
+      "name": "ultra-fast-exponential-growth-automation-intermediate-1755541260520.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-exponential-growth-automation-intermediate-1755541260520.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 15,
+      "concurrentJobs": 8,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch {}",
+        "schedule",
+        "push",
+        "pull_request"
+      ],
+      "resourceScore": 117
+    },
+    {
       "name": "ultra-fast-exponential-growth-deployment-advanced-1755537037414.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-exponential-growth-deployment-advanced-1755537037414.yml",
       "priority": "medium",
@@ -1739,6 +1760,27 @@
     {
       "name": "ultra-fast-exponential-growth-deployment-intermediate-1755539256250.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-exponential-growth-deployment-intermediate-1755539256250.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 15,
+      "concurrentJobs": 8,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch {}",
+        "schedule",
+        "push",
+        "pull_request"
+      ],
+      "resourceScore": 117
+    },
+    {
+      "name": "ultra-fast-exponential-growth-development-advanced-1755541260505.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-exponential-growth-development-advanced-1755541260505.yml",
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 15,
@@ -2199,6 +2241,27 @@
       "resourceScore": 117
     },
     {
+      "name": "ultra-fast-hyper-fast-generator-monitoring-expert-1755541260617.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-hyper-fast-generator-monitoring-expert-1755541260617.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 15,
+      "concurrentJobs": 8,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch {}",
+        "schedule",
+        "push",
+        "pull_request"
+      ],
+      "resourceScore": 117
+    },
+    {
       "name": "ultra-fast-hyper-fast-generator-optimization-advanced-1755538393156.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-hyper-fast-generator-optimization-advanced-1755538393156.yml",
       "priority": "medium",
@@ -2367,6 +2430,27 @@
       "resourceScore": 117
     },
     {
+      "name": "ultra-fast-intelligent-orchestrator-generation-basic-1755541313120.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-intelligent-orchestrator-generation-basic-1755541313120.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 15,
+      "concurrentJobs": 8,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch {}",
+        "schedule",
+        "push",
+        "pull_request"
+      ],
+      "resourceScore": 117
+    },
+    {
       "name": "ultra-fast-intelligent-orchestrator-generation-expert-1755538393177.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-intelligent-orchestrator-generation-expert-1755538393177.yml",
       "priority": "medium",
@@ -2453,6 +2537,27 @@
     {
       "name": "ultra-fast-intelligent-orchestrator-innovation-basic-1755539166225.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-intelligent-orchestrator-innovation-basic-1755539166225.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 15,
+      "concurrentJobs": 8,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch {}",
+        "schedule",
+        "push",
+        "pull_request"
+      ],
+      "resourceScore": 117
+    },
+    {
+      "name": "ultra-fast-intelligent-orchestrator-innovation-expert-1755541260472.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-intelligent-orchestrator-innovation-expert-1755541260472.yml",
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 15,
@@ -2747,6 +2852,27 @@
     {
       "name": "ultra-fast-meta-orchestrator-generation-basic-1755539631025.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-meta-orchestrator-generation-basic-1755539631025.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 15,
+      "concurrentJobs": 8,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch {}",
+        "schedule",
+        "push",
+        "pull_request"
+      ],
+      "resourceScore": 117
+    },
+    {
+      "name": "ultra-fast-meta-orchestrator-generation-basic-1755541260491.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-meta-orchestrator-generation-basic-1755541260491.yml",
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 15,
@@ -3333,6 +3459,27 @@
       "resourceScore": 117
     },
     {
+      "name": "ultra-fast-quantum-automation-testing-basic-1755541313100.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-quantum-automation-testing-basic-1755541313100.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 15,
+      "concurrentJobs": 8,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch {}",
+        "schedule",
+        "push",
+        "pull_request"
+      ],
+      "resourceScore": 117
+    },
+    {
       "name": "ultra-fast-quantum-automation-testing-expert-1755539661058.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-quantum-automation-testing-expert-1755539661058.yml",
       "priority": "medium",
@@ -3734,6 +3881,27 @@
     {
       "name": "ultra-fast-self-improving-system-monitoring-advanced-1755540141010.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-self-improving-system-monitoring-advanced-1755540141010.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 15,
+      "concurrentJobs": 8,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch {}",
+        "schedule",
+        "push",
+        "pull_request"
+      ],
+      "resourceScore": 117
+    },
+    {
+      "name": "ultra-fast-self-improving-system-monitoring-expert-1755541313138.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-fast-self-improving-system-monitoring-expert-1755541313138.yml",
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 15,
