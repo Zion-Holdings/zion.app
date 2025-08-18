@@ -2,6 +2,9 @@
 name: Autonomous Meta Factory
 
 on:
+permissions:
+  contents: read
+  actions: read
   schedule:
     - cron: '0 */2 * * *'
   workflow_dispatch: {}
