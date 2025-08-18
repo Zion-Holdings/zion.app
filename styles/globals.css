@@ -1,4 +1,8 @@
-/* Global stylesheet placeholder to satisfy Next.js import in pages/_app.tsx */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global stylesheet for the site (Tailwind + custom base rules) */
 html, body, #__next {
   height: 100%;
 }
