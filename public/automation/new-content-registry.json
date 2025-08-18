@@ -1,12 +1,96 @@
 {
-  "generatedAt": "2025-08-18T18:35:41.786Z",
+  "generatedAt": "2025-08-18T18:36:59.719Z",
   "items": [
     {
-      "title": "Guide: RAG Platforms",
-      "subtitle": "Patterns to improve reliability.",
-      "path": "/reports/innovations/insight-2025-08-18-1836",
-      "createdAt": "2025-08-18T18:36:53.141Z",
-      "kind": "insight"
+      "title": "Innovation Insight — 2025-08-18 18-36",
+      "href": "/reports/innovations/insight-2025-08-18T18-36",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:36:59.554Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-36",
+      "href": "/reports/updates/update-2025-08-18T18-36",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:36:59.554Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 18-36",
+      "href": "/reports/innovations/insight-2025-08-18T18-36",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:36:59.554Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-36",
+      "href": "/reports/updates/update-2025-08-18T18-36",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:36:59.554Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-18-183542",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:35:42.550Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Case Study — Cloud Improving",
+      "href": "/reports/cases/case-2025-08-18-183542",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:35:42.236Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-18-183542",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:35:42.236Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Automation Trends 2025",
+      "href": "/reports/patterns/pattern-2025-08-18-183542",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:35:42.236Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 18-35",
+      "href": "/reports/innovations/insight-2025-08-18T18-35",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:35:42.091Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-35",
+      "href": "/reports/updates/update-2025-08-18T18-35",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:35:42.091Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 18-35",
+      "href": "/reports/innovations/insight-2025-08-18T18-35",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:35:42.091Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-35",
+      "href": "/reports/updates/update-2025-08-18T18-35",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:35:42.091Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-18-183541",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:35:41.940Z",
+      "source": "cloud-blueprint-factory"
     },
     {
       "title": "Innovation Insight — 2025-08-18 18-35",
@@ -114,6 +198,27 @@
       "route": "/reports/patterns/ultra-1755542139729-pnwd17",
       "type": "ultra-fast-generated",
       "created": "2025-08-18T18:35:39.737Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "cursor-chat-2025-08-18T18:35:42.705Z",
+      "type": "cursor-chat",
+      "timestamp": "2025-08-18T18:35:42.705Z"
+    },
+    {
+      "id": "ultra-1755542144619-0gqqnj",
+      "title": "Speed-of-Thought Engineering",
+      "route": "/reports/updates/ultra-1755542144619-0gqqnj",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:35:44.635Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542144621-k6jtqh",
+      "title": "Ultra-Fast Lightning-fast development Insight",
+      "route": "/reports/insights/ultra-1755542144621-k6jtqh",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:35:44.635Z",
       "process": "ultra-fast"
     }
   ]
