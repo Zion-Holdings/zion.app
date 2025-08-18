@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T03:24:39.223Z",
+  "timestamp": "2025-08-18T03:26:40.574Z",
   "critical": [],
   "high": [],
   "medium": [
@@ -9,7 +9,7 @@
       "complexityScore": 35,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 155,
+        "totalLines": 137,
         "jobCount": 0,
         "stepCount": 21,
         "conditionalCount": 2,
@@ -30,7 +30,7 @@
       "complexityScore": 30,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 121,
+        "totalLines": 104,
         "jobCount": 0,
         "stepCount": 20,
         "conditionalCount": 1,
@@ -66,32 +66,12 @@
       ]
     },
     {
-      "workflow": "deploy.yml",
-      "status": "active",
-      "complexityScore": 30,
-      "complexityLevel": "medium",
-      "metrics": {
-        "totalLines": 113,
-        "jobCount": 0,
-        "stepCount": 11,
-        "conditionalCount": 0,
-        "matrixCount": 0,
-        "dependencyCount": 0,
-        "environmentCount": 0,
-        "secretCount": 2,
-        "actionCount": 5
-      },
-      "refactoringStrategy": [
-        "Extract common functionality to reusable workflows"
-      ]
-    },
-    {
       "workflow": "exponential-agent-factory-proliferation.yml",
       "status": "active",
       "complexityScore": 35,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 137,
+        "totalLines": 130,
         "jobCount": 0,
         "stepCount": 9,
         "conditionalCount": 0,
@@ -133,7 +113,7 @@
       "complexityScore": 30,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 129,
+        "totalLines": 117,
         "jobCount": 0,
         "stepCount": 13,
         "conditionalCount": 4,
