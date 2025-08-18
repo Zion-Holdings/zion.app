@@ -1,3 +1,4 @@
+---
 name: Monetization Automation Daily
 on:
   workflow_dispatch: {}

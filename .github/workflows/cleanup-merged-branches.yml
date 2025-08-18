@@ -1,8 +1,9 @@
-name: Workflow
+---
+name: cleanup-merged-branches
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '0 */2 * * *'
 permissions:
   contents: write
   actions: read

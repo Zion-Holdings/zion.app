@@ -1,10 +1,11 @@
+---
 name: Frontend Sync Continuous
 on:
   push:
     branches:
     - main
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '0 */2 * * *'
   workflow_dispatch: {}
 jobs:
   sync:

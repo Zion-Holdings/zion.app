@@ -1,3 +1,4 @@
+---
 name: Cursor Rules Auto Update
 on:
   schedule:

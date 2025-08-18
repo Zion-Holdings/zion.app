@@ -1,3 +1,4 @@
+---
 name: Performance Audit Weekly
 on:
   workflow_dispatch: {}

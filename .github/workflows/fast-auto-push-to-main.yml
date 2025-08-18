@@ -1,8 +1,9 @@
-name: Workflow
+---
+name: fast-auto-push-to-main
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '0 */2 * * *'
 permissions:
   contents: write
   actions: read
