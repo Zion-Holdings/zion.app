@@ -4,6 +4,34 @@
       "title": "Innovation Insight — 2025-08-18 20-22",
       "href": "/reports/innovations/insight-2025-08-18T20-22",
       "desc": "New autonomous content",
+      "createdAt": "2025-08-18T20:22:38.857Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 20-22",
+      "href": "/reports/updates/update-2025-08-18T20-22",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T20:22:38.857Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 20-22",
+      "href": "/reports/innovations/insight-2025-08-18T20-22",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T20:22:38.857Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 20-22",
+      "href": "/reports/updates/update-2025-08-18T20-22",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T20:22:38.857Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 20-22",
+      "href": "/reports/innovations/insight-2025-08-18T20-22",
+      "desc": "New autonomous content",
       "createdAt": "2025-08-18T20:22:34.927Z",
       "source": "cloud-content-factory"
     },
@@ -342,6 +370,70 @@
       "route": "/tutorials/rapid-1755548555391-kn93kb",
       "type": "rapid-generated",
       "created": "2025-08-18T20:22:35.394Z",
+      "process": "rapid"
+    },
+    {
+      "id": "ultra-1755548557560-erweja",
+      "title": "Speed-of-Thought Engineering",
+      "route": "/reports/updates/ultra-1755548557560-erweja",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T20:22:37.566Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755548557561-ny9nrx",
+      "title": "Ultra-Fast Instant feedback loops Insight",
+      "route": "/reports/insights/ultra-1755548557561-ny9nrx",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T20:22:37.566Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755548557563-vuxhm9",
+      "title": "Ultra-Fast Guide: Real-time data processing",
+      "route": "/reports/guides/ultra-1755548557563-vuxhm9",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T20:22:37.566Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755548557564-jssk62",
+      "title": "Case Study: Real-time data processing Success",
+      "route": "/reports/cases/ultra-1755548557564-jssk62",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T20:22:37.566Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755548557565-ioetw6",
+      "title": "Pattern: AI-powered automation Architecture",
+      "route": "/reports/patterns/ultra-1755548557565-ioetw6",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T20:22:37.566Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "rapid-1755548558291-tdxfvy",
+      "title": "DevOps Automation",
+      "route": "/services/rapid-1755548558291-tdxfvy",
+      "type": "rapid-generated",
+      "created": "2025-08-18T20:22:38.295Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755548558292-fdjdx3",
+      "title": "Collaboration Platform",
+      "route": "/products/rapid-1755548558292-fdjdx3",
+      "type": "rapid-generated",
+      "created": "2025-08-18T20:22:38.295Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755548558294-uccyyx",
+      "title": "Complete Guide to Mobile App Development",
+      "route": "/tutorials/rapid-1755548558294-uccyyx",
+      "type": "rapid-generated",
+      "created": "2025-08-18T20:22:38.295Z",
       "process": "rapid"
     }
   ]
