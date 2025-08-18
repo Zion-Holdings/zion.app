@@ -1,19 +1,11 @@
 # workflow-validator Report
 
-<<<<<<< Updated upstream
-Generated: 2025-08-18T14:38:55.837Z
-=======
-Generated: 2025-08-18T14:36:12.142Z
->>>>>>> Stashed changes
+Generated: 2025-08-18T14:39:32.164Z
 
 ## Status
 - Task: workflow-validator
 - Status: Completed
-<<<<<<< Updated upstream
-- Timestamp: 2025-08-18T14:38:55.837Z
-=======
-- Timestamp: 2025-08-18T14:36:12.142Z
->>>>>>> Stashed changes
+- Timestamp: 2025-08-18T14:39:32.164Z
 
 ## Next Steps
 - Implement actual workflow-validator functionality
