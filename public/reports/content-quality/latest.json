@@ -1,20 +1,9 @@
 {
-  "generatedAt": "2025-08-18T18:33:23.518Z",
+  "generatedAt": "2025-08-18T18:32:43.100Z",
   "files": [
-    "update-2025-08-18T18-32.tsx",
-    "update-2025-08-18-1832.tsx",
     "ultra-1755541940820-8siyi1.tsx",
+    "update-2025-08-18T18-32.tsx",
     "ultra-1755541937877-9xqynw.tsx",
-    "ultra-1755541931959-jt7g3y.tsx",
-    "ultra-1755541929466-k9wmfl.tsx",
-    "ultra-1755541925592-0cfhdf.tsx",
-    "ultra-1755541923563-g20aea.tsx",
-    "ultra-1755541921322-e3i18t.tsx",
-    "ultra-1755541918368-fb8dfs.tsx",
-    "ultra-1755541916221-dlwy4h.tsx",
-    "ultra-1755541912100-dam7vu.tsx",
-    "ultra-1755541907414-ed1rt2.tsx",
-    "update-2025-08-18-1833.tsx",
     "update-2025-08-18T18-31.tsx",
     "update-2025-08-18-1831.tsx",
     "ultra-1755541905289-olshkx.tsx",
@@ -26,6 +15,16 @@
     "ultra-1755541881681-xrde6r.tsx",
     "ultra-1755541874228-sbehsr.tsx",
     "ultra-1755541869953-4yydlh.tsx",
+    "ultra-1755541931959-jt7g3y.tsx",
+    "ultra-1755541929466-k9wmfl.tsx",
+    "update-2025-08-18-1832.tsx",
+    "ultra-1755541923563-g20aea.tsx",
+    "ultra-1755541921322-e3i18t.tsx",
+    "ultra-1755541918368-fb8dfs.tsx",
+    "ultra-1755541916221-dlwy4h.tsx",
+    "ultra-1755541912100-dam7vu.tsx",
+    "ultra-1755541907414-ed1rt2.tsx",
+    "ultra-1755541925592-0cfhdf.tsx",
     "ultra-1755541866149-wyyuzm.tsx",
     "ultra-1755541863753-uw9nz0.tsx",
     "ultra-1755541860769-mv64ma.tsx",
@@ -100,13 +99,14 @@
     "ultra-1755541569721-8gsqir.tsx",
     "ultra-1755541567601-1fkg8l.tsx",
     "ultra-1755541565174-l26hxa.tsx",
-    "ultra-1755541562652-hh4cl7.tsx"
+    "ultra-1755541562652-hh4cl7.tsx",
+    "ultra-1755541560532-68lu85.tsx"
   ],
   "metrics": {
     "diversityScore": 100,
-    "avgLen": 2937,
+    "avgLen": 2890,
     "duplicateCount": 0,
-    "seoScore": 8
+    "seoScore": 7
   },
   "guidance": [
     "Aim for varied intros, highlights, and CTAs across updates.",
