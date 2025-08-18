@@ -2,7 +2,7 @@ name: Monetization Automation Daily
 on:
   workflow_dispatch: null
   schedule:
-    - cron: 0 2 * * *
+    - cron: '0 2 * * *'
 jobs:
   monetization:
     runs-on: ubuntu-latest
