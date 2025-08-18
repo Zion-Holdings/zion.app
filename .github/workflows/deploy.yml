@@ -101,7 +101,7 @@ jobs:
           script: |
             const version = '${{ steps.version.outputs.version }}';
             const message = `🚀 **Release ${version} Deployed**\n\nVersion ${version} has been successfully released and deployed to production.`;
-
+            
             // Create a release summary issue
             github.rest.issues.create({
               owner: context.repo.owner,
