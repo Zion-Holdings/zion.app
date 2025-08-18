@@ -2,6 +2,13 @@
   "generatedAt": "2025-08-18T17:13:30.730Z",
   "items": [
     {
+      "title": "Pilot Plan: Edge AI",
+      "subtitle": "Patterns to improve reliability.",
+      "path": "/reports/innovations/insight-2025-08-18-1717",
+      "createdAt": "2025-08-18T17:17:18.066Z",
+      "kind": "insight"
+    },
+    {
       "title": "Runbook: RAG Platforms",
       "subtitle": "Patterns to increase accuracy.",
       "path": "/reports/innovations/insight-2025-08-18-1715",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-18T17:17:00.781Z",
+  "generatedAt": "2025-08-18T17:17:16.301Z",
   "pagesScanned": 3259,
   "items": [
     {
@@ -31967,10 +31967,7 @@
     {
       "route": "/services/simple-service-1755537318083-e1vvbz9p9",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Consulting Service",
@@ -31980,10 +31977,7 @@
     {
       "route": "/services/simple-service-1755537318084-ef6nua7z1",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Premium Data Analytics Solution",
@@ -31993,10 +31987,7 @@
     {
       "route": "/services/simple-service-1755537338082-wyefgxkqj",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Cloud Services Service",
@@ -32006,10 +31997,7 @@
     {
       "route": "/services/simple-service-1755537338083-ilra42sg2",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Premium Data Analytics Solution",
@@ -32019,10 +32007,7 @@
     {
       "route": "/services/simple-service-1755537358082-e1xshowcq",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Premium Consulting Solution",
@@ -32032,10 +32017,7 @@
     {
       "route": "/services/simple-service-1755537358083-yz6md46r3",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Data Analytics Service",
@@ -32045,10 +32027,7 @@
     {
       "route": "/services/simple-service-1755537378081-gpscc4v83",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Premium Consulting Solution",
@@ -32058,10 +32037,7 @@
     {
       "route": "/services/simple-service-1755537378082-st269r3iu",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Premium Data Analytics Solution",
@@ -32071,10 +32047,7 @@
     {
       "route": "/services/simple-service-1755537398080-3jhg9wljm",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Premium Training Solution",
@@ -32084,10 +32057,7 @@
     {
       "route": "/services/simple-service-1755537398081-azfi1hlpj",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "DevOps Service",
@@ -32097,10 +32067,7 @@
     {
       "route": "/services/simple-service-1755537418080-6o7qvkslo",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Premium Training Solution",
@@ -32110,10 +32077,7 @@
     {
       "route": "/services/simple-service-1755537418080-pozcekj2x",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Premium DevOps Solution",
