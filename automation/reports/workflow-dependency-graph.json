@@ -3550,7 +3550,7 @@
   "ui-evolution-weekly-beautify.yml": {
     "name": "ui-evolution-weekly-beautify.yml",
     "triggers": [
-      "workflow_dispatch null",
+      "workflow_dispatch {}",
       "schedule"
     ],
     "needs": [],
