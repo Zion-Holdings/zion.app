@@ -2896,10 +2896,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "medium",
-      "timeout": 15,
+      "timeout": 20,
       "concurrentJobs": 5
     },
-    "estimatedDuration": 15
+    "estimatedDuration": 20
   },
   "pr-auto-curator.yml": {
     "name": "pr-auto-curator.yml",
