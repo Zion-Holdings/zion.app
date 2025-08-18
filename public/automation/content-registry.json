@@ -27550,6 +27550,13 @@
   "generatedAt": "2025-08-18T18:42:54.039Z",
   "items": [
     {
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-18-184314",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:43:14.044Z",
+      "source": "cloud-blueprint-factory"
+    },
+    {
       "id": "ultra-1755542580898-l5hy6d",
       "title": "Instantaneous Tech Insights",
       "route": "/reports/updates/ultra-1755542580898-l5hy6d",
@@ -27627,6 +27634,46 @@
       "route": "/reports/patterns/ultra-1755542589210-06epud",
       "type": "ultra-fast-generated",
       "created": "2025-08-18T18:43:09.220Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542592619-x9dxna",
+      "title": "Rapid Response Development",
+      "route": "/reports/updates/ultra-1755542592619-x9dxna",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:43:12.638Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542592620-35ru8b",
+      "title": "Ultra-Fast Instant deployment systems Insight",
+      "route": "/reports/insights/ultra-1755542592620-35ru8b",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:43:12.638Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542592621-n17r32",
+      "title": "Ultra-Fast Guide: Ultra-fast testing frameworks",
+      "route": "/reports/guides/ultra-1755542592621-n17r32",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:43:12.638Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542592623-5fpk4h",
+      "title": "Case Study: Instant feedback loops Success",
+      "route": "/reports/cases/ultra-1755542592623-5fpk4h",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:43:12.638Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542592624-5hgejj",
+      "title": "Pattern: Instant feedback loops Architecture",
+      "route": "/reports/patterns/ultra-1755542592624-5hgejj",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:43:12.638Z",
       "process": "ultra-fast"
     }
   ]
