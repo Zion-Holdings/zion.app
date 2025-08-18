@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T04:29:38.867Z",
+  "timestamp": "2025-08-18T04:30:38.661Z",
   "summary": {
     "totalWorkflows": 224,
     "complexityDistribution": {
@@ -2753,12 +2753,12 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/media-optimizer.yml"
     },
     "merge-conflict-guard.yml": {
-      "complexityScore": 0,
+      "complexityScore": 5,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 45,
+        "totalLines": 50,
         "jobCount": 0,
-        "stepCount": 4,
+        "stepCount": 6,
         "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
