@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T07:13:02.044Z",
-  "pagesScanned": 8796,
+  "generatedAt": "2025-08-18T07:14:01.108Z",
+  "pagesScanned": 8799,
   "items": [
     {
       "route": "/404",
@@ -36846,6 +36846,16 @@
       "suggestion": {
         "title": "Playbook: RAG Platforms",
         "description": "Playbook: RAG Platforms — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18-0713",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Checklist: FinOps for AI",
+        "description": "Checklist: FinOps for AI — auto-suggested description"
       }
     },
     {
@@ -87541,14 +87551,24 @@
     {
       "route": "/reports/updates/update-2025-08-18-0413",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 04:13",
+        "description": "Autonomous Update — 2025-08-18 04:13 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0414",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 04:13",
-        "description": "Autonomous Update — 2025-08-18 04:13 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-18 04:14",
+        "description": "Autonomous Update — 2025-08-18 04:14 — auto-suggested description"
       }
     },
     {
@@ -87719,6 +87739,16 @@
       "suggestion": {
         "title": "Autonomous Playbook — Edge AI & IoT (2025-08-18 07:10 UTC)",
         "description": "Autonomous Playbook — Edge AI & IoT (2025-08-18 07:10 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0713",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Capability Map — Vision & Multimodal (2025-08-18 07:13 UTC)",
+        "description": "Autonomous Capability Map — Vision & Multimodal (2025-08-18 07:13 UTC) — auto-suggested description"
       }
     },
     {
