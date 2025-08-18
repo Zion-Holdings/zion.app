@@ -4,13 +4,13 @@ export default function TutorialPage() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <Head>
-        <title>Best Practices in Database Optimization - Zion Tech Group</title>
+        <title>Expert Techniques for Database Optimization - Zion Tech Group</title>
         <meta name="description" content="Learn database optimization with our comprehensive tutorial. Step-by-step guidance for beginners and advanced users." />
         <meta name="keywords" content="tutorial, database optimization, learning, guide, education, technology" />
-        <link rel="canonical" href="https://ziontechgroup.com/tutorials/rapid-1755541209165-m1i2q5" />
+        <link rel="canonical" href="https://ziontechgroup.com/tutorials/rapid-1755541217741-t4qpth" />
       </Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
-        <h1 className="text-4xl font-extrabold text-center mb-8">Best Practices in Database Optimization</h1>
+        <h1 className="text-4xl font-extrabold text-center mb-8">Expert Techniques for Database Optimization</h1>
         
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4">📚 Tutorial Overview</h2>

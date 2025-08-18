@@ -4,18 +4,18 @@ export default function ServicePage() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <Head>
-        <title>Web Development - Zion Tech Group</title>
-        <meta name="description" content="Professional web development services to accelerate your business growth and digital transformation." />
-        <meta name="keywords" content="web development, services, technology, business, digital transformation" />
-        <link rel="canonical" href="https://ziontechgroup.com/services/rapid-1755541209163-5y2wy7" />
+        <title>DevOps Automation - Zion Tech Group</title>
+        <meta name="description" content="Professional devops automation services to accelerate your business growth and digital transformation." />
+        <meta name="keywords" content="devops automation, services, technology, business, digital transformation" />
+        <link rel="canonical" href="https://ziontechgroup.com/services/rapid-1755541217739-syv77n" />
       </Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
-        <h1 className="text-4xl font-extrabold text-center mb-8">Web Development</h1>
+        <h1 className="text-4xl font-extrabold text-center mb-8">DevOps Automation</h1>
         
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4">🚀 Service Overview</h2>
           <p className="text-xl text-white/90 mb-4">
-            Our web development service delivers cutting-edge solutions to help your business thrive in the digital age.
+            Our devops automation service delivers cutting-edge solutions to help your business thrive in the digital age.
           </p>
           <p className="text-white/80">
             We combine industry expertise with innovative technology to deliver results that exceed expectations.
@@ -37,13 +37,13 @@ export default function ServicePage() {
           <h2 className="text-2xl font-bold mb-4">🎯 What We Deliver</h2>
           <p className="text-white/80">
             Our comprehensive approach includes strategy development, implementation, training, and ongoing support
-            to ensure your success with web development.
+            to ensure your success with devops automation.
           </p>
         </section>
 
         <section className="text-center">
           <p className="text-white/75 mb-4">
-            Ready to transform your business with web development?
+            Ready to transform your business with devops automation?
           </p>
           <a 
             href="https://ziontechgroup.com/contact" 
