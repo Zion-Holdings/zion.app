@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T18:04:18.736Z",
+  "timestamp": "2025-08-18T18:07:51.221Z",
   "critical": [
     {
       "name": "ci-self-heal.yml",
@@ -6430,6 +6430,63 @@
     {
       "name": "agent-agent-1755540226159-2-backend-basic.yml",
       "path": "/workspace/.github/workflows/agent-agent-1755540226159-2-backend-basic.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 25,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "resourceScore": 109
+    },
+    {
+      "name": "agent-agent-1755540433765-0-optimization-advanced.yml",
+      "path": "/workspace/.github/workflows/agent-agent-1755540433765-0-optimization-advanced.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 25,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "resourceScore": 109
+    },
+    {
+      "name": "agent-agent-1755540433766-1-full-stack-expert.yml",
+      "path": "/workspace/.github/workflows/agent-agent-1755540433766-1-full-stack-expert.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 25,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "resourceScore": 109
+    },
+    {
+      "name": "agent-agent-1755540433766-2-deployment-basic.yml",
+      "path": "/workspace/.github/workflows/agent-agent-1755540433766-2-deployment-basic.yml",
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 25,
