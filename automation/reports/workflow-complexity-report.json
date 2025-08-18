@@ -1,18 +1,18 @@
 {
-  "timestamp": "2025-08-18T18:00:51.110Z",
+  "timestamp": "2025-08-18T18:04:18.514Z",
   "summary": {
-    "totalWorkflows": 426,
+    "totalWorkflows": 432,
     "complexityDistribution": {
       "very-high": 0,
       "high": 3,
       "medium": 9,
-      "low": 414
+      "low": 420
     },
     "refactoringPriorities": {
       "critical": 0,
       "high": 3,
       "medium": 9,
-      "low": 414
+      "low": 420
     }
   },
   "workflows": {
@@ -1023,6 +1023,60 @@
       "refactoringPriority": "low",
       "status": "active",
       "path": "/workspace/.github/workflows/agent-agent-1755540014849-2-deployment-expert.yml"
+    },
+    "agent-agent-1755540226157-0-full-stack-intermediate.yml": {
+      "complexityScore": 0,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 20,
+        "jobCount": 0,
+        "stepCount": 4,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/workspace/.github/workflows/agent-agent-1755540226157-0-full-stack-intermediate.yml"
+    },
+    "agent-agent-1755540226158-1-monitoring-basic.yml": {
+      "complexityScore": 0,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 20,
+        "jobCount": 0,
+        "stepCount": 4,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/workspace/.github/workflows/agent-agent-1755540226158-1-monitoring-basic.yml"
+    },
+    "agent-agent-1755540226159-2-backend-basic.yml": {
+      "complexityScore": 0,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 20,
+        "jobCount": 0,
+        "stepCount": 4,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/workspace/.github/workflows/agent-agent-1755540226159-2-backend-basic.yml"
     },
     "agent-factory-automation.yml": {
       "complexityScore": 0,
@@ -5380,6 +5434,24 @@
       "status": "active",
       "path": "/workspace/.github/workflows/ultra-fast-exponential-growth-deployment-basic-1755539721052.yml"
     },
+    "ultra-fast-exponential-growth-deployment-basic-1755540141030.yml": {
+      "complexityScore": 15,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 56,
+        "jobCount": 0,
+        "stepCount": 6,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/workspace/.github/workflows/ultra-fast-exponential-growth-deployment-basic-1755540141030.yml"
+    },
     "ultra-fast-exponential-growth-deployment-expert-1755537907358.yml": {
       "complexityScore": 15,
       "complexityLevel": "low",
@@ -6532,6 +6604,24 @@
       "status": "active",
       "path": "/workspace/.github/workflows/ultra-fast-quantum-automation-generation-expert-1755537637369.yml"
     },
+    "ultra-fast-quantum-automation-innovation-expert-1755540141049.yml": {
+      "complexityScore": 15,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 56,
+        "jobCount": 0,
+        "stepCount": 6,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/workspace/.github/workflows/ultra-fast-quantum-automation-innovation-expert-1755540141049.yml"
+    },
     "ultra-fast-quantum-automation-innovation-intermediate-1755538513167.yml": {
       "complexityScore": 15,
       "complexityLevel": "low",
@@ -7107,6 +7197,24 @@
       "refactoringPriority": "low",
       "status": "active",
       "path": "/workspace/.github/workflows/ultra-fast-self-improving-system-monitoring-advanced-1755538207352.yml"
+    },
+    "ultra-fast-self-improving-system-monitoring-advanced-1755540141010.yml": {
+      "complexityScore": 15,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 56,
+        "jobCount": 0,
+        "stepCount": 6,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/workspace/.github/workflows/ultra-fast-self-improving-system-monitoring-advanced-1755540141010.yml"
     },
     "ultra-fast-self-improving-system-orchestration-basic-1755537487349.yml": {
       "complexityScore": 15,

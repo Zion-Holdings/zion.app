@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T18:00:51.340Z",
+  "timestamp": "2025-08-18T18:04:18.736Z",
   "critical": [
     {
       "name": "ci-self-heal.yml",
@@ -1569,6 +1569,27 @@
       "resourceScore": 117
     },
     {
+      "name": "ultra-fast-exponential-growth-deployment-basic-1755540141030.yml",
+      "path": "/workspace/.github/workflows/ultra-fast-exponential-growth-deployment-basic-1755540141030.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 15,
+      "concurrentJobs": 8,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch {}",
+        "schedule",
+        "push",
+        "pull_request"
+      ],
+      "resourceScore": 117
+    },
+    {
       "name": "ultra-fast-exponential-growth-deployment-expert-1755537907358.yml",
       "path": "/workspace/.github/workflows/ultra-fast-exponential-growth-deployment-expert-1755537907358.yml",
       "priority": "medium",
@@ -2913,6 +2934,27 @@
       "resourceScore": 117
     },
     {
+      "name": "ultra-fast-quantum-automation-innovation-expert-1755540141049.yml",
+      "path": "/workspace/.github/workflows/ultra-fast-quantum-automation-innovation-expert-1755540141049.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 15,
+      "concurrentJobs": 8,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch {}",
+        "schedule",
+        "push",
+        "pull_request"
+      ],
+      "resourceScore": 117
+    },
+    {
       "name": "ultra-fast-quantum-automation-innovation-intermediate-1755538513167.yml",
       "path": "/workspace/.github/workflows/ultra-fast-quantum-automation-innovation-intermediate-1755538513167.yml",
       "priority": "medium",
@@ -3566,6 +3608,27 @@
     {
       "name": "ultra-fast-self-improving-system-monitoring-advanced-1755538207352.yml",
       "path": "/workspace/.github/workflows/ultra-fast-self-improving-system-monitoring-advanced-1755538207352.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 15,
+      "concurrentJobs": 8,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch {}",
+        "schedule",
+        "push",
+        "pull_request"
+      ],
+      "resourceScore": 117
+    },
+    {
+      "name": "ultra-fast-self-improving-system-monitoring-advanced-1755540141010.yml",
+      "path": "/workspace/.github/workflows/ultra-fast-self-improving-system-monitoring-advanced-1755540141010.yml",
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 15,
@@ -6310,6 +6373,63 @@
     {
       "name": "agent-agent-1755540014849-2-deployment-expert.yml",
       "path": "/workspace/.github/workflows/agent-agent-1755540014849-2-deployment-expert.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 25,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "resourceScore": 109
+    },
+    {
+      "name": "agent-agent-1755540226157-0-full-stack-intermediate.yml",
+      "path": "/workspace/.github/workflows/agent-agent-1755540226157-0-full-stack-intermediate.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 25,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "resourceScore": 109
+    },
+    {
+      "name": "agent-agent-1755540226158-1-monitoring-basic.yml",
+      "path": "/workspace/.github/workflows/agent-agent-1755540226158-1-monitoring-basic.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 25,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "resourceScore": 109
+    },
+    {
+      "name": "agent-agent-1755540226159-2-backend-basic.yml",
+      "path": "/workspace/.github/workflows/agent-agent-1755540226159-2-backend-basic.yml",
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 25,

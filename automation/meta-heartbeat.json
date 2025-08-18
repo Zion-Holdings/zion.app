@@ -1,9 +1,5 @@
 {
-<<<<<<< Updated upstream
-  "triggeredAt": "2025-08-18T17:57:26.319Z",
-=======
-  "triggeredAt": "2025-08-18T18:00:15.988Z",
->>>>>>> Stashed changes
+  "triggeredAt": "2025-08-18T18:03:47.144Z",
   "triggered": [
     "continuous-front-runner",
     "docs-index-runner",

@@ -1,39 +1,39 @@
 # Agent Factory Documentation
 
-Generated on: 2025-08-18T17:57:25.216Z
+Generated on: 2025-08-18T18:03:46.160Z
 
 ## 🤖 Active Agents
 
 
-### agent-1755539845214-0-backend-expert
+### agent-1755540226157-0-full-stack-intermediate
+- **Type**: full-stack
+- **Complexity**: intermediate
+- **Status**: generated
+- **Created**: 2025-08-18T18:03:46.157Z
+- **Capabilities**: code_generation, testing, deployment, monitoring, optimization, learning
+
+
+### agent-1755540226158-1-monitoring-basic
+- **Type**: monitoring
+- **Complexity**: basic
+- **Status**: generated
+- **Created**: 2025-08-18T18:03:46.158Z
+- **Capabilities**: code_generation, testing, deployment, monitoring, optimization, learning
+
+
+### agent-1755540226159-2-backend-basic
 - **Type**: backend
-- **Complexity**: expert
+- **Complexity**: basic
 - **Status**: generated
-- **Created**: 2025-08-18T17:57:25.214Z
-- **Capabilities**: code_generation, testing, deployment, monitoring, optimization, learning, ai_integration, quantum_computing, advanced_analytics, microservices, cloud_native, security_hardening
-
-
-### agent-1755539845215-1-optimization-expert
-- **Type**: optimization
-- **Complexity**: expert
-- **Status**: generated
-- **Created**: 2025-08-18T17:57:25.215Z
-- **Capabilities**: code_generation, testing, deployment, monitoring, optimization, learning, ai_integration, quantum_computing, advanced_analytics, microservices, cloud_native, security_hardening
-
-
-### agent-1755539845215-2-frontend-expert
-- **Type**: frontend
-- **Complexity**: expert
-- **Status**: generated
-- **Created**: 2025-08-18T17:57:25.215Z
-- **Capabilities**: code_generation, testing, deployment, monitoring, optimization, learning, ai_integration, quantum_computing, advanced_analytics, microservices, cloud_native, security_hardening
+- **Created**: 2025-08-18T18:03:46.159Z
+- **Capabilities**: code_generation, testing, deployment, monitoring, optimization, learning
 
 
 ## 📊 Agent Statistics
 
 - **Total Agents**: 3
-- **Agent Types**: backend, optimization, frontend
-- **Complexity Levels**: expert
+- **Agent Types**: full-stack, monitoring, backend
+- **Complexity Levels**: intermediate, basic
 
 ## 🚀 Getting Started
 
@@ -49,21 +49,21 @@ The factory configuration is stored in `automation/config/factory-config.json`
 ## 📈 Performance Metrics
 
 
-### agent-1755539845214-0-backend-expert
+### agent-1755540226157-0-full-stack-intermediate
 - Tasks Completed: 0
 - Success Rate: 0.5
 - Efficiency Score: 0.5
 - Learning Rate: 0.1
 
 
-### agent-1755539845215-1-optimization-expert
+### agent-1755540226158-1-monitoring-basic
 - Tasks Completed: 0
 - Success Rate: 0.5
 - Efficiency Score: 0.5
 - Learning Rate: 0.1
 
 
-### agent-1755539845215-2-frontend-expert
+### agent-1755540226159-2-backend-basic
 - Tasks Completed: 0
 - Success Rate: 0.5
 - Efficiency Score: 0.5
