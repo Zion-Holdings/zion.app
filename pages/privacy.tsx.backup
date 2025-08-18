@@ -99,7 +99,7 @@ export default function PrivacyPage() {
                     <li>• Conduct research and analytics</li>
                     <li>• Send marketing communications</li>
                     <li>• Ensure security and compliance</li>
-                    <li>• Manage business relationships</li>
+                    <li>• Legal and regulatory requirements</li>
                   </ul>
                 </div>
               </div>
@@ -107,57 +107,31 @@ export default function PrivacyPage() {
           </section>
 
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-white mb-6">Data Protection</h2>
+            <h2 className="text-3xl font-bold text-white mb-6">Information Sharing and Disclosure</h2>
             
             <div className="bg-slate-900/50 border border-white/10 rounded-lg p-6">
-              <p className="text-white/70 mb-4">
-                We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.
+              <p className="text-white/80 mb-4">
+                We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except in the following circumstances:
               </p>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="text-center">
-                  <div className="text-2xl mb-2">🔒</div>
-                  <h4 className="font-semibold text-white mb-2">Encryption</h4>
-                  <p className="text-white/60 text-sm">All data is encrypted in transit and at rest</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl mb-2">🛡️</div>
-                  <h4 className="font-semibold text-white mb-2">Access Control</h4>
-                  <p className="text-white/60 text-sm">Strict access controls and authentication</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl mb-2">📊</div>
-                  <h4 className="font-semibold text-white mb-2">Monitoring</h4>
-                  <p className="text-white/60 text-sm">Continuous security monitoring and auditing</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section className="mb-12">
-            <h2 className="text-3xl font-bold text-white mb-6">Your Rights</h2>
-            
-            <div className="bg-slate-900/50 border border-white/10 rounded-lg p-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="text-xl font-semibold text-green-400 mb-3">Access & Control</h3>
-                  <ul className="text-white/70 space-y-2">
-                    <li>• Access your personal information</li>
-                    <li>• Request corrections or updates</li>
-                    <li>• Delete your data</li>
-                    <li>• Export your information</li>
-                    <li>• Opt-out of communications</li>
+                  <h3 className="text-lg font-semibold text-white mb-2">Service Providers</h3>
+                  <ul className="text-white/70 text-sm space-y-1">
+                    <li>• Cloud hosting and infrastructure</li>
+                    <li>• Payment processing services</li>
+                    <li>• Analytics and monitoring tools</li>
+                    <li>• Customer support platforms</li>
                   </ul>
                 </div>
                 
                 <div>
-                  <h3 className="text-xl font-semibold text-blue-400 mb-3">Transparency</h3>
-                  <ul className="text-white/70 space-y-2">
-                    <li>• Clear information about data use</li>
-                    <li>• Notification of policy changes</li>
-                    <li>• Contact information for questions</li>
-                    <li>• Right to lodge complaints</li>
-                    <li>• Regular privacy updates</li>
+                  <h3 className="text-lg font-semibold text-white mb-2">Legal Requirements</h3>
+                  <ul className="text-white/70 text-sm space-y-1">
+                    <li>• Compliance with laws and regulations</li>
+                    <li>• Protection of rights and safety</li>
+                    <li>• Response to legal requests</li>
+                    <li>• Investigation of fraud or abuse</li>
                   </ul>
                 </div>
               </div>
@@ -165,30 +139,140 @@ export default function PrivacyPage() {
           </section>
 
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-white mb-6">Contact Us</h2>
+            <h2 className="text-3xl font-bold text-white mb-6">Data Security and Protection</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-slate-900/50 border border-white/10 rounded-lg p-6">
+                <h3 className="text-xl font-semibold text-cyan-400 mb-3">Technical Safeguards</h3>
+                <ul className="text-white/70 text-sm space-y-1">
+                  <li>• Encryption in transit and at rest</li>
+                  <li>• Multi-factor authentication</li>
+                  <li>• Regular security audits</li>
+                  <li>• Access controls and monitoring</li>
+                </ul>
+              </div>
+              
+              <div className="bg-slate-900/50 border border-white/10 rounded-lg p-6">
+                <h3 className="text-xl font-semibold text-fuchsia-400 mb-3">Organizational Measures</h3>
+                <ul className="text-white/70 text-sm space-y-1">
+                  <li>• Employee training and awareness</li>
+                  <li>• Incident response procedures</li>
+                  <li>• Regular policy reviews</li>
+                  <li>• Vendor security assessments</li>
+                </ul>
+              </div>
+              
+              <div className="bg-slate-900/50 border border-white/10 rounded-lg p-6">
+                <h3 className="text-xl font-semibold text-purple-400 mb-3">Compliance Standards</h3>
+                <ul className="text-white/70 text-sm space-y-1">
+                  <li>• GDPR compliance measures</li>
+                  <li>• Industry best practices</li>
+                  <li>• Regular compliance audits</li>
+                  <li>• Privacy by design principles</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-white mb-6">Your Privacy Rights</h2>
             
             <div className="bg-slate-900/50 border border-white/10 rounded-lg p-6">
-              <p className="text-white/70 mb-4">
-                If you have any questions about this Privacy Policy or our data practices, please contact us:
+              <p className="text-white/80 mb-4">
+                Depending on your location, you may have certain rights regarding your personal information:
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <h4 className="text-lg font-semibold text-cyan-400 mb-2">Email</h4>
-                  <p className="text-white/70">privacy@ziontechgroup.com</p>
+                  <h3 className="text-lg font-semibold text-white mb-2">Access and Control</h3>
+                  <ul className="text-white/70 text-sm space-y-1">
+                    <li>• Access your personal data</li>
+                    <li>• Correct inaccurate information</li>
+                    <li>• Request data deletion</li>
+                    <li>• Restrict processing</li>
+                  </ul>
                 </div>
+                
                 <div>
-                  <h4 className="text-lg font-semibold text-fuchsia-400 mb-2">Address</h4>
-                  <p className="text-white/70">
-                    Zion Tech Group<br />
-                    123 Innovation Drive<br />
-                    Tech City, TC 12345<br />
-                    United States
-                  </p>
+                  <h3 className="text-lg font-semibold text-white mb-2">Portability and Objection</h3>
+                  <ul className="text-white/70 text-sm space-y-1">
+                    <li>• Data portability</li>
+                    <li>• Object to processing</li>
+                    <li>• Withdraw consent</li>
+                    <li>• Lodge complaints</li>
+                  </ul>
                 </div>
               </div>
             </div>
           </section>
+
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-white mb-6">Cookies and Tracking Technologies</h2>
+            
+            <div className="bg-slate-900/50 border border-white/10 rounded-lg p-6">
+              <p className="text-white/80 mb-4">
+                We use cookies and similar technologies to enhance your experience and analyze website usage:
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                  <h4 className="text-lg font-semibold text-white mb-2">Essential Cookies</h4>
+                  <ul className="text-white/70 text-sm space-y-1">
+                    <li>• Authentication and security</li>
+                  </ul>
+                </div>
+                
+                  </ul>
+                </div>
+                
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+            
+                Your information may be transferred to and processed in countries other than your own. We ensure appropriate safeguards are in place:
+              </p>
+              
+              </ul>
+            </div>
+          </section>
+
+            
+                Our services are not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13:
+              </p>
+              
+              </ul>
+            </div>
+          </section>
+
+            
+                We may update this Privacy Policy from time to time. We will notify you of any material changes:
+              </p>
+              
+              </ul>
+            </div>
+          </section>
+
+            
+                If you have questions about this Privacy Policy or our data practices, please contact us:
+              </p>
+              
+                  </ul>
+                </div>
+                
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+              We are committed to protecting your privacy and ensuring transparency in our data practices. This policy reflects our dedication to maintaining the highest standards of data protection and privacy compliance.
+            </p>
+              By using our services, you acknowledge that you have read and understood this Privacy Policy. If you do not agree with our practices, please do not use our services.
+            </p>
+          </div>
         </div>
       </main>
     </div>

@@ -3,6 +3,33 @@ import { useState } from 'react';
 
 export default function SimpleService1755536758091l3r7tliu9() {
   const [selectedPlan, setSelectedPlan] = useState(0);
+  const serviceData = {
+    features: [
+      "AI-Powered Automation",
+      "Machine Learning Solutions",
+      "Data Analytics & Insights",
+      "Custom AI Development",
+      "24/7 Support & Maintenance",
+      "Scalable Infrastructure"
+    ],
+    pricing: [
+      {
+        plan: "Starter",
+        price: "$999/month",
+        features: ["Basic AI Integration", "Standard Support", "Monthly Reports"]
+      },
+      {
+        plan: "Professional",
+        price: "$2,499/month",
+        features: ["Advanced AI Features", "Priority Support", "Weekly Reports"]
+      },
+      {
+        plan: "Enterprise",
+        price: "$4,999/month",
+        features: ["Full AI Suite", "Dedicated Support", "Real-time Analytics"]
+      }
+    ]
+  };
 
   return (
     <div className="min-h-screen bg-slate-950 text-white">
