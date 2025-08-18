@@ -2,12 +2,16 @@ name: Monetization Automation Continuous
 
 on:
   schedule:
-    - cron: '*/30 * * * *' # every 30 minutes
+    - cron: '0 */12 * * *' # every 30 minutes
   workflow_dispatch:
 
 permissions:
   contents: read
   actions: read
+
+concurrency:
+  group: monetization-continuous
+  cancel-in-progress: false
 
 jobs:
   monetization:
