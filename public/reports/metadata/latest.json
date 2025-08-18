@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T04:04:18.618Z",
-  "pagesScanned": 8529,
+  "generatedAt": "2025-08-18T04:04:28.399Z",
+  "pagesScanned": 8530,
   "items": [
     {
       "route": "/404",
@@ -36166,6 +36166,16 @@
       "suggestion": {
         "title": "Guide: RAG Platforms",
         "description": "Guide: RAG Platforms — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18-0404",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook: Edge AI",
+        "description": "Playbook: Edge AI — auto-suggested description"
       }
     },
     {
