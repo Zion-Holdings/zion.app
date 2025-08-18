@@ -1,5 +1,9 @@
 {
+<<<<<<< Updated upstream
   "generatedAt": "2025-08-18T17:10:08.743Z",
+=======
+  "generatedAt": "2025-08-18T17:09:40.987Z",
+>>>>>>> Stashed changes
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
