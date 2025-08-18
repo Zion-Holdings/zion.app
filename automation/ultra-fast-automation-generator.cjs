@@ -462,6 +462,7 @@ jobs:
         run: |
           echo "🏭 Triggering new automation creation..."
           # This will trigger the creation of new automations
+          # This will trigger the creation of new automations
 `;
   }
 
