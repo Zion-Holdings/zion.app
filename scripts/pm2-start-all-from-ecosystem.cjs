@@ -39,7 +39,7 @@ function main() {
       const cron = app.cron_restart ? ` --cron-restart "${app.cron_restart}"` : '';
       const cwd = app.cwd ? ` --cwd "${app.cwd}"` : '';
       const time = ' --time';
-      const opts = ' --restart-delay 5000 --max-restarts 50 --exp-backoff-restart-delay 1000 --autorestart';
+      const opts = ' --restart-delay 5000 --max-restarts 50 --exp-backoff-restart-delay 1000';
       const cmd = `pm2 start "${script}" --name "${name}"${cron}${cwd}${time}${opts}`;
       sh(cmd);
     }
