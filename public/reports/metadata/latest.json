@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T03:20:01.271Z",
-  "pagesScanned": 8525,
+  "generatedAt": "2025-08-18T03:21:01.212Z",
+  "pagesScanned": 8528,
   "items": [
     {
       "route": "/404",
@@ -36166,6 +36166,16 @@
       "suggestion": {
         "title": "Guide: RAG Platforms",
         "description": "Guide: RAG Platforms — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18-0320",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Blueprint: Agent Ops",
+        "description": "Blueprint: Agent Ops — auto-suggested description"
       }
     },
     {
@@ -85161,14 +85171,24 @@
     {
       "route": "/reports/updates/update-2025-08-18-0020",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 00:20",
+        "description": "Autonomous Update — 2025-08-18 00:20 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0021",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 00:20",
-        "description": "Autonomous Update — 2025-08-18 00:20 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-18 00:21",
+        "description": "Autonomous Update — 2025-08-18 00:21 — auto-suggested description"
       }
     },
     {
@@ -85179,6 +85199,16 @@
       "suggestion": {
         "title": "Autonomous Performance Tuning Guide — Vision & Multimodal (2025-08-18 03:10 UTC)",
         "description": "Autonomous Performance Tuning Guide — Vision & Multimodal (2025-08-18 03:10 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0320",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Playbook — Vision & Multimodal (2025-08-18 03:20 UTC)",
+        "description": "Autonomous Playbook — Vision & Multimodal (2025-08-18 03:20 UTC) — auto-suggested description"
       }
     },
     {
