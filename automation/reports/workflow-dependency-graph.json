@@ -2732,7 +2732,7 @@
   "netlify-monitor.yml": {
     "name": "netlify-monitor.yml",
     "triggers": [
-      "workflow_dispatch null",
+      "workflow_dispatch {}",
       "schedule"
     ],
     "needs": [],
