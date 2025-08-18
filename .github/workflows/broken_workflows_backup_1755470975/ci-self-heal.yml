@@ -7,10 +7,12 @@ on:
       - completed
 
 permissions:
+  contents: write
+  pull-requests: write
+  actions: read
 concurrency:
   group: "ci-self-heal-${{ github.ref }}"
   cancel-in-progress: true
-  contents: read
 
 jobs:
   attempt-fix:

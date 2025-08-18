@@ -6,7 +6,8 @@ on:
     - cron: '0 */6 * * *'  # Every 6 hours
 
 permissions:
-  contents: read
+  contents: write
+  pull-requests: write
   actions: read
 
 env:

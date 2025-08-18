@@ -6,11 +6,12 @@ on:
     - cron: '0 */4 * * *'  # Every 4 hours
 
 permissions:
+  contents: write
+  pull-requests: write
+  actions: read
 concurrency:
   group: "general-automation-${{ github.ref }}"
   cancel-in-progress: true
-  contents: read
-  actions: read
 
 env:
   AUTOMATION_TYPE: general
