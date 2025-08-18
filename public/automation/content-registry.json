@@ -17539,5 +17539,139 @@
       "route": "/docs/CHANGELOG.md"
     }
   ],
-  "generatedAt": "2025-08-18T18:07:08.186Z"
+  "generatedAt": "2025-08-18T18:07:08.186Z",
+  "items": [
+    {
+      "title": "Innovation Insight — 2025-08-18 18-18",
+      "href": "/reports/innovations/insight-2025-08-18T18-18",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:18:47.680Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-18",
+      "href": "/reports/updates/update-2025-08-18T18-18",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:18:47.680Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 18-18",
+      "href": "/reports/innovations/insight-2025-08-18T18-18",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:18:47.680Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-18",
+      "href": "/reports/updates/update-2025-08-18T18-18",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:18:47.680Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "id": "rapid-1755541126221-cecxyw",
+      "title": "Cloud Infrastructure",
+      "route": "/services/rapid-1755541126221-cecxyw",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:18:46.231Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755541126222-g6frsz",
+      "title": "Monitoring System",
+      "route": "/products/rapid-1755541126222-g6frsz",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:18:46.231Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755541126223-w52a37",
+      "title": "Professional Tips for API Integration",
+      "route": "/tutorials/rapid-1755541126223-w52a37",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:18:46.231Z",
+      "process": "rapid"
+    },
+    {
+      "id": "ultra-1755541126633-syb8cp",
+      "title": "Rapid Technology Advancement",
+      "route": "/reports/updates/ultra-1755541126633-syb8cp",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:18:46.643Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541126634-tdbm7m",
+      "title": "Ultra-Fast Rapid prototyping systems Insight",
+      "route": "/reports/insights/ultra-1755541126634-tdbm7m",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:18:46.643Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541126635-aghxae",
+      "title": "Ultra-Fast Guide: Real-time collaboration tools",
+      "route": "/reports/guides/ultra-1755541126635-aghxae",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:18:46.643Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541126636-gc9rja",
+      "title": "Case Study: Lightning deployment pipelines Success",
+      "route": "/reports/cases/ultra-1755541126636-gc9rja",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:18:46.643Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541126637-j63aho",
+      "title": "Pattern: Rapid prototyping systems Architecture",
+      "route": "/reports/patterns/ultra-1755541126637-j63aho",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:18:46.643Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541128785-f945vb",
+      "title": "Instant Digital Transformation",
+      "route": "/reports/updates/ultra-1755541128785-f945vb",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:18:48.797Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541128786-5v0utg",
+      "title": "Ultra-Fast Rapid prototyping systems Insight",
+      "route": "/reports/insights/ultra-1755541128786-5v0utg",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:18:48.797Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541128787-twc0ds",
+      "title": "Ultra-Fast Guide: AI-powered automation",
+      "route": "/reports/guides/ultra-1755541128787-twc0ds",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:18:48.797Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541128788-0l6r8p",
+      "title": "Case Study: AI-powered automation Success",
+      "route": "/reports/cases/ultra-1755541128788-0l6r8p",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:18:48.797Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541128789-dakj8b",
+      "title": "Pattern: Real-time collaboration tools Architecture",
+      "route": "/reports/patterns/ultra-1755541128789-dakj8b",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:18:48.797Z",
+      "process": "ultra-fast"
+    }
+  ]
 }
