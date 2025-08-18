@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T15:33:19.849Z",
-  "pagesScanned": 2202,
+  "generatedAt": "2025-08-18T15:33:44.586Z",
+  "pagesScanned": 2212,
   "items": [
     {
       "route": "/404",
@@ -2845,6 +2845,16 @@
       }
     },
     {
+      "route": "/reports/blueprints/blueprint-2025-08-18-153322",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/cases/case-2025-08-18-122902",
       "missing": [
         "og:image"
@@ -5496,6 +5506,16 @@
     },
     {
       "route": "/reports/cases/case-2025-08-18-153258",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Cloud Improving",
+        "description": "Case Study — Cloud Improving — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-18-153323",
       "missing": [
         "og:image"
       ],
@@ -8165,6 +8185,16 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-18-153323",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/innovation-2025-08-18-1229",
       "missing": [
         "og:image"
@@ -9592,6 +9622,16 @@
       "suggestion": {
         "title": "Service Blueprint — Data Engineering Pipelines",
         "description": "Service Blueprint — Data Engineering Pipelines — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/innovation-2025-08-18-1533",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Capability Map — Autonomous UIs",
+        "description": "Capability Map — Autonomous UIs — auto-suggested description"
       }
     },
     {
@@ -11035,6 +11075,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-18-1533",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook: FinOps for AI",
+        "description": "Playbook: FinOps for AI — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-18T12-29",
       "missing": [
         "og:image"
@@ -12452,6 +12502,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-18 15-32",
         "description": "Innovation Insight — 2025-08-18 15-32 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18T15-33",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-18 15-33",
+        "description": "Innovation Insight — 2025-08-18 15-33 — auto-suggested description"
       }
     },
     {
@@ -15135,6 +15195,16 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-18-153323",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Automation Trends 2025",
+        "description": "Pattern — Automation Trends 2025 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-18-122902",
       "missing": [
         "og:image"
@@ -17606,6 +17676,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-18-153258",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-18-153323",
       "missing": [
         "og:image"
       ],
@@ -20565,6 +20645,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-18-1533",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Validation & QA Plan — Data Engineering (2025-08-18 15:33 UTC)",
+        "description": "Autonomous Validation & QA Plan — Data Engineering (2025-08-18 15:33 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-18T12-29",
       "missing": [
         "og:image"
@@ -21982,6 +22072,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-18 15-32",
         "description": "Autonomous Update — 2025-08-18 15-32 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18T15-33",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 15-33",
+        "description": "Autonomous Update — 2025-08-18 15-33 — auto-suggested description"
       }
     },
     {
