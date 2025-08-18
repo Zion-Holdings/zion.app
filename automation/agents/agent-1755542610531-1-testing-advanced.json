@@ -1,0 +1,28 @@
+{
+  "id": "agent-1755542610531-1-testing-advanced",
+  "type": "testing",
+  "complexity": "advanced",
+  "created_at": "2025-08-18T18:43:30.531Z",
+  "status": "generated",
+  "capabilities": {
+    "code_generation": true,
+    "testing": true,
+    "deployment": true,
+    "monitoring": true,
+    "optimization": true,
+    "learning": true,
+    "microservices": true,
+    "cloud_native": true,
+    "security_hardening": true
+  },
+  "specializations": [
+    "performance-tests",
+    "security-tests"
+  ],
+  "performance_metrics": {
+    "tasks_completed": 0,
+    "success_rate": 0.5,
+    "efficiency_score": 0.5,
+    "learning_rate": 0.1
+  }
+}
