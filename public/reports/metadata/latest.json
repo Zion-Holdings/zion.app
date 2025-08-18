@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T17:17:16.301Z",
-  "pagesScanned": 3259,
+  "generatedAt": "2025-08-18T17:21:01.603Z",
+  "pagesScanned": 3303,
   "items": [
     {
       "route": "/404",
@@ -4031,6 +4031,46 @@
       }
     },
     {
+      "route": "/reports/blueprints/blueprint-2025-08-18-171718",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-18-171803",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-18-172005",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/case-studies/retail-digital-transformation",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Digital Transformation Success Story: Retail Giant",
+        "description": "Digital Transformation Success Story: Retail Giant — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/cases/case-2025-08-18-122902",
       "missing": [
         "og:image"
@@ -7911,6 +7951,36 @@
       }
     },
     {
+      "route": "/reports/cases/case-2025-08-18-171718",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Cloud Improving",
+        "description": "Case Study — Cloud Improving — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-18-171803",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Cloud Improving",
+        "description": "Case Study — Cloud Improving — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-18-172005",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Cloud Improving",
+        "description": "Case Study — Cloud Improving — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/dossiers/",
       "missing": [
         "og:image"
@@ -7918,6 +7988,16 @@
       "suggestion": {
         "title": "Dossiers",
         "description": "Dossiers — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/ai-automation-best-practices",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "AI-Powered Automation Best Practices",
+        "description": "AI-Powered Automation Best Practices — auto-suggested description"
       }
     },
     {
@@ -11801,6 +11881,36 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-18-171718",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-18-171803",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-18-172005",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/",
       "missing": [
         "og:image"
@@ -13998,6 +14108,36 @@
       "suggestion": {
         "title": "Runbook — DevSecOps for AI",
         "description": "Runbook — DevSecOps for AI — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/innovation-2025-08-18-1717",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Data Engineering Pipelines",
+        "description": "Reference Architecture — Data Engineering Pipelines — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/innovation-2025-08-18-1718",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Implementation Guide — DevSecOps for AI",
+        "description": "Implementation Guide — DevSecOps for AI — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/innovation-2025-08-18-1720",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Service Blueprint — Cloud FinOps",
+        "description": "Service Blueprint — Cloud FinOps — auto-suggested description"
       }
     },
     {
@@ -16201,6 +16341,36 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-18-1717",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pilot Plan: Edge AI",
+        "description": "Pilot Plan: Edge AI — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18-1718",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Blueprint: DevSecOps AI",
+        "description": "Blueprint: DevSecOps AI — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18-1720",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Runbook: LLM Apps",
+        "description": "Runbook: LLM Apps — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-18T12-29",
       "missing": [
         "og:image"
@@ -18358,6 +18528,46 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-18 17-15",
         "description": "Innovation Insight — 2025-08-18 17-15 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18T17-17",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-18 17-17",
+        "description": "Innovation Insight — 2025-08-18 17-17 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18T17-18",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-18 17-18",
+        "description": "Innovation Insight — 2025-08-18 17-18 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18T17-20",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-18 17-20",
+        "description": "Innovation Insight — 2025-08-18 17-20 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/insights/cloud-computing-2025-trends",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "The Future of Cloud Computing: 2025 Trends",
+        "description": "The Future of Cloud Computing: 2025 Trends — auto-suggested description"
       }
     },
     {
@@ -22271,6 +22481,36 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-18-171718",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Automation Trends 2025",
+        "description": "Pattern — Automation Trends 2025 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-18-171803",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Automation Trends 2025",
+        "description": "Pattern — Automation Trends 2025 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-18-172005",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Automation Trends 2025",
+        "description": "Pattern — Automation Trends 2025 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-18-122902",
       "missing": [
         "og:image"
@@ -25941,6 +26181,36 @@
       }
     },
     {
+      "route": "/reports/playbooks/playbook-2025-08-18-171719",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-18-171804",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-18-172006",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/tutorials/",
       "missing": [
         "og:image"
@@ -25948,6 +26218,16 @@
       "suggestion": {
         "title": "Tutorials",
         "description": "Tutorials — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/tutorials/microservices-nextjs",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Building Scalable Microservices with Next.js",
+        "description": "Building Scalable Microservices with Next.js — auto-suggested description"
       }
     },
     {
@@ -28571,6 +28851,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-18-1421",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 14:21",
+        "description": "Autonomous Update — 2025-08-18 14:21 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-18-1422",
       "missing": [
         "og:image"
@@ -29978,6 +30271,36 @@
       "suggestion": {
         "title": "Autonomous Blueprint — MLOps & Model Reliability (2025-08-18 17:15 UTC)",
         "description": "Autonomous Blueprint — MLOps & Model Reliability (2025-08-18 17:15 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-1717",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Capability Map — DevSecOps for AI (2025-08-18 17:17 UTC)",
+        "description": "Autonomous Capability Map — DevSecOps for AI (2025-08-18 17:17 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-1718",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Capability Map — DevSecOps for AI (2025-08-18 17:18 UTC)",
+        "description": "Autonomous Capability Map — DevSecOps for AI (2025-08-18 17:18 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-1720",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Checklist — Evaluation & Safety (2025-08-18 17:20 UTC)",
+        "description": "Autonomous Checklist — Evaluation & Safety (2025-08-18 17:20 UTC) — auto-suggested description"
       }
     },
     {
@@ -31641,6 +31964,46 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-18T17-17",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 17-17",
+        "description": "Autonomous Update — 2025-08-18 17-17 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18T17-18",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 17-18",
+        "description": "Autonomous Update — 2025-08-18 17-18 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18T17-20",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 17-20",
+        "description": "Autonomous Update — 2025-08-18 17-20 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/whitepapers/enterprise-ai-strategy-framework",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Enterprise AI Strategy Framework",
+        "description": "Enterprise AI Strategy Framework — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/whitepapers/",
       "missing": [
         "og:image"
@@ -32082,6 +32445,110 @@
       "suggestion": {
         "title": "Premium DevOps Solution",
         "description": "Premium DevOps Solution — auto-suggested description"
+      }
+    },
+    {
+      "route": "/services/simple-service-1755537438079-wmcwqufvd",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Premium Support Solution",
+        "description": "Premium Support Solution — auto-suggested description"
+      }
+    },
+    {
+      "route": "/services/simple-service-1755537438080-yn7y0dm8e",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Premium Consulting Solution",
+        "description": "Premium Consulting Solution — auto-suggested description"
+      }
+    },
+    {
+      "route": "/services/simple-service-1755537618083-bbjlyyuzy",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "DevOps Service",
+        "description": "DevOps Service — auto-suggested description"
+      }
+    },
+    {
+      "route": "/services/simple-service-1755537618084-or67b14l2",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Cloud Services Service",
+        "description": "Cloud Services Service — auto-suggested description"
+      }
+    },
+    {
+      "route": "/services/simple-service-1755537638090-howgmao98",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Data Analytics Service",
+        "description": "Data Analytics Service — auto-suggested description"
+      }
+    },
+    {
+      "route": "/services/simple-service-1755537638091-tl9fnub5n",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Premium AI Solutions Solution",
+        "description": "Premium AI Solutions Solution — auto-suggested description"
+      }
+    },
+    {
+      "route": "/services/simple-service-1755537658090-6749cil28",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Web Development Service",
+        "description": "Web Development Service — auto-suggested description"
+      }
+    },
+    {
+      "route": "/services/simple-service-1755537658090-uso2zuk5r",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Cloud Services Service",
+        "description": "Cloud Services Service — auto-suggested description"
       }
     },
     {

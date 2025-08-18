@@ -11,7 +11,10 @@ export default function Simple-service-1755537618084-or67b14l2Service() {
         <meta name="description" content="Professional Cloud Services solution for modern businesses" />
         <meta name="keywords" content="cloud services, technology services" />
         <link rel="canonical" href="https://ziontechgroup.com/services/simple-service-1755537618084-or67b14l2" />
-      </Head>
+      
+        <meta property="og:title" content="Cloud Services Service" />
+        <meta property="og:description" content="Cloud Services Service — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       
       <main className="container mx-auto px-6 py-12">
         <div className="text-center mb-16">

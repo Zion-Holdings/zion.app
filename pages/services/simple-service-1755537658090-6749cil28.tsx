@@ -11,7 +11,10 @@ export default function Simple-service-1755537658090-6749cil28Service() {
         <meta name="description" content="Professional Web Development solution for modern businesses" />
         <meta name="keywords" content="web development, technology services" />
         <link rel="canonical" href="https://ziontechgroup.com/services/simple-service-1755537658090-6749cil28" />
-      </Head>
+      
+        <meta property="og:title" content="Web Development Service" />
+        <meta property="og:description" content="Web Development Service — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       
       <main className="container mx-auto px-6 py-12">
         <div className="text-center mb-16">

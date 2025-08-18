@@ -11,7 +11,10 @@ export default function Simple-service-1755537618083-bbjlyyuzyService() {
         <meta name="description" content="Professional DevOps solution for modern businesses" />
         <meta name="keywords" content="devops, technology services" />
         <link rel="canonical" href="https://ziontechgroup.com/services/simple-service-1755537618083-bbjlyyuzy" />
-      </Head>
+      
+        <meta property="og:title" content="DevOps Service" />
+        <meta property="og:description" content="DevOps Service — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       
       <main className="container mx-auto px-6 py-12">
         <div className="text-center mb-16">
