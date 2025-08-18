@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T05:43:40.226Z",
+  "timestamp": "2025-08-18T05:44:40.566Z",
   "summary": {
     "totalWorkflows": 226,
     "complexityDistribution": {
@@ -4049,13 +4049,13 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/yaml-auto-fixer-simple.yml"
     },
     "yaml-auto-fixer.yml": {
-      "complexityScore": 0,
+      "complexityScore": 15,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 41,
+        "totalLines": 53,
         "jobCount": 0,
-        "stepCount": 5,
-        "conditionalCount": 1,
+        "stepCount": 6,
+        "conditionalCount": 2,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
