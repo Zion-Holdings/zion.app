@@ -16,6 +16,7 @@ permissions:
   contents: write
   pull-requests: write
   actions: read
+  issues: write
 
 concurrency:
   group: "release"
@@ -53,32 +54,27 @@ jobs:
           NODE_OPTIONS: "--max-old-space-size=6144 --openssl-legacy-provider"
       - name: Export static files
         run: npm run export
-      - name: Create release
-        id: create_release
-        uses: actions/create-release@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Package build artifacts
+        id: package
+        run: |
+          ZIP="zion-app-${{ steps.version.outputs.version }}.zip"
+          (cd out && zip -r "../$ZIP" .)
+          echo "zip_path=$ZIP" >> "$GITHUB_OUTPUT"
+      - name: Create GitHub release and upload artifact
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.version.outputs.version }}
-          release_name: Release ${{ steps.version.outputs.version }}
+          name: Release ${{ steps.version.outputs.version }}
+          files: ${{ steps.package.outputs.zip_path }}
           draft: false
           prerelease: false
-      - name: Upload build artifacts
-        uses: actions/upload-release-asset@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./out
-          asset_name: zion-app-${{ steps.version.outputs.version }}.zip
-          asset_content_type: application/zip
       - name: Update package.json version
         run: |
           npm version ${{ steps.version.outputs.version }} --no-git-tag-version
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add package.json package-lock.json
-          git commit -m "chore: bump version to ${{ steps.version.outputs.version }}"
+          git commit -m "chore: bump version to ${{ steps.version.outputs.version }}" || echo "No version changes to commit"
           git push
       - name: Deploy to production
         run: |

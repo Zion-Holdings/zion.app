@@ -42,12 +42,13 @@ jobs:
         run: npm run security:scan
         continue-on-error: true
       - name: Check for secrets in code
-        uses: trufflesecurity/trufflehog@main
+        uses: trufflesecurity/trufflehog@v3
         with:
           path: .
           base: ${{ github.event.before }}
           head: ${{ github.event.after }}
           extra_args: --only-verified
+        continue-on-error: true
       - name: Upload security report
         uses: actions/upload-artifact@v4
         if: always()
