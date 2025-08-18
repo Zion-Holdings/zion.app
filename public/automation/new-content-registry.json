@@ -1,795 +1,214 @@
 {
-  "generatedAt": "2025-08-18T08:33:55.375Z",
+  "generatedAt": "2025-08-18T17:13:30.730Z",
   "items": [
     {
-      "title": "Playbook: LLM Apps",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-18-1710",
-      "createdAt": "2025-08-18T17:10:04.097Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Runbook: FinOps for AI",
-      "subtitle": "Patterns to increase accuracy.",
-      "path": "/reports/innovations/insight-2025-08-18-1658",
-      "createdAt": "2025-08-18T16:58:13.623Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Playbook: AI QA & Eval",
-      "subtitle": "Patterns to increase accuracy.",
-      "path": "/reports/innovations/insight-2025-08-18-1656",
-      "createdAt": "2025-08-18T16:56:41.327Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Blueprint: Agent Ops",
-      "subtitle": "Patterns to improve reliability.",
-      "path": "/reports/innovations/insight-2025-08-18-1654",
-      "createdAt": "2025-08-18T16:54:08.293Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Guide: FinOps for AI",
-      "subtitle": "Patterns to enhance security.",
-      "path": "/reports/innovations/insight-2025-08-18-1641",
-      "createdAt": "2025-08-18T16:41:12.916Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Runbook: FinOps for AI",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-18-1629",
-      "createdAt": "2025-08-18T16:29:51.304Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Guide: AI QA & Eval",
-      "subtitle": "Patterns to increase accuracy.",
-      "path": "/reports/innovations/insight-2025-08-18-1628",
-      "createdAt": "2025-08-18T16:28:52.798Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Runbook: DevSecOps AI",
-      "subtitle": "Patterns to enhance security.",
-      "path": "/reports/innovations/insight-2025-08-18-1626",
-      "createdAt": "2025-08-18T16:26:52.178Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Playbook: MLOps",
-      "subtitle": "Patterns to improve reliability.",
-      "path": "/reports/innovations/insight-2025-08-18-1623",
-      "createdAt": "2025-08-18T16:23:00.337Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Guide: Edge AI",
-      "subtitle": "Patterns to improve reliability.",
-      "path": "/reports/innovations/insight-2025-08-18-1620",
-      "createdAt": "2025-08-18T16:20:03.398Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Blueprint: AI QA & Eval",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-18-1603",
-      "createdAt": "2025-08-18T16:03:02.815Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Playbook: MLOps",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-18-1600",
-      "createdAt": "2025-08-18T16:00:03.969Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Guide: Edge AI",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-18-1554",
-      "createdAt": "2025-08-18T15:54:55.497Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Blueprint: Agent Ops",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-18-1553",
-      "createdAt": "2025-08-18T15:53:44.183Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Pilot Plan: RAG Platforms",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-18-1541",
-      "createdAt": "2025-08-18T15:41:44.301Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Blueprint: AI QA & Eval",
-      "subtitle": "Patterns to enhance security.",
-      "path": "/reports/innovations/insight-2025-08-18-1534",
-      "createdAt": "2025-08-18T15:34:26.041Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Playbook: FinOps for AI",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-18-1533",
-      "createdAt": "2025-08-18T15:33:22.370Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Playbook: RAG Platforms",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-18-1521",
-      "createdAt": "2025-08-18T15:21:55.985Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Checklist: RAG Platforms",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-18-1517",
-      "createdAt": "2025-08-18T15:17:16.171Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Playbook: MLOps",
-      "subtitle": "Patterns to improve reliability.",
-      "path": "/reports/innovations/insight-2025-08-18-1516",
-      "createdAt": "2025-08-18T15:16:48.536Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Guide: DevSecOps AI",
-      "subtitle": "Patterns to enhance security.",
-      "path": "/reports/innovations/insight-2025-08-18-1514",
-      "createdAt": "2025-08-18T15:14:19.714Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Runbook: FinOps for AI",
-      "subtitle": "Patterns to enhance security.",
-      "path": "/reports/innovations/insight-2025-08-18-1513",
-      "createdAt": "2025-08-18T15:13:25.169Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Pilot Plan: DevSecOps AI",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-18-1510",
-      "createdAt": "2025-08-18T15:10:28.154Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Guide: Edge AI",
-      "subtitle": "Patterns to enhance security.",
-      "path": "/reports/innovations/insight-2025-08-18-1509",
-      "createdAt": "2025-08-18T15:09:16.704Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Checklist: Edge AI",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-18-1508",
-      "createdAt": "2025-08-18T15:08:06.678Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Pilot Plan: LLM Apps",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-18-1502",
-      "createdAt": "2025-08-18T15:02:19.779Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Checklist: AI QA & Eval",
-      "subtitle": "Patterns to improve reliability.",
-      "path": "/reports/innovations/insight-2025-08-18-1500",
-      "createdAt": "2025-08-18T15:00:07.122Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Guide: FinOps for AI",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-18-1456",
-      "createdAt": "2025-08-18T14:56:56.533Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Blueprint: LLM Apps",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-18-1443",
-      "createdAt": "2025-08-18T14:43:16.432Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Playbook: Agent Ops",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-18-1439",
-      "createdAt": "2025-08-18T14:39:01.869Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Playbook: AI QA & Eval",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-18-1438",
-      "createdAt": "2025-08-18T14:38:38.961Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Runbook: LLM Apps",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-18-1430",
-      "createdAt": "2025-08-18T14:30:03.370Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Pilot Plan: MLOps",
-      "subtitle": "Patterns to increase accuracy.",
-      "path": "/reports/innovations/insight-2025-08-18-1426",
-      "createdAt": "2025-08-18T14:26:59.174Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Blueprint: DevSecOps AI",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-18-1426",
-      "createdAt": "2025-08-18T14:26:03.182Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Pilot Plan: AI QA & Eval",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-18-1423",
-      "createdAt": "2025-08-18T14:23:18.759Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Pilot Plan: Edge AI",
-      "subtitle": "Patterns to enhance security.",
-      "path": "/reports/innovations/insight-2025-08-18-1422",
-      "createdAt": "2025-08-18T14:22:01.296Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Pilot Plan: Agent Ops",
-      "subtitle": "Patterns to increase accuracy.",
-      "path": "/reports/innovations/insight-2025-08-18-1419",
-      "createdAt": "2025-08-18T14:19:02.388Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Checklist: Agent Ops",
-      "subtitle": "Patterns to enhance security.",
-      "path": "/reports/innovations/insight-2025-08-18-1418",
-      "createdAt": "2025-08-18T14:18:38.572Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Blueprint: RAG Platforms",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-18-1415",
-      "createdAt": "2025-08-18T14:15:51.983Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Blueprint: MLOps",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-18-1413",
-      "createdAt": "2025-08-18T14:13:43.442Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Runbook: LLM Apps",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-18-1407",
-      "createdAt": "2025-08-18T14:07:21.685Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Playbook: Edge AI",
-      "subtitle": "Patterns to enhance security.",
-      "path": "/reports/innovations/insight-2025-08-18-1353",
-      "createdAt": "2025-08-18T13:53:13.846Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Checklist: DevSecOps AI",
-      "subtitle": "Patterns to improve reliability.",
-      "path": "/reports/innovations/insight-2025-08-18-1350",
-      "createdAt": "2025-08-18T13:50:03.167Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Blueprint: DevSecOps AI",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-18-1349",
-      "createdAt": "2025-08-18T13:49:01.309Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Guide: RAG Platforms",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-18-1344",
-      "createdAt": "2025-08-18T13:44:00.835Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Pilot Plan: MLOps",
-      "subtitle": "Patterns to increase accuracy.",
-      "path": "/reports/innovations/insight-2025-08-18-1341",
-      "createdAt": "2025-08-18T13:41:48.472Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Runbook: Agent Ops",
-      "subtitle": "Patterns to improve reliability.",
-      "path": "/reports/innovations/insight-2025-08-18-1340",
-      "createdAt": "2025-08-18T13:40:03.791Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Runbook: AI QA & Eval",
-      "subtitle": "Patterns to improve reliability.",
-      "path": "/reports/innovations/insight-2025-08-18-1333",
-      "createdAt": "2025-08-18T13:33:16.226Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Checklist: MLOps",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-18-1330",
-      "createdAt": "2025-08-18T13:30:27.187Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Pilot Plan: FinOps for AI",
-      "subtitle": "Patterns to increase accuracy.",
-      "path": "/reports/innovations/insight-2025-08-18-1327",
-      "createdAt": "2025-08-18T13:27:18.817Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Blueprint: LLM Apps",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-18-1326",
-      "createdAt": "2025-08-18T13:26:15.363Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Guide: Edge AI",
-      "subtitle": "Patterns to enhance security.",
-      "path": "/reports/innovations/insight-2025-08-18-1321",
-      "createdAt": "2025-08-18T13:21:04.995Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Checklist: AI QA & Eval",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-18-1320",
-      "createdAt": "2025-08-18T13:20:04.391Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Checklist: FinOps for AI",
-      "subtitle": "Patterns to improve reliability.",
-      "path": "/reports/innovations/insight-2025-08-18-1318",
-      "createdAt": "2025-08-18T13:18:01.638Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Checklist: FinOps for AI",
-      "subtitle": "Patterns to improve reliability.",
-      "path": "/reports/innovations/insight-2025-08-18-1317",
-      "createdAt": "2025-08-18T13:17:20.110Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Guide: AI QA & Eval",
-      "subtitle": "Patterns to improve reliability.",
-      "path": "/reports/innovations/insight-2025-08-18-1316",
-      "createdAt": "2025-08-18T13:16:17.319Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Blueprint: MLOps",
-      "subtitle": "Patterns to improve reliability.",
-      "path": "/reports/innovations/insight-2025-08-18-1315",
-      "createdAt": "2025-08-18T13:15:05.732Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Checklist: AI QA & Eval",
-      "subtitle": "Patterns to improve reliability.",
-      "path": "/reports/innovations/insight-2025-08-18-1314",
-      "createdAt": "2025-08-18T13:14:15.241Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Pilot Plan: AI QA & Eval",
-      "subtitle": "Patterns to increase accuracy.",
-      "path": "/reports/innovations/insight-2025-08-18-1309",
-      "createdAt": "2025-08-18T13:09:20.699Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Checklist: Edge AI",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-18-1308",
-      "createdAt": "2025-08-18T13:08:34.760Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Pilot Plan: LLM Apps",
-      "subtitle": "Patterns to enhance security.",
-      "path": "/reports/innovations/insight-2025-08-18-1242",
-      "createdAt": "2025-08-18T12:42:14.004Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Runbook: Agent Ops",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-18-1241",
-      "createdAt": "2025-08-18T12:41:05.750Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Checklist: MLOps",
-      "subtitle": "Patterns to enhance security.",
-      "path": "/reports/innovations/insight-2025-08-18-1240",
-      "createdAt": "2025-08-18T12:40:04.913Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Guide: DevSecOps AI",
-      "subtitle": "Patterns to improve reliability.",
-      "path": "/reports/innovations/insight-2025-08-18-1239",
-      "createdAt": "2025-08-18T12:39:09.164Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Pilot Plan: MLOps",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-18-1238",
-      "createdAt": "2025-08-18T12:38:00.659Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Runbook: Edge AI",
-      "subtitle": "Patterns to improve reliability.",
-      "path": "/reports/innovations/insight-2025-08-18-1237",
-      "createdAt": "2025-08-18T12:37:15.031Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Guide: Edge AI",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-18-1236",
-      "createdAt": "2025-08-18T12:36:10.215Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Guide: Agent Ops",
-      "subtitle": "Patterns to improve reliability.",
-      "path": "/reports/innovations/insight-2025-08-18-1235",
-      "createdAt": "2025-08-18T12:35:13.156Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Runbook: LLM Apps",
-      "subtitle": "Patterns to enhance security.",
-      "path": "/reports/innovations/insight-2025-08-18-1234",
-      "createdAt": "2025-08-18T12:34:06.873Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Guide: FinOps for AI",
-      "subtitle": "Patterns to increase accuracy.",
-      "path": "/reports/innovations/insight-2025-08-18-1233",
-      "createdAt": "2025-08-18T12:33:16.856Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Runbook: RAG Platforms",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-18-1232",
-      "createdAt": "2025-08-18T12:32:21.739Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Checklist: Agent Ops",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-18-1231",
-      "createdAt": "2025-08-18T12:31:02.406Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Runbook: AI QA & Eval",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-18-1230",
-      "createdAt": "2025-08-18T12:30:06.238Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Pilot Plan: RAG Platforms",
-      "subtitle": "Patterns to enhance security.",
-      "path": "/reports/innovations/insight-2025-08-18-1229",
-      "createdAt": "2025-08-18T12:29:01.048Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Pilot Plan: LLM Apps",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-18-1123",
-      "createdAt": "2025-08-18T11:23:18.941Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Pilot Plan: DevSecOps AI",
-      "subtitle": "Patterns to increase accuracy.",
-      "path": "/reports/innovations/insight-2025-08-18-1120",
-      "createdAt": "2025-08-18T11:20:04.167Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Pilot Plan: Agent Ops",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-18-1119",
-      "createdAt": "2025-08-18T11:19:28.951Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Runbook: Edge AI",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-18-1118",
-      "createdAt": "2025-08-18T11:18:00.206Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Blueprint: AI QA & Eval",
-      "subtitle": "Patterns to improve reliability.",
-      "path": "/reports/innovations/insight-2025-08-18-1115",
-      "createdAt": "2025-08-18T11:15:19.838Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Checklist: RAG Platforms",
-      "subtitle": "Patterns to increase accuracy.",
-      "path": "/reports/innovations/insight-2025-08-18-1113",
-      "createdAt": "2025-08-18T11:13:34.274Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Blueprint: MLOps",
-      "subtitle": "Patterns to enhance security.",
-      "path": "/reports/innovations/insight-2025-08-18-1112",
-      "createdAt": "2025-08-18T11:12:16.276Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Blueprint: AI QA & Eval",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-18-1111",
-      "createdAt": "2025-08-18T11:11:33.874Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Pilot Plan: DevSecOps AI",
-      "subtitle": "Patterns to improve reliability.",
-      "path": "/reports/innovations/insight-2025-08-18-1110",
-      "createdAt": "2025-08-18T11:10:02.808Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Guide: LLM Apps",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-18-1109",
-      "createdAt": "2025-08-18T11:09:16.007Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Pilot Plan: Edge AI",
-      "subtitle": "Patterns to increase accuracy.",
-      "path": "/reports/innovations/insight-2025-08-18-1108",
-      "createdAt": "2025-08-18T11:08:10.635Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Guide: Agent Ops",
-      "subtitle": "Patterns to increase accuracy.",
-      "path": "/reports/innovations/insight-2025-08-18-1107",
-      "createdAt": "2025-08-18T11:07:11.716Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Playbook: DevSecOps AI",
-      "subtitle": "Patterns to enhance security.",
-      "path": "/reports/innovations/insight-2025-08-18-1106",
-      "createdAt": "2025-08-18T11:06:00.418Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Checklist: Edge AI",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-18-1105",
-      "createdAt": "2025-08-18T11:05:11.207Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Runbook: FinOps for AI",
-      "subtitle": "Patterns to improve reliability.",
-      "path": "/reports/innovations/insight-2025-08-18-1104",
-      "createdAt": "2025-08-18T11:04:05.011Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Playbook: MLOps",
-      "subtitle": "Patterns to enhance security.",
-      "path": "/reports/innovations/insight-2025-08-18-1103",
-      "createdAt": "2025-08-18T11:03:16.418Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Playbook: LLM Apps",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-18-1102",
-      "createdAt": "2025-08-18T11:02:36.161Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Checklist: DevSecOps AI",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-18-1100",
-      "createdAt": "2025-08-18T11:00:02.694Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Blueprint: LLM Apps",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-18-1100",
-      "createdAt": "2025-08-18T11:00:02.683Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Runbook: RAG Platforms",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-18-1058",
-      "createdAt": "2025-08-18T10:58:45.634Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Playbook: Edge AI",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-18-1056",
-      "createdAt": "2025-08-18T10:56:46.884Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Pilot Plan: DevSecOps AI",
-      "subtitle": "Patterns to improve reliability.",
-      "path": "/reports/innovations/insight-2025-08-18-1055",
-      "createdAt": "2025-08-18T10:55:13.629Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Playbook: FinOps for AI",
-      "subtitle": "Patterns to increase accuracy.",
-      "path": "/reports/innovations/insight-2025-08-18-1041",
-      "createdAt": "2025-08-18T10:41:45.416Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Guide: MLOps",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-18-1020",
-      "createdAt": "2025-08-18T10:20:07.045Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Blueprint: LLM Apps",
-      "subtitle": "Patterns to increase accuracy.",
-      "path": "/reports/innovations/insight-2025-08-18-1010",
-      "createdAt": "2025-08-18T10:10:02.864Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Guide: DevSecOps AI",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-18-1000",
-      "createdAt": "2025-08-18T10:00:02.865Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Runbook: MLOps",
-      "subtitle": "Patterns to reduce cost.",
-      "path": "/reports/innovations/insight-2025-08-18-0950",
-      "createdAt": "2025-08-18T09:50:03.117Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Guide: RAG Platforms",
-      "subtitle": "Patterns to enhance security.",
-      "path": "/reports/innovations/insight-2025-08-18-0940",
-      "createdAt": "2025-08-18T09:40:03.274Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Runbook: Agent Ops",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-18-0930",
-      "createdAt": "2025-08-18T09:30:03.051Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Runbook: AI QA & Eval",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-18-0920",
-      "createdAt": "2025-08-18T09:20:03.227Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Runbook: FinOps for AI",
-      "subtitle": "Patterns to increase accuracy.",
-      "path": "/reports/innovations/insight-2025-08-18-0910",
-      "createdAt": "2025-08-18T09:10:03.249Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Blueprint: AI QA & Eval",
-      "subtitle": "Patterns to improve reliability.",
-      "path": "/reports/innovations/insight-2025-08-18-0900",
-      "createdAt": "2025-08-18T09:00:03.226Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Guide: Agent Ops",
-      "subtitle": "Patterns to improve reliability.",
-      "path": "/reports/innovations/insight-2025-08-18-0850",
-      "createdAt": "2025-08-18T08:50:03.917Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Pilot Plan: Edge AI",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-18-0840",
-      "createdAt": "2025-08-18T08:40:03.672Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Playbook: DevSecOps AI",
-      "subtitle": "Patterns to accelerate delivery.",
-      "path": "/reports/innovations/insight-2025-08-18-0835",
-      "createdAt": "2025-08-18T08:35:21.721Z",
-      "kind": "insight"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-18 08-33",
-      "href": "/reports/innovations/insight-2025-08-18T08-33",
+      "title": "Innovation Insight — 2025-08-18 17-13",
+      "href": "/reports/innovations/insight-2025-08-18T17-13",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-18T08:33:55.224Z",
+      "createdAt": "2025-08-18T17:13:30.699Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-18 08-33",
-      "href": "/reports/updates/update-2025-08-18T08-33",
+      "title": "Autonomous Update — 2025-08-18 17-13",
+      "href": "/reports/updates/update-2025-08-18T17-13",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-18T08:33:55.224Z",
+      "createdAt": "2025-08-18T17:13:30.699Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Innovation Insight — 2025-08-18 08-33",
-      "href": "/reports/innovations/insight-2025-08-18T08-33",
+      "title": "Innovation Insight — 2025-08-18 17-13",
+      "href": "/reports/innovations/insight-2025-08-18T17-13",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-18T08:33:55.224Z",
+      "createdAt": "2025-08-18T17:13:30.699Z",
       "source": "cloud-content-factory"
     },
     {
-      "title": "Autonomous Update — 2025-08-18 08-33",
-      "href": "/reports/updates/update-2025-08-18T08-33",
+      "title": "Autonomous Update — 2025-08-18 17-13",
+      "href": "/reports/updates/update-2025-08-18T17-13",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-18T08:33:55.224Z",
+      "createdAt": "2025-08-18T17:13:30.699Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-18-171005",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:10:05.124Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Case Study — Cloud Improving",
+      "href": "/reports/cases/case-2025-08-18-171004",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:10:04.894Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-18-171004",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:10:04.894Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Automation Trends 2025",
+      "href": "/reports/patterns/pattern-2025-08-18-171004",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:10:04.894Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 17-10",
+      "href": "/reports/innovations/insight-2025-08-18T17-10",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:10:04.770Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 17-10",
+      "href": "/reports/updates/update-2025-08-18T17-10",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:10:04.770Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 17-10",
+      "href": "/reports/innovations/insight-2025-08-18T17-10",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:10:04.770Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 17-10",
+      "href": "/reports/updates/update-2025-08-18T17-10",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:10:04.770Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-18-171004",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:10:04.617Z",
+      "source": "cloud-blueprint-factory"
+    },
+    {
+      "title": "Autonomous Content Generation",
+      "href": "/automation",
+      "desc": "AI-powered content completion via Cursor agents",
+      "createdAt": "2025-08-18T17:05:55.016Z",
+      "source": "cursor-autonomous-orchestrator"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-18-170057",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:00:57.425Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Case Study — Cloud Improving",
+      "href": "/reports/cases/case-2025-08-18-170057",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:00:57.037Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-18-170057",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:00:57.037Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Automation Trends 2025",
+      "href": "/reports/patterns/pattern-2025-08-18-170057",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:00:57.037Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 17-00",
+      "href": "/reports/innovations/insight-2025-08-18T17-00",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:00:56.886Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 17-00",
+      "href": "/reports/updates/update-2025-08-18T17-00",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:00:56.886Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 17-00",
+      "href": "/reports/innovations/insight-2025-08-18T17-00",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:00:56.886Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 17-00",
+      "href": "/reports/updates/update-2025-08-18T17-00",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:00:56.886Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-18-170056",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:00:56.711Z",
+      "source": "cloud-blueprint-factory"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-18-165814",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T16:58:14.808Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Case Study — Cloud Improving",
+      "href": "/reports/cases/case-2025-08-18-165814",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T16:58:14.549Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-18-165814",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T16:58:14.549Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Automation Trends 2025",
+      "href": "/reports/patterns/pattern-2025-08-18-165814",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T16:58:14.549Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 16-58",
+      "href": "/reports/innovations/insight-2025-08-18T16-58",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T16:58:14.404Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 16-58",
+      "href": "/reports/updates/update-2025-08-18T16-58",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T16:58:14.404Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 16-58",
+      "href": "/reports/innovations/insight-2025-08-18T16-58",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T16:58:14.404Z",
       "source": "cloud-content-factory"
     }
   ]

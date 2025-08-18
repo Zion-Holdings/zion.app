@@ -1,7 +1,51 @@
 {
-  "timestamp": "2025-08-18T16:59:45.473Z",
+  "timestamp": "2025-08-18T17:13:33.415Z",
   "critical": [],
-  "high": [],
+  "high": [
+    {
+      "workflow": "redundant-link-generation.yml",
+      "status": "active",
+      "complexityScore": 60,
+      "complexityLevel": "high",
+      "metrics": {
+        "totalLines": 283,
+        "jobCount": 0,
+        "stepCount": 40,
+        "conditionalCount": 1,
+        "matrixCount": 0,
+        "dependencyCount": 7,
+        "environmentCount": 0,
+        "secretCount": 7,
+        "actionCount": 17
+      },
+      "refactoringStrategy": [
+        "Break down into smaller job steps",
+        "Optimize job dependencies",
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "ultra-fast-automation-creator.yml",
+      "status": "active",
+      "complexityScore": 50,
+      "complexityLevel": "high",
+      "metrics": {
+        "totalLines": 400,
+        "jobCount": 0,
+        "stepCount": 15,
+        "conditionalCount": 0,
+        "matrixCount": 1,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 1,
+        "actionCount": 4
+      },
+      "refactoringStrategy": [
+        "Consider parallel workflow execution",
+        "Extract common functionality to reusable workflows"
+      ]
+    }
+  ],
   "medium": [
     {
       "workflow": "comprehensive-test.yml",
@@ -68,10 +112,10 @@
     {
       "workflow": "maintenance.yml",
       "status": "active",
-      "complexityScore": 45,
+      "complexityScore": 35,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 218,
+        "totalLines": 196,
         "jobCount": 0,
         "stepCount": 17,
         "conditionalCount": 4,
@@ -144,6 +188,27 @@
       },
       "refactoringStrategy": [
         "Break down into smaller job steps",
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "ultra-fast-agent-creation.yml",
+      "status": "active",
+      "complexityScore": 40,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 555,
+        "jobCount": 0,
+        "stepCount": 9,
+        "conditionalCount": 0,
+        "matrixCount": 1,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 1,
+        "actionCount": 2
+      },
+      "refactoringStrategy": [
+        "Consider parallel workflow execution",
         "Extract common functionality to reusable workflows"
       ]
     },

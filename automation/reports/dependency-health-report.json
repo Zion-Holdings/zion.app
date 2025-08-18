@@ -1,7 +1,15 @@
 {
-  "timestamp": "2025-08-18T08:34:50.048Z",
+  "timestamp": "2025-08-18T17:12:54.782Z",
   "totalPackages": 0,
   "outdatedPackages": {
+    "@modelcontextprotocol/server-filesystem": {
+      "current": "2025.7.29",
+      "wanted": "2025.8.18",
+      "latest": "2025.8.18",
+      "updateType": "minor",
+      "priority": "high",
+      "securityRisk": false
+    },
     "@testing-library/react": {
       "current": "14.3.1",
       "wanted": "14.3.1",
@@ -58,6 +66,14 @@
       "priority": "medium",
       "securityRisk": false
     },
+    "lucide-react": {
+      "current": "0.539.0",
+      "wanted": "0.539.0",
+      "latest": "0.540.0",
+      "updateType": "minor",
+      "priority": "high",
+      "securityRisk": false
+    },
     "next": {
       "current": "14.2.31",
       "wanted": "14.2.31",
@@ -100,12 +116,20 @@
     }
   },
   "securityIssues": {},
-  "healthScore": 40,
+  "healthScore": 20,
   "recommendations": [],
   "criticalIssues": [],
   "updatePlan": {
     "immediate": [],
     "scheduled": [
+      {
+        "package": "@modelcontextprotocol/server-filesystem",
+        "from": "2025.7.29",
+        "to": "2025.8.18",
+        "type": "minor",
+        "priority": "high",
+        "securityRisk": false
+      },
       {
         "package": "chalk",
         "from": "5.5.0",
@@ -119,6 +143,14 @@
         "from": "8.57.1",
         "to": "9.33.0",
         "type": "major",
+        "priority": "high",
+        "securityRisk": false
+      },
+      {
+        "package": "lucide-react",
+        "from": "0.539.0",
+        "to": "0.540.0",
+        "type": "minor",
         "priority": "high",
         "securityRisk": false
       },
@@ -206,9 +238,9 @@
       }
     ],
     "estimated": {
-      "time": 6,
+      "time": 10,
       "risk": "low",
-      "packages": 3
+      "packages": 5
     }
   }
 }

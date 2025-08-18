@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T16:59:45.745Z",
+  "timestamp": "2025-08-18T17:13:16.367Z",
   "critical": [
     {
       "name": "ci-self-heal.yml",
@@ -295,6 +295,82 @@
       "resourceScore": 123
     },
     {
+      "name": "simple-service-generator.yml",
+      "path": "/workspace/.github/workflows/simple-service-generator.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 10,
+      "concurrentJobs": 9,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch",
+        "push"
+      ],
+      "resourceScore": 121
+    },
+    {
+      "name": "redundant-link-generation.yml",
+      "path": "/workspace/.github/workflows/redundant-link-generation.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 10,
+      "concurrentJobs": 37,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [
+        "ultra-fast-links",
+        "redundant-links",
+        "redundant-links",
+        "redundant-links",
+        "redundant-links",
+        "redundant-links",
+        "[ultra-fast-links",
+        "redundant-links",
+        "navigation-links",
+        "footer-links",
+        "content-links",
+        "social-links",
+        "business-links]"
+      ],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch",
+        "push",
+        "pull_request"
+      ],
+      "resourceScore": 120
+    },
+    {
+      "name": "ultra-fast-automation-creator.yml",
+      "path": "/workspace/.github/workflows/ultra-fast-automation-creator.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 10,
+      "concurrentJobs": 19,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch {}",
+        "schedule",
+        "push",
+        "pull_request"
+      ],
+      "resourceScore": 120
+    },
+    {
       "name": "workflow-validator.yml",
       "path": "/workspace/.github/workflows/workflow-validator.yml",
       "priority": "medium",
@@ -392,6 +468,195 @@
       "resourceScore": 118
     },
     {
+      "name": "ultra-fast-ai-powered-generator-automation-advanced-1755537037347.yml",
+      "path": "/workspace/.github/workflows/ultra-fast-ai-powered-generator-automation-advanced-1755537037347.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 15,
+      "concurrentJobs": 8,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch {}",
+        "schedule",
+        "push",
+        "pull_request"
+      ],
+      "resourceScore": 117
+    },
+    {
+      "name": "ultra-fast-ai-powered-generator-research-advanced-1755537007378.yml",
+      "path": "/workspace/.github/workflows/ultra-fast-ai-powered-generator-research-advanced-1755537007378.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 15,
+      "concurrentJobs": 8,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch {}",
+        "schedule",
+        "push",
+        "pull_request"
+      ],
+      "resourceScore": 117
+    },
+    {
+      "name": "ultra-fast-autonomous-agent-monitoring-advanced-1755536917348.yml",
+      "path": "/workspace/.github/workflows/ultra-fast-autonomous-agent-monitoring-advanced-1755536917348.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 15,
+      "concurrentJobs": 8,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch {}",
+        "schedule",
+        "push",
+        "pull_request"
+      ],
+      "resourceScore": 117
+    },
+    {
+      "name": "ultra-fast-collaborative-automation-orchestration-advanced-1755537007345.yml",
+      "path": "/workspace/.github/workflows/ultra-fast-collaborative-automation-orchestration-advanced-1755537007345.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 15,
+      "concurrentJobs": 8,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch {}",
+        "schedule",
+        "push",
+        "pull_request"
+      ],
+      "resourceScore": 117
+    },
+    {
+      "name": "ultra-fast-exponential-growth-deployment-advanced-1755537037414.yml",
+      "path": "/workspace/.github/workflows/ultra-fast-exponential-growth-deployment-advanced-1755537037414.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 15,
+      "concurrentJobs": 8,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch {}",
+        "schedule",
+        "push",
+        "pull_request"
+      ],
+      "resourceScore": 117
+    },
+    {
+      "name": "ultra-fast-exponential-growth-innovation-advanced-1755536917374.yml",
+      "path": "/workspace/.github/workflows/ultra-fast-exponential-growth-innovation-advanced-1755536917374.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 15,
+      "concurrentJobs": 8,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch {}",
+        "schedule",
+        "push",
+        "pull_request"
+      ],
+      "resourceScore": 117
+    },
+    {
+      "name": "ultra-fast-intelligent-orchestrator-innovation-basic-1755536917360.yml",
+      "path": "/workspace/.github/workflows/ultra-fast-intelligent-orchestrator-innovation-basic-1755536917360.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 15,
+      "concurrentJobs": 8,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch {}",
+        "schedule",
+        "push",
+        "pull_request"
+      ],
+      "resourceScore": 117
+    },
+    {
+      "name": "ultra-fast-meta-orchestrator-innovation-basic-1755537007361.yml",
+      "path": "/workspace/.github/workflows/ultra-fast-meta-orchestrator-innovation-basic-1755537007361.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 15,
+      "concurrentJobs": 8,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch {}",
+        "schedule",
+        "push",
+        "pull_request"
+      ],
+      "resourceScore": 117
+    },
+    {
+      "name": "ultra-fast-quantum-automation-generation-basic-1755537037396.yml",
+      "path": "/workspace/.github/workflows/ultra-fast-quantum-automation-generation-basic-1755537037396.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 15,
+      "concurrentJobs": 8,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch {}",
+        "schedule",
+        "push",
+        "pull_request"
+      ],
+      "resourceScore": 117
+    },
+    {
       "name": "auto-fix-workflows.yml",
       "path": "/workspace/.github/workflows/auto-fix-workflows.yml",
       "priority": "medium",
@@ -426,6 +691,27 @@
       "triggers": [
         "# schedule",
         "workflow_dispatch {}"
+      ],
+      "resourceScore": 115
+    },
+    {
+      "name": "ultra-fast-agent-creation.yml",
+      "path": "/workspace/.github/workflows/ultra-fast-agent-creation.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 15,
+      "concurrentJobs": 10,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch {}",
+        "schedule",
+        "push",
+        "pull_request"
       ],
       "resourceScore": 115
     },
@@ -1646,6 +1932,25 @@
       "resourceScore": 114
     },
     {
+      "name": "cleanup.yml",
+      "path": "/workspace/.github/workflows/cleanup.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 20,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch {}"
+      ],
+      "resourceScore": 114
+    },
+    {
       "name": "cloud-deep-research.yml",
       "path": "/workspace/.github/workflows/cloud-deep-research.yml",
       "priority": "medium",
@@ -1762,25 +2067,6 @@
     {
       "name": "components-size-report.yml",
       "path": "/workspace/.github/workflows/components-size-report.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 20,
-      "concurrentJobs": 6,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "workflow_dispatch {}",
-        "schedule"
-      ],
-      "resourceScore": 114
-    },
-    {
-      "name": "content-generation.yml",
-      "path": "/workspace/.github/workflows/content-generation.yml",
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 20,
@@ -2159,25 +2445,6 @@
       "resourceScore": 114
     },
     {
-      "name": "cleanup.yml",
-      "path": "/workspace/.github/workflows/cleanup.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 20,
-      "concurrentJobs": 7,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "schedule",
-        "workflow_dispatch {}"
-      ],
-      "resourceScore": 113
-    },
-    {
       "name": "rapid-sync.yml",
       "path": "/workspace/.github/workflows/rapid-sync.yml",
       "priority": "medium",
@@ -2262,6 +2529,158 @@
       "resourceScore": 110
     },
     {
+      "name": "agent-agent-1755536560534-0-monitoring-basic.yml",
+      "path": "/workspace/.github/workflows/agent-agent-1755536560534-0-monitoring-basic.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 25,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "resourceScore": 109
+    },
+    {
+      "name": "agent-agent-1755536560535-1-frontend-intermediate.yml",
+      "path": "/workspace/.github/workflows/agent-agent-1755536560535-1-frontend-intermediate.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 25,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "resourceScore": 109
+    },
+    {
+      "name": "agent-agent-1755536560536-2-full-stack-basic.yml",
+      "path": "/workspace/.github/workflows/agent-agent-1755536560536-2-full-stack-basic.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 25,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "resourceScore": 109
+    },
+    {
+      "name": "agent-agent-1755536560536-3-frontend-advanced.yml",
+      "path": "/workspace/.github/workflows/agent-agent-1755536560536-3-frontend-advanced.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 25,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "resourceScore": 109
+    },
+    {
+      "name": "agent-agent-1755536560536-4-monitoring-basic.yml",
+      "path": "/workspace/.github/workflows/agent-agent-1755536560536-4-monitoring-basic.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 25,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "resourceScore": 109
+    },
+    {
+      "name": "agent-agent-1755536560536-5-backend-intermediate.yml",
+      "path": "/workspace/.github/workflows/agent-agent-1755536560536-5-backend-intermediate.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 25,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "resourceScore": 109
+    },
+    {
+      "name": "agent-agent-1755536560537-6-optimization-basic.yml",
+      "path": "/workspace/.github/workflows/agent-agent-1755536560537-6-optimization-basic.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 25,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "resourceScore": 109
+    },
+    {
+      "name": "agent-agent-1755536560537-7-optimization-intermediate.yml",
+      "path": "/workspace/.github/workflows/agent-agent-1755536560537-7-optimization-intermediate.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 25,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "resourceScore": 109
+    },
+    {
       "name": "test.yml",
       "path": "/workspace/.github/workflows/test.yml",
       "priority": "medium",
@@ -2281,6 +2700,28 @@
       "resourceScore": 109
     },
     {
+      "name": "app-automation.yml",
+      "path": "/workspace/.github/workflows/app-automation.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 25,
+      "concurrentJobs": 11,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [
+        "run-orchestrator"
+      ],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch  # Manual trigger",
+        "push"
+      ],
+      "resourceScore": 105
+    },
+    {
       "name": "cloud-marketing.yml",
       "path": "/workspace/.github/workflows/cloud-marketing.yml",
       "priority": "medium",
@@ -2296,6 +2737,28 @@
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
+      ],
+      "resourceScore": 105
+    },
+    {
+      "name": "content-generation.yml",
+      "path": "/workspace/.github/workflows/content-generation.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 25,
+      "concurrentJobs": 10,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [
+        "generate-content"
+      ],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch  # Manual trigger",
+        "push"
       ],
       "resourceScore": 105
     },
@@ -2834,44 +3297,6 @@
     {
       "name": "ai-trends-radar.yml",
       "path": "/workspace/.github/workflows/ai-trends-radar.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 30,
-      "concurrentJobs": 7,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "schedule",
-        "workflow_dispatch"
-      ],
-      "resourceScore": 103
-    },
-    {
-      "name": "app-automation.yml",
-      "path": "/workspace/.github/workflows/app-automation.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 30,
-      "concurrentJobs": 7,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "schedule",
-        "workflow_dispatch"
-      ],
-      "resourceScore": 103
-    },
-    {
-      "name": "app-monitoring.yml",
-      "path": "/workspace/.github/workflows/app-monitoring.yml",
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 30,
@@ -4320,6 +4745,25 @@
         "schedule"
       ],
       "resourceScore": 100
+    },
+    {
+      "name": "app-monitoring.yml",
+      "path": "/workspace/.github/workflows/app-monitoring.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 55,
+      "concurrentJobs": 13,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch  # Manual trigger"
+      ],
+      "resourceScore": 75
     }
   ],
   "low": [
@@ -4348,7 +4792,7 @@
       "priority": "low",
       "resourceIntensity": "high",
       "estimatedDuration": 30,
-      "concurrentJobs": 18,
+      "concurrentJobs": 16,
       "runnerRequirements": {
         "runner": "ubuntu-latest",
         "size": "standard",
@@ -4434,7 +4878,7 @@
       "priority": "low",
       "resourceIntensity": "high",
       "estimatedDuration": 30,
-      "concurrentJobs": 18,
+      "concurrentJobs": 16,
       "runnerRequirements": {
         "runner": "ubuntu-latest",
         "size": "standard",
