@@ -37,7 +37,10 @@ export default function EnhancedNavigation() {
       <Head>
         <title>Enhanced Navigation | Zion Tech Group</title>
         <meta name="description" content="Advanced navigation system showcasing all our features and content." />
-      </Head>
+      
+        <meta property="og:title" content="Enhanced Navigation" />
+        <meta property="og:description" content="Enhanced Navigation — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
 
       {/* Main Navigation */}
       <nav className="bg-slate-900/50 backdrop-blur-sm border-b border-white/10 sticky top-0 z-50">
