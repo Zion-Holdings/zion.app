@@ -1,8 +1,8 @@
 name: Repository Maintenance
 on:
-  workflow_dispatch: {}
+  workflow_dispatch: null
   schedule:
-  - cron: 0 2 * * 0
+    - cron: 0 2 * * 0
 permissions:
   contents: write
   pull-requests: write
@@ -18,17 +18,17 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ env.NODE_VERSION }}
-        cache: npm
-    - name: Install dependencies
-      run: npm ci --no-audit --no-fund
-    - name: Clean up old automation files
-      run: 'echo "Cleaning up old automation artifacts..."
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Clean up old automation files
+        run: 'echo "Cleaning up old automation artifacts..."
 
 
         # Clean up old analytics files (older than 7 days)
@@ -63,8 +63,9 @@ jobs:
         echo "Cleanup completed"
 
         '
-    - name: Commit cleanup changes
-      run: "git config --global user.name \"github-actions[bot]\"\ngit config --global\
+      - name: Commit cleanup changes
+        run:
+                "git config --global user.name \"github-actions[bot]\"\ngit config --global\
         \ user.email \"41898282+github-actions[bot]@users.noreply.github.com\"\n\n\
         if git diff --quiet; then\n  echo \"No changes to commit\"\nelse\n  git add\
         \ -A\n  git commit -m \"\U0001F916 Automated cleanup: Remove old artifacts\
@@ -74,17 +75,17 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ env.NODE_VERSION }}
-        cache: npm
-    - name: Install dependencies
-      run: npm ci --no-audit --no-fund
-    - name: Analyze workflow performance
-      run: 'echo "## Workflow Performance Analysis" >> $GITHUB_STEP_SUMMARY
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Analyze workflow performance
+        run: 'echo "## Workflow Performance Analysis" >> $GITHUB_STEP_SUMMARY
 
         echo "Analyzing workflow performance and optimization opportunities..." >>
         $GITHUB_STEP_SUMMARY
@@ -115,8 +116,8 @@ jobs:
         echo "Analysis completed" >> $GITHUB_STEP_SUMMARY
 
         '
-    - name: Generate workflow health report
-      run: 'echo "Generating workflow health report..."
+      - name: Generate workflow health report
+        run: 'echo "Generating workflow health report..."
 
 
         cat > workflow-health-report.md << EOF
@@ -150,9 +151,9 @@ jobs:
         echo "Health report generated"
 
         '
-    - name: Upload health report
-      uses: actions/upload-artifact@v4
-      with:
+      - name: Upload health report
+        uses: actions/upload-artifact@v4
+        with:
         name: workflow-health-report
         path: workflow-health-report.md
         retention-days: 7
@@ -161,17 +162,17 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ env.NODE_VERSION }}
-        cache: npm
-    - name: Install dependencies
-      run: npm ci --no-audit --no-fund
-    - name: Check for outdated dependencies
-      run: 'echo "Checking for outdated dependencies..."
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Check for outdated dependencies
+        run: 'echo "Checking for outdated dependencies..."
 
 
         # Generate dependency report
@@ -189,9 +190,9 @@ jobs:
         echo "Dependency analysis completed"
 
         '
-    - name: Upload dependency reports
-      uses: actions/upload-artifact@v4
-      with:
+      - name: Upload dependency reports
+        uses: actions/upload-artifact@v4
+        with:
         name: dependency-reports
         path: 'dependency-report.txt
 
@@ -208,8 +209,9 @@ jobs:
     - dependency-maintenance
     if: always()
     steps:
-    - name: Generate maintenance summary
-      run: "echo \"## \U0001F9F9 Repository Maintenance Complete\" >> $GITHUB_STEP_SUMMARY\n\
+      - name: Generate maintenance summary
+        run:
+                "echo \"## \U0001F9F9 Repository Maintenance Complete\" >> $GITHUB_STEP_SUMMARY\n\
         echo \"- Cleanup: ${{ needs.cleanup-artifacts.result }}\" >> $GITHUB_STEP_SUMMARY\n\
         echo \"- Optimization: ${{ needs.optimize-workflows.result }}\" >> $GITHUB_STEP_SUMMARY\n\
         echo \"- Dependencies: ${{ needs.dependency-maintenance.result }}\" >> $GITHUB_STEP_SUMMARY\n\
@@ -218,6 +220,7 @@ jobs:
         \ }}\" == \"success\" ]; then\n  echo \"\u2705 All maintenance tasks completed\
         \ successfully!\" >> $GITHUB_STEP_SUMMARY\nelse\n  echo \"\u26A0\uFE0F Some\
         \ maintenance tasks failed. Check the logs for details.\" >> $GITHUB_STEP_SUMMARY\n\
-        fi\n\necho \"\" >> $GITHUB_STEP_SUMMARY\necho \"Next maintenance run: Sunday\
+        fi\n\necho \"\" >> $GITHUB_STEP_SUMMARY\necho \"Next maintenance run:
+                Sunday\
         \ at 2 AM\" >> $GITHUB_STEP_SUMMARY\n"
     timeout-minutes: 30

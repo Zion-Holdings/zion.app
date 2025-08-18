@@ -21,21 +21,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: npm
-          
       - name: Install dependencies
         run: npm ci
-        
       - name: Build application
         run: npm run build
         env:
           NODE_OPTIONS: "--max-old-space-size=4096"
-        
       - name: Analyze content structure
         run: |
           echo "Analyzing content structure..."
@@ -64,7 +60,6 @@ jobs:
           npm list --depth=0 --json > dependencies.json
           
           echo "Knowledge graph analysis completed"
-        
       - name: Upload analysis results
         uses: actions/upload-artifact@v4
         if: always()

@@ -1,7 +1,7 @@
 name: Security Auto-Heal
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch: null
   schedule:
     - cron: '0 0 * * *' # Daily at midnight UTC
 
@@ -24,16 +24,13 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
-
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
-
       - name: Run security auto-heal
         run: |
           echo "Running security auto-heal..."

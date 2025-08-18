@@ -1,8 +1,8 @@
 name: Workflow Manager Manager
 on:
-  workflow_dispatch: {}
+  workflow_dispatch: null
   schedule:
-  - cron: 0 2 * * *
+    - cron: 0 2 * * *
 permissions:
   contents: read
   actions: read
@@ -18,17 +18,18 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ env.NODE_VERSION }}
-        cache: npm
-    - name: Install dependencies
-      run: npm ci --no-audit --no-fund
-    - name: Analyze workflow health
-      run: "echo \"## \U0001F50D Workflow Health Analysis\" >> $GITHUB_STEP_SUMMARY\n\
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Analyze workflow health
+        run:
+                "echo \"## \U0001F50D Workflow Health Analysis\" >> $GITHUB_STEP_SUMMARY\n\
         echo \"Analyzing workflow performance and health...\" >> $GITHUB_STEP_SUMMARY\n\
         \n# Get workflow run statistics\nWORKFLOW_COUNT=$(find .github/workflows -name\
         \ \"*.yml\" | wc -l)\necho \"- Total workflows: $WORKFLOW_COUNT\" >> $GITHUB_STEP_SUMMARY\n\
@@ -49,17 +50,18 @@ jobs:
     timeout-minutes: 20
     needs: workflow-health-check
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ env.NODE_VERSION }}
-        cache: npm
-    - name: Install dependencies
-      run: npm ci --no-audit --no-fund
-    - name: Generate optimization recommendations
-      run: "echo \"## \U0001F680 Workflow Optimization Recommendations\" >> $GITHUB_STEP_SUMMARY\n\
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Generate optimization recommendations
+        run:
+                "echo \"## \U0001F680 Workflow Optimization Recommendations\" >> $GITHUB_STEP_SUMMARY\n\
         \ncat > workflow-optimization-report.md << EOF\n# Workflow Optimization Report\n\
         \nGenerated: $(date)\n\n## Current Status\n- Total workflows: $(find .github/workflows\
         \ -name \"*.yml\" | wc -l)\n- High frequency workflows: $(grep -r \"cron.*\\\
@@ -79,9 +81,9 @@ jobs:
         \ handling to critical workflows\n3. Implement monitoring and alerting\n4.\
         \ Regular performance reviews\nEOF\n\necho \"Optimization report generated\"\
         \n"
-    - name: Upload optimization report
-      uses: actions/upload-artifact@v4
-      with:
+      - name: Upload optimization report
+        uses: actions/upload-artifact@v4
+        with:
         name: workflow-optimization-report
         path: workflow-optimization-report.md
         retention-days: 30
@@ -91,10 +93,11 @@ jobs:
     timeout-minutes: 15
     needs: workflow-health-check
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-    - name: Analyze current scheduling
-      run: "echo \"## \U0001F4C5 Current Workflow Schedule Analysis\" >> $GITHUB_STEP_SUMMARY\n\
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Analyze current scheduling
+        run:
+                "echo \"## \U0001F4C5 Current Workflow Schedule Analysis\" >> $GITHUB_STEP_SUMMARY\n\
         \necho \"### Current Schedule Distribution:\" >> $GITHUB_STEP_SUMMARY\n\n\
         # Morning workflows (6-9 AM)\nMORNING=$(grep -r \"cron.*'0 [6-9]\" .github/workflows/\
         \ | wc -l)\necho \"- Morning (6-9 AM): $MORNING workflows\" >> $GITHUB_STEP_SUMMARY\n\
@@ -120,8 +123,9 @@ jobs:
     - workflow-scheduling
     if: always()
     steps:
-    - name: Generate comprehensive summary
-      run: "echo \"## \U0001F3AF Workflow Management Summary\" >> $GITHUB_STEP_SUMMARY\n\
+      - name: Generate comprehensive summary
+        run:
+                "echo \"## \U0001F3AF Workflow Management Summary\" >> $GITHUB_STEP_SUMMARY\n\
         echo \"\" >> $GITHUB_STEP_SUMMARY\necho \"### Health Status:\" >> $GITHUB_STEP_SUMMARY\n\
         echo \"- Health Check: ${{ needs.workflow-health-check.result }}\" >> $GITHUB_STEP_SUMMARY\n\
         echo \"- Optimization: ${{ needs.workflow-optimization.result }}\" >> $GITHUB_STEP_SUMMARY\n\

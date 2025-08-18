@@ -1,6 +1,6 @@
 name: Continuous Improvement
 on:
-  workflow_dispatch: {}
+  workflow_dispatch: null
   schedule:
     - cron: '0 2 * * *'
 permissions:

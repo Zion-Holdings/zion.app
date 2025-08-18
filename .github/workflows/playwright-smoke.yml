@@ -5,7 +5,7 @@ on:
     branches: [ main, develop ]
   pull_request:
     branches: [ main, develop ]
-  workflow_dispatch: {}
+  workflow_dispatch: null
   schedule:
     - cron: '0 4 * * *' # Daily at 4 AM UTC
 
@@ -26,24 +26,19 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
-
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
-
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
-
       - name: Build application
         run: npm run build
         env:
           NODE_OPTIONS: "--max-old-space-size=4096"
-
       - name: Start application
         run: |
           npm run start &
@@ -51,7 +46,6 @@ jobs:
           sleep 10
         env:
           NODE_OPTIONS: "--max-old-space-size=4096"
-
       - name: Wait for app to be ready
         run: |
           echo "Waiting for application to be ready..."
@@ -66,13 +60,12 @@ jobs:
             fi
             sleep 2
           done
-
       - name: Run smoke tests
-        run: npx playwright test tests/smoke.spec.ts --project=chromium --reporter=html
+        run:
+                npx playwright test tests/tests/smoke.spec.ts --project=chromium --reporter=html
         env:
           BASE_URL: http://localhost:3000
         continue-on-error: false
-
       - name: Stop application
         if: always()
         run: |
@@ -80,7 +73,6 @@ jobs:
           pkill -f "next start" || true
           pkill -f "node.*start" || true
           sleep 5
-
       - name: Upload test results
         uses: actions/upload-artifact@v4
         if: always()

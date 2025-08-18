@@ -5,7 +5,7 @@ on:
     branches: [ main, develop ]
   pull_request:
     branches: [ main, develop ]
-  workflow_dispatch: {}
+  workflow_dispatch: null
   schedule:
     - cron: '0 10 * * *' # Daily at 10 AM UTC
 
@@ -26,21 +26,17 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
-
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
-
       - name: Build application
         run: npm run build
         env:
           NODE_OPTIONS: "--max-old-space-size=4096"
-
       - name: Start application
         run: |
           npm run start &
@@ -48,7 +44,6 @@ jobs:
           sleep 10
         env:
           NODE_OPTIONS: "--max-old-space-size=4096"
-
       - name: Wait for app to be ready
         run: |
           echo "Waiting for application to be ready..."
@@ -63,15 +58,12 @@ jobs:
             fi
             sleep 2
           done
-
       - name: Install Lighthouse CI
         run: npm install -g @lhci/cli
-
       - name: Run Lighthouse CI
         run: |
           echo "Running Lighthouse performance audit..."
           lhci autorun --config=./lighthouserc.json || true
-
       - name: Stop application
         if: always()
         run: |
@@ -79,7 +71,6 @@ jobs:
           pkill -f "next start" || true
           pkill -f "node.*start" || true
           sleep 5
-
       - name: Upload Lighthouse results
         uses: actions/upload-artifact@v4
         if: always()
@@ -96,16 +87,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
-
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
-
       - name: Build with bundle analysis
         run: |
           echo "Building application with bundle analysis..."
@@ -113,7 +101,6 @@ jobs:
           npx @next/bundle-analyzer .next/static/chunks/*.js --out dist/bundle-analysis.html || true
         env:
           NODE_OPTIONS: "--max-old-space-size=4096"
-
       - name: Upload bundle analysis
         uses: actions/upload-artifact@v4
         if: always()

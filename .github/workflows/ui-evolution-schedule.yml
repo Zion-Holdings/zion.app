@@ -1,7 +1,7 @@
 ---
 name: UI Evolution Schedule
 on:
-  workflow_dispatch: {}
+  workflow_dispatch: null
   schedule:
     - cron: '0 2 * * *'
 jobs:
