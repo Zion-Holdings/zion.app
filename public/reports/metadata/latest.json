@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T06:20:01.450Z",
-  "pagesScanned": 8671,
+  "generatedAt": "2025-08-18T06:38:11.111Z",
+  "pagesScanned": 8674,
   "items": [
     {
       "route": "/404",
@@ -36446,6 +36446,16 @@
       "suggestion": {
         "title": "Blueprint: AI QA & Eval",
         "description": "Blueprint: AI QA & Eval — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18-0620",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Blueprint: Agent Ops",
+        "description": "Blueprint: Agent Ops — auto-suggested description"
       }
     },
     {
@@ -86491,14 +86501,24 @@
     {
       "route": "/reports/updates/update-2025-08-18-0320",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 03:20",
+        "description": "Autonomous Update — 2025-08-18 03:20 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0338",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 03:20",
-        "description": "Autonomous Update — 2025-08-18 03:20 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-18 03:38",
+        "description": "Autonomous Update — 2025-08-18 03:38 — auto-suggested description"
       }
     },
     {
@@ -86569,6 +86589,16 @@
       "suggestion": {
         "title": "Autonomous Reference Architecture — Vision & Multimodal (2025-08-18 06:10 UTC)",
         "description": "Autonomous Reference Architecture — Vision & Multimodal (2025-08-18 06:10 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0620",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Validation & QA Plan — DevSecOps for AI (2025-08-18 06:20 UTC)",
+        "description": "Autonomous Validation & QA Plan — DevSecOps for AI (2025-08-18 06:20 UTC) — auto-suggested description"
       }
     },
     {
