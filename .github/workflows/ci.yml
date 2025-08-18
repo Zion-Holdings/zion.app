@@ -1,4 +1,4 @@
-name: CI
+name: CI - Lint, Type Check & Build
 
 on:
   push:
@@ -8,6 +8,10 @@ on:
 concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
+
+permissions:
+  contents: read
+  actions: read
 
 jobs:
   lint-and-types:
