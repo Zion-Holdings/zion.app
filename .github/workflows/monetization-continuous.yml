@@ -2,16 +2,21 @@ name: Monetization Automation Continuous
 
 on:
   schedule:
-    - cron: '0 */2 * * *' # every 30 minutes
+    - cron: '*/30 * * * *' # every 30 minutes
   workflow_dispatch:
 
 permissions:
   contents: read
   actions: read
 
+concurrency:
+  group: monetization-continuous-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   monetization:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -38,3 +43,4 @@ jobs:
             data/reports/monetization/**/*
             automation/logs/**/*.log
           if-no-files-found: ignore
+          retention-days: 7
