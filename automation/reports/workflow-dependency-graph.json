@@ -1826,7 +1826,7 @@
   "continuous-improvement.yml": {
     "name": "continuous-improvement.yml",
     "triggers": [
-      "workflow_dispatch null",
+      "workflow_dispatch {}",
       "schedule"
     ],
     "needs": [],

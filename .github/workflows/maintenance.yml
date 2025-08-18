@@ -1,6 +1,6 @@
 name: Repository Maintenance
 on:
-  workflow_dispatch: null
+  workflow_dispatch: {}
   schedule:
   - cron: 0 2 * * 0
 permissions:
