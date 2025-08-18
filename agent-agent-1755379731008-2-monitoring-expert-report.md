@@ -1,27 +1,11 @@
 # agent-agent-1755379731008-2-monitoring-expert Report
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-Generated: 2025-08-18T15:41:51.838Z
-=======
-Generated: 2025-08-18T15:40:05.902Z
->>>>>>> Stashed changes
-=======
-Generated: 2025-08-18T15:40:05.902Z
->>>>>>> Stashed changes
+Generated: 2025-08-18T15:43:22.628Z
 
 ## Status
 - Task: agent-agent-1755379731008-2-monitoring-expert
 - Status: Completed
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-- Timestamp: 2025-08-18T15:41:51.838Z
-=======
-- Timestamp: 2025-08-18T15:40:05.902Z
->>>>>>> Stashed changes
-=======
-- Timestamp: 2025-08-18T15:40:05.902Z
->>>>>>> Stashed changes
+- Timestamp: 2025-08-18T15:43:22.628Z
 
 ## Next Steps
 - Implement actual agent-agent-1755379731008-2-monitoring-expert functionality
