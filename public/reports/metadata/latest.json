@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T14:13:00.794Z",
-  "pagesScanned": 1191,
+  "generatedAt": "2025-08-18T14:13:41.490Z",
+  "pagesScanned": 1187,
   "items": [
     {
       "route": "/404",
@@ -1685,16 +1685,6 @@
       }
     },
     {
-      "route": "/reports/blueprints/blueprint-2025-08-18-141252",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Reference Architecture — Autonomous Content Mesh",
-        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
-      }
-    },
-    {
       "route": "/reports/cases/case-2025-08-18-122902",
       "missing": [
         "og:image"
@@ -3135,16 +3125,6 @@
       }
     },
     {
-      "route": "/reports/cases/case-2025-08-18-141253",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Case Study — Cloud Improving",
-        "description": "Case Study — Cloud Improving — auto-suggested description"
-      }
-    },
-    {
       "route": "/reports/guides/guide-2025-08-18-122902",
       "missing": [
         "og:image"
@@ -4576,16 +4556,6 @@
     },
     {
       "route": "/reports/guides/guide-2025-08-18-141229",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Guide — Cloud Improving Implementation",
-        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/guides/guide-2025-08-18-141253",
       "missing": [
         "og:image"
       ],
@@ -8266,16 +8236,6 @@
     },
     {
       "route": "/reports/patterns/pattern-2025-08-18-141229",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Pattern — Automation Trends 2025",
-        "description": "Pattern — Automation Trends 2025 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/patterns/pattern-2025-08-18-141253",
       "missing": [
         "og:image"
       ],
