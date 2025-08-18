@@ -1,36 +1,23 @@
 {
-  "analyzedAt": 1755248888398,
+  "analyzedAt": 1755484971795,
   "canonical": "https://ziontechgroup.com",
   "candidates": [
     {
       "url": "https://ziontechgroup.com/",
-      "title": "AI Service Factory - AI-Powered Services",
-      "description": "Discover cutting-edge AI services and solutions powered by autonomous AI agents",
+      "title": "Zion Tech Group - AI & Cloud Solutions",
+      "description": "Leading provider of AI, cloud computing, and digital transformation solutions with autonomous content generation.",
       "headings": [
-        "AI Service Factory",
-        "AI & Machine Learning",
-        "AI-Powered Data Analytics Platform",
-        "Intelligent Customer Support Bot",
-        "Predictive Maintenance System",
-        "Real-time Video Analytics",
-        "IoT & Edge",
-        "Real-time IoT Data Pipeline"
+        "Zion Tech Group",
+        "Featured Content",
+        "Latest Insights",
+        "Strategic Dossiers",
+        "Technical Tutorials",
+        "Industry Whitepapers",
+        "New Features",
+        "Component Library"
       ],
-      "bullets": [
-        "•Real-time data processing",
-        "•ML model training",
-        "•Interactive dashboards",
-        "•Natural language understanding",
-        "•Multi-language support",
-        "•Integration with CRM systems",
-        "•Equipment monitoring",
-        "•Failure prediction",
-        "•Maintenance scheduling",
-        "•Real-time processing",
-        "•Object detection",
-        "•Video streaming"
-      ],
-      "score": 209
+      "bullets": [],
+      "score": 201
     },
     {
       "url": "https://ziontechgroup.com/automation",
@@ -68,18 +55,18 @@
       "description": "Curated technology and AI headlines from reputable sources.",
       "headings": [],
       "bullets": [
-        "Leaked Meta AI rules show chatbots were allowed to have romantic chats with kids(TechCrunch)",
-        "Apple’s blood oxygen monitoring returns to its latest Apple Watches(TechCrunch)",
-        "Cohere hires long-time Meta research head Joelle Pineau as its chief AI officer(TechCrunch)",
-        "The wait is almost over: The 2025 Startup Battlefield 200 list drops August 27(TechCrunch)",
-        "AI translation tech Palabra gets backing from Reddit co-founder’s venture firm(TechCrunch)",
-        "Buzzy AI startup Multiverse creates two of the smallest high-performing models ever(TechCrunch)",
-        "Lovable projects $1B in ARR within next 12 months(TechCrunch)",
-        "Google pushes AI into flight deals as antitrust scrutiny, competition heat up(TechCrunch)",
-        "US government is reportedly in discussions to take stake in Intel(TechCrunch)",
-        "What is Bluesky? Everything to know about the X competitor(TechCrunch)",
+        "Cohere hits a $6.8B valuation as investors AMD, Nvidia, and Salesforce double down(TechCrunch)",
         "Bluesky rolls out massive revamp to policies and Community Guidelines(TechCrunch)",
-        "Norway spy chief blames Russian hackers for hijacking dam(TechCrunch)"
+        "Leaked Meta AI rules show chatbots were allowed to have romantic chats with kids(TechCrunch)",
+        "US government is reportedly in discussions to take stake in Intel(TechCrunch)",
+        "The wait is almost over: The 2025 Startup Battlefield 200 list drops August 27(TechCrunch)",
+        "Cohere hires long-time Meta research head Joelle Pineau as its chief AI officer(TechCrunch)",
+        "AI translation tech Palabra gets backing from Reddit co-founder’s venture firm(TechCrunch)",
+        "Apple’s blood oxygen monitoring returns to its latest Apple Watches(TechCrunch)",
+        "What is Bluesky? Everything to know about the X competitor(TechCrunch)",
+        "Norway spy chief blames Russian hackers for hijacking dam(TechCrunch)",
+        "Pixel 10, AI capabilities, and everything else we expect out of the Made by Google 2025 event(TechCrunch)",
+        "iPhone 17, the ‘thinnest iPhone ever,’ and everything else we’re expecting out of Apple’s hardware event(TechCrunch)"
       ],
       "score": 132
     },
