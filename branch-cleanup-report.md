@@ -1,19 +1,11 @@
 # branch-cleanup Report
 
-<<<<<<< Updated upstream
-Generated: 2025-08-18T17:26:15.923Z
-=======
-Generated: 2025-08-18T17:25:57.728Z
->>>>>>> Stashed changes
+Generated: 2025-08-18T17:27:47.120Z
 
 ## Status
 - Task: branch-cleanup
 - Status: Completed
-<<<<<<< Updated upstream
-- Timestamp: 2025-08-18T17:26:15.923Z
-=======
-- Timestamp: 2025-08-18T17:25:57.728Z
->>>>>>> Stashed changes
+- Timestamp: 2025-08-18T17:27:47.120Z
 
 ## Next Steps
 - Implement actual branch-cleanup functionality
