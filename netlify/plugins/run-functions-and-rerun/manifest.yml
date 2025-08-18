@@ -1,0 +1,18 @@
+name: run-functions-and-rerun
+inputs:
+  - name: include
+    description: Comma-separated list of Netlify Functions to include
+    required: false
+    default: ""
+  - name: exclude
+    description: Comma-separated list of Netlify Functions to exclude
+    required: false
+    default: ""
+  - name: concurrency
+    description: Number of functions to process concurrently
+    required: false
+    default: 6
+  - name: timeoutMs
+    description: Per-function timeout in milliseconds
+    required: false
+    default: 180000
