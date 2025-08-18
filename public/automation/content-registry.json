@@ -25019,5 +25019,47 @@
       "route": "/docs/CHANGELOG.md"
     }
   ],
-  "generatedAt": "2025-08-18T18:35:31.617Z"
+  "generatedAt": "2025-08-18T18:35:31.617Z",
+  "items": [
+    {
+      "id": "ultra-1755542132923-qkiniv",
+      "title": "Instant Digital Transformation",
+      "route": "/reports/updates/ultra-1755542132923-qkiniv",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:35:32.943Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542132924-e8x3zn",
+      "title": "Ultra-Fast Instant feedback loops Insight",
+      "route": "/reports/insights/ultra-1755542132924-e8x3zn",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:35:32.943Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542132925-3ywo9d",
+      "title": "Ultra-Fast Guide: Real-time collaboration tools",
+      "route": "/reports/guides/ultra-1755542132925-3ywo9d",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:35:32.943Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542132928-k5phr7",
+      "title": "Case Study: Rapid prototyping systems Success",
+      "route": "/reports/cases/ultra-1755542132928-k5phr7",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:35:32.943Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542132929-ondnsl",
+      "title": "Pattern: Rapid prototyping systems Architecture",
+      "route": "/reports/patterns/ultra-1755542132929-ondnsl",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:35:32.943Z",
+      "process": "ultra-fast"
+    }
+  ]
 }
