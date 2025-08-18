@@ -1,0 +1,2710 @@
+🧪 Testing GitHub Actions workflows locally...
+[0;34m📁 Testing all workflows in .github/workflows[0m
+
+[0;34m🔍 Testing workflow: accessibility-audit[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: actionlint[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: actions-keepalive[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379731005-0-full-stack-expert[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379731007-1-deployment-expert[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379731008-2-monitoring-expert[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379759029-0-optimization-intermediate[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379759032-1-full-stack-intermediate[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379759033-2-deployment-expert[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379759033-3-frontend-expert[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379759035-4-full-stack-intermediate[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379759035-5-frontend-basic[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379759036-6-monitoring-advanced[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379759037-7-full-stack-intermediate[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379777746-0-full-stack-advanced[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379777749-1-full-stack-basic[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379777750-2-monitoring-intermediate[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379777751-3-monitoring-advanced[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379777752-5-testing-expert[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379777754-6-backend-expert[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379777755-7-backend-intermediate[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755381089841-0-backend-expert[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755381089844-1-deployment-advanced[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755381089845-2-full-stack-advanced[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755381089846-3-optimization-expert[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755381089846-4-testing-advanced[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755381089847-5-frontend-expert[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755381089848-6-testing-intermediate[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755381089849-7-monitoring-intermediate[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-factory-automation[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-factory-proliferation[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-of-agents-trigger[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ai-changelog[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ai-content-autonomy[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ai-content-factory[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ai-it-ads-sync[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ai-it-innovations[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ai-it-multi-factory[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ai-it-ultrafast-sync[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ai-research-scout[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ai-trends-radar[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: app-automation[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: app-monitoring[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: auto-fix-workflows[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: auto-fix[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: auto-heal-workflows[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: automation-advertiser[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: automation-cleanup[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: automation-dashboard[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: automation-guardian-10min[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: automation-orchestrator[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: automations[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: auto-media-release[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: automerge-main[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-agent-orchestrator[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-auto-discovery[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-auto-merge-to-main[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-cloud-automations[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-cloud-fast[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-cloud-runner[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-cloud[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-content-curation[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-content-scanner[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-deep-maintenance[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-deps-upgrade[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-external-links[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-image-optimizer[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-intelligence[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-keepalive[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-lighthouse[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-marketing-seo[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-meta[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-minute-orchestrator[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-quick-fixes[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-release[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-self-tune[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-ultrafast[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-workflow-cleanup[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-workflow-watchdog[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: auto-pr-automerge[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: auto-pr-cursor-branches[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: auto-semver-release[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: auto-update-prs[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: branch-cleanup[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: branch-pruner[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: broken-images[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: accessibility-audit[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: actionlint[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: actions-keepalive[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379731005-0-full-stack-expert[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379731007-1-deployment-expert[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379731008-2-monitoring-expert[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379759029-0-optimization-intermediate[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379759032-1-full-stack-intermediate[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379759033-2-deployment-expert[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379759033-3-frontend-expert[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379759035-4-full-stack-intermediate[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379759035-5-frontend-basic[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379759036-6-monitoring-advanced[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379759037-7-full-stack-intermediate[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379777746-0-full-stack-advanced[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379777749-1-full-stack-basic[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379777750-2-monitoring-intermediate[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379777751-3-monitoring-advanced[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379777752-5-testing-expert[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379777754-6-backend-expert[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755379777755-7-backend-intermediate[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755381089841-0-backend-expert[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755381089844-1-deployment-advanced[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755381089845-2-full-stack-advanced[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755381089846-3-optimization-expert[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755381089846-4-testing-advanced[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755381089847-5-frontend-expert[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755381089848-6-testing-intermediate[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-agent-1755381089849-7-monitoring-intermediate[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-factory-automation[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-factory-proliferation[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: agent-of-agents-trigger[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ai-changelog[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ai-content-autonomy[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ai-content-factory[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ai-it-ads-sync[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ai-it-innovations[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ai-it-multi-factory[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ai-it-ultrafast-sync[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ai-research-scout[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ai-trends-radar[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: app-automation[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: app-monitoring[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: auto-fix[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: auto-heal-workflows[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: automation-advertiser[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: automation-cleanup[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: automation-dashboard[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: automation-guardian-10min[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: automation-orchestrator[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: automations[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: auto-media-release[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: automerge-main[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-agent-orchestrator[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-auto-discovery[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-auto-merge-to-main[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-cloud-automations[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-cloud-fast[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-cloud-runner[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-cloud[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-content-curation[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-content-scanner[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-deep-maintenance[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-deps-upgrade[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-external-links[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-image-optimizer[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-intelligence[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-keepalive[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-lighthouse[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-marketing-seo[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-meta[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-minute-orchestrator[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-quick-fixes[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-release[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-self-tune[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-ultrafast[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-workflow-cleanup[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: autonomous-workflow-watchdog[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: auto-pr-automerge[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: auto-pr-cursor-branches[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: auto-semver-release[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: auto-update-prs[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: branch-cleanup[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: branch-pruner[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: broken-images[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ci-auto-heal[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ci-merge-main[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ci-quality[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ci-self-heal[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ci[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: cleanup-merged-branches[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: cleanup[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: cloud-agents-fast[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: cloud-agents[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: cloud-autonomous-orchestrator[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: cloud-deep-research[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: cloud-maintenance[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: cloud-marketing[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: cloud-orchestrator-plus[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: codeql-analysis[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: codeql[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: commitlint[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: commit-message-lint[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: components-size-report[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: content-generation[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: continuous-improvement[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: crawl-normalize[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: cursor-chat[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: cursor-rules-autoupdate[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: dead-code-report[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: dependabot-auto-approve[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: dependencies[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: dependency-auto-upgrade[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: dependency-maintenance[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: dependency-management[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: deploy[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: diverse-agent-matrix[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: docs-autogen[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: docs-intelligence[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: emergency-fix[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ephemeral-branch-autorebase[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: exponential-agent-factory-proliferation[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: exponential-ai-delegation[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: external-links[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: fast-auto-push-to-main[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: fast-lint-sync[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: frontend-sync-continuous[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: front-scheduler[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: git-health[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: gitleaks[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: git-ultrafast-sync[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: guardian-scheduler[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: homepage-auto-advertiser[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: homepage-auto-update[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: infinite-improvement-loop[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: instagram-marketing[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: instagram-six-hourly[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: intelligent-content-generation[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: knowledge-graph-radar[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: labeler[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: lighthouse-budgets[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: lighthouse-live[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: link-auto-fix[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: linkedin-marketing[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: linkedin-pro[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: link-scan-hourly[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: maintenance[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: marketing-daily[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: marketing-sync[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: media-optimizer[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: merge-conflict-guard[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: monetization-continuous[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: monetization-daily[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: monetization[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: netlify-auto-healer[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: netlify-automation[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: netlify-config[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: netlify-functions-trigger[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: netlify-monitor[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: og-image-refresh[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: og-image-update[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: optimize-images[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: pa11y[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: performance-audit[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: performance-monitoring[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: performance-weekly[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: pin-actions-weekly[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: playwright-smoke[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: pr-auto-curator[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: pr-quality-gate[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: pr-size-labeler[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: pr-smoke[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: pr-update-with-main[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: rapid-git-sync[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: rapid-sync[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: readme-auto-advertiser[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: readme-autogen[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: release-drafter[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: release[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: repo-knowledge-graph[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: repo-radar[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: responsive-content[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: revenue-ideas-daily[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: search-index-autogen[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: security-audit[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: security-auto-heal[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: security-gates[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: security-scan[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: security-weekly[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: security[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: self-healing-build[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: self-replicating-factory-manager[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: seo-audit[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: seo-validator[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: site-health-guardian[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: site-link[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: sitemap-and-search[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: sitemap-auto-commit[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: sitemap-daily[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: smart-merge-agent[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: stale[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: sync-health[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: test-auth[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: test[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: todo-issue-sync[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: topics-and-clusters[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ui-evolution-schedule[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ui-evolution-weekly-beautify[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ultra-rapid-sync[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: unused-deps-cleaner[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: unused-exports-report[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: variation[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: venture[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: workflow-auto-healer[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: workflow-health-monitor[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: workflow-manager[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: workflow-radar[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: workflow-supervisor[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: workflow-validator[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: workflow-watchdog[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: yaml-auto-fixer-simple[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: yaml-auto-fixer[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: yaml-validator[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ci-auto-heal[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ci-lint-types-build[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ci-merge-main[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ci-quality[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ci-self-heal[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ci[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: cleanup-merged-branches[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: cleanup[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: cloud-agents-fast[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: cloud-agents[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: cloud-autonomous-orchestrator[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: cloud-deep-research[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: cloud-maintenance[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: cloud-marketing[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: cloud-orchestrator-plus[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: codeql-analysis[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: codeql[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: commitlint[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: commit-message-lint[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: components-size-report[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: comprehensive-test[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: content-generation[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: continuous-deployment[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: continuous-improvement[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: crawl-normalize[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: cursor-chat[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: cursor-rules-autoupdate[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: dead-code-report[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: dependabot-auto-approve[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: dependencies[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: dependency-auto-upgrade[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: dependency-maintenance[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: dependency-management[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: diverse-agent-matrix[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: docs-autogen[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: docs-intelligence[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: emergency-fix[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ephemeral-branch-autorebase[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: exponential-agent-factory-proliferation[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: exponential-ai-delegation[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: external-links[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: fast-auto-push-to-main[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: fast-lint-sync[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: frontend-sync-continuous[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: front-scheduler[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: git-health[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: gitleaks[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: git-ultrafast-sync[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: guardian-scheduler[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: homepage-auto-advertiser[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: homepage-auto-update[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: infinite-improvement-loop[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: instagram-marketing[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: instagram-six-hourly[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: intelligent-content-generation[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: knowledge-graph-radar[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: labeler[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: lighthouse-budgets[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: lighthouse-live[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: link-auto-fix[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: linkedin-marketing[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: linkedin-pro[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: link-scan-hourly[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: maintenance[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: marketing-daily[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: marketing-sync[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: media-optimizer[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: merge-conflict-guard[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: monetization-continuous[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: monetization-daily[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: monetization[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: netlify-auto-healer[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: netlify-automation[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: netlify-config[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: netlify-functions-trigger[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: netlify-monitor[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: og-image-refresh[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: og-image-update[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: optimize-images[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: pa11y[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: performance-audit[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: performance-monitoring[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: performance-weekly[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: pin-actions-weekly[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: playwright-smoke[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: pr-auto-curator[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: pr-quality-gate[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: pr-size-labeler[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: pr-smoke[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: pr-update-with-main[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: rapid-git-sync[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: rapid-sync[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: readme-auto-advertiser[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: readme-autogen[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: release-deploy[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: release-drafter[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: release[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: repo-knowledge-graph[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: repo-radar[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: responsive-content[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: revenue-ideas-daily[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: search-index-autogen[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: security-audit[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: security-auto-heal[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: security-gates[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: security-scan[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: security-weekly[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: security[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: self-healing-build[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: self-replicating-factory-manager[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: seo-audit[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: seo-validator[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: site-health-guardian[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: site-link[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: sitemap-and-search[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: sitemap-auto-commit[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: sitemap-daily[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: stale[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: sync-health[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: test-auth[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: test-suite[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: test[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: todo-issue-sync[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: topics-and-clusters[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ui-evolution-schedule[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ui-evolution-weekly-beautify[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: ultra-rapid-sync[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: unused-deps-cleaner[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: unused-exports-report[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: variation[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: venture[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: workflow-auto-healer[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: workflow-health-monitor[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: workflow-manager[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: workflow-radar[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: workflow-supervisor[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: workflow-validator[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: workflow-watchdog[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: yaml-auto-fixer-simple[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: yaml-auto-fixer[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+[0;34m🔍 Testing workflow: yaml-validator[0m
+[0;32m✅ Valid YAML syntax[0m
+[0;32m✅ No placeholder content detected[0m
+[0;32m✅ Basic workflow structure present[0m
+[0;32m✅ Permissions defined[0m
+
+
+[0;34m📊 Test Summary[0m
+==================
+Total workflows: 450
+[0;32mPassed: 450[0m
+[0;31mFailed: 0[0m
+[0;32m🎉 All workflows passed validation![0m

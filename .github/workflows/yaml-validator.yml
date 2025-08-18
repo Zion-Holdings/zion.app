@@ -29,7 +29,49 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run yaml validator
-        run: echo "Workflow executed successfully"
+        run: |
+          echo "🔍 Validating YAML files..."
+          
+          # Find all YAML files
+          yaml_files=$(find . -name "*.yml" -o -name "*.yaml" | grep -v node_modules | grep -v .git)
+          total_files=$(echo "$yaml_files" | wc -l)
+          
+          echo "📁 Found $total_files YAML files"
+          
+          # Validate each file
+          invalid_files=()
+          valid_count=0
+          
+          for file in $yaml_files; do
+            echo "  🔍 Checking: $file"
+            
+            if python3 -c "import yaml; yaml.safe_load(open('$file', 'r'))" 2>/dev/null; then
+              echo "    ✅ Valid YAML"
+              valid_count=$((valid_count + 1))
+            else
+              echo "    ❌ Invalid YAML"
+              invalid_files+=("$file")
+            fi
+          done
+          
+          # Summary
+          echo ""
+          echo "📊 YAML Validation Summary:"
+          echo "  Total files: $total_files"
+          echo "  Valid files: $valid_count"
+          echo "  Invalid files: ${#invalid_files[@]}"
+          
+          if [ ${#invalid_files[@]} -gt 0 ]; then
+            echo ""
+            echo "❌ Invalid YAML files found:"
+            for file in "${invalid_files[@]}"; do
+              echo "  - $file"
+            done
+            exit 1
+          else
+            echo ""
+            echo "✅ All YAML files are valid!"
+          fi
       - name: Upload results
         uses: actions/upload-artifact@v4
         if: always()

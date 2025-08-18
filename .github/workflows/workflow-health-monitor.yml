@@ -29,7 +29,45 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run workflow health monitor
-        run: echo "Workflow executed successfully"
+        run: |
+          echo "🔍 Monitoring workflow health..."
+          
+          # Check workflow files for common issues
+          workflow_files=$(find .github/workflows -name "*.yml" -o -name "*.yaml")
+          total_files=$(echo "$workflow_files" | wc -l)
+          
+          echo "📁 Found $total_files workflow files"
+          
+          # Basic health checks
+          issues=0
+          for file in $workflow_files; do
+            echo "  🔍 Checking: $file"
+            
+            # Check for placeholder content
+            if grep -q "echo.*Workflow.*executed.*successfully" "$file"; then
+              echo "    ⚠️  Contains placeholder content"
+              issues=$((issues + 1))
+            fi
+            
+            # Check for basic syntax
+            if python3 -c "import yaml; yaml.safe_load(open('$file', 'r'))" 2>/dev/null; then
+              echo "    ✅ Valid YAML syntax"
+            else
+              echo "    ❌ Invalid YAML syntax"
+              issues=$((issues + 1))
+            fi
+          done
+          
+          echo ""
+          echo "📊 Health Summary:"
+          echo "  Total workflows: $total_files"
+          echo "  Issues found: $issues"
+          
+          if [ $issues -eq 0 ]; then
+            echo "✅ All workflows are healthy!"
+          else
+            echo "⚠️  Some workflow issues detected"
+          fi
       - name: Upload results
         uses: actions/upload-artifact@v4
         if: always()

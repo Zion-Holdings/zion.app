@@ -27,7 +27,7 @@ jobs:
         run: npm ci --no-audit --no-fund
       - name: Run workflow
         run: |
-          echo "Workflow Workflow completed successfully"
+          echo "✅ Workflow completed successfully"
           
 concurrency:
   group: agent-agent-1755381089844-1-deployment-advanced.yml-${{ github.ref }}

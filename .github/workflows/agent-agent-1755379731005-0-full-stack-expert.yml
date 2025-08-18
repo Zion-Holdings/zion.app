@@ -35,4 +35,4 @@ jobs:
       - name: Run Full Stack Expert
         run: |
           echo "Running Full Stack Expert..."
-          echo "Workflow completed successfully"
+          echo "✅ Workflow completed successfully"

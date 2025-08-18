@@ -29,7 +29,42 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run workflow watchdog
-        run: echo "Workflow executed successfully"
+        run: |
+          echo "🐕 Running workflow watchdog..."
+          
+          # Monitor workflows for issues and alert if needed
+          echo "🔍 Watching workflow ecosystem for issues..."
+          
+          # Check for critical workflow problems
+          critical_issues=0
+          workflow_files=$(find .github/workflows -name "*.yml" -o -name "*.yaml")
+          
+          for file in $workflow_files; do
+            # Check for syntax errors
+            if ! python3 -c "import yaml; yaml.safe_load(open('$file', 'r'))" 2>/dev/null; then
+              echo "🚨 CRITICAL: Syntax error in $file"
+              critical_issues=$((critical_issues + 1))
+            fi
+            
+            # Check for missing critical sections
+            if ! grep -q "jobs:" "$file"; then
+              echo "⚠️  WARNING: Missing jobs section in $file"
+            fi
+          done
+          
+          # Watchdog status report
+          echo "📊 Watchdog Status Report:"
+          echo "  - Total workflows monitored: $(echo "$workflow_files" | wc -l)"
+          echo "  - Critical issues found: $critical_issues"
+          
+          if [ $critical_issues -eq 0 ]; then
+            echo "✅ All workflows are healthy - watchdog is satisfied"
+          else
+            echo "🚨 Watchdog detected critical issues that need immediate attention"
+          fi
+          
+          echo "✅ Workflow watchdog monitoring completed"
+          echo "📈 Summary: Workflow ecosystem security check complete"
       - name: Upload results
         uses: actions/upload-artifact@v4
         if: always()

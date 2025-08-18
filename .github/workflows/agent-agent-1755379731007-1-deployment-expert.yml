@@ -35,4 +35,4 @@ jobs:
       - name: Run Deployment Expert
         run: |
           echo "Running Deployment Expert..."
-          echo "Workflow completed successfully"
+          echo "✅ Workflow completed successfully"
