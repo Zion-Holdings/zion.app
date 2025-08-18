@@ -4,6 +4,34 @@
       "title": "Innovation Insight — 2025-08-18 18-33",
       "href": "/reports/innovations/insight-2025-08-18T18-33",
       "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:33:42.056Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-33",
+      "href": "/reports/updates/update-2025-08-18T18-33",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:33:42.056Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 18-33",
+      "href": "/reports/innovations/insight-2025-08-18T18-33",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:33:42.056Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-33",
+      "href": "/reports/updates/update-2025-08-18T18-33",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:33:42.056Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 18-33",
+      "href": "/reports/innovations/insight-2025-08-18T18-33",
+      "desc": "New autonomous content",
       "createdAt": "2025-08-18T18:33:38.135Z",
       "source": "cloud-content-factory"
     },
@@ -27,6 +55,94 @@
       "desc": "New autonomous content",
       "createdAt": "2025-08-18T18:33:38.135Z",
       "source": "cloud-content-factory"
+    },
+    {
+      "id": "rapid-1755542020560-jdqtgm",
+      "title": "Mobile App Development",
+      "route": "/services/rapid-1755542020560-jdqtgm",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:33:40.563Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755542020561-vdz3wo",
+      "title": "Performance Optimizer",
+      "route": "/products/rapid-1755542020561-vdz3wo",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:33:40.563Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755542020562-p2ibji",
+      "title": "Best Practices in DevOps Automation",
+      "route": "/tutorials/rapid-1755542020562-p2ibji",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:33:40.563Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755542023215-725p5m",
+      "title": "Machine Learning",
+      "route": "/services/rapid-1755542023215-725p5m",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:33:43.219Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755542023216-2k0yzd",
+      "title": "Automation Suite",
+      "route": "/products/rapid-1755542023216-2k0yzd",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:33:43.219Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755542023217-kltxoi",
+      "title": "Getting Started with Data Processing",
+      "route": "/tutorials/rapid-1755542023217-kltxoi",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:33:43.219Z",
+      "process": "rapid"
+    },
+    {
+      "id": "ultra-1755542023246-l5f75x",
+      "title": "Rapid Response Development",
+      "route": "/reports/updates/ultra-1755542023246-l5f75x",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:33:43.250Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542023247-7exeh7",
+      "title": "Ultra-Fast Instant deployment systems Insight",
+      "route": "/reports/insights/ultra-1755542023247-7exeh7",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:33:43.250Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542023248-cdcl7z",
+      "title": "Ultra-Fast Guide: Ultra-fast testing frameworks",
+      "route": "/reports/guides/ultra-1755542023248-cdcl7z",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:33:43.250Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542023248-q02wte",
+      "title": "Case Study: AI-powered automation Success",
+      "route": "/reports/cases/ultra-1755542023248-q02wte",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:33:43.250Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542023249-zlj1ob",
+      "title": "Pattern: Instant deployment systems Architecture",
+      "route": "/reports/patterns/ultra-1755542023249-zlj1ob",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:33:43.250Z",
+      "process": "ultra-fast"
     }
   ]
 }
