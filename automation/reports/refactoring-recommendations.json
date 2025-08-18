@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T04:24:40.226Z",
+  "timestamp": "2025-08-18T04:25:38.729Z",
   "critical": [],
   "high": [],
   "medium": [
@@ -129,21 +129,20 @@
     {
       "workflow": "maintenance.yml",
       "status": "active",
-      "complexityScore": 40,
+      "complexityScore": 30,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 224,
+        "totalLines": 142,
         "jobCount": 0,
-        "stepCount": 17,
+        "stepCount": 12,
         "conditionalCount": 1,
         "matrixCount": 0,
-        "dependencyCount": 1,
+        "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 8
+        "actionCount": 5
       },
       "refactoringStrategy": [
-        "Break down into smaller job steps",
         "Extract common functionality to reusable workflows"
       ]
     },

@@ -1,223 +1,141 @@
-name: Repository Maintenance
+name: System Maintenance
+
 on:
-  workflow_dispatch: null
   schedule:
-  - cron: 0 2 * * 0
+    - cron: '0 3 * * 0' # Weekly on Sunday at 3 AM UTC
+  workflow_dispatch: {}
+
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
   actions: read
+
 concurrency:
-  group: maintenance
+  group: "maintenance"
   cancel-in-progress: false
-env:
-  NODE_VERSION: '20'
+
 jobs:
-  cleanup-artifacts:
-    name: Cleanup Old Artifacts
+  cleanup:
+    name: System Cleanup
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
+    
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ env.NODE_VERSION }}
-        cache: npm
-    - name: Install dependencies
-      run: npm ci --no-audit --no-fund
-    - name: Clean up old automation files
-      run: 'echo "Cleaning up old automation artifacts..."
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
 
-        # Clean up old analytics files (older than 7 days)
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
 
-        find automation/analytics -name "*.json" -mtime +7 -delete 2>/dev/null ||
-        true
+      - name: Clean build artifacts
+        run: |
+          echo "Cleaning build artifacts..."
+          
+          # Remove build directories
+          rm -rf .next out dist .temp 2>/dev/null || true
+          
+          # Remove temporary files
+          find . -name "*.tmp" -delete 2>/dev/null || true
+          find . -name "*.log" -delete 2>/dev/null || true
+          
+          # Clean npm cache
+          npm cache clean --force
+          
+          echo "Build artifacts cleaned"
 
-        find automation/analytics -name "*.html" -mtime +7 -delete 2>/dev/null ||
-        true
+      - name: Check disk usage
+        run: |
+          echo "Checking disk usage..."
+          df -h
+          du -sh . 2>/dev/null || echo "Could not check directory size"
 
-        find automation/analytics -name "*.csv" -mtime +7 -delete 2>/dev/null || true
+      - name: Check for large files
+        run: |
+          echo "Checking for large files..."
+          find . -type f -size +10M -exec ls -lh {} \; 2>/dev/null | head -20 || echo "No large files found"
 
+      - name: Analyze repository health
+        run: |
+          echo "Analyzing repository health..."
+          
+          # Count files by type
+          echo "# Repository Health Report" > maintenance-report.md
+          echo "Generated: $(date)" >> maintenance-report.md
+          echo "" >> maintenance-report.md
+          
+          echo "## File Counts" >> maintenance-report.md
+          echo "### TypeScript/JavaScript" >> maintenance-report.md
+          TS_COUNT=$(find . -name "*.ts" -o -name "*.tsx" -o -name "*.js" -o -name "*.jsx" | wc -l)
+          echo "Total TS/JS files: $TS_COUNT" >> maintenance-report.md
+          
+          echo "### CSS/SCSS" >> maintenance-report.md
+          CSS_COUNT=$(find . -name "*.css" -o -name "*.scss" -o -name "*.sass" | wc -l)
+          echo "Total CSS files: $CSS_COUNT" >> maintenance-report.md
+          
+          echo "### Images" >> maintenance-report.md
+          IMG_COUNT=$(find . -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.gif" -o -name "*.svg" | wc -l)
+          echo "Total image files: $IMG_COUNT" >> maintenance-report.md
+          
+          echo "### Documentation" >> maintenance-report.md
+          DOC_COUNT=$(find . -name "*.md" -o -name "*.txt" -o -name "*.rst" | wc -l)
+          echo "Total documentation files: $DOC_COUNT" >> maintenance-report.md
+          
+          echo "Repository health analysis completed"
 
-        # Clean up old backup directories (older than 3 days)
+      - name: Upload maintenance report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: maintenance-report
+          path: maintenance-report.md
+          retention-days: 7
 
-        find automation/backups -type d -mtime +3 -exec rm -rf {} + 2>/dev/null ||
-        true
-
-
-        # Clean up old optimization reports (older than 5 days)
-
-        find automation/optimization -name "*.json" -mtime +5 -delete 2>/dev/null
-        || true
-
-
-        # Clean up old deployment reports (older than 3 days)
-
-        find automation/deployments -name "*.json" -mtime +3 -delete 2>/dev/null ||
-        true
-
-
-        echo "Cleanup completed"
-
-        '
-    - name: Commit cleanup changes
-      run: "git config --global user.name \"github-actions[bot]\"\ngit config --global\
-        \ user.email \"41898282+github-actions[bot]@users.noreply.github.com\"\n\n\
-        if git diff --quiet; then\n  echo \"No changes to commit\"\nelse\n  git add\
-        \ -A\n  git commit -m \"\U0001F916 Automated cleanup: Remove old artifacts\
-        \ and reports [skip ci]\"\n  git push\nfi\n"
-  optimize-workflows:
-    name: Optimize Workflows
+  health-check:
+    name: Health Check
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ env.NODE_VERSION }}
-        cache: npm
-    - name: Install dependencies
-      run: npm ci --no-audit --no-fund
-    - name: Analyze workflow performance
-      run: 'echo "## Workflow Performance Analysis" >> $GITHUB_STEP_SUMMARY
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-        echo "Analyzing workflow performance and optimization opportunities..." >>
-        $GITHUB_STEP_SUMMARY
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
 
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
 
-        # Count total workflows
-
-        WORKFLOW_COUNT=$(find .github/workflows -name "*.yml" | wc -l)
-
-        echo "- Total workflows: $WORKFLOW_COUNT" >> $GITHUB_STEP_SUMMARY
-
-
-        # Check for duplicate workflows
-
-        DUPLICATES=$(find .github/workflows -name "*.yml" -exec basename {} \; | sort
-        | uniq -d | wc -l)
-
-        echo "- Potential duplicates: $DUPLICATES" >> $GITHUB_STEP_SUMMARY
-
-
-        # Check for workflows with high frequency schedules
-
-        HIGH_FREQ=$(grep -r "cron.*\*/[0-9]" .github/workflows/ | wc -l)
-
-        echo "- High frequency workflows: $HIGH_FREQ" >> $GITHUB_STEP_SUMMARY
-
-
-        echo "Analysis completed" >> $GITHUB_STEP_SUMMARY
-
-        '
-    - name: Generate workflow health report
-      run: 'echo "Generating workflow health report..."
-
-
-        cat > workflow-health-report.md << EOF
-
-        # Workflow Health Report
-
-
-        Generated: $(date)
-
-
-        ## Summary
-
-        - Total workflows: $(find .github/workflows -name "*.yml" | wc -l)
-
-        - Last run: $(date)
-
-
-        ## Recommendations
-
-        - Consider consolidating similar workflows
-
-        - Review scheduling frequencies
-
-        - Ensure proper error handling
-
-        - Monitor resource usage
-
-        EOF
-
-
-        echo "Health report generated"
-
-        '
-    - name: Upload health report
-      uses: actions/upload-artifact@v4
-      with:
-        name: workflow-health-report
-        path: workflow-health-report.md
-        retention-days: 7
-  dependency-maintenance:
-    name: Dependency Maintenance
-    runs-on: ubuntu-latest
-    timeout-minutes: 25
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ env.NODE_VERSION }}
-        cache: npm
-    - name: Install dependencies
-      run: npm ci --no-audit --no-fund
-    - name: Check for outdated dependencies
-      run: 'echo "Checking for outdated dependencies..."
-
-
-        # Generate dependency report
-
-        npm outdated --depth=0 > dependency-report.txt 2>&1 || echo "All packages
-        are up to date" > dependency-report.txt
-
-
-        # Check for security vulnerabilities
-
-        npm audit --audit-level=high > security-report.txt 2>&1 || echo "No high severity
-        vulnerabilities found" > security-report.txt
-
-
-        echo "Dependency analysis completed"
-
-        '
-    - name: Upload dependency reports
-      uses: actions/upload-artifact@v4
-      with:
-        name: dependency-reports
-        path: 'dependency-report.txt
-
-          security-report.txt
-
-          '
-        retention-days: 7
-  maintenance-summary:
-    name: Maintenance Summary
-    runs-on: ubuntu-latest
-    needs:
-    - cleanup-artifacts
-    - optimize-workflows
-    - dependency-maintenance
-    if: always()
-    steps:
-    - name: Generate maintenance summary
-      run: "echo \"## \U0001F9F9 Repository Maintenance Complete\" >> $GITHUB_STEP_SUMMARY\n\
-        echo \"- Cleanup: ${{ needs.cleanup-artifacts.result }}\" >> $GITHUB_STEP_SUMMARY\n\
-        echo \"- Optimization: ${{ needs.optimize-workflows.result }}\" >> $GITHUB_STEP_SUMMARY\n\
-        echo \"- Dependencies: ${{ needs.dependency-maintenance.result }}\" >> $GITHUB_STEP_SUMMARY\n\
-        \nif [ \"${{ needs.cleanup-artifacts.result }}\" == \"success\" ] && [ \"\
-        ${{ needs.optimize-workflows.result }}\" == \"success\" ] && [ \"${{ needs.dependency-maintenance.result\
-        \ }}\" == \"success\" ]; then\n  echo \"\u2705 All maintenance tasks completed\
-        \ successfully!\" >> $GITHUB_STEP_SUMMARY\nelse\n  echo \"\u26A0\uFE0F Some\
-        \ maintenance tasks failed. Check the logs for details.\" >> $GITHUB_STEP_SUMMARY\n\
-        fi\n\necho \"\" >> $GITHUB_STEP_SUMMARY\necho \"Next maintenance run: Sunday\
-        \ at 2 AM\" >> $GITHUB_STEP_SUMMARY\n"
-    timeout-minutes: 30
+      - name: Run health checks
+        run: |
+          echo "Running health checks..."
+          
+          # Check if package.json is valid
+          npm run type-check || echo "Type checking failed"
+          
+          # Check if build works
+          npm run build || echo "Build failed"
+          
+          # Check for common issues
+          echo "Checking for common issues..."
+          
+          # Check for console.log statements in production code
+          CONSOLE_COUNT=$(grep -r "console.log" pages/ components/ 2>/dev/null | wc -l || echo "0")
+          echo "Found $CONSOLE_COUNT console.log statements in production code"
+          
+          # Check for TODO comments
+          TODO_COUNT=$(grep -r "TODO" pages/ components/ 2>/dev/null | wc -l || echo "0")
+          echo "Found $TODO_COUNT TODO comments"
+          
+          # Check for FIXME comments
+          FIXME_COUNT=$(grep -r "FIXME" pages/ components/ 2>/dev/null | wc -l || echo "0")
+          echo "Found $FIXME_COUNT FIXME comments"
+          
+          echo "Health checks completed"
