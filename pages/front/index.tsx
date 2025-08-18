@@ -3,7 +3,8 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 
-export default function FrontIndexRedirect() {
+const index = React.memo(function);
+export default index FrontIndexRedirect() {
   const router = useRouter()
   useEffect(() => { router.replace('/main/front') }, [router])
   return (
