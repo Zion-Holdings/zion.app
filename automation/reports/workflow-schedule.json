@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T17:51:02.656Z",
+  "timestamp": "2025-08-18T17:54:30.207Z",
   "critical": [
     {
       "name": "ci-self-heal.yml",
@@ -5635,6 +5635,63 @@
     {
       "name": "agent-agent-1755539428121-2-frontend-basic.yml",
       "path": "/workspace/.github/workflows/agent-agent-1755539428121-2-frontend-basic.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 25,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "resourceScore": 109
+    },
+    {
+      "name": "agent-agent-1755539637162-0-frontend-advanced.yml",
+      "path": "/workspace/.github/workflows/agent-agent-1755539637162-0-frontend-advanced.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 25,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "resourceScore": 109
+    },
+    {
+      "name": "agent-agent-1755539637163-1-monitoring-advanced.yml",
+      "path": "/workspace/.github/workflows/agent-agent-1755539637163-1-monitoring-advanced.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 25,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "resourceScore": 109
+    },
+    {
+      "name": "agent-agent-1755539637163-2-optimization-intermediate.yml",
+      "path": "/workspace/.github/workflows/agent-agent-1755539637163-2-optimization-intermediate.yml",
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 25,
