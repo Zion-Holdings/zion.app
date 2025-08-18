@@ -8,6 +8,9 @@ permissions:
   contents: write
   actions: read
   pull-requests: write
+concurrency:
+  group: docs-autogen.yml-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   main:
     name: Main Job
@@ -27,8 +30,4 @@ jobs:
         run: npm ci --no-audit --no-fund
       - name: Run workflow
         run: |
-          echo "Workflow Workflow completed successfully"
-          
-concurrency:
-  group: docs-autogen.yml-${{ github.ref }}
-  cancel-in-progress: true
+          echo "Workflow completed successfully"
