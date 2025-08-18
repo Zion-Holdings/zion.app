@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T16:32:06.995Z",
-  "pagesScanned": 2889,
+  "generatedAt": "2025-08-18T16:34:00.871Z",
+  "pagesScanned": 2892,
   "items": [
     {
       "route": "/404",
@@ -12635,6 +12635,16 @@
       }
     },
     {
+      "route": "/reports/innovations/innovation-2025-08-18-1632",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study Template — Data Engineering Pipelines",
+        "description": "Case Study Template — Data Engineering Pipelines — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-18-1229",
       "missing": [
         "og:image"
@@ -14532,6 +14542,16 @@
       "suggestion": {
         "title": "Playbook: AI QA & Eval",
         "description": "Playbook: AI QA & Eval — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18-1632",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Runbook: MLOps",
+        "description": "Runbook: MLOps — auto-suggested description"
       }
     },
     {
@@ -26972,6 +26992,16 @@
       "suggestion": {
         "title": "Autonomous Playbook — Applied NLP & RAG (2025-08-18 16:30 UTC)",
         "description": "Autonomous Playbook — Applied NLP & RAG (2025-08-18 16:30 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-1632",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Reference Architecture — Applied NLP & RAG (2025-08-18 16:32 UTC)",
+        "description": "Autonomous Reference Architecture — Applied NLP & RAG (2025-08-18 16:32 UTC) — auto-suggested description"
       }
     },
     {
