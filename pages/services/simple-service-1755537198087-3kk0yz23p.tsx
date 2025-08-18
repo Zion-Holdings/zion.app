@@ -77,3 +77,8 @@ export default function Simple-service-1755537198087-3kk0yz23pService() {
     </div>
   );
 }
+<Link href="/services/simple-service-1755536632488-7c6l7htn7" className="internal-link">Related Content</Link>
+
+<Link href="/services/simple-service-1755536632490-0pdxjco7f" className="internal-link">Related Content</Link>
+
+<Link href="/services/simple-service-1755536658090-oexyi4u1a" className="internal-link">Related Content</Link>
