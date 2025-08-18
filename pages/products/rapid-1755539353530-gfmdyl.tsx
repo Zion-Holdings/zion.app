@@ -56,3 +56,7 @@ export default function ProductPage() {
     </div>
   );
 }
+
+<Link href="/products/rapid-1755539340460-oastx4" className="internal-link">Related Content</Link>
+
+<Link href="/products/rapid-1755539347155-oli1gc" className="internal-link">Related Content</Link>

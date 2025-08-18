@@ -208,3 +208,5 @@ export default function HomePage() {
 <Link href="/contact" className="internal-link link-instance-1">[NAVIGATION] Main Navigation</Link>
 
 <Link href="/support" className="internal-link link-instance-2">[FOOTER] Footer Link</Link>
+
+<a href="https://github.com/Zion-Holdings/zion.app" target="_blank" rel="noopener noreferrer" className="external-link">View Source</a>

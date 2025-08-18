@@ -4,6 +4,62 @@
       "title": "Innovation Insight — 2025-08-18 17-49",
       "href": "/reports/innovations/insight-2025-08-18T17-49",
       "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:49:26.983Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 17-49",
+      "href": "/reports/updates/update-2025-08-18T17-49",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:49:26.983Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 17-49",
+      "href": "/reports/innovations/insight-2025-08-18T17-49",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:49:26.983Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 17-49",
+      "href": "/reports/updates/update-2025-08-18T17-49",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:49:26.983Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 17-49",
+      "href": "/reports/innovations/insight-2025-08-18T17-49",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:49:23.826Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 17-49",
+      "href": "/reports/updates/update-2025-08-18T17-49",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:49:23.826Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 17-49",
+      "href": "/reports/innovations/insight-2025-08-18T17-49",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:49:23.826Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 17-49",
+      "href": "/reports/updates/update-2025-08-18T17-49",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:49:23.826Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 17-49",
+      "href": "/reports/innovations/insight-2025-08-18T17-49",
+      "desc": "New autonomous content",
       "createdAt": "2025-08-18T17:49:10.438Z",
       "source": "cloud-content-factory"
     },
@@ -239,6 +295,70 @@
       "type": "ultra-fast-generated",
       "created": "2025-08-18T17:49:08.184Z",
       "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755539366133-twmqyz",
+      "title": "Ultra-Fast Innovation Update",
+      "route": "/reports/updates/ultra-1755539366133-twmqyz",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T17:49:26.158Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755539366136-1k3xy8",
+      "title": "Ultra-Fast Lightning deployment pipelines Insight",
+      "route": "/reports/insights/ultra-1755539366136-1k3xy8",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T17:49:26.158Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755539366137-5ctf2w",
+      "title": "Ultra-Fast Guide: Lightning-fast development",
+      "route": "/reports/guides/ultra-1755539366137-5ctf2w",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T17:49:26.158Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755539366147-9u18hr",
+      "title": "Case Study: AI-powered automation Success",
+      "route": "/reports/cases/ultra-1755539366147-9u18hr",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T17:49:26.158Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755539366156-f7vicb",
+      "title": "Pattern: Real-time data processing Architecture",
+      "route": "/reports/patterns/ultra-1755539366156-f7vicb",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T17:49:26.158Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "rapid-1755539367467-ar86jc",
+      "title": "Mobile App Development",
+      "route": "/services/rapid-1755539367467-ar86jc",
+      "type": "rapid-generated",
+      "created": "2025-08-18T17:49:27.473Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755539367470-ljhsnn",
+      "title": "Analytics Engine",
+      "route": "/products/rapid-1755539367470-ljhsnn",
+      "type": "rapid-generated",
+      "created": "2025-08-18T17:49:27.473Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755539367471-kv1wcz",
+      "title": "Step-by-Step Guide to Mobile App Development",
+      "route": "/tutorials/rapid-1755539367471-kv1wcz",
+      "type": "rapid-generated",
+      "created": "2025-08-18T17:49:27.473Z",
+      "process": "rapid"
     }
   ]
 }
