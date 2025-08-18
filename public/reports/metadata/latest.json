@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T09:47:01.438Z",
-  "pagesScanned": 9063,
+  "generatedAt": "2025-08-18T09:48:01.498Z",
+  "pagesScanned": 9064,
   "items": [
     {
       "route": "/404",
@@ -90036,6 +90036,19 @@
       "suggestion": {
         "title": "Autonomous Playbook — Agentic Workflows (2025-08-18 06:47 UTC)",
         "description": "Autonomous Playbook — Agentic Workflows (2025-08-18 06:47 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0648",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 06:48",
+        "description": "Autonomous Update — 2025-08-18 06:48 — auto-suggested description"
       }
     },
     {
