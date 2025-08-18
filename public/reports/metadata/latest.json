@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T17:57:17.635Z",
-  "pagesScanned": 4280,
+  "generatedAt": "2025-08-18T18:00:19.519Z",
+  "pagesScanned": 4281,
   "items": [
     {
       "route": "/404",
@@ -333,7 +333,10 @@
     {
       "route": "/newsroom",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Newsroom",
@@ -893,10 +896,7 @@
     {
       "route": "/products/rapid-1755539790003-kdps48",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Automation Suite",
@@ -10276,10 +10276,7 @@
     {
       "route": "/reports/cases/ultra-1755539789831-65k982",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Case Study: AI-powered automation Success",
@@ -10289,10 +10286,7 @@
     {
       "route": "/reports/cases/ultra-1755539790795-0ttt4l",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Case Study: Real-time collaboration tools Success",
@@ -15562,10 +15556,7 @@
     {
       "route": "/reports/guides/ultra-1755539789830-6h4scx",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Ultra-Fast Guide: Ultra-responsive applications",
@@ -15575,10 +15566,7 @@
     {
       "route": "/reports/guides/ultra-1755539790794-u8je2u",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Ultra-Fast Guide: Rapid prototyping systems",
@@ -23688,10 +23676,7 @@
     {
       "route": "/reports/insights/ultra-1755539789829-bgm0z7",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Ultra-Fast Rapid prototyping systems Insight",
@@ -23701,10 +23686,7 @@
     {
       "route": "/reports/insights/ultra-1755539790794-8k9krn",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Ultra-Fast Lightning deployment pipelines Insight",
@@ -28984,10 +28966,7 @@
     {
       "route": "/reports/patterns/ultra-1755539789831-r12rkn",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Pattern: Rapid prototyping systems Architecture",
@@ -28997,10 +28976,7 @@
     {
       "route": "/reports/patterns/ultra-1755539790796-5k5xr4",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Pattern: Ultra-fast testing frameworks Architecture",
@@ -34050,10 +34026,7 @@
     {
       "route": "/reports/updates/ultra-1755539789828-gus27e",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Rapid Technology Advancement",
@@ -34063,10 +34036,7 @@
     {
       "route": "/reports/updates/ultra-1755539790793-v34ivl",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Instantaneous Tech Insights",
@@ -38396,14 +38366,24 @@
     {
       "route": "/reports/updates/update-2025-08-18-1757",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 17:57",
+        "description": "Autonomous Update — 2025-08-18 17:57 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-1800",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 17:57",
-        "description": "Autonomous Update — 2025-08-18 17:57 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-18 18:00",
+        "description": "Autonomous Update — 2025-08-18 18:00 — auto-suggested description"
       }
     },
     {
@@ -40863,10 +40843,7 @@
     {
       "route": "/services/rapid-1755539789999-uzq3pe",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Data Processing",
@@ -42360,10 +42337,7 @@
     {
       "route": "/tutorials/rapid-1755539790004-lzbfxc",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Comprehensive Tutorial on API Integration",
