@@ -1,19 +1,11 @@
 # broken-images Report
 
-<<<<<<< Updated upstream
-Generated: 2025-08-18T15:33:16.640Z
-=======
-Generated: 2025-08-18T15:32:22.183Z
->>>>>>> Stashed changes
+Generated: 2025-08-18T15:35:41.874Z
 
 ## Status
 - Task: broken-images
 - Status: Completed
-<<<<<<< Updated upstream
-- Timestamp: 2025-08-18T15:33:16.640Z
-=======
-- Timestamp: 2025-08-18T15:32:22.183Z
->>>>>>> Stashed changes
+- Timestamp: 2025-08-18T15:35:41.874Z
 
 ## Next Steps
 - Implement actual broken-images functionality
