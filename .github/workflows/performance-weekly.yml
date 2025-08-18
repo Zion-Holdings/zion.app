@@ -2,7 +2,7 @@ name: Performance Audit Weekly
 on:
   workflow_dispatch: {}
   schedule:
-  - cron: 0 2 * * *
+  - cron: '0 2 * * *'
 jobs:
   audit:
     runs-on: ubuntu-latest

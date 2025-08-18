@@ -2,7 +2,7 @@ name: Instagram Six-Hourly Posting
 on:
   workflow_dispatch: {}
   schedule:
-  - cron: 0 2 * * *
+  - cron: '0 2 * * *'
 jobs:
   instagram_post:
     runs-on: ubuntu-latest
