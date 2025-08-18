@@ -1,12 +1,9 @@
 {
-  "generatedAt": "2025-08-18T13:09:38.575Z",
+  "generatedAt": "2025-08-18T13:14:01.014Z",
   "files": [
+    "update-2025-08-18-1014.tsx",
     "update-2025-08-18T13-09.tsx",
-    "update-2025-08-18-1309.tsx",
-    "update-2025-08-18-1009.tsx",
     "update-2025-08-18T13-08.tsx",
-    "update-2025-08-18-1308.tsx",
-    "update-2025-08-18-1008.tsx",
     "update-2025-08-18T12-42.tsx",
     "update-2025-08-18T12-41.tsx",
     "update-2025-08-18T12-40.tsx",
@@ -21,6 +18,8 @@
     "update-2025-08-18T12-31.tsx",
     "update-2025-08-18T12-30.tsx",
     "update-2025-08-18T12-29.tsx",
+    "update-2025-08-18-1309.tsx",
+    "update-2025-08-18-1308.tsx",
     "update-2025-08-18-1242.tsx",
     "update-2025-08-18-1241.tsx",
     "update-2025-08-18-1240.tsx",
@@ -35,6 +34,8 @@
     "update-2025-08-18-1231.tsx",
     "update-2025-08-18-1230.tsx",
     "update-2025-08-18-1229.tsx",
+    "update-2025-08-18-1009.tsx",
+    "update-2025-08-18-1008.tsx",
     "update-2025-08-18-1005.tsx",
     "update-2025-08-18-0943.tsx",
     "update-2025-08-18-0942.tsx",
@@ -51,13 +52,14 @@
     "update-2025-08-18-0931.tsx",
     "update-2025-08-18-0930.tsx",
     "update-2025-08-18-0929.tsx",
-    "update-2025-08-18-0928.tsx"
+    "update-2025-08-18-0928.tsx",
+    "update-2025-08-18T13-13.tsx"
   ],
   "metrics": {
     "diversityScore": 100,
-    "avgLen": 1908,
+    "avgLen": 1903,
     "duplicateCount": 0,
-    "seoScore": 31
+    "seoScore": 30
   },
   "guidance": [
     "Aim for varied intros, highlights, and CTAs across updates.",
