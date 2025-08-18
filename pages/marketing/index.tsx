@@ -7,7 +7,10 @@ export default function MarketingPage() {
       <Head>
         <title>Marketing & Features - Zion Tech Group</title>
         <meta name="description" content="Discover our powerful features and marketing capabilities" />
-      </Head>
+      
+        <meta property="og:title" content="Marketing & Features" />
+        <meta property="og:description" content="Marketing & Features — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       <main className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white">
         <div className="mx-auto max-w-7xl px-6 py-20">
           <h1 className="text-4xl font-bold text-center mb-8">Marketing & Features</h1>

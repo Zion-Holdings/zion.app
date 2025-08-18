@@ -45,7 +45,10 @@ export default function LiveContentDashboard() {
       <Head>
         <title>Live Dashboard | Zion Tech Group</title>
         <meta name="description" content="Real-time monitoring of our autonomous content generation system." />
-      </Head>
+      
+        <meta property="og:title" content="Live Dashboard" />
+        <meta property="og:description" content="Live Dashboard — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       
       <main className="container mx-auto px-6 py-12">
         <div className="text-center mb-12">

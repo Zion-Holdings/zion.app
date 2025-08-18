@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T17:47:01.231Z",
-  "pagesScanned": 3463,
+  "generatedAt": "2025-08-18T17:48:11.667Z",
+  "pagesScanned": 3464,
   "items": [
     {
       "route": "/404",
@@ -113,7 +113,10 @@
     {
       "route": "/component-library",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Component Library",
@@ -175,7 +178,10 @@
     {
       "route": "/content-hub",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Content Hub",
@@ -185,7 +191,10 @@
     {
       "route": "/discover",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Content Discovery",
@@ -195,7 +204,10 @@
     {
       "route": "/enhanced-navigation",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Enhanced Navigation",
@@ -255,7 +267,10 @@
     {
       "route": "/live-dashboard",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Live Dashboard",
@@ -274,6 +289,19 @@
       "suggestion": {
         "title": "Autonomous Front Systems",
         "description": "Autonomous Front Systems — auto-suggested description"
+      }
+    },
+    {
+      "route": "/marketing/",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Marketing & Features",
+        "description": "Marketing & Features — auto-suggested description"
       }
     },
     {
@@ -313,7 +341,10 @@
     {
       "route": "/playground",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Component Playground",
@@ -33193,7 +33224,10 @@
     {
       "route": "/reports",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Reports & Content",
@@ -34107,10 +34141,7 @@
     {
       "route": "/services/simple-service-1755539184871-hvmi0rz6d",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Support Service",
@@ -34120,10 +34151,7 @@
     {
       "route": "/services/simple-service-1755539184873-e6t8lfcj2",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Training Service",
