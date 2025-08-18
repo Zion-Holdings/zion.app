@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T03:45:47.581Z",
+  "timestamp": "2025-08-18T03:46:46.989Z",
   "critical": [
     {
       "name": "ci-self-heal.yml",
@@ -291,7 +291,7 @@
       "triggers": [
         "push",
         "pull_request",
-        "workflow_dispatch null"
+        "workflow_dispatch {}"
       ],
       "resourceScore": 120
     },
@@ -2124,25 +2124,6 @@
       "resourceScore": 109
     },
     {
-      "name": "revenue-ideas-daily.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/revenue-ideas-daily.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 25,
-      "concurrentJobs": 7,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "schedule",
-        "workflow_dispatch"
-      ],
-      "resourceScore": 108
-    },
-    {
       "name": "cloud-marketing.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cloud-marketing.yml",
       "priority": "medium",
@@ -3551,6 +3532,25 @@
     {
       "name": "responsive-content.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/responsive-content.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 30,
+      "concurrentJobs": 7,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch"
+      ],
+      "resourceScore": 103
+    },
+    {
+      "name": "revenue-ideas-daily.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/revenue-ideas-daily.yml",
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 30,
