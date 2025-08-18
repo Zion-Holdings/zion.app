@@ -1,0 +1,46 @@
+{
+  "id": "simple-service-1755537958086-c746acdfz",
+  "category": "Mobile Development",
+  "template": "premiumService",
+  "title": "Premium Mobile Development Solution",
+  "description": "Advanced Mobile Development solution with premium features",
+  "features": [
+    "Advanced capabilities",
+    "Premium support",
+    "Custom integrations",
+    "Performance optimization",
+    "Security features"
+  ],
+  "pricing": [
+    {
+      "plan": "Standard",
+      "price": "$99/month",
+      "features": [
+        "Premium features",
+        "Email support"
+      ]
+    },
+    {
+      "plan": "Premium",
+      "price": "$199/month",
+      "features": [
+        "All premium features",
+        "Phone support"
+      ]
+    },
+    {
+      "plan": "Enterprise",
+      "price": "$399/month",
+      "features": [
+        "Full customization",
+        "Dedicated support"
+      ]
+    }
+  ],
+  "createdAt": "2025-08-18T17:25:58.086Z",
+  "status": "active",
+  "metadata": {
+    "generatedBy": "simple-service-generator",
+    "version": "1.0.0"
+  }
+}
