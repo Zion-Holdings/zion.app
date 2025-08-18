@@ -1,5 +1,5 @@
 // Auto-generated marketing and features index
-// Generated: 2025-08-18T17:00:21.144Z
+// Generated: 2025-08-18T17:00:29.466Z
 
 export const marketingPages = [
   {
