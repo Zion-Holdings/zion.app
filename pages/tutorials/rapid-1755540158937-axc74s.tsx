@@ -8,7 +8,10 @@ export default function TutorialPage() {
         <meta name="description" content="Learn mobile app development with our comprehensive tutorial. Step-by-step guidance for beginners and advanced users." />
         <meta name="keywords" content="tutorial, mobile app development, learning, guide, education, technology" />
         <link rel="canonical" href="https://ziontechgroup.com/tutorials/rapid-1755540158937-axc74s" />
-      </Head>
+      
+        <meta property="og:title" content="Step-by-Step Guide to Mobile App Development" />
+        <meta property="og:description" content="Step-by-Step Guide to Mobile App Development — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
         <h1 className="text-4xl font-extrabold text-center mb-8">Step-by-Step Guide to Mobile App Development</h1>
         

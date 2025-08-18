@@ -8,7 +8,10 @@ export default function ServicePage() {
         <meta name="description" content="Professional ai-powered analytics services to accelerate your business growth and digital transformation." />
         <meta name="keywords" content="ai-powered analytics, services, technology, business, digital transformation" />
         <link rel="canonical" href="https://ziontechgroup.com/services/rapid-1755540151431-yq9sqi" />
-      </Head>
+      
+        <meta property="og:title" content="AI-Powered Analytics" />
+        <meta property="og:description" content="AI-Powered Analytics — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
         <h1 className="text-4xl font-extrabold text-center mb-8">AI-Powered Analytics</h1>
         
