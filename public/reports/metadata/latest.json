@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T17:24:36.141Z",
-  "pagesScanned": 3327,
+  "generatedAt": "2025-08-18T17:27:00.886Z",
+  "pagesScanned": 3345,
   "items": [
     {
       "route": "/404",
@@ -113,10 +113,7 @@
     {
       "route": "/component-library",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Component Library",
@@ -178,10 +175,7 @@
     {
       "route": "/content-hub",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Content Hub",
@@ -191,10 +185,7 @@
     {
       "route": "/discover",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Content Discovery",
@@ -204,10 +195,7 @@
     {
       "route": "/enhanced-navigation",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Enhanced Navigation",
@@ -267,10 +255,7 @@
     {
       "route": "/live-dashboard",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Live Dashboard",
@@ -328,10 +313,7 @@
     {
       "route": "/playground",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Component Playground",
@@ -4080,6 +4062,16 @@
     },
     {
       "route": "/reports/blueprints/blueprint-2025-08-18-172123",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-18-172438",
       "missing": [
         "og:image"
       ],
@@ -8010,6 +8002,16 @@
     },
     {
       "route": "/reports/cases/case-2025-08-18-172123",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Cloud Improving",
+        "description": "Case Study — Cloud Improving — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-18-172439",
       "missing": [
         "og:image"
       ],
@@ -11959,6 +11961,16 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-18-172439",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/",
       "missing": [
         "og:image"
@@ -14196,6 +14208,16 @@
       "suggestion": {
         "title": "Case Study Template — Cloud FinOps",
         "description": "Case Study Template — Cloud FinOps — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/innovation-2025-08-18-1724",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Service Blueprint — Autonomous UIs",
+        "description": "Service Blueprint — Autonomous UIs — auto-suggested description"
       }
     },
     {
@@ -16439,6 +16461,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-18-1724",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Checklist: DevSecOps AI",
+        "description": "Checklist: DevSecOps AI — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-18T12-29",
       "missing": [
         "og:image"
@@ -18636,6 +18668,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-18 17-21",
         "description": "Innovation Insight — 2025-08-18 17-21 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18T17-24",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-18 17-24",
+        "description": "Innovation Insight — 2025-08-18 17-24 — auto-suggested description"
       }
     },
     {
@@ -22599,6 +22641,16 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-18-172439",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Automation Trends 2025",
+        "description": "Pattern — Automation Trends 2025 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-18-122902",
       "missing": [
         "og:image"
@@ -26300,6 +26352,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-18-172124",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-18-172439",
       "missing": [
         "og:image"
       ],
@@ -30409,6 +30471,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-18-1724",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Performance Tuning Guide — MLOps & Model Reliability (2025-08-18 17:24 UTC)",
+        "description": "Autonomous Performance Tuning Guide — MLOps & Model Reliability (2025-08-18 17:24 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-18T12-29",
       "missing": [
         "og:image"
@@ -32109,6 +32181,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-18T17-24",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 17-24",
+        "description": "Autonomous Update — 2025-08-18 17-24 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/whitepapers/enterprise-ai-strategy-framework",
       "missing": [
         "og:image"
@@ -32131,10 +32213,7 @@
     {
       "route": "/reports",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Reports & Content",
@@ -32648,10 +32727,7 @@
     {
       "route": "/services/simple-service-1755537698089-ee5hw53x6",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Premium Web Development Solution",
@@ -32661,10 +32737,7 @@
     {
       "route": "/services/simple-service-1755537698090-9brursycn",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Premium Cybersecurity Solution",
@@ -32674,10 +32747,7 @@
     {
       "route": "/services/simple-service-1755537718089-9lt6davue",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Premium DevOps Solution",
@@ -32687,10 +32757,7 @@
     {
       "route": "/services/simple-service-1755537718090-badtu3quw",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "DevOps Service",
@@ -32700,10 +32767,7 @@
     {
       "route": "/services/simple-service-1755537758089-qe5l6jqk8",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Cloud Services Service",
@@ -32713,10 +32777,7 @@
     {
       "route": "/services/simple-service-1755537758090-ehos264qn",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Mobile Development Service",
@@ -32746,10 +32807,7 @@
     {
       "route": "/services/simple-service-1755537798087-d3xw8iv4v",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Web Development Service",
@@ -32759,10 +32817,7 @@
     {
       "route": "/services/simple-service-1755537798088-2c2xsm46v",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Premium AI Solutions Solution",
@@ -32792,10 +32847,7 @@
     {
       "route": "/services/simple-service-1755537858086-ra93hvdii",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Data Analytics Service",
@@ -32805,14 +32857,115 @@
     {
       "route": "/services/simple-service-1755537858087-vnjlgxz91",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Support Service",
+        "description": "Support Service — auto-suggested description"
+      }
+    },
+    {
+      "route": "/services/simple-service-1755537878085-846qtglus",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Support Service",
-        "description": "Support Service — auto-suggested description"
+        "title": "Mobile Development Service",
+        "description": "Mobile Development Service — auto-suggested description"
+      }
+    },
+    {
+      "route": "/services/simple-service-1755537878088-owf03852k",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Premium Data Analytics Solution",
+        "description": "Premium Data Analytics Solution — auto-suggested description"
+      }
+    },
+    {
+      "route": "/services/simple-service-1755537898084-6ypw7pslx",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Premium Web Development Solution",
+        "description": "Premium Web Development Solution — auto-suggested description"
+      }
+    },
+    {
+      "route": "/services/simple-service-1755537898085-ka2g8wfl5",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Mobile Development Service",
+        "description": "Mobile Development Service — auto-suggested description"
+      }
+    },
+    {
+      "route": "/services/simple-service-1755537978085-k59n0z6ga",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Premium AI Solutions Solution",
+        "description": "Premium AI Solutions Solution — auto-suggested description"
+      }
+    },
+    {
+      "route": "/services/simple-service-1755537978086-tli7r7xp7",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Premium Training Solution",
+        "description": "Premium Training Solution — auto-suggested description"
+      }
+    },
+    {
+      "route": "/services/simple-service-1755538018086-0zrw1xfa4",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Premium AI Solutions Solution",
+        "description": "Premium AI Solutions Solution — auto-suggested description"
+      }
+    },
+    {
+      "route": "/services/simple-service-1755538018087-4di2yyh8l",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Training Service",
+        "description": "Training Service — auto-suggested description"
       }
     },
     {
