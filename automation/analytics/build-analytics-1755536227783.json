@@ -1,0 +1,647 @@
+{
+  "timestamp": "2025-08-18T16:57:07.783Z",
+  "buildId": "build-1755536165086",
+  "metrics": {
+    "timestamp": "2025-08-18T16:56:05.086Z",
+    "buildId": "build-1755536165086",
+    "environment": {
+      "nodeVersion": "v22.16.0",
+      "npmVersion": "10.9.2",
+      "platform": "darwin",
+      "arch": "x64",
+      "memoryUsage": {
+        "rss": 118190080,
+        "heapTotal": 44511232,
+        "heapUsed": 23336840,
+        "external": 1960424,
+        "arrayBuffers": 34534
+      },
+      "envVars": {
+        "hasNodeOptions": true,
+        "hasNextTelemetry": false,
+        "hasCi": false,
+        "nodeOptions": "--max-old-space-size=6144 --openssl-legacy-provider"
+      }
+    },
+    "performance": {
+      "startTime": 1755536165086,
+      "collectionTime": 62696
+    },
+    "dependencies": {
+      "total": 59,
+      "production": 36,
+      "development": 23,
+      "peer": 0,
+      "optional": 0,
+      "outdated": 0,
+      "vulnerable": 0,
+      "size": 359764726
+    },
+    "fileSystem": {
+      "projectSize": 29679714584,
+      "directories": {
+        "pages": {
+          "exists": true,
+          "size": 5297849,
+          "fileCount": 3070
+        },
+        "components": {
+          "exists": true,
+          "size": 29469,
+          "fileCount": 12
+        },
+        "styles": {
+          "exists": true,
+          "size": 399,
+          "fileCount": 1
+        },
+        "public": {
+          "exists": true,
+          "size": 29407544,
+          "fileCount": 5257
+        },
+        "utils": {
+          "exists": false,
+          "size": 0,
+          "fileCount": 0
+        },
+        "automation": {
+          "exists": true,
+          "size": 2657493107,
+          "fileCount": 36985
+        }
+      },
+      "files": {},
+      "buildFiles": {
+        "next.config.js": {
+          "exists": true,
+          "size": 558,
+          "modified": "2025-08-15T22:43:05.344Z",
+          "isDirectory": false
+        },
+        "netlify.toml": {
+          "exists": true,
+          "size": 8088,
+          "modified": "2025-08-18T13:13:53.320Z",
+          "isDirectory": false
+        },
+        "package.json": {
+          "exists": true,
+          "size": 33813,
+          "modified": "2025-08-18T08:34:57.802Z",
+          "isDirectory": false
+        },
+        "tsconfig.json": {
+          "exists": true,
+          "size": 491,
+          "modified": "2025-08-18T13:13:53.595Z",
+          "isDirectory": false
+        },
+        ".next": {
+          "exists": true,
+          "size": 1838231,
+          "modified": "2025-08-18T11:00:52.937Z",
+          "isDirectory": true
+        },
+        "out": {
+          "exists": true,
+          "size": 181596499,
+          "modified": "2025-08-17T07:09:59.101Z",
+          "isDirectory": true
+        },
+        "tsconfig.tsbuildinfo": {
+          "exists": false,
+          "size": 0,
+          "modified": null,
+          "isDirectory": false
+        }
+      }
+    },
+    "buildArtifacts": {
+      "nextBuild": {
+        "exists": true,
+        "size": 1838231,
+        "modified": "2025-08-18T11:00:52.937Z",
+        "subdirectories": {}
+      },
+      "netlifyBuild": {
+        "exists": true,
+        "size": 181596499,
+        "modified": "2025-08-17T07:09:59.101Z",
+        "subdirectories": {
+          "404": {
+            "size": 18131,
+            "fileCount": 1,
+            "modified": "2025-08-17T07:09:59.048Z"
+          },
+          "500": {
+            "size": 21115,
+            "fileCount": 1,
+            "modified": "2025-08-17T07:09:58.973Z"
+          },
+          "_next": {
+            "size": 17280919,
+            "fileCount": 6996,
+            "modified": "2025-08-17T07:09:55.877Z"
+          },
+          "about": {
+            "size": 29875,
+            "fileCount": 1,
+            "modified": "2025-08-17T07:09:59.120Z"
+          },
+          "api-documentation": {
+            "size": 21206,
+            "fileCount": 1,
+            "modified": "2025-08-17T07:09:58.977Z"
+          },
+          "automation": {
+            "size": 43593143,
+            "fileCount": 8,
+            "modified": "2025-08-17T07:09:59.018Z"
+          },
+          "blog": {
+            "size": 60654,
+            "fileCount": 2,
+            "modified": "2025-08-17T07:09:58.771Z"
+          },
+          "component-library": {
+            "size": 24339,
+            "fileCount": 1,
+            "modified": "2025-08-17T07:09:59.129Z"
+          },
+          "components": {
+            "size": 56747,
+            "fileCount": 3,
+            "modified": "2025-08-17T07:09:58.762Z"
+          },
+          "contact": {
+            "size": 18554,
+            "fileCount": 1,
+            "modified": "2025-08-17T07:09:59.025Z"
+          },
+          "content-hub": {
+            "size": 23466,
+            "fileCount": 1,
+            "modified": "2025-08-17T07:09:59.117Z"
+          },
+          "discover": {
+            "size": 23225,
+            "fileCount": 1,
+            "modified": "2025-08-17T07:09:59.050Z"
+          },
+          "enhanced-navigation": {
+            "size": 25776,
+            "fileCount": 1,
+            "modified": "2025-08-17T07:09:59.051Z"
+          },
+          "events": {
+            "size": 31379,
+            "fileCount": 1,
+            "modified": "2025-08-17T07:09:59.046Z"
+          },
+          "explore": {
+            "size": 51590,
+            "fileCount": 1,
+            "modified": "2025-08-17T07:09:59.124Z"
+          },
+          "front": {
+            "size": 17844,
+            "fileCount": 1,
+            "modified": "2025-08-17T07:09:59.127Z"
+          },
+          "landing": {
+            "size": 45636,
+            "fileCount": 1,
+            "modified": "2025-08-17T07:09:59.212Z"
+          },
+          "live-dashboard": {
+            "size": 22473,
+            "fileCount": 1,
+            "modified": "2025-08-17T07:09:59.207Z"
+          },
+          "main": {
+            "size": 36541,
+            "fileCount": 1,
+            "modified": "2025-08-17T07:09:58.754Z"
+          },
+          "navigation": {
+            "size": 19610,
+            "fileCount": 1,
+            "modified": "2025-08-17T07:09:59.127Z"
+          },
+          "news": {
+            "size": 29878,
+            "fileCount": 1,
+            "modified": "2025-08-17T07:09:58.748Z"
+          },
+          "newsroom": {
+            "size": 25292,
+            "fileCount": 1,
+            "modified": "2025-08-17T07:09:58.752Z"
+          },
+          "og": {
+            "size": 926,
+            "fileCount": 2,
+            "modified": "2025-08-17T07:09:57.076Z"
+          },
+          "playground": {
+            "size": 17969,
+            "fileCount": 1,
+            "modified": "2025-08-17T07:09:58.755Z"
+          },
+          "privacy": {
+            "size": 28832,
+            "fileCount": 1,
+            "modified": "2025-08-17T07:09:58.758Z"
+          },
+          "reports": {
+            "size": 115029078,
+            "fileCount": 9836,
+            "modified": "2025-08-17T07:10:02.977Z"
+          },
+          "search": {
+            "size": 3531825,
+            "fileCount": 1,
+            "modified": "2025-08-17T07:09:57.078Z"
+          }
+        }
+      },
+      "staticAssets": {
+        "exists": true,
+        "size": 26396987,
+        "modified": "2025-08-18T16:56:36.503Z",
+        "subdirectories": {
+          "automation": {
+            "size": 44441,
+            "fileCount": 4,
+            "modified": "2025-08-18T16:55:22.641Z"
+          },
+          "reports": {
+            "size": 24196005,
+            "fileCount": 5249,
+            "modified": "2025-08-18T16:56:41.146Z"
+          },
+          "search": {
+            "size": 1499337,
+            "fileCount": 1,
+            "modified": "2025-08-18T16:56:36.484Z"
+          }
+        }
+      },
+      "functions": {
+        "exists": true,
+        "size": 14872,
+        "modified": "2025-08-18T16:56:53.033Z",
+        "count": 11,
+        "subdirectories": {}
+      }
+    },
+    "errors": []
+  },
+  "performance": {
+    "timestamp": "2025-08-18T16:57:07.783Z",
+    "metrics": {
+      "timestamp": "2025-08-18T16:56:05.086Z",
+      "buildId": "build-1755536165086",
+      "environment": {
+        "nodeVersion": "v22.16.0",
+        "npmVersion": "10.9.2",
+        "platform": "darwin",
+        "arch": "x64",
+        "memoryUsage": {
+          "rss": 118190080,
+          "heapTotal": 44511232,
+          "heapUsed": 23336840,
+          "external": 1960424,
+          "arrayBuffers": 34534
+        },
+        "envVars": {
+          "hasNodeOptions": true,
+          "hasNextTelemetry": false,
+          "hasCi": false,
+          "nodeOptions": "--max-old-space-size=6144 --openssl-legacy-provider"
+        }
+      },
+      "performance": {
+        "startTime": 1755536165086,
+        "collectionTime": 62696
+      },
+      "dependencies": {
+        "total": 59,
+        "production": 36,
+        "development": 23,
+        "peer": 0,
+        "optional": 0,
+        "outdated": 0,
+        "vulnerable": 0,
+        "size": 359764726
+      },
+      "fileSystem": {
+        "projectSize": 29679714584,
+        "directories": {
+          "pages": {
+            "exists": true,
+            "size": 5297849,
+            "fileCount": 3070
+          },
+          "components": {
+            "exists": true,
+            "size": 29469,
+            "fileCount": 12
+          },
+          "styles": {
+            "exists": true,
+            "size": 399,
+            "fileCount": 1
+          },
+          "public": {
+            "exists": true,
+            "size": 29407544,
+            "fileCount": 5257
+          },
+          "utils": {
+            "exists": false,
+            "size": 0,
+            "fileCount": 0
+          },
+          "automation": {
+            "exists": true,
+            "size": 2657493107,
+            "fileCount": 36985
+          }
+        },
+        "files": {},
+        "buildFiles": {
+          "next.config.js": {
+            "exists": true,
+            "size": 558,
+            "modified": "2025-08-15T22:43:05.344Z",
+            "isDirectory": false
+          },
+          "netlify.toml": {
+            "exists": true,
+            "size": 8088,
+            "modified": "2025-08-18T13:13:53.320Z",
+            "isDirectory": false
+          },
+          "package.json": {
+            "exists": true,
+            "size": 33813,
+            "modified": "2025-08-18T08:34:57.802Z",
+            "isDirectory": false
+          },
+          "tsconfig.json": {
+            "exists": true,
+            "size": 491,
+            "modified": "2025-08-18T13:13:53.595Z",
+            "isDirectory": false
+          },
+          ".next": {
+            "exists": true,
+            "size": 1838231,
+            "modified": "2025-08-18T11:00:52.937Z",
+            "isDirectory": true
+          },
+          "out": {
+            "exists": true,
+            "size": 181596499,
+            "modified": "2025-08-17T07:09:59.101Z",
+            "isDirectory": true
+          },
+          "tsconfig.tsbuildinfo": {
+            "exists": false,
+            "size": 0,
+            "modified": null,
+            "isDirectory": false
+          }
+        }
+      },
+      "buildArtifacts": {
+        "nextBuild": {
+          "exists": true,
+          "size": 1838231,
+          "modified": "2025-08-18T11:00:52.937Z",
+          "subdirectories": {}
+        },
+        "netlifyBuild": {
+          "exists": true,
+          "size": 181596499,
+          "modified": "2025-08-17T07:09:59.101Z",
+          "subdirectories": {
+            "404": {
+              "size": 18131,
+              "fileCount": 1,
+              "modified": "2025-08-17T07:09:59.048Z"
+            },
+            "500": {
+              "size": 21115,
+              "fileCount": 1,
+              "modified": "2025-08-17T07:09:58.973Z"
+            },
+            "_next": {
+              "size": 17280919,
+              "fileCount": 6996,
+              "modified": "2025-08-17T07:09:55.877Z"
+            },
+            "about": {
+              "size": 29875,
+              "fileCount": 1,
+              "modified": "2025-08-17T07:09:59.120Z"
+            },
+            "api-documentation": {
+              "size": 21206,
+              "fileCount": 1,
+              "modified": "2025-08-17T07:09:58.977Z"
+            },
+            "automation": {
+              "size": 43593143,
+              "fileCount": 8,
+              "modified": "2025-08-17T07:09:59.018Z"
+            },
+            "blog": {
+              "size": 60654,
+              "fileCount": 2,
+              "modified": "2025-08-17T07:09:58.771Z"
+            },
+            "component-library": {
+              "size": 24339,
+              "fileCount": 1,
+              "modified": "2025-08-17T07:09:59.129Z"
+            },
+            "components": {
+              "size": 56747,
+              "fileCount": 3,
+              "modified": "2025-08-17T07:09:58.762Z"
+            },
+            "contact": {
+              "size": 18554,
+              "fileCount": 1,
+              "modified": "2025-08-17T07:09:59.025Z"
+            },
+            "content-hub": {
+              "size": 23466,
+              "fileCount": 1,
+              "modified": "2025-08-17T07:09:59.117Z"
+            },
+            "discover": {
+              "size": 23225,
+              "fileCount": 1,
+              "modified": "2025-08-17T07:09:59.050Z"
+            },
+            "enhanced-navigation": {
+              "size": 25776,
+              "fileCount": 1,
+              "modified": "2025-08-17T07:09:59.051Z"
+            },
+            "events": {
+              "size": 31379,
+              "fileCount": 1,
+              "modified": "2025-08-17T07:09:59.046Z"
+            },
+            "explore": {
+              "size": 51590,
+              "fileCount": 1,
+              "modified": "2025-08-17T07:09:59.124Z"
+            },
+            "front": {
+              "size": 17844,
+              "fileCount": 1,
+              "modified": "2025-08-17T07:09:59.127Z"
+            },
+            "landing": {
+              "size": 45636,
+              "fileCount": 1,
+              "modified": "2025-08-17T07:09:59.212Z"
+            },
+            "live-dashboard": {
+              "size": 22473,
+              "fileCount": 1,
+              "modified": "2025-08-17T07:09:59.207Z"
+            },
+            "main": {
+              "size": 36541,
+              "fileCount": 1,
+              "modified": "2025-08-17T07:09:58.754Z"
+            },
+            "navigation": {
+              "size": 19610,
+              "fileCount": 1,
+              "modified": "2025-08-17T07:09:59.127Z"
+            },
+            "news": {
+              "size": 29878,
+              "fileCount": 1,
+              "modified": "2025-08-17T07:09:58.748Z"
+            },
+            "newsroom": {
+              "size": 25292,
+              "fileCount": 1,
+              "modified": "2025-08-17T07:09:58.752Z"
+            },
+            "og": {
+              "size": 926,
+              "fileCount": 2,
+              "modified": "2025-08-17T07:09:57.076Z"
+            },
+            "playground": {
+              "size": 17969,
+              "fileCount": 1,
+              "modified": "2025-08-17T07:09:58.755Z"
+            },
+            "privacy": {
+              "size": 28832,
+              "fileCount": 1,
+              "modified": "2025-08-17T07:09:58.758Z"
+            },
+            "reports": {
+              "size": 115029078,
+              "fileCount": 9836,
+              "modified": "2025-08-17T07:10:02.977Z"
+            },
+            "search": {
+              "size": 3531825,
+              "fileCount": 1,
+              "modified": "2025-08-17T07:09:57.078Z"
+            }
+          }
+        },
+        "staticAssets": {
+          "exists": true,
+          "size": 26396987,
+          "modified": "2025-08-18T16:56:36.503Z",
+          "subdirectories": {
+            "automation": {
+              "size": 44441,
+              "fileCount": 4,
+              "modified": "2025-08-18T16:55:22.641Z"
+            },
+            "reports": {
+              "size": 24196005,
+              "fileCount": 5249,
+              "modified": "2025-08-18T16:56:41.146Z"
+            },
+            "search": {
+              "size": 1499337,
+              "fileCount": 1,
+              "modified": "2025-08-18T16:56:36.484Z"
+            }
+          }
+        },
+        "functions": {
+          "exists": true,
+          "size": 14872,
+          "modified": "2025-08-18T16:56:53.033Z",
+          "count": 11,
+          "subdirectories": {}
+        }
+      },
+      "errors": []
+    },
+    "analysis": {
+      "buildTimes": {
+        "recent": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "average": 0,
+        "min": 0,
+        "max": 0,
+        "trend": "stable"
+      },
+      "fileSizes": {
+        "nextBuild": 1838231,
+        "netlifyBuild": 181596499,
+        "total": 183434730
+      },
+      "dependencies": {
+        "total": 59,
+        "outdated": 0,
+        "vulnerable": 0,
+        "health": "excellent"
+      }
+    },
+    "recommendations": [
+      {
+        "priority": "medium",
+        "category": "optimization",
+        "title": "Reduce build artifact size",
+        "description": "Build artifacts exceed 100MB. Consider cleaning up unnecessary files and optimizing dependencies.",
+        "action": "Review and clean build outputs, optimize bundle sizes"
+      }
+    ]
+  },
+  "summary": {
+    "totalMetrics": 8,
+    "recommendations": 1,
+    "criticalIssues": 0,
+    "buildHealth": "good"
+  }
+}
