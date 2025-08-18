@@ -4,6 +4,34 @@
       "title": "Innovation Insight — 2025-08-18 18-20",
       "href": "/reports/innovations/insight-2025-08-18T18-20",
       "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:20:07.746Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-20",
+      "href": "/reports/updates/update-2025-08-18T18-20",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:20:07.746Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 18-20",
+      "href": "/reports/innovations/insight-2025-08-18T18-20",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:20:07.746Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-20",
+      "href": "/reports/updates/update-2025-08-18T18-20",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:20:07.746Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 18-20",
+      "href": "/reports/innovations/insight-2025-08-18T18-20",
+      "desc": "New autonomous content",
       "createdAt": "2025-08-18T18:20:04.350Z",
       "source": "cloud-content-factory"
     },
@@ -114,6 +142,70 @@
       "route": "/tutorials/rapid-1755541207059-l2ukc8",
       "type": "rapid-generated",
       "created": "2025-08-18T18:20:07.061Z",
+      "process": "rapid"
+    },
+    {
+      "id": "ultra-1755541208625-ytj36b",
+      "title": "Real-Time Innovation Hub",
+      "route": "/reports/updates/ultra-1755541208625-ytj36b",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:20:08.631Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541208626-j83j1k",
+      "title": "Ultra-Fast Lightning deployment pipelines Insight",
+      "route": "/reports/insights/ultra-1755541208626-j83j1k",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:20:08.631Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541208628-1d8juf",
+      "title": "Ultra-Fast Guide: Real-time collaboration tools",
+      "route": "/reports/guides/ultra-1755541208628-1d8juf",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:20:08.631Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541208629-ffo6ny",
+      "title": "Case Study: Instant feedback loops Success",
+      "route": "/reports/cases/ultra-1755541208629-ffo6ny",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:20:08.631Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541208630-x5amln",
+      "title": "Pattern: Rapid prototyping systems Architecture",
+      "route": "/reports/patterns/ultra-1755541208630-x5amln",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:20:08.631Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "rapid-1755541209163-5y2wy7",
+      "title": "Web Development",
+      "route": "/services/rapid-1755541209163-5y2wy7",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:20:09.166Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755541209164-n3s98y",
+      "title": "Smart Dashboard",
+      "route": "/products/rapid-1755541209164-n3s98y",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:20:09.166Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755541209165-m1i2q5",
+      "title": "Best Practices in Database Optimization",
+      "route": "/tutorials/rapid-1755541209165-m1i2q5",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:20:09.166Z",
       "process": "rapid"
     }
   ]
