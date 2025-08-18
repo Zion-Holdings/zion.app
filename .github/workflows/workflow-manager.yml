@@ -156,9 +156,9 @@ jobs:
     name: Workflow Summary
     runs-on: ubuntu-latest
     needs:
-    - workflow-health-check
-    - workflow-optimization
-    - workflow-scheduling
+      - workflow-health-check
+      - workflow-optimization
+      - workflow-scheduling
     if: always()
     steps:
       - name: Generate comprehensive summary
