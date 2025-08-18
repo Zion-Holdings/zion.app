@@ -29792,6 +29792,70 @@
       "type": "rapid-generated",
       "created": "2025-08-18T18:48:22.131Z",
       "process": "rapid"
+    },
+    {
+      "id": "rapid-1755548504847-fg7lqw",
+      "title": "AI-Powered Analytics",
+      "route": "/services/rapid-1755548504847-fg7lqw",
+      "type": "rapid-generated",
+      "created": "2025-08-18T20:21:44.863Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755548504848-51ywv0",
+      "title": "Analytics Engine",
+      "route": "/products/rapid-1755548504848-51ywv0",
+      "type": "rapid-generated",
+      "created": "2025-08-18T20:21:44.863Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755548504849-ilvpdt",
+      "title": "Best Practices in Database Optimization",
+      "route": "/tutorials/rapid-1755548504849-ilvpdt",
+      "type": "rapid-generated",
+      "created": "2025-08-18T20:21:44.863Z",
+      "process": "rapid"
+    },
+    {
+      "id": "ultra-1755548505144-j6k0z7",
+      "title": "Lightning Innovation Cycle",
+      "route": "/reports/updates/ultra-1755548505144-j6k0z7",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T20:21:45.163Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755548505146-2s4g7l",
+      "title": "Ultra-Fast Instant deployment systems Insight",
+      "route": "/reports/insights/ultra-1755548505146-2s4g7l",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T20:21:45.163Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755548505147-32sth3",
+      "title": "Ultra-Fast Guide: Ultra-responsive applications",
+      "route": "/reports/guides/ultra-1755548505147-32sth3",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T20:21:45.163Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755548505148-lntiut",
+      "title": "Case Study: Real-time data processing Success",
+      "route": "/reports/cases/ultra-1755548505148-lntiut",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T20:21:45.163Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755548505148-6xve4v",
+      "title": "Pattern: Lightning-fast development Architecture",
+      "route": "/reports/patterns/ultra-1755548505148-6xve4v",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T20:21:45.163Z",
+      "process": "ultra-fast"
     }
   ]
 }
