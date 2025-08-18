@@ -1,5 +1,5 @@
 // Auto-generated marketing and features index
-// Generated: 2025-08-18T16:54:11.274Z
+// Generated: 2025-08-18T16:56:47.543Z
 
 export const marketingPages = [
   {
@@ -53,7 +53,7 @@ export const marketingPages = [
   {
     "name": "index.tsx",
     "path": "index.tsx",
-    "size": 10238,
+    "size": 10277,
     "hasMarketing": true
   },
   {
