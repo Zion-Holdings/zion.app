@@ -4,17 +4,17 @@
 // Inputs are defined to match netlify.toml but are not used yet.
 
 module.exports = {
-  async onPreBuild({ logs }) {
-    logs.info('[run-functions-and-rerun] Plugin detected. Proceeding with no-op prebuild.');
+  async onPreBuild() {
+    console.log('[run-functions-and-rerun] Plugin detected. Proceeding with no-op prebuild.');
   },
 
-  async onPostBuild({ logs }) {
+  async onPostBuild() {
     // Future: Optionally trigger selected Netlify Functions and/or chain builds based on env flags.
-    logs.info('[run-functions-and-rerun] Post-build no-op complete.');
+    console.log('[run-functions-and-rerun] Post-build no-op complete.');
   },
 
-  async onEnd({ logs }) {
-    logs.info('[run-functions-and-rerun] Finished (no-op).');
+  async onEnd() {
+    console.log('[run-functions-and-rerun] Finished (no-op).');
   },
 };
 
