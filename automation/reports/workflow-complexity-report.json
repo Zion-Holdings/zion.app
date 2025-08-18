@@ -1,18 +1,18 @@
 {
-  "timestamp": "2025-08-18T05:23:41.110Z",
+  "timestamp": "2025-08-18T05:24:26.531Z",
   "summary": {
-    "totalWorkflows": 224,
+    "totalWorkflows": 225,
     "complexityDistribution": {
       "very-high": 0,
       "high": 0,
       "medium": 9,
-      "low": 215
+      "low": 216
     },
     "refactoringPriorities": {
       "critical": 0,
       "high": 0,
       "medium": 9,
-      "low": 215
+      "low": 216
     }
   },
   "workflows": {
@@ -1370,7 +1370,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 42,
         "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
@@ -1923,6 +1923,24 @@
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/content-generation.yml"
+    },
+    "continuous-deployment.yml": {
+      "complexityScore": 0,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 40,
+        "jobCount": 0,
+        "stepCount": 4,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/continuous-deployment.yml"
     },
     "continuous-improvement.yml": {
       "complexityScore": 0,
