@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 
 export default function ContentHub() {
-  const [contentStats] = useState({
+  const [contentStats, setContentStats] = useState({
     totalReports: 0,
     totalComponents: 0,
     lastUpdated: new Date().toISOString()
@@ -65,10 +65,7 @@ export default function ContentHub() {
       <Head>
         <title>Content Hub | Zion Tech Group</title>
         <meta name="description" content="Central hub for all our AI, cloud, and technology content." />
-      
-        <meta property="og:title" content="Content Hub" />
-        <meta property="og:description" content="Content Hub — automatically suggested description." />
-        <meta name="twitter:card" content="summary_large_image" /></Head>
+      </Head>
       
       <main className="container mx-auto px-6 py-12">
         <div className="text-center mb-12">

@@ -1,16 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
 
 export default function LiveContentDashboard() {
-  // Dashboard data for future use
-  // const [dashboardData] = useState({
-  //   lastUpdate: new Date().toISOString(),
-  //   contentGenerated: 0,
-  //   componentsCreated: 0,
-  //   reportsPublished: 0
-  // });
+  const [dashboardData, setDashboardData] = useState({
+    lastUpdate: new Date().toISOString(),
+    contentGenerated: 0,
+    componentsCreated: 0,
+    reportsPublished: 0
+  });
 
-  const [recentActivity] = useState([
+  const [recentActivity, setRecentActivity] = useState([
     {
       type: 'component',
       name: 'Pagination.tsx',
@@ -46,10 +45,7 @@ export default function LiveContentDashboard() {
       <Head>
         <title>Live Dashboard | Zion Tech Group</title>
         <meta name="description" content="Real-time monitoring of our autonomous content generation system." />
-      
-        <meta property="og:title" content="Live Dashboard" />
-        <meta property="og:description" content="Live Dashboard — automatically suggested description." />
-        <meta name="twitter:card" content="summary_large_image" /></Head>
+      </Head>
       
       <main className="container mx-auto px-6 py-12">
         <div className="text-center mb-12">

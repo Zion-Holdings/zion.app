@@ -13,12 +13,6 @@ export default function EnhancedNavigation() {
     { href: '/discover', label: 'Discover', icon: '🔍' },
     { href: '/playground', label: 'Playground', icon: '🎮' },
     { href: '/live-dashboard', label: 'Live Dashboard', icon: '📈' },
-    { href: '/performance-dashboard', label: 'Performance', icon: '⚡' },
-    { href: '/analytics-dashboard', label: 'Analytics', icon: '📈' },
-    { href: '/ai-search-engine', label: 'AI Search', icon: '🔍' },
-    { href: '/notification-center', label: 'Notifications', icon: '🔔' },
-    { href: '/user-management', label: 'Users', icon: '👥' },
-    { href: '/api-documentation', label: 'API Docs', icon: '📚' },
     { href: '/automation', label: 'Automation', icon: '🤖' }
   ];
 
@@ -43,10 +37,7 @@ export default function EnhancedNavigation() {
       <Head>
         <title>Enhanced Navigation | Zion Tech Group</title>
         <meta name="description" content="Advanced navigation system showcasing all our features and content." />
-      
-        <meta property="og:title" content="Enhanced Navigation" />
-        <meta property="og:description" content="Enhanced Navigation — automatically suggested description." />
-        <meta name="twitter:card" content="summary_large_image" /></Head>
+      </Head>
 
       {/* Main Navigation */}
       <nav className="bg-slate-900/50 backdrop-blur-sm border-b border-white/10 sticky top-0 z-50">
