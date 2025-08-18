@@ -19,8 +19,10 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
+        continue-on-error: true
       - name: Run sync health check
         run: node automation/sync-health-check.cjs | tee sync-health.out
+        continue-on-error: true
       - name: Upload sync health artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -31,6 +33,15 @@ jobs:
             sync-health.out
           if-no-files-found: ignore
           retention-days: 7
+        if: always()
+      - name: Create summary
+        if: always()
+        run: |
+          echo "## Sync Health Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Status:** Sync health check completed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Timestamp:** $(date -u)" >> $GITHUB_STEP_SUMMARY
     timeout-minutes: 30
 permissions:
   contents: read

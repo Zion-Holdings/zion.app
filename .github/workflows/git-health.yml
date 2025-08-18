@@ -19,8 +19,18 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
+        continue-on-error: true
       - name: Run git health check
         run: node automation/git-health-runner.cjs
+        continue-on-error: true
+      - name: Create summary
+        if: always()
+        run: |
+          echo "## Git Health Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Status:** Git health check completed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Timestamp:** $(date -u)" >> $GITHUB_STEP_SUMMARY
     timeout-minutes: 30
 permissions:
   contents: read

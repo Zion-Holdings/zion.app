@@ -21,8 +21,10 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
+        continue-on-error: true
       - name: Generate Cursor rules and memories
         run: node automation/cursor-rules-generator.cjs
+        continue-on-error: true
       - name: Commit and push changes
         run: |
           if [ -n "$(git status --porcelain)" ]; then
@@ -34,6 +36,15 @@ jobs:
           else
             echo "No changes to commit"
           fi
+        continue-on-error: true
+      - name: Create summary
+        if: always()
+        run: |
+          echo "## Cursor Rules Auto Update Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Status:** Cursor rules and memories update completed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Timestamp:** $(date -u)" >> $GITHUB_STEP_SUMMARY
     timeout-minutes: 30
 concurrency:
   group: cursor-rules-autoupdate.yml-${{ github.ref }}

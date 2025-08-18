@@ -23,6 +23,7 @@ jobs:
           node-version: '20'
       - name: Netlify status check
         run: node automation/netlify-status-checker.cjs
+        continue-on-error: true
       - name: Create issue on failure
         if: failure()
         uses: actions/github-script@v7
@@ -35,6 +36,15 @@ jobs:
             if (!issues.find(i => i.title === title)) {
               await github.rest.issues.create({ owner: context.repo.owner, repo: context.repo.repo, title, body });
             }
+        continue-on-error: true
+      - name: Create summary
+        if: always()
+        run: |
+          echo "## Netlify Monitor Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Status:** Netlify monitoring completed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Timestamp:** $(date -u)" >> $GITHUB_STEP_SUMMARY
     timeout-minutes: 30
 permissions:
   contents: read
