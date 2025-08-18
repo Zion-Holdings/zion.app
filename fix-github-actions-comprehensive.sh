@@ -111,11 +111,11 @@ fix_workflow() {
         needs_fixing=true
     fi
     
-    # Check for missing concurrency
+    # Check for missing concurrency - only add if not present
     if ! grep -q "^concurrency:" "$workflow_file"; then
         log_action "Adding concurrency settings to prevent race conditions" "fix"
-        # Add concurrency after permissions
-        sed -i.bak '/^permissions:/a\concurrency:\n  group: "${{ github.workflow }}-${{ github.ref }}"\n  cancel-in-progress: true' "$workflow_file"
+        # Add concurrency after permissions with proper workflow name
+        sed -i.bak '/^permissions:/a\concurrency:\n  group: "'$workflow_name'-${{ github.ref }}"\n  cancel-in-progress: true' "$workflow_file"
         needs_fixing=true
     fi
     
