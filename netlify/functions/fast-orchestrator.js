@@ -1,47 +1,62 @@
-const { execSync } = require('child_process');
+const fs = require('fs');
 const path = require('path');
 
-exports.handler = async (event, context) => {
+exports.handler = async function(event, context) {
   try {
-    console.log('🤖 Starting fast-orchestrator function...');
+    // Get the automation script path
+    const automationPath = path.join(process.cwd(), 'automation', 'fast-advertising-orchestrator.cjs');
     
-    // Run fast orchestration tasks
-    const tasks = [
-      'fast-orchestrator',
-      'fast-front-promoter',
-      'ultrafast-orchestrator'
-    ];
-    
-    for (const task of tasks) {
-      try {
-        const scriptPath = path.join(process.cwd(), 'automation', `${task}.cjs`);
-        if (require('fs').existsSync(scriptPath)) {
-          console.log(`Running ${task}...`);
-          execSync(`node ${scriptPath}`, { stdio: 'inherit' });
-        }
-      } catch (taskError) {
-        console.warn(`Warning: ${task} failed:`, taskError.message);
-      }
+    // Check if the automation script exists
+    if (!fs.existsSync(automationPath)) {
+      return {
+        statusCode: 500,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          error: 'Fast orchestrator automation script not found',
+          path: automationPath,
+          timestamp: new Date().toISOString()
+        })
+      };
     }
+
+    // Import and run the automation
+    const automation = require(automationPath);
     
-    console.log('✅ fast-orchestrator completed successfully');
-    
+    let result;
+    if (typeof automation === 'function') {
+      result = await automation();
+    } else if (automation && typeof automation.run === 'function') {
+      result = await automation.run();
+    } else if (automation && typeof automation.start === 'function') {
+      result = await automation.start();
+    } else {
+      result = { status: 'automation script loaded but no run method found' };
+    }
+
     return {
       statusCode: 200,
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        message: 'fast-orchestrator completed successfully',
-        tasks: tasks,
-        timestamp: new Date().toISOString()
+        message: 'Fast orchestrator function executed successfully',
+        result: result,
+        timestamp: new Date().toISOString(),
+        functionName: 'fast-orchestrator',
+        schedule: 'every minute'
       })
     };
+
   } catch (error) {
-    console.error('❌ fast-orchestrator failed:', error.message);
+    console.error('Fast orchestrator function error:', error);
     
     return {
       statusCode: 500,
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        error: error.message,
-        timestamp: new Date().toISOString()
+        error: 'Fast orchestrator function failed',
+        message: error.message,
+        stack: error.stack,
+        timestamp: new Date().toISOString(),
+        functionName: 'fast-orchestrator'
       })
     };
   }

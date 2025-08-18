@@ -1,47 +1,64 @@
-const { execSync } = require('child_process');
+const fs = require('fs');
 const path = require('path');
 
-exports.handler = async (event, context) => {
+exports.handler = async function(event, context) {
   try {
-    console.log('🤖 Starting marketing-and-features-promo function...');
+    // Get the automation script path
+    const automationPath = path.join(process.cwd(), 'automation', 'feature-marketing-orchestrator.cjs');
     
-    // Run marketing and promotion tasks
-    const tasks = [
-      'marketing-and-features-promo',
-      'fast-advertising-orchestrator',
-      'front-ads-promoter'
-    ];
-    
-    for (const task of tasks) {
-      try {
-        const scriptPath = path.join(process.cwd(), 'automation', `${task}.cjs`);
-        if (require('fs').existsSync(scriptPath)) {
-          console.log(`Running ${task}...`);
-          execSync(`node ${scriptPath}`, { stdio: 'inherit' });
-        }
-      } catch (taskError) {
-        console.warn(`Warning: ${task} failed:`, taskError.message);
-      }
+    // Check if the automation script exists
+    if (!fs.existsSync(automationPath)) {
+      return {
+        statusCode: 500,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          error: 'Marketing and features promo automation script not found',
+          path: automationPath,
+          timestamp: new Date().toISOString()
+        })
+      };
     }
+
+    // Import and run the automation
+    const automation = require(automationPath);
     
-    console.log('✅ marketing-and-features-promo completed successfully');
-    
+    let result;
+    if (typeof automation === 'function') {
+      result = await automation();
+    } else if (automation && typeof automation.run === 'function') {
+      result = await automation.run();
+    } else if (automation && typeof automation.start === 'function') {
+      result = await automation.start();
+    } else if (automation && typeof automation.promo === 'function') {
+      result = await automation.promo();
+    } else {
+      result = { status: 'automation script loaded but no run method found' };
+    }
+
     return {
       statusCode: 200,
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        message: 'marketing-and-features-promo completed successfully',
-        tasks: tasks,
-        timestamp: new Date().toISOString()
+        message: 'Marketing and features promo function executed successfully',
+        result: result,
+        timestamp: new Date().toISOString(),
+        functionName: 'marketing-and-features-promo',
+        schedule: 'every 2 hours'
       })
     };
+
   } catch (error) {
-    console.error('❌ marketing-and-features-promo failed:', error.message);
+    console.error('Marketing and features promo function error:', error);
     
     return {
       statusCode: 500,
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        error: error.message,
-        timestamp: new Date().toISOString()
+        error: 'Marketing and features promo function failed',
+        message: error.message,
+        stack: error.stack,
+        timestamp: new Date().toISOString(),
+        functionName: 'marketing-and-features-promo'
       })
     };
   }
