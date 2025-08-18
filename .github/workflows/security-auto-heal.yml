@@ -3,8 +3,8 @@ name: Security Auto-Heal
 
 on:
   workflow_dispatch: {}
-  schedule:
-    - cron: '0 0 * * *' # Daily at midnight UTC
+  # schedule:
+  #   - cron: '0 0 * * *' # DISABLED to prevent conflicts with manual fixes
 
 permissions:
   contents: write

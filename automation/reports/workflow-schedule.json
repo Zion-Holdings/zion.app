@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T05:58:35.327Z",
+  "timestamp": "2025-08-18T05:59:41.631Z",
   "critical": [
     {
       "name": "ci-self-heal.yml",
@@ -330,6 +330,25 @@
         "workflow_dispatch {}"
       ],
       "resourceScore": 119
+    },
+    {
+      "name": "auto-fix-workflows.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/auto-fix-workflows.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 20,
+      "concurrentJobs": 5,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch {}",
+        "# schedule"
+      ],
+      "resourceScore": 115
     },
     {
       "name": "ci-auto-heal.yml",
@@ -860,25 +879,6 @@
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
-      ],
-      "resourceScore": 114
-    },
-    {
-      "name": "auto-fix-workflows.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/auto-fix-workflows.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 20,
-      "concurrentJobs": 6,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "workflow_dispatch {}",
-        "# schedule"
       ],
       "resourceScore": 114
     },

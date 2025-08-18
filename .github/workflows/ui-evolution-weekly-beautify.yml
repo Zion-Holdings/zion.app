@@ -20,19 +20,16 @@ jobs:
       - name: Generate beautify suggestions
         run: node automation/beautify-hightech-ui.cjs | cat
       - name: Summarize UI evolution
-        run:
-                node automation/ui-evolution-dashboard.cjs | tee ui-evolution-summary.json
+        run: node automation/ui-evolution-dashboard.cjs | tee ui-evolution-summary.json
       - name: Upload UI beautify artifacts
         uses: actions/upload-artifact@v4
         with:
-        name: ui-evolution-beautify
-        path: 'data/reports/ui-evolution/**/*
-
-          ui-evolution-summary.json
-
-          '
-        if-no-files-found: ignore
-        retention-days: 7
+          name: ui-evolution-beautify
+          path: |
+            data/reports/ui-evolution/**/*
+            ui-evolution-summary.json
+          if-no-files-found: ignore
+          retention-days: 7
     timeout-minutes: 30
 permissions:
   contents: read
