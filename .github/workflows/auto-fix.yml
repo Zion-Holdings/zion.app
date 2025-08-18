@@ -10,7 +10,7 @@ on:
     - reopened
 permissions:
   contents: read
-  pull-requests: write
+  
 concurrency:
   group: auto-fix.yml-${{ github.ref }}
   cancel-in-progress: true

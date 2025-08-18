@@ -5,7 +5,7 @@ on:
   workflow_dispatch: null
 permissions:
   contents: read
-  pull-requests: write
+  
 concurrency:
   group: cloud-maintenance-${{ github.ref }}
   cancel-in-progress: false

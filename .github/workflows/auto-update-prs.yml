@@ -6,9 +6,9 @@ on:
 permissions:
   contents: read
   actions: read
-  pull-requests: write
+  
 concurrency:
-  group: workflow-${{ github.ref }}
+  group: auto-update-prs-\${{ github.ref }}
   cancel-in-progress: false
 jobs:
   main:
@@ -28,6 +28,4 @@ jobs:
     - name: Install dependencies
       run: npm ci --no-audit --no-fund
     - name: Run workflow
-      run: 'echo "Workflow Workflow completed successfully"
-
-        '
+      run: echo "Workflow completed successfully"

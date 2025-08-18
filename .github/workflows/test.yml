@@ -6,9 +6,9 @@ on:
 permissions:
   contents: read
   actions: read
-  pull-requests: write
+  
 concurrency:
-  group: workflow-${{ github.ref }}
+  group: test-\${{ github.ref }}
   cancel-in-progress: false
 jobs:
   main:
