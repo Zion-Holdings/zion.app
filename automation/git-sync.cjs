@@ -29,14 +29,6 @@ function hasChanges() {
   return res.ok && res.output.trim().length > 0;
 }
 
-function isAheadOfRemote(branch) {
-  const res = run(`git rev-list --left-right --count origin/${branch}...HEAD`);
-  if (!res.ok) return false;
-  const [behindStr, aheadStr] = res.output.trim().split(/\s+/);
-  const ahead = parseInt(aheadStr || '0', 10);
-  return ahead > 0;
-}
-
 function hasMergeConflicts() {
   const res = run('git diff --name-only --diff-filter=U');
   return res.ok && res.output.trim().length > 0;
@@ -54,65 +46,6 @@ function commitAllIfAny(message) {
   return committed.ok;
 }
 
-function safeMerge(remoteBranch) {
-  console.log(`Attempting safe merge with ${remoteBranch}...`);
-  
-  // First, try a simple merge
-  const merge = run(`git merge --no-edit origin/${remoteBranch}`);
-  if (merge.ok) {
-    console.log('Simple merge successful');
-    return true;
-  }
-  
-  // If merge fails, check for conflicts
-  if (hasMergeConflicts()) {
-    console.log('Merge conflicts detected, attempting conflict resolution...');
-    
-    // Abort the failed merge
-    run('git merge --abort');
-    
-    // Try to resolve conflicts automatically where possible
-    const conflictedFiles = run('git diff --name-only --diff-filter=U').output.trim().split('\n');
-    
-    for (const file of conflictedFiles) {
-      if (file.trim()) {
-        console.log(`Attempting to resolve conflicts in ${file}...`);
-        
-        // For certain file types, we can try to resolve conflicts
-        if (file.endsWith('.json') || file.endsWith('.yml') || file.endsWith('.yaml')) {
-          // Try to keep both versions and merge them intelligently
-          run(`git checkout --theirs ${file}`);
-          run(`git add ${file}`);
-        } else if (file.endsWith('.md') || file.endsWith('.txt')) {
-          // For documentation, prefer the newer version
-          run(`git checkout --theirs ${file}`);
-          run(`git add ${file}`);
-        } else {
-          // For other files, try to keep both versions
-          run(`git checkout --theirs ${file}`);
-          run(`git add ${file}`);
-        }
-      }
-    }
-    
-    // Try to complete the merge
-    const resolvedMerge = run('git commit -m "chore(sync): resolve merge conflicts automatically"');
-    if (resolvedMerge.ok) {
-      console.log('Conflict resolution successful');
-      return true;
-    }
-  }
-  
-  // If all else fails, create a merge commit with strategy
-  console.log('Falling back to merge with strategy...');
-  const fallbackMerge = run(`git merge -s recursive -X theirs --no-edit origin/${remoteBranch}`);
-  return fallbackMerge.ok;
-}
-
-function push(refspec) {
-  return run(`git push origin ${refspec}`);
-}
-
 function ensureOnMainBranch() {
   const currentBranch = getCurrentBranch();
   if (currentBranch !== 'main') {
@@ -123,18 +56,14 @@ function ensureOnMainBranch() {
   console.log('✅ Now working on main branch');
 }
 
+function push(refspec) {
+  return run(`git push origin ${refspec}`);
+}
+
 (function main() {
   console.log('🤖 Starting enhanced git sync on main branch...');
   
   configureBotIdentity();
-
-  const TARGET_BRANCH = 'main'; // Always target main
-  const PUSH_TO_MAIN = true; // Always push to main
-  const CREATE_BACKUP = false; // Never create backup branches
-
-  console.log(`Target branch: ${TARGET_BRANCH}`);
-  console.log(`Push to main: ${PUSH_TO_MAIN}`);
-  console.log(`Create backup: ${CREATE_BACKUP}`);
 
   // Fetch latest changes
   console.log('Fetching latest changes...');
@@ -147,8 +76,8 @@ function ensureOnMainBranch() {
   console.log(`Current branch: ${currentBranch}`);
 
   // Always sync with latest main branch
-  console.log(`Syncing with latest ${TARGET_BRANCH}...`);
-  run(`git pull origin ${TARGET_BRANCH} || true`);
+  console.log('Syncing with latest main...');
+  run('git pull origin main || true');
   
   // Commit any working tree changes
   const committed = commitAllIfAny('chore(sync): enhanced autonomous sync on main');
