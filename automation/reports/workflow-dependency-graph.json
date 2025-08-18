@@ -402,10 +402,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
+      "timeout": 30,
       "concurrentJobs": 5
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 30
   },
   "agent-agent-1755381089846-3-optimization-expert.yml": {
     "name": "agent-agent-1755381089846-3-optimization-expert.yml",

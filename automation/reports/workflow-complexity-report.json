@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T04:10:35.631Z",
+  "timestamp": "2025-08-18T04:11:40.543Z",
   "summary": {
     "totalWorkflows": 224,
     "complexityDistribution": {
@@ -431,18 +431,18 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089844-1-deployment-advanced.yml"
     },
     "agent-agent-1755381089845-2-full-stack-advanced.yml": {
-      "complexityScore": 0,
+      "complexityScore": 10,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 34,
+        "totalLines": 72,
         "jobCount": 0,
-        "stepCount": 4,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
