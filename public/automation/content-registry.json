@@ -4,6 +4,34 @@
       "title": "Innovation Insight — 2025-08-18 17-49",
       "href": "/reports/innovations/insight-2025-08-18T17-49",
       "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:49:10.438Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 17-49",
+      "href": "/reports/updates/update-2025-08-18T17-49",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:49:10.438Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 17-49",
+      "href": "/reports/innovations/insight-2025-08-18T17-49",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:49:10.438Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 17-49",
+      "href": "/reports/updates/update-2025-08-18T17-49",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:49:10.438Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 17-49",
+      "href": "/reports/innovations/insight-2025-08-18T17-49",
+      "desc": "New autonomous content",
       "createdAt": "2025-08-18T17:49:07.261Z",
       "source": "cloud-content-factory"
     },
@@ -171,6 +199,46 @@
       "type": "rapid-generated",
       "created": "2025-08-18T17:49:07.157Z",
       "process": "rapid"
+    },
+    {
+      "id": "ultra-1755539348178-x48k5e",
+      "title": "Rapid Response Development",
+      "route": "/reports/updates/ultra-1755539348178-x48k5e",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T17:49:08.184Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755539348180-h4n91y",
+      "title": "Ultra-Fast Real-time data processing Insight",
+      "route": "/reports/insights/ultra-1755539348180-h4n91y",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T17:49:08.184Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755539348181-m210dp",
+      "title": "Ultra-Fast Guide: Instant deployment systems",
+      "route": "/reports/guides/ultra-1755539348181-m210dp",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T17:49:08.184Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755539348182-we5ae0",
+      "title": "Case Study: Ultra-responsive applications Success",
+      "route": "/reports/cases/ultra-1755539348182-we5ae0",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T17:49:08.184Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755539348183-b0nxas",
+      "title": "Pattern: Rapid prototyping systems Architecture",
+      "route": "/reports/patterns/ultra-1755539348183-b0nxas",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T17:49:08.184Z",
+      "process": "ultra-fast"
     }
   ]
 }
