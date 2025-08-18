@@ -1,6 +1,6 @@
 name: Performance Audit Weekly
 on:
-  workflow_dispatch: null
+  workflow_dispatch: {}
   schedule:
   - cron: 0 2 * * *
 jobs:
