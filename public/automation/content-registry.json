@@ -28757,6 +28757,62 @@
       "title": "Innovation Insight — 2025-08-18 18-46",
       "href": "/reports/innovations/insight-2025-08-18T18-46",
       "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:46:40.347Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-46",
+      "href": "/reports/updates/update-2025-08-18T18-46",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:46:40.347Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 18-46",
+      "href": "/reports/innovations/insight-2025-08-18T18-46",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:46:40.347Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-46",
+      "href": "/reports/updates/update-2025-08-18T18-46",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:46:40.347Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 18-46",
+      "href": "/reports/innovations/insight-2025-08-18T18-46",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:46:37.176Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-46",
+      "href": "/reports/updates/update-2025-08-18T18-46",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:46:37.176Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 18-46",
+      "href": "/reports/innovations/insight-2025-08-18T18-46",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:46:37.176Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-46",
+      "href": "/reports/updates/update-2025-08-18T18-46",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:46:37.176Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 18-46",
+      "href": "/reports/innovations/insight-2025-08-18T18-46",
+      "desc": "New autonomous content",
       "createdAt": "2025-08-18T18:46:34.039Z",
       "source": "cloud-content-factory"
     },
@@ -28820,6 +28876,70 @@
       "type": "ultra-fast-generated",
       "created": "2025-08-18T18:46:32.888Z",
       "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542800799-zgh1e6",
+      "title": "Rapid Response Development",
+      "route": "/reports/updates/ultra-1755542800799-zgh1e6",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:46:40.812Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542800800-74fyoi",
+      "title": "Ultra-Fast AI-powered automation Insight",
+      "route": "/reports/insights/ultra-1755542800800-74fyoi",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:46:40.812Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542800801-g44jhe",
+      "title": "Ultra-Fast Guide: Ultra-responsive applications",
+      "route": "/reports/guides/ultra-1755542800801-g44jhe",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:46:40.812Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542800801-bfv80h",
+      "title": "Case Study: Real-time data processing Success",
+      "route": "/reports/cases/ultra-1755542800801-bfv80h",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:46:40.812Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542800802-kdejom",
+      "title": "Pattern: Lightning deployment pipelines Architecture",
+      "route": "/reports/patterns/ultra-1755542800802-kdejom",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:46:40.812Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "rapid-1755542801740-ytfh47",
+      "title": "Mobile App Development",
+      "route": "/services/rapid-1755542801740-ytfh47",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:46:41.753Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755542801742-rqdqw7",
+      "title": "Security Framework",
+      "route": "/products/rapid-1755542801742-rqdqw7",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:46:41.753Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755542801743-wmoi1w",
+      "title": "Getting Started with Cloud Infrastructure",
+      "route": "/tutorials/rapid-1755542801743-wmoi1w",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:46:41.753Z",
+      "process": "rapid"
     }
   ]
 }
