@@ -1,43 +1,11 @@
 # pr-quality-gate Report
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-Generated: 2025-08-18T14:15:54.739Z
-=======
-Generated: 2025-08-18T14:15:40.161Z
->>>>>>> Stashed changes
-=======
-Generated: 2025-08-18T14:15:40.161Z
->>>>>>> Stashed changes
-=======
-Generated: 2025-08-18T14:15:40.161Z
->>>>>>> Stashed changes
-=======
-Generated: 2025-08-18T14:15:40.161Z
->>>>>>> Stashed changes
+Generated: 2025-08-18T14:17:43.712Z
 
 ## Status
 - Task: pr-quality-gate
 - Status: Completed
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-- Timestamp: 2025-08-18T14:15:54.739Z
-=======
-- Timestamp: 2025-08-18T14:15:40.161Z
->>>>>>> Stashed changes
-=======
-- Timestamp: 2025-08-18T14:15:40.161Z
->>>>>>> Stashed changes
-=======
-- Timestamp: 2025-08-18T14:15:40.161Z
->>>>>>> Stashed changes
-=======
-- Timestamp: 2025-08-18T14:15:40.161Z
->>>>>>> Stashed changes
+- Timestamp: 2025-08-18T14:17:43.712Z
 
 ## Next Steps
 - Implement actual pr-quality-gate functionality
