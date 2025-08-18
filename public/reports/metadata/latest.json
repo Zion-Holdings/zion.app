@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T04:02:01.123Z",
-  "pagesScanned": 8528,
+  "generatedAt": "2025-08-18T04:04:11.771Z",
+  "pagesScanned": 8529,
   "items": [
     {
       "route": "/404",
@@ -85191,10 +85191,7 @@
     {
       "route": "/reports/updates/update-2025-08-18-0102",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-18 01:02",
@@ -85209,6 +85206,19 @@
       "suggestion": {
         "title": "Autonomous Performance Tuning Guide — Vision & Multimodal (2025-08-18 03:10 UTC)",
         "description": "Autonomous Performance Tuning Guide — Vision & Multimodal (2025-08-18 03:10 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0404",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 04:04",
+        "description": "Autonomous Update — 2025-08-18 04:04 — auto-suggested description"
       }
     },
     {
