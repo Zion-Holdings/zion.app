@@ -4,7 +4,7 @@ name: Workflow Auto Healer Auto-Healer
 on:
   # schedule:
   #   - cron: '0 */2 * * *'  # DISABLED to prevent conflicts with manual fixes
-  # workflow_dispatch: {}  # DISABLED to prevent manual triggering
+  workflow_dispatch: {}  # Keep for manual triggering if needed
   # workflow_run:  # DISABLED to prevent automatic triggering
   #   workflows: ['CI', 'Test Suite', 'Security Scan']
   #   types: [completed, in_progress]
