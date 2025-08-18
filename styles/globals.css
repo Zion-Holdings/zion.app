@@ -1,0 +1,16 @@
+/* Global stylesheet placeholder to satisfy Next.js import in pages/_app.tsx */
+html, body, #__next {
+  height: 100%;
+}
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* You can add site-wide CSS variables or base styles here */
+:root {
+  --brand-primary: #0ea5e9;
+  --brand-secondary: #8b5cf6;
+}
+
