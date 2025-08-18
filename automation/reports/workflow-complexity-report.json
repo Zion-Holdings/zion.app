@@ -1,18 +1,18 @@
 {
-  "timestamp": "2025-08-18T05:32:40.556Z",
+  "timestamp": "2025-08-18T05:33:40.297Z",
   "summary": {
-    "totalWorkflows": 227,
+    "totalWorkflows": 226,
     "complexityDistribution": {
       "very-high": 0,
       "high": 0,
       "medium": 9,
-      "low": 218
+      "low": 217
     },
     "refactoringPriorities": {
       "critical": 0,
       "high": 0,
       "medium": 9,
-      "low": 218
+      "low": 217
     }
   },
   "workflows": {
@@ -1654,24 +1654,6 @@
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci-self-heal.yml"
     },
-    "ci.yml": {
-      "complexityScore": 0,
-      "complexityLevel": "low",
-      "metrics": {
-        "totalLines": 34,
-        "jobCount": 0,
-        "stepCount": 5,
-        "conditionalCount": 0,
-        "matrixCount": 0,
-        "dependencyCount": 0,
-        "environmentCount": 0,
-        "secretCount": 0,
-        "actionCount": 2
-      },
-      "refactoringPriority": "low",
-      "status": "active",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci.yml"
-    },
     "cleanup-merged-branches.yml": {
       "complexityScore": 0,
       "complexityLevel": "low",
@@ -3206,7 +3188,7 @@
       "complexityScore": 15,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 51,
+        "totalLines": 52,
         "jobCount": 0,
         "stepCount": 7,
         "conditionalCount": 0,

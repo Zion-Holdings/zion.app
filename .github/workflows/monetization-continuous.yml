@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: "monetization-continuous-${{ github.ref }}"
+  group: monetization-continuous
   cancel-in-progress: true
 
 permissions:

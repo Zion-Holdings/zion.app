@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: ${{ marketing-automation-daily }}-${{ github.ref }}
+  group: marketing-daily
   cancel-in-progress: true
 
 permissions:
