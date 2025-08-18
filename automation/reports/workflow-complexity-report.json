@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T04:06:40.489Z",
+  "timestamp": "2025-08-18T04:07:40.373Z",
   "summary": {
     "totalWorkflows": 224,
     "complexityDistribution": {
@@ -1781,12 +1781,12 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cloud-maintenance.yml"
     },
     "cloud-marketing.yml": {
-      "complexityScore": 20,
+      "complexityScore": 25,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 65,
+        "totalLines": 67,
         "jobCount": 0,
-        "stepCount": 9,
+        "stepCount": 11,
         "conditionalCount": 0,
         "matrixCount": 0,
         "dependencyCount": 0,
@@ -3635,18 +3635,18 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/sitemap-daily.yml"
     },
     "stale.yml": {
-      "complexityScore": 0,
+      "complexityScore": 10,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 44,
+        "totalLines": 58,
         "jobCount": 0,
-        "stepCount": 5,
-        "conditionalCount": 1,
+        "stepCount": 3,
+        "conditionalCount": 0,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 0,
-        "actionCount": 3
+        "secretCount": 1,
+        "actionCount": 2
       },
       "refactoringPriority": "low",
       "status": "active",
