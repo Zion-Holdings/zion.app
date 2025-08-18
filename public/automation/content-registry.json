@@ -1,6 +1,125 @@
 {
   "items": [
     {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-18-202244",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T20:22:44.473Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Case Study — Cloud Improving",
+      "href": "/reports/cases/case-2025-08-18-202243",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T20:22:43.352Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-18-202243",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T20:22:43.352Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Automation Trends 2025",
+      "href": "/reports/patterns/pattern-2025-08-18-202243",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T20:22:43.352Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 20-22",
+      "href": "/reports/innovations/insight-2025-08-18T20-22",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T20:22:42.786Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 20-22",
+      "href": "/reports/updates/update-2025-08-18T20-22",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T20:22:42.786Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 20-22",
+      "href": "/reports/innovations/insight-2025-08-18T20-22",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T20:22:42.786Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 20-22",
+      "href": "/reports/updates/update-2025-08-18T20-22",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T20:22:42.786Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 20-22",
+      "href": "/reports/innovations/insight-2025-08-18T20-22",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T20:22:42.722Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 20-22",
+      "href": "/reports/updates/update-2025-08-18T20-22",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T20:22:42.722Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 20-22",
+      "href": "/reports/innovations/insight-2025-08-18T20-22",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T20:22:42.722Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 20-22",
+      "href": "/reports/updates/update-2025-08-18T20-22",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T20:22:42.722Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-18-202242",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T20:22:42.583Z",
+      "source": "cloud-blueprint-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 20-22",
+      "href": "/reports/innovations/insight-2025-08-18T20-22",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T20:22:41.880Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 20-22",
+      "href": "/reports/updates/update-2025-08-18T20-22",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T20:22:41.880Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 20-22",
+      "href": "/reports/innovations/insight-2025-08-18T20-22",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T20:22:41.880Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 20-22",
+      "href": "/reports/updates/update-2025-08-18T20-22",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T20:22:41.880Z",
+      "source": "cloud-content-factory"
+    },
+    {
       "title": "Innovation Insight — 2025-08-18 20-22",
       "href": "/reports/innovations/insight-2025-08-18T20-22",
       "desc": "New autonomous content",
@@ -357,84 +476,33 @@
       "process": "rapid"
     },
     {
-      "id": "rapid-1755548555388-bzxscr",
-      "title": "Development Tools",
-      "route": "/products/rapid-1755548555388-bzxscr",
-      "type": "rapid-generated",
-      "created": "2025-08-18T20:22:35.394Z",
-      "process": "rapid"
-    },
-    {
-      "id": "rapid-1755548555391-kn93kb",
-      "title": "Best Practices in Security Auditing",
-      "route": "/tutorials/rapid-1755548555391-kn93kb",
-      "type": "rapid-generated",
-      "created": "2025-08-18T20:22:35.394Z",
-      "process": "rapid"
-    },
-    {
-      "id": "ultra-1755548557560-erweja",
-      "title": "Speed-of-Thought Engineering",
-      "route": "/reports/updates/ultra-1755548557560-erweja",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T20:22:37.566Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755548557561-ny9nrx",
-      "title": "Ultra-Fast Instant feedback loops Insight",
-      "route": "/reports/insights/ultra-1755548557561-ny9nrx",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T20:22:37.566Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755548557563-vuxhm9",
-      "title": "Ultra-Fast Guide: Real-time data processing",
-      "route": "/reports/guides/ultra-1755548557563-vuxhm9",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T20:22:37.566Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755548557564-jssk62",
-      "title": "Case Study: Real-time data processing Success",
-      "route": "/reports/cases/ultra-1755548557564-jssk62",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T20:22:37.566Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755548557565-ioetw6",
-      "title": "Pattern: AI-powered automation Architecture",
-      "route": "/reports/patterns/ultra-1755548557565-ioetw6",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T20:22:37.566Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "rapid-1755548558291-tdxfvy",
+      "id": "rapid-1755548563331-v7y9o9",
       "title": "DevOps Automation",
-      "route": "/services/rapid-1755548558291-tdxfvy",
+      "route": "/services/rapid-1755548563331-v7y9o9",
       "type": "rapid-generated",
-      "created": "2025-08-18T20:22:38.295Z",
+      "created": "2025-08-18T20:22:43.338Z",
       "process": "rapid"
     },
     {
-      "id": "rapid-1755548558292-fdjdx3",
-      "title": "Collaboration Platform",
-      "route": "/products/rapid-1755548558292-fdjdx3",
+      "id": "rapid-1755548563335-dyb9ju",
+      "title": "Data Platform",
+      "route": "/products/rapid-1755548563335-dyb9ju",
       "type": "rapid-generated",
-      "created": "2025-08-18T20:22:38.295Z",
+      "created": "2025-08-18T20:22:43.338Z",
       "process": "rapid"
     },
     {
-      "id": "rapid-1755548558294-uccyyx",
-      "title": "Complete Guide to Mobile App Development",
-      "route": "/tutorials/rapid-1755548558294-uccyyx",
+      "id": "rapid-1755548563336-29xalb",
+      "title": "Complete Guide to Security Auditing",
+      "route": "/tutorials/rapid-1755548563336-29xalb",
       "type": "rapid-generated",
-      "created": "2025-08-18T20:22:38.295Z",
+      "created": "2025-08-18T20:22:43.338Z",
       "process": "rapid"
+    },
+    {
+      "id": "cursor-chat-2025-08-18T20:22:44.691Z",
+      "type": "cursor-chat",
+      "timestamp": "2025-08-18T20:22:44.691Z"
     }
   ]
 }
