@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T05:49:36.138Z",
+  "timestamp": "2025-08-18T05:50:38.889Z",
   "critical": [
     {
       "name": "ci-self-heal.yml",
@@ -2468,6 +2468,25 @@
       "resourceScore": 104
     },
     {
+      "name": "yaml-auto-fixer.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/yaml-auto-fixer.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 30,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "# schedule",
+        "workflow_dispatch"
+      ],
+      "resourceScore": 104
+    },
+    {
       "name": "accessibility-audit.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/accessibility-audit.yml",
       "priority": "medium",
@@ -4064,25 +4083,6 @@
       "resourceScore": 103
     },
     {
-      "name": "yaml-auto-fixer.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/yaml-auto-fixer.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 30,
-      "concurrentJobs": 7,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "schedule",
-        "workflow_dispatch"
-      ],
-      "resourceScore": 103
-    },
-    {
       "name": "yaml-validator.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/yaml-validator.yml",
       "priority": "medium",
@@ -4107,7 +4107,7 @@
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 30,
-      "concurrentJobs": 9,
+      "concurrentJobs": 8,
       "runnerRequirements": {
         "runner": "ubuntu-latest",
         "size": "standard",
@@ -4119,7 +4119,7 @@
         "schedule",
         "workflow_dispatch {}"
       ],
-      "resourceScore": 101
+      "resourceScore": 102
     },
     {
       "name": "merge-conflict-guard.yml",

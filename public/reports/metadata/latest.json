@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T05:50:01.175Z",
-  "pagesScanned": 8618,
+  "generatedAt": "2025-08-18T05:51:01.079Z",
+  "pagesScanned": 8621,
   "items": [
     {
       "route": "/404",
@@ -36326,6 +36326,16 @@
       "suggestion": {
         "title": "Pilot Plan: RAG Platforms",
         "description": "Pilot Plan: RAG Platforms — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18-0550",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Checklist: Agent Ops",
+        "description": "Checklist: Agent Ops — auto-suggested description"
       }
     },
     {
@@ -86011,14 +86021,24 @@
     {
       "route": "/reports/updates/update-2025-08-18-0250",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 02:50",
+        "description": "Autonomous Update — 2025-08-18 02:50 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0251",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 02:50",
-        "description": "Autonomous Update — 2025-08-18 02:50 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-18 02:51",
+        "description": "Autonomous Update — 2025-08-18 02:51 — auto-suggested description"
       }
     },
     {
@@ -86069,6 +86089,16 @@
       "suggestion": {
         "title": "Autonomous Capability Map — Cloud Cost Optimization (2025-08-18 05:40 UTC)",
         "description": "Autonomous Capability Map — Cloud Cost Optimization (2025-08-18 05:40 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0550",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Security Hardening Guide — Applied NLP & RAG (2025-08-18 05:50 UTC)",
+        "description": "Autonomous Security Hardening Guide — Applied NLP & RAG (2025-08-18 05:50 UTC) — auto-suggested description"
       }
     },
     {
