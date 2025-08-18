@@ -18809,6 +18809,34 @@
       "title": "Innovation Insight — 2025-08-18 18-21",
       "href": "/reports/innovations/insight-2025-08-18T18-21",
       "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:21:52.388Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-21",
+      "href": "/reports/updates/update-2025-08-18T18-21",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:21:52.388Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 18-21",
+      "href": "/reports/innovations/insight-2025-08-18T18-21",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:21:52.388Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-21",
+      "href": "/reports/updates/update-2025-08-18T18-21",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:21:52.388Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 18-21",
+      "href": "/reports/innovations/insight-2025-08-18T18-21",
+      "desc": "New autonomous content",
       "createdAt": "2025-08-18T18:21:49.337Z",
       "source": "cloud-content-factory"
     },
@@ -18963,6 +18991,70 @@
       "route": "/reports/patterns/ultra-1755541307874-fggkze",
       "type": "ultra-fast-generated",
       "created": "2025-08-18T18:21:47.880Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "rapid-1755541311275-pqkc6s",
+      "title": "API Integration",
+      "route": "/services/rapid-1755541311275-pqkc6s",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:21:51.287Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755541311276-u2ndpo",
+      "title": "Data Platform",
+      "route": "/products/rapid-1755541311276-u2ndpo",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:21:51.287Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755541311277-m2xnza",
+      "title": "Best Practices in Machine Learning",
+      "route": "/tutorials/rapid-1755541311277-m2xnza",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:21:51.287Z",
+      "process": "rapid"
+    },
+    {
+      "id": "ultra-1755541311331-8yecli",
+      "title": "Real-Time Innovation Hub",
+      "route": "/reports/updates/ultra-1755541311331-8yecli",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:21:51.345Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541311333-u6acuj",
+      "title": "Ultra-Fast Instant deployment systems Insight",
+      "route": "/reports/insights/ultra-1755541311333-u6acuj",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:21:51.345Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541311334-gp4rg5",
+      "title": "Ultra-Fast Guide: Instant feedback loops",
+      "route": "/reports/guides/ultra-1755541311334-gp4rg5",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:21:51.345Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541311336-4ju486",
+      "title": "Case Study: Lightning deployment pipelines Success",
+      "route": "/reports/cases/ultra-1755541311336-4ju486",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:21:51.345Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541311337-tgowcb",
+      "title": "Pattern: Real-time collaboration tools Architecture",
+      "route": "/reports/patterns/ultra-1755541311337-tgowcb",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:21:51.345Z",
       "process": "ultra-fast"
     }
   ]

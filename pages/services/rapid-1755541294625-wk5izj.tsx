@@ -8,7 +8,10 @@ export default function ServicePage() {
         <meta name="description" content="Professional cloud infrastructure services to accelerate your business growth and digital transformation." />
         <meta name="keywords" content="cloud infrastructure, services, technology, business, digital transformation" />
         <link rel="canonical" href="https://ziontechgroup.com/services/rapid-1755541294625-wk5izj" />
-      </Head>
+      
+        <meta property="og:title" content="Cloud Infrastructure" />
+        <meta property="og:description" content="Cloud Infrastructure — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
         <h1 className="text-4xl font-extrabold text-center mb-8">Cloud Infrastructure</h1>
         

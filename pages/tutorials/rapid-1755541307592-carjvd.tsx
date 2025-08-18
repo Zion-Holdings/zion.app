@@ -8,7 +8,10 @@ export default function TutorialPage() {
         <meta name="description" content="Learn devops automation with our comprehensive tutorial. Step-by-step guidance for beginners and advanced users." />
         <meta name="keywords" content="tutorial, devops automation, learning, guide, education, technology" />
         <link rel="canonical" href="https://ziontechgroup.com/tutorials/rapid-1755541307592-carjvd" />
-      </Head>
+      
+        <meta property="og:title" content="Best Practices in DevOps Automation" />
+        <meta property="og:description" content="Best Practices in DevOps Automation — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
         <h1 className="text-4xl font-extrabold text-center mb-8">Best Practices in DevOps Automation</h1>
         

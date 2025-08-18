@@ -8,7 +8,10 @@ export default function ProductPage() {
         <meta name="description" content="Automation Suite - The ultimate solution for modern businesses seeking innovation and efficiency." />
         <meta name="keywords" content="automation suite, product, technology, innovation, business solution" />
         <link rel="canonical" href="https://ziontechgroup.com/products/rapid-1755541292465-zl2drj" />
-      </Head>
+      
+        <meta property="og:title" content="Automation Suite" />
+        <meta property="og:description" content="Automation Suite — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
         <h1 className="text-4xl font-extrabold text-center mb-8">Automation Suite</h1>
         
