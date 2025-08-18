@@ -10,7 +10,6 @@ concurrency:
 jobs:
   check-conflicts:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
         with:
@@ -23,10 +22,10 @@ jobs:
         run: npm ci --ignore-scripts
       - name: Check for merge conflicts and markers
         run: bash scripts/check-merge-conflicts.sh
+    timeout-minutes: 30
   pr-automerge-check:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
-    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
         with:
@@ -40,6 +39,7 @@ jobs:
             exit 1
           }
           git merge --abort || true
+    timeout-minutes: 30
 permissions:
   contents: read
   actions: read
