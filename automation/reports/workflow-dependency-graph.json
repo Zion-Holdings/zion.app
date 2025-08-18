@@ -1997,14 +1997,14 @@
     "name": "deploy.yml",
     "triggers": [
       "push",
-      "workflow_dispatch"
+      "workflow_dispatch {}"
     ],
     "needs": [],
     "outputs": [],
     "priority": "medium",
     "resourceRequirements": {
       "runner": "ubuntu-latest",
-      "memory": "high",
+      "memory": "medium",
       "timeout": 30,
       "concurrentJobs": 5
     },
