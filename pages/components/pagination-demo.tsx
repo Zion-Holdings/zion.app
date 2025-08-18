@@ -21,6 +21,3 @@ export default function PaginationDemo() {
     </div>
   );
 }
-<Link href="/components/form-demo" className="internal-link">Related Content</Link>
-
-<Link href="/components/modal-demo" className="internal-link">Related Content</Link>

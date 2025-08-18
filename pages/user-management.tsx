@@ -413,37 +413,17 @@ const UserManagement: React.FC = () => {
 
   return (
     <>
-      <Head>
-        <title>User Management - Zion App</title>
-        <meta name="description" content="Advanced user management system with role-based access control" />
       
-        <meta property="og:title" content="👥 User Management" />
-        <meta property="og:description" content="👥 User Management — automatically suggested description." />
-        <meta name="twitter:card" content="summary_large_image" /></Head>
 
-      <div className="min-h-screen bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Header */}
-          <div className="flex items-center justify-between mb-8">
-            <div>
-              <h1 className="text-3xl font-bold text-gray-900">👥 User Management</h1>
-              <p className="mt-2 text-gray-600">Manage users, roles, and permissions across the system</p>
             </div>
             
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-2">
-                <span className="text-sm text-gray-600">Total Users:</span>
-                <span className="px-2 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
                   {users.length}
                 </span>
               </div>
-              <div className="flex items-center space-x-2">
-                <span className="text-sm text-gray-600">Active:</span>
-                <span className="px-2 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">
                   {users.filter(u => u.status === 'active').length}
                 </span>
               </div>
-              <button
                 onClick={() => {/* TODO: Implement create user modal */}}
                 className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
               >
@@ -453,14 +433,11 @@ const UserManagement: React.FC = () => {
           </div>
 
           {/* Navigation Tabs */}
-          <div className="mb-6">
-            <nav className="flex space-x-8">
               {[
                 { id: 'users', label: 'Users', count: users.length },
                 { id: 'roles', label: 'Roles', count: roles.length },
                 { id: 'permissions', label: 'Permissions', count: permissions.length }
               ].map((tab) => (
-                <button
                   key={tab.id}
                   onClick={() => setCurrentView(tab.id as any)}
                   className={`py-2 px-1 border-b-2 font-medium text-sm ${
@@ -470,7 +447,6 @@ const UserManagement: React.FC = () => {
                   }`}
                 >
                   {tab.label}
-                  <span className="ml-2 bg-gray-100 text-gray-900 py-0.5 px-2.5 rounded-full text-xs">
                     {tab.count}
                   </span>
                 </button>
@@ -482,30 +458,17 @@ const UserManagement: React.FC = () => {
           {currentView === 'users' && (
             <>
               {/* Controls */}
-              <div className="bg-white rounded-lg shadow p-6 mb-6">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                  <div className="flex items-center space-x-4">
-                    <button
                       onClick={() => setShowFilters(!showFilters)}
                       className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
                     >
                       {showFilters ? 'Hide' : 'Show'} Filters
                     </button>
                     
-                    <div className="flex items-center space-x-2">
-                      <span className="text-sm text-gray-600">Sort by:</span>
-                      <select
                         value={sortBy}
                         onChange={(e) => setSortBy(e.target.value as any)}
                         className="border border-gray-300 rounded-md px-3 py-2 text-sm"
                       >
-                        <option value="username">Username</option>
-                        <option value="role">Role</option>
-                        <option value="status">Status</option>
-                        <option value="lastLogin">Last Login</option>
-                        <option value="createdAt">Created</option>
                       </select>
-                      <button
                         onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}
                         className="p-2 border border-gray-300 rounded hover:bg-gray-50"
                       >
@@ -514,22 +477,18 @@ const UserManagement: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-center space-x-4">
                     {selectedUsers.size > 0 && (
                       <>
-                        <button
                           onClick={activateUsers}
                           className="px-3 py-1 text-sm bg-green-100 text-green-800 rounded hover:bg-green-200 transition-colors"
                         >
                           Activate ({selectedUsers.size})
                         </button>
-                        <button
                           onClick={deactivateUsers}
                           className="px-3 py-1 text-sm bg-yellow-100 text-yellow-800 rounded hover:bg-yellow-200 transition-colors"
                         >
                           Deactivate ({selectedUsers.size})
                         </button>
-                        <button
                           onClick={deleteUsers}
                           className="px-3 py-1 text-sm bg-red-100 text-red-800 rounded hover:bg-red-200 transition-colors"
                         >
@@ -542,12 +501,7 @@ const UserManagement: React.FC = () => {
 
                 {/* Filters */}
                 {showFilters && (
-                  <div className="mt-6 pt-6 border-t border-gray-200">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                       {/* Search */}
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Search</label>
-                        <input
                           type="text"
                           value={filters.search}
                           onChange={(e) => setFilters(prev => ({ ...prev, search: e.target.value }))}
@@ -557,9 +511,6 @@ const UserManagement: React.FC = () => {
                       </div>
 
                       {/* Role Filter */}
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Role</label>
-                        <select
                           multiple
                           value={filters.role}
                           onChange={(e) => {
@@ -569,15 +520,11 @@ const UserManagement: React.FC = () => {
                           className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm"
                         >
                           {roles.map(role => (
-                            <option key={role.id} value={role.name}>{role.name}</option>
                           ))}
                         </select>
                       </div>
 
                       {/* Status Filter */}
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Status</label>
-                        <select
                           multiple
                           value={filters.status}
                           onChange={(e) => {
@@ -586,17 +533,10 @@ const UserManagement: React.FC = () => {
                           }}
                           className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm"
                         >
-                          <option value="active">Active</option>
-                          <option value="inactive">Inactive</option>
-                          <option value="suspended">Suspended</option>
-                          <option value="pending">Pending</option>
                         </select>
                       </div>
 
                       {/* Department Filter */}
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Department</label>
-                        <select
                           multiple
                           value={filters.department}
                           onChange={(e) => {
@@ -605,11 +545,6 @@ const UserManagement: React.FC = () => {
                           }}
                           className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm"
                         >
-                          <option value="IT">IT</option>
-                          <option value="Content">Content</option>
-                          <option value="Analytics">Analytics</option>
-                          <option value="Engineering">Engineering</option>
-                          <option value="Design">Design</option>
                         </select>
                       </div>
                     </div>
@@ -618,22 +553,14 @@ const UserManagement: React.FC = () => {
               </div>
 
               {/* Users Table */}
-              <div className="bg-white rounded-lg shadow">
-                <div className="px-6 py-4 border-b border-gray-200">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-4">
-                      <label className="flex items-center">
-                        <input
                           type="checkbox"
                           checked={selectedUsers.size === filteredUsers.length && filteredUsers.length > 0}
                           onChange={toggleSelectAll}
                           className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                         />
-                        <span className="ml-2 text-sm text-gray-700">Select All</span>
                       </label>
                       
                       {selectedUsers.size > 0 && (
-                        <span className="text-sm text-gray-600">
                           {selectedUsers.size} selected
                         </span>
                       )}
@@ -641,112 +568,74 @@ const UserManagement: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="overflow-x-auto">
-                  <table className="min-w-full divide-y divide-gray-200">
-                    <thead className="bg-gray-50">
-                      <tr>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                           User
                         </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                           Role
                         </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                           Status
                         </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                           Last Login
                         </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                           Security
                         </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                           Actions
                         </th>
                       </tr>
                     </thead>
-                    <tbody className="bg-white divide-y divide-gray-200">
                       {sortedUsers.map((user) => (
-                        <tr key={user.id} className="hover:bg-gray-50">
-                          <td className="px-6 py-4 whitespace-nowrap">
-                            <div className="flex items-center">
-                              <input
                                 type="checkbox"
                                 checked={selectedUsers.has(user.id)}
                                 onChange={() => toggleUserSelection(user.id)}
                                 className="rounded border-gray-300 text-blue-600 focus:ring-blue-500 mr-3"
                               />
-                              <div className="flex-shrink-0 h-10 w-10">
-                                <div className="h-10 w-10 rounded-full bg-gray-300 flex items-center justify-center text-lg">
                                   {user.avatar}
                                 </div>
                               </div>
-                              <div className="ml-4">
-                                <div className="text-sm font-medium text-gray-900">
                                   {user.firstName} {user.lastName}
                                 </div>
-                                <div className="text-sm text-gray-500">{user.username}</div>
-                                <div className="text-sm text-gray-500">{user.email}</div>
                                 {user.department && (
-                                  <div className="text-xs text-gray-400">{user.department}</div>
                                 )}
                               </div>
                             </div>
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap">
-                            <span className={`px-2 py-1 text-xs font-medium rounded-full ${getRoleColor(user.role.name)}`}>
                               {user.role.name}
                             </span>
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap">
-                            <span className={`px-2 py-1 text-xs font-medium rounded-full ${getStatusColor(user.status)}`}>
                               {user.status}
                             </span>
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                             {formatDate(user.lastLogin)}
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap">
-                            <div className="flex items-center space-x-2">
                               {user.twoFactorEnabled ? (
-                                <span className="px-2 py-1 text-xs bg-green-100 text-green-800 rounded-full">
                                   2FA Enabled
                                 </span>
                               ) : (
-                                <span className="px-2 py-1 text-xs bg-gray-100 text-gray-800 rounded-full">
                                   2FA Disabled
                                 </span>
                               )}
                               {user.loginAttempts > 0 && (
-                                <span className="px-2 py-1 text-xs bg-red-100 text-red-800 rounded-full">
                                   {user.loginAttempts} attempts
                                 </span>
                               )}
                             </div>
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                            <div className="flex items-center space-x-2">
-                              <button
                                 onClick={() => {/* TODO: Implement edit user modal */}}
                                 className="text-blue-600 hover:text-blue-900"
                               >
                                 Edit
                               </button>
-                              <button
                                 onClick={() => resetPassword(user.id)}
                                 className="text-green-600 hover:text-green-900"
                               >
                                 Reset Password
                               </button>
                               {user.twoFactorEnabled ? (
-                                <button
                                   onClick={() => disableTwoFactor(user.id)}
                                   className="text-yellow-600 hover:text-yellow-900"
                                 >
                                   Disable 2FA
                                 </button>
                               ) : (
-                                <button
                                   onClick={() => enableTwoFactor(user.id)}
                                   className="text-blue-600 hover:text-blue-900"
                                 >
@@ -766,11 +655,6 @@ const UserManagement: React.FC = () => {
 
           {/* Roles View */}
           {currentView === 'roles' && (
-            <div className="bg-white rounded-lg shadow">
-              <div className="px-6 py-4 border-b border-gray-200">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-lg font-medium text-gray-900">System Roles</h3>
-                  <button
                     onClick={() => {/* TODO: Implement create role modal */}}
                     className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
                   >
@@ -779,58 +663,35 @@ const UserManagement: React.FC = () => {
                 </div>
               </div>
               
-              <div className="overflow-x-auto">
-                <table className="min-w-full divide-y divide-gray-200">
-                  <thead className="bg-gray-50">
-                    <tr>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Role
                       </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Description
                       </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Users
                       </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Type
                       </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Actions
                       </th>
                     </tr>
                   </thead>
-                  <tbody className="bg-white divide-y divide-gray-200">
                     {roles.map((role) => (
-                      <tr key={role.id} className="hover:bg-gray-50">
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="text-sm font-medium text-gray-900">{role.name}</div>
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="text-sm text-gray-500">{role.description}</div>
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <span className="px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded-full">
                             {role.userCount} users
                           </span>
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <span className={`px-2 py-1 text-xs rounded-full ${
                             role.isSystem ? 'bg-purple-100 text-purple-800' : 'bg-gray-100 text-gray-800'
                           }`}>
                             {role.isSystem ? 'System' : 'Custom'}
                           </span>
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                          <div className="flex items-center space-x-2">
-                            <button
                               onClick={() => {/* TODO: Implement edit role modal */}}
                               className="text-blue-600 hover:text-blue-900"
                             >
                               Edit
                             </button>
                             {!role.isSystem && (
-                              <button className="text-red-600 hover:text-red-900">
                                 Delete
                               </button>
                             )}
@@ -846,51 +707,27 @@ const UserManagement: React.FC = () => {
 
           {/* Permissions View */}
           {currentView === 'permissions' && (
-            <div className="bg-white rounded-lg shadow">
-              <div className="px-6 py-4 border-b border-gray-200">
-                <h3 className="text-lg font-medium text-gray-900">System Permissions</h3>
               </div>
               
-              <div className="overflow-x-auto">
-                <table className="min-w-full divide-y divide-gray-200">
-                  <thead className="bg-gray-50">
-                    <tr>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Permission
                       </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Description
                       </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Category
                       </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Resource
                       </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Action
                       </th>
                     </tr>
                   </thead>
-                  <tbody className="bg-white divide-y divide-gray-200">
                     {permissions.map((permission) => (
-                      <tr key={permission.id} className="hover:bg-gray-50">
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="text-sm font-medium text-gray-900">{permission.name}</div>
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="text-sm text-gray-500">{permission.description}</div>
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <span className="px-2 py-1 text-xs bg-gray-100 text-gray-800 rounded-full">
                             {permission.category}
                           </span>
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="text-sm text-gray-900">{permission.resource}</div>
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <span className="px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded-full">
                             {permission.action}
                           </span>
                         </td>

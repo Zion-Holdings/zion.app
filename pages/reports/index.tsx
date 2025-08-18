@@ -165,8 +165,5 @@ export default function ReportsIndex() {
   );
 }
 
-<Link href="/reports/blueprints/blueprint-2025-08-18-122901" className="internal-link">Related Content</Link>
 
-<Link href="/reports/blueprints/blueprint-2025-08-18-122931" className="internal-link">Related Content</Link>
 
-<Link href="/reports/blueprints/blueprint-2025-08-18-122952" className="internal-link">Related Content</Link>

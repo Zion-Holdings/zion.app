@@ -60,8 +60,5 @@ export default function TutorialPage() {
   );
 }
 
-<Link href="/reports/tutorials" className="internal-link">Related Content</Link>
 
-<Link href="/reports/tutorials/microservices-nextjs" className="internal-link">Related Content</Link>
 
-<Link href="/tutorials/rapid-1755539347156-s63t87" className="internal-link">Related Content</Link>

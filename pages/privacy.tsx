@@ -219,122 +219,57 @@ export default function PrivacyPage() {
                   <h4 className="text-lg font-semibold text-white mb-2">Essential Cookies</h4>
                   <ul className="text-white/70 text-sm space-y-1">
                     <li>• Authentication and security</li>
-                    <li>• Basic functionality</li>
-                    <li>• Session management</li>
                   </ul>
                 </div>
                 
-                <div>
-                  <h4 className="text-lg font-semibold text-white mb-2">Analytics Cookies</h4>
-                  <ul className="text-white/70 text-sm space-y-1">
-                    <li>• Usage statistics</li>
-                    <li>• Performance monitoring</li>
-                    <li>• User behavior analysis</li>
                   </ul>
                 </div>
                 
-                <div>
-                  <h4 className="text-lg font-semibold text-white mb-2">Marketing Cookies</h4>
-                  <ul className="text-white/70 text-sm space-y-1">
-                    <li>• Personalized content</li>
-                    <li>• Advertising optimization</li>
-                    <li>• Campaign effectiveness</li>
                   </ul>
                 </div>
               </div>
             </div>
           </section>
 
-          <section className="mb-12">
-            <h2 className="text-3xl font-bold text-white mb-6">International Data Transfers</h2>
             
-            <div className="bg-slate-900/50 border border-white/10 rounded-lg p-6">
-              <p className="text-white/80 mb-4">
                 Your information may be transferred to and processed in countries other than your own. We ensure appropriate safeguards are in place:
               </p>
               
-              <ul className="text-white/70 space-y-2">
-                <li>• Standard contractual clauses</li>
-                <li>• Adequacy decisions</li>
-                <li>• Binding corporate rules</li>
-                <li>• Privacy Shield compliance (where applicable)</li>
-                <li>• Local data protection laws</li>
               </ul>
             </div>
           </section>
 
-          <section className="mb-12">
-            <h2 className="text-3xl font-bold text-white mb-6">Children's Privacy</h2>
             
-            <div className="bg-slate-900/50 border border-white/10 rounded-lg p-6">
-              <p className="text-white/80 mb-4">
                 Our services are not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13:
               </p>
               
-              <ul className="text-white/70 space-y-2">
-                <li>• Age verification measures</li>
-                <li>• Parental consent requirements</li>
-                <li>• Age-appropriate content</li>
-                <li>• COPPA compliance</li>
               </ul>
             </div>
           </section>
 
-          <section className="mb-12">
-            <h2 className="text-3xl font-bold text-white mb-6">Changes to This Policy</h2>
             
-            <div className="bg-slate-900/50 border border-white/10 rounded-lg p-6">
-              <p className="text-white/80 mb-4">
                 We may update this Privacy Policy from time to time. We will notify you of any material changes:
               </p>
               
-              <ul className="text-white/70 space-y-2">
-                <li>• Email notifications for significant changes</li>
-                <li>• Website banner announcements</li>
-                <li>• Updated effective dates</li>
-                <li>• Opportunity to review and consent</li>
               </ul>
             </div>
           </section>
 
-          <section className="mb-12">
-            <h2 className="text-3xl font-bold text-white mb-6">Contact Us</h2>
             
-            <div className="bg-slate-900/50 border border-white/10 rounded-lg p-6">
-              <p className="text-white/80 mb-4">
                 If you have questions about this Privacy Policy or our data practices, please contact us:
               </p>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="text-lg font-semibold text-white mb-2">Contact Information</h3>
-                  <ul className="text-white/70 text-sm space-y-1">
-                    <li>• Email: privacy@ziontechgroup.com</li>
-                    <li>• Phone: +1 (555) 123-4567</li>
-                    <li>• Address: [Company Address]</li>
-                    <li>• Data Protection Officer</li>
                   </ul>
                 </div>
                 
-                <div>
-                  <h3 className="text-lg font-semibold text-white mb-2">Response Times</h3>
-                  <ul className="text-white/70 text-sm space-y-1">
-                    <li>• General inquiries: 48 hours</li>
-                    <li>• Data requests: 30 days</li>
-                    <li>• Complaints: 14 days</li>
-                    <li>• Emergency: 24 hours</li>
                   </ul>
                 </div>
               </div>
             </div>
           </section>
 
-          <div className="mt-12 bg-slate-900/50 border border-white/10 rounded-lg p-6">
-            <h2 className="text-2xl font-bold text-cyan-400 mb-4">Your Privacy Matters</h2>
-            <p className="text-white/80 mb-4">
               We are committed to protecting your privacy and ensuring transparency in our data practices. This policy reflects our dedication to maintaining the highest standards of data protection and privacy compliance.
             </p>
-            <p className="text-white/70">
               By using our services, you acknowledge that you have read and understood this Privacy Policy. If you do not agree with our practices, please do not use our services.
             </p>
           </div>
