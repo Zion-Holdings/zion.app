@@ -1,12 +1,12 @@
 // Auto-generated front index
-// Generated: 2025-08-18T16:59:43.640Z
+// Generated: 2025-08-18T16:59:51.758Z
 
 export const frontPages = [
   {
     "name": "index.tsx",
     "path": "/workspace/pages/front/index.tsx",
     "size": 1008,
-    "modified": "2025-08-18T16:59:35.656Z",
+    "modified": "2025-08-18T16:59:43.636Z",
     "relativePath": "front/index.tsx"
   }
 ];
