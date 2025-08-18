@@ -11,7 +11,10 @@ export default function Simple-service-1755537718089-9lt6davueService() {
         <meta name="description" content="Advanced DevOps solution with premium features" />
         <meta name="keywords" content="devops, technology services" />
         <link rel="canonical" href="https://ziontechgroup.com/services/simple-service-1755537718089-9lt6davue" />
-      </Head>
+      
+        <meta property="og:title" content="Premium DevOps Solution" />
+        <meta property="og:description" content="Premium DevOps Solution — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       
       <main className="container mx-auto px-6 py-12">
         <div className="text-center mb-16">
