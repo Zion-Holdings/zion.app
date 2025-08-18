@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T03:19:40.806Z",
+  "timestamp": "2025-08-18T03:59:36.493Z",
   "summary": {
     "totalWorkflows": 224,
     "complexityDistribution": {
@@ -1637,18 +1637,18 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci-self-heal.yml"
     },
     "ci.yml": {
-      "complexityScore": 30,
+      "complexityScore": 35,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 105,
+        "totalLines": 154,
         "jobCount": 0,
-        "stepCount": 16,
+        "stepCount": 21,
         "conditionalCount": 2,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 5
+        "actionCount": 7
       },
       "refactoringPriority": "medium",
       "status": "active",
@@ -3746,7 +3746,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 39,
+        "totalLines": 38,
         "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
@@ -3872,7 +3872,7 @@
       "complexityScore": 15,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 79,
+        "totalLines": 83,
         "jobCount": 0,
         "stepCount": 6,
         "conditionalCount": 1,

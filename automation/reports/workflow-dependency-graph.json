@@ -1544,10 +1544,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "medium",
-      "timeout": 20,
+      "timeout": 30,
       "concurrentJobs": 5
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 30
   },
   "cleanup-merged-branches.yml": {
     "name": "cleanup-merged-branches.yml",
@@ -3535,7 +3535,7 @@
   "ui-evolution-schedule.yml": {
     "name": "ui-evolution-schedule.yml",
     "triggers": [
-      "workflow_dispatch null",
+      "workflow_dispatch {}",
       "schedule"
     ],
     "needs": [],
@@ -3664,7 +3664,7 @@
       "runner": "ubuntu-latest",
       "memory": "standard",
       "timeout": 30,
-      "concurrentJobs": 4
+      "concurrentJobs": 5
     },
     "estimatedDuration": 30
   },
