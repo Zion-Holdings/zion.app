@@ -1,19 +1,11 @@
 # auto-pr-automerge Report
 
-<<<<<<< Updated upstream
-Generated: 2025-08-18T14:08:21.020Z
-=======
-Generated: 2025-08-18T14:07:08.217Z
->>>>>>> Stashed changes
+Generated: 2025-08-18T14:11:04.565Z
 
 ## Status
 - Task: auto-pr-automerge
 - Status: Completed
-<<<<<<< Updated upstream
-- Timestamp: 2025-08-18T14:08:21.020Z
-=======
-- Timestamp: 2025-08-18T14:07:08.217Z
->>>>>>> Stashed changes
+- Timestamp: 2025-08-18T14:11:04.565Z
 
 ## Next Steps
 - Implement actual auto-pr-automerge functionality
