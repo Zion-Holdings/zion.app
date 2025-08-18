@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T05:20:01.339Z",
-  "pagesScanned": 8561,
+  "generatedAt": "2025-08-18T05:21:01.077Z",
+  "pagesScanned": 8564,
   "items": [
     {
       "route": "/404",
@@ -36206,6 +36206,16 @@
       "suggestion": {
         "title": "Checklist: AI QA & Eval",
         "description": "Checklist: AI QA & Eval — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18-0520",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pilot Plan: DevSecOps AI",
+        "description": "Pilot Plan: DevSecOps AI — auto-suggested description"
       }
     },
     {
@@ -85501,14 +85511,24 @@
     {
       "route": "/reports/updates/update-2025-08-18-0220",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 02:20",
+        "description": "Autonomous Update — 2025-08-18 02:20 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0221",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 02:20",
-        "description": "Autonomous Update — 2025-08-18 02:20 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-18 02:21",
+        "description": "Autonomous Update — 2025-08-18 02:21 — auto-suggested description"
       }
     },
     {
@@ -85529,6 +85549,16 @@
       "suggestion": {
         "title": "Autonomous Reference Architecture — DevSecOps for AI (2025-08-18 05:10 UTC)",
         "description": "Autonomous Reference Architecture — DevSecOps for AI (2025-08-18 05:10 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0520",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Capability Map — Evaluation & Safety (2025-08-18 05:20 UTC)",
+        "description": "Autonomous Capability Map — Evaluation & Safety (2025-08-18 05:20 UTC) — auto-suggested description"
       }
     },
     {
