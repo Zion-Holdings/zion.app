@@ -1,3 +1,4 @@
+---
 name: "✅ Workflow Validator"
 on:
   push:

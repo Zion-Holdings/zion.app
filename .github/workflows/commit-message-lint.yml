@@ -1,18 +1,19 @@
+---
 name: Commit Message Lint
 on:
   workflow_dispatch: {}
   schedule:
-  - cron: '0 */2 * * *' # Every 2 hours
+  - cron: '0 8 * * *'
 permissions:
   contents: write
   actions: read
   pull-requests: write
 concurrency:
-  group: commit-message-lint-${{ github.ref }}
+  group: commit-lint
   cancel-in-progress: false
 jobs:
   main:
-    name: Main Job
+    name: Commit Message Lint Job
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -27,5 +28,5 @@ jobs:
         cache: npm
     - name: Install dependencies
       run: npm ci --no-audit --no-fund
-    - name: Run workflow
-      run: echo "Commit message lint workflow completed successfully"
+    - name: Run commit message lint
+      run: 'echo "Commit message lint workflow completed successfully"'

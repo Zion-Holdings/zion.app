@@ -1,3 +1,4 @@
+---
 name: Autonomous Intelligence
 on:
   workflow_dispatch: {}

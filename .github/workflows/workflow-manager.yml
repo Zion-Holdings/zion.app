@@ -1,3 +1,4 @@
+---
 name: Workflow Manager
 on:
   workflow_dispatch: null

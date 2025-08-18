@@ -1,3 +1,4 @@
+---
 name: UI Evolution Daily
 on:
   workflow_dispatch: null

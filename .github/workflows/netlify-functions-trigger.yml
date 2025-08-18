@@ -1,8 +1,9 @@
+---
 name: Netlify Functions Trigger
 
 on:
   schedule:
-    - cron: '*/30 * * * *' # every 30 minutes
+    - cron: '0 */2 * * *' # every 30 minutes
   workflow_dispatch: {}
 
 permissions:

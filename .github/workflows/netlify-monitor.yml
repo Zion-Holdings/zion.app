@@ -1,3 +1,4 @@
+---
 name: Netlify Monitor
 on:
   workflow_dispatch: null
