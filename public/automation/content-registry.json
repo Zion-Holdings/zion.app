@@ -137,12 +137,12 @@
       "route": "/automation"
     },
     {
-      "file": "pages/reports/whitepapers/index.tsx",
-      "route": "/reports/whitepapers"
-    },
-    {
       "file": "pages/reports/tutorials/index.tsx",
       "route": "/reports/tutorials"
+    },
+    {
+      "file": "pages/reports/whitepapers/index.tsx",
+      "route": "/reports/whitepapers"
     },
     {
       "file": "pages/reports/insights/index.tsx",
@@ -22581,6 +22581,10 @@
       "route": "/reports/updates/update-2025-08-18-0520"
     },
     {
+      "file": "pages/reports/updates/update-2025-08-18-0515.tsx",
+      "route": "/reports/updates/update-2025-08-18-0515"
+    },
+    {
       "file": "pages/reports/updates/update-2025-08-18-0514.tsx",
       "route": "/reports/updates/update-2025-08-18-0514"
     },
@@ -35515,5 +35519,5 @@
       "route": "/docs/CHANGELOG.md"
     }
   ],
-  "generatedAt": "2025-08-18T08:14:01.641Z"
+  "generatedAt": "2025-08-18T08:15:01.898Z"
 }
