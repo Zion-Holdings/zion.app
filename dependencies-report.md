@@ -1,27 +1,11 @@
 # dependencies Report
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-Generated: 2025-08-18T17:10:19.903Z
-=======
-Generated: 2025-08-18T17:09:43.154Z
->>>>>>> Stashed changes
-=======
-Generated: 2025-08-18T17:09:43.154Z
->>>>>>> Stashed changes
+Generated: 2025-08-18T17:12:46.249Z
 
 ## Status
 - Task: dependencies
 - Status: Completed
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-- Timestamp: 2025-08-18T17:10:19.903Z
-=======
-- Timestamp: 2025-08-18T17:09:43.154Z
->>>>>>> Stashed changes
-=======
-- Timestamp: 2025-08-18T17:09:43.154Z
->>>>>>> Stashed changes
+- Timestamp: 2025-08-18T17:12:46.249Z
 
 ## Next Steps
 - Implement actual dependencies functionality

@@ -1,27 +1,11 @@
 # actionlint Report
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-Generated: 2025-08-18T17:10:15.001Z
-=======
-Generated: 2025-08-18T17:09:38.597Z
->>>>>>> Stashed changes
-=======
-Generated: 2025-08-18T17:09:38.597Z
->>>>>>> Stashed changes
+Generated: 2025-08-18T17:12:41.401Z
 
 ## Status
 - Task: actionlint
 - Status: Completed
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-- Timestamp: 2025-08-18T17:10:15.001Z
-=======
-- Timestamp: 2025-08-18T17:09:38.597Z
->>>>>>> Stashed changes
-=======
-- Timestamp: 2025-08-18T17:09:38.597Z
->>>>>>> Stashed changes
+- Timestamp: 2025-08-18T17:12:41.401Z
 
 ## Next Steps
 - Implement actual actionlint functionality
