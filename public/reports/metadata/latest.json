@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T10:58:01.183Z",
-  "pagesScanned": 9169,
+  "generatedAt": "2025-08-18T10:58:44.315Z",
+  "pagesScanned": 9170,
   "items": [
     {
       "route": "/404",
@@ -91036,6 +91036,16 @@
       "suggestion": {
         "title": "Autonomous Capability Map — Edge AI & IoT (2025-08-18 07:57 UTC)",
         "description": "Autonomous Capability Map — Edge AI & IoT (2025-08-18 07:57 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0758",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 07:58",
+        "description": "Autonomous Update — 2025-08-18 07:58 — auto-suggested description"
       }
     },
     {
