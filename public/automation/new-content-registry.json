@@ -2,6 +2,13 @@
   "generatedAt": "2025-08-18T08:33:55.375Z",
   "items": [
     {
+      "title": "Runbook: FinOps for AI",
+      "subtitle": "Patterns to improve reliability.",
+      "path": "/reports/innovations/insight-2025-08-18-1104",
+      "createdAt": "2025-08-18T11:04:05.011Z",
+      "kind": "insight"
+    },
+    {
       "title": "Playbook: MLOps",
       "subtitle": "Patterns to enhance security.",
       "path": "/reports/innovations/insight-2025-08-18-1103",
