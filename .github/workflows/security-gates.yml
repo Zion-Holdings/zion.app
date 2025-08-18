@@ -17,6 +17,7 @@ concurrency:
 jobs:
   main:
     name: Security Gates Job
+    if: ${{ hashFiles('package.json') != '' }}
     runs-on: ubuntu-latest
     timeout-minutes: 20
 

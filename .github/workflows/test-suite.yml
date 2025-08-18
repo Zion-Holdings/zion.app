@@ -21,6 +21,7 @@ concurrency:
 jobs:
   test:
     name: Run Tests
+    if: ${{ hashFiles('package.json') != '' }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
 
@@ -83,6 +84,7 @@ jobs:
 
   lint-and-typecheck:
     name: Code Quality
+    if: ${{ hashFiles('package.json') != '' }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
@@ -108,6 +110,7 @@ jobs:
 
   build-verification:
     name: Build Verification
+    if: ${{ hashFiles('package.json') != '' }}
     runs-on: ubuntu-latest
     timeout-minutes: 20
 

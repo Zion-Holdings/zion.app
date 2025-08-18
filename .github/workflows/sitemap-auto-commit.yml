@@ -16,6 +16,7 @@ concurrency:
 jobs:
   build-and-update:
     name: Build and Update Sitemap
+    if: ${{ hashFiles('package.json') != '' }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
 

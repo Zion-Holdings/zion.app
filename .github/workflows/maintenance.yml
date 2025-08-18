@@ -15,6 +15,7 @@ env:
   NODE_VERSION: '20'
 jobs:
   cleanup-artifacts:
+    if: ${{ hashFiles('package.json') != '' }}
     name: Cleanup Old Artifacts
     runs-on: ubuntu-latest
     timeout-minutes: 15
@@ -72,6 +73,7 @@ jobs:
         \ -A\n  git commit -m \"\U0001F916 Automated cleanup: Remove old artifacts\
         \ and reports [skip ci]\"\n  git push\nfi\n"
   optimize-workflows:
+    if: ${{ hashFiles('package.json') != '' }}
     name: Optimize Workflows
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -159,6 +161,7 @@ jobs:
           path: workflow-health-report.md
           retention-days: 7
   dependency-maintenance:
+    if: ${{ hashFiles('package.json') != '' }}
     name: Dependency Maintenance
     runs-on: ubuntu-latest
     timeout-minutes: 25

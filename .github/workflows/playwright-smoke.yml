@@ -21,6 +21,7 @@ concurrency:
 jobs:
   smoke-test:
     name: Smoke Tests
+    if: ${{ hashFiles('package.json') != '' }}
     runs-on: ubuntu-latest
     timeout-minutes: 20
     
