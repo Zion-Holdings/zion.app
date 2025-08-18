@@ -423,7 +423,7 @@ permissions:
   actions: read
   pull-requests: write
 concurrency:
-  group: ${automation.id}-${{ github.ref }}
+  group: ${automation.id}-github-ref
   cancel-in-progress: false
 jobs:
   main:
