@@ -21969,6 +21969,10 @@
       "route": "/reports/updates/update-2025-08-18-0310"
     },
     {
+      "file": "pages/reports/updates/update-2025-08-18-0259.tsx",
+      "route": "/reports/updates/update-2025-08-18-0259"
+    },
+    {
       "file": "pages/reports/updates/update-2025-08-18-0258.tsx",
       "route": "/reports/updates/update-2025-08-18-0258"
     },
@@ -34567,5 +34571,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-18T05:58:01.105Z"
+  "generatedAt": "2025-08-18T05:59:01.094Z"
 }
