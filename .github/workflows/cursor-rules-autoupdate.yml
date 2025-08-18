@@ -2,7 +2,7 @@
 name: Cursor Rules Auto Update
 on:
   schedule:
-    - cron: 17 */6 * * *
+    - cron: '17 */6 * * *'
   workflow_dispatch: {}
 permissions:
   contents: write
