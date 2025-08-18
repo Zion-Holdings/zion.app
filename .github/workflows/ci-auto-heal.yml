@@ -1,9 +1,9 @@
 ---
 name: ci-auto-heal
 on:
+  # schedule:
+  #   - cron: '0 */2 * * *' # DISABLED to prevent conflicts with manual fixes
   workflow_dispatch: {}
-  schedule:
-    - cron: '0 */2 * * *'
 permissions:
   contents: write
   actions: read
