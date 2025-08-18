@@ -2,6 +2,13 @@
   "items": [
     {
       "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-18-154255",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T15:42:55.917Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery",
       "href": "/reports/playbooks/playbook-2025-08-18-154234",
       "desc": "New autonomous content",
       "createdAt": "2025-08-18T15:42:34.843Z",
@@ -485,6 +492,11 @@
       "id": "cursor-chat-2025-08-18T15:42:34.933Z",
       "type": "cursor-chat",
       "timestamp": "2025-08-18T15:42:34.933Z"
+    },
+    {
+      "id": "cursor-chat-2025-08-18T15:42:56.034Z",
+      "type": "cursor-chat",
+      "timestamp": "2025-08-18T15:42:56.034Z"
     }
   ]
 }
