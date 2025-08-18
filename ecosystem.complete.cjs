@@ -1002,9 +1002,20 @@ module.exports = {
       }
     },
     {
+      name: 'ci',
+      script: 'scripts/ci.js',
+      cron_restart: '0 16 * * *',
+      autorestart: false,
+      watch: false,
+      env: {
+        NODE_ENV: 'production',
+        TASK: 'ci'
+      }
+    },
+    {
       name: 'cleanup-merged-branches',
       script: 'scripts/cleanup-merged-branches.js',
-      cron_restart: '0 16 * * *',
+      cron_restart: '0 18 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1015,7 +1026,7 @@ module.exports = {
     {
       name: 'cleanup',
       script: 'scripts/cleanup.js',
-      cron_restart: '0 18 * * *',
+      cron_restart: '0 20 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1026,7 +1037,7 @@ module.exports = {
     {
       name: 'cloud-agents-fast',
       script: 'scripts/cloud-agents-fast.js',
-      cron_restart: '0 20 * * *',
+      cron_restart: '0 22 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1037,7 +1048,7 @@ module.exports = {
     {
       name: 'cloud-agents',
       script: 'scripts/cloud-agents.js',
-      cron_restart: '0 22 * * *',
+      cron_restart: '0 0 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1048,7 +1059,7 @@ module.exports = {
     {
       name: 'cloud-autonomous-orchestrator',
       script: 'scripts/cloud-autonomous-orchestrator.js',
-      cron_restart: '0 0 * * *',
+      cron_restart: '0 4 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1059,7 +1070,7 @@ module.exports = {
     {
       name: 'cloud-deep-research',
       script: 'scripts/cloud-deep-research.js',
-      cron_restart: '0 4 * * *',
+      cron_restart: '*/15 * * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1070,7 +1081,7 @@ module.exports = {
     {
       name: 'cloud-maintenance',
       script: 'scripts/cloud-maintenance.js',
-      cron_restart: '*/15 * * * *',
+      cron_restart: '*/10 * * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1081,7 +1092,7 @@ module.exports = {
     {
       name: 'cloud-marketing',
       script: 'scripts/cloud-marketing.js',
-      cron_restart: '*/10 * * * *',
+      cron_restart: '*/5 * * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1092,7 +1103,7 @@ module.exports = {
     {
       name: 'cloud-orchestrator-plus',
       script: 'scripts/cloud-orchestrator-plus.js',
-      cron_restart: '*/5 * * * *',
+      cron_restart: '0 2 * * 0',
       autorestart: false,
       watch: false,
       env: {
@@ -1103,7 +1114,7 @@ module.exports = {
     {
       name: 'codeql-analysis',
       script: 'scripts/codeql-analysis.js',
-      cron_restart: '0 2 * * 0',
+      cron_restart: '0 2 * * 1',
       autorestart: false,
       watch: false,
       env: {
@@ -1114,7 +1125,7 @@ module.exports = {
     {
       name: 'codeql',
       script: 'scripts/codeql.js',
-      cron_restart: '0 2 * * 1',
+      cron_restart: '0 2 * * 2',
       autorestart: false,
       watch: false,
       env: {
@@ -1125,7 +1136,7 @@ module.exports = {
     {
       name: 'commit-message-lint',
       script: 'scripts/commit-message-lint.js',
-      cron_restart: '0 2 * * 2',
+      cron_restart: '0 2 * * 3',
       autorestart: false,
       watch: false,
       env: {
@@ -1136,7 +1147,7 @@ module.exports = {
     {
       name: 'commitlint',
       script: 'scripts/commitlint.js',
-      cron_restart: '0 2 * * 3',
+      cron_restart: '0 2 * * 4',
       autorestart: false,
       watch: false,
       env: {
@@ -1147,7 +1158,7 @@ module.exports = {
     {
       name: 'components-size-report',
       script: 'scripts/components-size-report.js',
-      cron_restart: '0 2 * * 4',
+      cron_restart: '0 2 * * 5',
       autorestart: false,
       watch: false,
       env: {
@@ -1158,7 +1169,7 @@ module.exports = {
     {
       name: 'comprehensive-test',
       script: 'scripts/comprehensive-test.js',
-      cron_restart: '0 2 * * 5',
+      cron_restart: '0 2 * * 6',
       autorestart: false,
       watch: false,
       env: {
@@ -1169,7 +1180,7 @@ module.exports = {
     {
       name: 'content-generation',
       script: 'scripts/content-generation.js',
-      cron_restart: '0 2 * * 6',
+      cron_restart: '0 */6 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1180,7 +1191,7 @@ module.exports = {
     {
       name: 'continuous-deployment',
       script: 'scripts/continuous-deployment.js',
-      cron_restart: '0 */6 * * *',
+      cron_restart: '0 */4 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1191,7 +1202,7 @@ module.exports = {
     {
       name: 'continuous-improvement',
       script: 'scripts/continuous-improvement.js',
-      cron_restart: '0 */4 * * *',
+      cron_restart: '0 */2 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1202,7 +1213,7 @@ module.exports = {
     {
       name: 'crawl-normalize',
       script: 'scripts/crawl-normalize.js',
-      cron_restart: '0 */2 * * *',
+      cron_restart: '0 * * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1213,7 +1224,7 @@ module.exports = {
     {
       name: 'cursor-chat',
       script: 'scripts/cursor-chat.js',
-      cron_restart: '0 * * * *',
+      cron_restart: '0 6 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1224,7 +1235,7 @@ module.exports = {
     {
       name: 'cursor-rules-autoupdate',
       script: 'scripts/cursor-rules-autoupdate.js',
-      cron_restart: '0 6 * * *',
+      cron_restart: '0 8 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1235,7 +1246,7 @@ module.exports = {
     {
       name: 'dead-code-report',
       script: 'scripts/dead-code-report.js',
-      cron_restart: '0 8 * * *',
+      cron_restart: '0 10 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1246,7 +1257,7 @@ module.exports = {
     {
       name: 'dependabot-auto-approve',
       script: 'scripts/dependabot-auto-approve.js',
-      cron_restart: '0 10 * * *',
+      cron_restart: '0 12 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1257,7 +1268,7 @@ module.exports = {
     {
       name: 'dependencies',
       script: 'scripts/dependencies.js',
-      cron_restart: '0 12 * * *',
+      cron_restart: '0 14 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1268,7 +1279,7 @@ module.exports = {
     {
       name: 'dependency-auto-upgrade',
       script: 'scripts/dependency-auto-upgrade.js',
-      cron_restart: '0 14 * * *',
+      cron_restart: '0 16 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1279,7 +1290,7 @@ module.exports = {
     {
       name: 'dependency-maintenance',
       script: 'scripts/dependency-maintenance.js',
-      cron_restart: '0 16 * * *',
+      cron_restart: '0 18 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1290,7 +1301,7 @@ module.exports = {
     {
       name: 'dependency-management',
       script: 'scripts/dependency-management.js',
-      cron_restart: '0 18 * * *',
+      cron_restart: '0 20 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1301,7 +1312,7 @@ module.exports = {
     {
       name: 'diverse-agent-matrix',
       script: 'scripts/diverse-agent-matrix.js',
-      cron_restart: '0 20 * * *',
+      cron_restart: '0 22 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1312,7 +1323,7 @@ module.exports = {
     {
       name: 'docs-autogen',
       script: 'scripts/docs-autogen.js',
-      cron_restart: '0 22 * * *',
+      cron_restart: '0 0 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1323,7 +1334,7 @@ module.exports = {
     {
       name: 'docs-intelligence',
       script: 'scripts/docs-intelligence.js',
-      cron_restart: '0 0 * * *',
+      cron_restart: '0 4 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1334,7 +1345,7 @@ module.exports = {
     {
       name: 'emergency-fix',
       script: 'scripts/emergency-fix.js',
-      cron_restart: '0 4 * * *',
+      cron_restart: '*/15 * * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1345,7 +1356,7 @@ module.exports = {
     {
       name: 'ephemeral-branch-autorebase',
       script: 'scripts/ephemeral-branch-autorebase.js',
-      cron_restart: '*/15 * * * *',
+      cron_restart: '*/10 * * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1356,7 +1367,7 @@ module.exports = {
     {
       name: 'exponential-agent-factory-proliferation',
       script: 'scripts/exponential-agent-factory-proliferation.js',
-      cron_restart: '*/10 * * * *',
+      cron_restart: '*/5 * * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1367,7 +1378,7 @@ module.exports = {
     {
       name: 'exponential-ai-delegation',
       script: 'scripts/exponential-ai-delegation.js',
-      cron_restart: '*/5 * * * *',
+      cron_restart: '0 2 * * 0',
       autorestart: false,
       watch: false,
       env: {
@@ -1378,7 +1389,7 @@ module.exports = {
     {
       name: 'external-links',
       script: 'scripts/external-links.js',
-      cron_restart: '0 2 * * 0',
+      cron_restart: '0 2 * * 1',
       autorestart: false,
       watch: false,
       env: {
@@ -1389,7 +1400,7 @@ module.exports = {
     {
       name: 'fast-auto-push-to-main',
       script: 'scripts/fast-auto-push-to-main.js',
-      cron_restart: '0 2 * * 1',
+      cron_restart: '0 2 * * 2',
       autorestart: false,
       watch: false,
       env: {
@@ -1400,7 +1411,7 @@ module.exports = {
     {
       name: 'fast-lint-sync',
       script: 'scripts/fast-lint-sync.js',
-      cron_restart: '0 2 * * 2',
+      cron_restart: '0 2 * * 3',
       autorestart: false,
       watch: false,
       env: {
@@ -1411,7 +1422,7 @@ module.exports = {
     {
       name: 'front-scheduler',
       script: 'scripts/front-scheduler.js',
-      cron_restart: '0 2 * * 3',
+      cron_restart: '0 2 * * 4',
       autorestart: false,
       watch: false,
       env: {
@@ -1422,7 +1433,7 @@ module.exports = {
     {
       name: 'frontend-sync-continuous',
       script: 'scripts/frontend-sync-continuous.js',
-      cron_restart: '0 2 * * 4',
+      cron_restart: '0 2 * * 5',
       autorestart: false,
       watch: false,
       env: {
@@ -1433,7 +1444,7 @@ module.exports = {
     {
       name: 'git-health',
       script: 'scripts/git-health.js',
-      cron_restart: '0 2 * * 5',
+      cron_restart: '0 2 * * 6',
       autorestart: false,
       watch: false,
       env: {
@@ -1444,7 +1455,7 @@ module.exports = {
     {
       name: 'git-ultrafast-sync',
       script: 'scripts/git-ultrafast-sync.js',
-      cron_restart: '0 2 * * 6',
+      cron_restart: '0 */6 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1455,7 +1466,7 @@ module.exports = {
     {
       name: 'gitleaks',
       script: 'scripts/gitleaks.js',
-      cron_restart: '0 */6 * * *',
+      cron_restart: '0 */4 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1466,7 +1477,7 @@ module.exports = {
     {
       name: 'guardian-scheduler',
       script: 'scripts/guardian-scheduler.js',
-      cron_restart: '0 */4 * * *',
+      cron_restart: '0 */2 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1477,7 +1488,7 @@ module.exports = {
     {
       name: 'homepage-auto-advertiser',
       script: 'scripts/homepage-auto-advertiser.js',
-      cron_restart: '0 */2 * * *',
+      cron_restart: '0 * * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1488,7 +1499,7 @@ module.exports = {
     {
       name: 'homepage-auto-update',
       script: 'scripts/homepage-auto-update.js',
-      cron_restart: '0 * * * *',
+      cron_restart: '0 6 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1499,7 +1510,7 @@ module.exports = {
     {
       name: 'infinite-improvement-loop',
       script: 'scripts/infinite-improvement-loop.js',
-      cron_restart: '0 6 * * *',
+      cron_restart: '0 8 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1510,7 +1521,7 @@ module.exports = {
     {
       name: 'instagram-marketing',
       script: 'scripts/instagram-marketing.js',
-      cron_restart: '0 8 * * *',
+      cron_restart: '0 10 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1521,7 +1532,7 @@ module.exports = {
     {
       name: 'instagram-six-hourly',
       script: 'scripts/instagram-six-hourly.js',
-      cron_restart: '0 10 * * *',
+      cron_restart: '0 12 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1532,7 +1543,7 @@ module.exports = {
     {
       name: 'intelligent-content-generation',
       script: 'scripts/intelligent-content-generation.js',
-      cron_restart: '0 12 * * *',
+      cron_restart: '0 14 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1543,7 +1554,7 @@ module.exports = {
     {
       name: 'knowledge-graph-radar',
       script: 'scripts/knowledge-graph-radar.js',
-      cron_restart: '0 14 * * *',
+      cron_restart: '0 16 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1554,7 +1565,7 @@ module.exports = {
     {
       name: 'labeler',
       script: 'scripts/labeler.js',
-      cron_restart: '0 16 * * *',
+      cron_restart: '0 18 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1565,7 +1576,7 @@ module.exports = {
     {
       name: 'lighthouse-budgets',
       script: 'scripts/lighthouse-budgets.js',
-      cron_restart: '0 18 * * *',
+      cron_restart: '0 20 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1576,7 +1587,7 @@ module.exports = {
     {
       name: 'lighthouse-live',
       script: 'scripts/lighthouse-live.js',
-      cron_restart: '0 20 * * *',
+      cron_restart: '0 22 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1587,7 +1598,7 @@ module.exports = {
     {
       name: 'link-auto-fix',
       script: 'scripts/link-auto-fix.js',
-      cron_restart: '0 22 * * *',
+      cron_restart: '0 0 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1598,7 +1609,7 @@ module.exports = {
     {
       name: 'link-scan-hourly',
       script: 'scripts/link-scan-hourly.js',
-      cron_restart: '0 0 * * *',
+      cron_restart: '0 4 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1609,7 +1620,7 @@ module.exports = {
     {
       name: 'linkedin-marketing',
       script: 'scripts/linkedin-marketing.js',
-      cron_restart: '0 4 * * *',
+      cron_restart: '*/15 * * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1620,7 +1631,7 @@ module.exports = {
     {
       name: 'linkedin-pro',
       script: 'scripts/linkedin-pro.js',
-      cron_restart: '*/15 * * * *',
+      cron_restart: '*/10 * * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1631,7 +1642,7 @@ module.exports = {
     {
       name: 'maintenance',
       script: 'scripts/maintenance.js',
-      cron_restart: '*/10 * * * *',
+      cron_restart: '*/5 * * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1642,7 +1653,7 @@ module.exports = {
     {
       name: 'marketing-daily',
       script: 'scripts/marketing-daily.js',
-      cron_restart: '*/5 * * * *',
+      cron_restart: '0 2 * * 0',
       autorestart: false,
       watch: false,
       env: {
@@ -1653,7 +1664,7 @@ module.exports = {
     {
       name: 'marketing-sync',
       script: 'scripts/marketing-sync.js',
-      cron_restart: '0 2 * * 0',
+      cron_restart: '0 2 * * 1',
       autorestart: false,
       watch: false,
       env: {
@@ -1664,7 +1675,7 @@ module.exports = {
     {
       name: 'media-optimizer',
       script: 'scripts/media-optimizer.js',
-      cron_restart: '0 2 * * 1',
+      cron_restart: '0 2 * * 2',
       autorestart: false,
       watch: false,
       env: {
@@ -1675,7 +1686,7 @@ module.exports = {
     {
       name: 'merge-conflict-guard',
       script: 'scripts/merge-conflict-guard.js',
-      cron_restart: '0 2 * * 2',
+      cron_restart: '0 2 * * 3',
       autorestart: false,
       watch: false,
       env: {
@@ -1686,7 +1697,7 @@ module.exports = {
     {
       name: 'monetization-continuous',
       script: 'scripts/monetization-continuous.js',
-      cron_restart: '0 2 * * 3',
+      cron_restart: '0 2 * * 4',
       autorestart: false,
       watch: false,
       env: {
@@ -1697,7 +1708,7 @@ module.exports = {
     {
       name: 'monetization-daily',
       script: 'scripts/monetization-daily.js',
-      cron_restart: '0 2 * * 4',
+      cron_restart: '0 2 * * 5',
       autorestart: false,
       watch: false,
       env: {
@@ -1708,7 +1719,7 @@ module.exports = {
     {
       name: 'monetization',
       script: 'scripts/monetization.js',
-      cron_restart: '0 2 * * 5',
+      cron_restart: '0 2 * * 6',
       autorestart: false,
       watch: false,
       env: {
@@ -1719,7 +1730,7 @@ module.exports = {
     {
       name: 'netlify-auto-healer',
       script: 'scripts/netlify-auto-healer.js',
-      cron_restart: '0 2 * * 6',
+      cron_restart: '0 */6 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1730,7 +1741,7 @@ module.exports = {
     {
       name: 'netlify-automation',
       script: 'scripts/netlify-automation.js',
-      cron_restart: '0 */6 * * *',
+      cron_restart: '0 */4 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1741,7 +1752,7 @@ module.exports = {
     {
       name: 'netlify-config',
       script: 'scripts/netlify-config.js',
-      cron_restart: '0 */4 * * *',
+      cron_restart: '0 */2 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1752,7 +1763,7 @@ module.exports = {
     {
       name: 'netlify-functions-trigger',
       script: 'scripts/netlify-functions-trigger.js',
-      cron_restart: '0 */2 * * *',
+      cron_restart: '0 * * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1763,7 +1774,7 @@ module.exports = {
     {
       name: 'netlify-monitor',
       script: 'scripts/netlify-monitor.js',
-      cron_restart: '0 * * * *',
+      cron_restart: '0 6 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1774,7 +1785,7 @@ module.exports = {
     {
       name: 'og-image-refresh',
       script: 'scripts/og-image-refresh.js',
-      cron_restart: '0 6 * * *',
+      cron_restart: '0 8 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1785,7 +1796,7 @@ module.exports = {
     {
       name: 'og-image-update',
       script: 'scripts/og-image-update.js',
-      cron_restart: '0 8 * * *',
+      cron_restart: '0 10 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1796,7 +1807,7 @@ module.exports = {
     {
       name: 'optimize-images',
       script: 'scripts/optimize-images.js',
-      cron_restart: '0 10 * * *',
+      cron_restart: '0 12 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1807,7 +1818,7 @@ module.exports = {
     {
       name: 'pa11y',
       script: 'scripts/pa11y.js',
-      cron_restart: '0 12 * * *',
+      cron_restart: '0 14 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1818,7 +1829,7 @@ module.exports = {
     {
       name: 'performance-audit',
       script: 'scripts/performance-audit.js',
-      cron_restart: '0 14 * * *',
+      cron_restart: '0 16 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1829,7 +1840,7 @@ module.exports = {
     {
       name: 'performance-monitoring',
       script: 'scripts/performance-monitoring.js',
-      cron_restart: '0 16 * * *',
+      cron_restart: '0 18 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1840,7 +1851,7 @@ module.exports = {
     {
       name: 'performance-weekly',
       script: 'scripts/performance-weekly.js',
-      cron_restart: '0 18 * * *',
+      cron_restart: '0 20 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1851,7 +1862,7 @@ module.exports = {
     {
       name: 'pin-actions-weekly',
       script: 'scripts/pin-actions-weekly.js',
-      cron_restart: '0 20 * * *',
+      cron_restart: '0 22 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1862,7 +1873,7 @@ module.exports = {
     {
       name: 'playwright-smoke',
       script: 'scripts/playwright-smoke.js',
-      cron_restart: '0 22 * * *',
+      cron_restart: '0 0 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1873,7 +1884,7 @@ module.exports = {
     {
       name: 'pr-auto-curator',
       script: 'scripts/pr-auto-curator.js',
-      cron_restart: '0 0 * * *',
+      cron_restart: '0 4 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1884,7 +1895,7 @@ module.exports = {
     {
       name: 'pr-quality-gate',
       script: 'scripts/pr-quality-gate.js',
-      cron_restart: '0 4 * * *',
+      cron_restart: '*/15 * * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1895,7 +1906,7 @@ module.exports = {
     {
       name: 'pr-size-labeler',
       script: 'scripts/pr-size-labeler.js',
-      cron_restart: '*/15 * * * *',
+      cron_restart: '*/10 * * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1906,7 +1917,7 @@ module.exports = {
     {
       name: 'pr-smoke',
       script: 'scripts/pr-smoke.js',
-      cron_restart: '*/10 * * * *',
+      cron_restart: '*/5 * * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -1917,7 +1928,7 @@ module.exports = {
     {
       name: 'pr-update-with-main',
       script: 'scripts/pr-update-with-main.js',
-      cron_restart: '*/5 * * * *',
+      cron_restart: '0 2 * * 0',
       autorestart: false,
       watch: false,
       env: {
@@ -1928,7 +1939,7 @@ module.exports = {
     {
       name: 'rapid-git-sync',
       script: 'scripts/rapid-git-sync.js',
-      cron_restart: '0 2 * * 0',
+      cron_restart: '0 2 * * 1',
       autorestart: false,
       watch: false,
       env: {
@@ -1939,7 +1950,7 @@ module.exports = {
     {
       name: 'rapid-sync',
       script: 'scripts/rapid-sync.js',
-      cron_restart: '0 2 * * 1',
+      cron_restart: '0 2 * * 2',
       autorestart: false,
       watch: false,
       env: {
@@ -1950,7 +1961,7 @@ module.exports = {
     {
       name: 'readme-auto-advertiser',
       script: 'scripts/readme-auto-advertiser.js',
-      cron_restart: '0 2 * * 2',
+      cron_restart: '0 2 * * 3',
       autorestart: false,
       watch: false,
       env: {
@@ -1961,7 +1972,7 @@ module.exports = {
     {
       name: 'readme-autogen',
       script: 'scripts/readme-autogen.js',
-      cron_restart: '0 2 * * 3',
+      cron_restart: '0 2 * * 4',
       autorestart: false,
       watch: false,
       env: {
@@ -1972,7 +1983,7 @@ module.exports = {
     {
       name: 'release-deploy',
       script: 'scripts/release-deploy.js',
-      cron_restart: '0 2 * * 4',
+      cron_restart: '0 2 * * 5',
       autorestart: false,
       watch: false,
       env: {
@@ -1983,7 +1994,7 @@ module.exports = {
     {
       name: 'release-drafter',
       script: 'scripts/release-drafter.js',
-      cron_restart: '0 2 * * 5',
+      cron_restart: '0 2 * * 6',
       autorestart: false,
       watch: false,
       env: {
@@ -1994,7 +2005,7 @@ module.exports = {
     {
       name: 'release',
       script: 'scripts/release.js',
-      cron_restart: '0 2 * * 6',
+      cron_restart: '0 */6 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2005,7 +2016,7 @@ module.exports = {
     {
       name: 'repo-knowledge-graph',
       script: 'scripts/repo-knowledge-graph.js',
-      cron_restart: '0 */6 * * *',
+      cron_restart: '0 */4 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2016,7 +2027,7 @@ module.exports = {
     {
       name: 'repo-radar',
       script: 'scripts/repo-radar.js',
-      cron_restart: '0 */4 * * *',
+      cron_restart: '0 */2 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2027,7 +2038,7 @@ module.exports = {
     {
       name: 'responsive-content',
       script: 'scripts/responsive-content.js',
-      cron_restart: '0 */2 * * *',
+      cron_restart: '0 * * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2038,7 +2049,7 @@ module.exports = {
     {
       name: 'revenue-ideas-daily',
       script: 'scripts/revenue-ideas-daily.js',
-      cron_restart: '0 * * * *',
+      cron_restart: '0 6 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2049,7 +2060,7 @@ module.exports = {
     {
       name: 'search-index-autogen',
       script: 'scripts/search-index-autogen.js',
-      cron_restart: '0 6 * * *',
+      cron_restart: '0 8 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2060,7 +2071,7 @@ module.exports = {
     {
       name: 'security-audit',
       script: 'scripts/security-audit.js',
-      cron_restart: '0 8 * * *',
+      cron_restart: '0 10 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2071,7 +2082,7 @@ module.exports = {
     {
       name: 'security-auto-heal',
       script: 'scripts/security-auto-heal.js',
-      cron_restart: '0 10 * * *',
+      cron_restart: '0 12 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2082,7 +2093,7 @@ module.exports = {
     {
       name: 'security-gates',
       script: 'scripts/security-gates.js',
-      cron_restart: '0 12 * * *',
+      cron_restart: '0 14 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2093,7 +2104,7 @@ module.exports = {
     {
       name: 'security-scan',
       script: 'scripts/security-scan.js',
-      cron_restart: '0 14 * * *',
+      cron_restart: '0 16 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2104,7 +2115,7 @@ module.exports = {
     {
       name: 'security-weekly',
       script: 'scripts/security-weekly.js',
-      cron_restart: '0 16 * * *',
+      cron_restart: '0 18 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2115,7 +2126,7 @@ module.exports = {
     {
       name: 'security',
       script: 'scripts/security.js',
-      cron_restart: '0 18 * * *',
+      cron_restart: '0 20 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2126,7 +2137,7 @@ module.exports = {
     {
       name: 'self-healing-build',
       script: 'scripts/self-healing-build.js',
-      cron_restart: '0 20 * * *',
+      cron_restart: '0 22 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2137,7 +2148,7 @@ module.exports = {
     {
       name: 'self-replicating-factory-manager',
       script: 'scripts/self-replicating-factory-manager.js',
-      cron_restart: '0 22 * * *',
+      cron_restart: '0 0 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2148,7 +2159,7 @@ module.exports = {
     {
       name: 'seo-audit',
       script: 'scripts/seo-audit.js',
-      cron_restart: '0 0 * * *',
+      cron_restart: '0 4 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2159,7 +2170,7 @@ module.exports = {
     {
       name: 'seo-validator',
       script: 'scripts/seo-validator.js',
-      cron_restart: '0 4 * * *',
+      cron_restart: '*/15 * * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2170,7 +2181,7 @@ module.exports = {
     {
       name: 'site-health-guardian',
       script: 'scripts/site-health-guardian.js',
-      cron_restart: '*/15 * * * *',
+      cron_restart: '*/10 * * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2181,7 +2192,7 @@ module.exports = {
     {
       name: 'site-link',
       script: 'scripts/site-link.js',
-      cron_restart: '*/10 * * * *',
+      cron_restart: '*/5 * * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2192,7 +2203,7 @@ module.exports = {
     {
       name: 'sitemap-and-search',
       script: 'scripts/sitemap-and-search.js',
-      cron_restart: '*/5 * * * *',
+      cron_restart: '0 2 * * 0',
       autorestart: false,
       watch: false,
       env: {
@@ -2203,7 +2214,7 @@ module.exports = {
     {
       name: 'sitemap-auto-commit',
       script: 'scripts/sitemap-auto-commit.js',
-      cron_restart: '0 2 * * 0',
+      cron_restart: '0 2 * * 1',
       autorestart: false,
       watch: false,
       env: {
@@ -2214,7 +2225,7 @@ module.exports = {
     {
       name: 'sitemap-daily',
       script: 'scripts/sitemap-daily.js',
-      cron_restart: '0 2 * * 1',
+      cron_restart: '0 2 * * 2',
       autorestart: false,
       watch: false,
       env: {
@@ -2225,7 +2236,7 @@ module.exports = {
     {
       name: 'stale',
       script: 'scripts/stale.js',
-      cron_restart: '0 2 * * 2',
+      cron_restart: '0 2 * * 3',
       autorestart: false,
       watch: false,
       env: {
@@ -2236,7 +2247,7 @@ module.exports = {
     {
       name: 'sync-health',
       script: 'scripts/sync-health.js',
-      cron_restart: '0 2 * * 3',
+      cron_restart: '0 2 * * 4',
       autorestart: false,
       watch: false,
       env: {
@@ -2247,7 +2258,7 @@ module.exports = {
     {
       name: 'test-auth',
       script: 'scripts/test-auth.js',
-      cron_restart: '0 2 * * 4',
+      cron_restart: '0 2 * * 5',
       autorestart: false,
       watch: false,
       env: {
@@ -2258,7 +2269,7 @@ module.exports = {
     {
       name: 'test-suite',
       script: 'scripts/test-suite.js',
-      cron_restart: '0 2 * * 5',
+      cron_restart: '0 2 * * 6',
       autorestart: false,
       watch: false,
       env: {
@@ -2269,7 +2280,7 @@ module.exports = {
     {
       name: 'test',
       script: 'scripts/test.js',
-      cron_restart: '0 2 * * 6',
+      cron_restart: '0 */6 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2280,7 +2291,7 @@ module.exports = {
     {
       name: 'todo-issue-sync',
       script: 'scripts/todo-issue-sync.js',
-      cron_restart: '0 */6 * * *',
+      cron_restart: '0 */4 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2291,7 +2302,7 @@ module.exports = {
     {
       name: 'topics-and-clusters',
       script: 'scripts/topics-and-clusters.js',
-      cron_restart: '0 */4 * * *',
+      cron_restart: '0 */2 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2302,7 +2313,7 @@ module.exports = {
     {
       name: 'ui-evolution-schedule',
       script: 'scripts/ui-evolution-schedule.js',
-      cron_restart: '0 */2 * * *',
+      cron_restart: '0 * * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2313,7 +2324,7 @@ module.exports = {
     {
       name: 'ui-evolution-weekly-beautify',
       script: 'scripts/ui-evolution-weekly-beautify.js',
-      cron_restart: '0 * * * *',
+      cron_restart: '0 6 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2324,7 +2335,7 @@ module.exports = {
     {
       name: 'ultra-rapid-sync',
       script: 'scripts/ultra-rapid-sync.js',
-      cron_restart: '0 6 * * *',
+      cron_restart: '0 8 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2335,7 +2346,7 @@ module.exports = {
     {
       name: 'unused-deps-cleaner',
       script: 'scripts/unused-deps-cleaner.js',
-      cron_restart: '0 8 * * *',
+      cron_restart: '0 10 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2346,7 +2357,7 @@ module.exports = {
     {
       name: 'unused-exports-report',
       script: 'scripts/unused-exports-report.js',
-      cron_restart: '0 10 * * *',
+      cron_restart: '0 12 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2357,7 +2368,7 @@ module.exports = {
     {
       name: 'variation',
       script: 'scripts/variation.js',
-      cron_restart: '0 12 * * *',
+      cron_restart: '0 14 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2368,7 +2379,7 @@ module.exports = {
     {
       name: 'venture',
       script: 'scripts/venture.js',
-      cron_restart: '0 14 * * *',
+      cron_restart: '0 16 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2379,7 +2390,7 @@ module.exports = {
     {
       name: 'workflow-auto-healer',
       script: 'scripts/workflow-auto-healer.js',
-      cron_restart: '0 16 * * *',
+      cron_restart: '0 18 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2390,7 +2401,7 @@ module.exports = {
     {
       name: 'workflow-health-monitor',
       script: 'scripts/workflow-health-monitor.js',
-      cron_restart: '0 18 * * *',
+      cron_restart: '0 20 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2401,7 +2412,7 @@ module.exports = {
     {
       name: 'workflow-manager',
       script: 'scripts/workflow-manager.js',
-      cron_restart: '0 20 * * *',
+      cron_restart: '0 22 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2412,7 +2423,7 @@ module.exports = {
     {
       name: 'workflow-radar',
       script: 'scripts/workflow-radar.js',
-      cron_restart: '0 22 * * *',
+      cron_restart: '0 0 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2423,7 +2434,7 @@ module.exports = {
     {
       name: 'workflow-supervisor',
       script: 'scripts/workflow-supervisor.js',
-      cron_restart: '0 0 * * *',
+      cron_restart: '0 4 * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2434,7 +2445,7 @@ module.exports = {
     {
       name: 'workflow-validator',
       script: 'scripts/workflow-validator.js',
-      cron_restart: '0 4 * * *',
+      cron_restart: '*/15 * * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2445,7 +2456,7 @@ module.exports = {
     {
       name: 'workflow-watchdog',
       script: 'scripts/workflow-watchdog.js',
-      cron_restart: '*/15 * * * *',
+      cron_restart: '*/10 * * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2456,7 +2467,7 @@ module.exports = {
     {
       name: 'yaml-auto-fixer-simple',
       script: 'scripts/yaml-auto-fixer-simple.js',
-      cron_restart: '*/10 * * * *',
+      cron_restart: '*/5 * * * *',
       autorestart: false,
       watch: false,
       env: {
@@ -2467,7 +2478,7 @@ module.exports = {
     {
       name: 'yaml-auto-fixer',
       script: 'scripts/yaml-auto-fixer.js',
-      cron_restart: '*/5 * * * *',
+      cron_restart: '0 2 * * 0',
       autorestart: false,
       watch: false,
       env: {
@@ -2478,7 +2489,7 @@ module.exports = {
     {
       name: 'yaml-validator',
       script: 'scripts/yaml-validator.js',
-      cron_restart: '0 2 * * 0',
+      cron_restart: '0 2 * * 1',
       autorestart: false,
       watch: false,
       env: {
