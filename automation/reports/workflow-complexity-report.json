@@ -1,18 +1,18 @@
 {
-  "timestamp": "2025-08-17T21:07:29.259Z",
+  "timestamp": "2025-08-18T03:04:40.909Z",
   "summary": {
-    "totalWorkflows": 223,
+    "totalWorkflows": 224,
     "complexityDistribution": {
       "very-high": 0,
       "high": 0,
-      "medium": 13,
-      "low": 210
+      "medium": 8,
+      "low": 216
     },
     "refactoringPriorities": {
       "critical": 0,
       "high": 0,
-      "medium": 13,
-      "low": 210
+      "medium": 8,
+      "low": 216
     }
   },
   "workflows": {
@@ -20,15 +20,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 37,
-        "jobCount": 1,
-        "stepCount": 4,
-        "conditionalCount": 2,
+        "totalLines": 44,
+        "jobCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 2,
-        "actionCount": 0
+        "secretCount": 0,
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -38,14 +38,14 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 45,
+        "totalLines": 44,
         "jobCount": 0,
         "stepCount": 5,
-        "conditionalCount": 0,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 1,
+        "secretCount": 0,
         "actionCount": 3
       },
       "refactoringPriority": "low",
@@ -56,15 +56,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 37,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 4,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -74,7 +74,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 41,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -92,7 +92,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 35,
+        "totalLines": 41,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -110,7 +110,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -128,7 +128,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -146,7 +146,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -164,7 +164,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 35,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -182,7 +182,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -200,7 +200,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -218,7 +218,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -236,7 +236,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -254,7 +254,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -272,7 +272,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -290,7 +290,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -308,7 +308,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -326,7 +326,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -344,7 +344,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 35,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -362,7 +362,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -380,7 +380,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -398,7 +398,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -416,7 +416,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 35,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -434,7 +434,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -452,7 +452,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -470,7 +470,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 35,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -488,7 +488,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -506,7 +506,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 35,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -524,7 +524,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -542,7 +542,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 35,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -560,7 +560,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -578,7 +578,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -596,15 +596,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 43,
-        "jobCount": 1,
+        "totalLines": 44,
+        "jobCount": 0,
         "stepCount": 5,
-        "conditionalCount": 0,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -614,15 +614,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 31,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 3,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -632,15 +632,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 50,
+        "totalLines": 44,
         "jobCount": 0,
         "stepCount": 5,
-        "conditionalCount": 0,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -650,15 +650,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 50,
+        "totalLines": 44,
         "jobCount": 0,
         "stepCount": 5,
-        "conditionalCount": 0,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -668,15 +668,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 50,
+        "totalLines": 44,
         "jobCount": 0,
         "stepCount": 5,
-        "conditionalCount": 0,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -686,15 +686,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 50,
+        "totalLines": 44,
         "jobCount": 0,
         "stepCount": 5,
-        "conditionalCount": 0,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -704,15 +704,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 50,
+        "totalLines": 44,
         "jobCount": 0,
         "stepCount": 5,
-        "conditionalCount": 0,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -722,15 +722,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 50,
+        "totalLines": 44,
         "jobCount": 0,
         "stepCount": 5,
-        "conditionalCount": 0,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -740,61 +740,79 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 33,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 3,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-trends-radar.yml"
     },
     "app-automation.yml": {
-      "complexityScore": 20,
+      "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 57,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 8,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 1,
-        "actionCount": 4
+        "secretCount": 0,
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/app-automation.yml"
     },
     "app-monitoring.yml": {
-      "complexityScore": 25,
+      "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 83,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 15,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 7
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/app-monitoring.yml"
     },
+    "auto-fix-workflows.yml": {
+      "complexityScore": 15,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 81,
+        "jobCount": 0,
+        "stepCount": 8,
+        "conditionalCount": 1,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 1,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/auto-fix-workflows.yml"
+    },
     "auto-fix.yml": {
       "complexityScore": 20,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 92,
+        "totalLines": 83,
         "jobCount": 0,
         "stepCount": 7,
         "conditionalCount": 2,
@@ -812,15 +830,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 33,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 3,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -830,68 +848,68 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 43,
-        "jobCount": 1,
+        "totalLines": 44,
+        "jobCount": 0,
         "stepCount": 5,
-        "conditionalCount": 0,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/auto-media-release.yml"
     },
     "auto-pr-automerge.yml": {
-      "complexityScore": 15,
+      "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 101,
-        "jobCount": 1,
+        "totalLines": 44,
+        "jobCount": 0,
         "stepCount": 5,
-        "conditionalCount": 2,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 4,
-        "actionCount": 2
+        "secretCount": 0,
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/auto-pr-automerge.yml"
     },
     "auto-pr-cursor-branches.yml": {
-      "complexityScore": 5,
+      "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 50,
-        "jobCount": 1,
-        "stepCount": 4,
-        "conditionalCount": 0,
+        "totalLines": 44,
+        "jobCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 2,
-        "actionCount": 4
+        "secretCount": 0,
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/auto-pr-cursor-branches.yml"
     },
     "auto-semver-release.yml": {
-      "complexityScore": 15,
+      "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 64,
-        "jobCount": 1,
-        "stepCount": 8,
-        "conditionalCount": 0,
+        "totalLines": 44,
+        "jobCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 1,
+        "secretCount": 0,
         "actionCount": 3
       },
       "refactoringPriority": "low",
@@ -902,7 +920,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -920,7 +938,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -938,7 +956,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -956,7 +974,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -974,7 +992,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -992,7 +1010,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1010,7 +1028,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1028,7 +1046,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1046,7 +1064,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1064,7 +1082,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1082,7 +1100,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1100,7 +1118,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1118,7 +1136,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1136,7 +1154,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1154,7 +1172,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1172,7 +1190,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1190,7 +1208,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1208,7 +1226,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1226,7 +1244,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1244,7 +1262,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1262,7 +1280,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1280,7 +1298,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1298,7 +1316,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1316,7 +1334,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1334,7 +1352,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1352,8 +1370,8 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 41,
-        "jobCount": 1,
+        "totalLines": 40,
+        "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
         "matrixCount": 0,
@@ -1370,7 +1388,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1388,7 +1406,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1406,7 +1424,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1424,7 +1442,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1442,7 +1460,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1460,7 +1478,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1478,7 +1496,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1496,7 +1514,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 35,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1514,7 +1532,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1532,7 +1550,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1550,7 +1568,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1568,7 +1586,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1586,7 +1604,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1601,28 +1619,10 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci-quality.yml"
     },
     "ci-self-heal.yml": {
-      "complexityScore": 10,
-      "complexityLevel": "low",
-      "metrics": {
-        "totalLines": 55,
-        "jobCount": 0,
-        "stepCount": 5,
-        "conditionalCount": 1,
-        "matrixCount": 0,
-        "dependencyCount": 0,
-        "environmentCount": 0,
-        "secretCount": 0,
-        "actionCount": 2
-      },
-      "refactoringPriority": "low",
-      "status": "active",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci-self-heal.yml"
-    },
-    "ci.yml": {
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1634,13 +1634,31 @@
       },
       "refactoringPriority": "low",
       "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci-self-heal.yml"
+    },
+    "ci.yml": {
+      "complexityScore": 30,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 105,
+        "jobCount": 0,
+        "stepCount": 16,
+        "conditionalCount": 2,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 5
+      },
+      "refactoringPriority": "medium",
+      "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci.yml"
     },
     "cleanup-merged-branches.yml": {
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1658,7 +1676,7 @@
       "complexityScore": 15,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 83,
+        "totalLines": 97,
         "jobCount": 0,
         "stepCount": 7,
         "conditionalCount": 0,
@@ -1676,15 +1694,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 47,
+        "totalLines": 44,
         "jobCount": 0,
         "stepCount": 5,
-        "conditionalCount": 0,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -1694,15 +1712,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 50,
+        "totalLines": 44,
         "jobCount": 0,
         "stepCount": 5,
-        "conditionalCount": 0,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -1712,15 +1730,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 31,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 3,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -1730,7 +1748,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1745,10 +1763,10 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cloud-deep-research.yml"
     },
     "cloud-maintenance.yml": {
-      "complexityScore": 15,
+      "complexityScore": 5,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 55,
+        "totalLines": 49,
         "jobCount": 0,
         "stepCount": 9,
         "conditionalCount": 0,
@@ -1766,8 +1784,8 @@
       "complexityScore": 20,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 69,
-        "jobCount": 1,
+        "totalLines": 65,
+        "jobCount": 0,
         "stepCount": 9,
         "conditionalCount": 0,
         "matrixCount": 0,
@@ -1784,7 +1802,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1802,7 +1820,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1820,7 +1838,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1838,7 +1856,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1856,7 +1874,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1874,7 +1892,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1888,11 +1906,29 @@
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/components-size-report.yml"
     },
+    "comprehensive-test.yml": {
+      "complexityScore": 30,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 120,
+        "jobCount": 0,
+        "stepCount": 20,
+        "conditionalCount": 1,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 7
+      },
+      "refactoringPriority": "medium",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/comprehensive-test.yml"
+    },
     "content-generation.yml": {
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1910,8 +1946,8 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 39,
-        "jobCount": 1,
+        "totalLines": 35,
+        "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
         "matrixCount": 0,
@@ -1928,7 +1964,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1946,7 +1982,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1964,7 +2000,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 37,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1982,7 +2018,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -2000,7 +2036,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 35,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -2018,9 +2054,9 @@
       "complexityScore": 30,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 110,
+        "totalLines": 103,
         "jobCount": 0,
-        "stepCount": 7,
+        "stepCount": 8,
         "conditionalCount": 3,
         "matrixCount": 0,
         "dependencyCount": 0,
@@ -2036,7 +2072,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 35,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -2051,20 +2087,20 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/dependency-auto-upgrade.yml"
     },
     "dependency-maintenance.yml": {
-      "complexityScore": 35,
-      "complexityLevel": "medium",
+      "complexityScore": 0,
+      "complexityLevel": "low",
       "metrics": {
-        "totalLines": 158,
+        "totalLines": 38,
         "jobCount": 0,
-        "stepCount": 16,
-        "conditionalCount": 3,
+        "stepCount": 5,
+        "conditionalCount": 0,
         "matrixCount": 0,
-        "dependencyCount": 2,
+        "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 5
+        "actionCount": 2
       },
-      "refactoringPriority": "medium",
+      "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/dependency-maintenance.yml"
     },
@@ -2072,7 +2108,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -2087,20 +2123,20 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/dependency-management.yml"
     },
     "deploy.yml": {
-      "complexityScore": 0,
-      "complexityLevel": "low",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 112,
         "jobCount": 0,
-        "stepCount": 4,
+        "stepCount": 11,
         "conditionalCount": 0,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 0,
-        "actionCount": 2
+        "secretCount": 2,
+        "actionCount": 5
       },
-      "refactoringPriority": "low",
+      "refactoringPriority": "medium",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/deploy.yml"
     },
@@ -2108,8 +2144,8 @@
       "complexityScore": 25,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 71,
-        "jobCount": 1,
+        "totalLines": 67,
+        "jobCount": 0,
         "stepCount": 6,
         "conditionalCount": 0,
         "matrixCount": 1,
@@ -2126,7 +2162,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 35,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -2144,7 +2180,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -2162,7 +2198,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -2180,7 +2216,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 35,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -2198,15 +2234,15 @@
       "complexityScore": 35,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 489,
+        "totalLines": 136,
         "jobCount": 0,
-        "stepCount": 13,
+        "stepCount": 9,
         "conditionalCount": 0,
-        "matrixCount": 0,
-        "dependencyCount": 0,
+        "matrixCount": 1,
+        "dependencyCount": 1,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 1
+        "actionCount": 4
       },
       "refactoringPriority": "medium",
       "status": "active",
@@ -2216,7 +2252,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 40,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -2234,7 +2270,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -2252,7 +2288,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 35,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -2270,7 +2306,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -2288,7 +2324,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -2324,8 +2360,8 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 37,
-        "jobCount": 1,
+        "totalLines": 29,
+        "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
         "matrixCount": 0,
@@ -2342,15 +2378,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 37,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 4,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -2360,7 +2396,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 40,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -2378,7 +2414,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -2396,15 +2432,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 37,
-        "jobCount": 1,
+        "totalLines": 44,
+        "jobCount": 0,
         "stepCount": 5,
-        "conditionalCount": 0,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -2414,15 +2450,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 43,
+        "totalLines": 44,
         "jobCount": 0,
         "stepCount": 5,
-        "conditionalCount": 0,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 1,
-        "actionCount": 2
+        "secretCount": 0,
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -2432,8 +2468,8 @@
       "complexityScore": 15,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 61,
-        "jobCount": 1,
+        "totalLines": 57,
+        "jobCount": 0,
         "stepCount": 8,
         "conditionalCount": 0,
         "matrixCount": 0,
@@ -2450,15 +2486,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 33,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 3,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -2468,8 +2504,8 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 48,
-        "jobCount": 1,
+        "totalLines": 44,
+        "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 1,
         "matrixCount": 0,
@@ -2483,18 +2519,18 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/instagram-six-hourly.yml"
     },
     "intelligent-content-generation.yml": {
-      "complexityScore": 15,
+      "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 76,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 7,
+        "stepCount": 5,
         "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 1,
-        "actionCount": 2
+        "secretCount": 0,
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -2504,15 +2540,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 37,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 4,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -2522,7 +2558,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -2540,15 +2576,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 37,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 4,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -2558,15 +2594,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 37,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 4,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -2576,15 +2612,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 36,
-        "jobCount": 1,
-        "stepCount": 4,
-        "conditionalCount": 0,
+        "totalLines": 44,
+        "jobCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 1
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -2595,14 +2631,14 @@
       "complexityLevel": "low",
       "metrics": {
         "totalLines": 44,
-        "jobCount": 1,
+        "jobCount": 0,
         "stepCount": 5,
-        "conditionalCount": 0,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -2612,15 +2648,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 33,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 3,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -2630,25 +2666,25 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 33,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 3,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/linkedin-pro.yml"
     },
     "maintenance.yml": {
-      "complexityScore": 30,
+      "complexityScore": 40,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 195,
+        "totalLines": 224,
         "jobCount": 0,
         "stepCount": 17,
         "conditionalCount": 1,
@@ -2666,8 +2702,8 @@
       "complexityScore": 5,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 45,
-        "jobCount": 1,
+        "totalLines": 41,
+        "jobCount": 0,
         "stepCount": 6,
         "conditionalCount": 0,
         "matrixCount": 0,
@@ -2684,15 +2720,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 33,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 3,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -2702,27 +2738,27 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 33,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 3,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/media-optimizer.yml"
     },
     "merge-conflict-guard.yml": {
-      "complexityScore": 15,
+      "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 67,
+        "totalLines": 45,
         "jobCount": 0,
-        "stepCount": 6,
+        "stepCount": 4,
         "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
@@ -2738,7 +2774,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 39,
+        "totalLines": 40,
         "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
@@ -2756,8 +2792,8 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 43,
-        "jobCount": 1,
+        "totalLines": 39,
+        "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
         "matrixCount": 0,
@@ -2774,7 +2810,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -2792,35 +2828,35 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 35,
-        "jobCount": 1,
-        "stepCount": 3,
+        "totalLines": 44,
+        "jobCount": 0,
+        "stepCount": 5,
         "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 4,
-        "actionCount": 1
+        "secretCount": 0,
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/netlify-auto-healer.yml"
     },
     "netlify-automation.yml": {
-      "complexityScore": 40,
-      "complexityLevel": "medium",
+      "complexityScore": 0,
+      "complexityLevel": "low",
       "metrics": {
-        "totalLines": 217,
-        "jobCount": 1,
-        "stepCount": 16,
+        "totalLines": 44,
+        "jobCount": 0,
+        "stepCount": 5,
         "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 6
+        "actionCount": 3
       },
-      "refactoringPriority": "medium",
+      "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/netlify-automation.yml"
     },
@@ -2828,15 +2864,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 37,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 4,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -2846,15 +2882,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 37,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 4,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -2864,8 +2900,8 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 44,
-        "jobCount": 1,
+        "totalLines": 40,
+        "jobCount": 0,
         "stepCount": 3,
         "conditionalCount": 1,
         "matrixCount": 0,
@@ -2882,15 +2918,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 33,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 3,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -2900,15 +2936,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 40,
-        "jobCount": 1,
-        "stepCount": 4,
-        "conditionalCount": 0,
+        "totalLines": 44,
+        "jobCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 1
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -2918,15 +2954,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 40,
-        "jobCount": 1,
-        "stepCount": 4,
-        "conditionalCount": 0,
+        "totalLines": 44,
+        "jobCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 1
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -2936,53 +2972,53 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 37,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 4,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/pa11y.yml"
     },
     "performance-audit.yml": {
-      "complexityScore": 10,
+      "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 52,
-        "jobCount": 1,
-        "stepCount": 3,
+        "totalLines": 44,
+        "jobCount": 0,
+        "stepCount": 5,
         "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 3,
-        "actionCount": 1
+        "secretCount": 0,
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/performance-audit.yml"
     },
     "performance-monitoring.yml": {
-      "complexityScore": 30,
-      "complexityLevel": "medium",
+      "complexityScore": 0,
+      "complexityLevel": "low",
       "metrics": {
-        "totalLines": 121,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 17,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 9
+        "actionCount": 3
       },
-      "refactoringPriority": "medium",
+      "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/performance-monitoring.yml"
     },
@@ -2990,7 +3026,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 35,
+        "totalLines": 38,
         "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
@@ -3008,33 +3044,33 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 50,
+        "totalLines": 44,
         "jobCount": 0,
         "stepCount": 5,
-        "conditionalCount": 0,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/pin-actions-weekly.yml"
     },
     "playwright-smoke.yml": {
-      "complexityScore": 0,
+      "complexityScore": 15,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 68,
         "jobCount": 0,
-        "stepCount": 4,
-        "conditionalCount": 0,
+        "stepCount": 9,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -3044,15 +3080,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 34,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 4,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -3062,15 +3098,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 37,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 4,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -3080,15 +3116,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 28,
-        "jobCount": 1,
-        "stepCount": 0,
-        "conditionalCount": 0,
+        "totalLines": 44,
+        "jobCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 1,
-        "actionCount": 0
+        "secretCount": 0,
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -3098,15 +3134,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 37,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 4,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -3116,44 +3152,44 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 50,
-        "jobCount": 1,
-        "stepCount": 3,
-        "conditionalCount": 0,
+        "totalLines": 44,
+        "jobCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 1
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/pr-update-with-main.yml"
     },
     "rapid-git-sync.yml": {
-      "complexityScore": 10,
+      "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 59,
+        "totalLines": 44,
         "jobCount": 0,
         "stepCount": 5,
-        "conditionalCount": 0,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/rapid-git-sync.yml"
     },
     "rapid-sync.yml": {
-      "complexityScore": 5,
+      "complexityScore": 15,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 49,
-        "jobCount": 1,
+        "totalLines": 55,
+        "jobCount": 0,
         "stepCount": 7,
         "conditionalCount": 0,
         "matrixCount": 0,
@@ -3170,15 +3206,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 31,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 3,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -3188,15 +3224,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 39,
-        "jobCount": 1,
+        "totalLines": 44,
+        "jobCount": 0,
         "stepCount": 5,
-        "conditionalCount": 0,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -3206,15 +3242,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 22,
-        "jobCount": 1,
-        "stepCount": 0,
-        "conditionalCount": 0,
+        "totalLines": 44,
+        "jobCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 1,
-        "actionCount": 0
+        "secretCount": 0,
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -3224,7 +3260,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -3242,15 +3278,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 43,
-        "jobCount": 1,
+        "totalLines": 44,
+        "jobCount": 0,
         "stepCount": 5,
-        "conditionalCount": 0,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -3260,15 +3296,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 43,
-        "jobCount": 1,
+        "totalLines": 44,
+        "jobCount": 0,
         "stepCount": 5,
-        "conditionalCount": 0,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -3278,15 +3314,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 33,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 3,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -3296,8 +3332,8 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 43,
-        "jobCount": 1,
+        "totalLines": 34,
+        "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
         "matrixCount": 0,
@@ -3314,8 +3350,8 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 39,
-        "jobCount": 1,
+        "totalLines": 49,
+        "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
         "matrixCount": 0,
@@ -3332,15 +3368,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 30,
-        "jobCount": 1,
-        "stepCount": 3,
+        "totalLines": 45,
+        "jobCount": 0,
+        "stepCount": 4,
         "conditionalCount": 0,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 1,
-        "actionCount": 1
+        "actionCount": 2
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -3350,9 +3386,9 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 33,
+        "totalLines": 42,
         "jobCount": 0,
-        "stepCount": 3,
+        "stepCount": 4,
         "conditionalCount": 0,
         "matrixCount": 0,
         "dependencyCount": 0,
@@ -3365,10 +3401,10 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/security-auto-heal.yml"
     },
     "security-gates.yml": {
-      "complexityScore": 0,
+      "complexityScore": 10,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 50,
+        "totalLines": 54,
         "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
@@ -3386,7 +3422,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 37,
+        "totalLines": 42,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -3401,11 +3437,11 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/security-scan.yml"
     },
     "security-weekly.yml": {
-      "complexityScore": 0,
+      "complexityScore": 10,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 46,
-        "jobCount": 1,
+        "totalLines": 56,
+        "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
         "matrixCount": 0,
@@ -3419,56 +3455,56 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/security-weekly.yml"
     },
     "security.yml": {
-      "complexityScore": 30,
-      "complexityLevel": "medium",
+      "complexityScore": 25,
+      "complexityLevel": "low",
       "metrics": {
-        "totalLines": 147,
+        "totalLines": 95,
         "jobCount": 0,
-        "stepCount": 15,
-        "conditionalCount": 2,
+        "stepCount": 12,
+        "conditionalCount": 1,
         "matrixCount": 0,
-        "dependencyCount": 1,
+        "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 1,
-        "actionCount": 8
+        "secretCount": 0,
+        "actionCount": 7
       },
-      "refactoringPriority": "medium",
+      "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/security.yml"
     },
     "self-healing-build.yml": {
-      "complexityScore": 5,
+      "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 48,
-        "jobCount": 1,
-        "stepCount": 6,
-        "conditionalCount": 2,
+        "totalLines": 44,
+        "jobCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 1,
-        "actionCount": 2
+        "secretCount": 0,
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/self-healing-build.yml"
     },
     "self-replicating-factory-manager.yml": {
-      "complexityScore": 30,
-      "complexityLevel": "medium",
+      "complexityScore": 0,
+      "complexityLevel": "low",
       "metrics": {
-        "totalLines": 531,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 8,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 1
+        "actionCount": 3
       },
-      "refactoringPriority": "medium",
+      "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/self-replicating-factory-manager.yml"
     },
@@ -3476,7 +3512,7 @@
       "complexityScore": 30,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 114,
+        "totalLines": 128,
         "jobCount": 0,
         "stepCount": 13,
         "conditionalCount": 4,
@@ -3494,15 +3530,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 33,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 3,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -3512,15 +3548,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 33,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 3,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -3530,15 +3566,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 33,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 3,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -3548,15 +3584,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 33,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 3,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -3566,26 +3602,8 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 36,
-        "jobCount": 1,
-        "stepCount": 4,
-        "conditionalCount": 0,
-        "matrixCount": 0,
-        "dependencyCount": 0,
-        "environmentCount": 0,
-        "secretCount": 0,
-        "actionCount": 1
-      },
-      "refactoringPriority": "low",
-      "status": "active",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/sitemap-auto-commit.yml"
-    },
-    "sitemap-daily.yml": {
-      "complexityScore": 0,
-      "complexityLevel": "low",
-      "metrics": {
-        "totalLines": 43,
-        "jobCount": 1,
+        "totalLines": 49,
+        "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
         "matrixCount": 0,
@@ -3596,39 +3614,39 @@
       },
       "refactoringPriority": "low",
       "status": "active",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/sitemap-daily.yml"
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/sitemap-auto-commit.yml"
     },
-    "smart-merge-agent.yml": {
-      "complexityScore": 25,
+    "sitemap-daily.yml": {
+      "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 161,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 9,
-        "conditionalCount": 4,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 1,
-        "actionCount": 2
+        "secretCount": 0,
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/smart-merge-agent.yml"
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/sitemap-daily.yml"
     },
     "stale.yml": {
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 43,
-        "jobCount": 1,
-        "stepCount": 1,
-        "conditionalCount": 0,
+        "totalLines": 44,
+        "jobCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 1,
-        "actionCount": 1
+        "secretCount": 0,
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -3638,7 +3656,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 39,
+        "totalLines": 43,
         "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
@@ -3656,15 +3674,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 37,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 4,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -3674,7 +3692,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 38,
+        "totalLines": 34,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -3689,18 +3707,18 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/test.yml"
     },
     "todo-issue-sync.yml": {
-      "complexityScore": 15,
+      "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 60,
-        "jobCount": 1,
-        "stepCount": 6,
-        "conditionalCount": 0,
+        "totalLines": 44,
+        "jobCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 1,
-        "actionCount": 2
+        "secretCount": 0,
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -3710,15 +3728,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 33,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 3,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -3728,8 +3746,8 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 43,
-        "jobCount": 1,
+        "totalLines": 39,
+        "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
         "matrixCount": 0,
@@ -3746,8 +3764,8 @@
       "complexityScore": 5,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 45,
-        "jobCount": 1,
+        "totalLines": 41,
+        "jobCount": 0,
         "stepCount": 6,
         "conditionalCount": 0,
         "matrixCount": 0,
@@ -3764,33 +3782,33 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 50,
+        "totalLines": 44,
         "jobCount": 0,
         "stepCount": 5,
-        "conditionalCount": 0,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-rapid-sync.yml"
     },
     "unused-deps-cleaner.yml": {
-      "complexityScore": 15,
+      "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 53,
-        "jobCount": 1,
-        "stepCount": 7,
-        "conditionalCount": 2,
+        "totalLines": 44,
+        "jobCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 1,
-        "actionCount": 2
+        "secretCount": 0,
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -3800,15 +3818,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 42,
-        "jobCount": 1,
+        "totalLines": 44,
+        "jobCount": 0,
         "stepCount": 5,
-        "conditionalCount": 0,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -3818,15 +3836,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 33,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 3,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -3836,51 +3854,51 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 33,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 3,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/venture.yml"
     },
     "workflow-auto-healer.yml": {
-      "complexityScore": 0,
+      "complexityScore": 15,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 50,
+        "totalLines": 79,
         "jobCount": 0,
-        "stepCount": 4,
-        "conditionalCount": 0,
+        "stepCount": 6,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/workflow-auto-healer.yml"
     },
     "workflow-health-monitor.yml": {
-      "complexityScore": 25,
+      "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 186,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 8,
-        "conditionalCount": 3,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -3890,8 +3908,8 @@
       "complexityScore": 40,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 148,
-        "jobCount": 1,
+        "totalLines": 141,
+        "jobCount": 0,
         "stepCount": 12,
         "conditionalCount": 4,
         "matrixCount": 0,
@@ -3908,123 +3926,123 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 33,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 3,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/workflow-radar.yml"
     },
     "workflow-supervisor.yml": {
-      "complexityScore": 15,
+      "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 109,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 1,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 1,
-        "actionCount": 1
+        "secretCount": 0,
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/workflow-supervisor.yml"
     },
     "workflow-validator.yml": {
-      "complexityScore": 30,
-      "complexityLevel": "medium",
-      "metrics": {
-        "totalLines": 236,
-        "jobCount": 0,
-        "stepCount": 7,
-        "conditionalCount": 2,
-        "matrixCount": 0,
-        "dependencyCount": 0,
-        "environmentCount": 0,
-        "secretCount": 0,
-        "actionCount": 3
-      },
-      "refactoringPriority": "medium",
-      "status": "active",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/workflow-validator.yml"
-    },
-    "workflow-watchdog.yml": {
-      "complexityScore": 15,
+      "complexityScore": 10,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 103,
-        "jobCount": 1,
-        "stepCount": 1,
+        "totalLines": 84,
+        "jobCount": 0,
+        "stepCount": 4,
         "conditionalCount": 0,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 1
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/workflow-validator.yml"
+    },
+    "workflow-watchdog.yml": {
+      "complexityScore": 0,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 44,
+        "jobCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/workflow-watchdog.yml"
     },
     "yaml-auto-fixer-simple.yml": {
-      "complexityScore": 35,
-      "complexityLevel": "medium",
+      "complexityScore": 0,
+      "complexityLevel": "low",
       "metrics": {
-        "totalLines": 405,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 8,
-        "conditionalCount": 4,
-        "matrixCount": 0,
-        "dependencyCount": 0,
-        "environmentCount": 0,
-        "secretCount": 1,
-        "actionCount": 3
-      },
-      "refactoringPriority": "medium",
-      "status": "active",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/yaml-auto-fixer-simple.yml"
-    },
-    "yaml-auto-fixer.yml": {
-      "complexityScore": 30,
-      "complexityLevel": "medium",
-      "metrics": {
-        "totalLines": 234,
-        "jobCount": 0,
-        "stepCount": 8,
+        "stepCount": 5,
         "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 1,
+        "secretCount": 0,
         "actionCount": 3
       },
-      "refactoringPriority": "medium",
+      "refactoringPriority": "low",
       "status": "active",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/yaml-auto-fixer.yml"
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/yaml-auto-fixer-simple.yml"
     },
-    "yaml-validator.yml": {
-      "complexityScore": 25,
+    "yaml-auto-fixer.yml": {
+      "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 117,
+        "totalLines": 44,
         "jobCount": 0,
-        "stepCount": 7,
-        "conditionalCount": 3,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/yaml-auto-fixer.yml"
+    },
+    "yaml-validator.yml": {
+      "complexityScore": 0,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 44,
+        "jobCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
