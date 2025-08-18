@@ -64,11 +64,9 @@ fix_workflow() {
     
     echo -e "${BLUE}🔍 Processing:${NC} $workflow_name"
     
-    # Check if file is empty or corrupted
+    # Check if file is empty or very small — do not delete automatically
     if [ ! -s "$workflow_file" ] || [ $(wc -c < "$workflow_file") -lt 100 ]; then
-        log_action "File appears corrupted or empty - removing" "remove"
-        rm "$workflow_file"
-        ((REMOVED_COUNT++))
+        log_action "File appears very small or empty - skipping deletion (manual review recommended)" "info"
         return
     fi
     
@@ -79,11 +77,9 @@ fix_workflow() {
         needs_fixing=true
     fi
     
-    # Check for missing basic structure
+    # Check for missing basic structure — leave for manual review instead of deleting
     if ! grep -q "^name:" "$workflow_file" || ! grep -q "^on:" "$workflow_file" || ! grep -q "^jobs:" "$workflow_file"; then
-        log_action "Missing basic workflow structure - removing corrupted file" "remove"
-        rm "$workflow_file"
-        ((REMOVED_COUNT++))
+        log_action "Missing basic workflow structure - leaving file untouched (no deletion)" "info"
         return
     fi
     
@@ -129,8 +125,8 @@ fix_workflow() {
     # Check for missing concurrency - only add if not present
     if ! grep -q "^concurrency:" "$workflow_file"; then
         log_action "Adding concurrency settings to prevent race conditions" "fix"
-        # Add concurrency after permissions with proper workflow name
-        sed -i.bak '/^permissions:/a\concurrency:\n  group: "'$workflow_name'-${{ github.ref }}"\n  cancel-in-progress: true' "$workflow_file"
+        # Add concurrency after permissions with static group (avoid github.ref to keep single-group)
+        sed -i.bak '/^permissions:/a\concurrency:\n  group: "'$workflow_name'"\n  cancel-in-progress: true' "$workflow_file"
         needs_fixing=true
     fi
     
@@ -189,7 +185,7 @@ permissions:
   actions: read
 
 concurrency:
-  group: "$workflow_name-\${{ github.ref }}"
+  group: "$workflow_name"
   cancel-in-progress: true
 
 jobs:
@@ -215,9 +211,9 @@ jobs:
       - name: Execute workflow
         run: |
           echo "Workflow $workflow_name executed successfully"
-          echo "Timestamp: \$(date)"
-          echo "Repository: \${{ github.repository }}"
-          echo "Branch: \${{ github.ref }}"
+          echo "Timestamp: $(date)"
+          echo "Repository: \\${{ github.repository }}"
+          echo "Branch: \\${{ github.ref }}"
 EOF
 }
 
@@ -238,10 +234,9 @@ echo "🔧 Creating essential workflows..."
 echo ""
 
 ESSENTIAL_WORKFLOWS=(
-    "ci.yml"
+    # Avoid creating generic/flagged names like ci.yml or deploy.yml
     "test.yml"
     "security.yml"
-    "deploy.yml"
     "maintenance.yml"
 )
 
