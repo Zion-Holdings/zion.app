@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T03:40:01.137Z",
-  "pagesScanned": 8563,
+  "generatedAt": "2025-08-18T03:41:01.068Z",
+  "pagesScanned": 8566,
   "items": [
     {
       "route": "/404",
@@ -36246,6 +36246,16 @@
       "suggestion": {
         "title": "Guide: AI QA & Eval",
         "description": "Guide: AI QA & Eval — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18-0340",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Checklist: Agent Ops",
+        "description": "Checklist: Agent Ops — auto-suggested description"
       }
     },
     {
@@ -85501,14 +85511,24 @@
     {
       "route": "/reports/updates/update-2025-08-18-0040",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 00:40",
+        "description": "Autonomous Update — 2025-08-18 00:40 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0041",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 00:40",
-        "description": "Autonomous Update — 2025-08-18 00:40 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-18 00:41",
+        "description": "Autonomous Update — 2025-08-18 00:41 — auto-suggested description"
       }
     },
     {
@@ -85539,6 +85559,16 @@
       "suggestion": {
         "title": "Autonomous Performance Tuning Guide — AI Service Design (2025-08-18 03:30 UTC)",
         "description": "Autonomous Performance Tuning Guide — AI Service Design (2025-08-18 03:30 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0340",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Performance Tuning Guide — Evaluation & Safety (2025-08-18 03:40 UTC)",
+        "description": "Autonomous Performance Tuning Guide — Evaluation & Safety (2025-08-18 03:40 UTC) — auto-suggested description"
       }
     },
     {

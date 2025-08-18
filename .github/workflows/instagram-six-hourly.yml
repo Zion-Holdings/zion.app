@@ -7,6 +7,11 @@ on:
 permissions:
   contents: read
   actions: read
+
+concurrency:
+  group: instagram-marketing
+  cancel-in-progress: false
+
 jobs:
   instagram:
     runs-on: ubuntu-latest
