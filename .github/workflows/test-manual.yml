@@ -1,0 +1,37 @@
+---
+name: Manual Test Workflow
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [ cursor/run-and-fix-github-actions-workflows-f9fe ]
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  test:
+    name: Test Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      
+      - name: Run type check
+        run: npm run type-check
+      
+      - name: Run linting
+        run: npm run lint -- --max-warnings 100
+      
+      - name: Test completion
+        run: echo "✅ Manual test workflow completed successfully!"
