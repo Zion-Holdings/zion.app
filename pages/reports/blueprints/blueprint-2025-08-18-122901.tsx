@@ -21,3 +21,9 @@ export default function Page(){
 
 
 
+
+<Link href="/reports/blueprints/blueprint-2025-08-18-122931" className="internal-link">Related Content</Link>
+
+<Link href="/reports/blueprints/blueprint-2025-08-18-122952" className="internal-link">Related Content</Link>
+
+<Link href="/reports/blueprints/blueprint-2025-08-18-123006" className="internal-link">Related Content</Link>

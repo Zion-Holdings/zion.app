@@ -305,3 +305,5 @@ export default function AboutPage() {
     </div>
   );
 }
+
+<a href="https://linkedin.com/company/zion-tech-group" target="_blank" rel="noopener noreferrer" className="external-link">Company Profile</a>

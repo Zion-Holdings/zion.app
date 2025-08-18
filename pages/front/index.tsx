@@ -22,3 +22,5 @@ export default function FrontIndexRedirect() {
 }
 
 // Markers intentionally omitted here; front content is managed at pages/main/front/index.tsx
+
+<Link href="/main/front" className="internal-link">Related Content</Link>

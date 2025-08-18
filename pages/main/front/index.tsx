@@ -319,3 +319,5 @@ export default function FrontIndex() {
     </div>
   );
 }
+
+<Link href="/front" className="internal-link">Related Content</Link>
