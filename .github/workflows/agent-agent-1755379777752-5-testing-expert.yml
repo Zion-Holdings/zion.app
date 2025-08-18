@@ -26,9 +26,9 @@ jobs:
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
       - name: Run workflow
-        run: 'echo "Workflow Workflow completed successfully"
-
-        '
+        run: |
+          echo "Workflow Workflow completed successfully"
+          
 concurrency:
   group: agent-agent-1755379777752-5-testing-expert.yml-${{ github.ref }}
   cancel-in-progress: true
