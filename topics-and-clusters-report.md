@@ -1,19 +1,11 @@
 # topics-and-clusters Report
 
-<<<<<<< Updated upstream
-Generated: 2025-08-18T18:37:44.975Z
-=======
-Generated: 2025-08-18T18:37:08.140Z
->>>>>>> Stashed changes
+Generated: 2025-08-18T18:38:40.612Z
 
 ## Status
 - Task: topics-and-clusters
 - Status: Completed
-<<<<<<< Updated upstream
-- Timestamp: 2025-08-18T18:37:44.975Z
-=======
-- Timestamp: 2025-08-18T18:37:08.140Z
->>>>>>> Stashed changes
+- Timestamp: 2025-08-18T18:38:40.612Z
 
 ## Next Steps
 - Implement actual topics-and-clusters functionality
