@@ -7,7 +7,7 @@ on:
 
 permissions:
 concurrency:
-  group: "${{ github.workflow }}-${{ github.ref }}"
+  group: "${{ branch-cleanup }}-${{ github.ref }}"
   cancel-in-progress: true
   contents: write
   pull-requests: write

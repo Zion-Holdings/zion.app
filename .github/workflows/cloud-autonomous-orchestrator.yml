@@ -11,7 +11,7 @@ permissions:
   actions: read
 
 concurrency:
-  group: "${{ github.workflow }}-${{ github.ref }}"
+  group: "${{ cloud-autonomous-orchestrator }}-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:

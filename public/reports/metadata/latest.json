@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T05:30:01.301Z",
-  "pagesScanned": 8580,
+  "generatedAt": "2025-08-18T05:31:01.089Z",
+  "pagesScanned": 8583,
   "items": [
     {
       "route": "/404",
@@ -36246,6 +36246,16 @@
       "suggestion": {
         "title": "Pilot Plan: DevSecOps AI",
         "description": "Pilot Plan: DevSecOps AI — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18-0530",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Runbook: MLOps",
+        "description": "Runbook: MLOps — auto-suggested description"
       }
     },
     {
@@ -85671,14 +85681,24 @@
     {
       "route": "/reports/updates/update-2025-08-18-0230",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 02:30",
+        "description": "Autonomous Update — 2025-08-18 02:30 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0231",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 02:30",
-        "description": "Autonomous Update — 2025-08-18 02:30 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-18 02:31",
+        "description": "Autonomous Update — 2025-08-18 02:31 — auto-suggested description"
       }
     },
     {
@@ -85709,6 +85729,16 @@
       "suggestion": {
         "title": "Autonomous Capability Map — Evaluation & Safety (2025-08-18 05:20 UTC)",
         "description": "Autonomous Capability Map — Evaluation & Safety (2025-08-18 05:20 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0530",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Performance Tuning Guide — Cloud Cost Optimization (2025-08-18 05:30 UTC)",
+        "description": "Autonomous Performance Tuning Guide — Cloud Cost Optimization (2025-08-18 05:30 UTC) — auto-suggested description"
       }
     },
     {

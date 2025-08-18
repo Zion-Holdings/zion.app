@@ -12,7 +12,7 @@ permissions:
   actions: read
 
 concurrency:
-  group: "github.workflow-${{ github.ref }}"
+  group: "exponential-ai-delegation-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:

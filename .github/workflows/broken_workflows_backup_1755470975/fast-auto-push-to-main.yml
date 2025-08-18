@@ -7,7 +7,7 @@ on:
 
 permissions:
 concurrency:
-  group: "${{ github.workflow }}-${{ github.ref }}"
+  group: "${{ fast-auto-push-to-main }}-${{ github.ref }}"
   cancel-in-progress: true
   contents: write
   pull-requests: write

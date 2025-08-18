@@ -12,7 +12,7 @@ permissions:
   actions: read
 
 concurrency:
-  group: "github.workflow-${{ github.ref }}"
+  group: "secret-scan-gitleaks-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:
