@@ -1,6 +1,11 @@
 {
+<<<<<<< Updated upstream
   "generatedAt": "2025-08-18T18:37:37.602Z",
   "pagesScanned": 6333,
+=======
+  "generatedAt": "2025-08-18T18:37:08.988Z",
+  "pagesScanned": 6315,
+>>>>>>> Stashed changes
   "items": [
     {
       "route": "/404",
@@ -15353,7 +15358,14 @@
     {
       "route": "/reports/cases/ultra-1755542144623-zifjpk",
       "missing": [
+<<<<<<< Updated upstream
         "og:image"
+=======
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+>>>>>>> Stashed changes
       ],
       "suggestion": {
         "title": "Case Study: Real-time data processing Success",
@@ -15363,7 +15375,14 @@
     {
       "route": "/reports/cases/ultra-1755542212460-3uspp2",
       "missing": [
+<<<<<<< Updated upstream
         "og:image"
+=======
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+>>>>>>> Stashed changes
       ],
       "suggestion": {
         "title": "Case Study: Lightning deployment pipelines Success",
@@ -15373,7 +15392,14 @@
     {
       "route": "/reports/cases/ultra-1755542214333-misexn",
       "missing": [
+<<<<<<< Updated upstream
         "og:image"
+=======
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+>>>>>>> Stashed changes
       ],
       "suggestion": {
         "title": "Case Study: Rapid prototyping systems Success",
@@ -15383,6 +15409,7 @@
     {
       "route": "/reports/cases/ultra-1755542216529-44jaoo",
       "missing": [
+<<<<<<< Updated upstream
         "og:image"
       ],
       "suggestion": {
@@ -15413,6 +15440,8 @@
     {
       "route": "/reports/cases/ultra-1755542236963-kukpsz",
       "missing": [
+=======
+>>>>>>> Stashed changes
         "og:title",
         "og:description",
         "og:image",
@@ -15447,6 +15476,32 @@
       "suggestion": {
         "title": "Case Study: Ultra-fast testing frameworks Success",
         "description": "Case Study: Ultra-fast testing frameworks Success — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/ultra-1755542220961-v1viia",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Case Study: Real-time data processing Success",
+        "description": "Case Study: Real-time data processing Success — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/ultra-1755542225421-5xof39",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Case Study: Real-time data processing Success",
+        "description": "Case Study: Real-time data processing Success — auto-suggested description"
       }
     },
     {
@@ -23762,7 +23817,14 @@
     {
       "route": "/reports/guides/ultra-1755542144622-egiln8",
       "missing": [
+<<<<<<< Updated upstream
         "og:image"
+=======
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+>>>>>>> Stashed changes
       ],
       "suggestion": {
         "title": "Ultra-Fast Guide: Rapid prototyping systems",
@@ -23772,7 +23834,14 @@
     {
       "route": "/reports/guides/ultra-1755542212459-dbrcyc",
       "missing": [
+<<<<<<< Updated upstream
         "og:image"
+=======
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+>>>>>>> Stashed changes
       ],
       "suggestion": {
         "title": "Ultra-Fast Guide: Real-time collaboration tools",
@@ -23782,7 +23851,14 @@
     {
       "route": "/reports/guides/ultra-1755542214333-xso5mw",
       "missing": [
+<<<<<<< Updated upstream
         "og:image"
+=======
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+>>>>>>> Stashed changes
       ],
       "suggestion": {
         "title": "Ultra-Fast Guide: Instant deployment systems",
@@ -23792,6 +23868,7 @@
     {
       "route": "/reports/guides/ultra-1755542216528-ztkryi",
       "missing": [
+<<<<<<< Updated upstream
         "og:image"
       ],
       "suggestion": {
@@ -23822,6 +23899,8 @@
     {
       "route": "/reports/guides/ultra-1755542236962-8013yi",
       "missing": [
+=======
+>>>>>>> Stashed changes
         "og:title",
         "og:description",
         "og:image",
@@ -23856,6 +23935,32 @@
       "suggestion": {
         "title": "Ultra-Fast Guide: Ultra-fast testing frameworks",
         "description": "Ultra-Fast Guide: Ultra-fast testing frameworks — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/ultra-1755542220960-tko42o",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Ultra-Fast Guide: Lightning deployment pipelines",
+        "description": "Ultra-Fast Guide: Lightning deployment pipelines — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/ultra-1755542225419-ozrrp6",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Ultra-Fast Guide: Rapid prototyping systems",
+        "description": "Ultra-Fast Guide: Rapid prototyping systems — auto-suggested description"
       }
     },
     {
@@ -26409,6 +26514,7 @@
       }
     },
     {
+<<<<<<< Updated upstream
       "route": "/reports/innovations/innovation-2025-08-18-1837",
       "missing": [
         "og:image"
@@ -26419,6 +26525,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
       "route": "/reports/innovations/insight-2025-08-18-1229",
       "missing": [
         "og:image"
@@ -28979,6 +29087,7 @@
       }
     },
     {
+<<<<<<< Updated upstream
       "route": "/reports/innovations/insight-2025-08-18-1837",
       "missing": [
         "og:image"
@@ -28989,6 +29098,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
       "route": "/reports/innovations/insight-2025-08-18T12-29",
       "missing": [
         "og:image"
@@ -34752,6 +34863,8 @@
       "route": "/reports/insights/ultra-1755542121739-cagean",
       "missing": [
         "og:image"
+<<<<<<< Updated upstream
+=======
       ],
       "suggestion": {
         "title": "Ultra-Fast Lightning-fast development Insight",
@@ -34760,6 +34873,70 @@
     },
     {
       "route": "/reports/insights/ultra-1755542125701-spvmwt",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Ultra-Fast Real-time collaboration tools Insight",
+        "description": "Ultra-Fast Real-time collaboration tools Insight — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/insights/ultra-1755542129964-25jw97",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Ultra-Fast Instant deployment systems Insight",
+        "description": "Ultra-Fast Instant deployment systems Insight — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/insights/ultra-1755542130689-m17m48",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Ultra-Fast Instant feedback loops Insight",
+        "description": "Ultra-Fast Instant feedback loops Insight — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/insights/ultra-1755542132924-e8x3zn",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Ultra-Fast Instant feedback loops Insight",
+        "description": "Ultra-Fast Instant feedback loops Insight — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/insights/ultra-1755542139726-4xz30k",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Ultra-Fast Instant deployment systems Insight",
+        "description": "Ultra-Fast Instant deployment systems Insight — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/insights/ultra-1755542144621-k6jtqh",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+>>>>>>> Stashed changes
+      ],
+      "suggestion": {
+        "title": "Ultra-Fast Lightning-fast development Insight",
+        "description": "Ultra-Fast Lightning-fast development Insight — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/insights/ultra-1755542212458-fb6p3o",
       "missing": [
         "og:image"
       ],
@@ -34877,12 +35054,14 @@
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Ultra-Fast Ultra-responsive applications Insight",
-        "description": "Ultra-Fast Ultra-responsive applications Insight — auto-suggested description"
+<<<<<<< Updated upstream
+=======
+        "title": "Ultra-Fast Lightning-fast development Insight",
+        "description": "Ultra-Fast Lightning-fast development Insight — auto-suggested description"
       }
     },
     {
-      "route": "/reports/insights/ultra-1755542254068-gjbzrv",
+      "route": "/reports/insights/ultra-1755542214332-qy1iib",
       "missing": [
         "og:title",
         "og:description",
@@ -34890,12 +35069,39 @@
         "twitter:card"
       ],
       "suggestion": {
+>>>>>>> Stashed changes
+        "title": "Ultra-Fast Ultra-responsive applications Insight",
+        "description": "Ultra-Fast Ultra-responsive applications Insight — auto-suggested description"
+      }
+    },
+    {
+<<<<<<< Updated upstream
+      "route": "/reports/insights/ultra-1755542254068-gjbzrv",
+=======
+      "route": "/reports/insights/ultra-1755542216527-hlgkga",
+>>>>>>> Stashed changes
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+<<<<<<< Updated upstream
         "title": "Ultra-Fast Rapid prototyping systems Insight",
         "description": "Ultra-Fast Rapid prototyping systems Insight — auto-suggested description"
       }
     },
     {
       "route": "/reports/insights/ultra-1755542255783-bd4h65",
+=======
+        "title": "Ultra-Fast AI-powered automation Insight",
+        "description": "Ultra-Fast AI-powered automation Insight — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/insights/ultra-1755542220959-o14jju",
+>>>>>>> Stashed changes
       "missing": [
         "og:title",
         "og:description",
@@ -34903,8 +35109,26 @@
         "twitter:card"
       ],
       "suggestion": {
+<<<<<<< Updated upstream
         "title": "Ultra-Fast Instant feedback loops Insight",
         "description": "Ultra-Fast Instant feedback loops Insight — auto-suggested description"
+=======
+        "title": "Ultra-Fast AI-powered automation Insight",
+        "description": "Ultra-Fast AI-powered automation Insight — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/insights/ultra-1755542225418-82tky6",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Ultra-Fast Real-time data processing Insight",
+        "description": "Ultra-Fast Real-time data processing Insight — auto-suggested description"
+>>>>>>> Stashed changes
       }
     },
     {
@@ -40028,6 +40252,7 @@
       }
     },
     {
+<<<<<<< Updated upstream
       "route": "/reports/patterns/pattern-2025-08-18-183736",
       "missing": [
         "og:image"
@@ -40038,6 +40263,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
       "route": "/reports/patterns/ultra-1755539341011-betviq",
       "missing": [
         "og:image"
@@ -43250,6 +43477,7 @@
     {
       "route": "/reports/patterns/ultra-1755542144624-o9vm39",
       "missing": [
+<<<<<<< Updated upstream
         "og:image"
       ],
       "suggestion": {
@@ -43310,18 +43538,22 @@
     {
       "route": "/reports/patterns/ultra-1755542236965-hz8fwy",
       "missing": [
+=======
+>>>>>>> Stashed changes
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Pattern: AI-powered automation Architecture",
-        "description": "Pattern: AI-powered automation Architecture — auto-suggested description"
+<<<<<<< Updated upstream
+=======
+        "title": "Pattern: Real-time collaboration tools Architecture",
+        "description": "Pattern: Real-time collaboration tools Architecture — auto-suggested description"
       }
     },
     {
-      "route": "/reports/patterns/ultra-1755542254073-p6mldq",
+      "route": "/reports/patterns/ultra-1755542212461-5kwvcp",
       "missing": [
         "og:title",
         "og:description",
@@ -43329,12 +43561,39 @@
         "twitter:card"
       ],
       "suggestion": {
+>>>>>>> Stashed changes
+        "title": "Pattern: AI-powered automation Architecture",
+        "description": "Pattern: AI-powered automation Architecture — auto-suggested description"
+      }
+    },
+    {
+<<<<<<< Updated upstream
+      "route": "/reports/patterns/ultra-1755542254073-p6mldq",
+=======
+      "route": "/reports/patterns/ultra-1755542214334-pfttmz",
+>>>>>>> Stashed changes
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+<<<<<<< Updated upstream
         "title": "Pattern: Instant feedback loops Architecture",
         "description": "Pattern: Instant feedback loops Architecture — auto-suggested description"
       }
     },
     {
       "route": "/reports/patterns/ultra-1755542255785-8f7rzf",
+=======
+        "title": "Pattern: AI-powered automation Architecture",
+        "description": "Pattern: AI-powered automation Architecture — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/ultra-1755542216530-8tkdpy",
+>>>>>>> Stashed changes
       "missing": [
         "og:title",
         "og:description",
@@ -43342,8 +43601,39 @@
         "twitter:card"
       ],
       "suggestion": {
+<<<<<<< Updated upstream
         "title": "Pattern: Lightning deployment pipelines Architecture",
         "description": "Pattern: Lightning deployment pipelines Architecture — auto-suggested description"
+=======
+        "title": "Pattern: Ultra-fast testing frameworks Architecture",
+        "description": "Pattern: Ultra-fast testing frameworks Architecture — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/ultra-1755542220961-gp55kj",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Pattern: Ultra-fast testing frameworks Architecture",
+        "description": "Pattern: Ultra-fast testing frameworks Architecture — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/ultra-1755542225422-yn6rsl",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Pattern: Real-time data processing Architecture",
+        "description": "Pattern: Real-time data processing Architecture — auto-suggested description"
+>>>>>>> Stashed changes
       }
     },
     {
@@ -51340,6 +51630,8 @@
       "route": "/reports/updates/ultra-1755542121738-7xeb9n",
       "missing": [
         "og:image"
+<<<<<<< Updated upstream
+=======
       ],
       "suggestion": {
         "title": "Instant Digital Transformation",
@@ -51348,6 +51640,83 @@
     },
     {
       "route": "/reports/updates/ultra-1755542125700-rxpx57",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Speed-of-Thought Engineering",
+        "description": "Speed-of-Thought Engineering — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/ultra-1755542129959-47ux6k",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Lightning-Fast Development",
+        "description": "Lightning-Fast Development — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/ultra-1755542130688-68lcos",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Rapid Response Development",
+        "description": "Rapid Response Development — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/ultra-1755542132923-qkiniv",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Instant Digital Transformation",
+        "description": "Instant Digital Transformation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/ultra-1755542139725-c8ytk8",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Ultra-Fast Innovation Update",
+        "description": "Ultra-Fast Innovation Update — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/ultra-1755542144619-0gqqnj",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Speed-of-Thought Engineering",
+        "description": "Speed-of-Thought Engineering — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/ultra-1755542212457-0fipot",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+>>>>>>> Stashed changes
+      ],
+      "suggestion": {
+        "title": "Instant Digital Transformation",
+        "description": "Instant Digital Transformation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/ultra-1755542214331-godf0q",
       "missing": [
         "og:image"
       ],
@@ -51470,7 +51839,11 @@
       }
     },
     {
+<<<<<<< Updated upstream
       "route": "/reports/updates/ultra-1755542254067-9u99ik",
+=======
+      "route": "/reports/updates/ultra-1755542216526-1chqgd",
+>>>>>>> Stashed changes
       "missing": [
         "og:title",
         "og:description",
@@ -51478,12 +51851,21 @@
         "twitter:card"
       ],
       "suggestion": {
+<<<<<<< Updated upstream
         "title": "Ultra-Fast Problem Solving",
         "description": "Ultra-Fast Problem Solving — auto-suggested description"
       }
     },
     {
       "route": "/reports/updates/ultra-1755542255781-o5lf3j",
+=======
+        "title": "Instant Digital Transformation",
+        "description": "Instant Digital Transformation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/ultra-1755542220958-thtp4e",
+>>>>>>> Stashed changes
       "missing": [
         "og:title",
         "og:description",
@@ -51491,8 +51873,26 @@
         "twitter:card"
       ],
       "suggestion": {
+<<<<<<< Updated upstream
         "title": "Lightning-Fast Development",
         "description": "Lightning-Fast Development — auto-suggested description"
+=======
+        "title": "Lightning Innovation Cycle",
+        "description": "Lightning Innovation Cycle — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/ultra-1755542225416-r75jhy",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Rapid Technology Advancement",
+        "description": "Rapid Technology Advancement — auto-suggested description"
+>>>>>>> Stashed changes
       }
     },
     {
