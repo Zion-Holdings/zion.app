@@ -4,21 +4,18 @@ export default function ProductPage() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <Head>
-        <title>Integration Hub - Zion Tech Group</title>
-        <meta name="description" content="Integration Hub - The ultimate solution for modern businesses seeking innovation and efficiency." />
-        <meta name="keywords" content="integration hub, product, technology, innovation, business solution" />
-        <link rel="canonical" href="https://ziontechgroup.com/products/rapid-1755541222512-wpxdx7" />
-      
-        <meta property="og:title" content="Integration Hub" />
-        <meta property="og:description" content="Integration Hub — automatically suggested description." />
-        <meta name="twitter:card" content="summary_large_image" /></Head>
+        <title>Data Platform - Zion Tech Group</title>
+        <meta name="description" content="Data Platform - The ultimate solution for modern businesses seeking innovation and efficiency." />
+        <meta name="keywords" content="data platform, product, technology, innovation, business solution" />
+        <link rel="canonical" href="https://ziontechgroup.com/products/rapid-1755541299663-1e0685" />
+      </Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
-        <h1 className="text-4xl font-extrabold text-center mb-8">Integration Hub</h1>
+        <h1 className="text-4xl font-extrabold text-center mb-8">Data Platform</h1>
         
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4">🌟 Product Overview</h2>
           <p className="text-xl text-white/90 mb-4">
-            Integration Hub is designed to revolutionize how businesses operate and grow in today's competitive landscape.
+            Data Platform is designed to revolutionize how businesses operate and grow in today's competitive landscape.
           </p>
           <p className="text-white/80">
             Built with cutting-edge technology and user experience in mind, it delivers exceptional value and performance.
@@ -46,7 +43,7 @@ export default function ProductPage() {
 
         <section className="text-center">
           <p className="text-white/75 mb-4">
-            Experience the power of Integration Hub today!
+            Experience the power of Data Platform today!
           </p>
           <a 
             href="https://ziontechgroup.com/demo" 
@@ -59,9 +56,3 @@ export default function ProductPage() {
     </div>
   );
 }
-
-<Link href="/products/rapid-1755539340460-oastx4" className="internal-link">Related Content</Link>
-
-<Link href="/products/rapid-1755539347155-oli1gc" className="internal-link">Related Content</Link>
-
-<Link href="/products/rapid-1755539353530-gfmdyl" className="internal-link">Related Content</Link>
