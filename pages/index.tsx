@@ -4,28 +4,28 @@ import Link from 'next/link';
 export default function HomePage() {
   const featuredReports = [
     {
-      title: 'AI-Powered Automation Best Practices',
-      description: 'Comprehensive guide to implementing AI automation in enterprise environments',
-      href: '/reports/guides/ai-automation-best-practices',
-      count: '15 min read'
+      title: 'Latest Insights',
+      description: 'Discover cutting-edge AI and technology insights',
+      href: '/reports/insights',
+      count: '15+ reports'
     },
     {
-      title: 'Digital Transformation Success Story: Retail Giant',
-      description: 'How a Fortune 500 retailer achieved 40% cost reduction through AI automation',
-      href: '/reports/case-studies/retail-digital-transformation',
-      count: '12 min read'
+      title: 'Strategic Dossiers',
+      description: 'Comprehensive analysis and strategic recommendations',
+      href: '/reports/dossiers',
+      count: '8+ dossiers'
     },
     {
-      title: 'Building Scalable Microservices with Next.js',
-      description: 'Step-by-step guide to creating enterprise-grade microservices architecture',
-      href: '/reports/tutorials/microservices-nextjs',
-      count: '20 min read'
+      title: 'Technical Tutorials',
+      description: 'Step-by-step guides for developers and engineers',
+      href: '/reports/tutorials',
+      count: '25+ tutorials'
     },
     {
-      title: 'Enterprise AI Strategy Framework',
-      description: 'Comprehensive framework for developing and implementing AI strategies',
-      href: '/reports/whitepapers/enterprise-ai-strategy-framework',
-      count: '25 min read'
+      title: 'Industry Whitepapers',
+      description: 'In-depth research and industry analysis',
+      href: '/reports/whitepapers',
+      count: '12+ whitepapers'
     }
   ];
 
@@ -43,10 +43,10 @@ export default function HomePage() {
       icon: '🔍'
     },
     {
-      title: 'Reports & Insights',
-      description: 'High-quality research and practical guides',
-      href: '/reports',
-      icon: '📊'
+      title: 'Automation Hub',
+      description: 'See our autonomous systems in action',
+      href: '/automation',
+      icon: '🤖'
     }
   ];
 
@@ -72,16 +72,16 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
-              href="/reports"
+              href="/components"
               className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
             >
-              Explore Reports
+              Explore Components
             </Link>
             <Link 
-              href="/components"
+              href="/reports"
               className="bg-fuchsia-500 hover:bg-fuchsia-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
             >
-              View Components
+              View Reports
             </Link>
           </div>
         </div>
@@ -105,14 +105,6 @@ export default function HomePage() {
                 <span className="text-cyan-400 text-sm">{report.count}</span>
               </Link>
             ))}
-          </div>
-          <div className="text-center mt-8">
-            <Link 
-              href="/reports"
-              className="inline-block bg-gradient-to-r from-cyan-500 to-fuchsia-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-cyan-600 hover:to-fuchsia-600 transition-all"
-            >
-              View All Reports
-            </Link>
           </div>
         </div>
       </section>
@@ -139,77 +131,7 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      
-{/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */}
-
- <section className="mx-auto max-w-7xl px-6 pb-14">
-   <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Latest Autonomous Content</h2>
-   <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <a href="/reports/updates/update-2025-08-18-1421" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
-              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <h3 className="text-lg font-semibold">Autonomous Update — 2025: 08: 18: 1421</h3>
-              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
-              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
-            </a>
-            <a href="/reports/updates/update-2025-08-18T17-20" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
-              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <h3 className="text-lg font-semibold">Autonomous Update — 2025: 08: 18T17: 20</h3>
-              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
-              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
-            </a>
-            <a href="/reports/updates/update-2025-08-18T17-18" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
-              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <h3 className="text-lg font-semibold">Autonomous Update — 2025: 08: 18T17: 18</h3>
-              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
-              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
-            </a>
-            <a href="/reports/updates/update-2025-08-18T17-17" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
-              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <h3 className="text-lg font-semibold">Autonomous Update — 2025: 08: 18T17: 17</h3>
-              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
-              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
-            </a>
-            <a href="/reports/updates/update-2025-08-18-1720" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
-              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <h3 className="text-lg font-semibold">Autonomous Update — 2025: 08: 18: 1720</h3>
-              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
-              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
-            </a>
-            <a href="/reports/updates/update-2025-08-18-1718" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
-              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <h3 className="text-lg font-semibold">Autonomous Update — 2025: 08: 18: 1718</h3>
-              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
-              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
-            </a>
-   </div>
- </section>
- 
-{/* AUTO-GENERATED: HOME_LATEST_CONTENT_END */}
-</section>
+      </section>
     </div>
   );
 }
-
-<a href="https://github.com/Zion-Holdings/zion.app" target="_blank" rel="noopener noreferrer" className="external-link">View Source</a>
-
-<Link href="/about" className="internal-link link-instance-1">[NAVIGATION] Main Navigation</Link>
-
-<Link href="/privacy" className="internal-link link-instance-2">[FOOTER] Footer Link</Link>
-
-<a href="https://twitter.com/ziontechgroup" target="_blank" rel="noopener noreferrer" className="external-link link-instance-4">[SOCIAL] Social Media</a>
-
-<Link href="/services" className="internal-link link-instance-1">[NAVIGATION] Main Navigation</Link>
-
-<Link href="/terms" className="internal-link link-instance-2">[FOOTER] Footer Link</Link>
-
-<a href="https://facebook.com/ziontechgroup" target="_blank" rel="noopener noreferrer" className="external-link link-instance-4">[SOCIAL] Social Media</a>
-
-<Link href="/blog" className="internal-link link-instance-1">[NAVIGATION] Main Navigation</Link>
-
-<Link href="/sitemap" className="internal-link link-instance-2">[FOOTER] Footer Link</Link>
-
-<a href="https://instagram.com/ziontechgroup" target="_blank" rel="noopener noreferrer" className="external-link link-instance-4">[SOCIAL] Social Media</a>
-
-<Link href="/contact" className="internal-link link-instance-1">[NAVIGATION] Main Navigation</Link>
-
-<Link href="/support" className="internal-link link-instance-2">[FOOTER] Footer Link</Link>
