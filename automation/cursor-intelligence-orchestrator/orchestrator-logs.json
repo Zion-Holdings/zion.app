@@ -1,0 +1,44 @@
+{
+  "logs": [
+    {
+      "timestamp": "2025-08-18T17:06:00.634Z",
+      "eventType": "orchestrator_started",
+      "message": "Orchestrator started successfully",
+      "orchestratorStatus": "running"
+    },
+    {
+      "timestamp": "2025-08-18T17:06:30.664Z",
+      "eventType": "health_monitoring_failed",
+      "message": "Health monitoring failed: Cannot read properties of undefined (reading 'status')",
+      "orchestratorStatus": "running"
+    },
+    {
+      "timestamp": "2025-08-18T17:07:00.693Z",
+      "eventType": "health_monitoring_failed",
+      "message": "Health monitoring failed: Cannot read properties of undefined (reading 'status')",
+      "orchestratorStatus": "running"
+    },
+    {
+      "timestamp": "2025-08-18T17:07:30.721Z",
+      "eventType": "health_monitoring_failed",
+      "message": "Health monitoring failed: Cannot read properties of undefined (reading 'status')",
+      "orchestratorStatus": "running"
+    },
+    {
+      "timestamp": "2025-08-18T17:08:00.749Z",
+      "eventType": "health_monitoring_failed",
+      "message": "Health monitoring failed: Cannot read properties of undefined (reading 'status')",
+      "orchestratorStatus": "running"
+    },
+    {
+      "timestamp": "2025-08-18T17:08:30.777Z",
+      "eventType": "health_monitoring_failed",
+      "message": "Health monitoring failed: Cannot read properties of undefined (reading 'status')",
+      "orchestratorStatus": "running"
+    }
+  ],
+  "metrics": {
+    "orchestrator_started": 1,
+    "health_monitoring_failed": 5
+  }
+}

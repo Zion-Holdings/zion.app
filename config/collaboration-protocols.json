@@ -1,0 +1,10 @@
+{
+  "enabled": true,
+  "protocols": [
+    "cross-factory-learning",
+    "shared-knowledge-base",
+    "collaborative-optimization"
+  ],
+  "communication": "inter-factory-communication",
+  "learning": "distributed-learning"
+}
