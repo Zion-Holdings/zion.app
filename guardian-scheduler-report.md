@@ -1,35 +1,11 @@
 # guardian-scheduler Report
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-Generated: 2025-08-18T15:10:55.948Z
-=======
-Generated: 2025-08-18T15:10:37.652Z
->>>>>>> Stashed changes
-=======
-Generated: 2025-08-18T15:10:37.652Z
->>>>>>> Stashed changes
-=======
-Generated: 2025-08-18T15:10:37.652Z
->>>>>>> Stashed changes
+Generated: 2025-08-18T15:13:57.654Z
 
 ## Status
 - Task: guardian-scheduler
 - Status: Completed
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-- Timestamp: 2025-08-18T15:10:55.948Z
-=======
-- Timestamp: 2025-08-18T15:10:37.652Z
->>>>>>> Stashed changes
-=======
-- Timestamp: 2025-08-18T15:10:37.652Z
->>>>>>> Stashed changes
-=======
-- Timestamp: 2025-08-18T15:10:37.652Z
->>>>>>> Stashed changes
+- Timestamp: 2025-08-18T15:13:57.654Z
 
 ## Next Steps
 - Implement actual guardian-scheduler functionality
