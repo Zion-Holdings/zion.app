@@ -1,19 +1,11 @@
 # auto-pr-cursor-branches Report
 
-<<<<<<< Updated upstream
-Generated: 2025-08-18T17:08:25.133Z
-=======
-Generated: 2025-08-18T17:09:38.241Z
->>>>>>> Stashed changes
+Generated: 2025-08-18T17:09:56.324Z
 
 ## Status
 - Task: auto-pr-cursor-branches
 - Status: Completed
-<<<<<<< Updated upstream
-- Timestamp: 2025-08-18T17:08:25.133Z
-=======
-- Timestamp: 2025-08-18T17:09:38.241Z
->>>>>>> Stashed changes
+- Timestamp: 2025-08-18T17:09:56.324Z
 
 ## Next Steps
 - Implement actual auto-pr-cursor-branches functionality
