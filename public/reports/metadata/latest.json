@@ -1,7 +1,12 @@
 {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   "generatedAt": "2025-08-18T13:18:18.659Z",
   "pagesScanned": 420,
+=======
+  "generatedAt": "2025-08-18T13:15:50.407Z",
+  "pagesScanned": 370,
+>>>>>>> Stashed changes
 =======
   "generatedAt": "2025-08-18T13:15:50.407Z",
   "pagesScanned": 370,
@@ -771,6 +776,7 @@
     },
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "route": "/reports/blueprints/blueprint-2025-08-18-131617",
       "missing": [
         "og:image"
@@ -821,6 +827,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
       "route": "/reports/cases/case-2025-08-18-122902",
@@ -1274,6 +1282,7 @@
     },
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "route": "/reports/cases/case-2025-08-18-131553",
       "missing": [
         "og:image"
@@ -1344,6 +1353,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
       "route": "/reports/guides/guide-2025-08-18-122902",
@@ -1797,6 +1808,7 @@
     },
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "route": "/reports/guides/guide-2025-08-18-131553",
       "missing": [
         "og:image"
@@ -1867,6 +1879,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
       "route": "/reports/innovations/innovation-2025-08-18-1229",
@@ -2960,6 +2974,7 @@
     },
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "route": "/reports/patterns/pattern-2025-08-18-131553",
       "missing": [
         "og:image"
@@ -3030,6 +3045,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
       "route": "/reports/playbooks/playbook-2025-08-18-122902",
@@ -3463,6 +3480,7 @@
     },
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "route": "/reports/playbooks/playbook-2025-08-18-131553",
       "missing": [
         "og:image"
@@ -3523,6 +3541,8 @@
       }
     },
     {
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
       "route": "/reports/updates/update-2025-08-18-0928",
