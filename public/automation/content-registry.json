@@ -117,6 +117,18 @@
       "route": "/404"
     },
     {
+      "file": "pages/tutorials/rapid-1755541335026-syyfvi.tsx",
+      "route": "/tutorials/rapid-1755541335026-syyfvi"
+    },
+    {
+      "file": "pages/tutorials/rapid-1755541332363-f7tr88.tsx",
+      "route": "/tutorials/rapid-1755541332363-f7tr88"
+    },
+    {
+      "file": "pages/tutorials/rapid-1755541329743-zyoamo.tsx",
+      "route": "/tutorials/rapid-1755541329743-zyoamo"
+    },
+    {
       "file": "pages/tutorials/rapid-1755541322178-j7mxg8.tsx",
       "route": "/tutorials/rapid-1755541322178-j7mxg8"
     },
@@ -459,14 +471,6 @@
     {
       "file": "pages/tutorials/rapid-1755539340461-4p86xy.tsx",
       "route": "/tutorials/rapid-1755539340461-4p86xy"
-    },
-    {
-      "file": "pages/reports/index.tsx",
-      "route": "/reports"
-    },
-    {
-      "file": "pages/news/index.tsx",
-      "route": "/news"
     },
     {
       "file": "pages/services/simple-service-1755539184873-e6t8lfcj2.tsx",
@@ -829,6 +833,18 @@
       "route": "/services/simple-service-1755536632488-7c6l7htn7"
     },
     {
+      "file": "pages/services/rapid-1755541335024-12rml4.tsx",
+      "route": "/services/rapid-1755541335024-12rml4"
+    },
+    {
+      "file": "pages/services/rapid-1755541332361-d7gdvu.tsx",
+      "route": "/services/rapid-1755541332361-d7gdvu"
+    },
+    {
+      "file": "pages/services/rapid-1755541329739-acixqy.tsx",
+      "route": "/services/rapid-1755541329739-acixqy"
+    },
+    {
       "file": "pages/services/rapid-1755541322174-j7sxsr.tsx",
       "route": "/services/rapid-1755541322174-j7sxsr"
     },
@@ -1173,8 +1189,20 @@
       "route": "/services/rapid-1755539340458-6lge19"
     },
     {
-      "file": "pages/marketing/index.tsx",
-      "route": "/marketing"
+      "file": "pages/reports/index.tsx",
+      "route": "/reports"
+    },
+    {
+      "file": "pages/products/rapid-1755541335025-9ivo6m.tsx",
+      "route": "/products/rapid-1755541335025-9ivo6m"
+    },
+    {
+      "file": "pages/products/rapid-1755541332362-vpoch3.tsx",
+      "route": "/products/rapid-1755541332362-vpoch3"
+    },
+    {
+      "file": "pages/products/rapid-1755541329742-1ystdo.tsx",
+      "route": "/products/rapid-1755541329742-1ystdo"
     },
     {
       "file": "pages/products/rapid-1755541322177-tivw9r.tsx",
@@ -1521,6 +1549,14 @@
       "route": "/products/rapid-1755539340460-oastx4"
     },
     {
+      "file": "pages/news/index.tsx",
+      "route": "/news"
+    },
+    {
+      "file": "pages/marketing/index.tsx",
+      "route": "/marketing"
+    },
+    {
       "file": "pages/front/index.tsx",
       "route": "/front"
     },
@@ -1571,6 +1607,18 @@
     {
       "file": "pages/reports/tutorials/index.tsx",
       "route": "/reports/tutorials"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541337201-vrv72x.tsx",
+      "route": "/reports/insights/ultra-1755541337201-vrv72x"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541334912-yfens2.tsx",
+      "route": "/reports/insights/ultra-1755541334912-yfens2"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541332335-f9n4ng.tsx",
+      "route": "/reports/insights/ultra-1755541332335-f9n4ng"
     },
     {
       "file": "pages/reports/insights/ultra-1755541322341-ewk87u.tsx",
@@ -3851,6 +3899,18 @@
     {
       "file": "pages/reports/playbooks/playbook-2025-08-18-122902.tsx",
       "route": "/reports/playbooks/playbook-2025-08-18-122902"
+    },
+    {
+      "file": "pages/reports/patterns/ultra-1755541337203-vy5lx2.tsx",
+      "route": "/reports/patterns/ultra-1755541337203-vy5lx2"
+    },
+    {
+      "file": "pages/reports/patterns/ultra-1755541334914-tuxa8q.tsx",
+      "route": "/reports/patterns/ultra-1755541334914-tuxa8q"
+    },
+    {
+      "file": "pages/reports/patterns/ultra-1755541332339-uir9v8.tsx",
+      "route": "/reports/patterns/ultra-1755541332339-uir9v8"
     },
     {
       "file": "pages/reports/patterns/ultra-1755541322344-cyh713.tsx",
@@ -8985,6 +9045,18 @@
       "route": "/reports/updates/update-2025-08-18-0928"
     },
     {
+      "file": "pages/reports/updates/ultra-1755541337200-nc8b1r.tsx",
+      "route": "/reports/updates/ultra-1755541337200-nc8b1r"
+    },
+    {
+      "file": "pages/reports/updates/ultra-1755541334911-6oa3cg.tsx",
+      "route": "/reports/updates/ultra-1755541334911-6oa3cg"
+    },
+    {
+      "file": "pages/reports/updates/ultra-1755541332334-pblnmm.tsx",
+      "route": "/reports/updates/ultra-1755541332334-pblnmm"
+    },
+    {
       "file": "pages/reports/updates/ultra-1755541322340-52r1zs.tsx",
       "route": "/reports/updates/ultra-1755541322340-52r1zs"
     },
@@ -10529,6 +10601,10 @@
       "route": "/reports/innovations/insight-2025-08-18T12-29"
     },
     {
+      "file": "pages/reports/innovations/insight-2025-08-18-1822.tsx",
+      "route": "/reports/innovations/insight-2025-08-18-1822"
+    },
+    {
       "file": "pages/reports/innovations/insight-2025-08-18-1819.tsx",
       "route": "/reports/innovations/insight-2025-08-18-1819"
     },
@@ -11497,6 +11573,10 @@
       "route": "/reports/innovations/insight-2025-08-18-1229"
     },
     {
+      "file": "pages/reports/innovations/innovation-2025-08-18-1822.tsx",
+      "route": "/reports/innovations/innovation-2025-08-18-1822"
+    },
+    {
       "file": "pages/reports/innovations/innovation-2025-08-18-1819.tsx",
       "route": "/reports/innovations/innovation-2025-08-18-1819"
     },
@@ -12455,6 +12535,18 @@
     {
       "file": "pages/reports/innovations/innovation-2025-08-18-1229.tsx",
       "route": "/reports/innovations/innovation-2025-08-18-1229"
+    },
+    {
+      "file": "pages/reports/guides/ultra-1755541337202-zqmkn7.tsx",
+      "route": "/reports/guides/ultra-1755541337202-zqmkn7"
+    },
+    {
+      "file": "pages/reports/guides/ultra-1755541334913-cehyzg.tsx",
+      "route": "/reports/guides/ultra-1755541334913-cehyzg"
+    },
+    {
+      "file": "pages/reports/guides/ultra-1755541332337-p8bnlx.tsx",
+      "route": "/reports/guides/ultra-1755541332337-p8bnlx"
     },
     {
       "file": "pages/reports/guides/ultra-1755541322342-d6jmkj.tsx",
@@ -16541,6 +16633,18 @@
       "route": "/reports/blueprints/blueprint-2025-08-18-122901"
     },
     {
+      "file": "pages/reports/cases/ultra-1755541337203-zf8eqj.tsx",
+      "route": "/reports/cases/ultra-1755541337203-zf8eqj"
+    },
+    {
+      "file": "pages/reports/cases/ultra-1755541334914-hh5uut.tsx",
+      "route": "/reports/cases/ultra-1755541334914-hh5uut"
+    },
+    {
+      "file": "pages/reports/cases/ultra-1755541332338-4fp606.tsx",
+      "route": "/reports/cases/ultra-1755541332338-4fp606"
+    },
+    {
       "file": "pages/reports/cases/ultra-1755541322343-uwt35t.tsx",
       "route": "/reports/cases/ultra-1755541322343-uwt35t"
     },
@@ -18951,135 +19055,5 @@
       "route": "/docs/CHANGELOG.md"
     }
   ],
-  "generatedAt": "2025-08-18T18:22:04.019Z",
-  "items": [
-    {
-      "id": "ultra-1755541332334-pblnmm",
-      "title": "Ultra-Fast Problem Solving",
-      "route": "/reports/updates/ultra-1755541332334-pblnmm",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:22:12.345Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755541332335-f9n4ng",
-      "title": "Ultra-Fast Real-time data processing Insight",
-      "route": "/reports/insights/ultra-1755541332335-f9n4ng",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:22:12.345Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755541332337-p8bnlx",
-      "title": "Ultra-Fast Guide: Real-time data processing",
-      "route": "/reports/guides/ultra-1755541332337-p8bnlx",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:22:12.345Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755541332338-4fp606",
-      "title": "Case Study: Ultra-fast testing frameworks Success",
-      "route": "/reports/cases/ultra-1755541332338-4fp606",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:22:12.345Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755541332339-uir9v8",
-      "title": "Pattern: Instant feedback loops Architecture",
-      "route": "/reports/patterns/ultra-1755541332339-uir9v8",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:22:12.345Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "rapid-1755541332361-d7gdvu",
-      "title": "Security Auditing",
-      "route": "/services/rapid-1755541332361-d7gdvu",
-      "type": "rapid-generated",
-      "created": "2025-08-18T18:22:12.370Z",
-      "process": "rapid"
-    },
-    {
-      "id": "rapid-1755541332362-vpoch3",
-      "title": "Integration Hub",
-      "route": "/products/rapid-1755541332362-vpoch3",
-      "type": "rapid-generated",
-      "created": "2025-08-18T18:22:12.370Z",
-      "process": "rapid"
-    },
-    {
-      "id": "rapid-1755541332363-f7tr88",
-      "title": "Advanced Techniques for Machine Learning",
-      "route": "/tutorials/rapid-1755541332363-f7tr88",
-      "type": "rapid-generated",
-      "created": "2025-08-18T18:22:12.370Z",
-      "process": "rapid"
-    },
-    {
-      "id": "ultra-1755541334911-6oa3cg",
-      "title": "Ultra-Fast Problem Solving",
-      "route": "/reports/updates/ultra-1755541334911-6oa3cg",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:22:14.920Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755541334912-yfens2",
-      "title": "Ultra-Fast Instant deployment systems Insight",
-      "route": "/reports/insights/ultra-1755541334912-yfens2",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:22:14.920Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755541334913-cehyzg",
-      "title": "Ultra-Fast Guide: Instant deployment systems",
-      "route": "/reports/guides/ultra-1755541334913-cehyzg",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:22:14.920Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755541334914-hh5uut",
-      "title": "Case Study: Instant feedback loops Success",
-      "route": "/reports/cases/ultra-1755541334914-hh5uut",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:22:14.920Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755541334914-tuxa8q",
-      "title": "Pattern: Lightning deployment pipelines Architecture",
-      "route": "/reports/patterns/ultra-1755541334914-tuxa8q",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:22:14.920Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "rapid-1755541335024-12rml4",
-      "title": "Mobile App Development",
-      "route": "/services/rapid-1755541335024-12rml4",
-      "type": "rapid-generated",
-      "created": "2025-08-18T18:22:15.032Z",
-      "process": "rapid"
-    },
-    {
-      "id": "rapid-1755541335025-9ivo6m",
-      "title": "Data Platform",
-      "route": "/products/rapid-1755541335025-9ivo6m",
-      "type": "rapid-generated",
-      "created": "2025-08-18T18:22:15.032Z",
-      "process": "rapid"
-    },
-    {
-      "id": "rapid-1755541335026-syyfvi",
-      "title": "Best Practices in Web Development",
-      "route": "/tutorials/rapid-1755541335026-syyfvi",
-      "type": "rapid-generated",
-      "created": "2025-08-18T18:22:15.032Z",
-      "process": "rapid"
-    }
-  ]
+  "generatedAt": "2025-08-18T18:22:18.246Z"
 }
