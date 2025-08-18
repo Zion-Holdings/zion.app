@@ -1,18 +1,18 @@
 {
-  "timestamp": "2025-08-18T03:35:40.777Z",
+  "timestamp": "2025-08-18T03:36:39.524Z",
   "summary": {
     "totalWorkflows": 224,
     "complexityDistribution": {
       "very-high": 0,
       "high": 0,
-      "medium": 6,
-      "low": 218
+      "medium": 7,
+      "low": 217
     },
     "refactoringPriorities": {
       "critical": 0,
       "high": 0,
-      "medium": 6,
-      "low": 218
+      "medium": 7,
+      "low": 217
     }
   },
   "workflows": {
@@ -2342,7 +2342,7 @@
       "complexityScore": 15,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 51,
+        "totalLines": 54,
         "jobCount": 0,
         "stepCount": 6,
         "conditionalCount": 0,
@@ -2504,14 +2504,14 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 45,
+        "totalLines": 36,
         "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 4,
+        "secretCount": 0,
         "actionCount": 3
       },
       "refactoringPriority": "low",
@@ -2897,12 +2897,12 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/netlify-functions-trigger.yml"
     },
     "netlify-monitor.yml": {
-      "complexityScore": 0,
+      "complexityScore": 10,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 41,
+        "totalLines": 52,
         "jobCount": 0,
-        "stepCount": 3,
+        "stepCount": 4,
         "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
@@ -3005,20 +3005,20 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/performance-audit.yml"
     },
     "performance-monitoring.yml": {
-      "complexityScore": 0,
-      "complexityLevel": "low",
+      "complexityScore": 35,
+      "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 41,
+        "totalLines": 125,
         "jobCount": 0,
-        "stepCount": 5,
-        "conditionalCount": 1,
+        "stepCount": 15,
+        "conditionalCount": 3,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 3
+        "actionCount": 6
       },
-      "refactoringPriority": "low",
+      "refactoringPriority": "medium",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/performance-monitoring.yml"
     },

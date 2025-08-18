@@ -2356,8 +2356,8 @@
   "instagram-six-hourly.yml": {
     "name": "instagram-six-hourly.yml",
     "triggers": [
-      "workflow_dispatch null",
-      "schedule"
+      "schedule",
+      "workflow_dispatch {}"
     ],
     "needs": [],
     "outputs": [],
@@ -2366,7 +2366,7 @@
       "runner": "ubuntu-latest",
       "memory": "standard",
       "timeout": 30,
-      "concurrentJobs": 5
+      "concurrentJobs": 4
     },
     "estimatedDuration": 30
   },
@@ -2832,15 +2832,17 @@
   "performance-monitoring.yml": {
     "name": "performance-monitoring.yml",
     "triggers": [
-      "schedule",
-      "workflow_dispatch"
+      "push",
+      "pull_request",
+      "workflow_dispatch {}",
+      "schedule"
     ],
     "needs": [],
     "outputs": [],
     "priority": "medium",
     "resourceRequirements": {
       "runner": "ubuntu-latest",
-      "memory": "standard",
+      "memory": "medium",
       "timeout": 30,
       "concurrentJobs": 5
     },
