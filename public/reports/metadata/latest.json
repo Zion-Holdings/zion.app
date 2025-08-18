@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T05:40:01.336Z",
-  "pagesScanned": 8599,
+  "generatedAt": "2025-08-18T05:41:01.200Z",
+  "pagesScanned": 8602,
   "items": [
     {
       "route": "/404",
@@ -36286,6 +36286,16 @@
       "suggestion": {
         "title": "Runbook: MLOps",
         "description": "Runbook: MLOps — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18-0540",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pilot Plan: RAG Platforms",
+        "description": "Pilot Plan: RAG Platforms — auto-suggested description"
       }
     },
     {
@@ -85841,14 +85851,24 @@
     {
       "route": "/reports/updates/update-2025-08-18-0240",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 02:40",
+        "description": "Autonomous Update — 2025-08-18 02:40 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0241",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 02:40",
-        "description": "Autonomous Update — 2025-08-18 02:40 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-18 02:41",
+        "description": "Autonomous Update — 2025-08-18 02:41 — auto-suggested description"
       }
     },
     {
@@ -85889,6 +85909,16 @@
       "suggestion": {
         "title": "Autonomous Performance Tuning Guide — Cloud Cost Optimization (2025-08-18 05:30 UTC)",
         "description": "Autonomous Performance Tuning Guide — Cloud Cost Optimization (2025-08-18 05:30 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0540",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Capability Map — Cloud Cost Optimization (2025-08-18 05:40 UTC)",
+        "description": "Autonomous Capability Map — Cloud Cost Optimization (2025-08-18 05:40 UTC) — auto-suggested description"
       }
     },
     {
