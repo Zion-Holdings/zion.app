@@ -5,9 +5,10 @@ on:
   schedule:
     - cron: '0 14 * * *' # daily at 14:00 UTC
   workflow_dispatch:
+
 concurrency:
-  group: "marketing-daily"
-  cancel-in-progress: false
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
