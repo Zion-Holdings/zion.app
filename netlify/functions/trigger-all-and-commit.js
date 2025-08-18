@@ -75,6 +75,17 @@ async function triggerAllFunctionsSequentially() {
   log(`Triggering ${functions.length} functions sequentially...`);
   
   for (const funcName of functions) {
+    // Skip triggering ourselves to avoid infinite recursion
+    if (funcName === 'trigger-all-and-commit') {
+      log(`⏭️ Skipping ${funcName} to avoid infinite recursion`);
+      results.push({
+        name: funcName,
+        status: 'skipped',
+        reason: 'Avoid infinite recursion'
+      });
+      continue;
+    }
+    
     log(`Triggering ${funcName}...`);
     const result = await triggerFunction(funcName);
     results.push(result);
