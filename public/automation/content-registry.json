@@ -22465,6 +22465,10 @@
       "route": "/reports/updates/update-2025-08-18-0510"
     },
     {
+      "file": "pages/reports/updates/update-2025-08-18-0454.tsx",
+      "route": "/reports/updates/update-2025-08-18-0454"
+    },
+    {
       "file": "pages/reports/updates/update-2025-08-18-0453.tsx",
       "route": "/reports/updates/update-2025-08-18-0453"
     },
@@ -35315,5 +35319,5 @@
       "route": "/docs/CHANGELOG.md"
     }
   ],
-  "generatedAt": "2025-08-18T07:53:01.713Z"
+  "generatedAt": "2025-08-18T07:54:01.608Z"
 }
