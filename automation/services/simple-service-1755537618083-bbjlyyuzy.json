@@ -1,0 +1,46 @@
+{
+  "id": "simple-service-1755537618083-bbjlyyuzy",
+  "category": "DevOps",
+  "template": "basicService",
+  "title": "DevOps Service",
+  "description": "Professional DevOps solution for modern businesses",
+  "features": [
+    "Professional service delivery",
+    "Quality assurance",
+    "Customer support",
+    "Regular updates",
+    "Scalable solutions"
+  ],
+  "pricing": [
+    {
+      "plan": "Basic",
+      "price": "$49/month",
+      "features": [
+        "Core features",
+        "Email support"
+      ]
+    },
+    {
+      "plan": "Professional",
+      "price": "$149/month",
+      "features": [
+        "All features",
+        "Priority support"
+      ]
+    },
+    {
+      "plan": "Enterprise",
+      "price": "$299/month",
+      "features": [
+        "Custom features",
+        "Dedicated support"
+      ]
+    }
+  ],
+  "createdAt": "2025-08-18T17:20:18.083Z",
+  "status": "active",
+  "metadata": {
+    "generatedBy": "simple-service-generator",
+    "version": "1.0.0"
+  }
+}
