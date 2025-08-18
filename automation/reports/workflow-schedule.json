@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T05:27:26.154Z",
+  "timestamp": "2025-08-18T05:28:41.501Z",
   "critical": [
     {
       "name": "ci-self-heal.yml",
@@ -200,7 +200,7 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/dependency-maintenance.yml",
       "priority": "high",
       "resourceIntensity": "medium",
-      "estimatedDuration": 25,
+      "estimatedDuration": 30,
       "concurrentJobs": 5,
       "runnerRequirements": {
         "runner": "ubuntu-latest",
@@ -212,7 +212,7 @@
         "schedule",
         "workflow_dispatch {}"
       ],
-      "resourceScore": 140
+      "resourceScore": 135
     },
     {
       "name": "security-weekly.yml",
@@ -2183,25 +2183,6 @@
       "resourceScore": 110
     },
     {
-      "name": "autonomous-meta.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-meta.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 25,
-      "concurrentJobs": 6,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "schedule",
-        "workflow_dispatch {}"
-      ],
-      "resourceScore": 109
-    },
-    {
       "name": "test.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/test.yml",
       "priority": "medium",
@@ -2297,6 +2278,25 @@
       "resourceScore": 105
     },
     {
+      "name": "autonomous-meta.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-meta.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 30,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch {}"
+      ],
+      "resourceScore": 104
+    },
+    {
       "name": "continuous-improvement.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/continuous-improvement.yml",
       "priority": "medium",
@@ -2312,6 +2312,25 @@
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
+      ],
+      "resourceScore": 104
+    },
+    {
+      "name": "cursor-rules-autoupdate.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cursor-rules-autoupdate.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 30,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch {}"
       ],
       "resourceScore": 104
     },
@@ -2863,25 +2882,6 @@
       "triggers": [
         "schedule",
         "workflow_dispatch"
-      ],
-      "resourceScore": 103
-    },
-    {
-      "name": "cursor-rules-autoupdate.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cursor-rules-autoupdate.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 30,
-      "concurrentJobs": 7,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "schedule",
-        "workflow_dispatch {}"
       ],
       "resourceScore": 103
     },
