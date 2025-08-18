@@ -1,18 +1,18 @@
 {
-  "timestamp": "2025-08-18T04:27:40.833Z",
+  "timestamp": "2025-08-18T04:29:38.867Z",
   "summary": {
     "totalWorkflows": 224,
     "complexityDistribution": {
       "very-high": 0,
       "high": 0,
-      "medium": 11,
-      "low": 213
+      "medium": 10,
+      "low": 214
     },
     "refactoringPriorities": {
       "critical": 0,
       "high": 0,
-      "medium": 11,
-      "low": 213
+      "medium": 10,
+      "low": 214
     }
   },
   "workflows": {
@@ -1370,7 +1370,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 40,
+        "totalLines": 49,
         "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
@@ -2000,7 +2000,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 34,
+        "totalLines": 39,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -2339,10 +2339,10 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/front-scheduler.yml"
     },
     "frontend-sync-continuous.yml": {
-      "complexityScore": 5,
+      "complexityScore": 15,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 50,
+        "totalLines": 51,
         "jobCount": 0,
         "stepCount": 6,
         "conditionalCount": 0,
@@ -2792,7 +2792,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 21,
+        "totalLines": 30,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -3656,7 +3656,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 43,
+        "totalLines": 41,
         "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
@@ -3905,20 +3905,20 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/workflow-health-monitor.yml"
     },
     "workflow-manager.yml": {
-      "complexityScore": 40,
-      "complexityLevel": "medium",
+      "complexityScore": 20,
+      "complexityLevel": "low",
       "metrics": {
-        "totalLines": 141,
+        "totalLines": 150,
         "jobCount": 0,
-        "stepCount": 12,
-        "conditionalCount": 4,
+        "stepCount": 7,
+        "conditionalCount": 1,
         "matrixCount": 0,
-        "dependencyCount": 3,
+        "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 6
+        "actionCount": 3
       },
-      "refactoringPriority": "medium",
+      "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/workflow-manager.yml"
     },

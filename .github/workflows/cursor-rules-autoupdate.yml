@@ -1,33 +1,38 @@
-name: Cursor Rules Auto Update
+name: Cursor Rules Auto-update
 on:
   schedule:
-  - cron: 17 */6 * * *
+    - cron: '17 */6 * * *'
   workflow_dispatch: {}
 permissions:
   contents: write
   pull-requests: write
+  actions: read
 jobs:
   generate-rules:
     runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-    - name: Use Node.js 20
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
-        cache: npm
-    - name: Install dependencies
-      run: npm ci
-    - name: Generate Cursor rules and memories
-      run: node automation/cursor-rules-generator.cjs
-    - name: Commit and push changes
-      run: "if [ -n \"$(git status --porcelain)\" ]; then\n  git config user.name\
-        \ \"github-actions[bot]\"\n  git config user.email \"41898282+github-actions[bot]@users.noreply.github.com\"\
-        \n  git add -A\n  git commit -m \"chore(cursor): auto-update rules and project\
-        \ memories\"\n  git push\nelse\n  echo \"No changes to commit\"\nfi"
     timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Generate cursor rules
+        run: node automation/cursor-rules-generator.cjs
+      - name: Commit and push changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore(cursor): auto-update rules and project memories"
+            git push
+          else
+            echo "No changes to commit"
+          fi
 concurrency:
-  group: cursor-rules-autoupdate.yml-${{ github.ref }}
+  group: cursor-rules-autoupdate-${{ github.ref }}
   cancel-in-progress: true

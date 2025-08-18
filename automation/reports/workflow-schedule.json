@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T04:27:47.833Z",
+  "timestamp": "2025-08-18T04:29:46.670Z",
   "critical": [
     {
       "name": "ci-self-heal.yml",
@@ -2141,29 +2141,6 @@
       "resourceScore": 110
     },
     {
-      "name": "workflow-manager.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/workflow-manager.yml",
-      "priority": "medium",
-      "resourceIntensity": "high",
-      "estimatedDuration": 30,
-      "concurrentJobs": 14,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [
-        "workflow-health-check",
-        "workflow-health-check",
-        ""
-      ],
-      "triggers": [
-        "workflow_dispatch {}",
-        "schedule"
-      ],
-      "resourceScore": 110
-    },
-    {
       "name": "autonomous-meta.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-meta.yml",
       "priority": "medium",
@@ -2278,6 +2255,25 @@
       "resourceScore": 105
     },
     {
+      "name": "cursor-rules-autoupdate.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cursor-rules-autoupdate.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 30,
+      "concurrentJobs": 5,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch {}"
+      ],
+      "resourceScore": 105
+    },
+    {
       "name": "netlify-monitor.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/netlify-monitor.yml",
       "priority": "medium",
@@ -2312,25 +2308,6 @@
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
-      ],
-      "resourceScore": 104
-    },
-    {
-      "name": "cursor-rules-autoupdate.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cursor-rules-autoupdate.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 30,
-      "concurrentJobs": 6,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "schedule",
-        "workflow_dispatch {}"
       ],
       "resourceScore": 104
     },
@@ -2424,7 +2401,7 @@
       },
       "dependencies": [],
       "triggers": [
-        "workflow_dispatch {}",
+        "workflow_dispatch null",
         "schedule"
       ],
       "resourceScore": 104
@@ -4186,6 +4163,25 @@
       "resourceScore": 100
     },
     {
+      "name": "workflow-manager.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/workflow-manager.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 30,
+      "concurrentJobs": 10,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "resourceScore": 100
+    },
+    {
       "name": "rapid-sync.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/rapid-sync.yml",
       "priority": "medium",
@@ -4302,29 +4298,6 @@
       "triggers": [
         "schedule",
         "workflow_dispatch"
-      ],
-      "resourceScore": 110
-    },
-    {
-      "name": "workflow-manager.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/workflow-manager.yml",
-      "priority": "medium",
-      "resourceIntensity": "high",
-      "estimatedDuration": 30,
-      "concurrentJobs": 14,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [
-        "workflow-health-check",
-        "workflow-health-check",
-        ""
-      ],
-      "triggers": [
-        "workflow_dispatch {}",
-        "schedule"
       ],
       "resourceScore": 110
     }
