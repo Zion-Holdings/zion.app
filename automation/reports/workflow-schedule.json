@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T05:36:41.667Z",
+  "timestamp": "2025-08-18T05:37:37.276Z",
   "critical": [
     {
       "name": "ci-self-heal.yml",
@@ -4146,7 +4146,7 @@
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 30,
-      "concurrentJobs": 11,
+      "concurrentJobs": 10,
       "runnerRequirements": {
         "runner": "ubuntu-latest",
         "size": "standard",
@@ -4155,7 +4155,7 @@
       "dependencies": [],
       "triggers": [
         "workflow_dispatch {}",
-        "schedule",
+        "# schedule",
         "pull_request"
       ],
       "resourceScore": 100
