@@ -5,18 +5,18 @@
 
 module.exports = {
   name: 'run-functions-and-rerun',
-  inputs: [
-    { name: 'include', default: '' },
-    { name: 'exclude', default: '' },
-    { name: 'concurrency', default: 6 },
-    { name: 'timeoutMs', default: 180000 },
-  ],
+  inputs: {
+    include: { type: 'string', default: '' },
+    exclude: { type: 'string', default: '' },
+    concurrency: { type: 'number', default: 6 },
+    timeoutMs: { type: 'number', default: 180000 },
+  },
 
-  async onPreBuild({ utils, inputs, constants, netlifyConfig, logs }) {
+  async onPreBuild({ logs }) {
     logs.info('[run-functions-and-rerun] Plugin detected. Proceeding with no-op prebuild.');
   },
 
-  async onPostBuild({ utils, inputs, constants, netlifyConfig, logs }) {
+  async onPostBuild({ logs }) {
     // Future: Optionally trigger selected Netlify Functions and/or chain builds based on env flags.
     logs.info('[run-functions-and-rerun] Post-build no-op complete.');
   },
