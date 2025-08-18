@@ -1,0 +1,46 @@
+{
+  "id": "simple-service-1755536632488-7c6l7htn7",
+  "category": "AI Solutions",
+  "template": "basicService",
+  "title": "AI Solutions Service",
+  "description": "Professional AI Solutions solution for modern businesses",
+  "features": [
+    "Professional service delivery",
+    "Quality assurance",
+    "Customer support",
+    "Regular updates",
+    "Scalable solutions"
+  ],
+  "pricing": [
+    {
+      "plan": "Basic",
+      "price": "$49/month",
+      "features": [
+        "Core features",
+        "Email support"
+      ]
+    },
+    {
+      "plan": "Professional",
+      "price": "$149/month",
+      "features": [
+        "All features",
+        "Priority support"
+      ]
+    },
+    {
+      "plan": "Enterprise",
+      "price": "$299/month",
+      "features": [
+        "Custom features",
+        "Dedicated support"
+      ]
+    }
+  ],
+  "createdAt": "2025-08-18T17:03:52.488Z",
+  "status": "active",
+  "metadata": {
+    "generatedBy": "simple-service-generator",
+    "version": "1.0.0"
+  }
+}
