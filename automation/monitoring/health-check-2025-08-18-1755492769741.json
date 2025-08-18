@@ -1,0 +1,53 @@
+{
+  "timestamp": "2025-08-18T04:52:46.357Z",
+  "metrics": {
+    "workflow_health": {
+      "success": true,
+      "score": 100,
+      "level": "excellent",
+      "metrics": {
+        "totalWorkflows": 0,
+        "workflowsWithIssues": 0,
+        "totalIssues": 0,
+        "successRate": 100
+      }
+    },
+    "automation_health": {
+      "success": true,
+      "score": 100,
+      "level": "excellent",
+      "message": "All automation systems operational"
+    },
+    "security_status": {
+      "success": true,
+      "score": 98.66071428571428,
+      "level": "excellent",
+      "metrics": {
+        "totalWorkflows": 224,
+        "securedWorkflows": 224,
+        "workflowsWithTimeouts": 218,
+        "securityScore": 100,
+        "timeoutScore": 97.32142857142857
+      }
+    },
+    "dependency_health": {
+      "success": false,
+      "reason": "Command failed: npm run automation:deps\n⚠️  Could not backup node_modules info: Command failed: npm list --depth=0 --json\nnpm error code ELSPROBLEMS\nnpm error extraneous: @asamuzakjp/css-color@3.2.0 /workspace/node_modules/@asamuzakjp/css-color\nnpm error extraneous: @csstools/color-helpers@5.0.2 /workspace/node_modules/@csstools/color-helpers\nnpm error extraneous: @csstools/css-calc@2.1.4 /workspace/node_modules/@csstools/css-calc\nnpm error extraneous: @csstools/css-color-parser@3.0.10 /workspace/node_modules/@csstools/css-color-parser\nnpm error extraneous: @csstools/css-parser-algorithms@3.0.5 /workspace/node_modules/@csstools/css-parser-algorithms\nnpm error extraneous: @csstools/css-tokenizer@3.0.4 /workspace/node_modules/@csstools/css-tokenizer\nnpm error extraneous: @emnapi/core@1.4.5 /workspace/node_modules/@emnapi/core\nnpm error extraneous: @emnapi/runtime@1.4.5 /workspace/node_modules/@emnapi/runtime\nnpm error extraneous: @emnapi/wasi-threads@1.0.4 /workspace/node_modules/@emnapi/wasi-threads\nnpm error extraneous: @napi-rs/wasm-runtime@0.2.12 /workspace/node_modules/@napi-rs/wasm-runtime\nnpm error extraneous: @next/env@14.2.31 /workspace/node_modules/@next/env\nnpm error extraneous: @next/swc-darwin-arm64@ /workspace/node_modules/@next/swc-darwin-arm64\nnpm error extraneous: @next/swc-darwin-x64@ /workspace/node_modules/@next/swc-darwin-x64\nnpm error extraneous: @next/swc-linux-arm64-gnu@ /workspace/node_modules/@next/swc-linux-arm64-gnu\nnpm error extraneous: @next/swc-linux-arm64-musl@ /workspace/node_modules/@next/swc-linux-arm64-musl\nnpm error extraneous: @next/swc-linux-x64-gnu@14.2.31 /workspace/node_modules/@next/swc-linux-x64-gnu\nnpm error extraneous: @next/swc-linux-x64-musl@14.2.31 /workspace/node_modules/@next/swc-linux-x64-musl\nnpm error extraneous: @next/swc-win32-arm64-msvc@ /workspace/node_modules/@next/swc-win32-arm64-msvc\nnpm error extraneous: @next/swc-win32-ia32-msvc@ /workspace/node_modules/@next/swc-win32-ia32-msvc\nnpm error extraneous: @next/swc-win32-x64-msvc@ /workspace/node_modules/@next/swc-win32-x64-msvc\nnpm error extraneous: @swc/counter@0.1.3 /workspace/node_modules/@swc/counter\nnpm error extraneous: @swc/helpers@0.5.5 /workspace/node_modules/@swc/helpers\nnpm error extraneous: @tybys/wasm-util@0.10.0 /workspace/node_modules/@tybys/wasm-util\nnpm error extraneous: arraybuffer.prototype.slice@1.0.4 /workspace/node_modules/arraybuffer.prototype.slice\nnpm error extraneous: async-function@1.0.0 /workspace/node_modules/async-function\nnpm error extraneous: busboy@1.6.0 /workspace/node_modules/busboy\nnpm error extraneous: client-only@0.0.1 /workspace/node_modules/client-only\nnpm error extraneous: cssstyle@4.6.0 /workspace/node_modules/cssstyle\nnpm error extraneous: data-urls@5.0.0 /workspace/node_modules/data-urls\nnpm error extraneous: data-view-buffer@1.0.2 /workspace/node_modules/data-view-buffer\nnpm error extraneous: data-view-byte-length@1.0.2 /workspace/node_modules/data-view-byte-length\nnpm error extraneous: data-view-byte-offset@1.0.1 /workspace/node_modules/data-view-byte-offset\nnpm error extraneous: decimal.js@10.6.0 /workspace/node_modules/decimal.js\nnpm error extraneous: es-to-primitive@1.3.0 /workspace/node_modules/es-to-primitive\nnpm error extraneous: function.prototype.name@1.1.8 /workspace/node_modules/function.prototype.name\nnpm error extraneous: get-symbol-description@1.1.0 /workspace/node_modules/get-symbol-description\nnpm error extraneous: html-encoding-sniffer@4.0.0 /workspace/node_modules/html-encoding-sniffer\nnpm error extraneous: http-proxy-agent@7.0.2 /workspace/node_modules/http-proxy-agent\nnpm error extraneous: is-async-function@2.1.1 /workspace/node_modules/is-async-function\nnpm error extraneous: is-data-view@1.0.2 /workspace/node_modules/is-data-view\nnpm error extraneous: is-finalizationregistry@1.1.1 /workspace/node_modules/is-finalizationregistry\nnpm error extraneous: is-generator-function@1.1.0 /workspace/node_modules/is-generator-function\nnpm error extraneous: is-negative-zero@2.0.3 /workspace/node_modules/is-negative-zero\nnpm error extraneous: is-potential-custom-element-name@1.0.1 /workspace/node_modules/is-potential-custom-element-name\nnpm error extraneous: is-typed-array@1.1.15 /workspace/node_modules/is-typed-array\nnpm error extraneous: is-weakref@1.1.1 /workspace/node_modules/is-weakref\nnpm error invalid: jsdom@ /workspace/node_modules/jsdom\nnpm error invalid: lucide-react@ /workspace/node_modules/lucide-react\nnpm error invalid: next@ /workspace/node_modules/next\nnpm error extraneous: nwsapi@2.2.21 /workspace/node_modules/nwsapi\nnpm error extraneous: own-keys@1.0.1 /workspace/node_modules/own-keys\nnpm error extraneous: psl@1.15.0 /workspace/node_modules/psl\nnpm error extraneous: querystringify@2.2.0 /workspace/node_modules/querystringify\nnpm error extraneous: reflect.getprototypeof@1.0.10 /workspace/node_modules/reflect.getprototypeof\nnpm error extraneous: requires-port@1.0.0 /workspace/node_modules/requires-port\nnpm error extraneous: rrweb-cssom@0.7.1 /workspace/node_modules/rrweb-cssom\nnpm error extraneous: safe-push-apply@1.0.0 /workspace/node_modules/safe-push-apply\nnpm error extraneous: saxes@6.0.0 /workspace/node_modules/saxes\nnpm error extraneous: set-proto@1.0.0 /workspace/node_modules/set-proto\nnpm error extraneous: streamsearch@1.1.0 /workspace/node_modules/streamsearch\nnpm error extraneous: string.prototype.trim@1.2.10 /workspace/node_modules/string.prototype.trim\nnpm error extraneous: string.prototype.trimstart@1.0.8 /workspace/node_modules/string.prototype.trimstart\nnpm error extraneous: styled-jsx@5.1.1 /workspace/node_modules/styled-jsx\nnpm error extraneous: symbol-tree@3.2.4 /workspace/node_modules/symbol-tree\nnpm error extraneous: tough-cookie@4.1.4 /workspace/node_modules/tough-cookie\nnpm error extraneous: typed-array-buffer@1.0.3 /workspace/node_modules/typed-array-buffer\nnpm error extraneous: typed-array-byte-length@1.0.3 /workspace/node_modules/typed-array-byte-length\nnpm error extraneous: typed-array-byte-offset@1.0.4 /workspace/node_modules/typed-array-byte-offset\nnpm error extraneous: typed-array-length@1.0.7 /workspace/node_modules/typed-array-length\nnpm error invalid: typescript@ /workspace/node_modules/typescript\nnpm error extraneous: unbox-primitive@1.1.0 /workspace/node_modules/unbox-primitive\nnpm error extraneous: url-parse@1.5.10 /workspace/node_modules/url-parse\nnpm error extraneous: w3c-xmlserializer@5.0.0 /workspace/node_modules/w3c-xmlserializer\nnpm error extraneous: webidl-conversions@7.0.0 /workspace/node_modules/webidl-conversions\nnpm error extraneous: which-builtin-type@1.2.1 /workspace/node_modules/which-builtin-type\nnpm error extraneous: xml-name-validator@5.0.0 /workspace/node_modules/xml-name-validator\nnpm error extraneous: xmlchars@2.2.0 /workspace/node_modules/xmlchars\nnpm error A complete log of this run can be found in: /home/ubuntu/.npm/_logs/2025-08-18T04_52_46_826Z-debug-0.log\n\n❌ Error checking dependency health: TypeError: Cannot read properties of undefined (reading 'split')\n    at DependencyHealthChecker.determineUpdateType (/workspace/automation/dependency-health-checker.cjs:279:34)\n    at DependencyHealthChecker.analyzeDependencyHealth (/workspace/automation/dependency-health-checker.cjs:222:31)\n    at DependencyHealthChecker.checkDependencyHealth (/workspace/automation/dependency-health-checker.cjs:70:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async main (/workspace/automation/dependency-health-checker.cjs:630:22)\n❌ Error running dependency health checker: TypeError: Cannot read properties of undefined (reading 'split')\n    at DependencyHealthChecker.determineUpdateType (/workspace/automation/dependency-health-checker.cjs:279:34)\n    at DependencyHealthChecker.analyzeDependencyHealth (/workspace/automation/dependency-health-checker.cjs:222:31)\n    at DependencyHealthChecker.checkDependencyHealth (/workspace/automation/dependency-health-checker.cjs:70:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async main (/workspace/automation/dependency-health-checker.cjs:630:22)\n"
+    },
+    "resource_usage": {
+      "success": true,
+      "score": 100,
+      "level": "excellent",
+      "metrics": {
+        "diskUsage": 100,
+        "automationSize": 100
+      }
+    }
+  },
+  "alerts": [],
+  "recommendations": [],
+  "overall_health": {
+    "score": 100,
+    "level": "excellent"
+  }
+}
