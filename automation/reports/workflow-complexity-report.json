@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T05:35:40.524Z",
+  "timestamp": "2025-08-18T05:36:40.641Z",
   "summary": {
     "totalWorkflows": 226,
     "complexityDistribution": {
@@ -1586,7 +1586,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 34,
+        "totalLines": 35,
         "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,
@@ -2900,7 +2900,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 41,
+        "totalLines": 42,
         "jobCount": 0,
         "stepCount": 3,
         "conditionalCount": 1,

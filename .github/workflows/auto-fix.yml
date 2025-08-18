@@ -2,8 +2,8 @@
 name: Autonomous Auto-Fix
 on:
   workflow_dispatch: {}
-  schedule:
-    - cron: '0 2 * * *'
+  # schedule:
+  #   - cron: '0 2 * * *' # DISABLED to prevent conflicts with manual fixes
   pull_request:
     types:
     - opened
