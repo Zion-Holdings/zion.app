@@ -8,7 +8,10 @@ export default function ServicePage() {
         <meta name="description" content="Professional security auditing services to accelerate your business growth and digital transformation." />
         <meta name="keywords" content="security auditing, services, technology, business, digital transformation" />
         <link rel="canonical" href="https://ziontechgroup.com/services/rapid-1755541332361-d7gdvu" />
-      </Head>
+      
+        <meta property="og:title" content="Security Auditing" />
+        <meta property="og:description" content="Security Auditing — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
         <h1 className="text-4xl font-extrabold text-center mb-8">Security Auditing</h1>
         

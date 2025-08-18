@@ -8,7 +8,10 @@ export default function ServicePage() {
         <meta name="description" content="Professional mobile app development services to accelerate your business growth and digital transformation." />
         <meta name="keywords" content="mobile app development, services, technology, business, digital transformation" />
         <link rel="canonical" href="https://ziontechgroup.com/services/rapid-1755541314568-hrtw0s" />
-      </Head>
+      
+        <meta property="og:title" content="Mobile App Development" />
+        <meta property="og:description" content="Mobile App Development — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
         <h1 className="text-4xl font-extrabold text-center mb-8">Mobile App Development</h1>
         
@@ -56,3 +59,9 @@ export default function ServicePage() {
     </div>
   );
 }
+
+<Link href="/services/rapid-1755539340458-6lge19" className="internal-link">Related Content</Link>
+
+<Link href="/services/rapid-1755539347154-xzj546" className="internal-link">Related Content</Link>
+
+<Link href="/services/rapid-1755539353529-war86k" className="internal-link">Related Content</Link>

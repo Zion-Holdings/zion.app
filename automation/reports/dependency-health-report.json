@@ -1,15 +1,7 @@
 {
-  "timestamp": "2025-08-18T18:21:11.839Z",
+  "timestamp": "2025-08-18T18:22:33.901Z",
   "totalPackages": 0,
   "outdatedPackages": {
-    "@modelcontextprotocol/server-filesystem": {
-      "current": "2025.7.29",
-      "wanted": "2025.8.18",
-      "latest": "2025.8.18",
-      "updateType": "minor",
-      "priority": "high",
-      "securityRisk": false
-    },
     "@testing-library/react": {
       "current": "14.3.1",
       "wanted": "14.3.1",
@@ -116,20 +108,12 @@
     }
   },
   "securityIssues": {},
-  "healthScore": 20,
+  "healthScore": 30,
   "recommendations": [],
   "criticalIssues": [],
   "updatePlan": {
     "immediate": [],
     "scheduled": [
-      {
-        "package": "@modelcontextprotocol/server-filesystem",
-        "from": "2025.7.29",
-        "to": "2025.8.18",
-        "type": "minor",
-        "priority": "high",
-        "securityRisk": false
-      },
       {
         "package": "@typescript-eslint/eslint-plugin",
         "from": "8.39.1",
@@ -238,9 +222,9 @@
       }
     ],
     "estimated": {
-      "time": 10,
+      "time": 8,
       "risk": "low",
-      "packages": 5
+      "packages": 4
     }
   }
 }

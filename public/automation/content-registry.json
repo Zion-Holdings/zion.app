@@ -373,6 +373,94 @@
       "type": "ultra-fast-generated",
       "created": "2025-08-18T18:22:30.779Z",
       "process": "ultra-fast"
+    },
+    {
+      "id": "rapid-1755541353689-387f7z",
+      "title": "Database Optimization",
+      "route": "/services/rapid-1755541353689-387f7z",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:22:33.693Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755541353690-jcjzu4",
+      "title": "Integration Hub",
+      "route": "/products/rapid-1755541353690-jcjzu4",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:22:33.693Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755541353691-wu9doc",
+      "title": "Essential Skills in Mobile App Development",
+      "route": "/tutorials/rapid-1755541353691-wu9doc",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:22:33.693Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755541357429-aqzhm5",
+      "title": "AI-Powered Analytics",
+      "route": "/services/rapid-1755541357429-aqzhm5",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:22:37.432Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755541357430-ifdp8d",
+      "title": "Performance Optimizer",
+      "route": "/products/rapid-1755541357430-ifdp8d",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:22:37.432Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755541357431-rmzzk9",
+      "title": "Best Practices in Machine Learning",
+      "route": "/tutorials/rapid-1755541357431-rmzzk9",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:22:37.432Z",
+      "process": "rapid"
+    },
+    {
+      "id": "ultra-1755541357676-w8nama",
+      "title": "Instant Digital Transformation",
+      "route": "/reports/updates/ultra-1755541357676-w8nama",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:22:37.683Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541357678-ul0j3q",
+      "title": "Ultra-Fast Real-time data processing Insight",
+      "route": "/reports/insights/ultra-1755541357678-ul0j3q",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:22:37.683Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541357679-3ucsgs",
+      "title": "Ultra-Fast Guide: Rapid prototyping systems",
+      "route": "/reports/guides/ultra-1755541357679-3ucsgs",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:22:37.683Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541357680-8azten",
+      "title": "Case Study: Lightning deployment pipelines Success",
+      "route": "/reports/cases/ultra-1755541357680-8azten",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:22:37.683Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541357682-0myhjn",
+      "title": "Pattern: Lightning-fast development Architecture",
+      "route": "/reports/patterns/ultra-1755541357682-0myhjn",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:22:37.683Z",
+      "process": "ultra-fast"
     }
   ]
 }

@@ -8,7 +8,10 @@ export default function ProductPage() {
         <meta name="description" content="Monitoring System - The ultimate solution for modern businesses seeking innovation and efficiency." />
         <meta name="keywords" content="monitoring system, product, technology, innovation, business solution" />
         <link rel="canonical" href="https://ziontechgroup.com/products/rapid-1755541337750-se0qlw" />
-      </Head>
+      
+        <meta property="og:title" content="Monitoring System" />
+        <meta property="og:description" content="Monitoring System — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
         <h1 className="text-4xl font-extrabold text-center mb-8">Monitoring System</h1>
         
