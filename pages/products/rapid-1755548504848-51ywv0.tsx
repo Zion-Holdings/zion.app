@@ -8,7 +8,10 @@ export default function ProductPage() {
         <meta name="description" content="Analytics Engine - The ultimate solution for modern businesses seeking innovation and efficiency." />
         <meta name="keywords" content="analytics engine, product, technology, innovation, business solution" />
         <link rel="canonical" href="https://ziontechgroup.com/products/rapid-1755548504848-51ywv0" />
-      </Head>
+      
+        <meta property="og:title" content="Analytics Engine" />
+        <meta property="og:description" content="Analytics Engine — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
         <h1 className="text-4xl font-extrabold text-center mb-8">Analytics Engine</h1>
         

@@ -4,21 +4,18 @@ export default function ServicePage() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <Head>
-        <title>DevOps Automation - Zion Tech Group</title>
-        <meta name="description" content="Professional devops automation services to accelerate your business growth and digital transformation." />
-        <meta name="keywords" content="devops automation, services, technology, business, digital transformation" />
-        <link rel="canonical" href="https://ziontechgroup.com/services/rapid-1755548513029-i09ct6" />
-      
-        <meta property="og:title" content="DevOps Automation" />
-        <meta property="og:description" content="DevOps Automation — automatically suggested description." />
-        <meta name="twitter:card" content="summary_large_image" /></Head>
+        <title>AI-Powered Analytics - Zion Tech Group</title>
+        <meta name="description" content="Professional ai-powered analytics services to accelerate your business growth and digital transformation." />
+        <meta name="keywords" content="ai-powered analytics, services, technology, business, digital transformation" />
+        <link rel="canonical" href="https://ziontechgroup.com/services/rapid-1755548568542-ngllfp" />
+      </Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
-        <h1 className="text-4xl font-extrabold text-center mb-8">DevOps Automation</h1>
+        <h1 className="text-4xl font-extrabold text-center mb-8">AI-Powered Analytics</h1>
         
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4">🚀 Service Overview</h2>
           <p className="text-xl text-white/90 mb-4">
-            Our devops automation service delivers cutting-edge solutions to help your business thrive in the digital age.
+            Our ai-powered analytics service delivers cutting-edge solutions to help your business thrive in the digital age.
           </p>
           <p className="text-white/80">
             We combine industry expertise with innovative technology to deliver results that exceed expectations.
@@ -40,13 +37,13 @@ export default function ServicePage() {
           <h2 className="text-2xl font-bold mb-4">🎯 What We Deliver</h2>
           <p className="text-white/80">
             Our comprehensive approach includes strategy development, implementation, training, and ongoing support
-            to ensure your success with devops automation.
+            to ensure your success with ai-powered analytics.
           </p>
         </section>
 
         <section className="text-center">
           <p className="text-white/75 mb-4">
-            Ready to transform your business with devops automation?
+            Ready to transform your business with ai-powered analytics?
           </p>
           <a 
             href="https://ziontechgroup.com/contact" 

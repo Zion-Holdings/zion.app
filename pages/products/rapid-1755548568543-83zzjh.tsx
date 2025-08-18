@@ -4,21 +4,18 @@ export default function ProductPage() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <Head>
-        <title>Monitoring System - Zion Tech Group</title>
-        <meta name="description" content="Monitoring System - The ultimate solution for modern businesses seeking innovation and efficiency." />
-        <meta name="keywords" content="monitoring system, product, technology, innovation, business solution" />
-        <link rel="canonical" href="https://ziontechgroup.com/products/rapid-1755542902116-mscl8g" />
-      
-        <meta property="og:title" content="Monitoring System" />
-        <meta property="og:description" content="Monitoring System — automatically suggested description." />
-        <meta name="twitter:card" content="summary_large_image" /></Head>
+        <title>Automation Suite - Zion Tech Group</title>
+        <meta name="description" content="Automation Suite - The ultimate solution for modern businesses seeking innovation and efficiency." />
+        <meta name="keywords" content="automation suite, product, technology, innovation, business solution" />
+        <link rel="canonical" href="https://ziontechgroup.com/products/rapid-1755548568543-83zzjh" />
+      </Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
-        <h1 className="text-4xl font-extrabold text-center mb-8">Monitoring System</h1>
+        <h1 className="text-4xl font-extrabold text-center mb-8">Automation Suite</h1>
         
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4">🌟 Product Overview</h2>
           <p className="text-xl text-white/90 mb-4">
-            Monitoring System is designed to revolutionize how businesses operate and grow in today's competitive landscape.
+            Automation Suite is designed to revolutionize how businesses operate and grow in today's competitive landscape.
           </p>
           <p className="text-white/80">
             Built with cutting-edge technology and user experience in mind, it delivers exceptional value and performance.
@@ -46,7 +43,7 @@ export default function ProductPage() {
 
         <section className="text-center">
           <p className="text-white/75 mb-4">
-            Experience the power of Monitoring System today!
+            Experience the power of Automation Suite today!
           </p>
           <a 
             href="https://ziontechgroup.com/demo" 
@@ -59,9 +56,3 @@ export default function ProductPage() {
     </div>
   );
 }
-
-<Link href="/products/rapid-1755539340460-oastx4" className="internal-link">Related Content</Link>
-
-<Link href="/products/rapid-1755539347155-oli1gc" className="internal-link">Related Content</Link>
-
-<Link href="/products/rapid-1755539353530-gfmdyl" className="internal-link">Related Content</Link>
