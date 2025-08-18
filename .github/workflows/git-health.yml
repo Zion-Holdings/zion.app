@@ -2,7 +2,7 @@ name: Git Health
 on:
   workflow_dispatch: {}
   schedule:
-  - cron: 0 2 * * *
+  - cron: '0 2 * * *'
 jobs:
   git-health:
     runs-on: ubuntu-latest
