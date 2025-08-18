@@ -53,25 +53,21 @@ jobs:
           NODE_OPTIONS: "--max-old-space-size=6144 --openssl-legacy-provider"
       - name: Export static files
         run: npm run export
-      - name: Create release
-        id: create_release
-        uses: actions/create-release@v2
+      - name: Archive build
+        run: |
+          cd out
+          zip -r ../zion-app-${{ steps.version.outputs.version }}.zip .
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ steps.version.outputs.version }}
-          release_name: Release ${{ steps.version.outputs.version }}
+          name: Release ${{ steps.version.outputs.version }}
           draft: false
           prerelease: false
-      - name: Upload build artifacts
-        uses: actions/upload-release-asset@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./out
-          asset_name: zion-app-${{ steps.version.outputs.version }}.zip
-          asset_content_type: application/zip
+          files: |
+            zion-app-${{ steps.version.outputs.version }}.zip
       - name: Update package.json version
         run: |
           npm version ${{ steps.version.outputs.version }} --no-git-tag-version

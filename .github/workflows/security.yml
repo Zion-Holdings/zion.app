@@ -42,7 +42,8 @@ jobs:
         run: npm run security:scan
         continue-on-error: true
       - name: Check for secrets in code
-        uses: trufflesecurity/trufflehog@main
+        if: github.event_name == 'push' || github.event_name == 'pull_request'
+        uses: trufflesecurity/trufflehog@v3.77.0
         with:
           path: .
           base: ${{ github.event.before }}

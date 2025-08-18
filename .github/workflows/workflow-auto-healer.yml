@@ -30,7 +30,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - name: Install dependencies
@@ -40,21 +40,21 @@ jobs:
         id: validate
         run: |
           echo "Validating all workflow files..."
-          invalid_files = []
+          invalid_files=()
 
-          for workflow_file in $(find .github/workflows -name "*.yml" -o -name "*.yaml"); do
-            if ! python3 -c "import yaml; yaml.safe_load(open('$workflow_file', 'r'))" 2>/dev/null; then
-              invalid_files.append("$workflow_file")
+          while IFS= read -r workflow_file; do
+            if ! python3 -c "import sys,yaml; yaml.safe_load(open(sys.argv[1],'r'))" "$workflow_file" 2>/dev/null; then
+              invalid_files+=("$workflow_file")
               echo "Invalid workflow: $workflow_file"
             fi
-          done
+          done < <(find .github/workflows -name "*.yml" -o -name "*.yaml")
 
           if [ ${#invalid_files[@]} -gt 0 ]; then
-            echo "needs_fix=true" >> $GITHUB_OUTPUT
-            echo "invalid_count=${#invalid_files[@]}" >> $GITHUB_OUTPUT
+            echo "needs_fix=true" >> "$GITHUB_OUTPUT"
+            echo "invalid_count=${#invalid_files[@]}" >> "$GITHUB_OUTPUT"
             echo "Found ${#invalid_files[@]} invalid workflows"
           else
-            echo "needs_fix=false" >> $GITHUB_OUTPUT
+            echo "needs_fix=false" >> "$GITHUB_OUTPUT"
             echo "All workflows are valid"
           fi
       - name: Report workflow status
