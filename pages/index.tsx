@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 
-export default function HomePage() {
+const HomePage = React.memo(function);
+export default HomePage HomePage() {
   const featuredReports = [
     {
       title: 'Latest Insights',
