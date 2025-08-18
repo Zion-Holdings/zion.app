@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T03:42:41.387Z",
+  "timestamp": "2025-08-18T03:43:43.700Z",
   "critical": [
     {
       "name": "ci-self-heal.yml",
@@ -2147,25 +2147,6 @@
       "resourceScore": 109
     },
     {
-      "name": "marketing-daily.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/marketing-daily.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 25,
-      "concurrentJobs": 7,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "schedule",
-        "workflow_dispatch"
-      ],
-      "resourceScore": 108
-    },
-    {
       "name": "monetization-continuous.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/monetization-continuous.yml",
       "priority": "medium",
@@ -3137,6 +3118,25 @@
     {
       "name": "linkedin-pro.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/linkedin-pro.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 30,
+      "concurrentJobs": 7,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch"
+      ],
+      "resourceScore": 103
+    },
+    {
+      "name": "marketing-daily.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/marketing-daily.yml",
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 30,

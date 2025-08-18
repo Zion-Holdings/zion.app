@@ -2553,9 +2553,9 @@
       "runner": "ubuntu-latest",
       "memory": "standard",
       "timeout": 30,
-      "concurrentJobs": 4
+      "concurrentJobs": 5
     },
-    "estimatedDuration": 25
+    "estimatedDuration": 30
   },
   "marketing-sync.yml": {
     "name": "marketing-sync.yml",
