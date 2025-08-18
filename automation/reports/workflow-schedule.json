@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T05:52:41.187Z",
+  "timestamp": "2025-08-18T05:53:41.192Z",
   "critical": [
     {
       "name": "ci-self-heal.yml",
@@ -2123,7 +2123,7 @@
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 20,
-      "concurrentJobs": 9,
+      "concurrentJobs": 8,
       "runnerRequirements": {
         "runner": "ubuntu-latest",
         "size": "standard",
@@ -2136,7 +2136,7 @@
         "workflow_dispatch {}",
         "schedule"
       ],
-      "resourceScore": 111
+      "resourceScore": 112
     },
     {
       "name": "exponential-agent-factory-proliferation.yml",
@@ -2350,6 +2350,25 @@
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
+      ],
+      "resourceScore": 104
+    },
+    {
+      "name": "netlify-auto-healer.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/netlify-auto-healer.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 30,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "# schedule",
+        "workflow_dispatch"
       ],
       "resourceScore": 104
     },
@@ -3211,25 +3230,6 @@
     {
       "name": "monetization-continuous.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/monetization-continuous.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 30,
-      "concurrentJobs": 7,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "schedule",
-        "workflow_dispatch"
-      ],
-      "resourceScore": 103
-    },
-    {
-      "name": "netlify-auto-healer.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/netlify-auto-healer.yml",
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 30,
