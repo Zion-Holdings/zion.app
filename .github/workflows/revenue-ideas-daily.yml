@@ -33,6 +33,7 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
+          retention-days: 30
           name: revenue-ideas-artifacts
           path: |
             data/reports/revenue-ideas/**/*
