@@ -29,41 +29,41 @@ jobs:
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
       - name: Clean up old automation files
-        run: 'echo "Cleaning up old automation artifacts..."
-
-
-        # Clean up old analytics files (older than 7 days)
-
-        find automation/analytics -name "*.json" -mtime +7 -delete 2>/dev/null ||
-        true
-
-        find automation/analytics -name "*.html" -mtime +7 -delete 2>/dev/null ||
-        true
-
-        find automation/analytics -name "*.csv" -mtime +7 -delete 2>/dev/null || true
-
-
-        # Clean up old backup directories (older than 3 days)
-
-        find automation/backups -type d -mtime +3 -exec rm -rf {} + 2>/dev/null ||
-        true
-
-
-        # Clean up old optimization reports (older than 5 days)
-
-        find automation/optimization -name "*.json" -mtime +5 -delete 2>/dev/null
-        || true
-
-
-        # Clean up old deployment reports (older than 3 days)
-
-        find automation/deployments -name "*.json" -mtime +3 -delete 2>/dev/null ||
-        true
-
-
-        echo "Cleanup completed"
-
-        '
+        run: |
+          echo "Cleaning up old automation artifacts..."
+          
+          
+                  # Clean up old analytics files (older than 7 days)
+          
+                  find automation/analytics -name "*.json" -mtime +7 -delete 2>/dev/null ||
+                  true
+          
+                  find automation/analytics -name "*.html" -mtime +7 -delete 2>/dev/null ||
+                  true
+          
+                  find automation/analytics -name "*.csv" -mtime +7 -delete 2>/dev/null || true
+          
+          
+                  # Clean up old backup directories (older than 3 days)
+          
+                  find automation/backups -type d -mtime +3 -exec rm -rf {} + 2>/dev/null ||
+                  true
+          
+          
+                  # Clean up old optimization reports (older than 5 days)
+          
+                  find automation/optimization -name "*.json" -mtime +5 -delete 2>/dev/null
+                  || true
+          
+          
+                  # Clean up old deployment reports (older than 3 days)
+          
+                  find automation/deployments -name "*.json" -mtime +3 -delete 2>/dev/null ||
+                  true
+          
+          
+                  echo "Cleanup completed"
+          
       - name: Commit cleanup changes
         run:
                 "git config --global user.name \"github-actions[bot]\"\ngit config --global\
@@ -86,72 +86,72 @@ jobs:
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
       - name: Analyze workflow performance
-        run: 'echo "## Workflow Performance Analysis" >> $GITHUB_STEP_SUMMARY
-
-        echo "Analyzing workflow performance and optimization opportunities..." >>
-        $GITHUB_STEP_SUMMARY
-
-
-        # Count total workflows
-
-        WORKFLOW_COUNT=$(find .github/workflows -name "*.yml" | wc -l)
-
-        echo "- Total workflows: $WORKFLOW_COUNT" >> $GITHUB_STEP_SUMMARY
-
-
-        # Check for duplicate workflows
-
-        DUPLICATES=$(find .github/workflows -name "*.yml" -exec basename {} \; | sort
-        | uniq -d | wc -l)
-
-        echo "- Potential duplicates: $DUPLICATES" >> $GITHUB_STEP_SUMMARY
-
-
-        # Check for workflows with high frequency schedules
-
-        HIGH_FREQ=$(grep -r "cron.*\*/[0-9]" .github/workflows/ | wc -l)
-
-        echo "- High frequency workflows: $HIGH_FREQ" >> $GITHUB_STEP_SUMMARY
-
-
-        echo "Analysis completed" >> $GITHUB_STEP_SUMMARY
-
-        '
+        run: |
+          echo "## Workflow Performance Analysis" >> $GITHUB_STEP_SUMMARY
+          
+                  echo "Analyzing workflow performance and optimization opportunities..." >>
+                  $GITHUB_STEP_SUMMARY
+          
+          
+                  # Count total workflows
+          
+                  WORKFLOW_COUNT=$(find .github/workflows -name "*.yml" | wc -l)
+          
+                  echo "- Total workflows: $WORKFLOW_COUNT" >> $GITHUB_STEP_SUMMARY
+          
+          
+                  # Check for duplicate workflows
+          
+                  DUPLICATES=$(find .github/workflows -name "*.yml" -exec basename {} \; | sort
+                  | uniq -d | wc -l)
+          
+                  echo "- Potential duplicates: $DUPLICATES" >> $GITHUB_STEP_SUMMARY
+          
+          
+                  # Check for workflows with high frequency schedules
+          
+                  HIGH_FREQ=$(grep -r "cron.*\*/[0-9]" .github/workflows/ | wc -l)
+          
+                  echo "- High frequency workflows: $HIGH_FREQ" >> $GITHUB_STEP_SUMMARY
+          
+          
+                  echo "Analysis completed" >> $GITHUB_STEP_SUMMARY
+          
       - name: Generate workflow health report
-        run: 'echo "Generating workflow health report..."
-
-
-        cat > workflow-health-report.md << EOF
-
-        # Workflow Health Report
-
-
-        Generated: $(date)
-
-
-        ## Summary
-
-        - Total workflows: $(find .github/workflows -name "*.yml" | wc -l)
-
-        - Last run: $(date)
-
-
-        ## Recommendations
-
-        - Consider consolidating similar workflows
-
-        - Review scheduling frequencies
-
-        - Ensure proper error handling
-
-        - Monitor resource usage
-
-        EOF
-
-
-        echo "Health report generated"
-
-        '
+        run: |
+          echo "Generating workflow health report..."
+          
+          
+                  cat > workflow-health-report.md << EOF
+          
+                  # Workflow Health Report
+          
+          
+                  Generated: $(date)
+          
+          
+                  ## Summary
+          
+                  - Total workflows: $(find .github/workflows -name "*.yml" | wc -l)
+          
+                  - Last run: $(date)
+          
+          
+                  ## Recommendations
+          
+                  - Consider consolidating similar workflows
+          
+                  - Review scheduling frequencies
+          
+                  - Ensure proper error handling
+          
+                  - Monitor resource usage
+          
+                  EOF
+          
+          
+                  echo "Health report generated"
+          
       - name: Upload health report
         uses: actions/upload-artifact@v4
         with:
