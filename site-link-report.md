@@ -1,19 +1,11 @@
 # site-link Report
 
-<<<<<<< Updated upstream
-Generated: 2025-08-18T15:10:28.218Z
-=======
-Generated: 2025-08-18T15:10:18.132Z
->>>>>>> Stashed changes
+Generated: 2025-08-18T15:12:57.475Z
 
 ## Status
 - Task: site-link
 - Status: Completed
-<<<<<<< Updated upstream
-- Timestamp: 2025-08-18T15:10:28.218Z
-=======
-- Timestamp: 2025-08-18T15:10:18.132Z
->>>>>>> Stashed changes
+- Timestamp: 2025-08-18T15:12:57.475Z
 
 ## Next Steps
 - Implement actual site-link functionality
