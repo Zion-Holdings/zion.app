@@ -34,8 +34,9 @@ function tick() {
 
 function main() {
   const secs = parseInt(process.env.SYNC_INTERVAL_SECONDS || '60', 10);
-  const branch = process.env.TARGET_BRANCH || 'main';
-  log(`git-autosync: loop every ${secs}s → ${branch}`);
+  const branch = 'main';
+  process.env.TARGET_BRANCH = 'main';
+  log(`git-autosync: loop every ${secs}s → force ${branch}`);
   tick();
   setInterval(tick, secs * 1000);
 }

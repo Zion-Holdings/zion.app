@@ -59,22 +59,19 @@ function createPR(branch, title, body) {
 (function main() {
   bot();
   sh('git fetch --all --prune');
-  sh('git checkout -B automation/advanced-git-sync-temp');
+  // Always operate directly on main; do not create/switch to temp branches
+  sh('git checkout main');
   sh('git pull --rebase origin main || true');
 
   if (hasChanges()) {
     commitAll('chore(sync): advanced autonomous sync');
   }
 
-  // Try to push directly to main first
+  // Push directly to main only; no fallback branches or PRs
   if (!tryPush('HEAD:main')) {
-    const branch = createBranch('automation/git-sync');
-    if (!hasChanges()) {
-      // force a noop commit so PR can exist if needed
-      sh('git commit --allow-empty -m "chore(sync): empty commit to trigger PR"');
-    }
-    tryPush('HEAD');
-    createPR(branch, 'chore(sync): advanced autonomous sync', 'Automated sync from advanced runner.');
+    // Attempt a single rebase-and-push retry
+    sh('git pull --rebase origin main || true');
+    tryPush('HEAD:main');
   }
 
   sh('git push --tags || true');
