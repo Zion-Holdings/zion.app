@@ -14159,5 +14159,99 @@
       "route": "/docs/CHANGELOG.md"
     }
   ],
-  "generatedAt": "2025-08-18T17:55:44.084Z"
+  "generatedAt": "2025-08-18T17:55:44.084Z",
+  "items": [
+    {
+      "title": "Innovation Insight — 2025-08-18 17-56",
+      "href": "/reports/innovations/insight-2025-08-18T17-56",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:56:21.601Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 17-56",
+      "href": "/reports/updates/update-2025-08-18T17-56",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:56:21.601Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 17-56",
+      "href": "/reports/innovations/insight-2025-08-18T17-56",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:56:21.601Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 17-56",
+      "href": "/reports/updates/update-2025-08-18T17-56",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T17:56:21.601Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "id": "rapid-1755539780340-lb4i3d",
+      "title": "DevOps Automation",
+      "route": "/services/rapid-1755539780340-lb4i3d",
+      "type": "rapid-generated",
+      "created": "2025-08-18T17:56:20.348Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755539780342-5ou7bm",
+      "title": "Development Tools",
+      "route": "/products/rapid-1755539780342-5ou7bm",
+      "type": "rapid-generated",
+      "created": "2025-08-18T17:56:20.348Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755539780343-9zhwxl",
+      "title": "Step-by-Step Guide to Mobile App Development",
+      "route": "/tutorials/rapid-1755539780343-9zhwxl",
+      "type": "rapid-generated",
+      "created": "2025-08-18T17:56:20.348Z",
+      "process": "rapid"
+    },
+    {
+      "id": "ultra-1755539780364-i8etst",
+      "title": "Rapid Response Development",
+      "route": "/reports/updates/ultra-1755539780364-i8etst",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T17:56:20.372Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755539780365-e4ldps",
+      "title": "Ultra-Fast Real-time data processing Insight",
+      "route": "/reports/insights/ultra-1755539780365-e4ldps",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T17:56:20.372Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755539780365-nwjr3w",
+      "title": "Ultra-Fast Guide: Ultra-responsive applications",
+      "route": "/reports/guides/ultra-1755539780365-nwjr3w",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T17:56:20.372Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755539780366-m86i63",
+      "title": "Case Study: AI-powered automation Success",
+      "route": "/reports/cases/ultra-1755539780366-m86i63",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T17:56:20.372Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755539780367-av753z",
+      "title": "Pattern: Real-time data processing Architecture",
+      "route": "/reports/patterns/ultra-1755539780367-av753z",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T17:56:20.372Z",
+      "process": "ultra-fast"
+    }
+  ]
 }
