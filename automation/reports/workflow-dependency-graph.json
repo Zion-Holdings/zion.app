@@ -1530,25 +1530,6 @@
     },
     "estimatedDuration": 20
   },
-  "ci.yml": {
-    "name": "ci.yml",
-    "triggers": [
-      "push",
-      "pull_request",
-      "workflow_dispatch {}",
-      "schedule"
-    ],
-    "needs": [],
-    "outputs": [],
-    "priority": "critical",
-    "resourceRequirements": {
-      "runner": "ubuntu-latest",
-      "memory": "medium",
-      "timeout": 30,
-      "concurrentJobs": 5
-    },
-    "estimatedDuration": 30
-  },
   "cleanup-merged-branches.yml": {
     "name": "cleanup-merged-branches.yml",
     "triggers": [
@@ -1840,6 +1821,25 @@
     },
     "estimatedDuration": 30
   },
+  "continuous-integration.yml": {
+    "name": "continuous-integration.yml",
+    "triggers": [
+      "push",
+      "pull_request",
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "needs": [],
+    "outputs": [],
+    "priority": "medium",
+    "resourceRequirements": {
+      "runner": "ubuntu-latest",
+      "memory": "medium",
+      "timeout": 30,
+      "concurrentJobs": 5
+    },
+    "estimatedDuration": 30
+  },
   "crawl-normalize.yml": {
     "name": "crawl-normalize.yml",
     "triggers": [
@@ -1993,8 +1993,8 @@
     },
     "estimatedDuration": 20
   },
-  "deploy.yml": {
-    "name": "deploy.yml",
+  "deployment.yml": {
+    "name": "deployment.yml",
     "triggers": [
       "push",
       "workflow_dispatch"
