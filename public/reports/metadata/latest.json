@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T17:46:18.511Z",
-  "pagesScanned": 3454,
+  "generatedAt": "2025-08-18T17:47:01.231Z",
+  "pagesScanned": 3463,
   "items": [
     {
       "route": "/404",
@@ -4171,6 +4171,16 @@
       }
     },
     {
+      "route": "/reports/blueprints/blueprint-2025-08-18-174651",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/case-studies/retail-digital-transformation",
       "missing": [
         "og:image"
@@ -8192,6 +8202,16 @@
     },
     {
       "route": "/reports/cases/case-2025-08-18-173843",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Cloud Improving",
+        "description": "Case Study — Cloud Improving — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-18-174651",
       "missing": [
         "og:image"
       ],
@@ -12232,6 +12252,16 @@
     },
     {
       "route": "/reports/guides/guide-2025-08-18-173843",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-18-174651",
       "missing": [
         "og:image"
       ],
@@ -19201,6 +19231,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-18T17-46",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-18 17-46",
+        "description": "Innovation Insight — 2025-08-18 17-46 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/insights/cloud-computing-2025-trends",
       "missing": [
         "og:image"
@@ -23261,6 +23301,16 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-18-174651",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Automation Trends 2025",
+        "description": "Pattern — Automation Trends 2025 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-18-122902",
       "missing": [
         "og:image"
@@ -27072,6 +27122,16 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-18-173843",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-18-174651",
       "missing": [
         "og:image"
       ],
@@ -33101,6 +33161,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-18T17-46",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 17-46",
+        "description": "Autonomous Update — 2025-08-18 17-46 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/whitepapers/enterprise-ai-strategy-framework",
       "missing": [
         "og:image"
@@ -34032,6 +34102,32 @@
       "suggestion": {
         "title": "Consulting Service",
         "description": "Consulting Service — auto-suggested description"
+      }
+    },
+    {
+      "route": "/services/simple-service-1755539184871-hvmi0rz6d",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Support Service",
+        "description": "Support Service — auto-suggested description"
+      }
+    },
+    {
+      "route": "/services/simple-service-1755539184873-e6t8lfcj2",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Training Service",
+        "description": "Training Service — auto-suggested description"
       }
     },
     {
