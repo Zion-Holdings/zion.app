@@ -1,0 +1,1812 @@
+Workflow Local Test Report - Mon Aug 18 04:51:02 PM UTC 2025
+=====================================
+
+Summary:
+  Total workflows: 450
+  Healthy: 450
+  Warnings: 0
+  Critical issues: 0
+
+Detailed Results:
+=================
+
+## accessibility-audit.yml
+Status: HEALTHY
+Details:   Testing accessibility-audit.yml... [0;32m✅ Healthy[0m
+
+## actionlint.yml
+Status: HEALTHY
+Details:   Testing actionlint.yml... [0;32m✅ Healthy[0m
+
+## actions-keepalive.yml
+Status: HEALTHY
+Details:   Testing actions-keepalive.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379731005-0-full-stack-expert.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379731005-0-full-stack-expert.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379731007-1-deployment-expert.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379731007-1-deployment-expert.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379731008-2-monitoring-expert.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379731008-2-monitoring-expert.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379759029-0-optimization-intermediate.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379759029-0-optimization-intermediate.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379759032-1-full-stack-intermediate.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379759032-1-full-stack-intermediate.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379759033-2-deployment-expert.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379759033-2-deployment-expert.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379759033-3-frontend-expert.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379759033-3-frontend-expert.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379759035-4-full-stack-intermediate.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379759035-4-full-stack-intermediate.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379759035-5-frontend-basic.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379759035-5-frontend-basic.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379759036-6-monitoring-advanced.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379759036-6-monitoring-advanced.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379759037-7-full-stack-intermediate.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379759037-7-full-stack-intermediate.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379777746-0-full-stack-advanced.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379777746-0-full-stack-advanced.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379777749-1-full-stack-basic.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379777749-1-full-stack-basic.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379777750-2-monitoring-intermediate.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379777750-2-monitoring-intermediate.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379777751-3-monitoring-advanced.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379777751-3-monitoring-advanced.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379777752-5-testing-expert.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379777752-5-testing-expert.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379777754-6-backend-expert.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379777754-6-backend-expert.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379777755-7-backend-intermediate.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379777755-7-backend-intermediate.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755381089841-0-backend-expert.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755381089841-0-backend-expert.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755381089844-1-deployment-advanced.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755381089844-1-deployment-advanced.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755381089845-2-full-stack-advanced.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755381089845-2-full-stack-advanced.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755381089846-3-optimization-expert.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755381089846-3-optimization-expert.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755381089846-4-testing-advanced.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755381089846-4-testing-advanced.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755381089847-5-frontend-expert.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755381089847-5-frontend-expert.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755381089848-6-testing-intermediate.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755381089848-6-testing-intermediate.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755381089849-7-monitoring-intermediate.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755381089849-7-monitoring-intermediate.yml... [0;32m✅ Healthy[0m
+
+## agent-factory-automation.yml
+Status: HEALTHY
+Details:   Testing agent-factory-automation.yml... [0;32m✅ Healthy[0m
+
+## agent-factory-proliferation.yml
+Status: HEALTHY
+Details:   Testing agent-factory-proliferation.yml... [0;32m✅ Healthy[0m
+
+## agent-of-agents-trigger.yml
+Status: HEALTHY
+Details:   Testing agent-of-agents-trigger.yml... [0;32m✅ Healthy[0m
+
+## ai-changelog.yml
+Status: HEALTHY
+Details:   Testing ai-changelog.yml... [0;32m✅ Healthy[0m
+
+## ai-content-autonomy.yml
+Status: HEALTHY
+Details:   Testing ai-content-autonomy.yml... [0;32m✅ Healthy[0m
+
+## ai-content-factory.yml
+Status: HEALTHY
+Details:   Testing ai-content-factory.yml... [0;32m✅ Healthy[0m
+
+## ai-it-ads-sync.yml
+Status: HEALTHY
+Details:   Testing ai-it-ads-sync.yml... [0;32m✅ Healthy[0m
+
+## ai-it-innovations.yml
+Status: HEALTHY
+Details:   Testing ai-it-innovations.yml... [0;32m✅ Healthy[0m
+
+## ai-it-multi-factory.yml
+Status: HEALTHY
+Details:   Testing ai-it-multi-factory.yml... [0;32m✅ Healthy[0m
+
+## ai-it-ultrafast-sync.yml
+Status: HEALTHY
+Details:   Testing ai-it-ultrafast-sync.yml... [0;32m✅ Healthy[0m
+
+## ai-research-scout.yml
+Status: HEALTHY
+Details:   Testing ai-research-scout.yml... [0;32m✅ Healthy[0m
+
+## ai-trends-radar.yml
+Status: HEALTHY
+Details:   Testing ai-trends-radar.yml... [0;32m✅ Healthy[0m
+
+## app-automation.yml
+Status: HEALTHY
+Details:   Testing app-automation.yml... [0;32m✅ Healthy[0m
+
+## app-monitoring.yml
+Status: HEALTHY
+Details:   Testing app-monitoring.yml... [0;32m✅ Healthy[0m
+
+## auto-fix-workflows.yml
+Status: HEALTHY
+Details:   Testing auto-fix-workflows.yml... [0;32m✅ Healthy[0m
+
+## auto-fix.yml
+Status: HEALTHY
+Details:   Testing auto-fix.yml... [0;32m✅ Healthy[0m
+
+## auto-heal-workflows.yml
+Status: HEALTHY
+Details:   Testing auto-heal-workflows.yml... [0;32m✅ Healthy[0m
+
+## automation-advertiser.yml
+Status: HEALTHY
+Details:   Testing automation-advertiser.yml... [0;32m✅ Healthy[0m
+
+## automation-cleanup.yml
+Status: HEALTHY
+Details:   Testing automation-cleanup.yml... [0;32m✅ Healthy[0m
+
+## automation-dashboard.yml
+Status: HEALTHY
+Details:   Testing automation-dashboard.yml... [0;32m✅ Healthy[0m
+
+## automation-guardian-10min.yml
+Status: HEALTHY
+Details:   Testing automation-guardian-10min.yml... [0;32m✅ Healthy[0m
+
+## automation-orchestrator.yml
+Status: HEALTHY
+Details:   Testing automation-orchestrator.yml... [0;32m✅ Healthy[0m
+
+## automations.yml
+Status: HEALTHY
+Details:   Testing automations.yml... [0;32m✅ Healthy[0m
+
+## auto-media-release.yml
+Status: HEALTHY
+Details:   Testing auto-media-release.yml... [0;32m✅ Healthy[0m
+
+## automerge-main.yml
+Status: HEALTHY
+Details:   Testing automerge-main.yml... [0;32m✅ Healthy[0m
+
+## autonomous-agent-orchestrator.yml
+Status: HEALTHY
+Details:   Testing autonomous-agent-orchestrator.yml... [0;32m✅ Healthy[0m
+
+## autonomous-auto-discovery.yml
+Status: HEALTHY
+Details:   Testing autonomous-auto-discovery.yml... [0;32m✅ Healthy[0m
+
+## autonomous-auto-merge-to-main.yml
+Status: HEALTHY
+Details:   Testing autonomous-auto-merge-to-main.yml... [0;32m✅ Healthy[0m
+
+## autonomous-cloud-automations.yml
+Status: HEALTHY
+Details:   Testing autonomous-cloud-automations.yml... [0;32m✅ Healthy[0m
+
+## autonomous-cloud-fast.yml
+Status: HEALTHY
+Details:   Testing autonomous-cloud-fast.yml... [0;32m✅ Healthy[0m
+
+## autonomous-cloud-runner.yml
+Status: HEALTHY
+Details:   Testing autonomous-cloud-runner.yml... [0;32m✅ Healthy[0m
+
+## autonomous-cloud.yml
+Status: HEALTHY
+Details:   Testing autonomous-cloud.yml... [0;32m✅ Healthy[0m
+
+## autonomous-content-curation.yml
+Status: HEALTHY
+Details:   Testing autonomous-content-curation.yml... [0;32m✅ Healthy[0m
+
+## autonomous-content-scanner.yml
+Status: HEALTHY
+Details:   Testing autonomous-content-scanner.yml... [0;32m✅ Healthy[0m
+
+## autonomous-deep-maintenance.yml
+Status: HEALTHY
+Details:   Testing autonomous-deep-maintenance.yml... [0;32m✅ Healthy[0m
+
+## autonomous-deps-upgrade.yml
+Status: HEALTHY
+Details:   Testing autonomous-deps-upgrade.yml... [0;32m✅ Healthy[0m
+
+## autonomous-external-links.yml
+Status: HEALTHY
+Details:   Testing autonomous-external-links.yml... [0;32m✅ Healthy[0m
+
+## autonomous-image-optimizer.yml
+Status: HEALTHY
+Details:   Testing autonomous-image-optimizer.yml... [0;32m✅ Healthy[0m
+
+## autonomous-intelligence.yml
+Status: HEALTHY
+Details:   Testing autonomous-intelligence.yml... [0;32m✅ Healthy[0m
+
+## autonomous-keepalive.yml
+Status: HEALTHY
+Details:   Testing autonomous-keepalive.yml... [0;32m✅ Healthy[0m
+
+## autonomous-lighthouse.yml
+Status: HEALTHY
+Details:   Testing autonomous-lighthouse.yml... [0;32m✅ Healthy[0m
+
+## autonomous-marketing-seo.yml
+Status: HEALTHY
+Details:   Testing autonomous-marketing-seo.yml... [0;32m✅ Healthy[0m
+
+## autonomous-meta.yml
+Status: HEALTHY
+Details:   Testing autonomous-meta.yml... [0;32m✅ Healthy[0m
+
+## autonomous-minute-orchestrator.yml
+Status: HEALTHY
+Details:   Testing autonomous-minute-orchestrator.yml... [0;32m✅ Healthy[0m
+
+## autonomous-quick-fixes.yml
+Status: HEALTHY
+Details:   Testing autonomous-quick-fixes.yml... [0;32m✅ Healthy[0m
+
+## autonomous-release.yml
+Status: HEALTHY
+Details:   Testing autonomous-release.yml... [0;32m✅ Healthy[0m
+
+## autonomous-self-tune.yml
+Status: HEALTHY
+Details:   Testing autonomous-self-tune.yml... [0;32m✅ Healthy[0m
+
+## autonomous-ultrafast.yml
+Status: HEALTHY
+Details:   Testing autonomous-ultrafast.yml... [0;32m✅ Healthy[0m
+
+## autonomous-workflow-cleanup.yml
+Status: HEALTHY
+Details:   Testing autonomous-workflow-cleanup.yml... [0;32m✅ Healthy[0m
+
+## autonomous-workflow-watchdog.yml
+Status: HEALTHY
+Details:   Testing autonomous-workflow-watchdog.yml... [0;32m✅ Healthy[0m
+
+## auto-pr-automerge.yml
+Status: HEALTHY
+Details:   Testing auto-pr-automerge.yml... [0;32m✅ Healthy[0m
+
+## auto-pr-cursor-branches.yml
+Status: HEALTHY
+Details:   Testing auto-pr-cursor-branches.yml... [0;32m✅ Healthy[0m
+
+## auto-semver-release.yml
+Status: HEALTHY
+Details:   Testing auto-semver-release.yml... [0;32m✅ Healthy[0m
+
+## auto-update-prs.yml
+Status: HEALTHY
+Details:   Testing auto-update-prs.yml... [0;32m✅ Healthy[0m
+
+## branch-cleanup.yml
+Status: HEALTHY
+Details:   Testing branch-cleanup.yml... [0;32m✅ Healthy[0m
+
+## branch-pruner.yml
+Status: HEALTHY
+Details:   Testing branch-pruner.yml... [0;32m✅ Healthy[0m
+
+## broken-images.yml
+Status: HEALTHY
+Details:   Testing broken-images.yml... [0;32m✅ Healthy[0m
+
+## accessibility-audit.yml
+Status: HEALTHY
+Details:   Testing accessibility-audit.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## actionlint.yml
+Status: HEALTHY
+Details:   Testing actionlint.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## actions-keepalive.yml
+Status: HEALTHY
+Details:   Testing actions-keepalive.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## agent-agent-1755379731005-0-full-stack-expert.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379731005-0-full-stack-expert.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379731007-1-deployment-expert.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379731007-1-deployment-expert.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379731008-2-monitoring-expert.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379731008-2-monitoring-expert.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379759029-0-optimization-intermediate.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379759029-0-optimization-intermediate.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379759032-1-full-stack-intermediate.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379759032-1-full-stack-intermediate.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379759033-2-deployment-expert.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379759033-2-deployment-expert.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379759033-3-frontend-expert.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379759033-3-frontend-expert.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379759035-4-full-stack-intermediate.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379759035-4-full-stack-intermediate.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379759035-5-frontend-basic.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379759035-5-frontend-basic.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379759036-6-monitoring-advanced.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379759036-6-monitoring-advanced.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379759037-7-full-stack-intermediate.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379759037-7-full-stack-intermediate.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379777746-0-full-stack-advanced.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379777746-0-full-stack-advanced.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379777749-1-full-stack-basic.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379777749-1-full-stack-basic.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379777750-2-monitoring-intermediate.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379777750-2-monitoring-intermediate.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379777751-3-monitoring-advanced.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379777751-3-monitoring-advanced.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379777752-5-testing-expert.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379777752-5-testing-expert.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379777754-6-backend-expert.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379777754-6-backend-expert.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755379777755-7-backend-intermediate.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755379777755-7-backend-intermediate.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755381089841-0-backend-expert.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755381089841-0-backend-expert.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755381089844-1-deployment-advanced.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755381089844-1-deployment-advanced.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755381089845-2-full-stack-advanced.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755381089845-2-full-stack-advanced.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755381089846-3-optimization-expert.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755381089846-3-optimization-expert.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755381089846-4-testing-advanced.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755381089846-4-testing-advanced.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755381089847-5-frontend-expert.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755381089847-5-frontend-expert.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755381089848-6-testing-intermediate.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755381089848-6-testing-intermediate.yml... [0;32m✅ Healthy[0m
+
+## agent-agent-1755381089849-7-monitoring-intermediate.yml
+Status: HEALTHY
+Details:   Testing agent-agent-1755381089849-7-monitoring-intermediate.yml... [0;32m✅ Healthy[0m
+
+## agent-factory-automation.yml
+Status: HEALTHY
+Details:   Testing agent-factory-automation.yml... [0;32m✅ Healthy[0m
+
+## agent-factory-proliferation.yml
+Status: HEALTHY
+Details:   Testing agent-factory-proliferation.yml... [0;32m✅ Healthy[0m
+
+## agent-of-agents-trigger.yml
+Status: HEALTHY
+Details:   Testing agent-of-agents-trigger.yml... [0;32m✅ Healthy[0m
+
+## ai-changelog.yml
+Status: HEALTHY
+Details:   Testing ai-changelog.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## ai-content-autonomy.yml
+Status: HEALTHY
+Details:   Testing ai-content-autonomy.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## ai-content-factory.yml
+Status: HEALTHY
+Details:   Testing ai-content-factory.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## ai-it-ads-sync.yml
+Status: HEALTHY
+Details:   Testing ai-it-ads-sync.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## ai-it-innovations.yml
+Status: HEALTHY
+Details:   Testing ai-it-innovations.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## ai-it-multi-factory.yml
+Status: HEALTHY
+Details:   Testing ai-it-multi-factory.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## ai-it-ultrafast-sync.yml
+Status: HEALTHY
+Details:   Testing ai-it-ultrafast-sync.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## ai-research-scout.yml
+Status: HEALTHY
+Details:   Testing ai-research-scout.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## ai-trends-radar.yml
+Status: HEALTHY
+Details:   Testing ai-trends-radar.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## app-automation.yml
+Status: HEALTHY
+Details:   Testing app-automation.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## app-monitoring.yml
+Status: HEALTHY
+Details:   Testing app-monitoring.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## auto-fix.yml
+Status: HEALTHY
+Details:   Testing auto-fix.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## auto-heal-workflows.yml
+Status: HEALTHY
+Details:   Testing auto-heal-workflows.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## automation-advertiser.yml
+Status: HEALTHY
+Details:   Testing automation-advertiser.yml... [0;32m✅ Healthy[0m
+
+## automation-cleanup.yml
+Status: HEALTHY
+Details:   Testing automation-cleanup.yml... [0;32m✅ Healthy[0m
+
+## automation-dashboard.yml
+Status: HEALTHY
+Details:   Testing automation-dashboard.yml... [0;32m✅ Healthy[0m
+
+## automation-guardian-10min.yml
+Status: HEALTHY
+Details:   Testing automation-guardian-10min.yml... [0;32m✅ Healthy[0m
+
+## automation-orchestrator.yml
+Status: HEALTHY
+Details:   Testing automation-orchestrator.yml... [0;32m✅ Healthy[0m
+
+## automations.yml
+Status: HEALTHY
+Details:   Testing automations.yml... [0;32m✅ Healthy[0m
+
+## auto-media-release.yml
+Status: HEALTHY
+Details:   Testing auto-media-release.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## automerge-main.yml
+Status: HEALTHY
+Details:   Testing automerge-main.yml... [0;32m✅ Healthy[0m
+
+## autonomous-agent-orchestrator.yml
+Status: HEALTHY
+Details:   Testing autonomous-agent-orchestrator.yml... [0;32m✅ Healthy[0m
+
+## autonomous-auto-discovery.yml
+Status: HEALTHY
+Details:   Testing autonomous-auto-discovery.yml... [0;32m✅ Healthy[0m
+
+## autonomous-auto-merge-to-main.yml
+Status: HEALTHY
+Details:   Testing autonomous-auto-merge-to-main.yml... [0;32m✅ Healthy[0m
+
+## autonomous-cloud-automations.yml
+Status: HEALTHY
+Details:   Testing autonomous-cloud-automations.yml... [0;32m✅ Healthy[0m
+
+## autonomous-cloud-fast.yml
+Status: HEALTHY
+Details:   Testing autonomous-cloud-fast.yml... [0;32m✅ Healthy[0m
+
+## autonomous-cloud-runner.yml
+Status: HEALTHY
+Details:   Testing autonomous-cloud-runner.yml... [0;32m✅ Healthy[0m
+
+## autonomous-cloud.yml
+Status: HEALTHY
+Details:   Testing autonomous-cloud.yml... [0;32m✅ Healthy[0m
+
+## autonomous-content-curation.yml
+Status: HEALTHY
+Details:   Testing autonomous-content-curation.yml... [0;32m✅ Healthy[0m
+
+## autonomous-content-scanner.yml
+Status: HEALTHY
+Details:   Testing autonomous-content-scanner.yml... [0;32m✅ Healthy[0m
+
+## autonomous-deep-maintenance.yml
+Status: HEALTHY
+Details:   Testing autonomous-deep-maintenance.yml... [0;32m✅ Healthy[0m
+
+## autonomous-deps-upgrade.yml
+Status: HEALTHY
+Details:   Testing autonomous-deps-upgrade.yml... [0;32m✅ Healthy[0m
+
+## autonomous-external-links.yml
+Status: HEALTHY
+Details:   Testing autonomous-external-links.yml... [0;32m✅ Healthy[0m
+
+## autonomous-image-optimizer.yml
+Status: HEALTHY
+Details:   Testing autonomous-image-optimizer.yml... [0;32m✅ Healthy[0m
+
+## autonomous-intelligence.yml
+Status: HEALTHY
+Details:   Testing autonomous-intelligence.yml... [0;32m✅ Healthy[0m
+
+## autonomous-keepalive.yml
+Status: HEALTHY
+Details:   Testing autonomous-keepalive.yml... [0;32m✅ Healthy[0m
+
+## autonomous-lighthouse.yml
+Status: HEALTHY
+Details:   Testing autonomous-lighthouse.yml... [0;32m✅ Healthy[0m
+
+## autonomous-marketing-seo.yml
+Status: HEALTHY
+Details:   Testing autonomous-marketing-seo.yml... [0;32m✅ Healthy[0m
+
+## autonomous-meta.yml
+Status: HEALTHY
+Details:   Testing autonomous-meta.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## autonomous-minute-orchestrator.yml
+Status: HEALTHY
+Details:   Testing autonomous-minute-orchestrator.yml... [0;32m✅ Healthy[0m
+
+## autonomous-quick-fixes.yml
+Status: HEALTHY
+Details:   Testing autonomous-quick-fixes.yml... [0;32m✅ Healthy[0m
+
+## autonomous-release.yml
+Status: HEALTHY
+Details:   Testing autonomous-release.yml... [0;32m✅ Healthy[0m
+
+## autonomous-self-tune.yml
+Status: HEALTHY
+Details:   Testing autonomous-self-tune.yml... [0;32m✅ Healthy[0m
+
+## autonomous-ultrafast.yml
+Status: HEALTHY
+Details:   Testing autonomous-ultrafast.yml... [0;32m✅ Healthy[0m
+
+## autonomous-workflow-cleanup.yml
+Status: HEALTHY
+Details:   Testing autonomous-workflow-cleanup.yml... [0;32m✅ Healthy[0m
+
+## autonomous-workflow-watchdog.yml
+Status: HEALTHY
+Details:   Testing autonomous-workflow-watchdog.yml... [0;32m✅ Healthy[0m
+
+## auto-pr-automerge.yml
+Status: HEALTHY
+Details:   Testing auto-pr-automerge.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## auto-pr-cursor-branches.yml
+Status: HEALTHY
+Details:   Testing auto-pr-cursor-branches.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## auto-semver-release.yml
+Status: HEALTHY
+Details:   Testing auto-semver-release.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## auto-update-prs.yml
+Status: HEALTHY
+Details:   Testing auto-update-prs.yml... [0;32m✅ Healthy[0m
+
+## branch-cleanup.yml
+Status: HEALTHY
+Details:   Testing branch-cleanup.yml... [0;32m✅ Healthy[0m
+
+## branch-pruner.yml
+Status: HEALTHY
+Details:   Testing branch-pruner.yml... [0;32m✅ Healthy[0m
+
+## broken-images.yml
+Status: HEALTHY
+Details:   Testing broken-images.yml... [0;32m✅ Healthy[0m
+
+## ci-auto-heal.yml
+Status: HEALTHY
+Details:   Testing ci-auto-heal.yml... [0;32m✅ Healthy[0m
+
+## ci-merge-main.yml
+Status: HEALTHY
+Details:   Testing ci-merge-main.yml... [0;32m✅ Healthy[0m
+
+## ci-quality.yml
+Status: HEALTHY
+Details:   Testing ci-quality.yml... [0;32m✅ Healthy[0m
+
+## ci-self-heal.yml
+Status: HEALTHY
+Details:   Testing ci-self-heal.yml... [1;33m⚠️  Warnings: no_triggers [0m
+
+## ci.yml
+Status: HEALTHY
+Details:   Testing ci.yml... [0;32m✅ Healthy[0m
+
+## cleanup-merged-branches.yml
+Status: HEALTHY
+Details:   Testing cleanup-merged-branches.yml... [0;32m✅ Healthy[0m
+
+## cleanup.yml
+Status: HEALTHY
+Details:   Testing cleanup.yml... [0;32m✅ Healthy[0m
+
+## cloud-agents-fast.yml
+Status: HEALTHY
+Details:   Testing cloud-agents-fast.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## cloud-agents.yml
+Status: HEALTHY
+Details:   Testing cloud-agents.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## cloud-autonomous-orchestrator.yml
+Status: HEALTHY
+Details:   Testing cloud-autonomous-orchestrator.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## cloud-deep-research.yml
+Status: HEALTHY
+Details:   Testing cloud-deep-research.yml... [0;32m✅ Healthy[0m
+
+## cloud-maintenance.yml
+Status: HEALTHY
+Details:   Testing cloud-maintenance.yml... [0;32m✅ Healthy[0m
+
+## cloud-marketing.yml
+Status: HEALTHY
+Details:   Testing cloud-marketing.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## cloud-orchestrator-plus.yml
+Status: HEALTHY
+Details:   Testing cloud-orchestrator-plus.yml... [0;32m✅ Healthy[0m
+
+## codeql-analysis.yml
+Status: HEALTHY
+Details:   Testing codeql-analysis.yml... [0;32m✅ Healthy[0m
+
+## codeql.yml
+Status: HEALTHY
+Details:   Testing codeql.yml... [0;32m✅ Healthy[0m
+
+## commitlint.yml
+Status: HEALTHY
+Details:   Testing commitlint.yml... [0;32m✅ Healthy[0m
+
+## commit-message-lint.yml
+Status: HEALTHY
+Details:   Testing commit-message-lint.yml... [0;32m✅ Healthy[0m
+
+## components-size-report.yml
+Status: HEALTHY
+Details:   Testing components-size-report.yml... [0;32m✅ Healthy[0m
+
+## content-generation.yml
+Status: HEALTHY
+Details:   Testing content-generation.yml... [0;32m✅ Healthy[0m
+
+## continuous-improvement.yml
+Status: HEALTHY
+Details:   Testing continuous-improvement.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## crawl-normalize.yml
+Status: HEALTHY
+Details:   Testing crawl-normalize.yml... [0;32m✅ Healthy[0m
+
+## cursor-chat.yml
+Status: HEALTHY
+Details:   Testing cursor-chat.yml... [0;32m✅ Healthy[0m
+
+## cursor-rules-autoupdate.yml
+Status: HEALTHY
+Details:   Testing cursor-rules-autoupdate.yml... [0;32m✅ Healthy[0m
+
+## dead-code-report.yml
+Status: HEALTHY
+Details:   Testing dead-code-report.yml... [0;32m✅ Healthy[0m
+
+## dependabot-auto-approve.yml
+Status: HEALTHY
+Details:   Testing dependabot-auto-approve.yml... [0;32m✅ Healthy[0m
+
+## dependencies.yml
+Status: HEALTHY
+Details:   Testing dependencies.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## dependency-auto-upgrade.yml
+Status: HEALTHY
+Details:   Testing dependency-auto-upgrade.yml... [0;32m✅ Healthy[0m
+
+## dependency-maintenance.yml
+Status: HEALTHY
+Details:   Testing dependency-maintenance.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## dependency-management.yml
+Status: HEALTHY
+Details:   Testing dependency-management.yml... [0;32m✅ Healthy[0m
+
+## deploy.yml
+Status: HEALTHY
+Details:   Testing deploy.yml... [0;32m✅ Healthy[0m
+
+## diverse-agent-matrix.yml
+Status: HEALTHY
+Details:   Testing diverse-agent-matrix.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## docs-autogen.yml
+Status: HEALTHY
+Details:   Testing docs-autogen.yml... [0;32m✅ Healthy[0m
+
+## docs-intelligence.yml
+Status: HEALTHY
+Details:   Testing docs-intelligence.yml... [0;32m✅ Healthy[0m
+
+## emergency-fix.yml
+Status: HEALTHY
+Details:   Testing emergency-fix.yml... [0;32m✅ Healthy[0m
+
+## ephemeral-branch-autorebase.yml
+Status: HEALTHY
+Details:   Testing ephemeral-branch-autorebase.yml... [0;32m✅ Healthy[0m
+
+## exponential-agent-factory-proliferation.yml
+Status: HEALTHY
+Details:   Testing exponential-agent-factory-proliferation.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## exponential-ai-delegation.yml
+Status: HEALTHY
+Details:   Testing exponential-ai-delegation.yml... [0;32m✅ Healthy[0m
+
+## external-links.yml
+Status: HEALTHY
+Details:   Testing external-links.yml... [0;32m✅ Healthy[0m
+
+## fast-auto-push-to-main.yml
+Status: HEALTHY
+Details:   Testing fast-auto-push-to-main.yml... [0;32m✅ Healthy[0m
+
+## fast-lint-sync.yml
+Status: HEALTHY
+Details:   Testing fast-lint-sync.yml... [0;32m✅ Healthy[0m
+
+## frontend-sync-continuous.yml
+Status: HEALTHY
+Details:   Testing frontend-sync-continuous.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## front-scheduler.yml
+Status: HEALTHY
+Details:   Testing front-scheduler.yml... [0;32m✅ Healthy[0m
+
+## git-health.yml
+Status: HEALTHY
+Details:   Testing git-health.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## gitleaks.yml
+Status: HEALTHY
+Details:   Testing gitleaks.yml... [0;32m✅ Healthy[0m
+
+## git-ultrafast-sync.yml
+Status: HEALTHY
+Details:   Testing git-ultrafast-sync.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## guardian-scheduler.yml
+Status: HEALTHY
+Details:   Testing guardian-scheduler.yml... [0;32m✅ Healthy[0m
+
+## homepage-auto-advertiser.yml
+Status: HEALTHY
+Details:   Testing homepage-auto-advertiser.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## homepage-auto-update.yml
+Status: HEALTHY
+Details:   Testing homepage-auto-update.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## infinite-improvement-loop.yml
+Status: HEALTHY
+Details:   Testing infinite-improvement-loop.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## instagram-marketing.yml
+Status: HEALTHY
+Details:   Testing instagram-marketing.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## instagram-six-hourly.yml
+Status: HEALTHY
+Details:   Testing instagram-six-hourly.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## intelligent-content-generation.yml
+Status: HEALTHY
+Details:   Testing intelligent-content-generation.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## knowledge-graph-radar.yml
+Status: HEALTHY
+Details:   Testing knowledge-graph-radar.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## labeler.yml
+Status: HEALTHY
+Details:   Testing labeler.yml... [0;32m✅ Healthy[0m
+
+## lighthouse-budgets.yml
+Status: HEALTHY
+Details:   Testing lighthouse-budgets.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## lighthouse-live.yml
+Status: HEALTHY
+Details:   Testing lighthouse-live.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## link-auto-fix.yml
+Status: HEALTHY
+Details:   Testing link-auto-fix.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## linkedin-marketing.yml
+Status: HEALTHY
+Details:   Testing linkedin-marketing.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## linkedin-pro.yml
+Status: HEALTHY
+Details:   Testing linkedin-pro.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## link-scan-hourly.yml
+Status: HEALTHY
+Details:   Testing link-scan-hourly.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## maintenance.yml
+Status: HEALTHY
+Details:   Testing maintenance.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## marketing-daily.yml
+Status: HEALTHY
+Details:   Testing marketing-daily.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## marketing-sync.yml
+Status: HEALTHY
+Details:   Testing marketing-sync.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## media-optimizer.yml
+Status: HEALTHY
+Details:   Testing media-optimizer.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## merge-conflict-guard.yml
+Status: HEALTHY
+Details:   Testing merge-conflict-guard.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## monetization-continuous.yml
+Status: HEALTHY
+Details:   Testing monetization-continuous.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## monetization-daily.yml
+Status: HEALTHY
+Details:   Testing monetization-daily.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## monetization.yml
+Status: HEALTHY
+Details:   Testing monetization.yml... [0;32m✅ Healthy[0m
+
+## netlify-auto-healer.yml
+Status: HEALTHY
+Details:   Testing netlify-auto-healer.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## netlify-automation.yml
+Status: HEALTHY
+Details:   Testing netlify-automation.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## netlify-config.yml
+Status: HEALTHY
+Details:   Testing netlify-config.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## netlify-functions-trigger.yml
+Status: HEALTHY
+Details:   Testing netlify-functions-trigger.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## netlify-monitor.yml
+Status: HEALTHY
+Details:   Testing netlify-monitor.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## og-image-refresh.yml
+Status: HEALTHY
+Details:   Testing og-image-refresh.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## og-image-update.yml
+Status: HEALTHY
+Details:   Testing og-image-update.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## optimize-images.yml
+Status: HEALTHY
+Details:   Testing optimize-images.yml... [0;32m✅ Healthy[0m
+
+## pa11y.yml
+Status: HEALTHY
+Details:   Testing pa11y.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## performance-audit.yml
+Status: HEALTHY
+Details:   Testing performance-audit.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## performance-monitoring.yml
+Status: HEALTHY
+Details:   Testing performance-monitoring.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## performance-weekly.yml
+Status: HEALTHY
+Details:   Testing performance-weekly.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## pin-actions-weekly.yml
+Status: HEALTHY
+Details:   Testing pin-actions-weekly.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## playwright-smoke.yml
+Status: HEALTHY
+Details:   Testing playwright-smoke.yml... [0;32m✅ Healthy[0m
+
+## pr-auto-curator.yml
+Status: HEALTHY
+Details:   Testing pr-auto-curator.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## pr-quality-gate.yml
+Status: HEALTHY
+Details:   Testing pr-quality-gate.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## pr-size-labeler.yml
+Status: HEALTHY
+Details:   Testing pr-size-labeler.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## pr-smoke.yml
+Status: HEALTHY
+Details:   Testing pr-smoke.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## pr-update-with-main.yml
+Status: HEALTHY
+Details:   Testing pr-update-with-main.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## rapid-git-sync.yml
+Status: HEALTHY
+Details:   Testing rapid-git-sync.yml... [0;32m✅ Healthy[0m
+
+## rapid-sync.yml
+Status: HEALTHY
+Details:   Testing rapid-sync.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## readme-auto-advertiser.yml
+Status: HEALTHY
+Details:   Testing readme-auto-advertiser.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## readme-autogen.yml
+Status: HEALTHY
+Details:   Testing readme-autogen.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## release-drafter.yml
+Status: HEALTHY
+Details:   Testing release-drafter.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## release.yml
+Status: HEALTHY
+Details:   Testing release.yml... [0;32m✅ Healthy[0m
+
+## repo-knowledge-graph.yml
+Status: HEALTHY
+Details:   Testing repo-knowledge-graph.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## repo-radar.yml
+Status: HEALTHY
+Details:   Testing repo-radar.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## responsive-content.yml
+Status: HEALTHY
+Details:   Testing responsive-content.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## revenue-ideas-daily.yml
+Status: HEALTHY
+Details:   Testing revenue-ideas-daily.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## search-index-autogen.yml
+Status: HEALTHY
+Details:   Testing search-index-autogen.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## security-audit.yml
+Status: HEALTHY
+Details:   Testing security-audit.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## security-auto-heal.yml
+Status: HEALTHY
+Details:   Testing security-auto-heal.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## security-gates.yml
+Status: HEALTHY
+Details:   Testing security-gates.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## security-scan.yml
+Status: HEALTHY
+Details:   Testing security-scan.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## security-weekly.yml
+Status: HEALTHY
+Details:   Testing security-weekly.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## security.yml
+Status: HEALTHY
+Details:   Testing security.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## self-healing-build.yml
+Status: HEALTHY
+Details:   Testing self-healing-build.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## self-replicating-factory-manager.yml
+Status: HEALTHY
+Details:   Testing self-replicating-factory-manager.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## seo-audit.yml
+Status: HEALTHY
+Details:   Testing seo-audit.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## seo-validator.yml
+Status: HEALTHY
+Details:   Testing seo-validator.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## site-health-guardian.yml
+Status: HEALTHY
+Details:   Testing site-health-guardian.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## site-link.yml
+Status: HEALTHY
+Details:   Testing site-link.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## sitemap-and-search.yml
+Status: HEALTHY
+Details:   Testing sitemap-and-search.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## sitemap-auto-commit.yml
+Status: HEALTHY
+Details:   Testing sitemap-auto-commit.yml... [0;32m✅ Healthy[0m
+
+## sitemap-daily.yml
+Status: HEALTHY
+Details:   Testing sitemap-daily.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## smart-merge-agent.yml
+Status: HEALTHY
+Details:   Testing smart-merge-agent.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## stale.yml
+Status: HEALTHY
+Details:   Testing stale.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## sync-health.yml
+Status: HEALTHY
+Details:   Testing sync-health.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## test-auth.yml
+Status: HEALTHY
+Details:   Testing test-auth.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## test.yml
+Status: HEALTHY
+Details:   Testing test.yml... [0;32m✅ Healthy[0m
+
+## todo-issue-sync.yml
+Status: HEALTHY
+Details:   Testing todo-issue-sync.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## topics-and-clusters.yml
+Status: HEALTHY
+Details:   Testing topics-and-clusters.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## ui-evolution-schedule.yml
+Status: HEALTHY
+Details:   Testing ui-evolution-schedule.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## ui-evolution-weekly-beautify.yml
+Status: HEALTHY
+Details:   Testing ui-evolution-weekly-beautify.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## ultra-rapid-sync.yml
+Status: HEALTHY
+Details:   Testing ultra-rapid-sync.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## unused-deps-cleaner.yml
+Status: HEALTHY
+Details:   Testing unused-deps-cleaner.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## unused-exports-report.yml
+Status: HEALTHY
+Details:   Testing unused-exports-report.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## variation.yml
+Status: HEALTHY
+Details:   Testing variation.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## venture.yml
+Status: HEALTHY
+Details:   Testing venture.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## workflow-auto-healer.yml
+Status: HEALTHY
+Details:   Testing workflow-auto-healer.yml... [0;32m✅ Healthy[0m
+
+## workflow-health-monitor.yml
+Status: HEALTHY
+Details:   Testing workflow-health-monitor.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## workflow-manager.yml
+Status: HEALTHY
+Details:   Testing workflow-manager.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## workflow-radar.yml
+Status: HEALTHY
+Details:   Testing workflow-radar.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## workflow-supervisor.yml
+Status: HEALTHY
+Details:   Testing workflow-supervisor.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## workflow-validator.yml
+Status: HEALTHY
+Details:   Testing workflow-validator.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## workflow-watchdog.yml
+Status: HEALTHY
+Details:   Testing workflow-watchdog.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## yaml-auto-fixer-simple.yml
+Status: HEALTHY
+Details:   Testing yaml-auto-fixer-simple.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## yaml-auto-fixer.yml
+Status: HEALTHY
+Details:   Testing yaml-auto-fixer.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## yaml-validator.yml
+Status: HEALTHY
+Details:   Testing yaml-validator.yml... [1;33m⚠️  Warnings: no_concurrency_control [0m
+
+## ci-auto-heal.yml
+Status: HEALTHY
+Details:   Testing ci-auto-heal.yml... [0;32m✅ Healthy[0m
+
+## ci-lint-types-build.yml
+Status: HEALTHY
+Details:   Testing ci-lint-types-build.yml... [0;32m✅ Healthy[0m
+
+## ci-merge-main.yml
+Status: HEALTHY
+Details:   Testing ci-merge-main.yml... [0;32m✅ Healthy[0m
+
+## ci-quality.yml
+Status: HEALTHY
+Details:   Testing ci-quality.yml... [0;32m✅ Healthy[0m
+
+## ci-self-heal.yml
+Status: HEALTHY
+Details:   Testing ci-self-heal.yml... [0;32m✅ Healthy[0m
+
+## ci.yml
+Status: HEALTHY
+Details:   Testing ci.yml... [0;32m✅ Healthy[0m
+
+## cleanup-merged-branches.yml
+Status: HEALTHY
+Details:   Testing cleanup-merged-branches.yml... [0;32m✅ Healthy[0m
+
+## cleanup.yml
+Status: HEALTHY
+Details:   Testing cleanup.yml... [0;32m✅ Healthy[0m
+
+## cloud-agents-fast.yml
+Status: HEALTHY
+Details:   Testing cloud-agents-fast.yml... [0;32m✅ Healthy[0m
+
+## cloud-agents.yml
+Status: HEALTHY
+Details:   Testing cloud-agents.yml... [0;32m✅ Healthy[0m
+
+## cloud-autonomous-orchestrator.yml
+Status: HEALTHY
+Details:   Testing cloud-autonomous-orchestrator.yml... [0;32m✅ Healthy[0m
+
+## cloud-deep-research.yml
+Status: HEALTHY
+Details:   Testing cloud-deep-research.yml... [0;32m✅ Healthy[0m
+
+## cloud-maintenance.yml
+Status: HEALTHY
+Details:   Testing cloud-maintenance.yml... [0;32m✅ Healthy[0m
+
+## cloud-marketing.yml
+Status: HEALTHY
+Details:   Testing cloud-marketing.yml... [0;32m✅ Healthy[0m
+
+## cloud-orchestrator-plus.yml
+Status: HEALTHY
+Details:   Testing cloud-orchestrator-plus.yml... [0;32m✅ Healthy[0m
+
+## codeql-analysis.yml
+Status: HEALTHY
+Details:   Testing codeql-analysis.yml... [0;32m✅ Healthy[0m
+
+## codeql.yml
+Status: HEALTHY
+Details:   Testing codeql.yml... [0;32m✅ Healthy[0m
+
+## commitlint.yml
+Status: HEALTHY
+Details:   Testing commitlint.yml... [0;32m✅ Healthy[0m
+
+## commit-message-lint.yml
+Status: HEALTHY
+Details:   Testing commit-message-lint.yml... [0;32m✅ Healthy[0m
+
+## components-size-report.yml
+Status: HEALTHY
+Details:   Testing components-size-report.yml... [0;32m✅ Healthy[0m
+
+## comprehensive-test.yml
+Status: HEALTHY
+Details:   Testing comprehensive-test.yml... [0;32m✅ Healthy[0m
+
+## content-generation.yml
+Status: HEALTHY
+Details:   Testing content-generation.yml... [0;32m✅ Healthy[0m
+
+## continuous-deployment.yml
+Status: HEALTHY
+Details:   Testing continuous-deployment.yml... [0;32m✅ Healthy[0m
+
+## continuous-improvement.yml
+Status: HEALTHY
+Details:   Testing continuous-improvement.yml... [0;32m✅ Healthy[0m
+
+## crawl-normalize.yml
+Status: HEALTHY
+Details:   Testing crawl-normalize.yml... [0;32m✅ Healthy[0m
+
+## cursor-chat.yml
+Status: HEALTHY
+Details:   Testing cursor-chat.yml... [0;32m✅ Healthy[0m
+
+## cursor-rules-autoupdate.yml
+Status: HEALTHY
+Details:   Testing cursor-rules-autoupdate.yml... [0;32m✅ Healthy[0m
+
+## dead-code-report.yml
+Status: HEALTHY
+Details:   Testing dead-code-report.yml... [0;32m✅ Healthy[0m
+
+## dependabot-auto-approve.yml
+Status: HEALTHY
+Details:   Testing dependabot-auto-approve.yml... [0;32m✅ Healthy[0m
+
+## dependencies.yml
+Status: HEALTHY
+Details:   Testing dependencies.yml... [0;32m✅ Healthy[0m
+
+## dependency-auto-upgrade.yml
+Status: HEALTHY
+Details:   Testing dependency-auto-upgrade.yml... [0;32m✅ Healthy[0m
+
+## dependency-maintenance.yml
+Status: HEALTHY
+Details:   Testing dependency-maintenance.yml... [0;31m❌ Critical issues: missing_permissions_for_write[0m
+
+## dependency-management.yml
+Status: HEALTHY
+Details:   Testing dependency-management.yml... [0;32m✅ Healthy[0m
+
+## diverse-agent-matrix.yml
+Status: HEALTHY
+Details:   Testing diverse-agent-matrix.yml... [0;32m✅ Healthy[0m
+
+## docs-autogen.yml
+Status: HEALTHY
+Details:   Testing docs-autogen.yml... [0;32m✅ Healthy[0m
+
+## docs-intelligence.yml
+Status: HEALTHY
+Details:   Testing docs-intelligence.yml... [0;32m✅ Healthy[0m
+
+## emergency-fix.yml
+Status: HEALTHY
+Details:   Testing emergency-fix.yml... [0;32m✅ Healthy[0m
+
+## ephemeral-branch-autorebase.yml
+Status: HEALTHY
+Details:   Testing ephemeral-branch-autorebase.yml... [0;32m✅ Healthy[0m
+
+## exponential-agent-factory-proliferation.yml
+Status: HEALTHY
+Details:   Testing exponential-agent-factory-proliferation.yml... [0;32m✅ Healthy[0m
+
+## exponential-ai-delegation.yml
+Status: HEALTHY
+Details:   Testing exponential-ai-delegation.yml... [0;32m✅ Healthy[0m
+
+## external-links.yml
+Status: HEALTHY
+Details:   Testing external-links.yml... [0;32m✅ Healthy[0m
+
+## fast-auto-push-to-main.yml
+Status: HEALTHY
+Details:   Testing fast-auto-push-to-main.yml... [0;32m✅ Healthy[0m
+
+## fast-lint-sync.yml
+Status: HEALTHY
+Details:   Testing fast-lint-sync.yml... [0;32m✅ Healthy[0m
+
+## frontend-sync-continuous.yml
+Status: HEALTHY
+Details:   Testing frontend-sync-continuous.yml... [0;32m✅ Healthy[0m
+
+## front-scheduler.yml
+Status: HEALTHY
+Details:   Testing front-scheduler.yml... [0;32m✅ Healthy[0m
+
+## git-health.yml
+Status: HEALTHY
+Details:   Testing git-health.yml... [0;32m✅ Healthy[0m
+
+## gitleaks.yml
+Status: HEALTHY
+Details:   Testing gitleaks.yml... [0;32m✅ Healthy[0m
+
+## git-ultrafast-sync.yml
+Status: HEALTHY
+Details:   Testing git-ultrafast-sync.yml... [0;32m✅ Healthy[0m
+
+## guardian-scheduler.yml
+Status: HEALTHY
+Details:   Testing guardian-scheduler.yml... [0;32m✅ Healthy[0m
+
+## homepage-auto-advertiser.yml
+Status: HEALTHY
+Details:   Testing homepage-auto-advertiser.yml... [0;32m✅ Healthy[0m
+
+## homepage-auto-update.yml
+Status: HEALTHY
+Details:   Testing homepage-auto-update.yml... [0;32m✅ Healthy[0m
+
+## infinite-improvement-loop.yml
+Status: HEALTHY
+Details:   Testing infinite-improvement-loop.yml... [0;32m✅ Healthy[0m
+
+## instagram-marketing.yml
+Status: HEALTHY
+Details:   Testing instagram-marketing.yml... [0;32m✅ Healthy[0m
+
+## instagram-six-hourly.yml
+Status: HEALTHY
+Details:   Testing instagram-six-hourly.yml... [0;32m✅ Healthy[0m
+
+## intelligent-content-generation.yml
+Status: HEALTHY
+Details:   Testing intelligent-content-generation.yml... [0;32m✅ Healthy[0m
+
+## knowledge-graph-radar.yml
+Status: HEALTHY
+Details:   Testing knowledge-graph-radar.yml... [0;32m✅ Healthy[0m
+
+## labeler.yml
+Status: HEALTHY
+Details:   Testing labeler.yml... [0;32m✅ Healthy[0m
+
+## lighthouse-budgets.yml
+Status: HEALTHY
+Details:   Testing lighthouse-budgets.yml... [0;32m✅ Healthy[0m
+
+## lighthouse-live.yml
+Status: HEALTHY
+Details:   Testing lighthouse-live.yml... [0;32m✅ Healthy[0m
+
+## link-auto-fix.yml
+Status: HEALTHY
+Details:   Testing link-auto-fix.yml... [0;32m✅ Healthy[0m
+
+## linkedin-marketing.yml
+Status: HEALTHY
+Details:   Testing linkedin-marketing.yml... [0;32m✅ Healthy[0m
+
+## linkedin-pro.yml
+Status: HEALTHY
+Details:   Testing linkedin-pro.yml... [0;32m✅ Healthy[0m
+
+## link-scan-hourly.yml
+Status: HEALTHY
+Details:   Testing link-scan-hourly.yml... [0;32m✅ Healthy[0m
+
+## maintenance.yml
+Status: HEALTHY
+Details:   Testing maintenance.yml... [0;32m✅ Healthy[0m
+
+## marketing-daily.yml
+Status: HEALTHY
+Details:   Testing marketing-daily.yml... [0;32m✅ Healthy[0m
+
+## marketing-sync.yml
+Status: HEALTHY
+Details:   Testing marketing-sync.yml... [0;32m✅ Healthy[0m
+
+## media-optimizer.yml
+Status: HEALTHY
+Details:   Testing media-optimizer.yml... [0;32m✅ Healthy[0m
+
+## merge-conflict-guard.yml
+Status: HEALTHY
+Details:   Testing merge-conflict-guard.yml... [0;32m✅ Healthy[0m
+
+## monetization-continuous.yml
+Status: HEALTHY
+Details:   Testing monetization-continuous.yml... [0;32m✅ Healthy[0m
+
+## monetization-daily.yml
+Status: HEALTHY
+Details:   Testing monetization-daily.yml... [0;32m✅ Healthy[0m
+
+## monetization.yml
+Status: HEALTHY
+Details:   Testing monetization.yml... [0;32m✅ Healthy[0m
+
+## netlify-auto-healer.yml
+Status: HEALTHY
+Details:   Testing netlify-auto-healer.yml... [0;32m✅ Healthy[0m
+
+## netlify-automation.yml
+Status: HEALTHY
+Details:   Testing netlify-automation.yml... [0;32m✅ Healthy[0m
+
+## netlify-config.yml
+Status: HEALTHY
+Details:   Testing netlify-config.yml... [0;32m✅ Healthy[0m
+
+## netlify-functions-trigger.yml
+Status: HEALTHY
+Details:   Testing netlify-functions-trigger.yml... [0;32m✅ Healthy[0m
+
+## netlify-monitor.yml
+Status: HEALTHY
+Details:   Testing netlify-monitor.yml... [0;32m✅ Healthy[0m
+
+## og-image-refresh.yml
+Status: HEALTHY
+Details:   Testing og-image-refresh.yml... [0;32m✅ Healthy[0m
+
+## og-image-update.yml
+Status: HEALTHY
+Details:   Testing og-image-update.yml... [0;32m✅ Healthy[0m
+
+## optimize-images.yml
+Status: HEALTHY
+Details:   Testing optimize-images.yml... [0;32m✅ Healthy[0m
+
+## pa11y.yml
+Status: HEALTHY
+Details:   Testing pa11y.yml... [0;32m✅ Healthy[0m
+
+## performance-audit.yml
+Status: HEALTHY
+Details:   Testing performance-audit.yml... [0;32m✅ Healthy[0m
+
+## performance-monitoring.yml
+Status: HEALTHY
+Details:   Testing performance-monitoring.yml... [0;32m✅ Healthy[0m
+
+## performance-weekly.yml
+Status: HEALTHY
+Details:   Testing performance-weekly.yml... [0;32m✅ Healthy[0m
+
+## pin-actions-weekly.yml
+Status: HEALTHY
+Details:   Testing pin-actions-weekly.yml... [0;32m✅ Healthy[0m
+
+## playwright-smoke.yml
+Status: HEALTHY
+Details:   Testing playwright-smoke.yml... [0;32m✅ Healthy[0m
+
+## pr-auto-curator.yml
+Status: HEALTHY
+Details:   Testing pr-auto-curator.yml... [0;32m✅ Healthy[0m
+
+## pr-quality-gate.yml
+Status: HEALTHY
+Details:   Testing pr-quality-gate.yml... [0;32m✅ Healthy[0m
+
+## pr-size-labeler.yml
+Status: HEALTHY
+Details:   Testing pr-size-labeler.yml... [0;32m✅ Healthy[0m
+
+## pr-smoke.yml
+Status: HEALTHY
+Details:   Testing pr-smoke.yml... [0;32m✅ Healthy[0m
+
+## pr-update-with-main.yml
+Status: HEALTHY
+Details:   Testing pr-update-with-main.yml... [0;32m✅ Healthy[0m
+
+## rapid-git-sync.yml
+Status: HEALTHY
+Details:   Testing rapid-git-sync.yml... [0;32m✅ Healthy[0m
+
+## rapid-sync.yml
+Status: HEALTHY
+Details:   Testing rapid-sync.yml... [0;32m✅ Healthy[0m
+
+## readme-auto-advertiser.yml
+Status: HEALTHY
+Details:   Testing readme-auto-advertiser.yml... [0;32m✅ Healthy[0m
+
+## readme-autogen.yml
+Status: HEALTHY
+Details:   Testing readme-autogen.yml... [0;32m✅ Healthy[0m
+
+## release-deploy.yml
+Status: HEALTHY
+Details:   Testing release-deploy.yml... [0;32m✅ Healthy[0m
+
+## release-drafter.yml
+Status: HEALTHY
+Details:   Testing release-drafter.yml... [0;32m✅ Healthy[0m
+
+## release.yml
+Status: HEALTHY
+Details:   Testing release.yml... [0;32m✅ Healthy[0m
+
+## repo-knowledge-graph.yml
+Status: HEALTHY
+Details:   Testing repo-knowledge-graph.yml... [0;32m✅ Healthy[0m
+
+## repo-radar.yml
+Status: HEALTHY
+Details:   Testing repo-radar.yml... [0;32m✅ Healthy[0m
+
+## responsive-content.yml
+Status: HEALTHY
+Details:   Testing responsive-content.yml... [0;32m✅ Healthy[0m
+
+## revenue-ideas-daily.yml
+Status: HEALTHY
+Details:   Testing revenue-ideas-daily.yml... [0;32m✅ Healthy[0m
+
+## search-index-autogen.yml
+Status: HEALTHY
+Details:   Testing search-index-autogen.yml... [0;32m✅ Healthy[0m
+
+## security-audit.yml
+Status: HEALTHY
+Details:   Testing security-audit.yml... [0;32m✅ Healthy[0m
+
+## security-auto-heal.yml
+Status: HEALTHY
+Details:   Testing security-auto-heal.yml... [0;32m✅ Healthy[0m
+
+## security-gates.yml
+Status: HEALTHY
+Details:   Testing security-gates.yml... [0;32m✅ Healthy[0m
+
+## security-scan.yml
+Status: HEALTHY
+Details:   Testing security-scan.yml... [0;32m✅ Healthy[0m
+
+## security-weekly.yml
+Status: HEALTHY
+Details:   Testing security-weekly.yml... [0;32m✅ Healthy[0m
+
+## security.yml
+Status: HEALTHY
+Details:   Testing security.yml... [0;32m✅ Healthy[0m
+
+## self-healing-build.yml
+Status: HEALTHY
+Details:   Testing self-healing-build.yml... [0;32m✅ Healthy[0m
+
+## self-replicating-factory-manager.yml
+Status: HEALTHY
+Details:   Testing self-replicating-factory-manager.yml... [0;32m✅ Healthy[0m
+
+## seo-audit.yml
+Status: HEALTHY
+Details:   Testing seo-audit.yml... [0;32m✅ Healthy[0m
+
+## seo-validator.yml
+Status: HEALTHY
+Details:   Testing seo-validator.yml... [0;32m✅ Healthy[0m
+
+## site-health-guardian.yml
+Status: HEALTHY
+Details:   Testing site-health-guardian.yml... [0;32m✅ Healthy[0m
+
+## site-link.yml
+Status: HEALTHY
+Details:   Testing site-link.yml... [0;32m✅ Healthy[0m
+
+## sitemap-and-search.yml
+Status: HEALTHY
+Details:   Testing sitemap-and-search.yml... [0;32m✅ Healthy[0m
+
+## sitemap-auto-commit.yml
+Status: HEALTHY
+Details:   Testing sitemap-auto-commit.yml... [0;32m✅ Healthy[0m
+
+## sitemap-daily.yml
+Status: HEALTHY
+Details:   Testing sitemap-daily.yml... [0;32m✅ Healthy[0m
+
+## stale.yml
+Status: HEALTHY
+Details:   Testing stale.yml... [0;32m✅ Healthy[0m
+
+## sync-health.yml
+Status: HEALTHY
+Details:   Testing sync-health.yml... [0;32m✅ Healthy[0m
+
+## test-auth.yml
+Status: HEALTHY
+Details:   Testing test-auth.yml... [0;32m✅ Healthy[0m
+
+## test-suite.yml
+Status: HEALTHY
+Details:   Testing test-suite.yml... [0;32m✅ Healthy[0m
+
+## test.yml
+Status: HEALTHY
+Details:   Testing test.yml... [0;32m✅ Healthy[0m
+
+## todo-issue-sync.yml
+Status: HEALTHY
+Details:   Testing todo-issue-sync.yml... [0;32m✅ Healthy[0m
+
+## topics-and-clusters.yml
+Status: HEALTHY
+Details:   Testing topics-and-clusters.yml... [0;32m✅ Healthy[0m
+
+## ui-evolution-schedule.yml
+Status: HEALTHY
+Details:   Testing ui-evolution-schedule.yml... [0;32m✅ Healthy[0m
+
+## ui-evolution-weekly-beautify.yml
+Status: HEALTHY
+Details:   Testing ui-evolution-weekly-beautify.yml... [0;32m✅ Healthy[0m
+
+## ultra-rapid-sync.yml
+Status: HEALTHY
+Details:   Testing ultra-rapid-sync.yml... [0;32m✅ Healthy[0m
+
+## unused-deps-cleaner.yml
+Status: HEALTHY
+Details:   Testing unused-deps-cleaner.yml... [0;32m✅ Healthy[0m
+
+## unused-exports-report.yml
+Status: HEALTHY
+Details:   Testing unused-exports-report.yml... [0;32m✅ Healthy[0m
+
+## variation.yml
+Status: HEALTHY
+Details:   Testing variation.yml... [0;32m✅ Healthy[0m
+
+## venture.yml
+Status: HEALTHY
+Details:   Testing venture.yml... [0;32m✅ Healthy[0m
+
+## workflow-auto-healer.yml
+Status: HEALTHY
+Details:   Testing workflow-auto-healer.yml... [0;32m✅ Healthy[0m
+
+## workflow-health-monitor.yml
+Status: HEALTHY
+Details:   Testing workflow-health-monitor.yml... [0;32m✅ Healthy[0m
+
+## workflow-manager.yml
+Status: HEALTHY
+Details:   Testing workflow-manager.yml... [0;32m✅ Healthy[0m
+
+## workflow-radar.yml
+Status: HEALTHY
+Details:   Testing workflow-radar.yml... [0;32m✅ Healthy[0m
+
+## workflow-supervisor.yml
+Status: HEALTHY
+Details:   Testing workflow-supervisor.yml... [0;32m✅ Healthy[0m
+
+## workflow-validator.yml
+Status: HEALTHY
+Details:   Testing workflow-validator.yml... [0;32m✅ Healthy[0m
+
+## workflow-watchdog.yml
+Status: HEALTHY
+Details:   Testing workflow-watchdog.yml... [0;32m✅ Healthy[0m
+
+## yaml-auto-fixer-simple.yml
+Status: HEALTHY
+Details:   Testing yaml-auto-fixer-simple.yml... [0;32m✅ Healthy[0m
+
+## yaml-auto-fixer.yml
+Status: HEALTHY
+Details:   Testing yaml-auto-fixer.yml... [0;32m✅ Healthy[0m
+
+## yaml-validator.yml
+Status: HEALTHY
+Details:   Testing yaml-validator.yml... [0;32m✅ Healthy[0m
+

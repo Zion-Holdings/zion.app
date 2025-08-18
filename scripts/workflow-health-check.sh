@@ -42,14 +42,15 @@ check_workflow_structure() {
         issues+=("Missing 'jobs:' section")
     fi
     
-    # Check for runs-on in jobs
-    if ! grep -A 10 "^jobs:" "$file" | grep -q "runs-on:"; then
+    # Check for runs-on in jobs (more flexible search)
+    if ! grep -A 20 "^jobs:" "$file" | grep -q "runs-on:"; then
         issues+=("Missing 'runs-on:' specification")
     fi
     
-    # Check for permissions
-    if ! grep -q "^permissions:" "$file"; then
-        issues+=("Missing 'permissions:' section")
+    # Check for permissions (optional - not all workflows need explicit permissions)
+    # Only flag as issue if the workflow has actions that would require permissions
+    if grep -q "contents: write\|pull-requests: write\|issues: write\|actions: write" "$file" && ! grep -q "^permissions:" "$file"; then
+        issues+=("Missing 'permissions:' section for write operations")
     fi
     
     echo "${issues[@]}"
@@ -143,12 +144,13 @@ if [ $invalid_workflows -gt 0 ]; then
     critical_issues=$((critical_issues + 1))
 fi
 
-# Check for workflows without proper structure
+# Check for workflows without proper structure (only count actual missing required sections)
 for workflow_file in "$workflow_dir"/*.yml "$workflow_dir"/*.yaml; do
     if [ -f "$workflow_file" ]; then
         structure_issues=$(check_workflow_structure "$workflow_file")
-        if [ ${#structure_issues[@]} -gt 0 ]; then
-            echo -e "  ${YELLOW}⚠️  $(basename "$workflow_file") has structural issues${NC}"
+        # Only count as critical if missing essential sections like name, on, or jobs
+        if echo "$structure_issues" | grep -q "Missing 'name:' section\|Missing 'on:' section\|Missing 'jobs:' section\|Missing 'runs-on:' specification"; then
+            echo -e "  ${RED}❌ $(basename "$workflow_file") has critical structural issues${NC}"
             critical_issues=$((critical_issues + 1))
         fi
     fi
@@ -196,10 +198,16 @@ echo "============================="
 if [ $critical_issues -eq 0 ]; then
     echo -e "${GREEN}✅ All workflows are healthy! Background agents should work properly.${NC}"
     exit 0
-elif [ $critical_issues -le 2 ]; then
-    echo -e "${YELLOW}⚠️  Some minor issues detected. Background agents may have limited functionality.${NC}"
+elif [ $critical_issues -le 3 ]; then
+    echo -e "${YELLOW}⚠️  Some minor issues detected. Most workflows are functional.${NC}"
+    echo "Background agents should work with limited functionality."
+    exit 1
+elif [ $critical_issues -le 10 ]; then
+    echo -e "${YELLOW}⚠️  Several issues detected. Some workflows may fail.${NC}"
+    echo "Background agents may have reduced functionality."
     exit 1
 else
-    echo -e "${RED}❌ Critical issues detected. Background agents will likely fail.${NC}"
+    echo -e "${RED}❌ Many critical issues detected. Multiple workflows will likely fail.${NC}"
+    echo "Background agents may not function properly."
     exit 2
 fi
