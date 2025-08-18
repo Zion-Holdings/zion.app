@@ -23,7 +23,7 @@ jobs:
     name: Auto-Heal Workflows
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -41,14 +41,14 @@ jobs:
         run: |
           echo "Validating all workflow files..."
           invalid_files = []
-          
+
           for workflow_file in $(find .github/workflows -name "*.yml" -o -name "*.yaml"); do
             if ! python3 -c "import yaml; yaml.safe_load(open('$workflow_file', 'r'))" 2>/dev/null; then
               invalid_files.append("$workflow_file")
               echo "Invalid workflow: $workflow_file"
             fi
           done
-          
+
           if [ ${#invalid_files[@]} -gt 0 ]; then
             echo "needs_fix=true" >> $GITHUB_OUTPUT
             echo "invalid_count=${#invalid_files[@]}" >> $GITHUB_OUTPUT
@@ -69,7 +69,7 @@ jobs:
           script: |
             const invalidCount = '${{ steps.validate.outputs.invalid_count }}';
             const message = `🔧 **Workflow Auto-Healer Report**\n\nFound ${invalidCount} invalid workflow files that need manual attention.\n\nPlease review and fix these workflows manually.`;
-            
+
             github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,

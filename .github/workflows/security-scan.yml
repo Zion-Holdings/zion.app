@@ -19,7 +19,7 @@ jobs:
     name: Security Scan Job
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4

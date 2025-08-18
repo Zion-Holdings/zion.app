@@ -20,7 +20,7 @@ jobs:
     name: SEO Audit Job
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -52,7 +52,7 @@ jobs:
           echo "NPM version: $(npm --version)"
           echo "Current directory: $(pwd)"
           echo "Script path: $(realpath scripts/seo-audit.js)"
-          
+
           if node scripts/seo-audit.js; then
             echo "SEO audit completed successfully"
             echo "status=success" >> $GITHUB_OUTPUT
