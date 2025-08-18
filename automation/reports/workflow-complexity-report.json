@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T03:15:28.032Z",
+  "timestamp": "2025-08-18T03:16:28.990Z",
   "summary": {
     "totalWorkflows": 224,
     "complexityDistribution": {
@@ -2339,10 +2339,10 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/front-scheduler.yml"
     },
     "frontend-sync-continuous.yml": {
-      "complexityScore": 5,
+      "complexityScore": 15,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 50,
+        "totalLines": 54,
         "jobCount": 0,
         "stepCount": 6,
         "conditionalCount": 0,
