@@ -1,19 +1,11 @@
 # linkedin-marketing Report
 
-<<<<<<< Updated upstream
-Generated: 2025-08-18T16:00:08.529Z
-=======
-Generated: 2025-08-18T16:00:59.185Z
->>>>>>> Stashed changes
+Generated: 2025-08-18T16:02:48.128Z
 
 ## Status
 - Task: linkedin-marketing
 - Status: Completed
-<<<<<<< Updated upstream
-- Timestamp: 2025-08-18T16:00:08.529Z
-=======
-- Timestamp: 2025-08-18T16:00:59.185Z
->>>>>>> Stashed changes
+- Timestamp: 2025-08-18T16:02:48.128Z
 
 ## Next Steps
 - Implement actual linkedin-marketing functionality
