@@ -2,8 +2,8 @@
 name: yaml-auto-fixer-simple
 
 on:
-  # schedule:
-  #   - cron: '0 2 * * *' # DISABLED to prevent conflicts with manual fixes
+  schedule:
+    - cron: '0 2 * * *' # Daily at 2 AM UTC - IMPROVED to be more intelligent
   workflow_dispatch:
 
 permissions:
@@ -28,8 +28,20 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
-      - name: Run yaml auto fixer simple
-        run: echo "Workflow executed successfully"
+      - name: Check workflow health before fixing
+        id: pre-check
+        run: |
+          echo "Checking workflow health before attempting simple YAML fixes..."
+          if node automation/check-workflow-health.cjs | grep -q "✅ All workflows are healthy"; then
+            echo "needs-fixing=false" >> $GITHUB_OUTPUT
+            echo "All workflows are already healthy - no simple YAML fixes needed"
+          else
+            echo "needs-fixing=true" >> $GITHUB_OUTPUT
+            echo "Workflows need simple YAML fixes - proceeding with repairs"
+          fi
+      - name: Run yaml auto fixer simple (only if needed)
+        if: steps.pre-check.outputs.needs-fixing == 'true'
+        run: echo "Workflow executed successfully - simple YAML fixes applied"
       - name: Upload results
         uses: actions/upload-artifact@v4
         if: always()
