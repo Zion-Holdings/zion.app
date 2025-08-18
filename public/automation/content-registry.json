@@ -21753,6 +21753,10 @@
       "route": "/reports/blueprints/blueprint-2025-08-14-212855"
     },
     {
+      "file": "pages/reports/updates/update-2025-08-18-0006.tsx",
+      "route": "/reports/updates/update-2025-08-18-0006"
+    },
+    {
       "file": "pages/reports/updates/update-2025-08-18-0005.tsx",
       "route": "/reports/updates/update-2025-08-18-0005"
     },
@@ -34079,5 +34083,5 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-18T03:05:01.248Z"
+  "generatedAt": "2025-08-18T03:06:01.248Z"
 }
