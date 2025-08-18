@@ -1,0 +1,282 @@
+name: Redundant Link Generation
+
+on:
+  schedule:
+    # Run every 2 minutes for maximum redundancy
+    - cron: '*/2 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: "redundant-link-generation-${{ github.ref }}"
+  cancel-in-progress: false
+
+jobs:
+  ultra-fast-links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Run Ultra-Fast Link Generator
+        run: node automation/ultra-fast-link-generator.cjs --once
+        env:
+          CANONICAL_URL: https://ziontechgroup.com
+      
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "feat: ultra-fast link generation [skip ci]" || exit 0
+          git push
+
+  redundant-links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: ultra-fast-links
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Run Redundant Link Generator
+        run: node automation/redundant-link-generator.cjs --once
+        env:
+          CANONICAL_URL: https://ziontechgroup.com
+      
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "feat: redundant link generation [skip ci]" || exit 0
+          git push
+
+  navigation-links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: redundant-links
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Run Navigation Links Generator
+        run: node automation/redundant-link-generator.cjs --nav-only
+        env:
+          CANONICAL_URL: https://ziontechgroup.com
+          INSTANCE_TYPE: navigation
+      
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "feat: navigation links generation [skip ci]" || exit 0
+          git push
+
+  footer-links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: redundant-links
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Run Footer Links Generator
+        run: node automation/redundant-link-generator.cjs --footer-only
+        env:
+          CANONICAL_URL: https://ziontechgroup.com
+          INSTANCE_TYPE: footer
+      
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "feat: footer links generation [skip ci]" || exit 0
+          git push
+
+  content-links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: redundant-links
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Run Content Links Generator
+        run: node automation/redundant-link-generator.cjs --content-only
+        env:
+          CANONICAL_URL: https://ziontechgroup.com
+          INSTANCE_TYPE: content
+      
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "feat: content links generation [skip ci]" || exit 0
+          git push
+
+  social-links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: redundant-links
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Run Social Links Generator
+        run: node automation/redundant-link-generator.cjs --social-only
+        env:
+          CANONICAL_URL: https://ziontechgroup.com
+          INSTANCE_TYPE: social
+      
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "feat: social links generation [skip ci]" || exit 0
+          git push
+
+  business-links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: redundant-links
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Run Business Links Generator
+        run: node automation/redundant-link-generator.cjs --business-only
+        env:
+          CANONICAL_URL: https://ziontechgroup.com
+          INSTANCE_TYPE: business
+      
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "feat: business links generation [skip ci]" || exit 0
+          git push
+
+  link-health-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: [ultra-fast-links, redundant-links, navigation-links, footer-links, content-links, social-links, business-links]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Check Link Generation Status
+        run: |
+          echo "Checking link generation status..."
+          ls -la data/reports/link-generation/ || echo "No link generation reports found"
+          ls -la data/reports/redundant-links/ || echo "No redundant links reports found"
+          echo "Link generation workflow completed successfully!"
+      
+      - name: Upload Link Reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: link-generation-reports
+          path: |
+            data/reports/link-generation/
+            data/reports/redundant-links/
+          retention-days: 30
