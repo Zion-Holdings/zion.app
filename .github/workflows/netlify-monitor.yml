@@ -1,6 +1,6 @@
 name: Netlify Monitor
 on:
-  workflow_dispatch: null
+  workflow_dispatch: {}
   schedule:
     - cron: 0 2 * * *
 concurrency:

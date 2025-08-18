@@ -1,7 +1,7 @@
 name: Auto-Fix GitHub Actions Workflows
 
 on:
-  workflow_dispatch: null
+  workflow_dispatch: {}
   schedule:
     - cron: '0 3 * * *' # Daily at 3 AM UTC
   workflow_run:

@@ -3,7 +3,7 @@ name: Dependency Maintenance
 on:
   schedule:
     - cron: '17 5 * * *'
-  workflow_dispatch: null
+  workflow_dispatch: {}
 
 jobs:
   maintain-deps:

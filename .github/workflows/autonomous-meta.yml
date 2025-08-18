@@ -3,7 +3,7 @@ name: Autonomous Meta Factory
 on:
   schedule:
     - cron: '*/30 * * * *'
-  workflow_dispatch: null
+  workflow_dispatch: {}
 
 jobs:
   meta-factory:

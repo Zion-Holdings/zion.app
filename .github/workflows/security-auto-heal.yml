@@ -1,7 +1,7 @@
 name: Security Auto-Heal
 
 on:
-  workflow_dispatch: null
+  workflow_dispatch: {}
   schedule:
     - cron: '0 0 * * *' # Daily at midnight UTC
 

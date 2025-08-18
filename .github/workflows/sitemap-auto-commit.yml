@@ -3,7 +3,7 @@ name: Sitemap Auto-Commit
 on:
   schedule:
     - cron: '12 3 * * *' # Daily at 3:12 AM UTC
-  workflow_dispatch: null
+  workflow_dispatch: {}
 
 permissions:
   contents: write

@@ -1,7 +1,7 @@
 name: Secret scan (Gitleaks)
 
 on:
-  workflow_dispatch: null
+  workflow_dispatch: {}
   schedule:
     # daily at 03:00 UTC
     - cron: '0 3 * * *'
