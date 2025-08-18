@@ -17849,6 +17849,62 @@
       "title": "Innovation Insight — 2025-08-18 18-19",
       "href": "/reports/innovations/insight-2025-08-18T18-19",
       "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:19:15.360Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-19",
+      "href": "/reports/updates/update-2025-08-18T18-19",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:19:15.360Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 18-19",
+      "href": "/reports/innovations/insight-2025-08-18T18-19",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:19:15.360Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-19",
+      "href": "/reports/updates/update-2025-08-18T18-19",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:19:15.360Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 18-19",
+      "href": "/reports/innovations/insight-2025-08-18T18-19",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:19:11.392Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-19",
+      "href": "/reports/updates/update-2025-08-18T18-19",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:19:11.392Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 18-19",
+      "href": "/reports/innovations/insight-2025-08-18T18-19",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:19:11.392Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-19",
+      "href": "/reports/updates/update-2025-08-18T18-19",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:19:11.392Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 18-19",
+      "href": "/reports/innovations/insight-2025-08-18T18-19",
+      "desc": "New autonomous content",
       "createdAt": "2025-08-18T18:19:07.875Z",
       "source": "cloud-content-factory"
     },
@@ -17912,6 +17968,94 @@
       "type": "ultra-fast-generated",
       "created": "2025-08-18T18:19:06.315Z",
       "process": "ultra-fast"
+    },
+    {
+      "id": "rapid-1755541150651-rrzlik",
+      "title": "Machine Learning",
+      "route": "/services/rapid-1755541150651-rrzlik",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:19:10.778Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755541150652-y7qx4p",
+      "title": "Performance Optimizer",
+      "route": "/products/rapid-1755541150652-y7qx4p",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:19:10.778Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755541150653-kf14xj",
+      "title": "Best Practices in AI-Powered Analytics",
+      "route": "/tutorials/rapid-1755541150653-kf14xj",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:19:10.778Z",
+      "process": "rapid"
+    },
+    {
+      "id": "ultra-1755541153583-99ofvm",
+      "title": "Ultra-Fast Innovation Update",
+      "route": "/reports/updates/ultra-1755541153583-99ofvm",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:19:13.601Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541153584-y66joz",
+      "title": "Ultra-Fast Lightning-fast development Insight",
+      "route": "/reports/insights/ultra-1755541153584-y66joz",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:19:13.601Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541153585-rkjy00",
+      "title": "Ultra-Fast Guide: Real-time data processing",
+      "route": "/reports/guides/ultra-1755541153585-rkjy00",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:19:13.602Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541153587-rgc2zw",
+      "title": "Case Study: Lightning-fast development Success",
+      "route": "/reports/cases/ultra-1755541153587-rgc2zw",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:19:13.602Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541153588-c5lfn6",
+      "title": "Pattern: Rapid prototyping systems Architecture",
+      "route": "/reports/patterns/ultra-1755541153588-c5lfn6",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:19:13.602Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "rapid-1755541153687-ig6kv3",
+      "title": "Machine Learning",
+      "route": "/services/rapid-1755541153687-ig6kv3",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:19:13.696Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755541153688-4oqtms",
+      "title": "Development Tools",
+      "route": "/products/rapid-1755541153688-4oqtms",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:19:13.696Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755541153689-no5bza",
+      "title": "Professional Tips for AI-Powered Analytics",
+      "route": "/tutorials/rapid-1755541153689-no5bza",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:19:13.696Z",
+      "process": "rapid"
     }
   ]
 }
