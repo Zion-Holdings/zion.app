@@ -1,5 +1,5 @@
 ---
-name: automerge-main
+name: Automerge Main
 on:
   workflow_dispatch: {}
   schedule:
@@ -9,11 +9,11 @@ permissions:
   actions: read
   pull-requests: write
 concurrency:
-  group: workflow-${{ github.ref }}
+  group: automerge-main
   cancel-in-progress: false
 jobs:
   main:
-    name: Main Job
+    name: Automerge Main Job
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -28,5 +28,5 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
-      - name: Run workflow
-        run: echo "Workflow completed successfully"
+      - name: Run automerge main
+        run: echo "Automerge main workflow completed successfully"

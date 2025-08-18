@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T03:26:40.571Z",
+  "timestamp": "2025-08-18T03:28:38.661Z",
   "summary": {
     "totalWorkflows": 224,
     "complexityDistribution": {
@@ -431,18 +431,18 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089844-1-deployment-advanced.yml"
     },
     "agent-agent-1755381089845-2-full-stack-advanced.yml": {
-      "complexityScore": 0,
+      "complexityScore": 10,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 33,
+        "totalLines": 73,
         "jobCount": 0,
-        "stepCount": 4,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 2
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -812,7 +812,7 @@
       "complexityScore": 20,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 84,
+        "totalLines": 83,
         "jobCount": 0,
         "stepCount": 7,
         "conditionalCount": 2,
@@ -1784,7 +1784,7 @@
       "complexityScore": 20,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 66,
+        "totalLines": 56,
         "jobCount": 0,
         "stepCount": 9,
         "conditionalCount": 0,
@@ -3635,18 +3635,18 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/sitemap-daily.yml"
     },
     "stale.yml": {
-      "complexityScore": 10,
+      "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 63,
+        "totalLines": 41,
         "jobCount": 0,
-        "stepCount": 3,
-        "conditionalCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 2,
-        "actionCount": 2
+        "secretCount": 0,
+        "actionCount": 3
       },
       "refactoringPriority": "low",
       "status": "active",

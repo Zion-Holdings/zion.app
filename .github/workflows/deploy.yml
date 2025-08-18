@@ -1,104 +1,71 @@
 ---
-name: Release
+name: Deploy to Production
 
 on:
   push:
-    tags:
-      - 'v*'
-  workflow_dispatch:
-    inputs:
-      version:
-        description: 'Release version (e.g., v1.0.0)'
-        required: true
-        type: string
+    branches: [ main ]
+  workflow_dispatch: {}
+  workflow_run:
+    workflows: ["Test Suite", "Playwright Smoke Tests"]
+    types: [completed]
+    branches: [main]
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
   actions: read
 
 concurrency:
-  group: "release"
+  group: "deploy-${{ github.ref }}"
   cancel-in-progress: false
 
 jobs:
-  release:
-    name: Create Release
+  deploy:
+    name: Deploy to Netlify
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    if: github.ref == 'refs/heads/main'
     
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
+
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
-      - name: Get version
-        id: version
-        run: |
-          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
-            echo "version=${{ github.event.inputs.version }}" >> $GITHUB_OUTPUT
-          else
-            echo "version=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
-          fi
+
       - name: Build application
         run: npm run build
         env:
-          NODE_OPTIONS: "--max-old-space-size=6144 --openssl-legacy-provider"
-      - name: Export static files
-        run: npm run export
-      - name: Create release
-        id: create_release
+          NODE_OPTIONS: "--max-old-space-size=4096"
+
+      - name: Verify build output
         run: |
-          gh release create ${{ steps.version.outputs.version }} \
-            --title "Release ${{ steps.version.outputs.version }}" \
-            --notes "Release ${{ steps.version.outputs.version }} of Zion App" \
-            --draft=false \
-            --prerelease=false
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Upload build artifacts
-        run: |
-          # Create zip file
-          cd out
-          zip -r ../zion-app-${{ steps.version.outputs.version }}.zip .
-          cd ..
-          
-          # Upload to release
-          gh release upload ${{ steps.version.outputs.version }} zion-app-${{ steps.version.outputs.version }}.zip
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Update package.json version
-        run: |
-          npm version ${{ steps.version.outputs.version }} --no-git-tag-version
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add package.json package-lock.json
-          git commit -m "chore: bump version to ${{ steps.version.outputs.version }}"
-          git push
-      - name: Deploy to production
-        run: |
-          echo "Deploying version ${{ steps.version.outputs.version }} to production"
-          # Add your deployment logic here
-          # Example: netlify deploy --dir=out --prod=true
-      - name: Notify release
-        uses: actions/github-script@v7
+          if [ -d ".next" ]; then
+            echo "✅ Next.js build successful"
+            ls -la .next/
+          else
+            echo "❌ Next.js build failed"
+            exit 1
+          fi
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v3.0
         with:
-          script: |
-            const version = '${{ steps.version.outputs.version }}';
-            const message = `🚀 **Release ${version} Deployed**\n\nVersion ${version} has been successfully released and deployed to production.`;
-            
-            // Create a release summary issue
-            github.rest.issues.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              title: `Release ${version} Summary`,
-              body: message,
-              labels: ['release', 'deployment']
-            });
+          publish-dir: '.next'
+          production-branch: main
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy from GitHub Actions - ${{ github.sha }}"
+          enable-pull-request-comment: false
+          enable-commit-comment: false
+          overwrites-publish-dir: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+      - name: Deploy status
+        run: echo "Deployment completed successfully"
