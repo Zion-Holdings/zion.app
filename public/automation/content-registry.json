@@ -25670,6 +25670,69 @@
   "generatedAt": "2025-08-18T18:38:08.228Z",
   "items": [
     {
+      "title": "Autonomous Content Generation",
+      "href": "/automation",
+      "desc": "AI-powered content completion via Cursor agents",
+      "createdAt": "2025-08-18T18:38:21.100Z",
+      "source": "cursor-autonomous-orchestrator"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-18-183820",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:38:20.629Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Case Study — Cloud Improving",
+      "href": "/reports/cases/case-2025-08-18-183820",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:38:20.414Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-18-183820",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:38:20.414Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Automation Trends 2025",
+      "href": "/reports/patterns/pattern-2025-08-18-183820",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:38:20.414Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 18-38",
+      "href": "/reports/innovations/insight-2025-08-18T18-38",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:38:20.279Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-38",
+      "href": "/reports/updates/update-2025-08-18T18-38",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:38:20.279Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 18-38",
+      "href": "/reports/innovations/insight-2025-08-18T18-38",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:38:20.279Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-38",
+      "href": "/reports/updates/update-2025-08-18T18-38",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:38:20.279Z",
+      "source": "cloud-content-factory"
+    },
+    {
       "title": "Playbook — Autonomous Delivery",
       "href": "/reports/playbooks/playbook-2025-08-18-183811",
       "desc": "New autonomous content",
@@ -25968,6 +26031,70 @@
       "type": "ultra-fast-generated",
       "created": "2025-08-18T18:38:14.770Z",
       "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542300728-ea7eu4",
+      "title": "Ultra-Fast Innovation Update",
+      "route": "/reports/updates/ultra-1755542300728-ea7eu4",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:38:20.755Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542300730-kc4gwx",
+      "title": "Ultra-Fast Ultra-responsive applications Insight",
+      "route": "/reports/insights/ultra-1755542300730-kc4gwx",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:38:20.755Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542300731-myhfvz",
+      "title": "Ultra-Fast Guide: Rapid prototyping systems",
+      "route": "/reports/guides/ultra-1755542300731-myhfvz",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:38:20.755Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542300732-ondeqk",
+      "title": "Case Study: AI-powered automation Success",
+      "route": "/reports/cases/ultra-1755542300732-ondeqk",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:38:20.755Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542300733-xvf84c",
+      "title": "Pattern: Lightning deployment pipelines Architecture",
+      "route": "/reports/patterns/ultra-1755542300733-xvf84c",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:38:20.755Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "rapid-1755542300872-8bdg2z",
+      "title": "Data Processing",
+      "route": "/services/rapid-1755542300872-8bdg2z",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:38:20.949Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755542300875-ldgaxd",
+      "title": "Security Framework",
+      "route": "/products/rapid-1755542300875-ldgaxd",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:38:20.949Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755542300875-qe7eqq",
+      "title": "Complete Guide to Database Optimization",
+      "route": "/tutorials/rapid-1755542300875-qe7eqq",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:38:20.949Z",
+      "process": "rapid"
     }
   ]
 }
