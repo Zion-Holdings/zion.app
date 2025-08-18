@@ -1,28 +1,28 @@
 import Head from 'next/head';
 import { useState } from 'react';
 
-export default function Simple-service-1755536898088-cdl8k36plService() {
+export default function Simple-service-1755536918087-z2y6skcq7Service() {
   const [selectedPlan, setSelectedPlan] = useState(0);
 
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <Head>
-        <title>Web Development Service - Zion Tech Group</title>
-        <meta name="description" content="Professional Web Development solution for modern businesses" />
-        <meta name="keywords" content="web development, technology services" />
-        <link rel="canonical" href="https://ziontechgroup.com/services/simple-service-1755536898088-cdl8k36pl" />
+        <title>DevOps Service - Zion Tech Group</title>
+        <meta name="description" content="Professional DevOps solution for modern businesses" />
+        <meta name="keywords" content="devops, technology services" />
+        <link rel="canonical" href="https://ziontechgroup.com/services/simple-service-1755536918087-z2y6skcq7" />
       
-        <meta property="og:title" content="Web Development Service" />
-        <meta property="og:description" content="Web Development Service — automatically suggested description." />
+        <meta property="og:title" content="DevOps Service" />
+        <meta property="og:description" content="DevOps Service — automatically suggested description." />
         <meta name="twitter:card" content="summary_large_image" /></Head>
       
       <main className="container mx-auto px-6 py-12">
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
-            Web Development Service
+            DevOps Service
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Professional Web Development solution for modern businesses
+            Professional DevOps solution for modern businesses
           </p>
         </div>
         
@@ -68,7 +68,7 @@ export default function Simple-service-1755536898088-cdl8k36plService() {
         
         <div className="text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-          <p className="text-gray-300 mb-6">Transform your business with our web development solutions</p>
+          <p className="text-gray-300 mb-6">Transform your business with our devops solutions</p>
           <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-3 px-8 rounded-lg text-lg">
             Contact Us Today
           </button>

@@ -11,7 +11,10 @@ export default function Simple-service-1755536898087-emdqt35joService() {
         <meta name="description" content="Professional Mobile Development solution for modern businesses" />
         <meta name="keywords" content="mobile development, technology services" />
         <link rel="canonical" href="https://ziontechgroup.com/services/simple-service-1755536898087-emdqt35jo" />
-      </Head>
+      
+        <meta property="og:title" content="Mobile Development Service" />
+        <meta property="og:description" content="Mobile Development Service — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       
       <main className="container mx-auto px-6 py-12">
         <div className="text-center mb-16">
@@ -74,3 +77,8 @@ export default function Simple-service-1755536898087-emdqt35joService() {
     </div>
   );
 }
+<Link href="/services/simple-service-1755536632488-7c6l7htn7" className="internal-link">Related Content</Link>
+
+<Link href="/services/simple-service-1755536632490-0pdxjco7f" className="internal-link">Related Content</Link>
+
+<Link href="/services/simple-service-1755536658090-oexyi4u1a" className="internal-link">Related Content</Link>
