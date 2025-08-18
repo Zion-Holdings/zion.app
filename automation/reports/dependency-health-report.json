@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-15T12:35:10.776Z",
+  "timestamp": "2025-08-18T08:34:50.048Z",
   "totalPackages": 0,
   "outdatedPackages": {
     "@testing-library/react": {
@@ -24,6 +24,14 @@
       "latest": "19.1.7",
       "updateType": "major",
       "priority": "medium",
+      "securityRisk": false
+    },
+    "chalk": {
+      "current": "5.5.0",
+      "wanted": "5.6.0",
+      "latest": "5.6.0",
+      "updateType": "minor",
+      "priority": "high",
       "securityRisk": false
     },
     "eslint": {
@@ -66,6 +74,14 @@
       "priority": "low",
       "securityRisk": false
     },
+    "react-datepicker": {
+      "current": "8.4.0",
+      "wanted": "8.5.0",
+      "latest": "8.5.0",
+      "updateType": "minor",
+      "priority": "high",
+      "securityRisk": false
+    },
     "react-dom": {
       "current": "18.2.0",
       "wanted": "18.2.0",
@@ -84,17 +100,33 @@
     }
   },
   "securityIssues": {},
-  "healthScore": 60,
+  "healthScore": 40,
   "recommendations": [],
   "criticalIssues": [],
   "updatePlan": {
     "immediate": [],
     "scheduled": [
       {
+        "package": "chalk",
+        "from": "5.5.0",
+        "to": "5.6.0",
+        "type": "minor",
+        "priority": "high",
+        "securityRisk": false
+      },
+      {
         "package": "eslint",
         "from": "8.57.1",
         "to": "9.33.0",
         "type": "major",
+        "priority": "high",
+        "securityRisk": false
+      },
+      {
+        "package": "react-datepicker",
+        "from": "8.4.0",
+        "to": "8.5.0",
+        "type": "minor",
         "priority": "high",
         "securityRisk": false
       }
@@ -174,9 +206,9 @@
       }
     ],
     "estimated": {
-      "time": 2,
+      "time": 6,
       "risk": "low",
-      "packages": 1
+      "packages": 3
     }
   }
 }
