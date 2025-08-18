@@ -131,8 +131,8 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-<<<<<<< Updated upstream
       </section>
+<<<<<<< Updated upstream
 =======
       
 {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */}
@@ -182,29 +182,8 @@ export default function HomePage() {
 {/* AUTO-GENERATED: HOME_LATEST_CONTENT_END */}
 </section>
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
     </div>
   );
 }
-<a href="https://github.com/Zion-Holdings/zion.app" target="_blank" rel="noopener noreferrer" className="external-link">View Source</a>
-
-<Link href="/about" className="internal-link link-instance-1">[NAVIGATION] Main Navigation</Link>
-
-<Link href="/privacy" className="internal-link link-instance-2">[FOOTER] Footer Link</Link>
-
-<a href="https://twitter.com/ziontechgroup" target="_blank" rel="noopener noreferrer" className="external-link link-instance-4">[SOCIAL] Social Media</a>
-
-<Link href="/services" className="internal-link link-instance-1">[NAVIGATION] Main Navigation</Link>
-
-<Link href="/terms" className="internal-link link-instance-2">[FOOTER] Footer Link</Link>
-
-<a href="https://facebook.com/ziontechgroup" target="_blank" rel="noopener noreferrer" className="external-link link-instance-4">[SOCIAL] Social Media</a>
-
-<Link href="/blog" className="internal-link link-instance-1">[NAVIGATION] Main Navigation</Link>
-
-<Link href="/sitemap" className="internal-link link-instance-2">[FOOTER] Footer Link</Link>
-
-<a href="https://instagram.com/ziontechgroup" target="_blank" rel="noopener noreferrer" className="external-link link-instance-4">[SOCIAL] Social Media</a>
-
-<Link href="/contact" className="internal-link link-instance-1">[NAVIGATION] Main Navigation</Link>
-
-<Link href="/support" className="internal-link link-instance-2">[FOOTER] Footer Link</Link>
