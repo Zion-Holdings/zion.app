@@ -26517,6 +26517,34 @@
       "title": "Innovation Insight — 2025-08-18 18-40",
       "href": "/reports/innovations/insight-2025-08-18T18-40",
       "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:40:11.072Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-40",
+      "href": "/reports/updates/update-2025-08-18T18-40",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:40:11.072Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 18-40",
+      "href": "/reports/innovations/insight-2025-08-18T18-40",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:40:11.072Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-40",
+      "href": "/reports/updates/update-2025-08-18T18-40",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:40:11.072Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 18-40",
+      "href": "/reports/innovations/insight-2025-08-18T18-40",
+      "desc": "New autonomous content",
       "createdAt": "2025-08-18T18:40:07.553Z",
       "source": "cloud-content-factory"
     },
@@ -26759,6 +26787,70 @@
       "route": "/tutorials/rapid-1755542409781-sfkmos",
       "type": "rapid-generated",
       "created": "2025-08-18T18:40:09.848Z",
+      "process": "rapid"
+    },
+    {
+      "id": "ultra-1755542411264-zcm1y2",
+      "title": "Rapid Response Development",
+      "route": "/reports/updates/ultra-1755542411264-zcm1y2",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:40:11.286Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542411265-syhn7l",
+      "title": "Ultra-Fast Rapid prototyping systems Insight",
+      "route": "/reports/insights/ultra-1755542411265-syhn7l",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:40:11.286Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542411265-usdgbl",
+      "title": "Ultra-Fast Guide: AI-powered automation",
+      "route": "/reports/guides/ultra-1755542411265-usdgbl",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:40:11.286Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542411266-bunqb5",
+      "title": "Case Study: Instant deployment systems Success",
+      "route": "/reports/cases/ultra-1755542411266-bunqb5",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:40:11.286Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755542411267-wrf5ye",
+      "title": "Pattern: Instant deployment systems Architecture",
+      "route": "/reports/patterns/ultra-1755542411267-wrf5ye",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:40:11.286Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "rapid-1755542412389-7nvbad",
+      "title": "AI-Powered Analytics",
+      "route": "/services/rapid-1755542412389-7nvbad",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:40:12.469Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755542412390-95jtt7",
+      "title": "Development Tools",
+      "route": "/products/rapid-1755542412390-95jtt7",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:40:12.469Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755542412391-uqslzz",
+      "title": "Advanced Techniques for Cloud Infrastructure",
+      "route": "/tutorials/rapid-1755542412391-uqslzz",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:40:12.469Z",
       "process": "rapid"
     }
   ]
