@@ -198,17 +198,18 @@ jobs:
     if: always()
     steps:
       - name: Generate maintenance summary
-        run:
-                "echo \"## \U0001F9F9 Repository Maintenance Complete\" >> $GITHUB_STEP_SUMMARY\n\
-        echo \"- Cleanup: ${{ needs.cleanup-artifacts.result }}\" >> $GITHUB_STEP_SUMMARY\n\
-        echo \"- Optimization: ${{ needs.optimize-workflows.result }}\" >> $GITHUB_STEP_SUMMARY\n\
-        echo \"- Dependencies: ${{ needs.dependency-maintenance.result }}\" >> $GITHUB_STEP_SUMMARY\n\
-        \nif [ \"${{ needs.cleanup-artifacts.result }}\" == \"success\" ] && [ \"\
-        ${{ needs.optimize-workflows.result }}\" == \"success\" ] && [ \"${{ needs.dependency-maintenance.result\
-        \ }}\" == \"success\" ]; then\n  echo \"\u2705 All maintenance tasks completed\
-        \ successfully!\" >> $GITHUB_STEP_SUMMARY\nelse\n  echo \"\u26A0\uFE0F Some\
-        \ maintenance tasks failed. Check the logs for details.\" >> $GITHUB_STEP_SUMMARY\n\
-        fi\n\necho \"\" >> $GITHUB_STEP_SUMMARY\necho \"Next maintenance run:
-                Sunday\
-        \ at 2 AM\" >> $GITHUB_STEP_SUMMARY\n"
+        run: |
+          echo "## 🧹 Repository Maintenance Complete" >> $GITHUB_STEP_SUMMARY
+          echo "- Cleanup: ${{ needs.cleanup-artifacts.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Optimization: ${{ needs.optimize-workflows.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Dependencies: ${{ needs.dependency-maintenance.result }}" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ needs.cleanup-artifacts.result }}" == "success" ] && [ "${{ needs.optimize-workflows.result }}" == "success" ] && [ "${{ needs.dependency-maintenance.result }}" == "success" ]; then
+            echo "✅ All maintenance tasks completed successfully!" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "⚠️ Some maintenance tasks failed. Check the logs for details." >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Next maintenance run: Sunday at 2 AM" >> $GITHUB_STEP_SUMMARY
     timeout-minutes: 30
