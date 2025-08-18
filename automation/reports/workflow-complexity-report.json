@@ -1,18 +1,18 @@
 {
-  "timestamp": "2025-08-18T17:58:02.397Z",
+  "timestamp": "2025-08-18T18:00:51.110Z",
   "summary": {
-    "totalWorkflows": 423,
+    "totalWorkflows": 426,
     "complexityDistribution": {
       "very-high": 0,
       "high": 3,
       "medium": 9,
-      "low": 411
+      "low": 414
     },
     "refactoringPriorities": {
       "critical": 0,
       "high": 3,
       "medium": 9,
-      "low": 411
+      "low": 414
     }
   },
   "workflows": {
@@ -969,6 +969,60 @@
       "refactoringPriority": "low",
       "status": "active",
       "path": "/workspace/.github/workflows/agent-agent-1755539845215-2-frontend-expert.yml"
+    },
+    "agent-agent-1755540014848-0-full-stack-advanced.yml": {
+      "complexityScore": 0,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 20,
+        "jobCount": 0,
+        "stepCount": 4,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/workspace/.github/workflows/agent-agent-1755540014848-0-full-stack-advanced.yml"
+    },
+    "agent-agent-1755540014848-1-deployment-expert.yml": {
+      "complexityScore": 0,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 20,
+        "jobCount": 0,
+        "stepCount": 4,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/workspace/.github/workflows/agent-agent-1755540014848-1-deployment-expert.yml"
+    },
+    "agent-agent-1755540014849-2-deployment-expert.yml": {
+      "complexityScore": 0,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 20,
+        "jobCount": 0,
+        "stepCount": 4,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/workspace/.github/workflows/agent-agent-1755540014849-2-deployment-expert.yml"
     },
     "agent-factory-automation.yml": {
       "complexityScore": 0,
