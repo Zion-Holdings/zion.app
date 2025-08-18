@@ -18809,6 +18809,34 @@
       "title": "Innovation Insight — 2025-08-18 18-21",
       "href": "/reports/innovations/insight-2025-08-18T18-21",
       "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:21:49.337Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-21",
+      "href": "/reports/updates/update-2025-08-18T18-21",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:21:49.337Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 18-21",
+      "href": "/reports/innovations/insight-2025-08-18T18-21",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:21:49.337Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-21",
+      "href": "/reports/updates/update-2025-08-18T18-21",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:21:49.337Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 18-21",
+      "href": "/reports/innovations/insight-2025-08-18T18-21",
+      "desc": "New autonomous content",
       "createdAt": "2025-08-18T18:21:45.906Z",
       "source": "cloud-content-factory"
     },
@@ -18871,6 +18899,70 @@
       "route": "/reports/patterns/ultra-1755541304255-87tgqn",
       "type": "ultra-fast-generated",
       "created": "2025-08-18T18:21:44.262Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "rapid-1755541307589-1iue2l",
+      "title": "DevOps Automation",
+      "route": "/services/rapid-1755541307589-1iue2l",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:21:47.598Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755541307591-3zf4b2",
+      "title": "Smart Dashboard",
+      "route": "/products/rapid-1755541307591-3zf4b2",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:21:47.598Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755541307592-carjvd",
+      "title": "Best Practices in DevOps Automation",
+      "route": "/tutorials/rapid-1755541307592-carjvd",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:21:47.598Z",
+      "process": "rapid"
+    },
+    {
+      "id": "ultra-1755541307870-1yaa0j",
+      "title": "Instant Digital Transformation",
+      "route": "/reports/updates/ultra-1755541307870-1yaa0j",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:21:47.880Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541307871-fswlkb",
+      "title": "Ultra-Fast Lightning deployment pipelines Insight",
+      "route": "/reports/insights/ultra-1755541307871-fswlkb",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:21:47.880Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541307872-5qomyp",
+      "title": "Ultra-Fast Guide: AI-powered automation",
+      "route": "/reports/guides/ultra-1755541307872-5qomyp",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:21:47.880Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541307873-sduuyu",
+      "title": "Case Study: Real-time collaboration tools Success",
+      "route": "/reports/cases/ultra-1755541307873-sduuyu",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:21:47.880Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541307874-fggkze",
+      "title": "Pattern: Real-time collaboration tools Architecture",
+      "route": "/reports/patterns/ultra-1755541307874-fggkze",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:21:47.880Z",
       "process": "ultra-fast"
     }
   ]
