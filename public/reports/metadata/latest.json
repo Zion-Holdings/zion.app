@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T10:13:01.508Z",
-  "pagesScanned": 9113,
+  "generatedAt": "2025-08-18T10:14:01.537Z",
+  "pagesScanned": 9114,
   "items": [
     {
       "route": "/404",
@@ -90536,6 +90536,19 @@
       "suggestion": {
         "title": "Autonomous Capability Map — Vision & Multimodal (2025-08-18 07:13 UTC)",
         "description": "Autonomous Capability Map — Vision & Multimodal (2025-08-18 07:13 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0714",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 07:14",
+        "description": "Autonomous Update — 2025-08-18 07:14 — auto-suggested description"
       }
     },
     {
