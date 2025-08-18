@@ -30,7 +30,6 @@ export default function AboutPage() {
       </Head>
       
       <main className="container mx-auto px-6 py-12 max-w-6xl">
-        <Link href="/team" className="internal-link link-instance-3">[CONTENT] Content Link</Link>
         {/* Hero Section */}
         <section className="text-center mb-16">
         <a href="https://meet.google.com/ziontechgroup" target="_blank" rel="noopener noreferrer" className="external-link link-instance-5">[BUSINESS] Business Tool</a>
