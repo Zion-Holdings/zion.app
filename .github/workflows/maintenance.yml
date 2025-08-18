@@ -65,12 +65,17 @@ jobs:
                   echo "Cleanup completed"
           
       - name: Commit cleanup changes
-        run:
-                "git config --global user.name \"github-actions[bot]\"\ngit config --global\
-        \ user.email \"41898282+github-actions[bot]@users.noreply.github.com\"\n\n\
-        if git diff --quiet; then\n  echo \"No changes to commit\"\nelse\n  git add\
-        \ -A\n  git commit -m \"\U0001F916 Automated cleanup: Remove old artifacts\
-        \ and reports [skip ci]\"\n  git push\nfi\n"
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          if git diff --quiet; then
+            echo "No changes to commit"
+          else
+            git add -A
+            git commit -m "🤖 Automated cleanup: Remove old artifacts and reports [skip ci]"
+            git push
+          fi
   optimize-workflows:
     name: Optimize Workflows
     runs-on: ubuntu-latest
@@ -88,70 +93,42 @@ jobs:
       - name: Analyze workflow performance
         run: |
           echo "## Workflow Performance Analysis" >> $GITHUB_STEP_SUMMARY
+          echo "Analyzing workflow performance and optimization opportunities..." >> $GITHUB_STEP_SUMMARY
           
-                  echo "Analyzing workflow performance and optimization opportunities..." >>
-                  $GITHUB_STEP_SUMMARY
+          # Count total workflows
+          WORKFLOW_COUNT=$(find .github/workflows -name "*.yml" | wc -l)
+          echo "- Total workflows: $WORKFLOW_COUNT" >> $GITHUB_STEP_SUMMARY
           
+          # Check for duplicate workflows
+          DUPLICATES=$(find .github/workflows -name "*.yml" -exec basename {} \; | sort | uniq -d | wc -l)
+          echo "- Potential duplicates: $DUPLICATES" >> $GITHUB_STEP_SUMMARY
           
-                  # Count total workflows
+          # Check for workflows with high frequency schedules
+          HIGH_FREQ=$(grep -r "cron.*\*/[0-9]" .github/workflows/ | wc -l)
+          echo "- High frequency workflows: $HIGH_FREQ" >> $GITHUB_STEP_SUMMARY
           
-                  WORKFLOW_COUNT=$(find .github/workflows -name "*.yml" | wc -l)
-          
-                  echo "- Total workflows: $WORKFLOW_COUNT" >> $GITHUB_STEP_SUMMARY
-          
-          
-                  # Check for duplicate workflows
-          
-                  DUPLICATES=$(find .github/workflows -name "*.yml" -exec basename {} \; | sort
-                  | uniq -d | wc -l)
-          
-                  echo "- Potential duplicates: $DUPLICATES" >> $GITHUB_STEP_SUMMARY
-          
-          
-                  # Check for workflows with high frequency schedules
-          
-                  HIGH_FREQ=$(grep -r "cron.*\*/[0-9]" .github/workflows/ | wc -l)
-          
-                  echo "- High frequency workflows: $HIGH_FREQ" >> $GITHUB_STEP_SUMMARY
-          
-          
-                  echo "Analysis completed" >> $GITHUB_STEP_SUMMARY
-          
+          echo "Analysis completed" >> $GITHUB_STEP_SUMMARY
       - name: Generate workflow health report
         run: |
           echo "Generating workflow health report..."
           
+          cat > workflow-health-report.md << EOF
+          # Workflow Health Report
           
-                  cat > workflow-health-report.md << EOF
+          Generated: $(date)
           
-                  # Workflow Health Report
+          ## Summary
+          - Total workflows: $(find .github/workflows -name "*.yml" | wc -l)
+          - Last run: $(date)
           
+          ## Recommendations
+          - Consider consolidating similar workflows
+          - Review scheduling frequencies
+          - Ensure proper error handling
+          - Monitor resource usage
+          EOF
           
-                  Generated: $(date)
-          
-          
-                  ## Summary
-          
-                  - Total workflows: $(find .github/workflows -name "*.yml" | wc -l)
-          
-                  - Last run: $(date)
-          
-          
-                  ## Recommendations
-          
-                  - Consider consolidating similar workflows
-          
-                  - Review scheduling frequencies
-          
-                  - Ensure proper error handling
-          
-                  - Monitor resource usage
-          
-                  EOF
-          
-          
-                  echo "Health report generated"
-          
+          echo "Health report generated"
       - name: Upload health report
         uses: actions/upload-artifact@v4
         with:
