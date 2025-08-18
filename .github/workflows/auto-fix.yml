@@ -63,7 +63,7 @@ jobs:
           merge-method: squash
       - name: Attempt immediate merge
         if: steps.cpr.outputs.pull-request-number
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |

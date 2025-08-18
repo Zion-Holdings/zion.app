@@ -20,6 +20,21 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
+# Check if all workflows are already healthy
+echo "🔍 Checking workflow health before proceeding..."
+if [ -f "automation/check-workflow-health.cjs" ]; then
+    if node automation/check-workflow-health.cjs | grep -q "✅ All workflows are healthy"; then
+        echo "✅ All workflows are already healthy! No fixes needed."
+        echo "Exiting to prevent unnecessary modifications."
+        exit 0
+    else
+        echo "⚠️  Workflow issues detected. Proceeding with fixes..."
+    fi
+else
+    echo "⚠️  Health check script not found. Proceeding with fixes..."
+fi
+echo ""
+
 # Function to log actions
 log_action() {
     local message="$1"
