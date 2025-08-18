@@ -7,7 +7,6 @@ on:
 permissions:
   contents: read
   actions: read
-  workflows: read
 concurrency:
   group: workflow-manager
   cancel-in-progress: false

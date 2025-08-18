@@ -6,12 +6,12 @@ on:
     - cron: '*/10 * * * *'
 
 permissions:
-concurrency:
-  group: "agent-agent-1755381089846-4-testing-advanced-${{ github.ref }}"
-  cancel-in-progress: true
   contents: write
   pull-requests: write
   actions: read
+concurrency:
+  group: "agent-agent-1755381089846-4-testing-advanced-${{ github.ref }}"
+  cancel-in-progress: true
 
 jobs:
   main:

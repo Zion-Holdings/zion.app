@@ -6,12 +6,12 @@ on:
     - cron: '*/10 * * * *'
 
 permissions:
-concurrency:
-  group: "dependabot-auto-approve-${{ github.ref }}"
-  cancel-in-progress: true
   contents: write
   pull-requests: write
   actions: read
+concurrency:
+  group: "dependabot-auto-approve-${{ github.ref }}"
+  cancel-in-progress: true
 
 jobs:
   main:

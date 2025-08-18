@@ -6,12 +6,12 @@ on:
     - cron: '*/10 * * * *'
 
 permissions:
-concurrency:
-  group: "ephemeral-branch-autorebase-${{ github.ref }}"
-  cancel-in-progress: true
   contents: write
   pull-requests: write
   actions: read
+concurrency:
+  group: "ephemeral-branch-autorebase-${{ github.ref }}"
+  cancel-in-progress: true
 
 jobs:
   main:
