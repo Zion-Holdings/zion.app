@@ -1731,10 +1731,10 @@
     "resourceRequirements": {
       "runner": "ubuntu-latest",
       "memory": "standard",
-      "timeout": 20,
+      "timeout": 30,
       "concurrentJobs": 5
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 30
   },
   "commit-message-lint.yml": {
     "name": "commit-message-lint.yml",
@@ -3450,7 +3450,7 @@
   "sync-health.yml": {
     "name": "sync-health.yml",
     "triggers": [
-      "workflow_dispatch null",
+      "workflow_dispatch {}",
       "schedule"
     ],
     "needs": [],
