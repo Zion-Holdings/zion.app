@@ -1,3 +1,4 @@
+---
 name: Infinite Improvement Loop
 on:
   workflow_dispatch: {}

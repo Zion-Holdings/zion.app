@@ -1,3 +1,4 @@
+---
 name: Git Health
 on:
   workflow_dispatch: {}
