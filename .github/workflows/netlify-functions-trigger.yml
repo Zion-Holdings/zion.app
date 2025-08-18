@@ -29,7 +29,35 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run netlify functions trigger
-        run: echo "Workflow executed successfully"
+        run: |
+          echo "Starting Netlify Functions trigger..."
+          echo "Total functions to trigger: $(find netlify/functions -name "*.js" | wc -l)"
+          
+          # Create results directory
+          mkdir -p workflow-results
+          
+          # Trigger each function and capture results
+          for func in netlify/functions/*.js; do
+            if [ -f "$func" ]; then
+              func_name=$(basename "$func" .js)
+              echo "Triggering function: $func_name"
+              
+              # Run the function test and capture output
+              timeout 30s node -e "
+                try {
+                  const func = require('./$func');
+                  const result = func.handler({}, {});
+                  console.log('✅ $func_name: Success');
+                  console.log('Result:', JSON.stringify(result, null, 2));
+                } catch (error) {
+                  console.log('❌ $func_name: Failed -', error.message);
+                }
+              " > "workflow-results/${func_name}-result.log" 2>&1 || echo "❌ $func_name: Timeout or error"
+            fi
+          done
+          
+          echo "Netlify Functions trigger completed!"
+          echo "Results saved to workflow-results/ directory
       - name: Upload results
         uses: actions/upload-artifact@v4
         if: always()
@@ -37,4 +65,5 @@ jobs:
           name: workflow-results
           path: |
             .github/workflows/
+            workflow-results/
           retention-days: 7
