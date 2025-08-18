@@ -750,7 +750,7 @@
   "auto-fix.yml": {
     "name": "auto-fix.yml",
     "triggers": [
-      "workflow_dispatch null",
+      "workflow_dispatch {}",
       "schedule",
       "pull_request"
     ],
@@ -1655,7 +1655,7 @@
     "name": "cloud-maintenance.yml",
     "triggers": [
       "schedule",
-      "workflow_dispatch null"
+      "workflow_dispatch {}"
     ],
     "needs": [],
     "outputs": [],
@@ -1671,7 +1671,7 @@
   "cloud-marketing.yml": {
     "name": "cloud-marketing.yml",
     "triggers": [
-      "workflow_dispatch null",
+      "workflow_dispatch {}",
       "schedule"
     ],
     "needs": [],
@@ -1826,7 +1826,7 @@
   "continuous-improvement.yml": {
     "name": "continuous-improvement.yml",
     "triggers": [
-      "workflow_dispatch null",
+      "workflow_dispatch {}",
       "schedule"
     ],
     "needs": [],
@@ -1878,7 +1878,7 @@
     "name": "cursor-rules-autoupdate.yml",
     "triggers": [
       "schedule",
-      "workflow_dispatch null"
+      "workflow_dispatch {}"
     ],
     "needs": [],
     "outputs": [],
@@ -2204,7 +2204,7 @@
     "triggers": [
       "push",
       "schedule",
-      "workflow_dispatch null"
+      "workflow_dispatch {}"
     ],
     "needs": [],
     "outputs": [],
@@ -2322,7 +2322,7 @@
   "infinite-improvement-loop.yml": {
     "name": "infinite-improvement-loop.yml",
     "triggers": [
-      "workflow_dispatch null",
+      "workflow_dispatch {}",
       "schedule"
     ],
     "needs": [],

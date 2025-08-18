@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T03:47:42.115Z",
+  "timestamp": "2025-08-18T03:57:35.421Z",
   "critical": [
     {
       "name": "ci-self-heal.yml",
@@ -2137,7 +2137,7 @@
       },
       "dependencies": [],
       "triggers": [
-        "workflow_dispatch null",
+        "workflow_dispatch {}",
         "schedule"
       ],
       "resourceScore": 105
@@ -2175,7 +2175,7 @@
       },
       "dependencies": [],
       "triggers": [
-        "workflow_dispatch null",
+        "workflow_dispatch {}",
         "schedule"
       ],
       "resourceScore": 104
@@ -2195,7 +2195,7 @@
       "dependencies": [],
       "triggers": [
         "schedule",
-        "workflow_dispatch null"
+        "workflow_dispatch {}"
       ],
       "resourceScore": 104
     },
@@ -2897,7 +2897,7 @@
       },
       "dependencies": [],
       "triggers": [
-        "workflow_dispatch null",
+        "workflow_dispatch {}",
         "schedule"
       ],
       "resourceScore": 103
@@ -4039,7 +4039,7 @@
       "triggers": [
         "push",
         "schedule",
-        "workflow_dispatch null"
+        "workflow_dispatch {}"
       ],
       "resourceScore": 102
     },
@@ -4095,7 +4095,7 @@
       },
       "dependencies": [],
       "triggers": [
-        "workflow_dispatch null",
+        "workflow_dispatch {}",
         "schedule",
         "pull_request"
       ],
@@ -4255,7 +4255,7 @@
       "dependencies": [],
       "triggers": [
         "schedule",
-        "workflow_dispatch null"
+        "workflow_dispatch {}"
       ],
       "resourceScore": 75
     },

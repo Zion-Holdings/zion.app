@@ -15,7 +15,8 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  run:
+  trigger:
+    name: Trigger Netlify Functions
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:

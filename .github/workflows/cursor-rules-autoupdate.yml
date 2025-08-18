@@ -3,7 +3,7 @@ name: Cursor Rules Auto Update
 on:
   schedule:
     - cron: 17 */6 * * *
-  workflow_dispatch: null
+  workflow_dispatch: {}
 permissions:
   contents: write
   pull-requests: write
