@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T05:22:41.214Z",
+  "timestamp": "2025-08-18T05:23:41.973Z",
   "critical": [
     {
       "name": "ci-self-heal.yml",
@@ -76,27 +76,6 @@
         "workflow_dispatch"
       ],
       "resourceScore": 153
-    },
-    {
-      "name": "ci.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci.yml",
-      "priority": "critical",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 30,
-      "concurrentJobs": 14,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "push",
-        "pull_request",
-        "workflow_dispatch {}",
-        "schedule"
-      ],
-      "resourceScore": 150
     }
   ],
   "high": [
@@ -4127,25 +4106,6 @@
       "resourceScore": 100
     },
     {
-      "name": "deploy.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/deploy.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 30,
-      "concurrentJobs": 13,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "large",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "push",
-        "workflow_dispatch"
-      ],
-      "resourceScore": 100
-    },
-    {
       "name": "diverse-agent-matrix.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/diverse-agent-matrix.yml",
       "priority": "medium",
@@ -4190,6 +4150,46 @@
       "resourceIntensity": "medium",
       "estimatedDuration": 30,
       "concurrentJobs": 12,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "push",
+        "pull_request",
+        "workflow_dispatch {}",
+        "schedule"
+      ],
+      "resourceScore": 100
+    },
+    {
+      "name": "release-deploy.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/release-deploy.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 30,
+      "concurrentJobs": 13,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "large",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "push",
+        "workflow_dispatch"
+      ],
+      "resourceScore": 100
+    },
+    {
+      "name": "test-suite.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/test-suite.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 30,
+      "concurrentJobs": 14,
       "runnerRequirements": {
         "runner": "ubuntu-latest",
         "size": "standard",
@@ -4355,7 +4355,7 @@
   "recommendations": [
     {
       "type": "warning",
-      "message": "Too many critical workflows (5/3)",
+      "message": "Too many critical workflows (4/3)",
       "suggestion": "Consider consolidating or deprioritizing some critical workflows"
     },
     {
@@ -4365,7 +4365,7 @@
     },
     {
       "type": "info",
-      "message": "High priority workflows may compete for resources (14)",
+      "message": "High priority workflows may compete for resources (13)",
       "suggestion": "Consider staggering high-priority workflow execution"
     }
   ]

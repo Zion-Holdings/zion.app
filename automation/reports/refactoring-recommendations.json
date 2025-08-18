@@ -1,29 +1,8 @@
 {
-  "timestamp": "2025-08-18T05:22:40.262Z",
+  "timestamp": "2025-08-18T05:23:41.113Z",
   "critical": [],
   "high": [],
   "medium": [
-    {
-      "workflow": "ci.yml",
-      "status": "active",
-      "complexityScore": 35,
-      "complexityLevel": "medium",
-      "metrics": {
-        "totalLines": 137,
-        "jobCount": 0,
-        "stepCount": 21,
-        "conditionalCount": 2,
-        "matrixCount": 0,
-        "dependencyCount": 0,
-        "environmentCount": 0,
-        "secretCount": 0,
-        "actionCount": 7
-      },
-      "refactoringStrategy": [
-        "Break down into smaller job steps",
-        "Extract common functionality to reusable workflows"
-      ]
-    },
     {
       "workflow": "comprehensive-test.yml",
       "status": "active",
@@ -60,26 +39,6 @@
         "environmentCount": 0,
         "secretCount": 2,
         "actionCount": 4
-      },
-      "refactoringStrategy": [
-        "Extract common functionality to reusable workflows"
-      ]
-    },
-    {
-      "workflow": "deploy.yml",
-      "status": "active",
-      "complexityScore": 30,
-      "complexityLevel": "medium",
-      "metrics": {
-        "totalLines": 103,
-        "jobCount": 0,
-        "stepCount": 11,
-        "conditionalCount": 0,
-        "matrixCount": 0,
-        "dependencyCount": 0,
-        "environmentCount": 0,
-        "secretCount": 2,
-        "actionCount": 5
       },
       "refactoringStrategy": [
         "Extract common functionality to reusable workflows"
@@ -148,6 +107,26 @@
       ]
     },
     {
+      "workflow": "release-deploy.yml",
+      "status": "active",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 103,
+        "jobCount": 0,
+        "stepCount": 11,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 2,
+        "actionCount": 5
+      },
+      "refactoringStrategy": [
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
       "workflow": "seo-audit.yml",
       "status": "active",
       "complexityScore": 30,
@@ -164,6 +143,27 @@
         "actionCount": 2
       },
       "refactoringStrategy": [
+        "Extract common functionality to reusable workflows"
+      ]
+    },
+    {
+      "workflow": "test-suite.yml",
+      "status": "active",
+      "complexityScore": 35,
+      "complexityLevel": "medium",
+      "metrics": {
+        "totalLines": 137,
+        "jobCount": 0,
+        "stepCount": 21,
+        "conditionalCount": 2,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 7
+      },
+      "refactoringStrategy": [
+        "Break down into smaller job steps",
         "Extract common functionality to reusable workflows"
       ]
     },
