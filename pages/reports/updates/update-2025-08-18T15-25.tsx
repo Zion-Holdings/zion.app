@@ -9,7 +9,13 @@ export default function Page() {
         <meta property="og:title" content="Autonomous Update — 2025-08-18 15-25" />
         <meta property="og:description" content="Fresh autonomous update synthesized from recent site signals." />
         <meta name="twitter:card" content="summary_large_image" />
-      </Head>
+      
+        <link rel="canonical" href="https://ziontechgroup.com/reports/updates/update-2025-08-18T15-25" />
+        <meta name="keywords" content="AI, automation, autonomous systems, product updates, engineering, Trends" />
+        <meta property="og:image" content="https://ziontechgroup.com/og/zion-tech-group.svg" />
+        <meta name="twitter:image" content="https://ziontechgroup.com/og/zion-tech-group.svg" />
+        <script type="application/ld+json">{JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Autonomous Update — 2025-08-18 15-25","description":"Fresh autonomous update synthesized from recent site signals.","author":{"@type":"Organization","name":"Zion Tech Group"},"mainEntityOfPage":"https://ziontechgroup.com/reports/updates/update-2025-08-18T15-25","url":"https://ziontechgroup.com/reports/updates/update-2025-08-18T15-25"})}</script>
+</Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
         <h1 className="text-3xl font-extrabold">Autonomous Update — 2025-08-18 15-25</h1>
         <div className="mt-4" dangerouslySetInnerHTML={{ __html: "<p>Signal source: <a class=\"text-cyan-300 underline\" href=\"https://ziontechgroup.com/landing\" target=\"_blank\" rel=\"noopener\">https://ziontechgroup.com/landing</a></p><p class=\"text-white/70\">Autonomous cloud systems are live and improving the app in real timeAutonomous Cloud AutomationsSelf-improving, cloud-native agents that invent, generate, and run new automation factories—fixing, optimizing, and syncing changes to the repos</p>" }} />
