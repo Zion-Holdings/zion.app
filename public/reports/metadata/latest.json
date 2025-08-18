@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T16:41:01.397Z",
-  "pagesScanned": 2955,
+  "generatedAt": "2025-08-18T16:42:01.049Z",
+  "pagesScanned": 2960,
   "items": [
     {
       "route": "/404",
@@ -3745,7 +3745,7 @@
       }
     },
     {
-      "route": "/reports/blueprints/blueprint-2025-08-18-164057",
+      "route": "/reports/blueprints/blueprint-2025-08-18-164113",
       "missing": [
         "og:image"
       ],
@@ -7345,7 +7345,7 @@
       }
     },
     {
-      "route": "/reports/cases/case-2025-08-18-164058",
+      "route": "/reports/cases/case-2025-08-18-164113",
       "missing": [
         "og:image"
       ],
@@ -10945,7 +10945,7 @@
       }
     },
     {
-      "route": "/reports/guides/guide-2025-08-18-164058",
+      "route": "/reports/guides/guide-2025-08-18-164113",
       "missing": [
         "og:image"
       ],
@@ -12912,6 +12912,16 @@
       "suggestion": {
         "title": "Reference Architecture — Cloud FinOps",
         "description": "Reference Architecture — Cloud FinOps — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/innovation-2025-08-18-1641",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Retrieval-Augmented Generation",
+        "description": "Playbook — Retrieval-Augmented Generation — auto-suggested description"
       }
     },
     {
@@ -14885,6 +14895,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-18-1641",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide: FinOps for AI",
+        "description": "Guide: FinOps for AI — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-18T12-29",
       "missing": [
         "og:image"
@@ -16812,6 +16832,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-18 16-40",
         "description": "Innovation Insight — 2025-08-18 16-40 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18T16-41",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-18 16-41",
+        "description": "Innovation Insight — 2025-08-18 16-41 — auto-suggested description"
       }
     },
     {
@@ -20425,7 +20455,7 @@
       }
     },
     {
-      "route": "/reports/patterns/pattern-2025-08-18-164058",
+      "route": "/reports/patterns/pattern-2025-08-18-164113",
       "missing": [
         "og:image"
       ],
@@ -23815,7 +23845,7 @@
       }
     },
     {
-      "route": "/reports/playbooks/playbook-2025-08-18-164058",
+      "route": "/reports/playbooks/playbook-2025-08-18-164114",
       "missing": [
         "og:image"
       ],
@@ -27585,6 +27615,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-18-1641",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Security Hardening Guide — Cloud Cost Optimization (2025-08-18 16:41 UTC)",
+        "description": "Autonomous Security Hardening Guide — Cloud Cost Optimization (2025-08-18 16:41 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-18T12-29",
       "missing": [
         "og:image"
@@ -29512,6 +29552,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-18 16-40",
         "description": "Autonomous Update — 2025-08-18 16-40 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18T16-41",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 16-41",
+        "description": "Autonomous Update — 2025-08-18 16-41 — auto-suggested description"
       }
     },
     {
