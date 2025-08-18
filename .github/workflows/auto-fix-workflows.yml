@@ -5,10 +5,10 @@ on:
   workflow_dispatch: {}
   # schedule:
   #   - cron: '0 3 * * *' # DISABLED to prevent conflicts with manual fixes
-  workflow_run:
-    workflows: ["Comprehensive Test Suite"]
-    types: [completed]
-    branches: [main, develop]
+  # workflow_run:  # DISABLED to prevent automatic triggering
+  #   workflows: ["Comprehensive Test Suite"]
+  #   types: [completed]
+  #   branches: [main, develop]
 
 permissions:
   contents: write
