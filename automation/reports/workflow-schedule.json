@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T05:28:41.501Z",
+  "timestamp": "2025-08-18T05:29:41.421Z",
   "critical": [
     {
       "name": "ci-self-heal.yml",
@@ -76,6 +76,25 @@
         "workflow_dispatch"
       ],
       "resourceScore": 153
+    },
+    {
+      "name": "ci.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci.yml",
+      "priority": "critical",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 45,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "push",
+        "pull_request"
+      ],
+      "resourceScore": 139
     }
   ],
   "high": [
@@ -2202,25 +2221,6 @@
       "resourceScore": 109
     },
     {
-      "name": "marketing-daily.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/marketing-daily.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 25,
-      "concurrentJobs": 7,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "schedule",
-        "workflow_dispatch"
-      ],
-      "resourceScore": 108
-    },
-    {
       "name": "monetization-continuous.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/monetization-continuous.yml",
       "priority": "medium",
@@ -3097,6 +3097,25 @@
     {
       "name": "linkedin-pro.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/linkedin-pro.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 30,
+      "concurrentJobs": 7,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch"
+      ],
+      "resourceScore": 103
+    },
+    {
+      "name": "marketing-daily.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/marketing-daily.yml",
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 30,
@@ -4374,7 +4393,7 @@
   "recommendations": [
     {
       "type": "warning",
-      "message": "Too many critical workflows (4/3)",
+      "message": "Too many critical workflows (5/3)",
       "suggestion": "Consider consolidating or deprioritizing some critical workflows"
     },
     {
@@ -4384,7 +4403,7 @@
     },
     {
       "type": "info",
-      "message": "High priority workflows may compete for resources (13)",
+      "message": "High priority workflows may compete for resources (14)",
       "suggestion": "Consider staggering high-priority workflow execution"
     }
   ]
