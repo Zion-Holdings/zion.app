@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T04:22:40.903Z",
+  "timestamp": "2025-08-18T04:23:41.652Z",
   "critical": [
     {
       "name": "ci-self-heal.yml",
@@ -2063,25 +2063,6 @@
       "resourceScore": 114
     },
     {
-      "name": "release.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/release.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 20,
-      "concurrentJobs": 6,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "workflow_dispatch {}",
-        "schedule"
-      ],
-      "resourceScore": 114
-    },
-    {
       "name": "search-index-autogen.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/search-index-autogen.yml",
       "priority": "medium",
@@ -2158,6 +2139,25 @@
       "triggers": [
         "schedule",
         "workflow_dispatch"
+      ],
+      "resourceScore": 110
+    },
+    {
+      "name": "monetization-daily.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/monetization-daily.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 25,
+      "concurrentJobs": 5,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch {}",
+        "schedule"
       ],
       "resourceScore": 110
     },
@@ -2377,25 +2377,6 @@
     {
       "name": "instagram-six-hourly.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/instagram-six-hourly.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 30,
-      "concurrentJobs": 6,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "workflow_dispatch null",
-        "schedule"
-      ],
-      "resourceScore": 104
-    },
-    {
-      "name": "monetization-daily.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/monetization-daily.yml",
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 30,
@@ -4222,6 +4203,25 @@
         "workflow_dispatch {}"
       ],
       "resourceScore": 89
+    },
+    {
+      "name": "release.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/release.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 45,
+      "concurrentJobs": 14,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "push",
+        "workflow_dispatch"
+      ],
+      "resourceScore": 85
     }
   ],
   "low": [

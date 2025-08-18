@@ -2630,7 +2630,7 @@
   "monetization-daily.yml": {
     "name": "monetization-daily.yml",
     "triggers": [
-      "workflow_dispatch null",
+      "workflow_dispatch {}",
       "schedule"
     ],
     "needs": [],
@@ -2640,9 +2640,9 @@
       "runner": "ubuntu-latest",
       "memory": "standard",
       "timeout": 30,
-      "concurrentJobs": 5
+      "concurrentJobs": 3
     },
-    "estimatedDuration": 30
+    "estimatedDuration": 25
   },
   "monetization.yml": {
     "name": "monetization.yml",
@@ -3076,19 +3076,19 @@
   "release.yml": {
     "name": "release.yml",
     "triggers": [
-      "workflow_dispatch {}",
-      "schedule"
+      "push",
+      "workflow_dispatch"
     ],
     "needs": [],
     "outputs": [],
     "priority": "medium",
     "resourceRequirements": {
       "runner": "ubuntu-latest",
-      "memory": "standard",
-      "timeout": 20,
+      "memory": "medium",
+      "timeout": 45,
       "concurrentJobs": 5
     },
-    "estimatedDuration": 20
+    "estimatedDuration": 45
   },
   "repo-knowledge-graph.yml": {
     "name": "repo-knowledge-graph.yml",

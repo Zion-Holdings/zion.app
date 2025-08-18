@@ -1,18 +1,18 @@
 {
-  "timestamp": "2025-08-18T04:22:32.590Z",
+  "timestamp": "2025-08-18T04:23:34.401Z",
   "summary": {
     "totalWorkflows": 224,
     "complexityDistribution": {
       "very-high": 0,
       "high": 0,
-      "medium": 10,
-      "low": 214
+      "medium": 11,
+      "low": 213
     },
     "refactoringPriorities": {
       "critical": 0,
       "high": 0,
-      "medium": 10,
-      "low": 214
+      "medium": 11,
+      "low": 213
     }
   },
   "workflows": {
@@ -2360,7 +2360,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 30,
+        "totalLines": 31,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -2792,15 +2792,15 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 39,
+        "totalLines": 21,
         "jobCount": 0,
-        "stepCount": 5,
+        "stepCount": 4,
         "conditionalCount": 0,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 3
+        "actionCount": 2
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -3257,20 +3257,20 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/release-drafter.yml"
     },
     "release.yml": {
-      "complexityScore": 0,
-      "complexityLevel": "low",
+      "complexityScore": 30,
+      "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 34,
+        "totalLines": 139,
         "jobCount": 0,
-        "stepCount": 4,
+        "stepCount": 12,
         "conditionalCount": 0,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 0,
-        "actionCount": 2
+        "secretCount": 3,
+        "actionCount": 6
       },
-      "refactoringPriority": "low",
+      "refactoringPriority": "medium",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/release.yml"
     },
