@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T04:00:28.803Z",
+  "timestamp": "2025-08-18T04:01:48.285Z",
   "critical": [
     {
       "name": "ci-self-heal.yml",
@@ -351,27 +351,6 @@
         "workflow_dispatch {}"
       ],
       "resourceScore": 119
-    },
-    {
-      "name": "playwright-smoke.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/playwright-smoke.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 15,
-      "concurrentJobs": 8,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "push",
-        "pull_request",
-        "workflow_dispatch {}",
-        "schedule"
-      ],
-      "resourceScore": 117
     },
     {
       "name": "agent-agent-1755379731008-2-monitoring-expert.yml",
@@ -2158,6 +2137,27 @@
         "schedule"
       ],
       "resourceScore": 113
+    },
+    {
+      "name": "playwright-smoke.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/playwright-smoke.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 20,
+      "concurrentJobs": 8,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "push",
+        "pull_request",
+        "workflow_dispatch {}",
+        "schedule"
+      ],
+      "resourceScore": 112
     },
     {
       "name": "exponential-agent-factory-proliferation.yml",
