@@ -11,7 +11,10 @@ export default function Simple-service-1755536678090-hzafjw5ejService() {
         <meta name="description" content="Professional Cybersecurity solution for modern businesses" />
         <meta name="keywords" content="cybersecurity, technology services" />
         <link rel="canonical" href="https://ziontechgroup.com/services/simple-service-1755536678090-hzafjw5ej" />
-      </Head>
+      
+        <meta property="og:title" content="Cybersecurity Service" />
+        <meta property="og:description" content="Cybersecurity Service — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       
       <main className="container mx-auto px-6 py-12">
         <div className="text-center mb-16">

@@ -11,7 +11,10 @@ export default function Simple-service-1755536632490-0pdxjco7fService() {
         <meta name="description" content="Advanced Training solution with premium features" />
         <meta name="keywords" content="training, technology services" />
         <link rel="canonical" href="https://ziontechgroup.com/services/simple-service-1755536632490-0pdxjco7f" />
-      </Head>
+      
+        <meta property="og:title" content="Premium Training Solution" />
+        <meta property="og:description" content="Premium Training Solution — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       
       <main className="container mx-auto px-6 py-12">
         <div className="text-center mb-16">

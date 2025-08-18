@@ -1,28 +1,28 @@
 import Head from 'next/head';
 import { useState } from 'react';
 
-export default function Simple-service-1755536678091-9keeldyalService() {
+export default function Simple-service-1755536698091-agy5j7dojService() {
   const [selectedPlan, setSelectedPlan] = useState(0);
 
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <Head>
-        <title>Training Service - Zion Tech Group</title>
-        <meta name="description" content="Professional Training solution for modern businesses" />
-        <meta name="keywords" content="training, technology services" />
-        <link rel="canonical" href="https://ziontechgroup.com/services/simple-service-1755536678091-9keeldyal" />
+        <title>AI Solutions Service - Zion Tech Group</title>
+        <meta name="description" content="Professional AI Solutions solution for modern businesses" />
+        <meta name="keywords" content="ai solutions, technology services" />
+        <link rel="canonical" href="https://ziontechgroup.com/services/simple-service-1755536698091-agy5j7doj" />
       
-        <meta property="og:title" content="Training Service" />
-        <meta property="og:description" content="Training Service — automatically suggested description." />
+        <meta property="og:title" content="AI Solutions Service" />
+        <meta property="og:description" content="AI Solutions Service — automatically suggested description." />
         <meta name="twitter:card" content="summary_large_image" /></Head>
       
       <main className="container mx-auto px-6 py-12">
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
-            Training Service
+            AI Solutions Service
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Professional Training solution for modern businesses
+            Professional AI Solutions solution for modern businesses
           </p>
         </div>
         
@@ -68,7 +68,7 @@ export default function Simple-service-1755536678091-9keeldyalService() {
         
         <div className="text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-          <p className="text-gray-300 mb-6">Transform your business with our training solutions</p>
+          <p className="text-gray-300 mb-6">Transform your business with our ai solutions solutions</p>
           <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-3 px-8 rounded-lg text-lg">
             Contact Us Today
           </button>
