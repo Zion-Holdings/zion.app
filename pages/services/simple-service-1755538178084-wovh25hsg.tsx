@@ -11,7 +11,10 @@ export default function Simple-service-1755538178084-wovh25hsgService() {
         <meta name="description" content="Professional Consulting solution for modern businesses" />
         <meta name="keywords" content="consulting, technology services" />
         <link rel="canonical" href="https://ziontechgroup.com/services/simple-service-1755538178084-wovh25hsg" />
-      </Head>
+      
+        <meta property="og:title" content="Consulting Service" />
+        <meta property="og:description" content="Consulting Service — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       
       <main className="container mx-auto px-6 py-12">
         <div className="text-center mb-16">
