@@ -3,8 +3,8 @@ name: Auto-Fix GitHub Actions Workflows
 
 on:
   workflow_dispatch: {}
-  # schedule:
-  #   - cron: '0 3 * * *' # DISABLED to prevent conflicts with manual fixes
+  schedule:
+    - cron: '0 3 * * *' # Daily at 3 AM UTC - IMPROVED to be more intelligent
   workflow_run:
     workflows: ["Comprehensive Test Suite"]
     types: [completed]
