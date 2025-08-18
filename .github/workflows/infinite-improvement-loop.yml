@@ -37,14 +37,12 @@ jobs:
       - name: Upload improvement artifacts
         uses: actions/upload-artifact@v4
         with:
-        name: infinite-improvement-artifacts
-        path: 'automation/logs/**/*
-
-          data/reports/**/*.json
-
-          '
-        if-no-files-found: ignore
-        retention-days: 7
+          name: infinite-improvement-artifacts
+          path: |
+            automation/logs/**/*
+            data/reports/**/*.json
+          if-no-files-found: ignore
+          retention-days: 7
       - name: Commit and push changes
         run:
                 "if [ -n \"$(git status --porcelain)\" ]; then\n  git config user.name\
