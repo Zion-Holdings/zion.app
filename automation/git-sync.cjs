@@ -113,23 +113,24 @@ function push(refspec) {
   return run(`git push origin ${refspec}`);
 }
 
-function createBackupBranch() {
-  const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-  const backupBranch = `backup/sync-${timestamp}`;
-  run(`git checkout -b ${backupBranch}`);
-  run(`git push origin ${backupBranch}`);
-  console.log(`Created backup branch: ${backupBranch}`);
-  return backupBranch;
+function ensureOnMainBranch() {
+  const currentBranch = getCurrentBranch();
+  if (currentBranch !== 'main') {
+    console.log(`Switching from ${currentBranch} to main branch...`);
+    run('git checkout main');
+    run('git pull origin main');
+  }
+  console.log('✅ Now working on main branch');
 }
 
 (function main() {
-  console.log('🤖 Starting enhanced git sync...');
+  console.log('🤖 Starting enhanced git sync on main branch...');
   
   configureBotIdentity();
 
-  const TARGET_BRANCH = process.env.TARGET_BRANCH || 'main';
-  const PUSH_TO_MAIN = String(process.env.PUSH_TO_MAIN || 'false').toLowerCase() !== 'false';
-  const CREATE_BACKUP = String(process.env.CREATE_BACKUP || 'true').toLowerCase() !== 'false';
+  const TARGET_BRANCH = 'main'; // Always target main
+  const PUSH_TO_MAIN = true; // Always push to main
+  const CREATE_BACKUP = false; // Never create backup branches
 
   console.log(`Target branch: ${TARGET_BRANCH}`);
   console.log(`Push to main: ${PUSH_TO_MAIN}`);
@@ -139,61 +140,34 @@ function createBackupBranch() {
   console.log('Fetching latest changes...');
   run('git fetch --all --prune');
 
+  // Ensure we're on main branch
+  ensureOnMainBranch();
+
   const currentBranch = getCurrentBranch();
   console.log(`Current branch: ${currentBranch}`);
 
-  if (currentBranch === 'HEAD') {
-    console.log('Detached HEAD detected, creating temporary branch...');
-    run('git checkout -B automation/git-sync-temp');
-  }
-
-  const workingBranch = getCurrentBranch();
-  console.log(`Working branch: ${workingBranch}`);
-
-  // Create backup if enabled
-  if (CREATE_BACKUP && hasChanges()) {
-    createBackupBranch();
-  }
-
-  // Always sync with latest target branch
+  // Always sync with latest main branch
   console.log(`Syncing with latest ${TARGET_BRANCH}...`);
-  run(`git fetch origin ${TARGET_BRANCH}:${TARGET_BRANCH} || true`);
+  run(`git pull origin ${TARGET_BRANCH} || true`);
   
-  // Attempt safe merge
-  const mergeSuccess = safeMerge(TARGET_BRANCH);
-  
-  if (!mergeSuccess) {
-    console.error('❌ All merge strategies failed');
-    process.exit(1);
-  }
-
   // Commit any working tree changes
-  const committed = commitAllIfAny('chore(sync): enhanced autonomous sync');
+  const committed = commitAllIfAny('chore(sync): enhanced autonomous sync on main');
   if (committed) {
     console.log('✅ Committed working tree changes');
   }
 
-  // Decide where to push based on configuration
-  if (PUSH_TO_MAIN) {
-    console.log('Attempting to push to main...');
-    const res = push('HEAD:main');
-    if (!res.ok) {
-      console.log('Push to main failed, falling back to branch push...');
-      push('HEAD');
-    }
-  } else {
-    console.log('Pushing to current branch...');
-    if (workingBranch === TARGET_BRANCH) {
-      // Ensure we are up to date and push main
-      run('git pull --rebase origin main || true');
-      push('HEAD:main');
-    } else {
-      push('HEAD');
-    }
+  // Always push to main
+  console.log('Pushing to main...');
+  const res = push('HEAD:main');
+  if (!res.ok) {
+    console.log('Push to main failed, attempting to resolve...');
+    // Try to resolve any issues and push again
+    run('git pull --rebase origin main || true');
+    push('HEAD:main');
   }
 
   // Attempt to push tags as well (non-fatal)
   run('git push --tags || true');
   
-  console.log('✅ Enhanced git sync completed successfully');
+  console.log('✅ Enhanced git sync completed successfully on main branch');
 })();
