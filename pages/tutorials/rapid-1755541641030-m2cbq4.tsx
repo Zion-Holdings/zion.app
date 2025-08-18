@@ -8,7 +8,10 @@ export default function TutorialPage() {
         <meta name="description" content="Learn api integration with our comprehensive tutorial. Step-by-step guidance for beginners and advanced users." />
         <meta name="keywords" content="tutorial, api integration, learning, guide, education, technology" />
         <link rel="canonical" href="https://ziontechgroup.com/tutorials/rapid-1755541641030-m2cbq4" />
-      </Head>
+      
+        <meta property="og:title" content="Professional Tips for API Integration" />
+        <meta property="og:description" content="Professional Tips for API Integration — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
         <h1 className="text-4xl font-extrabold text-center mb-8">Professional Tips for API Integration</h1>
         

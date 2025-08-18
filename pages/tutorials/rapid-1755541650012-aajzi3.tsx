@@ -8,7 +8,10 @@ export default function TutorialPage() {
         <meta name="description" content="Learn security auditing with our comprehensive tutorial. Step-by-step guidance for beginners and advanced users." />
         <meta name="keywords" content="tutorial, security auditing, learning, guide, education, technology" />
         <link rel="canonical" href="https://ziontechgroup.com/tutorials/rapid-1755541650012-aajzi3" />
-      </Head>
+      
+        <meta property="og:title" content="Mastering Security Auditing" />
+        <meta property="og:description" content="Mastering Security Auditing — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
         <h1 className="text-4xl font-extrabold text-center mb-8">Mastering Security Auditing</h1>
         
