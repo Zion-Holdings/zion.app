@@ -1,27 +1,11 @@
 # crawl-normalize Report
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-Generated: 2025-08-18T14:12:40.653Z
-=======
-Generated: 2025-08-18T14:10:15.366Z
->>>>>>> Stashed changes
-=======
-Generated: 2025-08-18T14:10:15.366Z
->>>>>>> Stashed changes
+Generated: 2025-08-18T14:16:01.137Z
 
 ## Status
 - Task: crawl-normalize
 - Status: Completed
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-- Timestamp: 2025-08-18T14:12:40.653Z
-=======
-- Timestamp: 2025-08-18T14:10:15.366Z
->>>>>>> Stashed changes
-=======
-- Timestamp: 2025-08-18T14:10:15.366Z
->>>>>>> Stashed changes
+- Timestamp: 2025-08-18T14:16:01.137Z
 
 ## Next Steps
 - Implement actual crawl-normalize functionality
