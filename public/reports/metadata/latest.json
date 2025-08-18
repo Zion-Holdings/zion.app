@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T03:59:01.150Z",
-  "pagesScanned": 8527,
+  "generatedAt": "2025-08-18T04:01:01.071Z",
+  "pagesScanned": 8530,
   "items": [
     {
       "route": "/404",
@@ -36166,6 +36166,16 @@
       "suggestion": {
         "title": "Guide: RAG Platforms",
         "description": "Guide: RAG Platforms — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18-0400",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Blueprint: DevSecOps AI",
+        "description": "Blueprint: DevSecOps AI — auto-suggested description"
       }
     },
     {
@@ -85181,14 +85191,24 @@
     {
       "route": "/reports/updates/update-2025-08-18-0059",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 00:59",
+        "description": "Autonomous Update — 2025-08-18 00:59 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0101",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 00:59",
-        "description": "Autonomous Update — 2025-08-18 00:59 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-18 01:01",
+        "description": "Autonomous Update — 2025-08-18 01:01 — auto-suggested description"
       }
     },
     {
@@ -85199,6 +85219,16 @@
       "suggestion": {
         "title": "Autonomous Performance Tuning Guide — Vision & Multimodal (2025-08-18 03:10 UTC)",
         "description": "Autonomous Performance Tuning Guide — Vision & Multimodal (2025-08-18 03:10 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0400",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Validation & QA Plan — Applied NLP & RAG (2025-08-18 04:00 UTC)",
+        "description": "Autonomous Validation & QA Plan — Applied NLP & RAG (2025-08-18 04:00 UTC) — auto-suggested description"
       }
     },
     {
