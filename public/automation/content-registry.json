@@ -1,6 +1,69 @@
 {
   "items": [
     {
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-18-180247",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:02:47.998Z",
+      "source": "cloud-blueprint-factory"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-18-180247",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:02:47.834Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Case Study — Cloud Improving",
+      "href": "/reports/cases/case-2025-08-18-180247",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:02:47.573Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-18-180247",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:02:47.573Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Automation Trends 2025",
+      "href": "/reports/patterns/pattern-2025-08-18-180247",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:02:47.573Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 18-02",
+      "href": "/reports/innovations/insight-2025-08-18T18-02",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:02:47.320Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-02",
+      "href": "/reports/updates/update-2025-08-18T18-02",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:02:47.320Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-18 18-02",
+      "href": "/reports/innovations/insight-2025-08-18T18-02",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:02:47.320Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-18 18-02",
+      "href": "/reports/updates/update-2025-08-18T18-02",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:02:47.320Z",
+      "source": "cloud-content-factory"
+    },
+    {
       "id": "ultra-1755540150871-kce7a6",
       "title": "Ultra-Fast Problem Solving",
       "route": "/reports/updates/ultra-1755540150871-kce7a6",
@@ -126,6 +189,30 @@
       "route": "/tutorials/rapid-1755540158937-axc74s",
       "type": "rapid-generated",
       "created": "2025-08-18T18:02:38.938Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755540165911-trjzrv",
+      "title": "Web Development",
+      "route": "/services/rapid-1755540165911-trjzrv",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:02:45.960Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755540165914-kruspw",
+      "title": "Data Platform",
+      "route": "/products/rapid-1755540165914-kruspw",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:02:45.960Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755540165957-tcxsne",
+      "title": "Complete Guide to Web Development",
+      "route": "/tutorials/rapid-1755540165957-tcxsne",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:02:45.960Z",
       "process": "rapid"
     }
   ]
