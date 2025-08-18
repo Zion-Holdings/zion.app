@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T18:24:02.491Z",
-  "pagesScanned": 4950,
+  "generatedAt": "2025-08-18T18:24:18.614Z",
+  "pagesScanned": 4922,
   "items": [
     {
       "route": "/404",
@@ -1301,77 +1301,17 @@
       }
     },
     {
-      "route": "/products/rapid-1755541421050-kdlnxx",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Development Tools",
-        "description": "Development Tools — auto-suggested description"
-      }
-    },
-    {
-      "route": "/products/rapid-1755541424221-m4yteo",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Security Framework",
-        "description": "Security Framework — auto-suggested description"
-      }
-    },
-    {
-      "route": "/products/rapid-1755541426466-8rejpd",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Collaboration Platform",
-        "description": "Collaboration Platform — auto-suggested description"
-      }
-    },
-    {
-      "route": "/products/rapid-1755541428766-n7pala",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Collaboration Platform",
-        "description": "Collaboration Platform — auto-suggested description"
-      }
-    },
-    {
-      "route": "/products/rapid-1755541432965-vlch6i",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Security Framework",
-        "description": "Security Framework — auto-suggested description"
-      }
-    },
-    {
-      "route": "/products/rapid-1755541435172-yk2ze6",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Integration Hub",
-        "description": "Integration Hub — auto-suggested description"
-      }
-    },
-    {
-      "route": "/products/rapid-1755541437555-ka1kwq",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Integration Hub",
-        "description": "Integration Hub — auto-suggested description"
-      }
-    },
-    {
       "route": "/products/rapid-1755541441295-3wgnak",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Security Framework",
+        "description": "Security Framework — auto-suggested description"
+      }
+    },
+    {
+      "route": "/products/rapid-1755541443482-ow9261",
       "missing": [
         "og:title",
         "og:description",
@@ -1379,8 +1319,47 @@
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Security Framework",
-        "description": "Security Framework — auto-suggested description"
+        "title": "Development Tools",
+        "description": "Development Tools — auto-suggested description"
+      }
+    },
+    {
+      "route": "/products/rapid-1755541448759-j0n8be",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Data Platform",
+        "description": "Data Platform — auto-suggested description"
+      }
+    },
+    {
+      "route": "/products/rapid-1755541453019-i51060",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Automation Suite",
+        "description": "Automation Suite — auto-suggested description"
+      }
+    },
+    {
+      "route": "/products/rapid-1755541456361-zk70r4",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Integration Hub",
+        "description": "Integration Hub — auto-suggested description"
       }
     },
     {
@@ -5704,7 +5683,7 @@
       }
     },
     {
-      "route": "/reports/blueprints/blueprint-2025-08-18-182343",
+      "route": "/reports/blueprints/blueprint-2025-08-18-182408",
       "missing": [
         "og:image"
       ],
@@ -5714,7 +5693,7 @@
       }
     },
     {
-      "route": "/reports/blueprints/blueprint-2025-08-18-182349",
+      "route": "/reports/blueprints/blueprint-2025-08-18-182414",
       "missing": [
         "og:image"
       ],
@@ -10274,7 +10253,7 @@
       }
     },
     {
-      "route": "/reports/cases/case-2025-08-18-182343",
+      "route": "/reports/cases/case-2025-08-18-182408",
       "missing": [
         "og:image"
       ],
@@ -10284,7 +10263,7 @@
       }
     },
     {
-      "route": "/reports/cases/case-2025-08-18-182349",
+      "route": "/reports/cases/case-2025-08-18-182414",
       "missing": [
         "og:image"
       ],
@@ -11884,99 +11863,65 @@
       }
     },
     {
-      "route": "/reports/cases/ultra-1755541419500-vunxwn",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Case Study: Ultra-fast testing frameworks Success",
-        "description": "Case Study: Ultra-fast testing frameworks Success — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/cases/ultra-1755541421357-ojupyj",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Case Study: Rapid prototyping systems Success",
-        "description": "Case Study: Rapid prototyping systems Success — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/cases/ultra-1755541424706-1897a9",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Case Study: Lightning deployment pipelines Success",
-        "description": "Case Study: Lightning deployment pipelines Success — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/cases/ultra-1755541426973-1xjthc",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Case Study: Ultra-fast testing frameworks Success",
-        "description": "Case Study: Ultra-fast testing frameworks Success — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/cases/ultra-1755541429538-r2svuz",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Case Study: Lightning deployment pipelines Success",
-        "description": "Case Study: Lightning deployment pipelines Success — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/cases/ultra-1755541432538-lzjh4j",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Case Study: Real-time data processing Success",
-        "description": "Case Study: Real-time data processing Success — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/cases/ultra-1755541437841-0ztudq",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Case Study: AI-powered automation Success",
-        "description": "Case Study: AI-powered automation Success — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/cases/ultra-1755541439995-0nnypo",
-      "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
-      ],
-      "suggestion": {
-        "title": "Case Study: Instant feedback loops Success",
-        "description": "Case Study: Instant feedback loops Success — auto-suggested description"
-      }
-    },
-    {
       "route": "/reports/cases/ultra-1755541440869-5plk3q",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Case Study: Ultra-responsive applications Success",
         "description": "Case Study: Ultra-responsive applications Success — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/ultra-1755541443631-oguf3g",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Case Study: Instant deployment systems Success",
+        "description": "Case Study: Instant deployment systems Success — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/ultra-1755541445851-8qw2dj",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Case Study: Real-time collaboration tools Success",
+        "description": "Case Study: Real-time collaboration tools Success — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/ultra-1755541451201-fdr0dl",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Case Study: Lightning-fast development Success",
+        "description": "Case Study: Lightning-fast development Success — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/ultra-1755541456336-rk58vh",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Case Study: Real-time data processing Success",
+        "description": "Case Study: Real-time data processing Success — auto-suggested description"
       }
     },
     {
@@ -16540,7 +16485,7 @@
       }
     },
     {
-      "route": "/reports/guides/guide-2025-08-18-182343",
+      "route": "/reports/guides/guide-2025-08-18-182408",
       "missing": [
         "og:image"
       ],
@@ -16550,7 +16495,7 @@
       }
     },
     {
-      "route": "/reports/guides/guide-2025-08-18-182349",
+      "route": "/reports/guides/guide-2025-08-18-182414",
       "missing": [
         "og:image"
       ],
@@ -18150,39 +18095,22 @@
       }
     },
     {
-      "route": "/reports/guides/ultra-1755541419499-6b5w1n",
+      "route": "/reports/guides/ultra-1755541440867-1pyjfl",
       "missing": [
         "og:image"
       ],
       "suggestion": {
-        "title": "Ultra-Fast Guide: Lightning-fast development",
-        "description": "Ultra-Fast Guide: Lightning-fast development — auto-suggested description"
+        "title": "Ultra-Fast Guide: Instant deployment systems",
+        "description": "Ultra-Fast Guide: Instant deployment systems — auto-suggested description"
       }
     },
     {
-      "route": "/reports/guides/ultra-1755541421356-iui5yu",
+      "route": "/reports/guides/ultra-1755541443630-7hqo6k",
       "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Ultra-Fast Guide: Ultra-responsive applications",
-        "description": "Ultra-Fast Guide: Ultra-responsive applications — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/guides/ultra-1755541424705-w6mouy",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Ultra-Fast Guide: Instant feedback loops",
-        "description": "Ultra-Fast Guide: Instant feedback loops — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/guides/ultra-1755541426972-almqh5",
-      "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Ultra-Fast Guide: Rapid prototyping systems",
@@ -18190,9 +18118,12 @@
       }
     },
     {
-      "route": "/reports/guides/ultra-1755541429537-wt9leo",
+      "route": "/reports/guides/ultra-1755541445850-5yx6y5",
       "missing": [
-        "og:image"
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
       ],
       "suggestion": {
         "title": "Ultra-Fast Guide: Lightning deployment pipelines",
@@ -18200,27 +18131,7 @@
       }
     },
     {
-      "route": "/reports/guides/ultra-1755541432537-6epjn8",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Ultra-Fast Guide: AI-powered automation",
-        "description": "Ultra-Fast Guide: AI-powered automation — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/guides/ultra-1755541437841-nu928v",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Ultra-Fast Guide: Instant deployment systems",
-        "description": "Ultra-Fast Guide: Instant deployment systems — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/guides/ultra-1755541439994-xb3z9d",
+      "route": "/reports/guides/ultra-1755541451200-gj78tr",
       "missing": [
         "og:title",
         "og:description",
@@ -18228,12 +18139,12 @@
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Ultra-Fast Guide: Instant feedback loops",
-        "description": "Ultra-Fast Guide: Instant feedback loops — auto-suggested description"
+        "title": "Ultra-Fast Guide: Rapid prototyping systems",
+        "description": "Ultra-Fast Guide: Rapid prototyping systems — auto-suggested description"
       }
     },
     {
-      "route": "/reports/guides/ultra-1755541440867-1pyjfl",
+      "route": "/reports/guides/ultra-1755541456335-58cz2u",
       "missing": [
         "og:title",
         "og:description",
@@ -18241,8 +18152,8 @@
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Ultra-Fast Guide: Instant deployment systems",
-        "description": "Ultra-Fast Guide: Instant deployment systems — auto-suggested description"
+        "title": "Ultra-Fast Guide: Real-time data processing",
+        "description": "Ultra-Fast Guide: Real-time data processing — auto-suggested description"
       }
     },
     {
@@ -20666,13 +20577,13 @@
       }
     },
     {
-      "route": "/reports/innovations/innovation-2025-08-18-1823",
+      "route": "/reports/innovations/innovation-2025-08-18-1824",
       "missing": [
         "og:image"
       ],
       "suggestion": {
-        "title": "Case Study Template — DevSecOps for AI",
-        "description": "Case Study Template — DevSecOps for AI — auto-suggested description"
+        "title": "Runbook — DevSecOps for AI",
+        "description": "Runbook — DevSecOps for AI — auto-suggested description"
       }
     },
     {
@@ -23106,13 +23017,13 @@
       }
     },
     {
-      "route": "/reports/innovations/insight-2025-08-18-1823",
+      "route": "/reports/innovations/insight-2025-08-18-1824",
       "missing": [
         "og:image"
       ],
       "suggestion": {
-        "title": "Playbook: AI QA & Eval",
-        "description": "Playbook: AI QA & Eval — auto-suggested description"
+        "title": "Runbook: RAG Platforms",
+        "description": "Runbook: RAG Platforms — auto-suggested description"
       }
     },
     {
@@ -27186,99 +27097,65 @@
       }
     },
     {
-      "route": "/reports/insights/ultra-1755541419498-7y1tnk",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Ultra-Fast Real-time data processing Insight",
-        "description": "Ultra-Fast Real-time data processing Insight — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/insights/ultra-1755541421355-v1iw9f",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Ultra-Fast Real-time collaboration tools Insight",
-        "description": "Ultra-Fast Real-time collaboration tools Insight — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/insights/ultra-1755541424704-m6v8sk",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Ultra-Fast AI-powered automation Insight",
-        "description": "Ultra-Fast AI-powered automation Insight — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/insights/ultra-1755541426971-hnfe2a",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Ultra-Fast Real-time data processing Insight",
-        "description": "Ultra-Fast Real-time data processing Insight — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/insights/ultra-1755541429536-iwfezs",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Ultra-Fast Real-time collaboration tools Insight",
-        "description": "Ultra-Fast Real-time collaboration tools Insight — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/insights/ultra-1755541432536-iqocgw",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Ultra-Fast Lightning-fast development Insight",
-        "description": "Ultra-Fast Lightning-fast development Insight — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/insights/ultra-1755541437840-7rgv3x",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Ultra-Fast Ultra-responsive applications Insight",
-        "description": "Ultra-Fast Ultra-responsive applications Insight — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/insights/ultra-1755541439993-f6tbwn",
-      "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
-      ],
-      "suggestion": {
-        "title": "Ultra-Fast Lightning-fast development Insight",
-        "description": "Ultra-Fast Lightning-fast development Insight — auto-suggested description"
-      }
-    },
-    {
       "route": "/reports/insights/ultra-1755541440866-p3go41",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Ultra-Fast Ultra-responsive applications Insight",
+        "description": "Ultra-Fast Ultra-responsive applications Insight — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/insights/ultra-1755541443629-6aht9i",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Ultra-Fast Ultra-responsive applications Insight",
-        "description": "Ultra-Fast Ultra-responsive applications Insight — auto-suggested description"
+        "title": "Ultra-Fast Real-time collaboration tools Insight",
+        "description": "Ultra-Fast Real-time collaboration tools Insight — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/insights/ultra-1755541445849-8ylxpk",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Ultra-Fast Instant deployment systems Insight",
+        "description": "Ultra-Fast Instant deployment systems Insight — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/insights/ultra-1755541451199-modjnq",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Ultra-Fast Lightning-fast development Insight",
+        "description": "Ultra-Fast Lightning-fast development Insight — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/insights/ultra-1755541456334-herc7k",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Ultra-Fast Ultra-fast testing frameworks Insight",
+        "description": "Ultra-Fast Ultra-fast testing frameworks Insight — auto-suggested description"
       }
     },
     {
@@ -31862,6 +31739,26 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-18-182408",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Automation Trends 2025",
+        "description": "Pattern — Automation Trends 2025 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-18-182414",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Automation Trends 2025",
+        "description": "Pattern — Automation Trends 2025 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/patterns/ultra-1755539341011-betviq",
       "missing": [
         "og:image"
@@ -33454,14 +33351,63 @@
     {
       "route": "/reports/patterns/ultra-1755541440870-l32jtu",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern: Lightning-fast development Architecture",
+        "description": "Pattern: Lightning-fast development Architecture — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/ultra-1755541443632-oubzax",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Pattern: Lightning-fast development Architecture",
-        "description": "Pattern: Lightning-fast development Architecture — auto-suggested description"
+        "title": "Pattern: AI-powered automation Architecture",
+        "description": "Pattern: AI-powered automation Architecture — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/ultra-1755541445851-34bace",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Pattern: Instant feedback loops Architecture",
+        "description": "Pattern: Instant feedback loops Architecture — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/ultra-1755541451202-bcnmql",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Pattern: Real-time collaboration tools Architecture",
+        "description": "Pattern: Real-time collaboration tools Architecture — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/ultra-1755541456337-8v3a05",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Pattern: Rapid prototyping systems Architecture",
+        "description": "Pattern: Rapid prototyping systems Architecture — auto-suggested description"
       }
     },
     {
@@ -37765,6 +37711,26 @@
       }
     },
     {
+      "route": "/reports/playbooks/playbook-2025-08-18-182408",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-18-182414",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/tutorials/",
       "missing": [
         "og:image"
@@ -39367,6 +39333,26 @@
     {
       "route": "/reports/updates/ultra-1755541411409-xfeyf8",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Instant Digital Transformation",
+        "description": "Instant Digital Transformation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/ultra-1755541440865-1rg2dr",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Instantaneous Tech Insights",
+        "description": "Instantaneous Tech Insights — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/ultra-1755541443628-czrzpa",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
@@ -39378,7 +39364,7 @@
       }
     },
     {
-      "route": "/reports/updates/ultra-1755541440865-1rg2dr",
+      "route": "/reports/updates/ultra-1755541445848-sd35dv",
       "missing": [
         "og:title",
         "og:description",
@@ -39386,8 +39372,34 @@
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Instantaneous Tech Insights",
-        "description": "Instantaneous Tech Insights — auto-suggested description"
+        "title": "Instant Digital Transformation",
+        "description": "Instant Digital Transformation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/ultra-1755541451198-8rkcan",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Real-Time Innovation Hub",
+        "description": "Real-Time Innovation Hub — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/ultra-1755541456333-h0iuyn",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Ultra-Fast Problem Solving",
+        "description": "Ultra-Fast Problem Solving — auto-suggested description"
       }
     },
     {
@@ -43841,6 +43853,16 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-18-1824",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Capability Map — Agentic Workflows (2025-08-18 18:24 UTC)",
+        "description": "Autonomous Capability Map — Agentic Workflows (2025-08-18 18:24 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-18T12-29",
       "missing": [
         "og:image"
@@ -46807,6 +46829,42 @@
     {
       "route": "/services/rapid-1755541441294-voxssx",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Cloud Infrastructure",
+        "description": "Cloud Infrastructure — auto-suggested description"
+      }
+    },
+    {
+      "route": "/services/rapid-1755541443481-cae8nl",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Web Development",
+        "description": "Web Development — auto-suggested description"
+      }
+    },
+    {
+      "route": "/services/rapid-1755541448756-z5lj1j",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "API Integration",
+        "description": "API Integration — auto-suggested description"
+      }
+    },
+    {
+      "route": "/services/rapid-1755541453017-qavpgy",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
@@ -46815,6 +46873,19 @@
       "suggestion": {
         "title": "Cloud Infrastructure",
         "description": "Cloud Infrastructure — auto-suggested description"
+      }
+    },
+    {
+      "route": "/services/rapid-1755541456360-avkeyr",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Security Auditing",
+        "description": "Security Auditing — auto-suggested description"
       }
     },
     {
@@ -48714,14 +48785,63 @@
     {
       "route": "/tutorials/rapid-1755541441296-lygpxa",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Step-by-Step Guide to Cloud Infrastructure",
+        "description": "Step-by-Step Guide to Cloud Infrastructure — auto-suggested description"
+      }
+    },
+    {
+      "route": "/tutorials/rapid-1755541443483-ovurd6",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Step-by-Step Guide to Cloud Infrastructure",
-        "description": "Step-by-Step Guide to Cloud Infrastructure — auto-suggested description"
+        "title": "Step-by-Step Guide to Machine Learning",
+        "description": "Step-by-Step Guide to Machine Learning — auto-suggested description"
+      }
+    },
+    {
+      "route": "/tutorials/rapid-1755541448760-eszjtg",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Advanced Techniques for Machine Learning",
+        "description": "Advanced Techniques for Machine Learning — auto-suggested description"
+      }
+    },
+    {
+      "route": "/tutorials/rapid-1755541453020-ttirus",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Getting Started with API Integration",
+        "description": "Getting Started with API Integration — auto-suggested description"
+      }
+    },
+    {
+      "route": "/tutorials/rapid-1755541456363-rmljjk",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Mastering Cloud Infrastructure",
+        "description": "Mastering Cloud Infrastructure — auto-suggested description"
       }
     },
     {
