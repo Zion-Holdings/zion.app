@@ -1,6 +1,5 @@
----
 name: Cursor Rules Auto Update
-on:
+'on':
   schedule:
     - cron: 17 */6 * * *
   workflow_dispatch: {}
@@ -35,6 +34,7 @@ jobs:
             echo "No changes to commit"
           fi
     timeout-minutes: 30
+    runs_on: ubuntu-latest
 concurrency:
   group: cursor-rules-autoupdate.yml-${{ github.ref }}
   cancel-in-progress: true

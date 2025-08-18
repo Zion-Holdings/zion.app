@@ -1,29 +1,18 @@
----
 name: Workflow Auto Healer Auto-Healer
-
-on:
-  # schedule:
-  #   - cron: '0 */2 * * *'  # DISABLED to prevent conflicts with manual fixes
-  workflow_dispatch: {}  # Keep for manual triggering if needed
-  # workflow_run:  # DISABLED to prevent automatic triggering
-  #   workflows: ['CI', 'Test Suite', 'Security Scan']
-  #   types: [completed, in_progress]
-
+'on':
+  workflow_dispatch: {}
 permissions:
   contents: write
   actions: read
   pull-requests: write
-
 concurrency:
   group: workflow-auto-healer
   cancel-in-progress: false
-
 jobs:
   auto-heal:
     name: Auto-Heal Workflows
     runs-on: ubuntu-latest
     timeout-minutes: 30
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -66,9 +55,12 @@ jobs:
         if: steps.validate.outputs.needs_fix == 'true'
         uses: actions/github-script@v7
         with:
-          script: |
+          script: >
             const invalidCount = '${{ steps.validate.outputs.invalid_count }}';
-            const message = `🔧 **Workflow Auto-Healer Report**\n\nFound ${invalidCount} invalid workflow files that need manual attention.\n\nPlease review and fix these workflows manually.`;
+
+            const message = `🔧 **Workflow Auto-Healer Report**\n\nFound ${invalidCount} invalid workflow files that
+            need manual attention.\n\nPlease review and fix these workflows manually.`;
+
 
             github.rest.issues.create({
               owner: context.repo.owner,
@@ -77,3 +69,4 @@ jobs:
               body: message,
               labels: ['workflow-fix', 'automation', 'needs-attention']
             });
+    runs_on: ubuntu-latest

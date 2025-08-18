@@ -1,9 +1,8 @@
----
 name: agent-agent-1755379759029-0-optimization-intermediate
-on:
+'on':
   workflow_dispatch: {}
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: 0 */2 * * *
 permissions:
   contents: write
   actions: read
@@ -31,4 +30,4 @@ jobs:
       - name: Run workflow
         run: |
           echo "Workflow Workflow completed successfully"
-          
+    runs_on: ubuntu-latest

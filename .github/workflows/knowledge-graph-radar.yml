@@ -1,19 +1,14 @@
----
 name: Knowledge Graph Radar
-
-on:
+'on':
   schedule:
-    - cron: '0 2 * * *'
-  workflow_dispatch:
-
+    - cron: 0 2 * * *
+  workflow_dispatch: null
 permissions:
   contents: read
   actions: read
-
 concurrency:
-  group: "knowledge-graph-radar-${{ github.ref }}"
+  group: knowledge-graph-radar-${{ github.ref }}
   cancel-in-progress: true
-
 jobs:
   knowledge-analysis:
     name: Knowledge Graph Analysis
@@ -32,33 +27,53 @@ jobs:
       - name: Build application
         run: npm run build
         env:
-          NODE_OPTIONS: "--max-old-space-size=4096"
+          NODE_OPTIONS: '--max-old-space-size=4096'
       - name: Analyze content structure
-        run: |
+        run: >
           echo "Analyzing content structure..."
 
+
           # Count pages and components
+
           echo "📊 Content Analysis Report" > knowledge-analysis.md
+
           echo "=========================" >> knowledge-analysis.md
+
           echo "" >> knowledge-analysis.md
+
 
           # Count pages
+
           PAGE_COUNT=$(find pages -name "*.tsx" -o -name "*.ts" -o -name "*.jsx" -o -name "*.js" | wc -l)
+
           echo "📄 Total Pages: $PAGE_COUNT" >> knowledge-analysis.md
 
+
           # Count components
-          COMPONENT_COUNT=$(find components -name "*.tsx" -o -name "*.ts" -o -name "*.jsx" -o -name "*.js" 2>/dev/null | wc -l)
+
+          COMPONENT_COUNT=$(find components -name "*.tsx" -o -name "*.ts" -o -name "*.jsx" -o -name "*.js" 2>/dev/null |
+          wc -l)
+
           echo "🧩 Total Components: $COMPONENT_COUNT" >> knowledge-analysis.md
 
+
           # Count API routes
+
           API_COUNT=$(find pages/api -name "*.ts" -o -name "*.js" 2>/dev/null | wc -l)
+
           echo "🔌 Total API Routes: $API_COUNT" >> knowledge-analysis.md
 
+
           # Analyze dependencies
+
           echo "" >> knowledge-analysis.md
+
           echo "📦 Dependency Analysis" >> knowledge-analysis.md
+
           echo "---------------------" >> knowledge-analysis.md
+
           npm list --depth=0 --json > dependencies.json
+
 
           echo "Knowledge graph analysis completed"
       - name: Upload analysis results
@@ -70,3 +85,4 @@ jobs:
             knowledge-analysis.md
             dependencies.json
           retention-days: 7
+    runs_on: ubuntu-latest

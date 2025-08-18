@@ -1,20 +1,14 @@
----
 name: Exponential AI Delegation
-
-on:
+'on':
   workflow_dispatch: {}
   schedule:
-    # Every 4 hours
-    - cron: '0 0 * * *'
-
+    - cron: 0 0 * * *
 permissions:
   contents: write
   actions: read
-
 concurrency:
-  group: "exponential-ai-delegation-${{ github.ref }}"
+  group: exponential-ai-delegation-${{ github.ref }}
   cancel-in-progress: true
-
 jobs:
   main:
     name: Main Job
@@ -29,9 +23,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
+          cache: npm
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
       - name: Complete workflow
         run: |
           echo "Workflow completed successfully"
+    runs_on: ubuntu-latest

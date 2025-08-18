@@ -1,9 +1,8 @@
----
 name: ephemeral-branch-autorebase
-on:
+'on':
   workflow_dispatch: {}
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: 0 */2 * * *
 permissions:
   contents: write
   actions: read
@@ -28,7 +27,7 @@ jobs:
       - name: Run workflow
         run: |
           echo "Workflow Workflow completed successfully"
-          
+    runs_on: ubuntu-latest
 concurrency:
   group: ephemeral-branch-autorebase.yml-${{ github.ref }}
   cancel-in-progress: true

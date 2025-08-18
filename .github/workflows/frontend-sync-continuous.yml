@@ -1,11 +1,10 @@
----
 name: Frontend Sync Continuous
-on:
+'on':
   push:
     branches:
-    - main
+      - main
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: 0 */2 * * *
   workflow_dispatch: {}
 jobs:
   sync:
@@ -45,6 +44,7 @@ jobs:
             echo "No changes to push"
           fi
     timeout-minutes: 30
+    runs_on: ubuntu-latest
 permissions:
   contents: read
   actions: read

@@ -1,20 +1,14 @@
----
 name: Secret scan (Gitleaks)
-
-on:
+'on':
   workflow_dispatch: {}
   schedule:
-    # daily at 03:00 UTC
-    - cron: '0 3 * * *'
-
+    - cron: 0 3 * * *
 permissions:
   contents: write
   actions: read
-
 concurrency:
-  group: "secret-scan-gitleaks-${{ github.ref }}"
+  group: secret-scan-gitleaks-${{ github.ref }}
   cancel-in-progress: true
-
 jobs:
   main:
     name: Main Job
@@ -29,9 +23,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
+          cache: npm
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
       - name: Complete workflow
         run: |
           echo "Workflow completed successfully"
+    runs_on: ubuntu-latest

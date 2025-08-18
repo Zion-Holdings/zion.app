@@ -1,19 +1,12 @@
----
 name: netlify-auto-healer
-
-on:
-  # schedule:
-  #   - cron: '0 2 * * *' # DISABLED to prevent conflicts with manual fixes
-  workflow_dispatch:
-
+'on':
+  workflow_dispatch: null
 permissions:
   contents: read
   actions: read
-
 concurrency:
-  group: "netlify-auto-healer-${{ github.ref }}"
+  group: netlify-auto-healer-${{ github.ref }}
   cancel-in-progress: true
-
 jobs:
   main:
     runs-on: ubuntu-latest
@@ -38,3 +31,4 @@ jobs:
           path: |
             .github/workflows/
           retention-days: 7
+    runs_on: ubuntu-latest

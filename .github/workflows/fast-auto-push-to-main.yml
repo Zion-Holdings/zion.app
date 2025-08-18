@@ -1,9 +1,8 @@
----
 name: Fast Auto Push to Main
-on:
+'on':
   workflow_dispatch: {}
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: 0 */2 * * *
 permissions:
   contents: write
   actions: read
@@ -27,6 +26,7 @@ jobs:
         run: npm ci --no-audit --no-fund
       - name: Run workflow
         run: echo "Workflow completed successfully"
+    runs_on: ubuntu-latest
 concurrency:
   group: fast-auto-push-to-main.yml-${{ github.ref }}
   cancel-in-progress: true

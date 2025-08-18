@@ -1,9 +1,8 @@
----
 name: agent-agent-1755381089846-4-testing-advanced
-on:
+'on':
   workflow_dispatch: {}
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: 0 */2 * * *
 permissions:
   contents: write
   actions: read
@@ -28,7 +27,7 @@ jobs:
       - name: Run workflow
         run: |
           echo "Workflow Workflow completed successfully"
-          
+    runs_on: ubuntu-latest
 concurrency:
   group: agent-agent-1755381089846-4-testing-advanced.yml-${{ github.ref }}
   cancel-in-progress: true

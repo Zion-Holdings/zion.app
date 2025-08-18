@@ -1,9 +1,8 @@
----
 name: Git Health
-on:
+'on':
   workflow_dispatch: {}
   schedule:
-    - cron: '0 2 * * *'
+    - cron: 0 2 * * *
 jobs:
   git-health:
     runs-on: ubuntu-latest
@@ -22,6 +21,7 @@ jobs:
       - name: Run git health check
         run: node automation/git-health-runner.cjs
     timeout-minutes: 30
+    runs_on: ubuntu-latest
 permissions:
   contents: read
   actions: read

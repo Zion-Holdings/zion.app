@@ -1,29 +1,17 @@
----
 name: Auto-Fix GitHub Actions Workflows
-
-on:
+'on':
   workflow_dispatch: {}
-  # schedule:
-  #   - cron: '0 3 * * *' # DISABLED to prevent conflicts with manual fixes
-  # workflow_run:  # DISABLED to prevent automatic triggering
-  #   workflows: ["Comprehensive Test Suite"]
-  #   types: [completed]
-  #   branches: [main, develop]
-
 permissions:
   contents: write
   actions: read
-
 concurrency:
-  group: "workflow-fixes"
+  group: workflow-fixes
   cancel-in-progress: false
-
 jobs:
   auto-fix:
     name: Auto-Fix Workflow Issues
     runs-on: ubuntu-latest
     timeout-minutes: 20
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -34,7 +22,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
+          cache: npm
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
       - name: Check workflow health before fixing
@@ -92,3 +80,4 @@ jobs:
           echo "**Timestamp:** $(date -u)" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Branch:** ${{ github.ref }}" >> $GITHUB_STEP_SUMMARY
+    runs_on: ubuntu-latest

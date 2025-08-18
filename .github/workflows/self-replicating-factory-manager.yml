@@ -1,19 +1,14 @@
----
 name: self-replicating-factory-manager
-
-on:
+'on':
   schedule:
-    - cron: '0 2 * * *'
-  workflow_dispatch:
-
+    - cron: 0 2 * * *
+  workflow_dispatch: null
 permissions:
   contents: read
   actions: read
-
 concurrency:
-  group: "self-replicating-factory-manager-${{ github.ref }}"
+  group: self-replicating-factory-manager-${{ github.ref }}
   cancel-in-progress: true
-
 jobs:
   main:
     runs-on: ubuntu-latest
@@ -38,3 +33,4 @@ jobs:
           path: |
             .github/workflows/
           retention-days: 7
+    runs_on: ubuntu-latest

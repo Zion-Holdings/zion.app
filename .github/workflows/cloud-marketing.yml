@@ -1,9 +1,8 @@
----
 name: Cloud Marketing Automations
-on:
+'on':
   workflow_dispatch: {}
   schedule:
-    - cron: '0 2 * * *'
+    - cron: 0 2 * * *
 permissions:
   contents: write
   pull-requests: write
@@ -53,3 +52,4 @@ jobs:
           git diff --cached --quiet || git commit -m "chore(marketing): cloud-run automations [skip ci]"
           git push
     timeout-minutes: 30
+    runs_on: ubuntu-latest

@@ -1,13 +1,11 @@
----
 name: Test Runner
-on:
+'on':
   workflow_dispatch: {}
   schedule:
-    - cron: '0 2 * * *'
+    - cron: 0 2 * * *
 permissions:
   contents: read
   actions: read
-
 concurrency:
   group: test-${{ github.ref }}
   cancel-in-progress: false
@@ -40,7 +38,8 @@ jobs:
       - name: Build verification
         run: npm run build
         env:
-          NODE_OPTIONS: "--max-old-space-size=4096"
+          NODE_OPTIONS: '--max-old-space-size=4096'
         continue-on-error: true
       - name: Test completion
         run: echo "Test workflow completed successfully"
+    runs_on: ubuntu-latest

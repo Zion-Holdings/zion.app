@@ -1,19 +1,14 @@
----
 name: Marketing Automation Daily
-
-on:
+'on':
   schedule:
-    - cron: '0 14 * * *' # daily at 14:00 UTC
-  workflow_dispatch:
-
+    - cron: 0 14 * * *
+  workflow_dispatch: null
 concurrency:
   group: marketing-daily
   cancel-in-progress: true
-
 permissions:
   contents: read
   actions: read
-
 jobs:
   marketing:
     runs-on: ubuntu-latest
@@ -40,3 +35,4 @@ jobs:
             data/reports/marketing/**/*
             automation/logs/**/*.log
           if-no-files-found: ignore
+    runs_on: ubuntu-latest

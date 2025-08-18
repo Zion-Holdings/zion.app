@@ -1,9 +1,8 @@
----
 name: Infinite Improvement Loop
-on:
+'on':
   workflow_dispatch: {}
   schedule:
-    - cron: '0 2 * * *'
+    - cron: 0 2 * * *
 concurrency:
   group: infinite-improvement-${{ github.ref }}
   cancel-in-progress: false
@@ -53,6 +52,7 @@ jobs:
             echo "No changes to push"
           fi
     timeout-minutes: 30
+    runs_on: ubuntu-latest
 permissions:
   contents: read
   actions: read

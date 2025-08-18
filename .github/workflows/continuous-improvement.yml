@@ -1,9 +1,8 @@
----
 name: Continuous Improvement
-on:
+'on':
   workflow_dispatch: {}
   schedule:
-    - cron: '0 2 * * *'
+    - cron: 0 2 * * *
 permissions:
   contents: write
   actions: read
@@ -40,3 +39,4 @@ jobs:
           else
             echo "No changes to push"
           fi
+    runs_on: ubuntu-latest

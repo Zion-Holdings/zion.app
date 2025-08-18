@@ -1,18 +1,15 @@
 name: CI - Lint, Type Check & Build
-
-on:
+'on':
   push:
-    branches: [ main ]
-  pull_request:
-
+    branches:
+      - main
+  pull_request: null
 concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
-
 permissions:
   contents: read
   actions: read
-
 jobs:
   lint-and-types:
     runs-on: ubuntu-latest
@@ -26,7 +23,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
+          cache: npm
       - name: Install dependencies
         run: npm ci
       - name: ESLint
@@ -35,3 +32,4 @@ jobs:
         run: npm run type-check
       - name: Build
         run: npm run build
+    runs_on: ubuntu-latest

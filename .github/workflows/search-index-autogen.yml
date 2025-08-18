@@ -1,24 +1,18 @@
----
 name: Search Index Autogen
-
-on:
+'on':
   schedule:
-    - cron: '0 0 * * *' # Daily at midnight UTC
+    - cron: 0 0 * * *
   workflow_dispatch: {}
-
 permissions:
   contents: write
-
 concurrency:
-  group: "search-index"
+  group: search-index
   cancel-in-progress: true
-
 jobs:
   build-search-index:
     name: Build Search Index
     runs-on: ubuntu-latest
     timeout-minutes: 20
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -44,3 +38,4 @@ jobs:
           else
             echo "No changes to push"
           fi
+    runs_on: ubuntu-latest

@@ -1,14 +1,13 @@
----
 name: Autonomous Auto-Fix
-on:
+'on':
   workflow_dispatch: {}
   schedule:
-    - cron: '0 2 * * *' # Daily at 2 AM UTC - IMPROVED to be more intelligent
+    - cron: 0 2 * * *
   pull_request:
     types:
-    - opened
-    - synchronize
-    - reopened
+      - opened
+      - synchronize
+      - reopened
 permissions:
   contents: write
   pull-requests: write
@@ -57,7 +56,7 @@ jobs:
           title: 'chore(auto-fix): automated fixes'
           body: |
             Automated fixes from CI.
-            
+
             - ESLint --fix
             - TypeScript syntax and common error corrections
             - Template recovery for corrupted TS/TSX files
@@ -91,3 +90,4 @@ jobs:
             } catch (e) {
               core.info(`Merge not completed yet: ${e.message}`)
             }
+    runs_on: ubuntu-latest

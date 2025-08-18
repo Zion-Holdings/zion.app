@@ -1,0 +1,5010 @@
+{
+  "timestamp": "2025-08-18T16:56:38.161Z",
+  "summary": {
+    "total": 227,
+    "valid": 227,
+    "invalid": 0
+  },
+  "workflows": [
+    {
+      "filename": "accessibility-audit.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "accessibility-audit.yml",
+        "name": "accessibility-audit",
+        "category": "security",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "actionlint.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "actionlint.yml",
+        "name": "actionlint",
+        "category": "quality",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "actions-keepalive.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "actions-keepalive.yml",
+        "name": "actions-keepalive",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "agent-agent-1755379731005-0-full-stack-expert.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "agent-agent-1755379731005-0-full-stack-expert.yml",
+        "name": "Full Stack Expert",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "agent-agent-1755379731007-1-deployment-expert.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "agent-agent-1755379731007-1-deployment-expert.yml",
+        "name": "Deployment Expert",
+        "category": "ci-cd",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "agent-agent-1755379731008-2-monitoring-expert.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "agent-agent-1755379731008-2-monitoring-expert.yml",
+        "name": "agent-agent-1755379731008-2-monitoring-expert",
+        "category": "monitoring",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "agent-agent-1755379759029-0-optimization-intermediate.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "agent-agent-1755379759029-0-optimization-intermediate.yml",
+        "name": "agent-agent-1755379759029-0-optimization-intermediate",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "agent-agent-1755379759032-1-full-stack-intermediate.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "agent-agent-1755379759032-1-full-stack-intermediate.yml",
+        "name": "agent-agent-1755379759032-1-full-stack-intermediate",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "agent-agent-1755379759033-2-deployment-expert.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "agent-agent-1755379759033-2-deployment-expert.yml",
+        "name": "agent-agent-1755379759033-2-deployment-expert",
+        "category": "ci-cd",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "agent-agent-1755379759033-3-frontend-expert.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "agent-agent-1755379759033-3-frontend-expert.yml",
+        "name": "agent-agent-1755379759033-3-frontend-expert",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "agent-agent-1755379759035-4-full-stack-intermediate.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "agent-agent-1755379759035-4-full-stack-intermediate.yml",
+        "name": "agent-agent-1755379759035-4-full-stack-intermediate",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "agent-agent-1755379759035-5-frontend-basic.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "agent-agent-1755379759035-5-frontend-basic.yml",
+        "name": "agent-agent-1755379759035-5-frontend-basic",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "agent-agent-1755379759036-6-monitoring-advanced.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "agent-agent-1755379759036-6-monitoring-advanced.yml",
+        "name": "agent-agent-1755379759036-6-monitoring-advanced",
+        "category": "monitoring",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "agent-agent-1755379759037-7-full-stack-intermediate.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "agent-agent-1755379759037-7-full-stack-intermediate.yml",
+        "name": "agent-agent-1755379759037-7-full-stack-intermediate",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "agent-agent-1755379777746-0-full-stack-advanced.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "agent-agent-1755379777746-0-full-stack-advanced.yml",
+        "name": "agent-agent-1755379777746-0-full-stack-advanced",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "agent-agent-1755379777749-1-full-stack-basic.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "agent-agent-1755379777749-1-full-stack-basic.yml",
+        "name": "agent-agent-1755379777749-1-full-stack-basic",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "agent-agent-1755379777750-2-monitoring-intermediate.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "agent-agent-1755379777750-2-monitoring-intermediate.yml",
+        "name": "agent-agent-1755379777750-2-monitoring-intermediate",
+        "category": "monitoring",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "agent-agent-1755379777751-3-monitoring-advanced.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "agent-agent-1755379777751-3-monitoring-advanced.yml",
+        "name": "agent-agent-1755379777751-3-monitoring-advanced",
+        "category": "monitoring",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "agent-agent-1755379777752-5-testing-expert.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "agent-agent-1755379777752-5-testing-expert.yml",
+        "name": "agent-agent-1755379777752-5-testing-expert",
+        "category": "testing",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "agent-agent-1755379777754-6-backend-expert.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "agent-agent-1755379777754-6-backend-expert.yml",
+        "name": "agent-agent-1755379777754-6-backend-expert",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "agent-agent-1755379777755-7-backend-intermediate.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "agent-agent-1755379777755-7-backend-intermediate.yml",
+        "name": "agent-agent-1755379777755-7-backend-intermediate",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "agent-agent-1755381089841-0-backend-expert.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "agent-agent-1755381089841-0-backend-expert.yml",
+        "name": "agent-agent-1755381089841-0-backend-expert",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "agent-agent-1755381089844-1-deployment-advanced.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "agent-agent-1755381089844-1-deployment-advanced.yml",
+        "name": "agent-agent-1755381089844-1-deployment-advanced",
+        "category": "ci-cd",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "agent-agent-1755381089845-2-full-stack-advanced.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "agent-agent-1755381089845-2-full-stack-advanced.yml",
+        "name": "agent-agent-1755381089845-2-full-stack-advanced",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "agent-agent-1755381089846-3-optimization-expert.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "agent-agent-1755381089846-3-optimization-expert.yml",
+        "name": "agent-agent-1755381089846-3-optimization-expert",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "agent-agent-1755381089846-4-testing-advanced.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "agent-agent-1755381089846-4-testing-advanced.yml",
+        "name": "agent-agent-1755381089846-4-testing-advanced",
+        "category": "testing",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "agent-agent-1755381089847-5-frontend-expert.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "agent-agent-1755381089847-5-frontend-expert.yml",
+        "name": "agent-agent-1755381089847-5-frontend-expert",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "agent-agent-1755381089848-6-testing-intermediate.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "agent-agent-1755381089848-6-testing-intermediate.yml",
+        "name": "agent-agent-1755381089848-6-testing-intermediate",
+        "category": "testing",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "agent-agent-1755381089849-7-monitoring-intermediate.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "agent-agent-1755381089849-7-monitoring-intermediate.yml",
+        "name": "agent-agent-1755381089849-7-monitoring-intermediate",
+        "category": "monitoring",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "agent-factory-automation.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "agent-factory-automation.yml",
+        "name": "agent-factory-automation",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "agent-factory-proliferation.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "agent-factory-proliferation.yml",
+        "name": "agent-factory-proliferation",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "agent-of-agents-trigger.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "agent-of-agents-trigger.yml",
+        "name": "agent-of-agents-trigger",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "ai-changelog.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "ai-changelog.yml",
+        "name": "ai-changelog",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "ai-content-autonomy.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "ai-content-autonomy.yml",
+        "name": "ai-content-autonomy",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "ai-content-factory.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "ai-content-factory.yml",
+        "name": "ai-content-factory",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "ai-it-ads-sync.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "ai-it-ads-sync.yml",
+        "name": "ai-it-ads-sync",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "ai-it-innovations.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "ai-it-innovations.yml",
+        "name": "ai-it-innovations",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "ai-it-multi-factory.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "ai-it-multi-factory.yml",
+        "name": "ai-it-multi-factory",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "ai-it-ultrafast-sync.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "ai-it-ultrafast-sync.yml",
+        "name": "ai-it-ultrafast-sync",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "ai-research-scout.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "ai-research-scout.yml",
+        "name": "ai-research-scout",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "ai-trends-radar.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "ai-trends-radar.yml",
+        "name": "ai-trends-radar",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "app-automation.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "app-automation.yml",
+        "name": "app-automation",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "app-monitoring.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "app-monitoring.yml",
+        "name": "app-monitoring",
+        "category": "monitoring",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "auto-fix-workflows.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "auto-fix-workflows.yml",
+        "name": "Auto-Fix GitHub Actions Workflows",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "auto-fix.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "auto-fix.yml",
+        "name": "Autonomous Auto-Fix",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule",
+          "pull_request"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "auto-heal-workflows.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "auto-heal-workflows.yml",
+        "name": "auto-heal-workflows",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "auto-media-release.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "auto-media-release.yml",
+        "name": "auto-media-release",
+        "category": "ci-cd",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "auto-pr-automerge.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "auto-pr-automerge.yml",
+        "name": "auto-pr-automerge",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "auto-pr-cursor-branches.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "auto-pr-cursor-branches.yml",
+        "name": "auto-pr-cursor-branches",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "auto-semver-release.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "auto-semver-release.yml",
+        "name": "auto-semver-release",
+        "category": "ci-cd",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "auto-update-prs.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "auto-update-prs.yml",
+        "name": "auto-update-prs",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "automation-advertiser.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "automation-advertiser.yml",
+        "name": "automation-advertiser",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "automation-cleanup.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "automation-cleanup.yml",
+        "name": "automation-cleanup",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "automation-dashboard.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "automation-dashboard.yml",
+        "name": "automation-dashboard",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "automation-guardian-10min.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "automation-guardian-10min.yml",
+        "name": "automation-guardian-10min",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "automation-orchestrator.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "automation-orchestrator.yml",
+        "name": "automation-orchestrator",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "automations.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "automations.yml",
+        "name": "automations",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "automerge-main.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "automerge-main.yml",
+        "name": "automerge-main",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "autonomous-agent-orchestrator.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "autonomous-agent-orchestrator.yml",
+        "name": "autonomous-agent-orchestrator",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "autonomous-auto-discovery.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "autonomous-auto-discovery.yml",
+        "name": "autonomous-auto-discovery",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "autonomous-auto-merge-to-main.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "autonomous-auto-merge-to-main.yml",
+        "name": "autonomous-auto-merge-to-main",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "autonomous-cloud-automations.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "autonomous-cloud-automations.yml",
+        "name": "autonomous-cloud-automations",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "autonomous-cloud-fast.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "autonomous-cloud-fast.yml",
+        "name": "autonomous-cloud-fast",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "autonomous-cloud-runner.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "autonomous-cloud-runner.yml",
+        "name": "autonomous-cloud-runner",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "autonomous-cloud.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "autonomous-cloud.yml",
+        "name": "autonomous-cloud",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "autonomous-content-curation.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "autonomous-content-curation.yml",
+        "name": "autonomous-content-curation",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "autonomous-content-scanner.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "autonomous-content-scanner.yml",
+        "name": "autonomous-content-scanner",
+        "category": "security",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "autonomous-deep-maintenance.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "autonomous-deep-maintenance.yml",
+        "name": "autonomous-deep-maintenance",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "autonomous-deps-upgrade.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "autonomous-deps-upgrade.yml",
+        "name": "autonomous-deps-upgrade",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "autonomous-external-links.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "autonomous-external-links.yml",
+        "name": "autonomous-external-links",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "autonomous-image-optimizer.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "autonomous-image-optimizer.yml",
+        "name": "autonomous-image-optimizer",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "autonomous-intelligence.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "autonomous-intelligence.yml",
+        "name": "Autonomous Intelligence",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "autonomous-keepalive.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "autonomous-keepalive.yml",
+        "name": "autonomous-keepalive",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "autonomous-lighthouse.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "autonomous-lighthouse.yml",
+        "name": "autonomous-lighthouse",
+        "category": "performance",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "autonomous-marketing-seo.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "autonomous-marketing-seo.yml",
+        "name": "autonomous-marketing-seo",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "autonomous-meta.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "autonomous-meta.yml",
+        "name": "Autonomous Meta Factory",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": false,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "autonomous-minute-orchestrator.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "autonomous-minute-orchestrator.yml",
+        "name": "autonomous-minute-orchestrator",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "autonomous-quick-fixes.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "autonomous-quick-fixes.yml",
+        "name": "autonomous-quick-fixes",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "autonomous-release.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "autonomous-release.yml",
+        "name": "autonomous-release",
+        "category": "ci-cd",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "autonomous-self-tune.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "autonomous-self-tune.yml",
+        "name": "autonomous-self-tune",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "autonomous-ultrafast.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "autonomous-ultrafast.yml",
+        "name": "autonomous-ultrafast",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "autonomous-workflow-cleanup.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "autonomous-workflow-cleanup.yml",
+        "name": "autonomous-workflow-cleanup",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "autonomous-workflow-watchdog.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "autonomous-workflow-watchdog.yml",
+        "name": "autonomous-workflow-watchdog",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "branch-cleanup.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "branch-cleanup.yml",
+        "name": "branch-cleanup",
+        "category": "maintenance",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "branch-pruner.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "branch-pruner.yml",
+        "name": "branch-pruner",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "broken-images.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "broken-images.yml",
+        "name": "broken-images",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "ci-auto-heal.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "ci-auto-heal.yml",
+        "name": "ci-auto-heal",
+        "category": "ci-cd",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "ci-lint-types-build.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "ci-lint-types-build.yml",
+        "name": "CI - Lint, Type Check & Build",
+        "category": "ci-cd",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "push",
+          "pull_request"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "ci-merge-main.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "ci-merge-main.yml",
+        "name": "ci-merge-main",
+        "category": "ci-cd",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "ci-quality.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "ci-quality.yml",
+        "name": "CI Quality Check",
+        "category": "ci-cd",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "ci-self-heal.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "ci-self-heal.yml",
+        "name": "ci-self-heal",
+        "category": "ci-cd",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "ci.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "ci.yml",
+        "name": "CI",
+        "category": "ci-cd",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "push",
+          "pull_request",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "cleanup-merged-branches.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "cleanup-merged-branches.yml",
+        "name": "cleanup-merged-branches",
+        "category": "maintenance",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "cleanup.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "cleanup.yml",
+        "name": "Cleanup",
+        "category": "maintenance",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "cloud-agents-fast.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "cloud-agents-fast.yml",
+        "name": "cloud-agents-fast",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "cloud-agents.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "cloud-agents.yml",
+        "name": "cloud-agents",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "cloud-autonomous-orchestrator.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "cloud-autonomous-orchestrator.yml",
+        "name": "cloud-autonomous-orchestrator",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "cloud-deep-research.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "cloud-deep-research.yml",
+        "name": "cloud-deep-research",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "cloud-maintenance.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "cloud-maintenance.yml",
+        "name": "Cloud Maintenance Automations",
+        "category": "maintenance",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "cloud-marketing.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "cloud-marketing.yml",
+        "name": "Cloud Marketing Automations",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "cloud-orchestrator-plus.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "cloud-orchestrator-plus.yml",
+        "name": "cloud-orchestrator-plus",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "codeql-analysis.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "codeql-analysis.yml",
+        "name": "codeql-analysis",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "codeql.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "codeql.yml",
+        "name": "codeql",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "commit-message-lint.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "commit-message-lint.yml",
+        "name": "commit-message-lint",
+        "category": "quality",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "commitlint.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "commitlint.yml",
+        "name": "commitlint",
+        "category": "quality",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "components-size-report.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "components-size-report.yml",
+        "name": "components-size-report",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "comprehensive-test.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "comprehensive-test.yml",
+        "name": "Comprehensive Test Suite",
+        "category": "testing",
+        "hasJobs": true,
+        "jobCount": 3,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "push",
+          "pull_request",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "content-generation.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "content-generation.yml",
+        "name": "content-generation",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "continuous-deployment.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "continuous-deployment.yml",
+        "name": "Continuous Deployment",
+        "category": "ci-cd",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "continuous-improvement.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "continuous-improvement.yml",
+        "name": "Continuous Improvement",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "crawl-normalize.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "crawl-normalize.yml",
+        "name": "crawl-normalize",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "cursor-chat.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "cursor-chat.yml",
+        "name": "cursor-chat",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "cursor-rules-autoupdate.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "cursor-rules-autoupdate.yml",
+        "name": "Cursor Rules Auto Update",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "dead-code-report.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "dead-code-report.yml",
+        "name": "dead-code-report",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "dependabot-auto-approve.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "dependabot-auto-approve.yml",
+        "name": "dependabot-auto-approve",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "dependencies.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "dependencies.yml",
+        "name": "Dependency Updates",
+        "category": "ci-cd",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "dependency-auto-upgrade.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "dependency-auto-upgrade.yml",
+        "name": "dependency-auto-upgrade",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "dependency-maintenance.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "dependency-maintenance.yml",
+        "name": "Dependency Maintenance",
+        "category": "maintenance",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": false,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "dependency-management.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "dependency-management.yml",
+        "name": "dependency-management",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "diverse-agent-matrix.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "diverse-agent-matrix.yml",
+        "name": "Diverse Agent Matrix",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "docs-autogen.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "docs-autogen.yml",
+        "name": "docs-autogen",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "docs-intelligence.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "docs-intelligence.yml",
+        "name": "docs-intelligence",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "emergency-fix.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "emergency-fix.yml",
+        "name": "emergency-fix",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "ephemeral-branch-autorebase.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "ephemeral-branch-autorebase.yml",
+        "name": "ephemeral-branch-autorebase",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "exponential-agent-factory-proliferation.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "exponential-agent-factory-proliferation.yml",
+        "name": "Exponential Agent Factory Proliferation",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 2,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "exponential-ai-delegation.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "exponential-ai-delegation.yml",
+        "name": "Exponential AI Delegation",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "external-links.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "external-links.yml",
+        "name": "external-links",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "fast-auto-push-to-main.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "fast-auto-push-to-main.yml",
+        "name": "Fast Auto Push to Main",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "fast-lint-sync.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "fast-lint-sync.yml",
+        "name": "fast-lint-sync",
+        "category": "quality",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "front-scheduler.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "front-scheduler.yml",
+        "name": "front-scheduler",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "frontend-sync-continuous.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "frontend-sync-continuous.yml",
+        "name": "Frontend Sync Continuous",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "push",
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "git-health.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "git-health.yml",
+        "name": "Git Health",
+        "category": "monitoring",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "git-ultrafast-sync.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "git-ultrafast-sync.yml",
+        "name": "git-ultrafast-sync",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "gitleaks.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "gitleaks.yml",
+        "name": "Secret scan (Gitleaks)",
+        "category": "security",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "guardian-scheduler.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "guardian-scheduler.yml",
+        "name": "guardian-scheduler",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "homepage-auto-advertiser.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "homepage-auto-advertiser.yml",
+        "name": "homepage-auto-advertiser",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "homepage-auto-update.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "homepage-auto-update.yml",
+        "name": "homepage-auto-update",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "infinite-improvement-loop.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "infinite-improvement-loop.yml",
+        "name": "Infinite Improvement Loop",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "instagram-marketing.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "instagram-marketing.yml",
+        "name": "instagram-marketing",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "instagram-six-hourly.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "instagram-six-hourly.yml",
+        "name": "Instagram Six-Hourly Posting",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "intelligent-content-generation.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "intelligent-content-generation.yml",
+        "name": "intelligent-content-generation",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "knowledge-graph-radar.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "knowledge-graph-radar.yml",
+        "name": "Knowledge Graph Radar",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "labeler.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "labeler.yml",
+        "name": "labeler",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "lighthouse-budgets.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "lighthouse-budgets.yml",
+        "name": "lighthouse-budgets",
+        "category": "performance",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "lighthouse-live.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "lighthouse-live.yml",
+        "name": "lighthouse-live",
+        "category": "performance",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "link-auto-fix.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "link-auto-fix.yml",
+        "name": "link-auto-fix",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "link-scan-hourly.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "link-scan-hourly.yml",
+        "name": "link-scan-hourly",
+        "category": "security",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "linkedin-marketing.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "linkedin-marketing.yml",
+        "name": "linkedin-marketing",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "linkedin-pro.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "linkedin-pro.yml",
+        "name": "linkedin-pro",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "maintenance.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "maintenance.yml",
+        "name": "Repository Maintenance",
+        "category": "maintenance",
+        "hasJobs": true,
+        "jobCount": 4,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "marketing-daily.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "marketing-daily.yml",
+        "name": "Marketing Automation Daily",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "marketing-sync.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "marketing-sync.yml",
+        "name": "marketing-sync",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "media-optimizer.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "media-optimizer.yml",
+        "name": "media-optimizer",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "merge-conflict-guard.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "merge-conflict-guard.yml",
+        "name": "Merge Conflict Guard",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 2,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "monetization-continuous.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "monetization-continuous.yml",
+        "name": "Monetization Automation Continuous",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "monetization-daily.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "monetization-daily.yml",
+        "name": "Monetization Automation Daily",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "monetization.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "monetization.yml",
+        "name": "monetization",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "netlify-auto-healer.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "netlify-auto-healer.yml",
+        "name": "netlify-auto-healer",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "netlify-automation.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "netlify-automation.yml",
+        "name": "netlify-automation",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "netlify-config.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "netlify-config.yml",
+        "name": "netlify-config",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "netlify-functions-trigger.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "netlify-functions-trigger.yml",
+        "name": "netlify-functions-trigger",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "netlify-monitor.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "netlify-monitor.yml",
+        "name": "Netlify Monitor",
+        "category": "monitoring",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "og-image-refresh.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "og-image-refresh.yml",
+        "name": "og-image-refresh",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "og-image-update.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "og-image-update.yml",
+        "name": "og-image-update",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "optimize-images.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "optimize-images.yml",
+        "name": "optimize-images",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "pa11y.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "pa11y.yml",
+        "name": "pa11y",
+        "category": "performance",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "performance-audit.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "performance-audit.yml",
+        "name": "performance-audit",
+        "category": "security",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "performance-monitoring.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "performance-monitoring.yml",
+        "name": "Performance Monitoring",
+        "category": "performance",
+        "hasJobs": true,
+        "jobCount": 2,
+        "hasTriggers": true,
+        "triggers": [
+          "push",
+          "pull_request",
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "performance-weekly.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "performance-weekly.yml",
+        "name": "Performance Audit Weekly",
+        "category": "performance",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "pin-actions-weekly.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "pin-actions-weekly.yml",
+        "name": "pin-actions-weekly",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "playwright-smoke.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "playwright-smoke.yml",
+        "name": "Playwright Smoke Tests",
+        "category": "testing",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "push",
+          "pull_request",
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "pr-auto-curator.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "pr-auto-curator.yml",
+        "name": "pr-auto-curator",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "pr-quality-gate.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "pr-quality-gate.yml",
+        "name": "pr-quality-gate",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "pr-size-labeler.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "pr-size-labeler.yml",
+        "name": "pr-size-labeler",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "pr-smoke.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "pr-smoke.yml",
+        "name": "pr-smoke",
+        "category": "testing",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "pr-update-with-main.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "pr-update-with-main.yml",
+        "name": "pr-update-with-main",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "rapid-git-sync.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "rapid-git-sync.yml",
+        "name": "rapid-git-sync",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "rapid-sync.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "rapid-sync.yml",
+        "name": "Rapid Sync",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "readme-auto-advertiser.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "readme-auto-advertiser.yml",
+        "name": "readme-auto-advertiser",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "readme-autogen.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "readme-autogen.yml",
+        "name": "readme-autogen",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "release-deploy.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "release-deploy.yml",
+        "name": "Release",
+        "category": "ci-cd",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "push",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "release-drafter.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "release-drafter.yml",
+        "name": "release-drafter",
+        "category": "ci-cd",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "release.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "release.yml",
+        "name": "release",
+        "category": "ci-cd",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "repo-knowledge-graph.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "repo-knowledge-graph.yml",
+        "name": "repo-knowledge-graph",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "repo-radar.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "repo-radar.yml",
+        "name": "repo-radar",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "responsive-content.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "responsive-content.yml",
+        "name": "responsive-content",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "revenue-ideas-daily.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "revenue-ideas-daily.yml",
+        "name": "Revenue Ideas Daily",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "search-index-autogen.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "search-index-autogen.yml",
+        "name": "Search Index Autogen",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "security-audit.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "security-audit.yml",
+        "name": "Security Audit",
+        "category": "security",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "security-auto-heal.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "security-auto-heal.yml",
+        "name": "Security Auto-Heal",
+        "category": "security",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "security-gates.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "security-gates.yml",
+        "name": "Security Gates Compliance",
+        "category": "security",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "security-scan.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "security-scan.yml",
+        "name": "Security Scan",
+        "category": "security",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "security-weekly.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "security-weekly.yml",
+        "name": "Security Weekly",
+        "category": "security",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "security.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "security.yml",
+        "name": "Security",
+        "category": "security",
+        "hasJobs": true,
+        "jobCount": 2,
+        "hasTriggers": true,
+        "triggers": [
+          "push",
+          "pull_request",
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "self-healing-build.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "self-healing-build.yml",
+        "name": "self-healing-build",
+        "category": "ci-cd",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "self-replicating-factory-manager.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "self-replicating-factory-manager.yml",
+        "name": "self-replicating-factory-manager",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "seo-audit.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "seo-audit.yml",
+        "name": "SEO Audit",
+        "category": "security",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "seo-validator.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "seo-validator.yml",
+        "name": "seo-validator",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "site-health-guardian.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "site-health-guardian.yml",
+        "name": "site-health-guardian",
+        "category": "monitoring",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "site-link.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "site-link.yml",
+        "name": "site-link",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "sitemap-and-search.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "sitemap-and-search.yml",
+        "name": "sitemap-and-search",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "sitemap-auto-commit.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "sitemap-auto-commit.yml",
+        "name": "Sitemap Auto-Commit",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "sitemap-daily.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "sitemap-daily.yml",
+        "name": "sitemap-daily",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "stale.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "stale.yml",
+        "name": "stale",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "sync-health.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "sync-health.yml",
+        "name": "Sync Health",
+        "category": "monitoring",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "test-auth.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "test-auth.yml",
+        "name": "test-auth",
+        "category": "testing",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "test-suite.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "test-suite.yml",
+        "name": "Test Suite",
+        "category": "testing",
+        "hasJobs": true,
+        "jobCount": 3,
+        "hasTriggers": true,
+        "triggers": [
+          "push",
+          "pull_request",
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "test.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "test.yml",
+        "name": "Test Runner",
+        "category": "testing",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "todo-issue-sync.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "todo-issue-sync.yml",
+        "name": "todo-issue-sync",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "topics-and-clusters.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "topics-and-clusters.yml",
+        "name": "topics-and-clusters",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "ui-evolution-schedule.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "ui-evolution-schedule.yml",
+        "name": "UI Evolution Schedule",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "ui-evolution-weekly-beautify.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "ui-evolution-weekly-beautify.yml",
+        "name": "UI Evolution Weekly Beautify",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "ultra-rapid-sync.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "ultra-rapid-sync.yml",
+        "name": "ultra-rapid-sync",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "unused-deps-cleaner.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "unused-deps-cleaner.yml",
+        "name": "unused-deps-cleaner",
+        "category": "maintenance",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "unused-exports-report.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "unused-exports-report.yml",
+        "name": "unused-exports-report",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "variation.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "variation.yml",
+        "name": "variation",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "venture.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "venture.yml",
+        "name": "venture",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "workflow-auto-healer.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "workflow-auto-healer.yml",
+        "name": "Workflow Auto Healer Auto-Healer",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "workflow-health-monitor.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "workflow-health-monitor.yml",
+        "name": "workflow-health-monitor",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "workflow-manager.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "workflow-manager.yml",
+        "name": "Workflow Manager Manager",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 4,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch",
+          "schedule"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "workflow-radar.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "workflow-radar.yml",
+        "name": "workflow-radar",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "workflow-supervisor.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "workflow-supervisor.yml",
+        "name": "workflow-supervisor",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "workflow-validator.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "workflow-validator.yml",
+        "name": "✅ Workflow Validator",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "push",
+          "pull_request",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "workflow-watchdog.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "workflow-watchdog.yml",
+        "name": "workflow-watchdog",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "yaml-auto-fixer-simple.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "yaml-auto-fixer-simple.yml",
+        "name": "yaml-auto-fixer-simple",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "yaml-auto-fixer.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "yaml-auto-fixer.yml",
+        "name": "yaml-auto-fixer",
+        "category": "automation",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "filename": "yaml-validator.yml",
+      "valid": true,
+      "analysis": {
+        "filename": "yaml-validator.yml",
+        "name": "yaml-validator",
+        "category": "other",
+        "hasJobs": true,
+        "jobCount": 1,
+        "hasTriggers": true,
+        "triggers": [
+          "schedule",
+          "workflow_dispatch"
+        ],
+        "hasPermissions": true,
+        "hasConcurrency": true,
+        "hasTimeout": false,
+        "hasEnvironment": false,
+        "issues": []
+      },
+      "error": null
+    }
+  ]
+}

@@ -1,18 +1,13 @@
----
 name: Rapid Sync
-
-on:
+'on':
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: 0 */2 * * *
   workflow_dispatch: {}
-
 concurrency:
   group: rapid-sync-${{ github.ref }}
   cancel-in-progress: false
-
 permissions:
   contents: read
-
 jobs:
   run-and-sync:
     runs-on: ubuntu-latest
@@ -49,3 +44,4 @@ jobs:
           else
             echo "No changes to push"
           fi
+    runs_on: ubuntu-latest

@@ -1,9 +1,8 @@
----
 name: Instagram Six-Hourly Posting
-on:
+'on':
   workflow_dispatch: {}
   schedule:
-    - cron: '0 2 * * *'
+    - cron: 0 2 * * *
 jobs:
   instagram_post:
     runs-on: ubuntu-latest
@@ -31,9 +30,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: instagram-logs
-          path: 'automation/logs/**/*.log'
+          path: automation/logs/**/*.log
           if-no-files-found: ignore
           retention-days: 7
+    runs_on: ubuntu-latest
 permissions:
   contents: read
   actions: read

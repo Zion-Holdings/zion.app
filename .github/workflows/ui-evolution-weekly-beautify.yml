@@ -1,9 +1,8 @@
----
 name: UI Evolution Weekly Beautify
-on:
+'on':
   workflow_dispatch: {}
   schedule:
-    - cron: '0 2 * * *'
+    - cron: 0 2 * * *
 jobs:
   ui-beautify:
     runs-on: ubuntu-latest
@@ -31,6 +30,7 @@ jobs:
           if-no-files-found: ignore
           retention-days: 7
     timeout-minutes: 30
+    runs_on: ubuntu-latest
 permissions:
   contents: read
   actions: read

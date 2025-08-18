@@ -1,9 +1,8 @@
----
 name: Diverse Agent Matrix
-on:
+'on':
   workflow_dispatch: {}
   schedule:
-    - cron: '0 2 * * *'
+    - cron: 0 2 * * *
 concurrency:
   group: diverse-agent-matrix-${{ github.ref }}
   cancel-in-progress: false
@@ -16,16 +15,16 @@ jobs:
       max-parallel: 3
       matrix:
         task:
-        - seo
-        - security
-        - testgen
-        - frontend-sync
-        - variation
-        - meta
-        - responsive
-        - monetization
-        - saas
-        - ui-evolution
+          - seo
+          - security
+          - testgen
+          - frontend-sync
+          - variation
+          - meta
+          - responsive
+          - monetization
+          - saas
+          - ui-evolution
     permissions:
       contents: read
     steps:
@@ -48,7 +47,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: diverse-agent-${{ matrix.task }}-logs
-          path: 'automation/logs/diverse-agent-matrix/${{ matrix.task }}-*.log'
+          path: automation/logs/diverse-agent-matrix/${{ matrix.task }}-*.log
           if-no-files-found: ignore
           retention-days: 7
       - name: Commit and push changes
@@ -63,6 +62,7 @@ jobs:
             echo "No changes to push"
           fi
     timeout-minutes: 30
+    runs_on: ubuntu-latest
 permissions:
   contents: read
   actions: read

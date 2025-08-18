@@ -1,25 +1,17 @@
----
 name: Security Auto-Heal
-
-on:
+'on':
   workflow_dispatch: {}
-  # schedule:
-  #   - cron: '0 0 * * *' # DISABLED to prevent conflicts with manual fixes
-
 permissions:
   contents: write
   actions: read
-
 concurrency:
-  group: "security-auto-heal"
+  group: security-auto-heal
   cancel-in-progress: true
-
 jobs:
   main:
     name: Security Auto-Heal Job
     runs-on: ubuntu-latest
     timeout-minutes: 20
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -29,7 +21,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
+          cache: npm
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
       - name: Run security auto-heal
@@ -37,3 +29,4 @@ jobs:
           echo "Running security auto-heal..."
           npm audit fix --audit-level=moderate || true
           echo "Security auto-heal completed"
+    runs_on: ubuntu-latest

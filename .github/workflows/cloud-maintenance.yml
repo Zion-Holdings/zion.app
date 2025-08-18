@@ -1,8 +1,7 @@
----
 name: Cloud Maintenance Automations
-on:
+'on':
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: 0 */2 * * *
   workflow_dispatch: {}
 permissions:
   contents: write
@@ -41,3 +40,4 @@ jobs:
           git diff --cached --quiet || git commit -m "chore(maintenance): cloud-run automations [skip ci]"
           git push
     timeout-minutes: 30
+    runs_on: ubuntu-latest

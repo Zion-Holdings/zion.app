@@ -1,9 +1,8 @@
----
 name: Merge Conflict Guard
-on:
+'on':
   workflow_dispatch: {}
   schedule:
-    - cron: '0 2 * * *'
+    - cron: 0 2 * * *
 concurrency:
   group: merge-guard-${{ github.ref }}
   cancel-in-progress: true
@@ -23,6 +22,7 @@ jobs:
       - name: Check for merge conflicts and markers
         run: bash scripts/check-merge-conflicts.sh
     timeout-minutes: 30
+    runs_on: ubuntu-latest
   pr-automerge-check:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
@@ -40,6 +40,7 @@ jobs:
           }
           git merge --abort || true
     timeout-minutes: 30
+    runs_on: ubuntu-latest
 permissions:
   contents: read
   actions: read

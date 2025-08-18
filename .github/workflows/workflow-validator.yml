@@ -1,18 +1,17 @@
----
-name: "✅ Workflow Validator"
-on:
+name: ✅ Workflow Validator
+'on':
   push:
     branches:
-    - main
-    - develop
+      - main
+      - develop
     paths:
-    - .github/workflows/**
+      - .github/workflows/**
   pull_request:
     branches:
-    - main
-    - develop
+      - main
+      - develop
     paths:
-    - .github/workflows/**
+      - .github/workflows/**
   workflow_dispatch: {}
 permissions:
   contents: read
@@ -82,3 +81,4 @@ jobs:
             echo ""
             echo "✅ All workflows are valid!"
           fi
+    runs_on: ubuntu-latest

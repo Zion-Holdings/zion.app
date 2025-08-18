@@ -1,9 +1,7 @@
----
 name: Exponential Agent Factory Proliferation
-
-on:
+'on':
   schedule:
-    - cron: '0 0 * * *' # Daily at midnight UTC
+    - cron: 0 0 * * *
   workflow_dispatch:
     inputs:
       growth_multiplier:
@@ -14,25 +12,20 @@ on:
         description: 'Target exponential factor (default: 10)'
         required: false
         default: '10'
-
 env:
-  GROWTH_MULTIPLIER: "${{ github.event.inputs.growth_multiplier || '3' }}"
-  TARGET_EXPONENTIAL_FACTOR: "${{ github.event.inputs.target_exponential_factor || '10' }}"
-
+  GROWTH_MULTIPLIER: ${{ github.event.inputs.growth_multiplier || '3' }}
+  TARGET_EXPONENTIAL_FACTOR: ${{ github.event.inputs.target_exponential_factor || '10' }}
 permissions:
   contents: read
   actions: read
-
 concurrency:
-  group: "exponential-factory"
+  group: exponential-factory
   cancel-in-progress: true
-
 jobs:
   analyze-exponential-growth:
     name: Analyze Exponential Growth Potential
     runs-on: ubuntu-latest
     timeout-minutes: 30
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -42,7 +35,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
+          cache: npm
       - name: Analyze current automation ecosystem
         id: analyze
         run: |
@@ -90,19 +83,31 @@ jobs:
 
           echo "next_generation=$NEXT" >> $GITHUB_OUTPUT
           echo "Next generation target: $NEXT components"
-
+    runs_on: ubuntu-latest
   create-exponential-factories:
     name: Create Exponential Agent Factories
     runs-on: ubuntu-latest
     timeout-minutes: 30
     needs: analyze-exponential-growth
-
     strategy:
       matrix:
-        factory-type: [autonomous, intelligent, self-replicating, exponential]
-        complexity: [basic, intermediate, advanced, expert]
-        specialization: [development, testing, deployment, monitoring, optimization, research]
-
+        factory-type:
+          - autonomous
+          - intelligent
+          - self-replicating
+          - exponential
+        complexity:
+          - basic
+          - intermediate
+          - advanced
+          - expert
+        specialization:
+          - development
+          - testing
+          - deployment
+          - monitoring
+          - optimization
+          - research
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -112,18 +117,29 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
+          cache: npm
       - name: Create exponential factory
-        run: |
-          echo "Creating exponential factory: ${{ matrix.factory-type }}-${{ matrix.complexity }}-${{ matrix.specialization }}"
+        run: >
+          echo "Creating exponential factory: ${{ matrix.factory-type }}-${{ matrix.complexity }}-${{
+          matrix.specialization }}"
 
-          FACTORY_ID="${{ matrix.factory-type }}-${{ matrix.complexity }}-${{ matrix.specialization }}-${{ github.run_number }}"
+
+          FACTORY_ID="${{ matrix.factory-type }}-${{ matrix.complexity }}-${{ matrix.specialization }}-${{
+          github.run_number }}"
+
           FACTORY_DIR="automation/factories/$FACTORY_ID"
 
+
           mkdir -p $FACTORY_DIR
+
           mkdir -p $FACTORY_DIR/agents
+
           mkdir -p $FACTORY_DIR/workflows
+
           mkdir -p $FACTORY_DIR/templates
 
+
           echo "Factory $FACTORY_ID created successfully"
+
           echo "Location: $FACTORY_DIR"
+    runs_on: ubuntu-latest
