@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T03:28:38.661Z",
+  "timestamp": "2025-08-18T03:29:29.854Z",
   "summary": {
     "totalWorkflows": 224,
     "complexityDistribution": {
@@ -812,7 +812,7 @@
       "complexityScore": 20,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 83,
+        "totalLines": 81,
         "jobCount": 0,
         "stepCount": 7,
         "conditionalCount": 2,
@@ -2123,17 +2123,17 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/dependency-management.yml"
     },
     "deploy.yml": {
-      "complexityScore": 25,
+      "complexityScore": 15,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 105,
+        "totalLines": 72,
         "jobCount": 0,
-        "stepCount": 11,
-        "conditionalCount": 0,
+        "stepCount": 7,
+        "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 2,
+        "secretCount": 3,
         "actionCount": 3
       },
       "refactoringPriority": "low",

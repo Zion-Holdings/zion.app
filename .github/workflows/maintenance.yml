@@ -30,23 +30,23 @@ jobs:
         run: npm ci --no-audit --no-fund
       - name: Clean up old automation files
         run: |
-        echo "Cleaning up old automation artifacts..."
+          echo "Cleaning up old automation artifacts..."
 
-        # Clean up old analytics files (older than 7 days)
-        find automation/analytics -name "*.json" -mtime +7 -delete 2>/dev/null || true
-        find automation/analytics -name "*.html" -mtime +7 -delete 2>/dev/null || true
-        find automation/analytics -name "*.csv" -mtime +7 -delete 2>/dev/null || true
+          # Clean up old analytics files (older than 7 days)
+          find automation/analytics -name "*.json" -mtime +7 -delete 2>/dev/null || true
+          find automation/analytics -name "*.html" -mtime +7 -delete 2>/dev/null || true
+          find automation/analytics -name "*.csv" -mtime +7 -delete 2>/dev/null || true
 
-        # Clean up old backup directories (older than 3 days)
-        find automation/backups -type d -mtime +3 -exec rm -rf {} + 2>/dev/null || true
+          # Clean up old backup directories (older than 3 days)
+          find automation/backups -type d -mtime +3 -exec rm -rf {} + 2>/dev/null || true
 
-        # Clean up old optimization reports (older than 5 days)
-        find automation/optimization -name "*.json" -mtime +5 -delete 2>/dev/null || true
+          # Clean up old optimization reports (older than 5 days)
+          find automation/optimization -name "*.json" -mtime +5 -delete 2>/dev/null || true
 
-        # Clean up old deployment reports (older than 3 days)
-        find automation/deployments -name "*.json" -mtime +3 -delete 2>/dev/null || true
+          # Clean up old deployment reports (older than 3 days)
+          find automation/deployments -name "*.json" -mtime +3 -delete 2>/dev/null || true
 
-        echo "Cleanup completed"
+          echo "Cleanup completed"
       - name: Commit cleanup changes
         run: |
         git config --global user.name "github-actions[bot]"
