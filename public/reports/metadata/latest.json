@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T17:08:52.361Z",
-  "pagesScanned": 3197,
+  "generatedAt": "2025-08-18T17:10:01.641Z",
+  "pagesScanned": 3199,
   "items": [
     {
       "route": "/404",
@@ -113,10 +113,7 @@
     {
       "route": "/component-library",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Component Library",
@@ -178,10 +175,7 @@
     {
       "route": "/content-hub",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Content Hub",
@@ -191,10 +185,7 @@
     {
       "route": "/discover",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Content Discovery",
@@ -204,10 +195,7 @@
     {
       "route": "/enhanced-navigation",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Enhanced Navigation",
@@ -267,10 +255,7 @@
     {
       "route": "/live-dashboard",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Live Dashboard",
@@ -328,10 +313,7 @@
     {
       "route": "/playground",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Component Playground",
@@ -29591,10 +29573,7 @@
     {
       "route": "/reports/updates/update-2025-08-18-1704",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Autonomous Update — 2025-08-18 17:04",
@@ -31475,10 +31454,7 @@
     {
       "route": "/services/simple-service-1755536898087-emdqt35jo",
       "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
+        "og:image"
       ],
       "suggestion": {
         "title": "Mobile Development Service",
@@ -31487,6 +31463,36 @@
     },
     {
       "route": "/services/simple-service-1755536898088-cdl8k36pl",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Web Development Service",
+        "description": "Web Development Service — auto-suggested description"
+      }
+    },
+    {
+      "route": "/services/simple-service-1755536918087-z2y6skcq7",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "DevOps Service",
+        "description": "DevOps Service — auto-suggested description"
+      }
+    },
+    {
+      "route": "/services/simple-service-1755536918088-t1x72eiwe",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Premium Mobile Development Solution",
+        "description": "Premium Mobile Development Solution — auto-suggested description"
+      }
+    },
+    {
+      "route": "/services/simple-service-1755536998084-q6x3qf95o",
       "missing": [
         "og:title",
         "og:description",
@@ -31499,7 +31505,7 @@
       }
     },
     {
-      "route": "/services/simple-service-1755536918087-z2y6skcq7",
+      "route": "/services/simple-service-1755536998085-ynhrsres8",
       "missing": [
         "og:title",
         "og:description",
@@ -31507,21 +31513,8 @@
         "twitter:card"
       ],
       "suggestion": {
-        "title": "DevOps Service",
-        "description": "DevOps Service — auto-suggested description"
-      }
-    },
-    {
-      "route": "/services/simple-service-1755536918088-t1x72eiwe",
-      "missing": [
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
-      ],
-      "suggestion": {
-        "title": "Premium Mobile Development Solution",
-        "description": "Premium Mobile Development Solution — auto-suggested description"
+        "title": "Consulting Service",
+        "description": "Consulting Service — auto-suggested description"
       }
     },
     {

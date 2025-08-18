@@ -52,7 +52,10 @@ export default function ReportsOverview() {
       <Head>
         <title>Reports & Content | Zion Tech Group</title>
         <meta name="description" content="Explore our comprehensive collection of reports, insights, and technical content." />
-      </Head>
+      
+        <meta property="og:title" content="Reports & Content" />
+        <meta property="og:description" content="Reports & Content — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       
       <main className="container mx-auto px-6 py-12">
         <div className="text-center mb-12">
