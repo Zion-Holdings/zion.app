@@ -2716,7 +2716,7 @@
     "name": "netlify-functions-trigger.yml",
     "triggers": [
       "schedule",
-      "workflow_dispatch"
+      "workflow_dispatch {}"
     ],
     "needs": [],
     "outputs": [],

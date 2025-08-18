@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T03:21:40.615Z",
+  "timestamp": "2025-08-18T03:22:36.227Z",
   "critical": [],
   "high": [],
   "medium": [
@@ -109,10 +109,10 @@
     {
       "workflow": "maintenance.yml",
       "status": "active",
-      "complexityScore": 40,
+      "complexityScore": 30,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 224,
+        "totalLines": 178,
         "jobCount": 0,
         "stepCount": 17,
         "conditionalCount": 1,

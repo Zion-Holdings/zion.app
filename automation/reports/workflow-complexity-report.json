@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T03:21:40.612Z",
+  "timestamp": "2025-08-18T03:22:36.224Z",
   "summary": {
     "totalWorkflows": 224,
     "complexityDistribution": {
@@ -1298,7 +1298,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 34,
+        "totalLines": 32,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -1334,7 +1334,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 34,
+        "totalLines": 33,
         "jobCount": 0,
         "stepCount": 4,
         "conditionalCount": 0,
@@ -2681,10 +2681,10 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/linkedin-pro.yml"
     },
     "maintenance.yml": {
-      "complexityScore": 40,
+      "complexityScore": 30,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 224,
+        "totalLines": 178,
         "jobCount": 0,
         "stepCount": 17,
         "conditionalCount": 1,
@@ -2879,18 +2879,18 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/netlify-config.yml"
     },
     "netlify-functions-trigger.yml": {
-      "complexityScore": 0,
+      "complexityScore": 20,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 44,
+        "totalLines": 67,
         "jobCount": 0,
-        "stepCount": 5,
-        "conditionalCount": 1,
+        "stepCount": 8,
+        "conditionalCount": 3,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 3
+        "actionCount": 2
       },
       "refactoringPriority": "low",
       "status": "active",
@@ -3062,10 +3062,10 @@
       "complexityScore": 15,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 68,
+        "totalLines": 91,
         "jobCount": 0,
-        "stepCount": 9,
-        "conditionalCount": 1,
+        "stepCount": 10,
+        "conditionalCount": 2,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
