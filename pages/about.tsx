@@ -306,6 +306,5 @@ export default function AboutPage() {
 }
 
 
-<a href="https://youtube.com/ziontechgroup" target="_blank" rel="noopener noreferrer" className="external-link link-instance-4">[SOCIAL] Social Media</a>
 
 <Link href="/careers" className="internal-link link-instance-2">[FOOTER] Footer Link</Link>
