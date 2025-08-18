@@ -4,18 +4,21 @@ export default function TutorialPage() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <Head>
-        <title>Complete Guide to Mobile App Development - Zion Tech Group</title>
-        <meta name="description" content="Learn mobile app development with our comprehensive tutorial. Step-by-step guidance for beginners and advanced users." />
-        <meta name="keywords" content="tutorial, mobile app development, learning, guide, education, technology" />
-        <link rel="canonical" href="https://ziontechgroup.com/tutorials/rapid-1755541220072-m6xz17" />
-      </Head>
+        <title>Complete Guide to DevOps Automation - Zion Tech Group</title>
+        <meta name="description" content="Learn devops automation with our comprehensive tutorial. Step-by-step guidance for beginners and advanced users." />
+        <meta name="keywords" content="tutorial, devops automation, learning, guide, education, technology" />
+        <link rel="canonical" href="https://ziontechgroup.com/tutorials/rapid-1755541225060-qq367k" />
+      
+        <meta property="og:title" content="Complete Guide to DevOps Automation" />
+        <meta property="og:description" content="Complete Guide to DevOps Automation — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
-        <h1 className="text-4xl font-extrabold text-center mb-8">Complete Guide to Mobile App Development</h1>
+        <h1 className="text-4xl font-extrabold text-center mb-8">Complete Guide to DevOps Automation</h1>
         
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4">📚 Tutorial Overview</h2>
           <p className="text-xl text-white/90 mb-4">
-            This comprehensive tutorial will guide you through mastering mobile app development from the ground up.
+            This comprehensive tutorial will guide you through mastering devops automation from the ground up.
           </p>
           <p className="text-white/80">
             Whether you're a beginner or looking to enhance your skills, this guide has something for everyone.
@@ -43,7 +46,7 @@ export default function TutorialPage() {
 
         <section className="text-center">
           <p className="text-white/75 mb-4">
-            Ready to master mobile app development?
+            Ready to master devops automation?
           </p>
           <a 
             href="https://ziontechgroup.com/tutorials" 

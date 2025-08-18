@@ -7,8 +7,11 @@ export default function ServicePage() {
         <title>Database Optimization - Zion Tech Group</title>
         <meta name="description" content="Professional database optimization services to accelerate your business growth and digital transformation." />
         <meta name="keywords" content="database optimization, services, technology, business, digital transformation" />
-        <link rel="canonical" href="https://ziontechgroup.com/services/rapid-1755541220071-5icvy0" />
-      </Head>
+        <link rel="canonical" href="https://ziontechgroup.com/services/rapid-1755541225058-pmnvm3" />
+      
+        <meta property="og:title" content="Database Optimization" />
+        <meta property="og:description" content="Database Optimization — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
         <h1 className="text-4xl font-extrabold text-center mb-8">Database Optimization</h1>
         
