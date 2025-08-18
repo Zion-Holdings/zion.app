@@ -18,6 +18,7 @@ concurrency:
 jobs:
   audit:
     name: Security Audit Job
+    if: ${{ hashFiles('package.json') != '' }}
     runs-on: ubuntu-latest
     timeout-minutes: 20
 

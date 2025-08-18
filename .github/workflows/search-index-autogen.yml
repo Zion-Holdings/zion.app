@@ -16,6 +16,7 @@ concurrency:
 jobs:
   build-search-index:
     name: Build Search Index
+    if: ${{ hashFiles('package.json') != '' }}
     runs-on: ubuntu-latest
     timeout-minutes: 20
 

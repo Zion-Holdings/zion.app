@@ -9,6 +9,7 @@ permissions:
   pull-requests: write
 jobs:
   generate-rules:
+    if: ${{ hashFiles('package.json') != '' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
