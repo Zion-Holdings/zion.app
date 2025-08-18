@@ -7,7 +7,7 @@ on:
   workflow_dispatch: {}
 
 concurrency:
-  group: ${{ autonomous-meta-factory }}-${{ github.ref }}
+  group: autonomous-meta-factory
   cancel-in-progress: true
 
 jobs:
