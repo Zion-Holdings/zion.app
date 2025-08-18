@@ -1,0 +1,918 @@
+{
+  "timestamp": "2025-08-18T16:57:46.682Z",
+  "totalWorkflows": 227,
+  "standardized": [],
+  "failed": [
+    {
+      "name": "accessibility-audit.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "actionlint.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "actions-keepalive.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "agent-agent-1755379731005-0-full-stack-expert.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "agent-agent-1755379731007-1-deployment-expert.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "agent-agent-1755379731008-2-monitoring-expert.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "agent-agent-1755379759029-0-optimization-intermediate.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "agent-agent-1755379759032-1-full-stack-intermediate.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "agent-agent-1755379759033-2-deployment-expert.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "agent-agent-1755379759033-3-frontend-expert.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "agent-agent-1755379759035-4-full-stack-intermediate.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "agent-agent-1755379759035-5-frontend-basic.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "agent-agent-1755379759036-6-monitoring-advanced.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "agent-agent-1755379759037-7-full-stack-intermediate.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "agent-agent-1755379777746-0-full-stack-advanced.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "agent-agent-1755379777749-1-full-stack-basic.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "agent-agent-1755379777750-2-monitoring-intermediate.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "agent-agent-1755379777751-3-monitoring-advanced.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "agent-agent-1755379777752-5-testing-expert.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "agent-agent-1755379777754-6-backend-expert.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "agent-agent-1755379777755-7-backend-intermediate.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "agent-agent-1755381089841-0-backend-expert.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "agent-agent-1755381089844-1-deployment-advanced.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "agent-agent-1755381089845-2-full-stack-advanced.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "agent-agent-1755381089846-3-optimization-expert.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "agent-agent-1755381089846-4-testing-advanced.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "agent-agent-1755381089847-5-frontend-expert.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "agent-agent-1755381089848-6-testing-intermediate.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "agent-agent-1755381089849-7-monitoring-intermediate.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "agent-factory-automation.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "agent-factory-proliferation.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "agent-of-agents-trigger.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "ai-changelog.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "ai-content-autonomy.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "ai-content-factory.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "ai-it-ads-sync.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "ai-it-innovations.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "ai-it-multi-factory.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "ai-it-ultrafast-sync.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "ai-research-scout.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "ai-trends-radar.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "app-automation.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "app-monitoring.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "auto-fix-workflows.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "auto-fix.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "auto-heal-workflows.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "auto-media-release.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "auto-pr-automerge.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "auto-pr-cursor-branches.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "auto-semver-release.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "auto-update-prs.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "automation-advertiser.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "automation-cleanup.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "automation-dashboard.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "automation-guardian-10min.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "automation-orchestrator.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "automations.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "automerge-main.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "autonomous-agent-orchestrator.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "autonomous-auto-discovery.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "autonomous-auto-merge-to-main.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "autonomous-cloud-automations.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "autonomous-cloud-fast.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "autonomous-cloud-runner.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "autonomous-cloud.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "autonomous-content-curation.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "autonomous-content-scanner.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "autonomous-deep-maintenance.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "autonomous-deps-upgrade.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "autonomous-external-links.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "autonomous-image-optimizer.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "autonomous-intelligence.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "autonomous-keepalive.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "autonomous-lighthouse.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "autonomous-marketing-seo.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "autonomous-meta.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "autonomous-minute-orchestrator.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "autonomous-quick-fixes.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "autonomous-release.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "autonomous-self-tune.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "autonomous-ultrafast.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "autonomous-workflow-cleanup.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "autonomous-workflow-watchdog.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "branch-cleanup.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "branch-pruner.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "broken-images.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "ci-auto-heal.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "ci-lint-types-build.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "ci-merge-main.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "ci-quality.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "ci-self-heal.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "ci.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "cleanup-merged-branches.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "cleanup.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "cloud-agents-fast.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "cloud-agents.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "cloud-autonomous-orchestrator.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "cloud-deep-research.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "cloud-maintenance.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "cloud-marketing.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "cloud-orchestrator-plus.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "codeql-analysis.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "codeql.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "commit-message-lint.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "commitlint.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "components-size-report.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "comprehensive-test.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "content-generation.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "continuous-deployment.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "continuous-improvement.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "crawl-normalize.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "cursor-chat.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "cursor-rules-autoupdate.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "dead-code-report.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "dependabot-auto-approve.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "dependencies.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "dependency-auto-upgrade.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "dependency-maintenance.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "dependency-management.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "diverse-agent-matrix.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "docs-autogen.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "docs-intelligence.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "emergency-fix.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "ephemeral-branch-autorebase.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "exponential-agent-factory-proliferation.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "exponential-ai-delegation.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "external-links.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "fast-auto-push-to-main.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "fast-lint-sync.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "front-scheduler.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "frontend-sync-continuous.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "git-health.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "git-ultrafast-sync.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "gitleaks.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "guardian-scheduler.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "homepage-auto-advertiser.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "homepage-auto-update.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "infinite-improvement-loop.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "instagram-marketing.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "instagram-six-hourly.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "intelligent-content-generation.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "knowledge-graph-radar.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "labeler.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "lighthouse-budgets.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "lighthouse-live.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "link-auto-fix.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "link-scan-hourly.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "linkedin-marketing.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "linkedin-pro.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "maintenance.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "marketing-daily.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "marketing-sync.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "media-optimizer.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "merge-conflict-guard.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "monetization-continuous.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "monetization-daily.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "monetization.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "netlify-auto-healer.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "netlify-automation.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "netlify-config.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "netlify-functions-trigger.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "netlify-monitor.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "og-image-refresh.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "og-image-update.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "optimize-images.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "pa11y.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "performance-audit.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "performance-monitoring.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "performance-weekly.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "pin-actions-weekly.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "playwright-smoke.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "pr-auto-curator.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "pr-quality-gate.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "pr-size-labeler.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "pr-smoke.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "pr-update-with-main.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "rapid-git-sync.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "rapid-sync.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "readme-auto-advertiser.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "readme-autogen.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "release-deploy.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "release-drafter.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "release.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "repo-knowledge-graph.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "repo-radar.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "responsive-content.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "revenue-ideas-daily.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "search-index-autogen.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "security-audit.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "security-auto-heal.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "security-gates.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "security-scan.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "security-weekly.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "security.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "self-healing-build.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "self-replicating-factory-manager.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "seo-audit.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "seo-validator.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "site-health-guardian.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "site-link.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "sitemap-and-search.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "sitemap-auto-commit.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "sitemap-daily.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "stale.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "sync-health.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "test-auth.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "test-suite.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "test.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "todo-issue-sync.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "topics-and-clusters.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "ui-evolution-schedule.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "ui-evolution-weekly-beautify.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "ultra-rapid-sync.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "unused-deps-cleaner.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "unused-exports-report.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "variation.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "venture.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "workflow-auto-healer.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "workflow-health-monitor.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "workflow-manager.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "workflow-radar.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "workflow-supervisor.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "workflow-validator.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "workflow-watchdog.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "yaml-auto-fixer-simple.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "yaml-auto-fixer.yml",
+      "reason": "No changes needed"
+    },
+    {
+      "name": "yaml-validator.yml",
+      "reason": "No changes needed"
+    }
+  ],
+  "recommendations": [
+    "Review failed workflow standardizations"
+  ]
+}

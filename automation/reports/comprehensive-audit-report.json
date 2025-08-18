@@ -1,47 +1,154 @@
 {
-  "timestamp": "2025-08-18T05:17:41.826Z",
+  "timestamp": "2025-08-18T16:59:29.008Z",
   "systems": {
     "workflow-health": {
-      "score": 75,
-      "status": "ready",
+      "score": 55,
+      "status": "stopped",
       "issues": [
+        "System stopped",
         "System never run"
       ],
-      "recommendations": []
-    },
-    "dependency-health": {
-      "score": 75,
-      "status": "ready",
-      "issues": [
-        "System never run"
-      ],
-      "recommendations": []
-    },
-    "resource-optimization": {
-      "score": 75,
-      "status": "ready",
-      "issues": [
-        "System never run"
-      ],
-      "recommendations": []
-    },
-    "smart-dispatch": {
-      "score": 75,
-      "status": "ready",
-      "issues": [
-        "System never run"
-      ],
-      "recommendations": []
+      "lastRun": null,
+      "recommendations": [
+        "Start system to enable automation",
+        "Run system to update status"
+      ]
     },
     "retry-system": {
-      "score": 75,
-      "status": "ready",
+      "score": 55,
+      "status": "stopped",
       "issues": [
+        "System stopped",
         "System never run"
       ],
-      "recommendations": []
+      "lastRun": null,
+      "recommendations": [
+        "Start system to enable automation",
+        "Run system to update status"
+      ]
+    },
+    "resource-optimization": {
+      "score": 55,
+      "status": "stopped",
+      "issues": [
+        "System stopped",
+        "System never run"
+      ],
+      "lastRun": null,
+      "recommendations": [
+        "Start system to enable automation",
+        "Run system to update status"
+      ]
+    },
+    "dependency-health": {
+      "score": 55,
+      "status": "stopped",
+      "issues": [
+        "System stopped",
+        "System never run"
+      ],
+      "lastRun": null,
+      "recommendations": [
+        "Start system to enable automation",
+        "Run system to update status"
+      ]
+    },
+    "workflow-standardization": {
+      "score": 55,
+      "status": "stopped",
+      "issues": [
+        "System stopped",
+        "System never run"
+      ],
+      "lastRun": null,
+      "recommendations": [
+        "Start system to enable automation",
+        "Run system to update status"
+      ]
+    },
+    "smart-dispatch": {
+      "score": 55,
+      "status": "stopped",
+      "issues": [
+        "System stopped",
+        "System never run"
+      ],
+      "lastRun": null,
+      "recommendations": [
+        "Start system to enable automation",
+        "Run system to update status"
+      ]
     }
   },
-  "overallHealth": 75,
-  "recommendations": []
+  "overallHealth": 55,
+  "recommendations": [
+    {
+      "system": "workflow-health",
+      "issue": "System stopped, System never run",
+      "priority": "medium",
+      "action": "Run workflow-health to resolve issues"
+    },
+    {
+      "system": "retry-system",
+      "issue": "System stopped, System never run",
+      "priority": "medium",
+      "action": "Run retry-system to resolve issues"
+    },
+    {
+      "system": "resource-optimization",
+      "issue": "System stopped, System never run",
+      "priority": "medium",
+      "action": "Run resource-optimization to resolve issues"
+    },
+    {
+      "system": "dependency-health",
+      "issue": "System stopped, System never run",
+      "priority": "medium",
+      "action": "Run dependency-health to resolve issues"
+    },
+    {
+      "system": "workflow-standardization",
+      "issue": "System stopped, System never run",
+      "priority": "medium",
+      "action": "Run workflow-standardization to resolve issues"
+    },
+    {
+      "system": "smart-dispatch",
+      "issue": "System stopped, System never run",
+      "priority": "medium",
+      "action": "Run smart-dispatch to resolve issues"
+    }
+  ],
+  "actions": [
+    {
+      "type": "run_system",
+      "system": "workflow-health",
+      "priority": "scheduled"
+    },
+    {
+      "type": "run_system",
+      "system": "retry-system",
+      "priority": "scheduled"
+    },
+    {
+      "type": "run_system",
+      "system": "resource-optimization",
+      "priority": "scheduled"
+    },
+    {
+      "type": "run_system",
+      "system": "dependency-health",
+      "priority": "scheduled"
+    },
+    {
+      "type": "run_system",
+      "system": "workflow-standardization",
+      "priority": "scheduled"
+    },
+    {
+      "type": "run_system",
+      "system": "smart-dispatch",
+      "priority": "scheduled"
+    }
+  ]
 }

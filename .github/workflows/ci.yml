@@ -44,6 +44,7 @@ jobs:
 
       - name: Build
         env:
+      NODE_OPTIONS: "--max-old-space-size=4096"
           CI: true
         run: npm run build
 

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 
@@ -64,7 +64,7 @@ export default function ContentDiscovery() {
   const sortedContent = [...filteredContent].sort((a, b) => {
     switch (sortBy) {
       case 'date':
-        return new Date(b.date).getTime() - new Date(a.date).getTime();
+        return new Date(b.date) - new Date(a.date);
       case 'title':
         return a.title.localeCompare(b.title);
       case 'readTime':
@@ -79,10 +79,7 @@ export default function ContentDiscovery() {
       <Head>
         <title>Content Discovery | Zion Tech Group</title>
         <meta name="description" content="Discover and explore our comprehensive content library with AI-powered search and recommendations." />
-      
-        <meta property="og:title" content="Content Discovery" />
-        <meta property="og:description" content="Content Discovery — automatically suggested description." />
-        <meta name="twitter:card" content="summary_large_image" /></Head>
+      </Head>
       
       <main className="container mx-auto px-6 py-12">
         <div className="text-center mb-12">

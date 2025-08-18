@@ -5700,3 +5700,26 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 
 ---
 This README is auto-generated. Do not edit manually.
+## 🤖 Automation Engine
+
+This project includes a comprehensive automation engine with the following features:
+
+### Scheduled Functions
+- **homepage_advertiser**: Auto-advertise homepage features and links
+- **front-enhancer**: Run front improvements continuously
+- **cloud_orchestrator**: Coordinate broader agents and git sync
+- **sitemap_runner**: Keep sitemap fresh for SEO
+- **marketing-and-features-promo**: Regenerate promos and deep links
+
+### Automation Scripts
+- Master automation orchestrator
+- Workflow health monitoring
+- Dependency health checking
+- Performance optimization
+- Content generation
+
+### Reports
+All automation activities generate detailed reports in the `automation/reports/` directory.
+
+---
+*Last updated: 2025-08-18T16:58:26.566Z*

@@ -1,0 +1,45 @@
+{
+  "timestamp": "2025-08-18T16:59:28.967Z",
+  "tasks": [
+    {
+      "name": "homepage_advertiser",
+      "schedule": "*/15 * * * *",
+      "description": "Every 15 minutes",
+      "status": "active"
+    },
+    {
+      "name": "front-enhancer",
+      "schedule": "*/5 * * * *",
+      "description": "Every 5 minutes",
+      "status": "active"
+    },
+    {
+      "name": "cloud_orchestrator",
+      "schedule": "0 */4 * * *",
+      "description": "Every 4 hours",
+      "status": "active"
+    },
+    {
+      "name": "sitemap_runner",
+      "schedule": "0 */12 * * *",
+      "description": "Twice per day",
+      "status": "active"
+    },
+    {
+      "name": "security-audit-runner",
+      "schedule": "19 */6 * * *",
+      "description": "Every 6 hours",
+      "status": "active"
+    }
+  ],
+  "summary": {
+    "totalTasks": 5,
+    "activeTasks": 5,
+    "nextExecution": "2025-08-18T17:04:28.967Z",
+    "recommendations": [
+      "Monitor task execution times",
+      "Adjust schedules based on performance",
+      "Consider load balancing for high-frequency tasks"
+    ]
+  }
+}

@@ -1,10 +1,9 @@
 {
   "plan": {
-    "timestamp": "2025-08-18T05:17:48.620Z",
+    "timestamp": "2025-08-18T16:59:55.346Z",
     "changes": [
       "package.json",
-      "src/components/Button.tsx",
-      "docs/README.md"
+      "src/components/Button.tsx"
     ],
     "manualTrigger": null,
     "workflows": [
@@ -68,16 +67,15 @@
       "executions": [
         {
           "workflow": "ci.yml",
-          "success": true,
-          "skipped": false,
-          "executionId": "exec_1755494270631_6g6xcit5d",
-          "duration": 3163.077704938695
+          "success": false,
+          "skipped": true,
+          "reason": "skip_condition_met"
         }
       ],
-      "success": 1,
+      "success": 0,
       "failed": 0,
-      "skipped": 0,
-      "duration": 2009
+      "skipped": 1,
+      "duration": 0
     },
     {
       "type": "security",
@@ -92,20 +90,19 @@
       "executions": [
         {
           "workflow": "dependency-auto-upgrade.yml",
-          "success": true,
-          "skipped": false,
-          "executionId": "exec_1755494278382_qbq3zp21w",
-          "duration": 4973.290078270185
+          "success": false,
+          "skipped": true,
+          "reason": "skip_condition_met"
         }
       ],
-      "success": 1,
+      "success": 0,
       "failed": 0,
-      "skipped": 0,
-      "duration": 2749
+      "skipped": 1,
+      "duration": 0
     }
   ],
-  "success": 2,
+  "success": 0,
   "failed": 0,
-  "skipped": 0,
-  "totalDuration": 4758
+  "skipped": 2,
+  "totalDuration": 0
 }
