@@ -63,7 +63,6 @@ jobs:
     name: Rapid Content Generation
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    needs: ultra-fast-generation
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -103,7 +102,6 @@ jobs:
     name: AI Content Factory
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    needs: rapid-generation
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -125,7 +123,7 @@ jobs:
         env:
           CANONICAL_URL: https://ziontechgroup.com
           PROCESS_TYPE: github-actions-ai-factory
-          MAX_PAGES_PER_RUN: 2
+          MAX_PAGES_PER_RUN: 3
       
       - name: Commit and push changes
         run: |
@@ -143,7 +141,6 @@ jobs:
     name: Cloud Content Factory
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    needs: ai-content-factory
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -183,7 +180,6 @@ jobs:
     name: Intelligent Content Generation
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    needs: cloud-content-factory
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -223,7 +219,6 @@ jobs:
     name: Autonomous Content Generation
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    needs: intelligent-generation
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -263,7 +258,6 @@ jobs:
     name: Cursor Autonomous Orchestrator
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    needs: autonomous-generation
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -293,7 +287,7 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add -A
-            git commit -m "🎯 Cursor autonomous orchestration via GitHub Actions [skip ci]"
+            git commit -m "🎯 Cursor autonomous orchestrator via GitHub Actions [skip ci]"
             git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
           else
             echo "No changes to commit"
@@ -303,7 +297,6 @@ jobs:
     name: Content Completion
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    needs: cursor-orchestrator
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -324,7 +317,7 @@ jobs:
         run: node automation/content-completer.cjs
         env:
           CANONICAL_URL: https://ziontechgroup.com
-          PROCESS_TYPE: github-actions-content-completer
+          PROCESS_TYPE: github-actions-completer
       
       - name: Commit and push changes
         run: |
@@ -339,10 +332,10 @@ jobs:
           fi
 
   final-sync:
-    name: Final Sync and Deploy
+    name: Final Sync and Build
     runs-on: ubuntu-latest
-    timeout-minutes: 5
-    needs: content-completion
+    timeout-minutes: 10
+    needs: [ultra-fast-generation, rapid-generation, ai-content-factory, cloud-content-factory, intelligent-generation, autonomous-generation, cursor-orchestrator, content-completion]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -359,81 +352,64 @@ jobs:
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
       
-      - name: Run Ultra-Rapid Sync
-        run: node automation/ultra-rapid-sync.cjs
+      - name: Generate sitemap
+        run: node automation/sitemap-runner.cjs
         env:
-          SYNC_INTERVAL_SECONDS: 30
-          TARGET_BRANCH: main
+          CANONICAL_URL: https://ziontechgroup.com
       
-      - name: Generate Sitemap
-        run: node scripts/generate-sitemap.js || echo "Sitemap generation failed, continuing..."
+      - name: Build application
+        run: npm run build
       
-      - name: Build Application
-        run: npm run build || echo "Build failed, continuing..."
-      
-      - name: Final Commit and Push
+      - name: Commit and push final changes
         run: |
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add -A
-            git commit -m "🎉 Final sync and deployment via GitHub Actions [skip ci]"
+            git commit -m "🚀 Final sync and build via GitHub Actions [skip ci]"
             git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
           else
             echo "No changes to commit"
           fi
 
   status-report:
-    name: Generate Status Report
+    name: Status Report
     runs-on: ubuntu-latest
     timeout-minutes: 2
-    needs: final-sync
-    if: always()
+    needs: [final-sync]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
       
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: npm
-      
-      - name: Generate Content Status Report
+      - name: Generate Status Report
         run: |
-          echo "## Content Generation Status Report" > content-status-report.md
-          echo "" >> content-status-report.md
-          echo "**Generated:** $(date)" >> content-status-report.md
-          echo "**Workflow:** ${{ github.workflow }}" >> content-status-report.md
-          echo "**Run ID:** ${{ github.run_id }}" >> content-status.netlify.app
-          echo "" >> content-status-report.md
-          echo "### Job Results:" >> content-status-report.md
-          echo "- Ultra-Fast Generation: ${{ needs.ultra-fast-generation.result }}" >> content-status-report.md
-          echo "- Rapid Generation: ${{ needs.rapid-generation.result }}" >> content-status-report.md
-          echo "- AI Content Factory: ${{ needs.ai-content-factory.result }}" >> content-status-report.md
-          echo "- Cloud Content Factory: ${{ needs.cloud-content-factory.result }}" >> content-status-report.md
-          echo "- Intelligent Generation: ${{ needs.intelligent-generation.result }}" >> content-status-report.md
-          echo "- Autonomous Generation: ${{ needs.autonomous-generation.result }}" >> content-status-report.md
-          echo "- Cursor Orchestrator: ${{ needs.cursor-orchestrator.result }}" >> content-status-report.md
-          echo "- Content Completion: ${{ needs.content-completion.result }}" >> content-status-report.md
-          echo "- Final Sync: ${{ needs.final-sync.result }}" >> content-status-report.md
-          echo "" >> content-status-report.md
-          echo "### Summary:" >> content-status-report.md
-          echo "This workflow ensures continuous content generation with maximum redundancy and reliability." >> content-status-report.md
+          echo "# Content Generation Status Report" > content-generation-status-report.md
+          echo "" >> content-generation-status-report.md
+          echo "Generated: $(date)" >> content-generation-status-report.md
+          echo "Workflow: ${{ github.workflow }}" >> content-generation-status-report.md
+          echo "Run ID: ${{ github.run_id }}" >> content-generation-status-report.md
+          echo "" >> content-generation-status-report.md
+          echo "## Jobs Status" >> content-generation-status-report.md
+          echo "- Ultra-Fast Generation: ${{ needs.ultra-fast-generation.result }}" >> content-generation-status-report.md
+          echo "- Rapid Generation: ${{ needs.rapid-generation.result }}" >> content-generation-status-report.md
+          echo "- AI Content Factory: ${{ needs.ai-content-factory.result }}" >> content-generation-status-report.md
+          echo "- Cloud Content Factory: ${{ needs.cloud-content-factory.result }}" >> content-generation-status-report.md
+          echo "- Intelligent Generation: ${{ needs.intelligent-generation.result }}" >> content-generation-status-report.md
+          echo "- Autonomous Generation: ${{ needs.autonomous-generation.result }}" >> content-generation-status-report.md
+          echo "- Cursor Orchestrator: ${{ needs.cursor-orchestrator.result }}" >> content-generation-status-report.md
+          echo "- Content Completion: ${{ needs.content-completion.result }}" >> content-generation-status-report.md
+          echo "- Final Sync: ${{ needs.final-sync.result }}" >> content-generation-status-report.md
+          echo "" >> content-generation-status-report.md
+          echo "## Summary" >> content-generation-status-report.md
+          echo "All content generation jobs completed successfully via GitHub Actions redundancy." >> content-generation-status-report.md
       
-      - name: Upload Status Report
-        uses: actions/upload-artifact@v4
-        with:
-          name: content-generation-status
-          path: content-status-report.md
-          retention-days: 30
-      
-      - name: Commit Status Report
+      - name: Commit status report
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add content-status-report.md
+          git add content-generation-status-report.md
           git commit -m "📊 Content generation status report [skip ci]" || echo "No changes to commit"
           git push origin HEAD:$(git rev-parse --abbrev-ref HEAD) || echo "Push failed"
