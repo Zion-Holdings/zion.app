@@ -1,19 +1,10 @@
 {
-  "timestamp": "2025-08-18T17:29:50.479Z",
+  "timestamp": "2025-08-18T17:42:44.618Z",
   "summary": {
-    "totalWorkflows": 2,
-    "fixed": 2,
+    "totalWorkflows": 0,
+    "fixed": 0,
     "failed": 0
   },
-  "fixedWorkflows": [
-    {
-      "name": "simple-service-generator.yml",
-      "status": "active"
-    },
-    {
-      "name": "ultra-fast-agent-creation.yml",
-      "status": "active"
-    }
-  ],
+  "fixedWorkflows": [],
   "failedWorkflows": []
 }

@@ -1,7 +1,29 @@
 {
-  "timestamp": "2025-08-18T17:29:50.379Z",
+  "timestamp": "2025-08-18T17:42:44.186Z",
   "critical": [],
   "high": [
+    {
+      "workflow": "continuous-content-generation.yml",
+      "status": "active",
+      "complexityScore": 60,
+      "complexityLevel": "high",
+      "metrics": {
+        "totalLines": 440,
+        "jobCount": 0,
+        "stepCount": 52,
+        "conditionalCount": 1,
+        "matrixCount": 0,
+        "dependencyCount": 9,
+        "environmentCount": 0,
+        "secretCount": 9,
+        "actionCount": 21
+      },
+      "refactoringStrategy": [
+        "Break down into smaller job steps",
+        "Optimize job dependencies",
+        "Extract common functionality to reusable workflows"
+      ]
+    },
     {
       "workflow": "redundant-link-generation.yml",
       "status": "active",
