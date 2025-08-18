@@ -9,7 +9,7 @@ on:
     types: [completed, failed]
 
 permissions:
-  contents: write
+  contents: read
   actions: read
   pull-requests: write
 

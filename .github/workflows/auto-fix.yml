@@ -9,7 +9,7 @@ on:
     - synchronize
     - reopened
 permissions:
-  contents: write
+  contents: read
   pull-requests: write
 concurrency:
   group: auto-fix.yml-${{ github.ref }}

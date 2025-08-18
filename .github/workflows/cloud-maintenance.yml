@@ -4,7 +4,7 @@ on:
   - cron: '*/30 * * * *'
   workflow_dispatch: null
 permissions:
-  contents: write
+  contents: read
   pull-requests: write
 concurrency:
   group: cloud-maintenance-${{ github.ref }}

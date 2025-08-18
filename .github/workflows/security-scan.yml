@@ -6,7 +6,7 @@ on:
     - cron: '*/30 * * * *' # Every 30 minutes
 
 permissions:
-  contents: write
+  contents: read
   actions: read
 
 concurrency:

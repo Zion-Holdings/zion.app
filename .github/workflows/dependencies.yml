@@ -4,7 +4,7 @@ on:
   - cron: 0 4 * * 1
   workflow_dispatch: null
 permissions:
-  contents: write
+  contents: read
   pull-requests: write
   actions: read
 concurrency:

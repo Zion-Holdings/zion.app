@@ -4,7 +4,7 @@ on:
   schedule:
   - cron: 0 2 * * 0
 permissions:
-  contents: write
+  contents: read
   pull-requests: write
   actions: read
 concurrency:

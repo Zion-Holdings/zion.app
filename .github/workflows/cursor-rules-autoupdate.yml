@@ -4,7 +4,7 @@ on:
   - cron: 17 */6 * * *
   workflow_dispatch: null
 permissions:
-  contents: write
+  contents: read
   pull-requests: write
 jobs:
   generate-rules:
