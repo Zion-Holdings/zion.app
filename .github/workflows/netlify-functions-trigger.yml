@@ -3,7 +3,7 @@ name: Netlify Functions Trigger
 
 on:
   schedule:
-    - cron: '0 */2 * * *' # every 30 minutes
+    - cron: '*/30 * * * *' # every 30 minutes
   workflow_dispatch: {}
 
 permissions:
@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-        run:
+  run:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
