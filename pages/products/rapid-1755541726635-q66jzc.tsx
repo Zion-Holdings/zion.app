@@ -8,7 +8,10 @@ export default function ProductPage() {
         <meta name="description" content="Development Tools - The ultimate solution for modern businesses seeking innovation and efficiency." />
         <meta name="keywords" content="development tools, product, technology, innovation, business solution" />
         <link rel="canonical" href="https://ziontechgroup.com/products/rapid-1755541726635-q66jzc" />
-      </Head>
+      
+        <meta property="og:title" content="Development Tools" />
+        <meta property="og:description" content="Development Tools — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
         <h1 className="text-4xl font-extrabold text-center mb-8">Development Tools</h1>
         
