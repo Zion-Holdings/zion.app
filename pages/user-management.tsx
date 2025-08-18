@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Head from 'next/head';
 
 interface User {
@@ -69,7 +69,7 @@ const UserManagement: React.FC = () => {
   // const [showRoleModal, setShowRoleModal] = useState(false);
 
   // Mock data for demonstration
-  const mockUsers: User[] = [
+  const mockUsers = useMemo<User[]>(() => [
     {
       id: '1',
       username: 'admin',
@@ -160,9 +160,9 @@ const UserManagement: React.FC = () => {
       loginAttempts: 0,
       lastPasswordChange: new Date('2024-01-15')
     }
-  ];
+  ]), []);
 
-  const mockRoles: UserRole[] = [
+  const mockRoles = useMemo<UserRole[]>(() => [
     {
       id: '1',
       name: 'Super Admin',
@@ -203,9 +203,9 @@ const UserManagement: React.FC = () => {
       isSystem: false,
       userCount: 8
     }
-  ];
+  ]), []);
 
-  const mockPermissions: Permission[] = [
+  const mockPermissions = useMemo<Permission[]>(() => [
     {
       id: '1',
       name: 'User Management',
@@ -270,7 +270,7 @@ const UserManagement: React.FC = () => {
       resource: 'settings',
       action: 'write'
     }
-  ];
+  ]), []);
 
   useEffect(() => {
     setUsers(mockUsers);
@@ -291,7 +291,7 @@ const UserManagement: React.FC = () => {
   });
 
   const sortedUsers = [...filteredUsers].sort((a, b) => {
-    let aValue: any, bValue: any;
+    let aValue: string | number, bValue: string | number;
     
     switch (sortBy) {
       case 'username':
@@ -396,7 +396,7 @@ const UserManagement: React.FC = () => {
 
   const resetPassword = (userId: string) => {
     // Simulate password reset
-    console.log(`Password reset requested for user: ${userId}`);
+    // Password reset logic would go here
   };
 
   const enableTwoFactor = (userId: string) => {
@@ -462,7 +462,7 @@ const UserManagement: React.FC = () => {
               ].map((tab) => (
                 <button
                   key={tab.id}
-                  onClick={() => setCurrentView(tab.id as any)}
+                  onClick={() => setCurrentView(tab.id as 'users' | 'roles' | 'permissions')}
                   className={`py-2 px-1 border-b-2 font-medium text-sm ${
                     currentView === tab.id
                       ? 'border-blue-500 text-blue-600'
@@ -496,7 +496,7 @@ const UserManagement: React.FC = () => {
                       <span className="text-sm text-gray-600">Sort by:</span>
                       <select
                         value={sortBy}
-                        onChange={(e) => setSortBy(e.target.value as any)}
+                        onChange={(e) => setSortBy(e.target.value as 'username' | 'role' | 'status' | 'lastLogin' | 'createdAt')}
                         className="border border-gray-300 rounded-md px-3 py-2 text-sm"
                       >
                         <option value="username">Username</option>

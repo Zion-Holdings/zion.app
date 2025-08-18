@@ -325,7 +325,7 @@ export default function AIAutomationTrendsBlogPost() {
           <div className="bg-gradient-to-r from-cyan-500/20 to-fuchsia-500/20 border border-cyan-400/30 rounded-lg p-8">
             <h2 className="text-3xl font-bold text-white mb-4">Ready to Embrace AI Automation?</h2>
             <p className="text-white/80 mb-6 max-w-2xl mx-auto">
-              Let's discuss how these AI automation trends can transform your business and give you a competitive edge.
+              Let&apos;s discuss how these AI automation trends can transform your business and give you a competitive edge.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 

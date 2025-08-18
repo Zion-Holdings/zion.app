@@ -35,7 +35,7 @@ export default function Custom500() {
               Internal Server Error
             </h2>
             <p className="text-xl text-white/70 max-w-2xl mx-auto">
-              We're experiencing technical difficulties on our end. Our engineering team has been notified and is working to resolve the issue.
+              We&apos;re experiencing technical difficulties on our end. Our engineering team has been notified and is working to resolve the issue.
             </p>
           </div>
 
@@ -43,7 +43,7 @@ export default function Custom500() {
           <div className="bg-slate-900/50 border border-white/10 rounded-lg p-6 mb-8 max-w-2xl mx-auto">
             <h3 className="text-xl font-semibold text-orange-400 mb-3">What Happened?</h3>
             <p className="text-white/70 mb-4">
-              Something went wrong on our servers while processing your request. This is not your fault - it's an issue on our end that we're actively working to fix.
+              Something went wrong on our servers while processing your request. This is not your fault - it&apos;s an issue on our end that we&apos;re actively working to fix.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
               <div className="text-left">
@@ -56,7 +56,7 @@ export default function Custom500() {
                 </ul>
               </div>
               <div className="text-left">
-                <h4 className="font-semibold text-white mb-2">What We're Doing:</h4>
+                <h4 className="font-semibold text-white mb-2">What We&apos;re Doing:</h4>
                 <ul className="text-white/60 space-y-1">
                   <li>• Investigating the issue</li>
                   <li>• Working on a fix</li>

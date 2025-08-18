@@ -44,7 +44,7 @@ export default function TermsPage() {
               <strong>Last updated:</strong> August 15, 2025
             </p>
             <p className="text-white/70 mt-2">
-              These Terms of Service ("Terms") govern your use of Zion Tech Group's services, including our website, applications, and any related services (collectively, the "Services").
+              These Terms of Service (&quot;Terms&quot;) govern your use of Zion Tech Group&apos;s services, including our website, applications, and any related services (collectively, the &quot;Services&quot;).
             </p>
           </div>
 

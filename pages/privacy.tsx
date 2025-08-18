@@ -44,7 +44,7 @@ export default function PrivacyPage() {
               <strong>Last updated:</strong> August 15, 2025
             </p>
             <p className="text-white/70 mt-2">
-              Zion Tech Group ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
+              Zion Tech Group (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
             </p>
           </div>
 
@@ -264,7 +264,7 @@ export default function PrivacyPage() {
           </section>
 
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-white mb-6">Children's Privacy</h2>
+            <h2 className="text-3xl font-bold text-white mb-6">Children&apos;s Privacy</h2>
             
             <div className="bg-slate-900/50 border border-white/10 rounded-lg p-6">
               <p className="text-white/80 mb-4">

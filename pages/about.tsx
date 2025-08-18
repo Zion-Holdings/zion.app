@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 
 export default function AboutPage() {
   return (
@@ -174,7 +175,7 @@ export default function AboutPage() {
               <div>
                 <h3 className="text-2xl font-bold text-fuchsia-400 mb-4">Human-Centric Design</h3>
                 <p className="text-white/80 mb-4">
-                  While our systems are autonomous, they're designed to enhance human 
+                  While our systems are autonomous, they&apos;re designed to enhance human 
                   capabilities, not replace them, ensuring technology serves people.
                 </p>
                 <ul className="text-white/70 space-y-2">
@@ -283,18 +284,18 @@ export default function AboutPage() {
               operations, improve efficiency, and drive innovation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
+              <Link 
                 href="/contact" 
                 className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
               >
                 Get Started
-              </a>
-              <a 
+              </Link>
+              <Link 
                 href="/services" 
                 className="bg-transparent border border-white/30 hover:bg-white/10 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
               >
                 Learn More
-              </a>
+              </Link>
             </div>
           </div>
         </section>

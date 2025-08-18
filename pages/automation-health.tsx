@@ -87,10 +87,19 @@ interface ControlPlane {
   };
 }
 
+interface WorkflowSchedule {
+  id: string;
+  name: string;
+  schedule: string;
+  lastRun: string;
+  nextRun: string;
+  status: string;
+}
+
 interface ScheduleHints {
   version: string;
   lastUpdated: string;
-  workflows: Record<string, any>;
+  workflows: Record<string, WorkflowSchedule>;
   recommendations: {
     totalWorkflows: number;
     workflowsNeedingSpeedUp: number;
@@ -503,8 +512,6 @@ export const getStaticProps: GetStaticProps = async () => {
       },
     };
   } catch (error) {
-    console.error('Error fetching automation data:', error);
-    
     return {
       props: {
         health: {

@@ -250,7 +250,7 @@ export default function BlogIndexPage() {
           <div className="bg-gradient-to-r from-cyan-500/20 to-fuchsia-500/20 border border-cyan-400/30 rounded-lg p-8">
             <h2 className="text-3xl font-bold text-white mb-4">Have a Topic in Mind?</h2>
             <p className="text-white/80 mb-6 max-w-2xl mx-auto">
-              We're always looking for new topics to cover. Let us know what you'd like to learn more about.
+              We&apos;re always looking for new topics to cover. Let us know what you&apos;d like to learn more about.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 

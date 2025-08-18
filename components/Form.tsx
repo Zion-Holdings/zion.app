@@ -1,7 +1,13 @@
 import { useState } from 'react';
 
+interface FormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
 interface FormProps {
-  onSubmit: (data: any) => void;
+  onSubmit: (data: FormData) => void;
   className?: string;
 }
 

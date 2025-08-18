@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Head from 'next/head';
 
 interface APIEndpoint {
@@ -29,14 +29,23 @@ interface APIParameter {
   enum?: string[];
 }
 
+interface APISchema {
+  type: string;
+  properties?: Record<string, unknown>;
+  required?: string[];
+  items?: APISchema;
+}
+
+interface APIExampleData {
+  schema: APISchema;
+  example: unknown;
+}
+
 interface APIRequestBody {
   description: string;
   required: boolean;
   content: {
-    [key: string]: {
-      schema: any;
-      example: any;
-    };
+    [key: string]: APIExampleData;
   };
 }
 
@@ -44,10 +53,7 @@ interface APIResponse {
   code: number;
   description: string;
   content?: {
-    [key: string]: {
-      schema: any;
-      example: any;
-    };
+    [key: string]: APIExampleData;
   };
 }
 
@@ -58,12 +64,12 @@ interface APIExample {
     method: string;
     url: string;
     headers: { [key: string]: string };
-    body?: any;
+    body?: unknown;
   };
   response: {
     status: number;
     headers: { [key: string]: string };
-    body: any;
+    body: unknown;
   };
 }
 
@@ -73,12 +79,12 @@ interface APITest {
     method: string;
     url: string;
     headers: { [key: string]: string };
-    body?: any;
+    body?: unknown;
   };
   response?: {
     status: number;
     headers: { [key: string]: string };
-    body: any;
+    body: unknown;
     time: number;
   };
   loading: boolean;
@@ -98,7 +104,7 @@ const APIDocumentation: React.FC = () => {
   const [showTestPanel, setShowTestPanel] = useState(false);
 
   // Mock API endpoints data
-  const mockEndpoints: APIEndpoint[] = [
+  const mockEndpoints = useMemo<APIEndpoint[]>(() => [
     {
       id: '1',
       method: 'GET',
@@ -583,7 +589,7 @@ const APIDocumentation: React.FC = () => {
       ],
       tags: ['analytics', 'dashboard', 'metrics']
     }
-  ];
+  ]), []);
 
   useEffect(() => {
     setEndpoints(mockEndpoints);
@@ -749,7 +755,7 @@ const APIDocumentation: React.FC = () => {
               ].map((tab) => (
                 <button
                   key={tab.id}
-                  onClick={() => setCurrentView(tab.id as any)}
+                  onClick={() => setCurrentView(tab.id as 'overview' | 'endpoints' | 'testing' | 'examples')}
                   className={`py-2 px-1 border-b-2 font-medium text-sm ${
                     currentView === tab.id
                       ? 'border-blue-500 text-blue-600'
@@ -1127,8 +1133,8 @@ const APIDocumentation: React.FC = () => {
                                 </button>
                               </div>
                               <div className="bg-gray-900 text-green-400 p-3 rounded font-mono text-sm">
-                                <div>fetch('{example.request.url}', {'{'}</div>
-                                <div>  method: '{example.request.method}',</div>
+                                <div>fetch(&apos;{example.request.url}&apos;, {'{'}</div>
+                                <div>  method: &apos;{example.request.method}&apos;,</div>
                                 <div>  headers: {JSON.stringify(example.request.headers, null, 2)},</div>
                                 {example.request.body && (
                                   <div>  body: {JSON.stringify(example.request.body, null, 2)}</div>
@@ -1152,12 +1158,12 @@ const APIDocumentation: React.FC = () => {
                                 </button>
                               </div>
                               <div className="bg-gray-900 text-green-400 p-3 rounded font-mono text-sm">
-                                <div>curl -X {example.request.method} '{example.request.url}' \</div>
+                                <div>curl -X {example.request.method} &apos;{example.request.url}&apos; \</div>
                                 {Object.entries(example.request.headers).map(([key, value]) => (
-                                  <div key={key}>  -H '{key}: {value}' \</div>
+                                  <div key={key}>  -H &apos;{key}: {value}&apos; \</div>
                                 ))}
                                 {example.request.body && (
-                                  <div>  -d '{JSON.stringify(example.request.body)}'</div>
+                                  <div>  -d &apos;{JSON.stringify(example.request.body)}&apos;</div>
                                 )}
                               </div>
                             </div>
@@ -1181,7 +1187,7 @@ response = requests.${example.request.method.toLowerCase()}('${example.request.u
                               <div className="bg-gray-900 text-green-400 p-3 rounded font-mono text-sm">
                                 <div>import requests</div>
                                 <div></div>
-                                <div>response = requests.{example.request.method.toLowerCase()}('{example.request.url}', </div>
+                                <div>response = requests.{example.request.method.toLowerCase()}(&apos;{example.request.url}&apos;, </div>
                                 <div>  headers={JSON.stringify(example.request.headers, null, 2)},</div>
                                 {example.request.body && (
                                   <div>  json={JSON.stringify(example.request.body, null, 2)}</div>
