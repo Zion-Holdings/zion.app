@@ -22606,6 +22606,13 @@
   "generatedAt": "2025-08-18T18:30:02.699Z",
   "items": [
     {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-18-183015",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T18:30:15.465Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
       "title": "Case Study — Cloud Improving",
       "href": "/reports/cases/case-2025-08-18-183015",
       "desc": "New autonomous content",
@@ -22965,6 +22972,75 @@
       "route": "/reports/patterns/ultra-1755541813608-9p590n",
       "type": "ultra-fast-generated",
       "created": "2025-08-18T18:30:13.623Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "cursor-chat-2025-08-18T18:30:15.595Z",
+      "type": "cursor-chat",
+      "timestamp": "2025-08-18T18:30:15.595Z"
+    },
+    {
+      "id": "rapid-1755541816929-g89z85",
+      "title": "API Integration",
+      "route": "/services/rapid-1755541816929-g89z85",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:30:16.947Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755541816937-d6zlmj",
+      "title": "Smart Dashboard",
+      "route": "/products/rapid-1755541816937-d6zlmj",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:30:16.947Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755541816938-789gx3",
+      "title": "Essential Skills in Database Optimization",
+      "route": "/tutorials/rapid-1755541816938-789gx3",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:30:16.947Z",
+      "process": "rapid"
+    },
+    {
+      "id": "ultra-1755541819324-z64gvn",
+      "title": "Rapid Response Development",
+      "route": "/reports/updates/ultra-1755541819324-z64gvn",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:30:19.379Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541819325-1cflnv",
+      "title": "Ultra-Fast AI-powered automation Insight",
+      "route": "/reports/insights/ultra-1755541819325-1cflnv",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:30:19.379Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541819326-5ut4lj",
+      "title": "Ultra-Fast Guide: Rapid prototyping systems",
+      "route": "/reports/guides/ultra-1755541819326-5ut4lj",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:30:19.379Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541819326-8xnr6x",
+      "title": "Case Study: Lightning deployment pipelines Success",
+      "route": "/reports/cases/ultra-1755541819326-8xnr6x",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:30:19.379Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541819327-nnoeet",
+      "title": "Pattern: Ultra-responsive applications Architecture",
+      "route": "/reports/patterns/ultra-1755541819327-nnoeet",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:30:19.379Z",
       "process": "ultra-fast"
     }
   ]
