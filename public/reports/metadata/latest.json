@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T06:00:01.560Z",
-  "pagesScanned": 8637,
+  "generatedAt": "2025-08-18T06:01:01.108Z",
+  "pagesScanned": 8640,
   "items": [
     {
       "route": "/404",
@@ -36366,6 +36366,16 @@
       "suggestion": {
         "title": "Checklist: Agent Ops",
         "description": "Checklist: Agent Ops — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18-0600",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook: Agent Ops",
+        "description": "Playbook: Agent Ops — auto-suggested description"
       }
     },
     {
@@ -86181,14 +86191,24 @@
     {
       "route": "/reports/updates/update-2025-08-18-0300",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 03:00",
+        "description": "Autonomous Update — 2025-08-18 03:00 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0301",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 03:00",
-        "description": "Autonomous Update — 2025-08-18 03:00 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-18 03:01",
+        "description": "Autonomous Update — 2025-08-18 03:01 — auto-suggested description"
       }
     },
     {
@@ -86249,6 +86269,16 @@
       "suggestion": {
         "title": "Autonomous Security Hardening Guide — Applied NLP & RAG (2025-08-18 05:50 UTC)",
         "description": "Autonomous Security Hardening Guide — Applied NLP & RAG (2025-08-18 05:50 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0600",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Performance Tuning Guide — MLOps & Model Reliability (2025-08-18 06:00 UTC)",
+        "description": "Autonomous Performance Tuning Guide — MLOps & Model Reliability (2025-08-18 06:00 UTC) — auto-suggested description"
       }
     },
     {
