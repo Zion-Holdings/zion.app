@@ -275,3 +275,5 @@ export default function BlogIndexPage() {
 }
 
 <Link href="/blog/ai-automation-trends-2025" className="internal-link">Related Content</Link>
+
+<Link href="/services" className="internal-link link-instance-1">[NAVIGATION] Blog Navigation</Link>
