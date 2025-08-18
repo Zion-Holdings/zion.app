@@ -24,6 +24,7 @@ export default function ModalDemo() {
     </div>
   );
 }
-<Link href="/components/form-demo" className="internal-link">Related Content</Link>
 
 <Link href="/components/pagination-demo" className="internal-link">Related Content</Link>
+
+<Link href="/components/form-demo" className="internal-link">Related Content</Link>
