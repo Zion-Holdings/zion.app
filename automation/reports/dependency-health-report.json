@@ -1,15 +1,7 @@
 {
-  "timestamp": "2025-08-18T17:12:54.782Z",
+  "timestamp": "2025-08-18T17:41:56.310Z",
   "totalPackages": 0,
   "outdatedPackages": {
-    "@modelcontextprotocol/server-filesystem": {
-      "current": "2025.7.29",
-      "wanted": "2025.8.18",
-      "latest": "2025.8.18",
-      "updateType": "minor",
-      "priority": "high",
-      "securityRisk": false
-    },
     "@testing-library/react": {
       "current": "14.3.1",
       "wanted": "14.3.1",
@@ -34,19 +26,27 @@
       "priority": "medium",
       "securityRisk": false
     },
+    "@typescript-eslint/eslint-plugin": {
+      "current": "8.39.1",
+      "wanted": "8.40.0",
+      "latest": "8.40.0",
+      "updateType": "minor",
+      "priority": "high",
+      "securityRisk": false
+    },
+    "@typescript-eslint/parser": {
+      "current": "8.39.1",
+      "wanted": "8.40.0",
+      "latest": "8.40.0",
+      "updateType": "minor",
+      "priority": "high",
+      "securityRisk": false
+    },
     "chalk": {
       "current": "5.5.0",
       "wanted": "5.6.0",
       "latest": "5.6.0",
       "updateType": "minor",
-      "priority": "high",
-      "securityRisk": false
-    },
-    "eslint": {
-      "current": "8.57.1",
-      "wanted": "8.57.1",
-      "latest": "9.33.0",
-      "updateType": "major",
       "priority": "high",
       "securityRisk": false
     },
@@ -123,9 +123,17 @@
     "immediate": [],
     "scheduled": [
       {
-        "package": "@modelcontextprotocol/server-filesystem",
-        "from": "2025.7.29",
-        "to": "2025.8.18",
+        "package": "@typescript-eslint/eslint-plugin",
+        "from": "8.39.1",
+        "to": "8.40.0",
+        "type": "minor",
+        "priority": "high",
+        "securityRisk": false
+      },
+      {
+        "package": "@typescript-eslint/parser",
+        "from": "8.39.1",
+        "to": "8.40.0",
         "type": "minor",
         "priority": "high",
         "securityRisk": false
@@ -135,14 +143,6 @@
         "from": "5.5.0",
         "to": "5.6.0",
         "type": "minor",
-        "priority": "high",
-        "securityRisk": false
-      },
-      {
-        "package": "eslint",
-        "from": "8.57.1",
-        "to": "9.33.0",
-        "type": "major",
         "priority": "high",
         "securityRisk": false
       },
