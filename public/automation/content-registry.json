@@ -27,6 +27,46 @@
       "desc": "New autonomous content",
       "createdAt": "2025-08-18T18:31:07.720Z",
       "source": "cloud-content-factory"
+    },
+    {
+      "id": "ultra-1755541869953-4yydlh",
+      "title": "Instant Digital Transformation",
+      "route": "/reports/updates/ultra-1755541869953-4yydlh",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:31:09.958Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541869954-nnbazz",
+      "title": "Ultra-Fast Lightning-fast development Insight",
+      "route": "/reports/insights/ultra-1755541869954-nnbazz",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:31:09.958Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541869955-d93aw7",
+      "title": "Ultra-Fast Guide: Ultra-fast testing frameworks",
+      "route": "/reports/guides/ultra-1755541869955-d93aw7",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:31:09.958Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541869956-qqqsg4",
+      "title": "Case Study: AI-powered automation Success",
+      "route": "/reports/cases/ultra-1755541869956-qqqsg4",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:31:09.958Z",
+      "process": "ultra-fast"
+    },
+    {
+      "id": "ultra-1755541869956-kpiaeg",
+      "title": "Pattern: Instant feedback loops Architecture",
+      "route": "/reports/patterns/ultra-1755541869956-kpiaeg",
+      "type": "ultra-fast-generated",
+      "created": "2025-08-18T18:31:09.958Z",
+      "process": "ultra-fast"
     }
   ]
 }
