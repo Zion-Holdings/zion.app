@@ -1,0 +1,19 @@
+{
+  "total": 1,
+  "success": 0,
+  "failed": 0,
+  "unknown": 0,
+  "errors": 1,
+  "results": [
+    {
+      "workflow": "test.yml",
+      "status": "error",
+      "conclusion": null,
+      "error": {
+        "message": "Bad credentials",
+        "documentation_url": "https://docs.github.com/rest",
+        "status": "401"
+      }
+    }
+  ]
+}
