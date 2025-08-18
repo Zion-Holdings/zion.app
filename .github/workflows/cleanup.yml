@@ -92,7 +92,11 @@ jobs:
                   git clean -fd
           
       - name: Commit cleanup changes
-        run:
-                "if [[ -n \"$(git status --porcelain)\" ]]; then\n  git add -A\n  git commit\
-        \ -m \"chore: cleanup old files and artifacts [skip ci]\"\n  git push\nelse\n\
-        \  echo \"No cleanup changes to commit\"\nfi\n"
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git add -A
+            git commit -m "chore: cleanup old files and artifacts [skip ci]"
+            git push
+          else
+            echo "No cleanup changes to commit"
+          fi
