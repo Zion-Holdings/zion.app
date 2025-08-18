@@ -117,6 +117,22 @@
       "route": "/404"
     },
     {
+      "file": "pages/reports/index.tsx",
+      "route": "/reports"
+    },
+    {
+      "file": "pages/news/index.tsx",
+      "route": "/news"
+    },
+    {
+      "file": "pages/tutorials/rapid-1755542533410-tptuh1.tsx",
+      "route": "/tutorials/rapid-1755542533410-tptuh1"
+    },
+    {
+      "file": "pages/tutorials/rapid-1755542531482-8w5pn2.tsx",
+      "route": "/tutorials/rapid-1755542531482-8w5pn2"
+    },
+    {
       "file": "pages/tutorials/rapid-1755542528876-nssnst.tsx",
       "route": "/tutorials/rapid-1755542528876-nssnst"
     },
@@ -929,6 +945,10 @@
       "route": "/tutorials/rapid-1755539340461-4p86xy"
     },
     {
+      "file": "pages/marketing/index.tsx",
+      "route": "/marketing"
+    },
+    {
       "file": "pages/services/simple-service-1755539184873-e6t8lfcj2.tsx",
       "route": "/services/simple-service-1755539184873-e6t8lfcj2"
     },
@@ -1287,6 +1307,14 @@
     {
       "file": "pages/services/simple-service-1755536632488-7c6l7htn7.tsx",
       "route": "/services/simple-service-1755536632488-7c6l7htn7"
+    },
+    {
+      "file": "pages/services/rapid-1755542533408-2317fy.tsx",
+      "route": "/services/rapid-1755542533408-2317fy"
+    },
+    {
+      "file": "pages/services/rapid-1755542531480-cvayqz.tsx",
+      "route": "/services/rapid-1755542531480-cvayqz"
     },
     {
       "file": "pages/services/rapid-1755542528875-8mtd3d.tsx",
@@ -2101,16 +2129,16 @@
       "route": "/services/rapid-1755539340458-6lge19"
     },
     {
-      "file": "pages/reports/index.tsx",
-      "route": "/reports"
+      "file": "pages/front/index.tsx",
+      "route": "/front"
     },
     {
-      "file": "pages/news/index.tsx",
-      "route": "/news"
+      "file": "pages/products/rapid-1755542533409-nsn4sv.tsx",
+      "route": "/products/rapid-1755542533409-nsn4sv"
     },
     {
-      "file": "pages/marketing/index.tsx",
-      "route": "/marketing"
+      "file": "pages/products/rapid-1755542531481-x09xip.tsx",
+      "route": "/products/rapid-1755542531481-x09xip"
     },
     {
       "file": "pages/products/rapid-1755542528876-h8r1wq.tsx",
@@ -2929,10 +2957,6 @@
       "route": "/explore"
     },
     {
-      "file": "pages/front/index.tsx",
-      "route": "/front"
-    },
-    {
       "file": "pages/events/index.tsx",
       "route": "/events"
     },
@@ -2977,1600 +3001,12 @@
       "route": "/reports/tutorials"
     },
     {
-      "file": "pages/reports/insights/ultra-1755542531322-2htqz8.tsx",
-      "route": "/reports/insights/ultra-1755542531322-2htqz8"
+      "file": "pages/reports/playbooks/playbook-2025-08-18-184234.tsx",
+      "route": "/reports/playbooks/playbook-2025-08-18-184234"
     },
     {
-      "file": "pages/reports/insights/ultra-1755542529246-zx0hp6.tsx",
-      "route": "/reports/insights/ultra-1755542529246-zx0hp6"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542527265-dlho6r.tsx",
-      "route": "/reports/insights/ultra-1755542527265-dlho6r"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542525308-7mh1pi.tsx",
-      "route": "/reports/insights/ultra-1755542525308-7mh1pi"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542522784-liv9l9.tsx",
-      "route": "/reports/insights/ultra-1755542522784-liv9l9"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542520623-euyugu.tsx",
-      "route": "/reports/insights/ultra-1755542520623-euyugu"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542481159-om73c5.tsx",
-      "route": "/reports/insights/ultra-1755542481159-om73c5"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542479117-biq2l2.tsx",
-      "route": "/reports/insights/ultra-1755542479117-biq2l2"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542477105-a8r1hi.tsx",
-      "route": "/reports/insights/ultra-1755542477105-a8r1hi"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542474113-gtqcpe.tsx",
-      "route": "/reports/insights/ultra-1755542474113-gtqcpe"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542471983-5vtznv.tsx",
-      "route": "/reports/insights/ultra-1755542471983-5vtznv"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542469837-tng8fl.tsx",
-      "route": "/reports/insights/ultra-1755542469837-tng8fl"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542467790-uwkcc4.tsx",
-      "route": "/reports/insights/ultra-1755542467790-uwkcc4"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542465278-1luyu8.tsx",
-      "route": "/reports/insights/ultra-1755542465278-1luyu8"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542462974-nsb72r.tsx",
-      "route": "/reports/insights/ultra-1755542462974-nsb72r"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542460545-rkkpnf.tsx",
-      "route": "/reports/insights/ultra-1755542460545-rkkpnf"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542452517-gah8ub.tsx",
-      "route": "/reports/insights/ultra-1755542452517-gah8ub"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542450331-x3x7aa.tsx",
-      "route": "/reports/insights/ultra-1755542450331-x3x7aa"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542447463-5xhmgr.tsx",
-      "route": "/reports/insights/ultra-1755542447463-5xhmgr"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542444978-1uq7gz.tsx",
-      "route": "/reports/insights/ultra-1755542444978-1uq7gz"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542442992-1upe6g.tsx",
-      "route": "/reports/insights/ultra-1755542442992-1upe6g"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542440611-3bc70s.tsx",
-      "route": "/reports/insights/ultra-1755542440611-3bc70s"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542437879-1bj7u8.tsx",
-      "route": "/reports/insights/ultra-1755542437879-1bj7u8"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542435605-4vekd5.tsx",
-      "route": "/reports/insights/ultra-1755542435605-4vekd5"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542411265-syhn7l.tsx",
-      "route": "/reports/insights/ultra-1755542411265-syhn7l"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542408995-crm4hg.tsx",
-      "route": "/reports/insights/ultra-1755542408995-crm4hg"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542405886-eztmtn.tsx",
-      "route": "/reports/insights/ultra-1755542405886-eztmtn"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542403654-bxl4x5.tsx",
-      "route": "/reports/insights/ultra-1755542403654-bxl4x5"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542401229-xpm49s.tsx",
-      "route": "/reports/insights/ultra-1755542401229-xpm49s"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542399481-zn280e.tsx",
-      "route": "/reports/insights/ultra-1755542399481-zn280e"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542397061-ryfq44.tsx",
-      "route": "/reports/insights/ultra-1755542397061-ryfq44"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542389276-2390nt.tsx",
-      "route": "/reports/insights/ultra-1755542389276-2390nt"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542383668-foqa8p.tsx",
-      "route": "/reports/insights/ultra-1755542383668-foqa8p"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542381743-xznj72.tsx",
-      "route": "/reports/insights/ultra-1755542381743-xznj72"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542378138-hdamxk.tsx",
-      "route": "/reports/insights/ultra-1755542378138-hdamxk"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542370603-75purr.tsx",
-      "route": "/reports/insights/ultra-1755542370603-75purr"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542366076-5ims0h.tsx",
-      "route": "/reports/insights/ultra-1755542366076-5ims0h"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542363941-avt0uy.tsx",
-      "route": "/reports/insights/ultra-1755542363941-avt0uy"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542361952-x4elno.tsx",
-      "route": "/reports/insights/ultra-1755542361952-x4elno"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542359869-c4keu5.tsx",
-      "route": "/reports/insights/ultra-1755542359869-c4keu5"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542357783-c0k1g4.tsx",
-      "route": "/reports/insights/ultra-1755542357783-c0k1g4"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542355087-zk34fk.tsx",
-      "route": "/reports/insights/ultra-1755542355087-zk34fk"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542352777-btbk3d.tsx",
-      "route": "/reports/insights/ultra-1755542352777-btbk3d"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542347558-05jpwl.tsx",
-      "route": "/reports/insights/ultra-1755542347558-05jpwl"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542342444-0rnz3c.tsx",
-      "route": "/reports/insights/ultra-1755542342444-0rnz3c"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542340477-7qehm9.tsx",
-      "route": "/reports/insights/ultra-1755542340477-7qehm9"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542327574-w0vme2.tsx",
-      "route": "/reports/insights/ultra-1755542327574-w0vme2"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542325510-upni7v.tsx",
-      "route": "/reports/insights/ultra-1755542325510-upni7v"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542323600-w2g5ve.tsx",
-      "route": "/reports/insights/ultra-1755542323600-w2g5ve"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542321587-tp80mt.tsx",
-      "route": "/reports/insights/ultra-1755542321587-tp80mt"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542319538-xoe0ce.tsx",
-      "route": "/reports/insights/ultra-1755542319538-xoe0ce"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542316939-4hkymk.tsx",
-      "route": "/reports/insights/ultra-1755542316939-4hkymk"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542314584-z508ii.tsx",
-      "route": "/reports/insights/ultra-1755542314584-z508ii"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542294746-udndnb.tsx",
-      "route": "/reports/insights/ultra-1755542294746-udndnb"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542292795-4gf7ns.tsx",
-      "route": "/reports/insights/ultra-1755542292795-4gf7ns"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542290775-4dcfgj.tsx",
-      "route": "/reports/insights/ultra-1755542290775-4dcfgj"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542288828-1bwv8t.tsx",
-      "route": "/reports/insights/ultra-1755542288828-1bwv8t"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542286172-ryx11q.tsx",
-      "route": "/reports/insights/ultra-1755542286172-ryx11q"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542283967-3wa7q5.tsx",
-      "route": "/reports/insights/ultra-1755542283967-3wa7q5"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542280978-cd5gho.tsx",
-      "route": "/reports/insights/ultra-1755542280978-cd5gho"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542274454-yu9h3b.tsx",
-      "route": "/reports/insights/ultra-1755542274454-yu9h3b"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542272533-1zygrl.tsx",
-      "route": "/reports/insights/ultra-1755542272533-1zygrl"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542265647-7slxr7.tsx",
-      "route": "/reports/insights/ultra-1755542265647-7slxr7"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542263544-gxgiug.tsx",
-      "route": "/reports/insights/ultra-1755542263544-gxgiug"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542261140-19hvu5.tsx",
-      "route": "/reports/insights/ultra-1755542261140-19hvu5"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542258279-ebzs8p.tsx",
-      "route": "/reports/insights/ultra-1755542258279-ebzs8p"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542255783-bd4h65.tsx",
-      "route": "/reports/insights/ultra-1755542255783-bd4h65"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542254068-gjbzrv.tsx",
-      "route": "/reports/insights/ultra-1755542254068-gjbzrv"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542236962-kxxh5v.tsx",
-      "route": "/reports/insights/ultra-1755542236962-kxxh5v"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542229002-gm1a97.tsx",
-      "route": "/reports/insights/ultra-1755542229002-gm1a97"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542225418-82tky6.tsx",
-      "route": "/reports/insights/ultra-1755542225418-82tky6"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542220959-o14jju.tsx",
-      "route": "/reports/insights/ultra-1755542220959-o14jju"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542216527-hlgkga.tsx",
-      "route": "/reports/insights/ultra-1755542216527-hlgkga"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542214332-qy1iib.tsx",
-      "route": "/reports/insights/ultra-1755542214332-qy1iib"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542212458-fb6p3o.tsx",
-      "route": "/reports/insights/ultra-1755542212458-fb6p3o"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542144621-k6jtqh.tsx",
-      "route": "/reports/insights/ultra-1755542144621-k6jtqh"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542139726-4xz30k.tsx",
-      "route": "/reports/insights/ultra-1755542139726-4xz30k"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542132924-e8x3zn.tsx",
-      "route": "/reports/insights/ultra-1755542132924-e8x3zn"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542130689-m17m48.tsx",
-      "route": "/reports/insights/ultra-1755542130689-m17m48"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542129964-25jw97.tsx",
-      "route": "/reports/insights/ultra-1755542129964-25jw97"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542125701-spvmwt.tsx",
-      "route": "/reports/insights/ultra-1755542125701-spvmwt"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542121739-cagean.tsx",
-      "route": "/reports/insights/ultra-1755542121739-cagean"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542111721-rrhmyu.tsx",
-      "route": "/reports/insights/ultra-1755542111721-rrhmyu"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542109371-lv6wsf.tsx",
-      "route": "/reports/insights/ultra-1755542109371-lv6wsf"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542107132-m5ywyv.tsx",
-      "route": "/reports/insights/ultra-1755542107132-m5ywyv"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542105202-xiznp0.tsx",
-      "route": "/reports/insights/ultra-1755542105202-xiznp0"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542103174-4m3xg3.tsx",
-      "route": "/reports/insights/ultra-1755542103174-4m3xg3"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542101002-59ctam.tsx",
-      "route": "/reports/insights/ultra-1755542101002-59ctam"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542087693-ns4z8k.tsx",
-      "route": "/reports/insights/ultra-1755542087693-ns4z8k"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542085609-o7q0ex.tsx",
-      "route": "/reports/insights/ultra-1755542085609-o7q0ex"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542083691-asdobe.tsx",
-      "route": "/reports/insights/ultra-1755542083691-asdobe"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542081647-zoxzs5.tsx",
-      "route": "/reports/insights/ultra-1755542081647-zoxzs5"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542079740-vork26.tsx",
-      "route": "/reports/insights/ultra-1755542079740-vork26"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542077262-ikqlvf.tsx",
-      "route": "/reports/insights/ultra-1755542077262-ikqlvf"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542074726-mi01ys.tsx",
-      "route": "/reports/insights/ultra-1755542074726-mi01ys"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542072609-t3tgwm.tsx",
-      "route": "/reports/insights/ultra-1755542072609-t3tgwm"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542070695-5nyk9d.tsx",
-      "route": "/reports/insights/ultra-1755542070695-5nyk9d"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542068570-k6qa47.tsx",
-      "route": "/reports/insights/ultra-1755542068570-k6qa47"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542066739-v2quj1.tsx",
-      "route": "/reports/insights/ultra-1755542066739-v2quj1"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542064958-sa7f8f.tsx",
-      "route": "/reports/insights/ultra-1755542064958-sa7f8f"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542060903-gsrjvz.tsx",
-      "route": "/reports/insights/ultra-1755542060903-gsrjvz"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542058011-sqdejx.tsx",
-      "route": "/reports/insights/ultra-1755542058011-sqdejx"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542055517-a5lxc6.tsx",
-      "route": "/reports/insights/ultra-1755542055517-a5lxc6"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542053137-0j0oxx.tsx",
-      "route": "/reports/insights/ultra-1755542053137-0j0oxx"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542051134-rdeipw.tsx",
-      "route": "/reports/insights/ultra-1755542051134-rdeipw"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542049217-i3ldd5.tsx",
-      "route": "/reports/insights/ultra-1755542049217-i3ldd5"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542047194-g181sr.tsx",
-      "route": "/reports/insights/ultra-1755542047194-g181sr"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542045176-wxa64i.tsx",
-      "route": "/reports/insights/ultra-1755542045176-wxa64i"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542043098-hffdao.tsx",
-      "route": "/reports/insights/ultra-1755542043098-hffdao"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542036869-frwybu.tsx",
-      "route": "/reports/insights/ultra-1755542036869-frwybu"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542031971-peyp5l.tsx",
-      "route": "/reports/insights/ultra-1755542031971-peyp5l"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542027388-fbufxx.tsx",
-      "route": "/reports/insights/ultra-1755542027388-fbufxx"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542025543-eggnb4.tsx",
-      "route": "/reports/insights/ultra-1755542025543-eggnb4"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542023247-7exeh7.tsx",
-      "route": "/reports/insights/ultra-1755542023247-7exeh7"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542018113-x9r34p.tsx",
-      "route": "/reports/insights/ultra-1755542018113-x9r34p"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542015884-o6smk0.tsx",
-      "route": "/reports/insights/ultra-1755542015884-o6smk0"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542013761-kkf1s0.tsx",
-      "route": "/reports/insights/ultra-1755542013761-kkf1s0"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755542011200-4c8r6q.tsx",
-      "route": "/reports/insights/ultra-1755542011200-4c8r6q"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541940822-t3t83w.tsx",
-      "route": "/reports/insights/ultra-1755541940822-t3t83w"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541937880-6zxuvs.tsx",
-      "route": "/reports/insights/ultra-1755541937880-6zxuvs"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541931960-uoz55a.tsx",
-      "route": "/reports/insights/ultra-1755541931960-uoz55a"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541929467-qefald.tsx",
-      "route": "/reports/insights/ultra-1755541929467-qefald"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541925593-6dbvj6.tsx",
-      "route": "/reports/insights/ultra-1755541925593-6dbvj6"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541923567-gmr4c6.tsx",
-      "route": "/reports/insights/ultra-1755541923567-gmr4c6"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541921323-wzc5lh.tsx",
-      "route": "/reports/insights/ultra-1755541921323-wzc5lh"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541918369-6vn2ei.tsx",
-      "route": "/reports/insights/ultra-1755541918369-6vn2ei"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541916222-pvz4sz.tsx",
-      "route": "/reports/insights/ultra-1755541916222-pvz4sz"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541912101-28x1wj.tsx",
-      "route": "/reports/insights/ultra-1755541912101-28x1wj"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541907418-u2k054.tsx",
-      "route": "/reports/insights/ultra-1755541907418-u2k054"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541905291-44yb6c.tsx",
-      "route": "/reports/insights/ultra-1755541905291-44yb6c"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541899530-lrwkbg.tsx",
-      "route": "/reports/insights/ultra-1755541899530-lrwkbg"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541893669-as2tsb.tsx",
-      "route": "/reports/insights/ultra-1755541893669-as2tsb"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541891006-tmxvbi.tsx",
-      "route": "/reports/insights/ultra-1755541891006-tmxvbi"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541886299-nb6am7.tsx",
-      "route": "/reports/insights/ultra-1755541886299-nb6am7"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541883895-0knbrr.tsx",
-      "route": "/reports/insights/ultra-1755541883895-0knbrr"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541881682-8546sr.tsx",
-      "route": "/reports/insights/ultra-1755541881682-8546sr"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541874229-uozuna.tsx",
-      "route": "/reports/insights/ultra-1755541874229-uozuna"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541869954-nnbazz.tsx",
-      "route": "/reports/insights/ultra-1755541869954-nnbazz"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541866159-clzq0z.tsx",
-      "route": "/reports/insights/ultra-1755541866159-clzq0z"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541863755-c7vyob.tsx",
-      "route": "/reports/insights/ultra-1755541863755-c7vyob"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541860771-rlgsvn.tsx",
-      "route": "/reports/insights/ultra-1755541860771-rlgsvn"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541833179-mobrx1.tsx",
-      "route": "/reports/insights/ultra-1755541833179-mobrx1"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541830693-57cp4a.tsx",
-      "route": "/reports/insights/ultra-1755541830693-57cp4a"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541829821-73n5zq.tsx",
-      "route": "/reports/insights/ultra-1755541829821-73n5zq"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541827602-objuhn.tsx",
-      "route": "/reports/insights/ultra-1755541827602-objuhn"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541822023-qngpux.tsx",
-      "route": "/reports/insights/ultra-1755541822023-qngpux"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541819325-1cflnv.tsx",
-      "route": "/reports/insights/ultra-1755541819325-1cflnv"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541813605-6ttczt.tsx",
-      "route": "/reports/insights/ultra-1755541813605-6ttczt"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541811525-jjiiuk.tsx",
-      "route": "/reports/insights/ultra-1755541811525-jjiiuk"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541808962-ain2i2.tsx",
-      "route": "/reports/insights/ultra-1755541808962-ain2i2"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541804092-u7enyt.tsx",
-      "route": "/reports/insights/ultra-1755541804092-u7enyt"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541801792-npmzs1.tsx",
-      "route": "/reports/insights/ultra-1755541801792-npmzs1"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541796217-gentoh.tsx",
-      "route": "/reports/insights/ultra-1755541796217-gentoh"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541791524-q35ubc.tsx",
-      "route": "/reports/insights/ultra-1755541791524-q35ubc"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541788366-cqyttz.tsx",
-      "route": "/reports/insights/ultra-1755541788366-cqyttz"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541784313-ah57m3.tsx",
-      "route": "/reports/insights/ultra-1755541784313-ah57m3"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541781770-wqc5xz.tsx",
-      "route": "/reports/insights/ultra-1755541781770-wqc5xz"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541779076-wbfsw5.tsx",
-      "route": "/reports/insights/ultra-1755541779076-wbfsw5"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541761861-7i5yrs.tsx",
-      "route": "/reports/insights/ultra-1755541761861-7i5yrs"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541758618-erunei.tsx",
-      "route": "/reports/insights/ultra-1755541758618-erunei"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541756483-ivck29.tsx",
-      "route": "/reports/insights/ultra-1755541756483-ivck29"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541752743-9emqsq.tsx",
-      "route": "/reports/insights/ultra-1755541752743-9emqsq"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541750608-w4lsgj.tsx",
-      "route": "/reports/insights/ultra-1755541750608-w4lsgj"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541748136-5eusqg.tsx",
-      "route": "/reports/insights/ultra-1755541748136-5eusqg"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541746006-ytu50h.tsx",
-      "route": "/reports/insights/ultra-1755541746006-ytu50h"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541743732-gebq97.tsx",
-      "route": "/reports/insights/ultra-1755541743732-gebq97"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541733724-9hz1ee.tsx",
-      "route": "/reports/insights/ultra-1755541733724-9hz1ee"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541726303-8zrhp3.tsx",
-      "route": "/reports/insights/ultra-1755541726303-8zrhp3"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541723770-dudxy3.tsx",
-      "route": "/reports/insights/ultra-1755541723770-dudxy3"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541718538-brbnje.tsx",
-      "route": "/reports/insights/ultra-1755541718538-brbnje"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541716557-xs2gh5.tsx",
-      "route": "/reports/insights/ultra-1755541716557-xs2gh5"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541712955-ra3mgu.tsx",
-      "route": "/reports/insights/ultra-1755541712955-ra3mgu"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541710667-kmpsct.tsx",
-      "route": "/reports/insights/ultra-1755541710667-kmpsct"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541701998-2uk7gw.tsx",
-      "route": "/reports/insights/ultra-1755541701998-2uk7gw"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541699781-n0ru1n.tsx",
-      "route": "/reports/insights/ultra-1755541699781-n0ru1n"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541697596-id3m67.tsx",
-      "route": "/reports/insights/ultra-1755541697596-id3m67"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541681164-ukaktp.tsx",
-      "route": "/reports/insights/ultra-1755541681164-ukaktp"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541677276-72e0yo.tsx",
-      "route": "/reports/insights/ultra-1755541677276-72e0yo"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541668960-gai4qf.tsx",
-      "route": "/reports/insights/ultra-1755541668960-gai4qf"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541665505-w4gvea.tsx",
-      "route": "/reports/insights/ultra-1755541665505-w4gvea"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541659947-l7f6cc.tsx",
-      "route": "/reports/insights/ultra-1755541659947-l7f6cc"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541647049-yxsffj.tsx",
-      "route": "/reports/insights/ultra-1755541647049-yxsffj"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541645066-k6a4d8.tsx",
-      "route": "/reports/insights/ultra-1755541645066-k6a4d8"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541641486-k76mhd.tsx",
-      "route": "/reports/insights/ultra-1755541641486-k76mhd"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541638996-bjz2ij.tsx",
-      "route": "/reports/insights/ultra-1755541638996-bjz2ij"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541636678-lqp5sg.tsx",
-      "route": "/reports/insights/ultra-1755541636678-lqp5sg"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541634536-jan6zo.tsx",
-      "route": "/reports/insights/ultra-1755541634536-jan6zo"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541632242-5dkq1n.tsx",
-      "route": "/reports/insights/ultra-1755541632242-5dkq1n"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541630200-0ulub4.tsx",
-      "route": "/reports/insights/ultra-1755541630200-0ulub4"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541627127-wqbiyq.tsx",
-      "route": "/reports/insights/ultra-1755541627127-wqbiyq"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541625193-wbnsux.tsx",
-      "route": "/reports/insights/ultra-1755541625193-wbnsux"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541622507-ov3us2.tsx",
-      "route": "/reports/insights/ultra-1755541622507-ov3us2"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541620400-lfyedd.tsx",
-      "route": "/reports/insights/ultra-1755541620400-lfyedd"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541615565-y8q61y.tsx",
-      "route": "/reports/insights/ultra-1755541615565-y8q61y"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541580987-vdko0m.tsx",
-      "route": "/reports/insights/ultra-1755541580987-vdko0m"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541577623-91qb4g.tsx",
-      "route": "/reports/insights/ultra-1755541577623-91qb4g"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541575599-xqhcmf.tsx",
-      "route": "/reports/insights/ultra-1755541575599-xqhcmf"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541573587-vr4tc4.tsx",
-      "route": "/reports/insights/ultra-1755541573587-vr4tc4"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541571677-bx6maf.tsx",
-      "route": "/reports/insights/ultra-1755541571677-bx6maf"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541569723-ov4y1w.tsx",
-      "route": "/reports/insights/ultra-1755541569723-ov4y1w"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541567602-j89txz.tsx",
-      "route": "/reports/insights/ultra-1755541567602-j89txz"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541565176-6hi1ou.tsx",
-      "route": "/reports/insights/ultra-1755541565176-6hi1ou"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541562653-jd13c1.tsx",
-      "route": "/reports/insights/ultra-1755541562653-jd13c1"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541560533-rg6mwl.tsx",
-      "route": "/reports/insights/ultra-1755541560533-rg6mwl"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541547379-y9gp4n.tsx",
-      "route": "/reports/insights/ultra-1755541547379-y9gp4n"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541545420-vmklsj.tsx",
-      "route": "/reports/insights/ultra-1755541545420-vmklsj"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541543395-nuixgi.tsx",
-      "route": "/reports/insights/ultra-1755541543395-nuixgi"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541541324-ta0mke.tsx",
-      "route": "/reports/insights/ultra-1755541541324-ta0mke"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541539471-0eb05y.tsx",
-      "route": "/reports/insights/ultra-1755541539471-0eb05y"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541537482-23p0p9.tsx",
-      "route": "/reports/insights/ultra-1755541537482-23p0p9"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541535321-u1namw.tsx",
-      "route": "/reports/insights/ultra-1755541535321-u1namw"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541533105-4gfaep.tsx",
-      "route": "/reports/insights/ultra-1755541533105-4gfaep"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541531167-trx14d.tsx",
-      "route": "/reports/insights/ultra-1755541531167-trx14d"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541528358-07wge9.tsx",
-      "route": "/reports/insights/ultra-1755541528358-07wge9"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541526103-x8ug89.tsx",
-      "route": "/reports/insights/ultra-1755541526103-x8ug89"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541519929-ohiskf.tsx",
-      "route": "/reports/insights/ultra-1755541519929-ohiskf"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541518011-2f905j.tsx",
-      "route": "/reports/insights/ultra-1755541518011-2f905j"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541516057-q9vfow.tsx",
-      "route": "/reports/insights/ultra-1755541516057-q9vfow"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541514150-6lkk5i.tsx",
-      "route": "/reports/insights/ultra-1755541514150-6lkk5i"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541512227-t6s853.tsx",
-      "route": "/reports/insights/ultra-1755541512227-t6s853"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541510326-qz0e6q.tsx",
-      "route": "/reports/insights/ultra-1755541510326-qz0e6q"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541508432-r8iyga.tsx",
-      "route": "/reports/insights/ultra-1755541508432-r8iyga"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541506414-zeah05.tsx",
-      "route": "/reports/insights/ultra-1755541506414-zeah05"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541503682-a9vjc0.tsx",
-      "route": "/reports/insights/ultra-1755541503682-a9vjc0"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541500833-0zvblx.tsx",
-      "route": "/reports/insights/ultra-1755541500833-0zvblx"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541482391-p4749r.tsx",
-      "route": "/reports/insights/ultra-1755541482391-p4749r"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541480456-hk7ece.tsx",
-      "route": "/reports/insights/ultra-1755541480456-hk7ece"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541478586-w80tfj.tsx",
-      "route": "/reports/insights/ultra-1755541478586-w80tfj"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541476101-ejmqd5.tsx",
-      "route": "/reports/insights/ultra-1755541476101-ejmqd5"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541470772-3y5rmm.tsx",
-      "route": "/reports/insights/ultra-1755541470772-3y5rmm"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541468058-19ho97.tsx",
-      "route": "/reports/insights/ultra-1755541468058-19ho97"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541464670-bn1rjg.tsx",
-      "route": "/reports/insights/ultra-1755541464670-bn1rjg"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541461417-jjphxj.tsx",
-      "route": "/reports/insights/ultra-1755541461417-jjphxj"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541456334-herc7k.tsx",
-      "route": "/reports/insights/ultra-1755541456334-herc7k"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541451199-modjnq.tsx",
-      "route": "/reports/insights/ultra-1755541451199-modjnq"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541445849-8ylxpk.tsx",
-      "route": "/reports/insights/ultra-1755541445849-8ylxpk"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541443629-6aht9i.tsx",
-      "route": "/reports/insights/ultra-1755541443629-6aht9i"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541440866-p3go41.tsx",
-      "route": "/reports/insights/ultra-1755541440866-p3go41"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541411419-bjneps.tsx",
-      "route": "/reports/insights/ultra-1755541411419-bjneps"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541406256-bvjuzt.tsx",
-      "route": "/reports/insights/ultra-1755541406256-bvjuzt"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541403847-j1h09z.tsx",
-      "route": "/reports/insights/ultra-1755541403847-j1h09z"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541401857-6jnygl.tsx",
-      "route": "/reports/insights/ultra-1755541401857-6jnygl"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541399535-hf8hoq.tsx",
-      "route": "/reports/insights/ultra-1755541399535-hf8hoq"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541392021-l47bgy.tsx",
-      "route": "/reports/insights/ultra-1755541392021-l47bgy"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541373480-n96wbc.tsx",
-      "route": "/reports/insights/ultra-1755541373480-n96wbc"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541368702-pbiqii.tsx",
-      "route": "/reports/insights/ultra-1755541368702-pbiqii"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541359857-u04t7r.tsx",
-      "route": "/reports/insights/ultra-1755541359857-u04t7r"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541357678-ul0j3q.tsx",
-      "route": "/reports/insights/ultra-1755541357678-ul0j3q"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541350775-1rmdkp.tsx",
-      "route": "/reports/insights/ultra-1755541350775-1rmdkp"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541349924-5fauym.tsx",
-      "route": "/reports/insights/ultra-1755541349924-5fauym"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541345771-z9r6y2.tsx",
-      "route": "/reports/insights/ultra-1755541345771-z9r6y2"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541342526-bqb439.tsx",
-      "route": "/reports/insights/ultra-1755541342526-bqb439"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541337201-vrv72x.tsx",
-      "route": "/reports/insights/ultra-1755541337201-vrv72x"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541334912-yfens2.tsx",
-      "route": "/reports/insights/ultra-1755541334912-yfens2"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541332335-f9n4ng.tsx",
-      "route": "/reports/insights/ultra-1755541332335-f9n4ng"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541322341-ewk87u.tsx",
-      "route": "/reports/insights/ultra-1755541322341-ewk87u"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541317160-u56h4d.tsx",
-      "route": "/reports/insights/ultra-1755541317160-u56h4d"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541311333-u6acuj.tsx",
-      "route": "/reports/insights/ultra-1755541311333-u6acuj"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541307871-fswlkb.tsx",
-      "route": "/reports/insights/ultra-1755541307871-fswlkb"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541304252-wrjjci.tsx",
-      "route": "/reports/insights/ultra-1755541304252-wrjjci"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541298657-hn0j13.tsx",
-      "route": "/reports/insights/ultra-1755541298657-hn0j13"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541290891-nvxj9v.tsx",
-      "route": "/reports/insights/ultra-1755541290891-nvxj9v"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541288870-l0rd40.tsx",
-      "route": "/reports/insights/ultra-1755541288870-l0rd40"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541286372-v93j1k.tsx",
-      "route": "/reports/insights/ultra-1755541286372-v93j1k"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541282007-x0encu.tsx",
-      "route": "/reports/insights/ultra-1755541282007-x0encu"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541280186-jn1gwp.tsx",
-      "route": "/reports/insights/ultra-1755541280186-jn1gwp"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541272186-53nhnn.tsx",
-      "route": "/reports/insights/ultra-1755541272186-53nhnn"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541264293-dyogy7.tsx",
-      "route": "/reports/insights/ultra-1755541264293-dyogy7"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541261391-lg8uui.tsx",
-      "route": "/reports/insights/ultra-1755541261391-lg8uui"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541233687-bymhas.tsx",
-      "route": "/reports/insights/ultra-1755541233687-bymhas"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541231248-neca74.tsx",
-      "route": "/reports/insights/ultra-1755541231248-neca74"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541226554-upsxxx.tsx",
-      "route": "/reports/insights/ultra-1755541226554-upsxxx"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541224044-zdadb9.tsx",
-      "route": "/reports/insights/ultra-1755541224044-zdadb9"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541208626-j83j1k.tsx",
-      "route": "/reports/insights/ultra-1755541208626-j83j1k"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541206280-w49xli.tsx",
-      "route": "/reports/insights/ultra-1755541206280-w49xli"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541201971-dn9ukf.tsx",
-      "route": "/reports/insights/ultra-1755541201971-dn9ukf"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541194142-6jnawb.tsx",
-      "route": "/reports/insights/ultra-1755541194142-6jnawb"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541190088-zejza1.tsx",
-      "route": "/reports/insights/ultra-1755541190088-zejza1"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541186780-t5tvu0.tsx",
-      "route": "/reports/insights/ultra-1755541186780-t5tvu0"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541180129-vxi87e.tsx",
-      "route": "/reports/insights/ultra-1755541180129-vxi87e"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541176218-s3w16z.tsx",
-      "route": "/reports/insights/ultra-1755541176218-s3w16z"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541171384-o27yrz.tsx",
-      "route": "/reports/insights/ultra-1755541171384-o27yrz"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541166422-f2dzkw.tsx",
-      "route": "/reports/insights/ultra-1755541166422-f2dzkw"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541163460-suftwa.tsx",
-      "route": "/reports/insights/ultra-1755541163460-suftwa"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541158378-15sf9z.tsx",
-      "route": "/reports/insights/ultra-1755541158378-15sf9z"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541153584-y66joz.tsx",
-      "route": "/reports/insights/ultra-1755541153584-y66joz"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541150652-xrf647.tsx",
-      "route": "/reports/insights/ultra-1755541150652-xrf647"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541146303-lhigjo.tsx",
-      "route": "/reports/insights/ultra-1755541146303-lhigjo"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541144094-41d6tu.tsx",
-      "route": "/reports/insights/ultra-1755541144094-41d6tu"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541141360-shke5c.tsx",
-      "route": "/reports/insights/ultra-1755541141360-shke5c"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541136286-hvuydx.tsx",
-      "route": "/reports/insights/ultra-1755541136286-hvuydx"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541131824-idgl9u.tsx",
-      "route": "/reports/insights/ultra-1755541131824-idgl9u"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541128786-5v0utg.tsx",
-      "route": "/reports/insights/ultra-1755541128786-5v0utg"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541126634-tdbm7m.tsx",
-      "route": "/reports/insights/ultra-1755541126634-tdbm7m"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541124550-k0d4h0.tsx",
-      "route": "/reports/insights/ultra-1755541124550-k0d4h0"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541122540-ew35vw.tsx",
-      "route": "/reports/insights/ultra-1755541122540-ew35vw"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755541120191-u40ws2.tsx",
-      "route": "/reports/insights/ultra-1755541120191-u40ws2"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755540161769-krag17.tsx",
-      "route": "/reports/insights/ultra-1755540161769-krag17"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755540156407-1q2lkz.tsx",
-      "route": "/reports/insights/ultra-1755540156407-1q2lkz"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755540150872-zhla4b.tsx",
-      "route": "/reports/insights/ultra-1755540150872-zhla4b"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755540146119-6mdbsa.tsx",
-      "route": "/reports/insights/ultra-1755540146119-6mdbsa"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755540110050-je7we3.tsx",
-      "route": "/reports/insights/ultra-1755540110050-je7we3"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755540105884-3dossr.tsx",
-      "route": "/reports/insights/ultra-1755540105884-3dossr"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755540099887-ejzt2w.tsx",
-      "route": "/reports/insights/ultra-1755540099887-ejzt2w"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539790794-8k9krn.tsx",
-      "route": "/reports/insights/ultra-1755539790794-8k9krn"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539789829-bgm0z7.tsx",
-      "route": "/reports/insights/ultra-1755539789829-bgm0z7"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539785621-oehsqd.tsx",
-      "route": "/reports/insights/ultra-1755539785621-oehsqd"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539780365-e4ldps.tsx",
-      "route": "/reports/insights/ultra-1755539780365-e4ldps"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539776168-722bdi.tsx",
-      "route": "/reports/insights/ultra-1755539776168-722bdi"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539771201-l2576g.tsx",
-      "route": "/reports/insights/ultra-1755539771201-l2576g"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539766120-1y0dum.tsx",
-      "route": "/reports/insights/ultra-1755539766120-1y0dum"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539761205-lorl7r.tsx",
-      "route": "/reports/insights/ultra-1755539761205-lorl7r"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539758001-8l2ghv.tsx",
-      "route": "/reports/insights/ultra-1755539758001-8l2ghv"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539753126-27nvqx.tsx",
-      "route": "/reports/insights/ultra-1755539753126-27nvqx"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539749116-rcj74k.tsx",
-      "route": "/reports/insights/ultra-1755539749116-rcj74k"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539744940-zgv66t.tsx",
-      "route": "/reports/insights/ultra-1755539744940-zgv66t"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539741684-2k2ahv.tsx",
-      "route": "/reports/insights/ultra-1755539741684-2k2ahv"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539737923-scnuyj.tsx",
-      "route": "/reports/insights/ultra-1755539737923-scnuyj"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539734216-4e9jmt.tsx",
-      "route": "/reports/insights/ultra-1755539734216-4e9jmt"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539730560-bwm9f2.tsx",
-      "route": "/reports/insights/ultra-1755539730560-bwm9f2"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539726815-ffny3t.tsx",
-      "route": "/reports/insights/ultra-1755539726815-ffny3t"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539723512-2zre3j.tsx",
-      "route": "/reports/insights/ultra-1755539723512-2zre3j"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539719118-e6e098.tsx",
-      "route": "/reports/insights/ultra-1755539719118-e6e098"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539714418-nwt2nw.tsx",
-      "route": "/reports/insights/ultra-1755539714418-nwt2nw"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539710681-6sufpk.tsx",
-      "route": "/reports/insights/ultra-1755539710681-6sufpk"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539705562-t4sivh.tsx",
-      "route": "/reports/insights/ultra-1755539705562-t4sivh"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539700960-kfbrjh.tsx",
-      "route": "/reports/insights/ultra-1755539700960-kfbrjh"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539697768-rrlxnb.tsx",
-      "route": "/reports/insights/ultra-1755539697768-rrlxnb"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539693654-bsdniq.tsx",
-      "route": "/reports/insights/ultra-1755539693654-bsdniq"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539691489-if0f45.tsx",
-      "route": "/reports/insights/ultra-1755539691489-if0f45"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539687763-ydmyf5.tsx",
-      "route": "/reports/insights/ultra-1755539687763-ydmyf5"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539684691-pdj6y7.tsx",
-      "route": "/reports/insights/ultra-1755539684691-pdj6y7"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539681700-fnnjm1.tsx",
-      "route": "/reports/insights/ultra-1755539681700-fnnjm1"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539678615-synk2a.tsx",
-      "route": "/reports/insights/ultra-1755539678615-synk2a"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539675950-xriwwd.tsx",
-      "route": "/reports/insights/ultra-1755539675950-xriwwd"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539673560-bw7tzb.tsx",
-      "route": "/reports/insights/ultra-1755539673560-bw7tzb"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539670525-v15tcr.tsx",
-      "route": "/reports/insights/ultra-1755539670525-v15tcr"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539667414-lvx7ip.tsx",
-      "route": "/reports/insights/ultra-1755539667414-lvx7ip"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539663971-hisbtt.tsx",
-      "route": "/reports/insights/ultra-1755539663971-hisbtt"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539660373-uz0ipe.tsx",
-      "route": "/reports/insights/ultra-1755539660373-uz0ipe"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539656265-kmp86x.tsx",
-      "route": "/reports/insights/ultra-1755539656265-kmp86x"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539652686-z5ffya.tsx",
-      "route": "/reports/insights/ultra-1755539652686-z5ffya"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539648917-og8lwl.tsx",
-      "route": "/reports/insights/ultra-1755539648917-og8lwl"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539645242-yer5cg.tsx",
-      "route": "/reports/insights/ultra-1755539645242-yer5cg"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539641198-i3otsg.tsx",
-      "route": "/reports/insights/ultra-1755539641198-i3otsg"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539638054-aucyx1.tsx",
-      "route": "/reports/insights/ultra-1755539638054-aucyx1"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539634913-w3qrl6.tsx",
-      "route": "/reports/insights/ultra-1755539634913-w3qrl6"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539631422-u72yx6.tsx",
-      "route": "/reports/insights/ultra-1755539631422-u72yx6"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539628013-82axpg.tsx",
-      "route": "/reports/insights/ultra-1755539628013-82axpg"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539623030-jgcokv.tsx",
-      "route": "/reports/insights/ultra-1755539623030-jgcokv"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539618142-we38xh.tsx",
-      "route": "/reports/insights/ultra-1755539618142-we38xh"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539614502-mhdcmw.tsx",
-      "route": "/reports/insights/ultra-1755539614502-mhdcmw"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539610683-urco4i.tsx",
-      "route": "/reports/insights/ultra-1755539610683-urco4i"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539606319-0jvaco.tsx",
-      "route": "/reports/insights/ultra-1755539606319-0jvaco"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539601813-kyvhdu.tsx",
-      "route": "/reports/insights/ultra-1755539601813-kyvhdu"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539597147-1z9084.tsx",
-      "route": "/reports/insights/ultra-1755539597147-1z9084"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539593448-f45cs3.tsx",
-      "route": "/reports/insights/ultra-1755539593448-f45cs3"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539590157-wbcco7.tsx",
-      "route": "/reports/insights/ultra-1755539590157-wbcco7"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539586215-xkedaw.tsx",
-      "route": "/reports/insights/ultra-1755539586215-xkedaw"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539581048-1ax4on.tsx",
-      "route": "/reports/insights/ultra-1755539581048-1ax4on"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539579917-s1ck6y.tsx",
-      "route": "/reports/insights/ultra-1755539579917-s1ck6y"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539575817-8yxund.tsx",
-      "route": "/reports/insights/ultra-1755539575817-8yxund"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539572563-po0aez.tsx",
-      "route": "/reports/insights/ultra-1755539572563-po0aez"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539569418-nk7jhv.tsx",
-      "route": "/reports/insights/ultra-1755539569418-nk7jhv"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539565967-7yaokj.tsx",
-      "route": "/reports/insights/ultra-1755539565967-7yaokj"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539563150-oxbgun.tsx",
-      "route": "/reports/insights/ultra-1755539563150-oxbgun"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539558952-0hb498.tsx",
-      "route": "/reports/insights/ultra-1755539558952-0hb498"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539554980-4yn2o3.tsx",
-      "route": "/reports/insights/ultra-1755539554980-4yn2o3"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539550612-n2kllv.tsx",
-      "route": "/reports/insights/ultra-1755539550612-n2kllv"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539546483-iviltx.tsx",
-      "route": "/reports/insights/ultra-1755539546483-iviltx"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539542586-5p15av.tsx",
-      "route": "/reports/insights/ultra-1755539542586-5p15av"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539537785-prrj3k.tsx",
-      "route": "/reports/insights/ultra-1755539537785-prrj3k"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539532984-tfvqpr.tsx",
-      "route": "/reports/insights/ultra-1755539532984-tfvqpr"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539529603-1k2309.tsx",
-      "route": "/reports/insights/ultra-1755539529603-1k2309"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539525517-2da882.tsx",
-      "route": "/reports/insights/ultra-1755539525517-2da882"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539521552-y8d93w.tsx",
-      "route": "/reports/insights/ultra-1755539521552-y8d93w"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539518590-x4wp07.tsx",
-      "route": "/reports/insights/ultra-1755539518590-x4wp07"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539514677-ix2p15.tsx",
-      "route": "/reports/insights/ultra-1755539514677-ix2p15"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539509771-s7kxrg.tsx",
-      "route": "/reports/insights/ultra-1755539509771-s7kxrg"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539506103-em0uco.tsx",
-      "route": "/reports/insights/ultra-1755539506103-em0uco"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539502018-msn7pp.tsx",
-      "route": "/reports/insights/ultra-1755539502018-msn7pp"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539498111-l2wdny.tsx",
-      "route": "/reports/insights/ultra-1755539498111-l2wdny"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539493780-eydprs.tsx",
-      "route": "/reports/insights/ultra-1755539493780-eydprs"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539490506-5ineiw.tsx",
-      "route": "/reports/insights/ultra-1755539490506-5ineiw"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539485465-ixdaki.tsx",
-      "route": "/reports/insights/ultra-1755539485465-ixdaki"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539482285-dbb2b5.tsx",
-      "route": "/reports/insights/ultra-1755539482285-dbb2b5"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539478407-ty8jke.tsx",
-      "route": "/reports/insights/ultra-1755539478407-ty8jke"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539473298-klokdx.tsx",
-      "route": "/reports/insights/ultra-1755539473298-klokdx"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539469678-5n3w8t.tsx",
-      "route": "/reports/insights/ultra-1755539469678-5n3w8t"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539466213-yihl97.tsx",
-      "route": "/reports/insights/ultra-1755539466213-yihl97"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539461066-jxp9h1.tsx",
-      "route": "/reports/insights/ultra-1755539461066-jxp9h1"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539456511-k5rcmw.tsx",
-      "route": "/reports/insights/ultra-1755539456511-k5rcmw"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539452389-yhywbz.tsx",
-      "route": "/reports/insights/ultra-1755539452389-yhywbz"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539366136-1k3xy8.tsx",
-      "route": "/reports/insights/ultra-1755539366136-1k3xy8"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539361821-btnlsj.tsx",
-      "route": "/reports/insights/ultra-1755539361821-btnlsj"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539348180-h4n91y.tsx",
-      "route": "/reports/insights/ultra-1755539348180-h4n91y"
-    },
-    {
-      "file": "pages/reports/insights/ultra-1755539341009-fh9483.tsx",
-      "route": "/reports/insights/ultra-1755539341009-fh9483"
-    },
-    {
-      "file": "pages/reports/insights/index.tsx",
-      "route": "/reports/insights"
-    },
-    {
-      "file": "pages/reports/insights/cloud-computing-2025-trends.tsx",
-      "route": "/reports/insights/cloud-computing-2025-trends"
+      "file": "pages/reports/playbooks/playbook-2025-08-18-184214.tsx",
+      "route": "/reports/playbooks/playbook-2025-08-18-184214"
     },
     {
       "file": "pages/reports/playbooks/playbook-2025-08-18-184123.tsx",
@@ -6577,6 +5013,1626 @@
       "route": "/reports/playbooks/playbook-2025-08-18-122902"
     },
     {
+      "file": "pages/reports/insights/ultra-1755542554694-d6ihdo.tsx",
+      "route": "/reports/insights/ultra-1755542554694-d6ihdo"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542552508-36kzx4.tsx",
+      "route": "/reports/insights/ultra-1755542552508-36kzx4"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542533699-v23f9p.tsx",
+      "route": "/reports/insights/ultra-1755542533699-v23f9p"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542531322-2htqz8.tsx",
+      "route": "/reports/insights/ultra-1755542531322-2htqz8"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542529246-zx0hp6.tsx",
+      "route": "/reports/insights/ultra-1755542529246-zx0hp6"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542527265-dlho6r.tsx",
+      "route": "/reports/insights/ultra-1755542527265-dlho6r"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542525308-7mh1pi.tsx",
+      "route": "/reports/insights/ultra-1755542525308-7mh1pi"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542522784-liv9l9.tsx",
+      "route": "/reports/insights/ultra-1755542522784-liv9l9"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542520623-euyugu.tsx",
+      "route": "/reports/insights/ultra-1755542520623-euyugu"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542481159-om73c5.tsx",
+      "route": "/reports/insights/ultra-1755542481159-om73c5"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542479117-biq2l2.tsx",
+      "route": "/reports/insights/ultra-1755542479117-biq2l2"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542477105-a8r1hi.tsx",
+      "route": "/reports/insights/ultra-1755542477105-a8r1hi"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542474113-gtqcpe.tsx",
+      "route": "/reports/insights/ultra-1755542474113-gtqcpe"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542471983-5vtznv.tsx",
+      "route": "/reports/insights/ultra-1755542471983-5vtznv"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542469837-tng8fl.tsx",
+      "route": "/reports/insights/ultra-1755542469837-tng8fl"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542467790-uwkcc4.tsx",
+      "route": "/reports/insights/ultra-1755542467790-uwkcc4"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542465278-1luyu8.tsx",
+      "route": "/reports/insights/ultra-1755542465278-1luyu8"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542462974-nsb72r.tsx",
+      "route": "/reports/insights/ultra-1755542462974-nsb72r"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542460545-rkkpnf.tsx",
+      "route": "/reports/insights/ultra-1755542460545-rkkpnf"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542452517-gah8ub.tsx",
+      "route": "/reports/insights/ultra-1755542452517-gah8ub"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542450331-x3x7aa.tsx",
+      "route": "/reports/insights/ultra-1755542450331-x3x7aa"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542447463-5xhmgr.tsx",
+      "route": "/reports/insights/ultra-1755542447463-5xhmgr"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542444978-1uq7gz.tsx",
+      "route": "/reports/insights/ultra-1755542444978-1uq7gz"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542442992-1upe6g.tsx",
+      "route": "/reports/insights/ultra-1755542442992-1upe6g"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542440611-3bc70s.tsx",
+      "route": "/reports/insights/ultra-1755542440611-3bc70s"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542437879-1bj7u8.tsx",
+      "route": "/reports/insights/ultra-1755542437879-1bj7u8"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542435605-4vekd5.tsx",
+      "route": "/reports/insights/ultra-1755542435605-4vekd5"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542411265-syhn7l.tsx",
+      "route": "/reports/insights/ultra-1755542411265-syhn7l"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542408995-crm4hg.tsx",
+      "route": "/reports/insights/ultra-1755542408995-crm4hg"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542405886-eztmtn.tsx",
+      "route": "/reports/insights/ultra-1755542405886-eztmtn"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542403654-bxl4x5.tsx",
+      "route": "/reports/insights/ultra-1755542403654-bxl4x5"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542401229-xpm49s.tsx",
+      "route": "/reports/insights/ultra-1755542401229-xpm49s"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542399481-zn280e.tsx",
+      "route": "/reports/insights/ultra-1755542399481-zn280e"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542397061-ryfq44.tsx",
+      "route": "/reports/insights/ultra-1755542397061-ryfq44"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542389276-2390nt.tsx",
+      "route": "/reports/insights/ultra-1755542389276-2390nt"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542383668-foqa8p.tsx",
+      "route": "/reports/insights/ultra-1755542383668-foqa8p"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542381743-xznj72.tsx",
+      "route": "/reports/insights/ultra-1755542381743-xznj72"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542378138-hdamxk.tsx",
+      "route": "/reports/insights/ultra-1755542378138-hdamxk"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542370603-75purr.tsx",
+      "route": "/reports/insights/ultra-1755542370603-75purr"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542366076-5ims0h.tsx",
+      "route": "/reports/insights/ultra-1755542366076-5ims0h"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542363941-avt0uy.tsx",
+      "route": "/reports/insights/ultra-1755542363941-avt0uy"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542361952-x4elno.tsx",
+      "route": "/reports/insights/ultra-1755542361952-x4elno"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542359869-c4keu5.tsx",
+      "route": "/reports/insights/ultra-1755542359869-c4keu5"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542357783-c0k1g4.tsx",
+      "route": "/reports/insights/ultra-1755542357783-c0k1g4"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542355087-zk34fk.tsx",
+      "route": "/reports/insights/ultra-1755542355087-zk34fk"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542352777-btbk3d.tsx",
+      "route": "/reports/insights/ultra-1755542352777-btbk3d"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542347558-05jpwl.tsx",
+      "route": "/reports/insights/ultra-1755542347558-05jpwl"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542342444-0rnz3c.tsx",
+      "route": "/reports/insights/ultra-1755542342444-0rnz3c"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542340477-7qehm9.tsx",
+      "route": "/reports/insights/ultra-1755542340477-7qehm9"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542327574-w0vme2.tsx",
+      "route": "/reports/insights/ultra-1755542327574-w0vme2"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542325510-upni7v.tsx",
+      "route": "/reports/insights/ultra-1755542325510-upni7v"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542323600-w2g5ve.tsx",
+      "route": "/reports/insights/ultra-1755542323600-w2g5ve"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542321587-tp80mt.tsx",
+      "route": "/reports/insights/ultra-1755542321587-tp80mt"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542319538-xoe0ce.tsx",
+      "route": "/reports/insights/ultra-1755542319538-xoe0ce"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542316939-4hkymk.tsx",
+      "route": "/reports/insights/ultra-1755542316939-4hkymk"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542314584-z508ii.tsx",
+      "route": "/reports/insights/ultra-1755542314584-z508ii"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542294746-udndnb.tsx",
+      "route": "/reports/insights/ultra-1755542294746-udndnb"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542292795-4gf7ns.tsx",
+      "route": "/reports/insights/ultra-1755542292795-4gf7ns"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542290775-4dcfgj.tsx",
+      "route": "/reports/insights/ultra-1755542290775-4dcfgj"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542288828-1bwv8t.tsx",
+      "route": "/reports/insights/ultra-1755542288828-1bwv8t"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542286172-ryx11q.tsx",
+      "route": "/reports/insights/ultra-1755542286172-ryx11q"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542283967-3wa7q5.tsx",
+      "route": "/reports/insights/ultra-1755542283967-3wa7q5"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542280978-cd5gho.tsx",
+      "route": "/reports/insights/ultra-1755542280978-cd5gho"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542274454-yu9h3b.tsx",
+      "route": "/reports/insights/ultra-1755542274454-yu9h3b"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542272533-1zygrl.tsx",
+      "route": "/reports/insights/ultra-1755542272533-1zygrl"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542265647-7slxr7.tsx",
+      "route": "/reports/insights/ultra-1755542265647-7slxr7"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542263544-gxgiug.tsx",
+      "route": "/reports/insights/ultra-1755542263544-gxgiug"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542261140-19hvu5.tsx",
+      "route": "/reports/insights/ultra-1755542261140-19hvu5"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542258279-ebzs8p.tsx",
+      "route": "/reports/insights/ultra-1755542258279-ebzs8p"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542255783-bd4h65.tsx",
+      "route": "/reports/insights/ultra-1755542255783-bd4h65"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542254068-gjbzrv.tsx",
+      "route": "/reports/insights/ultra-1755542254068-gjbzrv"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542236962-kxxh5v.tsx",
+      "route": "/reports/insights/ultra-1755542236962-kxxh5v"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542229002-gm1a97.tsx",
+      "route": "/reports/insights/ultra-1755542229002-gm1a97"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542225418-82tky6.tsx",
+      "route": "/reports/insights/ultra-1755542225418-82tky6"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542220959-o14jju.tsx",
+      "route": "/reports/insights/ultra-1755542220959-o14jju"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542216527-hlgkga.tsx",
+      "route": "/reports/insights/ultra-1755542216527-hlgkga"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542214332-qy1iib.tsx",
+      "route": "/reports/insights/ultra-1755542214332-qy1iib"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542212458-fb6p3o.tsx",
+      "route": "/reports/insights/ultra-1755542212458-fb6p3o"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542144621-k6jtqh.tsx",
+      "route": "/reports/insights/ultra-1755542144621-k6jtqh"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542139726-4xz30k.tsx",
+      "route": "/reports/insights/ultra-1755542139726-4xz30k"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542132924-e8x3zn.tsx",
+      "route": "/reports/insights/ultra-1755542132924-e8x3zn"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542130689-m17m48.tsx",
+      "route": "/reports/insights/ultra-1755542130689-m17m48"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542129964-25jw97.tsx",
+      "route": "/reports/insights/ultra-1755542129964-25jw97"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542125701-spvmwt.tsx",
+      "route": "/reports/insights/ultra-1755542125701-spvmwt"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542121739-cagean.tsx",
+      "route": "/reports/insights/ultra-1755542121739-cagean"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542111721-rrhmyu.tsx",
+      "route": "/reports/insights/ultra-1755542111721-rrhmyu"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542109371-lv6wsf.tsx",
+      "route": "/reports/insights/ultra-1755542109371-lv6wsf"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542107132-m5ywyv.tsx",
+      "route": "/reports/insights/ultra-1755542107132-m5ywyv"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542105202-xiznp0.tsx",
+      "route": "/reports/insights/ultra-1755542105202-xiznp0"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542103174-4m3xg3.tsx",
+      "route": "/reports/insights/ultra-1755542103174-4m3xg3"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542101002-59ctam.tsx",
+      "route": "/reports/insights/ultra-1755542101002-59ctam"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542087693-ns4z8k.tsx",
+      "route": "/reports/insights/ultra-1755542087693-ns4z8k"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542085609-o7q0ex.tsx",
+      "route": "/reports/insights/ultra-1755542085609-o7q0ex"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542083691-asdobe.tsx",
+      "route": "/reports/insights/ultra-1755542083691-asdobe"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542081647-zoxzs5.tsx",
+      "route": "/reports/insights/ultra-1755542081647-zoxzs5"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542079740-vork26.tsx",
+      "route": "/reports/insights/ultra-1755542079740-vork26"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542077262-ikqlvf.tsx",
+      "route": "/reports/insights/ultra-1755542077262-ikqlvf"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542074726-mi01ys.tsx",
+      "route": "/reports/insights/ultra-1755542074726-mi01ys"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542072609-t3tgwm.tsx",
+      "route": "/reports/insights/ultra-1755542072609-t3tgwm"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542070695-5nyk9d.tsx",
+      "route": "/reports/insights/ultra-1755542070695-5nyk9d"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542068570-k6qa47.tsx",
+      "route": "/reports/insights/ultra-1755542068570-k6qa47"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542066739-v2quj1.tsx",
+      "route": "/reports/insights/ultra-1755542066739-v2quj1"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542064958-sa7f8f.tsx",
+      "route": "/reports/insights/ultra-1755542064958-sa7f8f"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542060903-gsrjvz.tsx",
+      "route": "/reports/insights/ultra-1755542060903-gsrjvz"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542058011-sqdejx.tsx",
+      "route": "/reports/insights/ultra-1755542058011-sqdejx"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542055517-a5lxc6.tsx",
+      "route": "/reports/insights/ultra-1755542055517-a5lxc6"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542053137-0j0oxx.tsx",
+      "route": "/reports/insights/ultra-1755542053137-0j0oxx"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542051134-rdeipw.tsx",
+      "route": "/reports/insights/ultra-1755542051134-rdeipw"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542049217-i3ldd5.tsx",
+      "route": "/reports/insights/ultra-1755542049217-i3ldd5"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542047194-g181sr.tsx",
+      "route": "/reports/insights/ultra-1755542047194-g181sr"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542045176-wxa64i.tsx",
+      "route": "/reports/insights/ultra-1755542045176-wxa64i"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542043098-hffdao.tsx",
+      "route": "/reports/insights/ultra-1755542043098-hffdao"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542036869-frwybu.tsx",
+      "route": "/reports/insights/ultra-1755542036869-frwybu"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542031971-peyp5l.tsx",
+      "route": "/reports/insights/ultra-1755542031971-peyp5l"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542027388-fbufxx.tsx",
+      "route": "/reports/insights/ultra-1755542027388-fbufxx"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542025543-eggnb4.tsx",
+      "route": "/reports/insights/ultra-1755542025543-eggnb4"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542023247-7exeh7.tsx",
+      "route": "/reports/insights/ultra-1755542023247-7exeh7"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542018113-x9r34p.tsx",
+      "route": "/reports/insights/ultra-1755542018113-x9r34p"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542015884-o6smk0.tsx",
+      "route": "/reports/insights/ultra-1755542015884-o6smk0"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542013761-kkf1s0.tsx",
+      "route": "/reports/insights/ultra-1755542013761-kkf1s0"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755542011200-4c8r6q.tsx",
+      "route": "/reports/insights/ultra-1755542011200-4c8r6q"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541940822-t3t83w.tsx",
+      "route": "/reports/insights/ultra-1755541940822-t3t83w"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541937880-6zxuvs.tsx",
+      "route": "/reports/insights/ultra-1755541937880-6zxuvs"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541931960-uoz55a.tsx",
+      "route": "/reports/insights/ultra-1755541931960-uoz55a"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541929467-qefald.tsx",
+      "route": "/reports/insights/ultra-1755541929467-qefald"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541925593-6dbvj6.tsx",
+      "route": "/reports/insights/ultra-1755541925593-6dbvj6"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541923567-gmr4c6.tsx",
+      "route": "/reports/insights/ultra-1755541923567-gmr4c6"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541921323-wzc5lh.tsx",
+      "route": "/reports/insights/ultra-1755541921323-wzc5lh"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541918369-6vn2ei.tsx",
+      "route": "/reports/insights/ultra-1755541918369-6vn2ei"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541916222-pvz4sz.tsx",
+      "route": "/reports/insights/ultra-1755541916222-pvz4sz"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541912101-28x1wj.tsx",
+      "route": "/reports/insights/ultra-1755541912101-28x1wj"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541907418-u2k054.tsx",
+      "route": "/reports/insights/ultra-1755541907418-u2k054"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541905291-44yb6c.tsx",
+      "route": "/reports/insights/ultra-1755541905291-44yb6c"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541899530-lrwkbg.tsx",
+      "route": "/reports/insights/ultra-1755541899530-lrwkbg"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541893669-as2tsb.tsx",
+      "route": "/reports/insights/ultra-1755541893669-as2tsb"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541891006-tmxvbi.tsx",
+      "route": "/reports/insights/ultra-1755541891006-tmxvbi"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541886299-nb6am7.tsx",
+      "route": "/reports/insights/ultra-1755541886299-nb6am7"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541883895-0knbrr.tsx",
+      "route": "/reports/insights/ultra-1755541883895-0knbrr"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541881682-8546sr.tsx",
+      "route": "/reports/insights/ultra-1755541881682-8546sr"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541874229-uozuna.tsx",
+      "route": "/reports/insights/ultra-1755541874229-uozuna"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541869954-nnbazz.tsx",
+      "route": "/reports/insights/ultra-1755541869954-nnbazz"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541866159-clzq0z.tsx",
+      "route": "/reports/insights/ultra-1755541866159-clzq0z"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541863755-c7vyob.tsx",
+      "route": "/reports/insights/ultra-1755541863755-c7vyob"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541860771-rlgsvn.tsx",
+      "route": "/reports/insights/ultra-1755541860771-rlgsvn"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541833179-mobrx1.tsx",
+      "route": "/reports/insights/ultra-1755541833179-mobrx1"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541830693-57cp4a.tsx",
+      "route": "/reports/insights/ultra-1755541830693-57cp4a"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541829821-73n5zq.tsx",
+      "route": "/reports/insights/ultra-1755541829821-73n5zq"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541827602-objuhn.tsx",
+      "route": "/reports/insights/ultra-1755541827602-objuhn"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541822023-qngpux.tsx",
+      "route": "/reports/insights/ultra-1755541822023-qngpux"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541819325-1cflnv.tsx",
+      "route": "/reports/insights/ultra-1755541819325-1cflnv"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541813605-6ttczt.tsx",
+      "route": "/reports/insights/ultra-1755541813605-6ttczt"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541811525-jjiiuk.tsx",
+      "route": "/reports/insights/ultra-1755541811525-jjiiuk"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541808962-ain2i2.tsx",
+      "route": "/reports/insights/ultra-1755541808962-ain2i2"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541804092-u7enyt.tsx",
+      "route": "/reports/insights/ultra-1755541804092-u7enyt"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541801792-npmzs1.tsx",
+      "route": "/reports/insights/ultra-1755541801792-npmzs1"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541796217-gentoh.tsx",
+      "route": "/reports/insights/ultra-1755541796217-gentoh"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541791524-q35ubc.tsx",
+      "route": "/reports/insights/ultra-1755541791524-q35ubc"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541788366-cqyttz.tsx",
+      "route": "/reports/insights/ultra-1755541788366-cqyttz"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541784313-ah57m3.tsx",
+      "route": "/reports/insights/ultra-1755541784313-ah57m3"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541781770-wqc5xz.tsx",
+      "route": "/reports/insights/ultra-1755541781770-wqc5xz"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541779076-wbfsw5.tsx",
+      "route": "/reports/insights/ultra-1755541779076-wbfsw5"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541761861-7i5yrs.tsx",
+      "route": "/reports/insights/ultra-1755541761861-7i5yrs"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541758618-erunei.tsx",
+      "route": "/reports/insights/ultra-1755541758618-erunei"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541756483-ivck29.tsx",
+      "route": "/reports/insights/ultra-1755541756483-ivck29"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541752743-9emqsq.tsx",
+      "route": "/reports/insights/ultra-1755541752743-9emqsq"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541750608-w4lsgj.tsx",
+      "route": "/reports/insights/ultra-1755541750608-w4lsgj"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541748136-5eusqg.tsx",
+      "route": "/reports/insights/ultra-1755541748136-5eusqg"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541746006-ytu50h.tsx",
+      "route": "/reports/insights/ultra-1755541746006-ytu50h"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541743732-gebq97.tsx",
+      "route": "/reports/insights/ultra-1755541743732-gebq97"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541733724-9hz1ee.tsx",
+      "route": "/reports/insights/ultra-1755541733724-9hz1ee"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541726303-8zrhp3.tsx",
+      "route": "/reports/insights/ultra-1755541726303-8zrhp3"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541723770-dudxy3.tsx",
+      "route": "/reports/insights/ultra-1755541723770-dudxy3"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541718538-brbnje.tsx",
+      "route": "/reports/insights/ultra-1755541718538-brbnje"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541716557-xs2gh5.tsx",
+      "route": "/reports/insights/ultra-1755541716557-xs2gh5"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541712955-ra3mgu.tsx",
+      "route": "/reports/insights/ultra-1755541712955-ra3mgu"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541710667-kmpsct.tsx",
+      "route": "/reports/insights/ultra-1755541710667-kmpsct"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541701998-2uk7gw.tsx",
+      "route": "/reports/insights/ultra-1755541701998-2uk7gw"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541699781-n0ru1n.tsx",
+      "route": "/reports/insights/ultra-1755541699781-n0ru1n"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541697596-id3m67.tsx",
+      "route": "/reports/insights/ultra-1755541697596-id3m67"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541681164-ukaktp.tsx",
+      "route": "/reports/insights/ultra-1755541681164-ukaktp"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541677276-72e0yo.tsx",
+      "route": "/reports/insights/ultra-1755541677276-72e0yo"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541668960-gai4qf.tsx",
+      "route": "/reports/insights/ultra-1755541668960-gai4qf"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541665505-w4gvea.tsx",
+      "route": "/reports/insights/ultra-1755541665505-w4gvea"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541659947-l7f6cc.tsx",
+      "route": "/reports/insights/ultra-1755541659947-l7f6cc"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541647049-yxsffj.tsx",
+      "route": "/reports/insights/ultra-1755541647049-yxsffj"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541645066-k6a4d8.tsx",
+      "route": "/reports/insights/ultra-1755541645066-k6a4d8"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541641486-k76mhd.tsx",
+      "route": "/reports/insights/ultra-1755541641486-k76mhd"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541638996-bjz2ij.tsx",
+      "route": "/reports/insights/ultra-1755541638996-bjz2ij"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541636678-lqp5sg.tsx",
+      "route": "/reports/insights/ultra-1755541636678-lqp5sg"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541634536-jan6zo.tsx",
+      "route": "/reports/insights/ultra-1755541634536-jan6zo"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541632242-5dkq1n.tsx",
+      "route": "/reports/insights/ultra-1755541632242-5dkq1n"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541630200-0ulub4.tsx",
+      "route": "/reports/insights/ultra-1755541630200-0ulub4"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541627127-wqbiyq.tsx",
+      "route": "/reports/insights/ultra-1755541627127-wqbiyq"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541625193-wbnsux.tsx",
+      "route": "/reports/insights/ultra-1755541625193-wbnsux"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541622507-ov3us2.tsx",
+      "route": "/reports/insights/ultra-1755541622507-ov3us2"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541620400-lfyedd.tsx",
+      "route": "/reports/insights/ultra-1755541620400-lfyedd"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541615565-y8q61y.tsx",
+      "route": "/reports/insights/ultra-1755541615565-y8q61y"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541580987-vdko0m.tsx",
+      "route": "/reports/insights/ultra-1755541580987-vdko0m"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541577623-91qb4g.tsx",
+      "route": "/reports/insights/ultra-1755541577623-91qb4g"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541575599-xqhcmf.tsx",
+      "route": "/reports/insights/ultra-1755541575599-xqhcmf"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541573587-vr4tc4.tsx",
+      "route": "/reports/insights/ultra-1755541573587-vr4tc4"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541571677-bx6maf.tsx",
+      "route": "/reports/insights/ultra-1755541571677-bx6maf"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541569723-ov4y1w.tsx",
+      "route": "/reports/insights/ultra-1755541569723-ov4y1w"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541567602-j89txz.tsx",
+      "route": "/reports/insights/ultra-1755541567602-j89txz"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541565176-6hi1ou.tsx",
+      "route": "/reports/insights/ultra-1755541565176-6hi1ou"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541562653-jd13c1.tsx",
+      "route": "/reports/insights/ultra-1755541562653-jd13c1"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541560533-rg6mwl.tsx",
+      "route": "/reports/insights/ultra-1755541560533-rg6mwl"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541547379-y9gp4n.tsx",
+      "route": "/reports/insights/ultra-1755541547379-y9gp4n"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541545420-vmklsj.tsx",
+      "route": "/reports/insights/ultra-1755541545420-vmklsj"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541543395-nuixgi.tsx",
+      "route": "/reports/insights/ultra-1755541543395-nuixgi"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541541324-ta0mke.tsx",
+      "route": "/reports/insights/ultra-1755541541324-ta0mke"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541539471-0eb05y.tsx",
+      "route": "/reports/insights/ultra-1755541539471-0eb05y"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541537482-23p0p9.tsx",
+      "route": "/reports/insights/ultra-1755541537482-23p0p9"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541535321-u1namw.tsx",
+      "route": "/reports/insights/ultra-1755541535321-u1namw"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541533105-4gfaep.tsx",
+      "route": "/reports/insights/ultra-1755541533105-4gfaep"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541531167-trx14d.tsx",
+      "route": "/reports/insights/ultra-1755541531167-trx14d"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541528358-07wge9.tsx",
+      "route": "/reports/insights/ultra-1755541528358-07wge9"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541526103-x8ug89.tsx",
+      "route": "/reports/insights/ultra-1755541526103-x8ug89"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541519929-ohiskf.tsx",
+      "route": "/reports/insights/ultra-1755541519929-ohiskf"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541518011-2f905j.tsx",
+      "route": "/reports/insights/ultra-1755541518011-2f905j"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541516057-q9vfow.tsx",
+      "route": "/reports/insights/ultra-1755541516057-q9vfow"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541514150-6lkk5i.tsx",
+      "route": "/reports/insights/ultra-1755541514150-6lkk5i"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541512227-t6s853.tsx",
+      "route": "/reports/insights/ultra-1755541512227-t6s853"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541510326-qz0e6q.tsx",
+      "route": "/reports/insights/ultra-1755541510326-qz0e6q"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541508432-r8iyga.tsx",
+      "route": "/reports/insights/ultra-1755541508432-r8iyga"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541506414-zeah05.tsx",
+      "route": "/reports/insights/ultra-1755541506414-zeah05"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541503682-a9vjc0.tsx",
+      "route": "/reports/insights/ultra-1755541503682-a9vjc0"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541500833-0zvblx.tsx",
+      "route": "/reports/insights/ultra-1755541500833-0zvblx"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541482391-p4749r.tsx",
+      "route": "/reports/insights/ultra-1755541482391-p4749r"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541480456-hk7ece.tsx",
+      "route": "/reports/insights/ultra-1755541480456-hk7ece"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541478586-w80tfj.tsx",
+      "route": "/reports/insights/ultra-1755541478586-w80tfj"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541476101-ejmqd5.tsx",
+      "route": "/reports/insights/ultra-1755541476101-ejmqd5"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541470772-3y5rmm.tsx",
+      "route": "/reports/insights/ultra-1755541470772-3y5rmm"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541468058-19ho97.tsx",
+      "route": "/reports/insights/ultra-1755541468058-19ho97"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541464670-bn1rjg.tsx",
+      "route": "/reports/insights/ultra-1755541464670-bn1rjg"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541461417-jjphxj.tsx",
+      "route": "/reports/insights/ultra-1755541461417-jjphxj"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541456334-herc7k.tsx",
+      "route": "/reports/insights/ultra-1755541456334-herc7k"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541451199-modjnq.tsx",
+      "route": "/reports/insights/ultra-1755541451199-modjnq"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541445849-8ylxpk.tsx",
+      "route": "/reports/insights/ultra-1755541445849-8ylxpk"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541443629-6aht9i.tsx",
+      "route": "/reports/insights/ultra-1755541443629-6aht9i"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541440866-p3go41.tsx",
+      "route": "/reports/insights/ultra-1755541440866-p3go41"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541411419-bjneps.tsx",
+      "route": "/reports/insights/ultra-1755541411419-bjneps"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541406256-bvjuzt.tsx",
+      "route": "/reports/insights/ultra-1755541406256-bvjuzt"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541403847-j1h09z.tsx",
+      "route": "/reports/insights/ultra-1755541403847-j1h09z"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541401857-6jnygl.tsx",
+      "route": "/reports/insights/ultra-1755541401857-6jnygl"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541399535-hf8hoq.tsx",
+      "route": "/reports/insights/ultra-1755541399535-hf8hoq"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541392021-l47bgy.tsx",
+      "route": "/reports/insights/ultra-1755541392021-l47bgy"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541373480-n96wbc.tsx",
+      "route": "/reports/insights/ultra-1755541373480-n96wbc"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541368702-pbiqii.tsx",
+      "route": "/reports/insights/ultra-1755541368702-pbiqii"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541359857-u04t7r.tsx",
+      "route": "/reports/insights/ultra-1755541359857-u04t7r"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541357678-ul0j3q.tsx",
+      "route": "/reports/insights/ultra-1755541357678-ul0j3q"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541350775-1rmdkp.tsx",
+      "route": "/reports/insights/ultra-1755541350775-1rmdkp"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541349924-5fauym.tsx",
+      "route": "/reports/insights/ultra-1755541349924-5fauym"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541345771-z9r6y2.tsx",
+      "route": "/reports/insights/ultra-1755541345771-z9r6y2"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541342526-bqb439.tsx",
+      "route": "/reports/insights/ultra-1755541342526-bqb439"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541337201-vrv72x.tsx",
+      "route": "/reports/insights/ultra-1755541337201-vrv72x"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541334912-yfens2.tsx",
+      "route": "/reports/insights/ultra-1755541334912-yfens2"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541332335-f9n4ng.tsx",
+      "route": "/reports/insights/ultra-1755541332335-f9n4ng"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541322341-ewk87u.tsx",
+      "route": "/reports/insights/ultra-1755541322341-ewk87u"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541317160-u56h4d.tsx",
+      "route": "/reports/insights/ultra-1755541317160-u56h4d"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541311333-u6acuj.tsx",
+      "route": "/reports/insights/ultra-1755541311333-u6acuj"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541307871-fswlkb.tsx",
+      "route": "/reports/insights/ultra-1755541307871-fswlkb"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541304252-wrjjci.tsx",
+      "route": "/reports/insights/ultra-1755541304252-wrjjci"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541298657-hn0j13.tsx",
+      "route": "/reports/insights/ultra-1755541298657-hn0j13"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541290891-nvxj9v.tsx",
+      "route": "/reports/insights/ultra-1755541290891-nvxj9v"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541288870-l0rd40.tsx",
+      "route": "/reports/insights/ultra-1755541288870-l0rd40"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541286372-v93j1k.tsx",
+      "route": "/reports/insights/ultra-1755541286372-v93j1k"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541282007-x0encu.tsx",
+      "route": "/reports/insights/ultra-1755541282007-x0encu"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541280186-jn1gwp.tsx",
+      "route": "/reports/insights/ultra-1755541280186-jn1gwp"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541272186-53nhnn.tsx",
+      "route": "/reports/insights/ultra-1755541272186-53nhnn"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541264293-dyogy7.tsx",
+      "route": "/reports/insights/ultra-1755541264293-dyogy7"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541261391-lg8uui.tsx",
+      "route": "/reports/insights/ultra-1755541261391-lg8uui"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541233687-bymhas.tsx",
+      "route": "/reports/insights/ultra-1755541233687-bymhas"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541231248-neca74.tsx",
+      "route": "/reports/insights/ultra-1755541231248-neca74"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541226554-upsxxx.tsx",
+      "route": "/reports/insights/ultra-1755541226554-upsxxx"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541224044-zdadb9.tsx",
+      "route": "/reports/insights/ultra-1755541224044-zdadb9"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541208626-j83j1k.tsx",
+      "route": "/reports/insights/ultra-1755541208626-j83j1k"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541206280-w49xli.tsx",
+      "route": "/reports/insights/ultra-1755541206280-w49xli"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541201971-dn9ukf.tsx",
+      "route": "/reports/insights/ultra-1755541201971-dn9ukf"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541194142-6jnawb.tsx",
+      "route": "/reports/insights/ultra-1755541194142-6jnawb"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541190088-zejza1.tsx",
+      "route": "/reports/insights/ultra-1755541190088-zejza1"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541186780-t5tvu0.tsx",
+      "route": "/reports/insights/ultra-1755541186780-t5tvu0"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541180129-vxi87e.tsx",
+      "route": "/reports/insights/ultra-1755541180129-vxi87e"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541176218-s3w16z.tsx",
+      "route": "/reports/insights/ultra-1755541176218-s3w16z"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541171384-o27yrz.tsx",
+      "route": "/reports/insights/ultra-1755541171384-o27yrz"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541166422-f2dzkw.tsx",
+      "route": "/reports/insights/ultra-1755541166422-f2dzkw"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541163460-suftwa.tsx",
+      "route": "/reports/insights/ultra-1755541163460-suftwa"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541158378-15sf9z.tsx",
+      "route": "/reports/insights/ultra-1755541158378-15sf9z"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541153584-y66joz.tsx",
+      "route": "/reports/insights/ultra-1755541153584-y66joz"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541150652-xrf647.tsx",
+      "route": "/reports/insights/ultra-1755541150652-xrf647"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541146303-lhigjo.tsx",
+      "route": "/reports/insights/ultra-1755541146303-lhigjo"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541144094-41d6tu.tsx",
+      "route": "/reports/insights/ultra-1755541144094-41d6tu"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541141360-shke5c.tsx",
+      "route": "/reports/insights/ultra-1755541141360-shke5c"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541136286-hvuydx.tsx",
+      "route": "/reports/insights/ultra-1755541136286-hvuydx"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541131824-idgl9u.tsx",
+      "route": "/reports/insights/ultra-1755541131824-idgl9u"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541128786-5v0utg.tsx",
+      "route": "/reports/insights/ultra-1755541128786-5v0utg"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541126634-tdbm7m.tsx",
+      "route": "/reports/insights/ultra-1755541126634-tdbm7m"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541124550-k0d4h0.tsx",
+      "route": "/reports/insights/ultra-1755541124550-k0d4h0"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541122540-ew35vw.tsx",
+      "route": "/reports/insights/ultra-1755541122540-ew35vw"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755541120191-u40ws2.tsx",
+      "route": "/reports/insights/ultra-1755541120191-u40ws2"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755540161769-krag17.tsx",
+      "route": "/reports/insights/ultra-1755540161769-krag17"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755540156407-1q2lkz.tsx",
+      "route": "/reports/insights/ultra-1755540156407-1q2lkz"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755540150872-zhla4b.tsx",
+      "route": "/reports/insights/ultra-1755540150872-zhla4b"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755540146119-6mdbsa.tsx",
+      "route": "/reports/insights/ultra-1755540146119-6mdbsa"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755540110050-je7we3.tsx",
+      "route": "/reports/insights/ultra-1755540110050-je7we3"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755540105884-3dossr.tsx",
+      "route": "/reports/insights/ultra-1755540105884-3dossr"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755540099887-ejzt2w.tsx",
+      "route": "/reports/insights/ultra-1755540099887-ejzt2w"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539790794-8k9krn.tsx",
+      "route": "/reports/insights/ultra-1755539790794-8k9krn"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539789829-bgm0z7.tsx",
+      "route": "/reports/insights/ultra-1755539789829-bgm0z7"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539785621-oehsqd.tsx",
+      "route": "/reports/insights/ultra-1755539785621-oehsqd"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539780365-e4ldps.tsx",
+      "route": "/reports/insights/ultra-1755539780365-e4ldps"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539776168-722bdi.tsx",
+      "route": "/reports/insights/ultra-1755539776168-722bdi"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539771201-l2576g.tsx",
+      "route": "/reports/insights/ultra-1755539771201-l2576g"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539766120-1y0dum.tsx",
+      "route": "/reports/insights/ultra-1755539766120-1y0dum"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539761205-lorl7r.tsx",
+      "route": "/reports/insights/ultra-1755539761205-lorl7r"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539758001-8l2ghv.tsx",
+      "route": "/reports/insights/ultra-1755539758001-8l2ghv"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539753126-27nvqx.tsx",
+      "route": "/reports/insights/ultra-1755539753126-27nvqx"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539749116-rcj74k.tsx",
+      "route": "/reports/insights/ultra-1755539749116-rcj74k"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539744940-zgv66t.tsx",
+      "route": "/reports/insights/ultra-1755539744940-zgv66t"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539741684-2k2ahv.tsx",
+      "route": "/reports/insights/ultra-1755539741684-2k2ahv"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539737923-scnuyj.tsx",
+      "route": "/reports/insights/ultra-1755539737923-scnuyj"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539734216-4e9jmt.tsx",
+      "route": "/reports/insights/ultra-1755539734216-4e9jmt"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539730560-bwm9f2.tsx",
+      "route": "/reports/insights/ultra-1755539730560-bwm9f2"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539726815-ffny3t.tsx",
+      "route": "/reports/insights/ultra-1755539726815-ffny3t"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539723512-2zre3j.tsx",
+      "route": "/reports/insights/ultra-1755539723512-2zre3j"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539719118-e6e098.tsx",
+      "route": "/reports/insights/ultra-1755539719118-e6e098"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539714418-nwt2nw.tsx",
+      "route": "/reports/insights/ultra-1755539714418-nwt2nw"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539710681-6sufpk.tsx",
+      "route": "/reports/insights/ultra-1755539710681-6sufpk"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539705562-t4sivh.tsx",
+      "route": "/reports/insights/ultra-1755539705562-t4sivh"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539700960-kfbrjh.tsx",
+      "route": "/reports/insights/ultra-1755539700960-kfbrjh"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539697768-rrlxnb.tsx",
+      "route": "/reports/insights/ultra-1755539697768-rrlxnb"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539693654-bsdniq.tsx",
+      "route": "/reports/insights/ultra-1755539693654-bsdniq"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539691489-if0f45.tsx",
+      "route": "/reports/insights/ultra-1755539691489-if0f45"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539687763-ydmyf5.tsx",
+      "route": "/reports/insights/ultra-1755539687763-ydmyf5"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539684691-pdj6y7.tsx",
+      "route": "/reports/insights/ultra-1755539684691-pdj6y7"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539681700-fnnjm1.tsx",
+      "route": "/reports/insights/ultra-1755539681700-fnnjm1"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539678615-synk2a.tsx",
+      "route": "/reports/insights/ultra-1755539678615-synk2a"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539675950-xriwwd.tsx",
+      "route": "/reports/insights/ultra-1755539675950-xriwwd"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539673560-bw7tzb.tsx",
+      "route": "/reports/insights/ultra-1755539673560-bw7tzb"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539670525-v15tcr.tsx",
+      "route": "/reports/insights/ultra-1755539670525-v15tcr"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539667414-lvx7ip.tsx",
+      "route": "/reports/insights/ultra-1755539667414-lvx7ip"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539663971-hisbtt.tsx",
+      "route": "/reports/insights/ultra-1755539663971-hisbtt"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539660373-uz0ipe.tsx",
+      "route": "/reports/insights/ultra-1755539660373-uz0ipe"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539656265-kmp86x.tsx",
+      "route": "/reports/insights/ultra-1755539656265-kmp86x"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539652686-z5ffya.tsx",
+      "route": "/reports/insights/ultra-1755539652686-z5ffya"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539648917-og8lwl.tsx",
+      "route": "/reports/insights/ultra-1755539648917-og8lwl"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539645242-yer5cg.tsx",
+      "route": "/reports/insights/ultra-1755539645242-yer5cg"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539641198-i3otsg.tsx",
+      "route": "/reports/insights/ultra-1755539641198-i3otsg"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539638054-aucyx1.tsx",
+      "route": "/reports/insights/ultra-1755539638054-aucyx1"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539634913-w3qrl6.tsx",
+      "route": "/reports/insights/ultra-1755539634913-w3qrl6"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539631422-u72yx6.tsx",
+      "route": "/reports/insights/ultra-1755539631422-u72yx6"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539628013-82axpg.tsx",
+      "route": "/reports/insights/ultra-1755539628013-82axpg"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539623030-jgcokv.tsx",
+      "route": "/reports/insights/ultra-1755539623030-jgcokv"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539618142-we38xh.tsx",
+      "route": "/reports/insights/ultra-1755539618142-we38xh"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539614502-mhdcmw.tsx",
+      "route": "/reports/insights/ultra-1755539614502-mhdcmw"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539610683-urco4i.tsx",
+      "route": "/reports/insights/ultra-1755539610683-urco4i"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539606319-0jvaco.tsx",
+      "route": "/reports/insights/ultra-1755539606319-0jvaco"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539601813-kyvhdu.tsx",
+      "route": "/reports/insights/ultra-1755539601813-kyvhdu"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539597147-1z9084.tsx",
+      "route": "/reports/insights/ultra-1755539597147-1z9084"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539593448-f45cs3.tsx",
+      "route": "/reports/insights/ultra-1755539593448-f45cs3"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539590157-wbcco7.tsx",
+      "route": "/reports/insights/ultra-1755539590157-wbcco7"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539586215-xkedaw.tsx",
+      "route": "/reports/insights/ultra-1755539586215-xkedaw"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539581048-1ax4on.tsx",
+      "route": "/reports/insights/ultra-1755539581048-1ax4on"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539579917-s1ck6y.tsx",
+      "route": "/reports/insights/ultra-1755539579917-s1ck6y"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539575817-8yxund.tsx",
+      "route": "/reports/insights/ultra-1755539575817-8yxund"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539572563-po0aez.tsx",
+      "route": "/reports/insights/ultra-1755539572563-po0aez"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539569418-nk7jhv.tsx",
+      "route": "/reports/insights/ultra-1755539569418-nk7jhv"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539565967-7yaokj.tsx",
+      "route": "/reports/insights/ultra-1755539565967-7yaokj"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539563150-oxbgun.tsx",
+      "route": "/reports/insights/ultra-1755539563150-oxbgun"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539558952-0hb498.tsx",
+      "route": "/reports/insights/ultra-1755539558952-0hb498"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539554980-4yn2o3.tsx",
+      "route": "/reports/insights/ultra-1755539554980-4yn2o3"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539550612-n2kllv.tsx",
+      "route": "/reports/insights/ultra-1755539550612-n2kllv"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539546483-iviltx.tsx",
+      "route": "/reports/insights/ultra-1755539546483-iviltx"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539542586-5p15av.tsx",
+      "route": "/reports/insights/ultra-1755539542586-5p15av"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539537785-prrj3k.tsx",
+      "route": "/reports/insights/ultra-1755539537785-prrj3k"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539532984-tfvqpr.tsx",
+      "route": "/reports/insights/ultra-1755539532984-tfvqpr"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539529603-1k2309.tsx",
+      "route": "/reports/insights/ultra-1755539529603-1k2309"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539525517-2da882.tsx",
+      "route": "/reports/insights/ultra-1755539525517-2da882"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539521552-y8d93w.tsx",
+      "route": "/reports/insights/ultra-1755539521552-y8d93w"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539518590-x4wp07.tsx",
+      "route": "/reports/insights/ultra-1755539518590-x4wp07"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539514677-ix2p15.tsx",
+      "route": "/reports/insights/ultra-1755539514677-ix2p15"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539509771-s7kxrg.tsx",
+      "route": "/reports/insights/ultra-1755539509771-s7kxrg"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539506103-em0uco.tsx",
+      "route": "/reports/insights/ultra-1755539506103-em0uco"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539502018-msn7pp.tsx",
+      "route": "/reports/insights/ultra-1755539502018-msn7pp"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539498111-l2wdny.tsx",
+      "route": "/reports/insights/ultra-1755539498111-l2wdny"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539493780-eydprs.tsx",
+      "route": "/reports/insights/ultra-1755539493780-eydprs"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539490506-5ineiw.tsx",
+      "route": "/reports/insights/ultra-1755539490506-5ineiw"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539485465-ixdaki.tsx",
+      "route": "/reports/insights/ultra-1755539485465-ixdaki"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539482285-dbb2b5.tsx",
+      "route": "/reports/insights/ultra-1755539482285-dbb2b5"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539478407-ty8jke.tsx",
+      "route": "/reports/insights/ultra-1755539478407-ty8jke"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539473298-klokdx.tsx",
+      "route": "/reports/insights/ultra-1755539473298-klokdx"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539469678-5n3w8t.tsx",
+      "route": "/reports/insights/ultra-1755539469678-5n3w8t"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539466213-yihl97.tsx",
+      "route": "/reports/insights/ultra-1755539466213-yihl97"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539461066-jxp9h1.tsx",
+      "route": "/reports/insights/ultra-1755539461066-jxp9h1"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539456511-k5rcmw.tsx",
+      "route": "/reports/insights/ultra-1755539456511-k5rcmw"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539452389-yhywbz.tsx",
+      "route": "/reports/insights/ultra-1755539452389-yhywbz"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539366136-1k3xy8.tsx",
+      "route": "/reports/insights/ultra-1755539366136-1k3xy8"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539361821-btnlsj.tsx",
+      "route": "/reports/insights/ultra-1755539361821-btnlsj"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539348180-h4n91y.tsx",
+      "route": "/reports/insights/ultra-1755539348180-h4n91y"
+    },
+    {
+      "file": "pages/reports/insights/ultra-1755539341009-fh9483.tsx",
+      "route": "/reports/insights/ultra-1755539341009-fh9483"
+    },
+    {
+      "file": "pages/reports/insights/index.tsx",
+      "route": "/reports/insights"
+    },
+    {
+      "file": "pages/reports/insights/cloud-computing-2025-trends.tsx",
+      "route": "/reports/insights/cloud-computing-2025-trends"
+    },
+    {
+      "file": "pages/reports/patterns/ultra-1755542554697-8qmtvo.tsx",
+      "route": "/reports/patterns/ultra-1755542554697-8qmtvo"
+    },
+    {
+      "file": "pages/reports/patterns/ultra-1755542552510-n4pxq8.tsx",
+      "route": "/reports/patterns/ultra-1755542552510-n4pxq8"
+    },
+    {
+      "file": "pages/reports/patterns/ultra-1755542533702-jdmv9r.tsx",
+      "route": "/reports/patterns/ultra-1755542533702-jdmv9r"
+    },
+    {
       "file": "pages/reports/patterns/ultra-1755542531331-09puzd.tsx",
       "route": "/reports/patterns/ultra-1755542531331-09puzd"
     },
@@ -8163,6 +8219,14 @@
     {
       "file": "pages/reports/patterns/ultra-1755539341011-betviq.tsx",
       "route": "/reports/patterns/ultra-1755539341011-betviq"
+    },
+    {
+      "file": "pages/reports/patterns/pattern-2025-08-18-184233.tsx",
+      "route": "/reports/patterns/pattern-2025-08-18-184233"
+    },
+    {
+      "file": "pages/reports/patterns/pattern-2025-08-18-184214.tsx",
+      "route": "/reports/patterns/pattern-2025-08-18-184214"
     },
     {
       "file": "pages/reports/patterns/pattern-2025-08-18-184122.tsx",
@@ -10289,6 +10353,10 @@
       "route": "/reports/dossiers"
     },
     {
+      "file": "pages/reports/updates/update-2025-08-18T18-42.tsx",
+      "route": "/reports/updates/update-2025-08-18T18-42"
+    },
+    {
       "file": "pages/reports/updates/update-2025-08-18T18-41.tsx",
       "route": "/reports/updates/update-2025-08-18T18-41"
     },
@@ -11339,6 +11407,10 @@
     {
       "file": "pages/reports/updates/update-2025-08-18T12-29.tsx",
       "route": "/reports/updates/update-2025-08-18T12-29"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-18-1842.tsx",
+      "route": "/reports/updates/update-2025-08-18-1842"
     },
     {
       "file": "pages/reports/updates/update-2025-08-18-1841.tsx",
@@ -13197,6 +13269,18 @@
       "route": "/reports/updates/update-2025-08-18-0928"
     },
     {
+      "file": "pages/reports/updates/ultra-1755542554693-bvu4di.tsx",
+      "route": "/reports/updates/ultra-1755542554693-bvu4di"
+    },
+    {
+      "file": "pages/reports/updates/ultra-1755542552506-jqpar3.tsx",
+      "route": "/reports/updates/ultra-1755542552506-jqpar3"
+    },
+    {
+      "file": "pages/reports/updates/ultra-1755542533698-ogsqzo.tsx",
+      "route": "/reports/updates/ultra-1755542533698-ogsqzo"
+    },
+    {
       "file": "pages/reports/updates/ultra-1755542531320-idmjty.tsx",
       "route": "/reports/updates/ultra-1755542531320-idmjty"
     },
@@ -14789,6 +14873,10 @@
       "route": "/reports/case-studies/retail-digital-transformation"
     },
     {
+      "file": "pages/reports/innovations/insight-2025-08-18T18-42.tsx",
+      "route": "/reports/innovations/insight-2025-08-18T18-42"
+    },
+    {
       "file": "pages/reports/innovations/insight-2025-08-18T18-41.tsx",
       "route": "/reports/innovations/insight-2025-08-18T18-41"
     },
@@ -15841,6 +15929,10 @@
       "route": "/reports/innovations/insight-2025-08-18T12-29"
     },
     {
+      "file": "pages/reports/innovations/insight-2025-08-18-1842.tsx",
+      "route": "/reports/innovations/insight-2025-08-18-1842"
+    },
+    {
       "file": "pages/reports/innovations/insight-2025-08-18-1841.tsx",
       "route": "/reports/innovations/insight-2025-08-18-1841"
     },
@@ -16885,6 +16977,10 @@
       "route": "/reports/innovations/insight-2025-08-18-1229"
     },
     {
+      "file": "pages/reports/innovations/innovation-2025-08-18-1842.tsx",
+      "route": "/reports/innovations/innovation-2025-08-18-1842"
+    },
+    {
       "file": "pages/reports/innovations/innovation-2025-08-18-1841.tsx",
       "route": "/reports/innovations/innovation-2025-08-18-1841"
     },
@@ -17921,8 +18017,16 @@
       "route": "/reports/innovations/innovation-2025-08-18-1229"
     },
     {
-      "file": "pages/main/front/index.tsx",
-      "route": "/main/front"
+      "file": "pages/reports/guides/ultra-1755542554695-p1tn1f.tsx",
+      "route": "/reports/guides/ultra-1755542554695-p1tn1f"
+    },
+    {
+      "file": "pages/reports/guides/ultra-1755542552508-1klt6x.tsx",
+      "route": "/reports/guides/ultra-1755542552508-1klt6x"
+    },
+    {
+      "file": "pages/reports/guides/ultra-1755542533700-2n2xyi.tsx",
+      "route": "/reports/guides/ultra-1755542533700-2n2xyi"
     },
     {
       "file": "pages/reports/guides/ultra-1755542531323-l9pm04.tsx",
@@ -19511,6 +19615,14 @@
     {
       "file": "pages/reports/guides/ultra-1755539341010-vsuyr3.tsx",
       "route": "/reports/guides/ultra-1755539341010-vsuyr3"
+    },
+    {
+      "file": "pages/reports/guides/guide-2025-08-18-184233.tsx",
+      "route": "/reports/guides/guide-2025-08-18-184233"
+    },
+    {
+      "file": "pages/reports/guides/guide-2025-08-18-184214.tsx",
+      "route": "/reports/guides/guide-2025-08-18-184214"
     },
     {
       "file": "pages/reports/guides/guide-2025-08-18-184122.tsx",
@@ -21621,6 +21733,14 @@
       "route": "/reports/guides/ai-automation-best-practices"
     },
     {
+      "file": "pages/reports/blueprints/blueprint-2025-08-18-184233.tsx",
+      "route": "/reports/blueprints/blueprint-2025-08-18-184233"
+    },
+    {
+      "file": "pages/reports/blueprints/blueprint-2025-08-18-184214.tsx",
+      "route": "/reports/blueprints/blueprint-2025-08-18-184214"
+    },
+    {
       "file": "pages/reports/blueprints/blueprint-2025-08-18-184122.tsx",
       "route": "/reports/blueprints/blueprint-2025-08-18-184122"
     },
@@ -23633,6 +23753,18 @@
       "route": "/reports/blueprints/blueprint-2025-08-18-122901"
     },
     {
+      "file": "pages/reports/cases/ultra-1755542554696-ra0itl.tsx",
+      "route": "/reports/cases/ultra-1755542554696-ra0itl"
+    },
+    {
+      "file": "pages/reports/cases/ultra-1755542552509-0dz85c.tsx",
+      "route": "/reports/cases/ultra-1755542552509-0dz85c"
+    },
+    {
+      "file": "pages/reports/cases/ultra-1755542533701-zb2qz8.tsx",
+      "route": "/reports/cases/ultra-1755542533701-zb2qz8"
+    },
+    {
       "file": "pages/reports/cases/ultra-1755542531324-e60s8u.tsx",
       "route": "/reports/cases/ultra-1755542531324-e60s8u"
     },
@@ -25219,6 +25351,14 @@
     {
       "file": "pages/reports/cases/ultra-1755539341010-qh69q9.tsx",
       "route": "/reports/cases/ultra-1755539341010-qh69q9"
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-18-184233.tsx",
+      "route": "/reports/cases/case-2025-08-18-184233"
+    },
+    {
+      "file": "pages/reports/cases/case-2025-08-18-184214.tsx",
+      "route": "/reports/cases/case-2025-08-18-184214"
     },
     {
       "file": "pages/reports/cases/case-2025-08-18-184122.tsx",
@@ -27323,6 +27463,10 @@
     {
       "file": "pages/reports/cases/case-2025-08-18-122902.tsx",
       "route": "/reports/cases/case-2025-08-18-122902"
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "route": "/main/front"
     }
   ],
   "docs": [
@@ -27363,316 +27507,116 @@
       "route": "/docs/CHANGELOG.md"
     }
   ],
-  "generatedAt": "2025-08-18T18:42:12.055Z",
+  "generatedAt": "2025-08-18T18:42:37.776Z",
   "items": [
-    {
-      "title": "Playbook — Autonomous Delivery",
-      "href": "/reports/playbooks/playbook-2025-08-18-184234",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:34.066Z",
-      "source": "cloud-playbook-factory"
-    },
-    {
-      "title": "Case Study — Cloud Improving",
-      "href": "/reports/cases/case-2025-08-18-184233",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:33.754Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Guide — Cloud Improving Implementation",
-      "href": "/reports/guides/guide-2025-08-18-184233",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:33.754Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Pattern — Automation Trends 2025",
-      "href": "/reports/patterns/pattern-2025-08-18-184233",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:33.754Z",
-      "source": "cloud-deep-research-factory"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-18 18-42",
-      "href": "/reports/innovations/insight-2025-08-18T18-42",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:33.595Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-18 18-42",
-      "href": "/reports/updates/update-2025-08-18T18-42",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:33.595Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-18 18-42",
-      "href": "/reports/innovations/insight-2025-08-18T18-42",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:33.595Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-18 18-42",
-      "href": "/reports/updates/update-2025-08-18T18-42",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:33.595Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Reference Architecture — Autonomous Content Mesh",
-      "href": "/reports/blueprints/blueprint-2025-08-18-184233",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:33.475Z",
-      "source": "cloud-blueprint-factory"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-18 18-42",
-      "href": "/reports/innovations/insight-2025-08-18T18-42",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:33.237Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-18 18-42",
-      "href": "/reports/updates/update-2025-08-18T18-42",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:33.237Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Innovation Insight — 2025-08-18 18-42",
-      "href": "/reports/innovations/insight-2025-08-18T18-42",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:33.237Z",
-      "source": "cloud-content-factory"
-    },
-    {
-      "title": "Autonomous Update — 2025-08-18 18-42",
-      "href": "/reports/updates/update-2025-08-18T18-42",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:33.237Z",
-      "source": "cloud-content-factory"
-    },
     {
       "title": "Autonomous Content Generation",
       "href": "/automation",
       "desc": "AI-powered content completion via Cursor agents",
-      "createdAt": "2025-08-18T18:42:15.203Z",
+      "createdAt": "2025-08-18T18:42:42.431Z",
       "source": "cursor-autonomous-orchestrator"
     },
     {
       "title": "Reference Architecture — Autonomous Content Mesh",
-      "href": "/reports/blueprints/blueprint-2025-08-18-184214",
+      "href": "/reports/blueprints/blueprint-2025-08-18-184242",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:14.969Z",
+      "createdAt": "2025-08-18T18:42:42.042Z",
       "source": "cloud-blueprint-factory"
     },
     {
       "title": "Playbook — Autonomous Delivery",
-      "href": "/reports/playbooks/playbook-2025-08-18-184214",
+      "href": "/reports/playbooks/playbook-2025-08-18-184241",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:14.795Z",
+      "createdAt": "2025-08-18T18:42:41.894Z",
       "source": "cloud-playbook-factory"
     },
     {
       "title": "Case Study — Cloud Improving",
-      "href": "/reports/cases/case-2025-08-18-184214",
+      "href": "/reports/cases/case-2025-08-18-184241",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:14.637Z",
+      "createdAt": "2025-08-18T18:42:41.686Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Guide — Cloud Improving Implementation",
-      "href": "/reports/guides/guide-2025-08-18-184214",
+      "href": "/reports/guides/guide-2025-08-18-184241",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:14.637Z",
+      "createdAt": "2025-08-18T18:42:41.686Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Automation Trends 2025",
-      "href": "/reports/patterns/pattern-2025-08-18-184214",
+      "href": "/reports/patterns/pattern-2025-08-18-184241",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:14.637Z",
+      "createdAt": "2025-08-18T18:42:41.686Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Innovation Insight — 2025-08-18 18-42",
       "href": "/reports/innovations/insight-2025-08-18T18-42",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:14.505Z",
+      "createdAt": "2025-08-18T18:42:41.546Z",
       "source": "cloud-content-factory"
     },
     {
       "title": "Autonomous Update — 2025-08-18 18-42",
       "href": "/reports/updates/update-2025-08-18T18-42",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:14.505Z",
+      "createdAt": "2025-08-18T18:42:41.546Z",
       "source": "cloud-content-factory"
     },
     {
       "title": "Innovation Insight — 2025-08-18 18-42",
       "href": "/reports/innovations/insight-2025-08-18T18-42",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:14.505Z",
+      "createdAt": "2025-08-18T18:42:41.546Z",
       "source": "cloud-content-factory"
     },
     {
       "title": "Autonomous Update — 2025-08-18 18-42",
       "href": "/reports/updates/update-2025-08-18T18-42",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-18T18:42:14.505Z",
+      "createdAt": "2025-08-18T18:42:41.546Z",
       "source": "cloud-content-factory"
     },
     {
-      "id": "rapid-1755542533408-2317fy",
-      "title": "API Integration",
-      "route": "/services/rapid-1755542533408-2317fy",
-      "type": "rapid-generated",
-      "created": "2025-08-18T18:42:13.420Z",
-      "process": "rapid"
-    },
-    {
-      "id": "rapid-1755542533409-nsn4sv",
-      "title": "Automation Suite",
-      "route": "/products/rapid-1755542533409-nsn4sv",
-      "type": "rapid-generated",
-      "created": "2025-08-18T18:42:13.420Z",
-      "process": "rapid"
-    },
-    {
-      "id": "rapid-1755542533410-tptuh1",
-      "title": "Step-by-Step Guide to Web Development",
-      "route": "/tutorials/rapid-1755542533410-tptuh1",
-      "type": "rapid-generated",
-      "created": "2025-08-18T18:42:13.420Z",
-      "process": "rapid"
-    },
-    {
-      "id": "ultra-1755542533698-ogsqzo",
-      "title": "Rapid Technology Advancement",
-      "route": "/reports/updates/ultra-1755542533698-ogsqzo",
+      "id": "ultra-1755542560732-echgcg",
+      "title": "Instantaneous Tech Insights",
+      "route": "/reports/updates/ultra-1755542560732-echgcg",
       "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:42:13.718Z",
+      "created": "2025-08-18T18:42:40.760Z",
       "process": "ultra-fast"
     },
     {
-      "id": "ultra-1755542533699-v23f9p",
-      "title": "Ultra-Fast Real-time collaboration tools Insight",
-      "route": "/reports/insights/ultra-1755542533699-v23f9p",
+      "id": "ultra-1755542560736-bbgyvj",
+      "title": "Ultra-Fast Ultra-fast testing frameworks Insight",
+      "route": "/reports/insights/ultra-1755542560736-bbgyvj",
       "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:42:13.718Z",
+      "created": "2025-08-18T18:42:40.760Z",
       "process": "ultra-fast"
     },
     {
-      "id": "ultra-1755542533700-2n2xyi",
-      "title": "Ultra-Fast Guide: Ultra-responsive applications",
-      "route": "/reports/guides/ultra-1755542533700-2n2xyi",
+      "id": "ultra-1755542560737-l211ph",
+      "title": "Ultra-Fast Guide: Ultra-fast testing frameworks",
+      "route": "/reports/guides/ultra-1755542560737-l211ph",
       "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:42:13.718Z",
+      "created": "2025-08-18T18:42:40.760Z",
       "process": "ultra-fast"
     },
     {
-      "id": "ultra-1755542533701-zb2qz8",
+      "id": "ultra-1755542560739-usnjwo",
       "title": "Case Study: Lightning-fast development Success",
-      "route": "/reports/cases/ultra-1755542533701-zb2qz8",
+      "route": "/reports/cases/ultra-1755542560739-usnjwo",
       "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:42:13.718Z",
+      "created": "2025-08-18T18:42:40.760Z",
       "process": "ultra-fast"
     },
     {
-      "id": "ultra-1755542533702-jdmv9r",
-      "title": "Pattern: Ultra-responsive applications Architecture",
-      "route": "/reports/patterns/ultra-1755542533702-jdmv9r",
+      "id": "ultra-1755542560740-kj17ac",
+      "title": "Pattern: AI-powered automation Architecture",
+      "route": "/reports/patterns/ultra-1755542560740-kj17ac",
       "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:42:13.718Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755542552506-jqpar3",
-      "title": "Real-Time Innovation Hub",
-      "route": "/reports/updates/ultra-1755542552506-jqpar3",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:42:32.520Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755542552508-36kzx4",
-      "title": "Ultra-Fast Real-time collaboration tools Insight",
-      "route": "/reports/insights/ultra-1755542552508-36kzx4",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:42:32.520Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755542552508-1klt6x",
-      "title": "Ultra-Fast Guide: Lightning-fast development",
-      "route": "/reports/guides/ultra-1755542552508-1klt6x",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:42:32.520Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755542552509-0dz85c",
-      "title": "Case Study: Lightning-fast development Success",
-      "route": "/reports/cases/ultra-1755542552509-0dz85c",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:42:32.520Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755542552510-n4pxq8",
-      "title": "Pattern: Real-time data processing Architecture",
-      "route": "/reports/patterns/ultra-1755542552510-n4pxq8",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:42:32.520Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "cursor-chat-2025-08-18T18:42:34.246Z",
-      "type": "cursor-chat",
-      "timestamp": "2025-08-18T18:42:34.246Z"
-    },
-    {
-      "id": "ultra-1755542554693-bvu4di",
-      "title": "Speed-of-Thought Engineering",
-      "route": "/reports/updates/ultra-1755542554693-bvu4di",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:42:34.708Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755542554694-d6ihdo",
-      "title": "Ultra-Fast Real-time collaboration tools Insight",
-      "route": "/reports/insights/ultra-1755542554694-d6ihdo",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:42:34.708Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755542554695-p1tn1f",
-      "title": "Ultra-Fast Guide: AI-powered automation",
-      "route": "/reports/guides/ultra-1755542554695-p1tn1f",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:42:34.708Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755542554696-ra0itl",
-      "title": "Case Study: Ultra-fast testing frameworks Success",
-      "route": "/reports/cases/ultra-1755542554696-ra0itl",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:42:34.708Z",
-      "process": "ultra-fast"
-    },
-    {
-      "id": "ultra-1755542554697-8qmtvo",
-      "title": "Pattern: Real-time data processing Architecture",
-      "route": "/reports/patterns/ultra-1755542554697-8qmtvo",
-      "type": "ultra-fast-generated",
-      "created": "2025-08-18T18:42:34.708Z",
+      "created": "2025-08-18T18:42:40.760Z",
       "process": "ultra-fast"
     }
   ]

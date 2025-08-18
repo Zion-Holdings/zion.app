@@ -1,19 +1,11 @@
 # pa11y Report
 
-<<<<<<< Updated upstream
-Generated: 2025-08-18T18:41:25.729Z
-=======
-Generated: 2025-08-18T18:37:07.377Z
->>>>>>> Stashed changes
+Generated: 2025-08-18T18:42:39.806Z
 
 ## Status
 - Task: pa11y
 - Status: Completed
-<<<<<<< Updated upstream
-- Timestamp: 2025-08-18T18:41:25.729Z
-=======
-- Timestamp: 2025-08-18T18:37:07.377Z
->>>>>>> Stashed changes
+- Timestamp: 2025-08-18T18:42:39.806Z
 
 ## Next Steps
 - Implement actual pa11y functionality

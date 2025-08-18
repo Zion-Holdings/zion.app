@@ -1,19 +1,11 @@
 # todo-issue-sync Report
 
-<<<<<<< Updated upstream
-Generated: 2025-08-18T18:41:26.411Z
-=======
-Generated: 2025-08-18T18:37:08.027Z
->>>>>>> Stashed changes
+Generated: 2025-08-18T18:42:40.113Z
 
 ## Status
 - Task: todo-issue-sync
 - Status: Completed
-<<<<<<< Updated upstream
-- Timestamp: 2025-08-18T18:41:26.411Z
-=======
-- Timestamp: 2025-08-18T18:37:08.027Z
->>>>>>> Stashed changes
+- Timestamp: 2025-08-18T18:42:40.113Z
 
 ## Next Steps
 - Implement actual todo-issue-sync functionality
