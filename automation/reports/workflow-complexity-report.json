@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T05:29:40.607Z",
+  "timestamp": "2025-08-18T05:30:36.384Z",
   "summary": {
     "totalWorkflows": 226,
     "complexityDistribution": {
@@ -1582,6 +1582,24 @@
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci-auto-heal.yml"
     },
+    "ci-lint-types-build.yml": {
+      "complexityScore": 0,
+      "complexityLevel": "low",
+      "metrics": {
+        "totalLines": 34,
+        "jobCount": 0,
+        "stepCount": 5,
+        "conditionalCount": 0,
+        "matrixCount": 0,
+        "dependencyCount": 0,
+        "environmentCount": 0,
+        "secretCount": 0,
+        "actionCount": 2
+      },
+      "refactoringPriority": "low",
+      "status": "active",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci-lint-types-build.yml"
+    },
     "ci-merge-main.yml": {
       "complexityScore": 0,
       "complexityLevel": "low",
@@ -1635,24 +1653,6 @@
       "refactoringPriority": "low",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci-self-heal.yml"
-    },
-    "ci.yml": {
-      "complexityScore": 0,
-      "complexityLevel": "low",
-      "metrics": {
-        "totalLines": 30,
-        "jobCount": 0,
-        "stepCount": 5,
-        "conditionalCount": 0,
-        "matrixCount": 0,
-        "dependencyCount": 0,
-        "environmentCount": 0,
-        "secretCount": 0,
-        "actionCount": 2
-      },
-      "refactoringPriority": "low",
-      "status": "active",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci.yml"
     },
     "cleanup-merged-branches.yml": {
       "complexityScore": 0,
@@ -2072,7 +2072,7 @@
       "complexityScore": 30,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 106,
+        "totalLines": 104,
         "jobCount": 0,
         "stepCount": 8,
         "conditionalCount": 3,
@@ -2774,7 +2774,7 @@
       "complexityScore": 0,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 42,
+        "totalLines": 43,
         "jobCount": 0,
         "stepCount": 5,
         "conditionalCount": 0,

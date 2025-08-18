@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T05:29:41.421Z",
+  "timestamp": "2025-08-18T05:30:37.205Z",
   "critical": [
     {
       "name": "ci-self-heal.yml",
@@ -76,25 +76,6 @@
         "workflow_dispatch"
       ],
       "resourceScore": 153
-    },
-    {
-      "name": "ci.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci.yml",
-      "priority": "critical",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 45,
-      "concurrentJobs": 6,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "push",
-        "pull_request"
-      ],
-      "resourceScore": 139
     }
   ],
   "high": [
@@ -258,7 +239,7 @@
       "priority": "high",
       "resourceIntensity": "medium",
       "estimatedDuration": 30,
-      "concurrentJobs": 10,
+      "concurrentJobs": 8,
       "runnerRequirements": {
         "runner": "ubuntu-latest",
         "size": "standard",
@@ -269,7 +250,7 @@
         "schedule",
         "workflow_dispatch {}"
       ],
-      "resourceScore": 130
+      "resourceScore": 132
     }
   ],
   "medium": [
@@ -2221,25 +2202,6 @@
       "resourceScore": 109
     },
     {
-      "name": "monetization-continuous.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/monetization-continuous.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 25,
-      "concurrentJobs": 7,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "schedule",
-        "workflow_dispatch"
-      ],
-      "resourceScore": 108
-    },
-    {
       "name": "revenue-ideas-daily.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/revenue-ideas-daily.yml",
       "priority": "medium",
@@ -3154,6 +3116,25 @@
     {
       "name": "media-optimizer.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/media-optimizer.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 30,
+      "concurrentJobs": 7,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "schedule",
+        "workflow_dispatch"
+      ],
+      "resourceScore": 103
+    },
+    {
+      "name": "monetization-continuous.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/monetization-continuous.yml",
       "priority": "medium",
       "resourceIntensity": "medium",
       "estimatedDuration": 30,
@@ -4243,6 +4224,25 @@
       "resourceScore": 100
     },
     {
+      "name": "ci-lint-types-build.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci-lint-types-build.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 45,
+      "concurrentJobs": 6,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "push",
+        "pull_request"
+      ],
+      "resourceScore": 89
+    },
+    {
       "name": "rapid-sync.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/rapid-sync.yml",
       "priority": "medium",
@@ -4393,7 +4393,7 @@
   "recommendations": [
     {
       "type": "warning",
-      "message": "Too many critical workflows (5/3)",
+      "message": "Too many critical workflows (4/3)",
       "suggestion": "Consider consolidating or deprioritizing some critical workflows"
     },
     {
@@ -4403,7 +4403,7 @@
     },
     {
       "type": "info",
-      "message": "High priority workflows may compete for resources (14)",
+      "message": "High priority workflows may compete for resources (13)",
       "suggestion": "Consider staggering high-priority workflow execution"
     }
   ]
