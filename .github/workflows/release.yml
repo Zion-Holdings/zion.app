@@ -1,33 +1,138 @@
-name: Workflow
+name: Release Management
+
 on:
-  workflow_dispatch: {}
-  schedule:
-  - cron: '*/10 * * * *'
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version (e.g., v1.0.0)'
+        required: true
+        type: string
+
 permissions:
   contents: write
   actions: read
-  pull-requests: write
-concurrency:
-  group: workflow-${{ github.ref }}
-  cancel-in-progress: false
-jobs:
-  main:
-    name: Main Job
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
-        cache: npm
-    - name: Install dependencies
-      run: npm ci --no-audit --no-fund
-    - name: Run workflow
-      run: 'echo "Workflow Workflow completed successfully"
 
-        '
+concurrency:
+  group: "release"
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Get version
+        id: version
+        run: |
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            echo "version=${{ github.event.inputs.version }}" >> $GITHUB_OUTPUT
+          else
+            echo "version=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Build application
+        run: npm run build
+        env:
+          NODE_OPTIONS: "--max-old-space-size=4096"
+
+      - name: Export static files
+        run: npm run export
+
+      - name: Create release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.version.outputs.version }}
+          release_name: "Release ${{ steps.version.outputs.version }}"
+          body: |
+            ## Release ${{ steps.version.outputs.version }}
+            
+            This is an automated release of Zion App.
+            
+            ### Changes
+            - Built and tested application
+            - Generated static export
+            - Ready for deployment
+            
+            ### Artifacts
+            - Static build files
+            - Source code
+            
+            ### Next Steps
+            - Deploy to production
+            - Update documentation
+            - Notify stakeholders
+          draft: false
+          prerelease: false
+
+      - name: Upload build artifacts
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./out
+          asset_name: zion-app-${{ steps.version.outputs.version }}.zip
+          asset_content_type: application/zip
+
+      - name: Create zip archive
+        run: |
+          cd out
+          zip -r ../zion-app-${{ steps.version.outputs.version }}.zip .
+          cd ..
+
+      - name: Upload zip archive
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./zion-app-${{ steps.version.outputs.version }}.zip
+          asset_name: zion-app-${{ steps.version.outputs.version }}.zip
+          asset_content_type: application/zip
+
+      - name: Update package.json version
+        run: |
+          npm version ${{ steps.version.outputs.version }} --no-git-tag-version
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add package.json package-lock.json
+          git commit -m "chore: bump version to ${{ steps.version.outputs.version }}"
+          git push
+
+      - name: Notify release
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const version = '${{ steps.version.outputs.version }}';
+            const message = `🚀 **Release ${version} Created**\n\nVersion ${version} has been successfully released with all artifacts.`;
+            
+            // Create a release summary issue
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Release ${version} Summary`,
+              body: message,
+              labels: ['release', 'deployment']
+            });
