@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T04:02:37.104Z",
+  "timestamp": "2025-08-18T04:03:35.304Z",
   "summary": {
     "totalWorkflows": 224,
     "complexityDistribution": {
@@ -2969,13 +2969,13 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/optimize-images.yml"
     },
     "pa11y.yml": {
-      "complexityScore": 0,
+      "complexityScore": 15,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 44,
+        "totalLines": 91,
         "jobCount": 0,
-        "stepCount": 5,
-        "conditionalCount": 1,
+        "stepCount": 10,
+        "conditionalCount": 2,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
