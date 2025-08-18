@@ -1,35 +1,11 @@
 # workflow-watchdog Report
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-Generated: 2025-08-18T13:26:19.037Z
-=======
-Generated: 2025-08-18T13:22:58.785Z
->>>>>>> Stashed changes
-=======
-Generated: 2025-08-18T13:22:58.785Z
->>>>>>> Stashed changes
-=======
-Generated: 2025-08-18T13:22:58.785Z
->>>>>>> Stashed changes
+Generated: 2025-08-18T13:30:26.764Z
 
 ## Status
 - Task: workflow-watchdog
 - Status: Completed
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-- Timestamp: 2025-08-18T13:26:19.037Z
-=======
-- Timestamp: 2025-08-18T13:22:58.785Z
->>>>>>> Stashed changes
-=======
-- Timestamp: 2025-08-18T13:22:58.785Z
->>>>>>> Stashed changes
-=======
-- Timestamp: 2025-08-18T13:22:58.785Z
->>>>>>> Stashed changes
+- Timestamp: 2025-08-18T13:30:26.764Z
 
 ## Next Steps
 - Implement actual workflow-watchdog functionality
