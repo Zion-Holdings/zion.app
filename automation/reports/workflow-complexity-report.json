@@ -1,18 +1,18 @@
 {
-  "timestamp": "2025-08-18T04:16:40.331Z",
+  "timestamp": "2025-08-18T04:40:41.397Z",
   "summary": {
     "totalWorkflows": 224,
     "complexityDistribution": {
       "very-high": 0,
       "high": 0,
-      "medium": 8,
-      "low": 216
+      "medium": 9,
+      "low": 215
     },
     "refactoringPriorities": {
       "critical": 0,
       "high": 0,
-      "medium": 8,
-      "low": 216
+      "medium": 9,
+      "low": 215
     }
   },
   "workflows": {
@@ -3005,20 +3005,20 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/performance-audit.yml"
     },
     "performance-monitoring.yml": {
-      "complexityScore": 0,
-      "complexityLevel": "low",
+      "complexityScore": 35,
+      "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 44,
+        "totalLines": 124,
         "jobCount": 0,
-        "stepCount": 5,
-        "conditionalCount": 1,
+        "stepCount": 15,
+        "conditionalCount": 3,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
         "secretCount": 0,
-        "actionCount": 3
+        "actionCount": 6
       },
-      "refactoringPriority": "low",
+      "refactoringPriority": "medium",
       "status": "active",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/performance-monitoring.yml"
     },
