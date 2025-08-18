@@ -5,11 +5,20 @@ on:
     - cron: '0 */12 * * *'
   workflow_dispatch: {}
 
+permissions:
+  contents: write
+  actions: read
+  pull-requests: write
+
+concurrency:
+  group: autonomous-meta
+  cancel-in-progress: false
+
 jobs:
   meta-factory:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
