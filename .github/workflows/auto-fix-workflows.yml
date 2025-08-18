@@ -3,8 +3,8 @@ name: Auto-Fix GitHub Actions Workflows
 
 on:
   workflow_dispatch: {}
-  # schedule:
-  #   - cron: '0 3 * * *' # Daily at 3 AM UTC - DISABLED to prevent conflicts with manual fixes
+  schedule:
+    - cron: '0 3 * * *' # Daily at 3 AM UTC - IMPROVED to be more intelligent
   workflow_run:
     workflows: ["Comprehensive Test Suite"]
     types: [completed]
@@ -37,11 +37,24 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
-      - name: Run comprehensive workflow fixer
+      - name: Check workflow health before fixing
+        id: pre-check
+        run: |
+          echo "Checking workflow health before attempting fixes..."
+          if node automation/check-workflow-health.cjs | grep -q "✅ All workflows are healthy"; then
+            echo "needs-fixing=false" >> $GITHUB_OUTPUT
+            echo "All workflows are already healthy - no fixes needed"
+          else
+            echo "needs-fixing=true" >> $GITHUB_OUTPUT
+            echo "Workflows need fixing - proceeding with repairs"
+          fi
+      - name: Run comprehensive workflow fixer (only if needed)
+        if: steps.pre-check.outputs.needs-fixing == 'true'
         run: |
           chmod +x fix-github-actions-comprehensive.sh
           ./fix-github-actions-comprehensive.sh
-      - name: Validate fixes
+      - name: Validate fixes (only if fixes were applied)
+        if: steps.pre-check.outputs.needs-fixing == 'true'
         run: |
           chmod +x validate-workflows-comprehensive.sh
           ./validate-workflows-comprehensive.sh
@@ -56,7 +69,7 @@ jobs:
             echo "has-changes=false" >> $GITHUB_OUTPUT
             echo "No changes detected"
           fi
-      - name: Commit and push fixes
+      - name: Commit and push fixes (only if changes exist)
         if: steps.check-changes.outputs.has-changes == 'true'
         run: |
           git config --local user.email "action@github.com"
@@ -68,7 +81,13 @@ jobs:
         run: |
           echo "## Workflow Auto-Fix Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Status:** ${{ steps.check-changes.outputs.has-changes == 'true' && 'Fixed issues and committed changes' || 'No issues found' }}" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.pre-check.outputs.needs-fixing }}" == "false" ]; then
+            echo "**Status:** ✅ All workflows are already healthy - no fixes applied" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ steps.check-changes.outputs.has-changes }}" == "true" ]; then
+            echo "**Status:** 🔧 Fixed issues and committed changes" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "**Status:** ⚠️ Issues found but no changes were made" >> $GITHUB_STEP_SUMMARY
+          fi
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Timestamp:** $(date -u)" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY

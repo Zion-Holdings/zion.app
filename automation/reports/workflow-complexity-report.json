@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T05:40:40.813Z",
+  "timestamp": "2025-08-18T05:41:37.631Z",
   "summary": {
     "totalWorkflows": 226,
     "complexityDistribution": {
@@ -791,13 +791,13 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/app-monitoring.yml"
     },
     "auto-fix-workflows.yml": {
-      "complexityScore": 15,
+      "complexityScore": 20,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 76,
+        "totalLines": 95,
         "jobCount": 0,
-        "stepCount": 8,
-        "conditionalCount": 1,
+        "stepCount": 9,
+        "conditionalCount": 3,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
