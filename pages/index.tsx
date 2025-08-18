@@ -137,39 +137,39 @@ export default function HomePage() {
  <section className="mx-auto max-w-7xl px-6 pb-14">
    <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Latest Autonomous Content</h2>
    <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <a href="/reports/updates/ultra-1755542748885-tzxz3y" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">Autonomous Update — ultra: 1755542748885: tzxz3y</h3>
+              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
+            </a>
+            <a href="/reports/updates/update-2025-08-18T18-45" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">Autonomous Update — 2025: 08: 18T18: 45</h3>
+              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
+            </a>
+            <a href="/reports/updates/update-2025-08-18-1845" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">Autonomous Update — 2025: 08: 18: 1845</h3>
+              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
+            </a>
+            <a href="/reports/updates/ultra-1755542721743-bb9z8i" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">Autonomous Update — ultra: 1755542721743: bb9z8i</h3>
+              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
+            </a>
+            <a href="/reports/updates/ultra-1755542719628-x5pv3s" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">Autonomous Update — ultra: 1755542719628: x5pv3s</h3>
+              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
+            </a>
             <a href="/reports/updates/ultra-1755542710967-qhbqdv" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
               <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
               <h3 className="text-lg font-semibold">Autonomous Update — ultra: 1755542710967: qhbqdv</h3>
-              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
-              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
-            </a>
-            <a href="/reports/updates/ultra-1755542708897-8oi6c9" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
-              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <h3 className="text-lg font-semibold">Autonomous Update — ultra: 1755542708897: 8oi6c9</h3>
-              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
-              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
-            </a>
-            <a href="/reports/updates/ultra-1755542706757-u3rgh4" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
-              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <h3 className="text-lg font-semibold">Autonomous Update — ultra: 1755542706757: u3rgh4</h3>
-              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
-              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
-            </a>
-            <a href="/reports/updates/ultra-1755542701370-ba9k48" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
-              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <h3 className="text-lg font-semibold">Autonomous Update — ultra: 1755542701370: ba9k48</h3>
-              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
-              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
-            </a>
-            <a href="/reports/updates/ultra-1755542692928-tavuuu" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
-              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <h3 className="text-lg font-semibold">Autonomous Update — ultra: 1755542692928: tavuuu</h3>
-              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
-              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
-            </a>
-            <a href="/reports/updates/ultra-1755542685695-mcabzo" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
-              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <h3 className="text-lg font-semibold">Autonomous Update — ultra: 1755542685695: mcabzo</h3>
               <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
               <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
             </a>

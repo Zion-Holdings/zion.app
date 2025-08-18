@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T18:22:33.901Z",
+  "timestamp": "2025-08-18T18:45:50.449Z",
   "totalPackages": 0,
   "outdatedPackages": {
     "@testing-library/react": {
@@ -24,22 +24,6 @@
       "latest": "19.1.7",
       "updateType": "major",
       "priority": "medium",
-      "securityRisk": false
-    },
-    "@typescript-eslint/eslint-plugin": {
-      "current": "8.39.1",
-      "wanted": "8.40.0",
-      "latest": "8.40.0",
-      "updateType": "minor",
-      "priority": "high",
-      "securityRisk": false
-    },
-    "@typescript-eslint/parser": {
-      "current": "8.39.1",
-      "wanted": "8.40.0",
-      "latest": "8.40.0",
-      "updateType": "minor",
-      "priority": "high",
       "securityRisk": false
     },
     "framer-motion": {
@@ -82,14 +66,6 @@
       "priority": "low",
       "securityRisk": false
     },
-    "react-datepicker": {
-      "current": "8.4.0",
-      "wanted": "8.5.0",
-      "latest": "8.5.0",
-      "updateType": "minor",
-      "priority": "high",
-      "securityRisk": false
-    },
     "react-dom": {
       "current": "18.2.0",
       "wanted": "18.2.0",
@@ -108,40 +84,16 @@
     }
   },
   "securityIssues": {},
-  "healthScore": 30,
+  "healthScore": 60,
   "recommendations": [],
   "criticalIssues": [],
   "updatePlan": {
     "immediate": [],
     "scheduled": [
       {
-        "package": "@typescript-eslint/eslint-plugin",
-        "from": "8.39.1",
-        "to": "8.40.0",
-        "type": "minor",
-        "priority": "high",
-        "securityRisk": false
-      },
-      {
-        "package": "@typescript-eslint/parser",
-        "from": "8.39.1",
-        "to": "8.40.0",
-        "type": "minor",
-        "priority": "high",
-        "securityRisk": false
-      },
-      {
         "package": "lucide-react",
         "from": "0.539.0",
         "to": "0.540.0",
-        "type": "minor",
-        "priority": "high",
-        "securityRisk": false
-      },
-      {
-        "package": "react-datepicker",
-        "from": "8.4.0",
-        "to": "8.5.0",
         "type": "minor",
         "priority": "high",
         "securityRisk": false
@@ -222,9 +174,9 @@
       }
     ],
     "estimated": {
-      "time": 8,
+      "time": 2,
       "risk": "low",
-      "packages": 4
+      "packages": 1
     }
   }
 }
