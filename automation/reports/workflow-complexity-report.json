@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T04:11:40.543Z",
+  "timestamp": "2025-08-18T04:12:40.562Z",
   "summary": {
     "totalWorkflows": 224,
     "complexityDistribution": {
@@ -3455,18 +3455,18 @@
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/security-weekly.yml"
     },
     "security.yml": {
-      "complexityScore": 25,
+      "complexityScore": 20,
       "complexityLevel": "low",
       "metrics": {
-        "totalLines": 95,
+        "totalLines": 98,
         "jobCount": 0,
-        "stepCount": 12,
+        "stepCount": 8,
         "conditionalCount": 1,
         "matrixCount": 0,
         "dependencyCount": 0,
         "environmentCount": 0,
-        "secretCount": 0,
-        "actionCount": 7
+        "secretCount": 1,
+        "actionCount": 4
       },
       "refactoringPriority": "low",
       "status": "active",

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T04:11:47.948Z",
+  "timestamp": "2025-08-18T04:12:47.773Z",
   "critical": [
     {
       "name": "ci-self-heal.yml",
@@ -100,27 +100,6 @@
     }
   ],
   "high": [
-    {
-      "name": "security.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/security.yml",
-      "priority": "high",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 15,
-      "concurrentJobs": 13,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "push",
-        "pull_request",
-        "workflow_dispatch {}",
-        "schedule"
-      ],
-      "resourceScore": 145
-    },
     {
       "name": "dependabot-auto-approve.yml",
       "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/dependabot-auto-approve.yml",
@@ -272,6 +251,27 @@
         "workflow_dispatch null"
       ],
       "resourceScore": 132
+    },
+    {
+      "name": "security.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/security.yml",
+      "priority": "high",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 30,
+      "concurrentJobs": 9,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "push",
+        "pull_request",
+        "workflow_dispatch {}",
+        "schedule"
+      ],
+      "resourceScore": 131
     }
   ],
   "medium": [
