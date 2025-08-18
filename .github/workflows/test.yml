@@ -1,5 +1,6 @@
 ---
 name: Test Runner
+# Updated workflow to fix syntax issues
 on:
   workflow_dispatch: {}
   schedule:
