@@ -35711,6 +35711,55 @@
   "items": [
     {
       "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-18-133128",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T13:31:28.271Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Case Study — Cloud Improving",
+      "href": "/reports/cases/case-2025-08-18-133128",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T13:31:28.062Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-18-133128",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T13:31:28.062Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Automation Trends 2025",
+      "href": "/reports/patterns/pattern-2025-08-18-133128",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T13:31:28.062Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Case Study — Cloud Improving",
+      "href": "/reports/cases/case-2025-08-18-133127",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T13:31:28.008Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Cloud Improving Implementation",
+      "href": "/reports/guides/guide-2025-08-18-133127",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T13:31:28.008Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Automation Trends 2025",
+      "href": "/reports/patterns/pattern-2025-08-18-133127",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-18T13:31:28.008Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery",
       "href": "/reports/playbooks/playbook-2025-08-18-133100",
       "desc": "New autonomous content",
       "createdAt": "2025-08-18T13:31:00.592Z",
@@ -36161,6 +36210,11 @@
       "id": "cursor-chat-2025-08-18T13:31:00.731Z",
       "type": "cursor-chat",
       "timestamp": "2025-08-18T13:31:00.731Z"
+    },
+    {
+      "id": "cursor-chat-2025-08-18T13:31:28.506Z",
+      "type": "cursor-chat",
+      "timestamp": "2025-08-18T13:31:28.506Z"
     }
   ]
 }
