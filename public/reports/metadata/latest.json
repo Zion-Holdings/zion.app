@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T14:26:00.974Z",
-  "pagesScanned": 1373,
+  "generatedAt": "2025-08-18T14:27:00.946Z",
+  "pagesScanned": 1395,
   "items": [
     {
       "route": "/404",
@@ -1915,6 +1915,26 @@
       }
     },
     {
+      "route": "/reports/blueprints/blueprint-2025-08-18-142603",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-18-142659",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/cases/case-2025-08-18-122902",
       "missing": [
         "og:image"
@@ -3576,6 +3596,46 @@
     },
     {
       "route": "/reports/cases/case-2025-08-18-142531",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Cloud Improving",
+        "description": "Case Study — Cloud Improving — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-18-142603",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Cloud Improving",
+        "description": "Case Study — Cloud Improving — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-18-142604",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Cloud Improving",
+        "description": "Case Study — Cloud Improving — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-18-142659",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Cloud Improving",
+        "description": "Case Study — Cloud Improving — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-18-142700",
       "missing": [
         "og:image"
       ],
@@ -5255,6 +5315,46 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-18-142603",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-18-142604",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-18-142659",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-18-142700",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/innovation-2025-08-18-1229",
       "missing": [
         "og:image"
@@ -6112,6 +6212,16 @@
       "suggestion": {
         "title": "Implementation Guide — Autonomous UIs",
         "description": "Implementation Guide — Autonomous UIs — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/innovation-2025-08-18-1426",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Edge AI & IoT",
+        "description": "Reference Architecture — Edge AI & IoT — auto-suggested description"
       }
     },
     {
@@ -6975,6 +7085,16 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-18-1426",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pilot Plan: MLOps",
+        "description": "Pilot Plan: MLOps — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-18T12-29",
       "missing": [
         "og:image"
@@ -7832,6 +7952,16 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-18 14-25",
         "description": "Innovation Insight — 2025-08-18 14-25 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18T14-26",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-18 14-26",
+        "description": "Innovation Insight — 2025-08-18 14-26 — auto-suggested description"
       }
     },
     {
@@ -9525,6 +9655,46 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-18-142603",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Automation Trends 2025",
+        "description": "Pattern — Automation Trends 2025 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-18-142604",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Automation Trends 2025",
+        "description": "Pattern — Automation Trends 2025 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-18-142659",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Automation Trends 2025",
+        "description": "Pattern — Automation Trends 2025 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-18-142700",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Automation Trends 2025",
+        "description": "Pattern — Automation Trends 2025 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-18-122902",
       "missing": [
         "og:image"
@@ -11075,6 +11245,16 @@
       }
     },
     {
+      "route": "/reports/playbooks/playbook-2025-08-18-142700",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-18-0928",
       "missing": [
         "og:image"
@@ -11985,6 +12165,29 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-18-1126",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 11:26",
+        "description": "Autonomous Update — 2025-08-18 11:26 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-1127",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 11:27",
+        "description": "Autonomous Update — 2025-08-18 11:27 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-18-1229",
       "missing": [
         "og:image"
@@ -12832,6 +13035,16 @@
       "suggestion": {
         "title": "Autonomous Validation & QA Plan — Agentic Workflows (2025-08-18 14:25 UTC)",
         "description": "Autonomous Validation & QA Plan — Agentic Workflows (2025-08-18 14:25 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-1426",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Checklist — AI Service Design (2025-08-18 14:26 UTC)",
+        "description": "Autonomous Checklist — AI Service Design (2025-08-18 14:26 UTC) — auto-suggested description"
       }
     },
     {
@@ -13692,6 +13905,16 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-18 14-25",
         "description": "Autonomous Update — 2025-08-18 14-25 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18T14-26",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 14-26",
+        "description": "Autonomous Update — 2025-08-18 14-26 — auto-suggested description"
       }
     },
     {
