@@ -95,6 +95,7 @@ export default function BlogIndexPage() {
       </Head>
       
       <main className="container mx-auto px-6 py-12 max-w-6xl">
+        <Link href="/news" className="internal-link link-instance-3">[CONTENT] Content Link</Link>
         {/* Hero Section */}
         <section className="text-center mb-16">
           <h1 className="text-5xl font-extrabold bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent mb-6">
@@ -274,3 +275,5 @@ export default function BlogIndexPage() {
 }
 
 <Link href="/blog/ai-automation-trends-2025" className="internal-link">Related Content</Link>
+
+<Link href="/services" className="internal-link link-instance-1">[NAVIGATION] Blog Navigation</Link>

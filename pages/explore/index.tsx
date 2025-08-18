@@ -71,10 +71,12 @@ export default function ExploreIndex() {
         <Landing />
       </div>
       <main className="mx-auto max-w-7xl px-6 py-12">
+        <Link href="/resources" className="internal-link link-instance-3">[CONTENT] Content Link</Link>
         <h1 className="sr-only">Explore</h1>
 
         {/* Everything at a glance */}
         <section className="pb-8">
+        <a href="https://slack.com/ziontechgroup" target="_blank" rel="noopener noreferrer" className="external-link link-instance-5">[BUSINESS] Business Tool</a>
           <h2 className="text-2xl font-bold tracking-wide text-white/90 text-center">Everything at a glance</h2>
           <p className="mx-auto mt-2 max-w-3xl text-center text-white/70">Features, benefits, services, key pages, and content hubs.</p>
         </section>

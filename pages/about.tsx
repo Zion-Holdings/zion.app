@@ -30,8 +30,10 @@ export default function AboutPage() {
       </Head>
       
       <main className="container mx-auto px-6 py-12 max-w-6xl">
+        <Link href="/team" className="internal-link link-instance-3">[CONTENT] Content Link</Link>
         {/* Hero Section */}
         <section className="text-center mb-16">
+        <a href="https://meet.google.com/ziontechgroup" target="_blank" rel="noopener noreferrer" className="external-link link-instance-5">[BUSINESS] Business Tool</a>
           <h1 className="text-5xl font-extrabold bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent mb-6">
             About Zion Tech Group
           </h1>
@@ -304,3 +306,7 @@ export default function AboutPage() {
 }
 
 <a href="https://linkedin.com/company/zion-tech-group" target="_blank" rel="noopener noreferrer" className="external-link">Company Profile</a>
+
+<a href="https://youtube.com/ziontechgroup" target="_blank" rel="noopener noreferrer" className="external-link link-instance-4">[SOCIAL] Social Media</a>
+
+<Link href="/careers" className="internal-link link-instance-2">[FOOTER] Footer Link</Link>
