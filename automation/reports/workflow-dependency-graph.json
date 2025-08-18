@@ -750,7 +750,7 @@
   "auto-fix.yml": {
     "name": "auto-fix.yml",
     "triggers": [
-      "workflow_dispatch null",
+      "workflow_dispatch {}",
       "schedule",
       "pull_request"
     ],
@@ -1636,7 +1636,7 @@
     "name": "cloud-maintenance.yml",
     "triggers": [
       "schedule",
-      "workflow_dispatch null"
+      "workflow_dispatch {}"
     ],
     "needs": [],
     "outputs": [],
@@ -1878,7 +1878,7 @@
     "name": "cursor-rules-autoupdate.yml",
     "triggers": [
       "schedule",
-      "workflow_dispatch null"
+      "workflow_dispatch {}"
     ],
     "needs": [],
     "outputs": [],
@@ -1929,7 +1929,7 @@
     "name": "dependencies.yml",
     "triggers": [
       "schedule",
-      "workflow_dispatch null"
+      "workflow_dispatch {}"
     ],
     "needs": [],
     "outputs": [],
@@ -2013,7 +2013,7 @@
   "diverse-agent-matrix.yml": {
     "name": "diverse-agent-matrix.yml",
     "triggers": [
-      "workflow_dispatch null",
+      "workflow_dispatch {}",
       "schedule"
     ],
     "needs": [],
@@ -2204,7 +2204,7 @@
     "triggers": [
       "push",
       "schedule",
-      "workflow_dispatch null"
+      "workflow_dispatch {}"
     ],
     "needs": [],
     "outputs": [],
@@ -2322,7 +2322,7 @@
   "infinite-improvement-loop.yml": {
     "name": "infinite-improvement-loop.yml",
     "triggers": [
-      "workflow_dispatch null",
+      "workflow_dispatch {}",
       "schedule"
     ],
     "needs": [],
@@ -2356,7 +2356,7 @@
   "instagram-six-hourly.yml": {
     "name": "instagram-six-hourly.yml",
     "triggers": [
-      "workflow_dispatch null",
+      "workflow_dispatch {}",
       "schedule"
     ],
     "needs": [],
@@ -2594,7 +2594,7 @@
   "merge-conflict-guard.yml": {
     "name": "merge-conflict-guard.yml",
     "triggers": [
-      "workflow_dispatch null",
+      "workflow_dispatch {}",
       "schedule"
     ],
     "needs": [],
@@ -2851,7 +2851,7 @@
   "performance-weekly.yml": {
     "name": "performance-weekly.yml",
     "triggers": [
-      "workflow_dispatch null",
+      "workflow_dispatch {}",
       "schedule"
     ],
     "needs": [],
@@ -3450,7 +3450,7 @@
   "sync-health.yml": {
     "name": "sync-health.yml",
     "triggers": [
-      "workflow_dispatch null",
+      "workflow_dispatch {}",
       "schedule"
     ],
     "needs": [],
@@ -3552,7 +3552,7 @@
   "ui-evolution-weekly-beautify.yml": {
     "name": "ui-evolution-weekly-beautify.yml",
     "triggers": [
-      "workflow_dispatch null",
+      "workflow_dispatch {}",
       "schedule"
     ],
     "needs": [],
@@ -3688,7 +3688,7 @@
   "workflow-manager.yml": {
     "name": "workflow-manager.yml",
     "triggers": [
-      "workflow_dispatch null",
+      "workflow_dispatch {}",
       "schedule"
     ],
     "needs": [
@@ -3745,7 +3745,7 @@
     "triggers": [
       "push",
       "pull_request",
-      "workflow_dispatch null"
+      "workflow_dispatch {}"
     ],
     "needs": [],
     "outputs": [],
