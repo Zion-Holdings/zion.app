@@ -36156,6 +36156,11 @@
       "desc": "New autonomous content",
       "createdAt": "2025-08-18T11:09:48.722Z",
       "source": "cloud-playbook-factory"
+    },
+    {
+      "id": "cursor-chat-2025-08-18T11:11:57.196Z",
+      "type": "cursor-chat",
+      "timestamp": "2025-08-18T11:11:57.196Z"
     }
   ]
 }
