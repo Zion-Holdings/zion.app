@@ -1,4 +1,4 @@
-name: pa11y
+name: Accessibility Testing
 
 on:
   schedule:
@@ -14,7 +14,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  main:
+  accessibility:
+    name: Accessibility Tests
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -30,14 +31,60 @@ jobs:
       - name: Install dependencies
         run: npm ci
         
-      - name: Run workflow
-        run: echo "Workflow executed successfully"
+      - name: Install pa11y
+        run: npm install -g pa11y
+        
+      - name: Build application
+        run: npm run build
+        env:
+          NODE_OPTIONS: "--max-old-space-size=4096"
+        
+      - name: Start application
+        run: |
+          npm run start &
+          echo "Starting application for accessibility testing..."
+          sleep 10
+        env:
+          NODE_OPTIONS: "--max-old-space-size=4096"
+        
+      - name: Wait for app to be ready
+        run: |
+          echo "Waiting for application to be ready..."
+          for i in {1..60}; do
+            if curl -f http://localhost:3000 > /dev/null 2>&1; then
+              echo "Application is ready after $i attempts"
+              break
+            fi
+            if [ $i -eq 60 ]; then
+              echo "Application failed to start after 60 attempts"
+              exit 1
+            fi
+            sleep 2
+          done
+        
+      - name: Run accessibility tests
+        run: |
+          echo "Running accessibility tests on homepage..."
+          pa11y http://localhost:3000 --standard WCAG2AA --reporter json > accessibility-report.json || true
+          
+          echo "Running accessibility tests on key pages..."
+          pa11y http://localhost:3000/about --standard WCAG2AA --reporter json >> accessibility-report.json || true
+          pa11y http://localhost:3000/services --standard WCAG2AA --reporter json >> accessibility-report.json || true
+          
+          echo "Accessibility testing completed"
+        
+      - name: Stop application
+        if: always()
+        run: |
+          echo "Stopping application..."
+          pkill -f "next start" || true
+          pkill -f "node.*start" || true
+          sleep 5
         
       - name: Upload results
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: workflow-results
-          path: |
-            .github/workflows/
+          name: accessibility-results
+          path: accessibility-report.json
           retention-days: 7
