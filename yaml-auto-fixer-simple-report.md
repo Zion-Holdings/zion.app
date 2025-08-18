@@ -1,27 +1,11 @@
 # yaml-auto-fixer-simple Report
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-Generated: 2025-08-18T17:33:20.061Z
-=======
-Generated: 2025-08-18T17:33:38.059Z
->>>>>>> Stashed changes
-=======
-Generated: 2025-08-18T17:33:38.059Z
->>>>>>> Stashed changes
+Generated: 2025-08-18T17:34:32.604Z
 
 ## Status
 - Task: yaml-auto-fixer-simple
 - Status: Completed
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-- Timestamp: 2025-08-18T17:33:20.061Z
-=======
-- Timestamp: 2025-08-18T17:33:38.059Z
->>>>>>> Stashed changes
-=======
-- Timestamp: 2025-08-18T17:33:38.059Z
->>>>>>> Stashed changes
+- Timestamp: 2025-08-18T17:34:32.604Z
 
 ## Next Steps
 - Implement actual yaml-auto-fixer-simple functionality
