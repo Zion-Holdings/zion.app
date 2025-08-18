@@ -1,7 +1,7 @@
 ---
 name: Diverse Agent Matrix
 on:
-  workflow_dispatch: null
+  workflow_dispatch: {}
   schedule:
     - cron: '0 2 * * *'
 concurrency:
