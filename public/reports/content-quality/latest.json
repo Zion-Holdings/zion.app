@@ -1,6 +1,7 @@
 {
-  "generatedAt": "2025-08-18T03:06:01.766Z",
+  "generatedAt": "2025-08-18T03:07:01.554Z",
   "files": [
+    "update-2025-08-18-0007.tsx",
     "update-2025-08-18-0006.tsx",
     "update-2025-08-18-0005.tsx",
     "update-2025-08-17-1807.tsx",
@@ -99,14 +100,13 @@
     "update-2025-08-17-1643.tsx",
     "update-2025-08-17-1642.tsx",
     "update-2025-08-17T19-41.tsx",
-    "update-2025-08-17-1641.tsx",
-    "update-2025-08-17-1940.tsx"
+    "update-2025-08-17-1641.tsx"
   ],
   "metrics": {
     "diversityScore": 100,
-    "avgLen": 2099,
+    "avgLen": 2101,
     "duplicateCount": 0,
-    "seoScore": 9
+    "seoScore": 8
   },
   "guidance": [
     "Aim for varied intros, highlights, and CTAs across updates.",
