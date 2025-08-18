@@ -1,0 +1,332 @@
+{
+  "timestamp": "2025-08-18T05:07:58.366Z",
+  "summary": {
+    "overallScore": 65.26666666666667,
+    "systemHealth": "poor",
+    "keyMetrics": {
+      "workflowCount": 0,
+      "healthScore": 95.8,
+      "securityScore": 100,
+      "dependencyHealth": 0
+    },
+    "trends": {
+      "healthTrend": "increasing",
+      "alertTrend": "decreasing",
+      "performanceTrend": "decreasing"
+    }
+  },
+  "detailedAnalysis": {
+    "workflowHealth": {
+      "totalWorkflows": 0,
+      "activeWorkflows": 0,
+      "disabledWorkflows": 0,
+      "workflowsWithIssues": 0,
+      "totalIssues": 0,
+      "immediateActions": 0,
+      "shortTermImprovements": 0,
+      "longTermOptimizations": 0,
+      "timestamp": "2025-08-18T05:07:58.339Z"
+    },
+    "monitoringData": {
+      "totalChecks": 10,
+      "averageHealth": 95.8,
+      "totalAlerts": 7,
+      "totalRecommendations": 7,
+      "recentData": [
+        {
+          "timestamp": "2025-08-17T21:02:43.720Z",
+          "overallHealth": 94,
+          "alerts": 1,
+          "recommendations": 1
+        },
+        {
+          "timestamp": "2025-08-17T21:05:51.898Z",
+          "overallHealth": 94,
+          "alerts": 1,
+          "recommendations": 1
+        },
+        {
+          "timestamp": "2025-08-18T03:57:52.019Z",
+          "overallHealth": 100,
+          "alerts": 0,
+          "recommendations": 0
+        },
+        {
+          "timestamp": "2025-08-18T03:58:52.010Z",
+          "overallHealth": 100,
+          "alerts": 0,
+          "recommendations": 0
+        },
+        {
+          "timestamp": "2025-08-18T05:06:53.540Z",
+          "overallHealth": 100,
+          "alerts": 0,
+          "recommendations": 0
+        }
+      ],
+      "timestamp": "2025-08-18T05:07:58.345Z"
+    },
+    "performanceData": {
+      "averageExecutionTime": 0,
+      "fastestWorkflow": null,
+      "slowestWorkflow": null,
+      "resourceEfficiency": 100,
+      "concurrencyUtilization": 0,
+      "timeoutIncidents": 0,
+      "retrySuccessRate": 0,
+      "timestamp": "2025-08-18T05:07:58.345Z"
+    },
+    "securityData": {
+      "securedWorkflows": 224,
+      "workflowsWithTimeouts": 218,
+      "securityScore": 100,
+      "vulnerabilityCount": 0,
+      "lastSecurityAudit": null,
+      "timestamp": "2025-08-18T05:07:58.345Z"
+    },
+    "dependencyData": {
+      "healthScore": 0,
+      "totalPackages": 0,
+      "outdatedPackages": 0,
+      "securityIssues": 0,
+      "criticalIssues": 0,
+      "lastUpdate": "2025-08-15T12:35:10.776Z",
+      "timestamp": "2025-08-18T05:07:58.361Z"
+    },
+    "resourceData": {
+      "diskUsage": 0,
+      "memoryUsage": 0,
+      "cpuUsage": 0,
+      "networkActivity": 0,
+      "storageEfficiency": 0,
+      "resourceOptimization": 95.8,
+      "timestamp": "2025-08-18T05:07:58.361Z"
+    }
+  },
+  "trendAnalysis": {
+    "health": {
+      "trend": "increasing",
+      "slope": 1.8,
+      "change": 6,
+      "volatility": 2.9393876913398134,
+      "prediction": 101.8
+    },
+    "alerts": {
+      "trend": "decreasing",
+      "slope": -0.3,
+      "change": -1,
+      "averageAlerts": 0.4,
+      "prediction": -0.3
+    },
+    "performance": {
+      "trend": "decreasing",
+      "slope": -0.3,
+      "change": -1,
+      "averageRecommendations": 0.4,
+      "prediction": -0.3
+    },
+    "timestamp": "2025-08-18T05:07:58.363Z"
+  },
+  "predictiveInsights": {
+    "failurePrediction": {
+      "currentHealth": 95.8,
+      "predictedHealth": 101.8,
+      "failureRisk": "low",
+      "confidence": "high",
+      "recommendations": [
+        "Continue monitoring",
+        "Maintain current practices"
+      ]
+    },
+    "resourceForecasting": {
+      "currentUtilization": 95.8,
+      "predictedUtilization": 97.6,
+      "resourceNeeds": "scale_up",
+      "optimizationOpportunities": [
+        "Scale resources",
+        "Optimize processes",
+        "Reduce overhead"
+      ]
+    },
+    "performanceOptimization": {
+      "currentEfficiency": 100,
+      "optimizationPotential": 0,
+      "quickWins": [
+        "Minor optimizations",
+        "Process improvements"
+      ],
+      "longTermOptimizations": [
+        "Continuous improvement",
+        "Innovation projects"
+      ],
+      "estimatedImprovement": 0
+    },
+    "securityRiskAssessment": {
+      "currentScore": 100,
+      "riskLevel": "low",
+      "vulnerabilities": [
+        "Minor security enhancements"
+      ],
+      "remediationPriority": "medium",
+      "estimatedTimeToFix": "1 week"
+    },
+    "timestamp": "2025-08-18T05:07:58.364Z"
+  },
+  "performanceMetrics": {
+    "overallScore": 65.26666666666667,
+    "efficiencyMetrics": {
+      "workflowEfficiency": 100,
+      "resourceEfficiency": 100,
+      "monitoringEfficiency": 95.8
+    },
+    "reliabilityMetrics": {
+      "uptime": 30,
+      "errorRate": 0,
+      "recoveryTime": 7
+    },
+    "scalabilityMetrics": {
+      "currentCapacity": 0,
+      "utilizationRate": 95.8,
+      "growthPotential": "high"
+    },
+    "timestamp": "2025-08-18T05:07:58.364Z"
+  },
+  "recommendations": {
+    "immediate": [
+      {
+        "priority": "critical",
+        "action": "Fix dependency health issues",
+        "impact": "high",
+        "effort": "medium",
+        "description": "Dependency health is critical and requires immediate attention"
+      }
+    ],
+    "shortTerm": [
+      {
+        "priority": "medium",
+        "action": "Review and optimize alerting",
+        "impact": "medium",
+        "effort": "low",
+        "description": "Reduce alert noise and improve signal quality"
+      }
+    ],
+    "longTerm": [
+      {
+        "priority": "low",
+        "action": "Implement advanced analytics dashboard",
+        "impact": "medium",
+        "effort": "high",
+        "description": "Build comprehensive analytics dashboard for better insights"
+      }
+    ],
+    "priority": [],
+    "timestamp": "2025-08-18T05:07:58.365Z"
+  },
+  "config": {
+    "analysisPeriods": [
+      "daily",
+      "weekly",
+      "monthly",
+      "quarterly"
+    ],
+    "metrics": [
+      "workflow_success_rate",
+      "execution_time",
+      "resource_utilization",
+      "error_frequency",
+      "security_incidents",
+      "dependency_health",
+      "cost_optimization",
+      "performance_trends"
+    ],
+    "predictiveModels": [
+      "failure_prediction",
+      "resource_forecasting",
+      "performance_optimization",
+      "security_risk_assessment"
+    ],
+    "retentionDays": 90,
+    "realTimeUpdates": true,
+    "exportFormats": [
+      "json",
+      "csv",
+      "html"
+    ],
+    "analysisSettings": {
+      "trendAnalysis": {
+        "minDataPoints": 3,
+        "confidenceThreshold": 0.8,
+        "predictionHorizon": 7
+      },
+      "performanceAnalysis": {
+        "baselinePeriod": 30,
+        "anomalyThreshold": 2,
+        "optimizationThreshold": 0.1
+      },
+      "securityAnalysis": {
+        "riskThresholds": {
+          "low": 85,
+          "medium": 70,
+          "high": 50
+        },
+        "vulnerabilityScoring": "CVSS",
+        "complianceChecks": true
+      }
+    },
+    "visualization": {
+      "charts": [
+        "line",
+        "bar",
+        "pie",
+        "heatmap",
+        "gauge"
+      ],
+      "dashboards": [
+        "executive",
+        "technical",
+        "operational",
+        "security"
+      ],
+      "realTimeUpdates": true,
+      "interactiveElements": true
+    },
+    "notifications": {
+      "insights": {
+        "enabled": true,
+        "frequency": "daily",
+        "channels": [
+          "console",
+          "file"
+        ]
+      },
+      "alerts": {
+        "enabled": true,
+        "thresholds": {
+          "performance_degradation": 0.1,
+          "security_risk": 0.2,
+          "resource_shortage": 0.15
+        }
+      }
+    },
+    "integration": {
+      "externalSystems": [
+        "github_api",
+        "monitoring_tools",
+        "alerting_systems",
+        "reporting_tools"
+      ],
+      "dataSources": [
+        "workflow_logs",
+        "performance_metrics",
+        "security_scans",
+        "dependency_reports"
+      ],
+      "exportDestinations": [
+        "local_storage",
+        "cloud_storage",
+        "api_endpoints",
+        "webhooks"
+      ]
+    }
+  }
+}
