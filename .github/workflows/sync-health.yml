@@ -1,13 +1,11 @@
 name: Sync Health
 on:
-  workflow_dispatch: null
+  workflow_dispatch: {}
   schedule:
   - cron: 0 2 * * *
 jobs:
-  health:
+  sync-health:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
     steps:
     - name: Checkout
       uses: actions/checkout@v4
@@ -19,7 +17,7 @@ jobs:
     - name: Install dependencies
       run: npm ci
     - name: Run sync health check
-      run: node automation/sync-health-check.cjs | tee sync-health.out
+      run: node automation/sync-health-runner.cjs
     - name: Upload sync health artifacts
       uses: actions/upload-artifact@v4
       with:

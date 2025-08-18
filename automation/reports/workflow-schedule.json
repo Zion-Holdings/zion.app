@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T04:03:42.653Z",
+  "timestamp": "2025-08-18T04:04:44.581Z",
   "critical": [
     {
       "name": "ci-self-heal.yml",
@@ -2312,7 +2312,7 @@
       },
       "dependencies": [],
       "triggers": [
-        "workflow_dispatch null",
+        "workflow_dispatch {}",
         "schedule"
       ],
       "resourceScore": 104
