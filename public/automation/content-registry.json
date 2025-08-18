@@ -373,6 +373,30 @@
       "type": "ultra-fast-generated",
       "created": "2025-08-18T18:33:47.392Z",
       "process": "ultra-fast"
+    },
+    {
+      "id": "rapid-1755542029671-gaf5t0",
+      "title": "Machine Learning",
+      "route": "/services/rapid-1755542029671-gaf5t0",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:33:49.674Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755542029672-rtdcp9",
+      "title": "Performance Optimizer",
+      "route": "/products/rapid-1755542029672-rtdcp9",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:33:49.674Z",
+      "process": "rapid"
+    },
+    {
+      "id": "rapid-1755542029673-u71or5",
+      "title": "Complete Guide to Database Optimization",
+      "route": "/tutorials/rapid-1755542029673-u71or5",
+      "type": "rapid-generated",
+      "created": "2025-08-18T18:33:49.674Z",
+      "process": "rapid"
     }
   ]
 }
