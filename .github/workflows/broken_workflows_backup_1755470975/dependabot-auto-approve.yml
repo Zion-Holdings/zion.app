@@ -7,7 +7,7 @@ on:
 
 permissions:
 concurrency:
-  group: "${{ dependabot-auto-approve }}-${{ github.ref }}"
+  group: "dependabot-auto-approve-${{ github.ref }}"
   cancel-in-progress: true
   contents: write
   pull-requests: write

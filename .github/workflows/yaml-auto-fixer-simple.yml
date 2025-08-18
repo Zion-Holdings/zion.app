@@ -11,7 +11,7 @@ permissions:
   actions: read
 
 concurrency:
-  group: "${{ yaml-auto-fixer-simple }}-${{ github.ref }}"
+  group: "yaml-auto-fixer-simple-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:

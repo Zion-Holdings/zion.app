@@ -8,7 +8,7 @@ on:
 
 permissions:
 concurrency:
-  group: "${{ ci-self-heal }}-${{ github.ref }}"
+  group: "ci-self-heal-${{ github.ref }}"
   cancel-in-progress: true
   contents: read
 

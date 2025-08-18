@@ -11,7 +11,7 @@ permissions:
   actions: read
 
 concurrency:
-  group: "${{ ai-content-factory }}-${{ github.ref }}"
+  group: "ai-content-factory-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:

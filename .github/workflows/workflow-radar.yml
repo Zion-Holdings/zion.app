@@ -11,7 +11,7 @@ permissions:
   actions: read
 
 concurrency:
-  group: "${{ workflow-radar }}-${{ github.ref }}"
+  group: "workflow-radar-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:

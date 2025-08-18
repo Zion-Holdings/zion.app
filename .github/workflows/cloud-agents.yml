@@ -11,7 +11,7 @@ permissions:
   actions: read
 
 concurrency:
-  group: "${{ cloud-agents }}-${{ github.ref }}"
+  group: "cloud-agents-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:

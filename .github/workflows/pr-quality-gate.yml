@@ -11,7 +11,7 @@ permissions:
   actions: read
 
 concurrency:
-  group: "${{ pr-quality-gate }}-${{ github.ref }}"
+  group: "pr-quality-gate-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:

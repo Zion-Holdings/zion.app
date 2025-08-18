@@ -11,7 +11,7 @@ permissions:
   actions: read
 
 concurrency:
-  group: "${{ readme-autogen }}-${{ github.ref }}"
+  group: "readme-autogen-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:

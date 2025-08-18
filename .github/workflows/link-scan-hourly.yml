@@ -11,7 +11,7 @@ permissions:
   actions: read
 
 concurrency:
-  group: "${{ link-scan-hourly }}-${{ github.ref }}"
+  group: "link-scan-hourly-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:

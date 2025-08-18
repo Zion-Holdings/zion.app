@@ -11,7 +11,7 @@ permissions:
   actions: read
 
 concurrency:
-  group: "${{ seo-validator }}-${{ github.ref }}"
+  group: "seo-validator-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:

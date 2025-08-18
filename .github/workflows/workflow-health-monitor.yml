@@ -11,7 +11,7 @@ permissions:
   actions: read
 
 concurrency:
-  group: "${{ workflow-health-monitor }}-${{ github.ref }}"
+  group: "workflow-health-monitor-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:

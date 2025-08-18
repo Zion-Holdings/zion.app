@@ -11,7 +11,7 @@ permissions:
   actions: read
 
 concurrency:
-  group: "${{ sitemap-and-search }}-${{ github.ref }}"
+  group: "sitemap-and-search-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:

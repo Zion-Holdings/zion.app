@@ -11,7 +11,7 @@ permissions:
   actions: read
 
 concurrency:
-  group: "${{ readme-auto-advertiser }}-${{ github.ref }}"
+  group: "readme-auto-advertiser-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:

@@ -11,7 +11,7 @@ permissions:
   actions: read
 
 concurrency:
-  group: "${{ link-auto-fix }}-${{ github.ref }}"
+  group: "link-auto-fix-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:

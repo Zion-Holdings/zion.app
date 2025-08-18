@@ -11,7 +11,7 @@ permissions:
   actions: read
 
 concurrency:
-  group: "${{ variation }}-${{ github.ref }}"
+  group: "variation-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:

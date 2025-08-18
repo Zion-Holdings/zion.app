@@ -11,7 +11,7 @@ permissions:
   actions: read
 
 concurrency:
-  group: "${{ venture }}-${{ github.ref }}"
+  group: "venture-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:

@@ -7,7 +7,7 @@ on:
 
 permissions:
 concurrency:
-  group: "${{ agent-agent-1755379777752-5-testing-expert }}-${{ github.ref }}"
+  group: "agent-agent-1755379777752-5-testing-expert-${{ github.ref }}"
   cancel-in-progress: true
   contents: write
   pull-requests: write

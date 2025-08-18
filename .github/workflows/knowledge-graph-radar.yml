@@ -11,7 +11,7 @@ permissions:
   actions: read
 
 concurrency:
-  group: "${{ knowledge-graph-radar }}-${{ github.ref }}"
+  group: "knowledge-graph-radar-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:

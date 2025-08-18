@@ -11,7 +11,7 @@ permissions:
   actions: read
 
 concurrency:
-  group: "${{ auto-media-release }}-${{ github.ref }}"
+  group: "auto-media-release-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:

@@ -11,7 +11,7 @@ permissions:
   actions: read
 
 concurrency:
-  group: "${{ pr-update-with-main }}-${{ github.ref }}"
+  group: "pr-update-with-main-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:

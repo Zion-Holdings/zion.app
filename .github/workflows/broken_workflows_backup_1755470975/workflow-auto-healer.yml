@@ -7,7 +7,7 @@ on:
 
 permissions:
 concurrency:
-  group: "${{ general-automation }}-${{ github.ref }}"
+  group: "general-automation-${{ github.ref }}"
   cancel-in-progress: true
   contents: read
   actions: read

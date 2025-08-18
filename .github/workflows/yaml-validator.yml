@@ -11,7 +11,7 @@ permissions:
   actions: read
 
 concurrency:
-  group: "${{ yaml-validator }}-${{ github.ref }}"
+  group: "yaml-validator-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:

@@ -11,7 +11,7 @@ permissions:
   actions: read
 
 concurrency:
-  group: "${{ media-optimizer }}-${{ github.ref }}"
+  group: "media-optimizer-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:

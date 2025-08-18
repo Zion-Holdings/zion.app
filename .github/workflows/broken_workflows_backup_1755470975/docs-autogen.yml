@@ -7,7 +7,7 @@ on:
 
 permissions:
 concurrency:
-  group: "${{ docs-autogen }}-${{ github.ref }}"
+  group: "docs-autogen-${{ github.ref }}"
   cancel-in-progress: true
   contents: write
   pull-requests: write

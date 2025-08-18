@@ -11,7 +11,7 @@ permissions:
   actions: read
 
 concurrency:
-  group: "${{ pr-size-labeler }}-${{ github.ref }}"
+  group: "pr-size-labeler-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:

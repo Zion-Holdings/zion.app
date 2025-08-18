@@ -11,7 +11,7 @@ permissions:
   actions: read
 
 concurrency:
-  group: "${{ auto-heal-workflows }}-${{ github.ref }}"
+  group: "auto-heal-workflows-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:
